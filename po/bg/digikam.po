@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 00:40+0000\n"
+"POT-Creation-Date: 2023-11-21 00:40+0000\n"
 "PO-Revision-Date: 2023-11-16 13:55+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -21086,20 +21086,23 @@ msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "OpenGL визуализатор на изображения"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
 #, kde-format
 msgid "OpenGL Error"
 msgstr "OpenGL грешка"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
-#, kde-format
-msgid "GL_ARB_texture_rectangle not supported"
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
+#, fuzzy, kde-format
+#| msgid "GL_ARB_texture_rectangle not supported"
+msgid ""
+"GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
 msgstr "Не се поддържа GL_ARB_texture_rectangle"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
-#, kde-format
-msgid "No OpenGL context found"
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
+#, fuzzy, kde-format
+#| msgid "No OpenGL context found"
+msgid "No OpenGL context have been found"
 msgstr "Не е намерен OpenGL контекст"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -50019,14 +50022,7 @@ msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "Задайте нормална ориентация на тага след завъртане/обръщане."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:117
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:179
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "Visit Exiv2 project website"
-msgstr "Посетете уебсайта на проекта Exiv2"
-
-#: core/showfoto/setup/showfotosetupmetadata.cpp:125
+#: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, kde-format
 msgctxt "@info"
@@ -50037,7 +50033,7 @@ msgstr ""
 "стандарт, използван днес от повечето цифрови фотоапарати за съхраняване на "
 "техническа информация (като бленда и скорост на затвора) за изображението."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:123
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, kde-format
 msgctxt "@info"
@@ -50048,7 +50044,7 @@ msgstr ""
 "по-стар стандарт, използван в цифровата фотография за съхраняване на "
 "фотографска информация в изображенията."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:135
+#: core/showfoto/setup/showfotosetupmetadata.cpp:129
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
@@ -50056,14 +50052,14 @@ msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr ""
 "нов стандарт, използван в цифровата фотография, предназначен да замени IPTC."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:156
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:216
+#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "Поведение"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:165
+#: core/showfoto/setup/showfotosetupmetadata.cpp:159
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, kde-format
 msgctxt "@title:tab"
@@ -62017,7 +62013,7 @@ msgctxt "@title:tab"
 msgid "Baloo"
 msgstr "Baloo"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:32
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:35
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62034,19 +62030,19 @@ msgstr ""
 "<para>Съхраняването в метаданни позволява да се запази тази информация при "
 "преместване или изпращане на файлове към различни системи.</para>"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:42
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
 #, kde-format
 msgctxt "@label"
 msgid "Write This Information to the Metadata"
 msgstr "Записване на тази информация в метаданните"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
 #, kde-format
 msgctxt "@option:check"
 msgid "Image tags"
 msgstr "Тагове за изображения"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:46
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item tags in the XMP and IPTC tags."
@@ -62054,13 +62050,13 @@ msgstr ""
 "Включете тази опция, за да съхранявате етикетите на елементите в етикетите "
 "XMP и IPTC."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
 msgstr "Надписи и заглавие"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62070,13 +62066,13 @@ msgstr ""
 "Включете тази опция, за да запазите надписа и заглавието на елемента в "
 "раздела JFIF Comment (Коментар), Exif тага, XMP тага и IPTC тага."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Rating"
 msgstr "Оценка"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:57
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62086,13 +62082,13 @@ msgstr ""
 "Включете тази опция, за да съхранявате рейтинга на елемента в таговете Exif "
 "и XMP."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
 msgstr "Изберете етикет"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
@@ -62100,13 +62096,13 @@ msgstr ""
 "Включете тази опция, за да запазите етикета за избор на елемент в XMP "
 "таговете."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, kde-format
 msgctxt "@option:check"
 msgid "Color label"
 msgstr "Цвят на етикет"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
@@ -62114,13 +62110,13 @@ msgstr ""
 "Включете тази опция, за да съхранявате етикета за цвета на елемента в XMP "
 "таговете."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
 #, kde-format
 msgctxt "@option:check"
 msgid "Timestamps"
 msgstr "Клеймо на време"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62130,13 +62126,13 @@ msgstr ""
 "Включете тази опция, за да съхранявате датата и часа на елемента в таговете "
 "EXIF, XMP и IPTC."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata templates (Copyright etc.)"
 msgstr "Шаблони за метаданни (авторски права и др.)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62147,13 +62143,13 @@ msgstr ""
 "IPTC. Можете да зададете стойностите на шаблона на страницата за настройка "
 "на шаблона."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
 msgstr "Етикети за лица (включително области за лица)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62162,13 +62158,13 @@ msgstr ""
 "Включете тази опция, за да съхранявате етикети за лица с правоъгълници за "
 "лица в XMP етикетите."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:91
 #, kde-format
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
 msgstr "Информация за геолокация (GPS)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:92
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62178,13 +62174,13 @@ msgstr ""
 "Включете тази опция, за да съхранявате информация за геолокацията в Exif "
 "таговете и XMP таговете."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:112
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid "Reading and Writing Metadata"
 msgstr "Четене и запис на метаданни"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
@@ -62192,7 +62188,7 @@ msgstr ""
 "Делегирайте на бекенда на ExifTool всички операции за записване на метаданни "
 "във файлове"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62204,25 +62200,25 @@ msgstr ""
 "бекенд вместо с Exiv2. Това ще забави малко синхронизирането на метаданните "
 "на файловете с базата данни."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "Записване на метаданни в DNG файлове"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:128
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr "Включете тази опция, за да записвате метаданни в DNG файловете."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:125
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
 #, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "Ако е възможно, записване на метаданни към RAW файлове"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62232,13 +62228,13 @@ msgstr ""
 "Включете тази опция, за да записвате метаданни в RAW файловете. Тази функция "
 "е делегирана на бекенда на ExifTool и е изключена по подразбиране."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:135
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
 #, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr "Използване на мързеливо синхронизиране"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62250,7 +62246,7 @@ msgstr ""
 "Синхронизирането може да се извърши по-късно чрез задействане на прилагане "
 "на изчакващи  или при излизане от digikam"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:147
 #, kde-format
 msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
@@ -62258,7 +62254,7 @@ msgstr ""
 "&Актуализирайте времевия печат на модификацията на файла, когато файловете "
 "са модифицирани"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62273,13 +62269,13 @@ msgstr ""
 "някои смущения с приложения, които използват свойствата на файловите времеви "
 "маркери за автоматично откриване на модификации на файлове."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:155
 #, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "&Повторно сканиране на файла, когато файловете са модифицирани"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:157
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62293,19 +62289,19 @@ msgstr ""
 "си или ако е променен времевият печат на последната промяна, при стартиране "
 "на digiKam ще се извърши повторно сканиране на този файл."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:226
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr "Забележка: вижте %1 на ExifTool бекенд."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:230
 #, kde-format
 msgctxt "@label"
 msgid "write limitations"
 msgstr "ограничения на запис"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -62315,7 +62311,7 @@ msgstr ""
 "Забележка: тези опции зависят от наличността на %1. Проверете в раздела "
 "ExifTool за подробности."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:240
 #, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
@@ -62575,17 +62571,27 @@ msgstr ""
 "програми. За Darktable не включвайте тази опция."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Add file types to be recognised as sidecars.\n"
+#| "digiKam (optionally) writes metadata to *.xmp sidecar\n"
+#| "files. Other programs might use different types, which\n"
+#| "can be specified below. digiKam will neither display these\n"
+#| "nor read from or write to them. But whenever a matching album\n"
+#| "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
+#| "moved, copied or deleted, the same operation will be done\n"
+#| "on these sidecar files.\n"
+#| "Multiple extensions must be separated by a semicolon or a space."
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
-"digiKam (optionally) writes metadata to *.xmp sidecar\n"
-"files. Other programs might use different types, which\n"
-"can be specified below. digiKam will neither display these\n"
-"nor read from or write to them. But whenever a matching album\n"
-"item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-"moved, copied or deleted, the same operation will be done\n"
-"on these sidecar files.\n"
+"digiKam (optionally) writes metadata to *.xmp sidecar files. Other programs "
+"might use different types, which can be specified below. digiKam will "
+"neither display these nor read from or write to them. But whenever a "
+"matching album item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
+"moved, copied or deleted, the same operation will be done on these sidecar "
+"files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 "Добавяне на типове файлове, които да се разпознават като странични, "
@@ -64165,6 +64171,10 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Искате ли да възстановите всички настройки на видеото до стойността по "
 "подразбиране?"
+
+#~ msgctxt "@info:whatsthis"
+#~ msgid "Visit Exiv2 project website"
+#~ msgstr "Посетете уебсайта на проекта Exiv2"
 
 #~ msgid ""
 #~ "The database is now upgraded to the current server version, this can take "

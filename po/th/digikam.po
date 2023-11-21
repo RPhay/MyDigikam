@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 00:40+0000\n"
+"POT-Creation-Date: 2023-11-21 00:40+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -21009,20 +21009,21 @@ msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "เพิ่มความคมของภาพ"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
 #, fuzzy, kde-format
 msgid "OpenGL Error"
 msgstr "ส่งออก"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
 #, kde-format
-msgid "GL_ARB_texture_rectangle not supported"
+msgid ""
+"GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
 msgstr ""
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context found"
+msgid "No OpenGL context have been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -50871,15 +50872,7 @@ msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "ตั้งค่าข้อมูลทิศทางภาพเป็นปกติ หลังจากหมุน/พลิกภาพแล้ว"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:117
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:179
-#, fuzzy, kde-format
-#| msgid "Visit Exiv2 project website"
-msgctxt "@info:whatsthis"
-msgid "Visit Exiv2 project website"
-msgstr "แวะชมเว็บไซต์โครงการ Exiv2"
-
-#: core/showfoto/setup/showfotosetupmetadata.cpp:125
+#: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, fuzzy, kde-format
 #| msgid ""
@@ -50895,7 +50888,7 @@ msgstr ""
 "เป็นรูปแบบข้อมูลมาตรฐานที่ถูกใช้กันมากในกล้องดิจิทัลในปัจจุบัน เพื่อใช้เก็บค่าข้อมูลเชิงเทคนิคต่าง ๆ "
 "ของภาพถ่ายให้เป็นข้อมูลที่ฝังแนบมากับภาพด้วย (เช่น ค่ารูรับแสง และความเร็วชัตเตอร์ เป็นต้น)</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:123
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, fuzzy, kde-format
 #| msgid ""
@@ -50911,7 +50904,7 @@ msgstr ""
 "IPTC_Information_Interchange_Model'>ข้อมูลกำกับภาพแบบ IPTC</a> - "
 "เป็นมาตรฐานเก่าที่ใช้ในวงการถ่ายภาพดิจิทัล เพื่อใช้จัดเก็บข้อมูลต่าง ๆ ของผู้ถ่ายไว้ในภาพด้วย</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:135
+#: core/showfoto/setup/showfotosetupmetadata.cpp:129
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, fuzzy, kde-format
 #| msgid ""
@@ -50925,14 +50918,14 @@ msgstr ""
 "Extensible_Metadata_Platform'>ข้อมูลกำกับภาพแบบ XMP</a> - "
 "เป็นมาตรฐานใหม่ที่ใช้วงการถ่ายภาพดิจิทัล โดยมีเป้าหมายในการใช้แทนข้อมูล IPTC แบบเก่า</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:156
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:216
+#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "พฤติกรรม"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:165
+#: core/showfoto/setup/showfotosetupmetadata.cpp:159
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, fuzzy, kde-format
 msgctxt "@title:tab"
@@ -62790,7 +62783,7 @@ msgctxt "@title:tab"
 msgid "Baloo"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:32
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:35
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62801,32 +62794,32 @@ msgid ""
 "information when moving or sending the files to different systems.</para>"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:42
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Write This Information to the Metadata"
 msgstr "เพิ่มข้อมูลรายละเอียดไปไว้ในแฟ้มรูปภาพ"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Image tags"
 msgstr "ตั้งค่าต่าง ๆ ของภาพ"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:46
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item tags in the XMP and IPTC tags."
 msgstr ""
 "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการจัดเก็บข้อมูลกำกับของภาพไว้ในข้อมูลกำกับภาพ XMP และ IPTC ด้วย"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
 msgstr "คำบรรยาย, หมายเหตุ, ชื่อเรื่อง"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62836,13 +62829,13 @@ msgstr ""
 "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการจัดเก็บคำบรรยายภาพไปยังส่วน JFIF, ป้ายกำกับ EXIF, ป้ายกำกับ "
 "XMP และป้ายกำกับ IPTC"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Rating"
 msgstr "ระดับความชื่นชอบ"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:57
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62852,39 +62845,39 @@ msgstr ""
 "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการจัดเก็บค่าระดับความชื่นชอบของภาพ ไว้ในข้อมูลกำกับภาพแบบ EXIF และ "
 "XMP ด้วย"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
 msgstr "จำนวนพิกเซล: "
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
 msgstr ""
 "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการจัดเก็บข้อมูลกำกับของภาพไว้ในข้อมูลกำกับภาพ XMP และ IPTC ด้วย"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Color label"
 msgstr "โหมดสี: "
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
 msgstr ""
 "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการจัดเก็บข้อมูลกำกับของภาพไว้ในข้อมูลกำกับภาพ XMP และ IPTC ด้วย"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
 #, kde-format
 msgctxt "@option:check"
 msgid "Timestamps"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62894,13 +62887,13 @@ msgstr ""
 "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการจัดเก็บค่าวันที่และเวลาของภาพไว้ในข้อมูลกำกับภาพแบบ  EXIF, XMP "
 "และป้ายกำกับข้อมูล IPTC ด้วย"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Metadata templates (Copyright etc.)"
 msgstr "ปรับใช้ข้อมูลกำกับภาพให้กับแฟ้ม %1..."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62910,13 +62903,13 @@ msgstr ""
 "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการจัดเก็บแม่แบบข้อมูลกำกับภาพไว้ในข้อมูลกำกับภาพแบบ XMP และ IPTC "
 "ด้วย โดยคุณสามารถตั้งค่านี้ได้ในส่วนแสดงตัวในหน้าตั้งค่า"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62924,13 +62917,13 @@ msgid ""
 msgstr ""
 "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการจัดเก็บข้อมูลกำกับของภาพไว้ในข้อมูลกำกับภาพ XMP และ IPTC ด้วย"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:91
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
 msgstr "ข้อมูลรายละเอียดของภาพถ่าย"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:92
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62940,19 +62933,19 @@ msgstr ""
 "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการจัดเก็บค่าระดับความชื่นชอบของภาพ ไว้ในข้อมูลกำกับภาพแบบ EXIF และ "
 "XMP ด้วย"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:112
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Reading and Writing Metadata"
 msgstr "โหมดการวัดแสง"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการปรับปรุงเวลากำกับแฟ้มด้วยเมื่อมีการบันทึกข้อมูลกำกับภาพ"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62961,26 +62954,26 @@ msgid ""
 "with database."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "เขียนข้อมูลกำกับภาพไปยังแต่ละแฟ้ม"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:128
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการปรับปรุงเวลากำกับแฟ้มด้วยเมื่อมีการบันทึกข้อมูลกำกับภาพ"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:125
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "เ&ขียนข้อมูลกำกับภาพไปยังแฟ้ม RAW (กำลังพัฒนา)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62988,13 +62981,13 @@ msgid ""
 "delegate to ExifTool backend and is disabled by default."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:135
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr "ใช้การชดเชยแสงจุดดำ"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -63003,13 +62996,13 @@ msgid ""
 "digikam exit"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:147
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr "ปรับปรุงเ&วลากำกับแฟ้มด้วยเมื่อมีการบันทึกข้อมูลกำกับภาพ"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -63019,13 +63012,13 @@ msgid ""
 "properties to detect file modifications automatically."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:155
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "ปรับปรุงเ&วลากำกับแฟ้มด้วยเมื่อมีการบันทึกข้อมูลกำกับภาพ"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:157
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -63035,19 +63028,19 @@ msgid ""
 "when digiKam starts."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:226
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:230
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "write limitations"
 msgstr "ตัวเลือกต่าง ๆ ของมุมมองโฟลเดอร์"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -63055,7 +63048,7 @@ msgid ""
 "for details."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:240
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
@@ -63282,13 +63275,12 @@ msgstr "เปิดใช้ตัวเลือกนี้ เพื่อ�
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
-"digiKam (optionally) writes metadata to *.xmp sidecar\n"
-"files. Other programs might use different types, which\n"
-"can be specified below. digiKam will neither display these\n"
-"nor read from or write to them. But whenever a matching album\n"
-"item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-"moved, copied or deleted, the same operation will be done\n"
-"on these sidecar files.\n"
+"digiKam (optionally) writes metadata to *.xmp sidecar files. Other programs "
+"might use different types, which can be specified below. digiKam will "
+"neither display these nor read from or write to them. But whenever a "
+"matching album item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
+"moved, copied or deleted, the same operation will be done on these sidecar "
+"files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 
@@ -64792,6 +64784,12 @@ msgstr "ปรับค่าทั้งหมดกลับไปใช้ค
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "ปรับค่าทั้งหมดกลับไปใช้ค่าปริยายของพวกมัน"
+
+#, fuzzy
+#~| msgid "Visit Exiv2 project website"
+#~ msgctxt "@info:whatsthis"
+#~ msgid "Visit Exiv2 project website"
+#~ msgstr "แวะชมเว็บไซต์โครงการ Exiv2"
 
 #, fuzzy
 #~| msgid "An error has occurred with the media player...."

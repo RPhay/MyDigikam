@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 00:40+0000\n"
+"POT-Creation-Date: 2023-11-21 00:40+0000\n"
 "PO-Revision-Date: 2023-11-06 21:55+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -21280,20 +21280,23 @@ msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "Afficheur d'image OpenGL"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
 #, kde-format
 msgid "OpenGL Error"
 msgstr "Erreur « OpenGL »"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
-#, kde-format
-msgid "GL_ARB_texture_rectangle not supported"
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
+#, fuzzy, kde-format
+#| msgid "GL_ARB_texture_rectangle not supported"
+msgid ""
+"GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
 msgstr "GL_ARB_texture_rectangle non géré"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
-#, kde-format
-msgid "No OpenGL context found"
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
+#, fuzzy, kde-format
+#| msgid "No OpenGL context found"
+msgid "No OpenGL context have been found"
 msgstr "Aucun contexte OpenGL trouvé"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -50484,14 +50487,7 @@ msgstr ""
 "Définit l'étiquette d'orientation au paramètre « normal » après "
 "rotation / retournement."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:117
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:179
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "Visit Exiv2 project website"
-msgstr "Visitez le site Internet du projet « Exiv2 »"
-
-#: core/showfoto/setup/showfotosetupmetadata.cpp:125
+#: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, kde-format
 msgctxt "@info"
@@ -50503,7 +50499,7 @@ msgstr ""
 "numériques pour enregistrer des informations techniques (comme l'ouverture "
 "et la vitesse d'obturation) à propos d'une image."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:123
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, kde-format
 msgctxt "@info"
@@ -50514,7 +50510,7 @@ msgstr ""
 "un standard plus ancien utilisé en photographie numérique pour enregistrer "
 "des informations relatives à un photographe dans des images."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:135
+#: core/showfoto/setup/showfotosetupmetadata.cpp:129
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
@@ -50523,14 +50519,14 @@ msgstr ""
 "un nouveau standard utilisé en photographie numérique, conçu pour remplacer "
 "« IPTC »."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:156
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:216
+#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "Comportement"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:165
+#: core/showfoto/setup/showfotosetupmetadata.cpp:159
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, kde-format
 msgctxt "@title:tab"
@@ -62644,7 +62640,7 @@ msgctxt "@title:tab"
 msgid "Baloo"
 msgstr "Baloo"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:32
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:35
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62661,19 +62657,19 @@ msgstr ""
 "<para>La mémorisation des métadonnées permet de préserver ces informations "
 "lorsqu'on déplace ou qu'on envoie les fichiers à différents systèmes.</para>"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:42
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
 #, kde-format
 msgctxt "@label"
 msgid "Write This Information to the Metadata"
 msgstr "Écrire ces informations dans les métadonnées"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
 #, kde-format
 msgctxt "@option:check"
 msgid "Image tags"
 msgstr "Étiquettes d'images"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:46
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item tags in the XMP and IPTC tags."
@@ -62681,13 +62677,13 @@ msgstr ""
 "Cochez cette option pour mémoriser les étiquettes des éléments dans les "
 "étiquettes XMP et IPTC."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
 msgstr "Légende et titre"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62698,13 +62694,13 @@ msgstr ""
 "dans la section « Commentaire JFIF », l'étiquette « EXIF », l'étiquette "
 "« XMP » et l'étiquette « IPTC »."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Rating"
 msgstr "Note"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:57
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62714,13 +62710,13 @@ msgstr ""
 "Activer cette option pour enregistrer la note de l'élément dans l'étiquette "
 "« EXIF » et les étiquettes « XMP »."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
 msgstr "Libellé de désignation"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
@@ -62728,13 +62724,13 @@ msgstr ""
 "Cochez cette option pour mémoriser le libellé de désignation d'élément dans "
 "les étiquettes XMP."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, kde-format
 msgctxt "@option:check"
 msgid "Color label"
 msgstr "Libellé de couleur"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
@@ -62742,13 +62738,13 @@ msgstr ""
 "Cochez cette option pour mémoriser le libellé de couleur d'élément dans les "
 "étiquettes XMP."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
 #, kde-format
 msgctxt "@option:check"
 msgid "Timestamps"
 msgstr "Horodatages"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62758,13 +62754,13 @@ msgstr ""
 "Cochez cette option pour mémoriser la date et l'heure de l'élément dans les "
 "étiquettes EXIF, XMP et IPTC."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata templates (Copyright etc.)"
 msgstr "Modèles de métadonnées (droits d'auteur, etc.)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62775,13 +62771,13 @@ msgstr ""
 "étiquettes IPTC et XMP. Vous pouvez associer des valeurs de modèles à une "
 "page de configuration de modèle."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
 msgstr "Étiquettes des visages (y compris les zones des visages)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62790,13 +62786,13 @@ msgstr ""
 "Cochez cette option pour mémoriser les étiquettes des visages avec les "
 "rectangles des visages dans les étiquettes XMP."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:91
 #, kde-format
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
 msgstr "Informations sur la géolocalisation (GPS)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:92
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62806,13 +62802,13 @@ msgstr ""
 "Activer cette option pour enregistrer les informations de géolocalisation "
 "dans l'étiquette « EXIF » et les étiquettes « XMP »."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:112
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid "Reading and Writing Metadata"
 msgstr "Lecture et écriture des métadonnées"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
@@ -62820,7 +62816,7 @@ msgstr ""
 "Déléguer au moteur « ExifTool » toutes les opérations d'écriture de "
 "métadonnées dans les fichiers."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62832,26 +62828,26 @@ msgstr ""
 "moteur « ExifTool » au lieu de « Exiv2 ». Ceci ralentira un peu la "
 "synchronisation des métadonnées des fichiers avec la base de données."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "Écrire les métadonnées dans des fichiers « DNG »"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:128
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr ""
 "Activer cette option pour écrire les métadonnées dans les fichiers « DNG »."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:125
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
 #, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "Si possible, écrire les métadonnées dans des fichiers « RAW »."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62862,13 +62858,13 @@ msgstr ""
 "Cette fonctionnalité est déléguée au moteur « ExifTool » et est désactivée "
 "par défaut."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:135
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
 #, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr "Utiliser la synchronisation paresseuse"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62880,14 +62876,14 @@ msgstr ""
 "synchronisation. La synchronisation peut être faite plus tard en cliquant "
 "sur « appliquer les modifications en attente » ou en quittant digikam"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:147
 #, kde-format
 msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr ""
 "&Mettre à jour l'horodatage du fichier lorsque les fichiers sont modifiés"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62902,13 +62898,13 @@ msgstr ""
 "dysfonctionnements dans les programmes qui utilisent les propriétés "
 "d'horodatage pour détecter automatiquement les modifications de fichier."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:155
 #, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "&Réanalyser le fichier lorsque les fichiers sont modifiés"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:157
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -62922,19 +62918,19 @@ msgstr ""
 "horodatage de dernière modification modifié, une nouvelle analyse de ce "
 "fichier sera effectuée lorsque digiKam démarre."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:226
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr "Remarque : veuillez consulter %1 du moteur « ExifTool »"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:230
 #, kde-format
 msgctxt "@label"
 msgid "write limitations"
 msgstr "Limitations en écriture"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -62944,7 +62940,7 @@ msgstr ""
 "Remarque : ces options dépendent de la disponibilité de %1. Veuillez "
 "vérifier dans l'onglet « ExifTool » pour plus de détails."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:240
 #, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
@@ -63212,17 +63208,27 @@ msgstr ""
 "commerciaux. Ne pas activer cette option pour DarkTable."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Add file types to be recognised as sidecars.\n"
+#| "digiKam (optionally) writes metadata to *.xmp sidecar\n"
+#| "files. Other programs might use different types, which\n"
+#| "can be specified below. digiKam will neither display these\n"
+#| "nor read from or write to them. But whenever a matching album\n"
+#| "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
+#| "moved, copied or deleted, the same operation will be done\n"
+#| "on these sidecar files.\n"
+#| "Multiple extensions must be separated by a semicolon or a space."
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
-"digiKam (optionally) writes metadata to *.xmp sidecar\n"
-"files. Other programs might use different types, which\n"
-"can be specified below. digiKam will neither display these\n"
-"nor read from or write to them. But whenever a matching album\n"
-"item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-"moved, copied or deleted, the same operation will be done\n"
-"on these sidecar files.\n"
+"digiKam (optionally) writes metadata to *.xmp sidecar files. Other programs "
+"might use different types, which can be specified below. digiKam will "
+"neither display these nor read from or write to them. But whenever a "
+"matching album item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
+"moved, copied or deleted, the same operation will be done on these sidecar "
+"files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 "Ajoutez les types de fichiers à reconnaître comme associés.\n"
@@ -64830,6 +64836,10 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Voulez-vous réinitialiser tous les paramètres de vidéos à leurs valeurs par "
 "défaut ?"
+
+#~ msgctxt "@info:whatsthis"
+#~ msgid "Visit Exiv2 project website"
+#~ msgstr "Visitez le site Internet du projet « Exiv2 »"
 
 #~ msgid ""
 #~ "The database is now upgraded to the current server version, this can take "
