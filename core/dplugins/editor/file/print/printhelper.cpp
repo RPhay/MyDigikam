@@ -7,7 +7,7 @@
  * Description : image editor printing interface.
  *
  * SPDX-FileCopyrightText: 2009      by Angelo Naselli <anaselli at linux dot it>
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -25,7 +25,9 @@
 #include <QCheckBox>
 #include <QPainter>
 #include <QPrinter>
+#include <QPrinterInfo>
 #include <QPrintDialog>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -82,6 +84,7 @@ public:
         else
         {
             // No scale
+
             const double INCHES_PER_METER = 100. / 2.54;
             QImage img                    = doc.copyQImage();
             int dpmX                      = img.dotsPerMeterX();
@@ -162,6 +165,23 @@ PrintHelper::~PrintHelper()
 
 void PrintHelper::print(DImg& doc)
 {
+
+#ifdef Q_OS_WIN
+
+    // NOTE: Under Windows if no printer is installed, QPrintDialog do nothing.
+
+    QList<QPrinterInfo> list = QPrinterInfo::availablePrinters();
+
+    if (list.isEmpty())
+    {
+        QMessageBox::warning(d->parent, i18nc("@title:window", "No Printer Available"),
+                             i18nc("@info", "No printer is installed on your system. Please install one at least."));
+
+        return;
+    }
+
+#endif
+
     QPrinter printer;
 
     QPrintDialog* const dialog          = new QPrintDialog(&printer, d->parent);
