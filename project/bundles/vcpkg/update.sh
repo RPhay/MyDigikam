@@ -21,13 +21,13 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Compress bundle log files \n"
 
-    gzip -k $ORIG_WD/logs/build-digikam.full.log $ORIG_WD/logs/build-digikam.full.log.gz     || true
+    gzip -k $ORIG_WD/logs/build-digikam.full.log   $ORIG_WD/logs/build-digikam.full.log.gz   || true
     gzip -k $ORIG_WD/logs/build-installer.full.log $ORIG_WD/logs/build-installer.full.log.gz || true
 
     echo -e "---------- Upload new bundle logs to files.kde.org repository \n"
 
-    UploadWithRetry $ORIG_WD/logs/build-digikam.full.log.gz   $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64 10 10
-    UploadWithRetry $ORIG_WD/logs/build-installer.full.log.gz $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64 10 10
+    UploadWithRetry $ORIG_WD/logs/build-digikam.full.log.gz   $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64 10
+    UploadWithRetry $ORIG_WD/logs/build-installer.full.log.gz $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64 10
 
     echo -e "---------- Cleanup local bundle log file archives \n"
 

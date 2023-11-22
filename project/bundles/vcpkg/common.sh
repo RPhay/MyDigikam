@@ -131,16 +131,29 @@ export PKG_CONFIG_PATH=$VCPKG_INSTALL_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH
 # arg1 : local file path to upload.
 # arg2 : remote ssh url.
 # arg3 : remote directory.
-# arg4 : number of retry.
-# arg5 : pause between retry.
+# arg4 : pause between retry.
 UploadWithRetry()
 {
 
-for RETRY in {0..$4}; do
+MAX_RETRIES=10
+i=0
 
-    echo -e "Try ${RETRY} :: rsync -r -v --progress -e ssh $1 $2:$3"
-    rsync -r -v --progress -e ssh $1 $2:$3 && break || sleep $5
+# Set the initial return value to failure
+false
+
+while [ $? -ne 0 -a $i -lt $MAX_RETRIES ]
+do
+    i=$(($i+1))
+
+    echo -e "Try $i/$MAX_RETRIES :: rsync -r -v --progress -e ssh $1 $2:$3"
+    rsync -r -v --progress -e ssh $1 $2:$3
+    sleep $4
 
 done
+
+if [ $i -eq $MAX_RETRIES ] ; then
+    echo -e "Hit maximum number of retries, giving up."
+    exit -1
+fi
 
 }
