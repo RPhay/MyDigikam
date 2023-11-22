@@ -125,3 +125,22 @@ echo "PATH=$PATH"
 export PKG_CONFIG_PATH=$VCPKG_INSTALL_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH
 
 }
+
+########################################################################
+# Upload a large file to a remote server with retry if failure
+# arg1 : local file path to upload.
+# arg2 : remote ssh url.
+# arg3 : remote directory.
+# arg4 : number of retry.
+# arg5 : pause between retry.
+UploadWithRetry()
+{
+
+for i in {0..$4}; do
+
+    echo -e "Try $i :: rsync -r -v --progress -e ssh $1 $2:$3"
+    rsync -r -v --progress -e ssh $1 $2:$3 && break || sleep $5
+
+done
+
+}
