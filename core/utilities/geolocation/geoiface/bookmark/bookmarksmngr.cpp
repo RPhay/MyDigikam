@@ -976,7 +976,7 @@ void BookmarksManager::exportBookmarks()
 
     if (!writer.write(fileName, d->bookmarkRootNode))
     {
-        QMessageBox::critical(nullptr, i18nc("@title:window", "Export error"), i18n("Error saving bookmarks"));
+        QMessageBox::critical(nullptr, i18nc("@title:window", "Export Bookmark"), i18n("Error saving bookmarks"));
     }
 }
 

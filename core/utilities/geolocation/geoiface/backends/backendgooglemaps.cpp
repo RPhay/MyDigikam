@@ -1707,7 +1707,7 @@ void BackendGoogleMaps::slotMessageEvent(const QString& message)
     if (d->keyChanged && message.contains(QLatin1String("Billing")))
     {
         QMessageBox::information(qApp->activeWindow(),
-                                 i18n("Javascript Message"), message);
+                                 i18nc("@title:window", "Javascript Message"), message);
         d->keyChanged = false;
     }
 }
