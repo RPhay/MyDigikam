@@ -202,7 +202,7 @@ void GLViewerPlugin::slotGLViewer()
         {
             qCCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no OpenGL context found";
             QMessageBox::critical(nullptr, i18n("OpenGL Error"),
-                                  i18n("No OpenGL context have been found"));
+                                  i18n("No OpenGL context has been found"));
             view->close();
             break;
         }
