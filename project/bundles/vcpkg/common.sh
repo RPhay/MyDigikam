@@ -137,16 +137,15 @@ UploadWithRetry()
 
 MAX_RETRIES=10
 i=0
+RC=1
 
-# Set the initial return value to failure
-false
+while [[ $RC -ne 0 -a $i -lt $MAX_RETRIES ]] ; do
 
-while [ $? -ne 0 -a $i -lt $MAX_RETRIES ]
-do
     i=$(($i+1))
 
     echo -e "Try $i/$MAX_RETRIES :: rsync -r -v --progress -e ssh $1 $2:$3"
     rsync -r -v --progress -e ssh $1 $2:$3
+    RC=$?
     sleep $4
 
 done
