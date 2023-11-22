@@ -436,7 +436,7 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
         if (foundDoubleData)
         {
             QMessageBox::information(d->imagesList,
-                                     i18nc("@title:window", "GPS Sync"),
+                                     i18nc("@title:window", "Geolocation Editor"),
                                      i18n("Found more than one point on the clipboard - can only assign one point at a time."));
         }
     }
@@ -813,7 +813,7 @@ void GPSItemListContextMenu::slotAltitudeLookupDone()
     if (requestStatus == LookupAltitude::StatusError)
     {
         const QString errorMessage = i18n("Altitude lookup failed:\n%1", d->altitudeLookup->errorMessage());
-        QMessageBox::information(d->imagesList, i18nc("@title:window", "GPS Sync"),errorMessage);
+        QMessageBox::information(d->imagesList, i18nc("@title:window", "Geolocation Editor"), errorMessage);
     }
 
     if (d->altitudeReceivedCount > 0)
