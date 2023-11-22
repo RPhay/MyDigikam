@@ -6,7 +6,7 @@
  * Date        : 2009-09-08
  * Description : global macros, variables and flags - Bundle functions.
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -312,6 +312,26 @@ void loadEcmQtTranslationFiles(QApplication& app)
     // This function is based on the code in:
     // https://invent.kde.org/frameworks/extra-cmake-modules/-/blob/master/modules/ECMQmLoader.cpp.in
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    const QStringList ecmCatalogs =
+    {
+//        QLatin1String("kauth6_qt"),               Do not exists.
+        QLatin1String("kbookmarks6_qt"),
+        QLatin1String("kcodecs6_qt"),
+        QLatin1String("kcompletion6_qt"),
+        QLatin1String("kconfig6_qt"),
+        QLatin1String("kcoreaddons6_qt"),
+        QLatin1String("kdbusaddons6_qt"),
+//        QLatin1String("kde6_xml_mimetypes"),      Do not exists.
+//        QLatin1String("kglobalaccel6_qt"),        Do not exists.
+        QLatin1String("kitemviews6_qt"),
+        QLatin1String("kwidgetsaddons6_qt"),
+        QLatin1String("kwindowsystem6_qt"),
+        QLatin1String("solid6_qt"),
+
+#else
+
     const QStringList ecmCatalogs =
     {
         QLatin1String("kauth5_qt"),
@@ -327,6 +347,9 @@ void loadEcmQtTranslationFiles(QApplication& app)
         QLatin1String("kwidgetsaddons5_qt"),
         QLatin1String("kwindowsystem5_qt"),
         QLatin1String("solid5_qt"),
+
+#endif
+
 
 #ifdef HAVE_MARBLE
 
@@ -468,14 +491,31 @@ void setupKSycocaDatabaseFile()
         {
             QString ksycoca;
             QDir dir(cachePath);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            QFileInfoList infoList = dir.entryInfoList(QStringList() << QLatin1String("ksycoca6*"),
+
+#else
+
             QFileInfoList infoList = dir.entryInfoList(QStringList() << QLatin1String("ksycoca5*"),
+
+#endif
                                                        QDir::Files, QDir::Time);
 
             while (!infoList.isEmpty())
             {
                 QFileInfo info = infoList.takeFirst();
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                if (info.fileName() != QLatin1String("ksycoca6_appimage"))
+
+#else
+
                 if (info.fileName() != QLatin1String("ksycoca5_appimage"))
+
+#endif
                 {
                     ksycoca = info.absoluteFilePath();
 
@@ -485,7 +525,16 @@ void setupKSycocaDatabaseFile()
 
             if (ksycoca.isEmpty())
             {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                ksycoca = cachePath + QLatin1String("/ksycoca6_appimage");
+
+#else
+
                 ksycoca = cachePath + QLatin1String("/ksycoca5_appimage");
+
+#endif
                 qputenv("KDESYCOCA", ksycoca.toUtf8());
             }
 
