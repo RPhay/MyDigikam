@@ -147,6 +147,7 @@ while [[ $RC -ne 0 || $i -lt $MAX_RETRIES ]] ; do
     echo -e "Try $i/$MAX_RETRIES :: rsync -r -v --progress -e ssh $1 $2:$3"
     bash -c "rsync -r -v --progress -e ssh $1 $2:$3"
     RC=$?
+    echo "rsync return code: $RC"
 
 done
 
