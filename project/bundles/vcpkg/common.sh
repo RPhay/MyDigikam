@@ -139,9 +139,14 @@ MAX_RETRIES=10
 i=0
 RC=1
 
-while [[ $RC -ne 0 ]] || [[ $i -lt $MAX_RETRIES ]] ; do
+while [[ $RC -ne 0 ]] ; do
 
     i=$(($i+1))
+
+    if [ $i -eq $MAX_RETRIES ] ; then
+        echo -e "Hit maximum number of retries, giving up."
+        exit -1
+    fi
 
     sleep $4
     echo -e "Try $i/$MAX_RETRIES :: rsync -r -v --progress -e ssh $1 $2:$3"
@@ -150,10 +155,5 @@ while [[ $RC -ne 0 ]] || [[ $i -lt $MAX_RETRIES ]] ; do
     echo "rsync return code: $RC"
 
 done
-
-if [ $i -eq $MAX_RETRIES ] ; then
-    echo -e "Hit maximum number of retries, giving up."
-    exit -1
-fi
 
 }
