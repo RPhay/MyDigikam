@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-21 00:40+0000\n"
+"POT-Creation-Date: 2023-11-22 00:40+0000\n"
 "PO-Revision-Date: 2023-04-22 13:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -8968,7 +8968,20 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "銳利化..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, fuzzy, kde-format
+#| msgid "No Profile Available"
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr "沒有可用的描述檔"
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@title:window"
@@ -19794,68 +19807,68 @@ msgstr "未知格式"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, fuzzy, kde-format
-#| msgid "Photo caption"
-msgctxt "Output: PDF"
-msgid "Print to PDF"
-msgstr "相片標題"
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "列印影像"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, fuzzy, kde-format
+#| msgid "Photo caption"
+msgctxt "Output: PDF"
+msgid "Print to PDF"
+msgstr "相片標題"
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, fuzzy, kde-format
 #| msgid "Photo caption"
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "相片標題"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "無標題描述"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "影像檔案名稱"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "Exif 日期時間"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "項目註解"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"

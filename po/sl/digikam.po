@@ -37,16 +37,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-21 00:40+0000\n"
-"PO-Revision-Date: 2023-11-19 08:56+0100\n"
+"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"PO-Revision-Date: 2023-11-21 07:29+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.4.1\n"
 
@@ -8882,7 +8882,20 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Izostri..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, fuzzy, kde-format
+#| msgid "No Profile Available"
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr "Na voljo ni nobenih profilov"
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
@@ -19260,65 +19273,65 @@ msgstr "Nepodprta velikost papirja"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, kde-format
-msgctxt "Output: PDF"
-msgid "Print to PDF"
-msgstr "Tiskaj na PDF"
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "Natisni v datoteko slike"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, kde-format
+msgctxt "Output: PDF"
+msgid "Print to PDF"
+msgstr "Tiskaj na PDF"
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "Tiskaj z Gimp-om"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "Ni napisa"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "Imena datotek slik"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "Exif datum in čas"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "Opombe predmeta"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
@@ -20859,15 +20872,13 @@ msgid "OpenGL Error"
 msgstr "napaka OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
-#, fuzzy, kde-format
-#| msgid "GL_ARB_texture_rectangle not supported"
+#, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
-msgstr "GL_ARB_texture_rectangle ni podprt"
+msgstr "GL_ARB_texture_rectangle OpenGL razširitev ni podprta na vašem sistemu"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
-#, fuzzy, kde-format
-#| msgid "No OpenGL context found"
+#, kde-format
 msgid "No OpenGL context have been found"
 msgstr "Ni mogoče najti konteksta OpenGL"
 
@@ -62032,18 +62043,7 @@ msgstr ""
 "vklapljajte te možnosti za program Darktable."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Add file types to be recognised as sidecars.\n"
-#| "digiKam (optionally) writes metadata to *.xmp sidecar\n"
-#| "files. Other programs might use different types, which\n"
-#| "can be specified below. digiKam will neither display these\n"
-#| "nor read from or write to them. But whenever a matching album\n"
-#| "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-#| "moved, copied or deleted, the same operation will be done\n"
-#| "on these sidecar files.\n"
-#| "Multiple extensions must be separated by a semicolon or a space."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
@@ -62057,12 +62057,12 @@ msgid ""
 msgstr ""
 "Dodajte vrste datotek, ki naj bi bile prepoznane kot priklopne datoteke.\n"
 "digiKam (neobvezno) zapiše metapodatke v priklopne datoteke * .xmp. Drugi "
-"programi lahko uporabljajo druge tipe datotek, ki jih lahko navedete spodaj. "
-"digiKam ne bo niti prikazal niti prebral ali pisal po njih. Kadar koli pa je "
-"ujemajoč predmet albuma (npr. \"Image.dng\" za \"image.dng.pp3\") "
-"preimenovan, premaknjen, kopiran ali izbrisan, bo enaka operacija izvedena "
-"tudi v teh priklopnih datotekah.\n"
-"Večkratne razširitve morajo biti ločene s podpičjem ali presledkom."
+"programi lahko uporabljajo druge vrste datotek, ki jih lahko navedete "
+"spodaj. digiKam jih ne bo niti prikazal niti prebral ali pisal po njih. "
+"Kadar koli pa je ujemajoč predmet albuma (npr. \"Image.dng\" za \"image.dng."
+"pp3\") preimenovan, premaknjen, kopiran ali izbrisan, bo enaka operacija "
+"izvedena tudi v teh priklopnih datotekah.\n"
+"Več končnic mora biti ločenih s podpičjem ali presledkom."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
 #, kde-format

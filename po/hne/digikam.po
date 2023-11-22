@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-21 00:40+0000\n"
+"POT-Creation-Date: 2023-11-22 00:40+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -8560,7 +8560,19 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "सुस्पस्ट करव..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr "कोई प्रोफाइल नइ मिलत..."
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
@@ -18731,67 +18743,67 @@ msgstr "अग्यात"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, fuzzy, kde-format
+msgctxt "Output: FILE"
+msgid "Print to Image File"
+msgstr "फोटू छापव..."
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, fuzzy, kde-format
 #| msgid "Photo caption"
 msgctxt "Output: PDF"
 msgid "Print to PDF"
 msgstr "फोटो सीर्सक"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, fuzzy, kde-format
-msgctxt "Output: FILE"
-msgid "Print to Image File"
-msgstr "फोटू छापव..."
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, fuzzy, kde-format
 #| msgid "Photo caption"
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "फोटो सीर्सक"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, fuzzy, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "लिबजेपीईजी"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, fuzzy, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "लिबपीएनजी"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, fuzzy, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "लिबटिफ"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, fuzzy, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "जियोलोकेसन"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, fuzzy, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "फोटू फाइल नाम देखाव"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, fuzzy, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "कैमरा नाम जोड़व"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, fuzzy, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "टिप्पनियाँ आयातित"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, fuzzy, kde-format
 #| msgid "Custom ratio:"
 msgctxt "Caption type: CUSTOM"

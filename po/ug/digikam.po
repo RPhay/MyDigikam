@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-21 00:40+0000\n"
+"POT-Creation-Date: 2023-11-22 00:40+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -8699,7 +8699,20 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "ئېنىقلىق"
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, fuzzy, kde-format
+#| msgid "Not available"
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr "ئىشلەتكىلى بولمايدۇ"
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@title:window"
@@ -18944,24 +18957,24 @@ msgstr "پىكسېل چوڭلۇقى"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, fuzzy, kde-format
-msgctxt "Output: PDF"
-msgid "Print to PDF"
-msgstr "تېخىمۇ كۆپ تاللانما"
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "سۈرەتنى بېسىپ چىقار"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, fuzzy, kde-format
+msgctxt "Output: PDF"
+msgid "Print to PDF"
+msgstr "تېخىمۇ كۆپ تاللانما"
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, fuzzy, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "تېخىمۇ كۆپ تاللانما"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "JPEG"
@@ -18969,7 +18982,7 @@ msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "PNG"
@@ -18977,7 +18990,7 @@ msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "TIFF"
@@ -18985,33 +18998,33 @@ msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, fuzzy, kde-format
 #| msgid "Location"
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "ئورنى"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "يېڭى سۈرەت ھۆججەت ئاتى"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, fuzzy, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "سىستېما خەت نۇسخا"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, fuzzy, kde-format
 #| msgid "Custom Font"
 msgctxt "Caption type: CUSTOM"

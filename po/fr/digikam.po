@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-21 00:40+0000\n"
-"PO-Revision-Date: 2023-11-06 21:55+0100\n"
+"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"PO-Revision-Date: 2023-11-20 20:43+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -79,7 +79,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 "X-Text-Markup: kde4\n"
 
 #: core/app/date/ddateedit.cpp:499
@@ -2832,12 +2832,7 @@ msgid "All supported files (%1)"
 msgstr "Tous les fichiers pris en charge (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2847,8 +2842,9 @@ msgid ""
 msgstr ""
 "IRC : %1 - #digikam\n"
 "Retours utilisateurs : %2\n"
+"Documentation : %3\n"
 "\n"
-"Date de compilation : %3 (cible : %4)"
+"Date de compilation : %4 (cible : %5)"
 
 #: core/app/utils/digikam_version.cpp:77
 #, fuzzy, kde-format
@@ -2902,10 +2898,9 @@ msgid "Clear all faces on this image"
 msgstr "Effacer toutes les visages sur cette image"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, fuzzy, kde-format
-#| msgid "Mark all unknown faces as ignored"
+#, kde-format
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Marquer tous les visages comme « Ignoré »"
+msgstr "Marquer tous les visages non confirmés comme « Ignoré »"
 
 #: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
@@ -3259,11 +3254,9 @@ msgid "Restore"
 msgstr "Restaurer"
 
 #: core/app/views/stack/trashview.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgid "Restore selection of files from the trash-bin."
-msgstr "Supprimer les images sélectionnées de la liste"
+msgstr "Restaurer la sélection de fichiers à partir de la corbeille"
 
 #: core/app/views/stack/trashview.cpp:143
 #, kde-format
@@ -3342,10 +3335,9 @@ msgid "%1/%2 items selected"
 msgstr "%1 / %2 éléments sélectionnés"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 1300 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 400 user-reports closed on bugzilla."
-msgstr "Plus de 1300 rapports de bogue fermés dans « bugzilla »."
+msgstr "Plus de 400 rapports de bogue fermés dans « bugzilla »."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3390,21 +3382,19 @@ msgstr ""
 "dans l'éditeur."
 
 #: core/app/views/stack/welcomepageview.cpp:146
-#, fuzzy, kde-format
-#| msgid "Add hamburger menu to tool-bar if main menu is hidden."
+#, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
-"Ajouter une barre d'outils avec un menu en hamburger dans le cas où le menu "
-"principal est masqué."
+"Ergonomie : ajoute un menu en hamburger à la barre d'outils, dans le cas où "
+"le menu principal est masqué."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid "Turn on this option to write metadata into DNG files."
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
-"Activer cette option pour écrire les métadonnées dans les fichiers « DNG »."
+"Métadonnées : activer cette option pour écrire des métadonnées dans le "
+"moteur « ExifTool »."
 
 #: core/app/views/stack/welcomepageview.cpp:148
 #, fuzzy, kde-format
@@ -3421,13 +3411,12 @@ msgstr ""
 "par défaut."
 
 #: core/app/views/stack/welcomepageview.cpp:149
-#, fuzzy, kde-format
-#| msgid "Optimize layout of Metadata Edit plugin for a better usability."
+#, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
-"Optimiser la disposition du module externe de modifications des métadonnées "
-"pour une plus grande facilité d'utilisation."
+"Métadonnées : optimise la disposition du module externe de modifications des "
+"métadonnées pour une plus grande ergonomie."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
@@ -3449,50 +3438,48 @@ msgstr ""
 "options [c] ou [c, step]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Add random text sequence numbering with option [r]."
+#, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
-"Ajouter une numérotation aléatoire des séquences de texte avec l'option [r]."
+"Renommage avancé : ajoute une numérotation aléatoire des séquences de texte "
+"avec l'option [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add configurable first character for the unique modifier with {unique:n,"
-#| "c}."
+#, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
-"Ajouter un premier caractère configurable pour un modificateur unique avec "
-"{unique:n, c}."
+"Renommage avancé : ajoute un premier caractère configurable pour un "
+"modificateur unique avec {unique : n, c}."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Return items by number of face regions"
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "Retourner les éléments par nombre de régions de visages"
+msgstr ""
+"Recherche avancée : ajoute la recherche pour les éléments s)par numéro de "
+"zone de visages"
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Retourner les éléments sans régions de visages"
+msgstr ""
+"Recherche avancée : ajoute la recherche pour les éléments sans zone de "
+"visages"
 
 #: core/app/views/stack/welcomepageview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Add support for cross-platform network paths."
+#, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr ""
-"Ajouter la prise en charge des emplacements de réseau inter-plate-forme"
+"Collections : ajoute la prise en charge des emplacements de réseau inter-"
+"plate-forme"
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+#, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
-"Ajouter la prise en charge du mode « WAL »  (Write-Ahead-Logging) pour "
-"SQLite."
+"Base de données : ajoute la prise en charge du mode « WAL »  (Write-Ahead-"
+"Logging) pour SQLite."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3505,8 +3492,7 @@ msgstr ""
 "« KF5::Sonnet »."
 
 #: core/app/views/stack/welcomepageview.cpp:159
-#, fuzzy, kde-format
-#| msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
@@ -3519,15 +3505,16 @@ msgstr ""
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
+"Ajouter la prise en charge de traduction en ligne pour le composant "
+"graphique de modifications pour la langue alternative."
 
 #: core/app/views/stack/welcomepageview.cpp:161
-#, fuzzy, kde-format
-#| msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
-"Ajouter un panneau de configuration pour la localisation dans "
-"Configuration / Divers pour les logiciels DigiKam et Showfoto."
+"Ajouter un panneau de configuration de localisation dans Configuration / "
+"Divers pour les logiciels DigiKam et Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
@@ -3535,6 +3522,8 @@ msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
+"Ajouter une configuration pour lister les langues alternatives / traduites "
+"préférées dans le composant graphique de modification de texte."
 
 #: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
@@ -3548,11 +3537,15 @@ msgstr ""
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
+"Ajoutez des paramètres d'affichage d'icônes pour personnaliser la visibilité "
+"des étiquettes sur les miniatures."
 
 #: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
+"Ajoutez une prise en charge des images au format « float16 » (Half Float) "
+"dans le chargeur « TIFF »."
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, fuzzy, kde-format
@@ -3584,32 +3577,29 @@ msgstr ""
 "d'images</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign pick label metadata by image quality"
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
-"Un outil pour attribuer des métadonnées pour l'étiquette de sélection selon "
-"la qualité d'image."
+"Gestionnaire de file : ajouter un nouvel outil pour attribuer "
+"automatiquement une étiquette de sélection en analysant la qualité d'image."
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign rating, pick, and color labels in batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
-"Ajouter un nouvel outil pour attribuer des étiquettes de notation, de "
-"sélection et de couleurs par lot."
+"Gestionnaire de file : ajoute un nouvel outil pour attribuer des étiquettes "
+"de notation, de sélection et de couleurs par lot."
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign labels metadata to images"
+#, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
-msgstr "Un outil pour attribuer des métadonnées d'étiquette aux images."
+msgstr ""
+"Gestionnaire de file : ajoute un nouvel outil pour attribuer des titres et "
+"des légendes dans le lot de travaux."
 
 #: core/app/views/stack/welcomepageview.cpp:171
 #, kde-format
@@ -3626,12 +3616,11 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:173
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 20230403."
 msgstr ""
-"Mettre à jour le moteur interne « RAW » vers la dernière version stable de "
-"« Libraw » 0.21.1."
+"Mettre à jour le moteur interne « RAW » vers la dernière version de la "
+"bibliothèque « libraw » en date du 03 Avril 2023."
 
 #: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
@@ -3664,16 +3653,13 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 6.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
-"Voici quelques unes des nouvelles fonctionnalités de cette version de "
-"digiKam (comparées à digiKam 6.x) :"
+"Voici quelques-unes des nouvelles fonctionnalités intégrées dans cette "
+"version de DigiKam (Comparées à DigiKam 7) :"
 
 #: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
@@ -6145,10 +6131,9 @@ msgid "Enter caption text here."
 msgstr "Saisissez ici le texte de la légende."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Clean up and overwrite"
+#, kde-format
 msgid "Clean up and overwrite metadata"
-msgstr "Effacer et écraser"
+msgstr "Effacer et écraser les métadonnées"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -8978,11 +8963,11 @@ msgid "Restoration"
 msgstr "Restauration"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:344
-#, fuzzy, kde-format
-#| msgid "Photograph Restoration Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
-msgstr "Fichier de configuration de restauration de photographie à charger"
+msgstr ""
+"Fichier de configuration pour la restauration de photographies à charger"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:360
 #, kde-format
@@ -8999,11 +8984,11 @@ msgstr ""
 "restauration de photographie."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
-#, fuzzy, kde-format
-#| msgid "Photograph Restoration Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
-msgstr "Fichier de configuration de restauration de photographie à enregistrer"
+msgstr ""
+"Fichier de configuration pour la restauration de photographies à enregistrer"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:401
 #, kde-format
@@ -9076,7 +9061,20 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Renforcement de la netteté…"
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, fuzzy, kde-format
+#| msgid "No Profile Available"
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr "Pas de profil disponible"
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
@@ -11053,11 +11051,11 @@ msgid "Resize"
 msgstr "Redimensionnement"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:918
-#, fuzzy, kde-format
-#| msgid "Photograph Resizing Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Load"
-msgstr "Fichier de configuration de redimensionnement de photo à charger"
+msgstr ""
+"Fichier de configuration de redimensionnement de photographies à charger"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:934
 #, kde-format
@@ -11074,11 +11072,11 @@ msgstr ""
 "redimensionnement de photographie."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:951
-#, fuzzy, kde-format
-#| msgid "Photograph Resizing Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Save"
-msgstr "Fichier de configuration de redimensionnement de photo à enregistrer"
+msgstr ""
+"Fichier de configuration de redimensionnement de photographies à enregistrer"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:969
 #, kde-format
@@ -11368,20 +11366,16 @@ msgid "One map"
 msgstr "Une seule carte"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - vertical"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
-msgstr "Deux cartes - verticalement"
+msgstr "Deux cartes - à droite et à gauche"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - horizontal"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
-msgstr "Deux cartes - horizontalement"
+msgstr "Deux cartes - en haut et en bas"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format
@@ -11813,8 +11807,7 @@ msgid "Destination Directory:"
 msgstr "Dossier de destination :"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:105
-#, fuzzy, kde-format
-#| msgid "Select a directory in which to save the kml file and pictures"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select a Directory in Which to Save the KML File and Pictures"
 msgstr ""
@@ -16829,14 +16822,12 @@ msgid "&Preview"
 msgstr "A&perçu"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@info: tooltip"
-#| msgid "Process a preview of bracketed images stack with current settings."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process a preview of bracketed images stack with current settings."
 msgstr ""
-"Traite un aperçu de la pile d'images ayant fait l'objet d'une prise de vue "
-"en fourchette, selon les paramètres courants."
+"Traiter un aperçu de la pile d’images entre crochets avec les paramètres "
+"actuels."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:148
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:136
@@ -19666,65 +19657,65 @@ msgstr "Taille de papier non prise en charge"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, kde-format
-msgctxt "Output: PDF"
-msgid "Print to PDF"
-msgstr "Imprimer dans un fichier au format PDF"
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "Imprimer dans un fichier image"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, kde-format
+msgctxt "Output: PDF"
+msgid "Print to PDF"
+msgstr "Imprimer dans un fichier au format PDF"
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "Imprimer avec Gimp"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "Aucune légende"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "Noms des fichiers d'images"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "Date et heure EXIF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "Commentaire de l'élément"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
@@ -21109,9 +21100,7 @@ msgstr "Définir comme fond d'écran"
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:92
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:64
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error while to set image as wallpaper"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error While to Set Image as Wallpaper"
 msgstr "Erreur lors de la définition de l'image comme fond d'écran"
@@ -22369,31 +22358,7 @@ msgid "A tool to render slideshow"
 msgstr "Un outil de rendu de diaporama"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Properties:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22433,9 +22398,9 @@ msgstr ""
 "le bas » </i></td></tr><tr><td></td><td>Touche <i> » Flèche droite » </i></"
 "td></tr><tr><td></td><td>Molette de la souris vers le bas</td></tr><tr><td></"
 "td><td>Bouton droit de la souris</td></tr><tr><td>Pause / Démarrage : </"
-"td><td>Touche <i> « Espace » </i></td></tr><tr><td>Paramétrage du "
+"td><td>Touche <i> « Espace » </i></td></tr><tr><td>Configuration du "
 "diaporama : </td><td>Touche <i> « F2 » </i></td><td>Afficher / masquer les "
-"propriétés :</td><td>Touche <i> « F4 » </i></td></tr><tr><td>Quitter : </"
+"recouvrements :</td><td>Touche <i> « F4 » </i></td></tr><tr><td>Quitter : </"
 "td><td>Touche <i> « ESC » </i></td> </tr><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Propriétés de l'élément</h1></b></center></nobr></"
 "td></tr><tr><td>Modifier les étiquettes :</td><td>Utiliser les raccourcis de "
@@ -22974,11 +22939,10 @@ msgid "Export to Facebook Web Service"
 msgstr "Exporter vers le service Internet « Facebook »"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
-#, fuzzy, kde-format
-#| msgid "Start upload to Facebook web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
-msgstr "Démarrer l'envoi vers le service Web « Facebook »"
+msgstr "Démarrer l'envoi vers le service Internet « Facebook »"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:125
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:314
@@ -23107,8 +23071,7 @@ msgstr "Démarrer l'exportation"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
-#, fuzzy, kde-format
-#| msgid "Start export to the specified target"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Démarrer l'exportation vers la cible spécifiée"
@@ -23241,9 +23204,7 @@ msgid "Start Import"
 msgstr "Démarrer l'importation"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Start importing the specified images into the currently selected album."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr ""
@@ -23406,6 +23367,8 @@ msgid ""
 "Copy the full URL from the external browser that contains the \"oauth_token"
 "\" entry:"
 msgstr ""
+"Copiez l'URL complète du navigateur externe contenant l'entrée "
+"« oauth_token » :"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:371
 #, kde-format
@@ -24042,12 +24005,10 @@ msgid "Export to Google Photos Service"
 msgstr "Exporter vers le service Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Google Photos Service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Photos service"
-msgstr "Lancer l'envoi vers le service Google Photos"
+msgstr "Démarrer l'envoi vers le service Internet « Google Photos »"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:196
 #, kde-format
@@ -24063,12 +24024,11 @@ msgid "Start Download"
 msgstr "Démarrer un téléchargement"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start download from Google Photos service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from Google Photos service"
-msgstr "Lancer le téléchargement depuis le service Google Photos"
+msgstr ""
+"Démarrer le téléchargement à partir du service Internet « Google Photos »"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:363
 #: core/dplugins/generic/webservices/google/gswindow.cpp:430
@@ -24273,11 +24233,10 @@ msgid "Upload"
 msgstr "Envoyer"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:113
-#, fuzzy, kde-format
-#| msgid "Start upload to ImageShack web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
-msgstr "Démarrer l'envoi vers le service web ImageShack"
+msgstr "Démarrer l'envoi vers le service Internet « ImageShack »"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:241
 #, kde-format
@@ -26396,11 +26355,10 @@ msgid "Import from SmugMug Web Service"
 msgstr "Importer depuis le service Internet « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
-#, fuzzy, kde-format
-#| msgid "Start download from SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
-msgstr "Démarrer le téléchargement depuis le service Web « SmugMug »"
+msgstr "Démarrer le téléchargement à partir du service Internet « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
 #, kde-format
@@ -26739,15 +26697,12 @@ msgid "Export by Web Service"
 msgstr "Export par le service web"
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
-#, fuzzy, kde-format
-#| msgid ""
-#| "Error to import RAW image with UFRaw\n"
-#| "Close this dialog to load RAW image with native import tool"
+#, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"Erreur lors de l'importation d'une image « Raw » avec « UFRaw ».\n"
+"Erreur lors de l'importation d'une image « Raw » avec « ART ».\n"
 "Veuillez fermer cette boîte de dialogue pour charger une image « Raw » avec "
 "l'outil natif d'importation."
 
@@ -28867,12 +28822,11 @@ msgid "Database type is not supported."
 msgstr "Ce type de base de données n'est pas pris en charge."
 
 #: core/libs/database/server/databaseserver.cpp:296
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file."
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
-"Aucun emplacement vers la commande pour le serveur mysql n'est défini dans "
-"le fichier de configuration."
+"Aucun emplacement vers la commande de mise à niveau de MySQL défini dans le "
+"fichier de configuration."
 
 #: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
@@ -28922,11 +28876,11 @@ msgstr ""
 "global.conf)."
 
 #: core/libs/database/server/databaseserver.cpp:503
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
-msgstr "Le prétraitement est en cours. Veuillez patienter."
+msgstr ""
+"La base de données MySQL interne est en cours d'initialisation. Veuillez "
+"patienter..."
 
 #: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
@@ -28965,11 +28919,11 @@ msgstr ""
 "de la base de données : %2</p>"
 
 #: core/libs/database/server/databaseserver.cpp:750
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
-msgstr "Le prétraitement est en cours. Veuillez patienter."
+msgstr ""
+"Une mise à niveau de la base de données MySQL est en cours. Veuillez "
+"patienter."
 
 #: core/libs/database/server/databaseserver.cpp:794
 #, kde-format
@@ -29968,14 +29922,12 @@ msgstr ""
 "MariaDB."
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr ""
-"Ce fichier binaire est utilisé pour démarrer une instance dédiée du serveur "
-"MariaDB."
+"Ce fichier binaire est utilisé pour mettre à niveau la base de données vers "
+"la version actuelle du serveur."
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
@@ -30246,8 +30198,7 @@ msgid "<i>VideoCodec:</i>"
 msgstr "<i>Codec vidéo :</i>"
 
 #: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
-#, fuzzy, kde-format
-#| msgid "Shared Libraries and Components Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Informations sur les bibliothèques partagées et les composants"
@@ -31248,9 +31199,7 @@ msgid "Total: %1 (%)"
 msgstr "Total : %1 (%)"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select Gimp Gains Mixer File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "Sélectionnez le fichier « GIMP » de mélangeur de gains à charger"
@@ -32753,11 +32702,11 @@ msgid "Stage 4"
 msgstr "Étape 4"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:637
-#, fuzzy, kde-format
-#| msgid "Photograph Local Contrast Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Load"
-msgstr "Fichier de configuration de contraste local de photographie à charger"
+msgstr ""
+"Fichier de configuration pour le contraste local de photographie à charger"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:655
 #, kde-format
@@ -32774,12 +32723,12 @@ msgstr ""
 "local de photographie."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:691
-#, fuzzy, kde-format
-#| msgid "Photograph Local Contrast Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Save"
 msgstr ""
-"Fichier de configuration de contraste local de photographie à enregistrer"
+"Fichier de configuration pour le contraste local de photographie à "
+"enregistrer"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:727
 #, kde-format
@@ -33424,12 +33373,12 @@ msgid "Chrominance Red"
 msgstr "Chrominance rouge"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:372
-#, fuzzy, kde-format
-#| msgid "Photograph Noise Reduction Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Load"
 msgstr ""
-"Fichier de configuration de réduction de bruit de photographie à charger"
+"Fichier de configuration pour la réduction de bruit de photographies à "
+"charger"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:390
 #, kde-format
@@ -33446,12 +33395,12 @@ msgstr ""
 "de bruit de photographie."
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:418
-#, fuzzy, kde-format
-#| msgid "Photograph Noise Reduction Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Save"
 msgstr ""
-"Fichier de configuration de réduction de bruit de photographie à enregistrer"
+"Fichier de configuration pour la réduction de bruit de photographies à "
+"enregistrer"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:443
 #, kde-format
@@ -33653,8 +33602,7 @@ msgstr ""
 "gaussienne."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:515
-#, fuzzy, kde-format
-#| msgid "Photograph Refocus Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr "Fichier de configuration de recentrage de photographie à charger"
@@ -33674,11 +33622,10 @@ msgstr ""
 "de photographie."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:564
-#, fuzzy, kde-format
-#| msgid "Photograph Refocus Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
-msgstr "Fichier de configuration de recentrage de photographie à enregistrer"
+msgstr "Fichier de configuration de recentrage de photographies à enregistrer"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:594
 #, kde-format
@@ -34106,13 +34053,11 @@ msgstr ""
 "pour définir un ajustement d'exposition précis."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:522
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "White Color Balance Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
 msgstr ""
-"Fichier de configuration à charger pour la balance de la couleur blanche "
+"Fichier de configuration pour la balance de la couleur blanche à charger"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:540
 #, kde-format
@@ -34131,13 +34076,11 @@ msgstr ""
 "balance de la couleur blanche."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:569
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "White Color Balance Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
 msgstr ""
-"Fichier de configuration à enregistrer pour la balance de la couleur blanche "
+"Fichier de configuration pour la balance de la couleur blanche à enregistrer"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:596
 #, kde-format
@@ -37077,11 +37020,10 @@ msgid "ETA:"
 msgstr "Temps restant :"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:185
-#, fuzzy, kde-format
-#| msgid "Online Version Checker - Pre-Release"
+#, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
-msgstr "Vérificateur de version en ligne - Préversion"
+msgstr "Vérificateur de version en ligne - Pré-version"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:186
 #, kde-format
@@ -37091,8 +37033,7 @@ msgstr ""
 "patienter…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:190
-#, fuzzy, kde-format
-#| msgid "Online Version Checker - Stable Version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr "Vérificateur de version en ligne - Version stable"
@@ -40953,8 +40894,7 @@ msgid "Cannot create thumbnail for %1"
 msgstr "Impossible de créer une vignette pour %1"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
-#, fuzzy, kde-format
-#| msgid "Failed to initialize thumbnails database"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Initialize Thumbnails Database"
 msgstr "Impossible d'initialiser la base de données de vignettes"
@@ -40965,11 +40905,10 @@ msgid "Error message: %1"
 msgstr "Message d'erreur : %1"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Determine Time Difference With Clock Photo"
+#, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
-msgstr "Déterminer la différence de temps avec une photo d'horloge"
+msgstr "Déterminer la différence de temps avec Clock Photo"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:90
 #, kde-format
@@ -45233,9 +45172,7 @@ msgid "Switch to %1"
 msgstr "Basculer vers %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:423
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to translate string with %1 Web-service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Translate String with %1 Web-Service"
 msgstr "Impossible de traduire une chaîne avec le service Internet %1"
@@ -49679,6 +49616,7 @@ msgstr "Détecter automatiquement"
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
+"Détecter automatiquement la langue en analysant le contenu de la chaîne"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
@@ -51752,6 +51690,8 @@ msgstr "<p>Ajoute des options de renommage à la chaîne d'analyse.</p>"
 msgid ""
 "To apply a modifier, append it to the option, for instance: [file]{upper}"
 msgstr ""
+"Pour appliquer un modificateur, ajoutez-le à l'option, par exemple : "
+"[fichier]{supérieur}"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
@@ -52570,22 +52510,20 @@ msgstr ""
 "r|| = respectant un ordre aléatoire)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start)"
+#, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
-msgstr "Numéro de séquence (démarrage personnalisé)"
+msgstr "Numéro de séquence (Démarrage personnalisé) ||options|| : ||e||, ||f||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom step)"
+#, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
-msgstr "Numéro de séquence (Étape personnalisée)"
+msgstr "Numéro de séquence (Étape personnalisée)||options|| : ||c||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start + step)"
+#, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
-msgstr "Numéro de séquence (démarrage + pas personnalisés)"
+msgstr ""
+"Numéro de séquence (Démarrage + pas personnalisés) ||options|| : ||e||, ||f||"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:19
@@ -52773,12 +52711,10 @@ msgstr "Effacer les résultats non confirmés et analyser à nouveau"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
 #: core/utilities/maintenance/maintenancedlg.cpp:322
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Clear unconfirmed results and rescan"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
-msgstr "Effacer les résultats non confirmés et analyser à nouveau"
+msgstr "Effacer les résultats précédents et analyser à nouveau"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
@@ -53500,7 +53436,7 @@ msgstr "Préférez le dossier sélectionné comme référence"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
-msgstr ""
+msgstr "Préférez un dossier différent de celui sélectionné comme référence"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:221
 #, kde-format
@@ -53515,12 +53451,10 @@ msgid "Prefer Newer Modification Date"
 msgstr "Préférer une nouvelle date de modification"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:228
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "Informations sur la sélection courante d'images"
+msgstr "Sélectionnez une méthode pour la sélection d'images de référence"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:230
 #, kde-format
@@ -53529,11 +53463,10 @@ msgid "Reference"
 msgstr "Référence"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:236
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "&Choisir la méthode de sélection des images :"
+msgstr "Méthode de sélection des images de référence"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:243
 #, kde-format
@@ -54113,10 +54046,10 @@ msgid "Only use selected images"
 msgstr "N'utiliser que les images sélectionnées"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image type."
+#, kde-format
 msgid "Set this option to correlate selected images only"
-msgstr "Cochez cette option pour afficher le type de l'image."
+msgstr ""
+"Sélectionnez cette option pour ne corréler que les images sélectionnées"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
@@ -54209,14 +54142,12 @@ msgstr[0] "Impossible de charger le fichier GPX suivant :"
 msgstr[1] "Impossible de charger les %1 fichiers GPX suivants :"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
-#, fuzzy, kde-format
-#| msgid "Error loading GPX file"
-#| msgid_plural "Error loading GPX files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Loading GPX File"
 msgid_plural "Error Loading GPX Files"
-msgstr[0] "Erreur lors du chargement du fichier GPX"
-msgstr[1] "Erreur lors du chargement des fichiers GPX"
+msgstr[0] "Erreur lors du chargement du fichier « GPX »"
+msgstr[1] "Erreur lors du chargement des fichiers « GPX »"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
 #, kde-format
@@ -56279,10 +56210,9 @@ msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Conversion du fichier <filename>%1</filename> en DNG ignorée"
 
 #: core/utilities/import/backend/cameracontroller.cpp:808
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to run script for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
-msgstr "Impossible de démarrer le script pour <filename>%1</filename>"
+msgstr "Impossible d'ouvrir le script pour <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format
@@ -58400,28 +58330,22 @@ msgid "Remove all tags from image"
 msgstr "Supprimer toutes les étiquettes de l'image"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Impossible d'envoyer l'image %1\n"
-"Voulez-vous continuer ?"
+"Tous les visages sont supprimés des %1 images sélectionnées. \n"
+"Voulez-vous vraiment continuer ?"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Impossible d'envoyer l'image %1\n"
-"Voulez-vous continuer ?"
+"Toutes les étiquettes sont supprimées des %1 images sélectionnées.  \n"
+"Voulez-vous vraiment continuer ?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
 #, kde-format
@@ -59264,10 +59188,9 @@ msgid "File Size"
 msgstr "Taille du fichier"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
-#, fuzzy, kde-format
-#| msgid "Size of the file"
+#, kde-format
 msgid "Size of the file in megabytes"
-msgstr "Taille du fichier"
+msgstr "Taille du fichier en méga-octets"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:122
 #: core/utilities/searchwindow/searchfields_createfield.cpp:134
@@ -59277,10 +59200,9 @@ msgid "-"
 msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
-#, fuzzy, kde-format
-#| msgid "Size of the file"
+#, kde-format
 msgid "Size of the file in bytes"
-msgstr "Taille du fichier"
+msgstr "Taille du fichier en octets"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
@@ -60297,13 +60219,12 @@ msgid "Show digiKam &pick label"
 msgstr "Afficher &le titre de digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:198
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
-"Cochez cette option pour afficher le titre de digiKam sous la vignette de "
-"l'image."
+"Cochez cette option pour afficher l’étiquette de sélection de digiKam sous "
+"la vignette de l’image."
 
 #: core/utilities/setup/album/setupalbumview.cpp:201
 #, kde-format
@@ -60311,14 +60232,13 @@ msgid "Show digiKam color &label"
 msgstr "Afficher l'étiquette de couleur de DigiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:202
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam tags below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
 msgstr ""
-"Cochez cette option pour afficher les étiquettes de digiKam sous la vignette "
-"de l'image."
+"Cochez cette option pour afficher l’étiquette de couleur de digiKam comme "
+"une bordure autour de la vignette."
 
 #: core/utilities/setup/album/setupalbumview.cpp:205
 #: core/utilities/setup/camera/setupcamera.cpp:499
@@ -60562,20 +60482,16 @@ msgstr ""
 "8 bits."
 
 #: core/utilities/setup/album/setupalbumview.cpp:333
-#, fuzzy, kde-format
-#| msgid "Preview image is converted to 8 bits for a faster viewing"
+#, kde-format
 msgid "Preview image is always scaled to fit to window"
-msgstr "L'image d'aperçu est convertie en 8 bits pour un rendu plus rapide"
+msgstr "L'image d'aperçu est toujours ajustée pour correspondre à la fenêtre"
 
 #: core/utilities/setup/album/setupalbumview.cpp:334
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
-"Décochez cette case si vous ne voulez pas convertir un aperçu 16 bits en "
-"8 bits."
+"Décochez cette case si vous ne voulez pas ajuster les petites images à la "
+"fenêtre."
 
 #: core/utilities/setup/album/setupalbumview.cpp:336
 #: core/utilities/setup/camera/setupcamera.cpp:547
@@ -61481,11 +61397,10 @@ msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:658
 #: core/utilities/setup/collections/setupcollectionview.cpp:1489
-#, fuzzy, kde-format
-#| msgid "Choose the folder containing your collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
-msgstr "Choisissez le dossier contenant votre collection"
+msgstr "Sélectionnez le dossier contenant votre collection"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:695
 #, kde-format

@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-21 00:40+0000\n"
-"PO-Revision-Date: 2023-11-16 13:55+0100\n"
+"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"PO-Revision-Date: 2023-11-21 14:43+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -8952,7 +8952,20 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Изостряне..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, fuzzy, kde-format
+#| msgid "No Profile Available"
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr "Няма наличен профил"
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
@@ -11249,20 +11262,16 @@ msgid "One map"
 msgstr "Една карта"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - vertical"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
-msgstr "Две карти - вертикално"
+msgstr "Две карти - в ляво и дясно"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - horizontal"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
-msgstr "Две карти - хоризонтални"
+msgstr "Две карти - отгоре и отдолу"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format
@@ -19478,65 +19487,65 @@ msgstr "Неподдържан размер на хартията"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, kde-format
-msgctxt "Output: PDF"
-msgid "Print to PDF"
-msgstr "Отпечатване в PDF"
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "Отпечатване във файл с изображение"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, kde-format
+msgctxt "Output: PDF"
+msgid "Print to PDF"
+msgstr "Отпечатване в PDF"
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "Отпечатване с Gimp"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "Без надпис"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "Имена на файлове с изображения"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "Exif  дата-час"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "Коментари на елемента"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
@@ -21093,15 +21102,13 @@ msgid "OpenGL Error"
 msgstr "OpenGL грешка"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
-#, fuzzy, kde-format
-#| msgid "GL_ARB_texture_rectangle not supported"
+#, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
-msgstr "Не се поддържа GL_ARB_texture_rectangle"
+msgstr "Разширения GL_ARB_texture_rectangle OpenGL не се поддържат"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
-#, fuzzy, kde-format
-#| msgid "No OpenGL context found"
+#, kde-format
 msgid "No OpenGL context have been found"
 msgstr "Не е намерен OpenGL контекст"
 
@@ -62571,18 +62578,7 @@ msgstr ""
 "програми. За Darktable не включвайте тази опция."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Add file types to be recognised as sidecars.\n"
-#| "digiKam (optionally) writes metadata to *.xmp sidecar\n"
-#| "files. Other programs might use different types, which\n"
-#| "can be specified below. digiKam will neither display these\n"
-#| "nor read from or write to them. But whenever a matching album\n"
-#| "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-#| "moved, copied or deleted, the same operation will be done\n"
-#| "on these sidecar files.\n"
-#| "Multiple extensions must be separated by a semicolon or a space."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
