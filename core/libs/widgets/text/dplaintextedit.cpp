@@ -79,9 +79,9 @@ void DPlainTextEdit::setLinesVisible(unsigned int lines)
     const int iconSize = style()->pixelMetric(QStyle::PM_SmallIconSize, nullptr, this);
     QMargins cm        = contentsMargins();
     qreal tm           = document()->documentMargin();
-    int h              = qMax(fm.height(), qMax(14, iconSize - 2)) * d->lines +
-                         2 * frameWidth()                                     +
-                         2 * tm                                               +
+    int h              = qMax(fm.height(), qMax(16, iconSize)) * d->lines +
+                         2 * frameWidth()                                 +
+                         2 * tm                                           +
                          cm.top() + cm.bottom();
     setFixedHeight(h);
 
