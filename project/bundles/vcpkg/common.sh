@@ -136,9 +136,9 @@ export PKG_CONFIG_PATH=$VCPKG_INSTALL_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH
 UploadWithRetry()
 {
 
-for i in {0..$4}; do
+for RETRY in {0..$4}; do
 
-    echo -e "Try $i :: rsync -r -v --progress -e ssh $1 $2:$3"
+    echo -e "Try ${RETRY} :: rsync -r -v --progress -e ssh $1 $2:$3"
     rsync -r -v --progress -e ssh $1 $2:$3 && break || sleep $5
 
 done
