@@ -246,7 +246,7 @@ BUGFIXES:
 230 ==> 466134 - Improve task progress information.
 231 ==> 414572 - Playing video stuttering in fullscreen mode / slideshow.
 232 ==> 472133 - At 4k resolution, high resolution adaptation mode is selected, and some window fonts are too small.
-233 ==> 
+233 ==> 450117 - Exif information in Metadata tab from right sidebar are not available although Exiftool Tab work fine.
 234 ==> 
 235 ==> 
 236 ==> 
