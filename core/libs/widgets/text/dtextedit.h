@@ -6,7 +6,7 @@
  * Date        : 2022-08-01
  * Description : Text edit widgets with spellcheck support and edition limitations.
  *
- * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -31,7 +31,7 @@ namespace Digikam
 class LocalizeContainer;
 
 /**
- * A text edit widget based on QTextEdit with spell checker capabilities based on KF5::Sonnet (optional).
+ * A text edit widget based on QTextEdit with spell checker capabilities based on Sonnet (optional).
  * Widget size can be constrained with the number of visible lines.
  * A single line constraint will emulate QLineEdit. See setLinesVisible() for details.
  * The maximum number of characters can be limited with setMaxLenght().
@@ -110,7 +110,7 @@ public:
      * This property holds whether the edit widget handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
      * To reset this setting, pass a empty string as language.
-     * If KF5::Sonnet depedencies is not resolved, these method do nothing.
+     * If Sonnet depedencies is not resolved, these method do nothing.
      */
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
@@ -166,7 +166,7 @@ private:
 // ---------------------------------------------------------------------------
 
 /**
- * A text edit widget based on QPlainTextEdit with spell checker capabilities based on KF5::Sonnet (optional).
+ * A text edit widget based on QPlainTextEdit with spell checker capabilities based on Sonnet (optional).
  * Widget size can be constrained with the number of visible lines.
  * A single line constraint will emulate QLineEdit. See setLinesVisible() for details.
  * The maximum number of characters can be limited with setMaxLenght().
@@ -245,7 +245,7 @@ public:
      * This property holds whether the edit widget handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
      * To reset this setting, pass a empty string as language.
-     * If KF5::Sonnet depedencies is not resolved, these method do nothing.
+     * If Sonnet depedencies is not resolved, these method do nothing.
      */
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
