@@ -139,7 +139,7 @@ MAX_RETRIES=10
 i=0
 RC=1
 
-while [[ $RC -ne 0 || $i -lt $MAX_RETRIES ]] ; do
+while [[ $RC -ne 0 ]] || [[ $i -lt $MAX_RETRIES ]] ; do
 
     i=$(($i+1))
 
