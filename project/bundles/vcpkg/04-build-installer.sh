@@ -135,6 +135,7 @@ cp    $BUILDDIR/data/breeze.rcc                                           $BUNDL
 cp    $BUILDDIR/data/breeze-dark.rcc                                      $BUNDLEDIR/breeze-dark.rcc            2>/dev/null
 #cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc          2>/dev/null
 #cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc     2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/icons                                   $BUNDLEDIR/data                       2>/dev/null
 
 echo -e "\n---------- i18n"
 # Qt framekork translations
