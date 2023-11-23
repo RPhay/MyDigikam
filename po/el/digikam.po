@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -11537,7 +11537,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Αδυναμία αποθήκευσης του \"%1\" αρχείου"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -12453,8 +12455,8 @@ msgstr[1] "<p>%1 χαρακτήρες.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, fuzzy, kde-format
 #| msgid "<p>1 character.</p>"
 #| msgid_plural "<p>%1 characters.</p>"
@@ -22056,7 +22058,7 @@ msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -56769,6 +56771,7 @@ msgstr "URL:"
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, fuzzy, kde-format
 #| msgid "Script Manager"
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Διαχειριστής σεναρίων"
 
@@ -56904,6 +56907,13 @@ msgstr "Προσθήκη φακέλων..."
 msgid "New Folder"
 msgstr "Κατά φάκελο"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "Διαχείριση χρωμάτων"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, fuzzy, kde-format
 #| msgid ""
@@ -57007,10 +57017,10 @@ msgstr "Σελιδοδείκτες"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
-#| msgid "Export Tools"
+#| msgid "Bookmarks"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "Εργαλεία εξαγωγής"
+msgid "Export Bookmark"
+msgstr "Σελιδοδείκτες"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
@@ -57387,14 +57397,6 @@ msgstr "Αφαίρεση ταχύτητας"
 msgid "Look up missing altitude values"
 msgstr "Αναζήτηση υπολειπόμενων τιμών υψομέτρου"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "Συγχρονισμός GPS"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -57698,6 +57700,13 @@ msgstr "Οι ετικέτες εικόνων άλλαξαν."
 msgid "Retrieving RG info -"
 msgstr "Ανάκτηση RG πληροφοριών -%p"
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "Αντεστραμμένη γεωκωδικοποίηση"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
@@ -57735,7 +57744,9 @@ msgstr ""
 "διατηρήσετε τις ετικέτες που έχουν ήδη αποκτηθεί ή να τις απορρίψετε;"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Εγκατάλειψη αντεστραμμένης γεωκωδικοποίησης;"
 
@@ -68145,6 +68156,18 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Θέλετε να επαναφέρετε όλες τι ρυθμίσεις βίντεο στις προεπιλεγμένες τιμές;"
+
+#, fuzzy
+#~| msgid "Export Tools"
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "Εργαλεία εξαγωγής"
+
+#, fuzzy
+#~| msgid "GPS Sync"
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "Συγχρονισμός GPS"
 
 #, fuzzy
 #~| msgid "Visit Exiv2 project website"

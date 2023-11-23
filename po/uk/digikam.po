@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
-"PO-Revision-Date: 2023-11-21 08:17+0200\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
+"PO-Revision-Date: 2023-11-22 09:15+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -9002,17 +9002,18 @@ msgid "Sharpen..."
 msgstr "Різкість…"
 
 #: core/dplugins/editor/file/print/printhelper.cpp:177
-#, fuzzy, kde-format
-#| msgid "No Profile Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
-msgstr "Не знайдено профілю"
+msgstr "Немає доступних принтерів"
 
 #: core/dplugins/editor/file/print/printhelper.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
+"У вашій системі не встановлено принтера. Будь ласка, встановіть принаймні "
+"один."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:188
 #, kde-format
@@ -11291,7 +11292,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Не вдалося зберегти файл «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -12183,8 +12186,8 @@ msgstr[3] "<p>%1 символ.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -21186,8 +21189,9 @@ msgstr ""
 "OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
-#, kde-format
-msgid "No OpenGL context have been found"
+#, fuzzy, kde-format
+#| msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr "Контексту OpenGL не знайдено"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -53516,7 +53520,9 @@ msgid "API Key:"
 msgstr "Ключ API:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Javascript Message"
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Повідомлення Javascript"
 
@@ -53644,6 +53650,13 @@ msgstr "Додати теку"
 msgid "New Folder"
 msgstr "Нова тека"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "Керування кольорами"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -53733,10 +53746,12 @@ msgid "%1 Bookmarks.xbel"
 msgstr "Bookmarks.xbel %1"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit Bookmark"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "Помилка експортування"
+msgid "Export Bookmark"
+msgstr "Редагування закладки"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -54102,13 +54117,6 @@ msgstr "Вилучити швидкість"
 msgid "Look up missing altitude values"
 msgstr "Визначити пропущені значення висоти"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "Синхронізація GPS"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -54401,6 +54409,14 @@ msgstr "Змінено мітки зображень."
 msgid "Retrieving RG info -"
 msgstr "Отримання даних зворотного геокодування —"
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgctxt "@item: map tool"
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "Зворотне геокодування"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
@@ -54431,7 +54447,9 @@ msgstr ""
 "мітки, які вже було отримано?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Перервати процедуру зворотного геокодування?"
 
@@ -64381,6 +64399,14 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Хочете відновити типові значення для усіх параметрів відео?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "Помилка експортування"
+
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "Синхронізація GPS"
 
 #~ msgctxt "@info:whatsthis"
 #~ msgid "Visit Exiv2 project website"

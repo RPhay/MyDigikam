@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -10273,7 +10273,9 @@ msgid "Cannot save \"%1\" file"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -11125,8 +11127,8 @@ msgstr[1] ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -19454,7 +19456,7 @@ msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -49694,6 +49696,7 @@ msgstr "URL:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr ""
 
@@ -49820,6 +49823,12 @@ msgstr ""
 msgid "New Folder"
 msgstr "Carian Baru"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "Keseimbangan Warna"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -49909,8 +49918,8 @@ msgstr "Muatturun"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "&Eksport"
+msgid "Export Bookmark"
+msgstr "Songsangkan Warna"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
@@ -50229,13 +50238,6 @@ msgstr "Buang Kumpulan"
 msgid "Look up missing altitude values"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr ""
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -50524,6 +50526,12 @@ msgstr "Seting Imej"
 msgid "Retrieving RG info -"
 msgstr ""
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, kde-format
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr ""
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
 msgctxt "@title:window"
@@ -50551,6 +50559,7 @@ msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
 #, kde-format
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr ""
 
@@ -59485,6 +59494,11 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Muat Naik..."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "&Eksport"
 
 #, fuzzy
 #~ msgctxt "@label: item properties"

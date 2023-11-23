@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
 "PO-Revision-Date: 2023-04-22 13:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -11212,7 +11212,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "無法儲存「%1」檔案"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -12118,8 +12120,8 @@ msgstr[0] "<p>%1 個字元。</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, fuzzy, kde-format
 #| msgid "<p>1 character.</p>"
 #| msgid_plural "<p>%1 characters.</p>"
@@ -21391,7 +21393,7 @@ msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -54952,6 +54954,7 @@ msgstr "API 網址："
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr ""
 
@@ -55086,6 +55089,13 @@ msgstr "加入資料夾..."
 msgid "New Folder"
 msgstr "依資料夾"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "色彩管理"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, fuzzy, kde-format
 #| msgid ""
@@ -55184,10 +55194,10 @@ msgstr "%1 書籤.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
-#| msgid "Export Tools"
+#| msgid "Bookmarks"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "匯出工具"
+msgid "Export Bookmark"
+msgstr "書籤"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
@@ -55536,14 +55546,6 @@ msgstr "移除速度"
 msgid "Look up missing altitude values"
 msgstr "尋找遺失的高度數值"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "GPS 同步"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -55844,6 +55846,13 @@ msgstr "影像標籤已變更。"
 msgid "Retrieving RG info -"
 msgstr "取得反向地理定位資訊中 - %p%"
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "反向地理定位"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
@@ -55878,7 +55887,9 @@ msgstr ""
 "%2 張影像中的 %1 張已經做了反向地理定位。您要保留還是丟棄這些已經取得的標籤？"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "要中止反向地理定位嗎？"
 
@@ -65730,6 +65741,18 @@ msgstr "重設所有設定值為預設值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "重設所有設定值為預設值。"
+
+#, fuzzy
+#~| msgid "Export Tools"
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "匯出工具"
+
+#, fuzzy
+#~| msgid "GPS Sync"
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "GPS 同步"
 
 #, fuzzy
 #~| msgid "Visit Exiv2 project website"

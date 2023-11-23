@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -11703,7 +11703,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Ne mogu da sačuvam \"%1\" datoteku"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -12630,8 +12632,8 @@ msgstr[2] "<p>%1 znakova.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, fuzzy, kde-format
 #| msgid "<p>1 character.</p>"
 #| msgid_plural "<p>%1 characters.</p>"
@@ -22228,7 +22230,7 @@ msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -56955,6 +56957,7 @@ msgstr "URL:"
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, fuzzy, kde-format
 #| msgid "Script Manager"
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Upravljač skriptama"
 
@@ -57090,6 +57093,13 @@ msgstr "Dodaj direktorije..."
 msgid "New Folder"
 msgstr "Po direktoriju"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "Upravljanje bojama"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, fuzzy, kde-format
 #| msgid ""
@@ -57193,10 +57203,10 @@ msgstr "Obilježivači"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
-#| msgid "Export Tools"
+#| msgid "Bookmarks"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "Izvozni alati"
+msgid "Export Bookmark"
+msgstr "Obilježivači"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
@@ -57580,14 +57590,6 @@ msgstr "Ukloni brzinu"
 msgid "Look up missing altitude values"
 msgstr "Pogledaj nedostajuće vrijednosti visine"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "GPS sinhronizacija"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -57890,6 +57892,13 @@ msgstr "Oznake slike su promijenjene."
 msgid "Retrieving RG info -"
 msgstr "Dohvaćanje RG informacija - %p%"
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "Reverzno Geokodiranje"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
@@ -57927,7 +57936,9 @@ msgstr ""
 "trenutno postoje ili ih želite poništiti?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Zaustavi reverzno geokodiranje?"
 
@@ -68417,6 +68428,18 @@ msgstr "Resetujte sve postavke na njihove zadane vrijednosti."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Resetujte sve postavke na njihove zadane vrijednosti."
+
+#, fuzzy
+#~| msgid "Export Tools"
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "Izvozni alati"
+
+#, fuzzy
+#~| msgid "GPS Sync"
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "GPS sinhronizacija"
 
 #, fuzzy
 #~| msgid "Visit Exiv2 project website"

@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
 "PO-Revision-Date: 2023-10-05 09:38+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -11044,7 +11044,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Gat ekki vistað \"%1\" skrána"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -11928,8 +11930,8 @@ msgstr[1] "<p>%1 stafi.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -20819,7 +20821,7 @@ msgstr "GL_ARB_texture_rectangle ekki stutt"
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, fuzzy, kde-format
 #| msgid "No OpenGL context found"
-msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr "Ekkert OpenGL samhengi fannst"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -52732,7 +52734,9 @@ msgid "API Key:"
 msgstr "API-lykill:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Javascript Message"
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "JavaScript skilaboð"
 
@@ -52861,6 +52865,13 @@ msgstr "Bæta við möppu"
 msgid "New Folder"
 msgstr "Ný mappa"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "Litastýring"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -52950,10 +52961,12 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bókamerki.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit Bookmark"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "Villa við útflutning"
+msgid "Export Bookmark"
+msgstr "Breyta bókamerki"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -53297,13 +53310,6 @@ msgstr "Fjarlægja hraðaupplýsingar"
 msgid "Look up missing altitude values"
 msgstr "Fletta upp hæðarupplýsingum sem vantar"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "GPS-samræming"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -53596,6 +53602,14 @@ msgstr "Myndamerki hafa breyst."
 msgid "Retrieving RG info -"
 msgstr "Næ í upplýsingar frá viðsnúinni staðsetningarkóðun -"
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgctxt "@item: map tool"
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "Viðsnúin staðsetningarkóðun (Reverse Geocoding)"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
@@ -53626,7 +53640,9 @@ msgstr ""
 "halda þeim merkjum sem þegar hafa verið búin til?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Hætta við viðsnúna staðsetningarkóðun?"
 
@@ -63415,6 +63431,14 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Viltu frumstilla allar stillingar myndmerkis á sjálfgefin gildi?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "Villa við útflutning"
+
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "GPS-samræming"
 
 #~ msgctxt "@info:whatsthis"
 #~ msgid "Visit Exiv2 project website"

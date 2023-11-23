@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 00:40+0000\n"
+"POT-Creation-Date: 2023-11-22 00:40+0000\n"
 "PO-Revision-Date: 2023-05-17 18:31+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -8417,7 +8417,19 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Skarp opp …"
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, kde-format
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
@@ -10649,14 +10661,14 @@ msgstr "Eitt kart"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
 #, kde-format
 msgctxt "@item"
-msgid "Two maps - horizontal"
-msgstr "To kart – vassrett"
+msgid "Two maps - left and right"
+msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@item"
-msgid "Two maps - vertical"
-msgstr "To kart – loddrett"
+msgid "Two maps - top and bottom"
+msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format
@@ -18432,65 +18444,65 @@ msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, kde-format
-msgctxt "Output: PDF"
-msgid "Print to PDF"
-msgstr ""
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, kde-format
+msgctxt "Output: PDF"
+msgid "Print to PDF"
+msgstr ""
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "Exif-tidspunkt"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
@@ -19895,20 +19907,21 @@ msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "OpenGL-basert biletvisar"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
 #, kde-format
 msgid "OpenGL Error"
 msgstr ""
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
 #, kde-format
-msgid "GL_ARB_texture_rectangle not supported"
+msgid ""
+"GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
 msgstr ""
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context found"
+msgid "No OpenGL context have been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -47427,14 +47440,7 @@ msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:117
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:179
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "Visit Exiv2 project website"
-msgstr ""
-
-#: core/showfoto/setup/showfotosetupmetadata.cpp:125
+#: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, kde-format
 msgctxt "@info"
@@ -47443,7 +47449,7 @@ msgid ""
 "(like aperture and shutter speed) about an image."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:123
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, kde-format
 msgctxt "@info"
@@ -47452,21 +47458,21 @@ msgid ""
 "information in images."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:135
+#: core/showfoto/setup/showfotosetupmetadata.cpp:129
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:156
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:216
+#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:165
+#: core/showfoto/setup/showfotosetupmetadata.cpp:159
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, kde-format
 msgctxt "@title:tab"
@@ -58426,7 +58432,7 @@ msgctxt "@title:tab"
 msgid "Baloo"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:32
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:35
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -58437,31 +58443,31 @@ msgid ""
 "information when moving or sending the files to different systems.</para>"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:42
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
 #, kde-format
 msgctxt "@label"
 msgid "Write This Information to the Metadata"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
 #, kde-format
 msgctxt "@option:check"
 msgid "Image tags"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:46
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item tags in the XMP and IPTC tags."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -58469,13 +58475,13 @@ msgid ""
 "section, the Exif tag, the XMP tag, and the IPTC tag."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Rating"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:57
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -58483,37 +58489,37 @@ msgid ""
 "tags."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, kde-format
 msgctxt "@option:check"
 msgid "Color label"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
 #, kde-format
 msgctxt "@option:check"
 msgid "Timestamps"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -58521,13 +58527,13 @@ msgid ""
 "IPTC tags."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata templates (Copyright etc.)"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -58535,26 +58541,26 @@ msgid ""
 "tags. You can set template values to Template setup page."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store face tags with face rectangles in the XMP tags."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:91
 #, kde-format
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:92
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -58562,19 +58568,19 @@ msgid ""
 "XMP tags."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:112
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid "Reading and Writing Metadata"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -58583,25 +58589,25 @@ msgid ""
 "with database."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:128
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:125
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
 #, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -58609,13 +58615,13 @@ msgid ""
 "delegate to ExifTool backend and is disabled by default."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:135
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
 #, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -58624,13 +58630,13 @@ msgid ""
 "digikam exit"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:147
 #, kde-format
 msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -58640,13 +58646,13 @@ msgid ""
 "properties to detect file modifications automatically."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:155
 #, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:157
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -58656,19 +58662,19 @@ msgid ""
 "when digiKam starts."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:226
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:230
 #, kde-format
 msgctxt "@label"
 msgid "write limitations"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -58676,7 +58682,7 @@ msgid ""
 "for details."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:240
 #, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
@@ -58898,13 +58904,12 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
-"digiKam (optionally) writes metadata to *.xmp sidecar\n"
-"files. Other programs might use different types, which\n"
-"can be specified below. digiKam will neither display these\n"
-"nor read from or write to them. But whenever a matching album\n"
-"item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-"moved, copied or deleted, the same operation will be done\n"
-"on these sidecar files.\n"
+"digiKam (optionally) writes metadata to *.xmp sidecar files. Other programs "
+"might use different types, which can be specified below. digiKam will "
+"neither display these nor read from or write to them. But whenever a "
+"matching album item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
+"moved, copied or deleted, the same operation will be done on these sidecar "
+"files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 

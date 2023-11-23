@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
 "PO-Revision-Date: 2023-11-19 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -10643,7 +10643,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "无法保存“%1”文件"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -11516,8 +11518,8 @@ msgstr[0] "<p>%1 个字符。</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -20121,7 +20123,7 @@ msgstr "GL_ARB_texture_rectangle 不支持"
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, fuzzy, kde-format
 #| msgid "No OpenGL context found"
-msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr "未找到 OpenGL 环境"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -51271,7 +51273,9 @@ msgid "API Key:"
 msgstr "API 密钥："
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Javascript Message"
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Javascript 消息"
 
@@ -51398,6 +51402,13 @@ msgstr "添加文件夹"
 msgid "New Folder"
 msgstr "新建文件夹"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "色彩管理"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -51487,10 +51498,12 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 书签.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit Bookmark"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "导出错误"
+msgid "Export Bookmark"
+msgstr "编辑书签"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -51816,13 +51829,6 @@ msgstr "移除速度"
 msgid "Look up missing altitude values"
 msgstr "查找缺失海拔"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "GPS 同步"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -52113,6 +52119,14 @@ msgstr "图像标签已更改。"
 msgid "Retrieving RG info -"
 msgstr "正在获取 RG 信息 -"
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgctxt "@item: map tool"
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "反向地理编码"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
@@ -52139,7 +52153,9 @@ msgid ""
 msgstr "1 张图像已被进行反向地理编码。您想要保留已经获取的标签吗？"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "要中止反向地理编码吗？"
 
@@ -61525,6 +61541,14 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
+
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "导出错误"
+
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "GPS 同步"
 
 #~ msgctxt "@info:whatsthis"
 #~ msgid "Visit Exiv2 project website"

@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -11287,7 +11287,9 @@ msgstr ""
 "»%1« نمایش داد"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -12154,8 +12156,8 @@ msgstr[1] ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -20742,7 +20744,7 @@ msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -52330,6 +52332,7 @@ msgstr "نشانی وب:"
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, fuzzy, kde-format
 #| msgid "Script Manager"
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "مدیر دست‌نوشته"
 
@@ -52457,6 +52460,13 @@ msgstr "افزودن لبه..."
 msgid "New Folder"
 msgstr "بر اساس پوشه"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "مدیریت رنگ"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -52554,8 +52564,8 @@ msgstr "فقره‌ای برگزیده نشد"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "صادرات"
+msgid "Export Bookmark"
+msgstr "افزودن دوربین..."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
@@ -52877,13 +52887,6 @@ msgstr "حذف فقره"
 msgid "Look up missing altitude values"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr ""
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -53175,6 +53178,12 @@ msgstr "تنظیمات تصویر"
 msgid "Retrieving RG info -"
 msgstr ""
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "کدگشایی RAW"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
@@ -53202,9 +53211,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
-msgstr ""
+msgstr "کدگشایی RAW"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:235
 #, fuzzy, kde-format
@@ -62654,6 +62664,11 @@ msgstr "<p>بازنشانی کل پارامترهای پالایه به مقاد
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "<p>بازنشانی کل پارامترهای پالایه به مقادیر پیش‌فرض آنها."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "صادرات"
 
 #, fuzzy
 #~| msgid "Visit Exiv2 project website"

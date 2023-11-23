@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
-"PO-Revision-Date: 2023-11-19 03:09+0100\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
+"PO-Revision-Date: 2023-11-22 03:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -8987,17 +8987,17 @@ msgid "Sharpen..."
 msgstr "Acentuar..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:177
-#, fuzzy, kde-format
-#| msgid "No Profile Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
-msgstr "Ningún perfil disponible"
+msgstr "Ninguna impresora disponible"
 
 #: core/dplugins/editor/file/print/printhelper.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
+"No hay ninguna impresora instalada en el sistema. Instale al menos una."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:188
 #, kde-format
@@ -11260,7 +11260,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "No es posible guardar el archivo «%1» "
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -12145,8 +12147,8 @@ msgstr[1] "<p>%1 caracteres.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -21130,17 +21132,16 @@ msgid "OpenGL Error"
 msgstr "Error de OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
-#, fuzzy, kde-format
-#| msgid "GL_ARB_texture_rectangle not supported"
+#, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
-msgstr "GL_ARB_texture_rectangle no está permitido"
+msgstr "La extensión GL_ARB_texture_rectangle no está permitida en su sistema"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, fuzzy, kde-format
-#| msgid "No OpenGL context found"
-msgid "No OpenGL context have been found"
-msgstr "No se ha encontrado un contexto de OpenGL"
+#| msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
+msgstr "No se ha encontrado ningún contexto de OpenGL"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
 #, kde-format
@@ -53375,7 +53376,9 @@ msgid "API Key:"
 msgstr "Clave de la API:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Javascript Message"
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Mensaje Javascript"
 
@@ -53503,6 +53506,13 @@ msgstr "Añadir carpeta"
 msgid "New Folder"
 msgstr "Nueva carpeta"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "Gestión de colores"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -53592,10 +53602,12 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bookmarks.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit Bookmark"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "Error al exportar"
+msgid "Export Bookmark"
+msgstr "Editar marcador"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -53946,13 +53958,6 @@ msgstr "Eliminar velocidad"
 msgid "Look up missing altitude values"
 msgstr "Buscar los valores de altura que faltan"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "Sincronizar GPS"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -54245,6 +54250,14 @@ msgstr "Cambiar etiquetas de imagen"
 msgid "Retrieving RG info -"
 msgstr "Obteniendo información RG -"
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgctxt "@item: map tool"
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "Invertir geocodificación"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
@@ -54275,7 +54288,9 @@ msgstr ""
 "ya se habían obtenido?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "¿Interrumpir geocodificación inversa?"
 
@@ -62605,18 +62620,7 @@ msgstr ""
 "esta opción para Darktable."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Add file types to be recognised as sidecars.\n"
-#| "digiKam (optionally) writes metadata to *.xmp sidecar\n"
-#| "files. Other programs might use different types, which\n"
-#| "can be specified below. digiKam will neither display these\n"
-#| "nor read from or write to them. But whenever a matching album\n"
-#| "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-#| "moved, copied or deleted, the same operation will be done\n"
-#| "on these sidecar files.\n"
-#| "Multiple extensions must be separated by a semicolon or a space."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
@@ -62629,14 +62633,14 @@ msgid ""
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 "Añadir los tipos de archivos a reconocer como archivos anexos.\n"
-"De forma opcional, digiKam escribe metadatos en archivos anexos\n"
-"*.xmp. Otros programas pueden usar tipos diferentes, que se pueden\n"
-"indicar a continuación. digiKam no los mostrará nunca, no escribirá en\n"
-"ellos ni los leerá. Pero cada vez que cambie el nombre, mueva, copie o\n"
-"borre un álbum coincidente, se realizará la misma operación en estos\n"
-"archivos anexos.\n"
-"Puede indicar varias extensiones separadas por un punto y coma o\n"
-"por un espacio."
+"De forma opcional, digiKam escribe metadatos en archivos *.xmp anexos. Otros "
+"programas pueden usar tipos diferentes, que se pueden indicar a "
+"continuación. digiKam no los mostrará nunca, no escribirá en ellos ni los "
+"leerá. Pero cada vez que cambie el nombre, mueva, copie o borre un álbum "
+"coincidente (por ejemplo, «imagen.dng» para «imagen.dng.pp3»), se realizará "
+"la misma operación en estos archivos anexos.\n"
+"Puede indicar varias extensiones separadas por un punto y coma o por un "
+"espacio."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
 #, kde-format
@@ -64202,6 +64206,14 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "¿Desea reiniciar todas las preferencias de vídeo a sus valores "
 "predeterminados?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "Error al exportar"
+
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "Sincronizar GPS"
 
 #~ msgctxt "@info:whatsthis"
 #~ msgid "Visit Exiv2 project website"

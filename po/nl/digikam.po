@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
-"PO-Revision-Date: 2023-11-21 11:07+0100\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
+"PO-Revision-Date: 2023-11-22 16:58+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -8958,17 +8958,17 @@ msgid "Sharpen..."
 msgstr "Verscherpen..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:177
-#, fuzzy, kde-format
-#| msgid "No Profile Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
-msgstr "Geen profiel beschikbaar"
+msgstr "Geen printer beschikbaar"
 
 #: core/dplugins/editor/file/print/printhelper.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
+"Er is geen printer op uw systeem geïnstalleerd. Installeer er minstens één."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:188
 #, kde-format
@@ -11241,7 +11241,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Kan \"%1\"-bestand niet opslaan"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -12129,8 +12131,8 @@ msgstr[1] "<p>%1 tekens.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -21107,8 +21109,9 @@ msgstr ""
 "ondersteund"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
-#, kde-format
-msgid "No OpenGL context have been found"
+#, fuzzy, kde-format
+#| msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr "Geen OpenGL-context gevonden"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -53246,7 +53249,9 @@ msgid "API Key:"
 msgstr "API-sleutel:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Javascript Message"
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Javascriptbericht"
 
@@ -53374,6 +53379,13 @@ msgstr "Map toevoegen"
 msgid "New Folder"
 msgstr "Nieuwe map"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "Kleurbeheer"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -53463,10 +53475,12 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bookmarks.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit Bookmark"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "Exportfout"
+msgid "Export Bookmark"
+msgstr "Bladwijzer bewerken"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -53814,13 +53828,6 @@ msgstr "Snelheid verwijderen"
 msgid "Look up missing altitude values"
 msgstr "Ontbrekende waarden van hoogten opzoeken"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "GPS-synchronisatie"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -54113,6 +54120,14 @@ msgstr "Tags van afbeelding zijn gewijzigd"
 msgid "Retrieving RG info -"
 msgstr "RG-informatie ophalen -"
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgctxt "@item: map tool"
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "Omgekeerde geocodering"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
@@ -54143,7 +54158,9 @@ msgstr ""
 "verkregen zijn behouden?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Omgekeerde geocodering afbreken?"
 
@@ -64052,6 +64069,14 @@ msgstr "Zet alle instellingen terug naar hun standaardwaarden."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "Exportfout"
+
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "GPS-synchronisatie"
 
 #~ msgctxt "@info:whatsthis"
 #~ msgid "Visit Exiv2 project website"

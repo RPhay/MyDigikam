@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -11245,7 +11245,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Die Datei „%1“ kann nicht gespeichert werden"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -12131,8 +12133,8 @@ msgstr[1] "<p>%1 Zeichen.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -21137,7 +21139,7 @@ msgstr "GL_ARB_texture_rectangle wird nicht unterstützt."
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, fuzzy, kde-format
 #| msgid "No OpenGL context found"
-msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr "Es kann kein OpenGL-Kontext gefunden werden"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -53966,6 +53968,7 @@ msgstr "Adresse (URL) der API:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr ""
 
@@ -54094,6 +54097,13 @@ msgstr "Ordner hinzufügen"
 msgid "New Folder"
 msgstr "Neuer Ordner"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "Farbverwaltung"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -54183,10 +54193,12 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bookmarks.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit Bookmark"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "Export-Fehler"
+msgid "Export Bookmark"
+msgstr "Lesezeichen bearbeiten"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -54541,14 +54553,6 @@ msgstr "Geschwindigkeit entfernen"
 msgid "Look up missing altitude values"
 msgstr "Fehlende Höhenwerte nachschlagen"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "GPS-Sync"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -54845,6 +54849,14 @@ msgstr "Bild-Stichwörter wurden geändert."
 msgid "Retrieving RG info -"
 msgstr "RG-Info wird empfangen - "
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgctxt "@item: map tool"
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "Georeferenzierung"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
@@ -54878,7 +54890,9 @@ msgstr ""
 "Möchten Sie die bereits ermittelten Stichwörter behalten?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Umgekehrte Geolokalisierung abbrechen?"
 
@@ -64964,6 +64978,16 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Möchten Sie alle Videoeinstellungen auf die Standardwerte zurücksetzen?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "Export-Fehler"
+
+#, fuzzy
+#~| msgid "GPS Sync"
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "GPS-Sync"
 
 #~ msgctxt "@info:whatsthis"
 #~ msgid "Visit Exiv2 project website"

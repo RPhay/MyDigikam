@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
 "PO-Revision-Date: 2023-11-18 21:32+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -10277,7 +10277,9 @@ msgid "Cannot save \"%1\" file"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -11133,8 +11135,8 @@ msgstr[1] "<p>%1 სიმბოლო.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -19492,7 +19494,7 @@ msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -49768,6 +49770,7 @@ msgstr "API-ის გასაღები:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr ""
 
@@ -49894,6 +49897,13 @@ msgstr "საქაღალდის დამატება"
 msgid "New Folder"
 msgstr "ახალი საქაღალდე"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "ფერების მართვა"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -49981,10 +49991,12 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bookmarks.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit Bookmark"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "გატანის შეცდომა"
+msgid "Export Bookmark"
+msgstr "სანიშნის ჩასწორება"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -50303,13 +50315,6 @@ msgstr ""
 msgid "Look up missing altitude values"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "GPS სინქრონიზაცია"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -50598,6 +50603,12 @@ msgstr ""
 msgid "Retrieving RG info -"
 msgstr ""
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, kde-format
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr ""
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
@@ -50625,6 +50636,7 @@ msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
 #, kde-format
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr ""
 
@@ -59563,6 +59575,14 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
+
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "გატანის შეცდომა"
+
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "GPS სინქრონიზაცია"
 
 #, fuzzy
 #~| msgid "Google Maps"

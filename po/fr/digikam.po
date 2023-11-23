@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
-"PO-Revision-Date: 2023-11-20 20:43+0100\n"
+"POT-Creation-Date: 2023-11-23 00:40+0000\n"
+"PO-Revision-Date: 2023-11-21 21:27+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -2847,14 +2847,7 @@ msgstr ""
 "Date de compilation : %4 (cible : %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2866,10 +2859,11 @@ msgid ""
 msgstr ""
 "IRC : %1 - #digikam\n"
 "Retours utilisateur : %2\n"
+"Documentation : %3\n"
 "\n"
-"Date de compilation : %3 (cible : %4)\n"
-"Révision : %5\n"
-"Branche : %6"
+"Date de compilation : %4 (cible : %5)\n"
+"Révision : %6\n"
+"Branche : %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
@@ -3369,17 +3363,14 @@ msgstr ""
 "« AVIF » dans le gestionnaire de file de travaux."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-#| "versionned images in editor."
+#, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
-"Prendre en charge les formats « JPEG-XL », « HEIF », « WEBP » et « AVIF », "
-"comme format sans perte d'image pour l'enregistrement du versionnage d'image "
-"dans l'éditeur."
+"Versionnage : ajoute la prise en charge les formats « JPEG-XL », « HEIF », "
+"« WEBP » et « AVIF », comme format d'image sans perte pour l'enregistrement "
+"du versionnage d'images dans l'éditeur."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
@@ -3397,18 +3388,14 @@ msgstr ""
 "moteur « ExifTool »."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata into RAW files. This feature is "
-#| "delegate to ExifTool backend and is disabled by default."
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
-"Activez cette option pour écrire des métadonnées dans des fichiers « RAW ». "
-"Cette fonctionnalité est déléguée au moteur « ExifTool » et est désactivée "
-"par défaut."
+"Métadonnées : les opérations optionnelles pour l'écriture des métadonnées "
+"dans des fichiers « RAW » et « DNG » sont maintenant toujours déléguées au "
+"moteur « ExifTool »."
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
@@ -3424,6 +3411,9 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Métadonnées: ajoute de nouvelles options pour enregistrer et charger les "
+"profils de configuration dans le panneau de configuration avancée des "
+"métadonnées."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, fuzzy, kde-format
@@ -3548,33 +3538,26 @@ msgstr ""
 "dans le chargeur « TIFF »."
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Integration of Google Summer of Code project 2021 <a href=\"https://"
-#| "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-#| "Sorter</a>."
+#, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
-"Intégration du projet « Google Summer of Code 2021 » <a href=\"https://"
-"community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Trieur de qualité "
-"d'images</a>."
+"Ajouter un nouvel outil de maintenance pour réaliser une <a href=\"https://"
+"community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">Détection "
+"esthétique permettant de classer les images en utilisant l'apprentissage "
+"profond.</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Integration of Google Summer of Code project 2021 <a href=\"https://"
-#| "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-#| "Sorter</a>."
+#, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
-"Intégration du projet « Google Summer of Code 2021 » <a href=\"https://"
-"community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Trieur de qualité "
-"d'images</a>."
+"Ajouter un nouvel outil  <a href=\"https://community.kde.org/GSoC/2022/"
+"StatusReports/QuocHungTran\"> pour réaliser une reconnaissance optique des "
+"caractères (OCR) sur du texte numérisé</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
@@ -3607,6 +3590,9 @@ msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"Documentation : <a href=\" https://docs.digikam.org/en/index.html\"> Ré-"
+"écriture du manuel </a> de DocBook à Sphinx / Environnement de développement "
+"« ReStructuredText »."
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3614,6 +3600,8 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"Mettez à jour l'outil « G'MIC-Qt » vers la dernière version 3.2.2, finalisez "
+"le portage vers macOS et améliorez la stabilité du module externe."
 
 #: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
@@ -11341,7 +11329,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Impossible d'enregistrer le fichier « %1 »"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -12232,8 +12222,8 @@ msgstr[1] "<p>%1 caractères.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -17219,12 +17209,10 @@ msgid "See processing messages below."
 msgstr "Consulter les messages de traitement ci-dessous."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Stacked Images Tool"
+#, kde-format
 msgctxt "@title:window"
 msgid "Stacked Images Tool"
-msgstr "Outil de fusion d'images"
+msgstr "Outil d'images empilées"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:106
 #, kde-format
@@ -17847,19 +17835,15 @@ msgid "Jalbum completed."
 msgstr "JAlbum terminé."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
-#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
-#| "project.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Bienvenue dans l'outil d'album jAlbum.</b></h1></p><p>Cet "
+"<qt><p><h1><b>Bienvenue dans l'outil d'album « jAlbum ».</b></h1></p><p>Cet "
 "assistant vous guidera pour exporter rapidement</p><p></p><p>vos images "
-"comme projet d'album jAlbum.</p></qt>"
+"comme projet d'album « jAlbum ».</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:103
 #, kde-format
@@ -18629,11 +18613,7 @@ msgid "Sparse text with OSD."
 msgstr "Texte clair avec incrustation vidéo."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Raw line. Treat the image as a single text line,bypassing hacks that are "
-#| "Tesseract-specific."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Raw line. Treat the image as a single text line, bypassing hacks that are "
@@ -19888,14 +19868,7 @@ msgstr "Famille de polices :"
 
 #. i18n: ectx: property (whatsThis), widget (DigikamGenericPrintCreatorPlugin::AdvPrintCropFrame, cropFrame)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Move the box in order to crop photos so that they fit inside the photo "
-#| "sizes you have given.  \n"
-#| "You can crop each image differently, or just click the 'Next' button to "
-#| "use the default crop \n"
-#| "setting for each photo.\n"
-#| "Enable \"Do not crop\" to avoid cropping all of the photos."
+#, kde-format
 msgid ""
 "Move the box in order to crop photos so that they fit inside the photo sizes "
 "you have given.  \n"
@@ -19907,8 +19880,8 @@ msgstr ""
 "Déplacez le cadre afin de rogner les photos pour qu'elles s'adaptent aux "
 "tailles de photo que vous avez indiquées.\n"
 "Vous pouvez rogner chaque image différemment ou simplement cliquer sur le "
-"bouton « Suivant » pour utiliser le paramètre de rognage \n"
-"par défaut pour chaque photo.\n"
+"bouton « Suivant » pour utiliser le \n"
+"paramètre de rognage par défaut pour chaque photo.\n"
 "Cochez « Ne pas rogner » pour éviter le rognage de toutes les photos."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_disableCrop)
@@ -21285,7 +21258,7 @@ msgstr "GL_ARB_texture_rectangle non géré"
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, fuzzy, kde-format
 #| msgid "No OpenGL context found"
-msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr "Aucun contexte OpenGL trouvé"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -29245,17 +29218,7 @@ msgstr ""
 "de plus de 100 000 éléments.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br/>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (as SSD) with "
-#| "enough free space especially for thumbnails database.</p><p>Note: a "
-#| "remote file system such as NFS, cannot be used here. For performance "
-#| "reasons, it is also recommended not to use removable media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -29275,11 +29238,11 @@ msgstr ""
 "digitales similaires.<br/>L'accès en écriture est nécessaire pour pouvoir "
 "modifier les propriétés des images.</p><p>Les bases de données sont les "
 "moteurs de digiKam. Veuillez vous assurer d'utiliser un matériel rapide "
-"(comme un disque « SSD ») avec suffisamment d'espace libre, en particulier "
-"pour la base de données des vignettes.</p><p>Remarque : il n'est pas "
-"possible d'utiliser un système de fichiers distant comme « NFS » ici. Pour "
-"des raisons de performances, il est déconseillé d'utiliser un périphérique "
-"amovible.</p><p></p>"
+"(comme un disque « SSD » ou « NVMe ») avec suffisamment d'espace libre, en "
+"particulier pour la base de données des vignettes.</p><p>Remarque : il n'est "
+"pas possible d'utiliser un système de fichiers distant comme « NFS » ici. "
+"Pour des raisons de performances, il est déconseillé d'utiliser un "
+"périphérique amovible.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -29565,15 +29528,7 @@ msgstr ""
 "remplacé <b><i>password</i></b> par le mot de passe correct).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have an enormous collection, you should "
-#| "start MySQL server with mysql --max_allowed_packet=128M OR in my.ini or "
-#| "~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29585,15 +29540,19 @@ msgid ""
 "If you have an enormous collection, you should start MySQL server with mysql "
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
-"<p>Remarque : sur un serveur Linux, une base de données peut être "
-"initialisée avec les commandes suivantes :</p><p># su</p><p># systemctl "
-"restart mysqld</p><p># mysql -u root</p><p>...</p><p>Saisissez le code "
-"« SQL » dans l'invite de « MySQL » pour initialiser les bases de données de "
-"digiKam avec les permissions correspondantes (voir ci-dessous)</p><p>...</"
-"p><p>Fermer</p><p>Remarque : si vous possédez une très grande collection, "
-"vous devriez lancer le serveur « MySQL » avec l'option « mysql --"
-"max_allowed_packet=128M » ou changer ces paramètres dans « my.ini » ou « ~/."
-"my.cnf ».</p>"
+"<p>Remarque : sur un serveur Linuxne base de données peut être initialisée "
+"avec les commandes suivantes :</p><p># su</p><p># systemctl restart mysqld</"
+"p><p># mysql -u root</p><p>...</p><p>Saisissez le code « SQL » dans l'invite "
+"de MySQL pour initialiser les bases de données de digiKam avec les "
+"permissions correspondantes (voir ci-dessous)</p><p>...</p><p>Fermer</p> "
+"<p>Remarque : si vous rencontrez des problèmes avec un serveur MySQL "
+"s'exécutant sur un système reposant sur Ubuntu Linux, veuillez utiliser  la "
+"commande d'addition sur la ligne de commandes de MySQL pour être capable de "
+"créer des déclencheurs MySQL.<br>SET GLOBAL "
+"log_bin_trust_function_creators=1 ; </p><p>Remarque : si vous possédez une "
+"énorme collection, vous devriez lancer le serveur MySQL avec l'option "
+"« mysql --max_allowed_packet=128M » ou changer ces paramètres dans « my."
+"ini » ou « ~/.my.cnf ».</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
 #, kde-format
@@ -39722,15 +39681,7 @@ msgid "Delete '%1' tag(s)?"
 msgstr "Supprimer l(es) étiquette(s) « %1 » ?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:575
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' has at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' have at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
@@ -39741,11 +39692,8 @@ msgid_plural ""
 "Do you want to continue?"
 msgstr[0] ""
 "L'étiquette de visage « %2 » comporte au moins une étiquette fille de "
-"visage. Sa suppression supprimera également les étiquettes filles.\n"
-"Voulez-vous vraiment continuer ? L'étiquette « %2 » comporte au moins une "
-"sous-étiquette de visage. La suppression de celle-ci supprimera également "
-"les étiquettes filles.\n"
-"Voulez-vous continuer ?"
+"visage. Sa suppression effacera également les étiquettes filles.\n"
+"Voulez-vous vraiment continuer ?"
 msgstr[1] ""
 "Les étiquettes de visage « %2 » comporte au moins une étiquette fille de "
 "visage. Sa suppression supprimera également les étiquettes filles.\n"
@@ -49605,6 +49553,8 @@ msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
+"Sélectionnez ici la langue par défaut à utiliser avec la valeur « x-"
+"default » pour les chaînes de langues alternatives."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, kde-format
@@ -51944,18 +51894,17 @@ msgstr ""
 "Ajouter un nombre suffixe, ||n|| spécifie le nombre de chiffres à utiliser"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||a|| optional to include "
 "all options for uniqueness, ||0|| optional to always pad with ||n|| zero "
 "digits"
 msgstr ""
-"Ajouter un nombre suffixe, ||n|| spécifie le nombre de chiffres à utiliser, "
-"||c|| spécifie le caractère de séparation avant les chiffres"
+"Ajouter un nombre de suffixe, ||n|qui spécifie le nombre de chiffres à "
+"utiliser, ||c|| spécifie le caractère de séparation avant les chiffres,||a|| "
+"optionnel pour inclure toutes les options pour l'unicité, ||0|| optionnel "
+"pour toujours remplir avec ||n|| chiffres zéro."
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
@@ -52578,17 +52527,15 @@ msgstr "Numérotation aléatoire tenant compte du texte"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Numérotation tenant compte du compteur de fichiers"
+msgstr "Numérotation intelligente du compteur de fichiers et des extensions"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Random text aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "Numérotation aléatoire tenant compte du texte"
+msgstr "Numérotation aléatoire et intelligente du texte et des extensions"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
@@ -53758,7 +53705,9 @@ msgid "API Key:"
 msgstr "Clé de l'API :"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Javascript Message"
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Message Javascript"
 
@@ -53887,6 +53836,13 @@ msgstr "Ajouter un dossier"
 msgid "New Folder"
 msgstr "Nouveau dossier"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "Gestion de la couleur"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -53978,10 +53934,12 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Signets.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit Bookmark"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "Erreur d'exportation"
+msgid "Export Bookmark"
+msgstr "Modifier un signet"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -54331,13 +54289,6 @@ msgstr "Supprimer la vitesse"
 msgid "Look up missing altitude values"
 msgstr "Chercher les valeurs d'altitude manquantes"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "Synchronisation GPS"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -54631,6 +54582,14 @@ msgstr "Les étiquettes des images sont changées."
 msgid "Retrieving RG info -"
 msgstr "Extraction des informations de géocodage inverse - "
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgctxt "@item: map tool"
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "Géocodage inversé"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
@@ -54661,7 +54620,9 @@ msgstr ""
 "conserver les étiquettes déjà obtenues ?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Interrompre le géocodage inversé ?"
 
@@ -60213,10 +60174,9 @@ msgstr ""
 "l'image."
 
 #: core/utilities/setup/album/setupalbumview.cpp:197
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam &pick label"
-msgstr "Afficher &le titre de digiKam"
+msgstr "Afficher l'éti&quette de sélection de digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:198
 #, kde-format
@@ -64166,14 +64126,7 @@ msgstr ""
 "l'objet d'une analyse :<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:918
-#, fuzzy, kde-format
-#| msgid ""
-#| "On Mac OS X, the default search paths include <ul><li>/System/Library/"
-#| "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-#| "ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/"
-#| "color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</"
-#| "li><li>~/.color/icc/</li></ul>On your system, currently these paths exist "
-#| "and are scanned:<ul><li>%2</li></ul>"
+#, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
 "Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
@@ -64182,13 +64135,13 @@ msgid ""
 "icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
-"Sous Mac OS X, les emplacements de recherche par défaut incluent :<ul><li>/"
+"Sous macOS X, les emplacements de recherche par défaut incluent :<ul><li>/"
 "System/Library/ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</"
 "li><li>~/Library/ColorSync/Profiles</li><li>/opt/local/share/color/icc</"
-"li><li>%1/share/color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/"
-"share/icc/</li><li>~/.color/icc/</li></ul>Sur votre système, ces "
-"emplacements existent et font actuellement l'objet d'une analyse :<ul><li>"
-"%2</li></ul>"
+"li><li>%1/Contents/Resources/digikam/profiles/</li><li>~/.local/share/color/"
+"icc/</li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>Sur votre "
+"système, ces emplacements existent actuellement et font l'objet d'une "
+"analyse :<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:937
 #, kde-format
@@ -64751,6 +64704,14 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Voulez-vous réinitialiser tous les paramètres de vidéos à leurs valeurs par "
 "défaut ?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "Erreur d'exportation"
+
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "Synchronisation GPS"
 
 #~ msgctxt "@info:whatsthis"
 #~ msgid "Visit Exiv2 project website"
