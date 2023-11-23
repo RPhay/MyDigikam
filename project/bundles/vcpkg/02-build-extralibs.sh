@@ -157,7 +157,4 @@ if [[ $DK_QTVERSION == 6 ]] ; then
 
 fi
 
-cmake --build . --config RelWithDebInfo --target ext_exiv2 --parallel
-cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
-
 TerminateScript
