@@ -36,11 +36,12 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     |   |   |--- kauth
     |   |   |--- kcharselect
     |   |--- knotifications6                             Really need ?
-    |   |--- kservicetypes6                              KDE service type definitions
+    |   |--- kstyle                                      Breeze theme definitions
     |   |--- kxmlgui5                                    KDE xml gui description files
     |   |   |--- digikam
     |   |   |--- showfoto
     |   |--- lensfun                                     Lensfun data files
+    |   |--- licenses                                    License data files
     |   |--- locale                                      KDE GUI translations
     |   |--- maps                                        Marble data files
     |   |--- mwdbii                                      Marble data files
@@ -51,12 +52,13 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     |   |--- stars                                       Marble data files
     |   |--- svg                                         Marble data files
     |   |-- weather                                      Marble data files
-    |--- etc                                             Really need ?
-    |   |-- xdg
+    |--- etc
+    |   |-- xdg                                          Really need ?
     |       |-- ui
-    |--- plugins                                         Qt plugins
+    |--- plugins                                         Qt plugins, digiKam plugins, Marble plugins
     |--- share                                           Really need ?
-    |   |-- xdg
+    |   |-- mime                                         FreeDesktop type-mime definitions.
+    |   |-- xdg                                          Really need ?
     |       |-- menus
     |-- translations                                     Qt GUI translations
 ```
