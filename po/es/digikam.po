@@ -60,7 +60,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-23 00:40+0000\n"
-"PO-Revision-Date: 2023-11-22 03:52+0100\n"
+"PO-Revision-Date: 2023-11-23 20:26+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -21138,8 +21138,7 @@ msgid ""
 msgstr "La extensión GL_ARB_texture_rectangle no está permitida en su sistema"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
-#, fuzzy, kde-format
-#| msgid "No OpenGL context have been found"
+#, kde-format
 msgid "No OpenGL context has been found"
 msgstr "No se ha encontrado ningún contexto de OpenGL"
 
@@ -53376,8 +53375,7 @@ msgid "API Key:"
 msgstr "Clave de la API:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, fuzzy, kde-format
-#| msgid "Javascript Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Mensaje Javascript"
@@ -53507,11 +53505,10 @@ msgid "New Folder"
 msgstr "Nueva carpeta"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
-msgstr "Gestión de colores"
+msgstr "Gestión de marcadores"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
@@ -53602,12 +53599,10 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bookmarks.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
-msgstr "Editar marcador"
+msgstr "Exportar marcador"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -54251,12 +54246,10 @@ msgid "Retrieving RG info -"
 msgstr "Obteniendo información RG -"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Reverse Geocoding"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
-msgstr "Invertir geocodificación"
+msgstr "Error de geocodificación inversa"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
@@ -54288,8 +54281,7 @@ msgstr ""
 "ya se habían obtenido?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, fuzzy, kde-format
-#| msgid "Abort reverse geocoding?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "¿Interrumpir geocodificación inversa?"

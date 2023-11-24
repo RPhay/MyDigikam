@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-23 00:40+0000\n"
-"PO-Revision-Date: 2023-11-22 09:15+0200\n"
+"PO-Revision-Date: 2023-11-23 08:33+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -21189,8 +21189,7 @@ msgstr ""
 "OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
-#, fuzzy, kde-format
-#| msgid "No OpenGL context have been found"
+#, kde-format
 msgid "No OpenGL context has been found"
 msgstr "Контексту OpenGL не знайдено"
 
@@ -53520,8 +53519,7 @@ msgid "API Key:"
 msgstr "Ключ API:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, fuzzy, kde-format
-#| msgid "Javascript Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Повідомлення Javascript"
@@ -53651,11 +53649,10 @@ msgid "New Folder"
 msgstr "Нова тека"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
-msgstr "Керування кольорами"
+msgstr "Керування закладками"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
@@ -53746,12 +53743,10 @@ msgid "%1 Bookmarks.xbel"
 msgstr "Bookmarks.xbel %1"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
-msgstr "Редагування закладки"
+msgstr "Експортування закладки"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -54410,12 +54405,10 @@ msgid "Retrieving RG info -"
 msgstr "Отримання даних зворотного геокодування —"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Reverse Geocoding"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
-msgstr "Зворотне геокодування"
+msgstr "Помилка зворотного геокодування"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
@@ -54447,8 +54440,7 @@ msgstr ""
 "мітки, які вже було отримано?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, fuzzy, kde-format
-#| msgid "Abort reverse geocoding?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Перервати процедуру зворотного геокодування?"
