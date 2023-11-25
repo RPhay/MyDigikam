@@ -166,7 +166,7 @@ public:
 
     QGraphicsScene*      videoScene         = nullptr;
     QGraphicsView*       videoView          = nullptr;
-    QGraphicsVideoItem*  videoWidget        = nullptr;
+    QGraphicsVideoItem*  videoItem          = nullptr;
     QMediaPlayer*        player             = nullptr;
     QAudioOutput*        audio              = nullptr;
 
@@ -182,19 +182,48 @@ public:
 
     void adjustVideoSize()
     {
-        videoWidget->setSize(videoView->size());
-        const int orientation = videoMediaOrientation();
+        videoItem->resetTransform();
 
-        if ((orientation == 0) || (orientation == 180))
+        QSizeF nativeSize    = videoItem->nativeSize();
+        int mediaOrientation = videoMediaOrientation();
+
+        if ((nativeSize.width()  < 1.0) ||
+            (nativeSize.height() < 1.0))
         {
-            videoView->fitInView(0, 0, videoView->width(), videoView->height(), Qt::KeepAspectRatio);
+            return;
+        }
+
+        if ((mediaOrientation == 90) ||
+            (mediaOrientation == 270))
+        {
+            nativeSize.transpose();
+        }
+
+        double ratio = (nativeSize.width() /
+                        nativeSize.height());
+
+        if (videoView->width() > videoView->height())
+        {
+            QSizeF vsize(videoView->height() * ratio,
+                         videoView->height());
+            videoItem->setSize(vsize);
         }
         else
         {
-            videoView->fitInView(0, 0, videoView->width(), videoView->height(), Qt::KeepAspectRatioByExpanding);
+            QSizeF vsize(videoView->width(),
+                         videoView->width() / ratio);
+            videoItem->setSize(vsize);
         }
 
-        videoView->centerOn(videoWidget);
+        videoView->setSceneRect(0, 0, videoItem->size().width(),
+                                      videoItem->size().height());
+
+        QPointF center = videoItem->boundingRect().center();
+        videoItem->setTransformOriginPoint(center);
+        videoItem->setRotation(videoOrientation);
+
+        videoView->fitInView(videoItem, Qt::KeepAspectRatio);
+        videoView->centerOn(videoItem);
         videoView->raise();
     };
 
@@ -213,8 +242,6 @@ public:
 
     void setVideoItemOrientation(int orientation)
     {
-        videoView->resetTransform();
-        videoView->rotate(orientation);
         videoOrientation = orientation;
         adjustVideoSize();
     };
@@ -269,12 +296,12 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
-    d->videoWidget = new QGraphicsVideoItem();
+    d->videoItem   = new QGraphicsVideoItem();
     d->player      = new QMediaPlayer(this);
     d->audio       = new QAudioOutput;
     d->player->setAudioOutput(d->audio);
-    d->player->setVideoOutput(d->videoWidget);
-    d->videoScene->addItem(d->videoWidget);
+    d->player->setVideoOutput(d->videoItem);
+    d->videoScene->addItem(d->videoItem);
 
     DHBox* const hbox = new DHBox(this);
     hbox->layout()->addWidget(d->toolBar);
@@ -299,7 +326,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     hbox->setStretchFactor(d->slider, 10);
     hbox->setSpacing(spacing);
 
-    d->videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
+    d->videoItem->setAspectRatioMode(Qt::IgnoreAspectRatio);
     d->videoView->setMouseTracking(true);
 
     d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
@@ -367,7 +394,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->player, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotHandlePlayerError(QMediaPlayer::Error,QString)));
 
-    connect(d->videoWidget, SIGNAL(nativeSizeChanged(QSizeF)),
+    connect(d->videoItem, SIGNAL(nativeSizeChanged(QSizeF)),
             this, SLOT(slotNativeSizeChanged()));
 }
 
@@ -377,7 +404,7 @@ MediaPlayerView::~MediaPlayerView()
 
     d->player->stop();
     delete d->player;
-    delete d->videoWidget;
+    delete d->videoItem;
     delete d->slider;
 
     delete d;
@@ -629,7 +656,6 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 {
     d->prevAction->setEnabled(hasPrevious);
     d->nextAction->setEnabled(hasNext);
-    d->videoView->resetTransform();
     d->adjustVideoSize();
 
     if (url.isEmpty())
