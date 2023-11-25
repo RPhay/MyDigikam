@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a06737a29..0a7182a18 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -149,6 +149,8 @@ else()
+    endif()
+ endif()
+ 
++set ( MARBLE_NO_WEBKITWIDGETS TRUE )
++
+ if (BUILD_WITH_DBUS)
+   find_package(Qt6DBus ${REQUIRED_QT_VERSION})
+   if (NOT Qt6DBus_FOUND)

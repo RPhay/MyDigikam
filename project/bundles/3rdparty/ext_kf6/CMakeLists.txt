@@ -113,7 +113,7 @@ InstallKF6Component(kdoctools                ${KDE_VERSION} "${Qt6CommonOptions}
 InstallKF6Component(phonon                   ${KDE_VERSION} "${Qt6CommonOptions};-DPHONON_BUILD_QT5=OFF"             "")
 InstallKF6Component(ksanecore                ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(libksane                 ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
-InstallKF6Component(marble                   "marble-qt6"   "${Qt6CommonOptions};${MarbleQtOnlyOptions}"             "")
+InstallKF6Component(marble                   "marble-qt6"   "${Qt6CommonOptions};${MarbleQtOnlyOptions}"             "marble-disable-webengine.patch")
 InstallKF6Component(kfilemetadata            ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(qca                      ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(kwallet                  ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
