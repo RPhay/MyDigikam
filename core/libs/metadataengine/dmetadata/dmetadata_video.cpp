@@ -63,6 +63,13 @@ extern "C"
 #include <libavutil/dict.h>
 #include <libavutil/pixdesc.h>
 #include <libavcodec/avcodec.h>
+
+#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55, 18, 0)
+
+#   include <libavutil/display.h>
+
+#endif
+
 }
 
 #endif
@@ -327,13 +334,13 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
             data = QString();
 
-#if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(51, 32, 0)
+#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(51, 32, 0)
 
-            int channels = codec->channels;
+            int channels = codec->ch_layout.nb_channels;
 
 #else
 
-            int channels = codec->ch_layout.nb_channels;
+            int channels = codec->channels;
 
 #endif
 
@@ -651,9 +658,29 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
             // --------------
 
+#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55, 18, 0)
+
+            quint8* const sideData = reinterpret_cast<quint8*>(av_stream_get_side_data(stream,
+                                                                                       AV_PKT_DATA_DISPLAYMATRIX,
+                                                                                       nullptr));
+
+            if (sideData)
+            {
+                double r = av_display_rotation_get(reinterpret_cast<qint32*>(sideData));
+
+                if (!qIsNaN(r))
+                {
+                    data = QString::number(((int)r + 360) % 360);
+                }
+            }
+
+#else
+
             data = s_setXmpTagStringFromEntry(this,
                                               QStringList() << QLatin1String("rotate"),                         // Generic.
                                               vmeta);
+
+#endif
 
             if (!data.isEmpty())
             {
