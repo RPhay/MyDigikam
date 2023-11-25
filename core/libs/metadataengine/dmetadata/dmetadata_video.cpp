@@ -42,6 +42,7 @@
 #include <QMimeDatabase>
 #include <QStringList>
 #include <QTimeZone>
+#include <QtMath>
 
 // KDE includes
 
