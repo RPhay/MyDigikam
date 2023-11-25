@@ -419,7 +419,6 @@ void MediaPlayerView::reload()
 {
     d->player->stop();
     d->player->setSource(d->currentItem);
-    d->adjustVideoSize();
     d->player->play();
 }
 
@@ -428,6 +427,10 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
     if (newState == QMediaPlayer::PlayingState)
     {
         int rotate = d->videoMediaOrientation();
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
+                                     << rotate;
+
         rotate     = (-rotate) + d->videoOrientation;
 
         if ((rotate > 270) || (rotate < 0))
@@ -436,9 +439,6 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
         }
 
         d->setVideoItemOrientation(rotate);
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
-                                     << d->videoOrientation;
 
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
