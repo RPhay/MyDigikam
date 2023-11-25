@@ -11,3 +11,146 @@ index a06737a29..0a7182a18 100644
  if (BUILD_WITH_DBUS)
    find_package(Qt6DBus ${REQUIRED_QT_VERSION})
    if (NOT Qt6DBus_FOUND)
+diff --git a/src/lib/marble/layers/PopupLayer.cpp b/src/lib/marble/layers/PopupLayer.cpp
+index b654fad76..cc77aa3b1 100644
+--- a/src/lib/marble/layers/PopupLayer.cpp
++++ b/src/lib/marble/layers/PopupLayer.cpp
+@@ -11,7 +11,7 @@
+ #include "GeoDataCoordinates.h"
+ #include "GeoPainter.h"
+ #include "MarbleWidget.h"
+-#include "PopupItem.h"
++//#include "PopupItem.h"
+ #include "ViewportParams.h"
+ #include "RenderPlugin.h"
+ #include "RenderState.h"
+@@ -39,7 +39,7 @@ public:
+     void setupDialogGeoPlaces( const GeoDataPlacemark *index );
+     void setupDialogSkyPlaces( const GeoDataPlacemark *index );
+ 
+-    PopupItem *const m_popupItem;
++ //   PopupItem *const m_popupItem;
+     MarbleWidget *const m_widget;
+     QSizeF m_requestedSize;
+     bool m_hasCrosshairsPlugin;
+@@ -47,7 +47,7 @@ public:
+ };
+ 
+ PopupLayer::Private::Private( MarbleWidget *marbleWidget, PopupLayer *q ) :
+-    m_popupItem( new PopupItem( q ) ),
++//    m_popupItem( new PopupItem( q ) ),
+     m_widget( marbleWidget ),
+     m_hasCrosshairsPlugin( false ),
+     m_crosshairsVisible( true )
+@@ -64,9 +64,10 @@ PopupLayer::PopupLayer( MarbleWidget *marbleWidget, QObject *parent ) :
+             break;
+         }
+     }
+-
++/*
+     connect( d->m_popupItem, SIGNAL(repaintNeeded()), this, SIGNAL(repaintNeeded()) );
+     connect( d->m_popupItem, SIGNAL(hide()), this, SLOT(hidePopupItem()) );
++*/
+ }
+ 
+ PopupLayer::~PopupLayer()
+@@ -84,7 +85,7 @@ bool PopupLayer::render( GeoPainter *painter, ViewportParams *viewport,
+ {
+     if ( visible() ) {
+         d->setAppropriateSize( viewport );
+-        d->m_popupItem->paintEvent( painter, viewport );
++  //      d->m_popupItem->paintEvent( painter, viewport );
+     }
+ 
+     return true;
+@@ -92,7 +93,7 @@ bool PopupLayer::render( GeoPainter *painter, ViewportParams *viewport,
+ 
+ bool PopupLayer::eventFilter( QObject *object, QEvent *e )
+ {
+-    return visible() && d->m_popupItem->eventFilter( object, e );
++    return visible();// && d->m_popupItem->eventFilter( object, e );
+ }
+ 
+ qreal PopupLayer::zValue() const
+@@ -107,11 +108,12 @@ RenderState PopupLayer::renderState() const
+ 
+ bool PopupLayer::visible() const
+ {
+-    return d->m_popupItem->visible();
++    return false; //d->m_popupItem->visible();
+ }
+ 
+ void PopupLayer::setVisible( bool visible )
+ {
++/*
+     d->m_popupItem->setVisible( visible );
+     if ( !visible ) {
+         disconnect( d->m_popupItem, SIGNAL(repaintNeeded()), this, SIGNAL(repaintNeeded()) );
+@@ -121,10 +123,12 @@ void PopupLayer::setVisible( bool visible )
+     else {
+         connect( d->m_popupItem, SIGNAL(repaintNeeded()), this, SIGNAL(repaintNeeded()) );
+     }
++*/
+ }
+ 
+ void PopupLayer::popup()
+ {
++/*
+     GeoDataCoordinates coords = d->m_popupItem->coordinate();
+     ViewportParams viewport( d->m_widget->viewport()->projection(),
+                              coords.longitude(), coords.latitude(), d->m_widget->viewport()->radius(),
+@@ -146,36 +150,43 @@ void PopupLayer::popup()
+     }
+ 
+     setVisible( true );
++*/
+ }
+ 
+ void PopupLayer::setCoordinates( const GeoDataCoordinates &coordinates , Qt::Alignment alignment )
+ {
++/*
+     d->m_popupItem->setCoordinate( coordinates );
+     d->m_popupItem->setAlignment( alignment );
++*/
+ }
+ 
+ void PopupLayer::setUrl( const QUrl &url )
+ {
+-    d->m_popupItem->setUrl( url );
++//    d->m_popupItem->setUrl( url );
+ }
+ 
+ void PopupLayer::setContent( const QString &html, const QUrl &baseUrl )
+ {
+-    d->m_popupItem->setContent( html, baseUrl );
++//    d->m_popupItem->setContent( html, baseUrl );
+ }
+ 
+ void PopupLayer::setBackgroundColor(const QColor &color)
+ {
++/*
+     if(color.isValid()) {
+         d->m_popupItem->setBackgroundColor(color);
+     }
++*/
+ }
+ 
+ void PopupLayer::setTextColor(const QColor &color)
+ {
++/*
+     if(color.isValid()) {
+         d->m_popupItem->setTextColor(color);
+     }
++*/
+ }
+ 
+ void PopupLayer::setSize( const QSizeF &size )
+@@ -193,7 +204,7 @@ void PopupLayer::Private::setAppropriateSize( const ViewportParams *viewport )
+ 
+     QSizeF minimumSize( 100.0, 100.0 );
+ 
+-    m_popupItem->setSize( m_requestedSize.boundedTo( maximumSize ).expandedTo( minimumSize ) );
++//    m_popupItem->setSize( m_requestedSize.boundedTo( maximumSize ).expandedTo( minimumSize ) );
+ }
+ 
+ void PopupLayer::hidePopupItem()
