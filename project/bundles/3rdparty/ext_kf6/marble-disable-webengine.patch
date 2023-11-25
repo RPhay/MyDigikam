@@ -1,18 +1,20 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index a06737a29..0a7182a18 100644
+index a06737a29..cdda4c845 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -149,6 +149,8 @@ else()
-    endif()
- endif()
+@@ -141,8 +141,8 @@ if(ANDROID)
  
-+set ( MARBLE_NO_WEBKITWIDGETS TRUE )
-+
- if (BUILD_WITH_DBUS)
-   find_package(Qt6DBus ${REQUIRED_QT_VERSION})
-   if (NOT Qt6DBus_FOUND)
+    set ( MARBLE_NO_WEBKITWIDGETS TRUE )
+ else()
+-    find_package(Qt6WebChannel ${REQUIRED_QT_VERSION})
+-    find_package(Qt6WebEngineWidgets ${REQUIRED_QT_VERSION})
++#    find_package(Qt6WebChannel ${REQUIRED_QT_VERSION})
++#    find_package(Qt6WebEngineWidgets ${REQUIRED_QT_VERSION})
+ 
+    if ( NOT Qt6WebEngineWidgets_FOUND )
+      set ( MARBLE_NO_WEBKITWIDGETS TRUE )
 diff --git a/src/lib/marble/layers/PopupLayer.cpp b/src/lib/marble/layers/PopupLayer.cpp
-index b654fad76..cc77aa3b1 100644
+index b654fad76..1f637b0b0 100644
 --- a/src/lib/marble/layers/PopupLayer.cpp
 +++ b/src/lib/marble/layers/PopupLayer.cpp
 @@ -11,7 +11,7 @@
@@ -33,7 +35,7 @@ index b654fad76..cc77aa3b1 100644
      MarbleWidget *const m_widget;
      QSizeF m_requestedSize;
      bool m_hasCrosshairsPlugin;
-@@ -47,7 +47,7 @@ public:
+@@ -47,10 +47,10 @@ public:
  };
  
  PopupLayer::Private::Private( MarbleWidget *marbleWidget, PopupLayer *q ) :
@@ -41,39 +43,52 @@ index b654fad76..cc77aa3b1 100644
 +//    m_popupItem( new PopupItem( q ) ),
      m_widget( marbleWidget ),
      m_hasCrosshairsPlugin( false ),
-     m_crosshairsVisible( true )
-@@ -64,9 +64,10 @@ PopupLayer::PopupLayer( MarbleWidget *marbleWidget, QObject *parent ) :
-             break;
-         }
-     }
--
+-    m_crosshairsVisible( true )
++    m_crosshairsVisible( false )
+ {
+ }
+ 
+@@ -58,6 +58,7 @@ PopupLayer::PopupLayer( MarbleWidget *marbleWidget, QObject *parent ) :
+     QObject( parent ),
+     d( new Private( marbleWidget, this ) )
+ {
 +/*
+     for (const RenderPlugin *renderPlugin: d->m_widget->renderPlugins()) {
+         if (renderPlugin->nameId() == QLatin1String("crosshairs")) {
+             d->m_hasCrosshairsPlugin = true;
+@@ -67,6 +68,7 @@ PopupLayer::PopupLayer( MarbleWidget *marbleWidget, QObject *parent ) :
+ 
      connect( d->m_popupItem, SIGNAL(repaintNeeded()), this, SIGNAL(repaintNeeded()) );
      connect( d->m_popupItem, SIGNAL(hide()), this, SLOT(hidePopupItem()) );
 +*/
  }
  
  PopupLayer::~PopupLayer()
-@@ -84,7 +85,7 @@ bool PopupLayer::render( GeoPainter *painter, ViewportParams *viewport,
+@@ -82,14 +84,15 @@ QStringList PopupLayer::renderPosition() const
+ bool PopupLayer::render( GeoPainter *painter, ViewportParams *viewport,
+                                 const QString&, GeoSceneLayer* )
  {
++/*
      if ( visible() ) {
          d->setAppropriateSize( viewport );
--        d->m_popupItem->paintEvent( painter, viewport );
-+  //      d->m_popupItem->paintEvent( painter, viewport );
+         d->m_popupItem->paintEvent( painter, viewport );
      }
- 
-     return true;
-@@ -92,7 +93,7 @@ bool PopupLayer::render( GeoPainter *painter, ViewportParams *viewport,
- 
+-
+-    return true;
++*/
++    return false;
+ }
+-
++/*
  bool PopupLayer::eventFilter( QObject *object, QEvent *e )
  {
--    return visible() && d->m_popupItem->eventFilter( object, e );
-+    return visible();// && d->m_popupItem->eventFilter( object, e );
+     return visible() && d->m_popupItem->eventFilter( object, e );
+@@ -104,14 +107,15 @@ RenderState PopupLayer::renderState() const
+ {
+     return RenderState(QStringLiteral("Popup Window"));
  }
- 
- qreal PopupLayer::zValue() const
-@@ -107,11 +108,12 @@ RenderState PopupLayer::renderState() const
- 
+-
++*/
  bool PopupLayer::visible() const
  {
 -    return d->m_popupItem->visible();
@@ -86,7 +101,7 @@ index b654fad76..cc77aa3b1 100644
      d->m_popupItem->setVisible( visible );
      if ( !visible ) {
          disconnect( d->m_popupItem, SIGNAL(repaintNeeded()), this, SIGNAL(repaintNeeded()) );
-@@ -121,10 +123,12 @@ void PopupLayer::setVisible( bool visible )
+@@ -121,10 +125,12 @@ void PopupLayer::setVisible( bool visible )
      else {
          connect( d->m_popupItem, SIGNAL(repaintNeeded()), this, SIGNAL(repaintNeeded()) );
      }
@@ -99,7 +114,7 @@ index b654fad76..cc77aa3b1 100644
      GeoDataCoordinates coords = d->m_popupItem->coordinate();
      ViewportParams viewport( d->m_widget->viewport()->projection(),
                               coords.longitude(), coords.latitude(), d->m_widget->viewport()->radius(),
-@@ -146,36 +150,43 @@ void PopupLayer::popup()
+@@ -146,45 +152,53 @@ void PopupLayer::popup()
      }
  
      setVisible( true );
@@ -145,12 +160,52 @@ index b654fad76..cc77aa3b1 100644
  }
  
  void PopupLayer::setSize( const QSizeF &size )
-@@ -193,7 +204,7 @@ void PopupLayer::Private::setAppropriateSize( const ViewportParams *viewport )
+ {
+-    d->m_requestedSize = size;
++//    d->m_requestedSize = size;
+ }
  
+ void PopupLayer::Private::setAppropriateSize( const ViewportParams *viewport )
+ {
++/*
+     qreal margin = 15.0;
+ 
+     QSizeF maximumSize;
+@@ -194,14 +208,16 @@ void PopupLayer::Private::setAppropriateSize( const ViewportParams *viewport )
      QSizeF minimumSize( 100.0, 100.0 );
  
--    m_popupItem->setSize( m_requestedSize.boundedTo( maximumSize ).expandedTo( minimumSize ) );
-+//    m_popupItem->setSize( m_requestedSize.boundedTo( maximumSize ).expandedTo( minimumSize ) );
+     m_popupItem->setSize( m_requestedSize.boundedTo( maximumSize ).expandedTo( minimumSize ) );
++*/
  }
  
  void PopupLayer::hidePopupItem()
+ {
++/*
+     if( d->m_hasCrosshairsPlugin && d->m_crosshairsVisible ) {
+         d->m_widget->setShowCrosshairs( d->m_crosshairsVisible );
+     }
+-
++*/
+     setVisible( false );
+ }
+ 
+diff --git a/src/lib/marble/layers/PopupLayer.h b/src/lib/marble/layers/PopupLayer.h
+index 2a487735a..6311db0f0 100644
+--- a/src/lib/marble/layers/PopupLayer.h
++++ b/src/lib/marble/layers/PopupLayer.h
+@@ -38,13 +38,14 @@ public:
+     QStringList renderPosition() const override;
+     bool render( GeoPainter *painter, ViewportParams *viewport,
+                  const QString &, GeoSceneLayer * ) override;
++/*
+     bool eventFilter( QObject *, QEvent * ) override;
+     qreal zValue() const override;
+ 
+     RenderState renderState() const override;
+ 
+     QString runtimeTrace() const override { return QStringLiteral("PopupLayer"); }
+-
++*/
+     /**
+      * @brief Is popup item visible
+      *
