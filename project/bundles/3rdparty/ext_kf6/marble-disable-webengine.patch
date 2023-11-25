@@ -1,18 +1,39 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index a06737a29..cdda4c845 100644
+index a06737a29..0e4fa44b8 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -141,8 +141,8 @@ if(ANDROID)
+@@ -135,19 +135,19 @@ include( MarbleMacros )
+ find_package(Protobuf)
+ set_package_properties(Protobuf PROPERTIES TYPE OPTIONAL PURPOSE "Parsing of OSM PBF files.")
  
-    set ( MARBLE_NO_WEBKITWIDGETS TRUE )
- else()
+-if(ANDROID)
+-    find_package(Qt6Positioning ${REQUIRED_QT_VERSION} REQUIRED)
+-    find_package(Qt6Multimedia ${REQUIRED_QT_VERSION} REQUIRED)
+-
+-   set ( MARBLE_NO_WEBKITWIDGETS TRUE )
+-else()
 -    find_package(Qt6WebChannel ${REQUIRED_QT_VERSION})
 -    find_package(Qt6WebEngineWidgets ${REQUIRED_QT_VERSION})
+-
+-   if ( NOT Qt6WebEngineWidgets_FOUND )
++#if(ANDROID)
++#    find_package(Qt6Positioning ${REQUIRED_QT_VERSION} REQUIRED)
++#    find_package(Qt6Multimedia ${REQUIRED_QT_VERSION} REQUIRED)
++#
++#   set ( MARBLE_NO_WEBKITWIDGETS TRUE )
++#else()
 +#    find_package(Qt6WebChannel ${REQUIRED_QT_VERSION})
 +#    find_package(Qt6WebEngineWidgets ${REQUIRED_QT_VERSION})
- 
-    if ( NOT Qt6WebEngineWidgets_FOUND )
++#
++#   if ( NOT Qt6WebEngineWidgets_FOUND )
       set ( MARBLE_NO_WEBKITWIDGETS TRUE )
+-   endif()
+-endif()
++#   endif()
++#endif()
+ 
+ if (BUILD_WITH_DBUS)
+   find_package(Qt6DBus ${REQUIRED_QT_VERSION})
 diff --git a/src/lib/marble/CMakeLists.txt b/src/lib/marble/CMakeLists.txt
 index 15f11649b..9a1f5cf44 100644
 --- a/src/lib/marble/CMakeLists.txt
