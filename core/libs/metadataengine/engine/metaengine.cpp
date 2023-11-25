@@ -293,6 +293,17 @@ bool MetaEngine::loadFromDataAndMerge(const QByteArray& imgData)
 
         // Exif metadata ----------------------------------
 
+        // Remove Exif.Image.Orientation from the ExifTool container,
+        // we already got the correct orientation with the FFmpeg backend.
+
+        Exiv2::ExifKey exifKey("Exif.Image.Orientation");
+        Exiv2::ExifData::iterator it = image->exifData().findKey(exifKey);
+
+        if (it != image->exifData().end())
+        {
+            image->exifData().erase(it);
+        }
+
         ExifMetaEngineMergeHelper exifHelper;
         exifHelper.mergeAll(image->exifData(), d->exifMetadata());
 

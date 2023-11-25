@@ -671,7 +671,8 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
                 if (!qIsNaN(r))
                 {
-                    data = QString::number(qFabs(r));
+                    r   -= 360 * qFloor(r / 360 + 0.9 / 360);
+                    data = QString::number(360 - r);
                 }
             }
 
