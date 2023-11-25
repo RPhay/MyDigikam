@@ -327,7 +327,17 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
             data = QString();
 
-            switch (codec->channels)
+#if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(51, 32, 0)
+
+            int channels = codec->channels;
+
+#else
+
+            int channels = codec->ch_layout.nb_channels;
+
+#endif
+
+            switch (channels)
             {
                 case 0:
                 {
