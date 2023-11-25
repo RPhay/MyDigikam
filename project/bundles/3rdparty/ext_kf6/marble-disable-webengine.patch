@@ -13,6 +13,28 @@ index a06737a29..cdda4c845 100644
  
     if ( NOT Qt6WebEngineWidgets_FOUND )
       set ( MARBLE_NO_WEBKITWIDGETS TRUE )
+diff --git a/src/lib/marble/CMakeLists.txt b/src/lib/marble/CMakeLists.txt
+index 15f11649b..9a1f5cf44 100644
+--- a/src/lib/marble/CMakeLists.txt
++++ b/src/lib/marble/CMakeLists.txt
+@@ -127,7 +127,7 @@ set(marblewidget_SRCS
+     PluginManager.cpp
+     TimeControlWidget.cpp
+     AbstractFloatItem.cpp
+-    PopupItem.cpp
++#    PopupItem.cpp
+     MarbleGlobal.cpp
+     MarbleDirs.cpp
+     MarbleLocale.cpp
+@@ -298,7 +298,7 @@ set(marblewidget_SRCS
+ 
+ if (MARBLE_NO_WEBKITWIDGETS)
+     LIST(APPEND marblewidget_SRCS
+-        NullMarbleWebView.cpp
++#        NullMarbleWebView.cpp
+         NullTinyWebBrowser.cpp
+         )
+ else()
 diff --git a/src/lib/marble/layers/PopupLayer.cpp b/src/lib/marble/layers/PopupLayer.cpp
 index b654fad76..1f637b0b0 100644
 --- a/src/lib/marble/layers/PopupLayer.cpp
