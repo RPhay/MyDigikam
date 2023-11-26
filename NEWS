@@ -249,7 +249,7 @@ BUGFIXES:
 233 ==> 450117 - Exif information in Metadata tab from right sidebar are not available although Exiftool Tab work fine.
 234 ==> 477515 - digiKam crashes at startup.
 235 ==> 470391 - Cannot uninstall or update Nightly build.
-236 ==> 
+236 ==> 431063 - Hanging Process After Closing Application in MS Windows.
 237 ==> 
 238 ==> 
 239 ==> 
