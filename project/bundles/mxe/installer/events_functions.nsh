@@ -123,4 +123,12 @@ Function .onInstSuccess
 
 FunctionEnd
 
+;-------------------------------------------------------------------------------------
+
+Function functionFinishRun
+
+    ExecShell "" "$instdir\digikam.exe"
+
+FunctionEnd
+
 !endif ;EVENTS_FUNCTIONS_INCLUDED
