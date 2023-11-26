@@ -171,7 +171,7 @@ void ThemeManager::populateThemeMenu()
                 const QString filePath  = it.next();
                 KSharedConfigPtr config = KSharedConfig::openConfig(filePath);
                 QIcon icon              = d->createSchemePreviewIcon(config);
-                KConfigGroup group(config, "General");
+                KConfigGroup group(config, QLatin1String("General"));
                 const QString name      = group.readEntry("Name",
                                                           it.fileInfo().baseName());
                 QAction* const ac       = new QAction(name, d->themeMenuActionGroup);
@@ -213,7 +213,7 @@ void ThemeManager::updateCurrentDesktopDefaultThemePreview()
 QString ThemeManager::currentDesktopdefaultTheme() const
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("kdeglobals"));
-    KConfigGroup group(config, "General");
+    KConfigGroup group(config, QLatin1String("General"));
 
     return group.readEntry("ColorScheme");
 }
