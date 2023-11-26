@@ -253,7 +253,7 @@ BUGFIXES:
 237 ==> 477542 - Suggestion : implement virtual albums.
 238 ==> 477545 - Suggestion : versioning of pictures.
 239 ==> 477393 - dgiKam crash after moving photos to different directory under its control and *then* wrote metadata to files.
-240 ==> 
+240 ==> 477571 - Icon contrast too low on Mac in dark mode.
 241 ==> 
 242 ==> 
 243 ==> 
