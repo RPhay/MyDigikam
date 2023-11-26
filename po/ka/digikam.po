@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-25 00:40+0000\n"
-"PO-Revision-Date: 2023-11-18 21:32+0100\n"
+"PO-Revision-Date: 2023-11-25 05:52+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -8203,11 +8203,10 @@ msgid "Sharpen..."
 msgstr ""
 
 #: core/dplugins/editor/file/print/printhelper.cpp:177
-#, fuzzy, kde-format
-#| msgid "Not available"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
-msgstr "ხელმიუწვდომელია"
+msgstr "პრინტერი ხელმისაწვდომი არაა"
 
 #: core/dplugins/editor/file/print/printhelper.cpp:178
 #, kde-format
@@ -46320,7 +46319,7 @@ msgstr "ახალი სანიშნე"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
-msgstr "სანიშნის ჩასწორება"
+msgstr "სანიშნეს ჩასწორება"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
 #, kde-format
@@ -46395,7 +46394,7 @@ msgstr "ადგილები"
 #, kde-format
 msgctxt "@action"
 msgid "Add Bookmark"
-msgstr "სანიშნის დამატება"
+msgstr "სანიშნეს დამატება"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:106
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:102
@@ -46420,7 +46419,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Edit Bookmark"
-msgstr "სანიშნის ჩასწორება"
+msgstr "სანიშნეს ჩასწორება"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:141
 #, kde-format
@@ -46432,7 +46431,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
-msgstr "ახალი სანიშნის დამატება"
+msgstr "ახალი სანიშნეს დამატება"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:246
 #, kde-format
@@ -46447,7 +46446,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
-msgstr "სანიშნის წაშლის დადასტურება"
+msgstr "სანიშნეს წაშლის დადასტურება"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:260
 #, kde-format
@@ -46483,7 +46482,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add Bookmark"
-msgstr "სანიშნის დამატება"
+msgstr "სანიშნეს დამატება"
 
 #: core/showfoto/folderview/showfotofolderviewsidebar.cpp:384
 #, kde-format
@@ -49865,12 +49864,12 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:101
 #, kde-format
 msgid "Bookmark title"
-msgstr "სანიშნის სათაური"
+msgstr "სანიშნეს სათაური"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:106
 #, kde-format
 msgid "Bookmark comment"
-msgstr "სანიშნის კომენტარი"
+msgstr "სანიშნეს კომენტარი"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:211
 #, kde-format
@@ -49898,11 +49897,10 @@ msgid "New Folder"
 msgstr "ახალი საქაღალდე"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
-msgstr "ფერების მართვა"
+msgstr "სანიშნეების მართვა"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
@@ -49918,7 +49916,7 @@ msgstr "სანიშნეების ამოღება"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:85
 #, kde-format
 msgid "Insert Bookmark"
-msgstr "სანიშნის ჩასმა"
+msgstr "სანიშნეს ჩასმა"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:136
 #, kde-format
@@ -49991,12 +49989,10 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bookmarks.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
-msgstr "სანიშნის ჩასწორება"
+msgstr "სანიშნეს გატანა"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -50011,7 +50007,7 @@ msgstr "სანიშნების ჩასწორება"
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:163
 #, kde-format
 msgid "Add Bookmark..."
-msgstr "სანიშნის დამატება..."
+msgstr "სანიშნეს დამატება..."
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, kde-format

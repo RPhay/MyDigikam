@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-25 00:40+0000\n"
-"PO-Revision-Date: 2023-11-23 19:50+0100\n"
+"PO-Revision-Date: 2023-11-24 14:32+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -3616,6 +3616,12 @@ msgid ""
 "R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
+"Nouvelles fonctionnalités « raw » : Phase One / Leaf IIQ-S v2 prend en "
+"charge les pellicules Canon CR3 / les fichiers « RawBurst Canon "
+"CRM » (film). Les fichiers (non-standard) « DNG » compressés (et 16 bits "
+"décompressés) et les fichiers « DNG » décompressés sont autorisés pour les "
+"périphériques Canon EOS R3, R7 et R10, Fujifilm X-H2S, X-T30 II Système, OM "
+"OM-1, Leica M11, Sony A7-IV (ILCE-7M4) et DJI Mavic 3."
 
 #: core/app/views/stack/welcomepageview.cpp:189
 #, kde-format
@@ -21255,10 +21261,9 @@ msgstr ""
 "sur votre système."
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
-#, fuzzy, kde-format
-#| msgid "No OpenGL context found"
+#, kde-format
 msgid "No OpenGL context has been found"
-msgstr "Aucun contexte OpenGL trouvé"
+msgstr "Aucun contexte « OpenGL » n'a été trouvé."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
 #, kde-format
@@ -53684,11 +53689,10 @@ msgid "API Key:"
 msgstr "Clé de l'API :"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, fuzzy, kde-format
-#| msgid "Javascript Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Javascript Message"
-msgstr "Message Javascript"
+msgstr "Message de Javascript"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:207
 #, kde-format
@@ -53816,11 +53820,10 @@ msgid "New Folder"
 msgstr "Nouveau dossier"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
-msgstr "Gestion de la couleur"
+msgstr "Gestion des signets"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
@@ -53913,12 +53916,10 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Signets.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
-msgstr "Modifier un signet"
+msgstr "Exporter un signet"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -54562,12 +54563,10 @@ msgid "Retrieving RG info -"
 msgstr "Extraction des informations de géocodage inverse - "
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Reverse Geocoding"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
-msgstr "Géocodage inversé"
+msgstr "Erreur de géocodage inversé"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
@@ -54599,11 +54598,10 @@ msgstr ""
 "conserver les étiquettes déjà obtenues ?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, fuzzy, kde-format
-#| msgid "Abort reverse geocoding?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
-msgstr "Interrompre le géocodage inversé ?"
+msgstr "Annuler le géocodage inversé ?"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:235
 #, kde-format
