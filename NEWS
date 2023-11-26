@@ -250,9 +250,13 @@ BUGFIXES:
 234 ==> 477515 - digiKam crashes at startup.
 235 ==> 470391 - Cannot uninstall or update Nightly build.
 236 ==> 431063 - Hanging Process After Closing Application in MS Windows.
-237 ==> 
+237 ==> 477542 - Suggestion : implement virtual albums.
 238 ==> 
 239 ==> 
 240 ==> 
 241 ==> 
 242 ==> 
+243 ==> 
+244 ==> 
+245 ==> 
+246 ==> 
