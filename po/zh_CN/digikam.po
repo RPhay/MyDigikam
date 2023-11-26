@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-25 00:40+0000\n"
-"PO-Revision-Date: 2023-11-19 03:40\n"
+"PO-Revision-Date: 2023-11-25 02:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -328,17 +328,17 @@ msgstr "指定标签“%1”到图像"
 #: core/app/filters/filtersidebarwidget.cpp:143
 #, kde-format
 msgid "Text Filter"
-msgstr "文本筛选器"
+msgstr "文本过滤器"
 
 #: core/app/filters/filtersidebarwidget.cpp:149
 #, kde-format
 msgid "MIME Type Filter"
-msgstr "MIME 类型筛选器"
+msgstr "MIME 类型过滤器"
 
 #: core/app/filters/filtersidebarwidget.cpp:155
 #, kde-format
 msgid "Geolocation Filter"
-msgstr "地理位置筛选器"
+msgstr "地理位置过滤器"
 
 #: core/app/filters/filtersidebarwidget.cpp:172
 #, kde-format
@@ -361,7 +361,7 @@ msgstr "标签匹配条件"
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
 "This also includes the '%1' check box."
-msgstr "指定如何结合多个选中的标签来对图像进行筛选，“%1”复选框勾选时也生效。"
+msgstr "指定如何结合多个选中的标签来对图像进行过滤，“%1”复选框勾选时也生效。"
 
 #: core/app/filters/filtersidebarwidget.cpp:187
 #: core/utilities/searchwindow/searchgroup_label.cpp:301
@@ -378,7 +378,7 @@ msgstr "与"
 #: core/app/filters/filtersidebarwidget.cpp:205
 #, kde-format
 msgid "Tags Filter"
-msgstr "标签筛选器"
+msgstr "标签过滤器"
 
 #: core/app/filters/filtersidebarwidget.cpp:222
 #, kde-format
@@ -398,18 +398,18 @@ msgstr "人脸标签匹配条件"
 #: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid "Face Tags Filter"
-msgstr "人脸标签筛选器"
+msgstr "人脸标签过滤器"
 
 #: core/app/filters/filtersidebarwidget.cpp:267
 #, kde-format
 msgid "Labels Filter"
-msgstr "标记筛选器"
+msgstr "标记过滤器"
 
 #: core/app/filters/tagfilterview.cpp:72
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
-msgstr "还原标签筛选器"
+msgstr "还原标签过滤器"
 
 #: core/app/filters/tagfilterview.cpp:73
 #, kde-format
@@ -427,7 +427,7 @@ msgstr "关闭"
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
-msgstr "标签筛选模式"
+msgstr "标签过滤模式"
 
 #: core/app/filters/tagfilterview.cpp:77
 #, kde-format
@@ -1233,7 +1233,7 @@ msgstr "预览："
 #: core/app/items/utils/tooltipfiller.cpp:649
 #, kde-format
 msgid "Filter"
-msgstr "筛选"
+msgstr "过滤"
 
 #: core/app/items/utils/tooltipfiller.cpp:664
 #, kde-format
@@ -1926,14 +1926,14 @@ msgstr "勾选此项将展开显示所有分组中的项目。"
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
-msgstr "排序方式(&S)"
+msgstr "项目排序(&S)"
 
 #: core/app/main/digikamapp_setup.cpp:582
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
-msgstr "相册缩略图视图的排序方式"
+msgstr "图像在相册缩略图视图中的排序方式"
 
 #: core/app/main/digikamapp_setup.cpp:587
 #, kde-format
@@ -2578,7 +2578,7 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-"tysontan@tysontan.com, CoelacanthusHex@kde.org, chaofeng111@gmail.com, "
+"tds00@qq.com, CoelacanthusHex@kde.org, chaofeng111@gmail.com, "
 "fundawang@linux.net.cn, i@guoyunhe.me, millionart@kde.org, "
 "shuizhuyuanluo@126.com, xujia19@gmail.com, wengxt@gmail.com, YFdyh000@kde."
 "org, bingling00@kde.org"
@@ -2997,7 +2997,7 @@ msgstr[0] "%1 项"
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
-msgstr "筛选"
+msgstr "过滤"
 
 #: core/app/views/stack/itemiconview_albums.cpp:318
 #, kde-format
@@ -8494,17 +8494,16 @@ msgid "Sharpen..."
 msgstr "锐化..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:177
-#, fuzzy, kde-format
-#| msgid "No Profile Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
-msgstr "无可用特性文件"
+msgstr "没有可用的打印机"
 
 #: core/dplugins/editor/file/print/printhelper.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
-msgstr ""
+msgstr "本机系统并未安装打印机。请安装至少一台打印机。"
 
 #: core/dplugins/editor/file/print/printhelper.cpp:188
 #, kde-format
@@ -10670,20 +10669,16 @@ msgid "One map"
 msgstr "单地图"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - vertical"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
-msgstr "双地图-垂直"
+msgstr "双地图 - 左侧和右侧"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - horizontal"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
-msgstr "双地图 - 水平"
+msgstr "双地图 - 顶部和底部"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format
@@ -20114,17 +20109,15 @@ msgid "OpenGL Error"
 msgstr "OpenGL 错误"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
-#, fuzzy, kde-format
-#| msgid "GL_ARB_texture_rectangle not supported"
+#, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
-msgstr "GL_ARB_texture_rectangle 不支持"
+msgstr "本机系统不支持 GL_ARB_texture_rectangle OpenGL 扩展"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
-#, fuzzy, kde-format
-#| msgid "No OpenGL context found"
+#, kde-format
 msgid "No OpenGL context has been found"
-msgstr "未找到 OpenGL 环境"
+msgstr "没有找到 OpenGL 环境"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
 #, kde-format
@@ -27171,7 +27164,7 @@ msgstr "上次搜索结果 (0.9)"
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1230
 #, kde-format
 msgid "Initialized and imported file suffix filter"
-msgstr "已初始化并已导入文件后缀筛选器"
+msgstr "已初始化并已导入文件后缀过滤器"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1252
 #, kde-format
@@ -33268,25 +33261,25 @@ msgid ""
 "Press the Reset button from the right side to clear all filter settings.\n"
 "Press the Settings button from the right side to open the filters panel."
 msgstr ""
-"图像筛选器的状态栏背景色反映了右侧栏筛选器选项的整体情况。\n"
+"图像过滤器的状态栏背景色反映了右侧栏过滤器选项的整体情况。\n"
 "\n"
-"无色：无生效的筛选器，显示全部项目。\n"
-"红色：有生效的筛选器，无匹配的项目。\n"
-"绿色：有生效的筛选器，有匹配的项目。\n"
+"无色：无生效的过滤器，显示全部项目。\n"
+"红色：有生效的过滤器，无匹配的项目。\n"
+"绿色：有生效的过滤器，有匹配的项目。\n"
 "\n"
-"将鼠标悬停在其提示文字上访即可查看生效筛选器的详情。\n"
-"点击“垃圾桶”按钮将清空所有筛选器。\n"
-"点击“漏斗”按钮将打开右侧栏的筛选器面板。"
+"将鼠标悬停在其提示文字上访即可查看生效过滤器的详情。\n"
+"点击“垃圾桶”按钮将清空所有过滤器。\n"
+"点击“漏斗”按钮将打开右侧栏的过滤器面板。"
 
 #: core/libs/filters/filterstatusbar.cpp:87
 #, kde-format
 msgid "Reset all active filters"
-msgstr "清空所有筛选器"
+msgstr "清空所有过滤器"
 
 #: core/libs/filters/filterstatusbar.cpp:93
 #, kde-format
 msgid "Open filter settings panel"
-msgstr "打开筛选器面板"
+msgstr "打开过滤器面板"
 
 #: core/libs/filters/filterstatusbar.cpp:124
 #, kde-format
@@ -33326,33 +33319,33 @@ msgstr "<br/><nobr>标签</nobr>"
 #: core/libs/filters/filterstatusbar.cpp:159
 #, kde-format
 msgid "<nobr><b>Active filters:</b></nobr>"
-msgstr "<nobr><b>生效筛选器：</b></nobr>"
+msgstr "<nobr><b>生效的过滤器：</b></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:163
 #, kde-format
 msgid "<nobr><b>Active filter:</b></nobr>"
-msgstr "<nobr><b>生效筛选器：</b></nobr>"
+msgstr "<nobr><b>生效的过滤器：</b></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:170
 #, kde-format
 msgid "No active filter"
-msgstr "无生效筛选器"
+msgstr "没有生效的过滤器"
 
 #: core/libs/filters/filterstatusbar.cpp:179
 #, kde-format
 msgid "One active filter"
-msgstr "1 个筛选器正在生效"
+msgstr "1 个过滤器正在生效"
 
 #: core/libs/filters/filterstatusbar.cpp:183
 #, kde-format
 msgid "1 active filter"
 msgid_plural "%1 active filters"
-msgstr[0] "%1 个筛选器正在生效"
+msgstr[0] "%1 个过滤器正在生效"
 
 #: core/libs/filters/geolocationfilter.cpp:28
 #, kde-format
 msgid "No geo filtering"
-msgstr "无地理位置筛选"
+msgstr "没有地理位置过滤"
 
 #: core/libs/filters/geolocationfilter.cpp:29
 #, kde-format
@@ -33367,7 +33360,7 @@ msgstr "无地理坐标图像"
 #: core/libs/filters/geolocationfilter.cpp:32
 #, kde-format
 msgid "Filter by geolocation"
-msgstr "按地理位置筛选"
+msgstr "按地理位置过滤"
 
 #: core/libs/filters/geolocationfilter.cpp:33
 #, kde-format
@@ -33465,7 +33458,7 @@ msgstr "光栅图像"
 #: core/libs/filters/mimefilter.cpp:45
 #, kde-format
 msgid "Filter by file type"
-msgstr "按文件类型筛选"
+msgstr "按文件类型过滤"
 
 #: core/libs/filters/mimefilter.cpp:46
 #, kde-format
@@ -33482,7 +33475,7 @@ msgstr ""
 msgid ""
 "Select the rating value used to filter albums' contents. Use the context pop-"
 "up menu to set rating filter conditions."
-msgstr "选择用于筛选相册内容的评分数值。使用右键菜单可以设置评分筛选条件。"
+msgstr "选择用于过滤相册内容的评分数值。使用右键菜单可以设置评分过滤条件。"
 
 #: core/libs/filters/ratingfilter.cpp:182
 #, kde-format
@@ -33502,7 +33495,7 @@ msgstr "评分小于等于 %1。"
 #: core/libs/filters/ratingfilter.cpp:241
 #, kde-format
 msgid "Rating Filter Options"
-msgstr "评分筛选选项"
+msgstr "评分过滤选项"
 
 #: core/libs/filters/ratingfilter.cpp:246
 #, kde-format
@@ -33527,14 +33520,14 @@ msgstr "排除未评分项目"
 #: core/libs/filters/textfilter.cpp:72
 #, kde-format
 msgid "Text quick filter (search)"
-msgstr "文本快速筛选器 (搜索)"
+msgstr "文本快速过滤器 (搜索)"
 
 #: core/libs/filters/textfilter.cpp:73
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
 "(comments), and tags"
-msgstr "输入搜索文本以对项目的名称、说明、注释和标签等进行快速筛选显示。"
+msgstr "输入搜索文本以对项目的名称、说明、注释和标签等进行快速过滤。"
 
 #: core/libs/filters/textfilter.cpp:77
 #, kde-format
@@ -35859,13 +35852,13 @@ msgstr "未定义"
 #: core/libs/widgets/history/filtershistorywidget.cpp:91
 #, kde-format
 msgid "Used filters"
-msgstr "已使用筛选器"
+msgstr "已使用的过滤器"
 
 #: core/libs/properties/history/itempropertieshistorytab.cpp:128
 #: core/libs/widgets/history/filtershistorywidget.cpp:128
 #, kde-format
 msgid "Remove filter"
-msgstr "移除筛选器"
+msgstr "移除过滤器"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:73
 #, kde-format
@@ -35877,7 +35870,7 @@ msgstr "版本"
 #, kde-format
 msgctxt "@title"
 msgid "Used Filters"
-msgstr "已使用筛选器"
+msgstr "已使用的过滤器"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:156
 #, kde-format
@@ -37988,9 +37981,9 @@ msgid ""
 "> You may <b>lose tags</b> if you did not read tags before (by calling Read "
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
-"<qt>digiKam 将在设置标签之前从数据库清理标签元数据。<br/> 如果您在之前尚未读"
-"取标签 (通过调用“读取图像标签”)，您可能会<b>丢失标签</b>。<br/> 您想要继续"
-"吗？</qt>"
+"<qt>digiKam 将在设置来自数据库的标签之前清理文件的标签元数据。<br/> 如果您在"
+"这之前没有读取过文件的标签 (通过调用“读取图像标签”操作)，您可能会<b>丢失标签"
+"</b>。<br/> 您想要继续吗？</qt>"
 
 #: core/libs/tags/manager/tagsmanager.cpp:516
 #: core/libs/tags/manager/tagsmanager.cpp:535
@@ -42552,21 +42545,21 @@ msgstr "正在加载"
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tags filter options"
-msgstr "标签筛选器选项"
+msgstr "标签过滤器选项"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:154
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:128
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
-msgstr "应用标签筛选器到元数据。"
+msgstr "应用标签过滤器到元数据。"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:159
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:133
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "No filter"
-msgstr "无筛选器"
+msgstr "没有过滤器"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:162
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:136
@@ -49239,7 +49232,7 @@ msgstr[0] "重命名 (%1 张图像)"
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:428
 #, kde-format
 msgid "Sort Images"
-msgstr "排序方式"
+msgstr "图像排序"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:71
 #, kde-format
@@ -51273,8 +51266,7 @@ msgid "API Key:"
 msgstr "API 密钥："
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, fuzzy, kde-format
-#| msgid "Javascript Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Javascript 消息"
@@ -51403,11 +51395,10 @@ msgid "New Folder"
 msgstr "新建文件夹"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
-msgstr "色彩管理"
+msgstr "书签管理"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
@@ -51498,12 +51489,10 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 书签.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
-msgstr "编辑书签"
+msgstr "导出书签"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -52120,12 +52109,10 @@ msgid "Retrieving RG info -"
 msgstr "正在获取 RG 信息 -"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Reverse Geocoding"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
-msgstr "反向地理编码"
+msgstr "反向地理编码错误"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
@@ -52153,11 +52140,10 @@ msgid ""
 msgstr "1 张图像已被进行反向地理编码。您想要保留已经获取的标签吗？"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, fuzzy, kde-format
-#| msgid "Abort reverse geocoding?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
-msgstr "要中止反向地理编码吗？"
+msgstr "要中止反向地理编码操作吗？"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:235
 #, kde-format
@@ -52248,12 +52234,12 @@ msgstr "从缩略图创建选中区域"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, kde-format
 msgid "Filter images"
-msgstr "筛选图像"
+msgstr "过滤图像"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
 #, kde-format
 msgid "Remove the current filter"
-msgstr "移除当前筛选器"
+msgstr "移除当前过滤器"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
 #, kde-format
@@ -54147,7 +54133,7 @@ msgstr "地图"
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
-msgstr "项目排序条件(&S)"
+msgstr "项目排序(&S)"
 
 #: core/utilities/import/main/importui.cpp:390
 #, kde-format
@@ -54195,7 +54181,7 @@ msgstr "按下载状态"
 #, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
-msgstr "项目排序方式(&O)"
+msgstr "项目排序方向(&O)"
 
 #: core/utilities/import/main/importui.cpp:424
 #, kde-format
@@ -58079,7 +58065,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
-msgstr "编辑导入筛选器"
+msgstr "编辑导入过滤器"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, kde-format
@@ -58090,7 +58076,7 @@ msgstr "名称："
 #: core/utilities/setup/camera/importfilterdlg.cpp:109
 #, kde-format
 msgid "Mime filter:"
-msgstr "MIME 类型筛选器："
+msgstr "MIME 类型过滤器："
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:117
 #, kde-format
@@ -58100,12 +58086,12 @@ msgstr "选择 MIME 类型..."
 #: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "File name filter:"
-msgstr "文件名筛选器："
+msgstr "文件名过滤器："
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Path filter:"
-msgstr "路径筛选器："
+msgstr "路径过滤器："
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:142
 #, kde-format
@@ -58115,7 +58101,7 @@ msgstr "仅显示新文件"
 #: core/utilities/setup/camera/importfilterdlg.cpp:216
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
-msgstr "选择要筛选的 MIME 类型。"
+msgstr "选择要过滤的 MIME 类型。"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:218
 #, kde-format
@@ -58198,7 +58184,7 @@ msgstr "如果从相机下载时目标文件已存在"
 #, kde-format
 msgid ""
 "Here you can see filters that can be used to filter files in import dialog."
-msgstr "此表列出了导入对话框中可用的各种筛选器。"
+msgstr "此表列出了导入对话框中可用的各种过滤器。"
 
 #: core/utilities/setup/camera/setupcamera.cpp:426
 #, kde-format
@@ -58229,7 +58215,7 @@ msgstr "忽略文件扩展名："
 #: core/utilities/setup/camera/setupcamera.cpp:458
 #, kde-format
 msgid "Import Filters"
-msgstr "导入筛选器"
+msgstr "导入过滤器"
 
 #: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
@@ -59841,7 +59827,7 @@ msgstr "ExifTool 后端程序"
 #, kde-format
 msgctxt "@label"
 msgid "Select Metadata Fields to be Displayed when using Custom Filters"
-msgstr "选择使用自定义筛选器时显示的元数据字段"
+msgstr "选择使用自定义过滤器时显示的元数据字段"
 
 #: core/utilities/setup/metadata/setupmetadata_display.cpp:43
 #, kde-format
@@ -60068,18 +60054,7 @@ msgstr ""
 "业软件均兼容此文件名。使用 Darktable 时请不要勾选此项。"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Add file types to be recognised as sidecars.\n"
-#| "digiKam (optionally) writes metadata to *.xmp sidecar\n"
-#| "files. Other programs might use different types, which\n"
-#| "can be specified below. digiKam will neither display these\n"
-#| "nor read from or write to them. But whenever a matching album\n"
-#| "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-#| "moved, copied or deleted, the same operation will be done\n"
-#| "on these sidecar files.\n"
-#| "Multiple extensions must be separated by a semicolon or a space."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
@@ -60091,13 +60066,11 @@ msgid ""
 "files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
-"添加要识别为附带文件的文件类型。\n"
-"digiKam 可以选择写入元数据到 *.xmp 附带文件。\n"
-"其他软件可能会使用不同的文件类型，您可以在下方指定它们。\n"
-"digiKam 将不会显示这些文件，且不会对它们进行读写操作。\n"
-"但是如果这些附带文件匹配的相册项目 \n"
-"(例如“image.dng”与匹配的附带文件“image.dng.pp3”) \n"
-"进行了重命名、移动、复制和删除时，\n"
+"添加要识别为附带文件的文件类型。digiKam 可以选择写入元数据到 *.xmp 附带文件。"
+"其他软件可能会使用不同的文件类型，您可以在下方指定它们。digiKam 将不会显示这"
+"些文件，且不会对它们进行读写操作。但是如果这些附带文件匹配的相册项目 (例"
+"如“image.dng”与匹配的附带文件“image.dng.pp3”) 进行了重命名、移动、复制和删除"
+"时，\n"
 "这些操作也将被应用到它们的附带文件。\n"
 "请用半角分号或者空格符分隔多个扩展名。"
 
@@ -61541,15 +61514,3 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
-
-#~ msgctxt "@title:window"
-#~ msgid "Export error"
-#~ msgstr "导出错误"
-
-#~ msgctxt "@title:window"
-#~ msgid "GPS Sync"
-#~ msgstr "GPS 同步"
-
-#~ msgctxt "@info:whatsthis"
-#~ msgid "Visit Exiv2 project website"
-#~ msgstr "访问 Exiv2 项目网站"
