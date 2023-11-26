@@ -82,7 +82,14 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool merge)
 
     if (merge)
     {
-        loadFromDataAndMerge(exv);
+        QStringList exclude;
+
+        // Remove Exif.Image.Orientation from the ExifTool container,
+        // we already got the correct orientation with the FFmpeg backend.
+
+        exclude << QLatin1String("Exif.Image.Orientation");
+
+        loadFromDataAndMerge(exv, exclude);
     }
     else
     {

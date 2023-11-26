@@ -224,9 +224,10 @@ public:
 
     /**
      * Load and merge metadata (Exif, Iptc and Xmp) from a byte array.
+     * Use 'exclude' to remove Exif tags from the 'imgData' that will not be merged.
      * Return true if metadata have been loaded and merged successfully from item data.
      */
-    bool loadFromDataAndMerge(const QByteArray& imgData);
+    bool loadFromDataAndMerge(const QByteArray& imgData, const QStringList& exclude = QStringList());
 
     /**
      * Return 'true' if metadata container in memory as no Comments, Exif, Iptc, and Xmp.
