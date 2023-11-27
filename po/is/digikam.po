@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-25 00:40+0000\n"
+"POT-Creation-Date: 2023-11-27 00:40+0000\n"
 "PO-Revision-Date: 2023-10-05 09:38+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -43189,7 +43189,7 @@ msgstr "Fel&a stöðustiku"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "Fela stöðustikuna þegar gluggi skiptir í skjáfylliham."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1224
+#: core/libs/widgets/mainview/thememanager_p.cpp:1232
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"

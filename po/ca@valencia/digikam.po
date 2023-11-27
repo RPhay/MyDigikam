@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-25 00:40+0000\n"
-"PO-Revision-Date: 2023-11-22 11:48+0100\n"
+"POT-Creation-Date: 2023-11-27 00:40+0000\n"
+"PO-Revision-Date: 2023-11-23 11:45+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -21071,8 +21071,7 @@ msgstr ""
 "No s'accepta l'extensió GL_ARB_texture_rectangle d'OpenGL en este sistema"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
-#, fuzzy, kde-format
-#| msgid "No OpenGL context have been found"
+#, kde-format
 msgid "No OpenGL context has been found"
 msgstr "No s'ha trobat el context d'OpenGL"
 
@@ -43734,7 +43733,7 @@ msgid "Hide statusbar when window switch in full-screen mode."
 msgstr ""
 "Oculta la barra d'estat quan la finestra canvie al mode de pantalla completa."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1224
+#: core/libs/widgets/mainview/thememanager_p.cpp:1232
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -53363,8 +53362,7 @@ msgid "API Key:"
 msgstr "Clau de l'API:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, fuzzy, kde-format
-#| msgid "Javascript Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Missatge de JavaScript"
@@ -53494,11 +53492,10 @@ msgid "New Folder"
 msgstr "Carpeta nova"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
-msgstr "Gestió del color"
+msgstr "Gestioneu els punts d'interés"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
@@ -53589,12 +53586,10 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bookmarks.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
-msgstr "Editeu el punt d'interés"
+msgstr "Exportació de punt d'interés"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -54240,12 +54235,10 @@ msgid "Retrieving RG info -"
 msgstr "S'està recuperant la informació RG -"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Reverse Geocoding"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
-msgstr "Geocodificació inversa"
+msgstr "S'ha produït un error de geocodificació inversa"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
@@ -54277,8 +54270,7 @@ msgstr ""
 "ja s'han obtingut?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, fuzzy, kde-format
-#| msgid "Abort reverse geocoding?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Voleu cancel·lar la geocodificació inversa?"
@@ -64197,11 +64189,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
-
-#~ msgctxt "@title:window"
-#~ msgid "Export error"
-#~ msgstr "S'ha produït un error d'exportació"
-
-#~ msgctxt "@title:window"
-#~ msgid "GPS Sync"
-#~ msgstr "Sincronització GPS"

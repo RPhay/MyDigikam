@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-25 00:40+0000\n"
+"POT-Creation-Date: 2023-11-27 00:40+0000\n"
 "PO-Revision-Date: 2023-11-24 14:32+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: \n"
@@ -44031,7 +44031,7 @@ msgstr "Cacher la barre d'état"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "Cacher la barre d'état lorsque la fenêtre passe en mode plein écran."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1224
+#: core/libs/widgets/mainview/thememanager_p.cpp:1232
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
