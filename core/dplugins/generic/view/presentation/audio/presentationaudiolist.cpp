@@ -32,10 +32,22 @@
 #include <QMessageBox>
 #include <QApplication>
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
+
+// QtMultimedia includes
+
+#   include <QMediaMetaData>
+
+#else
+
 // QtAV includes
 
-#include "AVPlayerCore.h"
-#include "QtAV_Statistics.h"
+#   include "AVPlayerCore.h"
+#   include "QtAV_Statistics.h"
+
+using namespace QtAV;
+
+#endif
 
 // KDE includes
 
@@ -45,8 +57,6 @@
 
 #include "digikam_debug.h"
 
-using namespace QtAV;
-
 namespace DigikamGenericPresentationPlugin
 {
 
@@ -55,16 +65,23 @@ class Q_DECL_HIDDEN PresentationAudioListItem::Private
 
 public:
 
-    explicit Private()
-        : mediaObject(nullptr)
-    {
-    }
+    Private() = default;
 
     QUrl          url;
     QString       artist;
     QString       title;
     QTime         totalTime;
-    AVPlayerCore* mediaObject;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
+
+    QMediaPlayer* mediaObject = nullptr;
+
+#else
+
+    AVPlayerCore* mediaObject = nullptr;
+
+#endif
+
 };
 
 PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, const QUrl& url)
@@ -75,6 +92,21 @@ PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, 
     setIcon(QIcon::fromTheme(QLatin1String("audio-x-generic")).pixmap(48, QIcon::Disabled));
 
     d->totalTime   = QTime(0, 0, 0);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
+
+    d->mediaObject = new QMediaPlayer();
+
+    connect(d->mediaObject, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)),
+            this, SLOT(slotMediaStateChanged(QMediaPlayer::MediaStatus)));
+
+    connect(d->mediaObject, SIGNAL(error(QMediaPlayer::Error)),
+            this, SLOT(slotPlayerError(QMediaPlayer::Error)));
+
+    d->mediaObject->setSource(url);
+
+#else
+
     d->mediaObject = new AVPlayerCore(this);
 
     connect(d->mediaObject, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
@@ -88,6 +120,9 @@ PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, 
 
     d->mediaObject->setFile(url.toLocalFile());
     d->mediaObject->load();
+
+#endif
+
 }
 
 PresentationAudioListItem::~PresentationAudioListItem()
@@ -119,6 +154,50 @@ QTime PresentationAudioListItem::totalTime() const
 {
     return d->totalTime;
 }
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
+
+void PresentationAudioListItem::slotPlayerError(QMediaPlayer::Error err)
+{
+    if (err != QMediaPlayer::NoError)
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "An error as occured while playing (" << err << ")";
+        showErrorDialog(d->mediaObject->errorString());
+    }
+}
+
+void PresentationAudioListItem::slotMediaStateChanged(QMediaPlayer::MediaStatus status)
+{
+    if (
+        (status == QMediaPlayer::NoMedia)            ||
+        (status == QMediaPlayer::InvalidMedia)
+       )
+    {
+        showErrorDialog(d->mediaObject->errorString());
+        return;
+    }
+
+    qint64 total = d->mediaObject->duration();
+    int hours    = (int)(total  / (long int)( 60 * 60 * 1000 ));
+    int mins     = (int)((total / (long int)( 60 * 1000 )) - (long int)(hours * 60));
+    int secs     = (int)((total / (long int)1000) - (long int)(hours * 60 * 60) - (long int)(mins * 60));
+    d->totalTime = QTime(hours, mins, secs);
+    d->artist    = d->mediaObject->metaData().metaDataKeyToString(QMediaMetaData::Author);
+    d->title     = d->mediaObject->metaData().metaDataKeyToString(QMediaMetaData::Title);
+
+    if (d->artist.isEmpty() && d->title.isEmpty())
+    {
+        setText(d->url.fileName());
+    }
+    else
+    {
+        setText(i18nc("artist - title", "%1 - %2", artist(), title()));
+    }
+
+    Q_EMIT signalTotalTimeReady(d->url, d->totalTime);
+}
+
+#else
 
 void PresentationAudioListItem::slotPlayerError(const QtAV::AVError& err)
 {
@@ -159,6 +238,8 @@ void PresentationAudioListItem::slotDurationChanged(qint64 duration)
 
     Q_EMIT signalTotalTimeReady(d->url, d->totalTime);
 }
+
+#endif
 
 void PresentationAudioListItem::showErrorDialog(const QString& err)
 {
