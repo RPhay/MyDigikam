@@ -121,6 +121,7 @@ PresentationAudioWidget::PresentationAudioWidget(QWidget* const parent, const QL
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
 
     d->mediaObject = new QMediaPlayer(this);
+    d->mediaObject->setAudioOutput(new QAudioOutput);
 
     connect(d->mediaObject, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)),
             this, SLOT(slotMediaStateChanged(QMediaPlayer::MediaStatus)));
