@@ -316,6 +316,8 @@ void PresentationAudioWidget::slotPlay()
 {
     if (!d->mediaObject)
     {
+        qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Internal Media Object is null!";
+
         return;
     }
 
