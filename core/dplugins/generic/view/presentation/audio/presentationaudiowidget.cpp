@@ -323,7 +323,7 @@ void PresentationAudioWidget::slotPlay()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
 
-    if ((!d->mediaObject->playbackState() == QMediaPlayer::PlayingState) || (d->mediaObject->playbackState() == QMediaPlayer::PausedState))
+    if ((d->mediaObject->playbackState() != QMediaPlayer::PlayingState) || (d->mediaObject->playbackState() == QMediaPlayer::PausedState))
 
 #else
 
@@ -335,7 +335,7 @@ void PresentationAudioWidget::slotPlay()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
 
-        if (!d->mediaObject->playbackState() == QMediaPlayer::PlayingState)
+        if (d->mediaObject->playbackState() != QMediaPlayer::PlayingState)
 
 #else
 
