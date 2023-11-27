@@ -255,7 +255,7 @@ BUGFIXES:
 239 ==> 477393 - dgiKam crash after moving photos to different directory under its control and *then* wrote metadata to files.
 240 ==> 477571 - Icon contrast too low on Mac in dark mode.
 241 ==> 278037 - Port tool from QtAv to Qt6Multimedia API to play audio tracks.
-242 ==> 
+242 ==> 477627 - Confusing Metadata sidecar configuration.
 243 ==> 
 244 ==> 
 245 ==> 
