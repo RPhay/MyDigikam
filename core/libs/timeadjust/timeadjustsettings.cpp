@@ -309,8 +309,17 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
 
     // -- Settings View Slots/Signals ----------------------------------------
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+    connect(d->useButtonGroup, SIGNAL(idReleased(int)),
+            this, SLOT(slotSrcTimestampChanged()));
+
+#else
+
     connect(d->useButtonGroup, SIGNAL(buttonReleased(int)),
             this, SLOT(slotSrcTimestampChanged()));
+
+#endif
 
     connect(d->useFileDateTypeChooser, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotSrcTimestampChanged()));
