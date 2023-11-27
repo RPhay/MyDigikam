@@ -355,6 +355,7 @@ void PresentationAudioWidget::slotPlay()
 
 #endif
 
+            qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Playing:" << d->urlList[d->currIndex];
             d->mediaObject->play();
             setZeroTime();
         }
@@ -375,10 +376,12 @@ void PresentationAudioWidget::slotPlay()
 
         d->canHide = true;
 
-       Q_EMIT signalPlay();
+        Q_EMIT signalPlay();
     }
     else
     {
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Pausing:" << d->urlList[d->currIndex];
+
         d->mediaObject->pause();
         d->canHide = false;
 
@@ -390,9 +393,12 @@ void PresentationAudioWidget::slotStop()
 {
     if (!d->mediaObject)
     {
+        qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Internal Media Object is null!";
+
         return;
     }
 
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Stoping:" << d->urlList[d->currIndex];
     d->playingNext = false;
     d->mediaObject->stop();
     d->currIndex   = 0;
@@ -578,7 +584,9 @@ void PresentationAudioWidget::slotPlayerStateChanged(QtAV::AVPlayerCore::State s
 
 void PresentationAudioWidget::slotError()
 {
-    /* TODO :
+    qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "An error as occurred!";
+
+    /* TODO:
      * Display error on slideshow.
      * A QWidget pop-up could help
      */
