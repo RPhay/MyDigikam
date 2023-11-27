@@ -150,7 +150,15 @@ ItemViewCategorized::ItemViewCategorized(QWidget* const parent)
 
 ItemViewCategorized::~ItemViewCategorized()
 {
-    delete d;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        delete d->currentMouseEvent;
+        d->currentMouseEvent = nullptr;
+
+#endif
+
+        delete d;
 }
 
 void ItemViewCategorized::setToolTip(ItemViewToolTip* tip)
@@ -422,6 +430,12 @@ void ItemViewCategorized::slotActivated(const QModelIndex& index)
             return;
         }
     }
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    delete d->currentMouseEvent;
+
+#endif
 
     d->currentMouseEvent = nullptr;
     indexActivated(index, modifiers);
@@ -855,10 +869,28 @@ void ItemViewCategorized::mousePressEvent(QMouseEvent* event)
 
     if (!rightButtonPressed)
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        delete d->currentMouseEvent;
+        d->currentMouseEvent = event->clone();
+
+#else
+
         d->currentMouseEvent = event;
+
+#endif
+
     }
     else
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        delete d->currentMouseEvent;
+
+#endif
+
         d->currentMouseEvent = nullptr;
     }
 
