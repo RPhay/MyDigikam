@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * SPDX-FileCopyrightText: 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -15,6 +15,8 @@
 
 #ifndef DIGIKAM_PRESENTATION_AUDIO_PAGE_H
 #define DIGIKAM_PRESENTATION_AUDIO_PAGE_H
+
+#include "digikam_config.h"
 
 // Qt includes
 
