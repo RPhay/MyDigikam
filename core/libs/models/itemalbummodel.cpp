@@ -45,6 +45,7 @@ public:
 
     explicit Private()
       : jobThread               (nullptr),
+        refreshTimer            (nullptr),
         incrementalTimer        (nullptr),
         recurseAlbums           (false),
         recurseTags             (false),
@@ -55,6 +56,7 @@ public:
 
     QList<Album*>     currentAlbums;
     DBJobsThread*     jobThread;
+    QTimer*           refreshTimer;
     QTimer*           incrementalTimer;
 
     bool              recurseAlbums;
@@ -71,8 +73,14 @@ ItemAlbumModel::ItemAlbumModel(QObject* const parent)
 {
     qRegisterMetaType<QList<ItemListerRecord>>("QList<ItemListerRecord>");
 
+    d->refreshTimer     = new QTimer(this);
+    d->refreshTimer->setSingleShot(true);
+
     d->incrementalTimer = new QTimer(this);
     d->incrementalTimer->setSingleShot(true);
+
+    connect(d->refreshTimer, SIGNAL(timeout()),
+            this, SLOT(slotNextRefresh()));
 
     connect(d->incrementalTimer, SIGNAL(timeout()),
             this, SLOT(slotNextIncrementalRefresh()));
@@ -248,14 +256,38 @@ void ItemAlbumModel::incrementalRefresh()
 
 bool ItemAlbumModel::hasScheduledRefresh() const
 {
-    return (d->incrementalTimer->isActive() || hasIncrementalRefreshPending());
+    return (d->refreshTimer->isActive() || d->incrementalTimer->isActive() || hasIncrementalRefreshPending());
+}
+
+void ItemAlbumModel::scheduleRefresh()
+{
+    if (!d->refreshTimer->isActive())
+    {
+        d->incrementalTimer->stop();
+        d->refreshTimer->start(100);
+    }
 }
 
 void ItemAlbumModel::scheduleIncrementalRefresh()
 {
     if (!hasScheduledRefresh())
     {
-        d->incrementalTimer->start(250);
+        d->incrementalTimer->start(100);
+    }
+}
+
+void ItemAlbumModel::slotNextRefresh()
+{
+    // Refresh, unless job is running, then postpone restart until job is finished
+    // Rationale: Let the job run, don't stop it possibly several times
+
+    if (d->jobThread)
+    {
+        d->refreshTimer->start(50);
+    }
+    else
+    {
+        refresh();
     }
 }
 
@@ -263,7 +295,7 @@ void ItemAlbumModel::slotNextIncrementalRefresh()
 {
     if (d->jobThread)
     {
-        d->incrementalTimer->start(100);
+        d->incrementalTimer->start(50);
     }
     else
     {
@@ -284,6 +316,9 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
         d->jobThread = nullptr;
     }
 
+    CoreDbUrl url;
+    QList<int> ids;
+
     // stop preloading Thumbnails
 
     imageInfosCleared();
@@ -292,9 +327,6 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
     {
         return;
     }
-
-    CoreDbUrl url;
-    QList<int> ids;
 
     if ((albums.first()->type() == Album::TAG) || (albums.first()->type() == Album::SEARCH))
     {
@@ -488,14 +520,6 @@ void ItemAlbumModel::slotData(const QList<ItemListerRecord>& records)
 
         addItemInfos(newItemsList);
     }
-
-    // A refresh has just been completed, but another one has already
-    // started, then slow down the refresh significantly.
-
-    if (hasScheduledRefresh())
-    {
-        d->incrementalTimer->start(1000);
-    }
 }
 
 void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
@@ -504,8 +528,6 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
     {
         return;
     }
-
-    ItemModel::slotImageChange(changeset);
 
     // already scheduled to refresh?
 
@@ -519,8 +541,6 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
     if ((DatabaseFields::Images)changeset.changes() == DatabaseFields::Status)
     {
         scheduleIncrementalRefresh();
-
-        return;
     }
 
     // If we list a search, a change to a property may alter the search result
@@ -576,20 +596,13 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
             }
         }
     }
+
+    ItemModel::slotImageChange(changeset);
 }
 
 void ItemAlbumModel::slotImageTagChange(const ImageTagChangeset& changeset)
 {
     if (d->currentAlbums.isEmpty())
-    {
-        return;
-    }
-
-    ItemModel::slotImageTagChange(changeset);
-
-    // already scheduled to refresh?
-
-    if (hasScheduledRefresh())
     {
         return;
     }
@@ -628,6 +641,8 @@ void ItemAlbumModel::slotImageTagChange(const ImageTagChangeset& changeset)
     {
         scheduleIncrementalRefresh();
     }
+
+    ItemModel::slotImageTagChange(changeset);
 }
 
 void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& changeset)
@@ -639,7 +654,7 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
 
     // already scheduled to refresh?
 
-    if (hasScheduledRefresh())
+    if (d->refreshTimer->isActive())
     {
         return;
     }
