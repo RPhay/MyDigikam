@@ -125,10 +125,10 @@ PresentationAudioWidget::PresentationAudioWidget(QWidget* const parent, const QL
     connect(d->mediaObject, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)),
             this, SLOT(slotMediaStateChanged(QMediaPlayer::MediaStatus)));
 
-    connect(d->mediaObject, SIGNAL(stateChanged(QMediaPlayer::PlaybackState)),
+    connect(d->mediaObject, SIGNAL(playbackStateChanged(QMediaPlayer::PlaybackState)),
             this, SLOT(slotPlayerStateChanged(QMediaPlayer::PlaybackState)));
 
-    connect(d->mediaObject, SIGNAL(error(QMediaPlayer::Error)),
+    connect(d->mediaObject, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotPlayerError(QMediaPlayer::Error)));
 
     connect(d->mediaObject, SIGNAL(positionChanged(qint64)),

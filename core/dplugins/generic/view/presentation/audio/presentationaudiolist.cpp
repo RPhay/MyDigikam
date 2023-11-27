@@ -100,7 +100,7 @@ PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, 
     connect(d->mediaObject, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)),
             this, SLOT(slotMediaStateChanged(QMediaPlayer::MediaStatus)));
 
-    connect(d->mediaObject, SIGNAL(error(QMediaPlayer::Error)),
+    connect(d->mediaObject, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotPlayerError(QMediaPlayer::Error)));
 
     d->mediaObject->setSource(url);
