@@ -89,7 +89,8 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
 #ifdef Q_OS_WIN
 
-    HANDLE fd = CreateFileW((LPCWSTR)filePath.utf16(), GENERIC_READ | GENERIC_WRITE, 0,
+    HANDLE fd = CreateFileW((LPCWSTR)filePath.utf16(), GENERIC_READ | GENERIC_WRITE,
+                            FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
                             NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
 
     if (fd == INVALID_HANDLE_VALUE)
