@@ -256,7 +256,7 @@ BUGFIXES:
 240 ==> 477571 - Icon contrast too low on Mac in dark mode.
 241 ==> 278037 - Port tool from QtAv to Qt6Multimedia API to play audio tracks.
 242 ==> 477627 - Confusing Metadata sidecar configuration.
-243 ==> 
+243 ==> 477552 - Menus are missing on Import from Card Reader Window.
 244 ==> 
 245 ==> 
 246 ==> 
