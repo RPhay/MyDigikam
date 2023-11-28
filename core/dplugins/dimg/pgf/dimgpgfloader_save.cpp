@@ -89,8 +89,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
 #ifdef Q_OS_WIN
 
-    HANDLE fd = CreateFileW((LPCWSTR)filePath.utf16(), GENERIC_READ | GENERIC_WRITE,
-                            FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
+    HANDLE fd = CreateFileW((LPCWSTR)filePath.utf16(), GENERIC_READ | GENERIC_WRITE, 0,
                             NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
 
     if (fd == INVALID_HANDLE_VALUE)
@@ -220,15 +219,8 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF mode      = " << header.mode;
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "Bytes Written = " << nWrittenBytes;
 
-#ifdef Q_OS_WIN
+        closeFileHandle(fd);
 
-        CloseHandle(fd);
-
-#else
-
-        close(fd);
-
-#endif
         // TODO: Store ICC profile in an appropriate place in the image
 
         storeColorProfileInMetadata();
@@ -254,15 +246,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Opening and saving PGF image failed (" << err << ")!";
 
-#ifdef Q_OS_WIN
-
-        CloseHandle(fd);
-
-#else
-
-        close(fd);
-
-#endif
+        closeFileHandle(fd);
 
         return false;
     }

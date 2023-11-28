@@ -101,7 +101,9 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     if (!file)
     {
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Could not open source file.";
+
         loadingFailed();
+
         return false;
     }
 
@@ -182,7 +184,9 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             default:
                 qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Cannot load PGF image: color mode not supported ("
                                                 << pgf.Mode() << ")";
+                closeFileHandle(fd);
                 loadingFailed();
+
                 return false;
                 break;
         }
@@ -196,7 +200,9 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             default:
                 qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Cannot load PGF image: color channels number not supported ("
                                                 << pgf.Channels() << ")";
+                closeFileHandle(fd);
                 loadingFailed();
+
                 return false;
                 break;
         }
@@ -218,7 +224,9 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             default:
                 qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Cannot load PGF image: color bits depth not supported ("
                                                 << bitDepth << ")";
+                closeFileHandle(fd);
                 loadingFailed();
+
                 return false;
                 break;
         }
@@ -273,6 +281,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                     width  = w;
                     height = h;
                     level  = i;
+
                     qCDebug(DIGIKAM_DIMG_LOG_PGF) << "Loading PGF scaled version at level " << i
                                                   << " (" << w << " x " << h << ") for size "
                                                   << scaledLoadingSize;
@@ -305,6 +314,9 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         }
 
         // -------------------------------------------------------------------
+
+        closeFileHandle(fd);
+
         // Get ICC color profile.
 
         if (m_loadFlags & LoadICCData)
@@ -321,16 +333,6 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         imageSetAttribute(QLatin1String("originalBitDepth"),   bitDepth);
         imageSetAttribute(QLatin1String("originalSize"),       originalSize);
 
-#ifdef Q_OS_WIN
-
-        CloseHandle(fd);
-
-#else
-
-        close(fd);
-
-#endif
-
         return true;
     }
     catch (IOException& e)
@@ -344,16 +346,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Opening and reading PGF image failed (" << err << ")!";
 
-#ifdef Q_OS_WIN
-
-        CloseHandle(fd);
-
-#else
-
-        close(fd);
-
-#endif
-
+        closeFileHandle(fd);
         loadingFailed();
 
         return false;
@@ -362,16 +355,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     {
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Failed to allocate memory for loading" << filePath << e.what();
 
-#ifdef Q_OS_WIN
-
-        CloseHandle(fd);
-
-#else
-
-        close(fd);
-
-#endif
-
+        closeFileHandle(fd);
         loadingFailed();
 
         return false;

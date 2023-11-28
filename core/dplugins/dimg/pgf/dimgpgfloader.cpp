@@ -137,4 +137,19 @@ bool DImgPGFLoader::CallbackForLibPGF(double percent, bool escapeAllowed, void* 
     return false;
 }
 
+void DImgPGFLoader::closeFileHandle(int handle)
+{
+
+#ifdef Q_OS_WIN
+
+    CloseHandle(handle);
+
+#else
+
+    close(handle);
+
+#endif
+
+}
+
 } // namespace Digikam
