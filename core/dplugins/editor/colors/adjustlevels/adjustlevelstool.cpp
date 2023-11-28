@@ -379,8 +379,18 @@ AdjustLevelsTool::AdjustLevelsTool(QObject* const parent)
     connect(d->resetButton, SIGNAL(clicked()),
             this, SLOT(slotResetCurrentChannel()));
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+    connect(d->pickerType, SIGNAL(idReleased(int)),
+            this, SLOT(slotPickerColorButtonActived(int)));
+
+#else
+
     connect(d->pickerType, SIGNAL(buttonReleased(int)),
             this, SLOT(slotPickerColorButtonActived(int)));
+
+#endif
+
 }
 
 AdjustLevelsTool::~AdjustLevelsTool()

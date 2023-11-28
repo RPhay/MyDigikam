@@ -286,8 +286,17 @@ CameraSelection::CameraSelection(QWidget* const parent)
     connect(d->listView, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(slotSelectionChanged(QTreeWidgetItem*,int)));
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+    connect(d->portButtonGroup, SIGNAL(idClicked(int)),
+            this, SLOT(slotPortChanged()));
+
+#else
+
     connect(d->portButtonGroup, SIGNAL(buttonClicked(int)),
             this, SLOT(slotPortChanged()));
+
+#endif
 
     connect(d->searchBar, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
             this, SLOT(slotSearchTextChanged(SearchTextSettings)));

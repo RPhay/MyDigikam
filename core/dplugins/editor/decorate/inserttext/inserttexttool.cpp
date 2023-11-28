@@ -265,8 +265,17 @@ InsertTextTool::InsertTextTool(QObject* const parent)
     connect(d->textEdit, SIGNAL(textChanged()),
             this, SLOT(slotUpdatePreview()));
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+    connect(d->alignButtonGroup, SIGNAL(idReleased(int)),
+            this, SLOT(slotAlignModeChanged(int)));
+
+#else
+
     connect(d->alignButtonGroup, SIGNAL(buttonReleased(int)),
             this, SLOT(slotAlignModeChanged(int)));
+
+#endif
 
     connect(d->borderText, SIGNAL(toggled(bool)),
             this, SLOT(slotUpdatePreview()));

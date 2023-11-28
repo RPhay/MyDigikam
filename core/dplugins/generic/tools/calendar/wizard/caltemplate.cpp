@@ -118,8 +118,17 @@ CalTemplate::CalTemplate(const QList<QUrl>& urlList, QWidget* const parent)
     connect(d->ui.resolutionCombo, SIGNAL(currentIndexChanged(QString)),
             settings, SLOT(setResolution(QString)));
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+    connect(btnGrp, SIGNAL(idClicked(int)),
+            settings, SLOT(setImagePos(int)));
+
+#else
+
     connect(btnGrp, SIGNAL(buttonClicked(int)),
             settings, SLOT(setImagePos(int)));
+
+#endif
 
     connect(d->ui.drawLinesCheckBox, SIGNAL(toggled(bool)),
             settings, SLOT(setDrawLines(bool)));
