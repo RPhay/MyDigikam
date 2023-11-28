@@ -258,7 +258,7 @@ BUGFIXES:
 242 ==> 477627 - Confusing Metadata sidecar configuration.
 243 ==> 477552 - Menus are missing on Import from Card Reader Window.
 244 ==> 477650 - digiKam crash when there is a avif file.
-245 ==> 
+245 ==> 477632 - Preview disappears after Image Editor.
 246 ==> 
 247 ==> 
 248 ==> 
