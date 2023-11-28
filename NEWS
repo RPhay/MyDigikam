@@ -257,7 +257,7 @@ BUGFIXES:
 241 ==> 278037 - Port tool from QtAv to Qt6Multimedia API to play audio tracks.
 242 ==> 477627 - Confusing Metadata sidecar configuration.
 243 ==> 477552 - Menus are missing on Import from Card Reader Window.
-244 ==> 
+244 ==> 477650 - digiKam crash when there is a avif file.
 245 ==> 
 246 ==> 
 247 ==> 
