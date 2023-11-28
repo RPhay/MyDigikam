@@ -12,6 +12,7 @@
  *
  * ============================================================ */
 
+#include "digikam_config.h"
 #include "pgfutils.h"
 
 // C Ansi includes
@@ -384,7 +385,9 @@ bool writePGFImageDataToStream(const QImage& image,
 #   endif
 
 #else
+
         pgfImg.Write(&stream, 0, 0, &nWrittenBytes);
+
 #endif
 
     }
@@ -407,6 +410,7 @@ bool writePGFImageDataToStream(const QImage& image,
 
 bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
 {
+
 #ifdef Q_OS_WIN
 
     FILE* const file = _wfopen((const wchar_t*)path.utf16(), L"rb");
@@ -522,6 +526,17 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
             int map[] = {0, 1, 2, 3};
             pgf.GetBitmap(img.bytesPerLine(), (UINT8*)img.bits(), img.depth(), map);
         }
+
+#ifdef Q_OS_WIN
+
+        CloseHandle(fd);
+
+#else
+
+        close(fd);
+
+#endif
+
     }
     catch (IOException& e)
     {
@@ -533,6 +548,16 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
         }
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "PGFUtils: Error running libpgf (" << err << ")!";
+
+#ifdef Q_OS_WIN
+
+        CloseHandle(fd);
+
+#else
+
+        close(fd);
+
+#endif
 
         return false;
     }
