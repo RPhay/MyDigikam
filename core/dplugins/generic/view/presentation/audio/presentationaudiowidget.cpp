@@ -84,10 +84,10 @@ PresentationAudioWidget::PresentationAudioWidget(QWidget* const parent, const QL
 
     m_soundLabel->setPixmap(QIcon::fromTheme(QLatin1String("speaker")).pixmap(64, 64));
 
-    m_prevButton->setText(QLatin1String(""));
-    m_nextButton->setText(QLatin1String(""));
-    m_playButton->setText(QLatin1String(""));
-    m_stopButton->setText(QLatin1String(""));
+    m_prevButton->setText(QString());
+    m_nextButton->setText(QString());
+    m_playButton->setText(QString());
+    m_stopButton->setText(QString());
 
     m_prevButton->setIcon(QIcon::fromTheme(QLatin1String("media-skip-backward")));
     m_nextButton->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));

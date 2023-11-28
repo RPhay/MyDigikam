@@ -9,7 +9,7 @@
  * SPDX-FileCopyrightText:      2004 by Renchi Raju <renchi dot raju at gmail dot com>
  * SPDX-FileCopyrightText: 2006-2009 by Valerio Fuoglio <valerio.fuoglio@gmail.com>
  * SPDX-FileCopyrightText:      2009 by Andi Clemens <andi dot clemens at googlemail dot com>
- * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -121,7 +121,6 @@ private:
 
     class Private;
     Private* const d;
-    QRandomGenerator *randomGenerator;
 };
 
 } // namespace DigikamGenericPresentationPlugin

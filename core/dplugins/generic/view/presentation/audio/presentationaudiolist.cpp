@@ -88,7 +88,7 @@ PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, 
     : QListWidgetItem(parent),
       d              (new Private)
 {
-    d->url = url;
+    d->url         = url;
     setIcon(QIcon::fromTheme(QLatin1String("audio-x-generic")).pixmap(48, QIcon::Disabled));
 
     d->totalTime   = QTime(0, 0, 0);
@@ -169,7 +169,7 @@ void PresentationAudioListItem::slotPlayerError(QMediaPlayer::Error err)
 void PresentationAudioListItem::slotMediaStateChanged(QMediaPlayer::MediaStatus status)
 {
     if (
-        (status == QMediaPlayer::NoMedia)            ||
+        (status == QMediaPlayer::NoMedia)      ||
         (status == QMediaPlayer::InvalidMedia)
        )
     {

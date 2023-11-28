@@ -67,21 +67,15 @@ class Q_DECL_HIDDEN PresentationAudioPage::Private
 {
 public:
 
-    explicit Private()
-      : sharedData(nullptr),
-        tracksTime(nullptr),
-        soundItems(nullptr),
-        timeMutex (nullptr)
-    {
-    }
+    Private() = default;
 
     QList<QUrl>                             urlList;
-    PresentationContainer*                  sharedData;
+    PresentationContainer*                  sharedData = nullptr;
     QTime                                   totalTime;
     QTime                                   imageTime;
-    QMap<QUrl, QTime>*                      tracksTime;
-    QMap<QUrl, PresentationAudioListItem*>* soundItems;
-    QMutex*                                 timeMutex;
+    QMap<QUrl, QTime>*                      tracksTime = nullptr;
+    QMap<QUrl, PresentationAudioListItem*>* soundItems = nullptr;
+    QMutex*                                 timeMutex  = nullptr;
 };
 
 PresentationAudioPage::PresentationAudioPage(QWidget* const parent,
@@ -337,7 +331,7 @@ void PresentationAudioPage::slotAddNewTime(const QUrl& url, const QTime& trackTi
     d->timeMutex->unlock();
 }
 
-void PresentationAudioPage::slotSoundFilesSelected( int row )
+void PresentationAudioPage::slotSoundFilesSelected(int row)
 {
     QListWidgetItem* const item = m_SoundFilesListBox->item(row);
 

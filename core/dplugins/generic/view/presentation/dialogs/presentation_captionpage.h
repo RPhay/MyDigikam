@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * SPDX-FileCopyrightText: 2008      by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -47,7 +47,7 @@ private Q_SLOTS:
 
 private:
 
-    PresentationContainer* m_sharedData;
+    PresentationContainer* m_sharedData = nullptr;
 };
 
 } // namespace DigikamGenericPresentationPlugin

@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText:      2008 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  * SPDX-FileCopyrightText:      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
- * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -136,12 +136,14 @@ void PresentationCtrlWidget::slotPlayButtonToggled()
     {
         m_canHide = false;
         m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")).pixmap(22));
+
         Q_EMIT signalPause();
     }
     else
     {
         m_canHide = true;
         m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")).pixmap(22));
+
         Q_EMIT signalPlay();
     }
 }
@@ -153,6 +155,7 @@ void PresentationCtrlWidget::slotNexPrevClicked()
         m_playButton->setChecked(true);
         m_canHide = false;
         m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")).pixmap(22));
+
         Q_EMIT signalPause();
     }
 }

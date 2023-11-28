@@ -49,7 +49,7 @@ public:
 
 private:
 
-    PresentationAudioWidget* m_playbackWidget;
+    PresentationAudioWidget* m_playbackWidget = nullptr;
 };
 
 // ----------------------------------------------------------------------
