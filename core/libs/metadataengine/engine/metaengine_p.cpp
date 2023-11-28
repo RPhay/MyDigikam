@@ -286,6 +286,13 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
 
             return false;
         }
+
+        // Check for a PGF image, this would be destroyed by Exiv2.
+
+        if (ext == QLatin1String("pgf"))
+        {
+            return false;
+        }
     }
 
     try
