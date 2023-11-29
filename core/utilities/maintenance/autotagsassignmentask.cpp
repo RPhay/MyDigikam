@@ -130,7 +130,7 @@ void AutotagsAssignmentTask::run()
         }
 
         int elapsed = timer.elapsed();
-        qDebug(DIGIKAM_GENERAL_LOG) << "assgin Tags process takes: " << elapsed << " ms";
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "assgin Tags process takes: " << elapsed << " ms";
 
         Q_EMIT signalFinished();
     }

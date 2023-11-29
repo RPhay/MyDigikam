@@ -179,7 +179,7 @@ void MaintenanceThread::generateTags(const QStringList& paths, int modelType)
 
         collection.insert(t, 0);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating an autotagging task for autotags assignment items";
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Creating an autotagging task for autotags assignment items";
     }
 
     appendJobs(collection);
