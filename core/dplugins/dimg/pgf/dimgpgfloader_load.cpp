@@ -184,7 +184,17 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             default:
                 qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Cannot load PGF image: color mode not supported ("
                                                 << pgf.Mode() << ")";
-                closeFileHandle(fd);
+
+#ifdef Q_OS_WIN
+
+                CloseHandle(fd);
+
+#else
+
+                close(fd);
+
+#endif
+
                 loadingFailed();
 
                 return false;
@@ -200,7 +210,17 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             default:
                 qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Cannot load PGF image: color channels number not supported ("
                                                 << pgf.Channels() << ")";
-                closeFileHandle(fd);
+
+#ifdef Q_OS_WIN
+
+                CloseHandle(fd);
+
+#else
+
+                close(fd);
+
+#endif
+
                 loadingFailed();
 
                 return false;
@@ -224,7 +244,17 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             default:
                 qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Cannot load PGF image: color bits depth not supported ("
                                                 << bitDepth << ")";
-                closeFileHandle(fd);
+
+#ifdef Q_OS_WIN
+
+                CloseHandle(fd);
+
+#else
+
+                close(fd);
+
+#endif
+
                 loadingFailed();
 
                 return false;
@@ -315,7 +345,15 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         // -------------------------------------------------------------------
 
-        closeFileHandle(fd);
+#ifdef Q_OS_WIN
+
+        CloseHandle(fd);
+
+#else
+
+        close(fd);
+
+#endif
 
         // Get ICC color profile.
 
@@ -346,7 +384,16 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Opening and reading PGF image failed (" << err << ")!";
 
-        closeFileHandle(fd);
+#ifdef Q_OS_WIN
+
+        CloseHandle(fd);
+
+#else
+
+        close(fd);
+
+#endif
+
         loadingFailed();
 
         return false;
@@ -355,7 +402,16 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     {
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Failed to allocate memory for loading" << filePath << e.what();
 
-        closeFileHandle(fd);
+#ifdef Q_OS_WIN
+
+        CloseHandle(fd);
+
+#else
+
+        close(fd);
+
+#endif
+
         loadingFailed();
 
         return false;

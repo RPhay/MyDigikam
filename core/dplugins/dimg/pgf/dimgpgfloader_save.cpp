@@ -219,7 +219,15 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF mode      = " << header.mode;
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "Bytes Written = " << nWrittenBytes;
 
-        closeFileHandle(fd);
+#ifdef Q_OS_WIN
+
+        CloseHandle(fd);
+
+#else
+
+        close(fd);
+
+#endif
 
         // TODO: Store ICC profile in an appropriate place in the image
 
@@ -246,7 +254,15 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Opening and saving PGF image failed (" << err << ")!";
 
-        closeFileHandle(fd);
+#ifdef Q_OS_WIN
+
+        CloseHandle(fd);
+
+#else
+
+        close(fd);
+
+#endif
 
         return false;
     }

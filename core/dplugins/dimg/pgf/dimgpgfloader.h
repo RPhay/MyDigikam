@@ -50,8 +50,6 @@ private:
                                   bool escapeAllowed,
                                   void* data);
 
-    void closeFileHandle(int handle);
-
 private:
 
     bool                m_sixteenBit;
