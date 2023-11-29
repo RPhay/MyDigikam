@@ -27,31 +27,31 @@ class DIGIKAM_EXPORT DNNResnetDetector: public DNNBaseDetectorModel
 public:
 
     explicit DNNResnetDetector();
-    ~DNNResnetDetector()                                                      override;
+    ~DNNResnetDetector()                                                                                override;
 
 public:
 
-    QList<QString>    getPredefinedClasses()                                           const         override;
+    QList<QString>    getPredefinedClasses()                                            const           override;
     bool              loadModels();
     QList<QString>    loadImageNetClass();    ///< load 80 predifined classes for object detection "..."
 
 public:
 
-    QHash<QString, QVector<QRect>>        detectObjects(const cv::Mat& inputImage)                    override;
-    QList<QHash<QString, QVector<QRect>>> detectObjects(const std::vector<cv::Mat>& inputBatchImages) override;
+    QHash<QString, QVector<QRect>>        detectObjects(const cv::Mat& inputImage)                      override;
+    QList<QHash<QString, QVector<QRect>>> detectObjects(const std::vector<cv::Mat>& inputBatchImages)   override;
 
 private:
 
-    std::vector<cv::String> getOutputsNames()                                          const;
+    std::vector<cv::String> getOutputsNames()                                           const;
 
     std::vector<cv::Mat> preprocess(const cv::Mat& inputImage);
     std::vector<cv::Mat> preprocess(const std::vector<cv::Mat>& inputBatchImages);
 
     QHash<QString, QVector<QRect>>        postprocess(const cv::Mat& inputImage,
-                                                     const cv::Mat& out)               const;
+                                                      const cv::Mat& out)               const;
 
     QList<QHash<QString, QVector<QRect>>> postprocess(const std::vector<cv::Mat>& inputBatchImages,
-                                                     const std::vector<cv::Mat>& outs) const;
+                                                      const std::vector<cv::Mat>& outs) const;
 
 private:
 
@@ -61,7 +61,7 @@ private:
 
 private:
 
-    QList<QString>   predefinedClasses;
+    QList<QString> predefinedClasses;
 };
 
 } // namespace Digikam

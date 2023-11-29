@@ -48,34 +48,34 @@ public:
     /**
      * detectObjects return the predicted objects and localization as well (if we use deeplearning for object detection like YOLO, etc)
      * otherwise the map whose the key is the objects name and their values are empty
-    */
-    virtual QHash<QString, QVector<QRect>> detectObjects(const cv::Mat& inputImage)   = 0;
+     */
+    virtual QHash<QString, QVector<QRect>> detectObjects(const cv::Mat& inputImage) = 0;
 
     /**
      * detectObjects in batch images (fixed batch size)
-    */
+     */
     virtual QList<QHash<QString, QVector<QRect>>> detectObjects(const std::vector<cv::Mat>& inputBatchImages) = 0;
 
     /**
      * get predefined objects according to selected model
-    */
+     */
     virtual QList<QString> getPredefinedClasses() const = 0;
 
     /**
      * generateObjects in one image return just the predicted objects without locations of objects
-     * using for the assignment tagging names 
-    */
+     * using for the assignment tagging names
+     */
     QList<QString> generateObjects(const cv::Mat& inputImage);
 
     /**
      * generateObjects in batch images return just the predicted objects without locations of objects
      * using for the assignment tagging names
-    */
+     */
     QList<QList<QString>> generateObjects(const std::vector<cv::Mat>& inputImage);
 
     /**
      * return the input Image Size from Deep NN model 
-    */
+     */
    cv::Size getinputImageSize() const;
 
 public: 
@@ -90,7 +90,7 @@ public:
 
 protected:
 
-    float        scaleFactor;
+    float        scaleFactor = 1.0;
     cv::Scalar   meanValToSubtract;
     cv::Size     inputImageSize;
 

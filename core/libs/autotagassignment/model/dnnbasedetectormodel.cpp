@@ -34,11 +34,11 @@ DNNBaseDetectorModel::DNNBaseDetectorModel()
 }
 
 DNNBaseDetectorModel::DNNBaseDetectorModel(float scale,
-                                          const cv::Scalar& val,
-                                          const cv::Size& inputImageSize)
-    : scaleFactor (scale),
-      meanValToSubtract(val),
-      inputImageSize(inputImageSize)
+                                           const cv::Scalar& val,
+                                           const cv::Size& inputImageSize)
+    : scaleFactor       (scale),
+      meanValToSubtract (val),
+      inputImageSize    (inputImageSize)
 {
 }
 
@@ -67,10 +67,12 @@ QList<QList<QString>> DNNBaseDetectorModel::generateObjects(const std::vector<cv
     for (auto detectedBoxes: results)
     {
         QList<QString> objectNames;
+
         for(QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin() ; it != detectedBoxes.constEnd() ; ++it)
         {
             objectNames.append(it.key());
         }
+
         objectNamesList.append(objectNames);
     }
 
@@ -87,8 +89,10 @@ double DNNBaseDetectorModel::showInferenceTime()
     // Put efficiency information.
     // The function getPerfProfile returns the overall time for
     // inference(t) and the timings for each of the layers(in layersTimes).
+
     std::vector<double> layersTimes;
     double freq = cv::getTickFrequency() / 1000;
+
     return net.getPerfProfile(layersTimes) / freq;
 }
 

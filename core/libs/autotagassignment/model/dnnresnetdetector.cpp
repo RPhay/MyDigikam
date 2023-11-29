@@ -49,9 +49,10 @@ QList<QString>  DNNResnetDetector::loadImageNetClass()
     QList<QString>  classList;
 
     // NOTE storing all model definition at the same application path as face engine
-    QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine"),
-                                             QStandardPaths::LocateDirectory);
+
+    QString appPath         = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                     QLatin1String("digikam/facesengine"),
+                                                     QStandardPaths::LocateDirectory);
 
     QString imageNetClasses = appPath + QLatin1Char('/') + QLatin1String("classification_classes_ILSVRC2012.txt");
 
@@ -73,12 +74,12 @@ QList<QString> DNNResnetDetector::getPredefinedClasses() const
 
 bool DNNResnetDetector::loadModels()
 {
-    QString appPath =  QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine"),
                                              QStandardPaths::LocateDirectory);
 
     QString model;
-    model = appPath + QLatin1Char('/') + QLatin1String("resnet50.onnx"); 
+    model           = appPath + QLatin1Char('/') + QLatin1String("resnet50.onnx"); 
 
     if (QFileInfo::exists(model))
     {
@@ -106,6 +107,7 @@ bool DNNResnetDetector::loadModels()
     else
     {
         qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found objected classification DNN model" << model;
+
         return false;
     }
 
@@ -114,14 +116,15 @@ bool DNNResnetDetector::loadModels()
 
 QHash<QString, QVector<QRect>> DNNResnetDetector::detectObjects(const::cv::Mat& inputImage)
 {
-
     if (inputImage.empty())
     {
         qDebug() << "Invalid image given, not detecting objects";
+
         return {};
     }
 
     std::vector<cv::Mat> outs = preprocess(inputImage);
+
     return postprocess(inputImage, outs[0]);
 }
 
@@ -130,22 +133,26 @@ QList<QHash<QString, QVector<QRect>>> DNNResnetDetector::detectObjects(const std
     if (inputBatchImages.empty())
     {
         qDebug() << "Invalid image list given, not detecting objects";
+
         return {};
     }
+
     std::vector<cv::Mat> outs = preprocess(inputBatchImages);
 
     // outs = [1 x [rows x 85]] 
+
     return postprocess(inputBatchImages, outs);
 }
 
 std::vector<cv::Mat> DNNResnetDetector::preprocess(const cv::Mat& inputImage)
 {
-    cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true,false);
+    cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
+
     mutex.lock();
     {
         net.setInput(inputBlob);
-        net.forward(outs, getOutputsNames());        
+        net.forward(outs, getOutputsNames());
     }
     mutex.unlock();
 
@@ -154,7 +161,7 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const cv::Mat& inputImage)
 
 std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& inputBatchImages) 
 {
-    cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true,false);
+    cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
     mutex.lock();
@@ -174,12 +181,13 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& i
 }
 
 QList<QHash<QString, QVector<QRect>>> DNNResnetDetector::postprocess(const std::vector<cv::Mat>& inputBatchImages,
-                                                                    const std::vector<cv::Mat>& outs) const
+                                                                     const std::vector<cv::Mat>& outs) const
 {
     QList<QHash<QString, QVector<QRect>>> detectedBoxesList;
-    
+
     // outs = [batch_size x [rows x 85]] 
-    for(int i = 0; i < inputBatchImages.size(); i++)
+
+    for (int i = 0; i < inputBatchImages.size(); i++)
     {
         detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
     }
@@ -188,23 +196,24 @@ QList<QHash<QString, QVector<QRect>>> DNNResnetDetector::postprocess(const std::
 }
 
 QHash<QString, QVector<QRect>> DNNResnetDetector::postprocess(const cv::Mat& inputImage,
-                                                             const cv::Mat& out) const
+                                                              const cv::Mat& out) const
 {
     QHash<QString, QVector<QRect>> detectedBoxes;
 
     cv::Point classIdPoint;
-    double final_prob;
+    double final_prob = 0.0;
 
     minMaxLoc(out.reshape(1, 1), 0, &final_prob, 0, &classIdPoint);
-    int label_id = classIdPoint.x; 
+    int label_id  = classIdPoint.x; 
 
     QString label = predefinedClasses[label_id];
     detectedBoxes[label].push_back({});
-    
+
     return detectedBoxes;
 }
 
-/** Get the names of the output layers
+/**
+ * Get the names of the output layers
  */
 std::vector<cv::String> DNNResnetDetector::getOutputsNames() const
 {
@@ -232,4 +241,5 @@ std::vector<cv::String> DNNResnetDetector::getOutputsNames() const
 
     return names;
 }
+
 } // namespace Digikam
