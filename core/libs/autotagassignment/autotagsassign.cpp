@@ -156,16 +156,19 @@ cv::Mat autoTagsAssign::prepareForDetection(const QString& inputImagePath) const
 
 std::vector<cv::Mat> autoTagsAssign::prepareForDetection(const QList<QString>& inputImagePaths, int batchSize) const
 {
-    std::vector<cv::Mat> result;    
+    std::vector<cv::Mat> result;
+
     for (auto imgPath : inputImagePaths)
     {
         result.push_back(prepareForDetection(imgPath));
     }
 
     // add black imgs to fullfill the batch size
+
     cv::Size inputSize = m_inferenceEngine->getinputImageSize();  
+
     while ((result.size() % batchSize) != 0)
-    {   
+    {
         cv::Mat dummycvImg = cv::Mat::zeros(inputSize.height, inputSize.width, CV_8UC3);
         result.push_back(dummycvImg);
     }
@@ -184,8 +187,9 @@ QList<QString> autoTagsAssign::generateTagsList(const QImage& image)
 
     try
     {
-        cv::Mat cvImage       = prepareForDetection(image);
-        result = m_inferenceEngine->generateObjects(cvImage);
+        cv::Mat cvImage = prepareForDetection(image);
+        result          = m_inferenceEngine->generateObjects(cvImage);
+
         return result;
     }
     catch (cv::Exception& e)
@@ -211,8 +215,9 @@ QList<QString> autoTagsAssign::generateTagsList(const DImg& image)
 
     try
     {
-        cv::Mat cvImage       = prepareForDetection(image);
-        result = m_inferenceEngine->generateObjects(cvImage);
+        cv::Mat cvImage = prepareForDetection(image);
+        result          = m_inferenceEngine->generateObjects(cvImage);
+
         return result;
     }
     catch (cv::Exception& e)
@@ -233,8 +238,9 @@ QList<QString> autoTagsAssign::generateTagsList(const QString& imagePath)
 
     try
     {
-        cv::Mat cvImage       = prepareForDetection(imagePath);
-        result = m_inferenceEngine->generateObjects(cvImage);
+        cv::Mat cvImage = prepareForDetection(imagePath);
+        result          = m_inferenceEngine->generateObjects(cvImage);
+
         return result;
     }
     catch (cv::Exception& e)
@@ -256,7 +262,8 @@ QList<QList<QString>> autoTagsAssign::generateTagsList(const QList<QString>& inp
     try
     {
         std::vector<cv::Mat> cvImages = prepareForDetection(inputImagePaths, batchSize);
-        result = m_inferenceEngine->generateObjects(cvImages);
+        result                        = m_inferenceEngine->generateObjects(cvImages);
+
         return result;
     }
     catch (cv::Exception& e)
@@ -277,6 +284,7 @@ QList<QString> autoTagsAssign::getPredefinedTagsPath() const
     QList<QString> objects = m_inferenceEngine->getPredefinedClasses();
 
     QString rootTags = QLatin1String("auto/");
+
     for (auto obj : objects)
     {
         tagsPaths.append(rootTags + obj);
