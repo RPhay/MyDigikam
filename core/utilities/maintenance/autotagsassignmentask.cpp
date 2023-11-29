@@ -107,9 +107,12 @@ void AutotagsAssignmentTask::run()
         d->autotagsEngine = new autoTagsAssign(DetectorModel(d->modelType));
         QList<QList<QString>> tagsLists = d->autotagsEngine->generateTagsList(d->batchImgPaths, d->batchSize);
 
-        for (int i = 0; i <  d->batchImgPaths.size(); i++)
+        if (d->batchImgPaths.size() == tagsLists.size())
         {
-            assignTags(d->batchImgPaths[i], tagsLists[i]);
+            for (int i = 0; i <  d->batchImgPaths.size(); i++)
+            {
+                assignTags(d->batchImgPaths[i], tagsLists[i]);
+            }
         }
 
         int elapsed = timer.elapsed();
