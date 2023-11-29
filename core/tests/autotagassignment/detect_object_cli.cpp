@@ -44,12 +44,12 @@
 using namespace Digikam;
 
 int main(int argc, char** argv)
-{   
+{
     QCoreApplication app(argc, argv);
 
     if (argc < 3)
     {
-        qDebug() << "Bad arguments !!!\nUsage: " 
+        qDebug() << "Bad arguments !!!\nUsage: "
                  << argv[0] << "<image_path>" << "<output_image_path>";
         return 0;
     }
@@ -57,7 +57,7 @@ int main(int argc, char** argv)
     QScopedPointer<DNNYoloDetector> yoloDetector (new DNNYoloDetector());
     QImage img(QString::fromUtf8(argv[1]));
     cv::Mat cvImage = cv::imread(argv[1]);
-    
+
     if (cvImage.empty())
     {
         qDebug() << "Image Path is not available";
@@ -70,16 +70,15 @@ int main(int argc, char** argv)
     QPen paintPen(Qt::red);
     paintPen.setWidth(1);
     painter.setPen(paintPen);
-   
-    
-    for (QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin();
-        it != detectedBoxes.constEnd(); it++)
-    { 
+
+    for (QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin() ;
+        it != detectedBoxes.constEnd() ; it++)
+    {
         for (auto rectDraw : it.value())
         {
             painter.drawRect(rectDraw);
         }
     }
- 
+
     img.save(QLatin1String(argv[2]), "PNG");
 }

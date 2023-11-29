@@ -14,7 +14,6 @@ include_directories(
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::Service,INTERFACE_INCLUDE_DIRECTORIES>
 )
@@ -32,7 +31,6 @@ target_link_libraries(detect_object_cli
                       digikamgui
 
                       KF${QT_VERSION_MAJOR}::XmlGui
-                      KF${QT_VERSION_MAJOR}::I18n
                       KF${QT_VERSION_MAJOR}::ConfigCore
                       KF${QT_VERSION_MAJOR}::Service
                       ${COMMON_TEST_LINK}
@@ -51,7 +49,6 @@ target_link_libraries(detect_object_gui
                       digikamgui
 
                       KF${QT_VERSION_MAJOR}::XmlGui
-                      KF${QT_VERSION_MAJOR}::I18n
                       KF${QT_VERSION_MAJOR}::ConfigCore
                       KF${QT_VERSION_MAJOR}::Service
                       ${COMMON_TEST_LINK}
@@ -68,7 +65,6 @@ target_link_libraries(detect_object_batch_cli
                       digikamgui
 
                       KF${QT_VERSION_MAJOR}::XmlGui
-                      KF${QT_VERSION_MAJOR}::I18n
                       KF${QT_VERSION_MAJOR}::ConfigCore
                       KF${QT_VERSION_MAJOR}::Service
                       ${COMMON_TEST_LINK}
@@ -87,7 +83,6 @@ target_link_libraries(autotagging_batch_cli
                       digikamgui
 
                       KF${QT_VERSION_MAJOR}::XmlGui
-                      KF${QT_VERSION_MAJOR}::I18n
                       KF${QT_VERSION_MAJOR}::ConfigCore
                       KF${QT_VERSION_MAJOR}::Service
                       ${COMMON_TEST_LINK}
@@ -104,7 +99,6 @@ target_link_libraries(resnet_cli
                       digikamgui
 
                       KF${QT_VERSION_MAJOR}::XmlGui
-                      KF${QT_VERSION_MAJOR}::I18n
                       KF${QT_VERSION_MAJOR}::ConfigCore
                       KF${QT_VERSION_MAJOR}::Service
                       ${COMMON_TEST_LINK}

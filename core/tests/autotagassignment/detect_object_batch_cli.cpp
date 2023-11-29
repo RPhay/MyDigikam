@@ -58,25 +58,26 @@ void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect>>&
     qCDebug(DIGIKAM_TESTS_LOG) << "Loading " << imagePath;
     QImage img(imagePath);
 
-    QWidget* const mainWidget = new QWidget;
+    QWidget* const mainWidget     = new QWidget;
     QScrollArea* const scrollArea = new QScrollArea;
     scrollArea->setWidget(mainWidget);
     scrollArea->setWidgetResizable(true);
 
     QHBoxLayout* const layout = new QHBoxLayout(mainWidget);
-    QLabel* const fullImage = new QLabel;
+    QLabel* const fullImage   = new QLabel;
     fullImage->setScaledContents(true);
     layout->addWidget(fullImage);
 
     // draw rect objects
+
     QPainter painter(&img);
     QPen paintPen(Qt::red);
     paintPen.setWidth(1);
     painter.setPen(paintPen);
 
-    for (QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin();
-        it != detectedBoxes.constEnd(); it++)
-    { 
+    for (QHash<QString, QVector<QRect> >::const_iterator it = detectedBoxes.constBegin() ;
+        it != detectedBoxes.constEnd() ; it++)
+    {
         for (auto rectDraw : it.value())
         {
             painter.drawRect(rectDraw);
@@ -84,6 +85,7 @@ void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect>>&
     }
 
     // Only setPixmap after finishing drawing bboxes around detected objects
+
     fullImage->setPixmap(QPixmap::fromImage(img));
 
     scrollArea->show();
@@ -91,55 +93,59 @@ void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect>>&
     qApp->processEvents(); // dirty hack
 }
 
-
 int main(int argc, char** argv)
-{   
+{
     QApplication app(argc, argv);
+
     // Options for commandline parser
 
     QCommandLineParser* const parser = parseOptions(app);
+
     if (!parser->isSet(QLatin1String("dataset")))
     {
         qWarning("Data set is not set !!!");
     }
- 
-    QDir dataset(parser->value(QLatin1String("dataset"))); 
+
+    QDir dataset(parser->value(QLatin1String("dataset")));
     QFileInfoList filesInfo = dataset.entryInfoList(QDir::Files | QDir::NoDotAndDotDot);
 
     std::vector<cv::Mat> cvImages;
-    for (int j = 0; j < filesInfo.size(); j++)
+
+    for (int j = 0 ; j < filesInfo.size() ; j++)
     {
         cv::Mat cvImage = cv::imread(filesInfo[j].absoluteFilePath().toStdString());
         cvImages.push_back(cvImage);
     }
 
     int batch_size = 16;
-    QList<QHash<QString, QVector<QRect>>> results; 
+    QList<QHash<QString, QVector<QRect>>> results;
     QScopedPointer<DNNYoloDetector> yoloDetector (new DNNYoloDetector());
 
     int s = filesInfo.size() - filesInfo.size() % batch_size;
 
-
-    for (int i = 0; i < s - batch_size + 1; i += batch_size)
+    for (int i = 0 ; i < (s - batch_size + 1) ; i += batch_size)
     {
         QElapsedTimer timer;
         timer.start();
         std::vector<cv::Mat> cvBatchImages;
-        for (int j = 0; j < batch_size; j++)
+
+        for (int j = 0 ; j < batch_size ; j++)
         {
             cvBatchImages.push_back(cvImages[i+j]);
         }
 
         // std::vector<cv::Mat> outs = yoloDetector->preprocess(cvBatchImages);
-        QList<QHash<QString, QVector<QRect>>> resBatch = yoloDetector->detectObjects(cvBatchImages);
+
+        QList<QHash<QString, QVector<QRect> > > resBatch = yoloDetector->detectObjects(cvBatchImages);
         int elapsed = timer.elapsed();
+
         qDebug() << "detected took: " << elapsed << " ms";
         // qDebug() << yoloDetector->showInferenceTime();
+
         results += resBatch;
     }
 
-
-    for (int i = 0; i < s; i++)
+    for (int i = 0 ; i < s ; i++)
     {
         showObjects(filesInfo[i].absoluteFilePath(), results[i]);
     }

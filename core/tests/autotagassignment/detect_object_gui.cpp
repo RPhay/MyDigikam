@@ -35,17 +35,12 @@
 #include <QRadioButton>
 #include <QCheckBox>
 
-// KDE includes
-
-#include <klocalizedcontext.h>
-
 // Local includes
 
 #include "digikam_debug.h"
 #include "dnnbasedetectormodel.h"
 #include "dnnyolodetector.h"
 #include "dcombobox.h"
-
 
 using namespace Digikam;
 
@@ -63,13 +58,13 @@ private:
     QWidget* setupImageList(const QDir& directory);
     QWidget* setupControlPanel();
 
-private: 
+private:
 
-    void     drawObjects(QImage& img, const QHash<QString, QVector<QRect>>& detectedObjects);
+    void drawObjects(QImage& img, const QHash<QString, QVector<QRect> >& detectedObjects);
 
 private:
 
-    QHash<QString, QVector<QRect>> detectObjects(const QString& imagePath) const;
+    QHash<QString, QVector<QRect> > detectObjects(const QString& imagePath) const;
 
 private Q_SLOTS:
 
@@ -85,7 +80,9 @@ private:
     DNNYoloDetector*    m_yoloDetector;
     YoloVersions        m_modelType;
     QList<QString>      m_objectSelected;
+
     // control pann
+
     QPushButton*        m_applyButton;
     DComboBox*          m_modelOptionsBox;
     QList<QCheckBox*>   m_objectOptions;
@@ -103,19 +100,20 @@ MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
     m_yoloDetector = new DNNYoloDetector(YoloVersions::YOLOV5NANO);
 
     // Image area
+
     QWidget* const imageArea      = new QWidget(this);
     QHBoxLayout* processingLayout = new QHBoxLayout(imageArea);
-    
+
     processingLayout->addWidget(setupFullImageArea());
     processingLayout->addWidget(setupControlPanel());
 
     QSizePolicy spHigh(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spHigh.setVerticalPolicy(QSizePolicy::Expanding);
-    imageArea->setSizePolicy(spHigh);    
+    imageArea->setSizePolicy(spHigh);
 
     QWidget*     const mainWidget = new QWidget(this);
     QVBoxLayout* const mainLayout = new QVBoxLayout(mainWidget);
-    
+
     mainLayout->addWidget(imageArea);
     mainLayout->addWidget(setupImageList(directory));
 
@@ -125,10 +123,10 @@ MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
 
     connect(m_modelOptionsBox, SIGNAL(activated(int)),
             this, SLOT(slotSettingsChanged(int)));
-    
+
     connect(m_applyButton, SIGNAL(clicked()),
             this, SLOT(slotApplySettings()));
-    
+
     for (auto opt : m_objectOptions)
     {
         connect(opt, SIGNAL(toggled(bool)),
@@ -137,10 +135,9 @@ MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
 
     connect(m_imageListView, &QListWidget::currentItemChanged,
             this, &MainWindow::slotDetectObjects);
-    
+
     connect(this, SIGNAL(signalApplyForImage(const QListWidgetItem*)),
             this, SLOT(slotDetectObjects(const QListWidgetItem*)));
-
 }
 
 MainWindow::~MainWindow()
@@ -152,12 +149,10 @@ MainWindow::~MainWindow()
     delete m_modelOptionsBox;
 }
 
-
-
 QHash<QString, QVector<QRect>> MainWindow::detectObjects(const QString& imagePath) const
 {
     cv::Mat cvImage = cv::imread(imagePath.toStdString());
-    
+
     if (cvImage.empty())
     {
         qDebug() << "Image Path is not available";
@@ -175,7 +170,7 @@ void MainWindow::drawObjects(QImage& img, const QHash<QString, QVector<QRect>>& 
         qDebug() << "No object detect";
         return;
     }
-    
+
     QPainter painter(&img);
     QPen paintPen(Qt::red);
     paintPen.setWidth(2);
@@ -183,7 +178,8 @@ void MainWindow::drawObjects(QImage& img, const QHash<QString, QVector<QRect>>& 
 
     // TODO Show cropped tags
 
-    //decide which object we want to show 
+    //decide which object we want to show
+
     for (auto label: m_objectSelected)
     {
         QString cleanLabel = label.remove(QLatin1Char('&'));
@@ -203,7 +199,7 @@ void MainWindow::slotDetectObjects(const QListWidgetItem* imageItem)
     QHash<QString, QVector<QRect>> objects = detectObjects(imagePath);
     drawObjects(img, objects);
 
-    qDebug() << QString::fromLatin1("Inference Time %1").arg(m_yoloDetector->showInferenceTime()); 
+    qDebug() << QString::fromLatin1("Inference Time %1").arg(m_yoloDetector->showInferenceTime());
     m_fullImage->setPixmap(QPixmap::fromImage(img));
 }
 
@@ -229,12 +225,12 @@ QWidget* MainWindow::setupControlPanel()
 
     m_applyButton             = new QPushButton(this);
     m_applyButton->setText(QLatin1String("Apply"));
-    
+
     m_modelOptionsBox = new DComboBox(this);
     m_modelOptionsBox->insertItem(int(YoloVersions::YOLOV5XLARGE), QLatin1String("yolov5 Xlarge"));
     m_modelOptionsBox->insertItem(int(YoloVersions::YOLOV5NANO),   QLatin1String("yolov5 nano"));
     m_modelOptionsBox->setDefaultIndex(int(YoloVersions::YOLOV5NANO));
-    
+
     QScrollArea* objectsSelectArea = new QScrollArea();
     objectsSelectArea->setWidgetResizable(true);
     objectsSelectArea->setAlignment(Qt::AlignRight);
@@ -246,12 +242,13 @@ QWidget* MainWindow::setupControlPanel()
 
     QList<QString> predClass = m_yoloDetector->getPredefinedClasses();
 
-    for (int i = 0; i < predClass.size(); i++)
+    for (int i = 0 ; i < predClass.size() ; i++)
     {
         QCheckBox* checkBox = new QCheckBox(predClass[i], objectsSelectView);
         m_objectOptions.append(checkBox);
         vLayout->addWidget(checkBox);
     }
+
     objectsSelectView->setLayout(vLayout);
     objectsSelectArea->setWidget(objectsSelectView);
 
@@ -264,7 +261,6 @@ QWidget* MainWindow::setupControlPanel()
 
     return controlPanel;
 }
-
 
 void MainWindow::slotObjectSelected()
 {
@@ -279,24 +275,22 @@ void MainWindow::slotObjectSelected()
     }
 }
 
-
 void MainWindow::slotApplySettings()
 {
     m_yoloDetector = new DNNYoloDetector(m_modelType);
 
-    QListWidgetItem* item = m_imageListView->currentItem();  
-    if (item && m_imageListView->selectedItems().contains(item)) 
+    QListWidgetItem* item = m_imageListView->currentItem();
+
+    if (item && m_imageListView->selectedItems().contains(item))
     {
         Q_EMIT signalApplyForImage(m_imageListView->currentItem());
     }
 }
 
-
 void MainWindow::slotSettingsChanged(int type)
 {
     m_modelType = static_cast<YoloVersions> (type);
 }
-
 
 QWidget* MainWindow::setupImageList(const QDir& directory)
 {
@@ -320,10 +314,11 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
     m_imageListView->setDragEnabled(false);
 
     // generate list widget items
+
     QVector<QListWidgetItem*> imageItems;
     QFileInfoList filesInfo = directory.entryInfoList(QDir::Files | QDir::NoDotAndDotDot);
 
-    for (int j = 0; j < filesInfo.size(); j++)
+    for (int j = 0 ; j < filesInfo.size() ; j++)
     {
         QImage img(filesInfo[j].absoluteFilePath());
 
@@ -333,17 +328,17 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
         }
     }
 
-    for (auto item : imageItems) 
+    for (auto item : imageItems)
     {
         m_imageListView->addItem(item);
     }
 
     // set list view into items area
+
     itemsArea->setWidget(m_imageListView);
 
     return itemsArea;
 }
-
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
@@ -355,10 +350,8 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
     return parser;
 }
 
-
 int main(int argc, char** argv)
 {
-     
     QApplication app(argc, argv);
     app.setApplicationName(QString::fromLatin1("digikam"));
 
