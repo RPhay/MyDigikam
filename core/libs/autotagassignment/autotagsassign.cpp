@@ -158,10 +158,9 @@ std::vector<cv::Mat> autoTagsAssign::prepareForDetection(const QList<QString>& i
 {
     std::vector<cv::Mat> result;
 
-    for (auto imgPath : inputImagePaths)
+    for (const auto& imgPath : inputImagePaths)
     {
-        DImg img(imgPath);
-        result.push_back(prepareForDetection(img));
+        result.push_back(prepareForDetection(imgPath));
     }
 
     // add black imgs to fullfill the batch size
@@ -286,7 +285,7 @@ QList<QString> autoTagsAssign::getPredefinedTagsPath() const
 
     QString rootTags = QLatin1String("auto/");
 
-    for (auto obj : objects)
+    for (const auto& obj : objects)
     {
         tagsPaths.append(rootTags + obj);
     }
