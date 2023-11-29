@@ -33,13 +33,11 @@ public:
 
     explicit Private()
         : data           (nullptr),
-          autotagsEngine (nullptr),
-          modelType      (0)
+          modelType      (DetectorModel::YOLOV5NANO)
     {
     }
 
     MaintenanceData* data;
-    autoTagsAssign*  autotagsEngine;
     int              modelType;
 };
 
@@ -117,20 +115,19 @@ void AutotagsAssignmentTask::run()
 
         if (!img.isNull())
         {
-            d->autotagsEngine = new autoTagsAssign(DetectorModel(d->modelType));
-            QList<QString> tagsList = d->autotagsEngine->generateTagsList(img);
+            autoTagsAssign* const autotagsEngine = new autoTagsAssign(DetectorModel(d->modelType));
+            QList<QString> tagsList = autotagsEngine->generateTagsList(img);
 
             if (!tagsList.isEmpty())
             {
                 assignTags(path, tagsList);
             }
 
-            delete d->autotagsEngine;
-            d->autotagsEngine = nullptr;
+            delete autotagsEngine;
         }
 
-        int elapsed = timer.elapsed();
-        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "assgin Tags process takes: " << elapsed << " ms";
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "assgin Tags process takes:"
+                                            << timer.elapsed() << "ms";
 
         Q_EMIT signalFinished();
     }
