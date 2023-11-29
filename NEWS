@@ -260,7 +260,7 @@ BUGFIXES:
 244 ==> 477650 - digiKam crash when there is a avif file.
 245 ==> 477632 - Preview disappears after Image Editor.
 246 ==> 145482 - Compile fails under Windows.
-247 ==> 
+247 ==> 139154 - Can't compilate from source.
 248 ==> 
 249 ==> 
 250 ==> 
