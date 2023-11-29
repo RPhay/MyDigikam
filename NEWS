@@ -263,5 +263,5 @@ BUGFIXES:
 247 ==> 139154 - Can't compilate from source.
 248 ==> 104345 - Camera hang up during download.
 249 ==> 147458 - Crash when reading EXIF from USB PtP camera or newly imported album.
-250 ==> 
+250 ==> 169814 - Compilation error: no exp2().
 251 ==> 
