@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 00:40+0000\n"
+"POT-Creation-Date: 2023-11-29 12:46+0000\n"
 "PO-Revision-Date: 2023-11-25 02:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -961,7 +961,7 @@ msgstr "名称："
 
 #: core/app/items/utils/tooltipfiller.cpp:83
 #: core/app/items/utils/tooltipfiller.cpp:595
-#: core/app/views/stack/welcomepageview.cpp:274
+#: core/app/views/stack/welcomepageview.cpp:275
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2555,7 +2555,7 @@ msgstr "帮助(&H)"
 msgid "Main Toolbar"
 msgstr "主工具栏"
 
-#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:259
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -3169,8 +3169,9 @@ msgid "%1/%2 items selected"
 msgstr "已选中 %1 项，共 %2 项"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, kde-format
-msgid "More than 400 user-reports closed on bugzilla."
+#, fuzzy, kde-format
+#| msgid "More than 400 user-reports closed on bugzilla."
+msgid "More than 650 user-reports closed on bugzilla."
 msgstr "解决了 400 多个用户上报的程序缺陷。"
 
 #: core/app/views/stack/welcomepageview.cpp:141
@@ -3180,21 +3181,28 @@ msgstr "程序的代码已经移植到 Qt6 程序框架 (代码仍兼容 Qt5 API
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
+msgid ""
+"Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
+"and use Qt6 and KF6 frameworks."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:143
+#, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr "在程序各个相关位置添加 JPEG-XL、WebP、AVIF 导出设置。"
 
-#: core/app/views/stack/welcomepageview.cpp:143
+#: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr "添加从相机导入时转换到无损 JPEG-XL、WebP、AVIF 的功能。"
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr "在批处理管理器中添加 JPEG-XL、WebP、AVIF 转换插件。"
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
@@ -3203,18 +3211,18 @@ msgstr ""
 "版本管理功能：新增支持 JPEG-XL、HEIF、WebP、AVIF 作为无损图像格式来存储多版本"
 "图像。"
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr "易用性：添加汉堡菜单到工具栏，在主菜单隐藏时显示。"
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr "元数据：新增写入元数据到文件的新选项到 ExifTool 后端程序支持。"
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
@@ -3222,20 +3230,20 @@ msgid ""
 msgstr ""
 "元数据：DNG 和 RAW 文件的可选元数据操作现在由 ExifTool 后端程序负责进行。"
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr "元数据：优化元数据编辑插件的界面布局以提高易用性。"
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr "元数据：在高级元数据设置面板新增用于保存和加载配置方案的选项。"
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
@@ -3244,12 +3252,12 @@ msgstr ""
 "高级重命名：新增增量文件计数器，以便为使用 [c] 或者 [c,step] 选项时的文件序列"
 "进行编号。"
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr "高级重命名：新增随机文字序列编号选项 [r]。"
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
@@ -3257,76 +3265,76 @@ msgid ""
 msgstr ""
 "高级重命名：为使用了 {unique:n,c} 的唯一修饰符新增了可配置第一个字符的功能。"
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr "高级重命名：新增按照人脸区域数量搜索项目的功能。"
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Advanced Search: add search for items without face regions."
 msgstr "高级重命名：新增搜索无人脸区域项目的功能。"
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr "相册集合：新增对跨平台网络路径的支持。"
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr "数据库：新增对 SQLite WAL (记录日志前写入) 模式的支持。"
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr "使用 KF5::Sonnet 组件在标题文字控件中添加拼写检查支持。"
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr "在 digiKam 和 ShowFoto 的其他设置页面添加拼写检查配置面板。"
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr "为备选语言文字编辑器控件添加在线翻译服务支持。"
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr "在 digiKam 和 ShowFoto 的其他设置页面添加本地化配置面板。"
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr "为文字编辑控件的偏好备选语言/翻译语言列表添加设置。"
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr "允许在程序相关的各个位置使用全局或者自定义图像品质分类器设置。"
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr "新增图标视图设置以便自定义缩略图的标签可见性。"
 
-#: core/app/views/stack/welcomepageview.cpp:165
+#: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr "TIFF 加载程序新增对 float16 (半浮点) 图像的支持。"
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
@@ -3336,7 +3344,7 @@ msgstr ""
 "维护工具新增基于深度学习模型的<a href=\"https://community.kde.org/GSoc/2022/"
 "StatusReports/PhuocKhanhLe\">美感检测</a>功能来对图像品质进行分类。"
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
@@ -3345,26 +3353,26 @@ msgstr ""
 "添加用于<a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">为扫描文本进行 OCR</a> 的新工具。"
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr "队列管理器：新增用于通过解析图像品质来自动分配挑选标记的新工具。"
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr "队列管理器：新增用于批量分配评分、挑选标记、颜色标记的新工具。"
 
-#: core/app/views/stack/welcomepageview.cpp:170
+#: core/app/views/stack/welcomepageview.cpp:171
 #, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr "队列管理器：新增批量分配标题和说明文字的新工具。"
 
-#: core/app/views/stack/welcomepageview.cpp:171
+#: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
@@ -3373,7 +3381,7 @@ msgstr ""
 "使用文档：<a href=\" https://docs.digikam.org/en/index.html\">重写 digiKam 使"
 "用手册</a>，文档框架从 DocBook 移植到了 Sphinx/ReStructuredText。"
 
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
@@ -3382,12 +3390,13 @@ msgstr ""
 "更新 G'MIC-Qt 工具到最新的 3.2.2 版，完成相关插件的 macOS 移植，改善其稳定"
 "性。"
 
-#: core/app/views/stack/welcomepageview.cpp:173
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 20230403."
+#: core/app/views/stack/welcomepageview.cpp:174
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 20230403."
+msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
 msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 20230403。"
 
-#: core/app/views/stack/welcomepageview.cpp:174
+#: core/app/views/stack/welcomepageview.cpp:175
 #, kde-format
 msgid ""
 "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
@@ -3402,44 +3411,44 @@ msgstr ""
 "Fujifilm X-H2S、X-T30 II、OM System、OM-1、Leica M11、Sony A7-IV (ILCE-7M4)、"
 "DJI Mavic 3"
 
-#: core/app/views/stack/welcomepageview.cpp:189
+#: core/app/views/stack/welcomepageview.cpp:190
 #, kde-format
 msgid "...and much more."
 msgstr "...更多详情请访问 digiKam 官方网站查看。"
 
-#: core/app/views/stack/welcomepageview.cpp:195
+#: core/app/views/stack/welcomepageview.cpp:196
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:198
+#: core/app/views/stack/welcomepageview.cpp:199
 #, kde-format
 msgid "New Features"
 msgstr "新版特性"
 
-#: core/app/views/stack/welcomepageview.cpp:200
+#: core/app/views/stack/welcomepageview.cpp:201
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:201
+#: core/app/views/stack/welcomepageview.cpp:202
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr "这一版 digiKam 的新特性包括 (相比于 digiKam 7x)："
 
-#: core/app/views/stack/welcomepageview.cpp:209
+#: core/app/views/stack/welcomepageview.cpp:210
 #, kde-format
 msgid "About"
 msgstr "软件简介"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:212
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:213
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3449,7 +3458,7 @@ msgstr ""
 "digiKam 是一款自由开源的专业照片管理程序，它可以对数字图像进行导入导出、组织"
 "整理、修改润色、标记搜索等工作。"
 
-#: core/app/views/stack/welcomepageview.cpp:213
+#: core/app/views/stack/welcomepageview.cpp:214
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3460,12 +3469,12 @@ msgstr ""
 "置，您可以把它看成是计算机存储设备中的文件夹。您现在位于相册集合的根目录。请"
 "点击左侧栏的“相册”选项卡，在树形图中选择一个相册文件夹，即可开始浏览图像。"
 
-#: core/app/views/stack/welcomepageview.cpp:214
+#: core/app/views/stack/welcomepageview.cpp:215
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:215
+#: core/app/views/stack/welcomepageview.cpp:216
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3474,7 +3483,7 @@ msgstr ""
 "请访问 <a href=\"https://docs.digikam.org/en/index.html\">digiKam 在线文档</"
 "a> 了解软件的更多特性。"
 
-#: core/app/views/stack/welcomepageview.cpp:216
+#: core/app/views/stack/welcomepageview.cpp:217
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3483,34 +3492,34 @@ msgstr ""
 "请访问 <a href=\"https://www.digikam.org\">digiKam 官方网站</a> 了解新版软件"
 "信息。"
 
-#: core/app/views/stack/welcomepageview.cpp:266
+#: core/app/views/stack/welcomepageview.cpp:267
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "欢迎使用 digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:269
+#: core/app/views/stack/welcomepageview.cpp:270
 #, kde-format
 msgid "Background Image Credits"
 msgstr "背景作者"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:273
 #, kde-format
 msgid "Author:"
 msgstr "作者："
 
-#: core/app/views/stack/welcomepageview.cpp:273
+#: core/app/views/stack/welcomepageview.cpp:274
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "位置："
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:276
 #, kde-format
 msgid "Camera:"
 msgstr "相机："
 
-#: core/app/views/stack/welcomepageview.cpp:276
+#: core/app/views/stack/welcomepageview.cpp:277
 #, kde-format
 msgid "Lens:"
 msgstr "镜头："

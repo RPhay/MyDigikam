@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 00:40+0000\n"
+"POT-Creation-Date: 2023-11-29 12:46+0000\n"
 "PO-Revision-Date: 2023-11-24 14:32+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: \n"
@@ -1043,7 +1043,7 @@ msgstr "Nom :"
 
 #: core/app/items/utils/tooltipfiller.cpp:83
 #: core/app/items/utils/tooltipfiller.cpp:595
-#: core/app/views/stack/welcomepageview.cpp:274
+#: core/app/views/stack/welcomepageview.cpp:275
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2685,7 +2685,7 @@ msgstr "&Aide"
 msgid "Main Toolbar"
 msgstr "Barre principale"
 
-#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:259
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -3329,8 +3329,9 @@ msgid "%1/%2 items selected"
 msgstr "%1 / %2 éléments sélectionnés"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, kde-format
-msgid "More than 400 user-reports closed on bugzilla."
+#, fuzzy, kde-format
+#| msgid "More than 400 user-reports closed on bugzilla."
+msgid "More than 650 user-reports closed on bugzilla."
 msgstr "Plus de 400 rapports de bogue fermés dans « bugzilla »."
 
 #: core/app/views/stack/welcomepageview.cpp:141
@@ -3342,12 +3343,19 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
+msgid ""
+"Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
+"and use Qt6 and KF6 frameworks."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:143
+#, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr ""
 "Ajouter à la totalité du système, la configuration d'exportation pour les "
 "formats « JPEG-XL », « WebP » et « AVIF »"
 
-#: core/app/views/stack/welcomepageview.cpp:143
+#: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
@@ -3355,14 +3363,14 @@ msgstr ""
 "Ajouter la conversion vers les formats sans perte « JPEG-XL », « WEBP » et "
 "« AVIF » durant l'importation de l'appareil photo."
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
 "Ajouter les convertisseurs pour les formats « JPEG-XL », « WebP » et "
 "« AVIF » dans le gestionnaire de file de travaux."
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
@@ -3372,14 +3380,14 @@ msgstr ""
 "« WEBP » et « AVIF », comme format d'image sans perte pour l'enregistrement "
 "du versionnage d'images dans l'éditeur."
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 "Ergonomie : ajoute un menu en hamburger à la barre d'outils, dans le cas où "
 "le menu principal est masqué."
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
@@ -3387,7 +3395,7 @@ msgstr ""
 "Métadonnées : activer cette option pour écrire des métadonnées dans le "
 "moteur « ExifTool »."
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
@@ -3397,7 +3405,7 @@ msgstr ""
 "dans des fichiers « RAW » et « DNG » sont maintenant toujours déléguées au "
 "moteur « ExifTool »."
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
@@ -3405,7 +3413,7 @@ msgstr ""
 "Métadonnées : optimise la disposition du module externe de modifications des "
 "métadonnées pour une plus grande ergonomie."
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
@@ -3415,7 +3423,7 @@ msgstr ""
 "profils de configuration dans le panneau de configuration avancée des "
 "métadonnées."
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
@@ -3424,14 +3432,14 @@ msgstr ""
 "Renommage avancé : ajout d'un compteur incrémental de fichierd pour la "
 "numérotation de séquences avec les options [c] ou [c, step]."
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
 "Renommage avancé : ajoute une numérotation aléatoire des séquences de texte "
 "avec l'option [r]."
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
@@ -3440,35 +3448,35 @@ msgstr ""
 "Renommage avancé : ajoute un premier caractère configurable pour un "
 "modificateur unique avec {unique : n, c}."
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr ""
 "Recherche avancée : ajoute la recherche pour les éléments s)par numéro de "
 "zone de visages"
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Advanced Search: add search for items without face regions."
 msgstr ""
 "Recherche avancée : ajoute la recherche pour les éléments sans zone de "
 "visages"
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr ""
 "Collections : ajoute la prise en charge des emplacements de réseau inter-"
 "plate-forme"
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
 "Base de données : ajoute la prise en charge du mode « WAL »  (Write-Ahead-"
 "Logging) pour SQLite."
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
@@ -3478,7 +3486,7 @@ msgstr ""
 "composant graphique pour les textes de légende, en utilisant le composant "
 "« KF5::Sonnet »."
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
@@ -3487,7 +3495,7 @@ msgstr ""
 "Ajouter un panneau de configuration pour la vérification orthographique dans "
 "Configuration / Divers pour les logiciels DigiKam et Showfoto."
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
@@ -3495,7 +3503,7 @@ msgstr ""
 "Ajouter la prise en charge de traduction en ligne pour le composant "
 "graphique de modifications pour la langue alternative."
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
@@ -3503,7 +3511,7 @@ msgstr ""
 "Ajouter un panneau de configuration de localisation dans Configuration / "
 "Divers pour les logiciels DigiKam et Showfoto."
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
@@ -3512,7 +3520,7 @@ msgstr ""
 "Ajouter une configuration pour lister les langues alternatives / traduites "
 "préférées dans le composant graphique de modification de texte."
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
@@ -3520,21 +3528,21 @@ msgstr ""
 "Autoriser l'utilisation de paramètres globaux ou personnalisés pour le tri "
 "sur la qualité de l'image, de façon globale."
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 "Ajoutez des paramètres d'affichage d'icônes pour personnaliser la visibilité "
 "des étiquettes sur les miniatures."
 
-#: core/app/views/stack/welcomepageview.cpp:165
+#: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 "Ajoutez une prise en charge des images au format « float16 » (Half Float) "
 "dans le chargeur « TIFF »."
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
@@ -3546,7 +3554,7 @@ msgstr ""
 "esthétique permettant de classer les images en utilisant l'apprentissage "
 "profond.</a>."
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
@@ -3556,7 +3564,7 @@ msgstr ""
 "StatusReports/QuocHungTran\"> pour réaliser une reconnaissance optique des "
 "caractères (OCR) sur du texte numérisé</a>."
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
@@ -3565,7 +3573,7 @@ msgstr ""
 "Gestionnaire de file : ajouter un nouvel outil pour attribuer "
 "automatiquement une étiquette de sélection en analysant la qualité d'image."
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
@@ -3574,14 +3582,14 @@ msgstr ""
 "Gestionnaire de file : ajoute un nouvel outil pour attribuer des étiquettes "
 "de notation, de sélection et de couleurs par lot."
 
-#: core/app/views/stack/welcomepageview.cpp:170
+#: core/app/views/stack/welcomepageview.cpp:171
 #, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
 "Gestionnaire de file : ajoute un nouvel outil pour attribuer des titres et "
 "des légendes dans le lot de travaux."
 
-#: core/app/views/stack/welcomepageview.cpp:171
+#: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
@@ -3591,7 +3599,7 @@ msgstr ""
 "écriture du manuel </a> de DocBook à Sphinx / Environnement de développement "
 "« ReStructuredText »."
 
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
@@ -3600,14 +3608,15 @@ msgstr ""
 "Mettez à jour l'outil « G'MIC-Qt » vers la dernière version 3.2.2, finalisez "
 "le portage vers macOS et améliorez la stabilité du module externe."
 
-#: core/app/views/stack/welcomepageview.cpp:173
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 20230403."
+#: core/app/views/stack/welcomepageview.cpp:174
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 20230403."
+msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
 msgstr ""
 "Mettre à jour le moteur interne « RAW » vers la dernière version de la "
 "bibliothèque « libraw » en date du 03 Avril 2023."
 
-#: core/app/views/stack/welcomepageview.cpp:174
+#: core/app/views/stack/welcomepageview.cpp:175
 #, kde-format
 msgid ""
 "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
@@ -3623,27 +3632,27 @@ msgstr ""
 "périphériques Canon EOS R3, R7 et R10, Fujifilm X-H2S, X-T30 II Système, OM "
 "OM-1, Leica M11, Sony A7-IV (ILCE-7M4) et DJI Mavic 3."
 
-#: core/app/views/stack/welcomepageview.cpp:189
+#: core/app/views/stack/welcomepageview.cpp:190
 #, kde-format
 msgid "...and much more."
 msgstr "…et plus encore."
 
-#: core/app/views/stack/welcomepageview.cpp:195
+#: core/app/views/stack/welcomepageview.cpp:196
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:198
+#: core/app/views/stack/welcomepageview.cpp:199
 #, kde-format
 msgid "New Features"
 msgstr "Nouvelles fonctionnalités"
 
-#: core/app/views/stack/welcomepageview.cpp:200
+#: core/app/views/stack/welcomepageview.cpp:201
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:201
+#: core/app/views/stack/welcomepageview.cpp:202
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
@@ -3652,17 +3661,17 @@ msgstr ""
 "Voici quelques-unes des nouvelles fonctionnalités intégrées dans cette "
 "version de DigiKam (Comparées à DigiKam 7) :"
 
-#: core/app/views/stack/welcomepageview.cpp:209
+#: core/app/views/stack/welcomepageview.cpp:210
 #, kde-format
 msgid "About"
 msgstr "À propos"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:212
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:213
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3673,7 +3682,7 @@ msgstr ""
 "importer, organiser, améliorer, chercher et exporter vos images numériques "
 "dans votre ordinateur."
 
-#: core/app/views/stack/welcomepageview.cpp:213
+#: core/app/views/stack/welcomepageview.cpp:214
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3684,12 +3693,12 @@ msgstr ""
 "l'endroit où vos fichiers sont stockés, et sont identiques aux dossiers de "
 "votre disque dur."
 
-#: core/app/views/stack/welcomepageview.cpp:214
+#: core/app/views/stack/welcomepageview.cpp:215
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li> <li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:215
+#: core/app/views/stack/welcomepageview.cpp:216
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3698,7 +3707,7 @@ msgstr ""
 "DigiKam possède un grand nombre de puissantes fonctionnalités, décrites dans "
 "sa <a href=\"https://docs.digikam.org/en/index.html\">documentation</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:216
+#: core/app/views/stack/welcomepageview.cpp:217
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3707,34 +3716,34 @@ msgstr ""
 "La <a href=\"https://www.digikam.org\">page d'accueil de digiKam</a> fournit "
 "des informations sur les nouvelles versions de digiKam."
 
-#: core/app/views/stack/welcomepageview.cpp:266
+#: core/app/views/stack/welcomepageview.cpp:267
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Bienvenue dans digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:269
+#: core/app/views/stack/welcomepageview.cpp:270
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Crédits de l'image d'arrière-plan"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:273
 #, kde-format
 msgid "Author:"
 msgstr "Auteur :"
 
-#: core/app/views/stack/welcomepageview.cpp:273
+#: core/app/views/stack/welcomepageview.cpp:274
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "Lieu :"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:276
 #, kde-format
 msgid "Camera:"
 msgstr "Caméra :"
 
-#: core/app/views/stack/welcomepageview.cpp:276
+#: core/app/views/stack/welcomepageview.cpp:277
 #, kde-format
 msgid "Lens:"
 msgstr "Objectif :"
