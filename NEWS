@@ -11,4 +11,5 @@ General: Add new tool to auto-tag image using deep learning neural network engin
 *****************************************************************************************************
 BUGFIXES:
 
-001 ==> 
+001 ==>  477707 - Face detection stays on 0% and cannot be canceled.
+002 ==> 
