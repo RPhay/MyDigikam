@@ -194,11 +194,11 @@ QList<QString> autoTagsAssign::generateTagsList(const QImage& image)
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return result;
@@ -222,11 +222,11 @@ QList<QString> autoTagsAssign::generateTagsList(const DImg& image)
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return result;
@@ -245,11 +245,11 @@ QList<QString> autoTagsAssign::generateTagsList(const QString& imagePath)
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return result;
@@ -268,11 +268,11 @@ QList<QList<QString>> autoTagsAssign::generateTagsList(const QList<QString>& inp
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return result;

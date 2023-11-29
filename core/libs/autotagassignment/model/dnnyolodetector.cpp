@@ -108,20 +108,20 @@ bool DNNYoloDetector::loadModels()
         }
         catch (cv::Exception& e)
         {
-            qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+            qCWarning(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
 
             return false;
         }
         catch (...)
         {
-           qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
+           qCWarning(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
 
            return false;
         }
     }
     else
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found objected detection DNN model" << model;
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Cannot found objected detection DNN model" << model;
 
         return false;
     }
@@ -129,11 +129,11 @@ bool DNNYoloDetector::loadModels()
     return true;
 }
 
-QHash<QString, QVector<QRect>> DNNYoloDetector::detectObjects(const::cv::Mat& inputImage)
+QHash<QString, QVector<QRect> > DNNYoloDetector::detectObjects(const::cv::Mat& inputImage)
 {
     if (inputImage.empty())
     {
-        qDebug() << "Invalid image given, not detecting objects";
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Invalid image given, not detecting objects";
 
         return {};
     }
@@ -143,11 +143,11 @@ QHash<QString, QVector<QRect>> DNNYoloDetector::detectObjects(const::cv::Mat& in
     return postprocess(inputImage, outs[0]);
 }
 
-QList<QHash<QString, QVector<QRect>>> DNNYoloDetector::detectObjects(const std::vector<cv::Mat>& inputBatchImages)
+QList<QHash<QString, QVector<QRect> > > DNNYoloDetector::detectObjects(const std::vector<cv::Mat>& inputBatchImages)
 {
     if (inputBatchImages.empty())
     {
-        qDebug() << "Invalid image list given, not detecting objects";
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Invalid image list given, not detecting objects";
 
         return {};
     }
@@ -188,17 +188,17 @@ std::vector<cv::Mat> DNNYoloDetector::preprocess(const std::vector<cv::Mat>& inp
 
         int elapsed = timer.elapsed();
 
-        qDebug() << "Batch forward (Inference) takes: " << elapsed << " ms";
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Batch forward (Inference) takes: " << elapsed << " ms";
     }
     mutex.unlock();
 
     return outs;
 }
 
-QList<QHash<QString, QVector<QRect>>> DNNYoloDetector::postprocess(const std::vector<cv::Mat>& inputBatchImages,
-                                                                   const std::vector<cv::Mat>& outs) const
+QList<QHash<QString, QVector<QRect> > > DNNYoloDetector::postprocess(const std::vector<cv::Mat>& inputBatchImages,
+                                                                     const std::vector<cv::Mat>& outs) const
 {
-    QList<QHash<QString, QVector<QRect>>> detectedBoxesList;
+    QList<QHash<QString, QVector<QRect> > > detectedBoxesList;
 
     // outs = [batch_size x [rows x 85]]
 
@@ -210,8 +210,8 @@ QList<QHash<QString, QVector<QRect>>> DNNYoloDetector::postprocess(const std::ve
     return detectedBoxesList;
 }
 
-QHash<QString, QVector<QRect>> DNNYoloDetector::postprocess(const cv::Mat& inputImage,
-                                                            const cv::Mat& out) const
+QHash<QString, QVector<QRect> > DNNYoloDetector::postprocess(const cv::Mat& inputImage,
+                                                             const cv::Mat& out) const
 {
     QHash<QString, QVector<QRect>> detectedBoxes;
 

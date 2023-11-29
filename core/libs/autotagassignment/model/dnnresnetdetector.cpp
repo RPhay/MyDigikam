@@ -44,11 +44,11 @@ DNNResnetDetector::~DNNResnetDetector()
 {
 }
 
-QList<QString>  DNNResnetDetector::loadImageNetClass()
+QList<QString> DNNResnetDetector::loadImageNetClass()
 {
     QList<QString>  classList;
 
-    // NOTE storing all model definition at the same application path as face engine
+    // NOTE: storing all model definition at the same application path as face engine
 
     QString appPath         = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                      QLatin1String("digikam/facesengine"),
@@ -93,20 +93,20 @@ bool DNNResnetDetector::loadModels()
         }
         catch (cv::Exception& e)
         {
-            qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+            qCWarning(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
 
             return false;
         }
         catch (...)
         {
-           qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
+           qCWarning(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
 
            return false;
         }
     }
     else
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found objected classification DNN model" << model;
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Cannot found objected classification DNN model" << model;
 
         return false;
     }
@@ -114,7 +114,7 @@ bool DNNResnetDetector::loadModels()
     return true;
 }
 
-QHash<QString, QVector<QRect>> DNNResnetDetector::detectObjects(const::cv::Mat& inputImage)
+QHash<QString, QVector<QRect> > DNNResnetDetector::detectObjects(const::cv::Mat& inputImage)
 {
     if (inputImage.empty())
     {
@@ -128,11 +128,11 @@ QHash<QString, QVector<QRect>> DNNResnetDetector::detectObjects(const::cv::Mat& 
     return postprocess(inputImage, outs[0]);
 }
 
-QList<QHash<QString, QVector<QRect>>> DNNResnetDetector::detectObjects(const std::vector<cv::Mat>& inputBatchImages)
+QList<QHash<QString, QVector<QRect> > > DNNResnetDetector::detectObjects(const std::vector<cv::Mat>& inputBatchImages)
 {
     if (inputBatchImages.empty())
     {
-        qDebug() << "Invalid image list given, not detecting objects";
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Invalid image list given, not detecting objects";
 
         return {};
     }
@@ -173,17 +173,18 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& i
         net.forward(outs, getOutputsNames());
 
         int elapsed = timer.elapsed();
-        qDebug() << "Batch forward (Inference) takes: " << elapsed << " ms";
+
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Batch forward (Inference) takes: " << elapsed << " ms";
     }
     mutex.unlock();
 
     return outs;
 }
 
-QList<QHash<QString, QVector<QRect>>> DNNResnetDetector::postprocess(const std::vector<cv::Mat>& inputBatchImages,
-                                                                     const std::vector<cv::Mat>& outs) const
+QList<QHash<QString, QVector<QRect> > > DNNResnetDetector::postprocess(const std::vector<cv::Mat>& inputBatchImages,
+                                                                       const std::vector<cv::Mat>& outs) const
 {
-    QList<QHash<QString, QVector<QRect>>> detectedBoxesList;
+    QList<QHash<QString, QVector<QRect> > > detectedBoxesList;
 
     // outs = [batch_size x [rows x 85]]
 
@@ -195,8 +196,8 @@ QList<QHash<QString, QVector<QRect>>> DNNResnetDetector::postprocess(const std::
     return detectedBoxesList;
 }
 
-QHash<QString, QVector<QRect>> DNNResnetDetector::postprocess(const cv::Mat& inputImage,
-                                                              const cv::Mat& out) const
+QHash<QString, QVector<QRect> > DNNResnetDetector::postprocess(const cv::Mat& inputImage,
+                                                               const cv::Mat& out) const
 {
     QHash<QString, QVector<QRect>> detectedBoxes;
 
@@ -207,7 +208,7 @@ QHash<QString, QVector<QRect>> DNNResnetDetector::postprocess(const cv::Mat& inp
     int label_id      = classIdPoint.x;
 
     QString label     = predefinedClasses[label_id];
-    detectedBoxes[label].push_back({});
+    detectedBoxes[label].push_back( {} );
 
     return detectedBoxes;
 }
