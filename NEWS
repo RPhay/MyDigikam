@@ -259,7 +259,7 @@ BUGFIXES:
 243 ==> 477552 - Menus are missing on Import from Card Reader Window.
 244 ==> 477650 - digiKam crash when there is a avif file.
 245 ==> 477632 - Preview disappears after Image Editor.
-246 ==> 
+246 ==> 145482 - Compile fails under Windows.
 247 ==> 
 248 ==> 
 249 ==> 
