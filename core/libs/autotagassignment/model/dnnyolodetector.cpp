@@ -168,7 +168,6 @@ std::vector<cv::Mat> DNNYoloDetector::preprocess(const cv::Mat& inputImage)
         net.setInput(inputBlob);
         net.forward(outs, getOutputsNames());
     }
-
     mutex.unlock();
 
     return outs;
@@ -203,7 +202,7 @@ QList<QHash<QString, QVector<QRect>>> DNNYoloDetector::postprocess(const std::ve
 
     // outs = [batch_size x [rows x 85]]
 
-    for(int i = 0 ; i < inputBatchImages.size() ; i++)
+    for (int i = 0 ; i < inputBatchImages.size() ; i++)
     {
         detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
     }
@@ -238,7 +237,7 @@ QHash<QString, QVector<QRect>> DNNYoloDetector::postprocess(const cv::Mat& input
 
         if (confidence >= confidenceThreshold)
         {
-            float* classes_scores = data + 5;
+            float* classes_scores  = data + 5;
 
             // Create a 1x85 Mat and store class scores of 80 classes.
 

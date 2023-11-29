@@ -35,6 +35,7 @@ enum DetectorModel
     YOLOV5NANO = 0,   ///< YOLO neural network inference.
     YOLOV5XLARGE,
     RESNET50
+
     // add here another model
 };
 

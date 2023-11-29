@@ -90,7 +90,7 @@ public:
 
 protected:
 
-    float        scaleFactor = 1.0;
+    float        scaleFactor = 1.0F;
     cv::Scalar   meanValToSubtract;
     cv::Size     inputImageSize;
 

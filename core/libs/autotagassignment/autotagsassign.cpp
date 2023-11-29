@@ -165,7 +165,7 @@ std::vector<cv::Mat> autoTagsAssign::prepareForDetection(const QList<QString>& i
 
     // add black imgs to fullfill the batch size
 
-    cv::Size inputSize = m_inferenceEngine->getinputImageSize();  
+    cv::Size inputSize = m_inferenceEngine->getinputImageSize();
 
     while ((result.size() % batchSize) != 0)
     {

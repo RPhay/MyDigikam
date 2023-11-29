@@ -51,7 +51,7 @@ QList<QString> DNNBaseDetectorModel::generateObjects(const cv::Mat& inputImage)
     QHash<QString, QVector<QRect>> results = detectObjects(inputImage);
     QList<QString> objectNames;
 
-    for(QHash<QString, QVector<QRect>>::const_iterator it = results.constBegin() ; it != results.constEnd() ; ++it)
+    for (QHash<QString, QVector<QRect>>::const_iterator it = results.constBegin() ; it != results.constEnd() ; ++it)
     {
         objectNames.append(it.key());
     }
@@ -64,11 +64,11 @@ QList<QList<QString>> DNNBaseDetectorModel::generateObjects(const std::vector<cv
     QList<QHash<QString, QVector<QRect>>> results = detectObjects(inputBatchImages);
     QList<QList<QString>> objectNamesList;
 
-    for (auto detectedBoxes: results)
+    for (auto detectedBoxes : results)
     {
         QList<QString> objectNames;
 
-        for(QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin() ; it != detectedBoxes.constEnd() ; ++it)
+        for (QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin() ; it != detectedBoxes.constEnd() ; ++it)
         {
             objectNames.append(it.key());
         }
@@ -91,7 +91,7 @@ double DNNBaseDetectorModel::showInferenceTime()
     // inference(t) and the timings for each of the layers(in layersTimes).
 
     std::vector<double> layersTimes;
-    double freq = cv::getTickFrequency() / 1000;
+    double freq = cv::getTickFrequency() / 1000.0;
 
     return net.getPerfProfile(layersTimes) / freq;
 }

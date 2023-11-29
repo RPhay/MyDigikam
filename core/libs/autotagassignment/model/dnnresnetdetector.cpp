@@ -79,7 +79,7 @@ bool DNNResnetDetector::loadModels()
                                              QStandardPaths::LocateDirectory);
 
     QString model;
-    model           = appPath + QLatin1Char('/') + QLatin1String("resnet50.onnx"); 
+    model           = appPath + QLatin1Char('/') + QLatin1String("resnet50.onnx");
 
     if (QFileInfo::exists(model))
     {
@@ -89,7 +89,7 @@ bool DNNResnetDetector::loadModels()
             net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
             net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
 
-            //TODO verify GPU Options here
+            // TODO: verify GPU Options here
         }
         catch (cv::Exception& e)
         {
@@ -139,7 +139,7 @@ QList<QHash<QString, QVector<QRect>>> DNNResnetDetector::detectObjects(const std
 
     std::vector<cv::Mat> outs = preprocess(inputBatchImages);
 
-    // outs = [1 x [rows x 85]] 
+    // outs = [1 x [rows x 85]]
 
     return postprocess(inputBatchImages, outs);
 }
@@ -159,7 +159,7 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const cv::Mat& inputImage)
     return outs;
 }
 
-std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& inputBatchImages) 
+std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& inputBatchImages)
 {
     cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
@@ -185,9 +185,9 @@ QList<QHash<QString, QVector<QRect>>> DNNResnetDetector::postprocess(const std::
 {
     QList<QHash<QString, QVector<QRect>>> detectedBoxesList;
 
-    // outs = [batch_size x [rows x 85]] 
+    // outs = [batch_size x [rows x 85]]
 
-    for (int i = 0; i < inputBatchImages.size(); i++)
+    for (int i = 0 ; i < inputBatchImages.size() ; i++)
     {
         detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
     }
@@ -204,9 +204,9 @@ QHash<QString, QVector<QRect>> DNNResnetDetector::postprocess(const cv::Mat& inp
     double final_prob = 0.0;
 
     minMaxLoc(out.reshape(1, 1), 0, &final_prob, 0, &classIdPoint);
-    int label_id  = classIdPoint.x; 
+    int label_id      = classIdPoint.x;
 
-    QString label = predefinedClasses[label_id];
+    QString label     = predefinedClasses[label_id];
     detectedBoxes[label].push_back({});
 
     return detectedBoxes;
