@@ -103,7 +103,7 @@ int main(int argc, char** argv)
 
     if (!parser->isSet(QLatin1String("dataset")))
     {
-        qWarning("Data set is not set !!!");
+        qWarning(DIGIKAM_TESTS_LOG) << "Data set is not set !!!";
     }
 
     QDir dataset(parser->value(QLatin1String("dataset")));
@@ -139,8 +139,8 @@ int main(int argc, char** argv)
         QList<QHash<QString, QVector<QRect> > > resBatch = yoloDetector->detectObjects(cvBatchImages);
         int elapsed = timer.elapsed();
 
-        qDebug() << "detected took: " << elapsed << " ms";
-        // qDebug() << yoloDetector->showInferenceTime();
+        qCDebug(DIGIKAM_TESTS_LOG) << "detected took: " << elapsed << " ms";
+        // qCDebug(DIGIKAM_TESTS_LOG) << yoloDetector->showInferenceTime();
 
         results += resBatch;
     }

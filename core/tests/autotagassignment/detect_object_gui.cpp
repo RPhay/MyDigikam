@@ -155,7 +155,7 @@ QHash<QString, QVector<QRect>> MainWindow::detectObjects(const QString& imagePat
 
     if (cvImage.empty())
     {
-        qDebug() << "Image Path is not available";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Image Path is not available";
         return {};
     }
 
@@ -167,7 +167,7 @@ void MainWindow::drawObjects(QImage& img, const QHash<QString, QVector<QRect>>& 
 {
     if (detectedObjects.empty())
     {
-        qDebug() << "No object detect";
+        qCDebug(DIGIKAM_TESTS_LOG) << "No object detect";
         return;
     }
 
@@ -193,13 +193,13 @@ void MainWindow::drawObjects(QImage& img, const QHash<QString, QVector<QRect>>& 
 void MainWindow::slotDetectObjects(const QListWidgetItem* imageItem)
 {
     QString imagePath = imageItem->text();
-    qDebug() << "Loading" << imagePath;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Loading" << imagePath;
     QImage img(imagePath);
 
     QHash<QString, QVector<QRect>> objects = detectObjects(imagePath);
     drawObjects(img, objects);
 
-    qDebug() << QString::fromLatin1("Inference Time %1").arg(m_yoloDetector->showInferenceTime());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromLatin1("Inference Time %1").arg(m_yoloDetector->showInferenceTime());
     m_fullImage->setPixmap(QPixmap::fromImage(img));
 }
 
@@ -361,10 +361,10 @@ int main(int argc, char** argv)
 
     if (!parser->isSet(QLatin1String("dataset")))
     {
-        qWarning("Data set is not set !!!");
+        qWarning(DIGIKAM_TESTS_LOG) << "Data set is not set !!!";
     }
- 
-    QDir dataset(parser->value(QLatin1String("dataset"))); 
+
+    QDir dataset(parser->value(QLatin1String("dataset")));
 
     MainWindow* const window = new MainWindow(dataset, nullptr);
     window->show();

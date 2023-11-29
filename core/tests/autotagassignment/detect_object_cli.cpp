@@ -49,7 +49,7 @@ int main(int argc, char** argv)
 
     if (argc < 3)
     {
-        qDebug() << "Bad arguments !!!\nUsage: "
+        qCDebug(DIGIKAM_TESTS_LOG) << "Bad arguments !!!\nUsage: "
                  << argv[0] << "<image_path>" << "<output_image_path>";
         return 0;
     }
@@ -60,7 +60,7 @@ int main(int argc, char** argv)
 
     if (cvImage.empty())
     {
-        qDebug() << "Image Path is not available";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Image Path is not available";
         return 0;
     }
 

@@ -100,7 +100,7 @@ int main(int argc, char** argv)
 
     if (!parser->isSet(QLatin1String("dataset")))
     {
-        qWarning("Data set is not set !!!");
+        qWarning(DIGIKAM_TESTS_LOG) << "Data set is not set !!!";
     }
 
     QDir dataset(parser->value(QLatin1String("dataset")));
