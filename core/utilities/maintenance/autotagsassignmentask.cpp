@@ -32,8 +32,8 @@ class Q_DECL_HIDDEN AutotagsAssignmentTask::Private
 public:
 
     explicit Private()
-        : data           (nullptr),
-          modelType      (DetectorModel::YOLOV5NANO)
+        : data      (nullptr),
+          modelType (DetectorModel::YOLOV5NANO)
     {
     }
 
@@ -69,21 +69,13 @@ void AutotagsAssignmentTask::setModelType(int modelType)
 void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QString>& tagsList)
 {
     ItemInfo info              = ItemInfo::fromLocalFile(pathImage);
-
     TagsCache* const tagsCache = Digikam::TagsCache::instance();
     QString rootTags           = QLatin1String("auto/");
 
     for (const auto& tag : tagsList)
     {
-        QString tagPath = rootTags + tag;
-
-        if (!tagsCache->hasTag(tagsCache->tagForPath(tagPath)))
-        {
-            // TODO: id is unused?
-            auto id = tagsCache->createTag(tagPath);
-        }
-
-        info.setTag(tagsCache->tagForPath(tagPath));
+        int tagId = tagsCache->getOrCreateTag(rootTags + tag);
+        info.setTag(tagId);
     }
 }
 
