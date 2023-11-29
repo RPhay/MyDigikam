@@ -583,4 +583,10 @@ if(ENABLE_MEDIAPLAYER)
 
     endif()
 
+else()
+
+    # Qt Multimedia is only available if media player support is turned on.
+
+    set (ENABLE_QTMULTIMEDIA OFF)
+
 endif()
