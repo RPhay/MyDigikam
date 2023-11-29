@@ -3,7 +3,7 @@
 # Script to build digiKam using MacPorts
 # This script must be run as sudo
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -215,9 +215,7 @@ cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
 
-mv -f $INSTALL_PREFIX/libexec/qt5/plugins/digikam/editor/*.so $INSTALL_PREFIX/lib/plugins/digikam/editor/
-# Install GmicQt plugin debug symbols.
-cp -pr $BUILDING_DIR/ext_gmicqt/ext_gmic_qt-prefix/src/ext_gmic_qt-build/Editor_GmicQt_Plugin.so.dSYM $INSTALL_PREFIX/lib/plugins/digikam/editor/ || true
+mv -f $INSTALL_PREFIX/libexec/qt5/plugins/digikam/editor/*.so* $INSTALL_PREFIX/lib/plugins/digikam/editor/
 
 #################################################################################################
 

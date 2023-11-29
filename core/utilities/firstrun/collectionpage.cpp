@@ -120,7 +120,7 @@ QString CollectionPage::firstAlbumPath() const
 void CollectionPage::saveSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("General Settings");
+    KConfigGroup group        = config->group(QLatin1String("General Settings"));
     group.writeEntry("Version", digikam_version);
 
     config->sync();

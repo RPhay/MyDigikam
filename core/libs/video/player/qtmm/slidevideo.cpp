@@ -80,7 +80,7 @@ public:
 
     QGraphicsScene*      videoScene       = nullptr;
     QGraphicsView*       videoView        = nullptr;
-    QGraphicsVideoItem*  videoWidget      = nullptr;
+    QGraphicsVideoItem*  videoItem        = nullptr;
     QMediaPlayer*        player           = nullptr;
     QAudioOutput*        audio            = nullptr;
 
@@ -96,19 +96,49 @@ public:
 
     void adjustVideoSize()
     {
-        videoWidget->setSize(videoView->size());
-        int orientation = videoMediaOrientation();
+        videoItem->resetTransform();
 
-        if ((orientation == 0) || (orientation == 180))
+        QSizeF nativeSize    = videoItem->nativeSize();
+        int mediaOrientation = videoMediaOrientation();
+
+        if ((nativeSize.width()  < 1.0) ||
+            (nativeSize.height() < 1.0))
         {
-            videoView->fitInView(0, 0, videoView->width(), videoView->height(), Qt::KeepAspectRatio);
+            return;
+        }
+
+        if ((mediaOrientation == 90) ||
+            (mediaOrientation == 270))
+        {
+            nativeSize.transpose();
+        }
+
+        double ratio = (nativeSize.width() /
+                        nativeSize.height());
+
+        if (videoView->width() > videoView->height())
+        {
+            QSizeF vsize(videoView->height() * ratio,
+                         videoView->height());
+            videoItem->setSize(vsize);
         }
         else
         {
-            videoView->fitInView(0, 0, videoView->width(), videoView->height(), Qt::KeepAspectRatioByExpanding);
+            QSizeF vsize(videoView->width(),
+                         videoView->width() / ratio);
+            videoItem->setSize(vsize);
         }
 
-        videoView->centerOn(videoWidget);
+        videoView->setSceneRect(0, 0, videoItem->size().width(),
+                                      videoItem->size().height());
+
+        QPointF center = videoItem->boundingRect().center();
+        videoItem->setTransformOriginPoint(center);
+        videoItem->setRotation(videoOrientation);
+
+        videoView->fitInView(videoItem, Qt::KeepAspectRatio);
+        videoView->centerOn(videoItem);
+        videoView->raise();
     };
 
     int videoMediaOrientation() const
@@ -126,7 +156,6 @@ public:
 
     void setVideoItemOrientation(int orientation)
     {
-        videoView->rotate(orientation);
         videoOrientation = orientation;
         adjustVideoSize();
     };
@@ -145,14 +174,14 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
-    d->videoWidget = new QGraphicsVideoItem();
+    d->videoItem   = new QGraphicsVideoItem();
     d->player      = new QMediaPlayer(this);
     d->audio       = new QAudioOutput;
     d->player->setAudioOutput(d->audio);
-    d->player->setVideoOutput(d->videoWidget);
-    d->videoScene->addItem(d->videoWidget);
+    d->player->setVideoOutput(d->videoItem);
+    d->videoScene->addItem(d->videoItem);
 
-    d->videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
+    d->videoItem->setAspectRatioMode(Qt::IgnoreAspectRatio);
     d->videoView->setMouseTracking(true);
 
     d->indicator      = new DHBox;
@@ -180,7 +209,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
     grid->setContentsMargins(QMargins());
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Media Player Settings");
+    KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
     int volume                = group.readEntry("Volume", 50);
 
     d->volume->setValue(volume);
@@ -211,7 +240,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
     connect(d->player, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotHandlePlayerError(QMediaPlayer::Error,QString)));
 
-    connect(d->videoWidget, SIGNAL(nativeSizeChanged(QSizeF)),
+    connect(d->videoItem, SIGNAL(nativeSizeChanged(QSizeF)),
             this, SLOT(slotNativeSizeChanged()));
 
     // --------------------------------------------------------------------------
@@ -235,7 +264,6 @@ void SlideVideo::setInfoInterface(DInfoInterface* const iface)
 void SlideVideo::setCurrentUrl(const QUrl& url)
 {
     d->player->stop();
-    d->videoView->resetTransform();
 
     int orientation = 0;
 
@@ -286,6 +314,7 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
 void SlideVideo::showIndicator(bool b)
 {
     d->indicator->setVisible(b);
+    d->indicator->raise();
 }
 
 void SlideVideo::slotPlayerStateChanged(QMediaPlayer::PlaybackState newState)
@@ -293,10 +322,18 @@ void SlideVideo::slotPlayerStateChanged(QMediaPlayer::PlaybackState newState)
     if (newState == QMediaPlayer::PlayingState)
     {
         int rotate = d->videoMediaOrientation();
-        d->setVideoItemOrientation((-rotate) + d->videoOrientation);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
-                                     << d->videoOrientation;
+                                     << rotate;
+
+        rotate     = (-rotate) + d->videoOrientation;
+
+        if ((rotate > 270) || (rotate < 0))
+        {
+            rotate = d->videoOrientation;
+        }
+
+        d->setVideoItemOrientation(rotate);
     }
 }
 

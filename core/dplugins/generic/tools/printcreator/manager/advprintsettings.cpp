@@ -6,7 +6,7 @@
  * Date        : 2007-11-07
  * Description : a tool to print images
  *
- * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -32,7 +32,7 @@ namespace DigikamGenericPrintCreatorPlugin
 
 AdvPrintSettings::AdvPrintSettings()
     : selMode           (IMAGES),
-      printerName       (outputName(PDF)),
+      printerName       (outputName(FILES)),
 
       /// Select a different page to force a refresh in initPhotoSizes.
       pageSize          (QSizeF(-1, -1)),
@@ -71,7 +71,7 @@ void AdvPrintSettings::readSettings(KConfigGroup& group)
     savedPhotoSize    = group.readEntry("PhotoSize",
                         QString());
     printerName       = group.readEntry("Printer",
-                        outputName(PDF));
+                        outputName(FILES));
     captionType       = (CaptionType)group.readEntry(QLatin1String("CaptionType"),
                         (int)NONE);
     captionColor      = group.readEntry(QLatin1String("CaptionColor"),
@@ -126,8 +126,14 @@ QMap<AdvPrintSettings::Output, QString> AdvPrintSettings::outputNames()
 {
     QMap<Output, QString> out;
 
-    out[PDF]   = i18nc("Output: PDF",  "Print to PDF");
     out[FILES] = i18nc("Output: FILE", "Print to Image File");
+
+#ifndef Q_OS_WIN
+
+    out[PDF]   = i18nc("Output: PDF",  "Print to PDF");
+
+#endif
+
     out[GIMP]  = i18nc("Output: GIMP", "Print with Gimp");
 
     return out;

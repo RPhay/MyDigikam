@@ -37,7 +37,7 @@ void* GetProcAddress_Qt(const char* name)
     if (!p)
     {
 
-#if defined(Q_OS_WIN) && defined(QT_OPENGL_DYNAMIC)
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN) && defined(QT_OPENGL_DYNAMIC)
 
         HMODULE handle = (HMODULE)QOpenGLContext::openGLModuleHandle();
 

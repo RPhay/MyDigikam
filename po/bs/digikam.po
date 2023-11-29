@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 01:11+0000\n"
+"POT-Creation-Date: 2023-11-29 00:40+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1279,7 +1279,7 @@ msgid "White Balance:"
 msgstr "Balans bijelog:"
 
 #: core/app/items/utils/tooltipfiller.cpp:313
-#: core/utilities/searchwindow/searchgroup.cpp:116
+#: core/utilities/searchwindow/searchgroup.cpp:117
 #, fuzzy, kde-format
 #| msgid "Audio/video properties"
 msgid "Audio/Video Properties"
@@ -2943,7 +2943,7 @@ msgstr "&Pomoć"
 msgid "Main Toolbar"
 msgstr "Glavna alatna traka"
 
-#: core/app/main/main.cpp:187 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2953,7 +2953,7 @@ msgstr "Glavna alatna traka"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:196 core/showfoto/main/main.cpp:163
+#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:170
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2962,7 +2962,7 @@ msgstr ""
 "Amila Dzano,Amir Šabanović,Arnela Besic,Nermina Ahmić,Vedran Ljubovic,Boja "
 "Nermin"
 
-#: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
+#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:171
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2971,24 +2971,24 @@ msgstr ""
 "asalkanovi2@etf.unsa.ba,adzano1@etf.unsa.ba,asabanovic3@etf.unsa.ba,archy-"
 "b@hotmail.com,na@etf.unsa.ba,vljubovic@smartnet.ba,nboja1@etf.unsa.ba"
 
-#: core/app/main/main.cpp:205
+#: core/app/main/main.cpp:212
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "Otvori dijalog za fotoaparat na <putanji>"
 
-#: core/app/main/main.cpp:208
+#: core/app/main/main.cpp:215
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Otvori dijalog za kameru za uređaj sa Solid UDI<udi>"
 
-#: core/app/main/main.cpp:211
+#: core/app/main/main.cpp:218
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Automatski otkrij i otvori povezanu gphoto2 kameru"
 
-#: core/app/main/main.cpp:213
+#: core/app/main/main.cpp:220
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -2998,7 +2998,7 @@ msgstr ""
 "Pokreni digikam sa SQLite datotekom baze podataka pronađenoj u direktoriju "
 "<dir>"
 
-#: core/app/main/main.cpp:216
+#: core/app/main/main.cpp:223
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -3007,7 +3007,7 @@ msgstr ""
 "Pokreni digikam sa SQLite datotekom baze podataka pronađenoj u direktoriju "
 "<dir>"
 
-#: core/app/main/main.cpp:243
+#: core/app/main/main.cpp:250
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -3015,7 +3015,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:285
+#: core/app/main/main.cpp:292
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -3026,7 +3026,7 @@ msgstr ""
 "molimo, instalirajte ga.\n"
 "Ne postoji instaliran dodatak za baze podataka na vašem računaru."
 
-#: core/app/main/main.cpp:294
+#: core/app/main/main.cpp:301
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -3037,7 +3037,7 @@ msgstr ""
 "molimo, instalirajte ga.\n"
 "Dodaci za baze podataka instalirani na vašem računaru su izlistani ispod:"
 
-#: core/app/main/main.cpp:334
+#: core/app/main/main.cpp:341
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3129,7 +3129,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:233
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -3137,7 +3137,7 @@ msgstr "Nazad"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:235
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -3217,7 +3217,7 @@ msgstr "Mapa"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:119
 #: core/libs/album/widgets/albumselecttabs.cpp:194
-#: core/utilities/searchwindow/searchfields_createfield.cpp:141
+#: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Labels"
 msgstr "Labele"
@@ -3983,7 +3983,7 @@ msgstr "Vrsta audio kanala"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:944
+#: core/utilities/searchwindow/searchfields_createfield.cpp:955
 #: core/utilities/setup/setuptooltip.cpp:319
 #, fuzzy, kde-format
 #| msgid "Video Codec"
@@ -3992,7 +3992,7 @@ msgstr "Video kodek"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:814
 #, kde-format
 msgid "Duration"
 msgstr "Trajanje"
@@ -4306,14 +4306,14 @@ msgstr "Svojstva stavke"
 
 #: core/app/views/tableview/tableview_column_item.cpp:75
 #: core/app/views/tableview/tableview_column_item.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:201
+#: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Width"
 msgstr "Širina"
 
 #: core/app/views/tableview/tableview_column_item.cpp:76
 #: core/app/views/tableview/tableview_column_item.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:219
+#: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Height"
 msgstr "Visina"
@@ -7189,7 +7189,6 @@ msgstr "Prikažite format slike"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -7198,6 +7197,7 @@ msgstr "Prikažite format slike"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
@@ -7213,7 +7213,6 @@ msgstr "da"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -7222,6 +7221,7 @@ msgstr "da"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
@@ -7236,45 +7236,12 @@ msgstr "da"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: cannot write file format"
-msgid "no"
-msgstr "ne"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
-#, fuzzy, kde-format
-#| msgid "Flash has been fired"
-msgctxt "@title"
-msgid "ImageMagick loader"
-msgstr "Blic je bio otkazan"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
-#, kde-format
-msgctxt "@info"
-msgid "An image loader based on ImageMagick coders"
-msgstr ""
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
-#, kde-kuit-format
-msgctxt "@info"
-msgid ""
-"<para>This plugin allows users to load and save image using ImageMagick "
-"coders.</para><para>ImageMagick is a free and open-source software suite for "
-"converting raster image and vector image files. It can read and write over "
-"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
-"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
-msgstr ""
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:59
-#: core/libs/dplugins/core/dplugindimg.cpp:71
-#, fuzzy, kde-format
-#| msgid "no"
-msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "ne"
 
@@ -7468,6 +7435,39 @@ msgstr "JPEG 2000 slika"
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
 msgstr "JPEG 2000 slika"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:86
+#, fuzzy, kde-format
+#| msgid "Flash has been fired"
+msgctxt "@title"
+msgid "ImageMagick loader"
+msgstr "Blic je bio otkazan"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:101
+#, kde-format
+msgctxt "@info"
+msgid "An image loader based on ImageMagick coders"
+msgstr ""
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:106
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>This plugin allows users to load and save image using ImageMagick "
+"coders.</para><para>ImageMagick is a free and open-source software suite for "
+"converting raster image and vector image files. It can read and write over "
+"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
+"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
+msgstr ""
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/libs/dplugins/core/dplugindimg.cpp:59
+#: core/libs/dplugins/core/dplugindimg.cpp:71
+#, fuzzy, kde-format
+#| msgid "no"
+msgctxt "@info: cannot read file format"
+msgid "no"
+msgstr "ne"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:68
 #, kde-format
@@ -8032,31 +8032,31 @@ msgstr ""
 "Ako pritisnete ovo tipku, sve vrijednosti sa trenutno selektovanog kanala "
 "biti će vraćene na zadane."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:883
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:893
 #, kde-format
 msgid "Adjust Levels"
 msgstr "Podesi nivoe"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:900
 #, fuzzy, kde-format
 #| msgid "Select Gimp Levels File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Odaberite datoteku GIMP nivoa za učitavanje"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:912
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "Ne mogu učitati iz Gimp-ove tekstualne datoteke nivoa."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:927
 #, fuzzy, kde-format
 #| msgid "Gimp Levels File to Save"
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Gimp-ova datoteka nivoa za snimanje"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:939
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "Ne mogu snimiti u tekstualnu datoteku GIMP nivoa."
@@ -8549,7 +8549,7 @@ msgstr "Ne može se upravljati bojama."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:80
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:207
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "White Balance"
 msgstr "Balans bijelog"
@@ -8710,17 +8710,17 @@ msgstr "Polu-providan"
 msgid "Use semi-transparent text background under image"
 msgstr "Koristi polu-prozirnu pozadinu teksta ispod slike"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:317
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:326
 #, kde-format
 msgid "Enter your text here."
 msgstr "Ovdje unesite svoj tekst."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:426
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:435
 #, kde-format
 msgid "Insert Text Tool"
 msgstr "Alat za unos teksta"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:439
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:448
 #, kde-format
 msgid "Insert Text"
 msgstr "Ubaci tekst..."
@@ -9355,7 +9355,20 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Izoštri..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, fuzzy, kde-format
+#| msgid "No Profile Available"
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr "Profil nije dostupan"
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@title:window"
@@ -10511,7 +10524,7 @@ msgstr "Funkcija energije"
 msgid "Advanced Settings"
 msgstr "Napredne postavke"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:769
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:778
 #, kde-format
 msgid "Liquid Rescale"
 msgstr "Tečno reskaliranje"
@@ -11365,8 +11378,8 @@ msgstr ""
 "do ogromnih dimenzija. Ovaj proces može potrajati."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:629
-#: core/utilities/searchwindow/searchfields_createfield.cpp:203
-#: core/utilities/searchwindow/searchfields_createfield.cpp:221
+#: core/utilities/searchwindow/searchfields_createfield.cpp:214
+#: core/utilities/searchwindow/searchfields_createfield.cpp:232
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -11690,7 +11703,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Ne mogu da sačuvam \"%1\" datoteku"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -11721,17 +11736,17 @@ msgstr "Jedna karta"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
 #, fuzzy, kde-format
-#| msgid "Two maps - horizontal"
+#| msgid "Two maps - vertical"
 msgctxt "@item"
-msgid "Two maps - horizontal"
-msgstr "Dvije karte - vodoravno"
+msgid "Two maps - left and right"
+msgstr "Dvije karte - uspravno"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, fuzzy, kde-format
-#| msgid "Two maps - vertical"
+#| msgid "Two maps - horizontal"
 msgctxt "@item"
-msgid "Two maps - vertical"
-msgstr "Dvije karte - uspravno"
+msgid "Two maps - top and bottom"
+msgstr "Dvije karte - vodoravno"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, fuzzy, kde-format
@@ -11836,7 +11851,7 @@ msgid "Saving changes -"
 msgstr "Snimanje promjena - %p%"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:247
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
@@ -12617,8 +12632,8 @@ msgstr[2] "<p>%1 znakova.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, fuzzy, kde-format
 #| msgid "<p>1 character.</p>"
 #| msgid_plural "<p>%1 characters.</p>"
@@ -17230,8 +17245,8 @@ msgstr "Po direktoriju"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:327
-#: core/utilities/searchwindow/searchfields_createfield.cpp:358
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
+#: core/utilities/searchwindow/searchfields_createfield.cpp:369
 #, kde-format
 msgid "Camera"
 msgstr "Fotoaparat"
@@ -20563,24 +20578,24 @@ msgstr "Nepoznat format"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, fuzzy, kde-format
-msgctxt "Output: PDF"
-msgid "Print to PDF"
-msgstr "Opcije pregleda"
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "Štampaj sliku"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, fuzzy, kde-format
+msgctxt "Output: PDF"
+msgid "Print to PDF"
+msgstr "Opcije pregleda"
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, fuzzy, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "Opcije pregleda"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "JPEG"
@@ -20588,7 +20603,7 @@ msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "PNG"
@@ -20596,7 +20611,7 @@ msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "TIFF"
@@ -20604,35 +20619,35 @@ msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, fuzzy, kde-format
 #| msgid "Location"
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "Lokacija"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, fuzzy, kde-format
 #| msgid "Ignored file names:"
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "Ignorisani nazivi datoteka:"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, fuzzy, kde-format
 #| msgid "Creation date/time"
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "Datum/vrijeme kreiranja"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, fuzzy, kde-format
 #| msgid "Item Comment"
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "Komentar objekta"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, fuzzy, kde-format
 #| msgid "Custom ratio:"
 msgctxt "Caption type: CUSTOM"
@@ -20686,7 +20701,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:719
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, kde-format
 msgid "Author"
 msgstr "Autor"
@@ -22200,21 +22215,22 @@ msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "Naoštriti sliku"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "OpenGL Error"
 msgstr "Izvozni alati"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
 #, kde-format
-msgid "GL_ARB_texture_rectangle not supported"
+msgid ""
+"GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
 msgstr ""
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context found"
+msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -22224,7 +22240,7 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "Otvori predpregled"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:98
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
@@ -22233,49 +22249,49 @@ msgstr ""
 "Ukoliko je postavljeno, soundtrack za tekući album će biti spremljen i "
 "obnovljena automatski na sljedećem pokretanju."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track up in the playlist."
 msgstr "Ukloni trenutno odabranu vrijednost sa liste"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:126
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track down in the playlist."
 msgstr "Ukloni trenutno odabranu vrijednost sa liste"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:127
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgid "Add new tracks to the playlist."
 msgstr "Dodaj novu vrijednost na listu"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:128
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
 #, fuzzy, kde-format
 #| msgid "Replace the current selected value from the list"
 msgid "Delete the selected track from the playlist."
 msgstr "Zamijeni trenutno odabranu vrijednost sa liste"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:129
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:123
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "Učitaj listu izvođenja iz datoteke."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:130
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:124
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Save in file"
 msgid "Save playlist to a file."
 msgstr "Spasi u datoteku"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:131
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
 #, fuzzy, kde-format
 #| msgid "Clear List"
 msgid "Clear the playlist."
 msgstr "Očisti listu"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:264
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:258
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -22284,7 +22300,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:292
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:286
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
@@ -22292,38 +22308,38 @@ msgstr ""
 "Vrijeme slajda je veće nego vrijeme zvučnog zapisa. Prijedlog: dodati više "
 "zvučnih datoteka."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:356
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "Bez izbora"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:424
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr "Možete samo premjestiti datoteke slika gore jednu po jednu."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:468
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:462
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr "Možete samo premjestiti datoteke slika dolje jednu po jednu."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:483
 #, fuzzy, kde-format
 #| msgid "Load playlist"
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "Učitaj listu pjesama"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:484
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:543
 #, fuzzy, kde-format
 #| msgid "*.m3u|Playlist (*.m3u)"
 msgid "Playlist (*.m3u)"
 msgstr "*.m3u|Playlist (*.m3u)"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:542
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -22331,13 +22347,13 @@ msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "Snimi izmjene"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:603
 #, fuzzy, kde-format
 #| msgid "Cannot access file %1. Please check the path is correct."
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr "Ne mogu pristupiti datoteci %1. Provjerite da li je staza ispravna."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:619
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:613
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr "Ne mogu kreirati pregled na praznom popisu datoteka."
@@ -22442,26 +22458,27 @@ msgstr "Slajd-šou"
 msgid "Soundtrack:"
 msgstr "Zvučni zapis:"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
-#, fuzzy, kde-format
-#| msgid "No setting available"
-msgid "No detail available"
-msgstr "Postavke nisu dostupne"
-
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:194
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:236
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:257
 #, fuzzy, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:215
+#, fuzzy, kde-format
+#| msgid "No setting available"
+msgid "No detail available"
+msgstr "Postavke nisu dostupne"
+
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:248
 #, fuzzy, kde-format
 #| msgid "%1 is damaged and may not be playable."
 msgid "%1 may not be playable."
 msgstr "%1 je oštećen i ne može se izvoditi."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:256
 #, fuzzy, kde-format
 #| msgid "This file is damaged and may not be playable."
 msgid "This file may not be playable."
@@ -22500,10 +22517,9 @@ msgstr "Sljedeće"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:70
-#: core/utilities/searchwindow/searchfields_createfield.cpp:176
-#, fuzzy, kde-format
-#| msgid "Time:"
-msgid "Time"
+#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
+#, kde-format
+msgid "Time:"
 msgstr "Vrijeme:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -22527,6 +22543,12 @@ msgstr "0:00:00"
 msgctxt "Total amount of time of presentation"
 msgid "Total:"
 msgstr "Totalno: %1 (%)"
+
+#. i18n: ectx: property (text), widget (QLabel, m_soundLabel)
+#: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:115
+#, kde-format
+msgid "Volumes:"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:23
@@ -22681,7 +22703,7 @@ msgid "Image #%1"
 msgstr "Slike na %1"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:679
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:685
 #, kde-format
 msgid "Ken Burns"
 msgstr "Ken Burns"
@@ -22845,7 +22867,7 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "Napredno"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
 #, fuzzy, kde-format
 #| msgid "None"
@@ -22853,79 +22875,79 @@ msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "Bez"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "Savijanje"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
 #, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "Stapanje"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "Kocka"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "Nestajanje"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "Viti"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "Unutra - Vani"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "Rotiraj"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:577
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "Slajd-šou"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:578
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1035
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "Slučajni"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
 #, fuzzy, kde-format
 #| msgid "Slideshow Usage"
 msgid "Slideshow Completed"
 msgstr "Iskoristivost projekcije slajdova"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:632
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:880
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:638
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:869
 #, fuzzy, kde-format
 #| msgid "Click to set"
 msgid "Click to Exit..."
 msgstr "Kliknite da postavite"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:637
 #, fuzzy, kde-format
 #| msgid "Slide Show"
 msgid "SlideShow Completed"
@@ -22975,7 +22997,7 @@ msgctxt "@action"
 msgid "Presentation..."
 msgstr "Slobodna rotacija..."
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:230
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
 #, fuzzy, kde-format
 #| msgid "Ignore grouping"
@@ -22983,13 +23005,13 @@ msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "Zanemari grupiranje"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:231
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:249
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:411
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
@@ -22998,7 +23020,7 @@ msgid "Delete Image"
 msgstr "Izbriši oznaku"
 
 #         translations.
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:257
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:412
 #, fuzzy, kde-format
 #| msgid "Do you really want to remove the selected tag from all images?"
@@ -25899,7 +25921,7 @@ msgid "This is the list of images to upload to an iNaturalist observation."
 msgstr "Ovo je lista slika za grupnu obradu."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, kde-format
 msgid "Date"
 msgstr "Datum"
@@ -28146,9 +28168,9 @@ msgid "Reset curve to linear"
 msgstr "Resetujte krivu na liniju"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
-#: core/utilities/searchwindow/searchfields_createfield.cpp:461
-#: core/utilities/searchwindow/searchfields_createfield.cpp:482
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:472
+#: core/utilities/searchwindow/searchfields_createfield.cpp:493
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "Exposure"
 msgstr "Ekspozicija"
@@ -31608,14 +31630,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "Odlika"
 
-#: core/libs/dialogs/libsinfodlg.cpp:189
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Biblioteka albuma"
 
-#: core/libs/dialogs/libsinfodlg.cpp:276
+#: core/libs/dialogs/libsinfodlg.cpp:279
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31623,7 +31645,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Nepoznata"
 
-#: core/libs/dialogs/libsinfodlg.cpp:357
+#: core/libs/dialogs/libsinfodlg.cpp:360
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31631,34 +31653,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Nepoznata"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:388
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:416
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Podešavanje fotoaparata"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:599
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Da"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:604
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:609
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -43628,14 +43650,14 @@ msgid "Default from Desktop"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:237
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:239
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Capture"
@@ -43644,14 +43666,14 @@ msgid "Capture"
 msgstr "Dohvati"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:249
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "Desila se greška sa media player-om...."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -46019,7 +46041,7 @@ msgstr ""
 "Sakrij sve trake sa alatima pri uključivanju režima prikaza preko cijelog "
 "ekrana."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1224
+#: core/libs/widgets/mainview/thememanager_p.cpp:1232
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -46942,7 +46964,7 @@ msgstr "Podaci o slici"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:139
-#: core/utilities/searchwindow/searchgroup.cpp:155
+#: core/utilities/searchwindow/searchgroup.cpp:156
 #: core/utilities/setup/setuptooltip.cpp:232
 #, kde-format
 msgid "Photograph Information"
@@ -47178,7 +47200,7 @@ msgid "Pick"
 msgstr "Odaberi"
 
 #: core/libs/widgets/metadata/labels/ratingwidget.cpp:574
-#: core/utilities/searchwindow/searchfields_createfield.cpp:149
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
 msgstr "Ocjena"
@@ -53182,20 +53204,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Direktorij: "
 
-#: core/showfoto/main/main.cpp:154
+#: core/showfoto/main/main.cpp:161
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:172
+#: core/showfoto/main/main.cpp:179
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Datoteke ili direktoriji za otvaranje"
 
-#: core/showfoto/main/main.cpp:203
+#: core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -53502,15 +53524,7 @@ msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "Postavi oznaku orjentacije na normalnu nakon rotiranja/prevrtanja."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:117
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:179
-#, fuzzy, kde-format
-#| msgid "Visit Exiv2 project website"
-msgctxt "@info:whatsthis"
-msgid "Visit Exiv2 project website"
-msgstr "Posjetite veb sajt Exiv2 projekta"
-
-#: core/showfoto/setup/showfotosetupmetadata.cpp:125
+#: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, fuzzy, kde-format
 #| msgid ""
@@ -53526,7 +53540,7 @@ msgstr ""
 "pohranjivanje tehničkih informacija o fotografiji (kao što su otvor blende i "
 "brzina okidača) koji koristi većina današnjih digitalnih fotoaparata.</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:123
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, fuzzy, kde-format
 #| msgid ""
@@ -53542,7 +53556,7 @@ msgstr ""
 "IPTC_Information_Interchange_Model'>IPTC</a> - stariji standard korišten u "
 "digitalnoj fotografiji za pohranjivanje informacija fotografa u slikama.</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:135
+#: core/showfoto/setup/showfotosetupmetadata.cpp:129
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, fuzzy, kde-format
 #| msgid ""
@@ -53556,14 +53570,14 @@ msgstr ""
 "a> - novi standard korišten u digitalnoj fotografiji, dizajniran da zamijeni "
 "IPTC.</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:156
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:216
+#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "Ponašanje"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:165
+#: core/showfoto/setup/showfotosetupmetadata.cpp:159
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, fuzzy, kde-format
 #| msgid "Tools"
@@ -55250,14 +55264,14 @@ msgid "Lens of the camera"
 msgstr "Objektivi kamere"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:63
-#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:414
 #, kde-format
 msgid "Aperture"
 msgstr "Blenda"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:64
-#: core/utilities/searchwindow/searchfields_createfield.cpp:423
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:434
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgid "Focal length"
 msgstr "Žižna daljina"
@@ -55268,7 +55282,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Žižna daljina(35mm ekvivalent )"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:461
+#: core/utilities/searchwindow/searchfields_createfield.cpp:472
 #, kde-format
 msgid "Exposure time"
 msgstr "Vrijeme eksponiranja"
@@ -55284,7 +55298,7 @@ msgid "Exposure mode"
 msgstr "Način ekspozicije"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:69
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgid "Sensitivity"
 msgstr "Osjetljivost"
@@ -55295,7 +55309,7 @@ msgid "Flash mode"
 msgstr "Mod blica"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:563
 #, kde-format
 msgid "White balance"
 msgstr "Ravnoteža bijele"
@@ -55326,14 +55340,14 @@ msgid "Display Aspect Ratio"
 msgstr "Odnos razmjere prikaza"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Audio Frekvencija"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:925
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -55407,7 +55421,7 @@ msgid "Altitude in a human readable form"
 msgstr "Visina u formi koja je pogodna da je čita čovjek"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:58
-#: core/utilities/searchwindow/searchfields_createfield.cpp:237
+#: core/utilities/searchwindow/searchfields_createfield.cpp:248
 #, kde-format
 msgid "Orientation"
 msgstr "Orijentacija"
@@ -55547,12 +55561,6 @@ msgstr "Izvor:"
 msgctxt "the format of the date"
 msgid "Format:"
 msgstr "Format:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
-#, kde-format
-msgid "Time:"
-msgstr "Vrijeme:"
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:36
 #, kde-format
@@ -56949,6 +56957,7 @@ msgstr "URL:"
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, fuzzy, kde-format
 #| msgid "Script Manager"
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Upravljač skriptama"
 
@@ -57084,6 +57093,13 @@ msgstr "Dodaj direktorije..."
 msgid "New Folder"
 msgstr "Po direktoriju"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "Upravljanje bojama"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, fuzzy, kde-format
 #| msgid ""
@@ -57187,10 +57203,10 @@ msgstr "Obilježivači"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
-#| msgid "Export Tools"
+#| msgid "Bookmarks"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "Izvozni alati"
+msgid "Export Bookmark"
+msgstr "Obilježivači"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
@@ -57574,14 +57590,6 @@ msgstr "Ukloni brzinu"
 msgid "Look up missing altitude values"
 msgstr "Pogledaj nedostajuće vrijednosti visine"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "GPS sinhronizacija"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -57884,6 +57892,13 @@ msgstr "Oznake slike su promijenjene."
 msgid "Retrieving RG info -"
 msgstr "Dohvaćanje RG informacija - %p%"
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "Reverzno Geokodiranje"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
@@ -57921,7 +57936,9 @@ msgstr ""
 "trenutno postoje ili ih želite poništiti?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Zaustavi reverzno geokodiranje?"
 
@@ -62539,7 +62556,7 @@ msgstr "(Nema označene vrijednosti)"
 msgid "No Rating assigned"
 msgstr "Nije dodijeljena ocjena"
 
-#: core/utilities/searchwindow/searchfields.cpp:74
+#: core/utilities/searchwindow/searchfields.cpp:76
 #, kde-format
 msgid "Reset contents"
 msgstr "Resetujte sadržaje"
@@ -62680,16 +62697,19 @@ msgid "and"
 msgstr "i"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
+#: core/utilities/searchwindow/searchfields_createfield.cpp:133
 #, kde-format
 msgid "File Size"
 msgstr "Veličina datoteke"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
-#, kde-format
-msgid "Size of the file"
+#, fuzzy, kde-format
+#| msgid "Size of the file"
+msgid "Size of the file in megabytes"
 msgstr "Veličina datoteke"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:122
+#: core/utilities/searchwindow/searchfields_createfield.cpp:134
 #, kde-format
 msgctxt "Size of the file ...-..."
 msgid "-"
@@ -62697,28 +62717,34 @@ msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
 #, fuzzy, kde-format
+#| msgid "Size of the file"
+msgid "Size of the file in bytes"
+msgstr "Veličina datoteke"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:144
+#, fuzzy, kde-format
 #| msgid "Month"
 msgid "Month/Day"
 msgstr "Mjesec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
 msgid "Return items from a month or a day of the month"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:141
+#: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, fuzzy, kde-format
 #| msgid "Return pictures with labels"
 msgid "Return items with labels"
 msgstr "Vratite slike sa oznakama"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:149
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, fuzzy, kde-format
 #| msgid "Return pictures rated at least"
 msgid "Return items rated at least"
 msgstr "Vrati slike koje su  ocijenjene barem"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:150
+#: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "Return pictures rated at least...at most..."
 #| msgid "at most"
@@ -62726,13 +62752,13 @@ msgctxt "Return items rated at least...at most..."
 msgid "at most"
 msgstr "najviše"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, fuzzy, kde-format
 #| msgid "Return pictures created between"
 msgid "Return items created between"
 msgstr "Vratite slike nastale između"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:159
+#: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -62740,18 +62766,18 @@ msgctxt "'Return items created between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:167
+#: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, kde-format
 msgid "Digitization"
 msgstr "Digitalizacija"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:167
+#: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, fuzzy, kde-format
 #| msgid "Return pictures digitized between"
 msgid "Return items digitized between"
 msgstr "Vratite slike digitalizirane između"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:168
+#: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -62759,13 +62785,19 @@ msgctxt "'Return items digitized between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#, fuzzy, kde-format
+#| msgid "Time:"
+msgid "Time"
+msgstr "Vrijeme:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
 #, fuzzy, kde-format
 #| msgid "Return pictures created between"
 msgid "Return items with created time between"
 msgstr "Vratite slike nastale između"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:177
+#: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -62773,24 +62805,24 @@ msgctxt "'Return items with created time between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, kde-format
 msgid "Exif Orientation"
 msgstr "Exif Orijentacija"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, fuzzy, kde-format
 #| msgid "Find pictures with orientation flag"
 msgid "Find items with orientation flag"
 msgstr "Pronađite slike s orijentacijskom zastavom"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:201
+#: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, fuzzy, kde-format
 #| msgid "Find pictures with a width between"
 msgid "Find items with a width between"
 msgstr "Pronađite slike sa širinom između"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:202
+#: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -62798,13 +62830,13 @@ msgctxt "Find items with a width between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:219
+#: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, fuzzy, kde-format
 #| msgid "Find pictures with a height between"
 msgid "Find items with a height between"
 msgstr "Pronađite slike sa visinom između"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:220
+#: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -62812,7 +62844,7 @@ msgctxt "Find items with a height between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:238
+#: core/utilities/searchwindow/searchfields_createfield.cpp:249
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Find pictures with any orientation / landscape / portrait orientation..."
@@ -62821,18 +62853,18 @@ msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "Pronađite slike sa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, kde-format
 msgid "File Format"
 msgstr "Format datoteke"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, fuzzy, kde-format
 #| msgid "Return pictures with the image file format"
 msgid "Return items with the file format"
 msgstr "Vratite slike s formatom datoteke slike"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:251
+#: core/utilities/searchwindow/searchfields_createfield.cpp:262
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -62840,26 +62872,26 @@ msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "%1 slika"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:256
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "Video snimci"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:261
+#: core/utilities/searchwindow/searchfields_createfield.cpp:272
 #, fuzzy, kde-format
 #| msgid "Audio"
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "Zvuk"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#: core/utilities/searchwindow/searchfields_createfield.cpp:297
 #, kde-format
 msgid "Color Depth"
 msgstr "Dubina boje"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#: core/utilities/searchwindow/searchfields_createfield.cpp:297
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Find pictures with any orientation / landscape / portrait orientation..."
@@ -62868,26 +62900,26 @@ msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "Pronađite slike sa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#: core/utilities/searchwindow/searchfields_createfield.cpp:307
 #, kde-format
 msgid "Color Model"
 msgstr "Model boje"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#: core/utilities/searchwindow/searchfields_createfield.cpp:307
 #, fuzzy, kde-format
 #| msgid "Find pictures with the color model"
 msgid "Find items with the color model"
 msgstr "Pronađite slike sa modelom boje"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:301
-#: core/utilities/searchwindow/searchfields_createfield.cpp:302
-#: core/utilities/searchwindow/searchfields_createfield.cpp:303
-#: core/utilities/searchwindow/searchfields_createfield.cpp:304
-#: core/utilities/searchwindow/searchfields_createfield.cpp:305
-#: core/utilities/searchwindow/searchfields_createfield.cpp:306
-#: core/utilities/searchwindow/searchfields_createfield.cpp:307
-#: core/utilities/searchwindow/searchfields_createfield.cpp:308
-#: core/utilities/searchwindow/searchfields_createfield.cpp:309
+#: core/utilities/searchwindow/searchfields_createfield.cpp:312
+#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:315
+#: core/utilities/searchwindow/searchfields_createfield.cpp:316
+#: core/utilities/searchwindow/searchfields_createfield.cpp:317
+#: core/utilities/searchwindow/searchfields_createfield.cpp:318
+#: core/utilities/searchwindow/searchfields_createfield.cpp:319
+#: core/utilities/searchwindow/searchfields_createfield.cpp:320
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -62895,432 +62927,432 @@ msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "%1 slika"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
-#: core/utilities/searchwindow/searchfields_createfield.cpp:315
-#: core/utilities/searchwindow/searchfields_createfield.cpp:316
+#: core/utilities/searchwindow/searchfields_createfield.cpp:324
+#: core/utilities/searchwindow/searchfields_createfield.cpp:325
+#: core/utilities/searchwindow/searchfields_createfield.cpp:326
+#: core/utilities/searchwindow/searchfields_createfield.cpp:327
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "Video snimci"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:327
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
 #, kde-format
 msgid "The make of the camera"
 msgstr "Marka kamere/fotoaparata"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:358
+#: core/utilities/searchwindow/searchfields_createfield.cpp:369
 #, kde-format
 msgid "The model of the camera"
 msgstr "Model kamere"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:400
 #, kde-format
 msgid "Lens"
 msgstr "Sočivo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:400
 #, fuzzy, kde-format
 #| msgid "Type of the media file"
 msgid "The type of the lens"
 msgstr "Tip media datoteke"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:414
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Otvor sočiva kao f-broj"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:404
+#: core/utilities/searchwindow/searchfields_createfield.cpp:415
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:423
+#: core/utilities/searchwindow/searchfields_createfield.cpp:434
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Dužina fokusa objektiva"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35mm ekvivalent fokusne dužine"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#: core/utilities/searchwindow/searchfields_createfield.cpp:454
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:462
+#: core/utilities/searchwindow/searchfields_createfield.cpp:473
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:482
+#: core/utilities/searchwindow/searchfields_createfield.cpp:493
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Automatsko eksponiranje programa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Automatsko ili ručno eksponiranje"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO brzina filma (linearna skala, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:506
+#: core/utilities/searchwindow/searchfields_createfield.cpp:517
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#: core/utilities/searchwindow/searchfields_createfield.cpp:540
 #, fuzzy, kde-format
 #| msgid "Flash"
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Fleš"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#: core/utilities/searchwindow/searchfields_createfield.cpp:540
 #, fuzzy, kde-format
 #| msgid "Flash mode"
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Mod blica"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Automatski ili ručni balans bijele boje"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:563
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Temperatura boje korištena za balans bijele boje"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:553
+#: core/utilities/searchwindow/searchfields_createfield.cpp:564
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #, kde-format
 msgid "Metering Mode"
 msgstr "Režim mjerenja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Metoda za određivanje eksponiranja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
-#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#: core/utilities/searchwindow/searchfields_createfield.cpp:588
+#: core/utilities/searchwindow/searchfields_createfield.cpp:601
 #, kde-format
 msgid "Subject Distance"
 msgstr "Udaljenost subjekta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
+#: core/utilities/searchwindow/searchfields_createfield.cpp:588
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Udaljenost predmeta od leće"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:578
+#: core/utilities/searchwindow/searchfields_createfield.cpp:589
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#: core/utilities/searchwindow/searchfields_createfield.cpp:601
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Makro, blizu ili dalek pregled"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:618
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:618
 #, kde-format
 msgid "Altitude range"
 msgstr "Raspon visine"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:608
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, fuzzy, kde-format
 #| msgid "Image has no GPS info"
 msgid "Item has no GPS info"
 msgstr "Slika nema GPS informacija"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:642
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Nije geolocirana"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:652
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "Country"
 msgstr "Država:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:652
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Country shown in the item"
 msgstr "Postavite ovdje lokaciju iz grada odakle je sadržaj."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, fuzzy, kde-format
 #| msgid "Province:"
 msgid "Province"
 msgstr "Pokrajina:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Province shown in the item"
 msgstr "Postavite ovdje lokaciju iz grada odakle je sadržaj."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:673
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Grad:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:673
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "City shown in the item"
 msgstr "Postavite ovdje lokaciju iz grada odakle je sadržaj."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, fuzzy, kde-format
 #| msgid "Sublocation:"
 msgid "Sublocation"
 msgstr "Podlokacija:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Sublocation shown in the item"
 msgstr "Postavite ovdje lokaciju iz grada odakle je sadržaj."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Štampaj sliku"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items created by"
 msgstr "Vratite slike komentarisane od"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items whose comment contains"
 msgstr "Vratite fotografije čiji komentar sadrži"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:719
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "Vratite slike komentarisane od"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, kde-format
 msgid "Headline"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC headline"
 msgid "Return items with the IPTC headline"
 msgstr "Vratite slike sa IPTC naslovom"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:735
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:735
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC title"
 msgid "Return items with the IPTC title"
 msgstr "Vratite fotografije sa IPTC naslovom"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:743
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, fuzzy, kde-format
 #| msgid "Find pictures that have associated all these words:"
 msgid "Find items that have associated all these words:"
 msgstr "Pronađite slike koje imaju povezane sve ove riječi:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:751
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, kde-format
 msgid "Empty Text"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:751
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without text in:"
 msgstr "Vratite slike s oznakom"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:753
+#: core/utilities/searchwindow/searchfields_createfield.cpp:764
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Štampaj sliku"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Autor"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:767
 #, fuzzy, kde-format
 #| msgid "Headline"
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:768
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Omjer"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
 #| msgid "Return pictures with the aspect ratio"
 msgid "Return items with the aspect ratio"
 msgstr "Vrati slike sa omjerom"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:775
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Pixel Size"
 msgstr "Veličina piksela"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:775
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Vrijednost između (širina * visina) vrijednosti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:776
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Vrati videozapis sa omjerom veličine"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:814
 #, kde-format
 msgid "Length of the video"
 msgstr "Dužina videozapisa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:804
+#: core/utilities/searchwindow/searchfields_createfield.cpp:815
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:816
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, kde-format
 msgid "Frame Rate"
 msgstr "Protok kadrova"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Vrati videozapis sa omjerom veličine"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:822
+#: core/utilities/searchwindow/searchfields_createfield.cpp:833
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:823
+#: core/utilities/searchwindow/searchfields_createfield.cpp:834
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "kadar/s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:839
+#: core/utilities/searchwindow/searchfields_createfield.cpp:850
 #, kde-format
 msgid "Codec"
 msgstr "Kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:839
+#: core/utilities/searchwindow/searchfields_createfield.cpp:850
 #, kde-format
 msgid "Return video codec"
 msgstr "Vrati video kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate"
 msgid "Return Audio Bits Rate"
 msgstr "Audio Frekvencija"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:908
+#: core/utilities/searchwindow/searchfields_createfield.cpp:919
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63328,78 +63360,78 @@ msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:909
+#: core/utilities/searchwindow/searchfields_createfield.cpp:920
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bit/s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:925
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #, fuzzy, kde-format
 #| msgid "Return video audio Channel Type"
 msgid "Return Audio Channel Type"
 msgstr "Vrati audio i video tip kanala"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:927
+#: core/utilities/searchwindow/searchfields_createfield.cpp:938
 #, fuzzy, kde-format
 #| msgid "Mono"
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Jednokanalno"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:928
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, fuzzy, kde-format
 #| msgid "Stereo"
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:929
+#: core/utilities/searchwindow/searchfields_createfield.cpp:940
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:930
+#: core/utilities/searchwindow/searchfields_createfield.cpp:941
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:931
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:932
+#: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type"
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Tip Audio Kanala"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:944
+#: core/utilities/searchwindow/searchfields_createfield.cpp:955
 #, fuzzy, kde-format
 #| msgid "Return video codec"
 msgid "Return Audio Codec"
 msgstr "Vrati video kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect faces"
 msgid "Faces"
 msgstr "Otkrij lica"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Return items by number of face regions"
 msgstr "Vratite slike čije ime datoteke sadrži"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1054
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63407,13 +63439,13 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without face regions"
 msgstr "Vratite slike s oznakom"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1064
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "No Face Regions"
@@ -63472,17 +63504,17 @@ msgstr "Datoteka, Album, Oznake"
 msgid "Picture Properties"
 msgstr "Karakteristike slike"
 
-#: core/utilities/searchwindow/searchgroup.cpp:136
+#: core/utilities/searchwindow/searchgroup.cpp:137
 #, kde-format
 msgid "Caption, Comment, Title"
 msgstr "Naslov, Komentar, Naziv"
 
-#: core/utilities/searchwindow/searchgroup.cpp:185
+#: core/utilities/searchwindow/searchgroup.cpp:186
 #, kde-format
 msgid "Geographic position"
 msgstr "Geografski položaj"
 
-#: core/utilities/searchwindow/searchgroup.cpp:208
+#: core/utilities/searchwindow/searchgroup.cpp:209
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face regions"
@@ -66179,7 +66211,7 @@ msgctxt "@title:tab"
 msgid "Baloo"
 msgstr "Baloo"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:32
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:35
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -66196,19 +66228,19 @@ msgstr ""
 "omogućava očuvanje ovih informacija pri pomjeranju ili slanju datoteka na "
 "druge sisteme.</para>"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:42
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
 #, kde-format
 msgctxt "@label"
 msgid "Write This Information to the Metadata"
 msgstr "Napišite ovu informaciju na Meta-podatku"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
 #, kde-format
 msgctxt "@option:check"
 msgid "Image tags"
 msgstr "Oznake slike"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:46
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66217,13 +66249,13 @@ msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item tags in the XMP and IPTC tags."
 msgstr "Uključite ovu opciju za pohranu oznaka slike u XMP i IPTC oznake."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
 msgstr "Naslovi i natpisi"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66237,13 +66269,13 @@ msgstr ""
 "Uključite ovu opciju za pohranu naziva slike u JFIF odjeljak za "
 "komentiranje, EXIF oznaku, XMP oznaku i IPTC oznaku."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Rating"
 msgstr "Ocjena"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:57
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66256,13 +66288,13 @@ msgid ""
 msgstr ""
 "Uključite ovu opciju za pohranu ocjene slike u EXIF oznaku i XMP oznake."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
 msgstr "Izaberi etiketu"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid "Turn on this option to store the image pick label in the XMP tags."
@@ -66270,13 +66302,13 @@ msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
 msgstr "Uključite ovu opciju za pohranu etikete slike u XMP oznake."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, kde-format
 msgctxt "@option:check"
 msgid "Color label"
 msgstr "Oboji etiketu"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid "Turn on this option to store the image color label in the XMP tags."
@@ -66284,13 +66316,13 @@ msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
 msgstr "Uključite ovu opciju za pohranu boje etikete slike u XMP oznake."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
 #, kde-format
 msgctxt "@option:check"
 msgid "Timestamps"
 msgstr "Vremenske oznake"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66304,13 +66336,13 @@ msgstr ""
 "Uključite ovu opciju za spremanje datuma i vremena slike u EXIF, XMP, i IPTC "
 "oznakama."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata templates (Copyright etc.)"
 msgstr "Predlošci meta-podataka (Copyright itd)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -66320,13 +66352,13 @@ msgstr ""
 "Uključite ovu opciju za pohranu šablona metapodataka u XMP i IPTC oznake. "
 "Možete postaviti vrijednosti šablona na stranicu Postavke šablona."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
 msgstr "Oznake lica (uključujući oblasti lica)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -66335,14 +66367,14 @@ msgstr ""
 "Uključite ovu opciju za pohranu oznaka lika sa pravougaonicima oko lica u "
 "XMP oznake."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:91
 #, fuzzy, kde-format
 #| msgid "Position Information (GPS)"
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
 msgstr "Informacija o poziciji (GPS)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:92
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66355,13 +66387,13 @@ msgid ""
 msgstr ""
 "Uključite ovu opciju za pohranu ocjene slike u EXIF oznaku i XMP oznake."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:112
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid "Reading and Writing Metadata"
 msgstr "Čitanje i pisanje meta-podataka"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66372,7 +66404,7 @@ msgstr ""
 "Uključite ovu opciju za snimanje, kao što je utvrđeno, metapodataka u XMP "
 "prikolične datoteke."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -66381,14 +66413,14 @@ msgid ""
 "with database."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "Upiši metapodatke u svaku datoteku"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:128
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66399,7 +66431,7 @@ msgstr ""
 "Uključite ovu opciju za snimanje, kao što je utvrđeno, metapodataka u XMP "
 "prikolične datoteke."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:125
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "If possible write Metadata to RAW files (experimental)"
@@ -66407,7 +66439,7 @@ msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "Ako je moguće pišite Metapodatke na RAW datoteke (eksperimentalno)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66423,13 +66455,13 @@ msgstr ""
 "značajka zahtijeva Exiv2 dijeljenu biblioteku, verzije >= 0.18.0. Još uvijek "
 "je eksperimentalna, te je podrazumijevano isključena."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:135
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr "Koristi kompenzaciju crne tačke"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -66438,7 +66470,7 @@ msgid ""
 "digikam exit"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:147
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "&Update file timestamp when files are modified"
@@ -66446,7 +66478,7 @@ msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr "&Ažuriraj vremensku oznaku datoteke kada su datoteke modifikovane"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -66461,13 +66493,13 @@ msgstr ""
 "aplikacijama koje koriste svojstva vremenskih oznaka datoteke za otkrivanje "
 "izmjena datoteke automatski."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:155
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "&Ažuriraj vremensku oznaku datoteke kada su datoteke modifikovane"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:157
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -66477,19 +66509,19 @@ msgid ""
 "when digiKam starts."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:226
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:230
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "write limitations"
 msgstr "Opcije pregleda"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -66497,7 +66529,7 @@ msgid ""
 "for details."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:240
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@label"
@@ -66787,13 +66819,12 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
-"digiKam (optionally) writes metadata to *.xmp sidecar\n"
-"files. Other programs might use different types, which\n"
-"can be specified below. digiKam will neither display these\n"
-"nor read from or write to them. But whenever a matching album\n"
-"item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-"moved, copied or deleted, the same operation will be done\n"
-"on these sidecar files.\n"
+"digiKam (optionally) writes metadata to *.xmp sidecar files. Other programs "
+"might use different types, which can be specified below. digiKam will "
+"neither display these nor read from or write to them. But whenever a "
+"matching album item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
+"moved, copied or deleted, the same operation will be done on these sidecar "
+"files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 
@@ -68403,6 +68434,24 @@ msgstr "Resetujte sve postavke na njihove zadane vrijednosti."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Resetujte sve postavke na njihove zadane vrijednosti."
+
+#, fuzzy
+#~| msgid "Export Tools"
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "Izvozni alati"
+
+#, fuzzy
+#~| msgid "GPS Sync"
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "GPS sinhronizacija"
+
+#, fuzzy
+#~| msgid "Visit Exiv2 project website"
+#~ msgctxt "@info:whatsthis"
+#~ msgid "Visit Exiv2 project website"
+#~ msgstr "Posjetite veb sajt Exiv2 projekta"
 
 #, fuzzy
 #~| msgid "An error has occurred with the media player...."

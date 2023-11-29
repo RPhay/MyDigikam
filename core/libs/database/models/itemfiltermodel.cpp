@@ -1115,7 +1115,7 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
         case ItemSortSettings::CategoryByMonth:
         {
-            return info.dateTime().date().toString(QLatin1String("MMyyyy"));
+            return info.dateTime().date().toString(QLatin1String("yyyyMM"));
         }
 
         case ItemSortSettings::CategoryByFaces:

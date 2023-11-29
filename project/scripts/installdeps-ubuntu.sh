@@ -287,6 +287,8 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libkf5akonadicontact-dev"           # >= 4.89.0
                    "libkf5doctools-dev"
                    "libkf5filemetadata-dev"             # Files indexer engine for Plasma desktop
+                   "libinih-dev"                        # For Exiv2
+                   "libbrotli-dev"                      # For Exiv2
                     #TODO add new optional packages
                     )
 

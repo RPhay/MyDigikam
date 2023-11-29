@@ -18,6 +18,7 @@
 
 // Qt includes
 
+#include <QMutexLocker>
 #include <QString>
 #include <QWidget>
 #include <QHash>
@@ -143,6 +144,8 @@ public:
     bool                                       moving;
     bool                                       blockSelection;
 
+    QMutex                                     mutex;
+
     QList<HistoryItem>                         backwardStack;
     QList<HistoryItem>                         forwardStack;
     QHash<QList<Album*>, HistoryPosition>      historyPos;
@@ -179,6 +182,8 @@ AlbumHistory::~AlbumHistory()
 
 void AlbumHistory::clearHistory()
 {
+    QMutexLocker locker(&d->mutex);
+
     d->backwardStack.clear();
     d->forwardStack.clear();
     d->historyPos.clear();
@@ -188,6 +193,7 @@ void AlbumHistory::clearHistory()
 
 void AlbumHistory::addAlbums(const QList<Album*>& albums, QWidget* const widget)
 {
+    QMutexLocker locker(&d->mutex);
 
     if (albums.isEmpty() || !widget || d->moving)
     {
@@ -223,6 +229,7 @@ void AlbumHistory::addAlbums(const QList<Album*>& albums,
                              QWidget* const widget,
                              const QHash<LabelsTreeView::Labels, QList<int> >& selectedLabels)
 {
+    QMutexLocker locker(&d->mutex);
 
     if (albums.isEmpty() || !widget || d->moving)
     {
@@ -246,6 +253,8 @@ void AlbumHistory::addAlbums(const QList<Album*>& albums,
 
 void AlbumHistory::deleteAlbum(Album* const album)
 {
+    QMutexLocker locker(&d->mutex);
+
     if (!album || d->backwardStack.isEmpty())
     {
         return;
@@ -351,6 +360,8 @@ void AlbumHistory::deleteAlbum(Album* const album)
 
 void AlbumHistory::getBackwardHistory(QStringList& list) const
 {
+    QMutexLocker locker(&d->mutex);
+
     if (d->backwardStack.isEmpty())
     {
         return;
@@ -383,6 +394,8 @@ void AlbumHistory::getBackwardHistory(QStringList& list) const
 
 void AlbumHistory::getForwardHistory(QStringList& list) const
 {
+    QMutexLocker locker(&d->mutex);
+
     if (d->forwardStack.isEmpty())
     {
         return;
@@ -413,6 +426,8 @@ void AlbumHistory::getForwardHistory(QStringList& list) const
 
 void AlbumHistory::back(QList<Album*>& album, QWidget** const widget, unsigned int steps)
 {
+    QMutexLocker locker(&d->mutex);
+
     *widget = nullptr;
 
     if ((d->backwardStack.count() <= 1) || ((int)steps > d->backwardStack.count()))
@@ -440,6 +455,8 @@ void AlbumHistory::back(QList<Album*>& album, QWidget** const widget, unsigned i
 
 void AlbumHistory::forward(QList<Album*>& album, QWidget** const widget, unsigned int steps)
 {
+    QMutexLocker locker(&d->mutex);
+
     *widget = nullptr;
 
     if (d->forwardStack.isEmpty() || ((int)steps > d->forwardStack.count()))
@@ -461,6 +478,8 @@ void AlbumHistory::forward(QList<Album*>& album, QWidget** const widget, unsigne
 
 void AlbumHistory::getCurrentAlbum(Album** const album, QWidget** const widget) const
 {
+    QMutexLocker locker(&d->mutex);
+
     *album  = nullptr;
     *widget = nullptr;
 
@@ -479,11 +498,15 @@ void AlbumHistory::getCurrentAlbum(Album** const album, QWidget** const widget) 
 
 bool AlbumHistory::isForwardEmpty() const
 {
+    QMutexLocker locker(&d->mutex);
+
     return d->forwardStack.isEmpty();
 }
 
 bool AlbumHistory::isBackwardEmpty() const
 {
+    QMutexLocker locker(&d->mutex);
+
     // the last album of the backwardStack is the currently shown
     // album, and therefore not really a previous album
 

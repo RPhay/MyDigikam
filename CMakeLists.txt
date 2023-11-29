@@ -15,7 +15,7 @@ message(STATUS "CMake version: ${CMAKE_VERSION}")
 
 # digiKam version
 set(DIGIKAM_MAJOR_VERSION "8")
-set(DIGIKAM_MINOR_VERSION "2")
+set(DIGIKAM_MINOR_VERSION "3")
 set(DIGIKAM_PATCH_VERSION "0")
 
 # Suffix to add at end of version string. Usual values are:
@@ -146,7 +146,7 @@ option(DIGIKAMSC_COMPILE_DIGIKAM         "Build digiKam core (default=ON)"      
 
 #######################################################################################################################
 
-if(DIGIKAMSC_COMPILE_PO)
+if(DIGIKAMSC_COMPILE_PO AND NOT MSVC)
     set_property(GLOBAL PROPERTY ALLOW_DUPLICATE_CUSTOM_TARGETS 1)
 endif()
 

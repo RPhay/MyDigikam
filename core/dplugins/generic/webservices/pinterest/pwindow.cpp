@@ -155,7 +155,7 @@ PWindow::~PWindow()
 void PWindow::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Pinterest Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Pinterest Settings"));
     d->currentAlbumName     = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
@@ -176,7 +176,7 @@ void PWindow::readSettings()
 void PWindow::writeSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Pinterest Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Pinterest Settings"));
 
     grp.writeEntry("Current Album", d->currentAlbumName);
     grp.writeEntry("Resize",        d->widget->getResizeCheckBox()->isChecked());

@@ -67,8 +67,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         disconnect(CoreDbAccess::databaseWatch(), nullptr, this, nullptr);
     }
 
-    disconnect(ItemAttributesWatch::instance(), nullptr, d->scanDAlbumsTimer, nullptr);
-
+    ItemAttributesWatch::shutDown();
+    ItemAttributesWatch::cleanUp();
     d->albumWatch->clear();
 
     cleanUp();
@@ -486,7 +486,7 @@ void AlbumManager::checkDatabaseDirsAfterFirstRun(const QString& dbPath, const Q
                 // Restore this situation.
 
                 KSharedConfigPtr config = KSharedConfig::openConfig();
-                KConfigGroup group      = config->group("Album Settings");
+                KConfigGroup group      = config->group(QLatin1String("Album Settings"));
                 group.writeEntry("Album Path", albumDir.path());
                 group.sync();
             }

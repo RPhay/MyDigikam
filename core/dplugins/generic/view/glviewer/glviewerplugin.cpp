@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to preview image with OpenGL.
  *
- * SPDX-FileCopyrightText: 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -131,7 +131,7 @@ QList<DPluginAuthor> GLViewerPlugin::authors() const
                              QString::fromUtf8("(C) 2007-2008"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2021"))
+                             QString::fromUtf8("(C) 2008-2023"))
             ;
 }
 
@@ -151,13 +151,35 @@ void GLViewerPlugin::setup(QObject* const parent)
 
 void GLViewerPlugin::slotGLViewer()
 {
-    DInfoInterface* const iface   = infoIface(sender());
-    QPointer<GLViewerWidget> view = new GLViewerWidget(this, iface);
+    DInfoInterface* const iface = infoIface(sender());
 
-    if (view->listOfFilesIsEmpty())
+    QList<QUrl> myfiles;                                            // pics which are displayed in imageviewer
+    QList<QUrl> selection       = iface->currentSelectedItems();
+    QString selectedImage;                                          // selected pic in hostapp
+
+    if      (selection.count() == 0)
+    {
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no image selected, load entire album";
+        myfiles = iface->currentAlbumItems();
+    }
+    else if (selection.count() == 1)
+    {
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "one image selected, load entire album and start with selected image";
+        selectedImage = selection.first().toLocalFile();
+        myfiles       = iface->currentAlbumItems();
+    }
+    else if (selection.count() > 1)
+    {
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "load" << selection.count() << "selected images";
+        myfiles = selection;
+    }
+
+    if (myfiles.isEmpty())
     {
         return;
     }
+
+    QPointer<GLViewerWidget> view = new GLViewerWidget(this, iface, myfiles, selectedImage);
 
     switch (view->getOGLstate())
     {
@@ -170,14 +192,18 @@ void GLViewerPlugin::slotGLViewer()
         case oglNoRectangularTexture:
         {
             qCCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "GL_ARB_texture_rectangle not supported";
-            QMessageBox::critical(nullptr, i18n("OpenGL Error"), i18n("GL_ARB_texture_rectangle not supported"));
+            QMessageBox::critical(nullptr, i18n("OpenGL Error"),
+                                  i18n("GL_ARB_texture_rectangle OpenGL extension is not supported on your system"));
+            view->close();
             break;
         }
 
         case oglNoContext:
         {
             qCCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no OpenGL context found";
-            QMessageBox::critical(nullptr, i18n("OpenGL Error"), i18n("No OpenGL context found"));
+            QMessageBox::critical(nullptr, i18n("OpenGL Error"),
+                                  i18n("No OpenGL context has been found"));
+            view->close();
             break;
         }
     }

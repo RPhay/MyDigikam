@@ -216,7 +216,7 @@ set_target_properties(digikamgui PROPERTIES
 
 target_compile_definitions(digikamgui
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )
 
 add_dependencies(digikamgui digikamcore digikamdatabase)
@@ -378,7 +378,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamGuiConfigVersion.cmake
 # Install debug symbols
 
 if(MSVC)
-    install(FILES "$<TARGET_FILE:digikamgui>.pdb" ${INSTALL_TARGETS_DEFAULT_ARGS} CONFIGURATIONS Debug RelWithDebInfo)
+    install(FILES "$<TARGET_PDB_FILE:digikamgui>" DESTINATION "${CMAKE_INSTALL_BINDIR}" CONFIGURATIONS Debug RelWithDebInfo)
 endif()
 
 if(APPLE)

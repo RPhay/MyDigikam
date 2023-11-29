@@ -137,7 +137,7 @@
     <p xml:lang="tr">digiKam fotoğrafları, ham dosyaları ve videoları albümler olarak düzenler. Ancak uygulama, fotoğraflara ve ham dosyalara etiketler, derecelendirmeler ve etiketler atamanıza izin veren güçlü etiketleme araçlarına da sahiptir. Ardından, belirli kriterlere uyan ögeleri hızlı bir şekilde bulmak için süzme işlevini kullanabilirsiniz.</p>
     <p xml:lang="uk">У digiKam фотографії, файли цифрових негативів та відео упорядковуються за альбомами. Але, крім того, у програмі передбачено потужні засоби встановлення міток, за допомогою яких ви можете призначати мітки, оцінки та позначки для фотографій і файлів цифрових негативів. Далі, можна скористатися функціональними можливостями з фільтрування для швидкого пошуку записів, які відповідають певним критеріям.</p>
     <p xml:lang="x-test">xxdigiKam organizes photos, raw files, and videos into albums. But the application also features powerful tagging tools that allow you to assign tags, ratings, and labels to photos and raw files. You can then use filtering functionality to quickly find items that match specific criteria.xx</p>
-    <p xml:lang="zh-CN">digiKam 可以将照片、RAW 图像文件和视频整理成相册。它还带有功能强大的标签工具，您可以对照片和 RAW 图像文件指定标签、进行评分和附加标记，并按照这些条件进行筛选，快速查找符合条件的项目。</p>
+    <p xml:lang="zh-CN">digiKam 可以将照片、RAW 图像文件和视频整理成相册。它还带有功能强大的标签工具，您可以对照片和 RAW 图像文件指定标签、进行评分和附加标记，并按照这些条件进行过滤，快速查找符合条件的项目。</p>
     <p>
         In addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library
         by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata.
@@ -167,7 +167,7 @@
     <p xml:lang="tr">Süzme işlevine ek olarak, digiKam, fotoğraf kitaplığında çok çeşitli kriterlere göre arama yapmanızı sağlayan güçlü arama özelliklerine sahiptir. Fotoğrafları etiketlere, etiketlere, derecelendirmeye, verilere, konuma ve hatta belirli EXIF, IPTC veya XMP üstverisine göre arayabilirsiniz. Daha gelişmiş aramalar için birkaç kriteri de birleştirebilirsiniz. digiKam, fotoğraf kitaplığını doldurmak için dosyalardan üstveri etiketi içeriklerini işlemede Exiv2 kitaplığını kullanır.</p>
     <p xml:lang="uk">Окрім функціональних можливостей із фільтрування, у digiKam передбачено потужні можливості з пошуку, за допомогою яких ви можете виконувати пошук у фотобібліотеці за широким діапазоном критеріїв. Ви можете шукати фотографії за мітками, позначками, оцінками, даними, місцем зйомки і навіть певними метаданими EXIF, IPTC або XMP. Ви також можете поєднувати декілька критеріїв, створюючи складні пошуки. Для обробки вмісту міток метаданих з файлів і заповнення даних фотобібліотеки у digiKam використано бібліотеку Exiv2.</p>
     <p xml:lang="x-test">xxIn addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata. You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents from files to populate the photo library.xx</p>
-    <p xml:lang="zh-CN">除了筛选功能外，digiKam 还内建了强大的搜索功能。您可以使用各种条件来对照片库中的内容进行搜索，如标签、标记、评价、数据、地理位置，甚至特定的 EXIF、IPTC 或者 XMP 元数据。您还可以合并使用多个条件来进行更加深入的搜索。digiKam 通过 Exiv2 程序库来处理来自文件元数据的标签内容，并将它们整合到照片库中。</p>
+    <p xml:lang="zh-CN">除了过滤功能外，digiKam 还内建了强大的搜索功能。您可以使用各种条件来对照片库中的内容进行搜索，如标签、标记、评价、数据、地理位置，甚至特定的 EXIF、IPTC 或者 XMP 元数据。您还可以合并使用多个条件来进行更加深入的搜索。digiKam 通过 Exiv2 程序库来处理来自文件元数据的标签内容，并将它们整合到照片库中。</p>
     <p>
         digiKam can handle raw files, and the application uses the excellent LibRaw library for decoding raw files. The library is actively
         maintained and regularly updated to include support for the latest camera models.
@@ -430,7 +430,7 @@
       <li xml:lang="tr">Albümleri sıralama ve süzme desteği</li>
       <li xml:lang="uk">підтримка фільтрування та упорядковування альбомів;</li>
       <li xml:lang="x-test">xxSupport for filtering and sorting albumsxx</li>
-      <li xml:lang="zh-CN">支持对相册进行筛选和排序</li>
+      <li xml:lang="zh-CN">支持对相册进行过滤和排序</li>
       <li xml:lang="zh-TW">支援篩選和排序相簿</li>
       <li>Import from more than 1100 digital camera devices</li>
       <li xml:lang="ar">الاستيراد من أكثر من 1100 كمرة رقميّة</li>
@@ -805,6 +805,7 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release date="2023-12-03" version="8.2.0"/>
     <release date="2023-07-09" version="8.1.0"/>
     <release date="2023-04-16" version="8.0.0"/>
     <release date="2023-03-12" version="7.10.0"/>

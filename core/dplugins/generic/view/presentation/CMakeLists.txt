@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -12,7 +12,19 @@ if(HAVE_MEDIAPLAYER)
 
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/audio)
 
-    set(QTMEDIA_BACKEND ${QTAV_LIBRARIES})
+    if(Qt6_FOUND AND ENABLE_QTMULTIMEDIA)
+
+        include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::MultimediaWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+
+        set(QTMEDIA_BACKEND Qt${QT_VERSION_MAJOR}::Multimedia
+                            Qt${QT_VERSION_MAJOR}::MultimediaWidgets
+        )
+
+    else()
+
+        set(QTMEDIA_BACKEND ${QTAV_LIBRARIES})
+
+    endif()
 
 endif()
 

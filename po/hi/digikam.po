@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 01:11+0000\n"
+"POT-Creation-Date: 2023-11-29 00:40+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -1163,7 +1163,7 @@ msgid "White Balance:"
 msgstr "श्वेत संतुलन:"
 
 #: core/app/items/utils/tooltipfiller.cpp:313
-#: core/utilities/searchwindow/searchgroup.cpp:116
+#: core/utilities/searchwindow/searchgroup.cpp:117
 #, fuzzy, kde-format
 msgid "Audio/Video Properties"
 msgstr "फ़ाइल गुण"
@@ -2652,7 +2652,7 @@ msgstr "मदद (&H)"
 msgid "Main Toolbar"
 msgstr "मुख्य औज़ार पट्टी"
 
-#: core/app/main/main.cpp:187 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2662,46 +2662,46 @@ msgstr "मुख्य औज़ार पट्टी"
 msgid "digiKam"
 msgstr "डिज़ीकैम"
 
-#: core/app/main/main.cpp:196 core/showfoto/main/main.cpp:163
+#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:170
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "रविशंकर श्रीवास्तव, जी. करूणाकर"
 
-#: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
+#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:171
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "raviratlami@aol.in,"
 
-#: core/app/main/main.cpp:205
+#: core/app/main/main.cpp:212
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "कैमरा संवाद यहां दिखाएं <पथ>"
 
-#: core/app/main/main.cpp:208
+#: core/app/main/main.cpp:215
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 
-#: core/app/main/main.cpp:211
+#: core/app/main/main.cpp:218
 #, fuzzy, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "कैमरा का पता स्वचालित लगाकर उसे खोलें"
 
-#: core/app/main/main.cpp:213
+#: core/app/main/main.cpp:220
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "डिजिकैम को एलबम रूट में प्रारंभ करें <पथ>"
 
-#: core/app/main/main.cpp:216
+#: core/app/main/main.cpp:223
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "डिजिकैम को एलबम रूट में प्रारंभ करें <पथ>"
 
-#: core/app/main/main.cpp:243
+#: core/app/main/main.cpp:250
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2709,7 +2709,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:285
+#: core/app/main/main.cpp:292
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2717,7 +2717,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:294
+#: core/app/main/main.cpp:301
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2725,7 +2725,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:334
+#: core/app/main/main.cpp:341
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2802,7 +2802,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:233
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, fuzzy, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2810,7 +2810,7 @@ msgstr "पीछे"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:235
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -2887,7 +2887,7 @@ msgstr "नक्शा"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:119
 #: core/libs/album/widgets/albumselecttabs.cpp:194
-#: core/utilities/searchwindow/searchfields_createfield.cpp:141
+#: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Labels"
 msgstr "लेबल्स"
@@ -3592,7 +3592,7 @@ msgstr "अल्फ़ा चैनल:"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:944
+#: core/utilities/searchwindow/searchfields_createfield.cpp:955
 #: core/utilities/setup/setuptooltip.cpp:319
 #, fuzzy, kde-format
 msgid "Audio Codec"
@@ -3600,7 +3600,7 @@ msgstr "ऑडियो फ़ाइलें"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:814
 #, fuzzy, kde-format
 msgid "Duration"
 msgstr "अवधिः %1"
@@ -3893,14 +3893,14 @@ msgstr "गुण"
 
 #: core/app/views/tableview/tableview_column_item.cpp:75
 #: core/app/views/tableview/tableview_column_item.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:201
+#: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, fuzzy, kde-format
 msgid "Width"
 msgstr "चौडाईः"
 
 #: core/app/views/tableview/tableview_column_item.cpp:76
 #: core/app/views/tableview/tableview_column_item.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:219
+#: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Height"
 msgstr "ऊंचाई"
@@ -6536,7 +6536,6 @@ msgstr "छवि क़िस्म दिखाएं"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6545,6 +6544,7 @@ msgstr "छवि क़िस्म दिखाएं"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
@@ -6561,7 +6561,6 @@ msgstr "हाँ"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6570,6 +6569,7 @@ msgstr "हाँ"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
@@ -6585,47 +6585,13 @@ msgstr "हाँ"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, fuzzy, kde-format
 #| msgctxt "@info: status"
 #| msgid "no"
 msgctxt "@info: cannot write file format"
-msgid "no"
-msgstr "नहीं"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
-#, fuzzy, kde-format
-#| msgid "Flash has been fired"
-msgctxt "@title"
-msgid "ImageMagick loader"
-msgstr "फ्लैश चलाया गया है"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
-#, kde-format
-msgctxt "@info"
-msgid "An image loader based on ImageMagick coders"
-msgstr ""
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
-#, kde-kuit-format
-msgctxt "@info"
-msgid ""
-"<para>This plugin allows users to load and save image using ImageMagick "
-"coders.</para><para>ImageMagick is a free and open-source software suite for "
-"converting raster image and vector image files. It can read and write over "
-"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
-"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
-msgstr ""
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:59
-#: core/libs/dplugins/core/dplugindimg.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@info: status"
-#| msgid "no"
-msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "नहीं"
 
@@ -6801,6 +6767,40 @@ msgstr "जेपीईजी 2000 गुण:"
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
 msgstr "जेपीईजी 2000 गुण:"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:86
+#, fuzzy, kde-format
+#| msgid "Flash has been fired"
+msgctxt "@title"
+msgid "ImageMagick loader"
+msgstr "फ्लैश चलाया गया है"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:101
+#, kde-format
+msgctxt "@info"
+msgid "An image loader based on ImageMagick coders"
+msgstr ""
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:106
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>This plugin allows users to load and save image using ImageMagick "
+"coders.</para><para>ImageMagick is a free and open-source software suite for "
+"converting raster image and vector image files. It can read and write over "
+"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
+"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
+msgstr ""
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/libs/dplugins/core/dplugindimg.cpp:59
+#: core/libs/dplugins/core/dplugindimg.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "@info: status"
+#| msgid "no"
+msgctxt "@info: cannot read file format"
+msgid "no"
+msgstr "नहीं"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:68
 #, fuzzy, kde-format
@@ -7273,31 +7273,31 @@ msgid ""
 "channel will be reset to the default values."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:883
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:893
 #, fuzzy, kde-format
 msgid "Adjust Levels"
 msgstr "स्तर एडजस्ट करें"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:900
 #, fuzzy, kde-format
 #| msgid "Select Gimp Levels File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "लोड करने के लिए गिम्प स्तर फ़ाइल चुनें"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:912
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "गिम्प स्तर पाठ फ़ाइल से लोड नहीं कर सका."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:927
 #, fuzzy, kde-format
 #| msgid "Gimp Levels File to Save"
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "सहेजने के लिए गिम्प स्तर फ़ाइल"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:939
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "गिम्प स्तर पाठ फ़ाइल में सहेज नहीं सका."
@@ -7733,7 +7733,7 @@ msgstr "रंग प्रबंधन"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:80
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:207
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "White Balance"
 msgstr "श्वेत संतुलन"
@@ -7888,17 +7888,17 @@ msgstr "अर्ध-पारदर्शी"
 msgid "Use semi-transparent text background under image"
 msgstr "छवि के नीचे अर्ध-पारदर्शी पाठ पृष्ठभूमि प्रयोग करें"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:317
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:326
 #, fuzzy, kde-format
 msgid "Enter your text here."
 msgstr "अपना पाठ यहाँ भरें!"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:426
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:435
 #, fuzzy, kde-format
 msgid "Insert Text Tool"
 msgstr "पाठ प्रविष्ट करें"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:439
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:448
 #, kde-format
 msgid "Insert Text"
 msgstr "पाठ प्रविष्ट करें"
@@ -8489,7 +8489,19 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "सुस्पष्ट करें..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr "कोई प्रोफ़ाइल उपलब्ध नहीं..."
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
@@ -9547,7 +9559,7 @@ msgstr ""
 msgid "Advanced Settings"
 msgstr "विस्तृत विन्यास"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:769
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:778
 #, kde-format
 msgid "Liquid Rescale"
 msgstr ""
@@ -10321,8 +10333,8 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:629
-#: core/utilities/searchwindow/searchfields_createfield.cpp:203
-#: core/utilities/searchwindow/searchfields_createfield.cpp:221
+#: core/utilities/searchwindow/searchfields_createfield.cpp:214
+#: core/utilities/searchwindow/searchfields_createfield.cpp:232
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -10626,7 +10638,9 @@ msgid "Cannot save \"%1\" file"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -10654,14 +10668,15 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Flip horizontally"
 msgctxt "@item"
-msgid "Two maps - horizontal"
+msgid "Two maps - left and right"
 msgstr "आड़ा पलटें"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Flip horizontally"
 msgctxt "@item"
-msgid "Two maps - vertical"
-msgstr ""
+msgid "Two maps - top and bottom"
+msgstr "आड़ा पलटें"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, fuzzy, kde-format
@@ -10754,7 +10769,7 @@ msgid "Saving changes -"
 msgstr "छवियाँ सहेजें"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:247
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
@@ -11495,8 +11510,8 @@ msgstr[1] ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -15560,8 +15575,8 @@ msgstr "फ़ोल्डर से"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:327
-#: core/utilities/searchwindow/searchfields_createfield.cpp:358
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
+#: core/utilities/searchwindow/searchfields_createfield.cpp:369
 #, fuzzy, kde-format
 msgid "Camera"
 msgstr "कैमरा"
@@ -18549,67 +18564,67 @@ msgstr "अज्ञात"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, fuzzy, kde-format
+msgctxt "Output: FILE"
+msgid "Print to Image File"
+msgstr "छवि छापें..."
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, fuzzy, kde-format
 #| msgid "Photo caption"
 msgctxt "Output: PDF"
 msgid "Print to PDF"
 msgstr "फोटो शीर्षक"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, fuzzy, kde-format
-msgctxt "Output: FILE"
-msgid "Print to Image File"
-msgstr "छवि छापें..."
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, fuzzy, kde-format
 #| msgid "Photo caption"
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "फोटो शीर्षक"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, fuzzy, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "जेपीईजी 2000 गुण:"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "पीएनजी"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "टिफ़"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, fuzzy, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "जियोलोकेशन"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, fuzzy, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "फ़ाइल नाम दिखाएँ"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, fuzzy, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "छवि कैप्चर करें..."
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, fuzzy, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "टिप्पणियाँ आयातित"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, fuzzy, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
@@ -18660,7 +18675,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:719
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, fuzzy, kde-format
 msgid "Author"
 msgstr "लेखकः"
@@ -20066,20 +20081,21 @@ msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "छवियाँ सहेजें"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
 #, fuzzy, kde-format
 msgid "OpenGL Error"
 msgstr "निर्यात"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
 #, kde-format
-msgid "GL_ARB_texture_rectangle not supported"
+msgid ""
+"GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
 msgstr ""
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context found"
+msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -20088,53 +20104,53 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "कैमरा तारीख दिखाएँ"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:98
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
 "automatically on the next startup."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track up in the playlist."
 msgstr "इस सूची में से मौजूदा चयनिद मूल्य को मिटाएँ"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:126
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track down in the playlist."
 msgstr "इस सूची में से मौजूदा चयनिद मूल्य को मिटाएँ"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:127
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgid "Add new tracks to the playlist."
 msgstr "सूची में नई वस्तु जोड़ें"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:128
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
 #, fuzzy, kde-format
 #| msgid "Replace the current selected value from the list"
 msgid "Delete the selected track from the playlist."
 msgstr "इस सूची में से मौजूदा चयनित मूल्य को मिटाएँ"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:129
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:123
 #, kde-format
 msgid "Load playlist from a file."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:130
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:124
 #, fuzzy, kde-format
 msgid "Save playlist to a file."
 msgstr "मूवी फ़ाइलें"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:131
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
 #, fuzzy, kde-format
 msgid "Clear the playlist."
 msgstr "कैमरा सूची"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:264
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:258
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -20142,56 +20158,56 @@ msgid_plural "%1 tracks [%2]"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:292
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:286
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:356
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "कुछ नहीं चुनें"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:424
 #, fuzzy, kde-format
 #| msgid "You can only move up one image file at once."
 msgid "You can only move image files up one at a time."
 msgstr "आप एक बार में सिर्फ एक छवि फ़ाइल को ऊपर खिसका सकते हैं."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:468
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:462
 #, fuzzy, kde-format
 #| msgid "You can only move down one image file at once."
 msgid "You can only move files down one at a time."
 msgstr "आप एक बार में सिर्फ एक छवि फ़ाइल को नीचे खिसका सकते हैं."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:483
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "सभी साफ करें"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:484
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:543
 #, kde-format
 msgid "Playlist (*.m3u)"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:542
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "छवियाँ सहेजें"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:603
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:619
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:613
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr ""
@@ -20295,25 +20311,26 @@ msgstr "स्लाइड"
 msgid "Soundtrack:"
 msgstr "कैमरा तारीख दिखाएँ"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
-#, fuzzy, kde-format
-#| msgid "No options available"
-msgid "No detail available"
-msgstr "कोई विकल्प उपलब्ध नहीं हैं."
-
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:194
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:236
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:257
 #, fuzzy, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:215
+#, fuzzy, kde-format
+#| msgid "No options available"
+msgid "No detail available"
+msgstr "कोई विकल्प उपलब्ध नहीं हैं."
+
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:248
 #, kde-format
 msgid "%1 may not be playable."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:256
 #, kde-format
 msgid "This file may not be playable."
 msgstr ""
@@ -20351,9 +20368,9 @@ msgstr "अगला"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:70
-#: core/utilities/searchwindow/searchfields_createfield.cpp:176
+#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
 #, fuzzy, kde-format
-msgid "Time"
+msgid "Time:"
 msgstr "शीर्षकः (&T)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -20376,6 +20393,12 @@ msgstr ""
 msgctxt "Total amount of time of presentation"
 msgid "Total:"
 msgstr "%1 (%2)"
+
+#. i18n: ectx: property (text), widget (QLabel, m_soundLabel)
+#: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:115
+#, kde-format
+msgid "Volumes:"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:23
@@ -20521,7 +20544,7 @@ msgid "Image #%1"
 msgstr "%1 में चित्र मिले"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:679
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:685
 #, kde-format
 msgid "Ken Burns"
 msgstr ""
@@ -20670,7 +20693,7 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "विस्तृत"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
 #, fuzzy, kde-format
 #| msgid "None"
@@ -20678,61 +20701,61 @@ msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "कुछ नहीं"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
 #, fuzzy, kde-format
 #| msgid "Bend"
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "बेंड"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "कैलेन्डर"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
 #, fuzzy, kde-format
 #| msgid "Cube"
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "घन"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
 #, fuzzy, kde-format
 #| msgid "Fade"
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "फीका"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
 #, fuzzy, kde-format
 #| msgid "Flutter"
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "फ्लटर"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
 #, fuzzy, kde-format
 #| msgid "In Out"
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "इन आउट"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "बाएँ मुड़ें"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:577
 #, fuzzy, kde-format
 #| msgid "Slide"
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "स्लाइड"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:578
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1035
 #, fuzzy, kde-format
 #| msgid "Random"
@@ -20740,21 +20763,21 @@ msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "बेतरतीब"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
 #, fuzzy, kde-format
 msgid "Slideshow Completed"
 msgstr "स्लाइड-शो"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:632
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:880
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:638
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:869
 #, fuzzy, kde-format
 #| msgid "Click To Exit..."
 msgid "Click to Exit..."
 msgstr "बाहर होने के लिए क्लिक करें..."
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:637
 #, fuzzy, kde-format
 #| msgid "SlideShow"
 msgid "SlideShow Completed"
@@ -20804,20 +20827,20 @@ msgctxt "@action"
 msgid "Presentation..."
 msgstr "फ्री रोटेशन..."
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:230
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "यह टैग आबंटित करें"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:231
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:249
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:411
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
@@ -20825,7 +20848,7 @@ msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "टैग मिटाएँ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:257
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:412
 #, fuzzy, kde-format
 msgid "Do you want to move this image to the trash?"
@@ -23446,7 +23469,7 @@ msgid "This is the list of images to upload to an iNaturalist observation."
 msgstr "यह वस्तुओं की सूची है जिसे मिटाया जाने वाला है."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, kde-format
 msgid "Date"
 msgstr "तारीख़"
@@ -25505,9 +25528,9 @@ msgid "Reset curve to linear"
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
-#: core/utilities/searchwindow/searchfields_createfield.cpp:461
-#: core/utilities/searchwindow/searchfields_createfield.cpp:482
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:472
+#: core/utilities/searchwindow/searchfields_createfield.cpp:493
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, fuzzy, kde-format
 msgid "Exposure"
 msgstr "निर्यात"
@@ -28484,14 +28507,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "विशेषता"
 
-#: core/libs/dialogs/libsinfodlg.cpp:189
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, fuzzy, kde-format
 #| msgid "Gibraltar"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "जिब्राल्टर"
 
-#: core/libs/dialogs/libsinfodlg.cpp:276
+#: core/libs/dialogs/libsinfodlg.cpp:279
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -28499,7 +28522,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: core/libs/dialogs/libsinfodlg.cpp:357
+#: core/libs/dialogs/libsinfodlg.cpp:360
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -28507,32 +28530,32 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:388
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:416
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "कैमरा कॉन्फ़िगरेशन"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:599
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "हाँ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:604
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "नहीं"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:609
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -39503,27 +39526,27 @@ msgid "Default from Desktop"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:237
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:239
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "कैप्चर"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:249
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -41720,7 +41743,7 @@ msgstr "लघुछवियाँ दिखाएँ"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "पूर्ण स्क्रीन मोड में औज़ार पट्टी छुपाएँ (&i)"
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1224
+#: core/libs/widgets/mainview/thememanager_p.cpp:1232
 #, fuzzy, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -42581,7 +42604,7 @@ msgstr "छवि जानकारी"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:139
-#: core/utilities/searchwindow/searchgroup.cpp:155
+#: core/utilities/searchwindow/searchgroup.cpp:156
 #: core/utilities/setup/setuptooltip.cpp:232
 #, kde-format
 msgid "Photograph Information"
@@ -42810,7 +42833,7 @@ msgid "Pick"
 msgstr "ईंटें"
 
 #: core/libs/widgets/metadata/labels/ratingwidget.cpp:574
-#: core/utilities/searchwindow/searchfields_createfield.cpp:149
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
 msgstr "रेटिंग"
@@ -48635,20 +48658,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "फ़ोल्डर से"
 
-#: core/showfoto/main/main.cpp:154
+#: core/showfoto/main/main.cpp:161
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:172
+#: core/showfoto/main/main.cpp:179
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "खोलने के लिए फ़ाइल फ़ोल्डर"
 
-#: core/showfoto/main/main.cpp:203
+#: core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -48920,14 +48943,7 @@ msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "घुमाने/पलटने के बाद दिशानिर्धारण टैग को सामान्य सेट कर दें"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:117
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:179
-#, fuzzy, kde-format
-msgctxt "@info:whatsthis"
-msgid "Visit Exiv2 project website"
-msgstr "डिज़ीकैम परियोजना वेबसाइट में जाएं"
-
-#: core/showfoto/setup/showfotosetupmetadata.cpp:125
+#: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, kde-format
 msgctxt "@info"
@@ -48936,7 +48952,7 @@ msgid ""
 "(like aperture and shutter speed) about an image."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:123
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, kde-format
 msgctxt "@info"
@@ -48945,21 +48961,21 @@ msgid ""
 "information in images."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:135
+#: core/showfoto/setup/showfotosetupmetadata.cpp:129
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:156
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:216
+#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "बर्ताव"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:165
+#: core/showfoto/setup/showfotosetupmetadata.cpp:159
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, fuzzy, kde-format
 msgctxt "@title:tab"
@@ -50514,14 +50530,14 @@ msgid "Lens of the camera"
 msgstr "समर्तित रॉ कैमरा की सूची"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:63
-#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:414
 #, fuzzy, kde-format
 msgid "Aperture"
 msgstr "एपर्चर/फोकल:"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:64
-#: core/utilities/searchwindow/searchfields_createfield.cpp:423
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:434
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgid "Focal length"
 msgstr ""
@@ -50532,7 +50548,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:461
+#: core/utilities/searchwindow/searchfields_createfield.cpp:472
 #, fuzzy, kde-format
 msgid "Exposure time"
 msgstr "निर्यात"
@@ -50548,7 +50564,7 @@ msgid "Exposure mode"
 msgstr "निर्यात"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:69
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, fuzzy, kde-format
 msgid "Sensitivity"
 msgstr "संवेदनशीलता (आइएसओ):"
@@ -50559,7 +50575,7 @@ msgid "Flash mode"
 msgstr "फ्लैश:"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:563
 #, fuzzy, kde-format
 msgid "White balance"
 msgstr "श्वेत संतुलन"
@@ -50590,14 +50606,14 @@ msgid "Display Aspect Ratio"
 msgstr "आस्पेक्ट रेशो बनाए रखें"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #: core/utilities/setup/setuptooltip.cpp:313
 #, fuzzy, kde-format
 msgid "Audio Bit Rate"
 msgstr "ऑडियो फ़ाइलें"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:925
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #: core/utilities/setup/setuptooltip.cpp:316
 #, fuzzy, kde-format
 msgid "Audio Channel Type"
@@ -50670,7 +50686,7 @@ msgid "Altitude in a human readable form"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:58
-#: core/utilities/searchwindow/searchfields_createfield.cpp:237
+#: core/utilities/searchwindow/searchfields_createfield.cpp:248
 #, fuzzy, kde-format
 msgid "Orientation"
 msgstr "दिशा निर्धारणः"
@@ -50794,12 +50810,6 @@ msgstr "स्रोत:"
 msgctxt "the format of the date"
 msgid "Format:"
 msgstr "छवि तारीख"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
-#, fuzzy, kde-format
-msgid "Time:"
-msgstr "शीर्षकः (&T)"
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:36
 #, fuzzy, kde-format
@@ -51983,6 +51993,7 @@ msgstr "यूआरएल:"
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, fuzzy, kde-format
 #| msgid "Select Black Frame Image"
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "काला फ्रेम छवि चुनें"
 
@@ -52112,6 +52123,13 @@ msgstr "फ़ोल्डर जोड़ें..."
 msgid "New Folder"
 msgstr "फ़ोल्डर से"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "रंग प्रबंधन"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -52203,8 +52221,8 @@ msgstr "इस स्थान पर जाएं"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "निर्यात"
+msgid "Export Bookmark"
+msgstr "कैमरा जोड़ें..."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
@@ -52525,14 +52543,6 @@ msgstr "हटाएँ"
 msgid "Look up missing altitude values"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "जीपीएस सिंक"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -52822,6 +52832,12 @@ msgstr ""
 msgid "Retrieving RG info -"
 msgstr ""
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "रॉ डिकोडिंग"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
@@ -52849,9 +52865,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
-msgstr ""
+msgstr "रॉ डिकोडिंग"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:235
 #, fuzzy, kde-format
@@ -56991,7 +57008,7 @@ msgstr "कोई वस्तु चुना नहीं गया"
 msgid "No Rating assigned"
 msgstr "हाल ही में आबंटित कोई टैग नहीं है"
 
-#: core/utilities/searchwindow/searchfields.cpp:74
+#: core/utilities/searchwindow/searchfields.cpp:76
 #, fuzzy, kde-format
 msgid "Reset contents"
 msgstr "टैग प्रतीक रीसेट करें"
@@ -57121,82 +57138,94 @@ msgid "and"
 msgstr "और"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
+#: core/utilities/searchwindow/searchfields_createfield.cpp:133
 #, fuzzy, kde-format
 msgid "File Size"
 msgstr "फ़ाइल आकार से"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
 #, kde-format
-msgid "Size of the file"
+msgid "Size of the file in megabytes"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:122
+#: core/utilities/searchwindow/searchfields_createfield.cpp:134
 #, kde-format
 msgctxt "Size of the file ...-..."
 msgid "-"
 msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#, kde-format
+msgid "Size of the file in bytes"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, fuzzy, kde-format
 #| msgid "Month"
 msgid "Month/Day"
 msgstr "माह"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
 msgid "Return items from a month or a day of the month"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:141
+#: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, fuzzy, kde-format
 msgid "Return items with labels"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:149
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, fuzzy, kde-format
 msgid "Return items rated at least"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:150
+#: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, fuzzy, kde-format
 msgctxt "Return items rated at least...at most..."
 msgid "at most"
 msgstr "अधिक से अधिक"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, kde-format
 msgid "Return items created between"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:159
+#: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, kde-format
 msgctxt "'Return items created between...and..."
 msgid "and"
 msgstr "और"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:167
+#: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, fuzzy, kde-format
 msgid "Digitization"
 msgstr "डिस्टार्शन"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:167
+#: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, kde-format
 msgid "Return items digitized between"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:168
+#: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, kde-format
 msgctxt "'Return items digitized between...and..."
 msgid "and"
 msgstr "और"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#, fuzzy, kde-format
+msgid "Time"
+msgstr "शीर्षकः (&T)"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
 #, fuzzy, kde-format
 #| msgid "Remove This Tag"
 msgid "Return items with created time between"
 msgstr "यह टैग मिटाएँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:177
+#: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, fuzzy, kde-format
 #| msgctxt "'Return items modified between...and..."
 #| msgid "and"
@@ -57204,580 +57233,580 @@ msgctxt "'Return items with created time between...and..."
 msgid "and"
 msgstr "और"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, fuzzy, kde-format
 msgid "Exif Orientation"
 msgstr "एक्सइफ दिशा-निर्धारण टैग समायोजित करें"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, fuzzy, kde-format
 msgid "Find items with orientation flag"
 msgstr "फ़ाइल %1 के लिए एक्ज़इफ ओरिएन्टेशन सुधारने में असफल."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:201
+#: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Find items with a width between"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:202
+#: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, kde-format
 msgctxt "Find items with a width between...and..."
 msgid "and"
 msgstr "और"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:219
+#: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, fuzzy, kde-format
 #| msgid "Add to Light Table"
 msgid "Find items with a height between"
 msgstr "लाइट तालिका में जोड़ें"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:220
+#: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, kde-format
 msgctxt "Find items with a height between...and..."
 msgid "and"
 msgstr "और"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:238
+#: core/utilities/searchwindow/searchfields_createfield.cpp:249
 #, fuzzy, kde-format
 msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, fuzzy, kde-format
 msgid "File Format"
 msgstr "छवि तारीख"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, fuzzy, kde-format
 msgid "Return items with the file format"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:251
+#: core/utilities/searchwindow/searchfields_createfield.cpp:262
 #, fuzzy, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "छवि (&I)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:256
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, fuzzy, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "दृश्य"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:261
+#: core/utilities/searchwindow/searchfields_createfield.cpp:272
 #, fuzzy, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "स्वतः"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#: core/utilities/searchwindow/searchfields_createfield.cpp:297
 #, fuzzy, kde-format
 msgid "Color Depth"
 msgstr "रंग गहराईः"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#: core/utilities/searchwindow/searchfields_createfield.cpp:297
 #, fuzzy, kde-format
 msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#: core/utilities/searchwindow/searchfields_createfield.cpp:307
 #, fuzzy, kde-format
 msgid "Color Model"
 msgstr "रंग गहराईः"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#: core/utilities/searchwindow/searchfields_createfield.cpp:307
 #, kde-format
 msgid "Find items with the color model"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:301
-#: core/utilities/searchwindow/searchfields_createfield.cpp:302
-#: core/utilities/searchwindow/searchfields_createfield.cpp:303
-#: core/utilities/searchwindow/searchfields_createfield.cpp:304
-#: core/utilities/searchwindow/searchfields_createfield.cpp:305
-#: core/utilities/searchwindow/searchfields_createfield.cpp:306
-#: core/utilities/searchwindow/searchfields_createfield.cpp:307
-#: core/utilities/searchwindow/searchfields_createfield.cpp:308
-#: core/utilities/searchwindow/searchfields_createfield.cpp:309
+#: core/utilities/searchwindow/searchfields_createfield.cpp:312
+#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:315
+#: core/utilities/searchwindow/searchfields_createfield.cpp:316
+#: core/utilities/searchwindow/searchfields_createfield.cpp:317
+#: core/utilities/searchwindow/searchfields_createfield.cpp:318
+#: core/utilities/searchwindow/searchfields_createfield.cpp:319
+#: core/utilities/searchwindow/searchfields_createfield.cpp:320
 #, fuzzy, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "छवि (&I)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
-#: core/utilities/searchwindow/searchfields_createfield.cpp:315
-#: core/utilities/searchwindow/searchfields_createfield.cpp:316
+#: core/utilities/searchwindow/searchfields_createfield.cpp:324
+#: core/utilities/searchwindow/searchfields_createfield.cpp:325
+#: core/utilities/searchwindow/searchfields_createfield.cpp:326
+#: core/utilities/searchwindow/searchfields_createfield.cpp:327
 #, fuzzy, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "दृश्य"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:327
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
 #, kde-format
 msgid "The make of the camera"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:358
+#: core/utilities/searchwindow/searchfields_createfield.cpp:369
 #, kde-format
 msgid "The model of the camera"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:400
 #, fuzzy, kde-format
 msgid "Lens"
 msgstr "घनत्व:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:400
 #, fuzzy, kde-format
 msgid "The type of the lens"
 msgstr "प्रथम वस्तु पर जाएँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:414
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:404
+#: core/utilities/searchwindow/searchfields_createfield.cpp:415
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:423
+#: core/utilities/searchwindow/searchfields_createfield.cpp:434
 #, kde-format
 msgid "Focal length of the lens"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#: core/utilities/searchwindow/searchfields_createfield.cpp:454
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:462
+#: core/utilities/searchwindow/searchfields_createfield.cpp:473
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:482
+#: core/utilities/searchwindow/searchfields_createfield.cpp:493
 #, fuzzy, kde-format
 msgid "Automatic exposure program"
 msgstr "स्वतः एक्सपोजर समायोजना"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:506
+#: core/utilities/searchwindow/searchfields_createfield.cpp:517
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#: core/utilities/searchwindow/searchfields_createfield.cpp:540
 #, fuzzy, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "फ्लैश:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#: core/utilities/searchwindow/searchfields_createfield.cpp:540
 #, fuzzy, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "फ्लैश:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:563
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:553
+#: core/utilities/searchwindow/searchfields_createfield.cpp:564
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #, kde-format
 msgid "Metering Mode"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
-#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#: core/utilities/searchwindow/searchfields_createfield.cpp:588
+#: core/utilities/searchwindow/searchfields_createfield.cpp:601
 #, fuzzy, kde-format
 msgid "Subject Distance"
 msgstr "दूरीः"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
+#: core/utilities/searchwindow/searchfields_createfield.cpp:588
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:578
+#: core/utilities/searchwindow/searchfields_createfield.cpp:589
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#: core/utilities/searchwindow/searchfields_createfield.cpp:601
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:618
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
 msgid "GPS"
 msgstr "जीपीएस"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:618
 #, fuzzy, kde-format
 msgid "Altitude range"
 msgstr "<b>ऊँचाई</b>:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:608
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, fuzzy, kde-format
 msgid "Item has no GPS info"
 msgstr "%1 में चित्र मिले"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:642
 #, fuzzy, kde-format
 msgid "Not Geo-located"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:652
 #, fuzzy, kde-format
 msgid "Country"
 msgstr "गणनाः"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:652
 #, fuzzy, kde-format
 msgid "Country shown in the item"
 msgstr "<p>छवि शीर्षक भरें. यह क्षेत्र ASCII अक्षरों तक सीमित रहेगा."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, fuzzy, kde-format
 msgid "Province"
 msgstr "पूर्वावलोकन"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, fuzzy, kde-format
 msgid "Province shown in the item"
 msgstr "<p>छवि शीर्षक भरें. यह क्षेत्र ASCII अक्षरों तक सीमित रहेगा."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:673
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 msgid "City"
 msgstr "क्रेडिट:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:673
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 msgid "City shown in the item"
 msgstr "<p>छवि शीर्षक भरें. यह क्षेत्र ASCII अक्षरों तक सीमित रहेगा."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, fuzzy, kde-format
 msgid "Sublocation"
 msgstr "जियोलोकेशन"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, fuzzy, kde-format
 msgid "Sublocation shown in the item"
 msgstr "<p>छवि शीर्षक भरें. यह क्षेत्र ASCII अक्षरों तक सीमित रहेगा."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "कैलेन्डर"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, fuzzy, kde-format
 #| msgid "Remove This Tag"
 msgid "Return items created by"
 msgstr "यह टैग मिटाएँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, fuzzy, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "शीर्षक:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, fuzzy, kde-format
 msgid "Return items whose comment contains"
 msgstr "एलबम की सारी सामग्रियाँ ताज़ा करें."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:719
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, fuzzy, kde-format
 #| msgid "Remove This Tag"
 msgid "Return items commented by"
 msgstr "यह टैग मिटाएँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, fuzzy, kde-format
 msgid "Headline"
 msgstr "टाइम-लाइन"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, fuzzy, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:735
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "शीर्षक"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:735
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, fuzzy, kde-format
 msgid "Return items with the IPTC title"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:743
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:751
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, fuzzy, kde-format
 #| msgid "Apply Texture"
 msgid "Empty Text"
 msgstr "टैक्सचर लगाएं"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:751
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, fuzzy, kde-format
 msgid "Return items without text in:"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:753
+#: core/utilities/searchwindow/searchfields_createfield.cpp:764
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "कैलेन्डर"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, fuzzy, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "शीर्षक:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, fuzzy, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "लेखकः"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:767
 #, fuzzy, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "टाइम-लाइन"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:768
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "शीर्षक"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, fuzzy, kde-format
 msgid "Aspect Ratio"
 msgstr "आस्पेक्ट रेशो:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:775
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, fuzzy, kde-format
 msgid "Pixel Size"
 msgstr "फ़ाइल आकार से"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:775
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:776
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "और"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, fuzzy, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:814
 #, fuzzy, kde-format
 msgid "Length of the video"
 msgstr "समर्तित रॉ कैमरा की सूची"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:804
+#: core/utilities/searchwindow/searchfields_createfield.cpp:815
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "और"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:816
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "से."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, fuzzy, kde-format
 msgid "Frame Rate"
 msgstr "<b>निर्मित</b>:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, fuzzy, kde-format
 msgid "Return video with the frame rate"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:822
+#: core/utilities/searchwindow/searchfields_createfield.cpp:833
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "और"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:823
+#: core/utilities/searchwindow/searchfields_createfield.cpp:834
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "एफपीएस"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:839
+#: core/utilities/searchwindow/searchfields_createfield.cpp:850
 #, fuzzy, kde-format
 msgid "Codec"
 msgstr "ऑडियो फ़ाइलें"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:839
+#: core/utilities/searchwindow/searchfields_createfield.cpp:850
 #, fuzzy, kde-format
 msgid "Return video codec"
 msgstr "ऑडियो फ़ाइलें"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #, fuzzy, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "ऑडियो फ़ाइलें"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:908
+#: core/utilities/searchwindow/searchfields_createfield.cpp:919
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "और"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:909
+#: core/utilities/searchwindow/searchfields_createfield.cpp:920
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr " बीपीएस"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:925
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #, fuzzy, kde-format
 msgid "Return Audio Channel Type"
 msgstr "छवि क़िस्म दिखाएं"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:927
+#: core/utilities/searchwindow/searchfields_createfield.cpp:938
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:928
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:929
+#: core/utilities/searchwindow/searchfields_createfield.cpp:940
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:930
+#: core/utilities/searchwindow/searchfields_createfield.cpp:941
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:931
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:932
+#: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "अल्फ़ा चैनल:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:944
+#: core/utilities/searchwindow/searchfields_createfield.cpp:955
 #, fuzzy, kde-format
 msgid "Return Audio Codec"
 msgstr "ऑडियो फ़ाइलें"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
 #, fuzzy, kde-format
 msgid "Faces"
 msgstr "कुछ नहीं चुनें"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, fuzzy, kde-format
 msgid "Return items by number of face regions"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1054
 #, fuzzy, kde-format
 #| msgctxt "'Return items modified between...and..."
 #| msgid "and"
@@ -57785,12 +57814,12 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "और"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
 #, fuzzy, kde-format
 msgid "Return items without face regions"
 msgstr "/छवियाँ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1064
 #, fuzzy, kde-format
 msgid "No Face Regions"
 msgstr "कोई चयन नहीं"
@@ -57848,17 +57877,17 @@ msgstr "एलबम को रद्दी में खिसकाएँ"
 msgid "Picture Properties"
 msgstr "फ़ाइल गुण"
 
-#: core/utilities/searchwindow/searchgroup.cpp:136
+#: core/utilities/searchwindow/searchgroup.cpp:137
 #, kde-format
 msgid "Caption, Comment, Title"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup.cpp:185
+#: core/utilities/searchwindow/searchgroup.cpp:186
 #, fuzzy, kde-format
 msgid "Geographic position"
 msgstr "फोटोग्राफ रीस्टोरेशन"
 
-#: core/utilities/searchwindow/searchgroup.cpp:208
+#: core/utilities/searchwindow/searchgroup.cpp:209
 #, fuzzy, kde-format
 msgid "Face regions"
 msgstr "कोई चयन नहीं"
@@ -60113,7 +60142,7 @@ msgctxt "@title:tab"
 msgid "Baloo"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:32
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:35
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -60124,31 +60153,31 @@ msgid ""
 "information when moving or sending the files to different systems.</para>"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:42
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Write This Information to the Metadata"
 msgstr "इन फ़ाइलों के लिए एक्ज़इफ ओरिएन्टेशन सुधारने में असफल:"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Image tags"
 msgstr "विन्यास"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:46
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item tags in the XMP and IPTC tags."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
 msgstr "छवि कैप्चर करें..."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -60156,13 +60185,13 @@ msgid ""
 "section, the Exif tag, the XMP tag, and the IPTC tag."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Rating"
 msgstr "रेटिंग"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:57
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -60170,37 +60199,37 @@ msgid ""
 "tags."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
 msgstr "पिक्सेल्स:"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Color label"
 msgstr "रंग गहराईः"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
 #, kde-format
 msgctxt "@option:check"
 msgid "Timestamps"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -60208,13 +60237,13 @@ msgid ""
 "IPTC tags."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata templates (Copyright etc.)"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -60222,26 +60251,26 @@ msgid ""
 "tags. You can set template values to Template setup page."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store face tags with face rectangles in the XMP tags."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:91
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
 msgstr "फ़ोटोग्राफ जानकारी"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:92
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -60249,19 +60278,19 @@ msgid ""
 "XMP tags."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:112
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Reading and Writing Metadata"
 msgstr "वक्र मुक्त मोड"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -60270,26 +60299,26 @@ msgid ""
 "with database."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "प्रत्येक फ़ाइल में मेटाडाटा लिखें"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:128
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:125
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "प्रत्येक फ़ाइल में मेटाडाटा लिखें"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -60297,13 +60326,13 @@ msgid ""
 "delegate to ExifTool backend and is disabled by default."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:135
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
 #, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -60312,13 +60341,13 @@ msgid ""
 "digikam exit"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:147
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -60328,13 +60357,13 @@ msgid ""
 "properties to detect file modifications automatically."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:155
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:157
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -60344,19 +60373,19 @@ msgid ""
 "when digiKam starts."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:226
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:230
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "write limitations"
 msgstr "इंटरफ़ेस विकल्प"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -60364,7 +60393,7 @@ msgid ""
 "for details."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:240
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
@@ -60586,13 +60615,12 @@ msgstr "<p>छवि फ़ाइल नाम प्रदर्शित क�
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
-"digiKam (optionally) writes metadata to *.xmp sidecar\n"
-"files. Other programs might use different types, which\n"
-"can be specified below. digiKam will neither display these\n"
-"nor read from or write to them. But whenever a matching album\n"
-"item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-"moved, copied or deleted, the same operation will be done\n"
-"on these sidecar files.\n"
+"digiKam (optionally) writes metadata to *.xmp sidecar files. Other programs "
+"might use different types, which can be specified below. digiKam will "
+"neither display these nor read from or write to them. But whenever a "
+"matching album item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
+"moved, copied or deleted, the same operation will be done on these sidecar "
+"files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 
@@ -61966,6 +61994,22 @@ msgstr "<p>सभी फ़िल्टर पैरामीटर को उ�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "<p>सभी फ़िल्टर पैरामीटर को उनके डिफ़ॉल्ट मूल्य में रीसेट करें."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "निर्यात"
+
+#, fuzzy
+#~| msgid "GPS Sync"
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "जीपीएस सिंक"
+
+#, fuzzy
+#~ msgctxt "@info:whatsthis"
+#~ msgid "Visit Exiv2 project website"
+#~ msgstr "डिज़ीकैम परियोजना वेबसाइट में जाएं"
 
 #, fuzzy
 #~ msgctxt "@label: item properties"

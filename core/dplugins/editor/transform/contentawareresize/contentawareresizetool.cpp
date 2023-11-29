@@ -456,8 +456,17 @@ ContentAwareResizeTool::ContentAwareResizeTool(QObject* const parent)
     connect(d->weightMaskBox, SIGNAL(stateChanged(int)),
             this, SLOT(slotWeightMaskBoxStateChanged(int)));
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+    connect(d->maskGroup, SIGNAL(idClicked(int)),
+            this, SLOT(slotMaskColorChanged(int)));
+
+#else
+
     connect(d->maskGroup, SIGNAL(buttonClicked(int)),
             this, SLOT(slotMaskColorChanged(int)));
+
+#endif
 
     connect(d->maskPenSize, SIGNAL(valueChanged(int)),
             this, SLOT(slotMaskPenSizeChanged(int)));

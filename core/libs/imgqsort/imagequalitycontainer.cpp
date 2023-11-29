@@ -93,7 +93,7 @@ ImageQualityContainer::~ImageQualityContainer()
 void ImageQualityContainer::readFromConfig()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Image Quality Settings");
+    KConfigGroup group        = config->group(QLatin1String("Image Quality Settings"));
     readFromConfig(group);
 }
 
@@ -119,7 +119,7 @@ void ImageQualityContainer::readFromConfig(const KConfigGroup& group)
 void ImageQualityContainer::writeToConfig()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Image Quality Settings");
+    KConfigGroup group        = config->group(QLatin1String("Image Quality Settings"));
     writeToConfig(group);
 }
 

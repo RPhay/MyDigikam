@@ -158,7 +158,7 @@ RenameCustomizer::RenameCustomizer(QWidget* const parent, const QString& cameraT
 
     // -- setup connections -------------------------------------------------
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
     connect(d->buttonGroup, SIGNAL(idClicked(int)),
             this, SLOT(slotRadioButtonClicked(int)));
@@ -302,7 +302,7 @@ void RenameCustomizer::readSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
 
-    KConfigGroup group   = config->group("Camera Settings");
+    KConfigGroup group   = config->group(QLatin1String("Camera Settings"));
     int def              = group.readEntry("Rename Method",        0);
     int chcaseT          = group.readEntry("Case Type",            (int)NONE);
     QString manualRename = group.readEntry("Manual Rename String", QString());
@@ -316,7 +316,7 @@ void RenameCustomizer::saveSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
 
-    KConfigGroup group = config->group("Camera Settings");
+    KConfigGroup group = config->group(QLatin1String("Camera Settings"));
     group.writeEntry("Rename Method",        d->buttonGroup->checkedId());
     group.writeEntry("Case Type",            d->renameDefaultCaseType->currentIndex());
     group.writeEntry("Manual Rename String", d->advancedRenameWidget->parseString());

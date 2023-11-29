@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 01:11+0000\n"
-"PO-Revision-Date: 2023-10-21 13:54\n"
+"POT-Creation-Date: 2023-11-29 00:40+0000\n"
+"PO-Revision-Date: 2023-11-25 02:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -328,17 +328,17 @@ msgstr "指定标签“%1”到图像"
 #: core/app/filters/filtersidebarwidget.cpp:143
 #, kde-format
 msgid "Text Filter"
-msgstr "文本筛选器"
+msgstr "文本过滤器"
 
 #: core/app/filters/filtersidebarwidget.cpp:149
 #, kde-format
 msgid "MIME Type Filter"
-msgstr "MIME 类型筛选器"
+msgstr "MIME 类型过滤器"
 
 #: core/app/filters/filtersidebarwidget.cpp:155
 #, kde-format
 msgid "Geolocation Filter"
-msgstr "地理位置筛选器"
+msgstr "地理位置过滤器"
 
 #: core/app/filters/filtersidebarwidget.cpp:172
 #, kde-format
@@ -361,7 +361,7 @@ msgstr "标签匹配条件"
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
 "This also includes the '%1' check box."
-msgstr "指定如何结合多个选中的标签来对图像进行筛选，“%1”复选框勾选时也生效。"
+msgstr "指定如何结合多个选中的标签来对图像进行过滤，“%1”复选框勾选时也生效。"
 
 #: core/app/filters/filtersidebarwidget.cpp:187
 #: core/utilities/searchwindow/searchgroup_label.cpp:301
@@ -378,7 +378,7 @@ msgstr "与"
 #: core/app/filters/filtersidebarwidget.cpp:205
 #, kde-format
 msgid "Tags Filter"
-msgstr "标签筛选器"
+msgstr "标签过滤器"
 
 #: core/app/filters/filtersidebarwidget.cpp:222
 #, kde-format
@@ -398,18 +398,18 @@ msgstr "人脸标签匹配条件"
 #: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid "Face Tags Filter"
-msgstr "人脸标签筛选器"
+msgstr "人脸标签过滤器"
 
 #: core/app/filters/filtersidebarwidget.cpp:267
 #, kde-format
 msgid "Labels Filter"
-msgstr "标记筛选器"
+msgstr "标记过滤器"
 
 #: core/app/filters/tagfilterview.cpp:72
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
-msgstr "还原标签筛选器"
+msgstr "还原标签过滤器"
 
 #: core/app/filters/tagfilterview.cpp:73
 #, kde-format
@@ -427,7 +427,7 @@ msgstr "关闭"
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
-msgstr "标签筛选模式"
+msgstr "标签过滤模式"
 
 #: core/app/filters/tagfilterview.cpp:77
 #, kde-format
@@ -497,7 +497,7 @@ msgstr "全屏显示"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rotate Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:63
 #: core/app/views/preview/itempreviewview.cpp:192
@@ -505,7 +505,7 @@ msgstr "向左旋转"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rotate Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/app/items/overlays/itemselectionoverlay.cpp:49
 #, kde-format
@@ -1117,7 +1117,7 @@ msgid "White Balance:"
 msgstr "白平衡："
 
 #: core/app/items/utils/tooltipfiller.cpp:313
-#: core/utilities/searchwindow/searchgroup.cpp:116
+#: core/utilities/searchwindow/searchgroup.cpp:117
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "音频/视频属性"
@@ -1233,7 +1233,7 @@ msgstr "预览："
 #: core/app/items/utils/tooltipfiller.cpp:649
 #, kde-format
 msgid "Filter"
-msgstr "筛选"
+msgstr "过滤"
 
 #: core/app/items/utils/tooltipfiller.cpp:664
 #, kde-format
@@ -1926,14 +1926,14 @@ msgstr "勾选此项将展开显示所有分组中的项目。"
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
-msgstr "排序方式(&S)"
+msgstr "项目排序(&S)"
 
 #: core/app/main/digikamapp_setup.cpp:582
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
-msgstr "相册缩略图视图的排序方式"
+msgstr "图像在相册缩略图视图中的排序方式"
 
 #: core/app/main/digikamapp_setup.cpp:587
 #, kde-format
@@ -2253,43 +2253,43 @@ msgstr "正常"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
-msgstr "水平翻转"
+msgstr "翻转 (水平)"
 
 #: core/app/main/digikamapp_setup.cpp:979
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
-msgstr "180 度旋转"
+msgstr "旋转 (180 度)"
 
 #: core/app/main/digikamapp_setup.cpp:981
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
-msgstr "垂直翻转"
+msgstr "翻转 (垂直)"
 
 #: core/app/main/digikamapp_setup.cpp:983
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
-msgstr "向右旋转/水平翻转"
+msgstr "旋转 (向右) / 翻转 (水平)"
 
 #: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/app/main/digikamapp_setup.cpp:987
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
-msgstr "向右旋转/垂直翻转"
+msgstr "旋转 (向右) / 翻转 (垂直)"
 
 #: core/app/main/digikamapp_setup.cpp:989
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/app/main/digikamapp_setup.cpp:1050
 #, kde-format
@@ -2301,13 +2301,13 @@ msgstr "旋转"
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/app/main/digikamapp_setup.cpp:1061
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/app/main/digikamapp_setup.cpp:1071
 #, kde-format
@@ -2319,13 +2319,13 @@ msgstr "翻转"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
-msgstr "水平翻转"
+msgstr "水平"
 
 #: core/app/main/digikamapp_setup.cpp:1082
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
-msgstr "垂直翻转"
+msgstr "垂直"
 
 #: core/app/main/digikamapp_setup.cpp:1092
 #, kde-format
@@ -2555,7 +2555,7 @@ msgstr "帮助(&H)"
 msgid "Main Toolbar"
 msgstr "主工具栏"
 
-#: core/app/main/main.cpp:187 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2565,7 +2565,7 @@ msgstr "主工具栏"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:196 core/showfoto/main/main.cpp:163
+#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:170
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2573,43 +2573,43 @@ msgstr ""
 "Tyson Tan (谭代山/钛山), CoelacanthusHex, Feng Chao, Funda Wang, Guo Yunhe, "
 "millionart, Ni Hui, sanfanling, Weng Xuetian, YFdyh000, 李子"
 
-#: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
+#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:171
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-"tysontan@tysontan.com, CoelacanthusHex@kde.org, chaofeng111@gmail.com, "
+"tds00@qq.com, CoelacanthusHex@kde.org, chaofeng111@gmail.com, "
 "fundawang@linux.net.cn, i@guoyunhe.me, millionart@kde.org, "
 "shuizhuyuanluo@126.com, xujia19@gmail.com, wengxt@gmail.com, YFdyh000@kde."
 "org, bingling00@kde.org"
 
-#: core/app/main/main.cpp:205
+#: core/app/main/main.cpp:212
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "打开位于 \"path\" 的相机对话框"
 
-#: core/app/main/main.cpp:208
+#: core/app/main/main.cpp:215
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "打开 Solid UDI 为 \"udi\" 设备的相机对话框"
 
-#: core/app/main/main.cpp:211
+#: core/app/main/main.cpp:218
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "自动检测并打开已连接的 gphoto2 相机"
 
-#: core/app/main/main.cpp:213
+#: core/app/main/main.cpp:220
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "启动 digiKam 时使用在 \"dir\" 目录中发现的 SQLite 数据库文件"
 
-#: core/app/main/main.cpp:216
+#: core/app/main/main.cpp:223
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "启动 digiKam 时使用名为 \"config\" 的配置文件"
 
-#: core/app/main/main.cpp:243
+#: core/app/main/main.cpp:250
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2619,7 +2619,7 @@ msgstr ""
 "<p>您正在 64 位 Windows 操作系统中运行 32 位版本的 digiKam。</p><p>请安装 64 "
 "位版本的 digiKam 以获得更好的使用体验。</p>"
 
-#: core/app/main/main.cpp:285
+#: core/app/main/main.cpp:292
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2629,7 +2629,7 @@ msgstr ""
 "Qt SQLite 运行时组件或 MySQL 数据库插件不可用。请安装该组件。\n"
 "本机并未安装任何数据库插件。"
 
-#: core/app/main/main.cpp:294
+#: core/app/main/main.cpp:301
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2639,7 +2639,7 @@ msgstr ""
 "Qt SQLite 运行时组件或 MySQL 数据库插件不可用。请安装该组件。\n"
 "本机已安装的数据库插件如下："
 
-#: core/app/main/main.cpp:334
+#: core/app/main/main.cpp:341
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2730,7 +2730,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:233
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2738,7 +2738,7 @@ msgstr "后退"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:235
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -2815,7 +2815,7 @@ msgstr "地图"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:119
 #: core/libs/album/widgets/albumselecttabs.cpp:194
-#: core/utilities/searchwindow/searchfields_createfield.cpp:141
+#: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Labels"
 msgstr "标记"
@@ -2997,7 +2997,7 @@ msgstr[0] "%1 项"
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
-msgstr "筛选"
+msgstr "过滤"
 
 #: core/app/views/stack/itemiconview_albums.cpp:318
 #, kde-format
@@ -3549,7 +3549,7 @@ msgstr "音频声道"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:944
+#: core/utilities/searchwindow/searchfields_createfield.cpp:955
 #: core/utilities/setup/setuptooltip.cpp:319
 #, kde-format
 msgid "Audio Codec"
@@ -3557,7 +3557,7 @@ msgstr "音频编码"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:814
 #, kde-format
 msgid "Duration"
 msgstr "时间长度"
@@ -3842,14 +3842,14 @@ msgstr "项目属性"
 
 #: core/app/views/tableview/tableview_column_item.cpp:75
 #: core/app/views/tableview/tableview_column_item.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:201
+#: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Width"
 msgstr "宽度"
 
 #: core/app/views/tableview/tableview_column_item.cpp:76
 #: core/app/views/tableview/tableview_column_item.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:219
+#: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Height"
 msgstr "高度"
@@ -5779,10 +5779,9 @@ msgid "Enter caption text here."
 msgstr "在此输入说明文字。"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Clean up and overwrite"
+#, kde-format
 msgid "Clean up and overwrite metadata"
-msgstr "清空并覆盖"
+msgstr "清理和覆盖元数据"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -6224,7 +6223,7 @@ msgstr "翻转"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to flip images horizontally or vertically"
-msgstr "水平或者垂直翻转图像"
+msgstr "翻转图像 (水平/垂直)"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:66
 #, kde-kuit-format
@@ -6470,7 +6469,6 @@ msgstr "HEIC 高效率图像编码"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6479,6 +6477,7 @@ msgstr "HEIC 高效率图像编码"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
@@ -6493,7 +6492,6 @@ msgstr "是"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6502,6 +6500,7 @@ msgstr "是"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
@@ -6515,47 +6514,11 @@ msgstr "是"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, kde-format
 msgctxt "@info: cannot write file format"
-msgid "no"
-msgstr "否"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
-#, kde-format
-msgctxt "@title"
-msgid "ImageMagick loader"
-msgstr "ImageMagick 加载程序"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
-#, kde-format
-msgctxt "@info"
-msgid "An image loader based on ImageMagick coders"
-msgstr "基于 ImageMagick 编解码器的图像加载程序"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
-#, kde-kuit-format
-msgctxt "@info"
-msgid ""
-"<para>This plugin allows users to load and save image using ImageMagick "
-"coders.</para><para>ImageMagick is a free and open-source software suite for "
-"converting raster image and vector image files. It can read and write over "
-"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
-"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
-msgstr ""
-"<para>用于通过 ImageMagick 编解码器加载和保存图像的插件。</para> "
-"<para>ImageMagick 是一套自由开源的软件集合，用于转换光栅图像和矢量图形文件。"
-"它可以读取和写入 200 多种图像文件格式。</para> <para>详情请参见 <a "
-"href='https://en.wikipedia.org/wiki/ImageMagick'>ImageMagick 介绍页面</a>。</"
-"para>"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:59
-#: core/libs/dplugins/core/dplugindimg.cpp:71
-#, kde-format
-msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "否"
 
@@ -6755,6 +6718,42 @@ msgstr "JPEG-2000 图像流"
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
 msgstr "JPEG-2000 验证模型"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:86
+#, kde-format
+msgctxt "@title"
+msgid "ImageMagick loader"
+msgstr "ImageMagick 加载程序"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:101
+#, kde-format
+msgctxt "@info"
+msgid "An image loader based on ImageMagick coders"
+msgstr "基于 ImageMagick 编解码器的图像加载程序"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:106
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>This plugin allows users to load and save image using ImageMagick "
+"coders.</para><para>ImageMagick is a free and open-source software suite for "
+"converting raster image and vector image files. It can read and write over "
+"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
+"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
+msgstr ""
+"<para>用于通过 ImageMagick 编解码器加载和保存图像的插件。</para> "
+"<para>ImageMagick 是一套自由开源的软件集合，用于转换光栅图像和矢量图形文件。"
+"它可以读取和写入 200 多种图像文件格式。</para> <para>详情请参见 <a "
+"href='https://en.wikipedia.org/wiki/ImageMagick'>ImageMagick 介绍页面</a>。</"
+"para>"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/libs/dplugins/core/dplugindimg.cpp:59
+#: core/libs/dplugins/core/dplugindimg.cpp:71
+#, kde-format
+msgctxt "@info: cannot read file format"
+msgid "no"
+msgstr "否"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:68
 #, kde-format
@@ -7285,29 +7284,29 @@ msgid ""
 "channel will be reset to the default values."
 msgstr "点击此按钮后，当前所选通道的所有色阶数值将被重置为默认值。"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:883
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:893
 #, kde-format
 msgid "Adjust Levels"
 msgstr "色阶调整"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:900
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "选择要加载的 GIMP 色阶文件"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:912
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "无法加载 GIMP 色阶文本文件。"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:927
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "要保存的 GIMP 色阶文件"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:939
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "无法保存 GIMP 色阶文本文件。"
@@ -7746,7 +7745,7 @@ msgstr "色彩管理功能已禁用..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:80
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:207
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "White Balance"
 msgstr "白平衡"
@@ -7897,17 +7896,17 @@ msgstr "半透明背景色"
 msgid "Use semi-transparent text background under image"
 msgstr "在文字下方显示半透明背景色。"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:317
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:326
 #, kde-format
 msgid "Enter your text here."
 msgstr "输入要插入的文字。"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:426
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:435
 #, kde-format
 msgid "Insert Text Tool"
 msgstr "文字插入工具"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:439
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:448
 #, kde-format
 msgid "Insert Text"
 msgstr "插入文字"
@@ -8494,7 +8493,19 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "锐化..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, kde-format
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr "没有可用的打印机"
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr "本机系统并未安装打印机。请安装至少一台打印机。"
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
@@ -9558,7 +9569,7 @@ msgstr "能量函数"
 msgid "Advanced Settings"
 msgstr "高级设置"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:769
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:778
 #, kde-format
 msgid "Liquid Rescale"
 msgstr "内容感知缩放"
@@ -10069,7 +10080,7 @@ msgstr "勾选此项将显示黄金三角线。"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:446
 #, kde-format
 msgid "Flip horizontally"
-msgstr "水平翻转"
+msgstr "翻转 (水平)"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:447
 #, kde-format
@@ -10079,7 +10090,7 @@ msgstr "勾选此项将水平翻转显示参考线。"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:449
 #, kde-format
 msgid "Flip vertically"
-msgstr "垂直翻转"
+msgstr "翻转 (垂直)"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:450
 #, kde-format
@@ -10330,8 +10341,8 @@ msgid ""
 msgstr "<b>提示：</b>使用照片还原算法对图像进行放大。该处理可能需要较长时间。"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:629
-#: core/utilities/searchwindow/searchfields_createfield.cpp:203
-#: core/utilities/searchwindow/searchfields_createfield.cpp:221
+#: core/utilities/searchwindow/searchfields_createfield.cpp:214
+#: core/utilities/searchwindow/searchfields_createfield.cpp:232
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -10631,7 +10642,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "无法保存“%1”文件"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -10658,14 +10671,14 @@ msgstr "单地图"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
 #, kde-format
 msgctxt "@item"
-msgid "Two maps - horizontal"
-msgstr "双地图 - 水平"
+msgid "Two maps - left and right"
+msgstr "双地图 - 左侧和右侧"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@item"
-msgid "Two maps - vertical"
-msgstr "双地图-垂直"
+msgid "Two maps - top and bottom"
+msgstr "双地图 - 顶部和底部"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format
@@ -10753,7 +10766,7 @@ msgid "Saving changes -"
 msgstr "正在保存更改 -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:247
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
@@ -11500,8 +11513,8 @@ msgstr[0] "<p>%1 个字符。</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -15554,8 +15567,8 @@ msgstr "目标文件"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:327
-#: core/utilities/searchwindow/searchfields_createfield.cpp:358
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
+#: core/utilities/searchwindow/searchfields_createfield.cpp:369
 #, kde-format
 msgid "Camera"
 msgstr "相机"
@@ -18542,65 +18555,65 @@ msgstr "不支持的纸张尺寸"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, kde-format
-msgctxt "Output: PDF"
-msgid "Print to PDF"
-msgstr "打印为 PDF 文件"
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "打印为图像文件"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, kde-format
+msgctxt "Output: PDF"
+msgid "Print to PDF"
+msgstr "打印为 PDF 文件"
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "通过 GIMP 进行打印"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "无说明文字"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "图像文件名称"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "EXIF 日期-时间"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "项目注释"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
@@ -18651,7 +18664,7 @@ msgstr ""
 "在相册中选择。</p><p>可以使用多种纸张尺寸预设和布局方式来处理图像文件。</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:719
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, kde-format
 msgid "Author"
 msgstr "开发人员"
@@ -18770,14 +18783,7 @@ msgstr "字体："
 
 #. i18n: ectx: property (whatsThis), widget (DigikamGenericPrintCreatorPlugin::AdvPrintCropFrame, cropFrame)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Move the box in order to crop photos so that they fit inside the photo "
-#| "sizes you have given.  \n"
-#| "You can crop each image differently, or just click the 'Next' button to "
-#| "use the default crop \n"
-#| "setting for each photo.\n"
-#| "Enable \"Do not crop\" to avoid cropping all of the photos."
+#, kde-format
 msgid ""
 "Move the box in order to crop photos so that they fit inside the photo sizes "
 "you have given.  \n"
@@ -18809,13 +18815,13 @@ msgstr "不进行裁剪"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:69
 #, kde-format
 msgid "Rotate photo to the left"
-msgstr "向左旋转照片"
+msgstr "旋转照片 (向左)"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateLeft)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:72
 #, kde-format
 msgid "Rotate &left"
-msgstr "向左旋转(&L)"
+msgstr "旋转 (向左)(&L)"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropRotateRight)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropRotateRight)
@@ -18823,13 +18829,13 @@ msgstr "向左旋转(&L)"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:82
 #, kde-format
 msgid "Rotate photo to the right"
-msgstr "向右旋转照片"
+msgstr "旋转照片 (向右)"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateRight)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:85
 #, kde-format
 msgid "Rotate &right"
-msgstr "向右旋转(&R)"
+msgstr "旋转 (向右)(&R)"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, BtnPreviewPageDown)
 #. i18n: ectx: property (whatsThis), widget (QToolButton, BtnPreviewPageDown)
@@ -20096,21 +20102,22 @@ msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "OpenGL 图像查看器"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
 #, kde-format
 msgid "OpenGL Error"
 msgstr "OpenGL 错误"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
 #, kde-format
-msgid "GL_ARB_texture_rectangle not supported"
-msgstr "GL_ARB_texture_rectangle 不支持"
+msgid ""
+"GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
+msgstr "本机系统不支持 GL_ARB_texture_rectangle OpenGL 扩展"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context found"
-msgstr "未找到 OpenGL 环境"
+msgid "No OpenGL context has been found"
+msgstr "没有找到 OpenGL 环境"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
 #, kde-format
@@ -20118,101 +20125,101 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "音轨预览"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:98
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
 "automatically on the next startup."
 msgstr "勾选此项后，当前相册的音轨将被保存，并在下次启动时自动恢复。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
 #, kde-format
 msgid "Move the selected track up in the playlist."
 msgstr "上移播放列表曲目。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:126
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
 #, kde-format
 msgid "Move the selected track down in the playlist."
 msgstr "下移播放列表曲目。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:127
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
 #, kde-format
 msgid "Add new tracks to the playlist."
 msgstr "添加新曲目到播放列表。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:128
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
 #, kde-format
 msgid "Delete the selected track from the playlist."
 msgstr "删除播放列表所选曲目。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:129
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:123
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "加载播放列表文件。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:130
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:124
 #, kde-format
 msgid "Save playlist to a file."
 msgstr "保存播放列表为文件。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:131
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
 #, kde-format
 msgid "Clear the playlist."
 msgstr "清除播放列表。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:264
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:258
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
 msgid_plural "%1 tracks [%2]"
 msgstr[0] "%1 首曲目 [%2]"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:292
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:286
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
 msgstr "幻灯片播放时间超过音轨时长。建议添加更多曲目。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "选择声音文件"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:424
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr "您每次只能上移一张图像文件。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:468
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:462
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr "您每次只能下移一张图像文件。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:483
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "加载播放列表"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:484
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:543
 #, kde-format
 msgid "Playlist (*.m3u)"
 msgstr "播放列表 (*.m3u)"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:542
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "保存播放列表"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:603
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr "无法访问文件“%1”。请检查路径是否正确。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:619
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:613
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr "无法创建空文件列表的预览。"
@@ -20309,24 +20316,25 @@ msgstr "幻灯片："
 msgid "Soundtrack:"
 msgstr "音轨："
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
-#, kde-format
-msgid "No detail available"
-msgstr "无可用详情"
-
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:194
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:236
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:257
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:215
+#, kde-format
+msgid "No detail available"
+msgstr "无可用详情"
+
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:248
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 可能无法播放。"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:256
 #, kde-format
 msgid "This file may not be playable."
 msgstr "此文件可能无法播放。"
@@ -20364,10 +20372,10 @@ msgstr "下一张"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:70
-#: core/utilities/searchwindow/searchfields_createfield.cpp:176
+#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
 #, kde-format
-msgid "Time"
-msgstr "时间"
+msgid "Time:"
+msgstr "时间："
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:79
@@ -20389,6 +20397,13 @@ msgstr "0:00:00"
 msgctxt "Total amount of time of presentation"
 msgid "Total:"
 msgstr "总计时间："
+
+#. i18n: ectx: property (text), widget (QLabel, m_soundLabel)
+#: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:115
+#, fuzzy, kde-format
+#| msgid "Columns"
+msgid "Volumes:"
+msgstr "列数"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:23
@@ -20528,7 +20543,7 @@ msgid "Image #%1"
 msgstr "第 %1 张图像"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:679
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:685
 #, kde-format
 msgid "Ken Burns"
 msgstr "肯·伯恩斯特效"
@@ -20671,82 +20686,82 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "高级"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
 #, kde-format
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "无"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "挤压"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
 #, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "混合"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "立方体"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "渐隐渐显"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "晃动"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "飞入飞出"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
 #, kde-format
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "旋转"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:577
 #, kde-format
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "滑动"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:578
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1035
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "随机"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
 #, kde-format
 msgid "Slideshow Completed"
 msgstr "幻灯片放映已结束"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:632
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:880
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:638
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:869
 #, kde-format
 msgid "Click to Exit..."
 msgstr "点击退出..."
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:637
 #, kde-format
 msgid "SlideShow Completed"
 msgstr "幻灯片放映已结束"
@@ -20796,27 +20811,27 @@ msgctxt "@action"
 msgid "Presentation..."
 msgstr "演示..."
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:230
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "指定幻灯片放映延迟"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:231
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:249
 #, kde-format
 msgid "Delay:"
 msgstr "延迟："
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:411
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "删除图像"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:257
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:412
 #, kde-format
 msgid "Do you want to move this image to the trash?"
@@ -23455,7 +23470,7 @@ msgid "This is the list of images to upload to an iNaturalist observation."
 msgstr "这是要上传到 iNaturalist 观察记录的图像列表。"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, kde-format
 msgid "Date"
 msgstr "日期"
@@ -25523,9 +25538,9 @@ msgid "Reset curve to linear"
 msgstr "重置曲线为直线"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
-#: core/utilities/searchwindow/searchfields_createfield.cpp:461
-#: core/utilities/searchwindow/searchfields_createfield.cpp:482
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:472
+#: core/utilities/searchwindow/searchfields_createfield.cpp:493
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "Exposure"
 msgstr "曝光时间"
@@ -27157,7 +27172,7 @@ msgstr "上次搜索结果 (0.9)"
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1230
 #, kde-format
 msgid "Initialized and imported file suffix filter"
-msgstr "已初始化并已导入文件后缀筛选器"
+msgstr "已初始化并已导入文件后缀过滤器"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1252
 #, kde-format
@@ -27359,10 +27374,9 @@ msgid "Database type is not supported."
 msgstr "数据库类型不支持。"
 
 #: core/libs/database/server/databaseserver.cpp:296
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file."
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
-msgstr "配置文件中并未设置 MySQL 服务器命令的路径。"
+msgstr "配置文件中并未设置 MySQL 升级命令的路径。"
 
 #: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
@@ -27402,11 +27416,9 @@ msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "无法找到 MySQL 服务器的默认配置文件 (mysql-global.conf)。"
 
 #: core/libs/database/server/databaseserver.cpp:503
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
-msgstr "正在处理，请稍候。"
+msgstr "内建 MySQL 数据库正在初始化，请稍候..."
 
 #: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
@@ -27440,11 +27452,9 @@ msgid ""
 msgstr "无法创建数据库<p>查询错误：%1</p><p>数据库错误：%2</p>"
 
 #: core/libs/database/server/databaseserver.cpp:750
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
-msgstr "正在处理，请稍候。"
+msgstr "正在进行 MySQL 数据库升级，请稍候..."
 
 #: core/libs/database/server/databaseserver.cpp:794
 #, kde-format
@@ -28361,12 +28371,10 @@ msgid ""
 msgstr "此可执行文件用于启动一个 MariaDB 服务器的专用实例。"
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to upgrade the database to current server version."
-msgstr "此可执行文件用于启动一个 MariaDB 服务器的专用实例。"
+msgstr "此二进制文件用于将数据库升级到当前服务器的版本。"
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
@@ -28660,49 +28668,49 @@ msgctxt "@title"
 msgid "Features"
 msgstr "功能"
 
-#: core/libs/dialogs/libsinfodlg.cpp:189
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "程序库"
 
-#: core/libs/dialogs/libsinfodlg.cpp:276
+#: core/libs/dialogs/libsinfodlg.cpp:279
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/dialogs/libsinfodlg.cpp:357
+#: core/libs/dialogs/libsinfodlg.cpp:360
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:388
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "清单"
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:416
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV 配置"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:599
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:604
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:609
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -30084,27 +30092,27 @@ msgstr "设置合并纹理到图像时的浮雕效果。"
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:387
 #, kde-format
 msgid "Rotate Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:392
 #, kde-format
 msgid "Rotate 180 degrees"
-msgstr "180 度旋转"
+msgstr "旋转 (180 度)"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:397
 #, kde-format
 msgid "Rotate Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:402
 #, kde-format
 msgid "Flip Horizontally"
-msgstr "水平翻转"
+msgstr "翻转 (水平)"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:407
 #, kde-format
 msgid "Flip Vertically"
-msgstr "垂直翻转"
+msgstr "翻转 (垂直)"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:412
 #, kde-format
@@ -33195,7 +33203,7 @@ msgstr "正在应用元数据"
 #: core/libs/fileactionmanager/fileactionmngr.cpp:269
 #, kde-format
 msgid "Rotating images"
-msgstr "正在旋转图像"
+msgstr "旋转图像"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:285
 #, kde-format
@@ -33261,25 +33269,25 @@ msgid ""
 "Press the Reset button from the right side to clear all filter settings.\n"
 "Press the Settings button from the right side to open the filters panel."
 msgstr ""
-"图像筛选器的状态栏背景色反映了右侧栏筛选器选项的整体情况。\n"
+"图像过滤器的状态栏背景色反映了右侧栏过滤器选项的整体情况。\n"
 "\n"
-"无色：无生效的筛选器，显示全部项目。\n"
-"红色：有生效的筛选器，无匹配的项目。\n"
-"绿色：有生效的筛选器，有匹配的项目。\n"
+"无色：无生效的过滤器，显示全部项目。\n"
+"红色：有生效的过滤器，无匹配的项目。\n"
+"绿色：有生效的过滤器，有匹配的项目。\n"
 "\n"
-"将鼠标悬停在其提示文字上访即可查看生效筛选器的详情。\n"
-"点击“垃圾桶”按钮将清空所有筛选器。\n"
-"点击“漏斗”按钮将打开右侧栏的筛选器面板。"
+"将鼠标悬停在其提示文字上访即可查看生效过滤器的详情。\n"
+"点击“垃圾桶”按钮将清空所有过滤器。\n"
+"点击“漏斗”按钮将打开右侧栏的过滤器面板。"
 
 #: core/libs/filters/filterstatusbar.cpp:87
 #, kde-format
 msgid "Reset all active filters"
-msgstr "清空所有筛选器"
+msgstr "清空所有过滤器"
 
 #: core/libs/filters/filterstatusbar.cpp:93
 #, kde-format
 msgid "Open filter settings panel"
-msgstr "打开筛选器面板"
+msgstr "打开过滤器面板"
 
 #: core/libs/filters/filterstatusbar.cpp:124
 #, kde-format
@@ -33319,33 +33327,33 @@ msgstr "<br/><nobr>标签</nobr>"
 #: core/libs/filters/filterstatusbar.cpp:159
 #, kde-format
 msgid "<nobr><b>Active filters:</b></nobr>"
-msgstr "<nobr><b>生效筛选器：</b></nobr>"
+msgstr "<nobr><b>生效的过滤器：</b></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:163
 #, kde-format
 msgid "<nobr><b>Active filter:</b></nobr>"
-msgstr "<nobr><b>生效筛选器：</b></nobr>"
+msgstr "<nobr><b>生效的过滤器：</b></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:170
 #, kde-format
 msgid "No active filter"
-msgstr "无生效筛选器"
+msgstr "没有生效的过滤器"
 
 #: core/libs/filters/filterstatusbar.cpp:179
 #, kde-format
 msgid "One active filter"
-msgstr "1 个筛选器正在生效"
+msgstr "1 个过滤器正在生效"
 
 #: core/libs/filters/filterstatusbar.cpp:183
 #, kde-format
 msgid "1 active filter"
 msgid_plural "%1 active filters"
-msgstr[0] "%1 个筛选器正在生效"
+msgstr[0] "%1 个过滤器正在生效"
 
 #: core/libs/filters/geolocationfilter.cpp:28
 #, kde-format
 msgid "No geo filtering"
-msgstr "无地理位置筛选"
+msgstr "没有地理位置过滤"
 
 #: core/libs/filters/geolocationfilter.cpp:29
 #, kde-format
@@ -33360,7 +33368,7 @@ msgstr "无地理坐标图像"
 #: core/libs/filters/geolocationfilter.cpp:32
 #, kde-format
 msgid "Filter by geolocation"
-msgstr "按地理位置筛选"
+msgstr "按地理位置过滤"
 
 #: core/libs/filters/geolocationfilter.cpp:33
 #, kde-format
@@ -33458,7 +33466,7 @@ msgstr "光栅图像"
 #: core/libs/filters/mimefilter.cpp:45
 #, kde-format
 msgid "Filter by file type"
-msgstr "按文件类型筛选"
+msgstr "按文件类型过滤"
 
 #: core/libs/filters/mimefilter.cpp:46
 #, kde-format
@@ -33475,7 +33483,7 @@ msgstr ""
 msgid ""
 "Select the rating value used to filter albums' contents. Use the context pop-"
 "up menu to set rating filter conditions."
-msgstr "选择用于筛选相册内容的评分数值。使用右键菜单可以设置评分筛选条件。"
+msgstr "选择用于过滤相册内容的评分数值。使用右键菜单可以设置评分过滤条件。"
 
 #: core/libs/filters/ratingfilter.cpp:182
 #, kde-format
@@ -33495,7 +33503,7 @@ msgstr "评分小于等于 %1。"
 #: core/libs/filters/ratingfilter.cpp:241
 #, kde-format
 msgid "Rating Filter Options"
-msgstr "评分筛选选项"
+msgstr "评分过滤选项"
 
 #: core/libs/filters/ratingfilter.cpp:246
 #, kde-format
@@ -33520,14 +33528,14 @@ msgstr "排除未评分项目"
 #: core/libs/filters/textfilter.cpp:72
 #, kde-format
 msgid "Text quick filter (search)"
-msgstr "文本快速筛选器 (搜索)"
+msgstr "文本快速过滤器 (搜索)"
 
 #: core/libs/filters/textfilter.cpp:73
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
 "(comments), and tags"
-msgstr "输入搜索文本以对项目的名称、说明、注释和标签等进行快速筛选显示。"
+msgstr "输入搜索文本以对项目的名称、说明、注释和标签等进行快速过滤。"
 
 #: core/libs/filters/textfilter.cpp:77
 #, kde-format
@@ -33932,43 +33940,43 @@ msgstr "正常"
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally"
-msgstr "水平翻转"
+msgstr "翻转 (水平)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:871
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated by 180 Degrees"
-msgstr "旋转 180 度"
+msgstr "旋转 (180 度)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:876
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically"
-msgstr "垂直翻转"
+msgstr "翻转 (垂直)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:881
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally and Rotated Left"
-msgstr "水平翻转并向左旋转"
+msgstr "翻转 (水平) 并旋转 (向左)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:886
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:891
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically and Rotated Left"
-msgstr "垂直翻转并向左旋转"
+msgstr "翻转 (垂直) 并旋转 (向左)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:896
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:901
 #, kde-format
@@ -35852,13 +35860,13 @@ msgstr "未定义"
 #: core/libs/widgets/history/filtershistorywidget.cpp:91
 #, kde-format
 msgid "Used filters"
-msgstr "已使用筛选器"
+msgstr "已使用的过滤器"
 
 #: core/libs/properties/history/itempropertieshistorytab.cpp:128
 #: core/libs/widgets/history/filtershistorywidget.cpp:128
 #, kde-format
 msgid "Remove filter"
-msgstr "移除筛选器"
+msgstr "移除过滤器"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:73
 #, kde-format
@@ -35870,7 +35878,7 @@ msgstr "版本"
 #, kde-format
 msgctxt "@title"
 msgid "Used Filters"
-msgstr "已使用筛选器"
+msgstr "已使用的过滤器"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:156
 #, kde-format
@@ -37981,9 +37989,9 @@ msgid ""
 "> You may <b>lose tags</b> if you did not read tags before (by calling Read "
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
-"<qt>digiKam 将在设置标签之前从数据库清理标签元数据。<br/> 如果您在之前尚未读"
-"取标签 (通过调用“读取图像标签”)，您可能会<b>丢失标签</b>。<br/> 您想要继续"
-"吗？</qt>"
+"<qt>digiKam 将在设置来自数据库的标签之前清理文件的标签元数据。<br/> 如果您在"
+"这之前没有读取过文件的标签 (通过调用“读取图像标签”操作)，您可能会<b>丢失标签"
+"</b>。<br/> 您想要继续吗？</qt>"
 
 #: core/libs/tags/manager/tagsmanager.cpp:516
 #: core/libs/tags/manager/tagsmanager.cpp:535
@@ -39683,27 +39691,27 @@ msgid "Default from Desktop"
 msgstr "桌面默认值"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:237
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "暂停/播放"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:239
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "捕获"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:249
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "媒体播放器发生错误..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "打开/关闭循环播放"
@@ -41868,7 +41876,7 @@ msgstr "隐藏状态栏(&A)"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "全屏模式下隐藏状态栏"
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1224
+#: core/libs/widgets/mainview/thememanager_p.cpp:1232
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -42545,21 +42553,21 @@ msgstr "正在加载"
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tags filter options"
-msgstr "标签筛选器选项"
+msgstr "标签过滤器选项"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:154
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:128
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
-msgstr "应用标签筛选器到元数据。"
+msgstr "应用标签过滤器到元数据。"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:159
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:133
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "No filter"
-msgstr "无筛选器"
+msgstr "没有过滤器"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:162
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:136
@@ -42702,7 +42710,7 @@ msgstr "图像信息"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:139
-#: core/utilities/searchwindow/searchgroup.cpp:155
+#: core/utilities/searchwindow/searchgroup.cpp:156
 #: core/utilities/setup/setuptooltip.cpp:232
 #, kde-format
 msgid "Photograph Information"
@@ -42926,7 +42934,7 @@ msgid "Pick"
 msgstr "挑选"
 
 #: core/libs/widgets/metadata/labels/ratingwidget.cpp:574
-#: core/utilities/searchwindow/searchfields_createfield.cpp:149
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
 msgstr "评分"
@@ -47858,19 +47866,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "文件夹"
 
-#: core/showfoto/main/main.cpp:154
+#: core/showfoto/main/main.cpp:161
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:172
+#: core/showfoto/main/main.cpp:179
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "要打开的文件或文件夹"
 
-#: core/showfoto/main/main.cpp:203
+#: core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -48142,14 +48150,7 @@ msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "旋转/翻转后将画面方向标签设为正常。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:117
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:179
-#, kde-format
-msgctxt "@info:whatsthis"
-msgid "Visit Exiv2 project website"
-msgstr "访问 Exiv2 项目网站"
-
-#: core/showfoto/setup/showfotosetupmetadata.cpp:125
+#: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, kde-format
 msgctxt "@info"
@@ -48160,7 +48161,7 @@ msgstr ""
 "这是一套用于在图像中存储技术性信息 (如光圈大小和快门速度) 的元数据规范。绝大"
 "部分现代数码相机均采用此规范。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:123
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, kde-format
 msgctxt "@info"
@@ -48169,21 +48170,21 @@ msgid ""
 "information in images."
 msgstr "一套形成较早的数字摄影规范，用于将摄影师信息存储到图像。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:135
+#: core/showfoto/setup/showfotosetupmetadata.cpp:129
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr "一套较新的数字摄影规范，它被设计来取代 IPTC。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:156
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:216
+#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "行为"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:165
+#: core/showfoto/setup/showfotosetupmetadata.cpp:159
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, kde-format
 msgctxt "@title:tab"
@@ -49239,7 +49240,7 @@ msgstr[0] "重命名 (%1 张图像)"
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:428
 #, kde-format
 msgid "Sort Images"
-msgstr "排序方式"
+msgstr "图像排序"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:71
 #, kde-format
@@ -49735,14 +49736,14 @@ msgid "Lens of the camera"
 msgstr "相机镜头"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:63
-#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:414
 #, kde-format
 msgid "Aperture"
 msgstr "光圈"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:64
-#: core/utilities/searchwindow/searchfields_createfield.cpp:423
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:434
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgid "Focal length"
 msgstr "焦距"
@@ -49753,7 +49754,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "焦距 (35 毫米等效)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:461
+#: core/utilities/searchwindow/searchfields_createfield.cpp:472
 #, kde-format
 msgid "Exposure time"
 msgstr "曝光时间"
@@ -49769,7 +49770,7 @@ msgid "Exposure mode"
 msgstr "曝光模式"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:69
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgid "Sensitivity"
 msgstr "感光度"
@@ -49780,7 +49781,7 @@ msgid "Flash mode"
 msgstr "闪光灯模式"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:563
 #, kde-format
 msgid "White balance"
 msgstr "白平衡"
@@ -49811,14 +49812,14 @@ msgid "Display Aspect Ratio"
 msgstr "显示宽高比"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "音频比特率"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:925
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -49891,7 +49892,7 @@ msgid "Altitude in a human readable form"
 msgstr "人类可读海拔高度值"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:58
-#: core/utilities/searchwindow/searchfields_createfield.cpp:237
+#: core/utilities/searchwindow/searchfields_createfield.cpp:248
 #, kde-format
 msgid "Orientation"
 msgstr "画面方向"
@@ -50013,12 +50014,6 @@ msgstr "来源："
 msgctxt "the format of the date"
 msgid "Format:"
 msgstr "格式："
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
-#, kde-format
-msgid "Time:"
-msgstr "时间："
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:36
 #, kde-format
@@ -51274,6 +51269,7 @@ msgstr "API 密钥："
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Javascript 消息"
 
@@ -51400,6 +51396,12 @@ msgstr "添加文件夹"
 msgid "New Folder"
 msgstr "新建文件夹"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, kde-format
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "书签管理"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -51491,8 +51493,8 @@ msgstr "%1 书签.xbel"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "导出错误"
+msgid "Export Bookmark"
+msgstr "导出书签"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -51818,13 +51820,6 @@ msgstr "移除速度"
 msgid "Look up missing altitude values"
 msgstr "查找缺失海拔"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "GPS 同步"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -52115,6 +52110,12 @@ msgstr "图像标签已更改。"
 msgid "Retrieving RG info -"
 msgstr "正在获取 RG 信息 -"
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, kde-format
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "反向地理编码错误"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
@@ -52142,8 +52143,9 @@ msgstr "1 张图像已被进行反向地理编码。您想要保留已经获取�
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
 #, kde-format
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
-msgstr "要中止反向地理编码吗？"
+msgstr "要中止反向地理编码操作吗？"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:235
 #, kde-format
@@ -52234,12 +52236,12 @@ msgstr "从缩略图创建选中区域"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, kde-format
 msgid "Filter images"
-msgstr "筛选图像"
+msgstr "过滤图像"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
 #, kde-format
 msgid "Remove the current filter"
-msgstr "移除当前筛选器"
+msgstr "移除当前过滤器"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
 #, kde-format
@@ -53026,27 +53028,27 @@ msgstr "此菜单项用于裁剪图像。请先建立选区以使用此操作。
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
-msgstr "水平翻转"
+msgstr "翻转 (水平)"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:534
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
-msgstr "垂直翻转"
+msgstr "翻转 (垂直)"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:544
 #: core/utilities/import/views/importpreviewview.cpp:212
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:552
 #: core/utilities/import/views/importpreviewview.cpp:213
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:584
 #: core/utilities/import/main/importui.cpp:530
@@ -54133,7 +54135,7 @@ msgstr "地图"
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
-msgstr "项目排序条件(&S)"
+msgstr "项目排序(&S)"
 
 #: core/utilities/import/main/importui.cpp:390
 #, kde-format
@@ -54181,7 +54183,7 @@ msgstr "按下载状态"
 #, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
-msgstr "项目排序方式(&O)"
+msgstr "项目排序方向(&O)"
 
 #: core/utilities/import/main/importui.cpp:424
 #, kde-format
@@ -56299,7 +56301,7 @@ msgstr "(未选中数值)"
 msgid "No Rating assigned"
 msgstr "未指定评分"
 
-#: core/utilities/searchwindow/searchfields.cpp:74
+#: core/utilities/searchwindow/searchfields.cpp:76
 #, kde-format
 msgid "Reset contents"
 msgstr "重置内容"
@@ -56428,16 +56430,18 @@ msgid "and"
 msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
+#: core/utilities/searchwindow/searchfields_createfield.cpp:133
 #, kde-format
 msgid "File Size"
 msgstr "文件体积"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
 #, kde-format
-msgid "Size of the file"
-msgstr "文件体积范围"
+msgid "Size of the file in megabytes"
+msgstr "文件大小 (MB)"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:122
+#: core/utilities/searchwindow/searchfields_createfield.cpp:134
 #, kde-format
 msgctxt "Size of the file ...-..."
 msgid "-"
@@ -56445,645 +56449,655 @@ msgstr "到"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
 #, kde-format
+msgid "Size of the file in bytes"
+msgstr "文件大小 (B)"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:144
+#, kde-format
 msgid "Month/Day"
 msgstr "月份/日期"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
 msgid "Return items from a month or a day of the month"
 msgstr "返回某月或者某月某天的项目"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:141
+#: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Return items with labels"
 msgstr "包含标记"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:149
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Return items rated at least"
 msgstr "评分下限"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:150
+#: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, kde-format
 msgctxt "Return items rated at least...at most..."
 msgid "at most"
 msgstr "上限"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, kde-format
 msgid "Return items created between"
 msgstr "创建日期范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:159
+#: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, kde-format
 msgctxt "'Return items created between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:167
+#: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, kde-format
 msgid "Digitization"
 msgstr "数字化时间"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:167
+#: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, kde-format
 msgid "Return items digitized between"
 msgstr "数字化时间范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:168
+#: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, kde-format
 msgctxt "'Return items digitized between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#, kde-format
+msgid "Time"
+msgstr "时间"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
 #, kde-format
 msgid "Return items with created time between"
 msgstr "创建时间范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:177
+#: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, kde-format
 msgctxt "'Return items with created time between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, kde-format
 msgid "Exif Orientation"
 msgstr "EXIF 方向"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, kde-format
 msgid "Find items with orientation flag"
 msgstr "画面方向标签"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:201
+#: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Find items with a width between"
 msgstr "图像宽度范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:202
+#: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, kde-format
 msgctxt "Find items with a width between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:219
+#: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Find items with a height between"
 msgstr "图像高度范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:220
+#: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, kde-format
 msgctxt "Find items with a height between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:238
+#: core/utilities/searchwindow/searchfields_createfield.cpp:249
 #, kde-format
 msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "图像方向"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, kde-format
 msgid "File Format"
 msgstr "文件格式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, kde-format
 msgid "Return items with the file format"
 msgstr "文件格式范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:251
+#: core/utilities/searchwindow/searchfields_createfield.cpp:262
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "%1 [图像]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:256
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "%1 [视频]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:261
+#: core/utilities/searchwindow/searchfields_createfield.cpp:272
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "%1 [音频]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#: core/utilities/searchwindow/searchfields_createfield.cpp:297
 #, kde-format
 msgid "Color Depth"
 msgstr "色彩深度"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#: core/utilities/searchwindow/searchfields_createfield.cpp:297
 #, kde-format
 msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "图像色彩深度"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#: core/utilities/searchwindow/searchfields_createfield.cpp:307
 #, kde-format
 msgid "Color Model"
 msgstr "色彩模型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#: core/utilities/searchwindow/searchfields_createfield.cpp:307
 #, kde-format
 msgid "Find items with the color model"
 msgstr "图像色彩模型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:301
-#: core/utilities/searchwindow/searchfields_createfield.cpp:302
-#: core/utilities/searchwindow/searchfields_createfield.cpp:303
-#: core/utilities/searchwindow/searchfields_createfield.cpp:304
-#: core/utilities/searchwindow/searchfields_createfield.cpp:305
-#: core/utilities/searchwindow/searchfields_createfield.cpp:306
-#: core/utilities/searchwindow/searchfields_createfield.cpp:307
-#: core/utilities/searchwindow/searchfields_createfield.cpp:308
-#: core/utilities/searchwindow/searchfields_createfield.cpp:309
+#: core/utilities/searchwindow/searchfields_createfield.cpp:312
+#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:315
+#: core/utilities/searchwindow/searchfields_createfield.cpp:316
+#: core/utilities/searchwindow/searchfields_createfield.cpp:317
+#: core/utilities/searchwindow/searchfields_createfield.cpp:318
+#: core/utilities/searchwindow/searchfields_createfield.cpp:319
+#: core/utilities/searchwindow/searchfields_createfield.cpp:320
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "%1 [图像]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
-#: core/utilities/searchwindow/searchfields_createfield.cpp:315
-#: core/utilities/searchwindow/searchfields_createfield.cpp:316
+#: core/utilities/searchwindow/searchfields_createfield.cpp:324
+#: core/utilities/searchwindow/searchfields_createfield.cpp:325
+#: core/utilities/searchwindow/searchfields_createfield.cpp:326
+#: core/utilities/searchwindow/searchfields_createfield.cpp:327
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "%1 [视频]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:327
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
 #, kde-format
 msgid "The make of the camera"
 msgstr "相机制造商"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:358
+#: core/utilities/searchwindow/searchfields_createfield.cpp:369
 #, kde-format
 msgid "The model of the camera"
 msgstr "相机型号"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:400
 #, kde-format
 msgid "Lens"
 msgstr "镜头"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:400
 #, kde-format
 msgid "The type of the lens"
 msgstr "镜头类型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:414
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "镜头光圈 F 值范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:404
+#: core/utilities/searchwindow/searchfields_createfield.cpp:415
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:423
+#: core/utilities/searchwindow/searchfields_createfield.cpp:434
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "镜头焦距范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35mm 等价焦距范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#: core/utilities/searchwindow/searchfields_createfield.cpp:454
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:462
+#: core/utilities/searchwindow/searchfields_createfield.cpp:473
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:482
+#: core/utilities/searchwindow/searchfields_createfield.cpp:493
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "自动曝光程序"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "自动/手动曝光"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO 速度 (线性/ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:506
+#: core/utilities/searchwindow/searchfields_createfield.cpp:517
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#: core/utilities/searchwindow/searchfields_createfield.cpp:540
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "闪光灯"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#: core/utilities/searchwindow/searchfields_createfield.cpp:540
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "闪光灯模式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "自动/手动白平衡"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:563
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "白平衡色温"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:553
+#: core/utilities/searchwindow/searchfields_createfield.cpp:564
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #, kde-format
 msgid "Metering Mode"
 msgstr "测光模式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "曝光测量方式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
-#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#: core/utilities/searchwindow/searchfields_createfield.cpp:588
+#: core/utilities/searchwindow/searchfields_createfield.cpp:601
 #, kde-format
 msgid "Subject Distance"
 msgstr "主体距离"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
+#: core/utilities/searchwindow/searchfields_createfield.cpp:588
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "镜头/主体距离范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:578
+#: core/utilities/searchwindow/searchfields_createfield.cpp:589
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#: core/utilities/searchwindow/searchfields_createfield.cpp:601
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "微距/近景/远景"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:618
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:618
 #, kde-format
 msgid "Altitude range"
 msgstr "海拔范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:608
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "无 GPS 信息项"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:642
 #, kde-format
 msgid "Not Geo-located"
 msgstr "包含无地理位置信息项"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:652
 #, kde-format
 msgid "Country"
 msgstr "国家/地区"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:652
 #, kde-format
 msgid "Country shown in the item"
 msgstr "项目中显示的国家/地区"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "Province"
 msgstr "州/省"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "Province shown in the item"
 msgstr "项目中显示的州/省"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:673
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "City"
 msgstr "城市"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:673
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "City shown in the item"
 msgstr "项目中显示的城市"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, kde-format
 msgid "Sublocation"
 msgstr "次级位置"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "项目中显示的次级位置"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "创建者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, kde-format
 msgid "Return items created by"
 msgstr "包含创建者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "说明文字"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "包含说明文字"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:719
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, kde-format
 msgid "Return items commented by"
 msgstr "包含注释者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, kde-format
 msgid "Headline"
 msgstr "大标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "包含 IPTC 大标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:735
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:735
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "包含 IPTC 标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:743
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "包含全部关键词："
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:751
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, kde-format
 msgid "Empty Text"
 msgstr "空白文字"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:751
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, kde-format
 msgid "Return items without text in:"
 msgstr "返回不含以下文字的项目："
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:753
+#: core/utilities/searchwindow/searchfields_createfield.cpp:764
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "创建者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "说明文字"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "作者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:767
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "大标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:768
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "宽高比"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "图像宽高比"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:775
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Pixel Size"
 msgstr "像素大小"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:775
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "像素 (宽x高) 范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:776
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "视频画面宽高比"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:814
 #, kde-format
 msgid "Length of the video"
 msgstr "视频长度"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:804
+#: core/utilities/searchwindow/searchfields_createfield.cpp:815
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:816
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, kde-format
 msgid "Frame Rate"
 msgstr "帧速率"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "视频帧速率"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:822
+#: core/utilities/searchwindow/searchfields_createfield.cpp:833
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:823
+#: core/utilities/searchwindow/searchfields_createfield.cpp:834
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:839
+#: core/utilities/searchwindow/searchfields_createfield.cpp:850
 #, kde-format
 msgid "Codec"
 msgstr "编码"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:839
+#: core/utilities/searchwindow/searchfields_createfield.cpp:850
 #, kde-format
 msgid "Return video codec"
 msgstr "视频编码类型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "音频比特率范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:908
+#: core/utilities/searchwindow/searchfields_createfield.cpp:919
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:909
+#: core/utilities/searchwindow/searchfields_createfield.cpp:920
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:925
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "音频声道"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:927
+#: core/utilities/searchwindow/searchfields_createfield.cpp:938
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "单声道"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:928
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "立体声"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:929
+#: core/utilities/searchwindow/searchfields_createfield.cpp:940
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 环绕声"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:930
+#: core/utilities/searchwindow/searchfields_createfield.cpp:941
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 环绕声"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:931
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 声道环绕声"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:932
+#: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "其他声道类型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:944
+#: core/utilities/searchwindow/searchfields_createfield.cpp:955
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "音频编码类型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
 #, kde-format
 msgid "Faces"
 msgstr "人脸"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "人脸区域数量"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1054
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
 #, kde-format
 msgid "Return items without face regions"
 msgstr "无人脸区域"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1064
 #, kde-format
 msgid "No Face Regions"
 msgstr "无人脸区域"
@@ -57140,17 +57154,17 @@ msgstr "文件 / 相册 / 标签"
 msgid "Picture Properties"
 msgstr "图像属性"
 
-#: core/utilities/searchwindow/searchgroup.cpp:136
+#: core/utilities/searchwindow/searchgroup.cpp:137
 #, kde-format
 msgid "Caption, Comment, Title"
 msgstr "说明 / 注释 / 标题"
 
-#: core/utilities/searchwindow/searchgroup.cpp:185
+#: core/utilities/searchwindow/searchgroup.cpp:186
 #, kde-format
 msgid "Geographic position"
 msgstr "地理位置"
 
-#: core/utilities/searchwindow/searchgroup.cpp:208
+#: core/utilities/searchwindow/searchgroup.cpp:209
 #, kde-format
 msgid "Face regions"
 msgstr "人脸区域"
@@ -58058,7 +58072,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
-msgstr "编辑导入筛选器"
+msgstr "编辑导入过滤器"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, kde-format
@@ -58069,7 +58083,7 @@ msgstr "名称："
 #: core/utilities/setup/camera/importfilterdlg.cpp:109
 #, kde-format
 msgid "Mime filter:"
-msgstr "MIME 类型筛选器："
+msgstr "MIME 类型过滤器："
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:117
 #, kde-format
@@ -58079,12 +58093,12 @@ msgstr "选择 MIME 类型..."
 #: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "File name filter:"
-msgstr "文件名筛选器："
+msgstr "文件名过滤器："
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Path filter:"
-msgstr "路径筛选器："
+msgstr "路径过滤器："
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:142
 #, kde-format
@@ -58094,7 +58108,7 @@ msgstr "仅显示新文件"
 #: core/utilities/setup/camera/importfilterdlg.cpp:216
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
-msgstr "选择要筛选的 MIME 类型。"
+msgstr "选择要过滤的 MIME 类型。"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:218
 #, kde-format
@@ -58177,7 +58191,7 @@ msgstr "如果从相机下载时目标文件已存在"
 #, kde-format
 msgid ""
 "Here you can see filters that can be used to filter files in import dialog."
-msgstr "此表列出了导入对话框中可用的各种筛选器。"
+msgstr "此表列出了导入对话框中可用的各种过滤器。"
 
 #: core/utilities/setup/camera/setupcamera.cpp:426
 #, kde-format
@@ -58208,7 +58222,7 @@ msgstr "忽略文件扩展名："
 #: core/utilities/setup/camera/setupcamera.cpp:458
 #, kde-format
 msgid "Import Filters"
-msgstr "导入筛选器"
+msgstr "导入过滤器"
 
 #: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
@@ -59538,7 +59552,7 @@ msgctxt "@title:tab"
 msgid "Baloo"
 msgstr "Baloo"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:32
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:35
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59553,31 +59567,31 @@ msgstr ""
 "</para> <para>元数据存储到图像后，即使将图像移动或发送到其他系统也不会丢失这"
 "些数据。</para>"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:42
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
 #, kde-format
 msgctxt "@label"
 msgid "Write This Information to the Metadata"
 msgstr "要写入图像的元数据信息"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
 #, kde-format
 msgctxt "@option:check"
 msgid "Image tags"
 msgstr "图像标签"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:46
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item tags in the XMP and IPTC tags."
 msgstr "勾选此项后，项目的标签将被存储到对应的 XMP 和 IPTC 标签中。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
 msgstr "标题和说明"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59587,13 +59601,13 @@ msgstr ""
 "勾选此项后，项目的标题和说明将被存储到对应的 JFIF 注释区域、EXIF、XMP 和 "
 "IPTC 标签中。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Rating"
 msgstr "评分"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:57
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59601,37 +59615,37 @@ msgid ""
 "tags."
 msgstr "勾选此项后，项目的评分将被存储到对应的 EXIF 和 XMP 标签中。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
 msgstr "挑选标记"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
 msgstr "勾选此项后，项目的挑选标记将被存储到对应的 XMP 标签中。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, kde-format
 msgctxt "@option:check"
 msgid "Color label"
 msgstr "颜色标记"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
 msgstr "勾选此项后，项目的颜色标记将被存储到对应的 XMP 标签中。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
 #, kde-format
 msgctxt "@option:check"
 msgid "Timestamps"
 msgstr "时间戳"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59640,13 +59654,13 @@ msgid ""
 msgstr ""
 "勾选此项后，项目的时期和时间戳将被存储到对应的 EXIF、XMP 和 IPTC 标签中。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata templates (Copyright etc.)"
 msgstr "元数据模板 (如版权信息等)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59656,13 +59670,13 @@ msgstr ""
 "勾选此项后，项目的元数据模板将被存储到对应的 XMP 和 IPTC 标签中。您可以在元数"
 "据模板选项页面设置模板参数。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
 msgstr "人脸标签 (包括人脸区域)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59670,13 +59684,13 @@ msgid ""
 msgstr ""
 "勾选此项后，项目的人脸标签将连同人脸矩形区域一起被存储到对应的 XMP 标签中。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:91
 #, kde-format
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
 msgstr "地理位置信息 (GPS)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:92
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59684,19 +59698,19 @@ msgid ""
 "XMP tags."
 msgstr "勾选此项后，项目的地理位置信息将被存储到对应的 EXIF 和 XMP 标签中。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:112
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid "Reading and Writing Metadata"
 msgstr "元数据的读取和写入方式"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
 msgstr "使用 ExifTool 后端程序执行所有元数据写入文件操作"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59707,25 +59721,25 @@ msgstr ""
 "勾选此项后，文件的元数据写入后端程序将从 Exiv2 改为 ExifTool。这将稍微拖慢文"
 "件元数据同步到数据库的速度。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "写入元数据到 DNG 文件"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:128
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr "勾选此项后可将元数据写入 DNG 文件。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:125
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
 #, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "尝试写入元数据到 RAW 文件"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59735,13 +59749,13 @@ msgstr ""
 "启用此选项后，元数据将被写入 RAW 文件。此功能通过 ExifTool 后端程序实现，默认"
 "禁用。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:135
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
 #, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr "使用延迟同步"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59752,13 +59766,13 @@ msgstr ""
 "不要立即同步元数据，而是将它加入未处理列表，在点击同步未处理元数据或者退出 "
 "digiKam 时才进行同步。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:147
 #, kde-format
 msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr "文件修改时更新文件修改时间戳(&U)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59771,13 +59785,13 @@ msgstr ""
 "此项可能造成某些应用程序功能失常，例如通过文件时间戳自动检测文件修改状态的功"
 "能等。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:155
 #, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "文件被修改时重新扫描文件(&R)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:157
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59790,19 +59804,19 @@ msgstr ""
 "过，它的文件体积和最后修改时间戳将会改变，digiKam 将在启动时重新扫描这些文"
 "件。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:226
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr "提示：查看 ExifTool 后端程序的 %1。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:230
 #, kde-format
 msgctxt "@label"
 msgid "write limitations"
 msgstr "写入限制"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -59810,7 +59824,7 @@ msgid ""
 "for details."
 msgstr "提示：这些选项取决于 %1 的可用情况。详情请检查 ExifTool 标签。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:240
 #, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
@@ -59820,7 +59834,7 @@ msgstr "ExifTool 后端程序"
 #, kde-format
 msgctxt "@label"
 msgid "Select Metadata Fields to be Displayed when using Custom Filters"
-msgstr "选择使用自定义筛选器时显示的元数据字段"
+msgstr "选择使用自定义过滤器时显示的元数据字段"
 
 #: core/utilities/setup/metadata/setupmetadata_display.cpp:43
 #, kde-format
@@ -60051,22 +60065,19 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
-"digiKam (optionally) writes metadata to *.xmp sidecar\n"
-"files. Other programs might use different types, which\n"
-"can be specified below. digiKam will neither display these\n"
-"nor read from or write to them. But whenever a matching album\n"
-"item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-"moved, copied or deleted, the same operation will be done\n"
-"on these sidecar files.\n"
+"digiKam (optionally) writes metadata to *.xmp sidecar files. Other programs "
+"might use different types, which can be specified below. digiKam will "
+"neither display these nor read from or write to them. But whenever a "
+"matching album item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
+"moved, copied or deleted, the same operation will be done on these sidecar "
+"files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
-"添加要识别为附带文件的文件类型。\n"
-"digiKam 可以选择写入元数据到 *.xmp 附带文件。\n"
-"其他软件可能会使用不同的文件类型，您可以在下方指定它们。\n"
-"digiKam 将不会显示这些文件，且不会对它们进行读写操作。\n"
-"但是如果这些附带文件匹配的相册项目 \n"
-"(例如“image.dng”与匹配的附带文件“image.dng.pp3”) \n"
-"进行了重命名、移动、复制和删除时，\n"
+"添加要识别为附带文件的文件类型。digiKam 可以选择写入元数据到 *.xmp 附带文件。"
+"其他软件可能会使用不同的文件类型，您可以在下方指定它们。digiKam 将不会显示这"
+"些文件，且不会对它们进行读写操作。但是如果这些附带文件匹配的相册项目 (例"
+"如“image.dng”与匹配的附带文件“image.dng.pp3”) 进行了重命名、移动、复制和删除"
+"时，\n"
 "这些操作也将被应用到它们的附带文件。\n"
 "请用半角分号或者空格符分隔多个扩展名。"
 
@@ -61510,8 +61521,3 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
-
-#~ msgid ""
-#~ "The database is now upgraded to the current server version, this can take "
-#~ "a while."
-#~ msgstr "digiKam 数据库正在升级为当前服务器版本，这可能需要一段时间。"

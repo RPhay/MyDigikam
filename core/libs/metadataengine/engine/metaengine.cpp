@@ -130,6 +130,21 @@ bool MetaEngine::supportXmp()
 
 }
 
+bool MetaEngine::supportJpegXL()
+{
+
+#ifdef EXV_HAVE_BROTLI
+
+    return true;
+
+#else
+
+    return false;
+
+#endif // EXV_HAVE_BROTLI
+
+}
+
 bool MetaEngine::supportMetadataWriting(const QString& /*typeMime*/)
 {
 /* FIXME : use Exiv2 API to return right writings support
@@ -255,7 +270,7 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
     return false;
 }
 
-bool MetaEngine::loadFromDataAndMerge(const QByteArray& imgData)
+bool MetaEngine::loadFromDataAndMerge(const QByteArray& imgData, const QStringList& exclude)
 {
     if (imgData.isEmpty())
     {
@@ -277,6 +292,17 @@ bool MetaEngine::loadFromDataAndMerge(const QByteArray& imgData)
         d->mimeType  = QString::fromStdString(image->mimeType());
 
         // Exif metadata ----------------------------------
+
+        Q_FOREACH (const QString& exTag, exclude)
+        {
+            Exiv2::ExifKey exifKey(exTag.toLatin1().constData());
+            Exiv2::ExifData::iterator it = image->exifData().findKey(exifKey);
+
+            if (it != image->exifData().end())
+            {
+                image->exifData().erase(it);
+            }
+        }
 
         ExifMetaEngineMergeHelper exifHelper;
         exifHelper.mergeAll(image->exifData(), d->exifMetadata());

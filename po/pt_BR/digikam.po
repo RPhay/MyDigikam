@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 01:11+0000\n"
+"POT-Creation-Date: 2023-11-29 00:40+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1158,7 +1158,7 @@ msgid "White Balance:"
 msgstr "Balanceamento de branco:"
 
 #: core/app/items/utils/tooltipfiller.cpp:313
-#: core/utilities/searchwindow/searchgroup.cpp:116
+#: core/utilities/searchwindow/searchgroup.cpp:117
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "Propriedades do vídeo/áudio"
@@ -2691,7 +2691,7 @@ msgstr "Aj&uda"
 msgid "Main Toolbar"
 msgstr "Barra de ferramentas principal"
 
-#: core/app/main/main.cpp:187 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2701,36 +2701,36 @@ msgstr "Barra de ferramentas principal"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:196 core/showfoto/main/main.cpp:163
+#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:170
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "André Marcelo Alvarenga"
 
-#: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
+#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:171
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alvarenga@kde.org"
 
-#: core/app/main/main.cpp:205
+#: core/app/main/main.cpp:212
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "Abrir o diálogo da câmera em <caminho>"
 
-#: core/app/main/main.cpp:208
+#: core/app/main/main.cpp:215
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Abrir o diálogo da câmera para o dispositivo com UDI do Solid <udi>"
 
-#: core/app/main/main.cpp:211
+#: core/app/main/main.cpp:218
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Detectar e abrir uma câmera conectada do gphoto2 automaticamente"
 
-#: core/app/main/main.cpp:213
+#: core/app/main/main.cpp:220
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -2740,13 +2740,13 @@ msgstr ""
 "Iniciar o digiKam com o arquivo de banco de dados SQLite encontrado na pasta "
 "<pasta>"
 
-#: core/app/main/main.cpp:216
+#: core/app/main/main.cpp:223
 #, fuzzy, kde-format
 #| msgid "Start digikam with the configuration file <config>"
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Iniciar o digiKam com o arquivo de configuração <config>"
 
-#: core/app/main/main.cpp:243
+#: core/app/main/main.cpp:250
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2754,7 +2754,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:285
+#: core/app/main/main.cpp:292
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2765,7 +2765,7 @@ msgstr ""
 "Por favor, instale um deles.\n"
 "Não existe um plugin de bancos de dados instalado em seu computador."
 
-#: core/app/main/main.cpp:294
+#: core/app/main/main.cpp:301
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2776,7 +2776,7 @@ msgstr ""
 "Por favor, instale um deles.\n"
 "Os plugins instalados no seu computador são os listados abaixo:"
 
-#: core/app/main/main.cpp:334
+#: core/app/main/main.cpp:341
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2888,7 +2888,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:233
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2896,7 +2896,7 @@ msgstr "Voltar"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:235
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -2975,7 +2975,7 @@ msgstr "Mapa"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:119
 #: core/libs/album/widgets/albumselecttabs.cpp:194
-#: core/utilities/searchwindow/searchfields_createfield.cpp:141
+#: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Labels"
 msgstr "Legendas"
@@ -3754,7 +3754,7 @@ msgstr "Tipo de canal de áudio"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:944
+#: core/utilities/searchwindow/searchfields_createfield.cpp:955
 #: core/utilities/setup/setuptooltip.cpp:319
 #, kde-format
 msgid "Audio Codec"
@@ -3762,7 +3762,7 @@ msgstr "Codec de áudio"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:814
 #, kde-format
 msgid "Duration"
 msgstr "Duração"
@@ -4079,14 +4079,14 @@ msgstr "Propriedades do item"
 
 #: core/app/views/tableview/tableview_column_item.cpp:75
 #: core/app/views/tableview/tableview_column_item.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:201
+#: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Width"
 msgstr "Largura"
 
 #: core/app/views/tableview/tableview_column_item.cpp:76
 #: core/app/views/tableview/tableview_column_item.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:219
+#: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Height"
 msgstr "Altura"
@@ -6973,7 +6973,6 @@ msgstr "Mostrar formato da imagem"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6982,6 +6981,7 @@ msgstr "Mostrar formato da imagem"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
@@ -6997,7 +6997,6 @@ msgstr "sim"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -7006,6 +7005,7 @@ msgstr "sim"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
@@ -7020,45 +7020,12 @@ msgstr "sim"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: cannot write file format"
-msgid "no"
-msgstr "não"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
-#, fuzzy, kde-format
-#| msgid "Images has been uploaded"
-msgctxt "@title"
-msgid "ImageMagick loader"
-msgstr "As imagens foram enviadas"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
-#, kde-format
-msgctxt "@info"
-msgid "An image loader based on ImageMagick coders"
-msgstr ""
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
-#, kde-kuit-format
-msgctxt "@info"
-msgid ""
-"<para>This plugin allows users to load and save image using ImageMagick "
-"coders.</para><para>ImageMagick is a free and open-source software suite for "
-"converting raster image and vector image files. It can read and write over "
-"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
-"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
-msgstr ""
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:59
-#: core/libs/dplugins/core/dplugindimg.cpp:71
-#, fuzzy, kde-format
-#| msgid "no"
-msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "não"
 
@@ -7270,6 +7237,39 @@ msgstr "JPEG 2000"
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
 msgstr "JPEG 2000"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:86
+#, fuzzy, kde-format
+#| msgid "Images has been uploaded"
+msgctxt "@title"
+msgid "ImageMagick loader"
+msgstr "As imagens foram enviadas"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:101
+#, kde-format
+msgctxt "@info"
+msgid "An image loader based on ImageMagick coders"
+msgstr ""
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:106
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>This plugin allows users to load and save image using ImageMagick "
+"coders.</para><para>ImageMagick is a free and open-source software suite for "
+"converting raster image and vector image files. It can read and write over "
+"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
+"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
+msgstr ""
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/libs/dplugins/core/dplugindimg.cpp:59
+#: core/libs/dplugins/core/dplugindimg.cpp:71
+#, fuzzy, kde-format
+#| msgid "no"
+msgctxt "@info: cannot read file format"
+msgid "no"
+msgstr "não"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:68
 #, kde-format
@@ -7841,31 +7841,31 @@ msgstr ""
 "Se pressionar este botão, todos os valores dos níveis do canal atualmente "
 "selecionado serão restaurados com os valores padrão."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:883
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:893
 #, kde-format
 msgid "Adjust Levels"
 msgstr "Ajustar níveis"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:900
 #, fuzzy, kde-format
 #| msgid "Select Gimp Levels File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Selecione o arquivo de níveis do Gimp a carregar"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:912
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "Não foi possível carregar os níveis Gimp de um arquivo de texto."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:927
 #, fuzzy, kde-format
 #| msgid "Gimp Levels File to Save"
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Arquivo de níveis do Gimp a salvar"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:939
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "Não foi possível salvar os níveis Gimp para um arquivo de texto."
@@ -8359,7 +8359,7 @@ msgstr "O gerenciamento de cores está desabilitado..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:80
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:207
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "White Balance"
 msgstr "Balanceamento de branco"
@@ -8520,17 +8520,17 @@ msgstr "Semitransparente"
 msgid "Use semi-transparent text background under image"
 msgstr "Usar um plano de fundo semitransparente do texto sob a imagem"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:317
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:326
 #, kde-format
 msgid "Enter your text here."
 msgstr "Digite o seu texto aqui."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:426
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:435
 #, kde-format
 msgid "Insert Text Tool"
 msgstr "Ferramenta de inserção de texto"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:439
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:448
 #, kde-format
 msgid "Insert Text"
 msgstr "Inserir texto"
@@ -9173,7 +9173,20 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Nitidez..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, fuzzy, kde-format
+#| msgid "No Profile Available"
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr "Nenhum perfil disponível"
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@title:window"
@@ -10334,7 +10347,7 @@ msgstr "Função de energia"
 msgid "Advanced Settings"
 msgstr "Configurações avançadas"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:769
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:778
 #, kde-format
 msgid "Liquid Rescale"
 msgstr "Escala líquida"
@@ -11192,8 +11205,8 @@ msgstr ""
 "tamanho enorme. Este processo pode levar algum tempo."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:629
-#: core/utilities/searchwindow/searchfields_createfield.cpp:203
-#: core/utilities/searchwindow/searchfields_createfield.cpp:221
+#: core/utilities/searchwindow/searchfields_createfield.cpp:214
+#: core/utilities/searchwindow/searchfields_createfield.cpp:232
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -11521,7 +11534,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Não é possível salvar o arquivo \"%1\""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, fuzzy, kde-format
 #| msgid "Geolocation Editor"
 msgctxt "@title:window"
@@ -11551,17 +11566,17 @@ msgstr "Um mapa"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
 #, fuzzy, kde-format
-#| msgid "Two maps - horizontal"
+#| msgid "Two maps - vertical"
 msgctxt "@item"
-msgid "Two maps - horizontal"
-msgstr "Dois mapas - horizontal"
+msgid "Two maps - left and right"
+msgstr "Dois mapas - vertical"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, fuzzy, kde-format
-#| msgid "Two maps - vertical"
+#| msgid "Two maps - horizontal"
 msgctxt "@item"
-msgid "Two maps - vertical"
-msgstr "Dois mapas - vertical"
+msgid "Two maps - top and bottom"
+msgstr "Dois mapas - horizontal"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, fuzzy, kde-format
@@ -11665,7 +11680,7 @@ msgid "Saving changes -"
 msgstr "Salvando alterações -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:247
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
@@ -12449,8 +12464,8 @@ msgstr[1] "<p>%1 caracteres.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, fuzzy, kde-format
 #| msgid "<p>1 character.</p>"
 #| msgid_plural "<p>%1 characters.</p>"
@@ -17088,8 +17103,8 @@ msgstr "Nova pasta"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:327
-#: core/utilities/searchwindow/searchfields_createfield.cpp:358
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
+#: core/utilities/searchwindow/searchfields_createfield.cpp:369
 #, kde-format
 msgid "Camera"
 msgstr "Câmera"
@@ -20452,65 +20467,65 @@ msgstr "Tamanho do papel não suportado"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, kde-format
-msgctxt "Output: PDF"
-msgid "Print to PDF"
-msgstr "Imprimir para PDF"
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "Imprimir para arquivo de imagem"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, kde-format
+msgctxt "Output: PDF"
+msgid "Print to PDF"
+msgstr "Imprimir para PDF"
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "Imprimir com o Gimp"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "Sem legenda"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "Nomes do arquivo de imagem"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "Data/hora EXIF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "Comentários do item"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
@@ -20559,7 +20574,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:719
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, kde-format
 msgid "Author"
 msgstr "Autor"
@@ -22067,21 +22082,22 @@ msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "Abrir as imagens da pasta"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
 #, fuzzy, kde-format
 #| msgid "Token error"
 msgid "OpenGL Error"
 msgstr "Erro do item processado"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
 #, kde-format
-msgid "GL_ARB_texture_rectangle not supported"
+msgid ""
+"GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
 msgstr ""
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context found"
+msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -22091,7 +22107,7 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "Previsão da trilha sonora"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:98
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
@@ -22100,42 +22116,42 @@ msgstr ""
 "Se assinalado, a trilha sonora do álbum atual será salva e restaurada "
 "automaticamente na próxima inicialização."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
 #, kde-format
 msgid "Move the selected track up in the playlist."
 msgstr "Mover a trilha selecionada para cima na lista de reprodução."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:126
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
 #, kde-format
 msgid "Move the selected track down in the playlist."
 msgstr "Mover a trilha selecionada para baixo na lista de reprodução."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:127
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
 #, kde-format
 msgid "Add new tracks to the playlist."
 msgstr "Adicionar novas trilhas à lista de reprodução."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:128
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
 #, kde-format
 msgid "Delete the selected track from the playlist."
 msgstr "Remover a trilha selecionada da lista de reprodução."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:129
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:123
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "Carregar a lista de reprodução de um arquivo."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:130
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:124
 #, kde-format
 msgid "Save playlist to a file."
 msgstr "Salvar a lista de reprodução em um arquivo."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:131
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
 #, kde-format
 msgid "Clear the playlist."
 msgstr "Limpar a lista de reprodução."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:264
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:258
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -22143,7 +22159,7 @@ msgid_plural "%1 tracks [%2]"
 msgstr[0] "1 faixa [%2]"
 msgstr[1] "%1 faixas [%2]"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:292
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:286
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
@@ -22151,51 +22167,51 @@ msgstr ""
 "O tempo do slide é maior do que o da trilha sonora. Sugestão: adicione mais "
 "arquivos de som."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:356
 #, fuzzy, kde-format
 #| msgid "Select sound files"
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "Selecionar arquivos de som"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:424
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr "Você pode mover para cima apenas um arquivo de imagem de cada vez."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:468
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:462
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr "Você pode mover para baixo apenas um arquivo de cada vez."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:483
 #, fuzzy, kde-format
 #| msgid "Load playlist"
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "Carregar lista de reprodução"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:484
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:543
 #, kde-format
 msgid "Playlist (*.m3u)"
 msgstr "Lista de músicas (*.m3u)"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:542
 #, fuzzy, kde-format
 #| msgid "Save playlist"
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "Salvar lista de reprodução"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:603
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr ""
 "Não foi possível acessar o arquivo \"%1\". Verifique se o caminho está "
 "correto."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:619
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:613
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr "Não é possível criar a visualização de uma lista de arquivos vazia."
@@ -22292,25 +22308,26 @@ msgstr "Slide:"
 msgid "Soundtrack:"
 msgstr "Trilha sonora:"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
-#, fuzzy, kde-format
-#| msgid "No setting available"
-msgid "No detail available"
-msgstr "Nenhuma configuração disponível"
-
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:194
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:236
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:257
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:215
+#, fuzzy, kde-format
+#| msgid "No setting available"
+msgid "No detail available"
+msgstr "Nenhuma configuração disponível"
+
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:248
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 pode não deve ser executável."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:256
 #, kde-format
 msgid "This file may not be playable."
 msgstr "Este arquivo pode não ser executável."
@@ -22350,10 +22367,10 @@ msgstr "Próximo"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:70
-#: core/utilities/searchwindow/searchfields_createfield.cpp:176
+#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
 #, kde-format
-msgid "Time"
-msgstr "Hora"
+msgid "Time:"
+msgstr "Hora:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:79
@@ -22377,6 +22394,12 @@ msgstr "0:00:00"
 msgctxt "Total amount of time of presentation"
 msgid "Total:"
 msgstr " - Total: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_soundLabel)
+#: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:115
+#, kde-format
+msgid "Volumes:"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:23
@@ -22522,7 +22545,7 @@ msgid "Image #%1"
 msgstr "Imagem #%1"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:679
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:685
 #, kde-format
 msgid "Ken Burns"
 msgstr "Ken Burns"
@@ -22676,82 +22699,82 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "Avançado"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
 #, kde-format
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "Nenhuma"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "Curvatura"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
 #, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "Misturar"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "Cubo"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "Desaparecer"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "Vibração"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "De dentro para fora"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
 #, kde-format
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "Girar"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:577
 #, kde-format
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "Deslizar"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:578
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1035
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "Aleatório"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
 #, kde-format
 msgid "Slideshow Completed"
 msgstr "Apresentação de slides concluída"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:632
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:880
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:638
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:869
 #, kde-format
 msgid "Click to Exit..."
 msgstr "Clique para sair..."
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:637
 #, kde-format
 msgid "SlideShow Completed"
 msgstr "Apresentação de slides concluída"
@@ -22800,7 +22823,7 @@ msgctxt "@action"
 msgid "Presentation..."
 msgstr "Apresentação..."
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:230
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
 #, fuzzy, kde-format
 #| msgid "Create a Video Slideshow"
@@ -22808,13 +22831,13 @@ msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "Criar uma apresentação de vídeo"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:231
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:249
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:411
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
@@ -22822,7 +22845,7 @@ msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Excluir etiqueta"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:257
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:412
 #, fuzzy, kde-format
 #| msgid "Do you want to do this operation on all group items?"
@@ -25720,7 +25743,7 @@ msgid "This is the list of images to upload to an iNaturalist observation."
 msgstr "Esta é a lista de imagens a enviar para sua conta do Flickr."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, kde-format
 msgid "Date"
 msgstr "Data"
@@ -27996,9 +28019,9 @@ msgid "Reset curve to linear"
 msgstr "Redefinir a curva para linear"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
-#: core/utilities/searchwindow/searchfields_createfield.cpp:461
-#: core/utilities/searchwindow/searchfields_createfield.cpp:482
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:472
+#: core/utilities/searchwindow/searchfields_createfield.cpp:493
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "Exposure"
 msgstr "Exposição"
@@ -31519,14 +31542,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "Recurso"
 
-#: core/libs/dialogs/libsinfodlg.cpp:189
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Biblioteca de álbuns"
 
-#: core/libs/dialogs/libsinfodlg.cpp:276
+#: core/libs/dialogs/libsinfodlg.cpp:279
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31534,7 +31557,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Desconhecida"
 
-#: core/libs/dialogs/libsinfodlg.cpp:357
+#: core/libs/dialogs/libsinfodlg.cpp:360
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31542,34 +31565,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Desconhecida"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:388
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:416
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configuração da câmera"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:599
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sim"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:604
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Não"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:609
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -43950,14 +43973,14 @@ msgid "Default from Desktop"
 msgstr "Padrão do ambiente de trabalho"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:237
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pausar/Reproduzir"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:239
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Capture"
@@ -43966,13 +43989,13 @@ msgid "Capture"
 msgstr "Capturar"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:249
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Ocorreu um erro com o reprodutor de mídia..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -46357,7 +46380,7 @@ msgid "Hide statusbar when window switch in full-screen mode."
 msgstr ""
 "Oculta todas as barras de ferramentas ao mudar para o modo de tela inteira."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1224
+#: core/libs/widgets/mainview/thememanager_p.cpp:1232
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -47288,7 +47311,7 @@ msgstr "Informações da imagem"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:139
-#: core/utilities/searchwindow/searchgroup.cpp:155
+#: core/utilities/searchwindow/searchgroup.cpp:156
 #: core/utilities/setup/setuptooltip.cpp:232
 #, kde-format
 msgid "Photograph Information"
@@ -47524,7 +47547,7 @@ msgid "Pick"
 msgstr "Seleção"
 
 #: core/libs/widgets/metadata/labels/ratingwidget.cpp:574
-#: core/utilities/searchwindow/searchfields_createfield.cpp:149
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
 msgstr "Avaliação"
@@ -53588,21 +53611,21 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Pasta: "
 
-#: core/showfoto/main/main.cpp:154
+#: core/showfoto/main/main.cpp:161
 #, fuzzy, kde-format
 #| msgid "Showfoto"
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:172
+#: core/showfoto/main/main.cpp:179
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Arquivo(s) ou pasta(s) para abrir"
 
-#: core/showfoto/main/main.cpp:203
+#: core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -53910,15 +53933,7 @@ msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "Definir etiqueta de orientação para normal após girar/virar."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:117
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:179
-#, fuzzy, kde-format
-#| msgid "Visit Exiv2 project website"
-msgctxt "@info:whatsthis"
-msgid "Visit Exiv2 project website"
-msgstr "Visite o site do projeto Exiv2"
-
-#: core/showfoto/setup/showfotosetupmetadata.cpp:125
+#: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, fuzzy, kde-format
 #| msgid ""
@@ -53934,7 +53949,7 @@ msgstr ""
 "pela maioria das câmeras digitais atuais, para armazenar informações "
 "técnicas sobre uma imagem (como abertura e velocidade do obturador).</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:123
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, fuzzy, kde-format
 #| msgid ""
@@ -53950,7 +53965,7 @@ msgstr ""
 "IPTC_Information_Interchange_Model'>IPTC</a> - é um padrão antigo, usado na "
 "fotografia digital para armazenar informações do fotógrafo nas imagens.</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:135
+#: core/showfoto/setup/showfotosetupmetadata.cpp:129
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, fuzzy, kde-format
 #| msgid ""
@@ -53964,14 +53979,14 @@ msgstr ""
 "a> - é um novo padrão usado na fotografia digital, criado para substituir o "
 "IPTC.</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:156
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:216
+#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "Comportamento"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:165
+#: core/showfoto/setup/showfotosetupmetadata.cpp:159
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, fuzzy, kde-format
 #| msgid "Tools"
@@ -55681,14 +55696,14 @@ msgid "Lens of the camera"
 msgstr "Lentes da câmera"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:63
-#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:414
 #, kde-format
 msgid "Aperture"
 msgstr "Abertura"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:64
-#: core/utilities/searchwindow/searchfields_createfield.cpp:423
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:434
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgid "Focal length"
 msgstr "Distância focal"
@@ -55699,7 +55714,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Distância focal (equivalente a 35mm)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:461
+#: core/utilities/searchwindow/searchfields_createfield.cpp:472
 #, kde-format
 msgid "Exposure time"
 msgstr "Tempo de exposição"
@@ -55715,7 +55730,7 @@ msgid "Exposure mode"
 msgstr "Modo de exposição"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:69
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgid "Sensitivity"
 msgstr "Sensibilidade"
@@ -55726,7 +55741,7 @@ msgid "Flash mode"
 msgstr "Modo do flash"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:563
 #, kde-format
 msgid "White balance"
 msgstr "Balanceamento de branco"
@@ -55757,14 +55772,14 @@ msgid "Display Aspect Ratio"
 msgstr "Proporção de tela"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Taxa de bits do áudio"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:925
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -55837,7 +55852,7 @@ msgid "Altitude in a human readable form"
 msgstr "Altitude em um formato legível"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:58
-#: core/utilities/searchwindow/searchfields_createfield.cpp:237
+#: core/utilities/searchwindow/searchfields_createfield.cpp:248
 #, kde-format
 msgid "Orientation"
 msgstr "Orientação"
@@ -55970,12 +55985,6 @@ msgstr "Origem:"
 msgctxt "the format of the date"
 msgid "Format:"
 msgstr "Formato:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
-#, kde-format
-msgid "Time:"
-msgstr "Hora:"
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:36
 #, kde-format
@@ -57405,6 +57414,7 @@ msgstr "URL da API:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr ""
 
@@ -57536,6 +57546,13 @@ msgstr "Adicionar pasta"
 msgid "New Folder"
 msgstr "Nova pasta"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "Gerenciamento de cores"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -57632,10 +57649,10 @@ msgstr "%1 favoritos.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
-#| msgid "Export error"
+#| msgid "Edit Bookmarks"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "Erro de exportação"
+msgid "Export Bookmark"
+msgstr "Editar favoritos"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
@@ -58016,14 +58033,6 @@ msgstr "Remover velocidade"
 msgid "Look up missing altitude values"
 msgstr "Procurando valores de altitude em falta"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "Sincronização com o GPS"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -58327,6 +58336,13 @@ msgstr "As etiquetas da imagem estão alteradas."
 msgid "Retrieving RG info -"
 msgstr "Obtendo informações de GI -"
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+#| msgid "Reverse Geocoding"
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "Geocodificação inversa"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
@@ -58364,7 +58380,9 @@ msgstr ""
 "etiquetas que já foram obtidas ou eliminá-las?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Abort reverse geocoding?"
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Cancelar geocodificação inversa?"
 
@@ -63030,7 +63048,7 @@ msgstr "(Nenhum valor selecionado)"
 msgid "No Rating assigned"
 msgstr "Nenhuma avaliação atribuída"
 
-#: core/utilities/searchwindow/searchfields.cpp:74
+#: core/utilities/searchwindow/searchfields.cpp:76
 #, kde-format
 msgid "Reset contents"
 msgstr "Restaurar o conteúdo"
@@ -63170,16 +63188,19 @@ msgid "and"
 msgstr "e"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
+#: core/utilities/searchwindow/searchfields_createfield.cpp:133
 #, kde-format
 msgid "File Size"
 msgstr "Tamanho do arquivo"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
-#, kde-format
-msgid "Size of the file"
+#, fuzzy, kde-format
+#| msgid "Size of the file"
+msgid "Size of the file in megabytes"
 msgstr "Tamanho do arquivo"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:122
+#: core/utilities/searchwindow/searchfields_createfield.cpp:134
 #, kde-format
 msgctxt "Size of the file ...-..."
 msgid "-"
@@ -63187,28 +63208,34 @@ msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
 #, fuzzy, kde-format
+#| msgid "Size of the file"
+msgid "Size of the file in bytes"
+msgstr "Tamanho do arquivo"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:144
+#, fuzzy, kde-format
 #| msgid "Month"
 msgid "Month/Day"
 msgstr "Mês"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
 msgid "Return items from a month or a day of the month"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:141
+#: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, fuzzy, kde-format
 #| msgid "Return pictures with labels"
 msgid "Return items with labels"
 msgstr "Retornar imagens com as legendas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:149
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, fuzzy, kde-format
 #| msgid "Return pictures rated at least"
 msgid "Return items rated at least"
 msgstr "Retornar imagens avaliadas com ao menos"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:150
+#: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "Return pictures rated at least...at most..."
 #| msgid "at most"
@@ -63216,13 +63243,13 @@ msgctxt "Return items rated at least...at most..."
 msgid "at most"
 msgstr "até"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, fuzzy, kde-format
 #| msgid "Return pictures created between"
 msgid "Return items created between"
 msgstr "Retornar imagens criadas entre"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:159
+#: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63230,18 +63257,18 @@ msgctxt "'Return items created between...and..."
 msgid "and"
 msgstr "e"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:167
+#: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, kde-format
 msgid "Digitization"
 msgstr "Digitalização"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:167
+#: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, fuzzy, kde-format
 #| msgid "Return pictures digitized between"
 msgid "Return items digitized between"
 msgstr "Retornar imagens digitalizadas entre"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:168
+#: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63249,13 +63276,18 @@ msgctxt "'Return items digitized between...and..."
 msgid "and"
 msgstr "e"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#, kde-format
+msgid "Time"
+msgstr "Hora"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
 #, fuzzy, kde-format
 #| msgid "Return pictures created between"
 msgid "Return items with created time between"
 msgstr "Retornar imagens criadas entre"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:177
+#: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63263,24 +63295,24 @@ msgctxt "'Return items with created time between...and..."
 msgid "and"
 msgstr "e"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, kde-format
 msgid "Exif Orientation"
 msgstr "Orientação EXIF"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, fuzzy, kde-format
 #| msgid "Find pictures with orientation flag"
 msgid "Find items with orientation flag"
 msgstr "Localizar imagens com a marca de orientação"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:201
+#: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, fuzzy, kde-format
 #| msgid "Find pictures with a width between"
 msgid "Find items with a width between"
 msgstr "Localizar imagens com largura entre"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:202
+#: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63288,13 +63320,13 @@ msgctxt "Find items with a width between...and..."
 msgid "and"
 msgstr "e"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:219
+#: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, fuzzy, kde-format
 #| msgid "Find pictures with a height between"
 msgid "Find items with a height between"
 msgstr "Localizar imagens com altura entre"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:220
+#: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63302,7 +63334,7 @@ msgctxt "Find items with a height between...and..."
 msgid "and"
 msgstr "e"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:238
+#: core/utilities/searchwindow/searchfields_createfield.cpp:249
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Find pictures with any orientation / landscape / portrait orientation..."
@@ -63311,19 +63343,19 @@ msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "Localizar imagens com"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, kde-format
 msgid "File Format"
 msgstr "Formato do arquivo"
 
 # Tradução reduzida para melhor exibição da janela. (Alvarenga)
-#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, fuzzy, kde-format
 #| msgid "Return pictures with the image file format"
 msgid "Return items with the file format"
 msgstr "Retornar imagens com o formato de arquivo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:251
+#: core/utilities/searchwindow/searchfields_createfield.cpp:262
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -63331,26 +63363,26 @@ msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "1 imagem"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:256
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "Vídeos"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:261
+#: core/utilities/searchwindow/searchfields_createfield.cpp:272
 #, fuzzy, kde-format
 #| msgid "Audio"
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "Áudio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#: core/utilities/searchwindow/searchfields_createfield.cpp:297
 #, kde-format
 msgid "Color Depth"
 msgstr "Profundidade de cores"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#: core/utilities/searchwindow/searchfields_createfield.cpp:297
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Find pictures with any orientation / landscape / portrait orientation..."
@@ -63359,26 +63391,26 @@ msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "Localizar imagens com"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#: core/utilities/searchwindow/searchfields_createfield.cpp:307
 #, kde-format
 msgid "Color Model"
 msgstr "Modelo de cores"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#: core/utilities/searchwindow/searchfields_createfield.cpp:307
 #, fuzzy, kde-format
 #| msgid "Find pictures with the color model"
 msgid "Find items with the color model"
 msgstr "Localizar imagens com o modelo de cores"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:301
-#: core/utilities/searchwindow/searchfields_createfield.cpp:302
-#: core/utilities/searchwindow/searchfields_createfield.cpp:303
-#: core/utilities/searchwindow/searchfields_createfield.cpp:304
-#: core/utilities/searchwindow/searchfields_createfield.cpp:305
-#: core/utilities/searchwindow/searchfields_createfield.cpp:306
-#: core/utilities/searchwindow/searchfields_createfield.cpp:307
-#: core/utilities/searchwindow/searchfields_createfield.cpp:308
-#: core/utilities/searchwindow/searchfields_createfield.cpp:309
+#: core/utilities/searchwindow/searchfields_createfield.cpp:312
+#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:315
+#: core/utilities/searchwindow/searchfields_createfield.cpp:316
+#: core/utilities/searchwindow/searchfields_createfield.cpp:317
+#: core/utilities/searchwindow/searchfields_createfield.cpp:318
+#: core/utilities/searchwindow/searchfields_createfield.cpp:319
+#: core/utilities/searchwindow/searchfields_createfield.cpp:320
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -63386,332 +63418,332 @@ msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "1 imagem"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
-#: core/utilities/searchwindow/searchfields_createfield.cpp:315
-#: core/utilities/searchwindow/searchfields_createfield.cpp:316
+#: core/utilities/searchwindow/searchfields_createfield.cpp:324
+#: core/utilities/searchwindow/searchfields_createfield.cpp:325
+#: core/utilities/searchwindow/searchfields_createfield.cpp:326
+#: core/utilities/searchwindow/searchfields_createfield.cpp:327
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "Vídeos"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:327
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
 #, kde-format
 msgid "The make of the camera"
 msgstr "A marca da câmera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:358
+#: core/utilities/searchwindow/searchfields_createfield.cpp:369
 #, kde-format
 msgid "The model of the camera"
 msgstr "O modelo da câmera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:400
 #, kde-format
 msgid "Lens"
 msgstr "Lente"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:400
 #, fuzzy, kde-format
 #| msgid "Type of the media file"
 msgid "The type of the lens"
 msgstr "Tipo do arquivo multimídia"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:414
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Abertura de lentes como número f"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:404
+#: core/utilities/searchwindow/searchfields_createfield.cpp:415
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:423
+#: core/utilities/searchwindow/searchfields_createfield.cpp:434
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Distância focal das lentes"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "Distância focal equivalente a 35mm"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#: core/utilities/searchwindow/searchfields_createfield.cpp:454
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:462
+#: core/utilities/searchwindow/searchfields_createfield.cpp:473
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:482
+#: core/utilities/searchwindow/searchfields_createfield.cpp:493
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Programa de exposição automática"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Exposição automática ou manual"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "Velocidade ISO do filme (escala linear, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:506
+#: core/utilities/searchwindow/searchfields_createfield.cpp:517
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#: core/utilities/searchwindow/searchfields_createfield.cpp:540
 #, fuzzy, kde-format
 #| msgid "Flash"
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Flash"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#: core/utilities/searchwindow/searchfields_createfield.cpp:540
 #, fuzzy, kde-format
 #| msgid "Flash mode"
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Modo do flash"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Balanceamento de branco automático ou manual"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:563
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Temperatura de cor usada para balanceamento de branco"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:553
+#: core/utilities/searchwindow/searchfields_createfield.cpp:564
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #, kde-format
 msgid "Metering Mode"
 msgstr "Modo de medição"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Método para determinar a exposição"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
-#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#: core/utilities/searchwindow/searchfields_createfield.cpp:588
+#: core/utilities/searchwindow/searchfields_createfield.cpp:601
 #, kde-format
 msgid "Subject Distance"
 msgstr "Distância do objeto"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
+#: core/utilities/searchwindow/searchfields_createfield.cpp:588
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Distância do assunto em relação às lentes"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:578
+#: core/utilities/searchwindow/searchfields_createfield.cpp:589
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#: core/utilities/searchwindow/searchfields_createfield.cpp:601
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Visão macro, próxima ou distante"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:618
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:618
 #, kde-format
 msgid "Altitude range"
 msgstr "Faixa de altitude"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:608
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, fuzzy, kde-format
 #| msgid "Image has no GPS info"
 msgid "Item has no GPS info"
 msgstr "Imagem sem informações de GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:642
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Sem localização geográfica"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:652
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "Country"
 msgstr "País:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:652
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Country shown in the item"
 msgstr "Defina aqui a localização do conteúdo na cidade."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, fuzzy, kde-format
 #| msgid "Province:"
 msgid "Province"
 msgstr "Estado:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Province shown in the item"
 msgstr "Defina aqui a localização do conteúdo na cidade."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:673
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Cidade:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:673
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "City shown in the item"
 msgstr "Defina aqui a localização do conteúdo na cidade."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, fuzzy, kde-format
 #| msgid "Sublocation:"
 msgid "Sublocation"
 msgstr "Sublocalização:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Sublocation shown in the item"
 msgstr "Defina aqui a localização do conteúdo na cidade."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, fuzzy, kde-format
 #| msgid "Print Creator"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Criador de Impressões"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items created by"
 msgstr "Retornar imagens comentadas por"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Legenda"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items whose comment contains"
 msgstr "Retornar imagens cujos comentários contenham"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:719
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "Retornar imagens comentadas por"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, kde-format
 msgid "Headline"
 msgstr "Destaque"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC headline"
 msgid "Return items with the IPTC headline"
 msgstr "Retornar imagens com o destaque IPTC"
 
 # A TRADUÇÃO COMO "TÍTULO" NÃO FICA ADEQUADA NO CONTEXTO.
-#: core/utilities/searchwindow/searchfields_createfield.cpp:735
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Nome"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:735
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC title"
 msgid "Return items with the IPTC title"
 msgstr "Retornar imagens com o título IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:743
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, fuzzy, kde-format
 #| msgid "Find pictures that have associated all these words:"
 msgid "Find items that have associated all these words:"
 msgstr "Localizar imagens com todas estas palavras associadas:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:751
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgid "Empty Text"
 msgstr "Lixeira"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:751
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without text in:"
 msgstr "Retornar imagens com a etiqueta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:753
+#: core/utilities/searchwindow/searchfields_createfield.cpp:764
 #, fuzzy, kde-format
 #| msgid "Print Creator"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Criador de Impressões"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Legenda"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Autor"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:767
 #, fuzzy, kde-format
 #| msgid "Headline"
 msgctxt "@label: search items without headline property"
@@ -63719,102 +63751,102 @@ msgid "Headline"
 msgstr "Destaque"
 
 # A TRADUÇÃO COMO "TÍTULO" NÃO FICA ADEQUADA NO CONTEXTO.
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:768
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Nome"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Taxa de proporção"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
 #| msgid "Return pictures with the aspect ratio"
 msgid "Return items with the aspect ratio"
 msgstr "Retornar imagens com a taxa de proporção"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:775
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Pixel Size"
 msgstr "Tamanho do pixel"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:775
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Valor de (Largura * Altura) entre"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:776
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "e"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Devolver o vídeo com a taxa de proporção"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:814
 #, kde-format
 msgid "Length of the video"
 msgstr "Duração do vídeo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:804
+#: core/utilities/searchwindow/searchfields_createfield.cpp:815
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "e"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:816
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, kde-format
 msgid "Frame Rate"
 msgstr "Taxa de quadros"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Devolver o vídeo com a taxa de quadros"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:822
+#: core/utilities/searchwindow/searchfields_createfield.cpp:833
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "e"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:823
+#: core/utilities/searchwindow/searchfields_createfield.cpp:834
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:839
+#: core/utilities/searchwindow/searchfields_createfield.cpp:850
 #, kde-format
 msgid "Codec"
 msgstr "Codec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:839
+#: core/utilities/searchwindow/searchfields_createfield.cpp:850
 #, kde-format
 msgid "Return video codec"
 msgstr "Devolver o codec de vídeo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate"
 msgid "Return Audio Bits Rate"
 msgstr "Taxa de bits do áudio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:908
+#: core/utilities/searchwindow/searchfields_createfield.cpp:919
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63822,77 +63854,77 @@ msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "e"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:909
+#: core/utilities/searchwindow/searchfields_createfield.cpp:920
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:925
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #, fuzzy, kde-format
 #| msgid "Return video audio Channel Type"
 msgid "Return Audio Channel Type"
 msgstr "Devolver o tipo de canal de áudio do vídeo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:927
+#: core/utilities/searchwindow/searchfields_createfield.cpp:938
 #, fuzzy, kde-format
 #| msgid "Mono"
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:928
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, fuzzy, kde-format
 #| msgid "Stereo"
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Estéreo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:929
+#: core/utilities/searchwindow/searchfields_createfield.cpp:940
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:930
+#: core/utilities/searchwindow/searchfields_createfield.cpp:941
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:931
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:932
+#: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type"
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Tipo de canal de áudio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:944
+#: core/utilities/searchwindow/searchfields_createfield.cpp:955
 #, fuzzy, kde-format
 #| msgid "Return video codec"
 msgid "Return Audio Codec"
 msgstr "Devolver o codec de vídeo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
 #, fuzzy, kde-format
 #| msgid "Show image type"
 msgid "Faces"
 msgstr "Mostrar tipo de imagem"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Return items by number of face regions"
 msgstr "Retornar imagens em que o nome do arquivo contenha"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1054
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63900,13 +63932,13 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "e"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without face regions"
 msgstr "Retornar imagens com a etiqueta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1064
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "No Face Regions"
@@ -63965,17 +63997,17 @@ msgstr "Arquivo, álbum, etiquetas"
 msgid "Picture Properties"
 msgstr "Propriedades da imagem"
 
-#: core/utilities/searchwindow/searchgroup.cpp:136
+#: core/utilities/searchwindow/searchgroup.cpp:137
 #, kde-format
 msgid "Caption, Comment, Title"
 msgstr "Legenda, comentários, título"
 
-#: core/utilities/searchwindow/searchgroup.cpp:185
+#: core/utilities/searchwindow/searchgroup.cpp:186
 #, kde-format
 msgid "Geographic position"
 msgstr "Posição geográfica"
 
-#: core/utilities/searchwindow/searchgroup.cpp:208
+#: core/utilities/searchwindow/searchgroup.cpp:209
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face regions"
@@ -66771,7 +66803,7 @@ msgctxt "@title:tab"
 msgid "Baloo"
 msgstr "Baloo"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:32
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:35
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -66788,19 +66820,19 @@ msgstr ""
 "metadados permite preservar estas informações ao mover ou enviar arquivos "
 "para os diferentes sistemas.</para>"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:42
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
 #, kde-format
 msgctxt "@label"
 msgid "Write This Information to the Metadata"
 msgstr "Gravar estas informações nos metadados"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
 #, kde-format
 msgctxt "@option:check"
 msgid "Image tags"
 msgstr "Etiquetas da imagem"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:46
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66811,13 +66843,13 @@ msgstr ""
 "Habilite esta opção para armazenar as etiquetas da imagem nas etiquetas XMP "
 "e IPTC."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
 msgstr "Legendas e título"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66831,13 +66863,13 @@ msgstr ""
 "Habilite esta opção para armazenar a legendas e o título da imagem na seção "
 "Comentário da JFIF, nas etiquetas EXIF, XMP e IPTC."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Rating"
 msgstr "Avaliação"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:57
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66851,13 +66883,13 @@ msgstr ""
 "Habilite esta opção para armazenar a avaliação da imagem nas etiquetas EXIF "
 "e XMP."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
 msgstr "Legenda de seleção"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid "Turn on this option to store the image pick label in the XMP tags."
@@ -66867,13 +66899,13 @@ msgstr ""
 "Habilite esta opção para armazenar as legendas de seleção da imagem nas "
 "etiquetas XMP."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, kde-format
 msgctxt "@option:check"
 msgid "Color label"
 msgstr "Legenda de cores"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid "Turn on this option to store the image color label in the XMP tags."
@@ -66883,13 +66915,13 @@ msgstr ""
 "Habilite esta opção para armazenar as legendas de cores da imagem nas "
 "etiquetas XMP."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
 #, kde-format
 msgctxt "@option:check"
 msgid "Timestamps"
 msgstr "Horas"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66903,13 +66935,13 @@ msgstr ""
 "Habilite esta opção para armazenar a data e hora da imagem nas etiquetas "
 "EXIF, XMP e IPTC."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata templates (Copyright etc.)"
 msgstr "Modelos de metadados (Copyright, etc.)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -66920,13 +66952,13 @@ msgstr ""
 "IPTC. Você pode definir os valores do modelo na página de configuração de "
 "Modelos."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
 msgstr "Etiquetas de rostos (incluindo as áreas dos rostos)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -66935,14 +66967,14 @@ msgstr ""
 "Ative esta opção para armazenar os retângulos das etiquetas dos rostos nas "
 "etiquetas XMP."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:91
 #, fuzzy, kde-format
 #| msgid "Position Information (GPS)"
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
 msgstr "Informações da posição (GPS)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:92
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66956,13 +66988,13 @@ msgstr ""
 "Habilite esta opção para armazenar a avaliação da imagem nas etiquetas EXIF "
 "e XMP."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:112
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid "Reading and Writing Metadata"
 msgstr "Lendo e gravando metadados"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66971,7 +67003,7 @@ msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
 msgstr "Ative esta opção para salvar os metadados em arquivos XMP."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -66980,14 +67012,14 @@ msgid ""
 "with database."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "Gravar metadados para cada arquivo"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:128
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -66996,7 +67028,7 @@ msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr "Ative esta opção para salvar os metadados em arquivos XMP."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:125
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "If possible write Metadata to RAW files (experimental)"
@@ -67004,7 +67036,7 @@ msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "Se possível, gravar os metadados em arquivos RAW (experimental)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -67020,13 +67052,13 @@ msgstr ""
 "recurso necessita da versão >= 0.18.0 da biblioteca dinâmica Exiv2. Ainda é "
 "experimental e está desabilitada por padrão."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:135
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
 #, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr "Usar uma sincronização posterior"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -67043,7 +67075,7 @@ msgstr ""
 "sincronização poderá ser feita posteriormente, se for aplicada a sua "
 "pendência ou à saída do digiKam"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:147
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "&Update file timestamp when files are modified"
@@ -67051,7 +67083,7 @@ msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr "At&ualizar a data/hora do arquivo ao modificar os arquivos"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67066,13 +67098,13 @@ msgstr ""
 "propriedades da data/hora dos arquivos para detectar as modificações de "
 "forma automática."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:155
 #, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "&Reanalisar os arquivos quando forem modificados"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:157
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -67092,20 +67124,20 @@ msgstr ""
 "tamanho ou data da última modificação também foram modificados, será "
 "efetuada uma nova análise desse arquivo ao iniciar o digiKam."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:226
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:230
 #, fuzzy, kde-format
 #| msgid "Write Options"
 msgctxt "@label"
 msgid "write limitations"
 msgstr "Opções de gravação"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -67113,7 +67145,7 @@ msgid ""
 "for details."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:240
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@label"
@@ -67403,13 +67435,12 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
-"digiKam (optionally) writes metadata to *.xmp sidecar\n"
-"files. Other programs might use different types, which\n"
-"can be specified below. digiKam will neither display these\n"
-"nor read from or write to them. But whenever a matching album\n"
-"item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-"moved, copied or deleted, the same operation will be done\n"
-"on these sidecar files.\n"
+"digiKam (optionally) writes metadata to *.xmp sidecar files. Other programs "
+"might use different types, which can be specified below. digiKam will "
+"neither display these nor read from or write to them. But whenever a "
+"matching album item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
+"moved, copied or deleted, the same operation will be done on these sidecar "
+"files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 
@@ -69043,6 +69074,24 @@ msgstr "Restaurar todas as configurações para os valores padrão."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Restaurar todas as configurações para os valores padrão."
+
+#, fuzzy
+#~| msgid "Export error"
+#~ msgctxt "@title:window"
+#~ msgid "Export error"
+#~ msgstr "Erro de exportação"
+
+#, fuzzy
+#~| msgid "GPS Sync"
+#~ msgctxt "@title:window"
+#~ msgid "GPS Sync"
+#~ msgstr "Sincronização com o GPS"
+
+#, fuzzy
+#~| msgid "Visit Exiv2 project website"
+#~ msgctxt "@info:whatsthis"
+#~ msgid "Visit Exiv2 project website"
+#~ msgstr "Visite o site do projeto Exiv2"
 
 #, fuzzy
 #~| msgid "An error has occurred with the media player..."

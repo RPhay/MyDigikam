@@ -228,6 +228,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         close(fd);
 
 #endif
+
         // TODO: Store ICC profile in an appropriate place in the image
 
         storeColorProfileInMetadata();

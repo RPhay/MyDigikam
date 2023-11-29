@@ -31,11 +31,9 @@ echo "----------------------------------------------"
 StartScript
 ChecksCPUCores
 RegisterRemoteServers
+AppendVCPKGPaths
 
 ORIG_WD="`pwd`"
-
-export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/curl:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/bin
-echo "PATH=$PATH"
 
 #################################################################################################
 
@@ -52,8 +50,8 @@ cmake $ORIG_WD/../3rdparty \
       -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DCMAKE_COLOR_MAKEFILE=ON \
-      -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET \
-      -DINSTALL_ROOT=$INSTALL_DIR/$VCPKG_TRIPLET \
+      -DCMAKE_INSTALL_PREFIX=$VCPKG_INSTALL_PREFIX \
+      -DINSTALL_ROOT=$VCPKG_INSTALL_PREFIX \
       -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
       -DKA_VERSION=$DK_KA_VERSION \
@@ -118,8 +116,8 @@ cmake --build . --parallel --config RelWithDebInfo --target ext_kcalendarcore
 cmake --build . --parallel --config RelWithDebInfo --target ext_breeze
 
 # Marble install shared lib at wrong place.
-mv $INSTALL_DIR/$VCPKG_TRIPLET/libmarble* $INSTALL_DIR/$VCPKG_TRIPLET/bin || true
-mv $INSTALL_DIR/$VCPKG_TRIPLET/libastro*  $INSTALL_DIR/$VCPKG_TRIPLET/bin || true
+mv $VCPKG_INSTALL_PREFIX/libmarble* $VCPKG_INSTALL_PREFIX/bin || true
+mv $VCPKG_INSTALL_PREFIX/libastro*  $VCPKG_INSTALL_PREFIX/bin || true
 
 #################################################################################################
 
@@ -143,15 +141,15 @@ if [[ $DK_QTVERSION == 6 ]] ; then
     for ITEM in $DIRS ; do
 
         BASE=$(basename $ITEM | awk -F'_' '{print $2}')
-		COMPONENT=${BASE%-prefix}
+        COMPONENT=${BASE%-prefix}
         SUBDIR=$ITEM/src/ext_$COMPONENT
 
-		if [[ -f "$SUBDIR/.git" ]] ; then 
-			echo "Parsed dir: $SUBDIR"
-			cd $SUBDIR
-			echo "$BASE:$(git rev-parse HEAD)" >> $KF6_GITREV_LST
-			cd $ORIG_WD
-		fi
+        if [[ -d "$SUBDIR/.git" ]] ; then 
+            echo "Parsed dir: $SUBDIR"
+            cd $SUBDIR
+            echo "$COMPONENT:$(git rev-parse HEAD)" >> $KF6_GITREV_LST
+            cd $ORIG_WD
+        fi
 
     done
 

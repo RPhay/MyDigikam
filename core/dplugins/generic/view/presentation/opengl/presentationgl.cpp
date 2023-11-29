@@ -9,7 +9,7 @@
  * SPDX-FileCopyrightText:      2004 by Renchi Raju <renchi dot raju at gmail dot com>
  * SPDX-FileCopyrightText: 2006-2009 by Valerio Fuoglio <valerio.fuoglio@gmail.com>
  * SPDX-FileCopyrightText:      2009 by Andi Clemens <andi dot clemens at googlemail dot com>
- * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -106,7 +106,8 @@ public:
         deskY           (0),
         deskWidth       (0),
         deskHeight      (0),
-        sharedData      (nullptr)
+        sharedData      (nullptr),
+        randomGenerator (QRandomGenerator::global())
     {
         texture[0] = nullptr;
         texture[1] = nullptr;
@@ -155,12 +156,13 @@ public:
     int                               deskHeight;
 
     PresentationContainer*            sharedData;
+
+    QRandomGenerator*                 randomGenerator;
 };
 
 PresentationGL::PresentationGL(PresentationContainer* const sharedData)
     : QOpenGLWidget(),
-      d            (new Private),
-      randomGenerator(QRandomGenerator::global())
+      d            (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setContextMenuPolicy(Qt::PreventContextMenu);
@@ -199,7 +201,7 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
     d->sharedData          = sharedData;
     d->sharedData->display = this;
 
-    d->slideCtrlWidget = new PresentationCtrlWidget(this, d->sharedData);
+    d->slideCtrlWidget     = new PresentationCtrlWidget(this, d->sharedData);
     d->slideCtrlWidget->hide();
 
     if (!d->sharedData->loop)
@@ -585,7 +587,7 @@ PresentationGL::EffectMethod PresentationGL::getRandomEffect()
     tmpMap.remove(QLatin1String("None"));
     QStringList t = tmpMap.keys();
     int count     = t.count();
-    int i         = randomGenerator->bounded(count);
+    int i         = d->randomGenerator->bounded(count);
     QString key   = t[i];
 
     return tmpMap[key];
@@ -652,7 +654,6 @@ void PresentationGL::previousFrame()
     }
 
     d->tex1First = !d->tex1First;
-
     d->curr      = (d->curr == 0) ? 1 : 0;
 }
 
@@ -1192,7 +1193,7 @@ void PresentationGL::effectRotate()
 
     if (d->i == 0)
     {
-        d->dir = randomGenerator->bounded(2);
+        d->dir = d->randomGenerator->bounded(2);
     }
 
     int a     = (d->curr == 0) ? 1 : 0;
@@ -1261,7 +1262,7 @@ void PresentationGL::effectBend()
 
     if (d->i == 0)
     {
-        d->dir = randomGenerator->bounded(2);
+        d->dir = d->randomGenerator->bounded(2);
     }
 
     int a     = (d->curr == 0) ? 1 : 0;
@@ -1332,7 +1333,7 @@ void PresentationGL::effectInOut()
 
     if (d->i == 0)
     {
-        d->dir = randomGenerator->bounded(1, 5);
+        d->dir = d->randomGenerator->bounded(1, 5);
     }
 
     int a;
@@ -1396,7 +1397,7 @@ void PresentationGL::effectSlide()
 
     if (d->i == 0)
     {
-        d->dir = randomGenerator->bounded(1, 5);
+        d->dir = d->randomGenerator->bounded(1, 5);
     }
 
     int a     = (d->curr == 0) ? 1 : 0;
@@ -1465,8 +1466,8 @@ void PresentationGL::effectFlutter()
         return;
     }
 
-    int a      = (d->curr == 0) ? 1 : 0;
-    int b      =  d->curr;
+    int a     = (d->curr == 0) ? 1 : 0;
+    int b     =  d->curr;
     GLuint ta = d->texture[a]->textureId();
     GLuint tb = d->texture[b]->textureId();
 

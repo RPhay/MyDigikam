@@ -192,8 +192,17 @@ Calibrator::Calibrator(QWidget* const parent)
     hboxLayout2->addWidget(pbRemoveMap);
     vboxLayout1->addLayout(hboxLayout2);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+    connect(d->groupingMode, SIGNAL(idClicked(int)),
+            this, SLOT(updateGroupingMode()));
+
+#else
+
     connect(d->groupingMode, SIGNAL(buttonClicked(int)),
             this, SLOT(updateGroupingMode()));
+
+#endif
 
     connect(d->sbLevel, SIGNAL(valueChanged(int)),
             this, SLOT(updateMarkers()));

@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 01:11+0000\n"
+"POT-Creation-Date: 2023-11-29 00:40+0000\n"
 "PO-Revision-Date: 2023-05-29 20:03-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1144,7 +1144,7 @@ msgid "White Balance:"
 msgstr "ホワイトバランス:"
 
 #: core/app/items/utils/tooltipfiller.cpp:313
-#: core/utilities/searchwindow/searchgroup.cpp:116
+#: core/utilities/searchwindow/searchgroup.cpp:117
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "音声/動画のプロパティ"
@@ -2610,7 +2610,7 @@ msgstr "ヘルプ(&H)"
 msgid "Main Toolbar"
 msgstr "メインツールバー"
 
-#: core/app/main/main.cpp:187 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2620,46 +2620,46 @@ msgstr "メインツールバー"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:196 core/showfoto/main/main.cpp:163
+#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:170
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Yukiko Bando"
 
-#: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
+#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:171
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ybando@k6.dion.ne.jp"
 
-#: core/app/main/main.cpp:205
+#: core/app/main/main.cpp:212
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "カメラダイアログを \"path\" で開く"
 
-#: core/app/main/main.cpp:208
+#: core/app/main/main.cpp:215
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Solid UDI \"udi\" のデバイスのためにカメラダイアログを開く"
 
-#: core/app/main/main.cpp:211
+#: core/app/main/main.cpp:218
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "接続されている gphoto2 カメラを自動的に検出して開く"
 
-#: core/app/main/main.cpp:213
+#: core/app/main/main.cpp:220
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "ディレクトリ \"dir\" にある SQLite データベースファイルで digiKam を起動"
 
-#: core/app/main/main.cpp:216
+#: core/app/main/main.cpp:223
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "設定ファイル \"config\" で digiKam を起動"
 
-#: core/app/main/main.cpp:243
+#: core/app/main/main.cpp:250
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2669,7 +2669,7 @@ msgstr ""
 "<p>64ビット Windows で32ビット版の digiKam を実行しています。</p><p>より良い"
 "動作のために64ビット版の digiKam をインストールしてください。</p>"
 
-#: core/app/main/main.cpp:285
+#: core/app/main/main.cpp:292
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2679,7 +2679,7 @@ msgstr ""
 "Qt4 SQLite データベースプラグインがありません。インストールしてください。\n"
 "インストールされているデータベースプラグイン:"
 
-#: core/app/main/main.cpp:294
+#: core/app/main/main.cpp:301
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2689,7 +2689,7 @@ msgstr ""
 "Qt4 SQLite データベースプラグインがありません。インストールしてください。\n"
 "インストールされているデータベースプラグイン:"
 
-#: core/app/main/main.cpp:334
+#: core/app/main/main.cpp:341
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2786,7 +2786,7 @@ msgstr ""
 # ACCELERATOR added by translator
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:233
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2795,7 +2795,7 @@ msgstr "戻る"
 # ACCELERATOR added by translator
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:235
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -2873,7 +2873,7 @@ msgstr "地図"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:119
 #: core/libs/album/widgets/albumselecttabs.cpp:194
-#: core/utilities/searchwindow/searchfields_createfield.cpp:141
+#: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Labels"
 msgstr "ラベル"
@@ -3619,7 +3619,7 @@ msgstr "音声チャンネルタイプ"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:944
+#: core/utilities/searchwindow/searchfields_createfield.cpp:955
 #: core/utilities/setup/setuptooltip.cpp:319
 #, kde-format
 msgid "Audio Codec"
@@ -3627,7 +3627,7 @@ msgstr "音声コーデック"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:814
 #, kde-format
 msgid "Duration"
 msgstr "長さ"
@@ -3912,14 +3912,14 @@ msgstr "アイテムのプロパティ"
 
 #: core/app/views/tableview/tableview_column_item.cpp:75
 #: core/app/views/tableview/tableview_column_item.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:201
+#: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Width"
 msgstr "幅"
 
 #: core/app/views/tableview/tableview_column_item.cpp:76
 #: core/app/views/tableview/tableview_column_item.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:219
+#: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Height"
 msgstr "高さ"
@@ -6698,7 +6698,6 @@ msgstr "High Efficiency Image Coding (*.heic *.heif)"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6707,6 +6706,7 @@ msgstr "High Efficiency Image Coding (*.heic *.heif)"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
@@ -6722,7 +6722,6 @@ msgstr "あり"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6731,6 +6730,7 @@ msgstr "あり"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
@@ -6745,46 +6745,12 @@ msgstr "あり"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: cannot write file format"
-msgid "no"
-msgstr "なし"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
-#, fuzzy, kde-format
-#| msgid "ImageMagick loader"
-msgctxt "@title"
-msgid "ImageMagick loader"
-msgstr "ImageMagick ローダ"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
-#, fuzzy, kde-format
-#| msgid "An image loader based on ImageMagick coders"
-msgctxt "@info"
-msgid "An image loader based on ImageMagick coders"
-msgstr "ImageMagick コーデックをベースにした画像ローダ"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
-#, kde-kuit-format
-msgctxt "@info"
-msgid ""
-"<para>This plugin allows users to load and save image using ImageMagick "
-"coders.</para><para>ImageMagick is a free and open-source software suite for "
-"converting raster image and vector image files. It can read and write over "
-"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
-"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
-msgstr ""
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:59
-#: core/libs/dplugins/core/dplugindimg.cpp:71
-#, fuzzy, kde-format
-#| msgid "no"
-msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "なし"
 
@@ -6975,6 +6941,40 @@ msgstr "JPEG 2000 ストリーム"
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
 msgstr "JPEG 2000 画像"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:86
+#, fuzzy, kde-format
+#| msgid "ImageMagick loader"
+msgctxt "@title"
+msgid "ImageMagick loader"
+msgstr "ImageMagick ローダ"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:101
+#, fuzzy, kde-format
+#| msgid "An image loader based on ImageMagick coders"
+msgctxt "@info"
+msgid "An image loader based on ImageMagick coders"
+msgstr "ImageMagick コーデックをベースにした画像ローダ"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:106
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>This plugin allows users to load and save image using ImageMagick "
+"coders.</para><para>ImageMagick is a free and open-source software suite for "
+"converting raster image and vector image files. It can read and write over "
+"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
+"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
+msgstr ""
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/libs/dplugins/core/dplugindimg.cpp:59
+#: core/libs/dplugins/core/dplugindimg.cpp:71
+#, fuzzy, kde-format
+#| msgid "no"
+msgctxt "@info: cannot read file format"
+msgid "no"
+msgstr "なし"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:68
 #, kde-format
@@ -7527,31 +7527,31 @@ msgstr ""
 "このボタンを押すと、現在選択されているチャンネルのすべてのレベル値が標準の値"
 "に戻ります。"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:883
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:893
 #, kde-format
 msgid "Adjust Levels"
 msgstr "レベル補正"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:900
 #, fuzzy, kde-format
 #| msgid "Select Gimp Levels File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "読み込む GIMP のレベルファイルを選択"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:912
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "GIMP のレベルファイルから読み込めません。"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:927
 #, fuzzy, kde-format
 #| msgid "Gimp Levels File to Save"
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "保存する GIMP のレベルファイル"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:939
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "GIMP のレベルファイルに保存できません。"
@@ -7993,7 +7993,7 @@ msgstr "カラーマネージメントが無効になっています..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:80
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:207
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "White Balance"
 msgstr "ホワイトバランス"
@@ -8150,17 +8150,17 @@ msgstr "半透明"
 msgid "Use semi-transparent text background under image"
 msgstr "テキストに半透明の背景を付けます。"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:317
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:326
 #, kde-format
 msgid "Enter your text here."
 msgstr "ここにテキストを入力してください。"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:426
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:435
 #, fuzzy, kde-format
 msgid "Insert Text Tool"
 msgstr "テキストを挿入"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:439
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:448
 #, kde-format
 msgid "Insert Text"
 msgstr "テキストを挿入"
@@ -8772,7 +8772,20 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "シャープ化..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:168
+#: core/dplugins/editor/file/print/printhelper.cpp:177
+#, fuzzy, kde-format
+#| msgid "No Profile Available"
+msgctxt "@title:window"
+msgid "No Printer Available"
+msgstr "利用可能なプロファイルがありません"
+
+#: core/dplugins/editor/file/print/printhelper.cpp:178
+#, kde-format
+msgctxt "@info"
+msgid "No printer is installed on your system. Please install one at least."
+msgstr ""
+
+#: core/dplugins/editor/file/print/printhelper.cpp:188
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@title:window"
@@ -9866,7 +9879,7 @@ msgstr ""
 msgid "Advanced Settings"
 msgstr "詳細設定"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:769
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:778
 #, kde-format
 msgid "Liquid Rescale"
 msgstr ""
@@ -10686,8 +10699,8 @@ msgstr ""
 "の処理には時間がかかることがあります。"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:629
-#: core/utilities/searchwindow/searchfields_createfield.cpp:203
-#: core/utilities/searchwindow/searchfields_createfield.cpp:221
+#: core/utilities/searchwindow/searchfields_createfield.cpp:214
+#: core/utilities/searchwindow/searchfields_createfield.cpp:232
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -10999,7 +11012,9 @@ msgid "Cannot save \"%1\" file"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -11029,14 +11044,15 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Flip horizontally"
 msgctxt "@item"
-msgid "Two maps - horizontal"
+msgid "Two maps - left and right"
 msgstr "左右反転"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Flip horizontally"
 msgctxt "@item"
-msgid "Two maps - vertical"
-msgstr ""
+msgid "Two maps - top and bottom"
+msgstr "左右反転"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, fuzzy, kde-format
@@ -11135,7 +11151,7 @@ msgid "Saving changes -"
 msgstr "変更を保存中 - %p%"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:247
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
@@ -11882,8 +11898,8 @@ msgstr[0] ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -16393,8 +16409,8 @@ msgstr "フォルダで"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:327
-#: core/utilities/searchwindow/searchfields_createfield.cpp:358
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
+#: core/utilities/searchwindow/searchfields_createfield.cpp:369
 #, kde-format
 msgid "Camera"
 msgstr "カメラ"
@@ -19547,24 +19563,24 @@ msgstr "不明なフォーマット"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
 #, fuzzy, kde-format
-msgctxt "Output: PDF"
-msgid "Print to PDF"
-msgstr "プレビューのオプション"
-
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
-#, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "画像の印刷"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#, fuzzy, kde-format
+msgctxt "Output: PDF"
+msgid "Print to PDF"
+msgstr "プレビューのオプション"
+
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
 #, fuzzy, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "プレビューのオプション"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "JPEG"
@@ -19572,7 +19588,7 @@ msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:155
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "PNG"
@@ -19580,7 +19596,7 @@ msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:156
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "TIFF"
@@ -19588,33 +19604,33 @@ msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:165
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
 #, fuzzy, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "ジオロケーション"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
 #, fuzzy, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "ファイル名を表示"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
 #, fuzzy, kde-format
 #| msgid "Creation date/time"
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "作成日時"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
 #, fuzzy, kde-format
 #| msgid "Item Comment"
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "アイテムのコメント"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:169
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
 #, fuzzy, kde-format
 #| msgid "Custom ratio:"
 msgctxt "Caption type: CUSTOM"
@@ -19668,7 +19684,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:719
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, kde-format
 msgid "Author"
 msgstr "作者"
@@ -21123,20 +21139,21 @@ msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "フォルダの画像を開く"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
 #, fuzzy, kde-format
 msgid "OpenGL Error"
 msgstr "エクスポート"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
 #, kde-format
-msgid "GL_ARB_texture_rectangle not supported"
+msgid ""
+"GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
 msgstr ""
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context found"
+msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -21146,61 +21163,61 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "プレビューを開く"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:98
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
 "automatically on the next startup."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track up in the playlist."
 msgstr "選択した値をリストから削除"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:126
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track down in the playlist."
 msgstr "選択した値をリストから削除"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:127
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgid "Add new tracks to the playlist."
 msgstr "新しい値をリストに追加"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:128
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
 #, fuzzy, kde-format
 #| msgid "Replace the current selected value from the list"
 msgid "Delete the selected track from the playlist."
 msgstr "リストから選択した値を置換"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:129
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:123
 #, kde-format
 msgid "Load playlist from a file."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:130
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:124
 #, fuzzy, kde-format
 msgid "Save playlist to a file."
 msgstr "画像ファイル"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:131
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
 #, fuzzy, kde-format
 #| msgid "Clear List"
 msgid "Clear the playlist."
 msgstr "リストをクリア"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:264
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:258
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
 msgid_plural "%1 tracks [%2]"
 msgstr[0] ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:292
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:286
 #, fuzzy, kde-format
 #| msgid ""
 #| "Slide time is more than soundtrack time. Suggest: add more sound files."
@@ -21210,39 +21227,39 @@ msgstr ""
 "音声トラックの時間がスライドの時間に達していません。音声ファイルを追加するこ"
 "とをお勧めします。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:356
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "すべて選択解除"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:424
 #, fuzzy, kde-format
 #| msgid "You can only move up one image file at once."
 msgid "You can only move image files up one at a time."
 msgstr "複数の画像ファイルを同時に上に移動することはできません。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:468
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:462
 #, fuzzy, kde-format
 #| msgid "You can only move down one file at once."
 msgid "You can only move files down one at a time."
 msgstr "複数のファイルを同時に下に移動することはできません。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:483
 #, fuzzy, kde-format
 #| msgid "Clear All"
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "すべてクリア"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:484
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:543
 #, kde-format
 msgid "Playlist (*.m3u)"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:542
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -21250,7 +21267,7 @@ msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "変更を保存"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:603
 #, fuzzy, kde-format
 #| msgid "Cannot access to file %1, please check the path is right."
 msgid "Cannot access file \"%1\". Please check the path is correct."
@@ -21258,7 +21275,7 @@ msgstr ""
 "ファイル <filename>%1</filename> にアクセスできません。パスが正しいか確認して"
 "ください。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:619
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:613
 #, fuzzy, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr "ファイルのリストが空なのでプレビューを作成できません。"
@@ -21364,25 +21381,26 @@ msgstr "スライドショー"
 msgid "Soundtrack:"
 msgstr "音声トラック:"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
-#, fuzzy, kde-format
-msgid "No detail available"
-msgstr "オプションはありません"
-
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:194
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:236
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:257
 #, fuzzy, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:215
+#, fuzzy, kde-format
+msgid "No detail available"
+msgstr "オプションはありません"
+
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:248
 #, fuzzy, kde-format
 #| msgid "%1 is damaged and may not be playable."
 msgid "%1 may not be playable."
 msgstr "<filename>%1</filename> は壊れていて再生できないかもしれません。"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:256
 #, fuzzy, kde-format
 #| msgid "This file is damaged and may not be playable."
 msgid "This file may not be playable."
@@ -21421,10 +21439,9 @@ msgstr "次へ"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:70
-#: core/utilities/searchwindow/searchfields_createfield.cpp:176
-#, fuzzy, kde-format
-#| msgid "Time:"
-msgid "Time"
+#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
+#, kde-format
+msgid "Time:"
 msgstr "時刻:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -21447,6 +21464,12 @@ msgstr "0:00:00"
 msgctxt "Total amount of time of presentation"
 msgid "Total:"
 msgstr "%1 (%2)"
+
+#. i18n: ectx: property (text), widget (QLabel, m_soundLabel)
+#: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:115
+#, kde-format
+msgid "Volumes:"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:23
@@ -21599,7 +21622,7 @@ msgid "Image #%1"
 msgstr "%1 の画像"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:679
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:685
 #, fuzzy, kde-format
 msgid "Ken Burns"
 msgstr "Ken Burns"
@@ -21756,7 +21779,7 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "高度な設定"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
 #, fuzzy, kde-format
 #| msgid "None"
@@ -21764,63 +21787,63 @@ msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "なし"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
 #, fuzzy, kde-format
 #| msgid "Bend"
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "曲げる"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
 #, fuzzy, kde-format
 #| msgid "Blend"
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "ブレンド"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
 #, fuzzy, kde-format
 #| msgid "Cube"
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "キューブ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
 #, fuzzy, kde-format
 #| msgid "Fade"
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "フェード"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
 #, fuzzy, kde-format
 #| msgid "Flutter"
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "ひらひら"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
 #, fuzzy, kde-format
 #| msgid "In Out"
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "ズームイン/アウト"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "回転"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:577
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "スライドショー"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:578
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1035
 #, fuzzy, kde-format
 #| msgid "Random"
@@ -21828,21 +21851,21 @@ msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "ランダム"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
 #, fuzzy, kde-format
 msgid "Slideshow Completed"
 msgstr "スライドショー"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:632
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:880
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:638
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:869
 #, fuzzy, kde-format
 #| msgid "Click to set"
 msgid "Click to Exit..."
 msgstr "クリックで指定"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:637
 #, fuzzy, kde-format
 #| msgid "Slide Show"
 msgid "SlideShow Completed"
@@ -21892,20 +21915,20 @@ msgctxt "@action"
 msgid "Presentation..."
 msgstr "自由回転..."
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:230
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "このタグを付ける"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:231
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:249
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:411
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
@@ -21913,7 +21936,7 @@ msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "タグを削除"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:257
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:412
 #, fuzzy, kde-format
 #| msgid "Loading metadata - %p%"
@@ -24673,7 +24696,7 @@ msgid "This is the list of images to upload to an iNaturalist observation."
 msgstr "一括処理する画像の一覧です。"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, kde-format
 msgid "Date"
 msgstr "日付"
@@ -26842,9 +26865,9 @@ msgid "Reset curve to linear"
 msgstr "カーブを線形にリセット"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
-#: core/utilities/searchwindow/searchfields_createfield.cpp:461
-#: core/utilities/searchwindow/searchfields_createfield.cpp:482
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:472
+#: core/utilities/searchwindow/searchfields_createfield.cpp:493
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "Exposure"
 msgstr "露出"
@@ -30154,14 +30177,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "自然"
 
-#: core/libs/dialogs/libsinfodlg.cpp:189
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "アルバムライブラリ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:276
+#: core/libs/dialogs/libsinfodlg.cpp:279
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30169,7 +30192,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:357
+#: core/libs/dialogs/libsinfodlg.cpp:360
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30177,34 +30200,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:388
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:416
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "カメラの設定"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:599
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "はい"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:604
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "いいえ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:609
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -41737,14 +41760,14 @@ msgid "Default from Desktop"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:237
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:239
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Capture"
@@ -41753,14 +41776,14 @@ msgid "Capture"
 msgstr "キャプチャ"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:249
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "メディアプレーヤーにエラーが発生しました..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -44095,7 +44118,7 @@ msgstr ""
 "す。"
 
 # Theme based on users' default color scheme
-#: core/libs/widgets/mainview/thememanager_p.cpp:1224
+#: core/libs/widgets/mainview/thememanager_p.cpp:1232
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -45014,7 +45037,7 @@ msgstr "画像の情報"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:139
-#: core/utilities/searchwindow/searchgroup.cpp:155
+#: core/utilities/searchwindow/searchgroup.cpp:156
 #: core/utilities/setup/setuptooltip.cpp:232
 #, kde-format
 msgid "Photograph Information"
@@ -45257,7 +45280,7 @@ msgid "Pick"
 msgstr "選抜"
 
 #: core/libs/widgets/metadata/labels/ratingwidget.cpp:574
-#: core/utilities/searchwindow/searchfields_createfield.cpp:149
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
 msgstr "評価"
@@ -51218,20 +51241,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "フォルダ: "
 
-#: core/showfoto/main/main.cpp:154
+#: core/showfoto/main/main.cpp:161
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:172
+#: core/showfoto/main/main.cpp:179
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "開くファイルまたはフォルダ"
 
-#: core/showfoto/main/main.cpp:203
+#: core/showfoto/main/main.cpp:210
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -51529,15 +51552,7 @@ msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "回転/反転後は方向タグを「ノーマル」に設定(&N)"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:117
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:179
-#, fuzzy, kde-format
-#| msgid "Visit Exiv2 project website"
-msgctxt "@info:whatsthis"
-msgid "Visit Exiv2 project website"
-msgstr "Exiv2 プロジェクトのウェブサイトを訪問"
-
-#: core/showfoto/setup/showfotosetupmetadata.cpp:125
+#: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, fuzzy, kde-format
 msgctxt "@info"
@@ -51549,7 +51564,7 @@ msgstr ""
 "術的な情報 (絞りやシャッタースピードなど) を保存するために今日のほとんどのデ"
 "ジタルカメラで使用されている規格です。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:123
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, fuzzy, kde-format
 msgctxt "@info"
@@ -51560,7 +51575,7 @@ msgstr ""
 "<br><b><a href='http://en.wikipedia.org/wiki/IPTC'>IPTC</a></b> は撮影者の情"
 "報を画像に保存するためにデジタル写真で使用されている古い規格です。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:135
+#: core/showfoto/setup/showfotosetupmetadata.cpp:129
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, fuzzy, kde-format
 msgctxt "@info"
@@ -51570,14 +51585,14 @@ msgstr ""
 "Extensible_Metadata_Platform'>XMP</a></b> はデジタル写真で使用されている "
 "IPTC に代わる新しい規格です。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:156
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:216
+#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "動作"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:165
+#: core/showfoto/setup/showfotosetupmetadata.cpp:159
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, fuzzy, kde-format
 #| msgid "Tools"
@@ -53226,14 +53241,14 @@ msgid "Lens of the camera"
 msgstr "カメラのレンズ"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:63
-#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:414
 #, kde-format
 msgid "Aperture"
 msgstr "絞り"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:64
-#: core/utilities/searchwindow/searchfields_createfield.cpp:423
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:434
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgid "Focal length"
 msgstr "焦点距離"
@@ -53244,7 +53259,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "焦点距離 (35mm 換算)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:461
+#: core/utilities/searchwindow/searchfields_createfield.cpp:472
 #, kde-format
 msgid "Exposure time"
 msgstr "露出時間"
@@ -53260,7 +53275,7 @@ msgid "Exposure mode"
 msgstr "露出モード"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:69
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgid "Sensitivity"
 msgstr "フィルム感度"
@@ -53271,7 +53286,7 @@ msgid "Flash mode"
 msgstr "フラッシュモード"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:563
 #, kde-format
 msgid "White balance"
 msgstr "ホワイトバランス"
@@ -53302,14 +53317,14 @@ msgid "Display Aspect Ratio"
 msgstr "表示アスペクト比"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "音声ビットレート"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:925
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -53382,7 +53397,7 @@ msgid "Altitude in a human readable form"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:58
-#: core/utilities/searchwindow/searchfields_createfield.cpp:237
+#: core/utilities/searchwindow/searchfields_createfield.cpp:248
 #, kde-format
 msgid "Orientation"
 msgstr "向き"
@@ -53516,12 +53531,6 @@ msgstr "ソース:"
 msgctxt "the format of the date"
 msgid "Format:"
 msgstr "フォーマット:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
-#, kde-format
-msgid "Time:"
-msgstr "時刻:"
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:36
 #, fuzzy, kde-format
@@ -54804,6 +54813,7 @@ msgstr "URL:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr ""
 
@@ -54936,6 +54946,13 @@ msgstr "フォルダを追加..."
 msgid "New Folder"
 msgstr "フォルダで"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, fuzzy, kde-format
+#| msgid "Color Management"
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr "カラーマネージメント"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, fuzzy, kde-format
 #| msgid ""
@@ -55038,9 +55055,10 @@ msgstr "ブックマーク"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
+#| msgid "Bookmarks"
 msgctxt "@title:window"
-msgid "Export error"
-msgstr "エクスポート"
+msgid "Export Bookmark"
+msgstr "ブックマーク"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
@@ -55363,14 +55381,6 @@ msgstr "削除"
 msgid "Look up missing altitude values"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr "GPS 同期"
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -55665,6 +55675,12 @@ msgstr ""
 msgid "Retrieving RG info -"
 msgstr ""
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr "降順ソート"
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
@@ -55692,9 +55708,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
-msgstr ""
+msgstr "降順ソート"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:235
 #, kde-format
@@ -60091,7 +60108,7 @@ msgstr "(値が選択されていません)"
 msgid "No Rating assigned"
 msgstr "評価なし"
 
-#: core/utilities/searchwindow/searchfields.cpp:74
+#: core/utilities/searchwindow/searchfields.cpp:76
 #, kde-format
 msgid "Reset contents"
 msgstr "テキストをクリア"
@@ -60230,16 +60247,19 @@ msgid "and"
 msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
+#: core/utilities/searchwindow/searchfields_createfield.cpp:133
 #, kde-format
 msgid "File Size"
 msgstr "ファイルサイズ"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
-#, kde-format
-msgid "Size of the file"
+#, fuzzy, kde-format
+#| msgid "Size of the file"
+msgid "Size of the file in megabytes"
 msgstr "ファイルのサイズ"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:122
+#: core/utilities/searchwindow/searchfields_createfield.cpp:134
 #, kde-format
 msgctxt "Size of the file ...-..."
 msgid "-"
@@ -60247,27 +60267,33 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
 #, fuzzy, kde-format
+#| msgid "Size of the file"
+msgid "Size of the file in bytes"
+msgstr "ファイルのサイズ"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:144
+#, fuzzy, kde-format
 #| msgid "Month"
 msgid "Month/Day"
 msgstr "月"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
 msgid "Return items from a month or a day of the month"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:141
+#: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, fuzzy, kde-format
 msgid "Return items with labels"
 msgstr "次のタグが付けられている画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:149
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, fuzzy, kde-format
 #| msgid "Return pictures rated at least"
 msgid "Return items rated at least"
 msgstr "評価が次の範囲の画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:150
+#: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "Return pictures rated at least...at most..."
 #| msgid "at most"
@@ -60275,83 +60301,89 @@ msgctxt "Return items rated at least...at most..."
 msgid "at most"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, fuzzy, kde-format
 #| msgid "Return pictures created between"
 msgid "Return items created between"
 msgstr "次の期間中に作成された画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:159
+#: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, fuzzy, kde-format
 msgctxt "'Return items created between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:167
+#: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, kde-format
 msgid "Digitization"
 msgstr "デジタル化"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:167
+#: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, fuzzy, kde-format
 #| msgid "Return pictures digitized between"
 msgid "Return items digitized between"
 msgstr "次の期間中にデジタル化された画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:168
+#: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, fuzzy, kde-format
 msgctxt "'Return items digitized between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#, fuzzy, kde-format
+#| msgid "Time:"
+msgid "Time"
+msgstr "時刻:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
 #, fuzzy, kde-format
 #| msgid "Return pictures created between"
 msgid "Return items with created time between"
 msgstr "次の期間中に作成された画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:177
+#: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, fuzzy, kde-format
 msgctxt "'Return items with created time between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, kde-format
 msgid "Exif Orientation"
 msgstr "Exif の方向タグ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, fuzzy, kde-format
 #| msgid "Find pictures with orientation flag"
 msgid "Find items with orientation flag"
 msgstr "次の方向タグを持つ画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:201
+#: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, fuzzy, kde-format
 #| msgid "Find pictures with a width between"
 msgid "Find items with a width between"
 msgstr "幅が次の範囲の画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:202
+#: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, fuzzy, kde-format
 msgctxt "Find items with a width between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:219
+#: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, fuzzy, kde-format
 #| msgid "Find pictures with a height between"
 msgid "Find items with a height between"
 msgstr "高さが次の範囲の画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:220
+#: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, fuzzy, kde-format
 msgctxt "Find items with a height between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:238
+#: core/utilities/searchwindow/searchfields_createfield.cpp:249
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Find pictures with any orientation / landscape / portrait orientation..."
@@ -60360,18 +60392,18 @@ msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "次の向きの画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, kde-format
 msgid "File Format"
 msgstr "ファイルフォーマット"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, fuzzy, kde-format
 #| msgid "Return pictures with the image file format"
 msgid "Return items with the file format"
 msgstr "次のファイルフォーマットの画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:251
+#: core/utilities/searchwindow/searchfields_createfield.cpp:262
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -60379,26 +60411,26 @@ msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "1 個の画像"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:256
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "動画"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:261
+#: core/utilities/searchwindow/searchfields_createfield.cpp:272
 #, fuzzy, kde-format
 #| msgid "Audio"
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "音声"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#: core/utilities/searchwindow/searchfields_createfield.cpp:297
 #, kde-format
 msgid "Color Depth"
 msgstr "色数"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#: core/utilities/searchwindow/searchfields_createfield.cpp:297
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Find pictures with any orientation / landscape / portrait orientation..."
@@ -60407,26 +60439,26 @@ msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "次の向きの画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#: core/utilities/searchwindow/searchfields_createfield.cpp:307
 #, kde-format
 msgid "Color Model"
 msgstr "カラーモデル"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#: core/utilities/searchwindow/searchfields_createfield.cpp:307
 #, fuzzy, kde-format
 #| msgid "Find pictures with the color model"
 msgid "Find items with the color model"
 msgstr "次のカラーモデルの画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:301
-#: core/utilities/searchwindow/searchfields_createfield.cpp:302
-#: core/utilities/searchwindow/searchfields_createfield.cpp:303
-#: core/utilities/searchwindow/searchfields_createfield.cpp:304
-#: core/utilities/searchwindow/searchfields_createfield.cpp:305
-#: core/utilities/searchwindow/searchfields_createfield.cpp:306
-#: core/utilities/searchwindow/searchfields_createfield.cpp:307
-#: core/utilities/searchwindow/searchfields_createfield.cpp:308
-#: core/utilities/searchwindow/searchfields_createfield.cpp:309
+#: core/utilities/searchwindow/searchfields_createfield.cpp:312
+#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:315
+#: core/utilities/searchwindow/searchfields_createfield.cpp:316
+#: core/utilities/searchwindow/searchfields_createfield.cpp:317
+#: core/utilities/searchwindow/searchfields_createfield.cpp:318
+#: core/utilities/searchwindow/searchfields_createfield.cpp:319
+#: core/utilities/searchwindow/searchfields_createfield.cpp:320
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -60434,513 +60466,513 @@ msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "1 個の画像"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
-#: core/utilities/searchwindow/searchfields_createfield.cpp:315
-#: core/utilities/searchwindow/searchfields_createfield.cpp:316
+#: core/utilities/searchwindow/searchfields_createfield.cpp:324
+#: core/utilities/searchwindow/searchfields_createfield.cpp:325
+#: core/utilities/searchwindow/searchfields_createfield.cpp:326
+#: core/utilities/searchwindow/searchfields_createfield.cpp:327
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "動画"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:327
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
 #, kde-format
 msgid "The make of the camera"
 msgstr "カメラのメーカー"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:358
+#: core/utilities/searchwindow/searchfields_createfield.cpp:369
 #, kde-format
 msgid "The model of the camera"
 msgstr "カメラのモデル"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:400
 #, kde-format
 msgid "Lens"
 msgstr "レンズ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:400
 #, fuzzy, kde-format
 #| msgid "Type of the media file"
 msgid "The type of the lens"
 msgstr "メディアファイルの種類"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:414
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "レンズの絞り (F 値)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:404
+#: core/utilities/searchwindow/searchfields_createfield.cpp:415
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:423
+#: core/utilities/searchwindow/searchfields_createfield.cpp:434
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "レンズの焦点距離"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35mm 換算の焦点距離"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#: core/utilities/searchwindow/searchfields_createfield.cpp:454
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:462
+#: core/utilities/searchwindow/searchfields_createfield.cpp:473
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:482
+#: core/utilities/searchwindow/searchfields_createfield.cpp:493
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "自動露出プログラム"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "自動露出か手動露出"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO 感度 (線形スケール、ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:506
+#: core/utilities/searchwindow/searchfields_createfield.cpp:517
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#: core/utilities/searchwindow/searchfields_createfield.cpp:540
 #, fuzzy, kde-format
 #| msgid "Flash"
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "フラッシュ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#: core/utilities/searchwindow/searchfields_createfield.cpp:540
 #, fuzzy, kde-format
 #| msgid "Flash mode"
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "フラッシュモード"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "自動ホワイトバランスか手動ホワイトバランス"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:563
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "ホワイトバランスに使用された色温度"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:553
+#: core/utilities/searchwindow/searchfields_createfield.cpp:564
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #, kde-format
 msgid "Metering Mode"
 msgstr "測光方式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "露出を決定する方法"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
-#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#: core/utilities/searchwindow/searchfields_createfield.cpp:588
+#: core/utilities/searchwindow/searchfields_createfield.cpp:601
 #, kde-format
 msgid "Subject Distance"
 msgstr "被写体距離"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
+#: core/utilities/searchwindow/searchfields_createfield.cpp:588
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "レンズから被写体までの距離"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:578
+#: core/utilities/searchwindow/searchfields_createfield.cpp:589
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#: core/utilities/searchwindow/searchfields_createfield.cpp:601
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "マクロ、近景、遠景"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:618
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
 msgid "GPS"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:618
 #, kde-format
 msgid "Altitude range"
 msgstr "高度範囲"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:608
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, fuzzy, kde-format
 msgid "Item has no GPS info"
 msgstr "タグが付けられていない画像"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:642
 #, fuzzy, kde-format
 msgid "Not Geo-located"
 msgstr "重複画像を検索"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:652
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "Country"
 msgstr "国:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:652
 #, kde-format
 msgid "Country shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, fuzzy, kde-format
 #| msgid "Province:"
 msgid "Province"
 msgstr "県:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, fuzzy, kde-format
 msgid "Province shown in the item"
 msgstr "埋め込みプレビューにフルサイズの画像を読み込む"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:673
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "市:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:673
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "City shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, fuzzy, kde-format
 #| msgid "Sublocation:"
 msgid "Sublocation"
 msgstr "町名:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "画像の印刷"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items created by"
 msgstr "次の人がコメントした画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "キャプション"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items whose comment contains"
 msgstr "コメントが次を含む画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:719
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "次の人がコメントした画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, kde-format
 msgid "Headline"
 msgstr "ヘッドライン"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC headline"
 msgid "Return items with the IPTC headline"
 msgstr "次の IPTC ヘッドラインの画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:735
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "タイトル"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:735
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC title"
 msgid "Return items with the IPTC title"
 msgstr "次の IPTC タイトルの画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:743
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, fuzzy, kde-format
 #| msgid "Find pictures that have associated all these words:"
 msgid "Find items that have associated all these words:"
 msgstr "以下のすべての単語に関連付けられている画像を検索:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:751
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, kde-format
 msgid "Empty Text"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:751
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without text in:"
 msgstr "次のタグが付けられている画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:753
+#: core/utilities/searchwindow/searchfields_createfield.cpp:764
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "画像の印刷"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "キャプション"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "作者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:767
 #, fuzzy, kde-format
 #| msgid "Headline"
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "ヘッドライン"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:768
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "タイトル"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "アスペクト比"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "次のファイルフォーマットの画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:775
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Pixel Size"
 msgstr "ピクセルサイズ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:775
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, fuzzy, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "高さが次の範囲の画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:776
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, fuzzy, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, fuzzy, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "次のファイルフォーマットの画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:814
 #, fuzzy, kde-format
 msgid "Length of the video"
 msgstr "ファイルのサイズ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:804
+#: core/utilities/searchwindow/searchfields_createfield.cpp:815
 #, fuzzy, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:816
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "秒"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, kde-format
 msgid "Frame Rate"
 msgstr "フレームレート"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, fuzzy, kde-format
 msgid "Return video with the frame rate"
 msgstr "次のファイルフォーマットの画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:822
+#: core/utilities/searchwindow/searchfields_createfield.cpp:833
 #, fuzzy, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:823
+#: core/utilities/searchwindow/searchfields_createfield.cpp:834
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "フレーム/秒"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:839
+#: core/utilities/searchwindow/searchfields_createfield.cpp:850
 #, kde-format
 msgid "Codec"
 msgstr "コーデック"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:839
+#: core/utilities/searchwindow/searchfields_createfield.cpp:850
 #, fuzzy, kde-format
 msgid "Return video codec"
 msgstr "音声ファイル"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate"
 msgid "Return Audio Bits Rate"
 msgstr "音声ビットレート"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:908
+#: core/utilities/searchwindow/searchfields_createfield.cpp:919
 #, fuzzy, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:909
+#: core/utilities/searchwindow/searchfields_createfield.cpp:920
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "ビット/秒"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:925
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #, fuzzy, kde-format
 msgid "Return Audio Channel Type"
 msgstr "画像のファイルフォーマットを表示"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:927
+#: core/utilities/searchwindow/searchfields_createfield.cpp:938
 #, fuzzy, kde-format
 #| msgid "Mono"
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "モノラル"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:928
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, fuzzy, kde-format
 #| msgid "Stereo"
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "ステレオ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:929
+#: core/utilities/searchwindow/searchfields_createfield.cpp:940
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:930
+#: core/utilities/searchwindow/searchfields_createfield.cpp:941
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:931
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:932
+#: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type"
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "音声チャンネルタイプ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:944
+#: core/utilities/searchwindow/searchfields_createfield.cpp:955
 #, fuzzy, kde-format
 msgid "Return Audio Codec"
 msgstr "音声ファイル"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Faces"
 msgid "Faces"
 msgstr "顔で"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Return items by number of face regions"
 msgstr "ファイル名が次を含む"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1054
 #, fuzzy, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without face regions"
 msgstr "次のタグが付けられている画像を探す"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1064
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "No Face Regions"
@@ -60999,17 +61031,17 @@ msgstr "アルバム、タグ、ファイル名"
 msgid "Picture Properties"
 msgstr "画像のプロパティ"
 
-#: core/utilities/searchwindow/searchgroup.cpp:136
+#: core/utilities/searchwindow/searchgroup.cpp:137
 #, kde-format
 msgid "Caption, Comment, Title"
 msgstr "キャプション、コメント、タイトル"
 
-#: core/utilities/searchwindow/searchgroup.cpp:185
+#: core/utilities/searchwindow/searchgroup.cpp:186
 #, kde-format
 msgid "Geographic position"
 msgstr "地理学的位置"
 
-#: core/utilities/searchwindow/searchgroup.cpp:208
+#: core/utilities/searchwindow/searchgroup.cpp:209
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face regions"
@@ -63538,7 +63570,7 @@ msgctxt "@title:tab"
 msgid "Baloo"
 msgstr "Baloo"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:32
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:35
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -63549,19 +63581,19 @@ msgid ""
 "information when moving or sending the files to different systems.</para>"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:42
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
 #, kde-format
 msgctxt "@label"
 msgid "Write This Information to the Metadata"
 msgstr "この情報をメタデータに書き込む"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:45
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
 #, kde-format
 msgctxt "@option:check"
 msgid "Image tags"
 msgstr "画像タグ"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:46
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -63571,13 +63603,13 @@ msgid "Turn on this option to store the item tags in the XMP and IPTC tags."
 msgstr ""
 "画像のタグを XMP と IPTC タグに保存するには、このオプションを有効にします。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
 msgstr "キャプションとタイトル"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -63591,13 +63623,13 @@ msgstr ""
 "画像のキャプションとタイトルを JFIF コメントセクション、EXIF タグ、XMP タグ、"
 "IPTC タグに保存するには、このオプションを有効にします。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Rating"
 msgstr "評価"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:57
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -63610,13 +63642,13 @@ msgid ""
 msgstr ""
 "画像の評価を Exif と XMP タグに保存するには、このオプションを有効にします。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
 msgstr "選抜ラベル"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid "Turn on this option to store the image pick label in the XMP tags."
@@ -63625,13 +63657,13 @@ msgid "Turn on this option to store the item pick label in the XMP tags."
 msgstr ""
 "画像の選抜ラベルを XMP タグに保存するには、このオプションを有効にします。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, kde-format
 msgctxt "@option:check"
 msgid "Color label"
 msgstr "色ラベル"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid "Turn on this option to store the image color label in the XMP tags."
@@ -63640,13 +63672,13 @@ msgid "Turn on this option to store the item color label in the XMP tags."
 msgstr ""
 "画像の色ラベルを XMP タグに保存するには、このオプションを有効にします。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
 #, kde-format
 msgctxt "@option:check"
 msgid "Timestamps"
 msgstr "タイムスタンプ"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -63660,13 +63692,13 @@ msgstr ""
 "画像の日付と時刻を Exif, XMP, IPTC タグに保存するには、このオプションを有効に"
 "します。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata templates (Copyright etc.)"
 msgstr "メタデータテンプレート (著作権など)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -63676,13 +63708,13 @@ msgstr ""
 "デフォルトの撮影者情報を XMP と IPTC タグに保存するには、このオプションを有効"
 "にします。この値は個人情報の設定ページで設定できます。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -63690,14 +63722,14 @@ msgid ""
 msgstr ""
 "画像のタグを XMP と IPTC タグに保存するには、このオプションを有効にします。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:91
 #, fuzzy, kde-format
 #| msgid "Position Information (GPS)"
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
 msgstr "位置情報 (GPS)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:92
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -63710,13 +63742,13 @@ msgid ""
 msgstr ""
 "画像の評価を Exif と XMP タグに保存するには、このオプションを有効にします。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:112
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid "Reading and Writing Metadata"
 msgstr "メタデータを読み書き中"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
@@ -63724,7 +63756,7 @@ msgstr ""
 "メタデータを保存するときにファイルのタイムスタンプを更新するには、このオプ"
 "ションを有効にします。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -63733,14 +63765,14 @@ msgid ""
 "with database."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "メタデータを各ファイルに書き込み"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:128
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
@@ -63748,7 +63780,7 @@ msgstr ""
 "メタデータを保存するときにファイルのタイムスタンプを更新するには、このオプ"
 "ションを有効にします。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:125
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "If possible write Metadata to RAW files (experimental)"
@@ -63756,7 +63788,7 @@ msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "可能であれば RAW ファイルにメタデータを書き込む (試験的)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -63767,13 +63799,13 @@ msgstr ""
 "す。この機能には Exiv2 共有ライブラリのバージョン >= 0.18.0 が必要です。まだ"
 "試験的なため、このオプションは標準では無効になっています。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:135
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr "ブラックポイント補正を使う"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -63782,7 +63814,7 @@ msgid ""
 "digikam exit"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:147
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "&Update file timestamp when files are modified"
@@ -63790,7 +63822,7 @@ msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr "ファイルの変更時にファイルのタイムスタンプを更新する(&U)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -63800,13 +63832,13 @@ msgid ""
 "properties to detect file modifications automatically."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:155
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "ファイルの変更時にファイルのタイムスタンプを更新する(&U)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:157
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -63816,19 +63848,19 @@ msgid ""
 "when digiKam starts."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:226
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:230
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "write limitations"
 msgstr "プレビューのオプション"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -63836,7 +63868,7 @@ msgid ""
 "for details."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:240
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@label"
@@ -64072,13 +64104,12 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
-"digiKam (optionally) writes metadata to *.xmp sidecar\n"
-"files. Other programs might use different types, which\n"
-"can be specified below. digiKam will neither display these\n"
-"nor read from or write to them. But whenever a matching album\n"
-"item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-"moved, copied or deleted, the same operation will be done\n"
-"on these sidecar files.\n"
+"digiKam (optionally) writes metadata to *.xmp sidecar files. Other programs "
+"might use different types, which can be specified below. digiKam will "
+"neither display these nor read from or write to them. But whenever a "
+"matching album item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
+"moved, copied or deleted, the same operation will be done on these sidecar "
+"files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 

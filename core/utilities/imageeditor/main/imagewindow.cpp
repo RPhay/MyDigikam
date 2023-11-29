@@ -129,7 +129,7 @@ void ImageWindow::closeEvent(QCloseEvent* e)
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());
-    d->rightSideBar->setConfigGroup(KConfigGroup(&group, "Right Sidebar"));
+    d->rightSideBar->setConfigGroup(KConfigGroup(&group, QLatin1String("Right Sidebar")));
     d->rightSideBar->saveState();
     saveSettings();
 

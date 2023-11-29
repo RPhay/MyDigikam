@@ -105,8 +105,17 @@ MigrateFromDigikam4Page::MigrateFromDigikam4Page(QWizard* const dlg)
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+    connect(d->migrateBehavior, SIGNAL(idClicked(int)),
+            this, SIGNAL(completeChanged()));
+
+#else
+
     connect(d->migrateBehavior, SIGNAL(buttonClicked(int)),
             this, SIGNAL(completeChanged()));
+
+#endif
 
     setPageWidget(vbox);
 }

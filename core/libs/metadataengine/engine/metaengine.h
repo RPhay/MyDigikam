@@ -186,6 +186,11 @@ public:
     static bool supportXmp();
 
     /**
+     * Return true if Exiv2 library is compiled with JpegXL metadata support.
+     */
+    static bool supportJpegXL();
+
+    /**
      * Return true if library support Base Media File Format (aka CR3, HEIF, HEIC, and AVIF).
      * Note: use this function only after to call initializeExiv2(), else false will always returned.
      * The function return true only if Exiv2 >= 0.27.4 compiled with BMFF support.
@@ -219,9 +224,10 @@ public:
 
     /**
      * Load and merge metadata (Exif, Iptc and Xmp) from a byte array.
+     * Use 'exclude' to remove Exif tags from the 'imgData' that will not be merged.
      * Return true if metadata have been loaded and merged successfully from item data.
      */
-    bool loadFromDataAndMerge(const QByteArray& imgData);
+    bool loadFromDataAndMerge(const QByteArray& imgData, const QStringList& exclude = QStringList());
 
     /**
      * Return 'true' if metadata container in memory as no Comments, Exif, Iptc, and Xmp.

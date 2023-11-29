@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * SPDX-FileCopyrightText: 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -67,21 +67,15 @@ class Q_DECL_HIDDEN PresentationAudioPage::Private
 {
 public:
 
-    explicit Private()
-      : sharedData(nullptr),
-        tracksTime(nullptr),
-        soundItems(nullptr),
-        timeMutex (nullptr)
-    {
-    }
+    Private() = default;
 
     QList<QUrl>                             urlList;
-    PresentationContainer*                  sharedData;
+    PresentationContainer*                  sharedData = nullptr;
     QTime                                   totalTime;
     QTime                                   imageTime;
-    QMap<QUrl, QTime>*                      tracksTime;
-    QMap<QUrl, PresentationAudioListItem*>* soundItems;
-    QMutex*                                 timeMutex;
+    QMap<QUrl, QTime>*                      tracksTime = nullptr;
+    QMap<QUrl, PresentationAudioListItem*>* soundItems = nullptr;
+    QMutex*                                 timeMutex  = nullptr;
 };
 
 PresentationAudioPage::PresentationAudioPage(QWidget* const parent,
@@ -337,7 +331,7 @@ void PresentationAudioPage::slotAddNewTime(const QUrl& url, const QTime& trackTi
     d->timeMutex->unlock();
 }
 
-void PresentationAudioPage::slotSoundFilesSelected( int row )
+void PresentationAudioPage::slotSoundFilesSelected(int row)
 {
     QListWidgetItem* const item = m_SoundFilesListBox->item(row);
 

@@ -57,7 +57,7 @@ namespace DigikamJPEG2000DImgPlugin
 {
 
 DImgJPEG2000Plugin::DImgJPEG2000Plugin(QObject* const parent)
-    : DPluginDImg(parent),
+    : DPluginDImg (parent),
       m_initJasper(false)
 {
 
@@ -67,7 +67,7 @@ DImgJPEG2000Plugin::DImgJPEG2000Plugin(QObject* const parent)
 
     if (max_mem)
     {
-        max_mem = 0.90 * max_mem;
+        max_mem = 0.75 * max_mem;
     }
     else
     {

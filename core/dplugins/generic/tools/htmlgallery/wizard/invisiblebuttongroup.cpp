@@ -50,8 +50,17 @@ InvisibleButtonGroup::InvisibleButtonGroup(QWidget* const parent)
     d->group = new QButtonGroup(this);
     d->group->setExclusive(true);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+    connect(d->group, SIGNAL(idClicked(int)),
+            SIGNAL(selectionChanged(int)) );
+
+#else
+
     connect(d->group, SIGNAL(buttonClicked(int)),
             SIGNAL(selectionChanged(int)) );
+
+#endif
 
     const QString name = QString::fromLatin1(metaObject()->className());
 

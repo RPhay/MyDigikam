@@ -786,14 +786,14 @@ void TimeLineWidget::paintItem(QPainter& p, const QRect& barRect,
                 fnt.setPointSize(fnt.pointSize() - 4);
                 p.setFont(fnt);
                 p.setPen(subDateColor);
-                QString txt = QLocale().standaloneDayName(ref.date().day(), QLocale::ShortFormat);
+                QString txt = QLocale().standaloneDayName(ref.date().dayOfWeek(), QLocale::ShortFormat);
                 QRect br    = p.fontMetrics().boundingRect(0, 0, width(), height(), 0, txt);
                 p.drawText(barRect.left() + ((barRect.width() - br.width()) / 2),
                            barRect.bottom() + br.height(), txt);
                 p.restore();
             }
 
-            if (ref.date().day() == 1)
+            if (ref.date().dayOfWeek() == 1)
             {
                 p.setPen(dateColor);
                 p.drawLine(barRect.left(), barRect.bottom(),

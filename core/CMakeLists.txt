@@ -198,25 +198,25 @@ MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}NotifyConfig_FOUND        HAVE_KNOTIFYCONF
 MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}KIO_FOUND                 HAVE_KIO)
 MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}IconThemes_FOUND          HAVE_KICONTHEMES)
 MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}Sonnet_FOUND              HAVE_SONNET)
-MACRO_BOOL_TO_01(LensFun_FOUND                HAVE_LENSFUN)
-MACRO_BOOL_TO_01(Gphoto2_FOUND                HAVE_GPHOTO2)
-MACRO_BOOL_TO_01(Jasper_FOUND                 HAVE_JASPER)
-MACRO_BOOL_TO_01(Eigen3_FOUND                 HAVE_EIGEN3)
-MACRO_BOOL_TO_01(Marble_FOUND                 HAVE_MARBLE)
-MACRO_BOOL_TO_01(ENABLE_AKONADICONTACTSUPPORT HAVE_AKONADICONTACT)
-MACRO_BOOL_TO_01(ENABLE_MYSQLSUPPORT          HAVE_MYSQLSUPPORT)
-MACRO_BOOL_TO_01(ENABLE_INTERNALMYSQL         HAVE_INTERNALMYSQL)
-MACRO_BOOL_TO_01(ENABLE_MEDIAPLAYER           HAVE_MEDIAPLAYER)
-MACRO_BOOL_TO_01(ENABLE_QTMULTIMEDIA          HAVE_QTMULTIMEDIA)
-MACRO_BOOL_TO_01(ENABLE_DBUS                  HAVE_DBUS)
-MACRO_BOOL_TO_01(ENABLE_APPSTYLES             HAVE_APPSTYLE_SUPPORT)
-MACRO_BOOL_TO_01(ENABLE_QWEBENGINE            HAVE_QWEBENGINE)
-MACRO_BOOL_TO_01(ENABLE_DRMINGW               HAVE_DRMINGW)
-MACRO_BOOL_TO_01(ImageMagick_Magick++_FOUND   HAVE_IMAGE_MAGICK)
-MACRO_BOOL_TO_01(HEIF_FOUND                   HAVE_HEIF)
-MACRO_BOOL_TO_01(X265_FOUND                   HAVE_X265)
-MACRO_BOOL_TO_01(Qt5XmlPatterns_FOUND         HAVE_QTXMLPATTERNS)
-MACRO_BOOL_TO_01(CCACHE_FOUND                 HAVE_CCACHE)
+MACRO_BOOL_TO_01(LensFun_FOUND                                  HAVE_LENSFUN)
+MACRO_BOOL_TO_01(Gphoto2_FOUND                                  HAVE_GPHOTO2)
+MACRO_BOOL_TO_01(Jasper_FOUND                                   HAVE_JASPER)
+MACRO_BOOL_TO_01(Eigen3_FOUND                                   HAVE_EIGEN3)
+MACRO_BOOL_TO_01(Marble_FOUND                                   HAVE_MARBLE)
+MACRO_BOOL_TO_01(ENABLE_AKONADICONTACTSUPPORT                   HAVE_AKONADICONTACT)
+MACRO_BOOL_TO_01(ENABLE_MYSQLSUPPORT                            HAVE_MYSQLSUPPORT)
+MACRO_BOOL_TO_01(ENABLE_INTERNALMYSQL                           HAVE_INTERNALMYSQL)
+MACRO_BOOL_TO_01(ENABLE_MEDIAPLAYER                             HAVE_MEDIAPLAYER)
+MACRO_BOOL_TO_01(ENABLE_QTMULTIMEDIA                            HAVE_QTMULTIMEDIA)
+MACRO_BOOL_TO_01(ENABLE_DBUS                                    HAVE_DBUS)
+MACRO_BOOL_TO_01(ENABLE_APPSTYLES                               HAVE_APPSTYLE_SUPPORT)
+MACRO_BOOL_TO_01(ENABLE_QWEBENGINE                              HAVE_QWEBENGINE)
+MACRO_BOOL_TO_01(ENABLE_DRMINGW                                 HAVE_DRMINGW)
+MACRO_BOOL_TO_01(ImageMagick_FOUND                              HAVE_IMAGE_MAGICK)
+MACRO_BOOL_TO_01(HEIF_FOUND                                     HAVE_HEIF)
+MACRO_BOOL_TO_01(X265_FOUND                                     HAVE_X265)
+MACRO_BOOL_TO_01(Qt5XmlPatterns_FOUND                           HAVE_QTXMLPATTERNS)
+MACRO_BOOL_TO_01(CCACHE_FOUND                                   HAVE_CCACHE)
 
 # Set config files accordingly with optional dependencies
 
@@ -243,7 +243,17 @@ PRINT_COMPONENT_COMPILE_STATUS("QtMultimedia Support"                       ENAB
 # ==============================================================================
 
 PRINT_LIBRARY_STATUS("libboostgraph" "https://github.com/boostorg/boost"                 "(version >= 1.43.0)"                Boost_FOUND)
-PRINT_LIBRARY_STATUS("libexiv2"      "https://github.com/Exiv2/exiv2"                    "(version >= ${EXIV2_MIN_VERSION}"   exiv2_FOUND)
+
+if(LibExiv2_FOUND)
+
+    PRINT_LIBRARY_STATUS("LibExiv2"  "https://github.com/Exiv2/exiv2"                    "(version >= ${EXIV2_MIN_VERSION}"   LibExiv2_FOUND)
+
+else()
+
+    PRINT_LIBRARY_STATUS("libexiv2"  "https://github.com/Exiv2/exiv2"                    "(version >= ${EXIV2_MIN_VERSION}"   exiv2_FOUND)
+
+endif()
+
 PRINT_LIBRARY_STATUS("libexpat"      "https://libexpat.github.io"                        "(version >= 2.0.0)"                 EXPAT_FOUND)
 PRINT_LIBRARY_STATUS("libjpeg"       "https://github.com/libjpeg-turbo/libjpeg-turbo"    "(version >= 6b)"                    JPEG_FOUND)
 PRINT_LIBRARY_STATUS("libkde"        "https://invent.kde.org/frameworks/"                "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"    KF${QT_VERSION_MAJOR}_FOUND)
@@ -261,7 +271,7 @@ PRINT_OPTIONAL_LIBRARY_STATUS("doxygen"           "https://github.com/doxygen/do
 PRINT_OPTIONAL_LIBRARY_STATUS("ccache"            "https://ccache.dev"                                              "(version >= 3.0.0)"                    "digiKam will be compiled without CCACHE build support."                      HAVE_CCACHE)
 PRINT_OPTIONAL_LIBRARY_STATUS("flex"              "https://github.com/westes/flex"                                  "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          FLEX_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libakonadicontact" "https://invent.kde.org/pim/akonadi-contacts"                     "(version >= ${AKONADI_MIN_VERSION})"   "digiKam will be compiled without KDE desktop address book support."          KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libmagick++"       "https://github.com/ImageMagick/ImageMagick.git"                  "(version >= 6.7.0)"                    "digiKam will be compiled without ImageMagick codecs."                        HAVE_IMAGE_MAGICK)
+PRINT_OPTIONAL_LIBRARY_STATUS("libimagemagick"    "https://github.com/ImageMagick/ImageMagick.git"                  "(version >= 6.7.0)"                    "digiKam will be compiled without ImageMagick codecs."                        HAVE_IMAGE_MAGICK)
 PRINT_OPTIONAL_LIBRARY_STATUS("libeigen3"         "https://github.com/eigenteam/eigen-git-mirror"                   "(version >= 3.0.0)"                    "digiKam will be compiled without Refocus tool support."                      Eigen3_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libgphoto2"        "https://github.com/gphoto/libgphoto2"                            "(version >= 2.4.0)"                    "digiKam will be compiled without GPhoto2 camera drivers support."            Gphoto2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libjasper"         "https://github.com/mdadams/jasper"                               "(version >= 1.7.0)"                    "digiKam will be compiled without JPEG2000 support."                          Jasper_FOUND)
@@ -294,7 +304,7 @@ endif()
 # ==============================================================================
 
 if(Boost_FOUND                          AND
-   exiv2_FOUND                          AND
+   (LibExiv2_FOUND OR exiv2_FOUND)      AND
    EXPAT_FOUND                          AND
    JPEG_FOUND                           AND
    KF${QT_VERSION_MAJOR}_FOUND          AND

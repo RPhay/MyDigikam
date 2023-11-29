@@ -9,7 +9,7 @@
  * SPDX-FileCopyrightText: 2006-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  * SPDX-FileCopyrightText: 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
  * SPDX-FileCopyrightText: 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -93,7 +93,7 @@ void PresentationMngr::showConfigDialog()
 void PresentationMngr::slotSlideShow()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Presentation Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Presentation Settings"));
     bool opengl             = grp.readEntry("OpenGL",  false);
     bool shuffle            = grp.readEntry("Shuffle", false);
     bool wantKB             = grp.readEntry("Effect Name (OpenGL)") == QLatin1String("Ken Burns");

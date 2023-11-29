@@ -63,9 +63,24 @@
 
     Name "${MY_PRODUCT} ${VERSION}"
     Icon "digikam-installer.ico"
-    BrandingText "digikam Developement Team"
+    BrandingText "digiKam Project (https://www.digikam.org)"
     UninstallIcon "digikam-uninstaller.ico"
     OutFile "${OUTFILE}"
+
+    ; Add Installer Windows file properties
+
+    VIProductVersion ${VERSION}.0
+    VIAddVersionKey /LANG=0 "ProductName"     "${MY_PRODUCT}"
+    VIAddVersionKey /LANG=0 "ProductVersion"  "${VERSION}"
+    VIAddVersionKey /LANG=0 "Comments"        "Professional Photo Management with the Power of Open Source"
+    VIAddVersionKey /LANG=0 "CompanyName"     "digiKam.org"
+    VIAddVersionKey /LANG=0 "InternalName"    "${MY_PRODUCT}"
+    VIAddVersionKey /LANG=0 "LegalTrademarks" "https://www.digikam.org"
+    VIAddVersionKey /LANG=0 "LegalCopyright"  "digiKam developers team"
+    VIAddVersionKey /LANG=0 "FileDescription" "digiKam Application Installer for Windows"
+    VIAddVersionKey /LANG=0 "FileVersion"     "${VERSION}"
+    VIAddVersionKey /LANG=0 "PrivateBuild"    "MXE Toolchain"
+    VIAddVersionKey /LANG=0 "SpecialBuild"    "MinGW Compiler"
 
     ;Request application privileges for Windows Vista and upper versions
 
@@ -100,9 +115,11 @@
     !define MUI_ABORTWARNING
     !define MUI_ICON "digikam-installer.ico"
     !define MUI_UNICON "digikam-uninstaller.ico"
-    !define !define MUI_FINISHPAGE_RUN
+    !define MUI_FINISHPAGE_SHOWREADME_NOTCHECKED
+    !define MUI_FINISHPAGE_SHOWREADME "$instdir\releasenotes.html"
     !define MUI_FINISHPAGE_RUN
-    !define MUI_FINISHPAGE_RUN_TEXT "Read release notes"
+    !define MUI_FINISHPAGE_RUN_NOTCHECKED
+    !define MUI_FINISHPAGE_RUN_TEXT "Start digiKam"
     !define MUI_FINISHPAGE_RUN_FUNCTION functionFinishRun
     !define MUI_FINISHPAGE_LINK "Visit digiKam project website"
     !define MUI_FINISHPAGE_LINK_LOCATION "https://www.digikam.org"
@@ -203,6 +220,10 @@
         Call CheckDigikamRunning
         Call CheckShowfotoRunning
 
+        ;See bug #437813: be sure that all background ExifTool process are done
+
+        nsExec::ExecToLog /TIMEOUT=2000 'taskkill.exe /F /T /IM exiftool.exe'
+
         SetOutPath "$INSTDIR"
 
         File "../data/releasenotes.html"
@@ -285,11 +306,12 @@
         ;Create shortcuts
 
         CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
-        SetOutPath "$INSTDIR\bin"
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe"
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe"
 
         WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "URL" "${PRODUCT_HOMEPAGE}"
+        WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "IconIndex" "12"
+        WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "IconFile" "$windir\explorer.exe"
 
         !insertmacro MUI_STARTMENU_WRITE_END
 
@@ -304,6 +326,10 @@
 
         Call un.CheckDigikamRunning
         Call un.CheckShowfotoRunning
+
+        ;See bug #437813: be sure that all background ExifTool process are done
+
+        nsExec::ExecToLog /TIMEOUT=2000 'taskkill.exe /F /T /IM exiftool.exe'
 
         Delete "$INSTDIR\*.exe"
         Delete "$INSTDIR\*.conf"

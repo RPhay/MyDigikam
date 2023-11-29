@@ -183,7 +183,7 @@ void ExpoBlendingThread::cleanUpResultFiles()
 {
     // Cleanup all tmp files created by Enfuse process.
 
-    QMutexLocker(&d->enfuseTmpUrlsMutex);
+    QMutexLocker locker(&d->enfuseTmpUrlsMutex);
 
     Q_FOREACH (const QUrl& url, d->enfuseTmpUrls)
     {
@@ -416,7 +416,7 @@ void ExpoBlendingThread::run()
 
                     // To be cleaned in destructor.
 
-                    QMutexLocker(&d->enfuseTmpUrlsMutex);
+                    QMutexLocker locker(&d->enfuseTmpUrlsMutex);
                     d->enfuseTmpUrls << destUrl;
 
                     ExpoBlendingActionData ad2;
@@ -472,7 +472,7 @@ void ExpoBlendingThread::run()
 
                     // To be cleaned in destructor.
 
-                    QMutexLocker(&d->enfuseTmpUrlsMutex);
+                    QMutexLocker locker(&d->enfuseTmpUrlsMutex);
                     d->enfuseTmpUrls << destUrl;
 
                     ExpoBlendingActionData ad2;

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Run Clang static analyzer on whole digiKam source code.
 # https://clang-analyzer.llvm.org/
@@ -51,6 +51,7 @@ scan-build cmake -G "Unix Makefiles" . \
       -DENABLE_MYSQLSUPPORT=ON \
       -DENABLE_INTERNALMYSQL=ON \
       -DENABLE_MEDIAPLAYER=ON \
+      -DENABLE_QTMULTIMEDIA=ON \
       -DENABLE_DBUS=ON \
       -DENABLE_APPSTYLES=ON \
       -DENABLE_QWEBENGINE=ON \

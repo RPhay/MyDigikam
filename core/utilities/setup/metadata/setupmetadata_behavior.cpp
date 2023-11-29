@@ -7,7 +7,7 @@
  * Description : setup Metadata tab.
  *
  * SPDX-FileCopyrightText: 2003-2004 by Ralf Holzer <ralf at well dot com>
- * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
  *
@@ -25,6 +25,9 @@ void SetupMetadata::appendBehaviorTab()
     QWidget* const panel            = new QWidget;
     QVBoxLayout* const mainLayout   = new QVBoxLayout;
 
+    const int spacing               = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                           QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
     d->fieldsGroup                  = new QGroupBox;
     QGridLayout* const fieldsLayout = new QGridLayout;
 
@@ -36,10 +39,12 @@ void SetupMetadata::appendBehaviorTab()
                                         "<para>Storing in metadata allows one to preserve this information "
                                         "when moving or sending the files to different systems.</para>"));
 
-    QLabel* const fieldsIconLabel = new QLabel;
+    DHBox* const title1           = new DHBox;
+    QLabel* const fieldsIconLabel = new QLabel(title1);
     fieldsIconLabel->setPixmap(QIcon::fromTheme(QLatin1String("format-list-unordered")).pixmap(32));
-
-    QLabel* const fieldsLabel     = new QLabel(i18nc("@label", "Write This Information to the Metadata"));
+    new QLabel(i18nc("@label", "Write This Information to the Metadata"), title1);
+    QWidget* const space1         = new QWidget(title1);
+    title1->setStretchFactor(space1, 10);
 
     d->saveTagsBox       = new QCheckBox;
     d->saveTagsBox->setText(i18nc("@option:check", "Image tags"));
@@ -87,18 +92,17 @@ void SetupMetadata::appendBehaviorTab()
     d->savePosition->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store Geolocation information "
                                         "in the Exif tag and the XMP tags."));
 
-    fieldsLayout->addWidget(fieldsIconLabel,       0, 0, 2, 3);
-    fieldsLayout->addWidget(fieldsLabel,           0, 1, 2, 3);
-    fieldsLayout->addWidget(d->saveTagsBox,        2, 0, 1, 3);
-    fieldsLayout->addWidget(d->saveCommentsBox,    3, 0, 1, 3);
-    fieldsLayout->addWidget(d->saveRatingBox,      4, 0, 1, 3);
-    fieldsLayout->addWidget(d->savePickLabelBox,   5, 0, 1, 3);
-    fieldsLayout->addWidget(d->saveColorLabelBox,  6, 0, 1, 3);
-    fieldsLayout->addWidget(d->saveDateTimeBox,    7, 0, 1, 3);
-    fieldsLayout->addWidget(d->saveTemplateBox,    8, 0, 1, 3);
-    fieldsLayout->addWidget(d->saveFaceTags,       9, 0, 1, 3);
-    fieldsLayout->addWidget(d->savePosition,      10, 0, 1, 3);
-    fieldsLayout->setColumnStretch(3, 10);
+    fieldsLayout->addWidget(title1,                0, 0, 1, 3);
+    fieldsLayout->addWidget(d->saveTagsBox,        1, 0, 1, 1);
+    fieldsLayout->addWidget(d->saveCommentsBox,    2, 0, 1, 1);
+    fieldsLayout->addWidget(d->saveRatingBox,      3, 0, 1, 1);
+    fieldsLayout->addWidget(d->savePickLabelBox,   4, 0, 1, 1);
+    fieldsLayout->addWidget(d->saveColorLabelBox,  5, 0, 1, 1);
+    fieldsLayout->addWidget(d->saveDateTimeBox,    1, 1, 1, 1);
+    fieldsLayout->addWidget(d->saveTemplateBox,    2, 1, 1, 1);
+    fieldsLayout->addWidget(d->saveFaceTags,       3, 1, 1, 1);
+    fieldsLayout->addWidget(d->savePosition,       4, 1, 1, 1);
+    fieldsLayout->setColumnStretch(2, 10);
     d->fieldsGroup->setLayout(fieldsLayout);
 
     // --------------------------------------------------------
@@ -106,10 +110,12 @@ void SetupMetadata::appendBehaviorTab()
     d->readWriteGroup                  = new QGroupBox;
     QGridLayout* const readWriteLayout = new QGridLayout;
 
-    QLabel* const readWriteIconLabel   = new QLabel;
+    DHBox* const title2                = new DHBox;
+    QLabel* const readWriteIconLabel   = new QLabel(title2);
     readWriteIconLabel->setPixmap(QIcon::fromTheme(QLatin1String("document-open")).pixmap(32));
-
-    QLabel* const readWriteLabel       = new QLabel(i18nc("@label", "Reading and Writing Metadata"));
+    new QLabel(i18nc("@label", "Reading and Writing Metadata"), title2);
+    QWidget* const space2              = new QWidget(title2);
+    title2->setStretchFactor(space2, 10);
 
     d->writeWithExifToolBox            = new QCheckBox;
     d->writeWithExifToolBox->setText(i18nc("@option:check", "Delegate to ExifTool backend all operations to write metadata to files"));
@@ -153,18 +159,17 @@ void SetupMetadata::appendBehaviorTab()
                                                     "the last modified timestamp has changed, a rescan of that "
                                                     "file will be performed when digiKam starts."));
 
-    readWriteLayout->addWidget(readWriteIconLabel,                    0,  0, 2, 3);
-    readWriteLayout->addWidget(readWriteLabel,                        0,  1, 2, 3);
+    readWriteLayout->addWidget(title2,                                0,  0, 2, 3);
     readWriteLayout->addWidget(d->writeWithExifToolBox,               2,  0, 1, 3);
-    readWriteLayout->addWidget(d->writeDngFilesBox,                   3,  1, 1, 3);
-    readWriteLayout->addWidget(d->writeRawFilesBox,                   4,  1, 1, 3);
-    readWriteLayout->addWidget(d->writeWithExifToolLabel,             5,  0, 1, 4);
-    readWriteLayout->addWidget(new DLineWidget(Qt::Horizontal, this), 6,  0, 1, 4);
+    readWriteLayout->addWidget(d->writeDngFilesBox,                   3,  1, 1, 2);
+    readWriteLayout->addWidget(d->writeRawFilesBox,                   4,  1, 1, 2);
+    readWriteLayout->addWidget(d->writeWithExifToolLabel,             5,  1, 1, 2);
+    readWriteLayout->addWidget(new DLineWidget(Qt::Horizontal, this), 6,  0, 1, 3);
     readWriteLayout->addWidget(d->useLazySync,                        7,  0, 1, 3);
     readWriteLayout->addWidget(d->updateFileTimeStampBox,             8,  0, 1, 3);
     readWriteLayout->addWidget(d->rescanImageIfModifiedBox,           9,  0, 1, 3);
     readWriteLayout->setColumnStretch(0, 5);
-    readWriteLayout->setColumnStretch(1, 100);
+    readWriteLayout->setColumnStretch(2, 100);
     d->readWriteGroup->setLayout(readWriteLayout);
 
     // --------------------------------------------------------
@@ -172,11 +177,6 @@ void SetupMetadata::appendBehaviorTab()
     QFrame* const infoBox              = new QFrame;
     QGridLayout* const infoBoxGrid     = new QGridLayout;
     infoBox->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
-
-    DActiveLabel* const exiv2LogoLabel = new DActiveLabel(QUrl(QLatin1String("https://github.com/Exiv2/exiv2")),
-                                                          QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-exiv2.png")),
-                                                          infoBox);
-    exiv2LogoLabel->setWhatsThis(i18nc("@info:whatsthis", "Visit Exiv2 project website"));
 
     QLabel* const explanation          = new QLabel(infoBox);
     explanation->setOpenExternalLinks(true);
@@ -199,11 +199,12 @@ void SetupMetadata::appendBehaviorTab()
 
     explanation->setText(txt);
 
-    infoBoxGrid->addWidget(exiv2LogoLabel, 0, 0, 1, 1);
-    infoBoxGrid->addWidget(explanation,    0, 1, 1, 2);
-    infoBoxGrid->setColumnStretch(1, 10);
-    infoBoxGrid->setRowStretch(1, 10);
+    infoBoxGrid->addWidget(explanation, 0, 0, 1, 1);
+    infoBoxGrid->setColumnStretch(0, 10);
+    infoBoxGrid->setRowStretch(0, 10);
+    infoBoxGrid->setContentsMargins(spacing, spacing, spacing, spacing);
     infoBoxGrid->setSpacing(0);
+
     infoBox->setLayout(infoBoxGrid);
 
     // --------------------------------------------------------
@@ -211,6 +212,7 @@ void SetupMetadata::appendBehaviorTab()
     mainLayout->addWidget(d->fieldsGroup);
     mainLayout->addWidget(d->readWriteGroup);
     mainLayout->addWidget(infoBox);
+    mainLayout->addStretch();
     panel->setLayout(mainLayout);
 
     d->tab->insertTab(Behavior, panel, i18nc("@title:tab", "Behavior"));

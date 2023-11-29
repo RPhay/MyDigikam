@@ -6,7 +6,7 @@
  * Date        : 2007-11-07
  * Description : a tool to print images
  *
- * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -56,8 +56,14 @@ public:
     /// Print output destination, outside real printers configured
     enum Output
     {
-        PDF = 0,
-        FILES,
+        FILES = 0,
+
+#ifndef Q_OS_WIN
+
+        PDF,
+
+#endif
+
         GIMP
     };
 

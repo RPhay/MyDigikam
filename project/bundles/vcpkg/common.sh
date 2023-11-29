@@ -71,7 +71,7 @@ for FILE in $FILES ; do
     if [[ -f "$4/$FILE"  && ! -f  "$3/$FILE" ]] ; then
         cp -u "$4/$FILE" "$3" 2> /dev/null || true
 #        echo "   ==> $4/$FILE"
-		CopyReccursiveDependencies "$1" "$4/$FILE" "$3" "$4"
+        CopyReccursiveDependencies "$1" "$4/$FILE" "$3" "$4"
     fi
 done
 
@@ -97,6 +97,62 @@ for server in $SERVER_LIST; do
 
     ssh-keygen -R $server
     ssh-keyscan -H $server >> ~/.ssh/known_hosts
+
+done
+
+}
+
+########################################################################
+# Append paths to the wanted VCPKG binary tools
+AppendVCPKGPaths()
+{
+
+ORIG_PATH="$PATH"
+
+export PATH="\
+$PATH:\
+/c/bison:\
+/c/icoutils/bin:\
+$VCPKG_INSTALL_PREFIX/tools/gperf:\
+$VCPKG_INSTALL_PREFIX/tools/curl:\
+$VCPKG_INSTALL_PREFIX/tools/pkgconf:\
+$VCPKG_INSTALL_PREFIX/bin:\
+$VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
+"
+
+echo "PATH=$PATH"
+
+export PKG_CONFIG_PATH=$VCPKG_INSTALL_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH
+
+}
+
+########################################################################
+# Upload a large file to a remote server with retry if failure
+# arg1 : local file path to upload.
+# arg2 : remote ssh url.
+# arg3 : remote directory.
+# arg4 : pause between retry.
+UploadWithRetry()
+{
+
+MAX_RETRIES=10
+i=0
+RC=1
+
+while [[ $RC -ne 0 ]] ; do
+
+    i=$(($i+1))
+
+    if [ $i -eq $MAX_RETRIES ] ; then
+        echo -e "Hit maximum number of retries, giving up."
+        exit -1
+    fi
+
+    sleep $4
+    echo -e "Try $i/$MAX_RETRIES :: rsync -r -v --progress -e ssh $1 $2:$3"
+    bash -c "rsync -r -v --progress -e ssh $1 $2:$3"
+    RC=$?
+    echo "rsync return code: $RC"
 
 done
 

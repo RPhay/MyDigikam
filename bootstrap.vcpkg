@@ -13,9 +13,6 @@ set -eE
 trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
-VCPKG_DIR="/c/vcpkg"
-VCPKG_TRIPLET="x64-windows"
-
 INSTALL_DIR=$1
 
 if [[ $INSTALL_DIR == "" ]]; then
@@ -23,6 +20,10 @@ if [[ $INSTALL_DIR == "" ]]; then
     INSTALL_DIR="/e/dk/"
 
 fi
+
+VCPKG_DIR="/c/vcpkg"
+VCPKG_TRIPLET="x64-windows"
+VCPKG_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET
 
 BUILD_TYPE=$2
 
@@ -36,8 +37,21 @@ echo "Installing to $INSTALL_DIR for target $VCPKG_TRIPLET with build mode $BUIL
 
 # Paths rules
 ORIG_PATH="$PATH"
-export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/bin
+
+export PATH="\
+$PATH:\
+/c/bison:/c/icoutils/bin:\
+$VCPKG_INSTALL_PREFIX/tools/gperf:\
+$VCPKG_INSTALL_PREFIX/tools/curl:\
+$VCPKG_INSTALL_PREFIX/tools/python3:\
+$VCPKG_INSTALL_PREFIX/tools/pkgconf:\
+$VCPKG_INSTALL_PREFIX/bin:\
+$VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
+"
+
 echo "PATH=$PATH"
+
+export PKG_CONFIG_PATH=$VCPKG_INSTALL_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH
 
 if [ ! -d "build" ]; then
     mkdir build
@@ -50,7 +64,7 @@ cmake .. \
       -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
       -DCMAKE_COLOR_MAKEFILE=ON \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-      -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET \
+      -DCMAKE_INSTALL_PREFIX=$VCPKG_INSTALL_PREFIX \
       -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
       -DINSTALL_ROOT=$INSTALL_DIR \
       -DBUILD_TESTING=OFF \
@@ -61,7 +75,7 @@ cmake .. \
       -DENABLE_AKONADICONTACTSUPPORT=OFF \
       -DENABLE_MYSQLSUPPORT=ON \
       -DENABLE_INTERNALMYSQL=ON \
-      -DENABLE_MEDIAPLAYER=OFF \
+      -DENABLE_MEDIAPLAYER=ON \
       -DENABLE_DBUS=OFF \
       -DENABLE_APPSTYLES=ON \
       -DENABLE_QWEBENGINE=ON \

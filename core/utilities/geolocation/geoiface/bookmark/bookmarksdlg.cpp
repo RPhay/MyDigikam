@@ -442,7 +442,7 @@ void BookmarksDialog::slotRemoveOne()
             return;
         }
 
-        if (QMessageBox::question(this, qApp->applicationName(),
+        if (QMessageBox::question(this, i18nc("@title:window", "Bookmarks Management"),
                                   i18nc("@info", "Do you want to remove \"%1\" "
                                         "from your Bookmarks collection?",
                                         node->title),

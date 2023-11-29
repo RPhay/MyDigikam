@@ -42,7 +42,7 @@ if (MINGW)
         UPDATE_COMMAND ""
     )
 
-else() # MacOS and Linux
+else() # MacOS, Linux, and VCPKG
 
     ExternalProject_Add(ext_mosaicwall
 
@@ -52,7 +52,7 @@ else() # MacOS and Linux
         INSTALL_DIR ${PREFIX_ext_mosaicwall}
 
         PATCH_COMMAND git reset --hard &&
-                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/mosaicwall-msvc-cpp17.patch
+                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/mosaicwall-exiv2-cpp17.patch
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo ${MosaicWall_Conf}
 

@@ -125,7 +125,7 @@ endif()
 install(TARGETS digikam ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 if(APPLE)
-    install(FILES "$<TARGET_FILE:digikam>.dSYM" ${INSTALL_TARGETS_DEFAULT_ARGS} CONFIGURATIONS Debug RelWithDebInfo)
+    install(FILES "$<TARGET_FILE:digikam>.dSYM" DESTINATION "${CMAKE_INSTALL_BINDIR}" CONFIGURATIONS Debug RelWithDebInfo)
 endif()
 
 if(WIN32)

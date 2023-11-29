@@ -27,12 +27,15 @@ VCPKG_TRIPLET="x64-windows"
 
 VCPKG_COMMON_OPTIONS=(
 "--disable-metrics"
+"--no-print-usage"
 "--triplet ${VCPKG_TRIPLET}"
 "--x-buildtrees-root=${BUILDING_DIR}"
 "--x-install-root=${INSTALL_DIR}"
 "--downloads-root=${DOWNLOAD_DIR}"
 "--vcpkg-root=${VCPKG_DIR}"
 )
+
+VCPKG_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET
 
 #-------------------------------------------------------------------------------------------
 
@@ -60,7 +63,7 @@ DK_KA_VERSION="23.08.1"
 # See official release here: https://download.kde.org/stable/frameworks/
 DK_KDE_VERSION="master"
 
-# Qt version to use in bundle and provided by MXE.
+# Qt version to use in bundle and provided by VCPKG.
 DK_QTVERSION="6"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
@@ -80,6 +83,6 @@ DK_DEBUG=0
 DK_SIGN=0
 
 # Upload automatically bundle to files.kde.org (pre-release only).
-DK_UPLOAD=0
+DK_UPLOAD=1
 DK_UPLOADURL="digikam@tinami.kde.org"
-DK_UPLOADDIR="/srv/archives/files/digikam/"
+DK_UPLOADDIR="/srv/archives/files/digikam"

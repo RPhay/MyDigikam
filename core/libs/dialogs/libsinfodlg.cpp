@@ -6,7 +6,7 @@
  * Date        : 2008-07-11
  * Description : shared libraries list dialog common to digiKam and Showfoto
  *
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -168,21 +168,24 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     listView()->addTopLevelItem(m_features);
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Parallelized demosaicing") <<       checkTriState(DRawDecoder::librawUseGomp()));
+                        i18nc(CONTEXT, "Parallelized demosaicing") <<        checkTriState(DRawDecoder::librawUseGomp()));
 
 #ifdef HAVE_QTXMLPATTERNS
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Rajce support") <<                  SUPPORTED_YES);
+                        i18nc(CONTEXT, "Rajce support") <<                   SUPPORTED_YES);
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Rajce support") <<                  SUPPORTED_YES);
+                        i18nc(CONTEXT, "Rajce support") <<                   SUPPORTED_NO);
 #endif
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Exiv2 supports XMP metadata") <<    (MetaEngine::supportXmp() ?  SUPPORTED_YES : SUPPORTED_NO));
+                        i18nc(CONTEXT, "Exiv2 supports XMP metadata") <<     (MetaEngine::supportXmp() ?  SUPPORTED_YES : SUPPORTED_NO));
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Exiv2 supports Base Media") <<      (MetaEngine::supportBmff() ? SUPPORTED_YES : SUPPORTED_NO));
+                        i18nc(CONTEXT, "Exiv2 supports Base Media") <<       (MetaEngine::supportBmff() ? SUPPORTED_YES : SUPPORTED_NO));
+
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Exiv2 supports JPEG-XL metadata") << (MetaEngine::supportJpegXL() ? SUPPORTED_YES : SUPPORTED_NO));
 
     // ---
 

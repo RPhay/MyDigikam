@@ -6,7 +6,7 @@
  * Date        : 2022-08-01
  * Description : Text edit widgets with spellcheck support and edition limitations.
  *
- * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -69,15 +69,21 @@ void DTextEdit::setLinesVisible(unsigned int lines)
         return;
     }
 
-    d->lines    = lines;
+    d->lines = lines;
+
+    // NOTE: inspired from QLineEdit::sizeHint()
 
     QFont fnt;
-    setFont(fnt);
-    QMargins m  = contentsMargins();
-    qreal md    = document()->documentMargin();
-    setFixedHeight(m.top() + m.bottom() + md +
-                   frameWidth() * 2          +
-                   fontMetrics().lineSpacing() * d->lines);
+    setCurrentFont(fnt);
+    QFontMetrics fm(fnt);
+    const int iconSize = style()->pixelMetric(QStyle::PM_SmallIconSize, nullptr, this);
+    QMargins cm        = contentsMargins();
+    qreal tm           = document()->documentMargin();
+    int h              = qMax(fm.height(), qMax(16, iconSize)) * d->lines +
+                         2 * frameWidth()                                 +
+                         2 * tm                                           +
+                         cm.top() + cm.bottom();
+    setFixedHeight(h);
 
     // Mimic QLineEdit
 

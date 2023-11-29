@@ -266,7 +266,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->videoWidget->installEventFilter(new MediaPlayerMouseClickFilter(this));
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Media Player Settings");
+    KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
 
     d->volume->setValue(group.readEntry("Volume", 50));
 
@@ -663,7 +663,7 @@ void MediaPlayerView::slotVolumeChanged(int volume)
     }
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Media Player Settings");
+    KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
     group.writeEntry("Volume", volume);
 }
 

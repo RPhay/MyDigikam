@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Run CppCheck static analyzer on whole digiKam source code.
 # http://cppcheck.sourceforge.net/
@@ -67,6 +67,7 @@ cppcheck -j$CPU_CORES \
          --suppress=*:*upnpsdk*.h \
          --suppress=*:*yfauth*.h \
          --suppress=*:*o2*.h \
+         --suppress=*:*lqr*.h \
          --suppress=*:*libjpeg*.h \
          --suppress=*:*dng_sdk*.h \
          --suppress=*:*xmp_sdk*.h \

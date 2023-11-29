@@ -5,6 +5,8 @@
 # Dependencies:
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
+#   - ImageMagick for the rune-time dll.
+#   - Msys2/Rsync CLI tools for Windows.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -37,19 +39,21 @@ echo "--------------------------------------------------------"
 StartScript
 ChecksCPUCores
 RegisterRemoteServers
+AppendVCPKGPaths
 
 #################################################################################################
-# Check if NSIS CLI tool is installed
+
+# Check if NSIS CLI tool is installed.
 
 if ! which "/c/Program Files (x86)/NSIS/Bin/makensis" ; then
     echo "NSIS CLI tool is not installed"
-    echo "See https://nsis.sourceforge.io for details."
+    echo "Install Msys2::nsis with pacman tool."
     exit 1
 else
     echo "Check NSIS CLI tools passed..."
 fi
 
-# Check if DumpBin CLI tool is installed
+# Check if DumpBin CLI tool is installed.
 
 DUMP_BIN="`find "/c/Program Files/Microsoft Visual Studio/" -name "dumpbin.exe" -type f -executable | grep 'Hostx64/x64/dumpbin.exe'`"
 echo "$DUMP_BIN"
@@ -62,11 +66,20 @@ else
     echo "Check DumpBin CLI tools passed..."
 fi
 
+# Check for the ImageMagick install directory.
+
+MAGICK_PREFIX="`find "/c/Program Files/" -maxdepth 1 -name "ImageMagick*" -type d`"
+echo "$MAGICK_PREFIX"
+
+if [ ! -d "$MAGICK_PREFIX" ] ; then
+    echo "ImageMagick is not installed"
+    exit 1
+else
+    echo "Check ImageMagick install path passed..."
+fi
+
 #################################################################################################
 # Configurations
-
-export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/curl:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/bin
-echo "PATH=$PATH"
 
 # Directory where this script is located (default - current directory)
 BUILDDIR="$PWD"
@@ -81,15 +94,16 @@ DK_RELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
 #################################################################################################
 # Copy files
 
-echo -e "\n---------- Copy files in bundle directory\n"
+echo -e "\n---------- Preparing files to host in the bundle"
 
 # Directories creation -----------------------------------------------------------------------
 
 cd $ORIG_WD
 
-if [ -d "$BUNDLEDIR" ]; then
-    rm -fr $BUNDLEDIR
-    mkdir $BUNDLEDIR
+if [ -d "$BUNDLEDIR" ] ; then
+    echo "Cleanup temporary directory $BUNDLEDIR..."
+    rm -fr "$BUNDLEDIR"
+    mkdir "$BUNDLEDIR"
 fi
 
 mkdir -p $BUNDLEDIR/data
@@ -100,37 +114,49 @@ mkdir -p $BUNDLEDIR/translations
 # Data files ---------------------------------------------------------------------------------
 
 echo -e "\n---------- Marble data"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/data/*                                        $BUNDLEDIR/data                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/data/*                                        $BUNDLEDIR/data                       2>/dev/null
 
 echo -e "\n---------- Generics data"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/lensfun                                 $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/digikam                                 $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/showfoto                                $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/solid                                   $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/kxmlgui5                                $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/knotifications6                         $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/k*                                   $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/resources                                     $BUNDLEDIR/                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/lensfun                                 $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/digikam                                 $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/showfoto                                $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/solid                                   $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/kxmlgui5                                $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/knotifications6                         $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/resources                                     $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- Qt config"
-cp    $BUILDDIR/data/qt.conf                                                    $BUNDLEDIR/                     2>/dev/null
+cp    $BUILDDIR/data/qt.conf                                              $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- icons-set"
-cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc           2>/dev/null
-cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc      2>/dev/null
+# Temporary solution until breeze-icons generator works under windows.
+cp    $BUILDDIR/data/breeze.rcc                                           $BUNDLEDIR/breeze.rcc                 2>/dev/null
+cp    $BUILDDIR/data/breeze-dark.rcc                                      $BUNDLEDIR/breeze-dark.rcc            2>/dev/null
+#cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc          2>/dev/null
+#cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc     2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/icons                                   $BUNDLEDIR/data                       2>/dev/null
 
 echo -e "\n---------- i18n"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/translations/Qt6                              $BUNDLEDIR/translations         2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/locale                               $BUNDLEDIR/data                 2>/dev/null
+# Qt framekork translations
+cp -r $VCPKG_INSTALL_PREFIX/translations/Qt6/*                            $BUNDLEDIR/translations               2>/dev/null
+rm -fr $BUNDLEDIR/translations/assistant*.qm
+rm -fr $BUNDLEDIR/translations/designer*.qm
+rm -fr $BUNDLEDIR/translations/linguist*.qm
+rm -fr $BUNDLEDIR/translations/qt_help*.qm
+# KDE framework translations
+cp -r $VCPKG_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data                       2>/dev/null
+# digiKam translations
+cp -r $VCPKG_INSTALL_PREFIX/share/locale                                  $BUNDLEDIR/data                       2>/dev/null
 
 echo -e "\n---------- Xdg"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/etc/xdg                                       $BUNDLEDIR/etc                  2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/xdg                                  $BUNDLEDIR/share                2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/etc/xdg                                       $BUNDLEDIR/etc                        2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/bin/data/xdg                                  $BUNDLEDIR/share                      2>/dev/null
 
 # See bug 471058
 echo -e "\n---------- Freedesktop"
 mkdir -p $BUNDLEDIR/share/mime/packages/                                                                        2>/dev/null
-cp -r  $ORIG_WD/data/freedesktop.org.xml                                        $BUNDLEDIR/share/mime/packages  2>/dev/null
+cp -r  $ORIG_WD/data/freedesktop.org.xml                                  $BUNDLEDIR/share/mime/packages        2>/dev/null
 
 echo -e "\n---------- Copy Git Revisions Manifest"
 
@@ -146,101 +172,175 @@ done
 # Plugins Shared libraries -------------------------------------------------------------------
 
 echo -e "\n---------- Qt6 plugins"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins                                   $BUNDLEDIR/                     2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/Qt6/plugins                                   $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- Marble plugins"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/plugins/*.dll                                 $BUNDLEDIR/plugins              2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/plugins/*.dll                                 $BUNDLEDIR/plugins                    2>/dev/null
 
 echo -e "\n---------- digiKam and KF6 plugins"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/lib/plugins                                   $BUNDLEDIR/                     2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- OpenAL for QtAV"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/OpenAL32.dll                              $BUNDLEDIR/                     2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                           2>/dev/null
+
+echo -e "\n---------- ImageMagick"
+
+cp -r "$MAGICK_PREFIX"/CORE_RL_*.dll                                      $BUNDLEDIR/                           2>/dev/null
+cp -r "$MAGICK_PREFIX"/modules/coders/*.dll                               $BUNDLEDIR/                           2>/dev/null
+cp -r "$MAGICK_PREFIX"/modules/filters/*.dll                              $BUNDLEDIR/                           2>/dev/null
+
+# Black-list of ImageMagick coders to not host in the bundles.
+# Prior digiKam/Qt image loaders first which provides the same type-mimes.
+
+IM_CODERS_BL="\
+$BUNDLEDIR/IM_MOD_RL_dng_.dll   \
+$BUNDLEDIR/IM_MOD_RL_exr_.dll   \
+$BUNDLEDIR/IM_MOD_RL_gif_.dll   \
+$BUNDLEDIR/IM_MOD_RL_hdr_.dll   \
+$BUNDLEDIR/IM_MOD_RL_heic_.dll  \
+$BUNDLEDIR/IM_MOD_RL_jp2_.dll   \
+$BUNDLEDIR/IM_MOD_RL_jpeg_.dll  \
+$BUNDLEDIR/IM_MOD_RL_jxl_.dll   \
+$BUNDLEDIR/IM_MOD_RL_ora_.dll   \
+$BUNDLEDIR/IM_MOD_RL_pcx_.dll   \
+$BUNDLEDIR/IM_MOD_RL_pdf_.dll   \
+$BUNDLEDIR/IM_MOD_RL_png_.dll   \
+$BUNDLEDIR/IM_MOD_RL_psd_.dll   \
+$BUNDLEDIR/IM_MOD_RL_raw_.dll   \
+$BUNDLEDIR/IM_MOD_RL_svg_.dll   \
+$BUNDLEDIR/IM_MOD_RL_tga_.dll   \
+$BUNDLEDIR/IM_MOD_RL_tiff_.dll  \
+$BUNDLEDIR/IM_MOD_RL_video_.dll \
+$BUNDLEDIR/IM_MOD_RL_wbmp_.dll  \
+$BUNDLEDIR/IM_MOD_RL_webp_.dll  \
+$BUNDLEDIR/IM_MOD_RL_xcf_.dll   \
+"
+
+for coder in $IM_CODERS_BL ; do
+
+    rm -rf "$coder"
+
+done
+
+#################################################################################################
+# Add debug symbols for few binary files to optimize space.
+# NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is genenrated.
+# Only the digiKam shared libraries debug symbols are preserved. All digiKam plugins are not present.
+
+# First drop all existing pdb files from the bundles if any.
+
+echo -e "\n---------- Clean up debug symbols in the bundle"
+
+PDB_FILES="`find "$BUNDLEDIR"/plugins -name "*.pdb" -type f`"
+
+for pdb in $PDB_FILES ; do
+
+    if [ "$DK_DEBUG" = 0 ] ; then
+
+        # In non debug clean all
+
+        echo "   (ND del) ==> $pdb"
+        rm -rf "$pdb"
+
+#    NOTE: due to size limitation of NSIS archive to 2Gb,
+#    the number of extra debug symbols must be limited.
+#
+#    elif [[ "$pdb" = *"plugins/digikam"* ]] ; then
+#
+#        # In debug preserve digiKam Plugins
+#
+#        echo "   (Skip) ==> $pdb"
+
+    else
+
+        echo "   (DB del) ==> $pdb"
+        rm -rf "$pdb"
+
+    fi
+
+done
+
+# Second add only wanted pdb files in the bundles
+
+if [ "$DK_DEBUG" = 1 ] ; then
+
+    echo -e "\n---------- Add necessary debug symbols in the bundle"
+
+    # digikam libs
+    cp -rv "$VCPKG_INSTALL_PREFIX"/bin/digikam*.pdb                        $BUNDLEDIR/                           2>/dev/null
+
+fi
 
 echo -e "\n---------- Copy executables with recursive dependencies in bundle directory\n"
 
 # Executables and plugins shared libraries dependencies scan ---------------------------------
 
 EXE_FILES="\
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/digikam.exe \
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/showfoto.exe \
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/kbuildsycoca6.exe \
-$INSTALL_DIR/$VCPKG_TRIPLET/tools/Qt6/bin/QtWebEngineProcess.exe \
+$VCPKG_INSTALL_PREFIX/bin/digikam.exe                      \
+$VCPKG_INSTALL_PREFIX/bin/showfoto.exe                     \
+$VCPKG_INSTALL_PREFIX/bin/kbuildsycoca6.exe                \
+$VCPKG_INSTALL_PREFIX/tools/Qt6/bin/QtWebEngineProcess.exe \
 "
+
 for app in $EXE_FILES ; do
 
     cp $app $BUNDLEDIR/
-    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
+    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$VCPKG_INSTALL_PREFIX/bin"
 
 done
 
 DLL_FILES="\
-`find  $INSTALL_DIR/$VCPKG_TRIPLET/lib/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/libs/plugins||'`        \
-`find  $INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins||'`         \
-`find  $INSTALL_DIR/$VCPKG_TRIPLET/plugins             -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/plugins||'`            \
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/OpenAL32.dll \
+`find  $VCPKG_INSTALL_PREFIX/lib/plugins -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/libs/plugins||'` \
+`find  $VCPKG_INSTALL_PREFIX/Qt6/plugins -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/Qt6/plugins||'`  \
+`find  $VCPKG_INSTALL_PREFIX/plugins     -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/plugins||'`      \
+$VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                                                                         \
 "
 
 for app in $DLL_FILES ; do
 
-    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
+    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$VCPKG_INSTALL_PREFIX/bin"
+
+done
+
+echo -e "\n---------- Copy redistributable VSCommunity compatibility dlls"
+
+VS_DLL_FILES="\
+$VCPKG_INSTALL_PREFIX/bin/msvcp140.dll              \
+$VCPKG_INSTALL_PREFIX/bin/msvcp140_1.dll            \
+$VCPKG_INSTALL_PREFIX/bin/msvcp140_2.dll            \
+$VCPKG_INSTALL_PREFIX/bin/msvcp140_atomic_wait.dll  \
+$VCPKG_INSTALL_PREFIX/bin/msvcp140_codecvt_ids.dll  \
+$VCPKG_INSTALL_PREFIX/bin/vcruntime140_1.dll        \
+$VCPKG_INSTALL_PREFIX/bin/vcruntime140.dll          \
+$VCPKG_INSTALL_PREFIX/bin/concrt140.dll             \
+"
+
+for vsdll in $VS_DLL_FILES ; do
+
+    echo -e "   => $vsdll"
+    cp -r "$vsdll" $BUNDLEDIR/ 2>/dev/null
 
 done
 
 #################################################################################################
-# Cleanup symbols in binary files to free space.
-# NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is genenrated.
-# The following code to do lets all debug symbols in each digiKam componets, else size will be largest than 2Gb.
-# only the digiKam/Showfoto executable and shared libraries debug symbols are preserved. All digiKam plugins are stripped.
-
-echo -e "\n---------- Strip symbols in binary files\n"
-
-if [[ $DK_DEBUG = 1 ]] ; then
-
-    DEBUG_EXE_STRIP_ALL="`find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto)'`"
-    echo "DEBUG_EXE_STRIP_ALL=$DEBUG_EXE_STRIP_ALL"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_EXE_STRIP_ALL
-
-    DEBUG_DLL_STRIP_ALL="`find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto)'`"
-    echo "DEBUG_DLL_STRIP_ALL=$DEBUG_DLL_STRIP_ALL"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_DLL_STRIP_ALL
-
-#    DEBUG_EXE_STRIP="`find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'`"
-#    echo "DEBUG_EXE_STRIP=$DEBUG_EXE_STRIP"
-#    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --only-keep-debug $DEBUG_EXE_STRIP
-
-    DEBUG_DLL_STRIP="`find $BUNDLEDIR -name \*dll | grep -E '(digikam|showfoto)' | grep -Ev '(libdigikam|digikam.dll|showfoto.dll)'`"
-    echo "DEBUG_DLL_STRIP=$DEBUG_DLL_STRIP"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_DLL_STRIP
-
-#else
-
-#    find $BUNDLEDIR -name \*exe | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
-#    find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
-
-fi
-
-#################################################################################################
 # Install ExifTool binary.
 
+echo -e "\n---------- Copy ExifTool executable"
+
 cd $DOWNLOAD_DIR
-
-#if [ ! -f $DOWNLOAD_DIR/exiftool.zip ] ; then
-    curl -LO https://files.kde.org/digikam/exiftool/exiftool.zip
-#fi
-
+curl -LO https://files.kde.org/digikam/exiftool/exiftool.zip
 unzip -o $DOWNLOAD_DIR/exiftool.zip -d $BUNDLEDIR
 mv "$BUNDLEDIR/exiftool(-k).exe" "$BUNDLEDIR/exiftool.exe"
 
 #################################################################################################
 
-if [[ $DK_DEBUG = 1 ]] ; then
+if [ "$DK_DEBUG" = 1 ] ; then
 
     DEBUG_SUF="-debug"
 
 fi
 
-if [[ $DK_VERSION != v* ]] ; then
+if [[ "$DK_VERSION" != "v"* ]] ; then
 
     # with non-official release version, use build time-stamp as sub-version string.
     DK_SUBVER="-`cat $ORIG_WD/data/BUILDDATE.txt`"
@@ -253,8 +353,10 @@ else
 
 fi
 
-#FIXME
-exit
+TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.exe
+PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.tar.xz
+CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.sum
+
 #################################################################################################
 # Build NSIS installer and Portable archive.
 
@@ -262,14 +364,22 @@ echo -e "\n---------- Build NSIS installer and Portable archive\n"
 
 mkdir -p $ORIG_WD/bundle
 
-TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.exe
-PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.tar.xz
-CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.sum
 rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
 
 cd $ORIG_WD/installer
 
-"/c/Program Files (x86)/NSIS/Bin/makensis" -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
+if [ "$DK_DEBUG" = 1 ] ; then
+
+    DEBUG_SYMB="-DDEBUG_SYMB"
+
+fi
+
+"/c/Program Files (x86)/NSIS/Bin/makensis" \
+        -DVERSION=$DK_RELEASEID \
+        -DBUNDLEPATH=$BUNDLEDIR \
+        $DEBUG_SYMB \
+        -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER \
+        ./digikam.nsi
 
 cd $ORIG_WD
 tar cf - `basename $BUNDLEDIR` --transform s/temp/digiKam/ | xz -4e > $ORIG_WD/bundle/$PORTABLE_FILE
@@ -297,7 +407,7 @@ shasum -a256 "$ORIG_WD/bundle/$PORTABLE_FILE" | { read first rest ; echo $first 
 # Checksums to post on Phabricator at release time.
 shasum -a256 "$ORIG_WD/bundle/$PORTABLE_FILE" >> $ORIG_WD/bundle/$CHECKSUM_FILE
 
-if [[ $DK_SIGN = 1 ]] ; then
+if [ "$DK_SIGN" = 1 ] ; then
 
     echo -e "\n---------- Compute Signature checksums for digiKam installer $DK_RELEASEID\n"    >  $ORIG_WD/bundle/$TARGET_INSTALLER.sum
 
@@ -332,26 +442,21 @@ fi
 cat $ORIG_WD/bundle/$TARGET_INSTALLER.sum
 cat $ORIG_WD/bundle/$PORTABLE_FILE.sum
 
-if [[ $DK_UPLOAD = 1 ]] ; then
+if [ "$DK_UPLOAD" = 1 ] ; then
 
     echo -e "---------- Cleanup older Windows bundle files from files.kde.org repository \n"
 
-    if [ $MXE_BUILD_TARGETS == "i686-w64-mingw32.shared" ]; then
-        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win32$DEBUG_SUF.exe*"
-        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win32$DEBUG_SUF.tar.xz*"
-    else
-        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.exe*"
-        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.tar.xz*"
-    fi
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.exe*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.tar.xz*"
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
 
-    rsync -r -v --progress -e ssh $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
-    rsync -r -v --progress -e ssh $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
+    UploadWithRetry $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL $DK_UPLOADDIR 10
+    UploadWithRetry $ORIG_WD/bundle/$PORTABLE_FILE    $DK_UPLOADURL $DK_UPLOADDIR 10
 
     if [[ $DK_SIGN = 1 ]] ; then
         scp $ORIG_WD/bundle/$TARGET_INSTALLER.sig $DK_UPLOADURL:$DK_UPLOADDIR
-        scp $ORIG_WD/bundle/$PORTABLE_FILE.sig $DK_UPLOADURL:$DK_UPLOADDIR
+        scp $ORIG_WD/bundle/$PORTABLE_FILE.sig    $DK_UPLOADURL:$DK_UPLOADDIR
     fi
 
     # update remote files list
@@ -362,7 +467,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     rm $ORIG_WD/bundle/ls.tmp
     rm $ORIG_WD/bundle/ls.txt
     sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm FILES"
-    rsync -r -v --progress -e ssh $BUILDDIR/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
+
+    UploadWithRetry $BUILDDIR/bundle/FILES $DK_UPLOADURL $DK_UPLOADDIR 10
 
 else
 

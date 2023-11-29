@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  * SPDX-FileCopyrightText: 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
- * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -16,6 +16,8 @@
 
 #ifndef DIGIKAM_PRESENTATION_AUDIO_LIST_H
 #define DIGIKAM_PRESENTATION_AUDIO_LIST_H
+
+#include "digikam_config.h"
 
 // Qt includes
 
@@ -29,9 +31,19 @@
 #include <QListWidgetItem>
 #include <QUrl>
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
+
+// QtMultimedia includes
+
+#   include <QMediaPlayer>
+
+#else
+
 // QtAV includes
 
-#include <AVError.h>
+#   include <AVError.h>
+
+#endif
 
 namespace DigikamGenericPresentationPlugin
 {
@@ -58,9 +70,18 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
+
+    void slotMediaStateChanged(QMediaPlayer::MediaStatus status);
+    void slotPlayerError(QMediaPlayer::Error);
+
+#else
+
     void slotMediaStateChanged(QtAV::MediaStatus);
     void slotPlayerError(const QtAV::AVError&);
     void slotDurationChanged(qint64 duration);
+
+#endif
 
 private:
 

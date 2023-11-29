@@ -324,7 +324,7 @@ FileSaveOptionsBox::FORMAT FileSaveOptionsBox::discoverFormat(const QString& fil
 void FileSaveOptionsBox::applySettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("ImageViewer Settings");
+    KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
     group.writeEntry(QLatin1String("JPEGCompression"),     d->JPEGOptions->settings()[QLatin1String("quality")].toInt());
     group.writeEntry(QLatin1String("JPEGSubSampling"),     d->JPEGOptions->settings()[QLatin1String("subsampling")].toInt());
 
@@ -379,7 +379,7 @@ void FileSaveOptionsBox::readSettings()
     DImgLoaderPrms set;
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("ImageViewer Settings");
+    KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
 
     set.clear();
     set.insert(QLatin1String("quality"),     group.readEntry(QLatin1String("JPEGCompression"),     75));

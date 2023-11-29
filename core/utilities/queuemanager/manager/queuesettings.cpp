@@ -37,7 +37,7 @@ QueueSettings::QueueSettings()
       rawLoadingRule    (DEMOSAICING)
 {
     KSharedConfig::Ptr config          = KSharedConfig::openConfig();
-    KConfigGroup group                 = config->group("ImageViewer Settings");
+    KConfigGroup group                 = config->group(QLatin1String("ImageViewer Settings"));
 
     ioFileSettings.JPEGCompression     = group.readEntry(QLatin1String("JPEGCompression"),     75);
     ioFileSettings.JPEGSubSampling     = group.readEntry(QLatin1String("JPEGSubSampling"),     1);

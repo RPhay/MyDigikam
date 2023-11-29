@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  * SPDX-FileCopyrightText: 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
- * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -135,8 +135,8 @@ PresentationDlg::~PresentationDlg ()
 
 void PresentationDlg::readSettings()
 {
-    KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group(QLatin1String("Presentation Settings"));
+    KSharedConfigPtr config          = KSharedConfig::openConfig();
+    KConfigGroup grp                 = config->group(QLatin1String("Presentation Settings"));
 
     d->sharedData->opengl            = grp.readEntry("OpenGL",                   false);
     d->sharedData->openGlFullScale   = grp.readEntry("OpenGLFullScale",          false);
@@ -165,7 +165,7 @@ void PresentationDlg::readSettings()
     savedFont->setStrikeOut( grp.readEntry("Comments Font StrikeOut",   false));
     savedFont->setFixedPitch(grp.readEntry("Comments Font FixedPitch",  false));
 
-    d->sharedData->captionFont = savedFont;
+    d->sharedData->captionFont         = savedFont;
 
     d->sharedData->commentsFontColor   = grp.readEntry("Comments Font Color",   0xffffff);
     d->sharedData->commentsBgColor     = grp.readEntry("Comments Bg Color",     0x000000);

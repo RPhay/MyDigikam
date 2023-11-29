@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * SPDX-FileCopyrightText: 2007-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Parts of this code are based on
  * smoothslidesaver by Carsten Weinhold <carsten dot weinhold at gmx dot de>
@@ -41,7 +41,6 @@
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
-
 
 namespace DigikamGenericPresentationPlugin
 {
@@ -379,17 +378,23 @@ void PresentationKB::setNewKBEffect()
     switch (type)
     {
         case KBEffect::Fade:
+        {
             d->effect = new FadeKBEffect(this, needFadeIn);
             break;
+        }
 
         case KBEffect::Blend:
+        {
             d->effect = new BlendKBEffect(this, needFadeIn);
             break;
+        }
 
         default:
+        {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown transition effect, falling back to crossfade";
             d->effect = new BlendKBEffect(this, needFadeIn);
             break;
+        }
     }
 }
 
@@ -403,6 +408,7 @@ void PresentationKB::moveSlot()
             d->imageLoadThread->requestNewImage();
             d->endOfShow = !d->haveImages;
         }
+
         if (d->enableSameSpeed)
         {
             d->effect->advanceTime(d->stepSameSpeed);
@@ -598,7 +604,7 @@ void PresentationKB::paintTexture(KBImage* const img)
 void PresentationKB::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Presentation Settings");
+    KConfigGroup group      = config->group(QLatin1String("Presentation Settings"));
 
     d->delay                = group.readEntry("Delay", 8000) / 1000;
     d->disableFadeInOut     = group.readEntry("KB Disable FadeInOut", false);

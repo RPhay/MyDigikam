@@ -736,11 +736,11 @@ public:
 
     explicit SchemeManagerPrivate(const KSharedConfigPtr&,
                                   QPalette::ColorGroup,
-                                  const char*,
+                                  const QString&,
                                   const SetDefaultColors&);
     explicit SchemeManagerPrivate(const KSharedConfigPtr&,
                                   QPalette::ColorGroup,
-                                  const char*,
+                                  const QString&,
                                   const SetDefaultColors&,
                                   const QBrush&);
     ~SchemeManagerPrivate() = default;
@@ -754,7 +754,7 @@ private:
 
     void init(const KSharedConfigPtr&,
               QPalette::ColorGroup,
-              const char*,
+              const QString&,
               const SetDefaultColors&);
 
 private:
@@ -775,7 +775,7 @@ private:
 
 SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
                                            QPalette::ColorGroup state,
-                                           const char* group,
+                                           const QString& group,
                                            const SetDefaultColors& defaults)
 {
     KConfigGroup cfg(config, group);
@@ -793,7 +793,7 @@ SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
 
 SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
                                            QPalette::ColorGroup state,
-                                           const char* group,
+                                           const QString& group,
                                            const SetDefaultColors& defaults,
                                            const QBrush& tint)
 {
@@ -817,7 +817,7 @@ SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
 
 void SchemeManagerPrivate::init(const KSharedConfigPtr& config,
                                 QPalette::ColorGroup state,
-                                const char* group,
+                                const QString& group,
                                 const SetDefaultColors& defaults)
 {
     KConfigGroup cfg(config, group);
@@ -966,19 +966,21 @@ SchemeManager::SchemeManager(QPalette::ColorGroup state,
     {
         case Window:
         {
-            d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors);
+            d = new SchemeManagerPrivate(config, state,
+                                         QLatin1String("Colors:Window"), defaultWindowColors);
             break;
         }
 
         case Button:
         {
-            d = new SchemeManagerPrivate(config, state, "Colors:Button", defaultButtonColors);
+            d = new SchemeManagerPrivate(config, state,
+                                         QLatin1String("Colors:Button"), defaultButtonColors);
             break;
         }
 
         case Selection:
         {
-            KConfigGroup group(config, "ColorEffects:Inactive");
+            KConfigGroup group(config, QLatin1String("ColorEffects:Inactive"));
 
             // NOTE: keep this in sync with kdebase/workspace/kcontrol/colors/colorscm.cpp
 
@@ -989,18 +991,21 @@ SchemeManager::SchemeManager(QPalette::ColorGroup state,
 
             if      ((state == QPalette::Active) || ((state == QPalette::Inactive) && !inactiveSelectionEffect))
             {
-                d = new SchemeManagerPrivate(config, state, "Colors:Selection", defaultSelectionColors);
+                d = new SchemeManagerPrivate(config, state,
+                                             QLatin1String("Colors:Selection"), defaultSelectionColors);
             }
             else if (state == QPalette::Inactive)
             {
-                d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors,
+                d = new SchemeManagerPrivate(config, state,
+                                             QLatin1String("Colors:Window"), defaultWindowColors,
                                              SchemeManager(QPalette::Active, Selection, config).background());
             }
             else
             {
                 // disabled (...and still want this branch when inactive+disabled exists)
 
-                d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors);
+                d = new SchemeManagerPrivate(config, state,
+                                             QLatin1String("Colors:Window"), defaultWindowColors);
             }
 
             break;
@@ -1008,19 +1013,22 @@ SchemeManager::SchemeManager(QPalette::ColorGroup state,
 
         case Tooltip:
         {
-            d = new SchemeManagerPrivate(config, state, "Colors:Tooltip", defaultTooltipColors);
+            d = new SchemeManagerPrivate(config, state,
+                                         QLatin1String("Colors:Tooltip"), defaultTooltipColors);
             break;
         }
 
         case Complementary:
         {
-            d = new SchemeManagerPrivate(config, state, "Colors:Complementary", defaultComplementaryColors);
+            d = new SchemeManagerPrivate(config, state,
+                                         QLatin1String("Colors:Complementary"), defaultComplementaryColors);
             break;
         }
 
         default:
         {
-            d = new SchemeManagerPrivate(config, state, "Colors:View", defaultViewColors);
+            d = new SchemeManagerPrivate(config, state,
+                                         QLatin1String("Colors:View"), defaultViewColors);
             break;
         }
     }
@@ -1028,7 +1036,7 @@ SchemeManager::SchemeManager(QPalette::ColorGroup state,
 
 int SchemeManager::contrast()
 {
-    KConfigGroup g(KSharedConfig::openConfig(), "KDE");
+    KConfigGroup g(KSharedConfig::openConfig(), QLatin1String("KDE"));
 
     return g.readEntry("contrast", 7);
 }
@@ -1037,7 +1045,7 @@ qreal SchemeManager::contrastF(const KSharedConfigPtr& config)
 {
     if (config)
     {
-        KConfigGroup g(config, "KDE");
+        KConfigGroup g(config, QLatin1String("KDE"));
 
         return (0.1 * g.readEntry("contrast", 7));
     }

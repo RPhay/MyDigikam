@@ -153,7 +153,7 @@ TwWindow::~TwWindow()
 void TwWindow::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Twitter Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Twitter Settings"));
     d->currentAlbumName     = grp.readEntry("Current Album", QString());
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "readsettings:" << d->currentAlbumName;
 
@@ -175,7 +175,7 @@ void TwWindow::readSettings()
 void TwWindow::writeSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Twitter Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Twitter Settings"));
 
     grp.writeEntry("Current Album", d->currentAlbumName);
     grp.writeEntry("Resize",        d->widget->getResizeCheckBox()->isChecked());

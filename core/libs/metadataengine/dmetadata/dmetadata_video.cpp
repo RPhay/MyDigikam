@@ -42,6 +42,7 @@
 #include <QMimeDatabase>
 #include <QStringList>
 #include <QTimeZone>
+#include <QtMath>
 
 // KDE includes
 
@@ -63,6 +64,13 @@ extern "C"
 #include <libavutil/dict.h>
 #include <libavutil/pixdesc.h>
 #include <libavcodec/avcodec.h>
+
+#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55, 18, 0)
+
+#   include <libavutil/display.h>
+
+#endif
+
 }
 
 #endif
@@ -327,7 +335,17 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
             data = QString();
 
-            switch (codec->channels)
+#if LIBAVUTIL_VERSION_MAJOR > 56
+
+            int channels = codec->ch_layout.nb_channels;
+
+#else
+
+            int channels = codec->channels;
+
+#endif
+
+            switch (channels)
             {
                 case 0:
                 {
@@ -641,9 +659,30 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
             // --------------
 
+#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55, 18, 0)
+
+            quint8* const sideData = reinterpret_cast<quint8*>(av_stream_get_side_data(stream,
+                                                                                       AV_PKT_DATA_DISPLAYMATRIX,
+                                                                                       nullptr));
+
+            if (sideData)
+            {
+                double r = av_display_rotation_get(reinterpret_cast<qint32*>(sideData));
+
+                if (!qIsNaN(r))
+                {
+                    r   -= 360 * qFloor(r / 360 + 0.9 / 360);
+                    data = QString::number(360 - r);
+                }
+            }
+
+#else
+
             data = s_setXmpTagStringFromEntry(this,
                                               QStringList() << QLatin1String("rotate"),                         // Generic.
                                               vmeta);
+
+#endif
 
             if (!data.isEmpty())
             {

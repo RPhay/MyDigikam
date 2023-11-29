@@ -254,11 +254,23 @@ void CurvesBox::setup()
     connect(d->curvesWidget, SIGNAL(signalCurvesChanged()),
             this, SIGNAL(signalCurvesChanged()));
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+    connect(d->pickerType, SIGNAL(idReleased(int)),
+            this, SIGNAL(signalPickerChanged(int)));
+
+    connect(d->curveType, SIGNAL(idClicked(int)),
+            this, SLOT(slotCurveTypeChanged(int)));
+
+#else
+
     connect(d->pickerType, SIGNAL(buttonReleased(int)),
             this, SIGNAL(signalPickerChanged(int)));
 
     connect(d->curveType, SIGNAL(buttonClicked(int)),
             this, SLOT(slotCurveTypeChanged(int)));
+
+#endif
 
     connect(d->resetChannelAction, SIGNAL(triggered()),
             this, SLOT(slotResetChannel()));

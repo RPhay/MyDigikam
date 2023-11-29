@@ -502,9 +502,9 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
     {
         /// @todo This collides with the message box displayed if the user aborts the RG process
 
-        QMessageBox::critical(this, qApp->applicationName(), errorString);
+        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Reverse Geo-coding Error"), errorString);
 
-        d->receivedRGCount+=returnedRGList.count();
+        d->receivedRGCount += returnedRGList.count();
 
         Q_EMIT signalSetUIEnabled(true);
 
@@ -999,7 +999,7 @@ void RGWidget::slotRGCanceled()
         }
 
         const int result = DMessageBox::showYesNo(QMessageBox::Warning, this,
-                                                  i18n("Abort reverse geocoding?"),
+                                                  i18nc("@title:window", "Abort reverse geocoding?"),
                                                   question);
 
         d->currentlyAskingCancelQuestion = false;

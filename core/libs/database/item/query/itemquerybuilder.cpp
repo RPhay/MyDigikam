@@ -394,7 +394,8 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     {
         fieldQuery.addDateField(QLatin1String("Images.modificationDate"));
     }
-    else if (name == QLatin1String("filesize"))
+    else if ((name == QLatin1String("filesize")) ||
+             (name == QLatin1String("bytesize")))
     {
         fieldQuery.addLongField(QLatin1String("Images.fileSize"));
     }

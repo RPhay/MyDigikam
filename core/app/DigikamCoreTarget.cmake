@@ -153,7 +153,6 @@ target_link_libraries(digikamcore
                       ${TIFF_LIBRARIES}
                       PNG::PNG
                       ${JPEG_LIBRARIES}
-                      exiv2lib
 
                       ${OPENMP_LDFLAGS}
 
@@ -165,6 +164,22 @@ target_link_libraries(digikamcore
                       opencv_ml
                       opencv_flann
 )
+
+if(LibExiv2_FOUND)
+
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          ${LibExiv2_LIBRARIES}
+    )
+
+else()
+
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          exiv2lib
+    )
+
+endif()
 
 if(Qt6_FOUND)
 
@@ -353,11 +368,11 @@ if(LensFun_FOUND)
 
 endif()
 
-if(ImageMagick_FOUND)
+if(Magick_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          ${ImageMagick_LIBRARIES}
+                          ${Magick_LIBRARIES}
     )
 
 endif()
@@ -441,7 +456,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
 # install debug symbols
 
 if(MSVC)
-    install(FILES "$<TARGET_FILE:digikamcore>.pdb" ${INSTALL_TARGETS_DEFAULT_ARGS} CONFIGURATIONS Debug RelWithDebInfo)
+    install(FILES "$<TARGET_PDB_FILE:digikamcore>" DESTINATION "${CMAKE_INSTALL_BINDIR}" CONFIGURATIONS Debug RelWithDebInfo)
 endif()
 
 if(APPLE)
