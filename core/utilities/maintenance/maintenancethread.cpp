@@ -163,42 +163,26 @@ void MaintenanceThread::generateFingerprints(const QList<qlonglong>& itemIds, bo
 
 void MaintenanceThread::generateTags(const QStringList& paths, int modelType)
 {
-    int sizeData   = paths.size();
-    const int batch_size = 16; 
     ActionJobCollection collection;
- 
-    for (int i = 0; i <= sizeData - sizeData%batch_size; i += batch_size)
+
+    data->setImagePaths(paths);
+
+    for (int i = 1 ; i <= maximumNumberOfThreads() ; ++i)
     {
-        // generate a batch of images given batch_size
-        QList<QString> batchImgPaths;
-        if (i < sizeData - sizeData%batch_size)
-        {
-            for (int j = 0; j < batch_size; j++)
-            {
-                batchImgPaths.append(paths[i+j]);
-            }
-        }
-        else
-        {
-            for (int j = i; j < sizeData; j++)
-            {
-                batchImgPaths.append(paths[j]);
-            }
-        }
-        qDebug() << "current batch size" << batchImgPaths.size();
-        
         AutotagsAssignmentTask* const t = new AutotagsAssignmentTask();
-        t->setBatchSize(batch_size);
-        t->setBatchImages(batchImgPaths);
+
+        t->setMaintenanceData(data);
         t->setModelType(modelType);
+
         connect(t, SIGNAL(signalFinished()),
-        this, SIGNAL(signalAdvance()));
-        
+                this, SIGNAL(signalAdvance()));
+
         collection.insert(t, 0);
-        qDebug() << "Creating an autotagging task for autotags assignment items.";
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating an autotagging task for autotags assignment items";
     }
 
-    appendJobs(collection);  
+    appendJobs(collection);
 }
 
 void MaintenanceThread::sortByImageQuality(const QStringList& paths, const ImageQualityContainer& quality)

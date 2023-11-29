@@ -32,14 +32,14 @@ class Q_DECL_HIDDEN AutotagsAssignmentTask::Private
 public:
 
     explicit Private()
-        : data (nullptr)
+        : data           (nullptr),
+          autotagsEngine (nullptr),
+          modelType      (0)
     {
     }
 
     MaintenanceData* data;
     autoTagsAssign*  autotagsEngine;
-    QList<QString>   batchImgPaths;
-    int              batchSize;
     int              modelType;
 };
 
@@ -63,12 +63,7 @@ void AutotagsAssignmentTask::setMaintenanceData(MaintenanceData* const data)
     d->data = data;
 }
 
-void AutotagsAssignmentTask::setBatchSize(int batchSize) const
-{
-    d->batchSize = batchSize;
-}
-
-void AutotagsAssignmentTask::setModelType(int modelType) const
+void AutotagsAssignmentTask::setModelType(int modelType)
 {
     d->modelType = modelType;
 }
@@ -94,40 +89,51 @@ void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QS
     }
 }
 
-void AutotagsAssignmentTask::setBatchImages(const QList<QString>& batchImgPaths) const
-{
-    d->batchImgPaths = batchImgPaths;
-}
-
 void AutotagsAssignmentTask::run()
 {
-    if (!m_cancel)
+    // While we have data (using this as check for non-null)
+
+    while (d->data)
     {
+        if (m_cancel)
+        {
+            return;
+        }
+
+        QString path = d->data->getImagePath();
+
+        if (path.isEmpty())
+        {
+            break;
+        }
+
         // Run Autotags backend ere
         // Assign Tags in databae using API from itemInfo
 
         QElapsedTimer timer;
         timer.start();
 
-        d->autotagsEngine               = new autoTagsAssign(DetectorModel(d->modelType));
-        QList<QList<QString>> tagsLists = d->autotagsEngine->generateTagsList(d->batchImgPaths, d->batchSize);
+        DImg img(path);
 
-        if (d->batchImgPaths.size() == tagsLists.size())
+        if (!img.isNull())
         {
-            for (int i = 0 ; i < d->batchImgPaths.size() ; ++i)
+            d->autotagsEngine = new autoTagsAssign(DetectorModel(d->modelType));
+            QList<QString> tagsList = d->autotagsEngine->generateTagsList(img);
+
+            if (!tagsList.isEmpty())
             {
-                assignTags(d->batchImgPaths[i], tagsLists[i]);
+                assignTags(path, tagsList);
             }
+
+            delete d->autotagsEngine;
+            d->autotagsEngine = nullptr;
         }
 
         int elapsed = timer.elapsed();
-        qDebug() << "assgin Tags process takes: " << elapsed << " ms";
+        qDebug(DIGIKAM_GENERAL_LOG) << "assgin Tags process takes: " << elapsed << " ms";
 
-        delete d->autotagsEngine;
-        d->autotagsEngine = nullptr;
+        Q_EMIT signalFinished();
     }
-
-    Q_EMIT signalFinished();
 
     Q_EMIT signalDone();
 }

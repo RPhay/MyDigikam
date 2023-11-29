@@ -39,9 +39,7 @@ public:
 
     void assignTags(const QString& pathImage, const QList<QString>& tagsList);
     void setMaintenanceData(MaintenanceData* const data = nullptr);
-    void setBatchImages(const QList<QString>& batchImgPaths) const;
-    void setBatchSize(int batchSize) const;
-    void setModelType(int modelType) const;
+    void setModelType(int modelType);
 
 Q_SIGNALS:
 
