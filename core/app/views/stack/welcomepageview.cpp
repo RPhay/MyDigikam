@@ -7,7 +7,7 @@
  * Description : a widget to display a welcome page
  *               on root album.
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * SPDX-FileCopyrightText: 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -137,8 +137,9 @@ void WelcomePageView::slotUrlOpen(const QUrl& url)
 QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
-    newFeatures << i18n("More than 400 user-reports closed on bugzilla.");
+    newFeatures << i18n("More than 650 user-reports closed on bugzilla.");
     newFeatures << i18n("Port code to Qt6 framework (code still compatible with Qt5 API).");
+    newFeatures << i18n("Windows Installer is now compiled natively with Microsoft VCPKG tool-chain and use Qt6 and KF6 frameworks.");
     newFeatures << i18n("Add JPEG-XL, WEBP, and AVIF export settings everywhere.");
     newFeatures << i18n("Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.");
     newFeatures << i18n("Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager.");
@@ -170,7 +171,7 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Queue Manager: add new tool to assign titles and captions in batch.");
     newFeatures << i18n("Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework.");
     newFeatures << i18n("Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and improve stability of plugin.");
-    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 20230403.");
+    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2023-11-21.");
     newFeatures << i18n("New RAW features: "
                         "Phase One/Leaf IIQ-S v2 support "
                         "Canon CR3 filmrolls/RawBurst "
