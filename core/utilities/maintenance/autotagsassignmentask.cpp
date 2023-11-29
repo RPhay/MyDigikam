@@ -118,8 +118,8 @@ void AutotagsAssignmentTask::run()
         int elapsed = timer.elapsed();
         qDebug() << "assgin Tags process takes: " << elapsed << " ms";
 
-        d->autotagsEngine = nullptr;
         delete d->autotagsEngine;
+        d->autotagsEngine = nullptr;
     }
     
     Q_EMIT signalFinished();
