@@ -160,7 +160,8 @@ std::vector<cv::Mat> autoTagsAssign::prepareForDetection(const QList<QString>& i
 
     for (auto imgPath : inputImagePaths)
     {
-        result.push_back(prepareForDetection(imgPath));
+        DImg img(imgPath);
+        result.push_back(prepareForDetection(img));
     }
 
     // add black imgs to fullfill the batch size
