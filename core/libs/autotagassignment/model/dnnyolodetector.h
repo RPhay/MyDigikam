@@ -34,11 +34,11 @@ class DIGIKAM_EXPORT DNNYoloDetector: public DNNBaseDetectorModel
 public:
 
     explicit DNNYoloDetector(YoloVersions modelVersion = YoloVersions::YOLOV5NANO);
-    ~DNNYoloDetector()                                                      override;
+    ~DNNYoloDetector()                                                                                override;
 
 public:
 
-    QList<QString>    getPredefinedClasses()                                           const         override;
+    QList<QString>    getPredefinedClasses()                                           const          override;
     bool              loadModels();
     QList<QString>    loadCOCOClass();    ///< load 80 predifined classes for object detection "coco.names"
 
@@ -68,8 +68,8 @@ private:
 
 private:
 
-    QList<QString>   predefinedClasses;
-    YoloVersions     yoloVersion;
+    QList<QString> predefinedClasses;
+    YoloVersions   yoloVersion;
 };
 
 } // namespace Digikam

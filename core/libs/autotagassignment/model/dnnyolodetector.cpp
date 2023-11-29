@@ -104,7 +104,7 @@ bool DNNYoloDetector::loadModels()
             net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
             net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
 
-            //TODO verify GPU Options here
+            // TODO: verify GPU Options here
         }
         catch (cv::Exception& e)
         {
@@ -153,7 +153,7 @@ QList<QHash<QString, QVector<QRect>>> DNNYoloDetector::detectObjects(const std::
     }
     std::vector<cv::Mat> outs = preprocess(inputBatchImages);
 
-    // outs = [1 x [rows x 85]] 
+    // outs = [1 x [rows x 85]]
 
     return postprocess(inputBatchImages, outs);
 }
@@ -174,7 +174,7 @@ std::vector<cv::Mat> DNNYoloDetector::preprocess(const cv::Mat& inputImage)
     return outs;
 }
 
-std::vector<cv::Mat> DNNYoloDetector::preprocess(const std::vector<cv::Mat>& inputBatchImages) 
+std::vector<cv::Mat> DNNYoloDetector::preprocess(const std::vector<cv::Mat>& inputBatchImages)
 {
     cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
@@ -188,6 +188,7 @@ std::vector<cv::Mat> DNNYoloDetector::preprocess(const std::vector<cv::Mat>& inp
         net.forward(outs, getOutputsNames());
 
         int elapsed = timer.elapsed();
+
         qDebug() << "Batch forward (Inference) takes: " << elapsed << " ms";
     }
     mutex.unlock();
@@ -202,7 +203,7 @@ QList<QHash<QString, QVector<QRect>>> DNNYoloDetector::postprocess(const std::ve
 
     // outs = [batch_size x [rows x 85]]
 
-    for(int i = 0; i < inputBatchImages.size(); i++)
+    for(int i = 0 ; i < inputBatchImages.size() ; i++)
     {
         detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
     }
@@ -229,7 +230,7 @@ QHash<QString, QVector<QRect>> DNNYoloDetector::postprocess(const cv::Mat& input
     size_t data_size = out.total() * out.channels();
     int rows         = data_size / 85;
 
-    for (int i = 0; i < rows; ++i)
+    for (int i = 0 ; i < rows ; ++i)
     {
         float confidence = data[4];
 
@@ -246,7 +247,7 @@ QHash<QString, QVector<QRect>> DNNYoloDetector::postprocess(const cv::Mat& input
             // Perform minMaxLoc and acquire the index of best class score.
 
             cv::Point class_id;
-            double max_class_score;
+            double max_class_score = 0.0;
             cv::minMaxLoc(scores, 0, &max_class_score, 0, &class_id);
 
             // Continue if the class score is above the threshold.
@@ -265,15 +266,15 @@ QHash<QString, QVector<QRect>> DNNYoloDetector::postprocess(const cv::Mat& input
 
                 // Box dimension.
 
-                float w    = data[2];
-                float h    = data[3];
+                float w      = data[2];
+                float h      = data[3];
 
                 // Bounding box coordinates.
 
-                int left      = int((centerX - 0.5 * w) * x_factor);
-                int top       = int((centerY - 0.5 * h) * y_factor);
-                int width     = int(w  * x_factor);
-                int height    = int(h  * y_factor);
+                int left     = int((centerX - 0.5 * w) * x_factor);
+                int top      = int((centerY - 0.5 * h) * y_factor);
+                int width    = int(w                   * x_factor);
+                int height   = int(h                   * y_factor);
 
                 // Store good detections in the boxes vector.
 
@@ -330,4 +331,5 @@ std::vector<cv::String> DNNYoloDetector::getOutputsNames() const
 
     return names;
 }
+
 } // namespace Digikam
