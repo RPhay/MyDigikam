@@ -162,7 +162,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
                         );
 
     aboutData.addCredit ( ki18n("Quốc Hưng Trần").toString(),
-                          ki18n("MJPEGStream plugin, OCR text Converter plugin").toString(),
+                          ki18n("MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine").toString(),
                           QLatin1String("quochungtran1999 at gmail dot com "),
                           QLatin1String("https://www.linkedin.com/in/qu%E1%BB%91c-h%C6%B0ng-tr%E1%BA%A7n-92a504163/")
                         );
