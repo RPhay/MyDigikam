@@ -1,6 +1,7 @@
 /* ============================================================
  *
  * This file is a part of digiKam
+ * https://www.digikam.org
  *
  * Date        : 2023-09-02
  * Description : Derived class to perform YOLO neural network inference
@@ -11,7 +12,6 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
-
 
 #include "dnnresnetdetector.h"
 

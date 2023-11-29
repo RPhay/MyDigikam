@@ -1,6 +1,7 @@
 /* ============================================================
  *
  * This file is a part of digiKam
+ * https://www.digikam.org
  *
  * Date        : 2023-09-02
  * Description : Base class to perform low-level neural network inference

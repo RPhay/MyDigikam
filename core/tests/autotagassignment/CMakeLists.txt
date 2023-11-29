@@ -1,12 +1,10 @@
 #
-# SPDX-FileCopyrightText: 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-
 APPLY_COMMON_POLICIES()
-
 
 include_directories(
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
@@ -15,10 +13,10 @@ include_directories(
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
-                    $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::Service,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::Service,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 # -----------------------------------------------------------------------------
@@ -28,15 +26,15 @@ set(detect_object_cli_SRCS  ${CMAKE_CURRENT_SOURCE_DIR}/detect_object_cli.cpp)
 add_executable(detect_object_cli ${detect_object_cli_SRCS})
 
 target_link_libraries(detect_object_cli
-                      
+
                       digikamcore
                       digikamdatabase
                       digikamgui
 
-                      KF5::XmlGui
-                      KF5::I18n
-                      KF5::ConfigCore
-                      KF5::Service
+                      KF${QT_VERSION_MAJOR}::XmlGui
+                      KF${QT_VERSION_MAJOR}::I18n
+                      KF${QT_VERSION_MAJOR}::ConfigCore
+                      KF${QT_VERSION_MAJOR}::Service
                       ${COMMON_TEST_LINK}
 )
 
@@ -52,10 +50,10 @@ target_link_libraries(detect_object_gui
                       digikamdatabase
                       digikamgui
 
-                      KF5::XmlGui
-                      KF5::I18n
-                      KF5::ConfigCore
-                      KF5::Service
+                      KF${QT_VERSION_MAJOR}::XmlGui
+                      KF${QT_VERSION_MAJOR}::I18n
+                      KF${QT_VERSION_MAJOR}::ConfigCore
+                      KF${QT_VERSION_MAJOR}::Service
                       ${COMMON_TEST_LINK}
 )
 
@@ -69,10 +67,10 @@ target_link_libraries(detect_object_batch_cli
                       digikamdatabase
                       digikamgui
 
-                      KF5::XmlGui
-                      KF5::I18n
-                      KF5::ConfigCore
-                      KF5::Service
+                      KF${QT_VERSION_MAJOR}::XmlGui
+                      KF${QT_VERSION_MAJOR}::I18n
+                      KF${QT_VERSION_MAJOR}::ConfigCore
+                      KF${QT_VERSION_MAJOR}::Service
                       ${COMMON_TEST_LINK}
 )
 
@@ -88,10 +86,10 @@ target_link_libraries(autotagging_batch_cli
                       digikamdatabase
                       digikamgui
 
-                      KF5::XmlGui
-                      KF5::I18n
-                      KF5::ConfigCore
-                      KF5::Service
+                      KF${QT_VERSION_MAJOR}::XmlGui
+                      KF${QT_VERSION_MAJOR}::I18n
+                      KF${QT_VERSION_MAJOR}::ConfigCore
+                      KF${QT_VERSION_MAJOR}::Service
                       ${COMMON_TEST_LINK}
 )
 
@@ -105,10 +103,9 @@ target_link_libraries(resnet_cli
                       digikamdatabase
                       digikamgui
 
-                      KF5::XmlGui
-                      KF5::I18n
-                      KF5::ConfigCore
-                      KF5::Service
+                      KF${QT_VERSION_MAJOR}::XmlGui
+                      KF${QT_VERSION_MAJOR}::I18n
+                      KF${QT_VERSION_MAJOR}::ConfigCore
+                      KF${QT_VERSION_MAJOR}::Service
                       ${COMMON_TEST_LINK}
 )
-

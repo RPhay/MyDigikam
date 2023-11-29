@@ -3,11 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2020-05-13
- * Description : Intergrated testing tool for bencmark depoloyed model and hyper parameters
- *               for object detection  
+ * Date        : 2023-05-13
+ * Description : Integrated testing tool for bencmark deployed model and hyper parameters
+ *               for object detection
  * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
- * 
+ *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
