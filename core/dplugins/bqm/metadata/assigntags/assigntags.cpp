@@ -71,7 +71,12 @@ BatchTool* AssignTags::clone(QObject* const parent) const
 void AssignTags::registerSettingsWidget()
 {
     DVBox* const vbox     = new DVBox;
-    QLabel* const lbl     = new QLabel(i18n("Select deep-learning model:"), vbox);
+    QLabel* const expl    = new QLabel(vbox);
+    expl->setText(i18nc("@label", "These settings determines the deep-learning model to use while parsing image "
+                        "contents to determine the subjects of the photography. The neural network used in background "
+                        "will generate automatically a serie of tags describing the contents and store the results in "
+                        "the database."));
+
     d->modelSelectionMode = new QComboBox(vbox);
     d->modelSelectionMode->addItem(i18n("YOLOv5 Nano"),   DetectorModel::YOLOV5NANO);
     d->modelSelectionMode->addItem(i18n("YOLOv5 XLarge"), DetectorModel::YOLOV5XLARGE);
@@ -106,7 +111,7 @@ void AssignTags::slotAssignSettings2Widget()
     d->changeSettings = false;
 
     int model = settings()[QLatin1String("AutoTagModel")].toInt();
-    d->modelSelectionMode->setCurrentIdenx(model);
+    d->modelSelectionMode->setCurrentIndex(model);
 
     d->changeSettings = true;
 }
@@ -130,12 +135,16 @@ bool AssignTags::toolOperations()
 
     if (!image().isNull())
     {
-        AutoTagsAssign* const autotagsEngine = new AutoTagsAssign(DetectorModel(d->modelType));
-        QList<QString> tagsList              = autotagsEngine->generateTagsList(dimg);
+        AutoTagsAssign* const autotagsEngine = new AutoTagsAssign(DetectorModel(model));
+        QList<QString> tagsList              = autotagsEngine->generateTagsList(image());
 
         if (!tagsList.isEmpty())
         {
-            ItemInfo info              = ItemInfo::fromLocalFile(pathImage);
+            QString path = inputUrl().toLocalFile();
+            qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Path to process with Auto-Tags:" << path;
+
+
+            ItemInfo info              = ItemInfo::fromLocalFile(path);
             TagsCache* const tagsCache = Digikam::TagsCache::instance();
             QString rootTags           = QLatin1String("auto/");
 

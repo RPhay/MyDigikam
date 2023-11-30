@@ -63,7 +63,8 @@ QString AssignTagsPlugin::description() const
 
 QString AssignTagsPlugin::details() const
 {
-    return xi18nc("@info", "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata values to images automatically.</para>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool will assign keyword hierarchies "
+                  "metadata values to images automatically using deep-learning engine.</para>");
 }
 
 QString AssignTagsPlugin::handbookSection() const
