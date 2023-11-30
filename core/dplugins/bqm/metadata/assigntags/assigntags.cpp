@@ -32,13 +32,13 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "previewloadthread.h"
 #include "dimg.h"
 #include "dmetadata.h"
 #include "dpluginbqm.h"
 #include "autotagsassign.h"
-#include "tagscache.h"
-#include "iteminfo.h"
 #include "dlayoutbox.h"
+#include "dfileoperations.h"
 
 namespace DigikamBqmAssignTagsPlugin
 {
@@ -137,29 +137,55 @@ void AssignTags::slotSettingsChanged()
 
 bool AssignTags::toolOperations()
 {
-    bool ret  = false;
+    bool ret = true;
+    QScopedPointer<DMetadata> meta(new DMetadata);
+
+    if (image().isNull())
+    {
+        QFile::remove(outputUrl().toLocalFile());
+        ret = DFileOperations::copyFile(inputUrl().toLocalFile(), outputUrl().toLocalFile());
+
+        if (!ret || !meta->load(outputUrl().toLocalFile()))
+        {
+            return ret;
+        }
+    }
+    else
+    {
+        ret = savefromDImg();
+        meta->setData(image().getMetadata());
+    }
+
+    ret       = false;
+    DImg img  = image();
     int model = settings()[QLatin1String("AutoTagModel")].toInt();
 
-    if (!image().isNull())
+    if (img.isNull())
+    {
+        img = PreviewLoadThread::loadHighQualitySynchronously(outputUrl().toLocalFile(),
+                                                              PreviewSettings::RawPreviewAutomatic);
+    }
+
+    if (!img.isNull())
     {
         AutoTagsAssign* const autotagsEngine = new AutoTagsAssign(DetectorModel(model));
-        QList<QString> tagsList              = autotagsEngine->generateTagsList(image());
+        QList<QList<QString> > tagsLists     = autotagsEngine->generateTagsList(QList<DImg>() << img, 16);
 
-        if (!tagsList.isEmpty())
+        if (!tagsLists.isEmpty())
         {
-            QString path = inputUrl().toLocalFile();
+            QString path = outputUrl().toLocalFile();
             qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Path to process with Auto-Tags:" << path;
 
+            QStringList tagsPath;
+            QString rootTags = QLatin1String("auto/");
 
-            ItemInfo info              = ItemInfo::fromLocalFile(path);
-            TagsCache* const tagsCache = Digikam::TagsCache::instance();
-            QString rootTags           = QLatin1String("auto/");
-
-            for (const auto& tag : tagsList)
+            for (const auto& tag : tagsLists.at(0))
             {
-                int tagId = tagsCache->getOrCreateTag(rootTags + tag);
-                info.setTag(tagId);
+                tagsPath << rootTags + tag;
             }
+
+            meta->setItemTagsPath(tagsPath);
+            ret = meta->save(outputUrl().toLocalFile());
         }
 
         delete autotagsEngine;
