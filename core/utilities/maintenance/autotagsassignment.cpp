@@ -41,22 +41,17 @@ class Q_DECL_HIDDEN AutotagsAssignment::Private
 {
 public:
 
-    explicit Private()
-      : mode     (AutotagsAssignmentScanMode::NonAssignedItems),
-        modelType(DetectorModel::YOLOV5NANO),
-        thread   (nullptr)
-    {
-    }
+    Private() = default;
 
-    AutotagsAssignmentScanMode mode;
+    AutotagsAssignmentScanMode mode            = AutotagsAssignmentScanMode::NonAssignedItems;
 
     QStringList                allPicturesPath;
 
     AlbumList                  albumList;
 
-    MaintenanceThread*         thread;
+    MaintenanceThread*         thread          = nullptr;
 
-    int                        modelType;
+    int                        modelType       = DetectorModel::YOLOV5NANO;
 };
 
 AutotagsAssignment::AutotagsAssignment(AutotagsAssignmentScanMode mode,
