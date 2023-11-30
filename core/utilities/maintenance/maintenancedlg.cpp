@@ -365,7 +365,8 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->modelSelectionMode->addItem(i18n("ResNet50"),      DetectorModel::RESNET50);
 
     d->expanderBox->insertItem(Private::AutotagsAssignment, d->vbox5,
-                               QIcon::fromTheme(QLatin1String("flag-green")), i18n("Auto-tags Assignment"), QLatin1String("AutotagsAssignment"), false);
+                               QIcon::fromTheme(QLatin1String("flag-green")), i18n("Auto-tags Assignment"),
+                               QLatin1String("AutotagsAssignment"), false);
     d->expanderBox->setCheckBoxVisible(Private::AutotagsAssignment, true);
 
     // --------------------------------------------------------------------------------------
