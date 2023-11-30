@@ -7,6 +7,7 @@
  * Description : a BQM plugin to assign tags automatically.
  *
  * SPDX-FileCopyrightText: 2022-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2023      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -85,6 +86,9 @@ QString AssignTagsPlugin::handbookReference() const
 QList<DPluginAuthor> AssignTagsPlugin::authors() const
 {
     return QList<DPluginAuthor>()
+            << DPluginAuthor(QString::fromUtf8("Quoc Hung Tran"),
+                             QString::fromUtf8("quochungtran1999 at gmail dot com"),
+                             QString::fromUtf8("(C) 2023"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
                              QString::fromUtf8("(C) 2022-2023"))
