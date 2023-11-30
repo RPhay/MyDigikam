@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 12:46+0000\n"
-"PO-Revision-Date: 2023-11-23 11:45+0100\n"
+"POT-Creation-Date: 2023-11-30 00:39+0000\n"
+"PO-Revision-Date: 2023-11-29 15:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -3246,10 +3246,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elements seleccionats"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 400 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 650 user-reports closed on bugzilla."
-msgstr "Més de 400 informes d'usuari tancats al Bugzilla."
+msgstr "Més de 650 informes d'usuari tancats al Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3264,6 +3263,8 @@ msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
 "and use Qt6 and KF6 frameworks."
 msgstr ""
+"L'instal·lador de Windows ara està compilat nativament amb la cadena d'eines "
+"VCPKG de Microsoft i usa les Qt6 i els Frameworks KF6."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
@@ -3516,12 +3517,11 @@ msgstr ""
 
 # skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview.cpp:174
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 20230403."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
 msgstr ""
 "Actualitzar el motor RAW intern a la darrera instantània de la Libraw "
-"20230403."
+"2023-11-21."
 
 #: core/app/views/stack/welcomepageview.cpp:175
 #, kde-format
@@ -8970,7 +8970,7 @@ msgstr "Usa la gestió del color per a imprimir"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:366
+#: core/utilities/maintenance/maintenancedlg.cpp:404
 #, kde-format
 msgid "Settings..."
 msgstr "Configuració..."
@@ -21391,10 +21391,9 @@ msgstr "Total:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_soundLabel)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:115
-#, fuzzy, kde-format
-#| msgid "Columns"
+#, kde-format
 msgid "Volumes:"
-msgstr "Columnes"
+msgstr "Volums:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:23
@@ -36797,7 +36796,7 @@ msgstr ""
 "actualitzacions."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:201
+#: core/utilities/setup/downloader/filesdownloader.cpp:231
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
@@ -43168,8 +43167,10 @@ msgid "Quốc Hưng Trần"
 msgstr "Quốc Hưng Trần"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:165
-#, kde-format
-msgid "MJPEGStream plugin, OCR text Converter plugin"
+#, fuzzy, kde-format
+#| msgid "MJPEGStream plugin, OCR text Converter plugin"
+msgid ""
+"MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgstr "Connector MJPEGStream, connector convertidor de text OCR"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:170
@@ -43256,7 +43257,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:348
+#: core/utilities/maintenance/maintenancedlg.cpp:386
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Ordena les imatges segons la qualitat"
@@ -52328,28 +52329,28 @@ msgstr ""
 "es podrà reconèixer a les persones que es mostren a les fotografies."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:331
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Omet les imatges que ja s'han explorat"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:332
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Torna a explorar i fusiona els resultats"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:321
+#: core/utilities/maintenance/maintenancedlg.cpp:333
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Neteja els resultats no confirmats i torna a explorar"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:322
+#: core/utilities/maintenance/maintenancedlg.cpp:334
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
@@ -57517,6 +57518,12 @@ msgstr "Plafó &esquerre"
 msgid "&Right Panel"
 msgstr "Plafó d&ret"
 
+#: core/utilities/maintenance/autotagsassignment.cpp:102
+#, fuzzy, kde-format
+#| msgid "Automatic Adjustment"
+msgid "Autotags Assignment"
+msgstr "Ajust automàtic"
+
 #: core/utilities/maintenance/dbcleaner.cpp:130
 #: core/utilities/maintenance/dbcleaner.cpp:230
 #: core/utilities/maintenance/dbcleaner.cpp:259
@@ -57627,43 +57634,43 @@ msgstr "S'està actualitzant la base de dades de cares"
 msgid "Finger-prints"
 msgstr "Empremtes digitals"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:197
+#: core/utilities/maintenance/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Manteniment"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:212
+#: core/utilities/maintenance/maintenancedlg.cpp:224
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr ""
 "<qt><b>Seleccioneu les operacions de manteniment que s'han de processar</b></"
 "qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:218
+#: core/utilities/maintenance/maintenancedlg.cpp:230
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Processa els elements de:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:232
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "Usa les últimes eines i opcions de configuració desades"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:221
+#: core/utilities/maintenance/maintenancedlg.cpp:233
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Treballa amb tots els nuclis dels processadors (quan sigui possible)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:222
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid "Common Options"
 msgstr "Opcions comunes"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:226
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -57672,12 +57679,12 @@ msgstr ""
 "<qt>Cap opció<br/><i>Nota: Aquesta eina només processa col·leccions d'àlbums."
 "</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:228
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, kde-format
 msgid "Scan for new items"
 msgstr "Explora per a elements nous"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:234
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -57691,27 +57698,27 @@ msgstr ""
 "pot congelar el digiKam temporalment<br/> per tal d'assegurar que no es "
 "produeix cap corrupció a la base de dades.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "També es neteja la base de dades de miniatures."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:250
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "També es neteja la base de dades de cares."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:251
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "També es neteja la base de dades de similitud."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Neteja estesa i redueix totes les bases de dades."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:241
+#: core/utilities/maintenance/maintenancedlg.cpp:253
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -57720,69 +57727,69 @@ msgstr ""
 "Aquesta opció condueix al buidatge (encongiment) de les bases de dades. El "
 "buidatge funciona per a SQLite i MySQL."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:245
+#: core/utilities/maintenance/maintenancedlg.cpp:257
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Realitza la neteja de la base de dades"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:250
-#: core/utilities/maintenance/maintenancedlg.cpp:257
+#: core/utilities/maintenance/maintenancedlg.cpp:262
+#: core/utilities/maintenance/maintenancedlg.cpp:269
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Explora per a elements modificats o sense catalogar (més ràpid)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:252
+#: core/utilities/maintenance/maintenancedlg.cpp:264
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Reconstrueix les miniatures"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:259
+#: core/utilities/maintenance/maintenancedlg.cpp:271
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Reconstrueix les empremtes digitals"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:268
+#: core/utilities/maintenance/maintenancedlg.cpp:280
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Interval de similitud (en percentatges):"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:288
+#: core/utilities/maintenance/maintenancedlg.cpp:300
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Restricció en els duplicats:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:304
 #, kde-format
 msgid "No restriction"
 msgstr "Sense restricció"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:293
+#: core/utilities/maintenance/maintenancedlg.cpp:305
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Restringeix a l'àlbum de la imatge de referència"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:294
+#: core/utilities/maintenance/maintenancedlg.cpp:306
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Exclou l'àlbum de la imatge de referència"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:308
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Cerca els elements duplicats"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:315
+#: core/utilities/maintenance/maintenancedlg.cpp:327
 #, kde-format
 msgid "Faces data management: "
 msgstr "Gestió de les dades de cares: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:325
+#: core/utilities/maintenance/maintenancedlg.cpp:337
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Neteja i reconstrueix totes les dades d'entrenament"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:339
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57792,53 +57799,94 @@ msgstr ""
 "Això netejarà totes les dades d'entrenament per al reconeixement i les "
 "reconstrueix a partir de totes les cares disponibles."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:330
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Detecta i reconeix les cares"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:337
-#, kde-format
-msgid "Scan Mode: "
-msgstr "Mode d'exploració: "
+#: core/utilities/maintenance/maintenancedlg.cpp:349
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tagging mode: "
+msgstr "Mode de mesura:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
-#, kde-format
-msgid "Clean all and re-scan"
+#: core/utilities/maintenance/maintenancedlg.cpp:354
+#, fuzzy, kde-format
+#| msgid "Clean all and re-scan"
+msgid "Clean all and re-assign"
 msgstr "Neteja-ho tot i torna a explorar"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:343
+#: core/utilities/maintenance/maintenancedlg.cpp:355
+#: core/utilities/maintenance/maintenancedlg.cpp:381
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Explora només els no assignats"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:355
+#: core/utilities/maintenance/maintenancedlg.cpp:358
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Segmentation mode:"
+msgid "Selection model: "
+msgstr "Mode de segmentació:"
+
+#: core/utilities/maintenance/maintenancedlg.cpp:363
+#, kde-format
+msgid "YOLOv5 NANO"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:364
+#, kde-format
+msgid "YOLOv5 XLarge"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:365
+#, kde-format
+msgid "ResNet50"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:368
+#, fuzzy, kde-format
+#| msgid "Automatic Adjustment"
+msgid "Auto-tags Assignment"
+msgstr "Ajust automàtic"
+
+#: core/utilities/maintenance/maintenancedlg.cpp:375
+#, kde-format
+msgid "Scan Mode: "
+msgstr "Mode d'exploració: "
+
+#: core/utilities/maintenance/maintenancedlg.cpp:380
+#, kde-format
+msgid "Clean all and re-scan"
+msgstr "Neteja-ho tot i torna a explorar"
+
+#: core/utilities/maintenance/maintenancedlg.cpp:393
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direcció de la sincronització: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:359
+#: core/utilities/maintenance/maintenancedlg.cpp:397
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Des de la base de dades a les metadades de la imatge"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:360
+#: core/utilities/maintenance/maintenancedlg.cpp:398
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Des de les metadades de la imatge a la base de dades"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:401
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Per a més detalls reviseu el plafó de configuració de les metadades: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:368
+#: core/utilities/maintenance/maintenancedlg.cpp:406
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Sincronitza les metadades i la base de dades"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:375
+#: core/utilities/maintenance/maintenancemngr.cpp:404
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -57847,7 +57895,7 @@ msgstr ""
 "Han finalitzat totes les operacions.\n"
 "Durada: %1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:376
+#: core/utilities/maintenance/maintenancemngr.cpp:405
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Manteniment de digiKam"
@@ -61071,13 +61119,13 @@ msgstr "Selecció de la categoria"
 msgid "Your collection will use this category:"
 msgstr "La col·lecció usarà aquesta categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:189
+#: core/utilities/setup/downloader/filesdownloader.cpp:219
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Baixada dels fitxers necessaris"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:220
+#: core/utilities/setup/downloader/filesdownloader.cpp:250
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -61098,23 +61146,23 @@ msgstr ""
 "Comproveu que hi hagi al voltant de %2 disponibles. <b>Una vegada "
 "finalitzada la baixada, haureu de reiniciar el digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:232
+#: core/utilities/setup/downloader/filesdownloader.cpp:262
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Desactiva la característica del motor de cares i no tornis a preguntar"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:283
+#: core/utilities/setup/downloader/filesdownloader.cpp:313
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Tots els fitxers s'han descarregat correctament."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:292
+#: core/utilities/setup/downloader/filesdownloader.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Error de baixada"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:293
+#: core/utilities/setup/downloader/filesdownloader.cpp:323
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61133,28 +61181,28 @@ msgstr ""
 "\n"
 "Podeu intentar-ho de nou o continuar amb la descàrrega en el següent inici."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:301
+#: core/utilities/setup/downloader/filesdownloader.cpp:331
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Torna a provar-ho"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:436
+#: core/utilities/setup/downloader/filesdownloader.cpp:466
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificació no és correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:460
+#: core/utilities/setup/downloader/filesdownloader.cpp:490
 #, kde-format
 msgid "File write error."
 msgstr "Error d'escriptura en el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:467
+#: core/utilities/setup/downloader/filesdownloader.cpp:497
 #, kde-format
 msgid "File open error."
 msgstr "Error en obrir el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:482
+#: core/utilities/setup/downloader/filesdownloader.cpp:512
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El fitxer que hi ha en el servidor és massa gran."

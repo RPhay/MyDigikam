@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 12:46+0000\n"
+"POT-Creation-Date: 2023-11-30 00:39+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -8738,7 +8738,7 @@ msgstr "استخدم إدارة الألوان للطّباعة"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:366
+#: core/utilities/maintenance/maintenancedlg.cpp:404
 #, kde-format
 msgid "Settings..."
 msgstr "إعدادات..."
@@ -36062,7 +36062,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:201
+#: core/utilities/setup/downloader/filesdownloader.cpp:231
 #, kde-format
 msgid "Download"
 msgstr "نزّل"
@@ -42269,7 +42269,8 @@ msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:165
 #, kde-format
-msgid "MJPEGStream plugin, OCR text Converter plugin"
+msgid ""
+"MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:170
@@ -42352,7 +42353,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:348
+#: core/utilities/maintenance/maintenancedlg.cpp:386
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr ""
@@ -51917,28 +51918,28 @@ msgstr ""
 "الصّور،<br> فيمكنه أيضًا التّعرّف على الأشخاص في الصّور.</qt>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:331
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "تخطّ ما جرى فحصه من صور"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:332
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "افحص مجدّدًا وادمج النّتائج"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:321
+#: core/utilities/maintenance/maintenancedlg.cpp:333
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:322
+#: core/utilities/maintenance/maintenancedlg.cpp:334
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
@@ -57068,6 +57069,11 @@ msgstr "اللوحة الي&سرى"
 msgid "&Right Panel"
 msgstr "اللوحة اليم&نى"
 
+#: core/utilities/maintenance/autotagsassignment.cpp:102
+#, kde-format
+msgid "Autotags Assignment"
+msgstr ""
+
 #: core/utilities/maintenance/dbcleaner.cpp:130
 #: core/utilities/maintenance/dbcleaner.cpp:230
 #: core/utilities/maintenance/dbcleaner.cpp:259
@@ -57186,54 +57192,54 @@ msgstr "إنشاء جديد الألبوم"
 msgid "Finger-prints"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:197
+#: core/utilities/maintenance/maintenancedlg.cpp:209
 #, fuzzy, kde-format
 #| msgid "Maintenance"
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "الصّيانة"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:212
+#: core/utilities/maintenance/maintenancedlg.cpp:224
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:218
+#: core/utilities/maintenance/maintenancedlg.cpp:230
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "عالج العناصر من:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:232
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:221
+#: core/utilities/maintenance/maintenancedlg.cpp:233
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "اعمل على كلّ "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:222
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid "Common Options"
 msgstr "خيارات عامّة"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:226
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:228
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, kde-format
 msgid "Scan for new items"
 msgstr "افحص بحثًا عن العناصر الجديدة"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:234
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -57242,104 +57248,104 @@ msgid ""
 "> in order to make sure that no database corruption occurs.</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, fuzzy, kde-format
 #| msgid "Set the thumbnails database name"
 msgid "Also clean up the thumbnail database."
 msgstr "اضبط اسم قاعدة بيانات المصغّرات"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:250
 #, fuzzy, kde-format
 #| msgid "Set the face database name"
 msgid "Also clean up the faces database."
 msgstr "اضبط اسم قاعدة بيانات الوجوه"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:251
 #, fuzzy, kde-format
 #| msgid "Set the thumbnails database name"
 msgid "Also clean up the similarity database."
 msgstr "اضبط اسم قاعدة بيانات المصغّرات"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, fuzzy, kde-format
 #| msgid "Set the thumbnails database name"
 msgid "Extended clean up and shrink all databases."
 msgstr "اضبط اسم قاعدة بيانات المصغّرات"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:241
+#: core/utilities/maintenance/maintenancedlg.cpp:253
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:245
+#: core/utilities/maintenance/maintenancedlg.cpp:257
 #, kde-format
 msgid "Perform database cleaning"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:250
-#: core/utilities/maintenance/maintenancedlg.cpp:257
+#: core/utilities/maintenance/maintenancedlg.cpp:262
+#: core/utilities/maintenance/maintenancedlg.cpp:269
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:252
+#: core/utilities/maintenance/maintenancedlg.cpp:264
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "أعد بناء المصغّرات"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:259
+#: core/utilities/maintenance/maintenancedlg.cpp:271
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:268
+#: core/utilities/maintenance/maintenancedlg.cpp:280
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:288
+#: core/utilities/maintenance/maintenancedlg.cpp:300
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgid "Restriction on duplicates:"
 msgstr "ابحث عن المتكرّر"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:304
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgid "No restriction"
 msgstr "لا تحديد"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:293
+#: core/utilities/maintenance/maintenancedlg.cpp:305
 #, fuzzy, kde-format
 #| msgid "Store as a different name"
 msgid "Restrict to album of reference image"
 msgstr "خزّنه باسم مختلف"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:294
+#: core/utilities/maintenance/maintenancedlg.cpp:306
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:308
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, fuzzy, kde-format
 #| msgid "Find Duplicates Items"
 msgid "Find Duplicate Items"
 msgstr "ابحث عن العناصر المتكرّرة"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:315
+#: core/utilities/maintenance/maintenancedlg.cpp:327
 #, kde-format
 msgid "Faces data management: "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:325
+#: core/utilities/maintenance/maintenancedlg.cpp:337
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "امسح كلّ بيانات التّدريب وأعد بنائها"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:339
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57347,55 +57353,94 @@ msgid ""
 "available faces."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:330
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect and recognize faces (experimental)"
 msgid "Detect and recognize Faces"
 msgstr "اكتشف الوجوه وتعرّف عليها (اختباريّ)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:337
-#, kde-format
-msgid "Scan Mode: "
-msgstr "وضع الفحص: "
+#: core/utilities/maintenance/maintenancedlg.cpp:349
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tagging mode: "
+msgstr "نمط القياس:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:354
 #, kde-format
-msgid "Clean all and re-scan"
+msgid "Clean all and re-assign"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:343
+#: core/utilities/maintenance/maintenancedlg.cpp:355
+#: core/utilities/maintenance/maintenancedlg.cpp:381
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:355
+#: core/utilities/maintenance/maintenancedlg.cpp:358
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Destination Folder:"
+msgid "Selection model: "
+msgstr "المجلّد المقصد:"
+
+#: core/utilities/maintenance/maintenancedlg.cpp:363
+#, kde-format
+msgid "YOLOv5 NANO"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:364
+#, kde-format
+msgid "YOLOv5 XLarge"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:365
+#, kde-format
+msgid "ResNet50"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:368
+#, kde-format
+msgid "Auto-tags Assignment"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:375
+#, kde-format
+msgid "Scan Mode: "
+msgstr "وضع الفحص: "
+
+#: core/utilities/maintenance/maintenancedlg.cpp:380
+#, kde-format
+msgid "Clean all and re-scan"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:393
 #, kde-format
 msgid "Sync Direction: "
 msgstr "اتّجاه المزامنة: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:359
+#: core/utilities/maintenance/maintenancedlg.cpp:397
 #, kde-format
 msgid "From database to image metadata"
 msgstr "من قاعة البيانات إلى بيانات الصّورة الوصفيّة"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:360
+#: core/utilities/maintenance/maintenancedlg.cpp:398
 #, kde-format
 msgid "From image metadata to database"
 msgstr "من بيانات الصّورة الوصفيّة إلى قاعدة البيانات"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:401
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:368
+#: core/utilities/maintenance/maintenancedlg.cpp:406
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:375
+#: core/utilities/maintenance/maintenancemngr.cpp:404
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -57404,7 +57449,7 @@ msgstr ""
 "تمّت كلّ العمليّات.\n"
 "المدّة: %1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:376
+#: core/utilities/maintenance/maintenancemngr.cpp:405
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "صيانة «دِجي‌كام»"
@@ -60551,13 +60596,13 @@ msgstr "حدد صنفًا"
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:189
+#: core/utilities/setup/downloader/filesdownloader.cpp:219
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "يجري التنزيل ملفّ."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:220
+#: core/utilities/setup/downloader/filesdownloader.cpp:250
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -60570,24 +60615,24 @@ msgid ""
 "have to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:232
+#: core/utilities/setup/downloader/filesdownloader.cpp:262
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:283
+#: core/utilities/setup/downloader/filesdownloader.cpp:313
 #, fuzzy, kde-format
 msgid "All files were downloaded successfully."
 msgstr "يجري التنزيل ملفّ."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:292
+#: core/utilities/setup/downloader/filesdownloader.cpp:322
 #, fuzzy, kde-format
 #| msgid "Download error"
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "خطأ في التنزيل"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:293
+#: core/utilities/setup/downloader/filesdownloader.cpp:323
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -60599,30 +60644,30 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:301
+#: core/utilities/setup/downloader/filesdownloader.cpp:331
 #, fuzzy, kde-format
 #| msgid "Try again"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "جرّب مجدّدًا"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:436
+#: core/utilities/setup/downloader/filesdownloader.cpp:466
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:460
+#: core/utilities/setup/downloader/filesdownloader.cpp:490
 #, kde-format
 msgid "File write error."
 msgstr "خطأ كتابة الملف."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:467
+#: core/utilities/setup/downloader/filesdownloader.cpp:497
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "File open error."
 msgstr "أدوات التّصدير"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:482
+#: core/utilities/setup/downloader/filesdownloader.cpp:512
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "File on the server is too large."

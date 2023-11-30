@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 12:46+0000\n"
+"POT-Creation-Date: 2023-11-30 00:39+0000\n"
 "PO-Revision-Date: 2023-10-05 09:38+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -8843,7 +8843,7 @@ msgstr "Nota litastýringu við prentun"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:366
+#: core/utilities/maintenance/maintenancedlg.cpp:404
 #, kde-format
 msgid "Settings..."
 msgstr "Stillingar..."
@@ -36300,7 +36300,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Opna uppsetningarglugga til að stilla uppfærslur."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:201
+#: core/utilities/setup/downloader/filesdownloader.cpp:231
 #, kde-format
 msgid "Download"
 msgstr "Sækja"
@@ -42630,8 +42630,10 @@ msgid "Quốc Hưng Trần"
 msgstr "Quốc Hưng Trần"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:165
-#, kde-format
-msgid "MJPEGStream plugin, OCR text Converter plugin"
+#, fuzzy, kde-format
+#| msgid "MJPEGStream plugin, OCR text Converter plugin"
+msgid ""
+"MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgstr "MJPEGStream-viðbót, OCR-textaumbreytingarviðbót"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:170
@@ -42717,7 +42719,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:348
+#: core/utilities/maintenance/maintenancedlg.cpp:386
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Myndgæðaröðun"
@@ -51730,28 +51732,28 @@ msgstr ""
 "er hægt að þekkja viðkomandi aftur á öðrum myndum."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:331
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Sleppa myndum sem þegar hafa verið skoðaðar"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:332
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Skanna aftur og sameina niðurstöður"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:321
+#: core/utilities/maintenance/maintenancedlg.cpp:333
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Hreinsa óstaðfestar niðurstöður og endurskanna"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:322
+#: core/utilities/maintenance/maintenancedlg.cpp:334
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
@@ -56876,6 +56878,12 @@ msgstr "&Vinstra spjald"
 msgid "&Right Panel"
 msgstr "Hæg&ra spjald"
 
+#: core/utilities/maintenance/autotagsassignment.cpp:102
+#, fuzzy, kde-format
+#| msgid "Automatic Adjustment"
+msgid "Autotags Assignment"
+msgstr "Sjálfvirk stilling"
+
 #: core/utilities/maintenance/dbcleaner.cpp:130
 #: core/utilities/maintenance/dbcleaner.cpp:230
 #: core/utilities/maintenance/dbcleaner.cpp:259
@@ -56986,41 +56994,41 @@ msgstr "Uppfæri andlitagagnagrunn"
 msgid "Finger-prints"
 msgstr "Fingraför"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:197
+#: core/utilities/maintenance/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Viðhald"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:212
+#: core/utilities/maintenance/maintenancedlg.cpp:224
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>Veldu viðhaldsaðgerðir til keyrslu</b></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:218
+#: core/utilities/maintenance/maintenancedlg.cpp:230
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Vinna með atriði úr:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:232
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "Nota síðast vistuði virku verkfæri og stillingar"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:221
+#: core/utilities/maintenance/maintenancedlg.cpp:233
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Vinna á öllum kjörnum örgjörva (þegar þar er hægt)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:222
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid "Common Options"
 msgstr "Algengar stillingar"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:226
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -57029,12 +57037,12 @@ msgstr ""
 "<qt>Engir valkostir<br/><i>Athugið: aðeins er unnið með albúmasöfn í þessu "
 "verkfæri.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:228
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, kde-format
 msgid "Scan for new items"
 msgstr "Leita að nýjum atriðum"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:234
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -57048,27 +57056,27 @@ msgstr ""
 "tíma og jafnvel fryst digiKam tímabundið<br/> til að tryggja að engar "
 "skemmdir verði á gagnagrunnum.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Einnig hreinsa smámyndagagnagrunn."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:250
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Einnig hreinsa andlitagagnagrunn."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:251
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "Einnig hreinsa líkindagagnagrunn."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Ítarleg hreinsun og smækkun allra gagnagrunna."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:241
+#: core/utilities/maintenance/maintenancedlg.cpp:253
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -57077,69 +57085,69 @@ msgstr ""
 "Þessi kostur leiðir til minnkunnar (ryksugun - herping) of the databases. "
 "Herping er studd af bæði SQLite og MySQL."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:245
+#: core/utilities/maintenance/maintenancedlg.cpp:257
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Einnig framkvæma hreinsun gagnagrunna"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:250
-#: core/utilities/maintenance/maintenancedlg.cpp:257
+#: core/utilities/maintenance/maintenancedlg.cpp:262
+#: core/utilities/maintenance/maintenancedlg.cpp:269
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Leita að breyttum eða óskráðum atriðum (hraðvirkara)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:252
+#: core/utilities/maintenance/maintenancedlg.cpp:264
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Endurbyggja smámyndir"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:259
+#: core/utilities/maintenance/maintenancedlg.cpp:271
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Endurbyggja fingraför"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:268
+#: core/utilities/maintenance/maintenancedlg.cpp:280
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Líkindasvið (í prósentum): "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:288
+#: core/utilities/maintenance/maintenancedlg.cpp:300
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Takmörkun á tvítekningum:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:304
 #, kde-format
 msgid "No restriction"
 msgstr "Engar takmarkanir"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:293
+#: core/utilities/maintenance/maintenancedlg.cpp:305
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Takmarka við albúm viðmiðunarmyndar"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:294
+#: core/utilities/maintenance/maintenancedlg.cpp:306
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Útiloka albúm viðmiðunarmyndar"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:308
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Finna tvítekin atriði"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:315
+#: core/utilities/maintenance/maintenancedlg.cpp:327
 #, kde-format
 msgid "Faces data management: "
 msgstr "Stjórnun andlitsgagna: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:325
+#: core/utilities/maintenance/maintenancedlg.cpp:337
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Hreinsa og endurbyggja þjálfunargögn"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:339
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57149,53 +57157,94 @@ msgstr ""
 "Þetta mun hreinsa út öll þjálfunargögn andlitakennsla og endurbyggja þau út "
 "frá tiltækum andlitum."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:330
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Finna og þekkja andlit"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:337
-#, kde-format
-msgid "Scan Mode: "
-msgstr "Skönnunarhamur"
+#: core/utilities/maintenance/maintenancedlg.cpp:349
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tagging mode: "
+msgstr "Mælihamur:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
-#, kde-format
-msgid "Clean all and re-scan"
+#: core/utilities/maintenance/maintenancedlg.cpp:354
+#, fuzzy, kde-format
+#| msgid "Clean all and re-scan"
+msgid "Clean all and re-assign"
 msgstr "Hreinsa allt og endurskanna"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:343
+#: core/utilities/maintenance/maintenancedlg.cpp:355
+#: core/utilities/maintenance/maintenancedlg.cpp:381
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Skanna einungis óúthlutað"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:355
+#: core/utilities/maintenance/maintenancedlg.cpp:358
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Segmentation mode:"
+msgid "Selection model: "
+msgstr "Uppskiptingarhamur:"
+
+#: core/utilities/maintenance/maintenancedlg.cpp:363
+#, kde-format
+msgid "YOLOv5 NANO"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:364
+#, kde-format
+msgid "YOLOv5 XLarge"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:365
+#, kde-format
+msgid "ResNet50"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:368
+#, fuzzy, kde-format
+#| msgid "Automatic Adjustment"
+msgid "Auto-tags Assignment"
+msgstr "Sjálfvirk stilling"
+
+#: core/utilities/maintenance/maintenancedlg.cpp:375
+#, kde-format
+msgid "Scan Mode: "
+msgstr "Skönnunarhamur"
+
+#: core/utilities/maintenance/maintenancedlg.cpp:380
+#, kde-format
+msgid "Clean all and re-scan"
+msgstr "Hreinsa allt og endurskanna"
+
+#: core/utilities/maintenance/maintenancedlg.cpp:393
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Stefna samræmingar: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:359
+#: core/utilities/maintenance/maintenancedlg.cpp:397
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Úr gagnagrunni yfir í lýsigögn mynda"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:360
+#: core/utilities/maintenance/maintenancedlg.cpp:398
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Úr lýsigögnum mynda yfir í gagnagrunn"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:401
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Skoða nánar á spjaldi fyrir uppsetningu lýsigagna: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:368
+#: core/utilities/maintenance/maintenancedlg.cpp:406
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Samræma lýsigögn og gagnagrunn"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:375
+#: core/utilities/maintenance/maintenancemngr.cpp:404
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -57204,7 +57253,7 @@ msgstr ""
 "Öllum aðgerðum er lokið.\n"
 "Tímalengd: %1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:376
+#: core/utilities/maintenance/maintenancemngr.cpp:405
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam viðhald"
@@ -60370,13 +60419,13 @@ msgstr "Veldu flokk"
 msgid "Your collection will use this category:"
 msgstr "Myndasafnið mun nota þennan flokk:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:189
+#: core/utilities/setup/downloader/filesdownloader.cpp:219
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Sækja nauðsynlegar skrár"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:220
+#: core/utilities/setup/downloader/filesdownloader.cpp:250
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -60396,23 +60445,23 @@ msgstr ""
 "hlaðið yfir í í %1. Gakktu úr skugga um að u.þ.b. %2 séu tiltæk. <b>Eftir að "
 "búið er að sækja skrárnar þarftu að endurræsa digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:232
+#: core/utilities/setup/downloader/filesdownloader.cpp:262
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Gera andlitakerfið óvirkt og ekki spyrja aftur"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:283
+#: core/utilities/setup/downloader/filesdownloader.cpp:313
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Tókst að hlaða inn öllum skrám."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:292
+#: core/utilities/setup/downloader/filesdownloader.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Villa við að sækja gögn"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:293
+#: core/utilities/setup/downloader/filesdownloader.cpp:323
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -60431,28 +60480,28 @@ msgstr ""
 "\n"
 "Þú getur prófað aftur eða haldið áfram í næstu ræsingu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:301
+#: core/utilities/setup/downloader/filesdownloader.cpp:331
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Reyna aftur"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:436
+#: core/utilities/setup/downloader/filesdownloader.cpp:466
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Gátsumma er ógild."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:460
+#: core/utilities/setup/downloader/filesdownloader.cpp:490
 #, kde-format
 msgid "File write error."
 msgstr "Villa við að skrifa í skrá."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:467
+#: core/utilities/setup/downloader/filesdownloader.cpp:497
 #, kde-format
 msgid "File open error."
 msgstr "Villa  við að opna skrá."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:482
+#: core/utilities/setup/downloader/filesdownloader.cpp:512
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Skrá á netþjóni er of stór."
