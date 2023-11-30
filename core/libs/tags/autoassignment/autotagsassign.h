@@ -12,8 +12,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACESENGINE_OPENCV_DNN_FACE_DETECTOR_H
-#define DIGIKAM_FACESENGINE_OPENCV_DNN_FACE_DETECTOR_H
+#ifndef DIGIKAM_AUTO_TAGS_ASSIGNE_H
+#define DIGIKAM_AUTO_TAGS_ASSIGNE_H
 
 // Qt includes
 
@@ -78,4 +78,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_FACESENGINE_OPENCV_DNN_FACE_DETECTOR_H
+#endif // DIGIKAM_AUTO_TAGS_ASSIGNE_H

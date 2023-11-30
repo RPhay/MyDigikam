@@ -13,8 +13,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNN_DETECTOR_YOLO_H
-#define DIGIKAM_DNN_DETECTOR_YOLO_H
+#ifndef DIGIKAM_DNN_YOLO_DETECTOR_H
+#define DIGIKAM_DNN_YOLO_DETECTOR_H
 
 #include "dnnbasedetectormodel.h"
 
@@ -74,4 +74,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_DNN_DETECTOR_YOLO_H
+#endif // DIGIKAM_DNN_YOLO_DETECTOR_H
