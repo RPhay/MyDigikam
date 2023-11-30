@@ -176,6 +176,7 @@ set(DIGIKAMGUI_OBJECTS
             $<TARGET_OBJECTS:gui_imagehistorywidgets_obj>
             $<TARGET_OBJECTS:gui_iojobs_obj>
             $<TARGET_OBJECTS:gui_dtrash_obj>
+            $<TARGET_OBJECTS:gui_digikamautotagassignment_obj>
 
             # Utilities
             $<TARGET_OBJECTS:gui_setup_obj>
