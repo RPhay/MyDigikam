@@ -46,7 +46,7 @@ DNNYoloDetector::~DNNYoloDetector()
 {
 }
 
-QList<QString>  DNNYoloDetector::loadCOCOClass()
+QList<QString> DNNYoloDetector::loadCOCOClass()
 {
     QList<QString> classList;
 
@@ -207,7 +207,7 @@ QList<QHash<QString, QVector<QRect> > > DNNYoloDetector::postprocess(const std::
 
     // outs = [batch_size x [rows x 85]]
 
-    for (int i = 0 ; i < inputBatchImages.size() ; i++)
+    for (unsigned int i = 0 ; i < inputBatchImages.size() ; i++)
     {
         detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
     }
@@ -242,7 +242,7 @@ QHash<QString, QVector<QRect> > DNNYoloDetector::postprocess(const cv::Mat& inpu
 
         if (confidence >= confidenceThreshold)
         {
-            float* classes_scores  = data + 5;
+            float* const classes_scores = data + 5;
 
             // Create a 1x85 Mat and store class scores of 80 classes.
 

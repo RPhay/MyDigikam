@@ -257,7 +257,7 @@ QList<QString> AutoTagsAssign::generateTagsList(const QString& imagePath)
 
 QList<QList<QString>> AutoTagsAssign::generateTagsList(const QList<QString>& inputImagePaths, int batchSize) const
 {
-    QList<QList<QString>> result;
+    QList<QList<QString> > result;
 
     try
     {
@@ -282,8 +282,7 @@ QList<QString> AutoTagsAssign::getPredefinedTagsPath() const
 {
     QList<QString> tagsPaths;
     QList<QString> objects = m_inferenceEngine->getPredefinedClasses();
-
-    QString rootTags = QLatin1String("auto/");
+    QString rootTags       = QLatin1String("auto/");
 
     for (const auto& obj : objects)
     {
