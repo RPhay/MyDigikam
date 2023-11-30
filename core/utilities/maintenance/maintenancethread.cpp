@@ -174,8 +174,8 @@ void MaintenanceThread::generateTags(const QStringList& paths, int modelType)
         t->setMaintenanceData(data);
         t->setModelType(modelType);
 
-        connect(t, SIGNAL(signalFinished()),
-                this, SIGNAL(signalAdvance()));
+        connect(t, SIGNAL(signalFinished(QImage)),
+                this, SIGNAL(signalAdvance(QImage)));
 
         collection.insert(t, 0);
 

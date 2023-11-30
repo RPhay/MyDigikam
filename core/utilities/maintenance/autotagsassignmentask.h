@@ -43,7 +43,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalFinished();
+    void signalFinished(const QImage&);
 
 protected:
 

@@ -32,8 +32,8 @@ class Q_DECL_HIDDEN AutotagsAssignmentTask::Private
 public:
 
     explicit Private()
-        : data      (nullptr),
-          modelType (DetectorModel::YOLOV5NANO)
+        : data     (nullptr),
+          modelType(DetectorModel::YOLOV5NANO)
     {
     }
 
@@ -103,12 +103,12 @@ void AutotagsAssignmentTask::run()
         QElapsedTimer timer;
         timer.start();
 
-        DImg img(path);
+        DImg dimg(path);
 
-        if (!img.isNull())
+        if (!dimg.isNull())
         {
             autoTagsAssign* const autotagsEngine = new autoTagsAssign(DetectorModel(d->modelType));
-            QList<QString> tagsList              = autotagsEngine->generateTagsList(img);
+            QList<QString> tagsList              = autotagsEngine->generateTagsList(dimg);
 
             if (!tagsList.isEmpty())
             {
@@ -121,7 +121,9 @@ void AutotagsAssignmentTask::run()
         qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "assgin Tags process takes:"
                                             << timer.elapsed() << "ms";
 
-        Q_EMIT signalFinished();
+        QImage qimg = dimg.smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
+
+        Q_EMIT signalFinished(qimg);
     }
 
     Q_EMIT signalDone();

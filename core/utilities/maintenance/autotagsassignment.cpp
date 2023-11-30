@@ -43,20 +43,20 @@ public:
 
     explicit Private()
       : mode     (AutotagsAssignmentScanMode::NonAssignedItems),
-        modelType(0),
+        modelType(DetectorModel::YOLOV5NANO),
         thread   (nullptr)
     {
     }
 
-    AutotagsAssignmentScanMode       mode;
+    AutotagsAssignmentScanMode mode;
 
-    QStringList                      allPicturesPath;
+    QStringList                allPicturesPath;
 
-    AlbumList                        albumList;
+    AlbumList                  albumList;
 
-    MaintenanceThread*               thread;
+    MaintenanceThread*         thread;
 
-    int                              modelType;
+    int                        modelType;
 };
 
 AutotagsAssignment::AutotagsAssignment(AutotagsAssignmentScanMode mode,
@@ -66,10 +66,10 @@ AutotagsAssignment::AutotagsAssignment(AutotagsAssignmentScanMode mode,
     : MaintenanceTool(QLatin1String("AutotagsAssignment"), parent),
       d(new Private)
 {
-    d->mode       = mode;
-    d->albumList  = list;
-    d->modelType  = modelType;
-    d->thread     = new MaintenanceThread(this);
+    d->mode      = mode;
+    d->albumList = list;
+    d->modelType = modelType;
+    d->thread    = new MaintenanceThread(this);
 
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
