@@ -120,7 +120,7 @@ void AutotagsAssignmentTask::run()
         QElapsedTimer timer;
         timer.start();
 
-        AutoTagsAssign* const autotagsEngine = new AutoTagsAssign(DetectorModel(d->modelType));
+        QScopedPointer<AutoTagsAssign> autotagsEngine(new AutoTagsAssign(DetectorModel(d->modelType)));
         QList<QList<QString> >tagsLists      = autotagsEngine->generateTagsList(inputImages, d->batchSize);
 
         for (int j = 0 ; j < inputImages.size() ; ++j)
@@ -130,8 +130,6 @@ void AutotagsAssignmentTask::run()
 
             Q_EMIT signalFinished(qimg);
         }
-
-        delete autotagsEngine;
 
         qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Assgin Tags process takes:"
                                             << timer.elapsed() << "ms";

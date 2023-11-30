@@ -167,7 +167,7 @@ bool AssignTags::toolOperations()
 
     if (ret && !img.isNull())
     {
-        AutoTagsAssign* const autotagsEngine = new AutoTagsAssign(DetectorModel(model));
+        QScopedPointer<AutoTagsAssign> autotagsEngine(new AutoTagsAssign(DetectorModel(model)));
         QList<QList<QString> > tagsLists     = autotagsEngine->generateTagsList(QList<DImg>() << img, 16);
 
         if (!tagsLists.isEmpty())
@@ -189,8 +189,6 @@ bool AssignTags::toolOperations()
                 ret = meta->save(outputUrl().toLocalFile());
             }
         }
-
-        delete autotagsEngine;
     }
 
     return ret;
