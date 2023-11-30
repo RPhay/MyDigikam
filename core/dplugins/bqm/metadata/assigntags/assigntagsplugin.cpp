@@ -4,9 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2022-10-03
- * Description : a BQM plugin to assign tags metadata.
+ * Description : a BQM plugin to assign tags automatically.
  *
- * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -58,12 +58,12 @@ QIcon AssignTagsPlugin::icon() const
 
 QString AssignTagsPlugin::description() const
 {
-    return i18nc("@info", "A tool to assign tags metadata to images");
+    return i18nc("@info", "A tool to assign tags automatically to images");
 }
 
 QString AssignTagsPlugin::details() const
 {
-    return xi18nc("@info", "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata values to images.</para>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata values to images automatically.</para>");
 }
 
 QString AssignTagsPlugin::handbookSection() const
@@ -86,7 +86,7 @@ QList<DPluginAuthor> AssignTagsPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2021-2022"))
+                             QString::fromUtf8("(C) 2022-2023"))
             ;
 }
 

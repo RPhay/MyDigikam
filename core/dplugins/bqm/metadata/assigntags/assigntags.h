@@ -4,9 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2022-10-03
- * Description : assign tags metadata batch tool.
+ * Description : auto assign tags batch tool.
  *
- * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -31,7 +31,7 @@ class AssignTags : public BatchTool
 public:
 
     explicit AssignTags(QObject* const parent = nullptr);
-    ~AssignTags()                                          override;
+    ~AssignTags()                                           override;
 
     BatchToolSettings defaultSettings()                     override;
 
