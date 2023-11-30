@@ -86,12 +86,31 @@ void AutotagsAssignmentTask::run()
             return;
         }
 
-        QString path = d->data->getImagePath();
+        QList<DImg> inputImages;
 
-        if (path.isEmpty())
+        for (int i = 0 ; i < 16 ; ++i)
+        {
+            if (m_cancel)
+            {
+                return;
+            }
+
+            QString path = d->data->getImagePath();
+
+            if (path.isEmpty())
+            {
+                break;
+            }
+
+            inputImages << PreviewLoadThread::loadHighQualitySynchronously(path, PreviewSettings::RawPreviewAutomatic);
+        }
+
+        if (inputImages.isEmpty())
         {
             break;
         }
+
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Current batch size:" << inputImages.size();
 
         // Run Autotags backend here
         // Assign Tags in database using API from itemInfo
@@ -99,27 +118,21 @@ void AutotagsAssignmentTask::run()
         QElapsedTimer timer;
         timer.start();
 
-        DImg dimg = PreviewLoadThread::loadHighQualitySynchronously(path, PreviewSettings::RawPreviewAutomatic);
+        AutoTagsAssign* const autotagsEngine = new AutoTagsAssign(DetectorModel(d->modelType));
+        QList<QList<QString> >tagsLists      = autotagsEngine->generateTagsList(inputImages, 16);
 
-        if (!dimg.isNull())
+        for (int j = 0 ; j < inputImages.size() ; ++j)
         {
-            AutoTagsAssign* const autotagsEngine = new AutoTagsAssign(DetectorModel(d->modelType));
-            QList<QString> tagsList              = autotagsEngine->generateTagsList(dimg);
+            QImage qimg = inputImages.at(j).smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
+            assignTags(inputImages.at(j).originalFilePath(), tagsLists.at(j));
 
-            if (!tagsList.isEmpty())
-            {
-                assignTags(path, tagsList);
-            }
-
-            delete autotagsEngine;
+            Q_EMIT signalFinished(qimg);
         }
 
-        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "assgin Tags process takes:"
+        delete autotagsEngine;
+
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Assgin Tags process takes:"
                                             << timer.elapsed() << "ms";
-
-        QImage qimg = dimg.smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
-
-        Q_EMIT signalFinished(qimg);
     }
 
     Q_EMIT signalDone();

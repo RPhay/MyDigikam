@@ -154,6 +154,28 @@ cv::Mat AutoTagsAssign::prepareForDetection(const QString& inputImagePath) const
     return cvImage;
 }
 
+std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<DImg>& inputImages, int batchSize) const
+{
+    std::vector<cv::Mat> result;
+
+    for (const auto& img : inputImages)
+    {
+        result.push_back(prepareForDetection(img));
+    }
+
+    // add black imgs to fullfill the batch size
+
+    cv::Size inputSize = m_inferenceEngine->getinputImageSize();
+
+    while ((result.size() % batchSize) != 0)
+    {
+        cv::Mat dummycvImg = cv::Mat::zeros(inputSize.height, inputSize.width, CV_8UC3);
+        result.push_back(dummycvImg);
+    }
+
+    return result;
+}
+
 std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<QString>& inputImagePaths, int batchSize) const
 {
     std::vector<cv::Mat> result;
@@ -240,6 +262,29 @@ QList<QString> AutoTagsAssign::generateTagsList(const QString& imagePath)
     {
         cv::Mat cvImage = prepareForDetection(imagePath);
         result          = m_inferenceEngine->generateObjects(cvImage);
+
+        return result;
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return result;
+}
+
+QList<QList<QString>> AutoTagsAssign::generateTagsList(const QList<DImg>& inputImages, int batchSize) const
+{
+    QList<QList<QString> > result;
+
+    try
+    {
+        std::vector<cv::Mat> cvImages = prepareForDetection(inputImages, batchSize);
+        result                        = m_inferenceEngine->generateObjects(cvImages);
 
         return result;
     }
