@@ -21,7 +21,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DNNResnetDetector: public DNNBaseDetectorModel
+class DIGIKAM_GUI_EXPORT DNNResnetDetector: public DNNBaseDetectorModel
 {
 
 public:

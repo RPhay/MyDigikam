@@ -28,7 +28,7 @@ enum class YoloVersions
     RESNET50
 };
 
-class DIGIKAM_EXPORT DNNYoloDetector: public DNNBaseDetectorModel
+class DIGIKAM_GUI_EXPORT DNNYoloDetector: public DNNBaseDetectorModel
 {
 
 public:

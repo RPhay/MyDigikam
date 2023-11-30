@@ -36,7 +36,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DNNBaseDetectorModel
+class DIGIKAM_GUI_EXPORT DNNBaseDetectorModel
 {
 
 public:

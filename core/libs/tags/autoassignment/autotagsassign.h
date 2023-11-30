@@ -39,7 +39,7 @@ enum DetectorModel
     // add here another model
 };
 
-class DIGIKAM_EXPORT AutoTagsAssign
+class DIGIKAM_GUI_EXPORT AutoTagsAssign
 {
 
 public:
