@@ -410,9 +410,9 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     // --------------------------------------------------------------------------------------
 
-    grid->addWidget(d->logo,                        0, 0, 1, 1);
-    grid->addWidget(d->title,                       0, 1, 1, 1);
-    grid->addWidget(d->expanderBox,                 5, 0, 3, 2);
+    grid->addWidget(d->logo,        0, 0, 1, 1);
+    grid->addWidget(d->title,       0, 1, 1, 1);
+    grid->addWidget(d->expanderBox, 5, 0, 3, 2);
     grid->setSpacing(qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                           style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->setContentsMargins(QMargins());
@@ -499,7 +499,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.faceSettings.task                   = d->retrainAllFaces->isChecked() ? FaceScanSettings::RetrainAll
                                                                               : FaceScanSettings::DetectAndRecognize;
     prm.faceSettings.albums                 = d->albumSelectors->selectedAlbums();
-    
+
     prm.autotagsAssignment                  = d->expanderBox->isChecked(Private::AutotagsAssignment);
     prm.autotaggingScanMode                 = d->autotaggingScanMode->itemData(d->autotaggingScanMode->currentIndex()).toInt();
     prm.modelSelectionMode                  = d->modelSelectionMode->itemData(d->modelSelectionMode->currentIndex()).toInt();
