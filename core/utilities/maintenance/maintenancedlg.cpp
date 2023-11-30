@@ -674,6 +674,7 @@ void MaintenanceDlg::slotItemToggled(int index, bool b)
         case Private::AutotagsAssignment:
         {
             d->vbox5->setEnabled(b);
+            break;
         }
 
         case Private::MetadataSync:
