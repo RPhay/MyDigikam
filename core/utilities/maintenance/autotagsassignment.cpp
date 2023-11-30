@@ -42,9 +42,9 @@ class Q_DECL_HIDDEN AutotagsAssignment::Private
 public:
 
     explicit Private()
-      : mode  (AutotagsAssignmentScanMode::NonAssignedItems),
+      : mode     (AutotagsAssignmentScanMode::NonAssignedItems),
         modelType(0),
-        thread(nullptr)
+        thread   (nullptr)
     {
     }
 
@@ -73,7 +73,7 @@ AutotagsAssignment::AutotagsAssignment(AutotagsAssignmentScanMode mode,
 
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
-    
+
     connect(d->thread, SIGNAL(signalAdvance(QImage)),
             this, SLOT(slotAdvance(QImage)));
 }
@@ -94,7 +94,9 @@ void AutotagsAssignment::slotCancel()
     MaintenanceTool::slotCancel();
 }
 
-// this function to collect all picture data paths to be ready for the started stage
+/**
+ * This function is dedicated to collect all picture data paths to be ready for the started stage
+ */
 void AutotagsAssignment::slotStart()
 {
     MaintenanceTool::slotStart();
@@ -110,15 +112,15 @@ void AutotagsAssignment::slotStart()
 
     // Get all item in DB which do not have any auto Tag assigned.
     // any path containing root Path "auto" as "auto/car", "auto/bus", ...
-    
+
     QList<QString> predTagPaths = autoTagsAssign().getPredefinedTagsPath();
     QStringList assignedItems;
 
-    for (auto path: predTagPaths)
+    for (auto path : predTagPaths)
     {
-        assignedItems  += CoreDbAccess().db()->getItemsURLsWithTag(TagsCache::instance()->tagForPath(path));
+        assignedItems += CoreDbAccess().db()->getItemsURLsWithTag(TagsCache::instance()->tagForPath(path));
     }
-    
+
     // Get all digiKam albums collection pictures path, depending of d->rebuildAll flag.
 
     for (AlbumList::ConstIterator it = d->albumList.constBegin() ;

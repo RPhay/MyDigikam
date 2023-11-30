@@ -6,7 +6,7 @@
  * Date        : 2013-08-09
  * Description : Thread actions manager for maintenance tools.
  *
- * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2017-2018 by Mario Frank <mario dot frank at uni minus potsdam dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

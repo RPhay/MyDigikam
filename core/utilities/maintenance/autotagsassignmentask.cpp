@@ -108,7 +108,7 @@ void AutotagsAssignmentTask::run()
         if (!img.isNull())
         {
             autoTagsAssign* const autotagsEngine = new autoTagsAssign(DetectorModel(d->modelType));
-            QList<QString> tagsList = autotagsEngine->generateTagsList(img);
+            QList<QString> tagsList              = autotagsEngine->generateTagsList(img);
 
             if (!tagsList.isEmpty())
             {
