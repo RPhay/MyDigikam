@@ -360,9 +360,17 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     hbox13->setStretchFactor(space9, 10);
 
     d->modelSelectionMode  = new QComboBox(hbox13);
-    d->modelSelectionMode->addItem(i18n("YOLOv5 NANO"),   DetectorModel::YOLOV5NANO);
+    d->modelSelectionMode->addItem(i18n("YOLOv5 Nano"),   DetectorModel::YOLOV5NANO);
     d->modelSelectionMode->addItem(i18n("YOLOv5 XLarge"), DetectorModel::YOLOV5XLARGE);
     d->modelSelectionMode->addItem(i18n("ResNet50"),      DetectorModel::RESNET50);
+    d->modelSelectionMode->setToolTip(i18nc("@info:tooltip",
+                                            "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers exceptional speed and efficiency. It enables you to swiftly "
+                                            "evaluate the integration of smaller-scale object detection scenarios.</p>"
+                                            "<p><b>YOLOv5 XLarge</b>: this model is a neural network dedicated for more complex object detection requirements and "
+                                            "showcases remarkable capabilities. Despite the additional complexity introducing more time-latency and "
+                                            "computer resources, it's must be used for larger-scale object detection scenarios.</p>"
+                                            "<p><b>ResNet50</b>: this model is a specific type of convolutional neural network formed by stacking residual blocks "
+                                            "commonly used to power computer vision applications as object detections."));
 
     d->expanderBox->insertItem(Private::AutotagsAssignment, d->vbox5,
                                QIcon::fromTheme(QLatin1String("flag-green")), i18n("Auto-tags Assignment"),
