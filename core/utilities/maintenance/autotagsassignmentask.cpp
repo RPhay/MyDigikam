@@ -33,6 +33,7 @@ public:
 
     Private() = default;
 
+    const int batchSize        = 16;
     MaintenanceData* data      = nullptr;
     int              modelType = DetectorModel::YOLOV5NANO;
 };
@@ -88,7 +89,7 @@ void AutotagsAssignmentTask::run()
 
         QList<DImg> inputImages;
 
-        for (int i = 0 ; i < 16 ; ++i)
+        for (int i = 0 ; i < d->batchSize ; ++i)
         {
             if (m_cancel)
             {
@@ -119,7 +120,7 @@ void AutotagsAssignmentTask::run()
         timer.start();
 
         AutoTagsAssign* const autotagsEngine = new AutoTagsAssign(DetectorModel(d->modelType));
-        QList<QList<QString> >tagsLists      = autotagsEngine->generateTagsList(inputImages, 16);
+        QList<QList<QString> >tagsLists      = autotagsEngine->generateTagsList(inputImages, d->batchSize);
 
         for (int j = 0 ; j < inputImages.size() ; ++j)
         {
