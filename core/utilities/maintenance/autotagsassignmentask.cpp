@@ -107,7 +107,7 @@ void AutotagsAssignmentTask::run()
 
         if (!dimg.isNull())
         {
-            autoTagsAssign* const autotagsEngine = new autoTagsAssign(DetectorModel(d->modelType));
+            AutoTagsAssign* const autotagsEngine = new AutoTagsAssign(DetectorModel(d->modelType));
             QList<QString> tagsList              = autotagsEngine->generateTagsList(dimg);
 
             if (!tagsList.isEmpty())

@@ -39,13 +39,13 @@ enum DetectorModel
     // add here another model
 };
 
-class DIGIKAM_EXPORT autoTagsAssign
+class DIGIKAM_EXPORT AutoTagsAssign
 {
 
 public:
 
-    explicit autoTagsAssign(DetectorModel model = DetectorModel::YOLOV5NANO);
-    ~autoTagsAssign();
+    explicit AutoTagsAssign(DetectorModel model = DetectorModel::YOLOV5NANO);
+    ~AutoTagsAssign();
 
     cv::Mat prepareForDetection(const DImg& inputImage)                                             const;
     cv::Mat prepareForDetection(const QImage& inputImage)                                           const;
@@ -67,8 +67,8 @@ public:
 private:
 
     // Disable
-    autoTagsAssign(const autoTagsAssign&)            = delete;
-    autoTagsAssign& operator=(const autoTagsAssign&) = delete;
+    AutoTagsAssign(const AutoTagsAssign&)            = delete;
+    AutoTagsAssign& operator=(const AutoTagsAssign&) = delete;
 
 private:
 

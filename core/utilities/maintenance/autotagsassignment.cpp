@@ -113,7 +113,7 @@ void AutotagsAssignment::slotStart()
     // Get all item in DB which do not have any auto Tag assigned.
     // any path containing root Path "auto" as "auto/car", "auto/bus", ...
 
-    QList<QString> predTagPaths = autoTagsAssign().getPredefinedTagsPath();
+    QList<QString> predTagPaths = AutoTagsAssign().getPredefinedTagsPath();
     QStringList assignedItems;
 
     for (auto path : predTagPaths)

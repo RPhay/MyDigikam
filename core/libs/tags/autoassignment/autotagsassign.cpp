@@ -34,7 +34,7 @@
 namespace Digikam
 {
 
-autoTagsAssign::autoTagsAssign(DetectorModel model)
+AutoTagsAssign::AutoTagsAssign(DetectorModel model)
     : m_modelType(model)
 {
     switch (m_modelType)
@@ -64,12 +64,12 @@ autoTagsAssign::autoTagsAssign(DetectorModel model)
     }
 }
 
-autoTagsAssign::~autoTagsAssign()
+AutoTagsAssign::~AutoTagsAssign()
 {
     delete m_inferenceEngine;
 }
 
-cv::Mat autoTagsAssign::prepareForDetection(const DImg& inputImage) const
+cv::Mat AutoTagsAssign::prepareForDetection(const DImg& inputImage) const
 {
     if (inputImage.isNull() || !inputImage.size().isValid())
     {
@@ -97,7 +97,7 @@ cv::Mat autoTagsAssign::prepareForDetection(const DImg& inputImage) const
     return cvImage;
 }
 
-cv::Mat autoTagsAssign::prepareForDetection(const QImage& inputImage) const
+cv::Mat AutoTagsAssign::prepareForDetection(const QImage& inputImage) const
 {
     if (inputImage.isNull() || !inputImage.size().isValid())
     {
@@ -135,7 +135,7 @@ cv::Mat autoTagsAssign::prepareForDetection(const QImage& inputImage) const
     return cvImage;
 }
 
-cv::Mat autoTagsAssign::prepareForDetection(const QString& inputImagePath) const
+cv::Mat AutoTagsAssign::prepareForDetection(const QString& inputImagePath) const
 {
     std::vector<char> buffer;
     QFile file(inputImagePath);
@@ -154,7 +154,7 @@ cv::Mat autoTagsAssign::prepareForDetection(const QString& inputImagePath) const
     return cvImage;
 }
 
-std::vector<cv::Mat> autoTagsAssign::prepareForDetection(const QList<QString>& inputImagePaths, int batchSize) const
+std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<QString>& inputImagePaths, int batchSize) const
 {
     std::vector<cv::Mat> result;
 
@@ -176,7 +176,7 @@ std::vector<cv::Mat> autoTagsAssign::prepareForDetection(const QList<QString>& i
     return result;
 }
 
-QList<QString> autoTagsAssign::generateTagsList(const QImage& image)
+QList<QString> AutoTagsAssign::generateTagsList(const QImage& image)
 {
     QList<QString> result;
 
@@ -204,7 +204,7 @@ QList<QString> autoTagsAssign::generateTagsList(const QImage& image)
     return result;
 }
 
-QList<QString> autoTagsAssign::generateTagsList(const DImg& image)
+QList<QString> AutoTagsAssign::generateTagsList(const DImg& image)
 {
     QList<QString> result;
 
@@ -232,7 +232,7 @@ QList<QString> autoTagsAssign::generateTagsList(const DImg& image)
     return result;
 }
 
-QList<QString> autoTagsAssign::generateTagsList(const QString& imagePath)
+QList<QString> AutoTagsAssign::generateTagsList(const QString& imagePath)
 {
     QList<QString> result;
 
@@ -255,7 +255,7 @@ QList<QString> autoTagsAssign::generateTagsList(const QString& imagePath)
     return result;
 }
 
-QList<QList<QString>> autoTagsAssign::generateTagsList(const QList<QString>& inputImagePaths, int batchSize) const
+QList<QList<QString>> AutoTagsAssign::generateTagsList(const QList<QString>& inputImagePaths, int batchSize) const
 {
     QList<QList<QString>> result;
 
@@ -278,7 +278,7 @@ QList<QList<QString>> autoTagsAssign::generateTagsList(const QList<QString>& inp
     return result;
 }
 
-QList<QString> autoTagsAssign::getPredefinedTagsPath() const
+QList<QString> AutoTagsAssign::getPredefinedTagsPath() const
 {
     QList<QString> tagsPaths;
     QList<QString> objects = m_inferenceEngine->getPredefinedClasses();
