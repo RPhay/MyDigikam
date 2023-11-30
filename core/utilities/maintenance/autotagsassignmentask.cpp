@@ -99,7 +99,7 @@ void AutotagsAssignmentTask::run()
         QElapsedTimer timer;
         timer.start();
 
-        DImg dimg(path);
+        DImg dimg = PreviewLoadThread::loadHighQualitySynchronously(path, PreviewSettings::RawPreviewAutomatic);
 
         if (!dimg.isNull())
         {
