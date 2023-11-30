@@ -44,7 +44,7 @@ public:
 
 public:
 
-    QHash<QString, QVector<QRect>>          detectObjects(const cv::Mat& inputImage)                    override;
+    QHash<QString, QVector<QRect> >         detectObjects(const cv::Mat& inputImage)                    override;
     QList<QHash<QString, QVector<QRect> > > detectObjects(const std::vector<cv::Mat>& inputBatchImages) override;
 
 private:
@@ -55,7 +55,7 @@ private:
     std::vector<cv::Mat> preprocess(const std::vector<cv::Mat>& inputBatchImages);
 
     QHash<QString, QVector<QRect> >        postprocess(const cv::Mat& inputImage,
-                                                      const cv::Mat& out)                 const;
+                                                       const cv::Mat& out)                const;
 
     QList<QHash<QString, QVector<QRect> > > postprocess(const std::vector<cv::Mat>& inputBatchImages,
                                                         const std::vector<cv::Mat>& outs) const;

@@ -24,6 +24,7 @@
 #include <QStandardPaths>
 #include <QFileInfo>
 #include <QElapsedTimer>
+#include <QMutexLocker>
 
 // Local includes
 
@@ -46,7 +47,7 @@ DNNResnetDetector::~DNNResnetDetector()
 
 QList<QString> DNNResnetDetector::loadImageNetClass()
 {
-    QList<QString>  classList;
+    QList<QString> classList;
 
     // NOTE: storing all model definition at the same application path as face engine
 
@@ -149,12 +150,11 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const cv::Mat& inputImage)
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
-    mutex.lock();
     {
+        QMutexLocker lock(&mutex);
         net.setInput(inputBlob);
         net.forward(outs, getOutputsNames());
     }
-    mutex.unlock();
 
     return outs;
 }
@@ -164,8 +164,8 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& i
     cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
-    mutex.lock();
     {
+        QMutexLocker lock(&mutex);
         QElapsedTimer timer;
         timer.start();
 
@@ -176,7 +176,6 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& i
 
         qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Batch forward (Inference) takes: " << elapsed << " ms";
     }
-    mutex.unlock();
 
     return outs;
 }
@@ -199,7 +198,7 @@ QList<QHash<QString, QVector<QRect> > > DNNResnetDetector::postprocess(const std
 QHash<QString, QVector<QRect> > DNNResnetDetector::postprocess(const cv::Mat& inputImage,
                                                                const cv::Mat& out) const
 {
-    QHash<QString, QVector<QRect>> detectedBoxes;
+    QHash<QString, QVector<QRect> > detectedBoxes;
 
     cv::Point classIdPoint;
     double final_prob = 0.0;
@@ -208,7 +207,7 @@ QHash<QString, QVector<QRect> > DNNResnetDetector::postprocess(const cv::Mat& in
     int label_id      = classIdPoint.x;
 
     QString label     = predefinedClasses[label_id];
-    detectedBoxes[label].push_back( {} );
+    detectedBoxes[label].push_back( { } );
 
     return detectedBoxes;
 }
