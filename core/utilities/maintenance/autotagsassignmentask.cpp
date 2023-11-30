@@ -31,14 +31,10 @@ class Q_DECL_HIDDEN AutotagsAssignmentTask::Private
 {
 public:
 
-    explicit Private()
-        : data     (nullptr),
-          modelType(DetectorModel::YOLOV5NANO)
-    {
-    }
+    Private() = default;
 
-    MaintenanceData* data;
-    int              modelType;
+    MaintenanceData* data      = nullptr;
+    int              modelType = DetectorModel::YOLOV5NANO;
 };
 
 // -------------------------------------------------------
@@ -97,8 +93,8 @@ void AutotagsAssignmentTask::run()
             break;
         }
 
-        // Run Autotags backend ere
-        // Assign Tags in databae using API from itemInfo
+        // Run Autotags backend here
+        // Assign Tags in database using API from itemInfo
 
         QElapsedTimer timer;
         timer.start();
