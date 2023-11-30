@@ -571,14 +571,18 @@ void MaintenanceDlg::readSettings()
         d->searchResultRestriction->setCurrentIndex(restrictions);
 
         d->expanderBox->setChecked(Private::FaceManagement,     group.readEntry(d->configFaceManagement,        prm.faceManagement));
-        d->faceScannedHandling->setCurrentIndex(group.readEntry(d->configFaceScannedHandling,                   (int)prm.faceSettings.alreadyScannedHandling));
+        int faceHandling = d->faceScannedHandling->findData(group.readEntry(d->configFaceScannedHandling,       (int)prm.faceSettings.alreadyScannedHandling));
+        d->faceScannedHandling->setCurrentIndex(faceHandling);
 
         d->expanderBox->setChecked(Private::AutotagsAssignment, group.readEntry(d->configAutotagsAssignment,    prm.autotagsAssignment));
-        d->autotaggingScanMode->setCurrentIndex(group.readEntry(d->configAutotaggingScanMode,                   prm.autotaggingScanMode));
-        d->modelSelectionMode->setCurrentIndex(group.readEntry(d->configModelSelectionMode,                     prm.modelSelectionMode));
+        int tagScanMode  = d->autotaggingScanMode->findData(group.readEntry(d->configAutotaggingScanMode,       prm.autotaggingScanMode));
+        d->autotaggingScanMode->setCurrentIndex(tagScanMode);
+        int tagSelection = d->modelSelectionMode->findData(group.readEntry(d->configModelSelectionMode,         prm.modelSelectionMode));
+        d->modelSelectionMode->setCurrentIndex(tagSelection);
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
-        d->qualityScanMode->setCurrentIndex(group.readEntry(d->configQualityScanMode,                           prm.qualityScanMode));
+        int qualityMod   = d->qualityScanMode->findData(group.readEntry(d->configQualityScanMode,               prm.qualityScanMode));
+        d->qualityScanMode->setCurrentIndex(qualityMod);
         d->qualitySelector->setSettingsSelected(
             (ImageQualityConfSelector::SettingsType)group.readEntry(d->configQualitySettingsSelected,           prm.qualitySettingsSelected));
 
@@ -587,7 +591,8 @@ void MaintenanceDlg::readSettings()
         d->qualitySelector->setCustomSettings(imq);
 
         d->expanderBox->setChecked(Private::MetadataSync,       group.readEntry(d->configMetadataSync,          prm.metadataSync));
-        d->syncDirection->setCurrentIndex(group.readEntry(d->configSyncDirection,                               prm.syncDirection));
+        int direction    = d->syncDirection->findData(group.readEntry(d->configSyncDirection,                   prm.syncDirection));
+        d->syncDirection->setCurrentIndex(direction);
     }
 
     for (int i = Private::NewItems ; i < Private::Stretch ; ++i)
