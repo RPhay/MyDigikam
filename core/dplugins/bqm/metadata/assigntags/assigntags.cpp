@@ -156,7 +156,6 @@ bool AssignTags::toolOperations()
         meta->setData(image().getMetadata());
     }
 
-    ret       = false;
     DImg img  = image();
     int model = settings()[QLatin1String("AutoTagModel")].toInt();
 
@@ -166,7 +165,7 @@ bool AssignTags::toolOperations()
                                                               PreviewSettings::RawPreviewAutomatic);
     }
 
-    if (!img.isNull())
+    if (ret && !img.isNull())
     {
         AutoTagsAssign* const autotagsEngine = new AutoTagsAssign(DetectorModel(model));
         QList<QList<QString> > tagsLists     = autotagsEngine->generateTagsList(QList<DImg>() << img, 16);
@@ -184,12 +183,14 @@ bool AssignTags::toolOperations()
                 tagsPath << rootTags + tag;
             }
 
-            meta->setItemTagsPath(tagsPath);
-            ret = meta->save(outputUrl().toLocalFile());
+            if (!tagsPath.isEmpty())
+            {
+                meta->setItemTagsPath(tagsPath);
+                ret = meta->save(outputUrl().toLocalFile());
+            }
         }
 
         delete autotagsEngine;
-        ret = true;
     }
 
     return ret;
