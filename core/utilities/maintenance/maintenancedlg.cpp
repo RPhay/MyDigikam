@@ -344,26 +344,26 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     // --------------------------------------------------------------------------------------
 
-    d->vbox5 = new DVBox;
-    DHBox* const hbox12 = new DHBox(d->vbox5);
+    d->vbox5               = new DVBox;
+    DHBox* const hbox12    = new DHBox(d->vbox5);
     new QLabel (i18n("Auto-tagging mode: "), hbox12);
-    QWidget* const space8 = new QWidget(hbox12);
+    QWidget* const space8  = new QWidget(hbox12);
     hbox12->setStretchFactor(space8, 10);
 
-    d->autotaggingScanMode    = new QComboBox(hbox12);
+    d->autotaggingScanMode = new QComboBox(hbox12);
     d->autotaggingScanMode->addItem(i18n("Clean all and re-assign"),  AutotagsAssignment::AllItems);
     d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),   AutotagsAssignment::NonAssignedItems);
 
-    DHBox* const hbox13 = new DHBox(d->vbox5);
+    DHBox* const hbox13    = new DHBox(d->vbox5);
     new QLabel (i18n("Selection model: "), hbox13);
-    QWidget* const space9 = new QWidget(hbox13);
+    QWidget* const space9  = new QWidget(hbox13);
     hbox13->setStretchFactor(space9, 10);
 
-    d->modelSelectionMode = new QComboBox(hbox13);
-    d->modelSelectionMode->addItem(i18n("YOLOv5 NANO"), DetectorModel::YOLOV5NANO);
+    d->modelSelectionMode  = new QComboBox(hbox13);
+    d->modelSelectionMode->addItem(i18n("YOLOv5 NANO"),   DetectorModel::YOLOV5NANO);
     d->modelSelectionMode->addItem(i18n("YOLOv5 XLarge"), DetectorModel::YOLOV5XLARGE);
-    d->modelSelectionMode->addItem(i18n("ResNet50"), DetectorModel::RESNET50);
-    
+    d->modelSelectionMode->addItem(i18n("ResNet50"),      DetectorModel::RESNET50);
+
     d->expanderBox->insertItem(Private::AutotagsAssignment, d->vbox5,
                                QIcon::fromTheme(QLatin1String("flag-green")), i18n("Auto-tags Assignment"), QLatin1String("AutotagsAssignment"), false);
     d->expanderBox->setCheckBoxVisible(Private::AutotagsAssignment, true);
@@ -449,9 +449,9 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     connect(d->retrainAllFaces, &QCheckBox::toggled,
             this, [hbox3](bool on)
-            {
-                hbox3->setEnabled(!on);
-            }
+        {
+            hbox3->setEnabled(!on);
+        }
     );
 
     // --------------------------------------------------------------------------------------

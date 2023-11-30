@@ -64,7 +64,7 @@ AutotagsAssignment::AutotagsAssignment(AutotagsAssignmentScanMode mode,
                                        int modelType,
                                        ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("AutotagsAssignment"), parent),
-      d(new Private)
+      d              (new Private)
 {
     d->mode      = mode;
     d->albumList = list;
