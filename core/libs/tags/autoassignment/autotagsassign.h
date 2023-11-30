@@ -52,8 +52,8 @@ public:
     cv::Mat prepareForDetection(const QString& inputImagePath)                                      const;
     std::vector<cv::Mat> prepareForDetection(const QList<QString>& inputImagePaths, int batchSize)  const;
 
-    QList<QString> generateTagsList(const QImage& inputImage);
     QList<QString> generateTagsList(const DImg& inputImage);
+    QList<QString> generateTagsList(const QImage& inputImage);
     QList<QString> generateTagsList(const QString& inputImagePath);
 
     /**

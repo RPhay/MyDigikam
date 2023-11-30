@@ -176,7 +176,7 @@ std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<QString>& i
     return result;
 }
 
-QList<QString> AutoTagsAssign::generateTagsList(const QImage& image)
+QList<QString> AutoTagsAssign::generateTagsList(const DImg& image)
 {
     QList<QString> result;
 
@@ -204,7 +204,7 @@ QList<QString> AutoTagsAssign::generateTagsList(const QImage& image)
     return result;
 }
 
-QList<QString> AutoTagsAssign::generateTagsList(const DImg& image)
+QList<QString> AutoTagsAssign::generateTagsList(const QImage& image)
 {
     QList<QString> result;
 
