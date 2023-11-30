@@ -95,6 +95,12 @@ bool DNNYoloDetector::loadModels()
             model = appPath + QLatin1Char('/') + QLatin1String("yolov5x_batch_16_s320.onnx");  ///< bigger model
             break;
         }
+
+        case (YoloVersions::RESNET50):
+        {
+            qCWarning(DIGIKAM_AUTOTAGSENGINE_LOG) << "YOLO::RESNET50 has no model file to load!";
+            break;
+        }
     }
 
     if (QFileInfo::exists(model))
