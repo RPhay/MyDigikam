@@ -187,7 +187,7 @@ QList<QHash<QString, QVector<QRect> > > DNNResnetDetector::postprocess(const std
 
     // outs = [batch_size x [rows x 85]]
 
-    for (int i = 0 ; i < inputBatchImages.size() ; i++)
+    for (unsigned int i = 0 ; i < inputBatchImages.size() ; i++)
     {
         detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
     }
@@ -195,7 +195,7 @@ QList<QHash<QString, QVector<QRect> > > DNNResnetDetector::postprocess(const std
     return detectedBoxesList;
 }
 
-QHash<QString, QVector<QRect> > DNNResnetDetector::postprocess(const cv::Mat& inputImage,
+QHash<QString, QVector<QRect> > DNNResnetDetector::postprocess(const cv::Mat& /*inputImage*/,
                                                                const cv::Mat& out) const
 {
     QHash<QString, QVector<QRect> > detectedBoxes;
