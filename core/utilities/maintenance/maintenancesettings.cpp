@@ -17,6 +17,8 @@
 // Local includes
 
 #include "digikam_globals.h"
+#include "autotagsassign.h"
+#include "autotagsassignment.h"
 #include "imagequalityconfselector.h"
 
 namespace Digikam
@@ -37,6 +39,8 @@ MaintenanceSettings::MaintenanceSettings()
       duplicatesRestriction  (HaarIface::DuplicatesSearchRestrictions::None),
       faceManagement         (false),
       autotagsAssignment     (false),
+      autotaggingScanMode    (AutotagsAssignment::AllItems),
+      modelSelectionMode     (DetectorModel::YOLOV5NANO),
       qualitySort            (false),
       qualityScanMode        (true),   // NOTE: turn on by default to prevent clearing whole Pick Labels from Collection
       qualitySettingsSelected(ImageQualityConfSelector::GlobalSettings),

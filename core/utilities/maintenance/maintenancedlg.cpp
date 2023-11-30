@@ -575,6 +575,7 @@ void MaintenanceDlg::readSettings()
 
         d->expanderBox->setChecked(Private::AutotagsAssignment, group.readEntry(d->configAutotagsAssignment,    prm.autotagsAssignment));
         d->autotaggingScanMode->setCurrentIndex(group.readEntry(d->configAutotaggingScanMode,                   prm.autotaggingScanMode));
+        d->modelSelectionMode->setCurrentIndex(group.readEntry(d->configModelSelectionMode,                     prm.modelSelectionMode));
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
         d->qualityScanMode->setCurrentIndex(group.readEntry(d->configQualityScanMode,                           prm.qualityScanMode));
@@ -632,6 +633,7 @@ void MaintenanceDlg::writeSettings()
         group.writeEntry(d->configFaceScannedHandling,        (int)prm.faceSettings.alreadyScannedHandling);
         group.writeEntry(d->configAutotagsAssignment,         prm.autotagsAssignment);
         group.writeEntry(d->configAutotaggingScanMode,        prm.autotaggingScanMode);
+        group.writeEntry(d->configModelSelectionMode,         prm.modelSelectionMode);
         group.writeEntry(d->configImageQualitySorter,         prm.qualitySort);
         group.writeEntry(d->configQualityScanMode,            prm.qualityScanMode);
         group.writeEntry(d->configQualitySettingsSelected,    prm.qualitySettingsSelected);
