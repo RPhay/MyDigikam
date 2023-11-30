@@ -33,6 +33,7 @@ public:
 
     Private() = default;
 
+    const int loadCount        = 3;
     const int batchSize        = 16;
     MaintenanceData* data      = nullptr;
     int              modelType = DetectorModel::YOLOV5NANO;
@@ -89,7 +90,7 @@ void AutotagsAssignmentTask::run()
 
         QList<DImg> inputImages;
 
-        for (int i = 0 ; i < d->batchSize ; ++i)
+        for (int i = 0 ; i < d->loadCount ; ++i)
         {
             if (m_cancel)
             {
