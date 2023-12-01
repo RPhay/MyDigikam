@@ -17,12 +17,14 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "dimg.h"
 #include "previewloadthread.h"
-#include "iteminfo.h"
 #include "maintenancedata.h"
 #include "autotagsassign.h"
+#include "scancontroller.h"
+#include "metadatahub.h"
 #include "tagscache.h"
+#include "iteminfo.h"
+#include "dimg.h"
 
 namespace Digikam
 {
@@ -66,6 +68,11 @@ void AutotagsAssignmentTask::setModelType(int modelType)
 
 void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QString>& tagsList)
 {
+    if (tagsList.isEmpty())
+    {
+        return;
+    }
+
     ItemInfo info              = ItemInfo::fromLocalFile(pathImage);
     TagsCache* const tagsCache = Digikam::TagsCache::instance();
     QString rootTags           = QLatin1String("auto/");
@@ -75,6 +82,14 @@ void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QS
         int tagId = tagsCache->getOrCreateTag(rootTags + tag);
         info.setTag(tagId);
     }
+
+    // Write tags to the metadata too
+
+    MetadataHub hub;
+    hub.load(info);
+
+    ScanController::FileMetadataWrite writeScope(info);
+    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
 }
 
 void AutotagsAssignmentTask::run()
