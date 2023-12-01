@@ -6,7 +6,7 @@
  * Date        : 25/08/2013
  * Description : Image Quality Parser - private container
  *
- * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
  * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
@@ -54,9 +54,6 @@ class Q_DECL_HIDDEN ImageQualityParser::Private
 public:
 
     explicit Private()
-      : calculator(nullptr),
-        label     (nullptr),
-        running   (true)
     {
         calculator = new ImageQualityCalculator();
     }
@@ -66,15 +63,15 @@ public:
         delete calculator;
     }
 
-    DImg                    image;             ///< original image
+    DImg                    image;                  ///< original image
 
     ImageQualityContainer   imq;
 
-    ImageQualityCalculator* calculator;
+    ImageQualityCalculator* calculator = nullptr;
 
-    PickLabel*              label;
+    PickLabel*              label      = nullptr;
 
-    volatile bool           running;
+    volatile bool           running    = true;
 };
 
 } // namespace Digikam
