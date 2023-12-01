@@ -59,7 +59,7 @@ AutoTagsAssign::AutoTagsAssign(DetectorModel model)
 
         default:
         {
-            qFatal("UNKNOWN neural network model");
+            break;
         }
     }
 }

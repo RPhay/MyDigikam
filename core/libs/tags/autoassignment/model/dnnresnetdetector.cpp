@@ -49,7 +49,7 @@ QList<QString> DNNResnetDetector::loadImageNetClass()
 {
     QList<QString> classList;
 
-    // NOTE: storing all model definition at the same application path as face engine
+    // NOTE: storing all model definitions at the same application path as face engine
 
     QString appPath         = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                      QLatin1String("digikam/facesengine"),
