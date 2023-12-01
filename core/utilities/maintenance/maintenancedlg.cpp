@@ -354,8 +354,18 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->autotaggingScanMode->addItem(i18n("Clean all and re-assign"),  AutotagsAssignment::AllItems);
     d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),   AutotagsAssignment::NonAssignedItems);
 
+    QLabel* const title    = new QLabel(d->vbox5);
+    title->setText(i18nc("@label",
+                        "<p>This tool allows to assign automatically tags to images by contents analysis using "
+                        "deep-learning neural network.</p>"
+                        "<p>The settings below determines the deep-learning model to use while parsing image "
+                        "contents to determine the subjects of the photography. The neural network used in background "
+                        "will generate automatically a serie of tags describing the contents and store the results in "
+                        "the database.</p>"));
+    title->setWordWrap(true);
+
     DHBox* const hbox13    = new DHBox(d->vbox5);
-    new QLabel (i18n("Selection model: "), hbox13);
+    new QLabel(i18n("Selection model: "), hbox13);
     QWidget* const space9  = new QWidget(hbox13);
     hbox13->setStretchFactor(space9, 10);
 
@@ -364,13 +374,16 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->modelSelectionMode->addItem(i18n("YOLOv5 XLarge"), DetectorModel::YOLOV5XLARGE);
     d->modelSelectionMode->addItem(i18n("ResNet50"),      DetectorModel::RESNET50);
     d->modelSelectionMode->setToolTip(i18nc("@info:tooltip",
-                                            "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers exceptional speed and efficiency. It enables you to swiftly "
-                                            "evaluate the integration of smaller-scale object detection scenarios.</p>"
-                                            "<p><b>YOLOv5 XLarge</b>: this model is a neural network dedicated for more complex object detection requirements and "
-                                            "showcases remarkable capabilities. Despite the additional complexity introducing more time-latency and "
-                                            "computer resources, it's must be used for larger-scale object detection scenarios.</p>"
-                                            "<p><b>ResNet50</b>: this model is a specific type of convolutional neural network formed by stacking residual blocks "
-                                            "commonly used to power computer vision applications as object detections."));
+        "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers exceptional speed and efficiency. It enables you to swiftly "
+        "evaluate the integration of smaller-scale object detection scenarios. It's designed for objects detections, capable of recognizing "
+        "and extracting the location of objects within an image. The limitation on the number of recognizable objects is set to 80.</p>"
+        "<p><b>YOLOv5 XLarge</b>: as the previous one, this model is a neural network dedicated for more complex object detection requirements and "
+        "showcases remarkable capabilities. Despite the additional complexity introducing more time-latency and "
+        "computer resources, it's must be used for larger-scale object detection scenarios as it provides more accurate predictions at the expense of speed.</p>"
+        "<p><b>ResNet50</b>: this model is a specific type of convolutional neural network formed by stacking residual blocks "
+        "commonly used to power computer vision applications as object detections. This king of design allows the training of very deep networks without "
+        "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is primarily focused on image classification and does not provide object localization. "
+        "It can recognize objects from a vast set of more than 1,000 classes, covering a wide range of objects, animals, and scenes.</p>"));
 
     d->expanderBox->insertItem(Private::AutotagsAssignment, d->vbox5,
                                QIcon::fromTheme(QLatin1String("tag")), i18n("Auto-tags Assignment"),
