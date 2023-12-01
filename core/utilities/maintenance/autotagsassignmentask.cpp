@@ -104,7 +104,7 @@ void AutotagsAssignmentTask::run()
                 break;
             }
 
-            inputImages << PreviewLoadThread::loadFastSynchronously(path, 1000);
+            inputImages << PreviewLoadThread::loadFastSynchronously(path, 2000);
         }
 
         if (inputImages.isEmpty())
