@@ -14,7 +14,7 @@ BUGFIXES:
 001 ==> 477707 - Face detection stays on 0% and cannot be canceled.
 002 ==> 435094 - Auto Tagging/Keyword using Google Cloud Vision Api.
 003 ==> 384444 - Wish: support "remote metadata services" (eg. AI based image tagging like Clarifai.com).
-004 ==> 387271 - Adding Objects and Scenes Recognition for digikam.
+004 ==> 387271 - Adding Objects and Scenes Recognition for BQM.
 005 ==> 416988 - Objects / Forms / Monuments / Context detection and recognition using Deep Learning.
 006 ==> 458094 - Add support for imagga.
 007 ==> 426003 - Implementing object detection.
