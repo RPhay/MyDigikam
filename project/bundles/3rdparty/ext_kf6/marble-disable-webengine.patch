@@ -35,7 +35,7 @@ index a06737a29..0e4fa44b8 100644
  if (BUILD_WITH_DBUS)
    find_package(Qt6DBus ${REQUIRED_QT_VERSION})
 diff --git a/src/lib/marble/CMakeLists.txt b/src/lib/marble/CMakeLists.txt
-index 15f11649b..59522e242 100644
+index 15f11649b..944d90ac2 100644
 --- a/src/lib/marble/CMakeLists.txt
 +++ b/src/lib/marble/CMakeLists.txt
 @@ -127,7 +127,7 @@ set(marblewidget_SRCS
@@ -47,6 +47,15 @@ index 15f11649b..59522e242 100644
      MarbleGlobal.cpp
      MarbleDirs.cpp
      MarbleLocale.cpp
+@@ -358,7 +358,7 @@ set (marblewidget_UI
+ if (MARBLE_NO_WEBKITWIDGETS)
+     LIST(APPEND marblewidget_UI
+         NullLegendWidget.ui
+-        NullWebPopupWidget.ui
++#        NullWebPopupWidget.ui
+         )
+ else()
+     LIST(APPEND marblewidget_UI
 diff --git a/src/lib/marble/layers/PopupLayer.cpp b/src/lib/marble/layers/PopupLayer.cpp
 index b654fad76..1f637b0b0 100644
 --- a/src/lib/marble/layers/PopupLayer.cpp
