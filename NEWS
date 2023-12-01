@@ -25,7 +25,7 @@ BUGFIXES:
 012 ==> 110309 - Sanyo VPC-G200 camera is recognised, but digiKam cannot find images.
 013 ==> 179650 - Crash when clearing album quick search if album UI empty.
 014 ==> 096844 - wish: filter/view by searching exif or comment in images.
-015 ==> 
+015 ==> 143559 - Menu "camera" -> "search media" stops digiKam.
 016 ==> 
 017 ==> 
 018 ==> 
