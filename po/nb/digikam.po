@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:40+0000\n"
+"POT-Creation-Date: 2023-11-30 00:39+0000\n"
 "PO-Revision-Date: 2022-05-29 19:42+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -975,7 +975,7 @@ msgstr "Navn:"
 
 #: core/app/items/utils/tooltipfiller.cpp:83
 #: core/app/items/utils/tooltipfiller.cpp:595
-#: core/app/views/stack/welcomepageview.cpp:274
+#: core/app/views/stack/welcomepageview.cpp:275
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2575,7 +2575,7 @@ msgstr ""
 msgid "Main Toolbar"
 msgstr ""
 
-#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:259
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2727,7 +2727,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:234
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2735,7 +2735,7 @@ msgstr "Tilbake"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:236
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -3169,7 +3169,7 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
-msgid "More than 400 user-reports closed on bugzilla."
+msgid "More than 650 user-reports closed on bugzilla."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:141
@@ -3179,147 +3179,154 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
-msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
+msgid ""
+"Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
+"and use Qt6 and KF6 frameworks."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:143
+#, kde-format
+msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Advanced Search: add search for items without face regions."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:165
+#: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
@@ -3327,52 +3334,52 @@ msgid ""
 "images using deep learning model</a>."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:170
+#: core/app/views/stack/welcomepageview.cpp:171
 #, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:171
+#: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:173
+#: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 20230403."
+msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:174
+#: core/app/views/stack/welcomepageview.cpp:175
 #, kde-format
 msgid ""
 "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
@@ -3382,44 +3389,44 @@ msgid ""
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:189
+#: core/app/views/stack/welcomepageview.cpp:190
 #, kde-format
 msgid "...and much more."
 msgstr "… og  mye mer."
 
-#: core/app/views/stack/welcomepageview.cpp:195
+#: core/app/views/stack/welcomepageview.cpp:196
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:198
+#: core/app/views/stack/welcomepageview.cpp:199
 #, fuzzy, kde-format
 msgid "New Features"
 msgstr "Hovedoppslag"
 
-#: core/app/views/stack/welcomepageview.cpp:200
+#: core/app/views/stack/welcomepageview.cpp:201
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:201
+#: core/app/views/stack/welcomepageview.cpp:202
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:209
+#: core/app/views/stack/welcomepageview.cpp:210
 #, kde-format
 msgid "About"
 msgstr "Om"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:212
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:213
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3427,7 +3434,7 @@ msgid ""
 "computer."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:213
+#: core/app/views/stack/welcomepageview.cpp:214
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3435,53 +3442,53 @@ msgid ""
 "disk."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:214
+#: core/app/views/stack/welcomepageview.cpp:215
 #, fuzzy, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:215
+#: core/app/views/stack/welcomepageview.cpp:216
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a "
 "href=\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:216
+#: core/app/views/stack/welcomepageview.cpp:217
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
 "information about new versions of digiKam."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:266
+#: core/app/views/stack/welcomepageview.cpp:267
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Velkommen til digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:269
+#: core/app/views/stack/welcomepageview.cpp:270
 #, kde-format
 msgid "Background Image Credits"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:273
 #, kde-format
 msgid "Author:"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:273
+#: core/app/views/stack/welcomepageview.cpp:274
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, fuzzy, kde-format
 msgid "Location:"
 msgstr "Adresse:"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:276
 #, kde-format
 msgid "Camera:"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:276
+#: core/app/views/stack/welcomepageview.cpp:277
 #, kde-format
 msgid "Lens:"
 msgstr ""
@@ -7130,29 +7137,29 @@ msgstr ""
 "Hvis du trykker på denne knappen tilbakestilles nivåene i gjeldende kanalen "
 "til standardverdier."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:883
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:893
 #, kde-format
 msgid "Adjust Levels"
 msgstr "Just nivåer"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:900
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:912
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "Klarte ikke å laste inn data fra Gimp oppsettfil for nivåer."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:927
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:939
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "Klarte ikke å lagre Gimp oppsettfil for nivåer."
@@ -7752,17 +7759,17 @@ msgstr "Delvis gjennomsiktig"
 msgid "Use semi-transparent text background under image"
 msgstr "Bruk en delvis gjennomsiktig bakgrunn for teksten"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:317
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:326
 #, kde-format
 msgid "Enter your text here."
 msgstr "Skriv teksten her!"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:426
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:435
 #, kde-format
 msgid "Insert Text Tool"
 msgstr "Sett inn tekst-verktøy"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:439
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:448
 #, kde-format
 msgid "Insert Text"
 msgstr "Sett inn tekst"
@@ -8355,7 +8362,7 @@ msgstr "Bruke fargestyring i utskrifta"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:366
+#: core/utilities/maintenance/maintenancedlg.cpp:404
 #, kde-format
 msgid "Settings..."
 msgstr "Innstillinger …"
@@ -9444,7 +9451,7 @@ msgstr "Energifunksjon"
 msgid "Advanced Settings"
 msgstr "Avanserte innstillinger"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:769
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:778
 #, kde-format
 msgid "Liquid Rescale"
 msgstr "Flytende nyskalering"
@@ -10521,7 +10528,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Kan ikke lagre fila «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -10644,7 +10653,7 @@ msgid "Saving changes -"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:247
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
@@ -11379,8 +11388,8 @@ msgstr[1] "<p>%1 tegn.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:394
-#: core/libs/widgets/text/dtextedit.cpp:394
+#: core/libs/widgets/text/dplaintextedit.cpp:400
+#: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -19808,7 +19817,7 @@ msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
 #, kde-format
-msgid "No OpenGL context have been found"
+msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
@@ -19817,7 +19826,7 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:98
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
@@ -19826,42 +19835,42 @@ msgstr ""
 "Hvis dette er valgt blir lydsporet for gjeldende album lagret og lastet inn "
 "automatisk ved neste oppstart."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
 #, kde-format
 msgid "Move the selected track up in the playlist."
 msgstr "Flytt det markerte sporet oppover i spillelista."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:126
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
 #, kde-format
 msgid "Move the selected track down in the playlist."
 msgstr "Flytt det markerte sporet nedover i spillelista."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:127
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
 #, kde-format
 msgid "Add new tracks to the playlist."
 msgstr "Legg til nye spor i spillelista."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:128
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
 #, kde-format
 msgid "Delete the selected track from the playlist."
 msgstr "Slett det valgte sporet fra spillelista."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:129
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:123
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "Last inn spilleliste fra en fil."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:130
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:124
 #, kde-format
 msgid "Save playlist to a file."
 msgstr "Lagre spillelista til en fil."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:131
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
 #, kde-format
 msgid "Clear the playlist."
 msgstr "Tøm spillelista."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:264
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:258
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -19869,7 +19878,7 @@ msgid_plural "%1 tracks [%2]"
 msgstr[0] "1 spor [%2]"
 msgstr[1] "%1 spor [%2]"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:292
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:286
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
@@ -19877,46 +19886,46 @@ msgstr ""
 "Bildet kommer til å vises lengre enn lydsporets varighet. Det foreslås at du "
 "legger til flere lydfiler."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:424
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr "Du kan bare flytte bildefiler opp en av gangen."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:468
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:462
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr "Du kan bare flytte filer ned en av gangen."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:483
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:484
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:543
 #, kde-format
 msgid "Playlist (*.m3u)"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:542
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:603
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:619
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:613
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr "Klarte ikke å lage forhåndsvisning av en tom filliste."
@@ -20013,24 +20022,25 @@ msgstr ""
 msgid "Soundtrack:"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
-#, kde-format
-msgid "No detail available"
-msgstr ""
-
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:194
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:236
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:257
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 – %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:215
+#, kde-format
+msgid "No detail available"
+msgstr ""
+
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:248
 #, kde-format
 msgid "%1 may not be playable."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:256
 #, kde-format
 msgid "This file may not be playable."
 msgstr ""
@@ -20068,9 +20078,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:70
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
 #, kde-format
-msgid "Time"
+msgid "Time:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -20092,6 +20102,12 @@ msgstr ""
 #, kde-format
 msgctxt "Total amount of time of presentation"
 msgid "Total:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_soundLabel)
+#: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:115
+#, kde-format
+msgid "Volumes:"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -20234,7 +20250,7 @@ msgid "Image #%1"
 msgstr "Bilde nr. %1"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:679
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:685
 #, kde-format
 msgid "Ken Burns"
 msgstr "Ken Burns"
@@ -20377,82 +20393,82 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
 #, kde-format
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "Ingen"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "Bøy"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
 #, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "Blanding"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "Kube"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "Ton ut"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "Blafre"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "Inn ut"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
 #, kde-format
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "Roter"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:577
 #, kde-format
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "Glidende"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:578
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1035
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "Tilfeldig"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
 #, kde-format
 msgid "Slideshow Completed"
 msgstr "Lysbildevisning ferdig"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:632
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:880
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:638
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:869
 #, kde-format
 msgid "Click to Exit..."
 msgstr "Klikk for å avslutte …"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:637
 #, kde-format
 msgid "SlideShow Completed"
 msgstr "Lysbildevisning ferdig"
@@ -20497,27 +20513,27 @@ msgctxt "@action"
 msgid "Presentation..."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:230
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:231
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:249
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:411
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:257
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:412
 #, kde-format
 msgid "Do you want to move this image to the trash?"
@@ -34699,7 +34715,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:201
+#: core/utilities/setup/downloader/filesdownloader.cpp:231
 #, kde-format
 msgid "Download"
 msgstr ""
@@ -39140,27 +39156,27 @@ msgid "Default from Desktop"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:238
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:240
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:250
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -40742,7 +40758,8 @@ msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:165
 #, kde-format
-msgid "MJPEGStream plugin, OCR text Converter plugin"
+msgid ""
+"MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:170
@@ -40824,7 +40841,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:348
+#: core/utilities/maintenance/maintenancedlg.cpp:386
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Bildesortering etter kvalitet"
@@ -41314,7 +41331,7 @@ msgstr ""
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr ""
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1224
+#: core/libs/widgets/mainview/thememanager_p.cpp:1232
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -49440,12 +49457,6 @@ msgctxt "the format of the date"
 msgid "Format:"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
-#, kde-format
-msgid "Time:"
-msgstr ""
-
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:36
 #, kde-format
 msgctxt "renaming option for directory related information"
@@ -49727,28 +49738,28 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:331
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Hopp over bilder som allerede er skannet"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:332
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Skann igjen og flett sammen resultater"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:321
+#: core/utilities/maintenance/maintenancedlg.cpp:333
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Nullstil ubekreftede resultater og skann igjen"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:322
+#: core/utilities/maintenance/maintenancedlg.cpp:334
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
@@ -50663,6 +50674,7 @@ msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
+msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr ""
 
@@ -50789,6 +50801,12 @@ msgstr "Legg til mappe"
 msgid "New Folder"
 msgstr "Ny mappe"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#, kde-format
+msgctxt "@title:window"
+msgid "Bookmarks Management"
+msgstr ""
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
@@ -50878,7 +50896,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
 msgctxt "@title:window"
-msgid "Export error"
+msgid "Export Bookmark"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
@@ -51205,13 +51223,6 @@ msgstr "Fjern hastighet"
 msgid "Look up missing altitude values"
 msgstr "Slå opp manglende høydeverdier"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
-msgctxt "@title:window"
-msgid "GPS Sync"
-msgstr ""
-
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
 msgid ""
@@ -51504,6 +51515,12 @@ msgstr "Bildetagger er endret."
 msgid "Retrieving RG info -"
 msgstr ""
 
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
+#, kde-format
+msgctxt "@title:window"
+msgid "Reverse Geo-coding Error"
+msgstr ""
+
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
@@ -51531,8 +51548,9 @@ msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
 #, kde-format
+msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
-msgstr "Avbryt omvendt geokoding?"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:235
 #, fuzzy, kde-format
@@ -54603,6 +54621,11 @@ msgstr ""
 msgid "&Right Panel"
 msgstr ""
 
+#: core/utilities/maintenance/autotagsassignment.cpp:102
+#, kde-format
+msgid "Autotags Assignment"
+msgstr ""
+
 #: core/utilities/maintenance/dbcleaner.cpp:130
 #: core/utilities/maintenance/dbcleaner.cpp:230
 #: core/utilities/maintenance/dbcleaner.cpp:259
@@ -54708,53 +54731,53 @@ msgstr ""
 msgid "Finger-prints"
 msgstr "Fingeravtrykk"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:197
+#: core/utilities/maintenance/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:212
+#: core/utilities/maintenance/maintenancedlg.cpp:224
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>Velg vedlikeholdshandlinger som skal behandles</b></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:218
+#: core/utilities/maintenance/maintenancedlg.cpp:230
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Behandle elementer fra:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:232
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:221
+#: core/utilities/maintenance/maintenancedlg.cpp:233
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:222
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid "Common Options"
 msgstr "Vanlige innstillinger"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:226
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:228
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, kde-format
 msgid "Scan for new items"
 msgstr "Søk etter nye elementer"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:234
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -54763,96 +54786,96 @@ msgid ""
 "> in order to make sure that no database corruption occurs.</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:250
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:251
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:241
+#: core/utilities/maintenance/maintenancedlg.cpp:253
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:245
+#: core/utilities/maintenance/maintenancedlg.cpp:257
 #, kde-format
 msgid "Perform database cleaning"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:250
-#: core/utilities/maintenance/maintenancedlg.cpp:257
+#: core/utilities/maintenance/maintenancedlg.cpp:262
+#: core/utilities/maintenance/maintenancedlg.cpp:269
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Søk etter elementer som er endret eller ikke katalogisert (raskere)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:252
+#: core/utilities/maintenance/maintenancedlg.cpp:264
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Gjenoppbygg miniatyrbilder"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:259
+#: core/utilities/maintenance/maintenancedlg.cpp:271
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Gjenoppbygg fingeravtrykk"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:268
+#: core/utilities/maintenance/maintenancedlg.cpp:280
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:288
+#: core/utilities/maintenance/maintenancedlg.cpp:300
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:304
 #, kde-format
 msgid "No restriction"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:293
+#: core/utilities/maintenance/maintenancedlg.cpp:305
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:294
+#: core/utilities/maintenance/maintenancedlg.cpp:306
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:308
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:315
+#: core/utilities/maintenance/maintenancedlg.cpp:327
 #, kde-format
 msgid "Faces data management: "
 msgstr "Administrasjon av ansiktsdata: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:325
+#: core/utilities/maintenance/maintenancedlg.cpp:337
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Tøm og bygg alle treningsdata"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:339
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54860,53 +54883,89 @@ msgid ""
 "available faces."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:330
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:337
+#: core/utilities/maintenance/maintenancedlg.cpp:349
 #, kde-format
-msgid "Scan Mode: "
-msgstr "Skannemodus: "
+msgid "Auto-tagging mode: "
+msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:354
 #, kde-format
-msgid "Clean all and re-scan"
-msgstr "Nullstil alt og skann igjen"
+msgid "Clean all and re-assign"
+msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:343
+#: core/utilities/maintenance/maintenancedlg.cpp:355
+#: core/utilities/maintenance/maintenancedlg.cpp:381
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Skann bare det som ikke er tilordnet"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:355
+#: core/utilities/maintenance/maintenancedlg.cpp:358
+#, kde-format
+msgid "Selection model: "
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:363
+#, kde-format
+msgid "YOLOv5 NANO"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:364
+#, kde-format
+msgid "YOLOv5 XLarge"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:365
+#, kde-format
+msgid "ResNet50"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:368
+#, kde-format
+msgid "Auto-tags Assignment"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:375
+#, kde-format
+msgid "Scan Mode: "
+msgstr "Skannemodus: "
+
+#: core/utilities/maintenance/maintenancedlg.cpp:380
+#, kde-format
+msgid "Clean all and re-scan"
+msgstr "Nullstil alt og skann igjen"
+
+#: core/utilities/maintenance/maintenancedlg.cpp:393
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Synk-retning:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:359
+#: core/utilities/maintenance/maintenancedlg.cpp:397
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Fra databasen til bildenes metadata"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:360
+#: core/utilities/maintenance/maintenancedlg.cpp:398
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Fra bildenes metadata til databasen"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:401
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Sjekk metadata oppsettspanel etter detaljer: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:368
+#: core/utilities/maintenance/maintenancedlg.cpp:406
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Synkroniser  metadata med databasen"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:375
+#: core/utilities/maintenance/maintenancemngr.cpp:404
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -54915,7 +54974,7 @@ msgstr ""
 "Alle handlinger er utført.\n"
 "Varughet: %1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:376
+#: core/utilities/maintenance/maintenancemngr.cpp:405
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam vedlikehold"
@@ -55835,6 +55894,11 @@ msgstr ""
 #, kde-format
 msgctxt "'Return items digitized between...and..."
 msgid "and"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#, kde-format
+msgid "Time"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:187
@@ -57954,13 +58018,13 @@ msgstr ""
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:189
+#: core/utilities/setup/downloader/filesdownloader.cpp:219
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:220
+#: core/utilities/setup/downloader/filesdownloader.cpp:250
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -57973,23 +58037,23 @@ msgid ""
 "have to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:232
+#: core/utilities/setup/downloader/filesdownloader.cpp:262
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:283
+#: core/utilities/setup/downloader/filesdownloader.cpp:313
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:292
+#: core/utilities/setup/downloader/filesdownloader.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:293
+#: core/utilities/setup/downloader/filesdownloader.cpp:323
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -58001,28 +58065,28 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:301
+#: core/utilities/setup/downloader/filesdownloader.cpp:331
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:436
+#: core/utilities/setup/downloader/filesdownloader.cpp:466
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:460
+#: core/utilities/setup/downloader/filesdownloader.cpp:490
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:467
+#: core/utilities/setup/downloader/filesdownloader.cpp:497
 #, kde-format
 msgid "File open error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:482
+#: core/utilities/setup/downloader/filesdownloader.cpp:512
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-30 00:39+0000\n"
-"PO-Revision-Date: 2023-11-29 15:52+0100\n"
+"POT-Creation-Date: 2023-12-01 00:39+0000\n"
+"PO-Revision-Date: 2023-11-30 12:10+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -6104,24 +6104,71 @@ msgstr ""
 "<para>Aquesta eina del gestor de la cua per lots assignarà valors de "
 "metadades de valoració, o color, o rètols de selecció a les imatges.</para>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:46
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:77
+#, kde-format
+msgctxt "@label"
+msgid ""
+"<p>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</p><p>The settings below "
+"determines the deep-learning model to use while parsing image contents to "
+"determine the subjects of the photography. The neural network used in "
+"background will generate automatically a serie of tags describing the "
+"contents and store the results in the database.</p><p><b>YOLOv5 Nano</b>: "
+"this model is a neural network which offers exceptional speed and "
+"efficiency. It enables you to swiftly evaluate the integration of smaller-"
+"scale object detection scenarios.</p><p><b>YOLOv5 XLarge</b>: this model is "
+"a neural network dedicated for more complex object detection requirements "
+"and showcases remarkable capabilities. Despite the additional complexity "
+"introducing more time-latency and computer resources, it's must be used for "
+"larger-scale object detection scenarios.</p><p><b>ResNet50</b>: this model "
+"is a specific type of convolutional neural network formed by stacking "
+"residual blocks commonly used to power computer vision applications as "
+"object detections."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/utilities/maintenance/maintenancedlg.cpp:363
+#, fuzzy, kde-format
+#| msgid "YOLOv5 NANO"
+msgid "YOLOv5 Nano"
+msgstr "YOLOv5 NANO"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/utilities/maintenance/maintenancedlg.cpp:364
+#, kde-format
+msgid "YOLOv5 XLarge"
+msgstr "YOLOv5 XLarge"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
+#: core/utilities/maintenance/maintenancedlg.cpp:365
+#, kde-format
+msgid "ResNet50"
+msgstr "ResNet50"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
 msgctxt "@title"
 msgid "Assign Tags"
 msgstr "Assignació d'etiquetes"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:61
-#, kde-format
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to assign tags metadata to images"
 msgctxt "@info"
-msgid "A tool to assign tags metadata to images"
+msgid "A tool to assign tags automatically to images"
 msgstr "Una eina per a assignar metadades d'etiquetes a les imatges"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:66
-#, kde-kuit-format
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:67
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
+#| "metadata values to images.</para>"
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
-"values to images.</para>"
+"values to images automatically using deep-learning engine.</para>"
 msgstr ""
 "<para>Aquesta eina del gestor de la cua per lots assignarà valors de "
 "metadades de jerarquies de paraules claus a les imatges.</para>"
@@ -8970,7 +9017,7 @@ msgstr "Usa la gestió del color per a imprimir"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:404
+#: core/utilities/maintenance/maintenancedlg.cpp:413
 #, kde-format
 msgid "Settings..."
 msgstr "Configuració..."
@@ -43167,11 +43214,12 @@ msgid "Quốc Hưng Trần"
 msgstr "Quốc Hưng Trần"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:165
-#, fuzzy, kde-format
-#| msgid "MJPEGStream plugin, OCR text Converter plugin"
+#, kde-format
 msgid ""
 "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
-msgstr "Connector MJPEGStream, connector convertidor de text OCR"
+msgstr ""
+"Connector MJPEGStream, connector convertidor de text OCR, motor d'assignació "
+"d'etiquetes automàtiques"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:170
 #, kde-format
@@ -43257,7 +43305,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:386
+#: core/utilities/maintenance/maintenancedlg.cpp:395
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Ordena les imatges segons la qualitat"
@@ -57518,11 +57566,10 @@ msgstr "Plafó &esquerre"
 msgid "&Right Panel"
 msgstr "Plafó d&ret"
 
-#: core/utilities/maintenance/autotagsassignment.cpp:102
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#: core/utilities/maintenance/autotagsassignment.cpp:99
+#, kde-format
 msgid "Autotags Assignment"
-msgstr "Ajust automàtic"
+msgstr "Assignació d'etiquetes automàtiques"
 
 #: core/utilities/maintenance/dbcleaner.cpp:130
 #: core/utilities/maintenance/dbcleaner.cpp:230
@@ -57805,82 +57852,78 @@ msgid "Detect and recognize Faces"
 msgstr "Detecta i reconeix les cares"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:349
-#, fuzzy, kde-format
-#| msgid "Metering mode:"
+#, kde-format
 msgid "Auto-tagging mode: "
-msgstr "Mode de mesura:"
+msgstr "Mode d'etiquetatge automàtic: "
 
 #: core/utilities/maintenance/maintenancedlg.cpp:354
-#, fuzzy, kde-format
-#| msgid "Clean all and re-scan"
+#, kde-format
 msgid "Clean all and re-assign"
-msgstr "Neteja-ho tot i torna a explorar"
+msgstr "Neteja-ho tot i torna a assignar"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:355
-#: core/utilities/maintenance/maintenancedlg.cpp:381
+#: core/utilities/maintenance/maintenancedlg.cpp:390
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Explora només els no assignats"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:358
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Segmentation mode:"
+#, kde-format
 msgid "Selection model: "
-msgstr "Mode de segmentació:"
+msgstr "Model de selecció: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:367
 #, kde-format
-msgid "YOLOv5 NANO"
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+"exceptional speed and efficiency. It enables you to swiftly evaluate the "
+"integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
+"XLarge</b>: this model is a neural network dedicated for more complex object "
+"detection requirements and showcases remarkable capabilities. Despite the "
+"additional complexity introducing more time-latency and computer resources, "
+"it's must be used for larger-scale object detection scenarios.</"
+"p><p><b>ResNet50</b>: this model is a specific type of convolutional neural "
+"network formed by stacking residual blocks commonly used to power computer "
+"vision applications as object detections."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:364
+#: core/utilities/maintenance/maintenancedlg.cpp:376
 #, kde-format
-msgid "YOLOv5 XLarge"
-msgstr ""
-
-#: core/utilities/maintenance/maintenancedlg.cpp:365
-#, kde-format
-msgid "ResNet50"
-msgstr ""
-
-#: core/utilities/maintenance/maintenancedlg.cpp:368
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
-msgstr "Ajust automàtic"
+msgstr "Assignació d'etiquetes automàtiques"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:375
+#: core/utilities/maintenance/maintenancedlg.cpp:384
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Mode d'exploració: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:380
+#: core/utilities/maintenance/maintenancedlg.cpp:389
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Neteja-ho tot i torna a explorar"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:393
+#: core/utilities/maintenance/maintenancedlg.cpp:402
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direcció de la sincronització: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:397
+#: core/utilities/maintenance/maintenancedlg.cpp:406
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Des de la base de dades a les metadades de la imatge"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:398
+#: core/utilities/maintenance/maintenancedlg.cpp:407
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Des de les metadades de la imatge a la base de dades"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:401
+#: core/utilities/maintenance/maintenancedlg.cpp:410
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Per a més detalls reviseu el plafó de configuració de les metadades: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:406
+#: core/utilities/maintenance/maintenancedlg.cpp:415
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Sincronitza les metadades i la base de dades"

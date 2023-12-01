@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-30 00:39+0000\n"
+"POT-Creation-Date: 2023-12-01 00:39+0000\n"
 "PO-Revision-Date: 2023-11-26 01:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -6083,24 +6083,70 @@ msgstr ""
 "<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere derecelendirme, renk veya "
 "etiket üst verisi değerlerini atayacaktır.</para>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:46
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:77
+#, kde-format
+msgctxt "@label"
+msgid ""
+"<p>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</p><p>The settings below "
+"determines the deep-learning model to use while parsing image contents to "
+"determine the subjects of the photography. The neural network used in "
+"background will generate automatically a serie of tags describing the "
+"contents and store the results in the database.</p><p><b>YOLOv5 Nano</b>: "
+"this model is a neural network which offers exceptional speed and "
+"efficiency. It enables you to swiftly evaluate the integration of smaller-"
+"scale object detection scenarios.</p><p><b>YOLOv5 XLarge</b>: this model is "
+"a neural network dedicated for more complex object detection requirements "
+"and showcases remarkable capabilities. Despite the additional complexity "
+"introducing more time-latency and computer resources, it's must be used for "
+"larger-scale object detection scenarios.</p><p><b>ResNet50</b>: this model "
+"is a specific type of convolutional neural network formed by stacking "
+"residual blocks commonly used to power computer vision applications as "
+"object detections."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/utilities/maintenance/maintenancedlg.cpp:363
+#, kde-format
+msgid "YOLOv5 Nano"
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/utilities/maintenance/maintenancedlg.cpp:364
+#, kde-format
+msgid "YOLOv5 XLarge"
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
+#: core/utilities/maintenance/maintenancedlg.cpp:365
+#, kde-format
+msgid "ResNet50"
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
 msgctxt "@title"
 msgid "Assign Tags"
 msgstr "Etiketler Ata"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:61
-#, kde-format
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to assign tags metadata to images"
 msgctxt "@info"
-msgid "A tool to assign tags metadata to images"
+msgid "A tool to assign tags automatically to images"
 msgstr "Görsellere etiketler üst verisi atamak için bir araç"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:66
-#, kde-kuit-format
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:67
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
+#| "metadata values to images.</para>"
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
-"values to images.</para>"
+"values to images automatically using deep-learning engine.</para>"
 msgstr ""
 "<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere klavye hiyerarşisi üst "
 "verisi değerlerini atayacaktır.</para>"
@@ -8908,7 +8954,7 @@ msgstr "Baskı için Renk Yönetimi Kullan"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:404
+#: core/utilities/maintenance/maintenancedlg.cpp:413
 #, kde-format
 msgid "Settings..."
 msgstr "Ayarlar..."
@@ -43743,7 +43789,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:386
+#: core/utilities/maintenance/maintenancedlg.cpp:395
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Resim Kalitesi Sıralayıcısı"
@@ -58519,7 +58565,7 @@ msgstr "&Sol Panel"
 msgid "&Right Panel"
 msgstr "&Sağ Panel"
 
-#: core/utilities/maintenance/autotagsassignment.cpp:102
+#: core/utilities/maintenance/autotagsassignment.cpp:99
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Autotags Assignment"
@@ -58835,7 +58881,7 @@ msgid "Clean all and re-assign"
 msgstr "Tümünü temizle ve tekrar tara"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:355
-#: core/utilities/maintenance/maintenancedlg.cpp:381
+#: core/utilities/maintenance/maintenancedlg.cpp:390
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Yalnızca atanmamışları tara"
@@ -58847,58 +58893,59 @@ msgstr "Yalnızca atanmamışları tara"
 msgid "Selection model: "
 msgstr "Bölütlendirme kipi:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:367
 #, kde-format
-msgid "YOLOv5 NANO"
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+"exceptional speed and efficiency. It enables you to swiftly evaluate the "
+"integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
+"XLarge</b>: this model is a neural network dedicated for more complex object "
+"detection requirements and showcases remarkable capabilities. Despite the "
+"additional complexity introducing more time-latency and computer resources, "
+"it's must be used for larger-scale object detection scenarios.</"
+"p><p><b>ResNet50</b>: this model is a specific type of convolutional neural "
+"network formed by stacking residual blocks commonly used to power computer "
+"vision applications as object detections."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:364
-#, kde-format
-msgid "YOLOv5 XLarge"
-msgstr ""
-
-#: core/utilities/maintenance/maintenancedlg.cpp:365
-#, kde-format
-msgid "ResNet50"
-msgstr ""
-
-#: core/utilities/maintenance/maintenancedlg.cpp:368
+#: core/utilities/maintenance/maintenancedlg.cpp:376
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "Otomatik Ayarlama"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:375
+#: core/utilities/maintenance/maintenancedlg.cpp:384
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Tarama Kipi: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:380
+#: core/utilities/maintenance/maintenancedlg.cpp:389
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Tümünü temizle ve tekrar tara"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:393
+#: core/utilities/maintenance/maintenancedlg.cpp:402
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Senkronize Yönü: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:397
+#: core/utilities/maintenance/maintenancedlg.cpp:406
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Veritabanından resim metaverisine"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:398
+#: core/utilities/maintenance/maintenancedlg.cpp:407
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Resim metaverisinden veritabanına"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:401
+#: core/utilities/maintenance/maintenancedlg.cpp:410
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Detaylar için metaveri kurulum panelini kontrol edin: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:406
+#: core/utilities/maintenance/maintenancedlg.cpp:415
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Metaveriyi ve Veritabanını Senkronize Et"

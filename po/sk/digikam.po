@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-30 00:39+0000\n"
+"POT-Creation-Date: 2023-12-01 00:39+0000\n"
 "PO-Revision-Date: 2023-09-28 22:38+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -5994,25 +5994,65 @@ msgid ""
 "label metadata values to images.</para>"
 msgstr "Toto je zoznam položiek, ktoré majú byť zmazané."
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:46
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:77
+#, kde-format
+msgctxt "@label"
+msgid ""
+"<p>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</p><p>The settings below "
+"determines the deep-learning model to use while parsing image contents to "
+"determine the subjects of the photography. The neural network used in "
+"background will generate automatically a serie of tags describing the "
+"contents and store the results in the database.</p><p><b>YOLOv5 Nano</b>: "
+"this model is a neural network which offers exceptional speed and "
+"efficiency. It enables you to swiftly evaluate the integration of smaller-"
+"scale object detection scenarios.</p><p><b>YOLOv5 XLarge</b>: this model is "
+"a neural network dedicated for more complex object detection requirements "
+"and showcases remarkable capabilities. Despite the additional complexity "
+"introducing more time-latency and computer resources, it's must be used for "
+"larger-scale object detection scenarios.</p><p><b>ResNet50</b>: this model "
+"is a specific type of convolutional neural network formed by stacking "
+"residual blocks commonly used to power computer vision applications as "
+"object detections."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/utilities/maintenance/maintenancedlg.cpp:363
+#, kde-format
+msgid "YOLOv5 Nano"
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/utilities/maintenance/maintenancedlg.cpp:364
+#, kde-format
+msgid "YOLOv5 XLarge"
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
+#: core/utilities/maintenance/maintenancedlg.cpp:365
+#, kde-format
+msgid "ResNet50"
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, fuzzy, kde-format
 #| msgid "Assign Tag"
 msgctxt "@title"
 msgid "Assign Tags"
 msgstr "Priradiť štítok"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:61
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:62
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "A tool to assign tags metadata to images"
+msgid "A tool to assign tags automatically to images"
 msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie."
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:66
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:67
 #, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
-"values to images.</para>"
+"values to images automatically using deep-learning engine.</para>"
 msgstr "Toto je zoznam položiek, ktoré majú byť zmazané."
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:46
@@ -8759,7 +8799,7 @@ msgstr "Použiť správu farieb pre tlačenie"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:404
+#: core/utilities/maintenance/maintenancedlg.cpp:413
 #, kde-format
 msgid "Settings..."
 msgstr "Nastavenia..."
@@ -43245,7 +43285,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:386
+#: core/utilities/maintenance/maintenancedlg.cpp:395
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Triedenie kvality obrázkov"
@@ -58395,7 +58435,7 @@ msgstr "&Ľavý panel"
 msgid "&Right Panel"
 msgstr "P&ravý panel"
 
-#: core/utilities/maintenance/autotagsassignment.cpp:102
+#: core/utilities/maintenance/autotagsassignment.cpp:99
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Autotags Assignment"
@@ -58700,7 +58740,7 @@ msgid "Clean all and re-assign"
 msgstr "Vymazať všetko a znovu prehľadať"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:355
-#: core/utilities/maintenance/maintenancedlg.cpp:381
+#: core/utilities/maintenance/maintenancedlg.cpp:390
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Prehľadať iba nepriradené"
@@ -58712,58 +58752,59 @@ msgstr "Prehľadať iba nepriradené"
 msgid "Selection model: "
 msgstr "Cieľový priečinok:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:367
 #, kde-format
-msgid "YOLOv5 NANO"
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+"exceptional speed and efficiency. It enables you to swiftly evaluate the "
+"integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
+"XLarge</b>: this model is a neural network dedicated for more complex object "
+"detection requirements and showcases remarkable capabilities. Despite the "
+"additional complexity introducing more time-latency and computer resources, "
+"it's must be used for larger-scale object detection scenarios.</"
+"p><p><b>ResNet50</b>: this model is a specific type of convolutional neural "
+"network formed by stacking residual blocks commonly used to power computer "
+"vision applications as object detections."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:364
-#, kde-format
-msgid "YOLOv5 XLarge"
-msgstr ""
-
-#: core/utilities/maintenance/maintenancedlg.cpp:365
-#, kde-format
-msgid "ResNet50"
-msgstr ""
-
-#: core/utilities/maintenance/maintenancedlg.cpp:368
+#: core/utilities/maintenance/maintenancedlg.cpp:376
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "Automatická oprava"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:375
+#: core/utilities/maintenance/maintenancedlg.cpp:384
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Režim prehľadávania: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:380
+#: core/utilities/maintenance/maintenancedlg.cpp:389
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Vymazať všetko a znovu prehľadať"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:393
+#: core/utilities/maintenance/maintenancedlg.cpp:402
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Smer synchronizácie: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:397
+#: core/utilities/maintenance/maintenancedlg.cpp:406
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Z databázy do metadát obrázkov"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:398
+#: core/utilities/maintenance/maintenancedlg.cpp:407
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Z metadát obrázkov do databáze"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:401
+#: core/utilities/maintenance/maintenancedlg.cpp:410
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Podrobnosti nastavíte v okne s metadátami: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:406
+#: core/utilities/maintenance/maintenancedlg.cpp:415
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Synchronizovať metadáta s databázou"
