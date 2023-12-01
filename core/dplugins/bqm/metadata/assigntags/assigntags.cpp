@@ -159,7 +159,7 @@ bool AssignTags::toolOperations()
     DImg img  = image();
     int model = settings()[QLatin1String("AutoTagModel")].toInt();
 
-    if (img.isNull())
+    if (ret && img.isNull())
     {
         img = PreviewLoadThread::loadHighQualitySynchronously(outputUrl().toLocalFile(),
                                                               PreviewSettings::RawPreviewAutomatic);
