@@ -59,6 +59,7 @@ AutoTagsAssign::AutoTagsAssign(DetectorModel model)
 
         default:
         {
+            qCWarning(DIGIKAM_AUTOTAGSENGINE_LOG) << "Unknow auto-tags model";
             break;
         }
     }

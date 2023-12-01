@@ -98,7 +98,7 @@ bool DNNYoloDetector::loadModels()
 
         case (YoloVersions::RESNET50):
         {
-            qCWarning(DIGIKAM_AUTOTAGSENGINE_LOG) << "YOLO::RESNET50 has no model file to load!";
+            // Nothing to do here.
             break;
         }
     }
