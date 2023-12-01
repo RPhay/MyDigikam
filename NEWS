@@ -20,4 +20,5 @@ BUGFIXES:
 007 ==> 426003 - Implementing object detection.
 008 ==> 458592 - Add automatic tags to describe photo contents based on Wikidata taxonomy.
 009 ==> 440582 - Detecting black & white image.
-010 ==> 
+010 ==> 435184 - How can I integrate an object detection plugin written in Python?
+011 ==> 
