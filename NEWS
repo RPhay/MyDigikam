@@ -27,7 +27,7 @@ BUGFIXES:
 014 ==> 096844 - wish: filter/view by searching exif or comment in images.
 015 ==> 143559 - Menu "camera" -> "search media" stops digiKam.
 016 ==> 113805 - Image contextual menu "Set as Tag Thumbnail" in "Dates" view and "Searches" view?
-017 ==> 
+017 ==> 477470 - File name timestamp formats.
 018 ==> 
 019 ==> 
 020 ==> 
