@@ -35,9 +35,18 @@ index a06737a29..0e4fa44b8 100644
  if (BUILD_WITH_DBUS)
    find_package(Qt6DBus ${REQUIRED_QT_VERSION})
 diff --git a/src/lib/marble/CMakeLists.txt b/src/lib/marble/CMakeLists.txt
-index 15f11649b..944d90ac2 100644
+index 15f11649b..928869f8d 100644
 --- a/src/lib/marble/CMakeLists.txt
 +++ b/src/lib/marble/CMakeLists.txt
+@@ -86,7 +86,7 @@ set(marblewidget_SRCS
+     TourItemDelegate.cpp
+     MapViewItemDelegate.cpp
+     TourPlayback.cpp
+-    LegendWidget.cpp
++#    LegendWidget.cpp
+     PlaybackItem.cpp
+     PlaybackAnimatedUpdateItem.cpp
+     PlaybackFlyToItem.cpp
 @@ -127,7 +127,7 @@ set(marblewidget_SRCS
      PluginManager.cpp
      TimeControlWidget.cpp
@@ -47,11 +56,13 @@ index 15f11649b..944d90ac2 100644
      MarbleGlobal.cpp
      MarbleDirs.cpp
      MarbleLocale.cpp
-@@ -358,7 +358,7 @@ set (marblewidget_UI
+@@ -357,8 +357,8 @@ set (marblewidget_UI
+ )
  if (MARBLE_NO_WEBKITWIDGETS)
      LIST(APPEND marblewidget_UI
-         NullLegendWidget.ui
+-        NullLegendWidget.ui
 -        NullWebPopupWidget.ui
++#        NullLegendWidget.ui
 +#        NullWebPopupWidget.ui
          )
  else()
