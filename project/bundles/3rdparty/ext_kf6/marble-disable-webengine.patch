@@ -35,7 +35,7 @@ index a06737a29..0e4fa44b8 100644
  if (BUILD_WITH_DBUS)
    find_package(Qt6DBus ${REQUIRED_QT_VERSION})
 diff --git a/src/lib/marble/CMakeLists.txt b/src/lib/marble/CMakeLists.txt
-index 15f11649b..4c11fc8a4 100644
+index 15f11649b..70a896613 100644
 --- a/src/lib/marble/CMakeLists.txt
 +++ b/src/lib/marble/CMakeLists.txt
 @@ -86,7 +86,7 @@ set(marblewidget_SRCS
@@ -47,6 +47,15 @@ index 15f11649b..4c11fc8a4 100644
      PlaybackItem.cpp
      PlaybackAnimatedUpdateItem.cpp
      PlaybackFlyToItem.cpp
+@@ -98,7 +98,7 @@ set(marblewidget_SRCS
+     AnimatedUpdateTrack.cpp
+     CurrentLocationWidget.cpp
+     MarbleNavigator.cpp
+-    MarbleLegendBrowser.cpp
++#    MarbleLegendBrowser.cpp
+     MarbleAboutDialog.cpp
+     MarbleInputHandler.cpp
+     MarbleWidgetInputHandler.cpp
 @@ -127,7 +127,7 @@ set(marblewidget_SRCS
      PluginManager.cpp
      TimeControlWidget.cpp
@@ -274,3 +283,16 @@ index 2a487735a..6311db0f0 100644
      /**
       * @brief Is popup item visible
       *
+diff --git a/src/lib/marble/routing/RoutingInputWidget.cpp b/src/lib/marble/routing/RoutingInputWidget.cpp
+index 1deec886c..c4875f296 100644
+--- a/src/lib/marble/routing/RoutingInputWidget.cpp
++++ b/src/lib/marble/routing/RoutingInputWidget.cpp
+@@ -10,7 +10,7 @@
+ #include "RouteRequest.h"
+ 
+ #ifdef MARBLE_NO_WEBKITWIDGETS
+-#include "NullTinyWebBrowser.h"
++//#include "NullTinyWebBrowser.h"
+ #else
+ #include "TinyWebBrowser.h"
+ #endif
