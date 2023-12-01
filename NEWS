@@ -22,7 +22,7 @@ BUGFIXES:
 009 ==> 440582 - Detecting black & white image.
 010 ==> 435184 - How can I integrate an object detection plugin written in Python?
 011 ==> 109106 - Suse can not find digital camera Olympus C-310.
-012 ==> 
+012 ==> 110309 - Sanyo VPC-G200 camera is recognised, but digiKam cannot find images.
 013 ==> 
 014 ==> 
 015 ==> 
