@@ -21,7 +21,6 @@
 
 // Qt includes
 
-#include <QStandardItemModel>
 #include <QStandardItem>
 
 // Local includes
@@ -80,18 +79,18 @@ public:
 
 public:
 
-    QStandardItemModel*  model;
-    TaggingActionFactory factory;
+    TagCompleterItemModel* model;
+    TaggingActionFactory   factory;
 
-    TagModel*            supportingModel;
-    AlbumFilterModel*    filterModel;
+    TagModel*              supportingModel;
+    AlbumFilterModel*      filterModel;
 };
 
 TagCompleter::TagCompleter(QObject* const parent)
     : QCompleter(parent),
       d         (new Private)
 {
-    d->model = new QStandardItemModel(this);
+    d->model = new TagCompleterItemModel(this);
     setModel(d->model);
 
     d->factory.setNameMatchMode(TaggingActionFactory::MatchContainingFragment);

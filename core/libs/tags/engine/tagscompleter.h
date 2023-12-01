@@ -18,6 +18,7 @@
 // Qt includes
 
 #include <QCompleter>
+#include <QStandardItemModel>
 
 // Local includes
 
@@ -28,6 +29,13 @@ namespace Digikam
 
 class AlbumFilterModel;
 class TagModel;
+
+class TagCompleterItemModel : public QStandardItemModel
+{
+    Q_OBJECT
+};
+
+// ----------------------------------------------------
 
 class TagCompleter : public QCompleter
 {
