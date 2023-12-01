@@ -50,7 +50,9 @@ int main(int argc, char** argv)
     if (argc < 3)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "Bad arguments !!!\nUsage: "
-                 << argv[0] << "<image_path>" << "<output_image_path>";
+                                   << argv[0]
+                                   << "<image_path>"
+                                   << "<output_image_path>";
         return 0;
     }
 
@@ -64,14 +66,14 @@ int main(int argc, char** argv)
         return 0;
     }
 
-    QHash <QString, QVector<QRect>> detectedBoxes = yoloDetector->detectObjects(cvImage);
+    QHash <QString, QVector<QRect> > detectedBoxes = yoloDetector->detectObjects(cvImage);
 
     QPainter painter(&img);
     QPen paintPen(Qt::red);
     paintPen.setWidth(1);
     painter.setPen(paintPen);
 
-    for (QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin() ;
+    for (QHash<QString, QVector<QRect> >::const_iterator it = detectedBoxes.constBegin() ;
         it != detectedBoxes.constEnd() ; it++)
     {
         for (auto rectDraw : it.value())

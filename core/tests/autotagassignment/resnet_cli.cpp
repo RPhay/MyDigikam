@@ -46,7 +46,9 @@ using namespace Digikam;
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* const parser = new QCommandLineParser();
-    parser->addOption(QCommandLineOption(QLatin1String("dataset"), QLatin1String("Data set folder"), QLatin1String("path relative to data folder")));
+    parser->addOption(QCommandLineOption(QLatin1String("dataset"),
+                                         QLatin1String("Data set folder"),
+                                         QLatin1String("path relative to data folder")));
     parser->addHelpOption();
     parser->process(app);
 
@@ -55,7 +57,7 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
 
 void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect>>& detectedBoxes)
 {
-    qCDebug(DIGIKAM_TESTS_LOG) << "Loading " << imagePath;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Loading" << imagePath;
     QImage img(imagePath);
 
     QWidget* const mainWidget     = new QWidget;
@@ -63,19 +65,19 @@ void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect>>&
     scrollArea->setWidget(mainWidget);
     scrollArea->setWidgetResizable(true);
 
-    QHBoxLayout* const layout = new QHBoxLayout(mainWidget);
-    QLabel* const fullImage   = new QLabel;
+    QHBoxLayout* const layout     = new QHBoxLayout(mainWidget);
+    QLabel* const fullImage       = new QLabel;
     fullImage->setScaledContents(true);
     layout->addWidget(fullImage);
 
-    // draw rect objects
+    // Draw rect objects
 
     QPainter painter(&img);
     QPen paintPen(Qt::red);
     paintPen.setWidth(1);
     painter.setPen(paintPen);
 
-    for (QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin() ;
+    for (QHash<QString, QVector<QRect> >::const_iterator it = detectedBoxes.constBegin() ;
         it != detectedBoxes.constEnd() ; it++)
     {
         painter.drawText(QPoint(20, 30), it.key());

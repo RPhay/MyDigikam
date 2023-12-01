@@ -44,7 +44,8 @@
 
 using namespace Digikam;
 
-class MainWindow: public QMainWindow{
+class MainWindow: public QMainWindow
+{
     Q_OBJECT
 
 public:
@@ -75,16 +76,16 @@ private Q_SLOTS:
 
 private:
 
-    QLabel*             m_fullImage;
-    QListWidget*        m_imageListView;
-    DNNYoloDetector*    m_yoloDetector;
+    QLabel*             m_fullImage       = nullptr;;
+    QListWidget*        m_imageListView   = nullptr;;
+    DNNYoloDetector*    m_yoloDetector    = nullptr;;
     YoloVersions        m_modelType;
     QList<QString>      m_objectSelected;
 
     // control pann
 
-    QPushButton*        m_applyButton;
-    DComboBox*          m_modelOptionsBox;
+    QPushButton*        m_applyButton     = nullptr;;
+    DComboBox*          m_modelOptionsBox = nullptr;;
     QList<QCheckBox*>   m_objectOptions;
 
 Q_SIGNALS:
@@ -97,7 +98,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
 {
     setWindowTitle(QLatin1String("Object Detection Test"));
 
-    m_yoloDetector = new DNNYoloDetector(YoloVersions::YOLOV5NANO);
+    m_yoloDetector                = new DNNYoloDetector(YoloVersions::YOLOV5NANO);
 
     // Image area
 
@@ -149,7 +150,7 @@ MainWindow::~MainWindow()
     delete m_modelOptionsBox;
 }
 
-QHash<QString, QVector<QRect>> MainWindow::detectObjects(const QString& imagePath) const
+QHash<QString, QVector<QRect> > MainWindow::detectObjects(const QString& imagePath) const
 {
     cv::Mat cvImage = cv::imread(imagePath.toStdString());
 
@@ -162,12 +163,11 @@ QHash<QString, QVector<QRect>> MainWindow::detectObjects(const QString& imagePat
     return m_yoloDetector->detectObjects(cvImage);
 }
 
-
-void MainWindow::drawObjects(QImage& img, const QHash<QString, QVector<QRect>>& detectedObjects)
+void MainWindow::drawObjects(QImage& img, const QHash<QString, QVector<QRect> >& detectedObjects)
 {
     if (detectedObjects.empty())
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "No object detect";
+        qCDebug(DIGIKAM_TESTS_LOG) << "No object detected";
         return;
     }
 
@@ -178,11 +178,12 @@ void MainWindow::drawObjects(QImage& img, const QHash<QString, QVector<QRect>>& 
 
     // TODO Show cropped tags
 
-    //decide which object we want to show
+    // Decide which object we want to show
 
-    for (auto label: m_objectSelected)
+    for (auto label : m_objectSelected)
     {
         QString cleanLabel = label.remove(QLatin1Char('&'));
+
         for (auto rectDraw : detectedObjects[cleanLabel])
         {
             painter.drawRect(rectDraw);
@@ -223,24 +224,23 @@ QWidget* MainWindow::setupControlPanel()
     spImage.setHorizontalStretch(2);
     controlPanel->setSizePolicy(spImage);
 
-    m_applyButton             = new QPushButton(this);
+    m_applyButton               = new QPushButton(this);
     m_applyButton->setText(QLatin1String("Apply"));
 
-    m_modelOptionsBox = new DComboBox(this);
+    m_modelOptionsBox           = new DComboBox(this);
     m_modelOptionsBox->insertItem(int(YoloVersions::YOLOV5XLARGE), QLatin1String("yolov5 Xlarge"));
     m_modelOptionsBox->insertItem(int(YoloVersions::YOLOV5NANO),   QLatin1String("yolov5 nano"));
     m_modelOptionsBox->setDefaultIndex(int(YoloVersions::YOLOV5NANO));
 
-    QScrollArea* objectsSelectArea = new QScrollArea();
+    QScrollArea* const objectsSelectArea = new QScrollArea();
     objectsSelectArea->setWidgetResizable(true);
     objectsSelectArea->setAlignment(Qt::AlignRight);
     objectsSelectArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     objectsSelectArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    QWidget* objectsSelectView = new QWidget();
-    QVBoxLayout* const vLayout = new QVBoxLayout(this);
-
-    QList<QString> predClass = m_yoloDetector->getPredefinedClasses();
+    QWidget* const objectsSelectView = new QWidget();
+    QVBoxLayout* const vLayout       = new QVBoxLayout(this);
+    QList<QString> predClass         = m_yoloDetector->getPredefinedClasses();
 
     for (int i = 0 ; i < predClass.size() ; i++)
     {
@@ -279,7 +279,7 @@ void MainWindow::slotApplySettings()
 {
     m_yoloDetector = new DNNYoloDetector(m_modelType);
 
-    QListWidgetItem* item = m_imageListView->currentItem();
+    QListWidgetItem* const item = m_imageListView->currentItem();
 
     if (item && m_imageListView->selectedItems().contains(item))
     {
@@ -324,7 +324,8 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
 
         if(! img.isNull())
         {
-            imageItems.append(new QListWidgetItem(QIcon(filesInfo[j].absoluteFilePath()), filesInfo[j].absoluteFilePath()));
+            imageItems.append(new QListWidgetItem(QIcon(filesInfo[j].absoluteFilePath()),
+                                                        filesInfo[j].absoluteFilePath()));
         }
     }
 
@@ -343,7 +344,9 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* const parser = new QCommandLineParser();
-    parser->addOption(QCommandLineOption(QLatin1String("dataset"), QLatin1String("Data set folder"), QLatin1String("path relative to data folder")));
+    parser->addOption(QCommandLineOption(QLatin1String("dataset"),
+                                         QLatin1String("Data set folder"),
+                                         QLatin1String("path relative to data folder")));
     parser->addHelpOption();
     parser->process(app);
 

@@ -50,7 +50,9 @@ using namespace Digikam;
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* const parser = new QCommandLineParser();
-    parser->addOption(QCommandLineOption(QStringList() << QLatin1String("dataset"), QLatin1String("Data set folder"), QLatin1String("path relative to data folder")));
+    parser->addOption(QCommandLineOption(QStringList() << QLatin1String("dataset"),
+                                                          QLatin1String("Data set folder"),
+                                                          QLatin1String("path relative to data folder")));
     parser->addHelpOption();
     parser->process(app);
 
@@ -85,9 +87,9 @@ int main(int argc, char** argv)
     {
         QList<QString> bacthImgs;
 
-        for (int j = 0; j < batch_size; j++)
+        for (int j = 0 ; j < batch_size ; j++)
         {
-            bacthImgs.push_back(filesInfo[i+j].absoluteFilePath());
+            bacthImgs.push_back(filesInfo[i + j].absoluteFilePath());
         }
 
         tags += autotagsEngine->generateTagsList(bacthImgs, batch_size);
@@ -104,7 +106,7 @@ int main(int argc, char** argv)
 
     for (int i = 0 ; i < sizeData ; i++)
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "Path: " << filesInfo[i].absoluteFilePath();
+        qCDebug(DIGIKAM_TESTS_LOG) << "Path:" << filesInfo[i].absoluteFilePath();
         qCDebug(DIGIKAM_TESTS_LOG) << tags[i] << QT_ENDL;
     }
 
