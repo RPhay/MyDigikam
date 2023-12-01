@@ -161,14 +161,13 @@ bool AssignTags::toolOperations()
 
     if (ret && img.isNull())
     {
-        img = PreviewLoadThread::loadHighQualitySynchronously(outputUrl().toLocalFile(),
-                                                              PreviewSettings::RawPreviewAutomatic);
+        img = PreviewLoadThread::loadFastSynchronously(outputUrl().toLocalFile(), 2000);
     }
 
     if (ret && !img.isNull())
     {
         QScopedPointer<AutoTagsAssign> autotagsEngine(new AutoTagsAssign(DetectorModel(model)));
-        QList<QList<QString> > tagsLists     = autotagsEngine->generateTagsList(QList<DImg>() << img, 16);
+        QList<QList<QString> > tagsLists = autotagsEngine->generateTagsList(QList<DImg>() << img, 16);
 
         if (!tagsLists.isEmpty())
         {

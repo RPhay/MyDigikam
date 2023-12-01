@@ -104,7 +104,7 @@ void AutotagsAssignmentTask::run()
                 break;
             }
 
-            inputImages << PreviewLoadThread::loadHighQualitySynchronously(path, PreviewSettings::RawPreviewAutomatic);
+            inputImages << PreviewLoadThread::loadFastSynchronously(path, 1000);
         }
 
         if (inputImages.isEmpty())
@@ -121,7 +121,7 @@ void AutotagsAssignmentTask::run()
         timer.start();
 
         QScopedPointer<AutoTagsAssign> autotagsEngine(new AutoTagsAssign(DetectorModel(d->modelType)));
-        QList<QList<QString> >tagsLists      = autotagsEngine->generateTagsList(inputImages, d->batchSize);
+        QList<QList<QString> >tagsLists = autotagsEngine->generateTagsList(inputImages, d->batchSize);
 
         for (int j = 0 ; j < inputImages.size() ; ++j)
         {
