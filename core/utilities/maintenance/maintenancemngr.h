@@ -52,11 +52,11 @@ private:
 
     void stage1();  ///< Find New items
     void stage2();  ///< Database Cleanup
-    void stage3();  ///< Update Thumbnails Build 
-    void stage4();  ///< Similarity Finger-prints 
-    void stage5();  ///< Find Duplicates 
-    void stage6();  ///< Faces Management 
-    void stage7();  ///< Image Quality Sorter 
+    void stage3();  ///< Update Thumbnails Build
+    void stage4();  ///< Similarity Finger-prints
+    void stage5();  ///< Find Duplicates
+    void stage6();  ///< Faces Management
+    void stage7();  ///< Image Quality Sorter
     void stage8();  ///< Autotags Assignment
     void stage9();  ///< Metadata Synchronizer
 

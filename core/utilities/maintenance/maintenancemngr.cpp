@@ -51,34 +51,25 @@ class Q_DECL_HIDDEN MaintenanceMngr::Private
 {
 public:
 
-    explicit Private()
-      : running(false),
-        newItemsFinder(nullptr),
-        thumbsGenerator(nullptr),
-        fingerPrintsGenerator(nullptr),
-        duplicatesFinder(nullptr),
-        metadataSynchronizer(nullptr),
-        imageQualitySorter(nullptr),
-        facesDetector(nullptr),
-        databaseCleaner(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                   running;
+public:
+
+    bool                   running               = false;
 
     QElapsedTimer          duration;
 
     MaintenanceSettings    settings;
 
-    NewItemsFinder*        newItemsFinder;
-    ThumbsGenerator*       thumbsGenerator;
-    FingerPrintsGenerator* fingerPrintsGenerator;
-    DuplicatesFinder*      duplicatesFinder;
-    MetadataSynchronizer*  metadataSynchronizer;
-    AutotagsAssignment*    autotagsAssignment;
-    ImageQualitySorter*    imageQualitySorter;
-    FacesDetector*         facesDetector;
-    DbCleaner*             databaseCleaner;
+    NewItemsFinder*        newItemsFinder        = nullptr;
+    ThumbsGenerator*       thumbsGenerator       = nullptr;
+    FingerPrintsGenerator* fingerPrintsGenerator = nullptr;
+    DuplicatesFinder*      duplicatesFinder      = nullptr;
+    MetadataSynchronizer*  metadataSynchronizer  = nullptr;
+    AutotagsAssignment*    autotagsAssignment    = nullptr;
+    ImageQualitySorter*    imageQualitySorter    = nullptr;
+    FacesDetector*         facesDetector         = nullptr;
+    DbCleaner*             databaseCleaner       = nullptr;
 };
 
 MaintenanceMngr::MaintenanceMngr(QObject* const parent)
@@ -349,7 +340,7 @@ void MaintenanceMngr::stage7()
     else
     {
         stage8();
-    }   
+    }
 }
 
 void MaintenanceMngr::stage8()
