@@ -139,13 +139,6 @@ void TagCompleter::update(const QString& fragment)
     }
 
     d->factory.setFragment(fragment);
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-    d->model->beginResetModel();
-
-#endif
-
     d->model->clear();
 
     QList<TaggingAction> actions = d->factory.actions();
@@ -196,13 +189,6 @@ void TagCompleter::update(const QString& fragment)
     }
 
     d->model->appendColumn(items);
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-    d->model->endResetModel();
-
-#endif
-
 }
 
 void TagCompleter::slotActivated(const QModelIndex& index)
