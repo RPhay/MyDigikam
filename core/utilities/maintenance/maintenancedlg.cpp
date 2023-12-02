@@ -12,190 +12,10 @@
  *
  * ============================================================ */
 
-#include "maintenancedlg.h"
-
-// Qt includes
-
-#include <QLabel>
-#include <QPushButton>
-#include <QCheckBox>
-#include <QGridLayout>
-#include <QComboBox>
-#include <QScrollArea>
-#include <QIcon>
-#include <QStandardPaths>
-#include <QDialogButtonBox>
-#include <QVBoxLayout>
-
-// KDE includes
-
-#include <kconfiggroup.h>
-#include <klocalizedstring.h>
-#include <ksharedconfig.h>
-
-// Local includes
-
-#include "digikam_config.h"
-#include "digikam_globals.h"
-#include "dlayoutbox.h"
-#include "dexpanderbox.h"
-#include "dnuminput.h"
-#include "setup.h"
-#include "albumselectors.h"
-#include "facescansettings.h"
-#include "imagequalitycontainer.h"
-#include "imagequalityconfselector.h"
-#include "metadatasynchronizer.h"
-#include "dxmlguiwindow.h"
-#include "applicationsettings.h"
-#include "drangebox.h"
-#include "autotagsassignment.h"
-#include "autotagsassign.h"
+#include "maintenancedlg_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN MaintenanceDlg::Private
-{
-public:
-
-    enum Operation
-    {
-        Options = 0,
-        NewItems,
-        DbCleanup,
-        Thumbnails,
-        FingerPrints,
-        Duplicates,
-        FaceManagement,
-        AutotagsAssignment,
-        ImageQualitySorter,
-        MetadataSync,
-        Stretch
-    };
-
-public:
-
-    explicit Private()
-      : buttons                 (nullptr),
-        logo                    (nullptr),
-        title                   (nullptr),
-        scanThumbs              (nullptr),
-        scanFingerPrints        (nullptr),
-        useLastSettings         (nullptr),
-        useMutiCoreCPU          (nullptr),
-        cleanThumbsDb           (nullptr),
-        cleanFacesDb            (nullptr),
-        cleanSimilarityDb       (nullptr),
-        retrainAllFaces         (nullptr),
-        shrinkDatabases         (nullptr),
-        qualityScanMode         (nullptr),
-        metadataSetup           (nullptr),
-        qualitySelector         (nullptr),
-        syncDirection           (nullptr),
-        similarityRangeBox      (nullptr),
-        dupeRestrictionBox      (nullptr),
-        vbox                    (nullptr),
-        vbox2                   (nullptr),
-        vbox3                   (nullptr),
-        vbox4                   (nullptr),
-        duplicatesBox           (nullptr),
-        similarityRange         (nullptr),
-        faceScannedHandling     (nullptr),
-        searchResultRestriction (nullptr),
-        expanderBox             (nullptr),
-        albumSelectors          (nullptr)
-    {
-    }
-
-    static const QString configGroupName;
-    static const QString configUseLastSettings;
-    static const QString configUseMutiCoreCPU;
-    static const QString configNewItems;
-    static const QString configThumbnails;
-    static const QString configScanThumbs;
-    static const QString configFingerPrints;
-    static const QString configScanFingerPrints;
-    static const QString configDuplicates;
-    static const QString configMinSimilarity;
-    static const QString configMaxSimilarity;
-    static const QString configDuplicatesRestriction;
-    static const QString configFaceManagement;
-    static const QString configFaceScannedHandling;
-    static const QString configAutotagsAssignment;
-    static const QString configAutotaggingScanMode;
-    static const QString configModelSelectionMode;
-    static const QString configImageQualitySorter;
-    static const QString configQualityScanMode;
-    static const QString configQualitySettingsSelected;
-    static const QString configMetadataSync;
-    static const QString configCleanupDatabase;
-    static const QString configCleanupThumbDatabase;
-    static const QString configCleanupFacesDatabase;
-    static const QString configCleanupSimilarityDatabase;
-    static const QString configShrinkDatabases;
-    static const QString configSyncDirection;
-
-    QDialogButtonBox*         buttons;
-    QLabel*                   logo;
-    QLabel*                   title;
-    QCheckBox*                scanThumbs;
-    QCheckBox*                scanFingerPrints;
-    QCheckBox*                useLastSettings;
-    QCheckBox*                useMutiCoreCPU;
-    QCheckBox*                cleanThumbsDb;
-    QCheckBox*                cleanFacesDb;
-    QCheckBox*                cleanSimilarityDb;
-    QCheckBox*                retrainAllFaces;
-    QCheckBox*                shrinkDatabases;
-    QComboBox*                qualityScanMode;
-    QComboBox*                autotaggingScanMode;
-    QComboBox*                modelSelectionMode;
-    QPushButton*              metadataSetup;
-    ImageQualityConfSelector* qualitySelector;
-    QComboBox*                syncDirection;
-    DHBox*                    similarityRangeBox;
-    DHBox*                    dupeRestrictionBox;
-    DVBox*                    vbox;
-    DVBox*                    vbox2;
-    DVBox*                    vbox3;
-    DVBox*                    vbox4;
-    DVBox*                    vbox5;
-    DVBox*                    duplicatesBox;
-    DIntRangeBox*             similarityRange;
-    QComboBox*                faceScannedHandling;
-    QComboBox*                searchResultRestriction;
-    DExpanderBox*             expanderBox;
-    AlbumSelectors*           albumSelectors;
-};
-
-const QString MaintenanceDlg::Private::configGroupName(QLatin1String("MaintenanceDlg Settings"));
-const QString MaintenanceDlg::Private::configUseLastSettings(QLatin1String("UseLastSettings"));
-const QString MaintenanceDlg::Private::configUseMutiCoreCPU(QLatin1String("UseMutiCoreCPU"));
-const QString MaintenanceDlg::Private::configNewItems(QLatin1String("NewItems"));
-const QString MaintenanceDlg::Private::configThumbnails(QLatin1String("Thumbnails"));
-const QString MaintenanceDlg::Private::configScanThumbs(QLatin1String("ScanThumbs"));
-const QString MaintenanceDlg::Private::configFingerPrints(QLatin1String("FingerPrints"));
-const QString MaintenanceDlg::Private::configScanFingerPrints(QLatin1String("ScanFingerPrints"));
-const QString MaintenanceDlg::Private::configDuplicates(QLatin1String("Duplicates"));
-const QString MaintenanceDlg::Private::configMinSimilarity(QLatin1String("minSimilarity"));
-const QString MaintenanceDlg::Private::configMaxSimilarity(QLatin1String("maxSimilarity"));
-const QString MaintenanceDlg::Private::configDuplicatesRestriction(QLatin1String("duplicatesRestriction"));
-const QString MaintenanceDlg::Private::configFaceManagement(QLatin1String("FaceManagement"));
-const QString MaintenanceDlg::Private::configFaceScannedHandling(QLatin1String("FaceScannedHandling"));
-const QString MaintenanceDlg::Private::configAutotagsAssignment(QLatin1String("AutotagsAssignment"));
-const QString MaintenanceDlg::Private::configAutotaggingScanMode(QLatin1String("AutotaggingScanMode"));
-const QString MaintenanceDlg::Private::configModelSelectionMode(QLatin1String("ModelSelectionMode"));
-const QString MaintenanceDlg::Private::configImageQualitySorter(QLatin1String("ImageQualitySorter"));
-const QString MaintenanceDlg::Private::configQualityScanMode(QLatin1String("QualityScanMode"));
-const QString MaintenanceDlg::Private::configQualitySettingsSelected(QLatin1String("QualitySettingsSelected"));
-const QString MaintenanceDlg::Private::configMetadataSync(QLatin1String("MetadataSync"));
-const QString MaintenanceDlg::Private::configSyncDirection(QLatin1String("SyncDirection"));
-const QString MaintenanceDlg::Private::configCleanupDatabase(QLatin1String("CleanupDatabase"));
-const QString MaintenanceDlg::Private::configCleanupThumbDatabase(QLatin1String("CleanupThumbDatabase"));
-const QString MaintenanceDlg::Private::configCleanupFacesDatabase(QLatin1String("CleanupFacesDatabase"));
-const QString MaintenanceDlg::Private::configCleanupSimilarityDatabase(QLatin1String("CleanupSimilarityDatabase"));
-const QString MaintenanceDlg::Private::configShrinkDatabases(QLatin1String("ShrinkDatabases"));
 
 MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     : QDialog(parent),
@@ -345,6 +165,16 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     // --------------------------------------------------------------------------------------
 
     d->vbox5               = new DVBox;
+    QLabel* const title    = new QLabel(d->vbox5);
+    title->setText(i18nc("@label",
+                        "<p><b>This tool allows to assign automatically tags to images by contents analysis using "
+                        "deep-learning neural network.</b></p>"
+                        "<p>The settings below determines the deep-learning model to use while parsing image "
+                        "contents to determine the subjects of the photography. The neural network used in background "
+                        "will generate automatically a serie of tags describing the contents and store the results in "
+                        "the database.</p>"));
+    title->setWordWrap(true);
+
     DHBox* const hbox12    = new DHBox(d->vbox5);
     new QLabel (i18n("Auto-tagging mode: "), hbox12);
     QWidget* const space8  = new QWidget(hbox12);
@@ -353,16 +183,6 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->autotaggingScanMode = new QComboBox(hbox12);
     d->autotaggingScanMode->addItem(i18n("Clean all and re-assign"),  AutotagsAssignment::AllItems);
     d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),   AutotagsAssignment::NonAssignedItems);
-
-    QLabel* const title    = new QLabel(d->vbox5);
-    title->setText(i18nc("@label",
-                        "<p>This tool allows to assign automatically tags to images by contents analysis using "
-                        "deep-learning neural network.</p>"
-                        "<p>The settings below determines the deep-learning model to use while parsing image "
-                        "contents to determine the subjects of the photography. The neural network used in background "
-                        "will generate automatically a serie of tags describing the contents and store the results in "
-                        "the database.</p>"));
-    title->setWordWrap(true);
 
     DHBox* const hbox13    = new DHBox(d->vbox5);
     new QLabel(i18n("Selection model: "), hbox13);
