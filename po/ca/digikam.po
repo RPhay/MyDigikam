@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:39+0000\n"
-"PO-Revision-Date: 2023-11-30 12:10+0100\n"
+"POT-Creation-Date: 2023-12-02 00:39+0000\n"
+"PO-Revision-Date: 2023-12-01 19:36+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -6104,7 +6104,8 @@ msgstr ""
 "<para>Aquesta eina del gestor de la cua per lots assignarà valors de "
 "metadades de valoració, o color, o rètols de selecció a les imatges.</para>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:77
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
+#: core/utilities/maintenance/maintenancedlg.cpp:359
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -6113,34 +6114,76 @@ msgid ""
 "determines the deep-learning model to use while parsing image contents to "
 "determine the subjects of the photography. The neural network used in "
 "background will generate automatically a serie of tags describing the "
-"contents and store the results in the database.</p><p><b>YOLOv5 Nano</b>: "
-"this model is a neural network which offers exceptional speed and "
-"efficiency. It enables you to swiftly evaluate the integration of smaller-"
-"scale object detection scenarios.</p><p><b>YOLOv5 XLarge</b>: this model is "
-"a neural network dedicated for more complex object detection requirements "
-"and showcases remarkable capabilities. Despite the additional complexity "
-"introducing more time-latency and computer resources, it's must be used for "
-"larger-scale object detection scenarios.</p><p><b>ResNet50</b>: this model "
-"is a specific type of convolutional neural network formed by stacking "
-"residual blocks commonly used to power computer vision applications as "
-"object detections."
+"contents and store the results in the database.</p>"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:88
 #, fuzzy, kde-format
-#| msgid "YOLOv5 NANO"
-msgid "YOLOv5 Nano"
-msgstr "YOLOv5 NANO"
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
+#| "integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
+#| "XLarge</b>: this model is a neural network dedicated for more complex "
+#| "object detection requirements and showcases remarkable capabilities. "
+#| "Despite the additional complexity introducing more time-latency and "
+#| "computer resources, it's must be used for larger-scale object detection "
+#| "scenarios.</p><p><b>ResNet50</b>: this model is a specific type of "
+#| "convolutional neural network formed by stacking residual blocks commonly "
+#| "used to power computer vision applications as object detections."
+msgctxt "@label"
+msgid ""
+"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+"exceptional speed and efficiency. It enables you to swiftly evaluate the "
+"integration of smaller-scale object detection scenarios. It's designed for "
+"objects detections, capable of recognizing and extracting the location of "
+"objects within an image. The limitation on the number of recognizable "
+"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
+"model is a neural network dedicated for more complex object detection "
+"requirements and showcases remarkable capabilities. Despite the additional "
+"complexity introducing more time-latency and computer resources, it's must "
+"be used for larger-scale object detection scenarios as it provides more "
+"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
+"model is a specific type of convolutional neural network formed by stacking "
+"residual blocks commonly used to power computer vision applications as "
+"object detections. This king of design allows the training of very deep "
+"networks without encountering the vanishing gradient problem. Unlike YOLO, "
+"ResNet50 is primarily focused on image classification and does not provide "
+"object localization. It can recognize objects from a vast set of more than "
+"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
+msgstr ""
+"<p><b>YOLOv5 Nano</b>: aquest model és una xarxa neuronal que ofereix una "
+"velocitat i eficiència excepcionals. Permet avaluar ràpidament la integració "
+"d'escenaris de detecció d'objectes de petita escala.</p><p><b>YOLOv5 XLarge</"
+"b>: aquest model és una xarxa neuronal dedicada a requisits de detecció "
+"d'objectes més complexos i mostra capacitats notables. Malgrat la "
+"complexitat addicional que introdueix més latència de temps i recursos "
+"informàtics, s'ha d'utilitzar per a escenaris de detecció d'objectes a gran "
+"escala.</p><p><b>ResNet50</b>: aquest model és un tipus específic de xarxa "
+"neuronal de convolució formada per l'apilament de blocs residuals normalment "
+"utilitzats per a alimentar aplicacions de visió per ordinador com a "
+"deteccions d'objectes."
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
-#: core/utilities/maintenance/maintenancedlg.cpp:364
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:101
+#: core/utilities/maintenance/maintenancedlg.cpp:368
+#, kde-format
+msgid "Selection model: "
+msgstr "Model de selecció: "
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:106
+#: core/utilities/maintenance/maintenancedlg.cpp:373
+#, kde-format
+msgid "YOLOv5 Nano"
+msgstr "YOLOv5 Nano"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
+#: core/utilities/maintenance/maintenancedlg.cpp:374
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr "YOLOv5 XLarge"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:108
+#: core/utilities/maintenance/maintenancedlg.cpp:375
 #, kde-format
 msgid "ResNet50"
 msgstr "ResNet50"
@@ -6152,26 +6195,21 @@ msgid "Assign Tags"
 msgstr "Assignació d'etiquetes"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags metadata to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to assign tags automatically to images"
-msgstr "Una eina per a assignar metadades d'etiquetes a les imatges"
+msgstr "Una eina per a assignar automàticament etiquetes a les imatges"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
 "values to images automatically using deep-learning engine.</para>"
 msgstr ""
 "<para>Aquesta eina del gestor de la cua per lots assignarà valors de "
-"metadades de jerarquies de paraules claus a les imatges.</para>"
+"metadades de jerarquies de paraules claus a les imatges automàticament "
+"utilitzant un motor d'aprenentatge profund.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:46
 #, kde-format
@@ -9017,7 +9055,7 @@ msgstr "Usa la gestió del color per a imprimir"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:413
+#: core/utilities/maintenance/maintenancedlg.cpp:426
 #, kde-format
 msgid "Settings..."
 msgstr "Configuració..."
@@ -43305,7 +43343,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:395
+#: core/utilities/maintenance/maintenancedlg.cpp:408
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Ordena les imatges segons la qualitat"
@@ -57862,68 +57900,94 @@ msgid "Clean all and re-assign"
 msgstr "Neteja-ho tot i torna a assignar"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:355
-#: core/utilities/maintenance/maintenancedlg.cpp:390
+#: core/utilities/maintenance/maintenancedlg.cpp:403
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Explora només els no assignats"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:358
-#, kde-format
-msgid "Selection model: "
-msgstr "Model de selecció: "
-
-#: core/utilities/maintenance/maintenancedlg.cpp:367
-#, kde-format
+#: core/utilities/maintenance/maintenancedlg.cpp:377
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
+#| "integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
+#| "XLarge</b>: this model is a neural network dedicated for more complex "
+#| "object detection requirements and showcases remarkable capabilities. "
+#| "Despite the additional complexity introducing more time-latency and "
+#| "computer resources, it's must be used for larger-scale object detection "
+#| "scenarios.</p><p><b>ResNet50</b>: this model is a specific type of "
+#| "convolutional neural network formed by stacking residual blocks commonly "
+#| "used to power computer vision applications as object detections."
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
 "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-"integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
-"XLarge</b>: this model is a neural network dedicated for more complex object "
-"detection requirements and showcases remarkable capabilities. Despite the "
-"additional complexity introducing more time-latency and computer resources, "
-"it's must be used for larger-scale object detection scenarios.</"
-"p><p><b>ResNet50</b>: this model is a specific type of convolutional neural "
-"network formed by stacking residual blocks commonly used to power computer "
-"vision applications as object detections."
+"integration of smaller-scale object detection scenarios. It's designed for "
+"objects detections, capable of recognizing and extracting the location of "
+"objects within an image. The limitation on the number of recognizable "
+"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
+"model is a neural network dedicated for more complex object detection "
+"requirements and showcases remarkable capabilities. Despite the additional "
+"complexity introducing more time-latency and computer resources, it's must "
+"be used for larger-scale object detection scenarios as it provides more "
+"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
+"model is a specific type of convolutional neural network formed by stacking "
+"residual blocks commonly used to power computer vision applications as "
+"object detections. This king of design allows the training of very deep "
+"networks without encountering the vanishing gradient problem. Unlike YOLO, "
+"ResNet50 is primarily focused on image classification and does not provide "
+"object localization. It can recognize objects from a vast set of more than "
+"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
+"<p><b>YOLOv5 Nano</b>: aquest model és una xarxa neuronal que ofereix una "
+"velocitat i eficiència excepcionals. Permet avaluar ràpidament la integració "
+"d'escenaris de detecció d'objectes de petita escala.</p><p><b>YOLOv5 XLarge</"
+"b>: aquest model és una xarxa neuronal dedicada a requisits de detecció "
+"d'objectes més complexos i mostra capacitats notables. Malgrat la "
+"complexitat addicional que introdueix més latència de temps i recursos "
+"informàtics, s'ha d'utilitzar per a escenaris de detecció d'objectes a gran "
+"escala.</p><p><b>ResNet50</b>: aquest model és un tipus específic de xarxa "
+"neuronal de convolució formada per l'apilament de blocs residuals normalment "
+"utilitzats per a alimentar aplicacions de visió per ordinador com a "
+"deteccions d'objectes."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:376
+#: core/utilities/maintenance/maintenancedlg.cpp:389
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Assignació d'etiquetes automàtiques"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:384
+#: core/utilities/maintenance/maintenancedlg.cpp:397
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Mode d'exploració: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:389
+#: core/utilities/maintenance/maintenancedlg.cpp:402
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Neteja-ho tot i torna a explorar"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:402
+#: core/utilities/maintenance/maintenancedlg.cpp:415
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direcció de la sincronització: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:406
+#: core/utilities/maintenance/maintenancedlg.cpp:419
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Des de la base de dades a les metadades de la imatge"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:407
+#: core/utilities/maintenance/maintenancedlg.cpp:420
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Des de les metadades de la imatge a la base de dades"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:410
+#: core/utilities/maintenance/maintenancedlg.cpp:423
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Per a més detalls reviseu el plafó de configuració de les metadades: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:415
+#: core/utilities/maintenance/maintenancedlg.cpp:428
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Sincronitza les metadades i la base de dades"
@@ -64289,3 +64353,41 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
+
+#~ msgctxt "@label"
+#~ msgid ""
+#~ "<p>This tool allows to assign automatically tags to images by contents "
+#~ "analysis using deep-learning neural network.</p><p>The settings below "
+#~ "determines the deep-learning model to use while parsing image contents to "
+#~ "determine the subjects of the photography. The neural network used in "
+#~ "background will generate automatically a serie of tags describing the "
+#~ "contents and store the results in the database.</p><p><b>YOLOv5 Nano</b>: "
+#~ "this model is a neural network which offers exceptional speed and "
+#~ "efficiency. It enables you to swiftly evaluate the integration of smaller-"
+#~ "scale object detection scenarios.</p><p><b>YOLOv5 XLarge</b>: this model "
+#~ "is a neural network dedicated for more complex object detection "
+#~ "requirements and showcases remarkable capabilities. Despite the "
+#~ "additional complexity introducing more time-latency and computer "
+#~ "resources, it's must be used for larger-scale object detection scenarios."
+#~ "</p><p><b>ResNet50</b>: this model is a specific type of convolutional "
+#~ "neural network formed by stacking residual blocks commonly used to power "
+#~ "computer vision applications as object detections."
+#~ msgstr ""
+#~ "<p>Aquesta eina permet assignar etiquetes automàticament a les imatges "
+#~ "mitjançant l'anàlisi del contingut emprant una xarxa neuronal "
+#~ "d'aprenentatge profund.</p><p>La configuració a continuació determina el "
+#~ "model d'aprenentatge profund a utilitzar mentre s'analitza el contingut "
+#~ "de la imatge per a determinar els subjectes de la fotografia. La xarxa "
+#~ "neuronal utilitzada en segon pla generarà automàticament una sèrie "
+#~ "d'etiquetes que descriuen el contingut i emmagatzema els resultats a la "
+#~ "base de dades.</p><p><b>YOLOv5 Nano</b>: aquest model és una xarxa "
+#~ "neuronal que ofereix una velocitat i eficiència excepcionals. Permet "
+#~ "avaluar ràpidament la integració d'escenaris de detecció d'objectes de "
+#~ "petita escala.</p><p><b>YOLOv5 XLarge</b>: aquest model és una xarxa "
+#~ "neuronal dedicada a requisits de detecció d'objectes més complexos i "
+#~ "mostra capacitats notables. Malgrat la complexitat addicional que "
+#~ "introdueix més latència de temps i recursos informàtics, s'ha d'utilitzar "
+#~ "per a escenaris de detecció d'objectes a gran escala.</p><p><b>ResNet50</"
+#~ "b>: aquest model és un tipus específic de xarxa neuronal de convolució "
+#~ "formada per l'apilament de blocs residuals normalment utilitzats per a "
+#~ "alimentar aplicacions de visió per ordinador com a deteccions d'objectes."
