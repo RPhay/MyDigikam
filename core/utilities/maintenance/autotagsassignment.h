@@ -38,7 +38,7 @@ public:
 
     enum AutotagsAssignmentScanMode
     {
-        AllItems = 0,        ///< Clean all all tags assignments and re-scan all items.
+        AllItems = 0,        ///< Clean all tags already assigned and re-scan all items.
         NonAssignedItems     ///< Scan only items with no tags assigned.
     };
 
