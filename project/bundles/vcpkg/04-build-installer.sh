@@ -307,14 +307,14 @@ echo -e "\n---------- Copy redistributable VSCommunity compatibility dlls"
 VS_DLL_VERSION=140
 
 VS_DLL_FILES="\
-$VCPKG_INSTALL_PREFIX/bin/msvcp$VS_DLL_VERSION.dll              \
-$VCPKG_INSTALL_PREFIX/bin/msvcp$VS_DLL_VERSION_1.dll            \
-$VCPKG_INSTALL_PREFIX/bin/msvcp$VS_DLL_VERSION_2.dll            \
-$VCPKG_INSTALL_PREFIX/bin/msvcp$VS_DLL_VERSION_atomic_wait.dll  \
-$VCPKG_INSTALL_PREFIX/bin/msvcp$VS_DLL_VERSION_codecvt_ids.dll  \
-$VCPKG_INSTALL_PREFIX/bin/vcruntime$VS_DLL_VERSION_1.dll        \
-$VCPKG_INSTALL_PREFIX/bin/vcruntime$VS_DLL_VERSION.dll          \
-$VCPKG_INSTALL_PREFIX/bin/concrt$VS_DLL_VERSION.dll             \
+$VCPKG_INSTALL_PREFIX/bin/msvcp${VS_DLL_VERSION}.dll              \
+$VCPKG_INSTALL_PREFIX/bin/msvcp${VS_DLL_VERSION}_1.dll            \
+$VCPKG_INSTALL_PREFIX/bin/msvcp${VS_DLL_VERSION}_2.dll            \
+$VCPKG_INSTALL_PREFIX/bin/msvcp${VS_DLL_VERSION}_atomic_wait.dll  \
+$VCPKG_INSTALL_PREFIX/bin/msvcp${VS_DLL_VERSION}_codecvt_ids.dll  \
+$VCPKG_INSTALL_PREFIX/bin/vcruntime${VS_DLL_VERSION}_1.dll        \
+$VCPKG_INSTALL_PREFIX/bin/vcruntime${VS_DLL_VERSION}.dll          \
+$VCPKG_INSTALL_PREFIX/bin/concrt${VS_DLL_VERSION}.dll             \
 "
 
 for vsdll in $VS_DLL_FILES ; do
@@ -329,7 +329,7 @@ done
 # To prevent broken array parsing of paths with spaces.
 IFS=$'\n'
 
-VS_DLL_COMP="`find "/c/Program Files/Microsoft Visual Studio/" -name "vcomp$VS_DLL_VERSION*.dll" -type f | grep 'x64/' | grep 'OpenMP' | grep -v 'onecore'`"
+VS_DLL_COMP="`find "/c/Program Files/Microsoft Visual Studio/" -name "vcomp${VS_DLL_VERSION}*.dll" -type f | grep 'x64/' | grep 'OpenMP' | grep -v 'onecore'`"
 
 for vscompdll in $VS_DLL_COMP ; do
 
