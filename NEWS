@@ -31,7 +31,7 @@ BUGFIXES:
 018 ==> 477871 - Program crash when entering a personsname into shown frame.
 019 ==> 477994 - Item count in Albums does not match pictures shown.
 020 ==> 477999 - Incorrect 'title' of picture shown in Thumbnails view.
-021 ==> 
+021 ==> 478002 - Import Pictures dialog doesn't use file metadata (EXIF etc.).
 022 ==> 
 023 ==> 
 024 ==> 
