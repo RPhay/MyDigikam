@@ -49,8 +49,19 @@ class Q_DECL_HIDDEN TagCompleter::Private : public TaggingActionFactory::Constra
 public:
 
     explicit Private()
-        : supportingModel(nullptr),
-          filterModel    (nullptr)
+
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
+      : model          (nullptr),
+        supportingModel(nullptr),
+
+#else
+
+      : supportingModel(nullptr),
+
+#endif
+
+        filterModel    (nullptr)
     {
     }
 
@@ -81,6 +92,12 @@ public:
 
     TaggingActionFactory factory;
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
+    QStandardItemModel*  model;
+
+#endif
+
     TagModel*            supportingModel;
     AlbumFilterModel*    filterModel;
 };
@@ -90,6 +107,13 @@ TagCompleter::TagCompleter(QObject* const parent)
       d         (new Private)
 {
     d->factory.setNameMatchMode(TaggingActionFactory::MatchContainingFragment);
+
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
+    d->model = new QStandardItemModel(this);
+    setModel(d->model);
+
+#endif
 
     setCaseSensitivity(Qt::CaseInsensitive);
     setCompletionMode(PopupCompletion);
@@ -135,7 +159,16 @@ void TagCompleter::update(const QString& fragment)
 
     d->factory.setFragment(fragment);
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
+    d->model->clear();
+
+#else
+
     QStandardItemModel* const model = new QStandardItemModel(this);
+
+#endif
+
     QList<TaggingAction> actions    = d->factory.actions();
     QList<QStandardItem*> items;
 
@@ -183,8 +216,17 @@ void TagCompleter::update(const QString& fragment)
         items << item;
     }
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
+    d->model->appendColumn(items);
+
+#else
+
     model->appendColumn(items);
     setModel(model);
+
+#endif
+
 }
 
 void TagCompleter::slotActivated(const QModelIndex& index)
