@@ -185,7 +185,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),   AutotagsAssignment::NonAssignedItems);
     d->autotaggingScanMode->setToolTip(i18nc("@info:tooltip",
         "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-scan all items from scratch.</p>"
-        "<p><b>Scan non-assigned only</b>: scan only the items with no assigned tag<p>."));
+        "<p><b>Scan non-assigned only</b>: scan only the items with no assigned tag.</p>"));
 
     DHBox* const hbox13    = new DHBox(d->vbox5);
     new QLabel(i18n("Selection model: "), hbox13);
