@@ -278,7 +278,10 @@ void AlbumManager::slotSearchChange(const SearchChangeset& changeset)
         case SearchChangeset::Added:
         case SearchChangeset::Deleted:
         {
-            d->scanSAlbumsTimer->start();
+            if (!d->scanSAlbumsTimer->isActive())
+            {
+                d->scanSAlbumsTimer->start();
+            }
 
             break;
         }

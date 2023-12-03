@@ -176,7 +176,10 @@ void AlbumManager::slotCollectionLocationStatusChanged(const CollectionLocation&
     {
         // a change occurred. Possibly albums have appeared or disappeared
 
-        d->scanPAlbumsTimer->start();
+        if (!d->scanPAlbumsTimer->isActive())
+        {
+            d->scanPAlbumsTimer->start();
+        }
     }
 }
 
@@ -210,8 +213,15 @@ void AlbumManager::slotCollectionImageChange(const CollectionImageChangeset& cha
         case CollectionImageChangeset::Removed:
         case CollectionImageChangeset::RemovedAll:
         {
-            d->albumItemCountTimer->start();
-            d->scanDAlbumsTimer->start();
+            if (!d->albumItemCountTimer->isActive())
+            {
+                d->albumItemCountTimer->start();
+            }
+
+            if (!d->scanDAlbumsTimer->isActive())
+            {
+                d->scanDAlbumsTimer->start();
+            }
 
             break;
         }
