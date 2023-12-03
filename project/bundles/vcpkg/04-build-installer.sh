@@ -324,10 +324,10 @@ done
 
 VS_DLL_COMP="`find "/c/Program Files/Microsoft Visual Studio/" -name "vcomp140*.dll" -type f | grep 'x64/' | grep 'OpenMP' | grep -n 'onecore'`"
 
-for vsdll in $VS_DLL_COMP ; do
+for vscompdll in $VS_DLL_COMP ; do
 
-    echo -e "   => $vsdll"
-    cp -r "$vsdll" $BUNDLEDIR/ 2>/dev/null
+    echo -e "   => $vscompdll"
+    cp -r "$vscompdll" $BUNDLEDIR/ 2>/dev/null
 
 done
 
