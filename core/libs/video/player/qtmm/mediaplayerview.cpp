@@ -17,6 +17,7 @@
 // Qt includes
 
 #include <QApplication>
+#include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QMouseEvent>
 #include <QProxyStyle>
@@ -48,7 +49,6 @@
 
 #include "stackedview.h"
 #include "thememanager.h"
-#include "dlayoutbox.h"
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "metaengine.h"
@@ -281,8 +281,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->errorView->setLineWidth(1);
 
     QVBoxLayout* const vbox1 = new QVBoxLayout(d->errorView);
-    vbox1->addWidget(d->toolBar, 1);
-    vbox1->addWidget(errorMsg, 10);
+    vbox1->addWidget(d->toolBar,  1);
+    vbox1->addWidget(errorMsg,   10);
     vbox1->setContentsMargins(QMargins());
     vbox1->setSpacing(spacing);
 
@@ -303,27 +303,32 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->player->setVideoOutput(d->videoItem);
     d->videoScene->addItem(d->videoItem);
 
-    DHBox* const hbox = new DHBox(this);
-    hbox->layout()->addWidget(d->toolBar);
-    d->slider         = new QSlider(Qt::Horizontal, hbox);
+    QHBoxLayout* const hbox = new QHBoxLayout(this);
+    d->slider               = new QSlider(Qt::Horizontal, this);
     d->slider->setStyle(new PlayerVideoStyle());
     d->slider->setRange(0, 0);
-    d->tlabel         = new QLabel(hbox);
+    d->tlabel               = new QLabel(this);
     d->tlabel->setText(QLatin1String("00:00:00 / 00:00:00"));
-    d->loopPlay       = new QPushButton(hbox);
+    d->loopPlay             = new QPushButton(this);
     d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
     d->loopPlay->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     d->loopPlay->setToolTip(i18n("Toggle playing in a loop"));
     d->loopPlay->setFocusPolicy(Qt::NoFocus);
     d->loopPlay->setMinimumSize(22, 22);
     d->loopPlay->setCheckable(true);
-    QLabel* const spk = new QLabel(hbox);
+    QLabel* const spk       = new QLabel(this);
     spk->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
-    d->volume         = new QSlider(Qt::Horizontal, hbox);
+    d->volume               = new QSlider(Qt::Horizontal, this);
     d->volume->setRange(0, 100);
     d->volume->setValue(50);
-    hbox->setContentsMargins(0, 0, 0, 0);
-    hbox->setStretchFactor(d->slider, 10);
+
+    hbox->addWidget(d->toolBar,   0);
+    hbox->addWidget(d->slider,   10);
+    hbox->addWidget(d->tlabel,    0);
+    hbox->addWidget(d->loopPlay,  0);
+    hbox->addWidget(spk,          0);
+    hbox->addWidget(d->volume,    0);
+    hbox->setContentsMargins(QMargins());
     hbox->setSpacing(spacing);
 
     d->videoItem->setAspectRatioMode(Qt::IgnoreAspectRatio);
@@ -333,9 +338,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->playerView->setLineWidth(1);
 
     QVBoxLayout* const vbox2 = new QVBoxLayout(d->playerView);
-    vbox2->addWidget(hbox,          0);
-    vbox2->addWidget(d->videoView, 10);
-    vbox2->setContentsMargins(0, 0, 0, 0);
+    vbox2->addLayout(hbox,           0);
+    vbox2->addWidget(d->videoView, 100);
+    vbox2->setContentsMargins(QMargins());
     vbox2->setSpacing(spacing);
 
     insertWidget(Private::PlayerView, d->playerView);
