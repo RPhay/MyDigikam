@@ -32,7 +32,7 @@ BUGFIXES:
 019 ==> 477994 - Item count in Albums does not match pictures shown.
 020 ==> 477999 - Incorrect 'title' of picture shown in Thumbnails view.
 021 ==> 478002 - Import Pictures dialog doesn't use file metadata (EXIF etc.).
-022 ==> 
+022 ==> 477997 - Button labels not show in configured language.
 023 ==> 
 024 ==> 
 025 ==> 
