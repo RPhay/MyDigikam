@@ -46,16 +46,16 @@
 namespace DigikamGenericHtmlGalleryPlugin
 {
 
-static const char* AUTHOR_GROUP           = "X-HTMLGallery Author";
-static const char* PARAMETER_GROUP_PREFIX = "X-HTMLGallery Parameter ";
-static const char* PARAMETER_TYPE_KEY     = "Type";
-static const char* PREVIEW_GROUP          = "X-HTMLGallery Preview";
-static const char* OPTIONS_GROUP          = "X-HTMLGallery Options";
-static const char* CAPTION_PARAMETER_TYPE = "caption";
-static const char* STRING_PARAMETER_TYPE  = "string";
-static const char* LIST_PARAMETER_TYPE    = "list";
-static const char* COLOR_PARAMETER_TYPE   = "color";
-static const char* INT_PARAMETER_TYPE     = "int";
+static const QLatin1String AUTHOR_GROUP           ("X-HTMLGallery Author");
+static const QLatin1String PARAMETER_GROUP_PREFIX ("X-HTMLGallery Parameter ");
+static const QLatin1String PARAMETER_TYPE_KEY     ("Type");
+static const QLatin1String PREVIEW_GROUP          ("X-HTMLGallery Preview");
+static const QLatin1String OPTIONS_GROUP          ("X-HTMLGallery Options");
+static const QLatin1String CAPTION_PARAMETER_TYPE ("caption");
+static const QLatin1String STRING_PARAMETER_TYPE  ("string");
+static const QLatin1String LIST_PARAMETER_TYPE    ("list");
+static const QLatin1String COLOR_PARAMETER_TYPE   ("color");
+static const QLatin1String INT_PARAMETER_TYPE     ("int");
 
 static GalleryTheme::List sList;
 
