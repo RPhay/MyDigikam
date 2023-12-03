@@ -347,8 +347,10 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
+    int volume                = group.readEntry("Volume", 50);
 
-    d->volume->setValue(group.readEntry("Volume", 50));
+    d->volume->setValue(volume);
+    d->audio->setVolume(volume / 100.0F);
 
     // --------------------------------------------------------------------------
 

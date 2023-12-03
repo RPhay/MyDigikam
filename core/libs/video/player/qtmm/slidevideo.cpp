@@ -213,6 +213,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
     int volume                = group.readEntry("Volume", 50);
 
     d->volume->setValue(volume);
+    d->audio->setVolume(volume / 100.0F);
 
     // --------------------------------------------------------------------------
 
