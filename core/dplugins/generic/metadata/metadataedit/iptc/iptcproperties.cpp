@@ -378,10 +378,10 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     connect(d->timeExpiredSel, SIGNAL(timeChanged(QTime)),
             this, SIGNAL(signalModified()));
 
-    connect(d->zoneReleasedSel, SIGNAL(currentIndexChanged(QString)),
+    connect(d->zoneReleasedSel, SIGNAL(currentTextChanged(QString)),
             this, SIGNAL(signalModified()));
 
-    connect(d->zoneExpiredSel, SIGNAL(currentIndexChanged(QString)),
+    connect(d->zoneExpiredSel, SIGNAL(currentTextChanged(QString)),
             this, SIGNAL(signalModified()));
 
     // --------------------------------------------------------

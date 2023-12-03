@@ -90,7 +90,7 @@ CaptureConfigPage::CaptureConfigPage(QWidget* const parent)
     connect(mpDir, SIGNAL(textChanged(QString)),
             this, SLOT(changeDirByUi(QString)));
 
-    connect(mpFormat, SIGNAL(currentIndexChanged(QString)),
+    connect(mpFormat, SIGNAL(currentTextChanged(QString)),
             this, SLOT(changeFormatByUi(QString)));
 
     connect(mpQuality, SIGNAL(valueChanged(int)),

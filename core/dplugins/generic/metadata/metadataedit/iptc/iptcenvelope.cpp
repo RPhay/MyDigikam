@@ -416,7 +416,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     connect(d->timeSentSel, SIGNAL(timeChanged(QTime)),
             this, SIGNAL(signalModified()));
 
-    connect(d->zoneSentSel, SIGNAL(currentIndexChanged(QString)),
+    connect(d->zoneSentSel, SIGNAL(currentTextChanged(QString)),
             this, SIGNAL(signalModified()));
 
     // --------------------------------------------------------
