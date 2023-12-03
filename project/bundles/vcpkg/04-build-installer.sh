@@ -315,6 +315,8 @@ $VCPKG_INSTALL_PREFIX/bin/vcruntime140.dll          \
 $VCPKG_INSTALL_PREFIX/bin/concrt140.dll             \
 "
 
+IFS=$'\n'
+
 for vsdll in $VS_DLL_FILES ; do
 
     echo -e "   => $vsdll"
