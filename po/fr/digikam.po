@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 00:39+0000\n"
-"PO-Revision-Date: 2023-11-30 09:11+0100\n"
+"POT-Creation-Date: 2023-12-03 00:39+0000\n"
+"PO-Revision-Date: 2023-12-01 10:01+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -3329,10 +3329,9 @@ msgid "%1/%2 items selected"
 msgstr "%1 / %2 éléments sélectionnés"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 400 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 650 user-reports closed on bugzilla."
-msgstr "Plus de 400 rapports de bogue fermés dans « bugzilla »."
+msgstr "Plus de 650 rapports de bogue fermés dans « bugzilla »."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3347,6 +3346,9 @@ msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
 "and use Qt6 and KF6 frameworks."
 msgstr ""
+"L'installateur sous Windows est maintenant compilé nativement avec la chaîne "
+"d’outils « Microsoft VCPKG » et utilise les environnements de développement "
+"pour Qt6 et KF6."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
@@ -3429,7 +3431,7 @@ msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
-"Renommage avancé : ajout d'un compteur incrémental de fichierd pour la "
+"Renommage avancé : ajout d'un compteur incrémental de fichier pour la "
 "numérotation de séquences avec les options [c] ou [c, step]."
 
 #: core/app/views/stack/welcomepageview.cpp:153
@@ -3609,12 +3611,11 @@ msgstr ""
 "le portage vers macOS et améliorez la stabilité du module externe."
 
 #: core/app/views/stack/welcomepageview.cpp:174
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 20230403."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
 msgstr ""
 "Mettre à jour le moteur interne « RAW » vers la dernière version de la "
-"bibliothèque « libraw » en date du 03 Avril 2023."
+"bibliothèque « libraw » en date du 21 Novembre 2023."
 
 #: core/app/views/stack/welcomepageview.cpp:175
 #, kde-format
@@ -6207,21 +6208,44 @@ msgstr ""
 "métadonnées pour la notation, la couleur ou l'étiquette de sélection.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:359
 #, kde-format
 msgctxt "@label"
 msgid ""
-"<p>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</p><p>The settings below "
-"determines the deep-learning model to use while parsing image contents to "
+"<p><b>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</b></p><p>The settings below "
+"determine the deep-learning model to use while parsing image contents to "
 "determine the subjects of the photography. The neural network used in "
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:88
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
+#: core/utilities/maintenance/maintenancedlg.cpp:191
 #, kde-format
-msgctxt "@label"
+msgid "Selection model: "
+msgstr "Modèle de sélection :"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
+#: core/utilities/maintenance/maintenancedlg.cpp:196
+#, kde-format
+msgid "YOLOv5 Nano"
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/utilities/maintenance/maintenancedlg.cpp:197
+#, kde-format
+msgid "YOLOv5 XLarge"
+msgstr "YOLOv5 XLarge"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/utilities/maintenance/maintenancedlg.cpp:198
+#, kde-format
+msgid "ResNet50"
+msgstr "ResNet50"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
+#, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
 "exceptional speed and efficiency. It enables you to swiftly evaluate the "
@@ -6236,37 +6260,11 @@ msgid ""
 "accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
 "model is a specific type of convolutional neural network formed by stacking "
 "residual blocks commonly used to power computer vision applications as "
-"object detections. This king of design allows the training of very deep "
+"object detections. This kind of design allows the training of very deep "
 "networks without encountering the vanishing gradient problem. Unlike YOLO, "
 "ResNet50 is primarily focused on image classification and does not provide "
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:368
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Segmentation mode:"
-msgid "Selection model: "
-msgstr "Mode de segmentation :"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:106
-#: core/utilities/maintenance/maintenancedlg.cpp:373
-#, kde-format
-msgid "YOLOv5 Nano"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
-#: core/utilities/maintenance/maintenancedlg.cpp:374
-#, kde-format
-msgid "YOLOv5 XLarge"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:375
-#, kde-format
-msgid "ResNet50"
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
@@ -9157,7 +9155,7 @@ msgstr "Utiliser le gestionnaire de couleurs pour l'impression"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:426
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
 msgstr "Paramètres…"
@@ -29629,7 +29627,7 @@ msgid ""
 "If you have an enormous collection, you should start MySQL server with mysql "
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
-"<p>Remarque : sur un serveur Linuxne base de données peut être initialisée "
+"<p>Remarque : sur un serveur Linux de base de données peut être initialisée "
 "avec les commandes suivantes :</p><p># su</p><p># systemctl restart mysqld</"
 "p><p># mysql -u root</p><p>...</p><p>Saisissez le code « SQL » dans l'invite "
 "de MySQL pour initialiser les bases de données de digiKam avec les "
@@ -41550,7 +41548,7 @@ msgstr "UXGA - 1600 x 1200 - 4 : 3"
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
-msgstr "Blue-Ray - 1920x1080 - 16:9"
+msgstr "Blu-Ray - 1920x1080 - 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:509
 #, kde-format
@@ -43524,13 +43522,13 @@ msgid "Quốc Hưng Trần"
 msgstr "Quốc Hưng Trần"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:165
-#, fuzzy, kde-format
-#| msgid "MJPEGStream plugin, OCR text Converter plugin"
+#, kde-format
 msgid ""
 "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgstr ""
-"Module externe « MJPEGStream », module externe de conversion de texte après "
-"reconnaissance optique de caractères"
+"Module externe « MJPEGStream », module externe de conversion de texte par "
+"reconnaissance optique de caractères, moteur d'association automatique des "
+"étiquettes"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:170
 #, kde-format
@@ -43619,7 +43617,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:408
+#: core/utilities/maintenance/maintenancedlg.cpp:231
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Tri d'images par qualité"
@@ -52719,28 +52717,28 @@ msgstr ""
 "photos."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:331
+#: core/utilities/maintenance/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Ignorer les images déjà analysées"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:332
+#: core/utilities/maintenance/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Analyser à nouveau et fusionner les résultats"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:333
+#: core/utilities/maintenance/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Effacer les résultats non confirmés et analyser à nouveau"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:334
+#: core/utilities/maintenance/maintenancedlg.cpp:154
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
@@ -57967,10 +57965,9 @@ msgid "&Right Panel"
 msgstr "Pa&nneau de droite"
 
 #: core/utilities/maintenance/autotagsassignment.cpp:99
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#, kde-format
 msgid "Autotags Assignment"
-msgstr "Ajustement automatique"
+msgstr "Association automatique des étiquettes"
 
 #: core/utilities/maintenance/dbcleaner.cpp:130
 #: core/utilities/maintenance/dbcleaner.cpp:230
@@ -58082,41 +58079,41 @@ msgstr "Mise à jour de la base de données des visages."
 msgid "Finger-prints"
 msgstr "Empreintes digitales"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:209
+#: core/utilities/maintenance/maintenancedlg.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Maintenance"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:224
+#: core/utilities/maintenance/maintenancedlg.cpp:44
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>Sélectionnez les opérations de maintenance à traiter</b></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:230
+#: core/utilities/maintenance/maintenancedlg.cpp:50
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Traiter des éléments depuis :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:232
+#: core/utilities/maintenance/maintenancedlg.cpp:52
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "Utiliser les derniers outils et configuration actifs"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:233
+#: core/utilities/maintenance/maintenancedlg.cpp:53
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Travailler sur tous les cœurs de processeurs (si possible)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:234
+#: core/utilities/maintenance/maintenancedlg.cpp:54
 #, kde-format
 msgid "Common Options"
 msgstr "Options communes"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:58
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -58125,12 +58122,12 @@ msgstr ""
 "<qt>Pas d'option<br/><i>Remarque : seule la collection des albums est "
 "traitée par cet outil.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:60
 #, kde-format
 msgid "Scan for new items"
 msgstr "Effectuer une analyse pour chercher de nouveaux éléments"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:246
+#: core/utilities/maintenance/maintenancedlg.cpp:66
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -58144,27 +58141,27 @@ msgstr ""
 "temps et geler temporairement digiKam<br/> pour s'assurer qu'aucune "
 "corruption de base de données ne survienne.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:249
+#: core/utilities/maintenance/maintenancedlg.cpp:69
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Nettoyer aussi la base des vignettes."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:70
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Nettoyer aussi la base de reconnaissance faciale."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:71
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "Nettoyer aussi la base de données de similarité."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:252
+#: core/utilities/maintenance/maintenancedlg.cpp:72
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Nettoyage détaillé et compression de toutes les bases de données."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:253
+#: core/utilities/maintenance/maintenancedlg.cpp:73
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -58173,71 +58170,71 @@ msgstr ""
 "Cette option conduit au ménage (réduction) des bases de données. Cette "
 "optimisation est gérée par SQLite et MySQL."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:257
+#: core/utilities/maintenance/maintenancedlg.cpp:77
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Effectuer un ménage des bases de données"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:262
-#: core/utilities/maintenance/maintenancedlg.cpp:269
+#: core/utilities/maintenance/maintenancedlg.cpp:82
+#: core/utilities/maintenance/maintenancedlg.cpp:89
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr ""
 "Effectuer une analyse pour chercher des éléments changés ou non catalogués "
 "(plus rapide)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:264
+#: core/utilities/maintenance/maintenancedlg.cpp:84
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Reconstruire les vignettes"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:271
+#: core/utilities/maintenance/maintenancedlg.cpp:91
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Reconstruire les empreintes digitales"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:280
+#: core/utilities/maintenance/maintenancedlg.cpp:100
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Échelle de similarité (en pourcentage) : "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:300
+#: core/utilities/maintenance/maintenancedlg.cpp:120
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Restriction sur les doublons :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:304
+#: core/utilities/maintenance/maintenancedlg.cpp:124
 #, kde-format
 msgid "No restriction"
 msgstr "Pas de restriction"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:305
+#: core/utilities/maintenance/maintenancedlg.cpp:125
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Restreindre à l'album de l'image de référence"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:306
+#: core/utilities/maintenance/maintenancedlg.cpp:126
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Exclure l'album de l'image de référence"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:140
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Chercher des éléments en double"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:147
 #, kde-format
 msgid "Faces data management: "
 msgstr "Gestion des données des visages :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:337
+#: core/utilities/maintenance/maintenancedlg.cpp:157
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Effacer et reconstruire toutes les données d'apprentissage"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:339
+#: core/utilities/maintenance/maintenancedlg.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58247,30 +58244,49 @@ msgstr ""
 "Cette fonction effacera toutes les données d'apprentissage concernant la "
 "reconnaissance et les reconstruira à partir de tous les visages disponibles."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:162
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Détecter et reconnaître des visages"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:349
-#, fuzzy, kde-format
-#| msgid "Metering mode:"
+#: core/utilities/maintenance/maintenancedlg.cpp:170
+#, kde-format
+msgctxt "@label"
+msgid ""
+"<p><b>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</b></p><p>The settings below "
+"determines the deep-learning model to use while parsing image contents to "
+"determine the subjects of the photography. The neural network used in "
+"background will generate automatically a serie of tags describing the "
+"contents and store the results in the database.</p>"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:179
+#, kde-format
 msgid "Auto-tagging mode: "
-msgstr "Mode de mesure :"
+msgstr "Mode d'étiquetage automatique :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:354
-#, fuzzy, kde-format
-#| msgid "Clean all and re-scan"
+#: core/utilities/maintenance/maintenancedlg.cpp:184
+#, kde-format
 msgid "Clean all and re-assign"
-msgstr "Tout effacer et analyser à nouveau"
+msgstr "Tout effacer et ré-allouer"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:355
-#: core/utilities/maintenance/maintenancedlg.cpp:403
+#: core/utilities/maintenance/maintenancedlg.cpp:185
+#: core/utilities/maintenance/maintenancedlg.cpp:226
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Analyser seulement ce qui n'est pas affecté"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:377
+#: core/utilities/maintenance/maintenancedlg.cpp:187
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
+"scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
+"the items with no assigned tag<p>."
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58294,49 +58310,48 @@ msgid ""
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:389
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#: core/utilities/maintenance/maintenancedlg.cpp:212
+#, kde-format
 msgid "Auto-tags Assignment"
-msgstr "Ajustement automatique"
+msgstr "Association automatique des étiquettes"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:397
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Mode analyse :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:402
+#: core/utilities/maintenance/maintenancedlg.cpp:225
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Tout effacer et analyser à nouveau"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:415
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direction de synchro :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:419
+#: core/utilities/maintenance/maintenancedlg.cpp:242
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Depuis la base de données vers les métadonnées des images"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:420
+#: core/utilities/maintenance/maintenancedlg.cpp:243
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Depuis les métadonnées des images vers la base de données"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:423
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Vérifiez les détails du panneau de configuration des métadonnées : "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:428
+#: core/utilities/maintenance/maintenancedlg.cpp:251
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Synchroniser les métadonnées et la base de données"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:404
+#: core/utilities/maintenance/maintenancemngr.cpp:395
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -58345,7 +58360,7 @@ msgstr ""
 "Toutes les opérations sont effectuées.\n"
 "Durée : %1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:405
+#: core/utilities/maintenance/maintenancemngr.cpp:396
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Maintenance de digiKam"
