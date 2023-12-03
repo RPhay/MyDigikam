@@ -1704,8 +1704,6 @@ void BackendGoogleMaps::slotInputUserAPIKey()
 
 void BackendGoogleMaps::slotMessageEvent(const QString& message)
 {
-    qCDebug(DIGIKAM_GEOIFACE_LOG) << "JavaScript message:" << message;
-
     if (d->keyChanged && message.contains(QLatin1String("Billing")))
     {
         QMessageBox::information(qApp->activeWindow(),
