@@ -315,14 +315,16 @@ $VCPKG_INSTALL_PREFIX/bin/vcruntime140.dll          \
 $VCPKG_INSTALL_PREFIX/bin/concrt140.dll             \
 "
 
-IFS=$'\n'
-
 for vsdll in $VS_DLL_FILES ; do
 
     echo -e "   => $vsdll"
     cp -r "$vsdll" $BUNDLEDIR/ 2>/dev/null
 
 done
+
+# Copy also the vcomp dlls for Windows 11 support
+
+IFS=$'\n'
 
 VS_DLL_COMP="`find "/c/Program Files/Microsoft Visual Studio/" -name "vcomp140*.dll" -type f | grep 'x64/' | grep 'OpenMP' | grep -v 'onecore'`"
 
