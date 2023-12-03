@@ -1,0 +1,97 @@
+// SPDX-License-Identifier: LGPL-2.1-or-later
+//
+// SPDX-FileCopyrightText: 2014 Sanjiban Bairagya <sanjiban22393@gmail.com>
+//
+
+#ifndef TOURPLAYBACK_H
+#define TOURPLAYBACK_H
+
+#include <QObject>
+
+#include "digikam_export.h"
+
+class QUrl;
+
+namespace Marble
+{
+
+class MarbleWidget;
+class GeoDataCoordinates;
+class GeoDataTour;
+class GeoDataPlacemark;
+class GeoDataFeature;
+class GeoDataContainer;
+class PlaybackItem;
+
+class TourPlaybackPrivate;
+
+class DIGIKAM_EXPORT TourPlayback : public QObject
+{
+    Q_OBJECT
+public:
+    explicit TourPlayback(QObject *parent=nullptr);
+    ~TourPlayback() override;
+
+    void setTour(GeoDataTour *tour);
+    void setMarbleWidget( MarbleWidget *widget );
+
+    /**
+     * @brief setBaseUrl - sets base url for using in QWebView.
+     */
+    void setBaseUrl( const QUrl &baseUrl );
+
+    /**
+     * @brief baseUrl - gets base url which is using in QWebView.
+     */
+    QUrl baseUrl() const;
+
+    /** Tour duration in seconds */
+    double duration() const;
+    bool isPlaying() const;
+
+    void play();
+    void pause();
+    void stop();
+
+    /**
+     * Seek to the given timestamp (in seconds)
+     * @param offset Target timestamp in seconds in the range 0..duration()
+     */
+    void seek( double offset );
+
+    /** Size of main track (flyto, wait, tourcontrol primitives) **/
+    int mainTrackSize();
+    /**
+     * Element of main track (flyto, wait, tourcontrol primitives)
+     * @param i Position of element.
+     */
+    PlaybackItem* mainTrackItemAt( int i );
+
+public Q_SLOTS:
+    void updateTracks();
+    void clearTracks();
+
+Q_SIGNALS:
+    void finished();
+    void paused();
+    void stopped();
+    void progressChanged( double );
+    void updated( GeoDataFeature* );
+    void added( GeoDataContainer *parent, GeoDataFeature *feature, int row );
+    void removed(GeoDataFeature *feature);
+    void itemFinished( int index );
+
+private Q_SLOTS:
+    void stopTour();
+    void showBalloon( GeoDataPlacemark* );
+    void hideBalloon();
+    void centerOn( const GeoDataCoordinates &coordinates );
+    void handleFinishedItem( int index );
+
+private:
+    TourPlaybackPrivate * const d;
+};
+
+} // namespace Marble
+
+#endif // TOURPLAYBACK_H

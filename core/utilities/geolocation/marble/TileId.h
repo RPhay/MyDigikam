@@ -1,0 +1,110 @@
+// SPDX-License-Identifier: LGPL-2.1-or-later
+//
+// SPDX-FileCopyrightText: 2008, 2010 Jens-Michael Hoffmann <jensmh@gmx.de>
+// SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
+//
+
+#ifndef MARBLE_TILEID_H
+#define MARBLE_TILEID_H
+
+#include "digikam_export.h"
+
+#include <QHash>
+
+class QString;
+
+namespace Marble
+{
+class GeoDataCoordinates;
+
+class DIGIKAM_EXPORT TileId
+{
+ public:
+    TileId( QString const & mapThemeId, int zoomLevel, int tileX, int tileY );
+    TileId( uint mapThemeIdHash, int zoomLevel, int tileX, int tileY );
+    TileId();
+
+    int zoomLevel() const;
+    int x() const;
+    int y() const;
+    uint mapThemeIdHash() const;
+
+    bool operator==( TileId const& rhs ) const;
+    bool operator<( TileId const& rhs ) const;
+
+    static TileId fromCoordinates( const GeoDataCoordinates& coords, int zoomLevel );
+
+ private:
+    uint m_mapThemeIdHash;
+    int m_zoomLevel;
+    int m_tileX;
+    int m_tileY;
+};
+
+uint qHash( TileId const& );
+
+
+// inline definitions
+
+inline int TileId::zoomLevel() const
+{
+    return m_zoomLevel;
+}
+
+inline int TileId::x() const
+{
+    return m_tileX;
+}
+
+inline int TileId::y() const
+{
+    return m_tileY;
+}
+
+inline uint TileId::mapThemeIdHash() const
+{
+    return m_mapThemeIdHash;
+}
+
+inline bool TileId::operator==( TileId const& rhs ) const
+{
+    return m_zoomLevel == rhs.m_zoomLevel
+        && m_tileX == rhs.m_tileX
+        && m_tileY == rhs.m_tileY
+        && m_mapThemeIdHash == rhs.m_mapThemeIdHash;
+}
+
+inline bool TileId::operator<( TileId const& rhs ) const
+{
+    if (m_zoomLevel < rhs.m_zoomLevel)
+        return true;
+    else if (m_zoomLevel == rhs.m_zoomLevel
+             && m_tileX < rhs.m_tileX)
+        return true;
+    else if (m_zoomLevel == rhs.m_zoomLevel
+             && m_tileX == rhs.m_tileX
+             && m_tileY < rhs.m_tileY)
+        return true;
+    else if (m_zoomLevel == rhs.m_zoomLevel
+             && m_tileX == rhs.m_tileX
+             && m_tileY == rhs.m_tileY
+             && m_mapThemeIdHash < rhs.m_mapThemeIdHash)
+        return true;
+    return false;
+}
+
+inline uint qHash( TileId const& tid )
+{
+    const quint64 tmp = (( quint64 )( tid.zoomLevel() ) << 36 )
+        + (( quint64 )( tid.x() ) << 18 )
+        + ( quint64 )( tid.y() );
+    return ::qHash( tmp ) ^ tid.mapThemeIdHash();
+}
+
+}
+
+#ifndef QT_NO_DEBUG_STREAM
+QDebug operator<<( QDebug, const Marble::TileId & );
+#endif
+
+#endif

@@ -114,8 +114,12 @@ else()
        )
 endif()
 
-# Marble translations need explicit loading
-ecm_create_qm_loader(libgeoiface_SRCS marble_qt)
+if(NOT Qt6_FOUND)
+
+    # Marble translations need explicit loading
+    ecm_create_qm_loader(libgeoiface_SRCS marble_qt)
+
+endif()
 
 # Used by digikamcore
 add_library(core_geoiface_obj OBJECT ${libgeoiface_SRCS})

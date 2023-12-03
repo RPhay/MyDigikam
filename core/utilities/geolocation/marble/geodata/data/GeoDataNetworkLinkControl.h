@@ -1,0 +1,84 @@
+// SPDX-License-Identifier: LGPL-2.1-or-later
+//
+// SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
+//
+
+#ifndef GEODATANETWORKLINKCONTROL_H
+#define GEODATANETWORKLINKCONTROL_H
+
+#include "GeoDataContainer.h"
+#include "digikam_export.h"
+
+class QDateTime;
+
+namespace Marble
+{
+
+class GeoDataAbstractView;
+class GeoDataUpdate;
+class GeoDataNetworkLinkControlPrivate;
+
+/**
+ */
+class DIGIKAM_EXPORT GeoDataNetworkLinkControl : public GeoDataContainer
+{
+public:
+    GeoDataNetworkLinkControl();
+
+    GeoDataNetworkLinkControl( const GeoDataNetworkLinkControl &other );
+
+    ~GeoDataNetworkLinkControl() override;
+
+    GeoDataNetworkLinkControl& operator=( const GeoDataNetworkLinkControl &other );
+
+    bool operator==( const GeoDataNetworkLinkControl &other ) const;
+    bool operator!=( const GeoDataNetworkLinkControl &other ) const;
+
+    GeoDataFeature * clone() const override;
+
+    /** Provides type information for downcasting a GeoNode */
+    const char* nodeType() const override;
+
+    qreal minRefreshPeriod() const;
+    void setMinRefreshPeriod(qreal minRefreshPeriod);
+
+    qreal maxSessionLength() const;
+    void setMaxSessionLength(qreal maxSessionLength);
+
+    QString cookie() const;
+    void setCookie( const QString &cookie );
+
+    QString message() const;
+    void setMessage( const QString &message );
+
+    QString linkName() const;
+    void setLinkName( const QString &linkName );
+
+    QString linkDescription() const;
+    void setLinkDescription( const QString &linkDescription );
+
+    QString linkSnippet() const;
+    void setLinkSnippet( const QString &linkSnippet );
+    int maxLines() const;
+    void setMaxLines(int maxLines);
+
+    QDateTime expires() const;
+    void setExpires( const QDateTime &expires );
+
+    GeoDataUpdate& update();
+    const GeoDataUpdate& update() const;
+    void setUpdate( const GeoDataUpdate &update );
+
+    GeoDataAbstractView* abstractView() const;
+    /**
+     * Sets the abstract view and takes control of this pointer.
+     */
+    void setAbstractView( GeoDataAbstractView *abstractView );
+
+private:
+    Q_DECLARE_PRIVATE(GeoDataNetworkLinkControl)
+};
+
+}
+
+#endif

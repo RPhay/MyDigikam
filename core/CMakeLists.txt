@@ -83,7 +83,15 @@ find_package(BISON)                                # For Panorama tool.
 find_package(LibXslt)                              # For HTMLGallery tool.
 find_package(LibXml2)                              # For HTMLGallery tool.
 
-find_package(Marble)                               # For geolocation support.
+if(NOT Qt6_FOUND)
+
+    find_package(Marble)                           # For geolocation support.
+
+else()
+
+    set(Marble_FOUND TRUE)
+
+endif()
 
 find_package(PkgConfig)
 find_package(Jasper)                               # For JPEG 2000 support.
@@ -285,7 +293,7 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libsonnet"         "https://invent.kde.org/framew
 PRINT_OPTIONAL_LIBRARY_STATUS("libksane"          "https://invent.kde.org/graphics/libksane"                        "(version >= ${KSANE_MIN_VERSION})"     "digiKam will be compiled without flat scanners support."                     KF${QT_VERSION_MAJOR}Sane_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("liblensfun"        "https://github.com/lensfun/lensfun"                              "(version >= 0.2.6)"                    "digiKam will be compiled without Lens Auto Correction tool support."         LensFun_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libglib2"          "https://developer.gnome.org/glib/"                               "(version >= 2.0.0)"                    "digiKam will be compiled without Contents Aware Resizer tool support."       GLIB2_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libmarble"         "https://invent.kde.org/education/marble"                         "(version >= 0.22.0)"                   "digiKam will be compiled without geolocation maps support."                  Marble_FOUND)
+
 PRINT_OPTIONAL_LIBRARY_STATUS("libthreadweaver"   "https://invent.kde.org/frameworks/threadweaver"                  "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without Panorama support."                          KF${QT_VERSION_MAJOR}ThreadWeaver_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libxml2"           "https://gitlab.gnome.org/GNOME/libxml2/"                         "(version >= 2.7.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXml2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libxslt"           "https://gitlab.gnome.org/GNOME/libxslt"                          "(version >= 1.1.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXslt_FOUND)
@@ -294,6 +302,10 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libx265"           "https://github.com/videolan/x
 PRINT_OPTIONAL_LIBRARY_STATUS("OpenGL"            "https://gitlab.freedesktop.org/mesa/mesa/"                       "(version >= 11.0.0)"                   "digiKam will be compiled without OpenGL support."                            HAVE_OPENGL)
 
 if(NOT Qt6_FOUND)
+
+    # Code integrated in digiKam core with Qt6.
+
+    PRINT_OPTIONAL_LIBRARY_STATUS("libmarble"         "https://invent.kde.org/education/marble"                         "(version >= 0.22.0)"                   "digiKam will be compiled without geolocation maps support."                  Marble_FOUND)
 
     # NOTE: This module have been removed with Qt6.
 

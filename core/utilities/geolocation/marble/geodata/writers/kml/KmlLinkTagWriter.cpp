@@ -1,0 +1,72 @@
+// SPDX-License-Identifier: LGPL-2.1-or-later
+//
+// SPDX-FileCopyrightText: 2013 Adrian Draghici <draghici.adrian.b@gmail.com>
+//
+
+#include "KmlLinkTagWriter.h"
+
+#include "GeoDataTypes.h"
+#include "GeoWriter.h"
+#include "KmlElementDictionary.h"
+#include "KmlObjectTagWriter.h"
+
+namespace Marble
+{
+
+static GeoTagWriterRegistrar s_writerLink(
+        GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataLinkType,
+                                     kml::kmlTag_nameSpaceOgc22 ),
+        new KmlLinkTagWriter );
+
+bool KmlLinkTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
+{
+    const GeoDataLink *link = static_cast<const GeoDataLink*>( node );
+
+    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Link) );
+    KmlObjectTagWriter::writeIdentifiers( writer, link );
+
+    writer.writeElement( kml::kmlTag_href, link->href() );
+
+    QString const refreshMode = refreshModeToString( link->refreshMode() );
+    writer.writeOptionalElement( kml::kmlTag_refreshMode, refreshMode, "onChange" );
+
+    writer.writeElement( kml::kmlTag_refreshInterval, QString::number( link->refreshInterval() ) );
+
+    QString const viewRefreshMode = viewRefreshModeToString( link->viewRefreshMode() );
+    writer.writeOptionalElement( kml::kmlTag_viewRefreshMode, viewRefreshMode, "never" );
+
+    writer.writeElement( kml::kmlTag_viewRefreshTime, QString::number( link->viewRefreshTime() ) );
+
+    writer.writeElement( kml::kmlTag_viewBoundScale, QString::number( link->viewBoundScale() ) );
+
+    writer.writeOptionalElement( kml::kmlTag_viewFormat, link->viewFormat());
+
+    writer.writeOptionalElement( kml::kmlTag_httpQuery, link->httpQuery());
+
+    writer.writeEndElement();
+
+    return true;
+}
+
+QString KmlLinkTagWriter::refreshModeToString( GeoDataLink::RefreshMode refreshMode)
+{
+    switch (refreshMode)
+    {
+    case GeoDataLink::OnInterval:   return "onInterval";
+    case GeoDataLink::OnExpire:     return "onExpire";
+    default:                        return "onChange";
+    }
+}
+
+QString KmlLinkTagWriter::viewRefreshModeToString( GeoDataLink::ViewRefreshMode viewRefreshMode)
+{
+    switch (viewRefreshMode)
+    {
+    case GeoDataLink::OnStop:       return "onStop";
+    case GeoDataLink::OnRequest:    return "onRequest";
+    case GeoDataLink::OnRegion:     return "onRegion";
+    default:                        return "never";
+    }
+}
+
+}

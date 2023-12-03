@@ -70,6 +70,15 @@ if(Marble_FOUND)
         $<TARGET_OBJECTS:core_geomapwrapper_obj>
     )
 
+    if(Qt6_FOUND)
+
+        set(DIGIKAMCORE_OBJECTS
+            ${DIGIKAMCORE_OBJECTS}
+            $<TARGET_OBJECTS:core_marble_obj>
+        )
+
+    endif()
+
 endif()
 
 if(KF${QT_VERSION_MAJOR}FileMetaData_FOUND)
