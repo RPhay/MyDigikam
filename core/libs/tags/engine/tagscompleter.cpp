@@ -49,8 +49,7 @@ class Q_DECL_HIDDEN TagCompleter::Private : public TaggingActionFactory::Constra
 public:
 
     explicit Private()
-        : model          (nullptr),
-          supportingModel(nullptr),
+        : supportingModel(nullptr),
           filterModel    (nullptr)
     {
     }
@@ -80,7 +79,6 @@ public:
 
 public:
 
-    QStandardItemModel*  model;
     TaggingActionFactory factory;
 
     TagModel*            supportingModel;
@@ -91,9 +89,6 @@ TagCompleter::TagCompleter(QObject* const parent)
     : QCompleter(parent),
       d         (new Private)
 {
-    d->model = new QStandardItemModel(this);
-    setModel(d->model);
-
     d->factory.setNameMatchMode(TaggingActionFactory::MatchContainingFragment);
 
     setCaseSensitivity(Qt::CaseInsensitive);
@@ -139,9 +134,9 @@ void TagCompleter::update(const QString& fragment)
     }
 
     d->factory.setFragment(fragment);
-    d->model->clear();
 
-    QList<TaggingAction> actions = d->factory.actions();
+    QStandardItemModel* const model = new QStandardItemModel(this);
+    QList<TaggingAction> actions    = d->factory.actions();
     QList<QStandardItem*> items;
 
     Q_FOREACH (const TaggingAction& action, actions)
@@ -188,7 +183,8 @@ void TagCompleter::update(const QString& fragment)
         items << item;
     }
 
-    d->model->appendColumn(items);
+    model->appendColumn(items);
+    setModel(model);
 }
 
 void TagCompleter::slotActivated(const QModelIndex& index)

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 00:39+0000\n"
+"POT-Creation-Date: 2023-12-03 00:39+0000\n"
 "PO-Revision-Date: 2023-04-22 13:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -6212,21 +6212,45 @@ msgid ""
 msgstr "這張影像不能套用色彩管理。"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:359
 #, kde-format
 msgctxt "@label"
 msgid ""
-"<p>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</p><p>The settings below "
-"determines the deep-learning model to use while parsing image contents to "
+"<p><b>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</b></p><p>The settings below "
+"determine the deep-learning model to use while parsing image contents to "
 "determine the subjects of the photography. The neural network used in "
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:88
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
+#: core/utilities/maintenance/maintenancedlg.cpp:191
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgid "Selection model: "
+msgstr "目的地："
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
+#: core/utilities/maintenance/maintenancedlg.cpp:196
 #, kde-format
-msgctxt "@label"
+msgid "YOLOv5 Nano"
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/utilities/maintenance/maintenancedlg.cpp:197
+#, kde-format
+msgid "YOLOv5 XLarge"
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/utilities/maintenance/maintenancedlg.cpp:198
+#, kde-format
+msgid "ResNet50"
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
+#, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
 "exceptional speed and efficiency. It enables you to swiftly evaluate the "
@@ -6241,36 +6265,11 @@ msgid ""
 "accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
 "model is a specific type of convolutional neural network formed by stacking "
 "residual blocks commonly used to power computer vision applications as "
-"object detections. This king of design allows the training of very deep "
+"object detections. This kind of design allows the training of very deep "
 "networks without encountering the vanishing gradient problem. Unlike YOLO, "
 "ResNet50 is primarily focused on image classification and does not provide "
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:368
-#, fuzzy, kde-format
-#| msgid "Destination:"
-msgid "Selection model: "
-msgstr "目的地："
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:106
-#: core/utilities/maintenance/maintenancedlg.cpp:373
-#, kde-format
-msgid "YOLOv5 Nano"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
-#: core/utilities/maintenance/maintenancedlg.cpp:374
-#, kde-format
-msgid "YOLOv5 XLarge"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:375
-#, kde-format
-msgid "ResNet50"
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
@@ -9064,7 +9063,7 @@ msgstr "列印使用的色彩管理"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:426
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
 msgstr "設定值..."
@@ -43826,7 +43825,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:408
+#: core/utilities/maintenance/maintenancedlg.cpp:231
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "影像品質排序器"
@@ -54023,28 +54022,28 @@ msgstr ""
 "朋友後，<nl/> 它可以辨識中您其它相片中的此人。"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:331
+#: core/utilities/maintenance/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "跳過已掃描的影像"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:332
+#: core/utilities/maintenance/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "再次掃描並合併結果"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:333
+#: core/utilities/maintenance/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "清除未確認的結果並重新掃描"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:334
+#: core/utilities/maintenance/maintenancedlg.cpp:154
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Clear unconfirmed results and rescan"
@@ -59393,31 +59392,31 @@ msgstr "正在更新臉孔資料庫"
 msgid "Finger-prints"
 msgstr "指紋"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:209
+#: core/utilities/maintenance/maintenancedlg.cpp:29
 #, fuzzy, kde-format
 #| msgid "Maintenance"
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "維護"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:224
+#: core/utilities/maintenance/maintenancedlg.cpp:44
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>選擇要處理的維護操作</b></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:230
+#: core/utilities/maintenance/maintenancedlg.cpp:50
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "處理項目從："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:232
+#: core/utilities/maintenance/maintenancedlg.cpp:52
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:233
+#: core/utilities/maintenance/maintenancedlg.cpp:53
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores"
@@ -59425,24 +59424,24 @@ msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "在所有的處理器核心上工作"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:234
+#: core/utilities/maintenance/maintenancedlg.cpp:54
 #, kde-format
 msgid "Common Options"
 msgstr "一般選項"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:58
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr "<qt>沒有選項<br/><i>注意：此工具只處理相簿收藏。</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:60
 #, kde-format
 msgid "Scan for new items"
 msgstr "掃描新增的項目"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:246
+#: core/utilities/maintenance/maintenancedlg.cpp:66
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -59451,103 +59450,103 @@ msgid ""
 "> in order to make sure that no database corruption occurs.</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:249
+#: core/utilities/maintenance/maintenancedlg.cpp:69
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Also clean up the thumbnail database."
 msgstr "初始化縮圖資料庫時失敗"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:70
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Also clean up the faces database."
 msgstr "正在更新臉孔資料庫"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:71
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Also clean up the similarity database."
 msgstr "初始化縮圖資料庫時失敗"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:252
+#: core/utilities/maintenance/maintenancedlg.cpp:72
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Extended clean up and shrink all databases."
 msgstr "初始化縮圖資料庫時失敗"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:253
+#: core/utilities/maintenance/maintenancedlg.cpp:73
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:257
+#: core/utilities/maintenance/maintenancedlg.cpp:77
 #, kde-format
 msgid "Perform database cleaning"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:262
-#: core/utilities/maintenance/maintenancedlg.cpp:269
+#: core/utilities/maintenance/maintenancedlg.cpp:82
+#: core/utilities/maintenance/maintenancedlg.cpp:89
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "掃描已變更或未分類的項目（速度較快）"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:264
+#: core/utilities/maintenance/maintenancedlg.cpp:84
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "重新建立縮圖"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:271
+#: core/utilities/maintenance/maintenancedlg.cpp:91
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "重新建立指紋"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:280
+#: core/utilities/maintenance/maintenancedlg.cpp:100
 #, fuzzy, kde-format
 #| msgid "Similarity (in percents): "
 msgid "Similarity range (in percents): "
 msgstr "相似度（百分比）："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:300
+#: core/utilities/maintenance/maintenancedlg.cpp:120
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "重複項目限制："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:304
+#: core/utilities/maintenance/maintenancedlg.cpp:124
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgid "No restriction"
 msgstr "沒有選擇區域"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:305
+#: core/utilities/maintenance/maintenancedlg.cpp:125
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "限制於參照影像的相簿"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:306
+#: core/utilities/maintenance/maintenancedlg.cpp:126
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:140
 #, fuzzy, kde-format
 #| msgid "Find Duplicates Items"
 msgid "Find Duplicate Items"
 msgstr "尋找重覆的項目"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:147
 #, kde-format
 msgid "Faces data management: "
 msgstr "臉孔資料管理："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:337
+#: core/utilities/maintenance/maintenancedlg.cpp:157
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "清除並重建所有訓練資料"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:339
+#: core/utilities/maintenance/maintenancedlg.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59555,30 +59554,51 @@ msgid ""
 "available faces."
 msgstr "這會清除所有之前訓練過的辨識資料，並從所有可找到的臉孔重新建立它。"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:162
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "偵測與辨識臉孔"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:349
+#: core/utilities/maintenance/maintenancedlg.cpp:170
+#, kde-format
+msgctxt "@label"
+msgid ""
+"<p><b>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</b></p><p>The settings below "
+"determines the deep-learning model to use while parsing image contents to "
+"determine the subjects of the photography. The neural network used in "
+"background will generate automatically a serie of tags describing the "
+"contents and store the results in the database.</p>"
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:179
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "測光模式："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:354
+#: core/utilities/maintenance/maintenancedlg.cpp:184
 #, fuzzy, kde-format
 #| msgid "Clean all and re-scan"
 msgid "Clean all and re-assign"
 msgstr "全部清除並重新掃描"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:355
-#: core/utilities/maintenance/maintenancedlg.cpp:403
+#: core/utilities/maintenance/maintenancedlg.cpp:185
+#: core/utilities/maintenance/maintenancedlg.cpp:226
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "只掃描未指定的"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:377
+#: core/utilities/maintenance/maintenancedlg.cpp:187
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
+"scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
+"the items with no assigned tag<p>."
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59602,49 +59622,49 @@ msgid ""
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:389
+#: core/utilities/maintenance/maintenancedlg.cpp:212
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "自動調整"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:397
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgid "Scan Mode: "
 msgstr "掃描型號："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:402
+#: core/utilities/maintenance/maintenancedlg.cpp:225
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "全部清除並重新掃描"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:415
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid "Sync Direction: "
 msgstr "同步方向："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:419
+#: core/utilities/maintenance/maintenancedlg.cpp:242
 #, kde-format
 msgid "From database to image metadata"
 msgstr "從資料庫同步到影像中繼資料"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:420
+#: core/utilities/maintenance/maintenancedlg.cpp:243
 #, kde-format
 msgid "From image metadata to database"
 msgstr "從影像中繼資料同步到資料庫"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:423
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "檢查中繼資料設定面板裡的詳情："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:428
+#: core/utilities/maintenance/maintenancedlg.cpp:251
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "將資料庫與中繼資料同步"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:404
+#: core/utilities/maintenance/maintenancemngr.cpp:395
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -59653,7 +59673,7 @@ msgstr ""
 "所有操作均處理完畢。\n"
 "處理時間：%1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:405
+#: core/utilities/maintenance/maintenancemngr.cpp:396
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam 維護"

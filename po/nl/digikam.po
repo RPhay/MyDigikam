@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 00:39+0000\n"
-"PO-Revision-Date: 2023-12-01 11:00+0100\n"
+"POT-Creation-Date: 2023-12-03 00:39+0000\n"
+"PO-Revision-Date: 2023-12-02 11:51+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -6140,33 +6140,80 @@ msgstr ""
 "label-metagegevenswaarden aan afbeeldingen toekennen.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:359
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "<p>This tool allows to assign automatically tags to images by contents "
+#| "analysis using deep-learning neural network.</p><p>The settings below "
+#| "determines the deep-learning model to use while parsing image contents to "
+#| "determine the subjects of the photography. The neural network used in "
+#| "background will generate automatically a serie of tags describing the "
+#| "contents and store the results in the database.</p>"
 msgctxt "@label"
 msgid ""
-"<p>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</p><p>The settings below "
-"determines the deep-learning model to use while parsing image contents to "
+"<p><b>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</b></p><p>The settings below "
+"determine the deep-learning model to use while parsing image contents to "
 "determine the subjects of the photography. The neural network used in "
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
+"<p>Dit hulpmiddel biedt het automatisch toekennen van tags aan afbeeldingen "
+"door analyse van inhoud met een deep-learning neuraal netwerk.</p><p>De "
+"onderstaande instellingen bepalen het te gebruiken model van deep-learning "
+"tijdens het ontleden van de inhoud van afbeeldingen om de onderwerpen van de "
+"foto te bepalen. Het neurale netwerk, gebruikt in de achtergrond, zal "
+"automatisch een serie tags genereren die de inhoud beschrijven en de "
+"resultaten opslaan in de database.</p>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:88
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
+#: core/utilities/maintenance/maintenancedlg.cpp:191
+#, kde-format
+msgid "Selection model: "
+msgstr "Selectiemodel: "
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
+#: core/utilities/maintenance/maintenancedlg.cpp:196
+#, kde-format
+msgid "YOLOv5 Nano"
+msgstr "YOLOv5 Nano"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/utilities/maintenance/maintenancedlg.cpp:197
+#, kde-format
+msgid "YOLOv5 XLarge"
+msgstr "YOLOv5 XLarge"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/utilities/maintenance/maintenancedlg.cpp:198
+#, kde-format
+msgid "ResNet50"
+msgstr "ResNet50"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
 #| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
 #| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
-#| "XLarge</b>: this model is a neural network dedicated for more complex "
+#| "integration of smaller-scale object detection scenarios. It's designed "
+#| "for objects detections, capable of recognizing and extracting the "
+#| "location of objects within an image. The limitation on the number of "
+#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
+#| "previous one, this model is a neural network dedicated for more complex "
 #| "object detection requirements and showcases remarkable capabilities. "
 #| "Despite the additional complexity introducing more time-latency and "
 #| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios.</p><p><b>ResNet50</b>: this model is a specific type of "
+#| "scenarios as it provides more accurate predictions at the expense of "
+#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
 #| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections."
-msgctxt "@label"
+#| "used to power computer vision applications as object detections. This "
+#| "king of design allows the training of very deep networks without "
+#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
+#| "primarily focused on image classification and does not provide object "
+#| "localization. It can recognize objects from a vast set of more than 1,000 "
+#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
 "exceptional speed and efficiency. It enables you to swiftly evaluate the "
@@ -6181,36 +6228,31 @@ msgid ""
 "accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
 "model is a specific type of convolutional neural network formed by stacking "
 "residual blocks commonly used to power computer vision applications as "
-"object detections. This king of design allows the training of very deep "
+"object detections. This kind of design allows the training of very deep "
 "networks without encountering the vanishing gradient problem. Unlike YOLO, "
 "ResNet50 is primarily focused on image classification and does not provide "
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
-msgstr "YOLOv5 NANO"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:368
-#, kde-format
-msgid "Selection model: "
-msgstr "Selectiemodel: "
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:106
-#: core/utilities/maintenance/maintenancedlg.cpp:373
-#, kde-format
-msgid "YOLOv5 Nano"
-msgstr "YOLOv5 Nano"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
-#: core/utilities/maintenance/maintenancedlg.cpp:374
-#, kde-format
-msgid "YOLOv5 XLarge"
-msgstr "YOLOv5 XLarge"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:375
-#, kde-format
-msgid "ResNet50"
-msgstr "ResNet50"
+msgstr ""
+"<p><b>YOLOv5 Nano</b>: dit model is een neuraal netwerk dat uitzonderlijke "
+"snelheid en efficiëntie biedt. Het stelt u in staat om gladjes de integratie "
+"van scenario's voor objectdetectie te integreren. Het is ontworpen voor "
+"objectdetectie, in staat de locatie van objecten in een afbeelding te "
+"herkennen en te extraheren. De beperking op het aantal te herkennen objecten "
+"is ingesteld op 80.</p><p><b>YOLOv5 XLarge</b>: net als de vorige, dit model "
+"is een neuraal netwerk gericht op complexere vereisten voor objectdetectie "
+"en toont opmerkelijke mogelijkheden. Ondanks de introductie van extra "
+"complexiteit met meer tijdvertraging en computerhulpbronnen, moet het "
+"gebruikt worden voor scenario's voor objectdetectie op grotere schaal omdat "
+"het meer accurate voorspellingen levert ten koste van snelheid.</"
+"p><p><b>ResNet50</b>: dit model is een specifiek type convolutioneel neuraal "
+"netwerk gevormd door het stapelen van bestaande blokken algemeen gebruikt om "
+"toepassingen voor zien met de computer zoals objectdetectie aan te drijven. "
+"Deze koning van ontwerpen biedt de training van erg diepe netwerken zonder "
+"het verdwijnende gradiënt probleem. Anders dan YOLO, is ResNet50 primair "
+"gericht op classificatie van afbeeldingen en levert geen lokalisatie van "
+"objecten. Het kan objecten herkennen uit een grote set van meer dan 1.000 "
+"klassen, dekt een brede reeks objecten, dieren en scènes.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -9066,7 +9108,7 @@ msgstr "Kleurbeheer gebruiken bij afdrukken"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:426
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
 msgstr "Instellingen..."
@@ -43259,7 +43301,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:408
+#: core/utilities/maintenance/maintenancedlg.cpp:231
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Sorteerder op kwaliteit van afbeeldingen"
@@ -52305,28 +52347,28 @@ msgstr ""
 "dan kan het ook de mensen herkennen die op uw foto's staan."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:331
+#: core/utilities/maintenance/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Sla afbeeldingen over die al zijn gescand"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:332
+#: core/utilities/maintenance/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Opnieuw scannen en resultaten samenvoegen"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:333
+#: core/utilities/maintenance/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Niet bevestigde resultaten wissen en opnieuw scannen"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:334
+#: core/utilities/maintenance/maintenancedlg.cpp:154
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
@@ -57611,41 +57653,41 @@ msgstr "Gezichten in de database worden bijgewerkt"
 msgid "Finger-prints"
 msgstr "Vingerafdrukken"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:209
+#: core/utilities/maintenance/maintenancedlg.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Onderhoud"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:224
+#: core/utilities/maintenance/maintenancedlg.cpp:44
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>Uit te voeren onderhoudsbewerkingen selecteren</b></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:230
+#: core/utilities/maintenance/maintenancedlg.cpp:50
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Items verwerken vanaf:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:232
+#: core/utilities/maintenance/maintenancedlg.cpp:52
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "De laatst opgeslagen actieve hulpmiddelen en instellingen gebruiken"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:233
+#: core/utilities/maintenance/maintenancedlg.cpp:53
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Op alle processorkernen werken (indien mogelijk)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:234
+#: core/utilities/maintenance/maintenancedlg.cpp:54
 #, kde-format
 msgid "Common Options"
 msgstr "Algemene opties"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:58
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -57654,12 +57696,12 @@ msgstr ""
 "<qt>Geen optie<br/><i>Opmerking: alleen albumverzamelingen worden verwerkt "
 "met dit hulpmiddel.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:60
 #, kde-format
 msgid "Scan for new items"
 msgstr "Nieuwe items zoeken"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:246
+#: core/utilities/maintenance/maintenancedlg.cpp:66
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -57673,27 +57715,27 @@ msgstr ""
 "digiKam tijdelijk bevriezen<br/> om er zeker van te zijn dat de database "
 "niet corrupt wordt.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:249
+#: core/utilities/maintenance/maintenancedlg.cpp:69
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Ook de miniaturen-database opschonen."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:70
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Ook de gezichtsherkenning-database opschonen."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:71
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "Ook de database met gelijkenissen opschonen."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:252
+#: core/utilities/maintenance/maintenancedlg.cpp:72
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Uitgebreid opschonen en alle databases inkrimpen."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:253
+#: core/utilities/maintenance/maintenancedlg.cpp:73
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -57702,69 +57744,69 @@ msgstr ""
 "Deze optie leidt tot het schoonmaken (verkleinen) van de databases. "
 "Schoonmaken wordt ondersteund zowel voor SQLite als MySQL."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:257
+#: core/utilities/maintenance/maintenancedlg.cpp:77
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Opschonen van database uitvoeren"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:262
-#: core/utilities/maintenance/maintenancedlg.cpp:269
+#: core/utilities/maintenance/maintenancedlg.cpp:82
+#: core/utilities/maintenance/maintenancedlg.cpp:89
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Naar gewijzigde of niet-gecatalogiseerde items zoeken (sneller)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:264
+#: core/utilities/maintenance/maintenancedlg.cpp:84
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Miniaturen opnieuw aanmaken"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:271
+#: core/utilities/maintenance/maintenancedlg.cpp:91
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Vingerafdrukken opnieuw aanmaken"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:280
+#: core/utilities/maintenance/maintenancedlg.cpp:100
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Reeks van gelijkenissen (in percentages): "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:300
+#: core/utilities/maintenance/maintenancedlg.cpp:120
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Beperking op duplicaten:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:304
+#: core/utilities/maintenance/maintenancedlg.cpp:124
 #, kde-format
 msgid "No restriction"
 msgstr "Geen beperking"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:305
+#: core/utilities/maintenance/maintenancedlg.cpp:125
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Beperken tot het album met de referentie-afbeelding"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:306
+#: core/utilities/maintenance/maintenancedlg.cpp:126
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Album met de referentie-afbeelding uitsluiten"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:140
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Dubbele items zoeken"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:147
 #, kde-format
 msgid "Faces data management: "
 msgstr "Gegevensbeheer van gezichten: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:337
+#: core/utilities/maintenance/maintenancedlg.cpp:157
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Wis en bouw opnieuw alle training-gegevens"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:339
+#: core/utilities/maintenance/maintenancedlg.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57774,41 +57816,65 @@ msgstr ""
 "Dit wist alle training-gegevens voor herkennen en bouwt het opnieuw op uit "
 "alle beschikbare gezichten."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:162
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Gezichten detecteren en herkennen"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:349
+#: core/utilities/maintenance/maintenancedlg.cpp:170
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "<p>This tool allows to assign automatically tags to images by contents "
+#| "analysis using deep-learning neural network.</p><p>The settings below "
+#| "determines the deep-learning model to use while parsing image contents to "
+#| "determine the subjects of the photography. The neural network used in "
+#| "background will generate automatically a serie of tags describing the "
+#| "contents and store the results in the database.</p>"
+msgctxt "@label"
+msgid ""
+"<p><b>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</b></p><p>The settings below "
+"determines the deep-learning model to use while parsing image contents to "
+"determine the subjects of the photography. The neural network used in "
+"background will generate automatically a serie of tags describing the "
+"contents and store the results in the database.</p>"
+msgstr ""
+"<p>Dit hulpmiddel biedt het automatisch toekennen van tags aan afbeeldingen "
+"door analyse van inhoud met een deep-learning neuraal netwerk.</p><p>De "
+"onderstaande instellingen bepalen het te gebruiken model van deep-learning "
+"tijdens het ontleden van de inhoud van afbeeldingen om de onderwerpen van de "
+"foto te bepalen. Het neurale netwerk, gebruikt in de achtergrond, zal "
+"automatisch een serie tags genereren die de inhoud beschrijven en de "
+"resultaten opslaan in de database.</p>"
+
+#: core/utilities/maintenance/maintenancedlg.cpp:179
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Modus voor automatisch toekennen van tags: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:354
+#: core/utilities/maintenance/maintenancedlg.cpp:184
 #, kde-format
 msgid "Clean all and re-assign"
 msgstr "Alles wissen en opnieuw toekennen"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:355
-#: core/utilities/maintenance/maintenancedlg.cpp:403
+#: core/utilities/maintenance/maintenancedlg.cpp:185
+#: core/utilities/maintenance/maintenancedlg.cpp:226
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Alleen niet-toegewezen scannen"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:377
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
-#| "XLarge</b>: this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections."
+#: core/utilities/maintenance/maintenancedlg.cpp:187
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
+"scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
+"the items with no assigned tag<p>."
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:200
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -57829,51 +57895,70 @@ msgid ""
 "ResNet50 is primarily focused on image classification and does not provide "
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
-msgstr "YOLOv5 NANO"
+msgstr ""
+"<p><b>YOLOv5 Nano</b>: dit model is een neuraal netwerk dat uitzonderlijke "
+"snelheid en efficiëntie biedt. Het stelt u in staat om gladjes de integratie "
+"van scenario's voor objectdetectie te integreren. Het is ontworpen voor "
+"objectdetectie, in staat de locatie van objecten in een afbeelding te "
+"herkennen en te extraheren. De beperking op het aantal te herkennen objecten "
+"is ingesteld op 80.</p><p><b>YOLOv5 XLarge</b>: net als de vorige, dit model "
+"is een neuraal netwerk gericht op complexere vereisten voor objectdetectie "
+"en toont opmerkelijke mogelijkheden. Ondanks de introductie van extra "
+"complexiteit met meer tijdvertraging en computerhulpbronnen, moet het "
+"gebruikt worden voor scenario's voor objectdetectie op grotere schaal omdat "
+"het meer accurate voorspellingen levert ten koste van snelheid.</"
+"p><p><b>ResNet50</b>: dit model is een specifiek type convolutioneel neuraal "
+"netwerk gevormd door het stapelen van bestaande blokken algemeen gebruikt om "
+"toepassingen voor zien met de computer zoals objectdetectie aan te drijven. "
+"Deze koning van ontwerpen biedt de training van erg diepe netwerken zonder "
+"het verdwijnende gradiënt probleem. Anders dan YOLO, is ResNet50 primair "
+"gericht op classificatie van afbeeldingen en levert geen lokalisatie van "
+"objecten. Het kan objecten herkennen uit een grote set van meer dan 1.000 "
+"klassen, dekt een brede reeks objecten, dieren en scènes.</p>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:389
+#: core/utilities/maintenance/maintenancedlg.cpp:212
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Automatisch toekennen van tags"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:397
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Modus van scan: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:402
+#: core/utilities/maintenance/maintenancedlg.cpp:225
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Alles wissen en opnieuw scannen"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:415
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Synchronisatierichting: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:419
+#: core/utilities/maintenance/maintenancedlg.cpp:242
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Van database naar metagegevens van afbeeldingen"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:420
+#: core/utilities/maintenance/maintenancedlg.cpp:243
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Van metagegevens van afbeeldingen naar database"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:423
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr ""
 "Controleer het paneel voor het instellen van metagegevens voor details: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:428
+#: core/utilities/maintenance/maintenancedlg.cpp:251
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Metagegevens met de database synchroniseren"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:404
+#: core/utilities/maintenance/maintenancemngr.cpp:395
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -57882,7 +57967,7 @@ msgstr ""
 "Alle bewerkingen zijn gereed.\n"
 "Duur: %1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:405
+#: core/utilities/maintenance/maintenancemngr.cpp:396
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Onderhoud van digiKam"
@@ -64210,6 +64295,61 @@ msgstr "Zet alle instellingen terug naar hun standaardwaarden."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
+
+#~| msgctxt "@info:tooltip"
+#~| msgid ""
+#~| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+#~| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
+#~| "integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
+#~| "XLarge</b>: this model is a neural network dedicated for more complex "
+#~| "object detection requirements and showcases remarkable capabilities. "
+#~| "Despite the additional complexity introducing more time-latency and "
+#~| "computer resources, it's must be used for larger-scale object detection "
+#~| "scenarios.</p><p><b>ResNet50</b>: this model is a specific type of "
+#~| "convolutional neural network formed by stacking residual blocks commonly "
+#~| "used to power computer vision applications as object detections."
+#~ msgctxt "@label"
+#~ msgid ""
+#~ "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+#~ "exceptional speed and efficiency. It enables you to swiftly evaluate the "
+#~ "integration of smaller-scale object detection scenarios. It's designed "
+#~ "for objects detections, capable of recognizing and extracting the "
+#~ "location of objects within an image. The limitation on the number of "
+#~ "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
+#~ "previous one, this model is a neural network dedicated for more complex "
+#~ "object detection requirements and showcases remarkable capabilities. "
+#~ "Despite the additional complexity introducing more time-latency and "
+#~ "computer resources, it's must be used for larger-scale object detection "
+#~ "scenarios as it provides more accurate predictions at the expense of "
+#~ "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
+#~ "convolutional neural network formed by stacking residual blocks commonly "
+#~ "used to power computer vision applications as object detections. This "
+#~ "king of design allows the training of very deep networks without "
+#~ "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
+#~ "primarily focused on image classification and does not provide object "
+#~ "localization. It can recognize objects from a vast set of more than 1,000 "
+#~ "classes, covering a wide range of objects, animals, and scenes.</p>"
+#~ msgstr ""
+#~ "<p><b>YOLOv5 Nano</b>: dit model is een neuraal netwerk dat "
+#~ "uitzonderlijke snelheid en efficiëntie biedt. Het stelt u in staat om "
+#~ "gladjes de integratie van scenario's voor objectdetectie te integreren. "
+#~ "Het is ontworpen voor objectdetectie, in staat de locatie van objecten in "
+#~ "een afbeelding te herkennen en te extraheren. De beperking op het aantal "
+#~ "te herkennen objecten is ingesteld op 80.</p><p><b>YOLOv5 XLarge</b>: net "
+#~ "als de vorige, dit model is een neuraal netwerk gericht op complexere "
+#~ "vereisten voor objectdetectie en toont opmerkelijke mogelijkheden. "
+#~ "Ondanks de introductie van extra complexiteit met meer tijdvertraging en "
+#~ "computerhulpbronnen, moet het gebruikt worden voor scenario's voor "
+#~ "objectdetectie op grotere schaal omdat het meer accurate voorspellingen "
+#~ "levert ten koste van snelheid.</p><p><b>ResNet50</b>: dit model is een "
+#~ "specifiek type convolutioneel neuraal netwerk gevormd door het stapelen "
+#~ "van bestaande blokken algemeen gebruikt om toepassingen voor zien met de "
+#~ "computer zoals objectdetectie aan te drijven. Deze koning van ontwerpen "
+#~ "biedt de training van erg diepe netwerken zonder het verdwijnende "
+#~ "gradiënt probleem. Anders dan YOLO, is ResNet50 primair gericht op "
+#~ "classificatie van afbeeldingen en levert geen lokalisatie van objecten. "
+#~ "Het kan objecten herkennen uit een grote set van meer dan 1.000 klassen, "
+#~ "dekt een brede reeks objecten, dieren en scènes.</p>"
 
 #~ msgctxt "@label"
 #~ msgid ""

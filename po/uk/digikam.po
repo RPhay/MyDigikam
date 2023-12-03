@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 00:39+0000\n"
-"PO-Revision-Date: 2023-12-01 20:39+0200\n"
+"POT-Creation-Date: 2023-12-03 00:39+0000\n"
+"PO-Revision-Date: 2023-12-02 09:23+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -6146,33 +6146,80 @@ msgstr ""
 "зображень.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:359
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "<p>This tool allows to assign automatically tags to images by contents "
+#| "analysis using deep-learning neural network.</p><p>The settings below "
+#| "determines the deep-learning model to use while parsing image contents to "
+#| "determine the subjects of the photography. The neural network used in "
+#| "background will generate automatically a serie of tags describing the "
+#| "contents and store the results in the database.</p>"
 msgctxt "@label"
 msgid ""
-"<p>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</p><p>The settings below "
-"determines the deep-learning model to use while parsing image contents to "
+"<p><b>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</b></p><p>The settings below "
+"determine the deep-learning model to use while parsing image contents to "
 "determine the subjects of the photography. The neural network used in "
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
+"<p>Цей інструмент уможливлює автоматичне призначення позначок до зображень "
+"на основі вмісту із використанням нейронної мережі для глибинного навчання.</"
+"p><p>Значення з наведеного нижче списку визначають модель глибинного "
+"навчання, якою слід скористатися для обробки вмісту зображення з метою "
+"визначення об'єктів на фотографії. У фоновому режимі буде використано "
+"нейронну мережу для автоматичного створення набору міток, що описують вміст, "
+"а отримані мітки буде збережено до бази даних.</p>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:88
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
+#: core/utilities/maintenance/maintenancedlg.cpp:191
+#, kde-format
+msgid "Selection model: "
+msgstr "Модель вибору:"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
+#: core/utilities/maintenance/maintenancedlg.cpp:196
+#, kde-format
+msgid "YOLOv5 Nano"
+msgstr "YOLOv5 Nano"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/utilities/maintenance/maintenancedlg.cpp:197
+#, kde-format
+msgid "YOLOv5 XLarge"
+msgstr "YOLOv5 XLarge"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/utilities/maintenance/maintenancedlg.cpp:198
+#, kde-format
+msgid "ResNet50"
+msgstr "ResNet50"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
 #| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
 #| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
-#| "XLarge</b>: this model is a neural network dedicated for more complex "
+#| "integration of smaller-scale object detection scenarios. It's designed "
+#| "for objects detections, capable of recognizing and extracting the "
+#| "location of objects within an image. The limitation on the number of "
+#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
+#| "previous one, this model is a neural network dedicated for more complex "
 #| "object detection requirements and showcases remarkable capabilities. "
 #| "Despite the additional complexity introducing more time-latency and "
 #| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios.</p><p><b>ResNet50</b>: this model is a specific type of "
+#| "scenarios as it provides more accurate predictions at the expense of "
+#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
 #| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections."
-msgctxt "@label"
+#| "used to power computer vision applications as object detections. This "
+#| "king of design allows the training of very deep networks without "
+#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
+#| "primarily focused on image classification and does not provide object "
+#| "localization. It can recognize objects from a vast set of more than 1,000 "
+#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
 "exceptional speed and efficiency. It enables you to swiftly evaluate the "
@@ -6187,7 +6234,7 @@ msgid ""
 "accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
 "model is a specific type of convolutional neural network formed by stacking "
 "residual blocks commonly used to power computer vision applications as "
-"object detections. This king of design allows the training of very deep "
+"object detections. This kind of design allows the training of very deep "
 "networks without encountering the vanishing gradient problem. Unlike YOLO, "
 "ResNet50 is primarily focused on image classification and does not provide "
 "object localization. It can recognize objects from a vast set of more than "
@@ -6195,39 +6242,22 @@ msgid ""
 msgstr ""
 "<p><b>YOLOv5 Nano</b>: ця модель є нейронною мережею, яка є винятково "
 "швидкою та ефективною. За її допомогою ви зможете без проблем інтегрувати "
-"сценарії із виявленням маломасштабних об'єктів.</p><p><b>YOLOv5 XLarge</b>: "
-"ця модель є нейронною мережею, яку призначено для виявлення складніших "
-"об'єктів. Вона має визначні можливості. Хоча додаткова складність збільшує "
-"латентність і використання ресурсів комп'ютера, цією моделлю варто "
-"скористатися у сценаріях із виявленням великомасштабних об'єктів.</"
-"p><p><b>ResNet50</b>: ця модель є специфічним типом нейронної мережі зі "
-"згорткою, яку сформовано як стос розподілених блоків, які типово "
+"сценарії із виявленням маломасштабних об'єктів. Її розроблено для виявлення "
+"об'єктів. Вона може розпізнавати і видобувати дані щодо розташування "
+"об'єктів на зображенні. Кількість розпізнаних об'єктів при цьому обмежено 80."
+"</p><p><b>YOLOv5 XLarge</b>: як і попередня, ця модель є нейронною мережею, "
+"яку призначено для виявлення складніших об'єктів. Вона має визначні "
+"можливості. Хоча додаткова складність збільшує латентність і використання "
+"ресурсів комп'ютера, цією моделлю варто скористатися у сценаріях із "
+"виявленням великомасштабних об'єктів, оскільки вона точніша, хоча і "
+"повільніша.</p><p><b>ResNet50</b>: ця модель є специфічним типом нейронної "
+"мережі зі згорткою, яку сформовано як стос розподілених блоків, які типово "
 "використовують у потужних програмах комп'ютерного зору для виявлення "
-"об'єктів."
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:368
-#, kde-format
-msgid "Selection model: "
-msgstr "Модель вибору:"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:106
-#: core/utilities/maintenance/maintenancedlg.cpp:373
-#, kde-format
-msgid "YOLOv5 Nano"
-msgstr "YOLOv5 Nano"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
-#: core/utilities/maintenance/maintenancedlg.cpp:374
-#, kde-format
-msgid "YOLOv5 XLarge"
-msgstr "YOLOv5 XLarge"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:375
-#, kde-format
-msgid "ResNet50"
-msgstr "ResNet50"
+"об'єктів. Такий тип побудови надає змогу навчання дуже глибоких мереж із "
+"уникненням небезпеки зникання градієнта. На відміну від YOLO, уResNet50 "
+"основний акцент зроблено на класифікації зображень без локалізації об'єктів. "
+"Модель може розпізнавати об'єкти з широкого набору з понад 1000 класів у "
+"широкому діапазоні об'єктів, тварин та сцен.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -9121,7 +9151,7 @@ msgstr "Використовувати керування кольорами д�
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:426
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
 msgstr "Параметри…"
@@ -43499,7 +43529,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:408
+#: core/utilities/maintenance/maintenancedlg.cpp:231
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Впорядковування зображень за якістю"
@@ -52566,28 +52596,28 @@ msgstr ""
 "зможе автоматично виконати розпізнавання цих людей на інших фотографіях."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:331
+#: core/utilities/maintenance/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Пропускати вже скановані зображення"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:332
+#: core/utilities/maintenance/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Пересканувати і об'єднати результати"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:333
+#: core/utilities/maintenance/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Вилучити непідтверджені результати і виконати пересканування"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:334
+#: core/utilities/maintenance/maintenancedlg.cpp:154
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
@@ -57917,41 +57947,41 @@ msgstr "Оновлюється база даних облич"
 msgid "Finger-prints"
 msgstr "Відбитки"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:209
+#: core/utilities/maintenance/maintenancedlg.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Супровід"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:224
+#: core/utilities/maintenance/maintenancedlg.cpp:44
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>Виберіть дію, яку слід виконати для супроводу збірки</b></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:230
+#: core/utilities/maintenance/maintenancedlg.cpp:50
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Обробити записи:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:232
+#: core/utilities/maintenance/maintenancedlg.cpp:52
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "Останні збережені активні інструменти і параметри"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:233
+#: core/utilities/maintenance/maintenancedlg.cpp:53
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Використовувати всі ядра процесора (якщо є можливість)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:234
+#: core/utilities/maintenance/maintenancedlg.cpp:54
 #, kde-format
 msgid "Common Options"
 msgstr "Загальні параметри"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:58
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -57960,12 +57990,12 @@ msgstr ""
 "<qt>Немає варіантів<br/><i>Зауваження: цим інструментом можна обробляти лише "
 "збірку альбомів.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:60
 #, kde-format
 msgid "Scan for new items"
 msgstr "Виявити нові зображення"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:246
+#: core/utilities/maintenance/maintenancedlg.cpp:66
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -57979,27 +58009,27 @@ msgstr ""
 "тривалішою і може на певний час призупинити роботу digiKam<br/> з метою "
 "запобігти пошкодженню бази даних.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:249
+#: core/utilities/maintenance/maintenancedlg.cpp:69
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Також ущільнити базу даних мініатюр."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:70
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Також ущільнити базу даних облич."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:71
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "Також ущільнити базу даних подібності."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:252
+#: core/utilities/maintenance/maintenancedlg.cpp:72
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Розширене чищення і стискання усіх баз даних."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:253
+#: core/utilities/maintenance/maintenancedlg.cpp:73
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -58008,69 +58038,69 @@ msgstr ""
 "За допомогою цього пункту можна очистити (ущільнити) бази даних. Підтримку "
 "ущільнення передбачено для обох типів баз даних, SQLite і MySQL."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:257
+#: core/utilities/maintenance/maintenancedlg.cpp:77
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Виконати спорожнення бази даних"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:262
-#: core/utilities/maintenance/maintenancedlg.cpp:269
+#: core/utilities/maintenance/maintenancedlg.cpp:82
+#: core/utilities/maintenance/maintenancedlg.cpp:89
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Шукати змінені або не додані до каталогу записи (швидше)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:264
+#: core/utilities/maintenance/maintenancedlg.cpp:84
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Заново створити мініатюри"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:271
+#: core/utilities/maintenance/maintenancedlg.cpp:91
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Заново створити відбитки"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:280
+#: core/utilities/maintenance/maintenancedlg.cpp:100
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Діапазон подібності (у відсотках): "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:300
+#: core/utilities/maintenance/maintenancedlg.cpp:120
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Обмеження на дублікати:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:304
+#: core/utilities/maintenance/maintenancedlg.cpp:124
 #, kde-format
 msgid "No restriction"
 msgstr "Без обмежень"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:305
+#: core/utilities/maintenance/maintenancedlg.cpp:125
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Обмежити альбомом еталонного зображення"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:306
+#: core/utilities/maintenance/maintenancedlg.cpp:126
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Виключити альбом еталонного зображення"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:140
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Знайти дублікати зображень"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:147
 #, kde-format
 msgid "Faces data management: "
 msgstr "Керування даними щодо облич: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:337
+#: core/utilities/maintenance/maintenancedlg.cpp:157
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Вилучити і повторно створити всі тренувальні дані"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:339
+#: core/utilities/maintenance/maintenancedlg.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58081,41 +58111,65 @@ msgstr ""
 "розпізнавання і повторного їх створення на основі даних щодо доступних "
 "зображень облич."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:162
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Виявляти і розпізнавати обличчя"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:349
+#: core/utilities/maintenance/maintenancedlg.cpp:170
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "<p>This tool allows to assign automatically tags to images by contents "
+#| "analysis using deep-learning neural network.</p><p>The settings below "
+#| "determines the deep-learning model to use while parsing image contents to "
+#| "determine the subjects of the photography. The neural network used in "
+#| "background will generate automatically a serie of tags describing the "
+#| "contents and store the results in the database.</p>"
+msgctxt "@label"
+msgid ""
+"<p><b>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</b></p><p>The settings below "
+"determines the deep-learning model to use while parsing image contents to "
+"determine the subjects of the photography. The neural network used in "
+"background will generate automatically a serie of tags describing the "
+"contents and store the results in the database.</p>"
+msgstr ""
+"<p>Цей інструмент уможливлює автоматичне призначення позначок до зображень "
+"на основі вмісту із використанням нейронної мережі для глибинного навчання.</"
+"p><p>Значення з наведеного нижче списку визначають модель глибинного "
+"навчання, якою слід скористатися для обробки вмісту зображення з метою "
+"визначення об'єктів на фотографії. У фоновому режимі буде використано "
+"нейронну мережу для автоматичного створення набору міток, що описують вміст, "
+"а отримані мітки буде збережено до бази даних.</p>"
+
+#: core/utilities/maintenance/maintenancedlg.cpp:179
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Режим автоміток:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:354
+#: core/utilities/maintenance/maintenancedlg.cpp:184
 #, kde-format
 msgid "Clean all and re-assign"
 msgstr "Вилучити усі дані і повторити пов'язування"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:355
-#: core/utilities/maintenance/maintenancedlg.cpp:403
+#: core/utilities/maintenance/maintenancedlg.cpp:185
+#: core/utilities/maintenance/maintenancedlg.cpp:226
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Шукати лише записи без призначень"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:377
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
-#| "XLarge</b>: this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections."
+#: core/utilities/maintenance/maintenancedlg.cpp:187
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
+"scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
+"the items with no assigned tag<p>."
+msgstr ""
+
+#: core/utilities/maintenance/maintenancedlg.cpp:200
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -58139,58 +58193,65 @@ msgid ""
 msgstr ""
 "<p><b>YOLOv5 Nano</b>: ця модель є нейронною мережею, яка є винятково "
 "швидкою та ефективною. За її допомогою ви зможете без проблем інтегрувати "
-"сценарії із виявленням маломасштабних об'єктів.</p><p><b>YOLOv5 XLarge</b>: "
-"ця модель є нейронною мережею, яку призначено для виявлення складніших "
-"об'єктів. Вона має визначні можливості. Хоча додаткова складність збільшує "
-"латентність і використання ресурсів комп'ютера, цією моделлю варто "
-"скористатися у сценаріях із виявленням великомасштабних об'єктів.</"
-"p><p><b>ResNet50</b>: ця модель є специфічним типом нейронної мережі зі "
-"згорткою, яку сформовано як стос розподілених блоків, які типово "
+"сценарії із виявленням маломасштабних об'єктів. Її розроблено для виявлення "
+"об'єктів. Вона може розпізнавати і видобувати дані щодо розташування "
+"об'єктів на зображенні. Кількість розпізнаних об'єктів при цьому обмежено 80."
+"</p><p><b>YOLOv5 XLarge</b>: як і попередня, ця модель є нейронною мережею, "
+"яку призначено для виявлення складніших об'єктів. Вона має визначні "
+"можливості. Хоча додаткова складність збільшує латентність і використання "
+"ресурсів комп'ютера, цією моделлю варто скористатися у сценаріях із "
+"виявленням великомасштабних об'єктів, оскільки вона точніша, хоча і "
+"повільніша.</p><p><b>ResNet50</b>: ця модель є специфічним типом нейронної "
+"мережі зі згорткою, яку сформовано як стос розподілених блоків, які типово "
 "використовують у потужних програмах комп'ютерного зору для виявлення "
-"об'єктів."
+"об'єктів. Такий тип побудови надає змогу навчання дуже глибоких мереж із "
+"уникненням небезпеки зникання градієнта. На відміну від YOLO, уResNet50 "
+"основний акцент зроблено на класифікації зображень без локалізації об'єктів. "
+"Модель може розпізнавати об'єкти з широкого набору з понад 1000 класів у "
+"широкому діапазоні об'єктів, тварин та сцен.</p>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:389
+#: core/utilities/maintenance/maintenancedlg.cpp:212
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Автоматичне призначення міток"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:397
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Режим пошуку: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:402
+#: core/utilities/maintenance/maintenancedlg.cpp:225
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Вилучити усі дані і повторити пошук"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:415
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Напрямок синхронізації: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:419
+#: core/utilities/maintenance/maintenancedlg.cpp:242
 #, kde-format
 msgid "From database to image metadata"
 msgstr "з бази даних до метаданих зображення"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:420
+#: core/utilities/maintenance/maintenancedlg.cpp:243
 #, kde-format
 msgid "From image metadata to database"
 msgstr "з метаданих зображення до бази даних"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:423
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Докладні дані наведено на панелі налаштовування метаданих: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:428
+#: core/utilities/maintenance/maintenancedlg.cpp:251
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Синхронізувати метадані з базою даних"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:404
+#: core/utilities/maintenance/maintenancemngr.cpp:395
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -58199,7 +58260,7 @@ msgstr ""
 "Виконання всіх завдань завершено.\n"
 "Тривалість обробки: %1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:405
+#: core/utilities/maintenance/maintenancemngr.cpp:396
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Супровід даних digiKam"
@@ -64561,6 +64622,60 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Хочете відновити типові значення для усіх параметрів відео?"
+
+#~| msgctxt "@info:tooltip"
+#~| msgid ""
+#~| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+#~| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
+#~| "integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
+#~| "XLarge</b>: this model is a neural network dedicated for more complex "
+#~| "object detection requirements and showcases remarkable capabilities. "
+#~| "Despite the additional complexity introducing more time-latency and "
+#~| "computer resources, it's must be used for larger-scale object detection "
+#~| "scenarios.</p><p><b>ResNet50</b>: this model is a specific type of "
+#~| "convolutional neural network formed by stacking residual blocks commonly "
+#~| "used to power computer vision applications as object detections."
+#~ msgctxt "@label"
+#~ msgid ""
+#~ "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+#~ "exceptional speed and efficiency. It enables you to swiftly evaluate the "
+#~ "integration of smaller-scale object detection scenarios. It's designed "
+#~ "for objects detections, capable of recognizing and extracting the "
+#~ "location of objects within an image. The limitation on the number of "
+#~ "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
+#~ "previous one, this model is a neural network dedicated for more complex "
+#~ "object detection requirements and showcases remarkable capabilities. "
+#~ "Despite the additional complexity introducing more time-latency and "
+#~ "computer resources, it's must be used for larger-scale object detection "
+#~ "scenarios as it provides more accurate predictions at the expense of "
+#~ "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
+#~ "convolutional neural network formed by stacking residual blocks commonly "
+#~ "used to power computer vision applications as object detections. This "
+#~ "king of design allows the training of very deep networks without "
+#~ "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
+#~ "primarily focused on image classification and does not provide object "
+#~ "localization. It can recognize objects from a vast set of more than 1,000 "
+#~ "classes, covering a wide range of objects, animals, and scenes.</p>"
+#~ msgstr ""
+#~ "<p><b>YOLOv5 Nano</b>: ця модель є нейронною мережею, яка є винятково "
+#~ "швидкою та ефективною. За її допомогою ви зможете без проблем інтегрувати "
+#~ "сценарії із виявленням маломасштабних об'єктів. Її розроблено для "
+#~ "виявлення об'єктів. Вона може розпізнавати і видобувати дані щодо "
+#~ "розташування об'єктів на зображенні. Кількість розпізнаних об'єктів при "
+#~ "цьому обмежено 80.</p><p><b>YOLOv5 XLarge</b>: як і попередня, ця модель "
+#~ "є нейронною мережею, яку призначено для виявлення складніших об'єктів. "
+#~ "Вона має визначні можливості. Хоча додаткова складність збільшує "
+#~ "латентність і використання ресурсів комп'ютера, цією моделлю варто "
+#~ "скористатися у сценаріях із виявленням великомасштабних об'єктів, "
+#~ "оскільки вона точніша, хоча і повільніша.</p><p><b>ResNet50</b>: ця "
+#~ "модель є специфічним типом нейронної мережі зі згорткою, яку сформовано "
+#~ "як стос розподілених блоків, які типово використовують у потужних "
+#~ "програмах комп'ютерного зору для виявлення об'єктів. Такий тип побудови "
+#~ "надає змогу навчання дуже глибоких мереж із уникненням небезпеки зникання "
+#~ "градієнта. На відміну від YOLO, уResNet50 основний акцент зроблено на "
+#~ "класифікації зображень без локалізації об'єктів. Модель може розпізнавати "
+#~ "об'єкти з широкого набору з понад 1000 класів у широкому діапазоні "
+#~ "об'єктів, тварин та сцен.</p>"
 
 #~ msgctxt "@label"
 #~ msgid ""
