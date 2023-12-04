@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>350</width>
-    <height>72</height>
+    <height>96</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -50,19 +50,8 @@
    </item>
   </layout>
  </widget>
+ <resources/>
  <connections>
-  <connection>
-   <hints>
-    <hint type="sourcelabel">
-     <x>249</x>
-     <y>407</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>253</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
