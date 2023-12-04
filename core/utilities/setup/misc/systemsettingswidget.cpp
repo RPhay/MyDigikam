@@ -78,7 +78,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     d->enableLoggingCheck     = new QCheckBox(i18n("Enable internal debug logging"), this);
 
     d->filesDownloadButton    = new QPushButton(i18n("Download Face Engine Data..."), this);
-    d->filesDownloadButton->setEnabled(!d->filesDownloader->checkDownloadFiles());
+    //d->filesDownloadButton->setEnabled(!d->filesDownloader->checkDownloadFiles());
 
     if (qApp->applicationName() == QLatin1String("showfoto"))
     {
@@ -134,7 +134,7 @@ void SystemSettingsWidget::saveSettings()
 void SystemSettingsWidget::slotFaceDownload()
 {
     d->filesDownloader->startDownload();
-    d->filesDownloadButton->setEnabled(!d->filesDownloader->checkDownloadFiles());
+    //d->filesDownloadButton->setEnabled(!d->filesDownloader->checkDownloadFiles());
 }
 
 } // namespace Digikam

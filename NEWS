@@ -33,7 +33,7 @@ BUGFIXES:
 020 ==> 477999 - Incorrect 'title' of picture shown in Thumbnails view.
 021 ==> 478002 - Import Pictures dialog doesn't use file metadata (EXIF etc.).
 022 ==> 477997 - Button labels not show in configured language.
-023 ==> 
+023 ==> 438317 - Annoying download binary message at startup.
 024 ==> 
 025 ==> 
 026 ==> 
