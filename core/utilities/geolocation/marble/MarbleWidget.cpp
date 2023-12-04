@@ -54,7 +54,7 @@ class MarbleWidget::CustomPaintLayer : public LayerInterface
     {
     }
 
-    QStringList renderPosition() const override { return QStringList() << "USER_TOOLS"; }
+    QStringList renderPosition() const override { return QStringList() << QString::fromUtf8("USER_TOOLS"); }
 
     bool render( GeoPainter *painter, ViewportParams *viewport,
                          const QString &renderPos, GeoSceneLayer *layer ) override

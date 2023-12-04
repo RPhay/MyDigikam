@@ -301,8 +301,8 @@ QVector<int> DownloadRegion::validTileLevels( const TileType tileType ) const
     GeoSceneMap * map = d->m_marbleModel->mapTheme()->map();
     QVector<GeoSceneLayer*> layers = map->layers();
     for (auto layer : layers) {
-        if ((layer->backend() == "vectortile" && tileType == VectorTileType )
-            || (layer->backend() == "texture" && tileType == TextureTileType ) ) {
+        if ((layer->backend() == QString::fromUtf8("vectortile") && tileType == VectorTileType )
+            || (layer->backend() == QString::fromUtf8("texture") && tileType == TextureTileType ) ) {
             GeoSceneTileDataset * dataset = dynamic_cast<GeoSceneTileDataset*>(layer->datasets().first());
             validTileLevels = dataset->tileLevels();
             break;

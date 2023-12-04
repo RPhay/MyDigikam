@@ -47,7 +47,7 @@ void OsmRelationManagerWidgetPrivate::populateRelationsList()
         for ( ; it != end; ++it ) {
 
             if ( !m_allRelations->contains( it.key().id ) ) {
-                mDebug()<< QString( "Relation %1 is not loaded in the Annotate Plugin" ).arg( it.key().id );
+                mDebug()<< QString::fromUtf8( "Relation %1 is not loaded in the Annotate Plugin" ).arg( it.key().id );
                 continue;
             }
 
@@ -82,7 +82,7 @@ void OsmRelationManagerWidgetPrivate::populateDropMenu()
 
     // Suggesting existing relations
     for ( const OsmPlacemarkData &relationData: m_allRelations->values() ) {
-        const QString relationText = relationData.tagValue("name") + QLatin1String(" (") + relationData.tagValue("type") + QLatin1Char(')');
+        const QString relationText = relationData.tagValue(QString::fromUtf8("name")) + QLatin1String(" (") + relationData.tagValue(QString::fromUtf8("type")) + QLatin1Char(')');
 
         // Don't suggest relations the placemark is already part of
         if ( m_placemark->hasOsmData() && m_placemark->osmData().containsRelation( relationData.id() ) ) {

@@ -45,7 +45,7 @@ void OsmTagEditorWidgetPrivate::populateCurrentTagsList()
         QStringList itemText;
 
         // "name" is a standard OSM tag, don't translate
-        itemText<< "name" << m_placemark->name();
+        itemText<< QString::fromUtf8("name") << m_placemark->name();
         QTreeWidgetItem *nameTag = new QTreeWidgetItem( itemText );
         nameTag->setDisabled( true );
         m_currentTagsList->addTopLevelItem( nameTag );
@@ -55,7 +55,7 @@ void OsmTagEditorWidgetPrivate::populateCurrentTagsList()
     if (geodata_cast<GeoDataPolygon>(m_placemark->geometry())) {
         QStringList itemText;
         // "type" is a standard OSM tag, don't translate
-        itemText<< "type" << "multipolygon";
+        itemText<< QString::fromUtf8("type") << QString::fromUtf8("multipolygon");
         QTreeWidgetItem *typeTag = new QTreeWidgetItem( itemText );
         typeTag->setDisabled( true );
         m_currentTagsList->addTopLevelItem( typeTag );
@@ -152,7 +152,7 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark is a node, and it doesn't already have any node-specific tags, recommend all node-specific tags
-    tags      = QStringList() << "amenity=*" << "shop=*" << "transport=*" << "tourism=*" << "historic=*" << "power=*" << "barrier=*";
+    tags      = QStringList() << QString::fromUtf8("amenity=*") << QString::fromUtf8("shop=*") << QString::fromUtf8("transport=*") << QString::fromUtf8("tourism=*") << QString::fromUtf8("historic=*") << QString::fromUtf8("power=*") << QString::fromUtf8("barrier=*");
     if (geodata_cast<GeoDataPoint>(m_placemark->geometry()) && !containsAny(osmData, tags)) {
         addPattern( filter, osmData, tags );
     }
@@ -160,7 +160,7 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark is a way, and it doesn't already have any way-specific tags, recommend all way-specific tags
-    tags      = QStringList() << "highway=*" << "waterway=*" << "railway=*";
+    tags      = QStringList() << QString::fromUtf8("highway=*") << QString::fromUtf8("waterway=*") << QString::fromUtf8("railway=*");
     if (geodata_cast<GeoDataLineString>(m_placemark->geometry()) && !containsAny(osmData, tags)) {
         addPattern( filter, osmData, tags );
     }
@@ -168,7 +168,7 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark is a polygon, and it doesn't already have any polygon-specific tags, recommend all polygon-specific tags
-    tags      = QStringList() << "landuse=*" << "leisure=*";
+    tags      = QStringList() << QString::fromUtf8("landuse=*") << QString::fromUtf8("leisure=*");
     if (geodata_cast<GeoDataPolygon>(m_placemark->geometry()) && !containsAny(osmData, tags)) {
         addPattern( filter, osmData, tags );
     }
@@ -176,7 +176,7 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark is a relation, recommend type=*
-    tags      = QStringList() << "type=*";
+    tags      = QStringList() << QString::fromUtf8("type=*");
     if (m_placemark->extendedData().value(QStringLiteral("osmRelation")).value().toString() == QLatin1String("yes")) {
         addPattern( filter, osmData, tags );
     }
@@ -184,8 +184,8 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark has type=route, recommend route=*, network=*, ref=*, operator=*
-    tags      = QStringList() << "type=route";
-    tagsAux   = QStringList() << "route=*" << "network=*" << "ref=*" << "operator=*";
+    tags      = QStringList() << QString::fromUtf8("type=route");
+    tagsAux   = QStringList() << QString::fromUtf8("route=*") << QString::fromUtf8("network=*") << QString::fromUtf8("ref=*") << QString::fromUtf8("operator=*");
     if (containsAny(osmData, tags)) {
         addPattern( filter, osmData, tagsAux );
     }
@@ -193,8 +193,8 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark has type=route_master, recommend route_master=*,
-    tags      = QStringList() << "type=route_master";
-    tagsAux   = QStringList() << "route_master=*";
+    tags      = QStringList() << QString::fromUtf8("type=route_master");
+    tagsAux   = QStringList() << QString::fromUtf8("route_master=*");
     if (containsAny(osmData, tags)) {
         addPattern( filter, osmData, tagsAux );
     }
@@ -202,8 +202,8 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark has type=public_transport, recommend public_transport=*,
-    tags      = QStringList() << "type=public_transport";
-    tagsAux   = QStringList() << "public_transport=*";
+    tags      = QStringList() << QString::fromUtf8("type=public_transport");
+    tagsAux   = QStringList() << QString::fromUtf8("public_transport=*");
     if (containsAny(osmData, tags)) {
         addPattern( filter, osmData, tagsAux );
     }
@@ -211,8 +211,8 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark has type=waterway, recommend waterway=*,
-    tags      = QStringList() << "type=waterway";
-    tagsAux   = QStringList() << "waterway=*";
+    tags      = QStringList() << QString::fromUtf8("type=waterway");
+    tagsAux   = QStringList() << QString::fromUtf8("waterway=*");
     if (containsAny(osmData, tags)) {
         addPattern( filter, osmData, tagsAux );
     }
@@ -220,8 +220,8 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark has type=enforcement, recommend enforcement=*,
-    tags      = QStringList() << "type=enforcement";
-    tagsAux   = QStringList() << "enforcement=*";
+    tags      = QStringList() << QString::fromUtf8("type=enforcement");
+    tagsAux   = QStringList() << QString::fromUtf8("enforcement=*");
     if (containsAny(osmData, tags)) {
         addPattern( filter, osmData, tagsAux );
     }
@@ -229,8 +229,8 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark has amenity=place_of_worship, recommend religion=*
-    tags      = QStringList() << "amenity=place_of_worship";
-    tagsAux   = QStringList() << "religion=*";
+    tags      = QStringList() << QString::fromUtf8("amenity=place_of_worship");
+    tagsAux   = QStringList() << QString::fromUtf8("religion=*");
     if (containsAny(osmData, tags)) {
         addPattern( filter, osmData, tagsAux );
     }
@@ -238,8 +238,8 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark has amenity=toilets, recommend drinking_water=*, indoor=*
-    tags      = QStringList() << "amenity=toilets";
-    tagsAux   = QStringList() << "drinking_water=*" << "indoor=*";
+    tags      = QStringList() << QString::fromUtf8("amenity=toilets");
+    tagsAux   = QStringList() << QString::fromUtf8("drinking_water=*") << QString::fromUtf8("indoor=*");
     if (containsAny(osmData, tags)) {
         addPattern( filter, osmData, tagsAux );
     }
@@ -247,8 +247,8 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark has  tourism=hostel, tourism=hotel or tourism=motel, recommend rooms=*, beds=*, wheelchair=*
-    tags      = QStringList() << "tourism=hotel" << "tourism=hostel" << "tourism=motel";
-    tagsAux   = QStringList() << "rooms=*" << "beds=*" << "wheelchair=*";
+    tags      = QStringList() << QString::fromUtf8("tourism=hotel") << QString::fromUtf8("tourism=hostel") << QString::fromUtf8("tourism=motel");
+    tagsAux   = QStringList() << QString::fromUtf8("rooms=*") << QString::fromUtf8("beds=*") << QString::fromUtf8("wheelchair=*");
     if (containsAny(osmData, tags)) {
         addPattern( filter, osmData, tagsAux );
     }
@@ -256,8 +256,8 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark has  tourism=*, shop=*, amenity=*, recommend website=*, email=*, fee=*
-    tags      = QStringList() << "tourism=*" << "shop=*" << "amenity=*";
-    tagsAux   = QStringList() << "website=*" << "email=*" << "fee=*";
+    tags      = QStringList() << QString::fromUtf8("tourism=*") << QString::fromUtf8("shop=*") << QString::fromUtf8("amenity=*");
+    tagsAux   = QStringList() << QString::fromUtf8("website=*") << QString::fromUtf8("email=*") << QString::fromUtf8("fee=*");
     if (containsAny(osmData, tags)) {
         addPattern( filter, osmData, tagsAux );
     }
@@ -265,8 +265,8 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark has amenity=* shop=*, recommend building=*
-    tags      = QStringList() << "amenity=*" << "shop=*";
-    tagsAux   = QStringList() << "building=*";
+    tags      = QStringList() << QString::fromUtf8("amenity=*") << QString::fromUtf8("shop=*");
+    tagsAux   = QStringList() << QString::fromUtf8("building=*");
     if (containsAny(osmData, tags)) {
         addPattern( filter, osmData, tagsAux );
     }
@@ -274,8 +274,8 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark has highway=*, recommend "lanes=*", "maxspeed=*", "oneway=*", "service=*", "bridge=*", "tunnel=*"
-    tags      = QStringList() << "highway=*";
-    tagsAux   = QStringList() << "lanes=*" << "maxspeed=*" << "maxheight=*" << "maxweight=*" << "abutters=*" << "oneway=*" << "service=*" << "bridge=*" << "tunnel=*";
+    tags      = QStringList() << QString::fromUtf8("highway=*");
+    tagsAux   = QStringList() << QString::fromUtf8("lanes=*") << QString::fromUtf8("maxspeed=*") << QString::fromUtf8("maxheight=*") << QString::fromUtf8("maxweight=*") << QString::fromUtf8("abutters=*") << QString::fromUtf8("oneway=*") << QString::fromUtf8("service=*") << QString::fromUtf8("bridge=*") << QString::fromUtf8("tunnel=*");
     if (geodata_cast<GeoDataLineString>(m_placemark->geometry()) && containsAny(osmData, tags)) {
         addPattern( filter, osmData, tagsAux );
     }
@@ -283,7 +283,7 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // If the placemark is a polygon, recommend "surface=*"
-    tags      = QStringList() << "surface=*";
+    tags      = QStringList() << QString::fromUtf8("surface=*");
     if (geodata_cast<GeoDataPolygon>(m_placemark->geometry())) {
         addPattern( filter, osmData, tags );
     }
@@ -291,7 +291,7 @@ QStringList OsmTagEditorWidgetPrivate::generateTagFilter() const
 
 
     // Always recommend these:
-    tags      = QStringList() << "addr:street=*" << "addr:housenumber=*" << "addr:postcode=*" << "addr:country=*" << "access=*";
+    tags      = QStringList() << QString::fromUtf8("addr:street=*") << QString::fromUtf8("addr:housenumber=*") << QString::fromUtf8("addr:postcode=*") << QString::fromUtf8("addr:country=*") << QString::fromUtf8("access=*");
     addPattern( filter, osmData, tags );
 
 
@@ -335,110 +335,110 @@ QVector<OsmTagEditorWidgetPrivate::OsmTag> OsmTagEditorWidgetPrivate::createAddi
     const QVector<OsmTag> additionalOsmTags = QVector<OsmTag>()
 
         // Recommended for nodes
-        << OsmTag("power", "pole")
-        << OsmTag("power", "generator")
-        << OsmTag("barrier", "fence")
-        << OsmTag("barrier", "wall")
-        << OsmTag("barrier", "gate")
+        << OsmTag(QString::fromUtf8("power"), QString::fromUtf8("pole"))
+        << OsmTag(QString::fromUtf8("power"), QString::fromUtf8("generator"))
+        << OsmTag(QString::fromUtf8("barrier"), QString::fromUtf8("fence"))
+        << OsmTag(QString::fromUtf8("barrier"), QString::fromUtf8("wall"))
+        << OsmTag(QString::fromUtf8("barrier"), QString::fromUtf8("gate"))
 
         // Recommended for ways
-        << OsmTag("lanes", "")
-        << OsmTag("maxspeed", "")
-        << OsmTag("maxheight", "")
-        << OsmTag("maxweight", "")
-        << OsmTag("oneway", "yes")
-        << OsmTag("service", "driveway")
-        << OsmTag("service", "parking_aisle")
-        << OsmTag("service", "alley")
-        << OsmTag("tunnel", "yes")
-        << OsmTag("abutters", "commercial")
-        << OsmTag("abutters", "industrial")
-        << OsmTag("abutters", "mixed")
-        << OsmTag("abutters", "residential")
+        << OsmTag(QString::fromUtf8("lanes"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("maxspeed"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("maxheight"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("maxweight"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("oneway"), QString::fromUtf8("yes"))
+        << OsmTag(QString::fromUtf8("service"), QString::fromUtf8("driveway"))
+        << OsmTag(QString::fromUtf8("service"), QString::fromUtf8("parking_aisle"))
+        << OsmTag(QString::fromUtf8("service"), QString::fromUtf8("alley"))
+        << OsmTag(QString::fromUtf8("tunnel"), QString::fromUtf8("yes"))
+        << OsmTag(QString::fromUtf8("abutters"), QString::fromUtf8("commercial"))
+        << OsmTag(QString::fromUtf8("abutters"), QString::fromUtf8("industrial"))
+        << OsmTag(QString::fromUtf8("abutters"), QString::fromUtf8("mixed"))
+        << OsmTag(QString::fromUtf8("abutters"), QString::fromUtf8("residential"))
 
         // Recommended for areas
-        << OsmTag("surface", "unpaved")
-        << OsmTag("surface", "paved")
-        << OsmTag("surface", "gravel")
-        << OsmTag("surface", "dirt")
-        << OsmTag("surface", "grass")
+        << OsmTag(QString::fromUtf8("surface"), QString::fromUtf8("unpaved"))
+        << OsmTag(QString::fromUtf8("surface"), QString::fromUtf8("paved"))
+        << OsmTag(QString::fromUtf8("surface"), QString::fromUtf8("gravel"))
+        << OsmTag(QString::fromUtf8("surface"), QString::fromUtf8("dirt"))
+        << OsmTag(QString::fromUtf8("surface"), QString::fromUtf8("grass"))
 
         // Relations
-        << OsmTag("type", "route")
-        << OsmTag("type", "route_master")
-        << OsmTag("type", "public_transport")
-        << OsmTag("type", "destination_sign")
-        << OsmTag("type", "waterway")
-        << OsmTag("type", "enforcement")
+        << OsmTag(QString::fromUtf8("type"), QString::fromUtf8("route"))
+        << OsmTag(QString::fromUtf8("type"), QString::fromUtf8("route_master"))
+        << OsmTag(QString::fromUtf8("type"), QString::fromUtf8("public_transport"))
+        << OsmTag(QString::fromUtf8("type"), QString::fromUtf8("destination_sign"))
+        << OsmTag(QString::fromUtf8("type"), QString::fromUtf8("waterway"))
+        << OsmTag(QString::fromUtf8("type"), QString::fromUtf8("enforcement"))
 
         // Relations: route
-        << OsmTag("route", "road")
-        << OsmTag("route", "bicycle")
-        << OsmTag("route", "foot")
-        << OsmTag("route", "hiking")
-        << OsmTag("route", "bus")
-        << OsmTag("route", "trolleybus")
-        << OsmTag("route", "ferry")
-        << OsmTag("route", "detour")
-        << OsmTag("route", "train")
-        << OsmTag("route", "tram")
-        << OsmTag("route", "mtb")
-        << OsmTag("route", "horse")
-        << OsmTag("route", "ski")
-        << OsmTag("roundtrip", "yes")
-        << OsmTag("network", "")
-        << OsmTag("ref", "")
-        << OsmTag("operator", "")
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("road"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("bicycle"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("foot"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("hiking"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("bus"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("trolleybus"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("ferry"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("detour"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("train"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("tram"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("mtb"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("horse"))
+        << OsmTag(QString::fromUtf8("route"), QString::fromUtf8("ski"))
+        << OsmTag(QString::fromUtf8("roundtrip"), QString::fromUtf8("yes"))
+        << OsmTag(QString::fromUtf8("network"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("ref"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("operator"), QString::fromUtf8(""))
 
         // Relations: route_master
-        << OsmTag("route_master", "train")
-        << OsmTag("route_master", "subway")
-        << OsmTag("route_master", "monorail")
-        << OsmTag("route_master", "tram")
-        << OsmTag("route_master", "bus")
-        << OsmTag("route_master", "trolleybus")
-        << OsmTag("route_master", "ferry")
-        << OsmTag("route_master", "bicycle")
+        << OsmTag(QString::fromUtf8("route_master"), QString::fromUtf8("train"))
+        << OsmTag(QString::fromUtf8("route_master"), QString::fromUtf8("subway"))
+        << OsmTag(QString::fromUtf8("route_master"), QString::fromUtf8("monorail"))
+        << OsmTag(QString::fromUtf8("route_master"), QString::fromUtf8("tram"))
+        << OsmTag(QString::fromUtf8("route_master"), QString::fromUtf8("bus"))
+        << OsmTag(QString::fromUtf8("route_master"), QString::fromUtf8("trolleybus"))
+        << OsmTag(QString::fromUtf8("route_master"), QString::fromUtf8("ferry"))
+        << OsmTag(QString::fromUtf8("route_master"), QString::fromUtf8("bicycle"))
 
         // Relations: public_transport
-        << OsmTag("public_transport", "stop_area")
-        << OsmTag("public_transport", "stop_area_group")
+        << OsmTag(QString::fromUtf8("public_transport"), QString::fromUtf8("stop_area"))
+        << OsmTag(QString::fromUtf8("public_transport"), QString::fromUtf8("stop_area_group"))
 
         // Relations: waterway
-        << OsmTag("waterway", "river")
-        << OsmTag("waterway", "stream")
-        << OsmTag("waterway", "canal")
-        << OsmTag("waterway", "drain")
-        << OsmTag("waterway", "ditch")
+        << OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("river"))
+        << OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("stream"))
+        << OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("canal"))
+        << OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("drain"))
+        << OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("ditch"))
 
         // Relations: enforcement
-        << OsmTag("enforcement", "maxheight")
-        << OsmTag("enforcement", "maxweight")
-        << OsmTag("enforcement", "maxspeed")
-        << OsmTag("enforcement", "mindistance")
-        << OsmTag("enforcement", "traffic_signals")
-        << OsmTag("enforcement", "check")
-        << OsmTag("enforcement", "access")
-        << OsmTag("enforcement", "toll")
+        << OsmTag(QString::fromUtf8("enforcement"), QString::fromUtf8("maxheight"))
+        << OsmTag(QString::fromUtf8("enforcement"), QString::fromUtf8("maxweight"))
+        << OsmTag(QString::fromUtf8("enforcement"), QString::fromUtf8("maxspeed"))
+        << OsmTag(QString::fromUtf8("enforcement"), QString::fromUtf8("mindistance"))
+        << OsmTag(QString::fromUtf8("enforcement"), QString::fromUtf8("traffic_signals"))
+        << OsmTag(QString::fromUtf8("enforcement"), QString::fromUtf8("check"))
+        << OsmTag(QString::fromUtf8("enforcement"), QString::fromUtf8("access"))
+        << OsmTag(QString::fromUtf8("enforcement"), QString::fromUtf8("toll"))
 
         // Others
-        << OsmTag("height", "")
-        << OsmTag("rooms", "")
-        << OsmTag("beds", "")
-        << OsmTag("wheelchair", "")
-        << OsmTag("website", "")
-        << OsmTag("email", "")
-        << OsmTag("fee", "")
-        << OsmTag("destination", "")
-        << OsmTag("indoor", "yes")
+        << OsmTag(QString::fromUtf8("height"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("rooms"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("beds"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("wheelchair"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("website"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("email"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("fee"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("destination"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("indoor"), QString::fromUtf8("yes"))
 
         // Recommended for all
-        << OsmTag("addr:street", "")
-        << OsmTag("addr:housenumber", "")
-        << OsmTag("addr:postcode", "")
-        << OsmTag("addr:country", "")
-        << OsmTag("access", "private")
-        << OsmTag("access", "permissive");
+        << OsmTag(QString::fromUtf8("addr:street"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("addr:housenumber"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("addr:postcode"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("addr:country"), QString::fromUtf8(""))
+        << OsmTag(QString::fromUtf8("access"), QString::fromUtf8("private"))
+        << OsmTag(QString::fromUtf8("access"), QString::fromUtf8("permissive"));
 
     return additionalOsmTags;
 }

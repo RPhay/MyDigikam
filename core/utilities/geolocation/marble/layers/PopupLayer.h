@@ -38,11 +38,12 @@ public:
     QStringList renderPosition() const override;
     bool render( GeoPainter *painter, ViewportParams *viewport,
                  const QString &, GeoSceneLayer * ) override;
+/*
     bool eventFilter( QObject *, QEvent * ) override;
     qreal zValue() const override;
 
     RenderState renderState() const override;
-
+*/
     QString runtimeTrace() const override { return QStringLiteral("PopupLayer"); }
 
     /**

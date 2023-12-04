@@ -81,7 +81,7 @@ public:
     {
     }
 
-    QStringList renderPosition() const override { return QStringList() << "USER_TOOLS"; }
+    QStringList renderPosition() const override { return QStringList() << QString::fromUtf8("USER_TOOLS"); }
 
     bool render( GeoPainter *painter, ViewportParams *viewport,
                          const QString &renderPos, GeoSceneLayer *layer ) override
@@ -793,8 +793,8 @@ void MarbleMapPrivate::setDocument( const QString& key )
     GeoDataDocument* doc = m_model->fileManager()->at( key );
 
     for ( const GeoSceneLayer *layer: m_model->mapTheme()->map()->layers() ) {
-        if ( layer->backend() != dgml::dgmlValue_geodata
-             && layer->backend() != dgml::dgmlValue_vector )
+        if ( layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)
+             && layer->backend() != QString::fromUtf8(dgml::dgmlValue_vector) )
             continue;
 
         // look for documents
@@ -910,8 +910,8 @@ void MarbleMapPrivate::updateMapTheme()
     // Check whether there is a texture layer and vectortile layer available:
     if ( m_model->mapTheme()->map()->hasTextureLayers() ) {
         const GeoSceneSettings *const settings = m_model->mapTheme()->settings();
-        const GeoSceneGroup *const textureLayerSettings = settings ? settings->group( "Texture Layers" ) : nullptr;
-        const GeoSceneGroup *const vectorTileLayerSettings = settings ? settings->group( "VectorTile Layers" ) : nullptr;
+        const GeoSceneGroup *const textureLayerSettings = settings ? settings->group( QString::fromUtf8("Texture Layers") ) : nullptr;
+        const GeoSceneGroup *const vectorTileLayerSettings = settings ? settings->group( QString::fromUtf8("VectorTile Layers") ) : nullptr;
 
         bool textureLayersOk = true;
         bool vectorTileLayersOk = true;
@@ -922,7 +922,7 @@ void MarbleMapPrivate::updateMapTheme()
         QVector<const GeoSceneVectorTileDataset *> vectorTiles;
 
         for( GeoSceneLayer* layer: m_model->mapTheme()->map()->layers() ){
-            if ( layer->backend() == dgml::dgmlValue_texture ){
+            if ( layer->backend() == QString::fromUtf8(dgml::dgmlValue_texture) ){
 
                 for ( const GeoSceneAbstractDataset *pos: layer->datasets() ) {
                     const GeoSceneTextureTileDataset *const texture = dynamic_cast<GeoSceneTextureTileDataset const *>( pos );
@@ -944,7 +944,7 @@ void MarbleMapPrivate::updateMapTheme()
                         TileCreator *tileCreator = new TileCreator(
                                     sourceDir,
                                     installMap,
-                                    (role == QLatin1String("dem")) ? "true" : "false" );
+                                    (role == QLatin1String("dem")) ? QString::fromUtf8("true") : QString::fromUtf8("false") );
                         tileCreator->setTileFormat( texture->fileFormat().toLower() );
 
                         QPointer<TileCreatorDialog> tileCreatorDlg = new TileCreatorDialog( tileCreator, nullptr );
@@ -968,7 +968,7 @@ void MarbleMapPrivate::updateMapTheme()
                     }
                 }
             }
-            else if ( layer->backend() == dgml::dgmlValue_vectortile ){
+            else if ( layer->backend() == QString::fromUtf8(dgml::dgmlValue_vectortile) ){
 
                 for ( const GeoSceneAbstractDataset *pos: layer->datasets() ) {
                     const GeoSceneVectorTileDataset *const vectorTile = dynamic_cast<GeoSceneVectorTileDataset const *>( pos );
@@ -990,7 +990,7 @@ void MarbleMapPrivate::updateMapTheme()
                         TileCreator *tileCreator = new TileCreator(
                                     sourceDir,
                                     installMap,
-                                    (role == QLatin1String("dem")) ? "true" : "false" );
+                                    (role == QLatin1String("dem")) ? QString::fromUtf8("true") : QString::fromUtf8("false") );
                         tileCreator->setTileFormat( vectorTile->fileFormat().toLower() );
 
                         QPointer<TileCreatorDialog> tileCreatorDlg = new TileCreatorDialog( tileCreator, nullptr );
@@ -1056,7 +1056,7 @@ void MarbleMapPrivate::updateMapTheme()
     }
     else {
         m_layerManager.addLayer( &m_groundLayer );
-        m_textureLayer.setMapTheme( QVector<const GeoSceneTextureTileDataset *>(), nullptr, "", "" );
+        m_textureLayer.setMapTheme( QVector<const GeoSceneTextureTileDataset *>(), nullptr, QString::fromUtf8(""), QString::fromUtf8("") );
         m_vectorTileLayer.setMapTheme( QVector<const GeoSceneVectorTileDataset *>(), nullptr );
     }
 

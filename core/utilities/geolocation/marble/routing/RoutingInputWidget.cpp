@@ -9,12 +9,6 @@
 #include "MarblePlacemarkModel.h"
 #include "RouteRequest.h"
 
-#ifdef MARBLE_NO_WEBKITWIDGETS
-#include "NullTinyWebBrowser.h"
-#else
-#include "TinyWebBrowser.h"
-#endif
-
 #include "BookmarkManager.h"
 #include "MarbleModel.h"
 #include "MarbleWidget.h"

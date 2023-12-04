@@ -50,7 +50,7 @@ public:
 
     /** Reimplemented from LayerInterface. Paints route items and placemarks */
     bool render( GeoPainter *painter, ViewportParams *viewport,
-                 const QString &renderPos = "NONE", GeoSceneLayer *layer = nullptr ) override;
+                 const QString &renderPos = QString::fromUtf8("NONE"), GeoSceneLayer *layer = nullptr ) override;
 
     RenderState renderState() const override;
 

@@ -57,7 +57,6 @@ set(marblewidget_SRCS
     TourItemDelegate.cpp
     MapViewItemDelegate.cpp
     TourPlayback.cpp
-    LegendWidget.cpp
     PlaybackItem.cpp
     PlaybackAnimatedUpdateItem.cpp
     PlaybackFlyToItem.cpp
@@ -69,7 +68,6 @@ set(marblewidget_SRCS
     AnimatedUpdateTrack.cpp
     CurrentLocationWidget.cpp
     MarbleNavigator.cpp
-    MarbleLegendBrowser.cpp
     MarbleAboutDialog.cpp
     MarbleInputHandler.cpp
     MarbleWidgetInputHandler.cpp
@@ -98,7 +96,6 @@ set(marblewidget_SRCS
     PluginManager.cpp
     TimeControlWidget.cpp
     AbstractFloatItem.cpp
-    PopupItem.cpp
     MarbleGlobal.cpp
     MarbleDirs.cpp
     MarbleLocale.cpp

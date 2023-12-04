@@ -11,7 +11,6 @@
 #include "GeoDataCoordinates.h"
 #include "GeoPainter.h"
 #include "MarbleWidget.h"
-#include "PopupItem.h"
 #include "ViewportParams.h"
 #include "RenderPlugin.h"
 #include "RenderState.h"
@@ -39,7 +38,6 @@ public:
     void setupDialogGeoPlaces( const GeoDataPlacemark *index );
     void setupDialogSkyPlaces( const GeoDataPlacemark *index );
 
-    PopupItem *const m_popupItem;
     MarbleWidget *const m_widget;
     QSizeF m_requestedSize;
     bool m_hasCrosshairsPlugin;
@@ -47,10 +45,9 @@ public:
 };
 
 PopupLayer::Private::Private( MarbleWidget *marbleWidget, PopupLayer *q ) :
-    m_popupItem( new PopupItem( q ) ),
     m_widget( marbleWidget ),
     m_hasCrosshairsPlugin( false ),
-    m_crosshairsVisible( true )
+    m_crosshairsVisible( false )
 {
 }
 
@@ -58,6 +55,7 @@ PopupLayer::PopupLayer( MarbleWidget *marbleWidget, QObject *parent ) :
     QObject( parent ),
     d( new Private( marbleWidget, this ) )
 {
+/*
     for (const RenderPlugin *renderPlugin: d->m_widget->renderPlugins()) {
         if (renderPlugin->nameId() == QLatin1String("crosshairs")) {
             d->m_hasCrosshairsPlugin = true;
@@ -67,6 +65,7 @@ PopupLayer::PopupLayer( MarbleWidget *marbleWidget, QObject *parent ) :
 
     connect( d->m_popupItem, SIGNAL(repaintNeeded()), this, SIGNAL(repaintNeeded()) );
     connect( d->m_popupItem, SIGNAL(hide()), this, SLOT(hidePopupItem()) );
+*/
 }
 
 PopupLayer::~PopupLayer()
@@ -82,14 +81,15 @@ QStringList PopupLayer::renderPosition() const
 bool PopupLayer::render( GeoPainter *painter, ViewportParams *viewport,
                                 const QString&, GeoSceneLayer* )
 {
+/*
     if ( visible() ) {
         d->setAppropriateSize( viewport );
         d->m_popupItem->paintEvent( painter, viewport );
     }
-
-    return true;
+*/
+    return false;
 }
-
+/*
 bool PopupLayer::eventFilter( QObject *object, QEvent *e )
 {
     return visible() && d->m_popupItem->eventFilter( object, e );
@@ -104,14 +104,15 @@ RenderState PopupLayer::renderState() const
 {
     return RenderState(QStringLiteral("Popup Window"));
 }
-
+*/
 bool PopupLayer::visible() const
 {
-    return d->m_popupItem->visible();
+    return false; //d->m_popupItem->visible();
 }
 
 void PopupLayer::setVisible( bool visible )
 {
+/*
     d->m_popupItem->setVisible( visible );
     if ( !visible ) {
         disconnect( d->m_popupItem, SIGNAL(repaintNeeded()), this, SIGNAL(repaintNeeded()) );
@@ -121,10 +122,12 @@ void PopupLayer::setVisible( bool visible )
     else {
         connect( d->m_popupItem, SIGNAL(repaintNeeded()), this, SIGNAL(repaintNeeded()) );
     }
+*/
 }
 
 void PopupLayer::popup()
 {
+/*
     GeoDataCoordinates coords = d->m_popupItem->coordinate();
     ViewportParams viewport( d->m_widget->viewport()->projection(),
                              coords.longitude(), coords.latitude(), d->m_widget->viewport()->radius(),
@@ -144,38 +147,44 @@ void PopupLayer::popup()
             d->m_widget->setShowCrosshairs( false );
         }
     }
-
-    setVisible( true );
+*/
+    setVisible( false );
 }
 
 void PopupLayer::setCoordinates( const GeoDataCoordinates &coordinates , Qt::Alignment alignment )
 {
+/*
     d->m_popupItem->setCoordinate( coordinates );
     d->m_popupItem->setAlignment( alignment );
+*/
 }
 
 void PopupLayer::setUrl( const QUrl &url )
 {
-    d->m_popupItem->setUrl( url );
+//    d->m_popupItem->setUrl( url );
 }
 
 void PopupLayer::setContent( const QString &html, const QUrl &baseUrl )
 {
-    d->m_popupItem->setContent( html, baseUrl );
+//    d->m_popupItem->setContent( html, baseUrl );
 }
 
 void PopupLayer::setBackgroundColor(const QColor &color)
 {
+/*
     if(color.isValid()) {
         d->m_popupItem->setBackgroundColor(color);
     }
+*/
 }
 
 void PopupLayer::setTextColor(const QColor &color)
 {
+/*
     if(color.isValid()) {
         d->m_popupItem->setTextColor(color);
     }
+*/
 }
 
 void PopupLayer::setSize( const QSizeF &size )
@@ -185,6 +194,7 @@ void PopupLayer::setSize( const QSizeF &size )
 
 void PopupLayer::Private::setAppropriateSize( const ViewportParams *viewport )
 {
+/*
     qreal margin = 15.0;
 
     QSizeF maximumSize;
@@ -194,14 +204,16 @@ void PopupLayer::Private::setAppropriateSize( const ViewportParams *viewport )
     QSizeF minimumSize( 100.0, 100.0 );
 
     m_popupItem->setSize( m_requestedSize.boundedTo( maximumSize ).expandedTo( minimumSize ) );
+*/
 }
 
 void PopupLayer::hidePopupItem()
 {
+/*
     if( d->m_hasCrosshairsPlugin && d->m_crosshairsVisible ) {
         d->m_widget->setShowCrosshairs( d->m_crosshairsVisible );
     }
-
+*/
     setVisible( false );
 }
 
