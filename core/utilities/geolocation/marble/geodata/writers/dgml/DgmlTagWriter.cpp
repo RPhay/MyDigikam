@@ -12,13 +12,13 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerDgml( GeoTagWriter::QualifiedName( "", dgml::dgmlTag_nameSpace20 ), new DgmlTagWriter() );
+static GeoTagWriterRegistrar s_writerDgml( GeoTagWriter::QualifiedName( QString::fromUtf8(""), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ), new DgmlTagWriter() );
 
 bool DgmlTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
 {
     Q_UNUSED(node);
-    writer.writeStartElement( "dgml" );
-    writer.writeAttribute( "xmlns", QString::fromUtf8(dgml::dgmlTag_nameSpace20) );
+    writer.writeStartElement( QString::fromUtf8("dgml") );
+    writer.writeAttribute( QString::fromUtf8("xmlns"), QString::fromUtf8(dgml::dgmlTag_nameSpace20) );
 
     // Do not write an end element for document handlers
     return true;

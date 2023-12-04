@@ -51,22 +51,22 @@ bool KmlOsmPlacemarkDataTagWriter::writeOsmData( const GeoDataGeometry *geometry
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_nameSpaceMx), QString::fromUtf8(kml::kmlTag_OsmPlacemarkData) );
 
     // Writing the attributes
-    writer.writeAttribute( "id", QString::number( osmData.id() ) );
-    writer.writeOptionalAttribute( "changeset", osmData.changeset() );
-    writer.writeOptionalAttribute( "timestamp", osmData.timestamp() );
-    writer.writeOptionalAttribute( "uid", osmData.uid() );
-    writer.writeOptionalAttribute( "user", osmData.user() );
-    writer.writeOptionalAttribute( "version", osmData.version() );
-    writer.writeOptionalAttribute( "visible", osmData.isVisible() );
-    writer.writeOptionalAttribute( "action", osmData.action() );
+    writer.writeAttribute( QString::fromUtf8("id"), QString::number( osmData.id() ) );
+    writer.writeOptionalAttribute( QString::fromUtf8("changeset"), osmData.changeset() );
+    writer.writeOptionalAttribute( QString::fromUtf8("timestamp"), osmData.timestamp() );
+    writer.writeOptionalAttribute( QString::fromUtf8("uid"), osmData.uid() );
+    writer.writeOptionalAttribute( QString::fromUtf8("user"), osmData.user() );
+    writer.writeOptionalAttribute( QString::fromUtf8("version"), osmData.version() );
+    writer.writeOptionalAttribute( QString::fromUtf8("visible"), osmData.isVisible() );
+    writer.writeOptionalAttribute( QString::fromUtf8("action"), osmData.action() );
 
     // Writing the tags
     QHash<QString, QString>::const_iterator tagsIt = osmData.tagsBegin();
     QHash<QString, QString>::const_iterator tagsEnd = osmData.tagsEnd();
     for ( ; tagsIt != tagsEnd; ++tagsIt ) {
-        writer.writeStartElement( QString::fromUtf8(kml::kmlTag_nameSpaceMx), "tag" );
-        writer.writeAttribute( "k", tagsIt.key() );
-        writer.writeAttribute( "v", tagsIt.value() );
+        writer.writeStartElement( QString::fromUtf8(kml::kmlTag_nameSpaceMx), QString::fromUtf8("tag") );
+        writer.writeAttribute( QString::fromUtf8("k"), tagsIt.key() );
+        writer.writeAttribute( QString::fromUtf8("v"), tagsIt.value() );
         writer.writeEndElement();
     }
     if ( geometry ) {
@@ -80,8 +80,8 @@ bool KmlOsmPlacemarkDataTagWriter::writeOsmData( const GeoDataGeometry *geometry
             QVector<GeoDataCoordinates>::const_iterator nodeEnd = lineString->end();
             for ( ; nodeIt != nodeEnd; ++nodeIt ) {
                 const OsmPlacemarkData &nodeOsmData = osmData.nodeReference( *nodeIt );
-                writer.writeStartElement( QString::fromUtf8(kml::kmlTag_nameSpaceMx), "nd" );
-                writer.writeAttribute( "index", QString::number( ndIndex++ ) );
+                writer.writeStartElement( QString::fromUtf8(kml::kmlTag_nameSpaceMx), QString::fromUtf8("nd") );
+                writer.writeAttribute( QString::fromUtf8("index"), QString::number( ndIndex++ ) );
                 writeOsmData( nullptr, nodeOsmData, writer );
                 writer.writeEndElement();
             }
@@ -94,7 +94,7 @@ bool KmlOsmPlacemarkDataTagWriter::writeOsmData( const GeoDataGeometry *geometry
             const GeoDataLinearRing &outerRing = polygon->outerBoundary();
             const OsmPlacemarkData &outerRingOsmData = osmData.memberReference( memberIndex );
             writer.writeStartElement( QString::fromUtf8(kml::kmlTag_nameSpaceMx), QString::fromUtf8(kml::kmlTag_member) );
-            writer.writeAttribute( "index", QString::number( memberIndex ) );
+            writer.writeAttribute( QString::fromUtf8("index"), QString::number( memberIndex ) );
             writeOsmData( &outerRing, outerRingOsmData, writer );
             writer.writeEndElement();
 
@@ -102,7 +102,7 @@ bool KmlOsmPlacemarkDataTagWriter::writeOsmData( const GeoDataGeometry *geometry
             for ( const GeoDataLinearRing &innerRing: polygon->innerBoundaries() ) {
                 const OsmPlacemarkData &innerRingOsmData = osmData.memberReference( ++memberIndex );
                 writer.writeStartElement( QString::fromUtf8(kml::kmlTag_nameSpaceMx), QString::fromUtf8(kml::kmlTag_member) );
-                writer.writeAttribute( "index", QString::number( memberIndex ) );
+                writer.writeAttribute( QString::fromUtf8("index"), QString::number( memberIndex ) );
                 writeOsmData( &innerRing, innerRingOsmData, writer );
                 writer.writeEndElement();
             }

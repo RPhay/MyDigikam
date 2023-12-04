@@ -14,7 +14,7 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerLegend( GeoTagWriter::QualifiedName( GeoSceneTypes::GeoSceneLegendType, dgml::dgmlTag_nameSpace20 ),
+static GeoTagWriterRegistrar s_writerLegend( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoSceneTypes::GeoSceneLegendType), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ),
                                                new DgmlLegendTagWriter() );
 
 bool DgmlLegendTagWriter::write( const GeoNode *node, GeoWriter& writer ) const

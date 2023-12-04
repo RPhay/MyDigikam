@@ -14,7 +14,7 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerSettings( GeoTagWriter::QualifiedName( GeoSceneTypes::GeoSceneSettingsType, dgml::dgmlTag_nameSpace20 ),
+static GeoTagWriterRegistrar s_writerSettings( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoSceneTypes::GeoSceneSettingsType), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ),
                                                                             new DgmlSettingsTagWriter() );
 
 bool DgmlSettingsTagWriter::write(const GeoNode *node, GeoWriter& writer) const
@@ -26,9 +26,9 @@ bool DgmlSettingsTagWriter::write(const GeoNode *node, GeoWriter& writer) const
     {
         const GeoSceneProperty *property = settings->allProperties().at( i );
         writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Property) );
-        writer.writeAttribute( "name", property->name()  );
-        writer.writeElement( dgml::dgmlTag_Value, property->defaultValue() ? "true" : "false" );
-        writer.writeElement( dgml::dgmlTag_Available, property->available() ? "true" : "false" );
+        writer.writeAttribute( QString::fromUtf8("name"), property->name()  );
+        writer.writeElement( QString::fromUtf8(dgml::dgmlTag_Value), property->defaultValue() ? QString::fromUtf8("true") : QString::fromUtf8("false") );
+        writer.writeElement( QString::fromUtf8(dgml::dgmlTag_Available), property->available() ? QString::fromUtf8("true") : QString::fromUtf8("false") );
         writer.writeEndElement();
     }
     

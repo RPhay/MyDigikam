@@ -17,37 +17,37 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerTexture( GeoTagWriter::QualifiedName( GeoSceneTypes::GeoSceneTileDatasetType, dgml::dgmlTag_nameSpace20 ),
+static GeoTagWriterRegistrar s_writerTexture( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoSceneTypes::GeoSceneTileDatasetType), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ),
                                                new DgmlTextureTagWriter() );
 
 bool DgmlTextureTagWriter::write(const GeoNode *node, GeoWriter& writer) const
 {
     const GeoSceneTileDataset *texture = static_cast<const GeoSceneTileDataset*>( node );
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Texture) );
-    writer.writeAttribute( "name", texture->name() );
-    writer.writeAttribute( "expire", QString::number( texture->expire() ) );
+    writer.writeAttribute( QString::fromUtf8("name"), texture->name() );
+    writer.writeAttribute( QString::fromUtf8("expire"), QString::number( texture->expire() ) );
     
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_SourceDir) );
-    writer.writeAttribute( "format", texture->fileFormat() );
+    writer.writeAttribute( QString::fromUtf8("format"), texture->fileFormat() );
     if( texture->expire() ) {
-        writer.writeAttribute( "expire", QString::number( texture->expire() ) );
+        writer.writeAttribute( QString::fromUtf8("expire"), QString::number( texture->expire() ) );
     }
     writer.writeCharacters( texture->sourceDir() );
     writer.writeEndElement();
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_TileSize) );
-    writer.writeAttribute( "width", QString::number( texture->tileSize().width() ) );
-    writer.writeAttribute( "height", QString::number( texture->tileSize().height() ) );
+    writer.writeAttribute( QString::fromUtf8("width"), QString::number( texture->tileSize().width() ) );
+    writer.writeAttribute( QString::fromUtf8("height"), QString::number( texture->tileSize().height() ) );
     writer.writeEndElement();
 
-    writer.writeOptionalElement( dgml::dgmlTag_InstallMap, texture->installMap() );
+    writer.writeOptionalElement( QString::fromUtf8(dgml::dgmlTag_InstallMap), texture->installMap() );
     
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_StorageLayout) );
     if( texture->hasMaximumTileLevel() )
     {
-        writer.writeAttribute( "maximumTileLevel", QString::number( texture->maximumTileLevel() ) );
-        writer.writeAttribute( "levelZeroColumns", QString::number( texture->levelZeroColumns() ) );
-        writer.writeAttribute( "levelZeroRows", QString::number( texture->levelZeroRows() ) );
-        writer.writeAttribute( "mode", texture->serverLayout()->name() );
+        writer.writeAttribute( QString::fromUtf8("maximumTileLevel"), QString::number( texture->maximumTileLevel() ) );
+        writer.writeAttribute( QString::fromUtf8("levelZeroColumns"), QString::number( texture->levelZeroColumns() ) );
+        writer.writeAttribute( QString::fromUtf8("levelZeroRows"), QString::number( texture->levelZeroRows() ) );
+        writer.writeAttribute( QString::fromUtf8("mode"), texture->serverLayout()->name() );
     }
     writer.writeEndElement();
     
@@ -62,14 +62,14 @@ bool DgmlTextureTagWriter::write(const GeoNode *node, GeoWriter& writer) const
             QString query = texture->downloadUrls().at(i).query(QUrl::FullyEncoded);
 
             writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_DownloadUrl) );
-            writer.writeAttribute( "protocol", protocol );
-            writer.writeAttribute( "host", host );
+            writer.writeAttribute( QString::fromUtf8("protocol"), protocol );
+            writer.writeAttribute( QString::fromUtf8("host"), host );
             if( port != -1 )
             {
-                writer.writeAttribute( "port", QString::number( port ) );
+                writer.writeAttribute( QString::fromUtf8("port"), QString::number( port ) );
             }
-            writer.writeAttribute( "path", path );
-            writer.writeAttribute( "query", query );
+            writer.writeAttribute( QString::fromUtf8("path"), path );
+            writer.writeAttribute( QString::fromUtf8("query"), query );
             writer.writeEndElement();
         }
     }
@@ -80,14 +80,14 @@ bool DgmlTextureTagWriter::write(const GeoNode *node, GeoWriter& writer) const
         
         if( policy->key().usage() == DownloadBrowse )
         {
-            writer.writeAttribute( "usage", "Browse" );
-            writer.writeAttribute( "maximumConnections", QString::number( policy->maximumConnections() ) );
+            writer.writeAttribute( QString::fromUtf8("usage"), QString::fromUtf8("Browse") );
+            writer.writeAttribute( QString::fromUtf8("maximumConnections"), QString::number( policy->maximumConnections() ) );
         }
         
         else if( policy->key().usage()  == DownloadBulk )
         {
-            writer.writeAttribute( "usage", "Bulk" );
-            writer.writeAttribute( "maximumConnections", QString::number( policy->maximumConnections() ) );
+            writer.writeAttribute( QString::fromUtf8("usage"), QString::fromUtf8("Bulk") );
+            writer.writeAttribute( QString::fromUtf8("maximumConnections"), QString::number( policy->maximumConnections() ) );
         }
         
         writer.writeEndElement();    
@@ -96,15 +96,15 @@ bool DgmlTextureTagWriter::write(const GeoNode *node, GeoWriter& writer) const
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Projection) );
     const GeoSceneAbstractTileProjection::Type tileProjectionType = texture->tileProjectionType();
     if (tileProjectionType == GeoSceneAbstractTileProjection::Mercator) {
-        writer.writeAttribute( "name", "Mercator" );
+        writer.writeAttribute( QString::fromUtf8("name"), QString::fromUtf8("Mercator") );
     } else if (tileProjectionType == GeoSceneAbstractTileProjection::Equirectangular) {
-        writer.writeAttribute( "name", "Equirectangular" );        
+        writer.writeAttribute( QString::fromUtf8("name"), QString::fromUtf8("Equirectangular") );
     }
     writer.writeEndElement();
 
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Blending) );
     if (!texture->blending().isEmpty()) {
-        writer.writeAttribute( "name", texture->blending() );
+        writer.writeAttribute( QString::fromUtf8("name"), texture->blending() );
     }
     writer.writeEndElement();
 

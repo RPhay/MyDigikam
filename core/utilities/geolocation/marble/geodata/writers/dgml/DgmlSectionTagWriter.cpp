@@ -15,7 +15,7 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerSection( GeoTagWriter::QualifiedName( GeoSceneTypes::GeoSceneSectionType, dgml::dgmlTag_nameSpace20 ),
+static GeoTagWriterRegistrar s_writerSection( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoSceneTypes::GeoSceneSectionType), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ),
                                                                             new DgmlSectionTagWriter() );
 
 bool DgmlSectionTagWriter::write(const GeoNode *node, GeoWriter& writer) const
@@ -23,11 +23,11 @@ bool DgmlSectionTagWriter::write(const GeoNode *node, GeoWriter& writer) const
     const GeoSceneSection *section = static_cast<const GeoSceneSection*>( node );
     
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Section) );
-    writer.writeAttribute( "name", section->name() );
-    writer.writeAttribute( "checkable", section->checkable() ? "true" : "false" );
-    writer.writeAttribute( "connect", section->connectTo() );
-    writer.writeAttribute( "spacing", QString::number( section->spacing() ) );
-    writer.writeElement( dgml::dgmlTag_Heading, section->heading() );
+    writer.writeAttribute( QString::fromUtf8("name"), section->name() );
+    writer.writeAttribute( QString::fromUtf8("checkable"), section->checkable() ? QString::fromUtf8("true") : QString::fromUtf8("false") );
+    writer.writeAttribute( QString::fromUtf8("connect"), section->connectTo() );
+    writer.writeAttribute( QString::fromUtf8("spacing"), QString::number( section->spacing() ) );
+    writer.writeElement( QString::fromUtf8(dgml::dgmlTag_Heading), section->heading() );
     
     for( int i = 0; i < section->items().count(); ++i )
     {

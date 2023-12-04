@@ -15,31 +15,31 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerHead( GeoTagWriter::QualifiedName( GeoSceneTypes::GeoSceneHeadType, dgml::dgmlTag_nameSpace20 ),
+static GeoTagWriterRegistrar s_writerHead( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoSceneTypes::GeoSceneHeadType), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ),
                                                new DgmlHeadTagWriter() );
 
 bool DgmlHeadTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
 {
     const GeoSceneHead *head = static_cast<const GeoSceneHead*>( node );
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Head) );
-    writer.writeElement( "name", head->name() );
-    writer.writeElement( "target", head->target() );
-    writer.writeElement( "theme", head->theme() );
-    writer.writeElement( "visible", head->visible() ? "true" : "false" );
-    writer.writeStartElement( "description" );
+    writer.writeElement( QString::fromUtf8("name"), head->name() );
+    writer.writeElement( QString::fromUtf8("target"), head->target() );
+    writer.writeElement( QString::fromUtf8("theme"), head->theme() );
+    writer.writeElement( QString::fromUtf8("visible"), head->visible() ? QString::fromUtf8("true") : QString::fromUtf8("false") );
+    writer.writeStartElement( QString::fromUtf8("description") );
     writer.writeCDATA( head->description() );
     writer.writeEndElement();
     
     const GeoSceneIcon &icon = static_cast<const GeoSceneIcon&>( *head->icon() );
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Icon) );
-    writer.writeAttribute( "pixmap", icon.pixmap() );
+    writer.writeAttribute( QString::fromUtf8("pixmap"), icon.pixmap() );
     writer.writeEndElement();
     
     const GeoSceneZoom &zoom = static_cast<const GeoSceneZoom&>( *head->zoom() );
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Zoom) );
-    writer.writeElement( "discrete", zoom.discrete() ? "true" : "false" );
-    writer.writeTextElement( "minimum", QString::number( zoom.minimum() ) );
-    writer.writeTextElement( "maximum", QString::number( zoom.maximum() ) );
+    writer.writeElement( QString::fromUtf8("discrete"), zoom.discrete() ? QString::fromUtf8("true") : QString::fromUtf8("false") );
+    writer.writeTextElement( QString::fromUtf8("minimum"), QString::number( zoom.minimum() ) );
+    writer.writeTextElement( QString::fromUtf8("maximum"), QString::number( zoom.maximum() ) );
     writer.writeEndElement();
     
     writer.writeEndElement();

@@ -13,7 +13,7 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerVector( GeoTagWriter::QualifiedName( GeoSceneTypes::GeoSceneVectorType, dgml::dgmlTag_nameSpace20 ), new DgmlVectorTagWriter() );
+static GeoTagWriterRegistrar s_writerVector( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoSceneTypes::GeoSceneVectorType), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ), new DgmlVectorTagWriter() );
 
 bool DgmlVectorTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
 {

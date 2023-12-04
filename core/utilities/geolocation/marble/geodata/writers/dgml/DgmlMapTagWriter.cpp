@@ -16,30 +16,30 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerMap( GeoTagWriter::QualifiedName( GeoSceneTypes::GeoSceneMapType, dgml::dgmlTag_nameSpace20 ),
+static GeoTagWriterRegistrar s_writerMap( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoSceneTypes::GeoSceneMapType), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ),
                                                new DgmlMapTagWriter() );
 
 bool DgmlMapTagWriter::write(const GeoNode *node, GeoWriter& writer) const
 {
     const GeoSceneMap *map = static_cast<const GeoSceneMap*>( node );
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Map) );
-    writer.writeAttribute( "bgcolor", map->backgroundColor().name() );
-    writer.writeAttribute( "labelColor", map->labelColor().name() );    
+    writer.writeAttribute( QString::fromUtf8("bgcolor"), map->backgroundColor().name() );
+    writer.writeAttribute( QString::fromUtf8("labelColor"), map->labelColor().name() );
     
-    writer.writeStartElement( "canvas" );
+    writer.writeStartElement( QString::fromUtf8("canvas") );
     writer.writeEndElement();
 
     if (!map->center().isEmpty()) {
         if (map->center().count() == 2) {
-            writer.writeElement(dgml::dgmlTag_Center,
-                                  map->center().at(0).toString() + ","
+            writer.writeElement(QString::fromUtf8(dgml::dgmlTag_Center),
+                                  map->center().at(0).toString() + QString::fromUtf8(",")
                                 + map->center().at(1).toString());
         }
         else if (map->center().count() == 4) {
-            writer.writeElement(dgml::dgmlTag_Center,
-                                  map->center().at(0).toString() + ","
-                                + map->center().at(1).toString() + ","
-                                + map->center().at(2).toString() + ","
+            writer.writeElement(QString::fromUtf8(dgml::dgmlTag_Center),
+                                  map->center().at(0).toString() + QString::fromUtf8(",")
+                                + map->center().at(1).toString() + QString::fromUtf8(",")
+                                + map->center().at(2).toString() + QString::fromUtf8(",")
                                 + map->center().at(3).toString());
         }
     }

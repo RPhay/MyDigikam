@@ -15,8 +15,8 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerTour(
-        GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataTourType,
-                                     kml::kmlTag_nameSpaceOgc22 ),
+        GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataTourType),
+                                     QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
         new KmlTourTagWriter );
 
 bool KmlTourTagWriter::writeMid( const GeoNode *node, GeoWriter& writer ) const
@@ -29,7 +29,7 @@ bool KmlTourTagWriter::writeMid( const GeoNode *node, GeoWriter& writer ) const
 }
 
 KmlTourTagWriter::KmlTourTagWriter() :
-    KmlFeatureTagWriter( "gx:Tour" )
+    KmlFeatureTagWriter( QString::fromUtf8("gx:Tour") )
 {
     // nothing to do
 }
