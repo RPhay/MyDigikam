@@ -57,12 +57,12 @@ bool KmlFeatureTagWriter::write( const Marble::GeoNode *node, GeoWriter &writer 
 
     KmlObjectTagWriter::writeIdentifiers( writer, feature );
 
-    writer.writeOptionalElement( kml::kmlTag_name, feature->name() );
-    writer.writeOptionalElement( kml::kmlTag_visibility, QString::number( feature->isVisible() ), "1" );
-    writer.writeOptionalElement( "address", feature->address() );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_name), feature->name() );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_visibility), QString::number( feature->isVisible() ), QString::fromUtf8("1") );
+    writer.writeOptionalElement( QString::fromUtf8("address"), feature->address() );
 
     if( !feature->description().isEmpty() ) {
-        writer.writeStartElement( "description" );
+        writer.writeStartElement( QString::fromUtf8("description") );
         if( feature->descriptionIsCDATA() ) {
             writer.writeCDATA( feature->description() );
         } else {

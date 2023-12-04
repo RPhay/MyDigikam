@@ -24,12 +24,12 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerDocument( GeoTagWriter::QualifiedName(GeoDataTypes::GeoDataDocumentType,
-                                                                            kml::kmlTag_nameSpaceOgc22),
+static GeoTagWriterRegistrar s_writerDocument( GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataDocumentType),
+                                                                            QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
                                                new KmlDocumentTagWriter() );
 
 KmlDocumentTagWriter::KmlDocumentTagWriter() :
-  KmlFeatureTagWriter( kml::kmlTag_Document )
+  KmlFeatureTagWriter( QString::fromUtf8(kml::kmlTag_Document) )
 {
   // nothing to do
 }

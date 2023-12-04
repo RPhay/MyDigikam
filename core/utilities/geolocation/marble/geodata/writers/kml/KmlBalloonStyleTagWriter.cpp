@@ -18,8 +18,8 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerBallonStyle( GeoTagWriter::QualifiedName(GeoDataTypes::GeoDataBalloonStyleType,
-                                                                              kml::kmlTag_nameSpaceOgc22),
+static GeoTagWriterRegistrar s_writerBallonStyle( GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataBalloonStyleType),
+                                                                              QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
                                                   new KmlBalloonStyleTagWriter() );
 
 bool KmlBalloonStyleTagWriter::write( const GeoNode *node,
@@ -38,21 +38,21 @@ bool KmlBalloonStyleTagWriter::write( const GeoNode *node,
     KmlObjectTagWriter::writeIdentifiers( writer, balloonStyle );
 
     QString const backgroundColor = KmlColorStyleTagWriter::formatColor( balloonStyle->backgroundColor() );
-    writer.writeOptionalElement( kml::kmlTag_bgColor, backgroundColor, "ffffffff" );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_bgColor), backgroundColor, QString::fromUtf8("ffffffff") );
     QString const textColor = KmlColorStyleTagWriter::formatColor( balloonStyle->textColor() );
-    writer.writeOptionalElement( kml::kmlTag_textColor, textColor, "ff000000" );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_textColor), textColor, QString::fromUtf8("ff000000") );
 
     QString const textString = balloonStyle->text();
-    if ( textString.contains( QRegularExpression( "[<>&]" ) ) ) {
+    if ( textString.contains( QRegularExpression( QString::fromUtf8("[<>&]") ) ) ) {
         writer.writeStartElement( QString::fromUtf8(kml::kmlTag_text) );
         writer.writeCDATA( textString );
         writer.writeEndElement();
     } else {
-        writer.writeOptionalElement( kml::kmlTag_text, textString );
+        writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_text), textString );
     }
 
     if ( balloonStyle->displayMode() == GeoDataBalloonStyle::Hide ) {
-        writer.writeElement( kml::kmlTag_displayMode, "hide" );
+        writer.writeElement( QString::fromUtf8(kml::kmlTag_displayMode), QString::fromUtf8("hide") );
     }
 
     writer.writeEndElement();
