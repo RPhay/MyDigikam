@@ -318,7 +318,7 @@ StackedTile *MergedLayerDecorator::loadTile( const TileId &stackedTileId )
 
 RenderState MergedLayerDecorator::renderState( const TileId &stackedTileId ) const
 {
-    QString const nameTemplate = "Tile %1/%2/%3";
+    QString const nameTemplate = QString::fromUtf8("Tile %1/%2/%3");
     RenderState state( nameTemplate.arg( stackedTileId.zoomLevel() )
                        .arg( stackedTileId.x() )
                        .arg( stackedTileId.y() ) );
@@ -490,7 +490,7 @@ void MergedLayerDecorator::Private::paintSunShading( QImage *tileImage, const Ti
 
 void MergedLayerDecorator::Private::paintTileId( QImage *tileImage, const TileId &id ) const
 {
-    QString filename = QString( "%1_%2.jpg" )
+    QString filename = QString::fromUtf8( "%1_%2.jpg" )
             .arg(id.x(), tileDigits, 10, QLatin1Char('0'))
             .arg(id.y(), tileDigits, 10, QLatin1Char('0'));
 
@@ -503,12 +503,12 @@ void MergedLayerDecorator::Private::paintTileId( QImage *tileImage, const TileId
          || ( (qreal)(id.x())/2 != id.x()/2 && (qreal)(id.y())/2 != id.y()/2 )
          )
     {
-        foreground.setNamedColor( "#FFFFFF" );
-        background.setNamedColor( "#000000" );
+        foreground.setNamedColor( QString::fromUtf8("#FFFFFF") );
+        background.setNamedColor( QString::fromUtf8("#000000") );
     }
     else {
-        foreground.setNamedColor( "#000000" );
-        background.setNamedColor( "#FFFFFF" );
+        foreground.setNamedColor( QString::fromUtf8("#000000") );
+        background.setNamedColor( QString::fromUtf8("#FFFFFF") );
     }
 
     int   strokeWidth = 10;
@@ -534,7 +534,7 @@ void MergedLayerDecorator::Private::paintTileId( QImage *tileImage, const TileId
 
     QPointF  baseline1( ( tileImage->width() - testFm.boundingRect(filename).width() ) / 2,
                         ( tileImage->height() * 0.25) );
-    outlinepath.addText( baseline1, testFont, QString( "level: %1" ).arg(id.zoomLevel()) );
+    outlinepath.addText( baseline1, testFont, QString::fromUtf8( "level: %1" ).arg(id.zoomLevel()) );
 
     QPointF  baseline2( ( tileImage->width() - testFm.boundingRect(filename).width() ) / 2,
                         tileImage->height() * 0.50 );

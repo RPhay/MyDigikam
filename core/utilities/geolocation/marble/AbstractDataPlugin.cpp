@@ -65,12 +65,12 @@ QStringList AbstractDataPlugin::backendTypes() const
 
 QString AbstractDataPlugin::renderPolicy() const
 {
-    return QString( "ALWAYS" );
+    return QString::fromUtf8( "ALWAYS" );
 }
 
 QStringList AbstractDataPlugin::renderPosition() const
 {
-    return QStringList( "ALWAYS_ON_TOP" );
+    return QStringList( QString::fromUtf8("ALWAYS_ON_TOP") );
 }
 
 bool AbstractDataPlugin::render( GeoPainter *painter, ViewportParams *viewport,

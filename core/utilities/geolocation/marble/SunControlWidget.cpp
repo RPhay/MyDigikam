@@ -25,7 +25,7 @@ SunControlWidget::SunControlWidget( MarbleWidget* marbleWidget, QWidget* parent 
     : QDialog( parent ),
       m_uiWidget( new Ui::SunControlWidget ),
       m_marbleWidget( marbleWidget ),
-      m_shadow( "shadow" )
+      m_shadow( QString::fromUtf8("shadow") )
 {
     m_uiWidget->setupUi( this );
 
@@ -53,13 +53,13 @@ void SunControlWidget::apply()
         {
             Q_EMIT showSun( true );
             m_marbleWidget->setShowCityLights( false );
-            m_shadow = "shadow";
+            m_shadow = QString::fromUtf8("shadow");
         }
         else if( m_uiWidget->showNightMap->isChecked() )
         {
             Q_EMIT showSun( true );
             m_marbleWidget->setShowCityLights( true );
-            m_shadow = "nightmap";
+            m_shadow = QString::fromUtf8("nightmap");
         }
     }
     else
