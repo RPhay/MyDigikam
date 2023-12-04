@@ -214,7 +214,7 @@ QVariant GeoDataTreeModel::data( const QModelIndex &index, int role ) const
 
                 }
                 else if ( index.column() == 1 ){
-                    return QVariant( placemark->nodeType() );
+                    return QVariant( QString::fromUtf8(placemark->nodeType()) );
                 }
                 else if ( index.column() == 2 ){
                     return QVariant( placemark->popularity() );
@@ -229,13 +229,13 @@ QVariant GeoDataTreeModel::data( const QModelIndex &index, int role ) const
                 return QVariant( feature->name() );
             }
             else if ( index.column() == 1 ){
-                return QVariant( feature->nodeType() );
+                return QVariant( QString::fromUtf8(feature->nodeType()) );
             }
         }
 
         GeoDataGeometry *geometry = dynamic_cast<GeoDataGeometry*>( object );
         if ( geometry && index.column() == 1 ){
-            return QVariant( geometry->nodeType() );
+            return QVariant( QString::fromUtf8(geometry->nodeType()) );
         }
 
         GeoDataPlaylist *playlist = geodata_cast<GeoDataPlaylist>(object);
@@ -244,7 +244,7 @@ QVariant GeoDataTreeModel::data( const QModelIndex &index, int role ) const
         }
 
         if (object && index.column() == 1) {
-            return QVariant(object->nodeType());
+            return QVariant(QString::fromUtf8(object->nodeType()));
         }
 
     }

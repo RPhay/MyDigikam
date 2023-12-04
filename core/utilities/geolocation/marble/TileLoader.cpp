@@ -212,7 +212,7 @@ void TileLoader::updateTile( QByteArray const & data, QString const & idStr )
 
     TileId const id = TileId( sourceDir, zoomLevel, tileX, tileY );
 
-    if (origin == GeoSceneTypes::GeoSceneTextureTileType) {
+    if (origin == QString::fromUtf8(GeoSceneTypes::GeoSceneTextureTileType)) {
         QImage const tileImage = QImage::fromData( data );
         if ( tileImage.isNull() )
             return;
@@ -233,7 +233,7 @@ void TileLoader::updateTile(const QString &fileName, const QString &idStr)
     int const tileY = components[ 4 ].toInt();
 
     TileId const id = TileId( sourceDir, zoomLevel, tileX, tileY );
-    if (origin == GeoSceneTypes::GeoSceneVectorTileType) {
+    if (origin == QString::fromUtf8(GeoSceneTypes::GeoSceneVectorTileType)) {
         GeoDataDocument* document = openVectorFile(MarbleDirs::path(fileName));
         if (document) {
             Q_EMIT tileCompleted(id,  document);
@@ -260,7 +260,7 @@ void TileLoader::triggerDownload( GeoSceneTileDataset const *tileData, TileId co
 
     QUrl const sourceUrl = tileData->downloadUrl( id );
     QString const destFileName = tileData->relativeTileFileName( id );
-    QString const idStr = QString( "%1:%2:%3:%4:%5" ).arg( tileData->nodeType(), tileData->sourceDir() ).arg( id.zoomLevel() ).arg( id.x() ).arg( id.y() );
+    QString const idStr = QString::fromUtf8( "%1:%2:%3:%4:%5" ).arg( QString::fromUtf8(tileData->nodeType()), tileData->sourceDir() ).arg( id.zoomLevel() ).arg( id.x() ).arg( id.y() );
     Q_EMIT downloadTile( sourceUrl, destFileName, idStr, usage );
 }
 
@@ -322,7 +322,7 @@ GeoDataDocument *TileLoader::openVectorFile(const QString &fileName) const
             QString error;
             GeoDataDocument* document = runner->parseFile(fileName, UserDocument, error);
             if (!document && !error.isEmpty()) {
-                mDebug() << QString("Failed to open vector tile %1: %2").arg(fileName, error);
+                mDebug() << QString::fromUtf8("Failed to open vector tile %1: %2").arg(fileName, error);
             }
             delete runner;
             return document;

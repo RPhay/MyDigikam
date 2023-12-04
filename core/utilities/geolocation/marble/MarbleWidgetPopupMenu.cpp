@@ -192,9 +192,9 @@ void MarbleWidgetPopupMenu::Private::setupDialogOsm( PopupLayer *popup, const Ge
 
     const QString none = QStringLiteral("none");
 
-    QString description = descriptionFile.readAll();
+    QString description = QString::fromUtf8(descriptionFile.readAll());
     const OsmPlacemarkData& data = placemark->osmData();
-    if (!data.containsTagKey("addr:street") && !data.containsTagKey("addr:housenumber")){
+    if (!data.containsTagKey(QString::fromUtf8("addr:street")) && !data.containsTagKey(QString::fromUtf8("addr:housenumber"))){
         description.replace(QStringLiteral("<br> %postcode%"), QStringLiteral("%postcode%"));
     }
     TemplateDocument doc(description);
@@ -294,7 +294,7 @@ void MarbleWidgetPopupMenu::Private::setupDialogOsm( PopupLayer *popup, const Ge
     }
 
     QString websiteData;
-    auto const tags = QStringList() << "website" << "contact:website" << "facebook" << "contact:facebook" << "url";
+    auto const tags = QStringList() << QString::fromUtf8("website") << QString::fromUtf8("contact:website") << QString::fromUtf8("facebook") << QString::fromUtf8("contact:facebook") << QString::fromUtf8("url");
     for(const QString &tag: tags) {
         websiteData = data.tagValue(tag);
         if (!websiteData.isEmpty()) {
@@ -343,7 +343,7 @@ void MarbleWidgetPopupMenu::Private::setupDialogOsm( PopupLayer *popup, const Ge
     }
 
     const QString flagPath = m_widget->styleBuilder()->createStyle(StyleParameters(placemark))->iconStyle().iconPath();
-    doc["flag"] = flagPath;
+    doc[QString::fromUtf8("flag")] = flagPath;
     popup->setContent(doc.finalText());
 }
 
@@ -355,9 +355,9 @@ void MarbleWidgetPopupMenu::Private::setupDialogSatellite( const GeoDataPlacemar
 
     const QString description = placemark->description();
     TemplateDocument doc(description);
-    doc["altitude"] = QString::number(location.altitude(), 'f', 2);
-    doc["latitude"] = location.latToString();
-    doc["longitude"] = location.lonToString();
+    doc[QString::fromUtf8("altitude")] = QString::number(location.altitude(), 'f', 2);
+    doc[QString::fromUtf8("latitude")] = location.latToString();
+    doc[QString::fromUtf8("longitude")] = location.lonToString();
     popup->setContent(doc.finalText());
 }
 
@@ -371,10 +371,10 @@ void MarbleWidgetPopupMenu::Private::setupDialogCity( PopupLayer *popup, const G
         return;
     }
 
-    const QString description = descriptionFile.readAll();
+    const QString description = QString::fromUtf8(descriptionFile.readAll());
     TemplateDocument doc(description);
 
-    doc["name"] = placemark->name();
+    doc[QString::fromUtf8("name")] = placemark->name();
     QString  roleString;
     const QString role = placemark->role();
     if (role == QLatin1String("PPLC")) {
@@ -398,14 +398,14 @@ void MarbleWidgetPopupMenu::Private::setupDialogCity( PopupLayer *popup, const G
         roleString = tr("Village");
     }
 
-    doc["category"] = roleString;
-    doc["shortDescription"] = filterEmptyShortDescription(placemark->description());
-    doc["latitude"] = location.latToString();
-    doc["longitude"] = location.lonToString();
-    doc["elevation"] =  QString::number(location.altitude(), 'f', 2);
-    doc["population"] = QString::number(placemark->population());
-    doc["country"] = placemark->countryCode();
-    doc["state"] = placemark->state();
+    doc[QString::fromUtf8("category")] = roleString;
+    doc[QString::fromUtf8("shortDescription")] = filterEmptyShortDescription(placemark->description());
+    doc[QString::fromUtf8("latitude")] = location.latToString();
+    doc[QString::fromUtf8("longitude")] = location.lonToString();
+    doc[QString::fromUtf8("elevation")] =  QString::number(location.altitude(), 'f', 2);
+    doc[QString::fromUtf8("population")] = QString::number(placemark->population());
+    doc[QString::fromUtf8("country")] = placemark->countryCode();
+    doc[QString::fromUtf8("state")] = placemark->state();
 
     QString dst = QStringLiteral("%1").arg((placemark->extendedData().value(QStringLiteral("gmt")).value().toInt() +
                                             placemark->extendedData().value(QStringLiteral("dst")).value().toInt()) /
@@ -414,14 +414,14 @@ void MarbleWidgetPopupMenu::Private::setupDialogCity( PopupLayer *popup, const G
     // It's possible to variants (e.g.):
     // +1.0 and -1.0, but dst does not have + an the start
     if (dst.startsWith(QLatin1Char('-'))) {
-        doc["timezone"] = dst;
+        doc[QString::fromUtf8("timezone")] = dst;
     } else {
-        doc["timezone"] = QLatin1Char('+') + dst;
+        doc[QString::fromUtf8("timezone")] = QLatin1Char('+') + dst;
     }
 
     const QString flagPath = MarbleDirs::path(
                 QLatin1String("flags/flag_") + placemark->countryCode().toLower() + QLatin1String(".svg"));
-    doc["flag"] = flagPath;
+    doc[QString::fromUtf8("flag")] = flagPath;
 
     popup->setContent(doc.finalText());
 }
@@ -436,19 +436,19 @@ void MarbleWidgetPopupMenu::Private::setupDialogNation( PopupLayer *popup, const
         return;
     }
 
-    const QString description = descriptionFile.readAll();
+    const QString description = QString::fromUtf8(descriptionFile.readAll());
     TemplateDocument doc(description);
 
-    doc["name"] = index->name();
-    doc["shortDescription"] = filterEmptyShortDescription(index->description());
-    doc["latitude"] = location.latToString();
-    doc["longitude"] = location.lonToString();
-    doc["elevation"] = QString::number(location.altitude(), 'f', 2);
-    doc["population"] = QString::number(index->population());
-    doc["area"] = QString::number(index->area(), 'f', 2);
+    doc[QString::fromUtf8("name")] = index->name();
+    doc[QString::fromUtf8("shortDescription")] = filterEmptyShortDescription(index->description());
+    doc[QString::fromUtf8("latitude")] = location.latToString();
+    doc[QString::fromUtf8("longitude")] = location.lonToString();
+    doc[QString::fromUtf8("elevation")] = QString::number(location.altitude(), 'f', 2);
+    doc[QString::fromUtf8("population")] = QString::number(index->population());
+    doc[QString::fromUtf8("area")] = QString::number(index->area(), 'f', 2);
 
-    const QString flagPath = MarbleDirs::path(QString("flags/flag_%1.svg").arg(index->countryCode().toLower()) );
-    doc["flag"] = flagPath;
+    const QString flagPath = MarbleDirs::path(QString::fromUtf8("flags/flag_%1.svg").arg(index->countryCode().toLower()) );
+    doc[QString::fromUtf8("flag")] = flagPath;
 
     popup->setContent(doc.finalText());
 }
@@ -463,14 +463,14 @@ void MarbleWidgetPopupMenu::Private::setupDialogGeoPlaces( PopupLayer *popup, co
         return;
     }
 
-    const QString description = descriptionFile.readAll();
+    const QString description = QString::fromUtf8(descriptionFile.readAll());
     TemplateDocument doc(description);
 
-    doc["name"] = index->name();
-    doc["latitude"] = location.latToString();
-    doc["longitude"] = location.lonToString();
-    doc["elevation"] = QString::number(location.altitude(), 'f', 2);
-    doc["shortDescription"] = filterEmptyShortDescription(index->description());
+    doc[QString::fromUtf8("name")] = index->name();
+    doc[QString::fromUtf8("latitude")] = location.latToString();
+    doc[QString::fromUtf8("longitude")] = location.lonToString();
+    doc[QString::fromUtf8("elevation")] = QString::number(location.altitude(), 'f', 2);
+    doc[QString::fromUtf8("shortDescription")] = filterEmptyShortDescription(index->description());
 
     popup->setContent(doc.finalText());
 }
@@ -485,15 +485,15 @@ void MarbleWidgetPopupMenu::Private::setupDialogSkyPlaces( PopupLayer *popup, co
         return;
     }
 
-    const QString description = descriptionFile.readAll();
+    const QString description = QString::fromUtf8(descriptionFile.readAll());
     TemplateDocument doc(description);
 
-    doc["name"] = index->name();
-    doc["latitude"] = GeoDataCoordinates::latToString(
+    doc[QString::fromUtf8("name")] = index->name();
+    doc[QString::fromUtf8("latitude")] = GeoDataCoordinates::latToString(
                             location.latitude(), GeoDataCoordinates::Astro, GeoDataCoordinates::Radian, -1, 'f');
-    doc["longitude"] = GeoDataCoordinates::lonToString(
+    doc[QString::fromUtf8("longitude")] = GeoDataCoordinates::lonToString(
                             location.longitude(), GeoDataCoordinates::Astro, GeoDataCoordinates::Radian, -1, 'f');
-    doc["shortDescription"] = filterEmptyShortDescription(index->description());
+    doc[QString::fromUtf8("shortDescription")] = filterEmptyShortDescription(index->description());
 
     popup->setContent(doc.finalText());
 }
@@ -509,17 +509,17 @@ void MarbleWidgetPopupMenu::Private::setupDialogPhotoOverlay( PopupLayer *popup,
         return;
     }
 
-    const QString description = descriptionFile.readAll();
+    const QString description = QString::fromUtf8(descriptionFile.readAll());
     TemplateDocument doc(description);
-    doc["name"] = index->name();
-    doc["latitude"] = location.latToString();
-    doc["longitude"] = location.lonToString();
-    doc["elevation"] = QString::number(location.altitude(), 'f', 2);
-    doc["shortDescription"] = filterEmptyShortDescription(index->description());
-    doc["source"] = index->absoluteIconFile();
-    doc["width"] = QString::number(200);
-    doc["height"] = QString::number(100);
-    QString const basePath = index->resolvePath(".");
+    doc[QString::fromUtf8("name")] = index->name();
+    doc[QString::fromUtf8("latitude")] = location.latToString();
+    doc[QString::fromUtf8("longitude")] = location.lonToString();
+    doc[QString::fromUtf8("elevation")] = QString::number(location.altitude(), 'f', 2);
+    doc[QString::fromUtf8("shortDescription")] = filterEmptyShortDescription(index->description());
+    doc[QString::fromUtf8("source")] = index->absoluteIconFile();
+    doc[QString::fromUtf8("width")] = QString::number(200);
+    doc[QString::fromUtf8("height")] = QString::number(100);
+    QString const basePath = index->resolvePath(QString::fromUtf8("."));
     QUrl const baseUrl = (basePath != QLatin1String(".")) ? QUrl::fromLocalFile(basePath + QLatin1Char('/')) : QUrl();
     popup->setContent(doc.finalText(), baseUrl );
 }
@@ -664,11 +664,11 @@ void MarbleWidgetPopupMenu::slotInfoDialog()
         bool hasOsmData = false;
 
         QStringList recognizedTags;
-        recognizedTags << "name" << "amenity" << "cuisine" << "opening_hours";
-        recognizedTags << "addr:street" << "addr:housenumber" << "addr:postcode";
-        recognizedTags << "addr:city" << "phone" << "wheelchair" << "internet_access";
-        recognizedTags << "smoking" << "website" << "contact:website" << "facebook";
-        recognizedTags << "contact:facebook" << "url";
+        recognizedTags << QString::fromUtf8("name") << QString::fromUtf8("amenity") << QString::fromUtf8("cuisine") << QString::fromUtf8("opening_hours");
+        recognizedTags << QString::fromUtf8("addr:street") << QString::fromUtf8("addr:housenumber") << QString::fromUtf8("addr:postcode");
+        recognizedTags << QString::fromUtf8("addr:city") << QString::fromUtf8("phone") << QString::fromUtf8("wheelchair") << QString::fromUtf8("internet_access");
+        recognizedTags << QString::fromUtf8("smoking") << QString::fromUtf8("website") << QString::fromUtf8("contact:website") << QString::fromUtf8("facebook");
+        recognizedTags << QString::fromUtf8("contact:facebook") << QString::fromUtf8("url");
 
         for(const QString &tag: recognizedTags) {
             if (data.containsTagKey(tag)) {
@@ -729,7 +729,7 @@ void MarbleWidgetPopupMenu::slotInfoDialog()
                 // @TODO: implement the line calculation, so that snippet().maxLines actually has effect.
                 content.replace(QStringLiteral("$[snippet]"), placemark->snippet().text(), Qt::CaseInsensitive);
                 content.replace(QStringLiteral("$[id]"), placemark->id(), Qt::CaseInsensitive);
-                QString const basePath = placemark->resolvePath(".");
+                QString const basePath = placemark->resolvePath(QString::fromUtf8("."));
                 QUrl const baseUrl = (basePath != QLatin1String(".")) ? QUrl::fromLocalFile(basePath + QLatin1Char('/')) : QUrl();
                 popup->setContent(content, baseUrl );
             }
@@ -799,7 +799,7 @@ void MarbleWidgetPopupMenu::slotCopyGeo()
         const qreal longitude_degrees = coordinates.longitude(GeoDataCoordinates::Degree);
 
         QMimeData * const myMimeData = new QMimeData();
-        QList<QUrl> urls = { QUrl(QString("geo:%1,%2").arg(latitude_degrees, 0, 'f', 10).arg(longitude_degrees, 0, 'f', 10)) };
+        QList<QUrl> urls = { QUrl(QString::fromUtf8("geo:%1,%2").arg(latitude_degrees, 0, 'f', 10).arg(longitude_degrees, 0, 'f', 10)) };
         myMimeData->setUrls(urls);
         QClipboard * const clipboard = QApplication::clipboard();
         clipboard->setMimeData(myMimeData);

@@ -62,9 +62,9 @@ bool GeoUriParser::parse()
         return false;
     }
 
-    QString const floatRegexp = "[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?";
+    QString const floatRegexp = QString::fromUtf8("[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?");
 
-    QRegExp geoUriRegexp( "geo:(" + floatRegexp + "),(" + floatRegexp + "),?(" + floatRegexp + ")?(?:;(crs|u)=([\\w\\d-]+))?(?:;(crs|u)=([\\w\\d-]+))?" , Qt::CaseInsensitive, QRegExp::RegExp2 );
+    QRegExp geoUriRegexp( QString::fromUtf8("geo:(") + floatRegexp + QString::fromUtf8("),(") + floatRegexp + QString::fromUtf8("),?(") + floatRegexp + QString::fromUtf8(")?(?:;(crs|u)=([\\w\\d-]+))?(?:;(crs|u)=([\\w\\d-]+))?") , Qt::CaseInsensitive, QRegExp::RegExp2 );
 
 
     if ( geoUriRegexp.indexIn( m_geoUri ) > -1 && geoUriRegexp.captureCount() > 1 ) {
@@ -104,14 +104,14 @@ bool GeoUriParser::parse()
         m_geoUri.replace(QStringLiteral("goto/"), QStringLiteral("goto/?"));
         QUrl worldwindUrl( m_geoUri );
 
-        double lat = queryValue(worldwindUrl, "lat", "latitude").toDouble();
-        double lon = queryValue(worldwindUrl, "lon", "longitude").toDouble();
-        double alt = queryValue(worldwindUrl, "alt", "altitude").toDouble();
+        double lat = queryValue(worldwindUrl, QString::fromUtf8("lat"), QString::fromUtf8("latitude")).toDouble();
+        double lon = queryValue(worldwindUrl, QString::fromUtf8("lon"), QString::fromUtf8("longitude")).toDouble();
+        double alt = queryValue(worldwindUrl, QString::fromUtf8("alt"), QString::fromUtf8("altitude")).toDouble();
         //double bank = getDoubleFromParameter(worldwindUrl, "bank", "");
         //double dir = getDoubleFromParameter(worldwindUrl, "dir", "direction");
         //double tilt = getDoubleFromParameter(worldwindUrl, "tilt", "");
         //QString layer = worldwindUrl.queryItemValue("layer");
-        QString world = queryValue(worldwindUrl, "world");
+        QString world = queryValue(worldwindUrl, QString::fromUtf8("world"));
 
         for ( const QString& str: PlanetFactory::planetList()) {
             if ( world.contains(str, Qt::CaseInsensitive) ) {

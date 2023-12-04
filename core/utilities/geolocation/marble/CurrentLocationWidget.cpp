@@ -108,7 +108,7 @@ void CurrentLocationWidget::setMarbleWidget( MarbleWidget *widget )
     }
     if ( d->m_positionProviderPlugins.isEmpty() ) {
         d->m_currentLocationUi.positionTrackingComboBox->setEnabled( false );
-        QString html = "<p>No Position Tracking Plugin installed.</p>";
+        QString html = QString::fromUtf8("<p>No Position Tracking Plugin installed.</p>");
         d->m_currentLocationUi.locationLabel->setText( html );
         d->m_currentLocationUi.locationLabel->setEnabled ( true );
         bool const hasTrack = !d->m_widget->model()->positionTracking()->isTrackEmpty();
@@ -190,7 +190,7 @@ void CurrentLocationWidgetPrivate::adjustPositionTrackingStatus( PositionProvide
         return;
     }
 
-    QString html = "<html><body><p>";
+    QString html = QString::fromUtf8("<html><body><p>");
 
     switch ( status ) {
         case PositionProviderStatusUnavailable:
@@ -296,8 +296,8 @@ void CurrentLocationWidgetPrivate::receiveGpsCoordinates( const GeoDataCoordinat
     }
     // TODO read this value from the incoming signal
     const QString speedString = QLocale::system().toString( unitSpeed, 'f', 1);
-    const QString altitudeString = QString( "%1 %2" ).arg( altitude, 0, 'f', 1, QChar(' ') ).arg( altitudeUnitString );
-    const QString distanceString = QString( "%1 %2" ).arg( length, 0, 'f', 1, QChar(' ') ).arg( distanceUnitString );
+    const QString altitudeString = QString::fromUtf8( "%1 %2" ).arg( altitude, 0, 'f', 1, QLatin1Char(' ') ).arg( altitudeUnitString );
+    const QString distanceString = QString::fromUtf8( "%1 %2" ).arg( length, 0, 'f', 1, QLatin1Char(' ') ).arg( distanceUnitString );
 
     html = html.arg( position.lonToString(), position.latToString() );
     html = html.arg(altitudeString, speedString + QLatin1Char(' ') + unitString);
@@ -376,7 +376,7 @@ void CurrentLocationWidgetPrivate::saveTrack()
 {
     QString suggested = m_lastSavePath;
     QString fileName = QFileDialog::getSaveFileName(m_widget, QObject::tr("Save Track"), // krazy:exclude=qclasses
-                                                    suggested.append(QLatin1Char('/') + QDateTime::currentDateTime().toString("yyyy-MM-dd_hhmmss") + QLatin1String(".kml")),
+                                                    suggested.append(QLatin1Char('/') + QDateTime::currentDateTime().toString(QString::fromUtf8("yyyy-MM-dd_hhmmss")) + QLatin1String(".kml")),
                             QObject::tr("KML File (*.kml)"));
     if ( fileName.isEmpty() ) {
         return;

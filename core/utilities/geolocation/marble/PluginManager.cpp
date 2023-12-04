@@ -22,7 +22,6 @@
 #include "ReverseGeocodingRunnerPlugin.h"
 #include "RoutingRunnerPlugin.h"
 #include "SearchRunnerPlugin.h"
-#include <config-marble.h>
 
 namespace Marble
 {

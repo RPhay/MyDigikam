@@ -8,12 +8,6 @@
 
 #include "PlaybackItem.h"
 
-#include <config-phonon.h>
-
-#if HAVE_PHONON
-#include <phonon/MediaObject>
-#endif
-
 namespace Marble
 {
 
@@ -33,9 +27,6 @@ public:
 private:
     const GeoDataSoundCue* m_soundCue;
     QString m_href;
-#if HAVE_PHONON
-    Phonon::MediaObject m_mediaObject;
-#endif
 };
 
 }

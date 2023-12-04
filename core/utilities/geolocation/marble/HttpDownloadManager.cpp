@@ -148,7 +148,7 @@ void HttpDownloadManager::addJob( const QUrl& sourceUrl, const QString& destFile
     DownloadQueueSet * const queueSet = d->findQueues( sourceUrl.host(), usage );
     if ( queueSet->canAcceptJob( sourceUrl, destFileName )) {
         HttpJob * const job = new HttpJob( sourceUrl, destFileName, id, &d->m_networkAccessManager );
-        job->setUserAgentPluginId( "QNamNetworkPlugin" );
+        job->setUserAgentPluginId( QString::fromUtf8("QNamNetworkPlugin") );
         job->setDownloadUsage( usage );
         mDebug() << "adding job " << sourceUrl;
         queueSet->addJob( job );
@@ -225,9 +225,9 @@ bool HttpDownloadManager::Private::hasDownloadPolicy( const DownloadPolicy& poli
 
 QByteArray HttpDownloadManager::userAgent(const QString &platform, const QString &component)
 {
-    QString result( "Mozilla/5.0 (compatible; Marble/%1; %2; %3; %4; %5)" );
+    QString result = QString::fromUtf8( "Mozilla/5.0 (compatible; Marble/%1; %2; %3; %4; %5)" );
     bool const smallScreen = MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen;
-    QString const device = smallScreen ? "MobileDevice" : "DesktopDevice";
+    QString const device = smallScreen ? QString::fromUtf8("MobileDevice") : QString::fromUtf8("DesktopDevice");
     QString const app = QCoreApplication::applicationName();
     result = result.arg( MARBLE_VERSION_STRING, device, platform, component, app);
     return result.toLatin1();

@@ -40,7 +40,7 @@ HttpJobPrivate::HttpJobPrivate( const QUrl & sourceUrl, const QString & destFile
       m_downloadUsage( DownloadBrowse ),
       // FIXME: remove initialization depending on if empty pluginId
       // results in valid user agent string
-      m_userAgent( "unknown" ),
+      m_userAgent( QString::fromUtf8("unknown") ),
       m_networkAccessManager( networkAccessManager ),
       m_networkReply( nullptr )
 {
@@ -117,12 +117,12 @@ QByteArray HttpJob::userAgent() const
 {
     switch ( d->m_downloadUsage ) {
     case DownloadBrowse:
-        return HttpDownloadManager::userAgent("Browser", d->m_userAgent);
+        return HttpDownloadManager::userAgent(QString::fromUtf8("Browser"), d->m_userAgent);
     case DownloadBulk:
-        return HttpDownloadManager::userAgent("BulkDownloader", d->m_userAgent);
+        return HttpDownloadManager::userAgent(QString::fromUtf8("BulkDownloader"), d->m_userAgent);
     default:
         qCritical() << "Unknown download usage value:" << d->m_downloadUsage;
-        return HttpDownloadManager::userAgent("unknown", d->m_userAgent);
+        return HttpDownloadManager::userAgent(QString::fromUtf8("unknown"), d->m_userAgent);
     }
 }
 
@@ -130,7 +130,8 @@ void HttpJob::execute()
 {
     QNetworkRequest request( d->m_sourceUrl );
     request.setAttribute( QNetworkRequest::HttpPipeliningAllowedAttribute, true );
-    request.setRawHeader( "User-Agent", userAgent() );
+    request.setRawHeader( QByteArray("User-Agent"),
+                          userAgent() );
     d->m_networkReply = d->m_networkAccessManager->get( request );
 
     connect( d->m_networkReply, SIGNAL(downloadProgress(qint64,qint64)),

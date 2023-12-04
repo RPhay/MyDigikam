@@ -1018,7 +1018,7 @@ void GeoPainter::drawTextFragment(const QPoint &position, const QString &text,
                                   const qreal fontSize, const QColor &color,
                                   const Frames &flags)
 {
-    const QString key = text + ":" + QString::number(static_cast<int>(flags));
+    const QString key = text + QString::fromUtf8(":") + QString::number(static_cast<int>(flags));
 
     QPixmap pixmap;
 
