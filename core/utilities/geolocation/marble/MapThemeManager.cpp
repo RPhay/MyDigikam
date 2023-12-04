@@ -41,7 +41,7 @@
 
 namespace
 {
-    static const QString mapDirName = "maps";
+    static const QString mapDirName = QString::fromUtf8("maps");
     static const int columnRelativePath = 1;
 }
 
@@ -267,7 +267,7 @@ QStringList MapThemeManager::Private::findMapThemes( const QString& basePath )
 
     QDir paths = QDir( mapPathName );
 
-    QStringList mapPaths = paths.entryList( QStringList( "*" ),
+    QStringList mapPaths = paths.entryList( QStringList( QString::fromUtf8("*") ),
                                             QDir::AllDirs
                                             | QDir::NoSymLinks
                                             | QDir::NoDotAndDotDot );
@@ -276,7 +276,7 @@ QStringList MapThemeManager::Private::findMapThemes( const QString& basePath )
     for ( int planet = 0; planet < mapPaths.size(); ++planet ) {
         QDir themeDir = QDir(mapPathName + QLatin1Char('/') + mapPaths.at(planet));
         QStringList themeMapPaths = themeDir.entryList(
-                                     QStringList( "*" ),
+                                     QStringList( QString::fromUtf8("*") ),
                                      QDir::AllDirs |
                                      QDir::NoSymLinks |
                                      QDir::NoDotAndDotDot );
@@ -291,7 +291,7 @@ QStringList MapThemeManager::Private::findMapThemes( const QString& basePath )
     while ( it.hasNext() ) {
         QString themeDir = it.next() + QLatin1Char('/');
         QString themeDirName = QDir(themeDir).path().section(QLatin1Char('/'), -2, -1);
-        QStringList tmp = QDir( themeDir ).entryList( QStringList( "*.dgml" ),
+        QStringList tmp = QDir( themeDir ).entryList( QStringList( QString::fromUtf8("*.dgml") ),
                                                       QDir::Files | QDir::NoSymLinks );
         if ( !tmp.isEmpty() ) {
             QStringListIterator k( tmp );
@@ -360,7 +360,7 @@ QList<QStandardItem *> MapThemeManager::Private::createMapThemeRow( QString cons
     themeIconPixmap.load( MarbleDirs::path( relativePath ) );
 
     if ( themeIconPixmap.isNull() ) {
-        relativePath = "svg/application-x-marble-gray.png";
+        relativePath = QString::fromUtf8("svg/application-x-marble-gray.png");
         themeIconPixmap.load( MarbleDirs::path( relativePath ) );
     }
     else {
@@ -495,7 +495,7 @@ void MapThemeManager::Private::fileChanged( const QString& path )
 void MapThemeManager::Private::addMapThemePaths( const QString& mapPathName, QStringList& result )
 {
     QDir mapPath( mapPathName );
-    QStringList orbDirNames = mapPath.entryList( QStringList( "*" ),
+    QStringList orbDirNames = mapPath.entryList( QStringList( QString::fromUtf8("*") ),
                                                  QDir::AllDirs
                                                  | QDir::NoSymLinks
                                                  | QDir::NoDotAndDotDot );
@@ -505,7 +505,7 @@ void MapThemeManager::Private::addMapThemePaths( const QString& mapPathName, QSt
         result << orbPathName;
 
         QDir orbPath( orbPathName );
-        QStringList themeDirNames = orbPath.entryList( QStringList( "*" ),
+        QStringList themeDirNames = orbPath.entryList( QStringList( QString::fromUtf8("*") ),
                                                        QDir::AllDirs
                                                        | QDir::NoSymLinks
                                                        | QDir::NoDotAndDotDot );
@@ -515,7 +515,7 @@ void MapThemeManager::Private::addMapThemePaths( const QString& mapPathName, QSt
             result << themePathName;
 
             QDir themePath( themePathName );
-	    QStringList themeFileNames = themePath.entryList( QStringList( "*.dgml" ),
+	    QStringList themeFileNames = themePath.entryList( QStringList( QString::fromUtf8("*.dgml") ),
                                                               QDir::Files
                                                               | QDir::NoSymLinks );
             QStringListIterator itThemeFile( themeFileNames );
@@ -532,8 +532,8 @@ GeoSceneDocument *MapThemeManager::createMapThemeFromOverlay( const GeoDataPhoto
     GeoSceneDocument * document = new GeoSceneDocument();
     document->head()->setDescription( overlayData->description() );
     document->head()->setName( overlayData->name() );
-    document->head()->setTheme( "photo" );
-    document->head()->setTarget( "panorama" );
+    document->head()->setTheme( QString::fromUtf8("photo") );
+    document->head()->setTarget( QString::fromUtf8("panorama") );
     document->head()->setRadius(36000);
     document->head()->setVisible(true);
 
@@ -541,10 +541,10 @@ GeoSceneDocument *MapThemeManager::createMapThemeFromOverlay( const GeoDataPhoto
     document->head()->zoom()->setMinimum(900);
     document->head()->zoom()->setDiscrete(false);
 
-    GeoSceneLayer * layer = new GeoSceneLayer( "photo" );
-    layer->setBackend("texture");
+    GeoSceneLayer * layer = new GeoSceneLayer( QString::fromUtf8("photo") );
+    layer->setBackend(QString::fromUtf8("texture"));
 
-    GeoSceneTextureTileDataset * texture = new GeoSceneTextureTileDataset( "map" );
+    GeoSceneTextureTileDataset * texture = new GeoSceneTextureTileDataset( QString::fromUtf8("map") );
     texture->setExpire(std::numeric_limits<int>::max());
 
     QString fileName = overlayData->absoluteIconFile();
@@ -566,22 +566,22 @@ GeoSceneDocument *MapThemeManager::createMapThemeFromOverlay( const GeoDataPhoto
 
     GeoSceneSettings *settings = document->settings();
 
-    GeoSceneProperty *gridProperty = new GeoSceneProperty( "coordinate-grid" );
+    GeoSceneProperty *gridProperty = new GeoSceneProperty( QString::fromUtf8("coordinate-grid") );
     gridProperty->setValue( false );
     gridProperty->setAvailable( false );
     settings->addProperty( gridProperty );
 
-    GeoSceneProperty *overviewmap = new GeoSceneProperty( "overviewmap" );
+    GeoSceneProperty *overviewmap = new GeoSceneProperty( QString::fromUtf8("overviewmap") );
     overviewmap->setValue( false );
     overviewmap->setAvailable( false );
     settings->addProperty( overviewmap );
 
-    GeoSceneProperty *compass = new GeoSceneProperty( "compass" );
+    GeoSceneProperty *compass = new GeoSceneProperty( QString::fromUtf8("compass") );
     compass->setValue( false );
     compass->setAvailable( false );
     settings->addProperty( compass );
 
-    GeoSceneProperty *scalebar = new GeoSceneProperty( "scalebar" );
+    GeoSceneProperty *scalebar = new GeoSceneProperty( QString::fromUtf8("scalebar") );
     scalebar->setValue( true );
     scalebar->setAvailable( true );
     settings->addProperty( scalebar );

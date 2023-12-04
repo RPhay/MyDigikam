@@ -115,7 +115,7 @@ void PositionTrackingPrivate::updateStatus()
 
 QString PositionTrackingPrivate::statusFile()
 {
-    QString const subdir = "tracking";
+    QString const subdir = QString::fromUtf8("tracking");
     QDir dir( MarbleDirs::localPath() );
     if ( !dir.exists( subdir ) ) {
         if ( !dir.mkdir( subdir ) ) {
@@ -128,7 +128,7 @@ QString PositionTrackingPrivate::statusFile()
         mDebug() << "Cannot change into " << dir.absoluteFilePath( subdir );
     }
 
-    return dir.absoluteFilePath( "track.kml" );
+    return dir.absoluteFilePath( QString::fromUtf8("track.kml") );
 }
 
 PositionTracking::PositionTracking( GeoDataTreeModel *model )

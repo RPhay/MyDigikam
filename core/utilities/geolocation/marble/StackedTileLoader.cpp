@@ -166,7 +166,7 @@ int StackedTileLoader::tileCount() const
 
 void StackedTileLoader::setVolatileCacheLimit( quint64 kiloBytes )
 {
-    mDebug() << QString("Setting tile cache to %1 kilobytes.").arg( kiloBytes );
+    mDebug() << QString::fromUtf8("Setting tile cache to %1 kilobytes.").arg( kiloBytes );
     d->m_tileCache.setMaxCost( kiloBytes * 1024 );
 }
 
@@ -193,7 +193,7 @@ void StackedTileLoader::updateTile( TileId const &tileId, QImage const &tileImag
 
 RenderState StackedTileLoader::renderState() const
 {
-    RenderState renderState( "Stacked Tiles" );
+    RenderState renderState( QString::fromUtf8("Stacked Tiles") );
     QHash<TileId, StackedTile*>::const_iterator it = d->m_tilesOnDisplay.constBegin();
     QHash<TileId, StackedTile*>::const_iterator const end = d->m_tilesOnDisplay.constEnd();
     for (; it != end; ++it ) {

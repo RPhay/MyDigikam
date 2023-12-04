@@ -29,8 +29,6 @@
 #include <ApplicationServices/ApplicationServices.h>
 #endif
 
-#include <config-marble.h>
-
 using namespace Marble;
 
 namespace

@@ -10,7 +10,7 @@
 #include "MarbleGlobal.h"
 #include "MarbleColors.h"
 
-#include "src/lib/astro/solarsystem.h"
+#include "solarsystem.h"
 
 #include <QDateTime>
 #include <QString>

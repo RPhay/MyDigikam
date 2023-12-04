@@ -93,11 +93,9 @@ set(marblewidget_SRCS
     HttpJob.cpp
     RemoteIconLoader.cpp
     LayerManager.cpp
-    PluginManager.cpp
     TimeControlWidget.cpp
     AbstractFloatItem.cpp
     MarbleGlobal.cpp
-    MarbleDirs.cpp
     MarbleLocale.cpp
     MarblePhysics.cpp
     TileCreatorDialog.cpp
@@ -261,6 +259,10 @@ set(marblewidget_SRCS
     cloudsync/BookmarkSyncManager.cpp
     cloudsync/MergeItem.cpp
     cloudsync/ConflictDialog.cpp
+
+    # Use marble-config.h
+    PluginManager.cpp
+    MarbleDirs.cpp
 )
 
 set (marblewidget_UI

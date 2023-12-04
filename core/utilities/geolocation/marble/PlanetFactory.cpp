@@ -17,18 +17,18 @@ QList<QString> PlanetFactory::planetList()
 {
     QStringList planets;
 
-    planets << "mercury"
-    << "venus"
-    << "earth"
-    << "mars"
-    << "jupiter"
-    << "saturn"
-    << "uranus"
-    << "neptune"
-    << "pluto"
-    << "sun"
-    << "moon"
-    << "sky";
+    planets << QString::fromUtf8("mercury")
+    << QString::fromUtf8("venus")
+    << QString::fromUtf8("earth")
+    << QString::fromUtf8("mars")
+    << QString::fromUtf8("jupiter")
+    << QString::fromUtf8("saturn")
+    << QString::fromUtf8("uranus")
+    << QString::fromUtf8("neptune")
+    << QString::fromUtf8("pluto")
+    << QString::fromUtf8("sun")
+    << QString::fromUtf8("moon")
+    << QString::fromUtf8("sky");
 
     return planets;
 }

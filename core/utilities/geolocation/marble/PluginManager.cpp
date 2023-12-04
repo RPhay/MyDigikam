@@ -158,7 +158,7 @@ void PluginManager::addParseRunnerPlugin( const ParseRunnerPlugin *plugin )
 
 void PluginManager::blacklistPlugin(const QString &filename)
 {
-    PluginManagerPrivate::m_blacklist << MARBLE_SHARED_LIBRARY_PREFIX + filename;
+    PluginManagerPrivate::m_blacklist << QLibraryInfo::path(QLibraryInfo::PluginsPath) + filename;
 }
 
 void PluginManager::whitelistPlugin(const QString &filename)

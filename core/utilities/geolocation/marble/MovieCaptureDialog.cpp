@@ -60,7 +60,7 @@ void MovieCaptureDialog::loadDestinationFile()
         filter += QLatin1String(";;") + formats.at(i).name() + QLatin1String(" (*.") + formats.at(i).extension() + QLatin1Char(')');
     }
     const QString defaultFileName =
-            ui->destinationEdit->text().isEmpty() ? "" : ui->destinationEdit->text();
+            ui->destinationEdit->text().isEmpty() ? QString::fromUtf8("") : ui->destinationEdit->text();
 
     const QString destination =
             QFileDialog::getSaveFileName(this, tr("Save video file"), defaultFileName,

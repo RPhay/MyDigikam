@@ -145,7 +145,7 @@ void TourCaptureDialog::recordNextFrame()
     double const duration = m_playback->duration();
 
     if (!m_writingPossible) {
-        ui->rate->setText(QString("<font color=\"red\">%1</font>").arg(tr("Video writing failed.")));
+        ui->rate->setText(QString::fromUtf8("<font color=\"red\">%1</font>").arg(tr("Video writing failed.")));
         return;
     }
 
@@ -163,14 +163,14 @@ void TourCaptureDialog::recordNextFrame()
         m_recorder->stopRecording();
         ui->progressBar->setValue(duration*100);
         ui->startButton->setText(tr("Start"));
-        ui->rate->setText(QString("<font color=\"green\">%1</font>").arg(tr("Video export completed.")));
+        ui->rate->setText(QString::fromUtf8("<font color=\"green\">%1</font>").arg(tr("Video export completed.")));
         ui->closeButton->setEnabled(true);
     }
 }
 
 void TourCaptureDialog::setRate(double rate)
 {
-    ui->rate->setText(QString("%1 KBytes/sec").arg(rate));
+    ui->rate->setText(QString::fromUtf8("%1 KBytes/sec").arg(rate));
 }
 
 void TourCaptureDialog::stopRecording()
