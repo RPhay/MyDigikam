@@ -84,7 +84,7 @@ public:
 
     static GeoDataFolder *createFolderFromRequest(const RouteRequest &request);
 
-    static QString stateFile( const QString &name = QString( "route.kml" ) );
+    static QString stateFile( const QString &name = QString::fromUtf8( "route.kml" ) );
 
     void saveRoute( const QString &filename );
 
@@ -141,7 +141,7 @@ GeoDataFolder *RoutingManagerPrivate::createFolderFromRequest(const RouteRequest
 
 QString RoutingManagerPrivate::stateFile( const QString &name)
 {
-    QString const subdir = "routing";
+    QString const subdir = QString::fromUtf8("routing");
     QDir dir( MarbleDirs::localPath() );
     if ( !dir.exists( subdir ) ) {
         if ( !dir.mkdir( subdir ) ) {
@@ -160,7 +160,7 @@ QString RoutingManagerPrivate::stateFile( const QString &name)
 void RoutingManagerPrivate::saveRoute(const QString &filename)
 {
     GeoWriter writer;
-    writer.setDocumentType( kml::kmlTag_nameSpaceOgc22 );
+    writer.setDocumentType( QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) );
 
     QMutexLocker locker( &m_fileMutex );
     QFile file( filename );
@@ -404,7 +404,7 @@ void RoutingManagerPrivate::importPlacemark( RouteSegment &outline, QVector<Rout
 {
     const GeoDataGeometry* geometry = placemark->geometry();
     const GeoDataLineString* lineString = dynamic_cast<const GeoDataLineString*>( geometry );
-    QStringList blacklist = QStringList() << "" << "Route" << "Tessellated";
+    QStringList blacklist = QStringList() << QString::fromUtf8("") << QString::fromUtf8("Route") << QString::fromUtf8("Tessellated");
     RouteSegment segment;
     bool isOutline = true;
     if ( !blacklist.contains( placemark->name() ) ) {
@@ -507,7 +507,7 @@ void RoutingManager::setGuidanceModeEnabled( bool enabled )
     d->m_guidanceModeEnabled = enabled;
 
     if ( enabled ) {
-        d->saveRoute( d->stateFile( "guidance.kml" ) );
+        d->saveRoute( d->stateFile( QString::fromUtf8("guidance.kml") ) );
 
         if ( d->m_guidanceModeWarning ) {
             QString text = QLatin1String("<p>") + tr("Caution: Driving instructions may be incomplete or wrong.") +
@@ -528,7 +528,7 @@ void RoutingManager::setGuidanceModeEnabled( bool enabled )
             delete messageBox;
         }
     } else {
-        d->loadRoute( d->stateFile( "guidance.kml" ) );
+        d->loadRoute( d->stateFile( QString::fromUtf8("guidance.kml") ) );
     }
 
     PositionProviderPlugin* positionProvider = d->m_positionTracking->positionProviderPlugin();

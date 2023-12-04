@@ -57,7 +57,7 @@ SpeakersModelPrivate::SpeakersModelPrivate( SpeakersModel* parent ) :
     m_parent( parent )
 {
     m_newstuffModel.setTargetDirectory(MarbleDirs::localPath() + QLatin1String("/audio/speakers"));
-    m_newstuffModel.setProvider( "http://edu.kde.org/marble/newstuff/speakers.xml" );
+    m_newstuffModel.setProvider( QString::fromUtf8("http://edu.kde.org/marble/newstuff/speakers.xml") );
     QObject::connect( &m_newstuffModel, SIGNAL(modelReset()), m_parent, SLOT(fillModel()) );
     QObject::connect( &m_newstuffModel, SIGNAL(installationProgressed(int,qreal)),
                       m_parent, SLOT(handleInstallationProgress(int,qreal)) );
@@ -95,7 +95,7 @@ void SpeakersModelPrivate::fillModel()
 
         if ( !exists ) {
             SpeakersModelItem item;
-            QString const path = "%1/audio/speakers/%2";
+            QString const path = QString::fromUtf8("%1/audio/speakers/%2");
             item.m_file = QFileInfo( path.arg( MarbleDirs::localPath(), name ) );
             item.m_newstuffIndex = i;
             m_speakers << item;

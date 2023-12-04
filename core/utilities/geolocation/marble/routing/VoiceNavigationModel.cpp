@@ -100,9 +100,9 @@ QString VoiceNavigationModelPrivate::audioFile( const QString &name ) const
 #ifdef Q_OS_ANDROID
     return name;
 #else
-    QStringList const formats = QStringList() << "ogg" << "mp3" << "wav";
+    QStringList const formats = QStringList() << QString::fromUtf8("ogg") << QString::fromUtf8("mp3") << QString::fromUtf8("wav");
     if ( m_speakerEnabled ) {
-        QString const audioTemplate = "%1/%2.%3";
+        QString const audioTemplate = QString::fromUtf8("%1/%2.%3");
         for( const QString &format: formats ) {
             QString const result = audioTemplate.arg( m_speaker, name, format );
             QFileInfo audioFile( result );
@@ -112,7 +112,7 @@ QString VoiceNavigationModelPrivate::audioFile( const QString &name ) const
         }
     }
 
-    QString const audioTemplate = "audio/%1.%2";
+    QString const audioTemplate = QString::fromUtf8("audio/%1.%2");
     for( const QString &format: formats ) {
         QString const result = MarbleDirs::path( audioTemplate.arg( name, format ) );
         if ( !result.isEmpty() ) {
@@ -156,54 +156,54 @@ QString VoiceNavigationModelPrivate::turnTypeAudioFile( Maneuver::Direction turn
         return audioFile( map[turnType] );
     }
 
-    return audioFile( announce ? "ListEnd" : "AppPositive" );
+    return audioFile( announce ? QString::fromUtf8("ListEnd") : QString::fromUtf8("AppPositive") );
 }
 
 QString VoiceNavigationModelPrivate::announcementText( Maneuver::Direction turnType, qreal distance )
 {
-    QString announcementText = QString("");
+    QString announcementText = QString::fromUtf8("");
     if (distance >= 75) {
-        announcementText = QString("In "+distanceAudioFile(distance)+" meters, ");
+        announcementText = QString::fromUtf8("In ") + distanceAudioFile(distance) + QString::fromUtf8(" meters, ");
     }
     switch (turnType) {
     case Maneuver::Continue:
     case Maneuver::Straight:
-        announcementText += QString("Continue straight");
+        announcementText += QString::fromUtf8("Continue straight");
         break;
     case Maneuver::SlightRight:
-        announcementText += QString("Turn slight right");
+        announcementText += QString::fromUtf8("Turn slight right");
         break;
     case Maneuver::SlightLeft:
-        announcementText += QString("Turn slight left");
+        announcementText += QString::fromUtf8("Turn slight left");
         break;
     case Maneuver::Right:
     case Maneuver::SharpRight:
-        announcementText += QString("Turn right");
+        announcementText += QString::fromUtf8("Turn right");
         break;
     case Maneuver::Left:
     case Maneuver::SharpLeft:
-        announcementText += QString("Turn left");
+        announcementText += QString::fromUtf8("Turn left");
         break;
     case Maneuver::TurnAround:
-        announcementText += QString("Take a U-turn");
+        announcementText += QString::fromUtf8("Take a U-turn");
         break;
     case Maneuver::ExitLeft:
-        announcementText += QString("Exit left");
+        announcementText += QString::fromUtf8("Exit left");
         break;
     case Maneuver::ExitRight:
-        announcementText += QString("Exit right");
+        announcementText += QString::fromUtf8("Exit right");
         break;
     case Maneuver::RoundaboutFirstExit:
-        announcementText += QString("Take the first exit");
+        announcementText += QString::fromUtf8("Take the first exit");
         break;
     case Maneuver::RoundaboutSecondExit:
-        announcementText += QString("Take the second exit");
+        announcementText += QString::fromUtf8("Take the second exit");
         break;
     case Maneuver::RoundaboutThirdExit:
-        announcementText += QString("Take the third exit");
+        announcementText += QString::fromUtf8("Take the third exit");
         break;
     default:
-        announcementText = QString("");
+        announcementText = QString::fromUtf8("");
         break;
     }
     return announcementText;
@@ -244,39 +244,39 @@ void VoiceNavigationModelPrivate::initializeMaps()
     m_turnTypeMap.clear();
     m_announceMap.clear();
 
-    m_announceMap[Maneuver::Continue] = "Straight";
+    m_announceMap[Maneuver::Continue] = QString::fromUtf8("Straight");
     // none of our voice navigation commands fits, so leave out
     // Maneuver::Merge here to have a sound play instead
-    m_announceMap[Maneuver::Straight] = "Straight";
-    m_announceMap[Maneuver::SlightRight] = "AhKeepRight";
-    m_announceMap[Maneuver::Right] = "AhRightTurn";
-    m_announceMap[Maneuver::SharpRight] = "AhRightTurn";
-    m_announceMap[Maneuver::TurnAround] = "AhUTurn";
-    m_announceMap[Maneuver::SharpLeft] = "AhLeftTurn";
-    m_announceMap[Maneuver::Left] = "AhLeftTurn";
-    m_announceMap[Maneuver::SlightLeft] = "AhKeepLeft";
-    m_announceMap[Maneuver::RoundaboutFirstExit] = "RbExit1";
-    m_announceMap[Maneuver::RoundaboutSecondExit] = "RbExit2";
-    m_announceMap[Maneuver::RoundaboutThirdExit] = "RbExit3";
-    m_announceMap[Maneuver::ExitLeft] = "AhExitLeft";
-    m_announceMap[Maneuver::ExitRight] = "AhExitRight";
+    m_announceMap[Maneuver::Straight] = QString::fromUtf8("Straight");
+    m_announceMap[Maneuver::SlightRight] = QString::fromUtf8("AhKeepRight");
+    m_announceMap[Maneuver::Right] = QString::fromUtf8("AhRightTurn");
+    m_announceMap[Maneuver::SharpRight] = QString::fromUtf8("AhRightTurn");
+    m_announceMap[Maneuver::TurnAround] = QString::fromUtf8("AhUTurn");
+    m_announceMap[Maneuver::SharpLeft] = QString::fromUtf8("AhLeftTurn");
+    m_announceMap[Maneuver::Left] = QString::fromUtf8("AhLeftTurn");
+    m_announceMap[Maneuver::SlightLeft] = QString::fromUtf8("AhKeepLeft");
+    m_announceMap[Maneuver::RoundaboutFirstExit] = QString::fromUtf8("RbExit1");
+    m_announceMap[Maneuver::RoundaboutSecondExit] = QString::fromUtf8("RbExit2");
+    m_announceMap[Maneuver::RoundaboutThirdExit] = QString::fromUtf8("RbExit3");
+    m_announceMap[Maneuver::ExitLeft] = QString::fromUtf8("AhExitLeft");
+    m_announceMap[Maneuver::ExitRight] = QString::fromUtf8("AhExitRight");
 
-    m_turnTypeMap[Maneuver::Continue] = "Straight";
+    m_turnTypeMap[Maneuver::Continue] = QString::fromUtf8("Straight");
     // none of our voice navigation commands fits, so leave out
     // Maneuver::Merge here to have a sound play instead
-    m_turnTypeMap[Maneuver::Straight] = "Straight";
-    m_turnTypeMap[Maneuver::SlightRight] = "BearRight";
-    m_turnTypeMap[Maneuver::Right] = "TurnRight";
-    m_turnTypeMap[Maneuver::SharpRight] = "SharpRight";
-    m_turnTypeMap[Maneuver::TurnAround] = "UTurn";
-    m_turnTypeMap[Maneuver::SharpLeft] = "SharpLeft";
-    m_turnTypeMap[Maneuver::Left] = "TurnLeft";
-    m_turnTypeMap[Maneuver::SlightLeft] = "BearLeft";
-    m_turnTypeMap[Maneuver::RoundaboutFirstExit] = "";
-    m_turnTypeMap[Maneuver::RoundaboutSecondExit] = "";
-    m_turnTypeMap[Maneuver::RoundaboutThirdExit] = "";
-    m_turnTypeMap[Maneuver::ExitLeft] = "TurnLeft";
-    m_turnTypeMap[Maneuver::ExitRight] = "TurnRight";
+    m_turnTypeMap[Maneuver::Straight] = QString::fromUtf8("Straight");
+    m_turnTypeMap[Maneuver::SlightRight] = QString::fromUtf8("BearRight");
+    m_turnTypeMap[Maneuver::Right] = QString::fromUtf8("TurnRight");
+    m_turnTypeMap[Maneuver::SharpRight] = QString::fromUtf8("SharpRight");
+    m_turnTypeMap[Maneuver::TurnAround] = QString::fromUtf8("UTurn");
+    m_turnTypeMap[Maneuver::SharpLeft] = QString::fromUtf8("SharpLeft");
+    m_turnTypeMap[Maneuver::Left] = QString::fromUtf8("TurnLeft");
+    m_turnTypeMap[Maneuver::SlightLeft] = QString::fromUtf8("BearLeft");
+    m_turnTypeMap[Maneuver::RoundaboutFirstExit] = QString::fromUtf8("");
+    m_turnTypeMap[Maneuver::RoundaboutSecondExit] = QString::fromUtf8("");
+    m_turnTypeMap[Maneuver::RoundaboutThirdExit] = QString::fromUtf8("");
+    m_turnTypeMap[Maneuver::ExitLeft] = QString::fromUtf8("TurnLeft");
+    m_turnTypeMap[Maneuver::ExitRight] = QString::fromUtf8("TurnRight");
 }
 
 VoiceNavigationModel::VoiceNavigationModel( QObject *parent ) :
@@ -343,7 +343,7 @@ void VoiceNavigationModel::update(const Route &route, qreal distanceManuever, qr
 
     if ( !d->m_destinationReached && distanceTarget < 50 ) {
         d->m_destinationReached = true;
-        d->updateInstruction( d->m_speakerEnabled ? "You have arrived at your destination" : "AppPositive" );
+        d->updateInstruction( d->m_speakerEnabled ? QString::fromUtf8("You have arrived at your destination") : QString::fromUtf8("AppPositive") );
         return;
     }
 
@@ -352,7 +352,7 @@ void VoiceNavigationModel::update(const Route &route, qreal distanceManuever, qr
     }
 
     if ( deviated && !d->m_deviated ) {
-        d->updateInstruction( d->m_speakerEnabled ? "Deviated from the route" : "ListEnd" );
+        d->updateInstruction( d->m_speakerEnabled ? QString::fromUtf8("Deviated from the route") : QString::fromUtf8("ListEnd") );
     }
     d->m_deviated = deviated;
     if ( deviated ) {
@@ -394,7 +394,7 @@ void VoiceNavigationModel::update(const Route &route, qreal distanceManuever, qr
 
 QString VoiceNavigationModel::preview() const
 {
-    return d->audioFile( d->m_speakerEnabled ? "The Marble team wishes you a pleasant and safe journey!" : "AppPositive" );
+    return d->audioFile( d->m_speakerEnabled ? QString::fromUtf8("The Marble team wishes you a pleasant and safe journey!") : QString::fromUtf8("AppPositive") );
 }
 
 QString VoiceNavigationModel::instruction() const
