@@ -138,12 +138,19 @@ void AutotagsAssignmentTask::run()
         QScopedPointer<AutoTagsAssign> autotagsEngine(new AutoTagsAssign(DetectorModel(d->modelType)));
         QList<QList<QString> >tagsLists = autotagsEngine->generateTagsList(inputImages, d->batchSize);
 
-        for (int j = 0 ; j < inputImages.size() ; ++j)
+        if (tagsLists.size() >= inputImages.size())
         {
-            QImage qimg = inputImages.at(j).smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
-            assignTags(inputImages.at(j).originalFilePath(), tagsLists.at(j));
+            for (int j = 0 ; j < inputImages.size() ; ++j)
+            {
+                QImage qimg = inputImages.at(j).smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
+                assignTags(inputImages.at(j).originalFilePath(), tagsLists.at(j));
 
-            Q_EMIT signalFinished(qimg);
+                Q_EMIT signalFinished(qimg);
+            }
+        }
+        else
+        {
+            Q_EMIT signalFinished(QImage());
         }
 
         qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Assgin Tags process takes:"
