@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 00:39+0000\n"
+"POT-Creation-Date: 2023-12-04 00:39+0000\n"
 "PO-Revision-Date: 2023-11-26 01:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -27430,7 +27430,7 @@ msgstr ""
 "etiketleri tüm resimlerden gerçekten kaldırmak istiyor musunuz?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
 msgid "Don't ask again at this session"
@@ -27441,7 +27441,7 @@ msgstr "Tekrar sorma"
 msgid "No such tag"
 msgstr "Böyle bir etiket yok"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, fuzzy, kde-format
 #| msgid ""
 #| "This operation can take long time depending on collection size.\n"
@@ -42025,7 +42025,7 @@ msgid "An error has occurred with the media player..."
 msgstr "Ortam oynatıcısında bir hata oluştu..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -58926,7 +58926,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag<p>."
+"the items with no assigned tag.</p>"
 msgstr ""
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200

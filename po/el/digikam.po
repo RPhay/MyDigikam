@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 00:39+0000\n"
+"POT-Creation-Date: 2023-12-04 00:39+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -28641,7 +28641,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Επιθυμείτε την αφαίρεση της επιλεγμένης ετικέτας από όλες τις εικόνες;"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
 msgid "Don't ask again at this session"
@@ -28652,7 +28652,7 @@ msgstr "Να μη γίνει ερώτηση ξανά"
 msgid "No such tag"
 msgstr "Δεν υπάρχει τέτοια ετικέτα"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, fuzzy, kde-format
 #| msgid ""
 #| "This operation can take long time depending on collection size.\n"
@@ -43648,7 +43648,7 @@ msgid "An error has occurred with the media player..."
 msgstr "Συνέβη ένα σφάλμα με τον αναπαραγωγέα μέσων..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, fuzzy, kde-format
 #| msgid "Display in loop"
 msgid "Toggle playing in a loop"
@@ -61601,7 +61601,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag<p>."
+"the items with no assigned tag.</p>"
 msgstr ""
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200

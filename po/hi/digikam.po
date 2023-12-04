@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 00:39+0000\n"
+"POT-Creation-Date: 2023-12-04 00:39+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -26177,7 +26177,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, fuzzy, kde-format
 msgid "Don't ask again at this session"
 msgstr "दोबारा मत पूछें (&a)"
@@ -26187,7 +26187,7 @@ msgstr "दोबारा मत पूछें (&a)"
 msgid "No such tag"
 msgstr "ऐसा कोई टैग नहीं है"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -39614,7 +39614,7 @@ msgid "An error has occurred with the media player..."
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -56355,7 +56355,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag<p>."
+"the items with no assigned tag.</p>"
 msgstr ""
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200

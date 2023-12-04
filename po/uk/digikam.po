@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 00:39+0000\n"
-"PO-Revision-Date: 2023-12-02 09:23+0200\n"
+"POT-Creation-Date: 2023-12-04 00:39+0000\n"
+"PO-Revision-Date: 2023-12-03 08:52+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -6146,15 +6146,7 @@ msgstr ""
 "зображень.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</p><p>The settings below "
-#| "determines the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool allows to assign automatically tags to images by contents "
@@ -6164,11 +6156,11 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
-"<p>Цей інструмент уможливлює автоматичне призначення позначок до зображень "
-"на основі вмісту із використанням нейронної мережі для глибинного навчання.</"
-"p><p>Значення з наведеного нижче списку визначають модель глибинного "
-"навчання, якою слід скористатися для обробки вмісту зображення з метою "
-"визначення об'єктів на фотографії. У фоновому режимі буде використано "
+"<p><b>Цей інструмент уможливлює автоматичне призначення позначок до "
+"зображень на основі вмісту із використанням нейронної мережі для глибинного "
+"навчання.</b></p><p>Значення з наведеного нижче списку визначають модель "
+"глибинного навчання, якою слід скористатися для обробки вмісту зображення з "
+"метою визначення об'єктів на фотографії. У фоновому режимі буде використано "
 "нейронну мережу для автоматичного створення набору міток, що описують вміст, "
 "а отримані мітки буде збережено до бази даних.</p>"
 
@@ -6197,28 +6189,7 @@ msgid "ResNet50"
 msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "king of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -27559,7 +27530,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Хочете влити мітку «%1» до мітки «%2»?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Більше не питати у цьому сеансі"
@@ -27569,7 +27540,7 @@ msgstr "Більше не питати у цьому сеансі"
 msgid "No such tag"
 msgstr "Такої мітки не існує"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -41794,7 +41765,7 @@ msgid "An error has occurred with the media player..."
 msgstr "З програвачем сталася помилка…"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Увімкнути або вимкнути циклічне відтворення"
@@ -58117,15 +58088,7 @@ msgid "Detect and recognize Faces"
 msgstr "Виявляти і розпізнавати обличчя"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</p><p>The settings below "
-#| "determines the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool allows to assign automatically tags to images by contents "
@@ -58135,11 +58098,11 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
-"<p>Цей інструмент уможливлює автоматичне призначення позначок до зображень "
-"на основі вмісту із використанням нейронної мережі для глибинного навчання.</"
-"p><p>Значення з наведеного нижче списку визначають модель глибинного "
-"навчання, якою слід скористатися для обробки вмісту зображення з метою "
-"визначення об'єктів на фотографії. У фоновому режимі буде використано "
+"<p><b>Цей інструмент уможливлює автоматичне призначення позначок до "
+"зображень на основі вмісту із використанням нейронної мережі для глибинного "
+"навчання.</b></p><p>Значення з наведеного нижче списку визначають модель "
+"глибинного навчання, якою слід скористатися для обробки вмісту зображення з "
+"метою визначення об'єктів на фотографії. У фоновому режимі буде використано "
 "нейронну мережу для автоматичного створення набору міток, що описують вміст, "
 "а отримані мітки буде збережено до бази даних.</p>"
 
@@ -58160,13 +58123,22 @@ msgid "Scan non-assigned only"
 msgstr "Шукати лише записи без призначень"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:187
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
+#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
+#| "only the items with no assigned tag<p>."
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag<p>."
+"the items with no assigned tag.</p>"
 msgstr ""
+"<p><b>Вилучити усі дані і повторити пов'язування</b>: вилучити усі "
+"призначені мітки і виконати повторне сканування усіх записів від початку.</"
+"p><p><b>Шукати лише записи без призначень</b>: сканувати лише записи без "
+"призначених міток.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
 #, kde-format

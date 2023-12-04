@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 00:39+0000\n"
-"PO-Revision-Date: 2023-12-02 07:44+0100\n"
+"POT-Creation-Date: 2023-12-04 00:39+0000\n"
+"PO-Revision-Date: 2023-12-03 13:09+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -6063,6 +6063,12 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
+"<p><b>Ĉi tiu ilo permesas aŭtomate atribui etikedojn al bildoj per "
+"enhavanalizo uzante profundan lernan neŭralan reton.</b></p><p>La subaj "
+"agordoj determinas la profundlernan modelon por uzi dum analizado de bildo. "
+"enhavoj por determini la temojn de la foto. La neŭrala reto uzata fone "
+"generos aŭtomate serion da etikedoj priskribantaj la enhavon kaj konservos "
+"la rezultojn en la datumbazo.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
 #: core/utilities/maintenance/maintenancedlg.cpp:191
@@ -6074,19 +6080,19 @@ msgstr "Selekta modelo:"
 #: core/utilities/maintenance/maintenancedlg.cpp:196
 #, kde-format
 msgid "YOLOv5 Nano"
-msgstr ""
+msgstr "YOLOv5 Nano"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
 #: core/utilities/maintenance/maintenancedlg.cpp:197
 #, kde-format
 msgid "YOLOv5 XLarge"
-msgstr ""
+msgstr "YOLOv5 XLarge"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
 #: core/utilities/maintenance/maintenancedlg.cpp:198
 #, kde-format
 msgid "ResNet50"
-msgstr ""
+msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
 #, kde-format
@@ -6111,6 +6117,24 @@ msgid ""
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
+"<p><b>YOLOv5 Nano</b>: ĉi tiu modelo estas neŭrala reto kiu ofertas "
+"esceptajn rapidecon kaj efikecon. Ĝi ebligas al vi rapide taksi la "
+"integriĝon de malgrand-skalaj objekto-detektaj scenaroj. Ĝi estas desegnita "
+"por detektoj de objektoj, kapablaj rekoni kaj eltiri la lokon de objektoj "
+"ene de bildo. La limigo de la nombro da rekoneblaj objektoj estas agordita "
+"al 80.</p><p><b>YOLOv5 XLarge</b>: kiel la antaŭa, ĉi tiu modelo estas "
+"neŭrala reto dediĉita por pli kompleksaj objektaj detektaj postuloj kaj "
+"montrofenestroj. rimarkindaj kapabloj. Malgraŭ la plia komplekseco "
+"enkondukanta pli da tempo-latenteco kaj komputilaj rimedoj, ĝi devas esti "
+"uzata por pli grandskalaj objektodetektaj scenaroj ĉar ĝi disponigas pli "
+"precizajn prognozojn koste de rapideco.</p><p><b>ResNet50</b> >: ĉi tiu "
+"modelo estas specifa speco de konvolucia neŭrala reto formita per stakigado "
+"de restaj blokoj ofte uzataj por funkciigi komputilvidajn aplikojn kiel "
+"objektodetektoj. Tiu speco de dezajno permesas la trejnadon de tre profundaj "
+"retoj sen renkonti la malaperantan gradientproblemon. Male al YOLO, ResNet50 "
+"estas ĉefe temigis bildklasifikon kaj ne disponigas objektolokigon. Ĝi povas "
+"rekoni objektojn el vasta aro de pli ol 1000 klasoj, kovrante larĝan gamon "
+"de objektoj, bestoj kaj scenoj.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -26996,7 +27020,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Ĉu vi volas kunfandi etikedon '%1' en etikedon '%2'?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Ne demandi denove ĉe ĉi tiu seanco"
@@ -27006,7 +27030,7 @@ msgstr "Ne demandi denove ĉe ĉi tiu seanco"
 msgid "No such tag"
 msgstr "Ne tia etikedo"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -40966,7 +40990,7 @@ msgid "An error has occurred with the media player..."
 msgstr "Okazis eraro ĉe la plurmedia ludilo..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Ŝalti ludadon en buklo"
@@ -57119,6 +57143,12 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
+"<p><b>Ĉi tiu ilo permesas aŭtomate asigni etikedojn al bildoj per "
+"enhavanalizo uzante profundan lernan neŭralan reton.</b></p><p>La subaj "
+"agordoj determinas la profundan lernan modelon por uzi dum analizado de "
+"bildo. enhavoj por determini la temojn de la foto. La neŭrala reto uzata "
+"fone generos aŭtomate serion da etikedoj priskribantaj la enhavon kaj "
+"konservos la rezultojn en la datumbazo.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:179
 #, kde-format
@@ -57137,13 +57167,21 @@ msgid "Scan non-assigned only"
 msgstr "Skani nur ne-atribuitajn"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:187
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
+#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
+#| "only the items with no assigned tag<p>."
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag<p>."
+"the items with no assigned tag.</p>"
 msgstr ""
+"<p><b>Purigi ĉion kaj reatribui</b>: purigu ĉiujn etikedojn jam asignitajn "
+"kaj re-skanu ĉiujn erojn de nulo.</p><p><b>Skanu nur neasignitajn</b> : "
+"skani nur la erojn kun neniu asignita etikedo<p>."
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
 #, kde-format
@@ -57168,6 +57206,24 @@ msgid ""
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
+"<p><b>YOLOv5 Nano</b>: ĉi tiu modelo estas neŭrala reto kiu ofertas "
+"esceptajn rapidecon kaj efikecon. Ĝi ebligas al vi rapide taksi la "
+"integriĝon de malgrand-skalaj objekto-detektaj scenaroj. Ĝi estas desegnita "
+"por detektoj de objektoj, kapablaj rekoni kaj eltiri la lokon de objektoj "
+"ene de bildo. La limigo de la nombro da rekoneblaj objektoj estas agordita "
+"al 80.</p><p><b>YOLOv5 XLarge</b>: kiel la antaŭa, ĉi tiu modelo estas "
+"neŭrala reto dediĉita por pli kompleksaj objektaj detektaj postuloj kaj "
+"montrofenestroj. rimarkindaj kapabloj. Malgraŭ la plia komplekseco "
+"enkondukanta pli da tempo-latenteco kaj komputilaj rimedoj, ĝi devas esti "
+"uzata por pli grandskalaj objektodetektaj scenaroj ĉar ĝi disponigas pli "
+"precizajn prognozojn koste de rapideco.</p><p><b>ResNet50</b> >: ĉi tiu "
+"modelo estas specifa speco de konvolucia neŭrala reto formita per stakigado "
+"de restaj blokoj ofte uzataj por funkciigi komputilvidajn aplikojn kiel "
+"objektodetektoj. Ĉi tiu reĝo de dezajno permesas la trejnadon de tre "
+"profundaj retoj sen renkonti la malaperantan gradientproblemon. Male al "
+"YOLO, ResNet50 estas ĉefe temigis bildklasifikon kaj ne disponigas "
+"objektolokigon. Ĝi povas rekoni objektojn el vasta aro de pli ol 1000 "
+"klasoj, kovrante larĝan gamon de objektoj, bestoj kaj scenoj.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:212
 #, kde-format

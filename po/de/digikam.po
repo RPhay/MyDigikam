@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 00:39+0000\n"
+"POT-Creation-Date: 2023-12-04 00:39+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -27495,7 +27495,7 @@ msgstr ""
 "Möchten Sie das Stichwort „%1“ wirklich mit Stichwort „%2“ zusammenführen?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "In dieser Sitzung nicht mehr nachfragen"
@@ -27505,7 +27505,7 @@ msgstr "In dieser Sitzung nicht mehr nachfragen"
 msgid "No such tag"
 msgstr "Das Stichwort wurde nicht gefunden."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -41692,7 +41692,7 @@ msgid "An error has occurred with the media player..."
 msgstr "Mit dem Medienspieler ist ein Fehler aufgetreten ..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Abspielen in Endlosschleife"
@@ -58606,7 +58606,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag<p>."
+"the items with no assigned tag.</p>"
 msgstr ""
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200

@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 00:39+0000\n"
-"PO-Revision-Date: 2023-12-02 08:43+0100\n"
+"POT-Creation-Date: 2023-12-04 00:39+0000\n"
+"PO-Revision-Date: 2023-12-03 09:24+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -6120,15 +6120,7 @@ msgstr ""
 "barvo ali oznako iz metapodatkov v slike.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</p><p>The settings below "
-#| "determines the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool allows to assign automatically tags to images by contents "
@@ -6139,7 +6131,7 @@ msgid ""
 "contents and store the results in the database.</p>"
 msgstr ""
 "<p>To orodje omogoča samodejno dodeljevanje oznak slikam z analizo vsebine z "
-"uporabo nevronske mreže globokega učenja.</p><p>Spodnje nastavitve določajo "
+"uporabo nevronske mreže globokega učenja.</p><p>Nastavitve spodaj določajo "
 "model globokega učenja, ki se uporablja med razčlenjevanjem vsebine slike za "
 "določanje subjektov fotografije. Nevronska mreža, ki se uporablja v ozadju, "
 "bo samodejno ustvarila niz oznak, ki opisujejo vsebino, in shranila "
@@ -6170,28 +6162,7 @@ msgid "ResNet50"
 msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "king of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -6214,15 +6185,23 @@ msgid ""
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
 "<p><b>YOLOv5 Nano</b>: ta model je nevronska mreža, ki ponuja izjemno "
-"hitrost in učinkovitost. Omogoča vam hitro ovrednotenje integracije "
-"scenarijev zaznavanja predmetov manjšega obsega.</p><p><b>YOLOv5 XLarge</b>: "
-"ta model je nevronska mreža, namenjena zahtevnejšim zahtevam za zaznavanje "
-"predmetov in prikazuje izjemne zmogljivosti . Kljub dodatni zapletenosti, ki "
-"uvaja večjo časovno zakasnitev in računalniške vire, ga je treba uporabiti "
-"za scenarije zaznavanja objektov v večjem obsegu.</p><p><b>ResNet50</b>: ta "
-"model je posebna vrsta konvolucijskih nevronov omrežje, sestavljeno z "
-"zlaganjem preostalih blokov, ki se običajno uporabljajo za napajanje "
-"aplikacij računalniškega vida kot zaznavanje predmetov.</p>"
+"hitrost in učinkovitost. Omogoča vam hitro oceno integracije scenarijev "
+"zaznavanja objektov manjšega obsega. Zasnovan je za zaznavanje predmetov, "
+"zmožen je prepoznati in izluščiti lokacijo predmetov na sliki. Omejitev "
+"števila prepoznavnih objektov je nastavljena na 80.</p><p><b>YOLOv5 XLarge</"
+"b>: tako kot prejšnji je tudi ta model nevronska mreža, namenjena bolj "
+"zapletenim zahtevam za zaznavanje objektov in predstavitev izjemne "
+"zmogljivosti. Kljub dodatni zapletenosti, ki uvaja večjo časovno zakasnitev "
+"in računalniške vire, ga je treba uporabiti za scenarije zaznavanja objektov "
+"v večjem obsegu, saj zagotavlja natančnejša predvidevanja na račun hitrosti."
+"</p><p><b>ResNet50</b >: ta model je posebna vrsta konvolucijske nevronske "
+"mreže, oblikovane z zlaganjem preostalih blokov, ki se običajno uporabljajo "
+"za napajanje aplikacij računalniškega vida kot zaznavanje predmetov. Ta "
+"vrsta zasnove omogoča usposabljanje zelo globokih omrežij, ne da bi pri tem "
+"naleteli na problem izginjajočega gradienta. Za razliko od YOLO je ResNet50 "
+"osredotočen predvsem na klasifikacijo slik in ne zagotavlja lokalizacije "
+"objektov. Prepozna lahko predmete iz velikega nabora več kot 1000 razredov, "
+"ki zajemajo široko paleto predmetov, živali in prizorov.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -27153,7 +27132,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Ali želite zliti značko '%1' v značko '%2'?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Ne vprašaj več na tej seji"
@@ -27163,7 +27142,7 @@ msgstr "Ne vprašaj več na tej seji"
 msgid "No such tag"
 msgstr "Ni take značke"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -41256,7 +41235,7 @@ msgid "An error has occurred with the media player..."
 msgstr "Prišlo je do napake pri predstavnostnem predvajalniku..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Preklapljaj predvajanje v zanki"
@@ -57449,15 +57428,7 @@ msgid "Detect and recognize Faces"
 msgstr "Zaznaj in prepoznaj obraze"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</p><p>The settings below "
-#| "determines the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool allows to assign automatically tags to images by contents "
@@ -57467,12 +57438,12 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
-"<p>To orodje omogoča samodejno dodeljevanje oznak slikam z analizo vsebine z "
-"uporabo nevronske mreže globokega učenja.</p><p>Spodnje nastavitve določajo "
-"model globokega učenja, ki se uporablja med razčlenjevanjem vsebine slike za "
-"določanje subjektov fotografije. Nevronska mreža, ki se uporablja v ozadju, "
-"bo samodejno ustvarila niz oznak, ki opisujejo vsebino, in shranila "
-"rezultate v bazo podatkov.</p>"
+"<p><b>To orodje omogoča samodejno dodeljevanje oznak slikam z analizo "
+"vsebine z uporabo nevronske mreže globokega učenja.</b></p><p>Spodnje "
+"nastavitve določajo model globokega učenja, ki se uporablja med "
+"razčlenjevanjem vsebine slike za določanje subjektov fotografije. Nevronska "
+"mreža, ki se uporablja v ozadju, bo samodejno ustvarila niz oznak, ki "
+"opisujejo vsebino, in shranila rezultate v bazo podatkov.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:179
 #, kde-format
@@ -57491,13 +57462,21 @@ msgid "Scan non-assigned only"
 msgstr "Preišči samo ne-dodeljene"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:187
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
+#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
+#| "only the items with no assigned tag<p>."
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag<p>."
+"the items with no assigned tag.</p>"
 msgstr ""
+"<p><b>Počisti vse in ponovno dodeli</b>: počisti vse oznake, ki so že "
+"dodeljene, in ponovno prečeši vse elemente od začetka.</p><p><b>Prečeši samo "
+"nedodeljene</b> : prečeši samo elemente brez dodeljene oznake<p>."
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
 #, kde-format

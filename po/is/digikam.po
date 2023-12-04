@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 00:39+0000\n"
+"POT-Creation-Date: 2023-12-04 00:39+0000\n"
 "PO-Revision-Date: 2023-10-05 09:38+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -27049,7 +27049,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Viltu sameina merkið '%1' inn í merkið '%2'?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Ekki spyrja aftur í þessari setu"
@@ -27059,7 +27059,7 @@ msgstr "Ekki spyrja aftur í þessari setu"
 msgid "No such tag"
 msgstr "Ekkert slíkt merki"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -41070,7 +41070,7 @@ msgid "An error has occurred with the media player..."
 msgstr "Villa kom upp með margmiðlunarspilarann..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Víxla endurtekinni spilun af/á"
@@ -57266,7 +57266,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag<p>."
+"the items with no assigned tag.</p>"
 msgstr ""
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
