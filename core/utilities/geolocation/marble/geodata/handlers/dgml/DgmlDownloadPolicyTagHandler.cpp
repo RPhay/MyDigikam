@@ -18,8 +18,8 @@ namespace Marble
 {
 namespace dgml
 {
-static GeoTagHandlerRegistrar handler( GeoParser::QualifiedName( dgmlTag_DownloadPolicy,
-                                                                     dgmlTag_nameSpace20 ),
+static GeoTagHandlerRegistrar handler( GeoParser::QualifiedName( QString::fromUtf8(dgmlTag_DownloadPolicy),
+                                                                     QString::fromUtf8(dgmlTag_nameSpace20) ),
                                        new DgmlDownloadPolicyTagHandler );
 
 // Error handling:

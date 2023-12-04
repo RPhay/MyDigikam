@@ -9,8 +9,8 @@ namespace Marble {
 
 void KmlObjectTagHandler::parseIdentifiers( const GeoParser &parser, GeoDataObject *object )
 {
-    object->setId( parser.attribute( "id" ).toUtf8() );
-    object->setTargetId( parser.attribute( "targetId" ).toUtf8() );
+    object->setId( parser.attribute( "id" ) );
+    object->setTargetId( parser.attribute( "targetId" ) );
 }
 
 }

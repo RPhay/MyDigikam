@@ -66,10 +66,10 @@ QString GeoDataDocumentWriter::determineDocumentIdentifier(const QString &filena
 {
     QString const fileExtension = QFileInfo(filename).suffix().toLower();
     if (fileExtension == QLatin1String("kml")) {
-        return kml::kmlTag_nameSpaceOgc22;
+        return QString::fromUtf8(kml::kmlTag_nameSpaceOgc22);
     }
     if (fileExtension == QLatin1String("osm")) {
-        return "0.6";
+        return QLatin1String("0.6");
     }
 
     for(const auto &backend: s_backends) {
@@ -79,7 +79,7 @@ QString GeoDataDocumentWriter::determineDocumentIdentifier(const QString &filena
     }
 
     qDebug() << "Unable to determine document from file extension " << fileExtension << ", falling back to KML document type";
-    return kml::kmlTag_nameSpaceOgc22;
+    return QString::fromUtf8(kml::kmlTag_nameSpaceOgc22);
 }
 
 }

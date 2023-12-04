@@ -45,7 +45,7 @@ GeoNode* DgmlVectortileTagHandler::parse( GeoParser& parser ) const
     // Check parent type and make sure that the dataSet type
     // matches the backend of the parent layer
     if ( parentItem.represents( dgmlTag_Layer )
-        && parentItem.nodeAs<GeoSceneLayer>()->backend() == dgmlValue_vectortile ) {
+        && parentItem.nodeAs<GeoSceneLayer>()->backend() == QString::fromUtf8(dgmlValue_vectortile) ) {
 
         texture = new GeoSceneVectorTileDataset( name );
         texture->setExpire( expire );

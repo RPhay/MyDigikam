@@ -37,7 +37,7 @@ GeoNode* DgmlVectorTagHandler::parse(GeoParser& parser) const
     // Check parent type and make sure that the dataSet type 
     // matches the backend of the parent layer
     if ( parentItem.represents(dgmlTag_Layer)
-        && parentItem.nodeAs<GeoSceneLayer>()->backend() == dgmlValue_vector ) {
+        && parentItem.nodeAs<GeoSceneLayer>()->backend() == QString::fromUtf8(dgmlValue_vector) ) {
 
         vector = new GeoSceneGeodata( name );
         vector->setProperty( feature );

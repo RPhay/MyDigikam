@@ -28,7 +28,7 @@ GeoNode* DgmlAvailableTagHandler::parse(GeoParser& parser) const
     GeoStackItem parentItem = parser.parentElement();
     if (parentItem.represents(dgmlTag_Property)) {
         QString parsedText = parser.readElementText().toLower().trimmed();
-        parentItem.nodeAs<GeoSceneProperty>()->setAvailable(parsedText == dgmlValue_true || parsedText == dgmlValue_on);
+        parentItem.nodeAs<GeoSceneProperty>()->setAvailable(parsedText == QString::fromUtf8(dgmlValue_true) || parsedText == QString::fromUtf8(dgmlValue_on));
     }
 
     return nullptr;

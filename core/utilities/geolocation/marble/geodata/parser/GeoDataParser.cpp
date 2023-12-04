@@ -40,7 +40,7 @@ bool GeoDataParser::isValidRootElement()
 {
     if (m_source == GeoData_UNKNOWN)
     {
-        if (GeoParser::isValidElement(kml::kmlTag_kml))
+        if (GeoParser::isValidElement(QString::fromUtf8(kml::kmlTag_kml)))
         {
             m_source = GeoData_KML;
         }
@@ -53,7 +53,7 @@ bool GeoDataParser::isValidRootElement()
     switch ((GeoDataSourceType) m_source) {
     // TODO: case GeoData_GeoRSS:
     case GeoData_KML:
-        return isValidElement(kml::kmlTag_kml);
+        return isValidElement(QString::fromUtf8(kml::kmlTag_kml));
     default:
         Q_ASSERT(false);
         return false;

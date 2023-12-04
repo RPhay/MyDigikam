@@ -34,7 +34,7 @@ GeoNode* KmlPlacemarkTagHandler::parse( GeoParser& parser ) const
         parentItem.represents( kmlTag_Change ) || parentItem.represents( kmlTag_Create ) || parentItem.represents( kmlTag_Delete ) ){
         parentItem.nodeAs<GeoDataContainer>()->append( placemark );
         return placemark;
-    } else if ( parentItem.qualifiedName().first == kmlTag_kml ) {
+    } else if ( parentItem.qualifiedName().first == QString::fromUtf8(kmlTag_kml) ) {
         GeoDataDocument* doc = geoDataDoc(parser);
         doc->append( placemark );
         return placemark;

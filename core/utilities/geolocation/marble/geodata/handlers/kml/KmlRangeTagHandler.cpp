@@ -18,7 +18,7 @@ KML_DEFINE_TAG_HANDLER (range)
     GeoNode *KmlrangeTagHandler::parse (GeoParser & parser) const
     {
         Q_ASSERT (parser.isStartElement ()
-                  && parser.isValidElement (kmlTag_range));
+                  && parser.isValidElement (QString::fromUtf8(kmlTag_range)));
 
         GeoStackItem parentItem = parser.parentElement ();
 

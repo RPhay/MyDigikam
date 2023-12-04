@@ -18,7 +18,7 @@ namespace Marble
 GeoWriter::GeoWriter()
 {
     //FIXME: work out a standard way to do this.
-    m_documentType = kml::kmlTag_nameSpaceOgc22;
+    m_documentType = QString::fromUtf8(kml::kmlTag_nameSpaceOgc22);
 }
 
 bool GeoWriter::write(QIODevice* device, const GeoNode *feature)
@@ -30,7 +30,7 @@ bool GeoWriter::write(QIODevice* device, const GeoNode *feature)
     //FIXME: write the starting tags. Possibly register a tag handler to do this
     // with a null string as the object name?
     
-    GeoTagWriter::QualifiedName name( "", m_documentType );
+    GeoTagWriter::QualifiedName name( QString(), m_documentType );
     const GeoTagWriter* writer = GeoTagWriter::recognizes(name);
     if( writer ) {
         //FIXME is this too much of a hack?
@@ -53,7 +53,7 @@ bool GeoWriter::writeElement(const GeoNode *object)
 {
     // Add checks to see that everything is ok here
 
-    GeoTagWriter::QualifiedName name( object->nodeType(), m_documentType );
+    GeoTagWriter::QualifiedName name( QString::fromUtf8(object->nodeType()), m_documentType );
     const GeoTagWriter* writer = GeoTagWriter::recognizes( name );
 
     if( writer ) {
