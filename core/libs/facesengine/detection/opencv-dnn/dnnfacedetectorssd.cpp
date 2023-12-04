@@ -21,6 +21,7 @@
 #include <QRect>
 #include <QString>
 #include <QFileInfo>
+#include <QMutexLocker>
 #include <QStandardPaths>
 
 // Local includes
@@ -115,12 +116,12 @@ void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage,
     cv::Mat detection;
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
 
-    mutex.lock();
+    if (!net.empty())
     {
+        QMutexLocker lock(&mutex);
         net.setInput(inputBlob);
         detection = net.forward();
     }
-    mutex.unlock();
 
     postprocess(detection, paddedSize, detectedBboxes);
 }
