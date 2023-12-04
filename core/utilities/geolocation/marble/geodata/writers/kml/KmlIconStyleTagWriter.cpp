@@ -14,11 +14,11 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerIconStyle(
-    GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataIconStyleType,
-                                 kml::kmlTag_nameSpaceOgc22 ),
+    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataIconStyleType),
+                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
         new KmlIconStyleTagWriter );
 
-KmlIconStyleTagWriter::KmlIconStyleTagWriter() : KmlColorStyleTagWriter( kml::kmlTag_IconStyle )
+KmlIconStyleTagWriter::KmlIconStyleTagWriter() : KmlColorStyleTagWriter( QString::fromUtf8(kml::kmlTag_IconStyle) )
 {
     // nothing to do
 }
@@ -28,7 +28,7 @@ bool KmlIconStyleTagWriter::writeMid( const GeoNode *node, GeoWriter& writer ) c
     const GeoDataIconStyle *style = static_cast<const GeoDataIconStyle*>( node );
 
     if ( style->scale() != 1.0 ) {
-        writer.writeElement( kml::kmlTag_scale, QString::number( style->scale(), 'f' ) );
+        writer.writeElement( QString::fromUtf8(kml::kmlTag_scale), QString::number( style->scale(), 'f' ) );
     }
 
     if (!style->size().isEmpty()) {
@@ -87,12 +87,12 @@ bool KmlIconStyleTagWriter::isEmpty( const GeoNode *node ) const
 QString KmlIconStyleTagWriter::unitString(GeoDataHotSpot::Units unit)
 {
     switch (unit) {
-    case GeoDataHotSpot::Pixels: return "pixels";
-    case GeoDataHotSpot::InsetPixels: return "insetPixels";
-    case GeoDataHotSpot::Fraction: return "fraction";
+    case GeoDataHotSpot::Pixels: return QString::fromUtf8("pixels");
+    case GeoDataHotSpot::InsetPixels: return QString::fromUtf8("insetPixels");
+    case GeoDataHotSpot::Fraction: return QString::fromUtf8("fraction");
     }
 
-    return "fraction";
+    return QString::fromUtf8("fraction");
 }
 
 }

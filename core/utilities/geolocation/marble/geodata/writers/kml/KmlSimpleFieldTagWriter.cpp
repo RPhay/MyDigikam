@@ -15,21 +15,21 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerSimpleField(
-    GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataSimpleFieldType,
-                                 kml::kmlTag_nameSpaceOgc22 ),
+    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataSimpleFieldType),
+                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
     new KmlSimpleFieldTagWriter );
 
 bool KmlSimpleFieldTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
 {
     const GeoDataSimpleField *simpleField = static_cast<const GeoDataSimpleField*>( node );
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_SimpleField) );
-    writer.writeAttribute( "name", simpleField->name() );
+    writer.writeAttribute( QString::fromUtf8("name"), simpleField->name() );
     GeoDataSimpleField::SimpleFieldType simpleFieldType = simpleField->type();
     QString type = resolveType( simpleFieldType );
-    writer.writeAttribute( "type", type );
+    writer.writeAttribute( QString::fromUtf8("type"), type );
 
     QString displayName = simpleField->displayName();
-    writer.writeElement( "displayName", displayName );
+    writer.writeElement( QString::fromUtf8("displayName"), displayName );
 
     writer.writeEndElement();
 
@@ -40,18 +40,18 @@ QString KmlSimpleFieldTagWriter::resolveType( GeoDataSimpleField::SimpleFieldTyp
 {
     switch (type)
     {
-    case GeoDataSimpleField::String: return "string";
-    case GeoDataSimpleField::Int:    return "int";
-    case GeoDataSimpleField::UInt:   return "uint";
-    case GeoDataSimpleField::Short:  return "short";
-    case GeoDataSimpleField::UShort: return "ushort";
-    case GeoDataSimpleField::Float:  return "float";
-    case GeoDataSimpleField::Double: return "double";
-    case GeoDataSimpleField::Bool:   return "bool";
+    case GeoDataSimpleField::String: return QString::fromUtf8("string");
+    case GeoDataSimpleField::Int:    return QString::fromUtf8("int");
+    case GeoDataSimpleField::UInt:   return QString::fromUtf8("uint");
+    case GeoDataSimpleField::Short:  return QString::fromUtf8("short");
+    case GeoDataSimpleField::UShort: return QString::fromUtf8("ushort");
+    case GeoDataSimpleField::Float:  return QString::fromUtf8("float");
+    case GeoDataSimpleField::Double: return QString::fromUtf8("double");
+    case GeoDataSimpleField::Bool:   return QString::fromUtf8("bool");
     }
 
     Q_ASSERT(false);
-    return "string";
+    return QString::fromUtf8("string");
 }
 
 }

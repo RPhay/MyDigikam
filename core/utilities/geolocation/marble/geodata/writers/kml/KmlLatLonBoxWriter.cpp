@@ -15,8 +15,8 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerLookAt(
-    GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataLatLonBoxType,
-				 kml::kmlTag_nameSpaceOgc22 ),
+    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataLatLonBoxType),
+				 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
     new KmlLatLonBoxWriter );
 
 bool KmlLatLonBoxWriter::write( const GeoNode *node,
@@ -36,8 +36,8 @@ bool KmlLatLonBoxWriter::write( const GeoNode *node,
 			     QString::number(lat_lon_box->east( GeoDataCoordinates::Degree )) );
     writer.writeTextElement( "west",
 			     QString::number(lat_lon_box->west( GeoDataCoordinates::Degree )) );
-    writer.writeOptionalElement( "rotation",
-                             QString::number(lat_lon_box->rotation( GeoDataCoordinates::Degree )), "0" );
+    writer.writeOptionalElement( QString::fromUtf8("rotation"),
+                             QString::number(lat_lon_box->rotation( GeoDataCoordinates::Degree )), QString::fromUtf8("0") );
 
     writer.writeEndElement();
 

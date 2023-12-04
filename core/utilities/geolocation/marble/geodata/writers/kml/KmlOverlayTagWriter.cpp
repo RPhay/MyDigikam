@@ -25,9 +25,9 @@ bool KmlOverlayTagWriter::writeMid( const Marble::GeoNode *node, GeoWriter &writ
     GeoDataOverlay const *overlay = static_cast<const GeoDataOverlay*>(node);
 
     QString const color = KmlColorStyleTagWriter::formatColor( overlay->color() );
-    writer.writeOptionalElement( kml::kmlTag_color, color, "ffffffff" );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_color), color, QString::fromUtf8("ffffffff") );
     QString const drawOrder = QString::number( overlay->drawOrder() );
-    writer.writeOptionalElement( kml::kmlTag_drawOrder, drawOrder, "0" );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_drawOrder), drawOrder, QString::fromUtf8("0") );
 
     if ( !overlay->iconFile().isEmpty() ) {
         writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Icon) );

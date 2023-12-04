@@ -16,15 +16,15 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerMultiTrack(
-    GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataMultiTrackType,
-                                 kml::kmlTag_nameSpaceOgc22 ),
+    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataMultiTrackType),
+                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
     new KmlMultiTrackTagWriter );
 
 bool KmlMultiTrackTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
 {
     const GeoDataMultiTrack *geometry = static_cast<const GeoDataMultiTrack*>( node );
 
-    writer.writeStartElement( "gx:MultiTrack" );
+    writer.writeStartElement( QString::fromUtf8("gx:MultiTrack") );
     KmlObjectTagWriter::writeIdentifiers( writer, geometry );
 
     for ( int i = 0; i < geometry->size(); ++i )

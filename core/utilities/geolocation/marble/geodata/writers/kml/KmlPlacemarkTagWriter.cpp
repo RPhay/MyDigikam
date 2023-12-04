@@ -21,14 +21,14 @@ namespace Marble
 //don't use the tag dictionary for tag names, because with the writer we are using
 // the object type strings instead
 //FIXME: USE object strings provided by idis
-static GeoTagWriterRegistrar s_writerPlacemark( GeoTagWriter::QualifiedName(GeoDataTypes::GeoDataPlacemarkType,
-                                                kml::kmlTag_nameSpaceOgc22), new KmlPlacemarkTagWriter() );
+static GeoTagWriterRegistrar s_writerPlacemark( GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataPlacemarkType),
+                                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)), new KmlPlacemarkTagWriter() );
 
 bool KmlPlacemarkTagWriter::writeMid( const GeoNode *node, GeoWriter& writer ) const
 {
     const GeoDataPlacemark *placemark = static_cast<const GeoDataPlacemark*>(node);
 
-    writer.writeOptionalElement( kml::kmlTag_styleUrl, placemark->styleUrl() );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_styleUrl), placemark->styleUrl() );
     if ( placemark->styleUrl().isEmpty() && placemark->customStyle() ) {
         writeElement( placemark->customStyle().data(), writer );
     }
@@ -40,14 +40,14 @@ bool KmlPlacemarkTagWriter::writeMid( const GeoNode *node, GeoWriter& writer ) c
     if( placemark->isBalloonVisible() ){
         QString string;
         string.setNum( 1 );
-        writer.writeElement( kml::kmlTag_nameSpaceGx22, kml::kmlTag_balloonVisibility, string );
+        writer.writeElement( QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QString::fromUtf8(kml::kmlTag_balloonVisibility), string );
     }
 
     return true;
 }
 
 KmlPlacemarkTagWriter::KmlPlacemarkTagWriter() :
-  KmlFeatureTagWriter( kml::kmlTag_Placemark )
+  KmlFeatureTagWriter( QString::fromUtf8(kml::kmlTag_Placemark) )
 {
   // nothing to do
 }

@@ -16,8 +16,8 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerTimeStamp( GeoTagWriter::QualifiedName(GeoDataTypes::GeoDataTimeStampType,
-                                                                            kml::kmlTag_nameSpaceOgc22),
+static GeoTagWriterRegistrar s_writerTimeStamp( GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataTimeStampType),
+                                                                            QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
                                                new KmlTimeStampTagWriter() );
 
 
@@ -44,9 +44,9 @@ QString KmlTimeStampTagWriter::toString( const GeoDataTimeStamp &timestamp )
 {
     switch ( timestamp.resolution() ) {
     case GeoDataTimeStamp::SecondResolution: return timestamp.when().toString( Qt::ISODate );
-    case GeoDataTimeStamp::DayResolution:    return timestamp.when().toString( "yyyy-MM-dd" );
-    case GeoDataTimeStamp::MonthResolution:  return timestamp.when().toString( "yyyy-MM" );
-    case GeoDataTimeStamp::YearResolution:   return timestamp.when().toString( "yyyy" );
+    case GeoDataTimeStamp::DayResolution:    return timestamp.when().toString( QString::fromUtf8("yyyy-MM-dd") );
+    case GeoDataTimeStamp::MonthResolution:  return timestamp.when().toString( QString::fromUtf8("yyyy-MM") );
+    case GeoDataTimeStamp::YearResolution:   return timestamp.when().toString( QString::fromUtf8("yyyy") );
     }
 
     Q_ASSERT( false && "not reachable" );

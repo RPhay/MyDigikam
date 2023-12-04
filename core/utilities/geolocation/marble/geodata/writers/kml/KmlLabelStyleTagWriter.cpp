@@ -14,11 +14,11 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerLineStyle(
-        GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataLabelStyleType,
-                                     kml::kmlTag_nameSpaceOgc22),
+        GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataLabelStyleType),
+                                     QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
         new KmlLabelStyleTagWriter );
 
-KmlLabelStyleTagWriter::KmlLabelStyleTagWriter() : KmlColorStyleTagWriter( kml::kmlTag_LabelStyle )
+KmlLabelStyleTagWriter::KmlLabelStyleTagWriter() : KmlColorStyleTagWriter( QString::fromUtf8(kml::kmlTag_LabelStyle) )
 {
     //nothing to do here
 }
@@ -27,7 +27,7 @@ bool KmlLabelStyleTagWriter::writeMid( const GeoNode *node, GeoWriter &writer ) 
 {
     const GeoDataLabelStyle *style = static_cast<const GeoDataLabelStyle*>( node );
 
-    writer.writeElement( kml::kmlTag_scale, QString::number(style->scale()));
+    writer.writeElement( QString::fromUtf8(kml::kmlTag_scale), QString::number(style->scale()));
 
     return true;
 }

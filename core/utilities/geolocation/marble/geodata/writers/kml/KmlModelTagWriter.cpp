@@ -22,8 +22,8 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerModel(
-    GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataModelType,
-                                 kml::kmlTag_nameSpaceOgc22 ),
+    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataModelType),
+                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
     new KmlModelTagWriter);
 
 bool KmlModelTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
@@ -39,9 +39,9 @@ bool KmlModelTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
 
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Location) );
 
-    writer.writeOptionalElement( kml::kmlTag_longitude, QString::number( location.longitude( GeoDataCoordinates::Degree ) ), "0" );
-    writer.writeOptionalElement( kml::kmlTag_latitude, QString::number( location.latitude( GeoDataCoordinates::Degree ) ), "0" );
-    writer.writeOptionalElement( kml::kmlTag_altitude, QString::number( location.altitude() ), "0" );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_longitude), QString::number( location.longitude( GeoDataCoordinates::Degree ) ), QString::fromUtf8("0") );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_latitude), QString::number( location.latitude( GeoDataCoordinates::Degree ) ), QString::fromUtf8("0") );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_altitude), QString::number( location.altitude() ), QString::fromUtf8("0") );
 
     writer.writeEndElement();
 
@@ -49,9 +49,9 @@ bool KmlModelTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
 
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Orientation) );
 
-    writer.writeOptionalElement( kml::kmlTag_heading, QString::number( orientation.heading() ), "0" );
-    writer.writeOptionalElement( kml::kmlTag_tilt, QString::number( orientation.tilt() ), "0" );
-    writer.writeOptionalElement( kml::kmlTag_roll, QString::number( orientation.roll() ), "0" );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_heading), QString::number( orientation.heading() ), QString::fromUtf8("0") );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_tilt), QString::number( orientation.tilt() ), QString::fromUtf8("0") );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_roll), QString::number( orientation.roll() ), QString::fromUtf8("0") );
 
     writer.writeEndElement();
 
@@ -59,9 +59,9 @@ bool KmlModelTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
 
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Scale) );
 
-    writer.writeOptionalElement( kml::kmlTag_x, QString::number( scale.x() ), "1" );
-    writer.writeOptionalElement( kml::kmlTag_y, QString::number( scale.y() ), "1" );
-    writer.writeOptionalElement( kml::kmlTag_z, QString::number( scale.z() ), "1" );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_x), QString::number( scale.x() ), QString::fromUtf8("1") );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_y), QString::number( scale.y() ), QString::fromUtf8("1") );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_z), QString::number( scale.z() ), QString::fromUtf8("1") );
 
     writer.writeEndElement();
 

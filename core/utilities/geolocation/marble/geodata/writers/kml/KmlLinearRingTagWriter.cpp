@@ -17,8 +17,8 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerLookAt(
-    GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataLinearRingType,
-                                 kml::kmlTag_nameSpaceOgc22 ),
+    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataLinearRingType),
+                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
     new KmlLinearRingTagWriter );
 
 bool KmlLinearRingTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
@@ -29,9 +29,9 @@ bool KmlLinearRingTagWriter::write( const GeoNode *node, GeoWriter& writer ) con
     {
         writer.writeStartElement( QString::fromUtf8(kml::kmlTag_LinearRing) );
         KmlObjectTagWriter::writeIdentifiers( writer, ring );
-        writer.writeOptionalElement( kml::kmlTag_extrude, QString::number( ring->extrude() ), "0" );
-        writer.writeOptionalElement( kml::kmlTag_tessellate, QString::number( ring->tessellate() ), "0" );
-        writer.writeStartElement( "coordinates" );
+        writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_extrude), QString::number( ring->extrude() ), QString::fromUtf8("0") );
+        writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_tessellate), QString::number( ring->tessellate() ), QString::fromUtf8("0") );
+        writer.writeStartElement( QString::fromUtf8("coordinates") );
 
         int size = ring->size() >= 3 && ring->first() != ring->last() ? ring->size() + 1 : ring->size();
 

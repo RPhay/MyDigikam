@@ -15,8 +15,8 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerNetworkLink(
-        GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataNetworkLinkType,
-                                     kml::kmlTag_nameSpaceOgc22 ),
+        GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataNetworkLinkType),
+                                     QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
         new KmlNetworkLinkTagWriter );
 
 bool KmlNetworkLinkTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
@@ -26,13 +26,13 @@ bool KmlNetworkLinkTagWriter::write( const GeoNode *node, GeoWriter& writer ) co
 
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_NetworkLink) );
 
-    writer.writeOptionalElement( kml::kmlTag_name, networkLink->name() );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_name), networkLink->name() );
 
-    writer.writeOptionalElement( kml::kmlTag_visibility, QString::number( networkLink->isVisible() ), "1");
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_visibility), QString::number( networkLink->isVisible() ), QString::fromUtf8("1"));
 
-    writer.writeOptionalElement( kml::kmlTag_refreshVisibility, QString::number( networkLink->refreshVisibility() ), "0" );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_refreshVisibility), QString::number( networkLink->refreshVisibility() ), QString::fromUtf8("0") );
 
-    writer.writeOptionalElement( kml::kmlTag_flyToView, QString::number( networkLink->flyToView() ), "0" );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_flyToView), QString::number( networkLink->flyToView() ), QString::fromUtf8("0") );
 
     writeElement( &networkLink->link(), writer);
 

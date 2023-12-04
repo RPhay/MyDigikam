@@ -18,11 +18,11 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerLookAt(
-    GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataPhotoOverlayType,
-				 kml::kmlTag_nameSpaceOgc22 ),
+    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataPhotoOverlayType),
+				 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
     new KmlPhotoOverlayWriter );
 
-KmlPhotoOverlayWriter::KmlPhotoOverlayWriter() : KmlOverlayTagWriter( kml::kmlTag_PhotoOverlay )
+KmlPhotoOverlayWriter::KmlPhotoOverlayWriter() : KmlOverlayTagWriter( QString::fromUtf8(kml::kmlTag_PhotoOverlay) )
 {
     // nothing to do
 }
@@ -36,30 +36,30 @@ bool KmlPhotoOverlayWriter::writeMid( const GeoNode *node, GeoWriter &writer ) c
 
     // rotation
     QString const rotation = QString::number( photo_overlay->rotation(), 'f', 3 );
-    writer.writeOptionalElement( kml::kmlTag_rotation, rotation, "0.000" );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_rotation), rotation, QString::fromUtf8("0.000") );
 
     // ViewVolume
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_ViewVolume) );
-    writer.writeOptionalElement<qreal>( kml::kmlTag_leftFov, photo_overlay->viewVolume().leftFov(), 0 );
-    writer.writeOptionalElement<qreal>( kml::kmlTag_rightFov, photo_overlay->viewVolume().rightFov(), 0 );
-    writer.writeOptionalElement<qreal>( kml::kmlTag_bottomFov, photo_overlay->viewVolume().bottomFov(), 0 );
-    writer.writeOptionalElement<qreal>( kml::kmlTag_topFov, photo_overlay->viewVolume().topFov(), 0 );
-    writer.writeOptionalElement<qreal>( kml::kmlTag_near, photo_overlay->viewVolume().near(), 0 );
+    writer.writeOptionalElement<qreal>( QString::fromUtf8(kml::kmlTag_leftFov), photo_overlay->viewVolume().leftFov(), 0 );
+    writer.writeOptionalElement<qreal>( QString::fromUtf8(kml::kmlTag_rightFov), photo_overlay->viewVolume().rightFov(), 0 );
+    writer.writeOptionalElement<qreal>( QString::fromUtf8(kml::kmlTag_bottomFov), photo_overlay->viewVolume().bottomFov(), 0 );
+    writer.writeOptionalElement<qreal>( QString::fromUtf8(kml::kmlTag_topFov), photo_overlay->viewVolume().topFov(), 0 );
+    writer.writeOptionalElement<qreal>( QString::fromUtf8(kml::kmlTag_near), photo_overlay->viewVolume().near(), 0 );
     writer.writeEndElement();
 
     // ImagePyramid
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_ImagePyramid) );
-    writer.writeOptionalElement<int>( kml::kmlTag_tileSize, photo_overlay->imagePyramid().tileSize(), 256 );
-    writer.writeOptionalElement<int>( kml::kmlTag_maxWidth, photo_overlay->imagePyramid().maxWidth() );
-    writer.writeOptionalElement<int>( kml::kmlTag_maxHeight, photo_overlay->imagePyramid().maxHeight() );
+    writer.writeOptionalElement<int>( QString::fromUtf8(kml::kmlTag_tileSize), photo_overlay->imagePyramid().tileSize(), 256 );
+    writer.writeOptionalElement<int>( QString::fromUtf8(kml::kmlTag_maxWidth), photo_overlay->imagePyramid().maxWidth() );
+    writer.writeOptionalElement<int>( QString::fromUtf8(kml::kmlTag_maxHeight), photo_overlay->imagePyramid().maxHeight() );
 
     switch ( photo_overlay->imagePyramid().gridOrigin() )
     {
     case GeoDataImagePyramid::LowerLeft:
-        writer.writeElement( kml::kmlTag_gridOrigin, "lowerLeft" );
+        writer.writeElement( QString::fromUtf8(kml::kmlTag_gridOrigin), QString::fromUtf8("lowerLeft") );
         break;
     case GeoDataImagePyramid::UpperLeft:
-        writer.writeElement( kml::kmlTag_gridOrigin, "upperLeft" );
+        writer.writeElement( QString::fromUtf8(kml::kmlTag_gridOrigin), QString::fromUtf8("upperLeft") );
         break;
     }
     writer.writeEndElement();
@@ -73,10 +73,10 @@ bool KmlPhotoOverlayWriter::writeMid( const GeoNode *node, GeoWriter &writer ) c
     case GeoDataPhotoOverlay::Rectangle:
         break;
     case GeoDataPhotoOverlay::Cylinder:
-        writer.writeElement( kml::kmlTag_shape, "cylinder" );
+        writer.writeElement( QString::fromUtf8(kml::kmlTag_shape), QString::fromUtf8("cylinder") );
         break;
     case GeoDataPhotoOverlay::Sphere:
-        writer.writeElement( kml::kmlTag_shape, "sphere" );
+        writer.writeElement( QString::fromUtf8(kml::kmlTag_shape), QString::fromUtf8("sphere") );
         break;
     }
 

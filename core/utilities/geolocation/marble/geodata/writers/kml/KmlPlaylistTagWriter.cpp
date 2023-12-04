@@ -19,8 +19,8 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerPlaylist(
-        GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataPlaylistType,
-                                     kml::kmlTag_nameSpaceOgc22 ),
+        GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataPlaylistType),
+                                     QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
         new KmlPlaylistTagWriter );
 
 bool KmlPlaylistTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
@@ -63,7 +63,7 @@ void KmlPlaylistTagWriter::writeTourControl(const GeoDataTourControl &tourContro
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QString::fromUtf8(kml::kmlTag_TourControl) );
     KmlObjectTagWriter::writeIdentifiers(writer, &tourControl);
 
-    writer.writeElement(kml::kmlTag_nameSpaceGx22, kml::kmlTag_playMode, playModeToString(tourControl.playMode()));
+    writer.writeElement(QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QString::fromUtf8(kml::kmlTag_playMode), playModeToString(tourControl.playMode()));
 
     writer.writeEndElement();
 }
@@ -73,7 +73,7 @@ void KmlPlaylistTagWriter::writeWait(const GeoDataWait &wait, GeoWriter &writer)
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QString::fromUtf8(kml::kmlTag_Wait) );
     KmlObjectTagWriter::writeIdentifiers(writer, &wait);
 
-    writer.writeElement(kml::kmlTag_nameSpaceGx22, kml::kmlTag_duration, QString::number(wait.duration()));
+    writer.writeElement(QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QString::fromUtf8(kml::kmlTag_duration), QString::number(wait.duration()));
 
     writer.writeEndElement();
 }
@@ -83,8 +83,8 @@ void KmlPlaylistTagWriter::writeSoundCue(const GeoDataSoundCue &cue, GeoWriter &
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QString::fromUtf8(kml::kmlTag_SoundCue) );
     KmlObjectTagWriter::writeIdentifiers(writer, &cue);
 
-    writer.writeElement(kml::kmlTag_href, cue.href());
-    writer.writeElement( kml::kmlTag_nameSpaceGx22, kml::kmlTag_delayedStart,
+    writer.writeElement(QString::fromUtf8(kml::kmlTag_href), cue.href());
+    writer.writeElement( QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QString::fromUtf8(kml::kmlTag_delayedStart),
                          QString::number(cue.delayedStart()));
 
     writer.writeEndElement();
@@ -94,9 +94,9 @@ QString KmlPlaylistTagWriter::playModeToString( GeoDataTourControl::PlayMode pla
 {
     switch (playMode)
     {
-    case GeoDataTourControl::Play:   return "play";
-    case GeoDataTourControl::Pause:  return "pause";
-    default:                         return "";
+    case GeoDataTourControl::Play:   return QString::fromUtf8("play");
+    case GeoDataTourControl::Pause:  return QString::fromUtf8("pause");
+    default:                         return QString::fromUtf8("");
     }
 }
 

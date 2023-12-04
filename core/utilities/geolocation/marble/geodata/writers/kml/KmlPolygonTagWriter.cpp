@@ -17,8 +17,8 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerLookAt(
-    GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataPolygonType,
-                                 kml::kmlTag_nameSpaceOgc22 ),
+    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataPolygonType),
+                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
     new KmlPolygonTagWriter);
 
 bool KmlPolygonTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
@@ -27,15 +27,15 @@ bool KmlPolygonTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
 
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Polygon) );
     KmlObjectTagWriter::writeIdentifiers( writer, polygon );
-    writer.writeOptionalElement( kml::kmlTag_extrude, QString::number( polygon->extrude() ), "0" );
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_extrude), QString::number( polygon->extrude() ), QString::fromUtf8("0") );
 
-    writer.writeStartElement( "outerBoundaryIs" );
+    writer.writeStartElement( QString::fromUtf8("outerBoundaryIs") );
     writeElement( &polygon->outerBoundary(), writer );
     writer.writeEndElement();
 
     const QVector<GeoDataLinearRing>& linearRings = polygon->innerBoundaries();
     if (linearRings.size() > 0) {
-	writer.writeStartElement( "innerBoundaryIs" );
+	writer.writeStartElement( QString::fromUtf8("innerBoundaryIs") );
 	for ( int i = 0; i < linearRings.size(); ++i ) {
 	    const GeoDataLinearRing& ring = linearRings[i];
 	    writeElement( &ring, writer );

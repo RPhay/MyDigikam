@@ -16,8 +16,8 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerSimpleData(
-    GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataSimpleDataType,
-                                 kml::kmlTag_nameSpaceOgc22 ),
+    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataSimpleDataType),
+                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
     new KmlSimpleDataTagWriter );
 
 bool KmlSimpleDataTagWriter::write( const GeoNode *node, GeoWriter &writer ) const

@@ -16,8 +16,8 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerPoint( GeoTagWriter::QualifiedName(GeoDataTypes::GeoDataPointType,
-                                                                            kml::kmlTag_nameSpaceOgc22),
+static GeoTagWriterRegistrar s_writerPoint( GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataPointType),
+                                                                            QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
                                                new KmlPointTagWriter() );
 
 
@@ -32,8 +32,8 @@ bool KmlPointTagWriter::write( const GeoNode *node,
 
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Point) );
     KmlObjectTagWriter::writeIdentifiers( writer, point );
-    writer.writeOptionalElement( kml::kmlTag_extrude, QString::number( point->extrude() ), "0" );
-    writer.writeStartElement("coordinates");
+    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_extrude), QString::number( point->extrude() ), QString::fromUtf8("0") );
+    writer.writeStartElement(QString::fromUtf8("coordinates"));
 
     //FIXME: this should be using the GeoDataCoordinates::toString but currently
     // it is not including the altitude and is adding an extra space after commas
