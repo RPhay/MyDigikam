@@ -40,7 +40,7 @@ CloudSyncManager::Private::~Private()
 CloudSyncManager::Private::Private() :
     m_workOffline( false ),
     m_syncEnabled( false ),
-    m_owncloudProtocol( "http" ),
+    m_owncloudProtocol( QString::fromUtf8("http") ),
     m_ownloudServer(),
     m_owncloudUsername(),
     m_owncloudPassword(),
@@ -122,13 +122,13 @@ void CloudSyncManager::setOwncloudServer( const QString &server )
     QString const oldServer = d->m_ownloudServer;
 
     if (server.startsWith(QLatin1String("http://"))) {
-        d->m_owncloudProtocol = "http://";
+        d->m_owncloudProtocol = QString::fromUtf8("http://");
         d->m_ownloudServer = server.mid( 7 );
     } else if (server.startsWith(QLatin1String("https://"))) {
-        d->m_owncloudProtocol = "https://";
+        d->m_owncloudProtocol = QString::fromUtf8("https://");
         d->m_ownloudServer = server.mid ( 8 );
     } else {
-        d->m_owncloudProtocol = "http://";
+        d->m_owncloudProtocol = QString::fromUtf8("http://");
         d->m_ownloudServer = server;
     }
 
@@ -179,12 +179,12 @@ QString CloudSyncManager::statusDescription() const
 
 QString CloudSyncManager::apiPath() const
 {
-    return "index.php/apps/marble/api/v1";
+    return QString::fromUtf8("index.php/apps/marble/api/v1");
 }
 
 QUrl CloudSyncManager::apiUrl() const
 {
-    return QUrl( QString( "%0%1:%2@%3/%4" )
+    return QUrl( QString::fromUtf8( "%0%1:%2@%3/%4" )
                  .arg( d->m_owncloudProtocol )
                  .arg( d->m_owncloudUsername ).arg( d->m_owncloudPassword )
                  .arg( d->m_ownloudServer ).arg( apiPath() ) );

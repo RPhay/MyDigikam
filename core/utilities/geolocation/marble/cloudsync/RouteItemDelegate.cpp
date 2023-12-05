@@ -234,7 +234,7 @@ QStyleOptionButton RouteItemDelegate::button( Element element, const QStyleOptio
 
 QString RouteItemDelegate::text( const QModelIndex& index )
 {
-    return QString( "%0" ).arg( index.data( CloudRouteModel::Name ).toString() );
+    return QString::fromUtf8( "%0" ).arg( index.data( CloudRouteModel::Name ).toString() );
     // TODO: Show distance and duration
     //return QString( "%0<br /><b>Duration:</b> %1<br/><b>Distance:</b> %2" )
             //.arg( index.data( CloudRouteModel::Name ).toString() )

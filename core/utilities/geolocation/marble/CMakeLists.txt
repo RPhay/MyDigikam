@@ -247,11 +247,8 @@ set(marblewidget_SRCS
 
     OsmcSymbol.cpp
 
-    StyleBuilder.cpp
-
     cloudsync/CloudSyncManager.cpp
     cloudsync/RouteSyncManager.cpp
-    cloudsync/OwncloudSyncBackend.cpp
     cloudsync/CloudRouteModel.cpp
     cloudsync/CloudRoutesDialog.cpp
     cloudsync/RouteItem.cpp
@@ -259,6 +256,9 @@ set(marblewidget_SRCS
     cloudsync/BookmarkSyncManager.cpp
     cloudsync/MergeItem.cpp
     cloudsync/ConflictDialog.cpp
+    cloudsync/OwncloudSyncBackend.cpp
+
+    StyleBuilder.cpp
 
     # Use marble-config.h
     PluginManager.cpp

@@ -71,11 +71,11 @@ OwncloudSyncBackend::Private::Private( CloudSyncManager* cloudSyncManager ) :
     m_authReply(),
     m_routeList(),
     // Route API endpoints
-    m_routeUploadEndpoint( "routes/create" ),
-    m_routeListEndpoint( "routes" ),
-    m_routeDownloadEndpoint( "routes" ),
-    m_routeDeleteEndpoint( "routes/delete" ),
-    m_routePreviewEndpoint( "routes/preview" ),
+    m_routeUploadEndpoint( QString::fromUtf8("routes/create") ),
+    m_routeListEndpoint( QString::fromUtf8("routes") ),
+    m_routeDownloadEndpoint( QString::fromUtf8("routes") ),
+    m_routeDeleteEndpoint( QString::fromUtf8("routes/delete") ),
+    m_routePreviewEndpoint( QString::fromUtf8("routes/preview") ),
     m_cloudSyncManager( cloudSyncManager )
 {
 }
@@ -93,28 +93,28 @@ OwncloudSyncBackend::~OwncloudSyncBackend()
 
 void OwncloudSyncBackend::uploadRoute( const QString &timestamp )
 {
-    QString word = "----MarbleCloudBoundary";
-    QString boundary = QString( "--%0" ).arg( word );
+    QString word = QString::fromUtf8("----MarbleCloudBoundary");
+    QString boundary = QString::fromUtf8( "--%0" ).arg( word );
     QNetworkRequest request( endpointUrl( d->m_routeUploadEndpoint ) );
-    request.setHeader( QNetworkRequest::ContentTypeHeader, QString( "multipart/form-data; boundary=%0" ).arg( word ) );
+    request.setHeader( QNetworkRequest::ContentTypeHeader, QString::fromUtf8( "multipart/form-data; boundary=%0" ).arg( word ) );
 
     QByteArray data;
     data.append( QString( boundary + "\r\n" ).toUtf8() );
 
     // Timestamp part
-    data.append( "Content-Disposition: form-data; name=\"timestamp\"" );
-    data.append( "\r\n\r\n" );
-    data.append( QString( timestamp + "\r\n" ).toUtf8() );
-    data.append( QString( boundary + "\r\n" ).toUtf8() );
+    data.append( QByteArray("Content-Disposition: form-data; name=\"timestamp\"") );
+    data.append( QByteArray("\r\n\r\n") );
+    data.append( QString( timestamp + QString::fromUtf8("\r\n") ).toUtf8() );
+    data.append( QString( boundary + QString::fromUtf8("\r\n") ).toUtf8() );
 
     // Name part
-    data.append( "Content-Disposition: form-data; name=\"name\"" );
-    data.append( "\r\n\r\n" );
+    data.append( QByteArray("Content-Disposition: form-data; name=\"name\"") );
+    data.append( QByteArray("\r\n\r\n") );
     data.append( routeName( timestamp ).toUtf8() );
-    data.append( "\r\n" );
+    data.append( QByteArray("\r\n") );
     data.append( QString( boundary + "\r\n" ).toUtf8() );
 
-    QFile kmlFile( d->m_cacheDir.absolutePath() + QString( "/%0.kml" ).arg( timestamp ) );
+    QFile kmlFile( d->m_cacheDir.absolutePath() + QString::fromUtf8( "/%0.kml" ).arg( timestamp ) );
 
     if( !kmlFile.open( QFile::ReadOnly ) ) {
         mDebug() << "Could not open " << timestamp << ".kml. Either it has not been saved" <<
@@ -151,40 +151,40 @@ void OwncloudSyncBackend::uploadRoute( const QString &timestamp )
     double duration =
             QTime().secsTo(QTime::fromString(placemark->extendedData().value(QStringLiteral("duration")).value().toString(), Qt::ISODate)) / 60.0;
     mDebug() << "[Owncloud] Duration on write is" << duration;
-    data.append( "Content-Disposition: form-data; name=\"duration\"" );
-    data.append( "\r\n\r\n" );
+    data.append( QByteArray("Content-Disposition: form-data; name=\"duration\"") );
+    data.append( QByteArray("\r\n\r\n") );
     data.append( QString::number(duration).toUtf8() );
-    data.append( "\r\n" );
+    data.append( QByteArray("\r\n") );
     data.append( QString( boundary + "\r\n" ).toUtf8() );
 
     // Distance part
     double distance =
             placemark->extendedData().value(QStringLiteral("length")).value().toDouble();
     mDebug() << "[Owncloud] Distance on write is" << distance;
-    data.append( "Content-Disposition: form-data; name=\"distance\"" );
-    data.append( "\r\n\r\n" );
+    data.append( QByteArray("Content-Disposition: form-data; name=\"distance\"") );
+    data.append( QByteArray("\r\n\r\n") );
     data.append( QString::number(distance).toUtf8() );
-    data.append( "\r\n" );
+    data.append( QByteArray("\r\n") );
     data.append( QString( boundary + "\r\n" ).toUtf8() );
 
     // KML part
-    data.append( QString( "Content-Disposition: form-data; name=\"kml\"; filename=\"%0.kml\"" ).arg( timestamp ).toUtf8() );
-    data.append( "\r\n" );
-    data.append( "Content-Type: application/vnd.google-earth.kml+xml" );
-    data.append( "\r\n\r\n" );
+    data.append( QString::fromUtf8( "Content-Disposition: form-data; name=\"kml\"; filename=\"%0.kml\"" ).arg( timestamp ).toUtf8() );
+    data.append( QByteArray("\r\n") );
+    data.append( QByteArray("Content-Type: application/vnd.google-earth.kml+xml") );
+    data.append( QByteArray("\r\n\r\n") );
 
     kmlFile.seek(0); // just to be sure
     data.append( kmlFile.readAll() );
-    data.append( "\r\n" );
+    data.append( QByteArray("\r\n") );
     data.append( QString( boundary + "\r\n" ).toUtf8() );
 
     kmlFile.close();
 
     // Preview part
-    data.append( QString( "Content-Disposition: form-data; name=\"preview\"; filename=\"%0.jpg\"" ).arg( timestamp ).toUtf8() );
-    data.append( "\r\n" );
-    data.append( "Content-Type: image/jpg" );
-    data.append( "\r\n\r\n" );
+    data.append( QString::fromUtf8( "Content-Disposition: form-data; name=\"preview\"; filename=\"%0.jpg\"" ).arg( timestamp ).toUtf8() );
+    data.append( QByteArray("\r\n") );
+    data.append( QByteArray("Content-Type: image/jpg") );
+    data.append( QByteArray("\r\n\r\n") );
 
     QByteArray previewBytes;
     QBuffer previewBuffer( &previewBytes );
@@ -192,8 +192,8 @@ void OwncloudSyncBackend::uploadRoute( const QString &timestamp )
     preview.save( &previewBuffer, "JPG" );
 
     data.append( previewBytes );
-    data.append( "\r\n" );
-    data.append( QString( boundary + "\r\n" ).toUtf8() );
+    data.append( QByteArray("\r\n") );
+    data.append( QString::fromUtf8( boundary + QString::fromUtf8("\r\n") ).toUtf8() );
 
     d->m_routeUploadReply = d->m_network.post( request, data );
     connect( d->m_routeUploadReply, SIGNAL(uploadProgress(qint64,qint64)), this, SIGNAL(routeUploadProgress(qint64,qint64)) );
@@ -235,7 +235,7 @@ QPixmap OwncloudSyncBackend::createPreview( const QString &timestamp ) const
     mapWidget.resize( 512, 512 );
 
     RoutingManager* manager = mapWidget.model()->routingManager();
-    manager->loadRoute( d->m_cacheDir.absolutePath() + QString( "/%0.kml" ).arg( timestamp ) );
+    manager->loadRoute( d->m_cacheDir.absolutePath() + QString::fromUtf8( "/%0.kml" ).arg( timestamp ) );
     GeoDataLatLonBox const bbox = manager->routingModel()->route().bounds();
 
     if ( !bbox.isEmpty() ) {
@@ -243,7 +243,7 @@ QPixmap OwncloudSyncBackend::createPreview( const QString &timestamp ) const
     }
 
     QPixmap pixmap = mapWidget.grab();
-    QDir( d->m_cacheDir.absolutePath() ).mkpath( "preview" );
+    QDir( d->m_cacheDir.absolutePath() ).mkpath( QString::fromUtf8("preview") );
     pixmap.save(d->m_cacheDir.absolutePath() + QLatin1String("/preview/") + timestamp + QLatin1String(".jpg"));
 
     return pixmap;
@@ -251,7 +251,7 @@ QPixmap OwncloudSyncBackend::createPreview( const QString &timestamp ) const
 
 QString OwncloudSyncBackend::routeName( const QString &timestamp ) const
 {
-    QFile file( d->m_cacheDir.absolutePath() + QString( "/%0.kml" ).arg( timestamp ) );
+    QFile file( d->m_cacheDir.absolutePath() + QString::fromUtf8( "/%0.kml" ).arg( timestamp ) );
     file.open( QFile::ReadOnly );
 
     GeoDataParser parser( GeoData_KML );

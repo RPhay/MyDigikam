@@ -210,9 +210,9 @@ BookmarkSyncManager::Private::Private(BookmarkSyncManager *parent, CloudSyncMana
 {
     m_cachePath = MarbleDirs::localPath() + QLatin1String("/cloudsync/cache/bookmarks");
     m_localBookmarksPath = MarbleDirs::localPath() + QLatin1String("/bookmarks/bookmarks.kml");
-    m_downloadEndpoint = "bookmarks/kml";
-    m_uploadEndpoint = "bookmarks/update";
-    m_timestampEndpoint = "bookmarks/timestamp";
+    m_downloadEndpoint = QString::fromUtf8("bookmarks/kml");
+    m_uploadEndpoint = QString::fromUtf8("bookmarks/update");
+    m_timestampEndpoint = QString::fromUtf8("bookmarks/timestamp");
 }
 
 BookmarkSyncManager::BookmarkSyncManager( CloudSyncManager *cloudSyncManager ) :
@@ -279,15 +279,15 @@ QUrl BookmarkSyncManager::Private::endpointUrl( const QString &endpoint ) const
 void BookmarkSyncManager::Private::uploadBookmarks()
 {
     QByteArray data;
-    QByteArray lineBreak = "\r\n";
-    QString word = "----MarbleCloudBoundary";
-    QString boundary = QString( "--%0" ).arg( word );
+    QByteArray lineBreak = QByteArray("\r\n");
+    QString word = QString::fromUtf8("----MarbleCloudBoundary");
+    QString boundary = QString::fromUtf8( "--%0" ).arg( word );
     QNetworkRequest request( endpointUrl( m_uploadEndpoint ) );
-    request.setHeader( QNetworkRequest::ContentTypeHeader, QString( "multipart/form-data; boundary=%0" ).arg( word ) );
+    request.setHeader( QNetworkRequest::ContentTypeHeader, QString::fromUtf8( "multipart/form-data; boundary=%0" ).arg( word ) );
 
-    data.append( QString( boundary + lineBreak ).toUtf8() );
-    data.append( "Content-Disposition: form-data; name=\"bookmarks\"; filename=\"bookmarks.kml\"" + lineBreak );
-    data.append( "Content-Type: application/vnd.google-earth.kml+xml" + lineBreak + lineBreak );
+    data.append( QString( boundary + QString::fromLatin1(lineBreak) ).toUtf8() );
+    data.append( QByteArray("Content-Disposition: form-data; name=\"bookmarks\"; filename=\"bookmarks.kml\"" + lineBreak ));
+    data.append( QByteArray("Content-Type: application/vnd.google-earth.kml+xml" + lineBreak + lineBreak ));
 
     QFile bookmarksFile( m_localBookmarksPath );
     if( !bookmarksFile.open( QFile::ReadOnly ) ) {
@@ -331,7 +331,7 @@ bool BookmarkSyncManager::Private::cloudBookmarksModified( const QString &cloudT
     QStringList entryList = QDir( m_cachePath ).entryList(
                 // TODO: replace with regex filter that only
                 // allows timestamp filenames
-                QStringList() << "*.kml",
+                QStringList() << QString::fromUtf8("*.kml"),
                 QDir::NoFilter, QDir::Name );
     if( !entryList.isEmpty() ) {
         QString lastSynced = entryList.last();
@@ -346,7 +346,7 @@ void BookmarkSyncManager::Private::clearCache()
 {
     QDir cacheDir( m_cachePath );
     QFileInfoList fileInfoList = cacheDir.entryInfoList(
-                QStringList() << "*.kml",
+                QStringList() << QString::fromUtf8("*.kml"),
                 QDir::NoFilter, QDir::Name );
     if( !fileInfoList.isEmpty() ) {
         for ( const QFileInfo& fileInfo: fileInfoList ) {
@@ -364,7 +364,7 @@ QString BookmarkSyncManager::Private::lastSyncedKmlPath() const
 {
     QDir cacheDir( m_cachePath );
     QFileInfoList fileInfoList = cacheDir.entryInfoList(
-                QStringList() << "*.kml",
+                QStringList() << QString::fromUtf8("*.kml"),
                 QDir::NoFilter, QDir::Name );
     if( !fileInfoList.isEmpty() ) {
         return fileInfoList.last().absoluteFilePath();
@@ -377,7 +377,7 @@ QList<DiffItem> BookmarkSyncManager::Private::getPlacemarks( GeoDataDocument *do
 {
     QList<DiffItem> diffItems;
     for ( GeoDataFolder *folder: document->folderList() ) {
-        QString path = QString( "/%0" ).arg( folder->name() );
+        QString path = QString::fromUtf8( "/%0" ).arg( folder->name() );
         diffItems.append( getPlacemarks( folder, path, other, diffDirection ) );
     }
 
@@ -388,7 +388,7 @@ QList<DiffItem> BookmarkSyncManager::Private::getPlacemarks( GeoDataFolder *fold
 {
     QList<DiffItem> diffItems;
     for ( GeoDataFolder *subFolder: folder->folderList() ) {
-        QString newPath = QString( "%0/%1" ).arg( path, subFolder->name() );
+        QString newPath = QString::fromUtf8( "%0/%1" ).arg( path, subFolder->name() );
         diffItems.append( getPlacemarks( subFolder, newPath, other, diffDirection ) );
     }
 
@@ -688,7 +688,7 @@ void BookmarkSyncManager::resolveConflict( MergeItem *item )
 void BookmarkSyncManager::Private::saveDownloadedToCache( const QByteArray &kml )
 {
     QString localBookmarksDir = m_localBookmarksPath;
-    QDir().mkdir( localBookmarksDir.remove( "bookmarks.kml" ) );
+    QDir().mkdir( localBookmarksDir.remove( QString::fromUtf8("bookmarks.kml") ) );
     QFile bookmarksFile( m_localBookmarksPath );
     if( !bookmarksFile.open( QFile::ReadWrite ) ) {
         mDebug() << "Failed to open file" << bookmarksFile.fileName()
@@ -716,7 +716,7 @@ void BookmarkSyncManager::Private::copyLocalToCache()
     clearCache();
 
     QFile bookmarksFile( m_localBookmarksPath );
-    bookmarksFile.copy( QString( "%0/%1.kml" ).arg( m_cachePath, m_cloudTimestamp ) );
+    bookmarksFile.copy( QString::fromUtf8( "%0/%1.kml" ).arg( m_cachePath, m_cloudTimestamp ) );
 }
 
 // Bookmark synchronization steps
