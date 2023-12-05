@@ -185,6 +185,8 @@ void SetupMetadata::applySettings()
 
     set.sidecarExtensions     = cleanUserFilterString(d->extensionsEdit->text(), true);
 
+    // Check sidecar extensions for forbidden RAW extensions
+
     if (!set.sidecarExtensions.isEmpty())
     {
         QList<QString> rawList   = s_rawFileExtensionsdWithDesc().keys();
