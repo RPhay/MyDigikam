@@ -15,6 +15,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED
              PrintSupport
              Network
              NetworkAuth
+             Svg
+             Core5Compat
 )
 
 if(ENABLE_QWEBENGINE)

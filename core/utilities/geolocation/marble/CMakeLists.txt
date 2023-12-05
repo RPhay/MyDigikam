@@ -4,12 +4,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-find_package(Qt6 ${QT6_MIN_VERSION} REQUIRED
-    COMPONENTS
-        Svg
-        Core5Compat
-)
-
 add_definitions(-DMARBLE_NO_WEBKITWIDGETS)
 add_definitions(-DKML_LAZY_IMP)
 
@@ -18,7 +12,9 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLU
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Svg,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Concurrent,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 include(astro/CMakeLists.txt)
@@ -315,17 +311,4 @@ add_library(core_marble_obj OBJECT  ${marblewidget_SRCS} ${SOURCES_UI_HDRS})
 target_compile_definitions(core_marble_obj
                            PRIVATE
                            digikamcore_EXPORTS
-)
-
-target_link_libraries(core_marble_obj
-    PUBLIC
-        Qt6::Xml
-        Qt6::Gui
-        Qt6::Widgets
-        Qt6::Network
-        Qt6::Core5Compat
-        Qt6::Svg
-        Qt6::Core
-        Qt6::PrintSupport
-        Qt6::Concurrent
 )
