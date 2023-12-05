@@ -77,8 +77,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     d->disableOpenCLCheck     = new QCheckBox(i18n("Disable hardware acceleration OpenCL"), this);
     d->enableLoggingCheck     = new QCheckBox(i18n("Enable internal debug logging"), this);
 
-    d->filesDownloadButton    = new QPushButton(i18n("Download Face Engine Data..."), this);
-    //d->filesDownloadButton->setEnabled(!d->filesDownloader->checkDownloadFiles());
+    d->filesDownloadButton    = new QPushButton(i18n("Download required binary data..."), this);
 
     if (qApp->applicationName() == QLatin1String("showfoto"))
     {
@@ -134,7 +133,6 @@ void SystemSettingsWidget::saveSettings()
 void SystemSettingsWidget::slotFaceDownload()
 {
     d->filesDownloader->startDownload();
-    //d->filesDownloadButton->setEnabled(!d->filesDownloader->checkDownloadFiles());
 }
 
 } // namespace Digikam

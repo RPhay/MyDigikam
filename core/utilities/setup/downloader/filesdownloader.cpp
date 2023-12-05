@@ -117,14 +117,6 @@ FilesDownloader::~FilesDownloader()
         d->reply = nullptr;
     }
 
-    if (d->facesEngineCheck && d->aestheticCheck && d->autoTagsCheck)
-    {
-        d->system.enableFaceEngine = d->facesEngineCheck->isChecked();
-        d->system.enableAesthetic  = d->aestheticCheck->isChecked();
-        d->system.enableAutoTags   = d->autoTagsCheck->isChecked();
-        d->system.saveSettings();
-    }
-
     delete d;
 }
 
@@ -163,7 +155,7 @@ void FilesDownloader::startDownload()
 
     d->buttons                = new QDialogButtonBox(QDialogButtonBox::Help |
                                                      QDialogButtonBox::Ok |
-                                                     QDialogButtonBox::Cancel,
+                                                     QDialogButtonBox::Close,
                                                      mainWidget);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
     d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Download"));
@@ -204,7 +196,7 @@ void FilesDownloader::startDownload()
     connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
             this, SLOT(slotHelp()));
 
-    connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
+    connect(d->buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(reject()));
 
     d->facesEngineCheck->setChecked(d->system.enableFaceEngine);
@@ -566,10 +558,12 @@ void FilesDownloader::slotUpdateDownloadInfo()
     d->system.enableFaceEngine = d->facesEngineCheck->isChecked();
     d->system.enableAesthetic  = d->aestheticCheck->isChecked();
     d->system.enableAutoTags   = d->autoTagsCheck->isChecked();
+    d->system.saveSettings();
 
     createDownloadInfo();
 
     qint64 size = 0;
+    d->total    = 0;
 
     Q_FOREACH (const DownloadInfo& info, d->files)
     {
@@ -581,7 +575,7 @@ void FilesDownloader::slotUpdateDownloadInfo()
         }
     }
 
-    QString total = ItemPropertiesTab::humanReadableBytesCount(size);
+    QString sizeString = ItemPropertiesTab::humanReadableBytesCount(size);
 
     d->infoLabel->setText(i18nc("%1: folder path",
                                 "<p>For face detection, the red-eye removal tool, the classification "
@@ -589,14 +583,25 @@ void FilesDownloader::slotUpdateDownloadInfo()
                                 "of tags to images, digiKam requires some large binary files. You "
                                 "can choose which feature you want to use.</p>"
                                 "<p>Some of these files were not found. Click “Download” to begin "
-                                "downloading the files you need. You can cancel this process, this "
-                                "dialog will appear again the next time you start digiKam. Without "
+                                "downloading the files you need. You can close this dialog, you "
+                                "will be asked again the next time you start digiKam. Without "
                                 "these files the selected features will not work.</p>"
                                 "<p>The files will be downloaded to %1.</p>"
                                 "<p><b>After the successful download you have to restart digiKam.</b></p>", path));
+    if (size > 0)
+    {
+        d->sizeLabel->setText(i18nc("%1: file counter, %2: disk size with unit",
+                                    "The download requires %1 files with a size of %2.",
+                                    d->total, sizeString));
 
-    d->sizeLabel->setText(i18nc("%1: disk size with unit", 
-                                "The download of the selected features requires %1", total));
+        d->buttons->button(QDialogButtonBox::Ok)->setEnabled(true);
+    }
+    else
+    {
+        d->sizeLabel->setText(i18n("All files of the selected features were found."));
+
+        d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
+    }
 }
 
 //-----------------------------------------------------------------------------
