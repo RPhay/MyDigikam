@@ -84,7 +84,7 @@ void EditBookmarkDialogPrivate::initComboBox( const GeoDataContainer* const cont
     for( GeoDataFolder *folder: container->folderList() ) {
         QVariant folderVariant;
         folderVariant.setValue(folder);
-        QString name = QString(' ').repeated(4*level) + folder->name();
+        QString name = QString::fromUtf8(" ").repeated(4*level) + folder->name();
         m_ui.m_folders->addItem( name, folderVariant );
         if( !folder->folderList().isEmpty() ) {
             initComboBox( folder, level+1 );
@@ -215,7 +215,7 @@ void EditBookmarkDialogPrivate::retrieveGeocodeResult( const GeoDataCoordinates 
 QString EditBookmarkDialogPrivate::append( const QString &bookmark, const QString &text)
 {
     if( bookmark.isEmpty() && text.isEmpty() ) {
-        return "";
+        return QString::fromUtf8("");
     }
     else if( bookmark.isEmpty() ) {
         return text;
@@ -223,7 +223,7 @@ QString EditBookmarkDialogPrivate::append( const QString &bookmark, const QStrin
     else if( text.isEmpty() ) {
         return bookmark;
     }
-    return bookmark + ", " + text;
+    return bookmark + QString::fromUtf8(", ") + text;
 }
 
 void EditBookmarkDialogPrivate::openNewFolderDialog()

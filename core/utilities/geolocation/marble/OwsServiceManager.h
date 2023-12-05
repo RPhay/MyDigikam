@@ -164,7 +164,7 @@ public:
     explicit OwsServiceManager(QObject *parent = nullptr);
 
 public Q_SLOTS:
-    void queryOwsCapabilities(const QUrl& queryUrl, const QString& serviceString = "WMS");
+    void queryOwsCapabilities(const QUrl& queryUrl, const QString& serviceString = QString::fromUtf8("WMS"));
     void queryWmsMap(const QUrl& url, const QString& layers, const QString& projection,
                      const QString& bbox, const QString& format, const QString& styles = QString());
     void queryWmsLevelZeroTile(const QUrl& url, const QString &layers, const QString &projection,

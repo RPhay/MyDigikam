@@ -60,20 +60,20 @@ const QString RoutingRunner::lengthString(qreal length) const
         break;
     }
 
-    return QString( "%1 %2" ).arg( length, 0, 'f', precision ).arg( distanceUnit );
+    return QString::fromUtf8( "%1 %2" ).arg( length, 0, 'f', precision ).arg( distanceUnit );
 }
 
 const QString RoutingRunner::durationString(const QTime& duration) const
 {
-    const QString hoursString = duration.toString( "hh" );
-    const QString minutesString = duration.toString( "mm" );
+    const QString hoursString = duration.toString( QString::fromUtf8("hh") );
+    const QString minutesString = duration.toString( QString::fromUtf8("mm") );
     const QString timeString = tr("%1:%2 h","journey duration").arg( hoursString, minutesString );
     return timeString;
 }
 
 const QString RoutingRunner::nameString(const QString& name, qreal length, const QTime& duration) const
 {
-    const QString result = "%1; %2 (%3)";
+    const QString result = QString::fromUtf8("%1; %2 (%3)");
     return result.arg( lengthString( length ), durationString( duration ), name );
 }
 

@@ -13,9 +13,9 @@ namespace Marble
 {
 
 namespace {
-    QString const merkaartor = "merkaartor";
-    QString const josm = "josm";
-    QString const potlatch = "potlatch";
+    QString const merkaartor = QString::fromUtf8("merkaartor");
+    QString const josm = QString::fromUtf8("josm");
+    QString const potlatch = QString::fromUtf8("potlatch");
 }
 
 class ExternalEditorDialogPrivate {

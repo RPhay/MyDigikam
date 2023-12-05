@@ -26,7 +26,7 @@ namespace Marble
 BookmarkManagerPrivate::BookmarkManagerPrivate( GeoDataTreeModel *treeModel ) :
     m_treeModel( treeModel ),
     m_bookmarkDocument( nullptr ),
-    m_bookmarkFileRelativePath( "bookmarks/bookmarks.kml" ),
+    m_bookmarkFileRelativePath( QString::fromUtf8("bookmarks/bookmarks.kml") ),
     m_styleBuilder(nullptr)
 {
     resetBookmarkDocument();

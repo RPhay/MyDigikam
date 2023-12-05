@@ -274,7 +274,7 @@ void BookmarkManagerDialogPrivate::deleteBookmark()
 
 void BookmarkManagerDialogPrivate::discardChanges()
 {
-    m_manager->loadFile( "bookmarks/bookmarks.kml" );
+    m_manager->loadFile( QString::fromUtf8("bookmarks/bookmarks.kml") );
 }
 
 /// selects the folder name from its parent (of folder filter fame)
