@@ -99,7 +99,7 @@ void OwncloudSyncBackend::uploadRoute( const QString &timestamp )
     request.setHeader( QNetworkRequest::ContentTypeHeader, QString::fromUtf8( "multipart/form-data; boundary=%0" ).arg( word ) );
 
     QByteArray data;
-    data.append( QString( boundary + "\r\n" ).toUtf8() );
+    data.append( QString( boundary + QString::fromUtf8("\r\n") ).toUtf8() );
 
     // Timestamp part
     data.append( QByteArray("Content-Disposition: form-data; name=\"timestamp\"") );
@@ -112,7 +112,7 @@ void OwncloudSyncBackend::uploadRoute( const QString &timestamp )
     data.append( QByteArray("\r\n\r\n") );
     data.append( routeName( timestamp ).toUtf8() );
     data.append( QByteArray("\r\n") );
-    data.append( QString( boundary + "\r\n" ).toUtf8() );
+    data.append( QString( boundary + QString::fromUtf8("\r\n") ).toUtf8() );
 
     QFile kmlFile( d->m_cacheDir.absolutePath() + QString::fromUtf8( "/%0.kml" ).arg( timestamp ) );
 
@@ -155,7 +155,7 @@ void OwncloudSyncBackend::uploadRoute( const QString &timestamp )
     data.append( QByteArray("\r\n\r\n") );
     data.append( QString::number(duration).toUtf8() );
     data.append( QByteArray("\r\n") );
-    data.append( QString( boundary + "\r\n" ).toUtf8() );
+    data.append( QString( boundary + QString::fromUtf8("\r\n") ).toUtf8() );
 
     // Distance part
     double distance =
@@ -165,7 +165,7 @@ void OwncloudSyncBackend::uploadRoute( const QString &timestamp )
     data.append( QByteArray("\r\n\r\n") );
     data.append( QString::number(distance).toUtf8() );
     data.append( QByteArray("\r\n") );
-    data.append( QString( boundary + "\r\n" ).toUtf8() );
+    data.append( QString( boundary + QString::fromUtf8("\r\n") ).toUtf8() );
 
     // KML part
     data.append( QString::fromUtf8( "Content-Disposition: form-data; name=\"kml\"; filename=\"%0.kml\"" ).arg( timestamp ).toUtf8() );
@@ -176,7 +176,7 @@ void OwncloudSyncBackend::uploadRoute( const QString &timestamp )
     kmlFile.seek(0); // just to be sure
     data.append( kmlFile.readAll() );
     data.append( QByteArray("\r\n") );
-    data.append( QString( boundary + "\r\n" ).toUtf8() );
+    data.append( QString( boundary + QString::fromUtf8("\r\n") ).toUtf8() );
 
     kmlFile.close();
 
@@ -193,7 +193,7 @@ void OwncloudSyncBackend::uploadRoute( const QString &timestamp )
 
     data.append( previewBytes );
     data.append( QByteArray("\r\n") );
-    data.append( QString::fromUtf8( boundary + QString::fromUtf8("\r\n") ).toUtf8() );
+    data.append( QString( boundary + QString::fromUtf8("\r\n") ).toUtf8() );
 
     d->m_routeUploadReply = d->m_network.post( request, data );
     connect( d->m_routeUploadReply, SIGNAL(uploadProgress(qint64,qint64)), this, SIGNAL(routeUploadProgress(qint64,qint64)) );
@@ -269,7 +269,7 @@ QString OwncloudSyncBackend::routeName( const QString &timestamp ) const
         GeoDataFolder *folder = container->folderList().at( 0 );
         for ( GeoDataPlacemark *placemark: folder->placemarkList() ) {
             routeName.append( placemark->name() );
-            routeName.append( " - " );
+            routeName.append( QString::fromUtf8(" - ") );
         }
     }
 
@@ -288,7 +288,7 @@ void OwncloudSyncBackend::validateSettings()
         connect( d->m_authReply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(checkAuthError(QNetworkReply::NetworkError)) );
     } else {
         // no server, make the error field blank
-        d->m_cloudSyncManager->setStatus("", CloudSyncManager::Success);
+        d->m_cloudSyncManager->setStatus(QString::fromUtf8(""), CloudSyncManager::Success);
     }
 }
 
@@ -307,7 +307,7 @@ void OwncloudSyncBackend::checkAuthReply()
     if ( statusCode == 0 ) // request was cancelled
         return;
 
-    QString result = d->m_authReply->readAll();
+    QString result = QString::fromUtf8(d->m_authReply->readAll());
 
     if (!result.startsWith(QLatin1Char('{'))) {
         // not a JSON result
@@ -320,7 +320,7 @@ void OwncloudSyncBackend::checkAuthReply()
     } else if (result == QLatin1String("{\"message\":\"Current user is not logged in\"}") && statusCode == 401) {
         // credentials were incorrect
         d->m_cloudSyncManager->setStatus( tr( "Username or password are incorrect" ), CloudSyncManager::Error);
-    } else if ( result.contains("\"status\":\"success\"") && statusCode == 200 ) {
+    } else if ( result.contains(QString::fromUtf8("\"status\":\"success\"")) && statusCode == 200 ) {
         // credentials were correct
         d->m_cloudSyncManager->setStatus( tr( "Login successful" ), CloudSyncManager::Success);
     }
@@ -373,7 +373,7 @@ void OwncloudSyncBackend::saveDownloadedRoute()
                     ". Check if your user has sufficient permissions for this operation.";
     }
 
-    QString kmlFilePath = QString( "%0/%1.kml").arg( d->m_cacheDir.absolutePath(), timestamp );
+    QString kmlFilePath = QString::fromUtf8( "%0/%1.kml").arg( d->m_cacheDir.absolutePath(), timestamp );
     QFile kmlFile( kmlFilePath );
     bool fileOpened = kmlFile.open( QFile::ReadWrite );
 
@@ -386,14 +386,14 @@ void OwncloudSyncBackend::saveDownloadedRoute()
     kmlFile.write( d->m_routeDownloadReply->readAll() );
     kmlFile.close();
 
-    QString previewPath = QString( "%0/preview/" ).arg( d->m_cacheDir.absolutePath() );
+    QString previewPath = QString::fromUtf8( "%0/preview/" ).arg( d->m_cacheDir.absolutePath() );
     bool previewPathCreated = d->m_cacheDir.mkpath( previewPath );
     if ( !previewPathCreated ) {
         mDebug() << "Couldn't create the path " << previewPath <<
                     ". Check if your user has sufficient permissions for this operation.";
     }
 
-    QString previewFilePath = QString( "%0/preview/%1.jpg").arg( d->m_cacheDir.absolutePath(), timestamp );
+    QString previewFilePath = QString::fromUtf8( "%0/preview/%1.jpg").arg( d->m_cacheDir.absolutePath(), timestamp );
     QFile previewFile( previewFilePath );
     bool previewFileOpened = previewFile.open( QFile::ReadWrite );
 
@@ -424,8 +424,8 @@ QUrl OwncloudSyncBackend::endpointUrl( const QString &endpoint, const QString &p
 
 void OwncloudSyncBackend::removeFromCache( const QDir &cacheDir, const QString &timestamp )
 {
-    bool fileRemoved = QFile( QString( "%0/%1.kml" ).arg( cacheDir.absolutePath(), timestamp ) ).remove();
-    bool previewRemoved = QFile( QString( "%0/preview/%1.jpg" ).arg( cacheDir.absolutePath(), timestamp ) ).remove();
+    bool fileRemoved = QFile( QString::fromUtf8( "%0/%1.kml" ).arg( cacheDir.absolutePath(), timestamp ) ).remove();
+    bool previewRemoved = QFile( QString::fromUtf8( "%0/preview/%1.jpg" ).arg( cacheDir.absolutePath(), timestamp ) ).remove();
     if ( !fileRemoved || !previewRemoved ) {
         mDebug() << "Failed to remove locally cached route " << timestamp << ". It might "
                     "have been removed already, or its directory is missing / not writable.";
