@@ -184,8 +184,27 @@ void SetupMetadata::applySettings()
     set.rescanImageIfModified = d->rescanImageIfModifiedBox->isChecked();
 
     set.sidecarExtensions     = cleanUserFilterString(d->extensionsEdit->text(), true);
-    set.sidecarExtensions.removeAll(QLatin1String("xmp"));
-    set.sidecarExtensions.removeDuplicates();
+
+    if (!set.sidecarExtensions.isEmpty())
+    {
+        QList<QString> rawList   = s_rawFileExtensionsdWithDesc().keys();
+        rawList << QLatin1String("xmp");
+        QStringList::iterator it = set.sidecarExtensions.begin();
+
+        for ( ; it != set.sidecarExtensions.end() ; )
+        {
+            if (rawList.contains((*it).toLower()))
+            {
+                it = set.sidecarExtensions.erase(it);
+            }
+            else
+            {
+                ++it;
+            }
+        }
+
+        set.sidecarExtensions.removeDuplicates();
+    }
 
     set.exifToolPath          = d->exifToolView->exifToolDirectory();
 
