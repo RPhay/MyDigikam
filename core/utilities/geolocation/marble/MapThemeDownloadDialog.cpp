@@ -72,7 +72,7 @@ MapThemeDownloadDialog::MapThemeDownloadDialog( MarbleWidget* marbleWidget ) :
     d->setupUi( this );
 
     d->m_model.setTargetDirectory(MarbleDirs::localPath() + QLatin1String("/maps"));
-    d->m_model.setProvider( "https://marble.kde.org/maps-v3.xml" );
+    d->m_model.setProvider( QString::fromUtf8("https://marble.kde.org/maps-v3.xml") );
     d->m_model.setRegistryFile(MarbleDirs::localPath() + QLatin1String("/newstuff/marble-map-themes.knsregistry"), Marble::NewstuffModel::NameTag);
 
     d->listView->setIconSize( QSize( 130, 130 ) );
@@ -348,14 +348,14 @@ QString MapItemDelegate::text( const QModelIndex &index )
     // Fields are typically not longer than 200 characters. Prevent excessive long text here anyway
     // due to bug 319542
     int const maxEntrySize = 4096;
-    return QString("<p><b>%1</b><br />%2</p><p>Author: %3<br />License: %4<br />Version %5 (%6) %7</p>")
+    return QString::fromUtf8("<p><b>%1</b><br />%2</p><p>Author: %3<br />License: %4<br />Version %5 (%6) %7</p>")
             .arg( index.data().toString() )
             .arg( index.data( NewstuffModel::Summary ).toString().left( maxEntrySize ) )
             .arg( index.data( NewstuffModel::Author ).toString().left( maxEntrySize ) )
             .arg( index.data( NewstuffModel::License ).toString().left( maxEntrySize ) )
             .arg( index.data( NewstuffModel::Version ).toString().left( maxEntrySize ) )
             .arg( index.data( NewstuffModel::ReleaseDate ).toString().left( maxEntrySize ) )
-            .arg( size > 0 ? QString( "%1 MB" ).arg( size, 0, 'f', 1 ) : QString() );
+            .arg( size > 0 ? QString::fromUtf8( "%1 MB" ).arg( size, 0, 'f', 1 ) : QString() );
 }
 
 }

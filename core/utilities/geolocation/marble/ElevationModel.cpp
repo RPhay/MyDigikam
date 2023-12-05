@@ -36,7 +36,7 @@ public:
     {
         m_cache.setMaxCost( 10 ); //keep 10 tiles in memory (~17MB)
 
-        m_srtmTheme = MapThemeManager::loadMapTheme( "earth/srtm2/srtm2.dgml" );
+        m_srtmTheme = MapThemeManager::loadMapTheme( QString::fromUtf8("earth/srtm2/srtm2.dgml" ));
         if ( !m_srtmTheme ) {
             mDebug() << "Failed to load map theme earth/srtm2/srtm2.dgml. Check your installation. No elevation will be returned.";
             return;

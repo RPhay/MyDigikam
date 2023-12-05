@@ -110,14 +110,14 @@ void MarbleLineEdit::setDecorator(const QPixmap &decorator)
     d->m_decoratorButton->setPixmap( d->m_decoratorPixmap );
     int const padding = 2 + d->m_decoratorPixmap.width();
 
-    QString const prefixDirection = layoutDirection() == Qt::LeftToRight ? "left" : "right";
+    QString const prefixDirection = layoutDirection() == Qt::LeftToRight ? QString::fromUtf8("left") : QString::fromUtf8("right");
     QString decoratorStyleSheet;
     if ( !d->m_decoratorPixmap.isNull() ) {
-        decoratorStyleSheet = QString( "; padding-%1: %2" ).arg( prefixDirection ).arg( padding );
+        decoratorStyleSheet = QString::fromUtf8( "; padding-%1: %2" ).arg( prefixDirection ).arg( padding );
     }
     // Padding for clear button to avoid text underflow
-    QString const postfixDirection  = layoutDirection() == Qt::LeftToRight ? "right" : "left";
-    QString styleSheet = QString( ":enabled { padding-%1: %2; %3}").arg( postfixDirection ).arg( padding ).arg( decoratorStyleSheet );
+    QString const postfixDirection  = layoutDirection() == Qt::LeftToRight ? QString::fromUtf8("right") : QString::fromUtf8("left");
+    QString styleSheet = QString::fromUtf8( ":enabled { padding-%1: %2; %3}").arg( postfixDirection ).arg( padding ).arg( decoratorStyleSheet );
 
     bool const smallScreen = MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen;
     if ( !smallScreen ) {
@@ -142,7 +142,7 @@ void MarbleLineEdit::updateClearButtonIcon( const QString& text )
         return;
     }
 
-    QString const direction = layoutDirection() == Qt::LeftToRight ? "rtl" : "ltr";
+    QString const direction = layoutDirection() == Qt::LeftToRight ? QString::fromUtf8("rtl") : QString::fromUtf8("ltr");
     int const size = (MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen) ? 32 : 16;
     QPixmap pixmap = QPixmap(QStringLiteral(":/icons/%1x%1/edit-clear-locationbar-%2.png").arg(size).arg(direction));
     d->m_clearButton->setPixmap( pixmap );

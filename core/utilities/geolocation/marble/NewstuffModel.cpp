@@ -159,7 +159,7 @@ NewstuffItem::NewstuffItem() : m_payloadSize( -2 ), m_downloadedSize( 0 )
 
 QString NewstuffItem::installedVersion() const
 {
-    QDomNodeList const nodes = m_registryNode.toElement().elementsByTagName( "version" );
+    QDomNodeList const nodes = m_registryNode.toElement().elementsByTagName( QString::fromUtf8("version") );
     if ( nodes.size() == 1 ) {
         return nodes.at( 0 ).toElement().text();
     }
@@ -169,7 +169,7 @@ QString NewstuffItem::installedVersion() const
 
 QString NewstuffItem::installedReleaseDate() const
 {
-    QDomNodeList const nodes = m_registryNode.toElement().elementsByTagName( "releasedate" );
+    QDomNodeList const nodes = m_registryNode.toElement().elementsByTagName( QString::fromUtf8("releasedate") );
     if ( nodes.size() == 1 ) {
         return nodes.at( 0 ).toElement().text();
     }
@@ -188,7 +188,7 @@ bool NewstuffItem::isUpgradable() const
 QStringList NewstuffItem::installedFiles() const
 {
     QStringList result;
-    QDomNodeList const nodes = m_registryNode.toElement().elementsByTagName( "installedfile" );
+    QDomNodeList const nodes = m_registryNode.toElement().elementsByTagName( QString::fromUtf8("installedfile") );
     for ( int i=0; i<nodes.count(); ++i ) {
         result << nodes.at( i ).toElement().text();
     }
@@ -305,7 +305,7 @@ void NewstuffModelPrivate::handleProviderData(QNetworkReply *reply)
     m_items.clear();
 
     QDomElement root = xml.documentElement();
-    QDomNodeList items = root.elementsByTagName( "stuff" );
+    QDomNodeList items = root.elementsByTagName( QString::fromUtf8("stuff") );
     for (int i=0 ; i < items.length(); ++i ) {
         m_items << importNode( items.item( i ) );
     }
@@ -335,13 +335,13 @@ void NewstuffModelPrivate::installMap()
     } else if ( m_currentFile->fileName().endsWith( QLatin1String( "zip" ) ) ) {
         unzip();
     }
-    else if ( m_currentFile->fileName().endsWith( QLatin1String( "tar.gz" ) ) && canExecute( "tar" ) ) {
+    else if ( m_currentFile->fileName().endsWith( QLatin1String( "tar.gz" ) ) && canExecute( QString::fromUtf8("tar") ) ) {
         m_unpackProcess = new QProcess;
         QObject::connect( m_unpackProcess, SIGNAL(finished(int)),
                           m_parent, SLOT(contentsListed(int)) );
-        QStringList arguments = QStringList() << "-t" << "-z" << "-f" << m_currentFile->fileName();
+        QStringList arguments = QStringList() << QString::fromUtf8("-t") << QString::fromUtf8("-z") << QString::fromUtf8("-f") << m_currentFile->fileName();
         m_unpackProcess->setWorkingDirectory( m_targetDirectory );
-        m_unpackProcess->start( "tar", arguments );
+        m_unpackProcess->start( QString::fromUtf8("tar"), arguments );
     } else {
         if ( !m_currentFile->fileName().endsWith( QLatin1String( "tar.gz" ) ) ) {
             mDebug() << "Can only handle tar.gz files";
@@ -365,9 +365,9 @@ void NewstuffModelPrivate::unzip()
 
 void NewstuffModelPrivate::updateModel()
 {
-    QDomNodeList items = m_root.elementsByTagName( "stuff" );
+    QDomNodeList items = m_root.elementsByTagName( QString::fromUtf8("stuff") );
     for (int i=0 ; i < items.length(); ++i ) {
-        QString const key = m_idTag == NewstuffModel::PayloadTag ? "payload" : "name";
+        QString const key = m_idTag == NewstuffModel::PayloadTag ? QString::fromUtf8("payload") : QString::fromUtf8("name");
         QDomNodeList matches = items.item( i ).toElement().elementsByTagName( key );
         if ( matches.size() == 1 ) {
             QString const value = matches.at( 0 ).toElement().text();
@@ -479,24 +479,24 @@ NewstuffModel::NewstuffModel( QObject *parent ) :
              this, SLOT(handleProviderData(QNetworkReply*)) );
 
     QHash<int,QByteArray> roles;
-    roles[Qt::DisplayRole] = "display";
-    roles[Name] = "name";
-    roles[Author] = "author";
-    roles[License] = "license";
-    roles[Summary] = "summary";
-    roles[Version] = "version";
-    roles[ReleaseDate] = "releasedate";
-    roles[Preview] = "preview";
-    roles[Payload] = "payload";
-    roles[InstalledVersion] = "installedversion";
-    roles[InstalledReleaseDate] = "installedreleasedate";
-    roles[InstalledFiles] = "installedfiles";
-    roles[IsInstalled] = "installed";
-    roles[IsUpgradable] = "upgradable";
-    roles[Category] = "category";
-    roles[IsTransitioning] = "transitioning";
-    roles[PayloadSize] = "size";
-    roles[DownloadedSize] = "downloaded";
+    roles[Qt::DisplayRole] = QByteArray("display");
+    roles[Name] = QByteArray("name");
+    roles[Author] = QByteArray("author");
+    roles[License] = QByteArray("license");
+    roles[Summary] = QByteArray("summary");
+    roles[Version] = QByteArray("version");
+    roles[ReleaseDate] = QByteArray("releasedate");
+    roles[Preview] = QByteArray("preview");
+    roles[Payload] = QByteArray("payload");
+    roles[InstalledVersion] = QByteArray("installedversion");
+    roles[InstalledReleaseDate] = QByteArray("installedreleasedate");
+    roles[InstalledFiles] = QByteArray("installedfiles");
+    roles[IsInstalled] = QByteArray("installed");
+    roles[IsUpgradable] = QByteArray("upgradable");
+    roles[Category] = QByteArray("category");
+    roles[IsTransitioning] = QByteArray("transitioning");
+    roles[PayloadSize] = QByteArray("size");
+    roles[DownloadedSize] = QByteArray("downloaded");
     d->m_roleNames = roles;
 }
 
@@ -614,10 +614,10 @@ void NewstuffModel::setRegistryFile( const QString &filename, IdTag idTag )
         QFileInfo inputFile( registryFile );
         if ( !inputFile.exists() ) {
             QDir::root().mkpath( inputFile.absolutePath() );
-            d->m_registryDocument = QDomDocument( "khotnewstuff3" );
-            QDomProcessingInstruction header = d->m_registryDocument.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"utf-8\"" );
+            d->m_registryDocument = QDomDocument( QString::fromUtf8("khotnewstuff3") );
+            QDomProcessingInstruction header = d->m_registryDocument.createProcessingInstruction( QString::fromUtf8("xml"), QString::fromUtf8("version=\"1.0\" encoding=\"utf-8\"") );
             d->m_registryDocument.appendChild( header );
-            d->m_root = d->m_registryDocument.createElement( "hotnewstuffregistry" );
+            d->m_root = d->m_registryDocument.createElement( QString::fromUtf8("hotnewstuffregistry") );
             d->m_registryDocument.appendChild( d->m_root );
         } else {
             QFile input( registryFile );
@@ -788,7 +788,7 @@ void NewstuffModel::mapInstalled( int exitStatus )
         Q_EMIT installationFinished( d->m_currentAction.first );
     } else {
         mDebug() << "Process exit status " << exitStatus << " indicates an error.";
-        Q_EMIT installationFailed( d->m_currentAction.first , QString( "Unable to unpack file. Process exited with status code %1." ).arg( exitStatus ) );
+        Q_EMIT installationFailed( d->m_currentAction.first , QString::fromUtf8( "Unable to unpack file. Process exited with status code %1." ).arg( exitStatus ) );
     }
     QModelIndex const affected = index( d->m_currentAction.first );
 
@@ -816,18 +816,18 @@ void NewstuffModel::mapUninstalled()
 void NewstuffModel::contentsListed( int exitStatus )
 {
     if ( exitStatus == 0 ) {
-        QStringList const files = QString(d->m_unpackProcess->readAllStandardOutput()).split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+        QStringList const files = QString::fromLatin1(d->m_unpackProcess->readAllStandardOutput()).split(QLatin1Char('\n'), Qt::SkipEmptyParts);
         d->updateRegistry(files);
 
         QObject::disconnect( d->m_unpackProcess, SIGNAL(finished(int)),
                              this, SLOT(contentsListed(int)) );
         QObject::connect( d->m_unpackProcess, SIGNAL(finished(int)),
                           this, SLOT(mapInstalled(int)) );
-        QStringList arguments = QStringList() << "-x" << "-z" << "-f" << d->m_currentFile->fileName();
-        d->m_unpackProcess->start( "tar", arguments );
+        QStringList arguments = QStringList() << QString::fromUtf8("-x") << QString::fromUtf8("-z") << QString::fromUtf8("-f") << d->m_currentFile->fileName();
+        d->m_unpackProcess->start( QString::fromUtf8("tar"), arguments );
     } else {
         mDebug() << "Process exit status " << exitStatus << " indicates an error.";
-        Q_EMIT installationFailed( d->m_currentAction.first , QString( "Unable to list file contents. Process exited with status code %1." ).arg( exitStatus ) );
+        Q_EMIT installationFailed( d->m_currentAction.first , QString::fromUtf8( "Unable to list file contents. Process exited with status code %1." ).arg( exitStatus ) );
 
         { // <-- do not remove, mutex locker scope
             QMutexLocker locker( &d->m_mutex );
@@ -845,31 +845,31 @@ void NewstuffModelPrivate::updateRegistry(const QStringList &files)
         QDomNode node = item.m_registryNode;
         NewstuffModelPrivate::NodeAction action = node.isNull() ? NewstuffModelPrivate::Append : NewstuffModelPrivate::Replace;
         if ( node.isNull() ) {
-            node = m_root.appendChild( m_registryDocument.createElement( "stuff" ) );
+            node = m_root.appendChild( m_registryDocument.createElement( QString::fromUtf8("stuff") ) );
         }
 
-        node.toElement().setAttribute( "category", m_items[m_currentAction.first].m_category );
-        changeNode( node, m_registryDocument, "name", item.m_name, action );
-        changeNode( node, m_registryDocument, "providerid", m_provider, action );
-        changeNode( node, m_registryDocument, "author", item.m_author, action );
-        changeNode( node, m_registryDocument, "homepage", QString(), action );
-        changeNode( node, m_registryDocument, "licence", item.m_license, action );
-        changeNode( node, m_registryDocument, "version", item.m_version, action );
+        node.toElement().setAttribute( QString::fromUtf8("category"), m_items[m_currentAction.first].m_category );
+        changeNode( node, m_registryDocument, QString::fromUtf8("name"), item.m_name, action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("providerid"), m_provider, action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("author"), item.m_author, action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("homepage"), QString(), action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("licence"), item.m_license, action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("version"), item.m_version, action );
         QString const itemId = m_idTag == NewstuffModel::PayloadTag ? item.m_payloadUrl.toString() : item.m_name;
-        changeNode( node, m_registryDocument, "id", itemId, action );
-        changeNode( node, m_registryDocument, "releasedate", item.m_releaseDate, action );
-        changeNode( node, m_registryDocument, "summary", item.m_summary, action );
-        changeNode( node, m_registryDocument, "changelog", QString(), action );
-        changeNode( node, m_registryDocument, "preview", item.m_previewUrl.toString(), action );
-        changeNode( node, m_registryDocument, "previewBig", item.m_previewUrl.toString(), action );
-        changeNode( node, m_registryDocument, "payload", item.m_payloadUrl.toString(), action );
-        changeNode( node, m_registryDocument, "status", "installed", action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("id"), itemId, action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("releasedate"), item.m_releaseDate, action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("summary"), item.m_summary, action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("changelog"), QString(), action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("preview"), item.m_previewUrl.toString(), action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("previewBig"), item.m_previewUrl.toString(), action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("payload"), item.m_payloadUrl.toString(), action );
+        changeNode( node, m_registryDocument, QString::fromUtf8("status"), QString::fromUtf8("installed"), action );
         m_items[m_currentAction.first].m_registryNode = node;
 
         bool hasChildren = true;
         while ( hasChildren ) {
             /** @todo FIXME: fileList does not contain all elements opposed to what docs say */
-            QDomNodeList fileList = node.toElement().elementsByTagName( "installedfile" );
+            QDomNodeList fileList = node.toElement().elementsByTagName( QString::fromUtf8("installedfile") );
             hasChildren = !fileList.isEmpty();
             for ( int i=0; i<fileList.count(); ++i ) {
                 node.removeChild( fileList.at( i ) );
@@ -877,7 +877,7 @@ void NewstuffModelPrivate::updateRegistry(const QStringList &files)
         }
 
         for( const QString &file: files ) {
-            QDomNode fileNode = node.appendChild( m_registryDocument.createElement( "installedfile" ) );
+            QDomNode fileNode = node.appendChild( m_registryDocument.createElement( QString::fromUtf8("installedfile") ) );
             fileNode.appendChild(m_registryDocument.createTextNode(m_targetDirectory + QLatin1Char('/') + file));
         }
 
@@ -927,14 +927,14 @@ NewstuffItem NewstuffModelPrivate::importNode(const QDomNode &node)
 {
     NewstuffItem item;
     item.m_category = node.attributes().namedItem(QStringLiteral("category")).toAttr().value();
-    readValue<QString>( node, "name", &item.m_name );
-    readValue<QString>( node, "author", &item.m_author );
-    readValue<QString>( node, "licence", &item.m_license );
-    readValue<QString>( node, "summary", &item.m_summary );
-    readValue<QString>( node, "version", &item.m_version );
-    readValue<QString>( node, "releasedate", &item.m_releaseDate );
-    readValue<QUrl>( node, "preview", &item.m_previewUrl );
-    readValue<QUrl>( node, "payload", &item.m_payloadUrl );
+    readValue<QString>( node, QString::fromUtf8("name"), &item.m_name );
+    readValue<QString>( node, QString::fromUtf8("author"), &item.m_author );
+    readValue<QString>( node, QString::fromUtf8("licence"), &item.m_license );
+    readValue<QString>( node, QString::fromUtf8("summary"), &item.m_summary );
+    readValue<QString>( node, QString::fromUtf8("version"), &item.m_version );
+    readValue<QString>( node, QString::fromUtf8("releasedate"), &item.m_releaseDate );
+    readValue<QUrl>( node, QString::fromUtf8("preview"), &item.m_previewUrl );
+    readValue<QUrl>( node, QString::fromUtf8("payload"), &item.m_payloadUrl );
     return item;
 }
 
