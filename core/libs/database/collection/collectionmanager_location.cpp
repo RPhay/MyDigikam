@@ -771,168 +771,172 @@ CollectionLocation CollectionManager::locationForPath(const QString& givenPath)
 
 void CollectionManager::updateLocations()
 {
+    QMap<int, AlbumRootLocation*> newLocations;
     QMap<int, AlbumRootLocation*> oldLocations;
     QList<CollectionLocation::Status> oldStatus;
 
+    // read information from database
+
+    QList<AlbumRootInfo> infos = CoreDbAccess().db()->getAlbumRoots();
+
+    // synchronize map with database
+
     {
-        QWriteLocker writeLocker(&d->lock);
-
-        // read information from database
-
-        QList<AlbumRootInfo> infos = CoreDbAccess().db()->getAlbumRoots();
-
-        // synchronize map with database
-
+        QReadLocker locker(&d->lock);
         oldLocations = d->locations;
-        d->locations.clear();
+    }
 
-        Q_FOREACH (const AlbumRootInfo& info, infos)
+    Q_FOREACH (const AlbumRootInfo& info, infos)
+    {
+        if (oldLocations.contains(info.id))
         {
-            if (oldLocations.contains(info.id))
+            newLocations[info.id] = oldLocations.value(info.id);
+            oldLocations.remove(info.id);
+        }
+        else
+        {
+            newLocations[info.id] = new AlbumRootLocation(info);
+        }
+    }
+
+    // update status with current access state,
+    // store old status in QList oldStatus
+
+    // get information from Solid
+
+    QList<SolidVolumeInfo> volumes = d->listVolumes();
+
+    Q_FOREACH (AlbumRootLocation* const location, newLocations)
+    {
+        oldStatus << location->status();
+        bool available = false;
+        QString absolutePath;
+
+        if (location->type() == CollectionLocation::Network)
+        {
+            Q_FOREACH (const QString& path, d->networkShareMountPathsFromIdentifier(location))
             {
-                d->locations[info.id] = oldLocations.value(info.id);
-                oldLocations.remove(info.id);
+                absolutePath      = path;
+                QUrl url(location->identifier);
+                QString uuidValue = d->getCollectionUUID(path);
+                QString queryItem = QUrlQuery(url).queryItemValue(QLatin1String("fileuuid"));
+
+                if      (!queryItem.isNull() && (queryItem == uuidValue))
+                {
+                    available = true;
+                }
+                else if (uuidValue.isNull() || queryItem.isNull())
+                {
+                    QFileInfo fileInfo(path);
+                    available = (fileInfo.isReadable() &&
+                                 QDirIterator(path, QDir::Dirs    |
+                                                    QDir::Files   |
+                                                    QDir::NoDotAndDotDot).hasNext());
+                }
+
+                if (available)
+                {
+                    break;
+                }
+            }
+        }
+        else
+        {
+            SolidVolumeInfo info = d->findVolumeForLocation(location, volumes);
+
+            if (!info.isNull())
+            {
+                QString volumePath = info.path;
+
+                // volume.path has a trailing slash (and this is good)
+                // but specific path has a leading slash, so remove it
+
+                volumePath.chop(1);
+
+                // volumePath is the mount point of the volume;
+                // specific path is the path on the file system of the volume.
+
+                absolutePath = volumePath + location->specificPath;
+                available    = (info.isMounted && QFileInfo::exists(absolutePath));
             }
             else
             {
-                d->locations[info.id] = new AlbumRootLocation(info);
+                QString path = d->pathFromIdentifier(location);
+
+                if (!path.isNull())
+                {
+                    available    = true;
+
+                    // Here we have the absolute path as definition of the volume.
+                    // specificPath is "/" as per convention, but ignored,
+                    // absolute path shall not have a trailing slash.
+
+                    absolutePath = path;
+                }
             }
         }
 
-        // update status with current access state,
-        // store old status in QList oldStatus
+        // set values in location
+        // Don't touch location->status, do not interfere with "hidden" setting
 
-        // get information from Solid
+        location->available = available;
+        location->setAbsolutePath(absolutePath);
 
-        QList<SolidVolumeInfo> volumes = d->listVolumes();
-
-        Q_FOREACH (AlbumRootLocation* const location, d->locations)
+        if (available)
         {
-            oldStatus << location->status();
-            bool available = false;
-            QString absolutePath;
-
-            if (location->type() == CollectionLocation::Network)
+            if (d->checkCollectionUUID(location, absolutePath))
             {
-                Q_FOREACH (const QString& path, d->networkShareMountPathsFromIdentifier(location))
-                {
-                    absolutePath      = path;
-                    QUrl url(location->identifier);
-                    QString uuidValue = d->getCollectionUUID(path);
-                    QString queryItem = QUrlQuery(url).queryItemValue(QLatin1String("fileuuid"));
-
-                    if      (!queryItem.isNull() && (queryItem == uuidValue))
-                    {
-                        available = true;
-                    }
-                    else if (uuidValue.isNull() || queryItem.isNull())
-                    {
-                        QFileInfo fileInfo(path);
-                        available = (fileInfo.isReadable() &&
-                                     QDirIterator(path, QDir::Dirs    |
-                                                        QDir::Files   |
-                                                        QDir::NoDotAndDotDot).hasNext());
-                    }
-
-                    if (available)
-                    {
-                        break;
-                    }
-                }
+                ChangingDB changing(d);
+                CoreDbAccess().db()->migrateAlbumRoot(location->id(), location->identifier);
             }
-            else
+        }
+
+        if (available && (location->caseSensitivity() == CollectionLocation::UnknownCaseSensitivity))
+        {
+            QFileInfo writeInfo(absolutePath);
+
+            if (writeInfo.isWritable())
             {
-                SolidVolumeInfo info = d->findVolumeForLocation(location, volumes);
+                SafeTemporaryFile* const temp = new SafeTemporaryFile(absolutePath +
+                                                                      QLatin1String("/CaseSensitivity-XXXXXX-Test"));
+                temp->setAutoRemove(false);
+                temp->open();
+                QFileInfo tempInfo(temp->safeFilePath());
+                QFileInfo testInfo(tempInfo.path()  +
+                                   QLatin1Char('/') +
+                                   tempInfo.fileName().toLower());
+                bool testCaseSensitivity      = testInfo.exists();
+                delete temp;
+                QFile::remove(tempInfo.filePath());
 
-                if (!info.isNull())
+                if (testCaseSensitivity)
                 {
-                    QString volumePath = info.path;
-
-                    // volume.path has a trailing slash (and this is good)
-                    // but specific path has a leading slash, so remove it
-
-                    volumePath.chop(1);
-
-                    // volumePath is the mount point of the volume;
-                    // specific path is the path on the file system of the volume.
-
-                    absolutePath = volumePath + location->specificPath;
-                    available    = (info.isMounted && QFileInfo::exists(absolutePath));
-                }
+                    location->setCaseSensitivity(CollectionLocation::CaseInsensitive);
+                    }
                 else
                 {
-                    QString path = d->pathFromIdentifier(location);
-
-                    if (!path.isNull())
-                    {
-                        available    = true;
-
-                        // Here we have the absolute path as definition of the volume.
-                        // specificPath is "/" as per convention, but ignored,
-                        // absolute path shall not have a trailing slash.
-
-                        absolutePath = path;
-                    }
+                    location->setCaseSensitivity(CollectionLocation::CaseSensitive);
                 }
+
+                ChangingDB changing(d);
+                CoreDbAccess().db()->setAlbumRootCaseSensitivity(location->id(),
+                                                                 location->caseSensitivity());
             }
-
-            // set values in location
-            // Don't touch location->status, do not interfere with "hidden" setting
-
-            location->available = available;
-            location->setAbsolutePath(absolutePath);
-
-            if (available)
-            {
-                if (d->checkCollectionUUID(location, absolutePath))
-                {
-                    ChangingDB changing(d);
-                    CoreDbAccess().db()->migrateAlbumRoot(location->id(), location->identifier);
-                }
-            }
-
-            if (available && (location->caseSensitivity() == CollectionLocation::UnknownCaseSensitivity))
-            {
-                QFileInfo writeInfo(absolutePath);
-
-                if (writeInfo.isWritable())
-                {
-                    SafeTemporaryFile* const temp = new SafeTemporaryFile(absolutePath +
-                                                                          QLatin1String("/CaseSensitivity-XXXXXX-Test"));
-                    temp->setAutoRemove(false);
-                    temp->open();
-                    QFileInfo tempInfo(temp->safeFilePath());
-                    QFileInfo testInfo(tempInfo.path()  +
-                                       QLatin1Char('/') +
-                                       tempInfo.fileName().toLower());
-                    bool testCaseSensitivity      = testInfo.exists();
-                    delete temp;
-                    QFile::remove(tempInfo.filePath());
-
-                    if (testCaseSensitivity)
-                    {
-                        location->setCaseSensitivity(CollectionLocation::CaseInsensitive);
-                    }
-                    else
-                    {
-                        location->setCaseSensitivity(CollectionLocation::CaseSensitive);
-                    }
-
-                    ChangingDB changing(d);
-                    CoreDbAccess().db()->setAlbumRootCaseSensitivity(location->id(),
-                                                                     location->caseSensitivity());
-                }
-            }
-
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Location for" << absolutePath
-                                          << "is available:" << available
-                                          << "=>" << "case sensitivity:"
-                                          << location->caseSensitivity();
-
-            // set the status depending on "hidden" and "available"
-
-            location->setStatusFromFlags();
         }
+
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Location for" << absolutePath
+                                      << "is available:" << available
+                                      << "=>" << "case sensitivity:"
+                                      << location->caseSensitivity();
+
+        // set the status depending on "hidden" and "available"
+
+        location->setStatusFromFlags();
+    }
+
+    {
+        QWriteLocker locker(&d->lock);
+        d->locations = newLocations;
     }
 
     // Q_EMIT deleted old locations
@@ -947,13 +951,11 @@ void CollectionManager::updateLocations()
         delete location;
     }
 
-    QReadLocker readLocker(&d->lock);
-
     // Q_EMIT status changes (and new locations)
 
     int i = 0;
 
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, newLocations)
     {
         if (oldStatus.at(i) != location->status())
         {
