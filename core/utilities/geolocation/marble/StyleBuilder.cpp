@@ -1566,158 +1566,158 @@ void StyleBuilder::Private::initializeOsmVisualCategories()
     s_visualCategories[OsmTag(QString::fromUtf8("highway"), QString::fromUtf8("unknown"))]            = GeoDataPlacemark::HighwayUnknown;
     s_visualCategories[OsmTag(QString::fromUtf8("highway"), QString::fromUtf8("corridor"))]           = GeoDataPlacemark::HighwayCorridor;
 
-    s_visualCategories[OsmTag("natural", "bay")]                = GeoDataPlacemark::NaturalWater;
-    s_visualCategories[OsmTag("natural", "coastline")]          = GeoDataPlacemark::NaturalWater;
-    s_visualCategories[OsmTag("natural", "reef")]               = GeoDataPlacemark::NaturalReef;
-    s_visualCategories[OsmTag("natural", "water")]              = GeoDataPlacemark::NaturalWater;
+    s_visualCategories[OsmTag(QString::fromUtf8("natural"), QString::fromUtf8("bay"))]                = GeoDataPlacemark::NaturalWater;
+    s_visualCategories[OsmTag(QString::fromUtf8("natural"), QString::fromUtf8("coastline"))]          = GeoDataPlacemark::NaturalWater;
+    s_visualCategories[OsmTag(QString::fromUtf8("natural"), QString::fromUtf8("reef"))]               = GeoDataPlacemark::NaturalReef;
+    s_visualCategories[OsmTag(QString::fromUtf8("natural"), QString::fromUtf8("water"))]              = GeoDataPlacemark::NaturalWater;
 
-    s_visualCategories[OsmTag("waterway", "canal")]             = GeoDataPlacemark::WaterwayCanal;
-    s_visualCategories[OsmTag("waterway", "ditch")]             = GeoDataPlacemark::WaterwayDitch;
-    s_visualCategories[OsmTag("waterway", "drain")]             = GeoDataPlacemark::WaterwayDrain;
-    s_visualCategories[OsmTag("waterway", "river")]             = GeoDataPlacemark::WaterwayRiver;
-    s_visualCategories[OsmTag("waterway", "riverbank")]         = GeoDataPlacemark::NaturalWater;
-    s_visualCategories[OsmTag("waterway", "weir")]              = GeoDataPlacemark::WaterwayWeir;
-    s_visualCategories[OsmTag("waterway", "stream")]            = GeoDataPlacemark::WaterwayStream;
+    s_visualCategories[OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("canal"))]             = GeoDataPlacemark::WaterwayCanal;
+    s_visualCategories[OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("ditch"))]             = GeoDataPlacemark::WaterwayDitch;
+    s_visualCategories[OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("drain"))]             = GeoDataPlacemark::WaterwayDrain;
+    s_visualCategories[OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("river"))]             = GeoDataPlacemark::WaterwayRiver;
+    s_visualCategories[OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("riverbank"))]         = GeoDataPlacemark::NaturalWater;
+    s_visualCategories[OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("weir"))]              = GeoDataPlacemark::WaterwayWeir;
+    s_visualCategories[OsmTag(QString::fromUtf8("waterway"), QString::fromUtf8("stream"))]            = GeoDataPlacemark::WaterwayStream;
 
-    s_visualCategories[OsmTag("natural", "beach")]              = GeoDataPlacemark::NaturalBeach;
-    s_visualCategories[OsmTag("natural", "cliff")]              = GeoDataPlacemark::NaturalCliff;
-    s_visualCategories[OsmTag("natural", "glacier")]            = GeoDataPlacemark::NaturalGlacier;
-    s_visualCategories[OsmTag("glacier:type", "shelf")]         = GeoDataPlacemark::NaturalIceShelf;
-    s_visualCategories[OsmTag("natural", "scrub")]              = GeoDataPlacemark::NaturalScrub;
-    s_visualCategories[OsmTag("natural", "wetland")]            = GeoDataPlacemark::NaturalWetland;
-    s_visualCategories[OsmTag("natural", "wood")]               = GeoDataPlacemark::NaturalWood;
+    s_visualCategories[OsmTag(QString::fromUtf8("natural"), QString::fromUtf8("beach"))]              = GeoDataPlacemark::NaturalBeach;
+    s_visualCategories[OsmTag(QString::fromUtf8("natural"), QString::fromUtf8("cliff"))]              = GeoDataPlacemark::NaturalCliff;
+    s_visualCategories[OsmTag(QString::fromUtf8("natural"), QString::fromUtf8("glacier"))]            = GeoDataPlacemark::NaturalGlacier;
+    s_visualCategories[OsmTag(QString::fromUtf8("glacier:type"), QString::fromUtf8("shelf"))]         = GeoDataPlacemark::NaturalIceShelf;
+    s_visualCategories[OsmTag(QString::fromUtf8("natural"), QString::fromUtf8("scrub"))]              = GeoDataPlacemark::NaturalScrub;
+    s_visualCategories[OsmTag(QString::fromUtf8("natural"), QString::fromUtf8("wetland"))]            = GeoDataPlacemark::NaturalWetland;
+    s_visualCategories[OsmTag(QString::fromUtf8("natural"), QString::fromUtf8("wood"))]               = GeoDataPlacemark::NaturalWood;
 
-    s_visualCategories[OsmTag("military", "danger_area")]       = GeoDataPlacemark::MilitaryDangerArea;
+    s_visualCategories[OsmTag(QString::fromUtf8("military"), QString::fromUtf8("danger_area"))]       = GeoDataPlacemark::MilitaryDangerArea;
 
-    s_visualCategories[OsmTag("landuse", "allotments")]         = GeoDataPlacemark::LanduseAllotments;
-    s_visualCategories[OsmTag("landuse", "basin")]              = GeoDataPlacemark::LanduseBasin;
-    s_visualCategories[OsmTag("landuse", "brownfield")]         = GeoDataPlacemark::LanduseConstruction;
-    s_visualCategories[OsmTag("landuse", "cemetery")]           = GeoDataPlacemark::LanduseCemetery;
-    s_visualCategories[OsmTag("landuse", "commercial")]         = GeoDataPlacemark::LanduseCommercial;
-    s_visualCategories[OsmTag("landuse", "construction")]       = GeoDataPlacemark::LanduseConstruction;
-    s_visualCategories[OsmTag("landuse", "farm")]               = GeoDataPlacemark::LanduseFarmland;
-    s_visualCategories[OsmTag("landuse", "farmland")]           = GeoDataPlacemark::LanduseFarmland;
-    s_visualCategories[OsmTag("landuse", "farmyard")]           = GeoDataPlacemark::LanduseFarmland;
-    s_visualCategories[OsmTag("landuse", "forest")]             = GeoDataPlacemark::NaturalWood;
-    s_visualCategories[OsmTag("landuse", "garages")]            = GeoDataPlacemark::LanduseGarages;
-    s_visualCategories[OsmTag("landuse", "grass")]              = GeoDataPlacemark::LanduseGrass;
-    s_visualCategories[OsmTag("landuse", "greenfield")]         = GeoDataPlacemark::LanduseConstruction;
-    s_visualCategories[OsmTag("landuse", "greenhouse_horticulture")] = GeoDataPlacemark::LanduseFarmland;
-    s_visualCategories[OsmTag("landuse", "industrial")]         = GeoDataPlacemark::LanduseIndustrial;
-    s_visualCategories[OsmTag("landuse", "landfill")]           = GeoDataPlacemark::LanduseLandfill;
-    s_visualCategories[OsmTag("landuse", "meadow")]             = GeoDataPlacemark::LanduseMeadow;
-    s_visualCategories[OsmTag("landuse", "military")]           = GeoDataPlacemark::LanduseMilitary;
-    s_visualCategories[OsmTag("landuse", "orchard")]            = GeoDataPlacemark::LanduseFarmland;
-    s_visualCategories[OsmTag("landuse", "orchard")]            = GeoDataPlacemark::LanduseOrchard;
-    s_visualCategories[OsmTag("landuse", "quarry")]             = GeoDataPlacemark::LanduseQuarry;
-    s_visualCategories[OsmTag("landuse", "railway")]            = GeoDataPlacemark::LanduseRailway;
-    s_visualCategories[OsmTag("landuse", "recreation_ground")]  = GeoDataPlacemark::LeisurePark;
-    s_visualCategories[OsmTag("landuse", "reservoir")]          = GeoDataPlacemark::LanduseReservoir;
-    s_visualCategories[OsmTag("landuse", "residential")]        = GeoDataPlacemark::LanduseResidential;
-    s_visualCategories[OsmTag("landuse", "retail")]             = GeoDataPlacemark::LanduseRetail;
-    s_visualCategories[OsmTag("landuse", "village_green")]      = GeoDataPlacemark::LanduseGrass;
-    s_visualCategories[OsmTag("landuse", "vineyard")]           = GeoDataPlacemark::LanduseVineyard;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("allotments"))]         = GeoDataPlacemark::LanduseAllotments;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("basin"))]              = GeoDataPlacemark::LanduseBasin;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("brownfield"))]         = GeoDataPlacemark::LanduseConstruction;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("cemetery"))]           = GeoDataPlacemark::LanduseCemetery;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("commercial"))]         = GeoDataPlacemark::LanduseCommercial;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("construction"))]       = GeoDataPlacemark::LanduseConstruction;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("farm"))]               = GeoDataPlacemark::LanduseFarmland;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("farmland"))]           = GeoDataPlacemark::LanduseFarmland;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("farmyard"))]           = GeoDataPlacemark::LanduseFarmland;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("forest"))]             = GeoDataPlacemark::NaturalWood;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("garages"))]            = GeoDataPlacemark::LanduseGarages;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("grass"))]              = GeoDataPlacemark::LanduseGrass;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("greenfield"))]         = GeoDataPlacemark::LanduseConstruction;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("greenhouse_horticulture"))] = GeoDataPlacemark::LanduseFarmland;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("industrial"))]         = GeoDataPlacemark::LanduseIndustrial;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("landfill"))]           = GeoDataPlacemark::LanduseLandfill;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("meadow"))]             = GeoDataPlacemark::LanduseMeadow;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("military"))]           = GeoDataPlacemark::LanduseMilitary;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("orchard"))]            = GeoDataPlacemark::LanduseFarmland;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("orchard"))]            = GeoDataPlacemark::LanduseOrchard;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("quarry"))]             = GeoDataPlacemark::LanduseQuarry;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("railway"))]            = GeoDataPlacemark::LanduseRailway;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("recreation_ground"))]  = GeoDataPlacemark::LeisurePark;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("reservoir"))]          = GeoDataPlacemark::LanduseReservoir;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("residential"))]        = GeoDataPlacemark::LanduseResidential;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("retail"))]             = GeoDataPlacemark::LanduseRetail;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("village_green"))]      = GeoDataPlacemark::LanduseGrass;
+    s_visualCategories[OsmTag(QString::fromUtf8("landuse"), QString::fromUtf8("vineyard"))]           = GeoDataPlacemark::LanduseVineyard;
 
-    s_visualCategories[OsmTag("leisure", "common")]             = GeoDataPlacemark::LanduseGrass;
-    s_visualCategories[OsmTag("leisure", "garden")]             = GeoDataPlacemark::LanduseGrass;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("common"))]             = GeoDataPlacemark::LanduseGrass;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("garden"))]             = GeoDataPlacemark::LanduseGrass;
 
-    s_visualCategories[OsmTag("leisure", "golf_course")]        = GeoDataPlacemark::LeisureGolfCourse;
-    s_visualCategories[OsmTag("leisure", "marina")]             = GeoDataPlacemark::LeisureMarina;
-    s_visualCategories[OsmTag("leisure", "miniature_golf")]     = GeoDataPlacemark::LeisureMinigolfCourse;
-    s_visualCategories[OsmTag("leisure", "park")]               = GeoDataPlacemark::LeisurePark;
-    s_visualCategories[OsmTag("leisure", "pitch")]              = GeoDataPlacemark::LeisurePitch;
-    s_visualCategories[OsmTag("leisure", "playground")]         = GeoDataPlacemark::LeisurePlayground;
-    s_visualCategories[OsmTag("leisure", "sports_centre")]      = GeoDataPlacemark::LeisureSportsCentre;
-    s_visualCategories[OsmTag("leisure", "stadium")]            = GeoDataPlacemark::LeisureStadium;
-    s_visualCategories[OsmTag("leisure", "swimming_pool")]      = GeoDataPlacemark::LeisureSwimmingPool;
-    s_visualCategories[OsmTag("leisure", "track")]              = GeoDataPlacemark::LeisureTrack;
-    s_visualCategories[OsmTag("leisure", "water_park")]         = GeoDataPlacemark::LeisureWaterPark;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("golf_course"))]        = GeoDataPlacemark::LeisureGolfCourse;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("marina"))]             = GeoDataPlacemark::LeisureMarina;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("miniature_golf"))]     = GeoDataPlacemark::LeisureMinigolfCourse;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("park"))]               = GeoDataPlacemark::LeisurePark;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("pitch"))]              = GeoDataPlacemark::LeisurePitch;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("playground"))]         = GeoDataPlacemark::LeisurePlayground;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("sports_centre"))]      = GeoDataPlacemark::LeisureSportsCentre;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("stadium"))]            = GeoDataPlacemark::LeisureStadium;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("swimming_pool"))]      = GeoDataPlacemark::LeisureSwimmingPool;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("track"))]              = GeoDataPlacemark::LeisureTrack;
+    s_visualCategories[OsmTag(QString::fromUtf8("leisure"), QString::fromUtf8("water_park"))]         = GeoDataPlacemark::LeisureWaterPark;
 
-    s_visualCategories[OsmTag("railway", "abandoned")]          = GeoDataPlacemark::RailwayAbandoned;
-    s_visualCategories[OsmTag("railway", "construction")]       = GeoDataPlacemark::RailwayConstruction;
-    s_visualCategories[OsmTag("railway", "disused")]            = GeoDataPlacemark::RailwayAbandoned;
-    s_visualCategories[OsmTag("railway", "funicular")]          = GeoDataPlacemark::RailwayFunicular;
-    s_visualCategories[OsmTag("railway", "halt")]               = GeoDataPlacemark::TransportTrainStation;
-    s_visualCategories[OsmTag("railway", "light_rail")]         = GeoDataPlacemark::RailwayLightRail;
-    s_visualCategories[OsmTag("railway", "miniature")]          = GeoDataPlacemark::RailwayMiniature;
-    s_visualCategories[OsmTag("railway", "monorail")]           = GeoDataPlacemark::RailwayMonorail;
-    s_visualCategories[OsmTag("railway", "narrow_gauge")]       = GeoDataPlacemark::RailwayNarrowGauge;
-    s_visualCategories[OsmTag("railway", "platform")]           = GeoDataPlacemark::TransportPlatform;
-    s_visualCategories[OsmTag("railway", "preserved")]          = GeoDataPlacemark::RailwayPreserved;
-    s_visualCategories[OsmTag("railway", "rail")]               = GeoDataPlacemark::RailwayRail;
-    s_visualCategories[OsmTag("railway", "razed")]              = GeoDataPlacemark::RailwayAbandoned;
-    s_visualCategories[OsmTag("railway", "station")]            = GeoDataPlacemark::TransportTrainStation;
-    s_visualCategories[OsmTag("public_transport", "station")]   = GeoDataPlacemark::TransportTrainStation;
-    s_visualCategories[OsmTag("railway", "subway")]             = GeoDataPlacemark::RailwaySubway;
-    s_visualCategories[OsmTag("railway", "tram")]               = GeoDataPlacemark::RailwayTram;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("abandoned"))]          = GeoDataPlacemark::RailwayAbandoned;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("construction"))]       = GeoDataPlacemark::RailwayConstruction;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("disused"))]            = GeoDataPlacemark::RailwayAbandoned;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("funicular"))]          = GeoDataPlacemark::RailwayFunicular;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("halt"))]               = GeoDataPlacemark::TransportTrainStation;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("light_rail"))]         = GeoDataPlacemark::RailwayLightRail;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("miniature"))]          = GeoDataPlacemark::RailwayMiniature;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("monorail"))]           = GeoDataPlacemark::RailwayMonorail;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("narrow_gauge"))]       = GeoDataPlacemark::RailwayNarrowGauge;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("platform"))]           = GeoDataPlacemark::TransportPlatform;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("preserved"))]          = GeoDataPlacemark::RailwayPreserved;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("rail"))]               = GeoDataPlacemark::RailwayRail;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("razed"))]              = GeoDataPlacemark::RailwayAbandoned;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("station"))]            = GeoDataPlacemark::TransportTrainStation;
+    s_visualCategories[OsmTag(QString::fromUtf8("public_transport"), QString::fromUtf8("station"))]   = GeoDataPlacemark::TransportTrainStation;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("subway"))]             = GeoDataPlacemark::RailwaySubway;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("tram"))]               = GeoDataPlacemark::RailwayTram;
 
-    s_visualCategories[OsmTag("power", "tower")]                = GeoDataPlacemark::PowerTower;
+    s_visualCategories[OsmTag(QString::fromUtf8("power"), QString::fromUtf8("tower"))]                = GeoDataPlacemark::PowerTower;
 
-    s_visualCategories[OsmTag("aeroway", "aerodrome")]          = GeoDataPlacemark::TransportAerodrome;
-    s_visualCategories[OsmTag("aeroway", "apron")]              = GeoDataPlacemark::TransportAirportApron;
-    s_visualCategories[OsmTag("aeroway", "gate")]               = GeoDataPlacemark::TransportAirportGate;
-    s_visualCategories[OsmTag("aeroway", "helipad")]            = GeoDataPlacemark::TransportHelipad;
-    s_visualCategories[OsmTag("aeroway", "runway")]             = GeoDataPlacemark::TransportAirportRunway;
-    s_visualCategories[OsmTag("aeroway", "taxiway")]            = GeoDataPlacemark::TransportAirportTaxiway;
-    s_visualCategories[OsmTag("aeroway", "terminal")]           = GeoDataPlacemark::TransportAirportTerminal;
+    s_visualCategories[OsmTag(QString::fromUtf8("aeroway"), QString::fromUtf8("aerodrome"))]          = GeoDataPlacemark::TransportAerodrome;
+    s_visualCategories[OsmTag(QString::fromUtf8("aeroway"), QString::fromUtf8("apron"))]              = GeoDataPlacemark::TransportAirportApron;
+    s_visualCategories[OsmTag(QString::fromUtf8("aeroway"), QString::fromUtf8("gate"))]               = GeoDataPlacemark::TransportAirportGate;
+    s_visualCategories[OsmTag(QString::fromUtf8("aeroway"), QString::fromUtf8("helipad"))]            = GeoDataPlacemark::TransportHelipad;
+    s_visualCategories[OsmTag(QString::fromUtf8("aeroway"), QString::fromUtf8("runway"))]             = GeoDataPlacemark::TransportAirportRunway;
+    s_visualCategories[OsmTag(QString::fromUtf8("aeroway"), QString::fromUtf8("taxiway"))]            = GeoDataPlacemark::TransportAirportTaxiway;
+    s_visualCategories[OsmTag(QString::fromUtf8("aeroway"), QString::fromUtf8("terminal"))]           = GeoDataPlacemark::TransportAirportTerminal;
 
-    s_visualCategories[OsmTag("piste:type", "downhill")]        = GeoDataPlacemark::PisteDownhill;
-    s_visualCategories[OsmTag("piste:type", "nordic")]          = GeoDataPlacemark::PisteNordic;
-    s_visualCategories[OsmTag("piste:type", "skitour")]         = GeoDataPlacemark::PisteSkitour;
-    s_visualCategories[OsmTag("piste:type", "sled")]            = GeoDataPlacemark::PisteSled;
-    s_visualCategories[OsmTag("piste:type", "hike")]            = GeoDataPlacemark::PisteHike;
-    s_visualCategories[OsmTag("piste:type", "sleigh")]          = GeoDataPlacemark::PisteSleigh;
-    s_visualCategories[OsmTag("piste:type", "ice_skate")]       = GeoDataPlacemark::PisteIceSkate;
-    s_visualCategories[OsmTag("piste:type", "snow_park")]       = GeoDataPlacemark::PisteSnowPark;
-    s_visualCategories[OsmTag("piste:type", "playground")]      = GeoDataPlacemark::PistePlayground;
-    s_visualCategories[OsmTag("piste:type", "ski_jump")]        = GeoDataPlacemark::PisteSkiJump;
+    s_visualCategories[OsmTag(QString::fromUtf8("piste:type"), QString::fromUtf8("downhill"))]        = GeoDataPlacemark::PisteDownhill;
+    s_visualCategories[OsmTag(QString::fromUtf8("piste:type"), QString::fromUtf8("nordic"))]          = GeoDataPlacemark::PisteNordic;
+    s_visualCategories[OsmTag(QString::fromUtf8("piste:type"), QString::fromUtf8("skitour"))]         = GeoDataPlacemark::PisteSkitour;
+    s_visualCategories[OsmTag(QString::fromUtf8("piste:type"), QString::fromUtf8("sled"))]            = GeoDataPlacemark::PisteSled;
+    s_visualCategories[OsmTag(QString::fromUtf8("piste:type"), QString::fromUtf8("hike"))]            = GeoDataPlacemark::PisteHike;
+    s_visualCategories[OsmTag(QString::fromUtf8("piste:type"), QString::fromUtf8("sleigh"))]          = GeoDataPlacemark::PisteSleigh;
+    s_visualCategories[OsmTag(QString::fromUtf8("piste:type"), QString::fromUtf8("ice_skate"))]       = GeoDataPlacemark::PisteIceSkate;
+    s_visualCategories[OsmTag(QString::fromUtf8("piste:type"), QString::fromUtf8("snow_park"))]       = GeoDataPlacemark::PisteSnowPark;
+    s_visualCategories[OsmTag(QString::fromUtf8("piste:type"), QString::fromUtf8("playground"))]      = GeoDataPlacemark::PistePlayground;
+    s_visualCategories[OsmTag(QString::fromUtf8("piste:type"), QString::fromUtf8("ski_jump"))]        = GeoDataPlacemark::PisteSkiJump;
 
-    s_visualCategories[OsmTag("amenity", "bicycle_parking")]    = GeoDataPlacemark::TransportBicycleParking;
-    s_visualCategories[OsmTag("amenity", "bicycle_rental")]     = GeoDataPlacemark::TransportRentalBicycle;
-    s_visualCategories[OsmTag("rental", "bicycle")]             = GeoDataPlacemark::TransportRentalBicycle;
-    s_visualCategories[OsmTag("amenity", "car_rental")]         = GeoDataPlacemark::TransportRentalCar;
-    s_visualCategories[OsmTag("rental", "car")]                 = GeoDataPlacemark::TransportRentalCar;
-    s_visualCategories[OsmTag("amenity", "ski_rental")]         = GeoDataPlacemark::TransportRentalSki;
-    s_visualCategories[OsmTag("rental", "ski")]                 = GeoDataPlacemark::TransportRentalSki;
-    s_visualCategories[OsmTag("amenity", "motorcycle_parking")] = GeoDataPlacemark::TransportMotorcycleParking;
-    s_visualCategories[OsmTag("amenity", "taxi")]               = GeoDataPlacemark::TransportTaxiRank;
-    s_visualCategories[OsmTag("highway", "bus_stop")]           = GeoDataPlacemark::TransportBusStop;
-    s_visualCategories[OsmTag("highway", "speed_camera")]       = GeoDataPlacemark::TransportSpeedCamera;
-    s_visualCategories[OsmTag("public_transport", "platform")]  = GeoDataPlacemark::TransportPlatform;
-    s_visualCategories[OsmTag("railway", "subway_entrance")]    = GeoDataPlacemark::TransportSubwayEntrance;
-    s_visualCategories[OsmTag("railway", "tram_stop")]          = GeoDataPlacemark::TransportTramStop;
+    s_visualCategories[OsmTag(QString::fromUtf8("amenity"), QString::fromUtf8("bicycle_parking"))]    = GeoDataPlacemark::TransportBicycleParking;
+    s_visualCategories[OsmTag(QString::fromUtf8("amenity"), QString::fromUtf8("bicycle_rental"))]     = GeoDataPlacemark::TransportRentalBicycle;
+    s_visualCategories[OsmTag(QString::fromUtf8("rental"), QString::fromUtf8("bicycle"))]             = GeoDataPlacemark::TransportRentalBicycle;
+    s_visualCategories[OsmTag(QString::fromUtf8("amenity"), QString::fromUtf8("car_rental"))]         = GeoDataPlacemark::TransportRentalCar;
+    s_visualCategories[OsmTag(QString::fromUtf8("rental"), QString::fromUtf8("car"))]                 = GeoDataPlacemark::TransportRentalCar;
+    s_visualCategories[OsmTag(QString::fromUtf8("amenity"), QString::fromUtf8("ski_rental"))]         = GeoDataPlacemark::TransportRentalSki;
+    s_visualCategories[OsmTag(QString::fromUtf8("rental"), QString::fromUtf8("ski"))]                 = GeoDataPlacemark::TransportRentalSki;
+    s_visualCategories[OsmTag(QString::fromUtf8("amenity"), QString::fromUtf8("motorcycle_parking"))] = GeoDataPlacemark::TransportMotorcycleParking;
+    s_visualCategories[OsmTag(QString::fromUtf8("amenity"), QString::fromUtf8("taxi"))]               = GeoDataPlacemark::TransportTaxiRank;
+    s_visualCategories[OsmTag(QString::fromUtf8("highway"), QString::fromUtf8("bus_stop"))]           = GeoDataPlacemark::TransportBusStop;
+    s_visualCategories[OsmTag(QString::fromUtf8("highway"), QString::fromUtf8("speed_camera"))]       = GeoDataPlacemark::TransportSpeedCamera;
+    s_visualCategories[OsmTag(QString::fromUtf8("public_transport"), QString::fromUtf8("platform"))]  = GeoDataPlacemark::TransportPlatform;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("subway_entrance"))]    = GeoDataPlacemark::TransportSubwayEntrance;
+    s_visualCategories[OsmTag(QString::fromUtf8("railway"), QString::fromUtf8("tram_stop"))]          = GeoDataPlacemark::TransportTramStop;
 
-    s_visualCategories[OsmTag("place", "city")]                 = GeoDataPlacemark::PlaceCity;
-    s_visualCategories[OsmTag("place", "hamlet")]               = GeoDataPlacemark::PlaceHamlet;
-    s_visualCategories[OsmTag("place", "locality")]             = GeoDataPlacemark::PlaceLocality;
-    s_visualCategories[OsmTag("place", "suburb")]               = GeoDataPlacemark::PlaceSuburb;
-    s_visualCategories[OsmTag("place", "town")]                 = GeoDataPlacemark::PlaceTown;
-    s_visualCategories[OsmTag("place", "village")]              = GeoDataPlacemark::PlaceVillage;
+    s_visualCategories[OsmTag(QString::fromUtf8("place"), QString::fromUtf8("city"))]                 = GeoDataPlacemark::PlaceCity;
+    s_visualCategories[OsmTag(QString::fromUtf8("place"), QString::fromUtf8("hamlet"))]               = GeoDataPlacemark::PlaceHamlet;
+    s_visualCategories[OsmTag(QString::fromUtf8("place"), QString::fromUtf8("locality"))]             = GeoDataPlacemark::PlaceLocality;
+    s_visualCategories[OsmTag(QString::fromUtf8("place"), QString::fromUtf8("suburb"))]               = GeoDataPlacemark::PlaceSuburb;
+    s_visualCategories[OsmTag(QString::fromUtf8("place"), QString::fromUtf8("town"))]                 = GeoDataPlacemark::PlaceTown;
+    s_visualCategories[OsmTag(QString::fromUtf8("place"), QString::fromUtf8("village"))]              = GeoDataPlacemark::PlaceVillage;
 
-    s_visualCategories[OsmTag("aerialway", "station")]          = GeoDataPlacemark::AerialwayStation;
-    s_visualCategories[OsmTag("aerialway", "pylon")]            = GeoDataPlacemark::AerialwayPylon;
-    s_visualCategories[OsmTag("aerialway", "cable_car")]        = GeoDataPlacemark::AerialwayCableCar;
-    s_visualCategories[OsmTag("aerialway", "gondola")]          = GeoDataPlacemark::AerialwayGondola;
-    s_visualCategories[OsmTag("aerialway", "chair_lift")]       = GeoDataPlacemark::AerialwayChairLift;
-    s_visualCategories[OsmTag("aerialway", "mixed_lift")]       = GeoDataPlacemark::AerialwayMixedLift;
-    s_visualCategories[OsmTag("aerialway", "drag_lift")]        = GeoDataPlacemark::AerialwayDragLift;
-    s_visualCategories[OsmTag("aerialway", "t-bar")]            = GeoDataPlacemark::AerialwayTBar;
-    s_visualCategories[OsmTag("aerialway", "j-bar")]            = GeoDataPlacemark::AerialwayJBar;
-    s_visualCategories[OsmTag("aerialway", "platter")]          = GeoDataPlacemark::AerialwayPlatter;
-    s_visualCategories[OsmTag("aerialway", "rope_tow")]         = GeoDataPlacemark::AerialwayRopeTow;
-    s_visualCategories[OsmTag("aerialway", "magic_carpet")]     = GeoDataPlacemark::AerialwayMagicCarpet;
-    s_visualCategories[OsmTag("aerialway", "zip_line")]         = GeoDataPlacemark::AerialwayZipLine;
-    s_visualCategories[OsmTag("aerialway", "goods")]            = GeoDataPlacemark::AerialwayGoods;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("station"))]          = GeoDataPlacemark::AerialwayStation;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("pylon"))]            = GeoDataPlacemark::AerialwayPylon;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("cable_car"))]        = GeoDataPlacemark::AerialwayCableCar;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("gondola"))]          = GeoDataPlacemark::AerialwayGondola;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("chair_lift"))]       = GeoDataPlacemark::AerialwayChairLift;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("mixed_lift"))]       = GeoDataPlacemark::AerialwayMixedLift;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("drag_lift"))]        = GeoDataPlacemark::AerialwayDragLift;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("t-bar"))]            = GeoDataPlacemark::AerialwayTBar;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("j-bar"))]            = GeoDataPlacemark::AerialwayJBar;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("platter"))]          = GeoDataPlacemark::AerialwayPlatter;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("rope_tow"))]         = GeoDataPlacemark::AerialwayRopeTow;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("magic_carpet"))]     = GeoDataPlacemark::AerialwayMagicCarpet;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("zip_line"))]         = GeoDataPlacemark::AerialwayZipLine;
+    s_visualCategories[OsmTag(QString::fromUtf8("aerialway"), QString::fromUtf8("goods"))]            = GeoDataPlacemark::AerialwayGoods;
 
-    s_visualCategories[OsmTag("indoor", "door")]                = GeoDataPlacemark::IndoorDoor;
-    s_visualCategories[OsmTag("indoor", "wall")]                = GeoDataPlacemark::IndoorWall;
-    s_visualCategories[OsmTag("indoor", "room")]                = GeoDataPlacemark::IndoorRoom;
+    s_visualCategories[OsmTag(QString::fromUtf8("indoor"), QString::fromUtf8("door"))]                = GeoDataPlacemark::IndoorDoor;
+    s_visualCategories[OsmTag(QString::fromUtf8("indoor"), QString::fromUtf8("wall"))]                = GeoDataPlacemark::IndoorWall;
+    s_visualCategories[OsmTag(QString::fromUtf8("indoor"), QString::fromUtf8("room"))]                = GeoDataPlacemark::IndoorRoom;
 
     //Custom Marble OSM Tags
-    s_visualCategories[OsmTag("marble_land", "landmass")]       = GeoDataPlacemark::Landmass;
-    s_visualCategories[OsmTag("settlement", "yes")]             = GeoDataPlacemark::UrbanArea;
-    s_visualCategories[OsmTag("marble_line", "date")]           = GeoDataPlacemark::InternationalDateLine;
-    s_visualCategories[OsmTag("marble:feature", "bathymetry")]  = GeoDataPlacemark::Bathymetry;
+    s_visualCategories[OsmTag(QString::fromUtf8("marble_land"), QString::fromUtf8("landmass"))]       = GeoDataPlacemark::Landmass;
+    s_visualCategories[OsmTag(QString::fromUtf8("settlement"), QString::fromUtf8("yes"))]             = GeoDataPlacemark::UrbanArea;
+    s_visualCategories[OsmTag(QString::fromUtf8("marble_line"), QString::fromUtf8("date"))]           = GeoDataPlacemark::InternationalDateLine;
+    s_visualCategories[OsmTag(QString::fromUtf8("marble:feature"), QString::fromUtf8("bathymetry"))]  = GeoDataPlacemark::Bathymetry;
 
     // Default for buildings
     for (const auto &tag: buildingTags()) {
@@ -2116,128 +2116,128 @@ QStringList StyleBuilder::renderOrder() const
     static QStringList paintLayerOrder;
 
     if (paintLayerOrder.isEmpty()) {
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::Landmass);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::UrbanArea);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseResidential);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseAllotments);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseBasin);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseCemetery);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseCommercial);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseConstruction);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseFarmland);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseFarmyard);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseGarages);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseIndustrial);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseLandfill);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseMeadow);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseMilitary);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseQuarry);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseRailway);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseReservoir);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseRetail);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseOrchard);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseVineyard);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::Landmass);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::UrbanArea);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseResidential);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseAllotments);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseBasin);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseCemetery);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseCommercial);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseConstruction);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseFarmland);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseFarmyard);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseGarages);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseIndustrial);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseLandfill);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseMeadow);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseMilitary);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseQuarry);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseRailway);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseReservoir);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseRetail);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseOrchard);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseVineyard);
 
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::Bathymetry);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LeisureGolfCourse);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LeisureMinigolfCourse);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::NaturalBeach);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::NaturalWetland);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::NaturalGlacier);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::NaturalIceShelf);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::NaturalVolcano);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::NaturalCliff);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::NaturalPeak);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::MilitaryDangerArea);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LeisurePark);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LeisurePitch);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LeisureSportsCentre);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LeisureStadium);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::NaturalWood);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LanduseGrass);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::HighwayPedestrian);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LeisurePlayground);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::NaturalScrub);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LeisureTrack);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::TransportParking);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::TransportParkingSpace);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::ManmadeBridge);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::BarrierCityWall);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::Bathymetry);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LeisureGolfCourse);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LeisureMinigolfCourse);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::NaturalBeach);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::NaturalWetland);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::NaturalGlacier);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::NaturalIceShelf);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::NaturalVolcano);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::NaturalCliff);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::NaturalPeak);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::MilitaryDangerArea);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LeisurePark);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LeisurePitch);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LeisureSportsCentre);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LeisureStadium);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::NaturalWood);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseGrass);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::HighwayPedestrian);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LeisurePlayground);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::NaturalScrub);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LeisureTrack);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::TransportParking);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::TransportParkingSpace);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::ManmadeBridge);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::BarrierCityWall);
 
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::AmenityGraveyard);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::AmenityGraveyard);
 
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::AmenityKindergarten);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::EducationCollege);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::EducationSchool);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::EducationUniversity);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::HealthHospital);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LeisureSwimmingPool);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::AmenityKindergarten);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::EducationCollege);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::EducationSchool);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::EducationUniversity);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::HealthHospital);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LeisureSwimmingPool);
 
-        paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::Landmass);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::Landmass);
 
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::NaturalWater);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::NaturalWater);
         for (int i = GeoDataPlacemark::WaterwayCanal; i <= GeoDataPlacemark::WaterwayStream; ++i) {
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "outline");
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "inline");
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "label");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
         }
 
-        paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::NaturalReef, "outline");
-        paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::NaturalReef, "inline");
-        paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::NaturalReef, "label");
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::LeisureMarina);
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::ManmadePier);
-        paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::ManmadePier, "outline");
-        paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::ManmadePier, "inline");
-        paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::ManmadePier, "label");
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::NaturalReef, QString::fromUtf8("outline"));
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::NaturalReef, QString::fromUtf8("inline"));
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::NaturalReef, QString::fromUtf8("label"));
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LeisureMarina);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::ManmadePier);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::ManmadePier, QString::fromUtf8("outline"));
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::ManmadePier, QString::fromUtf8("inline"));
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::ManmadePier, QString::fromUtf8("label"));
 
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::TransportAirportApron);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::TransportAirportApron);
 
         for (int i = GeoDataPlacemark::HighwaySteps; i <= GeoDataPlacemark::HighwayMotorway; i++) {
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "outline");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
         }
         for (int i = GeoDataPlacemark::HighwaySteps; i <= GeoDataPlacemark::HighwayMotorway; i++) {
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "inline");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
         }
         for (int i = GeoDataPlacemark::RailwayRail; i <= GeoDataPlacemark::RailwayFunicular; i++) {
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "outline");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
         }
         for (int i = GeoDataPlacemark::RailwayRail; i <= GeoDataPlacemark::RailwayFunicular; i++) {
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "inline");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
         }
         // Highway labels shall appear on top of railways, hence here and not already above
         for (int i = GeoDataPlacemark::HighwaySteps; i <= GeoDataPlacemark::HighwayMotorway; i++) {
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "label");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
         }
         for (int i = GeoDataPlacemark::RailwayRail; i <= GeoDataPlacemark::RailwayFunicular; i++) {
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "label");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
         }
 
-        paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::TransportPlatform);
-        paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::TransportPlatform, "outline");
-        paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::TransportPlatform, "inline");
-        paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::TransportPlatform, "label");
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::TransportPlatform);
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::TransportPlatform, QString::fromUtf8("outline"));
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::TransportPlatform, QString::fromUtf8("inline"));
+        paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::TransportPlatform, QString::fromUtf8("label"));
 
         for (int i = GeoDataPlacemark::PisteDownhill; i <= GeoDataPlacemark::PisteSkiJump; ++i) {
-            paintLayerOrder << Private::createPaintLayerItem("Polygon", GeoDataPlacemark::GeoDataVisualCategory(i));
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "outline");
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "inline");
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "label");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::GeoDataVisualCategory(i));
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
         }
         for (int i = GeoDataPlacemark::AerialwayCableCar; i <= GeoDataPlacemark::AerialwayGoods; ++i) {
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "outline");
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "inline");
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "label");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
         }
 
         for (int i = GeoDataPlacemark::AdminLevel1; i <= GeoDataPlacemark::AdminLevel11; i++) {
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "outline");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
         }
         for (int i = GeoDataPlacemark::AdminLevel1; i <= GeoDataPlacemark::AdminLevel11; i++) {
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "inline");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
         }
         for (int i = GeoDataPlacemark::AdminLevel1; i <= GeoDataPlacemark::AdminLevel11; i++) {
-            paintLayerOrder << Private::createPaintLayerItem("LineString", GeoDataPlacemark::GeoDataVisualCategory(i), "label");
+            paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
         }
 
         paintLayerOrder << QStringLiteral("Polygon/Building/frame");
@@ -2494,363 +2494,363 @@ QString StyleBuilder::visualCategoryName(GeoDataPlacemark::GeoDataVisualCategory
     static QHash<GeoDataPlacemark::GeoDataVisualCategory, QString> visualCategoryNames;
 
     if (visualCategoryNames.isEmpty()) {
-        visualCategoryNames[GeoDataPlacemark::None] = "None";
-        visualCategoryNames[GeoDataPlacemark::Default] = "Default";
-        visualCategoryNames[GeoDataPlacemark::Unknown] = "Unknown";
-        visualCategoryNames[GeoDataPlacemark::SmallCity] = "SmallCity";
-        visualCategoryNames[GeoDataPlacemark::SmallCountyCapital] = "SmallCountyCapital";
-        visualCategoryNames[GeoDataPlacemark::SmallStateCapital] = "SmallStateCapital";
-        visualCategoryNames[GeoDataPlacemark::SmallNationCapital] = "SmallNationCapital";
-        visualCategoryNames[GeoDataPlacemark::MediumCity] = "MediumCity";
-        visualCategoryNames[GeoDataPlacemark::MediumCountyCapital] = "MediumCountyCapital";
-        visualCategoryNames[GeoDataPlacemark::MediumStateCapital] = "MediumStateCapital";
-        visualCategoryNames[GeoDataPlacemark::MediumNationCapital] = "MediumNationCapital";
-        visualCategoryNames[GeoDataPlacemark::BigCity] = "BigCity";
-        visualCategoryNames[GeoDataPlacemark::BigCountyCapital] = "BigCountyCapital";
-        visualCategoryNames[GeoDataPlacemark::BigStateCapital] = "BigStateCapital";
-        visualCategoryNames[GeoDataPlacemark::BigNationCapital] = "BigNationCapital";
-        visualCategoryNames[GeoDataPlacemark::LargeCity] = "LargeCity";
-        visualCategoryNames[GeoDataPlacemark::LargeCountyCapital] = "LargeCountyCapital";
-        visualCategoryNames[GeoDataPlacemark::LargeStateCapital] = "LargeStateCapital";
-        visualCategoryNames[GeoDataPlacemark::LargeNationCapital] = "LargeNationCapital";
-        visualCategoryNames[GeoDataPlacemark::Nation] = "Nation";
-        visualCategoryNames[GeoDataPlacemark::PlaceCity] = "PlaceCity";
-        visualCategoryNames[GeoDataPlacemark::PlaceCityCapital] = "PlaceCityCapital";
-        visualCategoryNames[GeoDataPlacemark::PlaceCityNationalCapital] = "PlaceCityNationalCapital";
-        visualCategoryNames[GeoDataPlacemark::PlaceSuburb] = "PlaceSuburb";
-        visualCategoryNames[GeoDataPlacemark::PlaceHamlet] = "PlaceHamlet";
-        visualCategoryNames[GeoDataPlacemark::PlaceLocality] = "PlaceLocality";
-        visualCategoryNames[GeoDataPlacemark::PlaceTown] = "PlaceTown";
-        visualCategoryNames[GeoDataPlacemark::PlaceTownCapital] = "PlaceTownCapital";
-        visualCategoryNames[GeoDataPlacemark::PlaceTownNationalCapital] = "PlaceTownNationalCapital";
-        visualCategoryNames[GeoDataPlacemark::PlaceVillage] = "PlaceVillage";
-        visualCategoryNames[GeoDataPlacemark::PlaceVillageCapital] = "PlaceVillageCapital";
-        visualCategoryNames[GeoDataPlacemark::PlaceVillageNationalCapital] = "PlaceVillageNationalCapital";
-        visualCategoryNames[GeoDataPlacemark::Mountain] = "Mountain";
-        visualCategoryNames[GeoDataPlacemark::Volcano] = "Volcano";
-        visualCategoryNames[GeoDataPlacemark::Mons] = "Mons";
-        visualCategoryNames[GeoDataPlacemark::Valley] = "Valley";
-        visualCategoryNames[GeoDataPlacemark::Continent] = "Continent";
-        visualCategoryNames[GeoDataPlacemark::Ocean] = "Ocean";
-        visualCategoryNames[GeoDataPlacemark::OtherTerrain] = "OtherTerrain";
-        visualCategoryNames[GeoDataPlacemark::Crater] = "Crater";
-        visualCategoryNames[GeoDataPlacemark::Mare] = "Mare";
-        visualCategoryNames[GeoDataPlacemark::GeographicPole] = "GeographicPole";
-        visualCategoryNames[GeoDataPlacemark::MagneticPole] = "MagneticPole";
-        visualCategoryNames[GeoDataPlacemark::ShipWreck] = "ShipWreck";
-        visualCategoryNames[GeoDataPlacemark::AirPort] = "AirPort";
-        visualCategoryNames[GeoDataPlacemark::Observatory] = "Observatory";
-        visualCategoryNames[GeoDataPlacemark::MilitaryDangerArea] = "MilitaryDangerArea";
-        visualCategoryNames[GeoDataPlacemark::OsmSite] = "OsmSite";
-        visualCategoryNames[GeoDataPlacemark::Coordinate] = "Coordinate";
-        visualCategoryNames[GeoDataPlacemark::MannedLandingSite] = "MannedLandingSite";
-        visualCategoryNames[GeoDataPlacemark::RoboticRover] = "RoboticRover";
-        visualCategoryNames[GeoDataPlacemark::UnmannedSoftLandingSite] = "UnmannedSoftLandingSite";
-        visualCategoryNames[GeoDataPlacemark::UnmannedHardLandingSite] = "UnmannedHardLandingSite";
-        visualCategoryNames[GeoDataPlacemark::Bookmark] = "Bookmark";
-        visualCategoryNames[GeoDataPlacemark::NaturalWater] = "NaturalWater";
-        visualCategoryNames[GeoDataPlacemark::NaturalReef] = "NaturalReef";
-        visualCategoryNames[GeoDataPlacemark::NaturalWood] = "NaturalWood";
-        visualCategoryNames[GeoDataPlacemark::NaturalBeach] = "NaturalBeach";
-        visualCategoryNames[GeoDataPlacemark::NaturalWetland] = "NaturalWetland";
-        visualCategoryNames[GeoDataPlacemark::NaturalGlacier] = "NaturalGlacier";
-        visualCategoryNames[GeoDataPlacemark::NaturalIceShelf] = "NaturalIceShelf";
-        visualCategoryNames[GeoDataPlacemark::NaturalScrub] = "NaturalScrub";
-        visualCategoryNames[GeoDataPlacemark::NaturalCliff] = "NaturalCliff";
-        visualCategoryNames[GeoDataPlacemark::NaturalHeath] = "NaturalHeath";
-        visualCategoryNames[GeoDataPlacemark::HighwayTrafficSignals] = "HighwayTrafficSignals";
-        visualCategoryNames[GeoDataPlacemark::HighwaySteps] = "HighwaySteps";
-        visualCategoryNames[GeoDataPlacemark::HighwayUnknown] = "HighwayUnknown";
-        visualCategoryNames[GeoDataPlacemark::HighwayPath] = "HighwayPath";
-        visualCategoryNames[GeoDataPlacemark::HighwayFootway] = "HighwayFootway";
-        visualCategoryNames[GeoDataPlacemark::HighwayTrack] = "HighwayTrack";
-        visualCategoryNames[GeoDataPlacemark::HighwayPedestrian] = "HighwayPedestrian";
-        visualCategoryNames[GeoDataPlacemark::HighwayCycleway] = "HighwayCycleway";
-        visualCategoryNames[GeoDataPlacemark::HighwayService] = "HighwayService";
-        visualCategoryNames[GeoDataPlacemark::HighwayRoad] = "HighwayRoad";
-        visualCategoryNames[GeoDataPlacemark::HighwayResidential] = "HighwayResidential";
-        visualCategoryNames[GeoDataPlacemark::HighwayLivingStreet] = "HighwayLivingStreet";
-        visualCategoryNames[GeoDataPlacemark::HighwayUnclassified] = "HighwayUnclassified";
-        visualCategoryNames[GeoDataPlacemark::HighwayTertiaryLink] = "HighwayTertiaryLink";
-        visualCategoryNames[GeoDataPlacemark::HighwayTertiary] = "HighwayTertiary";
-        visualCategoryNames[GeoDataPlacemark::HighwaySecondaryLink] = "HighwaySecondaryLink";
-        visualCategoryNames[GeoDataPlacemark::HighwaySecondary] = "HighwaySecondary";
-        visualCategoryNames[GeoDataPlacemark::HighwayPrimaryLink] = "HighwayPrimaryLink";
-        visualCategoryNames[GeoDataPlacemark::HighwayPrimary] = "HighwayPrimary";
-        visualCategoryNames[GeoDataPlacemark::HighwayRaceway] = "HighwayRaceway";
-        visualCategoryNames[GeoDataPlacemark::HighwayTrunkLink] = "HighwayTrunkLink";
-        visualCategoryNames[GeoDataPlacemark::HighwayTrunk] = "HighwayTrunk";
-        visualCategoryNames[GeoDataPlacemark::HighwayMotorwayLink] = "HighwayMotorwayLink";
-        visualCategoryNames[GeoDataPlacemark::HighwayMotorway] = "HighwayMotorway";
-        visualCategoryNames[GeoDataPlacemark::HighwayCorridor] = "HighwayCorridor";
-        visualCategoryNames[GeoDataPlacemark::HighwayElevator] = "HighwayElevator";
-        visualCategoryNames[GeoDataPlacemark::Building] = "Building";
-        visualCategoryNames[GeoDataPlacemark::AccomodationCamping] = "AccomodationCamping";
-        visualCategoryNames[GeoDataPlacemark::AccomodationHostel] = "AccomodationHostel";
-        visualCategoryNames[GeoDataPlacemark::AccomodationHotel] = "AccomodationHotel";
-        visualCategoryNames[GeoDataPlacemark::AccomodationMotel] = "AccomodationMotel";
-        visualCategoryNames[GeoDataPlacemark::AccomodationYouthHostel] = "AccomodationYouthHostel";
-        visualCategoryNames[GeoDataPlacemark::AccomodationGuestHouse] = "AccomodationGuestHouse";
-        visualCategoryNames[GeoDataPlacemark::AmenityLibrary] = "AmenityLibrary";
-        visualCategoryNames[GeoDataPlacemark::AmenityKindergarten] = "AmenityKindergarten";
-        visualCategoryNames[GeoDataPlacemark::EducationCollege] = "EducationCollege";
-        visualCategoryNames[GeoDataPlacemark::EducationSchool] = "EducationSchool";
-        visualCategoryNames[GeoDataPlacemark::EducationUniversity] = "EducationUniversity";
-        visualCategoryNames[GeoDataPlacemark::FoodBar] = "FoodBar";
-        visualCategoryNames[GeoDataPlacemark::FoodBiergarten] = "FoodBiergarten";
-        visualCategoryNames[GeoDataPlacemark::FoodCafe] = "FoodCafe";
-        visualCategoryNames[GeoDataPlacemark::FoodFastFood] = "FoodFastFood";
-        visualCategoryNames[GeoDataPlacemark::FoodPub] = "FoodPub";
-        visualCategoryNames[GeoDataPlacemark::FoodRestaurant] = "FoodRestaurant";
-        visualCategoryNames[GeoDataPlacemark::HealthDentist] = "HealthDentist";
-        visualCategoryNames[GeoDataPlacemark::HealthDoctors] = "HealthDoctors";
-        visualCategoryNames[GeoDataPlacemark::HealthHospital] = "HealthHospital";
-        visualCategoryNames[GeoDataPlacemark::HealthPharmacy] = "HealthPharmacy";
-        visualCategoryNames[GeoDataPlacemark::HealthVeterinary] = "HealthVeterinary";
-        visualCategoryNames[GeoDataPlacemark::MoneyAtm] = "MoneyAtm";
-        visualCategoryNames[GeoDataPlacemark::MoneyBank] = "MoneyBank";
-        visualCategoryNames[GeoDataPlacemark::AmenityEmbassy] = "AmenityEmbassy";
-        visualCategoryNames[GeoDataPlacemark::AmenityEmergencyPhone] = "AmenityEmergencyPhone";
-        visualCategoryNames[GeoDataPlacemark::AmenityMountainRescue] = "AmenityMountainRescue";
-        visualCategoryNames[GeoDataPlacemark::LeisureWaterPark] = "LeisureWaterPark";
-        visualCategoryNames[GeoDataPlacemark::AmenityCommunityCentre] = "AmenityCommunityCentre";
-        visualCategoryNames[GeoDataPlacemark::AmenityFountain] = "AmenityFountain";
-        visualCategoryNames[GeoDataPlacemark::AmenityNightClub] = "AmenityNightClub";
-        visualCategoryNames[GeoDataPlacemark::AmenityBench] = "AmenityBench";
-        visualCategoryNames[GeoDataPlacemark::AmenityCourtHouse] = "AmenityCourtHouse";
-        visualCategoryNames[GeoDataPlacemark::AmenityFireStation] = "AmenityFireStation";
-        visualCategoryNames[GeoDataPlacemark::AmenityHuntingStand] = "AmenityHuntingStand";
-        visualCategoryNames[GeoDataPlacemark::AmenityPolice] = "AmenityPolice";
-        visualCategoryNames[GeoDataPlacemark::AmenityPostBox] = "AmenityPostBox";
-        visualCategoryNames[GeoDataPlacemark::AmenityPostOffice] = "AmenityPostOffice";
-        visualCategoryNames[GeoDataPlacemark::AmenityPrison] = "AmenityPrison";
-        visualCategoryNames[GeoDataPlacemark::AmenityRecycling] = "AmenityRecycling";
-        visualCategoryNames[GeoDataPlacemark::AmenityShelter] = "AmenityShelter";
-        visualCategoryNames[GeoDataPlacemark::AmenityTelephone] = "AmenityTelephone";
-        visualCategoryNames[GeoDataPlacemark::AmenityToilets] = "AmenityToilets";
-        visualCategoryNames[GeoDataPlacemark::AmenityTownHall] = "AmenityTownHall";
-        visualCategoryNames[GeoDataPlacemark::AmenityWasteBasket] = "AmenityWasteBasket";
-        visualCategoryNames[GeoDataPlacemark::AmenityDrinkingWater] = "AmenityDrinkingWater";
-        visualCategoryNames[GeoDataPlacemark::AmenityGraveyard] = "AmenityGraveyard";
-        visualCategoryNames[GeoDataPlacemark::AmenityChargingStation] = "ChargingStation";
-        visualCategoryNames[GeoDataPlacemark::AmenityCarWash] = "CarWash";
-        visualCategoryNames[GeoDataPlacemark::AmenitySocialFacility] = "SocialFacility";
-        visualCategoryNames[GeoDataPlacemark::BarrierCityWall] = "BarrierCityWall";
-        visualCategoryNames[GeoDataPlacemark::BarrierGate] = "BarrierGate";
-        visualCategoryNames[GeoDataPlacemark::BarrierLiftGate] = "BarrierLiftGate";
-        visualCategoryNames[GeoDataPlacemark::BarrierWall] = "BarrierWall";
-        visualCategoryNames[GeoDataPlacemark::NaturalVolcano] = "NaturalVolcano";
-        visualCategoryNames[GeoDataPlacemark::NaturalPeak] = "NaturalPeak";
-        visualCategoryNames[GeoDataPlacemark::NaturalTree] = "NaturalTree";
-        visualCategoryNames[GeoDataPlacemark::NaturalCave] = "NaturalCave";
-        visualCategoryNames[GeoDataPlacemark::ShopBeverages] = "ShopBeverages";
-        visualCategoryNames[GeoDataPlacemark::ShopHifi] = "ShopHifi";
-        visualCategoryNames[GeoDataPlacemark::ShopSupermarket] = "ShopSupermarket";
-        visualCategoryNames[GeoDataPlacemark::ShopAlcohol] = "ShopAlcohol";
-        visualCategoryNames[GeoDataPlacemark::ShopBakery] = "ShopBakery";
-        visualCategoryNames[GeoDataPlacemark::ShopButcher] = "ShopButcher";
-        visualCategoryNames[GeoDataPlacemark::ShopConfectionery] = "ShopConfectionery";
-        visualCategoryNames[GeoDataPlacemark::ShopConvenience] = "ShopConvenience";
-        visualCategoryNames[GeoDataPlacemark::ShopGreengrocer] = "ShopGreengrocer";
-        visualCategoryNames[GeoDataPlacemark::ShopSeafood] = "ShopSeafood";
-        visualCategoryNames[GeoDataPlacemark::ShopDepartmentStore] = "ShopDepartmentStore";
-        visualCategoryNames[GeoDataPlacemark::ShopKiosk] = "ShopKiosk";
-        visualCategoryNames[GeoDataPlacemark::ShopBag] = "ShopBag";
-        visualCategoryNames[GeoDataPlacemark::ShopClothes] = "ShopClothes";
-        visualCategoryNames[GeoDataPlacemark::ShopFashion] = "ShopFashion";
-        visualCategoryNames[GeoDataPlacemark::ShopJewelry] = "ShopJewelry";
-        visualCategoryNames[GeoDataPlacemark::ShopShoes] = "ShopShoes";
-        visualCategoryNames[GeoDataPlacemark::ShopVarietyStore] = "ShopVarietyStore";
-        visualCategoryNames[GeoDataPlacemark::ShopBeauty] = "ShopBeauty";
-        visualCategoryNames[GeoDataPlacemark::ShopChemist] = "ShopChemist";
-        visualCategoryNames[GeoDataPlacemark::ShopCosmetics] = "ShopCosmetics";
-        visualCategoryNames[GeoDataPlacemark::ShopHairdresser] = "ShopHairdresser";
-        visualCategoryNames[GeoDataPlacemark::ShopOptician] = "ShopOptician";
-        visualCategoryNames[GeoDataPlacemark::ShopPerfumery] = "ShopPerfumery";
-        visualCategoryNames[GeoDataPlacemark::ShopDoitYourself] = "ShopDoitYourself";
-        visualCategoryNames[GeoDataPlacemark::ShopFlorist] = "ShopFlorist";
-        visualCategoryNames[GeoDataPlacemark::ShopHardware] = "ShopHardware";
-        visualCategoryNames[GeoDataPlacemark::ShopFurniture] = "ShopFurniture";
-        visualCategoryNames[GeoDataPlacemark::ShopElectronics] = "ShopElectronics";
-        visualCategoryNames[GeoDataPlacemark::ShopMobilePhone] = "ShopMobilePhone";
-        visualCategoryNames[GeoDataPlacemark::ShopBicycle] = "ShopBicycle";
-        visualCategoryNames[GeoDataPlacemark::ShopCar] = "ShopCar";
-        visualCategoryNames[GeoDataPlacemark::ShopCarRepair] = "ShopCarRepair";
-        visualCategoryNames[GeoDataPlacemark::ShopCarParts] = "ShopCarParts";
-        visualCategoryNames[GeoDataPlacemark::ShopMotorcycle] = "ShopMotorcycle";
-        visualCategoryNames[GeoDataPlacemark::ShopOutdoor] = "ShopOutdoor";
-        visualCategoryNames[GeoDataPlacemark::ShopSports] = "ShopSports";
-        visualCategoryNames[GeoDataPlacemark::ShopCopy] = "ShopCopy";
-        visualCategoryNames[GeoDataPlacemark::ShopArt] = "ShopArt";
-        visualCategoryNames[GeoDataPlacemark::ShopMusicalInstrument] = "ShopMusicalInstrument";
-        visualCategoryNames[GeoDataPlacemark::ShopPhoto] = "ShopPhoto";
-        visualCategoryNames[GeoDataPlacemark::ShopBook] = "ShopBook";
-        visualCategoryNames[GeoDataPlacemark::ShopGift] = "ShopGift";
-        visualCategoryNames[GeoDataPlacemark::ShopStationery] = "ShopStationery";
-        visualCategoryNames[GeoDataPlacemark::ShopLaundry] = "ShopLaundry";
-        visualCategoryNames[GeoDataPlacemark::ShopPet] = "ShopPet";
-        visualCategoryNames[GeoDataPlacemark::ShopToys] = "ShopToys";
-        visualCategoryNames[GeoDataPlacemark::ShopTravelAgency] = "ShopTravelAgency";
-        visualCategoryNames[GeoDataPlacemark::ShopDeli] = "ShopDeli";
-        visualCategoryNames[GeoDataPlacemark::ShopTobacco] = "ShopTobacco";
-        visualCategoryNames[GeoDataPlacemark::ShopTea] = "ShopTea";
-        visualCategoryNames[GeoDataPlacemark::ShopComputer] = "ShopComputer";
-        visualCategoryNames[GeoDataPlacemark::ShopGardenCentre] = "ShopGardenCentre";
-        visualCategoryNames[GeoDataPlacemark::Shop] = "Shop";
-        visualCategoryNames[GeoDataPlacemark::ManmadeBridge] = "ManmadeBridge";
-        visualCategoryNames[GeoDataPlacemark::ManmadeLighthouse] = "ManmadeLighthouse";
-        visualCategoryNames[GeoDataPlacemark::ManmadePier] = "ManmadePier";
-        visualCategoryNames[GeoDataPlacemark::ManmadeWaterTower] = "ManmadeWaterTower";
-        visualCategoryNames[GeoDataPlacemark::ManmadeWindMill] = "ManmadeWindMill";
-        visualCategoryNames[GeoDataPlacemark::ManmadeCommunicationsTower] = "ManmadeCommunicationsTower";
-        visualCategoryNames[GeoDataPlacemark::TourismAttraction] = "TouristAttraction";
-        visualCategoryNames[GeoDataPlacemark::TourismArtwork] = "TouristArtwork";
-        visualCategoryNames[GeoDataPlacemark::HistoricArchaeologicalSite] = "HistoricArchaeologicalSite";
-        visualCategoryNames[GeoDataPlacemark::HistoricCastle] = "HistoricCastle";
-        visualCategoryNames[GeoDataPlacemark::HistoricMemorial] = "HistoricMemorial";
-        visualCategoryNames[GeoDataPlacemark::HistoricMonument] = "HistoricMonument";
-        visualCategoryNames[GeoDataPlacemark::AmenityCinema] = "TouristCinema";
-        visualCategoryNames[GeoDataPlacemark::TourismInformation] = "TouristInformation";
-        visualCategoryNames[GeoDataPlacemark::TourismMuseum] = "TouristMuseum";
-        visualCategoryNames[GeoDataPlacemark::HistoricRuins] = "TouristRuin";
-        visualCategoryNames[GeoDataPlacemark::AmenityTheatre] = "TouristTheatre";
-        visualCategoryNames[GeoDataPlacemark::TourismThemePark] = "TouristThemePark";
-        visualCategoryNames[GeoDataPlacemark::TourismViewPoint] = "TouristViewPoint";
-        visualCategoryNames[GeoDataPlacemark::TourismZoo] = "TouristZoo";
-        visualCategoryNames[GeoDataPlacemark::TourismAlpineHut] = "TouristAlpineHut";
-        visualCategoryNames[GeoDataPlacemark::TourismWildernessHut] = "TouristWildernessHut";
-        visualCategoryNames[GeoDataPlacemark::TransportAerodrome] = "TransportAerodrome";
-        visualCategoryNames[GeoDataPlacemark::TransportHelipad] = "TransportHelipad";
-        visualCategoryNames[GeoDataPlacemark::TransportAirportTerminal] = "TransportAirportTerminal";
-        visualCategoryNames[GeoDataPlacemark::TransportAirportGate] = "TransportAirportGate";
-        visualCategoryNames[GeoDataPlacemark::TransportAirportRunway] = "TransportAirportRunway";
-        visualCategoryNames[GeoDataPlacemark::TransportAirportTaxiway] = "TransportAirportTaxiway";
-        visualCategoryNames[GeoDataPlacemark::TransportAirportApron] = "TransportAirportApron";
-        visualCategoryNames[GeoDataPlacemark::TransportBusStation] = "TransportBusStation";
-        visualCategoryNames[GeoDataPlacemark::TransportBusStop] = "TransportBusStop";
-        visualCategoryNames[GeoDataPlacemark::TransportCarShare] = "TransportCarShare";
-        visualCategoryNames[GeoDataPlacemark::TransportFuel] = "TransportFuel";
-        visualCategoryNames[GeoDataPlacemark::TransportParking] = "TransportParking";
-        visualCategoryNames[GeoDataPlacemark::TransportParkingSpace] = "TransportParkingSpace";
-        visualCategoryNames[GeoDataPlacemark::TransportPlatform] = "TransportPlatform";
-        visualCategoryNames[GeoDataPlacemark::TransportRentalBicycle] = "TransportRentalBicycle";
-        visualCategoryNames[GeoDataPlacemark::TransportRentalCar] = "TransportRentalCar";
-        visualCategoryNames[GeoDataPlacemark::TransportRentalSki] = "TransportRentalSki";
-        visualCategoryNames[GeoDataPlacemark::TransportTaxiRank] = "TransportTaxiRank";
-        visualCategoryNames[GeoDataPlacemark::TransportTrainStation] = "TransportTrainStation";
-        visualCategoryNames[GeoDataPlacemark::TransportTramStop] = "TransportTramStop";
-        visualCategoryNames[GeoDataPlacemark::TransportSpeedCamera] = "TransportSpeedCamera";
-        visualCategoryNames[GeoDataPlacemark::TransportBicycleParking] = "TransportBicycleParking";
-        visualCategoryNames[GeoDataPlacemark::TransportMotorcycleParking] = "TransportMotorcycleParking";
-        visualCategoryNames[GeoDataPlacemark::TransportSubwayEntrance] = "TransportSubwayEntrance";
-        visualCategoryNames[GeoDataPlacemark::ReligionPlaceOfWorship] = "ReligionPlaceOfWorship";
-        visualCategoryNames[GeoDataPlacemark::ReligionBahai] = "ReligionBahai";
-        visualCategoryNames[GeoDataPlacemark::ReligionBuddhist] = "ReligionBuddhist";
-        visualCategoryNames[GeoDataPlacemark::ReligionChristian] = "ReligionChristian";
-        visualCategoryNames[GeoDataPlacemark::ReligionMuslim] = "ReligionMuslim";
-        visualCategoryNames[GeoDataPlacemark::ReligionHindu] = "ReligionHindu";
-        visualCategoryNames[GeoDataPlacemark::ReligionJain] = "ReligionJain";
-        visualCategoryNames[GeoDataPlacemark::ReligionJewish] = "ReligionJewish";
-        visualCategoryNames[GeoDataPlacemark::ReligionShinto] = "ReligionShinto";
-        visualCategoryNames[GeoDataPlacemark::ReligionSikh] = "ReligionSikh";
-        visualCategoryNames[GeoDataPlacemark::ReligionTaoist] = "ReligionTaoist";
-        visualCategoryNames[GeoDataPlacemark::LeisureGolfCourse] = "LeisureGolfCourse";
-        visualCategoryNames[GeoDataPlacemark::LeisureMarina] = "LeisureMarina";
-        visualCategoryNames[GeoDataPlacemark::LeisurePark] = "LeisurePark";
-        visualCategoryNames[GeoDataPlacemark::LeisurePlayground] = "LeisurePlayground";
-        visualCategoryNames[GeoDataPlacemark::LeisurePitch] = "LeisurePitch";
-        visualCategoryNames[GeoDataPlacemark::LeisureSportsCentre] = "LeisureSportsCentre";
-        visualCategoryNames[GeoDataPlacemark::LeisureStadium] = "LeisureStadium";
-        visualCategoryNames[GeoDataPlacemark::LeisureTrack] = "LeisureTrack";
-        visualCategoryNames[GeoDataPlacemark::LeisureSwimmingPool] = "LeisureSwimmingPool";
-        visualCategoryNames[GeoDataPlacemark::LeisureMinigolfCourse] = "LeisureMinigolfCourse";
-        visualCategoryNames[GeoDataPlacemark::LanduseAllotments] = "LanduseAllotments";
-        visualCategoryNames[GeoDataPlacemark::LanduseBasin] = "LanduseBasin";
-        visualCategoryNames[GeoDataPlacemark::LanduseCemetery] = "LanduseCemetery";
-        visualCategoryNames[GeoDataPlacemark::LanduseCommercial] = "LanduseCommercial";
-        visualCategoryNames[GeoDataPlacemark::LanduseConstruction] = "LanduseConstruction";
-        visualCategoryNames[GeoDataPlacemark::LanduseFarmland] = "LanduseFarmland";
-        visualCategoryNames[GeoDataPlacemark::LanduseFarmyard] = "LanduseFarmyard";
-        visualCategoryNames[GeoDataPlacemark::LanduseGarages] = "LanduseGarages";
-        visualCategoryNames[GeoDataPlacemark::LanduseGrass] = "LanduseGrass";
-        visualCategoryNames[GeoDataPlacemark::LanduseIndustrial] = "LanduseIndustrial";
-        visualCategoryNames[GeoDataPlacemark::LanduseLandfill] = "LanduseLandfill";
-        visualCategoryNames[GeoDataPlacemark::LanduseMeadow] = "LanduseMeadow";
-        visualCategoryNames[GeoDataPlacemark::LanduseMilitary] = "LanduseMilitary";
-        visualCategoryNames[GeoDataPlacemark::LanduseQuarry] = "LanduseQuarry";
-        visualCategoryNames[GeoDataPlacemark::LanduseRailway] = "LanduseRailway";
-        visualCategoryNames[GeoDataPlacemark::LanduseReservoir] = "LanduseReservoir";
-        visualCategoryNames[GeoDataPlacemark::LanduseResidential] = "LanduseResidential";
-        visualCategoryNames[GeoDataPlacemark::LanduseRetail] = "LanduseRetail";
-        visualCategoryNames[GeoDataPlacemark::LanduseOrchard] = "LanduseOrchard";
-        visualCategoryNames[GeoDataPlacemark::LanduseVineyard] = "LanduseVineyard";
-        visualCategoryNames[GeoDataPlacemark::RailwayRail] = "RailwayRail";
-        visualCategoryNames[GeoDataPlacemark::RailwayNarrowGauge] = "RailwayNarrowGauge";
-        visualCategoryNames[GeoDataPlacemark::RailwayTram] = "RailwayTram";
-        visualCategoryNames[GeoDataPlacemark::RailwayLightRail] = "RailwayLightRail";
-        visualCategoryNames[GeoDataPlacemark::RailwayAbandoned] = "RailwayAbandoned";
-        visualCategoryNames[GeoDataPlacemark::RailwaySubway] = "RailwaySubway";
-        visualCategoryNames[GeoDataPlacemark::RailwayPreserved] = "RailwayPreserved";
-        visualCategoryNames[GeoDataPlacemark::RailwayMiniature] = "RailwayMiniature";
-        visualCategoryNames[GeoDataPlacemark::RailwayConstruction] = "RailwayConstruction";
-        visualCategoryNames[GeoDataPlacemark::RailwayMonorail] = "RailwayMonorail";
-        visualCategoryNames[GeoDataPlacemark::RailwayFunicular] = "RailwayFunicular";
-        visualCategoryNames[GeoDataPlacemark::PowerTower] = "PowerTower";
-        visualCategoryNames[GeoDataPlacemark::AerialwayStation] = "AerialwayStation";
-        visualCategoryNames[GeoDataPlacemark::AerialwayPylon] = "AerialwayPylon";
-        visualCategoryNames[GeoDataPlacemark::AerialwayCableCar] = "AerialwayCableCar";
-        visualCategoryNames[GeoDataPlacemark::AerialwayGondola] = "AerialwayGondola";
-        visualCategoryNames[GeoDataPlacemark::AerialwayChairLift] = "AerialwayChairLift";
-        visualCategoryNames[GeoDataPlacemark::AerialwayMixedLift] = "AerialwayMixedLift";
-        visualCategoryNames[GeoDataPlacemark::AerialwayDragLift] = "AerialwayDragLift";
-        visualCategoryNames[GeoDataPlacemark::AerialwayTBar] = "AerialwayTBar";
-        visualCategoryNames[GeoDataPlacemark::AerialwayJBar] = "AerialwayJBar";
-        visualCategoryNames[GeoDataPlacemark::AerialwayPlatter] = "AerialwayPlatter";
-        visualCategoryNames[GeoDataPlacemark::AerialwayRopeTow] = "AerialwayRopeTow";
-        visualCategoryNames[GeoDataPlacemark::AerialwayMagicCarpet] = "AerialwayMagicCarpet";
-        visualCategoryNames[GeoDataPlacemark::AerialwayZipLine] = "AerialwayZipLine";
-        visualCategoryNames[GeoDataPlacemark::AerialwayGoods] = "AerialwayGoods";
-        visualCategoryNames[GeoDataPlacemark::PisteDownhill] = "PisteDownhill";
-        visualCategoryNames[GeoDataPlacemark::PisteNordic] = "PisteNordic";
-        visualCategoryNames[GeoDataPlacemark::PisteSkitour] = "PisteSkitour";
-        visualCategoryNames[GeoDataPlacemark::PisteSled] = "PisteSled";
-        visualCategoryNames[GeoDataPlacemark::PisteHike] = "PisteHike";
-        visualCategoryNames[GeoDataPlacemark::PisteSleigh] = "PisteSleigh";
-        visualCategoryNames[GeoDataPlacemark::PisteIceSkate] = "PisteIceSkate";
-        visualCategoryNames[GeoDataPlacemark::PisteSnowPark] = "PisteSnowPark";
-        visualCategoryNames[GeoDataPlacemark::PistePlayground] = "PistePlayground";
-        visualCategoryNames[GeoDataPlacemark::PisteSkiJump] = "PisteSkiJump";
-        visualCategoryNames[GeoDataPlacemark::Satellite] = "Satellite";
-        visualCategoryNames[GeoDataPlacemark::Landmass] = "Landmass";
-        visualCategoryNames[GeoDataPlacemark::UrbanArea] = "UrbanArea";
-        visualCategoryNames[GeoDataPlacemark::InternationalDateLine] = "InternationalDateLine";
-        visualCategoryNames[GeoDataPlacemark::Bathymetry] = "Bathymetry";
-        visualCategoryNames[GeoDataPlacemark::AdminLevel1] = "AdminLevel1";
-        visualCategoryNames[GeoDataPlacemark::AdminLevel2] = "AdminLevel2";
-        visualCategoryNames[GeoDataPlacemark::AdminLevel3] = "AdminLevel3";
-        visualCategoryNames[GeoDataPlacemark::AdminLevel4] = "AdminLevel4";
-        visualCategoryNames[GeoDataPlacemark::AdminLevel5] = "AdminLevel5";
-        visualCategoryNames[GeoDataPlacemark::AdminLevel6] = "AdminLevel6";
-        visualCategoryNames[GeoDataPlacemark::AdminLevel7] = "AdminLevel7";
-        visualCategoryNames[GeoDataPlacemark::AdminLevel8] = "AdminLevel8";
-        visualCategoryNames[GeoDataPlacemark::AdminLevel9] = "AdminLevel9";
-        visualCategoryNames[GeoDataPlacemark::AdminLevel10] = "AdminLevel10";
-        visualCategoryNames[GeoDataPlacemark::AdminLevel11] = "AdminLevel11";
-        visualCategoryNames[GeoDataPlacemark::BoundaryMaritime] = "BoundaryMaritime";
-        visualCategoryNames[GeoDataPlacemark::WaterwayCanal] = "WaterwayCanal";
-        visualCategoryNames[GeoDataPlacemark::WaterwayDitch] = "WaterwayDitch";
-        visualCategoryNames[GeoDataPlacemark::WaterwayDrain] = "WaterwayDrain";
-        visualCategoryNames[GeoDataPlacemark::WaterwayStream] = "WaterwayStream";
-        visualCategoryNames[GeoDataPlacemark::WaterwayRiver] = "WaterwayRiver";
-        visualCategoryNames[GeoDataPlacemark::WaterwayWeir] = "WaterwayWeir";
-        visualCategoryNames[GeoDataPlacemark::CrossingIsland] = "CrossingIsland";
-        visualCategoryNames[GeoDataPlacemark::CrossingRailway] = "CrossingRailway";
-        visualCategoryNames[GeoDataPlacemark::CrossingSignals] = "CrossingSignals";
-        visualCategoryNames[GeoDataPlacemark::CrossingZebra] = "CrossingZebra";
-        visualCategoryNames[GeoDataPlacemark::IndoorDoor] = "IndoorDoor";
-        visualCategoryNames[GeoDataPlacemark::IndoorWall] = "IndoorWall";
-        visualCategoryNames[GeoDataPlacemark::IndoorRoom] = "IndoorRoom";
-        visualCategoryNames[GeoDataPlacemark::LastIndex] = "LastIndex";
+        visualCategoryNames[GeoDataPlacemark::None] = QString::fromUtf8("None");
+        visualCategoryNames[GeoDataPlacemark::Default] = QString::fromUtf8("Default");
+        visualCategoryNames[GeoDataPlacemark::Unknown] = QString::fromUtf8("Unknown");
+        visualCategoryNames[GeoDataPlacemark::SmallCity] = QString::fromUtf8("SmallCity");
+        visualCategoryNames[GeoDataPlacemark::SmallCountyCapital] = QString::fromUtf8("SmallCountyCapital");
+        visualCategoryNames[GeoDataPlacemark::SmallStateCapital] = QString::fromUtf8("SmallStateCapital");
+        visualCategoryNames[GeoDataPlacemark::SmallNationCapital] = QString::fromUtf8("SmallNationCapital");
+        visualCategoryNames[GeoDataPlacemark::MediumCity] = QString::fromUtf8("MediumCity");
+        visualCategoryNames[GeoDataPlacemark::MediumCountyCapital] = QString::fromUtf8("MediumCountyCapital");
+        visualCategoryNames[GeoDataPlacemark::MediumStateCapital] = QString::fromUtf8("MediumStateCapital");
+        visualCategoryNames[GeoDataPlacemark::MediumNationCapital] = QString::fromUtf8("MediumNationCapital");
+        visualCategoryNames[GeoDataPlacemark::BigCity] = QString::fromUtf8("BigCity");
+        visualCategoryNames[GeoDataPlacemark::BigCountyCapital] = QString::fromUtf8("BigCountyCapital");
+        visualCategoryNames[GeoDataPlacemark::BigStateCapital] = QString::fromUtf8("BigStateCapital");
+        visualCategoryNames[GeoDataPlacemark::BigNationCapital] = QString::fromUtf8("BigNationCapital");
+        visualCategoryNames[GeoDataPlacemark::LargeCity] = QString::fromUtf8("LargeCity");
+        visualCategoryNames[GeoDataPlacemark::LargeCountyCapital] = QString::fromUtf8("LargeCountyCapital");
+        visualCategoryNames[GeoDataPlacemark::LargeStateCapital] = QString::fromUtf8("LargeStateCapital");
+        visualCategoryNames[GeoDataPlacemark::LargeNationCapital] = QString::fromUtf8("LargeNationCapital");
+        visualCategoryNames[GeoDataPlacemark::Nation] = QString::fromUtf8("Nation");
+        visualCategoryNames[GeoDataPlacemark::PlaceCity] = QString::fromUtf8("PlaceCity");
+        visualCategoryNames[GeoDataPlacemark::PlaceCityCapital] = QString::fromUtf8("PlaceCityCapital");
+        visualCategoryNames[GeoDataPlacemark::PlaceCityNationalCapital] = QString::fromUtf8("PlaceCityNationalCapital");
+        visualCategoryNames[GeoDataPlacemark::PlaceSuburb] = QString::fromUtf8("PlaceSuburb");
+        visualCategoryNames[GeoDataPlacemark::PlaceHamlet] = QString::fromUtf8("PlaceHamlet");
+        visualCategoryNames[GeoDataPlacemark::PlaceLocality] = QString::fromUtf8("PlaceLocality");
+        visualCategoryNames[GeoDataPlacemark::PlaceTown] = QString::fromUtf8("PlaceTown");
+        visualCategoryNames[GeoDataPlacemark::PlaceTownCapital] = QString::fromUtf8("PlaceTownCapital");
+        visualCategoryNames[GeoDataPlacemark::PlaceTownNationalCapital] = QString::fromUtf8("PlaceTownNationalCapital");
+        visualCategoryNames[GeoDataPlacemark::PlaceVillage] = QString::fromUtf8("PlaceVillage");
+        visualCategoryNames[GeoDataPlacemark::PlaceVillageCapital] = QString::fromUtf8("PlaceVillageCapital");
+        visualCategoryNames[GeoDataPlacemark::PlaceVillageNationalCapital] = QString::fromUtf8("PlaceVillageNationalCapital");
+        visualCategoryNames[GeoDataPlacemark::Mountain] = QString::fromUtf8("Mountain");
+        visualCategoryNames[GeoDataPlacemark::Volcano] = QString::fromUtf8("Volcano");
+        visualCategoryNames[GeoDataPlacemark::Mons] = QString::fromUtf8("Mons");
+        visualCategoryNames[GeoDataPlacemark::Valley] = QString::fromUtf8("Valley");
+        visualCategoryNames[GeoDataPlacemark::Continent] = QString::fromUtf8("Continent");
+        visualCategoryNames[GeoDataPlacemark::Ocean] = QString::fromUtf8("Ocean");
+        visualCategoryNames[GeoDataPlacemark::OtherTerrain] = QString::fromUtf8("OtherTerrain");
+        visualCategoryNames[GeoDataPlacemark::Crater] = QString::fromUtf8("Crater");
+        visualCategoryNames[GeoDataPlacemark::Mare] = QString::fromUtf8("Mare");
+        visualCategoryNames[GeoDataPlacemark::GeographicPole] = QString::fromUtf8("GeographicPole");
+        visualCategoryNames[GeoDataPlacemark::MagneticPole] = QString::fromUtf8("MagneticPole");
+        visualCategoryNames[GeoDataPlacemark::ShipWreck] = QString::fromUtf8("ShipWreck");
+        visualCategoryNames[GeoDataPlacemark::AirPort] = QString::fromUtf8("AirPort");
+        visualCategoryNames[GeoDataPlacemark::Observatory] = QString::fromUtf8("Observatory");
+        visualCategoryNames[GeoDataPlacemark::MilitaryDangerArea] = QString::fromUtf8("MilitaryDangerArea");
+        visualCategoryNames[GeoDataPlacemark::OsmSite] = QString::fromUtf8("OsmSite");
+        visualCategoryNames[GeoDataPlacemark::Coordinate] = QString::fromUtf8("Coordinate");
+        visualCategoryNames[GeoDataPlacemark::MannedLandingSite] = QString::fromUtf8("MannedLandingSite");
+        visualCategoryNames[GeoDataPlacemark::RoboticRover] = QString::fromUtf8("RoboticRover");
+        visualCategoryNames[GeoDataPlacemark::UnmannedSoftLandingSite] = QString::fromUtf8("UnmannedSoftLandingSite");
+        visualCategoryNames[GeoDataPlacemark::UnmannedHardLandingSite] = QString::fromUtf8("UnmannedHardLandingSite");
+        visualCategoryNames[GeoDataPlacemark::Bookmark] = QString::fromUtf8("Bookmark");
+        visualCategoryNames[GeoDataPlacemark::NaturalWater] = QString::fromUtf8("NaturalWater");
+        visualCategoryNames[GeoDataPlacemark::NaturalReef] = QString::fromUtf8("NaturalReef");
+        visualCategoryNames[GeoDataPlacemark::NaturalWood] = QString::fromUtf8("NaturalWood");
+        visualCategoryNames[GeoDataPlacemark::NaturalBeach] = QString::fromUtf8("NaturalBeach");
+        visualCategoryNames[GeoDataPlacemark::NaturalWetland] = QString::fromUtf8("NaturalWetland");
+        visualCategoryNames[GeoDataPlacemark::NaturalGlacier] = QString::fromUtf8("NaturalGlacier");
+        visualCategoryNames[GeoDataPlacemark::NaturalIceShelf] = QString::fromUtf8("NaturalIceShelf");
+        visualCategoryNames[GeoDataPlacemark::NaturalScrub] = QString::fromUtf8("NaturalScrub");
+        visualCategoryNames[GeoDataPlacemark::NaturalCliff] = QString::fromUtf8("NaturalCliff");
+        visualCategoryNames[GeoDataPlacemark::NaturalHeath] = QString::fromUtf8("NaturalHeath");
+        visualCategoryNames[GeoDataPlacemark::HighwayTrafficSignals] = QString::fromUtf8("HighwayTrafficSignals");
+        visualCategoryNames[GeoDataPlacemark::HighwaySteps] = QString::fromUtf8("HighwaySteps");
+        visualCategoryNames[GeoDataPlacemark::HighwayUnknown] = QString::fromUtf8("HighwayUnknown");
+        visualCategoryNames[GeoDataPlacemark::HighwayPath] = QString::fromUtf8("HighwayPath");
+        visualCategoryNames[GeoDataPlacemark::HighwayFootway] = QString::fromUtf8("HighwayFootway");
+        visualCategoryNames[GeoDataPlacemark::HighwayTrack] = QString::fromUtf8("HighwayTrack");
+        visualCategoryNames[GeoDataPlacemark::HighwayPedestrian] = QString::fromUtf8("HighwayPedestrian");
+        visualCategoryNames[GeoDataPlacemark::HighwayCycleway] = QString::fromUtf8("HighwayCycleway");
+        visualCategoryNames[GeoDataPlacemark::HighwayService] = QString::fromUtf8("HighwayService");
+        visualCategoryNames[GeoDataPlacemark::HighwayRoad] = QString::fromUtf8("HighwayRoad");
+        visualCategoryNames[GeoDataPlacemark::HighwayResidential] = QString::fromUtf8("HighwayResidential");
+        visualCategoryNames[GeoDataPlacemark::HighwayLivingStreet] = QString::fromUtf8("HighwayLivingStreet");
+        visualCategoryNames[GeoDataPlacemark::HighwayUnclassified] = QString::fromUtf8("HighwayUnclassified");
+        visualCategoryNames[GeoDataPlacemark::HighwayTertiaryLink] = QString::fromUtf8("HighwayTertiaryLink");
+        visualCategoryNames[GeoDataPlacemark::HighwayTertiary] = QString::fromUtf8("HighwayTertiary");
+        visualCategoryNames[GeoDataPlacemark::HighwaySecondaryLink] = QString::fromUtf8("HighwaySecondaryLink");
+        visualCategoryNames[GeoDataPlacemark::HighwaySecondary] = QString::fromUtf8("HighwaySecondary");
+        visualCategoryNames[GeoDataPlacemark::HighwayPrimaryLink] = QString::fromUtf8("HighwayPrimaryLink");
+        visualCategoryNames[GeoDataPlacemark::HighwayPrimary] = QString::fromUtf8("HighwayPrimary");
+        visualCategoryNames[GeoDataPlacemark::HighwayRaceway] = QString::fromUtf8("HighwayRaceway");
+        visualCategoryNames[GeoDataPlacemark::HighwayTrunkLink] = QString::fromUtf8("HighwayTrunkLink");
+        visualCategoryNames[GeoDataPlacemark::HighwayTrunk] = QString::fromUtf8("HighwayTrunk");
+        visualCategoryNames[GeoDataPlacemark::HighwayMotorwayLink] = QString::fromUtf8("HighwayMotorwayLink");
+        visualCategoryNames[GeoDataPlacemark::HighwayMotorway] = QString::fromUtf8("HighwayMotorway");
+        visualCategoryNames[GeoDataPlacemark::HighwayCorridor] = QString::fromUtf8("HighwayCorridor");
+        visualCategoryNames[GeoDataPlacemark::HighwayElevator] = QString::fromUtf8("HighwayElevator");
+        visualCategoryNames[GeoDataPlacemark::Building] = QString::fromUtf8("Building");
+        visualCategoryNames[GeoDataPlacemark::AccomodationCamping] = QString::fromUtf8("AccomodationCamping");
+        visualCategoryNames[GeoDataPlacemark::AccomodationHostel] = QString::fromUtf8("AccomodationHostel");
+        visualCategoryNames[GeoDataPlacemark::AccomodationHotel] = QString::fromUtf8("AccomodationHotel");
+        visualCategoryNames[GeoDataPlacemark::AccomodationMotel] = QString::fromUtf8("AccomodationMotel");
+        visualCategoryNames[GeoDataPlacemark::AccomodationYouthHostel] = QString::fromUtf8("AccomodationYouthHostel");
+        visualCategoryNames[GeoDataPlacemark::AccomodationGuestHouse] = QString::fromUtf8("AccomodationGuestHouse");
+        visualCategoryNames[GeoDataPlacemark::AmenityLibrary] = QString::fromUtf8("AmenityLibrary");
+        visualCategoryNames[GeoDataPlacemark::AmenityKindergarten] = QString::fromUtf8("AmenityKindergarten");
+        visualCategoryNames[GeoDataPlacemark::EducationCollege] = QString::fromUtf8("EducationCollege");
+        visualCategoryNames[GeoDataPlacemark::EducationSchool] = QString::fromUtf8("EducationSchool");
+        visualCategoryNames[GeoDataPlacemark::EducationUniversity] = QString::fromUtf8("EducationUniversity");
+        visualCategoryNames[GeoDataPlacemark::FoodBar] = QString::fromUtf8("FoodBar");
+        visualCategoryNames[GeoDataPlacemark::FoodBiergarten] = QString::fromUtf8("FoodBiergarten");
+        visualCategoryNames[GeoDataPlacemark::FoodCafe] = QString::fromUtf8("FoodCafe");
+        visualCategoryNames[GeoDataPlacemark::FoodFastFood] = QString::fromUtf8("FoodFastFood");
+        visualCategoryNames[GeoDataPlacemark::FoodPub] = QString::fromUtf8("FoodPub");
+        visualCategoryNames[GeoDataPlacemark::FoodRestaurant] = QString::fromUtf8("FoodRestaurant");
+        visualCategoryNames[GeoDataPlacemark::HealthDentist] = QString::fromUtf8("HealthDentist");
+        visualCategoryNames[GeoDataPlacemark::HealthDoctors] = QString::fromUtf8("HealthDoctors");
+        visualCategoryNames[GeoDataPlacemark::HealthHospital] = QString::fromUtf8("HealthHospital");
+        visualCategoryNames[GeoDataPlacemark::HealthPharmacy] = QString::fromUtf8("HealthPharmacy");
+        visualCategoryNames[GeoDataPlacemark::HealthVeterinary] = QString::fromUtf8("HealthVeterinary");
+        visualCategoryNames[GeoDataPlacemark::MoneyAtm] = QString::fromUtf8("MoneyAtm");
+        visualCategoryNames[GeoDataPlacemark::MoneyBank] = QString::fromUtf8("MoneyBank");
+        visualCategoryNames[GeoDataPlacemark::AmenityEmbassy] = QString::fromUtf8("AmenityEmbassy");
+        visualCategoryNames[GeoDataPlacemark::AmenityEmergencyPhone] = QString::fromUtf8("AmenityEmergencyPhone");
+        visualCategoryNames[GeoDataPlacemark::AmenityMountainRescue] = QString::fromUtf8("AmenityMountainRescue");
+        visualCategoryNames[GeoDataPlacemark::LeisureWaterPark] = QString::fromUtf8("LeisureWaterPark");
+        visualCategoryNames[GeoDataPlacemark::AmenityCommunityCentre] = QString::fromUtf8("AmenityCommunityCentre");
+        visualCategoryNames[GeoDataPlacemark::AmenityFountain] = QString::fromUtf8("AmenityFountain");
+        visualCategoryNames[GeoDataPlacemark::AmenityNightClub] = QString::fromUtf8("AmenityNightClub");
+        visualCategoryNames[GeoDataPlacemark::AmenityBench] = QString::fromUtf8("AmenityBench");
+        visualCategoryNames[GeoDataPlacemark::AmenityCourtHouse] = QString::fromUtf8("AmenityCourtHouse");
+        visualCategoryNames[GeoDataPlacemark::AmenityFireStation] = QString::fromUtf8("AmenityFireStation");
+        visualCategoryNames[GeoDataPlacemark::AmenityHuntingStand] = QString::fromUtf8("AmenityHuntingStand");
+        visualCategoryNames[GeoDataPlacemark::AmenityPolice] = QString::fromUtf8("AmenityPolice");
+        visualCategoryNames[GeoDataPlacemark::AmenityPostBox] = QString::fromUtf8("AmenityPostBox");
+        visualCategoryNames[GeoDataPlacemark::AmenityPostOffice] = QString::fromUtf8("AmenityPostOffice");
+        visualCategoryNames[GeoDataPlacemark::AmenityPrison] = QString::fromUtf8("AmenityPrison");
+        visualCategoryNames[GeoDataPlacemark::AmenityRecycling] = QString::fromUtf8("AmenityRecycling");
+        visualCategoryNames[GeoDataPlacemark::AmenityShelter] = QString::fromUtf8("AmenityShelter");
+        visualCategoryNames[GeoDataPlacemark::AmenityTelephone] = QString::fromUtf8("AmenityTelephone");
+        visualCategoryNames[GeoDataPlacemark::AmenityToilets] = QString::fromUtf8("AmenityToilets");
+        visualCategoryNames[GeoDataPlacemark::AmenityTownHall] = QString::fromUtf8("AmenityTownHall");
+        visualCategoryNames[GeoDataPlacemark::AmenityWasteBasket] = QString::fromUtf8("AmenityWasteBasket");
+        visualCategoryNames[GeoDataPlacemark::AmenityDrinkingWater] = QString::fromUtf8("AmenityDrinkingWater");
+        visualCategoryNames[GeoDataPlacemark::AmenityGraveyard] = QString::fromUtf8("AmenityGraveyard");
+        visualCategoryNames[GeoDataPlacemark::AmenityChargingStation] = QString::fromUtf8("ChargingStation");
+        visualCategoryNames[GeoDataPlacemark::AmenityCarWash] = QString::fromUtf8("CarWash");
+        visualCategoryNames[GeoDataPlacemark::AmenitySocialFacility] = QString::fromUtf8("SocialFacility");
+        visualCategoryNames[GeoDataPlacemark::BarrierCityWall] = QString::fromUtf8("BarrierCityWall");
+        visualCategoryNames[GeoDataPlacemark::BarrierGate] = QString::fromUtf8("BarrierGate");
+        visualCategoryNames[GeoDataPlacemark::BarrierLiftGate] = QString::fromUtf8("BarrierLiftGate");
+        visualCategoryNames[GeoDataPlacemark::BarrierWall] = QString::fromUtf8("BarrierWall");
+        visualCategoryNames[GeoDataPlacemark::NaturalVolcano] = QString::fromUtf8("NaturalVolcano");
+        visualCategoryNames[GeoDataPlacemark::NaturalPeak] = QString::fromUtf8("NaturalPeak");
+        visualCategoryNames[GeoDataPlacemark::NaturalTree] = QString::fromUtf8("NaturalTree");
+        visualCategoryNames[GeoDataPlacemark::NaturalCave] = QString::fromUtf8("NaturalCave");
+        visualCategoryNames[GeoDataPlacemark::ShopBeverages] = QString::fromUtf8("ShopBeverages");
+        visualCategoryNames[GeoDataPlacemark::ShopHifi] = QString::fromUtf8("ShopHifi");
+        visualCategoryNames[GeoDataPlacemark::ShopSupermarket] = QString::fromUtf8("ShopSupermarket");
+        visualCategoryNames[GeoDataPlacemark::ShopAlcohol] = QString::fromUtf8("ShopAlcohol");
+        visualCategoryNames[GeoDataPlacemark::ShopBakery] = QString::fromUtf8("ShopBakery");
+        visualCategoryNames[GeoDataPlacemark::ShopButcher] = QString::fromUtf8("ShopButcher");
+        visualCategoryNames[GeoDataPlacemark::ShopConfectionery] = QString::fromUtf8("ShopConfectionery");
+        visualCategoryNames[GeoDataPlacemark::ShopConvenience] = QString::fromUtf8("ShopConvenience");
+        visualCategoryNames[GeoDataPlacemark::ShopGreengrocer] = QString::fromUtf8("ShopGreengrocer");
+        visualCategoryNames[GeoDataPlacemark::ShopSeafood] = QString::fromUtf8("ShopSeafood");
+        visualCategoryNames[GeoDataPlacemark::ShopDepartmentStore] = QString::fromUtf8("ShopDepartmentStore");
+        visualCategoryNames[GeoDataPlacemark::ShopKiosk] = QString::fromUtf8("ShopKiosk");
+        visualCategoryNames[GeoDataPlacemark::ShopBag] = QString::fromUtf8("ShopBag");
+        visualCategoryNames[GeoDataPlacemark::ShopClothes] = QString::fromUtf8("ShopClothes");
+        visualCategoryNames[GeoDataPlacemark::ShopFashion] = QString::fromUtf8("ShopFashion");
+        visualCategoryNames[GeoDataPlacemark::ShopJewelry] = QString::fromUtf8("ShopJewelry");
+        visualCategoryNames[GeoDataPlacemark::ShopShoes] = QString::fromUtf8("ShopShoes");
+        visualCategoryNames[GeoDataPlacemark::ShopVarietyStore] = QString::fromUtf8("ShopVarietyStore");
+        visualCategoryNames[GeoDataPlacemark::ShopBeauty] = QString::fromUtf8("ShopBeauty");
+        visualCategoryNames[GeoDataPlacemark::ShopChemist] = QString::fromUtf8("ShopChemist");
+        visualCategoryNames[GeoDataPlacemark::ShopCosmetics] = QString::fromUtf8("ShopCosmetics");
+        visualCategoryNames[GeoDataPlacemark::ShopHairdresser] = QString::fromUtf8("ShopHairdresser");
+        visualCategoryNames[GeoDataPlacemark::ShopOptician] = QString::fromUtf8("ShopOptician");
+        visualCategoryNames[GeoDataPlacemark::ShopPerfumery] = QString::fromUtf8("ShopPerfumery");
+        visualCategoryNames[GeoDataPlacemark::ShopDoitYourself] = QString::fromUtf8("ShopDoitYourself");
+        visualCategoryNames[GeoDataPlacemark::ShopFlorist] = QString::fromUtf8("ShopFlorist");
+        visualCategoryNames[GeoDataPlacemark::ShopHardware] = QString::fromUtf8("ShopHardware");
+        visualCategoryNames[GeoDataPlacemark::ShopFurniture] = QString::fromUtf8("ShopFurniture");
+        visualCategoryNames[GeoDataPlacemark::ShopElectronics] = QString::fromUtf8("ShopElectronics");
+        visualCategoryNames[GeoDataPlacemark::ShopMobilePhone] = QString::fromUtf8("ShopMobilePhone");
+        visualCategoryNames[GeoDataPlacemark::ShopBicycle] = QString::fromUtf8("ShopBicycle");
+        visualCategoryNames[GeoDataPlacemark::ShopCar] = QString::fromUtf8("ShopCar");
+        visualCategoryNames[GeoDataPlacemark::ShopCarRepair] = QString::fromUtf8("ShopCarRepair");
+        visualCategoryNames[GeoDataPlacemark::ShopCarParts] = QString::fromUtf8("ShopCarParts");
+        visualCategoryNames[GeoDataPlacemark::ShopMotorcycle] = QString::fromUtf8("ShopMotorcycle");
+        visualCategoryNames[GeoDataPlacemark::ShopOutdoor] = QString::fromUtf8("ShopOutdoor");
+        visualCategoryNames[GeoDataPlacemark::ShopSports] = QString::fromUtf8("ShopSports");
+        visualCategoryNames[GeoDataPlacemark::ShopCopy] = QString::fromUtf8("ShopCopy");
+        visualCategoryNames[GeoDataPlacemark::ShopArt] = QString::fromUtf8("ShopArt");
+        visualCategoryNames[GeoDataPlacemark::ShopMusicalInstrument] = QString::fromUtf8("ShopMusicalInstrument");
+        visualCategoryNames[GeoDataPlacemark::ShopPhoto] = QString::fromUtf8("ShopPhoto");
+        visualCategoryNames[GeoDataPlacemark::ShopBook] = QString::fromUtf8("ShopBook");
+        visualCategoryNames[GeoDataPlacemark::ShopGift] = QString::fromUtf8("ShopGift");
+        visualCategoryNames[GeoDataPlacemark::ShopStationery] = QString::fromUtf8("ShopStationery");
+        visualCategoryNames[GeoDataPlacemark::ShopLaundry] = QString::fromUtf8("ShopLaundry");
+        visualCategoryNames[GeoDataPlacemark::ShopPet] = QString::fromUtf8("ShopPet");
+        visualCategoryNames[GeoDataPlacemark::ShopToys] = QString::fromUtf8("ShopToys");
+        visualCategoryNames[GeoDataPlacemark::ShopTravelAgency] = QString::fromUtf8("ShopTravelAgency");
+        visualCategoryNames[GeoDataPlacemark::ShopDeli] = QString::fromUtf8("ShopDeli");
+        visualCategoryNames[GeoDataPlacemark::ShopTobacco] = QString::fromUtf8("ShopTobacco");
+        visualCategoryNames[GeoDataPlacemark::ShopTea] = QString::fromUtf8("ShopTea");
+        visualCategoryNames[GeoDataPlacemark::ShopComputer] = QString::fromUtf8("ShopComputer");
+        visualCategoryNames[GeoDataPlacemark::ShopGardenCentre] = QString::fromUtf8("ShopGardenCentre");
+        visualCategoryNames[GeoDataPlacemark::Shop] = QString::fromUtf8("Shop");
+        visualCategoryNames[GeoDataPlacemark::ManmadeBridge] = QString::fromUtf8("ManmadeBridge");
+        visualCategoryNames[GeoDataPlacemark::ManmadeLighthouse] = QString::fromUtf8("ManmadeLighthouse");
+        visualCategoryNames[GeoDataPlacemark::ManmadePier] = QString::fromUtf8("ManmadePier");
+        visualCategoryNames[GeoDataPlacemark::ManmadeWaterTower] = QString::fromUtf8("ManmadeWaterTower");
+        visualCategoryNames[GeoDataPlacemark::ManmadeWindMill] = QString::fromUtf8("ManmadeWindMill");
+        visualCategoryNames[GeoDataPlacemark::ManmadeCommunicationsTower] = QString::fromUtf8("ManmadeCommunicationsTower");
+        visualCategoryNames[GeoDataPlacemark::TourismAttraction] = QString::fromUtf8("TouristAttraction");
+        visualCategoryNames[GeoDataPlacemark::TourismArtwork] = QString::fromUtf8("TouristArtwork");
+        visualCategoryNames[GeoDataPlacemark::HistoricArchaeologicalSite] = QString::fromUtf8("HistoricArchaeologicalSite");
+        visualCategoryNames[GeoDataPlacemark::HistoricCastle] = QString::fromUtf8("HistoricCastle");
+        visualCategoryNames[GeoDataPlacemark::HistoricMemorial] = QString::fromUtf8("HistoricMemorial");
+        visualCategoryNames[GeoDataPlacemark::HistoricMonument] = QString::fromUtf8("HistoricMonument");
+        visualCategoryNames[GeoDataPlacemark::AmenityCinema] = QString::fromUtf8("TouristCinema");
+        visualCategoryNames[GeoDataPlacemark::TourismInformation] = QString::fromUtf8("TouristInformation");
+        visualCategoryNames[GeoDataPlacemark::TourismMuseum] = QString::fromUtf8("TouristMuseum");
+        visualCategoryNames[GeoDataPlacemark::HistoricRuins] = QString::fromUtf8("TouristRuin");
+        visualCategoryNames[GeoDataPlacemark::AmenityTheatre] = QString::fromUtf8("TouristTheatre");
+        visualCategoryNames[GeoDataPlacemark::TourismThemePark] = QString::fromUtf8("TouristThemePark");
+        visualCategoryNames[GeoDataPlacemark::TourismViewPoint] = QString::fromUtf8("TouristViewPoint");
+        visualCategoryNames[GeoDataPlacemark::TourismZoo] = QString::fromUtf8("TouristZoo");
+        visualCategoryNames[GeoDataPlacemark::TourismAlpineHut] = QString::fromUtf8("TouristAlpineHut");
+        visualCategoryNames[GeoDataPlacemark::TourismWildernessHut] = QString::fromUtf8("TouristWildernessHut");
+        visualCategoryNames[GeoDataPlacemark::TransportAerodrome] = QString::fromUtf8("TransportAerodrome");
+        visualCategoryNames[GeoDataPlacemark::TransportHelipad] = QString::fromUtf8("TransportHelipad");
+        visualCategoryNames[GeoDataPlacemark::TransportAirportTerminal] = QString::fromUtf8("TransportAirportTerminal");
+        visualCategoryNames[GeoDataPlacemark::TransportAirportGate] = QString::fromUtf8("TransportAirportGate");
+        visualCategoryNames[GeoDataPlacemark::TransportAirportRunway] = QString::fromUtf8("TransportAirportRunway");
+        visualCategoryNames[GeoDataPlacemark::TransportAirportTaxiway] = QString::fromUtf8("TransportAirportTaxiway");
+        visualCategoryNames[GeoDataPlacemark::TransportAirportApron] = QString::fromUtf8("TransportAirportApron");
+        visualCategoryNames[GeoDataPlacemark::TransportBusStation] = QString::fromUtf8("TransportBusStation");
+        visualCategoryNames[GeoDataPlacemark::TransportBusStop] = QString::fromUtf8("TransportBusStop");
+        visualCategoryNames[GeoDataPlacemark::TransportCarShare] = QString::fromUtf8("TransportCarShare");
+        visualCategoryNames[GeoDataPlacemark::TransportFuel] = QString::fromUtf8("TransportFuel");
+        visualCategoryNames[GeoDataPlacemark::TransportParking] = QString::fromUtf8("TransportParking");
+        visualCategoryNames[GeoDataPlacemark::TransportParkingSpace] = QString::fromUtf8("TransportParkingSpace");
+        visualCategoryNames[GeoDataPlacemark::TransportPlatform] = QString::fromUtf8("TransportPlatform");
+        visualCategoryNames[GeoDataPlacemark::TransportRentalBicycle] = QString::fromUtf8("TransportRentalBicycle");
+        visualCategoryNames[GeoDataPlacemark::TransportRentalCar] = QString::fromUtf8("TransportRentalCar");
+        visualCategoryNames[GeoDataPlacemark::TransportRentalSki] = QString::fromUtf8("TransportRentalSki");
+        visualCategoryNames[GeoDataPlacemark::TransportTaxiRank] = QString::fromUtf8("TransportTaxiRank");
+        visualCategoryNames[GeoDataPlacemark::TransportTrainStation] = QString::fromUtf8("TransportTrainStation");
+        visualCategoryNames[GeoDataPlacemark::TransportTramStop] = QString::fromUtf8("TransportTramStop");
+        visualCategoryNames[GeoDataPlacemark::TransportSpeedCamera] = QString::fromUtf8("TransportSpeedCamera");
+        visualCategoryNames[GeoDataPlacemark::TransportBicycleParking] = QString::fromUtf8("TransportBicycleParking");
+        visualCategoryNames[GeoDataPlacemark::TransportMotorcycleParking] = QString::fromUtf8("TransportMotorcycleParking");
+        visualCategoryNames[GeoDataPlacemark::TransportSubwayEntrance] = QString::fromUtf8("TransportSubwayEntrance");
+        visualCategoryNames[GeoDataPlacemark::ReligionPlaceOfWorship] = QString::fromUtf8("ReligionPlaceOfWorship");
+        visualCategoryNames[GeoDataPlacemark::ReligionBahai] = QString::fromUtf8("ReligionBahai");
+        visualCategoryNames[GeoDataPlacemark::ReligionBuddhist] = QString::fromUtf8("ReligionBuddhist");
+        visualCategoryNames[GeoDataPlacemark::ReligionChristian] = QString::fromUtf8("ReligionChristian");
+        visualCategoryNames[GeoDataPlacemark::ReligionMuslim] = QString::fromUtf8("ReligionMuslim");
+        visualCategoryNames[GeoDataPlacemark::ReligionHindu] = QString::fromUtf8("ReligionHindu");
+        visualCategoryNames[GeoDataPlacemark::ReligionJain] = QString::fromUtf8("ReligionJain");
+        visualCategoryNames[GeoDataPlacemark::ReligionJewish] = QString::fromUtf8("ReligionJewish");
+        visualCategoryNames[GeoDataPlacemark::ReligionShinto] = QString::fromUtf8("ReligionShinto");
+        visualCategoryNames[GeoDataPlacemark::ReligionSikh] = QString::fromUtf8("ReligionSikh");
+        visualCategoryNames[GeoDataPlacemark::ReligionTaoist] = QString::fromUtf8("ReligionTaoist");
+        visualCategoryNames[GeoDataPlacemark::LeisureGolfCourse] = QString::fromUtf8("LeisureGolfCourse");
+        visualCategoryNames[GeoDataPlacemark::LeisureMarina] = QString::fromUtf8("LeisureMarina");
+        visualCategoryNames[GeoDataPlacemark::LeisurePark] = QString::fromUtf8("LeisurePark");
+        visualCategoryNames[GeoDataPlacemark::LeisurePlayground] = QString::fromUtf8("LeisurePlayground");
+        visualCategoryNames[GeoDataPlacemark::LeisurePitch] = QString::fromUtf8("LeisurePitch");
+        visualCategoryNames[GeoDataPlacemark::LeisureSportsCentre] = QString::fromUtf8("LeisureSportsCentre");
+        visualCategoryNames[GeoDataPlacemark::LeisureStadium] = QString::fromUtf8("LeisureStadium");
+        visualCategoryNames[GeoDataPlacemark::LeisureTrack] = QString::fromUtf8("LeisureTrack");
+        visualCategoryNames[GeoDataPlacemark::LeisureSwimmingPool] = QString::fromUtf8("LeisureSwimmingPool");
+        visualCategoryNames[GeoDataPlacemark::LeisureMinigolfCourse] = QString::fromUtf8("LeisureMinigolfCourse");
+        visualCategoryNames[GeoDataPlacemark::LanduseAllotments] = QString::fromUtf8("LanduseAllotments");
+        visualCategoryNames[GeoDataPlacemark::LanduseBasin] = QString::fromUtf8("LanduseBasin");
+        visualCategoryNames[GeoDataPlacemark::LanduseCemetery] = QString::fromUtf8("LanduseCemetery");
+        visualCategoryNames[GeoDataPlacemark::LanduseCommercial] = QString::fromUtf8("LanduseCommercial");
+        visualCategoryNames[GeoDataPlacemark::LanduseConstruction] = QString::fromUtf8("LanduseConstruction");
+        visualCategoryNames[GeoDataPlacemark::LanduseFarmland] = QString::fromUtf8("LanduseFarmland");
+        visualCategoryNames[GeoDataPlacemark::LanduseFarmyard] = QString::fromUtf8("LanduseFarmyard");
+        visualCategoryNames[GeoDataPlacemark::LanduseGarages] = QString::fromUtf8("LanduseGarages");
+        visualCategoryNames[GeoDataPlacemark::LanduseGrass] = QString::fromUtf8("LanduseGrass");
+        visualCategoryNames[GeoDataPlacemark::LanduseIndustrial] = QString::fromUtf8("LanduseIndustrial");
+        visualCategoryNames[GeoDataPlacemark::LanduseLandfill] = QString::fromUtf8("LanduseLandfill");
+        visualCategoryNames[GeoDataPlacemark::LanduseMeadow] = QString::fromUtf8("LanduseMeadow");
+        visualCategoryNames[GeoDataPlacemark::LanduseMilitary] = QString::fromUtf8("LanduseMilitary");
+        visualCategoryNames[GeoDataPlacemark::LanduseQuarry] = QString::fromUtf8("LanduseQuarry");
+        visualCategoryNames[GeoDataPlacemark::LanduseRailway] = QString::fromUtf8("LanduseRailway");
+        visualCategoryNames[GeoDataPlacemark::LanduseReservoir] = QString::fromUtf8("LanduseReservoir");
+        visualCategoryNames[GeoDataPlacemark::LanduseResidential] = QString::fromUtf8("LanduseResidential");
+        visualCategoryNames[GeoDataPlacemark::LanduseRetail] = QString::fromUtf8("LanduseRetail");
+        visualCategoryNames[GeoDataPlacemark::LanduseOrchard] = QString::fromUtf8("LanduseOrchard");
+        visualCategoryNames[GeoDataPlacemark::LanduseVineyard] = QString::fromUtf8("LanduseVineyard");
+        visualCategoryNames[GeoDataPlacemark::RailwayRail] = QString::fromUtf8("RailwayRail");
+        visualCategoryNames[GeoDataPlacemark::RailwayNarrowGauge] = QString::fromUtf8("RailwayNarrowGauge");
+        visualCategoryNames[GeoDataPlacemark::RailwayTram] = QString::fromUtf8("RailwayTram");
+        visualCategoryNames[GeoDataPlacemark::RailwayLightRail] = QString::fromUtf8("RailwayLightRail");
+        visualCategoryNames[GeoDataPlacemark::RailwayAbandoned] = QString::fromUtf8("RailwayAbandoned");
+        visualCategoryNames[GeoDataPlacemark::RailwaySubway] = QString::fromUtf8("RailwaySubway");
+        visualCategoryNames[GeoDataPlacemark::RailwayPreserved] = QString::fromUtf8("RailwayPreserved");
+        visualCategoryNames[GeoDataPlacemark::RailwayMiniature] = QString::fromUtf8("RailwayMiniature");
+        visualCategoryNames[GeoDataPlacemark::RailwayConstruction] = QString::fromUtf8("RailwayConstruction");
+        visualCategoryNames[GeoDataPlacemark::RailwayMonorail] = QString::fromUtf8("RailwayMonorail");
+        visualCategoryNames[GeoDataPlacemark::RailwayFunicular] = QString::fromUtf8("RailwayFunicular");
+        visualCategoryNames[GeoDataPlacemark::PowerTower] = QString::fromUtf8("PowerTower");
+        visualCategoryNames[GeoDataPlacemark::AerialwayStation] = QString::fromUtf8("AerialwayStation");
+        visualCategoryNames[GeoDataPlacemark::AerialwayPylon] = QString::fromUtf8("AerialwayPylon");
+        visualCategoryNames[GeoDataPlacemark::AerialwayCableCar] = QString::fromUtf8("AerialwayCableCar");
+        visualCategoryNames[GeoDataPlacemark::AerialwayGondola] = QString::fromUtf8("AerialwayGondola");
+        visualCategoryNames[GeoDataPlacemark::AerialwayChairLift] = QString::fromUtf8("AerialwayChairLift");
+        visualCategoryNames[GeoDataPlacemark::AerialwayMixedLift] = QString::fromUtf8("AerialwayMixedLift");
+        visualCategoryNames[GeoDataPlacemark::AerialwayDragLift] = QString::fromUtf8("AerialwayDragLift");
+        visualCategoryNames[GeoDataPlacemark::AerialwayTBar] = QString::fromUtf8("AerialwayTBar");
+        visualCategoryNames[GeoDataPlacemark::AerialwayJBar] = QString::fromUtf8("AerialwayJBar");
+        visualCategoryNames[GeoDataPlacemark::AerialwayPlatter] = QString::fromUtf8("AerialwayPlatter");
+        visualCategoryNames[GeoDataPlacemark::AerialwayRopeTow] = QString::fromUtf8("AerialwayRopeTow");
+        visualCategoryNames[GeoDataPlacemark::AerialwayMagicCarpet] = QString::fromUtf8("AerialwayMagicCarpet");
+        visualCategoryNames[GeoDataPlacemark::AerialwayZipLine] = QString::fromUtf8("AerialwayZipLine");
+        visualCategoryNames[GeoDataPlacemark::AerialwayGoods] = QString::fromUtf8("AerialwayGoods");
+        visualCategoryNames[GeoDataPlacemark::PisteDownhill] = QString::fromUtf8("PisteDownhill");
+        visualCategoryNames[GeoDataPlacemark::PisteNordic] = QString::fromUtf8("PisteNordic");
+        visualCategoryNames[GeoDataPlacemark::PisteSkitour] = QString::fromUtf8("PisteSkitour");
+        visualCategoryNames[GeoDataPlacemark::PisteSled] = QString::fromUtf8("PisteSled");
+        visualCategoryNames[GeoDataPlacemark::PisteHike] = QString::fromUtf8("PisteHike");
+        visualCategoryNames[GeoDataPlacemark::PisteSleigh] = QString::fromUtf8("PisteSleigh");
+        visualCategoryNames[GeoDataPlacemark::PisteIceSkate] = QString::fromUtf8("PisteIceSkate");
+        visualCategoryNames[GeoDataPlacemark::PisteSnowPark] = QString::fromUtf8("PisteSnowPark");
+        visualCategoryNames[GeoDataPlacemark::PistePlayground] = QString::fromUtf8("PistePlayground");
+        visualCategoryNames[GeoDataPlacemark::PisteSkiJump] = QString::fromUtf8("PisteSkiJump");
+        visualCategoryNames[GeoDataPlacemark::Satellite] = QString::fromUtf8("Satellite");
+        visualCategoryNames[GeoDataPlacemark::Landmass] = QString::fromUtf8("Landmass");
+        visualCategoryNames[GeoDataPlacemark::UrbanArea] = QString::fromUtf8("UrbanArea");
+        visualCategoryNames[GeoDataPlacemark::InternationalDateLine] = QString::fromUtf8("InternationalDateLine");
+        visualCategoryNames[GeoDataPlacemark::Bathymetry] = QString::fromUtf8("Bathymetry");
+        visualCategoryNames[GeoDataPlacemark::AdminLevel1] = QString::fromUtf8("AdminLevel1");
+        visualCategoryNames[GeoDataPlacemark::AdminLevel2] = QString::fromUtf8("AdminLevel2");
+        visualCategoryNames[GeoDataPlacemark::AdminLevel3] = QString::fromUtf8("AdminLevel3");
+        visualCategoryNames[GeoDataPlacemark::AdminLevel4] = QString::fromUtf8("AdminLevel4");
+        visualCategoryNames[GeoDataPlacemark::AdminLevel5] = QString::fromUtf8("AdminLevel5");
+        visualCategoryNames[GeoDataPlacemark::AdminLevel6] = QString::fromUtf8("AdminLevel6");
+        visualCategoryNames[GeoDataPlacemark::AdminLevel7] = QString::fromUtf8("AdminLevel7");
+        visualCategoryNames[GeoDataPlacemark::AdminLevel8] = QString::fromUtf8("AdminLevel8");
+        visualCategoryNames[GeoDataPlacemark::AdminLevel9] = QString::fromUtf8("AdminLevel9");
+        visualCategoryNames[GeoDataPlacemark::AdminLevel10] = QString::fromUtf8("AdminLevel10");
+        visualCategoryNames[GeoDataPlacemark::AdminLevel11] = QString::fromUtf8("AdminLevel11");
+        visualCategoryNames[GeoDataPlacemark::BoundaryMaritime] = QString::fromUtf8("BoundaryMaritime");
+        visualCategoryNames[GeoDataPlacemark::WaterwayCanal] = QString::fromUtf8("WaterwayCanal");
+        visualCategoryNames[GeoDataPlacemark::WaterwayDitch] = QString::fromUtf8("WaterwayDitch");
+        visualCategoryNames[GeoDataPlacemark::WaterwayDrain] = QString::fromUtf8("WaterwayDrain");
+        visualCategoryNames[GeoDataPlacemark::WaterwayStream] = QString::fromUtf8("WaterwayStream");
+        visualCategoryNames[GeoDataPlacemark::WaterwayRiver] = QString::fromUtf8("WaterwayRiver");
+        visualCategoryNames[GeoDataPlacemark::WaterwayWeir] = QString::fromUtf8("WaterwayWeir");
+        visualCategoryNames[GeoDataPlacemark::CrossingIsland] = QString::fromUtf8("CrossingIsland");
+        visualCategoryNames[GeoDataPlacemark::CrossingRailway] = QString::fromUtf8("CrossingRailway");
+        visualCategoryNames[GeoDataPlacemark::CrossingSignals] = QString::fromUtf8("CrossingSignals");
+        visualCategoryNames[GeoDataPlacemark::CrossingZebra] = QString::fromUtf8("CrossingZebra");
+        visualCategoryNames[GeoDataPlacemark::IndoorDoor] = QString::fromUtf8("IndoorDoor");
+        visualCategoryNames[GeoDataPlacemark::IndoorWall] = QString::fromUtf8("IndoorWall");
+        visualCategoryNames[GeoDataPlacemark::IndoorRoom] = QString::fromUtf8("IndoorRoom");
+        visualCategoryNames[GeoDataPlacemark::LastIndex] = QString::fromUtf8("LastIndex");
     }
 
     Q_ASSERT(visualCategoryNames.contains(category));
@@ -2882,20 +2882,82 @@ QStringList StyleBuilder::shopValues()
 {
     // from https://taginfo.openstreetmap.org/keys/building#values
     static const QStringList osmShopValues = QStringList()
-            << "cheese" << "chocolate" << "coffee" << "dairy" << "farm"
-            << "pasta" << "pastry" << "wine" << "general" << "mall"
-            << "baby_goods" << "boutique" << "fabric" << "leather" << "tailor" << "watches"
-            << "charity" << "second_hand" << "erotic" << "hearing_aids" << "herbalist" << "massage"
-            << "medical_supply" << "tattoo" << "bathroom_furnishing" << "electrical" << "energy" << "furnace"
-            << "garden_furniture" << "gas" << "glaziery" << "houseware" << "locksmith"
-            << "paint" << "trade" << "antiques" << "bed" << "candles" << "carpet"
-            << "curtain" << "interior_decoration" << "kitchen" << "lamps" << "window_blind"
-            << "radiotechnics" << "vacuum_cleaner" << "fishing" << "free_flying" << "hunting" << "outdoor"
-            << "scuba_diving" << "sports" << "tyres" << "swimming_pool" << "art" << "craft"
-            << "frame" << "games" << "model" << "music" << "trophy" << "video"
-            << "video_games" << "anime" << "ticket" << "copyshop" << "dry_cleaning" << "e-cigarette"
-            << "funeral_directors" << "money_lender" << "pawnbroker" << "pyrotechnics" << "religion" << "storage_rental"
-            << "weapons" << "user defined";
+            << QString::fromUtf8( "cheese")
+            << QString::fromUtf8( "chocolate")
+            << QString::fromUtf8( "coffee")
+            << QString::fromUtf8( "dairy")
+            << QString::fromUtf8( "farm")
+            << QString::fromUtf8( "pasta")
+            << QString::fromUtf8( "pastry")
+            << QString::fromUtf8( "wine")
+            << QString::fromUtf8( "general")
+            << QString::fromUtf8( "mall")
+            << QString::fromUtf8( "baby_goods")
+            << QString::fromUtf8( "boutique")
+            << QString::fromUtf8( "fabric")
+            << QString::fromUtf8( "leather")
+            << QString::fromUtf8( "tailor")
+            << QString::fromUtf8( "watches")
+            << QString::fromUtf8( "charity")
+            << QString::fromUtf8( "second_hand")
+            << QString::fromUtf8( "erotic")
+            << QString::fromUtf8( "hearing_aids")
+            << QString::fromUtf8( "herbalist")
+            << QString::fromUtf8( "massage")
+            << QString::fromUtf8( "medical_supply")
+            << QString::fromUtf8( "tattoo")
+            << QString::fromUtf8( "bathroom_furnishing")
+            << QString::fromUtf8( "electrical")
+            << QString::fromUtf8( "energy")
+            << QString::fromUtf8( "furnace")
+            << QString::fromUtf8( "garden_furniture")
+            << QString::fromUtf8( "gas")
+            << QString::fromUtf8( "glaziery")
+            << QString::fromUtf8( "houseware")
+            << QString::fromUtf8( "locksmith")
+            << QString::fromUtf8( "paint")
+            << QString::fromUtf8( "trade")
+            << QString::fromUtf8( "antiques")
+            << QString::fromUtf8( "bed")
+            << QString::fromUtf8( "candles")
+            << QString::fromUtf8( "carpet")
+            << QString::fromUtf8( "curtain")
+            << QString::fromUtf8( "interior_decoration")
+            << QString::fromUtf8( "kitchen")
+            << QString::fromUtf8( "lamps")
+            << QString::fromUtf8( "window_blind")
+            << QString::fromUtf8( "radiotechnics")
+            << QString::fromUtf8( "vacuum_cleaner")
+            << QString::fromUtf8( "fishing")
+            << QString::fromUtf8( "free_flying")
+            << QString::fromUtf8( "hunting")
+            << QString::fromUtf8( "outdoor")
+            << QString::fromUtf8( "scuba_diving")
+            << QString::fromUtf8( "sports")
+            << QString::fromUtf8( "tyres")
+            << QString::fromUtf8( "swimming_pool")
+            << QString::fromUtf8( "art")
+            << QString::fromUtf8( "craft")
+            << QString::fromUtf8( "frame")
+            << QString::fromUtf8( "games")
+            << QString::fromUtf8( "model")
+            << QString::fromUtf8( "music")
+            << QString::fromUtf8( "trophy")
+            << QString::fromUtf8( "video")
+            << QString::fromUtf8( "video_games")
+            << QString::fromUtf8( "anime")
+            << QString::fromUtf8( "ticket")
+            << QString::fromUtf8( "copyshop")
+            << QString::fromUtf8( "dry_cleaning")
+            << QString::fromUtf8( "e-cigarette")
+            << QString::fromUtf8( "funeral_directors")
+            << QString::fromUtf8( "money_lender")
+            << QString::fromUtf8( "pawnbroker")
+            << QString::fromUtf8( "pyrotechnics")
+            << QString::fromUtf8( "religion")
+            << QString::fromUtf8( "storage_rental")
+            << QString::fromUtf8( "weapons")
+            << QString::fromUtf8( "user defined");
 
     return osmShopValues;
 }
@@ -2905,69 +2967,69 @@ QSet<StyleBuilder::OsmTag> StyleBuilder::buildingTags()
     static const QString building = QStringLiteral("building");
     // from https://taginfo.openstreetmap.org/keys/building#values
     static const QSet<OsmTag> osmBuildingTags = QSet<OsmTag>()
-            << OsmTag(building, "yes")
-            << OsmTag(building, "house")
-            << OsmTag(building, "residential")
-            << OsmTag(building, "garage")
-            << OsmTag(building, "apartments")
-            << OsmTag(building, "hut")
-            << OsmTag(building, "industrial")
-            << OsmTag(building, "detached")
-            << OsmTag(building, "roof")
-            << OsmTag(building, "garages")
-            << OsmTag(building, "commercial")
-            << OsmTag(building, "terrace")
-            << OsmTag(building, "shed")
-            << OsmTag(building, "school")
-            << OsmTag(building, "retail")
-            << OsmTag(building, "farm_auxiliary")
-            << OsmTag(building, "church")
-            << OsmTag(building, "cathedral")
-            << OsmTag(building, "greenhouse")
-            << OsmTag(building, "barn")
-            << OsmTag(building, "service")
-            << OsmTag(building, "manufacture")
-            << OsmTag(building, "construction")
-            << OsmTag(building, "cabin")
-            << OsmTag(building, "farm")
-            << OsmTag(building, "warehouse")
-            << OsmTag(building, "House")
-            << OsmTag(building, "office")
-            << OsmTag(building, "civic")
-            << OsmTag(building, "Residential")
-            << OsmTag(building, "hangar")
-            << OsmTag(building, "public")
-            << OsmTag(building, "university")
-            << OsmTag(building, "hospital")
-            << OsmTag(building, "chapel")
-            << OsmTag(building, "hotel")
-            << OsmTag(building, "train_station")
-            << OsmTag(building, "dormitory")
-            << OsmTag(building, "kindergarten")
-            << OsmTag(building, "stable")
-            << OsmTag(building, "storage_tank")
-            << OsmTag(building, "shop")
-            << OsmTag(building, "college")
-            << OsmTag(building, "supermarket")
-            << OsmTag(building, "factory")
-            << OsmTag(building, "bungalow")
-            << OsmTag(building, "tower")
-            << OsmTag(building, "silo")
-            << OsmTag(building, "storage")
-            << OsmTag(building, "station")
-            << OsmTag(building, "education")
-            << OsmTag(building, "carport")
-            << OsmTag(building, "houseboat")
-            << OsmTag(building, "castle")
-            << OsmTag(building, "social_facility")
-            << OsmTag(building, "water_tower")
-            << OsmTag(building, "container")
-            << OsmTag(building, "exhibition_hall")
-            << OsmTag(building, "monastery")
-            << OsmTag(building, "bunker")
-            << OsmTag(building, "shelter")
-            << OsmTag("building:part", "yes")
-            << OsmTag("building:part", "antenna");
+            << OsmTag(building, QString::fromUtf8("yes"))
+            << OsmTag(building, QString::fromUtf8("house"))
+            << OsmTag(building, QString::fromUtf8("residential"))
+            << OsmTag(building, QString::fromUtf8("garage"))
+            << OsmTag(building, QString::fromUtf8("apartments"))
+            << OsmTag(building, QString::fromUtf8("hut"))
+            << OsmTag(building, QString::fromUtf8("industrial"))
+            << OsmTag(building, QString::fromUtf8("detached"))
+            << OsmTag(building, QString::fromUtf8("roof"))
+            << OsmTag(building, QString::fromUtf8("garages"))
+            << OsmTag(building, QString::fromUtf8("commercial"))
+            << OsmTag(building, QString::fromUtf8("terrace"))
+            << OsmTag(building, QString::fromUtf8("shed"))
+            << OsmTag(building, QString::fromUtf8("school"))
+            << OsmTag(building, QString::fromUtf8("retail"))
+            << OsmTag(building, QString::fromUtf8("farm_auxiliary"))
+            << OsmTag(building, QString::fromUtf8("church"))
+            << OsmTag(building, QString::fromUtf8("cathedral"))
+            << OsmTag(building, QString::fromUtf8("greenhouse"))
+            << OsmTag(building, QString::fromUtf8("barn"))
+            << OsmTag(building, QString::fromUtf8("service"))
+            << OsmTag(building, QString::fromUtf8("manufacture"))
+            << OsmTag(building, QString::fromUtf8("construction"))
+            << OsmTag(building, QString::fromUtf8("cabin"))
+            << OsmTag(building, QString::fromUtf8("farm"))
+            << OsmTag(building, QString::fromUtf8("warehouse"))
+            << OsmTag(building, QString::fromUtf8("House"))
+            << OsmTag(building, QString::fromUtf8("office"))
+            << OsmTag(building, QString::fromUtf8("civic"))
+            << OsmTag(building, QString::fromUtf8("Residential"))
+            << OsmTag(building, QString::fromUtf8("hangar"))
+            << OsmTag(building, QString::fromUtf8("public"))
+            << OsmTag(building, QString::fromUtf8("university"))
+            << OsmTag(building, QString::fromUtf8("hospital"))
+            << OsmTag(building, QString::fromUtf8("chapel"))
+            << OsmTag(building, QString::fromUtf8("hotel"))
+            << OsmTag(building, QString::fromUtf8("train_station"))
+            << OsmTag(building, QString::fromUtf8("dormitory"))
+            << OsmTag(building, QString::fromUtf8("kindergarten"))
+            << OsmTag(building, QString::fromUtf8("stable"))
+            << OsmTag(building, QString::fromUtf8("storage_tank"))
+            << OsmTag(building, QString::fromUtf8("shop"))
+            << OsmTag(building, QString::fromUtf8("college"))
+            << OsmTag(building, QString::fromUtf8("supermarket"))
+            << OsmTag(building, QString::fromUtf8("factory"))
+            << OsmTag(building, QString::fromUtf8("bungalow"))
+            << OsmTag(building, QString::fromUtf8("tower"))
+            << OsmTag(building, QString::fromUtf8("silo"))
+            << OsmTag(building, QString::fromUtf8("storage"))
+            << OsmTag(building, QString::fromUtf8("station"))
+            << OsmTag(building, QString::fromUtf8("education"))
+            << OsmTag(building, QString::fromUtf8("carport"))
+            << OsmTag(building, QString::fromUtf8("houseboat"))
+            << OsmTag(building, QString::fromUtf8("castle"))
+            << OsmTag(building, QString::fromUtf8("social_facility"))
+            << OsmTag(building, QString::fromUtf8("water_tower"))
+            << OsmTag(building, QString::fromUtf8("container"))
+            << OsmTag(building, QString::fromUtf8("exhibition_hall"))
+            << OsmTag(building, QString::fromUtf8("monastery"))
+            << OsmTag(building, QString::fromUtf8("bunker"))
+            << OsmTag(building, QString::fromUtf8("shelter"))
+            << OsmTag(QString::fromUtf8("building:part"), QString::fromUtf8("yes"))
+            << OsmTag(QString::fromUtf8("building:part"), QString::fromUtf8("antenna"));
 
     return osmBuildingTags;
 }
@@ -3003,7 +3065,7 @@ GeoDataPlacemark::GeoDataVisualCategory StyleBuilder::determineVisualCategory(co
     }
 
     if (osmData.containsTag(QStringLiteral("highway"), QStringLiteral("crossing"))) {
-        QStringList const crossings = osmData.tagValue(QStringLiteral("crossing")).split(';');
+        QStringList const crossings = osmData.tagValue(QStringLiteral("crossing")).split(QLatin1Char(';'));
         QString const crossingRef = osmData.tagValue(QStringLiteral("crossing_ref"));
         if (crossingRef == QStringLiteral("zebra") ||
             crossingRef == QStringLiteral("tiger") ||
