@@ -140,7 +140,7 @@ RajceWidget::RajceWidget(DInfoInterface* const iface, QWidget* const parent)
     connect(d->reloadAlbumsBtn, SIGNAL(clicked()),
             this, SLOT(slotLoadAlbums()));
 
-    connect(d->albumsCoB, SIGNAL(currentIndexChanged(QString)),
+    connect(d->albumsCoB, SIGNAL(currentTextChanged(QString)),
             this, SLOT(slotSelectedAlbumChanged(QString)));
 }
 
@@ -175,7 +175,7 @@ void RajceWidget::updateLabels(const QString&, const QString&)
 
     getHeaderLbl()->setText(link);
 
-    disconnect(d->albumsCoB, SIGNAL(currentIndexChanged(QString)),
+    disconnect(d->albumsCoB, SIGNAL(currentTextChanged(QString)),
                this, SLOT(slotSelectedAlbumChanged(QString)));
 
     d->albumsCoB->clear();
@@ -200,7 +200,7 @@ void RajceWidget::updateLabels(const QString&, const QString&)
         d->albumsCoB->setCurrentIndex(selIdx);
     }
 
-    connect(d->albumsCoB, SIGNAL(currentIndexChanged(QString)),
+    connect(d->albumsCoB, SIGNAL(currentTextChanged(QString)),
             this, SLOT(slotSelectedAlbumChanged(QString)));
 
     unsigned max = d->talker->session().maxHeight();

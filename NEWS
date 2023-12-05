@@ -29,10 +29,10 @@ BUGFIXES:
 016 ==> 113805 - Image contextual menu "Set as Tag Thumbnail" in "Dates" view and "Searches" view?
 017 ==> 477470 - File name timestamp formats.
 018 ==> 477871 - Program crash when entering a personsname into shown frame.
-019 ==> 
-020 ==> 
-021 ==> 
-022 ==> 
+019 ==> 477994 - Item count in Albums does not match pictures shown.
+020 ==> 477999 - Incorrect 'title' of picture shown in Thumbnails view.
+021 ==> 478002 - Import Pictures dialog doesn't use file metadata (EXIF etc.).
+022 ==> 477997 - Button labels not show in configured language.
 023 ==> 
 024 ==> 
 025 ==> 

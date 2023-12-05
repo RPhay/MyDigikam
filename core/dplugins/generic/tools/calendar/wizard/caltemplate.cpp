@@ -112,10 +112,10 @@ CalTemplate::CalTemplate(const QList<QUrl>& urlList, QWidget* const parent)
     btnGrp->addButton(d->ui.rightRadio, CalParams::Right);
     btnGrp->setExclusive(true);
 
-    connect(d->ui.paperSizeCombo, SIGNAL(currentIndexChanged(QString)),
+    connect(d->ui.paperSizeCombo, SIGNAL(currentTextChanged(QString)),
             settings, SLOT(setPaperSize(QString)));
 
-    connect(d->ui.resolutionCombo, SIGNAL(currentIndexChanged(QString)),
+    connect(d->ui.resolutionCombo, SIGNAL(currentTextChanged(QString)),
             settings, SLOT(setResolution(QString)));
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
@@ -136,7 +136,7 @@ CalTemplate::CalTemplate(const QList<QUrl>& urlList, QWidget* const parent)
     connect(d->ui.ratioSlider, SIGNAL(valueChanged(int)),
             settings, SLOT(setRatio(int)));
 
-    connect(d->ui.fontCombo, SIGNAL(currentIndexChanged(QString)),
+    connect(d->ui.fontCombo, SIGNAL(currentTextChanged(QString)),
             settings, SLOT(setFont(QString)));
 
     connect(settings, SIGNAL(settingsChanged()),

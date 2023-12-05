@@ -124,7 +124,7 @@ WSIntroPage::WSIntroPage(QWizard* const dialog, const QString& title)
 
     wsLabel->setBuddy(d->wsOption);
 
-    connect(d->wsOption, SIGNAL(currentIndexChanged(QString)),
+    connect(d->wsOption, SIGNAL(currentTextChanged(QString)),
             this, SLOT(slotWebServiceOptionChanged(QString)));
 
     /* --------------------

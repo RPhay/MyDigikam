@@ -314,13 +314,13 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
     connect(d->dateVideoSel, SIGNAL(dateTimeChanged(QDateTime)),
             this, SIGNAL(signalModified()));
 
-    connect(d->zoneCreatedSel, SIGNAL(currentIndexChanged(QString)),
+    connect(d->zoneCreatedSel, SIGNAL(currentTextChanged(QString)),
             this, SIGNAL(signalModified()));
 
-    connect(d->zoneDigitalizedSel, SIGNAL(currentIndexChanged(QString)),
+    connect(d->zoneDigitalizedSel, SIGNAL(currentTextChanged(QString)),
             this, SIGNAL(signalModified()));
 
-    connect(d->zoneVideoSel, SIGNAL(currentIndexChanged(QString)),
+    connect(d->zoneVideoSel, SIGNAL(currentTextChanged(QString)),
             this, SIGNAL(signalModified()));
 
     // --------------------------------------------------------

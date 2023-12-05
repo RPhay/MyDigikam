@@ -279,7 +279,7 @@ fi
 if [[ $DK_VERSION != v* ]] ; then
 
     # with non-official release version, use build time-stamp as sub-version string.
-    DK_SUBVER="-`cat $ORIG_WD/data/BUILDDATE.txt`"
+    DK_SUBVER="$DK_SUBVER-`cat $ORIG_WD/data/BUILDDATE.txt`"
 
 else
 

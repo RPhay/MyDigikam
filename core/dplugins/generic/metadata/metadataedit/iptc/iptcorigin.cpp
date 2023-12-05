@@ -354,10 +354,10 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     connect(d->timeDigitalizedSel, SIGNAL(timeChanged(QTime)),
             this, SIGNAL(signalModified()));
 
-    connect(d->zoneCreatedSel, SIGNAL(currentIndexChanged(QString)),
+    connect(d->zoneCreatedSel, SIGNAL(currentTextChanged(QString)),
             this, SIGNAL(signalModified()));
 
-    connect(d->zoneDigitalizedSel, SIGNAL(currentIndexChanged(QString)),
+    connect(d->zoneDigitalizedSel, SIGNAL(currentTextChanged(QString)),
             this, SIGNAL(signalModified()));
 
     // --------------------------------------------------------

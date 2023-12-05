@@ -68,12 +68,12 @@ AVFilterConfigPage::AVFilterConfigPage(QWidget* const parent)
     m_ui[0].options->setToolTip(QString::fromLatin1("example: negate"));
     m_ui[1].options->setToolTip(QString::fromLatin1("example: volume=volume=2.0"));
 
-    connect(m_ui[0].name, SIGNAL(currentIndexChanged(QString)),
+    connect(m_ui[0].name, SIGNAL(currentTextChanged(QString)),
             this, SLOT(videoFilterChanged(QString)));
 
     m_ui[0].name->addItems(QtAV::LibAVFilter::videoFilters());
 
-    connect(m_ui[1].name, SIGNAL(currentIndexChanged(QString)),
+    connect(m_ui[1].name, SIGNAL(currentTextChanged(QString)),
             this, SLOT(audioFilterChanged(QString)));
 
     m_ui[1].name->addItems(QtAV::LibAVFilter::audioFilters());
