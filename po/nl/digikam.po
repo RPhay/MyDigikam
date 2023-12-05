@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 00:39+0000\n"
-"PO-Revision-Date: 2023-12-02 11:51+0100\n"
+"POT-Creation-Date: 2023-12-05 00:39+0000\n"
+"PO-Revision-Date: 2023-12-04 11:48+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -6140,15 +6140,7 @@ msgstr ""
 "label-metagegevenswaarden aan afbeeldingen toekennen.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</p><p>The settings below "
-#| "determines the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool allows to assign automatically tags to images by contents "
@@ -6158,13 +6150,13 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
-"<p>Dit hulpmiddel biedt het automatisch toekennen van tags aan afbeeldingen "
-"door analyse van inhoud met een deep-learning neuraal netwerk.</p><p>De "
-"onderstaande instellingen bepalen het te gebruiken model van deep-learning "
-"tijdens het ontleden van de inhoud van afbeeldingen om de onderwerpen van de "
-"foto te bepalen. Het neurale netwerk, gebruikt in de achtergrond, zal "
-"automatisch een serie tags genereren die de inhoud beschrijven en de "
-"resultaten opslaan in de database.</p>"
+"<p><b>Dit hulpmiddel biedt het automatisch toekennen van tags aan "
+"afbeeldingen door analyse van inhoud met een deep-learning neuraal netwerk.</"
+"b></p><p>De onderstaande instellingen bepalen het te gebruiken model van "
+"deep-learning tijdens het ontleden van de inhoud van afbeeldingen om de "
+"onderwerpen van de foto te bepalen. Het neurale netwerk, gebruikt in de "
+"achtergrond, zal automatisch een serie tags genereren die de inhoud "
+"beschrijven en de resultaten opslaan in de database.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
 #: core/utilities/maintenance/maintenancedlg.cpp:191
@@ -6191,28 +6183,7 @@ msgid "ResNet50"
 msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "king of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -6248,11 +6219,11 @@ msgstr ""
 "p><p><b>ResNet50</b>: dit model is een specifiek type convolutioneel neuraal "
 "netwerk gevormd door het stapelen van bestaande blokken algemeen gebruikt om "
 "toepassingen voor zien met de computer zoals objectdetectie aan te drijven. "
-"Deze koning van ontwerpen biedt de training van erg diepe netwerken zonder "
-"het verdwijnende gradiënt probleem. Anders dan YOLO, is ResNet50 primair "
-"gericht op classificatie van afbeeldingen en levert geen lokalisatie van "
-"objecten. Het kan objecten herkennen uit een grote set van meer dan 1.000 "
-"klassen, dekt een brede reeks objecten, dieren en scènes.</p>"
+"Dit soort van ontwerpen biedt de training van erg diepe netwerken zonder het "
+"verdwijnende gradiënt probleem. Anders dan YOLO, is ResNet50 primair gericht "
+"op classificatie van afbeeldingen en levert geen lokalisatie van objecten. "
+"Het kan objecten herkennen uit een grote set van meer dan 1.000 klassen, "
+"dekt een brede reeks objecten, dieren en scènes.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -27450,7 +27421,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Wilt u tag '%1' samenvoegen in tag '%2'?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Deze vraag voor deze sessie niet meer stellen"
@@ -27460,7 +27431,7 @@ msgstr "Deze vraag voor deze sessie niet meer stellen"
 msgid "No such tag"
 msgstr "Tag bestaat niet"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -36861,7 +36832,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "De pagina instellingendialoog openen om bijwerken te configureren."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:231
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
 #, kde-format
 msgid "Download"
 msgstr "Downloaden"
@@ -41570,7 +41541,7 @@ msgid "An error has occurred with the media player..."
 msgstr "Er deed zich een fout voor met de mediaspeler..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Afspelen in een loop omschakelen"
@@ -57822,15 +57793,7 @@ msgid "Detect and recognize Faces"
 msgstr "Gezichten detecteren en herkennen"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</p><p>The settings below "
-#| "determines the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool allows to assign automatically tags to images by contents "
@@ -57840,13 +57803,13 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
-"<p>Dit hulpmiddel biedt het automatisch toekennen van tags aan afbeeldingen "
-"door analyse van inhoud met een deep-learning neuraal netwerk.</p><p>De "
-"onderstaande instellingen bepalen het te gebruiken model van deep-learning "
-"tijdens het ontleden van de inhoud van afbeeldingen om de onderwerpen van de "
-"foto te bepalen. Het neurale netwerk, gebruikt in de achtergrond, zal "
-"automatisch een serie tags genereren die de inhoud beschrijven en de "
-"resultaten opslaan in de database.</p>"
+"<p><b>Dit hulpmiddel biedt het automatisch toekennen van tags aan "
+"afbeeldingen door analyse van inhoud met een deep-learning neuraal netwerk.</"
+"b></p><p>De onderstaande instellingen bepalen het te gebruiken model van "
+"deep-learning tijdens het ontleden van de inhoud van afbeeldingen om de "
+"onderwerpen van de foto te bepalen. Het neurale netwerk, gebruikt in de "
+"achtergrond, zal automatisch een serie tags genereren die de inhoud "
+"beschrijven en de resultaten opslaan in de database.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:179
 #, kde-format
@@ -57870,8 +57833,11 @@ msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag<p>."
+"the items with no assigned tag.</p>"
 msgstr ""
+"<p><b>Alles wissen en opnieuw toekennen</b>: wist alle al toegekende tags en "
+"scant opnieuw alle items vanuit het niets.</p><p><b>Alleen niet toegekende "
+"scannen</b>: alleen de items scannen zonder toegekende tag.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
 #, kde-format
@@ -61179,50 +61145,41 @@ msgstr "Categorie selecteren"
 msgid "Your collection will use this category:"
 msgstr "Uw verzameling zal deze categorie gebruiken:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:219
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Vereiste bestanden downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Use Face Detection feature"
+msgstr "Gezichtsdetectie"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:178
 #, kde-format
-msgctxt "%1: folder path, %2: disk size with unit"
-msgid ""
-"<p>For the face engine and red eye removal tool, digiKam needs some large "
-"binary files. Some of these files were not found. Click 'Download' to begin "
-"downloading the needed files. You can cancel this process, the next time "
-"digiKam is started this dialog will appear again. Face detection will not "
-"work without these files.</p><p>The files will be downloaded to %1. Make "
-"sure there are around %2 available. <b>After the successful download you "
-"have to restart digiKam.</b></p>"
+msgid "Use Aesthetic Detection feature"
 msgstr ""
-"<p>Voor de gezichten-engine en het hulpmiddel rode ogen verwijderen heeft "
-"digiKam enige grote binaire bestanden nodig. Sommige van deze bestanden zijn "
-"niet gevonden. Klik op 'Download', dan worden ze gedownload. U kunt dat "
-"proces nu annuleren, de volgende keer dat digiKam wordt gestart zal deze "
-"dialoog weer verschijnen. Gezichtsherkenning zal zonder deze bestanden niet "
-"werken.</p><p>De bestanden zullen gedownload worden tot %1. Ga na dat er "
-"ongeveer %2 beschikbaar is. <b>Na het succes van het downloaden moet u "
-"digiKam opnieuw opstarten.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:262
-#, kde-format
-msgid "Disable face engine feature and don't ask again"
-msgstr "Functie gezichten-engine uitschakelen en niet meer vragen"
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#, fuzzy, kde-format
+#| msgid "Autotags Assignment"
+msgid "Use Auto Tags Assignment feature"
+msgstr "Automatisch toekennen van tags"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:313
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Alle bestanden zijn met succes gedownload."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:322
+#: core/utilities/setup/downloader/filesdownloader.cpp:258
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Fout bij downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:323
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61242,31 +61199,69 @@ msgstr ""
 "U kunt het opnieuw proberen of doorgaan met downloaden bij de volgende keer "
 "starten."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:331
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Opnieuw proberen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:466
+#: core/utilities/setup/downloader/filesdownloader.cpp:402
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Controlesom is onjuist."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:490
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File write error."
 msgstr "Schrijffout bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:497
+#: core/utilities/setup/downloader/filesdownloader.cpp:433
 #, kde-format
 msgid "File open error."
 msgstr "Fout bij openen van bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#: core/utilities/setup/downloader/filesdownloader.cpp:448
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Bestand op de server is te groot."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:587
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path, %2: disk size with unit"
+#| msgid ""
+#| "<p>For the face engine and red eye removal tool, digiKam needs some large "
+#| "binary files. Some of these files were not found. Click 'Download' to "
+#| "begin downloading the needed files. You can cancel this process, the next "
+#| "time digiKam is started this dialog will appear again. Face detection "
+#| "will not work without these files.</p><p>The files will be downloaded to "
+#| "%1. Make sure there are around %2 available. <b>After the successful "
+#| "download you have to restart digiKam.</b></p>"
+msgctxt "%1: folder path"
+msgid ""
+"<p>For face detection, the red-eye removal tool, the classification of "
+"images according to aesthetics or the automatic assignment of tags to "
+"images, digiKam requires some large binary files. You can choose which "
+"feature you want to use.</p><p>Some of these files were not found. Click "
+"“Download” to begin downloading the files you need. You can cancel this "
+"process, this dialog will appear again the next time you start digiKam. "
+"Without these files the selected features will not work.</p><p>The files "
+"will be downloaded to %1.</p><p><b>After the successful download you have to "
+"restart digiKam.</b></p>"
+msgstr ""
+"<p>Voor de gezichten-engine en het hulpmiddel rode ogen verwijderen heeft "
+"digiKam enige grote binaire bestanden nodig. Sommige van deze bestanden zijn "
+"niet gevonden. Klik op 'Download', dan worden ze gedownload. U kunt dat "
+"proces nu annuleren, de volgende keer dat digiKam wordt gestart zal deze "
+"dialoog weer verschijnen. Gezichtsherkenning zal zonder deze bestanden niet "
+"werken.</p><p>De bestanden zullen gedownload worden tot %1. Ga na dat er "
+"ongeveer %2 beschikbaar is. <b>Na het succes van het downloaden moet u "
+"digiKam opnieuw opstarten.</b></p>"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:599
+#, kde-format
+msgctxt "%1: disk size with unit"
+msgid "The download of the selected features requires %1"
+msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -64295,6 +64290,9 @@ msgstr "Zet alle instellingen terug naar hun standaardwaarden."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
+
+#~ msgid "Disable face engine feature and don't ask again"
+#~ msgstr "Functie gezichten-engine uitschakelen en niet meer vragen"
 
 #~| msgctxt "@info:tooltip"
 #~| msgid ""

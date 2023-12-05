@@ -37,8 +37,10 @@ namespace Digikam
 DNNResnetDetector::DNNResnetDetector()
     : DNNBaseDetectorModel(1.0F / 255.0F, cv::Scalar(0.0 ,0.0 ,0.0), cv::Size(224, 224))
 {
-    loadModels();
-    predefinedClasses = loadImageNetClass();
+    if (loadModels())
+    {
+        predefinedClasses = loadImageNetClass();
+    }
 }
 
 DNNResnetDetector::~DNNResnetDetector()
@@ -57,12 +59,15 @@ QList<QString> DNNResnetDetector::loadImageNetClass()
 
     QString imageNetClasses = appPath + QLatin1Char('/') + QLatin1String("classification_classes_ILSVRC2012.txt");
 
-    std::ifstream ifs(imageNetClasses.toStdString());
-    std::string line;
-
-    while (getline(ifs, line))
+    if (QFileInfo::exists(imageNetClasses))
     {
-        classList.append(QString::fromStdString(line));
+        std::ifstream ifs(imageNetClasses.toStdString());
+        std::string line;
+
+        while (getline(ifs, line))
+        {
+            classList.append(QString::fromStdString(line));
+        }
     }
 
     return classList;
@@ -150,6 +155,7 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const cv::Mat& inputImage)
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
+    if (!net.empty())
     {
         QMutexLocker lock(&mutex);
         net.setInput(inputBlob);
@@ -164,6 +170,7 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& i
     cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
+    if (!net.empty())
     {
         QMutexLocker lock(&mutex);
         QElapsedTimer timer;
@@ -187,9 +194,12 @@ QList<QHash<QString, QVector<QRect> > > DNNResnetDetector::postprocess(const std
 
     // outs = [batch_size x [rows x 85]]
 
-    for (unsigned int i = 0 ; i < inputBatchImages.size() ; i++)
+    if (!outs.empty())
     {
-        detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
+        for (unsigned int i = 0 ; i < inputBatchImages.size() ; i++)
+        {
+            detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
+        }
     }
 
     return detectedBoxesList;
@@ -199,6 +209,11 @@ QHash<QString, QVector<QRect> > DNNResnetDetector::postprocess(const cv::Mat& /*
                                                                const cv::Mat& out) const
 {
     QHash<QString, QVector<QRect> > detectedBoxes;
+
+    if (predefinedClasses.isEmpty())
+    {
+        return detectedBoxes;
+    }
 
     cv::Point classIdPoint;
     double final_prob = 0.0;
@@ -219,7 +234,7 @@ std::vector<cv::String> DNNResnetDetector::getOutputsNames() const
 {
     static std::vector<cv::String> names;
 
-    if (names.empty())
+    if (!net.empty() && names.empty())
     {
         // Get the indices of the output layers, i.e. the layers with unconnected outputs
 

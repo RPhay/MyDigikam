@@ -18,6 +18,7 @@
 // Qt includes
 
 #include <QDialog>
+#include <QSettings>
 #include <QNetworkReply>
 
 // Local includes
@@ -87,12 +88,14 @@ private:
     bool downloadExists(const DownloadInfo& info) const;
 
     QString getFacesEnginePath()                  const;
+    void createDownloadInfo();
 
 private Q_SLOTS:
 
     void reject() override;
     void slotDownload();
     void slotHelp();
+    void slotUpdateDownloadInfo();
     void slotDownloaded(QNetworkReply* reply);
     void slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
 

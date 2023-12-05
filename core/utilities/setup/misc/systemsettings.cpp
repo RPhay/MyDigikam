@@ -30,7 +30,9 @@ namespace Digikam
 SystemSettings::SystemSettings(const QString& name)
     : useHighDpiScaling(false),
       useHighDpiPixmaps(false),
-      disableFaceEngine(false),
+      enableFaceEngine (false),
+      enableAesthetic  (false),
+      enableAutoTags   (false),
       enableLogging    (false),
       disableOpenCL    (true)
 {
@@ -60,19 +62,30 @@ void SystemSettings::readSettings()
 
 #ifdef Q_OS_LINUX
 
-    useHighDpiScaling = settings.value(QLatin1String("useHighDpiScaling"), true).toBool();
-    useHighDpiPixmaps = settings.value(QLatin1String("useHighDpiPixmaps"), true).toBool();
+    useHighDpiScaling    = settings.value(QLatin1String("useHighDpiScaling"), true).toBool();
+    useHighDpiPixmaps    = settings.value(QLatin1String("useHighDpiPixmaps"), true).toBool();
 
 #else
 
-    useHighDpiScaling = settings.value(QLatin1String("useHighDpiScaling"), false).toBool();
-    useHighDpiPixmaps = settings.value(QLatin1String("useHighDpiPixmaps"), false).toBool();
+    useHighDpiScaling    = settings.value(QLatin1String("useHighDpiScaling"), false).toBool();
+    useHighDpiPixmaps    = settings.value(QLatin1String("useHighDpiPixmaps"), false).toBool();
 
 #endif
 
-    disableFaceEngine = settings.value(QLatin1String("disableFaceEngine"), false).toBool();
-    enableLogging     = settings.value(QLatin1String("enableLogging"),     false).toBool();
-    disableOpenCL     = settings.value(QLatin1String("disableOpenCL"),     true).toBool();
+    if (settings.contains(QLatin1String("disableFaceEngine")))
+    {
+        bool oldSetting  = settings.value(QLatin1String("disableFaceEngine"), false).toBool();
+        enableFaceEngine = !oldSetting;
+    }
+    else
+    {
+        enableFaceEngine = settings.value(QLatin1String("enableFaceEngine"),  true).toBool();
+    }
+
+    enableAesthetic      = settings.value(QLatin1String("enableAesthetic"),   true).toBool();
+    enableAutoTags       = settings.value(QLatin1String("enableAutoTags"),    true).toBool();
+    enableLogging        = settings.value(QLatin1String("enableLogging"),     false).toBool();
+    disableOpenCL        = settings.value(QLatin1String("disableOpenCL"),     true).toBool();
     settings.endGroup();
 }
 
@@ -88,9 +101,17 @@ void SystemSettings::saveSettings()
     settings.beginGroup(QLatin1String("System"));
     settings.setValue(QLatin1String("useHighDpiScaling"), useHighDpiScaling);
     settings.setValue(QLatin1String("useHighDpiPixmaps"), useHighDpiPixmaps);
-    settings.setValue(QLatin1String("disableFaceEngine"), disableFaceEngine);
+    settings.setValue(QLatin1String("enableFaceEngine"),  enableFaceEngine);
+    settings.setValue(QLatin1String("enableAesthetic"),   enableAesthetic);
+    settings.setValue(QLatin1String("enableAutoTags"),    enableAutoTags);
     settings.setValue(QLatin1String("enableLogging"),     enableLogging);
     settings.setValue(QLatin1String("disableOpenCL"),     disableOpenCL);
+
+    if (settings.contains(QLatin1String("disableFaceEngine")))
+    {
+        settings.remove(QLatin1String("disableFaceEngine"));
+    }
+
     settings.endGroup();
 }
 

@@ -59,6 +59,7 @@
 #include "exiftoolconfpanel.h"
 #include "dexpanderbox.h"
 #include "dlayoutbox.h"
+#include "drawfiles.h"
 
 namespace Digikam
 {

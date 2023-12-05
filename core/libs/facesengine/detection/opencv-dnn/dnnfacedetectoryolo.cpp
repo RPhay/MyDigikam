@@ -26,6 +26,7 @@
 #include <QRect>
 #include <QString>
 #include <QFileInfo>
+#include <QMutexLocker>
 #include <QElapsedTimer>
 #include <QStandardPaths>
 
@@ -126,14 +127,14 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
-    mutex.lock();
+    if (!net.empty())
     {
+        QMutexLocker lock(&mutex);
         net.setInput(inputBlob);
         timer.start();
         net.forward(outs, getOutputsNames());
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "forward YOLO detection in" << timer.elapsed() << "ms";
     }
-    mutex.unlock();
 
     timer.start();
 
@@ -231,7 +232,7 @@ std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames() const
 {
     static std::vector<cv::String> names;
 
-    if (names.empty())
+    if (!net.empty() && names.empty())
     {
         // Get the indices of the output layers, i.e. the layers with unconnected outputs
 

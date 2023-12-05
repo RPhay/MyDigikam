@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 00:39+0000\n"
+"POT-Creation-Date: 2023-12-05 00:39+0000\n"
 "PO-Revision-Date: 2023-11-25 02:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -26235,7 +26235,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "您想要将“%1”标签合并到“%2”标签吗？"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "不要在此次使用过程中再次询问"
@@ -26245,7 +26245,7 @@ msgstr "不要在此次使用过程中再次询问"
 msgid "No such tag"
 msgstr "无此标签"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -35268,7 +35268,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "打开设置对话框以配置更新功能。"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:231
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
 #, kde-format
 msgid "Download"
 msgstr "下载"
@@ -39788,7 +39788,7 @@ msgid "An error has occurred with the media player..."
 msgstr "媒体播放器发生错误..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "打开/关闭循环播放"
@@ -55661,7 +55661,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag<p>."
+"the items with no assigned tag.</p>"
 msgstr ""
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
@@ -58778,47 +58778,41 @@ msgstr "选择相册集合类型"
 msgid "Your collection will use this category:"
 msgstr "该相册集合将被设为以下分类："
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:219
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "下载所需文件"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Use Face Detection feature"
+msgstr "人脸检测"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:178
 #, kde-format
-msgctxt "%1: folder path, %2: disk size with unit"
-msgid ""
-"<p>For the face engine and red eye removal tool, digiKam needs some large "
-"binary files. Some of these files were not found. Click 'Download' to begin "
-"downloading the needed files. You can cancel this process, the next time "
-"digiKam is started this dialog will appear again. Face detection will not "
-"work without these files.</p><p>The files will be downloaded to %1. Make "
-"sure there are around %2 available. <b>After the successful download you "
-"have to restart digiKam.</b></p>"
+msgid "Use Aesthetic Detection feature"
 msgstr ""
-"<p>digiKam 的人脸识别引擎和红眼去除工具需要使用附加软件包。本机尚未安装它们，"
-"请点击“下载”来下载并安装所需文件。如果您取消了此次下载，人脸识别将无法使用，"
-"digiKam 将在下次启动时再次显示此对话框。</p><p>上述软件包将被下载到 %1。请确"
-"保该位置至少有 %2 的可用空间。<b>软件包下载完成后请重新启动 digiKam 以使其生"
-"效。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:262
-#, kde-format
-msgid "Disable face engine feature and don't ask again"
-msgstr "禁用人脸引擎功能，不再询问"
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#, fuzzy, kde-format
+#| msgid "Automatic Adjustment"
+msgid "Use Auto Tags Assignment feature"
+msgstr "自动调整"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:313
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "已成功下载所有文件。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:322
+#: core/utilities/setup/downloader/filesdownloader.cpp:258
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "下载错误"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:323
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -58837,31 +58831,66 @@ msgstr ""
 "\n"
 "您可以现在重试，也可以在下次启动程序时继续下载。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:331
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "重试"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:466
+#: core/utilities/setup/downloader/filesdownloader.cpp:402
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "文件的校验和不正确。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:490
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File write error."
 msgstr "文件写入错误。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:497
+#: core/utilities/setup/downloader/filesdownloader.cpp:433
 #, kde-format
 msgid "File open error."
 msgstr "文件打开错误。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#: core/utilities/setup/downloader/filesdownloader.cpp:448
 #, kde-format
 msgid "File on the server is too large."
 msgstr "服务器提供的文件体积过大。"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:587
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path, %2: disk size with unit"
+#| msgid ""
+#| "<p>For the face engine and red eye removal tool, digiKam needs some large "
+#| "binary files. Some of these files were not found. Click 'Download' to "
+#| "begin downloading the needed files. You can cancel this process, the next "
+#| "time digiKam is started this dialog will appear again. Face detection "
+#| "will not work without these files.</p><p>The files will be downloaded to "
+#| "%1. Make sure there are around %2 available. <b>After the successful "
+#| "download you have to restart digiKam.</b></p>"
+msgctxt "%1: folder path"
+msgid ""
+"<p>For face detection, the red-eye removal tool, the classification of "
+"images according to aesthetics or the automatic assignment of tags to "
+"images, digiKam requires some large binary files. You can choose which "
+"feature you want to use.</p><p>Some of these files were not found. Click "
+"“Download” to begin downloading the files you need. You can cancel this "
+"process, this dialog will appear again the next time you start digiKam. "
+"Without these files the selected features will not work.</p><p>The files "
+"will be downloaded to %1.</p><p><b>After the successful download you have to "
+"restart digiKam.</b></p>"
+msgstr ""
+"<p>digiKam 的人脸识别引擎和红眼去除工具需要使用附加软件包。本机尚未安装它们，"
+"请点击“下载”来下载并安装所需文件。如果您取消了此次下载，人脸识别将无法使用，"
+"digiKam 将在下次启动时再次显示此对话框。</p><p>上述软件包将被下载到 %1。请确"
+"保该位置至少有 %2 的可用空间。<b>软件包下载完成后请重新启动 digiKam 以使其生"
+"效。</b></p>"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:599
+#, kde-format
+msgctxt "%1: disk size with unit"
+msgid "The download of the selected features requires %1"
+msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -61670,3 +61699,6 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
+
+#~ msgid "Disable face engine feature and don't ask again"
+#~ msgstr "禁用人脸引擎功能，不再询问"

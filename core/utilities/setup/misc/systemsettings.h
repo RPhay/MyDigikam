@@ -44,7 +44,11 @@ public:
 
     bool useHighDpiPixmaps;
 
-    bool disableFaceEngine;
+    bool enableFaceEngine;
+
+    bool enableAesthetic;
+
+    bool enableAutoTags;
 
     bool enableLogging;
 

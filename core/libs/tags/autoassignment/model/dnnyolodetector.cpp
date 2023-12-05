@@ -38,8 +38,10 @@ DNNYoloDetector::DNNYoloDetector(YoloVersions modelVersion)
     : DNNBaseDetectorModel(1.0F / 255.0F, cv::Scalar(0.0 ,0.0 ,0.0), cv::Size(320, 320)),
       yoloVersion         (modelVersion)
 {
-    loadModels();
-    predefinedClasses = loadCOCOClass();
+    if (loadModels())
+    {
+        predefinedClasses = loadCOCOClass();
+    }
 }
 
 DNNYoloDetector::~DNNYoloDetector()
@@ -58,12 +60,15 @@ QList<QString> DNNYoloDetector::loadCOCOClass()
 
     QString cocoClasses = appPath + QLatin1Char('/') + QLatin1String("coco.names");
 
-    std::ifstream ifs(cocoClasses.toStdString());
-    std::string line;
-
-    while (getline(ifs, line))
+    if (QFileInfo::exists(cocoClasses))
     {
-        classList.append(QString::fromStdString(line));
+        std::ifstream ifs(cocoClasses.toStdString());
+        std::string line;
+
+        while (getline(ifs, line))
+        {
+            classList.append(QString::fromStdString(line));
+        }
     }
 
     return classList;
@@ -158,6 +163,7 @@ QList<QHash<QString, QVector<QRect> > > DNNYoloDetector::detectObjects(const std
 
         return {};
     }
+
     std::vector<cv::Mat> outs = preprocess(inputBatchImages);
 
     // outs = [1 x [rows x 85]]
@@ -170,6 +176,7 @@ std::vector<cv::Mat> DNNYoloDetector::preprocess(const cv::Mat& inputImage)
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
+    if (!net.empty())
     {
         QMutexLocker lock(&mutex);
         net.setInput(inputBlob);
@@ -184,6 +191,7 @@ std::vector<cv::Mat> DNNYoloDetector::preprocess(const std::vector<cv::Mat>& inp
     cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
+    if (!net.empty())
     {
         QMutexLocker lock(&mutex);
         QElapsedTimer timer;
@@ -207,9 +215,12 @@ QList<QHash<QString, QVector<QRect> > > DNNYoloDetector::postprocess(const std::
 
     // outs = [batch_size x [rows x 85]]
 
-    for (unsigned int i = 0 ; i < inputBatchImages.size() ; i++)
+    if (!outs.empty())
     {
-        detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
+        for (unsigned int i = 0 ; i < inputBatchImages.size() ; i++)
+        {
+            detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
+        }
     }
 
     return detectedBoxesList;
@@ -219,6 +230,11 @@ QHash<QString, QVector<QRect> > DNNYoloDetector::postprocess(const cv::Mat& inpu
                                                              const cv::Mat& out) const
 {
     QHash<QString, QVector<QRect> > detectedBoxes;
+
+    if (predefinedClasses.isEmpty())
+    {
+        return detectedBoxes;
+    }
 
     std::vector<int>      class_ids;
     std::vector<float>    confidences;
@@ -313,7 +329,7 @@ std::vector<cv::String> DNNYoloDetector::getOutputsNames() const
 {
     static std::vector<cv::String> names;
 
-    if (names.empty())
+    if (!net.empty() && names.empty())
     {
         // Get the indices of the output layers, i.e. the layers with unconnected outputs
 

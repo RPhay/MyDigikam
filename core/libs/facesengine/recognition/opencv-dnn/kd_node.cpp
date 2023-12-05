@@ -33,6 +33,11 @@ namespace Digikam
 
 float KDNode::sqrDistance(const float* const pos1, const float* const pos2, int dimension)
 {
+    if (!pos1 || !pos2)
+    {
+        return 0.0F;
+    }
+
     double sqrDistance = 0.0;
 
     for (int i = 0 ; i < dimension ; ++i)
@@ -45,6 +50,11 @@ float KDNode::sqrDistance(const float* const pos1, const float* const pos2, int 
 
 float KDNode::cosDistance(const float* const pos1, const float* const pos2, int dimension)
 {
+    if (!pos1 || !pos2)
+    {
+        return 0.0F;
+    }
+
     double scalarProduct = 0.0;
     double normV1        = 0.0;
     double normV2        = 0.0;
@@ -169,6 +179,11 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                    float                        cosThreshold,
                                    int                          maxNbNeighbors) const
 {
+    if (!position.ptr<float>())
+    {
+        return sqRange;
+    }
+
     // add current node to the list
 
     const double sqrDistanceToCurrentNode = sqrDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);

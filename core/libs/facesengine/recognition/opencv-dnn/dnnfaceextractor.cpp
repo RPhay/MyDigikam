@@ -21,6 +21,7 @@
 #include <QString>
 #include <QFileInfo>
 #include <QDataStream>
+#include <QMutexLocker>
 #include <QElapsedTimer>
 #include <QStandardPaths>
 
@@ -277,12 +278,12 @@ cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
     cv::Mat blob = cv::dnn::blobFromImage(alignedFace, d->scaleFactor, d->imageSize, cv::Scalar(), true, false);
 
-    d->mutex.lock();
+    if (!d->net.empty())
     {
+        QMutexLocker lock(&d->mutex);
         d->net.setInput(blob);
         face_descriptors = d->net.forward();
     }
-    d->mutex.unlock();
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
                                 << timer.elapsed() << " ms";

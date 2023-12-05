@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 00:39+0000\n"
-"PO-Revision-Date: 2023-12-02 12:41+0100\n"
+"POT-Creation-Date: 2023-12-05 00:39+0000\n"
+"PO-Revision-Date: 2023-12-04 11:10+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -6105,15 +6105,7 @@ msgstr ""
 "metadades de valoració, o color, o rètols de selecció a les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</p><p>The settings below "
-#| "determines the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool allows to assign automatically tags to images by contents "
@@ -6123,9 +6115,9 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
-"<p>Aquesta eina permet assignar etiquetes automàticament a les imatges "
+"<p><b>Aquesta eina permet assignar etiquetes automàticament a les imatges "
 "mitjançant l'anàlisi del contingut mitjançant una xarxa neuronal "
-"d'aprenentatge profund.</p><p>El paràmetre de sota determina el model "
+"d'aprenentatge profund.</b></p><p>Els paràmetres de sota determinen el model "
 "d'aprenentatge profund a utilitzar mentre s'analitza el contingut de la "
 "imatge per determinar els subjectes de la fotografia. La xarxa neuronal "
 "utilitzada en segon pla generarà automàticament una sèrie d'etiquetes que "
@@ -6156,28 +6148,7 @@ msgid "ResNet50"
 msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "king of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -6213,12 +6184,12 @@ msgstr ""
 "p><p><b>ResNet50</b>: aquest model és un tipus específic de xarxa neuronal "
 "de convolució formada per l'apilament de blocs residuals normalment "
 "utilitzats per a alimentar aplicacions de visió per ordinador com a "
-"deteccions d'objectes. Aquest tipus de disseny permet l'entrenament de "
+"deteccions d'objectes. Aquesta classe de disseny permet l'entrenament de "
 "xarxes molt profundes sense trobar-se amb el problema del degradat que "
 "desapareix. A diferència de YOLO, ResNet50 se centra principalment en la "
 "classificació d'imatges i no proporciona la localització d'objectes. Pot "
 "reconèixer objectes d'un vast conjunt de més de 1.000 classes, cobrint una "
-"àmplia gamma d'objectes, animals i escenes.</p>"
+"àmplia varietat d'objectes, animals i escenes.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -27453,7 +27424,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Voleu fusionar l'etiqueta «%1» dins l'etiqueta «%2»?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "No ho tornis a preguntar en aquesta sessió"
@@ -27463,7 +27434,7 @@ msgstr "No ho tornis a preguntar en aquesta sessió"
 msgid "No such tag"
 msgstr "No existeix l'etiqueta"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -36913,7 +36884,7 @@ msgstr ""
 "actualitzacions."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:231
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
@@ -41637,7 +41608,7 @@ msgid "An error has occurred with the media player..."
 msgstr "Hi ha hagut un error amb el reproductor multimèdia..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Commuta la reproducció en bucle"
@@ -57922,15 +57893,7 @@ msgid "Detect and recognize Faces"
 msgstr "Detecta i reconeix les cares"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</p><p>The settings below "
-#| "determines the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool allows to assign automatically tags to images by contents "
@@ -57940,9 +57903,9 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
-"<p>Aquesta eina permet assignar etiquetes automàticament a les imatges "
+"<p><b>Aquesta eina permet assignar etiquetes automàticament a les imatges "
 "mitjançant l'anàlisi del contingut mitjançant una xarxa neuronal "
-"d'aprenentatge profund.</p><p>El paràmetre de sota determina el model "
+"d'aprenentatge profund.</b></p><p>Els paràmetres de sota determinen el model "
 "d'aprenentatge profund a utilitzar mentre s'analitza el contingut de la "
 "imatge per determinar els subjectes de la fotografia. La xarxa neuronal "
 "utilitzada en segon pla generarà automàticament una sèrie d'etiquetes que "
@@ -57970,8 +57933,12 @@ msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag<p>."
+"the items with no assigned tag.</p>"
 msgstr ""
+"<p><b>Neteja-ho tot i torna a assignar</b>: neteja totes les etiquetes ja "
+"assignades i torna a explorar tots els elements des de zero.</"
+"p><p><b>Explora només els no assignats</b>: només explora els elements sense "
+"cap etiqueta assignada.<p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
 #, kde-format
@@ -58015,7 +57982,7 @@ msgstr ""
 "desapareix. A diferència de YOLO, ResNet50 se centra principalment en la "
 "classificació d'imatges i no proporciona la localització d'objectes. Pot "
 "reconèixer objectes d'un vast conjunt de més de 1.000 classes, cobrint una "
-"àmplia gamma d'objectes, animals i escenes.</p>"
+"àmplia varietat d'objectes, animals i escenes.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:212
 #, kde-format
@@ -61291,50 +61258,41 @@ msgstr "Selecció de la categoria"
 msgid "Your collection will use this category:"
 msgstr "La col·lecció usarà aquesta categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:219
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Baixada dels fitxers necessaris"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Use Face Detection feature"
+msgstr "Detecció de cares"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:178
 #, kde-format
-msgctxt "%1: folder path, %2: disk size with unit"
-msgid ""
-"<p>For the face engine and red eye removal tool, digiKam needs some large "
-"binary files. Some of these files were not found. Click 'Download' to begin "
-"downloading the needed files. You can cancel this process, the next time "
-"digiKam is started this dialog will appear again. Face detection will not "
-"work without these files.</p><p>The files will be downloaded to %1. Make "
-"sure there are around %2 available. <b>After the successful download you "
-"have to restart digiKam.</b></p>"
+msgid "Use Aesthetic Detection feature"
 msgstr ""
-"<p>Per al motor de cares i l'eina d'eliminació dels ulls vermells, el "
-"digiKam necessita alguns fitxers binaris grans. No s'han trobat alguns "
-"d'aquests fitxers. Feu clic a «Baixa» per començar a baixar els fitxers "
-"necessaris. Podeu cancel·lar aquest procés, la propera vegada que s'iniciï "
-"el digiKam, tornarà a aparèixer aquest diàleg. La detecció de cares no "
-"funcionarà sense aquests fitxers.</p><p>Els fitxers es descarregaran a %1. "
-"Comproveu que hi hagi al voltant de %2 disponibles. <b>Una vegada "
-"finalitzada la baixada, haureu de reiniciar el digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:262
-#, kde-format
-msgid "Disable face engine feature and don't ask again"
-msgstr "Desactiva la característica del motor de cares i no tornis a preguntar"
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#, fuzzy, kde-format
+#| msgid "Autotags Assignment"
+msgid "Use Auto Tags Assignment feature"
+msgstr "Assignació d'etiquetes automàtiques"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:313
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Tots els fitxers s'han descarregat correctament."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:322
+#: core/utilities/setup/downloader/filesdownloader.cpp:258
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Error de baixada"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:323
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61353,31 +61311,69 @@ msgstr ""
 "\n"
 "Podeu intentar-ho de nou o continuar amb la descàrrega en el següent inici."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:331
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Torna a provar-ho"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:466
+#: core/utilities/setup/downloader/filesdownloader.cpp:402
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificació no és correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:490
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File write error."
 msgstr "Error d'escriptura en el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:497
+#: core/utilities/setup/downloader/filesdownloader.cpp:433
 #, kde-format
 msgid "File open error."
 msgstr "Error en obrir el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#: core/utilities/setup/downloader/filesdownloader.cpp:448
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El fitxer que hi ha en el servidor és massa gran."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:587
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path, %2: disk size with unit"
+#| msgid ""
+#| "<p>For the face engine and red eye removal tool, digiKam needs some large "
+#| "binary files. Some of these files were not found. Click 'Download' to "
+#| "begin downloading the needed files. You can cancel this process, the next "
+#| "time digiKam is started this dialog will appear again. Face detection "
+#| "will not work without these files.</p><p>The files will be downloaded to "
+#| "%1. Make sure there are around %2 available. <b>After the successful "
+#| "download you have to restart digiKam.</b></p>"
+msgctxt "%1: folder path"
+msgid ""
+"<p>For face detection, the red-eye removal tool, the classification of "
+"images according to aesthetics or the automatic assignment of tags to "
+"images, digiKam requires some large binary files. You can choose which "
+"feature you want to use.</p><p>Some of these files were not found. Click "
+"“Download” to begin downloading the files you need. You can cancel this "
+"process, this dialog will appear again the next time you start digiKam. "
+"Without these files the selected features will not work.</p><p>The files "
+"will be downloaded to %1.</p><p><b>After the successful download you have to "
+"restart digiKam.</b></p>"
+msgstr ""
+"<p>Per al motor de cares i l'eina d'eliminació dels ulls vermells, el "
+"digiKam necessita alguns fitxers binaris grans. No s'han trobat alguns "
+"d'aquests fitxers. Feu clic a «Baixa» per començar a baixar els fitxers "
+"necessaris. Podeu cancel·lar aquest procés, la propera vegada que s'iniciï "
+"el digiKam, tornarà a aparèixer aquest diàleg. La detecció de cares no "
+"funcionarà sense aquests fitxers.</p><p>Els fitxers es descarregaran a %1. "
+"Comproveu que hi hagi al voltant de %2 disponibles. <b>Una vegada "
+"finalitzada la baixada, haureu de reiniciar el digiKam.</b></p>"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:599
+#, kde-format
+msgctxt "%1: disk size with unit"
+msgid "The download of the selected features requires %1"
+msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -64419,95 +64415,6 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
 
-#~| msgctxt "@info:tooltip"
-#~| msgid ""
-#~| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#~| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#~| "integration of smaller-scale object detection scenarios.</p><p><b>YOLOv5 "
-#~| "XLarge</b>: this model is a neural network dedicated for more complex "
-#~| "object detection requirements and showcases remarkable capabilities. "
-#~| "Despite the additional complexity introducing more time-latency and "
-#~| "computer resources, it's must be used for larger-scale object detection "
-#~| "scenarios.</p><p><b>ResNet50</b>: this model is a specific type of "
-#~| "convolutional neural network formed by stacking residual blocks commonly "
-#~| "used to power computer vision applications as object detections."
-#~ msgctxt "@label"
-#~ msgid ""
-#~ "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#~ "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#~ "integration of smaller-scale object detection scenarios. It's designed "
-#~ "for objects detections, capable of recognizing and extracting the "
-#~ "location of objects within an image. The limitation on the number of "
-#~ "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#~ "previous one, this model is a neural network dedicated for more complex "
-#~ "object detection requirements and showcases remarkable capabilities. "
-#~ "Despite the additional complexity introducing more time-latency and "
-#~ "computer resources, it's must be used for larger-scale object detection "
-#~ "scenarios as it provides more accurate predictions at the expense of "
-#~ "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#~ "convolutional neural network formed by stacking residual blocks commonly "
-#~ "used to power computer vision applications as object detections. This "
-#~ "king of design allows the training of very deep networks without "
-#~ "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#~ "primarily focused on image classification and does not provide object "
-#~ "localization. It can recognize objects from a vast set of more than 1,000 "
-#~ "classes, covering a wide range of objects, animals, and scenes.</p>"
+#~ msgid "Disable face engine feature and don't ask again"
 #~ msgstr ""
-#~ "<p><b>YOLOv5 Nano</b>: aquest model és una xarxa neuronal que ofereix una "
-#~ "velocitat i eficiència excepcionals. Permet avaluar ràpidament la "
-#~ "integració d'escenaris de detecció d'objectes de petita escala. Està "
-#~ "dissenyat per a deteccions d'objectes, capaç de reconèixer i extreure la "
-#~ "ubicació dels objectes en una imatge. La limitació del nombre d'objectes "
-#~ "reconeixibles s'estableix a 80.</p><p><b>YOLOv5 XLarge</b>: com "
-#~ "l'anterior, aquest model és una xarxa neuronal dedicada a requisits de "
-#~ "detecció d'objectes més complexos i mostra capacitats notables. Malgrat "
-#~ "la complexitat addicional que introdueix més latència de temps i recursos "
-#~ "informàtics, s'ha d'utilitzar per a escenaris de detecció d'objectes a "
-#~ "gran escala, ja que proporciona prediccions més precises a costa de la "
-#~ "velocitat.</p><p><b>ResNet50</b>: aquest model és un tipus específic de "
-#~ "xarxa neuronal de convolució formada per l'apilament de blocs residuals "
-#~ "normalment utilitzats per a alimentar aplicacions de visió per ordinador "
-#~ "com a deteccions d'objectes. Aquest tipus de disseny permet l'entrenament "
-#~ "de xarxes molt profundes sense trobar-se amb el problema del degradat que "
-#~ "desapareix. A diferència de YOLO, ResNet50 se centra principalment en la "
-#~ "classificació d'imatges i no proporciona la localització d'objectes. Pot "
-#~ "reconèixer objectes d'un vast conjunt de més de 1.000 classes, cobrint "
-#~ "una àmplia gamma d'objectes, animals i escenes.</p>"
-
-#~ msgctxt "@label"
-#~ msgid ""
-#~ "<p>This tool allows to assign automatically tags to images by contents "
-#~ "analysis using deep-learning neural network.</p><p>The settings below "
-#~ "determines the deep-learning model to use while parsing image contents to "
-#~ "determine the subjects of the photography. The neural network used in "
-#~ "background will generate automatically a serie of tags describing the "
-#~ "contents and store the results in the database.</p><p><b>YOLOv5 Nano</b>: "
-#~ "this model is a neural network which offers exceptional speed and "
-#~ "efficiency. It enables you to swiftly evaluate the integration of smaller-"
-#~ "scale object detection scenarios.</p><p><b>YOLOv5 XLarge</b>: this model "
-#~ "is a neural network dedicated for more complex object detection "
-#~ "requirements and showcases remarkable capabilities. Despite the "
-#~ "additional complexity introducing more time-latency and computer "
-#~ "resources, it's must be used for larger-scale object detection scenarios."
-#~ "</p><p><b>ResNet50</b>: this model is a specific type of convolutional "
-#~ "neural network formed by stacking residual blocks commonly used to power "
-#~ "computer vision applications as object detections."
-#~ msgstr ""
-#~ "<p>Aquesta eina permet assignar etiquetes automàticament a les imatges "
-#~ "mitjançant l'anàlisi del contingut emprant una xarxa neuronal "
-#~ "d'aprenentatge profund.</p><p>La configuració a continuació determina el "
-#~ "model d'aprenentatge profund a utilitzar mentre s'analitza el contingut "
-#~ "de la imatge per a determinar els subjectes de la fotografia. La xarxa "
-#~ "neuronal utilitzada en segon pla generarà automàticament una sèrie "
-#~ "d'etiquetes que descriuen el contingut i emmagatzema els resultats a la "
-#~ "base de dades.</p><p><b>YOLOv5 Nano</b>: aquest model és una xarxa "
-#~ "neuronal que ofereix una velocitat i eficiència excepcionals. Permet "
-#~ "avaluar ràpidament la integració d'escenaris de detecció d'objectes de "
-#~ "petita escala.</p><p><b>YOLOv5 XLarge</b>: aquest model és una xarxa "
-#~ "neuronal dedicada a requisits de detecció d'objectes més complexos i "
-#~ "mostra capacitats notables. Malgrat la complexitat addicional que "
-#~ "introdueix més latència de temps i recursos informàtics, s'ha d'utilitzar "
-#~ "per a escenaris de detecció d'objectes a gran escala.</p><p><b>ResNet50</"
-#~ "b>: aquest model és un tipus específic de xarxa neuronal de convolució "
-#~ "formada per l'apilament de blocs residuals normalment utilitzats per a "
-#~ "alimentar aplicacions de visió per ordinador com a deteccions d'objectes."
+#~ "Desactiva la característica del motor de cares i no tornis a preguntar"
