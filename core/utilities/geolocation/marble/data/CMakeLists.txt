@@ -1,3 +1,5 @@
+set (MARBLE_DATA_INSTALL_PATH ${KDE_INSTALL_FULL_DATADIR}/digikam/marble/)
+
 install (FILES
 credits_authors.html
 credits_data.html
@@ -200,8 +202,12 @@ maps/moon/clementine/clementine.dgml
 maps/moon/clementine/tour.kml
 DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/moon/clementine)
 
+macro( marble_add_project_resources resources )
+    add_custom_target( ${PROJECT_NAME}_Resources ALL SOURCES ${ARGN} )
+endmacro()
+
 FILE (GLOB_RECURSE DGML_FILES maps/*.dgml)
-MARBLE_ADD_PROJECT_RESOURCES(${DGML_FILES})
+marble_add_project_resources(${DGML_FILES})
 
 install (FILES
 weather/bbc-stations.xml
@@ -265,38 +271,21 @@ placemarks/boundaryplacemarks.cache
 placemarks/moonterrain.cache
 DESTINATION ${MARBLE_DATA_INSTALL_PATH}/placemarks)
 
-if(MOBILE)
-    install (FILES placemarks/cityplacemarks_large_population.cache DESTINATION ${MARBLE_DATA_INSTALL_PATH}/placemarks RENAME placemarks/cityplacemarks.cache)
-else(MOBILE)
-    install (FILES placemarks/cityplacemarks.cache DESTINATION ${MARBLE_DATA_INSTALL_PATH}/placemarks)
-endif(MOBILE)
+install (FILES placemarks/cityplacemarks.cache DESTINATION ${MARBLE_DATA_INSTALL_PATH}/placemarks)
 
-if(NOT APPLE AND NOT WIN32)
-  install (FILES icons/128-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/128x128/apps/ RENAME marble.png)
-  install (FILES icons/64-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/64x64/apps/ RENAME marble.png)
-  install (FILES icons/48-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/48x48/apps/ RENAME marble.png)
-  install (FILES icons/32-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/32x32/apps/ RENAME marble.png)
-  install (FILES icons/22-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/22x22/apps/ RENAME marble.png)
-  install (FILES icons/16-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/16x16/apps/ RENAME marble.png)
-endif(NOT APPLE AND NOT WIN32 )
+#if(NOT APPLE AND NOT WIN32)
+#  install (FILES icons/128-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/128x128/apps/ RENAME marble.png)
+#  install (FILES icons/64-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/64x64/apps/ RENAME marble.png)
+#  install (FILES icons/48-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/48x48/apps/ RENAME marble.png)
+#  install (FILES icons/32-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/32x32/apps/ RENAME marble.png)
+#  install (FILES icons/22-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/22x22/apps/ RENAME marble.png)
+#  install (FILES icons/16-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/16x16/apps/ RENAME marble.png)
+#endif(NOT APPLE AND NOT WIN32 )
 
 FILE (GLOB AUDIO_FILES audio/*.ogg)
 install (FILES
   ${AUDIO_FILES}
 DESTINATION ${MARBLE_DATA_INSTALL_PATH}/audio)
 
-add_subdirectory(lang)
+#add_subdirectory(lang)
 
-find_package(ECM ${REQUIRED_ECM_VERSION} QUIET) # for FindSharedMimeInfo
-if(NOT ECM_FOUND)
-    return()
-endif()
-
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
-include(KDEInstallDirs) # for KDE_INSTALL_MIMEDIR
-set( SHARED_MIME_INFO_MINIMUM_VERSION "1.8" )
-find_package( SharedMimeInfo QUIET )
-if(SharedMimeInfo_FOUND)
-    install(FILES mimetypes/geo.xml  DESTINATION ${KDE_INSTALL_MIMEDIR})
-    update_xdg_mimetypes( ${KDE_INSTALL_MIMEDIR} )
-endif()

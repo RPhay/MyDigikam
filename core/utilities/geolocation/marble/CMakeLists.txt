@@ -312,3 +312,5 @@ target_compile_definitions(core_marble_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
+
+add_subdirectory(data)
