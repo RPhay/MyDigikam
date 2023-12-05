@@ -119,15 +119,6 @@ QString MarbleDirs::systemPath()
 
     QString systempath;
 
-#ifdef MARBLE_DATA_PATH
-    //MARBLE_DATA_PATH is a compiler define set by cmake
-    QString compileTimeMarbleDataPath(MARBLE_DATA_PATH);
-
-    if(QDir(compileTimeMarbleDataPath).exists())
-        return compileTimeMarbleDataPath;
-#endif  // MARBLE_DATA_PATH
-
-
 #ifdef Q_OS_WIN
 	return QCoreApplication::applicationDirPath() + QDir::separator() + QLatin1String("data");
 #endif
@@ -234,7 +225,7 @@ QString MarbleDirs::pluginSystemPath()
 QString MarbleDirs::localPath() 
 {
 #ifndef Q_OS_WIN
-    QString dataHome = getenv( "XDG_DATA_HOME" );
+    QString dataHome = QString::fromUtf8(getenv( "XDG_DATA_HOME") );
     if( dataHome.isEmpty() )
         dataHome = QDir::homePath() + QLatin1String("/.local/share");
 
@@ -255,7 +246,7 @@ QStringList MarbleDirs::oldLocalPaths()
     const QString xdgDefault = QDir::homePath() + QLatin1String("/.local/share/marble");
     possibleOldPaths.append( xdgDefault );
 
-    QString xdg = getenv( "XDG_DATA_HOME" );
+    QString xdg = QString::fromUtf8(getenv( "XDG_DATA_HOME" ));
     xdg += QLatin1String("/marble/");
     possibleOldPaths.append( xdg );
 #endif
@@ -311,7 +302,7 @@ void MarbleDirs::setMarbleDataPath( const QString& adaptedPath )
 {
     if ( !QDir::root().exists( adaptedPath ) )
     {
-        qWarning() << QString( "Invalid MarbleDataPath \"%1\". Using \"%2\" instead." ).arg( adaptedPath, systemPath() );
+        qWarning() << QString::fromUtf8( "Invalid MarbleDataPath \"%1\". Using \"%2\" instead." ).arg( adaptedPath, systemPath() );
         return;
     }
 
@@ -322,7 +313,7 @@ void MarbleDirs::setMarblePluginPath( const QString& adaptedPath )
 {
     if ( !QDir::root().exists( adaptedPath ) )
     {
-        qWarning() << QString( "Invalid MarblePluginPath \"%1\". Using \"%2\" instead." ).arg( adaptedPath, pluginSystemPath() );
+        qWarning() << QString::fromUtf8( "Invalid MarblePluginPath \"%1\". Using \"%2\" instead." ).arg( adaptedPath, pluginSystemPath() );
         return;
     }
 
@@ -337,10 +328,8 @@ void MarbleDirs::debug()
     mDebug() << "Plugin Local Path:" << pluginLocalPath();
     mDebug() << "";
     mDebug() << "Marble Data Path (Run Time) :" << runTimeMarbleDataPath; 
-    mDebug() << "Marble Data Path (Compile Time):" << QString(MARBLE_DATA_PATH); 
     mDebug() << "";
     mDebug() << "Marble Plugin Path (Run Time) :" << runTimeMarblePluginPath; 
-    mDebug() << "Marble Plugin Path (Compile Time):" << QString(MARBLE_PLUGIN_PATH); 
     mDebug() << "";
     mDebug() << "System Path:" << systemPath();
     mDebug() << "Plugin System Path:" << pluginSystemPath();

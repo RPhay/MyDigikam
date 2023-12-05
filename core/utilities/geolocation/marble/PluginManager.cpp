@@ -12,6 +12,7 @@
 #include <QPluginLoader>
 #include <QElapsedTimer>
 #include <QMessageBox>
+#include <QLibraryInfo>
 
 // Local dir
 #include "MarbleDirs.h"
@@ -158,12 +159,12 @@ void PluginManager::addParseRunnerPlugin( const ParseRunnerPlugin *plugin )
 
 void PluginManager::blacklistPlugin(const QString &filename)
 {
-    PluginManagerPrivate::m_blacklist << QLibraryInfo::path(QLibraryInfo::PluginsPath) + filename;
+    PluginManagerPrivate::m_blacklist << QLibraryInfo::path(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + filename;
 }
 
 void PluginManager::whitelistPlugin(const QString &filename)
 {
-    PluginManagerPrivate::m_whitelist << MARBLE_SHARED_LIBRARY_PREFIX + filename;
+    PluginManagerPrivate::m_whitelist << QLibraryInfo::path(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + filename;
 }
 
 /** Append obj to the given plugins list if it inherits both T and U */
@@ -173,7 +174,7 @@ bool appendPlugin( QObject * obj, const QPluginLoader *loader, QList<Plugin> &pl
     if ( qobject_cast<Iface*>( obj ) && qobject_cast<Plugin>( obj ) ) {
         Q_ASSERT( obj->metaObject()->superClass() ); // all our plugins have a super class
         mDebug() <<  obj->metaObject()->superClass()->className()
-                << "plugin loaded from" << (loader ? loader->fileName() : "<static>");
+                << "plugin loaded from" << (loader ? loader->fileName() : QString::fromUtf8( "<static>"));
         auto plugin = qobject_cast<Plugin>( obj );
         Q_ASSERT( plugin ); // checked above
         plugins << plugin;
@@ -198,8 +199,8 @@ bool PluginManagerPrivate::addPlugin(QObject *obj, const QPluginLoader *loader)
     isPlugin = isPlugin || appendPlugin<ParseRunnerPlugin>
                 ( obj, loader, m_parsingRunnerPlugins );
     if ( !isPlugin ) {
-        qWarning() << "Ignoring the following plugin since it couldn't be loaded:" << (loader ? loader->fileName() : "<static>");
-        mDebug() << "Plugin failure:" << (loader ? loader->fileName() : "<static>") << "is a plugin, but it does not implement the "
+        qWarning() << "Ignoring the following plugin since it couldn't be loaded:" << (loader ? loader->fileName() : QString::fromUtf8( "<static>"));
+        mDebug() << "Plugin failure:" << (loader ? loader->fileName() : QString::fromUtf8( "<static>")) << "is a plugin, but it does not implement the "
                 << "right interfaces or it was compiled against an old version of Marble. Ignoring it.";
     }
     return isPlugin;
@@ -216,7 +217,7 @@ void PluginManagerPrivate::loadPlugins()
     t.start();
     mDebug() << "Starting to load Plugins.";
 
-    QStringList pluginFileNameList = MarbleDirs::pluginEntryList( "", QDir::Files );
+    QStringList pluginFileNameList = MarbleDirs::pluginEntryList( QString::fromUtf8( "" ), QDir::Files );
 
     MarbleDirs::debug();
 
@@ -230,7 +231,7 @@ void PluginManagerPrivate::loadPlugins()
     bool foundPlugin = false;
     for( const QString &fileName: pluginFileNameList ) {
         QString const baseName = QFileInfo(fileName).baseName();
-        QString const libBaseName = MARBLE_SHARED_LIBRARY_PREFIX + QFileInfo(fileName).baseName();
+        QString const libBaseName = QLibraryInfo::path(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + QFileInfo(fileName).baseName();
         if (!m_whitelist.isEmpty() && !m_whitelist.contains(baseName) && !m_whitelist.contains(libBaseName)) {
             mDebug() << "Ignoring non-whitelisted plugin " << fileName;
             continue;
@@ -276,21 +277,8 @@ void PluginManagerPrivate::loadPlugins()
     }
 
     if ( !foundPlugin ) {
-#ifdef Q_OS_WIN
-        QString pluginPaths = "Plugin Path: " + MarbleDirs::marblePluginPath();
-        if ( MarbleDirs::marblePluginPath().isEmpty() )
-            pluginPaths = "";
-        pluginPaths += "System Path: " + MarbleDirs::pluginSystemPath() + "\nLocal Path: " + MarbleDirs::pluginLocalPath();
-
-        QMessageBox::warning( nullptr,
-                              "No plugins loaded",
-                              "No plugins were loaded, please check if the plugins were installed in one of the following paths:\n" + pluginPaths
-                              + "\n\nAlso check if the plugin is compiled against the right version of Marble. " +
-                              "Analyzing the debug messages inside a debugger might give more insight." );
-#else
         qWarning() << "No plugins loaded. Please check if the plugins were installed in the correct path,"
                    << "or if any errors occurred while loading plugins.";
-#endif
     }
 
     m_pluginsLoaded = true;

@@ -258,11 +258,9 @@ set(marblewidget_SRCS
     cloudsync/ConflictDialog.cpp
     cloudsync/OwncloudSyncBackend.cpp
 
-    StyleBuilder.cpp
-
-    # Use marble-config.h
-    PluginManager.cpp
     MarbleDirs.cpp
+    PluginManager.cpp
+    StyleBuilder.cpp
 )
 
 set (marblewidget_UI
