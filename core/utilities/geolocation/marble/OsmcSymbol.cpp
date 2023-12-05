@@ -19,20 +19,20 @@ OsmcSymbol::OsmcSymbol(const QString &tag, int size)
     , m_side(size)
 {
     m_backgroundTypes
-            << "round" << "circle" << "frame";
+            << QString::fromUtf8("round") << QString::fromUtf8("circle") << QString::fromUtf8("frame");
 
     m_foregroundTypes
-            << "dot" << "bowl" << "circle" << "bar"
-            << "stripe" << "cross" << "x" << "slash"
-            << "backslash" << "rectangle" << "rectangle_line"
-            << "triangle" << "triangle_turned" << "triangle_line"
-            << "diamond" << "pointer" << "fork" << "arch"
-            << "turned_T" << "L" << "lower" << "corner"
-            << "drop_line" << "horse" << "hiker";
+            << QString::fromUtf8("dot") << QString::fromUtf8("bowl") << QString::fromUtf8("circle") << QString::fromUtf8("bar")
+            << QString::fromUtf8("stripe") << QString::fromUtf8("cross") << QString::fromUtf8("x") << QString::fromUtf8("slash")
+            << QString::fromUtf8("backslash") << QString::fromUtf8("rectangle") << QString::fromUtf8("rectangle_line")
+            << QString::fromUtf8("triangle") << QString::fromUtf8("triangle_turned") << QString::fromUtf8("triangle_line")
+            << QString::fromUtf8("diamond") << QString::fromUtf8("pointer") << QString::fromUtf8("fork") << QString::fromUtf8("arch")
+            << QString::fromUtf8("turned_T") << QString::fromUtf8("L") << QString::fromUtf8("lower") << QString::fromUtf8("corner")
+            << QString::fromUtf8("drop_line") << QString::fromUtf8("horse") << QString::fromUtf8("hiker");
 
     m_precoloredForegroundTypes
-            << "wolfshook" << "shell" << "shell_modern" << "ammonit"
-            << "mine" << "hiker" << "heart" << "tower" << "bridleway";
+            << QString::fromUtf8("wolfshook") << QString::fromUtf8("shell") << QString::fromUtf8("shell_modern") << QString::fromUtf8("ammonit")
+            << QString::fromUtf8("mine") << QString::fromUtf8("hiker") << QString::fromUtf8("heart") << QString::fromUtf8("tower") << QString::fromUtf8("bridleway");
 
     if (parseTag(tag)) {
         render();
@@ -47,7 +47,7 @@ OsmcSymbol::~OsmcSymbol()
 
 bool OsmcSymbol::parseTag(const QString &tag)
 {
-    QStringList parts = tag.split(':');
+    QStringList parts = tag.split(QLatin1Char(':'));
 
     if (parts.size() < 2) {
         return false;
@@ -109,8 +109,8 @@ bool OsmcSymbol::parseTag(const QString &tag)
 
 bool OsmcSymbol::parseBackground(const QString &bg)
 {
-    QString color = bg.section("_", 0, 0);
-    QString type = bg.section("_", 1, -1);
+    QString color = bg.section(QString::fromUtf8("_"), 0, 0);
+    QString type = bg.section(QString::fromUtf8("_"), 1, -1);
 
     if (!QColor::isValidColor(color)) {
         return false;
@@ -135,14 +135,14 @@ void setXMLAttribute(QDomElement &elem, const QString& tag, const QString& attr,
 QSvgRenderer* OsmcSymbol::parseForeground(const QString &fg)
 {
     if (m_precoloredForegroundTypes.contains(fg)) {
-        return new QSvgRenderer(QString(":/osmc-symbols/%1.svg").arg(fg));
+        return new QSvgRenderer(QString::fromUtf8(":/osmc-symbols/%1.svg").arg(fg));
     }
 
-    QString color = fg.section('_', 0, 0);
-    QString type = fg.section('_', 1, -1);
+    QString color = fg.section(QLatin1Char('_'), 0, 0);
+    QString type = fg.section(QLatin1Char('_'), 1, -1);
     if (QColor::isValidColor(color) && m_foregroundTypes.contains(type)) {
         // Open svg resource and load contents to QByteArray
-        QFile file(QString(":/osmc-symbols/%1.svg").arg(type));
+        QFile file(QString::fromUtf8(":/osmc-symbols/%1.svg").arg(type));
         file.open(QIODevice::ReadOnly);
         QByteArray baData = file.readAll();
 
@@ -152,7 +152,7 @@ QSvgRenderer* OsmcSymbol::parseForeground(const QString &fg)
 
         // Recursively change color
         QDomElement rootElement = doc.documentElement();
-        setXMLAttribute(rootElement, "path", "fill", color);
+        setXMLAttribute(rootElement, QString::fromUtf8("path"), QString::fromUtf8("fill"), color);
 
         // Create and return svg renderer with edited contents
         return new QSvgRenderer(doc.toByteArray());
@@ -189,15 +189,15 @@ void OsmcSymbol::render()
     // Draw symbol's background
     if (m_backgroundType.isEmpty()) {
         painter.fillRect(bgRect, m_backgroundColor);
-    } else if (m_backgroundType == "round") {
+    } else if (m_backgroundType == QString::fromUtf8("round")) {
         painter.setBrush(m_backgroundColor);
         painter.setPen(m_backgroundColor);
         painter.drawEllipse(bgRect);
-    } else if (m_backgroundType == "circle") {
+    } else if (m_backgroundType == QString::fromUtf8("circle")) {
         painter.setBrush(Qt::white);
         painter.setPen(QPen(m_backgroundColor, m_side / 10));
         painter.drawEllipse(bgRect);
-    } else if (m_backgroundType == "frame") {
+    } else if (m_backgroundType == QString::fromUtf8("frame")) {
         painter.setPen(QPen(m_backgroundColor, m_side / 10));
         painter.fillRect(bgRect, Qt::white);
         painter.drawRect(bgRect);
