@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-04 00:39+0000\n"
+"POT-Creation-Date: 2023-12-05 00:39+0000\n"
 "PO-Revision-Date: 2023-11-28 19:21+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -36841,7 +36841,7 @@ msgstr ""
 "Отворете диалогова страница за настройка, за да конфигурирате актуализациите."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:231
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
 #, kde-format
 msgid "Download"
 msgstr "Изтегляне"
@@ -61183,51 +61183,41 @@ msgstr "Избиране на категория"
 msgid "Your collection will use this category:"
 msgstr "Вашата колекция ще използва тази категория:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:219
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Изтегляне на необходимите файлове"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
-#, kde-format
-msgctxt "%1: folder path, %2: disk size with unit"
-msgid ""
-"<p>For the face engine and red eye removal tool, digiKam needs some large "
-"binary files. Some of these files were not found. Click 'Download' to begin "
-"downloading the needed files. You can cancel this process, the next time "
-"digiKam is started this dialog will appear again. Face detection will not "
-"work without these files.</p><p>The files will be downloaded to %1. Make "
-"sure there are around %2 available. <b>After the successful download you "
-"have to restart digiKam.</b></p>"
-msgstr ""
-"<p>За лицевото разпознаване и за коригирането на червени очи, digiKam се "
-"нуждае от някои големи двоични файлове. Някои от тези файлове не бяха "
-"намерени. Щракнете върху „Изтегляне“, за да свалите необходимите файлове. "
-"Можете да анулирате този процес, но при следващото стартиране на digiKam, "
-"този диалог ще се появи отново. Откриването на лица няма да може да работи "
-"без тези файлове. </p><p> Файловете ще бъдат изтеглени в %1. Уверете се, че "
-"са налични около %2. <b> След успешното изтегляне трябва да рестартирате "
-"digiKam.</b></p>"
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Use Face Detection feature"
+msgstr "Откриване на лица"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:262
+#: core/utilities/setup/downloader/filesdownloader.cpp:178
 #, kde-format
-msgid "Disable face engine feature and don't ask again"
+msgid "Use Aesthetic Detection feature"
 msgstr ""
-"Деактивиране на функцията за лицево разпознаване и да не се пита отново"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:313
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#, fuzzy, kde-format
+#| msgid "Automatic Adjustment"
+msgid "Use Auto Tags Assignment feature"
+msgstr "Автоматична настройка"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Всички файлове бяха изтеглени успешно."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:322
+#: core/utilities/setup/downloader/filesdownloader.cpp:258
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Грешка при изтегляне"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:323
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61247,31 +61237,69 @@ msgstr ""
 "Можете да опитате отново или да продължите изтеглянето при следващото "
 "стартиране."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:331
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Повторно опитване"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:466
+#: core/utilities/setup/downloader/filesdownloader.cpp:402
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Контролната сума е неправилна."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:490
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File write error."
 msgstr "Грешка при запис на файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:497
+#: core/utilities/setup/downloader/filesdownloader.cpp:433
 #, kde-format
 msgid "File open error."
 msgstr "Грешка при отваряне на файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#: core/utilities/setup/downloader/filesdownloader.cpp:448
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файлът на сървъра е твърде голям."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:587
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path, %2: disk size with unit"
+#| msgid ""
+#| "<p>For the face engine and red eye removal tool, digiKam needs some large "
+#| "binary files. Some of these files were not found. Click 'Download' to "
+#| "begin downloading the needed files. You can cancel this process, the next "
+#| "time digiKam is started this dialog will appear again. Face detection "
+#| "will not work without these files.</p><p>The files will be downloaded to "
+#| "%1. Make sure there are around %2 available. <b>After the successful "
+#| "download you have to restart digiKam.</b></p>"
+msgctxt "%1: folder path"
+msgid ""
+"<p>For face detection, the red-eye removal tool, the classification of "
+"images according to aesthetics or the automatic assignment of tags to "
+"images, digiKam requires some large binary files. You can choose which "
+"feature you want to use.</p><p>Some of these files were not found. Click "
+"“Download” to begin downloading the files you need. You can cancel this "
+"process, this dialog will appear again the next time you start digiKam. "
+"Without these files the selected features will not work.</p><p>The files "
+"will be downloaded to %1.</p><p><b>After the successful download you have to "
+"restart digiKam.</b></p>"
+msgstr ""
+"<p>За лицевото разпознаване и за коригирането на червени очи, digiKam се "
+"нуждае от някои големи двоични файлове. Някои от тези файлове не бяха "
+"намерени. Щракнете върху „Изтегляне“, за да свалите необходимите файлове. "
+"Можете да анулирате този процес, но при следващото стартиране на digiKam, "
+"този диалог ще се появи отново. Откриването на лица няма да може да работи "
+"без тези файлове. </p><p> Файловете ще бъдат изтеглени в %1. Уверете се, че "
+"са налични около %2. <b> След успешното изтегляне трябва да рестартирате "
+"digiKam.</b></p>"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:599
+#, kde-format
+msgctxt "%1: disk size with unit"
+msgid "The download of the selected features requires %1"
+msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -64331,6 +64359,10 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Искате ли да възстановите всички настройки на видеото до стойността по "
 "подразбиране?"
+
+#~ msgid "Disable face engine feature and don't ask again"
+#~ msgstr ""
+#~ "Деактивиране на функцията за лицево разпознаване и да не се пита отново"
 
 #~ msgctxt "@title:window"
 #~ msgid "Export error"

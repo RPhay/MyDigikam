@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-04 00:39+0000\n"
+"POT-Creation-Date: 2023-12-05 00:39+0000\n"
 "PO-Revision-Date: 2023-12-03 21:26+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -36907,7 +36907,7 @@ msgstr ""
 "actualizaciones."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:231
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
 #, kde-format
 msgid "Download"
 msgstr "Descargar"
@@ -61274,50 +61274,41 @@ msgstr "Seleccione categoría"
 msgid "Your collection will use this category:"
 msgstr "La colección usará esta categoría:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:219
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Descargar los archivos necesarios"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Use Face Detection feature"
+msgstr "Reconocimiento de caras"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:178
 #, kde-format
-msgctxt "%1: folder path, %2: disk size with unit"
-msgid ""
-"<p>For the face engine and red eye removal tool, digiKam needs some large "
-"binary files. Some of these files were not found. Click 'Download' to begin "
-"downloading the needed files. You can cancel this process, the next time "
-"digiKam is started this dialog will appear again. Face detection will not "
-"work without these files.</p><p>The files will be downloaded to %1. Make "
-"sure there are around %2 available. <b>After the successful download you "
-"have to restart digiKam.</b></p>"
+msgid "Use Aesthetic Detection feature"
 msgstr ""
-"<p>digiKam necesita algunos archivos binarios de gran tamaño para el motor "
-"de caras y para la herramienta de eliminación de ojos rojos. Algunos de "
-"estos archivos no se han encontrado en su equipo. Pulse «Descargar» para "
-"empezar a descargar los archivos necesarios. Puede cancelar este proceso. Si "
-"lo hace, este diálogo volverá a aparecer la próxima vez que inicie digiKam. "
-"La detección de caras no funcionará sin estos archivos.</p><p>Estos archivos "
-"se descargarán en %1. Asegúrese de que dispone de al menos %2 libres. <b>Una "
-"vez que la descarga se complete con éxito, deberá reiniciar digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:262
-#, kde-format
-msgid "Disable face engine feature and don't ask again"
-msgstr "Desactivar la función del motor de caras y no volver a preguntar"
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#, fuzzy, kde-format
+#| msgid "Autotags Assignment"
+msgid "Use Auto Tags Assignment feature"
+msgstr "Asignación automática de etiquetas"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:313
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Todos los archivos se han descargado con éxito."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:322
+#: core/utilities/setup/downloader/filesdownloader.cpp:258
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Error de descarga"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:323
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61337,31 +61328,69 @@ msgstr ""
 "Puede volver a intentarlo o continuar la descarga durante el siguiente "
 "inicio."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:331
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Volver a intentarlo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:466
+#: core/utilities/setup/downloader/filesdownloader.cpp:402
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificación no es correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:490
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File write error."
 msgstr "Ha ocurrido un error de escritura de archivo."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:497
+#: core/utilities/setup/downloader/filesdownloader.cpp:433
 #, kde-format
 msgid "File open error."
 msgstr "Ha ocurrido un error de apertura de archivo."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#: core/utilities/setup/downloader/filesdownloader.cpp:448
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El archivo del servidor es demasiado grande."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:587
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path, %2: disk size with unit"
+#| msgid ""
+#| "<p>For the face engine and red eye removal tool, digiKam needs some large "
+#| "binary files. Some of these files were not found. Click 'Download' to "
+#| "begin downloading the needed files. You can cancel this process, the next "
+#| "time digiKam is started this dialog will appear again. Face detection "
+#| "will not work without these files.</p><p>The files will be downloaded to "
+#| "%1. Make sure there are around %2 available. <b>After the successful "
+#| "download you have to restart digiKam.</b></p>"
+msgctxt "%1: folder path"
+msgid ""
+"<p>For face detection, the red-eye removal tool, the classification of "
+"images according to aesthetics or the automatic assignment of tags to "
+"images, digiKam requires some large binary files. You can choose which "
+"feature you want to use.</p><p>Some of these files were not found. Click "
+"“Download” to begin downloading the files you need. You can cancel this "
+"process, this dialog will appear again the next time you start digiKam. "
+"Without these files the selected features will not work.</p><p>The files "
+"will be downloaded to %1.</p><p><b>After the successful download you have to "
+"restart digiKam.</b></p>"
+msgstr ""
+"<p>digiKam necesita algunos archivos binarios de gran tamaño para el motor "
+"de caras y para la herramienta de eliminación de ojos rojos. Algunos de "
+"estos archivos no se han encontrado en su equipo. Pulse «Descargar» para "
+"empezar a descargar los archivos necesarios. Puede cancelar este proceso. Si "
+"lo hace, este diálogo volverá a aparecer la próxima vez que inicie digiKam. "
+"La detección de caras no funcionará sin estos archivos.</p><p>Estos archivos "
+"se descargarán en %1. Asegúrese de que dispone de al menos %2 libres. <b>Una "
+"vez que la descarga se complete con éxito, deberá reiniciar digiKam.</b></p>"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:599
+#, kde-format
+msgctxt "%1: disk size with unit"
+msgid "The download of the selected features requires %1"
+msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -64407,6 +64436,9 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "¿Desea reiniciar todas las preferencias de vídeo a sus valores "
 "predeterminados?"
+
+#~ msgid "Disable face engine feature and don't ask again"
+#~ msgstr "Desactivar la función del motor de caras y no volver a preguntar"
 
 #~| msgctxt "@info:tooltip"
 #~| msgid ""

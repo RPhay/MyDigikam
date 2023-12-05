@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-04 00:39+0000\n"
-"PO-Revision-Date: 2023-12-03 12:25+0100\n"
+"POT-Creation-Date: 2023-12-05 00:39+0000\n"
+"PO-Revision-Date: 2023-12-04 11:10+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -36881,7 +36881,7 @@ msgstr ""
 "actualitzacions."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:231
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
@@ -57937,12 +57937,7 @@ msgid "Scan non-assigned only"
 msgstr "Explora només els no assignats"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
-#| "only the items with no assigned tag<p>."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
@@ -57952,7 +57947,7 @@ msgstr ""
 "<p><b>Neteja-ho tot i torna a assignar</b>: neteja totes les etiquetes ja "
 "assignades i torna a explorar tots els elements des de zero.</"
 "p><p><b>Explora només els no assignats</b>: només explora els elements sense "
-"cap etiqueta assignada<p>."
+"cap etiqueta assignada.<p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
 #, kde-format
@@ -61272,50 +61267,41 @@ msgstr "Seleccioneu la categoria"
 msgid "Your collection will use this category:"
 msgstr "La col·lecció utilitzarà esta categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:219
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Baixada dels fitxers necessaris"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Use Face Detection feature"
+msgstr "Detecció de cares"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:178
 #, kde-format
-msgctxt "%1: folder path, %2: disk size with unit"
-msgid ""
-"<p>For the face engine and red eye removal tool, digiKam needs some large "
-"binary files. Some of these files were not found. Click 'Download' to begin "
-"downloading the needed files. You can cancel this process, the next time "
-"digiKam is started this dialog will appear again. Face detection will not "
-"work without these files.</p><p>The files will be downloaded to %1. Make "
-"sure there are around %2 available. <b>After the successful download you "
-"have to restart digiKam.</b></p>"
+msgid "Use Aesthetic Detection feature"
 msgstr ""
-"<p>Per al motor de cares i l'eina d'eliminació dels ulls rojos, digiKam "
-"necessita alguns fitxers binaris grans. No s'han trobat alguns d'estos "
-"fitxers. Feu clic en «Baixa» per a començar a baixar els fitxers necessaris. "
-"Podeu cancel·lar este procés, la propera vegada que s'inicie digiKam, "
-"tornarà a aparéixer este diàleg. La detecció de cares no funcionarà sense "
-"estos fitxers.</p><p>Els fitxers es descarregaran a %1. Comproveu que hi "
-"haja al voltant de %2 disponibles. <b>Una vegada finalitzada la baixada, "
-"haureu de reiniciar digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:262
-#, kde-format
-msgid "Disable face engine feature and don't ask again"
-msgstr "Desactiva la característica del motor de cares i no tornes a preguntar"
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#, fuzzy, kde-format
+#| msgid "Autotags Assignment"
+msgid "Use Auto Tags Assignment feature"
+msgstr "Assignació d'etiquetes automàtiques"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:313
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Tots els fitxers s'han descarregat correctament."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:322
+#: core/utilities/setup/downloader/filesdownloader.cpp:258
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "S'ha produït un error de baixada"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:323
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61334,31 +61320,69 @@ msgstr ""
 "\n"
 "Podeu intentar-ho de nou o continuar amb la descàrrega en el següent inici."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:331
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Torna-ho a provar"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:466
+#: core/utilities/setup/downloader/filesdownloader.cpp:402
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificació no és correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:490
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File write error."
 msgstr "S'ha produït un error d'escriptura en el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:497
+#: core/utilities/setup/downloader/filesdownloader.cpp:433
 #, kde-format
 msgid "File open error."
 msgstr "S'ha produït un error en obrir el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#: core/utilities/setup/downloader/filesdownloader.cpp:448
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El fitxer que hi ha en el servidor és massa gran."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:587
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path, %2: disk size with unit"
+#| msgid ""
+#| "<p>For the face engine and red eye removal tool, digiKam needs some large "
+#| "binary files. Some of these files were not found. Click 'Download' to "
+#| "begin downloading the needed files. You can cancel this process, the next "
+#| "time digiKam is started this dialog will appear again. Face detection "
+#| "will not work without these files.</p><p>The files will be downloaded to "
+#| "%1. Make sure there are around %2 available. <b>After the successful "
+#| "download you have to restart digiKam.</b></p>"
+msgctxt "%1: folder path"
+msgid ""
+"<p>For face detection, the red-eye removal tool, the classification of "
+"images according to aesthetics or the automatic assignment of tags to "
+"images, digiKam requires some large binary files. You can choose which "
+"feature you want to use.</p><p>Some of these files were not found. Click "
+"“Download” to begin downloading the files you need. You can cancel this "
+"process, this dialog will appear again the next time you start digiKam. "
+"Without these files the selected features will not work.</p><p>The files "
+"will be downloaded to %1.</p><p><b>After the successful download you have to "
+"restart digiKam.</b></p>"
+msgstr ""
+"<p>Per al motor de cares i l'eina d'eliminació dels ulls rojos, digiKam "
+"necessita alguns fitxers binaris grans. No s'han trobat alguns d'estos "
+"fitxers. Feu clic en «Baixa» per a començar a baixar els fitxers necessaris. "
+"Podeu cancel·lar este procés, la propera vegada que s'inicie digiKam, "
+"tornarà a aparéixer este diàleg. La detecció de cares no funcionarà sense "
+"estos fitxers.</p><p>Els fitxers es descarregaran a %1. Comproveu que hi "
+"haja al voltant de %2 disponibles. <b>Una vegada finalitzada la baixada, "
+"haureu de reiniciar digiKam.</b></p>"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:599
+#, kde-format
+msgctxt "%1: disk size with unit"
+msgid "The download of the selected features requires %1"
+msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -64398,3 +64422,7 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
+
+#~ msgid "Disable face engine feature and don't ask again"
+#~ msgstr ""
+#~ "Desactiva la característica del motor de cares i no tornes a preguntar"

@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-04 00:39+0000\n"
-"PO-Revision-Date: 2023-12-02 22:29+0100\n"
+"POT-Creation-Date: 2023-12-05 00:39+0000\n"
+"PO-Revision-Date: 2023-12-03 17:53+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -37096,7 +37096,7 @@ msgstr ""
 "Ouvrir la boîte de dialogue de paramétrage pour configurer les mises à jour."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:231
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
 #, kde-format
 msgid "Download"
 msgstr "Télécharger"
@@ -58304,6 +58304,26 @@ msgid ""
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
+"<p><b>YOLOv5 Nano</b> : ce modèle est un réseau de neurones offrant une "
+"vitesse et une efficacité exceptionnelles. Il vous permet d’évaluer "
+"rapidement l’intégration de scénarios de détection d’objets à plus petite "
+"échelle.  Le nombre maximal d’objets reconnaissables est fixé à 80.</"
+"p><p><b>YOLOv5 XLarge</b> : comme le précédent, ce modèle est un réseau de "
+"neurones dédié aux exigences de détection d’objets plus complexes et "
+"présente des capacités remarquables. Malgré la complexité supplémentaire "
+"introduisant plus de temps de latence et la consommation de plus de "
+"ressources informatiques, il doit être utilisé pour des scénarios de "
+"détection d’objets à plus grande échelle, car il fournit des prédictions "
+"plus précises au détriment de la vitesse.</p><p><b>ResNet50</b> : ce modèle "
+"est un type spécifique de réseau de neurones convolutionnel formé par "
+"l’empilement de blocs résiduels. Il est couramment utilisé pour alimenter "
+"les applications de vision par ordinateur pour la détection d’objets. Ce "
+"type de conception permet l'entraînement de réseaux très profonds sans "
+"rencontrer le problème du gradient de fuite. Contrairement au modèle "
+"« YOLO », le modèle « ResNet50 » se concentre principalement sur la "
+"classification des images et ne fournit aucune localisation d’objet. Il peut "
+"reconnaître des objets à partir d’un vaste ensemble de plus de 1000 classes, "
+"couvrant un large éventail d’objets, d’animaux et de scènes. </p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:212
 #, kde-format
@@ -61605,53 +61625,41 @@ msgstr "Sélectionner une catégorie"
 msgid "Your collection will use this category:"
 msgstr "Votre collection utilisera cette catégorie :"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:219
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Télécharger les fichiers demandés"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
-#, kde-format
-msgctxt "%1: folder path, %2: disk size with unit"
-msgid ""
-"<p>For the face engine and red eye removal tool, digiKam needs some large "
-"binary files. Some of these files were not found. Click 'Download' to begin "
-"downloading the needed files. You can cancel this process, the next time "
-"digiKam is started this dialog will appear again. Face detection will not "
-"work without these files.</p><p>The files will be downloaded to %1. Make "
-"sure there are around %2 available. <b>After the successful download you "
-"have to restart digiKam.</b></p>"
-msgstr ""
-"<p> Pour les outils de reconnaissance faciale et de suppression des yeux "
-"rouges, digiKam a besoin de certains fichiers exécutable de grande taille. "
-"Certains de ces fichiers sont impossibles à trouver. Veuillez cliquer sur "
-"« Téléchargement » pour lancer le téléchargement des fichiers nécessaires. "
-"Vous pouvez annuler ce processus. Au prochain démarrage de DigiKam, cette "
-"boîte de dialogue apparaîtra de nouveau. La reconnaissance faciale ne "
-"fonctionnera pas sans ces fichiers.</p><p>Les fichiers seront téléchargés "
-"vers %1. Veuillez vous assurer que vous avez environ %2 d'espace disponible. "
-"<b>Après un chargement réussi, vous devrez re-démarrer digiKam.</b></p>"
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Use Face Detection feature"
+msgstr "Détection de visages"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:262
+#: core/utilities/setup/downloader/filesdownloader.cpp:178
 #, kde-format
-msgid "Disable face engine feature and don't ask again"
+msgid "Use Aesthetic Detection feature"
 msgstr ""
-"Désactiver la fonctionnalité de moteur de reconnaissance faciale et ne "
-"demander à nouveau"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:313
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#, fuzzy, kde-format
+#| msgid "Autotags Assignment"
+msgid "Use Auto Tags Assignment feature"
+msgstr "Association automatique des étiquettes"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Tous les fichiers ont été téléchargés avec succès."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:322
+#: core/utilities/setup/downloader/filesdownloader.cpp:258
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Erreur de téléchargement"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:323
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61670,31 +61678,70 @@ msgstr ""
 "\n"
 "Vous pouvez ré-essayer ou continuer le téléchargement au prochain démarrage."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:331
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Essayer à nouveau"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:466
+#: core/utilities/setup/downloader/filesdownloader.cpp:402
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La somme de contrôle est incorrecte."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:490
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File write error."
 msgstr "Erreur d'écriture du fichier."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:497
+#: core/utilities/setup/downloader/filesdownloader.cpp:433
 #, kde-format
 msgid "File open error."
 msgstr "Erreur d'ouverture du fichier."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#: core/utilities/setup/downloader/filesdownloader.cpp:448
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Le fichier sur le serveur est trop volumineux."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:587
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path, %2: disk size with unit"
+#| msgid ""
+#| "<p>For the face engine and red eye removal tool, digiKam needs some large "
+#| "binary files. Some of these files were not found. Click 'Download' to "
+#| "begin downloading the needed files. You can cancel this process, the next "
+#| "time digiKam is started this dialog will appear again. Face detection "
+#| "will not work without these files.</p><p>The files will be downloaded to "
+#| "%1. Make sure there are around %2 available. <b>After the successful "
+#| "download you have to restart digiKam.</b></p>"
+msgctxt "%1: folder path"
+msgid ""
+"<p>For face detection, the red-eye removal tool, the classification of "
+"images according to aesthetics or the automatic assignment of tags to "
+"images, digiKam requires some large binary files. You can choose which "
+"feature you want to use.</p><p>Some of these files were not found. Click "
+"“Download” to begin downloading the files you need. You can cancel this "
+"process, this dialog will appear again the next time you start digiKam. "
+"Without these files the selected features will not work.</p><p>The files "
+"will be downloaded to %1.</p><p><b>After the successful download you have to "
+"restart digiKam.</b></p>"
+msgstr ""
+"<p> Pour les outils de reconnaissance faciale et de suppression des yeux "
+"rouges, digiKam a besoin de certains fichiers exécutable de grande taille. "
+"Certains de ces fichiers sont impossibles à trouver. Veuillez cliquer sur "
+"« Téléchargement » pour lancer le téléchargement des fichiers nécessaires. "
+"Vous pouvez annuler ce processus. Au prochain démarrage de DigiKam, cette "
+"boîte de dialogue apparaîtra de nouveau. La reconnaissance faciale ne "
+"fonctionnera pas sans ces fichiers.</p><p>Les fichiers seront téléchargés "
+"vers %1. Veuillez vous assurer que vous avez environ %2 d'espace disponible. "
+"<b>Après un chargement réussi, vous devrez re-démarrer digiKam.</b></p>"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:599
+#, kde-format
+msgctxt "%1: disk size with unit"
+msgid "The download of the selected features requires %1"
+msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -64787,6 +64834,11 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Voulez-vous réinitialiser tous les paramètres de vidéos à leurs valeurs par "
 "défaut ?"
+
+#~ msgid "Disable face engine feature and don't ask again"
+#~ msgstr ""
+#~ "Désactiver la fonctionnalité de moteur de reconnaissance faciale et ne "
+#~ "demander à nouveau"
 
 #~ msgctxt "@title:window"
 #~ msgid "Export error"
