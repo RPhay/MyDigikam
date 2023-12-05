@@ -324,9 +324,8 @@ target_link_libraries(core_marble_obj
         Qt6::Widgets
         Qt6::Network
         Qt6::Core5Compat
-    PRIVATE
-        Qt6::Core
         Qt6::Svg
+        Qt6::Core
         Qt6::PrintSupport
         Qt6::Concurrent
 )
