@@ -10,12 +10,14 @@
 // Qt
 #include <QDir>
 
+#include <klocalizedstring.h>
+
 using namespace Marble;
 
 CacheStoragePolicy::CacheStoragePolicy( const QString &cacheDirectory )
     : m_cache( cacheDirectory )
 {
-    if ( ! QDir( cacheDirectory ).exists() ) 
+    if ( ! QDir( cacheDirectory ).exists() )
         QDir::root().mkpath( cacheDirectory );
 }
 
@@ -31,7 +33,7 @@ bool CacheStoragePolicy::fileExists( const QString &fileName ) const
 bool CacheStoragePolicy::updateFile( const QString &fileName, const QByteArray &data )
 {
     if ( !m_cache.insert( fileName, data ) ) {
-        m_errorMsg = QObject::tr("Unable to insert data into cache");
+        m_errorMsg = i18n("Unable to insert data into cache");
         return false;
     }
 

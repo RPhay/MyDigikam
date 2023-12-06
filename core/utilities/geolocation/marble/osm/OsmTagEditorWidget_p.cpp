@@ -24,10 +24,12 @@
 #include <QTreeWidget>
 #include <QObject>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
-const QString OsmTagEditorWidgetPrivate::m_customTagAdderText = QObject::tr( "Add custom tag..." );
+const QString OsmTagEditorWidgetPrivate::m_customTagAdderText = i18n( "Add custom tag..." );
 OsmTagEditorWidgetPrivate::OsmTagEditorWidgetPrivate()
 {
     // nothing to do
@@ -99,7 +101,7 @@ QTreeWidgetItem *OsmTagEditorWidgetPrivate::tagWidgetItem(const OsmTag &tag)
     QStringList itemText;
 
     itemText << tag.first;
-    itemText << (tag.second.isEmpty() ? QLatin1Char('<') + QObject::tr("value") + QLatin1Char('>') : tag.second);
+    itemText << (tag.second.isEmpty() ? QLatin1Char('<') + i18n("value") + QLatin1Char('>') : tag.second);
 
     QTreeWidgetItem *tagItem = new QTreeWidgetItem( itemText );
 

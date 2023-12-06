@@ -20,6 +20,8 @@
 #include <QIcon>
 #include <qmath.h>
 
+#include <klocalizedstring.h>
+
 #define SAFE_DISTANCE
 
 namespace Marble
@@ -59,12 +61,12 @@ LambertAzimuthalProjectionPrivate::LambertAzimuthalProjectionPrivate( LambertAzi
 
 QString LambertAzimuthalProjection::name() const
 {
-    return QObject::tr( "Lambert Azimuthal Equal-Area" );
+    return i18n( "Lambert Azimuthal Equal-Area" );
 }
 
 QString LambertAzimuthalProjection::description() const
 {
-    return QObject::tr( "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used in structural geology to plot directional data.</p>" );
+    return i18n( "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used in structural geology to plot directional data.</p>" );
 }
 
 QIcon LambertAzimuthalProjection::icon() const

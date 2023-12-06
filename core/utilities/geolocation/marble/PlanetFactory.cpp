@@ -11,6 +11,8 @@
 #include "digikam_debug.h"
 #include "MarbleGlobal.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 QList<QString> PlanetFactory::planetList()
@@ -226,34 +228,34 @@ Planet PlanetFactory::construct( const QString &id )
 QString PlanetFactory::localizedName( const QString &id )
 {
     if (id == QLatin1String("mercury")) {
-        return QObject::tr("Mercury", "the planet");
+        return i18nc("the planet", "Mercury");
     } else if (id == QLatin1String("venus")) {
-        return QObject::tr("Venus", "the planet");
+        return i18nc("the planet", "Venus");
     } else if (id == QLatin1String("earth")) {
-        return QObject::tr("Earth", "the planet");
+        return i18nc("the planet", "Earth");
     } else if (id == QLatin1String("mars")) {
-        return QObject::tr("Mars", "the planet");
+        return i18nc("the planet", "Mars");
     } else if (id == QLatin1String("jupiter")) {
-        return QObject::tr("Jupiter", "the planet");
+        return i18nc("the planet", "Jupiter");
     } else if (id == QLatin1String("saturn")) {
-        return QObject::tr("Saturn", "the planet");
+        return i18nc("the planet", "Saturn");
     } else if (id == QLatin1String("uranus")) {
-        return QObject::tr("Uranus", "the planet");
+        return i18nc("the planet", "Uranus");
     } else if (id == QLatin1String("neptune")) {
-        return QObject::tr("Neptune", "the planet");
+        return i18nc("the planet", "Neptune");
     // dwarf planets ... (everybody likes pluto)
     } else if (id == QLatin1String("pluto")) {
-        return QObject::tr("Pluto", "the planet");
+        return i18nc("the planet", "Pluto");
     // sun, moon and sky
     } else if (id == QLatin1String("sun")) {
-        return QObject::tr("Sun", "the earth's star");
+        return i18nc("the earth's star", "Sun");
     } else if (id == QLatin1String("moon")) {
-        return QObject::tr("Moon", "the earth's moon");
+        return i18nc("the earth's moon", "Moon");
     } else if (id == QLatin1String("sky")) {
-        return QObject::tr("Sky");
+        return i18n("Sky");
     } else if ( id.isEmpty() ) {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Warning: empty id";
-        return QObject::tr("Unknown Planet", "a planet without data");
+        return i18nc("a planet without data", "Unknown Planet");
     }
 
     return id;

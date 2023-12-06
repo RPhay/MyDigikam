@@ -16,6 +16,8 @@
 
 #include <QIcon>
 
+#include <klocalizedstring.h>
+
 using namespace Marble;
 
 
@@ -32,12 +34,12 @@ EquirectProjection::~EquirectProjection()
 
 QString EquirectProjection::name() const
 {
-    return QObject::tr( "Flat Map" );
+    return i18n( "Flat Map" );
 }
 
 QString EquirectProjection::description() const
 {
-    return QObject::tr( "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: De facto standard for global texture data sets for computer software.</p>" );
+    return i18n( "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: De facto standard for global texture data sets for computer software.</p>" );
 }
 
 QIcon EquirectProjection::icon() const
@@ -45,7 +47,7 @@ QIcon EquirectProjection::icon() const
     return QIcon(QStringLiteral(":/icons/map-flat.png"));
 }
 
-bool EquirectProjection::screenCoordinates( const GeoDataCoordinates &geopoint, 
+bool EquirectProjection::screenCoordinates( const GeoDataCoordinates &geopoint,
                                             const ViewportParams *viewport,
                                             qreal &x, qreal &y, bool &globeHidesPoint ) const
 {
@@ -100,7 +102,7 @@ bool EquirectProjection::screenCoordinates( const GeoDataCoordinates &coordinate
 
     // Make sure that the requested point is within the visible y range:
     if ( 0 <= y + size.height() / 2.0 && y < height + size.height() / 2.0 ) {
-        // For the repetition case the same geopoint gets displayed on 
+        // For the repetition case the same geopoint gets displayed on
         // the map many times.across the longitude.
 
         int xRepeatDistance = 4 * radius;
@@ -118,7 +120,7 @@ bool EquirectProjection::screenCoordinates( const GeoDataCoordinates &coordinate
             return false;
         }
 
-        // Now iterate through all visible x screen coordinates for the point 
+        // Now iterate through all visible x screen coordinates for the point
         // from left to right.
         int itNum = 0;
         while ( itX - size.width() / 2.0 < width ) {
@@ -212,7 +214,7 @@ GeoDataLatLonAltBox EquirectProjection::latLonAltBox( const QRect& screenRect,
     int  radius = viewport->radius();
     int  width  = viewport->width();
 
-    // The remaining algorithm should be pretty generic for all kinds of 
+    // The remaining algorithm should be pretty generic for all kinds of
     // flat projections:
 
     int xRepeatDistance = 4 * radius;

@@ -34,6 +34,8 @@
 #include <QCheckBox>
 #include <QMutexLocker>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -557,10 +559,10 @@ void RoutingManagerPrivate::recalculateRoute( bool deviated )
         }
 
         if ( m_routeRequest.size() == 2 && m_routeRequest.visited( 0 ) && !m_routeRequest.visited( 1 ) ) {
-            m_routeRequest.setPosition( 0, m_positionTracking->currentLocation(), QObject::tr( "Current Location" ) );
+            m_routeRequest.setPosition( 0, m_positionTracking->currentLocation(), i18n( "Current Location" ) );
             q->retrieveRoute();
         } else if ( m_routeRequest.size() != 0 && !m_routeRequest.visited( m_routeRequest.size()-1 ) ) {
-            m_routeRequest.insert( 0, m_positionTracking->currentLocation(), QObject::tr( "Current Location" ) );
+            m_routeRequest.insert( 0, m_positionTracking->currentLocation(), i18n( "Current Location" ) );
             q->retrieveRoute();
         }
     }

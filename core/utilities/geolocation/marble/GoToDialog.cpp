@@ -25,6 +25,8 @@
 #include <QTimer>
 #include <QPainter>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -434,7 +436,7 @@ void GoToDialogPrivate::updateResultMessage( int results )
 {
     //~ singular %n result found.
     //~ plural %n results found.
-    descriptionLabel->setText( QObject::tr( "%n result(s) found.", "Number of search results", results ) );
+    descriptionLabel->setText( i18nc( "Number of search results", "%n result(s) found.", results ) );
 }
 
 }

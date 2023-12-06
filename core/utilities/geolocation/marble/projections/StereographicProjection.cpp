@@ -20,6 +20,8 @@
 #include <QIcon>
 #include <qmath.h>
 
+#include <klocalizedstring.h>
+
 #define SAFE_DISTANCE
 
 namespace Marble
@@ -59,12 +61,12 @@ StereographicProjectionPrivate::StereographicProjectionPrivate( StereographicPro
 
 QString StereographicProjection::name() const
 {
-    return QObject::tr( "Stereographic" );
+    return i18n( "Stereographic" );
 }
 
 QString StereographicProjection::description() const
 {
-    return QObject::tr( "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used for planetary cartography, geology and panorama photography.</p>" );
+    return i18n( "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used for planetary cartography, geology and panorama photography.</p>" );
 }
 
 QIcon StereographicProjection::icon() const

@@ -20,6 +20,8 @@
 #include <QIcon>
 #include <qmath.h>
 
+#include <klocalizedstring.h>
+
 #define SAFE_DISTANCE
 
 namespace Marble
@@ -59,12 +61,12 @@ GnomonicProjectionPrivate::GnomonicProjectionPrivate( GnomonicProjection * paren
 
 QString GnomonicProjection::name() const
 {
-    return QObject::tr( "Gnomonic" );
+    return i18n( "Gnomonic" );
 }
 
 QString GnomonicProjection::description() const
 {
-    return QObject::tr( "<p><b>Gnomonic Projection</b> (\"rectilinear\")</p><p>Applications: Used for displaying panorama photography. Also used for navigation, radio and seismic work.</p>" );
+    return i18n( "<p><b>Gnomonic Projection</b> (\"rectilinear\")</p><p>Applications: Used for displaying panorama photography. Also used for navigation, radio and seismic work.</p>" );
 }
 
 QIcon GnomonicProjection::icon() const

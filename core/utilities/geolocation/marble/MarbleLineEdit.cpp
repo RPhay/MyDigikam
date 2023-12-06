@@ -19,6 +19,8 @@
 #include <QTimer>
 #include <QPixmap>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -51,7 +53,7 @@ MarbleLineEditPrivate::MarbleLineEditPrivate( MarbleLineEdit* parent ) :
     m_currentFrame( 0 ), m_iconSize( 16 )
 {
     m_clearButton->setCursor( Qt::ArrowCursor );
-    m_clearButton->setToolTip( QObject::tr( "Clear" ) );
+    m_clearButton->setToolTip( i18n( "Clear" ) );
     m_decoratorButton->setCursor( Qt::ArrowCursor );
     createProgressAnimation();
     m_progressTimer.setInterval( 100 );

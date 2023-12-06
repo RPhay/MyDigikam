@@ -9,7 +9,7 @@
 #include <QFileDialog>
 #include "digikam_debug.h"
 
-
+#include <klocalizedstring.h>
 
 namespace Marble
 {
@@ -207,9 +207,9 @@ bool PlacemarkEditHeaderPrivate::isIdValid() const
 void PlacemarkEditHeaderPrivate::loadIconFile()
 {
     const QString filename = QFileDialog::getOpenFileName( q,
-                                                           QObject::tr( "Open File" ),
+                                                           i18n( "Open File" ),
                                                            QString(),
-                                                           QObject::tr( "All Supported Files (*.png)" ) );
+                                                           i18n( "All Supported Files (*.png)" ) );
     if ( filename.isNull() ) {
         return;
     }

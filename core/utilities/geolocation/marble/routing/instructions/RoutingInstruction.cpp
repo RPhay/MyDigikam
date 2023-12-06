@@ -10,6 +10,8 @@
 #include <QTextStream>
 #include <QLocale>
 
+#include <klocalizedstring.h>
+
 #include <cmath>
 
 namespace Marble
@@ -247,7 +249,7 @@ qreal RoutingInstruction::distanceToEnd() const
 QString RoutingInstruction::nextRoadInstruction() const
 {
     if (roadType() == QLatin1String("roundabout")) {
-        return QObject::tr( "Enter the roundabout." );
+        return i18n( "Enter the roundabout." );
     }
 
     if (roadType() == QLatin1String("motorway_link")) {
@@ -255,15 +257,15 @@ QString RoutingInstruction::nextRoadInstruction() const
         bool const leaving = predecessor() && motorways.contains( predecessor()->roadType() );
         if ( leaving ) {
             if ( roadName().isEmpty() ) {
-                return QObject::tr( "Take the exit." );
+                return i18n( "Take the exit." );
             } else {
-                return QObject::tr( "Take the exit towards %1." ).arg( roadName() );
+                return i18n( "Take the exit towards %1." ).arg( roadName() );
             }
         }
         if ( roadName().isEmpty() ) {
-            return QObject::tr( "Take the ramp." );
+            return i18n( "Take the ramp." );
         } else {
-            return QObject::tr( "Take the ramp towards %1." ).arg( roadName() );
+            return i18n( "Take the ramp towards %1." ).arg( roadName() );
         }
     }
 
@@ -319,7 +321,7 @@ QString RoutingInstruction::nextDistanceInstruction() const
     if ( length == 0 ) {
         return QString();
     } else {
-        QString text = QObject::tr( "Follow the road for %1 %2." );
+        QString text = i18n( "Follow the road for %1 %2." );
         return text.arg( length, 0, 'f', precision ).arg( distanceUnit );
     }
 }
@@ -355,7 +357,7 @@ QString RoutingInstruction::instructionText() const
 }
 
 QString RoutingInstruction::generateRoadInstruction( RoutingInstruction::TurnType turnType, const QString &roadName )
-{   
+{
     int roundaboutExit = 0;
     switch ( turnType ) {
     case RoundaboutFirstExit:
@@ -373,9 +375,9 @@ QString RoutingInstruction::generateRoadInstruction( RoutingInstruction::TurnTyp
 
     if ( roundaboutExit > 0 ) {
         if ( roadName.isEmpty() ) {
-            return QObject::tr( "Take the %1. exit in the roundabout." ).arg( roundaboutExit ); // One sentence
+            return i18n( "Take the %1. exit in the roundabout." ).arg( roundaboutExit ); // One sentence
         } else {
-            QString text = QObject::tr( "Take the %1. exit in the roundabout into %2." );  // One sentence
+            QString text = i18n( "Take the %1. exit in the roundabout into %2." );  // One sentence
             return text.arg( roundaboutExit ).arg( roadName );
         }
     }
@@ -383,27 +385,27 @@ QString RoutingInstruction::generateRoadInstruction( RoutingInstruction::TurnTyp
     if ( roadName.isEmpty() ) {
         switch( turnType ) {
         case Continue:
-            return QObject::tr( "Continue." );
+            return i18n( "Continue." );
         case Merge:
-            return QObject::tr( "Merge." );
+            return i18n( "Merge." );
         case TurnAround:
-            return QObject::tr( "Turn around." );
+            return i18n( "Turn around." );
         case SharpLeft:
-            return QObject::tr( "Turn sharp left." );
+            return i18n( "Turn sharp left." );
         case Left:
-            return QObject::tr( "Turn left." );
+            return i18n( "Turn left." );
         case SlightLeft:
-            return QObject::tr( "Keep slightly left." );
+            return i18n( "Keep slightly left." );
         case Straight:
-            return QObject::tr( "Go straight ahead." );
+            return i18n( "Go straight ahead." );
         case SlightRight:
-            return QObject::tr( "Keep slightly right." );
+            return i18n( "Keep slightly right." );
         case Right:
-            return QObject::tr( "Turn right." );
+            return i18n( "Turn right." );
         case SharpRight:
-            return QObject::tr( "Turn sharp right." );
+            return i18n( "Turn sharp right." );
         case RoundaboutExit:
-            return QObject::tr( "Exit the roundabout." );
+            return i18n( "Exit the roundabout." );
         case Unknown:
         case RoundaboutFirstExit:
         case RoundaboutSecondExit:
@@ -411,34 +413,34 @@ QString RoutingInstruction::generateRoadInstruction( RoutingInstruction::TurnTyp
             Q_ASSERT( false && "Internal error: Unknown/Roundabout should have been handled earlier." );
             return QString();
         case ExitLeft:
-            return QObject::tr( "Take the exit to the left." );
+            return i18n( "Take the exit to the left." );
         case ExitRight:
-            return QObject::tr( "Take the exit to the right." );
+            return i18n( "Take the exit to the right." );
         }
     } else {
         switch( turnType ) {
         case Continue:
-            return QObject::tr( "Continue onto %1." ).arg( roadName );
+            return i18n( "Continue onto %1." ).arg( roadName );
         case Merge:
-            return QObject::tr( "Merge onto %1." ).arg( roadName );
+            return i18n( "Merge onto %1." ).arg( roadName );
         case TurnAround:
-            return QObject::tr( "Turn around onto %1." ).arg( roadName );
+            return i18n( "Turn around onto %1." ).arg( roadName );
         case SharpLeft:
-            return QObject::tr( "Turn sharp left on %1." ).arg( roadName );
+            return i18n( "Turn sharp left on %1." ).arg( roadName );
         case Left:
-            return QObject::tr( "Turn left into %1." ).arg( roadName );
+            return i18n( "Turn left into %1." ).arg( roadName );
         case SlightLeft:
-            return QObject::tr( "Keep slightly left on %1." ).arg( roadName );
+            return i18n( "Keep slightly left on %1." ).arg( roadName );
         case Straight:
-            return QObject::tr( "Continue on %1." ).arg( roadName );
+            return i18n( "Continue on %1." ).arg( roadName );
         case SlightRight:
-            return QObject::tr( "Keep slightly right on %1." ).arg( roadName );
+            return i18n( "Keep slightly right on %1." ).arg( roadName );
         case Right:
-            return QObject::tr( "Turn right into %1." ).arg( roadName );
+            return i18n( "Turn right into %1." ).arg( roadName );
         case SharpRight:
-            return QObject::tr( "Turn sharp right into %1." ).arg( roadName );
+            return i18n( "Turn sharp right into %1." ).arg( roadName );
         case RoundaboutExit:
-            return QObject::tr( "Exit the roundabout into %2." ).arg( roadName );
+            return i18n( "Exit the roundabout into %2." ).arg( roadName );
         case Unknown:
         case RoundaboutFirstExit:
         case RoundaboutSecondExit:
@@ -446,9 +448,9 @@ QString RoutingInstruction::generateRoadInstruction( RoutingInstruction::TurnTyp
             Q_ASSERT( false && "Internal error: Unknown/Roundabout should have been handled earlier." );
             return QString();
         case ExitLeft:
-            return QObject::tr( "Take the exit to the left onto %1." ).arg( roadName );
+            return i18n( "Take the exit to the left onto %1." ).arg( roadName );
         case ExitRight:
-            return QObject::tr( "Take the exit to the right onto %1." ).arg( roadName );
+            return i18n( "Take the exit to the right onto %1." ).arg( roadName );
         }
     }
 

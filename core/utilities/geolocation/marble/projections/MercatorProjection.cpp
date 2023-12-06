@@ -20,6 +20,8 @@
 
 #include <QIcon>
 
+#include <klocalizedstring.h>
+
 using namespace Marble;
 
 MercatorProjection::MercatorProjection()
@@ -37,12 +39,12 @@ MercatorProjection::~MercatorProjection()
 
 QString MercatorProjection::name() const
 {
-    return QObject::tr( "Mercator" );
+    return i18n( "Mercator" );
 }
 
 QString MercatorProjection::description() const
 {
-    return QObject::tr( "<p><b>Mercator Projection</b></p><p>Applications: popular standard map projection for navigation.</p>" );
+    return i18n( "<p><b>Mercator Projection</b></p><p>Applications: popular standard map projection for navigation.</p>" );
 }
 
 QIcon MercatorProjection::icon() const
@@ -62,7 +64,7 @@ qreal MercatorProjection::minValidLat() const
     return -85.05113 * DEG2RAD;
 }
 
-bool MercatorProjection::screenCoordinates( const GeoDataCoordinates &geopoint, 
+bool MercatorProjection::screenCoordinates( const GeoDataCoordinates &geopoint,
                                             const ViewportParams *viewport,
                                             qreal &x, qreal &y, bool &globeHidesPoint ) const
 {
@@ -107,7 +109,7 @@ bool MercatorProjection::screenCoordinates( const GeoDataCoordinates &coordinate
                                             bool &globeHidesPoint ) const
 {
     pointRepeatNum = 0;
-    // On flat projections the observer's view onto the point won't be 
+    // On flat projections the observer's view onto the point won't be
     // obscured by the target planet itself.
     globeHidesPoint = false;
 
@@ -122,7 +124,7 @@ bool MercatorProjection::screenCoordinates( const GeoDataCoordinates &coordinate
 
     // Make sure that the requested point is within the visible y range:
     if ( 0 <= y + size.height() / 2.0 && y < height + size.height() / 2.0 ) {
-        // For the repetition case the same geopoint gets displayed on 
+        // For the repetition case the same geopoint gets displayed on
         // the map many times.across the longitude.
 
         int xRepeatDistance = 4 * radius;
@@ -140,7 +142,7 @@ bool MercatorProjection::screenCoordinates( const GeoDataCoordinates &coordinate
             return false;
         }
 
-        // Now iterate through all visible x screen coordinates for the point 
+        // Now iterate through all visible x screen coordinates for the point
         // from left to right.
         int itNum = 0;
         while ( itX - size.width() / 2.0 < width ) {
@@ -231,7 +233,7 @@ GeoDataLatLonAltBox MercatorProjection::latLonAltBox( const QRect& screenRect,
     latLonAltBox.setMinAltitude(      -100000000.0 );
     latLonAltBox.setMaxAltitude( 100000000000000.0 );
 
-    // The remaining algorithm should be pretty generic for all kinds of 
+    // The remaining algorithm should be pretty generic for all kinds of
     // flat projections:
 
     // If the whole globe is visible we can easily calculate

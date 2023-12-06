@@ -31,6 +31,8 @@ using namespace Marble;
 #include <QFileDialog>
 #include <QMessageBox>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -194,16 +196,16 @@ void CurrentLocationWidgetPrivate::adjustPositionTrackingStatus( PositionProvide
 
     switch ( status ) {
         case PositionProviderStatusUnavailable:
-            html += QObject::tr( "No position available." );
+            html += i18n( "No position available." );
             break;
         case PositionProviderStatusAcquiring:
-            html += QObject::tr( "Waiting for current location information..." );
+            html += i18n( "Waiting for current location information..." );
             break;
         case PositionProviderStatusAvailable:
             Q_ASSERT( false );
             break;
         case PositionProviderStatusError:
-            html += QObject::tr( "Error when determining current location: " );
+            html += i18n( "Error when determining current location: " );
             html += m_widget->model()->positionTracking()->error();
             break;
     }
@@ -264,32 +266,32 @@ void CurrentLocationWidgetPrivate::receiveGpsCoordinates( const GeoDataCoordinat
     switch ( MarbleGlobal::getInstance()->locale()->measurementSystem() ) {
     case MarbleLocale::MetricSystem:
         //kilometers per hour
-        unitString = QObject::tr("km/h");
+        unitString = i18n("km/h");
         unitSpeed = speed * HOUR2SEC * METER2KM;
-        altitudeUnitString = QObject::tr("m");
-        distanceUnitString = QObject::tr("m");
+        altitudeUnitString = i18n("m");
+        distanceUnitString = i18n("m");
         if ( length > 1000.0 ) {
             length /= 1000.0;
-            distanceUnitString = QObject::tr("km");
+            distanceUnitString = i18n("km");
         }
         altitude = position.altitude();
         break;
     case MarbleLocale::ImperialSystem:
         //miles per hour
-        unitString = QObject::tr("m/h");
+        unitString = i18n("m/h");
         unitSpeed = speed * HOUR2SEC * METER2KM * KM2MI;
-        altitudeUnitString = QObject::tr("ft");
-        distanceUnitString = QObject::tr("ft");
+        altitudeUnitString = i18n("ft");
+        distanceUnitString = i18n("ft");
         altitude = position.altitude() * M2FT;
         length *= M2FT;
         break;
 
     case MarbleLocale::NauticalSystem:
         // nautical miles
-        unitString = QObject::tr("kt");
+        unitString = i18n("kt");
         unitSpeed = speed * HOUR2SEC * METER2KM * KM2NM;
-        altitudeUnitString = QObject::tr("m");
-        distanceUnitString = QObject::tr("nm");
+        altitudeUnitString = i18n("m");
+        distanceUnitString = i18n("nm");
         altitude = position.altitude();
         length *= METER2KM*KM2NM;
         break;
@@ -340,7 +342,7 @@ void CurrentLocationWidget::changePositionProvider( const QString& provider )
 
 void CurrentLocationWidget::trackPlacemark()
 {
-    changePositionProvider( QObject::tr( "Placemark" ) );
+    changePositionProvider( i18n( "Placemark" ) );
     d->m_adjustNavigation->setRecenter( AutoNavigation::AlwaysRecenter );
 }
 
@@ -375,9 +377,9 @@ void CurrentLocationWidgetPrivate::centerOnCurrentLocation()
 void CurrentLocationWidgetPrivate::saveTrack()
 {
     QString suggested = m_lastSavePath;
-    QString fileName = QFileDialog::getSaveFileName(m_widget, QObject::tr("Save Track"), // krazy:exclude=qclasses
+    QString fileName = QFileDialog::getSaveFileName(m_widget, i18n("Save Track"), // krazy:exclude=qclasses
                                                     suggested.append(QLatin1Char('/') + QDateTime::currentDateTime().toString(QString::fromUtf8("yyyy-MM-dd_hhmmss")) + QLatin1String(".kml")),
-                            QObject::tr("KML File (*.kml)"));
+                            i18n("KML File (*.kml)"));
     if ( fileName.isEmpty() ) {
         return;
     }
@@ -392,8 +394,8 @@ void CurrentLocationWidgetPrivate::saveTrack()
 void CurrentLocationWidgetPrivate::openTrack()
 {
     QString suggested = m_lastOpenPath;
-    QString fileName = QFileDialog::getOpenFileName( m_widget, QObject::tr("Open Track"), // krazy:exclude=qclasses
-                                                    suggested, QObject::tr("KML File (*.kml)"));
+    QString fileName = QFileDialog::getOpenFileName( m_widget, i18n("Open Track"), // krazy:exclude=qclasses
+                                                    suggested, i18n("KML File (*.kml)"));
     if ( !fileName.isEmpty() ) {
         QFileInfo file( fileName );
         m_lastOpenPath = file.absolutePath();
@@ -404,8 +406,8 @@ void CurrentLocationWidgetPrivate::openTrack()
 void CurrentLocationWidgetPrivate::clearTrack()
 {
     const int result = QMessageBox::question( m_widget,
-                                              QObject::tr( "Clear current track" ),
-                                              QObject::tr( "Are you sure you want to clear the current track?" ),
+                                              i18n( "Clear current track" ),
+                                              i18n( "Are you sure you want to clear the current track?" ),
                                               QMessageBox::Yes,
                                               QMessageBox::No );
 

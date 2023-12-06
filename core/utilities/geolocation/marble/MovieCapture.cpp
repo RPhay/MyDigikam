@@ -14,6 +14,8 @@
 #include <QElapsedTimer>
 #include <QFile>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -29,10 +31,9 @@ public:
      */
     void missingToolsWarning() {
         QMessageBox::warning(marbleWidget,
-                             QObject::tr("Missing encoding tools"),
-                             QObject::tr("Marble requires additional software in order to "
-                                         "create movies. Please get %1 "
-                                        ).arg(QString::fromUtf8("<a href=\"https://libav.org/"
+                             i18n("Missing encoding tools"),
+                             i18n("Marble requires additional software in order to "
+                                         "create movies. Please get %1 ", QString::fromUtf8("<a href=\"https://libav.org/"
                                                "download.html\">avconv</a>")),
                              QMessageBox::Ok);
     }

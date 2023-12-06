@@ -29,6 +29,8 @@
 #include <QPixmap>
 #include <QFileDialog>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -182,10 +184,10 @@ RoutingLayerPrivate::RoutingLayerPrivate( RoutingLayer *parent, MarbleWidget *wi
         m_isInteractive( true )
 {
     m_contextMenu = new MarbleWidgetPopupMenu( m_marbleWidget, m_marbleWidget->model() );
-    m_removeViaPointAction = new QAction( QObject::tr( "&Remove this Destination" ), q );
+    m_removeViaPointAction = new QAction( i18n( "&Remove this Destination" ), q );
     QObject::connect( m_removeViaPointAction, SIGNAL(triggered()), q, SLOT(removeViaPoint()) );
     m_contextMenu->addAction( Qt::RightButton, m_removeViaPointAction );
-    QAction *exportAction = new QAction( QObject::tr( "&Export Route..." ), q );
+    QAction *exportAction = new QAction( i18n( "&Export Route..." ), q );
     QObject::connect( exportAction, SIGNAL(triggered()), q, SLOT(exportRoute()) );
     m_contextMenu->addAction( Qt::RightButton, exportAction );
     if ( MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen ) {

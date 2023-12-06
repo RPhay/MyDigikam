@@ -20,6 +20,8 @@
 #include <QIcon>
 #include <qmath.h>
 
+#include <klocalizedstring.h>
+
 #define SAFE_DISTANCE
 
 namespace Marble
@@ -53,12 +55,12 @@ AzimuthalEquidistantProjection::~AzimuthalEquidistantProjection()
 
 QString AzimuthalEquidistantProjection::name() const
 {
-    return QObject::tr( "Azimuthal Equidistant" );
+    return i18n( "Azimuthal Equidistant" );
 }
 
 QString AzimuthalEquidistantProjection::description() const
 {
-    return QObject::tr( "<p><b>Azimuthal Equidistant Projection</b> (\"fish eye\")</p><p>Applications: Display of seismic and radio data and for use in digital planetariums.</p>" );
+    return i18n( "<p><b>Azimuthal Equidistant Projection</b> (\"fish eye\")</p><p>Applications: Display of seismic and radio data and for use in digital planetariums.</p>" );
 }
 
 QIcon AzimuthalEquidistantProjection::icon() const

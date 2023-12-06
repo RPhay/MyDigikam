@@ -5,6 +5,8 @@
 
 #include "PositionProviderPluginInterface.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -20,7 +22,7 @@ QString PositionProviderPluginInterface::error() const
 
     if ( status() == PositionProviderStatusError )
     {
-        return QObject::tr( "Unknown error" );
+        return i18n( "Unknown error" );
     }
 
     return QString();

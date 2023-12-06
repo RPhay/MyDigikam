@@ -22,6 +22,8 @@
 
 #include <QIcon>
 
+#include <klocalizedstring.h>
+
 #define SAFE_DISTANCE
 
 namespace Marble
@@ -61,12 +63,12 @@ SphericalProjectionPrivate::SphericalProjectionPrivate( SphericalProjection * pa
 
 QString SphericalProjection::name() const
 {
-    return QObject::tr( "Globe" );
+    return i18n( "Globe" );
 }
 
 QString SphericalProjection::description() const
 {
-    return QObject::tr( "<p><b>Orthographic Projection</b> (\"orthogonal\")</p><p>Applications: A perspective projection that is used to display the hemisphere of a globe as it appears from outer space.</p>" );
+    return i18n( "<p><b>Orthographic Projection</b> (\"orthogonal\")</p><p>Applications: A perspective projection that is used to display the hemisphere of a globe as it appears from outer space.</p>" );
 }
 
 QIcon SphericalProjection::icon() const
@@ -74,7 +76,7 @@ QIcon SphericalProjection::icon() const
     return QIcon(QStringLiteral(":/icons/map-globe.png"));
 }
 
-bool SphericalProjection::screenCoordinates( const GeoDataCoordinates &coordinates, 
+bool SphericalProjection::screenCoordinates( const GeoDataCoordinates &coordinates,
                                              const ViewportParams *viewport,
                                              qreal &x, qreal &y, bool &globeHidesPoint ) const
 {
@@ -135,14 +137,14 @@ bool SphericalProjection::screenCoordinates( const GeoDataCoordinates &coordinat
     bool visible = screenCoordinates( coordinates, viewport, *x, y, globeHidesPoint );
 
     // Skip placemarks that are outside the screen area
-    if ( *x + size.width() / 2.0 < 0.0 || *x >= viewport->width() + size.width() / 2.0 
+    if ( *x + size.width() / 2.0 < 0.0 || *x >= viewport->width() + size.width() / 2.0
          || y + size.height() / 2.0 < 0.0 || y >= viewport->height() + size.height() / 2.0 )
     {
         globeHidesPoint = false;
         return false;
     }
 
-    // This projection doesn't have any repetitions, 
+    // This projection doesn't have any repetitions,
     // so the number of screen points referring to the geopoint is one.
     pointRepeatNum = 1;
     return visible;

@@ -48,6 +48,8 @@
 #include <QToolButton>
 #include <QProgressDialog>
 
+#include <klocalizedstring.h>
+
 #include "ui_RoutingWidget.h"
 
 namespace Marble
@@ -187,8 +189,8 @@ void RoutingWidgetPrivate::adjustInputWidgets()
 
 void RoutingWidgetPrivate::adjustSearchButton()
 {
-    QString text = QObject::tr( "Get Directions" );
-    QString tooltip = QObject::tr( "Retrieve routing instructions for the selected destinations." );
+    QString text = i18n( "Get Directions" );
+    QString tooltip = i18n( "Retrieve routing instructions for the selected destinations." );
 
     int validInputs = 0;
     for ( int i = 0; i < m_inputWidgets.size(); ++i ) {
@@ -198,8 +200,8 @@ void RoutingWidgetPrivate::adjustSearchButton()
     }
 
     if ( validInputs < 2 ) {
-        text = QObject::tr( "Search" );
-        tooltip = QObject::tr( "Find places matching the search term" );
+        text = i18n( "Search" );
+        tooltip = i18n( "Find places matching the search term" );
     }
 
     m_ui.searchButton->setText( text );
@@ -222,49 +224,49 @@ void RoutingWidgetPrivate::setupToolBar()
     m_toolBar = new QToolBar;
 
     m_openRouteButton = new QToolButton;
-    m_openRouteButton->setToolTip( QObject::tr("Open Route") );
+    m_openRouteButton->setToolTip( i18n("Open Route") );
     m_openRouteButton->setIcon(QIcon(QStringLiteral(":/icons/16x16/document-open.png")));
     m_toolBar->addWidget(m_openRouteButton);
 
     m_saveRouteButton = new QToolButton;
-    m_saveRouteButton->setToolTip( QObject::tr("Save Route") );
+    m_saveRouteButton->setToolTip( i18n("Save Route") );
     m_saveRouteButton->setIcon(QIcon(QStringLiteral(":/icons/16x16/document-save.png")));
     m_toolBar->addWidget(m_saveRouteButton);
 
     m_playButton = new QToolButton;
-    m_playButton->setToolTip( QObject::tr("Preview Route") );
+    m_playButton->setToolTip( i18n("Preview Route") );
     m_playButton->setIcon(QIcon(QStringLiteral(":/marble/playback-play.png")));
     m_toolBar->addWidget(m_playButton);
 
     m_cloudSyncSeparator = m_toolBar->addSeparator();
-    m_uploadToCloudAction = m_toolBar->addAction( QObject::tr("Upload to Cloud") );
-    m_uploadToCloudAction->setToolTip( QObject::tr("Upload to Cloud") );
+    m_uploadToCloudAction = m_toolBar->addAction( i18n("Upload to Cloud") );
+    m_uploadToCloudAction->setToolTip( i18n("Upload to Cloud") );
     m_uploadToCloudAction->setIcon(QIcon(QStringLiteral(":/icons/cloud-upload.png")));
 
-    m_openCloudRoutesAction = m_toolBar->addAction( QObject::tr("Manage Cloud Routes") );
-    m_openCloudRoutesAction->setToolTip( QObject::tr("Manage Cloud Routes") );
+    m_openCloudRoutesAction = m_toolBar->addAction( i18n("Manage Cloud Routes") );
+    m_openCloudRoutesAction->setToolTip( i18n("Manage Cloud Routes") );
     m_openCloudRoutesAction->setIcon(QIcon(QStringLiteral(":/icons/cloud-download.png")));
 
     m_toolBar->addSeparator();
     m_addViaButton = new QToolButton;
-    m_addViaButton->setToolTip( QObject::tr("Add Via") );
+    m_addViaButton->setToolTip( i18n("Add Via") );
     m_addViaButton->setIcon(QIcon(QStringLiteral(":/marble/list-add.png")));
     m_toolBar->addWidget(m_addViaButton);
 
     m_reverseRouteButton = new QToolButton;
-    m_reverseRouteButton->setToolTip( QObject::tr("Reverse Route") );
+    m_reverseRouteButton->setToolTip( i18n("Reverse Route") );
     m_reverseRouteButton->setIcon(QIcon(QStringLiteral(":/marble/reverse.png")));
     m_toolBar->addWidget(m_reverseRouteButton);
 
     m_clearRouteButton = new QToolButton;
-    m_clearRouteButton->setToolTip( QObject::tr("Clear Route") );
+    m_clearRouteButton->setToolTip( i18n("Clear Route") );
     m_clearRouteButton->setIcon(QIcon(QStringLiteral(":/marble/edit-clear.png")));
     m_toolBar->addWidget(m_clearRouteButton);
 
     m_toolBar->addSeparator();
 
     m_configureButton = new QToolButton;
-    m_configureButton->setToolTip( QObject::tr("Settings") );
+    m_configureButton->setToolTip( i18n("Settings") );
     m_configureButton->setIcon(QIcon(QStringLiteral(":/icons/16x16/configure.png")));
     m_toolBar->addWidget(m_configureButton);
 

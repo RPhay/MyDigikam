@@ -14,6 +14,8 @@
 #include <QListView>
 #include <QPointer>
 
+#include <klocalizedstring.h>
+
 #include "MarblePlacemarkModel.h"
 #include "geodata/data/GeoDataContainer.h"
 #include "geodata/data/GeoDataFlyTo.h"
@@ -402,9 +404,9 @@ bool TourItemDelegate::editAnimatedUpdate(GeoDataAnimatedUpdate *animatedUpdate,
 
     QPointer<EditPlacemarkDialog> dialog = new EditPlacemarkDialog( placemark, nullptr, m_widget );
     if( create ) {
-        dialog->setWindowTitle( QObject::tr( "Add Placemark to Tour" ) );
+        dialog->setWindowTitle( i18n( "Add Placemark to Tour" ) );
     } else {
-        dialog->setWindowTitle( QObject::tr( "Change Placemark in Tour" ) );
+        dialog->setWindowTitle( i18n( "Change Placemark in Tour" ) );
         dialog->setTargetIdFieldVisible( true );
         dialog->setIdFieldVisible( false );
     }

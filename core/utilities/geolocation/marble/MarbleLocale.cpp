@@ -12,6 +12,7 @@
 // Qt
 #include <QLocale>
 
+#include <klocalizedstring.h>
 
 namespace Marble
 {
@@ -116,23 +117,23 @@ QString MarbleLocale::unitAbbreviation(MeasureUnit unit)
 {
     switch (unit) {
     case Meter:
-        return QObject::tr("m", "means meter");
+        return i18nc("means meter", "m");
     case Milimeter:
-        return QObject::tr("mm", "means milimeters");
+        return i18nc("means milimeters", "mm");
     case Kilometer:
-        return QObject::tr("km", "means kilometers");
+        return i18nc("means kilometers", "km");
     case Centimeter:
-        return QObject::tr("cm", "means centimeters");
+        return i18nc("means centimeters", "cm");
     case Foot:
-        return QObject::tr("ft", "means feet");
+        return i18nc("means feet", "ft");
     case Inch:
-        return QObject::tr("in", "means inches");
+        return i18nc("means inches", "in");
     case Yard:
-        return QObject::tr("yd", "means yards");
+        return i18nc("means yards", "yd");
     case Mile:
-        return QObject::tr("mi", "means miles");
+        return i18nc("means miles", "mi");
     case NauticalMile:
-        return QObject::tr("nm", "means nautical miles");
+        return i18nc("means nautical miles", "nm");
     default:
         return QString::fromUtf8("");
     }

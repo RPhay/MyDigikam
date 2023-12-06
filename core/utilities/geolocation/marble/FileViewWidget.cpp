@@ -27,6 +27,8 @@
 #include "TreeViewDecoratorModel.h"
 #include "EditPlacemarkDialog.h"
 
+#include <klocalizedstring.h>
+
 using namespace Marble;
 // Ui
 #include "ui_FileViewWidget.h"
@@ -68,7 +70,7 @@ FileViewWidgetPrivate::FileViewWidgetPrivate( FileViewWidget *parent )
 {
     m_contextMenu = new QMenu(q);
     m_viewPropertiesAction = new QAction(q);
-    m_viewPropertiesAction->setText(QObject::tr("View Properties"));
+    m_viewPropertiesAction->setText(i18n("View Properties"));
     m_contextMenu->addAction(m_viewPropertiesAction);
     QObject::connect(m_viewPropertiesAction, SIGNAL(triggered()),
                      q, SLOT(showPlacemarkDialog()));
@@ -143,7 +145,7 @@ void FileViewWidgetPrivate::saveFile()
         = index.model()->data( index, MarblePlacemarkModel::ObjectPointerRole ).value<GeoDataObject*>();
     const GeoDataDocument *document = geodata_cast<GeoDataDocument>(object);
     if ( document && !document->fileName().isEmpty() ) {
-        const QString saveFileName = QFileDialog::getSaveFileName(q, QObject::tr("Select filename for KML document"));
+        const QString saveFileName = QFileDialog::getSaveFileName(q, i18n("Select filename for KML document"));
         GeoDataDocumentWriter::write(saveFileName, *document, QString::fromUtf8(kml::kmlTag_nameSpaceOgc22));
     }
 }

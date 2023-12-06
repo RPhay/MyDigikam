@@ -18,6 +18,8 @@
 #include <QStringList>
 #include <QStandardItemModel>
 
+#include <klocalizedstring.h>
+
 // Local dir
 #include "GeoDataPhotoOverlay.h"
 #include "GeoSceneDocument.h"
@@ -399,7 +401,7 @@ void MapThemeManager::Private::updateMapThemeModel()
     qCDebug(DIGIKAM_MARBLE_LOG) << "updateMapThemeModel";
     m_mapThemeModel.clear();
 
-    m_mapThemeModel.setHeaderData(0, Qt::Horizontal, QObject::tr("Name"));
+    m_mapThemeModel.setHeaderData(0, Qt::Horizontal, i18n("Name"));
 
     QStringList stringlist = findMapThemes();
     QStringListIterator it( stringlist );

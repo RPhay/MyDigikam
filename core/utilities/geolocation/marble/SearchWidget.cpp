@@ -22,6 +22,8 @@
 #include <QVBoxLayout>
 #include <QElapsedTimer>
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 class SearchWidgetPrivate
@@ -53,7 +55,7 @@ SearchWidgetPrivate::SearchWidgetPrivate() :
     m_sortproxy(),
     m_document( new GeoDataDocument )
 {
-    m_document->setName( QObject::tr( "Search Results" ) );
+    m_document->setName( i18n( "Search Results" ) );
 }
 
 void SearchWidgetPrivate::setSearchResult( const QVector<GeoDataPlacemark *>& locations )
@@ -70,7 +72,7 @@ void SearchWidgetPrivate::setSearchResult( const QVector<GeoDataPlacemark *>& lo
     GeoDataTreeModel *treeModel = m_widget->model()->treeModel();
     treeModel->removeDocument( m_document );
     m_document->clear();
-    m_document->setName( QString( QObject::tr( "Search for '%1'" ) ).arg( m_searchField->text() ) );
+    m_document->setName( QString( i18n( "Search for '%1'" ) ).arg( m_searchField->text() ) );
     for (GeoDataPlacemark *placemark: locations ) {
         m_document->append( new GeoDataPlacemark( *placemark ) );
     }

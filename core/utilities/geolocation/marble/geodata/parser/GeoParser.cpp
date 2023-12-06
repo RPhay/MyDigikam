@@ -15,6 +15,8 @@
 #include "GeoDocument.h"
 #include "GeoTagHandler.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -75,15 +77,15 @@ bool GeoParser::read( QIODevice* device )
 #if DUMP_PARENT_STACK > 0
                 dumpParentStack( name().toString(), m_nodeStack.size(), false );
 #endif
- 
+
                 parseDocument();
 
                 if ( !m_nodeStack.isEmpty() )
                     raiseError(
                         // Keep trailing space in both strings, to match translated string
                         // TODO: check if that space is kept through the tool pipeline
-                        //~ singular Parsing failed line %1. Still %n unclosed tag after document end. 
-                        //~ plural Parsing failed line %1. Still %n unclosed tags after document end. 
+                        //~ singular Parsing failed line %1. Still %n unclosed tag after document end.
+                        //~ plural Parsing failed line %1. Still %n unclosed tags after document end.
                         QObject::tr("Parsing failed line %1. Still %n unclosed tag(s) after document end. ", "",
                                      m_nodeStack.size() ).arg( lineNumber() ) + errorString());
             } else
@@ -121,9 +123,9 @@ GeoStackItem GeoParser::parentElement( unsigned int depth ) const
 void GeoParser::parseDocument()
 {
     if( !isStartElement() ) {
-        raiseError( QObject::tr("Error parsing file at line: %1 and column %2 . ")
+        raiseError( i18n("Error parsing file at line: %1 and column %2 . ")
                     .arg( lineNumber() ).arg( columnNumber() )
-                    +  QObject::tr("This is an Invalid File") );
+                    +  i18n("This is an Invalid File") );
         return;
     }
 

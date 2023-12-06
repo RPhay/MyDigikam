@@ -32,6 +32,8 @@
 #include <QKeyEvent>
 #include <QPainter>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -131,7 +133,7 @@ void RoutingInputWidgetPrivate::updateDescription()
 RoutingInputLineEdit::RoutingInputLineEdit( QWidget *parent ) :
     MarbleLineEdit( parent )
 {
-    setPlaceholderText( QObject::tr( "Address or search term..." ) );
+    setPlaceholderText( i18n( "Address or search term..." ) );
 }
 
 void RoutingInputLineEdit::keyPressEvent(QKeyEvent *event)
@@ -158,7 +160,7 @@ RoutingInputWidgetPrivate::RoutingInputWidgetPrivate( MarbleModel* model, int in
 
     m_removeButton = new QPushButton( parent );
     m_removeButton->setIcon(QIcon(QStringLiteral(":/marble/routing/icon-remove.png")));
-    m_removeButton->setToolTip( QObject::tr( "Remove via point" ) );
+    m_removeButton->setToolTip( i18n( "Remove via point" ) );
     m_removeButton->setFlat( true );
     m_removeButton->setMaximumWidth( 18 );
 
@@ -175,19 +177,19 @@ void RoutingInputWidgetPrivate::createMenu( RoutingInputWidget *parent )
 {
     QMenu* result = new QMenu( parent );
 
-    m_centerAction = result->addAction( QIcon( m_route->pixmap( m_index ) ), QObject::tr( "&Center Map here" ),
+    m_centerAction = result->addAction( QIcon( m_route->pixmap( m_index ) ), i18n( "&Center Map here" ),
                        parent, SLOT(requestActivity()) );
     result->addSeparator();
 
-    m_currentLocationAction = result->addAction( QIcon(QStringLiteral(":/icons/gps.png")), QObject::tr("Current &Location"),
+    m_currentLocationAction = result->addAction( QIcon(QStringLiteral(":/icons/gps.png")), i18n("Current &Location"),
                                                  parent, SLOT(setCurrentLocation()) );
     m_currentLocationAction->setEnabled( false );
 
-    m_mapInput = result->addAction(QIcon(QStringLiteral(":/icons/crosshairs.png")), QObject::tr("From &Map..."));
+    m_mapInput = result->addAction(QIcon(QStringLiteral(":/icons/crosshairs.png")), i18n("From &Map..."));
     m_mapInput->setCheckable( true );
     QObject::connect( m_mapInput, SIGNAL(triggered(bool)), parent, SLOT(setMapInputModeEnabled(bool)) );
 
-    m_bookmarkAction = result->addAction(QIcon(QStringLiteral(":/icons/bookmarks.png")), QObject::tr("From &Bookmark"));
+    m_bookmarkAction = result->addAction(QIcon(QStringLiteral(":/icons/bookmarks.png")), i18n("From &Bookmark"));
     m_bookmarkAction->setMenu( createBookmarkMenu( parent ) );
 
     m_menu = result;
@@ -196,7 +198,7 @@ void RoutingInputWidgetPrivate::createMenu( RoutingInputWidget *parent )
 QMenu* RoutingInputWidgetPrivate::createBookmarkMenu( RoutingInputWidget *parent )
 {
     QMenu* result = new QMenu( parent );
-    result->addAction(QIcon(QStringLiteral(":/icons/go-home.png")), QObject::tr("&Home"), parent, SLOT(setHomePosition()));
+    result->addAction(QIcon(QStringLiteral(":/icons/go-home.png")), i18n("&Home"), parent, SLOT(setHomePosition()));
 
     QVector<GeoDataFolder*> folders = m_marbleModel->bookmarkManager()->folders();
 

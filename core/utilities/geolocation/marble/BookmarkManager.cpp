@@ -20,6 +20,9 @@
 #include "StyleBuilder.h"
 #include <QFile>
 
+
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -50,11 +53,11 @@ void BookmarkManagerPrivate::resetBookmarkDocument()
     }
 
     GeoDataFolder* folder = new GeoDataFolder;
-    folder->setName( QObject::tr( "Default" ) );
+    folder->setName( i18n( "Default" ) );
 
     m_bookmarkDocument = new GeoDataDocument;
     m_bookmarkDocument->setDocumentRole( BookmarkDocument );
-    m_bookmarkDocument->setName( QObject::tr("Bookmarks") );
+    m_bookmarkDocument->setName( i18n("Bookmarks") );
     m_bookmarkDocument->append( folder );
     m_treeModel->addDocument( m_bookmarkDocument );
 }

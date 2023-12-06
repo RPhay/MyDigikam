@@ -56,6 +56,8 @@
 #include <QCloseEvent>
 #include <QPointer>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -134,25 +136,25 @@ TourWidgetPrivate::TourWidgetPrivate( TourWidget *parent )
     QAction *separator = m_tourUi.m_toolBarControl->insertSeparator( m_tourUi.m_actionMoveUp );
 
     m_addPrimitiveButton->setIcon(QIcon(QStringLiteral(":/marble/flag.png")));
-    m_addPrimitiveButton->setToolTip( QObject::tr( "Add FlyTo" ) );
+    m_addPrimitiveButton->setToolTip( i18n( "Add FlyTo" ) );
     m_addPrimitiveButton->setPopupMode( QToolButton::MenuButtonPopup );
 
     QMenu *addPrimitiveMenu = new QMenu(q);
 
-    m_actionAddFlyTo = new QAction(QIcon(QStringLiteral(":/marble/flag.png")), QObject::tr("Add FlyTo"), addPrimitiveMenu);
+    m_actionAddFlyTo = new QAction(QIcon(QStringLiteral(":/marble/flag.png")), i18n("Add FlyTo"), addPrimitiveMenu);
     addPrimitiveMenu->addAction( m_actionAddFlyTo );
-    m_actionAddWait = new QAction(QIcon(QStringLiteral(":/marble/player-time.png")), QObject::tr("Add Wait"), addPrimitiveMenu);
+    m_actionAddWait = new QAction(QIcon(QStringLiteral(":/marble/player-time.png")), i18n("Add Wait"), addPrimitiveMenu);
     addPrimitiveMenu->addAction( m_actionAddWait );
-    m_actionAddSoundCue = new QAction(QIcon(QStringLiteral(":/marble/audio-x-generic.png")), QObject::tr("Add SoundCue"), addPrimitiveMenu);
+    m_actionAddSoundCue = new QAction(QIcon(QStringLiteral(":/marble/audio-x-generic.png")), i18n("Add SoundCue"), addPrimitiveMenu);
     addPrimitiveMenu->addAction( m_actionAddSoundCue );
     addPrimitiveMenu->addSeparator();
-    m_actionAddPlacemark = new QAction(QIcon(QStringLiteral(":/icons/add-placemark.png")), QObject::tr("Add Placemark"), addPrimitiveMenu);
+    m_actionAddPlacemark = new QAction(QIcon(QStringLiteral(":/icons/add-placemark.png")), i18n("Add Placemark"), addPrimitiveMenu);
     addPrimitiveMenu->addAction( m_actionAddPlacemark );
-    m_actionAddRemovePlacemark = new QAction(QIcon(QStringLiteral(":/icons/remove.png")), QObject::tr("Remove placemark"), addPrimitiveMenu);
+    m_actionAddRemovePlacemark = new QAction(QIcon(QStringLiteral(":/icons/remove.png")), i18n("Remove placemark"), addPrimitiveMenu);
     addPrimitiveMenu->addAction( m_actionAddRemovePlacemark );
-    m_actionAddChangePlacemark = new QAction(QIcon(QStringLiteral(":/marble/document-edit.png")), QObject::tr("Change placemark"), addPrimitiveMenu);
+    m_actionAddChangePlacemark = new QAction(QIcon(QStringLiteral(":/marble/document-edit.png")), i18n("Change placemark"), addPrimitiveMenu);
     addPrimitiveMenu->addAction( m_actionAddChangePlacemark );
-    m_actionToggleLoopPlay = new QAction( QObject::tr( "Loop" ), m_tourUi.m_slider );
+    m_actionToggleLoopPlay = new QAction( i18n( "Loop" ), m_tourUi.m_slider );
     m_actionToggleLoopPlay->setCheckable( true );
     m_actionToggleLoopPlay->setChecked( false );
     m_tourUi.m_slider->setContextMenuPolicy( Qt::ActionsContextMenu );
@@ -336,8 +338,8 @@ void TourWidget::closeEvent( QCloseEvent *event )
     }
 
     const int result = QMessageBox::question( d->m_widget,
-                                             QObject::tr( "Save tour" ),
-                                             QObject::tr( "There are unsaved Tours. Do you want to save your changes?" ),
+                                             i18n( "Save tour" ),
+                                             i18n( "There are unsaved Tours. Do you want to save your changes?" ),
                                              QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel );
 
     switch ( result ) {
@@ -365,7 +367,7 @@ void TourWidget::handleSliderMove( int value )
 void TourWidgetPrivate::openFile()
 {
     if ( overrideModifications() ) {
-        QString const filename = QFileDialog::getOpenFileName( q, QObject::tr( "Open Tour" ), QDir::homePath(), QObject::tr( "KML Tours (*.kml)" ) );
+        QString const filename = QFileDialog::getOpenFileName( q, i18n( "Open Tour" ), QDir::homePath(), i18n( "KML Tours (*.kml)" ) );
         if ( !filename.isEmpty() ) {
             ParsingRunnerManager manager( m_widget->model()->pluginManager() );
             GeoDataDocument* document = manager.openFile( filename );
@@ -544,8 +546,8 @@ void TourWidgetPrivate::addTourPrimitive( GeoDataTourPrimitive *primitive )
 
 void TourWidgetPrivate::deleteSelected()
 {
-    QString title = QObject::tr( "Remove Selected Items" );
-    QString text = QObject::tr( "Are you sure want to remove selected items?" );
+    QString title = i18n( "Remove Selected Items" );
+    QString text = i18n( "Are you sure want to remove selected items?" );
     QPointer<QMessageBox> dialog = new QMessageBox( QMessageBox::Question, title, text, QMessageBox::Yes | QMessageBox::No, q );
     dialog->setDefaultButton( QMessageBox::No );
     if ( dialog->exec() == QMessageBox::Yes ) {
@@ -826,7 +828,7 @@ void TourWidgetPrivate::saveTourAs()
 {
    if ( m_document )
    {
-       QString const filename = QFileDialog::getSaveFileName( q, QObject::tr( "Save Tour as" ), QDir::homePath(), QObject::tr( "KML Tours (*.kml)" ) );
+       QString const filename = QFileDialog::getSaveFileName( q, i18n( "Save Tour as" ), QDir::homePath(), i18n( "KML Tours (*.kml)" ) );
        if ( !filename.isEmpty() ) {
             saveTourAs( filename );
        }
@@ -886,8 +888,8 @@ void TourWidgetPrivate::captureTour()
 bool TourWidgetPrivate::overrideModifications()
 {
     if ( m_document && m_isChanged ) {
-        QString title = QObject::tr( "Discard Changes" );
-        QString text = QObject::tr( "Are you sure want to discard all unsaved changes and close current document?" );
+        QString title = i18n( "Discard Changes" );
+        QString text = i18n( "Are you sure want to discard all unsaved changes and close current document?" );
         QPointer<QMessageBox> dialog = new QMessageBox( QMessageBox::Question, title, text, QMessageBox::Yes | QMessageBox::No, q );
         dialog->setDefaultButton( QMessageBox::No );
         if ( dialog->exec() != QMessageBox::Yes ) {

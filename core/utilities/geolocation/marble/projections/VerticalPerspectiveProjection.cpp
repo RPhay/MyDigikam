@@ -20,6 +20,8 @@
 #include <QIcon>
 #include <qmath.h>
 
+#include <klocalizedstring.h>
+
 #define SAFE_DISTANCE
 
 namespace Marble
@@ -73,12 +75,12 @@ VerticalPerspectiveProjectionPrivate::VerticalPerspectiveProjectionPrivate( Vert
 
 QString VerticalPerspectiveProjection::name() const
 {
-    return QObject::tr( "Vertical Perspective Projection" );
+    return i18n( "Vertical Perspective Projection" );
 }
 
 QString VerticalPerspectiveProjection::description() const
 {
-    return QObject::tr( "<p><b>Vertical Perspective Projection</b> (\"orthogonal\")</p><p> Shows the earth as it appears from a relatively short distance above the surface. Applications: Used for Virtual Globes.</p>" );
+    return i18n( "<p><b>Vertical Perspective Projection</b> (\"orthogonal\")</p><p> Shows the earth as it appears from a relatively short distance above the surface. Applications: Used for Virtual Globes.</p>" );
 }
 
 QIcon VerticalPerspectiveProjection::icon() const

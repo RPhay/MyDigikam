@@ -10,6 +10,8 @@
 #include "GeoParser.h"
 #include "GeoSceneZoom.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 namespace dgml
@@ -32,7 +34,7 @@ GeoNode* DgmlMinimumTagHandler::parse(GeoParser& parser) const
         if (ok)
             parentItem.nodeAs<GeoSceneZoom>()->setMinimum(parsedInt);
         else
-            parser.raiseWarning(QObject::tr("Could not convert <minimum> child text content to integer. Was: '%1'").arg(parsedText));
+            parser.raiseWarning(i18n("Could not convert <minimum> child text content to integer. Was: '%1'", parsedText));
     }
 
 

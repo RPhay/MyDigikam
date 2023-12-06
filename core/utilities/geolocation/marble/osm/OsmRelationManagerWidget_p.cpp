@@ -17,6 +17,8 @@
 #include <QTreeWidget>
 #include <QMenu>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -74,7 +76,7 @@ void OsmRelationManagerWidgetPrivate::populateDropMenu()
     m_addRelation->setIcon(QIcon(QStringLiteral(":marble/list-add.png")));
 
     // The new relation adder
-    m_relationDropMenu->addAction( QObject::tr( "New Relation" ) );
+    m_relationDropMenu->addAction( i18n( "New Relation" ) );
     m_relationDropMenu->addSeparator();
 
     // This shouldn't happen
