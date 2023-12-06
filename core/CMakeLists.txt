@@ -90,6 +90,7 @@ if(NOT Qt6_FOUND)
 else()
 
     set(Marble_FOUND TRUE)
+    set(MARBLE_LIBRARIES "")
     set(MARBLE_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/marble
                            ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/marble/geodata/data
     )
