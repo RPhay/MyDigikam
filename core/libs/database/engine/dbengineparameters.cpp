@@ -432,7 +432,7 @@ void DbEngineParameters::readFromConfig(const QString& configGroup)
         internalServerDBPath          = group.readEntry(configInternalDatabaseServerPath,            serverPrivatePath());
         internalServerMysqlInitCmd    = group.readEntry(configInternalDatabaseServerMysqlInitCmd,    defaultMysqlInitCmd());
         internalServerMysqlAdminCmd   = group.readEntry(configInternalDatabaseServerMysqlAdminCmd,   defaultMysqlAdminCmd());
-        internalServerMysqlServerCmd  = group.readEntry(configInternalDatabaseServerMysqlServerCmd,  defaultMysqlServerCmd()); 
+        internalServerMysqlServerCmd  = group.readEntry(configInternalDatabaseServerMysqlServerCmd,  defaultMysqlServerCmd());
         internalServerMysqlUpgradeCmd = group.readEntry(configInternalDatabaseServerMysqlUpgradeCmd, defaultMysqlUpgradeCmd());
     }
 
