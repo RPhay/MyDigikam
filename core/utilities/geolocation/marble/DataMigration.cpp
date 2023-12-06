@@ -7,7 +7,7 @@
 #include "DataMigration.h"
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "ui_DataMigrationWidget.h"
 
@@ -72,16 +72,16 @@ void DataMigration::exec()
 void DataMigration::moveFiles( const QString& source, const QString& target )
 {
     if( !QDir().rmdir( target ) ) {
-        mDebug() << "Removing of the target directory failed";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Removing of the target directory failed";
     }
 
     // Trying to simply rename the directory. This is the fastest method, but it is not always
     // possible. For example when the directories are on different file systems.
     // If the renaming of the directory is not successful, we have to copy and delete each
     // file separately.
-    mDebug() << "Rename" << source << "to" << target;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Rename" << source << "to" << target;
     if( !QDir().rename( source, target ) ) {
-        mDebug() << "Simple renaming of the data directory failed. Moving single files";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Simple renaming of the data directory failed. Moving single files";
 
         QProgressDialog progressDialog;
         progressDialog.setWindowModality( Qt::WindowModal );
@@ -110,9 +110,9 @@ void DataMigration::moveFiles( const QString& source, const QString& target )
             }
 
             QString sourceDirPath = dirs.top();
-            mDebug() << "DataMigration: Current source dir path ="
+            qCDebug(DIGIKAM_MARBLE_LOG) << "DataMigration: Current source dir path ="
                      << sourceDirPath;
-            mDebug() << "SliceSize =" << progressSliceSizeStack.top();
+            qCDebug(DIGIKAM_MARBLE_LOG) << "SliceSize =" << progressSliceSizeStack.top();
 
             if( !sourceDirPath.startsWith( sourcePath ) ) {
                 dirs.pop();
@@ -138,7 +138,7 @@ void DataMigration::moveFiles( const QString& source, const QString& target )
             if( files.isEmpty() && childDirs.isEmpty() )
             {
                 // Remove empty directory
-                mDebug() << "DataMigration:" << dirs.top()
+                qCDebug(DIGIKAM_MARBLE_LOG) << "DataMigration:" << dirs.top()
                          << "finished";
                 QDir().rmdir( dirs.pop() );
                 progress += progressSliceSizeStack.pop();

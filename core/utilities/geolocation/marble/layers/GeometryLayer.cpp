@@ -26,7 +26,7 @@
 #include "GeoDataStyleMap.h"
 #include "GeoDataTrack.h"
 #include "GeoDataFeature.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoPainter.h"
 #include "ViewportParams.h"
 #include "RenderState.h"
@@ -197,7 +197,7 @@ bool GeometryLayer::render(GeoPainter *painter, ViewportParams *viewport,
         for (GeoGraphicsItem* item: items) {
             QStringList paintLayers = item->paintLayers();
             if (paintLayers.isEmpty()) {
-                mDebug() << item << " provides no paint layers, so I force one onto it.";
+                qCDebug(DIGIKAM_MARBLE_LOG) << item << " provides no paint layers, so I force one onto it.";
                 paintLayers << QString();
             }
             for (const auto &layer: paintLayers) {
@@ -219,7 +219,7 @@ bool GeometryLayer::render(GeoPainter *painter, ViewportParams *viewport,
                     d->m_cachedDefaultLayer << GeometryLayerPrivate::LayerItem(layer, item);
                     static QSet<QString> missingLayers;
                     if (!missingLayers.contains(layer)) {
-                        mDebug() << "Missing layer " << layer << ", in render order, will render it on top";
+                        qCDebug(DIGIKAM_MARBLE_LOG) << "Missing layer " << layer << ", in render order, will render it on top";
                         missingLayers << layer;
                     }
                 }

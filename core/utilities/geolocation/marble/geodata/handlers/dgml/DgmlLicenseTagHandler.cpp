@@ -10,7 +10,7 @@
 #include "DgmlAttributeDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneHead.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -35,7 +35,7 @@ GeoNode* DgmlLicenseTagHandler::parse( GeoParser& parser ) const
         } else if (attribution == QLatin1String("always")) {
             parentItem.nodeAs<GeoSceneHead>()->license()->setAttribution( GeoSceneLicense::Always );
         } else {
-            mDebug() << "Unknown license attribution value " << attribution << ", falling back to 'opt-out'.";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown license attribution value " << attribution << ", falling back to 'opt-out'.";
             parentItem.nodeAs<GeoSceneHead>()->license()->setAttribution( GeoSceneLicense::OptOut );
         }
         QString const shortLicense = parser.attribute( dgmlAttr_short ).trimmed();

@@ -31,7 +31,7 @@
 #include "GeoSceneProperty.h"
 #include "GeoSceneZoom.h"
 #include "GeoSceneSettings.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "Planet.h"
 #include "PlanetFactory.h"
@@ -236,7 +236,7 @@ GeoSceneDocument* MapThemeManager::Private::loadMapThemeFile( const QString& map
         return nullptr;
     }
 
-    mDebug() << "Map theme file successfully loaded:" << dgmlPath;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Map theme file successfully loaded:" << dgmlPath;
 
     // Get result document
     GeoSceneDocument* document = static_cast<GeoSceneDocument*>( parser.releaseDocument() );
@@ -369,7 +369,7 @@ QList<QStandardItem *> MapThemeManager::Private::createMapThemeRow( QString cons
         //       For now maxIconSize already equals what's expected by the listview.
         QSize maxIconSize( 136, 136 );
         if ( themeIconPixmap.size() != maxIconSize ) {
-            mDebug() << "Smooth scaling theme icon";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Smooth scaling theme icon";
             themeIconPixmap = themeIconPixmap.scaled( maxIconSize,
                                                       Qt::KeepAspectRatio,
                                                       Qt::SmoothTransformation );
@@ -396,7 +396,7 @@ QList<QStandardItem *> MapThemeManager::Private::createMapThemeRow( QString cons
 
 void MapThemeManager::Private::updateMapThemeModel()
 {
-    mDebug() << "updateMapThemeModel";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "updateMapThemeModel";
     m_mapThemeModel.clear();
 
     m_mapThemeModel.setHeaderData(0, Qt::Horizontal, QObject::tr("Name"));
@@ -442,17 +442,17 @@ void MapThemeManager::Private::watchPaths()
 
 void MapThemeManager::Private::directoryChanged( const QString& path )
 {
-    mDebug() << "directoryChanged:" << path;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "directoryChanged:" << path;
     watchPaths();
 
-    mDebug() << "Emitting themesChanged()";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Emitting themesChanged()";
     updateMapThemeModel();
     Q_EMIT q->themesChanged();
 }
 
 void MapThemeManager::Private::fileChanged( const QString& path )
 {
-    mDebug() << "fileChanged:" << path;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "fileChanged:" << path;
 
     // 1. if the file does not (anymore) exist, it got deleted and we
     //    have to delete the corresponding item from the model
@@ -460,12 +460,12 @@ void MapThemeManager::Private::fileChanged( const QString& path )
     //    the item with a new one.
 
     const QString mapThemeId = path.section(QLatin1Char('/'), -3);
-    mDebug() << "mapThemeId:" << mapThemeId;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "mapThemeId:" << mapThemeId;
     QList<QStandardItem *> matchingItems = m_mapThemeModel.findItems( mapThemeId,
                                                                           Qt::MatchFixedString
                                                                           | Qt::MatchCaseSensitive,
                                                                           columnRelativePath );
-    mDebug() << "matchingItems:" << matchingItems.size();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "matchingItems:" << matchingItems.size();
     Q_ASSERT( matchingItems.size() <= 1 );
     int insertAtRow = 0;
 

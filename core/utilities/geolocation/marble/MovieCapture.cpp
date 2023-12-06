@@ -6,7 +6,7 @@
 
 #include "MovieCapture.h"
 #include "MarbleWidget.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QProcess>
 #include <QMessageBox>
@@ -222,7 +222,7 @@ void MovieCapture::cancelRecording()
 void MovieCapture::processWrittenMovie(int exitCode)
 {
     if (exitCode != 0) {
-        mDebug() << "[*] avconv finished with" << exitCode;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "[*] avconv finished with" << exitCode;
         Q_EMIT errorOccured();
     }
 }

@@ -35,7 +35,7 @@
 #include "GeoDataIconStyle.h"
 #include "GeoDataListStyle.h"
 #include "FileManager.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarblePlacemarkModel.h"
 
 using namespace Marble;
@@ -114,60 +114,60 @@ GeoDataTreeModel::~GeoDataTreeModel()
 
 int GeoDataTreeModel::rowCount( const QModelIndex &parent ) const
 {
-//    mDebug() << "rowCount";
+//    qCDebug(DIGIKAM_MARBLE_LOG) << "rowCount";
     const GeoDataObject *parentItem;
     if ( parent.column() > 0 ) {
-//        mDebug() << "rowCount bad column";
+//        qCDebug(DIGIKAM_MARBLE_LOG) << "rowCount bad column";
         return 0;
     }
 
     if ( !parent.isValid() ) {
-//        mDebug() << "rowCount root parent";
+//        qCDebug(DIGIKAM_MARBLE_LOG) << "rowCount root parent";
         parentItem = d->m_rootDocument;
     } else {
         parentItem = static_cast<const GeoDataObject *>(parent.internalPointer());
     }
 
     if ( !parentItem ) {
-//        mDebug() << "rowCount bad parent";
+//        qCDebug(DIGIKAM_MARBLE_LOG) << "rowCount bad parent";
         return 0;
     }
 
     if (const GeoDataContainer *container = dynamic_cast<const GeoDataContainer *>(parentItem)) {
-//        mDebug() << "rowCount " << type << "(" << parentItem << ") =" << container->size();
+//        qCDebug(DIGIKAM_MARBLE_LOG) << "rowCount " << type << "(" << parentItem << ") =" << container->size();
         return container->size();
 //    } else {
-//        mDebug() << "rowCount bad container " << container;
+//        qCDebug(DIGIKAM_MARBLE_LOG) << "rowCount bad container " << container;
     }
 
     if (const auto placemark = geodata_cast<GeoDataPlacemark>(parentItem)) {
         if (geodata_cast<GeoDataMultiGeometry>(placemark->geometry())) {
-//            mDebug() << "rowCount " << type << "(" << parentItem << ") = 1";
+//            qCDebug(DIGIKAM_MARBLE_LOG) << "rowCount " << type << "(" << parentItem << ") = 1";
             return 1;
         }
     }
 
     if (const auto geometry = geodata_cast<GeoDataMultiGeometry>(parentItem)) {
-//        mDebug() << "rowCount " << parent << " " << type << " " << geometry->size();
+//        qCDebug(DIGIKAM_MARBLE_LOG) << "rowCount " << parent << " " << type << " " << geometry->size();
         return geometry->size();
 //    } else {
-//        mDebug() << "rowCount bad geometry " << geometry;
+//        qCDebug(DIGIKAM_MARBLE_LOG) << "rowCount bad geometry " << geometry;
     }
 
     if (const auto tour = geodata_cast<GeoDataTour>(parentItem)) {
         const GeoDataPlaylist *playlist = tour->playlist();
         if ( playlist ) {
-//            mDebug() << "rowCount " << parent << " Playlist " << 1;
+//            qCDebug(DIGIKAM_MARBLE_LOG) << "rowCount " << parent << " Playlist " << 1;
             return 1;
         }
     }
 
     if (const auto playlist = geodata_cast<GeoDataPlaylist>(parentItem)) {
-//         mDebug() << "rowCount " << parent << " Playlist " << playlist->size();
+//         qCDebug(DIGIKAM_MARBLE_LOG) << "rowCount " << parent << " Playlist " << playlist->size();
         return playlist->size();
     }
 
-//    mDebug() << "rowcount end";
+//    qCDebug(DIGIKAM_MARBLE_LOG) << "rowcount end";
     return 0;//parentItem->childCount();
 }
 
@@ -197,7 +197,7 @@ QHash<int, QByteArray> GeoDataTreeModel::roleNames() const
 
 QVariant GeoDataTreeModel::data( const QModelIndex &index, int role ) const
 {
-//    mDebug() << "data";
+//    qCDebug(DIGIKAM_MARBLE_LOG) << "data";
     if ( !index.isValid() )
         return QVariant();
 
@@ -367,9 +367,9 @@ QVariant GeoDataTreeModel::data( const QModelIndex &index, int role ) const
 
 QModelIndex GeoDataTreeModel::index( int row, int column, const QModelIndex &parent )             const
 {
-//    mDebug() << "index";
+//    qCDebug(DIGIKAM_MARBLE_LOG) << "index";
     if ( !hasIndex( row, column, parent ) ) {
-//        mDebug() << "index bad index";
+//        qCDebug(DIGIKAM_MARBLE_LOG) << "index bad index";
         return QModelIndex();
     }
 
@@ -381,7 +381,7 @@ QModelIndex GeoDataTreeModel::index( int row, int column, const QModelIndex &par
         parentItem = static_cast<GeoDataObject*>( parent.internalPointer() );
 
     if ( !parentItem ) {
-//        mDebug() << "index bad parent";
+//        qCDebug(DIGIKAM_MARBLE_LOG) << "index bad parent";
         return QModelIndex();
     }
 
@@ -420,9 +420,9 @@ QModelIndex GeoDataTreeModel::index( int row, int column, const QModelIndex &par
 
 QModelIndex GeoDataTreeModel::parent( const QModelIndex &index ) const
 {
-//    mDebug() << "parent";
+//    qCDebug(DIGIKAM_MARBLE_LOG) << "parent";
     if ( !index.isValid() ) {
-//        mDebug() << "parent bad index";
+//        qCDebug(DIGIKAM_MARBLE_LOG) << "parent bad index";
         return QModelIndex();
     }
 
@@ -448,7 +448,7 @@ QModelIndex GeoDataTreeModel::parent( const QModelIndex &index ) const
         // greatParent can be a container
         if (auto greatparentContainer = dynamic_cast<GeoDataContainer *>(greatParentObject)) {
             GeoDataFeature *parentFeature = static_cast<GeoDataFeature*>( parentObject );
-//            mDebug() << "parent " << childObject->nodeType() << "(" << childObject << ") = "
+//            qCDebug(DIGIKAM_MARBLE_LOG) << "parent " << childObject->nodeType() << "(" << childObject << ") = "
 //                    << parentObject->nodeType() << "[" << greatparentContainer->childPosition( parentFeature ) << "](" << parentObject << ")";
             return createIndex( greatparentContainer->childPosition( parentFeature ), 0, parentObject );
         }
@@ -456,7 +456,7 @@ QModelIndex GeoDataTreeModel::parent( const QModelIndex &index ) const
         // greatParent can be a placemark
         if (geodata_cast<GeoDataPlacemark>(greatParentObject)) {
 //            GeoDataPlacemark *greatparentPlacemark = static_cast<GeoDataPlacemark*>( greatParentObject );
-//                mDebug() << "parent " << childObject->nodeType() << "(" << childObject << ") = "
+//                qCDebug(DIGIKAM_MARBLE_LOG) << "parent " << childObject->nodeType() << "(" << childObject << ") = "
 //                        << parentObject->nodeType() << "[0](" << parentObject << ")";
             return createIndex( 0, 0, parentObject );
         }
@@ -464,7 +464,7 @@ QModelIndex GeoDataTreeModel::parent( const QModelIndex &index ) const
         // greatParent can be a multigeometry
         if (GeoDataMultiGeometry *greatparentMultiGeo = geodata_cast<GeoDataMultiGeometry>(greatParentObject)) {
             GeoDataGeometry *parentGeometry = static_cast<GeoDataGeometry*>( parentObject );
-//                mDebug() << "parent " << childObject->nodeType() << "(" << childObject << ") = "
+//                qCDebug(DIGIKAM_MARBLE_LOG) << "parent " << childObject->nodeType() << "(" << childObject << ") = "
 //                        << parentObject->nodeType() << "[" << greatParentItem->childPosition( parentGeometry ) << "](" << parentObject << ")";
             return createIndex( greatparentMultiGeo->childPosition( parentGeometry ), 0, parentObject );
         }
@@ -475,7 +475,7 @@ QModelIndex GeoDataTreeModel::parent( const QModelIndex &index ) const
 
     }
 
-//    mDebug() << "parent unknown index";
+//    qCDebug(DIGIKAM_MARBLE_LOG) << "parent unknown index";
     return QModelIndex();
 }
 
@@ -517,14 +517,14 @@ bool GeoDataTreeModel::setData ( const QModelIndex & index, const QVariant & val
                 }
             }
             feature->setVisible( bValue );
-            mDebug() << "setData " << feature->name();
+            qCDebug(DIGIKAM_MARBLE_LOG) << "setData " << feature->name();
             updateFeature( feature );
             return true;
         }
     } else if ( role == Qt::EditRole ) {
         if (auto feature = dynamic_cast<GeoDataFeature *>(object)) {
             feature->setName( value.toString() );
-            mDebug() << "setData " << feature->name() << " " << value.toString();
+            qCDebug(DIGIKAM_MARBLE_LOG) << "setData " << feature->name() << " " << value.toString();
             updateFeature( feature );
             return true;
         }

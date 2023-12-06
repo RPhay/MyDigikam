@@ -5,7 +5,7 @@
 
 #include "BuildingGraphicsItem.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "ViewportParams.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataLinearRing.h"
@@ -171,7 +171,7 @@ void BuildingGraphicsItem::paint(GeoPainter* painter, const ViewportParams* view
         }
         paintRoof(painter, viewport);
     } else {
-        mDebug() << "Didn't expect to have to paint layer " << layer << ", ignoring it.";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Didn't expect to have to paint layer " << layer << ", ignoring it.";
     }
 }
 

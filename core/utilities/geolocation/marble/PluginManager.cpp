@@ -16,7 +16,7 @@
 
 // Local dir
 #include "MarbleDirs.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "RenderPlugin.h"
 #include "PositionProviderPlugin.h"
 #include "ParseRunnerPlugin.h"
@@ -173,7 +173,7 @@ bool appendPlugin( QObject * obj, const QPluginLoader *loader, QList<Plugin> &pl
 {
     if ( qobject_cast<Iface*>( obj ) && qobject_cast<Plugin>( obj ) ) {
         Q_ASSERT( obj->metaObject()->superClass() ); // all our plugins have a super class
-        mDebug() <<  obj->metaObject()->superClass()->className()
+        qCDebug(DIGIKAM_MARBLE_LOG) <<  obj->metaObject()->superClass()->className()
                 << "plugin loaded from" << (loader ? loader->fileName() : QString::fromUtf8( "<static>"));
         auto plugin = qobject_cast<Plugin>( obj );
         Q_ASSERT( plugin ); // checked above
@@ -200,7 +200,7 @@ bool PluginManagerPrivate::addPlugin(QObject *obj, const QPluginLoader *loader)
                 ( obj, loader, m_parsingRunnerPlugins );
     if ( !isPlugin ) {
         qWarning() << "Ignoring the following plugin since it couldn't be loaded:" << (loader ? loader->fileName() : QString::fromUtf8( "<static>"));
-        mDebug() << "Plugin failure:" << (loader ? loader->fileName() : QString::fromUtf8( "<static>")) << "is a plugin, but it does not implement the "
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Plugin failure:" << (loader ? loader->fileName() : QString::fromUtf8( "<static>")) << "is a plugin, but it does not implement the "
                 << "right interfaces or it was compiled against an old version of Marble. Ignoring it.";
     }
     return isPlugin;
@@ -215,7 +215,7 @@ void PluginManagerPrivate::loadPlugins()
 
     QElapsedTimer t;
     t.start();
-    mDebug() << "Starting to load Plugins.";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Starting to load Plugins.";
 
     QStringList pluginFileNameList = MarbleDirs::pluginEntryList( QString::fromUtf8( "" ), QDir::Files );
 
@@ -233,15 +233,15 @@ void PluginManagerPrivate::loadPlugins()
         QString const baseName = QFileInfo(fileName).baseName();
         QString const libBaseName = QLibraryInfo::path(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + QFileInfo(fileName).baseName();
         if (!m_whitelist.isEmpty() && !m_whitelist.contains(baseName) && !m_whitelist.contains(libBaseName)) {
-            mDebug() << "Ignoring non-whitelisted plugin " << fileName;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring non-whitelisted plugin " << fileName;
             continue;
         }
         if (m_blacklist.contains(baseName) || m_blacklist.contains(libBaseName)) {
-            mDebug() << "Ignoring blacklisted plugin " << fileName;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring blacklisted plugin " << fileName;
             continue;
         }
 
-        // mDebug() << fileName << " - " << MarbleDirs::pluginPath( fileName );
+        // qCDebug(DIGIKAM_MARBLE_LOG) << fileName << " - " << MarbleDirs::pluginPath( fileName );
         QString const path = MarbleDirs::pluginPath( fileName );
 #ifdef Q_OS_ANDROID
         QFileInfo targetFile( path );
@@ -283,7 +283,7 @@ void PluginManagerPrivate::loadPlugins()
 
     m_pluginsLoaded = true;
 
-    mDebug() << Q_FUNC_INFO << "Time elapsed:" << t.elapsed() << "ms";
+    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Time elapsed:" << t.elapsed() << "ms";
 }
 
 #ifdef Q_OS_ANDROID

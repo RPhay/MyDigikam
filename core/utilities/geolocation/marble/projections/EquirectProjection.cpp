@@ -12,7 +12,7 @@
 #include "ViewportParams.h"
 #include "GeoDataLatLonAltBox.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QIcon>
 

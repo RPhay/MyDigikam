@@ -10,7 +10,7 @@
 #include "GeoDataPlacemark.h"
 
 // Qt
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QColor>
 

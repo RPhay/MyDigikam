@@ -20,7 +20,7 @@
 #include <GeoDataPlacemark.h>
 #include <GeoDataLookAt.h>
 #include <MarbleClock.h>
-#include <MarbleDebug.h>
+#include <digikam_debug.h>
 
 namespace Marble
 {
@@ -559,7 +559,7 @@ namespace Marble
 
         if (newDistance <= minDistance)
         {
-            mDebug() << "Invalid distance: 0 m";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Invalid distance: 0 m";
             newDistance = minDistance;
         }
 
@@ -571,7 +571,7 @@ namespace Marble
     {
         QPoint tl = region.topLeft();
         QPoint br = region.bottomRight();
-        mDebug() << "Selection region: (" << tl.x() << ", " <<  tl.y() << ") ("
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Selection region: (" << tl.x() << ", " <<  tl.y() << ") ("
             << br.x() << ", " << br.y() << ")" << Qt::endl;
 
         const GeoDataLatLonAltBox box = viewport()->latLonAltBox(region);

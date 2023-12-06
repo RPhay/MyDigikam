@@ -27,7 +27,7 @@
 #include "GeoDataTour.h"
 #include "GeoDataTrack.h"
 #include "MarbleDirs.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "ParsingRunnerManager.h"
 
@@ -134,7 +134,7 @@ void FileLoader::run()
     if ( d->m_contents.isEmpty() ) {
         QString defaultSourceName;
 
-        mDebug() << "starting parser for" << d->m_filepath;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "starting parser for" << d->m_filepath;
 
         QFileInfo fileinfo( d->m_filepath );
         QString path = fileinfo.path();
@@ -163,7 +163,7 @@ void FileLoader::run()
         }
 
         if ( QFile::exists( defaultSourceName ) ) {
-            mDebug() << "No recent Default Placemark Cache File available!";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "No recent Default Placemark Cache File available!";
 
             // use runners: pnt, gpx, osm
             connect( &d->m_runner, SIGNAL(parsingFinished(GeoDataDocument*,QString)),
@@ -171,7 +171,7 @@ void FileLoader::run()
             d->m_runner.parseFile( defaultSourceName, d->m_documentRole );
         }
         else {
-            mDebug() << "No Default Placemark Source File for " << name;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "No Default Placemark Source File for " << name;
         }
     // content is not empty, we load from data
     } else {
@@ -197,7 +197,7 @@ void FileLoader::run()
         d->createFilterProperties( d->m_document );
         buffer.close();
 
-        mDebug() << "newGeoDataDocumentAdded" << d->m_filepath;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "newGeoDataDocumentAdded" << d->m_filepath;
 
         Q_EMIT newGeoDataDocumentAdded( d->m_document );
         Q_EMIT loaderFinished( this );
@@ -285,7 +285,7 @@ void FileLoaderPrivate::createFilterProperties( GeoDataContainer *container )
                 if ( area >= 0.0 )
                 {
                     hasPopularity = true;
-                    //                mDebug() << placemark->name() << " " << (qint64)(area);
+                    //                qCDebug(DIGIKAM_MARBLE_LOG) << placemark->name() << " " << (qint64)(area);
                     placemark->setPopularity( (qint64)(area * 100) );
                     placemark->setZoomLevel( areaPopIdx( area ) );
                 }

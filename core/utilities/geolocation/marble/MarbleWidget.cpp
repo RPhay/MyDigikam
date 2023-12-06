@@ -25,7 +25,7 @@
 #include "GeoDataLookAt.h"
 #include "GeoPainter.h"
 #include "MarbleClock.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "MarbleLocale.h"
 #include "MarbleMap.h"
@@ -801,7 +801,7 @@ GeoSceneDocument *MarbleWidget::mapTheme() const
 
 void MarbleWidget::setPropertyValue( const QString& name, bool value )
 {
-    mDebug() << "In MarbleWidget the property " << name << "was set to " << value;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "In MarbleWidget the property " << name << "was set to " << value;
     d->m_map.setPropertyValue( name, value );
 }
 
@@ -1000,7 +1000,7 @@ void MarbleWidget::notifyMouseClick( int x, int y)
 
 void MarbleWidget::clearVolatileTileCache()
 {
-    mDebug() << "About to clear VolatileTileCache";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "About to clear VolatileTileCache";
     d->m_map.clearVolatileTileCache();
 }
 
@@ -1113,7 +1113,7 @@ void MarbleWidget::setInputEnabled( bool enabled )
 
     else // input is disabled
     {
-        mDebug() << "MarbleWidget::disableInput";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "MarbleWidget::disableInput";
         removeEventFilter( d->m_inputhandler );
         setCursor( Qt::ArrowCursor );
     }

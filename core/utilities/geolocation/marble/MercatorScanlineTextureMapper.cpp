@@ -17,7 +17,7 @@
 
 // Marble
 #include "GeoPainter.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "ScanlineTextureMapperContext.h"
 #include "StackedTileLoader.h"
 #include "TextureColorizer.h"

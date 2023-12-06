@@ -6,7 +6,7 @@
 
 #include "DgmlVectorTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"

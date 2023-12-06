@@ -9,7 +9,7 @@
 #include "GeoDataPolygon_p.h"
 #include "GeoDataCoordinates.h"
 #include "GeoDataTypes.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <algorithm>
 #include <QDataStream>
@@ -33,7 +33,7 @@ GeoDataPolygon::GeoDataPolygon( const GeoDataGeometry & other )
 GeoDataPolygon::~GeoDataPolygon()
 {
 #ifdef DEBUG_GEODATA
-    mDebug() << "delete polygon";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "delete polygon";
 #endif
 }
 
@@ -205,7 +205,7 @@ void GeoDataPolygon::pack( QDataStream& stream ) const
           = d->inner.constBegin();
          iterator != d->inner.constEnd();
          ++iterator ) {
-        mDebug() << "innerRing: size" << d->inner.size();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "innerRing: size" << d->inner.size();
         GeoDataLinearRing linearRing = ( *iterator );
         linearRing.pack( stream );
     }

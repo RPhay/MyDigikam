@@ -7,7 +7,7 @@
 #include "ui_PlacemarkEditHeader.h"
 
 #include <QFileDialog>
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 
 

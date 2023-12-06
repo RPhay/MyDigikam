@@ -12,7 +12,7 @@
 
 #include "GeoDataCoordinates.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QLocale>
 #include <QRegularExpression>

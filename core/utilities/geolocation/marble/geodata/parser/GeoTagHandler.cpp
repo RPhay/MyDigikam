@@ -9,7 +9,7 @@
 #include "GeoTagHandler.h"
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 
 namespace Marble
@@ -46,7 +46,7 @@ qDebug() << "GeoTagHandler::registerHandler" << qName << handler;
     Q_ASSERT(hash->contains(qName));
 
 #if DUMP_TAG_HANDLER_REGISTRATION > 0
-    mDebug() << "[GeoTagHandler] -> Recognizing" << qName.first << "tag with namespace" << qName.second;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "[GeoTagHandler] -> Recognizing" << qName.first << "tag with namespace" << qName.second;
 #endif
 }
 

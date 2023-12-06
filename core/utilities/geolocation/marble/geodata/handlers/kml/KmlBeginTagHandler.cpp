@@ -5,7 +5,7 @@
 
 #include "KmlBeginTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "KmlWhenTagHandler.h"
 #include "KmlElementDictionary.h"

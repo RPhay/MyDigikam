@@ -12,7 +12,7 @@
 #include "KmlElementDictionary.h"
 
 #include <QFileInfo>
-#include <MarbleDebug.h>
+#include <digikam_debug.h>
 
 namespace Marble {
 
@@ -33,7 +33,7 @@ bool GeoDataDocumentWriter::write(QIODevice *device, const GeoDataDocument &docu
             }
         }
 
-        mDebug() << "No writer registered to handle " << documentIdentifier;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "No writer registered to handle " << documentIdentifier;
         return false;
     }
 }
@@ -42,7 +42,7 @@ bool GeoDataDocumentWriter::write(const QString &filename, const GeoDataDocument
 {
     QFile file(filename);
     if (!file.open(QIODevice::WriteOnly)) {
-        mDebug() << "Cannot open" << filename << "for writing:" << file.errorString();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot open" << filename << "for writing:" << file.errorString();
         return false;
     }
 

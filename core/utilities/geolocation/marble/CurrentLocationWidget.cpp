@@ -10,7 +10,7 @@
 #include "CurrentLocationWidget.h"
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleLocale.h"
 #include "MarbleModel.h"
 #include "MarbleWidget.h"

@@ -9,7 +9,7 @@
 #include "Planet.h"
 #include "MarbleMath.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QDateTime>
 
@@ -149,7 +149,7 @@ void SunLocator::setPlanet( const Planet *planet )
 
     const Planet *previousPlanet = d->m_planet;
 
-    mDebug() << "SunLocator::setPlanet(Planet*)";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "SunLocator::setPlanet(Planet*)";
     d->m_planet = planet;
     d->m_twilightZone = planet->twilightZone();
     planet->sunPosition(d->m_lon, d->m_lat, d->m_clock->dateTime());

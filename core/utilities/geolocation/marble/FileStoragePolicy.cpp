@@ -14,7 +14,7 @@
 #include <QFileInfo>
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleGlobal.h"
 #include "MarbleDirs.h"
 
@@ -80,21 +80,21 @@ bool FileStoragePolicy::updateFile( const QString &fileName, const QByteArray &d
 
 void FileStoragePolicy::clearCache()
 {
-    mDebug() << Q_FUNC_INFO;
+    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO;
     if ( m_dataDirectory.isEmpty()
     || !(m_dataDirectory.endsWith(QLatin1String( "data" ))   // on Windows
     ||   m_dataDirectory.endsWith(QLatin1String( "marble" )) // on all other OSes
     ))
     {
-        mDebug() << "Data Directory:" << m_dataDirectory;
-        mDebug() << "Error: Refusing to erase files under unknown conditions for safety reasons!";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Data Directory:" << m_dataDirectory;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Error: Refusing to erase files under unknown conditions for safety reasons!";
         return;
     }
 
     const QString cachedMapsDirectory = m_dataDirectory + QLatin1String("/maps");
 
     QDirIterator it( cachedMapsDirectory, QDir::NoDotAndDotDot | QDir::Dirs );
-    mDebug() << cachedMapsDirectory;
+    qCDebug(DIGIKAM_MARBLE_LOG) << cachedMapsDirectory;
     while (it.hasNext()) {
         it.next();
         QString planetDirectory = it.filePath();

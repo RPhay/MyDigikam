@@ -9,7 +9,7 @@
 
 #include <QPoint>
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "AbstractProjection.h"
 #include "GeoDataStyle.h"
 #include "GeoPainter.h"

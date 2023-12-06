@@ -25,7 +25,7 @@
 #include <QTimer>
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "MarblePluginSettingsWidget.h"
 #include "MarbleWidget.h"
@@ -200,7 +200,7 @@ void QtMarbleConfigDialog::syncSettings()
             proxy.setType( QNetworkProxy::HttpProxy );
         }
         else {
-            mDebug() << "Unknown proxy type! Using Http Proxy instead.";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown proxy type! Using Http Proxy instead.";
             proxy.setType( QNetworkProxy::HttpProxy );
         }
     }

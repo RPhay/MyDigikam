@@ -17,7 +17,7 @@
 // Marble
 #include "DialogConfigurationInterface.h"
 #include "GeoPainter.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {

@@ -7,7 +7,7 @@
 #include "MarbleLocale.h"
 #include "MarbleLocale_p.h"
 #include "MarbleGlobal.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 // Qt
 #include <QLocale>

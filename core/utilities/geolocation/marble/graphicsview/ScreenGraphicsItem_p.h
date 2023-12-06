@@ -7,7 +7,7 @@
 #define MARBLE_SCREENGRAPHICSITEMPRIVATE_H
 
 #include "MarbleGraphicsItem_p.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "BillboardGraphicsItem.h"
 #include "ScreenGraphicsItem.h"
@@ -45,7 +45,7 @@ class ScreenGraphicsItemPrivate : public MarbleGraphicsItemPrivate
     {
         const QSizeF parentSize = m_parent ? m_parent->size() : m_viewportSize;
         if ( !parentSize.isValid() ) {
-            mDebug() << "Invalid parent size";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Invalid parent size";
             return m_position;
         }
         QPointF position;

@@ -8,7 +8,7 @@
 #include "Route.h"
 
 #include "MarbleDirs.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -213,7 +213,7 @@ void VoiceNavigationModelPrivate::updateInstruction( const RouteSegment & segmen
 {
     QString turnTypeAudio = turnTypeAudioFile( turnType, distance );
     if ( turnTypeAudio.isEmpty() ) {
-        mDebug() << "Missing audio file for turn type " << turnType << " and speaker " << m_speaker;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Missing audio file for turn type " << turnType << " and speaker " << m_speaker;
         return;
     }
 

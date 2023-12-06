@@ -6,7 +6,7 @@
 
 #include "DgmlAvailableTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "DgmlElementDictionary.h"
 #include "DgmlAuxillaryDictionary.h"

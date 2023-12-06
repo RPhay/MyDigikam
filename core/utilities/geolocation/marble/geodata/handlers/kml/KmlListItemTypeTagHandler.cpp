@@ -5,7 +5,7 @@
 
 #include "KmlListItemTypeTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "KmlElementDictionary.h"
 #include "GeoDataListStyle.h"
@@ -38,7 +38,7 @@ GeoNode* KmllistItemTypeTagHandler::parse( GeoParser& parser ) const
         }
         else
         {
-            mDebug() << "listItemType value is invalid"
+            qCDebug(DIGIKAM_MARBLE_LOG) << "listItemType value is invalid"
                      << "falling back to default - check";
         }
         parentItem.nodeAs<GeoDataListStyle>()->setListItemType( type );

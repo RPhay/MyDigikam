@@ -8,7 +8,7 @@
 
 #include "GeoDataLatLonAltBox.h"
 #include "GeoDataTypes.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "GeoDataLineString.h"
 #include "GeoDataExtendedData.h"
@@ -187,12 +187,12 @@ GeoDataCoordinates GeoDataTrack::coordinatesAt( const QDateTime &when ) const
 
     // No tracked point happened before "when"
     if ( nextEntry == pointMap.constBegin() ) {
-        mDebug() << "No tracked point before " << when;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "No tracked point before " << when;
         return GeoDataCoordinates();
     }
 
     if ( nextEntry == pointMap.constEnd() ) {
-        mDebug() << "No track point after" << when;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "No track point after" << when;
         return GeoDataCoordinates();
     }
 

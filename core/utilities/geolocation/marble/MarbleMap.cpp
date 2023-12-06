@@ -51,7 +51,7 @@
 #include "GeoDataStyleMap.h"
 #include "LayerManager.h"
 #include "MapThemeManager.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "MarbleModel.h"
 #include "PluginManager.h"
@@ -541,7 +541,7 @@ void MarbleMap::downloadRegion( QVector<TileCoordsPyramid> const & pyramid )
         QSet<TileId> tileIdSet;
         for( int i = 0; i < pyramid.size(); ++i ) {
             QRect const coords = pyramid[i].coords( level );
-            mDebug() << "MarbleMap::downloadRegion level:" << level << "tile coords:" << coords;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "MarbleMap::downloadRegion level:" << level << "tile coords:" << coords;
             int x1, y1, x2, y2;
             coords.getCoords( &x1, &y1, &x2, &y2 );
             for ( int x = x1; x <= x2; ++x ) {
@@ -560,14 +560,14 @@ void MarbleMap::downloadRegion( QVector<TileCoordsPyramid> const & pyramid )
             TileId const tileId = i.next();
             d->m_textureLayer.downloadStackedTile( tileId );
             d->m_vectorTileLayer.downloadTile(tileId);
-            mDebug() << "TileDownload" << tileId;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "TileDownload" << tileId;
         }
         tilesCount += tileIdSet.count();
     }
     // Needed for downloading unique tiles only. Much faster than if tiles for each level is downloaded separately
 
     int const elapsedMs = t.elapsed();
-    mDebug() << "MarbleMap::downloadRegion:" << tilesCount << "tiles, " << elapsedMs << "ms";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "MarbleMap::downloadRegion:" << tilesCount << "tiles, " << elapsedMs << "ms";
 }
 
 void MarbleMap::highlightRouteRelation(qint64 osmId, bool enabled)
@@ -583,7 +583,7 @@ bool MarbleMap::propertyValue( const QString& name ) const
     }
     else {
         value = false;
-        mDebug() << "WARNING: Failed to access a map theme! Property: " << name;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Failed to access a map theme! Property: " << name;
     }
     return value;
 }
@@ -846,7 +846,7 @@ void MarbleMap::paint( GeoPainter &painter, const QRect &dirtyRect )
     painter.setDebugBatchRender(d->m_showDebugBatchRender);
 
     if ( !d->m_model->mapTheme() ) {
-        mDebug() << "No theme yet!";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "No theme yet!";
         d->m_marbleSplashLayer.render( &painter, &d->m_viewport );
         return;
     }
@@ -938,7 +938,7 @@ void MarbleMapPrivate::updateMapTheme()
                     if ( !TileLoader::baseTilesAvailable( *texture )
                          && !installMap.isEmpty() )
                     {
-                        mDebug() << "Base tiles not available. Creating Tiles ... \n"
+                        qCDebug(DIGIKAM_MARBLE_LOG) << "Base tiles not available. Creating Tiles ... \n"
                                  << "SourceDir: " << sourceDir << "InstallMap:" << installMap;
 
                         TileCreator *tileCreator = new TileCreator(
@@ -952,7 +952,7 @@ void MarbleMapPrivate::updateMapTheme()
                                                     m_model->mapTheme()->head()->description() );
                         tileCreatorDlg->exec();
                         if ( TileLoader::baseTilesAvailable( *texture ) ) {
-                            mDebug() << "Base tiles for" << sourceDir << "successfully created.";
+                            qCDebug(DIGIKAM_MARBLE_LOG) << "Base tiles for" << sourceDir << "successfully created.";
                         } else {
                             qWarning() << "Some or all base tiles for" << sourceDir << "could not be created.";
                         }
@@ -984,7 +984,7 @@ void MarbleMapPrivate::updateMapTheme()
                     if ( !TileLoader::baseTilesAvailable( *vectorTile )
                          && !installMap.isEmpty() )
                     {
-                        mDebug() << "Base tiles not available. Creating Tiles ... \n"
+                        qCDebug(DIGIKAM_MARBLE_LOG) << "Base tiles not available. Creating Tiles ... \n"
                                  << "SourceDir: " << sourceDir << "InstallMap:" << installMap;
 
                         TileCreator *tileCreator = new TileCreator(
@@ -1089,14 +1089,14 @@ void MarbleMapPrivate::updateMapTheme()
 
 void MarbleMap::setPropertyValue( const QString& name, bool value )
 {
-    mDebug() << "In MarbleMap the property " << name << "was set to " << value;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "In MarbleMap the property " << name << "was set to " << value;
     if ( d->m_model->mapTheme() ) {
         d->m_model->mapTheme()->settings()->setPropertyValue( name, value );
         d->m_textureLayer.setNeedsUpdate();
         Q_EMIT propertyValueChanged(name, value);
     }
     else {
-        mDebug() << "WARNING: Failed to access a map theme! Property: " << name;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Failed to access a map theme! Property: " << name;
     }
     if (d->m_textureLayer.layerCount() == 0) {
         d->m_layerManager.addLayer( &d->m_groundLayer );
@@ -1177,7 +1177,7 @@ void MarbleMap::setLockToSubSolarPoint( bool visible )
 
         centerOn( d->m_model->sunLocator()->getLon(), d->m_model->sunLocator()->getLat() );
     } else if ( visible ) {
-        mDebug() << "Ignoring centering on sun, since the sun plugin is not loaded.";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring centering on sun, since the sun plugin is not loaded.";
     }
 }
 
@@ -1357,12 +1357,12 @@ void MarbleMap::clearVolatileTileCache()
 {
     d->m_vectorTileLayer.reset();
     d->m_textureLayer.reset();
-    mDebug() << "Cleared Volatile Cache!";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Cleared Volatile Cache!";
 }
 
 void MarbleMap::setVolatileTileCacheLimit( quint64 kilobytes )
 {
-    mDebug() << "kiloBytes" << kilobytes;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "kiloBytes" << kilobytes;
     d->m_textureLayer.setVolatileCacheLimit( kilobytes );
 }
 

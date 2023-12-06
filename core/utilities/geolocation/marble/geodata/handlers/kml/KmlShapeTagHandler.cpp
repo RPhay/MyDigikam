@@ -5,7 +5,7 @@
 
 #include "KmlShapeTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "KmlElementDictionary.h"
 #include "GeoDataPhotoOverlay.h"
@@ -35,7 +35,7 @@ GeoNode* KmlshapeTagHandler::parse( GeoParser& parser ) const
         } else if (shapeText == QLatin1String("sphere")) {
             shape = GeoDataPhotoOverlay::Sphere;
         } else {
-            mDebug() << "Unknown shape attribute" << shapeText << ", falling back to default value 'rectangle'";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown shape attribute" << shapeText << ", falling back to default value 'rectangle'";
             shape = GeoDataPhotoOverlay::Rectangle;
         }
 

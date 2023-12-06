@@ -5,7 +5,7 @@
 
 #include "KmlListStyleTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "GeoDataListStyle.h"
 #include "GeoDataStyle.h"

@@ -5,7 +5,7 @@
 
 #include "KmlItemIconTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "GeoDataListStyle.h"
 #include "GeoDataItemIcon.h"

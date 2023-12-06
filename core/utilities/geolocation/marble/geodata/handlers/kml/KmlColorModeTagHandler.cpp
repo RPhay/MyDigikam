@@ -6,7 +6,7 @@
 
 #include "KmlColorModeTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "KmlElementDictionary.h"
 #include "GeoDataColorStyle.h"
 #include "GeoParser.h"

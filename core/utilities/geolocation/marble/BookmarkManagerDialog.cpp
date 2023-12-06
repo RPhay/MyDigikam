@@ -23,7 +23,7 @@
 #include "GeoDataTypes.h"
 #include "GeoDataDocumentWriter.h"
 #include "MarbleDirs.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "NewBookmarkFolderDialog.h"
 #include "MarblePlacemarkModel.h"
@@ -416,7 +416,7 @@ void BookmarkManagerDialog::exportBookmarks()
 
     if ( !fileName.isEmpty() ) {
         if (!GeoDataDocumentWriter::write(fileName, *d->bookmarkDocument())) {
-            mDebug() << "Could not write the bookmarks file" << fileName;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Could not write the bookmarks file" << fileName;
             QString const text = tr( "Unable to save bookmarks. Please check that the file is writable." );
             QMessageBox::warning(this, tr("Bookmark Export"), text);
         }
@@ -506,7 +506,7 @@ void BookmarkManagerDialogPrivate::importBookmarksRecursively( GeoDataContainer 
                     m_manager->removeBookmark( existingPlacemark );
                     m_manager->addBookmark( existingFolder, *newPlacemark );
 
-                    mDebug() << "Placemark " << newPlacemark->name() << " replaces " << existingPlacemark->name();
+                    qCDebug(DIGIKAM_MARBLE_LOG) << "Placemark " << newPlacemark->name() << " replaces " << existingPlacemark->name();
                     delete messageBox;
                     break;
                 }

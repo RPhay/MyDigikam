@@ -8,7 +8,7 @@
 #include "DgmlElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneTileDataset.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -30,7 +30,7 @@ GeoNode* DgmlBlendingTagHandler::parse( GeoParser& parser ) const
 
     // Attribute name, default to ""
     const QString name = parser.attribute( dgmlAttr_name ).trimmed();
-    mDebug() << "DgmlBlendingTagHandler::parse" << name;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "DgmlBlendingTagHandler::parse" << name;
     parentItem.nodeAs<GeoSceneTileDataset>()->setBlending( name );
     return nullptr;
 }

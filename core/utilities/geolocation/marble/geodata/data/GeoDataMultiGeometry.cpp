@@ -13,7 +13,7 @@
 #include "GeoDataPolygon.h"
 #include "GeoDataTypes.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QDataStream>
 
@@ -104,7 +104,7 @@ QVector<GeoDataGeometry *> GeoDataMultiGeometry::vector()
 
 GeoDataGeometry& GeoDataMultiGeometry::at( int pos )
 {
-    mDebug() << "detaching!";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "detaching!";
     detach();
 
     Q_D(GeoDataMultiGeometry);

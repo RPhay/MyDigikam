@@ -5,7 +5,7 @@
 
 #include "KmlStateTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "KmlElementDictionary.h"
 #include "GeoDataItemIcon.h"
@@ -45,7 +45,7 @@ GeoNode* KmlstateTagHandler::parse( GeoParser& parser ) const
                 itemIconState |= GeoDataItemIcon::Fetching2;
             }
             else {
-                mDebug() << "Cannot parse state value" << value;
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot parse state value" << value;
             }
         }
 

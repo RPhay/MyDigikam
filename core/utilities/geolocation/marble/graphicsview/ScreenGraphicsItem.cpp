@@ -8,7 +8,7 @@
 #include "ScreenGraphicsItem_p.h"
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleWidget.h"
 
 // Qt

@@ -17,7 +17,7 @@
 #include <QMetaProperty>
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "AbstractDataPluginItem.h"
 #include "CacheStoragePolicy.h"
 #include "GeoDataCoordinates.h"
@@ -418,7 +418,7 @@ void AbstractDataPluginModel::addItemsToList( const QList<AbstractDataPluginItem
             continue;
         }
 
-        mDebug() << "New item " << item->id();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "New item " << item->id();
 
         // This find the right position in the sorted to insert the new item
         QList<AbstractDataPluginItem*>::iterator i = std::lower_bound( d->m_itemSet.begin(),
@@ -608,7 +608,7 @@ void AbstractDataPluginModel::processFinishedJob( const QString& relativeUrlStri
         QStringList fileInformation = id.split( fileIdSeparator );
 
         if( fileInformation.size() < 2) {
-            mDebug() << "Strange file information " << id;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Strange file information " << id;
             return;
         }
         QString itemId = fileInformation.at( 0 );

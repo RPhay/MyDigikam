@@ -5,7 +5,7 @@
 
 #include "GeoDataVec2.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble {
 
@@ -51,7 +51,7 @@ GeoDataVec2::Unit GeoDataVec2Private::parseUnits( const QString &value )
         return GeoDataVec2::InsetPixels;
     }
 
-    mDebug() << "Warning: Unknown units value " << value << " - falling back to default 'fraction'";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Warning: Unknown units value " << value << " - falling back to default 'fraction'";
     return GeoDataVec2::Fraction;
 }
 

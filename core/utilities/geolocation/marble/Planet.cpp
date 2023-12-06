@@ -6,7 +6,7 @@
 #include "Planet.h"
 
 #include "PlanetFactory.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleGlobal.h"
 #include "MarbleColors.h"
 

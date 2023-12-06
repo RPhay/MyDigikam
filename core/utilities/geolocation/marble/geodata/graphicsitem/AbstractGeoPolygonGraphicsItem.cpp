@@ -16,7 +16,7 @@
 #include "GeoDataPlacemark.h"
 #include "GeoDataPolyStyle.h"
 #include "OsmPlacemarkData.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "ViewportParams.h"
 
 #include <QtMath>

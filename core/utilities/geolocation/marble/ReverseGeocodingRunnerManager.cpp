@@ -7,7 +7,7 @@
 
 #include "ReverseGeocodingRunnerManager.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "GeoDataCoordinates.h"
 #include "GeoDataPlacemark.h"
@@ -92,7 +92,7 @@ void ReverseGeocodingRunnerManager::Private::addReverseGeocodingResult( const Ge
 void ReverseGeocodingRunnerManager::Private::cleanupReverseGeocodingTask( ReverseGeocodingTask *task )
 {
     m_reverseTasks.removeAll( task );
-    mDebug() << "removing task " << m_reverseTasks.size() << " " << (quintptr)task;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "removing task " << m_reverseTasks.size() << " " << (quintptr)task;
     if ( m_reverseTasks.isEmpty() ) {
         Q_EMIT q->reverseGeocodingFinished();
     }
@@ -122,7 +122,7 @@ void ReverseGeocodingRunnerManager::reverseGeocoding( const GeoDataCoordinates &
     for( const ReverseGeocodingRunnerPlugin* plugin: plugins ) {
         ReverseGeocodingTask* task = new ReverseGeocodingTask( plugin->newRunner(), this, d->m_marbleModel, coordinates );
         connect( task, SIGNAL(finished(ReverseGeocodingTask*)), this, SLOT(cleanupReverseGeocodingTask(ReverseGeocodingTask*)) );
-        mDebug() << "reverse task " << plugin->nameId() << " " << (quintptr)task;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "reverse task " << plugin->nameId() << " " << (quintptr)task;
         d->m_reverseTasks << task;
     }
 

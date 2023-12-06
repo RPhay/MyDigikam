@@ -6,7 +6,7 @@
 
 #include "VisiblePlacemark.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "RemoteIconLoader.h"
 
 #include "GeoDataPlacemark.h"
@@ -136,7 +136,7 @@ void VisiblePlacemark::setSymbolPixmap()
         Q_EMIT updateNeeded();
     }
     else {
-        mDebug() << "Style pointer is Null";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Style pointer is Null";
     }
 }
 

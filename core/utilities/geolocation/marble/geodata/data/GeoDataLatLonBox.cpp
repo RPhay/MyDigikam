@@ -7,7 +7,7 @@
 
 #include "GeoDataLatLonBox.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataLineString.h"
 
 #include "GeoDataTypes.h"
@@ -324,7 +324,7 @@ bool GeoDataLatLonBox::containsPole( Pole pole ) const
                  || 2 * south() == -M_PI );
     }
 
-    mDebug() << Q_FUNC_INFO << "Invalid pole";
+    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Invalid pole";
     return false;
 }
 

@@ -8,7 +8,7 @@
 #include "SearchRunnerManager.h"
 
 #include "MarblePlacemarkModel.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "Planet.h"
 #include "GeoDataPlacemark.h"
@@ -91,7 +91,7 @@ QList<T*> SearchRunnerManager::Private::plugins( const QList<T*> &plugins ) cons
 
 void SearchRunnerManager::Private::addSearchResult( const QVector<GeoDataPlacemark *> &result )
 {
-    mDebug() << "Runner reports" << result.size() << " search results";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Runner reports" << result.size() << " search results";
     if( result.isEmpty() )
         return;
 
@@ -121,7 +121,7 @@ void SearchRunnerManager::Private::addSearchResult( const QVector<GeoDataPlacema
 void SearchRunnerManager::Private::cleanupSearchTask( SearchTask *task )
 {
     m_searchTasks.removeAll( task );
-    mDebug() << "removing search task" << m_searchTasks.size() << (quintptr)task;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "removing search task" << m_searchTasks.size() << (quintptr)task;
     if ( m_searchTasks.isEmpty() ) {
         if( m_placemarkContainer.isEmpty() ) {
             notifySearchResultChange();
@@ -192,7 +192,7 @@ void SearchRunnerManager::findPlacemarks( const QString &searchTerm, const GeoDa
         SearchTask *task = new SearchTask( plugin->newRunner(), this, d->m_marbleModel, searchTerm, preferred );
         connect( task, SIGNAL(finished(SearchTask*)), this, SLOT(cleanupSearchTask(SearchTask*)) );
         d->m_searchTasks << task;
-        mDebug() << "search task " << plugin->nameId() << " " << (quintptr)task;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "search task " << plugin->nameId() << " " << (quintptr)task;
     }
 
     for( SearchTask *task: d->m_searchTasks ) {

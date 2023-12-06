@@ -6,7 +6,7 @@
 
 
 #include "MarbleDirs.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QFile>
 #include <QString>
@@ -265,15 +265,15 @@ void MarbleDirs::setMarblePluginPath( const QString& adaptedPath )
 
 void MarbleDirs::debug()
 {
-    mDebug() << "=== MarbleDirs: ===";
-    mDebug() << "Local Path:" << localPath();
-    mDebug() << "Plugin Local Path:" << pluginLocalPath();
-    mDebug() << "";
-    mDebug() << "Marble Data Path (Run Time) :" << runTimeMarbleDataPath;
-    mDebug() << "";
-    mDebug() << "Marble Plugin Path (Run Time) :" << runTimeMarblePluginPath;
-    mDebug() << "";
-    mDebug() << "System Path:" << systemPath();
-    mDebug() << "Plugin System Path:" << pluginSystemPath();
-    mDebug() << "===================";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "=== MarbleDirs: ===";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Local Path:" << localPath();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Plugin Local Path:" << pluginLocalPath();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Marble Data Path (Run Time) :" << runTimeMarbleDataPath;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Marble Plugin Path (Run Time) :" << runTimeMarblePluginPath;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "System Path:" << systemPath();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Plugin System Path:" << pluginSystemPath();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "===================";
 }

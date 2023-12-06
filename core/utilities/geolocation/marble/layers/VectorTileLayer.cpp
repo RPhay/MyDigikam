@@ -18,7 +18,7 @@
 #include "GeoSceneTypes.h"
 #include "GeoSceneVectorTileDataset.h"
 #include "GeoSceneAbstractTileProjection.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "TileLoader.h"
 #include "ViewportParams.h"
 #include "RenderState.h"
@@ -96,10 +96,10 @@ void VectorTileLayer::Private::updateLayerSettings()
         }
         if (enabled) {
             m_activeTileModels.append(candidate);
-            mDebug() << "enabling vector layer" << candidate->name();
+            qCDebug(DIGIKAM_MARBLE_LOG) << "enabling vector layer" << candidate->name();
         } else {
             candidate->clear();
-            mDebug() << "disabling vector layer" << candidate->name();
+            qCDebug(DIGIKAM_MARBLE_LOG) << "disabling vector layer" << candidate->name();
         }
     }
 }

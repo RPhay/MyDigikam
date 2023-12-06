@@ -14,7 +14,7 @@
 #include "GeoGraphicsItem.h"
 #include "TileId.h"
 #include "TileCoordsPyramid.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QMap>
 #include <QRect>

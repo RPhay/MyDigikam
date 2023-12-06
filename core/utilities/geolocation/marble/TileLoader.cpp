@@ -19,7 +19,7 @@
 #include "GeoSceneVectorTileDataset.h"
 #include "GeoDataDocument.h"
 #include "HttpDownloadManager.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "TileId.h"
 #include "TileLoaderHelper.h"
@@ -60,10 +60,10 @@ QImage TileLoader::loadTileImage( GeoSceneTextureTileDataset const *textureLayer
         // check if an update should be triggered
 
         if ( status == Available ) {
-            mDebug() << Q_FUNC_INFO << tileId << "StateUptodate";
+            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << tileId << "StateUptodate";
         } else {
             Q_ASSERT( status == Expired );
-            mDebug() << Q_FUNC_INFO << tileId << "StateExpired";
+            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << tileId << "StateExpired";
             triggerDownload( textureLayer, tileId, usage );
         }
 
@@ -97,10 +97,10 @@ GeoDataDocument *TileLoader::loadTileVectorData( GeoSceneVectorTileDataset const
         // check if an update should be triggered
 
         if ( status == Available ) {
-            mDebug() << Q_FUNC_INFO << tileId << "StateUptodate";
+            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << tileId << "StateUptodate";
         } else {
             Q_ASSERT( status == Expired );
-            mDebug() << Q_FUNC_INFO << tileId << "StateExpired";
+            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << tileId << "StateExpired";
             triggerDownload( textureLayer, tileId, usage );
         }
 
@@ -143,7 +143,7 @@ int TileLoader::maximumTileLevel( GeoSceneTileDataset const & tileData )
     int maximumTileLevel = -1;
     const QFileInfo themeStr( tileData.themeStr() );
     const QString tilepath = themeStr.isAbsolute() ? themeStr.absoluteFilePath() : MarbleDirs::path( tileData.themeStr() );
-    //    mDebug() << "StackedTileLoader::maxPartialTileLevel tilepath" << tilepath;
+    //    qCDebug(DIGIKAM_MARBLE_LOG) << "StackedTileLoader::maxPartialTileLevel tilepath" << tilepath;
     QStringList leveldirs = QDir( tilepath ).entryList( QDir::AllDirs | QDir::NoSymLinks
                                                         | QDir::NoDotAndDotDot );
 
@@ -157,7 +157,7 @@ int TileLoader::maximumTileLevel( GeoSceneTileDataset const & tileData )
             maximumTileLevel = value;
     }
 
-    //    mDebug() << "Detected maximum tile level that contains data: "
+    //    qCDebug(DIGIKAM_MARBLE_LOG) << "Detected maximum tile level that contains data: "
     //             << maxtilelevel;
     return maximumTileLevel + 1;
 }
@@ -177,7 +177,7 @@ bool TileLoader::baseTilesAvailable( GeoSceneTileDataset const & tileData )
             const QString tilepath = tileFileName( &tileData, id );
             result &= QFile::exists( tilepath );
             if (!result) {
-                mDebug() << "Base tile " << tileData.relativeTileFileName( id ) << " is missing for source dir " << tileData.sourceDir();
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Base tile " << tileData.relativeTileFileName( id ) << " is missing for source dir " << tileData.sourceDir();
             }
         }
     }
@@ -266,7 +266,7 @@ void TileLoader::triggerDownload( GeoSceneTileDataset const *tileData, TileId co
 
 QImage TileLoader::scaledLowerLevelTile( const GeoSceneTextureTileDataset * textureData, TileId const & id )
 {
-    mDebug() << Q_FUNC_INFO << id;
+    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << id;
 
     int const minimumLevel = textureData->minimumTileLevel();
     for ( int level = qMax<int>( 0, id.zoomLevel() - 1 ); level >= 0; --level ) {
@@ -278,11 +278,11 @@ QImage TileLoader::scaledLowerLevelTile( const GeoSceneTextureTileDataset * text
         TileId const replacementTileId( id.mapThemeIdHash(), level,
                                         id.x() >> deltaLevel, id.y() >> deltaLevel );
         QString const fileName = tileFileName( textureData, replacementTileId );
-        mDebug() << "TileLoader::scaledLowerLevelTile" << "trying" << fileName;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "TileLoader::scaledLowerLevelTile" << "trying" << fileName;
         QImage toScale = (!fileName.isEmpty() && QFile::exists(fileName)) ? QImage(fileName) : QImage();
 
         if ( level == 0 && toScale.isNull() ) {
-            mDebug() << "No level zero tile installed in map theme dir. Falling back to a transparent image for now.";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "No level zero tile installed in map theme dir. Falling back to a transparent image for now.";
             QSize tileSize = textureData->tileSize();
             Q_ASSERT( !tileSize.isEmpty() ); // assured by textureLayer
             toScale = QImage( tileSize, QImage::Format_ARGB32_Premultiplied );
@@ -297,9 +297,9 @@ QImage TileLoader::scaledLowerLevelTile( const GeoSceneTextureTileDataset * text
             int const partHeight = qMax(1, toScale.height() >> deltaLevel);
             int const startX = restTileX * partWidth;
             int const startY = restTileY * partHeight;
-            mDebug() << "QImage::copy:" << startX << startY << partWidth << partHeight;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "QImage::copy:" << startX << startY << partWidth << partHeight;
             QImage const part = toScale.copy( startX, startY, partWidth, partHeight );
-            mDebug() << "QImage::scaled:" << toScale.size();
+            qCDebug(DIGIKAM_MARBLE_LOG) << "QImage::scaled:" << toScale.size();
             return part.scaled( toScale.size() );
         }
     }
@@ -322,14 +322,14 @@ GeoDataDocument *TileLoader::openVectorFile(const QString &fileName) const
             QString error;
             GeoDataDocument* document = runner->parseFile(fileName, UserDocument, error);
             if (!document && !error.isEmpty()) {
-                mDebug() << QString::fromUtf8("Failed to open vector tile %1: %2").arg(fileName, error);
+                qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Failed to open vector tile %1: %2").arg(fileName, error);
             }
             delete runner;
             return document;
         }
     }
 
-    mDebug() << "Unable to open vector tile " << fileName << ": No suitable plugin registered to parse this file format";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Unable to open vector tile " << fileName << ": No suitable plugin registered to parse this file format";
     return nullptr;
 }
 

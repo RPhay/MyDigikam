@@ -15,7 +15,7 @@
 
 // GeoData
 #include "GeoDataTypes.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {

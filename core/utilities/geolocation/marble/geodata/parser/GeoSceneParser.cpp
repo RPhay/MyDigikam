@@ -9,7 +9,7 @@
 #include "GeoSceneParser.h"
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 // Geodata
 #include "GeoDocument.h"

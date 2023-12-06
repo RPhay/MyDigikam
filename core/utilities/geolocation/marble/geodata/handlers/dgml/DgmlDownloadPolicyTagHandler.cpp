@@ -12,7 +12,7 @@
 #include "GeoSceneTileDataset.h"
 
 #include "MarbleGlobal.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {

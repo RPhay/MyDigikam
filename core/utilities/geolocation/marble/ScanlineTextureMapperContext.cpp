@@ -7,7 +7,7 @@
 #include "ScanlineTextureMapperContext.h"
 
 #include "GeoSceneAbstractTileProjection.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "StackedTile.h"
 #include "StackedTileLoader.h"
 #include "TileId.h"

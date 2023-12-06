@@ -6,7 +6,7 @@
 
 #include "KmlMultiGeometryTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "KmlElementDictionary.h"
 #include "KmlObjectTagHandler.h"

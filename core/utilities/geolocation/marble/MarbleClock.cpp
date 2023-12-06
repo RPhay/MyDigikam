@@ -5,7 +5,7 @@
 //
 
 #include "MarbleClock.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QDateTime>
 #include <QTimer>
@@ -60,7 +60,7 @@ void MarbleClockPrivate::timerTimeout()
     }
     m_timer.start( sleeptime );
 
-    //mDebug() << "MarbleClock: will sleep for " << sleeptime;
+    //qCDebug(DIGIKAM_MARBLE_LOG) << "MarbleClock: will sleep for " << sleeptime;
 }
 
 MarbleClock::MarbleClock( QObject* parent )

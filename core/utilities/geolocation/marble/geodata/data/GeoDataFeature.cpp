@@ -12,7 +12,7 @@
 #include <QSize>
 
 #include "MarbleDirs.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "GeoDataStyle.h"
 #include "GeoDataStyleMap.h"

@@ -22,7 +22,7 @@
 #include "KmlElementDictionary.h"
 #include "FileManager.h"
 #include "MarbleColors.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "PositionProviderPlugin.h"
 
@@ -119,13 +119,13 @@ QString PositionTrackingPrivate::statusFile()
     QDir dir( MarbleDirs::localPath() );
     if ( !dir.exists( subdir ) ) {
         if ( !dir.mkdir( subdir ) ) {
-            mDebug() << "Unable to create dir " << dir.absoluteFilePath( subdir );
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Unable to create dir " << dir.absoluteFilePath( subdir );
             return dir.absolutePath();
         }
     }
 
     if ( !dir.cd( subdir ) ) {
-        mDebug() << "Cannot change into " << dir.absoluteFilePath( subdir );
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot change into " << dir.absoluteFilePath( subdir );
     }
 
     return dir.absoluteFilePath( QString::fromUtf8("track.kml") );
@@ -190,7 +190,7 @@ void PositionTracking::setPositionProviderPlugin( PositionProviderPlugin* plugin
 
     if ( d->m_positionProvider ) {
         d->m_positionProvider->setParent( this );
-        mDebug() << "Initializing position provider:" << d->m_positionProvider->name();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Initializing position provider:" << d->m_positionProvider->name();
         connect( d->m_positionProvider, SIGNAL(statusChanged(PositionProviderStatus)),
                 this, SLOT(updateStatus()) );
         connect( d->m_positionProvider, SIGNAL(positionChanged(GeoDataCoordinates,GeoDataAccuracy)),
@@ -289,13 +289,13 @@ void PositionTracking::readSettings()
 {
     QFile file( d->statusFile() );
     if ( !file.open( QIODevice::ReadOnly ) ) {
-        mDebug() << "Can not read track from " << file.fileName();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Can not read track from " << file.fileName();
         return;
     }
 
     GeoDataParser parser( GeoData_KML );
     if ( !parser.read( &file ) ) {
-        mDebug() << "Could not parse tracking file: " << parser.errorString();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Could not parse tracking file: " << parser.errorString();
         return;
     }
 
@@ -303,32 +303,32 @@ void PositionTracking::readSettings()
     file.close();
 
     if( !doc ){
-        mDebug() << "tracking document not available";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "tracking document not available";
         return;
     }
 
     GeoDataPlacemark *track = dynamic_cast<GeoDataPlacemark*>( doc->child( 0 ) );
     if( !track ) {
-        mDebug() << "tracking document doesn't have a placemark";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "tracking document doesn't have a placemark";
         delete doc;
         return;
     }
 
     d->m_trackSegments = dynamic_cast<GeoDataMultiTrack*>( track->geometry() );
     if( !d->m_trackSegments ) {
-        mDebug() << "tracking document doesn't have a multitrack";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "tracking document doesn't have a multitrack";
         delete doc;
         return;
     }
     if( d->m_trackSegments->size() < 1 ) {
-        mDebug() << "tracking document doesn't have a track";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "tracking document doesn't have a track";
         delete doc;
         return;
     }
 
     d->m_currentTrack = dynamic_cast<GeoDataTrack*>( d->m_trackSegments->child( d->m_trackSegments->size() - 1 ) );
     if( !d->m_currentTrack ) {
-        mDebug() << "tracking document doesn't have a last track";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "tracking document doesn't have a last track";
         delete doc;
         return;
     }

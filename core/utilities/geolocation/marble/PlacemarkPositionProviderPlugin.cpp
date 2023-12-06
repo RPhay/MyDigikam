@@ -9,7 +9,7 @@
 #include "GeoDataPlacemark.h"
 #include "MarbleClock.h"
 #include "MarbleModel.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QIcon>
 
@@ -76,7 +76,7 @@ void PlacemarkPositionProviderPlugin::initialize()
         connect( m_marbleModel, SIGNAL(trackedPlacemarkChanged(const GeoDataPlacemark*)),
                  this, SLOT(setPlacemark(const GeoDataPlacemark*)) );
     } else {
-        mDebug() << "PlacemarkPositionProviderPlugin: MarbleModel not set, cannot track placemarks.";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "PlacemarkPositionProviderPlugin: MarbleModel not set, cannot track placemarks.";
     }
     m_isInitialized = true;
 }

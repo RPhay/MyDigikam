@@ -11,7 +11,7 @@
 #include "GeoDataPlacemark.h"
 #include "GeoDataStyle.h"
 #include "OsmPlacemarkData.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 // Qt
 #include <QTreeWidget>
@@ -47,7 +47,7 @@ void OsmRelationManagerWidgetPrivate::populateRelationsList()
         for ( ; it != end; ++it ) {
 
             if ( !m_allRelations->contains( it.key().id ) ) {
-                mDebug()<< QString::fromUtf8( "Relation %1 is not loaded in the Annotate Plugin" ).arg( it.key().id );
+                qCDebug(DIGIKAM_MARBLE_LOG)<< QString::fromUtf8( "Relation %1 is not loaded in the Annotate Plugin" ).arg( it.key().id );
                 continue;
             }
 

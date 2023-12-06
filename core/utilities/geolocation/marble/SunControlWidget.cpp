@@ -15,7 +15,7 @@
 #include <QShowEvent>
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleWidget.h"
 
 using namespace Marble;

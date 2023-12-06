@@ -1,5 +1,5 @@
 #include "KmlRefreshModeTagHandler.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "KmlElementDictionary.h"
 #include "GeoDataLink.h"
 #include "GeoParser.h"
@@ -27,7 +27,7 @@ GeoNode* KmlrefreshModeTagHandler::parse( GeoParser& parser ) const
             mode = GeoDataLink::OnInterval;
         } else {
             mode = GeoDataLink::OnChange;
-            mDebug() << "Value " << content << "set in kml file is invalid."
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Value " << content << "set in kml file is invalid."
             << "Value of <refreshMode> has been reset to onChange" ;
         }
         parentItem.nodeAs<GeoDataLink>()->setRefreshMode( mode );

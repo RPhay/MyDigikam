@@ -15,7 +15,7 @@
 #include "GeoDataDocumentWriter.h"
 #include "GeoDataIconStyle.h"
 #include "KmlElementDictionary.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "StyleBuilder.h"
 #include <QFile>
@@ -91,7 +91,7 @@ bool BookmarkManager::loadFile( const QString &relativeFilePath )
     d->m_bookmarkFileRelativePath = relativeFilePath;
     QString absoluteFilePath = bookmarkFile();
 
-    mDebug() << Q_FUNC_INFO << "Loading Bookmark File:" << absoluteFilePath;
+    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Loading Bookmark File:" << absoluteFilePath;
 
     if (absoluteFilePath.isEmpty())
         return false;
@@ -102,8 +102,8 @@ bool BookmarkManager::loadFile( const QString &relativeFilePath )
     GeoDataDocument *document = openFile( absoluteFilePath );
     bool recover = false;
     if ( !document ) {
-        mDebug() << "Could not parse file" << absoluteFilePath;
-        mDebug() << "This could be caused by a previous broken bookmark file. Trying to recover.";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Could not parse file" << absoluteFilePath;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "This could be caused by a previous broken bookmark file. Trying to recover.";
         /** @todo: Remove this workaround and return false around Marble 1.4 */
         recover = true;
         // return false;
@@ -202,7 +202,7 @@ GeoDataFolder* BookmarkManager::addNewBookmarkFolder( GeoDataContainer *containe
 {
     //If name is empty string
     if ( name.isEmpty() ) {
-        mDebug() << "Folder with empty name is not acceptable, please give it another name" ;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Folder with empty name is not acceptable, please give it another name" ;
         return Q_NULLPTR;
     }
 
@@ -213,7 +213,7 @@ GeoDataFolder* BookmarkManager::addNewBookmarkFolder( GeoDataContainer *containe
     QVector<GeoDataFolder*>::const_iterator end = folderList.constEnd();
     for ( ; i != end; ++i ) {
         if ( name == ( *i )->name() ) {
-            mDebug() << "Folder with same name already exist, please give it another name";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Folder with same name already exist, please give it another name";
             return *i;
         }
     }
@@ -274,7 +274,7 @@ bool BookmarkManager::updateBookmarkFile()
         }
 
         if (!GeoDataDocumentWriter::write(absoluteLocalFilePath, *d->m_bookmarkDocument)) {
-            mDebug() << "Could not write the bookmarks file" << absoluteLocalFilePath;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Could not write the bookmarks file" << absoluteLocalFilePath;
             file.close();
             return false;
         }
@@ -295,7 +295,7 @@ GeoDataDocument* BookmarkManager::openFile( const QString &fileName )
     }
 
     if ( !file.open( QIODevice::ReadOnly ) || !parser.read( &file ) ) {
-        mDebug() << "Could not open/parse file" << fileName;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Could not open/parse file" << fileName;
         return nullptr;
     }
 

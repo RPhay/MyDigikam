@@ -10,7 +10,7 @@
 #include "GeoDataPlacemark.h"
 #include "GeoDataMultiGeometry.h"
 #include "KmlElementDictionary.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {

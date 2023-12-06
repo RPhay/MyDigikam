@@ -4,7 +4,7 @@
 
 #include <QRect>
 #include <QVector>
-#include <MarbleDebug.h>
+#include <digikam_debug.h>
 
 #include <algorithm>
 

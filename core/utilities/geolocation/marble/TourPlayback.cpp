@@ -9,7 +9,7 @@
 #include <QUrl>
 #include <QPointer>
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleWidget.h"
 #include "PopupLayer.h"
 #include "GeoDataPoint.h"

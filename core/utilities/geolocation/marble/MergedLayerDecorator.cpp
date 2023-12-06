@@ -11,7 +11,7 @@
 #include "blendings/BlendingFactory.h"
 #include "SunLocator.h"
 #include "MarbleMath.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataGroundOverlay.h"
 #include "GeoSceneTextureTileDataset.h"
 #include "ImageF.h"
@@ -169,7 +169,7 @@ StackedTile *MergedLayerDecorator::Private::createTile( const QVector<QSharedPoi
         const Blending *const blending =  tile->blending();
         if ( blending ) {
 
-            mDebug() << Q_FUNC_INFO << "blending";
+            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "blending";
 
             if ( resultImage.isNull() ) {
                 resultImage = QImage( tile->image()->size(), QImage::Format_ARGB32_Premultiplied );
@@ -178,7 +178,7 @@ StackedTile *MergedLayerDecorator::Private::createTile( const QVector<QSharedPoi
             blending->blend( &resultImage, tile.data() );
         }
         else {
-            mDebug() << Q_FUNC_INFO << "no blending defined => copying top over bottom image";
+            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "no blending defined => copying top over bottom image";
             if ( withConversion ) {
                 resultImage = tile->image()->convertToFormat( QImage::Format_ARGB32_Premultiplied );
             } else {
@@ -296,12 +296,12 @@ StackedTile *MergedLayerDecorator::loadTile( const TileId &stackedTileId )
         const TileId tileId( layer->sourceDir(), stackedTileId.zoomLevel(),
                              stackedTileId.x(), stackedTileId.y() );
 
-        mDebug() << Q_FUNC_INFO << layer->sourceDir() << tileId << layer->tileSize() << layer->fileFormat();
+        qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << layer->sourceDir() << tileId << layer->tileSize() << layer->fileFormat();
 
         // Blending (how to merge the images into an only image)
         const Blending *blending = d->m_blendingFactory.findBlending( layer->blending() );
         if ( blending == nullptr && !layer->blending().isEmpty() ) {
-            mDebug() << Q_FUNC_INFO << "could not find blending" << layer->blending();
+            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "could not find blending" << layer->blending();
         }
 
         const GeoSceneTextureTileDataset *const textureLayer = static_cast<const GeoSceneTextureTileDataset *>( layer );

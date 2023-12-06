@@ -39,7 +39,7 @@ bool AzimuthalProjection::screenCoordinates( const GeoDataLineString &lineString
     // Compare bounding box size of the line string with the angularResolution
     // Immediately return if the latLonAltBox is smaller.
     if ( !viewport->resolves( lineString.latLonAltBox() ) ) {
-//      mDebug() << "Object too small to be resolved";
+//      qCDebug(DIGIKAM_MARBLE_LOG) << "Object too small to be resolved";
         return false;
     }
 
@@ -614,7 +614,7 @@ GeoDataCoordinates AzimuthalProjectionPrivate::doFindHorizon( const GeoDataCoord
 
         }
         else {
-//            mDebug() << "Don't FollowLatitudeCircle";
+//            qCDebug(DIGIKAM_MARBLE_LOG) << "Don't FollowLatitudeCircle";
         }
     }
 

@@ -7,7 +7,7 @@
 #ifdef KML_LAZY_IMP
 #include "KmlMarblePlacemarkTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "KmlElementDictionary.h"
 

@@ -9,7 +9,7 @@
 #include <QUrl>
 
 #include "MarbleDirs.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "RemoteIconLoader.h"
 
 #include "GeoDataTypes.h"
@@ -79,7 +79,7 @@ class GeoDataIconStylePrivate
                 imageReader.setScaledSize(finalSize);
                 QImage icon = imageReader.read();
                 if (icon.isNull()) {
-                    mDebug() << "GeoDataIconStyle: Failed to read image " << path << ": " << imageReader.errorString();
+                    qCDebug(DIGIKAM_MARBLE_LOG) << "GeoDataIconStyle: Failed to read image " << path << ": " << imageReader.errorString();
                 }
                 return icon;
             }
@@ -95,7 +95,7 @@ class GeoDataIconStylePrivate
             return remoteIconLoader()->load(QUrl(m_iconPath));
         }
 
-        mDebug() << "Unable to open style icon at: " << path;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Unable to open style icon at: " << path;
         return QImage();
     }
 

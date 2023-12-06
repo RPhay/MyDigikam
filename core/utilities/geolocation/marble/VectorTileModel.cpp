@@ -11,7 +11,7 @@
 #include "GeoDataTreeModel.h"
 #include "GeoSceneVectorTileDataset.h"
 #include "MarbleGlobal.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MathHelper.h"
 #include "TileLoader.h"
 

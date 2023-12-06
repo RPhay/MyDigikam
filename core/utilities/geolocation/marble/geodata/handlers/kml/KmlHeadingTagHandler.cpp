@@ -6,7 +6,7 @@
 
 #include "KmlHeadingTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "KmlElementDictionary.h"
 #include "GeoDataIconStyle.h"
@@ -36,7 +36,7 @@ GeoNode* KmlheadingTagHandler::parse( GeoParser& parser ) const
 	    parentItem.nodeAs<GeoDataOrientation>()->setHeading( heading );
 	}
     } else {
-        mDebug() << "Invalid heading value " << heading << ", must be within 0..360. Using 0 instead.";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Invalid heading value " << heading << ", must be within 0..360. Using 0 instead.";
     }
 
     return nullptr;

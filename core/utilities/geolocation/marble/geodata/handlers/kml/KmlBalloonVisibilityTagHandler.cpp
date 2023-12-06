@@ -5,7 +5,7 @@
 #include "KmlBalloonVisibilityTagHandler.h"
 #include "GeoDataPlacemark.h"
 #include "GeoParser.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "KmlElementDictionary.h"
 
 #include <QDebug>

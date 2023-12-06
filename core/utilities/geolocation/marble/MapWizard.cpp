@@ -8,7 +8,7 @@
 
 #include "MarbleGlobal.h"
 #include "MarbleDirs.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "ServerLayout.h"
 #include "GeoSceneDocument.h"
 #include "GeoSceneHead.h"
@@ -798,7 +798,7 @@ QString MapWizard::createArchive( QWidget *parent, const QString& mapId )
         QMessageBox::critical( parent, tr( "Archiving failed" ), tr( "Archiving process crashed." ) );
         break;
     case 0:
-        mDebug() << "Archived the theme successfully.";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Archived the theme successfully.";
         break;
     }
     archiver.waitForFinished();

@@ -14,7 +14,7 @@
 #include <QImage>
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataExtendedData.h"
 #include "GeoDataData.h"
@@ -213,7 +213,7 @@ void MarblePlacemarkModel::addPlacemarks( int start,
     beginResetModel();
     endResetModel();
     Q_EMIT countChanged();
-    mDebug() << "addPlacemarks: Time elapsed:" << t.elapsed() << "ms for" << length << "Placemarks.";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "addPlacemarks: Time elapsed:" << t.elapsed() << "ms for" << length << "Placemarks.";
 }
 
 void  MarblePlacemarkModel::removePlacemarks( const QString &containerName,
@@ -228,7 +228,7 @@ void  MarblePlacemarkModel::removePlacemarks( const QString &containerName,
         endRemoveRows();
         Q_EMIT layoutChanged();
         Q_EMIT countChanged();
-        mDebug() << "removePlacemarks(" << containerName << "): Time elapsed:" << t.elapsed() << "ms for" << length << "Placemarks.";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "removePlacemarks(" << containerName << "): Time elapsed:" << t.elapsed() << "ms for" << length << "Placemarks.";
     }
 }
 

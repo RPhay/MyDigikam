@@ -9,7 +9,7 @@
 #include <QFile>
 #include <QRegExp>
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -42,7 +42,7 @@ void TemplateDocumentPrivate::processTemplateIncludes(QString &input)
         if (includeFile.open(QIODevice::ReadOnly)) {
             input.replace(QLatin1String("%!{") + include + QLatin1String("}%"), QString::fromUtf8(includeFile.readAll()));
         } else {
-            mDebug() << "[WARNING] Can't process template include" << include;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "[WARNING] Can't process template include" << include;
         }
     }
 }

@@ -11,7 +11,7 @@
 
 #include <cmath>
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "MarbleGlobal.h"
 
@@ -21,7 +21,7 @@ namespace Marble
 int TileLoaderHelper::levelToRow( int levelZeroRows, int level )
 {
     if ( level < 0 ) {
-        mDebug() << QString::fromUtf8( "TileLoaderHelper::levelToRow(): Invalid level: %1" )
+        qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "TileLoaderHelper::levelToRow(): Invalid level: %1" )
             .arg( level );
         return 0;
     }
@@ -31,7 +31,7 @@ int TileLoaderHelper::levelToRow( int levelZeroRows, int level )
 int TileLoaderHelper::levelToColumn( int levelZeroColumns, int level )
 {
     if ( level < 0 ) {
-        mDebug() << QString::fromUtf8( "TileLoaderHelper::levelToColumn(): Invalid level: %1" )
+        qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "TileLoaderHelper::levelToColumn(): Invalid level: %1" )
             .arg( level );
         return 0;
     }
@@ -41,7 +41,7 @@ int TileLoaderHelper::levelToColumn( int levelZeroColumns, int level )
 int TileLoaderHelper::rowToLevel( int levelZeroRows, int row )
 {
     if ( row < levelZeroRows ) {
-        mDebug() << QString::fromUtf8( "TileLoaderHelper::rowToLevel(): Invalid number of rows: %1" )
+        qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "TileLoaderHelper::rowToLevel(): Invalid number of rows: %1" )
             .arg( row );
         return 0;
     }
@@ -51,7 +51,7 @@ int TileLoaderHelper::rowToLevel( int levelZeroRows, int row )
 int TileLoaderHelper::columnToLevel( int levelZeroColumns, int column )
 {
     if ( column < levelZeroColumns ) {
-        mDebug() << QString::fromUtf8( "TileLoaderHelper::columnToLevel(): Invalid number of columns: %1" )
+        qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "TileLoaderHelper::columnToLevel(): Invalid number of columns: %1" )
         .arg( column );
         return 0;
     }

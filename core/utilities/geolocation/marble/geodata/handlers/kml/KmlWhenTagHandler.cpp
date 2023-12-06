@@ -5,7 +5,7 @@
 
 #include "KmlWhenTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include <QDateTime>
 
 #include "KmlElementDictionary.h"

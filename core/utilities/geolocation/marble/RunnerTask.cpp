@@ -6,7 +6,7 @@
 
 #include "RunnerTask.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "ParsingRunner.h"
 #include "ParsingRunnerManager.h"
 #include "SearchRunner.h"

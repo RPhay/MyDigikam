@@ -23,7 +23,7 @@
 #include "GeoSceneTextureTileDataset.h"
 #include "GeoSceneTypes.h"
 #include "MergedLayerDecorator.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "MarblePlacemarkModel.h"
 #include "StackedTile.h"
@@ -141,9 +141,9 @@ void TextureLayer::Private::updateTextureLayers()
         }
         if ( enabled ) {
             result.append( candidate );
-            mDebug() << "enabling texture" << candidate->name();
+            qCDebug(DIGIKAM_MARBLE_LOG) << "enabling texture" << candidate->name();
         } else {
-            mDebug() << "disabling texture" << candidate->name();
+            qCDebug(DIGIKAM_MARBLE_LOG) << "disabling texture" << candidate->name();
         }
     }
 

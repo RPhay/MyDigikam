@@ -4,7 +4,7 @@
 
 #include "SunLightBlending.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "SunLocator.h"
 #include "TextureTile.h"
 #include "TileLoaderHelper.h"

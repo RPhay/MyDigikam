@@ -8,7 +8,7 @@
 
 // Marble
 #include "RenderPluginModel.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 // Qt
 #include <QEvent>

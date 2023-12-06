@@ -22,7 +22,7 @@
 #include "kdescendantsproxymodel.h"
 
 #include "MapThemeManager.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "GeoSceneDocument.h"
 #include "GeoSceneGeodata.h"
@@ -196,7 +196,7 @@ MarbleModel::~MarbleModel()
 {
     delete d;
 
-    mDebug() << "Model deleted:" << this;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Model deleted:" << this;
 }
 
 BookmarkManager *MarbleModel::bookmarkManager()
@@ -287,26 +287,26 @@ void MarbleModel::setMapTheme( GeoSceneDocument *document )
     addDownloadPolicies( d->m_mapTheme );
 
     // Some output to show how to use this stuff ...
-    mDebug() << "DGML2 Name       : " << d->m_mapTheme->head()->name();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "DGML2 Name       : " << d->m_mapTheme->head()->name();
 /*
-    mDebug() << "DGML2 Description: " << d->m_mapTheme->head()->description();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "DGML2 Description: " << d->m_mapTheme->head()->description();
 
     if ( d->m_mapTheme->map()->hasTextureLayers() )
-        mDebug() << "Contains texture layers! ";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Contains texture layers! ";
     else
-        mDebug() << "Does not contain any texture layers! ";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Does not contain any texture layers! ";
 
-    mDebug() << "Number of SRTM textures: " << d->m_mapTheme->map()->layer("srtm")->datasets().count();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Number of SRTM textures: " << d->m_mapTheme->map()->layer("srtm")->datasets().count();
 
     if ( d->m_mapTheme->map()->hasVectorLayers() )
-        mDebug() << "Contains vector layers! ";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Contains vector layers! ";
     else
-        mDebug() << "Does not contain any vector layers! ";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Does not contain any vector layers! ";
 */
     //Don't change the planet unless we have to...
     qreal const radiusAttributeValue = d->m_mapTheme->head()->radius();
     if( d->m_mapTheme->head()->target().toLower() != d->m_planet.id() || radiusAttributeValue != d->m_planet.radius() ) {
-        mDebug() << "Changing Planet";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Changing Planet";
         d->m_planet = PlanetFactory::construct(d->m_mapTheme->head()->target().toLower());
         if ( radiusAttributeValue > 0.0 ) {
             d->m_planet.setRadius( radiusAttributeValue );
@@ -397,7 +397,7 @@ void MarbleModel::setMapTheme( GeoSceneDocument *document )
         d->m_fileManager.addFile( fileList.at(i), propertyList.at(i), styleList.at(i), MapDocument, renderOrderList.at(i) );
     }
 
-    mDebug() << "THEME CHANGED: ***" << mapTheme->head()->mapThemeId();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "THEME CHANGED: ***" << mapTheme->head()->mapThemeId();
     Q_EMIT themeChanged( mapTheme->head()->mapThemeId() );
 }
 
@@ -576,7 +576,7 @@ void MarbleModel::clearPersistentTileCache()
         if ( !TileLoader::baseTilesAvailable( *texture )
             && !installMap.isEmpty() )
         {
-            mDebug() << "Base tiles not available. Creating Tiles ... \n"
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Base tiles not available. Creating Tiles ... \n"
                      << "SourceDir: " << sourceDir << "InstallMap:" << installMap;
             MarbleDirs::debug();
 

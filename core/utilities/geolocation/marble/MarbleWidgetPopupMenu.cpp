@@ -30,7 +30,7 @@
 #include "GeoSceneDocument.h"
 #include "GeoSceneHead.h"
 #include "MarbleClock.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "PopupLayer.h"
 #include "Planet.h"
 #include "routing/RoutingManager.h"
@@ -645,7 +645,7 @@ void MarbleWidgetPopupMenu::slotInfoDialog()
 {
     QAction *action = qobject_cast<QAction *>( sender() );
     if ( action == nullptr ) {
-        mDebug() << "Warning: slotInfoDialog should be called by a QAction signal";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Warning: slotInfoDialog should be called by a QAction signal";
         return;
     }
 

@@ -14,7 +14,7 @@
 
 // Marble
 #include "MarbleGlobal.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 
 using namespace Marble;
@@ -60,7 +60,7 @@ void FileStorageWatcherThread::setCacheLimit( quint64 bytes )
 
 void FileStorageWatcherThread::addToCurrentSize( qint64 bytes )
 {
-//     mDebug() << "Current cache size changed by " << bytes;
+//     qCDebug(DIGIKAM_MARBLE_LOG) << "Current cache size changed by " << bytes;
     qint64 changedSize = bytes + m_currentCacheSize;
     if( changedSize >= 0 )
 	m_currentCacheSize = changedSize;
@@ -82,7 +82,7 @@ void FileStorageWatcherThread::prepareQuit()
 
 void FileStorageWatcherThread::getCurrentCacheSize()
 {
-    mDebug() << "FileStorageWatcher: Creating cache size";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "FileStorageWatcher: Creating cache size";
     quint64 dataSize = 0;
     const QString basePath = m_dataDirectory + QLatin1String("/maps");
     QDirIterator it( basePath,
@@ -120,7 +120,7 @@ void FileStorageWatcherThread::getCurrentCacheSize()
 
 void FileStorageWatcherThread::ensureCacheSize()
 {
-//     mDebug() << "Size of tile cache: " << m_currentCacheSize;
+//     qCDebug(DIGIKAM_MARBLE_LOG) << "Size of tile cache: " << m_currentCacheSize;
     // We start deleting files if m_currentCacheSize is larger than
     // the hard cache limit. Then we delete files until our cache size
     // is smaller than the cache (soft) limit.
@@ -131,7 +131,7 @@ void FileStorageWatcherThread::ensureCacheSize()
 	&& ( m_cacheSoftLimit != 0 )
     && !m_willQuit ) {
 
-        mDebug() << "Deleting extra cached tiles";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Deleting extra cached tiles";
         // The counter for deleted files
         m_filesDeleted = 0;
         // We have not reached our soft limit, yet.
@@ -150,7 +150,7 @@ void FileStorageWatcherThread::ensureCacheSize()
             it = m_filesCache.erase(it);
             bool success = QFile::remove( filePath );
             if (!success) {
-                mDebug() << "Failed to remove:" << filePath;
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Failed to remove:" << filePath;
             }
         }
         // There might be more chunks left for deletion which we
@@ -168,8 +168,8 @@ void FileStorageWatcherThread::ensureCacheSize()
         // If the current Cache Size is still larger than the cacheSoftLimit
         // then our requested cacheSoftLimit is unreachable.
         if( m_currentCacheSize > m_cacheSoftLimit ) {
-            mDebug() << "FileStorageWatcher: Requested Cache Limit could not be reached!";
-            mDebug() << "Increasing Cache Limit to prevent further futile attempts.";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "FileStorageWatcher: Requested Cache Limit could not be reached!";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Increasing Cache Limit to prevent further futile attempts.";
             // Softlimit is now exactly on the current cache size.
             setCacheLimit( m_currentCacheSize / ( 100 - softLimitPercent ) * 100 );
         }
@@ -205,7 +205,7 @@ FileStorageWatcher::FileStorageWatcher( const QString &dataDirectory, QObject * 
 
 FileStorageWatcher::~FileStorageWatcher()
 {
-    mDebug() << "Deleting FileStorageWatcher";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Deleting FileStorageWatcher";
 
     // Making sure that Thread is stopped.
     m_quitting = true;
@@ -214,7 +214,7 @@ FileStorageWatcher::~FileStorageWatcher()
 	m_thread->prepareQuit();
     quit();
     if( !wait( 5000 ) ) {
-	mDebug() << "Failed to stop FileStorageWatcher-Thread, terminating!";
+	qCDebug(DIGIKAM_MARBLE_LOG) << "Failed to stop FileStorageWatcher-Thread, terminating!";
 	terminate();
     }
 

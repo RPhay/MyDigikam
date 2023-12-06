@@ -9,7 +9,7 @@
 #include <QStringList>
 #include <QRegularExpression>
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "KmlElementDictionary.h"
 #include "GeoDataTrack.h"
 #include "GeoDataPlacemark.h"
@@ -141,7 +141,7 @@ GeoNode* KmlcoordinatesTagHandler::parse( GeoParser& parser ) const
                         parentItem.nodeAs<GeoDataLatLonQuad>()->setTopLeft( coord );
                         break;
                     case 4:
-                        mDebug() << "Ignoring excessive coordinates in LatLonQuad (must not have more than 4 pairs)";
+                        qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring excessive coordinates in LatLonQuad (must not have more than 4 pairs)";
                         break;
                     default:
                         // Silently ignore any more coordinates

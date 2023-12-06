@@ -10,7 +10,7 @@
 #include <QElapsedTimer>
 
 #include "FileLoader.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "GeoDataTreeModel.h"
 
@@ -79,8 +79,8 @@ void FileManager::addFile( const QString& filepath, const QString& property, con
             return;  // currently loading
     }
 
-    mDebug() << "adding container:" << filepath;
-    mDebug() << "Starting placemark loading timer";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "adding container:" << filepath;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Starting placemark loading timer";
     d->m_timer.start();
     FileLoader* loader = new FileLoader( this, d->m_pluginManager, recenter, filepath, property, style, role, renderOrder );
     d->appendLoader( loader );
@@ -117,12 +117,12 @@ void FileManager::removeFile( const QString& key )
         d->closeFile( key );
     }
 
-    mDebug() << "could not identify " << key;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "could not identify " << key;
 }
 
 void FileManagerPrivate::closeFile( const QString& key )
 {
-    mDebug() << "FileManager::closeFile " << key;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "FileManager::closeFile " << key;
     if( m_fileItemHash.contains( key ) ) {
         GeoDataDocument *doc = m_fileItemHash.value( key );
         m_treeModel->removeDocument( doc );
@@ -188,7 +188,7 @@ void FileManagerPrivate::cleanupLoader( FileLoader* loader )
     }
     if ( m_loaderList.isEmpty()  )
     {
-        mDebug() << "Finished loading all placemarks " << m_timer.elapsed();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Finished loading all placemarks " << m_timer.elapsed();
 
         if ( !m_latLonBox.isEmpty() ) {
             Q_EMIT q->centeredDocument( m_latLonBox );

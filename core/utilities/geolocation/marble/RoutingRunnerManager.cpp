@@ -8,7 +8,7 @@
 #include "RoutingRunnerManager.h"
 
 #include "MarblePlacemarkModel.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "Planet.h"
 #include "GeoDataDocument.h"
@@ -86,7 +86,7 @@ QList<T*> RoutingRunnerManager::Private::plugins( const QList<T*> &plugins ) con
 void RoutingRunnerManager::Private::addRoutingResult( GeoDataDocument *route )
 {
     if ( route ) {
-        mDebug() << "route retrieved";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "route retrieved";
         m_routingResult.push_back( route );
         Q_EMIT q->routeRetrieved( route );
     }
@@ -95,7 +95,7 @@ void RoutingRunnerManager::Private::addRoutingResult( GeoDataDocument *route )
 void RoutingRunnerManager::Private::cleanupRoutingTask( RoutingTask *task )
 {
     m_routingTasks.removeAll( task );
-    mDebug() << "removing task" << m_routingTasks.size() << " " << (quintptr)task;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "removing task" << m_routingTasks.size() << " " << (quintptr)task;
     if ( m_routingTasks.isEmpty() ) {
         if ( m_routingResult.isEmpty() ) {
             Q_EMIT q->routeRetrieved( nullptr );
@@ -134,7 +134,7 @@ void RoutingRunnerManager::retrieveRoute( const RouteRequest *request )
 
         RoutingTask* task = new RoutingTask( plugin->newRunner(), this, request );
         connect( task, SIGNAL(finished(RoutingTask*)), this, SLOT(cleanupRoutingTask(RoutingTask*)) );
-        mDebug() << "route task" << plugin->nameId() << " " << (quintptr)task;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "route task" << plugin->nameId() << " " << (quintptr)task;
         d->m_routingTasks << task;
     }
 
@@ -143,7 +143,7 @@ void RoutingRunnerManager::retrieveRoute( const RouteRequest *request )
     }
 
     if ( d->m_routingTasks.isEmpty() ) {
-        mDebug() << "No suitable routing plugins found, cannot retrieve a route";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "No suitable routing plugins found, cannot retrieve a route";
         d->cleanupRoutingTask( nullptr );
     }
 }

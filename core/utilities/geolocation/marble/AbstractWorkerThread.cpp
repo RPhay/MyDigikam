@@ -5,7 +5,7 @@
 
 // Self
 #include "AbstractWorkerThread.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 // Qt
 #include <QMutex>

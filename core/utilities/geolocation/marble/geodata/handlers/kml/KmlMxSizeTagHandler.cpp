@@ -8,7 +8,7 @@
 #include "KmlElementDictionary.h"
 #include "GeoDataIconStyle.h"
 #include "GeoParser.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -25,7 +25,7 @@ GeoNode* KmlsizeTagHandler::parse( GeoParser& parser ) const
         auto const height = parser.attribute(kmlTag_height).toInt();
         auto const size = QSize(width, height);
         if (size.isEmpty()) {
-            mDebug() << "Invalid size in icon style: width=" << width << ", height=" << height;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Invalid size in icon style: width=" << width << ", height=" << height;
         } else {
             parser.parentElement().nodeAs<GeoDataIconStyle>()->setSize(size);
         }

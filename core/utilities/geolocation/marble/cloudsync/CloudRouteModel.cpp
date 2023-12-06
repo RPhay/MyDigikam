@@ -7,7 +7,7 @@
 
 #include "RouteItem.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 
 #include <QIcon>

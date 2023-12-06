@@ -10,7 +10,7 @@
 
 #include "Kml_scaleTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "KmlElementDictionary.h"
 #include "GeoDataIconStyle.h"

@@ -7,7 +7,7 @@
 #include "VerticalPerspectiveProjection.h"
 #include "AbstractProjection_p.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 // Marble
 #include "ViewportParams.h"

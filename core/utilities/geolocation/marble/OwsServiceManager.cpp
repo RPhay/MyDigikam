@@ -13,7 +13,7 @@
 #include <QBuffer>
 #include <QImageReader>
 
-#include <MarbleDebug.h>
+#include <digikam_debug.h>
 #include <cmath>
 
 namespace Marble
@@ -319,7 +319,7 @@ void OwsServiceManager::queryOwsCapabilities(const QUrl& queryUrl, const QString
     request.setUrl( url );
     request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
 
-    mDebug() << "for url" << url;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "for url" << url;
     m_capabilitiesAccessManager.get( request );
 }
 
@@ -374,7 +374,7 @@ void OwsServiceManager::queryWmsMap(const QUrl &url, const QString &layers, cons
 
     QUrl finalDownloadUrl( url );
     finalDownloadUrl.setQuery( downloadQuery );
-    mDebug() << "requesting WMS image" << finalDownloadUrl;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "requesting WMS image" << finalDownloadUrl;
 
     QNetworkRequest request( finalDownloadUrl );
 
@@ -421,7 +421,7 @@ void OwsServiceManager::queryWmsLegendImage(const QUrl &url)
     m_imageRequestResult.setResultFormat(QString());
     m_imageRequestResult.setResultType(LegendImage);
 
-    mDebug() << "requesting legend" << url;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "requesting legend" << url;
 
     QNetworkRequest request( url );
 
@@ -459,7 +459,7 @@ void OwsServiceManager::queryWmtsTile(const QString &url, const QString &style, 
     downloadUrl.setUrl( baseUrl );
 
     QNetworkRequest request( downloadUrl );
-    mDebug() << "requesting static map" << downloadUrl;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "requesting static map" << downloadUrl;
     m_imageAccessManager.get( request );
 }
 
@@ -486,7 +486,7 @@ void OwsServiceManager::queryXYZImage(const QString urlString)
     downloadUrl.setUrl( baseUrl );
 
     QNetworkRequest request( downloadUrl );
-    mDebug() << "requesting static map" << downloadUrl;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "requesting static map" << downloadUrl;
     m_imageAccessManager.get( request );
 }
 
@@ -550,7 +550,7 @@ QString OwsServiceManager::resultFormat()
 
 void OwsServiceManager::parseOwsCapabilities(QNetworkReply *reply)
 {
-    mDebug() << "received reply from" << reply->url();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "received reply from" << reply->url();
     QString result = QString::fromUtf8( reply->readAll() );
 
     m_wmsCapabilities = WmsCapabilities(); // clear()

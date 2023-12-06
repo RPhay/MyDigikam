@@ -8,7 +8,7 @@
 #include "MarbleGraphicsItem_p.h"
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "ViewportParams.h"
 
 // Qt
@@ -67,7 +67,7 @@ bool MarbleGraphicsItem::paintEvent( QPainter *painter, const ViewportParams *vi
                 d->m_pixmap.setDevicePixelRatio(scale);
             }
             else {
-                mDebug() << "Warning: Invalid pixmap size suggested: " << d->m_size;
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Warning: Invalid pixmap size suggested: " << d->m_size;
             }
 
             d->m_pixmap.fill(Qt::transparent);

@@ -9,7 +9,7 @@
 
 #include "GeoDataCoordinates.h"
 #include "PositionTracking.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "ViewportParams.h"
 #include "RoutingManager.h"

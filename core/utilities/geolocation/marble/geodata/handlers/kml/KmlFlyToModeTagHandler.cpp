@@ -7,7 +7,7 @@
 #include "GeoDataFlyTo.h"
 #include "GeoParser.h"
 #include "KmlElementDictionary.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -27,7 +27,7 @@ GeoNode* KmlflyToModeTagHandler::parse( GeoParser& parser ) const
     } else if (content == QLatin1String("bounce")) {
         mode = GeoDataFlyTo::Bounce;
     } else {
-        mDebug() << "Unknown mode " << content << ", using 'bounce' instead.";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown mode " << content << ", using 'bounce' instead.";
         mode = GeoDataFlyTo::Bounce;
     }
 

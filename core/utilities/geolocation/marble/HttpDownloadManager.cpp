@@ -16,7 +16,7 @@
 #include "DownloadPolicy.h"
 #include "DownloadQueueSet.h"
 #include "HttpJob.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "StoragePolicy.h"
 
 using namespace Marble;
@@ -91,7 +91,7 @@ DownloadQueueSet *HttpDownloadManager::Private::findQueues( const QString& hostN
         }
     }
     if ( !result ) {
-        mDebug() << "No download policy found for" << hostName << usage
+        qCDebug(DIGIKAM_MARBLE_LOG) << "No download policy found for" << hostName << usage
                  << ", using default policy.";
         result = m_defaultQueueSets[ usage ];
     }
@@ -141,7 +141,7 @@ void HttpDownloadManager::addJob( const QUrl& sourceUrl, const QString& destFile
                                   const QString &id, const DownloadUsage usage )
 {
     if ( !d->m_acceptJobs ) {
-        mDebug() << Q_FUNC_INFO << "Working offline, not adding job";
+        qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Working offline, not adding job";
         return;
     }
 
@@ -150,7 +150,7 @@ void HttpDownloadManager::addJob( const QUrl& sourceUrl, const QString& destFile
         HttpJob * const job = new HttpJob( sourceUrl, destFileName, id, &d->m_networkAccessManager );
         job->setUserAgentPluginId( QString::fromUtf8("QNamNetworkPlugin") );
         job->setDownloadUsage( usage );
-        mDebug() << "adding job " << sourceUrl;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "adding job " << sourceUrl;
         queueSet->addJob( job );
     }
 }
@@ -158,12 +158,12 @@ void HttpDownloadManager::addJob( const QUrl& sourceUrl, const QString& destFile
 void HttpDownloadManager::Private::finishJob( const QByteArray& data, const QString& destinationFileName,
                                      const QString& id )
 {
-    mDebug() << "Q_EMITting downloadComplete( QByteArray, " << id << ")";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Q_EMITting downloadComplete( QByteArray, " << id << ")";
     Q_EMIT m_downloadManager->downloadComplete( data, id );
     if ( m_storagePolicy ) {
         const bool saved = m_storagePolicy->updateFile( destinationFileName, data );
         if ( saved ) {
-            mDebug() << "Q_EMITting downloadComplete( " << destinationFileName << ", " << id << ")";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Q_EMITting downloadComplete( " << destinationFileName << ", " << id << ")";
             Q_EMIT m_downloadManager->downloadComplete( destinationFileName, id );
         } else {
             qWarning() << "Could not save:" << destinationFileName;

@@ -9,7 +9,7 @@
 
 #include <cmath>
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 
 namespace Marble
@@ -141,7 +141,7 @@ void ClipPainter::drawPolygon ( const QPolygonF & polygon,
 
         for( const QPolygonF & clippedPolyObject: clippedPolyObjects ) { 
             if ( clippedPolyObject.size() > 2 ) {
-                // mDebug() << "Size: " << clippedPolyObject.size();
+                // qCDebug(DIGIKAM_MARBLE_LOG) << "Size: " << clippedPolyObject.size();
                 if (d->m_debugPolygonsLevel) {
                     QBrush brush = QPainter::brush();
                     QBrush originalBrush = brush;
@@ -443,7 +443,7 @@ QPointF ClipPainterPrivate::interpolateLabelPoint(const QPointF &previousPoint,
                           q->viewport().height() - m_labelAreaMargin );        
     }
 
-//    mDebug() << Q_FUNC_INFO << "Previous and current node position are allowed!";
+//    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Previous and current node position are allowed!";
 
     return QPointF( -1.0, -1.0 );
 }
@@ -547,7 +547,7 @@ void ClipPainterPrivate::clipPolyObject ( const QPolygonF & polygon,
                                           QVector<QPolygonF> & clippedPolyObjects,
                                           bool isClosed )
 {
-    //	mDebug() << "ClipPainter enabled." ;
+    //	qCDebug(DIGIKAM_MARBLE_LOG) << "ClipPainter enabled." ;
 
     // Only create a new polyObject as soon as we know for sure that 
     // the current point is on the screen. 
@@ -565,7 +565,7 @@ void ClipPainterPrivate::clipPolyObject ( const QPolygonF & polygon,
 
     while ( itPoint != itEndPoint ) {
         m_currentPoint = (*itPoint);
-        // mDebug() << "m_currentPoint.x()" << m_currentPoint.x() << "m_currentPOint.y()" << m_currentPoint.y();
+        // qCDebug(DIGIKAM_MARBLE_LOG) << "m_currentPoint.x()" << m_currentPoint.x() << "m_currentPOint.y()" << m_currentPoint.y();
 
         // Figure out the sector of the current point.
         m_currentSector = sector( m_currentPoint );

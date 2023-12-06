@@ -13,7 +13,7 @@
 #include <QTimer>
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "TileCreator.h"
 
 #include "ui_TileCreatorDialog.h"

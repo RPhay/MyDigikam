@@ -6,7 +6,7 @@
 
 #include "GeoSceneSettings.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "GeoSceneProperty.h"
 #include "GeoSceneGroup.h"
@@ -72,7 +72,7 @@ bool GeoSceneSettings::propertyAvailable( const QString& name, bool& available )
 
 bool GeoSceneSettings::setPropertyValue( const QString& name, bool value )
 {
-    mDebug() << "GeoSceneSettings: Property " << name << "to" << value;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "GeoSceneSettings: Property " << name << "to" << value;
 
     QVector<GeoSceneProperty*>::const_iterator it = d->m_properties.constBegin();
     QVector<GeoSceneProperty*>::const_iterator propEnd = d->m_properties.constEnd();

@@ -7,7 +7,7 @@
 #if KML_LAZY_IMP
 #include "KmlCountryNameCodeTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "KmlElementDictionary.h"
 

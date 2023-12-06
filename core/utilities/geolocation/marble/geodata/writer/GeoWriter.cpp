@@ -10,7 +10,7 @@
 #include "KmlElementDictionary.h"
 #include "DgmlElementDictionary.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -36,7 +36,7 @@ bool GeoWriter::write(QIODevice* device, const GeoNode *feature)
         //FIXME is this too much of a hack?
         writer->write(/* node = */ nullptr, *this); // node is never used in write()
     } else {
-        mDebug() << "There is no GeoWriter registered for: " << name;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "There is no GeoWriter registered for: " << name;
         return false;
     }
     
@@ -58,12 +58,12 @@ bool GeoWriter::writeElement(const GeoNode *object)
 
     if( writer ) {
         if( ! writer->write( object, *this ) ) {
-            mDebug() << "An error has been reported by the GeoWriter for: "
+            qCDebug(DIGIKAM_MARBLE_LOG) << "An error has been reported by the GeoWriter for: "
                     << name;
             return false;
         }
     } else {
-        mDebug() << "There is no GeoWriter registered for: " << name;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "There is no GeoWriter registered for: " << name;
         return true;
     }
     return true;

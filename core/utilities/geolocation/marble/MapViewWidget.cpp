@@ -12,7 +12,7 @@
 #include "MapViewWidget.h"
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "MarbleWidget.h"
 #include "MarbleModel.h"
@@ -617,7 +617,7 @@ void MapViewWidget::Private::mapThemeSelected( int index )
     const QModelIndex columnIndex = m_mapSortProxy.index( index, 0 );
     const QString currentmaptheme = m_mapSortProxy.data( columnIndex, Qt::UserRole + 1 ).toString();
 
-    mDebug() << Q_FUNC_INFO << currentmaptheme;
+    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << currentmaptheme;
 
     Q_EMIT q->mapThemeIdChanged( currentmaptheme );
 }

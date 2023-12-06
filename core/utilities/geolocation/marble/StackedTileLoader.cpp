@@ -9,7 +9,7 @@
 
 #include "StackedTileLoader.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MergedLayerDecorator.h"
 #include "StackedTile.h"
 #include "TileLoader.h"
@@ -135,7 +135,7 @@ const StackedTile* StackedTileLoader::loadTile( TileId const & stackedTileId )
     // tile (valid) has not been found in hash or cache, so load it from disk
     // and place it in the hash from where it will get transferred to the cache
 
-    mDebug() << "load tile from disk:" << stackedTileId;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "load tile from disk:" << stackedTileId;
 
     stackedTile = d->m_layerDecorator->loadTile( stackedTileId );
     Q_ASSERT( stackedTile );
@@ -166,7 +166,7 @@ int StackedTileLoader::tileCount() const
 
 void StackedTileLoader::setVolatileCacheLimit( quint64 kiloBytes )
 {
-    mDebug() << QString::fromUtf8("Setting tile cache to %1 kilobytes.").arg( kiloBytes );
+    qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Setting tile cache to %1 kilobytes.").arg( kiloBytes );
     d->m_tileCache.setMaxCost( kiloBytes * 1024 );
 }
 

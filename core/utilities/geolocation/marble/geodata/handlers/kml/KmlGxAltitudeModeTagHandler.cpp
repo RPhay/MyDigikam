@@ -7,7 +7,7 @@
 #include "KmlGxAltitudeModeTagHandler.h"
 #include "KmlAltitudeModeTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "KmlElementDictionary.h"
 
@@ -48,7 +48,7 @@ GeoNode* KmlaltitudeModeTagHandler::parse( GeoParser& parser ) const
     } else if (content == QLatin1String("clampToGround")) {
         mode = ClampToGround;
     } else {
-        mDebug() << "Unknown altitude mode " << content << ", falling back to 'clampToGround'";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown altitude mode " << content << ", falling back to 'clampToGround'";
         mode = ClampToGround;
     }
 

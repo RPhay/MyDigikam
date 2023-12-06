@@ -7,7 +7,7 @@
 
 #include "GeoDataLatLonAltBox.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataCoordinates.h"
 #include "GeoDataLineString.h"
 
@@ -175,8 +175,8 @@ bool GeoDataLatLonAltBox::contains( const GeoDataLatLonAltBox &other ) const
 {
     // check the contain criterion for the altitude first as this is trivial:
 
-    // mDebug() << "this " << this->toString(GeoDataCoordinates::Degree);
-    // mDebug() << "other" << other.toString(GeoDataCoordinates::Degree);
+    // qCDebug(DIGIKAM_MARBLE_LOG) << "this " << this->toString(GeoDataCoordinates::Degree);
+    // qCDebug(DIGIKAM_MARBLE_LOG) << "other" << other.toString(GeoDataCoordinates::Degree);
 
     if ( d->m_maxAltitude >= other.maxAltitude() && d->m_minAltitude <= other.minAltitude() ) {
         return GeoDataLatLonBox::contains( other );

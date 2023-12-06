@@ -13,7 +13,7 @@
 #include "GeoSceneLayer.h"
 #include "MarbleModel.h"
 #include "ViewportParams.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 // Qt
 #include <QTimer>

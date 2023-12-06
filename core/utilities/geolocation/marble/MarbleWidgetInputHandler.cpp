@@ -13,7 +13,7 @@
 #include <QKeyEvent>
 
 #include "MarbleGlobal.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleWidget.h"
 #include "MarbleMap.h"
 #include "ViewportParams.h"

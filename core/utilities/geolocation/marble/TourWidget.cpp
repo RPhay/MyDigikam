@@ -37,7 +37,7 @@
 #include "TourPlayback.h"
 #include "MovieCapture.h"
 #include "TourCaptureDialog.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "PlaybackFlyToItem.h"
 #include "EditPlacemarkDialog.h"
 #include "MarbleDirs.h"

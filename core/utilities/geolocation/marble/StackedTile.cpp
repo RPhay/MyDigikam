@@ -8,7 +8,7 @@
 
 #include "StackedTile.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "TextureTile.h"
 
 using namespace Marble;

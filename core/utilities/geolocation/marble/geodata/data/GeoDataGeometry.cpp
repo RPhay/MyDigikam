@@ -19,7 +19,7 @@
 #include "GeoDataTrack.h"
 #include "GeoDataTypes.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QDataStream>
 

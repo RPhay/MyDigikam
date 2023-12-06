@@ -6,7 +6,7 @@
 
 #include "GeoSceneSection.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "GeoSceneTypes.h"
 #include "GeoSceneItem.h"

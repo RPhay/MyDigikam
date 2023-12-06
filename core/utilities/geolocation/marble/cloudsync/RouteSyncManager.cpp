@@ -7,7 +7,7 @@
 
 #include "GeoDataParser.h"
 #include "MarbleDirs.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataFolder.h"
 #include "GeoDataDocument.h"
 #include "GeoDataPlacemark.h"
@@ -138,7 +138,7 @@ QVector<RouteItem> RouteSyncManager::cachedRouteList() const
 
         GeoDataParser parser( GeoData_KML );
         if( !parser.read( &file ) ) {
-            mDebug() << QLatin1String("Could not read ") + routeFilename;
+            qCDebug(DIGIKAM_MARBLE_LOG) << QLatin1String("Could not read ") + routeFilename;
         }
 
         file.close();

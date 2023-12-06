@@ -6,7 +6,7 @@
 
 #include "GeoSceneProperty.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoSceneTypes.h"
 
 namespace Marble
@@ -62,7 +62,7 @@ void GeoSceneProperty::setValue( bool value )
         return;
 
     m_value = value;
-//    mDebug() << "GeoSceneProperty: Setting " << m_name << "to" << m_value;
+//    qCDebug(DIGIKAM_MARBLE_LOG) << "GeoSceneProperty: Setting " << m_name << "to" << m_value;
     Q_EMIT valueChanged( m_name, m_value );
 }
 

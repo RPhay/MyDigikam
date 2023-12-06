@@ -5,7 +5,7 @@
 
 #include "KmlBalloonStyleTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "GeoDataBalloonStyle.h"
 #include "GeoDataStyle.h"

@@ -16,7 +16,7 @@
 #include "MarblePlacemarkModel.h"
 #include "SearchRunnerManager.h"
 #include "ViewportParams.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QListView>
 #include <QVBoxLayout>
@@ -80,7 +80,7 @@ void SearchWidgetPrivate::setSearchResult( const QVector<GeoDataPlacemark *>& lo
                 m_sortproxy.mapFromSource(
                     m_branchfilter.mapFromSource( treeModel->index( m_document ) ) ) );
     m_widget->centerOn( m_document->latLonAltBox() );
-    mDebug() << Q_FUNC_INFO << " Time elapsed:"<< timer.elapsed() << " ms";
+    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << " Time elapsed:"<< timer.elapsed() << " ms";
 }
 
 SearchWidget::SearchWidget( QWidget *parent, Qt::WindowFlags flags ) :

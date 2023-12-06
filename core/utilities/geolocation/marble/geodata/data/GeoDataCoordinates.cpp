@@ -17,7 +17,7 @@
 #include <QDataStream>
 #include <QPointF>
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleMath.h"
 
 #include "Quaternion.h"
@@ -69,7 +69,7 @@ GeoDataCoordinates::~GeoDataCoordinates()
     if (!d->ref.deref())
         delete d;
 #ifdef DEBUG_GEODATA
-//    mDebug() << "delete coordinates";
+//    qCDebug(DIGIKAM_MARBLE_LOG) << "delete coordinates";
 #endif
 }
 
@@ -863,7 +863,7 @@ bool GeoDataCoordinates::isPole( Pole pole ) const
             // FIXME: Should we just normalize latitude and longitude and be done?
             //        While this might work well for persistent data it would create some 
             //        possible overhead for temporary data, so this needs careful thinking.
-            mDebug() << "GeoDataCoordinates not normalized!";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "GeoDataCoordinates not normalized!";
 
             // Only as a last resort we cover the unlikely case where
             // the latitude is not normalized to the range of 

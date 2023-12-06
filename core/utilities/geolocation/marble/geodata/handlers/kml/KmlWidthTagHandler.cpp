@@ -6,7 +6,7 @@
 
 #include "KmlWidthTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "KmlElementDictionary.h"
 #include "GeoDataLineStyle.h"

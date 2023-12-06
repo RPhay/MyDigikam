@@ -5,7 +5,7 @@
 
 #include "NewstuffModel.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "MarbleZipReader.h"
 
@@ -298,7 +298,7 @@ void NewstuffModelPrivate::handleProviderData(QNetworkReply *reply)
 
     QDomDocument xml;
     if ( !xml.setContent( reply->readAll() ) ) {
-        mDebug() << "Cannot parse newstuff xml data ";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot parse newstuff xml data ";
         return;
     }
 
@@ -344,9 +344,9 @@ void NewstuffModelPrivate::installMap()
         m_unpackProcess->start( QString::fromUtf8("tar"), arguments );
     } else {
         if ( !m_currentFile->fileName().endsWith( QLatin1String( "tar.gz" ) ) ) {
-            mDebug() << "Can only handle tar.gz files";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Can only handle tar.gz files";
         } else {
-            mDebug() << "Cannot extract archive: tar executable not found in PATH.";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot extract archive: tar executable not found in PATH.";
         }
     }
 }
@@ -405,7 +405,7 @@ void NewstuffModelPrivate::saveRegistry()
 {
     QFile output( m_registryFile );
     if ( !output.open( QFile::WriteOnly ) ) {
-        mDebug() << "Cannot open " << m_registryFile << " for writing";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot open " << m_registryFile << " for writing";
     } else {
         QTextStream outStream( &output );
         outStream << m_registryDocument.toString( 2 );
@@ -622,12 +622,12 @@ void NewstuffModel::setRegistryFile( const QString &filename, IdTag idTag )
         } else {
             QFile input( registryFile );
             if ( !input.open( QFile::ReadOnly ) ) {
-                mDebug() << "Cannot open newstuff registry " << registryFile;
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot open newstuff registry " << registryFile;
                 return;
             }
 
             if ( !d->m_registryDocument.setContent( &input ) ) {
-                mDebug() << "Cannot parse newstuff registry " << registryFile;
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot parse newstuff registry " << registryFile;
                 return;
             }
             input.close();
@@ -787,7 +787,7 @@ void NewstuffModel::mapInstalled( int exitStatus )
     if ( exitStatus == 0 ) {
         Q_EMIT installationFinished( d->m_currentAction.first );
     } else {
-        mDebug() << "Process exit status " << exitStatus << " indicates an error.";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Process exit status " << exitStatus << " indicates an error.";
         Q_EMIT installationFailed( d->m_currentAction.first , QString::fromUtf8( "Unable to unpack file. Process exited with status code %1." ).arg( exitStatus ) );
     }
     QModelIndex const affected = index( d->m_currentAction.first );
@@ -826,7 +826,7 @@ void NewstuffModel::contentsListed( int exitStatus )
         QStringList arguments = QStringList() << QString::fromUtf8("-x") << QString::fromUtf8("-z") << QString::fromUtf8("-f") << d->m_currentFile->fileName();
         d->m_unpackProcess->start( QString::fromUtf8("tar"), arguments );
     } else {
-        mDebug() << "Process exit status " << exitStatus << " indicates an error.";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Process exit status " << exitStatus << " indicates an error.";
         Q_EMIT installationFailed( d->m_currentAction.first , QString::fromUtf8( "Unable to list file contents. Process exited with status code %1." ).arg( exitStatus ) );
 
         { // <-- do not remove, mutex locker scope
@@ -910,7 +910,7 @@ void NewstuffModelPrivate::processQueue()
                               m_parent, SLOT(updateProgress(qint64,qint64)) );
             /** @todo: handle download errors */
         } else {
-            mDebug() << "Failed to write to " << m_currentFile->fileName();
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Failed to write to " << m_currentFile->fileName();
         }
     } else {
         // Run in a separate thread to keep the ui responsive

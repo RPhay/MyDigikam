@@ -8,7 +8,7 @@
 #include "PlanetFactory.h"
 #include "Planet.h"
 #include "MarbleColors.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleGlobal.h"
 
 namespace Marble {
@@ -196,25 +196,25 @@ Planet PlanetFactory::construct( const QString &id )
         planet.setName(QStringLiteral("Pluto"));
         planet.setHasAtmosphere( false );
     } else if (id == QLatin1String("sun")) {
-        mDebug() << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius( 695000000.0 );
         //FIXME: fill in with valid data
         planet.setName(QStringLiteral("Sun"));
         planet.setHasAtmosphere( true );
         planet.setAtmosphereColor( Qt::white );
     } else if (id == QLatin1String("moon")) {
-        mDebug() << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius( 1738000.0 );
         //FIXME: fill in with valid data
         planet.setName(QStringLiteral("Moon"));
         planet.setHasAtmosphere( false );
     } else if (id == QLatin1String("sky")) {
-        mDebug() << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius( 10000000.0 );
         planet.setName(QStringLiteral("Sky"));
         planet.setHasAtmosphere( false );
     } else {
-        mDebug() << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius( 10000000.0 );
         planet.setName(QStringLiteral("Unknown"));
         planet.setHasAtmosphere( false );
@@ -252,7 +252,7 @@ QString PlanetFactory::localizedName( const QString &id )
     } else if (id == QLatin1String("sky")) {
         return QObject::tr("Sky");
     } else if ( id.isEmpty() ) {
-        mDebug() << "Warning: empty id";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Warning: empty id";
         return QObject::tr("Unknown Planet", "a planet without data");
     }
 

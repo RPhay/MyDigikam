@@ -9,7 +9,7 @@
 #include <QStandardItemModel>
 
 #include "MarbleGlobal.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "RoutingProfilesModel.h"
 #include "PluginManager.h"
 
@@ -96,7 +96,7 @@ void RoutingProfileSettingsDialog::editProfile( int profileIndex )
         if ( profiles[ profileIndex ].pluginSettings().contains( plugin->nameId() ) ) {
             item->setCheckState( Qt::Checked );
             QHash<QString, QVariant> settings = profiles[ profileIndex ].pluginSettings()[ plugin->nameId() ];
-            mDebug() << settings;
+            qCDebug(DIGIKAM_MARBLE_LOG) << settings;
             if ( m_configWidgets[plugin] ) {
                 m_configWidgets[plugin]->loadSettings( settings );
             }
@@ -122,7 +122,7 @@ void RoutingProfileSettingsDialog::editProfile( int profileIndex )
             if ( m_configWidgets[m_plugins[ i ]] ) {
                 settings = m_configWidgets[m_plugins[ i ]]->settings();
             }
-            mDebug() << i << m_plugins[ i ]->nameId() << settings;
+            qCDebug(DIGIKAM_MARBLE_LOG) << i << m_plugins[ i ]->nameId() << settings;
             pluginSettings.insert( m_plugins[ i ]->nameId(), settings );
         } else {
             pluginSettings.remove( m_plugins[ i ]->nameId() );

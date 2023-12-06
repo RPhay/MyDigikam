@@ -11,7 +11,7 @@
 #include <QStringView>
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 // Geodata
 #include "GeoDataDocument.h"

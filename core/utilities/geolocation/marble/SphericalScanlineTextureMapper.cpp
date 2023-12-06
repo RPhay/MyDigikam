@@ -14,7 +14,7 @@
 
 #include "GeoPainter.h"
 #include "GeoDataPolygon.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "Quaternion.h"
 #include "ScanlineTextureMapperContext.h"
 #include "StackedTileLoader.h"
@@ -220,7 +220,7 @@ void SphericalScanlineTextureMapper::RenderJob::run()
             if ( x >= xIpLeft && x <= xIpRight ) {
 
                 // Decrease pole distortion due to linear approximation ( x-axis )
-//                mDebug() << QString("NorthPole X: %1, LeftInterval: %2").arg( northPoleX ).arg( leftInterval );
+//                qCDebug(DIGIKAM_MARBLE_LOG) << QString("NorthPole X: %1, LeftInterval: %2").arg( northPoleX ).arg( leftInterval );
                 if ( crossingPoleArea
                      && northPoleX >= leftInterval + n
                      && northPoleX < leftInterval + 2 * n
@@ -249,7 +249,7 @@ void SphericalScanlineTextureMapper::RenderJob::run()
             qpos.rotateAroundAxis( planetAxisMatrix );
 
             qpos.getSpherical( lon, lat );
-//            mDebug() << QString("lon: %1 lat: %2").arg(lon).arg(lat);
+//            qCDebug(DIGIKAM_MARBLE_LOG) << QString("lon: %1 lat: %2").arg(lon).arg(lat);
             // Approx for n-1 out of n pixels within the boundary of
             // xIpLeft to xIpRight
 

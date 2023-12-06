@@ -25,7 +25,7 @@
 #include <QTimer>
 
 #include "GeoDataLatLonAltBox.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "MarbleWidget.h"
 #include "LatLonBoxWidget.h"

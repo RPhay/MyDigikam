@@ -19,7 +19,7 @@
 
 // Qt
 #include <QDataStream>
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataTrack.h"
 #include "GeoDataModel.h"
 #include <QString>

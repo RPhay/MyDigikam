@@ -12,7 +12,7 @@
 #include "MarbleModel.h"
 #include "PluginManager.h"
 #include "RoutingRunnerPlugin.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "RoutingProfilesModel.h"
 #include "RoutingManager.h"
 #include "RoutingProfileSettingsDialog.h"

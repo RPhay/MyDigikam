@@ -8,7 +8,7 @@
 #include "FrameGraphicsItem_p.h"
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 // Qt
 #include <QSizeF>

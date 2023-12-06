@@ -11,7 +11,7 @@
 #include "KmlElementDictionary.h"
 #include "GeoDataStyle.h"
 #include "GeoDataStyleMap.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataExtendedData.h"
 #include "GeoDataTimeStamp.h"
 #include "GeoDataTimeSpan.h"

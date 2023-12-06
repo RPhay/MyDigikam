@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Levente Kurusa <levex@linux.com>
 
 #include "TreeViewDecoratorModel.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataFolder.h"
 #include "GeoDataObject.h"
 #include "GeoDataContainer.h"

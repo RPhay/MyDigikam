@@ -10,7 +10,7 @@
 #include "GeoDataPoint_p.h"
 
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleGlobal.h"
 
 #include "GeoDataTypes.h"

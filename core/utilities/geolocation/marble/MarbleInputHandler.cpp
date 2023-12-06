@@ -18,7 +18,7 @@
 
 #include "kineticmodel.h"
 #include "MarbleGlobal.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleMap.h"
 #include "MarbleAbstractPresenter.h"
 #include "ViewportParams.h"
@@ -519,7 +519,7 @@ void MarbleDefaultInputHandler::handleLeftMouseButtonPress(QMouseEvent *event)
 
     if (event->modifiers() & Qt::ControlModifier)
     {
-        mDebug() << Q_FUNC_INFO << "Starting selection";
+        qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Starting selection";
         d->m_pressAndHoldTimer.stop();
         d->m_lmbTimer.stop();
         d->m_selectionOrigin = event->pos();
@@ -605,7 +605,7 @@ void MarbleDefaultInputHandler::handleMouseButtonRelease(QMouseEvent *event)
     if (event->type() == QEvent::MouseButtonRelease && event->button() == Qt::LeftButton
          && selectionRubber()->isVisible())
     {
-        mDebug() << Q_FUNC_INFO << "Leaving selection";
+        qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Leaving selection";
         MarbleInputHandler::d->m_marblePresenter->setSelection(selectionRubber()->geometry());
         selectionRubber()->hide();
     }

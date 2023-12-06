@@ -10,7 +10,7 @@
 #include "GeoDataContainer_p.h"
 
 // Marble
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataFolder.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataDocument.h"

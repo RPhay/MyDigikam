@@ -7,7 +7,7 @@
 
 #include "ParsingRunnerManager.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "PluginManager.h"
 #include "ParseRunnerPlugin.h"
 #include "RunnerTask.h"
@@ -90,7 +90,7 @@ void ParsingRunnerManager::parseFile( const QString &fileName, DocumentRole role
         if ( extensions.isEmpty() || extensions.contains( suffix ) || extensions.contains( completeSuffix ) ) {
             ParsingTask *task = new ParsingTask( plugin->newRunner(), this, fileName, role );
             connect( task, SIGNAL(finished()), this, SLOT(cleanupParsingTask()) );
-            mDebug() << "parse task " << plugin->nameId() << " " << (quintptr)task;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "parse task " << plugin->nameId() << " " << (quintptr)task;
             ++d->m_parsingTasks;
             QThreadPool::globalInstance()->start( task );
         }

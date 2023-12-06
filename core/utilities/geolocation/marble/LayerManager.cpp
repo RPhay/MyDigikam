@@ -10,7 +10,7 @@
 #include "LayerManager.h"
 
 // Local dir
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "AbstractDataPlugin.h"
 #include "AbstractDataPluginItem.h"
 #include "GeoPainter.h"

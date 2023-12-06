@@ -12,7 +12,7 @@
 // Marble
 #include "DialogConfigurationInterface.h"
 #include "MarbleModel.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "RenderPluginModel.h"
 #include "RenderState.h"
 

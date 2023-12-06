@@ -14,7 +14,7 @@
 #include "ViewportParams.h"
 #include "GeoDataStyle.h"
 #include "GeoDataColorStyle.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "OsmPlacemarkData.h"
 
 #include <qmath.h>

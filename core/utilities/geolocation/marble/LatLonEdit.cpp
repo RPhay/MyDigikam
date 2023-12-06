@@ -7,7 +7,7 @@
 #include "LatLonEdit.h"
 #include "ui_LatLonEdit.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 
 

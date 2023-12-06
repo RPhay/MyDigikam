@@ -8,7 +8,7 @@
 #include "Quaternion.h"
 #include "MarbleAbstractPresenter.h"
 #include "GeoDataLookAt.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataLineString.h"
 #include "ViewportParams.h"
 

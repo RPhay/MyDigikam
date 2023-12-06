@@ -8,7 +8,7 @@
 #include "GeoDataLineString.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataTrack.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "StyleBuilder.h"
 
 using namespace Marble;

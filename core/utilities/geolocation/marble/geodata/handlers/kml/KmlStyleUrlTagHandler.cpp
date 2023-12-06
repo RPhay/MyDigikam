@@ -9,7 +9,7 @@
 #include <QString>
 
 #include "KmlElementDictionary.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataFeature.h"
 #include "GeoDataStyleMap.h"
 

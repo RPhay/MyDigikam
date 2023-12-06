@@ -8,7 +8,7 @@
 
 #include "HttpJob.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "HttpDownloadManager.h"
 
 #include <QNetworkAccessManager>
@@ -145,25 +145,25 @@ void HttpJob::downloadProgress( qint64 bytesReceived, qint64 bytesTotal )
 {
     Q_UNUSED(bytesReceived);
     Q_UNUSED(bytesTotal);
-//     mDebug() << "downloadProgress" << destinationFileName()
+//     qCDebug(DIGIKAM_MARBLE_LOG) << "downloadProgress" << destinationFileName()
 //              << bytesReceived << '/' << bytesTotal;
 }
 
 void HttpJob::error( QNetworkReply::NetworkError code )
 {
-    mDebug() << "error" << destinationFileName() << code;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "error" << destinationFileName() << code;
 }
 
 void HttpJob::finished()
 {
     QNetworkReply::NetworkError const error = d->m_networkReply->error();
-//     mDebug() << "finished" << destinationFileName()
+//     qCDebug(DIGIKAM_MARBLE_LOG) << "finished" << destinationFileName()
 //              << "error" << error;
 
     const QVariant httpPipeliningWasUsed =
         d->m_networkReply->attribute( QNetworkRequest::HttpPipeliningWasUsedAttribute );
     if ( !httpPipeliningWasUsed.isNull() )
-        mDebug() << "http pipelining used:" << httpPipeliningWasUsed.toBool();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "http pipelining used:" << httpPipeliningWasUsed.toBool();
 
     switch ( error ) {
     case QNetworkReply::NoError: {

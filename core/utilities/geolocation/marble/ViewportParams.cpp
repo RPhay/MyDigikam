@@ -13,7 +13,7 @@
 #include <QPainterPath>
 #include <QRegion>
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataLatLonAltBox.h"
 #include "SphericalProjection.h"
 #include "EquirectProjection.h"

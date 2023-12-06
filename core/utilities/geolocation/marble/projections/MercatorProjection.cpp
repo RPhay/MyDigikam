@@ -8,7 +8,7 @@
 // Local
 #include "MercatorProjection.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 // Marble
 #include "ViewportParams.h"

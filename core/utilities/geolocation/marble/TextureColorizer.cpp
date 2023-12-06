@@ -16,7 +16,7 @@
 #include <QPainter>
 
 #include "GeoPainter.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "ViewParams.h"
 #include "ViewportParams.h"
 #include "MathHelper.h"
@@ -133,7 +133,7 @@ TextureColorizer::TextureColorizer( const QString &seafile,
     shadingPainter.end();  // Need to explicitly tell painter lifetime to avoid crash
     gradientPainter.end(); // on some systems. 
 
-    mDebug() << Q_FUNC_INFO << "Time elapsed:" << t.elapsed() << "ms";
+    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Time elapsed:" << t.elapsed() << "ms";
 }
 
 void TextureColorizer::addSeaDocument( const GeoDataDocument *seaDocument )

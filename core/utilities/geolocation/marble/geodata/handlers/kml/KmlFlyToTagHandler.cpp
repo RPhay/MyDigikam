@@ -7,7 +7,7 @@
 #include "GeoDataFlyTo.h"
 #include "GeoDataPlaylist.h"
 #include "GeoParser.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "KmlElementDictionary.h"
 
 namespace Marble

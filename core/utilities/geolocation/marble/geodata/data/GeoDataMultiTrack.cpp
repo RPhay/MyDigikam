@@ -12,7 +12,7 @@
 #include "GeoDataTrack.h"
 #include "GeoDataTypes.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QDataStream>
 
@@ -121,7 +121,7 @@ QVector<GeoDataTrack> GeoDataMultiTrack::vector() const
 
 GeoDataTrack& GeoDataMultiTrack::at( int pos )
 {
-    mDebug() << "detaching!";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "detaching!";
     detach();
 
     Q_D(GeoDataMultiTrack);

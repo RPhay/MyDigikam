@@ -9,7 +9,7 @@
 
 #include <QtAlgorithms>
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "ui_MarbleNavigator.h"
 

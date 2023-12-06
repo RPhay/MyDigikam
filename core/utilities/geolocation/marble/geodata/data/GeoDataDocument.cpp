@@ -12,7 +12,7 @@
 #include "GeoDataNetworkLinkControl.h"
 #include "GeoDataSchema.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QDataStream>
 

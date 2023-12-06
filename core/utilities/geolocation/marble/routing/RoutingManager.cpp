@@ -21,7 +21,7 @@
 #include "GeoDataTreeModel.h"
 #include "MarbleColors.h"
 #include "MarbleDirs.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "PositionTracking.h"
 #include "PluginManager.h"
 #include "PositionProviderPlugin.h"
@@ -145,13 +145,13 @@ QString RoutingManagerPrivate::stateFile( const QString &name)
     QDir dir( MarbleDirs::localPath() );
     if ( !dir.exists( subdir ) ) {
         if ( !dir.mkdir( subdir ) ) {
-            mDebug() << "Unable to create dir " << dir.absoluteFilePath( subdir );
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Unable to create dir " << dir.absoluteFilePath( subdir );
             return dir.absolutePath();
         }
     }
 
     if ( !dir.cd( subdir ) ) {
-        mDebug() << "Cannot change into " << dir.absoluteFilePath( subdir );
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot change into " << dir.absoluteFilePath( subdir );
     }
 
     return dir.absoluteFilePath( name );
@@ -166,7 +166,7 @@ void RoutingManagerPrivate::saveRoute(const QString &filename)
     QFile file( filename );
     if ( !file.open( QIODevice::WriteOnly | QIODevice::Truncate ) )
     {
-        mDebug() << "Cannot write to " << file.fileName();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot write to " << file.fileName();
         return;
     }
 
@@ -183,7 +183,7 @@ void RoutingManagerPrivate::saveRoute(const QString &filename)
     }
 
     if ( !writer.write( &file, &container ) ) {
-        mDebug() << "Can not write route state to " << file.fileName();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Can not write route state to " << file.fileName();
     }
     file.close();
 }
@@ -192,13 +192,13 @@ void RoutingManagerPrivate::loadRoute(const QString &filename)
 {
     QFile file( filename );
     if ( !file.open( QIODevice::ReadOnly ) ) {
-        mDebug() << "Can not read route from " << file.fileName();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Can not read route from " << file.fileName();
         return;
     }
 
     GeoDataParser parser( GeoData_KML );
     if ( !parser.read( &file ) ) {
-        mDebug() << "Could not parse file: " << parser.errorString();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Could not parse file: " << parser.errorString();
         return;
     }
 
@@ -226,7 +226,7 @@ void RoutingManagerPrivate::loadRoute(const QString &filename)
                 m_routeRequest.remove( viaPoints_needed );
             }
         } else {
-            mDebug() << "Expected a GeoDataDocument with at least one child, didn't get one though";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Expected a GeoDataDocument with at least one child, didn't get one though";
         }
     }
 
@@ -241,14 +241,14 @@ void RoutingManagerPrivate::loadRoute(const QString &filename)
             Q_EMIT q->stateChanged( m_state );
             Q_EMIT q->routeRetrieved( route );
         } else {
-            mDebug() << "Expected a GeoDataDocument child, didn't get one though";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Expected a GeoDataDocument child, didn't get one though";
         }
     }
 
     if (loaded) {
         delete doc; // == container
     } else {
-        mDebug() << "File " << filename << " is not a valid Marble route .kml file";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "File " << filename << " is not a valid Marble route .kml file";
         if ( container ) {
             m_treeModel->addDocument( container );
         }

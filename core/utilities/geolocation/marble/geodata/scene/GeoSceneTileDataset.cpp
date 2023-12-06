@@ -12,7 +12,7 @@
 #include "GeoSceneMercatorTileProjection.h"
 
 #include "DownloadPolicy.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "ServerLayout.h"
 #include "TileId.h"
@@ -151,7 +151,7 @@ void GeoSceneTileDataset::setTileLevels(const QString &tileLevels)
         if (canParse && tileLevel >= 0 && tileLevel < 100) {
             m_tileLevels << tileLevel;
         } else {
-            mDebug() << "Cannot parse tile level part " << value << " in " << tileLevels << ", ignoring it.";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot parse tile level part " << value << " in " << tileLevels << ", ignoring it.";
         }
     }
 
@@ -183,15 +183,15 @@ const QSize GeoSceneTileDataset::tileSize() const
         QImage testTile( path );
 
         if ( testTile.isNull() ) {
-            mDebug() << "Tile size is missing in dgml and no base tile found in " << themeStr();
-            mDebug() << "Using default tile size " << c_defaultTileSize;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Tile size is missing in dgml and no base tile found in " << themeStr();
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Using default tile size " << c_defaultTileSize;
             m_tileSize = QSize( c_defaultTileSize, c_defaultTileSize );
         } else {
             m_tileSize = testTile.size();
         }
 
         if ( m_tileSize.isEmpty() ) {
-            mDebug() << "Tile width or height cannot be 0. Falling back to default tile size.";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Tile width or height cannot be 0. Falling back to default tile size.";
             m_tileSize = QSize( c_defaultTileSize, c_defaultTileSize );
         }
     }
@@ -213,7 +213,7 @@ void GeoSceneTileDataset::setLatLonBox( const GeoDataLatLonBox &box )
 void GeoSceneTileDataset::setTileSize( const QSize &tileSize )
 {
     if ( tileSize.isEmpty() ) {
-        mDebug() << "Ignoring invalid tile size " << tileSize;
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring invalid tile size " << tileSize;
     } else {
         m_tileSize = tileSize;
     }
@@ -253,7 +253,7 @@ QUrl GeoSceneTileDataset::downloadUrl( const TileId &id ) const
     // default download url
     if ( m_downloadUrls.empty() ) {
         QUrl const defaultUrl = QUrl(QLatin1String("https://maps.kde.org/") + m_serverLayout->sourceDir());
-        mDebug() << "No download URL specified for tiles stored in "
+        qCDebug(DIGIKAM_MARBLE_LOG) << "No download URL specified for tiles stored in "
                  << m_sourceDir << ", falling back to " << defaultUrl.toString();
         return m_serverLayout->downloadUrl(defaultUrl, id);
     } else if (m_downloadUrls.size() == 1) {
@@ -327,7 +327,7 @@ void GeoSceneTileDataset::addDownloadPolicy( const DownloadUsage usage, const in
     DownloadPolicy * const policy = new DownloadPolicy( DownloadPolicyKey( hostNames(), usage ));
     policy->setMaximumConnections( maximumConnections );
     m_downloadPolicies.append( policy );
-    mDebug() << "added download policy" << hostNames() << usage << maximumConnections;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "added download policy" << hostNames() << usage << maximumConnections;
 }
 
 QStringList GeoSceneTileDataset::hostNames() const

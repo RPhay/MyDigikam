@@ -9,7 +9,7 @@
 // Marble
 #include "GeoDataCoordinates.h"
 #include "ViewportParams.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 // Qt
 #include <QAction>

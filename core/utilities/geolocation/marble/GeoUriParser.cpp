@@ -11,7 +11,7 @@
 #include <QRegExp>
 
 #include "PlanetFactory.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 namespace Marble {
 
@@ -89,7 +89,7 @@ bool GeoUriParser::parse()
                     }
                     ++i;
                 } else if (geoUriRegexp.capturedTexts()[i] == QLatin1String("u")) {
-                    mDebug() << "Captured uncertainty parameter, but this is not supported by Marble (yet).";
+                    qCDebug(DIGIKAM_MARBLE_LOG) << "Captured uncertainty parameter, but this is not supported by Marble (yet).";
                     ++i;
                 }
             }

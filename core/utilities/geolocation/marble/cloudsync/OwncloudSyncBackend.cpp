@@ -7,7 +7,7 @@
 
 #include "MarbleDirs.h"
 #include "MarbleModel.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDocument.h"
 #include "MarbleWidget.h"
 #include "RenderPlugin.h"
@@ -117,40 +117,40 @@ void OwncloudSyncBackend::uploadRoute( const QString &timestamp )
     QFile kmlFile( d->m_cacheDir.absolutePath() + QString::fromUtf8( "/%0.kml" ).arg( timestamp ) );
 
     if( !kmlFile.open( QFile::ReadOnly ) ) {
-        mDebug() << "Could not open " << timestamp << ".kml. Either it has not been saved" <<
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Could not open " << timestamp << ".kml. Either it has not been saved" <<
                     " to cache for upload or another application removed it from there.";
         return;
     }
 
     GeoDataParser parser(GeoData_KML);
     if (!parser.read(&kmlFile)) {
-        mDebug() << "[OwncloudSyncBackend] KML file" << kmlFile.fileName()
+        qCDebug(DIGIKAM_MARBLE_LOG) << "[OwncloudSyncBackend] KML file" << kmlFile.fileName()
                  << "is broken so I can't fill required properties";
         return;
     }
 
     GeoDataDocument *root = dynamic_cast<GeoDataDocument*>(parser.releaseDocument());
     if (!root || root->size() < 2) {
-        mDebug() << "[OwncloudSyncBackend] Root document is broken";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "[OwncloudSyncBackend] Root document is broken";
         return;
     }
 
     GeoDataDocument *doc = geodata_cast<GeoDataDocument>(root->child(1));
     if (!doc || doc->size() < 1) {
-        mDebug() << "[OwncloudSyncBackend] Tracking document is broken";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "[OwncloudSyncBackend] Tracking document is broken";
         return;
     }
 
     GeoDataPlacemark *placemark = geodata_cast<GeoDataPlacemark>(doc->child(0));
     if (!placemark) {
-        mDebug() << "[OwncloudSyncBackend] Placemark is broken";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "[OwncloudSyncBackend] Placemark is broken";
         return;
     }
 
     // Duration part
     double duration =
             QTime().secsTo(QTime::fromString(placemark->extendedData().value(QStringLiteral("duration")).value().toString(), Qt::ISODate)) / 60.0;
-    mDebug() << "[Owncloud] Duration on write is" << duration;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "[Owncloud] Duration on write is" << duration;
     data.append( QByteArray("Content-Disposition: form-data; name=\"duration\"") );
     data.append( QByteArray("\r\n\r\n") );
     data.append( QString::number(duration).toUtf8() );
@@ -160,7 +160,7 @@ void OwncloudSyncBackend::uploadRoute( const QString &timestamp )
     // Distance part
     double distance =
             placemark->extendedData().value(QStringLiteral("length")).value().toDouble();
-    mDebug() << "[Owncloud] Distance on write is" << distance;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "[Owncloud] Distance on write is" << distance;
     data.append( QByteArray("Content-Disposition: form-data; name=\"distance\"") );
     data.append( QByteArray("\r\n\r\n") );
     data.append( QString::number(distance).toUtf8() );
@@ -256,7 +256,7 @@ QString OwncloudSyncBackend::routeName( const QString &timestamp ) const
 
     GeoDataParser parser( GeoData_KML );
     if( !parser.read( &file ) ) {
-        mDebug() << "Could not read " << timestamp << ".kml. Timestamp will be used as "
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Could not read " << timestamp << ".kml. Timestamp will be used as "
                     << "route name because of the problem";
         return timestamp;
     }
@@ -369,7 +369,7 @@ void OwncloudSyncBackend::saveDownloadedRoute()
 
     bool pathCreated = d->m_cacheDir.mkpath( d->m_cacheDir.absolutePath() );
     if ( !pathCreated ) {
-        mDebug() << "Couldn't create the path " << d->m_cacheDir.absolutePath() <<
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Couldn't create the path " << d->m_cacheDir.absolutePath() <<
                     ". Check if your user has sufficient permissions for this operation.";
     }
 
@@ -378,7 +378,7 @@ void OwncloudSyncBackend::saveDownloadedRoute()
     bool fileOpened = kmlFile.open( QFile::ReadWrite );
 
     if ( !fileOpened ) {
-        mDebug() << "Failed to open file" << kmlFilePath << " for writing."
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Failed to open file" << kmlFilePath << " for writing."
                  <<  " Its directory either is missing or is not writable.";
         return;
     }
@@ -389,7 +389,7 @@ void OwncloudSyncBackend::saveDownloadedRoute()
     QString previewPath = QString::fromUtf8( "%0/preview/" ).arg( d->m_cacheDir.absolutePath() );
     bool previewPathCreated = d->m_cacheDir.mkpath( previewPath );
     if ( !previewPathCreated ) {
-        mDebug() << "Couldn't create the path " << previewPath <<
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Couldn't create the path " << previewPath <<
                     ". Check if your user has sufficient permissions for this operation.";
     }
 
@@ -398,7 +398,7 @@ void OwncloudSyncBackend::saveDownloadedRoute()
     bool previewFileOpened = previewFile.open( QFile::ReadWrite );
 
     if ( !previewFileOpened ) {
-        mDebug() << "Failed to open file" << previewFilePath << "for writing."
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Failed to open file" << previewFilePath << "for writing."
                  <<  " Its directory either is missing or is not writable.";
         return;
     }
@@ -427,7 +427,7 @@ void OwncloudSyncBackend::removeFromCache( const QDir &cacheDir, const QString &
     bool fileRemoved = QFile( QString::fromUtf8( "%0/%1.kml" ).arg( cacheDir.absolutePath(), timestamp ) ).remove();
     bool previewRemoved = QFile( QString::fromUtf8( "%0/preview/%1.jpg" ).arg( cacheDir.absolutePath(), timestamp ) ).remove();
     if ( !fileRemoved || !previewRemoved ) {
-        mDebug() << "Failed to remove locally cached route " << timestamp << ". It might "
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Failed to remove locally cached route " << timestamp << ". It might "
                     "have been removed already, or its directory is missing / not writable.";
     }
 

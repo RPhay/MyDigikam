@@ -6,7 +6,7 @@
 
 #include "DgmlStorageLayoutTagHandler.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "DgmlAttributeDictionary.h"
 #include "DgmlElementDictionary.h"
@@ -84,7 +84,7 @@ GeoNode* DgmlStorageLayoutTagHandler::parse(GeoParser& parser) const
             serverLayout = new MarbleServerLayout( texture );
 
             if ( !modeStr.isEmpty() ) {
-                mDebug() << "Unknown storage layout mode " << modeStr << ", falling back to default.";
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown storage layout mode " << modeStr << ", falling back to default.";
             }
         }
 

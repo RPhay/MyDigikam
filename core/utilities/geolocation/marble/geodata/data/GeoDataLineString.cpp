@@ -11,7 +11,7 @@
 #include "GeoDataLinearRing.h"
 #include "GeoDataTypes.h"
 #include "Quaternion.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include <QDataStream>
 #include <QVariant>
@@ -22,25 +22,25 @@ namespace Marble
 GeoDataLineString::GeoDataLineString( TessellationFlags f )
   : GeoDataGeometry( new GeoDataLineStringPrivate( f ) )
 {
-//    mDebug() << "1) GeoDataLineString created:" << p();
+//    qCDebug(DIGIKAM_MARBLE_LOG) << "1) GeoDataLineString created:" << p();
 }
 
 GeoDataLineString::GeoDataLineString( GeoDataLineStringPrivate* priv )
   : GeoDataGeometry( priv )
 {
-//    mDebug() << "2) GeoDataLineString created:" << p();
+//    qCDebug(DIGIKAM_MARBLE_LOG) << "2) GeoDataLineString created:" << p();
 }
 
 GeoDataLineString::GeoDataLineString( const GeoDataGeometry & other )
   : GeoDataGeometry( other )
 {
-//    mDebug() << "3) GeoDataLineString created:" << p();
+//    qCDebug(DIGIKAM_MARBLE_LOG) << "3) GeoDataLineString created:" << p();
 }
 
 GeoDataLineString::~GeoDataLineString()
 {
 #ifdef DEBUG_GEODATA
-    mDebug() << "delete Linestring";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "delete Linestring";
 #endif
 }
 
@@ -67,7 +67,7 @@ void GeoDataLineStringPrivate::interpolateDateLine( const GeoDataCoordinates & p
 {
     GeoDataCoordinates dateLineCoords;
 
-//    mDebug() << Q_FUNC_INFO;
+//    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO;
 
     if ( f.testFlag( RespectLatitudeCircle ) && previousCoords.latitude() == currentCoords.latitude() ) {
         dateLineCoords = currentCoords;
@@ -101,7 +101,7 @@ GeoDataCoordinates GeoDataLineStringPrivate::findDateLine( const GeoDataCoordina
                           + fabs( currentSign * M_PI - currentCoords.longitude() );
 
     if ( longitudeDiff < 0.001 || recursionCounter == 100 ) {
-//        mDebug() << "stopped at recursion" << recursionCounter << " and longitude difference " << longitudeDiff;
+//        qCDebug(DIGIKAM_MARBLE_LOG) << "stopped at recursion" << recursionCounter << " and longitude difference " << longitudeDiff;
         return currentCoords;
     }
     ++recursionCounter;
@@ -111,9 +111,9 @@ GeoDataCoordinates GeoDataLineStringPrivate::findDateLine( const GeoDataCoordina
     int interpolatedSign = ( interpolatedCoords.longitude() < 0.0 ) ? -1 : +1 ;
 
 /*
-    mDebug() << "SRC" << previousCoords.toString();
-    mDebug() << "TAR" << currentCoords.toString();
-    mDebug() << "IPC" << interpolatedCoords.toString();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "SRC" << previousCoords.toString();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "TAR" << currentCoords.toString();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "IPC" << interpolatedCoords.toString();
 */
 
     if ( interpolatedSign != currentSign ) {
@@ -914,7 +914,7 @@ void GeoDataLineString::pack( QDataStream& stream ) const
           = d->m_vector.constBegin();
          iterator != d->m_vector.constEnd();
          ++iterator ) {
-        mDebug() << "innerRing: size" << d->m_vector.size();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "innerRing: size" << d->m_vector.size();
         GeoDataCoordinates coord = ( *iterator );
         coord.pack( stream );
     }

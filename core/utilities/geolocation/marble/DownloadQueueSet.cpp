@@ -4,7 +4,7 @@
 
 #include "DownloadQueueSet.h"
 
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 #include "HttpJob.h"
 
@@ -41,22 +41,22 @@ bool DownloadQueueSet::canAcceptJob( const QUrl& sourceUrl,
                                      const QString& destinationFileName ) const
 {
     if ( jobIsQueued( destinationFileName )) {
-        mDebug() << "Download rejected: It's in the queue already:"
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Download rejected: It's in the queue already:"
                  << destinationFileName;
         return false;
     }
     if ( jobIsWaitingForRetry( destinationFileName )) {
-        mDebug() << "Download rejected: Will try to download again in some time:"
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Download rejected: Will try to download again in some time:"
                  << destinationFileName;
         return false;
     }
     if ( jobIsActive( destinationFileName )) {
-        mDebug() << "Download rejected: It's being downloaded already:"
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Download rejected: It's being downloaded already:"
                  << destinationFileName;
         return false;
     }
     if ( jobIsBlackListed( sourceUrl )) {
-        mDebug() << "Download rejected: Blacklisted.";
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Download rejected: Blacklisted.";
         return false;
     }
     return true;
@@ -65,7 +65,7 @@ bool DownloadQueueSet::canAcceptJob( const QUrl& sourceUrl,
 void DownloadQueueSet::addJob( HttpJob * const job )
 {
     m_jobs.push( job );
-    mDebug() << "addJob: new job queue size:" << m_jobs.count();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "addJob: new job queue size:" << m_jobs.count();
     Q_EMIT jobAdded();
     Q_EMIT progressChanged( m_activeJobs.size(), m_jobs.count() );
     activateJobs();
@@ -85,7 +85,7 @@ void DownloadQueueSet::retryJobs()
 {
     while ( !m_retryQueue.isEmpty() ) {
         HttpJob * const job = m_retryQueue.dequeue();
-        mDebug() << "Requeuing" << job->destinationFileName();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Requeuing" << job->destinationFileName();
         // FIXME: addJob calls activateJobs every time
         addJob( job );
     }
@@ -113,7 +113,7 @@ void DownloadQueueSet::purgeJobs()
 
 void DownloadQueueSet::finishJob( HttpJob * job, const QByteArray& data )
 {
-    mDebug() << "finishJob: " << job->sourceUrl() << job->destinationFileName();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "finishJob: " << job->sourceUrl() << job->destinationFileName();
 
     deactivateJob( job );
     Q_EMIT jobRemoved();
@@ -124,7 +124,7 @@ void DownloadQueueSet::finishJob( HttpJob * job, const QByteArray& data )
 
 void DownloadQueueSet::redirectJob( HttpJob * job, const QUrl& newSourceUrl )
 {
-    mDebug() << "jobRedirected:" << job->sourceUrl() << " -> " << newSourceUrl;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "jobRedirected:" << job->sourceUrl() << " -> " << newSourceUrl;
 
     deactivateJob( job );
     Q_EMIT jobRemoved();
@@ -142,17 +142,17 @@ void DownloadQueueSet::retryOrBlacklistJob( HttpJob * job, const int errorCode )
     Q_EMIT jobRemoved();
 
     if ( job->tryAgain() ) {
-        mDebug() << QString::fromUtf8( "Download of %1 to %2 failed, but trying again soon" )
+        qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "Download of %1 to %2 failed, but trying again soon" )
             .arg( job->sourceUrl().toString(), job->destinationFileName() );
         m_retryQueue.enqueue( job );
         Q_EMIT jobRetry();
     }
     else {
-        mDebug() << "JOB-address: " << job
+        qCDebug(DIGIKAM_MARBLE_LOG) << "JOB-address: " << job
                  << "Blacklist-size:" << m_jobBlackList.size()
                  << "err:" << errorCode;
         m_jobBlackList.insert( job->sourceUrl().toString() );
-        mDebug() << QString::fromUtf8( "Download of %1 Blacklisted. "
+        qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "Download of %1 Blacklisted. "
                              "Number of blacklist items: %2" )
             .arg( job->destinationFileName() )
             .arg( m_jobBlackList.size() );

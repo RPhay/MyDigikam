@@ -13,7 +13,7 @@
 
 // Marble
 #include "MarbleClock.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 
 using namespace Marble;
 /* TRANSLATOR Marble::TimeControlWidget */

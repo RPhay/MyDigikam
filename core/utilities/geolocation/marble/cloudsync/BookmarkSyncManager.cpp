@@ -7,7 +7,7 @@
 
 #include "GeoWriter.h"
 #include "MarbleDirs.h"
-#include "MarbleDebug.h"
+#include "digikam_debug.h"
 #include "GeoDataParser.h"
 #include "GeoDataFolder.h"
 #include "GeoDataDocument.h"
@@ -291,7 +291,7 @@ void BookmarkSyncManager::Private::uploadBookmarks()
 
     QFile bookmarksFile( m_localBookmarksPath );
     if( !bookmarksFile.open( QFile::ReadOnly ) ) {
-        mDebug() << "Failed to open file" << bookmarksFile.fileName()
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Failed to open file" << bookmarksFile.fileName()
                  <<  ". It is either missing or not readable.";
         return;
     }
@@ -320,7 +320,7 @@ void BookmarkSyncManager::Private::downloadBookmarks()
 
 void BookmarkSyncManager::Private::downloadTimestamp()
 {
-    mDebug() << "Determining remote bookmark state.";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Determining remote bookmark state.";
     m_timestampReply = m_network.get( QNetworkRequest( endpointUrl( m_timestampEndpoint ) ) );
     connect( m_timestampReply, SIGNAL(finished()),
              m_q, SLOT(parseTimestamp()) );
@@ -353,7 +353,7 @@ void BookmarkSyncManager::Private::clearCache()
             QFile file( fileInfo.absoluteFilePath() );
             bool removed = file.remove();
             if( !removed ) {
-                mDebug() << "Could not delete" << file.fileName() <<
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Could not delete" << file.fileName() <<
                          "Make sure you have sufficient permissions.";
             }
         }
@@ -471,7 +471,7 @@ QList<DiffItem> BookmarkSyncManager::Private::diff( QString &sourcePath, QString
 {
     QFile fileB( destinationPath );
     if( !fileB.open( QFile::ReadOnly ) ) {
-        mDebug() << "Could not open file " << fileB.fileName();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Could not open file " << fileB.fileName();
     }
     return diff( sourcePath, &fileB );
 }
@@ -480,7 +480,7 @@ QList<DiffItem> BookmarkSyncManager::Private::diff( QString &sourcePath, QIODevi
 {
     QFile fileA( sourcePath );
     if( !fileA.open( QFile::ReadOnly ) ) {
-        mDebug() << "Could not open file " << fileA.fileName();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Could not open file " << fileA.fileName();
     }
 
     return diff( &fileA, fileB );
@@ -490,7 +490,7 @@ QList<DiffItem> BookmarkSyncManager::Private::diff( QIODevice *source, QString &
 {
     QFile fileB( destinationPath );
     if( !fileB.open( QFile::ReadOnly ) ) {
-        mDebug() << "Could not open file " << fileB.fileName();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Could not open file " << fileB.fileName();
     }
 
     return diff( source, &fileB );
@@ -691,7 +691,7 @@ void BookmarkSyncManager::Private::saveDownloadedToCache( const QByteArray &kml 
     QDir().mkdir( localBookmarksDir.remove( QString::fromUtf8("bookmarks.kml") ) );
     QFile bookmarksFile( m_localBookmarksPath );
     if( !bookmarksFile.open( QFile::ReadWrite ) ) {
-        mDebug() << "Failed to open file" << bookmarksFile.fileName()
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Failed to open file" << bookmarksFile.fileName()
                  <<  ". It is either missing or not readable.";
         return;
     }
@@ -707,7 +707,7 @@ void BookmarkSyncManager::Private::parseTimestamp()
     QJsonValue dataValue = jsonDoc.object().value(QStringLiteral("data"));
 
     m_cloudTimestamp = dataValue.toString();
-    mDebug() << "Remote bookmark timestamp is " << m_cloudTimestamp;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Remote bookmark timestamp is " << m_cloudTimestamp;
     continueSynchronization();
 }
 void BookmarkSyncManager::Private::copyLocalToCache()
@@ -728,7 +728,7 @@ void BookmarkSyncManager::Private::continueSynchronization()
     } else {
         QString lastSyncedPath = lastSyncedKmlPath();
         if( lastSyncedPath.isEmpty() ) {
-            mDebug() << "Never synced. Uploading bookmarks.";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Never synced. Uploading bookmarks.";
             uploadBookmarks();
         } else {
             QList<DiffItem> diffList = diff( lastSyncedPath, m_localBookmarksPath );
@@ -740,7 +740,7 @@ void BookmarkSyncManager::Private::continueSynchronization()
             }
 
             if( localModified ) {
-                mDebug() << "Local modifications, uploading.";
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Local modifications, uploading.";
                 uploadBookmarks();
             }
         }
@@ -749,7 +749,7 @@ void BookmarkSyncManager::Private::continueSynchronization()
 
 void BookmarkSyncManager::Private::completeSynchronization()
 {
-    mDebug() << "Merging remote and local bookmark file";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Merging remote and local bookmark file";
     QString lastSyncedPath = lastSyncedKmlPath();
     QFile localBookmarksFile( m_localBookmarksPath );
     QByteArray result = m_downloadReply->readAll();
@@ -758,7 +758,7 @@ void BookmarkSyncManager::Private::completeSynchronization()
 
     if( lastSyncedPath.isEmpty() ) {
         if( localBookmarksFile.exists() ) {
-            mDebug() << "Conflict between remote bookmarks and local ones";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Conflict between remote bookmarks and local ones";
             m_diffA = diff( &buffer, m_localBookmarksPath );
             m_diffB = diff( m_localBookmarksPath, &buffer );
         } else {
@@ -794,7 +794,7 @@ void BookmarkSyncManager::Private::completeUpload()
     QJsonValue dataValue = jsonDoc.object().value(QStringLiteral("data"));
 
     m_cloudTimestamp = dataValue.toString();
-    mDebug() << "Uploaded bookmarks to remote server. Timestamp is " << m_cloudTimestamp;
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Uploaded bookmarks to remote server. Timestamp is " << m_cloudTimestamp;
     copyLocalToCache();
     Q_EMIT m_q->syncComplete();
 }
