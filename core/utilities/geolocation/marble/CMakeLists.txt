@@ -26,10 +26,7 @@ set(marblewidget_SRCS
     ${graphicsview_SRCS}
     ${layers_SRCS}
     ${osm_SRCS}
-    blendings/Blending.cpp
-    blendings/BlendingAlgorithms.cpp
-    blendings/BlendingFactory.cpp
-    blendings/SunLightBlending.cpp
+
     DownloadRegion.cpp
     DownloadRegionDialog.cpp
     LatLonBoxWidget.cpp
@@ -93,17 +90,6 @@ set(marblewidget_SRCS
     MapThemeManager.cpp
     ViewportParams.cpp
     ViewParams.cpp
-    projections/AbstractProjection.cpp
-    projections/CylindricalProjection.cpp
-    projections/AzimuthalProjection.cpp
-    projections/SphericalProjection.cpp
-    projections/EquirectProjection.cpp
-    projections/MercatorProjection.cpp
-    projections/GnomonicProjection.cpp
-    projections/StereographicProjection.cpp
-    projections/LambertAzimuthalProjection.cpp
-    projections/AzimuthalEquidistantProjection.cpp
-    projections/VerticalPerspectiveProjection.cpp
     VisiblePlacemark.cpp
     PlacemarkLayout.cpp
     Planet.cpp
@@ -140,12 +126,10 @@ set(marblewidget_SRCS
     EditPlacemarkDialog.cpp
     AddLinkDialog.cpp
     FormattedTextWidget.cpp
-
     AbstractDataPlugin.cpp
     AbstractDataPluginModel.cpp
     AbstractDataPluginItem.cpp
     AbstractWorkerThread.cpp
-
     PluginInterface.cpp
     DialogConfigurationInterface.cpp
     LayerInterface.cpp
@@ -159,20 +143,68 @@ set(marblewidget_SRCS
     MarblePluginSettingsWidget.cpp
     RenderPluginModel.cpp
     PluginItemDelegate.cpp
-
     SunLocator.cpp
     MarbleClock.cpp
     SunControlWidget.cpp
     MergedLayerDecorator.cpp
-
     MathHelper.cpp
-
     LatLonEdit.cpp
     PlacemarkEditHeader.cpp
-
     MapThemeSortFilterProxyModel.cpp
-
     TemplateDocument.cpp
+    ParsingRunnerManager.cpp
+    ReverseGeocodingRunnerManager.cpp
+    RoutingRunnerManager.cpp
+    SearchRunnerManager.cpp
+    AutoNavigation.cpp
+    SearchRunnerPlugin.cpp
+    ReverseGeocodingRunnerPlugin.cpp
+    RoutingRunnerPlugin.cpp
+    ParseRunnerPlugin.cpp
+    SearchRunner.cpp
+    ReverseGeocodingRunner.cpp
+    RoutingRunner.cpp
+    ParsingRunner.cpp
+    RunnerTask.cpp
+    BookmarkManager.cpp
+    EditBookmarkDialog.cpp
+    BookmarkManagerDialog.cpp
+    NewBookmarkFolderDialog.cpp
+    PrintOptionsWidget.cpp
+    ExternalEditorDialog.cpp
+    GoToDialog.cpp
+    MapWizard.cpp
+    OwsServiceManager.cpp
+    MapThemeDownloadDialog.cpp
+    GeoGraphicsScene.cpp
+    ElevationModel.cpp
+    MarbleLineEdit.cpp
+    SearchInputWidget.cpp
+    SearchWidget.cpp
+    kineticmodel.cpp
+    NewstuffModel.cpp
+    MarbleZip.cpp
+    OsmcSymbol.cpp
+    MarbleDirs.cpp
+    PluginManager.cpp
+    StyleBuilder.cpp
+
+    blendings/Blending.cpp
+    blendings/BlendingAlgorithms.cpp
+    blendings/BlendingFactory.cpp
+    blendings/SunLightBlending.cpp
+
+    projections/AbstractProjection.cpp
+    projections/CylindricalProjection.cpp
+    projections/AzimuthalProjection.cpp
+    projections/SphericalProjection.cpp
+    projections/EquirectProjection.cpp
+    projections/MercatorProjection.cpp
+    projections/GnomonicProjection.cpp
+    projections/StereographicProjection.cpp
+    projections/LambertAzimuthalProjection.cpp
+    projections/AzimuthalEquidistantProjection.cpp
+    projections/VerticalPerspectiveProjection.cpp
 
     routing/AlternativeRoutesModel.cpp
     routing/Maneuver.cpp
@@ -196,46 +228,6 @@ set(marblewidget_SRCS
     routing/instructions/RoutingWaypoint.cpp
     routing/instructions/WaypointParser.cpp
 
-    ParsingRunnerManager.cpp
-    ReverseGeocodingRunnerManager.cpp
-    RoutingRunnerManager.cpp
-    SearchRunnerManager.cpp
-
-    AutoNavigation.cpp
-
-    SearchRunnerPlugin.cpp
-    ReverseGeocodingRunnerPlugin.cpp
-    RoutingRunnerPlugin.cpp
-    ParseRunnerPlugin.cpp
-    SearchRunner.cpp
-    ReverseGeocodingRunner.cpp
-    RoutingRunner.cpp
-    ParsingRunner.cpp
-    RunnerTask.cpp
-
-    BookmarkManager.cpp
-    EditBookmarkDialog.cpp
-    BookmarkManagerDialog.cpp
-    NewBookmarkFolderDialog.cpp
-
-    PrintOptionsWidget.cpp
-    ExternalEditorDialog.cpp
-    GoToDialog.cpp
-
-    MapWizard.cpp
-    OwsServiceManager.cpp
-    MapThemeDownloadDialog.cpp
-    GeoGraphicsScene.cpp
-    ElevationModel.cpp
-    MarbleLineEdit.cpp
-    SearchInputWidget.cpp
-    SearchWidget.cpp
-    kineticmodel.cpp
-    NewstuffModel.cpp
-    MarbleZip.cpp
-
-    OsmcSymbol.cpp
-
     cloudsync/CloudSyncManager.cpp
     cloudsync/RouteSyncManager.cpp
     cloudsync/CloudRouteModel.cpp
@@ -246,10 +238,6 @@ set(marblewidget_SRCS
     cloudsync/MergeItem.cpp
     cloudsync/ConflictDialog.cpp
     cloudsync/OwncloudSyncBackend.cpp
-
-    MarbleDirs.cpp
-    PluginManager.cpp
-    StyleBuilder.cpp
 )
 
 set (marblewidget_UI
