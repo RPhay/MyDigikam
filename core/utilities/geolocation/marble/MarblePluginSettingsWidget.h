@@ -41,14 +41,12 @@ class DIGIKAM_EXPORT MarblePluginSettingsWidget : public QWidget
 
     void setModel( RenderPluginModel* pluginModel );
 
-    void setAboutIcon( const QIcon& icon );
     void setConfigIcon( const QIcon& icon );
 
  Q_SIGNALS:
     void pluginListViewClicked();
 
  private:
-    Q_PRIVATE_SLOT( d, void showPluginAboutDialog( const QModelIndex & ) )
     Q_PRIVATE_SLOT( d, void showPluginConfigDialog( const QModelIndex & ) )
 
  private:

@@ -12,7 +12,6 @@
 // Marble
 #include "AbstractDataPluginItem.h"
 #include "AbstractFloatItem.h"
-#include "MarbleAboutDialog.h"
 #include "MarbleDirs.h"
 #include "MarbleWidget.h"
 #include "MarbleModel.h"
@@ -131,8 +130,6 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     QAction* fullscreenAction = new QAction( tr( "&Full Screen Mode" ), parent );
     fullscreenAction->setCheckable( true );
 
-    QAction* aboutDialogAction = new QAction(QIcon(QStringLiteral(":/icons/marble.png")), tr("&About"), parent);
-
     QMenu* infoBoxMenu = createInfoBoxMenu(m_widget);
 
     const bool smallScreen = MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen;
@@ -153,9 +150,7 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     m_rmbMenu.addSeparator();
     m_rmbMenu.addMenu( infoBoxMenu );
 
-    if ( !smallScreen ) {
-        m_rmbMenu.addAction( aboutDialogAction );
-    } else {
+    if ( smallScreen ) {
         m_rmbMenu.addAction( fullscreenAction );
     }
 
@@ -163,7 +158,6 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     parent->connect( m_directionsFromHereAction, SIGNAL(triggered()), SLOT(directionsFromHere()) );
     parent->connect( m_directionsToHereAction, SIGNAL(triggered()), SLOT(directionsToHere()) );
     parent->connect( addBookmark, SIGNAL(triggered()), SLOT(addBookmark()) );
-    parent->connect( aboutDialogAction, SIGNAL(triggered()), SLOT(slotAboutDialog()) );
     parent->connect( m_copyCoordinateAction, SIGNAL(triggered()), SLOT(slotCopyCoordinates()) );
     parent->connect( m_copyGeoAction, SIGNAL(triggered()), SLOT(slotCopyGeo()) );
     parent->connect( m_infoDialogAction, SIGNAL(triggered()), SLOT(slotInfoDialog()) );
@@ -804,14 +798,6 @@ void MarbleWidgetPopupMenu::slotCopyGeo()
         QClipboard * const clipboard = QApplication::clipboard();
         clipboard->setMimeData(myMimeData);
     }
-}
-
-
-void MarbleWidgetPopupMenu::slotAboutDialog()
-{
-    QPointer<MarbleAboutDialog> dialog = new MarbleAboutDialog( d->m_widget );
-    dialog->exec();
-    delete dialog;
 }
 
 void MarbleWidgetPopupMenu::addAction( Qt::MouseButton button, QAction* action )

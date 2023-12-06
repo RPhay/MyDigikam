@@ -4,29 +4,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-add_definitions(-DMARBLE_NO_WEBKITWIDGETS)
-
-add_definitions(
-    -DQT_USE_QSTRINGBUILDER
-    -DQT_NO_SIGNALS_SLOTS_KEYWORDS
-    -DQT_NO_URL_CAST_FROM_STRING
-    -DQT_NO_CAST_TO_ASCII
-    -DQT_NO_CAST_FROM_BYTEARRAY
-)
-
-if (NOT WIN32)
-    # Strict iterators can't be used on Windows, they lead to a link error
-    # when application code iterates over a QVector<QPoint> for instance
-    # See example at https://bugreports.qt.io/browse/QTBUG-78112
-    add_definitions(-DQT_STRICT_ITERATORS)
-endif()
-
-if (CMAKE_COMPILER_IS_GNUCXX)
-    # Its good programming practice to build with no warnings...
-    add_definitions( -Wall -Wextra -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Wno-long-long
-                     -Wchar-subscripts -Wcast-align -Wpointer-arith -Wformat-security )
-endif()
-
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Network,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
@@ -84,7 +61,6 @@ set(marblewidget_SRCS
     AnimatedUpdateTrack.cpp
     CurrentLocationWidget.cpp
     MarbleNavigator.cpp
-    MarbleAboutDialog.cpp
     MarbleInputHandler.cpp
     MarbleWidgetInputHandler.cpp
     MarbleWidgetPopupMenu.cpp
@@ -153,7 +129,6 @@ set(marblewidget_SRCS
     StackedTileLoader.cpp
     TileLoaderHelper.cpp
     TileCreator.cpp
-    #jsonparser.cpp
     FileLoader.cpp
     FileManager.cpp
     PositionTracking.cpp
@@ -183,7 +158,6 @@ set(marblewidget_SRCS
     RouteSimulationPositionProviderPlugin.cpp
     MarblePluginSettingsWidget.cpp
     RenderPluginModel.cpp
-    PluginAboutDialog.cpp
     PluginItemDelegate.cpp
 
     SunLocator.cpp
@@ -294,7 +268,6 @@ set (marblewidget_UI
     MarblePluginSettingsWidget.ui
     TileCreatorDialog.ui
     TileLevelRangeWidget.ui
-    MarbleAboutDialog.ui
     SunControlWidget.ui
     LatLonEdit.ui
     PlacemarkEditHeader.ui

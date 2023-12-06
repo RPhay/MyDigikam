@@ -91,18 +91,18 @@
         <file alias="marble/audio-x-generic.png">data/bitmaps/audio-x-generic.png</file>
     </qresource>
     <qresource prefix="/marble/webpopup">
-        <file alias="deco_places.png">webpopup/marble_deco_places.png</file>
-        <file alias="placesscreen.css">webpopup/placesscreen.css</file>
-        <file alias="geoplace.html">webpopup/geoplace.html</file>
-        <file alias="city.html">webpopup/city.html</file>
-        <file alias="nation.html">webpopup/nation.html</file>
-        <file alias="skyplace.html">webpopup/skyplace.html</file>
-        <file alias="photooverlay.html">webpopup/photooverlay.html</file>
-        <file alias="osm.html">webpopup/osm.html</file>
+        <file alias="deco_places.png">data/webpopup/marble_deco_places.png</file>
+        <file alias="placesscreen.css">data/webpopup/placesscreen.css</file>
+        <file alias="geoplace.html">data/webpopup/geoplace.html</file>
+        <file alias="city.html">data/webpopup/city.html</file>
+        <file alias="nation.html">data/webpopup/nation.html</file>
+        <file alias="skyplace.html">data/webpopup/skyplace.html</file>
+        <file alias="photooverlay.html">data/webpopup/photooverlay.html</file>
+        <file alias="osm.html">data/webpopup/osm.html</file>
     </qresource>
     <qresource prefix="/htmlfeatures">
-        <file alias="files/bootstrap.min.css">htmlfeatures/bootstrap.min.css</file>
-        <file alias="includes/bootstrap.inc">htmlfeatures/bootstrap.inc</file>
+        <file alias="files/bootstrap.min.css">data/htmlfeatures/bootstrap.min.css</file>
+        <file alias="includes/bootstrap.inc">data/htmlfeatures/bootstrap.inc</file>
     </qresource>
     <qresource prefix="/osmc-symbols">
         <file alias="dot.svg">data/svg/osmc-symbols/dot.svg</file>

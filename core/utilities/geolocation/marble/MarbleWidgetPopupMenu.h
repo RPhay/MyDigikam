@@ -55,7 +55,6 @@ private Q_SLOTS:
     void slotInfoDialog();
     void slotCopyCoordinates();
     void slotCopyGeo();
-    void slotAboutDialog();
 
 private Q_SLOTS:
     void directionsFromHere();

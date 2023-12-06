@@ -142,7 +142,6 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget, CloudSync
     tabWidget->addTab( d->w_pluginSettings, tr( "Plugins" ) );
 
     // Setting the icons for the plugin dialog.
-    d->w_pluginSettings->setAboutIcon(QIcon(QStringLiteral(":/icons/help-about.png")));
     d->w_pluginSettings->setConfigIcon(QIcon(QStringLiteral(":/icons/settings-configure.png")));
 
     connect( this, SIGNAL(rejected()), &d->m_pluginModel, SLOT(retrievePluginState()) );

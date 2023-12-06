@@ -146,7 +146,6 @@ MarbleWidget::MarbleWidget(QWidget *parent)
 {
 //    setAttribute( Qt::WA_PaintOnScreen, true );
     d->construct();
-    MarbleDirs::debug();
 }
 
 MarbleWidget::~MarbleWidget()

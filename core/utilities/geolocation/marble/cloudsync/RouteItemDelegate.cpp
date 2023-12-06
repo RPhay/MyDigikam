@@ -2,12 +2,6 @@
 
 #include "CloudRouteModel.h"
 
-#ifdef MARBLE_NO_WEBKITWIDGETS
-#include <QWidget>
-#else
-#include <QWebEngineView>
-#endif
-
 #include <QApplication>
 #include <QAbstractTextDocumentLayout>
 #include <QPainter>
