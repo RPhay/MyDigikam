@@ -5,7 +5,27 @@
 #
 
 add_definitions(-DMARBLE_NO_WEBKITWIDGETS)
-add_definitions(-DKML_LAZY_IMP)
+
+add_definitions(
+    -DQT_USE_QSTRINGBUILDER
+    -DQT_NO_SIGNALS_SLOTS_KEYWORDS
+    -DQT_NO_URL_CAST_FROM_STRING
+    -DQT_NO_CAST_TO_ASCII
+    -DQT_NO_CAST_FROM_BYTEARRAY
+)
+
+if (NOT WIN32)
+    # Strict iterators can't be used on Windows, they lead to a link error
+    # when application code iterates over a QVector<QPoint> for instance
+    # See example at https://bugreports.qt.io/browse/QTBUG-78112
+    add_definitions(-DQT_STRICT_ITERATORS)
+endif()
+
+if (CMAKE_COMPILER_IS_GNUCXX)
+    # Its good programming practice to build with no warnings...
+    add_definitions( -Wall -Wextra -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Wno-long-long
+                     -Wchar-subscripts -Wcast-align -Wpointer-arith -Wformat-security )
+endif()
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Network,INTERFACE_INCLUDE_DIRECTORIES>
@@ -74,7 +94,6 @@ set(marblewidget_SRCS
     kdescendantsproxymodel.cpp
     BranchFilterProxyModel.cpp
     TreeViewDecoratorModel.cpp
-    MarbleDebug.cpp
     Tile.cpp
     TextureTile.cpp
     TileCoordsPyramid.cpp
@@ -311,6 +330,11 @@ add_library(core_marble_obj OBJECT  ${marblewidget_SRCS} ${SOURCES_UI_HDRS})
 target_compile_definitions(core_marble_obj
                            PRIVATE
                            digikamcore_EXPORTS
+)
+
+set_target_properties(core_marble_obj
+                      PROPERTIES
+                      COMPILE_FLAGS "-DKML_LAZY_IMP"
 )
 
 add_subdirectory(data)

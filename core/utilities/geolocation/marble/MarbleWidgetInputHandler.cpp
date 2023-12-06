@@ -151,9 +151,6 @@ bool MarbleWidgetInputHandler::handleKeyPress(QKeyEvent *event)
             }
         } else {
             switch(event->key()) {
-                case Qt::Key_I:
-                    MarbleDebug::setEnabled(!MarbleDebug::isEnabled());
-                    break;
                 case Qt::Key_R:
                     d->m_marbleWidget->setShowRuntimeTrace(!d->m_marbleWidget->showRuntimeTrace());
                     break;
