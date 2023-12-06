@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-05 00:39+0000\n"
-"PO-Revision-Date: 2023-12-04 21:31+0100\n"
+"POT-Creation-Date: 2023-12-06 00:40+0000\n"
+"PO-Revision-Date: 2023-12-05 06:45+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -36496,7 +36496,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Odpri pogovorno okno nastavitev za nastavljanje posodobitev."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:169
+#: core/utilities/setup/downloader/filesdownloader.cpp:161
 #, kde-format
 msgid "Download"
 msgstr "Prenesi sem"
@@ -60723,41 +60723,39 @@ msgstr "Izberite kategorijo"
 msgid "Your collection will use this category:"
 msgstr "Vaša nova zbirka bo uporabljala to kategorijo:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Prejemanje zahtevanih datotek"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:177
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
+#, kde-format
 msgid "Use Face Detection feature"
-msgstr "Zaznava obrazov"
+msgstr "Uporabi zmožnost zaznave obrazov"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:178
+#: core/utilities/setup/downloader/filesdownloader.cpp:170
 #, kde-format
 msgid "Use Aesthetic Detection feature"
-msgstr ""
+msgstr "Uporabi zmožnost estetske zaznave"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:179
-#, fuzzy, kde-format
-#| msgid "Autotags Assignment"
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#, kde-format
 msgid "Use Auto Tags Assignment feature"
-msgstr "Samodejno dodeljevanje značk"
+msgstr "Uporabi zmožnost samodejnega dodeljevanje značk"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:251
+#: core/utilities/setup/downloader/filesdownloader.cpp:243
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Vse datoteke so bile uspešno prenesene."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:258
+#: core/utilities/setup/downloader/filesdownloader.cpp:250
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Napaka prenosa"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -60776,68 +60774,79 @@ msgstr ""
 "\n"
 "Lahko ponovite ali nadaljujete prenos po novem zagonu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Poskusite znova"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:402
+#: core/utilities/setup/downloader/filesdownloader.cpp:394
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Kontrolna vsota ni pravilna."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:426
+#: core/utilities/setup/downloader/filesdownloader.cpp:418
 #, kde-format
 msgid "File write error."
 msgstr "Napaka pri pisanju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:433
+#: core/utilities/setup/downloader/filesdownloader.cpp:425
 #, kde-format
 msgid "File open error."
 msgstr "Napaka pri odpiranju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:448
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Datoteka na strežniku je prevelika."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:587
+#: core/utilities/setup/downloader/filesdownloader.cpp:581
 #, fuzzy, kde-format
-#| msgctxt "%1: folder path, %2: disk size with unit"
+#| msgctxt "%1: folder path"
 #| msgid ""
-#| "<p>For the face engine and red eye removal tool, digiKam needs some large "
-#| "binary files. Some of these files were not found. Click 'Download' to "
-#| "begin downloading the needed files. You can cancel this process, the next "
-#| "time digiKam is started this dialog will appear again. Face detection "
-#| "will not work without these files.</p><p>The files will be downloaded to "
-#| "%1. Make sure there are around %2 available. <b>After the successful "
-#| "download you have to restart digiKam.</b></p>"
+#| "<p>For face detection, the red-eye removal tool, the classification of "
+#| "images according to aesthetics or the automatic assignment of tags to "
+#| "images, digiKam requires some large binary files. You can choose which "
+#| "feature you want to use.</p><p>Some of these files were not found. Click "
+#| "“Download” to begin downloading the files you need. You can cancel this "
+#| "process, this dialog will appear again the next time you start digiKam. "
+#| "Without these files the selected features will not work.</p><p>The files "
+#| "will be downloaded to %1.</p><p><b>After the successful download you have "
+#| "to restart digiKam.</b></p>"
 msgctxt "%1: folder path"
 msgid ""
 "<p>For face detection, the red-eye removal tool, the classification of "
 "images according to aesthetics or the automatic assignment of tags to "
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p><p>Some of these files were not found. Click "
-"“Download” to begin downloading the files you need. You can cancel this "
-"process, this dialog will appear again the next time you start digiKam. "
-"Without these files the selected features will not work.</p><p>The files "
-"will be downloaded to %1.</p><p><b>After the successful download you have to "
-"restart digiKam.</b></p>"
+"“Download” to begin downloading the files you need. You can close this "
+"dialog, you will be asked again the next time you start digiKam. Without "
+"these files the selected features will not work.</p><p>The files will be "
+"downloaded to %1.</p><p><b>After the successful download you have to restart "
+"digiKam.</b></p>"
 msgstr ""
-"<p>Za orodje prepoznav obraza in za orodje za odstranjevanje rdečih oči "
-"digiKam potrebuje nekaj velikih binarnih datotek. Nekaterih teh datotek ni "
-"bilo mogoče najti. Kliknite na 'Prenesi' za začetek prenosa. Ta postopek "
-"lahko prekličete, a ko boste naslednjič zagnali digiKam, se bo to pogovorno "
-"okno spet pojavilo. Brez teh datotek prepoznavanje obrazov ne bo delovalo.</"
-"p><p>Datoteke bodo prenesene v %1. Prepričajte se, da je na voljo približno "
-"%2. <b>Po uspešnem prenosu morate znova zagnati digiKam.</b></p>"
+"<p>Za zaznavanje obrazov, za orodje za odstranjevanje rdečih oči, za "
+"razvrščanje slik glede na estetiko ali samodejno dodeljevanje oznak slikam "
+"potrebuje digiKam nekaj velikih binarnih datotek. Izberete lahko, katero "
+"zmožnost želite uporabiti.</p><p>Nekaterih od teh datotek ni bilo mogoče "
+"najti. Kliknite »Prenesi«, da začnete prenašati datoteke, ki jih "
+"potrebujete. Ta postopek lahko prekličete, to pogovorno okno se bo znova "
+"prikazalo, ko naslednjič zaženete digiKam. Brez teh datotek izbrane "
+"zmožnosti ne bodo delovale.</p><p>Datoteke bodo prenesene v %1.</p><p><b>Po "
+"uspešnem prenosu morate ponovno zagnati digiKam.</b> </p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:599
+#: core/utilities/setup/downloader/filesdownloader.cpp:594
 #, kde-format
-msgctxt "%1: disk size with unit"
-msgid "The download of the selected features requires %1"
+msgctxt "%1: file counter, %2: disk size with unit"
+msgid "The download requires %1 files with a size of %2."
 msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#, fuzzy, kde-format
+#| msgctxt "%1: disk size with unit"
+#| msgid "The download of the selected features requires %1"
+msgid "All files of the selected features were found."
+msgstr "Prenos izbranih zmožnosti zahteva %1"
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -61610,7 +61619,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Napredno"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:246
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61626,7 +61635,7 @@ msgstr ""
 "datoteka ni več edinstveno dodeljena in se bo uporabljala za obe sliki, kar "
 "lahko povzroča težave z metapodatki."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:264
+#: core/utilities/setup/metadata/setupmetadata.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61637,7 +61646,7 @@ msgstr ""
 "vaše slike prikazane napačno, zato to možnost izklopite le, če to nujno "
 "potrebno."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:287
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61655,13 +61664,13 @@ msgstr ""
 "Če se že za to odločite, naredite vsaj varnostno kopijo surovih datotek "
 "slik. Močno vam priporočamo, da te možnosti ne omogočite."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:295
+#: core/utilities/setup/metadata/setupmetadata.cpp:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Da, razumem"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:305
+#: core/utilities/setup/metadata/setupmetadata.cpp:326
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -62622,11 +62631,12 @@ msgid "Enable internal debug logging"
 msgstr "Omogoči notranje beleženje napak"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:80
-#, kde-format
-msgid "Download Face Engine Data..."
+#, fuzzy, kde-format
+#| msgid "Download Face Engine Data..."
+msgid "Download required binary data..."
 msgstr "Prenesi podatke za prepoznavanje obrazov..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:88
+#: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
