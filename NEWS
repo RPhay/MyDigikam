@@ -36,7 +36,7 @@ BUGFIXES:
 023 ==> 438317 - Annoying download binary message at startup.
 024 ==> 478035 - I chose a picture and applied a face tag to it but I was unable to enter a name for the person and the the program crashed.
 025 ==> 478098 - Missing DLL on WIndow.
-026 ==> 
+026 ==> 478136 - digiKam crashes when manually adding or correcting people tag in Preview mode.
 027 ==> 
 028 ==> 
 029 ==> 
