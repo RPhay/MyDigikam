@@ -9,7 +9,7 @@
 
 #include "digikam_debug.h"
 
-
+#include <klocalizedstring.h>
 
 namespace Marble
 {
@@ -523,12 +523,12 @@ void LatLonEdit::setDimension( Dimension dimension )
 
         switch (dimension) {
         case Longitude:
-            d->m_sign->addItem( tr("E", "East, the direction" ) );
-            d->m_sign->addItem( tr("W", "West, the direction" ) );
+            d->m_sign->addItem( i18nc("East, the direction", "E" ) );
+            d->m_sign->addItem( i18nc("West, the direction", "W" ) );
             break;
         case Latitude:
-            d->m_sign->addItem( tr("N", "North, the direction" ) );
-            d->m_sign->addItem( tr("S", "South, the direction" ) );
+            d->m_sign->addItem( i18nc("North, the direction", "N" ) );
+            d->m_sign->addItem( i18nc("South, the direction", "S" ) );
             break;
         }
     }

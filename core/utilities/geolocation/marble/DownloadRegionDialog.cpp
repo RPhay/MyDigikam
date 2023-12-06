@@ -45,6 +45,8 @@
 #include "GeoSceneMap.h"
 #include "Route.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -246,9 +248,9 @@ DownloadRegionDialog::DownloadRegionDialog( MarbleWidget *const widget, QWidget 
     QVBoxLayout * const layout = new QVBoxLayout;
     d->m_layerLabel = new QLabel( tr( "Tile type to be downloaded:" ));
     d->m_layerComboBox = new QComboBox();
-    d->m_layerComboBox->addItem(tr("Texture tiles"));
-    d->m_layerComboBox->addItem(tr("Vector tiles"));
-    d->m_layerComboBox->setToolTip(tr("Allows selection between layer types that are visibly being rendered."));
+    d->m_layerComboBox->addItem(i18n("Texture tiles"));
+    d->m_layerComboBox->addItem(i18n("Vector tiles"));
+    d->m_layerComboBox->setToolTip(i18n("Allows selection between layer types that are visibly being rendered."));
     updateTileLayer();
 
     layout->addWidget( d->m_layerLabel );

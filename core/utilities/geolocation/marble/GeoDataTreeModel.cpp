@@ -38,6 +38,8 @@
 #include "digikam_debug.h"
 #include "MarblePlacemarkModel.h"
 
+#include <klocalizedstring.h>
+
 using namespace Marble;
 
 class Q_DECL_HIDDEN GeoDataTreeModel::Private {
@@ -178,13 +180,13 @@ QVariant GeoDataTreeModel::headerData(int section, Qt::Orientation orientation,
     {
         switch ( section ) {
         case 0:
-            return tr("Name");
+            return i18n("Name");
         case 1:
-             return tr("Type");
+             return i18n("Type");
         case 2:
-            return tr("Popularity");
+            return i18n("Popularity");
         case 3:
-            return tr("PopIndex", "Popularity index");
+            return i18nc("Popularity index", "PopIndex");
         }
     }
     return QVariant();

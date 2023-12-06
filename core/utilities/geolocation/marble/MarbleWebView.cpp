@@ -10,15 +10,17 @@
 #include <QKeyEvent>
 #include <QClipboard>
 
+#include <klocalizedstring.h>
+
 MarbleWebView::MarbleWebView(QWidget *parent) :
     QWebEngineView(parent),
     m_contextMenu(new QMenu(this)),
     m_copyAction(new QAction(this))
 {
-    m_copyAction->setText(tr("Copy"));
+    m_copyAction->setText(i18n("Copy"));
     m_copyAction->setIcon(QIcon(QStringLiteral(":/icons/edit-copy.png")));
     m_copyAction->setIconVisibleInMenu(true);
-    m_copyAction->setToolTip(tr("Copy selected content"));
+    m_copyAction->setToolTip(i18n("Copy selected content"));
     connect(m_copyAction, SIGNAL(triggered()),
             this, SLOT(copySelectedText()));
     m_contextMenu->addAction(m_copyAction);

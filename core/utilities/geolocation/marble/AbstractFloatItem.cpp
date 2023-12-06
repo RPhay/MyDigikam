@@ -19,6 +19,8 @@
 #include "GeoPainter.h"
 #include "digikam_debug.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -133,14 +135,14 @@ QStringList AbstractFloatItem::renderPosition() const
 
 void AbstractFloatItem::setVisible( bool visible )
 {
-    // Reimplemented since AbstractFloatItem does multiple inheritance 
+    // Reimplemented since AbstractFloatItem does multiple inheritance
     // and the (set)Visible() methods are available in both base classes!
     RenderPlugin::setVisible( visible );
 }
 
 bool AbstractFloatItem::visible() const
 {
-    // Reimplemented since AbstractFloatItem does multiple inheritance 
+    // Reimplemented since AbstractFloatItem does multiple inheritance
     // and the (set)Visible() methods are available in both base classes!
     return RenderPlugin::visible();
 }
@@ -232,7 +234,7 @@ QMenu* AbstractFloatItem::contextMenu()
     {
         d->m_contextMenu = new QMenu;
 
-        QAction *lockAction = d->m_contextMenu->addAction(QIcon(QStringLiteral(":/icons/unlock.png")), tr("&Lock"));
+        QAction *lockAction = d->m_contextMenu->addAction(QIcon(QStringLiteral(":/icons/unlock.png")), i18n("&Lock"));
         lockAction->setCheckable( true );
         lockAction->setChecked( positionLocked() );
         connect( lockAction, SIGNAL(triggered(bool)), this, SLOT(setPositionLocked(bool)) );
@@ -247,7 +249,7 @@ QMenu* AbstractFloatItem::contextMenu()
         if( dialog )
         {
             d->m_contextMenu->addSeparator();
-            QAction *configAction = d->m_contextMenu->addAction(QIcon(QStringLiteral(":/icons/settings-configure.png")), tr("&Configure..."));
+            QAction *configAction = d->m_contextMenu->addAction(QIcon(QStringLiteral(":/icons/settings-configure.png")), i18n("&Configure..."));
             connect( configAction, SIGNAL(triggered()), dialog, SLOT(exec()) );
         }
     }

@@ -20,7 +20,6 @@
 #include "StyleBuilder.h"
 #include <QFile>
 
-
 #include <klocalizedstring.h>
 
 namespace Marble
@@ -245,7 +244,7 @@ void BookmarkManager::removeBookmarkFolder( GeoDataFolder *folder )
 void BookmarkManager::ensureDefaultFolder()
 {
     if ( d->m_bookmarkDocument->size() == 0 ) {
-        addNewBookmarkFolder( d->m_bookmarkDocument, tr("Default") );
+        addNewBookmarkFolder( d->m_bookmarkDocument, i18n("Default") );
     }
 }
 

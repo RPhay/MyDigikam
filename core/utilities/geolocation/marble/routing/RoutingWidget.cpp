@@ -693,7 +693,7 @@ void RoutingWidget::setRouteSyncManager(RouteSyncManager *manager)
 void RoutingWidget::openRoute()
 {
     QString const file = QFileDialog::getOpenFileName( this, tr( "Open Route" ),
-                            d->m_routingManager->lastOpenPath(), tr("KML Files (*.kml)") );
+                            d->m_routingManager->lastOpenPath(), i18n("KML Files (*.kml)") );
     if ( !file.isEmpty() ) {
         d->m_routingManager->setLastOpenPath( QFileInfo( file ).absolutePath() );
         d->m_zoomRouteAfterDownload = true;

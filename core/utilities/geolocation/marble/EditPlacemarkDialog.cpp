@@ -28,6 +28,8 @@
 #include "osm/OsmPlacemarkData.h"
 #include "osm/OsmRelationManagerWidget.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 class Q_DECL_HIDDEN EditPlacemarkDialog::Private : public Ui::UiEditPlacemarkDialog
@@ -106,7 +108,7 @@ EditPlacemarkDialog::EditPlacemarkDialog( GeoDataPlacemark *placemark,
 
     // If the placemark has just been created, assign    it a default name.
     if ( placemark->name().isNull() ) {
-        placemark->setName( tr("Untitled Placemark") );
+        placemark->setName( i18n("Untitled Placemark") );
     }
     // Setup id, name, icon link and latitude/longitude values.
     d->m_header->setId( placemark->id() );
@@ -163,7 +165,7 @@ EditPlacemarkDialog::EditPlacemarkDialog( GeoDataPlacemark *placemark,
     d->m_elevationWidget = new Ui::ElevationWidget;
     QWidget *elevationTab = new QWidget;
     d->m_elevationWidget->setupUi( elevationTab );
-    d->tabWidget->addTab( elevationTab, tr("Elevation") );
+    d->tabWidget->addTab( elevationTab, i18n("Elevation") );
     qreal altitude = d->m_placemark->coordinate().altitude();
     MarbleLocale *locale = MarbleGlobal::getInstance()->locale();
     if ( altitude == 0.0 ) {

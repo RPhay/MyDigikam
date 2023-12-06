@@ -35,6 +35,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 /*
@@ -177,7 +179,7 @@ void BookmarkManagerDialogPrivate::deleteFolder()
     if ( folder ) {
         if ( folder->size() > 0 ) {
             QString const text = tr( "The folder %1 is not empty. Removing it will delete all bookmarks it contains. Are you sure you want to delete the folder?" ).arg( folder->name() );
-            if (QMessageBox::question(m_parent, tr("Remove Folder"), text, QMessageBox::Yes, QMessageBox::No) != QMessageBox::Yes) {
+            if (QMessageBox::question(m_parent, i18n("Remove Folder"), text, QMessageBox::Yes, QMessageBox::No) != QMessageBox::Yes) {
                 return;
             }
         }
@@ -418,14 +420,14 @@ void BookmarkManagerDialog::exportBookmarks()
         if (!GeoDataDocumentWriter::write(fileName, *d->bookmarkDocument())) {
             qCDebug(DIGIKAM_MARBLE_LOG) << "Could not write the bookmarks file" << fileName;
             QString const text = tr( "Unable to save bookmarks. Please check that the file is writable." );
-            QMessageBox::warning(this, tr("Bookmark Export"), text);
+            QMessageBox::warning(this, i18n("Bookmark Export"), text);
         }
     }
 }
 
 void BookmarkManagerDialog::importBookmarks()
 {
-    QString const file = QFileDialog::getOpenFileName(this, tr("Import Bookmarks"),
+    QString const file = QFileDialog::getOpenFileName(this, i18n("Import Bookmarks"),
                             QDir::homePath(), tr( "KML Files (*.kml)" ) );
     if ( file.isEmpty() ) {
         return;

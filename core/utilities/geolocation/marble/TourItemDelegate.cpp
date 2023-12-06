@@ -40,6 +40,8 @@
 #include "GeoDataPlaylist.h"
 #include "TourWidget.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -90,9 +92,9 @@ void TourItemDelegate::paint( QPainter *painter, const QStyleOptionViewItem &opt
             GeoDataTourControl::PlayMode const playMode = tourControl->playMode();
 
             if ( playMode == GeoDataTourControl::Play ) {
-                label.setHtml( tr("Play the tour") );
+                label.setHtml( i18n("Play the tour") );
             } else if ( playMode == GeoDataTourControl::Pause ) {
-                label.setHtml( tr("Pause the tour") );
+                label.setHtml( i18n("Pause the tour") );
             }
             painter->save();
             painter->translate( labelRect.topLeft() );
@@ -124,7 +126,7 @@ void TourItemDelegate::paint( QPainter *painter, const QStyleOptionViewItem &opt
             QIcon const icon = QIcon(QStringLiteral(":/marble/flag.png"));
             painter->drawPixmap( iconRect, icon.pixmap( iconRect.size() ) );
         } else if (const GeoDataWait *wait = geodata_cast<GeoDataWait>(object)) {
-            label.setHtml( tr("Wait for %1 seconds").arg( QString::number( wait->duration() ) ) );
+            label.setHtml( i18n("Wait for %1 seconds").arg( QString::number( wait->duration() ) ) );
 
             painter->save();
             painter->translate( labelRect.topLeft() );

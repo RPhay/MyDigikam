@@ -512,11 +512,11 @@ void RoutingManager::setGuidanceModeEnabled( bool enabled )
         d->saveRoute( d->stateFile( QString::fromUtf8("guidance.kml") ) );
 
         if ( d->m_guidanceModeWarning ) {
-            QString text = QLatin1String("<p>") + tr("Caution: Driving instructions may be incomplete or wrong.") +
-                QLatin1Char(' ') + tr("Road construction, weather and other unforeseen variables can result in the suggested route not to be the most expedient or safest route to your destination.") +
-                QLatin1Char(' ') + tr("Please use common sense while navigating.") + QLatin1String("</p>") +
-                QLatin1String("<p>") + tr("The Marble development team wishes you a pleasant and safe journey.") + QLatin1String("</p>");
-            QPointer<QMessageBox> messageBox = new QMessageBox(QMessageBox::Information, tr("Guidance Mode"), text, QMessageBox::Ok);
+            QString text = QLatin1String("<p>") + i18n("Caution: Driving instructions may be incomplete or wrong.") +
+                QLatin1Char(' ') + i18n("Road construction, weather and other unforeseen variables can result in the suggested route not to be the most expedient or safest route to your destination.") +
+                QLatin1Char(' ') + i18n("Please use common sense while navigating.") + QLatin1String("</p>") +
+                QLatin1String("<p>") + i18n("The Marble development team wishes you a pleasant and safe journey.") + QLatin1String("</p>");
+            QPointer<QMessageBox> messageBox = new QMessageBox(QMessageBox::Information, i18n("Guidance Mode"), text, QMessageBox::Ok);
             QCheckBox *showAgain = new QCheckBox( tr( "Show again" ) );
             showAgain->setChecked( true );
             showAgain->blockSignals( true ); // otherwise it'd close the dialog

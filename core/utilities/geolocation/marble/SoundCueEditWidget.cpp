@@ -17,6 +17,8 @@
 #include "geodata/data/GeoDataSoundCue.h"
 #include "MarblePlacemarkModel.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 SoundCueEditWidget::SoundCueEditWidget( const QModelIndex &index, QWidget *parent ) :
@@ -65,7 +67,7 @@ void SoundCueEditWidget::save()
 }
 void SoundCueEditWidget::open()
 {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Select sound files..."), QDir::homePath(), tr("Supported Sound Files (*.mp3 *.ogg *.wav)"));
+    QString fileName = QFileDialog::getOpenFileName(this, i18n("Select sound files..."), QDir::homePath(), i18n("Supported Sound Files (*.mp3 *.ogg *.wav)"));
     m_lineEdit->setText(fileName);
     soundCueElement()->setHref( m_lineEdit->text() );
 }

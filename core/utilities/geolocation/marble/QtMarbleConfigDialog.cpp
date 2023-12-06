@@ -37,6 +37,8 @@
 #include "BookmarkSyncManager.h"
 #include "CloudSyncManager.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -265,11 +267,11 @@ void QtMarbleConfigDialog::updateLastSync()
     }
 
     if (!d->m_syncManager->lastSync().isValid()) {
-        d->ui_cloudSyncSettings.labelLastSync->setText(tr("Never synchronized."));
+        d->ui_cloudSyncSettings.labelLastSync->setText(i18n("Never synchronized."));
         return;
     }
 
-    const QString title = tr("Last synchronization: %1")
+    const QString title = i18n("Last synchronization: %1")
             .arg(d->m_syncManager->lastSync().toString());
 
     d->ui_cloudSyncSettings.labelLastSync->setText(title);

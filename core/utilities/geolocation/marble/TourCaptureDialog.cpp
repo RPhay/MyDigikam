@@ -14,6 +14,8 @@
 #include "MovieCapture.h"
 #include "TourPlayback.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 TourCaptureDialog::TourCaptureDialog(MarbleWidget *widget, QWidget *parent) :
@@ -74,7 +76,7 @@ void TourCaptureDialog::loadDestinationFile()
             ui->destinationEdit->text().isEmpty() ? m_defaultFileName : ui->destinationEdit->text();
 
     const QString destination =
-            QFileDialog::getSaveFileName(this, tr("Save video file"), defaultFileName,
+            QFileDialog::getSaveFileName(this, i18n("Save video file"), defaultFileName,
                                          filter );
 
     if (destination.isEmpty()) {
@@ -95,8 +97,8 @@ void TourCaptureDialog::loadDestinationFile()
         {
             formatsExtensions += QLatin1String(", .") + formats.at(i).extension();
         }
-        QMessageBox::warning(this, tr("Filename is not valid"),
-                             tr("This file format is not supported. "
+        QMessageBox::warning(this, i18n("Filename is not valid"),
+                             i18n("This file format is not supported. "
                                 "Please, use %1 instead").arg( formatsExtensions ) );
         return;
     }
@@ -107,14 +109,14 @@ void TourCaptureDialog::loadDestinationFile()
 
 void TourCaptureDialog::startRecording()
 {
-    if( ui->startButton->text() == tr("Start") ){
-        ui->startButton->setText(tr("Cancel"));
+    if( ui->startButton->text() == i18n("Start") ){
+        ui->startButton->setText(i18n("Cancel"));
         ui->closeButton->setDisabled(true);
         const QString path = ui->destinationEdit->text();
 
         if( path.isEmpty() ){
-            QMessageBox::warning(this, tr("Missing filename"),
-                           tr("Destination video file is not set. "
+            QMessageBox::warning(this, i18n("Missing filename"),
+                           i18n("Destination video file is not set. "
                               "I don't know where to save recorded "
                               "video. Please, specify one."));
             return;
@@ -127,7 +129,7 @@ void TourCaptureDialog::startRecording()
         recordNextFrame();
     }
     else{
-        ui->startButton->setText(tr("Start"));
+        ui->startButton->setText(i18n("Start"));
         m_recorder->cancelRecording();
         ui->progressBar->setValue(0);
         ui->closeButton->setEnabled(true);
@@ -145,7 +147,7 @@ void TourCaptureDialog::recordNextFrame()
     double const duration = m_playback->duration();
 
     if (!m_writingPossible) {
-        ui->rate->setText(QString::fromUtf8("<font color=\"red\">%1</font>").arg(tr("Video writing failed.")));
+        ui->rate->setText(QString::fromUtf8("<font color=\"red\">%1</font>").arg(i18n("Video writing failed.")));
         return;
     }
 
@@ -162,8 +164,8 @@ void TourCaptureDialog::recordNextFrame()
     } else {
         m_recorder->stopRecording();
         ui->progressBar->setValue(duration*100);
-        ui->startButton->setText(tr("Start"));
-        ui->rate->setText(QString::fromUtf8("<font color=\"green\">%1</font>").arg(tr("Video export completed.")));
+        ui->startButton->setText(i18n("Start"));
+        ui->rate->setText(QString::fromUtf8("<font color=\"green\">%1</font>").arg(i18n("Video export completed.")));
         ui->closeButton->setEnabled(true);
     }
 }

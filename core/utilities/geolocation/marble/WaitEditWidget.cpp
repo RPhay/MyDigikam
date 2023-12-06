@@ -16,6 +16,8 @@
 #include "GeoDataTourControl.h"
 #include "geodata/data/GeoDataWait.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -38,7 +40,7 @@ WaitEditWidget::WaitEditWidget( const QModelIndex &index, QWidget *parent ) :
 
     layout->addWidget( m_spinBox );
     m_spinBox->setValue( waitElement()->duration() );
-    m_spinBox->setSuffix( tr(" s", "seconds") );
+    m_spinBox->setSuffix( i18nc("seconds", " s") );
 
     m_button->setIcon(QIcon(QStringLiteral(":/marble/document-save.png")));
     connect(m_button, SIGNAL(clicked()), this, SLOT(save()));

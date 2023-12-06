@@ -37,6 +37,8 @@
 #include <QDateTime>
 #include <QRegularExpression>
 
+#include <klocalizedstring.h>
+
 using namespace Marble;
 // Ui
 #include "ui_MapViewWidget.h"
@@ -110,7 +112,7 @@ class Q_DECL_HIDDEN MapViewWidget::Private {
 
         m_globeViewButton = new QToolButton;
         m_globeViewButton->setIcon(QIcon(QStringLiteral(":/icons/map-globe.png")));
-        m_globeViewButton->setToolTip( tr("Globe View") );
+        m_globeViewButton->setToolTip( i18n("Globe View") );
         m_globeViewButton->setCheckable(true);
         m_globeViewButton->setChecked(false);
 
@@ -122,7 +124,7 @@ class Q_DECL_HIDDEN MapViewWidget::Private {
 
         m_mercatorViewButton = new QToolButton;
         m_mercatorViewButton->setIcon(QIcon(QStringLiteral(":/icons/map-mercator.png")));
-        m_mercatorViewButton->setToolTip( tr("Mercator View") );
+        m_mercatorViewButton->setToolTip( i18n("Mercator View") );
         m_mercatorViewButton->setCheckable(true);
         m_mercatorViewButton->setChecked(false);
         m_mercatorViewButton->setPopupMode(QToolButton::MenuButtonPopup);
@@ -130,13 +132,13 @@ class Q_DECL_HIDDEN MapViewWidget::Private {
         m_popupMenuFlat = new QMenu(q);
 
         m_mercatorViewAction = new QAction(QIcon(QStringLiteral(":/icons/map-mercator.png")),
-                                              tr("Mercator View"),
+                                              i18n("Mercator View"),
                                               m_popupMenuFlat );
         m_mercatorViewAction->setCheckable(true);
         m_mercatorViewAction->setChecked(false);
 
         m_flatViewAction = new QAction( QIcon(QStringLiteral(":/icons/map-flat.png")),
-                                        tr("Flat View"),
+                                        i18n("Flat View"),
                                         m_popupMenuFlat );
         m_flatViewAction->setCheckable(true);
         m_flatViewAction->setChecked(false);
@@ -652,12 +654,12 @@ void MapViewWidget::Private::showContextMenu( const QPoint& pos )
     QAction* iconSizeAction = menu.addAction( tr( "&Show Large Icons" ), q, SLOT(toggleIconSize()) );
     iconSizeAction->setCheckable( true );
     iconSizeAction->setChecked( m_mapViewUi.marbleThemeSelectView->iconSize() == QSize( 96, 96 ) );
-    QAction *favAction = menu.addAction(QIcon(QStringLiteral(":/icons/bookmarks.png")), tr("&Favorite"), q, SLOT(toggleFavorite()));
+    QAction *favAction = menu.addAction(QIcon(QStringLiteral(":/icons/bookmarks.png")), i18n("&Favorite"), q, SLOT(toggleFavorite()));
     favAction->setCheckable( true );
     favAction->setChecked( isCurrentFavorite() );
     menu.addSeparator();
 
-    menu.addAction(QIcon(QStringLiteral(":/icons/create-new-map.png")), tr("&Create a New Map..."), q, SIGNAL(showMapWizard()));
+    menu.addAction(QIcon(QStringLiteral(":/icons/create-new-map.png")), i18n("&Create a New Map..."), q, SIGNAL(showMapWizard()));
     if (QFileInfo(MarbleDirs::localPath() + QLatin1String("/maps/") + currentThemePath()).exists()) {
         menu.addAction( tr( "&Delete Map Theme" ), q, SLOT(deleteMap()) );
     }

@@ -22,6 +22,8 @@
 
 #include "Quaternion.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -86,7 +88,7 @@ bool GeoDataCoordinates::isValid() const
  * this state shouldn't happen, but if it does, we have to clean up behind us.
  */
 void GeoDataCoordinates::detach()
-{    
+{
     delete d->m_q;
     d->m_q = nullptr;
 
@@ -158,10 +160,10 @@ void GeoDataCoordinates::setLatitude( qreal _lat, GeoDataCoordinates::Unit unit 
     }
 }
 
-void GeoDataCoordinates::geoCoordinates( qreal& lon, qreal& lat, 
+void GeoDataCoordinates::geoCoordinates( qreal& lon, qreal& lat,
                                GeoDataCoordinates::Unit unit ) const
 {
-    switch ( unit ) 
+    switch ( unit )
     {
     default:
     case Radian:
@@ -255,7 +257,7 @@ qreal GeoDataCoordinates::normalizeLon( qreal lon, GeoDataCoordinates::Unit unit
     if ( lon > halfCircle ) {
         int cycles = (int)( ( lon + halfCircle ) / ( 2 * halfCircle ) );
         return lon - ( cycles * 2 * halfCircle );
-    } 
+    }
     if ( lon < -halfCircle ) {
         int cycles = (int)( ( lon - halfCircle ) / ( 2 * halfCircle ) );
         return lon - ( cycles * 2 * halfCircle );
@@ -290,11 +292,11 @@ qreal GeoDataCoordinates::normalizeLat( qreal lat, GeoDataCoordinates::Unit unit
             return ( -halfCircle - temp );
         }
         return temp;
-    } 
+    }
     if ( lat < ( -halfCircle / 2.0 ) ) {
         int cycles = (int)( ( lat - halfCircle ) / ( 2 * halfCircle ) );
         qreal temp;
-        if( cycles == 0 ) { 
+        if( cycles == 0 ) {
             temp = -halfCircle - lat;
         } else {
             temp = lat - ( cycles * 2 * halfCircle );
@@ -324,7 +326,7 @@ void GeoDataCoordinates::normalizeLonLat( qreal &lon, qreal &lat, GeoDataCoordin
     if ( lon > +halfCircle ) {
         int cycles = (int)( ( lon + halfCircle ) / ( 2 * halfCircle ) );
         lon = lon - ( cycles * 2 * halfCircle );
-    } 
+    }
     if ( lon < -halfCircle ) {
         int cycles = (int)( ( lon - halfCircle ) / ( 2 * halfCircle ) );
         lon = lon - ( cycles * 2 * halfCircle );
@@ -345,16 +347,16 @@ void GeoDataCoordinates::normalizeLonLat( qreal &lon, qreal &lat, GeoDataCoordin
             lat =  -halfCircle - temp;
         }
         lat = temp;
-        if( lon > 0 ) { 
+        if( lon > 0 ) {
             lon = -halfCircle + lon;
         } else {
             lon = halfCircle + lon;
         }
-    } 
+    }
     if ( lat < ( -halfCircle / 2.0 ) ) {
         int cycles = (int)( ( lat - halfCircle ) / ( 2 * halfCircle ) );
         qreal temp;
-        if( cycles == 0 ) { 
+        if( cycles == 0 ) {
             temp = -halfCircle - lat;
         } else {
             temp = lat - ( cycles * 2 * halfCircle );
@@ -366,12 +368,12 @@ void GeoDataCoordinates::normalizeLonLat( qreal &lon, qreal &lat, GeoDataCoordin
             lat =  -halfCircle - temp;
         }
         lat = temp;
-        if( lon > 0 ) { 
+        if( lon > 0 ) {
             lon = -halfCircle + lon;
         } else {
             lon = halfCircle + lon;
         }
-    } 
+    }
     return;
 }
 
@@ -446,7 +448,7 @@ QString GeoDataCoordinates::lonToString( qreal lon, GeoDataCoordinates::Notation
         return result;
     }
 
-    QString weString = ( lon < 0 ) ? tr("W") : tr("E");
+    QString weString = ( lon < 0 ) ? i18n("W") : i18n("E");
 
     QString lonString;
 
@@ -454,7 +456,7 @@ QString GeoDataCoordinates::lonToString( qreal lon, GeoDataCoordinates::Notation
 
     // Take care of -1 case
     precision = ( precision < 0 ) ? 5 : precision;
-    
+
     if ( notation == DMS || notation == DM ) {
         int lonDeg = (int) lonDegF;
         qreal lonMinF = 60 * (lonDegF - lonDeg);
@@ -615,7 +617,7 @@ QString GeoDataCoordinates::latToString( qreal lat, GeoDataCoordinates::Notation
         pmString = ( lat > 0 ) ? QLatin1String("+") : QLatin1String("-");
     }
     else {
-        nsString = ( lat > 0 ) ? tr("N") : tr("S");
+        nsString = ( lat > 0 ) ? i18n("N") : i18n("S");
     }
 
     QString latString;
@@ -624,7 +626,7 @@ QString GeoDataCoordinates::latToString( qreal lat, GeoDataCoordinates::Notation
 
     // Take care of -1 case
     precision = ( precision < 0 ) ? 5 : precision;
-    
+
     if ( notation == DMS || notation == DM || notation == Astro) {
         int latDeg = (int) latDegF;
         qreal latMinF = 60 * (latDegF - latDeg);
@@ -858,15 +860,15 @@ bool GeoDataCoordinates::isPole( Pole pole ) const
                 return false;
             }
         }
-        // 
+        //
         else {
             // FIXME: Should we just normalize latitude and longitude and be done?
-            //        While this might work well for persistent data it would create some 
+            //        While this might work well for persistent data it would create some
             //        possible overhead for temporary data, so this needs careful thinking.
             qCDebug(DIGIKAM_MARBLE_LOG) << "GeoDataCoordinates not normalized!";
 
             // Only as a last resort we cover the unlikely case where
-            // the latitude is not normalized to the range of 
+            // the latitude is not normalized to the range of
             // 90 deg S ... 90 deg N
             if ( fabs( (qreal) 2.0 * normalizeLat( d->m_lat ) ) < M_PI  ) {
                 return false;

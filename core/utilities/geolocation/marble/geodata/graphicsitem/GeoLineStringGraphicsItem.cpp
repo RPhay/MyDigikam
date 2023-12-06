@@ -20,6 +20,8 @@
 #include <qmath.h>
 #include <QPainterPathStroker>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -208,23 +210,23 @@ void GeoLineStringGraphicsItem::handleRelationUpdate(const QVector<const GeoData
             switch (iter.key()) {
             case GeoDataRelation::UnknownType:
             case GeoDataRelation::RouteRoad: break;
-            case GeoDataRelation::RouteDetour: value = tr("Detour"); break;
-            case GeoDataRelation::RouteFerry: value = tr("Ferry Route"); break;
-            case GeoDataRelation::RouteTrain: value = tr("Train"); break;
-            case GeoDataRelation::RouteSubway: value = tr("Subway"); break;
-            case GeoDataRelation::RouteTram: value = tr("Tram"); break;
-            case GeoDataRelation::RouteBus: value = tr("Bus"); break;
-            case GeoDataRelation::RouteTrolleyBus: value = tr("Trolley Bus"); break;
-            case GeoDataRelation::RouteBicycle: value = tr("Bicycle Route"); break;
-            case GeoDataRelation::RouteMountainbike: value = tr("Mountainbike Route"); break;
-            case GeoDataRelation::RouteFoot: value = tr("Walking Route"); break;
-            case GeoDataRelation::RouteHiking: value = tr("Hiking Route"); break;
-            case GeoDataRelation::RouteHorse: value = tr("Bridleway"); break;
-            case GeoDataRelation::RouteInlineSkates: value = tr("Inline Skates Route"); break;
-            case GeoDataRelation::RouteSkiDownhill: value = tr("Downhill Piste"); break;
-            case GeoDataRelation::RouteSkiNordic: value = tr("Nordic Ski Trail"); break;
-            case GeoDataRelation::RouteSkitour: value = tr("Skitour"); break;
-            case GeoDataRelation::RouteSled: value = tr("Sled Trail"); break;
+            case GeoDataRelation::RouteDetour: value = i18n("Detour"); break;
+            case GeoDataRelation::RouteFerry: value = i18n("Ferry Route"); break;
+            case GeoDataRelation::RouteTrain: value = i18n("Train"); break;
+            case GeoDataRelation::RouteSubway: value = i18n("Subway"); break;
+            case GeoDataRelation::RouteTram: value = i18n("Tram"); break;
+            case GeoDataRelation::RouteBus: value = i18n("Bus"); break;
+            case GeoDataRelation::RouteTrolleyBus: value = i18n("Trolley Bus"); break;
+            case GeoDataRelation::RouteBicycle: value = i18n("Bicycle Route"); break;
+            case GeoDataRelation::RouteMountainbike: value = i18n("Mountainbike Route"); break;
+            case GeoDataRelation::RouteFoot: value = i18n("Walking Route"); break;
+            case GeoDataRelation::RouteHiking: value = i18n("Hiking Route"); break;
+            case GeoDataRelation::RouteHorse: value = i18n("Bridleway"); break;
+            case GeoDataRelation::RouteInlineSkates: value = i18n("Inline Skates Route"); break;
+            case GeoDataRelation::RouteSkiDownhill: value = i18n("Downhill Piste"); break;
+            case GeoDataRelation::RouteSkiNordic: value = i18n("Nordic Ski Trail"); break;
+            case GeoDataRelation::RouteSkitour: value = i18n("Skitour"); break;
+            case GeoDataRelation::RouteSled: value = i18n("Sled Trail"); break;
             }
 
             QStringList &references = iter.value();

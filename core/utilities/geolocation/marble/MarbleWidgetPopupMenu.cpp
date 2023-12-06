@@ -52,6 +52,8 @@
 #include <QMenu>
 #include <QMessageBox>
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 /* TRANSLATOR Marble::MarbleWidgetPopupMenu */
 
@@ -107,8 +109,8 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     m_rmbMenu( m_widget ),
     m_directionsFromHereAction( nullptr ),
     m_directionsToHereAction( nullptr ),
-    m_copyCoordinateAction(new QAction(QIcon(QStringLiteral(":/icons/copy-coordinates.png")), tr("Copy Coordinates"), parent)),
-    m_copyGeoAction(new QAction(QIcon(QStringLiteral(":/icons/copy-coordinates.png")), tr("Copy geo: URL"), parent)),
+    m_copyCoordinateAction(new QAction(QIcon(QStringLiteral(":/icons/copy-coordinates.png")), i18n("Copy Coordinates"), parent)),
+    m_copyGeoAction(new QAction(QIcon(QStringLiteral(":/icons/copy-coordinates.png")), i18n("Copy geo: URL"), parent)),
     m_rmbExtensionPoint( nullptr ),
     m_runnerManager( model )
 {
@@ -146,7 +148,7 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
         m_rmbMenu.addAction( m_copyCoordinateAction );
         m_rmbMenu.addAction( m_copyGeoAction );
     }
-    m_rmbMenu.addAction(QIcon(QStringLiteral(":/icons/addressbook-details.png")), tr("&Address Details"), parent, SLOT(startReverseGeocoding()));
+    m_rmbMenu.addAction(QIcon(QStringLiteral(":/icons/addressbook-details.png")), i18n("&Address Details"), parent, SLOT(startReverseGeocoding()));
     m_rmbMenu.addSeparator();
     m_rmbMenu.addMenu( infoBoxMenu );
 
@@ -170,7 +172,7 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
 QString MarbleWidgetPopupMenu::Private::filterEmptyShortDescription(const QString &description)
 {
     if(description.isEmpty())
-        return tr("No description available.");
+        return i18n("No description available.");
     return description;
 }
 
@@ -372,16 +374,16 @@ void MarbleWidgetPopupMenu::Private::setupDialogCity( PopupLayer *popup, const G
     QString  roleString;
     const QString role = placemark->role();
     if (role == QLatin1String("PPLC")) {
-        roleString = tr("National Capital");
+        roleString = i18n("National Capital");
     } else if (role == QLatin1String("PPL")) {
-        roleString = tr("City");
+        roleString = i18n("City");
     } else if (role == QLatin1String("PPLA")) {
-        roleString = tr("State Capital");
+        roleString = i18n("State Capital");
     } else if (role == QLatin1String("PPLA2")) {
-        roleString = tr("County Capital");
+        roleString = i18n("County Capital");
     } else if (role == QLatin1String("PPLA3") ||
                role == QLatin1String("PPLA4")) {
-        roleString = tr("Capital");
+        roleString = i18n("Capital");
     } else if (role == QLatin1String("PPLF") ||
                role == QLatin1String("PPLG") ||
                role == QLatin1String("PPLL") ||
@@ -389,7 +391,7 @@ void MarbleWidgetPopupMenu::Private::setupDialogCity( PopupLayer *popup, const G
                role == QLatin1String("PPLR") ||
                role == QLatin1String("PPLS") ||
                role == QLatin1String("PPLW")) {
-        roleString = tr("Village");
+        roleString = i18n("Village");
     }
 
     doc[QString::fromUtf8("category")] = roleString;
@@ -533,7 +535,7 @@ MarbleWidgetPopupMenu::~MarbleWidgetPopupMenu()
 
 QMenu* MarbleWidgetPopupMenu::Private::createInfoBoxMenu(QWidget* parent)
 {
-    QMenu* menu = new QMenu(tr("&Info Boxes"), parent);
+    QMenu* menu = new QMenu(i18n("&Info Boxes"), parent);
     QList<AbstractFloatItem *> floatItemList = m_widget->floatItems();
 
     QList<AbstractFloatItem *>::const_iterator iter = floatItemList.constBegin();

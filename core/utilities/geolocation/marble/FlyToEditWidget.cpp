@@ -19,6 +19,8 @@
 #include "GeoDataCamera.h"
 #include "MarblePlacemarkModel.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -42,25 +44,25 @@ FlyToEditWidget::FlyToEditWidget( const QModelIndex &index, MarbleWidget* widget
     durationLayout->setSpacing( 5 );
 
     QLabel *durationLabel = new QLabel;
-    durationLabel->setText( tr("Duration:") );
+    durationLabel->setText( i18n("Duration:") );
     durationLayout->addWidget( durationLabel );
 
     m_durationSpin = new QDoubleSpinBox;
     durationLayout->addWidget( m_durationSpin );
     m_durationSpin->setValue( flyToElement()->duration() );
-    m_durationSpin->setSuffix( tr(" s", "seconds") );
+    m_durationSpin->setSuffix( i18nc("seconds", " s") );
 
     QHBoxLayout *modeLayout = new QHBoxLayout;
     modeLayout->addSpacing( 5 );
 
     QLabel *modeLabel = new QLabel;
-    modeLabel->setText( tr("Mode:") );
+    modeLabel->setText( i18n("Mode:") );
     modeLayout->addWidget( modeLabel );
 
     m_modeCombo = new QComboBox;
     modeLayout->addWidget( m_modeCombo );
-    m_modeCombo->addItem( tr("Smooth") );
-    m_modeCombo->addItem( tr("Bounce") );
+    m_modeCombo->addItem( i18n("Smooth") );
+    m_modeCombo->addItem( i18n("Bounce") );
 
     if( flyToElement()->flyToMode() == GeoDataFlyTo::Smooth ){
         m_modeCombo->setCurrentIndex( 0 );
@@ -77,7 +79,7 @@ FlyToEditWidget::FlyToEditWidget( const QModelIndex &index, MarbleWidget* widget
 
     QToolButton* flyToPinCenter = new QToolButton;
     flyToPinCenter->setIcon(QIcon(QStringLiteral(":/marble/places.png")));
-    flyToPinCenter->setToolTip(tr("Current map center"));
+    flyToPinCenter->setToolTip(i18n("Current map center"));
     connect(flyToPinCenter, SIGNAL(clicked()), this, SLOT(updateCoordinates()));
     layout->addWidget(flyToPinCenter);
 

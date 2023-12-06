@@ -12,6 +12,8 @@
 #include "MarbleWidget.h"
 #include "MovieCapture.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 MovieCaptureDialog::MovieCaptureDialog(MarbleWidget *widget, QWidget *parent) :
@@ -21,7 +23,7 @@ MovieCaptureDialog::MovieCaptureDialog(MarbleWidget *widget, QWidget *parent) :
 {
     ui->setupUi(this);
     m_recorder->setSnapshotMethod(MovieCapture::TimeDriven);
-    QPushButton *startButton = ui->buttonBox->addButton(tr("&Start", "Start recording a movie"), QDialogButtonBox::ActionRole);
+    QPushButton *startButton = ui->buttonBox->addButton(i18nc("Start recording a movie", "&Start"), QDialogButtonBox::ActionRole);
 
     connect(ui->fpsSlider, SIGNAL(valueChanged(int)),
             ui->fpsSpin, SLOT(setValue(int)));
@@ -63,7 +65,7 @@ void MovieCaptureDialog::loadDestinationFile()
             ui->destinationEdit->text().isEmpty() ? QString::fromUtf8("") : ui->destinationEdit->text();
 
     const QString destination =
-            QFileDialog::getSaveFileName(this, tr("Save video file"), defaultFileName,
+            QFileDialog::getSaveFileName(this, i18n("Save video file"), defaultFileName,
                                          filter );
 
     if (destination.isEmpty()) {
@@ -84,8 +86,8 @@ void MovieCaptureDialog::loadDestinationFile()
         {
             formatsExtensions += QLatin1String(", .") + formats.at(i).extension();
         }
-        QMessageBox::warning(this, tr("Filename is not valid"),
-                             tr("This file format is not supported. "
+        QMessageBox::warning(this, i18n("Filename is not valid"),
+                             i18n("This file format is not supported. "
                                 "Please, use %1 instead").arg( formatsExtensions ) );
         return;
     }
@@ -99,8 +101,8 @@ void MovieCaptureDialog::startRecording()
     const QString path = ui->destinationEdit->text();
 
     if (path.isEmpty()) {
-        QMessageBox::warning(this, tr("Missing filename"),
-                             tr("Destination video file is not set. "
+        QMessageBox::warning(this, i18n("Missing filename"),
+                             i18n("Destination video file is not set. "
                                 "I don't know where to save recorded "
                                 "video. Please, specify one."));
         return;

@@ -50,6 +50,8 @@
 #include <QSortFilterProxyModel>
 #include <QColorDialog>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -145,7 +147,7 @@ PreviewDialog::PreviewDialog( QWidget* parent, const QString& mapThemeId ) : QDi
     QGridLayout *layout = new QGridLayout();
     MarbleWidget *widget = new MarbleWidget();
     MarbleNavigator *navigator = new MarbleNavigator();
-    
+
     connect( navigator, SIGNAL(goHome()), widget, SLOT(goHome()) );
     connect( navigator, SIGNAL(moveUp()), widget, SLOT(moveUp()) );
     connect( navigator, SIGNAL(moveDown()), widget, SLOT(moveDown()) );
@@ -154,15 +156,15 @@ PreviewDialog::PreviewDialog( QWidget* parent, const QString& mapThemeId ) : QDi
     connect( navigator, SIGNAL(zoomIn()), widget, SLOT(zoomIn()) );
     connect( navigator, SIGNAL(zoomOut()), widget, SLOT(zoomOut()) );
     connect( navigator, SIGNAL(zoomChanged(int)), widget, SLOT(setZoom(int)) );
-    
+
     widget->setMapThemeId( m_mapThemeId );
     widget->setZoom( 1000 );
-    
+
     layout->addWidget( navigator, 1, 1 );
     layout->addWidget( widget, 1, 2 );
     layout->setContentsMargins( 0, 0, 0, 0 );
     layout->setSpacing( 0 );
-    
+
     this->setLayout( layout );
     this->setMinimumSize( 640, 480 );
     this->setWindowTitle( tr( "Preview Map" ) );
@@ -180,7 +182,7 @@ bool PreviewDialog::deleteTheme( const QString &directory )
 {
     QDir dir(directory);
     bool result = true;
- 
+
     if (dir.exists(directory)) {
         for(const QFileInfo& info: dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst)) {
             if (info.isDir()) {
@@ -188,14 +190,14 @@ bool PreviewDialog::deleteTheme( const QString &directory )
             } else {
                 result = QFile::remove(info.absoluteFilePath());
             }
- 
+
             if (!result) {
                 return result;
             }
         }
         result = dir.rmdir(directory);
     }
-    
+
     return result;
 }
 
@@ -225,7 +227,7 @@ void MapWizardPrivate::pageEntered( int id )
 MapWizard::MapWizard( QWidget* parent ) : QWizard( parent ), d( new MapWizardPrivate )
 {
     d->uiWidget.setupUi( this );
-    
+
     connect( this, SIGNAL(currentIdChanged(int)), this, SLOT(pageEntered(int)) );
 
     connect( &d->owsManager, &OwsServiceManager::wmsCapabilitiesReady,
@@ -246,7 +248,7 @@ MapWizard::MapWizard( QWidget* parent ) : QWizard( parent ), d( new MapWizardPri
 
     connect( d->uiWidget.lineEditTitle, &QLineEdit::textChanged, d->uiWidget.labelSumMName, &QLabel::setText );
     connect( d->uiWidget.lineEditTheme, &QLineEdit::textChanged, d->uiWidget.labelSumMTheme, &QLabel::setText );
-    
+
     connect( d->uiWidget.pushButtonPreviewMap, &QAbstractButton::clicked, this, &MapWizard::showPreview );
     connect( d->uiWidget.lineEditWmsSearch, &QLineEdit::textChanged, this, &MapWizard::updateSearchFilter );
     connect( d->uiWidget.comboBoxWmsMaps, SIGNAL(currentIndexChanged(int)), this, SLOT(updateBackdropCheckBox()) );
@@ -294,7 +296,7 @@ void MapWizard::processCapabilitiesResults()
     {
         QMessageBox::critical( this, tr( "Error while parsing" ), tr( "Server is not an OWS Server." ) );
         return;
-    }    
+    }
     d->model->clear();
 
     OwsMappingCapabilities owsCapabilities;
@@ -387,9 +389,9 @@ void MapWizard::processSelectedLayerInformation()
     }
     d->uiWidget.comboBoxWmsMaps->clear();
     QMap<QString, QString> epsgToText;
-    epsgToText[QString::fromUtf8("epsg:3857")] = tr("Web Mercator (epsg:3857)");
-    epsgToText[QString::fromUtf8("epsg:4326")] = tr("Equirectangular (epsg:4326)");
-    epsgToText[QString::fromUtf8("crs:84")] = tr("Equirectangular (crs:84)");
+    epsgToText[QString::fromUtf8("epsg:3857")] = i18n("Web Mercator (epsg:3857)");
+    epsgToText[QString::fromUtf8("epsg:4326")] = i18n("Equirectangular (epsg:4326)");
+    epsgToText[QString::fromUtf8("crs:84")] = i18n("Equirectangular (crs:84)");
     QStringList projectionTextList;
     if (d->selectedLayers.isEmpty()) {
         return;
@@ -400,11 +402,11 @@ void MapWizard::processSelectedLayerInformation()
         for (auto projection : capabilities.projections(d->selectedLayers.first())) {
             projectionTextList << epsgToText[projection];
         }
-        d->uiWidget.labelWmsTileProjection->setText(tr("Tile Projection:"));
+        d->uiWidget.labelWmsTileProjection->setText(i18n("Tile Projection:"));
         d->uiWidget.comboBoxWmsMaps->addItems(projectionTextList);
 
         // default to Web Mercator
-        d->uiWidget.comboBoxWmsMaps->setCurrentText(tr("Web Mercator (epsg:3857)"));
+        d->uiWidget.comboBoxWmsMaps->setCurrentText(i18n("Web Mercator (epsg:3857)"));
 
         updateBackdropCheckBox(); // align the backdrop checkbox state with the available/selected projection
 
@@ -416,7 +418,7 @@ void MapWizard::processSelectedLayerInformation()
     if (d->owsManager.owsServiceType() == WmtsType) {
         WmtsCapabilities capabilities = d->owsManager.wmtsCapabilities();
         QString selectedLayer = d->selectedLayers.first();
-        d->uiWidget.labelWmsTileProjection->setText(tr("Tile Matrix Set:"));
+        d->uiWidget.labelWmsTileProjection->setText(i18n("Tile Matrix Set:"));
         d->uiWidget.comboBoxWmsMaps->addItems(capabilities.wmtsTileMatrixSets()[selectedLayer]);
         d->uiWidget.comboBoxWmsFormat->addItems(capabilities.wmtsTileResource()[selectedLayer].keys());
         // default to png or jpeg
@@ -460,15 +462,15 @@ void MapWizard::processImageResults()
     QString imageType;
     if (d->owsManager.imageRequestResult().resultType() == PreviewImage) {
         d->m_previewImageValid = true;
-        imageType = tr("Preview Image");
+        imageType = i18n("Preview Image");
     }
     if (d->owsManager.imageRequestResult().resultType() == LevelZeroTile) {
         d->m_levelZeroTileValid = true;
-        imageType = tr("Base Tile");
+        imageType = i18n("Base Tile");
     }
     if (d->owsManager.imageRequestResult().resultType() == LevelZeroTile) {
         d->m_legendImageValid = true;
-        imageType = tr("Legend Image");
+        imageType = i18n("Legend Image");
     }
 
     button( MapWizard::NextButton )->setEnabled( true );
@@ -562,7 +564,7 @@ void MapWizard::setStaticUrlServers( const QStringList& uris )
 
 void MapWizard::setLineEditWms(const QString &text)
 {
-    if (text == tr("Custom")) {
+    if (text == i18n("Custom")) {
         d->uiWidget.lineEditWmsUrl->setText(QString());
     }
     else {
@@ -747,47 +749,47 @@ QString MapWizard::createArchive( QWidget *parent, const QString& mapId )
         tarArgs.append( QString::fromUtf8( "%1/maps/" ).arg( MarbleDirs::localPath() ) );
         themeDir.cd( QString::fromUtf8( "%1/maps/%2/%3" ).arg( MarbleDirs::localPath(), body, theme ) );
     }
-    
+
     else if( QFile::exists( QString::fromUtf8( "%1/maps/%2" ).arg( MarbleDirs::systemPath(), mapId ) ) )
     {
         tarArgs.append( QString::fromUtf8( "%1/maps/" ).arg( MarbleDirs::systemPath() ) );
         themeDir.cd( QString::fromUtf8( "%1/maps/%2/%3" ).arg( MarbleDirs::systemPath(), body, theme ) );
     }
-    
+
     if( QFile::exists( QString::fromUtf8( "%1/%2.dgml" ).arg( themeDir.absolutePath(), theme ) ) )
     {
         tarArgs.append( QString::fromUtf8( "%1/%2/%2.dgml" ).arg( body, theme ) );
     }
-    
+
     if( QFile::exists( QString::fromUtf8( "%1/legend.html" ).arg( themeDir.absolutePath() ) ) )
     {
         tarArgs.append( QString::fromUtf8( "%1/%2/legend.html" ).arg( body, theme ) );
     }
-    
+
     if( QFile::exists( QString::fromUtf8( "%1/legend" ).arg( themeDir.absolutePath() ) ) )
     {
         tarArgs.append( QString::fromUtf8( "%1/%2/legend" ).arg( body, theme ) );
     }
-    
+
     if( QFile::exists( QString::fromUtf8( "%1/0/000000" ).arg( themeDir.absolutePath() ) ) )
     {
         tarArgs.append( QString::fromUtf8( "%1/%2/0/000000" ).arg( body, theme ) );
     }
-    
+
     QStringList previewFilters;
     previewFilters << QString::fromUtf8("preview.*");
     QStringList preview = themeDir.entryList( previewFilters );
     if( !preview.isEmpty() ) {
         tarArgs.append( QString::fromUtf8( "%1/%2/%3" ).arg( body ).arg( theme, preview[0] ) );
     }
-    
+
     QStringList sourceImgFilters;
     sourceImgFilters << theme + QLatin1String(".jpg") << theme + QLatin1String(".png") << theme + QLatin1String(".jpeg");
     QStringList sourceImg = themeDir.entryList( sourceImgFilters );
     if( !sourceImg.isEmpty() ) {
         tarArgs.append( QString::fromUtf8( "%1/%2/%3" ).arg( body ).arg( theme, sourceImg[0] ) );
     }
-    
+
     QProcess archiver;
     switch( archiver.execute( QString::fromUtf8("tar"), tarArgs ) )
     {
@@ -839,9 +841,9 @@ bool MapWizard::validateCurrentPage()
             d->selectedLayers = selectedList;
 
             QString projection;
-            if (d->uiWidget.comboBoxWmsMaps->currentText() == tr("Equirectangular (epsg:4326)"))
+            if (d->uiWidget.comboBoxWmsMaps->currentText() == i18n("Equirectangular (epsg:4326)"))
                 projection = QString::fromUtf8("epsg:4326");
-            else if (d->uiWidget.comboBoxWmsMaps->currentText() == tr("Equirectangular (crs:84)"))
+            else if (d->uiWidget.comboBoxWmsMaps->currentText() == i18n("Equirectangular (crs:84)"))
                 projection = QString::fromUtf8("crs:84");
             else
                 projection = QString::fromUtf8("epsg:3857");
@@ -972,9 +974,9 @@ bool MapWizard::validateCurrentPage()
         if( d->mapProviderType == MapWizardPrivate::WmsMap )
         {
             QString projection;
-            if (d->uiWidget.comboBoxWmsMaps->currentText() == tr("Equirectangular (epsg:4326)"))
+            if (d->uiWidget.comboBoxWmsMaps->currentText() == i18n("Equirectangular (epsg:4326)"))
                 projection = QString::fromUtf8("epsg:4326");
-            else if (d->uiWidget.comboBoxWmsMaps->currentText() == tr("Equirectangular (crs:84)"))
+            else if (d->uiWidget.comboBoxWmsMaps->currentText() == i18n("Equirectangular (crs:84)"))
                 projection = QString::fromUtf8("crs:84");
             else
                 projection = QString::fromUtf8("epsg:3857");
@@ -1053,7 +1055,7 @@ int MapWizard::nextId() const
     default:
         break;
     }
-    
+
     return currentId() + 1;
 }
 
@@ -1071,22 +1073,22 @@ void MapWizard::cleanupPage(int id)
 GeoSceneDocument* MapWizard::createDocument()
 {
     GeoSceneDocument *document = new GeoSceneDocument;
-       
+
     GeoSceneHead *head = document->head();
     head->setName( d->uiWidget.lineEditTitle->text() );
     head->setTheme( d->uiWidget.lineEditTheme->text() );
     head->setTarget( QString::fromUtf8("earth") );
     head->setDescription( d->uiWidget.textEditDesc->document()->toHtml() );
     head->setVisible( true );
-        
+
     GeoSceneIcon *icon = head->icon();
     icon->setPixmap( QString::fromUtf8("%1-preview.png").arg(document->head()->theme()) );
-    
+
     GeoSceneZoom *zoom = head->zoom();
     zoom->setMinimum( 900 );
     zoom->setMaximum( 3500 );
     zoom->setDiscrete( false );
-    
+
     GeoSceneTileDataset *backdropTexture = nullptr;
     bool isBackdropTextureAvailable = d->uiWidget.checkBoxWmsBackdrop->isEnabled()
             && d->uiWidget.checkBoxWmsBackdrop->isChecked()
@@ -1137,7 +1139,7 @@ GeoSceneDocument* MapWizard::createDocument()
         texture->setLevelZeroRows( 1 );
         texture->setLevelZeroColumns( 1 );
         texture->setServerLayout( new WmsServerLayout( texture ) );
-        if (d->uiWidget.comboBoxWmsMaps->currentText() == tr("Web Mercator (epsg:3857)")) {
+        if (d->uiWidget.comboBoxWmsMaps->currentText() == i18n("Web Mercator (epsg:3857)")) {
             texture->setTileProjection(GeoSceneAbstractTileProjection::Mercator);
         }
         else {
@@ -1183,7 +1185,7 @@ GeoSceneDocument* MapWizard::createDocument()
         texture->setServerLayout( new CustomServerLayout( texture ) );
         texture->setTileProjection(GeoSceneAbstractTileProjection::Mercator);
     }
-    
+
     else if( d->mapProviderType == MapWizardPrivate::StaticImageMap )
     {
         QString image = d->uiWidget.lineEditSource->text();
@@ -1194,7 +1196,7 @@ GeoSceneDocument* MapWizard::createDocument()
         texture->setTileProjection(GeoSceneAbstractTileProjection::Equirectangular);
         int imageWidth = QImage( image ).width();
         int tileSize = c_defaultTileSize;
-        
+
         float approxMaxTileLevel = log( imageWidth / ( 2.0 * tileSize ) ) / log( 2.0 );
         int  maxTileLevel = 0;
         if ( approxMaxTileLevel == int( approxMaxTileLevel ) ) {
@@ -1204,39 +1206,39 @@ GeoSceneDocument* MapWizard::createDocument()
         }
         texture->setMaximumTileLevel( maxTileLevel );
     }
-    
+
     GeoSceneLayer *layer = new GeoSceneLayer( d->uiWidget.lineEditTheme->text() );
     layer->setBackend( QString::fromUtf8("texture") );
     layer->addDataset( backdropTexture );
     layer->addDataset( texture );
-    
-    GeoSceneLayer* secondLayer = new GeoSceneLayer( QString::fromUtf8("standardplaces") );    
+
+    GeoSceneLayer* secondLayer = new GeoSceneLayer( QString::fromUtf8("standardplaces") );
     secondLayer->setBackend( QString::fromUtf8("geodata") );
-  
+
     GeoSceneGeodata* cityplacemarks = new GeoSceneGeodata( QString::fromUtf8("cityplacemarks") );
     cityplacemarks->setSourceFile( QString::fromUtf8("cityplacemarks.kml") );
     secondLayer->addDataset( cityplacemarks );
-    
+
     GeoSceneGeodata* baseplacemarks = new GeoSceneGeodata( QString::fromUtf8("baseplacemarks") );
     baseplacemarks->setSourceFile( QString::fromUtf8("baseplacemarks.kml") );
     secondLayer->addDataset( baseplacemarks );
-    
+
     GeoSceneGeodata* elevplacemarks = new GeoSceneGeodata( QString::fromUtf8("elevplacemarks") );
     elevplacemarks->setSourceFile( QString::fromUtf8("elevplacemarks.kml") );
     secondLayer->addDataset( elevplacemarks );
-    
+
     GeoSceneGeodata* observatoryplacemarks = new GeoSceneGeodata( QString::fromUtf8("observatoryplacemarks") );
     observatoryplacemarks->setSourceFile( QString::fromUtf8("observatoryplacemarks.kml") );
     secondLayer->addDataset( observatoryplacemarks );
-    
+
     GeoSceneGeodata* otherplacemarks = new GeoSceneGeodata( QString::fromUtf8("otherplacemarks") );
     otherplacemarks->setSourceFile( QString::fromUtf8("otherplacemarks.kml") );
     secondLayer->addDataset( otherplacemarks );
-    
+
     GeoSceneGeodata* boundaryplacemarks = new GeoSceneGeodata( QString::fromUtf8("boundaryplacemarks") );
     boundaryplacemarks->setSourceFile( QString::fromUtf8("boundaryplacemarks.kml") );
     secondLayer->addDataset( boundaryplacemarks );
-    
+
     GeoSceneMap *map = document->map();
 
     if( d->mapProviderType == MapWizardPrivate::WmsMap )
@@ -1253,7 +1255,7 @@ GeoSceneDocument* MapWizard::createDocument()
 
     map->addLayer( layer );
     map->addLayer( secondLayer );
-    
+
     GeoSceneSettings *settings = document->settings();
 //    GeoSceneLegend *legend = document->legend();
 
@@ -1264,7 +1266,7 @@ GeoSceneDocument* MapWizard::createDocument()
         coorGrid->setDefaultValue( true );
         coorGrid->setAvailable( true );
         settings->addProperty( coorGrid );
-        
+
         GeoSceneSection *coorSection = new GeoSceneSection( "coordinate-grid" );
         coorSection->setHeading( "Coordinate Grid" );
         coorSection->setCheckable( true );
@@ -1272,95 +1274,95 @@ GeoSceneDocument* MapWizard::createDocument()
         coorSection->setSpacing( 12 );
         legend->addSection( coorSection );
     }
-    
+
     if( d->uiWidget.checkBoxInterest->checkState() == Qt::Checked )
     {
         GeoSceneProperty *poiProperty = new GeoSceneProperty( "otherplaces" );
         poiProperty->setDefaultValue( true );
         poiProperty->setAvailable( true );
         settings->addProperty( poiProperty );
-        
+
         GeoSceneSection *poiSection = new GeoSceneSection( "otherplaces" );
         poiSection->setHeading( "Places of Interest" );
         poiSection->setCheckable( true );
         poiSection->setConnectTo( "otherplaces" );
         poiSection->setSpacing( 12 );
-        
+
         GeoSceneItem *geoPole = new GeoSceneItem( "geographic-pole" );
         GeoSceneIcon *geoPoleIcon = geoPole->icon();
-        geoPole->setText( tr("Geographic Pole") );
-        geoPoleIcon->setPixmap( "bitmaps/pole_1.png" );    
+        geoPole->setText( i18n("Geographic Pole") );
+        geoPoleIcon->setPixmap( "bitmaps/pole_1.png" );
         poiSection->addItem( geoPole );
-        
+
         GeoSceneItem *magPole = new GeoSceneItem( "magnetic-pole" );
         GeoSceneIcon *magPoleIcon = magPole->icon();
-        magPole->setText( tr("Magnetic Pole") );
-        magPoleIcon->setPixmap( "bitmaps/pole_2.png" );    
+        magPole->setText( i18n("Magnetic Pole") );
+        magPoleIcon->setPixmap( "bitmaps/pole_2.png" );
         poiSection->addItem( magPole );
-        
+
         GeoSceneItem *airport = new GeoSceneItem( "airport" );
         GeoSceneIcon *airportIcon = airport->icon();
-        airport->setText( tr("Airport") );
-        airportIcon->setPixmap( "bitmaps/airport.png" );    
+        airport->setText( i18n("Airport") );
+        airportIcon->setPixmap( "bitmaps/airport.png" );
         poiSection->addItem( airport );
-        
+
         GeoSceneItem *shipwreck = new GeoSceneItem( "shipwreck" );
         GeoSceneIcon *shipwreckIcon = shipwreck->icon();
-        shipwreck->setText( tr("Shipwreck") );
-        shipwreckIcon->setPixmap( "bitmaps/shipwreck.png" );    
+        shipwreck->setText( i18n("Shipwreck") );
+        shipwreckIcon->setPixmap( "bitmaps/shipwreck.png" );
         poiSection->addItem( shipwreck );
-        
+
         GeoSceneItem *observatory = new GeoSceneItem( "observatory" );
         GeoSceneIcon *observatoryIcon = observatory->icon();
-        observatory->setText( tr("Observatory") );
-        observatoryIcon->setPixmap( "bitmaps/observatory.png" );    
+        observatory->setText( i18n("Observatory") );
+        observatoryIcon->setPixmap( "bitmaps/observatory.png" );
         poiSection->addItem( observatory );
-        
+
         legend->addSection( poiSection );
     }
-    
+
     if( d->uiWidget.checkBoxTer->checkState() == Qt::Checked )
     {
         GeoSceneProperty *terrainProperty = new GeoSceneProperty( "terrain" );
         terrainProperty->setDefaultValue( true );
         terrainProperty->setAvailable( true );
-        settings->addProperty( terrainProperty );     
-        
+        settings->addProperty( terrainProperty );
+
         GeoSceneSection *terrainSection = new GeoSceneSection( "terrain" );
         terrainSection->setHeading( "Terrain" );
         terrainSection->setCheckable( true );
         terrainSection->setConnectTo( "terrain" );
-        terrainSection->setSpacing( 12 );    
-        
+        terrainSection->setSpacing( 12 );
+
         GeoSceneItem *mountain = new GeoSceneItem( "mountain" );
         GeoSceneIcon *mountainIcon = mountain->icon();
-        mountain->setText( tr("Mountain") );
-        mountainIcon->setPixmap( "bitmaps/mountain_1.png" );    
+        mountain->setText( i18n("Mountain") );
+        mountainIcon->setPixmap( "bitmaps/mountain_1.png" );
         terrainSection->addItem( mountain );
-        
+
         GeoSceneItem *volcano = new GeoSceneItem( "volcano" );
         GeoSceneIcon *volcanoIcon = volcano->icon();
-        volcano->setText( tr("Volcano") );
-        volcanoIcon->setPixmap( "bitmaps/volcano_1.png" );    
-        terrainSection->addItem( volcano );   
-        
+        volcano->setText( i18n("Volcano") );
+        volcanoIcon->setPixmap( "bitmaps/volcano_1.png" );
+        terrainSection->addItem( volcano );
+
         legend->addSection( terrainSection );
-        
+
     }
-    
+
     if( d->uiWidget.checkBoxPop->checkState() == Qt::Checked )
     {
         GeoSceneProperty *placesProperty = new GeoSceneProperty( "places" );
         placesProperty->setDefaultValue( true );
         placesProperty->setAvailable( true );
         settings->addProperty( placesProperty );
-        
+
         GeoSceneProperty *citiesProperty = new GeoSceneProperty( "cities" );
         citiesProperty->setDefaultValue( true );
         citiesProperty->setAvailable( true );
         settings->addProperty( citiesProperty );
     }
-    
+
     if( d->uiWidget.checkBoxBorder->checkState() == Qt::Checked )
     {
         GeoSceneSection *bordersSection = new GeoSceneSection( "borders" );
@@ -1368,40 +1370,40 @@ GeoSceneDocument* MapWizard::createDocument()
         bordersSection->setCheckable( true );
         bordersSection->setConnectTo( "borders" );
         bordersSection->setSpacing( 12 );
-        
+
         GeoSceneItem *internationalBoundary = new GeoSceneItem( "international-boundary" );
         GeoSceneIcon *internationalBoundaryIcon = internationalBoundary->icon();
-        internationalBoundary->setText( tr("International") );
-        internationalBoundaryIcon->setPixmap( "bitmaps/border_1.png" );    
-        bordersSection->addItem( internationalBoundary ); 
-        
+        internationalBoundary->setText( i18n("International") );
+        internationalBoundaryIcon->setPixmap( "bitmaps/border_1.png" );
+        bordersSection->addItem( internationalBoundary );
+
         GeoSceneItem *stateBoundary = new GeoSceneItem( "state" );
         GeoSceneIcon *stateBoundaryIcon = stateBoundary->icon();
-        stateBoundary->setText( tr("State") );
+        stateBoundary->setText( i18n("State") );
         stateBoundaryIcon->setPixmap( "bitmaps/border_2.png" );
         bordersSection->addItem( stateBoundary );
-        
+
         GeoSceneProperty *bordersProperty = new GeoSceneProperty( "borders" );
         bordersProperty->setDefaultValue( false );
         bordersProperty->setAvailable( true );
         settings->addProperty( bordersProperty );
-        
+
         GeoSceneProperty *intBoundariesProperty = new GeoSceneProperty( "international-boundaries" );
         intBoundariesProperty->setDefaultValue( false );
         intBoundariesProperty->setAvailable( true );
         settings->addProperty( intBoundariesProperty );
-        
+
         GeoSceneProperty *stateBounderiesProperty = new GeoSceneProperty( "state-boundaries" );
         stateBounderiesProperty->setDefaultValue( false );
         stateBounderiesProperty->setAvailable( true );
         settings->addProperty( stateBounderiesProperty );
-        
+
         legend->addSection( bordersSection );
-        
+
         GeoSceneLayer* mwdbii = new GeoSceneLayer( "mwdbii" );
         mwdbii->setBackend( "vector" );
-        mwdbii->setRole( "polyline" ); 
-        
+        mwdbii->setRole( "polyline" );
+
         GeoSceneVector* vector = new GeoSceneVector( "pdiffborder" );
         vector->setFeature( "border" );
         vector->setFileFormat( "PNT" );
@@ -1415,17 +1417,17 @@ GeoSceneDocument* MapWizard::createDocument()
     overviewmap->setDefaultValue( true );
     overviewmap->setAvailable( true );
     settings->addProperty( overviewmap );
-    
+
     GeoSceneProperty *compass = new GeoSceneProperty( QString::fromUtf8("compass") );
     compass->setDefaultValue( true );
     compass->setAvailable( true );
     settings->addProperty( compass );
-    
+
     GeoSceneProperty *scalebar = new GeoSceneProperty( QString::fromUtf8("scalebar") );
     scalebar->setDefaultValue( true );
     scalebar->setAvailable( true );
     settings->addProperty( scalebar );
-    
+
     return document;
 }
 
@@ -1493,7 +1495,7 @@ void MapWizard::accept()
 void MapWizard::showPreview()
 {
     QSharedPointer<GeoSceneDocument> document( createDocument() );
-    
+
     if( createFiles( document.data() ) )
     {
         if( d->mapProviderType == MapWizardPrivate::WmsMap )
@@ -1506,7 +1508,7 @@ void MapWizard::showPreview()
             createLegend();
         }
     }
-    
+
     QPointer<PreviewDialog> previewDialog = new PreviewDialog( this, document.data()->head()->mapThemeId() );
     previewDialog->exec();
     delete previewDialog;
@@ -1542,8 +1544,8 @@ void MapWizard::updateBackdropCheckBox()
 void MapWizard::updateOwsServiceType()
 {
     if (d->uiWidget.radioButtonWms->isChecked()) {
-        d->uiWidget.labelWmsServer->setText(tr("WMS Server"));
-        d->uiWidget.labelOwsServiceHeader->setText(tr("<h4>WMS Server</h4>Please choose a <a href=\"https://en.wikipedia.org/wiki/Web_Map_Service\">WMS</a> server or enter a custom server URL."));
+        d->uiWidget.labelWmsServer->setText(i18n("WMS Server"));
+        d->uiWidget.labelOwsServiceHeader->setText(i18n("<h4>WMS Server</h4>Please choose a <a href=\"https://en.wikipedia.org/wiki/Web_Map_Service\">WMS</a> server or enter a custom server URL."));
         d->uiWidget.comboBoxWmsServer->clear();
         d->uiWidget.comboBoxWmsServer->addItems( d->wmsServerList );
         d->uiWidget.comboBoxWmsServer->addItem( tr( "Custom" ), QString::fromUtf8("http://") );
@@ -1551,8 +1553,8 @@ void MapWizard::updateOwsServiceType()
 
     }
     else if (d->uiWidget.radioButtonWmts->isChecked()) {
-        d->uiWidget.labelWmsServer->setText(tr("WMTS Server"));
-        d->uiWidget.labelOwsServiceHeader->setText(tr("<h4>WMTS Server</h4>Please choose a <a href=\"https://de.wikipedia.org/wiki/Web_Map_Tile_Service\">WMTS</a> server or enter a custom server URL."));
+        d->uiWidget.labelWmsServer->setText(i18n("WMTS Server"));
+        d->uiWidget.labelOwsServiceHeader->setText(i18n("<h4>WMTS Server</h4>Please choose a <a href=\"https://de.wikipedia.org/wiki/Web_Map_Tile_Service\">WMTS</a> server or enter a custom server URL."));
         d->uiWidget.comboBoxWmsServer->clear();
         d->uiWidget.comboBoxWmsServer->addItems( d->wmtsServerList );
         d->uiWidget.comboBoxWmsServer->addItem( tr( "Custom" ), QString::fromUtf8("http://") );

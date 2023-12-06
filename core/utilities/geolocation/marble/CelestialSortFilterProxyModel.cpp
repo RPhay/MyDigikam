@@ -11,6 +11,8 @@
 // Self
 #include "CelestialSortFilterProxyModel.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 CelestialSortFilterProxyModel::CelestialSortFilterProxyModel()
@@ -28,12 +30,12 @@ QVariant CelestialSortFilterProxyModel::data( const QModelIndex &index, int role
     QVariant var = QSortFilterProxyModel::data( index, role );
     if ( role == Qt::DisplayRole && index.column() == 0 ) {
         QString newOne = var.toString();
-        if (newOne == tr("Moon")) {
-            return QString(QLatin1String("  ") + tr("Moon"));
+        if (newOne == i18n("Moon")) {
+            return QString(QLatin1String("  ") + i18n("Moon"));
         } else if ( m_moons.contains( newOne.toLower() ) ) {
-            return QString(QLatin1String("  ") + newOne + QLatin1String(" (") + tr("moon") + QLatin1Char(')'));
+            return QString(QLatin1String("  ") + newOne + QLatin1String(" (") + i18n("moon") + QLatin1Char(')'));
         } else if ( m_dwarfs.contains( newOne.toLower() ) ) {
-            return QString(newOne + QLatin1String(" (") + tr("dwarf planet") + QLatin1Char(')'));
+            return QString(newOne + QLatin1String(" (") + i18n("dwarf planet") + QLatin1Char(')'));
         }
         return newOne;
     } else {

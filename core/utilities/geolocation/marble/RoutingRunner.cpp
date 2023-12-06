@@ -13,6 +13,8 @@
 #include <QString>
 #include <QVariant>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -67,7 +69,7 @@ const QString RoutingRunner::durationString(const QTime& duration) const
 {
     const QString hoursString = duration.toString( QString::fromUtf8("hh") );
     const QString minutesString = duration.toString( QString::fromUtf8("mm") );
-    const QString timeString = tr("%1:%2 h","journey duration").arg( hoursString, minutesString );
+    const QString timeString = QObject::tr("%1:%2 h","journey duration").arg( hoursString, minutesString );
     return timeString;
 }
 
