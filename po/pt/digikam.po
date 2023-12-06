@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-05 00:39+0000\n"
+"POT-Creation-Date: 2023-12-06 00:40+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -36903,7 +36903,7 @@ msgstr ""
 "actualizações."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:169
+#: core/utilities/setup/downloader/filesdownloader.cpp:161
 #, kde-format
 msgid "Download"
 msgstr "Obter"
@@ -61157,41 +61157,41 @@ msgstr "Seleccionar a Categoria"
 msgid "Your collection will use this category:"
 msgstr "A sua colecção irá usar esta categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Transferir os Ficheiros Necessários"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Use Face Detection feature"
 msgstr "Detecção de Caras"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:178
+#: core/utilities/setup/downloader/filesdownloader.cpp:170
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use Auto Tags Assignment feature"
 msgstr "Ajuste Automático"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:251
+#: core/utilities/setup/downloader/filesdownloader.cpp:243
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Todos os ficheiros foram transferidos com sucesso."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:258
+#: core/utilities/setup/downloader/filesdownloader.cpp:250
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Erro de Transferência"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61210,33 +61210,33 @@ msgstr ""
 "\n"
 "Poderá tentar de novo ou prosseguir a transferência no próximo início."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Tentar de Novo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:402
+#: core/utilities/setup/downloader/filesdownloader.cpp:394
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "O código de validação é incorrecto."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:426
+#: core/utilities/setup/downloader/filesdownloader.cpp:418
 #, kde-format
 msgid "File write error."
 msgstr "Erro de escrita no ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:433
+#: core/utilities/setup/downloader/filesdownloader.cpp:425
 #, kde-format
 msgid "File open error."
 msgstr "Erro de acesso ao ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:448
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "File on the server is too large."
 msgstr "O ficheiro no servidor é demasiado grande."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:587
+#: core/utilities/setup/downloader/filesdownloader.cpp:581
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path, %2: disk size with unit"
 #| msgid ""
@@ -61253,11 +61253,11 @@ msgid ""
 "images according to aesthetics or the automatic assignment of tags to "
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p><p>Some of these files were not found. Click "
-"“Download” to begin downloading the files you need. You can cancel this "
-"process, this dialog will appear again the next time you start digiKam. "
-"Without these files the selected features will not work.</p><p>The files "
-"will be downloaded to %1.</p><p><b>After the successful download you have to "
-"restart digiKam.</b></p>"
+"“Download” to begin downloading the files you need. You can close this "
+"dialog, you will be asked again the next time you start digiKam. Without "
+"these files the selected features will not work.</p><p>The files will be "
+"downloaded to %1.</p><p><b>After the successful download you have to restart "
+"digiKam.</b></p>"
 msgstr ""
 "<p>Para o motor de caras e para a ferramenta de remoção de olhos vermelhos, "
 "o digiKam necessita de alguns ficheiros binários grandes. Alguns desses "
@@ -61268,10 +61268,15 @@ msgstr ""
 "se que tem cerca de %2 disponíveis. <b>Após a transferência terminar com "
 "sucesso, terá de reiniciar o digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:599
+#: core/utilities/setup/downloader/filesdownloader.cpp:594
 #, kde-format
-msgctxt "%1: disk size with unit"
-msgid "The download of the selected features requires %1"
+msgctxt "%1: file counter, %2: disk size with unit"
+msgid "The download requires %1 files with a size of %2."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#, kde-format
+msgid "All files of the selected features were found."
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
@@ -62054,7 +62059,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Avançado"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:246
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62071,7 +62076,7 @@ msgstr ""
 "usado para ambas as imagens, o que poderá originar problemas com os meta-"
 "dados."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:264
+#: core/utilities/setup/metadata/setupmetadata.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62082,7 +62087,7 @@ msgstr ""
 "suas imagens com uma orientação errada, pelo que altere esta opção apenas se "
 "realmente precisar dela."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:287
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62100,13 +62105,13 @@ msgstr ""
 "Se optar por fazê-lo, faça uma cópia de segurança dos seus ficheiros RAW. "
 "Recomendamos-lhe com veemência que não active esta opção."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:295
+#: core/utilities/setup/metadata/setupmetadata.cpp:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Sim, Compreendo"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:305
+#: core/utilities/setup/metadata/setupmetadata.cpp:326
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -63094,11 +63099,12 @@ msgid "Enable internal debug logging"
 msgstr "Activar o registo de depuração interno"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:80
-#, kde-format
-msgid "Download Face Engine Data..."
+#, fuzzy, kde-format
+#| msgid "Download Face Engine Data..."
+msgid "Download required binary data..."
 msgstr "Obter os Dados do Motor de Caras..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:88
+#: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

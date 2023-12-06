@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-05 00:39+0000\n"
-"PO-Revision-Date: 2023-11-08 22:07+0100\n"
+"POT-Creation-Date: 2023-12-06 00:40+0000\n"
+"PO-Revision-Date: 2023-12-05 13:09+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3261,10 +3261,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elementi selezionati"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 400 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 650 user-reports closed on bugzilla."
-msgstr "Più di 400 segnalazioni di errore di utenti chiuse in Bugzilla."
+msgstr "Più di 650 segnalazioni di errore di utenti chiuse in Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3279,6 +3278,8 @@ msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
 "and use Qt6 and KF6 frameworks."
 msgstr ""
+"L'installatore di Windows viene ora compilato nativamente con il toolchain "
+"Microsoft VCPKG e utilizza i framework Qt6 e KF6."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
@@ -3533,12 +3534,11 @@ msgstr ""
 "conversione a MacOS e migliorata la stabilità dell'estensione."
 
 #: core/app/views/stack/welcomepageview.cpp:174
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 20230403."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
 msgstr ""
 "Aggiornato il motore interno RAW all'ultimo rilascio di Libraw snapshot "
-"20230403."
+"2023-11-21."
 
 #: core/app/views/stack/welcomepageview.cpp:175
 #, kde-format
@@ -6141,32 +6141,38 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
+"<p><b>Questo strumento permette di assegnare automaticamente tag alle "
+"immagini basandosi sull'analisi del contenuto tramite l'utilizzo della rete "
+"neurale di apprendimento profondo.</b></p><p>Le impostazioni sotto riportate "
+"determinano il modello di apprendimento profondo da utilizzare mentre si "
+"analizza il contenuto delle immagini per l'individuazione dei soggetti della "
+"fotografia. La rete neurale utilizzata in sottofondo genererà "
+"automaticamente una serie di tag che descrivono il contenuto e memorizzerà i "
+"risultati all'interno della banca dati.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
 #: core/utilities/maintenance/maintenancedlg.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Segmentation mode:"
+#, kde-format
 msgid "Selection model: "
-msgstr "Modalità di segmentazione:"
+msgstr "Modello di selezione: "
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
 #: core/utilities/maintenance/maintenancedlg.cpp:196
 #, kde-format
 msgid "YOLOv5 Nano"
-msgstr ""
+msgstr "YOLOv5 Nano"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
 #: core/utilities/maintenance/maintenancedlg.cpp:197
 #, kde-format
 msgid "YOLOv5 XLarge"
-msgstr ""
+msgstr "YOLOv5 XLarge"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
 #: core/utilities/maintenance/maintenancedlg.cpp:198
 #, kde-format
 msgid "ResNet50"
-msgstr ""
+msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
 #, kde-format
@@ -6191,6 +6197,27 @@ msgid ""
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
+"<p><b>YOLOv5 Nano</b>: questo modello è una rete neurale che offre velocità "
+"ed efficienza eccezionali. Ti permette di valutare rapidamente "
+"l'integrazione di scenari di rilevamento degli oggetti su scala minore. È "
+"progettato per il rilevamento degli oggetti ed è capace di riconoscere ed "
+"estrarre la loro posizione all'interno di un'immagine. La limitazione del "
+"numero di oggetti riconoscibili è impostata su 80.</p><p><b>YOLOv5 XLarge</"
+"b>: come il modello precedente, è un modello di rete neurale dedicato ai "
+"casi più complessi di rilevamento degli oggetti e dimostra notevoli "
+"capacità. Nonostante la complessità aggiuntiva che introduce più latenza "
+"temporale e risorse informatiche, deve essere utilizzata per scenari di "
+"rilevamento degli oggetti su scala maggiore, in quanto fornisce previsioni "
+"più accurate (al costo di una minore velocità).</p><p><b>ResNet50</b>: "
+"questo modello è un tipo specifico di rete neurale convoluzionale formato "
+"dall'accatastamento di blocchi residui utilizzati comunemente per alimentare "
+"le applicazioni di visione artificiale quali le individuazioni degli "
+"oggetti. Questo tipo di struttura permette di addestrare le reti molto "
+"profonde senza incappare nel problema della scomparsa del gradiente. A "
+"differenza di YOLO, ResNet50 si focalizza principalmente sulla "
+"classificazione delle immagini e non fornisce localizzazione degli oggetti. "
+"È in grado di riconoscere gli oggetti da un vasto gruppo formato da più di "
+"mille classi che comprende un'ampia gamma di oggetti, animali e scene.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -6199,26 +6226,21 @@ msgid "Assign Tags"
 msgstr "Assegna i tag"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags metadata to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to assign tags automatically to images"
-msgstr "Strumento per assegnare i metadati dei tag alle immagini"
+msgstr "Strumento per assegnare automaticamente tag alle immagini"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
 "values to images automatically using deep-learning engine.</para>"
 msgstr ""
 "<para>Questo strumento del gestore elaborazione in serie assegnerà alle "
-"immagini metadati relativi alle gerarchie delle parole chiave.</para>"
+"immagini metadati relativi alle gerarchie delle parole chiave in modo "
+"automatico, utilizzando il motore di apprendimento profondo.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:46
 #, kde-format
@@ -9059,17 +9081,17 @@ msgid "Sharpen..."
 msgstr "Aumenta la nitidezza..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:177
-#, fuzzy, kde-format
-#| msgid "No Profile Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
-msgstr "Nessun profilo disponibile"
+msgstr "Nessuna stampante disponibile"
 
 #: core/dplugins/editor/file/print/printhelper.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
+"Non è installata alcuna stampante nel tuo sistema. Installane almeno una."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:188
 #, kde-format
@@ -11374,20 +11396,16 @@ msgid "One map"
 msgstr "Una mappa"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - vertical"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "Due mappe in verticale"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - horizontal"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
-msgstr "Due mappe in orizzontale"
+msgstr "Due mappe - in alto e in basso"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format
@@ -21222,17 +21240,17 @@ msgid "OpenGL Error"
 msgstr "Errore OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
-#, fuzzy, kde-format
-#| msgid "GL_ARB_texture_rectangle not supported"
+#, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
-msgstr "GL_ARB_texture_rectangle non supportato"
+msgstr ""
+"L'estensione OpenGL «GL_ARB_texture_rectangle» non è supportata dal tuo "
+"sistema"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
-#, fuzzy, kde-format
-#| msgid "No OpenGL context found"
+#, kde-format
 msgid "No OpenGL context has been found"
-msgstr "Contesto OpenGL non trovato"
+msgstr "Non è stato trovato alcun contesto OpenGL"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
 #, kde-format
@@ -21521,11 +21539,9 @@ msgstr "Totale:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_soundLabel)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:115
-#, fuzzy, kde-format
-#| msgctxt "@info: button"
-#| msgid "Volume"
+#, kde-format
 msgid "Volumes:"
-msgstr "Volume"
+msgstr "Volumi:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:23
@@ -36902,7 +36918,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Apri la finestra di dialogo per configurare gli aggiornamenti."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:169
+#: core/utilities/setup/downloader/filesdownloader.cpp:161
 #, kde-format
 msgid "Download"
 msgstr "Scarica"
@@ -43261,11 +43277,12 @@ msgid "Quốc Hưng Trần"
 msgstr "Quốc Hưng Trần"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:165
-#, fuzzy, kde-format
-#| msgid "MJPEGStream plugin, OCR text Converter plugin"
+#, kde-format
 msgid ""
 "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
-msgstr "Estensione MJPEGStream, Estensione Convertitore di testo OCR"
+msgstr ""
+"Estensione MJPEGStream, Estensione Convertitore di testo OCR, motore di "
+"assegnazione di tag automatici"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:170
 #, kde-format
@@ -53451,8 +53468,7 @@ msgid "API Key:"
 msgstr "Chiave delle API:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, fuzzy, kde-format
-#| msgid "Javascript Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Messaggio Javascript"
@@ -53582,11 +53598,10 @@ msgid "New Folder"
 msgstr "Nuova cartella"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
-msgstr "Gestione del colore"
+msgstr "Gestione dei segnalibri"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
@@ -53677,12 +53692,10 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 segnalibri.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
-msgstr "Modifica segnalibro"
+msgstr "Esporta segnalibro"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, kde-format
@@ -54325,12 +54338,10 @@ msgid "Retrieving RG info -"
 msgstr "Recupero di informazioni GI -"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:505
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Reverse Geocoding"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
-msgstr "Geocodifica inversa"
+msgstr "Errore di geocodifica inversa"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
@@ -54363,8 +54374,7 @@ msgstr ""
 "precedentemente ottenuti?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
-#, fuzzy, kde-format
-#| msgid "Abort reverse geocoding?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Interrompere la geocodifica inversa?"
@@ -57610,12 +57620,10 @@ msgstr "Panne&llo sinistro"
 msgid "&Right Panel"
 msgstr "Pannello dest&ro"
 
-# ML XXX Controllare! L'originale non ha i due punti
 #: core/utilities/maintenance/autotagsassignment.cpp:99
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#, kde-format
 msgid "Autotags Assignment"
-msgstr "Regolazione automatica"
+msgstr "Assegnazione di tag automatici"
 
 #: core/utilities/maintenance/dbcleaner.cpp:130
 #: core/utilities/maintenance/dbcleaner.cpp:230
@@ -57907,18 +57915,24 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
+"<p><b>Questo strumento permette di assegnare automaticamente tag alle "
+"immagini basandosi sull'analisi del contenuto tramite l'utilizzo della rete "
+"neurale di apprendimento profondo.</b></p><p>Le impostazioni sotto riportate "
+"determinano il modello di apprendimento profondo da utilizzare mentre si "
+"analizza il contenuto delle immagini per l'individuazione dei soggetti della "
+"fotografia. La rete neurale utilizzata in sottofondo genererà "
+"automaticamente una serie di tag che descrivono il contenuto e memorizzerà i "
+"risultati all'interno della banca dati.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:179
-#, fuzzy, kde-format
-#| msgid "Metering mode:"
+#, kde-format
 msgid "Auto-tagging mode: "
-msgstr "Modalità di misurazione:"
+msgstr "Modalità tag automatici: "
 
 #: core/utilities/maintenance/maintenancedlg.cpp:184
-#, fuzzy, kde-format
-#| msgid "Clean all and re-scan"
+#, kde-format
 msgid "Clean all and re-assign"
-msgstr "Pulisci tutto ed esegui una nuova analisi"
+msgstr "Pulisci tutto e riassegna"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:185
 #: core/utilities/maintenance/maintenancedlg.cpp:226
@@ -57934,6 +57948,9 @@ msgid ""
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
 "the items with no assigned tag.</p>"
 msgstr ""
+"<p><b>Pulisci tutto e riassegna</b>: elimina tutti i tag già assegnati e "
+"rianalizza tutti gli elementi da zero.</p><p><b>Esegui un'analisi solo dei "
+"non assegnati</b>: analizza solamente gli elementi con tag non assegnati.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
 #, kde-format
@@ -57958,13 +57975,32 @@ msgid ""
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
+"<p><b>YOLOv5 Nano</b>: questo modello è una rete neurale che offre velocità "
+"ed efficienza eccezionali. Ti permette di valutare rapidamente "
+"l'integrazione di scenari di rilevamento degli oggetti su scala minore. È "
+"progettato per il rilevamento degli oggetti ed è capace di riconoscere ed "
+"estrarre la loro posizione all'interno di un'immagine. La limitazione del "
+"numero di oggetti riconoscibili è impostata su 80.</p><p><b>YOLOv5 XLarge</"
+"b>: come il modello precedente, è un modello di rete neurale dedicato ai "
+"casi più complessi di rilevamento degli oggetti e dimostra notevoli "
+"capacità. Nonostante la complessità aggiuntiva che introduce più latenza "
+"temporale e risorse informatiche, deve essere utilizzata per scenari di "
+"rilevamento degli oggetti su scala maggiore, in quanto fornisce previsioni "
+"più accurate (al costo di una minore velocità).</p><p><b>ResNet50</b>: "
+"questo modello è un tipo specifico di rete neurale convoluzionale formato "
+"dall'accatastamento di blocchi residui utilizzati comunemente per alimentare "
+"le applicazioni di visione artificiale quali le individuazioni degli "
+"oggetti. Questo tipo di struttura permette di addestrare le reti molto "
+"profonde senza incappare nel problema della scomparsa del gradiente. A "
+"differenza di YOLO, ResNet50 si focalizza principalmente sulla "
+"classificazione delle immagini e non fornisce localizzazione degli oggetti. "
+"È in grado di riconoscere gli oggetti da un vasto gruppo formato da più di "
+"mille classi che comprende un'ampia gamma di oggetti, animali e scene.</p>"
 
-# ML XXX Controllare! L'originale non ha i due punti
 #: core/utilities/maintenance/maintenancedlg.cpp:212
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#, kde-format
 msgid "Auto-tags Assignment"
-msgstr "Regolazione automatica"
+msgstr "Assegnazione tag automatici"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
@@ -58887,10 +58923,9 @@ msgid "File Size"
 msgstr "Dimensione del file"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
-#, fuzzy, kde-format
-#| msgid "Size of the file"
+#, kde-format
 msgid "Size of the file in megabytes"
-msgstr "Dimensione del file"
+msgstr "Dimensione del file in megabyte"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:122
 #: core/utilities/searchwindow/searchfields_createfield.cpp:134
@@ -58900,10 +58935,9 @@ msgid "-"
 msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
-#, fuzzy, kde-format
-#| msgid "Size of the file"
+#, kde-format
 msgid "Size of the file in bytes"
-msgstr "Dimensione del file"
+msgstr "Dimensione del file in byte"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
@@ -61239,42 +61273,39 @@ msgstr "Seleziona categoria"
 msgid "Your collection will use this category:"
 msgstr "La nuova raccolta utilizzerà questa categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Scarica i file richiesti"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:177
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
+#, kde-format
 msgid "Use Face Detection feature"
-msgstr "Rilevamento facciale"
+msgstr "Usa la funzionalità Rilevamento facciale"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:178
+#: core/utilities/setup/downloader/filesdownloader.cpp:170
 #, kde-format
 msgid "Use Aesthetic Detection feature"
-msgstr ""
+msgstr "Usa la funzionalità Rilevamento estetico"
 
-# ML XXX Controllare! L'originale non ha i due punti
-#: core/utilities/setup/downloader/filesdownloader.cpp:179
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#, kde-format
 msgid "Use Auto Tags Assignment feature"
-msgstr "Regolazione automatica"
+msgstr "Usa la funzionalità Assegnazione di tag automatici"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:251
+#: core/utilities/setup/downloader/filesdownloader.cpp:243
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Tutti i file scaricati sono scaricati correttamente."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:258
+#: core/utilities/setup/downloader/filesdownloader.cpp:250
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Errore nello scaricamento"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61293,69 +61324,80 @@ msgstr ""
 "\n"
 "Puoi ritentare o continuare lo scaricamento al prossimo avvio."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Riprova"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:402
+#: core/utilities/setup/downloader/filesdownloader.cpp:394
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Il codice di controllo non è corretto."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:426
+#: core/utilities/setup/downloader/filesdownloader.cpp:418
 #, kde-format
 msgid "File write error."
 msgstr "Errore di scrittura su file."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:433
+#: core/utilities/setup/downloader/filesdownloader.cpp:425
 #, kde-format
 msgid "File open error."
 msgstr "Errore nell'apertura del file."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:448
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Il file sul server è troppo grande."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:587
+#: core/utilities/setup/downloader/filesdownloader.cpp:581
 #, fuzzy, kde-format
-#| msgctxt "%1: folder path, %2: disk size with unit"
+#| msgctxt "%1: folder path"
 #| msgid ""
-#| "<p>For the face engine and red eye removal tool, digiKam needs some large "
-#| "binary files. Some of these files were not found. Click 'Download' to "
-#| "begin downloading the needed files. You can cancel this process, the next "
-#| "time digiKam is started this dialog will appear again. Face detection "
-#| "will not work without these files.</p><p>The files will be downloaded to "
-#| "%1. Make sure there are around %2 available. <b>After the successful "
-#| "download you have to restart digiKam.</b></p>"
+#| "<p>For face detection, the red-eye removal tool, the classification of "
+#| "images according to aesthetics or the automatic assignment of tags to "
+#| "images, digiKam requires some large binary files. You can choose which "
+#| "feature you want to use.</p><p>Some of these files were not found. Click "
+#| "“Download” to begin downloading the files you need. You can cancel this "
+#| "process, this dialog will appear again the next time you start digiKam. "
+#| "Without these files the selected features will not work.</p><p>The files "
+#| "will be downloaded to %1.</p><p><b>After the successful download you have "
+#| "to restart digiKam.</b></p>"
 msgctxt "%1: folder path"
 msgid ""
 "<p>For face detection, the red-eye removal tool, the classification of "
 "images according to aesthetics or the automatic assignment of tags to "
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p><p>Some of these files were not found. Click "
-"“Download” to begin downloading the files you need. You can cancel this "
-"process, this dialog will appear again the next time you start digiKam. "
-"Without these files the selected features will not work.</p><p>The files "
-"will be downloaded to %1.</p><p><b>After the successful download you have to "
-"restart digiKam.</b></p>"
+"“Download” to begin downloading the files you need. You can close this "
+"dialog, you will be asked again the next time you start digiKam. Without "
+"these files the selected features will not work.</p><p>The files will be "
+"downloaded to %1.</p><p><b>After the successful download you have to restart "
+"digiKam.</b></p>"
 msgstr ""
-"<p>digiKam richiede file eseguibili di grandi dimensioni per eseguire il "
-"rilevamento facciale e lo strumento di rimozione occhi rossi. Alcuni di "
-"questi file non sono stati trovati. Fai clic su «Scarica» per iniziare a "
-"scaricare i file necessari. Puoi annullare questa operazione, ma la prossima "
-"volta che avvii digiKam questa finestra di dialogo sarà riproposta. Il "
-"rilevamento facciale non funzionerà senza questi file.</p><p>I file saranno "
-"scaricati in %1: accertati di avere a disposizione almeno %2. <b>Dopo averli "
-"scaricati correttamente dovrai riavviare il programma.</b></p>"
+"<p>Per il rilevamento facciale, lo strumento rimozione occhi rossi, la "
+"classificazione delle immagini in base all'estetica o l'assegnazione "
+"automatica di tag alle immagini, digiKam richiede alcuni file eseguibili "
+"piuttosto grandi. Puoi scegliere quale funzionalità utilizzare.</p><p>Alcuni "
+"di questi file non vengono trovati. Fai clic su «Scarica» per iniziare lo "
+"scaricamento dei file richiesti. Puoi annullare il processo, in tal caso la "
+"finestra riapparirà all'avvio successivo di digiKam. Senza questi file le "
+"funzionalità selezionate non funzioneranno.</p><p>I file saranno scaricati "
+"in %1.</p><p><b>Dopo averli scaricati correttamente dovrai riavviare il "
+"programma.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:599
+#: core/utilities/setup/downloader/filesdownloader.cpp:594
 #, kde-format
-msgctxt "%1: disk size with unit"
-msgid "The download of the selected features requires %1"
+msgctxt "%1: file counter, %2: disk size with unit"
+msgid "The download requires %1 files with a size of %2."
 msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#, fuzzy, kde-format
+#| msgctxt "%1: disk size with unit"
+#| msgid "The download of the selected features requires %1"
+msgid "All files of the selected features were found."
+msgstr "Lo scaricamento delle funzionalità selezionate richiede %1"
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -62140,7 +62182,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Avanzata"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:246
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62157,7 +62199,7 @@ msgstr ""
 "sarà utilizzato per entrambe le immagini, il che può generare problemi di "
 "metadati."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:264
+#: core/utilities/setup/metadata/setupmetadata.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62168,7 +62210,7 @@ msgstr ""
 "porterà a un'orientazione sbagliata delle immagini, dunque modifica questa "
 "opzione solo se lo necessiti esplicitamente."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:287
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62186,13 +62228,13 @@ msgstr ""
 "Se decidi di procedere con questa operazione, fai una copia di sicurezza dei "
 "tuoi file RAW. Ti raccomandiamo vivamente di non abilitare questa opzione."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:295
+#: core/utilities/setup/metadata/setupmetadata.cpp:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Sì, ho capito"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:305
+#: core/utilities/setup/metadata/setupmetadata.cpp:326
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -62818,18 +62860,7 @@ msgstr ""
 "attivare questa opzione."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Add file types to be recognised as sidecars.\n"
-#| "digiKam (optionally) writes metadata to *.xmp sidecar\n"
-#| "files. Other programs might use different types, which\n"
-#| "can be specified below. digiKam will neither display these\n"
-#| "nor read from or write to them. But whenever a matching album\n"
-#| "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-#| "moved, copied or deleted, the same operation will be done\n"
-#| "on these sidecar files.\n"
-#| "Multiple extensions must be separated by a semicolon or a space."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
@@ -62842,13 +62873,12 @@ msgid ""
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 "Aggiungi tipi di file in modo da essere riconosciuti come sidecar.\n"
-"digiKam (opzionalmente) scrive i metadati in file sidecar *.xmp.\n"
-"Altri programmi potrebbero usare tipi diversi, specificabili sotto.\n"
-"digiKam non visualizzerà mai questi ultimi, né li leggerà o scriverà\n"
-"in essi. Ogni volta che viene rinominato, spostato, copiato o\n"
-"eliminato un elemento di album corrispondente (per es. «image.dng»\n"
-"per «image.dng.pp3»), sarà eseguita la stessa operazione sui questi\n"
-"file sidecar.\n"
+"digiKam (opzionalmente) scrive i metadati in file sidecar *.xmp. Altri "
+"programmi potrebbero usare tipi diversi, specificabili sotto. digiKam non "
+"visualizzerà mai questi ultimi, né li leggerà o scriverà in essi. Ogni volta "
+"che viene rinominato, spostato, copiato o eliminato un elemento di album "
+"corrispondente (per es. «image.dng» per «image.dng.pp3»), sarà eseguita la "
+"stessa operazione sui questi file sidecar.\n"
 "Le estensioni multiple si devono separare con punto e virgola o uno spazio."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
@@ -63189,11 +63219,12 @@ msgid "Enable internal debug logging"
 msgstr "Abilita il registro del debug interno"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:80
-#, kde-format
-msgid "Download Face Engine Data..."
+#, fuzzy, kde-format
+#| msgid "Download Face Engine Data..."
+msgid "Download required binary data..."
 msgstr "Scarica dati del motore di riconoscimento facciale..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:88
+#: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

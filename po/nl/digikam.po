@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-05 00:39+0000\n"
-"PO-Revision-Date: 2023-12-04 11:48+0100\n"
+"POT-Creation-Date: 2023-12-06 00:40+0000\n"
+"PO-Revision-Date: 2023-12-05 10:45+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -36832,7 +36832,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "De pagina instellingendialoog openen om bijwerken te configureren."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:169
+#: core/utilities/setup/downloader/filesdownloader.cpp:161
 #, kde-format
 msgid "Download"
 msgstr "Downloaden"
@@ -61145,41 +61145,39 @@ msgstr "Categorie selecteren"
 msgid "Your collection will use this category:"
 msgstr "Uw verzameling zal deze categorie gebruiken:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Vereiste bestanden downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:177
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
+#, kde-format
 msgid "Use Face Detection feature"
-msgstr "Gezichtsdetectie"
+msgstr "Functie gezichtsdetectie gebruiken"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:178
+#: core/utilities/setup/downloader/filesdownloader.cpp:170
 #, kde-format
 msgid "Use Aesthetic Detection feature"
-msgstr ""
+msgstr "Functie esthetische detectie gebruiken"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:179
-#, fuzzy, kde-format
-#| msgid "Autotags Assignment"
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#, kde-format
 msgid "Use Auto Tags Assignment feature"
-msgstr "Automatisch toekennen van tags"
+msgstr "Functie automatisch toekennen van tags gebruiken"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:251
+#: core/utilities/setup/downloader/filesdownloader.cpp:243
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Alle bestanden zijn met succes gedownload."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:258
+#: core/utilities/setup/downloader/filesdownloader.cpp:250
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Fout bij downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61199,69 +61197,80 @@ msgstr ""
 "U kunt het opnieuw proberen of doorgaan met downloaden bij de volgende keer "
 "starten."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Opnieuw proberen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:402
+#: core/utilities/setup/downloader/filesdownloader.cpp:394
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Controlesom is onjuist."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:426
+#: core/utilities/setup/downloader/filesdownloader.cpp:418
 #, kde-format
 msgid "File write error."
 msgstr "Schrijffout bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:433
+#: core/utilities/setup/downloader/filesdownloader.cpp:425
 #, kde-format
 msgid "File open error."
 msgstr "Fout bij openen van bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:448
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Bestand op de server is te groot."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:587
+#: core/utilities/setup/downloader/filesdownloader.cpp:581
 #, fuzzy, kde-format
-#| msgctxt "%1: folder path, %2: disk size with unit"
+#| msgctxt "%1: folder path"
 #| msgid ""
-#| "<p>For the face engine and red eye removal tool, digiKam needs some large "
-#| "binary files. Some of these files were not found. Click 'Download' to "
-#| "begin downloading the needed files. You can cancel this process, the next "
-#| "time digiKam is started this dialog will appear again. Face detection "
-#| "will not work without these files.</p><p>The files will be downloaded to "
-#| "%1. Make sure there are around %2 available. <b>After the successful "
-#| "download you have to restart digiKam.</b></p>"
+#| "<p>For face detection, the red-eye removal tool, the classification of "
+#| "images according to aesthetics or the automatic assignment of tags to "
+#| "images, digiKam requires some large binary files. You can choose which "
+#| "feature you want to use.</p><p>Some of these files were not found. Click "
+#| "“Download” to begin downloading the files you need. You can cancel this "
+#| "process, this dialog will appear again the next time you start digiKam. "
+#| "Without these files the selected features will not work.</p><p>The files "
+#| "will be downloaded to %1.</p><p><b>After the successful download you have "
+#| "to restart digiKam.</b></p>"
 msgctxt "%1: folder path"
 msgid ""
 "<p>For face detection, the red-eye removal tool, the classification of "
 "images according to aesthetics or the automatic assignment of tags to "
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p><p>Some of these files were not found. Click "
-"“Download” to begin downloading the files you need. You can cancel this "
-"process, this dialog will appear again the next time you start digiKam. "
-"Without these files the selected features will not work.</p><p>The files "
-"will be downloaded to %1.</p><p><b>After the successful download you have to "
-"restart digiKam.</b></p>"
+"“Download” to begin downloading the files you need. You can close this "
+"dialog, you will be asked again the next time you start digiKam. Without "
+"these files the selected features will not work.</p><p>The files will be "
+"downloaded to %1.</p><p><b>After the successful download you have to restart "
+"digiKam.</b></p>"
 msgstr ""
-"<p>Voor de gezichten-engine en het hulpmiddel rode ogen verwijderen heeft "
-"digiKam enige grote binaire bestanden nodig. Sommige van deze bestanden zijn "
-"niet gevonden. Klik op 'Download', dan worden ze gedownload. U kunt dat "
-"proces nu annuleren, de volgende keer dat digiKam wordt gestart zal deze "
-"dialoog weer verschijnen. Gezichtsherkenning zal zonder deze bestanden niet "
-"werken.</p><p>De bestanden zullen gedownload worden tot %1. Ga na dat er "
-"ongeveer %2 beschikbaar is. <b>Na het succes van het downloaden moet u "
-"digiKam opnieuw opstarten.</b></p>"
+"<p>Voor gezichtsdetectie, het hulpmiddel rode-ogen-verwijderen, de "
+"classificatie van afbeeldingen volgens esthetische criteria of de "
+"automatische toekenning van tags aan afbeeldingen, vereist digiKam enige "
+"grote binaire bestanden. U kunt kiezen welke functie u wilt gebruiken.</"
+"p><p>Sommige van die bestanden zijn niet gevonden. Klik op “Downloaden” om "
+"te beginnen met downloaden van de bestanden die u nodig hebt. U kunt dit "
+"proces annuleren, dan zal deze dialoog de volgende keer dat u digiKam start "
+"opnieuw verschijnen. Zonder deze bestanden zullen de geselecteerde functies "
+"niet werken.</p><p>De bestanden zullen gedownload worden naar %1.</"
+"p><p><b>Na het met succes downloaden moet u digiKam herstarten.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:599
+#: core/utilities/setup/downloader/filesdownloader.cpp:594
 #, kde-format
-msgctxt "%1: disk size with unit"
-msgid "The download of the selected features requires %1"
+msgctxt "%1: file counter, %2: disk size with unit"
+msgid "The download requires %1 files with a size of %2."
 msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#, fuzzy, kde-format
+#| msgctxt "%1: disk size with unit"
+#| msgid "The download of the selected features requires %1"
+msgid "All files of the selected features were found."
+msgstr "Het downloaden van de geselecteerde functies vereist %1"
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -62041,7 +62050,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Geavanceerd"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:246
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62058,7 +62067,7 @@ msgstr ""
 "worden en zal voor beide afbeeldingen gebruikt worden, wat tot problemen met "
 "metagegevens kan leiden."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:264
+#: core/utilities/setup/metadata/setupmetadata.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62069,7 +62078,7 @@ msgstr ""
 "uw afbeeldingen in een verkeerde oriëntatie tonen, wijzig deze optie alleen "
 "als u deze expliciet vereist."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:287
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62087,13 +62096,13 @@ msgstr ""
 "Als u besluit dat te doen, maak een reservekopie van uw RAW-bestanden. We "
 "bevelen sterk aan deze optie niet in te schakelen."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:295
+#: core/utilities/setup/metadata/setupmetadata.cpp:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Ja ik begrijp het"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:305
+#: core/utilities/setup/metadata/setupmetadata.cpp:326
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -63076,11 +63085,12 @@ msgid "Enable internal debug logging"
 msgstr "Interne debug-loggen inschakelen"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:80
-#, kde-format
-msgid "Download Face Engine Data..."
+#, fuzzy, kde-format
+#| msgid "Download Face Engine Data..."
+msgid "Download required binary data..."
 msgstr "Gezichten-engine-gegevens downloaden..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:88
+#: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

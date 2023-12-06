@@ -220,14 +220,21 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
             {
                 QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(event);
 
-                if (keyEvent && (
-                                 (keyEvent->key() == Qt::Key_Up)    ||
-                                 (keyEvent->key() == Qt::Key_Down)  ||
-                                 (keyEvent->key() == Qt::Key_Enter) ||
-                                 (keyEvent->key() == Qt::Key_Return))
-                                )
+                if      (
+                         (keyEvent->key() == Qt::Key_Up)    ||
+                         (keyEvent->key() == Qt::Key_Down)  ||
+                         (keyEvent->key() == Qt::Key_Enter) ||
+                         (keyEvent->key() == Qt::Key_Return)
+                        )
                 {
                     QApplication::sendEvent(popup, event);
+
+                    return true;
+                }
+                else if (keyEvent->key() == Qt::Key_Escape)
+                {
+                    event->accept();
+                    popup->hide();
 
                     return true;
                 }
@@ -237,28 +244,25 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
         {
             QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(event);
 
-            if (keyEvent)
+            if      (popup->isVisible())
             {
-                if      (popup->isVisible())
+                if (
+                    (keyEvent->key() == Qt::Key_Up)   ||
+                    (keyEvent->key() == Qt::Key_Down) ||
+                    (keyEvent->key() == Qt::Key_Escape)
+                   )
                 {
-                    if (
-                        (keyEvent->key() == Qt::Key_Up)   ||
-                        (keyEvent->key() == Qt::Key_Down) ||
-                        (keyEvent->key() == Qt::Key_Escape)
-                       )
-                    {
-                        event->accept();
-                    }
+                    event->accept();
                 }
-                else if (d->lineEdit->text().isEmpty())
+            }
+            else if (d->lineEdit->text().isEmpty())
+            {
+                if (
+                    (keyEvent->key() == Qt::Key_Left) ||
+                    (keyEvent->key() == Qt::Key_Right)
+                   )
                 {
-                    if (
-                        (keyEvent->key() == Qt::Key_Left) ||
-                        (keyEvent->key() == Qt::Key_Right)
-                       )
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
         }
