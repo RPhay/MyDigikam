@@ -417,12 +417,24 @@ void DbEngineParameters::readFromConfig(const QString& configGroup)
 
 #if defined(HAVE_MYSQLSUPPORT) && defined(HAVE_INTERNALMYSQL)
 
-    internalServer                = group.readEntry(configInternalDatabaseServer,                false);
-    internalServerDBPath          = group.readEntry(configInternalDatabaseServerPath,            serverPrivatePath());
-    internalServerMysqlInitCmd    = group.readEntry(configInternalDatabaseServerMysqlInitCmd,    defaultMysqlInitCmd());
-    internalServerMysqlAdminCmd   = group.readEntry(configInternalDatabaseServerMysqlAdminCmd,   defaultMysqlAdminCmd());
-    internalServerMysqlServerCmd  = group.readEntry(configInternalDatabaseServerMysqlServerCmd,  defaultMysqlServerCmd()); 
-    internalServerMysqlUpgradeCmd = group.readEntry(configInternalDatabaseServerMysqlUpgradeCmd, defaultMysqlUpgradeCmd());
+    if (isSQLite())
+    {
+        internalServer                = group.readEntry(configInternalDatabaseServer,                false);
+        internalServerDBPath          = group.readEntry(configInternalDatabaseServerPath,            QString());
+        internalServerMysqlInitCmd    = group.readEntry(configInternalDatabaseServerMysqlInitCmd,    QString());
+        internalServerMysqlAdminCmd   = group.readEntry(configInternalDatabaseServerMysqlAdminCmd,   QString());
+        internalServerMysqlServerCmd  = group.readEntry(configInternalDatabaseServerMysqlServerCmd,  QString());
+        internalServerMysqlUpgradeCmd = group.readEntry(configInternalDatabaseServerMysqlUpgradeCmd, QString());
+    }
+    else
+    {
+        internalServer                = group.readEntry(configInternalDatabaseServer,                false);
+        internalServerDBPath          = group.readEntry(configInternalDatabaseServerPath,            serverPrivatePath());
+        internalServerMysqlInitCmd    = group.readEntry(configInternalDatabaseServerMysqlInitCmd,    defaultMysqlInitCmd());
+        internalServerMysqlAdminCmd   = group.readEntry(configInternalDatabaseServerMysqlAdminCmd,   defaultMysqlAdminCmd());
+        internalServerMysqlServerCmd  = group.readEntry(configInternalDatabaseServerMysqlServerCmd,  defaultMysqlServerCmd()); 
+        internalServerMysqlUpgradeCmd = group.readEntry(configInternalDatabaseServerMysqlUpgradeCmd, defaultMysqlUpgradeCmd());
+    }
 
 #else
 
