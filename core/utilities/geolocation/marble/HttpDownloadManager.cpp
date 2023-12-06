@@ -158,12 +158,12 @@ void HttpDownloadManager::addJob( const QUrl& sourceUrl, const QString& destFile
 void HttpDownloadManager::Private::finishJob( const QByteArray& data, const QString& destinationFileName,
                                      const QString& id )
 {
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Q_EMITting downloadComplete( QByteArray, " << id << ")";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Emitting downloadComplete( QByteArray, " << id << ")";
     Q_EMIT m_downloadManager->downloadComplete( data, id );
     if ( m_storagePolicy ) {
         const bool saved = m_storagePolicy->updateFile( destinationFileName, data );
         if ( saved ) {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "Q_EMITting downloadComplete( " << destinationFileName << ", " << id << ")";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Emitting downloadComplete( " << destinationFileName << ", " << id << ")";
             Q_EMIT m_downloadManager->downloadComplete( destinationFileName, id );
         } else {
             qWarning() << "Could not save:" << destinationFileName;
