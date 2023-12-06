@@ -40,7 +40,7 @@ GeoTagHandler::TagHash* GeoTagHandler::tagHandlerHash()
 void GeoTagHandler::registerHandler(const GeoParser::QualifiedName& qName, const GeoTagHandler* handler)
 {
     TagHash* hash = tagHandlerHash();
-
+qDebug() << "GeoTagHandler::registerHandler" << qName << handler;
     Q_ASSERT(!hash->contains(qName));
     hash->insert(qName, handler);
     Q_ASSERT(hash->contains(qName));

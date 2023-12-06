@@ -43,12 +43,10 @@ MarbleDirs::MarbleDirs()
 {
 }
 
-
 QString MarbleDirs::path( const QString& relativePath )
 { 
     QString  localpath = localPath() + QLatin1Char('/') + relativePath;	// local path
     QString  systempath  = systemPath() + QLatin1Char('/') + relativePath;	// system path
-
 
     QString fullpath = systempath;
     if ( QFile::exists( localpath ) ) {
@@ -56,7 +54,6 @@ QString MarbleDirs::path( const QString& relativePath )
     }
     return QDir( fullpath ).canonicalPath(); 
 }
-
 
 QString MarbleDirs::pluginPath( const QString& relativePath )
 { 
@@ -145,11 +142,6 @@ QString MarbleDirs::systemPath()
     }
 #endif   // mac bundle
 
-#ifdef Q_OS_ANDROID
-    systempath = "assets:/data";
-    return systempath;
-#endif
-
     // This is the preferred fallback location if no marbleDataPath is set.
     systempath = QDir( QCoreApplication::applicationDirPath() + QLatin1String( "/data" ) ).canonicalPath();
 
@@ -159,7 +151,7 @@ QString MarbleDirs::systemPath()
 
     // This fallback location is for compatibility with KDE installations.
     return QDir( QCoreApplication::applicationDirPath()
-                 + QLatin1String( "/../share/apps/marble/data" )
+                 + QLatin1String( "/../share/digikam/marble/data" )
                  ).canonicalPath();
 }
 
@@ -170,14 +162,6 @@ QString MarbleDirs::pluginSystemPath()
     }
 
     QString systempath;
-
-#ifdef MARBLE_PLUGIN_PATH
-    //MARBLE_PLUGIN_PATH is a compiler define set by cmake
-    QString compileTimeMarblePluginPath(MARBLE_PLUGIN_PATH);
-
-    if(QDir(compileTimeMarblePluginPath).exists())
-        return compileTimeMarblePluginPath;
-#endif  // MARBLE_PLUGIN_PATH
 
 #ifdef Q_OS_MACX
     //
@@ -203,10 +187,6 @@ QString MarbleDirs::pluginSystemPath()
 
 #ifdef Q_OS_WIN
 	return QCoreApplication::applicationDirPath() + QDir::separator() + QLatin1String("plugins");
-#endif
-
-#ifdef Q_OS_ANDROID
-    return "assets:/plugins";
 #endif
 
     // This is the preferred fallback location if no marblePluginPath is set.
@@ -319,7 +299,6 @@ void MarbleDirs::setMarblePluginPath( const QString& adaptedPath )
 
     runTimeMarblePluginPath = adaptedPath;
 }
-
 
 void MarbleDirs::debug()
 {
