@@ -6,7 +6,7 @@
  * Date        : 2010-06-01
  * Description : A widget to search for places.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -24,7 +24,7 @@
 
 #include "searchresultmodel.h"
 #include "geomodelhelper.h"
-#include "searchbackend.h"
+#include "searchresultbackend.h"
 #include "gpsundocommand.h"
 #include "gpsitemmodel.h"
 

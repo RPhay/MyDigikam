@@ -6,7 +6,7 @@
  * Date        : 2010-06-01
  * Description : A widget to search for places.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -24,7 +24,6 @@
 
 // local includes
 
-#include "searchbackend.h"
 #include "gpscommon.h"
 #include "gpsundocommand.h"
 #include "gpsitemmodel.h"
@@ -187,7 +186,7 @@ Qt::ItemFlags SearchResultModel::flags(const QModelIndex& index) const
     return QAbstractItemModel::flags(index);
 }
 
-void SearchResultModel::addResults(const SearchBackend::SearchResult::List& results)
+void SearchResultModel::addResults(const SearchResultBackend::SearchResult::List& results)
 {
     // first check which items are not duplicates
 
@@ -195,8 +194,8 @@ void SearchResultModel::addResults(const SearchBackend::SearchResult::List& resu
 
     for (int i = 0 ; i < results.count() ; ++i)
     {
-        const SearchBackend::SearchResult& currentResult = results.at(i);
-        bool isDuplicate                                 = false;
+        const SearchResultBackend::SearchResult& currentResult = results.at(i);
+        bool isDuplicate                                       = false;
 
         for (int j = 0 ; j < d->searchResults.count() ; ++j)
         {

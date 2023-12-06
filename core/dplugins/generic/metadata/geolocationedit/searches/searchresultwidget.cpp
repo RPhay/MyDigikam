@@ -6,14 +6,14 @@
  * Date        : 2010-06-01
  * Description : A widget to search for places.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
-#include "searchwidget.h"
+#include "searchresultwidget.h"
 
 // Qt includes
 
@@ -43,7 +43,6 @@
 
 #include "dlayoutbox.h"
 #include "mapwidget.h"
-#include "searchbackend.h"
 #include "searchresultmodel.h"
 #include "searchresultmodelhelper.h"
 #include "gpscommon.h"
@@ -68,7 +67,7 @@ static int QItemSelectionModel_selectedRowsCount(const QItemSelectionModel* cons
     return selectionModel->selectedRows().count();
 }
 
-class Q_DECL_HIDDEN SearchWidget::Private
+class Q_DECL_HIDDEN SearchResultWidget::Private
 {
 public:
 
@@ -109,7 +108,7 @@ public:
     QAction*                 actionBookmark;
 
     // Search: backend
-    SearchBackend*           searchBackend;
+    SearchResultBackend*     searchBackend;
     SearchResultModel*       searchResultsModel;
     QItemSelectionModel*     searchResultsSelectionModel;
     SearchResultModelHelper* searchResultModelHelper;
@@ -129,7 +128,7 @@ public:
     QIcon                    actionToggleAllResultsVisibilityIconChecked;
 };
 
-SearchWidget::SearchWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
+SearchResultWidget::SearchResultWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
                            GPSItemModel* const gpsItemModel,
                            QItemSelectionModel* const gosImageSelectionModel,
                            QWidget* const parent)
@@ -139,7 +138,7 @@ SearchWidget::SearchWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
     d->gpsBookmarkOwner       = gpsBookmarkOwner;
     d->gpsItemModel           = gpsItemModel;
     d->gosImageSelectionModel = gosImageSelectionModel;
-    d->searchBackend          = new SearchBackend(this);
+    d->searchBackend          = new SearchResultBackend(this);
     d->searchResultsModel     = new SearchResultModel(this);
 
 #ifdef GPSSYNC_MODELTEST
@@ -259,12 +258,12 @@ SearchWidget::SearchWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
     slotUpdateActionAvailability();
 }
 
-SearchWidget::~SearchWidget()
+SearchResultWidget::~SearchResultWidget()
 {
     delete d;
 }
 
-void SearchWidget::slotSearchCompleted()
+void SearchResultWidget::slotSearchCompleted()
 {
     d->searchInProgress       = false;
     const QString errorString = d->searchBackend->getErrorMessage();
@@ -276,13 +275,13 @@ void SearchWidget::slotSearchCompleted()
         return;
     }
 
-    const SearchBackend::SearchResult::List searchResults = d->searchBackend->getResults();
+    const SearchResultBackend::SearchResult::List searchResults = d->searchBackend->getResults();
     d->searchResultsModel->addResults(searchResults);
 
     slotUpdateActionAvailability();
 }
 
-void SearchWidget::slotTriggerSearch()
+void SearchResultWidget::slotTriggerSearch()
 {
     // this is necessary since this slot is also connected to QLineEdit::returnPressed
 
@@ -304,12 +303,12 @@ void SearchWidget::slotTriggerSearch()
     slotUpdateActionAvailability();
 }
 
-GeoModelHelper* SearchWidget::getModelHelper() const
+GeoModelHelper* SearchResultWidget::getModelHelper() const
 {
     return d->searchResultModelHelper;
 }
 
-void SearchWidget::slotCurrentlySelectedResultChanged(const QModelIndex& current,
+void SearchResultWidget::slotCurrentlySelectedResultChanged(const QModelIndex& current,
                                                       const QModelIndex& previous)
 {
     Q_UNUSED(previous)
@@ -327,20 +326,20 @@ void SearchWidget::slotCurrentlySelectedResultChanged(const QModelIndex& current
     }
 }
 
-void SearchWidget::slotClearSearchResults()
+void SearchResultWidget::slotClearSearchResults()
 {
     d->searchResultsModel->clearResults();
 
     slotUpdateActionAvailability();
 }
 
-void SearchWidget::slotVisibilityChanged(bool state)
+void SearchResultWidget::slotVisibilityChanged(bool state)
 {
     d->searchResultModelHelper->setVisibility(state);
     slotUpdateActionAvailability();
 }
 
-void SearchWidget::slotUpdateActionAvailability()
+void SearchResultWidget::slotUpdateActionAvailability()
 {
     const int nSelectedResults       = QItemSelectionModel_selectedRowsCount(d->searchResultsSelectionModel);
     const bool haveOneSelectedResult = (nSelectedResults == 1);
@@ -358,7 +357,7 @@ void SearchWidget::slotUpdateActionAvailability()
                                                                                                   : d->actionToggleAllResultsVisibilityIconUnchecked);
 }
 
-bool SearchWidget::eventFilter(QObject *watched, QEvent *event)
+bool SearchResultWidget::eventFilter(QObject *watched, QEvent *event)
 {
     if (watched == d->treeView)
     {
@@ -393,7 +392,7 @@ bool SearchWidget::eventFilter(QObject *watched, QEvent *event)
     return QObject::eventFilter(watched, event);
 }
 
-void SearchWidget::slotCopyCoordinates()
+void SearchResultWidget::slotCopyCoordinates()
 {
     const QModelIndex currentIndex                        = d->searchResultsSelectionModel->currentIndex();
     const SearchResultModel::SearchResultItem currentItem = d->searchResultsModel->resultItem(currentIndex);
@@ -401,7 +400,7 @@ void SearchWidget::slotCopyCoordinates()
     coordinatesToClipboard(currentItem.result.coordinates, QUrl(), currentItem.result.name);
 }
 
-void SearchWidget::saveSettingsToGroup(KConfigGroup* const group)
+void SearchResultWidget::saveSettingsToGroup(KConfigGroup* const group)
 {
     group->writeEntry("Keep old results", d->actionKeepOldResults->isChecked());
     group->writeEntry("Search backend",   d->backendSelectionBox->itemData(d->backendSelectionBox->currentIndex()).toString());
@@ -409,7 +408,7 @@ void SearchWidget::saveSettingsToGroup(KConfigGroup* const group)
     slotUpdateActionAvailability();
 }
 
-void SearchWidget::readSettingsFromGroup(const KConfigGroup* const group)
+void SearchResultWidget::readSettingsFromGroup(const KConfigGroup* const group)
 {
     d->actionKeepOldResults->setChecked(group->readEntry("Keep old results", false));
     const QString backendId = group->readEntry("Search backend", "osm");
@@ -424,7 +423,7 @@ void SearchWidget::readSettingsFromGroup(const KConfigGroup* const group)
     }
 }
 
-void SearchWidget::slotMoveSelectedImagesToThisResult()
+void SearchResultWidget::slotMoveSelectedImagesToThisResult()
 {
     const QModelIndex currentIndex                        = d->searchResultsSelectionModel->currentIndex();
     const SearchResultModel::SearchResultItem currentItem = d->searchResultsModel->resultItem(currentIndex);
@@ -461,12 +460,12 @@ void SearchWidget::slotMoveSelectedImagesToThisResult()
     Q_EMIT signalUndoCommand(undoCommand);
 }
 
-void SearchWidget::setPrimaryMapWidget(MapWidget* const mapWidget)
+void SearchResultWidget::setPrimaryMapWidget(MapWidget* const mapWidget)
 {
     d->mapWidget = mapWidget;
 }
 
-void SearchWidget::slotRemoveSelectedFromResultsList()
+void SearchResultWidget::slotRemoveSelectedFromResultsList()
 {
     const QItemSelection selectedRows = d->searchResultsSelectionModel->selection();
 

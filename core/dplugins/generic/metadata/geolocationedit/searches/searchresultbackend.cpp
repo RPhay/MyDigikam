@@ -6,14 +6,14 @@
  * Date        : 2010-06-01
  * Description : A simple backend to search OSM and Geonames.org.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
-#include "searchbackend.h"
+#include "searchresultbackend.h"
 
 // Qt includes
 
@@ -33,7 +33,7 @@
 namespace DigikamGenericGeolocationEditPlugin
 {
 
-class Q_DECL_HIDDEN SearchBackend::Private
+class Q_DECL_HIDDEN SearchResultBackend::Private
 {
 public:
 
@@ -43,16 +43,16 @@ public:
     {
     }
 
-    SearchBackend::SearchResult::List results;
-    QString                           runningBackend;
-    QByteArray                        searchData;
-    QString                           errorMessage;
+    SearchResultBackend::SearchResult::List results;
+    QString                                 runningBackend;
+    QByteArray                              searchData;
+    QString                                 errorMessage;
 
-    QNetworkReply*                    netReply;
-    QNetworkAccessManager*            mngr;
+    QNetworkReply*                          netReply;
+    QNetworkAccessManager*                  mngr;
 };
 
-SearchBackend::SearchBackend(QObject* const parent)
+SearchResultBackend::SearchResultBackend(QObject* const parent)
     : QObject(parent),
       d      (new Private())
 {
@@ -62,12 +62,12 @@ SearchBackend::SearchBackend(QObject* const parent)
             this, SLOT(slotFinished(QNetworkReply*)));
 }
 
-SearchBackend::~SearchBackend()
+SearchResultBackend::~SearchResultBackend()
 {
     delete d;
 }
 
-bool SearchBackend::search(const QString& backendName, const QString& searchTerm)
+bool SearchResultBackend::search(const QString& backendName, const QString& searchTerm)
 {
     d->searchData.clear();
     d->errorMessage.clear();
@@ -117,7 +117,7 @@ bool SearchBackend::search(const QString& backendName, const QString& searchTerm
     return false;
 }
 
-void SearchBackend::slotFinished(QNetworkReply* reply)
+void SearchResultBackend::slotFinished(QNetworkReply* reply)
 {
     if (reply != d->netReply)
     {
@@ -292,17 +292,17 @@ void SearchBackend::slotFinished(QNetworkReply* reply)
     reply->deleteLater();
 }
 
-SearchBackend::SearchResult::List SearchBackend::getResults() const
+SearchResultBackend::SearchResult::List SearchResultBackend::getResults() const
 {
     return d->results;
 }
 
-QString SearchBackend::getErrorMessage() const
+QString SearchResultBackend::getErrorMessage() const
 {
     return d->errorMessage;
 }
 
-QList<QPair<QString, QString> > SearchBackend::getBackends() const
+QList<QPair<QString, QString> > SearchResultBackend::getBackends() const
 {
     QList<QPair<QString, QString> > resultList;
     resultList << QPair<QString, QString>(i18n("GeoNames"), QLatin1String("geonames.org"));

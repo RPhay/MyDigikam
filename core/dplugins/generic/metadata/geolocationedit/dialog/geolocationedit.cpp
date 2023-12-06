@@ -71,7 +71,7 @@
 #include "rgwidget.h"
 #include "kmlwidget.h"
 #include "statusprogressbar.h"
-#include "searchwidget.h"
+#include "searchresultwidget.h"
 #include "backend-rg.h"
 #include "gpsitemdetails.h"
 #include "gpsgeoifacemodelhelper.h"
@@ -231,7 +231,7 @@ public:
     GPSItemDetails*                          detailsWidget;
     GPSCorrelatorWidget*                     correlatorWidget;
     RGWidget*                                rgWidget;
-    SearchWidget*                            searchWidget;
+    SearchResultWidget*                      searchWidget;
     KmlWidget*                               kmlWidget;
 
     // map: UI
@@ -280,7 +280,7 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     d->bookmarkOwner = new GPSBookmarkOwner(d->imageModel, this);
     d->undoStack     = new QUndoStack(this);
     d->stackedWidget = new QStackedWidget();
-    d->searchWidget  = new SearchWidget(d->bookmarkOwner,
+    d->searchWidget  = new SearchResultWidget(d->bookmarkOwner,
                                         d->imageModel,
                                         d->selectionModel,
                                         d->stackedWidget);
@@ -678,8 +678,8 @@ void GeolocationEdit::readSettings()
     const KConfigGroup groupTreeView = KConfigGroup(&group, "Tree View");
     d->treeView->readSettingsFromGroup(&groupTreeView);
 
-    const KConfigGroup groupSearchWidget = KConfigGroup(&group, "Search Widget");
-    d->searchWidget->readSettingsFromGroup(&groupSearchWidget);
+    const KConfigGroup groupSearchResultWidget = KConfigGroup(&group, "Search Widget");
+    d->searchWidget->readSettingsFromGroup(&groupSearchResultWidget);
 
     const KConfigGroup groupRGWidget = KConfigGroup(&group, "Reverse Geocoding Widget");
     d->rgWidget->readSettingsFromGroup(&groupRGWidget);
@@ -764,8 +764,8 @@ void GeolocationEdit::saveSettings()
     KConfigGroup groupTreeView = KConfigGroup(&group, "Tree View");
     d->treeView->saveSettingsToGroup(&groupTreeView);
 
-    KConfigGroup groupSearchWidget = KConfigGroup(&group, "Search Widget");
-    d->searchWidget->saveSettingsToGroup(&groupSearchWidget);
+    KConfigGroup groupSearchResultWidget = KConfigGroup(&group, "Search Widget");
+    d->searchWidget->saveSettingsToGroup(&groupSearchResultWidget);
 
     KConfigGroup groupRGWidget = KConfigGroup(&group, "Reverse Geocoding Widget");
     d->rgWidget->saveSettingsToGroup(&groupRGWidget);

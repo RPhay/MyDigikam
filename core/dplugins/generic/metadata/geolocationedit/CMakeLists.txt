@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -22,10 +22,10 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 )
 
 set(geolocationeditplugin_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/searches/searchbackend.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searches/searchresultbackend.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searches/searchresultmodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searches/searchresultmodelhelper.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/searches/searchwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searches/searchresultwidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dialog/gpsitemdetails.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dialog/geolocationedit.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/kmlexport/geodataparser.cpp

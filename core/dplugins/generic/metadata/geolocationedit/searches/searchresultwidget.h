@@ -6,15 +6,15 @@
  * Date        : 2010-06-01
  * Description : A widget to search for places.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SEARCH_WIDGET_H
-#define DIGIKAM_SEARCH_WIDGET_H
+#ifndef DIGIKAM_SEARCH_RESULT_WIDGET_H
+#define DIGIKAM_SEARCH_RESULT_WIDGET_H
 
 // Qt includes
 
@@ -26,7 +26,7 @@
 #include "digikam_config.h"
 #include "geomodelhelper.h"
 #include "mapwidget.h"
-#include "searchbackend.h"
+#include "searchresultbackend.h"
 #include "gpsundocommand.h"
 #include "gpsbookmarkowner.h"
 
@@ -39,17 +39,17 @@ using namespace Digikam;
 namespace DigikamGenericGeolocationEditPlugin
 {
 
-class SearchWidget : public QWidget
+class SearchResultWidget : public QWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit SearchWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
+    explicit SearchResultWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
                           GPSItemModel* const gpsItemModel,
                           QItemSelectionModel* const gpsImageSelectionModel,
                           QWidget* const parent);
-    ~SearchWidget()                                                               override;
+    ~SearchResultWidget()                                                               override;
 
     GeoModelHelper* getModelHelper()                                        const;
 
@@ -86,4 +86,4 @@ private:
 
 } // namespace DigikamGenericGeolocationEditPlugin
 
-#endif // DIGIKAM_SEARCH_WIDGET_H
+#endif // DIGIKAM_SEARCH_RESULT_WIDGET_H
