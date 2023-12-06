@@ -22,7 +22,15 @@
 
 // Marble includes
 
-#include <marble/LayerInterface.h>
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+#   include "LayerInterface.h"
+
+#else
+
+#   include <marble/LayerInterface.h>
+
+#endif
 
 // Local includes
 

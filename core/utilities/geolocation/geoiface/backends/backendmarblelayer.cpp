@@ -17,7 +17,15 @@
 
 // Marble includes
 
-#include <marble/GeoPainter.h>
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+#   include "GeoPainter.h"
+
+#else
+
+#   include <marble/GeoPainter.h>
+
+#endif
 
 // Local includes
 
