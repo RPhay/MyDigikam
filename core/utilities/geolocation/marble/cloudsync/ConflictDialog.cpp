@@ -14,6 +14,8 @@
 #include <QVBoxLayout>
 #include <QVariant>
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 ConflictDialog::ConflictDialog( QWidget *parent ) :
@@ -101,10 +103,10 @@ void ConflictDialog::prepareLayout()
     qDeleteAll( children() );
     m_box = new QDialogButtonBox( QDialogButtonBox::Cancel );
 
-    QPushButton *localButton = new QPushButton( tr( "Use local" ) );
-    QPushButton *cloudButton = new QPushButton( tr( "Use cloud" ) );
-    QPushButton *allLocalButton = new QPushButton( tr( "Always use local" ) );
-    QPushButton *allCloudButton = new QPushButton( tr( "Always use cloud" ) );
+    QPushButton *localButton    = new QPushButton( i18n( "Use local" ) );
+    QPushButton *cloudButton    = new QPushButton( i18n( "Use cloud" ) );
+    QPushButton *allLocalButton = new QPushButton( i18n( "Always use local" ) );
+    QPushButton *allCloudButton = new QPushButton( i18n( "Always use cloud" ) );
 
     localButton->setDefault( true );
     localButton->setProperty( "ActionRole", ConflictDialog::Local );
@@ -118,15 +120,14 @@ void ConflictDialog::prepareLayout()
     m_box->addButton( allCloudButton, QDialogButtonBox::ActionRole );
 
     QVBoxLayout *leftLayout = new QVBoxLayout();
-    QString localHeaderText = tr( "Local placemark" );
-    QString localDetailText = tr( "Path: %0 <br /> Name: %1 <br /> Description: %2 <br /> Status: %3" )
-            .arg( m_mergeItem->pathA(), m_mergeItem->nameA(), m_mergeItem->descriptionA() );
+    QString localHeaderText = i18n( "Local placemark" );
+    QString localDetailText = i18n( "Path: %1 <br /> Name: %2 <br /> Description: %3 <br /> Status: %4", m_mergeItem->pathA(), m_mergeItem->nameA(), m_mergeItem->descriptionA() );
     switch( m_mergeItem->actionA() ) {
     case MergeItem::Changed:
-        localDetailText = localDetailText.arg( tr( "Changed" ) );
+        localDetailText = localDetailText.arg( i18n( "Changed" ) );
         break;
     case MergeItem::Deleted:
-        localDetailText = localDetailText.arg( tr( "Deleted" ) );
+        localDetailText = localDetailText.arg( i18n( "Deleted" ) );
         break;
     default:
         break;
@@ -138,15 +139,14 @@ void ConflictDialog::prepareLayout()
     leftLayout->addWidget( localDetailLabel );
 
     QVBoxLayout *rightLayout = new QVBoxLayout();
-    QString cloudHeaderText = tr( "Cloud placemark" );
-    QString cloudDetailText = tr( "Path: %0 <br /> Name: %1 <br /> Description: %2 <br /> Status: %3" )
-            .arg( m_mergeItem->pathB(), m_mergeItem->nameB(), m_mergeItem->descriptionB() );
+    QString cloudHeaderText = i18n( "Cloud placemark" );
+    QString cloudDetailText = i18n( "Path: %1 <br /> Name: %2 <br /> Description: %3 <br /> Status: %4", m_mergeItem->pathB(), m_mergeItem->nameB(), m_mergeItem->descriptionB() );
     switch( m_mergeItem->actionB() ) {
     case MergeItem::Changed:
-        cloudDetailText = cloudDetailText.arg( tr( "Changed" ) );
+        cloudDetailText = cloudDetailText.arg( i18n( "Changed" ) );
         break;
     case MergeItem::Deleted:
-        cloudDetailText = cloudDetailText.arg( tr( "Deleted" ) );
+        cloudDetailText = cloudDetailText.arg( i18n( "Deleted" ) );
         break;
     default:
         break;
@@ -161,7 +161,7 @@ void ConflictDialog::prepareLayout()
     detailLayout->addLayout( rightLayout );
 
     QLabel *descriptionLabel = new QLabel();
-    QString descriptionText = tr( "A bookmark on this device conflicts " \
+    QString descriptionText = i18n( "A bookmark on this device conflicts " \
                                   "with a cloud bookmark. Which one do " \
                                   "you want to keep?" );
     descriptionLabel->setText( descriptionText );
@@ -172,7 +172,7 @@ void ConflictDialog::prepareLayout()
     mainLayout->addWidget( m_box );
 
     setLayout( mainLayout );
-    setWindowTitle( tr( "Synchronization Conflict" ) );
+    setWindowTitle( i18n( "Synchronization Conflict" ) );
 
     connect( m_box, SIGNAL(clicked(QAbstractButton*)),
              this, SLOT(resolveConflict(QAbstractButton*)) );

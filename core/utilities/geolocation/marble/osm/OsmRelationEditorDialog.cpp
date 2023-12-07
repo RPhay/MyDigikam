@@ -22,6 +22,8 @@
 #include <QLineEdit>
 #include <QDialogButtonBox>
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 
@@ -33,7 +35,7 @@ OsmRelationEditorDialog::OsmRelationEditorDialog( OsmPlacemarkData *relationData
 
     // Name input area
     QHBoxLayout *nameLayout = new QHBoxLayout();
-    QLabel *nameLabel = new QLabel( tr( "Name" ), this );
+    QLabel *nameLabel = new QLabel( i18n( "Name" ), this );
     m_nameLineEdit = new QLineEdit( this );
     m_nameLineEdit->setText(relationData->tagValue(QStringLiteral("name")));
     nameLayout->addWidget( nameLabel );
@@ -79,13 +81,13 @@ void OsmRelationEditorDialog::checkFields()
 {
     if ( m_nameLineEdit->text().isEmpty() ) {
         QMessageBox::warning( this,
-                              tr( "No name specified" ),
-                              tr( "Please specify a name for this relation." ) );
+                              i18n( "No name specified" ),
+                              i18n( "Please specify a name for this relation." ) );
     }
     else if (!m_dummyPlacemark->osmData().containsTagKey(QStringLiteral("type"))) {
         QMessageBox::warning( this,
-                              tr( "No type tag specified" ),
-                              tr( "Please add a type tag for this relation." ) );
+                              i18n( "No type tag specified" ),
+                              i18n( "Please add a type tag for this relation." ) );
     }
     else {
         finish();

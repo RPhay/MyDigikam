@@ -33,6 +33,8 @@
 #include <QBuffer>
 #include <QDir>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -295,7 +297,7 @@ void OwncloudSyncBackend::validateSettings()
 void OwncloudSyncBackend::checkAuthError(QNetworkReply::NetworkError error)
 {
     if ( error == QNetworkReply::HostNotFoundError ) {
-        QString const status = tr( "Server '%1' could not be reached" ).arg( d->m_cloudSyncManager->owncloudServer() );
+        QString const status = i18n( "Server '%1' could not be reached", d->m_cloudSyncManager->owncloudServer() );
         d->m_cloudSyncManager->setStatus( status , CloudSyncManager::Error );
     }
 }
@@ -313,16 +315,16 @@ void OwncloudSyncBackend::checkAuthReply()
         // not a JSON result
         if (result.contains(QLatin1String("http://owncloud.org"))) {
             // an owncloud login page was returned, marble app is not installed
-            d->m_cloudSyncManager->setStatus( tr( "The Marble app is not installed on the ownCloud server" ), CloudSyncManager::Error);
+            d->m_cloudSyncManager->setStatus( i18n( "The Marble app is not installed on the ownCloud server" ), CloudSyncManager::Error);
         } else {
-            d->m_cloudSyncManager->setStatus( tr( "The server is not an ownCloud server" ), CloudSyncManager::Error);
+            d->m_cloudSyncManager->setStatus( i18n( "The server is not an ownCloud server" ), CloudSyncManager::Error);
         }
     } else if (result == QLatin1String("{\"message\":\"Current user is not logged in\"}") && statusCode == 401) {
         // credentials were incorrect
-        d->m_cloudSyncManager->setStatus( tr( "Username or password are incorrect" ), CloudSyncManager::Error);
+        d->m_cloudSyncManager->setStatus( i18n( "Username or password are incorrect" ), CloudSyncManager::Error);
     } else if ( result.contains(QString::fromUtf8("\"status\":\"success\"")) && statusCode == 200 ) {
         // credentials were correct
-        d->m_cloudSyncManager->setStatus( tr( "Login successful" ), CloudSyncManager::Success);
+        d->m_cloudSyncManager->setStatus( i18n( "Login successful" ), CloudSyncManager::Success);
     }
 }
 

@@ -7,6 +7,8 @@
 #include <QPainter>
 #include <QListView>
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 RouteItemDelegate::RouteItemDelegate( QListView *view, CloudRouteModel *model ) :
@@ -173,10 +175,10 @@ bool RouteItemDelegate::editorEvent( QEvent* event, QAbstractItemModel* model, c
 int RouteItemDelegate::buttonWidth( const QStyleOptionViewItem &option ) const
 {
     if ( m_buttonWidth <= 0 ) {
-        int const openWidth = option.fontMetrics.size( 0, tr( "Open" ) ).width();
-        int const downloadWidth = option.fontMetrics.size( 0, tr( "Load" ) ).width();
-        int const cacheWidth = option.fontMetrics.size( 0, tr( "Remove from device" ) ).width();
-        int const cloudWidth = option.fontMetrics.size( 0, tr( "Delete from cloud" ) ).width();
+        int const openWidth = option.fontMetrics.size( 0, i18n( "Open" ) ).width();
+        int const downloadWidth = option.fontMetrics.size( 0, i18n( "Load" ) ).width();
+        int const cacheWidth = option.fontMetrics.size( 0, i18n( "Remove from device" ) ).width();
+        int const cloudWidth = option.fontMetrics.size( 0, i18n( "Delete from cloud" ) ).width();
         m_buttonWidth = 2 * m_iconSize + qMax( qMax( openWidth, downloadWidth ), qMax( cacheWidth, cloudWidth ) );
     }
 
@@ -194,27 +196,27 @@ QStyleOptionButton RouteItemDelegate::button( Element element, const QStyleOptio
 
     switch ( element ) {
     case OpenButton:
-        result.text = tr( "Open" );
+        result.text = i18n( "Open" );
         result.icon = QIcon(QStringLiteral(":/marble/document-open.png"));
         result.iconSize = QSize( m_iconSize, m_iconSize );
         break;
     case DownloadButton:
-        result.text = tr( "Load" );
+        result.text = i18n( "Load" );
         result.icon = QIcon(QStringLiteral(":/marble/dialog-ok.png"));
         result.iconSize = QSize( m_iconSize, m_iconSize );
         break;
     case RemoveFromCacheButton:
-        result.text = tr( "Remove from device" );
+        result.text = i18n( "Remove from device" );
         result.icon = QIcon(QStringLiteral(":/marble/edit-clear.png"));
         result.iconSize = QSize( m_iconSize, m_iconSize );
         break;
     case RemoveFromCloudButton:
-        result.text = tr( "Delete from cloud" );
+        result.text = i18n( "Delete from cloud" );
         result.icon = QIcon(QStringLiteral(":/marble/edit-delete.png"));
         result.iconSize = QSize( m_iconSize, m_iconSize );
         break;
     case UploadToCloudButton:
-        result.text = tr( "Upload to cloud" );
+        result.text = i18n( "Upload to cloud" );
         result.icon = QIcon(QStringLiteral(":/icons/cloud-upload.png"));
         result.iconSize = QSize( m_iconSize, m_iconSize );
         break;

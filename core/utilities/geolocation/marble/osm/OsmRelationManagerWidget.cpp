@@ -21,6 +21,8 @@
 #include "osm/OsmObjectManager.h"
 #include "osm/OsmRelationEditorDialog.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -63,7 +65,7 @@ void OsmRelationManagerWidget::addRelation( QAction *relationAction )
     // The QAction::text() adds a '&' for some reason
     QString relationText = relationAction->text().remove(QLatin1Char('&'));
 
-    if ( relationText == tr( "New Relation" ) ) {
+    if ( relationText == i18n( "New Relation" ) ) {
         OsmPlacemarkData relationData;
         QPointer<OsmRelationEditorDialog> relationEditor = new OsmRelationEditorDialog( &relationData );
         const int result = relationEditor->exec();
@@ -137,19 +139,19 @@ void OsmRelationManagerWidget::handleItemChange( QTreeWidgetItem *item, int colu
 void OsmRelationManagerWidget::handleRelationContextMenuRequest( const QPoint& point )
 {
     QMenu relationEditMenu;
-    relationEditMenu.addAction( tr( "Remove" ) );
-    relationEditMenu.addAction( tr( "Edit" ) );
+    relationEditMenu.addAction( i18n( "Remove" ) );
+    relationEditMenu.addAction( i18n( "Edit" ) );
     QAction* selectedItem = relationEditMenu.exec( d->m_currentRelations->mapToGlobal( point ) );
     if ( selectedItem ) {
 
         QTreeWidgetItem *requestedItem = d->m_currentRelations->itemAt( point );
         qint64 id = requestedItem->data( Column::Name, Qt::UserRole ).toLongLong();
 
-        if ( selectedItem->text() == tr( "Remove" ) ) {
+        if ( selectedItem->text() == i18n( "Remove" ) ) {
             d->m_placemark->osmData().removeRelation( id );
             update();
         }
-        else if ( selectedItem->text() == tr( "Edit" ) ) {
+        else if ( selectedItem->text() == i18n( "Edit" ) ) {
             OsmPlacemarkData relationData = d->m_allRelations->value( id );
             QPointer<OsmRelationEditorDialog> relationEditor = new OsmRelationEditorDialog( &relationData );
             const int result = relationEditor->exec();
