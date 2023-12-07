@@ -158,7 +158,6 @@ set(marblewidget_SRCS
     TileLoader.cpp
     TileLoaderHelper.cpp
     TileScalingTextureMapper.cpp
-    TimeControlWidget.cpp
     TourWidget.cpp
     TourControlEditWidget.cpp
     TourItemDelegate.cpp
@@ -743,7 +742,6 @@ set (marblewidget_UI
     PlacemarkEditHeader.ui
     TileCreatorDialog.ui
     TileLevelRangeWidget.ui
-    TimeControlWidget.ui
     TourCaptureDialog.ui
     TourWidget.ui
 
