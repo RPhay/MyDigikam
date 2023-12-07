@@ -176,14 +176,14 @@ bool MarbleWidgetInputHandler::handleTouch(QTouchEvent *event)
 {
     event->accept();
 
-    if (event->touchPoints().count() == 1)
+    if (event->points().count() == 1)
     {
-        QTouchEvent::TouchPoint p = event->touchPoints().at(0);
+        QTouchEvent::TouchPoint p = event->points().at(0);
         if (event->type() == QEvent::TouchBegin)
         {
             d->m_pinchDetected = false;
             d->m_panDetected = false;
-            QMouseEvent press(QMouseEvent::MouseButtonPress, p.pos(),
+            QMouseEvent press(QMouseEvent::MouseButtonPress, p.position(),
                               Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
             handleMouseEvent(&press);
         }
@@ -192,7 +192,7 @@ bool MarbleWidgetInputHandler::handleTouch(QTouchEvent *event)
             if (!d->m_pinchDetected)
             {
                 d->m_panDetected = true;
-                QMouseEvent move(QMouseEvent::MouseMove, p.pos(),
+                QMouseEvent move(QMouseEvent::MouseMove, p.position(),
                                  Qt::NoButton, Qt::LeftButton, Qt::NoModifier);
                 handleMouseEvent(&move);
             }
@@ -203,7 +203,7 @@ bool MarbleWidgetInputHandler::handleTouch(QTouchEvent *event)
             if (d->m_pinchDetected || d->m_panDetected)
                 blockSignals(true);
 
-            QMouseEvent release(QMouseEvent::MouseButtonRelease, p.pos(),
+            QMouseEvent release(QMouseEvent::MouseButtonRelease, p.position(),
                                 Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
             handleMouseEvent(&release);
 
