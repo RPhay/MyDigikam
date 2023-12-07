@@ -80,7 +80,7 @@ QHash<QString,QVariant> AbstractFloatItem::settings() const
 
 void AbstractFloatItem::setSettings(const QHash<QString, QVariant> &settings)
 {
-    if (settings.value(QStringLiteral("position")).type() == QVariant::String) {
+    if (settings.value(QStringLiteral("position")).metaType().id() == QMetaType::QString) {
 #ifdef Q_OS_OSX
         setPosition(settings.value(QStringLiteral("position"), position()).toPointF());
 #else
