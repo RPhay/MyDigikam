@@ -308,12 +308,7 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
         }
 
-        bool writeMetadataToFile = d->settings.writeMetadataToFile && MetaEngineSettings::instance()->settings().metadataWritingMode == MetaEngine::WRITE_TO_SIDECAR_ONLY;
-        if (!writeMetadataToFile && !meta->save(destFile))
-        {
-            return false;
-        }
-        if (writeMetadataToFile && !meta->saveToFile(destFile))
+        if (!meta->save(destFile))
         {
             return false;
         }
