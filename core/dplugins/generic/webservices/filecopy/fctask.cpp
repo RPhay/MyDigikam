@@ -307,7 +307,11 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
         }
 
-        if (!meta->save(destFile))
+        if (!d->settings.writeMetadataToFile && !meta->save(destFile))
+        {
+            return false;
+        }
+        if (d->settings.writeMetadataToFile && !meta->saveToFile(destFile))
         {
             return false;
         }
