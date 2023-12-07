@@ -67,19 +67,19 @@ public:
     FCThread*            thread;
 };
 
-const QString FCExportWindow::Private::TARGET_URL_PROPERTY     = QLatin1String("targetUrl");
-const QString FCExportWindow::Private::TARGET_SIDECARS         = QLatin1String("sidecars");
+const QString FCExportWindow::Private::TARGET_URL_PROPERTY           = QLatin1String("targetUrl");
+const QString FCExportWindow::Private::TARGET_SIDECARS               = QLatin1String("sidecars");
 const QString FCExportWindow::Private::TARGET_WRITE_METADATA_TO_FILE = QLatin1String("writeMetadataToFile");
-const QString FCExportWindow::Private::TARGET_OVERWRITE        = QLatin1String("overwrite");
-const QString FCExportWindow::Private::TARGET_ALBUMPATH        = QLatin1String("albumPath");
-const QString FCExportWindow::Private::TARGET_BEHAVIOR         = QLatin1String("targetBehavior");
-const QString FCExportWindow::Private::CONFIG_GROUP            = QLatin1String("FileCopyExport");
+const QString FCExportWindow::Private::TARGET_OVERWRITE              = QLatin1String("overwrite");
+const QString FCExportWindow::Private::TARGET_ALBUMPATH              = QLatin1String("albumPath");
+const QString FCExportWindow::Private::TARGET_BEHAVIOR               = QLatin1String("targetBehavior");
+const QString FCExportWindow::Private::CONFIG_GROUP                  = QLatin1String("FileCopyExport");
 
-const QString FCExportWindow::Private::CHANGE_IMAGE_PROPERTIES = QLatin1String("changeImageProperties");
-const QString FCExportWindow::Private::IMAGE_RESIZE            = QLatin1String("imageResize");
-const QString FCExportWindow::Private::IMAGE_FORMAT            = QLatin1String("imageFormat");
-const QString FCExportWindow::Private::IMAGE_COMPRESSION       = QLatin1String("imageCompression");
-const QString FCExportWindow::Private::REMOVE_METADATA         = QLatin1String("removeMetadata");
+const QString FCExportWindow::Private::CHANGE_IMAGE_PROPERTIES       = QLatin1String("changeImageProperties");
+const QString FCExportWindow::Private::IMAGE_RESIZE                  = QLatin1String("imageResize");
+const QString FCExportWindow::Private::IMAGE_FORMAT                  = QLatin1String("imageFormat");
+const QString FCExportWindow::Private::IMAGE_COMPRESSION             = QLatin1String("imageCompression");
+const QString FCExportWindow::Private::REMOVE_METADATA               = QLatin1String("removeMetadata");
 
 FCExportWindow::FCExportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("FileCopy Export Dialog")),
@@ -149,17 +149,17 @@ void FCExportWindow::restoreSettings()
 
     FCContainer settings;
 
-    settings.destUrl               = group.readEntry(d->TARGET_URL_PROPERTY,     QUrl());
-    settings.behavior              = group.readEntry(d->TARGET_BEHAVIOR,         (int)FCContainer::CopyFile);
-    settings.imageFormat           = group.readEntry(d->IMAGE_FORMAT,            (int)FCContainer::JPEG);
-    settings.imageResize           = group.readEntry(d->IMAGE_RESIZE,            1024);
-    settings.imageCompression      = group.readEntry(d->IMAGE_COMPRESSION,       75);
-    settings.sidecars              = group.readEntry(d->TARGET_SIDECARS,         false);
-    settings.writeMetadataToFile   = group.readEntry(d->TARGET_WRITE_METADATA_TO_FILE,         false);
-    settings.overwrite             = group.readEntry(d->TARGET_OVERWRITE,        false);
-    settings.albumPath             = group.readEntry(d->TARGET_ALBUMPATH,        false);
-    settings.removeMetadata        = group.readEntry(d->REMOVE_METADATA,         false);
-    settings.changeImageProperties = group.readEntry(d->CHANGE_IMAGE_PROPERTIES, false);
+    settings.destUrl               = group.readEntry(d->TARGET_URL_PROPERTY,           QUrl());
+    settings.behavior              = group.readEntry(d->TARGET_BEHAVIOR,               (int)FCContainer::CopyFile);
+    settings.imageFormat           = group.readEntry(d->IMAGE_FORMAT,                  (int)FCContainer::JPEG);
+    settings.imageResize           = group.readEntry(d->IMAGE_RESIZE,                  1024);
+    settings.imageCompression      = group.readEntry(d->IMAGE_COMPRESSION,             75);
+    settings.sidecars              = group.readEntry(d->TARGET_SIDECARS,               false);
+    settings.writeMetadataToFile   = group.readEntry(d->TARGET_WRITE_METADATA_TO_FILE, false);
+    settings.overwrite             = group.readEntry(d->TARGET_OVERWRITE,              false);
+    settings.albumPath             = group.readEntry(d->TARGET_ALBUMPATH,              false);
+    settings.removeMetadata        = group.readEntry(d->REMOVE_METADATA,               false);
+    settings.changeImageProperties = group.readEntry(d->CHANGE_IMAGE_PROPERTIES,       false);
 
     d->exportWidget->setSettings(settings);
 }
@@ -170,17 +170,17 @@ void FCExportWindow::saveSettings()
     KConfigGroup group      = config->group(d->CONFIG_GROUP);
     FCContainer settings    = d->exportWidget->getSettings();
 
-    group.writeEntry(d->TARGET_URL_PROPERTY,     settings.destUrl);
-    group.writeEntry(d->TARGET_BEHAVIOR,         settings.behavior);
-    group.writeEntry(d->IMAGE_FORMAT,            settings.imageFormat);
-    group.writeEntry(d->IMAGE_RESIZE,            settings.imageResize);
-    group.writeEntry(d->IMAGE_COMPRESSION,       settings.imageCompression);
-    group.writeEntry(d->TARGET_SIDECARS,         settings.sidecars);
-    group.writeEntry(d->TARGET_WRITE_METADATA_TO_FILE,         settings.writeMetadataToFile);
-    group.writeEntry(d->TARGET_OVERWRITE,        settings.overwrite);
-    group.writeEntry(d->TARGET_ALBUMPATH,        settings.albumPath);
-    group.writeEntry(d->REMOVE_METADATA,         settings.removeMetadata);
-    group.writeEntry(d->CHANGE_IMAGE_PROPERTIES, settings.changeImageProperties);
+    group.writeEntry(d->TARGET_URL_PROPERTY,           settings.destUrl);
+    group.writeEntry(d->TARGET_BEHAVIOR,               settings.behavior);
+    group.writeEntry(d->IMAGE_FORMAT,                  settings.imageFormat);
+    group.writeEntry(d->IMAGE_RESIZE,                  settings.imageResize);
+    group.writeEntry(d->IMAGE_COMPRESSION,             settings.imageCompression);
+    group.writeEntry(d->TARGET_SIDECARS,               settings.sidecars);
+    group.writeEntry(d->TARGET_WRITE_METADATA_TO_FILE, settings.writeMetadataToFile);
+    group.writeEntry(d->TARGET_OVERWRITE,              settings.overwrite);
+    group.writeEntry(d->TARGET_ALBUMPATH,              settings.albumPath);
+    group.writeEntry(d->REMOVE_METADATA,               settings.removeMetadata);
+    group.writeEntry(d->CHANGE_IMAGE_PROPERTIES,       settings.changeImageProperties);
 }
 
 void FCExportWindow::slotImageListChanged()
