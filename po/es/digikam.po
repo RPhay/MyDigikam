@@ -60,7 +60,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-06 00:40+0000\n"
-"PO-Revision-Date: 2023-12-05 02:32+0100\n"
+"PO-Revision-Date: 2023-12-06 12:29+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -61348,18 +61348,7 @@ msgid "File on the server is too large."
 msgstr "El archivo del servidor es demasiado grande."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>For face detection, the red-eye removal tool, the classification of "
-#| "images according to aesthetics or the automatic assignment of tags to "
-#| "images, digiKam requires some large binary files. You can choose which "
-#| "feature you want to use.</p><p>Some of these files were not found. Click "
-#| "“Download” to begin downloading the files you need. You can cancel this "
-#| "process, this dialog will appear again the next time you start digiKam. "
-#| "Without these files the selected features will not work.</p><p>The files "
-#| "will be downloaded to %1.</p><p><b>After the successful download you have "
-#| "to restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>For face detection, the red-eye removal tool, the classification of "
@@ -61377,24 +61366,21 @@ msgstr ""
 "etiquetas a las imágenes, digiKam necesita algunos archivos binarios de gran "
 "tamaño. Puede elegir la función que desea usar.</p><p>Algunos de estos "
 "archivos no se han encontrado. Pulse «Descargar» para comenzar la descarga "
-"de los archivos requeridos. Puede cancelar este proceso. Este diálogo "
-"aparecerá de nuevo la próxima vez que inicie digiKam. Sin estos archivos, "
-"las funciones seleccionadas no funcionarán.</p><p>Los archivos se "
-"descargarán en %1.</p><p><b>Tras la descarga deberá reiniciar digiKam.</b></"
-"p>"
+"de los archivos requeridos. Puede cerrar este diálogo y se le preguntará de "
+"nuevo la próxima vez que inicie digiKam. Sin estos archivos, las funciones "
+"seleccionadas no funcionarán.</p><p>Los archivos se descargarán en %1.</"
+"p><p><b>Tras la descarga deberá reiniciar digiKam.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:594
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
-msgstr ""
+msgstr "La descarga necesita %1 archivos con un tamaño de %2."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:601
-#, fuzzy, kde-format
-#| msgctxt "%1: disk size with unit"
-#| msgid "The download of the selected features requires %1"
+#, kde-format
 msgid "All files of the selected features were found."
-msgstr "La descarga de las funciones seleccionadas necesita %1"
+msgstr "Se han encontrado todos los archivos de las funciones seleccionadas."
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -63213,10 +63199,9 @@ msgid "Enable internal debug logging"
 msgstr "Activar el registro de depuración interno"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:80
-#, fuzzy, kde-format
-#| msgid "Download Face Engine Data..."
+#, kde-format
 msgid "Download required binary data..."
-msgstr "Descargar datos del motor de caras..."
+msgstr "Descargar los datos binarios requeridos..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
