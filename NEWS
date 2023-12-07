@@ -38,7 +38,7 @@ BUGFIXES:
 025 ==> 478098 - Missing DLL on WIndow.
 026 ==> 478136 - digiKam crashes when manually adding or correcting people tag in Preview mode.
 027 ==> 478168 - Crash at tagging a face region.
-028 ==> 
+028 ==> 478193 - DdgikKm crashes when I type the name's first letter of a detected face.
 029 ==> 
 030 ==> 
 031 ==> 

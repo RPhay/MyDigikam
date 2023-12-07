@@ -42,7 +42,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotFaceDownload();
+    void slotBinaryDownload();
 
 private:
 
