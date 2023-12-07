@@ -164,7 +164,7 @@ QVariant TargetModel::currentLocationData ( int role ) const
     if ( tracking->status() == PositionProviderStatusAvailable ) {
         GeoDataCoordinates currentLocation = tracking->currentLocation();
         switch( role ) {
-        case Qt::DisplayRole: return tr( "Current Location: %1" ).arg( currentLocation.toString() ) ;
+        case Qt::DisplayRole: return i18n( "Current Location: %1", currentLocation.toString() ) ;
         case Qt::DecorationRole: return QIcon(QStringLiteral(":/icons/gps.png"));
         case MarblePlacemarkModel::CoordinateRole: {
             return QVariant::fromValue( currentLocation );

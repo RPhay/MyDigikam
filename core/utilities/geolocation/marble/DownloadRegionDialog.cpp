@@ -132,13 +132,13 @@ QWidget * DownloadRegionDialog::Private::createSelectionMethodBox()
 {
     m_buttonGroup = new QButtonGroup(m_dialog);
     m_buttonGroup->setExclusive(true);
-    m_visibleRegionMethodButton = new QRadioButton( tr( "Visible region" ) );
+    m_visibleRegionMethodButton = new QRadioButton( i18n( "Visible region" ) );
     m_buttonGroup->addButton(m_visibleRegionMethodButton);
-    m_specifiedRegionMethodButton = new QRadioButton( tr( "Specify region" ) );
+    m_specifiedRegionMethodButton = new QRadioButton( i18n( "Specify region" ) );
     m_buttonGroup->addButton(m_specifiedRegionMethodButton);
-    m_routeDownloadMethodButton = new QRadioButton( tr( "Download Route" ) );
+    m_routeDownloadMethodButton = new QRadioButton( i18n( "Download Route" ) );
     m_buttonGroup->addButton(m_routeDownloadMethodButton);
-    m_routeDownloadMethodButton->setToolTip( tr( "Enabled when a route exists" ) );
+    m_routeDownloadMethodButton->setToolTip( i18n( "Enabled when a route exists" ) );
     m_routeDownloadMethodButton->setEnabled( hasRoute() );
     m_routeDownloadMethodButton->setChecked( hasRoute() );
     m_routeOffsetSpinBox = new QDoubleSpinBox();
@@ -151,7 +151,7 @@ QWidget * DownloadRegionDialog::Private::createSelectionMethodBox()
     m_routeOffsetSpinBox->setDecimals( 0 );
     m_routeOffsetSpinBox->setAlignment( Qt::AlignRight );
 
-    m_routeOffsetLabel = new QLabel( tr( "Offset from route:" ) );
+    m_routeOffsetLabel = new QLabel( i18n( "Offset from route:" ) );
     m_routeOffsetLabel->setAlignment( Qt::AlignHCenter );
 
     connect( m_buttonGroup, SIGNAL(buttonToggled(QAbstractButton*,bool)),
@@ -186,7 +186,7 @@ QWidget * DownloadRegionDialog::Private::createSelectionMethodBox()
         selectionMethodWidget->setLayout( layout );
         return selectionMethodWidget;
     } else {
-        QGroupBox * const selectionMethodBox = new QGroupBox( tr( "Selection Method" ) );
+        QGroupBox * const selectionMethodBox = new QGroupBox( i18n( "Selection Method" ) );
         selectionMethodBox->setLayout( layout );
         return selectionMethodBox;
     }
@@ -194,7 +194,7 @@ QWidget * DownloadRegionDialog::Private::createSelectionMethodBox()
 
 QLayout * DownloadRegionDialog::Private::createTilesCounter()
 {
-    QLabel * const description = new QLabel( tr( "Number of tiles to download:" ) );
+    QLabel * const description = new QLabel( i18n( "Number of tiles to download:" ) );
     m_tilesCountLabel = new QLabel;
     m_tileSizeInfo = new QLabel;
 
@@ -244,9 +244,9 @@ DownloadRegionDialog::DownloadRegionDialog( MarbleWidget *const widget, QWidget 
     : QDialog( parent, f ),
       d( new Private( widget, this ))
 {
-    setWindowTitle( tr( "Download Region" ));
+    setWindowTitle( i18n( "Download Region" ));
     QVBoxLayout * const layout = new QVBoxLayout;
-    d->m_layerLabel = new QLabel( tr( "Tile type to be downloaded:" ));
+    d->m_layerLabel = new QLabel( i18n( "Tile type to be downloaded:" ));
     d->m_layerComboBox = new QComboBox();
     d->m_layerComboBox->addItem(i18n("Texture tiles"));
     d->m_layerComboBox->addItem(i18n("Vector tiles"));
@@ -519,8 +519,7 @@ void DownloadRegionDialog::updateTileCount()
         d->m_tileSizeInfo->setToolTip( QString() );
         //~ singular There is a limit of %n tile to download.
         //~ plural There is a limit of %n tiles to download.
-        d->m_tileSizeInfo->setText( tr( "There is a limit of %n tile(s) to download.", "",
-                                               maxTilesCount ) );
+        d->m_tileSizeInfo->setText( i18n( "There is a limit of %1 tile(s) to download.", maxTilesCount ) );
     } else {
         if (themeId == QLatin1String("earth/openstreetmap/openstreetmap.dgml") ||
             themeId == QLatin1String("earth/openstreetmap/openseamap.dgml") ||
@@ -530,14 +529,14 @@ void DownloadRegionDialog::updateTileCount()
                     ? tilesCount * averageTextureTileSize
                     : tilesCount * averageVectorTileSize;
 
-            d->m_tileSizeInfo->setToolTip( tr( "Approximate size of the tiles to be downloaded" ) );
+            d->m_tileSizeInfo->setToolTip( i18n( "Approximate size of the tiles to be downloaded" ) );
 
             if( tileDownloadSize > 1024 ) {
                 tileDownloadSize = tileDownloadSize / 1024;
-                d->m_tileSizeInfo->setText( tr( "Estimated download size: %1 MB" ).arg( ceil( tileDownloadSize ) ) );
+                d->m_tileSizeInfo->setText( i18n( "Estimated download size: %1 MB", ceil( tileDownloadSize ) ) );
             }
             else {
-                d->m_tileSizeInfo->setText( tr( "Estimated download size: %1 kB" ).arg( tileDownloadSize ) );
+                d->m_tileSizeInfo->setText( i18n( "Estimated download size: %1 kB", tileDownloadSize ) );
             }
         }
         else {

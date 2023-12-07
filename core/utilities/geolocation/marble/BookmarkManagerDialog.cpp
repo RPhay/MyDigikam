@@ -178,7 +178,7 @@ void BookmarkManagerDialogPrivate::deleteFolder()
     GeoDataFolder *folder = geodata_cast<GeoDataFolder>(selectedFolder());
     if ( folder ) {
         if ( folder->size() > 0 ) {
-            QString const text = tr( "The folder %1 is not empty. Removing it will delete all bookmarks it contains. Are you sure you want to delete the folder?" ).arg( folder->name() );
+            QString const text = i18n( "The folder %1 is not empty. Removing it will delete all bookmarks it contains. Are you sure you want to delete the folder?", folder->name() );
             if (QMessageBox::question(m_parent, i18n("Remove Folder"), text, QMessageBox::Yes, QMessageBox::No) != QMessageBox::Yes) {
                 return;
             }
@@ -413,13 +413,13 @@ void BookmarkManagerDialog::saveBookmarks()
 
 void BookmarkManagerDialog::exportBookmarks()
 {
-    QString fileName = QFileDialog::getSaveFileName( this, tr( "Export Bookmarks" ), // krazy:exclude=qclasses
-                       QDir::homePath(), tr( "KML files (*.kml)" ) );
+    QString fileName = QFileDialog::getSaveFileName( this, i18n( "Export Bookmarks" ), // krazy:exclude=qclasses
+                       QDir::homePath(), i18n( "KML files (*.kml)" ) );
 
     if ( !fileName.isEmpty() ) {
         if (!GeoDataDocumentWriter::write(fileName, *d->bookmarkDocument())) {
             qCDebug(DIGIKAM_MARBLE_LOG) << "Could not write the bookmarks file" << fileName;
-            QString const text = tr( "Unable to save bookmarks. Please check that the file is writable." );
+            QString const text = i18n( "Unable to save bookmarks. Please check that the file is writable." );
             QMessageBox::warning(this, i18n("Bookmark Export"), text);
         }
     }
@@ -428,15 +428,15 @@ void BookmarkManagerDialog::exportBookmarks()
 void BookmarkManagerDialog::importBookmarks()
 {
     QString const file = QFileDialog::getOpenFileName(this, i18n("Import Bookmarks"),
-                            QDir::homePath(), tr( "KML Files (*.kml)" ) );
+                            QDir::homePath(), i18n( "KML Files (*.kml)" ) );
     if ( file.isEmpty() ) {
         return;
     }
 
     GeoDataDocument *import = BookmarkManager::openFile( file );
     if ( !import ) {
-        QString const text = tr( "The file %1 cannot be opened as a KML file." ).arg( file );
-        QMessageBox::warning(this, tr( "Bookmark Import"), text);
+        QString const text = i18n( "The file %1 cannot be opened as a KML file.", file );
+        QMessageBox::warning(this, i18n( "Bookmark Import"), text);
         return;
     }
     GeoDataDocument *current = d->bookmarkDocument();
@@ -470,10 +470,10 @@ void BookmarkManagerDialogPrivate::importBookmarksRecursively( GeoDataContainer 
                 }
 
                 QPointer<QMessageBox> messageBox = new QMessageBox( m_parent );
-                QString const intro = tr( "The file contains a bookmark that already exists among your Bookmarks." );
-                QString const newBookmark = tr( "Imported bookmark" );
-                QString const existingBookmark = tr( "Existing bookmark" );
-                QString const question = tr( "Do you want to replace the existing bookmark with the imported one?" );
+                QString const intro = i18n( "The file contains a bookmark that already exists among your Bookmarks." );
+                QString const newBookmark = i18n( "Imported bookmark" );
+                QString const existingBookmark = i18n( "Existing bookmark" );
+                QString const question = i18n( "Do you want to replace the existing bookmark with the imported one?" );
                 QString html = QLatin1String("<p>%1</p><table><tr><td>%2</td><td><b>%3 / %4</b></td></tr>"
                                                 "<tr><td>%5</td><td><b>%6 / %7</b></td></tr></table><p>%8</p>");
                 html = html.arg( intro, existingBookmark, existingFolder->name(),
@@ -481,10 +481,10 @@ void BookmarkManagerDialogPrivate::importBookmarksRecursively( GeoDataContainer 
                                  newPlacemark->name(), question );
                 messageBox->setText( html );
 
-                QAbstractButton *replaceButton    = messageBox->addButton(tr( "Replace" ),     QMessageBox::ActionRole );
-                QAbstractButton *replaceAllButton = messageBox->addButton(tr( "Replace All" ), QMessageBox::ActionRole );
-                QAbstractButton *skipButton       = messageBox->addButton(tr( "Skip" ),        QMessageBox::ActionRole );
-                QAbstractButton *skipAllButton    = messageBox->addButton(tr( "Skip All" ),    QMessageBox::ActionRole );
+                QAbstractButton *replaceButton    = messageBox->addButton(i18n( "Replace" ),     QMessageBox::ActionRole );
+                QAbstractButton *replaceAllButton = messageBox->addButton(i18n( "Replace All" ), QMessageBox::ActionRole );
+                QAbstractButton *skipButton       = messageBox->addButton(i18n( "Skip" ),        QMessageBox::ActionRole );
+                QAbstractButton *skipAllButton    = messageBox->addButton(i18n( "Skip All" ),    QMessageBox::ActionRole );
                                                     messageBox->addButton( QMessageBox::Cancel );
                 messageBox->setIcon( QMessageBox::Question );
 

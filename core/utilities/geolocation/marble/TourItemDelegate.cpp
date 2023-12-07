@@ -171,16 +171,16 @@ void TourItemDelegate::paint( QPainter *painter, const QStyleOptionViewItem &opt
                        && (dynamic_cast<const GeoDataContainer *>(&update->create()->first()))) {
                 const GeoDataContainer *container = static_cast<const GeoDataContainer*>(update->create()->child(0));
                 if( container->size() > 0 ) {
-                    label.setHtml( tr( "Create item %1" ).arg( container->first().id() ) );
+                    label.setHtml( i18n( "Create item %1", container->first().id() ) );
                     ok = true;
                     iconString = QStringLiteral(":/icons/add-placemark.png");
                 }
             } else if( update && update->getDelete() && update->getDelete()->size() != 0 ){
-                label.setHtml( tr( "Remove item %1" ).arg( update->getDelete()->first().targetId() ) );
+                label.setHtml( i18n( "Remove item %1", update->getDelete()->first().targetId() ) );
                 ok = true;
                 iconString = QStringLiteral(":/icons/remove.png");
             } else if( update && update->change() && update->change()->size() != 0 ){
-                label.setHtml( tr( "Change item %1" ).arg( update->change()->first().targetId() ) );
+                label.setHtml( i18n( "Change item %1", update->change()->first().targetId() ) );
                 ok = true;
                 iconString = QStringLiteral(":/marble/document-edit.png");
             }

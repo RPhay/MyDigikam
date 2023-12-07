@@ -150,13 +150,13 @@ EditPlacemarkDialog::EditPlacemarkDialog( GeoDataPlacemark *placemark,
     if ( relations ) {
         // Adding the osm tag editor widget tab
         d->m_osmTagEditorWidget = new OsmTagEditorWidget( placemark, this );
-        d->tabWidget->addTab( d->m_osmTagEditorWidget, tr( "Tags" ) );
+        d->tabWidget->addTab( d->m_osmTagEditorWidget, i18n( "Tags" ) );
         QObject::connect( d->m_osmTagEditorWidget, SIGNAL(placemarkChanged(GeoDataFeature*)),
                           this, SLOT(updateTextAnnotation()) );
 
         // Adding the osm relation editor widget tab
         d->m_osmRelationManagerWidget = new OsmRelationManagerWidget( placemark, relations, this );
-        d->tabWidget->addTab( d->m_osmRelationManagerWidget, tr( "Relations" ) );
+        d->tabWidget->addTab( d->m_osmRelationManagerWidget, i18n( "Relations" ) );
         QObject::connect( d->m_osmRelationManagerWidget, SIGNAL(relationCreated(OsmPlacemarkData)),
                           this, SIGNAL(relationCreated(OsmPlacemarkData)) );
     }
@@ -368,24 +368,24 @@ void EditPlacemarkDialog::checkFields()
 
     if ( d->m_header->name().isEmpty() ) {
         QMessageBox::warning( this,
-                              tr( "No name specified" ),
-                              tr( "Please specify a name for this placemark." ) );
+                              i18n( "No name specified" ),
+                              i18n( "Please specify a name for this placemark." ) );
     } else if ( isIdFieldVisible() && d->m_header->id().isEmpty() ) {
         QMessageBox::warning( this,
-                              tr( "No ID specified" ),
-                              tr( "Please specify a ID for this placemark." ) );
+                              i18n( "No ID specified" ),
+                              i18n( "Please specify a ID for this placemark." ) );
     } else if ( isIdFieldVisible() && !d->m_header->isIdValid() ) {
         QMessageBox::warning( this,
-                              tr( "ID is invalid" ),
-                              tr( "Please specify a valid ID for this placemark." ) );
+                              i18n( "ID is invalid" ),
+                              i18n( "Please specify a valid ID for this placemark." ) );
     } else if (d->m_header->iconLink().isEmpty() && d->m_placemark->visualCategory() == GeoDataPlacemark::None) {
         QMessageBox::warning( this,
-                              tr( "No image specified" ),
-                              tr( "Please specify an icon for this placemark or add a valid tag." ) );
+                              i18n( "No image specified" ),
+                              i18n( "Please specify an icon for this placemark or add a valid tag." ) );
     } else if( !d->m_header->iconLink().isEmpty() && !QFileInfo( d->m_header->iconLink() ).exists() ) {
         QMessageBox::warning( this,
-                              tr( "Invalid icon path" ),
-                              tr( "Please specify a valid path for the icon file." ) );
+                              i18n( "Invalid icon path" ),
+                              i18n( "Please specify a valid path for the icon file." ) );
     } else {
         accept();
     }
