@@ -465,13 +465,13 @@ void RoutingWidget::handleSearchResult( RoutingInputWidget *widget )
     MarblePlacemarkModel *model = widget->searchResultModel();
 
     if ( model->rowCount() ) {
-        QString const results = tr( "placemarks found: %1" ).arg( model->rowCount() );
+        QString const results = i18n( "placemarks found: %1", model->rowCount() );
         d->m_ui.resultLabel->setText( results );
         d->m_ui.resultLabel->setVisible( true );
         // Make sure we have a selection
         activatePlacemark( model->index( 0, 0 ) );
     } else {
-        QString const results = tr( "No placemark found" );
+        QString const results = i18n( "No placemark found" );
         d->m_ui.resultLabel->setText(QLatin1String("<font color=\"red\">") + results + QLatin1String("</font>"));
         d->m_ui.resultLabel->setVisible( true );
     }
@@ -588,7 +588,7 @@ void RoutingWidget::updateRouteState( RoutingManager::State state )
         d->m_progressTimer.stop();
         d->m_ui.searchButton->setIcon( QIcon() );
         if ( d->m_routingManager->routingModel()->rowCount() == 0 ) {
-            const QString results = tr( "No route found" );
+            const QString results = i18n( "No route found" );
             d->m_ui.resultLabel->setText(QLatin1String("<font color=\"red\">") + results + QLatin1String("</font>"));
             d->m_ui.resultLabel->setVisible( true );
         }
@@ -671,7 +671,7 @@ void RoutingWidget::updateAlternativeRoutes()
         d->m_ui.routeComboBox->setCurrentIndex( 0 );
     }
 
-    QString const results = tr( "routes found: %1" ).arg( d->m_ui.routeComboBox->count() );
+    QString const results = i18n( "routes found: %1", d->m_ui.routeComboBox->count() );
     d->m_ui.resultLabel->setText( results );
     d->m_ui.resultLabel->setVisible( true );
     d->m_saveRouteButton->setEnabled( d->m_routingManager->routingModel()->rowCount() > 0 );
@@ -692,7 +692,7 @@ void RoutingWidget::setRouteSyncManager(RouteSyncManager *manager)
 
 void RoutingWidget::openRoute()
 {
-    QString const file = QFileDialog::getOpenFileName( this, tr( "Open Route" ),
+    QString const file = QFileDialog::getOpenFileName( this, i18n( "Open Route" ),
                             d->m_routingManager->lastOpenPath(), i18n("KML Files (*.kml)") );
     if ( !file.isEmpty() ) {
         d->m_routingManager->setLastOpenPath( QFileInfo( file ).absolutePath() );
@@ -725,9 +725,9 @@ void RoutingWidget::showDirections()
 void RoutingWidget::saveRoute()
 {
     QString fileName = QFileDialog::getSaveFileName( this,
-                       tr( "Save Route" ), // krazy:exclude=qclasses
+                       i18n( "Save Route" ), // krazy:exclude=qclasses
                        d->m_routingManager->lastSavePath(),
-                       tr( "KML files (*.kml)" ) );
+                       i18n( "KML files (*.kml)" ) );
 
     if ( !fileName.isEmpty() ) {
         // maemo 5 file dialog does not append the file extension
@@ -745,7 +745,7 @@ void RoutingWidget::uploadToCloud()
 
     if (!d->m_routeUploadDialog) {
         d->m_routeUploadDialog = new QProgressDialog( d->m_widget );
-        d->m_routeUploadDialog->setWindowTitle( tr( "Uploading route..." ) );
+        d->m_routeUploadDialog->setWindowTitle( i18n( "Uploading route..." ) );
         d->m_routeUploadDialog->setMinimum( 0 );
         d->m_routeUploadDialog->setMaximum( 100 );
         d->m_routeUploadDialog->setAutoClose( true );

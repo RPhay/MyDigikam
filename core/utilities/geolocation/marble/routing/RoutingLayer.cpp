@@ -759,9 +759,9 @@ void RoutingLayer::showAlternativeRoutes()
 void RoutingLayer::exportRoute()
 {
     QString fileName = QFileDialog::getSaveFileName( d->m_marbleWidget,
-                       tr( "Export Route" ), // krazy:exclude=qclasses
+                       i18n( "Export Route" ), // krazy:exclude=qclasses
                        QDir::homePath(),
-                       tr( "GPX and KML files (*.gpx *.kml)" ) );
+                       i18n( "GPX and KML files (*.gpx *.kml)" ) );
 
     if ( !fileName.isEmpty() ) {
         if ( fileName.endsWith( QLatin1String( ".gpx" ), Qt::CaseInsensitive ) ) {

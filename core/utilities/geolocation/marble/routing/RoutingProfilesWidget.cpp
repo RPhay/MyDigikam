@@ -17,6 +17,8 @@
 #include "RoutingManager.h"
 #include "RoutingProfileSettingsDialog.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -70,7 +72,7 @@ RoutingProfilesWidget::~RoutingProfilesWidget()
 
 void RoutingProfilesWidget::Private::add()
 {
-    m_profilesModel->addProfile( tr( "New Profile" ) );
+    m_profilesModel->addProfile( i18n( "New Profile" ) );
 
     int profileIndex = m_profilesModel->rowCount() - 1;
     m_ui.profilesList->selectionModel()->select( m_profilesModel->index( profileIndex, 0 ), QItemSelectionModel::Clear | QItemSelectionModel::SelectCurrent );

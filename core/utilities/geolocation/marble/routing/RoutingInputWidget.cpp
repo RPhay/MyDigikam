@@ -302,7 +302,7 @@ void RoutingInputWidget::reverseGeocoding()
     }
 
     QString const name = d->m_route->name( d->m_index );
-    if ( name.isEmpty() || name == tr( "Current Location" ) ) {
+    if ( name.isEmpty() || name == i18n( "Current Location" ) ) {
         d->m_reverseGeocodingRunnerManager.reverseGeocoding( targetPosition() );
     } else {
         d->updateDescription();
@@ -476,7 +476,7 @@ void RoutingInputWidget::setBookmarkPosition( QAction* bookmark )
 void RoutingInputWidget::openTargetSelectionDialog()
 {
     QPointer<GoToDialog> dialog = new GoToDialog( d->m_marbleModel, this );
-    dialog->setWindowTitle( tr( "Choose Placemark" ) );
+    dialog->setWindowTitle( i18n( "Choose Placemark" ) );
     dialog->setShowRoutingItems( false );
     dialog->setSearchEnabled( false );
     if ( dialog->exec() == QDialog::Accepted ) {

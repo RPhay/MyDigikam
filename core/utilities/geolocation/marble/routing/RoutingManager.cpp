@@ -517,7 +517,7 @@ void RoutingManager::setGuidanceModeEnabled( bool enabled )
                 QLatin1Char(' ') + i18n("Please use common sense while navigating.") + QLatin1String("</p>") +
                 QLatin1String("<p>") + i18n("The Marble development team wishes you a pleasant and safe journey.") + QLatin1String("</p>");
             QPointer<QMessageBox> messageBox = new QMessageBox(QMessageBox::Information, i18n("Guidance Mode"), text, QMessageBox::Ok);
-            QCheckBox *showAgain = new QCheckBox( tr( "Show again" ) );
+            QCheckBox *showAgain = new QCheckBox( i18n( "Show again" ) );
             showAgain->setChecked( true );
             showAgain->blockSignals( true ); // otherwise it'd close the dialog
             messageBox->addButton( showAgain, QMessageBox::ActionRole );
