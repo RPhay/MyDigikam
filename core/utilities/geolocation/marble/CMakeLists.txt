@@ -46,7 +46,6 @@ set(marblewidget_SRCS
     FileManager.cpp
     FileStoragePolicy.cpp
     FileStorageWatcher.cpp
-    FileViewWidget.cpp
     FlyToEditWidget.cpp
     FormattedTextWidget.cpp
     GenericScanlineTextureMapper.cpp
@@ -731,7 +730,6 @@ set (marblewidget_UI
     EditBookmarkDialog.ui
     EditPlacemarkDialog.ui
     ElevationWidget.ui
-    FileViewWidget.ui
     FormattedTextWidget.ui
     GoToDialog.ui
     LatLonBoxWidget.ui
