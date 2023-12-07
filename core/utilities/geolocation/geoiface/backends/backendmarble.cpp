@@ -188,8 +188,12 @@ BackendMarble::BackendMarble(const QExplicitlySharedDataPointer<GeoIfaceSharedDa
 
 #ifdef Q_OS_WIN
 
+#   if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     Marble::MarbleDirs::setMarblePluginPath(QCoreApplication::applicationDirPath() +
                                             QLatin1String("/plugins"));
+
+#   endif
 
 #endif
 
