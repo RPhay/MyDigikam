@@ -66,8 +66,6 @@ set(marblewidget_SRCS
     MapThemeManager.cpp
     MapThemeSortFilterProxyModel.cpp
     MapViewItemDelegate.cpp
-    MapViewWidget.cpp
-    MapWizard.cpp
     MarbleAbstractPresenter.cpp
     MarbleClock.cpp
     MarbleColors.cpp
@@ -734,8 +732,6 @@ set (marblewidget_UI
     GoToDialog.ui
     LatLonBoxWidget.ui
     LatLonEdit.ui
-    MapViewWidget.ui
-    MapWizard.ui
     MarbleCacheSettingsWidget.ui
     MarbleCloudSyncSettingsWidget.ui
     MarbleNavigationSettingsWidget.ui
