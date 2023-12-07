@@ -31,23 +31,15 @@
 
 using namespace Marble;
 
-namespace
-{
-    QString runTimeMarbleDataPath;
-
-    QString runTimeMarblePluginPath;
-}
-
 MarbleDirs::MarbleDirs()
-    : d( nullptr )
 {
 }
 
 QString MarbleDirs::path( const QString& relativePath )
 {
-    QString  localpath  = localPath()  + QDir::separator() + relativePath;   // local path
-    QString  systempath = systemPath() + QDir::separator() + relativePath;   // system path
-    QString fullpath    = systempath;
+    QString localpath  = localPath()  + QDir::separator() + relativePath;   // local path
+    QString systempath = systemPath() + QDir::separator() + relativePath;   // system path
+    QString fullpath   = systempath;
 
     if ( QFile::exists( localpath ) )
     {
@@ -127,13 +119,18 @@ QString MarbleDirs::systemPath()
     return path;
 }
 
+QString MarbleDirs::localPath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/digikam/marble/data");
+}
+
+QString MarbleDirs::pluginLocalPath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/digikam/marble/plugins");
+}
+
 QString MarbleDirs::pluginSystemPath()
 {
-    if (!runTimeMarblePluginPath.isEmpty())
-    {
-        return runTimeMarblePluginPath;
-    }
-
     QString systempath;
 
 #ifdef Q_OS_MACX
@@ -184,134 +181,12 @@ QString MarbleDirs::pluginSystemPath()
                  ).canonicalPath();
 }
 
-QString MarbleDirs::localPath()
-{
-#ifndef Q_OS_WIN
-
-    QString dataHome = QString::fromUtf8(getenv( "XDG_DATA_HOME") );
-
-    if( dataHome.isEmpty() )
-        dataHome = QDir::homePath() + QLatin1String("/.local/share");
-
-    return dataHome + QLatin1String("/marble"); // local path
-
-#else
-
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/.marble/data");
-
-#endif
-}
-
-QStringList MarbleDirs::oldLocalPaths()
-{
-    QStringList possibleOldPaths;
-
-#ifndef Q_OS_WIN
-
-    const QString oldDefault = QDir::homePath() + QLatin1String("/.marble/data");
-    possibleOldPaths.append( oldDefault );
-
-    const QString xdgDefault = QDir::homePath() + QLatin1String("/.local/share/marble");
-    possibleOldPaths.append( xdgDefault );
-
-    QString xdg = QString::fromUtf8(getenv( "XDG_DATA_HOME" ));
-    xdg += QLatin1String("/marble/");
-    possibleOldPaths.append( xdg );
-
-#endif
-
-#ifdef Q_OS_WIN
-
-    HWND hwnd = 0;
-    WCHAR *appdata_path = new WCHAR[MAX_PATH + 1];
-
-    SHGetSpecialFolderPathW(hwnd, appdata_path, CSIDL_APPDATA, 0);
-    QString appdata = QString::fromUtf16(reinterpret_cast<ushort*>(appdata_path));
-    delete[] appdata_path;
-    possibleOldPaths << QString(QDir::fromNativeSeparators(appdata) + QLatin1String("/.marble/data")); // local path
-
-#endif
-
-    QString currentLocalPath = QDir( MarbleDirs::localPath() ).canonicalPath();
-    QStringList oldPaths;
-    for ( const QString& possibleOldPath: possibleOldPaths )
-    {
-        if ( !QDir().exists( possibleOldPath ) )
-        {
-            continue;
-        }
-
-        QString canonicalPossibleOldPath = QDir( possibleOldPath ).canonicalPath();
-
-        if ( canonicalPossibleOldPath == currentLocalPath )
-        {
-            continue;
-        }
-
-        oldPaths.append( canonicalPossibleOldPath );
-    }
-
-    return oldPaths;
-}
-
-QString MarbleDirs::pluginLocalPath()
-{
-
-#ifndef Q_OS_WIN
-
-    return QDir::homePath() + QLatin1String("/.marble/plugins"); // local path
-
-#else
-
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/.marble/plugins");
-
-#endif
-
-}
-
-QString MarbleDirs::marbleDataPath()
-{
-    return runTimeMarbleDataPath;
-}
-
-QString MarbleDirs::marblePluginPath()
-{
-    return runTimeMarblePluginPath;
-}
-
-void MarbleDirs::setMarbleDataPath( const QString& adaptedPath )
-{
-    if ( !QDir::root().exists( adaptedPath ) )
-    {
-        qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "Invalid MarbleDataPath \"%1\". Using \"%2\" instead." ).arg( adaptedPath, systemPath() );
-        return;
-    }
-
-    runTimeMarbleDataPath = adaptedPath;
-}
-
-void MarbleDirs::setMarblePluginPath( const QString& adaptedPath )
-{
-    if ( !QDir::root().exists( adaptedPath ) )
-    {
-        qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "Invalid MarblePluginPath \"%1\". Using \"%2\" instead." ).arg( adaptedPath, pluginSystemPath() );
-        return;
-    }
-
-    runTimeMarblePluginPath = adaptedPath;
-}
-
 void MarbleDirs::debug()
 {
     qCDebug(DIGIKAM_MARBLE_LOG) << "=== MarbleDirs: ===";
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Local Path:" << localPath();
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Plugin Local Path:" << pluginLocalPath();
-    qCDebug(DIGIKAM_MARBLE_LOG) << "";
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Marble Data Path (Run Time) :" << runTimeMarbleDataPath;
-    qCDebug(DIGIKAM_MARBLE_LOG) << "";
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Marble Plugin Path (Run Time) :" << runTimeMarblePluginPath;
-    qCDebug(DIGIKAM_MARBLE_LOG) << "";
-    qCDebug(DIGIKAM_MARBLE_LOG) << "System Path:" << systemPath();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Local Path        :" << localPath();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Plugin Local Path :" << pluginLocalPath();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "System Path       :" << systemPath();
     qCDebug(DIGIKAM_MARBLE_LOG) << "Plugin System Path:" << pluginSystemPath();
     qCDebug(DIGIKAM_MARBLE_LOG) << "===================";
 }

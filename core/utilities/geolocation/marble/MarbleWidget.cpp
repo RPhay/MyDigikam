@@ -78,7 +78,6 @@ class MarbleWidget::CustomPaintLayer : public LayerInterface
     MarbleWidget *const m_widget;
 };
 
-
 class MarbleWidgetPrivate
 {
  public:
@@ -137,14 +136,13 @@ class MarbleWidgetPrivate
     bool             m_showFrameRate;
 };
 
-
-
 MarbleWidget::MarbleWidget(QWidget *parent)
     : QWidget( parent ),
       d( new MarbleWidgetPrivate( this ) )
 {
-//    setAttribute( Qt::WA_PaintOnScreen, true );
     d->construct();
+
+    MarbleDirs::debug();
 }
 
 MarbleWidget::~MarbleWidget()

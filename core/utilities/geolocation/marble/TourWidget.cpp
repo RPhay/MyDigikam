@@ -785,7 +785,7 @@ void TourWidgetPrivate::createTour()
         GeoDataPlaylist *playlist = new GeoDataPlaylist;
         tour->setPlaylist( playlist );
         document->append( static_cast<GeoDataFeature*>( tour ) );
-        m_playback.setBaseUrl( QUrl::fromLocalFile( MarbleDirs::marbleDataPath() ) );
+        m_playback.setBaseUrl( QUrl::fromLocalFile( MarbleDirs::localPath() ) );
         openDocument( document );
         m_isChanged = true;
         m_tourUi.m_actionSaveTour->setEnabled( true );

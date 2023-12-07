@@ -92,29 +92,20 @@ class DIGIKAM_EXPORT MarbleDirs
 
     static QString localPath();
 
-    static QStringList oldLocalPaths();
-
     static QString pluginLocalPath();
 
 
     static QString marbleDataPath();
 
-    static QString marblePluginPath();
-
-
     static void setMarbleDataPath( const QString& adaptedPath);
-
-    static void setMarblePluginPath( const QString& adaptedPath);
-
 
     static void debug();
 
  private:
+
     Q_DISABLE_COPY( MarbleDirs )
-    class Private;
-    Private  * const d;
 };
 
-}
+} // namespace Marble
 
-#endif
+#endif // MARBLE_MARBLEDIRS_H
