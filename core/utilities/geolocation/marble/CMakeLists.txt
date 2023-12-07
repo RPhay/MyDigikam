@@ -144,7 +144,6 @@ set(marblewidget_SRCS
     StackedTileLoader.cpp
     StoragePolicy.cpp
     StyleBuilder.cpp
-    SunControlWidget.cpp
     SunLocator.cpp
     TemplateDocument.cpp
     TextureColorizer.cpp
@@ -742,7 +741,6 @@ set (marblewidget_UI
     MovieCaptureDialog.ui
     NewBookmarkFolderDialog.ui
     PlacemarkEditHeader.ui
-    SunControlWidget.ui
     TileCreatorDialog.ui
     TileLevelRangeWidget.ui
     TimeControlWidget.ui
