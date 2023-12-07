@@ -44,7 +44,7 @@ public:
     bool m_crosshairsVisible;
 };
 
-PopupLayer::Private::Private( MarbleWidget *marbleWidget, PopupLayer *q ) :
+PopupLayer::Private::Private( MarbleWidget *marbleWidget, PopupLayer */*q*/ ) :
     m_widget( marbleWidget ),
     m_hasCrosshairsPlugin( false ),
     m_crosshairsVisible( false )
@@ -78,7 +78,7 @@ QStringList PopupLayer::renderPosition() const
     return QStringList(QStringLiteral("ALWAYS_ON_TOP"));
 }
 
-bool PopupLayer::render( GeoPainter *painter, ViewportParams *viewport,
+bool PopupLayer::render( GeoPainter */*painter*/, ViewportParams */*viewport*/,
                                 const QString&, GeoSceneLayer* )
 {
 /*
@@ -110,7 +110,7 @@ bool PopupLayer::visible() const
     return false; //d->m_popupItem->visible();
 }
 
-void PopupLayer::setVisible( bool visible )
+void PopupLayer::setVisible( bool /*visible*/ )
 {
 /*
     d->m_popupItem->setVisible( visible );
@@ -151,7 +151,7 @@ void PopupLayer::popup()
     setVisible( false );
 }
 
-void PopupLayer::setCoordinates( const GeoDataCoordinates &coordinates , Qt::Alignment alignment )
+void PopupLayer::setCoordinates( const GeoDataCoordinates &/*coordinates*/ , Qt::Alignment /*alignment*/ )
 {
 /*
     d->m_popupItem->setCoordinate( coordinates );
@@ -159,17 +159,17 @@ void PopupLayer::setCoordinates( const GeoDataCoordinates &coordinates , Qt::Ali
 */
 }
 
-void PopupLayer::setUrl( const QUrl &url )
+void PopupLayer::setUrl( const QUrl &/*url*/ )
 {
 //    d->m_popupItem->setUrl( url );
 }
 
-void PopupLayer::setContent( const QString &html, const QUrl &baseUrl )
+void PopupLayer::setContent( const QString &/*html*/, const QUrl &/*baseUrl*/ )
 {
 //    d->m_popupItem->setContent( html, baseUrl );
 }
 
-void PopupLayer::setBackgroundColor(const QColor &color)
+void PopupLayer::setBackgroundColor(const QColor &/*color*/)
 {
 /*
     if(color.isValid()) {
@@ -178,7 +178,7 @@ void PopupLayer::setBackgroundColor(const QColor &color)
 */
 }
 
-void PopupLayer::setTextColor(const QColor &color)
+void PopupLayer::setTextColor(const QColor &/*color*/)
 {
 /*
     if(color.isValid()) {
@@ -192,7 +192,7 @@ void PopupLayer::setSize( const QSizeF &size )
     d->m_requestedSize = size;
 }
 
-void PopupLayer::Private::setAppropriateSize( const ViewportParams *viewport )
+void PopupLayer::Private::setAppropriateSize( const ViewportParams */*viewport*/ )
 {
 /*
     qreal margin = 15.0;
