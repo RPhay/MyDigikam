@@ -100,7 +100,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     layout->setRowStretch(6, 10);
 
     connect(d->filesDownloadButton, &QPushButton::pressed,
-            this, &SystemSettingsWidget::slotFaceDownload);
+            this, &SystemSettingsWidget::slotBinaryDownload);
 }
 
 SystemSettingsWidget::~SystemSettingsWidget()
@@ -130,7 +130,7 @@ void SystemSettingsWidget::saveSettings()
     system.saveSettings();
 }
 
-void SystemSettingsWidget::slotFaceDownload()
+void SystemSettingsWidget::slotBinaryDownload()
 {
     d->filesDownloader->startDownload();
 }
