@@ -94,7 +94,7 @@ void SearchInputWidget::setAreaSearch()
 
 void SearchInputWidget::updatePlaceholderText()
 {
-    setPlaceholderText( m_areaSearch ? i18n( "Area Search" ) : tr ( "Global Search" ) );
+    setPlaceholderText( m_areaSearch ? i18n( "Area Search" ) : i18n( "Global Search" ) );
 }
 
 }
