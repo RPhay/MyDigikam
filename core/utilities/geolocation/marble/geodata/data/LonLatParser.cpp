@@ -18,6 +18,7 @@
 #include <QRegularExpression>
 #include <QSet>
 
+#include <klocalizedstring.h>
 
 namespace Marble
 {
@@ -45,16 +46,16 @@ void LonLatParser::initAll()
     const QString separator = QStringLiteral("|");
 
     //: See https://community.kde.org/Marble/GeoDataCoordinatesTranslation#Direction_terms
-    getLocaleList(m_northLocale, GeoDataCoordinates::tr("*", "North direction terms"),
+    getLocaleList(m_northLocale, i18nc("North direction terms", "*"),
                   placeholder, separator);
     //: See https://community.kde.org/Marble/GeoDataCoordinatesTranslation#Direction_terms
-    getLocaleList(m_eastLocale, GeoDataCoordinates::tr("*", "East direction terms"),
+    getLocaleList(m_eastLocale, i18nc("East direction terms", "*"),
                   placeholder, separator);
     //: See https://community.kde.org/Marble/GeoDataCoordinatesTranslation#Direction_terms
-    getLocaleList(m_southLocale, GeoDataCoordinates::tr("*", "South direction terms"),
+    getLocaleList(m_southLocale, i18nc("South direction terms", "*"),
                   placeholder, separator);
     //: See https://community.kde.org/Marble/GeoDataCoordinatesTranslation#Direction_terms
-    getLocaleList(m_westLocale, GeoDataCoordinates::tr("*", "West direction terms"),
+    getLocaleList(m_westLocale, i18nc("West direction terms", "*"),
                   placeholder, separator);
 
     // use a set to remove duplicates
@@ -92,13 +93,13 @@ void LonLatParser::initAll()
 
     // expressions for symbols of degree, minutes and seconds
     //: See https://community.kde.org/Marble/GeoDataCoordinatesTranslation#Coordinate_symbols
-    getLocaleList(m_degreeLocale, GeoDataCoordinates::tr("*", "Degree symbol terms"),
+    getLocaleList(m_degreeLocale, i18nc("Degree symbol terms", "*"),
                   placeholder, separator);
     //: See https://community.kde.org/Marble/GeoDataCoordinatesTranslation#Coordinate_symbols
-    getLocaleList(m_minutesLocale, GeoDataCoordinates::tr("*", "Minutes symbol terms"),
+    getLocaleList(m_minutesLocale, i18nc("Minutes symbol terms", "*"),
                   placeholder, separator);
     //: See https://community.kde.org/Marble/GeoDataCoordinatesTranslation#Coordinate_symbols
-    getLocaleList(m_secondsLocale, GeoDataCoordinates::tr("*", "Seconds symbol terms"),
+    getLocaleList(m_secondsLocale, i18nc("Seconds symbol terms", "*"),
                   placeholder, separator);
 
     // Used unicode chars:

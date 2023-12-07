@@ -67,9 +67,9 @@ const QString RoutingRunner::lengthString(qreal length) const
 
 const QString RoutingRunner::durationString(const QTime& duration) const
 {
-    const QString hoursString = duration.toString( QString::fromUtf8("hh") );
+    const QString hoursString   = duration.toString( QString::fromUtf8("hh") );
     const QString minutesString = duration.toString( QString::fromUtf8("mm") );
-    const QString timeString = QObject::tr("%1:%2 h","journey duration").arg( hoursString, minutesString );
+    const QString timeString    = i18nc("journey duration", "%1:%2 h", hoursString, minutesString );
     return timeString;
 }
 

@@ -107,11 +107,11 @@ void RoutingInputWidgetPrivate::updateDescription()
 
         if (address.contains(QStringLiteral("house_number"))) {
             QString const houseNumber = address.value(QStringLiteral("house_number")).value().toString();
-            QString const name = QObject::tr("%1 %2, %3", "An address with parameters %1=house number, %2=road, %3=city");
-            m_lineEdit->setText( name.arg( houseNumber, road, city ) );
+            QString const name = i18nc("An address with parameters %1=house number, %2=road, %3=city", "%1 %2, %3", houseNumber, road, city);
+            m_lineEdit->setText( name );
         } else {
-            QString const name = QObject::tr("%2, %3", "An address with parameters %1=road, %2=city");
-            m_lineEdit->setText( name.arg( road, city ) );
+            QString const name = i18nc("An address with parameters %1=road, %2=city", "%1, %2", road, city);
+            m_lineEdit->setText( name );
         }
     }
     else if ( m_route->name( m_index ).isEmpty() )

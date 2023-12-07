@@ -126,7 +126,7 @@ switchSign( QComboBox *sign )
 
 void DecimalInputHandler::setupUi()
 {
-    m_ui->m_floatValueEditor->setSuffix(LatLonEdit::tr("\xC2\xB0")); // the degree symbol °
+    m_ui->m_floatValueEditor->setSuffix(i18n("\xC2\xB0")); // the degree symbol °
     m_ui->m_floatValueEditor->setDecimals(5);
 
     m_ui->m_intValueEditor->hide();
@@ -176,8 +176,8 @@ qreal DecimalInputHandler::calculateValue() const
 
 void DMSInputHandler::setupUi()
 {
-    m_ui->m_uintValueEditor->setSuffix(LatLonEdit::tr("'"));
-    m_ui->m_floatValueEditor->setSuffix(LatLonEdit::tr("\""));
+    m_ui->m_uintValueEditor->setSuffix(i18n("'"));
+    m_ui->m_floatValueEditor->setSuffix(i18n("\""));
     m_ui->m_floatValueEditor->setDecimals(2);
 
     m_ui->m_intValueEditor->show();
@@ -335,7 +335,7 @@ qreal DMSInputHandler::calculateValue() const
 
 void DMInputHandler::setupUi()
 {
-    m_ui->m_floatValueEditor->setSuffix(LatLonEdit::tr("'"));
+    m_ui->m_floatValueEditor->setSuffix(i18n("'"));
     m_ui->m_floatValueEditor->setDecimals(2);
 
     m_ui->m_intValueEditor->show();

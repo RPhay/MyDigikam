@@ -8,6 +8,8 @@
 #include "PluginManager.h"
 #include "RoutingRunnerPlugin.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -107,19 +109,19 @@ QString templateName( RoutingProfilesModel::ProfileTemplate profileTemplate )
 {
     switch ( profileTemplate ) {
         case RoutingProfilesModel::CarFastestTemplate:
-            return RoutingProfilesModel::tr( "Car (fastest)" );
+            return i18n( "Car (fastest)" );
         case RoutingProfilesModel::CarShortestTemplate:
-            return RoutingProfilesModel::tr( "Car (shortest)" );
+            return i18n( "Car (shortest)" );
         case RoutingProfilesModel::CarEcologicalTemplate:
-            return RoutingProfilesModel::tr( "Car (ecological)" );
+            return i18n( "Car (ecological)" );
         case RoutingProfilesModel::BicycleTemplate:
-            return RoutingProfilesModel::tr( "Bicycle" );
+            return i18n( "Bicycle" );
         case RoutingProfilesModel::PedestrianTemplate:
-            return RoutingProfilesModel::tr( "Pedestrian" );
+            return i18n( "Pedestrian" );
         case RoutingProfilesModel::LastTemplate:
             break;
     }
-    return RoutingProfilesModel::tr( "Unknown" );
+    return i18n( "Unknown" );
 }
 
 void RoutingProfilesModel::loadDefaultProfiles()
