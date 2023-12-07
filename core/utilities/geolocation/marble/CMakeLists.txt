@@ -120,7 +120,6 @@ set(marblewidget_SRCS
     PositionProviderPlugin.cpp
     PositionProviderPluginInterface.cpp
     PositionTracking.cpp
-    PrintOptionsWidget.cpp
     QtMarbleConfigDialog.cpp
     Quaternion.cpp
     RemoteIconLoader.cpp
@@ -757,7 +756,6 @@ set (marblewidget_UI
     MovieCaptureDialog.ui
     NewBookmarkFolderDialog.ui
     PlacemarkEditHeader.ui
-    PrintOptions.ui
     SunControlWidget.ui
     TileCreatorDialog.ui
     TileLevelRangeWidget.ui
