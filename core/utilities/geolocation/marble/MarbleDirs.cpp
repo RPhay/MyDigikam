@@ -102,17 +102,18 @@ QString MarbleDirs::systemPath()
     QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                           QLatin1String("digikam/marble"),
                                           QStandardPaths::LocateDirectory);
+
     return path;
 }
 
 QString MarbleDirs::localPath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/digikam/marble/data");
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/digikam/marble_data");
 }
 
 QString MarbleDirs::pluginLocalPath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/digikam/marble/plugins");
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/digikam/marble_plugins");
 }
 
 QString MarbleDirs::pluginSystemPath()

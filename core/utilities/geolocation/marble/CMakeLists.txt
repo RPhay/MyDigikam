@@ -766,3 +766,4 @@ target_compile_definitions(core_marble_obj
 )
 
 add_subdirectory(data)
+add_subdirectory(plugins)
