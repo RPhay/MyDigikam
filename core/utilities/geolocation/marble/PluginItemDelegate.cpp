@@ -20,6 +20,8 @@
 #include <QApplication>
 #include <QPainter>
 
+#include <klocalizedstring.h>
+
 using namespace Marble;
 /* TRANSLATOR Marble::PluginItemDelegate */
 
@@ -345,7 +347,7 @@ QStyleOptionButton PluginItemDelegate::buttonOption( const QStyleOptionViewItem&
     QSize contentSize;
     if ( type == PluginItemDelegate::About ) {
         if ( m_aboutIcon.isNull() ) {
-            buttonOption.text = tr( "About" );
+            buttonOption.text = i18n( "About" );
             contentSize = buttonOption.fontMetrics.size( 0, buttonOption.text ) + QSize( 4, 4 );
         }
         else {
@@ -360,7 +362,7 @@ QStyleOptionButton PluginItemDelegate::buttonOption( const QStyleOptionViewItem&
     }
     else if ( type == PluginItemDelegate::Configure ) {
         if ( m_configIcon.isNull() ) {
-            buttonOption.text = tr( "Configure" );
+            buttonOption.text = i18n( "Configure" );
             contentSize = buttonOption.fontMetrics.size( 0, buttonOption.text ) + QSize( 4, 4 );
         }
         else {

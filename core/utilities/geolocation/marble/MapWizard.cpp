@@ -167,7 +167,7 @@ PreviewDialog::PreviewDialog( QWidget* parent, const QString& mapThemeId ) : QDi
 
     this->setLayout( layout );
     this->setMinimumSize( 640, 480 );
-    this->setWindowTitle( tr( "Preview Map" ) );
+    this->setWindowTitle( i18n( "Preview Map" ) );
 }
 
 void PreviewDialog::closeEvent(QCloseEvent* e)
@@ -289,12 +289,12 @@ void MapWizard::processCapabilitiesResults()
 
     if (d->owsManager.capabilitiesStatus() == OwsCapabilitiesReplyUnreadable)
     {
-        QMessageBox::critical( this, tr( "Error while parsing" ), tr( "Wizard cannot parse server's response" ) );
+        QMessageBox::critical( this, i18n( "Error while parsing" ), i18n( "Wizard cannot parse server's response" ) );
         return;
     }
     if(d->owsManager.capabilitiesStatus() == OwsCapabilitiesNoOwsServer)
     {
-        QMessageBox::critical( this, tr( "Error while parsing" ), tr( "Server is not an OWS Server." ) );
+        QMessageBox::critical( this, i18n( "Error while parsing" ), i18n( "Server is not an OWS Server." ) );
         return;
     }
     d->model->clear();
@@ -477,16 +477,16 @@ void MapWizard::processImageResults()
 
     if (d->owsManager.imageRequestResult().imageStatus() == WmsImageFailed ) {
         QMessageBox::information( this,
-                                    tr( "%1" ).arg(imageType),
-                                    tr( "The %1 could not be downloaded." ).arg(imageType) );
+                                    i18n( "%1" ).arg(imageType),
+                                    i18n( "The %1 could not be downloaded." ).arg(imageType) );
         if (imageType == QChar(PreviewImage)) d->m_previewImageValid = false;                   // PORT_QT6 : comparison between enum and QString???
         if (imageType == QChar(LevelZeroTile)) d->m_levelZeroTileValid = false;
         if (imageType == QChar(LegendImage)) d->m_legendImageValid = false;
     }
     else if  (d->owsManager.imageRequestResult().imageStatus() == WmsImageFailedServerMessage ) {
         QMessageBox::information( this,
-                                    tr( "%1" ).arg(imageType),
-                                    tr( "The %1 could not be downloaded successfully. The server replied:\n\n%2" ).arg( imageType, QString::fromUtf8( d->owsManager.resultRaw() ) ) );
+                                    i18n( "%1" ).arg(imageType),
+                                    i18n( "The %1 could not be downloaded successfully. The server replied:\n\n%2" ).arg( imageType, QString::fromUtf8( d->owsManager.resultRaw() ) ) );
         if (imageType == QChar(PreviewImage)) d->m_previewImageValid = false;
         if (imageType == QChar(LevelZeroTile)) d->m_levelZeroTileValid = false;
         if (imageType == QChar(LegendImage)) d->m_legendImageValid = false;
@@ -794,10 +794,10 @@ QString MapWizard::createArchive( QWidget *parent, const QString& mapId )
     switch( archiver.execute( QString::fromUtf8("tar"), tarArgs ) )
     {
     case -2:
-        QMessageBox::critical( parent, tr( "Archiving failed" ), tr( "Archiving process cannot be started." ) );
+        QMessageBox::critical( parent, i18n( "Archiving failed" ), i18n( "Archiving process cannot be started." ) );
         break;
     case -1:
-        QMessageBox::critical( parent, tr( "Archiving failed" ), tr( "Archiving process crashed." ) );
+        QMessageBox::critical( parent, i18n( "Archiving failed" ), i18n( "Archiving process crashed." ) );
         break;
     case 0:
         qCDebug(DIGIKAM_MARBLE_LOG) << "Archived the theme successfully.";
@@ -893,16 +893,16 @@ bool MapWizard::validateCurrentPage()
         d->sourceImage = d->uiWidget.lineEditSource->text();
         if ( d->sourceImage.isEmpty() ) {
             QMessageBox::information( this,
-                                      tr( "Source Image" ),
-                                      tr( "Please specify a source image." ) );
+                                      i18n( "Source Image" ),
+                                      i18n( "Please specify a source image." ) );
             d->uiWidget.lineEditSource->setFocus();
             return false;
         }
 
         if ( !QFileInfo::exists(d->sourceImage) ) {
             QMessageBox::information( this,
-                                      tr( "Source Image" ),
-                                      tr( "The source image you specified does not exist. Please specify a different one." ) );
+                                      i18n( "Source Image" ),
+                                      i18n( "The source image you specified does not exist. Please specify a different one." ) );
             d->uiWidget.lineEditSource->setFocus();
             d->uiWidget.lineEditSource->selectAll();
             return false;
@@ -910,8 +910,8 @@ bool MapWizard::validateCurrentPage()
 
         if ( QImage( d->sourceImage ).isNull() ) {
             QMessageBox::information( this,
-                                      tr( "Source Image" ),
-                                      tr( "The source image you specified does not seem to be an image. Please specify a different image file." ) );
+                                      i18n( "Source Image" ),
+                                      i18n( "The source image you specified does not seem to be an image. Please specify a different image file." ) );
             d->uiWidget.lineEditSource->setFocus();
             d->uiWidget.lineEditSource->selectAll();
             return false;
@@ -941,14 +941,14 @@ bool MapWizard::validateCurrentPage()
             }
         }
         if ( d->uiWidget.lineEditTitle->text().isEmpty() ) {
-            QMessageBox::information( this, tr( "Map Title" ), tr( "Please specify a map title." ) );
+            QMessageBox::information( this, i18n( "Map Title" ), i18n( "Please specify a map title." ) );
             d->uiWidget.lineEditTitle->setFocus();
             return false;
         }
 
         d->mapTheme = d->uiWidget.lineEditTheme->text();
         if ( d->mapTheme.isEmpty() ) {
-            QMessageBox::information( this, tr( "Map Name" ), tr( "Please specify a map name." ) );
+            QMessageBox::information( this, i18n( "Map Name" ), i18n( "Please specify a map name." ) );
             d->uiWidget.lineEditTheme->setFocus();
             return false;
         }
@@ -956,15 +956,15 @@ bool MapWizard::validateCurrentPage()
         const QDir destinationDir( QString::fromUtf8( "%1/maps/earth/%2" ).arg( MarbleDirs::localPath(), d->mapTheme ) );
         if ( destinationDir.exists() ) {
             QMessageBox::information( this,
-                                    tr( "Map Name" ),
-                                    tr( "Please specify another map name, since there is already a map named \"%1\"." ).arg( d->mapTheme ) );
+                                    i18n( "Map Name" ),
+                                    i18n( "Please specify another map name, since there is already a map named \"%1\"." ).arg( d->mapTheme ) );
             d->uiWidget.lineEditTheme->setFocus();
             d->uiWidget.lineEditTheme->selectAll();
             return false;
         }
 
         if ( d->previewImage.isNull() ) {
-            QMessageBox::information( this, tr( "Preview Image" ), tr( "Please specify a preview image." ) );
+            QMessageBox::information( this, i18n( "Preview Image" ), i18n( "Please specify a preview image." ) );
             d->uiWidget.pushButtonPreview->setFocus();
             return false;
         }
@@ -1487,7 +1487,7 @@ void MapWizard::accept()
 
     else
     {
-        QMessageBox::critical( this, tr( "Problem while creating files" ), tr( "Check if a theme with the same name exists." ) );
+        QMessageBox::critical( this, i18n( "Problem while creating files" ), i18n( "Check if a theme with the same name exists." ) );
         return;
     }
 }
@@ -1548,8 +1548,8 @@ void MapWizard::updateOwsServiceType()
         d->uiWidget.labelOwsServiceHeader->setText(i18n("<h4>WMS Server</h4>Please choose a <a href=\"https://en.wikipedia.org/wiki/Web_Map_Service\">WMS</a> server or enter a custom server URL."));
         d->uiWidget.comboBoxWmsServer->clear();
         d->uiWidget.comboBoxWmsServer->addItems( d->wmsServerList );
-        d->uiWidget.comboBoxWmsServer->addItem( tr( "Custom" ), QString::fromUtf8("http://") );
-        d->uiWidget.comboBoxWmsServer->setCurrentText( tr( "Custom" ) );
+        d->uiWidget.comboBoxWmsServer->addItem( i18n( "Custom" ), QString::fromUtf8("http://") );
+        d->uiWidget.comboBoxWmsServer->setCurrentText( i18n( "Custom" ) );
 
     }
     else if (d->uiWidget.radioButtonWmts->isChecked()) {
@@ -1557,14 +1557,14 @@ void MapWizard::updateOwsServiceType()
         d->uiWidget.labelOwsServiceHeader->setText(i18n("<h4>WMTS Server</h4>Please choose a <a href=\"https://de.wikipedia.org/wiki/Web_Map_Tile_Service\">WMTS</a> server or enter a custom server URL."));
         d->uiWidget.comboBoxWmsServer->clear();
         d->uiWidget.comboBoxWmsServer->addItems( d->wmtsServerList );
-        d->uiWidget.comboBoxWmsServer->addItem( tr( "Custom" ), QString::fromUtf8("http://") );
-        d->uiWidget.comboBoxWmsServer->setCurrentText( tr( "Custom" ) );
+        d->uiWidget.comboBoxWmsServer->addItem( i18n( "Custom" ), QString::fromUtf8("http://") );
+        d->uiWidget.comboBoxWmsServer->setCurrentText( i18n( "Custom" ) );
     }
     else if (d->uiWidget.radioButtonStaticUrl->isChecked()) {
         d->uiWidget.comboBoxStaticUrlServer->clear();
         d->uiWidget.comboBoxStaticUrlServer->addItems( d->staticUrlServerList );
-//        d->uiWidget.comboBoxWmsServer->addItem( tr( "Custom" ), "http://" );
-//        d->uiWidget.comboBoxWmsServer->setCurrentText( tr( "Custom" ) );
+//        d->uiWidget.comboBoxWmsServer->addItem( i18n( "Custom" ), "http://" );
+//        d->uiWidget.comboBoxWmsServer->setCurrentText( i18n( "Custom" ) );
     }
 }
 

@@ -14,6 +14,8 @@
 #include "GeoDataDelete.h"
 #include "MarblePlacemarkModel.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 RemoveItemEditWidget::RemoveItemEditWidget( const QModelIndex &index, QWidget *parent ) :
@@ -30,7 +32,7 @@ RemoveItemEditWidget::RemoveItemEditWidget( const QModelIndex &index, QWidget *p
     layout->addWidget( iconLabel );
 
     QLabel* comboBoxLabel = new QLabel;
-    comboBoxLabel->setText( tr( "Choose item:" ) );
+    comboBoxLabel->setText( i18n( "Choose item:" ) );
     layout->addWidget( comboBoxLabel );
 
     layout->addWidget( m_comboBox );

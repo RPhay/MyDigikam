@@ -53,7 +53,7 @@ void MovieCaptureDialog::loadDestinationFile()
 {
     const QVector<MovieFormat> formats = m_recorder->availableFormats();
     if( formats.isEmpty() ) {
-        QMessageBox::warning( this, tr( "Codecs are unavailable" ), tr( "Supported codecs are not found." ) );
+        QMessageBox::warning( this, i18n( "Codecs are unavailable" ), i18n( "Supported codecs are not found." ) );
         return;
     }
     QString filter = formats.first().name() + QLatin1String(" (*.") + formats.first().extension() + QLatin1Char(')');

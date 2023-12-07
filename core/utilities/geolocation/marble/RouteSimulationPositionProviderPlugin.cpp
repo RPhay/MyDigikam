@@ -16,6 +16,8 @@
 #include <QRandomGenerator>
 #include <QIcon>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -25,7 +27,7 @@ namespace {
 
 QString RouteSimulationPositionProviderPlugin::name() const
 {
-    return tr( "Current Route Position Provider Plugin" );
+    return i18n( "Current Route Position Provider Plugin" );
 }
 
 QString RouteSimulationPositionProviderPlugin::nameId() const
@@ -35,7 +37,7 @@ QString RouteSimulationPositionProviderPlugin::nameId() const
 
 QString RouteSimulationPositionProviderPlugin::guiString() const
 {
-    return tr( "Current Route" );
+    return i18n( "Current Route" );
 }
 
 QString RouteSimulationPositionProviderPlugin::version() const
@@ -45,7 +47,7 @@ QString RouteSimulationPositionProviderPlugin::version() const
 
 QString RouteSimulationPositionProviderPlugin::description() const
 {
-    return tr( "Simulates traveling along the current route." );
+    return i18n( "Simulates traveling along the current route." );
 }
 
 QString RouteSimulationPositionProviderPlugin::copyrightYears() const

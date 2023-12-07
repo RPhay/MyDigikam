@@ -24,6 +24,8 @@
 #include <QNetworkReply>
 #include <QDomDocument>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -712,7 +714,7 @@ void NewstuffModel::cancel( int index )
 
                 d->m_items[d->m_currentAction.first].m_downloadedSize = 0;
 
-                Q_EMIT installationFailed( d->m_currentAction.first, tr( "Installation aborted by user." ) );
+                Q_EMIT installationFailed( d->m_currentAction.first, i18n( "Installation aborted by user." ) );
                 d->m_currentAction = NewstuffModelPrivate::Action( -1, NewstuffModelPrivate::Install );
             } else {
                 // Shall we interrupt this?
@@ -721,7 +723,7 @@ void NewstuffModel::cancel( int index )
             if ( d->m_currentAction.second == NewstuffModelPrivate::Install ) {
                 NewstuffModelPrivate::Action install( index, NewstuffModelPrivate::Install );
                 d->m_actionQueue.removeAll( install );
-                Q_EMIT installationFailed( index, tr( "Installation aborted by user." ) );
+                Q_EMIT installationFailed( index, i18n( "Installation aborted by user." ) );
             } else {
                 NewstuffModelPrivate::Action uninstall( index, NewstuffModelPrivate::Uninstall );
                 d->m_actionQueue.removeAll( uninstall );

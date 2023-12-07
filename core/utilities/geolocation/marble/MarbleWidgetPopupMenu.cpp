@@ -119,8 +119,8 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     m_infoDialogAction->setData( 0 );
 
     //	Tool actions (Right mouse button)
-    m_directionsFromHereAction = new QAction( tr( "Directions &from here" ), parent );
-    m_directionsToHereAction = new QAction( tr( "Directions &to here" ), parent );
+    m_directionsFromHereAction = new QAction( i18n( "Directions &from here" ), parent );
+    m_directionsToHereAction = new QAction( i18n( "Directions &to here" ), parent );
     RouteRequest* request = m_widget->model()->routingManager()->routeRequest();
     if ( request ) {
         m_directionsFromHereAction->setIcon( QIcon( request->pixmap( 0, 16 ) ) );
@@ -128,8 +128,8 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
         m_directionsToHereAction->setIcon( QIcon( request->pixmap( lastIndex, 16 ) ) );
     }
     QAction* addBookmark = new QAction( QIcon(QStringLiteral(":/icons/bookmark-new.png")),
-                                        tr( "Add &Bookmark" ), parent );
-    QAction* fullscreenAction = new QAction( tr( "&Full Screen Mode" ), parent );
+                                        i18n( "Add &Bookmark" ), parent );
+    QAction* fullscreenAction = new QAction( i18n( "&Full Screen Mode" ), parent );
     fullscreenAction->setCheckable( true );
 
     QMenu* infoBoxMenu = createInfoBoxMenu(m_widget);
@@ -879,7 +879,7 @@ void MarbleWidgetPopupMenu::showAddressInformation(const GeoDataCoordinates &, c
 {
     QString text = placemark.address();
     if ( !text.isEmpty() ) {
-        QMessageBox::information( d->m_widget, tr( "Address Details" ), text, QMessageBox::Ok );
+        QMessageBox::information( d->m_widget, i18n( "Address Details" ), text, QMessageBox::Ok );
     }
 }
 

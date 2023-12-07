@@ -57,13 +57,13 @@ MovieCapture::MovieCapture(MarbleWidget *widget, QObject *parent) :
         connect(&d->frameTimer, SIGNAL(timeout()), this, SLOT(recordFrame()));
     }
     d->fps = 30;
-    MovieFormat avi( QString::fromUtf8("avi"), tr( "AVI (mpeg4)" ), QString::fromUtf8("avi") );
-    MovieFormat flv( QString::fromUtf8("flv"), tr( "FLV" ), QString::fromUtf8("flv") );
-    MovieFormat mkv( QString::fromUtf8("matroska"), tr( "Matroska (h264)" ), QString::fromUtf8("mkv") );
-    MovieFormat mp4( QString::fromUtf8("mp4"), tr( "MPEG-4" ), QString::fromUtf8("mp4") );
-    MovieFormat vob( QString::fromUtf8("vob"), tr( "MPEG-2 PS (VOB)" ), QString::fromUtf8("vob") );
-    MovieFormat ogg( QString::fromUtf8("ogg"), tr( "OGG" ), QString::fromUtf8("ogg") );
-    MovieFormat swf( QString::fromUtf8("swf"), tr( "SWF" ), QString::fromUtf8("swf") );
+    MovieFormat avi( QString::fromUtf8("avi"), i18n( "AVI (mpeg4)" ), QString::fromUtf8("avi") );
+    MovieFormat flv( QString::fromUtf8("flv"), i18n( "FLV" ), QString::fromUtf8("flv") );
+    MovieFormat mkv( QString::fromUtf8("matroska"), i18n( "Matroska (h264)" ), QString::fromUtf8("mkv") );
+    MovieFormat mp4( QString::fromUtf8("mp4"), i18n( "MPEG-4" ), QString::fromUtf8("mp4") );
+    MovieFormat vob( QString::fromUtf8("vob"), i18n( "MPEG-2 PS (VOB)" ), QString::fromUtf8("vob") );
+    MovieFormat ogg( QString::fromUtf8("ogg"), i18n( "OGG" ), QString::fromUtf8("ogg") );
+    MovieFormat swf( QString::fromUtf8("swf"), i18n( "SWF" ), QString::fromUtf8("swf") );
     m_supportedFormats << avi << flv << mkv << mp4 << vob << ogg << swf;
 }
 

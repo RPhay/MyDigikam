@@ -28,23 +28,23 @@ const QString RoutingRunner::lengthString(qreal length) const
     MarbleLocale::MeasurementSystem const measurementSystem = MarbleGlobal::getInstance()->locale()->measurementSystem();
 
     int precision = 0;
-    QString distanceUnit = tr( "m" );
+    QString distanceUnit = i18n( "m" );
 
     switch ( measurementSystem ) {
     case MarbleLocale::ImperialSystem:
         precision = 1;
-        distanceUnit = tr( "mi" );
+        distanceUnit = i18n( "mi" );
         length *= METER2KM * KM2MI;
         if ( length < 0.1 ) {
             length = 10 * qRound( length * 528 );
             precision = 0;
-            distanceUnit = tr( "ft" );
+            distanceUnit = i18n( "ft" );
         }
         break;
     case MarbleLocale::MetricSystem:
         if ( length >= 1000 ) {
             length *= METER2KM;
-            distanceUnit = tr( "km" );
+            distanceUnit = i18n( "km" );
             precision = 1;
         } else if ( length >= 200 ) {
             length = 50 * qRound( length / 50 );
@@ -56,7 +56,7 @@ const QString RoutingRunner::lengthString(qreal length) const
         break;
     case MarbleLocale::NauticalSystem: {
         length *= METER2KM * KM2NM;
-        distanceUnit = tr( "nm" );
+        distanceUnit = i18n( "nm" );
         precision = length < 2.0 ? 2 : 1;
     }
         break;

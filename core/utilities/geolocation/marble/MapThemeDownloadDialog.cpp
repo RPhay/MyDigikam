@@ -16,6 +16,8 @@
 #include <QAbstractTextDocumentLayout>
 #include <QStyledItemDelegate>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -249,10 +251,10 @@ bool MapItemDelegate::editorEvent(QEvent *event, QAbstractItemModel *, const QSt
 int MapItemDelegate::buttonWidth(const QStyleOptionViewItem &option) const
 {
     if ( m_buttonWidth <= 0 ) {
-        int const installWidth = option.fontMetrics.size( 0, tr( "Install" ) ).width();
-        int const removeWidth = option.fontMetrics.size( 0, tr( "Remove" ) ).width();
-        int const cancelWidth = option.fontMetrics.size( 0, tr( "Cancel" ) ).width();
-        int const upgradeWidth = option.fontMetrics.size( 0, tr( "Upgrade" ) ).width();
+        int const installWidth = option.fontMetrics.size( 0, i18n( "Install" ) ).width();
+        int const removeWidth = option.fontMetrics.size( 0, i18n( "Remove" ) ).width();
+        int const cancelWidth = option.fontMetrics.size( 0, i18n( "Cancel" ) ).width();
+        int const upgradeWidth = option.fontMetrics.size( 0, i18n( "Upgrade" ) ).width();
         m_buttonWidth = 2 * m_iconSize + qMax( qMax( installWidth, removeWidth ),
                                            qMax( cancelWidth, upgradeWidth ) );
     }
@@ -271,25 +273,25 @@ QStyleOptionButton MapItemDelegate::button( Element element, const QStyleOptionV
 
     switch (element) {
     case InstallButton:
-        result.text = tr( "Install" );
+        result.text = i18n( "Install" );
         result.icon = QIcon(QStringLiteral(":/marble/dialog-ok.png"));
         result.iconSize = QSize( m_iconSize, m_iconSize );
         break;
     case UpgradeButton:
-        result.text = tr( "Update" );
+        result.text = i18n( "Update" );
         result.icon = QIcon(QStringLiteral(":/marble/system-software-update.png"));
         result.iconSize = QSize( m_iconSize, m_iconSize );
         break;
     case OpenButton:
-        result.text = tr( "Open" );
+        result.text = i18n( "Open" );
         result.icon = QIcon(QStringLiteral(":/marble/document-open.png"));
         result.iconSize = QSize( m_iconSize, m_iconSize );
         break;
     case CancelButton:
-        result.text = tr( "Cancel" );
+        result.text = i18n( "Cancel" );
         break;
     case RemoveButton:
-        result.text = tr( "Remove" );
+        result.text = i18n( "Remove" );
         result.icon = QIcon(QStringLiteral(":/marble/edit-delete.png"));
         result.iconSize = QSize( m_iconSize, m_iconSize );
         break;

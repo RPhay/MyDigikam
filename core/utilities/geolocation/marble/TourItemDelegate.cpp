@@ -185,7 +185,7 @@ void TourItemDelegate::paint( QPainter *painter, const QStyleOptionViewItem &opt
                 iconString = QStringLiteral(":/marble/document-edit.png");
             }
             if( update && !ok ) {
-                label.setHtml( tr( "Update items" ) );
+                label.setHtml( i18n( "Update items" ) );
                 button.state &= ~QStyle::State_Enabled & ~QStyle::State_Sunken;
             }
 

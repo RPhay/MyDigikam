@@ -15,6 +15,8 @@
 #include "MarblePlacemarkModel.h"
 #include "GeoDataTourControl.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -33,10 +35,10 @@ TourControlEditWidget::TourControlEditWidget( const QModelIndex &index, QWidget 
     layout->addWidget( iconLabel );
 
     layout->addWidget( m_radio_play );
-    m_radio_play->setText( tr( "Play" ) );
+    m_radio_play->setText( i18n( "Play" ) );
 
     layout->addWidget( m_radio_pause );
-    m_radio_pause->setText( tr( "Pause" ) );
+    m_radio_pause->setText( i18n( "Pause" ) );
 
     if( tourControlElement()->playMode() == GeoDataTourControl::Play ){
         m_radio_play->setChecked( true );

@@ -35,7 +35,7 @@ WaitEditWidget::WaitEditWidget( const QModelIndex &index, QWidget *parent ) :
     layout->addWidget( iconLabel );
 
     QLabel *waitLabel = new QLabel;
-    waitLabel->setText( tr( "Wait duration:" ) );
+    waitLabel->setText( i18n( "Wait duration:" ) );
     layout->addWidget( waitLabel );
 
     layout->addWidget( m_spinBox );

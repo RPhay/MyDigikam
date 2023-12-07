@@ -13,6 +13,8 @@
 
 #include <QIcon>
 
+#include <klocalizedstring.h>
+
 using namespace Marble;
 
 PlacemarkPositionProviderPlugin::PlacemarkPositionProviderPlugin( MarbleModel *marbleModel, QObject* parent )
@@ -29,7 +31,7 @@ PlacemarkPositionProviderPlugin::PlacemarkPositionProviderPlugin( MarbleModel *m
 
 QString PlacemarkPositionProviderPlugin::name() const
 {
-    return tr( "Placemark position provider Plugin" );
+    return i18n( "Placemark position provider Plugin" );
 }
 
 QString PlacemarkPositionProviderPlugin::nameId() const
@@ -39,7 +41,7 @@ QString PlacemarkPositionProviderPlugin::nameId() const
 
 QString PlacemarkPositionProviderPlugin::guiString() const
 {
-    return tr( "Placemark" );
+    return i18n( "Placemark" );
 }
 
 QString PlacemarkPositionProviderPlugin::version() const
@@ -49,7 +51,7 @@ QString PlacemarkPositionProviderPlugin::version() const
 
 QString PlacemarkPositionProviderPlugin::description() const
 {
-    return tr( "Reports the position of a placemark" );
+    return i18n( "Reports the position of a placemark" );
 }
 
 QString PlacemarkPositionProviderPlugin::copyrightYears() const

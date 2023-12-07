@@ -193,7 +193,7 @@ QVariant TargetModel::routeData ( const QVector<GeoDataPlacemark> &via, int inde
 QVariant TargetModel::homeData ( int role ) const
 {
     switch( role ) {
-    case Qt::DisplayRole: return tr( "Home" );
+    case Qt::DisplayRole: return i18n( "Home" );
     case Qt::DecorationRole: return QIcon(QStringLiteral(":/icons/go-home.png"));
     case MarblePlacemarkModel::CoordinateRole: {
         qreal lon( 0.0 ), lat( 0.0 );
@@ -350,7 +350,7 @@ GoToDialog::GoToDialog( MarbleModel* marbleModel, QWidget * parent, Qt::WindowFl
     QDialog( parent, flags ),
     d( new GoToDialogPrivate( this, marbleModel ) )
 {
-    d->searchLineEdit->setPlaceholderText( tr( "Address or search term" ) );
+    d->searchLineEdit->setPlaceholderText( i18n( "Address or search term" ) );
 
     d->m_searchResultModel.setRootDocument( d->m_searchResult );
     d->bookmarkListView->setModel( &d->m_targetModel );

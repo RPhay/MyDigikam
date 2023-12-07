@@ -12,6 +12,8 @@
 #include <QCompleter>
 #include <QMenu>
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 SearchInputWidget::SearchInputWidget( QWidget *parent ) :
@@ -69,10 +71,10 @@ void SearchInputWidget::centerOnSearchSuggestion(const QModelIndex &index )
 void SearchInputWidget::showDropDownMenu()
 {
     QMenu menu( this );
-    QAction* globalSearch = menu.addAction( tr( "Global Search" ), this, SLOT(setGlobalSearch()) );
+    QAction* globalSearch = menu.addAction( i18n( "Global Search" ), this, SLOT(setGlobalSearch()) );
     globalSearch->setCheckable( true );
     globalSearch->setChecked( !m_areaSearch );
-    QAction* areaSearch = menu.addAction( tr( "Area Search" ), this, SLOT(setAreaSearch()) );
+    QAction* areaSearch = menu.addAction( i18n( "Area Search" ), this, SLOT(setAreaSearch()) );
     areaSearch->setCheckable( true );
     areaSearch->setChecked( m_areaSearch );
     menu.exec( mapToGlobal( QPoint( 0, size().height() ) ) );
@@ -92,7 +94,7 @@ void SearchInputWidget::setAreaSearch()
 
 void SearchInputWidget::updatePlaceholderText()
 {
-    setPlaceholderText( m_areaSearch ? tr( "Area Search" ) : tr ( "Global Search" ) );
+    setPlaceholderText( m_areaSearch ? i18n( "Area Search" ) : tr ( "Global Search" ) );
 }
 
 }

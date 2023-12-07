@@ -117,7 +117,7 @@ class Q_DECL_HIDDEN MapViewWidget::Private {
         m_globeViewButton->setChecked(false);
 
         m_globeViewAction = new QAction(QIcon(QStringLiteral(":/icons/map-globe.png")),
-                                             tr( "Spherical view" ),
+                                             i18n( "Spherical view" ),
                                              m_globeViewButton );
         m_globeViewAction->setCheckable( true );
         m_globeViewAction->setChecked( false );
@@ -144,31 +144,31 @@ class Q_DECL_HIDDEN MapViewWidget::Private {
         m_flatViewAction->setChecked(false);
 
         m_gnomonicViewAction = new QAction( QIcon(QStringLiteral(":/icons/map-gnomonic.png")),
-                                            tr( "Gnomonic view" ),
+                                            i18n( "Gnomonic view" ),
                                             m_popupMenuFlat);
         m_gnomonicViewAction->setCheckable( true );
         m_gnomonicViewAction->setChecked( false );
 
         m_stereographicViewAction = new QAction(QIcon(QStringLiteral(":/icons/map-globe.png")),
-                                            tr( "Stereographic view" ),
+                                            i18n( "Stereographic view" ),
                                             m_popupMenuFlat);
         m_stereographicViewAction->setCheckable( true );
         m_stereographicViewAction->setChecked( false );
 
         m_lambertAzimuthalViewAction = new QAction(QIcon(QStringLiteral(":/icons/map-globe.png")),
-                                            tr( "Lambert Azimuthal Equal-Area view" ),
+                                            i18n( "Lambert Azimuthal Equal-Area view" ),
                                             m_popupMenuFlat);
         m_lambertAzimuthalViewAction->setCheckable( true );
         m_lambertAzimuthalViewAction->setChecked( false );
 
         m_azimuthalEquidistantViewAction = new QAction(QIcon(QStringLiteral(":/icons/map-globe.png")),
-                                            tr( "Azimuthal Equidistant view" ),
+                                            i18n( "Azimuthal Equidistant view" ),
                                             m_popupMenuFlat);
         m_azimuthalEquidistantViewAction->setCheckable( true );
         m_azimuthalEquidistantViewAction->setChecked( false );
 
         m_verticalPerspectiveViewAction = new QAction(QIcon(QStringLiteral(":/icons/map-globe.png")),
-                                            tr( "Perspective Globe view" ),
+                                            i18n( "Perspective Globe view" ),
                                             m_popupMenuFlat);
         m_verticalPerspectiveViewAction->setCheckable( true );
         m_verticalPerspectiveViewAction->setChecked( false );
@@ -651,7 +651,7 @@ void MapViewWidget::Private::showContextMenu( const QPoint& pos )
     Q_UNUSED(pos)
     QMenu menu;
 
-    QAction* iconSizeAction = menu.addAction( tr( "&Show Large Icons" ), q, SLOT(toggleIconSize()) );
+    QAction* iconSizeAction = menu.addAction( i18n( "&Show Large Icons" ), q, SLOT(toggleIconSize()) );
     iconSizeAction->setCheckable( true );
     iconSizeAction->setChecked( m_mapViewUi.marbleThemeSelectView->iconSize() == QSize( 96, 96 ) );
     QAction *favAction = menu.addAction(QIcon(QStringLiteral(":/icons/bookmarks.png")), i18n("&Favorite"), q, SLOT(toggleFavorite()));
@@ -661,7 +661,7 @@ void MapViewWidget::Private::showContextMenu( const QPoint& pos )
 
     menu.addAction(QIcon(QStringLiteral(":/icons/create-new-map.png")), i18n("&Create a New Map..."), q, SIGNAL(showMapWizard()));
     if (QFileInfo(MarbleDirs::localPath() + QLatin1String("/maps/") + currentThemePath()).exists()) {
-        menu.addAction( tr( "&Delete Map Theme" ), q, SLOT(deleteMap()) );
+        menu.addAction( i18n( "&Delete Map Theme" ), q, SLOT(deleteMap()) );
     }
     menu.exec( m_mapViewUi.marbleThemeSelectView->mapToGlobal( pos ) );
 }
@@ -669,8 +669,8 @@ void MapViewWidget::Private::showContextMenu( const QPoint& pos )
 void MapViewWidget::Private::deleteMap()
 {
     if(QMessageBox::warning( q,
-                             tr( "Marble" ),
-                             tr( "Are you sure that you want to delete \"%1\"?" ).arg( currentThemeName() ),
+                             i18n( "Marble" ),
+                             i18n( "Are you sure that you want to delete \"%1\"?" ).arg( currentThemeName() ),
                              QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes )
     {
         MapThemeManager::deleteMapTheme( currentThemePath() );

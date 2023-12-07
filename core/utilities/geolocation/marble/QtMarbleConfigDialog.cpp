@@ -105,7 +105,7 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget, CloudSync
     QWidget *w_viewSettings = new QWidget( this );
 
     d->ui_viewSettings.setupUi( w_viewSettings );
-    tabWidget->addTab( w_viewSettings, tr( "View" ) );
+    tabWidget->addTab( w_viewSettings, i18n( "View" ) );
 
     d->ui_viewSettings.kcfg_labelLocalization->hide();
     d->ui_viewSettings.label_labelLocalization->hide();
@@ -114,7 +114,7 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget, CloudSync
     QWidget *w_navigationSettings = new QWidget( this );
 
     d->ui_navigationSettings.setupUi( w_navigationSettings );
-    tabWidget->addTab( w_navigationSettings, tr( "Navigation" ) );
+    tabWidget->addTab( w_navigationSettings, i18n( "Navigation" ) );
     d->ui_navigationSettings.kcfg_dragLocation->hide();
     d->ui_navigationSettings.label_dragLocation->hide();
 
@@ -122,7 +122,7 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget, CloudSync
     QWidget *w_cacheSettings = new QWidget( this );
 
     d->ui_cacheSettings.setupUi( w_cacheSettings );
-    tabWidget->addTab( w_cacheSettings, tr( "Cache and Proxy" ) );
+    tabWidget->addTab( w_cacheSettings, i18n( "Cache and Proxy" ) );
     // Forwarding clear button signals
     connect( d->ui_cacheSettings.button_clearVolatileCache, SIGNAL(clicked()), SIGNAL(clearVolatileCacheClicked()) );
     connect( d->ui_cacheSettings.button_clearPersistentCache, SIGNAL(clicked()), SIGNAL(clearPersistentCacheClicked()) );
@@ -130,18 +130,18 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget, CloudSync
     // time page
     QWidget *w_timeSettings = new QWidget( this );
     d->ui_timeSettings.setupUi( w_timeSettings );
-    tabWidget->addTab( w_timeSettings, tr( "Date and Time" ) );
+    tabWidget->addTab( w_timeSettings, i18n( "Date and Time" ) );
 
     // routing page
     QWidget *w_routingSettings = new RoutingProfilesWidget( marbleWidget->model() );
-    tabWidget->addTab( w_routingSettings, tr( "Routing" ) );
+    tabWidget->addTab( w_routingSettings, i18n( "Routing" ) );
 
     // plugin page
     d->m_pluginModel.setRenderPlugins( d->m_marbleWidget->renderPlugins() );
     d->w_pluginSettings = new MarblePluginSettingsWidget( this );
     d->w_pluginSettings->setModel( &d->m_pluginModel );
     d->w_pluginSettings->setObjectName( "plugin_page" );
-    tabWidget->addTab( d->w_pluginSettings, tr( "Plugins" ) );
+    tabWidget->addTab( d->w_pluginSettings, i18n( "Plugins" ) );
 
     // Setting the icons for the plugin dialog.
     d->w_pluginSettings->setConfigIcon(QIcon(QStringLiteral(":/icons/settings-configure.png")));
@@ -151,7 +151,7 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget, CloudSync
 
     QWidget *w_cloudSyncSettings = new QWidget( this );
     d->ui_cloudSyncSettings.setupUi( w_cloudSyncSettings );
-    tabWidget->addTab( w_cloudSyncSettings, tr( "Synchronization" ) );
+    tabWidget->addTab( w_cloudSyncSettings, i18n( "Synchronization" ) );
     d->ui_cloudSyncSettings.button_syncNow->setEnabled( syncBookmarks() );
     d->m_cloudSyncStatusLabel = d->ui_cloudSyncSettings.cloudSyncStatus;
     connect( d->ui_cloudSyncSettings.button_syncNow, SIGNAL(clicked()), SIGNAL(syncNowClicked()) );
