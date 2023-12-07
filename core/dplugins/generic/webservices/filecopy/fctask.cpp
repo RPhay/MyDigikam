@@ -34,6 +34,7 @@
 #include "previewloadthread.h"
 #include "dmetadata.h"
 #include "dimg.h"
+#include "metaenginesettings.h"
 
 namespace DigikamGenericFileCopyPlugin
 {
@@ -140,7 +141,7 @@ void FCTask::run()
                                           sidecarDest.toLocalFile());
             }
 
-            if (d->settings.writeMetadataToFile)
+            if (d->settings.writeMetadataToFile && MetaEngineSettings::instance()->settings().metadataWritingMode == MetaEngine::WRITE_TO_SIDECAR_ONLY)
             {
                 QScopedPointer<DMetadata> meta(new DMetadata);
 
@@ -307,11 +308,12 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
         }
 
-        if (!d->settings.writeMetadataToFile && !meta->save(destFile))
+        bool writeMetadataToFile = d->settings.writeMetadataToFile && MetaEngineSettings::instance()->settings().metadataWritingMode == MetaEngine::WRITE_TO_SIDECAR_ONLY;
+        if (!writeMetadataToFile && !meta->save(destFile))
         {
             return false;
         }
-        if (d->settings.writeMetadataToFile && !meta->saveToFile(destFile))
+        if (writeMetadataToFile && !meta->saveToFile(destFile))
         {
             return false;
         }

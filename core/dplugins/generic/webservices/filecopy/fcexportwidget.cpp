@@ -39,6 +39,7 @@
 #include "wstoolutils.h"
 #include "dlayoutbox.h"
 #include "fctask.h"
+#include "metaenginesettings.h"
 
 namespace DigikamGenericFileCopyPlugin
 {
@@ -127,6 +128,11 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     if (!d->iface->supportAlbums())
     {
         d->albumPath->hide();
+    }
+
+    if (MetaEngineSettings::instance()->settings().metadataWritingMode != MetaEngine::WRITE_TO_SIDECAR_ONLY)
+    {
+        d->writeMetadataToFile->hide();
     }
 
     d->targetButtonGroup->addButton(d->fileCopyButton, FCContainer::CopyFile);
