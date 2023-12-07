@@ -4,7 +4,6 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#if KML_LAZY_IMP
 #include "KmlAreaTagHandler.h"
 
 #include "digikam_debug.h"
@@ -25,7 +24,7 @@ GeoNode* KmlareaTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_area)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if( parentItem.is<GeoDataPlacemark>() ) {
         QString area = parser.readElementText().trimmed();
         qreal ar = area.toDouble();
@@ -37,6 +36,5 @@ GeoNode* KmlareaTagHandler::parse( GeoParser& parser ) const
 }
 
 }
-}
 
-#endif //KML_LAZY_IMP
+}

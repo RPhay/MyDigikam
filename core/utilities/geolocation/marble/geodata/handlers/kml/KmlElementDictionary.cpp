@@ -209,14 +209,12 @@ const char kmlTag_Playlist[] = "Playlist";
 const char kmlTag_playMode[] = "playMode";
 const char kmlTag_balloonVisibility[] = "balloonVisibility";
 
-#ifdef KML_LAZY_IMP
- const char kmlTag_MarblePlacemark[] = "MarblePlacemark";
- const char kmlTag_area[] = "area";
- const char kmlTag_pop[] = "pop";
- const char kmlTag_role[] = "role";
- const char kmlTag_CountryNameCode[] = "CountryNameCode";
- const char kmlTag_countrycode[] = "countrycode";
-#endif // KML_LAZY_IMP
+const char kmlTag_MarblePlacemark[] = "MarblePlacemark";
+const char kmlTag_area[] = "area";
+const char kmlTag_pop[] = "pop";
+const char kmlTag_role[] = "role";
+const char kmlTag_CountryNameCode[] = "CountryNameCode";
+const char kmlTag_countrycode[] = "countrycode";
 }
 
 }

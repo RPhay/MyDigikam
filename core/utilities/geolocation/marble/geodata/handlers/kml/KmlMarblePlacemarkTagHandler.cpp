@@ -4,7 +4,6 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifdef KML_LAZY_IMP
 #include "KmlMarblePlacemarkTagHandler.h"
 
 #include "digikam_debug.h"
@@ -40,5 +39,3 @@ GeoNode* KmlMarblePlacemarkTagHandler::parse( GeoParser& parser ) const
 
 }
 }
-
-#endif

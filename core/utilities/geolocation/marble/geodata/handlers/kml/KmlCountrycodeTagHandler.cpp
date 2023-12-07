@@ -4,7 +4,6 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#if KML_LAZY_IMP
 #include "KmlCountrycodeTagHandler.h"
 
 #include "digikam_debug.h"
@@ -25,10 +24,10 @@ GeoNode* KmlcountrycodeTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_countrycode)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if( parentItem.is<GeoDataPlacemark>() ) {
         QString countrycode = parser.readElementText().trimmed();
-        
+
         parentItem.nodeAs<GeoDataPlacemark>()->setCountryCode( countrycode );
     }
 
@@ -36,6 +35,5 @@ GeoNode* KmlcountrycodeTagHandler::parse( GeoParser& parser ) const
 }
 
 }
-}
 
-#endif //KML_LAZY_IMP
+}

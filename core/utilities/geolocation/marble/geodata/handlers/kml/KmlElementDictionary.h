@@ -211,15 +211,15 @@ namespace kml
     DIGIKAM_EXPORT extern const char kmlTag_Playlist[];
     DIGIKAM_EXPORT extern const char kmlTag_playMode[];
     DIGIKAM_EXPORT extern const char kmlTag_balloonVisibility[];
-#ifdef KML_LAZY_IMP
-// preliminary implementation for the extra defined Tags
+
+    // preliminary implementation for the extra defined Tags
+
     DIGIKAM_EXPORT extern const char kmlTag_MarblePlacemark[];
     DIGIKAM_EXPORT extern const char kmlTag_area[];
     DIGIKAM_EXPORT extern const char kmlTag_pop[];
     DIGIKAM_EXPORT extern const char kmlTag_role[];
     DIGIKAM_EXPORT extern const char kmlTag_CountryNameCode[];
     DIGIKAM_EXPORT extern const char kmlTag_countrycode[];
-#endif // KML_LAZY_IMP
 }
 
 // Helper macros

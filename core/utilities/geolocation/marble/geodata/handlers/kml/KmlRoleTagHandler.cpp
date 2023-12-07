@@ -4,7 +4,6 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#if KML_LAZY_IMP
 #include "KmlRoleTagHandler.h"
 
 #include "digikam_debug.h"
@@ -30,7 +29,7 @@ GeoNode* KmlroleTagHandler::parse( GeoParser& parser ) const
         QString role = parser.readElementText().trimmed();
         if ( role.isEmpty() ) {
             role = QLatin1Char(' ');
-        }        
+        }
         parentItem.nodeAs<GeoDataPlacemark>()->setRole( role );
     }
 
@@ -38,6 +37,5 @@ GeoNode* KmlroleTagHandler::parse( GeoParser& parser ) const
 }
 
 }
-}
 
-#endif // KML_LAZY_IMP
+}

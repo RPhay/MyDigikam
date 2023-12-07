@@ -731,41 +731,39 @@ set(marblewidget_SRCS
 
 set (marblewidget_UI
 
-    TourWidget.ui
-
-    LatLonBoxWidget.ui
-    MapViewWidget.ui
+    AddLinkDialog.ui
+    BookmarkManagerDialog.ui
     CurrentLocationWidget.ui
-    FileViewWidget.ui
-    MarbleNavigator.ui
-    MarbleCacheSettingsWidget.ui
-    MarbleViewSettingsWidget.ui
-    MarbleNavigationSettingsWidget.ui
-    TimeControlWidget.ui
-    MarbleTimeSettingsWidget.ui
-    MarblePluginSettingsWidget.ui
-    TileCreatorDialog.ui
-    TileLevelRangeWidget.ui
-    SunControlWidget.ui
-    LatLonEdit.ui
-    PlacemarkEditHeader.ui
     DataMigrationWidget.ui
     EditBookmarkDialog.ui
-    BookmarkManagerDialog.ui
-    NewBookmarkFolderDialog.ui
-    PrintOptions.ui
-    ExternalEditor.ui
-    GoToDialog.ui
-    MapWizard.ui
-    MapThemeDownloadDialog.ui
-    MarbleCloudSyncSettingsWidget.ui
-    MovieCaptureDialog.ui
     EditPlacemarkDialog.ui
-    AddLinkDialog.ui
-    FormattedTextWidget.ui
     ElevationWidget.ui
-
+    ExternalEditor.ui
+    FileViewWidget.ui
+    FormattedTextWidget.ui
+    GoToDialog.ui
+    LatLonBoxWidget.ui
+    LatLonEdit.ui
+    MapThemeDownloadDialog.ui
+    MapViewWidget.ui
+    MapWizard.ui
+    MarbleCacheSettingsWidget.ui
+    MarbleCloudSyncSettingsWidget.ui
+    MarbleNavigationSettingsWidget.ui
+    MarbleNavigator.ui
+    MarblePluginSettingsWidget.ui
+    MarbleTimeSettingsWidget.ui
+    MarbleViewSettingsWidget.ui
+    MovieCaptureDialog.ui
+    NewBookmarkFolderDialog.ui
+    PlacemarkEditHeader.ui
+    PrintOptions.ui
+    SunControlWidget.ui
+    TileCreatorDialog.ui
+    TileLevelRangeWidget.ui
+    TimeControlWidget.ui
     TourCaptureDialog.ui
+    TourWidget.ui
 
     cloudsync/CloudRoutesDialog.ui
 
@@ -787,11 +785,6 @@ add_library(core_marble_obj OBJECT  ${marblewidget_SRCS} ${SOURCES_UI_HDRS})
 target_compile_definitions(core_marble_obj
                            PRIVATE
                            digikamcore_EXPORTS
-)
-
-set_target_properties(core_marble_obj
-                      PROPERTIES
-                      COMPILE_FLAGS "-DKML_LAZY_IMP"
 )
 
 add_subdirectory(data)

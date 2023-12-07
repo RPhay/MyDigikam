@@ -4,7 +4,6 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#if KML_LAZY_IMP
 #include "KmlPopTagHandler.h"
 
 #include "digikam_debug.h"
@@ -25,7 +24,7 @@ GeoNode* KmlpopTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_pop)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if( parentItem.is<GeoDataPlacemark>() ) {
         QString population = parser.readElementText().trimmed();
         qint64 pop = population.toLongLong();
@@ -38,5 +37,3 @@ GeoNode* KmlpopTagHandler::parse( GeoParser& parser ) const
 
 }
 }
-
-#endif //KML_LAZY_IMP
