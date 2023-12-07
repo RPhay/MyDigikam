@@ -43,7 +43,6 @@ set(marblewidget_SRCS
     EditPlacemarkDialog.cpp
     ElevationModel.cpp
     EquirectScanlineTextureMapper.cpp
-    ExternalEditorDialog.cpp
     FileLoader.cpp
     FileManager.cpp
     FileStoragePolicy.cpp
@@ -735,7 +734,6 @@ set (marblewidget_UI
     EditBookmarkDialog.ui
     EditPlacemarkDialog.ui
     ElevationWidget.ui
-    ExternalEditor.ui
     FileViewWidget.ui
     FormattedTextWidget.ui
     GoToDialog.ui
