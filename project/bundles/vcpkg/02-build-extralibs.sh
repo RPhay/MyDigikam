@@ -106,9 +106,6 @@ cmake --build . --parallel --config RelWithDebInfo --target ext_knotifyconfig
 cmake --build . --parallel --config RelWithDebInfo --target ext_sonnet
 cmake --build . --parallel --config RelWithDebInfo --target ext_ktextwidgets
 
-# Geolocation support
-cmake --build . --parallel --config RelWithDebInfo --target ext_marble
-
 # Calendar support
 cmake --build . --parallel --config RelWithDebInfo --target ext_kcalendarcore
 

@@ -113,9 +113,6 @@ mkdir -p $BUNDLEDIR/translations
 
 # Data files ---------------------------------------------------------------------------------
 
-echo -e "\n---------- Marble data"
-cp -r $VCPKG_INSTALL_PREFIX/data/*                                        $BUNDLEDIR/data                       2>/dev/null
-
 echo -e "\n---------- Generics data"
 cp -r $VCPKG_INSTALL_PREFIX/share/lensfun                                 $BUNDLEDIR/data                       2>/dev/null
 cp -r $VCPKG_INSTALL_PREFIX/share/digikam                                 $BUNDLEDIR/data                       2>/dev/null
@@ -173,9 +170,6 @@ done
 
 echo -e "\n---------- Qt6 plugins"
 cp -r $VCPKG_INSTALL_PREFIX/Qt6/plugins                                   $BUNDLEDIR/                           2>/dev/null
-
-echo -e "\n---------- Marble plugins"
-cp -r $VCPKG_INSTALL_PREFIX/plugins/*.dll                                 $BUNDLEDIR/plugins                    2>/dev/null
 
 echo -e "\n---------- digiKam and KF6 plugins"
 cp -r $VCPKG_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/                           2>/dev/null
