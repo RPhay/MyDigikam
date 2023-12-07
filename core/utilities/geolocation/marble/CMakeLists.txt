@@ -64,7 +64,6 @@ set(marblewidget_SRCS
     LatLonEdit.cpp
     LayerInterface.cpp
     LayerManager.cpp
-    MapThemeDownloadDialog.cpp
     MapThemeManager.cpp
     MapThemeSortFilterProxyModel.cpp
     MapViewItemDelegate.cpp
@@ -737,7 +736,6 @@ set (marblewidget_UI
     GoToDialog.ui
     LatLonBoxWidget.ui
     LatLonEdit.ui
-    MapThemeDownloadDialog.ui
     MapViewWidget.ui
     MapWizard.ui
     MarbleCacheSettingsWidget.ui
