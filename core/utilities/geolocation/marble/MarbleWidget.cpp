@@ -142,7 +142,7 @@ MarbleWidget::MarbleWidget(QWidget *parent)
 {
     d->construct();
 
-    MarbleDirs::debug();
+//    MarbleDirs::debug();
 }
 
 MarbleWidget::~MarbleWidget()

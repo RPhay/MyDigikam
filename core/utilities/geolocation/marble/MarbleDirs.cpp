@@ -4,30 +4,16 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-
 #include "MarbleDirs.h"
-#include "digikam_debug.h"
 
 #include <QFile>
 #include <QString>
 #include <QStringList>
 #include <QCoreApplication>
-
-#include <cstdlib>
-
+#include <QLibraryInfo>
 #include <QStandardPaths>
 
-#ifdef Q_OS_WIN
-//for getting appdata path
-//mingw-w64 Internet Explorer 5.01
-#define _WIN32_IE 0x0501
-#include <shlobj.h>
-#endif
-
-#ifdef Q_OS_MACX
-//for getting app bundle path
-#include <ApplicationServices/ApplicationServices.h>
-#endif
+#include "digikam_debug.h"
 
 using namespace Marble;
 
@@ -131,54 +117,7 @@ QString MarbleDirs::pluginLocalPath()
 
 QString MarbleDirs::pluginSystemPath()
 {
-    QString systempath;
-
-#ifdef Q_OS_MACX
-
-    // On OSX lets try to find any file first in the bundle
-    // before branching out to home and sys dirs
-
-    CFURLRef myBundleRef = CFBundleCopyBundleURL(CFBundleGetMainBundle());
-    CFStringRef myMacPath = CFURLCopyFileSystemPath(myBundleRef, kCFURLPOSIXPathStyle);
-    const char *mypPathPtr = CFStringGetCStringPtr(myMacPath,CFStringGetSystemEncoding());
-    CFRelease(myBundleRef);
-    CFRelease(myMacPath);
-    QString myPath(mypPathPtr);
-
-    // do some magick so that we can still find data dir if
-    // marble was not built as a bundle
-
-    if (myPath.contains(QLatin1String(".app")))
-    {
-        // its a bundle!
-        systempath = myPath + QLatin1String("/Contents/Resources/plugins");
-    }
-
-    if ( QFile::exists( systempath ) )
-    {
-        return systempath;
-    }
-
-#endif   // mac bundle
-
-#ifdef Q_OS_WIN
-
-    return QCoreApplication::applicationDirPath() + QDir::separator() + QLatin1String("plugins");
-
-#endif
-
-    // This is the preferred fallback location if no marblePluginPath is set.
-    systempath = QDir( QCoreApplication::applicationDirPath() + QLatin1String( "/plugins" ) ).canonicalPath();
-
-    if ( QFile::exists( systempath ) )
-    {
-        return systempath;
-    }
-
-    // This ultimate fallback location is for compatibility with KDE installations.
-    return QDir( QCoreApplication::applicationDirPath()
-                 + QLatin1String( "/../lib/kde4/plugins/marble" )
-                 ).canonicalPath();
+    return QLibraryInfo::path(QLibraryInfo::PluginsPath) + QLatin1String("/digikam/marble");
 }
 
 void MarbleDirs::debug()
