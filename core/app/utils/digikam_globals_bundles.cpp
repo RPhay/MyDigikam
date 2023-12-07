@@ -353,7 +353,11 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
 #ifdef HAVE_MARBLE
 
+#   if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
         QLatin1String("marble_qt"),
+
+#   endif
 
 #endif
 
