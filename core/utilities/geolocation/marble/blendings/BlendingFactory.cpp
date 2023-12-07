@@ -4,7 +4,7 @@
 
 #include "BlendingFactory.h"
 
-#include <QDebug>
+#include "digikam_debug.h"
 
 #include "blendings/SunLightBlending.h"
 #include "BlendingAlgorithms.h"
@@ -24,7 +24,7 @@ Blending const * BlendingFactory::findBlending( QString const & name ) const
 
     Blending const * const result = m_blendings.value( name, 0 );
     if ( !result )
-        qWarning() << "Unknown blending" << name << "specified in .dgml file. Please fix the .dgml file.";
+        qCWarning(DIGIKAM_MARBLE_LOG) << "Unknown blending" << name << "specified in .dgml file. Please fix the .dgml file.";
     return result;
 }
 

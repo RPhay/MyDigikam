@@ -181,7 +181,7 @@ void FileManagerPrivate::cleanupLoader( FileLoader* loader )
             }
         }
         if ( !loader->error().isEmpty() ) {
-            qWarning() << "Failed to parse" << loader->path() << loader->error();
+            qCWarning(DIGIKAM_MARBLE_LOG) << "Failed to parse" << loader->path() << loader->error();
             Q_EMIT q->fileError(loader->path(), loader->error());
         }
         delete loader;

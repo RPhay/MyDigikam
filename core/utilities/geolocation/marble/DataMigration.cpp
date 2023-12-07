@@ -12,7 +12,7 @@
 #include "ui_DataMigrationWidget.h"
 
 // Qt
-#include <QDebug>
+#include "digikam_debug.h"
 #include <QDir>
 #include <QDirIterator>
 #include <QPointer>

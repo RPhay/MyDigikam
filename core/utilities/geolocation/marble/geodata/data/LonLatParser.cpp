@@ -293,13 +293,13 @@ bool LonLatParser::tryMatchFromD(const QString& input, DirPosition dirPosition)
 
     const QString numberCapExp = expTemplate.arg(m_decimalPointExp, m_dirCapExp, m_degreeExp);
     const QRegularExpression regex(numberCapExp);
-// qWarning() << regex.isValid() << regex.errorString() << regex.pattern();
+// qCWarning(DIGIKAM_MARBLE_LOG) << regex.isValid() << regex.errorString() << regex.pattern();
     QRegularExpressionMatch match = regex.match(input);
     if (!match.hasMatch()) {
-//         qWarning() << "LonLatParser::tryMatchFromD -> no match";
+//         qCWarning(DIGIKAM_MARBLE_LOG) << "LonLatParser::tryMatchFromD -> no match";
         return false;
     }
-//     qWarning() << "LonLatParser::tryMatchFromD -> match" << match;
+//     qCWarning(DIGIKAM_MARBLE_LOG) << "LonLatParser::tryMatchFromD -> match" << match;
 
     bool isDir1LonDir;
     bool isLonDirPosHemisphere;

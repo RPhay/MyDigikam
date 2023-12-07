@@ -10,7 +10,7 @@
 using namespace std;
 
 #include <QString>
-#include <QDebug>
+#include "digikam_debug.h"
 
 
 using namespace Marble;

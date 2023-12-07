@@ -454,7 +454,7 @@ void AbstractDataPluginModel::addItemsToList( const QList<AbstractDataPluginItem
 
 void AbstractDataPluginModel::getItem( const QString & )
 {
-    qWarning() << "Retrieving items by identifier is not implemented by this plugin";
+    qCWarning(DIGIKAM_MARBLE_LOG) << "Retrieving items by identifier is not implemented by this plugin";
 }
 
 void AbstractDataPluginModel::setFavoriteItems( const QStringList& list )

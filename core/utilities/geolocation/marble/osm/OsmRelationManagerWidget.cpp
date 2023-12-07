@@ -12,7 +12,7 @@
 #include <QTreeWidget>
 #include <QMenu>
 #include <QPointer>
-#include <QDebug>
+#include "digikam_debug.h"
 
 // Marble
 #include "GeoDataPlacemark.h"

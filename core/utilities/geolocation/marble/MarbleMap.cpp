@@ -954,7 +954,7 @@ void MarbleMapPrivate::updateMapTheme()
                         if ( TileLoader::baseTilesAvailable( *texture ) ) {
                             qCDebug(DIGIKAM_MARBLE_LOG) << "Base tiles for" << sourceDir << "successfully created.";
                         } else {
-                            qWarning() << "Some or all base tiles for" << sourceDir << "could not be created.";
+                            qCWarning(DIGIKAM_MARBLE_LOG) << "Some or all base tiles for" << sourceDir << "could not be created.";
                         }
 
                         delete tileCreatorDlg;
@@ -963,7 +963,7 @@ void MarbleMapPrivate::updateMapTheme()
                     if ( TileLoader::baseTilesAvailable( *texture ) ) {
                         textures.append( texture );
                     } else {
-                        qWarning() << "Base tiles for" << sourceDir << "not available. Skipping all texture layers.";
+                        qCWarning(DIGIKAM_MARBLE_LOG) << "Base tiles for" << sourceDir << "not available. Skipping all texture layers.";
                         textureLayersOk = false;
                     }
                 }
@@ -998,9 +998,9 @@ void MarbleMapPrivate::updateMapTheme()
                                                     m_model->mapTheme()->head()->description() );
                         tileCreatorDlg->exec();
                         if ( TileLoader::baseTilesAvailable( *vectorTile ) ) {
-                            qDebug() << "Base tiles for" << sourceDir << "successfully created.";
+                            qCDebug(DIGIKAM_MARBLE_LOG) << "Base tiles for" << sourceDir << "successfully created.";
                         } else {
-                            qDebug() << "Some or all base tiles for" << sourceDir << "could not be created.";
+                            qCDebug(DIGIKAM_MARBLE_LOG) << "Some or all base tiles for" << sourceDir << "could not be created.";
                         }
 
                         delete tileCreatorDlg;
@@ -1009,7 +1009,7 @@ void MarbleMapPrivate::updateMapTheme()
                     if ( TileLoader::baseTilesAvailable( *vectorTile ) ) {
                         vectorTiles.append( vectorTile );
                     } else {
-                        qWarning() << "Base tiles for" << sourceDir << "not available. Skipping all texture layers.";
+                        qCWarning(DIGIKAM_MARBLE_LOG) << "Base tiles for" << sourceDir << "not available. Skipping all texture layers.";
                         vectorTileLayersOk = false;
                     }
                 }
@@ -1276,7 +1276,7 @@ bool MarbleMap::showDebugPolygons() const
 
 void MarbleMap::setShowDebugBatchRender( bool visible)
 {
-    qDebug() << Q_FUNC_INFO << visible;
+    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << visible;
     if (visible != d->m_showDebugBatchRender) {
         d->m_showDebugBatchRender = visible;
         Q_EMIT repaintNeeded();

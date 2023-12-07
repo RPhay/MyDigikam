@@ -92,7 +92,7 @@ void GeoDataTreeModel::Private::checkParenting( GeoDataObject *object )
     if (const auto container = dynamic_cast<const GeoDataContainer *>(object)) {
         for( GeoDataFeature *child: container->featureList() ) {
             if ( child->parent() != container ) {
-                qWarning() << "Parenting mismatch for " << child->name();
+                qCWarning(DIGIKAM_MARBLE_LOG) << "Parenting mismatch for " << child->name();
                 Q_ASSERT( 0 );
             }
         }
@@ -722,10 +722,10 @@ int GeoDataTreeModel::addFeature( GeoDataContainer *parent, GeoDataFeature *feat
             Q_EMIT added(feature);
         }
         else
-            qWarning() << "GeoDataTreeModel::addFeature (parent " << parent << " - feature" << feature << ") : parent not found on the TreeModel";
+            qCWarning(DIGIKAM_MARBLE_LOG) << "GeoDataTreeModel::addFeature (parent " << parent << " - feature" << feature << ") : parent not found on the TreeModel";
     }
     else
-        qWarning() << "Null pointer in call to GeoDataTreeModel::addFeature (parent " << parent << " - feature" << feature << ")";
+        qCWarning(DIGIKAM_MARBLE_LOG) << "Null pointer in call to GeoDataTreeModel::addFeature (parent " << parent << " - feature" << feature << ")";
     return row; //-1 if it failed, the relative index otherwise.
 }
 

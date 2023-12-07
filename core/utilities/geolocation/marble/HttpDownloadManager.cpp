@@ -166,7 +166,7 @@ void HttpDownloadManager::Private::finishJob( const QByteArray& data, const QStr
             qCDebug(DIGIKAM_MARBLE_LOG) << "Emitting downloadComplete( " << destinationFileName << ", " << id << ")";
             Q_EMIT m_downloadManager->downloadComplete( destinationFileName, id );
         } else {
-            qWarning() << "Could not save:" << destinationFileName;
+            qCWarning(DIGIKAM_MARBLE_LOG) << "Could not save:" << destinationFileName;
         }
     }
 }

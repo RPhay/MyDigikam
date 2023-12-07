@@ -8,7 +8,7 @@
 #include "digikam_debug.h"
 #include "KmlElementDictionary.h"
 
-#include <QDebug>
+#include "digikam_debug.h"
 
 namespace Marble
 {

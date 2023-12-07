@@ -59,7 +59,7 @@ bool FileStoragePolicy::updateFile( const QString &fileName, const QByteArray &d
     QFile file( fullName );
     if ( !file.open( QIODevice::WriteOnly ) ) {
         m_errorMsg = fullName + QLatin1String(": ") + file.errorString();
-        qCritical() << "file.open" << m_errorMsg;
+        qCCritical(DIGIKAM_MARBLE_LOG) << "file.open" << m_errorMsg;
         return false;
     }
 
@@ -67,7 +67,7 @@ bool FileStoragePolicy::updateFile( const QString &fileName, const QByteArray &d
 
     if ( !file.write( data ) ) {
         m_errorMsg = fullName + QLatin1String(": ") + file.errorString();
-        qCritical() << "file.write" << m_errorMsg;
+        qCCritical(DIGIKAM_MARBLE_LOG) << "file.write" << m_errorMsg;
         Q_EMIT sizeChanged( file.size() - oldSize );
         return false;
     }

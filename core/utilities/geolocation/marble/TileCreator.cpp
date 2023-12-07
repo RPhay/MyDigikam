@@ -205,7 +205,7 @@ void TileCreator::cancelTileCreation()
 void TileCreator::run()
 {
     if (d->m_resume && d->m_tileFormat == QLatin1String("jpg") && d->m_tileQuality != 100) {
-        qWarning() << "Resuming jpegs is only supported with tileQuality 100";
+        qCWarning(DIGIKAM_MARBLE_LOG) << "Resuming jpegs is only supported with tileQuality 100";
         return;
     }
 
@@ -333,11 +333,11 @@ void TileCreator::run()
                             if ( writtenTile.pixel( i, j ) != tile.pixel( i, j ) ) {
                                 unsigned int  pixel = tile.pixel( i, j);
                                 unsigned int  writtenPixel = writtenTile.pixel( i, j);
-                                qWarning() << "***** pixel" << i << j << "is off by" << (pixel - writtenPixel) << "pixel" << pixel << "writtenPixel" << writtenPixel;
+                                qCWarning(DIGIKAM_MARBLE_LOG) << "***** pixel" << i << j << "is off by" << (pixel - writtenPixel) << "pixel" << pixel << "writtenPixel" << writtenPixel;
                                 QByteArray baPixel((char*)&pixel, sizeof(unsigned int));
-                                qWarning() << "pixel" << baPixel.size() << "0x" << baPixel.toHex();
+                                qCWarning(DIGIKAM_MARBLE_LOG) << "pixel" << baPixel.size() << "0x" << baPixel.toHex();
                                 QByteArray baWrittenPixel((char*)&writtenPixel, sizeof(unsigned int));
-                                qWarning() << "writtenPixel" << baWrittenPixel.size() << "0x" << baWrittenPixel.toHex();
+                                qCWarning(DIGIKAM_MARBLE_LOG) << "writtenPixel" << baWrittenPixel.size() << "0x" << baWrittenPixel.toHex();
                                 Q_ASSERT(false);
                             }
                         }

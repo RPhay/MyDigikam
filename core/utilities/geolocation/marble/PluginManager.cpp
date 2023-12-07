@@ -199,7 +199,7 @@ bool PluginManagerPrivate::addPlugin(QObject *obj, const QPluginLoader *loader)
     isPlugin = isPlugin || appendPlugin<ParseRunnerPlugin>
                 ( obj, loader, m_parsingRunnerPlugins );
     if ( !isPlugin ) {
-        qWarning() << "Ignoring the following plugin since it couldn't be loaded:" << (loader ? loader->fileName() : QString::fromUtf8( "<static>"));
+        qCWarning(DIGIKAM_MARBLE_LOG) << "Ignoring the following plugin since it couldn't be loaded:" << (loader ? loader->fileName() : QString::fromUtf8( "<static>"));
         qCDebug(DIGIKAM_MARBLE_LOG) << "Plugin failure:" << (loader ? loader->fileName() : QString::fromUtf8( "<static>")) << "is a plugin, but it does not implement the "
                 << "right interfaces or it was compiled against an old version of Marble. Ignoring it.";
     }
@@ -247,7 +247,7 @@ void PluginManagerPrivate::loadPlugins()
         QFileInfo targetFile( path );
         if ( !m_pluginPaths.contains( targetFile.canonicalFilePath() ) ) {
             // @todo Delete the file here?
-            qDebug() << "Ignoring file " << path << " which is not among the currently installed plugins";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring file " << path << " which is not among the currently installed plugins";
             continue;
         }
 #endif
@@ -263,7 +263,7 @@ void PluginManagerPrivate::loadPlugins()
                 foundPlugin = true;
             }
         } else {
-            qWarning() << "Ignoring to load the following file since it doesn't look like a valid Marble plugin:" << path << Qt::endl
+            qCWarning(DIGIKAM_MARBLE_LOG) << "Ignoring to load the following file since it doesn't look like a valid Marble plugin:" << path << Qt::endl
                        << "Reason:" << loader->errorString();
             delete loader;
         }
@@ -277,7 +277,7 @@ void PluginManagerPrivate::loadPlugins()
     }
 
     if ( !foundPlugin ) {
-        qWarning() << "No plugins loaded. Please check if the plugins were installed in the correct path,"
+        qCWarning(DIGIKAM_MARBLE_LOG) << "No plugins loaded. Please check if the plugins were installed in the correct path,"
                    << "or if any errors occurred while loading plugins.";
     }
 

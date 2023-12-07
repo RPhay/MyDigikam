@@ -476,7 +476,7 @@ bool GeoLineStringGraphicsItem::configurePainterForLabel(GeoPainter *painter,  c
       if ( painter->pen() != currentPen ) {
           painter->setPen( currentPen );
       }
-//        else qDebug() << "Detach and painter change successfully Avoided!" << Q_FUNC_INFO;
+//        else qCDebug(DIGIKAM_MARBLE_LOG) << "Detach and painter change successfully Avoided!" << Q_FUNC_INFO;
 
       if (painter->brush().color() != Qt::transparent) {
           painter->setBrush(QColor(Qt::transparent));

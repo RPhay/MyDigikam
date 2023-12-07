@@ -78,7 +78,7 @@ QString GeoDataDocumentWriter::determineDocumentIdentifier(const QString &filena
         }
     }
 
-    qDebug() << "Unable to determine document from file extension " << fileExtension << ", falling back to KML document type";
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Unable to determine document from file extension " << fileExtension << ", falling back to KML document type";
     return QString::fromUtf8(kml::kmlTag_nameSpaceOgc22);
 }
 

@@ -5,7 +5,7 @@
 
 #include "WaypointParser.h"
 
-#include <QDebug>
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -82,7 +82,7 @@ RoutingWaypoints WaypointParser::parse( QTextStream &stream ) const
                 RoutingWaypoint item( point, junctionType, junctionTypeRaw, roadType, secondsRemaining, roadName );
                 result.push_back( item );
             } else {
-                qDebug() << "Cannot parse " << line << "(detected " << entries.size() << " fields)";
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot parse " << line << "(detected " << entries.size() << " fields)";
             }
         }
     }

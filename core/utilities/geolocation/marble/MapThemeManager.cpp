@@ -219,7 +219,7 @@ GeoSceneDocument* MapThemeManager::Private::loadMapThemeFile( const QString& map
     // Check whether file exists
     QFile file( dgmlPath );
     if ( !file.exists() ) {
-        qWarning() << "Map theme file does not exist:" << dgmlPath;
+        qCWarning(DIGIKAM_MARBLE_LOG) << "Map theme file does not exist:" << dgmlPath;
         return nullptr;
     }
 
@@ -227,14 +227,14 @@ GeoSceneDocument* MapThemeManager::Private::loadMapThemeFile( const QString& map
     const bool fileReadable = file.open( QIODevice::ReadOnly );
 
     if ( !fileReadable ) {
-        qWarning() << "Map theme file not readable:" << dgmlPath;
+        qCWarning(DIGIKAM_MARBLE_LOG) << "Map theme file not readable:" << dgmlPath;
         return nullptr;
     }
 
     GeoSceneParser parser( GeoScene_DGML );
 
     if ( !parser.read( &file )) {
-        qWarning() << "Map theme file not well-formed:" << dgmlPath;
+        qCWarning(DIGIKAM_MARBLE_LOG) << "Map theme file not well-formed:" << dgmlPath;
         return nullptr;
     }
 

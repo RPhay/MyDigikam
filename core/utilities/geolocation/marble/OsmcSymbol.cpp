@@ -5,7 +5,7 @@
 
 #include "OsmcSymbol.h"
 
-#include <QDebug>
+#include "digikam_debug.h"
 #include <QDomDocument>
 #include <QFile>
 #include <QPainter>

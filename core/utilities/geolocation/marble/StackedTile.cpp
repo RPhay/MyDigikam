@@ -80,7 +80,7 @@ StackedTile::StackedTile( const TileId &id, const QImage &resultImage, QVector<Q
     Q_ASSERT( !tiles.isEmpty() );
 
     if ( jumpTable32 == nullptr && jumpTable8 == nullptr ) {
-        qWarning() << "Color depth" << m_depth << " is not supported.";
+        qCWarning(DIGIKAM_MARBLE_LOG) << "Color depth" << m_depth << " is not supported.";
     }
 }
 

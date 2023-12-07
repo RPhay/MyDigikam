@@ -121,7 +121,7 @@ QByteArray HttpJob::userAgent() const
     case DownloadBulk:
         return HttpDownloadManager::userAgent(QString::fromUtf8("BulkDownloader"), d->m_userAgent);
     default:
-        qCritical() << "Unknown download usage value:" << d->m_downloadUsage;
+        qCCritical(DIGIKAM_MARBLE_LOG) << "Unknown download usage value:" << d->m_downloadUsage;
         return HttpDownloadManager::userAgent(QString::fromUtf8("unknown"), d->m_userAgent);
     }
 }

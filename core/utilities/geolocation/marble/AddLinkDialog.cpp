@@ -10,7 +10,7 @@
 // Qt
 #include <QMessageBox>
 #include <QPushButton>
-#include <QDebug>
+#include "digikam_debug.h"
 
 #include <klocalizedstring.h>
 

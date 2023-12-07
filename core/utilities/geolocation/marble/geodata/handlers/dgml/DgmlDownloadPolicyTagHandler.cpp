@@ -34,7 +34,7 @@ GeoNode* DgmlDownloadPolicyTagHandler::parse( GeoParser& parser ) const
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
     if ( !parentItem.represents( dgmlTag_Texture ) && !parentItem.represents( dgmlTag_Vectortile ) ) {
-        qCritical( "Parse error: parent element is not 'texture' or 'vectortile'" );
+        qCCritical(DIGIKAM_MARBLE_LOG) << "Parse error: parent element is not 'texture' or 'vectortile'";
         return nullptr;
     }
 
@@ -46,7 +46,7 @@ GeoNode* DgmlDownloadPolicyTagHandler::parse( GeoParser& parser ) const
     else if (usageStr == QLatin1String("Bulk"))
         usage = DownloadBulk;
     else {
-        qCritical( "Parse error: invalid attribute downloadPolicy/@usage" );
+        qCCritical(DIGIKAM_MARBLE_LOG) << "Parse error: invalid attribute downloadPolicy/@usage";
         return nullptr;
     }
 
@@ -55,7 +55,7 @@ GeoNode* DgmlDownloadPolicyTagHandler::parse( GeoParser& parser ) const
     bool ok;
     const int maximumConnections = maximumConnectionsStr.toInt( &ok );
     if ( !ok ) {
-        qCritical( "Parse error: invalid attribute downloadPolicy/@maximumConnections" );
+        qCCritical(DIGIKAM_MARBLE_LOG) << "Parse error: invalid attribute downloadPolicy/@maximumConnections";
         return nullptr;
     }
 

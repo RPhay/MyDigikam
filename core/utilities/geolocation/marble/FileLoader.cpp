@@ -508,7 +508,7 @@ void FileLoaderPrivate::createFilterProperties( GeoDataContainer *container )
                 placemark->setZoomLevel( 0 );
             }
         } else {
-            qWarning() << Q_FUNC_INFO << "Unknown feature" << (*i)->nodeType() << ". Skipping.";
+            qCWarning(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Unknown feature" << (*i)->nodeType() << ". Skipping.";
         }
     }
 }

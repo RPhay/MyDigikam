@@ -6,7 +6,7 @@
 #include "RemoteIconLoader.h"
 
 // Qt
-#include <QDebug>
+#include "digikam_debug.h"
 #include <QString>
 #include <QHash>
 #include <QUrl>

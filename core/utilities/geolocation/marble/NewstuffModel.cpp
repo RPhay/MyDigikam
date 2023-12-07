@@ -585,7 +585,7 @@ void NewstuffModel::setTargetDirectory( const QString &targetDirectory )
         QFileInfo targetDir( targetDirectory );
         if ( !targetDir.exists() ) {
             if ( !QDir::root().mkpath( targetDir.absoluteFilePath() ) ) {
-                qDebug() << "Failed to create directory " << targetDirectory << ", newstuff installation might fail.";
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Failed to create directory " << targetDirectory << ", newstuff installation might fail.";
             }
         }
 

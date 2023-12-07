@@ -647,7 +647,7 @@ QString MapViewWidget::Private::favoriteKey(const QModelIndex &index) const
 
 void MapViewWidget::Private::showContextMenu( const QPoint& pos )
 {
-    qDebug() << Q_FUNC_INFO;
+    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO;
     Q_UNUSED(pos)
     QMenu menu;
 

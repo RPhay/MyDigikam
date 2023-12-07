@@ -248,19 +248,19 @@ void MarbleModel::setMapTheme( GeoSceneDocument *document )
     if ( !mapTheme ) {
         // Check whether the previous theme works
         if ( d->m_mapTheme ){
-            qWarning() << "Selected theme doesn't work, so we stick to the previous one";
+            qCWarning(DIGIKAM_MARBLE_LOG) << "Selected theme doesn't work, so we stick to the previous one";
             return;
         }
 
         // Fall back to default theme
         QString defaultTheme = QString::fromUtf8("earth/srtm/srtm.dgml");
-        qWarning() << "Falling back to default theme:" << defaultTheme;
+        qCWarning(DIGIKAM_MARBLE_LOG) << "Falling back to default theme:" << defaultTheme;
         mapTheme = MapThemeManager::loadMapTheme( defaultTheme );
     }
 
     // If this last resort doesn't work either shed a tear and exit
     if ( !mapTheme ) {
-        qWarning() << "Couldn't find a valid DGML map.";
+        qCWarning(DIGIKAM_MARBLE_LOG) << "Couldn't find a valid DGML map.";
         return;
     }
 

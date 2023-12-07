@@ -6,7 +6,7 @@
 #include "GeoSceneGeodata.h"
 #include "GeoSceneTypes.h"
 
-#include <QDebug>
+#include "digikam_debug.h"
 
 namespace Marble
 {

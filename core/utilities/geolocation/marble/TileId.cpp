@@ -9,7 +9,7 @@
 
 #include "GeoDataCoordinates.h"
 
-#include <QDebug>
+#include "digikam_debug.h"
 
 namespace Marble
 {

@@ -18,7 +18,7 @@
 #include "osm/OsmPlacemarkData.h"
 
 // Qt
-#include <QDebug>
+#include "digikam_debug.h"
 
 namespace Marble
 {

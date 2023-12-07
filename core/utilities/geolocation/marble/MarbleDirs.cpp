@@ -245,7 +245,7 @@ void MarbleDirs::setMarbleDataPath( const QString& adaptedPath )
 {
     if ( !QDir::root().exists( adaptedPath ) )
     {
-        qWarning() << QString::fromUtf8( "Invalid MarbleDataPath \"%1\". Using \"%2\" instead." ).arg( adaptedPath, systemPath() );
+        qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "Invalid MarbleDataPath \"%1\". Using \"%2\" instead." ).arg( adaptedPath, systemPath() );
         return;
     }
 
@@ -256,7 +256,7 @@ void MarbleDirs::setMarblePluginPath( const QString& adaptedPath )
 {
     if ( !QDir::root().exists( adaptedPath ) )
     {
-        qWarning() << QString::fromUtf8( "Invalid MarblePluginPath \"%1\". Using \"%2\" instead." ).arg( adaptedPath, pluginSystemPath() );
+        qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "Invalid MarblePluginPath \"%1\". Using \"%2\" instead." ).arg( adaptedPath, pluginSystemPath() );
         return;
     }
 

@@ -294,23 +294,23 @@ void ClipPainter::labelPosition(const QPolygonF &polygon, QVector<QPointF> &labe
 
 void ClipPainter::setPen(const QColor &color) {
     if (d->m_debugBatchRender) {
-        qDebug() << Q_FUNC_INFO;
+        qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO;
     }
     setPen(QPen(color));
 }
 
 void ClipPainter::setPen(Qt::PenStyle style) {
     if (d->m_debugBatchRender) {
-        qDebug() << Q_FUNC_INFO;
+        qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO;
     }
     setPen(QPen(style));
 }
 
 void ClipPainter::setPen(const QPen & pen) {
     if (d->m_debugBatchRender) {
-        qDebug() << Q_FUNC_INFO;
+        qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO;
         if (pen != QPainter::pen()) {
-            qDebug() << "--" << pen.color()  << QPainter::pen().color() ;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "--" << pen.color()  << QPainter::pen().color() ;
             QPen newPen = pen;
             newPen.setColor((Qt::GlobalColor)(d->m_debugPenBatchColor+4));
             QPainter::setPen(newPen);
@@ -318,7 +318,7 @@ void ClipPainter::setPen(const QPen & pen) {
             d->m_debugPenBatchColor %= 14;
         }
         else {
-            qDebug() << "++";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "++";
             QPainter::setPen(pen);
         }
     }
@@ -329,16 +329,16 @@ void ClipPainter::setPen(const QPen & pen) {
 
 void ClipPainter::setBrush(const QBrush & brush) {
     if (d->m_debugBatchRender) {
-        qDebug() << Q_FUNC_INFO;
+        qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO;
         if (brush != QPainter::brush()) {
-            qDebug() << "--" << brush.color()  << QPainter::brush().color() ;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "--" << brush.color()  << QPainter::brush().color() ;
             QBrush batchColor(QColor((Qt::GlobalColor)(d->m_debugBrushBatchColor)));
             QPainter::setBrush(batchColor);
             d->m_debugBrushBatchColor++;
             d->m_debugBrushBatchColor %= 20;
         }
         else {
-            qDebug() << "++";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "++";
             QPainter::setBrush(brush);
         }
     }

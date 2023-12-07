@@ -28,7 +28,7 @@
 #include <QDate>
 #include <QSet>
 #include <QScreen>
-#include <QDebug>
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -2033,7 +2033,7 @@ void StyleBuilder::Private::initializeMinimumZoomLevels()
 
     for (int i = GeoDataPlacemark::PlaceCity; i < GeoDataPlacemark::LastIndex; i++) {
         if (s_defaultMinZoomLevels[i] < 0) {
-            qDebug() << "Missing default min zoom level for GeoDataPlacemark::GeoDataVisualCategory " << i;
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Missing default min zoom level for GeoDataPlacemark::GeoDataVisualCategory " << i;
             Q_ASSERT(false && "StyleBuilder::Private::initializeMinimumZoomLevels is incomplete");
             s_defaultMinZoomLevels[i] = 15;
         }

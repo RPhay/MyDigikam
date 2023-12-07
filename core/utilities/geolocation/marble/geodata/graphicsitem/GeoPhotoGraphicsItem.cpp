@@ -12,7 +12,7 @@
 #include "StyleBuilder.h"
 #include "ViewportParams.h"
 
-#include <QDebug>
+#include "digikam_debug.h"
 
 namespace Marble
 {

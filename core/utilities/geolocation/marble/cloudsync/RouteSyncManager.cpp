@@ -109,7 +109,7 @@ QString RouteSyncManager::generateTimestamp() const
 QString RouteSyncManager::saveDisplayedToCache() const
 {
     if ( !d->m_routingManager ) {
-        qWarning() << "RoutingManager instance not set in RouteSyncManager. Cannot save current route.";
+        qCWarning(DIGIKAM_MARBLE_LOG) << "RoutingManager instance not set in RouteSyncManager. Cannot save current route.";
         return QString();
     }
 
@@ -215,7 +215,7 @@ void RouteSyncManager::downloadRoute( const QString &timestamp )
 void RouteSyncManager::openRoute(const QString &timestamp )
 {
     if ( !d->m_routingManager ) {
-        qWarning() << "RoutingManager instance not set in RouteSyncManager. Cannot open route " << timestamp;
+        qCWarning(DIGIKAM_MARBLE_LOG) << "RoutingManager instance not set in RouteSyncManager. Cannot open route " << timestamp;
         return;
     }
 
