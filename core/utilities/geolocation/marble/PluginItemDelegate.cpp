@@ -387,7 +387,7 @@ QSize PluginItemDelegate::nameSize( const QModelIndex& index )
 {
     QString name = index.data( Qt::DisplayRole ).toString();
     // FIXME: QApplication::fontMetrics() doesn't work for non-application fonts
-    QSize nameSize( QApplication::fontMetrics().size( 0, name ) );
+    QSize nameSize( QFontMetrics(qApp->font()).size( 0, name ) );
     return nameSize;
 }
 
