@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-06 00:40+0000\n"
-"PO-Revision-Date: 2023-12-05 06:45+0100\n"
+"PO-Revision-Date: 2023-12-06 07:28+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -60801,18 +60801,7 @@ msgid "File on the server is too large."
 msgstr "Datoteka na strežniku je prevelika."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>For face detection, the red-eye removal tool, the classification of "
-#| "images according to aesthetics or the automatic assignment of tags to "
-#| "images, digiKam requires some large binary files. You can choose which "
-#| "feature you want to use.</p><p>Some of these files were not found. Click "
-#| "“Download” to begin downloading the files you need. You can cancel this "
-#| "process, this dialog will appear again the next time you start digiKam. "
-#| "Without these files the selected features will not work.</p><p>The files "
-#| "will be downloaded to %1.</p><p><b>After the successful download you have "
-#| "to restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>For face detection, the red-eye removal tool, the classification of "
@@ -60825,28 +60814,26 @@ msgid ""
 "downloaded to %1.</p><p><b>After the successful download you have to restart "
 "digiKam.</b></p>"
 msgstr ""
-"<p>Za zaznavanje obrazov, za orodje za odstranjevanje rdečih oči, za "
-"razvrščanje slik glede na estetiko ali samodejno dodeljevanje oznak slikam "
-"potrebuje digiKam nekaj velikih binarnih datotek. Izberete lahko, katero "
-"zmožnost želite uporabiti.</p><p>Nekaterih od teh datotek ni bilo mogoče "
-"najti. Kliknite »Prenesi«, da začnete prenašati datoteke, ki jih "
-"potrebujete. Ta postopek lahko prekličete, to pogovorno okno se bo znova "
-"prikazalo, ko naslednjič zaženete digiKam. Brez teh datotek izbrane "
-"zmožnosti ne bodo delovale.</p><p>Datoteke bodo prenesene v %1.</p><p><b>Po "
-"uspešnem prenosu morate ponovno zagnati digiKam.</b> </p>"
+"<p>Za zaznavanje obrazov, orodje za odstranjevanje rdečih oči, razvrščanje "
+"slik glede na estetiko ali samodejno dodeljevanje oznak slikam potrebuje "
+"digiKam nekaj velikih binarnih datotek. Izberete lahko, katero zmožnost "
+"želite uporabiti.</p><p>Nekaterih od teh datotek ni bilo mogoče najti. "
+"Kliknite »Prenesi«, da začnete prenašati datoteke, ki jih potrebujete. To "
+"pogovorno okno lahko zaprete, znova boste pozvani, ko naslednjič zaženete "
+"digiKam. Brez teh datotek izbrane zmožnosti ne bodo delovale.</p><p>Datoteke "
+"bodo prenesene v %1.</p><p><b>Po uspešnem prenosu morate znova zagnati "
+"digiKam.</b> </p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:594
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
-msgstr ""
+msgstr "Prenos zahteva %1 datotek z velikostjo %2."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:601
-#, fuzzy, kde-format
-#| msgctxt "%1: disk size with unit"
-#| msgid "The download of the selected features requires %1"
+#, kde-format
 msgid "All files of the selected features were found."
-msgstr "Prenos izbranih zmožnosti zahteva %1"
+msgstr "Najdene so bile vse datoteke izbranih zmožnosti."
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -62631,10 +62618,9 @@ msgid "Enable internal debug logging"
 msgstr "Omogoči notranje beleženje napak"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:80
-#, fuzzy, kde-format
-#| msgid "Download Face Engine Data..."
+#, kde-format
 msgid "Download required binary data..."
-msgstr "Prenesi podatke za prepoznavanje obrazov..."
+msgstr "Prenesi zahtevane binarne podatke..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format

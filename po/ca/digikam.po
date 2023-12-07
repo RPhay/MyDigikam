@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-06 00:40+0000\n"
-"PO-Revision-Date: 2023-12-05 12:52+0100\n"
+"PO-Revision-Date: 2023-12-06 10:35+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -61336,18 +61336,7 @@ msgid "File on the server is too large."
 msgstr "El fitxer que hi ha en el servidor és massa gran."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>For face detection, the red-eye removal tool, the classification of "
-#| "images according to aesthetics or the automatic assignment of tags to "
-#| "images, digiKam requires some large binary files. You can choose which "
-#| "feature you want to use.</p><p>Some of these files were not found. Click "
-#| "“Download” to begin downloading the files you need. You can cancel this "
-#| "process, this dialog will appear again the next time you start digiKam. "
-#| "Without these files the selected features will not work.</p><p>The files "
-#| "will be downloaded to %1.</p><p><b>After the successful download you have "
-#| "to restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>For face detection, the red-eye removal tool, the classification of "
@@ -61365,24 +61354,21 @@ msgstr ""
 "d'etiquetes a les imatges, el digiKam necessita alguns fitxers binaris "
 "grans. Podeu triar quina característica voleu emprar.</p><p>No s'han trobat "
 "alguns d'aquests fitxers. Feu clic a «Baixa» per començar a baixar els "
-"fitxers necessaris. Podeu cancel·lar aquest procés, la propera vegada que "
-"s'iniciï el digiKam, tornarà a aparèixer aquest diàleg. La detecció de cares "
-"no funcionarà sense aquests fitxers.</p><p>Els fitxers es descarregaran a %1."
-"</p><p><b>Una vegada finalitzada la baixada, caldrà reiniciar el digiKam.</"
-"b></p>"
+"fitxers necessaris. Podeu tancar aquest diàleg, la propera vegada que "
+"s'iniciï el digiKam es tornarà a demanar. La detecció de cares no funcionarà "
+"sense aquests fitxers.</p><p>Els fitxers es descarregaran a %1.</p><p><b>Una "
+"vegada finalitzada la baixada, caldrà reiniciar el digiKam.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:594
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
-msgstr ""
+msgstr "La baixada necessita %1 fitxers amb una mida de %2."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:601
-#, fuzzy, kde-format
-#| msgctxt "%1: disk size with unit"
-#| msgid "The download of the selected features requires %1"
+#, kde-format
 msgid "All files of the selected features were found."
-msgstr "La baixada de les característiques seleccionades necessita %1"
+msgstr "S'han trobat tots els fitxers de les característiques seleccionades."
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -63193,10 +63179,9 @@ msgid "Enable internal debug logging"
 msgstr "Activa el registre intern de depuració"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:80
-#, fuzzy, kde-format
-#| msgid "Download Face Engine Data..."
+#, kde-format
 msgid "Download required binary data..."
-msgstr "Descarrega les dades del motor de cares..."
+msgstr "Baixa les dades binàries requerides..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format

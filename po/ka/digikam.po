@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-06 00:40+0000\n"
-"PO-Revision-Date: 2023-12-01 06:59+0100\n"
+"PO-Revision-Date: 2023-12-06 06:09+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -57058,10 +57058,9 @@ msgid "Download Required Files"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:169
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Use Face Detection feature"
-msgstr "სახის ამოცნობა"
+msgstr "სახის ამოცნობის ფუნქციის გამოყენება"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:170
 #, kde-format
@@ -57069,10 +57068,9 @@ msgid "Use Aesthetic Detection feature"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:171
-#, fuzzy, kde-format
-#| msgid "Autotags Assignment"
+#, kde-format
 msgid "Use Auto Tags Assignment feature"
-msgstr "ჭდეების ავტომატური მინიჭება"
+msgstr "ჭდეების ავტომატური მინიჭების ფუნქციის გამოყენება"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:243
 #, kde-format
