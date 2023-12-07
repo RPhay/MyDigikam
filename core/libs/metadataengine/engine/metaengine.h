@@ -397,6 +397,13 @@ public:
     bool save(const QString& filePath, bool setVersion = false) const;
 
     /**
+     * Save all metadata to a file. This one can be different than original picture to perform
+     * transfer operation Return true if metadata have been saved into file.
+     * In contrast to #save(), this always writes metadata to the file itself, and never to the sidecar.
+     */
+    bool saveToFile(const QString& filePath, bool setVersion = false) const;
+
+    /**
      * The same than save() method, but it apply on current item. Return true if metadata
      * have been saved into file.
      */

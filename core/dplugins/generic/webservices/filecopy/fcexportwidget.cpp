@@ -52,6 +52,7 @@ public:
         selector            (nullptr),
         imageList           (nullptr),
         sidecars            (nullptr),
+        writeMetadataToFile (nullptr),
         overwrite           (nullptr),
         albumPath           (nullptr),
         targetButtonGroup   (nullptr),
@@ -72,6 +73,7 @@ public:
     DItemsList*     imageList;
 
     QCheckBox*      sidecars;
+    QCheckBox*      writeMetadataToFile;
     QCheckBox*      overwrite;
     QCheckBox*      albumPath;
 
@@ -118,6 +120,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->relativeButton           = new QRadioButton(i18n("Create relative symlinks"), this);
 
     d->sidecars                 = new QCheckBox(i18n("Include the sidecars of the items"), this);
+    d->writeMetadataToFile      = new QCheckBox(i18n("Write metadata to the items"), this);
     d->overwrite                = new QCheckBox(i18n("Overwrite existing items in the target"), this);
     d->albumPath                = new QCheckBox(i18n("Use the album path of the items in the target"), this);
 
@@ -225,6 +228,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     layout->addWidget(d->symLinkButton);
     layout->addWidget(d->relativeButton);
     layout->addWidget(d->sidecars);
+    layout->addWidget(d->writeMetadataToFile);
     layout->addWidget(d->overwrite);
     layout->addWidget(d->albumPath);
     layout->addWidget(d->imageList);
@@ -275,6 +279,7 @@ FCContainer FCExportWidget::getSettings() const
     settings.imageResize           = d->imageResize->value();
     settings.imageCompression      = d->imageCompression->value();
     settings.sidecars              = d->sidecars->isChecked();
+    settings.writeMetadataToFile   = d->writeMetadataToFile->isChecked();
     settings.overwrite             = d->overwrite->isChecked();
     settings.albumPath             = d->albumPath->isChecked();
     settings.removeMetadata        = d->removeMetadataProp->isChecked();
@@ -298,6 +303,7 @@ void FCExportWidget::setSettings(const FCContainer& settings)
     d->imageResize->setValue(settings.imageResize);
     d->imageCompression->setValue(settings.imageCompression);
     d->sidecars->setChecked(settings.sidecars);
+    d->writeMetadataToFile->setChecked(settings.writeMetadataToFile);
     d->overwrite->setChecked(settings.overwrite);
     d->albumPath->setChecked(settings.albumPath);
     d->removeMetadataProp->setChecked(settings.removeMetadata);

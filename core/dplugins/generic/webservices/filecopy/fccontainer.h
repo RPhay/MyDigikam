@@ -55,6 +55,7 @@ public:
         imageResize          (1024),
         imageCompression     (75),
         sidecars             (false),
+        writeMetadataToFile  (false),
         overwrite            (false),
         albumPath            (false),
         removeMetadata       (false),
@@ -79,6 +80,7 @@ public:
     int             imageCompression;
 
     bool            sidecars;
+    bool            writeMetadataToFile;
     bool            overwrite;
     bool            albumPath;
     bool            removeMetadata;

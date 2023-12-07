@@ -139,6 +139,16 @@ void FCTask::run()
                 DFileOperations::copyFile(DMetadata::sidecarUrl(d->srcUrl).toLocalFile(),
                                           sidecarDest.toLocalFile());
             }
+
+            if (d->settings.writeMetadataToFile)
+            {
+                QScopedPointer<DMetadata> meta(new DMetadata);
+
+                if (meta->load(d->srcUrl.toLocalFile()))
+                {
+                    meta->saveToFile(dest.toLocalFile());
+                }
+            }
         }
     }
     else if (ok                                                     &&

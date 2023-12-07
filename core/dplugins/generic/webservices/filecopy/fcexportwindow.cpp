@@ -51,6 +51,7 @@ public:
 
     const static QString TARGET_URL_PROPERTY;
     const static QString TARGET_SIDECARS;
+    const static QString TARGET_WRITE_METADATA_TO_FILE;
     const static QString TARGET_OVERWRITE;
     const static QString TARGET_ALBUMPATH;
     const static QString TARGET_BEHAVIOR;
@@ -68,6 +69,7 @@ public:
 
 const QString FCExportWindow::Private::TARGET_URL_PROPERTY     = QLatin1String("targetUrl");
 const QString FCExportWindow::Private::TARGET_SIDECARS         = QLatin1String("sidecars");
+const QString FCExportWindow::Private::TARGET_WRITE_METADATA_TO_FILE = QLatin1String("writeMetadataToFile");
 const QString FCExportWindow::Private::TARGET_OVERWRITE        = QLatin1String("overwrite");
 const QString FCExportWindow::Private::TARGET_ALBUMPATH        = QLatin1String("albumPath");
 const QString FCExportWindow::Private::TARGET_BEHAVIOR         = QLatin1String("targetBehavior");
@@ -153,6 +155,7 @@ void FCExportWindow::restoreSettings()
     settings.imageResize           = group.readEntry(d->IMAGE_RESIZE,            1024);
     settings.imageCompression      = group.readEntry(d->IMAGE_COMPRESSION,       75);
     settings.sidecars              = group.readEntry(d->TARGET_SIDECARS,         false);
+    settings.writeMetadataToFile   = group.readEntry(d->TARGET_WRITE_METADATA_TO_FILE,         false);
     settings.overwrite             = group.readEntry(d->TARGET_OVERWRITE,        false);
     settings.albumPath             = group.readEntry(d->TARGET_ALBUMPATH,        false);
     settings.removeMetadata        = group.readEntry(d->REMOVE_METADATA,         false);
@@ -173,6 +176,7 @@ void FCExportWindow::saveSettings()
     group.writeEntry(d->IMAGE_RESIZE,            settings.imageResize);
     group.writeEntry(d->IMAGE_COMPRESSION,       settings.imageCompression);
     group.writeEntry(d->TARGET_SIDECARS,         settings.sidecars);
+    group.writeEntry(d->TARGET_WRITE_METADATA_TO_FILE,         settings.writeMetadataToFile);
     group.writeEntry(d->TARGET_OVERWRITE,        settings.overwrite);
     group.writeEntry(d->TARGET_ALBUMPATH,        settings.albumPath);
     group.writeEntry(d->REMOVE_METADATA,         settings.removeMetadata);

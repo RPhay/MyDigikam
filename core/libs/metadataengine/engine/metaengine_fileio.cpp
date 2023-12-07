@@ -408,6 +408,54 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
     return (writtenToFile || writtenToSidecar);
 }
 
+bool MetaEngine::saveToFile(const QString& imageFilePath, bool setVersion) const
+{
+    if (setVersion && !setProgramId())
+    {
+        return false;
+    }
+
+    // If our image is really a symlink, we should follow the symlink so that
+    // when we delete the file and rewrite it, we are honoring the symlink
+    // (rather than just deleting it and putting a file there).
+
+    QString regularFilePath = imageFilePath; // imageFilePath might be a
+                                             // symlink.  Below we will change
+                                             // regularFile to the pointed to
+                                             // file if so.
+    QFileInfo givenFileInfo(imageFilePath);
+
+    if (givenFileInfo.isSymLink())
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "filePath" << imageFilePath << "is a symlink."
+                                        << "Using target" << givenFileInfo.canonicalFilePath();
+
+        regularFilePath = givenFileInfo.canonicalFilePath(); // Walk all the symlinks
+    }
+
+    bool writtenToFile                   = false;
+
+    // NOTE: see B.K.O #137770 & #138540 : never touch the file if is read only.
+    QFileInfo finfo(regularFilePath);
+    QFileInfo dinfo(finfo.path());
+
+    if (!dinfo.isWritable())
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Dir" << dinfo.filePath() << "is read-only. Metadata not saved.";
+        return false;
+    }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Will write Metadata to file" << finfo.absoluteFilePath();
+    writtenToFile = d->saveToFile(finfo);
+
+    if (writtenToFile)
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Metadata for file" << finfo.fileName() << "written to file.";
+    }
+
+    return writtenToFile;
+}
+
 bool MetaEngine::applyChanges(bool setVersion) const
 {
     if (d->filePath.isEmpty())
