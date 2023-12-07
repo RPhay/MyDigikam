@@ -6,8 +6,6 @@
 set (MARBLE_DATA_INSTALL_PATH ${KDE_INSTALL_FULL_DATADIR}/digikam/marble/)
 
 install (FILES
-         credits_authors.html
-         credits_data.html
          legend.html
          legend.css
          DESTINATION ${MARBLE_DATA_INSTALL_PATH})

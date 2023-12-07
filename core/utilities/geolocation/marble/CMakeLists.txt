@@ -32,7 +32,6 @@ set(marblewidget_SRCS
     CacheStoragePolicy.cpp
     CelestialSortFilterProxyModel.cpp
     ClipPainter.cpp
-    DataMigration.cpp
     DialogConfigurationInterface.cpp
     DiscCache.cpp
     DownloadPolicy.cpp
@@ -730,7 +729,6 @@ set (marblewidget_UI
 
     AddLinkDialog.ui
     BookmarkManagerDialog.ui
-    DataMigrationWidget.ui
     EditBookmarkDialog.ui
     EditPlacemarkDialog.ui
     ElevationWidget.ui
