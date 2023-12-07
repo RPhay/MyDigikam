@@ -446,7 +446,7 @@ bool RoutingLayerPrivate::handleMouseButtonPress( QMouseEvent *e )
             } else if ( e->button() == Qt::RightButton ) {
                 m_removeViaPointAction->setEnabled( true );
                 m_activeMenuIndex = region.index;
-                m_contextMenu->showRmbMenu( e->x(), e->y() );
+                m_contextMenu->showRmbMenu( e->position().x(), e->position().y() );
                 return true;
             } else
                 return false;
@@ -468,7 +468,7 @@ bool RoutingLayerPrivate::handleMouseButtonPress( QMouseEvent *e )
                 return true;
             } else if ( e->button() == Qt::RightButton ) {
                 m_removeViaPointAction->setEnabled( false );
-                m_contextMenu->showRmbMenu( e->x(), e->y() );
+                m_contextMenu->showRmbMenu( e->position().x(), e->position().y() );
                 return true;
             } else
                 return false;
@@ -483,7 +483,7 @@ bool RoutingLayerPrivate::handleMouseButtonPress( QMouseEvent *e )
             return true;
         } else if ( e->button() == Qt::RightButton ) {
             m_removeViaPointAction->setEnabled( false );
-            m_contextMenu->showRmbMenu( e->x(), e->y() );
+            m_contextMenu->showRmbMenu( e->position().x(), e->position().y() );
             return true;
         } else
             return false;
