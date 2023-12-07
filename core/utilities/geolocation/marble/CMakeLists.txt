@@ -29,6 +29,16 @@ set(marblewidget_SRCS
     ${layers_SRCS}
     ${osm_SRCS}
 
+    TourWidget.cpp
+    TourControlEditWidget.cpp
+    TourItemDelegate.cpp
+    TourPlayback.cpp
+    TourCaptureDialog.cpp
+
+    RoutingRunnerManager.cpp
+    RoutingRunnerPlugin.cpp
+    RoutingRunner.cpp
+
     DownloadRegion.cpp
     DownloadRegionDialog.cpp
     LatLonBoxWidget.cpp
@@ -40,15 +50,11 @@ set(marblewidget_SRCS
     MapViewWidget.cpp
     CelestialSortFilterProxyModel.cpp
     FileViewWidget.cpp
-    TourWidget.cpp
     FlyToEditWidget.cpp
-    TourControlEditWidget.cpp
     WaitEditWidget.cpp
     SoundCueEditWidget.cpp
     RemoveItemEditWidget.cpp
-    TourItemDelegate.cpp
     MapViewItemDelegate.cpp
-    TourPlayback.cpp
     PlaybackItem.cpp
     PlaybackAnimatedUpdateItem.cpp
     PlaybackFlyToItem.cpp
@@ -124,7 +130,6 @@ set(marblewidget_SRCS
     ImageF.cpp
     MovieCapture.cpp
     MovieCaptureDialog.cpp
-    TourCaptureDialog.cpp
     EditPlacemarkDialog.cpp
     AddLinkDialog.cpp
     FormattedTextWidget.cpp
@@ -156,16 +161,13 @@ set(marblewidget_SRCS
     TemplateDocument.cpp
     ParsingRunnerManager.cpp
     ReverseGeocodingRunnerManager.cpp
-    RoutingRunnerManager.cpp
     SearchRunnerManager.cpp
     AutoNavigation.cpp
     SearchRunnerPlugin.cpp
     ReverseGeocodingRunnerPlugin.cpp
-    RoutingRunnerPlugin.cpp
     ParseRunnerPlugin.cpp
     SearchRunner.cpp
     ReverseGeocodingRunner.cpp
-    RoutingRunner.cpp
     ParsingRunner.cpp
     RunnerTask.cpp
     BookmarkManager.cpp
@@ -244,11 +246,13 @@ set(marblewidget_SRCS
 
 set (marblewidget_UI
     ${osm_UIS}
+
+    TourWidget.ui
+
     LatLonBoxWidget.ui
     MapViewWidget.ui
     CurrentLocationWidget.ui
     FileViewWidget.ui
-    TourWidget.ui
     MarbleNavigator.ui
     MarbleCacheSettingsWidget.ui
     MarbleViewSettingsWidget.ui
@@ -261,7 +265,6 @@ set (marblewidget_UI
     SunControlWidget.ui
     LatLonEdit.ui
     PlacemarkEditHeader.ui
-    routing/RoutingWidget.ui
     DataMigrationWidget.ui
     EditBookmarkDialog.ui
     BookmarkManagerDialog.ui
@@ -269,18 +272,22 @@ set (marblewidget_UI
     PrintOptions.ui
     ExternalEditor.ui
     GoToDialog.ui
-    routing/RoutingSettingsWidget.ui
-    routing/RoutingProfileSettingsDialog.ui
     MapWizard.ui
     MapThemeDownloadDialog.ui
-    cloudsync/CloudRoutesDialog.ui
     MarbleCloudSyncSettingsWidget.ui
     MovieCaptureDialog.ui
-    TourCaptureDialog.ui
     EditPlacemarkDialog.ui
     AddLinkDialog.ui
     FormattedTextWidget.ui
     ElevationWidget.ui
+
+    TourCaptureDialog.ui
+
+    cloudsync/CloudRoutesDialog.ui
+
+    routing/RoutingWidget.ui
+    routing/RoutingSettingsWidget.ui
+    routing/RoutingProfileSettingsDialog.ui
 )
 
 qt_add_resources(marblewidget_SRCS libmarble.qrc)
