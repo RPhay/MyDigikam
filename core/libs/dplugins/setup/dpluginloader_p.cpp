@@ -62,7 +62,7 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
     QStringList pathList;
 
     // First we try to load in first the local plugin if DK_PLUG_PATH variable is declared.
-    // Else, we will load plusing from the system using the standard Qt plugin path.
+    // Else, we will load plugins from the system using the standard Qt plugin path.
 
     QByteArray  dkenv = qgetenv("DK_PLUGIN_PATH");
 
