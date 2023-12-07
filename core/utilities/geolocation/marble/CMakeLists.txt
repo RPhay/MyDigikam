@@ -76,7 +76,6 @@ set(marblewidget_SRCS
     MarbleLocale.cpp
     MarbleMap.cpp
     MarbleModel.cpp
-    MarbleNavigator.cpp
     MarblePhysics.cpp
     MarblePlacemarkModel.cpp
     MarblePluginSettingsWidget.cpp
@@ -733,7 +732,6 @@ set (marblewidget_UI
     MarbleCacheSettingsWidget.ui
     MarbleCloudSyncSettingsWidget.ui
     MarbleNavigationSettingsWidget.ui
-    MarbleNavigator.ui
     MarblePluginSettingsWidget.ui
     MarbleTimeSettingsWidget.ui
     MarbleViewSettingsWidget.ui
