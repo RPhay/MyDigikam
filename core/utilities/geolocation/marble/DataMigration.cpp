@@ -23,6 +23,8 @@
 // std
 #include <limits>
 
+#include <klocalizedstring.h>
+
 namespace Marble
 {
 
@@ -89,8 +91,8 @@ void DataMigration::moveFiles( const QString& source, const QString& target )
         progressDialog.setMaximum( std::numeric_limits<int>::max() );
         progressDialog.setAutoReset( false );
         progressDialog.setAutoClose( false );
-        progressDialog.setWindowTitle( tr( "Marble data conversion" ) );
-        progressDialog.setLabelText( tr( "Converting data ..." ) );
+        progressDialog.setWindowTitle( i18n( "Marble data conversion" ) );
+        progressDialog.setLabelText( i18n( "Converting data ..." ) );
 
         QDir().mkpath( target );
         QString sourcePath = QDir( source ).canonicalPath();

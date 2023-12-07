@@ -12,6 +12,8 @@
 #include <QPushButton>
 #include <QDebug>
 
+#include <klocalizedstring.h>
+
 namespace Marble {
 
 class Q_DECL_HIDDEN AddLinkDialog::Private : public Ui::UiAddLinkDialog
@@ -61,12 +63,12 @@ void AddLinkDialog::checkFields()
 {
     if ( d->m_url->text().isEmpty() ) {
             QMessageBox::warning( this,
-                                  tr( "No URL specified" ),
-                                  tr( "Please specify a URL for this link." ) );
+                                  i18n( "No URL specified" ),
+                                  i18n( "Please specify a URL for this link." ) );
     } else if ( d->m_name->text().isEmpty() ) {
         QMessageBox::warning( this,
-                              tr( "No name specified" ),
-                              tr( "Please specify a name for this link." ) );
+                              i18n( "No name specified" ),
+                              i18n( "Please specify a name for this link." ) );
     } else {
         accept();
     }

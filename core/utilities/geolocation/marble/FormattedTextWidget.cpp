@@ -19,6 +19,8 @@
 #include "MarbleWidget.h"
 #include "AddLinkDialog.h"
 
+#include <klocalizedstring.h>
+
 namespace Marble{
 
 class Q_DECL_HIDDEN FormattedTextWidget::Private : public Ui::FormattedTextWidget
@@ -176,7 +178,7 @@ void FormattedTextWidget::setTextCursorFontSize( const QString &fontSize )
 
 void FormattedTextWidget::addImageToDescription()
 {
-    QString filename = QFileDialog::getOpenFileName( this, tr( "Choose image" ), tr( "All Supported Files (*.png *.jpg *.jpeg)" )  );
+    QString filename = QFileDialog::getOpenFileName( this, i18n( "Choose image" ), i18n( "All Supported Files (*.png *.jpg *.jpeg)" )  );
     QImage image( filename );
     if( !image.isNull() ) {
         QTextCursor cursor = d->m_description->textCursor();

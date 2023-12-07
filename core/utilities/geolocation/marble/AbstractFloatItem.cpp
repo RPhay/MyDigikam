@@ -240,7 +240,7 @@ QMenu* AbstractFloatItem::contextMenu()
         connect( lockAction, SIGNAL(triggered(bool)), this, SLOT(setPositionLocked(bool)) );
 
         if(!(flags() & ItemIsHideable)) {
-            QAction *hideAction = d->m_contextMenu->addAction( tr( "&Hide" ) );
+            QAction *hideAction = d->m_contextMenu->addAction( i18n( "&Hide" ) );
             connect( hideAction, SIGNAL(triggered()), this, SLOT(hide()) );
         }
 

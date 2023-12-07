@@ -242,7 +242,7 @@ QVariant GeoDataTreeModel::data( const QModelIndex &index, int role ) const
 
         GeoDataPlaylist *playlist = geodata_cast<GeoDataPlaylist>(object);
         if ( playlist && index.column() == 0 ) {
-            return tr( "Playlist" );
+            return i18n( "Playlist" );
         }
 
         if (object && index.column() == 1) {
