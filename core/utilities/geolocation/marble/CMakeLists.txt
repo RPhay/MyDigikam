@@ -112,7 +112,7 @@ set(marblewidget_SRCS
     PositionProviderPlugin.cpp
     PositionProviderPluginInterface.cpp
     PositionTracking.cpp
-    QtMarbleConfigDialog.cpp
+#    QtMarbleConfigDialog.cpp
     Quaternion.cpp
     RemoteIconLoader.cpp
     RemoveItemEditWidget.cpp

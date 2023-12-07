@@ -314,7 +314,7 @@ bool MarbleDefaultInputHandler::handleDoubleClick(QMouseEvent *event)
 {
     qreal mouseLon;
     qreal mouseLat;
-    const bool isMouseAboveMap = MarbleInputHandler::d->m_marblePresenter->map()->geoCoordinates(event->x(), event->y(),
+    const bool isMouseAboveMap = MarbleInputHandler::d->m_marblePresenter->map()->geoCoordinates(event->position().x(), event->position().y(),
                                              mouseLon, mouseLat, GeoDataCoordinates::Radian);
     if(isMouseAboveMap)
     {
@@ -504,8 +504,8 @@ void MarbleDefaultInputHandler::handleLeftMouseButtonPress(QMouseEvent *event)
     // values get stored, to enable us to e.g. calculate the
     // distance of a mouse drag while the mouse button is
     // still down.
-    d->m_leftPressedX = event->x();
-    d->m_leftPressedY = event->y();
+    d->m_leftPressedX = event->position().x();
+    d->m_leftPressedY = event->position().y();
 
     // Calculate translation of center point
     d->m_leftPressedLon = MarbleInputHandler::d->m_marblePresenter->centerLongitude();
@@ -533,7 +533,7 @@ void MarbleDefaultInputHandler::handleMiddleMouseButtonPress(QMouseEvent *event)
     d->m_midPressed = true;
     d->m_leftPressed = false;
     d->m_startingRadius = MarbleInputHandler::d->m_marblePresenter->radius();
-    d->m_midPressedY = event->y();
+    d->m_midPressedY = event->position().y();
 
     if (MarbleInputHandler::d->m_inertialEarthRotation)
     {
@@ -588,7 +588,7 @@ void MarbleDefaultInputHandler::handleMouseButtonRelease(QMouseEvent *event)
     {
         if (d->m_rightOrigin == event->pos())
         {
-            Q_EMIT rmbRequest(event->x(), event->y());
+            Q_EMIT rmbRequest(event->position().x(), event->position().y());
         }
         d->m_rightPressed = false;
 
@@ -714,7 +714,7 @@ QPoint MarbleDefaultInputHandler::mouseMovedOutside(QMouseEvent *event)
 
     if (boundingRect.width() != 0)
     {
-        dirX = (int)( 3 * (event->x() - boundingRect.left()) / boundingRect.width()) - 1;
+        dirX = (int)( 3 * (event->position().x() - boundingRect.left()) / boundingRect.width()) - 1;
     }
     if (dirX > 1)
     {
@@ -727,7 +727,7 @@ QPoint MarbleDefaultInputHandler::mouseMovedOutside(QMouseEvent *event)
 
     if (boundingRect.height() != 0)
     {
-        dirY = (int)(3 * (event->y() - boundingRect.top()) / boundingRect.height()) - 1;
+        dirY = (int)(3 * (event->position().y() - boundingRect.top()) / boundingRect.height()) - 1;
     }
     if (dirY > 1)
     {
@@ -788,11 +788,11 @@ bool MarbleDefaultInputHandler::handleMouseEvent(QMouseEvent *event)
 
     qreal mouseLon;
     qreal mouseLat;
-    const bool isMouseAboveMap = MarbleInputHandler::d->m_marblePresenter->map()->geoCoordinates(event->x(), event->y(),
+    const bool isMouseAboveMap = MarbleInputHandler::d->m_marblePresenter->map()->geoCoordinates(event->position().x(), event->position().y(),
                                              mouseLon, mouseLat, GeoDataCoordinates::Radian);
     notifyPosition(isMouseAboveMap, mouseLon, mouseLat);
 
-    QPoint mousePosition(event->x(), event->y());
+    QPoint mousePosition(event->position().x(), event->position().y());
 
     if (isMouseAboveMap || selectionRubber()->isVisible()
          || MarbleInputHandler::d->m_marblePresenter->map()->hasFeatureAt(mousePosition))
@@ -813,8 +813,8 @@ bool MarbleDefaultInputHandler::handleMouseEvent(QMouseEvent *event)
         if (d->m_leftPressed && !selectionRubber()->isVisible())
         {
             qreal radius = (qreal)(MarbleInputHandler::d->m_marblePresenter->radius());
-            qreal deltax = event->x() - d->m_leftPressedX;
-            qreal deltay = event->y() - d->m_leftPressedY;
+            qreal deltax = event->position().x() - d->m_leftPressedX;
+            qreal deltay = event->position().y() - d->m_leftPressedY;
 
             if (qAbs(deltax) > d->m_dragThreshold
                  || qAbs(deltay) > d->m_dragThreshold
@@ -844,7 +844,7 @@ bool MarbleDefaultInputHandler::handleMouseEvent(QMouseEvent *event)
 
         if (d->m_midPressed)
         {
-            int eventy = event->y();
+            int eventy = event->position().y();
             int dy = d->m_midPressedY - eventy;
             MarbleInputHandler::d->m_marblePresenter->setRadius(d->m_startingRadius * pow(1.005, dy));
         }
@@ -857,15 +857,15 @@ bool MarbleDefaultInputHandler::handleMouseEvent(QMouseEvent *event)
                 MarbleInputHandler::d->m_marblePresenter->centerLatitude(), centerX, centerY);
 
             // Deltas from previous position.
-            int dx = event->x() - d->m_rightPosition.x();
-            int dy = event->y() - d->m_rightPosition.y();
+            int dx = event->position().x() - d->m_rightPosition.x();
+            int dy = event->position().y() - d->m_rightPosition.y();
 
             d->m_rightPosition = event->pos();
 
             // Moving on the bottom should be opposite direction.
-            int sign = event->y() > centerY ? -1 : 1;
+            int sign = event->position().y() > centerY ? -1 : 1;
             // Left top and right bottom sides for y axis should be opposite direction.
-            if ((event->x() < centerX && event->y() < centerY) || (event->x() > centerX && event->y() > centerY))
+            if ((event->position().x() < centerX && event->position().y() < centerY) || (event->position().x() > centerX && event->position().y() > centerY))
             {
                 dy *= -1;
             }
