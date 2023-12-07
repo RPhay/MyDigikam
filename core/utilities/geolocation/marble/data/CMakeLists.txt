@@ -1,3 +1,8 @@
+#
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
 set (MARBLE_DATA_INSTALL_PATH ${KDE_INSTALL_FULL_DATADIR}/digikam/marble/)
 
 install (FILES
@@ -256,31 +261,3 @@ install (FILES
 
 install (FILES placemarks/cityplacemarks.cache
          DESTINATION ${MARBLE_DATA_INSTALL_PATH}/placemarks)
-
-#if(NOT APPLE AND NOT WIN32)
-#  install (FILES icons/128-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/128x128/apps/ RENAME marble.png)
-#  install (FILES icons/64-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/64x64/apps/ RENAME marble.png)
-#  install (FILES icons/48-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/48x48/apps/ RENAME marble.png)
-#  install (FILES icons/32-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/32x32/apps/ RENAME marble.png)
-#  install (FILES icons/22-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/22x22/apps/ RENAME marble.png)
-#  install (FILES icons/16-apps-marble.png DESTINATION ${ICON_INSTALL_DIR}/hicolor/16x16/apps/ RENAME marble.png)
-#endif(NOT APPLE AND NOT WIN32 )
-
-OPTION(EXPERIMENTAL_SENTINEL2_MAP "Install an experimental satellite map theme" OFF)
-if(EXPERIMENTAL_SENTINEL2_MAP)
-    install (DIRECTORY maps/earth/sentinel2 DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth)
-endif()
-
-OPTION(MARBLE_DEV_VECTOR_TILING "Install the development version of OSM vector tiles" OFF)
-if(MARBLE_DEV_VECTOR_TILING)
-    install (DIRECTORY maps/earth/vectorosm-dev DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth)
-endif()
-
-OPTION(MARBLE_EMPTY_MAPTHEME "Install an empty map theme for developmental purposes")
-if(MARBLE_EMPTY_MAPTHEME)
-    install (DIRECTORY maps/earth/empty DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth)
-endif()
-
-FILE (GLOB AUDIO_FILES audio/*.ogg)
-install (FILES ${AUDIO_FILES}
-         DESTINATION ${MARBLE_DATA_INSTALL_PATH}/audio)
