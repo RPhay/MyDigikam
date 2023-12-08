@@ -6,7 +6,7 @@
  * Date        : 2009-12-08
  * Description : Marble-backend for geolocation interface
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText: 2014      by Justus Schwartz <justus at gmx dot li>
  *
@@ -101,13 +101,6 @@ public:
     void centerOn(const Marble::GeoDataLatLonBox& box,
                   const bool useSaneZoomLevel)                                override;
     void setActive(const bool state)                                          override;
-
-public:
-
-    /**
-     * Return a string version of LibMarbleWidget release in format "major.minor.patch"
-     */
-    static QString MarbleWidgetVersion();
 
 public Q_SLOTS:
 

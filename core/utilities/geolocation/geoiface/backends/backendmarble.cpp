@@ -6,7 +6,7 @@
  * Date        : 2009-12-08
  * Description : Marble-backend for geolocation interface
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText: 2014      by Justus Schwartz <justus at gmx dot li>
  *
@@ -2097,11 +2097,6 @@ void BackendMarble::slotScheduleUpdate()
 
         d->marbleWidget->update();
     }
-}
-
-QString BackendMarble::MarbleWidgetVersion()
-{
-    return QString(Marble::MARBLE_VERSION_STRING).section(QLatin1Char(' '), 0, 0);
 }
 
 } // namespace Digikam

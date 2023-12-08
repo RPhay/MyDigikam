@@ -321,10 +321,10 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
 #ifdef HAVE_MARBLE
     new QTreeWidgetItem(m_libraries, QStringList() <<
-                        i18nc(CONTEXT, "Marble") <<                         BackendMarble::MarbleWidgetVersion());
+                        i18nc(CONTEXT, "Geolocation support") <<            SUPPORTED_YES);
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Marble support") <<                 SUPPORTED_NO);
+                        i18nc(CONTEXT, "Geolocation support") <<            SUPPORTED_NO);
 #endif
 
 #ifdef HAVE_SONNET
