@@ -38,6 +38,7 @@
 #include <QVideoFrame>
 #include <QAudioOutput>
 #include <QMediaMetaData>
+#include <QStandardPaths>
 
 // KDE includes
 
@@ -409,11 +410,6 @@ MediaPlayerView::~MediaPlayerView()
 {
     escapePreview();
 
-    d->player->stop();
-    delete d->player;
-    delete d->videoItem;
-    delete d->slider;
-
     delete d;
 }
 
@@ -487,7 +483,9 @@ void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus
 void MediaPlayerView::escapePreview()
 {
     d->player->stop();
-    d->player->setSource(QUrl());
+    QString dummy = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                           QLatin1String("digikam/data/video-digikam.mp4"));
+    d->player->setSource(QUrl::fromLocalFile(dummy));
 }
 
 void MediaPlayerView::slotThemeChanged()
@@ -669,7 +667,6 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     {
         d->player->stop();
         d->currentItem = url;
-        d->player->stop();
 
         return;
     }
@@ -685,11 +682,9 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
         return;
     }
 
-    d->currentItem = url;
-
     d->player->stop();
-
     int orientation = 0;
+    d->currentItem  = url;
 
     if (d->iface)
     {
