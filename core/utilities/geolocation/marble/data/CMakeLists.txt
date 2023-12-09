@@ -135,36 +135,6 @@ install (FILES
 install (DIRECTORY maps/earth/vectorosm
          DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth)
 
-
-install (FILES
-         maps/earth/temp-july/temp-july.jpg
-         maps/earth/temp-july/temp-july-preview.png
-         maps/earth/temp-july/temp-july.dgml
-         DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth/temp-july)
-
-install (FILES
-         maps/earth/temp-dec/temp-dec.jpg
-         maps/earth/temp-dec/temp-dec-preview.png
-         maps/earth/temp-dec/temp-dec.dgml
-         DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth/temp-dec)
-
-install (FILES
-         maps/earth/precip-july/precip-july.jpg
-         maps/earth/precip-july/precip-july-preview.png
-         maps/earth/precip-july/precip-july.dgml
-         DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth/precip-july)
-
-install (FILES
-         maps/earth/precip-dec/precip-dec.jpg
-         maps/earth/precip-dec/precip-dec-preview.png
-         maps/earth/precip-dec/precip-dec.dgml
-         DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth/precip-dec)
-
-install (FILES
-         maps/earth/political/political-preview.png
-         maps/earth/political/political.dgml
-         DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth/political)
-
 macro( marble_add_project_resources resources )
     add_custom_target( ${PROJECT_NAME}_Resources ALL SOURCES ${ARGN} )
 endmacro()
