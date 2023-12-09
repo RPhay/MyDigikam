@@ -240,6 +240,7 @@ RatingFilter::RatingFilter(QWidget* const parent)
     d->ratingWidget = new RatingFilterWidget(this);
 
     d->noRatingBtn  = new QToolButton(this);
+    d->noRatingBtn->setCheckable(true);
     d->noRatingBtn->setToolTip( i18n("Items Without Rating"));
     d->noRatingBtn->setIcon(QIcon::fromTheme(QLatin1String("rating-unrated")));
 
@@ -271,8 +272,11 @@ RatingFilter::RatingFilter(QWidget* const parent)
     connect(d->optionsMenu, SIGNAL(aboutToShow()),
             this, SLOT(slotOptionsMenu()));
 
-    connect(d->noRatingBtn, SIGNAL(released()),
-            this, SLOT(slotNoRatingReleased()));
+    connect(d->noRatingBtn, SIGNAL(toggled(bool)),
+            this, SLOT(slotNoRatingToggled(bool)));
+
+    connect(d->ratingWidget, SIGNAL(signalRatingFilterChanged(int,ItemFilterSettings::RatingCondition,bool)),
+            this, SLOT(slotRatingFilterChanged(int,ItemFilterSettings::RatingCondition,bool)));
 
     connect(d->ratingWidget, SIGNAL(signalRatingFilterChanged(int,ItemFilterSettings::RatingCondition,bool)),
             this, SIGNAL(signalRatingFilterChanged(int,ItemFilterSettings::RatingCondition,bool)));
@@ -355,10 +359,26 @@ void RatingFilter::slotOptionsTriggered(QAction* action)
     }
 }
 
-void RatingFilter::slotNoRatingReleased()
+void RatingFilter::slotNoRatingToggled(bool checked)
 {
-    setRating(0);
-    Q_EMIT signalRatingFilterChanged(0, ItemFilterSettings::LessEqualCondition, false);
+    if (checked)
+    {
+        d->ratingWidget->blockSignals(true);
+        d->ratingWidget->setRating(0);
+        d->ratingWidget->blockSignals(false);
+        Q_EMIT signalRatingFilterChanged(0, ItemFilterSettings::LessEqualCondition, false);
+    }
+    else
+    {
+        Q_EMIT signalRatingFilterChanged(0, ratingFilterCondition(), isUnratedItemsExcluded());
+    }
+}
+
+void RatingFilter::slotRatingFilterChanged(int, ItemFilterSettings::RatingCondition, bool)
+{
+    d->noRatingBtn->blockSignals(true);
+    d->noRatingBtn->setChecked(false);
+    d->noRatingBtn->blockSignals(false);
 }
 
 void RatingFilter::setRating(int val)

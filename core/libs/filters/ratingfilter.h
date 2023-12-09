@@ -96,8 +96,9 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotOptionsMenu();
-    void slotNoRatingReleased();
     void slotOptionsTriggered(QAction*);
+    void slotNoRatingToggled(bool checked);
+    void slotRatingFilterChanged(int, ItemFilterSettings::RatingCondition, bool);
 
 private:
 
