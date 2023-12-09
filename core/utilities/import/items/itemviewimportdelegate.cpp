@@ -263,10 +263,10 @@ QRect ItemViewImportDelegate::drawThumbnail(QPainter* p, const QRect& thumbRect,
         return QRect();
     }
 
-    QRect r      = thumbRect;
-    double ratio = thumbnail.devicePixelRatio();
-    int thumbW   = qRound((double)thumbnail.width()  / ratio);
-    int thumbH   = qRound((double)thumbnail.height() / ratio);
+    QRect r    = thumbRect;
+    double dpr =  thumbnail.devicePixelRatio();
+    int thumbW = qRound((double)thumbnail.width()  / dpr);
+    int thumbH = qRound((double)thumbnail.height() / dpr);
 
     QRect actualPixmapRect(r.x() + (r.width()  - thumbW) / 2,
                            r.y() + (r.height() - thumbH) / 2,
@@ -650,7 +650,11 @@ void ItemViewImportDelegate::prepareRatingPixmaps(bool composeOverBackground)
             basePix.fill(Qt::transparent);
         }
 
-        for (int rating=1; rating<=5; ++rating)
+        double dpr = qApp->devicePixelRatio();
+        basePix    = basePix.scaled(d->ratingRect.size() * dpr);
+        basePix.setDevicePixelRatio(dpr);
+
+        for (int rating = 1; rating <= 5; ++rating)
         {
             // we store first the 5 regular, then the 5 selected pixmaps, for simplicity
 

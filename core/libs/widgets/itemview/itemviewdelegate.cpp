@@ -723,7 +723,7 @@ void ItemViewDelegate::prepareRatingPixmaps(bool composeOverBackground)
     // and the background may be a gradient, and will be different for selected items.
     // This makes 5*2 (small) pixmaps.
 
-    for (int sel=0 ; sel<2 ; ++sel)
+    for (int sel = 0 ; sel < 2 ; ++sel)
     {
         QPixmap basePix;
 
@@ -745,6 +745,10 @@ void ItemViewDelegate::prepareRatingPixmaps(bool composeOverBackground)
             basePix = QPixmap(d->ratingRect.size());
             basePix.fill(Qt::transparent);
         }
+
+        double dpr = qApp->devicePixelRatio();
+        basePix    = basePix.scaled(d->ratingRect.size() * dpr);
+        basePix.setDevicePixelRatio(dpr);
 
         for (int rating = 1 ; rating <= 5 ; ++rating)
         {

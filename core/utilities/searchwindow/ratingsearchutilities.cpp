@@ -331,7 +331,7 @@ void RatingComboBoxWidget::paintEvent(QPaintEvent* e)
         QPainter p(this);
 
         QPixmap pix = starPixmap();
-        int width = pix.width();
+        int width   = regPixmapWidth();
         p.drawPixmap(0, 0, pix);
 
         // draw red cross
@@ -352,7 +352,7 @@ void RatingComboBoxWidget::paintEvent(QPaintEvent* e)
             for (int i = 0 ; i < RatingMax ; ++i)
             {
                 p.drawPixmap(x, 0, pix);
-                x += pix.width();
+                x += regPixmapWidth();
             }
         }
         else

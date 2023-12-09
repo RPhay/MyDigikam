@@ -77,6 +77,7 @@ public:
         fadingValue     (0),
         duration        (600),
         offset          (0),
+        width           (15),
         fadingTimeLine  (nullptr)
     {
     }
@@ -89,6 +90,7 @@ public:
     int        fadingValue;
     int        duration;       ///< in milliseconds
     int        offset;
+    int        width;
 
     QTimeLine* fadingTimeLine;
 
@@ -126,7 +128,7 @@ void RatingWidget::setupTimeLine()
 
 int RatingWidget::regPixmapWidth() const
 {
-    return d->regPixmap.width();
+    return d->width;
 }
 
 void RatingWidget::setRating(int val)
@@ -200,7 +202,7 @@ void RatingWidget::setVisible(bool visible)
 
 int RatingWidget::maximumVisibleWidth() const
 {
-    return RatingMax * (d->disPixmap.width()+1);
+    return RatingMax * (d->width + 1);
 }
 
 void RatingWidget::startFading()
@@ -274,11 +276,11 @@ void RatingWidget::mousePressEvent(QMouseEvent* e)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    int pos = (e->position().toPoint().x() - d->offset) / d->regPixmap.width() + 1;
+    int pos = (e->position().toPoint().x() - d->offset) / d->width + 1;
 
 #else
 
-    int pos = (e->x() - d->offset) / d->regPixmap.width() + 1;
+    int pos = (e->x() - d->offset) / d->width + 1;
 
 #endif
 
@@ -324,11 +326,11 @@ void RatingWidget::mouseMoveEvent(QMouseEvent* e)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    int pos = (e->position().toPoint().x() - d->offset) / d->regPixmap.width() + 1;
+    int pos = (e->position().toPoint().x() - d->offset) / d->width + 1;
 
 #else
 
-    int pos = (e->x() - d->offset) / d->regPixmap.width() + 1;
+    int pos = (e->x() - d->offset) / d->width + 1;
 
 #endif
 
@@ -373,12 +375,18 @@ void RatingWidget::mouseReleaseEvent(QMouseEvent* e)
 
 void RatingWidget::slotThemeChanged()
 {
-    d->regPixmap = QPixmap(15, 15);
+    double dpr = qApp->devicePixelRatio();
+
+    d->regPixmap = QPixmap(d->width * dpr, d->width * dpr);
     d->regPixmap.fill(Qt::transparent);
-    d->selPixmap = QPixmap(15, 15);
+    d->selPixmap = QPixmap(d->width * dpr, d->width * dpr);
     d->selPixmap.fill(Qt::transparent);
-    d->disPixmap = QPixmap(15, 15);
+    d->disPixmap = QPixmap(d->width * dpr, d->width * dpr);
     d->disPixmap.fill(Qt::transparent);
+
+    d->regPixmap.setDevicePixelRatio(dpr);
+    d->selPixmap.setDevicePixelRatio(dpr);
+    d->disPixmap.setDevicePixelRatio(dpr);
 
     QPainter p1(&d->regPixmap);
     p1.setRenderHint(QPainter::Antialiasing, true);
@@ -401,7 +409,7 @@ void RatingWidget::slotThemeChanged()
     p3.drawPolygon(starPolygon(), Qt::WindingFill);
     p3.end();
 
-    setMinimumSize(QSize((d->regPixmap.width()+1)*RatingMax, d->regPixmap.height()));
+    setMinimumSize(QSize((d->width + 1) * RatingMax, d->width));
     update();
 }
 
@@ -448,7 +456,7 @@ void RatingWidget::paintEvent(QPaintEvent*)
 {
     QPainter p(this);
 
-    d->offset = (width() - RatingMax * (d->disPixmap.width()+1)) / 2;
+    d->offset = (width() - RatingMax * (d->width + 1)) / 2;
 
     // Widget is disable : drawing grayed frame.
 
@@ -459,7 +467,7 @@ void RatingWidget::paintEvent(QPaintEvent*)
         for (int i = 0 ; i < RatingMax ; ++i)
         {
             p.drawPixmap(x, 0, d->disPixmap);
-            x += d->disPixmap.width()+1;
+            x += d->width + 1;
         }
     }
     else
@@ -472,7 +480,7 @@ void RatingWidget::paintEvent(QPaintEvent*)
         for (int i = 0 ; i < rate ; ++i)
         {
             p.drawPixmap(x, 0, sel);
-            x += sel.width()+1;
+            x += d->width + 1;
         }
 
         QPixmap reg = d->regPixmap;
@@ -481,7 +489,7 @@ void RatingWidget::paintEvent(QPaintEvent*)
         for (int i = rate ; i < RatingMax ; ++i)
         {
             p.drawPixmap(x, 0, reg);
-            x += reg.width()+1;
+            x += d->width + 1;
         }
     }
 
