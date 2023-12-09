@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-08 00:40+0000\n"
-"PO-Revision-Date: 2023-12-03 17:53+0100\n"
+"POT-Creation-Date: 2023-12-09 00:39+0000\n"
+"PO-Revision-Date: 2023-12-07 10:53+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -2868,7 +2868,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2876,7 +2876,7 @@ msgstr "Précédente"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -41886,27 +41886,27 @@ msgid "Default from Desktop"
 msgstr "Par défaut selon le bureau"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pause/Lecture"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:268
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Capturer"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:278
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Une erreur est survenue avec le lecteur multimédia…"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Activer / Désactiver la lecture en boucle"
@@ -67926,7 +67926,7 @@ msgstr "Détection de visages"
 #: core/utilities/setup/downloader/filesdownloader.cpp:170
 #, kde-format
 msgid "Use Aesthetic Detection feature"
-msgstr ""
+msgstr "Utiliser la fonctionnalité de détection d'esthétique"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:171
 #, fuzzy, kde-format
@@ -68027,12 +68027,12 @@ msgstr ""
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
-msgstr ""
+msgstr "Le téléchargement nécessite %1 fichiers d’une taille de %2."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:601
 #, kde-format
 msgid "All files of the selected features were found."
-msgstr ""
+msgstr "Tous les fichiers des fonctionnalités sélectionnées ont été trouvés."
 
 #: core/utilities/setup/editor/setupeditor.cpp:70
 #, kde-format
@@ -69878,10 +69878,9 @@ msgid "Enable internal debug logging"
 msgstr "Activer une journalisation interne pour débogage"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:80
-#, fuzzy, kde-format
-#| msgid "Download Face Engine Data..."
+#, kde-format
 msgid "Download required binary data..."
-msgstr "Télécharger les données du moteur de reconnaissance faciale..."
+msgstr "Télécharger les données binaires requises..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
