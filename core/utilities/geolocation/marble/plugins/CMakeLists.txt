@@ -32,4 +32,4 @@ install(TARGETS ${_target_name}
 endmacro()
 
 add_subdirectory(render)
-#add_subdirectory(runner)
+add_subdirectory(runner)
