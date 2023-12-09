@@ -16,6 +16,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED
              Network
              NetworkAuth
              Svg
+             SvgWidgets
              Core5Compat
 )
 

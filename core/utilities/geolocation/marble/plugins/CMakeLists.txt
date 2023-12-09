@@ -8,7 +8,7 @@ macro(marble_add_plugin _target_name)
 
 add_library(${_target_name} MODULE ${ARGN})
 
-target_link_libraries(${_target_name} ${${_target_name}_LIBS}
+target_link_libraries(${_target_name}
 
                       PRIVATE
 
@@ -17,6 +17,8 @@ target_link_libraries(${_target_name} ${${_target_name}_LIBS}
                       Qt${QT_VERSION_MAJOR}::Core
                       Qt${QT_VERSION_MAJOR}::Gui
                       Qt${QT_VERSION_MAJOR}::Xml
+                      Qt${QT_VERSION_MAJOR}::Svg
+                      Qt${QT_VERSION_MAJOR}::SvgWidgets
                       Qt${QT_VERSION_MAJOR}::Widgets
                       Qt${QT_VERSION_MAJOR}::Network
 
