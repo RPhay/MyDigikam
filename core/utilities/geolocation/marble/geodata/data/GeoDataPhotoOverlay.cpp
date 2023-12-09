@@ -50,17 +50,18 @@ bool GeoDataPhotoOverlay::operator==(const GeoDataPhotoOverlay& other) const
 
 bool GeoDataPhotoOverlay::operator!=(const GeoDataPhotoOverlay& other) const
 {
-    return !this->operator==(other);
+    return (! this->operator == (other));
 }
 
 GeoDataFeature * GeoDataPhotoOverlay::clone() const
 {
-    return new GeoDataPhotoOverlay(*this);
+    return (new GeoDataPhotoOverlay(*this));
 }
 
-const char *GeoDataPhotoOverlay::nodeType() const
+const char* GeoDataPhotoOverlay::nodeType() const
 {
     Q_D(const GeoDataPhotoOverlay);
+    Q_UNUSED(d);
     return GeoDataTypes::GeoDataPhotoOverlayType;
 }
 
