@@ -43,7 +43,7 @@ BUGFIXES:
 030 ==> 452185 - Additional white dialog is displayed from Marble at start-up when Map view is selected.
 031 ==> 478127 - Empty info window.
 032 ==> 478062 - An empty window appears when using a geo tool.
-033 ==> 
+033 ==> 478298 - Please add button to filter on no stars.
 034 ==> 
 035 ==> 
 036 ==> 

@@ -210,6 +210,7 @@ public:
 
     explicit Private()
       : optionsBtn    (nullptr),
+        noRatingBtn   (nullptr),
         geCondAction  (nullptr),
         eqCondAction  (nullptr),
         leCondAction  (nullptr),
@@ -220,6 +221,7 @@ public:
     }
 
     QToolButton*        optionsBtn;
+    QToolButton*        noRatingBtn;
 
     QAction*            geCondAction;
     QAction*            eqCondAction;
@@ -236,6 +238,10 @@ RatingFilter::RatingFilter(QWidget* const parent)
       d    (new Private)
 {
     d->ratingWidget = new RatingFilterWidget(this);
+
+    d->noRatingBtn  = new QToolButton(this);
+    d->noRatingBtn->setToolTip( i18n("Items Without Rating"));
+    d->noRatingBtn->setIcon(QIcon::fromTheme(QLatin1String("rating-unrated")));
 
     d->optionsBtn   = new QToolButton(this);
     d->optionsBtn->setToolTip( i18n("Rating Filter Options"));
@@ -254,7 +260,8 @@ RatingFilter::RatingFilter(QWidget* const parent)
     d->excludeUnrated->setCheckable(true);
     d->optionsBtn->setMenu(d->optionsMenu);
 
-    layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter|Qt::AlignRight);
+    layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignRight);
+
     setContentsMargins(QMargins());
     setSpacing(0);
 
@@ -263,6 +270,9 @@ RatingFilter::RatingFilter(QWidget* const parent)
 
     connect(d->optionsMenu, SIGNAL(aboutToShow()),
             this, SLOT(slotOptionsMenu()));
+
+    connect(d->noRatingBtn, SIGNAL(released()),
+            this, SLOT(slotNoRatingReleased()));
 
     connect(d->ratingWidget, SIGNAL(signalRatingFilterChanged(int,ItemFilterSettings::RatingCondition,bool)),
             this, SIGNAL(signalRatingFilterChanged(int,ItemFilterSettings::RatingCondition,bool)));
@@ -345,6 +355,12 @@ void RatingFilter::slotOptionsTriggered(QAction* action)
     }
 }
 
+void RatingFilter::slotNoRatingReleased()
+{
+    setRating(0);
+    Q_EMIT signalRatingFilterChanged(0, ItemFilterSettings::LessEqualCondition, false);
+}
+
 void RatingFilter::setRating(int val)
 {
     d->ratingWidget->setRating(val);
@@ -353,6 +369,13 @@ void RatingFilter::setRating(int val)
 int RatingFilter::rating() const
 {
     return d->ratingWidget->rating();
+}
+
+void RatingFilter::reset()
+{
+    setRating(0);
+    setExcludeUnratedItems(false);
+    setRatingFilterCondition(ItemFilterSettings::GreaterEqualCondition);
 }
 
 } // namespace Digikam

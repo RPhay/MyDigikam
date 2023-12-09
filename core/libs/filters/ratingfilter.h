@@ -78,6 +78,8 @@ public:
     explicit RatingFilter(QWidget* const parent);
     ~RatingFilter() override;
 
+    void reset();
+
     void setRating(int val);
     int  rating() const;
 
@@ -94,6 +96,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotOptionsMenu();
+    void slotNoRatingReleased();
     void slotOptionsTriggered(QAction*);
 
 private:

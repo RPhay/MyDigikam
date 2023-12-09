@@ -365,9 +365,7 @@ void FilterSideBarWidget::slotResetFilters()
     d->withoutFaceCheckBox->setChecked(false);
     d->colorLabelFilter->reset();
     d->pickLabelFilter->reset();
-    d->ratingFilter->setRating(0);
-    d->ratingFilter->setRatingFilterCondition(ItemFilterSettings::GreaterEqualCondition);
-    d->ratingFilter->setExcludeUnratedItems(false);
+    d->ratingFilter->reset();
     d->tagMatchCond = ItemFilterSettings::OrCondition;
 }
 
