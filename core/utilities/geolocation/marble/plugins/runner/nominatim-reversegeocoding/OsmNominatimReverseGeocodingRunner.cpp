@@ -22,9 +22,9 @@
 namespace Marble
 {
 
-OsmNominatimRunner::OsmNominatimRunner( QObject* parent )
-    : ReverseGeocodingRunner( parent ),
-      m_manager(this)
+OsmNominatimRunner::OsmNominatimRunner(QObject* parent)
+    : ReverseGeocodingRunner(parent),
+      m_manager             (this)
 {
     connect(&m_manager, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(handleResult(QNetworkReply*)));
@@ -51,7 +51,9 @@ void OsmNominatimRunner::reverseGeocoding( const GeoDataCoordinates &coordinates
     QString url   = QString( base + query ).arg( lon ).arg( lat ).arg( MarbleLocale::languageCode() );
 
     m_request.setUrl(QUrl(url));
-    m_request.setRawHeader(QByteArray("User-Agent"), HttpDownloadManager::userAgent(QLatin1String("Browser"), QLatin1String("OsmNominatimRunner")) );
+    m_request.setRawHeader(QByteArray("User-Agent"),
+                           HttpDownloadManager::userAgent(QLatin1String("Browser"),
+                           QLatin1String("OsmNominatimRunner")) );
 
     QEventLoop eventLoop;
 
@@ -76,7 +78,7 @@ void OsmNominatimRunner::startReverseGeocoding()
 {
     QNetworkReply *reply = m_manager.get( m_request );
 
-    connect(reply, SIGNAL(error(QNetworkReply::NetworkError)),
+    connect(reply, SIGNAL(errorOccurred(QNetworkReply::NetworkError)),
             this, SLOT(returnNoReverseGeocodingResult()));
 }
 

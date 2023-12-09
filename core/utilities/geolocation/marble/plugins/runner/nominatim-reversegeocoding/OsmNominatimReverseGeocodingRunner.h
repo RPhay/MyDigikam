@@ -47,11 +47,11 @@ private:
 
     QNetworkAccessManager m_manager;
 
-    QNetworkRequest m_request;
+    QNetworkRequest       m_request;
 
-    GeoDataCoordinates m_coordinates;
+    GeoDataCoordinates    m_coordinates;
 };
 
-}
+} // namespace Marble
 
-#endif
+#endif // MARBLE_OSMNOMINATIMREVERSEGEOCODINGRUNNER_H
