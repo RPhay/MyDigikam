@@ -121,9 +121,6 @@ install (FILES
          maps/earth/plain/plain-preview.png
          DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth/plain)
 
-install (DIRECTORY maps/earth/behaim1492
-         DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth)
-
 install (DIRECTORY maps/earth/openstreetmap
          DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth)
 
@@ -164,33 +161,9 @@ install (FILES
          DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth/precip-dec)
 
 install (FILES
-         maps/earth/schagen1689/legend.html
-         maps/earth/schagen1689/schagen1689.jpg
-         maps/earth/schagen1689/schagen1689.dgml
-         maps/earth/schagen1689/schagen1689-preview.png
-         DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth/schagen1689)
-
-install (FILES
-         maps/earth/schagen1689/legend/mountain.png
-         maps/earth/schagen1689/legend/town.png
-         maps/earth/schagen1689/legend/river.png
-         maps/earth/schagen1689/legend/lake.png
-         maps/earth/schagen1689/legend/schagen_title.png
-         maps/earth/schagen1689/legend/schagen_orig.png
-         DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth/schagen1689/legend)
-
-install (FILES
          maps/earth/political/political-preview.png
          maps/earth/political/political.dgml
          DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/earth/political)
-
-install (FILES
-         maps/moon/clementine/clementine.jpg
-         maps/moon/clementine/clementine-preview.png
-         maps/moon/clementine/legend.html 
-         maps/moon/clementine/clementine.dgml
-         maps/moon/clementine/tour.kml
-         DESTINATION ${MARBLE_DATA_INSTALL_PATH}/maps/moon/clementine)
 
 macro( marble_add_project_resources resources )
     add_custom_target( ${PROJECT_NAME}_Resources ALL SOURCES ${ARGN} )
