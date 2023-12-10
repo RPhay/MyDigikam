@@ -19,7 +19,6 @@
 // Qt includes
 
 #include <QList>
-#include <QApplication>
 #include <QResizeEvent>
 #include <QMouseEvent>
 #include <QDateTime>
@@ -173,7 +172,7 @@ void MonthWidget::paintEvent(QPaintEvent*)
 {
     QRect cr(contentsRect());
 
-    double dpr = qApp->devicePixelRatio();
+    qreal dpr = devicePixelRatio();
 
     QPixmap pix(cr.width() * dpr, cr.height() * dpr);
     pix.setDevicePixelRatio(dpr);
