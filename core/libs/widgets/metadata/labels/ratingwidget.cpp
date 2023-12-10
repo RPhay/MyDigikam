@@ -375,7 +375,7 @@ void RatingWidget::mouseReleaseEvent(QMouseEvent* e)
 
 void RatingWidget::slotThemeChanged()
 {
-    double dpr = qApp->devicePixelRatio();
+    qreal dpr    = devicePixelRatio();
 
     d->regPixmap = QPixmap(d->width * dpr, d->width * dpr);
     d->regPixmap.fill(Qt::transparent);

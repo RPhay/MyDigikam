@@ -54,10 +54,10 @@ public:
     void sizeHasChanged();
     void clearCache();
 
-    QRectF boundingRect()                               const override;
+    QRectF boundingRect()                                       const override;
     void paint(QPainter* painter,
-                       const QStyleOptionGraphicsItem* option,
-                       QWidget* widget = nullptr)                     override;
+               const QStyleOptionGraphicsItem* option,
+               QWidget* widget)                                       override;
 
     virtual QString userLoadingHint()                           const
     {
