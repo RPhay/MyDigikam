@@ -139,8 +139,9 @@ void AnimatedClearButton::paintEvent(QPaintEvent* event)
 
     QPainter p(this);
     p.setOpacity(1); // make sure
-    p.drawPixmap((width()  - d->pixmap.width())  / 2,
-                 (height() - d->pixmap.height()) / 2,
+    qreal dpr = devicePixelRatio();
+    p.drawPixmap((width()  * dpr - d->pixmap.width())  / 2,
+                 (height() * dpr - d->pixmap.height()) / 2,
                  d->pixmap);
 }
 
