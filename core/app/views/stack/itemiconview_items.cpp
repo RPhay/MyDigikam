@@ -160,7 +160,7 @@ void ItemIconView::slotDispatchImageSelected()
 
     if (list.isEmpty())
     {
-        d->stackedview->setPreviewItem();
+        d->stackedView->setPreviewItem();
 
         Q_EMIT signalImageSelected(list, allImages);
         Q_EMIT signalNoCurrentItem();
@@ -189,7 +189,7 @@ void ItemIconView::slotDispatchImageSelected()
             (viewMode() != StackedView::TableViewMode)
            )
         {
-            d->stackedview->setPreviewItem(list.first(), previousInfo, nextInfo);
+            d->stackedView->setPreviewItem(list.first(), previousInfo, nextInfo);
         }
 
         Q_EMIT signalImageSelected(list, allImages);
@@ -215,7 +215,7 @@ void ItemIconView::slotRefreshImagePreview()
 {
     if (viewMode() == StackedView::PreviewImageMode)
     {
-        d->stackedview->imagePreviewView()->reload();
+        d->stackedView->imagePreviewView()->reload();
     }
 }
 
@@ -248,7 +248,7 @@ void ItemIconView::slotImageDelete()
 
             if (viewMode() == StackedView::MediaPlayerMode)
             {
-                d->stackedview->mediaPlayerView()->escapePreview();
+                d->stackedView->mediaPlayerView()->escapePreview();
             }
 
 #endif // HAVE_MEDIAPLAYER
@@ -274,7 +274,7 @@ void ItemIconView::slotImageDeletePermanently()
 
             if (viewMode() == StackedView::MediaPlayerMode)
             {
-                d->stackedview->mediaPlayerView()->escapePreview();
+                d->stackedView->mediaPlayerView()->escapePreview();
             }
 
 #endif // HAVE_MEDIAPLAYER
@@ -446,7 +446,7 @@ void ItemIconView::slotFocusAndNextImage()
 {
     // slot is called on pressing "return" a second time after assigning a tag
 
-    d->stackedview->currentWidget()->setFocus();
+    d->stackedView->currentWidget()->setFocus();
 
     // select next image, since the user is probably done tagging the current image
 

@@ -25,17 +25,17 @@ namespace Digikam
 
 double ItemIconView::zoomMin() const
 {
-    return d->stackedview->zoomMin();
+    return d->stackedView->zoomMin();
 }
 
 double ItemIconView::zoomMax() const
 {
-    return d->stackedview->zoomMax();
+    return d->stackedView->zoomMax();
 }
 
 void ItemIconView::setZoomFactor(double zoom)
 {
-    d->stackedview->setZoomFactorSnapped(zoom);
+    d->stackedView->setZoomFactorSnapped(zoom);
 }
 
 void ItemIconView::slotZoomFactorChanged(double zoom)
@@ -52,12 +52,12 @@ void ItemIconView::toggleZoomActions()
         d->parent->enableZoomMinusAction(true);
         d->parent->enableZoomPlusAction(true);
 
-        if (d->stackedview->maxZoom())
+        if (d->stackedView->maxZoom())
         {
             d->parent->enableZoomPlusAction(false);
         }
 
-        if (d->stackedview->minZoom())
+        if (d->stackedView->minZoom())
         {
             d->parent->enableZoomMinusAction(false);
         }
@@ -96,7 +96,7 @@ void ItemIconView::slotZoomIn()
     }
     else if (viewMode() == StackedView::PreviewImageMode)
     {
-        d->stackedview->increaseZoom();
+        d->stackedView->increaseZoom();
     }
 }
 
@@ -111,7 +111,7 @@ void ItemIconView::slotZoomOut()
     }
     else if (viewMode() == StackedView::PreviewImageMode)
     {
-        d->stackedview->decreaseZoom();
+        d->stackedView->decreaseZoom();
     }
 }
 
@@ -119,7 +119,7 @@ void ItemIconView::slotZoomTo100Percents()
 {
     if (viewMode() == StackedView::PreviewImageMode)
     {
-        d->stackedview->toggleFitToWindowOr100();
+        d->stackedView->toggleFitToWindowOr100();
     }
 }
 
@@ -139,7 +139,7 @@ void ItemIconView::slotFitToWindow()
     }
     else if (viewMode() == StackedView::PreviewImageMode)
     {
-        d->stackedview->fitToWindow();
+        d->stackedView->fitToWindow();
     }
 }
 

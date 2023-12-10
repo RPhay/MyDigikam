@@ -132,6 +132,7 @@ Q_SIGNALS:
     void signalGotoDateAndItem(const CamItemInfo&);
     void signalGotoTagAndItem(int);
 */
+
 public Q_SLOTS:
 
     void slotEscapePreview();

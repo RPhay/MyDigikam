@@ -146,7 +146,7 @@ public:
         utilities               (nullptr),
         albumManager            (nullptr),
         albumHistory            (nullptr),
-        stackedview             (nullptr),
+        stackedView             (nullptr),
         lastViewMode            (StackedView::IconViewMode),
         albumModificationHelper (nullptr),
         tagModificationHelper   (nullptr),
@@ -240,7 +240,7 @@ public:
     ItemViewUtilities*            utilities;
     AlbumManager*                 albumManager;
     AlbumHistory*                 albumHistory;
-    StackedView*                  stackedview;
+    StackedView*                  stackedView;
     StackedView::StackedViewMode  lastViewMode;
 
     AlbumModificationHelper*      albumModificationHelper;

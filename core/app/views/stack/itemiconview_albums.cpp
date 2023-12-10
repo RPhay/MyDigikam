@@ -190,7 +190,7 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
 
     if      (album->isRoot())
     {
-        d->stackedview->setViewMode(StackedView::WelcomePageMode);
+        d->stackedView->setViewMode(StackedView::WelcomePageMode);
     }
     else if (album->isTrashAlbum())
     {
@@ -201,7 +201,7 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
             slotTogglePreviewMode(ItemInfo());
             QUrl url = palbum->fileUrl().adjusted(QUrl::StripTrailingSlash);
             d->trashView->model()->loadItemsForCollection(url.toLocalFile());
-            d->stackedview->setViewMode(StackedView::TrashViewMode);
+            d->stackedView->setViewMode(StackedView::TrashViewMode);
             d->filterWidget->setEnabled(false);
         }
     }
@@ -423,13 +423,13 @@ void ItemIconView::slotRefresh()
     switch (viewMode())
     {
         case StackedView::PreviewImageMode:
-            d->stackedview->imagePreviewView()->reload();
+            d->stackedView->imagePreviewView()->reload();
             break;
 
 #ifdef HAVE_MEDIAPLAYER
 
         case StackedView::MediaPlayerMode:
-            d->stackedview->mediaPlayerView()->reload();
+            d->stackedView->mediaPlayerView()->reload();
             break;
 
 #endif // HAVE_MEDIAPLAYER

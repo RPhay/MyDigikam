@@ -471,14 +471,14 @@ void ImportView::slotDispatchImageSelected()
         CamItemInfo previousInfo;
         CamItemInfo nextInfo;
 
-        if (d->stackedView->viewMode() != ImportStackedView::MapWidgetMode)
+        if (viewMode() != ImportStackedView::MapWidgetMode)
         {
             previousInfo = d->iconView->previousInfo(list.first());
             nextInfo     = d->iconView->nextInfo(list.first());
         }
 
-        if ((d->stackedView->viewMode() != ImportStackedView::PreviewCameraMode) &&
-            (d->stackedView->viewMode() != ImportStackedView::MapWidgetMode))
+        if ((viewMode() != ImportStackedView::PreviewCameraMode) &&
+            (viewMode() != ImportStackedView::MapWidgetMode))
         {
             d->stackedView->setPreviewItem(list.first(), previousInfo, nextInfo);
         }
@@ -511,12 +511,12 @@ void ImportView::slotZoomFactorChanged(double zoom)
 
 void ImportView::setThumbSize(int size)
 {
-    if      (d->stackedView->viewMode() == ImportStackedView::PreviewImageMode)
+    if      (viewMode() == ImportStackedView::PreviewImageMode)
     {
         double z = DZoomBar::zoomFromSize(size, zoomMin(), zoomMax());
         setZoomFactor(z);
     }
-    else if (d->stackedView->viewMode() == ImportStackedView::PreviewCameraMode)
+    else if (viewMode() == ImportStackedView::PreviewCameraMode)
     {
         if      (size > ThumbnailSize::maxThumbsSize())
         {
@@ -552,7 +552,7 @@ void ImportView::slotThumbSizeEffect()
 
 void ImportView::toggleZoomActions()
 {
-    if      (d->stackedView->viewMode() == ImportStackedView::PreviewImageMode)
+    if      (viewMode() == ImportStackedView::PreviewImageMode)
     {
         d->parent->enableZoomMinusAction(true);
         d->parent->enableZoomPlusAction(true);
@@ -567,7 +567,7 @@ void ImportView::toggleZoomActions()
             d->parent->enableZoomMinusAction(false);
         }
     }
-    else if (d->stackedView->viewMode() == ImportStackedView::PreviewCameraMode)
+    else if (viewMode() == ImportStackedView::PreviewCameraMode)
     {
         d->parent->enableZoomMinusAction(true);
         d->parent->enableZoomPlusAction(true);
@@ -591,13 +591,13 @@ void ImportView::toggleZoomActions()
 
 void ImportView::slotZoomIn()
 {
-    if      (d->stackedView->viewMode() == ImportStackedView::PreviewCameraMode)
+    if      (viewMode() == ImportStackedView::PreviewCameraMode)
     {
         setThumbSize(d->thumbSize + ThumbnailSize::Step);
         toggleZoomActions();
         Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
-    else if (d->stackedView->viewMode() == ImportStackedView::PreviewImageMode)
+    else if (viewMode() == ImportStackedView::PreviewImageMode)
     {
         d->stackedView->increaseZoom();
     }
@@ -605,13 +605,13 @@ void ImportView::slotZoomIn()
 
 void ImportView::slotZoomOut()
 {
-    if      (d->stackedView->viewMode() == ImportStackedView::PreviewCameraMode)
+    if      (viewMode() == ImportStackedView::PreviewCameraMode)
     {
         setThumbSize(d->thumbSize - ThumbnailSize::Step);
         toggleZoomActions();
         Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
-    else if (d->stackedView->viewMode() == ImportStackedView::PreviewImageMode)
+    else if (viewMode() == ImportStackedView::PreviewImageMode)
     {
         d->stackedView->decreaseZoom();
     }
@@ -619,7 +619,7 @@ void ImportView::slotZoomOut()
 
 void ImportView::slotZoomTo100Percents()
 {
-    if (d->stackedView->viewMode() == ImportStackedView::PreviewImageMode)
+    if (viewMode() == ImportStackedView::PreviewImageMode)
     {
         d->stackedView->toggleFitToWindowOr100();
     }
@@ -627,14 +627,14 @@ void ImportView::slotZoomTo100Percents()
 
 void ImportView::slotFitToWindow()
 {
-    if      (d->stackedView->viewMode() == ImportStackedView::PreviewCameraMode)
+    if      (viewMode() == ImportStackedView::PreviewCameraMode)
     {
         int nts = d->iconView->fitToWidthIcons();
         setThumbSize(nts);
         toggleZoomActions();
         Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
-    else if (d->stackedView->viewMode() == ImportStackedView::PreviewImageMode)
+    else if (viewMode() == ImportStackedView::PreviewImageMode)
     {
         d->stackedView->fitToWindow();
     }
@@ -642,10 +642,10 @@ void ImportView::slotFitToWindow()
 
 void ImportView::slotEscapePreview()
 {
-    if (d->stackedView->viewMode() == ImportStackedView::PreviewCameraMode)
+    if (viewMode() == ImportStackedView::PreviewCameraMode)
 /*
         TODO
-        || d->stackedView->viewMode() == ImportStackedView::WelcomePageMode)
+        || viewMode() == ImportStackedView::WelcomePageMode)
 */
     {
         return;
@@ -664,7 +664,7 @@ void ImportView::slotMapWidgetView()
 
 void ImportView::slotIconView()
 {
-    if (d->stackedView->viewMode() == ImportStackedView::PreviewImageMode)
+    if (viewMode() == ImportStackedView::PreviewImageMode)
     {
         Q_EMIT signalThumbSizeChanged(d->iconView->thumbnailSize().size());
     }
@@ -680,7 +680,7 @@ void ImportView::slotIconView()
 
 void ImportView::slotImagePreview()
 {
-    const int   currentPreviewMode = d->stackedView->viewMode();
+    const int   currentPreviewMode = viewMode();
     CamItemInfo currentInfo;
 
     if      (currentPreviewMode == ImportStackedView::PreviewCameraMode)
@@ -711,11 +711,11 @@ void ImportView::slotTogglePreviewMode(const CamItemInfo& info, bool downloadPre
         return;
     }
 
-    if (((d->stackedView->viewMode() == ImportStackedView::PreviewCameraMode) ||
-         (d->stackedView->viewMode() == ImportStackedView::MapWidgetMode) || downloadPreview) &&
+    if (((viewMode() == ImportStackedView::PreviewCameraMode) ||
+         (viewMode() == ImportStackedView::MapWidgetMode) || downloadPreview) &&
          !info.isNull())
     {
-        d->lastViewMode      = d->stackedView->viewMode();
+        d->lastViewMode      = viewMode();
         CamItemInfo previous = CamItemInfo();
 
         if (!downloadPreview)
@@ -744,7 +744,7 @@ void ImportView::slotViewModeChanged()
 {
     toggleZoomActions();
 
-    switch (d->stackedView->viewMode())
+    switch (viewMode())
     {
         case ImportStackedView::PreviewCameraMode:
             Q_EMIT signalSwitchedToIconView();

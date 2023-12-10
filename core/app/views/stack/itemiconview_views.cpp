@@ -60,12 +60,12 @@ void ItemIconView::slotEscapePreview()
 
 void ItemIconView::slotMapWidgetView()
 {
-    d->stackedview->setViewMode(StackedView::MapWidgetMode);
+    d->stackedView->setViewMode(StackedView::MapWidgetMode);
 }
 
 void ItemIconView::slotTableView()
 {
-    d->stackedview->setViewMode(StackedView::TableViewMode);
+    d->stackedView->setViewMode(StackedView::TableViewMode);
 }
 
 void ItemIconView::slotIconView()
@@ -77,7 +77,7 @@ void ItemIconView::slotIconView()
 
     // and switch to icon view
 
-    d->stackedview->setViewMode(StackedView::IconViewMode);
+    d->stackedView->setViewMode(StackedView::IconViewMode);
 
     // make sure the next/previous buttons are updated
 
@@ -104,11 +104,11 @@ void ItemIconView::slotTogglePreviewMode(const ItemInfo& info)
 
             if (viewMode() == StackedView::IconViewMode)
             {
-                d->stackedview->setPreviewItem(info, d->iconView->previousInfo(info), d->iconView->nextInfo(info));
+                d->stackedView->setPreviewItem(info, d->iconView->previousInfo(info), d->iconView->nextInfo(info));
             }
             else
             {
-                d->stackedview->setPreviewItem(info, ItemInfo(), ItemInfo());
+                d->stackedView->setPreviewItem(info, ItemInfo(), ItemInfo());
             }
         }
         else
@@ -122,7 +122,7 @@ void ItemIconView::slotTogglePreviewMode(const ItemInfo& info)
     {
         // go back to either AlbumViewMode or MapWidgetMode
 
-        d->stackedview->setViewMode(d->lastViewMode);
+        d->stackedView->setViewMode(d->lastViewMode);
     }
 
     // make sure the next/previous buttons are updated
@@ -146,7 +146,7 @@ void ItemIconView::slotViewModeChanged()
         case StackedView::PreviewImageMode:
         {
             Q_EMIT signalSwitchedToPreview();
-            slotZoomFactorChanged(d->stackedview->zoomFactor());
+            slotZoomFactorChanged(d->stackedView->zoomFactor());
             break;
         }
 
@@ -189,16 +189,16 @@ void ItemIconView::slotViewModeChanged()
 
 void ItemIconView::toggleShowBar(bool b)
 {
-    d->stackedview->thumbBarDock()->showThumbBar(b);
+    d->stackedView->thumbBarDock()->showThumbBar(b);
 
     // See bug #319876 : force to reload current view mode to set thumbbar visibility properly.
 
-    d->stackedview->setViewMode(viewMode());
+    d->stackedView->setViewMode(viewMode());
 }
 
 StackedView::StackedViewMode ItemIconView::viewMode() const
 {
-    return d->stackedview->viewMode();
+    return d->stackedView->viewMode();
 }
 
 void ItemIconView::slotSetupMetadataFilters(int tab)
@@ -213,7 +213,7 @@ void ItemIconView::slotSetupExifTool()
 
 void ItemIconView::toggleFullScreen(bool set)
 {
-    d->stackedview->imagePreviewView()->toggleFullScreen(set);
+    d->stackedView->imagePreviewView()->toggleFullScreen(set);
 }
 
 void ItemIconView::setToolsIconView(DCategorizedView* const view)

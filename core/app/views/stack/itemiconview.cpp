@@ -64,30 +64,30 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     connect(d->leftSideBar, SIGNAL(signalChangedTab(QWidget*)),
             d->errorWidget, SLOT(animatedHide()));
 
-    d->stackedview = new StackedView(vbox);
+    d->stackedView = new StackedView(vbox);
 
     d->dockArea->setCentralWidget(vbox);
-    d->stackedview->setDockArea(d->dockArea);
+    d->stackedView->setDockArea(d->dockArea);
 
-    d->iconView  = d->stackedview->imageIconView();
+    d->iconView  = d->stackedView->imageIconView();
 
 #ifdef HAVE_MARBLE
 
-    d->mapView   = d->stackedview->mapWidgetView();
+    d->mapView   = d->stackedView->mapWidgetView();
 
 #endif // HAVE_MARBLE
 
-    d->tableView = d->stackedview->tableView();
-    d->trashView = d->stackedview->trashView();
+    d->tableView = d->stackedView->tableView();
+    d->trashView = d->stackedView->trashView();
 
     d->utilities = d->iconView->utilities();
 
-    d->addPageUpDownActions(this, d->stackedview->imagePreviewView());
-    d->addPageUpDownActions(this, d->stackedview->thumbBar());
+    d->addPageUpDownActions(this, d->stackedView->imagePreviewView());
+    d->addPageUpDownActions(this, d->stackedView->thumbBar());
 
 #ifdef HAVE_MEDIAPLAYER
 
-    d->addPageUpDownActions(this, d->stackedview->mediaPlayerView());
+    d->addPageUpDownActions(this, d->stackedView->mediaPlayerView());
 
 #endif // HAVE_MEDIAPLAYER
 
@@ -263,7 +263,7 @@ void ItemIconView::setupConnections()
             this, SLOT(slotEscapePreview()));
 
     connect(d->parent, SIGNAL(signalEscapePressed()),
-            d->stackedview, SLOT(slotEscapePreview()));
+            d->stackedView, SLOT(slotEscapePreview()));
 
     connect(d->parent, SIGNAL(signalNextItem()),
             this, SLOT(slotNextItem()));
@@ -415,37 +415,37 @@ void ItemIconView::setupConnections()
 
     // -- Preview image widget Connections ------------------------
 
-    connect(d->stackedview, SIGNAL(signalNextItem()),
+    connect(d->stackedView, SIGNAL(signalNextItem()),
             this, SLOT(slotNextItem()));
 
-    connect(d->stackedview, SIGNAL(signalPrevItem()),
+    connect(d->stackedView, SIGNAL(signalPrevItem()),
             this, SLOT(slotPrevItem()));
 
-    connect(d->stackedview, SIGNAL(signalDeleteItem()),
+    connect(d->stackedView, SIGNAL(signalDeleteItem()),
             this, SLOT(slotImageDelete()));
 
-    connect(d->stackedview, SIGNAL(signalViewModeChanged()),
+    connect(d->stackedView, SIGNAL(signalViewModeChanged()),
             this, SLOT(slotViewModeChanged()));
 
-    connect(d->stackedview, SIGNAL(signalEscapePreview()),
+    connect(d->stackedView, SIGNAL(signalEscapePreview()),
             this, SLOT(slotEscapePreview()));
 
-    connect(d->stackedview, SIGNAL(signalZoomFactorChanged(double)),
+    connect(d->stackedView, SIGNAL(signalZoomFactorChanged(double)),
             this, SLOT(slotZoomFactorChanged(double)));
 
-    connect(d->stackedview, SIGNAL(signalAddToExistingQueue(int)),
+    connect(d->stackedView, SIGNAL(signalAddToExistingQueue(int)),
             this, SLOT(slotImageAddToExistingQueue(int)));
 
-    connect(d->stackedview, SIGNAL(signalGotoAlbumAndItem(ItemInfo)),
+    connect(d->stackedView, SIGNAL(signalGotoAlbumAndItem(ItemInfo)),
             this, SLOT(slotGotoAlbumAndItem(ItemInfo)));
 
-    connect(d->stackedview, SIGNAL(signalGotoDateAndItem(ItemInfo)),
+    connect(d->stackedView, SIGNAL(signalGotoDateAndItem(ItemInfo)),
             this, SLOT(slotGotoDateAndItem(ItemInfo)));
 
-    connect(d->stackedview, SIGNAL(signalGotoTagAndItem(int)),
+    connect(d->stackedView, SIGNAL(signalGotoTagAndItem(int)),
             this, SLOT(slotGotoTagAndItem(int)));
 
-    connect(d->stackedview, SIGNAL(signalPopupTagsView()),
+    connect(d->stackedView, SIGNAL(signalPopupTagsView()),
             d->rightSideBar, SLOT(slotPopupTagsView()));
 
     // -- FileActionMngr progress ---------------
@@ -559,7 +559,7 @@ void ItemIconView::saveViewState()
     // (when the user is in image preview mode) when the layout is saved, it
     // also reappears when restoring the view, while it should always be hidden.
 
-    d->stackedview->thumbBarDock()->close();
+    d->stackedView->thumbBarDock()->close();
     group.writeEntry(QLatin1String("ThumbbarState"), d->dockArea->saveState().toBase64());
 
     QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
