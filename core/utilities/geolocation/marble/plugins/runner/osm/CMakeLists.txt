@@ -18,6 +18,7 @@ if(Protobuf_FOUND AND Protobuf_PROTOC_EXECUTABLE)
                           pbf/osmformat.proto
     )
 
+    set(OsmPlugin_ExtraLibs ${Protobuf_LIBRARIES})
     add_definitions(-DHAVE_PROTOBUF)
 
     if(MSVC)
@@ -58,5 +59,5 @@ set(osm_SRCS
 
 marble_add_plugin(NAME    OsmPlugin
                   SOURCES ${osm_SRCS}
-                  DEPENDS ${Protobuf_LIBRARIES}
+                  DEPENDS ${OsmPlugin_ExtraLibs}
 )
