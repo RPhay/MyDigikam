@@ -141,10 +141,6 @@ Q_SIGNALS:
     void signalGotoDateAndItem(const ItemInfo&);
     void signalGotoTagAndItem(int);
 
-public Q_SLOTS:
-
-    void slotEscapePreview();
-
 private Q_SLOTS:
 
     void slotPreviewLoaded(bool);

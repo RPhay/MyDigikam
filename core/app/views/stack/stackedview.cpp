@@ -271,20 +271,6 @@ ItemThumbnailBar* StackedView::thumbBar() const
     return d->thumbBar;
 }
 
-void StackedView::slotEscapePreview()
-{
-
-#ifdef HAVE_MEDIAPLAYER
-
-    if (viewMode() == MediaPlayerMode)
-    {
-        d->mediaPlayerView->escapePreview();
-    }
-
-#endif //HAVE_MEDIAPLAYER
-
-}
-
 DigikamItemView* StackedView::imageIconView() const
 {
     return d->imageIconView;
@@ -418,6 +404,15 @@ StackedView::StackedViewMode StackedView::viewMode() const
 void StackedView::setViewMode(const StackedViewMode mode)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Stacked View Mode : " << mode;
+
+#ifdef HAVE_MEDIAPLAYER
+
+    if (viewMode() == MediaPlayerMode)
+    {
+        d->mediaPlayerView->escapePreview();
+    }
+
+#endif // HAVE_MEDIAPLAYER
 
     if ((mode < StackedViewModeFirst) || (mode > StackedViewModeLast))
     {

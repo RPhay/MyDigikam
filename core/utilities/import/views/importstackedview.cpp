@@ -242,20 +242,6 @@ ImportThumbnailBar* ImportStackedView::thumbBar() const
     return d->thumbBar;
 }
 
-void ImportStackedView::slotEscapePreview()
-{
-
-#ifdef HAVE_MEDIAPLAYER
-
-    if (viewMode() == MediaPlayerMode)
-    {
-        d->mediaPlayerView->escapePreview();
-    }
-
-#endif //HAVE_MEDIAPLAYER
-
-}
-
 ImportIconView* ImportStackedView::importIconView() const
 {
     return d->importIconView;
@@ -374,6 +360,16 @@ ImportStackedView::StackedViewMode ImportStackedView::viewMode() const
 
 void ImportStackedView::setViewMode(const StackedViewMode mode)
 {
+
+#ifdef HAVE_MEDIAPLAYER
+
+    if (viewMode() == MediaPlayerMode)
+    {
+        d->mediaPlayerView->escapePreview();
+    }
+
+#endif // HAVE_MEDIAPLAYER
+
     if ((mode != PreviewCameraMode) && (mode != PreviewImageMode) &&
         (mode != MediaPlayerMode)   && (mode != MapWidgetMode))
     {

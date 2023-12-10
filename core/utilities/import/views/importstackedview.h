@@ -133,10 +133,6 @@ Q_SIGNALS:
     void signalGotoTagAndItem(int);
 */
 
-public Q_SLOTS:
-
-    void slotEscapePreview();
-
 private Q_SLOTS:
 
     void slotPreviewLoaded(bool);

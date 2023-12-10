@@ -262,9 +262,6 @@ void ItemIconView::setupConnections()
     connect(d->parent, SIGNAL(signalEscapePressed()),
             this, SLOT(slotEscapePreview()));
 
-    connect(d->parent, SIGNAL(signalEscapePressed()),
-            d->stackedView, SLOT(slotEscapePreview()));
-
     connect(d->parent, SIGNAL(signalNextItem()),
             this, SLOT(slotNextItem()));
 

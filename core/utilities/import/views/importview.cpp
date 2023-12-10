@@ -197,9 +197,6 @@ void ImportView::setupConnections()
     connect(d->parent, SIGNAL(signalEscapePressed()),
             this, SLOT(slotEscapePreview()));
 
-    connect(d->parent, SIGNAL(signalEscapePressed()),
-            d->stackedView, SLOT(slotEscapePreview()));
-
     // Preview items while download.
 
     connect(d->parent, SIGNAL(signalPreviewRequested(CamItemInfo,bool)),

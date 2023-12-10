@@ -501,8 +501,6 @@ void MediaPlayerView::slotThemeChanged()
 
 void MediaPlayerView::slotEscapePressed()
 {
-    escapePreview();
-
     Q_EMIT signalEscapePreview();
 }
 
