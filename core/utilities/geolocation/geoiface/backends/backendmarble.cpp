@@ -366,9 +366,10 @@ void BackendMarble::createActions()
             this, &BackendMarble::slotMapThemeActionTriggered);
 
     QList<QPair<QString, QString>> mainThemes;
-    mainThemes.append({i18n("Atlas map"), QLatin1String("earth/srtm/srtm.dgml")});
-    mainThemes.append({i18n("Satellite map"), QLatin1String("earth/bluemarble/bluemarble.dgml")});
-    mainThemes.append({i18n("OpenStreetMap"), QLatin1String("earth/openstreetmap/openstreetmap.dgml")});
+    mainThemes.append( { i18n("Atlas map"),              QLatin1String("earth/srtm/srtm.dgml")                   } );
+    mainThemes.append( { i18n("Satellite map"),          QLatin1String("earth/bluemarble/bluemarble.dgml")       } );
+    mainThemes.append( { i18n("OpenStreetMap"),          QLatin1String("earth/openstreetmap/openstreetmap.dgml") } );
+    mainThemes.append( { i18n("OpenStreetMap (Vector)"), QLatin1String("earth/vectorosm/vectorosm.dgml")         } );
 
     for (auto& theme : mainThemes)
     {
