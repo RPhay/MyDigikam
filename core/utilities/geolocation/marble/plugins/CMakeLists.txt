@@ -84,22 +84,6 @@ macro(marble_add_plugin)
             DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/marble
     )
 
-    # Install debug symbols
-
-    if(MSVC)
-        install(FILES "$<TARGET_PDB_FILE:${_parse_results_NAME}"
-                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/marble
-                CONFIGURATIONS Debug RelWithDebInfo
-        )
-    endif()
-
-    if(APPLE)
-        install(FILES "$<TARGET_FILE:${_parse_results_NAME}>.dSYM"
-                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/marble
-                CONFIGURATIONS Debug RelWithDebInfo
-        )
-    endif()
-
 endmacro()
 
 add_subdirectory(render)
