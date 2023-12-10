@@ -8,8 +8,8 @@ APPLY_COMMON_POLICIES()
 
 find_package(ZLIB)
 
-find_package(Protobuf)
-set_package_properties(Protobuf PROPERTIES TYPE OPTIONAL PURPOSE "Parsing of OSM PBF files.")
+#find_package(Protobuf)
+#set_package_properties(Protobuf PROPERTIES TYPE OPTIONAL PURPOSE "Parsing of OSM PBF files.")
 
 if(Protobuf_FOUND AND Protobuf_PROTOC_EXECUTABLE)
 
