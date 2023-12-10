@@ -8,24 +8,24 @@ APPLY_COMMON_POLICIES()
 
 #find_package(Protobuf)
 #set_package_properties(Protobuf PROPERTIES TYPE OPTIONAL PURPOSE "Parsing of OSM PBF files.")
-
-if(Protobuf_FOUND AND Protobuf_PROTOC_EXECUTABLE)
-
-    include_directories(${Protobuf_INCLUDE_DIRS})
-
-    PROTOBUF_GENERATE_CPP(pbf_srcs pbf_hdrs
-                          pbf/fileformat.proto
-                          pbf/osmformat.proto
-    )
-
-    set(OsmPlugin_ExtraLibs ${Protobuf_LIBRARIES})
-    add_definitions(-DHAVE_PROTOBUF)
-
-    if(MSVC)
-        add_definitions(-DPROTOBUF_USE_DLLS)
-    endif()
-
-endif()
+#
+#if(Protobuf_FOUND AND Protobuf_PROTOC_EXECUTABLE)
+#
+#    include_directories(${Protobuf_INCLUDE_DIRS})
+#
+#    PROTOBUF_GENERATE_CPP(pbf_srcs pbf_hdrs
+#                          pbf/fileformat.proto
+#                          pbf/osmformat.proto
+#    )
+#
+#    set(OsmPlugin_ExtraLibs ${Protobuf_LIBRARIES})
+#    add_definitions(-DHAVE_PROTOBUF)
+#
+#    if(MSVC)
+#        add_definitions(-DPROTOBUF_USE_DLLS)
+#    endif()
+#
+#endif()
 
 set(osm_writers_SRCS
     writers/OsmObjectAttributeWriter.cpp
@@ -59,5 +59,5 @@ set(osm_SRCS
 
 marble_add_plugin(NAME    OsmPlugin
                   SOURCES ${osm_SRCS}
-                  DEPENDS ${OsmPlugin_ExtraLibs}
+#                  DEPENDS ${OsmPlugin_ExtraLibs}
 )
