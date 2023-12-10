@@ -20,8 +20,8 @@
 #include "GeoDataPlacemark.h"
 #include "GeoDataLinearRing.h"
 #include "GeoDataTypes.h"
-#include "osm/OsmPlacemarkData.h"
-#include "osm/OsmObjectManager.h"
+#include "OsmPlacemarkData.h"
+#include "OsmObjectManager.h"
 #include "OsmRelationTagWriter.h"
 #include "OsmConverter.h"
 
@@ -30,8 +30,8 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerDocument( GeoTagWriter::QualifiedName( GeoDataTypes::GeoDataDocumentType,
-                                                                            osm::osmTag_version06 ),
+static GeoTagWriterRegistrar s_writerDocument( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataDocumentType),
+                                                                            QString::fromUtf8(osm::osmTag_version06) ),
                                                new OsmDocumentTagTranslator() );
 
 

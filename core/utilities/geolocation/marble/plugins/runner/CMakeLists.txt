@@ -5,4 +5,4 @@
 #
 
 add_subdirectory(nominatim-reversegeocoding)
-#add_subdirectory(osm)
+add_subdirectory(osm)

@@ -4,6 +4,7 @@
     SPDX-License-Identifier: GPL-3.0-or-later
 */
 
+syntax = "proto2";
 option optimize_for = LITE_RUNTIME;
 option java_package = "crosby.binary";
 package OSMPBF;

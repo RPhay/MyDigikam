@@ -11,12 +11,13 @@
 #include "OsmObjectAttributeWriter.h"
 #include "OsmTagTagWriter.h"
 #include "GeoDataLineString.h"
+#include "GeoDataLinearRing.h"
 #include "GeoDataPolygon.h"
 #include "GeoDataCoordinates.h"
 #include "GeoDataPlacemark.h"
 #include "GeoWriter.h"
-#include "osm/OsmPlacemarkData.h"
-#include "osm/OsmObjectManager.h"
+#include "OsmPlacemarkData.h"
+#include "OsmObjectManager.h"
 
 namespace Marble
 {
@@ -24,20 +25,23 @@ namespace Marble
 void OsmRelationTagWriter::writeMultipolygon( const GeoDataPolygon& polygon,
                                               const OsmPlacemarkData& osmData, GeoWriter& writer )
 {
-    writer.writeStartElement( osm::osmTag_relation );
+    writer.writeStartElement( QString::fromUtf8(osm::osmTag_relation) );
 
     OsmObjectAttributeWriter::writeAttributes( osmData, writer );
     OsmTagTagWriter::writeTags( osmData, writer );
 
-    writer.writeStartElement( osm::osmTag_member );
+    writer.writeStartElement( QString::fromUtf8(osm::osmTag_member) );
     QString memberId = QString::number( osmData.memberReference( -1 ).id() );
     writer.writeAttribute( "type", "way" );
     writer.writeAttribute( "ref", memberId );
     writer.writeAttribute( "role", "outer" );
     writer.writeEndElement();
 
-    for ( int index = 0; index < polygon.innerBoundaries().size(); ++index ) {
-        writer.writeStartElement( osm::osmTag_member );
+    qsizetype size = polygon.innerBoundaries().size();
+
+    for (int index = 0 ; index < size ; ++index )
+    {
+        writer.writeStartElement( QString::fromUtf8(osm::osmTag_member) );
         QString memberId = QString::number( osmData.memberReference( index ).id() );
         writer.writeAttribute( "type", "way" );
         writer.writeAttribute( "ref", memberId );

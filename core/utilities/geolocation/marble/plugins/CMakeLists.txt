@@ -64,6 +64,8 @@ macro(marble_add_plugin)
 
                           KF${QT_VERSION_MAJOR}::I18n
 
+                          PNG::PNG                          # For zlib
+
                           ${_parse_results_DEPENDS}
                           ${_extra_deps}
     )
