@@ -16,7 +16,6 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED
              Network
              NetworkAuth
              Svg
-             SvgWidgets
              Core5Compat
 )
 
@@ -49,6 +48,11 @@ if(Qt6_FOUND)
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED
                  NO_MODULE COMPONENTS
                  StateMachine
+    )
+
+    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
+                 NO_MODULE COMPONENTS
+                 SvgWidgets                     # For Marble
     )
 
     find_package(Qt${QT_VERSION_MAJOR}
