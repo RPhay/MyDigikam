@@ -16,7 +16,6 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED
              Network
              NetworkAuth
              Svg
-             Core5Compat
 )
 
 if(ENABLE_QWEBENGINE)
@@ -48,11 +47,8 @@ if(Qt6_FOUND)
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED
                  NO_MODULE COMPONENTS
                  StateMachine
-    )
-
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                 NO_MODULE COMPONENTS
                  SvgWidgets                     # For Marble
+                 Core5Compat
     )
 
     find_package(Qt${QT_VERSION_MAJOR}
