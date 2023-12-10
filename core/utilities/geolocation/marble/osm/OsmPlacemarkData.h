@@ -73,7 +73,7 @@ class DIGIKAM_EXPORT OsmPlacemarkData: public GeoNode
 public:
 
     OsmPlacemarkData();
-	virtual ~OsmPlacemarkData();
+    virtual ~OsmPlacemarkData();
 
     qint64 id() const;
     qint64 oid() const;
@@ -206,10 +206,10 @@ public:
      */
     static OsmPlacemarkData fromParserAttributes( const QXmlStreamAttributes &attributes );
 
-	/**
-	 * Return the insternal instance of the hash-table functions container.
-	 */
-	OsmPlacemarkDataHashRef* hRef() const;
+    /**
+     * Return the insternal instance of the hash-table functions container.
+     */
+    OsmPlacemarkDataHashRef* hRef() const;
 
 private:
 
@@ -224,10 +224,10 @@ private:
      */
     QHash<OsmIdentifier, QString> m_relationReferences;
 
-	/**
-	 * Store the insternal instance of the hash-table functions container.
-	 */
-	QSharedPointer<OsmPlacemarkDataHashRef> m_href;
+    /**
+     * Store the insternal instance of the hash-table functions container.
+     */
+    QSharedPointer<OsmPlacemarkDataHashRef> m_href;
 };
 
 /**

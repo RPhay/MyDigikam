@@ -4,11 +4,14 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-set( compass_SRCS CompassFloatItem.cpp )
-set( compass_UI CompassConfigWidget.ui )
+APPLY_COMMON_POLICIES()
 
-qt_wrap_ui( compass_SRCS ${compass_UI} )
+set(compass_SRCS CompassFloatItem.cpp)
+set(compass_UI CompassConfigWidget.ui)
 
-qt_add_resources( compass_SRCS compass.qrc )
+qt_wrap_ui(compass_SRCS ${compass_UI})
 
-marble_add_plugin( CompassFloatItem ${compass_SRCS} )
+qt_add_resources(compass_SRCS compass.qrc)
+
+marble_add_plugin(NAME    CompassFloatItem
+                  SOURCES ${compass_SRCS})

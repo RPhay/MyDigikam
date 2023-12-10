@@ -4,9 +4,12 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-set( overviewmap_SRCS OverviewMap.cpp )
-set( overviewmap_UI OverviewMapConfigWidget.ui )
+APPLY_COMMON_POLICIES()
+
+set(overviewmap_SRCS OverviewMap.cpp)
+set(overviewmap_UI OverviewMapConfigWidget.ui)
 
 qt_wrap_ui(overviewmap_SRCS ${overviewmap_UI})
 
-marble_add_plugin( OverviewMap ${overviewmap_SRCS} )
+marble_add_plugin(NAME    OverviewMap
+                  SOURCES ${overviewmap_SRCS})

@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-set( nominatim_SRCS OsmNominatimReverseGeocodingRunner.cpp NominatimReverseGeocodingPlugin.cpp )
+APPLY_COMMON_POLICIES()
 
-marble_add_plugin( NominatimReverseGeocodingPlugin ${nominatim_SRCS} )
+set(nominatim_SRCS OsmNominatimReverseGeocodingRunner.cpp NominatimReverseGeocodingPlugin.cpp)
+
+marble_add_plugin(NAME    NominatimReverseGeocodingPlugin
+                  SOURCES ${nominatim_SRCS})
