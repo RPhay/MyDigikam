@@ -45,7 +45,7 @@ BUGFIXES:
 032 ==> 478062 - An empty window appears when using a geo tool.
 033 ==> 478298 - Please add button to filter on no stars.
 034 ==> 478252 - Impossible actions on video file that has just been played (renaming, moving).
-035 ==> 
+035 ==> 441052 - Missing data using reverse geocoding for specific addresses, subsequent crash.
 036 ==> 
 037 ==> 
 038 ==> 
