@@ -10,6 +10,7 @@
 #include <QHash>
 #include <QMetaType>
 #include <QString>
+#include <QScopedPointer>
 
 // Marble
 #include "GeoDataCoordinates.h"
@@ -226,7 +227,7 @@ private:
 	/**
 	 * Store the insternal instance of the hash-table functions container.
 	 */
-	OsmPlacemarkDataHashRef* m_href = nullptr;
+	QSharedPointer<OsmPlacemarkDataHashRef> m_href;
 };
 
 /**

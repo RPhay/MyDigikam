@@ -28,12 +28,12 @@ OsmPlacemarkData::OsmPlacemarkData():
 
 OsmPlacemarkData::~OsmPlacemarkData()
 {
-	delete m_href;
+	// nothing to do
 }
 
 OsmPlacemarkDataHashRef* OsmPlacemarkData::hRef() const
 {
-	return m_href;
+	return m_href.data();
 }
 
 qint64 OsmPlacemarkData::id() const
