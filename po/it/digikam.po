@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-09 00:39+0000\n"
+"POT-Creation-Date: 2023-12-10 00:40+0000\n"
 "PO-Revision-Date: 2023-12-05 13:09+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -3909,10 +3909,12 @@ msgstr "Bianco"
 msgid "File properties"
 msgstr "Proprietà del file"
 
+#. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
 msgstr "Nome del file"
@@ -3974,12 +3976,10 @@ msgstr "Geolocalizzato"
 msgid "Coordinates"
 msgstr "Coordinate"
 
-#. i18n: ectx: property (text), widget (QLabel, Altitude)
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:57
 #, kde-format
 msgid "Altitude"
 msgstr "Altitudine"
@@ -11579,10 +11579,8 @@ msgstr "Latitudine"
 msgid "Longitude"
 msgstr "Longitudine"
 
-#. i18n: ectx: property (text), widget (QLabel, Speed)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:29
 #, kde-format
 msgid "Speed"
 msgstr "Velocità"
@@ -16196,9 +16194,11 @@ msgid "Create Template for Calendar"
 msgstr "Crea modello per il calendario"
 
 #. i18n: ectx: property (title), widget (QGroupBox, previewGroupBox)
+#. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
 #: core/libs/video/qtav/config/MiscPage.cpp:48
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
 msgstr "Anteprima"
@@ -35242,27 +35242,33 @@ msgstr "Valutazione uguale a %1."
 msgid "Rating less than or equal to %1."
 msgstr "Valutazione minore o uguale a %1."
 
-#: core/libs/filters/ratingfilter.cpp:241
+#: core/libs/filters/ratingfilter.cpp:244
+#, fuzzy, kde-format
+#| msgid "Exclude Items Without Rating"
+msgid "Items Without Rating"
+msgstr "Escludi gli elementi senza valutazione"
+
+#: core/libs/filters/ratingfilter.cpp:248
 #, kde-format
 msgid "Rating Filter Options"
 msgstr "Opzioni del filtro valutazioni"
 
-#: core/libs/filters/ratingfilter.cpp:246
+#: core/libs/filters/ratingfilter.cpp:253
 #, kde-format
 msgid "Greater Than or Equals Condition"
 msgstr "Condizione di maggiore o uguale"
 
-#: core/libs/filters/ratingfilter.cpp:248
+#: core/libs/filters/ratingfilter.cpp:255
 #, kde-format
 msgid "Equals Condition"
 msgstr "Condizione di uguaglianza"
 
-#: core/libs/filters/ratingfilter.cpp:250
+#: core/libs/filters/ratingfilter.cpp:257
 #, kde-format
 msgid "Less Than or Equals Condition"
 msgstr "Condizione di minore o uguale"
 
-#: core/libs/filters/ratingfilter.cpp:253
+#: core/libs/filters/ratingfilter.cpp:260
 #, kde-format
 msgid "Exclude Items Without Rating"
 msgstr "Escludi gli elementi senza valutazione"
@@ -44977,7 +44983,7 @@ msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Preleva"
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:574
+#: core/libs/widgets/metadata/labels/ratingwidget.cpp:582
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
@@ -54653,6 +54659,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, configureButton)
 #: core/utilities/geolocation/marble/AbstractFloatItem.cpp:252
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:378
 #: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:32
 #, fuzzy, kde-format
 #| msgid "Configure..."
@@ -54710,8 +54717,10 @@ msgstr "Aggiungi ancora"
 msgid "Name:"
 msgstr "Nome:"
 
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/BookmarkManager.cpp:55
 #: core/utilities/geolocation/marble/BookmarkManager.cpp:247
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
 #, fuzzy, kde-format
 #| msgctxt "@option: default Tesseract mode"
 #| msgid "Default"
@@ -59671,75 +59680,263 @@ msgstr "Titolo sconosciuto"
 msgid "Configure"
 msgstr "Configura"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:52
+#. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
 #, fuzzy, kde-format
-#| msgid "Info"
-msgid "GpsInfo"
-msgstr "Informazioni"
+#| msgid "Configure this column"
+msgid "Configure Compass Plugin"
+msgstr "Configura questa colonna"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:57
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
 #, fuzzy, kde-format
-#| msgid "Info"
-msgid "&GpsInfo"
-msgstr "Informazioni"
+#| msgid "&Themes"
+msgid "Theme"
+msgstr "&Temi"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:72
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:52
+#, fuzzy, kde-format
+#| msgid "Browse"
+msgid "Arrows"
+msgstr "Sfoglia"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:61
+#, kde-format
+msgid "Atom"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:70
+#, kde-format
+msgid "Magnet"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:58
+#, fuzzy, kde-format
+#| msgid "Show compass"
+msgid "Compass"
+msgstr "Mostra bussola"
+
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:63
+#, fuzzy, kde-format
+#| msgid "Show compass"
+msgid "&Compass"
+msgstr "Mostra bussola"
+
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "This item has geolocation information."
-msgid "This is a float item that provides Gps Information."
+msgid "This is a float item that provides a compass."
 msgstr "Questo elemento possiede informazioni di geolocalizzazione."
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:131
-#, kde-format
-msgid "mph"
-msgstr ""
-
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:133
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:41
+#. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
 #, fuzzy, kde-format
-#| msgctxt "@action: rotate image left"
-#| msgid "Left"
-msgid "ft"
-msgstr "Sinistra"
+#| msgid "<b>Configure Raw File Handling</b>"
+msgid "Configure Scale Bar Plugin"
+msgstr "<b>Configura la gestione dei file RAW</b>"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:140
+#. i18n: ectx: property (text), widget (QCheckBox, m_showRatioScaleCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:20
+#, fuzzy, kde-format
+#| msgid "Show image title"
+msgid "Show Ratio Scale"
+msgstr "Mostra il titolo dell'immagine"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:30
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:52
 #, kde-format
-msgid "km/h"
+msgid "Minimize"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:142
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:69
+#, fuzzy, kde-format
+#| msgid "Show scale bar"
+msgid "Scale Bar"
+msgstr "Mostra barra della scala"
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Scale to:"
+msgid "&Scale Bar"
+msgstr "Ri&dimensiona a:"
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "This item has geolocation information."
+msgid "This is a float item that provides a map scale."
+msgstr "Questo elemento possiede informazioni di geolocalizzazione."
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
+#, fuzzy, kde-format
+#| msgid "Original Colors:"
+msgid "Original Developer"
+msgstr "Colori originali:"
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:240
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:244
+#: core/utilities/geolocation/marble/RoutingRunner.cpp:47
+#, kde-format
+msgid "km"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:248
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:31
 #, fuzzy, kde-format
 #| msgid "cm"
 msgid "m"
 msgstr "cm"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:147
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:253
+#: core/utilities/geolocation/marble/RoutingRunner.cpp:36
 #, kde-format
-msgid "kt"
+msgid "mi"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:149
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:264
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:59
 #, kde-format
 msgid "nm"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, Direction)
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:43
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:384
 #, fuzzy, kde-format
-#| msgid "Face Detection"
-msgid "Direction"
-msgstr "Rilevamento facciale"
+#| msgctxt "@info: tableview"
+#| msgid "Rational"
+msgid "&Ratio Scale"
+msgstr "Razionale"
 
-#. i18n: ectx: property (text), widget (QLabel, Precision)
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:71
+#. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
+#: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:117
 #, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Permissions: "
-msgid "Precision"
-msgstr "Permessi: "
+#| msgid "Show navigation"
+msgid "Navigation"
+msgstr "Mostra navigazione"
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
+#, fuzzy, kde-format
+#| msgid "Show navigation"
+msgid "&Navigation"
+msgstr "Mostra navigazione"
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
+#, kde-format
+msgid "A mouse control to zoom and move the map"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
+#, fuzzy, kde-format
+#| msgid "Current Aspect Ratio"
+msgid "Current Location Button"
+msgstr "Proporzioni attuali"
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
+#, kde-format
+msgid "Home Button"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:75
+#, fuzzy, kde-format
+#| msgid "Show overview map"
+msgid "Overview Map"
+msgstr "Mostra mappa di insieme"
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:80
+#, fuzzy, kde-format
+#| msgid "Show overview map"
+msgid "&Overview Map"
+msgstr "Mostra mappa di insieme"
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:95
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "This item has geolocation information."
+msgid "This is a float item that provides an overview map."
+msgstr "Questo elemento possiede informazioni di geolocalizzazione."
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:481
+#, fuzzy, kde-format
+#| msgid "Show overview map"
+msgid "Choose Overview Map"
+msgstr "Mostra mappa di insieme"
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:513
+#, fuzzy, kde-format
+#| msgid "Set here the color of the second line."
+msgid "Please choose the color for the position indicator"
+msgstr "Imposta qui il colore della seconda linea."
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
+#, fuzzy, kde-format
+#| msgid "<b>Configure Preview Behavior</b>"
+msgid "Configure Overview Map"
+msgstr "<b>Configura il comportamento dell'anteprima</b>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
+#, fuzzy, kde-format
+#| msgid "&Image"
+msgid "Map &Image"
+msgstr "&Immagine"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:28
+#, fuzzy, kde-format
+#| msgctxt "@title: print metadata"
+#| msgid "File name:"
+msgid "&Planet:"
+msgstr "Nome del file:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:71
+#, fuzzy, kde-format
+#| msgid "Size:"
+msgid "&Size:"
+msgstr "Dimensione:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
+#, kde-format
+msgid "x"
+msgstr "x"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "C&olors"
+msgstr "Colori"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
+#, fuzzy, kde-format
+#| msgid "Show Geolocation Indicator"
+msgid "Position I&ndicator:"
+msgstr "Mostra l'indicatore di geolocalizzazione"
+
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
+#, kde-format
+msgid "OpenStreetMap Nominatim Reverse Geocoding"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:29
+#, fuzzy, kde-format
+#| msgid "OpenStreetMap"
+msgid "OpenStreetMap Nominatim"
+msgstr "OpenStreetMap"
+
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
+#, kde-format
+msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
+msgstr ""
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -59845,12 +60042,6 @@ msgstr ""
 #| msgid "View"
 msgid "View"
 msgstr "Visualizza"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "Show navigation"
-msgid "Navigation"
-msgstr "Mostra navigazione"
 
 #: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:125
 #, kde-format
@@ -60460,15 +60651,12 @@ msgstr "Dettagli"
 msgid "Choose alternative routes"
 msgstr "&Scegli l'operazione:"
 
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:36
-#, kde-format
-msgid "mi"
-msgstr ""
-
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:47
-#, kde-format
-msgid "km"
-msgstr ""
+#: core/utilities/geolocation/marble/RoutingRunner.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@action: rotate image left"
+#| msgid "Left"
+msgid "ft"
+msgstr "Sinistra"
 
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:72
 #, fuzzy, kde-format
@@ -70738,6 +70926,27 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Vuoi riportare tutte le impostazioni video al valore predefinito?"
 
+#, fuzzy
+#~| msgid "Info"
+#~ msgid "GpsInfo"
+#~ msgstr "Informazioni"
+
+#, fuzzy
+#~| msgid "Info"
+#~ msgid "&GpsInfo"
+#~ msgstr "Informazioni"
+
+#, fuzzy
+#~| msgid "Face Detection"
+#~ msgid "Direction"
+#~ msgstr "Rilevamento facciale"
+
+#, fuzzy
+#~| msgctxt "@label: item properties"
+#~| msgid "Permissions: "
+#~ msgid "Precision"
+#~ msgstr "Permessi: "
+
 #~ msgid "Disable face engine feature and don't ask again"
 #~ msgstr "Disabilita il motore di riconoscimento facciale e non chiedere più"
 
@@ -75332,9 +75541,6 @@ msgstr "Vuoi riportare tutte le impostazioni video al valore predefinito?"
 #~ msgstr[0] "%1 elemento nascosto dal raggruppamento o la versione"
 #~ msgstr[1] "%1 elementi nascosti dal raggruppamento o la versione"
 
-#~ msgid "x"
-#~ msgstr "x"
-
 #~ msgid "Done"
 #~ msgstr "Fatto"
 
@@ -76393,11 +76599,6 @@ msgstr "Vuoi riportare tutte le impostazioni video al valore predefinito?"
 #~ msgstr "Elenco raccolte"
 
 #, fuzzy
-#~| msgid "&Themes"
-#~ msgid "Theme"
-#~ msgstr "&Temi"
-
-#, fuzzy
 #~| msgid "Printing in Progress"
 #~ msgid "Database shrinking in progress."
 #~ msgstr "In fase di stampa"
@@ -77092,9 +77293,6 @@ msgstr "Vuoi riportare tutte le impostazioni video al valore predefinito?"
 #, fuzzy
 #~ msgid "Scan Imagen"
 #~ msgstr "Scansiona immagine"
-
-#~ msgid "&Image"
-#~ msgstr "&Immagine"
 
 #~ msgid "Kdepimlibs support"
 #~ msgstr "Supporto Kdepimlibs"

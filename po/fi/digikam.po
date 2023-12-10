@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-09 00:39+0000\n"
+"POT-Creation-Date: 2023-12-10 00:40+0000\n"
 "PO-Revision-Date: 2023-10-24 17:56+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3974,10 +3974,12 @@ msgstr "Valkoinen"
 msgid "File properties"
 msgstr "Tiedoston ominaisuudet"
 
+#. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
 msgstr "Tiedostonimi"
@@ -4039,12 +4041,10 @@ msgstr "Geomerkitty"
 msgid "Coordinates"
 msgstr "Koordinaatit"
 
-#. i18n: ectx: property (text), widget (QLabel, Altitude)
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:57
 #, kde-format
 msgid "Altitude"
 msgstr "Korkeus"
@@ -11693,10 +11693,8 @@ msgstr "Leveysaste"
 msgid "Longitude"
 msgstr "Pituusaste"
 
-#. i18n: ectx: property (text), widget (QLabel, Speed)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:29
 #, kde-format
 msgid "Speed"
 msgstr "Nopeus"
@@ -16397,9 +16395,11 @@ msgid "Create Template for Calendar"
 msgstr "Kansion luonti epäonnistui"
 
 #. i18n: ectx: property (title), widget (QGroupBox, previewGroupBox)
+#. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
 #: core/libs/video/qtav/config/MiscPage.cpp:48
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
 msgstr "Esikatselu"
@@ -35062,27 +35062,33 @@ msgstr "Näytetään kuvat, joiden arvio on %1 tähteä."
 msgid "Rating less than or equal to %1."
 msgstr "Näytetään kuvat, joiden arvio on enintään %1 tähteä."
 
-#: core/libs/filters/ratingfilter.cpp:241
+#: core/libs/filters/ratingfilter.cpp:244
+#, fuzzy, kde-format
+#| msgid "Exclude Items Without Rating"
+msgid "Items Without Rating"
+msgstr "Jätä pois arvostelemattomat kohteet"
+
+#: core/libs/filters/ratingfilter.cpp:248
 #, kde-format
 msgid "Rating Filter Options"
 msgstr "Arvostelusuodattimen asetukset"
 
-#: core/libs/filters/ratingfilter.cpp:246
+#: core/libs/filters/ratingfilter.cpp:253
 #, kde-format
 msgid "Greater Than or Equals Condition"
 msgstr "Suurempi tai yhtä kuin"
 
-#: core/libs/filters/ratingfilter.cpp:248
+#: core/libs/filters/ratingfilter.cpp:255
 #, kde-format
 msgid "Equals Condition"
 msgstr "Yhtä kuin"
 
-#: core/libs/filters/ratingfilter.cpp:250
+#: core/libs/filters/ratingfilter.cpp:257
 #, kde-format
 msgid "Less Than or Equals Condition"
 msgstr "Pienempi tai yhtä kuin"
 
-#: core/libs/filters/ratingfilter.cpp:253
+#: core/libs/filters/ratingfilter.cpp:260
 #, kde-format
 msgid "Exclude Items Without Rating"
 msgstr "Jätä pois arvostelemattomat kohteet"
@@ -44648,7 +44654,7 @@ msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Poimi"
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:574
+#: core/libs/widgets/metadata/labels/ratingwidget.cpp:582
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
@@ -54201,6 +54207,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, configureButton)
 #: core/utilities/geolocation/marble/AbstractFloatItem.cpp:252
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:378
 #: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:32
 #, fuzzy, kde-format
 #| msgid "Configure..."
@@ -54258,8 +54265,10 @@ msgstr "Lisää uudelleen"
 msgid "Name:"
 msgstr "Nimi:"
 
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/BookmarkManager.cpp:55
 #: core/utilities/geolocation/marble/BookmarkManager.cpp:247
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
 #, fuzzy, kde-format
 #| msgctxt "@option: default Tesseract mode"
 #| msgid "Default"
@@ -58970,74 +58979,263 @@ msgstr "Tuntematon otsikko"
 msgid "Configure"
 msgstr "Asetukset"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:52
+#. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
 #, fuzzy, kde-format
-#| msgid "Info"
-msgid "GpsInfo"
-msgstr "Tietoja"
+#| msgid "Configure this column"
+msgid "Configure Compass Plugin"
+msgstr "Tämän sarakkeen asetukset"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:57
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
 #, fuzzy, kde-format
-#| msgid "Info"
-msgid "&GpsInfo"
-msgstr "Tietoja"
+#| msgid "&Themes"
+msgid "Theme"
+msgstr "&Teemat"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:72
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:52
+#, fuzzy, kde-format
+#| msgid "Browse"
+msgid "Arrows"
+msgstr "Selaa"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:61
+#, kde-format
+msgid "Atom"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:70
+#, kde-format
+msgid "Magnet"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:58
+#, fuzzy, kde-format
+#| msgid "Show compass"
+msgid "Compass"
+msgstr "Näytä kompassi"
+
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:63
+#, fuzzy, kde-format
+#| msgid "Show compass"
+msgid "&Compass"
+msgstr "Näytä kompassi"
+
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "This item has geolocation information."
-msgid "This is a float item that provides Gps Information."
+msgid "This is a float item that provides a compass."
 msgstr "Kohteella on maantieteellinen sijaintitieto."
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:131
-#, kde-format
-msgid "mph"
-msgstr ""
-
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:133
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:41
+#. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
 #, fuzzy, kde-format
-#| msgid "fast"
-msgid "ft"
-msgstr "nopea"
+#| msgid "<b>Configure Raw File Handling</b>"
+msgid "Configure Scale Bar Plugin"
+msgstr "<b>Raw-kuvanegatiivien käsittely</b>"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:140
+#. i18n: ectx: property (text), widget (QCheckBox, m_showRatioScaleCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:20
+#, fuzzy, kde-format
+#| msgid "Show image title"
+msgid "Show Ratio Scale"
+msgstr "Näytä kuvan otsikko"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:30
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:52
 #, kde-format
-msgid "km/h"
+msgid "Minimize"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:142
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:69
+#, fuzzy, kde-format
+#| msgid "Show scale bar"
+msgid "Scale Bar"
+msgstr "Näytä mittakaava"
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Scale to:"
+msgid "&Scale Bar"
+msgstr "&Skaalaa kokoon:"
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "This item has geolocation information."
+msgid "This is a float item that provides a map scale."
+msgstr "Kohteella on maantieteellinen sijaintitieto."
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
+#, fuzzy, kde-format
+#| msgid "Original Colors:"
+msgid "Original Developer"
+msgstr "Alkuperäiset värit:"
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:240
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:244
+#: core/utilities/geolocation/marble/RoutingRunner.cpp:47
+#, kde-format
+msgid "km"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:248
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:31
 #, fuzzy, kde-format
 #| msgid "cm"
 msgid "m"
 msgstr "cm"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:147
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:253
+#: core/utilities/geolocation/marble/RoutingRunner.cpp:36
 #, kde-format
-msgid "kt"
+msgid "mi"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:149
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:264
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:59
 #, kde-format
 msgid "nm"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, Direction)
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:43
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:384
 #, fuzzy, kde-format
-#| msgid "Detection"
-msgid "Direction"
-msgstr "Tunnistus"
+#| msgid "Rational"
+msgid "&Ratio Scale"
+msgstr "Rationaaliluvut"
 
-#. i18n: ectx: property (text), widget (QLabel, Precision)
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:71
+#. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
+#: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:117
 #, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Permissions: "
-msgid "Precision"
-msgstr "Käyttöoikeudet: "
+#| msgid "Show navigation"
+msgid "Navigation"
+msgstr "Näytä navigointi"
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
+#, fuzzy, kde-format
+#| msgid "Show navigation"
+msgid "&Navigation"
+msgstr "Näytä navigointi"
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
+#, kde-format
+msgid "A mouse control to zoom and move the map"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
+#, fuzzy, kde-format
+#| msgid "Current Aspect Ratio"
+msgid "Current Location Button"
+msgstr "Nykyinen kuvasuhde"
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
+#, kde-format
+msgid "Home Button"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:75
+#, fuzzy, kde-format
+#| msgid "Show overview map"
+msgid "Overview Map"
+msgstr "Näytä yleiskartta"
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:80
+#, fuzzy, kde-format
+#| msgid "Show overview map"
+msgid "&Overview Map"
+msgstr "Näytä yleiskartta"
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:95
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "This item has geolocation information."
+msgid "This is a float item that provides an overview map."
+msgstr "Kohteella on maantieteellinen sijaintitieto."
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:481
+#, fuzzy, kde-format
+#| msgid "Show overview map"
+msgid "Choose Overview Map"
+msgstr "Näytä yleiskartta"
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:513
+#, fuzzy, kde-format
+#| msgid "Set here the color of the second line."
+msgid "Please choose the color for the position indicator"
+msgstr "Aseta tässä toisen viivan väri."
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
+#, fuzzy, kde-format
+#| msgid "<b>Configure Preview Behavior</b>"
+msgid "Configure Overview Map"
+msgstr "<b>Esikatselun asetukset</b>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
+#, fuzzy, kde-format
+#| msgid "&Image"
+msgid "Map &Image"
+msgstr "&Kuva"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:28
+#, fuzzy, kde-format
+#| msgid "File name"
+msgid "&Planet:"
+msgstr "Tiedostonimi"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:71
+#, fuzzy, kde-format
+#| msgid "Size:"
+msgid "&Size:"
+msgstr "Koko:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
+#, fuzzy, kde-format
+#| msgctxt "Dimension separator, as in: '15 x 10 centimeters'"
+#| msgid "x"
+msgid "x"
+msgstr "×"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "C&olors"
+msgstr "Värit"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
+#, fuzzy, kde-format
+#| msgid "Show Geolocation Indicator"
+msgid "Position I&ndicator:"
+msgstr "Osoita, jos kohteesta on sijaintitieto"
+
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
+#, kde-format
+msgid "OpenStreetMap Nominatim Reverse Geocoding"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:29
+#, fuzzy, kde-format
+#| msgid "OpenStreetMap"
+msgid "OpenStreetMap Nominatim"
+msgstr "OpenStreetMap"
+
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
+#, kde-format
+msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
+msgstr ""
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -59141,12 +59339,6 @@ msgstr ""
 #| msgid "View"
 msgid "View"
 msgstr "Näkymä"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "Show navigation"
-msgid "Navigation"
-msgstr "Näytä navigointi"
 
 #: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:125
 #, kde-format
@@ -59754,15 +59946,11 @@ msgstr "Yksityiskohdat"
 msgid "Choose alternative routes"
 msgstr "&Valitse toimenpide:"
 
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:36
-#, kde-format
-msgid "mi"
-msgstr ""
-
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:47
-#, kde-format
-msgid "km"
-msgstr ""
+#: core/utilities/geolocation/marble/RoutingRunner.cpp:41
+#, fuzzy, kde-format
+#| msgid "fast"
+msgid "ft"
+msgstr "nopea"
 
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:72
 #, fuzzy, kde-format
@@ -69611,6 +69799,27 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Haluatko palauttaa kaikki videoasetukset oletusarvoihinsa?"
 
+#, fuzzy
+#~| msgid "Info"
+#~ msgid "GpsInfo"
+#~ msgstr "Tietoja"
+
+#, fuzzy
+#~| msgid "Info"
+#~ msgid "&GpsInfo"
+#~ msgstr "Tietoja"
+
+#, fuzzy
+#~| msgid "Detection"
+#~ msgid "Direction"
+#~ msgstr "Tunnistus"
+
+#, fuzzy
+#~| msgctxt "@label: item properties"
+#~| msgid "Permissions: "
+#~ msgid "Precision"
+#~ msgstr "Käyttöoikeudet: "
+
 #~ msgctxt "@title:window"
 #~ msgid "Export error"
 #~ msgstr "Vientivirhe"
@@ -73620,12 +73829,6 @@ msgstr "Haluatko palauttaa kaikki videoasetukset oletusarvoihinsa?"
 #~ msgid "Low"
 #~ msgstr "Vähäinen"
 
-#, fuzzy
-#~| msgctxt "Dimension separator, as in: '15 x 10 centimeters'"
-#~| msgid "x"
-#~ msgid "x"
-#~ msgstr "×"
-
 #~ msgid "Prev"
 #~ msgstr "Edell"
 
@@ -74274,11 +74477,6 @@ msgstr "Haluatko palauttaa kaikki videoasetukset oletusarvoihinsa?"
 #~ msgstr "Valokuvakokoelmat"
 
 #, fuzzy
-#~| msgid "&Themes"
-#~ msgid "Theme"
-#~ msgstr "&Teemat"
-
-#, fuzzy
 #~ msgid "Database shrinking in progress."
 #~ msgstr "Eräajo"
 
@@ -74729,9 +74927,6 @@ msgstr "Haluatko palauttaa kaikki videoasetukset oletusarvoihinsa?"
 #, fuzzy
 #~ msgid "Scan Imagen"
 #~ msgstr "Skannaa"
-
-#~ msgid "&Image"
-#~ msgstr "&Kuva"
 
 #~ msgid "Kdepimlibs support"
 #~ msgstr "Kdepimlibs-tuki"

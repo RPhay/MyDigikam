@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-09 00:39+0000\n"
+"POT-Creation-Date: 2023-12-10 00:40+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3804,10 +3804,12 @@ msgstr "흰색"
 msgid "File properties"
 msgstr "파일 속성"
 
+#. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
 msgstr "파일 이름"
@@ -3870,12 +3872,10 @@ msgstr "지리적 위치 기록됨"
 msgid "Coordinates"
 msgstr "좌표"
 
-#. i18n: ectx: property (text), widget (QLabel, Altitude)
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:57
 #, kde-format
 msgid "Altitude"
 msgstr "고도"
@@ -11573,10 +11573,8 @@ msgstr "위도"
 msgid "Longitude"
 msgstr "경도"
 
-#. i18n: ectx: property (text), widget (QLabel, Speed)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:29
 #, kde-format
 msgid "Speed"
 msgstr "속도"
@@ -16236,9 +16234,11 @@ msgid "Create Template for Calendar"
 msgstr "달력 템플릿 만들기"
 
 #. i18n: ectx: property (title), widget (QGroupBox, previewGroupBox)
+#. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
 #: core/libs/video/qtav/config/MiscPage.cpp:48
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
 msgstr "미리 보기"
@@ -34973,27 +34973,33 @@ msgstr ""
 msgid "Rating less than or equal to %1."
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:241
+#: core/libs/filters/ratingfilter.cpp:244
+#, fuzzy, kde-format
+#| msgid "Images Without Tags"
+msgid "Items Without Rating"
+msgstr "태그가 없는 이미지"
+
+#: core/libs/filters/ratingfilter.cpp:248
 #, fuzzy, kde-format
 msgid "Rating Filter Options"
 msgstr "RAW 그림"
 
-#: core/libs/filters/ratingfilter.cpp:246
+#: core/libs/filters/ratingfilter.cpp:253
 #, kde-format
 msgid "Greater Than or Equals Condition"
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:248
+#: core/libs/filters/ratingfilter.cpp:255
 #, kde-format
 msgid "Equals Condition"
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:250
+#: core/libs/filters/ratingfilter.cpp:257
 #, kde-format
 msgid "Less Than or Equals Condition"
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:253
+#: core/libs/filters/ratingfilter.cpp:260
 #, kde-format
 msgid "Exclude Items Without Rating"
 msgstr ""
@@ -44985,7 +44991,7 @@ msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "선택"
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:574
+#: core/libs/widgets/metadata/labels/ratingwidget.cpp:582
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
@@ -55319,6 +55325,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, configureButton)
 #: core/utilities/geolocation/marble/AbstractFloatItem.cpp:252
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:378
 #: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:32
 #, fuzzy, kde-format
 #| msgid "Configure"
@@ -55376,8 +55383,10 @@ msgstr "다시 추가"
 msgid "Name:"
 msgstr "이름:"
 
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/BookmarkManager.cpp:55
 #: core/utilities/geolocation/marble/BookmarkManager.cpp:247
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
 #, fuzzy, kde-format
 #| msgctxt "default theme name"
 #| msgid "Default"
@@ -60018,74 +60027,263 @@ msgstr "알 수 없는 제목"
 msgid "Configure"
 msgstr "설정"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:52
+#. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
 #, fuzzy, kde-format
-#| msgid "Info"
-msgid "GpsInfo"
-msgstr "정보"
+#| msgid "Configure this column"
+msgid "Configure Compass Plugin"
+msgstr "이 열 설정"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:57
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
 #, fuzzy, kde-format
-#| msgid "Info"
-msgid "&GpsInfo"
-msgstr "정보"
+#| msgid "&Themes"
+msgid "Theme"
+msgstr "테마(&T)"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:72
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:52
+#, fuzzy, kde-format
+#| msgid "&Browse"
+msgid "Arrows"
+msgstr "찾아보기(&B)"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:61
+#, kde-format
+msgid "Atom"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:70
+#, kde-format
+msgid "Magnet"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:58
+#, fuzzy, kde-format
+#| msgid "Show compass"
+msgid "Compass"
+msgstr "나침반 표시"
+
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:63
+#, fuzzy, kde-format
+#| msgid "Show compass"
+msgid "&Compass"
+msgstr "나침반 표시"
+
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "This item has geolocation information."
-msgid "This is a float item that provides Gps Information."
+msgid "This is a float item that provides a compass."
 msgstr "이 항목에는 지리적 위치 정보가 있습니다."
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:131
-#, kde-format
-msgid "mph"
-msgstr ""
-
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:133
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:41
+#. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
 #, fuzzy, kde-format
-#| msgctxt "@action: rotate image left"
-#| msgid "Left"
-msgid "ft"
-msgstr "왼쪽"
+#| msgid "<b>Configure Raw File Handling</b>"
+msgid "Configure Scale Bar Plugin"
+msgstr "<b>Raw 파일 처리 설정</b>"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:140
+#. i18n: ectx: property (text), widget (QCheckBox, m_showRatioScaleCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:20
+#, fuzzy, kde-format
+#| msgid "Show image title"
+msgid "Show Ratio Scale"
+msgstr "이미지 제목 표시"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:30
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:52
 #, kde-format
-msgid "km/h"
+msgid "Minimize"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:142
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:69
+#, fuzzy, kde-format
+#| msgid "Show scale bar"
+msgid "Scale Bar"
+msgstr "축척 표시줄 표시"
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Scale to:"
+msgid "&Scale Bar"
+msgstr "다음으로 크기 조정(&S):"
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "This item has geolocation information."
+msgid "This is a float item that provides a map scale."
+msgstr "이 항목에는 지리적 위치 정보가 있습니다."
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
+#, fuzzy, kde-format
+#| msgid "Original Colors:"
+msgid "Original Developer"
+msgstr "원본 색상:"
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:240
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:244
+#: core/utilities/geolocation/marble/RoutingRunner.cpp:47
+#, kde-format
+msgid "km"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:248
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:31
 #, fuzzy, kde-format
 #| msgid "cm"
 msgid "m"
 msgstr "cm"
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:147
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:253
+#: core/utilities/geolocation/marble/RoutingRunner.cpp:36
 #, kde-format
-msgid "kt"
+msgid "mi"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfo.cpp:149
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:264
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:59
 #, kde-format
 msgid "nm"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, Direction)
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:43
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:384
 #, fuzzy, kde-format
-msgid "Direction"
-msgstr "선택 반전"
+#| msgctxt "@info: tableview"
+#| msgid "Rational"
+msgid "&Ratio Scale"
+msgstr "유리수"
 
-#. i18n: ectx: property (text), widget (QLabel, Precision)
-#: core/utilities/geolocation/marble/plugins/render/gpsinfo/GpsInfoPlugin.ui:71
+#. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
+#: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:117
 #, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Permissions: "
-msgid "Precision"
-msgstr "권한: "
+#| msgid "Show navigation"
+msgid "Navigation"
+msgstr "탐색 표시줄 표시"
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
+#, fuzzy, kde-format
+#| msgid "Show navigation"
+msgid "&Navigation"
+msgstr "탐색 표시줄 표시"
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
+#, kde-format
+msgid "A mouse control to zoom and move the map"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
+#, fuzzy, kde-format
+#| msgid "Current Aspect Ratio"
+msgid "Current Location Button"
+msgstr "현재 종횡비"
+
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
+#, kde-format
+msgid "Home Button"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:75
+#, fuzzy, kde-format
+#| msgid "Show overview map"
+msgid "Overview Map"
+msgstr "미리 보기 지도 표시"
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:80
+#, fuzzy, kde-format
+#| msgid "Show overview map"
+msgid "&Overview Map"
+msgstr "미리 보기 지도 표시"
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:95
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "This item has geolocation information."
+msgid "This is a float item that provides an overview map."
+msgstr "이 항목에는 지리적 위치 정보가 있습니다."
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:481
+#, fuzzy, kde-format
+#| msgid "Show overview map"
+msgid "Choose Overview Map"
+msgstr "미리 보기 지도 표시"
+
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:513
+#, kde-format
+msgid "Please choose the color for the position indicator"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
+#, fuzzy, kde-format
+#| msgid "<b>Configure Preview Behavior</b>"
+msgid "Configure Overview Map"
+msgstr "<b>미리 보기 동작 설정</b>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
+#, fuzzy, kde-format
+#| msgid "&Image"
+msgid "Map &Image"
+msgstr "사진(&I)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:28
+#, fuzzy, kde-format
+#| msgid "File name"
+msgid "&Planet:"
+msgstr "파일 이름"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:71
+#, fuzzy, kde-format
+#| msgid "Size:"
+msgid "&Size:"
+msgstr "크기:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
+#, fuzzy, kde-format
+#| msgctxt "Dimension separator, as in: '15 x 10 centimeters'"
+#| msgid "x"
+msgid "x"
+msgstr "x"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "C&olors"
+msgstr "색상"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
+#, fuzzy, kde-format
+#| msgid "Show Geolocation Indicator"
+msgid "Position I&ndicator:"
+msgstr "지리적 위치 표시기 표시"
+
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
+#, kde-format
+msgid "OpenStreetMap Nominatim Reverse Geocoding"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:29
+#, fuzzy, kde-format
+#| msgid "OpenStreetMap"
+msgid "OpenStreetMap Nominatim"
+msgstr "OpenStreetMap"
+
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
+#, kde-format
+msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
+msgstr ""
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -60189,12 +60387,6 @@ msgstr ""
 #| msgid "View"
 msgid "View"
 msgstr "보기"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "Show navigation"
-msgid "Navigation"
-msgstr "탐색 표시줄 표시"
 
 #: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:125
 #, kde-format
@@ -60788,15 +60980,12 @@ msgstr "자세히"
 msgid "Choose alternative routes"
 msgstr "작업 선택(&C):"
 
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:36
-#, kde-format
-msgid "mi"
-msgstr ""
-
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:47
-#, kde-format
-msgid "km"
-msgstr ""
+#: core/utilities/geolocation/marble/RoutingRunner.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@action: rotate image left"
+#| msgid "Left"
+msgid "ft"
+msgstr "왼쪽"
 
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:72
 #, fuzzy, kde-format
@@ -70379,6 +70568,26 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "모든 항목을 기본값으로 초기화합니다."
 
 #, fuzzy
+#~| msgid "Info"
+#~ msgid "GpsInfo"
+#~ msgstr "정보"
+
+#, fuzzy
+#~| msgid "Info"
+#~ msgid "&GpsInfo"
+#~ msgstr "정보"
+
+#, fuzzy
+#~ msgid "Direction"
+#~ msgstr "선택 반전"
+
+#, fuzzy
+#~| msgctxt "@label: item properties"
+#~| msgid "Permissions: "
+#~ msgid "Precision"
+#~ msgstr "권한: "
+
+#, fuzzy
 #~| msgid "Export error"
 #~ msgctxt "@title:window"
 #~ msgid "Export error"
@@ -74407,9 +74616,6 @@ msgstr "모든 항목을 기본값으로 초기화합니다."
 #, fuzzy
 #~ msgid "Scan Imagen"
 #~ msgstr "그림 스캔하기"
-
-#~ msgid "&Image"
-#~ msgstr "사진(&I)"
 
 #, fuzzy
 #~| msgid "Connection Failed"
