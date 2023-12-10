@@ -143,7 +143,6 @@ target_link_libraries(digikamcore
                       Qt${QT_VERSION_MAJOR}::PrintSupport
                       Qt${QT_VERSION_MAJOR}::Concurrent
                       Qt${QT_VERSION_MAJOR}::Svg
-                      Qt${QT_VERSION_MAJOR}::Core5Compat
 
                       KF${QT_VERSION_MAJOR}::Solid
                       KF${QT_VERSION_MAJOR}::WindowSystem
@@ -196,6 +195,8 @@ if(Qt6_FOUND)
     target_link_libraries(digikamcore
                           PRIVATE
                           Qt${QT_VERSION_MAJOR}::StateMachine
+                          Qt${QT_VERSION_MAJOR}::SvgWidgets
+                          Qt${QT_VERSION_MAJOR}::Core5Compat    # For Marble
     )
 
 endif()
