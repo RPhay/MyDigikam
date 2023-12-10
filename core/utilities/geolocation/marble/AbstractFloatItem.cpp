@@ -27,7 +27,8 @@ namespace Marble
 class AbstractFloatItemPrivate
 {
   public:
-    AbstractFloatItemPrivate() : m_contextMenu( nullptr )
+    AbstractFloatItemPrivate()
+        : m_contextMenu(nullptr)
     {
     }
 
@@ -37,17 +38,22 @@ class AbstractFloatItemPrivate
     }
 
 
-    static QPen         s_pen;
-    static QFont        s_font;
+    static QPen  s_pen;
+    static QFont s_font;
 
-    QMenu* m_contextMenu;
+    QMenu*       m_contextMenu;
 };
 
-QPen         AbstractFloatItemPrivate::s_pen = QPen( Qt::black );
+QPen  AbstractFloatItemPrivate::s_pen  = QPen( Qt::black );
+
 #ifdef Q_OS_MACX
-    QFont AbstractFloatItemPrivate::s_font = QFont( QStringLiteral("Sans Serif"), 10 );
+
+QFont AbstractFloatItemPrivate::s_font = QFont( QStringLiteral("Sans Serif"), 10 );
+
 #else
-    QFont AbstractFloatItemPrivate::s_font = QFont( QStringLiteral("Sans Serif"), 8 );
+
+QFont AbstractFloatItemPrivate::s_font = QFont( QStringLiteral("Sans Serif"), 8 );
+
 #endif
 
 AbstractFloatItem::AbstractFloatItem( const MarbleModel *marbleModel, const QPointF &point, const QSizeF &size )
@@ -70,26 +76,51 @@ AbstractFloatItem::~AbstractFloatItem()
 QHash<QString,QVariant> AbstractFloatItem::settings() const
 {
     QHash<QString,QVariant> updated = RenderPlugin::settings();
+
 #ifdef Q_OS_OSX
+
     updated.insert(QStringLiteral("position"), position().toPoint());
+
 #else
+
     updated.insert(QStringLiteral("position"), position());
+
 #endif
+
     return updated;
 }
 
 void AbstractFloatItem::setSettings(const QHash<QString, QVariant> &settings)
 {
-    if (settings.value(QStringLiteral("position")).metaType().id() == QMetaType::QString) {
-#ifdef Q_OS_OSX
-        setPosition(settings.value(QStringLiteral("position"), position()).toPointF());
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    if (settings.value(QStringLiteral("position")).metaType().id() == QMetaType::QString)
+
 #else
+
+    if (settings.value(QStringLiteral("position")).type() == QVariant::String)
+
+#endif
+
+    {
+
+#ifdef Q_OS_OSX
+
+        setPosition(settings.value(QStringLiteral("position"), position()).toPointF());
+
+#else
+
         // work around KConfig turning QPointFs into QStrings
+
         const QStringList coordinates = settings.value(QStringLiteral("position")).toString().split(QLatin1Char(','));
         setPosition( QPointF( coordinates.at( 0 ).toFloat(), coordinates.at( 1 ).toFloat() ) );
+
 #endif
+
     }
-    else {
+    else
+    {
         setPosition(settings.value(QStringLiteral("position"), position()).toPointF());
     }
 
@@ -151,10 +182,12 @@ void AbstractFloatItem::setPositionLocked( bool lock )
 {
     ScreenGraphicsItem::GraphicsItemFlags flags = this->flags();
 
-    if ( lock ) {
+    if ( lock )
+    {
         flags &= ~ScreenGraphicsItem::ItemIsMovable;
     }
-    else {
+    else
+    {
         flags |= ScreenGraphicsItem::ItemIsMovable;
     }
 

@@ -60,7 +60,6 @@ macro(marble_add_plugin)
                           Qt${QT_VERSION_MAJOR}::Widgets
                           Qt${QT_VERSION_MAJOR}::Network
                           Qt${QT_VERSION_MAJOR}::Svg
-                          Qt${QT_VERSION_MAJOR}::SvgWidgets
 
                           KF${QT_VERSION_MAJOR}::I18n
 
@@ -69,6 +68,17 @@ macro(marble_add_plugin)
                           ${_parse_results_DEPENDS}
                           ${_extra_deps}
     )
+
+    if(Qt6_FOUND)
+
+        target_link_libraries(${_parse_results_NAME}
+
+                              PRIVATE
+
+                              Qt${QT_VERSION_MAJOR}::SvgWidgets
+        )
+
+    endif()
 
     install(TARGETS ${_parse_results_NAME}
             DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/marble

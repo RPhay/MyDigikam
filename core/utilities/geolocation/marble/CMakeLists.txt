@@ -13,10 +13,15 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLU
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Svg,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Concurrent,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
+
+if(Qt6_FOUND)
+
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+
+endif()
 
 set(marblewidget_SRCS
 
@@ -52,7 +57,7 @@ set(marblewidget_SRCS
     FormattedTextWidget.cpp
     GenericScanlineTextureMapper.cpp
     GeoDataTreeModel.cpp
-    GeoGraphicsScene.cpp
+
     GeoPainter.cpp
     GeoUriParser.cpp
     GoToDialog.cpp
@@ -114,7 +119,7 @@ set(marblewidget_SRCS
     PositionProviderPlugin.cpp
     PositionProviderPluginInterface.cpp
     PositionTracking.cpp
-#    QtMarbleConfigDialog.cpp
+    QtMarbleConfigDialog.cpp
     Quaternion.cpp
     RemoteIconLoader.cpp
     RemoveItemEditWidget.cpp
@@ -718,6 +723,8 @@ set(marblewidget_SRCS
     cloudsync/MergeItem.cpp
     cloudsync/ConflictDialog.cpp
     cloudsync/OwncloudSyncBackend.cpp
+
+    GeoGraphicsScene.cpp
 )
 
 set (marblewidget_UI
