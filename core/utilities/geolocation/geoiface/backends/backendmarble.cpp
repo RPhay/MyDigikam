@@ -77,12 +77,9 @@ class Q_DECL_HIDDEN BMInternalWidgetInfo
 {
 public:
 
-    explicit BMInternalWidgetInfo()
-      : bmLayer(nullptr)
-    {
-    }
+    BMInternalWidgetInfo() = default;
 
-    BackendMarbleLayer* bmLayer;
+    BackendMarbleLayer* bmLayer = nullptr;
 };
 
 } // namespace Digikam
@@ -333,7 +330,7 @@ void BackendMarble::setCenter(const GeoCoordinates& coordinate)
 
 bool BackendMarble::isReady() const
 {
-    return d->marbleWidget != nullptr;
+    return (d->marbleWidget != nullptr);
 }
 
 void BackendMarble::zoomIn()
@@ -368,11 +365,11 @@ void BackendMarble::createActions()
     connect(d->actionGroupMapTheme, &QActionGroup::triggered,
             this, &BackendMarble::slotMapThemeActionTriggered);
 
-
     QList<QPair<QString, QString>> mainThemes;
     mainThemes.append({i18n("Atlas map"), QLatin1String("earth/srtm/srtm.dgml")});
     mainThemes.append({i18n("Satellite map"), QLatin1String("earth/bluemarble/bluemarble.dgml")});
     mainThemes.append({i18n("OpenStreetMap"), QLatin1String("earth/openstreetmap/openstreetmap.dgml")});
+
     for (auto& theme : mainThemes)
     {
         QAction* const mapAction = new QAction(d->actionGroupMapTheme);
@@ -382,7 +379,8 @@ void BackendMarble::createActions()
         d->mainMarbleThemes.append(theme.second);
     }
 
-    QStringList blackListedMarbleThemes {
+    QStringList blackListedMarbleThemes
+    {
         QLatin1String("earth/behaim1492/behaim1492.dgml"),
         QLatin1String("earth/citylights/citylights.dgml"),
         QLatin1String("earth/plain/plain.dgml"),
@@ -392,40 +390,46 @@ void BackendMarble::createActions()
         QLatin1String("earth/schagen1689/schagen1689.dgml"),
         QLatin1String("earth/sentinel2/sentinel2.dgml"),
         QLatin1String("earth/temp-dec/temp-dec.dgml"),
-        QLatin1String("earth/temp-july/temp-july.dgml")};
+        QLatin1String("earth/temp-july/temp-july.dgml")
+    };
 
     // add all available marble earth themes
+
     auto* themeModel = d->marbleMapThemeManager->mapThemeModel();
-    for (int i = 0; i < themeModel->rowCount(); ++i)
+
+    for (int i = 0 ; i < themeModel->rowCount() ; ++i)
     {
-        auto* item = themeModel->item(i);
-        auto themeId = item->data(Qt::UserRole + 1).toString();
+        auto* item     = themeModel->item(i);
+        auto themeId   = item->data(Qt::UserRole + 1).toString();
         auto themeName = item->data(Qt::DisplayRole).toString();
-        if (d->mainMarbleThemes.contains(themeId)
-            || blackListedMarbleThemes.contains(themeId)
-            || !themeId.startsWith(QLatin1String("earth/"))) {
+
+        if (d->mainMarbleThemes.contains(themeId)     ||
+            blackListedMarbleThemes.contains(themeId) ||
+            !themeId.startsWith(QLatin1String("earth/")))
+        {
             continue;
         }
+
         QAction* const mapAction = new QAction(d->actionGroupMapTheme);
         mapAction->setCheckable(true);
         mapAction->setText(themeName);
         mapAction->setData(themeId);
     }
 
-    // projection:
+    // projection
 
-    d->actionGroupProjection = new QActionGroup(this);
+    d->actionGroupProjection             = new QActionGroup(this);
     d->actionGroupProjection->setExclusive(true);
 
     connect(d->actionGroupProjection, &QActionGroup::triggered,
             this, &BackendMarble::slotProjectionActionTriggered);
 
-    QAction* const actionSpherical = new QAction(d->actionGroupProjection);
+    QAction* const actionSpherical       = new QAction(d->actionGroupProjection);
     actionSpherical->setCheckable(true);
     actionSpherical->setText(i18nc("Spherical projection", "Spherical"));
     actionSpherical->setData(QLatin1String("spherical"));
 
-    QAction* const actionMercator = new QAction(d->actionGroupProjection);
+    QAction* const actionMercator        = new QAction(d->actionGroupProjection);
     actionMercator->setCheckable(true);
     actionMercator->setText(i18n("Mercator"));
     actionMercator->setData(QLatin1String("mercator"));
@@ -435,7 +439,7 @@ void BackendMarble::createActions()
     actionEquirectangular->setText(i18n("Equirectangular"));
     actionEquirectangular->setData(QLatin1String("equirectangular"));
 
-    // float items:
+    // float items
 
     d->actionGroupFloatItems = new QActionGroup(this);
     d->actionGroupFloatItems->setExclusive(false);
@@ -443,17 +447,17 @@ void BackendMarble::createActions()
     connect(d->actionGroupFloatItems, &QActionGroup::triggered,
             this, &BackendMarble::slotFloatSettingsTriggered);
 
-    d->actionShowCompass = new QAction(i18n("Show compass"), d->actionGroupFloatItems);
+    d->actionShowCompass     = new QAction(i18n("Show compass"), d->actionGroupFloatItems);
     d->actionShowCompass->setData(QLatin1String("showcompass"));
     d->actionShowCompass->setCheckable(true);
     d->actionGroupFloatItems->addAction(d->actionShowCompass);
 
-    d->actionShowScaleBar = new QAction(i18n("Show scale bar"), d->actionGroupFloatItems);
+    d->actionShowScaleBar    = new QAction(i18n("Show scale bar"), d->actionGroupFloatItems);
     d->actionShowScaleBar->setData(QLatin1String("showscalebar"));
     d->actionShowScaleBar->setCheckable(true);
     d->actionGroupFloatItems->addAction(d->actionShowScaleBar);
 
-    d->actionShowNavigation = new QAction(i18n("Show navigation"), d->actionGroupFloatItems);
+    d->actionShowNavigation  = new QAction(i18n("Show navigation"), d->actionGroupFloatItems);
     d->actionShowNavigation->setData(QLatin1String("shownavigation"));
     d->actionShowNavigation->setCheckable(true);
     d->actionGroupFloatItems->addAction(d->actionShowNavigation);
@@ -472,6 +476,7 @@ void BackendMarble::addActionsToConfigurationMenu(QMenu* const configurationMenu
 
     const QList<QAction*> mapThemeActions = d->actionGroupMapTheme->actions();
     QMenu* const extraMarbleMenu          = new QMenu(i18n("Other Marble Themes"), configurationMenu);
+
     for (auto* action : mapThemeActions)
     {
         if (d->mainMarbleThemes.contains(action->data().toString()))
@@ -483,6 +488,7 @@ void BackendMarble::addActionsToConfigurationMenu(QMenu* const configurationMenu
             extraMarbleMenu->addAction(action);
         }
     }
+
     if (extraMarbleMenu->isEmpty())
     {
         delete extraMarbleMenu;
@@ -491,7 +497,6 @@ void BackendMarble::addActionsToConfigurationMenu(QMenu* const configurationMenu
     {
         configurationMenu->addMenu(extraMarbleMenu);
     }
-
 
     configurationMenu->addSeparator();
 
@@ -533,7 +538,8 @@ QString BackendMarble::getMapTheme() const
 void BackendMarble::setMapTheme(const QString& newMapTheme)
 {
     // convert old ids to themeIds
-    if (newMapTheme == QLatin1String("atlas"))
+
+    if      (newMapTheme == QLatin1String("atlas"))
     {
         d->cacheMapTheme = QLatin1String("earth/srtm/srtm.dgml");
     }
@@ -554,7 +560,6 @@ void BackendMarble::setMapTheme(const QString& newMapTheme)
     {
         d->cacheMapTheme = newMapTheme;
     }
-
 
     if (!d->marbleWidget)
     {
