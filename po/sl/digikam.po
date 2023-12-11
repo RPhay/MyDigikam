@@ -37,16 +37,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-10 00:40+0000\n"
-"PO-Revision-Date: 2023-12-09 22:13+0100\n"
+"POT-Creation-Date: 2023-12-11 00:39+0000\n"
+"PO-Revision-Date: 2023-12-10 10:54+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Lokalize 23.08.3\n"
 
@@ -11542,7 +11542,7 @@ msgstr "Tvorjenje slike '%1'"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:322
 #, kde-format
 msgid "Creation of placemark '%1'"
-msgstr "Ustvarjanje oznake kraja '%1'"
+msgstr "Ustvarjanje oznake lokacije '%1'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:331
 #, kde-format
@@ -19792,7 +19792,7 @@ msgstr "Slik na stran"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:204
 #: core/utilities/maintenance/facesdetector.cpp:67
-#: core/utilities/searchwindow/searchutilities.cpp:633
+#: core/utilities/searchwindow/searchutilities.cpp:634
 #, kde-format
 msgid "OK"
 msgstr "V redu"
@@ -34832,10 +34832,9 @@ msgid "Rating less than or equal to %1."
 msgstr "Ocena manjša ali enaka %1."
 
 #: core/libs/filters/ratingfilter.cpp:244
-#, fuzzy, kde-format
-#| msgid "Exclude Items Without Rating"
+#, kde-format
 msgid "Items Without Rating"
-msgstr "Izloči predmete brez ocene"
+msgstr "Predmeti brez ocene"
 
 #: core/libs/filters/ratingfilter.cpp:248
 #, kde-format
@@ -53052,7 +53051,7 @@ msgid "Google Maps"
 msgstr "Google Maps"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:425
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:509
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:515
 #, kde-format
 msgid "Float items"
 msgstr "Lebdeči predmeti"
@@ -53068,69 +53067,75 @@ msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Sporočilo Javascripta"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:228
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:225
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr "Navidezni globus Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:373
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:369
 #, kde-format
 msgid "Atlas map"
 msgstr "Atlas"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:374
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:370
 #, kde-format
 msgid "Satellite map"
 msgstr "Satelitska karta"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:375
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:371
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:425
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:372
+#, fuzzy, kde-format
+#| msgid "OpenStreetMap"
+msgid "OpenStreetMap (Vector)"
+msgstr "OpenStreetMap"
+
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:430
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Sferična"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:430
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:42
 #, kde-format
 msgid "Mercator"
 msgstr "Mercatorjeva"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:440
 #, kde-format
 msgid "Equirectangular"
 msgstr "Ekvidistančna valjna"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:446
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:451
 #, kde-format
 msgid "Show compass"
 msgstr "Pokaži kompas"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:451
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:456
 #, kde-format
 msgid "Show scale bar"
 msgstr "Prikaži merilo"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:456
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:461
 #, kde-format
 msgid "Show navigation"
 msgstr "Pokaži krmarjenje"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:461
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:466
 #, kde-format
 msgid "Show overview map"
 msgstr "Pokaži pregledni zemljevid"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:474
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:479
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Ostale teme Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:500
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:506
 #, kde-format
 msgid "Projection"
 msgstr "Projekcija"
@@ -54183,18 +54188,18 @@ msgstr "Ime že obstaja"
 msgid "Non Geo-located Items"
 msgstr "Predmeti brez zemljepisne lege"
 
-#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:237
+#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:270
 #, kde-format
 msgid "&Lock"
 msgstr "Zakleni"
 
-#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:243
+#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:276
 #, kde-format
 msgid "&Hide"
 msgstr "Skrij"
 
 #. i18n: ectx: property (text), widget (QPushButton, configureButton)
-#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:252
+#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:285
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:378
 #: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:32
 #, kde-format
@@ -54445,7 +54450,7 @@ msgstr "Vedno uporabi oblak"
 #: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:123
 #, kde-format
 msgid "Local placemark"
-msgstr "Lokalna oznaka položaja"
+msgstr "Lokalna oznaka lokacije"
 
 #: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:124
 #: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:143
@@ -54468,7 +54473,7 @@ msgstr "Izbrisana"
 #: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:142
 #, kde-format
 msgid "Cloud placemark"
-msgstr "Oznaka položaja v oblaku"
+msgstr "Oznaka lokacije v oblaku"
 
 #: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:164
 #, kde-format
@@ -54691,7 +54696,7 @@ msgstr "Dodaj mapo..."
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:111
 #, kde-format
 msgid "Untitled Placemark"
-msgstr "Oznaka položaja brez naslova"
+msgstr "Oznaka lokacije brez naslova"
 
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:159
 #, kde-format
@@ -54706,7 +54711,7 @@ msgstr "Višina"
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:372
 #, kde-format
 msgid "Please specify a name for this placemark."
-msgstr "Določite ime za to oznako položaja."
+msgstr "Določite ime za to oznako lokacije."
 
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:375
 #, kde-format
@@ -54716,7 +54721,7 @@ msgstr "ID ni določen"
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:376
 #, kde-format
 msgid "Please specify a ID for this placemark."
-msgstr "Določite ID za to oznako položaja."
+msgstr "Določite ID za to oznako lokacije."
 
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:379
 #, kde-format
@@ -54736,7 +54741,7 @@ msgstr "Ni določene slike"
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:384
 #, kde-format
 msgid "Please specify an icon for this placemark or add a valid tag."
-msgstr "Določite ikono za to oznako položaja ali dodajte veljavno oznako."
+msgstr "Določite ikono za to oznako lokacije ali dodajte veljavno oznako."
 
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:387
 #, kde-format
@@ -54752,7 +54757,7 @@ msgstr "Določite veljavno pot za datoteko ikone."
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:20
 #, kde-format
 msgid "Edit placemark"
-msgstr "Uredi oznako položaja"
+msgstr "Uredi oznako lokacije"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_isBalloonVisible)
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:47
@@ -54798,7 +54803,7 @@ msgstr "Ikona"
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:285
 #, kde-format
 msgid "Show placemark"
-msgstr "Pokaži oznako položaja"
+msgstr "Pokaži oznako lokacije"
 
 #. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
 #. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
@@ -55103,7 +55108,7 @@ msgstr "Glavno mesto okrožja"
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:381
 #, kde-format
 msgid "State Capital"
-msgstr "Glavno mesto države"
+msgstr "Glavno mesto zvezne države"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:327
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:331
@@ -55111,7 +55116,7 @@ msgstr "Glavno mesto države"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:339
 #, kde-format
 msgid "Nation Capital"
-msgstr "Glavno mesto"
+msgstr "Glavno mesto države"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:340
 #, kde-format
@@ -55182,7 +55187,7 @@ msgstr "Zaznamek"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:358
 #, kde-format
 msgid "City Capital"
-msgstr "Glavno mesto"
+msgstr "Središče mesta"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:359
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
@@ -55215,7 +55220,7 @@ msgstr "Mesto"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:364
 #, kde-format
 msgid "Town Capital"
-msgstr "Glavno mesto"
+msgstr "Središče mesteca"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:366
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:394
@@ -55226,7 +55231,7 @@ msgstr "Vas"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:367
 #, kde-format
 msgid "Village Capital"
-msgstr "Vas"
+msgstr "Središče vasi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:369
 #, kde-format
@@ -55794,7 +55799,7 @@ msgstr "Lepotilni salon"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:484
 #, kde-format
 msgid "Chemist"
-msgstr "Kemik"
+msgstr "Drogerija"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:485
 #, kde-format
@@ -56080,7 +56085,7 @@ msgstr "Heliodrom"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
 #, kde-format
 msgid "Airport Gate"
-msgstr "Izhod letališča"
+msgstr "Izhod iz letališča"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
 #, kde-format
@@ -56488,7 +56493,7 @@ msgstr "Vlečno dvigalo"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:624
 #, kde-format
 msgid "T-Bar"
-msgstr "Vlečnica"
+msgstr "Vlečnica na sidra"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:625
 #, kde-format
@@ -58395,17 +58400,17 @@ msgstr "Ciljni ID:"
 #: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:34
 #, kde-format
 msgid "Placemark position provider Plugin"
-msgstr ""
+msgstr "Vtičnik ponudnika oznake lokacije"
 
 #: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:44
 #, kde-format
 msgid "Placemark"
-msgstr ""
+msgstr "Oznaka lokacije"
 
 #: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:54
 #, kde-format
 msgid "Reports the position of a placemark"
-msgstr ""
+msgstr "Poroča pozicijo oznake lokacije"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:231
 #, kde-format
@@ -58493,100 +58498,87 @@ msgstr "Konfiguriraj"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Compass Plugin"
-msgstr "Nastavi ta stolpec"
+msgstr "Konfiguriraj vtičnik kompasa"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "&Themes"
+#, kde-format
 msgid "Theme"
-msgstr "&Teme"
+msgstr "Tema"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:52
-#, fuzzy, kde-format
-#| msgid "Browse"
+#, kde-format
 msgid "Arrows"
-msgstr "Brskaj"
+msgstr "Puščice"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:61
 #, kde-format
 msgid "Atom"
-msgstr ""
+msgstr "Atom"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:70
-#, fuzzy, kde-format
-#| msgid "Magnetic Pole"
+#, kde-format
 msgid "Magnet"
-msgstr "Magnetni pol"
+msgstr "Magnet"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Show compass"
+#, kde-format
 msgid "Compass"
-msgstr "Pokaži kompas"
+msgstr "Kompas"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:63
-#, fuzzy, kde-format
-#| msgid "Show compass"
+#, kde-format
 msgid "&Compass"
-msgstr "Pokaži kompas"
+msgstr "Kompas"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgid "There is no item to process."
+#, kde-format
 msgid "This is a float item that provides a compass."
-msgstr "Ni nobenega predmeta za obdelavo."
+msgstr "To je premikajoči se predmet, ki nudi kompas."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Raw File Handling</b>"
+#, kde-format
 msgid "Configure Scale Bar Plugin"
-msgstr "<b>Nastavite obravnavanje surovih datotek</b>"
+msgstr "Konfiguriraj vtičnik vrstice merila"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRatioScaleCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show Ratio Scale"
-msgstr "Pokaži naslov slike"
+msgstr "Pokaži merilno lestvico"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:30
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:52
 #, kde-format
 msgid "Minimize"
-msgstr ""
+msgstr "Strni"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:69
-#, fuzzy, kde-format
-#| msgid "Show scale bar"
+#, kde-format
 msgid "Scale Bar"
-msgstr "Prikaži merilo"
+msgstr "Merilo"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:74
-#, fuzzy, kde-format
-#| msgid "&Scale to:"
+#, kde-format
 msgid "&Scale Bar"
-msgstr "Umeri na:"
+msgstr "Merilo"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is the list of items that are about to be deleted."
+#, kde-format
 msgid "This is a float item that provides a map scale."
-msgstr "To je seznam predmetov, ki bodo pravkar izbrisani."
+msgstr "To je premikajoči se predmet, ki nudi merilno lestvico."
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Original Colors:"
+#, kde-format
 msgid "Original Developer"
-msgstr "Izvorne barve:"
+msgstr "Izvirni razvijalec"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:240
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:244
@@ -58614,11 +58606,9 @@ msgid "nm"
 msgstr "nm"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "&Ratio Scale"
-msgstr "Racionalno"
+msgstr "Lestvica"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
@@ -58629,122 +58619,125 @@ msgid "Navigation"
 msgstr "Navigacija"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "&Navigation"
 msgstr "Navigacija"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
 #, kde-format
 msgid "A mouse control to zoom and move the map"
-msgstr ""
+msgstr "Upravljanje miške za povečevanje in premikanje zemljevida"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
-#, fuzzy, kde-format
-#| msgid "Current Location"
+#, kde-format
 msgid "Current Location Button"
-msgstr "Trenutna lokacija"
+msgstr "Gumb trenutne lokacije"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
 #, kde-format
 msgid "Home Button"
-msgstr ""
+msgstr "Gumb Domov"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Overview Map"
-msgstr "Pokaži pregledni zemljevid"
+msgstr "Pregledni zemljevid"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:80
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "&Overview Map"
-msgstr "Pokaži pregledni zemljevid"
+msgstr "Pregledni zemljevid"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:95
 #, kde-format
 msgid "This is a float item that provides an overview map."
-msgstr ""
+msgstr "To je premikajoči se predmet, ki nudi pregledni zemljevid."
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:481
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Choose Overview Map"
-msgstr "Pokaži pregledni zemljevid"
+msgstr "Izberi pregledni zemljevid"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:513
-#, fuzzy, kde-format
-#| msgid "Set here the color of the second line."
+#, kde-format
 msgid "Please choose the color for the position indicator"
-msgstr "Tukaj nastavite barvo druge črte."
+msgstr "Izberite barvo indikatorja pozicije"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Preview Behavior</b>"
+#, kde-format
 msgid "Configure Overview Map"
-msgstr "<b>Nastavite obnašanje predogleda</b>"
+msgstr "Konfiguriraj predogledni zemljevid"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgid "Map &Image"
-msgstr "%1 slik"
+msgstr "Zemljevid in slika"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:28
-#, fuzzy, kde-format
-#| msgid "&Place names:"
+#, kde-format
 msgid "&Planet:"
-msgstr "Imena lokacij:"
+msgstr "&Planet:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:71
-#, fuzzy, kde-format
-#| msgid "Size:"
+#, kde-format
 msgid "&Size:"
 msgstr "Velikost:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
-#, fuzzy, kde-format
-#| msgctxt "Dimension separator, as in: '15 x 10 centimeters'"
-#| msgid "x"
+#, kde-format
 msgid "x"
 msgstr "x"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Colors"
+#, kde-format
 msgid "C&olors"
 msgstr "Barve"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Position I&ndicator:"
-msgstr "Pokaži kazalnik zemljepisne lege"
+msgstr "Indikator pozicije:"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
-msgstr ""
+msgstr "OpenStreetMap Nominatim reverzno geokodiranje"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:29
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Nominatim"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
 #, kde-format
 msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
 msgstr ""
+"Spletno reverzno geokodiranje z uporabo storitve OpenStreetMap Nominatim"
+
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:20
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "File Transfer"
+msgid "Osm File Parser"
+msgstr "Prenos datotek"
+
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:35
+#, kde-format
+msgid "Create GeoDataDocument from Osm Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:52
+#, fuzzy, kde-format
+#| msgid "OpenStreetMap"
+msgid "OpenStreetMap Data"
+msgstr "OpenStreetMap"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -58906,7 +58899,7 @@ msgstr "Izberi postavko:"
 #: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:30
 #, kde-format
 msgid "Current Route Position Provider Plugin"
-msgstr ""
+msgstr "Vtičnik ponudnika trenutnega položaja poti"
 
 #: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:40
 #, kde-format
@@ -59359,12 +59352,12 @@ msgstr "Počisti pot"
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:468
 #, kde-format
 msgid "placemarks found: %1"
-msgstr "najdene oznake položaja: %1"
+msgstr "najdene oznake lokacije: %1"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:474
 #, kde-format
 msgid "No placemark found"
-msgstr "Ni najdenih nobenih oznak položaja"
+msgstr "Ni najdenih nobenih oznak lokacije"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:591
 #, kde-format
@@ -59492,13 +59485,13 @@ msgstr "Približanje"
 #: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:37
 #, kde-format
 msgid "&Tile level range:"
-msgstr ""
+msgstr "Obseg ravni ploščic:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, topSpinBox)
 #: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:47
 #, kde-format
 msgid "Minimum Tile Level"
-msgstr ""
+msgstr "Minimalna raven ploščic"
 
 #. i18n: ectx: property (text), widget (QLabel, toLabel)
 #: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:63
@@ -59510,7 +59503,7 @@ msgstr "do"
 #: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:70
 #, kde-format
 msgid "Maximum Tile Level"
-msgstr ""
+msgstr "maksimalna raven ploščic"
 
 #: core/utilities/geolocation/marble/TourCaptureDialog.cpp:67
 #, kde-format
@@ -59518,6 +59511,8 @@ msgid ""
 "Supported codecs are not found. (ffmpeg/avconv needs to be installed and in "
 "PATH.)"
 msgstr ""
+"Podprtih kodekov ni mogoče najti. (ffmpeg/avconv mora biti nameščen in "
+"omenjen v PATH.)"
 
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
 #: core/utilities/geolocation/marble/TourCaptureDialog.cpp:112
@@ -59587,114 +59582,89 @@ msgstr "Posodobi predmete"
 #: core/utilities/geolocation/marble/TourItemDelegate.cpp:409
 #, kde-format
 msgid "Add Placemark to Tour"
-msgstr ""
+msgstr "Dodaj oznako lokacije na pot"
 
 #: core/utilities/geolocation/marble/TourItemDelegate.cpp:411
-#, fuzzy, kde-format
-#| msgid "Change Face Tag"
+#, kde-format
 msgid "Change Placemark in Tour"
-msgstr "Spremeni značko obraza"
+msgstr "Spremeni oznako lokacije v poti"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:139
 #: core/utilities/geolocation/marble/TourWidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgid "Add FlyTo"
-msgstr "Dodaj mapo"
+msgstr "Dodaj PoletDo"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:146
-#, fuzzy, kde-format
-#| msgid "Add again"
+#, kde-format
 msgid "Add Wait"
-msgstr "Dodaj spet"
+msgstr "Dodaj Čakaj"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Add Border"
+#, kde-format
 msgid "Add SoundCue"
-msgstr "Dodaj obrobo"
+msgstr "Dodaj SoundCue"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Add Watermark"
+#, kde-format
 msgid "Add Placemark"
-msgstr "Dodaj vodni žig"
+msgstr "Dodaj oznako lokacije"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:153
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#, kde-format
 msgid "Remove placemark"
-msgstr "Odstrani zaznamek"
+msgstr "Odstrani oznako lokacije"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:155
-#, fuzzy, kde-format
-#| msgid "Change Face Tag"
+#, kde-format
 msgid "Change placemark"
-msgstr "Spremeni značko obraza"
+msgstr "Spremeni oznako lokacije"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:157
-#, fuzzy, kde-format
-#| msgid "&Loop"
+#, kde-format
 msgid "Loop"
-msgstr "Ponav&ljaj"
+msgstr "Zanka"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:341
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save"
+#, kde-format
 msgid "Save tour"
-msgstr "Shrani"
+msgstr "Shrani turo"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:342
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The current image has been changed.\n"
-#| "Do you wish to save your changes?"
+#, kde-format
 msgid "There are unsaved Tours. Do you want to save your changes?"
-msgstr ""
-"Trenutna slika je bila spremenjena.\n"
-"Ali želite shraniti vaše spremembe?"
+msgstr "Obstajajo neshranjene ture. Ali želite shraniti vaše spremembe?"
 
 #. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/utilities/geolocation/marble/TourWidget.cpp:370
 #: core/utilities/geolocation/marble/TourWidget.ui:156
-#, fuzzy, kde-format
-#| msgid "Open error"
+#, kde-format
 msgid "Open Tour"
-msgstr "Napaka odpiranja"
+msgstr "Odpri turo"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:370
 #: core/utilities/geolocation/marble/TourWidget.cpp:831
 #, kde-format
 msgid "KML Tours (*.kml)"
-msgstr ""
+msgstr "KML ture (*.kml)"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:549
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Remove selected items"
+#, kde-format
 msgid "Remove Selected Items"
-msgstr "Odstrani izbrane postavke"
+msgstr "Odstrani izbrane predmete"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:550
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to restore %1 item?"
-#| msgid_plural "Are you sure you want to restore %1 items?"
+#, kde-format
 msgid "Are you sure want to remove selected items?"
-msgstr "Ali ste prepričani, da želite obnoviti %1 predmet?"
+msgstr "Ali ste prepričani, da želite odstraniti izbrane predmete?"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:831
-#, fuzzy, kde-format
-#| msgid "Save format"
+#, kde-format
 msgid "Save Tour as"
-msgstr "Shrani format"
+msgstr "Shrani turo kot"
 
 #: core/utilities/geolocation/marble/TourWidget.cpp:891
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Discard Changes"
+#, kde-format
 msgid "Discard Changes"
 msgstr "Zavrzi spremembe"
 
@@ -59703,12 +59673,14 @@ msgstr "Zavrzi spremembe"
 msgid ""
 "Are you sure want to discard all unsaved changes and close current document?"
 msgstr ""
+"Ali res želite zavreči vse neshranjene spremembe in zapreti trenutni "
+"dokument?"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TourWidget)
 #: core/utilities/geolocation/marble/TourWidget.ui:14
 #, kde-format
 msgid "Tour"
-msgstr ""
+msgstr "Tura"
 
 #. i18n: ectx: property (text), widget (QLabel, m_elapsedTime)
 #. i18n: ectx: property (text), widget (QLabel, m_totalTime)
@@ -59716,7 +59688,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/TourWidget.ui:71
 #, kde-format
 msgid "--:--"
-msgstr ""
+msgstr "--:--"
 
 #. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
@@ -59736,56 +59708,50 @@ msgstr "Premakni dol"
 
 #. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/utilities/geolocation/marble/TourWidget.ui:123
-#, fuzzy, kde-format
-#| msgid "New Folder"
+#, kde-format
 msgid "New Tour"
-msgstr "Nova mapa"
+msgstr "Nova tura"
 
 #. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/utilities/geolocation/marble/TourWidget.ui:135
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save"
+#, kde-format
 msgid "Save Tour"
-msgstr "Shrani"
+msgstr "Shrani turo"
 
 #. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/utilities/geolocation/marble/TourWidget.ui:147
-#, fuzzy, kde-format
-#| msgctxt "@action: save current filter settings"
-#| msgid "Save As..."
+#, kde-format
 msgid "Save Tour As"
-msgstr "Shrani kot..."
+msgstr "Shrani turo kot"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
 #: core/utilities/geolocation/marble/TourWidget.ui:171
 #, kde-format
 msgid "Begins touring"
-msgstr ""
+msgstr "Začni turo"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
 #: core/utilities/geolocation/marble/TourWidget.ui:183
 #, kde-format
 msgid "Stops touring (playing again will start tour from the start)"
-msgstr ""
+msgstr "Ustavi turo (ponovno predvajanje bo zagnalo turo od začetka)"
 
 #. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/utilities/geolocation/marble/TourWidget.ui:192
 #, kde-format
 msgid "Record tour"
-msgstr ""
+msgstr "Zabeleži turo"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
 #: core/utilities/geolocation/marble/TourWidget.ui:195
 #, kde-format
 msgid "Converts the loaded tour into a movie"
-msgstr ""
+msgstr "Pretvori naloženo turo v video posnetek"
 
 #: core/utilities/geolocation/marble/WaitEditWidget.cpp:38
-#, fuzzy, kde-format
-#| msgid "Saturation:"
+#, kde-format
 msgid "Wait duration:"
-msgstr "Nasičenost:"
+msgstr "Čas čakanja:"
 
 #: core/utilities/imageeditor/core/undoaction.cpp:147
 #, kde-format
