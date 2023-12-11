@@ -46,8 +46,8 @@ BUGFIXES:
 033 ==> 478298 - Please add button to filter on no stars.
 034 ==> 478252 - Impossible actions on video file that has just been played (renaming, moving).
 035 ==> 441052 - Missing data using reverse geocoding for specific addresses, subsequent crash.
-036 ==> 478344 - Pprogram crashes when trying to give a tagged face a name.
-037 ==> 
+036 ==> 478344 - Program crashes when trying to give a tagged face a name.
+037 ==> 459194 - OpenStreetMap looks blurry on default zoom level.
 038 ==> 
 039 ==> 
 040 ==> 
