@@ -143,7 +143,7 @@ void MarbleLineEdit::updateClearButtonIcon( const QString& text )
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    if ( d->m_clearButton->pixmap() && !d->m_clearButton->pixmap().isNull() ) {
+    if ( !d->m_clearButton->pixmap().isNull() ) {
 
 #else
 
