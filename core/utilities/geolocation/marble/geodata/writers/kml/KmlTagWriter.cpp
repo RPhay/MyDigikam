@@ -22,8 +22,8 @@ bool KmlTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
     Q_UNUSED(node);
 
     writer.writeDefaultNamespace( QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) );
-    writer.writeNamespace( QString::fromUtf8(kml::kmlTag_nameSpaceGx22), "gx" );
-    writer.writeStartElement( "kml" );
+    writer.writeNamespace( QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QLatin1String("gx") );
+    writer.writeStartElement( QLatin1String("kml") );
 
     // Do not write an end element for document handlers
     return true;

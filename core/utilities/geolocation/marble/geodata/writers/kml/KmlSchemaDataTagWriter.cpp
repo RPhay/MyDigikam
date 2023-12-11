@@ -29,7 +29,7 @@ bool KmlSchemaDataTagWriter::write( const GeoNode *node, GeoWriter& writer ) con
     const GeoDataSchemaData *schemaData = static_cast<const GeoDataSchemaData*>( node );
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_SchemaData) );
     QString schemaUrl = schemaData->schemaUrl();
-    writer.writeAttribute( "schemaUrl", schemaUrl );
+    writer.writeAttribute( QLatin1String("schemaUrl"), schemaUrl );
 
     for( const GeoDataSimpleData& data: schemaData->simpleDataList() ) {
         writeElement( &data, writer );

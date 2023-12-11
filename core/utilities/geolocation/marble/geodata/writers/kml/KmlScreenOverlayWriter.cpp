@@ -41,10 +41,10 @@ bool KmlScreenOverlayWriter::writeMid( const GeoNode *node, GeoWriter& writer ) 
 void KmlScreenOverlayWriter::writeVec2( const QString &element, const GeoDataVec2 &vec2, GeoWriter &writer )
 {
     writer.writeStartElement( element );
-    writer.writeAttribute( "x", QString::number( vec2.x() ) );
-    writer.writeAttribute( "xunits", unitToString( vec2.xunit() ) );
-    writer.writeAttribute( "y", QString::number( vec2.y() ) );
-    writer.writeAttribute( "yunits", unitToString( vec2.yunit() ) );
+    writer.writeAttribute( QLatin1String("x"), QString::number( vec2.x() ) );
+    writer.writeAttribute( QLatin1String("xunits"), unitToString( vec2.xunit() ) );
+    writer.writeAttribute( QLatin1String("y"), QString::number( vec2.y() ) );
+    writer.writeAttribute( QLatin1String("yunits"), unitToString( vec2.yunit() ) );
     writer.writeEndElement();
 }
 

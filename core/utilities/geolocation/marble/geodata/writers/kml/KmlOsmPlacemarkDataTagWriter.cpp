@@ -36,7 +36,7 @@ bool KmlOsmPlacemarkDataTagWriter::write( const GeoDataFeature *feature,
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_ExtendedData) );
 
     // We declare the "mx" namespace for the custom osmPlacemarkData XML schema
-    writer.writeNamespace( QString::fromUtf8(kml::kmlTag_nameSpaceMx), "mx" );
+    writer.writeNamespace( QString::fromUtf8(kml::kmlTag_nameSpaceMx), QLatin1String("mx") );
 
     KmlOsmPlacemarkDataTagWriter::writeOsmData( placemark->geometry(), osmData, writer );
 
