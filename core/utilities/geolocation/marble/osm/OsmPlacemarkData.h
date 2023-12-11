@@ -11,6 +11,8 @@
 #include <QMetaType>
 #include <QString>
 #include <QScopedPointer>
+#include <QSharedPointer>
+
 
 // Marble
 #include "GeoDataCoordinates.h"
