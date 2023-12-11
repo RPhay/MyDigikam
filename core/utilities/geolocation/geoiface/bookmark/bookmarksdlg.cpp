@@ -465,7 +465,7 @@ void BookmarksDialog::readSettings()
     KConfigGroup groupGPSTab  = KConfigGroup(&group, QLatin1String("GPS Properties Tab"));
     d->mapView->readSettings(groupGPSTab);
 
-    KConfigGroup groupDialog  = KConfigGroup(&group, "Dialog");
+    KConfigGroup groupDialog  = KConfigGroup(&group, QLatin1String("Dialog"));
     winId();
     DXmlGuiWindow::restoreWindowSize(windowHandle(), groupDialog);
     resize(windowHandle()->size());
@@ -483,7 +483,7 @@ void BookmarksDialog::saveSettings()
     KConfigGroup groupGPSTab  = KConfigGroup(&group, QLatin1String("GPS Properties Tab"));
     d->mapView->writeSettings(groupGPSTab);
 
-    KConfigGroup groupDialog = KConfigGroup(&group, "Dialog");
+    KConfigGroup groupDialog = KConfigGroup(&group, QLatin1String("Dialog"));
     DXmlGuiWindow::saveWindowSize(windowHandle(), groupDialog);
 }
 
