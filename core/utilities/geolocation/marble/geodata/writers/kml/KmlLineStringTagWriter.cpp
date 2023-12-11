@@ -47,18 +47,18 @@ bool KmlLineStringTagWriter::write( const GeoNode *node, GeoWriter& writer ) con
             GeoDataCoordinates coordinates = lineString->at( i );
             if ( i > 0 )
             {
-                writer.writeCharacters( " " );
+                writer.writeCharacters( QString::fromUtf8(" ") );
             }
 
             qreal lon = coordinates.longitude( GeoDataCoordinates::Degree );
             writer.writeCharacters( QString::number( lon, 'f', 10 ) );
-            writer.writeCharacters( "," );
+            writer.writeCharacters( QString::fromUtf8(",") );
             qreal lat = coordinates.latitude( GeoDataCoordinates::Degree );
             writer.writeCharacters( QString::number( lat, 'f', 10 ) );
 
             if ( hasAltitude ) {
                 qreal alt = coordinates.altitude();
-                writer.writeCharacters( "," );
+                writer.writeCharacters( QString::fromUtf8(",") );
                 writer.writeCharacters( QString::number( alt, 'f', 2 ) );
             }
         }

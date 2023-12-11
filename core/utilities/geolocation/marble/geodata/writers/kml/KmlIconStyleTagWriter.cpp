@@ -54,17 +54,17 @@ bool KmlIconStyleTagWriter::writeMid( const GeoNode *node, GeoWriter& writer ) c
     if ( !emptyHotSpot ) {
         writer.writeStartElement( QString::fromUtf8(kml::kmlTag_hotSpot) );
         if ( hotSpot.x() != 0.5 || xunits != GeoDataHotSpot::Fraction ) {
-            writer.writeAttribute( "x", QString::number( hotSpot.x(), 'f' ) );
+            writer.writeAttribute( QString::fromUtf8("x"), QString::number( hotSpot.x(), 'f' ) );
         }
         if ( hotSpot.y() != 0.5 || yunits != GeoDataHotSpot::Fraction ) {
-            writer.writeAttribute( "y", QString::number( hotSpot.y(), 'f' ) );
+            writer.writeAttribute( QString::fromUtf8("y"), QString::number( hotSpot.y(), 'f' ) );
         }
 
         if ( xunits != GeoDataHotSpot::Fraction ) {
-            writer.writeAttribute( "xunits", unitString( xunits ) );
+            writer.writeAttribute( QString::fromUtf8("xunits"), unitString( xunits ) );
         }
         if ( yunits != GeoDataHotSpot::Fraction ) {
-            writer.writeAttribute( "yunits", unitString( yunits ) );
+            writer.writeAttribute( QString::fromUtf8("yunits"), unitString( yunits ) );
         }
         writer.writeEndElement();
     }

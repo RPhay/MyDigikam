@@ -25,7 +25,7 @@ bool KmlDataTagWriter::write( const GeoNode *node,
     const GeoDataData *data = static_cast<const GeoDataData*>( node );
 
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Data) );
-    writer.writeAttribute( "name", data->name() );
+    writer.writeAttribute( QString::fromUtf8("name"), data->name() );
     writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_displayName), data->displayName() );
     writer.writeElement( QString::fromUtf8("value"), data->value().toString() );
     writer.writeEndElement();
