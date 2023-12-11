@@ -159,12 +159,32 @@ void PluginManager::addParseRunnerPlugin( const ParseRunnerPlugin *plugin )
 
 void PluginManager::blacklistPlugin(const QString &filename)
 {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     PluginManagerPrivate::m_blacklist << QLibraryInfo::path(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + filename;
+
+#else
+
+    PluginManagerPrivate::m_blacklist << QLibraryInfo::location(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + filename;
+
+#endif
+
 }
 
 void PluginManager::whitelistPlugin(const QString &filename)
 {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     PluginManagerPrivate::m_whitelist << QLibraryInfo::path(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + filename;
+
+#else
+
+    PluginManagerPrivate::m_whitelist << QLibraryInfo::location(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + filename;
+
+#endif
+
 }
 
 /** Append obj to the given plugins list if it inherits both T and U */
@@ -231,7 +251,17 @@ void PluginManagerPrivate::loadPlugins()
     bool foundPlugin = false;
     for( const QString &fileName: pluginFileNameList ) {
         QString const baseName = QFileInfo(fileName).baseName();
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         QString const libBaseName = QLibraryInfo::path(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + QFileInfo(fileName).baseName();
+
+#else
+
+        QString const libBaseName = QLibraryInfo::location(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + QFileInfo(fileName).baseName();
+
+#endif
+
         if (!m_whitelist.isEmpty() && !m_whitelist.contains(baseName) && !m_whitelist.contains(libBaseName)) {
             qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring non-whitelisted plugin " << fileName;
             continue;

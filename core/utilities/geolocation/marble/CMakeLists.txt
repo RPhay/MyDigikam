@@ -774,5 +774,15 @@ target_compile_definitions(core_marble_obj
                            digikamcore_EXPORTS
 )
 
+if(NOT Qt6_FOUND)
+
+    set_target_properties(core_marble_obj
+                          PROPERTIES
+                          COMPILE_FLAGS
+                          "-DQT_USE_QSTRINGBUILDER -DQT_NO_SIGNALS_SLOTS_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_BYTEARRAY"
+    )
+
+endif()
+
 add_subdirectory(data)
 add_subdirectory(plugins)
