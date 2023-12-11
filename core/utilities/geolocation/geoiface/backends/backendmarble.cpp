@@ -366,10 +366,9 @@ void BackendMarble::createActions()
             this, &BackendMarble::slotMapThemeActionTriggered);
 
     QList<QPair<QString, QString>> mainThemes;
-    mainThemes.append( { i18n("Atlas map"),              QLatin1String("earth/srtm/srtm.dgml")                   } );
-    mainThemes.append( { i18n("Satellite map"),          QLatin1String("earth/bluemarble/bluemarble.dgml")       } );
-    mainThemes.append( { i18n("OpenStreetMap"),          QLatin1String("earth/openstreetmap/openstreetmap.dgml") } );
-    mainThemes.append( { i18n("OpenStreetMap (Vector)"), QLatin1String("earth/vectorosm/vectorosm.dgml")         } );
+    mainThemes.append( { i18n("Atlas map"),     QLatin1String("earth/srtm/srtm.dgml")                   } );
+    mainThemes.append( { i18n("Satellite map"), QLatin1String("earth/bluemarble/bluemarble.dgml")       } );
+    mainThemes.append( { i18n("OpenStreetMap"), QLatin1String("earth/vectorosm/vectorosm.dgml")         } );
 
     for (auto& theme : mainThemes)
     {
@@ -389,7 +388,7 @@ void BackendMarble::createActions()
         QLatin1String("earth/precip-dec/precip-dec.dgml"),
         QLatin1String("earth/precip-july/precip-july.dgml"),
         QLatin1String("earth/schagen1689/schagen1689.dgml"),
-        QLatin1String("earth/sentinel2/sentinel2.dgml"),
+        QLatin1String("earth/openstreetmap/openstreetmap.dgml"),
         QLatin1String("earth/temp-dec/temp-dec.dgml"),
         QLatin1String("earth/temp-july/temp-july.dgml")
     };
