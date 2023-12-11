@@ -29,6 +29,9 @@ void OsmPbfParser::parse(const uint8_t *data, std::size_t len)
     const uint8_t *it = data;
     const uint8_t *end = data + len;
     while (parseBlob(it, end));
+#else
+    Q_UNUSED(data);
+    Q_UNUSED(len);
 #endif
 }
 
