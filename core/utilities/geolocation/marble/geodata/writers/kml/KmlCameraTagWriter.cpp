@@ -34,13 +34,13 @@ bool KmlCameraTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
     KmlObjectTagWriter::writeIdentifiers( writer, camera );
 
     if (camera->timeStamp().when().isValid()) {
-        writer.writeStartElement("gx:TimeStamp");
+        writer.writeStartElement(QString::fromUtf8("gx:TimeStamp"));
         writer.writeElement(QString::fromUtf8("when"), camera->timeStamp().when().toString(Qt::ISODate));
         writer.writeEndElement();
     }
 
     if (camera->timeSpan().isValid()) {
-        writer.writeStartElement("gx:TimeSpan");
+        writer.writeStartElement(QString::fromUtf8("gx:TimeSpan"));
         if (camera->timeSpan().begin().when().isValid())
             writer.writeElement(QString::fromUtf8("begin"), camera->timeSpan().begin().when().toString(Qt::ISODate));
         if (camera->timeSpan().end().when().isValid())

@@ -84,6 +84,7 @@ GeoDataFeature * GeoDataNetworkLinkControl::clone() const
 const char *GeoDataNetworkLinkControl::nodeType() const
 {
     Q_D(const GeoDataNetworkLinkControl);
+    Q_UNUSED(d);
     return GeoDataTypes::GeoDataNetworkLinkControlType;
 }
 

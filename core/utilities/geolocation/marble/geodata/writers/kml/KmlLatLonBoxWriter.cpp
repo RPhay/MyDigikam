@@ -28,13 +28,13 @@ bool KmlLatLonBoxWriter::write( const GeoNode *node,
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_LatLonBox) );
     KmlObjectTagWriter::writeIdentifiers( writer, lat_lon_box );
 
-    writer.writeTextElement( "north",
+    writer.writeTextElement( QString::fromUtf8("north"),
 			     QString::number(lat_lon_box->north( GeoDataCoordinates::Degree )) );
-    writer.writeTextElement( "south",
+    writer.writeTextElement( QString::fromUtf8("south"),
 			     QString::number(lat_lon_box->south( GeoDataCoordinates::Degree )) );
-    writer.writeTextElement( "east",
+    writer.writeTextElement( QString::fromUtf8("east"),
 			     QString::number(lat_lon_box->east( GeoDataCoordinates::Degree )) );
-    writer.writeTextElement( "west",
+    writer.writeTextElement( QString::fromUtf8("west"),
 			     QString::number(lat_lon_box->west( GeoDataCoordinates::Degree )) );
     writer.writeOptionalElement( QString::fromUtf8("rotation"),
                              QString::number(lat_lon_box->rotation( GeoDataCoordinates::Degree )), QString::fromUtf8("0") );

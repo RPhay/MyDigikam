@@ -29,8 +29,8 @@ bool KmlTimeSpanWriter::write( const GeoNode *node,
     writer.writeStartElement( QString::fromUtf8(kml::kmlTag_TimeSpan) );
     KmlObjectTagWriter::writeIdentifiers( writer, timespan );
 
-    writer.writeTextElement( "begin", KmlTimeStampTagWriter::toString( timespan->begin() ) );
-    writer.writeTextElement( "end", KmlTimeStampTagWriter::toString( timespan->end() ) );
+    writer.writeTextElement( QLatin1String("begin"), KmlTimeStampTagWriter::toString( timespan->begin() ) );
+    writer.writeTextElement( QLatin1String("end"), KmlTimeStampTagWriter::toString( timespan->end() ) );
 
     writer.writeEndElement();
 

@@ -931,6 +931,14 @@ void NewstuffModelPrivate::processQueue()
 #endif
 
         watcher->setFuture( future );
+
+#else
+
+        QFuture<void> future = QtConcurrent::run( this, &NewstuffModelPrivate::uninstall, m_currentAction.first );
+        watcher->setFuture( future );
+
+#endif
+
     }
 }
 

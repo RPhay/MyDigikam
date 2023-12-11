@@ -446,7 +446,17 @@ bool RoutingLayerPrivate::handleMouseButtonPress( QMouseEvent *e )
             } else if ( e->button() == Qt::RightButton ) {
                 m_removeViaPointAction->setEnabled( true );
                 m_activeMenuIndex = region.index;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 m_contextMenu->showRmbMenu( e->position().x(), e->position().y() );
+
+#else
+
+                m_contextMenu->showRmbMenu( e->pos().x(), e->pos().y() );
+
+#endif
+
                 return true;
             } else
                 return false;
@@ -468,7 +478,17 @@ bool RoutingLayerPrivate::handleMouseButtonPress( QMouseEvent *e )
                 return true;
             } else if ( e->button() == Qt::RightButton ) {
                 m_removeViaPointAction->setEnabled( false );
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 m_contextMenu->showRmbMenu( e->position().x(), e->position().y() );
+
+#else
+
+                m_contextMenu->showRmbMenu( e->pos().x(), e->pos().y() );
+
+#endif
+
                 return true;
             } else
                 return false;
@@ -483,7 +503,14 @@ bool RoutingLayerPrivate::handleMouseButtonPress( QMouseEvent *e )
             return true;
         } else if ( e->button() == Qt::RightButton ) {
             m_removeViaPointAction->setEnabled( false );
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             m_contextMenu->showRmbMenu( e->position().x(), e->position().y() );
+#else
+
+            m_contextMenu->showRmbMenu( e->pos().x(), e->pos().y() );
+#endif
             return true;
         } else
             return false;

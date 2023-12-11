@@ -40,12 +40,12 @@ bool KmlLinearRingTagWriter::write( const GeoNode *node, GeoWriter& writer ) con
             GeoDataCoordinates coordinates = ring->at( i % ring->size() );
             if ( i > 0 )
             {
-                writer.writeCharacters( " " );
+                writer.writeCharacters( QString::fromUtf8(" ") );
             }
 
             qreal lon = coordinates.longitude( GeoDataCoordinates::Degree );
             writer.writeCharacters( QString::number( lon, 'f', 10 ) );
-            writer.writeCharacters( "," );
+            writer.writeCharacters( QString::fromUtf8(",") );
             qreal lat = coordinates.latitude( GeoDataCoordinates::Degree );
             writer.writeCharacters( QString::number( lat, 'f', 10 ) );
         }

@@ -127,7 +127,17 @@ bool WidgetGraphicsItem::eventFilter( QObject *object, QEvent *e )
             if ( child ) {
                 shiftedPos -= child->pos(); // transform to children's coordinates
                 QMouseEvent shiftedEvent = QMouseEvent( e->type(), shiftedPos,
-                        event->globalPosition(), event->button(), event->buttons(),
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                        event->globalPosition(),
+
+#else
+
+                        event->globalPos(),
+
+#endif
+                        event->button(), event->buttons(),
                         event->modifiers() );
                 if ( QApplication::sendEvent( child, &shiftedEvent ) ) {
                     d->m_marbleWidget->setCursor( d->m_widget->cursor() );
