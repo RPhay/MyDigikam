@@ -49,7 +49,7 @@ BUGFIXES:
 036 ==> 478344 - Program crashes when trying to give a tagged face a name.
 037 ==> 459194 - OpenStreetMap looks blurry on default zoom level.
 038 ==> 478084 - digiKam 8.x language issue on macOS.
-039 ==> 
+039 ==> 478406 - Crash when try to Name a face.
 040 ==> 
 041 ==> 
 042 ==> 
