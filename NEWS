@@ -48,7 +48,7 @@ BUGFIXES:
 035 ==> 441052 - Missing data using reverse geocoding for specific addresses, subsequent crash.
 036 ==> 478344 - Program crashes when trying to give a tagged face a name.
 037 ==> 459194 - OpenStreetMap looks blurry on default zoom level.
-038 ==> 
+038 ==> 478084 - digiKam 8.x language issue on macOS.
 039 ==> 
 040 ==> 
 041 ==> 
