@@ -920,8 +920,18 @@ void NewstuffModelPrivate::processQueue()
         QObject::connect( watcher, SIGNAL(finished()), m_parent, SLOT(mapUninstalled()) );
         QObject::connect( watcher, SIGNAL(finished()), watcher, SLOT(deleteLater()) );
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         QFuture<void> future = QtConcurrent::run( &NewstuffModelPrivate::uninstall, this, m_currentAction.first );
         watcher->setFuture( future );
+
+#else
+
+        QFuture<void> future = QtConcurrent::run( this, &NewstuffModelPrivate::uninstall, m_currentAction.first );
+        watcher->setFuture( future );
+
+#endif
+
     }
 }
 

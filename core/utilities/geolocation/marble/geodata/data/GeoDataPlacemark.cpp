@@ -773,7 +773,7 @@ void GeoDataPlacemark::pack( QDataStream& stream ) const
 
 QXmlStreamWriter& GeoDataPlacemark::pack( QXmlStreamWriter& stream ) const
 {
-    stream.writeStartElement( "placemark" );
+    stream.writeStartElement( QLatin1String("placemark") );
 
     stream.writeEndElement();
     return stream;
