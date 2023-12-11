@@ -12,6 +12,17 @@
 #include <QTimer>
 #include <QKeyEvent>
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+#   include <QEventPoint>
+
+#else
+
+#   include <QTouchEvent>
+
+#endif
+
+
 #include "MarbleGlobal.h"
 #include "digikam_debug.h"
 #include "MarbleWidget.h"
@@ -176,14 +187,35 @@ bool MarbleWidgetInputHandler::handleTouch(QTouchEvent *event)
 {
     event->accept();
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     if (event->points().count() == 1)
     {
-        QTouchEvent::TouchPoint p = event->points().at(0);
+        QEventPoint p = event->points().at(0);
+
+#else
+
+    if (event->touchPoints().count() == 1)
+    {
+         QTouchEvent::TouchPoint p = event->touchPoints().at(0);
+
+#endif
+
         if (event->type() == QEvent::TouchBegin)
         {
             d->m_pinchDetected = false;
             d->m_panDetected = false;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             QMouseEvent press(QMouseEvent::MouseButtonPress, p.position(),
+
+#else
+
+            QMouseEvent press(QMouseEvent::MouseButtonPress, p.pos(),
+
+#endif
+
                               Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
             handleMouseEvent(&press);
         }
@@ -192,7 +224,17 @@ bool MarbleWidgetInputHandler::handleTouch(QTouchEvent *event)
             if (!d->m_pinchDetected)
             {
                 d->m_panDetected = true;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 QMouseEvent move(QMouseEvent::MouseMove, p.position(),
+
+#else
+
+                QMouseEvent move(QMouseEvent::MouseMove, p.pos(),
+
+#endif
+
                                  Qt::NoButton, Qt::LeftButton, Qt::NoModifier);
                 handleMouseEvent(&move);
             }
@@ -203,7 +245,16 @@ bool MarbleWidgetInputHandler::handleTouch(QTouchEvent *event)
             if (d->m_pinchDetected || d->m_panDetected)
                 blockSignals(true);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             QMouseEvent release(QMouseEvent::MouseButtonRelease, p.position(),
+
+#else
+
+            QMouseEvent release(QMouseEvent::MouseButtonRelease, p.pos(),
+
+#endif
+
                                 Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
             handleMouseEvent(&release);
 

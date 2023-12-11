@@ -140,7 +140,17 @@ void MarbleLineEdit::setBusy(bool busy)
 void MarbleLineEdit::updateClearButtonIcon( const QString& text )
 {
     d->m_clearButton->setVisible( text.length() > 0 );
-    if ( !d->m_clearButton->pixmap().isNull() ) {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    if ( d->m_clearButton->pixmap() && !d->m_clearButton->pixmap().isNull() ) {
+
+#else
+
+
+    if ( d->m_clearButton->pixmap() && !d->m_clearButton->pixmap()->isNull() ) {
+
+#endif
         return;
     }
 
@@ -152,9 +162,19 @@ void MarbleLineEdit::updateClearButtonIcon( const QString& text )
 
 void MarbleLineEdit::updateClearButton()
 {
-    const QSize geom = size();
-    const int frameWidth = style()->pixelMetric( QStyle::PM_DefaultFrameWidth, nullptr, this );
-    const int pixmapSize = d->m_clearButton->pixmap().width() + 1;
+    const QSize geom        = size();
+    const int frameWidth    = style()->pixelMetric( QStyle::PM_DefaultFrameWidth, nullptr, this );
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    const int pixmapSize    = d->m_clearButton->pixmap().width() + 1;
+
+#else
+
+    const int pixmapSize    = d->m_clearButton->pixmap()->width() + 1;
+
+#endif
+
     const int decoratorSize = d->m_decoratorPixmap.width() + 1;
 
     int y = ( geom.height() - pixmapSize ) / 2;
