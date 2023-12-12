@@ -147,8 +147,7 @@ void MarbleLineEdit::updateClearButtonIcon( const QString& text )
 
 #else
 
-
-    if ( d->m_clearButton->pixmap() && !d->m_clearButton->pixmap()->isNull() ) {
+    if ( !d->m_clearButton->pixmap(Qt::ReturnByValue).isNull() ) {
 
 #endif
         return;
@@ -171,7 +170,7 @@ void MarbleLineEdit::updateClearButton()
 
 #else
 
-    const int pixmapSize    = d->m_clearButton->pixmap()->width() + 1;
+    const int pixmapSize    = d->m_clearButton->pixmap(Qt::ReturnByValue).width() + 1;
 
 #endif
 
