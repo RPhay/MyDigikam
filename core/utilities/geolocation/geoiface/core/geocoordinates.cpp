@@ -19,15 +19,7 @@
 
 #ifdef HAVE_MARBLE
 
-#   if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-#       include "GeoDataCoordinates.h"
-
-#   else
-
-#       include <marble/GeoDataCoordinates.h>
-
-#   endif
+#   include "GeoDataCoordinates.h"
 
 #endif
 

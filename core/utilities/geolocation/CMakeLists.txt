@@ -7,9 +7,4 @@
 add_subdirectory(geoiface)
 add_subdirectory(mapsearches)
 add_subdirectory(geomapwrapper)
-
-#if(Qt6_FOUND)
-
-    add_subdirectory(marble)
-
-#endif()
+add_subdirectory(marble)

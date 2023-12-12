@@ -32,33 +32,16 @@
 
 // Marble includes
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-#   include "GeoDataLinearRing.h"
-#   include "GeoDataLatLonAltBox.h"
-#   include "GeoPainter.h"
-#   include "MarbleMap.h"
-#   include "MarbleDirs.h"
-#   include "MarbleWidget.h"
-#   include "ViewportParams.h"
-#   include "AbstractFloatItem.h"
-#   include "MarbleWidgetPopupMenu.h"
-#   include "MapThemeManager.h"
-
-#else
-
-#   include <marble/GeoDataLinearRing.h>
-#   include <marble/GeoDataLatLonAltBox.h>
-#   include <marble/GeoPainter.h>
-#   include <marble/MarbleMap.h>
-#   include <marble/MarbleDirs.h>
-#   include <marble/MarbleWidget.h>
-#   include <marble/ViewportParams.h>
-#   include <marble/AbstractFloatItem.h>
-#   include <marble/MarbleWidgetPopupMenu.h>
-#   include <marble/MapThemeManager.h>
-
-#endif
+#include "GeoDataLinearRing.h"
+#include "GeoDataLatLonAltBox.h"
+#include "GeoPainter.h"
+#include "MarbleMap.h"
+#include "MarbleDirs.h"
+#include "MarbleWidget.h"
+#include "ViewportParams.h"
+#include "AbstractFloatItem.h"
+#include "MarbleWidgetPopupMenu.h"
+#include "MapThemeManager.h"
 
 // Local includes
 

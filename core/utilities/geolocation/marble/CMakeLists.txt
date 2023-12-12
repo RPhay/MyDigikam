@@ -23,6 +23,17 @@ if(Qt6_FOUND)
 
 endif()
 
+if(NOT Qt6_FOUND)
+
+    # The marble library does not adhere to the flags we use
+    remove_definitions(
+        -DQT_NO_CAST_FROM_ASCII
+        -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
+        -DQT_NO_KEYWORDS
+    )
+
+endif()
+
 set(marblewidget_SRCS
 
     AbstractDataPlugin.cpp
@@ -767,22 +778,13 @@ qt_add_resources(marblewidget_SRCS libmarble.qrc)
 qt_wrap_ui(marblewidget_SRCS ${marblewidget_UI})
 
 # Used by digikamcore
-add_library(core_marble_obj OBJECT  ${marblewidget_SRCS} ${SOURCES_UI_HDRS})
+add_library(core_marble_obj OBJECT ${marblewidget_SRCS} ${SOURCES_UI_HDRS})
 
 target_compile_definitions(core_marble_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
 
-if(NOT Qt6_FOUND)
-
-    set_target_properties(core_marble_obj
-                          PROPERTIES
-                          COMPILE_FLAGS
-                          "-DQT_USE_QSTRINGBUILDER -DQT_NO_SIGNALS_SLOTS_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_BYTEARRAY"
-    )
-
-endif()
 
 add_subdirectory(data)
 add_subdirectory(plugins)

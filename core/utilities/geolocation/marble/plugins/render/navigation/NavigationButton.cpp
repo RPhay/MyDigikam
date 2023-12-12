@@ -37,7 +37,16 @@ void NavigationButton::mouseReleaseEvent ( QMouseEvent * )
     Q_EMIT repaintNeeded();
 }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
 void NavigationButton::enterEvent(QEnterEvent *)
+
+#else
+
+void NavigationButton::enterEvent(QEvent *)
+
+#endif
+
 {
     if ( isEnabled() ) {
         m_iconMode = QIcon::Active;

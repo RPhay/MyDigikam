@@ -46,19 +46,9 @@
 
 #ifdef HAVE_MARBLE
 
-#   if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-#       include "GeoDataLineString.h"
-#       include "GeoDataLatLonBox.h"
-#       include "MarbleGlobal.h"
-
-#   else
-
-#       include <marble/GeoDataLineString.h>
-#       include <marble/GeoDataLatLonBox.h>
-#       include <marble/MarbleGlobal.h>
-
-#   endif
+#   include "GeoDataLineString.h"
+#   include "GeoDataLatLonBox.h"
+#   include "MarbleGlobal.h"
 
 #endif
 

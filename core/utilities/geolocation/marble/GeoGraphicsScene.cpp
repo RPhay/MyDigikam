@@ -37,7 +37,17 @@ public:
     }
 
     typedef QHash<const GeoDataFeature*,GeoGraphicsItem*> FeatureItemMap;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     QMultiHash<TileId, FeatureItemMap> m_tiledItems;
+
+#else
+
+    QHash<TileId, FeatureItemMap>      m_tiledItems;
+
+#endif
+
     QMultiHash<const GeoDataFeature*, TileId> m_features; // multi hash because multi track and multi geometry insert multiple items
 
     // Stores the items which have been clicked;

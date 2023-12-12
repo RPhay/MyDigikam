@@ -68,16 +68,8 @@ if(Marble_FOUND)
         ${DIGIKAMCORE_OBJECTS}
         $<TARGET_OBJECTS:core_geoiface_obj>
         $<TARGET_OBJECTS:core_geomapwrapper_obj>
+        $<TARGET_OBJECTS:core_marble_obj>
     )
-
-    if(Qt6_FOUND)
-
-        set(DIGIKAMCORE_OBJECTS
-            ${DIGIKAMCORE_OBJECTS}
-            $<TARGET_OBJECTS:core_marble_obj>
-        )
-
-    endif()
 
 endif()
 

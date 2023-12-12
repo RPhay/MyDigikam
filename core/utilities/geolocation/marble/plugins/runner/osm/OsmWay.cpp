@@ -256,10 +256,23 @@ QVector<GeoDataBuilding::NamedEntry> OsmWay::extractNamedEntries() const
     QVector<GeoDataBuilding::NamedEntry> entries;
 
     QHash< GeoDataCoordinates, OsmPlacemarkData > nref = m_osmData.hRef()->nodeReferences();
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     QHash< GeoDataCoordinates, OsmPlacemarkData >::const_iterator end = nref.end();
 
     for (QHash< GeoDataCoordinates, OsmPlacemarkData >::const_iterator iter = nref.begin();
          iter != end; ++iter)
+
+#else
+
+    QHash< GeoDataCoordinates, OsmPlacemarkData >::iterator end = nref.end();
+
+    for (QHash< GeoDataCoordinates, OsmPlacemarkData >::iterator iter = nref.begin();
+         iter != end; ++iter)
+
+#endif
+
     {
         auto tagIter = iter.value().findTag(QStringLiteral("addr:housenumber"));
 
