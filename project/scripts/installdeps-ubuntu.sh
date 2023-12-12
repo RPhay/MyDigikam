@@ -250,8 +250,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "tesseract-ocr"                      # For CI/CD (MacOS)
                    "libeigen3-dev"                      # >= 3.2
                    "liblensfun-dev"                     # >= 0.2.8
-                   "libmarble-dev"                      # >= 0.22
-                   "marble-data"                        # >= 5.0
                    "libgomp1"                           # For Libraw compilation
                    "libavdevice-dev"                    # >= 3.3.x
                    "libavfilter-dev"                    # >= 3.3.x
