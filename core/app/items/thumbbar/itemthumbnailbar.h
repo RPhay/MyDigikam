@@ -19,11 +19,13 @@
 // Local includes
 
 #include "itemcategorizedview.h"
+#include "groupingviewimplementation.h"
 
 namespace Digikam
 {
 
-class ItemThumbnailBar : public ItemCategorizedView
+class ItemThumbnailBar : public ItemCategorizedView,
+                         public GroupingViewImplementation
 {
     Q_OBJECT
 
@@ -56,8 +58,9 @@ public Q_SLOTS:
 
 protected:
 
-    void slotSetupChanged() override;
-    bool event(QEvent*)     override;
+    bool event(QEvent*)                                       override;
+    void slotSetupChanged()                                   override;
+    bool hasHiddenGroupedImages(const ItemInfo& info)   const override;
 
 private:
 

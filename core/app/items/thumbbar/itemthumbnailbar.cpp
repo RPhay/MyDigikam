@@ -184,7 +184,14 @@ void ItemThumbnailBar::slotSetupChanged()
 
 void ItemThumbnailBar::assignRating(const QList<QModelIndex>& indexes, int rating)
 {
-    FileActionMngr::instance()->assignRating(imageSortFilterModel()->imageInfos(indexes), rating);
+    ItemInfoList infos(imageSortFilterModel()->imageInfos(indexes));
+
+    if (needGroupResolving(ApplicationSettings::Metadata, infos))
+    {
+        infos = resolveGrouping(infos);
+    }
+
+    FileActionMngr::instance()->assignRating(infos, rating);
 }
 
 bool ItemThumbnailBar::event(QEvent* e)
@@ -216,6 +223,13 @@ QModelIndex ItemThumbnailBar::firstIndex() const
 QModelIndex ItemThumbnailBar::lastIndex() const
 {
     return imageFilterModel()->index(imageFilterModel()->rowCount() - 1, 0);
+}
+
+bool ItemThumbnailBar::hasHiddenGroupedImages(const ItemInfo& info) const
+{
+    return (info.hasGroupedImages()                &&
+            !imageFilterModel()->isAllGroupsOpen() &&
+            !imageFilterModel()->isGroupOpen(info.id()));
 }
 
 } // namespace Digikam
