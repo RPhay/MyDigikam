@@ -102,6 +102,7 @@ ${MXE_BUILD_TARGETS}-cmake -G "Unix Makefiles" . \
                            -DENABLE_AKONADICONTACTSUPPORT=OFF \
                            -DENABLE_MYSQLSUPPORT=ON \
                            -DENABLE_INTERNALMYSQL=ON \
+                           -DENABLE_GEOLOCATION=ON \
                            -DENABLE_MEDIAPLAYER=ON \
                            -DENABLE_DBUS=OFF \
                            -DENABLE_KIO=OFF \

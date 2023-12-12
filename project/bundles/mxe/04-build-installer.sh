@@ -110,9 +110,6 @@ mkdir -p $BUNDLEDIR/translations
 
 # Data files ---------------------------------------------------------------------------------
 
-echo -e "\n---------- Marble data"
-cp -r $MXE_INSTALL_PREFIX/data/*                                        $BUNDLEDIR/data                 2>/dev/null
-
 echo -e "\n---------- Generics data"
 cp -r $MXE_INSTALL_PREFIX/share/lensfun                                 $BUNDLEDIR/data                 2>/dev/null
 cp -r $MXE_INSTALL_PREFIX/bin/data/digikam                              $BUNDLEDIR/data                 2>/dev/null
@@ -161,9 +158,6 @@ done
 
 echo -e "\n---------- Qt5 plugins"
 cp -r $MXE_INSTALL_PREFIX/qt5/plugins                                   $BUNDLEDIR/                     2>/dev/null
-
-echo -e "\n---------- Marble plugins"
-cp -r $MXE_INSTALL_PREFIX/plugins/*.dll                                 $BUNDLEDIR/plugins              2>/dev/null
 
 echo -e "\n---------- digiKam and KF5 plugins"
 cp -r $MXE_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/                     2>/dev/null

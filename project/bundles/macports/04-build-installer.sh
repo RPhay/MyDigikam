@@ -134,8 +134,6 @@ share/k* \
 share/lensfun \
 share/mime \
 Library/Application/ \
-Marble.app/Contents/Resources/ \
-Marble.app/Contents/MacOS/resources/ \
 "
 
 # Packaging tool paths

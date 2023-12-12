@@ -107,18 +107,11 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kimage
 
 # Extra support for digiKam
 
-# Geolocation support
-${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES
-
 # Calendar support
 #${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
 # Breeze style support
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_breeze               -- -j$CPU_CORES
-
-# Marble install shared lib at wrong place.
-mv $MXE_INSTALL_PREFIX/libmarble* $MXE_INSTALL_PREFIX/bin || true
-mv $MXE_INSTALL_PREFIX/libastro*  $MXE_INSTALL_PREFIX/bin || true
 
 #################################################################################################
 

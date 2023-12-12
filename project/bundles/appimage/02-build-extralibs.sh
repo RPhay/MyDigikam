@@ -112,9 +112,6 @@ fi
 
 cmake --build . --config RelWithDebInfo --target ext_libksane                   -- -j$CPU_CORES
 
-# Geolocation support
-cmake --build . --config RelWithDebInfo --target ext_marble                     -- -j$CPU_CORES
-
 # Calendar support
 cmake --build . --config RelWithDebInfo --target ext_kcalendarcore              -- -j$CPU_CORES
 

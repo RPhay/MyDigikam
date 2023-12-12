@@ -238,12 +238,6 @@ for FILE in $FILES ; do
     fi
 done
 
-echo -e "------------- Copy Marble data and plugins files\n"
-
-cp -r /usr/${LIBSUFFIX}/marble/plugins/ ./usr/bin/
-
-cp -r /usr/share/marble/data            ./usr/bin/
-
 echo -e "------------- Copy Git Revisions Manifest\n"
 
 touch ./usr/share/digikam/MANIFEST.txt
