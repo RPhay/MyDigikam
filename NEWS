@@ -52,8 +52,8 @@ BUGFIXES:
 039 ==> 478406 - Crash when try to Name a face.
 040 ==> 478375 - Cannot update database with digiKam mysql executables. Brew mysql executables work partially.
 041 ==> 478423 - Rating assignment via UI or shortcut is not consistent.
-042 ==> 
-043 ==> 
+042 ==> 478034 - Bug when moving, modifying, deleting files.
+043 ==> 474677 - Deleting files generates an error about permissions on .dtrash.
 044 ==> 
 045 ==> 
 046 ==> 

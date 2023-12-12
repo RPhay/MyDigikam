@@ -172,26 +172,23 @@ void DTrash::extractJsonForItem(const QString& collPath, const QString& baseName
 bool DTrash::prepareCollectionTrash(const QString& collectionPath)
 {
     QString trashFolder = collectionPath + QLatin1Char('/') + TRASH_FOLDER;
-    QDir trashDir(trashFolder);
-    bool isCreated = true;
+    QString trashFiles  = trashFolder    + QLatin1Char('/') + FILES_FOLDER;
+    QString trashInfo   = trashFolder    + QLatin1Char('/') + INFO_FOLDER;
+    bool    isCreated   = true;
 
-    if (!trashDir.exists())
+    if (isCreated && !QFileInfo::exists(trashFolder))
     {
-        isCreated &= trashDir.mkpath(trashFolder);
+        isCreated &= QDir().mkpath(trashFolder);
     }
 
-    if (isCreated && !trashDir.cd(FILES_FOLDER))
+    if (isCreated && !QFileInfo::exists(trashFiles))
     {
-        isCreated &= trashDir.mkdir(FILES_FOLDER);
-    }
-    else
-    {
-        trashDir.cdUp();
+        isCreated &= QDir().mkpath(trashFiles);
     }
 
-    if (isCreated && !trashDir.cd(INFO_FOLDER))
+    if (isCreated && !QFileInfo::exists(trashInfo))
     {
-        isCreated &= trashDir.mkdir(INFO_FOLDER);
+        isCreated &= QDir().mkpath(trashInfo);
     }
 
     if (!isCreated)
@@ -201,7 +198,7 @@ bool DTrash::prepareCollectionTrash(const QString& collectionPath)
         return false;
     }
 
-    qCDebug(DIGIKAM_IOJOB_LOG) << "Trash folder for collection: " << trashFolder;
+    qCDebug(DIGIKAM_IOJOB_LOG) << "Trash folder for collection:" << trashFolder;
 
     return true;
 }
