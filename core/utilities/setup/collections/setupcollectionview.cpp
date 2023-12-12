@@ -750,7 +750,7 @@ void SetupCollectionModel::addCollection(int category)
     QString label;
     QString path = lastAddedCollectionPath;
 
-    if (askForNewCollectionPath(category, &path, &label))
+    if (askForNewCollectionPath(true, category, &path, &label))
     {
         // Add new item to model. Adding to CollectionManager is done in apply()!
 
@@ -817,7 +817,7 @@ void SetupCollectionModel::updateCollection(int internalId)
 
         item.deleted = true;
 
-        if (askForNewCollectionPath(parentId, &path, &label))
+        if (askForNewCollectionPath(false, parentId, &path, &label))
         {
             item.parentId = parentId;
             item.label    = label;
@@ -1476,7 +1476,7 @@ SetupCollectionModel::Category SetupCollectionModel::typeToCategory(CollectionLo
     }
 }
 
-bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const newPath, QString* const newLabel)
+bool SetupCollectionModel::askForNewCollectionPath(bool adding, int category, QString* const newPath, QString* const newLabel)
 {
     QString picPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
 
@@ -1564,8 +1564,23 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
         case CollectionManager::LocationNotAllowed:
         case CollectionManager::LocationInvalidCheck:
         {
-            QMessageBox::warning(m_dialogParentWidget, i18nc("@title:window", "Problem Adding Collection"), messageFromManager);
+            QString warning;
+
+            if (adding)
+            {
+                warning = i18nc("@title:window",
+                                "Problem Adding Collection");
+            }
+            else
+            {
+                warning = i18nc("@title:window",
+                                "Problem updating Collection");
+            }
+
+            QMessageBox::warning(m_dialogParentWidget, warning, messageFromManager);
+
             // fail
+
             return false;
         }
     }
@@ -1573,11 +1588,28 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
     // Create a dialog that displays volume information and allows to change the name of the collection
 
     QDialog* const dialog     = new QDialog(m_dialogParentWidget);
-    dialog->setWindowTitle(i18nc("@title:window", "Adding Collection"));
+
+    if (adding)
+    {
+        dialog->setWindowTitle(i18nc("@title:window", "Adding Collection"));
+    }
+    else
+    {
+        dialog->setWindowTitle(i18nc("@title:window", "Update Collection"));
+    }
 
     QWidget* const mainWidget = new QWidget(dialog);
     QLabel* const nameLabel   = new QLabel;
-    nameLabel->setText(i18n("Your new collection will be created with this name:"));
+
+    if (adding)
+    {
+        nameLabel->setText(i18n("Your new collection will be created with this name:"));
+    }
+    else
+    {
+        nameLabel->setText(i18n("Your collection will be updated to this name:"));
+    }
+
     nameLabel->setWordWrap(true);
 
     // lineedit for collection name
