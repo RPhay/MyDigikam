@@ -34,8 +34,8 @@ void OsmTagTagWriter::writeTags( const OsmPlacemarkData& osmData, GeoWriter &wri
     for ( ; it != end; ++it ) {
         if (!m_blacklist.contains(it.key())) {
             writer.writeStartElement( QString::fromUtf8(osm::osmTag_tag) );
-            writer.writeAttribute( "k", it.key() );
-            writer.writeAttribute( "v", it.value() );
+            writer.writeAttribute( QLatin1String("k"), it.key() );
+            writer.writeAttribute( QLatin1String("v"), it.value() );
             writer.writeEndElement();
         }
     }

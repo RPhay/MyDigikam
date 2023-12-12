@@ -30,8 +30,8 @@ void OsmNodeTagWriter::writeNode( const OsmConverter::Node &node, GeoWriter& wri
 
     writer.writeStartElement( QLatin1String(osm::osmTag_node) );
 
-    writer.writeAttribute( "lat", lat );
-    writer.writeAttribute( "lon", lon );
+    writer.writeAttribute( QLatin1String("lat"), lat );
+    writer.writeAttribute( QLatin1String("lon"), lon );
     OsmObjectAttributeWriter::writeAttributes( node.second, writer );
     OsmTagTagWriter::writeTags(node.second, writer);
 

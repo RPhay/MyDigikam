@@ -12,7 +12,7 @@ namespace Marble {
 
 void OsmObjectAttributeWriter::writeAttributes( const OsmPlacemarkData& osmData, GeoWriter &writer )
 {
-    writer.writeAttribute( "id", QString::number( osmData.id() ) );
+    writer.writeAttribute( QLatin1String("id"), QString::number( osmData.id() ) );
     writer.writeOptionalAttribute( QLatin1String("action"), osmData.action() );
     writer.writeOptionalAttribute( QLatin1String("changeset"), osmData.changeset() );
     writer.writeOptionalAttribute( QLatin1String("timestamp"), osmData.timestamp() );
