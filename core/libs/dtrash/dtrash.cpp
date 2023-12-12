@@ -174,7 +174,7 @@ bool DTrash::prepareCollectionTrash(const QString& collectionPath)
     QString trashFolder = collectionPath + QLatin1Char('/') + TRASH_FOLDER;
     QString trashFiles  = trashFolder    + QLatin1Char('/') + FILES_FOLDER;
     QString trashInfo   = trashFolder    + QLatin1Char('/') + INFO_FOLDER;
-    bool    isCreated   = true;
+    bool    isCreated   = !collectionPath.isEmpty();
 
     if (isCreated && !QFileInfo::exists(trashFolder))
     {
