@@ -83,11 +83,7 @@ find_package(BISON)                                # For Panorama tool.
 find_package(LibXslt)                              # For HTMLGallery tool.
 find_package(LibXml2)                              # For HTMLGallery tool.
 
-#if(NOT Qt6_FOUND)
-
-#    find_package(Marble)                           # For geolocation support.
-
-#else()
+if(ENABLE_GEOLOCATION)
 
     set(Marble_FOUND TRUE)
     set(MARBLE_LIBRARIES "")
@@ -95,7 +91,14 @@ find_package(LibXml2)                              # For HTMLGallery tool.
                            ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/marble/geodata/data
     )
 
-#endif()
+else()
+
+    set(Marble_FOUND FALSE)
+    set(MARBLE_LIBRARIES "")
+    set(MARBLE_INCLUDE_DIR ""
+    )
+
+endif()
 
 find_package(PkgConfig)
 find_package(Jasper)                               # For JPEG 2000 support.
@@ -249,6 +252,7 @@ PRINT_COMPONENT_COMPILE_STATUS("Showfoto Support"                           ENAB
 PRINT_COMPONENT_COMPILE_STATUS("DBUS Support"                               ENABLE_DBUS)
 PRINT_COMPONENT_COMPILE_STATUS("App. Style Support"                         ENABLE_APPSTYLES)
 PRINT_COMPONENT_COMPILE_STATUS("QWebEngine Support"                         ENABLE_QWEBENGINE)
+PRINT_COMPONENT_COMPILE_STATUS("Geolocation Support"                        ENABLE_GEOLOCATION)
 PRINT_COMPONENT_COMPILE_STATUS("Media Player Support"                       ENABLE_MEDIAPLAYER)
 PRINT_COMPONENT_COMPILE_STATUS("QtMultimedia Support"                       ENABLE_QTMULTIMEDIA)
 
@@ -306,10 +310,6 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libx265"           "https://github.com/videolan/x
 PRINT_OPTIONAL_LIBRARY_STATUS("OpenGL"            "https://gitlab.freedesktop.org/mesa/mesa/"                       "(version >= 11.0.0)"                   "digiKam will be compiled without OpenGL support."                            HAVE_OPENGL)
 
 if(NOT Qt6_FOUND)
-
-    # Code integrated in digiKam core with Qt6.
-
-    PRINT_OPTIONAL_LIBRARY_STATUS("libmarble"         "https://invent.kde.org/education/marble"                         "(version >= 0.22.0)"                   "digiKam will be compiled without geolocation maps support."                  Marble_FOUND)
 
     # NOTE: This module have been removed with Qt6.
 

@@ -324,7 +324,6 @@ The full list of mandatory (X) and (optional) external dependencies required to 
 | Bison                |   optional  | >= 2.5.0      |               | https://www.gnu.org/software/bison/bison.html         | For Panorama tool                                      |                                                                                       |
 | libmesa              |   optional  | >= 11.0       |               | https://gitlab.freedesktop.org/mesa/mesa/             | For Presentation tools (Linux only)                    |                                                                                       |
 | libksane             |   optional  | >= 21.12.0    | 22.04.2       | https://invent.kde.org/graphics/libksane              | Digital scanner support                                |                                                                                       |
-| libmarble            |   optional  | >= 19.12.0    | ---           | https://invent.kde.org/education/marble               | For geolocation support                                | Not yet ported to Qt6                                                                 |
 | libjpasper           |   optional  | >= 1.900.1    |               | https://github.com/jasper-software/jasper             | For JPEG-2000 support                                  |                                                                                       |
 | libeigen3            |   optional  | >= 3.2        |               | https://github.com/eigenteam/eigen-git-mirror         | For Refocus tool                                       | See if Clapack from OpenCV can be used instead                                        |
 | liblensfun           |   optional  | >= 0.2.8      |               | https://github.com/lensfun/lensfun                    | For LensCorrection tool                                |                                                                                       |
@@ -446,6 +445,7 @@ There are two configuration sections : the top level and the core.
 
   - \b ENABLE_KFILEMETADATASUPPORT           : Build digiKam with KDE files indexer support (default=OFF).
   - \b ENABLE_AKONADICONTACTSUPPORT          : Build digiKam with KDE Mail Contacts support (default=OFF).
+  - \b ENABLE_GEOLOCATION                    : Build digiKam with Geolocation support (default=ON).
   - \b ENABLE_MEDIAPLAYER                    : Build digiKam with Media Player support (default=ON).
   - \b ENABLE_QTMULTIMEDIA                   : Build digiKam with Qt6::Multimedia instead of internal QtAV (default=OFF).
   - \b ENABLE_DBUS                           : Build digiKam with DBUS support (default=ON).
