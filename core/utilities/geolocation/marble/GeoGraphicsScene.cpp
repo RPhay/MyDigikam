@@ -177,7 +177,8 @@ void GeoGraphicsScene::applyHighlight( const QVector< GeoDataPlacemark* > &selec
      * First set the items, which were selected previously, to
      * use normal style
      */
-    for ( GeoGraphicsItem *item: d->m_selectedItems ) {
+    for ( GeoGraphicsItem *item: d->m_selectedItems )
+    {
         item->setHighlighted( false );
     }
 
@@ -189,43 +190,74 @@ void GeoGraphicsScene::applyHighlight( const QVector< GeoDataPlacemark* > &selec
      * while clicking, and update corresponding graphics
      * items to use highlight style
      */
-    for( const GeoDataPlacemark *placemark: selectedPlacemarks ) {
-        for (auto tileIter = d->m_features.find(placemark); tileIter != d->m_features.end() && tileIter.key() == placemark; ++tileIter) {
-            auto const & clickedItemsList = d->m_tiledItems.values(*tileIter);
-            for (auto const & clickedItems: clickedItemsList) { //iterate through FeatureItemMap clickedItems (QHash)
-                for (auto iter = clickedItems.find(placemark); iter != clickedItems.end(); ++iter) {
-                    if ( iter.key() == placemark ) {
-                const GeoDataObject *parent = placemark->parent();
-                if ( parent ) {
-                    auto item = *iter;
-                    if (const GeoDataDocument *doc = geodata_cast<GeoDataDocument>(parent)) {
-                        QString styleUrl = placemark->styleUrl();
-                        styleUrl.remove(QLatin1Char('#'));
-                        if ( !styleUrl.isEmpty() ) {
-                            GeoDataStyleMap const &styleMap = doc->styleMap( styleUrl );
-                            GeoDataStyle::Ptr style = d->highlightStyle( doc, styleMap );
-                            if ( style ) {
-                                d->selectItem( item );
-                                d->applyHighlightStyle( item, style );
-                            }
-                        }
+    for( const GeoDataPlacemark *placemark: selectedPlacemarks )
+    {
+        for (auto tileIter = d->m_features.find(placemark) ;
+             tileIter != d->m_features.end() && tileIter.key() == placemark ;
+             ++tileIter)
+        {
 
-                        /**
-                            * If a placemark is using an inline style instead of a shared
-                            * style ( e.g in case when theme file specifies the colorMap
-                            * attribute ) then highlight it if any of the style maps have a
-                            * highlight styleId
-                            */
-                        else {
-                            for ( const GeoDataStyleMap &styleMap: doc->styleMaps() ) {
-                                GeoDataStyle::Ptr style = d->highlightStyle( doc, styleMap );
-                                if ( style ) {
-                                    d->selectItem( item );
-                                    d->applyHighlightStyle( item, style );
-                                    break;
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            auto const & clickedItemsList = d->m_tiledItems.values(*tileIter);
+
+#else
+
+            auto const & clickedItemsList = static_cast<QMultiHash<TileId, GeoGraphicsScenePrivate::FeatureItemMap> >(d->m_tiledItems).values();
+
+#endif
+
+            for (auto const & clickedItems: clickedItemsList)
+            {
+                // iterate through FeatureItemMap clickedItems (QHash)
+
+                for (auto iter = clickedItems.find(placemark); iter != clickedItems.end(); ++iter)
+                {
+                    if ( iter.key() == placemark )
+                    {
+                        const GeoDataObject *parent = placemark->parent();
+
+                        if ( parent )
+                        {
+                            auto item = *iter;
+
+                            if (const GeoDataDocument *doc = geodata_cast<GeoDataDocument>(parent))
+                            {
+                                QString styleUrl = placemark->styleUrl();
+                                styleUrl.remove(QLatin1Char('#'));
+
+                                if ( !styleUrl.isEmpty() )
+                                {
+                                    GeoDataStyleMap const &styleMap = doc->styleMap( styleUrl );
+                                    GeoDataStyle::Ptr style = d->highlightStyle( doc, styleMap );
+
+                                    if ( style )
+                                    {
+                                        d->selectItem( item );
+                                        d->applyHighlightStyle( item, style );
+                                    }
                                 }
-                            }
-                        }
+
+                                /**
+                                 * If a placemark is using an inline style instead of a shared
+                                 * style ( e.g in case when theme file specifies the colorMap
+                                 * attribute ) then highlight it if any of the style maps have a
+                                 * highlight styleId
+                                 */
+                                else
+                                {
+                                    for ( const GeoDataStyleMap &styleMap: doc->styleMaps() )
+                                    {
+                                        GeoDataStyle::Ptr style = d->highlightStyle( doc, styleMap );
+
+                                        if ( style )
+                                        {
+                                            d->selectItem( item );
+                                            d->applyHighlightStyle( item, style );
+                                            break;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
