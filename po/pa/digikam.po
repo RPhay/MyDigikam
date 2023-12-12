@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-11 00:39+0000\n"
+"POT-Creation-Date: 2023-12-12 00:40+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -53643,7 +53643,7 @@ msgid "Google Maps"
 msgstr "ਗੂਗਲ ਨਕਸ਼ਾ"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:425
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:515
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:514
 #, kde-format
 msgid "Float items"
 msgstr ""
@@ -53682,56 +53682,50 @@ msgstr "ਸੈਟੇਲਾਈਟ"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:372
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
-msgid "OpenStreetMap (Vector)"
-msgstr "OpenStreetMap"
-
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:430
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:429
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "ਗੋਲਾਕਾਰ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:434
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:42
 #, kde-format
 msgid "Mercator"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:440
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
 #, kde-format
 msgid "Equirectangular"
 msgstr "ਭੂਮੱਧ ਰੇਖੀ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:451
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
 #, kde-format
 msgid "Show compass"
 msgstr "ਕੰਪਾਸ ਵੇਖਾਓ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:456
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:455
 #, kde-format
 msgid "Show scale bar"
 msgstr "ਸਕੇਲ ਪੱਟੀ ਵੇਖਾਓ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:461
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:460
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Show navigation"
 msgstr "ਨੇਵੀਗੇਸ਼ਨ ਕੰਟਰੋਲ ਵੇਖਾਓ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:466
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:465
 #, kde-format
 msgid "Show overview map"
 msgstr "ਸੰਖੇਪ ਨਕਸ਼ਾ ਵੇਖਾਓ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:479
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:478
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:506
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:505
 #, kde-format
 msgid "Projection"
 msgstr ""
@@ -59828,13 +59822,13 @@ msgstr "ਇਹ ਟੈਗ ਹਟਾਓ"
 msgid "&Export Route..."
 msgstr "ਐਕਸਪੋਰਟ ਟੂਲ"
 
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:762
+#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:789
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "Export Route"
 msgstr "ਐਕਸਪੋਰਟ ਟੂਲ"
 
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:764
+#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:791
 #, kde-format
 msgid "GPX and KML files (*.gpx *.kml)"
 msgstr ""
@@ -69777,6 +69771,11 @@ msgstr "ਸਭ ਸੈਟਿੰਗਾਂ ਨੂੰ ਉਨ੍ਹਾਂ ਦੇ ਡ�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "ਸਭ ਸੈਟਿੰਗਾਂ ਨੂੰ ਉਨ੍ਹਾਂ ਦੇ ਡਿਫਾਲਟ ਮੁੱਲਾਂ ਲਈ ਰੀ-ਸੈੱਟ ਕਰੋ।"
+
+#, fuzzy
+#~| msgid "OpenStreetMap"
+#~ msgid "OpenStreetMap (Vector)"
+#~ msgstr "OpenStreetMap"
 
 #, fuzzy
 #~| msgid "Info"

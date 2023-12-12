@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-11 00:39+0000\n"
-"PO-Revision-Date: 2023-12-08 07:33+0100\n"
+"POT-Creation-Date: 2023-12-12 00:40+0000\n"
+"PO-Revision-Date: 2023-12-11 21:13+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -34656,10 +34656,9 @@ msgid "Rating less than or equal to %1."
 msgstr "Takso malpli ol aŭ egala al %1."
 
 #: core/libs/filters/ratingfilter.cpp:244
-#, fuzzy, kde-format
-#| msgid "Exclude Items Without Rating"
+#, kde-format
 msgid "Items Without Rating"
-msgstr "Ekskludi Erojn Sen Taksado"
+msgstr "Eroj Sen Taksado"
 
 #: core/libs/filters/ratingfilter.cpp:248
 #, kde-format
@@ -52787,7 +52786,7 @@ msgid "Google Maps"
 msgstr "Google-Mapoj"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:425
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:515
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:514
 #, kde-format
 msgid "Float items"
 msgstr "Flosigi erojn"
@@ -52823,55 +52822,49 @@ msgstr "Satelita mapo"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:372
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
-msgid "OpenStreetMap (Vector)"
-msgstr "OpenStreetMap"
-
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:430
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:429
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Sfera"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:434
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:42
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:440
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
 #, kde-format
 msgid "Equirectangular"
 msgstr "Ekvirektangula"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:451
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
 #, kde-format
 msgid "Show compass"
 msgstr "Montri kompason"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:456
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:455
 #, kde-format
 msgid "Show scale bar"
 msgstr "Montri skalon"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:461
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:460
 #, kde-format
 msgid "Show navigation"
 msgstr "Montri navigadon"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:466
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:465
 #, kde-format
 msgid "Show overview map"
 msgstr "Montri superrigardan mapon"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:479
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:478
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Aliaj Marble-Etosoj"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:506
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:505
 #, kde-format
 msgid "Projection"
 msgstr "Projekcio"
@@ -58197,106 +58190,95 @@ msgstr "Agordi"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Compass Plugin"
-msgstr "Agordi ĉi tiun kolumnon"
+msgstr "Agordi Kompas-Kromaĵon"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "&Themes"
+#, kde-format
 msgid "Theme"
-msgstr "E&tosoj"
+msgstr "Etoso"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:52
-#, fuzzy, kde-format
-#| msgid "Browse"
+#, kde-format
 msgid "Arrows"
-msgstr "Foliumi"
+msgstr "Sagoj"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:61
 #, kde-format
 msgid "Atom"
-msgstr ""
+msgstr "Atomo"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:70
 #, kde-format
 msgid "Magnet"
-msgstr ""
+msgstr "Magneto"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:58
 #, fuzzy, kde-format
 #| msgid "Show compass"
 msgid "Compass"
-msgstr "Montri kompason"
+msgstr "Kompaso"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:63
-#, fuzzy, kde-format
-#| msgid "Show compass"
+#, kde-format
 msgid "&Compass"
-msgstr "Montri kompason"
+msgstr "&Kompaso"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides Gps Information."
+#, kde-format
 msgid "This is a float item that provides a compass."
-msgstr "Ĉi tio estas flosila objekto, kiu provizas Gps-Informojn."
+msgstr "Ĉi tio estas flosila objekto, kiu provizas kompason."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Raw File Handling</b>"
+#, kde-format
 msgid "Configure Scale Bar Plugin"
-msgstr "<b>Agordi Krudan Dosiertraktadon</b>"
+msgstr "<b>Agordi Skalbretan Kromprogramon</b>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRatioScaleCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show Ratio Scale"
-msgstr "Montri bildotitolon"
+msgstr "Montri Proprocioskalon"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:30
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:52
 #, kde-format
 msgid "Minimize"
-msgstr ""
+msgstr "Minimumigi"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:69
-#, fuzzy, kde-format
-#| msgid "Show scale bar"
+#, kde-format
 msgid "Scale Bar"
-msgstr "Montri skalon"
+msgstr "Skalobreto"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:74
-#, fuzzy, kde-format
-#| msgid "&Scale to:"
+#, kde-format
 msgid "&Scale Bar"
-msgstr "&Skali al:"
+msgstr "&Skalbreto"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides Gps Information."
+#, kde-format
 msgid "This is a float item that provides a map scale."
-msgstr "Ĉi tio estas flosila objekto, kiu provizas Gps-Informojn."
+msgstr "Ĉi tio estas flosila objekto, kiu provizas mapskalon."
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Original Colors:"
+#, kde-format
 msgid "Original Developer"
-msgstr "Originalaj Koloroj:"
+msgstr "Origina Evoluisto"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:240
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:244
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:47
 #, kde-format
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:248
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:31
@@ -58308,20 +58290,18 @@ msgstr "m"
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:36
 #, kde-format
 msgid "mi"
-msgstr ""
+msgstr "mi"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:264
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:59
 #, kde-format
 msgid "nm"
-msgstr ""
+msgstr "nm"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "&Ratio Scale"
-msgstr "Racia"
+msgstr "P&roporcia Skalo"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
@@ -58332,146 +58312,126 @@ msgid "Navigation"
 msgstr "Navigado"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "&Navigation"
-msgstr "Navigado"
+msgstr "&Navigado"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
 #, kde-format
 msgid "A mouse control to zoom and move the map"
-msgstr ""
+msgstr "Musregilo por zomi kaj mavi la mapon"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
-#, fuzzy, kde-format
-#| msgid "Current Location"
+#, kde-format
 msgid "Current Location Button"
-msgstr "Aktuala Loko"
+msgstr "Aktuala Lokbutono"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
 #, kde-format
 msgid "Home Button"
-msgstr ""
+msgstr "Hejmbutono"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Overview Map"
-msgstr "Montri superrigardan mapon"
+msgstr "Superrigarda Mapo"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:80
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "&Overview Map"
-msgstr "Montri superrigardan mapon"
+msgstr "Superrigarda Map&o"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:95
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides Gps Information."
+#, kde-format
 msgid "This is a float item that provides an overview map."
-msgstr "Ĉi tio estas flosila objekto, kiu provizas Gps-Informojn."
+msgstr "Ĉi tio estas flosila objekto, kiu provizas superrigardan mapon."
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:481
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Choose Overview Map"
-msgstr "Montri superrigardan mapon"
+msgstr "Elekti Superrigardan Mapon"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:513
-#, fuzzy, kde-format
-#| msgid "Set here the color of the second line."
+#, kde-format
 msgid "Please choose the color for the position indicator"
-msgstr "Fiksu ĉi tie la koloron de la dua linio."
+msgstr "Bonvolu elekti la koloron por la pozicia indikilo."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Preview Behavior</b>"
+#, kde-format
 msgid "Configure Overview Map"
-msgstr "<b>Agordi Antaŭrigardan Konduton</b>"
+msgstr "Agordi Superrigardan Mapon"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgid "Map &Image"
-msgstr "%1 Bildo"
+msgstr "Mapa B&ildo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:28
-#, fuzzy, kde-format
-#| msgid "&Place names:"
+#, kde-format
 msgid "&Planet:"
-msgstr "&Loknomoj:"
+msgstr "&Planedo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:71
-#, fuzzy, kde-format
-#| msgid "Size:"
+#, kde-format
 msgid "&Size:"
-msgstr "Grandeco:"
+msgstr "Grande&co:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
-#, fuzzy, kde-format
-#| msgctxt "Dimension separator, as in: '15 x 10 centimeters'"
-#| msgid "x"
+#, kde-format
 msgid "x"
 msgstr "x"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Colors"
+#, kde-format
 msgid "C&olors"
-msgstr "Koloroj"
+msgstr "K&oloroj"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Position I&ndicator:"
-msgstr "Montri Geolokigan Indikilon"
+msgstr "Pozicia I&ndikilo:"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
-msgstr ""
+msgstr "OpenStreetMap Nominatim Inversa Geokodigo"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:29
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Nominatim"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
 #, kde-format
 msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
-msgstr ""
+msgstr "Enreta inversa geokodado uzante la servon OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:20
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Osm File Parser"
-msgstr "Dosiera Transdono"
+msgstr "Osm-Dosiera Analizilo"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:35
 #, kde-format
 msgid "Create GeoDataDocument from Osm Files"
-msgstr ""
+msgstr "Krei GeoDataDokumenton el Osm-Dosieroj"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Data"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap-Datenoj"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
 msgid "Azimuthal Equidistant"
-msgstr ""
+msgstr "Azimuta Samdistanca"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:63
 #, kde-format
@@ -58480,11 +58440,14 @@ msgid ""
 "p><p>Applications: Display of seismic and radio data and for use in digital "
 "planetariums.</p>"
 msgstr ""
+"<p><b>Azimuta Reguldistanca Projekcio</b> (\"fiŝokulo\")</p><p>Aplikoj: "
+"Montrado de sismaj kaj radio-datenoj kaj por uzo en ciferecaj planetarioj.</"
+"p>"
 
 #: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:37
 #, kde-format
 msgid "Flat Map"
-msgstr ""
+msgstr "Plata Mapo"
 
 #: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:42
 #, kde-format
@@ -58496,7 +58459,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:64
 #, kde-format
 msgid "Gnomonic"
-msgstr ""
+msgstr "Gnomonic"
 
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:69
 #, kde-format
@@ -58857,12 +58820,12 @@ msgstr "&Forigi ĉi tiun Celon"
 msgid "&Export Route..."
 msgstr "&Eksporti Itineron..."
 
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:762
+#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:789
 #, kde-format
 msgid "Export Route"
 msgstr "Eksporti Itineron"
 
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:764
+#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:791
 #, kde-format
 msgid "GPX and KML files (*.gpx *.kml)"
 msgstr ""
@@ -69112,14 +69075,5 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ĉu vi volas restarigi ĉiujn video-agordojn al la defaŭlta valoro?"
 
-#~ msgid "GpsInfo"
-#~ msgstr "GpsInfo"
-
-#~ msgid "&GpsInfo"
-#~ msgstr "&GpsInfo"
-
-#~ msgid "Direction"
-#~ msgstr "Direkto"
-
-#~ msgid "Precision"
-#~ msgstr "Precizeco"
+#~ msgid "OpenStreetMap (Vector)"
+#~ msgstr "OpenStreetMap (Vektora)"

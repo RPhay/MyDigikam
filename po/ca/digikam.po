@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-11 00:39+0000\n"
-"PO-Revision-Date: 2023-12-10 10:54+0100\n"
+"POT-Creation-Date: 2023-12-12 00:40+0000\n"
+"PO-Revision-Date: 2023-12-11 15:18+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -53504,7 +53504,7 @@ msgid "Google Maps"
 msgstr "Google Maps"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:425
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:515
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:514
 #, kde-format
 msgid "Float items"
 msgstr "Elements flotants"
@@ -53540,55 +53540,49 @@ msgstr "Mapa de satèl·lit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:372
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
-msgid "OpenStreetMap (Vector)"
-msgstr "OpenStreetMap"
-
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:430
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:429
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Esfèric"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:434
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:42
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:440
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
 #, kde-format
 msgid "Equirectangular"
 msgstr "Cilíndrica equidistant"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:451
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
 #, kde-format
 msgid "Show compass"
 msgstr "Mostra la brúixola"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:456
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:455
 #, kde-format
 msgid "Show scale bar"
 msgstr "Mostra la barra d'escala"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:461
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:460
 #, kde-format
 msgid "Show navigation"
 msgstr "Mostra la navegació"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:466
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:465
 #, kde-format
 msgid "Show overview map"
 msgstr "Mostra un mapa general"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:479
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:478
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Altres temes del Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:506
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:505
 #, kde-format
 msgid "Projection"
 msgstr "Projecció"
@@ -59185,22 +59179,19 @@ msgstr ""
 "La geocodificació inversa en línia usa el servei Nominatim de l'OpenStreetMap"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:20
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Osm File Parser"
-msgstr "Transferència de fitxers"
+msgstr "Intèrpret de fitxers OSM"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:35
 #, kde-format
 msgid "Create GeoDataDocument from Osm Files"
-msgstr ""
+msgstr "Crea un document GeoData a partir de fitxers OSM"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Data"
-msgstr "OpenStreetMap"
+msgstr "Dades de l'OpenStreetMap"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -59613,12 +59604,12 @@ msgstr "&Elimina aquesta destinació"
 msgid "&Export Route..."
 msgstr "&Exporta itinerari..."
 
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:762
+#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:789
 #, kde-format
 msgid "Export Route"
 msgstr "Exporta itinerari"
 
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:764
+#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:791
 #, kde-format
 msgid "GPX and KML files (*.gpx *.kml)"
 msgstr "Fitxers GPX i KML (*.gpx *.kml)"
@@ -70035,6 +70026,10 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
+
+#~| msgid "OpenStreetMap"
+#~ msgid "OpenStreetMap (Vector)"
+#~ msgstr "OpenStreetMap (Vector)"
 
 #~ msgid "GpsInfo"
 #~ msgstr "GpsInfo"
