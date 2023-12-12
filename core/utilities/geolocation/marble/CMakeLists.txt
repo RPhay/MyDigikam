@@ -23,17 +23,6 @@ if(Qt6_FOUND)
 
 endif()
 
-if(NOT Qt6_FOUND)
-
-    # The marble library does not adhere to the flags we use
-    remove_definitions(
-        -DQT_NO_CAST_FROM_ASCII
-        -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
-        -DQT_NO_KEYWORDS
-    )
-
-endif()
-
 set(marblewidget_SRCS
 
     AbstractDataPlugin.cpp
