@@ -18,6 +18,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 
 set(libvideotoolscommon_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidesettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpegconfighelper.cpp
 )
 
 # Used by digikamcore
@@ -29,8 +30,6 @@ target_compile_definitions(core_videotoolscommon_obj
 )
 
 ###
-
-set(libvideotools_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/ffmpegconfighelper.cpp)
 
 if(ENABLE_MEDIAPLAYER)
 
