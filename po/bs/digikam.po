@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 00:40+0000\n"
+"POT-Creation-Date: 2023-12-13 00:40+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -10722,7 +10722,7 @@ msgstr "Automatsko prilagođavanje"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:434
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:269
 #, kde-format
 msgid "Settings"
@@ -57027,139 +57027,139 @@ msgstr ""
 "za izvođenje\n"
 "nejasne pretrage"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #, kde-format
 msgid "Roadmap"
 msgstr "Mapa puta"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:206
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:354
 #, kde-format
 msgid "Satellite"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:207
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
 #, kde-format
 msgid "Hybrid"
 msgstr "Hibrid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:208
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "Teren"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:226
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:218
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Prikaži kontrolu tipa mape"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:231
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Prikaži kontrolu navigacije"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:236
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:228
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Prikaži kontrou skala"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:241
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1655
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
 #, fuzzy, kde-format
 #| msgid "Google Maps"
 msgid "Google Maps API Key"
 msgstr "Google mape"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:254
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
 #, kde-format
 msgid "Google Maps"
 msgstr "Google mape"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:425
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:514
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:485
 #, kde-format
 msgid "Float items"
 msgstr "Float stavke"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1659
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
 #, fuzzy, kde-format
 #| msgid "URL:"
 msgid "API Key:"
 msgstr "URL:"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1718
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, fuzzy, kde-format
 #| msgid "Script Manager"
 msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Upravljač skriptama"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr "Marble virtualni globus"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:369
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:340
 #, kde-format
 msgid "Atlas map"
 msgstr "Atlas Karta"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:370
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:341
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:371
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:342
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:429
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Sferična"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:434
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:42
 #, kde-format
 msgid "Mercator"
 msgstr "Merkatorova"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:410
 #, kde-format
 msgid "Equirectangular"
 msgstr "Equirectangular"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
 #, kde-format
 msgid "Show compass"
 msgstr "Pokaži kompas"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:455
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
 #, kde-format
 msgid "Show scale bar"
 msgstr "Pokaži traku promjene veličine"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:460
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:431
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Show navigation"
 msgstr "Prikaži kontrolu navigacije"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:465
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
 #, kde-format
 msgid "Show overview map"
 msgstr "Pokaži pregled karte"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:478
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:449
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:505
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:476
 #, kde-format
 msgid "Projection"
 msgstr "Projekcija"
@@ -58102,98 +58102,98 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr "Datoteka jeste GPX datoteka, ali nema tačaka s podacima"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:268
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:258
 #, kde-format
 msgid "Zoom in"
 msgstr "Uveličaj"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:275
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:265
 #, kde-format
 msgid "Zoom out"
 msgstr "Umanji"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:281
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:271
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Prebacivanje između markera i sličice."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:299
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:289
 #, kde-format
 msgid "Preview single items"
 msgstr "Pregled pojedinačnih stavki"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:302
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Pregled grupnih stavki"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:305
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Show numbers"
 msgstr "Pokazi brojeve"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:301
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Povećaj veličinu sličica na karti"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:314
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Smanjite veličinu sličica na karti"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:321
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Uklonite trenutni odabir regije"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:329
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:319
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Odaberite slike crtanjem pravokutnika"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:334
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:324
 #, kde-format
 msgid "Pan mode"
 msgstr "Pan mod"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:341
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:331
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Povećaj u skupini"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:347
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Napravite izbor regije iz sličice"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, kde-format
 msgid "Filter images"
 msgstr "Filter slike"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:358
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Izvadite trenutni filter"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:363
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
 #, kde-format
 msgid "Select images"
 msgstr "Odaberi sliku"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:369
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:359
 #, kde-format
 msgid "Lock the map position"
 msgstr "Zaključajte poziciju na karti"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:372
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
 #, fuzzy, kde-format
 #| msgid "Load playlist from a file."
 msgid "Load tracks from albums"
 msgstr "Učitaj listu izvođenja iz datoteke."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:823
 #, kde-format
 msgid "Map settings"
 msgstr "Postavke Karte"
@@ -71549,19 +71549,19 @@ msgid ""
 msgstr "Želite li ukloniti kolekciju \"%1\" sa vašeg popisa kolekcija?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:930
-#: core/utilities/setup/collections/setupcollectionview.cpp:1671
+#: core/utilities/setup/collections/setupcollectionview.cpp:1703
 #, kde-format
 msgid "Local Collections"
 msgstr "Lokalna kolekcija"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:935
-#: core/utilities/setup/collections/setupcollectionview.cpp:1672
+#: core/utilities/setup/collections/setupcollectionview.cpp:1704
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Kolekcije na prijenosnim medijima"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:940
-#: core/utilities/setup/collections/setupcollectionview.cpp:1673
+#: core/utilities/setup/collections/setupcollectionview.cpp:1705
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Kolekcije na dijeljenjima u mreži"
@@ -71633,32 +71633,52 @@ msgstr "Status"
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Prethodno ste dodali kolekciju koja sadrži put \"%1\"."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1567
+#: core/utilities/setup/collections/setupcollectionview.cpp:1572
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Problem dodavanja kolekcije"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1577
+#, fuzzy, kde-format
+#| msgid "Problem Adding Collection"
+msgctxt "@title:window"
+msgid "Problem updating Collection"
+msgstr "Problem dodavanja kolekcije"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1594
 #, fuzzy, kde-format
 #| msgid "Adding Collection"
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Dodavanje kolekcije"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1580
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
+#, fuzzy, kde-format
+#| msgid "Add Collection"
+msgctxt "@title:window"
+msgid "Update Collection"
+msgstr "Dodajte kolekciju"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1606
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Vaša nova kolekcija biti će kreirana sa ovim imenom:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1661
+#: core/utilities/setup/collections/setupcollectionview.cpp:1610
+#, fuzzy, kde-format
+#| msgid "Your new collection will be created with this name:"
+msgid "Your collection will be updated to this name:"
+msgstr "Vaša nova kolekcija biti će kreirana sa ovim imenom:"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1693
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Odaberi stavku"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1665
+#: core/utilities/setup/collections/setupcollectionview.cpp:1697
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgid "Your collection will use this category:"

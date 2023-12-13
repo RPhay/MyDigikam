@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 00:40+0000\n"
+"POT-Creation-Date: 2023-12-13 00:40+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -10992,7 +10992,7 @@ msgstr "Automaatne kohandamine"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:434
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:269
 #, kde-format
 msgid "Settings"
@@ -57063,138 +57063,138 @@ msgstr ""
 "Sarnasusotsinguks\n"
 "joonista siia visand"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #, kde-format
 msgid "Roadmap"
 msgstr "Teekaart"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:206
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:354
 #, kde-format
 msgid "Satellite"
 msgstr "Satelliit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:207
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
 #, kde-format
 msgid "Hybrid"
 msgstr "Hübriid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:208
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "Maastik"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:226
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:218
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Kaarditüübi valikute näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:231
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Liikumisvalikute näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:236
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:228
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Skaleerimisvalikute näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:241
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1655
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
 #, fuzzy, kde-format
 #| msgid "Google Maps"
 msgid "Google Maps API Key"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:254
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:425
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:514
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:485
 #, kde-format
 msgid "Float items"
 msgstr "Hõljuvad elemendid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1659
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
 #, fuzzy, kde-format
 #| msgid "API URL:"
 msgid "API Key:"
 msgstr "API URL:"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1718
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, fuzzy, kde-format
 #| msgid "Script Manager"
 msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Skriptihaldur"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr "Marble virtuaalgloobus"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:369
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:340
 #, kde-format
 msgid "Atlas map"
 msgstr "Atlase kaart"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:370
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:341
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "Satelliit"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:371
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:342
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:429
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Sfääriline"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:434
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:42
 #, kde-format
 msgid "Mercator"
 msgstr "Mercatori"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:410
 #, kde-format
 msgid "Equirectangular"
 msgstr "Ekvidistantne silindriline projektsioon"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
 #, kde-format
 msgid "Show compass"
 msgstr "Kompassi näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:455
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
 #, kde-format
 msgid "Show scale bar"
 msgstr "Skaalariba näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:460
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:431
 #, kde-format
 msgid "Show navigation"
 msgstr "Liikumise näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:465
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
 #, kde-format
 msgid "Show overview map"
 msgstr "Ülevaatekaardi näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:478
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:449
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:505
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:476
 #, kde-format
 msgid "Projection"
 msgstr "Projektsioon"
@@ -58084,98 +58084,98 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr "See on GPX-fail, aga sellest ei leitud ühtegi andmepunkti."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:268
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:258
 #, kde-format
 msgid "Zoom in"
 msgstr "Suurenda"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:275
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:265
 #, kde-format
 msgid "Zoom out"
 msgstr "Vähenda"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:281
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:271
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Lülitumine märgendite ja pisipiltide vahel."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:299
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:289
 #, kde-format
 msgid "Preview single items"
 msgstr "Üksikelementide näitamine"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:302
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Rühmitatud elementide näitamine"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:305
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Show numbers"
 msgstr "Arvude näitamine"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:301
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Pisipildi suuruse suurendamine kaardil"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:314
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Pisipildi suuruse vähendamine kaardil"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:321
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Aktiivse piirkonna valiku eemaldamine"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:329
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:319
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Piltide valimine ristkülikut joonistades"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:334
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:324
 #, kde-format
 msgid "Pan mode"
 msgstr "Liigutamisrežiim"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:341
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:331
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Suurendamine rühma"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:347
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Piirkonna valiku loomine pisipildist"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, kde-format
 msgid "Filter images"
 msgstr "Piltide filtreerimine"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:358
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Aktiivse filtri eemaldamine"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:363
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
 #, kde-format
 msgid "Select images"
 msgstr "Piltide valimine"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:369
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:359
 #, kde-format
 msgid "Lock the map position"
 msgstr "Kaardi asukoha lukustamine"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:372
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
 #, fuzzy, kde-format
 #| msgid "Load playlist from a file."
 msgid "Load tracks from albums"
 msgstr "Esitusnimekirja laadimine failist."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:823
 #, kde-format
 msgid "Map settings"
 msgstr "Kaardi seadistused"
@@ -71369,19 +71369,19 @@ msgid ""
 msgstr "Kas eemaldada kogu \"%1\" sinu kogude nimekirjast?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:930
-#: core/utilities/setup/collections/setupcollectionview.cpp:1671
+#: core/utilities/setup/collections/setupcollectionview.cpp:1703
 #, kde-format
 msgid "Local Collections"
 msgstr "Kohalikud kogud"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:935
-#: core/utilities/setup/collections/setupcollectionview.cpp:1672
+#: core/utilities/setup/collections/setupcollectionview.cpp:1704
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Kogud eemaldatavatel andmekandjatel"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:940
-#: core/utilities/setup/collections/setupcollectionview.cpp:1673
+#: core/utilities/setup/collections/setupcollectionview.cpp:1705
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Kogud võrguketastel"
@@ -71452,33 +71452,53 @@ msgstr "Olek"
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Sa oled juba varem lisanud kogu, mis sisaldab asukohta \"%1\"."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1567
+#: core/utilities/setup/collections/setupcollectionview.cpp:1572
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Probleem kogu lisamisel"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1577
+#, fuzzy, kde-format
+#| msgid "Problem Adding Collection"
+msgctxt "@title:window"
+msgid "Problem updating Collection"
+msgstr "Probleem kogu lisamisel"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1594
 #, fuzzy, kde-format
 #| msgid "Adding Collection"
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Kogu lisamine"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1580
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
+#, fuzzy, kde-format
+#| msgid "Update collection"
+msgctxt "@title:window"
+msgid "Update Collection"
+msgstr "Uuenda kogu"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1606
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Loodavale uuele kogule antakse järgmine nimi:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1661
+#: core/utilities/setup/collections/setupcollectionview.cpp:1610
+#, fuzzy, kde-format
+#| msgid "Your new collection will be created with this name:"
+msgid "Your collection will be updated to this name:"
+msgstr "Loodavale uuele kogule antakse järgmine nimi:"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1693
 #, fuzzy, kde-format
 #| msgid "Select Category"
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Kategooria valimine"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1665
+#: core/utilities/setup/collections/setupcollectionview.cpp:1697
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "Kogu hakkab kasutama järgmist kategooriat:"

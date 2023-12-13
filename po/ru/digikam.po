@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 00:40+0000\n"
+"POT-Creation-Date: 2023-12-13 00:40+0000\n"
 "PO-Revision-Date: 2023-11-13 16:53+0300\n"
 "Last-Translator: Алевтина  <karashokovaaa@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -10349,7 +10349,7 @@ msgstr "Автоматическая коррекция положения"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:434
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:269
 #, kde-format
 msgid "Settings"
@@ -53377,139 +53377,139 @@ msgstr ""
 "нечёткий поиск"
 
 # These strings also appear in libkgeomap.po. --aspotashev
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #, kde-format
 msgid "Roadmap"
 msgstr "Карта дорог"
 
 # These strings also appear in libkgeomap.po. --aspotashev
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:206
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:354
 #, kde-format
 msgid "Satellite"
 msgstr "Спутник"
 
 # These strings also appear in libkgeomap.po. --aspotashev
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:207
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
 #, kde-format
 msgid "Hybrid"
 msgstr "Гибридная"
 
 # These strings also appear in libkgeomap.po. --aspotashev
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:208
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "Ландшафтная"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:226
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:218
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Управление типом карты"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:231
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Управление навигацией"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:236
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:228
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Управление масштабом"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:241
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1655
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
 #, kde-format
 msgid "Google Maps API Key"
 msgstr "Ключ API карт Google"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:254
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
 #, kde-format
 msgid "Google Maps"
 msgstr "Карты Google"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:425
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:514
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:485
 #, kde-format
 msgid "Float items"
 msgstr "Плавающие объекты"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1659
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
 #, kde-format
 msgid "API Key:"
 msgstr "Ключ API:"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1718
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, fuzzy, kde-format
 #| msgid "Javascript Message"
 msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "Сообщение Javascript"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr "Виртуальный глобус Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:369
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:340
 #, kde-format
 msgid "Atlas map"
 msgstr "Атлас"
 
 # These strings also appear in libkgeomap.po. --aspotashev
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:370
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:341
 #, kde-format
 msgid "Satellite map"
 msgstr "Спутниковая карта"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:371
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:342
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:429
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Сферическая"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:434
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:42
 #, kde-format
 msgid "Mercator"
 msgstr "Меркатор"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:410
 #, kde-format
 msgid "Equirectangular"
 msgstr "Равнопромежуточная"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
 #, kde-format
 msgid "Show compass"
 msgstr "Показать компас"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:455
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
 #, kde-format
 msgid "Show scale bar"
 msgstr "Показать полосу масштаба"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:460
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:431
 #, kde-format
 msgid "Show navigation"
 msgstr "Показать панель навигации"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:465
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
 #, kde-format
 msgid "Show overview map"
 msgstr "Показать обзорную карту"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:478
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:449
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Другие оформления Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:505
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:476
 #, kde-format
 msgid "Projection"
 msgstr "Проекция"
@@ -54404,97 +54404,97 @@ msgstr ""
 "Файл имеет формат GPX, но не содержит точек отслеживания с подходящими "
 "временными метками."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:268
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:258
 #, kde-format
 msgid "Zoom in"
 msgstr "Приблизить"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:275
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:265
 #, kde-format
 msgid "Zoom out"
 msgstr "Отдалить"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:281
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:271
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Переключить маркеры/миниатюры."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:299
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:289
 #, kde-format
 msgid "Preview single items"
 msgstr "Предпросмотр одиночных объектов"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:302
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Предпросмотр сгруппированных объектов"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:305
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Show numbers"
 msgstr "Показывать числа"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:301
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Увеличить размеры миниатюр на карте"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:314
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Уменьшить размеры миниатюр на карте"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:321
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Удалить текущее выделение области"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:329
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:319
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Выделить изображения, попадающие в прямоугольник"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:334
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:324
 #, kde-format
 msgid "Pan mode"
 msgstr "Режим перемещения"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:341
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:331
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Увеличить группу"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:347
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Создать выделение области из миниатюры"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, kde-format
 msgid "Filter images"
 msgstr "Фильтр изображений"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:358
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Убрать текущий фильтр"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:363
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
 #, kde-format
 msgid "Select images"
 msgstr "Выделение изображений"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:369
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:359
 #, kde-format
 msgid "Lock the map position"
 msgstr "Заблокировать положение карты"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:372
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
 #, kde-format
 msgid "Load tracks from albums"
 msgstr "Загрузить траектории из альбомов"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:823
 #, kde-format
 msgid "Map settings"
 msgstr "Параметры карты"
@@ -67505,19 +67505,19 @@ msgid ""
 msgstr "Удалить коллекцию «%1» из списка коллекций?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:930
-#: core/utilities/setup/collections/setupcollectionview.cpp:1671
+#: core/utilities/setup/collections/setupcollectionview.cpp:1703
 #, kde-format
 msgid "Local Collections"
 msgstr "Локальные коллекции"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:935
-#: core/utilities/setup/collections/setupcollectionview.cpp:1672
+#: core/utilities/setup/collections/setupcollectionview.cpp:1704
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Коллекции на съёмных носителях"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:940
-#: core/utilities/setup/collections/setupcollectionview.cpp:1673
+#: core/utilities/setup/collections/setupcollectionview.cpp:1705
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Коллекции на совместно используемых сетевых ресурсах"
@@ -67585,30 +67585,51 @@ msgstr "Состояние"
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Коллекция, содержащая путь«%1», уже была добавлена ранее"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1567
+#: core/utilities/setup/collections/setupcollectionview.cpp:1572
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Ошибка добавления коллекции"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1577
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Problem Adding Collection"
+msgctxt "@title:window"
+msgid "Problem updating Collection"
+msgstr "Ошибка добавления коллекции"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1594
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Добавление коллекции"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1580
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
+#, fuzzy, kde-format
+#| msgid "Update collection"
+msgctxt "@title:window"
+msgid "Update Collection"
+msgstr "Обновить коллекцию"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1606
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Новая коллекция будет создана с этим названием:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1661
+#: core/utilities/setup/collections/setupcollectionview.cpp:1610
+#, fuzzy, kde-format
+#| msgid "Your new collection will be created with this name:"
+msgid "Your collection will be updated to this name:"
+msgstr "Новая коллекция будет создана с этим названием:"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1693
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Выбор рубрики"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1665
+#: core/utilities/setup/collections/setupcollectionview.cpp:1697
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "Новая коллекция будет создана с этой рубрикой:"

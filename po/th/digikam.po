@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 00:40+0000\n"
+"POT-Creation-Date: 2023-12-13 00:40+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -10165,7 +10165,7 @@ msgstr "ปรับแก้อัตโนมัติ"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:434
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:269
 #, kde-format
 msgid "Settings"
@@ -54214,137 +54214,137 @@ msgstr ""
 "เพื่อใช้ในการค้นหา\n"
 "แบบฉลาด"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #, kde-format
 msgid "Roadmap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:206
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:354
 #, kde-format
 msgid "Satellite"
 msgstr "ดาวเทียม"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:207
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
 #, kde-format
 msgid "Hybrid"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:208
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:226
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:218
 #, kde-format
 msgid "Show Map Type Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:231
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
 #, fuzzy, kde-format
 msgid "Show Navigation Control"
 msgstr "ควบคุม Gain:"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:236
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:228
 #, fuzzy, kde-format
 msgid "Show Scale Control"
 msgstr "ความเปรียบต่างภายใน"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:241
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1655
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
 #, kde-format
 msgid "Google Maps API Key"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:254
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
 #, kde-format
 msgid "Google Maps"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:425
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:514
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:485
 #, fuzzy, kde-format
 msgid "Float items"
 msgstr "ไม่มีรายการใด ๆ"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1659
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
 #, fuzzy, kde-format
 #| msgid "URL:"
 msgid "API Key:"
 msgstr "ที่อยู่ URL:"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1718
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, fuzzy, kde-format
 #| msgid "Select an Image"
 msgctxt "@title:window"
 msgid "Javascript Message"
 msgstr "เลือกภาพ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:369
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:340
 #, kde-format
 msgid "Atlas map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:370
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:341
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "ดาวเทียม"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:371
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:342
 #, kde-format
 msgid "OpenStreetMap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:429
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
 #, fuzzy, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "พลิกทางแนวตั้ง"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:434
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:42
 #, kde-format
 msgid "Mercator"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:410
 #, kde-format
 msgid "Equirectangular"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
 #, fuzzy, kde-format
 msgid "Show compass"
 msgstr "แสดงป้ายกำกับต่าง ๆ ของภาพ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:455
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
 #, fuzzy, kde-format
 msgid "Show scale bar"
 msgstr "แสดงวันที่ของกล้อง"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:460
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:431
 #, fuzzy, kde-format
 msgid "Show navigation"
 msgstr "ควบคุม Gain:"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:465
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
 #, kde-format
 msgid "Show overview map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:478
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:449
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:505
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:476
 #, fuzzy, kde-format
 msgid "Projection"
 msgstr "คลังภาพ:"
@@ -55213,98 +55213,98 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:268
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:258
 #, kde-format
 msgid "Zoom in"
 msgstr "ขยายขนาด"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:275
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:265
 #, kde-format
 msgid "Zoom out"
 msgstr "ลดขนาด"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:281
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:271
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:299
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:289
 #, fuzzy, kde-format
 msgid "Preview single items"
 msgstr "ภาพก่อน"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:302
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
 #, fuzzy, kde-format
 msgid "Preview grouped items"
 msgstr "จัดก&ลุ่มรูปภาพ"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:305
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Show numbers"
 msgstr "แสดงตัวเลขต่าง ๆ"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:301
 #, fuzzy, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "ขนาดภาพตัวอย่างในมุมมองผังต้นไม้:"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:314
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
 #, fuzzy, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "ขนาดภาพตัวอย่างในมุมมองผังต้นไม้:"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:321
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
 #, fuzzy, kde-format
 msgid "Remove the current region selection"
 msgstr "ล้างการเลือกปัจจุบัน"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:329
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:319
 #, fuzzy, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "&บันทึกระดับความชื่นชอบเป็นป้ายกำกับ"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:334
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:324
 #, kde-format
 msgid "Pan mode"
 msgstr "โหมดการแพน"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:341
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:331
 #, kde-format
 msgid "Zoom into a group"
 msgstr "ปรับการย่อ/ขยายให้เข้ากับกลุ่ม"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:347
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, kde-format
 msgid "Filter images"
 msgstr "กรองภาพต่าง ๆ"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:358
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
 #, fuzzy, kde-format
 msgid "Remove the current filter"
 msgstr "ลบคลังภาพ"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:363
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
 #, fuzzy, kde-format
 msgid "Select images"
 msgstr "เลือกภาพต่าง ๆ "
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:369
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:359
 #, fuzzy, kde-format
 msgid "Lock the map position"
 msgstr "ซ่อมแซมภาพถ่าย"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:372
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
 #, fuzzy, kde-format
 #| msgid "Load playlist from a file."
 msgid "Load tracks from albums"
 msgstr "โหลดรายการเล่นขึ้นมาจากแฟ้ม"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:823
 #, kde-format
 msgid "Map settings"
 msgstr "ตั้งค่าต่าง ๆ ของแผนที่"
@@ -68136,19 +68136,19 @@ msgid ""
 msgstr "คุณต้องการจะลบคลังภาพ \"%1\" ออกจากรายการคลังภาพต่าง ๆ ของคุณจริงหรือไม่ ?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:930
-#: core/utilities/setup/collections/setupcollectionview.cpp:1671
+#: core/utilities/setup/collections/setupcollectionview.cpp:1703
 #, kde-format
 msgid "Local Collections"
 msgstr "คลังภาพภายในระบบ"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:935
-#: core/utilities/setup/collections/setupcollectionview.cpp:1672
+#: core/utilities/setup/collections/setupcollectionview.cpp:1704
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "คลังภาพบนสื่อจัดเก็บข้อมูลที่ถอดเสียบได้"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:940
-#: core/utilities/setup/collections/setupcollectionview.cpp:1673
+#: core/utilities/setup/collections/setupcollectionview.cpp:1705
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "คลังภาพบนตำแหน่งใช้งานร่วมกันบนเครือข่าย"
@@ -68220,32 +68220,52 @@ msgstr "สถานะ"
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "คุณเพิ่งจะทำการเพิ่มคลังภาพที่บรรจุพาธ \"%1\" อยู่ภายใน ไปก่อนหน้านี้เอง"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1567
+#: core/utilities/setup/collections/setupcollectionview.cpp:1572
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "เกิดปัญหาในการเพิ่มคลังภาพ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1577
+#, fuzzy, kde-format
+#| msgid "Problem Adding Collection"
+msgctxt "@title:window"
+msgid "Problem updating Collection"
+msgstr "เกิดปัญหาในการเพิ่มคลังภาพ"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1594
 #, fuzzy, kde-format
 #| msgid "Adding Collection"
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "การเพิ่มคลังภาพ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1580
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
+#, fuzzy, kde-format
+#| msgid "Add Collection"
+msgctxt "@title:window"
+msgid "Update Collection"
+msgstr "เพิ่มคลังภาพ"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1606
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "คลังภาพตัวใหม่ของคุณจะถูกสร้างโดยใช้ชื่อต่อไปนี้:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1661
+#: core/utilities/setup/collections/setupcollectionview.cpp:1610
+#, fuzzy, kde-format
+#| msgid "Your new collection will be created with this name:"
+msgid "Your collection will be updated to this name:"
+msgstr "คลังภาพตัวใหม่ของคุณจะถูกสร้างโดยใช้ชื่อต่อไปนี้:"
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1693
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "เลือกรายการ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1665
+#: core/utilities/setup/collections/setupcollectionview.cpp:1697
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgid "Your collection will use this category:"
