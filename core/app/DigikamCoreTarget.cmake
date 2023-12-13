@@ -57,8 +57,16 @@ if(ENABLE_MEDIAPLAYER)
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
         $<TARGET_OBJECTS:core_videotools_obj>
-        $<TARGET_OBJECTS:core_qtav_obj>
     )
+
+    if (NOT ENABLE_QTMULTIMEDIA)
+
+        set(DIGIKAMCORE_OBJECTS
+            ${DIGIKAMCORE_OBJECTS}
+            $<TARGET_OBJECTS:core_qtav_obj>
+        )
+
+    endif()
 
 endif()
 

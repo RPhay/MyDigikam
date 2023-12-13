@@ -118,6 +118,7 @@ include(RulesLibOpenGL)
 
 # -- Media player dependencies checks and adjustments---------------------------
 
+include(RulesFFmpeg)
 include(RulesMediaPlayer)
 
 # -- Print Install Paths from ECM ---------------------------------------------

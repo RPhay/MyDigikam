@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -30,17 +30,9 @@ target_compile_definitions(core_videotoolscommon_obj
 
 ###
 
+set(libvideotools_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/ffmpegconfighelper.cpp)
+
 if(ENABLE_MEDIAPLAYER)
-
-    set(libvideotools_SRCS
-
-        # NOTE: this part depends of QtAv
-        # TODO: port to QtMultimedia when API will be ready to stream customized frames to QMediaRecoreder
-        ${CMAKE_CURRENT_SOURCE_DIR}/manager/qtav/vidslidetask.cpp
-
-        ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
-    )
 
     if(Qt6_FOUND AND ENABLE_QTMULTIMEDIA)
 
@@ -61,6 +53,10 @@ if(ENABLE_MEDIAPLAYER)
         set(libvideotools_SRCS ${libvideotools_SRCS}
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/mediaplayerview.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/slidevideo.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/manager/qtav/vidslidetask.cpp
+
+            ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
         )
 
     endif()
@@ -80,6 +76,10 @@ if(ENABLE_MEDIAPLAYER)
 
     # ---
 
-    add_subdirectory(qtav)
+    if (NOT ENABLE_QTMULTIMEDIA)
+
+        add_subdirectory(qtav)
+
+    endif()
 
 endif()

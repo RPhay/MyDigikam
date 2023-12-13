@@ -177,6 +177,6 @@ if(FLEX_FOUND AND BISON_FOUND AND KF${QT_VERSION_MAJOR}ThreadWeaver_FOUND)
     add_subdirectory(panorama)
 endif()
 
-if(ENABLE_MEDIAPLAYER)
+if(ENABLE_MEDIAPLAYER AND NOT ENABLE_QTMULTIMEDIA)
     add_subdirectory(video)
 endif()
