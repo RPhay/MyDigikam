@@ -6,15 +6,17 @@
 #include "GeoDataTrack.h"
 #include "GeoDataGeometry_p.h"
 
-#include "GeoDataLatLonAltBox.h"
-#include "GeoDataTypes.h"
-#include "digikam_debug.h"
-
-#include "GeoDataLineString.h"
-#include "GeoDataExtendedData.h"
+#include <iterator>
 
 #include <QMap>
 #include <QDateTime>
+
+#include "GeoDataLatLonAltBox.h"
+#include "GeoDataTypes.h"
+#include "GeoDataLineString.h"
+#include "GeoDataExtendedData.h"
+
+#include "digikam_debug.h"
 
 namespace Marble {
 
@@ -196,7 +198,7 @@ GeoDataCoordinates GeoDataTrack::coordinatesAt( const QDateTime &when ) const
         return GeoDataCoordinates();
     }
 
-    QMap<QDateTime, GeoDataCoordinates>::const_iterator previousEntry = nextEntry - 1;
+    QMap<QDateTime, GeoDataCoordinates>::const_iterator previousEntry = std::prev(nextEntry, 1);
     GeoDataCoordinates previousCoord = previousEntry.value();
 
     QDateTime previousWhen = previousEntry.key();
