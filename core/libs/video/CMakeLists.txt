@@ -52,8 +52,8 @@ if(ENABLE_MEDIAPLAYER)
         set(libvideotools_SRCS
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/mediaplayerview.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/slidevideo.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/manager/qtav/vidslidetask.cpp
 
+            ${CMAKE_CURRENT_SOURCE_DIR}/manager/qtav/vidslidetask.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
         )
