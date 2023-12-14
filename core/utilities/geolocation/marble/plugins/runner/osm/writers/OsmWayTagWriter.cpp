@@ -12,8 +12,8 @@
 #include "OsmTagTagWriter.h"
 #include "GeoDataLineString.h"
 #include "GeoDataCoordinates.h"
-#include "osm/OsmPlacemarkData.h"
-#include "osm/OsmObjectManager.h"
+#include "OsmPlacemarkData.h"
+#include "OsmObjectManager.h"
 #include "GeoWriter.h"
 
 

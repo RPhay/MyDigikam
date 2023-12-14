@@ -7,11 +7,10 @@
 
 #include "MergedLayerDecorator.h"
 
-#include "blendings/Blending.h"
-#include "blendings/BlendingFactory.h"
+#include "Blending.h"
+#include "BlendingFactory.h"
 #include "SunLocator.h"
 #include "MarbleMath.h"
-#include "digikam_debug.h"
 #include "GeoDataGroundOverlay.h"
 #include "GeoSceneTextureTileDataset.h"
 #include "ImageF.h"
@@ -26,6 +25,8 @@
 #include <QPointer>
 #include <QPainter>
 #include <QPainterPath>
+
+#include "digikam_debug.h"
 
 using namespace Marble;
 

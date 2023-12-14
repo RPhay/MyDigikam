@@ -17,7 +17,7 @@
 #include "ViewportParams.h"
 #include "VisiblePlacemark.h"
 #include "RenderState.h"
-#include "osm/OsmPlacemarkData.h"
+#include "OsmPlacemarkData.h"
 
 #define BATCH_RENDERING
 

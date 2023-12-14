@@ -14,7 +14,7 @@
 #include <QFileDialog>
 
 #include "MarbleWidget.h"
-#include "geodata/data/GeoDataSoundCue.h"
+#include "GeoDataSoundCue.h"
 #include "MarblePlacemarkModel.h"
 
 #include <klocalizedstring.h>

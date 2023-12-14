@@ -4,10 +4,10 @@
 
 #include "BlendingFactory.h"
 
-#include "digikam_debug.h"
-
-#include "blendings/SunLightBlending.h"
+#include "SunLightBlending.h"
 #include "BlendingAlgorithms.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

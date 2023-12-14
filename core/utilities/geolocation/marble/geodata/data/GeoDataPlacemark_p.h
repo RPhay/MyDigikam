@@ -15,7 +15,7 @@
 #include "GeoDataTrack.h"
 #include "GeoDataTypes.h"
 #include "GeoDataMultiGeometry.h"
-#include "osm/OsmPlacemarkData.h"
+#include "OsmPlacemarkData.h"
 
 namespace Marble
 {

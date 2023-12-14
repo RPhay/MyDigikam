@@ -33,7 +33,7 @@
 #include "RenderPlugin.h"
 #include "RenderPluginModel.h"
 #include "MarbleClock.h"
-#include "routing/RoutingProfilesWidget.h"
+#include "RoutingProfilesWidget.h"
 #include "BookmarkSyncManager.h"
 #include "CloudSyncManager.h"
 

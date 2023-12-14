@@ -18,8 +18,8 @@
 #include "RoutingRunnerPlugin.h"
 #include "SearchRunnerPlugin.h"
 #include "RunnerTask.h"
-#include "routing/RouteRequest.h"
-#include "routing/RoutingProfilesModel.h"
+#include "RouteRequest.h"
+#include "RoutingProfilesModel.h"
 
 #include <QString>
 #include <QThreadPool>

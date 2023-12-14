@@ -15,7 +15,7 @@
 #include "GeoDataLinearRing.h"
 #include "GeoDataPolygon.h"
 #include "GeoDataPoint.h"
-#include "osm/OsmPlacemarkData.h"
+#include "OsmPlacemarkData.h"
 
 // Qt
 #include "digikam_debug.h"

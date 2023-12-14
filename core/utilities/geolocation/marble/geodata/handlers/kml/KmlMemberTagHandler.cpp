@@ -11,7 +11,7 @@
 #include "GeoDataGeometry.h"
 #include "GeoDataTypes.h"
 #include "KmlElementDictionary.h"
-#include "osm/OsmPlacemarkData.h"
+#include "OsmPlacemarkData.h"
 #include "GeoParser.h"
 
 #include <QtDebug>

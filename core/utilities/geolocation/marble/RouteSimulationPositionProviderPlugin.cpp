@@ -8,9 +8,9 @@
 #include "RouteSimulationPositionProviderPlugin.h"
 
 #include "MarbleModel.h"
-#include "routing/Route.h"
-#include "routing/RoutingManager.h"
-#include "routing/RoutingModel.h"
+#include "Route.h"
+#include "RoutingManager.h"
+#include "RoutingModel.h"
 #include "GeoDataAccuracy.h"
 
 #include <QRandomGenerator>

@@ -20,8 +20,8 @@
 #include "GeoDataLinearRing.h"
 #include "GeoDataBuilding.h"
 #include "GeoDataMultiGeometry.h"
-#include "osm/OsmPlacemarkData.h"
-#include "osm/OsmObjectManager.h"
+#include "OsmPlacemarkData.h"
+#include "OsmObjectManager.h"
 #include "OsmRelationTagWriter.h"
 
 #include <QDebug>

@@ -18,8 +18,8 @@
 #include "GeoDataPlacemark.h"
 #include "PositionTracking.h"
 #include "SearchRunnerManager.h"
-#include "routing/RoutingManager.h"
-#include "routing/RouteRequest.h"
+#include "RoutingManager.h"
+#include "RouteRequest.h"
 
 #include <QAbstractListModel>
 #include <QTimer>

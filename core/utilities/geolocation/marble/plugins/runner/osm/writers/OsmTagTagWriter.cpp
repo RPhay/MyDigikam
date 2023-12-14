@@ -9,7 +9,7 @@
 //Marble
 #include "GeoWriter.h"
 #include "OsmElementDictionary.h"
-#include "osm/OsmPlacemarkData.h"
+#include "OsmPlacemarkData.h"
 
 namespace Marble
 {

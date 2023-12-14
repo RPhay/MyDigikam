@@ -14,7 +14,7 @@
 #include "GeoDataData.h"
 #include "GeoParser.h"
 #include "GeoDataPoint.h"
-#include "osm/OsmPlacemarkData.h"
+#include "OsmPlacemarkData.h"
 
 #include <QVariant>
 

@@ -17,9 +17,9 @@
 // Marble
 #include "GeoDataPlacemark.h"
 #include "GeoDataGeometry.h"
-#include "osm/OsmPlacemarkData.h"
-#include "osm/OsmObjectManager.h"
-#include "osm/OsmRelationEditorDialog.h"
+#include "OsmPlacemarkData.h"
+#include "OsmObjectManager.h"
+#include "OsmRelationEditorDialog.h"
 
 #include <klocalizedstring.h>
 

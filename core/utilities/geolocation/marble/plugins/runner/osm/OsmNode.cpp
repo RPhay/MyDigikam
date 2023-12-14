@@ -5,12 +5,12 @@
 
 #include <OsmNode.h>
 
-#include "osm/OsmObjectManager.h"
-#include <GeoDataStyle.h>
-#include <GeoDataIconStyle.h>
-#include <GeoDataDocument.h>
-#include <MarbleDirs.h>
-#include <StyleBuilder.h>
+#include "OsmObjectManager.h"
+#include "GeoDataStyle.h"
+#include "GeoDataIconStyle.h"
+#include "GeoDataDocument.h"
+#include "MarbleDirs.h"
+#include "StyleBuilder.h"
 
 #include <QXmlStreamAttributes>
 

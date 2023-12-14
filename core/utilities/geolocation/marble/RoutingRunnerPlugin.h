@@ -14,7 +14,7 @@
 #include <QHash>
 #include <QWidget>
 
-#include "routing/RoutingProfilesModel.h"
+#include "RoutingProfilesModel.h"
 
 namespace Marble
 {

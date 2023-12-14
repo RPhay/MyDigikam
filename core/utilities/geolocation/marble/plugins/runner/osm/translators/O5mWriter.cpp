@@ -14,7 +14,7 @@
 #include "GeoDataBuilding.h"
 #include "GeoDataMultiGeometry.h"
 #include "GeoWriter.h"
-#include "osm/OsmPlacemarkData.h"
+#include "OsmPlacemarkData.h"
 
 #include <QDataStream>
 #include <QBuffer>

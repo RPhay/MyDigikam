@@ -15,7 +15,7 @@
 #include "ReverseGeocodingRunnerManager.h"
 #include "RoutingRunner.h"
 #include "RoutingRunnerManager.h"
-#include "routing/RouteRequest.h"
+#include "RouteRequest.h"
 
 namespace Marble
 {

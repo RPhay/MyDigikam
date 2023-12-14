@@ -15,8 +15,8 @@
 #include "PluginManager.h"
 #include "RoutingRunnerPlugin.h"
 #include "RunnerTask.h"
-#include "routing/RouteRequest.h"
-#include "routing/RoutingProfilesModel.h"
+#include "RouteRequest.h"
+#include "RoutingProfilesModel.h"
 
 #include <QThreadPool>
 #include <QTimer>

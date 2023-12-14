@@ -14,7 +14,7 @@
 
 #include "MarblePlacemarkModel.h"
 #include "GeoDataTourControl.h"
-#include "geodata/data/GeoDataWait.h"
+#include "GeoDataWait.h"
 
 #include <klocalizedstring.h>
 

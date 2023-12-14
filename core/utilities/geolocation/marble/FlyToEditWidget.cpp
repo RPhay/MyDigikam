@@ -14,7 +14,7 @@
 #include <QComboBox>
 
 #include "MarbleWidget.h"
-#include "geodata/data/GeoDataFlyTo.h"
+#include "GeoDataFlyTo.h"
 #include "GeoDataLookAt.h"
 #include "GeoDataCamera.h"
 #include "MarblePlacemarkModel.h"

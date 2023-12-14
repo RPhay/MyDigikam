@@ -4,7 +4,7 @@
 //
 
 // Self
-#include "osm/OsmPlacemarkData.h"
+#include "OsmPlacemarkData.h"
 
 // Marble
 #include "GeoDataExtendedData.h"

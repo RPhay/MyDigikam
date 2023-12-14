@@ -14,7 +14,7 @@
 #include "GeoDataPolygon.h"
 #include "GeoWriter.h"
 #include "KmlElementDictionary.h"
-#include "osm/OsmPlacemarkData.h"
+#include "OsmPlacemarkData.h"
 
 namespace Marble
 {

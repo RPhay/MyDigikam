@@ -38,7 +38,7 @@
 #include "SunLocator.h"
 #include "TileCreatorDialog.h"
 #include "ViewportParams.h"
-#include "routing/RoutingLayer.h"
+#include "RoutingLayer.h"
 #include "MarbleAbstractPresenter.h"
 #include "StyleBuilder.h"
 

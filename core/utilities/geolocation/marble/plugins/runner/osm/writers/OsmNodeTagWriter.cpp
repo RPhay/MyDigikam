@@ -16,8 +16,8 @@
 #include "GeoDataPoint.h"
 #include "GeoDataLineString.h"
 #include "GeoWriter.h"
-#include "osm/OsmPlacemarkData.h"
-#include "osm/OsmObjectManager.h"
+#include "OsmPlacemarkData.h"
+#include "OsmObjectManager.h"
 
 namespace Marble
 {

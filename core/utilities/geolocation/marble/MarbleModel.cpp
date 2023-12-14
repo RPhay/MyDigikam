@@ -62,7 +62,7 @@
 #include "TileCreator.h"
 #include "TileCreatorDialog.h"
 #include "TileLoader.h"
-#include "routing/RoutingManager.h"
+#include "RoutingManager.h"
 #include "RouteSimulationPositionProviderPlugin.h"
 #include "BookmarkManager.h"
 #include "ElevationModel.h"

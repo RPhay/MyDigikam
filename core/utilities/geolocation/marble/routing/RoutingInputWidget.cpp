@@ -12,7 +12,7 @@
 #include "BookmarkManager.h"
 #include "MarbleModel.h"
 #include "MarbleWidget.h"
-#include "routing/RoutingManager.h"
+#include "RoutingManager.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataFolder.h"
 #include "GeoDataExtendedData.h"

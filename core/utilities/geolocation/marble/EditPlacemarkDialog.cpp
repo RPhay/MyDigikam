@@ -24,9 +24,9 @@
 #include "MarbleLocale.h"
 #include "FormattedTextWidget.h"
 #include "StyleBuilder.h"
-#include "osm/OsmTagEditorWidget.h"
-#include "osm/OsmPlacemarkData.h"
-#include "osm/OsmRelationManagerWidget.h"
+#include "OsmTagEditorWidget.h"
+#include "OsmPlacemarkData.h"
+#include "OsmRelationManagerWidget.h"
 
 #include <klocalizedstring.h>
 

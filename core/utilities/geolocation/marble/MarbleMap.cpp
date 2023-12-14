@@ -19,15 +19,15 @@
 #include <QtMath>
 
 // Marble
-#include "layers/FloatItemsLayer.h"
-#include "layers/FogLayer.h"
-#include "layers/FpsLayer.h"
-#include "layers/GeometryLayer.h"
-#include "layers/GroundLayer.h"
-#include "layers/MarbleSplashLayer.h"
-#include "layers/PlacemarkLayer.h"
-#include "layers/TextureLayer.h"
-#include "layers/VectorTileLayer.h"
+#include "FloatItemsLayer.h"
+#include "FogLayer.h"
+#include "FpsLayer.h"
+#include "GeometryLayer.h"
+#include "GroundLayer.h"
+#include "MarbleSplashLayer.h"
+#include "PlacemarkLayer.h"
+#include "TextureLayer.h"
+#include "VectorTileLayer.h"
 #include "AbstractFloatItem.h"
 #include "DgmlAuxillaryDictionary.h"
 #include "FileManager.h"
@@ -67,7 +67,6 @@
 #include "ViewportParams.h"
 #include "RenderState.h"
 #include "BookmarkManager.h"
-
 
 namespace Marble
 {

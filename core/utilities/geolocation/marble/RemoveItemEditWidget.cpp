@@ -9,7 +9,7 @@
 #include <QHBoxLayout>
 
 #include "MarbleWidget.h"
-#include "geodata/data/GeoDataAnimatedUpdate.h"
+#include "GeoDataAnimatedUpdate.h"
 #include "GeoDataUpdate.h"
 #include "GeoDataDelete.h"
 #include "MarblePlacemarkModel.h"
