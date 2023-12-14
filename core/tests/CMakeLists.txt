@@ -168,7 +168,10 @@ add_subdirectory(rawengine)
 add_subdirectory(timestampupdate)
 add_subdirectory(webservices)
 add_subdirectory(widgets)
-add_subdirectory(video)
+
+if(ENABLE_MEDIAPLAYER AND NOT ENABLE_QTMULTIMEDIA)
+    add_subdirectory(video)
+endif()
 
 if(Marble_FOUND)
     add_subdirectory(geolocation)               # Some unit-tests based on ModelTest
