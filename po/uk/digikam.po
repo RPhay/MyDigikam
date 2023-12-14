@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 00:40+0000\n"
-"PO-Revision-Date: 2023-12-11 08:50+0200\n"
+"PO-Revision-Date: 2023-12-13 14:47+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -67046,12 +67046,10 @@ msgid "Problem Adding Collection"
 msgstr "Помилка під час додавання збірки"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1577
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
-msgstr "Помилка під час додавання збірки"
+msgstr "Помилка під час оновлення збірки"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1594
 #, kde-format
@@ -67060,11 +67058,10 @@ msgid "Adding Collection"
 msgstr "Додавання збірки"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1598
-#, fuzzy, kde-format
-#| msgid "Update collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
-msgstr "Оновити збірку"
+msgstr "Оновлення збірки"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1606
 #, kde-format
@@ -67072,10 +67069,9 @@ msgid "Your new collection will be created with this name:"
 msgstr "Вашу нову збірку буде створено з такою назвою:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1610
-#, fuzzy, kde-format
-#| msgid "Your new collection will be created with this name:"
+#, kde-format
 msgid "Your collection will be updated to this name:"
-msgstr "Вашу нову збірку буде створено з такою назвою:"
+msgstr "Вашу збірку буде оновлено до такої назви:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1693
 #, kde-format
