@@ -19,6 +19,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLU
 
 if(Qt6_FOUND)
 
+    # NOTE: There 2 instances of QRegEx to port to QRegularExpression
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
 
 endif()
