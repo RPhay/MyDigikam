@@ -54,6 +54,7 @@ private Q_SLOTS:
 
     void slotPreviewTimestamps();
     void slotUpdateTimestamps();
+    void slotOkExitTimestamps();
 
     void slotPreviewTimer();
     void slotUpdateTimer();
