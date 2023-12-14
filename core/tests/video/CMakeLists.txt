@@ -27,40 +27,6 @@ endif()
 
 # -------------------------------------------------
 
-add_executable(framesencoder_cli ${CMAKE_CURRENT_SOURCE_DIR}/framesencoder_cli.cpp)
-ecm_mark_nongui_executable(framesencoder_cli)
-
-target_link_libraries(framesencoder_cli
-
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -------------------------------------------------
-
-add_executable(videoplayer_gui ${CMAKE_CURRENT_SOURCE_DIR}/videoplayer_gui.cpp)
-
-target_link_libraries(videoplayer_gui
-
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -------------------------------------------------
-
-add_executable(videoslide_gui ${CMAKE_CURRENT_SOURCE_DIR}/videoslide_gui.cpp)
-
-target_link_libraries(videoslide_gui
-
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -------------------------------------------------
-
 add_executable(videothumb_cli ${CMAKE_CURRENT_SOURCE_DIR}/videothumb_cli.cpp)
 ecm_mark_nongui_executable(videothumb_cli)
 
@@ -70,4 +36,47 @@ target_link_libraries(videothumb_cli
                       ${COMMON_TEST_LINK}
 )
 
-add_subdirectory(qtav)
+# -------------------------------------------------
+
+if(ENABLE_MEDIAPLAYER)
+
+    add_executable(videoplayer_gui ${CMAKE_CURRENT_SOURCE_DIR}/videoplayer_gui.cpp)
+
+    target_link_libraries(videoplayer_gui
+
+                          digikamcore
+
+                          ${COMMON_TEST_LINK}
+    )
+
+    # -------------------------------------------------
+
+    add_executable(videoslide_gui ${CMAKE_CURRENT_SOURCE_DIR}/videoslide_gui.cpp)
+
+    target_link_libraries(videoslide_gui
+
+                          digikamcore
+
+                          ${COMMON_TEST_LINK}
+    )
+
+
+    # -------------------------------------------------
+
+    if(NOT ENABLE_QTMULTIMEDIA)
+
+        add_executable(framesencoder_cli ${CMAKE_CURRENT_SOURCE_DIR}/framesencoder_cli.cpp)
+        ecm_mark_nongui_executable(framesencoder_cli)
+
+        target_link_libraries(framesencoder_cli
+
+                              digikamcore
+
+                              ${COMMON_TEST_LINK}
+        )
+
+        add_subdirectory(qtav)
+
+    endif()
+
+endif()
