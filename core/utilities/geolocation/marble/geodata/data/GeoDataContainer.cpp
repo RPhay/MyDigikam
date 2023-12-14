@@ -222,7 +222,7 @@ void GeoDataContainer::remove(int index, int count)
     d->m_vector.remove( index, count );
 }
 
-int	GeoDataContainer::removeAll(GeoDataFeature *feature)
+int GeoDataContainer::removeAll(GeoDataFeature *feature)
 {
     Q_D(GeoDataContainer);
     return d->m_vector.removeAll(feature);

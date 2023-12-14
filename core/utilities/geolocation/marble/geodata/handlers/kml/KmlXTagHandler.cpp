@@ -26,7 +26,7 @@ GeoNode* KmlxTagHandler::parse( GeoParser& parser ) const
 
     if ( parentItem.is<GeoDataScale>() ){
         double x = parser.readElementText().trimmed().toDouble();
-	parentItem.nodeAs<GeoDataScale>()->setX( x );
+    parentItem.nodeAs<GeoDataScale>()->setX( x );
     }
     return nullptr;
 }

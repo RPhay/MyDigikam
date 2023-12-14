@@ -17,11 +17,11 @@ namespace Marble
 
 static GeoTagWriterRegistrar s_writerLookAt(
     GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataTimeSpanType),
-				 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
+                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
     new KmlTimeSpanWriter );
 
 bool KmlTimeSpanWriter::write( const GeoNode *node,
-			       GeoWriter& writer ) const
+                   GeoWriter& writer ) const
 {
     Q_ASSERT(dynamic_cast<const GeoDataTimeSpan *>(node));
     const GeoDataTimeSpan *timespan = static_cast<const GeoDataTimeSpan *>(node);

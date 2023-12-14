@@ -29,7 +29,7 @@ GeoNode* KmlResourceMapTagHandler::parse( GeoParser& parser ) const
 
     if( parentItem.represents( kmlTag_Model ) ) {
         parentItem.nodeAs<GeoDataModel>()->setResourceMap(map);
-	    return &parentItem.nodeAs<GeoDataModel>()->resourceMap();
+        return &parentItem.nodeAs<GeoDataModel>()->resourceMap();
     } else {
         return nullptr;
     }

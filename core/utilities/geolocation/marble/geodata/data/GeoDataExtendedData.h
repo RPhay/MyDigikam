@@ -69,7 +69,7 @@ class DIGIKAM_EXPORT GeoDataExtendedData : public GeoNode, public Serializable
      * @brief return const End iterator for QHash
      */
 
-	QHash< QString, GeoDataData >::const_iterator constEnd( ) const;
+    QHash< QString, GeoDataData >::const_iterator constEnd( ) const;
 
     /**
      * @brief return size of QHash

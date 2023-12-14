@@ -33,8 +33,8 @@ GeoNode* KmlheadingTagHandler::parse( GeoParser& parser ) const
         } else if ( parentItem.represents( kmlTag_Camera ) ) {
             parentItem.nodeAs<GeoDataCamera>()->setHeading( heading );
         } else if ( parentItem.represents( kmlTag_Orientation ) ) {
-	    parentItem.nodeAs<GeoDataOrientation>()->setHeading( heading );
-	}
+        parentItem.nodeAs<GeoDataOrientation>()->setHeading( heading );
+    }
     } else {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Invalid heading value " << heading << ", must be within 0..360. Using 0 instead.";
     }

@@ -26,7 +26,7 @@ GeoNode* KmlyTagHandler::parse( GeoParser& parser ) const
 
     if ( parentItem.is<GeoDataScale>() ){
         double y = parser.readElementText().trimmed().toDouble();
-	parentItem.nodeAs<GeoDataScale>()->setY( y );
+    parentItem.nodeAs<GeoDataScale>()->setY( y );
     }
     return nullptr;
 }

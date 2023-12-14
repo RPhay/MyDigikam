@@ -19,7 +19,7 @@ namespace Marble
 
 static GeoTagWriterRegistrar s_writerLookAt(
     GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataPhotoOverlayType),
-				 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
+                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
     new KmlPhotoOverlayWriter );
 
 KmlPhotoOverlayWriter::KmlPhotoOverlayWriter() : KmlOverlayTagWriter( QString::fromUtf8(kml::kmlTag_PhotoOverlay) )

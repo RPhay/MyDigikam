@@ -37,7 +37,7 @@ KML_DEFINE_TAG_HANDLER( altitude )
         } else if ( parentItem.is<GeoDataGroundOverlay>() ) {
             parentItem.nodeAs<GeoDataGroundOverlay>()->setAltitude( altitude );
         } else if ( parentItem.is<GeoDataLocation>() ) {
-	    parentItem.nodeAs<GeoDataLocation>()->setAltitude( altitude );
+        parentItem.nodeAs<GeoDataLocation>()->setAltitude( altitude );
         }
 
       return nullptr;

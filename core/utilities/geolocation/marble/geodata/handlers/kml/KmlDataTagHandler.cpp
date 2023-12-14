@@ -26,7 +26,7 @@ GeoNode* KmlDataTagHandler::parse( GeoParser& parser ) const
     GeoStackItem parentItem = parser.parentElement();
 
     if( parentItem.represents( kmlTag_ExtendedData ) ) {
-	GeoDataData data;
+    GeoDataData data;
         
         QString name = parser.attribute( "name" ).trimmed();
         data.setName( name );

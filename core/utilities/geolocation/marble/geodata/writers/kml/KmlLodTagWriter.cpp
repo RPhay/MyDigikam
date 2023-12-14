@@ -20,7 +20,7 @@ static GeoTagWriterRegistrar s_writerLod(
     new KmlLodTagWriter);
 
 bool KmlLodTagWriter::write( const GeoNode *node,
-				 GeoWriter& writer ) const
+                 GeoWriter& writer ) const
 {
     const GeoDataLod *lod = static_cast<const GeoDataLod*>( node );
     writer.writeStartElement(QString::fromUtf8(kml::kmlTag_Lod));

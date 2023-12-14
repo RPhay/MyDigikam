@@ -35,9 +35,9 @@ namespace kml
             qreal latitude = parser.readElementText().trimmed().toDouble();
             parentItem.nodeAs<GeoDataCamera>()->setLatitude(latitude, GeoDataCoordinates::Degree);
         } else if ( parentItem.is<GeoDataLocation>() ) {
-	        qreal latitude = parser.readElementText().trimmed().toDouble();
-	        parentItem.nodeAs<GeoDataLocation>()->setLatitude(latitude, GeoDataCoordinates::Degree);
-	}
+            qreal latitude = parser.readElementText().trimmed().toDouble();
+            parentItem.nodeAs<GeoDataLocation>()->setLatitude(latitude, GeoDataCoordinates::Degree);
+    }
         return nullptr;
     }
   }

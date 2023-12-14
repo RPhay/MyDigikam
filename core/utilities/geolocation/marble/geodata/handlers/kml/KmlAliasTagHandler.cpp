@@ -25,7 +25,7 @@ GeoNode* KmlAliasTagHandler::parse( GeoParser& parser ) const
 
     if( parentItem.represents( kmlTag_ResourceMap ) ) {
         parentItem.nodeAs<GeoDataResourceMap>()->setAlias(alias);
-	    return &parentItem.nodeAs<GeoDataResourceMap>()->alias();
+        return &parentItem.nodeAs<GeoDataResourceMap>()->alias();
     } else {
         return nullptr;
     }

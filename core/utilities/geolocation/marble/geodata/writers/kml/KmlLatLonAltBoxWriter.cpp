@@ -21,7 +21,7 @@ static GeoTagWriterRegistrar s_writerLatLonAltBox(
     new KmlLatLonAltBoxWriter);
 
 bool KmlLatLonAltBoxWriter::write( const GeoNode *node,
-				 GeoWriter& writer ) const
+                 GeoWriter& writer ) const
 {
     const GeoDataLatLonAltBox *latLonAltBox = static_cast<const GeoDataLatLonAltBox*>( node );
     writer.writeStartElement(QString::fromUtf8(kml::kmlTag_LatLonAltBox));

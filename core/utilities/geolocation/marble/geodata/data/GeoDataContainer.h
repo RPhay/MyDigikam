@@ -114,7 +114,7 @@ class DIGIKAM_EXPORT GeoDataContainer : public GeoDataFeature
 
     void remove(int index, int count);
 
-    int	removeAll(GeoDataFeature* feature);
+    int removeAll(GeoDataFeature* feature);
 
     void removeAt(int index);
 

@@ -31,7 +31,7 @@ GeoNode* KmlLocationTagHandler::parse( GeoParser& parser ) const
 
     if( parentItem.represents( kmlTag_Model ) ) {
         parentItem.nodeAs<GeoDataModel>()->setLocation(location);
-	return &parentItem.nodeAs<GeoDataModel>()->location();
+    return &parentItem.nodeAs<GeoDataModel>()->location();
     }
     else{
         return nullptr;

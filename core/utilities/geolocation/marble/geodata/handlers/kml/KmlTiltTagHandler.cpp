@@ -30,7 +30,7 @@ GeoNode* KmltiltTagHandler::parse( GeoParser& parser ) const
         parentItem.nodeAs<GeoDataCamera>()->setTilt(tilt);
     } else if ( parentItem.is<GeoDataOrientation>() ){
         double tilt = parser.readElementText().trimmed().toDouble();
-	parentItem.nodeAs<GeoDataOrientation>()->setTilt(tilt);
+    parentItem.nodeAs<GeoDataOrientation>()->setTilt(tilt);
     }
     return nullptr;
 }
