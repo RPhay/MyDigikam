@@ -137,8 +137,8 @@ void CompassFloatItem::paintContent( QPainter *painter )
     QRectF compassRect( contentRect() );
 
     const QString dirstr =
-        (m_polarity == +1) ? tr("N") :
-        (m_polarity == -1) ? tr("S") :
+        (m_polarity == +1) ? i18n("N") :
+        (m_polarity == -1) ? i18n("S") :
         /*else*/             QString();
 
     int fontheight = QFontMetrics( font() ).ascent();
