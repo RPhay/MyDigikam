@@ -855,7 +855,7 @@ void RoutingWidget::toggleRoutePlay()
     if( !d->m_playback ){
         if( d->m_routingModel->rowCount() != 0 ){
             initializeTour();
-	}
+    }
     }
 
     if (!d->m_playback)
