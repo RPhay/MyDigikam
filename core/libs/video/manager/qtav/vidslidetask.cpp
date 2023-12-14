@@ -32,12 +32,8 @@
 // QtAv includes
 
 #include "VideoFrame.h"
-#include "AudioFrame.h"
 #include "VideoEncoder.h"
-#include "AudioEncoder.h"
-#include "AudioDecoder.h"
 #include "AVMuxer.h"
-#include "AVDemuxer.h"
 
 // Local includes
 
@@ -59,61 +55,30 @@ public:
 
     explicit Private()
       : settings(nullptr),
-        astream (0),
-        adec    (AudioDecoder::create("FFmpeg"))
+        astream (0)
     {
     }
 
     ~Private()
     {
-        adec->close();
     }
 
     bool       encodeFrame(VideoFrame& vframe,
                            VideoEncoder* const venc,
-                           AudioEncoder* const aenc,
                            AVMuxer& mux);
-
-    AudioFrame nextAudioFrame(const AudioFormat& afmt);
 
 public:
 
     VidSlideSettings*           settings;
-    AVDemuxer                   demuxer;
     Packet                      apkt;
     int                         astream;
-    AudioDecoder*               adec;
-    QList<QUrl>::const_iterator curAudioFile;
 };
 
 bool VidSlideTask::Private::encodeFrame(VideoFrame& vframe,
                                         VideoEncoder* const venc,
-                                        AudioEncoder* const aenc,
                                         AVMuxer& mux)
 {
-    Packet apkt;
     Packet vpkt;
-
-    if (curAudioFile != settings->inputAudio.constEnd())
-    {
-        AudioFrame aframe = nextAudioFrame(aenc->audioFormat());
-
-        if (!apkt.isValid())
-        {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid audio frame";
-        }
-        else
-        {
-            if (aenc->encode(aframe))
-            {
-                apkt = aenc->encoded();
-            }
-            else
-            {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to encode audio frame";
-            }
-        }
-    }
 
     if (vframe.pixelFormat() != venc->pixelFormat())
     {
@@ -129,100 +94,10 @@ bool VidSlideTask::Private::encodeFrame(VideoFrame& vframe,
             mux.writeVideo(vpkt);
         }
 
-        if (apkt.isValid())
-        {
-            mux.writeAudio(apkt);
-        }
-
         return true;
     }
 
     return false;
-}
-
-AudioFrame VidSlideTask::Private::nextAudioFrame(const AudioFormat& afmt)
-{
-    if (curAudioFile == settings->inputAudio.constEnd())
-    {
-        return AudioFrame();
-    }
-
-    if (demuxer.atEnd() || demuxer.fileName().isEmpty())
-    {
-        if (demuxer.fileName().isEmpty())
-        {
-            curAudioFile = settings->inputAudio.constBegin();
-        }
-        else
-        {
-            ++curAudioFile;
-        }
-
-        if (curAudioFile != settings->inputAudio.constEnd())
-        {
-            demuxer.setMedia((*curAudioFile).toLocalFile());
-
-            if (!demuxer.load())
-            {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open audio file" << demuxer.fileName();
-                return AudioFrame();
-            }
-
-            adec->setCodecContext(demuxer.audioCodecContext());
-
-            if (!adec->open())
-            {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open audio stream in decode"
-                                               << demuxer.fileName();
-                return AudioFrame();
-            }
-        }
-        else
-        {
-            return AudioFrame();
-        }
-    }
-
-    while (!demuxer.atEnd())
-    {
-        if (!apkt.isValid())
-        {
-            if (!demuxer.readPacket() || (demuxer.stream() != astream))
-            {
-                continue;
-            }
-
-            apkt = demuxer.packet();
-        }
-
-        if (!adec->decode(apkt))
-        {
-            apkt = Packet();
-            continue;
-        }
-
-        apkt.data         = QByteArray::fromRawData(apkt.data.constData() + apkt.data.size() -
-                                                    adec->undecodedSize(), adec->undecodedSize());
-
-        AudioFrame aframe = adec->frame();
-
-        if (aframe.format() != afmt)
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Audio transcoding:";
-            qCDebug(DIGIKAM_GENERAL_LOG) << "current format =" << aframe.format();
-            qCDebug(DIGIKAM_GENERAL_LOG) << "target format  =" << afmt;
-/*
-            adec->resampler()->setOutAudioFormat(afmt);
-            adec->resampler()->prepare();
-            aframe.setAudioResampler(adec->resampler());
-*/
-            aframe = aframe.to(afmt);
-        }
-
-        return aframe;
-    }
-
-    return AudioFrame();
 }
 
 // -------------------------------------------------------
@@ -232,11 +107,6 @@ VidSlideTask::VidSlideTask(VidSlideSettings* const settings)
       d        (new Private)
 {
     d->settings = settings;
-
-    if (d->settings->inputAudio.isEmpty())
-    {
-        d->curAudioFile = d->settings->inputAudio.constEnd();
-    }
 }
 
 VidSlideTask::~VidSlideTask()
@@ -283,28 +153,11 @@ void VidSlideTask::run()
     }
 
     // ---------------------------------------------
-    // Setup Audio Encoder
-
-    AudioEncoder* const aenc = AudioEncoder::create("FFmpeg");
-    aenc->setCodecName(QLatin1String("mp2"));
-    aenc->setBitRate(d->settings->abitRate);
-
-    if (!aenc->open())
-    {
-        Q_EMIT signalMessage(i18n("Failed to open audio encoder"), true);
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open audio encoder";
-        Q_EMIT signalDone(false);
-
-        return;
-    }
-
-    // ---------------------------------------------
     // Setup Muxer
 
     AVMuxer mux;
     mux.setMedia(outFile);
     mux.copyProperties(venc);  // Setup video encoder
-    mux.copyProperties(aenc);  // Setup audio encoder
 /*
     // Segments muxer ffmpeg options. See : https://www.ffmpeg.org/ffmpeg-formats.html#Options-11
 
@@ -368,7 +221,7 @@ void VidSlideTask::run()
         {
             VideoFrame frame(transmngr.currentFrame(ttmout));
 
-            if (!d->encodeFrame(frame, venc, aenc, mux))
+            if (!d->encodeFrame(frame, venc, mux))
             {
                 qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot encode transition frame";
             }
@@ -390,7 +243,7 @@ void VidSlideTask::run()
                 qiimg = effmngr.currentFrame(itmout);
                 frame = VideoFrame(qiimg);
 
-                if (d->encodeFrame(frame, venc, aenc, mux))
+                if (d->encodeFrame(frame, venc, mux))
                 {
 
                     ++count;
@@ -424,20 +277,12 @@ void VidSlideTask::run()
         {
             mux.writeVideo(vpkt);
         }
-
-        Packet apkt(aenc->encoded());
-
-        if (apkt.isValid())
-        {
-            mux.writeAudio(apkt);
-        }
     }
 
     // ---------------------------------------------
     // Cleanup
 
     venc->close();
-    aenc->close();
     mux.close();
 
     if (!m_cancel)

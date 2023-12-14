@@ -87,7 +87,7 @@ VidSlideFinalPage::VidSlideFinalPage(QWizard* const dialog, const QString& title
     vbox->setStretchFactor(d->progressBar, 10);
     vbox->setContentsMargins(QMargins());
     vbox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     setPageWidget(vbox);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("system-run")));
@@ -130,19 +130,6 @@ void VidSlideFinalPage::slotProcess()
     {
         d->progressView->addEntry(QDir::toNativeSeparators(url.toLocalFile()),
                                   DHistoryView::ProgressEntry);
-    }
-
-    if (!d->settings->inputAudio.isEmpty())
-    {
-        d->progressView->addEntry(i18n("%1 input audio stream to process:",
-                                       d->settings->inputAudio.count()),
-                                  DHistoryView::ProgressEntry);
-
-        Q_FOREACH (const QUrl& url, d->settings->inputAudio)
-        {
-            d->progressView->addEntry(QDir::toNativeSeparators(url.toLocalFile()),
-                                      DHistoryView::ProgressEntry);
-        }
     }
 
     d->progressBar->setMinimum(0);
