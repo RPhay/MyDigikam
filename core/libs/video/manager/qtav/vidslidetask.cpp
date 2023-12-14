@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to generate video slideshow from images.
  *
- * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -53,25 +53,15 @@ class Q_DECL_HIDDEN VidSlideTask::Private
 {
 public:
 
-    explicit Private()
-      : settings(nullptr),
-        astream (0)
-    {
-    }
+    Private() = default;
 
-    ~Private()
-    {
-    }
-
-    bool       encodeFrame(VideoFrame& vframe,
-                           VideoEncoder* const venc,
-                           AVMuxer& mux);
+    bool encodeFrame(VideoFrame& vframe,
+                     VideoEncoder* const venc,
+                     AVMuxer& mux);
 
 public:
 
-    VidSlideSettings*           settings;
-    Packet                      apkt;
-    int                         astream;
+    VidSlideSettings* settings = nullptr;
 };
 
 bool VidSlideTask::Private::encodeFrame(VideoFrame& vframe,
