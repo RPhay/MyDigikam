@@ -92,7 +92,7 @@ class DIGIKAM_EXPORT Mat3
 // defining the following functions here seems to make more compilers happy
    Mat3 mxcon (double r);  // constant matrix
    Mat3 mxidn ();          // identity matrix
-	//  friend Mat3 mxtrn (const Mat3& m1);  // transposed matrix
+    //  friend Mat3 mxtrn (const Mat3& m1);  // transposed matrix
    Mat3 xrot (double a);  // rotation around x-axis
    Mat3 yrot (double a);  // rotation around y-axis
    Mat3 zrot (double a);  // rotation around z-axis

@@ -298,8 +298,8 @@ int PlanetarySats::getStateVector(int nsat)
 
  if (fsc == 0) nst = 0;
 
- return nst;		 		
-}	
+ return nst;                
+}   
 
 void PlanetarySats::setPlanet(char* pname)
 {
@@ -310,7 +310,7 @@ void PlanetarySats::setPlanet(char* pname)
   if (strncmp("Mercury", pname, 4) == 0) getMercury();
   if (strncmp("Moon", pname, 4) == 0) getMoon();
 }
-	
+    
 void PlanetarySats::stateToKepler()
 {
  // convert state vector (mean equatorial J2000.0) into planetary Kepler elements
@@ -374,9 +374,9 @@ void PlanetarySats::stateToKepler()
  if (n > 1000.0) n = 1000.0;  // avoid possible errors
 
  pls_n0 = n;
-  	 	 	 		 	 	 	
+                                
 }
-	
+    
 void PlanetarySats::getKeplerElements(double &perc, double &apoc, double &inc, double &ecc, double &ra, double &tano, double &m0, double &a, double &n0)
 {
   // get Kepler elements of orbit with regard to the planetary equator and prime meridian.
@@ -444,17 +444,17 @@ int PlanetarySats::selectSat(char* sname)
   
   return res;
 }
-	
+    
 void PlanetarySats::getSatName(char* sname) const
 {
   strcpy (sname, pls_satname);
 }
-	
+    
 void PlanetarySats::currentPos()
 {
   getSatPos(pls_time);
 }
-	
+    
 void PlanetarySats::nextStep()
 {
   pls_time = pls_time + pls_step / 86400.0;
@@ -473,7 +473,7 @@ void PlanetarySats::getPlanetographic(double &lng, double &lat, double &height) 
   lng = pls_lng;
   lat = pls_lat;
   height = pls_height;
-  	
+    
 }
 
 void PlanetarySats::getFixedFrame(double &x, double &y, double &z, double &vx, double &vy, double &vz)
@@ -602,7 +602,7 @@ void PlanetarySats::getSatPos (double tutc)
   pls_lng = pls_lng * 180.0 / M_PI;
 
  }
-	
+    
 
 void PlanetarySats::getMars()  // Mars planetary constants
 {
@@ -612,11 +612,11 @@ void PlanetarySats::getMars()  // Mars planetary constants
   pls_axl0 = 317.681;
   pls_axl1 = -0.108;
   pls_axb0 = 52.886;
-  pls_axb1 = -0.061;	
+  pls_axb1 = -0.061;    
   pls_W = 176.868;
   pls_Wd = 350.8919830;
   pls_GM = 4.282828596416e+13; // 4.282837405582e+13
-}	
+}   
 
 void PlanetarySats::getVenus()  // Venus planetary constants
 { 
@@ -626,11 +626,11 @@ void PlanetarySats::getVenus()  // Venus planetary constants
   pls_axl0 = 272.72;
   pls_axl1 = 0.0;
   pls_axb0 = 67.15;
-  pls_axb1 = 0.0;	
+  pls_axb1 = 0.0;   
   pls_W = 160.26;
   pls_Wd = -1.4813596;
   pls_GM = 3.24858761e+14;  
-}	
+}   
 
 void PlanetarySats::getMercury()  // Mercury planetary constants
 { 
@@ -640,11 +640,11 @@ void PlanetarySats::getMercury()  // Mercury planetary constants
   pls_axl0 = 281.01;
   pls_axl1 = -0.033;
   pls_axb0 = 61.45;
-  pls_axb1 = -0.005;	
+  pls_axb1 = -0.005;    
   pls_W = 329.71;
   pls_Wd = 6.1385025;
   pls_GM = 2.20320802e+13;  
-}	
+}   
 
 void PlanetarySats::getMoon()  // Moon planetary constants
 {
@@ -655,11 +655,11 @@ void PlanetarySats::getMoon()  // Moon planetary constants
   pls_axl0 = 0.0;
   pls_axl1 = 0.0;
   pls_axb0 = 90.0;
-  pls_axb1 = 0.0;	
+  pls_axb1 = 0.0;   
   pls_W = 0.0;
   pls_Wd = 13.17635898;
   pls_GM = 4.90279412e+12;  
-}	
+}   
 
 Mat3 PlanetarySats::getSelenographic (double jd)
 {

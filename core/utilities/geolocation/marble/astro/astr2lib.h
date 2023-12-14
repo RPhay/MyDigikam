@@ -10,7 +10,7 @@
 #include "digikam_export.h"
 
 /***********************************************************************
-	Definitions of Astr2lib Functions
+    Definitions of Astr2lib Functions
 
 
   Author: Gerhard HOLTKAMP                   25-MAR-2014
@@ -28,21 +28,21 @@ class DIGIKAM_EXPORT Plan200      // Calculating the Planets in epoch J2000.0 co
     Vec3 Jupiter (double t);   // position of Jupiter at time t
     Vec3 Saturn (double t);   // position of Saturn at time t
     Vec3 Uranus (double t);   // position of Uranus at time t
-	  Vec3 Neptune (double t);   // position of Neptune at time t
-	  Vec3 Pluto (double t);   // position of Pluto at time t
+      Vec3 Neptune (double t);   // position of Neptune at time t
+      Vec3 Pluto (double t);   // position of Pluto at time t
 
   private:
-	 double	c3[19], s3[19];
-	 double	c[11], s[11];
-	 double	m1, m2, m3, m4, m5, m6, m7, m8;
-	 double	d, a, uu, tt;
-	 double	u, v, dl, dr, db, l, b, r;
-	 Vec3   	rp, vp;   // state vector of planet
+     double c3[19], s3[19];
+     double c[11], s[11];
+     double m1, m2, m3, m4, m5, m6, m7, m8;
+     double d, a, uu, tt;
+     double u, v, dl, dr, db, l, b, r;
+     Vec3       rp, vp;   // state vector of planet
 
     void addthe (double c1, double s1, double c2, double s2,
-					double& cc, double& ss);
+                    double& cc, double& ss);
     void term (int i1, int i, int it, double dlc, double dls, double drc,
-			  double drs, double dbc, double dbs);
+              double drs, double dbc, double dbs);
     void posvel ();
  };
 

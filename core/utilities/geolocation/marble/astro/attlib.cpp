@@ -30,7 +30,7 @@ double atan20 (double y, double x)
 
 
  Vec3::Vec3(double x, double y, double z)
-		 {assign(x, y, z);}
+         {assign(x, y, z);}
 
  Vec3::Vec3 (const Vec3& c)
   {
@@ -482,7 +482,7 @@ Vec3 mxvct (const Mat3& m1, Vec3& v1)
 
 Mat3 xrot (double a)
  {
-  //	 Rotation matrix around x-axis with angle a (in radians).
+  //     Rotation matrix around x-axis with angle a (in radians).
   double c, s;
   Mat3 m1;
 
@@ -503,7 +503,7 @@ Mat3 xrot (double a)
 
 Mat3 yrot (double a)
  {
-  //	 Rotation matrix around y-axis with angle a (in radians).
+  //     Rotation matrix around y-axis with angle a (in radians).
   double c, s;
   Mat3 m1;
 
@@ -546,14 +546,14 @@ Mat3 zrot (double a)
 Mat3 csmx (double p, double y, double r)
  {
   // Form cosine matrix m from pitch p, yaw y and roll r angles.
-  //	  The angles are to be given in radians.
-  //	 Roll is rotation about the x-axis, pitch about y, yaw about z.
-  //	
+  //      The angles are to be given in radians.
+  //     Roll is rotation about the x-axis, pitch about y, yaw about z.
+  //    
   Mat3 pitch, yaw, roll, result;
 
   pitch = yrot (p);
-  yaw = 	 zrot (y);
-  roll =	 xrot (r);
+  yaw =      zrot (y);
+  roll =     xrot (r);
   result = yaw * pitch;
   result *= roll;
 

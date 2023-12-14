@@ -882,7 +882,7 @@ void EclSolar::GetMonth (int mm, char* mchr)
 }
 
 double EclSolar::phmjd (double yearf, double phase, double tdut,
-				  int& eph, double& ejd, double& emag)
+                  int& eph, double& ejd, double& emag)
   /*
     Calculate the Modified Julian Date of the occurrence of the specified
     phase of the Moon and check for possible eclipses.

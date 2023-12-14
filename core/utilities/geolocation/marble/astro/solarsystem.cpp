@@ -148,7 +148,7 @@ void SolarSystem::ssinit()
   ss_user_axl0 = 0.0;
   ss_user_axl1 = 0.0;
   ss_user_axb0 = 90.0;
-  ss_user_axb1 = 0.0;	
+  ss_user_axb1 = 0.0;   
   ss_user_W = 0;
   ss_user_Wd = 359.017045833334;
   ss_user_GM = 3.986005e+14;  
@@ -1533,7 +1533,7 @@ Vec3 SolarSystem::MnPos (double &ep2, double &elm)
  {
   // return the apparent position of the Moon
   // and the Nutation ep2 value and the ecliptic longitude of the Moon elm
-	
+    
   Moon200 moon;
   Mat3 mx;
   Vec3 rm, s;
@@ -1763,11 +1763,11 @@ void SolarSystem::getConstSun()  // Sun constants
   ss_axl0 = 286.13;
   ss_axl1 = 0.0;
   ss_axb0 = 63.87;
-  ss_axb1 = 0.0;	
+  ss_axb1 = 0.0;    
   ss_W = 84.10;
   ss_Wd = 14.1844000;
   ss_GM = 1.32712438e+20;  
-}	
+}   
 
 void SolarSystem::getConstMoon()  // Moon planetary constants
 {
@@ -1777,11 +1777,11 @@ void SolarSystem::getConstMoon()  // Moon planetary constants
   ss_axl0 = 0.0;
   ss_axl1 = 0.0;
   ss_axb0 = 90.0;
-  ss_axb1 = 0.0;	
+  ss_axb1 = 0.0;    
   ss_W = 0.0;
   ss_Wd = 13.17635898;
   ss_GM = 4.90279412e+12;  
-}	
+}   
 
 void SolarSystem::getConstMercury()  // Mercury planetary constants
 { 
@@ -1791,11 +1791,11 @@ void SolarSystem::getConstMercury()  // Mercury planetary constants
   ss_axl0 = 281.0097;
   ss_axl1 = -0.0328;
   ss_axb0 = 61.4143;
-  ss_axb1 = -0.0049;	
+  ss_axb1 = -0.0049;    
   ss_W = 329.5469;
   ss_Wd = 6.1385025;
   ss_GM = 2.20320802e+13;  
-}	
+}   
 
 void SolarSystem::getConstVenus()  // Venus planetary constants
 { 
@@ -1805,11 +1805,11 @@ void SolarSystem::getConstVenus()  // Venus planetary constants
   ss_axl0 = 272.72;
   ss_axl1 = 0.0;
   ss_axb0 = 67.16;
-  ss_axb1 = 0.0;	
+  ss_axb1 = 0.0;    
   ss_W = 160.20;
   ss_Wd = -1.4813688;
   ss_GM = 3.24858761e+14;  
-}	
+}   
 
 void SolarSystem::getConstEarth()  // Earth planetary constants
 { 
@@ -1819,11 +1819,11 @@ void SolarSystem::getConstEarth()  // Earth planetary constants
   ss_axl0 = 0.0;
   ss_axl1 = 0.0;
   ss_axb0 = 90.0;
-  ss_axb1 = 0.0;	
+  ss_axb1 = 0.0;    
   ss_W = 0;
   ss_Wd = 359.017045833334;
   ss_GM = 3.986005e+14;  
-}	
+}   
 
 void SolarSystem::getConstMars()  // Mars planetary constants
 {
@@ -1833,11 +1833,11 @@ void SolarSystem::getConstMars()  // Mars planetary constants
   ss_axl0 = 317.68143;
   ss_axl1 = -0.1061;
   ss_axb0 = 52.88650;
-  ss_axb1 = -0.0609;	
+  ss_axb1 = -0.0609;    
   ss_W = 176.630; // 176.655;
   ss_Wd = 350.89198226;
   ss_GM = 4.282828596416e+13; // 4.282837405582e+13
-}	
+}   
 
 void SolarSystem::getConstJupiter()  // Jupiter planetary constants
 {
@@ -1847,11 +1847,11 @@ void SolarSystem::getConstJupiter()  // Jupiter planetary constants
   ss_axl0 = 268.056595;
   ss_axl1 = -0.009;
   ss_axb0 = 64.495303;
-  ss_axb1 = 0.003;	
+  ss_axb1 = 0.003;  
   ss_W = 43.3;
   ss_Wd = 870.270;
   ss_GM = 1.2671199164e+17;
-}	
+}   
 
 void SolarSystem::getConstSaturn()  // Saturn planetary constants
 {
@@ -1861,11 +1861,11 @@ void SolarSystem::getConstSaturn()  // Saturn planetary constants
   ss_axl0 = 40.589;
   ss_axl1 = -0.036;
   ss_axb0 = 83.537;
-  ss_axb1 = -0.004;	
+  ss_axb1 = -0.004; 
   ss_W = 38.90;
   ss_Wd = 810.7939024;
   ss_GM = 3.7934096899e+16;
-}	
+}   
 
 void SolarSystem::getConstUranus()  // Uranus planetary constants
 {
@@ -1875,11 +1875,11 @@ void SolarSystem::getConstUranus()  // Uranus planetary constants
   ss_axl0 = 257.311;
   ss_axl1 = 0;
   ss_axb0 = -15.175;
-  ss_axb1 = 0;	
+  ss_axb1 = 0;  
   ss_W = 203.18;
   ss_Wd = -501.1600928;
   ss_GM = 5.8031587739e+15;
-}	
+}   
 
 void SolarSystem::getConstNeptune()  // Neptune planetary constants
 {
@@ -1889,11 +1889,11 @@ void SolarSystem::getConstNeptune()  // Neptune planetary constants
   ss_axl0 = 299.36;
   ss_axl1 = 0;
   ss_axb0 = 43.46;
-  ss_axb1 = 0;	
+  ss_axb1 = 0;  
   ss_W = 253.18;
   ss_Wd = 536.3128492;
   ss_GM = 6.8713077560e+15;
-}	
+}   
 
 void SolarSystem::getConstIo()  // Io planetary constants
 {
@@ -1903,11 +1903,11 @@ void SolarSystem::getConstIo()  // Io planetary constants
   ss_axl0 = 268.05;
   ss_axl1 = -0.009;
   ss_axb0 = 64.49;
-  ss_axb1 = 0.003;	
+  ss_axb1 = 0.003;  
   ss_W = 200.39;
   ss_Wd = 203.4889538;
   ss_GM = 5.930121208752e+12;
-}	
+}   
 
 void SolarSystem::getConstEuropa()  // Europa planetary constants
 {
@@ -1923,11 +1923,11 @@ void SolarSystem::getConstEuropa()  // Europa planetary constants
   ss_axl0 = 268.08 + 1.086*sin(j4);
   ss_axl1 = -0.009;
   ss_axb0 = 64.51 + 0.468*cos(j4);
-  ss_axb1 = 0.003;	
+  ss_axb1 = 0.003;  
   ss_W = 36.022 - 0.980*sin(j4);
   ss_Wd = 101.3747235;
   ss_GM = 3.193142189328e+12;
-}	
+}   
 
 void SolarSystem::getConstGanymede()  // Ganymede planetary constants
 {
@@ -1943,11 +1943,11 @@ void SolarSystem::getConstGanymede()  // Ganymede planetary constants
   ss_axl0 = 268.20 + 0.431*sin(j5);
   ss_axl1 = -0.009;
   ss_axb0 = 64.57 + 0.186*cos(j5);
-  ss_axb1 = 0.003;	
+  ss_axb1 = 0.003;  
   ss_W = 44.064 - 0.186*sin(j5);
   ss_Wd = 50.3176081;
   ss_GM = 9.883535347920e+12;
-}	
+}   
 
 void SolarSystem::getConstCallisto()  // Callisto planetary constants
 {
@@ -1963,11 +1963,11 @@ void SolarSystem::getConstCallisto()  // Callisto planetary constants
   ss_axl0 = 268.72 + 0.590*sin(j6);
   ss_axl1 = -0.009;
   ss_axb0 = 64.83 + 0.254*cos(j6);
-  ss_axb1 = 0.003;	
+  ss_axb1 = 0.003;  
   ss_W = 259.51 - 0.254*sin(j6);
   ss_Wd = 21.5710715;
   ss_GM = 7.171898726824e+12;
-}	
+}   
 
 void SolarSystem::getConstRhea()  // Rhea planetary constants
 {
@@ -1983,11 +1983,11 @@ void SolarSystem::getConstRhea()  // Rhea planetary constants
   ss_axl0 = 40.38 + 3.10*sin(s7);
   ss_axl1 = -0.036;
   ss_axb0 = 83.55 - 0.35*cos(s7);
-  ss_axb1 = -0.004;	
+  ss_axb1 = -0.004; 
   ss_W = 235.16 - 3.08*sin(s7);
   ss_Wd = 79.6900478;
   ss_GM = 1.669100263556e+11;
-}	
+}   
 
 void SolarSystem::getConstTitan()  // Titan planetary constants
 {
@@ -2003,11 +2003,11 @@ void SolarSystem::getConstTitan()  // Titan planetary constants
   ss_axl0 = 39.4827 + 2.66*sin(s8);
   ss_axl1 = -0.036;
   ss_axb0 = 83.4279 - 0.33*cos(s8);
-  ss_axb1 = -0.004;	
+  ss_axb1 = -0.004; 
   ss_W = 186.5855 - 2.64*sin(s8);
   ss_Wd = 22.5769768;
   ss_GM = 9.028315061962e+12;
-}	
+}   
 
 void SolarSystem::getConstMimas()  // Mimas planetary constants
 {
@@ -2025,11 +2025,11 @@ void SolarSystem::getConstMimas()  // Mimas planetary constants
   ss_axl0 = 40.66 + 13.56*sin(s3);
   ss_axl1 = -0.036;
   ss_axb0 = 83.52 - 1.53*cos(s3);
-  ss_axb1 = -0.004;	
+  ss_axb1 = -0.004; 
   ss_W = 333.46 - 13.48*sin(s3) - 44.85*sin(s9);
   ss_Wd = 381.9945550;
   ss_GM = 3.034727751920e+09;
-}	
+}   
 
 void SolarSystem::getConstEnceladus()  // Enceladus planetary constants
 {
@@ -2039,11 +2039,11 @@ void SolarSystem::getConstEnceladus()  // Enceladus planetary constants
   ss_axl0 = 40.66;
   ss_axl1 = -0.036;
   ss_axb0 = 83.52;
-  ss_axb1 = -0.004;	
+  ss_axb1 = -0.004; 
   ss_W = 6.32;
   ss_Wd = 262.7318996;
   ss_GM = 4.931432596870e+09;
-}	
+}   
 
 void SolarSystem::getConstDione()  // Dione planetary constants
 {
@@ -2053,11 +2053,11 @@ void SolarSystem::getConstDione()  // Dione planetary constants
   ss_axl0 = 40.66;
   ss_axl1 = -0.036;
   ss_axb0 = 83.52;
-  ss_axb1 = -0.004;	
+  ss_axb1 = -0.004; 
   ss_W = 357.00;
   ss_Wd = 131.5349316;
   ss_GM = 7.017807926315e+10;
-}	
+}   
 
 void SolarSystem::getConstUser()  // User planetary constants
 {
@@ -2067,11 +2067,11 @@ void SolarSystem::getConstUser()  // User planetary constants
   ss_axl0 = ss_user_axl0;
   ss_axl1 = ss_user_axl1;
   ss_axb0 = ss_user_axb0;
-  ss_axb1 = ss_user_axb1;	
+  ss_axb1 = ss_user_axb1;   
   ss_W = ss_user_W;
   ss_Wd = ss_user_Wd;
   ss_GM = ss_user_GM;
-}	
+}   
 
 void SolarSystem::putConstUser(double j2, double r0, double flat, double axl0, double axl1, double axb0, double axb1, double w, double wd, double gm)  
 {
@@ -2082,11 +2082,11 @@ void SolarSystem::putConstUser(double j2, double r0, double flat, double axl0, d
   ss_user_axl0 = axl0;
   ss_user_axl1 = axl1;
   ss_user_axb0 = axb0;
-  ss_user_axb1 = axb1;	
+  ss_user_axb1 = axb1;  
   ss_user_W = w;
   ss_user_Wd = wd;
   ss_user_GM = gm;
-}	
+}   
 
 Mat3 SolarSystem::getSelenographic ()
 {

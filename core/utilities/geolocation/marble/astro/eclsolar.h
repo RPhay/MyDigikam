@@ -63,7 +63,7 @@ class DIGIKAM_EXPORT EclSolar     // Calculate Solar Eclipses
     void calcMaxPos(double &lat, double &lng); // get position of maximum eclipse
     static void GetMonth (int mm, char* mchr);
     static double phmjd (double yearf, double phase, double tdut,
-				  int& eph, double& ejd, double& emag);
+                  int& eph, double& ejd, double& emag);
     void ckphase (double minmjd, double maxmjd, double yr,
               double deltdut, int &mp, PMJD p, double phase);
     static void dtmstr(double jdmoon, char *dts);
