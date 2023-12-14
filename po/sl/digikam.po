@@ -38,15 +38,15 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 00:40+0000\n"
-"PO-Revision-Date: 2023-12-11 09:58+0100\n"
+"PO-Revision-Date: 2023-12-13 06:56+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Lokalize 23.08.3\n"
 
@@ -66296,12 +66296,10 @@ msgid "Problem Adding Collection"
 msgstr "Težava med dodajanjem zbirke"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1577
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
-msgstr "Težava med dodajanjem zbirke"
+msgstr "Težava pri posodabljanju zbirke"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1594
 #, kde-format
@@ -66310,8 +66308,7 @@ msgid "Adding Collection"
 msgstr "Dodajanje zbirke"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1598
-#, fuzzy, kde-format
-#| msgid "Update collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "Posodobi zbirko"
@@ -66322,10 +66319,9 @@ msgid "Your new collection will be created with this name:"
 msgstr "Vaša nova zbirka bo ustvarjena pod imenom:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1610
-#, fuzzy, kde-format
-#| msgid "Your new collection will be created with this name:"
+#, kde-format
 msgid "Your collection will be updated to this name:"
-msgstr "Vaša nova zbirka bo ustvarjena pod imenom:"
+msgstr "Vaša zbirka bo posodobljena na to ime:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1693
 #, kde-format

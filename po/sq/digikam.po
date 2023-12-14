@@ -27,25 +27,25 @@
 # This file is distributed under the same license as the kipi-plugins package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
 #
+# SPDX-FileCopyrightText: 2023 Agron Selimaj <as9902613@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 00:40+0000\n"
-"PO-Revision-Date: 2009-07-18 03:38+0000\n"
-"Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
-"Language-Team: Albanian <sq@li.org>\n"
+"PO-Revision-Date: 2023-12-13 03:27-0500\n"
+"Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
+"Language-Team: sq\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2011-04-21 22:32+0000\n"
-"X-Generator: Launchpad (build 12883)\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: core/app/date/ddateedit.cpp:499
-#, fuzzy, kde-format
-#| msgid "tomorrow"
+#, kde-format
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "nesër"
@@ -410,13 +410,13 @@ msgstr ""
 #: core/utilities/searchwindow/searchgroup_label.cpp:301
 #, kde-format
 msgid "OR"
-msgstr ""
+msgstr "OR"
 
 #: core/app/filters/filtersidebarwidget.cpp:190
 #: core/utilities/searchwindow/searchgroup_label.cpp:297
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "AND"
 
 #: core/app/filters/filtersidebarwidget.cpp:205
 #, fuzzy, kde-format
@@ -465,7 +465,7 @@ msgstr "Hape Me..."
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Off"
-msgstr ""
+msgstr "Off"
 
 #: core/app/filters/tagfilterview.cpp:76
 #, fuzzy, kde-format
@@ -606,10 +606,10 @@ msgid "All Albums"
 msgstr "Albumet"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "All Tags"
-msgstr "Etiketat"
+msgstr "Të gjitha etiketat"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:100
 #, fuzzy, kde-format
@@ -621,11 +621,10 @@ msgstr "Zgjidh"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:105
 #: core/app/items/utils/contextmenuhelper_albums.cpp:115
-#, fuzzy, kde-format
-#| msgid "Children"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Children"
-msgstr "Fëmijë"
+msgstr "Fëmijët"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:106
 #: core/app/items/utils/contextmenuhelper_albums.cpp:116
@@ -1777,7 +1776,7 @@ msgstr "Parapamje"
 #, kde-format
 msgctxt "@action: Switch to map view"
 msgid "Map"
-msgstr ""
+msgstr "Hartë"
 
 #: core/app/main/digikamapp_setup.cpp:353
 #, kde-format
@@ -2933,7 +2932,7 @@ msgstr ""
 #, kde-format
 msgctxt "Search images on a map"
 msgid "Map"
-msgstr ""
+msgstr "Hartë"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:119
 #: core/libs/album/widgets/albumselecttabs.cpp:194
@@ -3016,7 +3015,7 @@ msgstr ""
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:142
 #, kde-format
 msgid "Day"
-msgstr ""
+msgstr "Ditë"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:143
 #, kde-format
@@ -6120,7 +6119,7 @@ msgstr "Data"
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
-msgstr ""
+msgstr "GPS"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, kde-format
@@ -8662,7 +8661,7 @@ msgstr ""
 #, kde-format
 msgctxt "Dimension separator, as in: '15 x 10 centimeters'"
 msgid "x"
-msgstr ""
+msgstr "x"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_PrintUnit)
 #: core/dplugins/editor/file/print/printoptionspage.ui:230
@@ -10307,7 +10306,7 @@ msgstr ""
 #: core/dplugins/editor/transform/resize/resizetool.cpp:365
 #, kde-format
 msgid "px"
-msgstr ""
+msgstr "px"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:362
 #, kde-format
@@ -10364,25 +10363,25 @@ msgstr ""
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
-msgstr ""
+msgstr "px"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:635
 #, kde-format
 msgctxt "Inches"
 msgid "in"
-msgstr ""
+msgstr "in"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:641
 #, kde-format
 msgctxt "Millimeters"
 msgid "mm"
-msgstr ""
+msgstr "mm"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:647
 #, kde-format
 msgctxt "Centimeters"
 msgid "cm"
-msgstr ""
+msgstr "cm"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:894
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:417
@@ -18982,13 +18981,13 @@ msgstr "Kartela Pamje"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:963
 #, kde-format
 msgid "cm"
-msgstr ""
+msgstr "cm"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:208
 #, kde-format
 msgid "mm"
-msgstr ""
+msgstr "mm"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
@@ -19028,7 +19027,7 @@ msgstr "Parametrat"
 #: core/utilities/searchwindow/searchutilities.cpp:634
 #, kde-format
 msgid "OK"
-msgstr ""
+msgstr "U kry"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:47
@@ -19075,7 +19074,7 @@ msgstr "Parapamje"
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:274
 #, kde-format
 msgid "<"
-msgstr ""
+msgstr "<"
 
 #. i18n: ectx: property (text), widget (QLabel, LblPreview)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:296
@@ -19095,7 +19094,7 @@ msgstr "Imazh i Plotë"
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:318
 #, kde-format
 msgid ">"
-msgstr ""
+msgstr ">"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:124
 #, fuzzy, kde-format
@@ -22926,7 +22925,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
-msgstr ""
+msgstr "U kry"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1213
 #, fuzzy, kde-format
@@ -36596,7 +36595,7 @@ msgstr "%1x%2 (%3Mpx)"
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: core/libs/properties/itempropertiestab_setters.cpp:364
 #, kde-format
@@ -39866,7 +39865,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: go up in the list"
 msgid "Up"
-msgstr ""
+msgstr "Lart"
 
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:295
 #, fuzzy, kde-format
@@ -39920,7 +39919,7 @@ msgstr "Hape me"
 #: core/libs/video/qtav/config/MiscPage.cpp:83
 #, kde-format
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #: core/libs/video/qtav/config/MiscPage.cpp:95
 #, fuzzy, kde-format
@@ -40196,7 +40195,7 @@ msgstr ""
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
 #, kde-format
 msgid "Ok"
-msgstr ""
+msgstr "OK"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
@@ -50765,7 +50764,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
 #, kde-format
@@ -53531,7 +53530,7 @@ msgstr "Ngopja:"
 #: core/utilities/geolocation/marble/ElevationWidget.ui:26
 #, kde-format
 msgid " m"
-msgstr ""
+msgstr " m"
 
 #. i18n: ectx: property (text), widget (QLabel, elevationModeLabel)
 #: core/utilities/geolocation/marble/ElevationWidget.ui:36
@@ -53544,7 +53543,7 @@ msgstr ""
 #, kde-format
 msgctxt "seconds"
 msgid " s"
-msgstr ""
+msgstr " s"
 
 #: core/utilities/geolocation/marble/FlyToEditWidget.cpp:59
 #, fuzzy, kde-format
@@ -53589,91 +53588,91 @@ msgstr "Eksporto"
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:70
 #, kde-format
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:75
 #, kde-format
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:80
 #, kde-format
 msgid "9"
-msgstr ""
+msgstr "9"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:85
 #, kde-format
 msgid "10"
-msgstr ""
+msgstr "10"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:90
 #, kde-format
 msgid "11"
-msgstr ""
+msgstr "11"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:95
 #, kde-format
 msgid "12"
-msgstr ""
+msgstr "12"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:100
 #, kde-format
 msgid "14"
-msgstr ""
+msgstr "14"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:105
 #, kde-format
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:110
 #, kde-format
 msgid "18"
-msgstr ""
+msgstr "18"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:115
 #, kde-format
 msgid "20"
-msgstr ""
+msgstr "20"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:120
 #, kde-format
 msgid "24"
-msgstr ""
+msgstr "24"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:125
 #, kde-format
 msgid "36"
-msgstr ""
+msgstr "36"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:130
 #, kde-format
 msgid "48"
-msgstr ""
+msgstr "48"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:135
 #, kde-format
 msgid "72"
-msgstr ""
+msgstr "72"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:140
 #, kde-format
 msgid "96"
-msgstr ""
+msgstr "96"
 
 #. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarControl)
 #. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarPlayback)
@@ -53695,12 +53694,12 @@ msgstr "Ngjyrat"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:451
 #, kde-format
 msgid "W"
-msgstr ""
+msgstr "W"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:451
 #, kde-format
 msgid "E"
-msgstr ""
+msgstr "E"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:620
 #, fuzzy, kde-format
@@ -53710,7 +53709,7 @@ msgstr "Jo"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:620
 #, kde-format
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:315
 #, kde-format
@@ -55422,43 +55421,43 @@ msgstr ""
 #, kde-format
 msgctxt "North direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:52
 #, kde-format
 msgctxt "East direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:55
 #, kde-format
 msgctxt "South direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:58
 #, kde-format
 msgctxt "West direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:96
 #, kde-format
 msgctxt "Degree symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:99
 #, kde-format
 msgctxt "Minutes symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:102
 #, kde-format
 msgctxt "Seconds symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:213
 #, kde-format
@@ -55644,13 +55643,13 @@ msgstr "Irlandeze (Irlandë)"
 #: core/utilities/geolocation/marble/LatLonEdit.ui:28
 #, kde-format
 msgid "°"
-msgstr ""
+msgstr "°"
 
 #. i18n: ectx: property (text), widget (QLabel, northLabel)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:66
 #, kde-format
 msgid "&N"
-msgstr ""
+msgstr "&V"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, westSpinBox)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:93
@@ -55663,7 +55662,7 @@ msgstr "Gjerësia"
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:118
 #, kde-format
 msgid "&W"
-msgstr ""
+msgstr "&P"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, eastSpinBox)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:145
@@ -55676,7 +55675,7 @@ msgstr "Gjerësia"
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:170
 #, kde-format
 msgid "&E"
-msgstr ""
+msgstr "&L"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, southSpinBox)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:197
@@ -55689,30 +55688,30 @@ msgstr "Gjatësia"
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:222
 #, kde-format
 msgid "&S"
-msgstr ""
+msgstr "&J"
 
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:179
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:338
 #, kde-format
 msgid "'"
-msgstr ""
+msgstr "'"
 
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:180
 #, kde-format
 msgid "\""
-msgstr ""
+msgstr "\""
 
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:526
 #, kde-format
 msgctxt "East, the direction"
 msgid "E"
-msgstr ""
+msgstr "L"
 
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:527
 #, kde-format
 msgctxt "West, the direction"
 msgid "W"
-msgstr ""
+msgstr "P"
 
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:530
 #, fuzzy, kde-format
@@ -55724,19 +55723,19 @@ msgstr "Jo"
 #, kde-format
 msgctxt "South, the direction"
 msgid "S"
-msgstr ""
+msgstr "J"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
 #: core/utilities/geolocation/marble/LatLonEdit.ui:38
 #, kde-format
 msgid "′"
-msgstr ""
+msgstr "′"
 
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
 #: core/utilities/geolocation/marble/LatLonEdit.ui:54
 #, kde-format
 msgid "″"
-msgstr ""
+msgstr "″"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:20
@@ -56005,25 +56004,25 @@ msgstr "Zgjidhi të Gjitha"
 #, kde-format
 msgctxt "means meter"
 msgid "m"
-msgstr ""
+msgstr "m"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:122
 #, kde-format
 msgctxt "means milimeters"
 msgid "mm"
-msgstr ""
+msgstr "mm"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:124
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:126
 #, kde-format
 msgctxt "means centimeters"
 msgid "cm"
-msgstr ""
+msgstr "cm"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:128
 #, fuzzy, kde-format
@@ -56036,25 +56035,25 @@ msgstr "&Majtas"
 #, kde-format
 msgctxt "means inches"
 msgid "in"
-msgstr ""
+msgstr "in"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:132
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
-msgstr ""
+msgstr "yd"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:134
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
-msgstr ""
+msgstr "mi"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:136
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
-msgstr ""
+msgstr "nm"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:17
@@ -57324,13 +57323,13 @@ msgstr ""
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:56
 #, kde-format
 msgid "<<"
-msgstr ""
+msgstr "<<"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_removeTagButton)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:69
 #, kde-format
 msgid ">>"
-msgstr ""
+msgstr ">>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:80
@@ -57568,25 +57567,25 @@ msgstr "Zhvilluesi"
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:47
 #, kde-format
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:248
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:31
 #, kde-format
 msgid "m"
-msgstr ""
+msgstr "m"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:253
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:36
 #, kde-format
 msgid "mi"
-msgstr ""
+msgstr "mi"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:264
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:59
 #, kde-format
 msgid "nm"
-msgstr ""
+msgstr "nm"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:384
 #, fuzzy, kde-format
@@ -57676,7 +57675,7 @@ msgstr "Përmasa:"
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
 #, kde-format
 msgid "x"
-msgstr ""
+msgstr "x"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
@@ -62903,7 +62902,7 @@ msgstr ""
 #, kde-format
 msgctxt "Size of the file ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
 #, kde-format
@@ -63118,7 +63117,7 @@ msgstr ""
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:434
 #, kde-format
@@ -63129,7 +63128,7 @@ msgstr ""
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
@@ -63140,13 +63139,13 @@ msgstr ""
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:473
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:493
 #, kde-format
@@ -63167,7 +63166,7 @@ msgstr ""
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:540
 #, fuzzy, kde-format
@@ -63199,7 +63198,7 @@ msgstr ""
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #, kde-format
@@ -63226,7 +63225,7 @@ msgstr ""
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:601
 #, kde-format
@@ -63248,7 +63247,7 @@ msgstr ""
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
@@ -63440,7 +63439,7 @@ msgstr ""
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, fuzzy, kde-format

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 00:40+0000\n"
-"PO-Revision-Date: 2023-12-11 15:18+0100\n"
+"PO-Revision-Date: 2023-12-13 11:19+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -66854,12 +66854,10 @@ msgid "Problem Adding Collection"
 msgstr "Problema en afegir una col·lecció"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1577
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
-msgstr "Problema en afegir una col·lecció"
+msgstr "Problema en actualitzar la col·lecció"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1594
 #, kde-format
@@ -66868,11 +66866,10 @@ msgid "Adding Collection"
 msgstr "S'està afegint una col·lecció"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1598
-#, fuzzy, kde-format
-#| msgid "Update collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
-msgstr "Actualitza la col·lecció"
+msgstr "Actualització de la col·lecció"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1606
 #, kde-format
@@ -66880,10 +66877,9 @@ msgid "Your new collection will be created with this name:"
 msgstr "La nova col·lecció es crearà amb aquest nom:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1610
-#, fuzzy, kde-format
-#| msgid "Your new collection will be created with this name:"
+#, kde-format
 msgid "Your collection will be updated to this name:"
-msgstr "La nova col·lecció es crearà amb aquest nom:"
+msgstr "La col·lecció s'actualitzarà amb aquest nom:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1693
 #, kde-format
