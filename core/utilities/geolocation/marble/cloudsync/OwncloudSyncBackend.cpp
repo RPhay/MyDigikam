@@ -49,7 +49,7 @@ class Q_DECL_HIDDEN OwncloudSyncBackend::Private {
         QNetworkReply *m_routeListReply;
         QNetworkReply *m_routeDownloadReply;
         QNetworkReply *m_routeDeleteReply;
-	QNetworkReply *m_authReply;
+    QNetworkReply *m_authReply;
 
         QVector<RouteItem> m_routeList;
 
