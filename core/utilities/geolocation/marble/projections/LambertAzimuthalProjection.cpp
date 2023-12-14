@@ -161,7 +161,7 @@ bool LambertAzimuthalProjection::geoCoordinates( const int x, const int y,
 
     // exclude area too far away from map, as it may cause undefined arcsin result
     if ( p > (qSqrt(2) * radius) ) {
-	    return false;
+        return false;
     }
     const qreal c = 2 * qAsin( p / (qSqrt(2) * radius)  );
     const qreal sinc = qSin(c);

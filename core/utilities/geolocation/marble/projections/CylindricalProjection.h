@@ -27,9 +27,9 @@ class AbstractProjectionPrivate;
 
 class CylindricalProjection : public AbstractProjection
 {
-    // Not a QObject so far because we don't need to send signals.	
+    // Not a QObject so far because we don't need to send signals.  
   public:
-	
+    
     CylindricalProjection();
 
     ~CylindricalProjection() override;

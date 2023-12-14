@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
-// Copyright 2014	   Gábor Péterffy <peterffy95@gmail.com>
+// Copyright 2014      Gábor Péterffy <peterffy95@gmail.com>
 //
 
 #ifndef MARBLE_AZIMUTHALPROJECTIONPRIVATE_H
