@@ -1370,7 +1370,7 @@ AngleUnit MarbleMap::defaultAngleUnit() const
     if ( GeoDataCoordinates::defaultNotation() == GeoDataCoordinates::Decimal ) {
         return DecimalDegree;
     } else if ( GeoDataCoordinates::defaultNotation() == GeoDataCoordinates::UTM ) {
-    	return UTM;
+        return UTM;
     }
 
     return DMSDegree;

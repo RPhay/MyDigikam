@@ -72,9 +72,9 @@ void TileCreatorDialog::setProgress( int progress )
     d->uiWidget.progressBar->setValue( progress );
 
     if ( progress == 100 )
-	{
+    {
         QTimer::singleShot( 0, this, SLOT(accept()) ); 
-	}
+    }
 }
 
 void TileCreatorDialog::setSummary( const QString& name, 

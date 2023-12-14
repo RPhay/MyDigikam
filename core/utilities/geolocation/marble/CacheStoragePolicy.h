@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT CacheStoragePolicy : public StoragePolicy
         /**
          * Clears the cache.
          */
-	void clearCache() override;
+    void clearCache() override;
 
         /**
          * Returns the last error message.

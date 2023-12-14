@@ -35,7 +35,7 @@ class ClipPainterPrivate
     int     m_currentSector;
     int     m_previousSector;
 
-    //	int m_debugNodeCount;
+    //  int m_debugNodeCount;
 
     QPointF    m_currentPoint;
     QPointF    m_previousPoint; 
@@ -133,7 +133,7 @@ bool ClipPainter::hasScreenClip() const
 void ClipPainter::drawPolygon ( const QPolygonF & polygon,
                                 Qt::FillRule fillRule )
 {
-    if ( d->m_doClip ) {	
+    if ( d->m_doClip ) {    
         d->initClipRect();
         QVector<QPolygonF> clippedPolyObjects;
 
@@ -547,7 +547,7 @@ void ClipPainterPrivate::clipPolyObject ( const QPolygonF & polygon,
                                           QVector<QPolygonF> & clippedPolyObjects,
                                           bool isClosed )
 {
-    //	qCDebug(DIGIKAM_MARBLE_LOG) << "ClipPainter enabled." ;
+    //  qCDebug(DIGIKAM_MARBLE_LOG) << "ClipPainter enabled." ;
 
     // Only create a new polyObject as soon as we know for sure that 
     // the current point is on the screen. 
@@ -1113,7 +1113,7 @@ void ClipPainterPrivate::clipMultiple( QPolygonF & clippedPolyObject,
         break;
 
     default:
-        break;				
+        break;              
     }
 }
 
@@ -1162,7 +1162,7 @@ void ClipPainterPrivate::clipOnce( QPolygonF & clippedPolyObject,
                                    QVector<QPolygonF> & clippedPolyObjects,
                                    bool isClosed )
 {
-    //	Interpolate border points (linear interpolation)
+    //  Interpolate border points (linear interpolation)
     QPointF point;
 
     // Calculating the slope.
@@ -1218,7 +1218,7 @@ void ClipPainterPrivate::clipOnce( QPolygonF & clippedPolyObject,
         clipOnceCorner( clippedPolyObject, clippedPolyObjects, QPointF( m_right, m_bottom ), point, isClosed );
         break;
     default:
-        break;			
+        break;          
     }
 
 }

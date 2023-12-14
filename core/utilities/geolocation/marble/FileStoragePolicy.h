@@ -42,7 +42,7 @@ class FileStoragePolicy : public StoragePolicy
         /**
          * Clears the cache.
          */
-	void clearCache() override;
+    void clearCache() override;
 
         /**
          * Returns the last error message.
@@ -50,8 +50,8 @@ class FileStoragePolicy : public StoragePolicy
         QString lastErrorMessage() const override;
 
     private:
-	Q_DISABLE_COPY( FileStoragePolicy )
-	
+    Q_DISABLE_COPY( FileStoragePolicy )
+    
         QString m_dataDirectory;
         QString m_errorMsg;
 };

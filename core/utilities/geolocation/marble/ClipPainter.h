@@ -71,8 +71,8 @@ class DIGIKAM_EXPORT ClipPainter : public QPainter
     void setDebugPolygonsLevel( int );
     void setDebugBatchRender( bool );
 
-    //	void clearNodeCount(){ m_debugNodeCount = 0; }
-    //	int nodeCount(){ return m_debugNodeCount; }
+    //  void clearNodeCount(){ m_debugNodeCount = 0; }
+    //  int nodeCount(){ return m_debugNodeCount; }
 
  private:
     ClipPainterPrivate * const d;

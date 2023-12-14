@@ -326,7 +326,7 @@ QVariant GeoDataTreeModel::data( const QModelIndex &index, int role ) const
             }
 
             return QVariant(feature->style()->iconStyle().icon().scaled( QSize(16,16), Qt::KeepAspectRatio, Qt::SmoothTransformation ));
-	    }
+        }
     } else if ( role == Qt::ToolTipRole
               && index.column() == 0 ) {
         if (const auto feature = dynamic_cast<const GeoDataFeature *>(object)) {

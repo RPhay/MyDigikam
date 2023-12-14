@@ -90,11 +90,11 @@ void HttpJob::setDestinationFileName( const QString &fileName )
 bool HttpJob::tryAgain()
 {
     if( d->m_trialsLeft > 0 ) {
-	d->m_trialsLeft--;
-	return true;
+    d->m_trialsLeft--;
+    return true;
     }
     else {
-	return false;
+    return false;
     }
 }
 

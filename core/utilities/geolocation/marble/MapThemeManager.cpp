@@ -409,7 +409,7 @@ void MapThemeManager::Private::updateMapThemeModel()
     while ( it.hasNext() ) {
         QString mapThemeID = it.next();
 
-    	QList<QStandardItem *> itemList = createMapThemeRow( mapThemeID );
+        QList<QStandardItem *> itemList = createMapThemeRow( mapThemeID );
         if ( !itemList.empty() ) {
             m_mapThemeModel.appendRow( itemList );
         }
@@ -473,9 +473,9 @@ void MapThemeManager::Private::fileChanged( const QString& path )
 
     if ( matchingItems.size() == 1 ) {
         const int row = matchingItems.front()->row();
-	insertAtRow = row;
+    insertAtRow = row;
         QList<QStandardItem *> toBeDeleted = m_mapThemeModel.takeRow( row );
-	while ( !toBeDeleted.isEmpty() ) {
+    while ( !toBeDeleted.isEmpty() ) {
             delete toBeDeleted.takeFirst();
         }
     }
@@ -517,7 +517,7 @@ void MapThemeManager::Private::addMapThemePaths( const QString& mapPathName, QSt
             result << themePathName;
 
             QDir themePath( themePathName );
-	    QStringList themeFileNames = themePath.entryList( QStringList( QString::fromUtf8("*.dgml") ),
+        QStringList themeFileNames = themePath.entryList( QStringList( QString::fromUtf8("*.dgml") ),
                                                               QDir::Files
                                                               | QDir::NoSymLinks );
             QStringListIterator itThemeFile( themeFileNames );

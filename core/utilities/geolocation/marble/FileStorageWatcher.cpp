@@ -36,8 +36,8 @@ FileStorageWatcherThread::FileStorageWatcherThread( const QString &dataDirectory
     setCacheLimit( 0 );
 
     connect( this, SIGNAL(variableChanged()),
-	     this, SLOT(ensureCacheSize()),
-	     Qt::QueuedConnection );
+         this, SLOT(ensureCacheSize()),
+         Qt::QueuedConnection );
 }
 
 FileStorageWatcherThread::~FileStorageWatcherThread()
@@ -63,9 +63,9 @@ void FileStorageWatcherThread::addToCurrentSize( qint64 bytes )
 //     qCDebug(DIGIKAM_MARBLE_LOG) << "Current cache size changed by " << bytes;
     qint64 changedSize = bytes + m_currentCacheSize;
     if( changedSize >= 0 )
-	m_currentCacheSize = changedSize;
+    m_currentCacheSize = changedSize;
     else
-	m_currentCacheSize = 0;
+    m_currentCacheSize = 0;
     Q_EMIT variableChanged();
 }
 
@@ -126,9 +126,9 @@ void FileStorageWatcherThread::ensureCacheSize()
     // is smaller than the cache (soft) limit.
     // m_cacheLimit = 0 means no limit.
     if( ( ( m_currentCacheSize > m_cacheLimit )
-	     || ( m_deleting && ( m_currentCacheSize > m_cacheSoftLimit ) ) )
-	&& ( m_cacheLimit != 0 )
-	&& ( m_cacheSoftLimit != 0 )
+         || ( m_deleting && ( m_currentCacheSize > m_cacheSoftLimit ) ) )
+    && ( m_cacheLimit != 0 )
+    && ( m_cacheSoftLimit != 0 )
     && !m_willQuit ) {
 
         qCDebug(DIGIKAM_MARBLE_LOG) << "Deleting extra cached tiles";
@@ -211,11 +211,11 @@ FileStorageWatcher::~FileStorageWatcher()
     m_quitting = true;
 
     if( m_thread )
-	m_thread->prepareQuit();
+    m_thread->prepareQuit();
     quit();
     if( !wait( 5000 ) ) {
-	qCDebug(DIGIKAM_MARBLE_LOG) << "Failed to stop FileStorageWatcher-Thread, terminating!";
-	terminate();
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Failed to stop FileStorageWatcher-Thread, terminating!";
+    terminate();
     }
 
     delete m_thread;
@@ -227,9 +227,9 @@ void FileStorageWatcher::setCacheLimit( quint64 bytes )
 {
     QMutexLocker locker( m_limitMutex );
     if( m_started )
-	// This is done directly to ensure that a running ensureCacheSize()
-	// recognizes the new size.
-	m_thread->setCacheLimit( bytes );
+    // This is done directly to ensure that a running ensureCacheSize()
+    // recognizes the new size.
+    m_thread->setCacheLimit( bytes );
     // Save the limit, thread has to be initialized with the right one.
     m_limit = bytes;
 }
@@ -237,9 +237,9 @@ void FileStorageWatcher::setCacheLimit( quint64 bytes )
 quint64 FileStorageWatcher::cacheLimit()
 {
     if( m_started )
-	return m_thread->cacheLimit();
+    return m_thread->cacheLimit();
     else
-	return m_limit;
+    return m_limit;
 }
 
 void FileStorageWatcher::addToCurrentSize( qint64 bytes )
