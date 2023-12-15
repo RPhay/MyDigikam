@@ -46,10 +46,18 @@ if(ENABLE_AKONADICONTACTSUPPORT)
 
 endif()
 
-find_package(KF${QT_VERSION_MAJOR} ${KSANE_MIN_VERSION} QUIET
-                                      OPTIONAL_COMPONENTS
-                                      Sane                      # For digital scanner support.
-)
+if(Qt6_FOUND)
+
+    find_package(KSaneWidgets6)
+
+else()
+
+    find_package(KF${QT_VERSION_MAJOR} ${KSANE_MIN_VERSION} QUIET
+                                       OPTIONAL_COMPONENTS
+                                       Sane                      # For digital scanner support.
+    )
+
+endif()
 
 find_package(KF${QT_VERSION_MAJOR} ${CALENDAR_MIN_VERSION} QUIET
                                          OPTIONAL_COMPONENTS
