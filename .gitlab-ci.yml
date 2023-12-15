@@ -4,11 +4,12 @@
 # See targets available at https://invent.kde.org/sysadmin/ci-utilities/-/tree/master/gitlab-templates
 
 include:
-- https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux.yml
-# - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd.yml
-# - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/windows.yml
-
-# FIXME: opencv is missing on Linux Qt6 docker
-#  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux-qt6.yml
-# QtWebEngine is not available under Android -> port digiKam to QtWebView (https://doc.qt.io/qt-5/qtwebview-index.html)
-#  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/android.yml
+  - project: sysadmin/ci-utilities
+    file:
+      - /gitlab-templates/linux.yml
+      # - /gitlab-templates/freebsd.yml
+      # - /gitlab-templates/windows.yml
+      # FIXME: opencv is missing on Linux Qt6 docker
+      #  - /gitlab-templates/linux-qt6.yml
+      # QtWebEngine is not available under Android -> port digiKam to QtWebView (https://doc.qt.io/qt-5/qtwebview-index.html)
+      #  - /gitlab-templates/android.yml
