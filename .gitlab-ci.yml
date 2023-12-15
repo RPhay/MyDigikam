@@ -13,3 +13,5 @@ include:
       #  - /gitlab-templates/linux-qt6.yml
       # QtWebEngine is not available under Android -> port digiKam to QtWebView (https://doc.qt.io/qt-5/qtwebview-index.html)
       #  - /gitlab-templates/android.yml
+      # - /gitlab-templates/craft-windows-x86-64.yml
+      # - /gitlab-templates/craft-windows-appx-qt5.yml
