@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-13 00:40+0000\n"
+"POT-Creation-Date: 2023-12-15 00:39+0000\n"
 "PO-Revision-Date: 2023-09-03 12:57+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -2916,7 +2916,7 @@ msgstr "Barra de ferramentas principal"
 
 #: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:259
 #: core/libs/album/manager/albummanager_album.cpp:128
-#: core/libs/album/manager/albummanager_dalbum.cpp:94
+#: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:66
 #: core/libs/album/manager/albummanager_talbum.cpp:977
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
@@ -17225,33 +17225,35 @@ msgstr ""
 "Insira aquí o Nome do detalle do asunto. Usarase o inglés se escolle un "
 "código de referencia estándar XMP/NA."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:102
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #, fuzzy, kde-format
 #| msgid "Adjust Time & Date"
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Axustar a data e a hora"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
-#, kde-format
-msgctxt "@action:button"
-msgid "&Apply"
-msgstr "&Aplicar"
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Write the corrected date and time for each image"
+msgctxt "@info:tooltip"
+msgid "Write the corrected date and time for each image and close dialog"
+msgstr "Gardar a data e hora corrixidas en cada imaxe."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:111
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Gardar a data e hora corrixidas en cada imaxe."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:347
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:367
 #, fuzzy, kde-format
 #| msgid "Adjust Time and Date"
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Axustar a data e a hora"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:375
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
 #: core/utilities/imageeditor/editor/editorwindow.cpp:598
 #, fuzzy, kde-format
@@ -17260,7 +17262,7 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:377
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
 #, fuzzy, kde-format
 #| msgid "Cancel current operation"
@@ -17268,7 +17270,7 @@ msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Cancelar esta operación"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:381
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
 #, fuzzy, kde-format
 #| msgid "Close"
@@ -17276,7 +17278,7 @@ msgctxt "@action"
 msgid "Close"
 msgstr "Pechar"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:383
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
 #, fuzzy, kde-format
 #| msgid "Close window"
@@ -22625,22 +22627,17 @@ msgstr "Comezando a xerar a presentación en vídeo…"
 msgid "%1 input images to process"
 msgstr "%1 imaxes de entrada para procesar"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:137
-#, kde-format
-msgid "%1 input audio stream to process:"
-msgstr "%1 emisión de son de entrada para procesar:"
-
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:185
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:172
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Non se completou a presentación en vídeo"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:190
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:177
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Completouse a presentación en vídeo."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:195
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:182
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Abrindo a emisión de vídeo no reprodutor…"
@@ -44155,38 +44152,33 @@ msgctxt "Transition: Random Effect"
 msgid "Random"
 msgstr "Aleatorio"
 
-#: core/libs/video/manager/qtav/vidslidetask.cpp:278
+#: core/libs/video/manager/qtav/vidslidetask.cpp:138
 #, kde-format
 msgid "Failed to open video encoder"
 msgstr "Non foi posíbel abrir o codificador de vídeo"
 
-#: core/libs/video/manager/qtav/vidslidetask.cpp:294
-#, kde-format
-msgid "Failed to open audio encoder"
-msgstr "Non foi posíbel abrir o codificador de son"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:324
+#: core/libs/video/manager/qtav/vidslidetask.cpp:167
 #, kde-format
 msgid "Failed to open muxer"
 msgstr "Non foi posíbel abrir o mesturador"
 
-#: core/libs/video/manager/qtav/vidslidetask.cpp:410
+#: core/libs/video/manager/qtav/vidslidetask.cpp:253
 #, kde-format
 msgid "Encoding %1 Done"
 msgstr "Completouse a codificación de %1"
 
-#: core/libs/video/manager/qtav/vidslidetask.cpp:445
+#: core/libs/video/manager/qtav/vidslidetask.cpp:280
 #, kde-format
 msgid "Output video is %1"
 msgstr "O ficheiro de saída é %1"
 
-#: core/libs/video/manager/vidslidesettings.cpp:478
+#: core/libs/video/manager/vidslidesettings.cpp:474
 #, kde-format
 msgctxt "Video Type: QVGA"
 msgid "QVGA - 320x180 - 16:9"
 msgstr "QVGA - 320×180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:479
+#: core/libs/video/manager/vidslidesettings.cpp:475
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VCD"
 #| msgid "VCD - 352x240"
@@ -44194,7 +44186,7 @@ msgctxt "Video Type: VCD1"
 msgid "VCD - 352x240 - 7:5"
 msgstr "VCD - 352×240"
 
-#: core/libs/video/manager/vidslidesettings.cpp:480
+#: core/libs/video/manager/vidslidesettings.cpp:476
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VCD"
 #| msgid "VCD - 352x288"
@@ -44202,7 +44194,7 @@ msgctxt "Video Type: VCD2"
 msgid "VCD - 352x288 - 6:5"
 msgstr "VCD - 352×288"
 
-#: core/libs/video/manager/vidslidesettings.cpp:481
+#: core/libs/video/manager/vidslidesettings.cpp:477
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VCD"
 #| msgid "VCD - 352x240"
@@ -44210,7 +44202,7 @@ msgctxt "Video Type: CVD1"
 msgid "CVD - 352x480 - 4:3"
 msgstr "VCD - 352×240"
 
-#: core/libs/video/manager/vidslidesettings.cpp:482
+#: core/libs/video/manager/vidslidesettings.cpp:478
 #, fuzzy, kde-format
 #| msgctxt "Video Type: XVGA"
 #| msgid "XVGA - 1024x576 - 16:9"
@@ -44218,13 +44210,13 @@ msgctxt "Video Type: CVD2"
 msgid "CVD - 352x576 - 16:9"
 msgstr "XVGA - 1024×576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:483
+#: core/libs/video/manager/vidslidesettings.cpp:479
 #, kde-format
 msgctxt "Video Type: HVGA"
 msgid "HVGA - 480x270 - 16:9"
 msgstr "HVGA - 480×270 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:484
+#: core/libs/video/manager/vidslidesettings.cpp:480
 #, fuzzy, kde-format
 #| msgctxt "Video Type: SVCD"
 #| msgid "SVCD - 480x480"
@@ -44232,7 +44224,7 @@ msgctxt "Video Type: SVCD1"
 msgid "SVCD - 480x480 - 1:1"
 msgstr "SVCD - 480×480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:485
+#: core/libs/video/manager/vidslidesettings.cpp:481
 #, fuzzy, kde-format
 #| msgctxt "Video Type: SVCD"
 #| msgid "SVCD - 480x480"
@@ -44240,7 +44232,7 @@ msgctxt "Video Type: SDTV1"
 msgid "SDTV - 528x480 - 11:10"
 msgstr "SVCD - 480×480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:486
+#: core/libs/video/manager/vidslidesettings.cpp:482
 #, fuzzy, kde-format
 #| msgctxt "Video Type: SVCD"
 #| msgid "SVCD - 480x480"
@@ -44248,7 +44240,7 @@ msgctxt "Video Type: SDTV2"
 msgid "SDTV - 544x480 - 17:15"
 msgstr "SVCD - 480×480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:487
+#: core/libs/video/manager/vidslidesettings.cpp:483
 #, fuzzy, kde-format
 #| msgctxt "Video Type: XVGA"
 #| msgid "XVGA - 1024x576 - 16:9"
@@ -44256,7 +44248,7 @@ msgctxt "Video Type: EDTV1"
 msgid "EDTV - 544x576 - 17:18"
 msgstr "XVGA - 1024×576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:488
+#: core/libs/video/manager/vidslidesettings.cpp:484
 #, fuzzy, kde-format
 #| msgctxt "Video Type: SVCD"
 #| msgid "SVCD - 480x576"
@@ -44264,7 +44256,7 @@ msgctxt "Video Type: SVCD2"
 msgid "SVCD - 480x576 - 5:6"
 msgstr "SVCD - 480×576"
 
-#: core/libs/video/manager/vidslidesettings.cpp:489
+#: core/libs/video/manager/vidslidesettings.cpp:485
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VGA"
 #| msgid "VGA - 640x360 - 16:9"
@@ -44272,7 +44264,7 @@ msgctxt "Video Type: EGA"
 msgid "EGA - 640x350 - 16:9"
 msgstr "VGA - 640×360 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:490
+#: core/libs/video/manager/vidslidesettings.cpp:486
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VGA"
 #| msgid "VGA - 640x360 - 16:9"
@@ -44280,7 +44272,7 @@ msgctxt "Video Type: VGA"
 msgid "VGA - 640x480 - 4:3"
 msgstr "VGA - 640×360 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:491
+#: core/libs/video/manager/vidslidesettings.cpp:487
 #, fuzzy, kde-format
 #| msgctxt "Video Type: DVD"
 #| msgid "DVD - 720x480"
@@ -44288,7 +44280,7 @@ msgctxt "Video Type: SDTV3"
 msgid "SDTV - 704x480 - 22:15"
 msgstr "DVD - 720×480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:492
+#: core/libs/video/manager/vidslidesettings.cpp:488
 #, fuzzy, kde-format
 #| msgctxt "Video Type: DVD"
 #| msgid "DVD - 720x576"
@@ -44296,7 +44288,7 @@ msgctxt "Video Type: EDTV2"
 msgid "EDTV - 704x576 - 11:9"
 msgstr "DVD - 720×576"
 
-#: core/libs/video/manager/vidslidesettings.cpp:493
+#: core/libs/video/manager/vidslidesettings.cpp:489
 #, fuzzy, kde-format
 #| msgctxt "Video Type: DVD"
 #| msgid "DVD - 720x480"
@@ -44304,7 +44296,7 @@ msgctxt "Video Type: DVD"
 msgid "DVD - 720x480 - 3:2"
 msgstr "DVD - 720×480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:494
+#: core/libs/video/manager/vidslidesettings.cpp:490
 #, fuzzy, kde-format
 #| msgctxt "Video Type: DVD"
 #| msgid "DVD - 720x576"
@@ -44312,13 +44304,13 @@ msgctxt "Video Type: DVD"
 msgid "DVD - 720x576 - 5:4"
 msgstr "DVD - 720×576"
 
-#: core/libs/video/manager/vidslidesettings.cpp:495
+#: core/libs/video/manager/vidslidesettings.cpp:491
 #, kde-format
 msgctxt "Video Type: WVGA"
 msgid "WVGA - 800x450 - 16:9"
 msgstr "WVGA - 800×450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:496
+#: core/libs/video/manager/vidslidesettings.cpp:492
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -44326,7 +44318,7 @@ msgctxt "Video Type: SVGA"
 msgid "SVGA - 800x600 - 4:3"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:497
+#: core/libs/video/manager/vidslidesettings.cpp:493
 #, fuzzy, kde-format
 #| msgctxt "Video Type: DVD"
 #| msgid "DVD - 720x480"
@@ -44334,19 +44326,19 @@ msgctxt "Video Type: DVGA"
 msgid "DVGA - 960x640 - 3:2"
 msgstr "DVD - 720×480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:498
+#: core/libs/video/manager/vidslidesettings.cpp:494
 #, kde-format
 msgctxt "Video Type: XVGA"
 msgid "XVGA - 1024x576 - 16:9"
 msgstr "XVGA - 1024×576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:499
+#: core/libs/video/manager/vidslidesettings.cpp:495
 #, kde-format
 msgctxt "Video Type: HDTV"
 msgid "HDTV - 1280x720 - 16:9"
 msgstr "HDTV - 1280×720 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:500
+#: core/libs/video/manager/vidslidesettings.cpp:496
 #, fuzzy, kde-format
 #| msgctxt "Video Type: XVGA"
 #| msgid "XVGA - 1024x576 - 16:9"
@@ -44354,7 +44346,7 @@ msgctxt "Video Type: WXGA1"
 msgid "WXGA - 1280x768 - 5:3"
 msgstr "XVGA - 1024×576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:501
+#: core/libs/video/manager/vidslidesettings.cpp:497
 #, fuzzy, kde-format
 #| msgctxt "Video Type: WVGA"
 #| msgid "WVGA - 800x450 - 16:9"
@@ -44362,7 +44354,7 @@ msgctxt "Video Type: WXGA2"
 msgid "WXGA - 1280x800 - 8:5"
 msgstr "WVGA - 800×450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:502
+#: core/libs/video/manager/vidslidesettings.cpp:498
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -44370,7 +44362,7 @@ msgctxt "Video Type: SXGA"
 msgid "SXGA - 1280x1024 - 5:4"
 msgstr "QVGA - 320×180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:503
+#: core/libs/video/manager/vidslidesettings.cpp:499
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -44378,7 +44370,7 @@ msgctxt "Video Type: SXGAPLUS"
 msgid "SXGAPLUS - 1400x1050 - 4:3"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:504
+#: core/libs/video/manager/vidslidesettings.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "Video Type: WVGA"
 #| msgid "WVGA - 800x450 - 16:9"
@@ -44386,7 +44378,7 @@ msgctxt "Video Type: WSXGA"
 msgid "WSXGA - 1440x900 - 8:5"
 msgstr "WVGA - 800×450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:505
+#: core/libs/video/manager/vidslidesettings.cpp:501
 #, fuzzy, kde-format
 #| msgctxt "Video Type: HDTV"
 #| msgid "HDTV - 1280x720 - 16:9"
@@ -44394,7 +44386,7 @@ msgctxt "Video Type: HDPLUS"
 msgid "HDPLUS - 1600x900 - 16:9"
 msgstr "HDTV - 1280×720 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:506
+#: core/libs/video/manager/vidslidesettings.cpp:502
 #, fuzzy, kde-format
 #| msgctxt "Video Type: WVGA"
 #| msgid "WVGA - 800x450 - 16:9"
@@ -44402,7 +44394,7 @@ msgctxt "Video Type: WSXGAPLUS"
 msgid "WSXGAPLUS - 1680x1050 - 8:5"
 msgstr "WVGA - 800×450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:507
+#: core/libs/video/manager/vidslidesettings.cpp:503
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -44410,13 +44402,13 @@ msgctxt "Video Type: UXGA"
 msgid "UXGA - 1600x1200 - 4:3"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:508
+#: core/libs/video/manager/vidslidesettings.cpp:504
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:509
+#: core/libs/video/manager/vidslidesettings.cpp:505
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -44424,7 +44416,7 @@ msgctxt "Video Type: WUXGA"
 msgid "WUXGA - 1920x1200 - 8:5"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:510
+#: core/libs/video/manager/vidslidesettings.cpp:506
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -44432,7 +44424,7 @@ msgctxt "Video Type: TXGA"
 msgid "TXGA - 1920x1440 - 7:5"
 msgstr "QVGA - 320×180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:511
+#: core/libs/video/manager/vidslidesettings.cpp:507
 #, fuzzy, kde-format
 #| msgctxt "Video Type: XVGA"
 #| msgid "XVGA - 1024x576 - 16:9"
@@ -44440,7 +44432,7 @@ msgctxt "Video Type: QXGA"
 msgid "QXGA - 2048x1536 - 4:3"
 msgstr "XVGA - 1024×576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:512
+#: core/libs/video/manager/vidslidesettings.cpp:508
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -44448,7 +44440,7 @@ msgctxt "Video Type: UWFHD"
 msgid "UWFHD - 2560x1080 - 21:9"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:513
+#: core/libs/video/manager/vidslidesettings.cpp:509
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -44456,7 +44448,7 @@ msgctxt "Video Type: WQHD"
 msgid "WQHD - 2560x1440 - 16:9"
 msgstr "QVGA - 320×180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:514
+#: core/libs/video/manager/vidslidesettings.cpp:510
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -44464,7 +44456,7 @@ msgctxt "Video Type: WQXGA"
 msgid "WQXGA - 2560x1600 - 8:5"
 msgstr "QVGA - 320×180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:515
+#: core/libs/video/manager/vidslidesettings.cpp:511
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -44472,7 +44464,7 @@ msgctxt "Video Type: QSXGA"
 msgid "QSXGA - 2560x2048 - 5:4"
 msgstr "QVGA - 320×180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:516
+#: core/libs/video/manager/vidslidesettings.cpp:512
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -44480,7 +44472,7 @@ msgctxt "Video Type: QSXGAPLUS"
 msgid "QSXGAPLUS - 2800x2100 - 4:3"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:517
+#: core/libs/video/manager/vidslidesettings.cpp:513
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -44488,7 +44480,7 @@ msgctxt "Video Type: WQXGAPLUS"
 msgid "WQXGAPLUS - 3200x1800 - 16:9"
 msgstr "QVGA - 320×180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:518
+#: core/libs/video/manager/vidslidesettings.cpp:514
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -44496,7 +44488,7 @@ msgctxt "Video Type: WQSXGA"
 msgid "WQSXGA - 3200x2048 - 25:16"
 msgstr "QVGA - 320×180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:519
+#: core/libs/video/manager/vidslidesettings.cpp:515
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -44504,13 +44496,13 @@ msgctxt "Video Type: QUXGA"
 msgid "QUXGA - 3200x2400 - 4:3"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:520
+#: core/libs/video/manager/vidslidesettings.cpp:516
 #, kde-format
 msgctxt "Video Type: UHD4K"
 msgid "UHD4K - 3840x2160 - 16:9"
 msgstr "UHD4K - 3840×2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:521
+#: core/libs/video/manager/vidslidesettings.cpp:517
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -44518,7 +44510,7 @@ msgctxt "Video Type: WQUXGA"
 msgid "WQUXGA - 3840x2400 - 8:5"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:522
+#: core/libs/video/manager/vidslidesettings.cpp:518
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -44526,7 +44518,7 @@ msgctxt "Video Type: HXGA"
 msgid "HXGA - 4096x3072 - 4:3"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:523
+#: core/libs/video/manager/vidslidesettings.cpp:519
 #, fuzzy, kde-format
 #| msgctxt "Video Type: HDTV"
 #| msgid "HDTV - 1280x720 - 16:9"
@@ -44534,7 +44526,7 @@ msgctxt "Video Type: UHD5K"
 msgid "UHD5K - 5120x2880 - 16:9"
 msgstr "HDTV - 1280×720 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:524
+#: core/libs/video/manager/vidslidesettings.cpp:520
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -44542,7 +44534,7 @@ msgctxt "Video Type: WHXGA"
 msgid "WHXGA - 5120x3200 - 8:5"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:525
+#: core/libs/video/manager/vidslidesettings.cpp:521
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -44550,7 +44542,7 @@ msgctxt "Video Type: HSXGA"
 msgid "HSXGA - 5120x4096 - 5:4"
 msgstr "QVGA - 320×180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:526
+#: core/libs/video/manager/vidslidesettings.cpp:522
 #, fuzzy, kde-format
 #| msgctxt "Video Type: UHD4K"
 #| msgid "UHD4K - 3840x2160 - 16:9"
@@ -44558,7 +44550,7 @@ msgctxt "Video Type: UHD6K"
 msgid "UHD6K - 6016x3384 - 16:9"
 msgstr "UHD4K - 3840×2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:527
+#: core/libs/video/manager/vidslidesettings.cpp:523
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -44566,7 +44558,7 @@ msgctxt "Video Type: WHSXGA"
 msgid "WHSXGA - 6400x4096 - 25:16"
 msgstr "QVGA - 320×180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:528
+#: core/libs/video/manager/vidslidesettings.cpp:524
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VGA"
 #| msgid "VGA - 640x360 - 16:9"
@@ -44574,7 +44566,7 @@ msgctxt "Video Type: HUXGA"
 msgid "HUXGA - 6400x4800 - 4:3"
 msgstr "VGA - 640×360 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:529
+#: core/libs/video/manager/vidslidesettings.cpp:525
 #, fuzzy, kde-format
 #| msgctxt "Video Type: UHD4K"
 #| msgid "UHD4K - 3840x2160 - 16:9"
@@ -44582,7 +44574,7 @@ msgctxt "Video Type: UHD8K"
 msgid "UHD8K - 7680x4320 - 16:9"
 msgstr "UHD4K - 3840×2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:530
+#: core/libs/video/manager/vidslidesettings.cpp:526
 #, fuzzy, kde-format
 #| msgctxt "Video Type: WVGA"
 #| msgid "WVGA - 800x450 - 16:9"
@@ -44590,7 +44582,7 @@ msgctxt "Video Type: WHUXGA"
 msgid "WHUXGA - 7680x4800 - 8:5"
 msgstr "WVGA - 800×450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:531
+#: core/libs/video/manager/vidslidesettings.cpp:527
 #, fuzzy, kde-format
 #| msgctxt "Video Type: UHD4K"
 #| msgid "UHD4K - 3840x2160 - 16:9"
@@ -44598,7 +44590,7 @@ msgctxt "Video Type: UW10K"
 msgid "UW10K - 10240x4320 - 21:9"
 msgstr "UHD4K - 3840×2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:532
+#: core/libs/video/manager/vidslidesettings.cpp:528
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -44606,151 +44598,151 @@ msgctxt "Video Type: UW16K"
 msgid "UW16K - 15360x8640 - 16:9"
 msgstr "QVGA - 320×180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:755
+#: core/libs/video/manager/vidslidesettings.cpp:751
 #, kde-format
 msgctxt "Video Bit Rate 400000"
 msgid "400k"
 msgstr "400k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:756
+#: core/libs/video/manager/vidslidesettings.cpp:752
 #, kde-format
 msgctxt "Video Bit Rate 500000"
 msgid "500k"
 msgstr "500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:757
+#: core/libs/video/manager/vidslidesettings.cpp:753
 #, kde-format
 msgctxt "Video Bit Rate 1000000"
 msgid "1000k"
 msgstr "1000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:758
+#: core/libs/video/manager/vidslidesettings.cpp:754
 #, kde-format
 msgctxt "Video Bit Rate 1200000"
 msgid "1200k"
 msgstr "1200k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:759
+#: core/libs/video/manager/vidslidesettings.cpp:755
 #, kde-format
 msgctxt "Video Bit Rate 1500000"
 msgid "1500k"
 msgstr "1500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:760
+#: core/libs/video/manager/vidslidesettings.cpp:756
 #, kde-format
 msgctxt "Video Bit Rate 2000000"
 msgid "2000k"
 msgstr "2000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:761
+#: core/libs/video/manager/vidslidesettings.cpp:757
 #, kde-format
 msgctxt "Video Bit Rate 2500000"
 msgid "2500k"
 msgstr "2500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:762
+#: core/libs/video/manager/vidslidesettings.cpp:758
 #, kde-format
 msgctxt "Video Bit Rate 3000000"
 msgid "3000k"
 msgstr "3000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:763
+#: core/libs/video/manager/vidslidesettings.cpp:759
 #, kde-format
 msgctxt "Video Bit Rate 4000000"
 msgid "4000k"
 msgstr "4000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:764
+#: core/libs/video/manager/vidslidesettings.cpp:760
 #, kde-format
 msgctxt "Video Bit Rate 4500000"
 msgid "4500k"
 msgstr "4500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:765
+#: core/libs/video/manager/vidslidesettings.cpp:761
 #, kde-format
 msgctxt "Video Bit Rate 5000000"
 msgid "5000k"
 msgstr "5000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:766
+#: core/libs/video/manager/vidslidesettings.cpp:762
 #, kde-format
 msgctxt "Video Bit Rate 6000000"
 msgid "6000k"
 msgstr "6000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:767
+#: core/libs/video/manager/vidslidesettings.cpp:763
 #, kde-format
 msgctxt "Video Bit Rate 8000000"
 msgid "8000k"
 msgstr "8000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:776
+#: core/libs/video/manager/vidslidesettings.cpp:772
 #, kde-format
 msgctxt "Video Standard PAL"
 msgid "PAL - 25 FPS"
 msgstr "PAL - 25 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:777
+#: core/libs/video/manager/vidslidesettings.cpp:773
 #, kde-format
 msgctxt "Video Standard NTSC"
 msgid "NTSC - 29.97 FPS"
 msgstr "NTSC - 29,97 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:789
+#: core/libs/video/manager/vidslidesettings.cpp:785
 #, kde-format
 msgctxt "Video Codec X264"
 msgid "High Quality H.264 AVC/MPEG-4 AVC"
 msgstr "H.264 AVC/MPEG-4 AVC de alta calidade"
 
-#: core/libs/video/manager/vidslidesettings.cpp:790
+#: core/libs/video/manager/vidslidesettings.cpp:786
 #, kde-format
 msgctxt "Video Codec MPEG4"
 msgid "DivX/XVid/MPEG-4"
 msgstr "DivX/XVid/MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:791
+#: core/libs/video/manager/vidslidesettings.cpp:787
 #, kde-format
 msgctxt "Video Codec MPEG2"
 msgid "MPEG-2 Video"
 msgstr "Vídeo MPEG-2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:808
+#: core/libs/video/manager/vidslidesettings.cpp:804
 #, kde-format
 msgctxt "Video Standard AVI"
 msgid "AVI - Audio Video Interleave"
 msgstr "AVI (siglas en inglés para «intercalación de son e vídeo»)"
 
-#: core/libs/video/manager/vidslidesettings.cpp:809
+#: core/libs/video/manager/vidslidesettings.cpp:805
 #, kde-format
 msgctxt "Video Standard MKV"
 msgid "MKV - Matroska"
 msgstr "MKV - Matroska"
 
-#: core/libs/video/manager/vidslidesettings.cpp:810
+#: core/libs/video/manager/vidslidesettings.cpp:806
 #, kde-format
 msgctxt "Video Standard MP4"
 msgid "MP4 - MPEG-4"
 msgstr "MP4 - MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:811
+#: core/libs/video/manager/vidslidesettings.cpp:807
 #, kde-format
 msgctxt "Video Standard MPG"
 msgid "MPG - MPEG-2"
 msgstr "MPG - MPEG-2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:820
+#: core/libs/video/manager/vidslidesettings.cpp:816
 #, kde-format
 msgctxt "Video Effect NOPLAYER"
 msgid "None"
 msgstr "Ningún"
 
-#: core/libs/video/manager/vidslidesettings.cpp:821
+#: core/libs/video/manager/vidslidesettings.cpp:817
 #, kde-format
 msgctxt "Video Standard INTERNAL"
 msgid "Internal"
 msgstr "Interna"
 
-#: core/libs/video/manager/vidslidesettings.cpp:822
+#: core/libs/video/manager/vidslidesettings.cpp:818
 #, kde-format
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
@@ -60287,6 +60279,7 @@ msgid "E"
 msgstr ""
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:620
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:140
 #, fuzzy, kde-format
 #| msgctxt "Image filter reproducible: No"
 #| msgid "No"
@@ -60294,6 +60287,7 @@ msgid "N"
 msgstr "Non"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:620
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:141
 #, kde-format
 msgid "S"
 msgstr ""
@@ -75982,6 +75976,16 @@ msgstr "Reiniciar todos os parámetros aos valores predeterminados."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Reiniciar todos os parámetros aos valores predeterminados."
+
+#~ msgctxt "@action:button"
+#~ msgid "&Apply"
+#~ msgstr "&Aplicar"
+
+#~ msgid "%1 input audio stream to process:"
+#~ msgstr "%1 emisión de son de entrada para procesar:"
+
+#~ msgid "Failed to open audio encoder"
+#~ msgstr "Non foi posíbel abrir o codificador de son"
 
 #, fuzzy
 #~| msgid "OpenStreetMap"
