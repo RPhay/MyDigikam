@@ -54,7 +54,7 @@ BUGFIXES:
 041 ==> 478423 - Rating assignment via UI or shortcut is not consistent.
 042 ==> 478034 - Bug when moving, modifying, deleting files.
 043 ==> 474677 - Deleting files generates an error about permissions on .dtrash.
-044 ==> 
+044 ==> 478509 - Add OK button to Adjust Time & Date view.
 045 ==> 
 046 ==> 
 047 ==> 

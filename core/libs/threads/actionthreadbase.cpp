@@ -131,7 +131,8 @@ void ActionThreadBase::slotJobFinished()
         return;
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "One job is done" << job;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "One job is done" << job
+                                 << "time:" << job->m_timer.elapsed();
 
     QMutexLocker lock(&d->mutex);
 
@@ -150,11 +151,11 @@ void ActionThreadBase::cancel(bool isCancel)
 {
     if (isCancel)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Cancel Main Thread" << this;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Cancel Main Thread";
     }
     else
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Finish Main Thread" << this;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Finish Main Thread";
     }
 
     QMutexLocker lock(&d->mutex);
@@ -209,16 +210,19 @@ void ActionThreadBase::run()
 
         if (!d->todo.isEmpty())
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Action Thread run " << d->todo.count() << " new jobs";
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Action Thread run" << d->todo.count() << "new jobs";
 
             for (ActionJobCollection::iterator it = d->todo.begin() ; it != d->todo.end() ; ++it)
             {
                 ActionJob* const job = it.key();
                 int priority         = it.value();
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Action Thread run " << job;
+
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Action Thread run" << job;
+
                 connect(job, SIGNAL(signalDone()),
                         this, SLOT(slotJobFinished()));
 
+                job->m_timer.start();
                 d->pool->start(job, priority);
                 d->pending.insert(job, priority);
             }

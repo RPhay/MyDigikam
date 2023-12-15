@@ -23,6 +23,7 @@
 #include <QObject>
 #include <QThread>
 #include <QRunnable>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -64,6 +65,10 @@ Q_SIGNALS:
      * Use this signal in your implementation to inform ActionThreadBase manager the job is done.
      */
     void signalDone();
+
+public:
+
+    QElapsedTimer m_timer;
 
 public Q_SLOTS:
 

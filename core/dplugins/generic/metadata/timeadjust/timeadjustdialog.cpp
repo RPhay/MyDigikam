@@ -73,6 +73,7 @@ public:
       : settingsView(nullptr),
         previewTimer(nullptr),
         updateTimer (nullptr),
+        exitAfterOk (false),
         progressBar (nullptr),
         listView    (nullptr),
         thread      (nullptr),
@@ -86,6 +87,8 @@ public:
 
     QTimer*               previewTimer;
     QTimer*               updateTimer;
+
+    bool                  exitAfterOk;
 
     DProgressWdg*         progressBar;
     TimeAdjustList*       listView;
@@ -105,11 +108,18 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
 
     d->iface = iface;
 
-    m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->addButton(QDialogButtonBox::Ok);
-    m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "&Apply"));
-    m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info:tooltip", "Write the corrected date and time for each image"));
-    m_buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
+    m_buttons->addButton(QDialogButtonBox::Apply);
+    m_buttons->addButton(QDialogButtonBox::Close);
+    m_buttons->button(QDialogButtonBox::Ok)->setAutoDefault(false);
+    m_buttons->button(QDialogButtonBox::Apply)->setAutoDefault(false);
+    m_buttons->button(QDialogButtonBox::Close)->setAutoDefault(false);
+
+    m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info:tooltip",
+                                                              "Write the corrected date and time for each image and close dialog"));
+    m_buttons->button(QDialogButtonBox::Apply)->setToolTip(i18nc("@info:tooltip",
+                                                                 "Write the corrected date and time for each image"));
+
 
     QWidget* const mainWidget = new QWidget(this);
     QVBoxLayout* const vbx    = new QVBoxLayout(this);
@@ -176,8 +186,11 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
     connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(slotCancelThread()));
 
-    connect(m_buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+    connect(m_buttons->button(QDialogButtonBox::Apply), SIGNAL(clicked()),
             this, SLOT(slotUpdateTimestamps()));
+
+    connect(m_buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+            this, SLOT(slotOkExitTimestamps()));
 
     connect(d->settingsView, SIGNAL(signalSettingsChangedTool()),
             this, SLOT(slotPreviewTimestamps()));
@@ -329,6 +342,13 @@ void TimeAdjustDialog::slotUpdateTimestamps()
     d->updateTimer->start();
 }
 
+void TimeAdjustDialog::slotOkExitTimestamps()
+{
+    d->exitAfterOk = true;
+
+   slotUpdateTimestamps();
+}
+
 void TimeAdjustDialog::slotPreviewTimer()
 {
     d->listView->setWaitStatus();
@@ -362,6 +382,8 @@ void TimeAdjustDialog::slotCancelThread()
         d->thread->wait();
     }
 
+    d->exitAfterOk = false;
+
     if (m_buttons->button(QDialogButtonBox::Ok)->isEnabled())
     {
         accept();
@@ -383,6 +405,7 @@ void TimeAdjustDialog::setBusy(bool busy)
         m_buttons->button(QDialogButtonBox::Close)->setToolTip(i18nc("@info", "Close window"));
     }
 
+    m_buttons->button(QDialogButtonBox::Apply)->setEnabled(!busy);
     m_buttons->button(QDialogButtonBox::Ok)->setEnabled(!busy);
     d->settingsView->setEnabled(!busy);
 }
@@ -414,6 +437,11 @@ void TimeAdjustDialog::slotThreadFinished()
     setBusy(false);
     d->progressBar->hide();
     d->progressBar->progressCompleted();
+
+    if (d->exitAfterOk)
+    {
+        accept();
+    }
 }
 
 } // namespace DigikamGenericTimeAdjustPlugin
