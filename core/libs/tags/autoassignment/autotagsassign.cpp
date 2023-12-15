@@ -78,21 +78,33 @@ cv::Mat AutoTagsAssign::prepareForDetection(const DImg& inputImage) const
     }
 
     cv::Mat cvImage;
-    int type               = inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4;
-    cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
 
-    if (inputImage.hasAlpha())
+    try
     {
-        cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
-    }
-    else
-    {
-        cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
-    }
+        int type               = inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4;
+        cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
 
-    if (type == CV_16UC4)
+        if (inputImage.hasAlpha())
+        {
+            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
+        }
+        else
+        {
+            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
+        }
+
+        if (type == CV_16UC4)
+        {
+            cvImage.convertTo(cvImage, CV_8UC3, 1 / 256.0);
+        }
+    }
+    catch (cv::Exception& e)
     {
-        cvImage.convertTo(cvImage, CV_8UC3, 1 / 256.0);
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return cvImage;
@@ -109,28 +121,39 @@ cv::Mat AutoTagsAssign::prepareForDetection(const QImage& inputImage) const
     cv::Mat cvImageWrapper;
     QImage qimage(inputImage);
 
-    switch (qimage.format())
+    try
     {
-        case QImage::Format_RGB32:
-        case QImage::Format_ARGB32:
-        case QImage::Format_ARGB32_Premultiplied:
+        switch (qimage.format())
         {
-            // I think we can ignore premultiplication when converting to grayscale
+            case QImage::Format_RGB32:
+            case QImage::Format_ARGB32:
+            case QImage::Format_ARGB32_Premultiplied:
+            {
+                // I think we can ignore premultiplication when converting to grayscale
 
-            cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC4,
-                                     qimage.scanLine(0), qimage.bytesPerLine());
-            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
-            break;
-        }
+                cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC4,
+                                         qimage.scanLine(0), qimage.bytesPerLine());
+                cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
+                break;
+            }
 
-        default:
-        {
-            qimage         = qimage.convertToFormat(QImage::Format_RGB888);
-            cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC3,
-                                     qimage.scanLine(0), qimage.bytesPerLine());
-            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
-            break;
+            default:
+            {
+                qimage         = qimage.convertToFormat(QImage::Format_RGB888);
+                cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC3,
+                                         qimage.scanLine(0), qimage.bytesPerLine());
+                cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
+                break;
+            }
         }
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return cvImage;
@@ -150,7 +173,20 @@ cv::Mat AutoTagsAssign::prepareForDetection(const QString& inputImagePath) const
     file.read(buffer.data(), file.size());
     file.close();
 
-    cv::Mat cvImage = cv::imdecode(std::vector<char>(buffer.begin(), buffer.end()), cv::IMREAD_COLOR);
+    cv::Mat cvImage;
+
+    try
+    {
+        cvImage = cv::imdecode(std::vector<char>(buffer.begin(), buffer.end()), cv::IMREAD_COLOR);
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+    }
 
     return cvImage;
 }
@@ -159,19 +195,30 @@ std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<DImg>& inpu
 {
     std::vector<cv::Mat> result;
 
-    for (const auto& img : inputImages)
+    try
     {
-        result.push_back(prepareForDetection(img));
+        for (const auto& img : inputImages)
+        {
+            result.push_back(prepareForDetection(img));
+        }
+
+        // add black imgs to fullfill the batch size
+
+        cv::Size inputSize = m_inferenceEngine->getinputImageSize();
+
+        while ((result.size() % batchSize) != 0)
+        {
+            cv::Mat dummycvImg = cv::Mat::zeros(inputSize.height, inputSize.width, CV_8UC3);
+            result.push_back(dummycvImg);
+        }
     }
-
-    // add black imgs to fullfill the batch size
-
-    cv::Size inputSize = m_inferenceEngine->getinputImageSize();
-
-    while ((result.size() % batchSize) != 0)
+    catch (cv::Exception& e)
     {
-        cv::Mat dummycvImg = cv::Mat::zeros(inputSize.height, inputSize.width, CV_8UC3);
-        result.push_back(dummycvImg);
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return result;
@@ -181,19 +228,30 @@ std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<QString>& i
 {
     std::vector<cv::Mat> result;
 
-    for (const auto& imgPath : inputImagePaths)
+    try
     {
-        result.push_back(prepareForDetection(imgPath));
+        for (const auto& imgPath : inputImagePaths)
+        {
+            result.push_back(prepareForDetection(imgPath));
+        }
+
+        // add black imgs to fullfill the batch size
+
+        cv::Size inputSize = m_inferenceEngine->getinputImageSize();
+
+        while ((result.size() % batchSize) != 0)
+        {
+            cv::Mat dummycvImg = cv::Mat::zeros(inputSize.height, inputSize.width, CV_8UC3);
+            result.push_back(dummycvImg);
+        }
     }
-
-    // add black imgs to fullfill the batch size
-
-    cv::Size inputSize = m_inferenceEngine->getinputImageSize();
-
-    while ((result.size() % batchSize) != 0)
+    catch (cv::Exception& e)
     {
-        cv::Mat dummycvImg = cv::Mat::zeros(inputSize.height, inputSize.width, CV_8UC3);
-        result.push_back(dummycvImg);
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return result;
@@ -212,8 +270,6 @@ QList<QString> AutoTagsAssign::generateTagsList(const DImg& image)
     {
         cv::Mat cvImage = prepareForDetection(image);
         result          = m_inferenceEngine->generateObjects(cvImage);
-
-        return result;
     }
     catch (cv::Exception& e)
     {
