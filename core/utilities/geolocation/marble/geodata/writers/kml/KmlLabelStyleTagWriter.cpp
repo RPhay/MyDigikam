@@ -8,6 +8,7 @@
 #include "GeoDataTypes.h"
 #include "GeoWriter.h"
 #include "KmlElementDictionary.h"
+
 #include "digikam_debug.h"
 
 namespace Marble

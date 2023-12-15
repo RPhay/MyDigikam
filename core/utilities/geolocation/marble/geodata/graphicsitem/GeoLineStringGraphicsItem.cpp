@@ -5,6 +5,11 @@
 
 #include "GeoLineStringGraphicsItem.h"
 
+#include <qmath.h>
+#include <QPainterPathStroker>
+
+#include <klocalizedstring.h>
+
 #include "GeoDataLineStyle.h"
 #include "GeoDataLabelStyle.h"
 #include "GeoDataPlacemark.h"
@@ -14,13 +19,9 @@
 #include "ViewportParams.h"
 #include "GeoDataStyle.h"
 #include "GeoDataColorStyle.h"
-#include "digikam_debug.h"
 #include "OsmPlacemarkData.h"
 
-#include <qmath.h>
-#include <QPainterPathStroker>
-
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

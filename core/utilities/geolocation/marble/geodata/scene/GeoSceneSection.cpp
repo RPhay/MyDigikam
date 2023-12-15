@@ -6,10 +6,10 @@
 
 #include "GeoSceneSection.h"
 
-#include "digikam_debug.h"
-
 #include "GeoSceneTypes.h"
 #include "GeoSceneItem.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

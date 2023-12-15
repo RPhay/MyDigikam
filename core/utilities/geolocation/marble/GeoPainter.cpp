@@ -23,8 +23,6 @@
 
 #include "digikam_debug.h"
 
-// #define MARBLE_DEBUG
-
 using namespace Marble;
 
 GeoPainterPrivate::GeoPainterPrivate( GeoPainter* q, const ViewportParams *viewport, MapQuality mapQuality )

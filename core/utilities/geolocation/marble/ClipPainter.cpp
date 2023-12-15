@@ -92,8 +92,6 @@ class ClipPainterPrivate
 
 using namespace Marble;
 
-// #define MARBLE_DEBUG
-
 ClipPainter::ClipPainter(QPaintDevice * pd, bool clip)
     : QPainter( pd ), d( new ClipPainterPrivate( this ) )
 {

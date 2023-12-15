@@ -5,6 +5,10 @@
 
 #include "AbstractGeoPolygonGraphicsItem.h"
 
+#include <QtMath>
+#include <QImageReader>
+#include <QPixmapCache>
+
 #include "GeoDataLinearRing.h"
 #include "GeoDataPolygon.h"
 #include "GeoDataBuilding.h"
@@ -16,12 +20,9 @@
 #include "GeoDataPlacemark.h"
 #include "GeoDataPolyStyle.h"
 #include "OsmPlacemarkData.h"
-#include "digikam_debug.h"
 #include "ViewportParams.h"
 
-#include <QtMath>
-#include <QImageReader>
-#include <QPixmapCache>
+#include "digikam_debug.h"
 
 namespace Marble
 {

@@ -5,7 +5,9 @@
 
 #include "BuildingGraphicsItem.h"
 
-#include "digikam_debug.h"
+#include <QScreen>
+#include <QApplication>
+
 #include "ViewportParams.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataLinearRing.h"
@@ -16,8 +18,7 @@
 #include "OsmPlacemarkData.h"
 #include "GeoPainter.h"
 
-#include <QScreen>
-#include <QApplication>
+#include "digikam_debug.h"
 
 namespace Marble
 {

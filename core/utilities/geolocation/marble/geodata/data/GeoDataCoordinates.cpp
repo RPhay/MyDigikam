@@ -8,7 +8,6 @@
 // SPDX-FileCopyrightText: 2015 Alejandro Garcia Montoro <alejandro.garciamontoro@gmail.com>
 //
 
-
 #include "GeoDataCoordinates.h"
 #include "GeoDataCoordinates_p.h"
 #include "LonLatParser_p.h"
@@ -17,12 +16,12 @@
 #include <QDataStream>
 #include <QPointF>
 
-#include "digikam_debug.h"
-#include "MarbleMath.h"
+#include <klocalizedstring.h>
 
+#include "MarbleMath.h"
 #include "Quaternion.h"
 
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

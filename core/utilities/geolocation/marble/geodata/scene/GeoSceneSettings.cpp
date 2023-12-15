@@ -6,11 +6,11 @@
 
 #include "GeoSceneSettings.h"
 
-#include "digikam_debug.h"
-
 #include "GeoSceneProperty.h"
 #include "GeoSceneGroup.h"
 #include "GeoSceneTypes.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

@@ -5,10 +5,11 @@
 
 #include "GeoDataSimpleArrayData.h"
 
-#include "GeoDataTypes.h"
-#include "digikam_debug.h"
-
 #include <QVariant>
+
+#include "GeoDataTypes.h"
+
+#include "digikam_debug.h"
 
 namespace Marble {
 

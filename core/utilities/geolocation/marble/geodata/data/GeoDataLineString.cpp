@@ -4,18 +4,17 @@
 // SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-
 #include "GeoDataLineString.h"
 #include "GeoDataLineString_p.h"
-
-#include "GeoDataLinearRing.h"
-#include "GeoDataTypes.h"
-#include "Quaternion.h"
-#include "digikam_debug.h"
 
 #include <QDataStream>
 #include <QVariant>
 
+#include "GeoDataLinearRing.h"
+#include "GeoDataTypes.h"
+#include "Quaternion.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

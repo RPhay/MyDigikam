@@ -4,16 +4,15 @@
 // SPDX-FileCopyrightText: 2008 Torsten Rahn <rahn@kde.org>
 //
 
-
 #include "GeoDataLatLonAltBox.h"
 
-#include "digikam_debug.h"
+#include <QDataStream>
+
 #include "GeoDataCoordinates.h"
 #include "GeoDataLineString.h"
-
 #include "GeoDataTypes.h"
 
-#include <QDataStream>
+#include "digikam_debug.h"
 
 namespace Marble
 {

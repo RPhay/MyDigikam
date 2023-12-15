@@ -5,21 +5,21 @@
 
 #include "KmlDocumentTagWriter.h"
 
+#include <QVector>
+
 #include "GeoDocument.h"
 #include "GeoDataDocument.h"
 #include "GeoWriter.h"
 #include "KmlElementDictionary.h"
 #include "GeoDataStyle.h"
 #include "GeoDataStyleMap.h"
-#include "digikam_debug.h"
 #include "GeoDataExtendedData.h"
 #include "GeoDataTimeStamp.h"
 #include "GeoDataTimeSpan.h"
 #include "GeoDataSchema.h"
-
 #include "GeoDataTypes.h"
 
-#include <QVector>
+#include "digikam_debug.h"
 
 namespace Marble
 {

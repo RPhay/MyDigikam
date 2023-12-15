@@ -52,12 +52,6 @@
 #  define S_IXOTH 0001
 #endif
 
-#if 0
-#define ZDEBUG qDebug
-#else
-#define ZDEBUG if (0) qDebug
-#endif
-
 namespace Marble {
 
 static inline uint readUInt(const uchar *data)
@@ -496,7 +490,7 @@ void MarbleZipReaderPrivate::scanFiles()
     // have the eod
     start_of_directory = readUInt(eod.dir_start_offset);
     num_dir_entries = readUShort(eod.num_dir_entries);
-    ZDEBUG("start_of_directory at %d, num_dir_entries=%d", start_of_directory, num_dir_entries);
+    qCDebug(DIGIKAM_MARBLE_LOG) << QString::asprintf("start_of_directory at %d, num_dir_entries=%d", start_of_directory, num_dir_entries);
     int comment_length = readUShort(eod.comment_length);
     if (comment_length != i)
         qCWarning(DIGIKAM_MARBLE_LOG) << "QZip: failed to parse zip file.";
@@ -535,7 +529,7 @@ void MarbleZipReaderPrivate::scanFiles()
             break;
         }
 
-        ZDEBUG("found file '%s'", header.file_name.data());
+        qCDebug(DIGIKAM_MARBLE_LOG) << QString::asprintf("found file '%s'", header.file_name.data());
         fileHeaders.append(header);
     }
 }
@@ -547,7 +541,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString &fileName, c
         "directory",
         "file     ",
         "symlink  " };
-    ZDEBUG() << "adding" << entryTypes[type] <<":" << fileName.toUtf8().data() << (type == 2 ? QByteArray(" -> " + contents).constData() : "");
+    qCDebug(DIGIKAM_MARBLE_LOG) << "adding" << entryTypes[type] <<":" << fileName.toUtf8().data() << (type == 2 ? QByteArray(" -> " + contents).constData() : "");
 #endif
 
     if (! (device->isOpen() || device->open(QIODevice::WriteOnly))) {

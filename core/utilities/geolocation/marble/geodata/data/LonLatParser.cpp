@@ -10,16 +10,15 @@
 
 #include "LonLatParser_p.h"
 
-#include "GeoDataCoordinates.h"
-
-#include "digikam_debug.h"
-
 #include <QLocale>
 #include <QRegularExpression>
 #include <QSet>
 
 #include <klocalizedstring.h>
 
+#include "GeoDataCoordinates.h"
+
+#include "digikam_debug.h"
 namespace Marble
 {
 

@@ -4,6 +4,7 @@
 //
 
 #include "GeoSceneGeodata.h"
+
 #include "GeoSceneTypes.h"
 
 #include "digikam_debug.h"

@@ -7,18 +7,19 @@
 */
 
 #include "GeoSceneTileDataset.h"
+
+#include <QImage>
+#include <QUrl>
+
 #include "GeoSceneTypes.h"
 #include "GeoSceneEquirectTileProjection.h"
 #include "GeoSceneMercatorTileProjection.h"
-
 #include "DownloadPolicy.h"
-#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "ServerLayout.h"
 #include "TileId.h"
 
-#include <QImage>
-#include <QUrl>
+#include "digikam_debug.h"
 
 namespace Marble
 {

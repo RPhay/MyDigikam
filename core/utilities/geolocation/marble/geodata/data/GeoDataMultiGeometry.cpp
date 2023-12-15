@@ -3,9 +3,10 @@
 // SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-
 #include "GeoDataMultiGeometry.h"
 #include "GeoDataMultiGeometry_p.h"
+
+#include <QDataStream>
 
 #include "GeoDataLineString.h"
 #include "GeoDataLinearRing.h"
@@ -14,9 +15,6 @@
 #include "GeoDataTypes.h"
 
 #include "digikam_debug.h"
-
-#include <QDataStream>
-
 
 namespace Marble
 {

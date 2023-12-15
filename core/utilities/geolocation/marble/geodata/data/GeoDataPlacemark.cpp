@@ -12,21 +12,23 @@
 // Private
 #include "GeoDataPlacemark_p.h"
 
-#include "GeoDataMultiGeometry.h"
-#include "GeoDataLatLonAltBox.h"
-#include "GeoDataData.h"
-#include "OsmPlacemarkData.h"
-
 // Qt
 #include <QDataStream>
-#include "digikam_debug.h"
-#include "GeoDataTrack.h"
-#include "GeoDataModel.h"
 #include <QString>
 #include <QStringRef>
 #include <QXmlStreamWriter>
 
 #include <klocalizedstring.h>
+
+#include "GeoDataMultiGeometry.h"
+#include "GeoDataLatLonAltBox.h"
+#include "GeoDataData.h"
+#include "OsmPlacemarkData.h"
+#include "GeoDataTrack.h"
+#include "GeoDataModel.h"
+
+#include "digikam_debug.h"
+
 
 namespace Marble
 {
