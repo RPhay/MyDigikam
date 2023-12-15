@@ -6,6 +6,7 @@
 //
 
 #include "NewBookmarkFolderDialog.h"
+
 #include "digikam_debug.h"
 
 namespace Marble {

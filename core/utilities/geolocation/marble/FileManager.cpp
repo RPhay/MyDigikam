@@ -10,13 +10,12 @@
 #include <QElapsedTimer>
 
 #include "FileLoader.h"
-#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "GeoDataTreeModel.h"
-
 #include "GeoDataLatLonAltBox.h"
 #include "GeoDataStyle.h"
 
+#include "digikam_debug.h"
 
 using namespace Marble;
 

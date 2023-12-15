@@ -11,6 +11,7 @@
 #include <QRegExp>
 
 #include "PlanetFactory.h"
+
 #include "digikam_debug.h"
 
 namespace Marble {

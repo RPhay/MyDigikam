@@ -9,8 +9,9 @@
 // Own
 #include "LayerManager.h"
 
+#include <QElapsedTimer>
+
 // Local dir
-#include "digikam_debug.h"
 #include "AbstractDataPlugin.h"
 #include "AbstractDataPluginItem.h"
 #include "GeoPainter.h"
@@ -18,7 +19,7 @@
 #include "LayerInterface.h"
 #include "RenderState.h"
 
-#include <QElapsedTimer>
+#include "digikam_debug.h"
 
 namespace Marble
 {

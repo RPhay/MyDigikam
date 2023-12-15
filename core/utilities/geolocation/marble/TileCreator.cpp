@@ -18,8 +18,9 @@
 
 #include "MarbleGlobal.h"
 #include "MarbleDirs.h"
-#include "digikam_debug.h"
 #include "TileLoaderHelper.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

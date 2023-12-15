@@ -5,10 +5,11 @@
 //
 
 #include "MarbleClock.h"
-#include "digikam_debug.h"
 
 #include <QDateTime>
 #include <QTimer>
+
+#include "digikam_debug.h"
 
 namespace Marble {
 

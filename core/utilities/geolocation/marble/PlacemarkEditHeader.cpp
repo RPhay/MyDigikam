@@ -2,14 +2,14 @@
 //
 // SPDX-FileCopyrightText: 2014 Mikhail Ivchenko <ematirov@gmail.com>
 
-
 #include "PlacemarkEditHeader.h"
 #include "ui_PlacemarkEditHeader.h"
 
 #include <QFileDialog>
-#include "digikam_debug.h"
 
 #include <klocalizedstring.h>
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

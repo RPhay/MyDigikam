@@ -5,13 +5,27 @@
 //
 
 #include "TourWidget.h"
+#include "ui_TourWidget.h"
+
+#include <QFileDialog>
+#include <QDir>
+#include <QModelIndex>
+#include <QMessageBox>
+#include <QPainter>
+#include <QToolButton>
+#include <QMenu>
+#include <QUrl>
+#include <QKeyEvent>
+#include <QCloseEvent>
+#include <QPointer>
+
+#include <klocalizedstring.h>
+
 #include "FlyToEditWidget.h"
 #include "TourControlEditWidget.h"
 #include "WaitEditWidget.h"
 #include "SoundCueEditWidget.h"
 #include "TourItemDelegate.h"
-
-#include "ui_TourWidget.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataDocument.h"
 #include "GeoDataLookAt.h"
@@ -37,26 +51,13 @@
 #include "TourPlayback.h"
 #include "MovieCapture.h"
 #include "TourCaptureDialog.h"
-#include "digikam_debug.h"
 #include "PlaybackFlyToItem.h"
 #include "EditPlacemarkDialog.h"
 #include "MarbleDirs.h"
 #include "GeoDataStyle.h"
 #include "GeoDataIconStyle.h"
 
-#include <QFileDialog>
-#include <QDir>
-#include <QModelIndex>
-#include <QMessageBox>
-#include <QPainter>
-#include <QToolButton>
-#include <QMenu>
-#include <QUrl>
-#include <QKeyEvent>
-#include <QCloseEvent>
-#include <QPointer>
-
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

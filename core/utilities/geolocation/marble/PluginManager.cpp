@@ -4,7 +4,6 @@
 // SPDX-FileCopyrightText: 2009 Jens-Michael Hoffmann <jensmh@gmx.de>
 //
 
-
 // Own
 #include "PluginManager.h"
 
@@ -16,13 +15,14 @@
 
 // Local dir
 #include "MarbleDirs.h"
-#include "digikam_debug.h"
 #include "RenderPlugin.h"
 #include "PositionProviderPlugin.h"
 #include "ParseRunnerPlugin.h"
 #include "ReverseGeocodingRunnerPlugin.h"
 #include "RoutingRunnerPlugin.h"
 #include "SearchRunnerPlugin.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

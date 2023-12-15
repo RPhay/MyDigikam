@@ -24,8 +24,9 @@
 #include <QStandardItemModel>
 #include <QTimer>
 
+#include <klocalizedstring.h>
+
 #include "GeoDataLatLonAltBox.h"
-#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "MarbleWidget.h"
 #include "LatLonBoxWidget.h"
@@ -45,7 +46,7 @@
 #include "GeoSceneMap.h"
 #include "Route.h"
 
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

@@ -4,6 +4,11 @@
 //
 
 #include "ElevationModel.h"
+
+#include <QCache>
+#include <QImage>
+#include <qmath.h>
+
 #include "GeoSceneHead.h"
 #include "GeoSceneLayer.h"
 #include "GeoSceneMap.h"
@@ -13,14 +18,11 @@
 #include "Tile.h"
 #include "TileLoader.h"
 #include "TileLoaderHelper.h"
-#include "digikam_debug.h"
 #include "MapThemeManager.h"
 #include "TileId.h"
 #include "PluginManager.h"
 
-#include <QCache>
-#include <QImage>
-#include <qmath.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

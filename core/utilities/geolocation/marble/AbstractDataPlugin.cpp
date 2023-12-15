@@ -6,6 +6,10 @@
 // Self
 #include "AbstractDataPlugin.h"
 
+// Qt
+#include <QTimer>
+#include <QRegion>
+
 // Marble
 #include "AbstractDataPluginModel.h"
 #include "AbstractDataPluginItem.h"
@@ -13,11 +17,8 @@
 #include "GeoSceneLayer.h"
 #include "MarbleModel.h"
 #include "ViewportParams.h"
-#include "digikam_debug.h"
 
-// Qt
-#include <QTimer>
-#include <QRegion>
+#include "digikam_debug.h"
 
 namespace Marble
 {

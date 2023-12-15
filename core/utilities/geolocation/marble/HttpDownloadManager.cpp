@@ -16,8 +16,9 @@
 #include "DownloadPolicy.h"
 #include "DownloadQueueSet.h"
 #include "HttpJob.h"
-#include "digikam_debug.h"
 #include "StoragePolicy.h"
+
+#include "digikam_debug.h"
 
 using namespace Marble;
 

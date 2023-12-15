@@ -9,11 +9,9 @@
 #include "ViewportParams.h"
 
 #include <QRect>
-
 #include <QPainterPath>
 #include <QRegion>
 
-#include "digikam_debug.h"
 #include "GeoDataLatLonAltBox.h"
 #include "SphericalProjection.h"
 #include "EquirectProjection.h"
@@ -24,6 +22,7 @@
 #include "StereographicProjection.h"
 #include "VerticalPerspectiveProjection.h"
 
+#include "digikam_debug.h"
 
 namespace Marble
 {

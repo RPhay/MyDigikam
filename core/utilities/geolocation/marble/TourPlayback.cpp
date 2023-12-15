@@ -9,7 +9,6 @@
 #include <QUrl>
 #include <QPointer>
 
-#include "digikam_debug.h"
 #include "MarbleWidget.h"
 #include "PopupLayer.h"
 #include "GeoDataPoint.h"
@@ -32,6 +31,8 @@
 #include "SerialTrack.h"
 #include "SoundTrack.h"
 #include "AnimatedUpdateTrack.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

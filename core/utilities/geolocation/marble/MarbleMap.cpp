@@ -51,7 +51,6 @@
 #include "GeoDataStyleMap.h"
 #include "LayerManager.h"
 #include "MapThemeManager.h"
-#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "MarbleModel.h"
 #include "PluginManager.h"
@@ -67,6 +66,8 @@
 #include "ViewportParams.h"
 #include "RenderState.h"
 #include "BookmarkManager.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

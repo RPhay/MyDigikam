@@ -6,13 +6,15 @@
 
 #include "MarbleLocale.h"
 #include "MarbleLocale_p.h"
-#include "MarbleGlobal.h"
-#include "digikam_debug.h"
 
 // Qt
 #include <QLocale>
 
 #include <klocalizedstring.h>
+
+#include "MarbleGlobal.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

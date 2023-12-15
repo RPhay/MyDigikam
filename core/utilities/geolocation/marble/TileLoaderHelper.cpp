@@ -11,9 +11,9 @@
 
 #include <cmath>
 
-#include "digikam_debug.h"
-
 #include "MarbleGlobal.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

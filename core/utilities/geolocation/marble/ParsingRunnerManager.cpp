@@ -7,16 +7,17 @@
 
 #include "ParsingRunnerManager.h"
 
-#include "digikam_debug.h"
-#include "PluginManager.h"
-#include "ParseRunnerPlugin.h"
-#include "RunnerTask.h"
-
 #include <QFileInfo>
 #include <QList>
 #include <QThreadPool>
 #include <QTimer>
 #include <QMutex>
+
+#include "PluginManager.h"
+#include "ParseRunnerPlugin.h"
+#include "RunnerTask.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

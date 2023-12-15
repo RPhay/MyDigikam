@@ -6,7 +6,6 @@
 #include "RemoteIconLoader.h"
 
 // Qt
-#include "digikam_debug.h"
 #include <QString>
 #include <QHash>
 #include <QUrl>
@@ -20,6 +19,7 @@
 #include "FileStoragePolicy.h"
 #include "MarbleDirs.h"
 #include "MarbleGlobal.h"
+
 #include "digikam_debug.h"
 
 namespace Marble

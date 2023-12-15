@@ -7,12 +7,11 @@
 
 #include "Quaternion.h"
 
-using namespace std;
-
 #include <QString>
+
 #include "digikam_debug.h"
 
-
+using namespace std;
 using namespace Marble;
 
 Quaternion::Quaternion()

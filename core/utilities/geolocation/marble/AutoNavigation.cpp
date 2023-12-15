@@ -4,23 +4,23 @@
 // SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-
 #include "AutoNavigation.h"
-
-#include "GeoDataCoordinates.h"
-#include "PositionTracking.h"
-#include "digikam_debug.h"
-#include "MarbleModel.h"
-#include "ViewportParams.h"
-#include "RoutingManager.h"
-#include "RoutingModel.h"
-#include "Route.h"
 
 #include <QWidget>
 #include <QRect>
 #include <QPointF>
 #include <QTimer>
 #include <cmath>
+
+#include "GeoDataCoordinates.h"
+#include "PositionTracking.h"
+#include "MarbleModel.h"
+#include "ViewportParams.h"
+#include "RoutingManager.h"
+#include "RoutingModel.h"
+#include "Route.h"
+
+#include "digikam_debug.h"
 
 namespace Marble {
 

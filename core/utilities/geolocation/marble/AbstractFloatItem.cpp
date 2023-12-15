@@ -14,12 +14,13 @@
 #include <QHelpEvent>
 #include <QPen>
 
+#include <klocalizedstring.h>
+
 // Marble
 #include "DialogConfigurationInterface.h"
 #include "GeoPainter.h"
-#include "digikam_debug.h"
 
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

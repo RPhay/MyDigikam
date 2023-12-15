@@ -8,10 +8,11 @@
 
 #include "HttpJob.h"
 
-#include "digikam_debug.h"
+#include <QNetworkAccessManager>
+
 #include "HttpDownloadManager.h"
 
-#include <QNetworkAccessManager>
+#include "digikam_debug.h"
 
 using namespace Marble;
 

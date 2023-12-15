@@ -6,12 +6,14 @@
 // SPDX-FileCopyrightText: 2014 Dennis Nienhüser <nienhueser@kde.org>
 
 #include "PlanetFactory.h"
-#include "Planet.h"
-#include "MarbleColors.h"
-#include "digikam_debug.h"
-#include "MarbleGlobal.h"
 
 #include <klocalizedstring.h>
+
+#include "Planet.h"
+#include "MarbleColors.h"
+#include "MarbleGlobal.h"
+
+#include "digikam_debug.h"
 
 namespace Marble {
 

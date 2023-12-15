@@ -6,6 +6,8 @@
 // Self
 #include "AbstractDataPluginModel.h"
 
+#include <cmath>
+
 // Qt
 #include <QUrl>
 #include <QTimer>
@@ -17,7 +19,6 @@
 #include <QMetaProperty>
 
 // Marble
-#include "digikam_debug.h"
 #include "AbstractDataPluginItem.h"
 #include "CacheStoragePolicy.h"
 #include "GeoDataCoordinates.h"
@@ -27,7 +28,7 @@
 #include "MarbleDirs.h"
 #include "ViewportParams.h"
 
-#include <cmath>
+#include "digikam_debug.h"
 
 namespace Marble
 {

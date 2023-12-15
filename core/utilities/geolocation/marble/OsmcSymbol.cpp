@@ -5,10 +5,11 @@
 
 #include "OsmcSymbol.h"
 
-#include "digikam_debug.h"
 #include <QDomDocument>
 #include <QFile>
 #include <QPainter>
+
+#include "digikam_debug.h"
 
 OsmcSymbol::OsmcSymbol(const QString &tag, int size)
     : m_wayColor(Qt::white)

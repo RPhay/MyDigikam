@@ -5,15 +5,15 @@
 //
 #include "Planet.h"
 
-#include "PlanetFactory.h"
-#include "digikam_debug.h"
-#include "MarbleGlobal.h"
-#include "MarbleColors.h"
-
-#include "solarsystem.h"
-
 #include <QDateTime>
 #include <QString>
+
+#include "PlanetFactory.h"
+#include "MarbleGlobal.h"
+#include "MarbleColors.h"
+#include "solarsystem.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

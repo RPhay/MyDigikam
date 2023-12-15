@@ -4,16 +4,16 @@
 
 #include "SunLocator.h"
 
+#include <cmath>
+
+#include <QDateTime>
+
 #include "MarbleGlobal.h"
 #include "MarbleClock.h"
 #include "Planet.h"
 #include "MarbleMath.h"
 
 #include "digikam_debug.h"
-
-#include <QDateTime>
-
-#include <cmath>
 
 namespace Marble
 {

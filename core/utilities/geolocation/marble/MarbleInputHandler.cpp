@@ -20,7 +20,6 @@
 
 #include "kineticmodel.h"
 #include "MarbleGlobal.h"
-#include "digikam_debug.h"
 #include "MarbleMap.h"
 #include "MarbleAbstractPresenter.h"
 #include "ViewportParams.h"
@@ -28,6 +27,8 @@
 #include "AbstractDataPluginItem.h"
 #include "AbstractProjection.h"
 #include "RenderPlugin.h"
+
+#include "digikam_debug.h"
 
 namespace Marble {
 

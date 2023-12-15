@@ -3,7 +3,9 @@
 // SPDX-FileCopyrightText: 2014 Levente Kurusa <levex@linux.com>
 
 #include "TreeViewDecoratorModel.h"
-#include "digikam_debug.h"
+
+#include <QImage>
+
 #include "GeoDataFolder.h"
 #include "GeoDataObject.h"
 #include "GeoDataContainer.h"
@@ -13,7 +15,7 @@
 #include "GeoDataGeometry.h"
 #include "MarblePlacemarkModel.h"
 
-#include <QImage>
+#include "digikam_debug.h"
 
 namespace Marble
 {

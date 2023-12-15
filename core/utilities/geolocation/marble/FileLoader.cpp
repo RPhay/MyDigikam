@@ -27,9 +27,10 @@
 #include "GeoDataTour.h"
 #include "GeoDataTrack.h"
 #include "MarbleDirs.h"
-#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "ParsingRunnerManager.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

@@ -4,9 +4,9 @@
 
 #include "DownloadQueueSet.h"
 
-#include "digikam_debug.h"
-
 #include "HttpJob.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

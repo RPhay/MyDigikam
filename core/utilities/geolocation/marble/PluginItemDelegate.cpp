@@ -6,10 +6,6 @@
 // Self
 #include "PluginItemDelegate.h"
 
-// Marble
-#include "RenderPluginModel.h"
-#include "digikam_debug.h"
-
 // Qt
 #include <QEvent>
 #include <QSize>
@@ -21,6 +17,11 @@
 #include <QPainter>
 
 #include <klocalizedstring.h>
+
+// Marble
+#include "RenderPluginModel.h"
+
+#include "digikam_debug.h"
 
 using namespace Marble;
 /* TRANSLATOR Marble::PluginItemDelegate */

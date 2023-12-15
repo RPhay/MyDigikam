@@ -4,13 +4,11 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-
 #include "ClipPainter.h"
 
 #include <cmath>
 
 #include "digikam_debug.h"
-
 
 namespace Marble
 {

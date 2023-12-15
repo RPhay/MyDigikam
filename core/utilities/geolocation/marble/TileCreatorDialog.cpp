@@ -4,19 +4,18 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-
 // Own
 #include "TileCreatorDialog.h"
+#include "ui_TileCreatorDialog.h"
 
 // Qt
 #include <QPushButton>
 #include <QTimer>
 
 // Marble
-#include "digikam_debug.h"
 #include "TileCreator.h"
 
-#include "ui_TileCreatorDialog.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {
