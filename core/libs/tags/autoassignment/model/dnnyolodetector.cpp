@@ -52,7 +52,7 @@ QList<QString> DNNYoloDetector::loadCOCOClass()
 {
     QList<QString> classList;
 
-    // NOTE storing all model definition at the same application path as face engine
+    // NOTE: storing all model definition at the same application path as face engine
 
     QString appPath     = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                  QLatin1String("digikam/facesengine"),
@@ -103,7 +103,7 @@ bool DNNYoloDetector::loadModels()
 
         case (YoloVersions::RESNET50):
         {
-            // Nothing to do here.
+            // NOTE: nothing to do here.
             break;
         }
     }
@@ -271,7 +271,7 @@ QHash<QString, QVector<QRect> > DNNYoloDetector::postprocess(const cv::Mat& inpu
         float* data    = (float*)out.data;
 
         // Calculate the size of the data array and number of outputs
-        // NOTE outsput is a cv::Mat vector of [1 x (250200 * 85)]
+        // NOTE: outsput is a cv::Mat vector of [1 x (250200 * 85)]
 
         size_t data_size = out.total() * out.channels();
         int rows         = data_size / 85;
@@ -357,9 +357,6 @@ QHash<QString, QVector<QRect> > DNNYoloDetector::postprocess(const cv::Mat& inpu
     return detectedBoxes;
 }
 
-/**
- * Get the names of the output layers
- */
 std::vector<cv::String> DNNYoloDetector::getOutputsNames() const
 {
     static std::vector<cv::String> names;

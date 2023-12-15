@@ -33,7 +33,11 @@ public:
 
     QList<QString>    getPredefinedClasses()                                                const           override;
     bool              loadModels();
-    QList<QString>    loadImageNetClass();    ///< load 80 predifined classes for object detection "..."
+
+    /**
+     * load 80 predefined classes for object detection "...".
+     */
+    QList<QString>    loadImageNetClass();
 
 public:
 

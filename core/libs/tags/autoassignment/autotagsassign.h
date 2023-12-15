@@ -36,7 +36,7 @@ enum DetectorModel
     YOLOV5XLARGE,
     RESNET50
 
-    // add here another model
+    // Add here another model.
 };
 
 class DIGIKAM_GUI_EXPORT AutoTagsAssign

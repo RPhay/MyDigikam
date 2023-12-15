@@ -40,7 +40,11 @@ public:
 
     QList<QString>    getPredefinedClasses()                                              const         override;
     bool              loadModels();
-    QList<QString>    loadCOCOClass();    ///< load 80 predifined classes for object detection "coco.names"
+
+    /**
+     * load 80 predefined classes for object detection "coco.names".
+     */
+    QList<QString>    loadCOCOClass();
 
 public:
 
