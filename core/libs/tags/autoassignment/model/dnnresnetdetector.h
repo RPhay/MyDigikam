@@ -42,6 +42,9 @@ public:
 
 private:
 
+    /**
+     * Get the names of the output layers
+     */
     std::vector<cv::String> getOutputsNames()                                               const;
 
     std::vector<cv::Mat> preprocess(const cv::Mat& inputImage);

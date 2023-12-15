@@ -35,7 +35,9 @@ namespace Digikam
 {
 
 DNNResnetDetector::DNNResnetDetector()
-    : DNNBaseDetectorModel(1.0F / 255.0F, cv::Scalar(0.0 ,0.0 ,0.0), cv::Size(224, 224))
+    : DNNBaseDetectorModel(1.0F / 255.0F,
+                           cv::Scalar(0.0 ,0.0 ,0.0),
+                           cv::Size(224, 224))
 {
     if (loadModels())
     {
@@ -152,14 +154,26 @@ QList<QHash<QString, QVector<QRect> > > DNNResnetDetector::detectObjects(const s
 
 std::vector<cv::Mat> DNNResnetDetector::preprocess(const cv::Mat& inputImage)
 {
-    cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
-    if (!net.empty())
+    try
     {
-        QMutexLocker lock(&mutex);
-        net.setInput(inputBlob);
-        net.forward(outs, getOutputsNames());
+        cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
+
+        if (!net.empty())
+        {
+            QMutexLocker lock(&mutex);
+            net.setInput(inputBlob);
+            net.forward(outs, getOutputsNames());
+        }
+    }
+    catch (cv::Exception& e)
+    {
+        qCWarning(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCWarning(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return outs;
@@ -167,21 +181,33 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const cv::Mat& inputImage)
 
 std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& inputBatchImages)
 {
-    cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
-    if (!net.empty())
+    try
     {
-        QMutexLocker lock(&mutex);
-        QElapsedTimer timer;
-        timer.start();
+        cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
 
-        net.setInput(inputBlob);
-        net.forward(outs, getOutputsNames());
+        if (!net.empty())
+        {
+            QMutexLocker lock(&mutex);
+            QElapsedTimer timer;
+            timer.start();
 
-        int elapsed = timer.elapsed();
+            net.setInput(inputBlob);
+            net.forward(outs, getOutputsNames());
 
-        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Batch forward (Inference) takes: " << elapsed << " ms";
+            int elapsed = timer.elapsed();
+
+            qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Batch forward (Inference) takes: " << elapsed << " ms";
+        }
+    }
+    catch (cv::Exception& e)
+    {
+        qCWarning(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCWarning(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return outs;
@@ -227,9 +253,6 @@ QHash<QString, QVector<QRect> > DNNResnetDetector::postprocess(const cv::Mat& /*
     return detectedBoxes;
 }
 
-/**
- * Get the names of the output layers
- */
 std::vector<cv::String> DNNResnetDetector::getOutputsNames() const
 {
     static std::vector<cv::String> names;
