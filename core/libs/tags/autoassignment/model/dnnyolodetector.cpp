@@ -173,14 +173,26 @@ QList<QHash<QString, QVector<QRect> > > DNNYoloDetector::detectObjects(const std
 
 std::vector<cv::Mat> DNNYoloDetector::preprocess(const cv::Mat& inputImage)
 {
-    cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
-    if (!net.empty())
+    try
     {
-        QMutexLocker lock(&mutex);
-        net.setInput(inputBlob);
-        net.forward(outs, getOutputsNames());
+        cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
+
+        if (!net.empty())
+        {
+            QMutexLocker lock(&mutex);
+            net.setInput(inputBlob);
+            net.forward(outs, getOutputsNames());
+        }
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return outs;
@@ -188,21 +200,33 @@ std::vector<cv::Mat> DNNYoloDetector::preprocess(const cv::Mat& inputImage)
 
 std::vector<cv::Mat> DNNYoloDetector::preprocess(const std::vector<cv::Mat>& inputBatchImages)
 {
-    cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
-    if (!net.empty())
+    try
     {
-        QMutexLocker lock(&mutex);
-        QElapsedTimer timer;
-        timer.start();
+        cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
 
-        net.setInput(inputBlob);
-        net.forward(outs, getOutputsNames());
+        if (!net.empty())
+        {
+            QMutexLocker lock(&mutex);
+            QElapsedTimer timer;
+            timer.start();
 
-        int elapsed = timer.elapsed();
+            net.setInput(inputBlob);
+            net.forward(outs, getOutputsNames());
 
-        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Batch forward (Inference) takes: " << elapsed << " ms";
+            int elapsed = timer.elapsed();
+
+            qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Batch forward (Inference) takes: " << elapsed << " ms";
+        }
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return outs;
@@ -240,83 +264,94 @@ QHash<QString, QVector<QRect> > DNNYoloDetector::postprocess(const cv::Mat& inpu
     std::vector<float>    confidences;
     std::vector<cv::Rect> boxes;
 
-    float x_factor = float(inputImage.cols) / float(inputImageSize.width);
-    float y_factor = float(inputImage.rows) / float(inputImageSize.height);
-    float* data    = (float*)out.data;
-
-    // Calculate the size of the data array and number of outputs
-    // NOTE outsput is a cv::Mat vector of [1 x (250200 * 85)]
-
-    size_t data_size = out.total() * out.channels();
-    int rows         = data_size / 85;
-
-    for (int i = 0 ; i < rows ; ++i)
+    try
     {
-        float confidence = data[4];
+        float x_factor = float(inputImage.cols) / float(inputImageSize.width);
+        float y_factor = float(inputImage.rows) / float(inputImageSize.height);
+        float* data    = (float*)out.data;
 
-        // Discard bad detections and continue.
+        // Calculate the size of the data array and number of outputs
+        // NOTE outsput is a cv::Mat vector of [1 x (250200 * 85)]
 
-        if (confidence >= confidenceThreshold)
+        size_t data_size = out.total() * out.channels();
+        int rows         = data_size / 85;
+
+        for (int i = 0 ; i < rows ; ++i)
         {
-            float* const classes_scores = data + 5;
+            float confidence = data[4];
 
-            // Create a 1x85 Mat and store class scores of 80 classes.
+            // Discard bad detections and continue.
 
-            cv::Mat scores(1, predefinedClasses.size(), CV_32FC1, classes_scores);
-
-            // Perform minMaxLoc and acquire the index of best class score.
-
-            cv::Point class_id;
-            double max_class_score = 0.0;
-            cv::minMaxLoc(scores, 0, &max_class_score, 0, &class_id);
-
-            // Continue if the class score is above the threshold.
-
-            if (max_class_score > scoreThreshold)
+            if (confidence >= confidenceThreshold)
             {
-                // Store class ID and confidence in the pre-defined respective vectors.
+                float* const classes_scores = data + 5;
 
-                confidences.push_back(confidence);
-                class_ids.push_back(class_id.x);
+                // Create a 1x85 Mat and store class scores of 80 classes.
 
-                // Center.
+                cv::Mat scores(1, predefinedClasses.size(), CV_32FC1, classes_scores);
 
-                float centerX = data[0];
-                float centerY = data[1];
+                // Perform minMaxLoc and acquire the index of best class score.
 
-                // Box dimension.
+                cv::Point class_id;
+                double max_class_score = 0.0;
+                cv::minMaxLoc(scores, 0, &max_class_score, 0, &class_id);
 
-                float w      = data[2];
-                float h      = data[3];
+                // Continue if the class score is above the threshold.
 
-                // Bounding box coordinates.
+                if (max_class_score > scoreThreshold)
+                {
+                    // Store class ID and confidence in the pre-defined respective vectors.
 
-                int left     = int((centerX - 0.5 * w) * x_factor);
-                int top      = int((centerY - 0.5 * h) * y_factor);
-                int width    = int(w                   * x_factor);
-                int height   = int(h                   * y_factor);
+                    confidences.push_back(confidence);
+                    class_ids.push_back(class_id.x);
 
-                // Store good detections in the boxes vector.
+                    // Center.
 
-                boxes.push_back(cv::Rect(left, top, width, height));
+                    float centerX = data[0];
+                    float centerY = data[1];
+
+                    // Box dimension.
+
+                    float w      = data[2];
+                    float h      = data[3];
+
+                    // Bounding box coordinates.
+
+                    int left     = int((centerX - 0.5 * w) * x_factor);
+                    int top      = int((centerY - 0.5 * h) * y_factor);
+                    int width    = int(w                   * x_factor);
+                    int height   = int(h                   * y_factor);
+
+                    // Store good detections in the boxes vector.
+
+                    boxes.push_back(cv::Rect(left, top, width, height));
+                }
             }
+
+            // Jump to the next row.
+
+            data += 85;
         }
 
-        // Jump to the next row.
+        // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences
 
-        data += 85;
+        std::vector<int> indices;
+        cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
+
+        for (const auto& id : indices)
+        {
+            cv::Rect bbox = boxes[id];
+            QString label = predefinedClasses[class_ids[id]];
+            detectedBoxes[label].push_back(QRect(bbox.x, bbox.y, bbox.width, bbox.height));
+        }
     }
-
-    // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences
-
-    std::vector<int> indices;
-    cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
-
-    for (const auto& id : indices)
+    catch (cv::Exception& e)
     {
-        cv::Rect bbox = boxes[id];
-        QString label = predefinedClasses[class_ids[id]];
-        detectedBoxes[label].push_back(QRect(bbox.x, bbox.y, bbox.width, bbox.height));
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return detectedBoxes;
