@@ -7,7 +7,10 @@
 
 #include "ReverseGeocodingRunnerManager.h"
 
-#include "digikam_debug.h"
+#include <QList>
+#include <QThreadPool>
+#include <QTimer>
+
 #include "MarbleModel.h"
 #include "GeoDataCoordinates.h"
 #include "GeoDataPlacemark.h"
@@ -16,9 +19,7 @@
 #include "ReverseGeocodingRunnerPlugin.h"
 #include "RunnerTask.h"
 
-#include <QList>
-#include <QThreadPool>
-#include <QTimer>
+#include "digikam_debug.h"
 
 namespace Marble
 {

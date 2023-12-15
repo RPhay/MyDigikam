@@ -9,17 +9,17 @@
 // Self
 #include "RenderPlugin.h"
 
-// Marble
-#include "DialogConfigurationInterface.h"
-#include "MarbleModel.h"
-#include "digikam_debug.h"
-#include "RenderPluginModel.h"
-#include "RenderState.h"
-
 // Qt
 #include <QAction>
 #include <QStandardItem>
 
+// Marble
+#include "DialogConfigurationInterface.h"
+#include "MarbleModel.h"
+#include "RenderPluginModel.h"
+#include "RenderState.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

@@ -5,6 +5,15 @@
 //
 
 #include "BookmarkManagerDialog.h"
+
+#include <QPointer>
+#include <QFile>
+#include <QSortFilterProxyModel>
+#include <QFileDialog>
+#include <QMessageBox>
+
+#include <klocalizedstring.h>
+
 #include "BookmarkManager.h"
 #include "BookmarkManager_p.h"
 #include "BranchFilterProxyModel.h"
@@ -23,19 +32,12 @@
 #include "GeoDataTypes.h"
 #include "GeoDataDocumentWriter.h"
 #include "MarbleDirs.h"
-#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "NewBookmarkFolderDialog.h"
 #include "MarblePlacemarkModel.h"
-#include <KmlElementDictionary.h>
+#include "KmlElementDictionary.h"
 
-#include <QPointer>
-#include <QFile>
-#include <QSortFilterProxyModel>
-#include <QFileDialog>
-#include <QMessageBox>
-
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble {
 

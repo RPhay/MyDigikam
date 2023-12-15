@@ -6,7 +6,6 @@
 
 #include "RunnerTask.h"
 
-#include "digikam_debug.h"
 #include "ParsingRunner.h"
 #include "ParsingRunnerManager.h"
 #include "SearchRunner.h"
@@ -16,6 +15,8 @@
 #include "RoutingRunner.h"
 #include "RoutingRunnerManager.h"
 #include "RouteRequest.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

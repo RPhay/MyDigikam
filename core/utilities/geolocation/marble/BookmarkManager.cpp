@@ -6,6 +6,11 @@
 
 #include "BookmarkManager.h"
 #include "BookmarkManager_p.h"
+
+#include <QFile>
+
+#include <klocalizedstring.h>
+
 #include "GeoDataParser.h"
 #include "GeoDataContainer.h"
 #include "GeoDataDocument.h"
@@ -15,12 +20,10 @@
 #include "GeoDataDocumentWriter.h"
 #include "GeoDataIconStyle.h"
 #include "KmlElementDictionary.h"
-#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "StyleBuilder.h"
-#include <QFile>
 
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

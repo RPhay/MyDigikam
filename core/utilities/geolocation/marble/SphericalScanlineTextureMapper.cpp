@@ -14,7 +14,6 @@
 
 #include "GeoPainter.h"
 #include "GeoDataPolygon.h"
-#include "digikam_debug.h"
 #include "Quaternion.h"
 #include "ScanlineTextureMapperContext.h"
 #include "StackedTileLoader.h"
@@ -23,6 +22,7 @@
 #include "ViewportParams.h"
 #include "MathHelper.h"
 
+#include "digikam_debug.h"
 
 using namespace Marble;
 

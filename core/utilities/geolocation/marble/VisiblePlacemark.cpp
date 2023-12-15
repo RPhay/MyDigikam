@@ -4,22 +4,21 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
+#include <QApplication>
+#include <QPainter>
+#include <QPainterPath>
+#include <QPalette>
+#include <QPixmapCache>
+
 #include "VisiblePlacemark.h"
-
-#include "digikam_debug.h"
 #include "RemoteIconLoader.h"
-
 #include "GeoDataPlacemark.h"
 #include "GeoDataStyle.h"
 #include "GeoDataIconStyle.h"
 #include "GeoDataLabelStyle.h"
 #include "PlacemarkLayer.h"
 
-#include <QApplication>
-#include <QPainter>
-#include <QPainterPath>
-#include <QPalette>
-#include <QPixmapCache>
+#include "digikam_debug.h"
 
 using namespace Marble;
 

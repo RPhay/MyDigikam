@@ -7,6 +7,8 @@
 
 #include "PositionTracking.h"
 
+#include <QFile>
+
 #include "GeoDataDocument.h"
 #include "GeoDataMultiTrack.h"
 #include "GeoDataPlacemark.h"
@@ -22,11 +24,10 @@
 #include "KmlElementDictionary.h"
 #include "FileManager.h"
 #include "MarbleColors.h"
-#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "PositionProviderPlugin.h"
 
-#include <QFile>
+#include "digikam_debug.h"
 
 namespace Marble
 {

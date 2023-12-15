@@ -24,8 +24,9 @@
 #include <QDateTime>
 #include <QTimer>
 
+#include <klocalizedstring.h>
+
 // Marble
-#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "MarblePluginSettingsWidget.h"
 #include "MarbleWidget.h"
@@ -37,7 +38,7 @@
 #include "BookmarkSyncManager.h"
 #include "CloudSyncManager.h"
 
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

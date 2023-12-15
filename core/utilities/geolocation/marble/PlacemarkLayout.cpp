@@ -22,8 +22,6 @@
 #include "GeoDataIconStyle.h"
 #include "GeoDataLabelStyle.h"
 #include "OsmPlacemarkData.h"
-
-#include "digikam_debug.h"
 #include "MarbleGlobal.h"
 #include "PlacemarkLayer.h"
 #include "MarbleClock.h"
@@ -34,7 +32,9 @@
 #include "TileCoordsPyramid.h"
 #include "VisiblePlacemark.h"
 #include "MathHelper.h"
-#include <StyleBuilder.h>
+#include "StyleBuilder.h"
+
+#include "digikam_debug.h"
 
 namespace
 {   //Helper function that checks for available room for the label

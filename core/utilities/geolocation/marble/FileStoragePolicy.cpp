@@ -14,9 +14,10 @@
 #include <QFileInfo>
 
 // Marble
-#include "digikam_debug.h"
 #include "MarbleGlobal.h"
 #include "MarbleDirs.h"
+
+#include "digikam_debug.h"
 
 using namespace Marble;
 

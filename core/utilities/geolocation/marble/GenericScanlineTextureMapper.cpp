@@ -16,7 +16,6 @@
 // Marble
 #include "GeoPainter.h"
 #include "MarbleDirs.h"
-#include "digikam_debug.h"
 #include "ScanlineTextureMapperContext.h"
 #include "StackedTileLoader.h"
 #include "TextureColorizer.h"
@@ -24,6 +23,8 @@
 #include "ViewportParams.h"
 #include "MathHelper.h"
 #include "AbstractProjection.h"
+
+#include "digikam_debug.h"
 
 using namespace Marble;
 

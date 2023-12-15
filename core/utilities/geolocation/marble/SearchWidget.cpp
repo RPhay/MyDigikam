@@ -5,6 +5,12 @@
 
 #include "SearchWidget.h"
 
+#include <QListView>
+#include <QVBoxLayout>
+#include <QElapsedTimer>
+
+#include <klocalizedstring.h>
+
 #include "GeoDataPlacemark.h"
 #include "GeoDataLatLonAltBox.h"
 #include "GeoDataDocument.h"
@@ -16,13 +22,8 @@
 #include "MarblePlacemarkModel.h"
 #include "SearchRunnerManager.h"
 #include "ViewportParams.h"
+
 #include "digikam_debug.h"
-
-#include <QListView>
-#include <QVBoxLayout>
-#include <QElapsedTimer>
-
-#include <klocalizedstring.h>
 
 namespace Marble {
 

@@ -5,14 +5,15 @@
 
 #include "MarblePhysics.h"
 
+#include <QTimeLine>
+
 #include "Quaternion.h"
 #include "MarbleAbstractPresenter.h"
 #include "GeoDataLookAt.h"
-#include "digikam_debug.h"
 #include "GeoDataLineString.h"
 #include "ViewportParams.h"
 
-#include <QTimeLine>
+#include "digikam_debug.h"
 
 namespace Marble
 {

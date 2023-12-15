@@ -6,15 +6,16 @@
 // self
 #include "AbstractDataPluginItem.h"
 
-// Marble
-#include "GeoDataCoordinates.h"
-#include "ViewportParams.h"
-#include "digikam_debug.h"
-
 // Qt
 #include <QAction>
 #include <QRect>
 #include <QSize>
+
+// Marble
+#include "GeoDataCoordinates.h"
+#include "ViewportParams.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

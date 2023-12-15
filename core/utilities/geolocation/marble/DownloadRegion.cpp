@@ -8,7 +8,6 @@
 #include "MarbleModel.h"
 #include "MarbleMap.h"
 #include "MarbleMath.h"
-#include "digikam_debug.h"
 #include "TextureLayer.h"
 #include "GeoDataLatLonAltBox.h"
 #include "GeoDataLineString.h"
@@ -18,6 +17,8 @@
 #include "GeoSceneTileDataset.h"
 #include "GeoSceneAbstractTileProjection.h"
 #include "TileCoordsPyramid.h"
+
+#include "digikam_debug.h"
 
 namespace Marble {
 

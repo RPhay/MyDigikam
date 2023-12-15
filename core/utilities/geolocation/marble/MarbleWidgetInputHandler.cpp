@@ -22,9 +22,7 @@
 
 #endif
 
-
 #include "MarbleGlobal.h"
-#include "digikam_debug.h"
 #include "MarbleWidget.h"
 #include "MarbleMap.h"
 #include "ViewportParams.h"
@@ -34,6 +32,8 @@
 #include "PopupLayer.h"
 #include "RenderPlugin.h"
 #include "RoutingLayer.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

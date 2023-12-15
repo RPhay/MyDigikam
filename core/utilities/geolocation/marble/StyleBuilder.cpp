@@ -8,6 +8,13 @@
 
 #include "StyleBuilder.h"
 
+#include <QApplication>
+#include <QFont>
+#include <QImage>
+#include <QDate>
+#include <QSet>
+#include <QScreen>
+
 #include "MarbleDirs.h"
 #include "OsmPlacemarkData.h"
 #include "OsmcSymbol.h"
@@ -22,12 +29,6 @@
 #include "GeoDataLineStyle.h"
 #include "GeoDataPolyStyle.h"
 
-#include <QApplication>
-#include <QFont>
-#include <QImage>
-#include <QDate>
-#include <QSet>
-#include <QScreen>
 #include "digikam_debug.h"
 
 namespace Marble

@@ -9,18 +9,18 @@
 
 #include "StackedTileLoader.h"
 
-#include "digikam_debug.h"
+#include <QCache>
+#include <QHash>
+#include <QReadWriteLock>
+#include <QImage>
+
 #include "MergedLayerDecorator.h"
 #include "StackedTile.h"
 #include "TileLoader.h"
 #include "TileLoaderHelper.h"
 #include "MarbleGlobal.h"
 
-#include <QCache>
-#include <QHash>
-#include <QReadWriteLock>
-#include <QImage>
-
+#include "digikam_debug.h"
 
 namespace Marble
 {

@@ -10,9 +10,10 @@
 // Qt
 #include <QMessageBox>
 #include <QPushButton>
-#include "digikam_debug.h"
 
 #include <klocalizedstring.h>
+
+#include "digikam_debug.h"
 
 namespace Marble {
 

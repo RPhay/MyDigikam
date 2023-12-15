@@ -7,9 +7,9 @@
 #include "LatLonEdit.h"
 #include "ui_LatLonEdit.h"
 
-#include "digikam_debug.h"
-
 #include <klocalizedstring.h>
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

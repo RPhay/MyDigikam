@@ -7,16 +7,17 @@
 
 #include "VectorTileModel.h"
 
+#include <qmath.h>
+#include <QThreadPool>
+
 #include "GeoDataDocument.h"
 #include "GeoDataTreeModel.h"
 #include "GeoSceneVectorTileDataset.h"
 #include "MarbleGlobal.h"
-#include "digikam_debug.h"
 #include "MathHelper.h"
 #include "TileLoader.h"
 
-#include <qmath.h>
-#include <QThreadPool>
+#include "digikam_debug.h"
 
 namespace Marble
 {

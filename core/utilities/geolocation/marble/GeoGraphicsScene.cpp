@@ -5,6 +5,9 @@
 
 #include "GeoGraphicsScene.h"
 
+#include <QMap>
+#include <QRect>
+
 #include "GeoDataFeature.h"
 #include "GeoDataLatLonAltBox.h"
 #include "GeoDataStyle.h"
@@ -14,10 +17,8 @@
 #include "GeoGraphicsItem.h"
 #include "TileId.h"
 #include "TileCoordsPyramid.h"
-#include "digikam_debug.h"
 
-#include <QMap>
-#include <QRect>
+#include "digikam_debug.h"
 
 namespace Marble
 {

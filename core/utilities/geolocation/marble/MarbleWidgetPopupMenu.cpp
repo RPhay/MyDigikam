@@ -9,6 +9,18 @@
 // Self
 #include "MarbleWidgetPopupMenu.h"
 
+// Qt
+#include <QApplication>
+#include <QFile>
+#include <QMimeData>
+#include <QPointer>
+#include <QAction>
+#include <QClipboard>
+#include <QMenu>
+#include <QMessageBox>
+
+#include <klocalizedstring.h>
+
 // Marble
 #include "AbstractDataPluginItem.h"
 #include "AbstractFloatItem.h"
@@ -29,7 +41,6 @@
 #include "GeoSceneDocument.h"
 #include "GeoSceneHead.h"
 #include "MarbleClock.h"
-#include "digikam_debug.h"
 #include "PopupLayer.h"
 #include "Planet.h"
 #include "RoutingManager.h"
@@ -42,17 +53,7 @@
 #include "OsmPlacemarkData.h"
 #include "StyleBuilder.h"
 
-// Qt
-#include <QApplication>
-#include <QFile>
-#include <QMimeData>
-#include <QPointer>
-#include <QAction>
-#include <QClipboard>
-#include <QMenu>
-#include <QMessageBox>
-
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble {
 /* TRANSLATOR Marble::MarbleWidgetPopupMenu */

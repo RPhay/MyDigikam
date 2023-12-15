@@ -7,8 +7,10 @@
 
 #include "RoutingRunnerManager.h"
 
+#include <QThreadPool>
+#include <QTimer>
+
 #include "MarblePlacemarkModel.h"
-#include "digikam_debug.h"
 #include "MarbleModel.h"
 #include "Planet.h"
 #include "GeoDataDocument.h"
@@ -18,8 +20,7 @@
 #include "RouteRequest.h"
 #include "RoutingProfilesModel.h"
 
-#include <QThreadPool>
-#include <QTimer>
+#include "digikam_debug.h"
 
 namespace Marble
 {

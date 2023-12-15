@@ -7,6 +7,10 @@
 
 #include "MergedLayerDecorator.h"
 
+#include <QPointer>
+#include <QPainter>
+#include <QPainterPath>
+
 #include "Blending.h"
 #include "BlendingFactory.h"
 #include "SunLocator.h"
@@ -19,12 +23,7 @@
 #include "TextureTile.h"
 #include "TileLoader.h"
 #include "RenderState.h"
-
 #include "GeoDataCoordinates.h"
-
-#include <QPointer>
-#include <QPainter>
-#include <QPainterPath>
 
 #include "digikam_debug.h"
 

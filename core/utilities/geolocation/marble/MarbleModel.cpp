@@ -20,10 +20,7 @@
 #include <QTextDocument>
 
 #include "kdescendantsproxymodel.h"
-
 #include "MapThemeManager.h"
-#include "digikam_debug.h"
-
 #include "GeoSceneDocument.h"
 #include "GeoSceneGeodata.h"
 #include "GeoSceneHead.h"
@@ -32,7 +29,6 @@
 #include "GeoScenePalette.h"
 #include "GeoSceneTileDataset.h"
 #include "GeoSceneVector.h"
-
 #include "GeoDataDocument.h"
 #include "GeoDataFeature.h"
 #include "GeoDataPlacemark.h"
@@ -43,7 +39,6 @@
 #include "GeoDataLineStyle.h"
 #include "GeoDataPolyStyle.h"
 #include "GeoDataTypes.h"
-
 #include "DgmlAuxillaryDictionary.h"
 #include "MarbleClock.h"
 #include "FileStoragePolicy.h"
@@ -66,6 +61,8 @@
 #include "RouteSimulationPositionProviderPlugin.h"
 #include "BookmarkManager.h"
 #include "ElevationModel.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

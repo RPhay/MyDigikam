@@ -11,11 +11,13 @@
 
 #include "MarbleZipReader.h"
 #include "MarbleZipWriter.h"
+
 #include <QDateTime>
 #include <qplatformdefs.h>
 #include <qendian.h>
-#include "digikam_debug.h"
 #include <QDir>
+
+#include "digikam_debug.h"
 
 #include <zlib.h>
 

@@ -6,7 +6,6 @@
 
 #include "MovieCapture.h"
 #include "MarbleWidget.h"
-#include "digikam_debug.h"
 
 #include <QProcess>
 #include <QMessageBox>
@@ -15,6 +14,8 @@
 #include <QFile>
 
 #include <klocalizedstring.h>
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

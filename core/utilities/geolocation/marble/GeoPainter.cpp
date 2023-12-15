@@ -12,17 +12,16 @@
 #include <QRegion>
 #include <qmath.h>
 
-#include "digikam_debug.h"
-
 #include "GeoDataCoordinates.h"
 #include "GeoDataLatLonAltBox.h"
 #include "GeoDataLineString.h"
 #include "GeoDataLinearRing.h"
 #include "GeoDataPoint.h"
 #include "GeoDataPolygon.h"
-
 #include "ViewportParams.h"
 #include "AbstractProjection.h"
+
+#include "digikam_debug.h"
 
 // #define MARBLE_DEBUG
 

@@ -19,12 +19,13 @@
 #include "GeoSceneVectorTileDataset.h"
 #include "GeoDataDocument.h"
 #include "HttpDownloadManager.h"
-#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "TileId.h"
 #include "TileLoaderHelper.h"
 #include "ParseRunnerPlugin.h"
 #include "ParsingRunner.h"
+
+#include "digikam_debug.h"
 
 Q_DECLARE_METATYPE( Marble::DownloadUsage )
 

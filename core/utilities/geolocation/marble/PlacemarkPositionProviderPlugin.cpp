@@ -6,14 +6,15 @@
 
 #include "PlacemarkPositionProviderPlugin.h"
 
-#include "GeoDataPlacemark.h"
-#include "MarbleClock.h"
-#include "MarbleModel.h"
-#include "digikam_debug.h"
-
 #include <QIcon>
 
 #include <klocalizedstring.h>
+
+#include "GeoDataPlacemark.h"
+#include "MarbleClock.h"
+#include "MarbleModel.h"
+
+#include "digikam_debug.h"
 
 using namespace Marble;
 

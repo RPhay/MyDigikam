@@ -6,9 +6,10 @@
 */
 
 #include "TextureTile.h"
-#include "digikam_debug.h"
 
 #include <limits>
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

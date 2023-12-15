@@ -5,10 +5,6 @@
 
 #include "NewstuffModel.h"
 
-#include "digikam_debug.h"
-#include "MarbleDirs.h"
-#include "MarbleZipReader.h"
-
 #include <QUrl>
 #include <QVector>
 #include <QTemporaryFile>
@@ -25,6 +21,11 @@
 #include <QDomDocument>
 
 #include <klocalizedstring.h>
+
+#include "MarbleDirs.h"
+#include "MarbleZipReader.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

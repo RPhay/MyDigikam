@@ -16,7 +16,6 @@
 #include <QPainter>
 
 #include "GeoPainter.h"
-#include "digikam_debug.h"
 #include "ViewParams.h"
 #include "ViewportParams.h"
 #include "MathHelper.h"
@@ -25,6 +24,8 @@
 #include "GeoDataFeature.h"
 #include "GeoDataPlacemark.h"
 #include "AbstractProjection.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

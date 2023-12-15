@@ -3,12 +3,13 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-// Self
-#include "AbstractWorkerThread.h"
-#include "digikam_debug.h"
-
 // Qt
 #include <QMutex>
+
+// Self
+#include "AbstractWorkerThread.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

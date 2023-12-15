@@ -4,9 +4,11 @@
 // SPDX-FileCopyrightText: 2008 Jens-Michael Hoffmann <jensmh@gmx.de>
 //
 
-
 // Own
 #include "MapThemeManager.h"
+
+// Std
+#include <limits>
 
 // Qt
 #include <QDir>
@@ -33,13 +35,11 @@
 #include "GeoSceneProperty.h"
 #include "GeoSceneZoom.h"
 #include "GeoSceneSettings.h"
-#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "Planet.h"
 #include "PlanetFactory.h"
 
-// Std
-#include <limits>
+#include "digikam_debug.h"
 
 namespace
 {

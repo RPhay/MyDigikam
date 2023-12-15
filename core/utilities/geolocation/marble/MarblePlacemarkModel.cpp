@@ -14,13 +14,14 @@
 #include <QImage>
 
 // Marble
-#include "digikam_debug.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataExtendedData.h"
 #include "GeoDataData.h"
 #include "GeoDataGeometry.h"
 #include "GeoDataStyle.h"       // In geodata/data/
 #include "GeoDataIconStyle.h"
+
+#include "digikam_debug.h"
 
 using namespace Marble;
 

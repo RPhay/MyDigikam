@@ -14,6 +14,8 @@
 #include <QList>
 #include <QItemSelectionModel>
 
+#include <klocalizedstring.h>
+
 // Marble
 #include "GeoDataObject.h"
 #include "GeoDataDocument.h"
@@ -35,10 +37,9 @@
 #include "GeoDataIconStyle.h"
 #include "GeoDataListStyle.h"
 #include "FileManager.h"
-#include "digikam_debug.h"
 #include "MarblePlacemarkModel.h"
 
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 using namespace Marble;
 
