@@ -10,7 +10,9 @@
 #include "SphericalProjection.h"
 #include "AbstractProjection_p.h"
 
-#include "digikam_debug.h"
+#include <QIcon>
+
+#include <klocalizedstring.h>
 
 // Marble
 #include "ViewportParams.h"
@@ -20,9 +22,7 @@
 #include "MarbleGlobal.h"
 #include "AzimuthalProjection_p.h"
 
-#include <QIcon>
-
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 #define SAFE_DISTANCE
 

@@ -7,17 +7,18 @@
 #include "OsmRelationManagerWidget_p.h"
 #include "OsmRelationManagerWidget.h"
 
-// Marble
-#include "GeoDataPlacemark.h"
-#include "GeoDataStyle.h"
-#include "OsmPlacemarkData.h"
-#include "digikam_debug.h"
-
 // Qt
 #include <QTreeWidget>
 #include <QMenu>
 
 #include <klocalizedstring.h>
+
+// Marble
+#include "GeoDataPlacemark.h"
+#include "GeoDataStyle.h"
+#include "OsmPlacemarkData.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

@@ -7,11 +7,12 @@
 #define MARBLE_SCREENGRAPHICSITEMPRIVATE_H
 
 #include "MarbleGraphicsItem_p.h"
-#include "digikam_debug.h"
 
 #include "BillboardGraphicsItem.h"
 #include "ScreenGraphicsItem.h"
 #include "ViewportParams.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

@@ -10,14 +10,15 @@
 
 // Qt
 #include <QTreeWidget>
-#include "digikam_debug.h"
+
+#include <klocalizedstring.h>
 
 // Marble
 #include "GeoDataPlacemark.h"
 #include "GeoDataGeometry.h"
 #include "OsmPlacemarkData.h"
 
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

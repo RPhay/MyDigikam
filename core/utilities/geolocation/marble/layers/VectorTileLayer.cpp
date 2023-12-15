@@ -18,7 +18,6 @@
 #include "GeoSceneTypes.h"
 #include "GeoSceneVectorTileDataset.h"
 #include "GeoSceneAbstractTileProjection.h"
-#include "digikam_debug.h"
 #include "TileLoader.h"
 #include "ViewportParams.h"
 #include "RenderState.h"
@@ -26,6 +25,8 @@
 #include "GeoDataLatLonAltBox.h"
 #include "HttpDownloadManager.h"
 #include "TileLoaderHelper.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

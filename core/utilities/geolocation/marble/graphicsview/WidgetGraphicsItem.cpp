@@ -7,15 +7,16 @@
 #include "WidgetGraphicsItem.h"
 #include "WidgetGraphicsItem_p.h"
 
-// Marble
-#include "MarbleWidget.h"
-#include "digikam_debug.h"
-
 // Qt
 #include <QApplication>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QWidget>
+
+// Marble
+#include "MarbleWidget.h"
+
+#include "digikam_debug.h"
 
 using namespace Marble;
 

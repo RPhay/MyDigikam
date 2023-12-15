@@ -6,15 +6,16 @@
 // Self
 #include "MarbleGraphicsGridLayout.h"
 
-// Marble
-#include "digikam_debug.h"
-#include "ScreenGraphicsItem.h"
-
 // Qt
 #include <QHash>
 #include <QRectF>
 #include <QSizeF>
 #include <QVector>
+
+// Marble
+#include "ScreenGraphicsItem.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

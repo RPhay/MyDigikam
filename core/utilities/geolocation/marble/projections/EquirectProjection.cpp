@@ -4,9 +4,12 @@
 // SPDX-FileCopyrightText: 2007-2008 Inge Wallin <ingwa@kde.org>
 //
 
-
 // Local
 #include "EquirectProjection.h"
+
+#include <QIcon>
+
+#include <klocalizedstring.h>
 
 // Marble
 #include "ViewportParams.h"
@@ -14,12 +17,7 @@
 
 #include "digikam_debug.h"
 
-#include <QIcon>
-
-#include <klocalizedstring.h>
-
 using namespace Marble;
-
 
 EquirectProjection::EquirectProjection()
     : CylindricalProjection()

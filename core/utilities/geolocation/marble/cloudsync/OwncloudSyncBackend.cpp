@@ -5,9 +5,19 @@
 
 #include "OwncloudSyncBackend.h"
 
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QFileInfo>
+#include <QBuffer>
+#include <QDir>
+
+#include <klocalizedstring.h>
+
 #include "MarbleDirs.h"
 #include "MarbleModel.h"
-#include "digikam_debug.h"
 #include "GeoDocument.h"
 #include "MarbleWidget.h"
 #include "RenderPlugin.h"
@@ -24,16 +34,7 @@
 #include "GeoDataExtendedData.h"
 #include "GeoDataData.h"
 
-#include <QNetworkAccessManager>
-#include <QNetworkRequest>
-#include <QJsonDocument>
-#include <QJsonArray>
-#include <QJsonObject>
-#include <QFileInfo>
-#include <QBuffer>
-#include <QDir>
-
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

@@ -7,10 +7,8 @@
 
 // Local
 #include "AbstractProjection.h"
-
 #include "AbstractProjection_p.h"
 
-#include "digikam_debug.h"
 #include <QRegion>
 #include <QPainterPath>
 
@@ -19,6 +17,8 @@
 #include "GeoDataLinearRing.h"
 #include "GeoDataLatLonAltBox.h"
 #include "ViewportParams.h"
+
+#include "digikam_debug.h"
 
 using namespace Marble;
 

@@ -5,9 +5,18 @@
 
 #include "BookmarkSyncManager.h"
 
+#include <QFile>
+#include <QBuffer>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QTimer>
+
+#include <klocalizedstring.h>
+
 #include "GeoWriter.h"
 #include "MarbleDirs.h"
-#include "digikam_debug.h"
 #include "GeoDataParser.h"
 #include "GeoDataFolder.h"
 #include "GeoDataDocument.h"
@@ -18,15 +27,7 @@
 #include "MarbleModel.h"
 #include "BookmarkManager.h"
 
-#include <QFile>
-#include <QBuffer>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
-#include <QTimer>
-
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble {
 

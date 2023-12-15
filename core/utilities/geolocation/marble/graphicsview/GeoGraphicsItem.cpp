@@ -7,12 +7,12 @@
 #include "GeoGraphicsItem.h"
 #include "GeoGraphicsItem_p.h"
 
+// Qt
+#include <QColor>
+
 #include "GeoDataPlacemark.h"
 
-// Qt
 #include "digikam_debug.h"
-
-#include <QColor>
 
 using namespace Marble;
 

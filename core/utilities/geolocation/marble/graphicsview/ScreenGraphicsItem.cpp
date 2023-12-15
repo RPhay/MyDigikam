@@ -7,13 +7,13 @@
 #include "ScreenGraphicsItem.h"
 #include "ScreenGraphicsItem_p.h"
 
-// Marble
-#include "digikam_debug.h"
-#include "MarbleWidget.h"
-
 // Qt
 #include <QMouseEvent>
 
+// Marble
+#include "MarbleWidget.h"
+
+#include "digikam_debug.h"
 
 using namespace Marble;
 

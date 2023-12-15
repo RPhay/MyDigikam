@@ -7,9 +7,6 @@
 #include "FrameGraphicsItem.h"
 #include "FrameGraphicsItem_p.h"
 
-// Marble
-#include "digikam_debug.h"
-
 // Qt
 #include <QSizeF>
 #include <QPainter>
@@ -17,6 +14,9 @@
 #include <QPixmapCache>
 #include <QMargins>
 #include <qdrawutil.h>
+
+// Marble
+#include "digikam_debug.h"
 
 using namespace Marble;
 

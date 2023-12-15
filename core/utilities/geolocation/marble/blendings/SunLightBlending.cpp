@@ -4,16 +4,17 @@
 
 #include "SunLightBlending.h"
 
-#include "digikam_debug.h"
+#include <cmath>
+
+#include <QImage>
+#include <QColor>
+
 #include "SunLocator.h"
 #include "TextureTile.h"
 #include "TileLoaderHelper.h"
 #include "MarbleGlobal.h"
 
-#include <QImage>
-#include <QColor>
-
-#include <cmath>
+#include "digikam_debug.h"
 
 namespace Marble
 {

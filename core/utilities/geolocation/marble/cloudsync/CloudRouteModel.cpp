@@ -5,11 +5,6 @@
 
 #include "CloudRouteModel.h"
 
-#include "RouteItem.h"
-
-#include "digikam_debug.h"
-#include "MarbleDirs.h"
-
 #include <QIcon>
 #include <QUrl>
 #include <QSet>
@@ -17,6 +12,11 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QNetworkAccessManager>
+
+#include "RouteItem.h"
+#include "MarbleDirs.h"
+
+#include "digikam_debug.h"
 
 namespace Marble {
 

@@ -4,18 +4,18 @@
 //
 
 #include "MarbleGraphicsItem.h"
-
 #include "MarbleGraphicsItem_p.h"
-
-// Marble
-#include "digikam_debug.h"
-#include "ViewportParams.h"
 
 // Qt
 #include <QList>
 #include <QPainter>
 #include <QPixmap>
 #include <QMouseEvent>
+
+// Marble
+#include "ViewportParams.h"
+
+#include "digikam_debug.h"
 
 using namespace Marble;
 

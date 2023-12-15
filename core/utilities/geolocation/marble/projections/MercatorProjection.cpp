@@ -8,19 +8,18 @@
 // Local
 #include "MercatorProjection.h"
 
-#include "digikam_debug.h"
+#include <QIcon>
+
+#include <klocalizedstring.h>
 
 // Marble
 #include "ViewportParams.h"
 #include "GeoDataLatLonAltBox.h"
-
 #include "MathHelper.h"
 #include "GeoDataPoint.h"
 #include "MarbleMath.h"
 
-#include <QIcon>
-
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 using namespace Marble;
 

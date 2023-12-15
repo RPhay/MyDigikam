@@ -23,7 +23,6 @@
 #include "GeoSceneTextureTileDataset.h"
 #include "GeoSceneTypes.h"
 #include "MergedLayerDecorator.h"
-#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "MarblePlacemarkModel.h"
 #include "StackedTile.h"
@@ -32,6 +31,8 @@
 #include "TextureColorizer.h"
 #include "TileLoader.h"
 #include "ViewportParams.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {

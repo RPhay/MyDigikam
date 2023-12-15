@@ -12,7 +12,8 @@
 #include <QTreeWidget>
 #include <QMenu>
 #include <QPointer>
-#include "digikam_debug.h"
+
+#include <klocalizedstring.h>
 
 // Marble
 #include "GeoDataPlacemark.h"
@@ -21,7 +22,7 @@
 #include "OsmObjectManager.h"
 #include "OsmRelationEditorDialog.h"
 
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

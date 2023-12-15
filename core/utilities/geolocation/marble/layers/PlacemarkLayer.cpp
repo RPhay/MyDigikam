@@ -9,7 +9,6 @@
 
 #include <QPoint>
 
-#include "digikam_debug.h"
 #include "AbstractProjection.h"
 #include "GeoDataStyle.h"
 #include "GeoPainter.h"
@@ -18,6 +17,8 @@
 #include "VisiblePlacemark.h"
 #include "RenderState.h"
 #include "OsmPlacemarkData.h"
+
+#include "digikam_debug.h"
 
 #define BATCH_RENDERING
 

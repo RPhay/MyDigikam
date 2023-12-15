@@ -5,9 +5,14 @@
 
 #include "RouteSyncManager.h"
 
+#include <QDir>
+#include <QUrl>
+#include <QFile>
+#include <QIcon>
+#include <QPointer>
+
 #include "GeoDataParser.h"
 #include "MarbleDirs.h"
-#include "digikam_debug.h"
 #include "GeoDataFolder.h"
 #include "GeoDataDocument.h"
 #include "GeoDataPlacemark.h"
@@ -18,11 +23,7 @@
 #include "RouteItem.h"
 #include "RoutingManager.h"
 
-#include <QDir>
-#include <QUrl>
-#include <QFile>
-#include <QIcon>
-#include <QPointer>
+#include "digikam_debug.h"
 
 namespace Marble
 {

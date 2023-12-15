@@ -8,6 +8,11 @@
 
 #include "GeometryLayer.h"
 
+// Qt
+#include <qmath.h>
+#include <QAbstractItemModel>
+#include <QModelIndex>
+
 // Marble
 #include "GeoDataLatLonAltBox.h"
 #include "GeoDataDocument.h"
@@ -26,7 +31,6 @@
 #include "GeoDataStyleMap.h"
 #include "GeoDataTrack.h"
 #include "GeoDataFeature.h"
-#include "digikam_debug.h"
 #include "GeoPainter.h"
 #include "ViewportParams.h"
 #include "RenderState.h"
@@ -43,14 +47,11 @@
 #include "MarbleGraphicsItem.h"
 #include "MarblePlacemarkModel.h"
 #include "GeoDataTreeModel.h"
-#include <OsmPlacemarkData.h>
+#include "OsmPlacemarkData.h"
 #include "StyleBuilder.h"
 #include "AbstractGeoPolygonGraphicsItem.h"
 
-// Qt
-#include <qmath.h>
-#include <QAbstractItemModel>
-#include <QModelIndex>
+#include "digikam_debug.h"
 
 namespace Marble
 {
