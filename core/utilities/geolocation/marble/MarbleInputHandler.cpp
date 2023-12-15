@@ -16,6 +16,8 @@
 #include <QGestureEvent>
 #include <QPinchGesture>
 
+#include <klocalizedstring.h>
+
 #include "kineticmodel.h"
 #include "MarbleGlobal.h"
 #include "digikam_debug.h"
@@ -660,7 +662,7 @@ void MarbleDefaultInputHandler::notifyPosition(bool isMouseAboveMap, qreal mouse
     if (MarbleInputHandler::d->m_positionSignalConnected) {
         if (!isMouseAboveMap)
         {
-            Q_EMIT mouseMoveGeoPosition(QCoreApplication::translate( "Marble", NOT_AVAILABLE));
+            Q_EMIT mouseMoveGeoPosition(i18n( "not available"));
         }
         else
         {

@@ -17,6 +17,9 @@
 #include <QRegion>
 #include <QNetworkProxy>
 #include <QMetaMethod>
+
+#include <klocalizedstring.h>
+
 #include "FpsLayer.h"
 #include "FileManager.h"
 #include "GeoDataLatLonAltBox.h"
@@ -24,7 +27,6 @@
 #include "GeoDataLookAt.h"
 #include "GeoPainter.h"
 #include "MarbleClock.h"
-#include "digikam_debug.h"
 #include "MarbleDirs.h"
 #include "MarbleLocale.h"
 #include "MarbleMap.h"
@@ -41,6 +43,8 @@
 #include "RoutingLayer.h"
 #include "MarbleAbstractPresenter.h"
 #include "StyleBuilder.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -639,7 +643,7 @@ void MarbleWidget::moveDown( FlyToMode mode )
 
 void MarbleWidget::leaveEvent( QEvent* )
 {
-    Q_EMIT mouseMoveGeoPosition( QCoreApplication::translate( "Marble", NOT_AVAILABLE ) );
+    Q_EMIT mouseMoveGeoPosition( i18n("not available") );
 }
 
 void MarbleWidget::resizeEvent( QResizeEvent *event )

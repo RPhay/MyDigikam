@@ -256,8 +256,6 @@ const QString MARBLE_VERSION_STRING = QString::fromLatin1( MARBLE_LIB_VERSION_ST
 // now it is  ((major<<16)|(minor<<8)|(patch))
 #define MARBLE_VERSION MARBLE_LIB_VERSION
 
-static const char NOT_AVAILABLE[] = QT_TRANSLATE_NOOP("Marble", "not available");
-
 const int tileDigits = 6;
 
 // Average earth radius in m
