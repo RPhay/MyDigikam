@@ -650,7 +650,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 
         if      (charset == "Unicode")
         {
-
+/*
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
             QByteArray rawComment(exifDatum.size(), '\0');
@@ -667,7 +667,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             }
 
 #endif
-
+*/
             return QString::fromUtf8(comment.data());
         }
         else if (charset == "Jis")

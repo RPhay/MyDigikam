@@ -57,7 +57,7 @@ BUGFIXES:
 044 ==> 478509 - Add OK button to Adjust Time & Date view.
 045 ==> 468658 - Detection and linking failed with Qt6 based libksane.
 046 ==> 478568 - Regression new bundle Windows digikam 8.0.0 dated 04/12/2023.
-047 ==> 
+047 ==> 478553 - Exif view from MetadataEdit tool show unreadable characters from a JPEG image.
 048 ==> 
 049 ==> 
 050 ==> 
