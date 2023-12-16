@@ -129,7 +129,7 @@ Function functionFinishRun
 
     ; execute the file NON elevated
 
-    ExecShell '"$WINDIR\explorer.exe" "$instdir\digikam.exe"'
+    ExecShell "$WINDIR\explorer.exe" "$instdir\digikam.exe"
 
 FunctionEnd
 
