@@ -33,7 +33,6 @@ set(marblewidget_SRCS
     AbstractWorkerThread.cpp
     AddLinkDialog.cpp
     AnimatedUpdateTrack.cpp
-    AutoNavigation.cpp
     BookmarkManager.cpp
     BookmarkManagerDialog.cpp
     BranchFilterProxyModel.cpp
