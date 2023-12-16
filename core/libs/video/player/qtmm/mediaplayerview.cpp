@@ -554,7 +554,7 @@ void MediaPlayerView::slotPausePlay()
 
 void MediaPlayerView::slotCapture()
 {
-    if (d->player->isPlaying())
+    if (d->player->playbackState() != QMediaPlayer::StoppedState)
     {
         int capturePosition    = d->player->position();
         QVideoSink* const sink = d->player->videoSink();

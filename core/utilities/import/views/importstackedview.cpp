@@ -363,7 +363,7 @@ void ImportStackedView::setViewMode(const StackedViewMode mode)
 
 #ifdef HAVE_MEDIAPLAYER
 
-    if (viewMode() == MediaPlayerMode)
+    if ((viewMode() == MediaPlayerMode) && (mode != MediaPlayerMode))
     {
         d->mediaPlayerView->escapePreview();
     }
