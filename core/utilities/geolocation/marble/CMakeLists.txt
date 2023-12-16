@@ -58,7 +58,6 @@ set(marblewidget_SRCS
     FormattedTextWidget.cpp
     GenericScanlineTextureMapper.cpp
     GeoDataTreeModel.cpp
-
     GeoPainter.cpp
     GeoUriParser.cpp
     GoToDialog.cpp
@@ -98,7 +97,6 @@ set(marblewidget_SRCS
     MovieCaptureDialog.cpp
     NewBookmarkFolderDialog.cpp
     OsmcSymbol.cpp
-    OwsServiceManager.cpp
     ParseRunnerPlugin.cpp
     ParsingRunner.cpp
     ParsingRunnerManager.cpp
