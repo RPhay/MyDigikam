@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-15 00:39+0000\n"
+"POT-Creation-Date: 2023-12-16 00:39+0000\n"
 "PO-Revision-Date: 2023-11-26 01:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3575,7 +3575,7 @@ msgstr ""
 "ile karşılaştırıldığında):"
 
 #: core/app/views/stack/welcomepageview.cpp:210
-#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:350
+#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:351
 #, kde-format
 msgid "About"
 msgstr "Hakkında"
@@ -3900,7 +3900,7 @@ msgstr "Dosya adı"
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
 #: core/libs/dialogs/deletedialog.cpp:177
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:383
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:385
 #, kde-format
 msgid "Path"
 msgstr "Yol"
@@ -4030,7 +4030,7 @@ msgstr "Renk kipi"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:81
 #: core/app/views/tableview/tableview_column_item.cpp:126
-#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:185
+#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:186
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -11999,9 +11999,9 @@ msgstr "Kullanmak istediğiniz hizmeti seçin."
 #. i18n: ectx: property (text), widget (QLabel, bookmarkLabel)
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:220
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:141
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:59
+#: core/utilities/geolocation/marble/BookmarkManager.cpp:62
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:118
-#: core/utilities/geolocation/marble/cloudsync/BookmarkSyncManager.cpp:649
+#: core/utilities/geolocation/marble/cloudsync/BookmarkSyncManager.cpp:650
 #, kde-format
 msgid "Bookmarks"
 msgstr "Yer İmleri"
@@ -20080,8 +20080,8 @@ msgstr "Yeniden ekle"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:368
-#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:142
-#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:150
+#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:143
+#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:151
 #, kde-format
 msgid "Remove"
 msgstr "Kaldır"
@@ -23666,7 +23666,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:120
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:484
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:486
 #, kde-format
 msgid "Replace"
 msgstr "Değiştir"
@@ -23677,7 +23677,7 @@ msgid "Item will be replacing the linked version."
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:127
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:485
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:487
 #, kde-format
 msgid "Replace All"
 msgstr "Tümünü Değiştir"
@@ -24737,6 +24737,8 @@ msgstr "Parlaklık Sapması"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1086
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1127
+#: core/utilities/geolocation/marble/MarbleInputHandler.cpp:666
+#: core/utilities/geolocation/marble/MarbleWidget.cpp:646
 #, fuzzy, kde-format
 #| msgid "Not available"
 msgid "not available"
@@ -50798,7 +50800,7 @@ msgstr ""
 "kullanılan öntanımlı yapılanımı belirleyin</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:142
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:144
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:145
 #, kde-format
 msgid "Plugins"
 msgstr "Eklentiler"
@@ -54247,7 +54249,7 @@ msgid "Roadmap"
 msgstr "Yol Haritası"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:354
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:356
 #, kde-format
 msgid "Satellite"
 msgstr "Uydu"
@@ -54258,7 +54260,7 @@ msgid "Hybrid"
 msgstr "Karma"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:318
 #, kde-format
 msgid "Terrain"
 msgstr "Arazi"
@@ -54337,7 +54339,7 @@ msgid "Spherical"
 msgstr "Küresel"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
-#: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:42
+#: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Merkator"
@@ -55448,18 +55450,18 @@ msgstr "Bu isim var"
 msgid "Non Geo-located Items"
 msgstr "Coğrafik konumlanmamış ögeler"
 
-#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:270
+#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:271
 #, kde-format
 msgid "&Lock"
 msgstr ""
 
-#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:276
+#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:277
 #, kde-format
 msgid "&Hide"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, configureButton)
-#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:285
+#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:286
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:378
 #: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:32
 #, fuzzy, kde-format
@@ -55467,18 +55469,18 @@ msgstr ""
 msgid "&Configure..."
 msgstr "Yapılandır..."
 
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:66
+#: core/utilities/geolocation/marble/AddLinkDialog.cpp:67
 #, fuzzy, kde-format
 #| msgid "No photo specified"
 msgid "No URL specified"
 msgstr "Hiç fotoğraf belirtilmedi"
 
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:67
+#: core/utilities/geolocation/marble/AddLinkDialog.cpp:68
 #, kde-format
 msgid "Please specify a URL for this link."
 msgstr ""
 
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:70
+#: core/utilities/geolocation/marble/AddLinkDialog.cpp:71
 #: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:371
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:84
 #, fuzzy, kde-format
@@ -55486,7 +55488,7 @@ msgstr ""
 msgid "No name specified"
 msgstr "Hiç fotoğraf belirtilmedi"
 
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:71
+#: core/utilities/geolocation/marble/AddLinkDialog.cpp:72
 #, kde-format
 msgid "Please specify a name for this link."
 msgstr ""
@@ -55519,8 +55521,8 @@ msgid "Name:"
 msgstr "Ad:"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:55
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:247
+#: core/utilities/geolocation/marble/BookmarkManager.cpp:58
+#: core/utilities/geolocation/marble/BookmarkManager.cpp:250
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
 #, fuzzy, kde-format
 #| msgctxt "@option: default Tesseract mode"
@@ -55528,101 +55530,101 @@ msgstr "Ad:"
 msgid "Default"
 msgstr "Öntanımlı"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:181
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:183
 #, kde-format
 msgid ""
 "The folder %1 is not empty. Removing it will delete all bookmarks it "
 "contains. Are you sure you want to delete the folder?"
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:182
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:184
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgid "Remove Folder"
 msgstr "Filtre kaldır"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:416
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:418
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Edit Bookmark"
 msgid "Export Bookmarks"
 msgstr "Yer İmini Düzenle"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:417
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:419
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:730
 #, fuzzy, kde-format
 #| msgid "XMP text Files (*.xmp)"
 msgid "KML files (*.kml)"
 msgstr "XMP metin Dosyaları (*.xmp)"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:422
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:424
 #, kde-format
 msgid "Unable to save bookmarks. Please check that the file is writable."
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:423
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:425
 #, fuzzy, kde-format
 #| msgid "Bookmark folder"
 msgid "Bookmark Export"
 msgstr "Yer imleri klasörü"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:430
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:432
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Edit Bookmark"
 msgid "Import Bookmarks"
 msgstr "Yer İmini Düzenle"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:431
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:433
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:696
 #, fuzzy, kde-format
 #| msgid "XMP text Files (*.xmp)"
 msgid "KML Files (*.kml)"
 msgstr "XMP metin Dosyaları (*.xmp)"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:438
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:440
 #, fuzzy, kde-format
 #| msgid "This file may not be playable."
 msgid "The file %1 cannot be opened as a KML file."
 msgstr "Bu dosya çalınabilir olmayabilir."
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:439
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:441
 #, fuzzy, kde-format
 #| msgid "Bookmark folder"
 msgid "Bookmark Import"
 msgstr "Yer imleri klasörü"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:473
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:475
 #, kde-format
 msgid "The file contains a bookmark that already exists among your Bookmarks."
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:474
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:476
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Edit Bookmark"
 msgid "Imported bookmark"
 msgstr "Yer İmini Düzenle"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:475
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:477
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Edit Bookmark"
 msgid "Existing bookmark"
 msgstr "Yer İmini Düzenle"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:476
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:478
 #, kde-format
 msgid "Do you want to replace the existing bookmark with the imported one?"
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:486
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:488
 #, fuzzy, kde-format
 #| msgid "&Skip"
 msgid "Skip"
 msgstr "&Atla"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:487
+#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:489
 #, fuzzy, kde-format
 #| msgid "&Skip"
 msgid "Skip All"
@@ -55676,8 +55678,8 @@ msgstr "Yeniden Adlandır..."
 
 #. i18n: ectx: property (text), widget (QPushButton, editBookmarkButton)
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:141
-#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:143
-#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:154
+#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
+#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
 #: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
@@ -55790,29 +55792,29 @@ msgstr ""
 msgid "Synchronization Conflict"
 msgstr ""
 
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:300
+#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:301
 #, fuzzy, kde-format
 #| msgid "Image %1 could not be renamed"
 msgid "Server '%1' could not be reached"
 msgstr "%1 resmi yeniden adlandırılamaz"
 
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:318
+#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:319
 #, kde-format
 msgid "The Marble app is not installed on the ownCloud server"
 msgstr ""
 
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:320
+#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:321
 #, kde-format
 msgid "The server is not an ownCloud server"
 msgstr ""
 
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:324
+#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:325
 #, fuzzy, kde-format
 #| msgid "Incorrect username or password specified"
 msgid "Username or password are incorrect"
 msgstr "Geçersiz kullanıcı adı veya parolası belirtildi"
 
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:327
+#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:328
 #, fuzzy, kde-format
 #| msgid "%1 resized successfully"
 msgid "Login successful"
@@ -55854,94 +55856,94 @@ msgstr "İş Akışını Sil"
 msgid "Upload to cloud"
 msgstr "Kameraya Yükle"
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:135
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:136
 #, fuzzy, kde-format
 #| msgid "Visible to Friends"
 msgid "Visible region"
 msgstr "Arkadaşlara Görünür"
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:137
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:138
 #, fuzzy, kde-format
 #| msgid "Specific Location"
 msgid "Specify region"
 msgstr "Belirli Konum"
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:139
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:140
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
 msgid "Download Route"
 msgstr "Yeni İndir"
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:141
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:142
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr ""
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:154
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:155
 #, kde-format
 msgid "Offset from route:"
 msgstr ""
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:189
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:190
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Segmentation mode:"
 msgid "Selection Method"
 msgstr "Bölütlendirme kipi:"
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:197
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:198
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr ""
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:247
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:248
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
 msgid "Download Region"
 msgstr "Yeni İndir"
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:249
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:250
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "This item has never been downloaded"
 msgid "Tile type to be downloaded:"
 msgstr "Bu öge hiçbir zaman karşıdan yüklenmedi"
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:251
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:252
 #, fuzzy, kde-format
 #| msgid "Texture Filter"
 msgid "Texture tiles"
 msgstr "Doku Filtresi"
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:252
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:253
 #, fuzzy, kde-format
 #| msgid "Video Files"
 msgid "Vector tiles"
 msgstr "Video Dosyaları"
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:253
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:254
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:522
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:523
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr ""
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:532
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:533
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr ""
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:536
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:537
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr ""
 
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:539
+#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:540
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr ""
@@ -56400,17 +56402,17 @@ msgstr ""
 msgid "Color"
 msgstr "Renk"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:451
+#: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
 msgid "W"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:451
+#: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
 msgid "E"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:620
+#: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:619
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:140
 #, fuzzy, kde-format
 #| msgctxt "Image filter reproducible: No"
@@ -56418,1950 +56420,1950 @@ msgstr ""
 msgid "N"
 msgstr "Hayır"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:620
+#: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:619
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:141
 #, kde-format
 msgid "S"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:315
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:317
 #, kde-format
 msgid "Valley"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:317
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:319
 #, kde-format
 msgid "Crater"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:318
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:320
 #, fuzzy, kde-format
 #| msgctxt "Advanced search images, access stored searches"
 #| msgid "Search"
 msgid "Sea"
 msgstr "Ara"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:319
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:321
 #, kde-format
 msgid "Manned Landing Site"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:320
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:322
 #, kde-format
 msgid "Robotic Rover"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:321
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:323
 #, kde-format
 msgid "Unmanned Soft Landing Site"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:322
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:324
 #, kde-format
 msgid "Unmanned Hard Landing Site"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:323
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:341
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:325
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:343
 #, fuzzy, kde-format
 #| msgid "Count"
 msgid "Mountain"
 msgstr "Sayı"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:324
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:328
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:332
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:336
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:357
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:379
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:326
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:330
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:334
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:338
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:359
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:380
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Şehir:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:325
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:329
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:333
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:337
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:383
-#, kde-format
-msgid "County Capital"
-msgstr ""
-
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:326
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:330
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:334
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:338
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:381
-#, kde-format
-msgid "State Capital"
-msgstr ""
-
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:327
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:331
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:335
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:339
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:384
+#, kde-format
+msgid "County Capital"
+msgstr ""
+
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:328
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:332
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:336
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:340
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:382
+#, kde-format
+msgid "State Capital"
+msgstr ""
+
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:329
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:333
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:337
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:341
 #, fuzzy, kde-format
 #| msgctxt "@info: tableview"
 #| msgid "Rational"
 msgid "Nation Capital"
 msgstr "Oransal"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:340
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:342
 #, fuzzy, kde-format
 #| msgctxt "@title: tableview"
 #| msgid "Caption"
 msgid "Nation"
 msgstr "Alt Yazı"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:342
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:461
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:344
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:463
 #, kde-format
 msgid "Volcano"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:343
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:345
 #, fuzzy, kde-format
 #| msgctxt "@item: iptc"
 #| msgid "Content"
 msgid "Continent"
 msgstr "İçerik"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:344
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:346
 #, kde-format
 msgid "Ocean"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:345
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:347
 #, fuzzy, kde-format
 #| msgid "Geographic position"
 msgid "Geographic Pole"
 msgstr "Coğrafi konum"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:346
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:348
 #, kde-format
 msgid "Magnetic Pole"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:347
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:349
 #, kde-format
 msgid "Ship Wreck"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:348
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:350
 #, fuzzy, kde-format
 #| msgctxt "@title: camera port"
 #| msgid "Port"
 msgid "Air Port"
 msgstr "Port"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:349
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:351
 #, fuzzy, kde-format
 #| msgid "Iteration:"
 msgid "Observatory"
 msgstr "Yineleme:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:350
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:352
 #, kde-format
 msgid "Military Danger Area"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:351
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "OSM Site"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:352
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:354
 #, fuzzy, kde-format
 #| msgid "Coordinates"
 msgid "Coordinate"
 msgstr "Koordinatlar"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:355
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgid "Bookmark"
 msgstr "Yer İmleri"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:358
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:360
 #, kde-format
 msgid "City Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:359
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:368
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:377
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:361
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:367
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:370
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:378
 #, kde-format
 msgid "National Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:360
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:362
 #, kde-format
 msgid "Suburb"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:361
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:363
 #, fuzzy, kde-format
 #| msgid "{Hamlet}"
 msgid "Hamlet"
 msgstr "{Hamlet}"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:362
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:364
 #, fuzzy, kde-format
 #| msgid "Normalize"
 msgid "Locality"
 msgstr "Normalleştir"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:363
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
 #, fuzzy, kde-format
 #| msgid "{Town}"
 msgid "Town"
 msgstr "{Town}"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:364
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:366
 #, kde-format
 msgid "Town Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:366
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:394
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:368
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:395
 #, fuzzy, kde-format
 #| msgid "{Village}"
 msgid "Village"
 msgstr "{Village}"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:367
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:369
 #, fuzzy, kde-format
 #| msgid "Add village tag"
 msgid "Village Capital"
 msgstr "Köy etiketi ekle"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:369
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:371
 #, kde-format
 msgid "Water"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:370
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:372
 #, kde-format
 msgid "Reef"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:371
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:373
 #, fuzzy, kde-format
 #| msgctxt "@item: texture type"
 #| msgid "Cell Wood"
 msgid "Wood"
 msgstr "Odunsu Hücre"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:372
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:374
 #, fuzzy, kde-format
 #| msgctxt "@info: effect type"
 #| msgid "Bleach"
 msgid "Beach"
 msgstr "Beyazlatma"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:373
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:375
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Iceland"
 msgid "Wetland"
 msgstr "İzlanda"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:374
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:376
 #, kde-format
 msgid "Glacier"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:375
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:377
 #, kde-format
 msgid "Ice Shelf"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:376
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:378
 #, kde-format
 msgid "Scrub"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:377
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:379
 #, kde-format
 msgid "Cliff"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:378
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:380
 #, fuzzy, kde-format
 #| msgid "Feather:"
 msgid "Heath"
 msgstr "Yumuşat:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:379
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:381
 #, kde-format
 msgid "Traffic Signals"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:380
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, fuzzy, kde-format
 #| msgctxt "@label: item creator"
 #| msgid "Creator"
 msgid "Elevator"
 msgstr "Oluşturucu"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:381
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:383
 #, fuzzy, kde-format
 #| msgctxt "stepping for custom range"
 #| msgid "Step:"
 msgid "Steps"
 msgstr "Adım:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:384
 #, fuzzy, kde-format
 #| msgid "Unknown Format"
 msgid "Unknown Road"
 msgstr "Bilinmeyen Biçim"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:384
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:386
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:388
 #, kde-format
 msgid "Footway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:385
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:387
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:584
 #, fuzzy, kde-format
 #| msgctxt "@item: linetrack over the map"
 #| msgid "Track"
 msgid "Track"
 msgstr "İz"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:387
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:389
 #, fuzzy, kde-format
 #| msgid "Cycle:"
 msgid "Cycleway"
 msgstr "Dolaşım:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:388
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:390
 #, fuzzy, kde-format
 #| msgid "Service ID:"
 msgid "Service Road"
 msgstr "Hizmet kimliği:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:389
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:391
 #, fuzzy, kde-format
 #| msgid "Roadmap"
 msgid "Road"
 msgstr "Yol Haritası"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:390
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:392
 #, kde-format
 msgid "Residential Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:391
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:393
 #, kde-format
 msgid "Living Street"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:392
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:394
 #, kde-format
 msgid "Unclassified Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:393
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:395
 #, kde-format
 msgid "Tertiary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:394
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:396
 #, kde-format
 msgid "Tertiary Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:395
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:397
 #, kde-format
 msgid "Secondary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:396
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:398
 #, kde-format
 msgid "Secondary Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:397
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:399
 #, kde-format
 msgid "Primary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:398
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:400
 #, kde-format
 msgid "Primary Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:399
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:401
 #, kde-format
 msgid "Raceway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:400
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:402
 #, kde-format
 msgid "Trunk Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:401
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:403
 #, kde-format
 msgid "Trunk Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:402
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:404
 #, kde-format
 msgid "Motorway Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:403
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:405
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Norway"
 msgid "Motorway"
 msgstr "Norveç"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:404
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:406
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Corrections"
 msgid "Corridor"
 msgstr "Düzeltmeler"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:405
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:407
 #, fuzzy, kde-format
 #| msgctxt "@item: icc profile properties"
 #| msgid "Profile Version"
 msgid "Building"
 msgstr "Profil Sürümü"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:406
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:408
 #, kde-format
 msgid "Camping"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:407
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:409
 #, fuzzy, kde-format
 #| msgid "Host Name"
 msgid "Hostel"
 msgstr "Ana Makine Adı"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:408
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:410
 #, kde-format
 msgid "Hotel"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:409
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:411
 #, kde-format
 msgid "Motel"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:410
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:412
 #, kde-format
 msgid "Youth Hostel"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:411
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:413
 #, kde-format
 msgid "Guest House"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:412
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:414
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Library"
 msgid "Library"
 msgstr "Kitaplık"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:413
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:415
 #, fuzzy, kde-format
 #| msgctxt "@item: scene code"
 #| msgid "Under-water"
 msgid "Kindergarten"
 msgstr "Sualtı"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:414
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:416
 #, kde-format
 msgid "College"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:415
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:417
 #, kde-format
 msgid "School"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:416
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:418
 #, fuzzy, kde-format
 #| msgid "Intensity:"
 msgid "University"
 msgstr "Yoğunluk:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:417
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:419
 #, fuzzy, kde-format
 #| msgctxt "@info: contry code"
 #| msgid "Bihari"
 msgid "Bar"
 msgstr "Bihari"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:418
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:420
 #, kde-format
 msgid "Biergarten"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:419
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:421
 #, kde-format
 msgid "Cafe"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:420
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:422
 #, kde-format
 msgid "Fast Food"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:421
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:423
 #, fuzzy, kde-format
 #| msgctxt "photo permissions"
 #| msgid "Public"
 msgid "Pub"
 msgstr "Genel"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:422
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:424
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgid "Restaurant"
 msgstr "Restorasyon"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:423
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:425
 #, kde-format
 msgid "Dentist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:424
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:426
 #, fuzzy, kde-format
 #| msgctxt "renaming option for directory related information"
 #| msgid "Directory"
 msgid "Doctors"
 msgstr "Dizin"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:425
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:427
 #, kde-format
 msgid "Hospital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:426
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:428
 #, kde-format
 msgid "Pharmacy"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:427
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:429
 #, fuzzy, kde-format
 #| msgctxt "@title: binary properties"
 #| msgid "Binary"
 msgid "Veterinary"
 msgstr "İkili"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:428
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:430
 #, kde-format
 msgid "ATM"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:429
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:431
 #, kde-format
 msgid "Bank"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:430
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:432
 #, kde-format
 msgid "Archaeological Site"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:431
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:433
 #, kde-format
 msgid "Embassy"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:432
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:434
 #, kde-format
 msgid "Emergency Phone"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:433
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:435
 #, kde-format
 msgid "Mountain Rescue"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:434
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:436
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Add Watermark"
 msgid "Water Park"
 msgstr "Filigran Ekle"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:435
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:437
 #, fuzzy, kde-format
 #| msgid "Comment Change"
 msgid "Community Centre"
 msgstr "Açıklama Değişikliği"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:436
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:438
 #, fuzzy, kde-format
 #| msgid "Count"
 msgid "Fountain"
 msgstr "Sayı"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:437
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:439
 #, kde-format
 msgid "Night Club"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:438
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:440
 #, fuzzy, kde-format
 #| msgctxt "@info: contry code"
 #| msgid "French"
 msgid "Bench"
 msgstr "Fransızca"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:439
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:441
 #, kde-format
 msgid "Court House"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:440
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:442
 #, fuzzy, kde-format
 #| msgid "Free Rotation"
 msgid "Fire Station"
 msgstr "Serbest Döndürme"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:441
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:443
 #, fuzzy, kde-format
 #| msgid "Printing canceled"
 msgid "Hunting Stand"
 msgstr "Baskı iptal edildi"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:442
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:444
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Polish"
 msgid "Police"
 msgstr "Lehçe"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:443
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:445
 #, fuzzy, kde-format
 #| msgid "Postal code:"
 msgid "Post Box"
 msgstr "Posta kodu:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:444
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:446
 #, fuzzy, kde-format
 #| msgid "Postal code:"
 msgid "Post Office"
 msgstr "Posta kodu:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:445
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:447
 #, kde-format
 msgid "Prison"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:446
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:448
 #, fuzzy, kde-format
 #| msgid "Scaling"
 msgid "Recycling"
 msgstr "Ölçekleme"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:447
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:449
 #, fuzzy, kde-format
 #| msgid "Sepia Filter"
 msgid "Shelter"
 msgstr "Sepya Filtresi"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:448
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:450
 #, kde-format
 msgid "Telephone"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:449
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:451
 #, kde-format
 msgid "Toilets"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:450
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:452
 #, kde-format
 msgid "Town Hall"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:451
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:453
 #, kde-format
 msgid "Waste Basket"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:452
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:454
 #, fuzzy, kde-format
 #| msgid "shrinking databases"
 msgid "Drinking Water"
 msgstr "veritabanları daraltılıyor"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:453
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:455
 #, kde-format
 msgid "Graveyard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:454
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:456
 #, fuzzy, kde-format
 #| msgid "Orientation"
 msgid "Charging Station"
 msgstr "Yönelim"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:455
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:457
 #, kde-format
 msgid "Car Wash"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:456
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:458
 #, kde-format
 msgid "Social Facility"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:457
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:459
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City Wall"
 msgstr "Şehir:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:458
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:460
 #, kde-format
 msgid "Gate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:459
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:461
 #, kde-format
 msgid "Lift Gate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:460
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:668
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:462
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:670
 #, fuzzy, kde-format
 #| msgctxt "@item: texture type"
 #| msgid "Wall"
 msgid "Wall"
 msgstr "Duvar"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:462
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:464
 #, kde-format
 msgid "Peak"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:463
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:465
 #, kde-format
 msgid "Tree"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:464
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:466
 #, kde-format
 msgid "Cave Entrance"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:465
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:467
 #, fuzzy, kde-format
 #| msgctxt "metering mode"
 #| msgid "Average"
 msgid "Beverages"
 msgstr "Ortalama"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:466
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:468
 #, kde-format
 msgid "Hifi"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:467
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:469
 #, kde-format
 msgid "Supermarket"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:468
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:470
 #, kde-format
 msgid "Liquor Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:469
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:471
 #, kde-format
 msgid "Bakery"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:470
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:472
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Dutch"
 msgid "Butcher"
 msgstr "Hollandaca"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:471
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:473
 #, fuzzy, kde-format
 #| msgctxt "@item: icc profile properties"
 #| msgid "Connection Space"
 msgid "Confectionery"
 msgstr "Bağlantı Aralığı"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:472
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:474
 #, kde-format
 msgid "Convenience Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:473
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:475
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Greece"
 msgid "Greengrocer"
 msgstr "Yunanistan"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:474
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:476
 #, kde-format
 msgid "Seafood Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:475
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:477
 #, fuzzy, kde-format
 #| msgid "Decorative Stone"
 msgid "Department Store"
 msgstr "Dekoratif Taş"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:476
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:478
 #, kde-format
 msgid "Kiosk"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:477
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:479
 #, kde-format
 msgid "Bag Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:478
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:480
 #, kde-format
 msgid "Clothes Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:479
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:481
 #, kde-format
 msgid "Fashion Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:480
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:482
 #, kde-format
 msgid "Jewelry Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:481
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:483
 #, kde-format
 msgid "Shoe Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:482
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:484
 #, kde-format
 msgid "Variety Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:483
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:485
 #, fuzzy, kde-format
 #| msgid "Select service:"
 msgid "Beauty Services"
 msgstr "Hizmet seç:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:484
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:486
 #, kde-format
 msgid "Chemist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:485
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:487
 #, kde-format
 msgid "Cosmetics"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:486
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:488
 #, kde-format
 msgid "Hairdresser"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:487
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:489
 #, fuzzy, kde-format
 #| msgctxt "@title: window"
 #| msgid "Optimization"
 msgid "Optician"
 msgstr "Eniyileme"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:488
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:490
 #, kde-format
 msgid "Perfumery"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:489
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:491
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:493
 #, kde-format
 msgid "Hardware Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:490
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:492
 #, kde-format
 msgid "Florist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:492
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:494
 #, kde-format
 msgid "Furniture Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:493
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:495
 #, fuzzy, kde-format
 #| msgctxt "@item: WB settings"
 #| msgid "electronic photo flash"
 msgid "Electronics Shop"
 msgstr "Elektronik foto flaş"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:494
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:496
 #, fuzzy, kde-format
 #| msgid "Adobe Photoshop"
 msgid "Mobile Phone Shop"
 msgstr "Adobe Photoshop"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:495
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:497
 #, kde-format
 msgid "Bicycle Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:496
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:498
 #, kde-format
 msgid "Car Dealer"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:497
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:499
 #, kde-format
 msgid "Car Repair Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:498
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:500
 #, kde-format
 msgid "Car Parts"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:499
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:501
 #, kde-format
 msgid "Motorcycle Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:500
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:502
 #, kde-format
 msgid "Outdoor Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:501
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:503
 #, kde-format
 msgid "Sports Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:502
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:504
 #, fuzzy, kde-format
 #| msgid "Printing in Progress"
 msgid "Printing Services"
 msgstr "Baskı Sürüyor"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:503
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:505
 #, kde-format
 msgid "Art Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:504
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:506
 #, kde-format
 msgid "Musical Instrument Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:505
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:507
 #, fuzzy, kde-format
 #| msgid "Photo width"
 msgid "Photo Shop"
 msgstr "Fotoğraf genişliği"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:506
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:508
 #, kde-format
 msgid "Bookshop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:507
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:509
 #, kde-format
 msgid "Gift Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:508
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:510
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgid "Stationery"
 msgstr "Doygunluk"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:509
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:511
 #, kde-format
 msgid "Laundry"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:510
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:512
 #, kde-format
 msgid "Pet Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:511
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:513
 #, kde-format
 msgid "Toy Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:512
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:514
 #, fuzzy, kde-format
 #| msgctxt "@item: album categories"
 #| msgid "Travel"
 msgid "Travel Agency"
 msgstr "Gezi"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:513
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:515
 #, kde-format
 msgid "Deli"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:514
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:516
 #, kde-format
 msgid "Tobacco Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:515
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:517
 #, kde-format
 msgid "Tea Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:516
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:518
 #, kde-format
 msgid "Computer Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:517
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:519
 #, kde-format
 msgid "Garden Centre"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:518
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:520
 #, kde-format
 msgid "Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:519
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:521
 #, kde-format
 msgid "Bridge"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:520
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:522
 #, fuzzy, kde-format
 #| msgid "Light source:"
 msgid "Lighthouse"
 msgstr "Işık kaynağı:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:521
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:523
 #, kde-format
 msgid "Pier"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:522
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:524
 #, kde-format
 msgid "Water Tower"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:523
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:525
 #, kde-format
 msgid "Wind Mill"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:524
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:526
 #, kde-format
 msgid "Communications Tower"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:525
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:527
 #, fuzzy, kde-format
 #| msgid "No restriction"
 msgid "Tourist Attraction"
 msgstr "Kısıtlama yok"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:526
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:528
 #, fuzzy, kde-format
 #| msgid "Network"
 msgid "Artwork"
 msgstr "Ağ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:527
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:529
 #, kde-format
 msgid "Castle"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:528
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:530
 #, kde-format
 msgid "Cinema"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:529
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:531
 #, fuzzy, kde-format
 #| msgctxt "@option"
 #| msgid "Information"
 msgid "Information"
 msgstr "Bilgi"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:530
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:532
 #, fuzzy, kde-format
 #| msgctxt "@item: type is a document"
 #| msgid "Document"
 msgid "Monument"
 msgstr "Belge"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:531
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:533
 #, kde-format
 msgid "Museum"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:532
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:534
 #, kde-format
 msgid "Ruin"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:533
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:535
 #, kde-format
 msgid "Theatre"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:534
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:536
 #, fuzzy, kde-format
 #| msgid "Theme Parameters"
 msgid "Theme Park"
 msgstr "Tema Parametreleri"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:535
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:537
 #, fuzzy, kde-format
 #| msgctxt "@item: point coordinates"
 #| msgid "Point"
 msgid "View Point"
 msgstr "Nokta"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:536
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:538
 #, fuzzy, kde-format
 #| msgid "Zoom:"
 msgid "Zoo"
 msgstr "Yakınlaştır:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:537
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
 #, kde-format
 msgid "Alpine Hut"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:538
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
 #, kde-format
 msgid "Wilderness Hut"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
 #, fuzzy, kde-format
 #| msgctxt "@item: serail port based camera"
 #| msgid "Serial"
 msgid "Memorial"
 msgstr "Seri"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
 #, kde-format
 msgid "Aerodrome"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
 #, kde-format
 msgid "Helipad"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Airport Gate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
 #, kde-format
 msgid "Airport Runway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:546
 #, kde-format
 msgid "Airport Apron"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:547
 #, kde-format
 msgid "Airport Taxiway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:546
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
 #, kde-format
 msgid "Airport Terminal"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:547
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgid "Bus Station"
 msgstr "Doygunluk"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:550
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgid "Bus Stop"
 msgstr "Durdur"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:551
 #, kde-format
 msgid "Car Sharing"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:550
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:552
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgid "Gas Station"
 msgstr "Doygunluk"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:551
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
 #, kde-format
 msgid "Parking"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:552
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
 #, fuzzy, kde-format
 #| msgid "Working Color Space"
 msgid "Parking Space"
 msgstr "Çalışma Renk Uzayı"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
 #, fuzzy, kde-format
 #| msgctxt "@action: dplugin"
 #| msgid "Transform"
 msgid "Platform"
 msgstr "Dönüştür"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:556
 #, kde-format
 msgid "Bicycle Rental"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:557
 #, kde-format
 msgid "Car Rental"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:556
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:558
 #, kde-format
 msgid "Ski Rental"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:557
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
 #, kde-format
 msgid "Taxi Rank"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:558
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
 #, fuzzy, kde-format
 #| msgid "Orientation"
 msgid "Train Station"
 msgstr "Yönelim"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgid "Tram Stop"
 msgstr "Durdur"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:562
 #, kde-format
 msgid "Bicycle Parking"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:563
 #, kde-format
 msgid "Motorcycle Parking"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:562
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
 #, kde-format
 msgid "Subway Entrance"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:563
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
 #, fuzzy, kde-format
 #| msgid "Mounted Camera"
 msgid "Speed Camera"
 msgstr "Takılı (Bağlı) Kamera"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:566
 #, kde-format
 msgid "Place Of Worship"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:567
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Bahamas"
 msgid "Bahai"
 msgstr "Bahamalar"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:566
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:568
 #, kde-format
 msgid "Buddhist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:567
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:569
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Croatian"
 msgid "Christian"
 msgstr "Hırvatça"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:568
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:570
 #, kde-format
 msgid "Muslim"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:569
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:571
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Hindi"
 msgid "Hindu"
 msgstr "Hintçe"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:570
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:572
 #, kde-format
 msgid "Jain"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:571
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Jewish"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:572
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:574
 #, kde-format
 msgid "Shinto"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:573
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:575
 #, kde-format
 msgid "Sikh"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:574
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:576
 #, kde-format
 msgid "Taoist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:575
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:577
 #, kde-format
 msgid "Golf Course"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:576
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:578
 #, fuzzy, kde-format
 #| msgctxt "@info: language name"
 #| msgid "Mari"
 msgid "Marina"
 msgstr "Mari"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:577
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:579
 #, kde-format
 msgid "Park"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:578
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:580
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Background"
 msgid "Playground"
 msgstr "Arka Plan"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:579
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:581
 #, kde-format
 msgid "Pitch"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:580
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
 #, kde-format
 msgid "Sports Centre"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:581
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
 msgid "Stadium"
 msgstr "Orta"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:585
 #, kde-format
 msgid "Swimming Pool"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:584
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:586
 #, kde-format
 msgid "Miniature Golf Course"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:585
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:587
 #, fuzzy, kde-format
 #| msgctxt "@item: picture adjustments"
 #| msgid "Adjustments"
 msgid "Allotments"
 msgstr "Düzeltmeler"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:586
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:588
 #, kde-format
 msgid "Basin"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:587
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:589
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Parameters"
 msgid "Cemetery"
 msgstr "Parametreler"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:588
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:590
 #, kde-format
 msgid "Commercial"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:589
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:591
 #, fuzzy, kde-format
 #| msgid "Instructions:"
 msgid "Construction"
 msgstr "Yönergeler:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:590
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Finland"
 msgid "Farmland"
 msgstr "Finlandiya"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:591
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
 #, kde-format
 msgid "Farmyard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:594
 #, fuzzy, kde-format
 #| msgid "Images"
 msgid "Garages"
 msgstr "Görseller"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:595
 #, kde-format
 msgid "Grass"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:594
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:596
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Austria"
 msgid "Industrial"
 msgstr "Avusturya"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:595
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:597
 #, kde-format
 msgid "Landfill"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:596
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
 #, kde-format
 msgid "Meadow"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:597
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
 #, kde-format
 msgid "Military"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:600
 #, kde-format
 msgid "Quarry"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:601
 #, kde-format
 msgid "Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:600
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:602
 #, fuzzy, kde-format
 #| msgid "Reset curve to linear"
 msgid "Reservoir"
 msgstr "Kıvrığı çizgiye döndür"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:601
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:603
 #, kde-format
 msgid "Residential"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:602
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:604
 #, fuzzy, kde-format
 #| msgctxt "@item: map tool"
 #| msgid "Details"
 msgid "Retail"
 msgstr "Ayrıntılar"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:603
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:605
 #, kde-format
 msgid "Orchard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:604
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:606
 #, kde-format
 msgid "Vineyard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:605
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:607
 #, kde-format
 msgid "Rail"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:606
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:608
 #, kde-format
 msgid "Narrow Gauge"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:607
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:217
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:609
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:218
 #, kde-format
 msgid "Tram"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:608
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:610
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgid "Light Rail"
 msgstr "Işık Tablosu"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:609
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
 #, kde-format
 msgid "Abandoned Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:610
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:216
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:612
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:217
 #, kde-format
 msgid "Subway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:613
 #, fuzzy, kde-format
 #| msgid "Preserve Aspect Ratio"
 msgid "Preserved Railway"
 msgstr "En-boy Oranını Koru"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:612
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:614
 #, kde-format
 msgid "Miniature Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:613
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:615
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "Railway Construction"
 msgstr "Ham Dönüştürme"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:614
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:616
 #, fuzzy, kde-format
 #| msgctxt "@label: audio channel type"
 #| msgid "Mono"
 msgid "Monorail"
 msgstr "Mono"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:615
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:617
 #, kde-format
 msgid "Funicular Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:616
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:618
 #, fuzzy, kde-format
 #| msgctxt "@item: function type"
 #| msgid "Power"
 msgid "Power Tower"
 msgstr "Güç"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:617
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:619
 #, kde-format
 msgid "Aerialway Station"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:618
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:620
 #, kde-format
 msgctxt "A pylon supporting the aerialway cable e.g. on a ski lift"
 msgid "Pylon"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:619
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:621
 #, fuzzy, kde-format
 #| msgid "Change Case"
 msgid "Cable Car"
 msgstr "Büyük/küçük harf değişimi"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:620
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:622
 #, kde-format
 msgid "Gondola"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:621
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:623
 #, fuzzy, kde-format
 #| msgid "Clear List"
 msgid "Chair Lift"
 msgstr "Listeyi Temizle"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:622
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:624
 #, kde-format
 msgid "Mixed Lift"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:623
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:625
 #, kde-format
 msgid "Drag Lift"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:624
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:626
 #, kde-format
 msgid "T-Bar"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:625
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:627
 #, kde-format
 msgid "J-Bar"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:626
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:628
 #, fuzzy, kde-format
 #| msgctxt "@label: subject properties"
 #| msgid "Matter:"
 msgid "Platter"
 msgstr "Konu:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:627
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:629
 #, kde-format
 msgid "Rope Tow"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:628
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:630
 #, kde-format
 msgid "Magic Carpet"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:629
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:631
 #, kde-format
 msgid "Zip Line"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:630
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:632
 #, kde-format
 msgid "Goods"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:631
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:226
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:633
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:227
 #, kde-format
 msgid "Downhill Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:632
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:634
 #, kde-format
 msgid "Nordic Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:633
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:228
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:635
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:229
 #, kde-format
 msgid "Skitour"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:634
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:636
 #, kde-format
 msgid "Sled Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:635
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:637
 #, kde-format
 msgid "Winter Hike"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:636
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:638
 #, kde-format
 msgid "Sleigh Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:637
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:639
 #, kde-format
 msgid "Ice Skate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:638
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:640
 #, kde-format
 msgid "Snow Park"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:639
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:641
 #, kde-format
 msgid "Ski Playground"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:640
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:642
 #, kde-format
 msgid "Ski Jump"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:641
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:643
 #, kde-format
 msgid "Admin Boundary (Level 1)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:642
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:644
 #, kde-format
 msgid "Admin Boundary (Level 2)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:643
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:645
 #, kde-format
 msgid "Admin Boundary (Level 3)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:644
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:646
 #, kde-format
 msgid "Admin Boundary (Level 4)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:645
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:647
 #, kde-format
 msgid "Admin Boundary (Level 5)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:646
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:648
 #, kde-format
 msgid "Admin Boundary (Level 6)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:647
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:649
 #, kde-format
 msgid "Admin Boundary (Level 7)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:648
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:650
 #, kde-format
 msgid "Admin Boundary (Level 8)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:649
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:651
 #, kde-format
 msgid "Admin Boundary (Level 9)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:650
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:652
 #, kde-format
 msgid "Admin Boundary (Level 10)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:651
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:653
 #, kde-format
 msgid "Admin Boundary (Level 11)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:652
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:654
 #, kde-format
 msgid "Boundary (Maritime)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:653
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:655
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Hard Mask"
 msgid "Land Mass"
 msgstr "Sıkı maske"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:654
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:656
 #, kde-format
 msgid "Urban Area"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:655
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:657
 #, kde-format
 msgid "International Date Line"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:656
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:658
 #, kde-format
 msgid "Bathymetry"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:657
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:659
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Canada"
 msgid "Canal"
 msgstr "Kanada"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:658
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:660
 #, fuzzy, kde-format
 #| msgid "Terrain"
 msgid "Drain"
 msgstr "Arazi"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:659
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:661
 #, kde-format
 msgid "Ditch"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:660
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:662
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Stream"
 msgid "Stream"
 msgstr "Akış"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:661
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:663
 #, kde-format
 msgid "River"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:662
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:664
 #, kde-format
 msgid "Weir"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:663
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:664
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:665
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:667
 #, kde-format
 msgid "Crosswalk"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:668
 #, kde-format
 msgid "Railway Crossing"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:667
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:669
 #, kde-format
 msgid "Door"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:669
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:671
 #, kde-format
 msgid "Room"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:49
+#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:48
 #, kde-format
 msgctxt "North direction terms"
 msgid "*"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:52
+#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:51
 #, kde-format
 msgctxt "East direction terms"
 msgid "*"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:55
+#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:54
 #, kde-format
 msgctxt "South direction terms"
 msgid "*"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:58
+#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:57
 #, kde-format
 msgctxt "West direction terms"
 msgid "*"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:96
+#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:95
 #, kde-format
 msgctxt "Degree symbol terms"
 msgid "*"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:99
+#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:98
 #, kde-format
 msgctxt "Minutes symbol terms"
 msgid "*"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:102
+#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:101
 #, kde-format
 msgctxt "Seconds symbol terms"
 msgid "*"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:213
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:214
 #, kde-format
 msgid "Detour"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:214
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:215
 #, kde-format
 msgid "Ferry Route"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:215
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:216
 #, fuzzy, kde-format
 #| msgid "Terrain"
 msgid "Train"
 msgstr "Arazi"
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:218
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:219
 #, kde-format
 msgid "Bus"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:219
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:220
 #, kde-format
 msgid "Trolley Bus"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:220
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "Filter Effect: Circle Out"
 #| msgid "Circle Out"
 msgid "Bicycle Route"
 msgstr "Dış Çerçeve"
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:221
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:222
 #, kde-format
 msgid "Mountainbike Route"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:222
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:223
 #, kde-format
 msgid "Walking Route"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:223
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:224
 #, kde-format
 msgid "Hiking Route"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:224
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:225
 #, kde-format
 msgid "Bridleway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:225
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:226
 #, kde-format
 msgid "Inline Skates Route"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:227
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:228
 #, kde-format
 msgid "Nordic Ski Trail"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:229
+#: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:230
 #, kde-format
 msgid "Sled Trail"
 msgstr ""
@@ -58393,7 +58395,7 @@ msgid "This is an Invalid File"
 msgstr "Renk Profili Eksik"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:183
+#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:184
 #: core/utilities/geolocation/marble/MapThemeManager.cpp:404
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:38
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:34
@@ -58403,13 +58405,13 @@ msgstr "Renk Profili Eksik"
 msgid "Name"
 msgstr "Ad"
 
-#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:187
+#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:188
 #, fuzzy, kde-format
 #| msgid "Regularity:"
 msgid "Popularity"
 msgstr "Düzen:"
 
-#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:189
+#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:190
 #, fuzzy, kde-format
 #| msgctxt "Color Model: Indexed"
 #| msgid "Indexed"
@@ -58417,7 +58419,7 @@ msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "Dizinli"
 
-#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:245
+#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:246
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Load Playlist"
@@ -58881,34 +58883,34 @@ msgstr "Oturum Aç"
 msgid "Clear"
 msgstr "Temizle"
 
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:120
+#: core/utilities/geolocation/marble/MarbleLocale.cpp:122
 #, fuzzy, kde-format
 #| msgid "cm"
 msgctxt "means meter"
 msgid "m"
 msgstr "cm"
 
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:122
+#: core/utilities/geolocation/marble/MarbleLocale.cpp:124
 #, fuzzy, kde-format
 #| msgid "mm"
 msgctxt "means milimeters"
 msgid "mm"
 msgstr "mm"
 
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:124
+#: core/utilities/geolocation/marble/MarbleLocale.cpp:126
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:126
+#: core/utilities/geolocation/marble/MarbleLocale.cpp:128
 #, fuzzy, kde-format
 #| msgid "cm"
 msgctxt "means centimeters"
 msgid "cm"
 msgstr "cm"
 
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:128
+#: core/utilities/geolocation/marble/MarbleLocale.cpp:130
 #, fuzzy, kde-format
 #| msgctxt "@action: rotate image left"
 #| msgid "Left"
@@ -58916,7 +58918,7 @@ msgctxt "means feet"
 msgid "ft"
 msgstr "Sol"
 
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:130
+#: core/utilities/geolocation/marble/MarbleLocale.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "Inches"
 #| msgid "in"
@@ -58924,19 +58926,19 @@ msgctxt "means inches"
 msgid "in"
 msgstr "inç"
 
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:132
+#: core/utilities/geolocation/marble/MarbleLocale.cpp:134
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:134
+#: core/utilities/geolocation/marble/MarbleLocale.cpp:136
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:136
+#: core/utilities/geolocation/marble/MarbleLocale.cpp:138
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
@@ -59992,118 +59994,118 @@ msgstr ""
 "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
 "body></html>"
 
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:112
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:113
 #, fuzzy, kde-format
 #| msgid "Copy coordinates"
 msgid "Copy Coordinates"
 msgstr "Koordinatları kopyala"
 
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:113
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:114
 #, kde-format
 msgid "Copy geo: URL"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:122
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:123
 #, kde-format
 msgid "Directions &from here"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:123
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:124
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Enter caption text here."
 msgid "Directions &to here"
 msgstr "Alt yazı metninizi buraya girin."
 
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:131
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Add Bookmark"
 msgid "Add &Bookmark"
 msgstr "Yer İmi Ekle"
 
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:132
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:133
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Full-Screen"
 msgid "&Full Screen Mode"
 msgstr "Tam-Ekran"
 
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:151
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:152
 #, fuzzy, kde-format
 #| msgctxt "@item: map tool"
 #| msgid "Details"
 msgid "&Address Details"
 msgstr "Ayrıntılar"
 
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:175
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:176
 #, fuzzy, kde-format
 #| msgid "No description available"
 msgid "No description available."
 msgstr "Açıklama mevcut değil"
 
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:386
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:387
 #, kde-format
 msgid "Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:538
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:539
 #, kde-format
 msgid "&Info Boxes"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:882
+#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:883
 #, fuzzy, kde-format
 #| msgctxt "@item: map tool"
 #| msgid "Details"
 msgid "Address Details"
 msgstr "Ayrıntılar"
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:34
+#: core/utilities/geolocation/marble/MovieCapture.cpp:35
 #, fuzzy, kde-format
 #| msgid "Assign tools"
 msgid "Missing encoding tools"
 msgstr "Atama araçları"
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:35
+#: core/utilities/geolocation/marble/MovieCapture.cpp:36
 #, kde-format
 msgid ""
 "Marble requires additional software in order to create movies. Please get %1 "
 msgstr ""
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:60
+#: core/utilities/geolocation/marble/MovieCapture.cpp:61
 #, kde-format
 msgid "AVI (mpeg4)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:61
+#: core/utilities/geolocation/marble/MovieCapture.cpp:62
 #, kde-format
 msgid "FLV"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:62
+#: core/utilities/geolocation/marble/MovieCapture.cpp:63
 #, kde-format
 msgid "Matroska (h264)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:63
+#: core/utilities/geolocation/marble/MovieCapture.cpp:64
 #, fuzzy, kde-format
 #| msgctxt "Video Standard MP4"
 #| msgid "MP4 - MPEG-4"
 msgid "MPEG-4"
 msgstr "MP4 - MPEG-4"
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:64
+#: core/utilities/geolocation/marble/MovieCapture.cpp:65
 #, kde-format
 msgid "MPEG-2 PS (VOB)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:65
+#: core/utilities/geolocation/marble/MovieCapture.cpp:66
 #, kde-format
 msgid "OGG"
 msgstr ""
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:66
+#: core/utilities/geolocation/marble/MovieCapture.cpp:67
 #, kde-format
 msgid "SWF"
 msgstr ""
@@ -60216,8 +60218,8 @@ msgstr "Yer imleri klasörü"
 msgid "&Folder name:"
 msgstr "Dosya adı:"
 
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:717
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:726
+#: core/utilities/geolocation/marble/NewstuffModel.cpp:718
+#: core/utilities/geolocation/marble/NewstuffModel.cpp:727
 #, kde-format
 msgid "Installation aborted by user."
 msgstr ""
@@ -60238,8 +60240,8 @@ msgstr "Hiç fotoğraf belirtilmedi"
 msgid "Please add a type tag for this relation."
 msgstr ""
 
-#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:68
-#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget_p.cpp:79
+#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:69
+#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget_p.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "New Zealand"
@@ -60266,7 +60268,7 @@ msgstr ""
 msgid "Add Relation"
 msgstr "Koleksiyon Ekle"
 
-#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.cpp:94
+#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.cpp:95
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:104
 #, fuzzy, kde-format
 #| msgctxt "@title: DPlugin properties"
@@ -60351,81 +60353,81 @@ msgstr ""
 msgid "Target ID:"
 msgstr "Hedef"
 
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:34
+#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:35
 #, kde-format
 msgid "Placemark position provider Plugin"
 msgstr ""
 
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:44
+#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:45
 #, fuzzy, kde-format
 #| msgctxt "Replace string"
 #| msgid "Replace:"
 msgid "Placemark"
 msgstr "Değiştir:"
 
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:54
+#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Set width position to center."
 msgid "Reports the position of a placemark"
 msgstr "Ortalamak için genişliği ayarlayın."
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:231
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:233
 #, fuzzy, kde-format
 #| msgid "Mercator"
 msgctxt "the planet"
 msgid "Mercury"
 msgstr "Merkator"
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:233
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:235
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
 msgstr ""
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:235
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:237
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
 msgstr ""
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:237
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:239
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
 msgstr ""
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:239
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:241
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
 msgstr ""
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:241
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:243
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgctxt "the planet"
 msgid "Saturn"
 msgstr "Doygunluk"
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:243
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:245
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
 msgstr ""
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:245
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:247
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
 msgstr ""
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:248
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:250
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
 msgstr ""
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:251
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:253
 #, fuzzy, kde-format
 #| msgctxt "@item: WB temperature preset"
 #| msgid "Sun"
@@ -60433,7 +60435,7 @@ msgctxt "the earth's star"
 msgid "Sun"
 msgstr "Güneş"
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:253
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:255
 #, fuzzy, kde-format
 #| msgctxt "@item: WB temperature preset"
 #| msgid "Moonlight"
@@ -60441,12 +60443,12 @@ msgctxt "the earth's moon"
 msgid "Moon"
 msgstr "Ay Işığı"
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:255
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:257
 #, kde-format
 msgid "Sky"
 msgstr ""
 
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:258
+#: core/utilities/geolocation/marble/PlanetFactory.cpp:260
 #, fuzzy, kde-format
 #| msgid "Unknown title"
 msgctxt "a planet without data"
@@ -60454,7 +60456,7 @@ msgid "Unknown Planet"
 msgstr "Bilinmeyen başlık"
 
 #. i18n: ectx: property (text), widget (QPushButton, configureButton)
-#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:365
+#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:366
 #: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:142
 #, fuzzy, kde-format
 #| msgid "Configure"
@@ -60595,7 +60597,7 @@ msgstr "Oransal"
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:117
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:118
 #, fuzzy, kde-format
 #| msgid "Show navigation"
 msgid "Navigation"
@@ -60752,12 +60754,12 @@ msgid ""
 "planetariums.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:37
+#: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:35
 #, kde-format
 msgid "Flat Map"
 msgstr ""
 
-#: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:42
+#: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:40
 #, kde-format
 msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
@@ -60789,7 +60791,7 @@ msgid ""
 "in structural geology to plot directional data.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:47
+#: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:46
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
@@ -60835,43 +60837,43 @@ msgid ""
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:108
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:109
 #, fuzzy, kde-format
 #| msgctxt "@action: dplugin"
 #| msgid "View"
 msgid "View"
 msgstr "Görünüm"
 
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:125
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:126
 #, kde-format
 msgid "Cache and Proxy"
 msgstr ""
 
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:133
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:134
 #, fuzzy, kde-format
 #| msgid "Date and time"
 msgid "Date and Time"
 msgstr "Tarih ve zaman"
 
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:137
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:138
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgid "Routing"
 msgstr "Derecelendirme"
 
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:154
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:155
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgid "Synchronization"
 msgstr "Eşitle"
 
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:270
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:271
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgid "Never synchronized."
 msgstr "Eşitle"
 
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:274
+#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:275
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Use lazy synchronization"
@@ -61470,13 +61472,13 @@ msgstr "Aramayı Eşlemle"
 msgid "Area Search"
 msgstr "Aramayı Eşlemle"
 
-#: core/utilities/geolocation/marble/SearchWidget.cpp:58
+#: core/utilities/geolocation/marble/SearchWidget.cpp:59
 #, fuzzy, kde-format
 #| msgid "Searches"
 msgid "Search Results"
 msgstr "Aramalar"
 
-#: core/utilities/geolocation/marble/SearchWidget.cpp:75
+#: core/utilities/geolocation/marble/SearchWidget.cpp:76
 #, kde-format
 msgid "Search for '%1'"
 msgstr ""
@@ -61686,57 +61688,57 @@ msgstr ""
 msgid "Change Placemark in Tour"
 msgstr "Yüz Etiketini Değiştir"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:139
-#: core/utilities/geolocation/marble/TourWidget.cpp:144
+#: core/utilities/geolocation/marble/TourWidget.cpp:140
+#: core/utilities/geolocation/marble/TourWidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "Add Folder"
 msgid "Add FlyTo"
 msgstr "Dizin Ekle"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:146
+#: core/utilities/geolocation/marble/TourWidget.cpp:147
 #, fuzzy, kde-format
 #| msgid "Add again"
 msgid "Add Wait"
 msgstr "Yeniden ekle"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:148
+#: core/utilities/geolocation/marble/TourWidget.cpp:149
 #, fuzzy, kde-format
 #| msgid "Add Border"
 msgid "Add SoundCue"
 msgstr "Kenarlık Ekle"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:151
+#: core/utilities/geolocation/marble/TourWidget.cpp:152
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Add Watermark"
 msgid "Add Placemark"
 msgstr "Filigran Ekle"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:153
+#: core/utilities/geolocation/marble/TourWidget.cpp:154
 #, fuzzy, kde-format
 #| msgid "Remove Bookmark"
 msgid "Remove placemark"
 msgstr "Yer İmini Kaldır"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:155
+#: core/utilities/geolocation/marble/TourWidget.cpp:156
 #, fuzzy, kde-format
 #| msgid "Change Face Tag"
 msgid "Change placemark"
 msgstr "Yüz Etiketini Değiştir"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:157
+#: core/utilities/geolocation/marble/TourWidget.cpp:158
 #, fuzzy, kde-format
 #| msgid "&Loop"
 msgid "Loop"
 msgstr "&Döngü Yap"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:341
+#: core/utilities/geolocation/marble/TourWidget.cpp:342
 #, fuzzy, kde-format
 #| msgid "Save File"
 msgid "Save tour"
 msgstr "Dosyayı Kaydet"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:342
+#: core/utilities/geolocation/marble/TourWidget.cpp:343
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid ""
@@ -61748,47 +61750,47 @@ msgstr ""
 "misiniz?</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.cpp:370
+#: core/utilities/geolocation/marble/TourWidget.cpp:371
 #: core/utilities/geolocation/marble/TourWidget.ui:156
 #, fuzzy, kde-format
 #| msgid "Export error"
 msgid "Open Tour"
 msgstr "Dışarıya aktarma hatası"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:370
-#: core/utilities/geolocation/marble/TourWidget.cpp:831
+#: core/utilities/geolocation/marble/TourWidget.cpp:371
+#: core/utilities/geolocation/marble/TourWidget.cpp:832
 #, kde-format
 msgid "KML Tours (*.kml)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:549
+#: core/utilities/geolocation/marble/TourWidget.cpp:550
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Remove Selected Items"
 msgstr "Seçilen etiketleri sil"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:550
+#: core/utilities/geolocation/marble/TourWidget.cpp:551
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to restore %1 item?"
 #| msgid_plural "Are you sure you want to restore %1 items?"
 msgid "Are you sure want to remove selected items?"
 msgstr "%1 ögeyi geri yüklemek istediğinizden emin misiniz?"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:831
+#: core/utilities/geolocation/marble/TourWidget.cpp:832
 #, fuzzy, kde-format
 #| msgctxt "@action Save As New Version...Save in format..."
 #| msgid "Save in Format"
 msgid "Save Tour as"
 msgstr "Şu Biçimde Kaydet"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:891
+#: core/utilities/geolocation/marble/TourWidget.cpp:892
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Discard Changes"
 msgid "Discard Changes"
 msgstr "Değişikliklerden Vazgeç"
 
-#: core/utilities/geolocation/marble/TourWidget.cpp:892
+#: core/utilities/geolocation/marble/TourWidget.cpp:893
 #, kde-format
 msgid ""
 "Are you sure want to discard all unsaved changes and close current document?"
