@@ -59,7 +59,7 @@ BUGFIXES:
 046 ==> 478568 - Regression new bundle Windows digikam 8.0.0 dated 04/12/2023.
 047 ==> 478553 - Exif view from MetadataEdit tool show unreadable characters from a JPEG image.
 048 ==> 478575 - When opening the Setting / Setting Dialog, then main window crashes.
-049 ==> 
+049 ==> 478611 - digiKam crashes while entering name of facetag in image preview.
 050 ==> 
 051 ==> 
 052 ==> 
