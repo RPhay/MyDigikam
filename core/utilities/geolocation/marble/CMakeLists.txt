@@ -97,7 +97,6 @@ set(marblewidget_SRCS
     MovieCapture.cpp
     MovieCaptureDialog.cpp
     NewBookmarkFolderDialog.cpp
-    NewstuffModel.cpp
     OsmcSymbol.cpp
     OwsServiceManager.cpp
     ParseRunnerPlugin.cpp
@@ -706,8 +705,6 @@ set(marblewidget_SRCS
     routing/RoutingProfilesWidget.cpp
     routing/RoutingProfilesModel.cpp
     routing/RoutingProfileSettingsDialog.cpp
-    routing/SpeakersModel.cpp
-    routing/VoiceNavigationModel.cpp
     routing/instructions/InstructionTransformation.cpp
     routing/instructions/RoutingInstruction.cpp
     routing/instructions/RoutingPoint.cpp
