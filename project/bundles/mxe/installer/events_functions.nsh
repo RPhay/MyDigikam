@@ -127,9 +127,9 @@ FunctionEnd
 
 Function functionFinishRun
 
-    ; execute the file NON elevated
+    ; Execute the file with non-elevated rights.
 
-    ExecShell "$WINDIR\explorer.exe" "$instdir\digikam.exe"
+    Exec '"$WINDIR\explorer.exe" "$instdir\digikam.exe"'
 
 FunctionEnd
 
