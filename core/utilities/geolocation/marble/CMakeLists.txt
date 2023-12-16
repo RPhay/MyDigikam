@@ -160,9 +160,7 @@ set(marblewidget_SRCS
     TileLoader.cpp
     TileLoaderHelper.cpp
     TileScalingTextureMapper.cpp
-    TourWidget.cpp
     TourControlEditWidget.cpp
-    TourItemDelegate.cpp
     TourPlayback.cpp
     TourCaptureDialog.cpp
     TreeViewDecoratorModel.cpp
@@ -744,7 +742,6 @@ set (marblewidget_UI
     TileCreatorDialog.ui
     TileLevelRangeWidget.ui
     TourCaptureDialog.ui
-    TourWidget.ui
 
     cloudsync/CloudRoutesDialog.ui
 
