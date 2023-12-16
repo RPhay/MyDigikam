@@ -21,6 +21,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QStandardPaths>
 #include <QFileInfo>
 #include <QElapsedTimer>
@@ -59,7 +60,9 @@ QList<QString> DNNResnetDetector::loadImageNetClass()
                                                      QLatin1String("digikam/facesengine"),
                                                      QStandardPaths::LocateDirectory);
 
-    QString imageNetClasses = appPath + QLatin1Char('/') + QLatin1String("classification_classes_ILSVRC2012.txt");
+    QString imageNetClasses = appPath           +
+                              QDir::separator() +
+                              QLatin1String("classification_classes_ILSVRC2012.txt");
 
     if (QFileInfo::exists(imageNetClasses))
     {
@@ -87,7 +90,9 @@ bool DNNResnetDetector::loadModels()
                                              QStandardPaths::LocateDirectory);
 
     QString model;
-    model           = appPath + QLatin1Char('/') + QLatin1String("resnet50.onnx");
+    model           = appPath           +
+                      QDir::separator() +
+                      QLatin1String("resnet50.onnx");
 
     if (QFileInfo::exists(model))
     {
@@ -158,7 +163,12 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const cv::Mat& inputImage)
 
     try
     {
-        cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
+        cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage,
+                                                   scaleFactor,
+                                                   inputImageSize,
+                                                   meanValToSubtract,
+                                                   true,
+                                                   false);
 
         if (!net.empty())
         {
@@ -185,7 +195,12 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& i
 
     try
     {
-        cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
+        cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages,
+                                                    scaleFactor,
+                                                    inputImageSize,
+                                                    meanValToSubtract,
+                                                    true,
+                                                    false);
 
         if (!net.empty())
         {

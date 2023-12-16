@@ -21,6 +21,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QStandardPaths>
 #include <QFileInfo>
 #include <QElapsedTimer>
@@ -58,7 +59,9 @@ QList<QString> DNNYoloDetector::loadCOCOClass()
                                                  QLatin1String("digikam/facesengine"),
                                                  QStandardPaths::LocateDirectory);
 
-    QString cocoClasses = appPath + QLatin1Char('/') + QLatin1String("coco.names");
+    QString cocoClasses = appPath           +
+                          QDir::separator() +
+                          QLatin1String("coco.names");
 
     if (QFileInfo::exists(cocoClasses))
     {
@@ -91,13 +94,13 @@ bool DNNYoloDetector::loadModels()
     {
         case (YoloVersions::YOLOV5NANO):
         {
-            model = appPath + QLatin1Char('/') + QLatin1String("yolov5n_batch_16_s320.onnx");  ///< smaller model
+            model = appPath + QDir::separator() + QLatin1String("yolov5n_batch_16_s320.onnx");  ///< smaller model
             break;
         }
 
         case (YoloVersions::YOLOV5XLARGE):
         {
-            model = appPath + QLatin1Char('/') + QLatin1String("yolov5x_batch_16_s320.onnx");  ///< bigger model
+            model = appPath + QDir::separator() + QLatin1String("yolov5x_batch_16_s320.onnx");  ///< bigger model
             break;
         }
 
@@ -177,7 +180,12 @@ std::vector<cv::Mat> DNNYoloDetector::preprocess(const cv::Mat& inputImage)
 
     try
     {
-        cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
+        cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage,
+                                                   scaleFactor,
+                                                   inputImageSize,
+                                                   meanValToSubtract,
+                                                   true,
+                                                   false);
 
         if (!net.empty())
         {
@@ -204,7 +212,12 @@ std::vector<cv::Mat> DNNYoloDetector::preprocess(const std::vector<cv::Mat>& inp
 
     try
     {
-        cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true, false);
+        cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages,
+                                                    scaleFactor,
+                                                    inputImageSize,
+                                                    meanValToSubtract,
+                                                    true,
+                                                    false);
 
         if (!net.empty())
         {
@@ -312,15 +325,15 @@ QHash<QString, QVector<QRect> > DNNYoloDetector::postprocess(const cv::Mat& inpu
 
                     // Box dimension.
 
-                    float w      = data[2];
-                    float h      = data[3];
+                    float w       = data[2];
+                    float h       = data[3];
 
                     // Bounding box coordinates.
 
-                    int left     = int((centerX - 0.5 * w) * x_factor);
-                    int top      = int((centerY - 0.5 * h) * y_factor);
-                    int width    = int(w                   * x_factor);
-                    int height   = int(h                   * y_factor);
+                    int left      = int((centerX - 0.5 * w) * x_factor);
+                    int top       = int((centerY - 0.5 * h) * y_factor);
+                    int width     = int(w                   * x_factor);
+                    int height    = int(h                   * y_factor);
 
                     // Store good detections in the boxes vector.
 
