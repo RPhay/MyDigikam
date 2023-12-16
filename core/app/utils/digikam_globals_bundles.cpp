@@ -255,13 +255,21 @@ void loadStdQtTranslationFiles(QApplication& app)
             QString language = settings.value(qApp->applicationName(), QString()).toString();
             settings.endGroup();
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Found specified language:" << language;
-
             if (!language.isEmpty())
             {
-                locale = QLocale(language.split(QLatin1Char(':')).first());
+                QString languageCode = language.split(QLatin1Char(':')).first();
+                QStringList ecmLangs = KLocalizedString::languages();
 
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Language set to:" <<  locale.name();
+                if (!ecmLangs.isEmpty())
+                {
+                    ecmLangs[0] = languageCode;
+                }
+
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Language set to:" <<  languageCode;
+
+                KLocalizedString::setLanguages(ecmLangs);
+
+                locale = QLocale(languageCode);
             }
         }
 
