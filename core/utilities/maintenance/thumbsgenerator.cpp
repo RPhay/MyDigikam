@@ -132,11 +132,23 @@ void ThumbsGenerator::slotStart()
 
         if ((*it)->type() == Album::PHYSICAL)
         {
-            d->allPicturesPath += CoreDbAccess().db()->getItemURLsInAlbum((*it)->id());
+            Q_FOREACH (const QString& path, CoreDbAccess().db()->getItemURLsInAlbum((*it)->id()))
+            {
+                if (!d->allPicturesPath.contains(path))
+                {
+                    d->allPicturesPath << path;
+                }
+            }
         }
         else if ((*it)->type() == Album::TAG)
         {
-            d->allPicturesPath += CoreDbAccess().db()->getItemURLsInTag((*it)->id());
+            Q_FOREACH (const QString& path, CoreDbAccess().db()->getItemURLsInTag((*it)->id()))
+            {
+                if (!d->allPicturesPath.contains(path))
+                {
+                    d->allPicturesPath << path;
+                }
+            }
         }
     }
 
@@ -159,6 +171,7 @@ void ThumbsGenerator::slotStart()
     }
 
     // remove non-image or video files from the list
+
     QStringList::iterator it = d->allPicturesPath.begin();
 
     while (it != d->allPicturesPath.end())

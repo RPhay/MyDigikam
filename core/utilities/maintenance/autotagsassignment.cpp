@@ -130,11 +130,23 @@ void AutotagsAssignment::slotStart()
 
         if      ((*it)->type() == Album::PHYSICAL)
         {
-            aPaths = CoreDbAccess().db()->getItemURLsInAlbum((*it)->id());
+            Q_FOREACH (const QString& path, CoreDbAccess().db()->getItemURLsInAlbum((*it)->id()))
+            {
+                if (!aPaths.contains(path))
+                {
+                    aPaths << path;
+                }
+            }
         }
         else if ((*it)->type() == Album::TAG)
         {
-            aPaths = CoreDbAccess().db()->getItemURLsInTag((*it)->id());
+            Q_FOREACH (const QString& path, CoreDbAccess().db()->getItemURLsInTag((*it)->id()))
+            {
+                if (!aPaths.contains(path))
+                {
+                    aPaths << path;
+                }
+            }
         }
 
         if (d->mode == NonAssignedItems)
