@@ -19,7 +19,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLU
 
 if(Qt6_FOUND)
 
-    # NOTE: There 2 instances of QRegEx to port to QRegularExpression
+    # NOTE: one instance of QRegEx to port to QRegularExpression in TemplateDocument.cpp
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
 
 endif()
@@ -58,7 +58,6 @@ set(marblewidget_SRCS
     GenericScanlineTextureMapper.cpp
     GeoDataTreeModel.cpp
     GeoPainter.cpp
-    GeoUriParser.cpp
     GoToDialog.cpp
     HttpDownloadManager.cpp
     HttpJob.cpp
