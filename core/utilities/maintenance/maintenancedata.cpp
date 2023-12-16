@@ -16,7 +16,8 @@
 
 // Qt includes
 
-#include <QMutex>
+#include <QRecursiveMutex>
+#include <QMutexLocker>
 
 // Local includes
 
@@ -43,7 +44,7 @@ public:
 
     bool             rebuildAllFingerprints;
 
-    QMutex           mutex;
+    QRecursiveMutex  mutex;
 };
 
 MaintenanceData::MaintenanceData()

@@ -16,7 +16,7 @@
 
 // Qt includes
 
-#include <QMutex>
+#include <QRecursiveMutex>
 #include <QMutexLocker>
 
 // Local includes
@@ -61,7 +61,7 @@ public:
     QString            progressId;
     QDateTime          jobTime;
 
-    QMutex             mutex;
+    QRecursiveMutex    mutex;
 };
 
 IOJobData::IOJobData(int operation,
