@@ -7,11 +7,11 @@
 #ifndef MARBLE_MARBLEDIRS_H
 #define MARBLE_MARBLEDIRS_H
 
-#include "digikam_export.h"
-
 #include <QDir>
 #include <QString>
 #include <QStringList>
+
+#include "digikam_export.h"
 
 namespace Marble
 {
@@ -72,38 +72,31 @@ namespace Marble
 
 class DIGIKAM_EXPORT MarbleDirs
 {
- public:
-    MarbleDirs();
+public:
 
-    static QString path( const QString& relativePath );
+    MarbleDirs() = default;
 
-    static QString pluginPath( const QString& relativePath );
+    static QString path(const QString& relativePath);
+    static QString pluginPath(const QString& relativePath);
 
-
-    static QStringList entryList( const QString& relativePath, QDir::Filters filters = QDir::NoFilter  );
-
-    static QStringList pluginEntryList( const QString& relativePath, QDir::Filters filters = QDir::NoFilter  );
-
+    static QStringList entryList(const QString& relativePath, QDir::Filters filters = QDir::NoFilter);
+    static QStringList pluginEntryList(const QString& relativePath, QDir::Filters filters = QDir::NoFilter);
 
     static QString systemPath();
-
     static QString pluginSystemPath();
 
-
     static QString localPath();
-
     static QString pluginLocalPath();
 
 
     static QString marbleDataPath();
-
-    static void setMarbleDataPath( const QString& adaptedPath);
+    static void setMarbleDataPath(const QString& adaptedPath);
 
     static void debug();
 
  private:
 
-    Q_DISABLE_COPY( MarbleDirs )
+    Q_DISABLE_COPY(MarbleDirs)
 };
 
 } // namespace Marble

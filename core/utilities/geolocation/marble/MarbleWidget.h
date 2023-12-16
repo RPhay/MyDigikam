@@ -7,7 +7,6 @@
 #ifndef MARBLE_MARBLEWIDGET_H
 #define MARBLE_MARBLEWIDGET_H
 
-
 /** @file
  * This file contains the headers for MarbleWidget.
  *
@@ -19,8 +18,9 @@
 
 #include "GeoDataCoordinates.h"
 #include "MarbleGlobal.h"             // types needed in all of marble.
-#include "digikam_export.h"
 #include "TileCoordsPyramid.h"
+
+#include "digikam_export.h"
 
 // Qt
 class QSettings;
@@ -97,48 +97,47 @@ class StyleBuilder;
 class DIGIKAM_EXPORT MarbleWidget : public QWidget
 {
     Q_OBJECT
-#ifdef MARBLE_DBUS
-    Q_CLASSINFO("D-Bus Interface", "org.kde.MarbleWidget")
-#endif
 
-    Q_PROPERTY(int zoom          READ zoom            WRITE setZoom)
+    Q_PROPERTY(int zoom             READ zoom            WRITE setZoom)
 
-    Q_PROPERTY(QString mapThemeId  READ mapThemeId    WRITE setMapThemeId)
-    Q_PROPERTY(int projection    READ projection      WRITE setProjection)
+    Q_PROPERTY(QString mapThemeId   READ mapThemeId      WRITE setMapThemeId)
+    Q_PROPERTY(int projection       READ projection      WRITE setProjection)
 
-    Q_PROPERTY(qreal longitude  READ centerLongitude WRITE setCenterLongitude)
-    Q_PROPERTY(qreal latitude   READ centerLatitude  WRITE setCenterLatitude)
+    Q_PROPERTY(qreal longitude      READ centerLongitude WRITE setCenterLongitude)
+    Q_PROPERTY(qreal latitude       READ centerLatitude  WRITE setCenterLatitude)
 
-    Q_PROPERTY(bool showOverviewMap READ showOverviewMap    WRITE setShowOverviewMap)
-    Q_PROPERTY(bool showScaleBar READ showScaleBar    WRITE setShowScaleBar)
-    Q_PROPERTY(bool showCompass  READ showCompass     WRITE setShowCompass)
-    Q_PROPERTY(bool showGrid     READ showGrid        WRITE setShowGrid)
+    Q_PROPERTY(bool showOverviewMap READ showOverviewMap WRITE setShowOverviewMap)
+    Q_PROPERTY(bool showScaleBar    READ showScaleBar    WRITE setShowScaleBar)
+    Q_PROPERTY(bool showCompass     READ showCompass     WRITE setShowCompass)
+    Q_PROPERTY(bool showGrid        READ showGrid        WRITE setShowGrid)
 
-    Q_PROPERTY(bool showClouds   READ showClouds      WRITE setShowClouds)
-    Q_PROPERTY(bool showSunShading READ showSunShading WRITE setShowSunShading)
-    Q_PROPERTY(bool showCityLights READ showCityLights WRITE setShowCityLights)
-    Q_PROPERTY(bool isLockedToSubSolarPoint READ isLockedToSubSolarPoint WRITE setLockToSubSolarPoint)
+    Q_PROPERTY(bool showClouds      READ showClouds      WRITE setShowClouds)
+    Q_PROPERTY(bool showSunShading  READ showSunShading  WRITE setShowSunShading)
+    Q_PROPERTY(bool showCityLights  READ showCityLights  WRITE setShowCityLights)
+
+    Q_PROPERTY(bool isLockedToSubSolarPoint    READ isLockedToSubSolarPoint    WRITE setLockToSubSolarPoint)
     Q_PROPERTY(bool isSubSolarPointIconVisible READ isSubSolarPointIconVisible WRITE setSubSolarPointIconVisible)
-    Q_PROPERTY(bool showAtmosphere READ showAtmosphere WRITE setShowAtmosphere)
-    Q_PROPERTY(bool showCrosshairs READ showCrosshairs WRITE setShowCrosshairs)
 
-    Q_PROPERTY(bool showPlaces   READ showPlaces      WRITE setShowPlaces)
-    Q_PROPERTY(bool showCities   READ showCities      WRITE setShowCities)
-    Q_PROPERTY(bool showTerrain  READ showTerrain     WRITE setShowTerrain)
+    Q_PROPERTY(bool showAtmosphere  READ showAtmosphere  WRITE setShowAtmosphere)
+    Q_PROPERTY(bool showCrosshairs  READ showCrosshairs  WRITE setShowCrosshairs)
+
+    Q_PROPERTY(bool showPlaces      READ showPlaces      WRITE setShowPlaces)
+    Q_PROPERTY(bool showCities      READ showCities      WRITE setShowCities)
+    Q_PROPERTY(bool showTerrain     READ showTerrain     WRITE setShowTerrain)
     Q_PROPERTY(bool showOtherPlaces READ showOtherPlaces WRITE setShowOtherPlaces)
 
-    Q_PROPERTY(bool showRelief   READ showRelief      WRITE setShowRelief)
+    Q_PROPERTY(bool showRelief      READ showRelief      WRITE setShowRelief)
 
-    Q_PROPERTY(bool showIceLayer READ showIceLayer    WRITE setShowIceLayer)
-    Q_PROPERTY(bool showBorders  READ showBorders     WRITE setShowBorders)
-    Q_PROPERTY(bool showRivers   READ showRivers      WRITE setShowRivers)
-    Q_PROPERTY(bool showLakes    READ showLakes       WRITE setShowLakes)
+    Q_PROPERTY(bool showIceLayer    READ showIceLayer    WRITE setShowIceLayer)
+    Q_PROPERTY(bool showBorders     READ showBorders     WRITE setShowBorders)
+    Q_PROPERTY(bool showRivers      READ showRivers      WRITE setShowRivers)
+    Q_PROPERTY(bool showLakes       READ showLakes       WRITE setShowLakes)
 
-    Q_PROPERTY(ViewContext viewContext READ viewContext WRITE setViewContext NOTIFY viewContextChanged)
+    Q_PROPERTY(ViewContext viewContext   READ viewContext WRITE setViewContext NOTIFY viewContextChanged)
 
-    Q_PROPERTY( RenderStatus renderStatus READ renderStatus NOTIFY renderStatusChanged )
+    Q_PROPERTY(RenderStatus renderStatus READ renderStatus NOTIFY renderStatusChanged )
 
-    Q_PROPERTY(quint64 volatileTileCacheLimit    READ volatileTileCacheLimit    WRITE setVolatileTileCacheLimit)
+    Q_PROPERTY(quint64 volatileTileCacheLimit READ volatileTileCacheLimit WRITE setVolatileTileCacheLimit)
 
  public:
 
@@ -1163,19 +1162,22 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
     virtual void customPaint( GeoPainter *painter );
 
  private:
+
     Q_PRIVATE_SLOT( d, void updateMapTheme() )
     Q_PRIVATE_SLOT( d, void updateSystemBackgroundAttribute() )
 
  private:
+
     Q_DISABLE_COPY( MarbleWidget )
-    MarbleWidgetPrivate  * const d;
+
+    MarbleWidgetPrivate* const d;
     friend class MarbleWidgetPrivate;
 
     class CustomPaintLayer;
     friend class CustomPaintLayer;
 
     friend class MarbleWidgetDefaultInputHandler;
-    };
+};
 
 }
 

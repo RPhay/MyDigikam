@@ -17,14 +17,14 @@
 
 using namespace Marble;
 
-MarbleDirs::MarbleDirs()
+QString MarbleDirs::path(const QString& relativePath)
 {
-}
-
-QString MarbleDirs::path( const QString& relativePath )
-{
-    QString localpath  = localPath()  + QDir::separator() + relativePath;   // local path
-    QString systempath = systemPath() + QDir::separator() + relativePath;   // system path
+    QString localpath  = localPath()       +
+                         QDir::separator() +
+                         relativePath;   // local path
+    QString systempath = systemPath()      +
+                         QDir::separator() +
+                         relativePath;   // system path
     QString fullpath   = systempath;
 
     if ( QFile::exists( localpath ) )
@@ -35,10 +35,14 @@ QString MarbleDirs::path( const QString& relativePath )
     return QDir( fullpath ).canonicalPath();
 }
 
-QString MarbleDirs::pluginPath( const QString& relativePath )
+QString MarbleDirs::pluginPath(const QString& relativePath)
 {
-    const QString localpath  = pluginLocalPath()  + QDir::separator() + relativePath; // local path
-    const QString systempath = pluginSystemPath() + QDir::separator() + relativePath; // system path
+    const QString localpath  = pluginLocalPath()  +
+                               QDir::separator()  +
+                               relativePath; // local path
+    const QString systempath = pluginSystemPath() +
+                               QDir::separator()  +
+                               relativePath; // system path
     QString fullpath         = systempath;
 
     if ( QFile::exists( localpath ) )
@@ -49,10 +53,14 @@ QString MarbleDirs::pluginPath( const QString& relativePath )
     return QDir( fullpath ).canonicalPath();
 }
 
-QStringList MarbleDirs::entryList( const QString& relativePath, QDir::Filters filters )
+QStringList MarbleDirs::entryList(const QString& relativePath, QDir::Filters filters)
 {
-    QStringList filesLocal  = QDir(MarbleDirs::localPath()  + QLatin1Char('/') + relativePath).entryList(filters);
-    QStringList filesSystem = QDir(MarbleDirs::systemPath() + QLatin1Char('/') + relativePath).entryList(filters);
+    QStringList filesLocal  = QDir(MarbleDirs::localPath()  +
+                              QDir::separator()             +
+                              relativePath).entryList(filters);
+    QStringList filesSystem = QDir(MarbleDirs::systemPath() +
+                              QDir::separator()             +
+                              relativePath).entryList(filters);
     QStringList allFiles( filesLocal );
     allFiles << filesSystem;
 
@@ -72,14 +80,16 @@ QStringList MarbleDirs::entryList( const QString& relativePath, QDir::Filters fi
     return allFiles;
 }
 
-QStringList MarbleDirs::pluginEntryList( const QString& relativePath, QDir::Filters filters )
+QStringList MarbleDirs::pluginEntryList(const QString& relativePath, QDir::Filters filters)
 {
-    QStringList allFiles = QDir(MarbleDirs::pluginLocalPath() + QLatin1Char('/') + relativePath).entryList(filters);
+    QStringList allFiles        = QDir(MarbleDirs::pluginLocalPath() +
+                                  QDir::separator()                  +
+                                  relativePath).entryList(filters);
     auto const pluginSystemPath = MarbleDirs::pluginSystemPath();
 
     if (!pluginSystemPath.isEmpty())
     {
-        allFiles << QDir(pluginSystemPath + QLatin1Char('/') + relativePath).entryList(filters);
+        allFiles << QDir(pluginSystemPath + QDir::separator() + relativePath).entryList(filters);
     }
 
     // remove duplicate entries
@@ -109,12 +119,18 @@ QString MarbleDirs::systemPath()
 
 QString MarbleDirs::localPath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/digikam/marble_data");
+    return (
+            QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) +
+            QLatin1String("/digikam/marble_data")
+           );
 }
 
 QString MarbleDirs::pluginLocalPath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/digikam/marble_plugins");
+    return (
+            QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) +
+            QLatin1String("/digikam/marble_plugins")
+           );
 }
 
 QString MarbleDirs::pluginSystemPath()
@@ -122,11 +138,17 @@ QString MarbleDirs::pluginSystemPath()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    return QLibraryInfo::path(QLibraryInfo::PluginsPath) + QLatin1String("/digikam/marble");
+    return (
+            QLibraryInfo::path(QLibraryInfo::PluginsPath) +
+            QLatin1String("/digikam/marble")
+           );
 
 #else
 
-    return QLibraryInfo::location(QLibraryInfo::PluginsPath) + QLatin1String("/digikam/marble");
+    return (
+            QLibraryInfo::location(QLibraryInfo::PluginsPath) +
+            QLatin1String("/digikam/marble")
+           );
 
 #endif
 
