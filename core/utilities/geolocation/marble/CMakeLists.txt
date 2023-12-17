@@ -117,7 +117,6 @@ set(marblewidget_SRCS
     QtMarbleConfigDialog.cpp
     Quaternion.cpp
     RemoteIconLoader.cpp
-    RemoveItemEditWidget.cpp
     RenderPlugin.cpp
     RenderPluginInterface.cpp
     RenderPluginModel.cpp
