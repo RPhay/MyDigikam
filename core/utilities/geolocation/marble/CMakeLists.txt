@@ -57,6 +57,7 @@ set(marblewidget_SRCS
     FormattedTextWidget.cpp
     GenericScanlineTextureMapper.cpp
     GeoDataTreeModel.cpp
+    GeoGraphicsScene.cpp
     GeoPainter.cpp
     GoToDialog.cpp
     HttpDownloadManager.cpp
@@ -160,7 +161,6 @@ set(marblewidget_SRCS
     TileLoader.cpp
     TileLoaderHelper.cpp
     TileScalingTextureMapper.cpp
-    TourControlEditWidget.cpp
     TourPlayback.cpp
     TourCaptureDialog.cpp
     TreeViewDecoratorModel.cpp
@@ -715,8 +715,6 @@ set(marblewidget_SRCS
     cloudsync/MergeItem.cpp
     cloudsync/ConflictDialog.cpp
     cloudsync/OwncloudSyncBackend.cpp
-
-    GeoGraphicsScene.cpp
 )
 
 set (marblewidget_UI
