@@ -32,8 +32,6 @@ set(marblewidget_SRCS
     AbstractFloatItem.cpp
     AbstractWorkerThread.cpp
     AddLinkDialog.cpp
-    BookmarkManager.cpp
-    BookmarkManagerDialog.cpp
     BranchFilterProxyModel.cpp
     CacheStoragePolicy.cpp
     CelestialSortFilterProxyModel.cpp
@@ -44,7 +42,6 @@ set(marblewidget_SRCS
     DownloadQueueSet.cpp
     DownloadRegion.cpp
     DownloadRegionDialog.cpp
-    EditBookmarkDialog.cpp
     ElevationModel.cpp
     EquirectScanlineTextureMapper.cpp
     FileLoader.cpp
@@ -88,7 +85,6 @@ set(marblewidget_SRCS
     MathHelper.cpp
     MercatorScanlineTextureMapper.cpp
     MergedLayerDecorator.cpp
-    NewBookmarkFolderDialog.cpp
     OsmcSymbol.cpp
     ParseRunnerPlugin.cpp
     ParsingRunner.cpp
@@ -169,6 +165,11 @@ set(marblewidget_SRCS
     blendings/BlendingAlgorithms.cpp
     blendings/BlendingFactory.cpp
     blendings/SunLightBlending.cpp
+
+    bookmark/BookmarkManager.cpp
+    bookmark/BookmarkManagerDialog.cpp
+    bookmark/EditBookmarkDialog.cpp
+    bookmark/NewBookmarkFolderDialog.cpp
 
     geodata/data/LonLatParser.cpp
     geodata/data/GeoDataRegion.cpp
@@ -711,8 +712,6 @@ set(marblewidget_SRCS
 set (marblewidget_UI
 
     AddLinkDialog.ui
-    BookmarkManagerDialog.ui
-    EditBookmarkDialog.ui
     ElevationWidget.ui
     FormattedTextWidget.ui
     LatLonBoxWidget.ui
@@ -723,10 +722,13 @@ set (marblewidget_UI
     MarblePluginSettingsWidget.ui
     MarbleTimeSettingsWidget.ui
     MarbleViewSettingsWidget.ui
-    NewBookmarkFolderDialog.ui
     PlacemarkEditHeader.ui
     TileCreatorDialog.ui
     TileLevelRangeWidget.ui
+
+    bookmark/BookmarkManagerDialog.ui
+    bookmark/EditBookmarkDialog.ui
+    bookmark/NewBookmarkFolderDialog.ui
 
     cloudsync/CloudRoutesDialog.ui
 
