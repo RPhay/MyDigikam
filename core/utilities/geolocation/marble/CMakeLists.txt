@@ -32,7 +32,6 @@ set(marblewidget_SRCS
     AbstractFloatItem.cpp
     AbstractWorkerThread.cpp
     AddLinkDialog.cpp
-    AnimatedUpdateTrack.cpp
     BookmarkManager.cpp
     BookmarkManagerDialog.cpp
     BranchFilterProxyModel.cpp
@@ -680,6 +679,7 @@ set(marblewidget_SRCS
     projections/VerticalPerspectiveProjection.cpp
 
     routing/AlternativeRoutesModel.cpp
+    routing/AnimatedUpdateTrack.cpp
     routing/Maneuver.cpp
     routing/Route.cpp
     routing/RouteRequest.cpp
