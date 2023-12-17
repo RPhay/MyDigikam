@@ -126,11 +126,9 @@ set(marblewidget_SRCS
     RoutingRunner.cpp
     RunnerTask.cpp
     ScanlineTextureMapperContext.cpp
-    SearchInputWidget.cpp
     SearchRunner.cpp
     SearchRunnerManager.cpp
     SearchRunnerPlugin.cpp
-    SearchWidget.cpp
     SerialTrack.cpp
     ServerLayout.cpp
     SoundCueEditWidget.cpp
