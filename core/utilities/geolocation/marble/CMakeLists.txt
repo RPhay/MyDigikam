@@ -158,7 +158,6 @@ set(marblewidget_SRCS
     TileLoader.cpp
     TileLoaderHelper.cpp
     TileScalingTextureMapper.cpp
-    TourPlayback.cpp
     TreeViewDecoratorModel.cpp
     VectorTileModel.cpp
     ViewParams.cpp
@@ -694,6 +693,7 @@ set(marblewidget_SRCS
     routing/RoutingProfilesWidget.cpp
     routing/RoutingProfilesModel.cpp
     routing/RoutingProfileSettingsDialog.cpp
+    routing/TourPlayback.cpp
     routing/instructions/InstructionTransformation.cpp
     routing/instructions/RoutingInstruction.cpp
     routing/instructions/RoutingPoint.cpp
