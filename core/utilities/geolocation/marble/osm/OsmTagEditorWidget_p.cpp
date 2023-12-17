@@ -7,6 +7,12 @@
 #include "OsmTagEditorWidget_p.h"
 #include "OsmTagEditorWidget.h"
 
+// Qt
+#include <QTreeWidget>
+#include <QObject>
+
+#include <klocalizedstring.h>
+
 // Marble
 #include "GeoDataLineString.h"
 #include "GeoDataPolygon.h"
@@ -20,16 +26,13 @@
 #include "GeoDataPoint.h"
 #include "StyleBuilder.h"
 
-// Qt
-#include <QTreeWidget>
-#include <QObject>
-
-#include <klocalizedstring.h>
+#include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 
 namespace Marble
 {
 
-const QString OsmTagEditorWidgetPrivate::m_customTagAdderText = i18n( "Add custom tag..." );
+const QString OsmTagEditorWidgetPrivate::m_customTagAdderText = QString::fromUtf8(I18N_NOOP("Add custom tag..."));
+
 OsmTagEditorWidgetPrivate::OsmTagEditorWidgetPrivate()
 {
     // nothing to do
@@ -83,8 +86,6 @@ void OsmTagEditorWidgetPrivate::populateCurrentTagsList()
     m_currentTagsList->addTopLevelItem( adderItem );
     m_currentTagsList->resizeColumnToContents( 0 );
     m_currentTagsList->resizeColumnToContents( 1 );
-
-
 }
 
 void OsmTagEditorWidgetPrivate::populatePresetTagsList()
