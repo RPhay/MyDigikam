@@ -92,8 +92,6 @@ set(marblewidget_SRCS
     MathHelper.cpp
     MercatorScanlineTextureMapper.cpp
     MergedLayerDecorator.cpp
-    MovieCapture.cpp
-    MovieCaptureDialog.cpp
     NewBookmarkFolderDialog.cpp
     OsmcSymbol.cpp
     ParseRunnerPlugin.cpp
@@ -732,7 +730,6 @@ set (marblewidget_UI
     MarblePluginSettingsWidget.ui
     MarbleTimeSettingsWidget.ui
     MarbleViewSettingsWidget.ui
-    MovieCaptureDialog.ui
     NewBookmarkFolderDialog.ui
     PlacemarkEditHeader.ui
     TileCreatorDialog.ui
