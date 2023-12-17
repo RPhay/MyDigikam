@@ -71,7 +71,6 @@ set(marblewidget_SRCS
     MarbleDirs.cpp
     MarbleGlobal.cpp
     MarbleInputHandler.cpp
-    MarbleLineEdit.cpp
     MarbleLocale.cpp
     MarbleMap.cpp
     MarbleModel.cpp
@@ -678,6 +677,7 @@ set(marblewidget_SRCS
     routing/AnimatedUpdateTrack.cpp
     routing/GoToDialog.cpp
     routing/Maneuver.cpp
+    routing/MarbleLineEdit.cpp
     routing/Route.cpp
     routing/RouteRequest.cpp
     routing/RouteSegment.cpp
