@@ -56,7 +56,6 @@ set(marblewidget_SRCS
     GeoDataTreeModel.cpp
     GeoGraphicsScene.cpp
     GeoPainter.cpp
-    GoToDialog.cpp
     HttpDownloadManager.cpp
     HttpJob.cpp
     ImageF.cpp
@@ -678,6 +677,7 @@ set(marblewidget_SRCS
 
     routing/AlternativeRoutesModel.cpp
     routing/AnimatedUpdateTrack.cpp
+    routing/GoToDialog.cpp
     routing/Maneuver.cpp
     routing/Route.cpp
     routing/RouteRequest.cpp
@@ -717,7 +717,6 @@ set (marblewidget_UI
     EditBookmarkDialog.ui
     ElevationWidget.ui
     FormattedTextWidget.ui
-    GoToDialog.ui
     LatLonBoxWidget.ui
     LatLonEdit.ui
     MarbleCacheSettingsWidget.ui
@@ -736,6 +735,7 @@ set (marblewidget_UI
     osm/OsmTagEditorWidget.ui
     osm/OsmRelationManagerWidget.ui
 
+    routing/GoToDialog.ui
     routing/RoutingWidget.ui
     routing/RoutingSettingsWidget.ui
     routing/RoutingProfileSettingsDialog.ui
