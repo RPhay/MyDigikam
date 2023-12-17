@@ -45,7 +45,6 @@ set(marblewidget_SRCS
     DownloadRegion.cpp
     DownloadRegionDialog.cpp
     EditBookmarkDialog.cpp
-    EditPlacemarkDialog.cpp
     ElevationModel.cpp
     EquirectScanlineTextureMapper.cpp
     FileLoader.cpp
@@ -716,7 +715,6 @@ set (marblewidget_UI
     AddLinkDialog.ui
     BookmarkManagerDialog.ui
     EditBookmarkDialog.ui
-    EditPlacemarkDialog.ui
     ElevationWidget.ui
     FormattedTextWidget.ui
     GoToDialog.ui
