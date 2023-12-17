@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-16 00:39+0000\n"
+"POT-Creation-Date: 2023-12-17 00:39+0000\n"
 "PO-Revision-Date: 2023-12-15 10:16+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3236,12 +3236,10 @@ msgstr "Selecció"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeFolderButton)
 #. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:91
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:151
-#: core/utilities/geolocation/marble/TourWidget.ui:114
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -21446,20 +21444,16 @@ msgid "This file may not be playable."
 msgstr "El fitxer potser no és reproduïble."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:32
 #: core/utilities/geolocation/marble/TourControlEditWidget.cpp:38
-#: core/utilities/geolocation/marble/TourWidget.ui:168
 #, kde-format
 msgid "Play"
 msgstr "Reprodueix"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/geolocation/marble/TourWidget.ui:180
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Stop"
@@ -53496,7 +53490,7 @@ msgid "Google Maps"
 msgstr "Google Maps"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:485
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
 #, kde-format
 msgid "Float items"
 msgstr "Elements flotants"
@@ -53532,49 +53526,54 @@ msgstr "Mapa de satèl·lit"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:343
+#, kde-format
+msgid "OpenStreetMap (Vector)"
+msgstr "OpenStreetMap (Vector)"
+
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Esfèric"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:406
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
 #, kde-format
 msgid "Equirectangular"
 msgstr "Cilíndrica equidistant"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:422
 #, kde-format
 msgid "Show compass"
 msgstr "Mostra la brúixola"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:427
 #, kde-format
 msgid "Show scale bar"
 msgstr "Mostra la barra d'escala"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:431
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:432
 #, kde-format
 msgid "Show navigation"
 msgstr "Mostra la navegació"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Show overview map"
 msgstr "Mostra un mapa general"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:449
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Altres temes del Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:476
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:477
 #, kde-format
 msgid "Projection"
 msgstr "Projecció"
@@ -55446,12 +55445,8 @@ msgstr "72"
 msgid "96"
 msgstr "96"
 
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarControl)
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarPlayback)
 #. i18n: ectx: property (windowTitle), widget (QToolBar, m_formattedTextToolBar)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:148
-#: core/utilities/geolocation/marble/TourWidget.ui:20
-#: core/utilities/geolocation/marble/TourWidget.ui:45
 #, kde-format
 msgid "toolBar"
 msgstr "Barra d'eines"
@@ -58732,12 +58727,6 @@ msgstr "Carpeta nova de punt d'interès"
 msgid "&Folder name:"
 msgstr "&Nom de la carpeta:"
 
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:718
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:727
-#, kde-format
-msgid "Installation aborted by user."
-msgstr "L'usuari ha interromput la instal·lació."
-
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
@@ -59998,212 +59987,6 @@ msgstr "Vídeo de destinació"
 #, kde-format
 msgid "Pause"
 msgstr "Pausa"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:95
-#, kde-format
-msgid "Play the tour"
-msgstr "Reprodueix el recorregut"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:97
-#, kde-format
-msgid "Pause the tour"
-msgstr "Fes pausa al recorregut"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:129
-#, kde-format
-msgid "Wait for %1 seconds"
-msgstr "Fa una pausa durant %1 segons"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:174
-#, kde-format
-msgid "Create item %1"
-msgstr "Crea l'element %1"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:179
-#, kde-format
-msgid "Remove item %1"
-msgstr "Elimina l'element %1"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:183
-#, kde-format
-msgid "Change item %1"
-msgstr "Canvia l'element %1"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:188
-#, kde-format
-msgid "Update items"
-msgstr "Actualitza els elements"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:409
-#, kde-format
-msgid "Add Placemark to Tour"
-msgstr "Afegeix una marca de lloc al recorregut"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:411
-#, kde-format
-msgid "Change Placemark in Tour"
-msgstr "Canvia una marca de lloc en el recorregut"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:140
-#: core/utilities/geolocation/marble/TourWidget.cpp:145
-#, kde-format
-msgid "Add FlyTo"
-msgstr "Afegeix sobrevol"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:147
-#, kde-format
-msgid "Add Wait"
-msgstr "Afegeix una espera"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:149
-#, kde-format
-msgid "Add SoundCue"
-msgstr "Afegeix una banda sonora"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:152
-#, kde-format
-msgid "Add Placemark"
-msgstr "Afegeix una marca de lloc"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:154
-#, kde-format
-msgid "Remove placemark"
-msgstr "Elimina una marca de lloc"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:156
-#, kde-format
-msgid "Change placemark"
-msgstr "Canvia una marca de lloc"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:158
-#, kde-format
-msgid "Loop"
-msgstr "Repetició"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:342
-#, kde-format
-msgid "Save tour"
-msgstr "Desa el recorregut"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:343
-#, kde-format
-msgid "There are unsaved Tours. Do you want to save your changes?"
-msgstr "Hi ha recorreguts sense desar. Voleu desar els canvis?"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.ui:156
-#, kde-format
-msgid "Open Tour"
-msgstr "Obre un recorregut"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, kde-format
-msgid "KML Tours (*.kml)"
-msgstr "Recorreguts KML (*.kml)"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:550
-#, kde-format
-msgid "Remove Selected Items"
-msgstr "Elimina els elements seleccionats"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:551
-#, kde-format
-msgid "Are you sure want to remove selected items?"
-msgstr "Esteu segur que voleu eliminar els elements seleccionats?"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, kde-format
-msgid "Save Tour as"
-msgstr "Desa el recorregut com a"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:892
-#, kde-format
-msgid "Discard Changes"
-msgstr "Descarta els canvis"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:893
-#, kde-format
-msgid ""
-"Are you sure want to discard all unsaved changes and close current document?"
-msgstr ""
-"Esteu segur que voleu descartar tots els canvis sense desar i tancar el "
-"document actual?"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, TourWidget)
-#: core/utilities/geolocation/marble/TourWidget.ui:14
-#, kde-format
-msgid "Tour"
-msgstr "Recorregut"
-
-#. i18n: ectx: property (text), widget (QLabel, m_elapsedTime)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:57
-#: core/utilities/geolocation/marble/TourWidget.ui:71
-#, kde-format
-msgid "--:--"
-msgstr "--:--"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:87
-#: core/utilities/geolocation/marble/TourWidget.ui:90
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
-#, kde-format
-msgid "Move up"
-msgstr "Mou amunt"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:102
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
-#, kde-format
-msgid "Move down"
-msgstr "Mou avall"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:123
-#, kde-format
-msgid "New Tour"
-msgstr "Recorregut nou"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:135
-#, kde-format
-msgid "Save Tour"
-msgstr "Desa el recorregut"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:147
-#, kde-format
-msgid "Save Tour As"
-msgstr "Desa el recorregut com a"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:171
-#, kde-format
-msgid "Begins touring"
-msgstr "Comença el recorregut"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:183
-#, kde-format
-msgid "Stops touring (playing again will start tour from the start)"
-msgstr ""
-"Atura el recorregut (la nova reproducció engegarà el recorregut des de "
-"l'inici)"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:192
-#, kde-format
-msgid "Record tour"
-msgstr "Enregistra el recorregut"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:195
-#, kde-format
-msgid "Converts the loaded tour into a movie"
-msgstr "Converteix el recorregut carregat en una pel·lícula"
 
 #: core/utilities/geolocation/marble/WaitEditWidget.cpp:38
 #, kde-format
@@ -63800,6 +63583,16 @@ msgstr "Elimina els elements processats"
 #, kde-format
 msgid "Clear Queue"
 msgstr "Neteja la cua"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
+#, kde-format
+msgid "Move up"
+msgstr "Mou amunt"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
+#, kde-format
+msgid "Move down"
+msgstr "Mou avall"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
@@ -70038,6 +69831,117 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
 
+#~ msgid "Installation aborted by user."
+#~ msgstr "L'usuari ha interromput la instal·lació."
+
+#~ msgid "Play the tour"
+#~ msgstr "Reprodueix el recorregut"
+
+#~ msgid "Pause the tour"
+#~ msgstr "Fes pausa al recorregut"
+
+#~ msgid "Wait for %1 seconds"
+#~ msgstr "Fa una pausa durant %1 segons"
+
+#~ msgid "Create item %1"
+#~ msgstr "Crea l'element %1"
+
+#~ msgid "Remove item %1"
+#~ msgstr "Elimina l'element %1"
+
+#~ msgid "Change item %1"
+#~ msgstr "Canvia l'element %1"
+
+#~ msgid "Update items"
+#~ msgstr "Actualitza els elements"
+
+#~ msgid "Add Placemark to Tour"
+#~ msgstr "Afegeix una marca de lloc al recorregut"
+
+#~ msgid "Change Placemark in Tour"
+#~ msgstr "Canvia una marca de lloc en el recorregut"
+
+#~ msgid "Add FlyTo"
+#~ msgstr "Afegeix sobrevol"
+
+#~ msgid "Add Wait"
+#~ msgstr "Afegeix una espera"
+
+#~ msgid "Add SoundCue"
+#~ msgstr "Afegeix una banda sonora"
+
+#~ msgid "Add Placemark"
+#~ msgstr "Afegeix una marca de lloc"
+
+#~ msgid "Remove placemark"
+#~ msgstr "Elimina una marca de lloc"
+
+#~ msgid "Change placemark"
+#~ msgstr "Canvia una marca de lloc"
+
+#~ msgid "Loop"
+#~ msgstr "Repetició"
+
+#~ msgid "Save tour"
+#~ msgstr "Desa el recorregut"
+
+#~ msgid "There are unsaved Tours. Do you want to save your changes?"
+#~ msgstr "Hi ha recorreguts sense desar. Voleu desar els canvis?"
+
+#~ msgid "Open Tour"
+#~ msgstr "Obre un recorregut"
+
+#~ msgid "KML Tours (*.kml)"
+#~ msgstr "Recorreguts KML (*.kml)"
+
+#~ msgid "Remove Selected Items"
+#~ msgstr "Elimina els elements seleccionats"
+
+#~ msgid "Are you sure want to remove selected items?"
+#~ msgstr "Esteu segur que voleu eliminar els elements seleccionats?"
+
+#~ msgid "Save Tour as"
+#~ msgstr "Desa el recorregut com a"
+
+#~ msgid "Discard Changes"
+#~ msgstr "Descarta els canvis"
+
+#~ msgid ""
+#~ "Are you sure want to discard all unsaved changes and close current "
+#~ "document?"
+#~ msgstr ""
+#~ "Esteu segur que voleu descartar tots els canvis sense desar i tancar el "
+#~ "document actual?"
+
+#~ msgid "Tour"
+#~ msgstr "Recorregut"
+
+#~ msgid "--:--"
+#~ msgstr "--:--"
+
+#~ msgid "New Tour"
+#~ msgstr "Recorregut nou"
+
+#~ msgid "Save Tour"
+#~ msgstr "Desa el recorregut"
+
+#~ msgid "Save Tour As"
+#~ msgstr "Desa el recorregut com a"
+
+#~ msgid "Begins touring"
+#~ msgstr "Comença el recorregut"
+
+#~ msgid "Stops touring (playing again will start tour from the start)"
+#~ msgstr ""
+#~ "Atura el recorregut (la nova reproducció engegarà el recorregut des de "
+#~ "l'inici)"
+
+#~ msgid "Record tour"
+#~ msgstr "Enregistra el recorregut"
+
+#~ msgid "Converts the loaded tour into a movie"
+#~ msgstr "Converteix el recorregut carregat en una pel·lícula"
+
 #~ msgctxt "@action:button"
 #~ msgid "&Apply"
 #~ msgstr "&Aplica"
@@ -70047,10 +69951,6 @@ msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
 
 #~ msgid "Failed to open audio encoder"
 #~ msgstr "Ha fallat en obrir el codificador d'àudio"
-
-#~| msgid "OpenStreetMap"
-#~ msgid "OpenStreetMap (Vector)"
-#~ msgstr "OpenStreetMap (Vector)"
 
 #~ msgid "GpsInfo"
 #~ msgstr "GpsInfo"

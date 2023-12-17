@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-16 00:39+0000\n"
+"POT-Creation-Date: 2023-12-17 00:39+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -3227,12 +3227,10 @@ msgstr "चयन"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeFolderButton)
 #. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:91
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:151
-#: core/utilities/geolocation/marble/TourWidget.ui:114
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -20430,20 +20428,16 @@ msgid "This file may not be playable."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:32
 #: core/utilities/geolocation/marble/TourControlEditWidget.cpp:38
-#: core/utilities/geolocation/marble/TourWidget.ui:168
 #, kde-format
 msgid "Play"
 msgstr "बजाएँ"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/geolocation/marble/TourWidget.ui:180
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, fuzzy, kde-format
 msgid "Stop"
@@ -52103,7 +52097,7 @@ msgid "Google Maps"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:485
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
 #, fuzzy, kde-format
 msgid "Float items"
 msgstr "कोई तारीख़ नहीं"
@@ -52142,49 +52136,54 @@ msgstr "उपग्रह"
 msgid "OpenStreetMap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:343
+#, kde-format
+msgid "OpenStreetMap (Vector)"
+msgstr ""
+
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, fuzzy, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "खड़ा पलटें"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:406
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
 #, kde-format
 msgid "Equirectangular"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:422
 #, fuzzy, kde-format
 msgid "Show compass"
 msgstr "कैमरा तारीख दिखाएँ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:427
 #, fuzzy, kde-format
 msgid "Show scale bar"
 msgstr "कैमरा तारीख दिखाएँ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:431
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:432
 #, fuzzy, kde-format
 msgid "Show navigation"
 msgstr "गेन नियंत्रक:"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Show overview map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:449
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:476
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:477
 #, fuzzy, kde-format
 msgid "Projection"
 msgstr "संग्रह: (&l)"
@@ -54013,12 +54012,8 @@ msgstr ""
 msgid "96"
 msgstr ""
 
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarControl)
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarPlayback)
 #. i18n: ectx: property (windowTitle), widget (QToolBar, m_formattedTextToolBar)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:148
-#: core/utilities/geolocation/marble/TourWidget.ui:20
-#: core/utilities/geolocation/marble/TourWidget.ui:45
 #, kde-format
 msgid "toolBar"
 msgstr ""
@@ -57255,12 +57250,6 @@ msgstr "इस स्थान पर जाएं"
 msgid "&Folder name:"
 msgstr "नया छवि फ़ाइल नाम"
 
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:718
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:727
-#, kde-format
-msgid "Installation aborted by user."
-msgstr ""
-
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
@@ -58532,216 +58521,6 @@ msgstr "गंतव्य:"
 #: core/utilities/geolocation/marble/TourControlEditWidget.cpp:41
 #, kde-format
 msgid "Pause"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:95
-#, fuzzy, kde-format
-#| msgid "Error"
-msgid "Play the tour"
-msgstr "त्रुटि"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:97
-#, kde-format
-msgid "Pause the tour"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:129
-#, kde-format
-msgid "Wait for %1 seconds"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:174
-#, fuzzy, kde-format
-msgid "Create item %1"
-msgstr "<qt><b>इसमें नया टैग बनाएँ: <i>\"%1\"</i></b></qt>"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:179
-#, fuzzy, kde-format
-msgid "Remove item %1"
-msgstr "यह टैग मिटाएँ"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:183
-#, fuzzy, kde-format
-msgid "Change item %1"
-msgstr "चैनल:"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:188
-#, fuzzy, kde-format
-msgid "Update items"
-msgstr "तारीख़"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:409
-#, kde-format
-msgid "Add Placemark to Tour"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:411
-#, fuzzy, kde-format
-msgid "Change Placemark in Tour"
-msgstr "चैनल:"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:140
-#: core/utilities/geolocation/marble/TourWidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Add Folders..."
-msgid "Add FlyTo"
-msgstr "फ़ोल्डर जोड़ें..."
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:147
-#, fuzzy, kde-format
-msgid "Add Wait"
-msgstr "फ़िल्म ग्रेन जोड़ें..."
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Add Border"
-msgid "Add SoundCue"
-msgstr "किनारा जोड़ें"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:152
-#, fuzzy, kde-format
-msgid "Add Placemark"
-msgstr "कैमरा जोड़ें..."
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:154
-#, fuzzy, kde-format
-msgid "Remove placemark"
-msgstr "टैग हटाएँ"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:156
-#, fuzzy, kde-format
-msgid "Change placemark"
-msgstr "चैनल:"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:158
-#, fuzzy, kde-format
-#| msgid "&Loop"
-msgid "Loop"
-msgstr "लूप (&L)"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:342
-#, fuzzy, kde-format
-msgid "Save tour"
-msgstr "ऐसे सहेजें... (&S)"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:343
-#, fuzzy, kde-format
-msgid "There are unsaved Tours. Do you want to save your changes?"
-msgstr ""
-"छवि '%1' परिवर्धित किया गया है.\n"
-"क्या आप इसे सहेजना चाहेंगे?"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.ui:156
-#, fuzzy, kde-format
-msgid "Open Tour"
-msgstr "निर्यात"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, kde-format
-msgid "KML Tours (*.kml)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:550
-#, fuzzy, kde-format
-#| msgid "Remove the current selected value from the list"
-msgid "Remove Selected Items"
-msgstr "इस सूची में से मौजूदा चयनिद मूल्य को मिटाएँ"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:551
-#, fuzzy, kde-format
-msgid "Are you sure want to remove selected items?"
-msgstr "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, fuzzy, kde-format
-msgid "Save Tour as"
-msgstr "छवि तारीख"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:892
-#, fuzzy, kde-format
-msgid "Discard Changes"
-msgstr "छवियाँ सहेजें"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:893
-#, kde-format
-msgid ""
-"Are you sure want to discard all unsaved changes and close current document?"
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, TourWidget)
-#: core/utilities/geolocation/marble/TourWidget.ui:14
-#, kde-format
-msgid "Tour"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_elapsedTime)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:57
-#: core/utilities/geolocation/marble/TourWidget.ui:71
-#, kde-format
-msgid "--:--"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:87
-#: core/utilities/geolocation/marble/TourWidget.ui:90
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
-#, fuzzy, kde-format
-msgid "Move up"
-msgstr "खिसकाएँ"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:102
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
-#, fuzzy, kde-format
-msgid "Move down"
-msgstr "खिसकाएँ"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:123
-#, fuzzy, kde-format
-#| msgid "By Folder"
-msgid "New Tour"
-msgstr "फ़ोल्डर से"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:135
-#, fuzzy, kde-format
-msgid "Save Tour"
-msgstr "ऐसे सहेजें... (&S)"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:147
-#, fuzzy, kde-format
-msgid "Save Tour As"
-msgstr "ऐसे सहेजें... (&S)"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:171
-#, kde-format
-msgid "Begins touring"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:183
-#, kde-format
-msgid "Stops touring (playing again will start tour from the start)"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:192
-#, kde-format
-msgid "Record tour"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:195
-#, kde-format
-msgid "Converts the loaded tour into a movie"
 msgstr ""
 
 #: core/utilities/geolocation/marble/WaitEditWidget.cpp:38
@@ -62159,6 +61938,16 @@ msgstr "यह टैग मिटाएँ"
 #, fuzzy, kde-format
 msgid "Clear Queue"
 msgstr "कैलेन्डर"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
+#, fuzzy, kde-format
+msgid "Move up"
+msgstr "खिसकाएँ"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
+#, fuzzy, kde-format
+msgid "Move down"
+msgstr "खिसकाएँ"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, fuzzy, kde-format
@@ -67752,6 +67541,106 @@ msgstr "<p>सभी फ़िल्टर पैरामीटर को उ�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "<p>सभी फ़िल्टर पैरामीटर को उनके डिफ़ॉल्ट मूल्य में रीसेट करें."
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Play the tour"
+#~ msgstr "त्रुटि"
+
+#, fuzzy
+#~ msgid "Create item %1"
+#~ msgstr "<qt><b>इसमें नया टैग बनाएँ: <i>\"%1\"</i></b></qt>"
+
+#, fuzzy
+#~ msgid "Remove item %1"
+#~ msgstr "यह टैग मिटाएँ"
+
+#, fuzzy
+#~ msgid "Change item %1"
+#~ msgstr "चैनल:"
+
+#, fuzzy
+#~ msgid "Update items"
+#~ msgstr "तारीख़"
+
+#, fuzzy
+#~ msgid "Change Placemark in Tour"
+#~ msgstr "चैनल:"
+
+#, fuzzy
+#~| msgid "Add Folders..."
+#~ msgid "Add FlyTo"
+#~ msgstr "फ़ोल्डर जोड़ें..."
+
+#, fuzzy
+#~ msgid "Add Wait"
+#~ msgstr "फ़िल्म ग्रेन जोड़ें..."
+
+#, fuzzy
+#~| msgid "Add Border"
+#~ msgid "Add SoundCue"
+#~ msgstr "किनारा जोड़ें"
+
+#, fuzzy
+#~ msgid "Add Placemark"
+#~ msgstr "कैमरा जोड़ें..."
+
+#, fuzzy
+#~ msgid "Remove placemark"
+#~ msgstr "टैग हटाएँ"
+
+#, fuzzy
+#~ msgid "Change placemark"
+#~ msgstr "चैनल:"
+
+#, fuzzy
+#~| msgid "&Loop"
+#~ msgid "Loop"
+#~ msgstr "लूप (&L)"
+
+#, fuzzy
+#~ msgid "Save tour"
+#~ msgstr "ऐसे सहेजें... (&S)"
+
+#, fuzzy
+#~ msgid "There are unsaved Tours. Do you want to save your changes?"
+#~ msgstr ""
+#~ "छवि '%1' परिवर्धित किया गया है.\n"
+#~ "क्या आप इसे सहेजना चाहेंगे?"
+
+#, fuzzy
+#~ msgid "Open Tour"
+#~ msgstr "निर्यात"
+
+#, fuzzy
+#~| msgid "Remove the current selected value from the list"
+#~ msgid "Remove Selected Items"
+#~ msgstr "इस सूची में से मौजूदा चयनिद मूल्य को मिटाएँ"
+
+#, fuzzy
+#~ msgid "Are you sure want to remove selected items?"
+#~ msgstr "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
+
+#, fuzzy
+#~ msgid "Save Tour as"
+#~ msgstr "छवि तारीख"
+
+#, fuzzy
+#~ msgid "Discard Changes"
+#~ msgstr "छवियाँ सहेजें"
+
+#, fuzzy
+#~| msgid "By Folder"
+#~ msgid "New Tour"
+#~ msgstr "फ़ोल्डर से"
+
+#, fuzzy
+#~ msgid "Save Tour"
+#~ msgstr "ऐसे सहेजें... (&S)"
+
+#, fuzzy
+#~ msgid "Save Tour As"
+#~ msgstr "ऐसे सहेजें... (&S)"
 
 #, fuzzy
 #~| msgid "Apply"

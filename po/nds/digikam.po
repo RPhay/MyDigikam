@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-16 00:39+0000\n"
+"POT-Creation-Date: 2023-12-17 00:39+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -3435,12 +3435,10 @@ msgstr "Köör"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeFolderButton)
 #. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:91
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:151
-#: core/utilities/geolocation/marble/TourWidget.ui:114
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -21887,20 +21885,16 @@ msgid "This file may not be playable."
 msgstr "Disse Datei is schaadhaftig un lett sik villicht nich afspelen."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:32
 #: core/utilities/geolocation/marble/TourControlEditWidget.cpp:38
-#: core/utilities/geolocation/marble/TourWidget.ui:168
 #, kde-format
 msgid "Play"
 msgstr "Afspelen"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/geolocation/marble/TourWidget.ui:180
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Stop"
@@ -55169,7 +55163,7 @@ msgid "Google Maps"
 msgstr "Google-Koorten"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:485
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
 #, kde-format
 msgid "Float items"
 msgstr "Sweevelementen"
@@ -55208,50 +55202,56 @@ msgstr "Satellitenbild"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:343
+#, fuzzy, kde-format
+#| msgid "OpenStreetMap"
+msgid "OpenStreetMap (Vector)"
+msgstr "OpenStreetMap"
+
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Kugel"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:406
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
 #, kde-format
 msgid "Equirectangular"
 msgstr "Längdenliek Zylinnerprojizeren"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:422
 #, kde-format
 msgid "Show compass"
 msgstr "Kompass wiesen"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:427
 #, kde-format
 msgid "Show scale bar"
 msgstr "Maatbalken wiesen"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:431
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:432
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Show navigation"
 msgstr "Navigatschoonkuntrull wiesen"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Show overview map"
 msgstr "Översichtkoort wiesen"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:449
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:476
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:477
 #, kde-format
 msgid "Projection"
 msgstr "Projizeren"
@@ -57204,12 +57204,8 @@ msgstr ""
 msgid "96"
 msgstr ""
 
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarControl)
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarPlayback)
 #. i18n: ectx: property (windowTitle), widget (QToolBar, m_formattedTextToolBar)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:148
-#: core/utilities/geolocation/marble/TourWidget.ui:20
-#: core/utilities/geolocation/marble/TourWidget.ui:45
 #, kde-format
 msgid "toolBar"
 msgstr ""
@@ -60905,12 +60901,6 @@ msgstr "Disse Steed de Leestekens tofögen"
 msgid "&Folder name:"
 msgstr "Dateinaam"
 
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:718
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:727
-#, kde-format
-msgid "Installation aborted by user."
-msgstr ""
-
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
@@ -62254,223 +62244,6 @@ msgstr "Teel:"
 #: core/utilities/geolocation/marble/TourControlEditWidget.cpp:41
 #, kde-format
 msgid "Pause"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:95
-#, fuzzy, kde-format
-#| msgid "Error"
-msgid "Play the tour"
-msgstr "Fehler"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:97
-#, kde-format
-msgid "Pause the tour"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:129
-#, kde-format
-msgid "Wait for %1 seconds"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:174
-#, fuzzy, kde-format
-#| msgid "Create \"%1\""
-msgid "Create item %1"
-msgstr "\"%1\" opstellen"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:179
-#, fuzzy, kde-format
-#| msgid "Remove item"
-msgid "Remove item %1"
-msgstr "Indrag wegmaken"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:183
-#, fuzzy, kde-format
-#| msgid "Change Case"
-msgid "Change item %1"
-msgstr "Groot-/Lüttschrieven ännern"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:188
-#, fuzzy, kde-format
-msgid "Update items"
-msgstr "Opfrischen"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:409
-#, kde-format
-msgid "Add Placemark to Tour"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:411
-#, fuzzy, kde-format
-#| msgid "Change Case"
-msgid "Change Placemark in Tour"
-msgstr "Groot-/Lüttschrieven ännern"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:140
-#: core/utilities/geolocation/marble/TourWidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Add Folders..."
-msgid "Add FlyTo"
-msgstr "Ornern tofögen..."
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:147
-#, fuzzy, kde-format
-msgid "Add Wait"
-msgstr "Filmköörn tofögen..."
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Add Border"
-msgid "Add SoundCue"
-msgstr "Rahmen tofögen"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:152
-#, fuzzy, kde-format
-#| msgid "Add Watermark"
-msgid "Add Placemark"
-msgstr "Waterteken tofögen"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "Remove tool"
-msgid "Remove placemark"
-msgstr "Warktüüch wegmaken"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:156
-#, fuzzy, kde-format
-#| msgid "Change Case"
-msgid "Change placemark"
-msgstr "Groot-/Lüttschrieven ännern"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:158
-#, fuzzy, kde-format
-#| msgid "&Loop"
-msgid "Loop"
-msgstr "&Wedderhalen"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:342
-#, fuzzy, kde-format
-msgid "Save tour"
-msgstr "&Sekern"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:343
-#, fuzzy, kde-format
-msgid "There are unsaved Tours. Do you want to save your changes?"
-msgstr ""
-"Dat Bild \"%1\" wöör ännert.\n"
-"Wullt Du dat sekern?"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.ui:156
-#, fuzzy, kde-format
-msgid "Open Tour"
-msgstr "Exporteren"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, kde-format
-msgid "KML Tours (*.kml)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:550
-#, fuzzy, kde-format
-#| msgid "Remove the current selected value from the list"
-msgid "Remove Selected Items"
-msgstr "Opstunns utsöcht Weert vun de List wegmaken"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:551
-#, fuzzy, kde-format
-msgid "Are you sure want to remove selected items?"
-msgstr "Büst Du seker, wat Du de utsöchte Söök \"%1\" wegdoon wullt?"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, fuzzy, kde-format
-msgid "Save Tour as"
-msgstr "Dateiformaat"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:892
-#, fuzzy, kde-format
-msgid "Discard Changes"
-msgstr "Biller sekern"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:893
-#, kde-format
-msgid ""
-"Are you sure want to discard all unsaved changes and close current document?"
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, TourWidget)
-#: core/utilities/geolocation/marble/TourWidget.ui:14
-#, kde-format
-msgid "Tour"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_elapsedTime)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:57
-#: core/utilities/geolocation/marble/TourWidget.ui:71
-#, kde-format
-msgid "--:--"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:87
-#: core/utilities/geolocation/marble/TourWidget.ui:90
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
-#, kde-format
-msgid "Move up"
-msgstr "Na baven"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:102
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
-#, kde-format
-msgid "Move down"
-msgstr "Na nerrn"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:123
-#, fuzzy, kde-format
-#| msgid "By Folder"
-msgid "New Tour"
-msgstr "Na Orner"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:135
-#, fuzzy, kde-format
-msgid "Save Tour"
-msgstr "&Sekern"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:147
-#, fuzzy, kde-format
-msgid "Save Tour As"
-msgstr "&Sekern as..."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:171
-#, kde-format
-msgid "Begins touring"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:183
-#, kde-format
-msgid "Stops touring (playing again will start tour from the start)"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:192
-#, kde-format
-msgid "Record tour"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:195
-#, kde-format
-msgid "Converts the loaded tour into a movie"
 msgstr ""
 
 #: core/utilities/geolocation/marble/WaitEditWidget.cpp:38
@@ -66083,6 +65856,16 @@ msgstr "Verarbeidt Indrääg wegmaken"
 #, kde-format
 msgid "Clear Queue"
 msgstr "Opgavenreeg leddig maken"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
+#, kde-format
+msgid "Move up"
+msgstr "Na baven"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
+#, kde-format
+msgid "Move down"
+msgstr "Na nerrn"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
@@ -72184,6 +71967,113 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "All Instellen op ehr Standardweerten torüchsetten."
 
 #, fuzzy
+#~| msgid "Error"
+#~ msgid "Play the tour"
+#~ msgstr "Fehler"
+
+#, fuzzy
+#~| msgid "Create \"%1\""
+#~ msgid "Create item %1"
+#~ msgstr "\"%1\" opstellen"
+
+#, fuzzy
+#~| msgid "Remove item"
+#~ msgid "Remove item %1"
+#~ msgstr "Indrag wegmaken"
+
+#, fuzzy
+#~| msgid "Change Case"
+#~ msgid "Change item %1"
+#~ msgstr "Groot-/Lüttschrieven ännern"
+
+#, fuzzy
+#~ msgid "Update items"
+#~ msgstr "Opfrischen"
+
+#, fuzzy
+#~| msgid "Change Case"
+#~ msgid "Change Placemark in Tour"
+#~ msgstr "Groot-/Lüttschrieven ännern"
+
+#, fuzzy
+#~| msgid "Add Folders..."
+#~ msgid "Add FlyTo"
+#~ msgstr "Ornern tofögen..."
+
+#, fuzzy
+#~ msgid "Add Wait"
+#~ msgstr "Filmköörn tofögen..."
+
+#, fuzzy
+#~| msgid "Add Border"
+#~ msgid "Add SoundCue"
+#~ msgstr "Rahmen tofögen"
+
+#, fuzzy
+#~| msgid "Add Watermark"
+#~ msgid "Add Placemark"
+#~ msgstr "Waterteken tofögen"
+
+#, fuzzy
+#~| msgid "Remove tool"
+#~ msgid "Remove placemark"
+#~ msgstr "Warktüüch wegmaken"
+
+#, fuzzy
+#~| msgid "Change Case"
+#~ msgid "Change placemark"
+#~ msgstr "Groot-/Lüttschrieven ännern"
+
+#, fuzzy
+#~| msgid "&Loop"
+#~ msgid "Loop"
+#~ msgstr "&Wedderhalen"
+
+#, fuzzy
+#~ msgid "Save tour"
+#~ msgstr "&Sekern"
+
+#, fuzzy
+#~ msgid "There are unsaved Tours. Do you want to save your changes?"
+#~ msgstr ""
+#~ "Dat Bild \"%1\" wöör ännert.\n"
+#~ "Wullt Du dat sekern?"
+
+#, fuzzy
+#~ msgid "Open Tour"
+#~ msgstr "Exporteren"
+
+#, fuzzy
+#~| msgid "Remove the current selected value from the list"
+#~ msgid "Remove Selected Items"
+#~ msgstr "Opstunns utsöcht Weert vun de List wegmaken"
+
+#, fuzzy
+#~ msgid "Are you sure want to remove selected items?"
+#~ msgstr "Büst Du seker, wat Du de utsöchte Söök \"%1\" wegdoon wullt?"
+
+#, fuzzy
+#~ msgid "Save Tour as"
+#~ msgstr "Dateiformaat"
+
+#, fuzzy
+#~ msgid "Discard Changes"
+#~ msgstr "Biller sekern"
+
+#, fuzzy
+#~| msgid "By Folder"
+#~ msgid "New Tour"
+#~ msgstr "Na Orner"
+
+#, fuzzy
+#~ msgid "Save Tour"
+#~ msgstr "&Sekern"
+
+#, fuzzy
+#~ msgid "Save Tour As"
+#~ msgstr "&Sekern as..."
+
+#, fuzzy
 #~| msgid "Apply"
 #~ msgctxt "@action:button"
 #~ msgid "&Apply"
@@ -72198,11 +72088,6 @@ msgstr "All Instellen op ehr Standardweerten torüchsetten."
 #~| msgid "Failed to open file."
 #~ msgid "Failed to open audio encoder"
 #~ msgstr "Datei lett sik nich opmaken."
-
-#, fuzzy
-#~| msgid "OpenStreetMap"
-#~ msgid "OpenStreetMap (Vector)"
-#~ msgstr "OpenStreetMap"
 
 #, fuzzy
 #~| msgid "Info"

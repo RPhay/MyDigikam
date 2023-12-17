@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-16 00:39+0000\n"
+"POT-Creation-Date: 2023-12-17 00:39+0000\n"
 "PO-Revision-Date: 2023-12-15 07:28+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -45,8 +45,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.4.1\n"
 
@@ -3288,12 +3288,10 @@ msgstr "Izbor"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeFolderButton)
 #. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:91
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:151
-#: core/utilities/geolocation/marble/TourWidget.ui:114
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -21233,20 +21231,16 @@ msgid "This file may not be playable."
 msgstr "Te datoteke morda ne bo mogoče predvajati."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:32
 #: core/utilities/geolocation/marble/TourControlEditWidget.cpp:38
-#: core/utilities/geolocation/marble/TourWidget.ui:168
 #, kde-format
 msgid "Play"
 msgstr "Predvajaj"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/geolocation/marble/TourWidget.ui:180
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Stop"
@@ -53043,7 +53037,7 @@ msgid "Google Maps"
 msgstr "Google Maps"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:485
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
 #, kde-format
 msgid "Float items"
 msgstr "Lebdeči predmeti"
@@ -53079,49 +53073,54 @@ msgstr "Satelitska karta"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:343
+#, kde-format
+msgid "OpenStreetMap (Vector)"
+msgstr "OpenStreetMap (Vektor)"
+
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Sferična"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:406
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Mercatorjeva"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
 #, kde-format
 msgid "Equirectangular"
 msgstr "Ekvidistančna valjna"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:422
 #, kde-format
 msgid "Show compass"
 msgstr "Pokaži kompas"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:427
 #, kde-format
 msgid "Show scale bar"
 msgstr "Prikaži merilo"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:431
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:432
 #, kde-format
 msgid "Show navigation"
 msgstr "Pokaži krmarjenje"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Show overview map"
 msgstr "Pokaži pregledni zemljevid"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:449
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Ostale teme Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:476
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:477
 #, kde-format
 msgid "Projection"
 msgstr "Projekcija"
@@ -54990,12 +54989,8 @@ msgstr "72"
 msgid "96"
 msgstr "96"
 
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarControl)
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarPlayback)
 #. i18n: ectx: property (windowTitle), widget (QToolBar, m_formattedTextToolBar)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:148
-#: core/utilities/geolocation/marble/TourWidget.ui:20
-#: core/utilities/geolocation/marble/TourWidget.ui:45
 #, kde-format
 msgid "toolBar"
 msgstr "orodnaVrstica"
@@ -58269,12 +58264,6 @@ msgstr "Nova mapa zaznamkov"
 msgid "&Folder name:"
 msgstr "Ime mape:"
 
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:718
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:727
-#, kde-format
-msgid "Installation aborted by user."
-msgstr "Namestitev je prekinil uporabnik."
-
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
@@ -59528,210 +59517,6 @@ msgstr "Ciljni video"
 #, kde-format
 msgid "Pause"
 msgstr "Premor"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:95
-#, kde-format
-msgid "Play the tour"
-msgstr "Predvajaj turnejo"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:97
-#, kde-format
-msgid "Pause the tour"
-msgstr "Premor turneje"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:129
-#, kde-format
-msgid "Wait for %1 seconds"
-msgstr "Čakaj %1 sekund"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:174
-#, kde-format
-msgid "Create item %1"
-msgstr "Ustvari predmet %1"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:179
-#, kde-format
-msgid "Remove item %1"
-msgstr "Odstrani predmet %1"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:183
-#, kde-format
-msgid "Change item %1"
-msgstr "Spremeni predmet %1"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:188
-#, kde-format
-msgid "Update items"
-msgstr "Posodobi predmete"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:409
-#, kde-format
-msgid "Add Placemark to Tour"
-msgstr "Dodaj oznako lokacije na pot"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:411
-#, kde-format
-msgid "Change Placemark in Tour"
-msgstr "Spremeni oznako lokacije v poti"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:140
-#: core/utilities/geolocation/marble/TourWidget.cpp:145
-#, kde-format
-msgid "Add FlyTo"
-msgstr "Dodaj PoletDo"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:147
-#, kde-format
-msgid "Add Wait"
-msgstr "Dodaj Čakaj"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:149
-#, kde-format
-msgid "Add SoundCue"
-msgstr "Dodaj SoundCue"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:152
-#, kde-format
-msgid "Add Placemark"
-msgstr "Dodaj oznako lokacije"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:154
-#, kde-format
-msgid "Remove placemark"
-msgstr "Odstrani oznako lokacije"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:156
-#, kde-format
-msgid "Change placemark"
-msgstr "Spremeni oznako lokacije"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:158
-#, kde-format
-msgid "Loop"
-msgstr "Zanka"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:342
-#, kde-format
-msgid "Save tour"
-msgstr "Shrani turo"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:343
-#, kde-format
-msgid "There are unsaved Tours. Do you want to save your changes?"
-msgstr "Obstajajo neshranjene ture. Ali želite shraniti vaše spremembe?"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.ui:156
-#, kde-format
-msgid "Open Tour"
-msgstr "Odpri turo"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, kde-format
-msgid "KML Tours (*.kml)"
-msgstr "KML ture (*.kml)"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:550
-#, kde-format
-msgid "Remove Selected Items"
-msgstr "Odstrani izbrane predmete"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:551
-#, kde-format
-msgid "Are you sure want to remove selected items?"
-msgstr "Ali ste prepričani, da želite odstraniti izbrane predmete?"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, kde-format
-msgid "Save Tour as"
-msgstr "Shrani turo kot"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:892
-#, kde-format
-msgid "Discard Changes"
-msgstr "Zavrzi spremembe"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:893
-#, kde-format
-msgid ""
-"Are you sure want to discard all unsaved changes and close current document?"
-msgstr ""
-"Ali res želite zavreči vse neshranjene spremembe in zapreti trenutni "
-"dokument?"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, TourWidget)
-#: core/utilities/geolocation/marble/TourWidget.ui:14
-#, kde-format
-msgid "Tour"
-msgstr "Tura"
-
-#. i18n: ectx: property (text), widget (QLabel, m_elapsedTime)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:57
-#: core/utilities/geolocation/marble/TourWidget.ui:71
-#, kde-format
-msgid "--:--"
-msgstr "--:--"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:87
-#: core/utilities/geolocation/marble/TourWidget.ui:90
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
-#, kde-format
-msgid "Move up"
-msgstr "Premakni gor"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:102
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
-#, kde-format
-msgid "Move down"
-msgstr "Premakni dol"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:123
-#, kde-format
-msgid "New Tour"
-msgstr "Nova tura"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:135
-#, kde-format
-msgid "Save Tour"
-msgstr "Shrani turo"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:147
-#, kde-format
-msgid "Save Tour As"
-msgstr "Shrani turo kot"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:171
-#, kde-format
-msgid "Begins touring"
-msgstr "Začni turo"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:183
-#, kde-format
-msgid "Stops touring (playing again will start tour from the start)"
-msgstr "Ustavi turo (ponovno predvajanje bo zagnalo turo od začetka)"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:192
-#, kde-format
-msgid "Record tour"
-msgstr "Zabeleži turo"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:195
-#, kde-format
-msgid "Converts the loaded tour into a movie"
-msgstr "Pretvori naloženo turo v video posnetek"
 
 #: core/utilities/geolocation/marble/WaitEditWidget.cpp:38
 #, kde-format
@@ -63299,6 +63084,16 @@ msgstr "Odstrani obdelane predmete"
 #, kde-format
 msgid "Clear Queue"
 msgstr "Počisti čakalno vrsto"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
+#, kde-format
+msgid "Move up"
+msgstr "Premakni gor"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
+#, kde-format
+msgid "Move down"
+msgstr "Premakni dol"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
@@ -69430,6 +69225,115 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ali želite ponovno nastaviti vse nastavitve na privzete vrednosti?"
 
+#~ msgid "Installation aborted by user."
+#~ msgstr "Namestitev je prekinil uporabnik."
+
+#~ msgid "Play the tour"
+#~ msgstr "Predvajaj turnejo"
+
+#~ msgid "Pause the tour"
+#~ msgstr "Premor turneje"
+
+#~ msgid "Wait for %1 seconds"
+#~ msgstr "Čakaj %1 sekund"
+
+#~ msgid "Create item %1"
+#~ msgstr "Ustvari predmet %1"
+
+#~ msgid "Remove item %1"
+#~ msgstr "Odstrani predmet %1"
+
+#~ msgid "Change item %1"
+#~ msgstr "Spremeni predmet %1"
+
+#~ msgid "Update items"
+#~ msgstr "Posodobi predmete"
+
+#~ msgid "Add Placemark to Tour"
+#~ msgstr "Dodaj oznako lokacije na pot"
+
+#~ msgid "Change Placemark in Tour"
+#~ msgstr "Spremeni oznako lokacije v poti"
+
+#~ msgid "Add FlyTo"
+#~ msgstr "Dodaj PoletDo"
+
+#~ msgid "Add Wait"
+#~ msgstr "Dodaj Čakaj"
+
+#~ msgid "Add SoundCue"
+#~ msgstr "Dodaj SoundCue"
+
+#~ msgid "Add Placemark"
+#~ msgstr "Dodaj oznako lokacije"
+
+#~ msgid "Remove placemark"
+#~ msgstr "Odstrani oznako lokacije"
+
+#~ msgid "Change placemark"
+#~ msgstr "Spremeni oznako lokacije"
+
+#~ msgid "Loop"
+#~ msgstr "Zanka"
+
+#~ msgid "Save tour"
+#~ msgstr "Shrani turo"
+
+#~ msgid "There are unsaved Tours. Do you want to save your changes?"
+#~ msgstr "Obstajajo neshranjene ture. Ali želite shraniti vaše spremembe?"
+
+#~ msgid "Open Tour"
+#~ msgstr "Odpri turo"
+
+#~ msgid "KML Tours (*.kml)"
+#~ msgstr "KML ture (*.kml)"
+
+#~ msgid "Remove Selected Items"
+#~ msgstr "Odstrani izbrane predmete"
+
+#~ msgid "Are you sure want to remove selected items?"
+#~ msgstr "Ali ste prepričani, da želite odstraniti izbrane predmete?"
+
+#~ msgid "Save Tour as"
+#~ msgstr "Shrani turo kot"
+
+#~ msgid "Discard Changes"
+#~ msgstr "Zavrzi spremembe"
+
+#~ msgid ""
+#~ "Are you sure want to discard all unsaved changes and close current "
+#~ "document?"
+#~ msgstr ""
+#~ "Ali res želite zavreči vse neshranjene spremembe in zapreti trenutni "
+#~ "dokument?"
+
+#~ msgid "Tour"
+#~ msgstr "Tura"
+
+#~ msgid "--:--"
+#~ msgstr "--:--"
+
+#~ msgid "New Tour"
+#~ msgstr "Nova tura"
+
+#~ msgid "Save Tour"
+#~ msgstr "Shrani turo"
+
+#~ msgid "Save Tour As"
+#~ msgstr "Shrani turo kot"
+
+#~ msgid "Begins touring"
+#~ msgstr "Začni turo"
+
+#~ msgid "Stops touring (playing again will start tour from the start)"
+#~ msgstr "Ustavi turo (ponovno predvajanje bo zagnalo turo od začetka)"
+
+#~ msgid "Record tour"
+#~ msgstr "Zabeleži turo"
+
+#~ msgid "Converts the loaded tour into a movie"
+#~ msgstr "Pretvori naloženo turo v video posnetek"
+
 #~ msgctxt "@action:button"
 #~ msgid "&Apply"
 #~ msgstr "Uveljavi"
@@ -69439,10 +69343,6 @@ msgstr "Ali želite ponovno nastaviti vse nastavitve na privzete vrednosti?"
 
 #~ msgid "Failed to open audio encoder"
 #~ msgstr "Ni bilo mogoče odpreti avdio koderja"
-
-#~| msgid "OpenStreetMap"
-#~ msgid "OpenStreetMap (Vector)"
-#~ msgstr "OpenStreetMap (Vektor)"
 
 #~| msgid "Info"
 #~ msgid "GpsInfo"

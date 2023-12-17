@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-16 00:39+0000\n"
+"POT-Creation-Date: 2023-12-17 00:39+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3269,12 +3269,10 @@ msgstr "Hautapena"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeFolderButton)
 #. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:91
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:151
-#: core/utilities/geolocation/marble/TourWidget.ui:114
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -21628,20 +21626,16 @@ msgid "This file may not be playable."
 msgstr "Fitxategia hondatuta dago eta ezin da erreproduzitu."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:32
 #: core/utilities/geolocation/marble/TourControlEditWidget.cpp:38
-#: core/utilities/geolocation/marble/TourWidget.ui:168
 #, kde-format
 msgid "Play"
 msgstr "Erreproduzitu"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/geolocation/marble/TourWidget.ui:180
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Stop"
@@ -55366,7 +55360,7 @@ msgid "Google Maps"
 msgstr "Google Maps"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:485
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
 #, kde-format
 msgid "Float items"
 msgstr "Elementu higikorrak"
@@ -55404,49 +55398,55 @@ msgstr "Satelite-mapa"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:343
+#, fuzzy, kde-format
+#| msgid "OpenStreetMap"
+msgid "OpenStreetMap (Vector)"
+msgstr "OpenStreetMap"
+
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Esferikoa"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:406
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
 #, kde-format
 msgid "Equirectangular"
 msgstr "Laukizuzenberdina"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:422
 #, kde-format
 msgid "Show compass"
 msgstr "Erakutsi iparrorratza"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:427
 #, kde-format
 msgid "Show scale bar"
 msgstr "Erakutsi eskalaren barra"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:431
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:432
 #, kde-format
 msgid "Show navigation"
 msgstr "Erakutsi nabigazioa"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, fuzzy, kde-format
 msgid "Show overview map"
 msgstr "Erakutsi ikuspegi orokorraren mapa"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:449
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Marble-n beste gai batzuk"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:476
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:477
 #, kde-format
 msgid "Projection"
 msgstr "Proiekzioa"
@@ -57382,12 +57382,8 @@ msgstr ""
 msgid "96"
 msgstr ""
 
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarControl)
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarPlayback)
 #. i18n: ectx: property (windowTitle), widget (QToolBar, m_formattedTextToolBar)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:148
-#: core/utilities/geolocation/marble/TourWidget.ui:20
-#: core/utilities/geolocation/marble/TourWidget.ui:45
 #, kde-format
 msgid "toolBar"
 msgstr ""
@@ -61135,12 +61131,6 @@ msgstr "Laster-markaren karpeta"
 msgid "&Folder name:"
 msgstr "Fitxategi izena"
 
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:718
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:727
-#, kde-format
-msgid "Installation aborted by user."
-msgstr ""
-
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
@@ -62510,241 +62500,6 @@ msgstr "Helburuko karpeta"
 #| msgid "Pause/Play"
 msgid "Pause"
 msgstr "Etenaldia/Jo"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Player error"
-msgid "Play the tour"
-msgstr "Jotzailearen errorea"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:97
-#, kde-format
-msgid "Pause the tour"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:129
-#, kde-format
-msgid "Wait for %1 seconds"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:174
-#, fuzzy, kde-format
-msgid "Create item %1"
-msgstr "Sortu"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:179
-#, fuzzy, kde-format
-#| msgid "Remove item"
-msgid "Remove item %1"
-msgstr "Kendu elementua"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:183
-#, fuzzy, kde-format
-#| msgid "Change Case"
-msgid "Change item %1"
-msgstr "Aldatu maiuskulak/minuskulak"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:188
-#, fuzzy, kde-format
-msgid "Update items"
-msgstr "Eguneratzeak"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:409
-#, kde-format
-msgid "Add Placemark to Tour"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:411
-#, fuzzy, kde-format
-#| msgid "Change Face Tag"
-msgid "Change Placemark in Tour"
-msgstr "Aldatu «aurpegia» etiketa"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:140
-#: core/utilities/geolocation/marble/TourWidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Add Folder"
-msgid "Add FlyTo"
-msgstr "Gehitu karpeta"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:147
-#, fuzzy, kde-format
-msgid "Add Wait"
-msgstr "Gehitu berriz"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Add Border"
-msgid "Add SoundCue"
-msgstr "Gehitu ertza"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:152
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Add Watermark"
-msgid "Add Placemark"
-msgstr "Gehitu ur-marka"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
-msgid "Remove placemark"
-msgstr "Kendu laster-marka"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:156
-#, fuzzy, kde-format
-#| msgid "Change Face Tag"
-msgid "Change placemark"
-msgstr "Aldatu «aurpegia» etiketa"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:158
-#, fuzzy, kde-format
-#| msgid "&Loop"
-msgid "Loop"
-msgstr "&Begizta"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:342
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save"
-msgid "Save tour"
-msgstr "Gorde"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:343
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The current image has been changed.\n"
-#| "Do you wish to save your changes?"
-msgid "There are unsaved Tours. Do you want to save your changes?"
-msgstr ""
-"Uneko irudia aldatu egin da.\n"
-"Zure aldaketak gorde nahi dituzu?"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.ui:156
-#, fuzzy, kde-format
-msgid "Open Tour"
-msgstr "Esportatu"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, kde-format
-msgid "KML Tours (*.kml)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:550
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Remove selected items"
-msgid "Remove Selected Items"
-msgstr "Kendu hautatutako elementuak"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:551
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to restore %1 item?"
-#| msgid_plural "Are you sure you want to restore %1 items?"
-msgid "Are you sure want to remove selected items?"
-msgstr "Ziur zaude elementu %1 lehengoratu nahi duzula?"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, fuzzy, kde-format
-#| msgctxt "@action Save As New Version...Save in format..."
-#| msgid "Save in Format"
-msgid "Save Tour as"
-msgstr "Gorde formatuan"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:892
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Discard Changes"
-msgid "Discard Changes"
-msgstr "Baztertu aldaketak"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:893
-#, kde-format
-msgid ""
-"Are you sure want to discard all unsaved changes and close current document?"
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, TourWidget)
-#: core/utilities/geolocation/marble/TourWidget.ui:14
-#, kde-format
-msgid "Tour"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_elapsedTime)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:57
-#: core/utilities/geolocation/marble/TourWidget.ui:71
-#, kde-format
-msgid "--:--"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:87
-#: core/utilities/geolocation/marble/TourWidget.ui:90
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
-#, kde-format
-msgid "Move up"
-msgstr "Eraman gora"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:102
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
-#, kde-format
-msgid "Move down"
-msgstr "Eraman behera"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:123
-#, fuzzy, kde-format
-#| msgid "New Folder"
-msgid "New Tour"
-msgstr "Karpeta berria"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:135
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save"
-msgid "Save Tour"
-msgstr "Gorde"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:147
-#, fuzzy, kde-format
-#| msgctxt "@action: save current filter settings"
-#| msgid "Save As..."
-msgid "Save Tour As"
-msgstr "Gorde honela..."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:171
-#, kde-format
-msgid "Begins touring"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:183
-#, kde-format
-msgid "Stops touring (playing again will start tour from the start)"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:192
-#, kde-format
-msgid "Record tour"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:195
-#, kde-format
-msgid "Converts the loaded tour into a movie"
-msgstr ""
 
 #: core/utilities/geolocation/marble/WaitEditWidget.cpp:38
 #, fuzzy, kde-format
@@ -66392,6 +66147,16 @@ msgstr "Kendu prozesatutako elementuak"
 #, kde-format
 msgid "Clear Queue"
 msgstr "Garbitu ilara"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
+#, kde-format
+msgid "Move up"
+msgstr "Eraman gora"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
+#, kde-format
+msgid "Move down"
+msgstr "Eraman behera"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
@@ -72585,6 +72350,131 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "Berrezarri ezarpen guztiak balio lehenetsietara."
 
 #, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Player error"
+#~ msgid "Play the tour"
+#~ msgstr "Jotzailearen errorea"
+
+#, fuzzy
+#~ msgid "Create item %1"
+#~ msgstr "Sortu"
+
+#, fuzzy
+#~| msgid "Remove item"
+#~ msgid "Remove item %1"
+#~ msgstr "Kendu elementua"
+
+#, fuzzy
+#~| msgid "Change Case"
+#~ msgid "Change item %1"
+#~ msgstr "Aldatu maiuskulak/minuskulak"
+
+#, fuzzy
+#~ msgid "Update items"
+#~ msgstr "Eguneratzeak"
+
+#, fuzzy
+#~| msgid "Change Face Tag"
+#~ msgid "Change Placemark in Tour"
+#~ msgstr "Aldatu «aurpegia» etiketa"
+
+#, fuzzy
+#~| msgid "Add Folder"
+#~ msgid "Add FlyTo"
+#~ msgstr "Gehitu karpeta"
+
+#, fuzzy
+#~ msgid "Add Wait"
+#~ msgstr "Gehitu berriz"
+
+#, fuzzy
+#~| msgid "Add Border"
+#~ msgid "Add SoundCue"
+#~ msgstr "Gehitu ertza"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Add Watermark"
+#~ msgid "Add Placemark"
+#~ msgstr "Gehitu ur-marka"
+
+#, fuzzy
+#~| msgid "Remove Bookmark"
+#~ msgid "Remove placemark"
+#~ msgstr "Kendu laster-marka"
+
+#, fuzzy
+#~| msgid "Change Face Tag"
+#~ msgid "Change placemark"
+#~ msgstr "Aldatu «aurpegia» etiketa"
+
+#, fuzzy
+#~| msgid "&Loop"
+#~ msgid "Loop"
+#~ msgstr "&Begizta"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Save"
+#~ msgid "Save tour"
+#~ msgstr "Gorde"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid ""
+#~| "The current image has been changed.\n"
+#~| "Do you wish to save your changes?"
+#~ msgid "There are unsaved Tours. Do you want to save your changes?"
+#~ msgstr ""
+#~ "Uneko irudia aldatu egin da.\n"
+#~ "Zure aldaketak gorde nahi dituzu?"
+
+#, fuzzy
+#~ msgid "Open Tour"
+#~ msgstr "Esportatu"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Remove selected items"
+#~ msgid "Remove Selected Items"
+#~ msgstr "Kendu hautatutako elementuak"
+
+#, fuzzy
+#~| msgid "Are you sure you want to restore %1 item?"
+#~| msgid_plural "Are you sure you want to restore %1 items?"
+#~ msgid "Are you sure want to remove selected items?"
+#~ msgstr "Ziur zaude elementu %1 lehengoratu nahi duzula?"
+
+#, fuzzy
+#~| msgctxt "@action Save As New Version...Save in format..."
+#~| msgid "Save in Format"
+#~ msgid "Save Tour as"
+#~ msgstr "Gorde formatuan"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Discard Changes"
+#~ msgid "Discard Changes"
+#~ msgstr "Baztertu aldaketak"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgid "New Tour"
+#~ msgstr "Karpeta berria"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Save"
+#~ msgid "Save Tour"
+#~ msgstr "Gorde"
+
+#, fuzzy
+#~| msgctxt "@action: save current filter settings"
+#~| msgid "Save As..."
+#~ msgid "Save Tour As"
+#~ msgstr "Gorde honela..."
+
+#, fuzzy
 #~| msgid "Apply"
 #~ msgctxt "@action:button"
 #~ msgid "&Apply"
@@ -72600,11 +72490,6 @@ msgstr "Berrezarri ezarpen guztiak balio lehenetsietara."
 #~ msgstr ""
 #~ "Huts egin du irudi hau kargatzean\n"
 #~ "\"%1\""
-
-#, fuzzy
-#~| msgid "OpenStreetMap"
-#~ msgid "OpenStreetMap (Vector)"
-#~ msgstr "OpenStreetMap"
 
 #, fuzzy
 #~| msgid "Info"

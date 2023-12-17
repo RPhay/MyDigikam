@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-16 00:39+0000\n"
+"POT-Creation-Date: 2023-12-17 00:39+0000\n"
 "PO-Revision-Date: 2023-10-05 09:38+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -3234,12 +3234,10 @@ msgstr "Val"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeFolderButton)
 #. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:91
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:151
-#: core/utilities/geolocation/marble/TourWidget.ui:114
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -21155,20 +21153,16 @@ msgid "This file may not be playable."
 msgstr "Þessa skrá er kannski ekki hægt að spila."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:32
 #: core/utilities/geolocation/marble/TourControlEditWidget.cpp:38
-#: core/utilities/geolocation/marble/TourWidget.ui:168
 #, kde-format
 msgid "Play"
 msgstr "Spila"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/geolocation/marble/TourWidget.ui:180
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Stop"
@@ -52864,7 +52858,7 @@ msgid "Google Maps"
 msgstr "Google Kort"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:485
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
 #, kde-format
 msgid "Float items"
 msgstr "Fleyta hlutum"
@@ -52901,49 +52895,55 @@ msgstr "Gervitunglamynd"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:343
+#, fuzzy, kde-format
+#| msgid "OpenStreetMap"
+msgid "OpenStreetMap (Vector)"
+msgstr "OpenStreetMap"
+
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Kúlulaga"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:406
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
 #, kde-format
 msgid "Equirectangular"
 msgstr "Ferningslaga"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:422
 #, kde-format
 msgid "Show compass"
 msgstr "Birta áttavita"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:427
 #, kde-format
 msgid "Show scale bar"
 msgstr "Birta kvarðastiku"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:431
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:432
 #, kde-format
 msgid "Show navigation"
 msgstr "Birta stjórnunarspjald"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Show overview map"
 msgstr "Birta yfirlitskort"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:449
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Önnur Marble þemu"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:476
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:477
 #, kde-format
 msgid "Projection"
 msgstr "Vörpun"
@@ -54929,12 +54929,8 @@ msgstr ""
 msgid "96"
 msgstr ""
 
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarControl)
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarPlayback)
 #. i18n: ectx: property (windowTitle), widget (QToolBar, m_formattedTextToolBar)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:148
-#: core/utilities/geolocation/marble/TourWidget.ui:20
-#: core/utilities/geolocation/marble/TourWidget.ui:45
 #, kde-format
 msgid "toolBar"
 msgstr ""
@@ -58767,12 +58763,6 @@ msgstr "Bókamerkjamappa"
 msgid "&Folder name:"
 msgstr "Skráarheiti"
 
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:718
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:727
-#, kde-format
-msgid "Installation aborted by user."
-msgstr ""
-
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
@@ -60196,245 +60186,6 @@ msgstr "Móttökumappa"
 #| msgid "Pause/Play"
 msgid "Pause"
 msgstr "Bíða/Spila"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Player Error"
-msgid "Play the tour"
-msgstr "Villa í spilara"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:97
-#, kde-format
-msgid "Pause the tour"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:129
-#, fuzzy, kde-format
-#| msgid "Timeout after exceeding %1 seconds"
-msgid "Wait for %1 seconds"
-msgstr "Tímamörkum náð eftir %1 sekúndur"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:174
-#, fuzzy, kde-format
-#| msgid "Create \"%1\""
-msgid "Create item %1"
-msgstr "Búa til \"%1\""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:179
-#, fuzzy, kde-format
-#| msgid "Remove item"
-msgid "Remove item %1"
-msgstr "Fjarlægja hlut"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:183
-#, fuzzy, kde-format
-#| msgid "Change Case"
-msgid "Change item %1"
-msgstr "Breyta stafstöðu"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:188
-#, fuzzy, kde-format
-#| msgid "Updates"
-msgid "Update items"
-msgstr "Uppfærslur"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:409
-#, kde-format
-msgid "Add Placemark to Tour"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:411
-#, fuzzy, kde-format
-#| msgid "Change Face Tag"
-msgid "Change Placemark in Tour"
-msgstr "Breyta andlitsmerki"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:140
-#: core/utilities/geolocation/marble/TourWidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Add Folder"
-msgid "Add FlyTo"
-msgstr "Bæta við möppu"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "Add again"
-msgid "Add Wait"
-msgstr "Bæta við aftur"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Add Border"
-msgid "Add SoundCue"
-msgstr "Bæta við ramma"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:152
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Add Watermark"
-msgid "Add Placemark"
-msgstr "Bæta við vatnsmerki"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
-msgid "Remove placemark"
-msgstr "Fjarlægja bókamerki"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:156
-#, fuzzy, kde-format
-#| msgid "Change Face Tag"
-msgid "Change placemark"
-msgstr "Breyta andlitsmerki"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:158
-#, fuzzy, kde-format
-#| msgid "&Loop"
-msgid "Loop"
-msgstr "&Endurtaka"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:342
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save"
-msgid "Save tour"
-msgstr "Vista"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:343
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The current image has been changed.\n"
-#| "Do you wish to save your changes?"
-msgid "There are unsaved Tours. Do you want to save your changes?"
-msgstr ""
-"Núverandi mynd hefur breyst.\n"
-"Viltu vista breytingarnar?"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.ui:156
-#, fuzzy, kde-format
-#| msgid "Open error"
-msgid "Open Tour"
-msgstr "Villa við að opna"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, kde-format
-msgid "KML Tours (*.kml)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:550
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Remove selected items"
-msgid "Remove Selected Items"
-msgstr "Fjarlægja valin atriði"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:551
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to restore %1 item?"
-#| msgid_plural "Are you sure you want to restore %1 items?"
-msgid "Are you sure want to remove selected items?"
-msgstr "Ertu viss um að þú viljir endurheimta %1 atriði?"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, fuzzy, kde-format
-#| msgid "Save format"
-msgid "Save Tour as"
-msgstr "Skráarsnið vistunar"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:892
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Discard Changes"
-msgid "Discard Changes"
-msgstr "Henda breytingum"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:893
-#, kde-format
-msgid ""
-"Are you sure want to discard all unsaved changes and close current document?"
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, TourWidget)
-#: core/utilities/geolocation/marble/TourWidget.ui:14
-#, kde-format
-msgid "Tour"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_elapsedTime)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:57
-#: core/utilities/geolocation/marble/TourWidget.ui:71
-#, kde-format
-msgid "--:--"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:87
-#: core/utilities/geolocation/marble/TourWidget.ui:90
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
-#, kde-format
-msgid "Move up"
-msgstr "Færa upp"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:102
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
-#, kde-format
-msgid "Move down"
-msgstr "Færa niður"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:123
-#, fuzzy, kde-format
-#| msgid "New Folder"
-msgid "New Tour"
-msgstr "Ný mappa"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:135
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save"
-msgid "Save Tour"
-msgstr "Vista"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:147
-#, fuzzy, kde-format
-#| msgctxt "@action: save current filter settings"
-#| msgid "Save As..."
-msgid "Save Tour As"
-msgstr "Vista sem..."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:171
-#, kde-format
-msgid "Begins touring"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:183
-#, kde-format
-msgid "Stops touring (playing again will start tour from the start)"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:192
-#, kde-format
-msgid "Record tour"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:195
-#, kde-format
-msgid "Converts the loaded tour into a movie"
-msgstr ""
 
 #: core/utilities/geolocation/marble/WaitEditWidget.cpp:38
 #, fuzzy, kde-format
@@ -63977,6 +63728,16 @@ msgstr "Fjarlægja unna hluti"
 #, kde-format
 msgid "Clear Queue"
 msgstr "Hreinsa biðröð"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
+#, kde-format
+msgid "Move up"
+msgstr "Færa upp"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
+#, kde-format
+msgid "Move down"
+msgstr "Færa niður"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
@@ -70124,6 +69885,139 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Viltu frumstilla allar stillingar myndmerkis á sjálfgefin gildi?"
 
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Player Error"
+#~ msgid "Play the tour"
+#~ msgstr "Villa í spilara"
+
+#, fuzzy
+#~| msgid "Timeout after exceeding %1 seconds"
+#~ msgid "Wait for %1 seconds"
+#~ msgstr "Tímamörkum náð eftir %1 sekúndur"
+
+#, fuzzy
+#~| msgid "Create \"%1\""
+#~ msgid "Create item %1"
+#~ msgstr "Búa til \"%1\""
+
+#, fuzzy
+#~| msgid "Remove item"
+#~ msgid "Remove item %1"
+#~ msgstr "Fjarlægja hlut"
+
+#, fuzzy
+#~| msgid "Change Case"
+#~ msgid "Change item %1"
+#~ msgstr "Breyta stafstöðu"
+
+#, fuzzy
+#~| msgid "Updates"
+#~ msgid "Update items"
+#~ msgstr "Uppfærslur"
+
+#, fuzzy
+#~| msgid "Change Face Tag"
+#~ msgid "Change Placemark in Tour"
+#~ msgstr "Breyta andlitsmerki"
+
+#, fuzzy
+#~| msgid "Add Folder"
+#~ msgid "Add FlyTo"
+#~ msgstr "Bæta við möppu"
+
+#, fuzzy
+#~| msgid "Add again"
+#~ msgid "Add Wait"
+#~ msgstr "Bæta við aftur"
+
+#, fuzzy
+#~| msgid "Add Border"
+#~ msgid "Add SoundCue"
+#~ msgstr "Bæta við ramma"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Add Watermark"
+#~ msgid "Add Placemark"
+#~ msgstr "Bæta við vatnsmerki"
+
+#, fuzzy
+#~| msgid "Remove Bookmark"
+#~ msgid "Remove placemark"
+#~ msgstr "Fjarlægja bókamerki"
+
+#, fuzzy
+#~| msgid "Change Face Tag"
+#~ msgid "Change placemark"
+#~ msgstr "Breyta andlitsmerki"
+
+#, fuzzy
+#~| msgid "&Loop"
+#~ msgid "Loop"
+#~ msgstr "&Endurtaka"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Save"
+#~ msgid "Save tour"
+#~ msgstr "Vista"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid ""
+#~| "The current image has been changed.\n"
+#~| "Do you wish to save your changes?"
+#~ msgid "There are unsaved Tours. Do you want to save your changes?"
+#~ msgstr ""
+#~ "Núverandi mynd hefur breyst.\n"
+#~ "Viltu vista breytingarnar?"
+
+#, fuzzy
+#~| msgid "Open error"
+#~ msgid "Open Tour"
+#~ msgstr "Villa við að opna"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Remove selected items"
+#~ msgid "Remove Selected Items"
+#~ msgstr "Fjarlægja valin atriði"
+
+#, fuzzy
+#~| msgid "Are you sure you want to restore %1 item?"
+#~| msgid_plural "Are you sure you want to restore %1 items?"
+#~ msgid "Are you sure want to remove selected items?"
+#~ msgstr "Ertu viss um að þú viljir endurheimta %1 atriði?"
+
+#, fuzzy
+#~| msgid "Save format"
+#~ msgid "Save Tour as"
+#~ msgstr "Skráarsnið vistunar"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Discard Changes"
+#~ msgid "Discard Changes"
+#~ msgstr "Henda breytingum"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgid "New Tour"
+#~ msgstr "Ný mappa"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Save"
+#~ msgid "Save Tour"
+#~ msgstr "Vista"
+
+#, fuzzy
+#~| msgctxt "@action: save current filter settings"
+#~| msgid "Save As..."
+#~ msgid "Save Tour As"
+#~ msgstr "Vista sem..."
+
 #~ msgctxt "@action:button"
 #~ msgid "&Apply"
 #~ msgstr "Virkj&a"
@@ -70133,11 +70027,6 @@ msgstr "Viltu frumstilla allar stillingar myndmerkis á sjálfgefin gildi?"
 
 #~ msgid "Failed to open audio encoder"
 #~ msgstr "Gat ekki opnað hljóðkóðara"
-
-#, fuzzy
-#~| msgid "OpenStreetMap"
-#~ msgid "OpenStreetMap (Vector)"
-#~ msgstr "OpenStreetMap"
 
 #, fuzzy
 #~| msgid "Info"

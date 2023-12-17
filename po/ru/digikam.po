@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-16 00:39+0000\n"
+"POT-Creation-Date: 2023-12-17 00:39+0000\n"
 "PO-Revision-Date: 2023-11-13 16:53+0300\n"
 "Last-Translator: Алевтина  <karashokovaaa@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -3334,12 +3334,10 @@ msgstr "Выделенное"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeFolderButton)
 #. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:91
 #: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:151
-#: core/utilities/geolocation/marble/TourWidget.ui:114
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -21436,11 +21434,9 @@ msgid "This file may not be playable."
 msgstr "Этот файл повреждён, воспроизведение невозможно."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:32
 #: core/utilities/geolocation/marble/TourControlEditWidget.cpp:38
-#: core/utilities/geolocation/marble/TourWidget.ui:168
 #, kde-format
 msgid "Play"
 msgstr "Воспроизвести"
@@ -21448,10 +21444,8 @@ msgstr "Воспроизвести"
 # BUGME: please split --aspotashev
 # BUGME: "Стоп"? --aspotashev
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/geolocation/marble/TourWidget.ui:180
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Stop"
@@ -53422,7 +53416,7 @@ msgid "Google Maps"
 msgstr "Карты Google"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:485
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
 #, kde-format
 msgid "Float items"
 msgstr "Плавающие объекты"
@@ -53460,49 +53454,55 @@ msgstr "Спутниковая карта"
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:343
+#, fuzzy, kde-format
+#| msgid "OpenStreetMap"
+msgid "OpenStreetMap (Vector)"
+msgstr "OpenStreetMap"
+
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Сферическая"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:405
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:406
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Меркатор"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
 #, kde-format
 msgid "Equirectangular"
 msgstr "Равнопромежуточная"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:422
 #, kde-format
 msgid "Show compass"
 msgstr "Показать компас"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:427
 #, kde-format
 msgid "Show scale bar"
 msgstr "Показать полосу масштаба"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:431
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:432
 #, kde-format
 msgid "Show navigation"
 msgstr "Показать панель навигации"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Show overview map"
 msgstr "Показать обзорную карту"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:449
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Другие оформления Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:476
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:477
 #, kde-format
 msgid "Projection"
 msgstr "Проекция"
@@ -55507,12 +55507,8 @@ msgstr ""
 msgid "96"
 msgstr ""
 
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarControl)
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_toolBarPlayback)
 #. i18n: ectx: property (windowTitle), widget (QToolBar, m_formattedTextToolBar)
 #: core/utilities/geolocation/marble/FormattedTextWidget.ui:148
-#: core/utilities/geolocation/marble/TourWidget.ui:20
-#: core/utilities/geolocation/marble/TourWidget.ui:45
 #, kde-format
 msgid "toolBar"
 msgstr ""
@@ -59350,12 +59346,6 @@ msgstr "Добавить папки в закладки "
 msgid "&Folder name:"
 msgstr "Имя файла"
 
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:718
-#: core/utilities/geolocation/marble/NewstuffModel.cpp:727
-#, kde-format
-msgid "Installation aborted by user."
-msgstr ""
-
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
@@ -60770,238 +60760,6 @@ msgstr "Выбор папки назначения"
 #| msgid "Pause/Play"
 msgid "Pause"
 msgstr "Приостановить / Продолжить"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:95
-#, fuzzy, kde-format
-msgid "Play the tour"
-msgstr "Ошибка проигрывателя"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:97
-#, kde-format
-msgid "Pause the tour"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:129
-#, fuzzy, kde-format
-#| msgid "Timeout after exceeding %1 seconds"
-msgid "Wait for %1 seconds"
-msgstr "Превышено время ожидания после %1 сек"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:174
-#, fuzzy, kde-format
-#| msgid "Create \"%1\""
-msgid "Create item %1"
-msgstr "Создать «%1»"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:179
-#, fuzzy, kde-format
-#| msgid "Remove item"
-msgid "Remove item %1"
-msgstr "Удалить снимок"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:183
-#, fuzzy, kde-format
-#| msgid "Change Case"
-msgid "Change item %1"
-msgstr "Сменить регистр"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:188
-#, fuzzy, kde-format
-#| msgid "Updates"
-msgid "Update items"
-msgstr "Обновления"
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:409
-#, kde-format
-msgid "Add Placemark to Tour"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourItemDelegate.cpp:411
-#, fuzzy, kde-format
-#| msgid "Change Face Tag"
-msgid "Change Placemark in Tour"
-msgstr "Изменить метку лица"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:140
-#: core/utilities/geolocation/marble/TourWidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Add Folder"
-msgid "Add FlyTo"
-msgstr "Создать папку"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "Add again"
-msgid "Add Wait"
-msgstr "Добавить ещё раз"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Add Border"
-msgid "Add SoundCue"
-msgstr "Добавить рамку"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:152
-#, fuzzy, kde-format
-#| msgid "Add Watermark"
-msgid "Add Placemark"
-msgstr "Добавить водяной знак"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
-msgid "Remove placemark"
-msgstr "Удаление закладки"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:156
-#, fuzzy, kde-format
-#| msgid "Change Face Tag"
-msgid "Change placemark"
-msgstr "Изменить метку лица"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:158
-#, fuzzy, kde-format
-#| msgid "&Loop"
-msgid "Loop"
-msgstr "&В цикле"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:342
-#, fuzzy, kde-format
-msgid "Save tour"
-msgstr "Сохранить"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:343
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The current image has been changed.\n"
-#| "Do you wish to save your changes?"
-msgid "There are unsaved Tours. Do you want to save your changes?"
-msgstr ""
-"Текущее изображение было изменено.\n"
-"Сохранить изменения?"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.ui:156
-#, fuzzy, kde-format
-#| msgid "Open error"
-msgid "Open Tour"
-msgstr "Ошибка открытия"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:371
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, kde-format
-msgid "KML Tours (*.kml)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:550
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Remove selected items"
-msgid "Remove Selected Items"
-msgstr "Удаление выделенных элементов"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:551
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to restore %1 item?"
-#| msgid_plural "Are you sure you want to restore %1 items?"
-msgid "Are you sure want to remove selected items?"
-msgstr "Действительно восстановить %1 объект?"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:832
-#, fuzzy, kde-format
-#| msgid "Save format"
-msgid "Save Tour as"
-msgstr "Сохранить формат"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:892
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Discard Changes"
-msgid "Discard Changes"
-msgstr "Отменить изменения"
-
-#: core/utilities/geolocation/marble/TourWidget.cpp:893
-#, kde-format
-msgid ""
-"Are you sure want to discard all unsaved changes and close current document?"
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, TourWidget)
-#: core/utilities/geolocation/marble/TourWidget.ui:14
-#, kde-format
-msgid "Tour"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_elapsedTime)
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:57
-#: core/utilities/geolocation/marble/TourWidget.ui:71
-#, kde-format
-msgid "--:--"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:87
-#: core/utilities/geolocation/marble/TourWidget.ui:90
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
-#, kde-format
-msgid "Move up"
-msgstr "Переместить выше"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:102
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
-#, kde-format
-msgid "Move down"
-msgstr "Переместить ниже"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:123
-#, fuzzy, kde-format
-#| msgid "New Tag"
-msgid "New Tour"
-msgstr "Создание метки"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:135
-#, fuzzy, kde-format
-msgid "Save Tour"
-msgstr "Сохранить"
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:147
-#, fuzzy, kde-format
-#| msgctxt "@action: save current filter settings"
-#| msgid "Save As..."
-msgid "Save Tour As"
-msgstr "Сохранить как..."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:171
-#, kde-format
-msgid "Begins touring"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:183
-#, kde-format
-msgid "Stops touring (playing again will start tour from the start)"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:192
-#, kde-format
-msgid "Record tour"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLabel, m_totalTime)
-#: core/utilities/geolocation/marble/TourWidget.ui:195
-#, kde-format
-msgid "Converts the loaded tour into a movie"
-msgstr ""
 
 #: core/utilities/geolocation/marble/WaitEditWidget.cpp:38
 #, fuzzy, kde-format
@@ -64572,6 +64330,16 @@ msgstr "Удалить обработанные объекты"
 #, kde-format
 msgid "Clear Queue"
 msgstr "Очистить очередь"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
+#, kde-format
+msgid "Move up"
+msgstr "Переместить выше"
+
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
+#, kde-format
+msgid "Move down"
+msgstr "Переместить ниже"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
@@ -70783,6 +70551,132 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Сбросить все параметры видео до исходных значений?"
 
+#, fuzzy
+#~ msgid "Play the tour"
+#~ msgstr "Ошибка проигрывателя"
+
+#, fuzzy
+#~| msgid "Timeout after exceeding %1 seconds"
+#~ msgid "Wait for %1 seconds"
+#~ msgstr "Превышено время ожидания после %1 сек"
+
+#, fuzzy
+#~| msgid "Create \"%1\""
+#~ msgid "Create item %1"
+#~ msgstr "Создать «%1»"
+
+#, fuzzy
+#~| msgid "Remove item"
+#~ msgid "Remove item %1"
+#~ msgstr "Удалить снимок"
+
+#, fuzzy
+#~| msgid "Change Case"
+#~ msgid "Change item %1"
+#~ msgstr "Сменить регистр"
+
+#, fuzzy
+#~| msgid "Updates"
+#~ msgid "Update items"
+#~ msgstr "Обновления"
+
+#, fuzzy
+#~| msgid "Change Face Tag"
+#~ msgid "Change Placemark in Tour"
+#~ msgstr "Изменить метку лица"
+
+#, fuzzy
+#~| msgid "Add Folder"
+#~ msgid "Add FlyTo"
+#~ msgstr "Создать папку"
+
+#, fuzzy
+#~| msgid "Add again"
+#~ msgid "Add Wait"
+#~ msgstr "Добавить ещё раз"
+
+#, fuzzy
+#~| msgid "Add Border"
+#~ msgid "Add SoundCue"
+#~ msgstr "Добавить рамку"
+
+#, fuzzy
+#~| msgid "Add Watermark"
+#~ msgid "Add Placemark"
+#~ msgstr "Добавить водяной знак"
+
+#, fuzzy
+#~| msgid "Remove Bookmark"
+#~ msgid "Remove placemark"
+#~ msgstr "Удаление закладки"
+
+#, fuzzy
+#~| msgid "Change Face Tag"
+#~ msgid "Change placemark"
+#~ msgstr "Изменить метку лица"
+
+#, fuzzy
+#~| msgid "&Loop"
+#~ msgid "Loop"
+#~ msgstr "&В цикле"
+
+#, fuzzy
+#~ msgid "Save tour"
+#~ msgstr "Сохранить"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid ""
+#~| "The current image has been changed.\n"
+#~| "Do you wish to save your changes?"
+#~ msgid "There are unsaved Tours. Do you want to save your changes?"
+#~ msgstr ""
+#~ "Текущее изображение было изменено.\n"
+#~ "Сохранить изменения?"
+
+#, fuzzy
+#~| msgid "Open error"
+#~ msgid "Open Tour"
+#~ msgstr "Ошибка открытия"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Remove selected items"
+#~ msgid "Remove Selected Items"
+#~ msgstr "Удаление выделенных элементов"
+
+#, fuzzy
+#~| msgid "Are you sure you want to restore %1 item?"
+#~| msgid_plural "Are you sure you want to restore %1 items?"
+#~ msgid "Are you sure want to remove selected items?"
+#~ msgstr "Действительно восстановить %1 объект?"
+
+#, fuzzy
+#~| msgid "Save format"
+#~ msgid "Save Tour as"
+#~ msgstr "Сохранить формат"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Discard Changes"
+#~ msgid "Discard Changes"
+#~ msgstr "Отменить изменения"
+
+#, fuzzy
+#~| msgid "New Tag"
+#~ msgid "New Tour"
+#~ msgstr "Создание метки"
+
+#, fuzzy
+#~ msgid "Save Tour"
+#~ msgstr "Сохранить"
+
+#, fuzzy
+#~| msgctxt "@action: save current filter settings"
+#~| msgid "Save As..."
+#~ msgid "Save Tour As"
+#~ msgstr "Сохранить как..."
+
 #~ msgctxt "@action:button"
 #~ msgid "&Apply"
 #~ msgstr "&Применить"
@@ -70793,11 +70687,6 @@ msgstr "Сбросить все параметры видео до исходн�
 
 #~ msgid "Failed to open audio encoder"
 #~ msgstr "Не удалось открыть программу для кодирования звукового потока"
-
-#, fuzzy
-#~| msgid "OpenStreetMap"
-#~ msgid "OpenStreetMap (Vector)"
-#~ msgstr "OpenStreetMap"
 
 #, fuzzy
 #~| msgid "Info"
