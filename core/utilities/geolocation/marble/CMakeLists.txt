@@ -167,7 +167,6 @@ set(marblewidget_SRCS
     ViewParams.cpp
     ViewportParams.cpp
     VisiblePlacemark.cpp
-    WaitEditWidget.cpp
 
     astro/astrolib.cpp
     astro/astr2lib.cpp
