@@ -86,7 +86,7 @@ AddBookmarkDialog::AddBookmarkDialog(const QString& url,
     d->manager = mngr;
 
     setWindowFlags(Qt::Sheet);
-    setWindowTitle(tr2i18nd("@title:window", "Add Bookmark", nullptr));
+    setWindowTitle(i18nc("@title:window", "Add Bookmark"));
     setObjectName(QLatin1String("AddBookmarkDialog"));
     resize(350, 300);
 
