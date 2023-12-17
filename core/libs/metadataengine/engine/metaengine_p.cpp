@@ -650,7 +650,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 
         if      (charset == "Unicode")
         {
-/*
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
             QByteArray rawComment(exifDatum.size(), '\0');
@@ -658,16 +658,20 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 
             // remove "UNICODE\0"
 
-            rawComment          = rawComment.mid(8, rawComment.size() - 8);
-            QString utf16String = QString::fromUtf16((ushort*)rawComment.data());
+            rawComment = rawComment.mid(8);
 
-            if (utf16String.isValidUtf16())
+            if ((rawComment.size() > 1) && (rawComment.at(1) == '\0'))
             {
-                return QString::fromUtf8(utf16String.toUtf8());
+                QString utf16String = QString::fromUtf16((ushort*)rawComment.data());
+
+                if (utf16String.isValidUtf16())
+                {
+                    return QString::fromUtf8(utf16String.toUtf8());
+                }
             }
 
 #endif
-*/
+
             return QString::fromUtf8(comment.data());
         }
         else if (charset == "Jis")
