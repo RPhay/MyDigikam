@@ -52,7 +52,6 @@ set(marblewidget_SRCS
     FileManager.cpp
     FileStoragePolicy.cpp
     FileStorageWatcher.cpp
-    FlyToEditWidget.cpp
     FormattedTextWidget.cpp
     GenericScanlineTextureMapper.cpp
     GeoDataTreeModel.cpp
