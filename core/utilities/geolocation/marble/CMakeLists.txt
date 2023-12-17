@@ -31,7 +31,6 @@ set(marblewidget_SRCS
     AbstractDataPluginModel.cpp
     AbstractFloatItem.cpp
     AbstractWorkerThread.cpp
-    AddLinkDialog.cpp
     BranchFilterProxyModel.cpp
     CacheStoragePolicy.cpp
     CelestialSortFilterProxyModel.cpp
@@ -48,7 +47,6 @@ set(marblewidget_SRCS
     FileManager.cpp
     FileStoragePolicy.cpp
     FileStorageWatcher.cpp
-    FormattedTextWidget.cpp
     GenericScanlineTextureMapper.cpp
     GeoDataTreeModel.cpp
     GeoGraphicsScene.cpp
@@ -711,9 +709,7 @@ set(marblewidget_SRCS
 
 set (marblewidget_UI
 
-    AddLinkDialog.ui
     ElevationWidget.ui
-    FormattedTextWidget.ui
     LatLonBoxWidget.ui
     LatLonEdit.ui
     MarbleCacheSettingsWidget.ui
