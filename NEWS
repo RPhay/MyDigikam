@@ -60,7 +60,7 @@ BUGFIXES:
 047 ==> 478553 - Exif view from MetadataEdit tool show unreadable characters from a JPEG image.
 048 ==> 478575 - When opening the Setting / Setting Dialog, then main window crashes.
 049 ==> 478611 - digiKam crashes while entering name of facetag in image preview.
-050 ==> 
+050 ==> 478525 - Face Region Shifted Slightly When Tagging Face.
 051 ==> 
 052 ==> 
 053 ==> 

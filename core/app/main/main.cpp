@@ -152,6 +152,8 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
         qputenv("OPENCV_OPENCL_DEVICE",  "disabled");
     }
 
+    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::RoundPreferFloor);
+
 #ifdef HAVE_QWEBENGINE
 
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
