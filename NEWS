@@ -63,7 +63,7 @@ BUGFIXES:
 050 ==> 478525 - Face Region Shifted Slightly When Tagging Face.
 051 ==> 478657 - Crash when giving name for face.
 052 ==> 478648 - All versions of digiKam past 7.3 give the error "Failed to update the database schema from version 13 to version 14."
-053 ==> 
+053 ==> 478693 - Unable to add a collection if its a sub folder of an existing collection.
 054 ==> 
 055 ==> 
 056 ==> 
