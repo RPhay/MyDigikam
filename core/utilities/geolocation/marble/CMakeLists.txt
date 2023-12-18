@@ -98,26 +98,13 @@ set(marblewidget_SRCS
     SearchRunnerManager.cpp
     ServerLayout.cpp
     SphericalScanlineTextureMapper.cpp
-    StackedTile.cpp
-    StackedTileLoader.cpp
     StoragePolicy.cpp
     StyleBuilder.cpp
     SunLocator.cpp
     TemplateDocument.cpp
     TextureColorizer.cpp
     TextureMapperInterface.cpp
-    TextureTile.cpp
-    Tile.cpp
-    TileCoordsPyramid.cpp
-    TileCreator.cpp
-    TileCreatorDialog.cpp
-    TileId.cpp
-    TileLevelRangeWidget.cpp
-    TileLoader.cpp
-    TileLoaderHelper.cpp
-    TileScalingTextureMapper.cpp
     TreeViewDecoratorModel.cpp
-    VectorTileModel.cpp
     ViewParams.cpp
     ViewportParams.cpp
     VisiblePlacemark.cpp
@@ -706,13 +693,26 @@ set(marblewidget_SRCS
     settings/DialogConfigurationInterface.cpp
     settings/MarblePluginSettingsWidget.cpp
     settings/QtMarbleConfigDialog.cpp
+
+    tile/StackedTile.cpp
+    tile/StackedTileLoader.cpp
+    tile/TextureTile.cpp
+    tile/Tile.cpp
+    tile/TileCoordsPyramid.cpp
+    tile/TileCreator.cpp
+    tile/TileCreatorDialog.cpp
+    tile/TileId.cpp
+    tile/TileLevelRangeWidget.cpp
+    tile/TileLoader.cpp
+    tile/TileLoaderHelper.cpp
+    tile/TileScalingTextureMapper.cpp
+    tile/VectorTileModel.cpp
 )
 
 set (marblewidget_UI
 
     LatLonBoxWidget.ui
-    TileCreatorDialog.ui
-    TileLevelRangeWidget.ui
+
 
     bookmark/BookmarkManagerDialog.ui
     bookmark/EditBookmarkDialog.ui
@@ -736,6 +736,9 @@ set (marblewidget_UI
     settings/MarblePluginSettingsWidget.ui
     settings/MarbleTimeSettingsWidget.ui
     settings/MarbleViewSettingsWidget.ui
+
+    tile/TileCreatorDialog.ui
+    tile/TileLevelRangeWidget.ui
 )
 
 qt_add_resources(marblewidget_SRCS data/libmarble.qrc)
