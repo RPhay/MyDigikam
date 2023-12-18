@@ -97,10 +97,7 @@ set(marblewidget_SRCS
     ScanlineTextureMapperContext.cpp
     SearchRunner.cpp
     SearchRunnerManager.cpp
-    SerialTrack.cpp
     ServerLayout.cpp
-    SoundCueEditWidget.cpp
-    SoundTrack.cpp
     SphericalScanlineTextureMapper.cpp
     StackedTile.cpp
     StackedTileLoader.cpp
@@ -697,6 +694,8 @@ set(marblewidget_SRCS
     routing/RoutingProfilesWidget.cpp
     routing/RoutingProfilesModel.cpp
     routing/RoutingProfileSettingsDialog.cpp
+    routing/SerialTrack.cpp
+    routing/SoundTrack.cpp
     routing/TourPlayback.cpp
     routing/instructions/InstructionTransformation.cpp
     routing/instructions/RoutingInstruction.cpp
