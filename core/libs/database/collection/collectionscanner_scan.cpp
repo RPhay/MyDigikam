@@ -986,8 +986,8 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
     MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
     QDateTime modificationDate           = fi.lastModified();
 
-    if (checkSidecar                   &&
-        settings.useXMPSidecar4Reading &&
+    if (checkSidecar                       &&
+        settings.useXMPSidecar4Reading     &&
         DMetadata::hasSidecar(fi.filePath()))
     {
         QString filePath      = DMetadata::sidecarPath(fi.filePath());
