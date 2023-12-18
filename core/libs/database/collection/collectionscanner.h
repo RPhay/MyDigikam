@@ -200,7 +200,8 @@ protected:
     void scanAlbumRoot(const CollectionLocation& location);
     void scanAlbum(const CollectionLocation& location, const QString& album, bool checkDate = false);
     void scanExistingFile(const QFileInfo& fi, qlonglong id);
-    void scanFileNormal(const QFileInfo& info, const ItemScanInfo& scanInfo, bool checkSidecar = true);
+    void scanFileNormal(const QFileInfo& info, const ItemScanInfo& scanInfo,
+                        bool checkSidecar = true, const QFileInfo* const sidecarInfo = nullptr);
     void scanModifiedFile(const QFileInfo& info, const ItemScanInfo& scanInfo);
     void scanFileUpdateHashReuseThumbnail(const QFileInfo& fi, const ItemScanInfo& scanInfo, bool fileWasEdited);
     void cleanScanFile(const QFileInfo& info, const ItemScanInfo& scanInfo);

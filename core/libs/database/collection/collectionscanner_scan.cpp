@@ -728,10 +728,10 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
         itemIdSet << scanInfos.at(i).id;
     }
 
-    const QStringList& list = dir.entryList(QDir::Dirs    |
-                                            QDir::Files   |
-                                            QDir::NoDotAndDotDot,
-                                            QDir::Name | QDir::DirsLast);
+    const QFileInfoList& list = dir.entryInfoList(QDir::Dirs    |
+                                                  QDir::Files   |
+                                                  QDir::NoDotAndDotDot,
+                                                  QDir::Name | QDir::DirsLast);
 
     int counter          = 0;
     bool updateAlbumDate = false;
@@ -739,14 +739,12 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
     QDate albumDateNew   = albumDateTime.date();
     const QString xmpExt(QLatin1String(".xmp"));
 
-    Q_FOREACH (const QString& entry, list)
+    Q_FOREACH (const QFileInfo& info, list)
     {
         if (!d->checkObserver())
         {
             return; // return directly, do not go to cleanup code after loop!
         }
-
-        QFileInfo info(dir, entry);
 
         if (info.isFile())
         {
@@ -773,11 +771,35 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
                 itemIdSet.remove(scanInfos.at(index).id);
 
-                bool hasSidecar = (settings.useXMPSidecar4Reading                  &&
-                                   (list.contains(info.fileName() + xmpExt)        ||
-                                    list.contains(info.completeBaseName() + xmpExt)));
+                bool hasSidecar        = false;
+                const QFileInfo* sinfo = nullptr;
 
-                scanFileNormal(info, scanInfos.at(index), hasSidecar);
+                if (settings.useXMPSidecar4Reading)
+                {
+                    QString sidecarName;
+
+                    if (!settings.useCompatibleFileName)
+                    {
+                        sidecarName = info.fileName() + xmpExt;
+                    }
+                    else
+                    {
+                        sidecarName = info.completeBaseName() + xmpExt;
+                    }
+
+                    for (int i = 0 ; i < list.size() ; ++i)
+                    {
+                        if (list.at(i).fileName() == sidecarName)
+                        {
+                            sinfo      = &list.at(i);
+                            hasSidecar = true;
+
+                            break;
+                        }
+                    }
+                }
+
+                scanFileNormal(info, scanInfos.at(index), hasSidecar, sinfo);
             }
             else if (info.completeSuffix().contains(QLatin1String("digikamtempfile.")))
             {
@@ -920,7 +942,8 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
     }
 }
 
-void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& scanInfo, bool checkSidecar)
+void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& scanInfo,
+                                       bool checkSidecar, const QFileInfo* const sidecarInfo)
 {
     bool hasAnyHint = d->hints && d->hints->hasAnyNormalHint(scanInfo.id);
 
@@ -986,16 +1009,26 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
     MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
     QDateTime modificationDate           = fi.lastModified();
 
-    if (checkSidecar                       &&
-        settings.useXMPSidecar4Reading     &&
-        DMetadata::hasSidecar(fi.filePath()))
+    if (checkSidecar && settings.useXMPSidecar4Reading)
     {
-        QString filePath      = DMetadata::sidecarPath(fi.filePath());
-        QDateTime sidecarDate = QFileInfo(filePath).lastModified();
-
-        if (sidecarDate > modificationDate)
+        if      (sidecarInfo)
         {
-            modificationDate = sidecarDate;
+            QDateTime sidecarDate = sidecarInfo->lastModified();
+
+            if (sidecarDate > modificationDate)
+            {
+                modificationDate = sidecarDate;
+            }
+        }
+        else if (DMetadata::hasSidecar(fi.filePath()))
+        {
+            QString filePath      = DMetadata::sidecarPath(fi.filePath());
+            QDateTime sidecarDate = QFileInfo(filePath).lastModified();
+
+            if (sidecarDate > modificationDate)
+            {
+                modificationDate = sidecarDate;
+            }
         }
     }
 
