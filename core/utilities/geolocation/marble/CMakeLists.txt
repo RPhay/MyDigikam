@@ -29,20 +29,10 @@ set(marblewidget_SRCS
     AbstractFloatItem.cpp
     AbstractWorkerThread.cpp
     BranchFilterProxyModel.cpp
-    CacheStoragePolicy.cpp
     CelestialSortFilterProxyModel.cpp
     ClipPainter.cpp
-    DiscCache.cpp
-    DownloadPolicy.cpp
-    DownloadQueueSet.cpp
-    DownloadRegion.cpp
-    DownloadRegionDialog.cpp
     ElevationModel.cpp
     EquirectScanlineTextureMapper.cpp
-    FileLoader.cpp
-    FileManager.cpp
-    FileStoragePolicy.cpp
-    FileStorageWatcher.cpp
     GenericScanlineTextureMapper.cpp
     GeoDataTreeModel.cpp
     GeoGraphicsScene.cpp
@@ -78,14 +68,8 @@ set(marblewidget_SRCS
     ParsingRunnerManager.cpp
     Planet.cpp
     PlanetFactory.cpp
-    PlaybackAnimatedUpdateItem.cpp
-    PlaybackFlyToItem.cpp
-    PlaybackItem.cpp
-    PlaybackTourControlItem.cpp
-    PlaybackWaitItem.cpp
     PositionTracking.cpp
     Quaternion.cpp
-    RemoteIconLoader.cpp
     RenderState.cpp
     ReverseGeocodingRunner.cpp
     ReverseGeocodingRunnerManager.cpp
@@ -97,7 +81,6 @@ set(marblewidget_SRCS
     SearchRunnerManager.cpp
     ServerLayout.cpp
     SphericalScanlineTextureMapper.cpp
-    StoragePolicy.cpp
     StyleBuilder.cpp
     SunLocator.cpp
     TemplateDocument.cpp
@@ -668,7 +651,12 @@ set(marblewidget_SRCS
     routing/GoToDialog.cpp
     routing/Maneuver.cpp
     routing/MarbleLineEdit.cpp
+    routing/PlaybackAnimatedUpdateItem.cpp
+    routing/PlaybackFlyToItem.cpp
+    routing/PlaybackItem.cpp
     routing/PlaybackSoundCueItem.cpp
+    routing/PlaybackTourControlItem.cpp
+    routing/PlaybackWaitItem.cpp
     routing/Route.cpp
     routing/RouteRequest.cpp
     routing/RouteSegment.cpp
@@ -694,6 +682,19 @@ set(marblewidget_SRCS
     settings/MarblePluginSettingsWidget.cpp
     settings/QtMarbleConfigDialog.cpp
 
+    storage/CacheStoragePolicy.cpp
+    storage/DiscCache.cpp
+    storage/DownloadPolicy.cpp
+    storage/DownloadQueueSet.cpp
+    storage/DownloadRegion.cpp
+    storage/DownloadRegionDialog.cpp
+    storage/FileLoader.cpp
+    storage/FileManager.cpp
+    storage/FileStoragePolicy.cpp
+    storage/FileStorageWatcher.cpp
+    storage/RemoteIconLoader.cpp
+    storage/StoragePolicy.cpp
+
     tile/StackedTile.cpp
     tile/StackedTileLoader.cpp
     tile/TextureTile.cpp
@@ -712,7 +713,6 @@ set(marblewidget_SRCS
 set (marblewidget_UI
 
     LatLonBoxWidget.ui
-
 
     bookmark/BookmarkManagerDialog.ui
     bookmark/EditBookmarkDialog.ui
