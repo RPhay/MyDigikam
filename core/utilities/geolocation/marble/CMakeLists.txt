@@ -35,7 +35,6 @@ set(marblewidget_SRCS
     CacheStoragePolicy.cpp
     CelestialSortFilterProxyModel.cpp
     ClipPainter.cpp
-    DialogConfigurationInterface.cpp
     DiscCache.cpp
     DownloadPolicy.cpp
     DownloadQueueSet.cpp
@@ -71,7 +70,6 @@ set(marblewidget_SRCS
     MarbleModel.cpp
     MarblePhysics.cpp
     MarblePlacemarkModel.cpp
-    MarblePluginSettingsWidget.cpp
     MarbleWidget.cpp
     MarbleWidgetInputHandler.cpp
     MarbleWidgetPopupMenu.cpp
@@ -98,7 +96,6 @@ set(marblewidget_SRCS
     PositionProviderPlugin.cpp
     PositionProviderPluginInterface.cpp
     PositionTracking.cpp
-    QtMarbleConfigDialog.cpp
     Quaternion.cpp
     RemoteIconLoader.cpp
     RenderPlugin.cpp
@@ -164,6 +161,17 @@ set(marblewidget_SRCS
     bookmark/LatLonEdit.cpp
     bookmark/PlacemarkEditHeader.cpp
     bookmark/NewBookmarkFolderDialog.cpp
+
+    cloudsync/CloudSyncManager.cpp
+    cloudsync/RouteSyncManager.cpp
+    cloudsync/CloudRouteModel.cpp
+    cloudsync/CloudRoutesDialog.cpp
+    cloudsync/RouteItem.cpp
+    cloudsync/RouteItemDelegate.cpp
+    cloudsync/BookmarkSyncManager.cpp
+    cloudsync/MergeItem.cpp
+    cloudsync/ConflictDialog.cpp
+    cloudsync/OwncloudSyncBackend.cpp
 
     geodata/data/LonLatParser.cpp
     geodata/data/GeoDataRegion.cpp
@@ -695,27 +703,14 @@ set(marblewidget_SRCS
     routing/instructions/RoutingWaypoint.cpp
     routing/instructions/WaypointParser.cpp
 
-    cloudsync/CloudSyncManager.cpp
-    cloudsync/RouteSyncManager.cpp
-    cloudsync/CloudRouteModel.cpp
-    cloudsync/CloudRoutesDialog.cpp
-    cloudsync/RouteItem.cpp
-    cloudsync/RouteItemDelegate.cpp
-    cloudsync/BookmarkSyncManager.cpp
-    cloudsync/MergeItem.cpp
-    cloudsync/ConflictDialog.cpp
-    cloudsync/OwncloudSyncBackend.cpp
+    settings/DialogConfigurationInterface.cpp
+    settings/MarblePluginSettingsWidget.cpp
+    settings/QtMarbleConfigDialog.cpp
 )
 
 set (marblewidget_UI
 
     LatLonBoxWidget.ui
-    MarbleCacheSettingsWidget.ui
-    MarbleCloudSyncSettingsWidget.ui
-    MarbleNavigationSettingsWidget.ui
-    MarblePluginSettingsWidget.ui
-    MarbleTimeSettingsWidget.ui
-    MarbleViewSettingsWidget.ui
     TileCreatorDialog.ui
     TileLevelRangeWidget.ui
 
@@ -734,14 +729,21 @@ set (marblewidget_UI
     routing/RoutingWidget.ui
     routing/RoutingSettingsWidget.ui
     routing/RoutingProfileSettingsDialog.ui
+
+    settings/MarbleCacheSettingsWidget.ui
+    settings/MarbleCloudSyncSettingsWidget.ui
+    settings/MarbleNavigationSettingsWidget.ui
+    settings/MarblePluginSettingsWidget.ui
+    settings/MarbleTimeSettingsWidget.ui
+    settings/MarbleViewSettingsWidget.ui
 )
 
-qt_add_resources(marblewidget_SRCS libmarble.qrc)
+qt_add_resources(marblewidget_SRCS data/libmarble.qrc)
 
 qt_wrap_ui(marblewidget_SRCS ${marblewidget_UI})
 
 # Used by digikamcore
-add_library(core_marble_obj OBJECT ${marblewidget_SRCS} ${SOURCES_UI_HDRS})
+add_library(core_marble_obj OBJECT ${marblewidget_SRCS})
 
 target_compile_definitions(core_marble_obj
                            PRIVATE
