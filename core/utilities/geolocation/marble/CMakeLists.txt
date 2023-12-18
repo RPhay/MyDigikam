@@ -82,7 +82,6 @@ set(marblewidget_SRCS
     PlaybackAnimatedUpdateItem.cpp
     PlaybackFlyToItem.cpp
     PlaybackItem.cpp
-    PlaybackSoundCueItem.cpp
     PlaybackTourControlItem.cpp
     PlaybackWaitItem.cpp
     PositionTracking.cpp
@@ -682,6 +681,7 @@ set(marblewidget_SRCS
     routing/GoToDialog.cpp
     routing/Maneuver.cpp
     routing/MarbleLineEdit.cpp
+    routing/PlaybackSoundCueItem.cpp
     routing/Route.cpp
     routing/RouteRequest.cpp
     routing/RouteSegment.cpp
