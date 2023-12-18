@@ -57,8 +57,6 @@ set(marblewidget_SRCS
     kdescendantsproxymodel.cpp
     kineticmodel.cpp
     LatLonBoxWidget.cpp
-    LayerInterface.cpp
-    LayerManager.cpp
     MapThemeManager.cpp
     MapThemeSortFilterProxyModel.cpp
     MapViewItemDelegate.cpp
@@ -80,7 +78,6 @@ set(marblewidget_SRCS
     MarbleZip.cpp
     MathHelper.cpp
     MercatorScanlineTextureMapper.cpp
-    MergedLayerDecorator.cpp
     OsmcSymbol.cpp
     ParseRunnerPlugin.cpp
     ParsingRunner.cpp
@@ -644,7 +641,10 @@ set(marblewidget_SRCS
     layers/FpsLayer.cpp
     layers/GeometryLayer.cpp
     layers/GroundLayer.cpp
+    layers/LayerInterface.cpp
+    layers/LayerManager.cpp
     layers/MarbleSplashLayer.cpp
+    layers/MergedLayerDecorator.cpp
     layers/PlacemarkLayer.cpp
     layers/PopupLayer.cpp
     layers/TileLayer.cpp
