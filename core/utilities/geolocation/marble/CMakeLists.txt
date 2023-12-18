@@ -57,7 +57,6 @@ set(marblewidget_SRCS
     kdescendantsproxymodel.cpp
     kineticmodel.cpp
     LatLonBoxWidget.cpp
-    LatLonEdit.cpp
     LayerInterface.cpp
     LayerManager.cpp
     MapThemeManager.cpp
@@ -86,7 +85,6 @@ set(marblewidget_SRCS
     ParseRunnerPlugin.cpp
     ParsingRunner.cpp
     ParsingRunnerManager.cpp
-    PlacemarkEditHeader.cpp
     PlacemarkLayout.cpp
     PlacemarkPositionProviderPlugin.cpp
     Planet.cpp
@@ -166,6 +164,8 @@ set(marblewidget_SRCS
     bookmark/BookmarkManager.cpp
     bookmark/BookmarkManagerDialog.cpp
     bookmark/EditBookmarkDialog.cpp
+    bookmark/LatLonEdit.cpp
+    bookmark/PlacemarkEditHeader.cpp
     bookmark/NewBookmarkFolderDialog.cpp
 
     geodata/data/LonLatParser.cpp
@@ -709,21 +709,20 @@ set(marblewidget_SRCS
 
 set (marblewidget_UI
 
-    ElevationWidget.ui
     LatLonBoxWidget.ui
-    LatLonEdit.ui
     MarbleCacheSettingsWidget.ui
     MarbleCloudSyncSettingsWidget.ui
     MarbleNavigationSettingsWidget.ui
     MarblePluginSettingsWidget.ui
     MarbleTimeSettingsWidget.ui
     MarbleViewSettingsWidget.ui
-    PlacemarkEditHeader.ui
     TileCreatorDialog.ui
     TileLevelRangeWidget.ui
 
     bookmark/BookmarkManagerDialog.ui
     bookmark/EditBookmarkDialog.ui
+    bookmark/LatLonEdit.ui
+    bookmark/PlacemarkEditHeader.ui
     bookmark/NewBookmarkFolderDialog.ui
 
     cloudsync/CloudRoutesDialog.ui
