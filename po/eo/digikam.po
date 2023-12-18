@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-17 00:39+0000\n"
+"POT-Creation-Date: 2023-12-18 00:39+0000\n"
 "PO-Revision-Date: 2023-12-16 07:52+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -1155,7 +1155,6 @@ msgid "Audio/Video Properties"
 msgstr "Aŭdio/Video Propraĵoj"
 
 #: core/app/items/utils/tooltipfiller.cpp:356
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:47
 #, kde-format
 msgid "Duration:"
 msgstr "Daŭro:"
@@ -2612,7 +2611,7 @@ msgstr "&Helpo"
 msgid "Main Toolbar"
 msgstr "Ĉefa ilobreto"
 
-#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:259
+#: core/app/main/main.cpp:196 core/app/views/stack/welcomepageview.cpp:259
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2622,34 +2621,34 @@ msgstr "Ĉefa ilobreto"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:170
+#: core/app/main/main.cpp:205 core/showfoto/main/main.cpp:172
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Axel Rousseau,Oliver Kellogg"
 
-#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:171
+#: core/app/main/main.cpp:206 core/showfoto/main/main.cpp:173
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
-#: core/app/main/main.cpp:212
+#: core/app/main/main.cpp:214
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Malfermi fotilan dialogon ĉe \"vojo\""
 
-#: core/app/main/main.cpp:215
+#: core/app/main/main.cpp:217
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Malfermi fotilan dialogon por la aparato kun Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:220
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Aŭtomate detekti kaj malfermi konektitan fotilon gphoto2"
 
-#: core/app/main/main.cpp:220
+#: core/app/main/main.cpp:222
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2657,12 +2656,12 @@ msgstr ""
 "Komenci digikam per la datumbaza dosiero SQLite trovita en la dosierujo \"dir"
 "\""
 
-#: core/app/main/main.cpp:223
+#: core/app/main/main.cpp:225
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Komenci digikam per la agorda dosiero \"config\""
 
-#: core/app/main/main.cpp:250
+#: core/app/main/main.cpp:252
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2673,7 +2672,7 @@ msgstr ""
 "instali la 64-bitan version de digiKam por akiri pli bonan sperton kun "
 "digiKam.</p>"
 
-#: core/app/main/main.cpp:292
+#: core/app/main/main.cpp:294
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2684,7 +2683,7 @@ msgstr ""
 "ĝin.\n"
 "Ne estas datumbaza kromaĵo instalita en via komputilo."
 
-#: core/app/main/main.cpp:301
+#: core/app/main/main.cpp:303
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2695,7 +2694,7 @@ msgstr ""
 "ĝin.\n"
 "Datumbazaj aldonaĵoj instalitaj sur via komputilo estas listigitaj malsupre."
 
-#: core/app/main/main.cpp:341
+#: core/app/main/main.cpp:343
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2939,7 +2938,6 @@ msgstr "Neniu Etikedo Albumo"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:153
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3232,8 +3230,8 @@ msgstr "Elekto"
 #. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:856
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:91
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:151
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:91
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:151
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -11910,8 +11908,8 @@ msgstr "Elektu kiun servon vi ŝatus uzi."
 #. i18n: ectx: property (text), widget (QLabel, bookmarkLabel)
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:220
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:141
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:62
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:118
+#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:62
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:118
 #: core/utilities/geolocation/marble/cloudsync/BookmarkSyncManager.cpp:650
 #, kde-format
 msgid "Bookmarks"
@@ -14880,11 +14878,9 @@ msgstr "Retadreso:"
 msgid "Set here the contact e-mail."
 msgstr "Agordu ĉi tie la kontaktan retpoŝton."
 
-#. i18n: ectx: property (text), widget (QLabel, m_urlLabel)
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:131
 #: core/libs/template/templatepanel.cpp:373
 #: core/libs/template/templateviewer.cpp:207
-#: core/utilities/geolocation/marble/AddLinkDialog.ui:22
 #, kde-format
 msgid "URL:"
 msgstr "Retadreso:"
@@ -21131,7 +21127,6 @@ msgstr "Ĉi tiu dosiero eble ne estas ludebla."
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:32
-#: core/utilities/geolocation/marble/TourControlEditWidget.cpp:38
 #, kde-format
 msgid "Play"
 msgstr "Ludi"
@@ -23492,7 +23487,7 @@ msgstr ""
 "Eroj estos aldonitaj kune kun la ligita versio. Vi ne estos petita denove."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:120
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:486
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:486
 #, kde-format
 msgid "Replace"
 msgstr "Anstataŭigi"
@@ -23503,7 +23498,7 @@ msgid "Item will be replacing the linked version."
 msgstr "Ero anstataŭigos la ligitan version."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:127
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:487
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:487
 #, kde-format
 msgid "Replace All"
 msgstr "Anstataŭigi Ĉion"
@@ -23977,7 +23972,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:189
 #: core/libs/dialogs/webbrowserdlg.cpp:129
-#: core/utilities/geolocation/marble/GoToDialog.cpp:196
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:196
 #, kde-format
 msgid "Home"
 msgstr "Hejmo"
@@ -28599,7 +28594,6 @@ msgstr "Migri ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:113
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
 #, kde-format
 msgid "Cancel"
@@ -34003,11 +33997,9 @@ msgctxt "@action:button"
 msgid "&Start"
 msgstr "&Komenci"
 
-#. i18n: ectx: property (text), widget (QPushButton, closeButton)
 #: core/libs/dplugins/webservices/wstooldialog.cpp:103
 #: core/libs/onlineversion/onlineversiondlg.cpp:321
 #: core/libs/onlineversion/onlineversiondlg.cpp:498
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:196
 #, kde-format
 msgid "Close"
 msgstr "Fermi"
@@ -41278,7 +41270,7 @@ msgstr "AVFormato"
 
 #. i18n: ectx: property (text), widget (QRadioButton, browseButton)
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
-#: core/utilities/geolocation/marble/GoToDialog.ui:93
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:93
 #, kde-format
 msgid "Browse"
 msgstr "Foliumi"
@@ -49245,19 +49237,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Dosierujoj"
 
-#: core/showfoto/main/main.cpp:161
+#: core/showfoto/main/main.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:179
+#: core/showfoto/main/main.cpp:181
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Dosiero(j) aŭ dosierujo(j) por malfermi"
 
-#: core/showfoto/main/main.cpp:210
+#: core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -51083,10 +51075,8 @@ msgstr "Aldonu datumbazajn informojn"
 msgid "Key"
 msgstr "Ŝlosilo"
 
-#. i18n: ectx: attribute (title), widget (QWidget, m_descriptionTab)
 #: core/utilities/advancedrename/parser/options/database/dbkeyselector.cpp:94
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:62
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:38
 #, kde-format
 msgid "Description"
 msgstr "Priskribo"
@@ -52877,6 +52867,14 @@ msgstr "La dosiero ne estas XBEL versio 1.0 dosiero."
 msgid "Unknown title"
 msgstr "Nekonata titolo"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add Bookmark"
+msgctxt "@title:window"
+msgid "Add Bookmark"
+msgstr "Aldoni legosignon"
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:94
 #, kde-format
 msgid ""
@@ -53913,183 +53911,137 @@ msgstr ""
 msgid "&Configure..."
 msgstr "&Agordi..."
 
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:67
-#, kde-format
-msgid "No URL specified"
-msgstr "Neniu URL specifita"
-
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:68
-#, kde-format
-msgid "Please specify a URL for this link."
-msgstr ""
-
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:71
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:371
-#: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:84
-#, kde-format
-msgid "No name specified"
-msgstr "Neniu nomo specifita"
-
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:72
-#, kde-format
-msgid "Please specify a name for this link."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiAddLinkDialog)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/AddLinkDialog.ui:14
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:380
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:383
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:244
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:247
-#, kde-format
-msgid "Add link"
-msgstr "Aldoni ligilon"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#. i18n: ectx: property (text), widget (QLabel, m_nameLabel)
-#: core/utilities/geolocation/marble/AddLinkDialog.ui:32
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:64
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
-#, kde-format
-msgid "Name:"
-msgstr "Nomo:"
-
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:58
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:250
+#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:58
+#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:250
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
 #, kde-format
 msgid "Default"
 msgstr "Defaŭlta"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:183
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:183
 #, kde-format
 msgid ""
 "The folder %1 is not empty. Removing it will delete all bookmarks it "
 "contains. Are you sure you want to delete the folder?"
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:184
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:184
 #, kde-format
 msgid "Remove Folder"
 msgstr "Forigi Dosierujon"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:418
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:418
 #, kde-format
 msgid "Export Bookmarks"
 msgstr "Eksporti Legosignojn"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:419
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:419
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:730
 #, kde-format
 msgid "KML files (*.kml)"
 msgstr "KML-dosieroj (*.kml)"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:424
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:424
 #, kde-format
 msgid "Unable to save bookmarks. Please check that the file is writable."
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:425
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:425
 #, kde-format
 msgid "Bookmark Export"
 msgstr "Legosigna Eksporto"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:432
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:432
 #, kde-format
 msgid "Import Bookmarks"
 msgstr "Importi Legosignojn"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:433
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:433
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:696
 #, kde-format
 msgid "KML Files (*.kml)"
 msgstr "KML-dosieroj (*.kml)"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:440
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:440
 #, kde-format
 msgid "The file %1 cannot be opened as a KML file."
 msgstr "La dosiero %1 ne povas esti malfermita kiel KML-dosiero."
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:441
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:441
 #, kde-format
 msgid "Bookmark Import"
 msgstr "Legosigna Importo"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:475
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:475
 #, kde-format
 msgid "The file contains a bookmark that already exists among your Bookmarks."
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:476
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:476
 #, kde-format
 msgid "Imported bookmark"
 msgstr "Importita legosigno"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:477
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:477
 #, kde-format
 msgid "Existing bookmark"
 msgstr "Ekzistanta legosigno"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:478
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:478
 #, kde-format
 msgid "Do you want to replace the existing bookmark with the imported one?"
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:488
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:488
 #, kde-format
 msgid "Skip"
 msgstr "Preterlasi"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:489
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:489
 #, kde-format
 msgid "Skip All"
 msgstr "Preterlasi Ĉion"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, UiBookmarkManagerDialog)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:14
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:14
 #, kde-format
 msgid "Bookmark Manager"
 msgstr "Legosigna Mastrumilo"
 
 #. i18n: ectx: property (text), widget (QPushButton, importButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:25
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:25
 #, kde-format
 msgid "Import Bookmarks..."
 msgstr "Importi Legosignojn..."
 
 #. i18n: ectx: property (text), widget (QPushButton, exportButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:35
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:35
 #, kde-format
 msgid "Export Bookmarks..."
 msgstr "Eksporti Legosignojn..."
 
 #. i18n: ectx: property (text), widget (QLabel, foldersLabel)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:64
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:64
 #, kde-format
 msgid "Folders"
 msgstr "Dosierujoj"
 
 #. i18n: ectx: property (text), widget (QPushButton, newFolderButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:74
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:74
 #, kde-format
 msgid "New..."
 msgstr "Nova..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameFolderButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:81
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:81
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:62
 #, kde-format
 msgid "Rename..."
 msgstr "Renomi..."
 
 #. i18n: ectx: property (text), widget (QPushButton, editBookmarkButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:141
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:141
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
 #: core/utilities/lighttable/lighttablethumbbar.cpp:264
@@ -54098,6 +54050,88 @@ msgstr "Renomi..."
 #, kde-format
 msgid "Edit"
 msgstr "Redakti"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, UiEditBookmarkDialog)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:14
+#, kde-format
+msgid "Edit Bookmark"
+msgstr "Redakti Legosignon"
+
+#. i18n: ectx: property (text), widget (QLabel, description_lbl)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:25
+#, kde-format
+msgid "&Description:"
+msgstr "&Priskribo:"
+
+#. i18n: ectx: property (html), widget (QTextEdit, m_description)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:50
+#, kde-format
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
+"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
+"<tr>\n"
+"<td style=\"border: none;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
+"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
+"<tr>\n"
+"<td style=\"border: none;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
+
+#. i18n: ectx: property (text), widget (QLabel, folder_lbl)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:57
+#, kde-format
+msgid "&Folder:"
+msgstr "&Dosierujo:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_newFolderButton)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:79
+#, kde-format
+msgid "&Add Folder..."
+msgstr "&Aldoni dosierujon..."
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
+#: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:14
+#, kde-format
+msgid "New Bookmark Folder"
+msgstr "Nova Legosigna Dosierujo"
+
+#. i18n: ectx: property (text), widget (QLabel, m_namelbl)
+#: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:22
+#, kde-format
+msgid "&Folder name:"
+msgstr "&Nomo de dosierujo:"
 
 #: core/utilities/geolocation/marble/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -54326,236 +54360,6 @@ msgstr ""
 msgid "Estimated download size: %1 kB"
 msgstr ""
 
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiEditBookmarkDialog)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:14
-#, kde-format
-msgid "Edit Bookmark"
-msgstr "Redakti Legosignon"
-
-#. i18n: ectx: property (text), widget (QLabel, description_lbl)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:25
-#, kde-format
-msgid "&Description:"
-msgstr "&Priskribo:"
-
-#. i18n: ectx: property (html), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:50
-#, kde-format
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-"<tr>\n"
-"<td style=\"border: none;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-"<tr>\n"
-"<td style=\"border: none;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-
-#. i18n: ectx: property (text), widget (QLabel, folder_lbl)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:57
-#, kde-format
-msgid "&Folder:"
-msgstr "&Dosierujo:"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_newFolderButton)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:79
-#, kde-format
-msgid "&Add Folder..."
-msgstr "&Aldoni dosierujon..."
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:111
-#, kde-format
-msgid "Untitled Placemark"
-msgstr "Sentitola Lokmarko"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:159
-#, kde-format
-msgid "Relations"
-msgstr "Rilatoj"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:168
-#, kde-format
-msgid "Elevation"
-msgstr "Alteco"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:372
-#, kde-format
-msgid "Please specify a name for this placemark."
-msgstr ""
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:375
-#, kde-format
-msgid "No ID specified"
-msgstr "Neniu identigilo specifita"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:376
-#, kde-format
-msgid "Please specify a ID for this placemark."
-msgstr ""
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:379
-#, kde-format
-msgid "ID is invalid"
-msgstr "ID estas nevalida"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:380
-#, kde-format
-msgid "Please specify a valid ID for this placemark."
-msgstr ""
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:383
-#, kde-format
-msgid "No image specified"
-msgstr "Neniu bildo specifita"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:384
-#, kde-format
-msgid "Please specify an icon for this placemark or add a valid tag."
-msgstr ""
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:387
-#, kde-format
-msgid "Invalid icon path"
-msgstr "Nevalida piktograma vojo"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:388
-#, kde-format
-msgid "Please specify a valid path for the icon file."
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiEditPlacemarkDialog)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:20
-#, kde-format
-msgid "Edit placemark"
-msgstr "Redakti lokmarkon"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_isBalloonVisible)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:47
-#, kde-format
-msgid "Show Balloon Popup"
-msgstr ""
-
-#. i18n: ectx: attribute (title), widget (QWidget, style_color_tab)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:55
-#, kde-format
-msgid "Style, Color"
-msgstr "Stilo, Koloro"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:61
-#, kde-format
-msgid "Label"
-msgstr "Etikedo"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, m_iconColorField)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:74
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:186
-#, kde-format
-msgid "Color:"
-msgstr "Koloro:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_labelScaleField)
-#. i18n: ectx: property (text), widget (QLabel, m_iconScaleField)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:129
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:244
-#, kde-format
-msgid "Scale:"
-msgstr "Skalo:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:170
-#, kde-format
-msgid "Icon"
-msgstr "Piktogramo"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_isPlacemarkVisible)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:285
-#, kde-format
-msgid "Show placemark"
-msgstr "Montri lokmarkon"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:326
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:329
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:190
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:193
-#, kde-format
-msgid "Bold"
-msgstr "Grasa"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:341
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:344
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:205
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:208
-#, kde-format
-msgid "Italics"
-msgstr "Kursiva"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:356
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:359
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:220
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:223
-#, kde-format
-msgid "Underlined"
-msgstr "Substrekita"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:368
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:371
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:232
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:235
-#, kde-format
-msgid "Add image"
-msgstr "Aldoni bildon"
-
 #. i18n: ectx: property (text), widget (QLabel, elevationLabel)
 #: core/utilities/geolocation/marble/ElevationWidget.ui:19
 #, kde-format
@@ -54573,151 +54377,6 @@ msgstr ""
 #, kde-format
 msgid "above sea level"
 msgstr ""
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:53
-#: core/utilities/geolocation/marble/WaitEditWidget.cpp:43
-#, kde-format
-msgctxt "seconds"
-msgid " s"
-msgstr " s"
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:59
-#, kde-format
-msgid "Mode:"
-msgstr "Reĝimo:"
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:64
-#, kde-format
-msgid "Smooth"
-msgstr "Glata"
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:65
-#, kde-format
-msgid "Bounce"
-msgstr ""
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:82
-#, kde-format
-msgid "Current map center"
-msgstr "Aktuala mapcentro"
-
-#: core/utilities/geolocation/marble/FormattedTextWidget.cpp:181
-#, kde-format
-msgid "Choose image"
-msgstr "Elekti bildon"
-
-#: core/utilities/geolocation/marble/FormattedTextWidget.cpp:181
-#, kde-format
-msgid "All Supported Files (*.png *.jpg *.jpeg)"
-msgstr "Ĉiuj Subtenataj Dosieroj (*.png *.jpg *.jpeg)"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_isFormattedTextMode)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:46
-#, kde-format
-msgid "Formatted text"
-msgstr "Formatita teksto"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:70
-#, kde-format
-msgid "6"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:75
-#, kde-format
-msgid "8"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:80
-#, kde-format
-msgid "9"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:85
-#, kde-format
-msgid "10"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:90
-#, kde-format
-msgid "11"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:95
-#, kde-format
-msgid "12"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:100
-#, kde-format
-msgid "14"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:105
-#, kde-format
-msgid "16"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:110
-#, kde-format
-msgid "18"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:115
-#, kde-format
-msgid "20"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:120
-#, kde-format
-msgid "24"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:125
-#, kde-format
-msgid "36"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:130
-#, kde-format
-msgid "48"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:135
-#, kde-format
-msgid "72"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:140
-#, kde-format
-msgid "96"
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_formattedTextToolBar)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:148
-#, kde-format
-msgid "toolBar"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:252
-#, kde-format
-msgid "Color"
-msgstr "Koloro"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
@@ -56567,45 +56226,6 @@ msgstr "PopIndekso"
 msgid "Playlist"
 msgstr "Ludlisto"
 
-#: core/utilities/geolocation/marble/GoToDialog.cpp:167
-#, kde-format
-msgid "Current Location: %1"
-msgstr "Nuna Loko: %1"
-
-#: core/utilities/geolocation/marble/GoToDialog.cpp:353
-#, kde-format
-msgid "Address or search term"
-msgstr ""
-
-#: core/utilities/geolocation/marble/GoToDialog.cpp:439
-#, kde-format
-msgctxt "Number of search results"
-msgid "%n result(s) found."
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, GoTo)
-#: core/utilities/geolocation/marble/GoToDialog.ui:14
-#, kde-format
-msgid "Go To..."
-msgstr "Iri al..."
-
-#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/marble/GoToDialog.ui:78
-#, kde-format
-msgid ""
-"Enter a search term and press Enter. <a href=\"https://userbase.kde.org/"
-"Marble/Search\">Details...</a>"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, searchButton)
-#. i18n: ectx: property (text), widget (QPushButton, searchButton)
-#: core/utilities/geolocation/marble/GoToDialog.ui:103
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:203
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:86
-#, kde-format
-msgid "Search"
-msgstr "Serĉi"
-
 #. i18n: ectx: property (windowTitle), widget (QWidget, LatLonBoxWidget)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:17
 #, kde-format
@@ -56936,11 +56556,6 @@ msgstr "Uzantnomo:"
 #, kde-format
 msgid "Test Login"
 msgstr "Prova ensaluto"
-
-#: core/utilities/geolocation/marble/MarbleLineEdit.cpp:56
-#, kde-format
-msgid "Clear"
-msgstr "Viŝi"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:122
 #, kde-format
@@ -57828,140 +57443,10 @@ msgstr ""
 msgid "Address Details"
 msgstr "Detaloj de Adreso"
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:35
+#: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:84
 #, kde-format
-msgid "Missing encoding tools"
-msgstr "Mankas kodigaj iloj"
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:36
-#, kde-format
-msgid ""
-"Marble requires additional software in order to create movies. Please get %1 "
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:61
-#, kde-format
-msgid "AVI (mpeg4)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:62
-#, kde-format
-msgid "FLV"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:63
-#, kde-format
-msgid "Matroska (h264)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:64
-#, kde-format
-msgid "MPEG-4"
-msgstr "MPEG-4"
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:65
-#, kde-format
-msgid "MPEG-2 PS (VOB)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:66
-#, kde-format
-msgid "OGG"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:67
-#, kde-format
-msgid "SWF"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:26
-#, kde-format
-msgctxt "Start recording a movie"
-msgid "&Start"
-msgstr "&Komenci"
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:56
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:67
-#, kde-format
-msgid "Codecs are unavailable"
-msgstr "Kodekoj ne disponeblas"
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:56
-#, kde-format
-msgid "Supported codecs are not found."
-msgstr "Subtenataj kodekoj ne estas trovitaj."
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:68
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:79
-#, kde-format
-msgid "Save video file"
-msgstr "Konservi videodosieron"
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:89
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:100
-#, kde-format
-msgid "Filename is not valid"
-msgstr "Dosiernomo ne validas"
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:90
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:101
-#, kde-format
-msgid "This file format is not supported. Please, use %1 instead"
-msgstr "Ĉi tiu dosierformato ne estas subtenata. Bonvolu uzi %1 anstataŭe"
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:104
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:118
-#, kde-format
-msgid "Missing filename"
-msgstr "Mankas dosiernomo"
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:105
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:119
-#, kde-format
-msgid ""
-"Destination video file is not set. I don't know where to save recorded "
-"video. Please, specify one."
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, TourCaptureDialog)
-#. i18n: ectx: property (windowTitle), widget (QDialog, MovieCaptureDialog)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:14
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:20
-#, kde-format
-msgid "Movie Recording"
-msgstr "Filmregistrado"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:20
-#, kde-format
-msgid "Destination video:"
-msgstr "Celka video:"
-
-#. i18n: ectx: property (text), widget (QPushButton, openButton)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:36
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:81
-#, kde-format
-msgid "Open..."
-msgstr "Malfermi..."
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:45
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:97
-#, kde-format
-msgid "FPS (frames per second)"
-msgstr "FPS (kadroj por sekundo)"
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
-#: core/utilities/geolocation/marble/NewBookmarkFolderDialog.ui:14
-#, kde-format
-msgid "New Bookmark Folder"
-msgstr "Nova Legosigna Dosierujo"
-
-#. i18n: ectx: property (text), widget (QLabel, m_namelbl)
-#: core/utilities/geolocation/marble/NewBookmarkFolderDialog.ui:22
-#, kde-format
-msgid "&Folder name:"
-msgstr "&Nomo de dosierujo:"
+msgid "No name specified"
+msgstr "Neniu nomo specifita"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
@@ -58003,7 +57488,7 @@ msgid "Add Relation"
 msgstr "Aldoni Rilaton"
 
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.cpp:95
-#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:104
+#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:105
 #, kde-format
 msgid "value"
 msgstr "valoro"
@@ -58040,7 +57525,7 @@ msgstr ">>"
 msgid "Related Tags"
 msgstr "Rilataj Etikedoj"
 
-#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:32
+#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:34
 #, kde-format
 msgid "Add custom tag..."
 msgstr "Aldoni propran etikedon..."
@@ -58054,6 +57539,14 @@ msgstr "Malfermi Dosieron"
 #, kde-format
 msgid "All Supported Files (*.png)"
 msgstr "Ĉiuj Subtenataj Dosieroj (*.png)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:64
+#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
+#, kde-format
+msgid "Name:"
+msgstr "Nomo:"
 
 #. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
 #: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:81
@@ -58544,11 +58037,6 @@ msgstr "Neniam sinkronigita."
 msgid "Last synchronization: %1"
 msgstr "Lasta sinkronigo: %1"
 
-#: core/utilities/geolocation/marble/RemoveItemEditWidget.cpp:35
-#, kde-format
-msgid "Choose item:"
-msgstr "Elektu objekton:"
-
 #: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:30
 #, kde-format
 msgid "Current Route Position Provider Plugin"
@@ -58563,6 +58051,45 @@ msgstr "Aktuala Itinero"
 #, kde-format
 msgid "Simulates traveling along the current route."
 msgstr ""
+
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:167
+#, kde-format
+msgid "Current Location: %1"
+msgstr "Nuna Loko: %1"
+
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:353
+#, kde-format
+msgid "Address or search term"
+msgstr ""
+
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:439
+#, kde-format
+msgctxt "Number of search results"
+msgid "%n result(s) found."
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, GoTo)
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:14
+#, kde-format
+msgid "Go To..."
+msgstr "Iri al..."
+
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:78
+#, kde-format
+msgid ""
+"Enter a search term and press Enter. <a href=\"https://userbase.kde.org/"
+"Marble/Search\">Details...</a>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, searchButton)
+#. i18n: ectx: property (text), widget (QRadioButton, searchButton)
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:103
+#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:203
+#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:86
+#, kde-format
+msgid "Search"
+msgstr "Serĉi"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:252
 #, kde-format
@@ -58733,6 +58260,11 @@ msgstr "Prenu la elirejon maldekstren sur %1."
 #, kde-format
 msgid "Take the exit to the right onto %1."
 msgstr "Prenu la elirejon dekstren al %1."
+
+#: core/utilities/geolocation/marble/routing/MarbleLineEdit.cpp:56
+#, kde-format
+msgid "Clear"
+msgstr "Viŝi"
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:110
 #, kde-format
@@ -59054,28 +58586,6 @@ msgctxt "journey duration"
 msgid "%1:%2 h"
 msgstr "%1:%2 h"
 
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:74
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:97
-#, kde-format
-msgid "Global Search"
-msgstr "Tutmonda Serĉo"
-
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:77
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:97
-#, kde-format
-msgid "Area Search"
-msgstr "Area Serĉo"
-
-#: core/utilities/geolocation/marble/SearchWidget.cpp:59
-#, kde-format
-msgid "Search Results"
-msgstr "Serĉrezultoj"
-
-#: core/utilities/geolocation/marble/SearchWidget.cpp:76
-#, kde-format
-msgid "Search for '%1'"
-msgstr ""
-
 #: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
 #, kde-format
 msgid "Select sound files..."
@@ -59154,48 +58664,6 @@ msgstr "al"
 #, kde-format
 msgid "Maximum Tile Level"
 msgstr "Maksimuma Kahela Nivelo"
-
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:67
-#, kde-format
-msgid ""
-"Supported codecs are not found. (ffmpeg/avconv needs to be installed and in "
-"PATH.)"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:112
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:132
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:167
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:189
-#, kde-format
-msgid "Start"
-msgstr "Komenci"
-
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:150
-#, kde-format
-msgid "Video writing failed."
-msgstr "Vidskribado malsukcesis."
-
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:168
-#, kde-format
-msgid "Video export completed."
-msgstr "Video-eksporto finiĝis."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:65
-#, kde-format
-msgid "Destination video"
-msgstr "Cela video"
-
-#: core/utilities/geolocation/marble/TourControlEditWidget.cpp:41
-#, kde-format
-msgid "Pause"
-msgstr "Paŭzo"
-
-#: core/utilities/geolocation/marble/WaitEditWidget.cpp:38
-#, kde-format
-msgid "Wait duration:"
-msgstr "Atenda daŭro:"
 
 #: core/utilities/imageeditor/core/undoaction.cpp:147
 #, kde-format
@@ -68882,6 +68350,161 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ĉu vi volas restarigi ĉiujn video-agordojn al la defaŭlta valoro?"
+
+#~ msgid "No URL specified"
+#~ msgstr "Neniu URL specifita"
+
+#~ msgid "Add link"
+#~ msgstr "Aldoni ligilon"
+
+#~ msgid "Untitled Placemark"
+#~ msgstr "Sentitola Lokmarko"
+
+#~ msgid "Relations"
+#~ msgstr "Rilatoj"
+
+#~ msgid "Elevation"
+#~ msgstr "Alteco"
+
+#~ msgid "No ID specified"
+#~ msgstr "Neniu identigilo specifita"
+
+#~ msgid "ID is invalid"
+#~ msgstr "ID estas nevalida"
+
+#~ msgid "No image specified"
+#~ msgstr "Neniu bildo specifita"
+
+#~ msgid "Invalid icon path"
+#~ msgstr "Nevalida piktograma vojo"
+
+#~ msgid "Edit placemark"
+#~ msgstr "Redakti lokmarkon"
+
+#~ msgid "Style, Color"
+#~ msgstr "Stilo, Koloro"
+
+#~ msgid "Label"
+#~ msgstr "Etikedo"
+
+#~ msgid "Color:"
+#~ msgstr "Koloro:"
+
+#~ msgid "Scale:"
+#~ msgstr "Skalo:"
+
+#~ msgid "Icon"
+#~ msgstr "Piktogramo"
+
+#~ msgid "Show placemark"
+#~ msgstr "Montri lokmarkon"
+
+#~ msgid "Bold"
+#~ msgstr "Grasa"
+
+#~ msgid "Italics"
+#~ msgstr "Kursiva"
+
+#~ msgid "Underlined"
+#~ msgstr "Substrekita"
+
+#~ msgid "Add image"
+#~ msgstr "Aldoni bildon"
+
+#~ msgctxt "seconds"
+#~ msgid " s"
+#~ msgstr " s"
+
+#~ msgid "Mode:"
+#~ msgstr "Reĝimo:"
+
+#~ msgid "Smooth"
+#~ msgstr "Glata"
+
+#~ msgid "Current map center"
+#~ msgstr "Aktuala mapcentro"
+
+#~ msgid "Choose image"
+#~ msgstr "Elekti bildon"
+
+#~ msgid "All Supported Files (*.png *.jpg *.jpeg)"
+#~ msgstr "Ĉiuj Subtenataj Dosieroj (*.png *.jpg *.jpeg)"
+
+#~ msgid "Formatted text"
+#~ msgstr "Formatita teksto"
+
+#~ msgid "Color"
+#~ msgstr "Koloro"
+
+#~ msgid "Missing encoding tools"
+#~ msgstr "Mankas kodigaj iloj"
+
+#~ msgid "MPEG-4"
+#~ msgstr "MPEG-4"
+
+#~ msgctxt "Start recording a movie"
+#~ msgid "&Start"
+#~ msgstr "&Komenci"
+
+#~ msgid "Codecs are unavailable"
+#~ msgstr "Kodekoj ne disponeblas"
+
+#~ msgid "Supported codecs are not found."
+#~ msgstr "Subtenataj kodekoj ne estas trovitaj."
+
+#~ msgid "Save video file"
+#~ msgstr "Konservi videodosieron"
+
+#~ msgid "Filename is not valid"
+#~ msgstr "Dosiernomo ne validas"
+
+#~ msgid "This file format is not supported. Please, use %1 instead"
+#~ msgstr "Ĉi tiu dosierformato ne estas subtenata. Bonvolu uzi %1 anstataŭe"
+
+#~ msgid "Missing filename"
+#~ msgstr "Mankas dosiernomo"
+
+#~ msgid "Movie Recording"
+#~ msgstr "Filmregistrado"
+
+#~ msgid "Destination video:"
+#~ msgstr "Celka video:"
+
+#~ msgid "Open..."
+#~ msgstr "Malfermi..."
+
+#~ msgid "FPS (frames per second)"
+#~ msgstr "FPS (kadroj por sekundo)"
+
+#~ msgid "Choose item:"
+#~ msgstr "Elektu objekton:"
+
+#~ msgid "Global Search"
+#~ msgstr "Tutmonda Serĉo"
+
+#~ msgid "Area Search"
+#~ msgstr "Area Serĉo"
+
+#~ msgid "Search Results"
+#~ msgstr "Serĉrezultoj"
+
+#~ msgid "Start"
+#~ msgstr "Komenci"
+
+#~ msgid "Video writing failed."
+#~ msgstr "Vidskribado malsukcesis."
+
+#~ msgid "Video export completed."
+#~ msgstr "Video-eksporto finiĝis."
+
+#~ msgid "Destination video"
+#~ msgstr "Cela video"
+
+#~ msgid "Pause"
+#~ msgstr "Paŭzo"
+
+#~ msgid "Wait duration:"
+#~ msgstr "Atenda daŭro:"
 
 #~ msgid "Wait for %1 seconds"
 #~ msgstr "Atendi %1 sekundojn"

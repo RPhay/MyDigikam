@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-17 00:39+0000\n"
-"PO-Revision-Date: 2023-12-09 09:27\n"
+"POT-Creation-Date: 2023-12-18 00:39+0000\n"
+"PO-Revision-Date: 2023-12-17 11:28\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1123,7 +1123,6 @@ msgid "Audio/Video Properties"
 msgstr "音频/视频属性"
 
 #: core/app/items/utils/tooltipfiller.cpp:356
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:47
 #, kde-format
 msgid "Duration:"
 msgstr "时间长度："
@@ -2556,7 +2555,7 @@ msgstr "帮助(&H)"
 msgid "Main Toolbar"
 msgstr "主工具栏"
 
-#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:259
+#: core/app/main/main.cpp:196 core/app/views/stack/welcomepageview.cpp:259
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2566,7 +2565,7 @@ msgstr "主工具栏"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:170
+#: core/app/main/main.cpp:205 core/showfoto/main/main.cpp:172
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2574,7 +2573,7 @@ msgstr ""
 "Tyson Tan (谭代山/钛山), CoelacanthusHex, Feng Chao, Funda Wang, Guo Yunhe, "
 "millionart, Ni Hui, sanfanling, Weng Xuetian, YFdyh000, 李子"
 
-#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:171
+#: core/app/main/main.cpp:206 core/showfoto/main/main.cpp:173
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2584,33 +2583,33 @@ msgstr ""
 "shuizhuyuanluo@126.com, xujia19@gmail.com, wengxt@gmail.com, YFdyh000@kde."
 "org, bingling00@kde.org"
 
-#: core/app/main/main.cpp:212
+#: core/app/main/main.cpp:214
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "打开位于 \"path\" 的相机对话框"
 
-#: core/app/main/main.cpp:215
+#: core/app/main/main.cpp:217
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "打开 Solid UDI 为 \"udi\" 设备的相机对话框"
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:220
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "自动检测并打开已连接的 gphoto2 相机"
 
-#: core/app/main/main.cpp:220
+#: core/app/main/main.cpp:222
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "启动 digiKam 时使用在 \"dir\" 目录中发现的 SQLite 数据库文件"
 
-#: core/app/main/main.cpp:223
+#: core/app/main/main.cpp:225
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "启动 digiKam 时使用名为 \"config\" 的配置文件"
 
-#: core/app/main/main.cpp:250
+#: core/app/main/main.cpp:252
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2620,7 +2619,7 @@ msgstr ""
 "<p>您正在 64 位 Windows 操作系统中运行 32 位版本的 digiKam。</p><p>请安装 64 "
 "位版本的 digiKam 以获得更好的使用体验。</p>"
 
-#: core/app/main/main.cpp:292
+#: core/app/main/main.cpp:294
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2630,7 +2629,7 @@ msgstr ""
 "Qt SQLite 运行时组件或 MySQL 数据库插件不可用。请安装该组件。\n"
 "本机并未安装任何数据库插件。"
 
-#: core/app/main/main.cpp:301
+#: core/app/main/main.cpp:303
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2640,7 +2639,7 @@ msgstr ""
 "Qt SQLite 运行时组件或 MySQL 数据库插件不可用。请安装该组件。\n"
 "本机已安装的数据库插件如下："
 
-#: core/app/main/main.cpp:341
+#: core/app/main/main.cpp:343
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2881,7 +2880,6 @@ msgstr "无标签相册"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:153
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3161,8 +3159,8 @@ msgstr "选中内容"
 #. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:856
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:91
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:151
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:91
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:151
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -11510,8 +11508,8 @@ msgstr "选择您想要使用的服务。"
 #. i18n: ectx: property (text), widget (QLabel, bookmarkLabel)
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:220
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:141
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:62
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:118
+#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:62
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:118
 #: core/utilities/geolocation/marble/cloudsync/BookmarkSyncManager.cpp:650
 #, kde-format
 msgid "Bookmarks"
@@ -14374,11 +14372,9 @@ msgstr "电邮地址："
 msgid "Set here the contact e-mail."
 msgstr "在此设置用于联系的电子邮件地址。"
 
-#. i18n: ectx: property (text), widget (QLabel, m_urlLabel)
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:131
 #: core/libs/template/templatepanel.cpp:373
 #: core/libs/template/templateviewer.cpp:207
-#: core/utilities/geolocation/marble/AddLinkDialog.ui:22
 #, kde-format
 msgid "URL:"
 msgstr "URL："
@@ -15110,12 +15106,10 @@ msgid "Adjust Time & Date"
 msgstr "调整时间和日期"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
-msgstr "写入已校准日期和时间到每张图像"
+msgstr "写入已校准日期和时间到每张图像然后关闭对话框"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
 #, kde-format
@@ -18932,7 +18926,7 @@ msgstr "旋转照片 (向左)"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:72
 #, kde-format
 msgid "Rotate &left"
-msgstr "旋转 (向左)(&L)"
+msgstr "旋转 (向左) (&L)"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropRotateRight)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropRotateRight)
@@ -18946,7 +18940,7 @@ msgstr "旋转照片 (向右)"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:85
 #, kde-format
 msgid "Rotate &right"
-msgstr "旋转 (向右)(&R)"
+msgstr "旋转 (向右) (&R)"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, BtnPreviewPageDown)
 #. i18n: ectx: property (whatsThis), widget (QToolButton, BtnPreviewPageDown)
@@ -20454,7 +20448,6 @@ msgstr "此文件可能无法播放。"
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:32
-#: core/utilities/geolocation/marble/TourControlEditWidget.cpp:38
 #, kde-format
 msgid "Play"
 msgstr "播放"
@@ -22772,7 +22765,7 @@ msgid ""
 msgstr "项目将与链接的版本一起被添加。您将不再收到提示。"
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:120
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:486
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:486
 #, kde-format
 msgid "Replace"
 msgstr "替换"
@@ -22783,7 +22776,7 @@ msgid "Item will be replacing the linked version."
 msgstr "项目将替换链接的版本。"
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:127
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:487
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:487
 #, kde-format
 msgid "Replace All"
 msgstr "替换全部"
@@ -23254,7 +23247,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:189
 #: core/libs/dialogs/webbrowserdlg.cpp:129
-#: core/utilities/geolocation/marble/GoToDialog.cpp:196
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:196
 #, kde-format
 msgid "Home"
 msgstr "主页"
@@ -27779,7 +27772,6 @@ msgstr "迁移 ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:113
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
 #, kde-format
 msgid "Cancel"
@@ -32997,11 +32989,9 @@ msgctxt "@action:button"
 msgid "&Start"
 msgstr "开始(&S)"
 
-#. i18n: ectx: property (text), widget (QPushButton, closeButton)
 #: core/libs/dplugins/webservices/wstooldialog.cpp:103
 #: core/libs/onlineversion/onlineversiondlg.cpp:321
 #: core/libs/onlineversion/onlineversiondlg.cpp:498
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:196
 #, kde-format
 msgid "Close"
 msgstr "关闭"
@@ -33624,10 +33614,9 @@ msgid "Rating less than or equal to %1."
 msgstr "评分小于等于 %1。"
 
 #: core/libs/filters/ratingfilter.cpp:244
-#, fuzzy, kde-format
-#| msgid "Exclude Items Without Rating"
+#, kde-format
 msgid "Items Without Rating"
-msgstr "排除未评分项目"
+msgstr "未评分项目"
 
 #: core/libs/filters/ratingfilter.cpp:248
 #, kde-format
@@ -40078,7 +40067,7 @@ msgstr "AVFormat"
 
 #. i18n: ectx: property (text), widget (QRadioButton, browseButton)
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
-#: core/utilities/geolocation/marble/GoToDialog.ui:93
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:93
 #, kde-format
 msgid "Browse"
 msgstr "浏览"
@@ -47995,19 +47984,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "文件夹"
 
-#: core/showfoto/main/main.cpp:161
+#: core/showfoto/main/main.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:179
+#: core/showfoto/main/main.cpp:181
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "要打开的文件或文件夹"
 
-#: core/showfoto/main/main.cpp:210
+#: core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -49758,10 +49747,8 @@ msgstr "添加数据库信息"
 msgid "Key"
 msgstr "关键字"
 
-#. i18n: ectx: attribute (title), widget (QWidget, m_descriptionTab)
 #: core/utilities/advancedrename/parser/options/database/dbkeyselector.cpp:94
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:62
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:38
 #, kde-format
 msgid "Description"
 msgstr "描述"
@@ -51433,9 +51420,9 @@ msgstr "开放街道地图 (OSM)"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:343
 #, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#| msgid "OpenStreetMap Data"
 msgid "OpenStreetMap (Vector)"
-msgstr "开放街道地图 (OSM)"
+msgstr "OpenStreetMap 数据"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
@@ -51499,6 +51486,14 @@ msgstr "此文件并非 XBEL 版本 1.0 文件。"
 #, kde-format
 msgid "Unknown title"
 msgstr "未知名称"
+
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add Bookmark"
+msgctxt "@title:window"
+msgid "Add Bookmark"
+msgstr "添加书签"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:94
 #, kde-format
@@ -52507,61 +52502,15 @@ msgstr "隐藏(&H)"
 msgid "&Configure..."
 msgstr "配置(&C)..."
 
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:67
-#, kde-format
-msgid "No URL specified"
-msgstr "未指定 URL"
-
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:68
-#, kde-format
-msgid "Please specify a URL for this link."
-msgstr "请为此链接指定一个URL。"
-
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:71
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:371
-#: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:84
-#, kde-format
-msgid "No name specified"
-msgstr "未指定名称"
-
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:72
-#, kde-format
-msgid "Please specify a name for this link."
-msgstr "请为此链接指定一个名称。"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiAddLinkDialog)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/AddLinkDialog.ui:14
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:380
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:383
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:244
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:247
-#, kde-format
-msgid "Add link"
-msgstr "添加链接"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#. i18n: ectx: property (text), widget (QLabel, m_nameLabel)
-#: core/utilities/geolocation/marble/AddLinkDialog.ui:32
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:64
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
-#, kde-format
-msgid "Name:"
-msgstr "名称："
-
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:58
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:250
+#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:58
+#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:250
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
 #, kde-format
 msgid "Default"
 msgstr "默认"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:183
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:183
 #, kde-format
 msgid ""
 "The folder %1 is not empty. Removing it will delete all bookmarks it "
@@ -52570,122 +52519,122 @@ msgstr ""
 "文件夹 %1 包含内容。移除该文件夹将删除它包含的所有书签。您确定要移除该文件夹"
 "吗？"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:184
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:184
 #, kde-format
 msgid "Remove Folder"
 msgstr "移除文件夹"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:418
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:418
 #, kde-format
 msgid "Export Bookmarks"
 msgstr "导出书签"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:419
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:419
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:730
 #, kde-format
 msgid "KML files (*.kml)"
 msgstr "KML 文件 (*.kml)"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:424
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:424
 #, kde-format
 msgid "Unable to save bookmarks. Please check that the file is writable."
 msgstr "无法保存书签。请检查文件是否允许写入。"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:425
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:425
 #, kde-format
 msgid "Bookmark Export"
 msgstr "书签导出"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:432
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:432
 #, kde-format
 msgid "Import Bookmarks"
 msgstr "导入书签"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:433
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:433
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:696
 #, kde-format
 msgid "KML Files (*.kml)"
 msgstr "KML 文件 (*.kml)"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:440
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:440
 #, kde-format
 msgid "The file %1 cannot be opened as a KML file."
 msgstr "文件 %1 无法作为 KML 文件打开。"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:441
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:441
 #, kde-format
 msgid "Bookmark Import"
 msgstr "书签导入"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:475
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:475
 #, kde-format
 msgid "The file contains a bookmark that already exists among your Bookmarks."
 msgstr "该文件包含的书签已经存在于您的书签中。"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:476
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:476
 #, kde-format
 msgid "Imported bookmark"
 msgstr "导入的书签"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:477
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:477
 #, kde-format
 msgid "Existing bookmark"
 msgstr "原有书签"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:478
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:478
 #, kde-format
 msgid "Do you want to replace the existing bookmark with the imported one?"
 msgstr "您想要用导入的书签替换原有书签吗？"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:488
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:488
 #, kde-format
 msgid "Skip"
 msgstr "跳过"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:489
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:489
 #, kde-format
 msgid "Skip All"
 msgstr "跳过所有"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, UiBookmarkManagerDialog)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:14
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:14
 #, kde-format
 msgid "Bookmark Manager"
 msgstr "书签管理器"
 
 #. i18n: ectx: property (text), widget (QPushButton, importButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:25
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:25
 #, kde-format
 msgid "Import Bookmarks..."
 msgstr "导入书签..."
 
 #. i18n: ectx: property (text), widget (QPushButton, exportButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:35
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:35
 #, kde-format
 msgid "Export Bookmarks..."
 msgstr "导出书签..."
 
 #. i18n: ectx: property (text), widget (QLabel, foldersLabel)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:64
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:64
 #, kde-format
 msgid "Folders"
 msgstr "文件夹"
 
 #. i18n: ectx: property (text), widget (QPushButton, newFolderButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:74
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:74
 #, kde-format
 msgid "New..."
 msgstr "最新..."
 
 #. i18n: ectx: property (text), widget (QPushButton, renameFolderButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:81
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:81
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:62
 #, kde-format
 msgid "Rename..."
 msgstr "重命名..."
 
 #. i18n: ectx: property (text), widget (QPushButton, editBookmarkButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:141
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:141
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
 #: core/utilities/lighttable/lighttablethumbbar.cpp:264
@@ -52694,6 +52643,88 @@ msgstr "重命名..."
 #, kde-format
 msgid "Edit"
 msgstr "编辑"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, UiEditBookmarkDialog)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:14
+#, kde-format
+msgid "Edit Bookmark"
+msgstr "编辑书签"
+
+#. i18n: ectx: property (text), widget (QLabel, description_lbl)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:25
+#, kde-format
+msgid "&Description:"
+msgstr "描述(&D)："
+
+#. i18n: ectx: property (html), widget (QTextEdit, m_description)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:50
+#, kde-format
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
+"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
+"<tr>\n"
+"<td style=\"border: none;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
+"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
+"<tr>\n"
+"<td style=\"border: none;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
+
+#. i18n: ectx: property (text), widget (QLabel, folder_lbl)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:57
+#, kde-format
+msgid "&Folder:"
+msgstr "文件夹(&F)："
+
+#. i18n: ectx: property (text), widget (QPushButton, m_newFolderButton)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:79
+#, kde-format
+msgid "&Add Folder..."
+msgstr "添加文件夹(&A)..."
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
+#: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:14
+#, kde-format
+msgid "New Bookmark Folder"
+msgstr "新建书签文件夹"
+
+#. i18n: ectx: property (text), widget (QLabel, m_namelbl)
+#: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:22
+#, kde-format
+msgid "&Folder name:"
+msgstr "文件夹名称(&F)："
 
 #: core/utilities/geolocation/marble/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -52922,236 +52953,6 @@ msgstr "预估下载大小：%1 MB"
 msgid "Estimated download size: %1 kB"
 msgstr "预估下载大小：%1 kB"
 
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiEditBookmarkDialog)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:14
-#, kde-format
-msgid "Edit Bookmark"
-msgstr "编辑书签"
-
-#. i18n: ectx: property (text), widget (QLabel, description_lbl)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:25
-#, kde-format
-msgid "&Description:"
-msgstr "描述(&D)："
-
-#. i18n: ectx: property (html), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:50
-#, kde-format
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-"<tr>\n"
-"<td style=\"border: none;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-"<tr>\n"
-"<td style=\"border: none;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-
-#. i18n: ectx: property (text), widget (QLabel, folder_lbl)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:57
-#, kde-format
-msgid "&Folder:"
-msgstr "文件夹(&F)："
-
-#. i18n: ectx: property (text), widget (QPushButton, m_newFolderButton)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:79
-#, kde-format
-msgid "&Add Folder..."
-msgstr "添加文件夹(&A)..."
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:111
-#, kde-format
-msgid "Untitled Placemark"
-msgstr "无标题地点标记"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:159
-#, kde-format
-msgid "Relations"
-msgstr "关系"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:168
-#, kde-format
-msgid "Elevation"
-msgstr "海拔"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:372
-#, kde-format
-msgid "Please specify a name for this placemark."
-msgstr "请为此地点标记指定一个名称。"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:375
-#, kde-format
-msgid "No ID specified"
-msgstr "未指定 ID"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:376
-#, kde-format
-msgid "Please specify a ID for this placemark."
-msgstr "请为此地点标记指定一个 ID。"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:379
-#, kde-format
-msgid "ID is invalid"
-msgstr "ID 无效"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:380
-#, kde-format
-msgid "Please specify a valid ID for this placemark."
-msgstr "请为此地点标记指定一个有效的 ID。"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:383
-#, kde-format
-msgid "No image specified"
-msgstr "未指定图像"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:384
-#, kde-format
-msgid "Please specify an icon for this placemark or add a valid tag."
-msgstr "请为此地点标记指定一个图标或添加一个有效的标签。"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:387
-#, kde-format
-msgid "Invalid icon path"
-msgstr "无效的图标路径"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:388
-#, kde-format
-msgid "Please specify a valid path for the icon file."
-msgstr "请为图标文件指定有效的路径。"
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiEditPlacemarkDialog)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:20
-#, kde-format
-msgid "Edit placemark"
-msgstr "编辑地点标记"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_isBalloonVisible)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:47
-#, kde-format
-msgid "Show Balloon Popup"
-msgstr "显示弹窗信息"
-
-#. i18n: ectx: attribute (title), widget (QWidget, style_color_tab)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:55
-#, kde-format
-msgid "Style, Color"
-msgstr "风格/颜色"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:61
-#, kde-format
-msgid "Label"
-msgstr "标记"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, m_iconColorField)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:74
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:186
-#, kde-format
-msgid "Color:"
-msgstr "颜色："
-
-#. i18n: ectx: property (text), widget (QLabel, m_labelScaleField)
-#. i18n: ectx: property (text), widget (QLabel, m_iconScaleField)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:129
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:244
-#, kde-format
-msgid "Scale:"
-msgstr "缩放："
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:170
-#, kde-format
-msgid "Icon"
-msgstr "图标"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_isPlacemarkVisible)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:285
-#, kde-format
-msgid "Show placemark"
-msgstr "显示地点标记"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:326
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:329
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:190
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:193
-#, kde-format
-msgid "Bold"
-msgstr "粗体"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:341
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:344
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:205
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:208
-#, kde-format
-msgid "Italics"
-msgstr "斜体"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:356
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:359
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:220
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:223
-#, kde-format
-msgid "Underlined"
-msgstr "下划线"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:368
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:371
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:232
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:235
-#, kde-format
-msgid "Add image"
-msgstr "添加图像"
-
 #. i18n: ectx: property (text), widget (QLabel, elevationLabel)
 #: core/utilities/geolocation/marble/ElevationWidget.ui:19
 #, kde-format
@@ -53169,151 +52970,6 @@ msgstr " 米"
 #, kde-format
 msgid "above sea level"
 msgstr "高出海平面"
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:53
-#: core/utilities/geolocation/marble/WaitEditWidget.cpp:43
-#, kde-format
-msgctxt "seconds"
-msgid " s"
-msgstr "秒"
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:59
-#, kde-format
-msgid "Mode:"
-msgstr "模式："
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:64
-#, kde-format
-msgid "Smooth"
-msgstr "平滑"
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:65
-#, kde-format
-msgid "Bounce"
-msgstr "弹跳"
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:82
-#, kde-format
-msgid "Current map center"
-msgstr "当前地图中心"
-
-#: core/utilities/geolocation/marble/FormattedTextWidget.cpp:181
-#, kde-format
-msgid "Choose image"
-msgstr "选择图像"
-
-#: core/utilities/geolocation/marble/FormattedTextWidget.cpp:181
-#, kde-format
-msgid "All Supported Files (*.png *.jpg *.jpeg)"
-msgstr "所有支持的文件 (*.png *.jpg *.jpeg)"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_isFormattedTextMode)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:46
-#, kde-format
-msgid "Formatted text"
-msgstr "带格式文本"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:70
-#, kde-format
-msgid "6"
-msgstr "6"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:75
-#, kde-format
-msgid "8"
-msgstr "8"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:80
-#, kde-format
-msgid "9"
-msgstr "9"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:85
-#, kde-format
-msgid "10"
-msgstr "10"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:90
-#, kde-format
-msgid "11"
-msgstr "11"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:95
-#, kde-format
-msgid "12"
-msgstr "12"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:100
-#, kde-format
-msgid "14"
-msgstr "14"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:105
-#, kde-format
-msgid "16"
-msgstr "16"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:110
-#, kde-format
-msgid "18"
-msgstr "18"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:115
-#, kde-format
-msgid "20"
-msgstr "20"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:120
-#, kde-format
-msgid "24"
-msgstr "24"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:125
-#, kde-format
-msgid "36"
-msgstr "36"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:130
-#, kde-format
-msgid "48"
-msgstr "48"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:135
-#, kde-format
-msgid "72"
-msgstr "72"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:140
-#, kde-format
-msgid "96"
-msgstr "96"
-
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_formattedTextToolBar)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:148
-#, kde-format
-msgid "toolBar"
-msgstr "工具栏"
-
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:252
-#, kde-format
-msgid "Color"
-msgstr "颜色"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
@@ -54242,901 +53898,901 @@ msgstr "熟食店"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:516
 #, kde-format
 msgid "Tobacco Shop"
-msgstr ""
+msgstr "烟草店"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:517
 #, kde-format
 msgid "Tea Shop"
-msgstr ""
+msgstr "茶铺"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:518
 #, kde-format
 msgid "Computer Shop"
-msgstr ""
+msgstr "电脑城"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:519
 #, kde-format
 msgid "Garden Centre"
-msgstr ""
+msgstr "园艺中心"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:520
 #, kde-format
 msgid "Shop"
-msgstr ""
+msgstr "商店"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:521
 #, kde-format
 msgid "Bridge"
-msgstr ""
+msgstr "桥梁"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Lighthouse"
-msgstr ""
+msgstr "灯塔"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:523
 #, kde-format
 msgid "Pier"
-msgstr ""
+msgstr "码头"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:524
 #, kde-format
 msgid "Water Tower"
-msgstr ""
+msgstr "水塔"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:525
 #, kde-format
 msgid "Wind Mill"
-msgstr ""
+msgstr "风车"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:526
 #, kde-format
 msgid "Communications Tower"
-msgstr ""
+msgstr "通讯塔"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:527
 #, kde-format
 msgid "Tourist Attraction"
-msgstr ""
+msgstr "旅游景点"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:528
 #, kde-format
 msgid "Artwork"
-msgstr ""
+msgstr "画作"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:529
 #, kde-format
 msgid "Castle"
-msgstr ""
+msgstr "城堡"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:530
 #, kde-format
 msgid "Cinema"
-msgstr ""
+msgstr "电影院"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:531
 #, kde-format
 msgid "Information"
-msgstr ""
+msgstr "信息"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:532
 #, kde-format
 msgid "Monument"
-msgstr ""
+msgstr "古迹和纪念碑"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:533
 #, kde-format
 msgid "Museum"
-msgstr ""
+msgstr "博物馆"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:534
 #, kde-format
 msgid "Ruin"
-msgstr ""
+msgstr "遗址"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:535
 #, kde-format
 msgid "Theatre"
-msgstr ""
+msgstr "剧院"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:536
 #, kde-format
 msgid "Theme Park"
-msgstr ""
+msgstr "主题公园"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:537
 #, kde-format
 msgid "View Point"
-msgstr ""
+msgstr "观景台"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:538
 #, kde-format
 msgid "Zoo"
-msgstr ""
+msgstr "动物园"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
 #, kde-format
 msgid "Alpine Hut"
-msgstr ""
+msgstr "高山小屋"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
 #, kde-format
 msgid "Wilderness Hut"
-msgstr ""
+msgstr "荒野小屋"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
 #, kde-format
 msgid "Memorial"
-msgstr ""
+msgstr "纪念馆"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
 #, kde-format
 msgid "Aerodrome"
-msgstr ""
+msgstr "飞行场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
 #, kde-format
 msgid "Helipad"
-msgstr ""
+msgstr "直升机停机坪"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Airport Gate"
-msgstr ""
+msgstr "机场大门"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
 #, kde-format
 msgid "Airport Runway"
-msgstr ""
+msgstr "机场跑道"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:546
 #, kde-format
 msgid "Airport Apron"
-msgstr ""
+msgstr "停机坪"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:547
 #, kde-format
 msgid "Airport Taxiway"
-msgstr ""
+msgstr "机场滑行道"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
 #, kde-format
 msgid "Airport Terminal"
-msgstr ""
+msgstr "机场航站楼"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
 #, kde-format
 msgid "Bus Station"
-msgstr ""
+msgstr "公交枢纽"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:550
 #, kde-format
 msgid "Bus Stop"
-msgstr ""
+msgstr "公交车站"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:551
 #, kde-format
 msgid "Car Sharing"
-msgstr ""
+msgstr "共享汽车站"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:552
 #, kde-format
 msgid "Gas Station"
-msgstr ""
+msgstr "加油站"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
 #, kde-format
 msgid "Parking"
-msgstr ""
+msgstr "停车场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
 #, kde-format
 msgid "Parking Space"
-msgstr ""
+msgstr "停车位"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
 #, kde-format
 msgid "Platform"
-msgstr ""
+msgstr "站台"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:556
 #, kde-format
 msgid "Bicycle Rental"
-msgstr ""
+msgstr "自行车出租点"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:557
 #, kde-format
 msgid "Car Rental"
-msgstr ""
+msgstr "汽车出租点"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:558
 #, kde-format
 msgid "Ski Rental"
-msgstr ""
+msgstr "滑雪板出租点"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
 #, kde-format
 msgid "Taxi Rank"
-msgstr ""
+msgstr "出租车候客站"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
 #, kde-format
 msgid "Train Station"
-msgstr ""
+msgstr "火车站"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
 #, kde-format
 msgid "Tram Stop"
-msgstr ""
+msgstr "有轨电车站"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:562
 #, kde-format
 msgid "Bicycle Parking"
-msgstr ""
+msgstr "自行车停车场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:563
 #, kde-format
 msgid "Motorcycle Parking"
-msgstr ""
+msgstr "摩托车停车场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
 #, kde-format
 msgid "Subway Entrance"
-msgstr ""
+msgstr "地铁入口"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
 #, kde-format
 msgid "Speed Camera"
-msgstr ""
+msgstr "测速摄像头"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:566
 #, kde-format
 msgid "Place Of Worship"
-msgstr ""
+msgstr "宗教场所"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:567
 #, kde-format
 msgid "Bahai"
-msgstr ""
+msgstr "巴哈伊教"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:568
 #, kde-format
 msgid "Buddhist"
-msgstr ""
+msgstr "佛教"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:569
 #, kde-format
 msgid "Christian"
-msgstr ""
+msgstr "基督教"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:570
 #, kde-format
 msgid "Muslim"
-msgstr ""
+msgstr "伊斯兰教"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:571
 #, kde-format
 msgid "Hindu"
-msgstr ""
+msgstr "印度教"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:572
 #, kde-format
 msgid "Jain"
-msgstr ""
+msgstr "耆那教"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Jewish"
-msgstr ""
+msgstr "犹太教"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:574
 #, kde-format
 msgid "Shinto"
-msgstr ""
+msgstr "神道教"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:575
 #, kde-format
 msgid "Sikh"
-msgstr ""
+msgstr "锡克教"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:576
 #, kde-format
 msgid "Taoist"
-msgstr ""
+msgstr "道教"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:577
 #, kde-format
 msgid "Golf Course"
-msgstr ""
+msgstr "高尔夫球场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:578
 #, kde-format
 msgid "Marina"
-msgstr ""
+msgstr "小船坞"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:579
 #, kde-format
 msgid "Park"
-msgstr ""
+msgstr "公园"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:580
 #, kde-format
 msgid "Playground"
-msgstr ""
+msgstr "游乐场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:581
 #, kde-format
 msgid "Pitch"
-msgstr ""
+msgstr "球场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
 #, kde-format
 msgid "Sports Centre"
-msgstr ""
+msgstr "体育中心"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Stadium"
-msgstr ""
+msgstr "体育馆"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:585
 #, kde-format
 msgid "Swimming Pool"
-msgstr ""
+msgstr "游泳池"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:586
 #, kde-format
 msgid "Miniature Golf Course"
-msgstr ""
+msgstr "微型高尔夫球场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:587
 #, kde-format
 msgid "Allotments"
-msgstr ""
+msgstr "社区农圃"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:588
 #, kde-format
 msgid "Basin"
-msgstr ""
+msgstr "洗手池"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:589
 #, kde-format
 msgid "Cemetery"
-msgstr ""
+msgstr "墓地"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:590
 #, kde-format
 msgid "Commercial"
-msgstr ""
+msgstr "商业区"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:591
 #, kde-format
 msgid "Construction"
-msgstr ""
+msgstr "工地"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
 #, kde-format
 msgid "Farmland"
-msgstr ""
+msgstr "农田"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
 #, kde-format
 msgid "Farmyard"
-msgstr ""
+msgstr "农场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:594
 #, kde-format
 msgid "Garages"
-msgstr ""
+msgstr "车库"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:595
 #, kde-format
 msgid "Grass"
-msgstr ""
+msgstr "草地"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:596
 #, kde-format
 msgid "Industrial"
-msgstr ""
+msgstr "工业区"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:597
 #, kde-format
 msgid "Landfill"
-msgstr ""
+msgstr "填埋场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
 #, kde-format
 msgid "Meadow"
-msgstr ""
+msgstr "草场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
 #, kde-format
 msgid "Military"
-msgstr ""
+msgstr "军事区"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:600
 #, kde-format
 msgid "Quarry"
-msgstr ""
+msgstr "采石场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:601
 #, kde-format
 msgid "Railway"
-msgstr ""
+msgstr "铁路"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:602
 #, kde-format
 msgid "Reservoir"
-msgstr ""
+msgstr "水库"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:603
 #, kde-format
 msgid "Residential"
-msgstr ""
+msgstr "住宅区"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:604
 #, kde-format
 msgid "Retail"
-msgstr ""
+msgstr "零售业"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:605
 #, kde-format
 msgid "Orchard"
-msgstr ""
+msgstr "果园"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:606
 #, kde-format
 msgid "Vineyard"
-msgstr ""
+msgstr "葡萄园"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:607
 #, kde-format
 msgid "Rail"
-msgstr ""
+msgstr "铁轨"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:608
 #, kde-format
 msgid "Narrow Gauge"
-msgstr ""
+msgstr "窄轨"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:609
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:218
 #, kde-format
 msgid "Tram"
-msgstr ""
+msgstr "有轨电车轨道"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:610
 #, kde-format
 msgid "Light Rail"
-msgstr ""
+msgstr "轻轨"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
 #, kde-format
 msgid "Abandoned Railway"
-msgstr ""
+msgstr "废弃铁路"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:612
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:217
 #, kde-format
 msgid "Subway"
-msgstr ""
+msgstr "地铁"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:613
 #, kde-format
 msgid "Preserved Railway"
-msgstr ""
+msgstr "保护铁路"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:614
 #, kde-format
 msgid "Miniature Railway"
-msgstr ""
+msgstr "微型铁路"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:615
 #, kde-format
 msgid "Railway Construction"
-msgstr ""
+msgstr "铁路工地"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:616
 #, kde-format
 msgid "Monorail"
-msgstr ""
+msgstr "单轨"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:617
 #, kde-format
 msgid "Funicular Railway"
-msgstr ""
+msgstr "缆索铁路"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:618
 #, kde-format
 msgid "Power Tower"
-msgstr ""
+msgstr "输电塔"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:619
 #, kde-format
 msgid "Aerialway Station"
-msgstr ""
+msgstr "缆车站"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:620
 #, kde-format
 msgctxt "A pylon supporting the aerialway cable e.g. on a ski lift"
 msgid "Pylon"
-msgstr ""
+msgstr "索塔"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:621
 #, kde-format
 msgid "Cable Car"
-msgstr ""
+msgstr "缆车"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:622
 #, kde-format
 msgid "Gondola"
-msgstr ""
+msgstr "循环缆车"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:623
 #, kde-format
 msgid "Chair Lift"
-msgstr ""
+msgstr "缆椅升降机"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:624
 #, kde-format
 msgid "Mixed Lift"
-msgstr ""
+msgstr "混合升降机"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:625
 #, kde-format
 msgid "Drag Lift"
-msgstr ""
+msgstr "牵引升降机"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:626
 #, kde-format
 msgid "T-Bar"
-msgstr ""
+msgstr "T 型架"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:627
 #, kde-format
 msgid "J-Bar"
-msgstr ""
+msgstr "J 型架"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:628
 #, kde-format
 msgid "Platter"
-msgstr ""
+msgstr "踏板型架"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:629
 #, kde-format
 msgid "Rope Tow"
-msgstr ""
+msgstr "牵引索"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:630
 #, kde-format
 msgid "Magic Carpet"
-msgstr ""
+msgstr "传送带"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:631
 #, kde-format
 msgid "Zip Line"
-msgstr ""
+msgstr "滑索"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:632
 #, kde-format
 msgid "Goods"
-msgstr ""
+msgstr "载货"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:633
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:227
 #, kde-format
 msgid "Downhill Piste"
-msgstr ""
+msgstr "滑降式滑雪道"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:634
 #, kde-format
 msgid "Nordic Piste"
-msgstr ""
+msgstr "北欧式滑雪道"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:635
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:229
 #, kde-format
 msgid "Skitour"
-msgstr ""
+msgstr "巡回式滑雪道"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:636
 #, kde-format
 msgid "Sled Piste"
-msgstr ""
+msgstr "雪橇式滑雪道"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:637
 #, kde-format
 msgid "Winter Hike"
-msgstr ""
+msgstr "冬季徒步道"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:638
 #, kde-format
 msgid "Sleigh Piste"
-msgstr ""
+msgstr "牵引与动力雪橇式滑雪道"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:639
 #, kde-format
 msgid "Ice Skate"
-msgstr ""
+msgstr "溜冰场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:640
 #, kde-format
 msgid "Snow Park"
-msgstr ""
+msgstr "雪景公园"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:641
 #, kde-format
 msgid "Ski Playground"
-msgstr ""
+msgstr "滑雪游乐场"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:642
 #, kde-format
 msgid "Ski Jump"
-msgstr ""
+msgstr "滑雪跳台"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:643
 #, kde-format
 msgid "Admin Boundary (Level 1)"
-msgstr ""
+msgstr "行政边界 (1 级)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:644
 #, kde-format
 msgid "Admin Boundary (Level 2)"
-msgstr ""
+msgstr "行政边界 (2 级)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:645
 #, kde-format
 msgid "Admin Boundary (Level 3)"
-msgstr ""
+msgstr "行政边界 (3 级)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:646
 #, kde-format
 msgid "Admin Boundary (Level 4)"
-msgstr ""
+msgstr "行政边界 (4 级)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:647
 #, kde-format
 msgid "Admin Boundary (Level 5)"
-msgstr ""
+msgstr "行政边界 (5 级)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:648
 #, kde-format
 msgid "Admin Boundary (Level 6)"
-msgstr ""
+msgstr "行政边界 (6 级)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:649
 #, kde-format
 msgid "Admin Boundary (Level 7)"
-msgstr ""
+msgstr "行政边界 (7 级)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:650
 #, kde-format
 msgid "Admin Boundary (Level 8)"
-msgstr ""
+msgstr "行政边界 (8 级)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:651
 #, kde-format
 msgid "Admin Boundary (Level 9)"
-msgstr ""
+msgstr "行政边界 (9 级)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:652
 #, kde-format
 msgid "Admin Boundary (Level 10)"
-msgstr ""
+msgstr "行政边界 (10 级)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:653
 #, kde-format
 msgid "Admin Boundary (Level 11)"
-msgstr ""
+msgstr "行政边界 (11 级)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:654
 #, kde-format
 msgid "Boundary (Maritime)"
-msgstr ""
+msgstr "海上边界"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:655
 #, kde-format
 msgid "Land Mass"
-msgstr ""
+msgstr "陆地"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:656
 #, kde-format
 msgid "Urban Area"
-msgstr ""
+msgstr "城市区域"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:657
 #, kde-format
 msgid "International Date Line"
-msgstr ""
+msgstr "国际日期变更线"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:658
 #, kde-format
 msgid "Bathymetry"
-msgstr ""
+msgstr "测深"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:659
 #, kde-format
 msgid "Canal"
-msgstr ""
+msgstr "运河"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:660
 #, kde-format
 msgid "Drain"
-msgstr ""
+msgstr "排水沟"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:661
 #, kde-format
 msgid "Ditch"
-msgstr ""
+msgstr "壕沟"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:662
 #, kde-format
 msgid "Stream"
-msgstr ""
+msgstr "小溪"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:663
 #, kde-format
 msgid "River"
-msgstr ""
+msgstr "河流"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:664
 #, kde-format
 msgid "Weir"
-msgstr ""
+msgstr "堰"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:665
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:667
 #, kde-format
 msgid "Crosswalk"
-msgstr ""
+msgstr "人行横道"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:668
 #, kde-format
 msgid "Railway Crossing"
-msgstr ""
+msgstr "铁路平交道口"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:669
 #, kde-format
 msgid "Door"
-msgstr ""
+msgstr "门"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:671
 #, kde-format
 msgid "Room"
-msgstr ""
+msgstr "房间"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:48
 #, kde-format
 msgctxt "North direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:51
 #, kde-format
 msgctxt "East direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:54
 #, kde-format
 msgctxt "South direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:57
 #, kde-format
 msgctxt "West direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:95
 #, kde-format
 msgctxt "Degree symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:98
 #, kde-format
 msgctxt "Minutes symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:101
 #, kde-format
 msgctxt "Seconds symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:214
 #, kde-format
 msgid "Detour"
-msgstr ""
+msgstr "绕道"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:215
 #, kde-format
 msgid "Ferry Route"
-msgstr ""
+msgstr "轮渡路线"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:216
 #, kde-format
 msgid "Train"
-msgstr ""
+msgstr "火车"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:219
 #, kde-format
 msgid "Bus"
-msgstr ""
+msgstr "公交车"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:220
 #, kde-format
 msgid "Trolley Bus"
-msgstr ""
+msgstr "无轨电车"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:221
 #, kde-format
 msgid "Bicycle Route"
-msgstr ""
+msgstr "自行车道"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:222
 #, kde-format
 msgid "Mountainbike Route"
-msgstr ""
+msgstr "山地车道"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:223
 #, kde-format
 msgid "Walking Route"
-msgstr ""
+msgstr "人行道"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:224
 #, kde-format
 msgid "Hiking Route"
-msgstr ""
+msgstr "徒步道"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:225
 #, kde-format
 msgid "Bridleway"
-msgstr ""
+msgstr "马道"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:226
 #, kde-format
 msgid "Inline Skates Route"
-msgstr ""
+msgstr "旱冰道"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:228
 #, kde-format
 msgid "Nordic Ski Trail"
-msgstr ""
+msgstr "北欧式滑雪道"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:230
 #, kde-format
 msgid "Sled Trail"
-msgstr ""
+msgstr "雪橇式滑雪道"
 
 #: core/utilities/geolocation/marble/geodata/handlers/dgml/DgmlMaximumTagHandler.cpp:37
 #, kde-format
 msgid "Could not convert <maximum> child text content to integer. Was: '%1'"
-msgstr ""
+msgstr "无法将 <maximum> 子文本内容转换为整数。“%1”"
 
 #: core/utilities/geolocation/marble/geodata/handlers/dgml/DgmlMinimumTagHandler.cpp:37
 #, kde-format
 msgid "Could not convert <minimum> child text content to integer. Was: '%1'"
-msgstr ""
+msgstr "无法将 <minimum> 子文本内容转换为整数。“%1”"
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:89
 #, kde-format
 msgid "Parsing failed line %1. Still %2 unclosed tag(s) after document end. "
-msgstr ""
+msgstr "解析操作在第 %1 行失败。文档结束后仍有 %2 个未封闭标签。 "
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:126
 #, kde-format
 msgid "Error parsing file at line: %1 and column %2 . "
-msgstr ""
+msgstr "解析第 %1 行第 %2 列时发生错误。 "
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:128
 #, kde-format
 msgid "This is an Invalid File"
-msgstr ""
+msgstr "这是一个无效文件"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:184
@@ -55145,74 +54801,35 @@ msgstr ""
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:34
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:188
 #, kde-format
 msgid "Popularity"
-msgstr ""
+msgstr "人气"
 
 #: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:190
 #, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
-msgstr ""
+msgstr "人气指数"
 
 #: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:246
 #, kde-format
 msgid "Playlist"
-msgstr ""
-
-#: core/utilities/geolocation/marble/GoToDialog.cpp:167
-#, kde-format
-msgid "Current Location: %1"
-msgstr ""
-
-#: core/utilities/geolocation/marble/GoToDialog.cpp:353
-#, kde-format
-msgid "Address or search term"
-msgstr ""
-
-#: core/utilities/geolocation/marble/GoToDialog.cpp:439
-#, kde-format
-msgctxt "Number of search results"
-msgid "%n result(s) found."
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, GoTo)
-#: core/utilities/geolocation/marble/GoToDialog.ui:14
-#, kde-format
-msgid "Go To..."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/marble/GoToDialog.ui:78
-#, kde-format
-msgid ""
-"Enter a search term and press Enter. <a href=\"https://userbase.kde.org/"
-"Marble/Search\">Details...</a>"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, searchButton)
-#. i18n: ectx: property (text), widget (QPushButton, searchButton)
-#: core/utilities/geolocation/marble/GoToDialog.ui:103
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:203
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:86
-#, kde-format
-msgid "Search"
-msgstr ""
+msgstr "播放列表"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, LatLonBoxWidget)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:17
 #, kde-format
 msgid "Select a geographic region"
-msgstr ""
+msgstr "选择地理区域"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, northSpinBox)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:41
 #, kde-format
 msgid "Northern Latitude"
-msgstr ""
+msgstr "北纬"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_intValueEditor)
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
@@ -55227,96 +54844,96 @@ msgstr ""
 #: core/utilities/geolocation/marble/LatLonEdit.ui:28
 #, kde-format
 msgid "°"
-msgstr ""
+msgstr "°"
 
 #. i18n: ectx: property (text), widget (QLabel, northLabel)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:66
 #, kde-format
 msgid "&N"
-msgstr ""
+msgstr "北纬(&N)"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, westSpinBox)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:93
 #, kde-format
 msgid "Western Longitude"
-msgstr ""
+msgstr "西经"
 
 #. i18n: ectx: property (text), widget (QLabel, westLabel)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:118
 #, kde-format
 msgid "&W"
-msgstr ""
+msgstr "西经(&W)"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, eastSpinBox)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:145
 #, kde-format
 msgid "Eastern Longitude"
-msgstr ""
+msgstr "东经"
 
 #. i18n: ectx: property (text), widget (QLabel, eastLabel)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:170
 #, kde-format
 msgid "&E"
-msgstr ""
+msgstr "东经(&E)"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, southSpinBox)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:197
 #, kde-format
 msgid "Southern Latitude"
-msgstr ""
+msgstr "南纬"
 
 #. i18n: ectx: property (text), widget (QLabel, southLabel)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:222
 #, kde-format
 msgid "&S"
-msgstr ""
+msgstr "南纬(&S)"
 
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:179
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:338
 #, kde-format
 msgid "'"
-msgstr ""
+msgstr "'"
 
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:180
 #, kde-format
 msgid "\""
-msgstr ""
+msgstr "\""
 
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:526
 #, kde-format
 msgctxt "East, the direction"
 msgid "E"
-msgstr ""
+msgstr "东"
 
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:527
 #, kde-format
 msgctxt "West, the direction"
 msgid "W"
-msgstr ""
+msgstr "西"
 
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:530
 #, kde-format
 msgctxt "North, the direction"
 msgid "N"
-msgstr ""
+msgstr "北"
 
 #: core/utilities/geolocation/marble/LatLonEdit.cpp:531
 #, kde-format
 msgctxt "South, the direction"
 msgid "S"
-msgstr ""
+msgstr "南"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
 #: core/utilities/geolocation/marble/LatLonEdit.ui:38
 #, kde-format
 msgid "′"
-msgstr ""
+msgstr "′"
 
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
 #: core/utilities/geolocation/marble/LatLonEdit.ui:54
 #, kde-format
 msgid "″"
-msgstr ""
+msgstr "″"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:20
@@ -55336,42 +54953,52 @@ msgid ""
 "to save space on the hard disc and if high usage of the Internet is not an "
 "issue. </p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble 使用两种缓存方式：物"
+"理内存缓存会将地图数据保存在计算机的内存中，增大此数值将使程序运行更加流畅。"
+"硬盘缓存用于保存从互联网下载的内容 (例如维基百科数据和地图数据)，减小此数值将"
+"减少硬盘空间的占用，但也会增加对互联网数据流量的依赖。</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:23
 #, kde-format
 msgid "C&ache"
-msgstr ""
+msgstr "缓存(&A)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:41
 #, kde-format
 msgid "&Physical memory:"
-msgstr ""
+msgstr "物理内存(&P)："
 
 #. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:73
 #, kde-format
 msgid "C&lear"
-msgstr ""
+msgstr "清除(&l)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:105
 #, kde-format
 msgid "&Hard disc:"
-msgstr ""
+msgstr "硬盘(&H)："
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:124
 #, kde-format
 msgid "Unlimited"
-msgstr ""
+msgstr "不限制"
 
 #. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:146
 #, kde-format
 msgid "Cl&ear"
-msgstr ""
+msgstr "清除(&E)"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:172
@@ -55386,42 +55013,50 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
 "local intranet. Please leave empty if there is no proxy.</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">用于局域网的代理设置。如果"
+"没有使用代理，请留空。</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:175
 #, kde-format
 msgid "&Proxy"
-msgstr ""
+msgstr "代理服务器(&P)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:183
 #, kde-format
 msgid "&Proxy:"
-msgstr ""
+msgstr "代理服务器(&P)："
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:200
 #, kde-format
 msgid "P&ort:"
-msgstr ""
+msgstr "端口(&O)："
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyType)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:256
 #, kde-format
 msgid "Proxy type:"
-msgstr ""
+msgstr "代理服务器类型："
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:264
 #, kde-format
 msgid "Http"
-msgstr ""
+msgstr "Http"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:269
 #, kde-format
 msgid "Socks5"
-msgstr ""
+msgstr "Socks5"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
 #. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
@@ -55429,25 +55064,25 @@ msgstr ""
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:320
 #, kde-format
 msgid "Requires authentication"
-msgstr ""
+msgstr "需要身份验证"
 
 #. i18n: ectx: property (text), widget (QLabel, label_username)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:326
 #, kde-format
 msgid "U&sername:"
-msgstr ""
+msgstr "用户名(&S)："
 
 #. i18n: ectx: property (text), widget (QLabel, label_password)
 #: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:336
 #, kde-format
 msgid "&Password:"
-msgstr ""
+msgstr "密码(&P)："
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableSync)
 #: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:17
 #, kde-format
 msgid "Enable synchronization"
-msgstr ""
+msgstr "启用同步功能"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncRoutes)
 #: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:48
@@ -55455,132 +55090,127 @@ msgstr ""
 msgid ""
 "Allows you to store routes in owncloud. Each route must be uploaded/"
 "downloaded manually."
-msgstr ""
+msgstr "将路线保存到 Owncloud 云服务。每条路线必须手动上传/下载。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncRoutes)
 #: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:51
 #, kde-format
 msgid "Enable route synchronization"
-msgstr ""
+msgstr "启用路线同步"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncBookmarks)
 #: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:84
 #, kde-format
 msgid "Automatically sync all bookmarks to the server."
-msgstr ""
+msgstr "自动同步所有书签到服务器。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncBookmarks)
 #: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:87
 #, kde-format
 msgid "Enable bookmark synchronization"
-msgstr ""
+msgstr "启用书签同步"
 
 #. i18n: ectx: property (text), widget (QPushButton, button_syncNow)
 #: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:119
 #, kde-format
 msgid "Sync now"
-msgstr ""
+msgstr "立即同步"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:147
 #, kde-format
 msgid "Credentials"
-msgstr ""
+msgstr "身份验证信息"
 
 #. i18n: ectx: property (text), widget (QLabel, labelServer)
 #: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:153
 #, kde-format
 msgid "Server:"
-msgstr ""
+msgstr "服务器："
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, kcfg_owncloudServer)
 #: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:160
 #, kde-format
 msgid "Remote server URL, e.g. myserver.com/owncloud"
-msgstr ""
+msgstr "远程服务器 URL，例如 myserver.com/owncloud"
 
 #. i18n: ectx: property (text), widget (QLabel, labelUsername)
 #: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:167
 #, kde-format
 msgid "Username:"
-msgstr ""
+msgstr "用户名："
 
 #. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
 #: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:197
 #, kde-format
 msgid "Test Login"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleLineEdit.cpp:56
-#, kde-format
-msgid "Clear"
-msgstr ""
+msgstr "登录测试"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:122
 #, kde-format
 msgctxt "means meter"
 msgid "m"
-msgstr ""
+msgstr "米"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:124
 #, kde-format
 msgctxt "means milimeters"
 msgid "mm"
-msgstr ""
+msgstr "毫米"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:126
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
-msgstr ""
+msgstr "千米"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:128
 #, kde-format
 msgctxt "means centimeters"
 msgid "cm"
-msgstr ""
+msgstr "厘米"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:130
 #, kde-format
 msgctxt "means feet"
 msgid "ft"
-msgstr ""
+msgstr "英尺"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:132
 #, kde-format
 msgctxt "means inches"
 msgid "in"
-msgstr ""
+msgstr "英寸"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:134
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
-msgstr ""
+msgstr "码"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:136
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
-msgstr ""
+msgstr "英里"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:138
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
-msgstr ""
+msgstr "海里"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:17
 #, kde-format
 msgid "Dragging and Animation"
-msgstr ""
+msgstr "拖动和动画"
 
 #. i18n: ectx: property (text), widget (QLabel, label_dragLocation)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:37
 #, kde-format
 msgid "&Drag location:"
-msgstr ""
+msgstr "拖动位置(&D)："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_dragLocation)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:54
@@ -55602,30 +55232,43 @@ msgid ""
 "location below the mouse pointer slightly \"detaches\" from the cursor. </"
 "p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">在对虚拟地球仪拖动鼠标时，"
+"可以设置 Marble 使用两种标准行为之一：</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">鼠标光标下方的位置将精确跟"
+"随光标，北极点将不会锁定在画面顶端，这会造成一些不便。Marble 的默认设置则是将"
+"北极点锁定到画面顶端，但这又会造成鼠标在每次拖动时都会稍微偏离光标的实际行"
+"程。</p></body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:58
 #, kde-format
 msgid "Keep Planet Axis Vertically"
-msgstr ""
+msgstr "保持极轴垂直"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:63
 #, kde-format
 msgid "Follow Mouse Pointer"
-msgstr ""
+msgstr "跟随鼠标光标"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:73
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
-msgstr ""
+msgstr "拖动地图时使用动态旋转"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:76
 #, kde-format
 msgid "&Inertial globe rotation"
-msgstr ""
+msgstr "惯性旋转(&I)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:86
@@ -55642,30 +55285,39 @@ msgid ""
 "a travel animation from the previous place to the new place.</p></body></"
 "html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">当搜索一个位置时，Marble 可"
+"以立即移动到该新地点，也可以显示飞越过渡动画，从当前位置移动到该新地点。</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_animateTargetVoyage)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:89
 #, kde-format
 msgid "&Animate voyage to the target"
-msgstr ""
+msgstr "动画显示目标转向过程(&A)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:96
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
-msgstr ""
+msgstr "使用鼠标右键旋转视角"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:99
 #, kde-format
 msgid "&Mouse view rotation"
-msgstr ""
+msgstr "鼠标视图旋转(&M)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_onStartup)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:142
 #, kde-format
 msgid "&On startup:"
-msgstr ""
+msgstr "启动时(&O)："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_onStartup)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:155
@@ -55682,24 +55334,33 @@ msgid ""
 "an alternative it can also show the last position that was active when the "
 "user left the application. </p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble 默认会在启动后立即显"
+"示归零位置。您也可以选择启动后显示上次关闭程序时所在的最后活动位置。</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:159
 #, kde-format
 msgid "Show Home Location"
-msgstr ""
+msgstr "显示归零位置"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:164
 #, kde-format
 msgid "Return to Last Location Visited"
-msgstr ""
+msgstr "返回最后访问的位置"
 
 #. i18n: ectx: property (text), widget (QLabel, label_externalEditor)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:184
 #, kde-format
 msgid "&External editor:"
-msgstr ""
+msgstr "外部编辑器(&E)："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_externalMapEditor)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:194
@@ -55710,30 +55371,32 @@ msgid ""
 "josm or merkaartor, make sure that the respective application is installed.</"
 "p>"
 msgstr ""
+"<p>要启动的地图编辑程序。Potlatch (默认) 需要安装了 Flash 插件的网页浏览器。"
+"如果选择 JOSM 或 Merkaartor，请确保这些程序已经安装到本机。</p>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:198
 #, kde-format
 msgid "Always ask"
-msgstr ""
+msgstr "总是询问"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:203
 #, kde-format
 msgid "Potlatch (Web browser)"
-msgstr ""
+msgstr "Potlatch (网页浏览器)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:208
 #, kde-format
 msgid "JOSM"
-msgstr ""
+msgstr "JOSM"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
 #: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:213
 #, kde-format
 msgid "Merkaartor"
-msgstr ""
+msgstr "墨卡托投影图"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
 #: core/utilities/geolocation/marble/MarblePluginSettingsWidget.ui:23
@@ -55760,252 +55423,270 @@ msgid ""
 "family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
 "their configuration a bit. </span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">熟悉 Marble 功能的高级用户可以在此启用和禁用通过插件提"
+"供的功能。</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">取消选择一款插件后，它的功能将不再显示在地图、菜单和工"
+"具栏。</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">某些插件还带有可配置的选项。</span></p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
 #: core/utilities/geolocation/marble/MarblePluginSettingsWidget.ui:26
 #, kde-format
 msgid "P&lugins"
-msgstr ""
+msgstr "插件(&L)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, timeZone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:23
 #, kde-format
 msgid "Time Zone"
-msgstr ""
+msgstr "时区"
 
 #. i18n: ectx: property (text), widget (QRadioButton, kcfg_utc)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:29
 #, kde-format
 msgid "UTC"
-msgstr ""
+msgstr "UTC"
 
 #. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:39
 #, kde-format
 msgid "System time zone"
-msgstr ""
+msgstr "系统时区"
 
 #. i18n: ectx: property (text), widget (QRadioButton, kcfg_customTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:51
 #, kde-format
 msgid "Choose Time zone"
-msgstr ""
+msgstr "选择时区"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:68
 #, kde-format
 msgid "Universal Time Coordinated"
-msgstr ""
+msgstr "协调世界时 (UTC)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:73
 #, kde-format
 msgid "European Central Time"
-msgstr ""
+msgstr "欧洲中部时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:78
 #, kde-format
 msgid "Eastern European Time"
-msgstr ""
+msgstr "欧洲东部时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:83
 #, kde-format
 msgid "Egypt Standard Time"
-msgstr ""
+msgstr "埃及标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:88
 #, kde-format
 msgid "Eastern African Time"
-msgstr ""
+msgstr "非洲东部时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:93
 #, kde-format
 msgid "Middle East Time"
-msgstr ""
+msgstr "中东时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:98
 #, kde-format
 msgid "Near East Time"
-msgstr ""
+msgstr "近东时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:103
 #, kde-format
 msgid "Pakistan Lahore Time"
-msgstr ""
+msgstr "巴基斯坦拉合尔时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:108
 #, kde-format
 msgid "India Standard Time"
-msgstr ""
+msgstr "印度标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:113
 #, kde-format
 msgid "Bangladesh Standard Time"
-msgstr ""
+msgstr "孟加拉标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:118
 #, kde-format
 msgid "Vietnam Standard Time"
-msgstr ""
+msgstr "越南标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:123
 #, kde-format
 msgid "China Taiwan Time"
-msgstr ""
+msgstr "中国大陆-中国台湾时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:128
 #, kde-format
 msgid "Japan Standard Time"
-msgstr ""
+msgstr "日本标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:133
 #, kde-format
 msgid "Australia Central Time"
-msgstr ""
+msgstr "澳大利亚中部时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:138
 #, kde-format
 msgid "Australia Eastern Time"
-msgstr ""
+msgstr "澳大利亚东部时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:143
 #, kde-format
 msgid "Solomon Standard Time"
-msgstr ""
+msgstr "所罗门群岛标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:148
 #, kde-format
 msgid "New Zealand Standard Time"
-msgstr ""
+msgstr "新西兰标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:153
 #, kde-format
 msgid "Midway Islands Time"
-msgstr ""
+msgstr "中途岛时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:158
 #, kde-format
 msgid "Hawaii Standard Time"
-msgstr ""
+msgstr "夏威夷标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:163
 #, kde-format
 msgid "Alaska Standard Time"
-msgstr ""
+msgstr "阿拉斯加标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:168
 #, kde-format
 msgid "Pacific Standard Time"
-msgstr ""
+msgstr "太平洋标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:173
 #, kde-format
 msgid "Phoenix Standard Time"
-msgstr ""
+msgstr "菲尼克斯标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:178
 #, kde-format
 msgid "Mountain Standard Time"
-msgstr ""
+msgstr "北美山区标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:183
 #, kde-format
 msgid "Central Standard Time"
-msgstr ""
+msgstr "北美中部标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:188
 #, kde-format
 msgid "Eastern Standard Time"
-msgstr ""
+msgstr "北美东部标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:193
 #, kde-format
 msgid "Indiana Eastern Standard Time"
-msgstr ""
+msgstr "印第安纳州东部标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:198
 #, kde-format
 msgid "Puerto Rico and US Virgin Islands Time"
-msgstr ""
+msgstr "波多黎各和美属维尔京群岛时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:203
 #, kde-format
 msgid "Canada Newfoundland Time"
-msgstr ""
+msgstr "加拿大纽芬兰时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:208
 #, kde-format
 msgid "Argentina Standard Time"
-msgstr ""
+msgstr "阿根廷标准时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:213
 #, kde-format
 msgid "Brazil Eastern Time"
-msgstr ""
+msgstr "巴西东部时间"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:218
 #, kde-format
 msgid "Central African Time"
-msgstr ""
+msgstr "非洲中部时间"
 
 #. i18n: ectx: property (title), widget (QGroupBox, whenMarbleStarts)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:231
 #, kde-format
 msgid "When Marble starts"
-msgstr ""
+msgstr "Marble 启动时"
 
 #. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTime)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:237
 #, kde-format
 msgid "Load system time"
-msgstr ""
+msgstr "加载系统时间"
 
 #. i18n: ectx: property (text), widget (QRadioButton, kcfg_lastSessionTime)
 #: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:247
 #, kde-format
 msgid "Load last session time"
-msgstr ""
+msgstr "加载上次会话时间"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:17
 #, kde-format
 msgid "&Units"
-msgstr ""
+msgstr "单位(&U)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:35
 #, kde-format
 msgid "&Distance:"
-msgstr ""
+msgstr "距离(&D)："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:57
@@ -56020,30 +55701,38 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
 "measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">用于测量海拔、长度和距离的"
+"单位 (例如千米、英里、英尺等)。</p></body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:61
 #, kde-format
 msgid "Kilometer, Meter"
-msgstr ""
+msgstr "千米、米"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:66
 #, kde-format
 msgid "Miles, Feet"
-msgstr ""
+msgstr "英里、英尺"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:71
 #, kde-format
 msgid "Nautical miles, Knots"
-msgstr ""
+msgstr "海里、节"
 
 #. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:85
 #, kde-format
 msgid "An&gle:"
-msgstr ""
+msgstr "角度(&G)："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:101
@@ -56060,36 +55749,45 @@ msgid ""
 "54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
 "g. 54.5°).</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">指定经纬度坐标中角度的标记"
+"方式：默认使用度-分-秒法 (例如 54°30'00\")。 您还可以选用小数点角度 (例如 "
+"54.5°)。</p></body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:105
 #, kde-format
 msgid "Degree (DMS)"
-msgstr ""
+msgstr "度数 (度-分-秒)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:110
 #, kde-format
 msgid "Degree (Decimal)"
-msgstr ""
+msgstr "度数 (小数点)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:115
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
-msgstr ""
+msgstr "通用横轴墨卡托投影 (UTM)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:126
 #, kde-format
 msgid "Map &Quality"
-msgstr ""
+msgstr "地图画质(&Q)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:144
 #, kde-format
 msgid "&Still image:"
-msgstr ""
+msgstr "静止图像(&S)："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:157
@@ -56105,6 +55803,15 @@ msgid ""
 "that gets displayed while there is no user input. Usually this allows for "
 "high map quality as speed is no concern.</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">指定没有用户输入时显示的地"
+"图画质。由于地图静止不必考虑绘制速度，一般可使用高画质地图。</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
@@ -56112,7 +55819,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:219
 #, kde-format
 msgid "Outline Quality"
-msgstr ""
+msgstr "轮廓画质"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
@@ -56120,7 +55827,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:224
 #, kde-format
 msgid "Low Quality"
-msgstr ""
+msgstr "低画质"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
@@ -56128,7 +55835,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:229
 #, kde-format
 msgid "Normal"
-msgstr ""
+msgstr "标准画质"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
@@ -56136,7 +55843,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:234
 #, kde-format
 msgid "High Quality"
-msgstr ""
+msgstr "高画质"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
@@ -56144,13 +55851,13 @@ msgstr ""
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:239
 #, kde-format
 msgid "Print Quality"
-msgstr ""
+msgstr "打印画质"
 
 #. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:198
 #, kde-format
 msgid "During &animations:"
-msgstr ""
+msgstr "动画过程中(&A)："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:212
@@ -56170,18 +55877,29 @@ msgid ""
 "machines it is advisable to set this option to \"low quality\" as this will "
 "give better speed.</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">指定在动画绘制过程中 (例如"
+"拖动地球仪时) 的地图画质。</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">在性能较低的设备上运行时，"
+"建议将此选项设为“低画质”，以避免发生拖慢现象。</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:266
 #, kde-format
 msgid "&Text Labels"
-msgstr ""
+msgstr "文字标签(&T)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_labelLocalization)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:286
 #, kde-format
 msgid "&Place names:"
-msgstr ""
+msgstr "地点名称(&P)："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_labelLocalization)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:302
@@ -56198,30 +55916,39 @@ msgid ""
 "name in the user's language. Alternatively it can display the name in the "
 "official language and glyphs of that place. </p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">地点通常在不同的语言中有不"
+"同的名称。地图上的文字标记可以按照用户的语言显示，也可以按照当地的官方语言显"
+"示。</p></body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:306
 #, kde-format
 msgid "Custom & Native Language"
-msgstr ""
+msgstr "自定义和当地语言"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:311
 #, kde-format
 msgid "Custom Language"
-msgstr ""
+msgstr "自定义语言"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:316
 #, kde-format
 msgid "Native Language"
-msgstr ""
+msgstr "当地语言"
 
 #. i18n: ectx: property (text), widget (QLabel, label_mapFont)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:340
 #, kde-format
 msgid "Default map &font:"
-msgstr ""
+msgstr "默认地图字体(&F)："
 
 #. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
 #: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:353
@@ -56236,247 +55963,125 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
 "used on the map.</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">地图使用的默认字体。</p></"
+"body></html>"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:113
 #, kde-format
 msgid "Copy Coordinates"
-msgstr ""
+msgstr "复制坐标"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:114
 #, kde-format
 msgid "Copy geo: URL"
-msgstr ""
+msgstr "复制 geo: URL"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:123
 #, kde-format
 msgid "Directions &from here"
-msgstr ""
+msgstr "行程起点(&F)"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:124
 #, kde-format
 msgid "Directions &to here"
-msgstr ""
+msgstr "行程终点(&T)"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:132
 #, kde-format
 msgid "Add &Bookmark"
-msgstr ""
+msgstr "添加书签(&B)"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:133
 #, kde-format
 msgid "&Full Screen Mode"
-msgstr ""
+msgstr "全屏模式(&F)"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:152
 #, kde-format
 msgid "&Address Details"
-msgstr ""
+msgstr "地址详情(&A)"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:176
 #, kde-format
 msgid "No description available."
-msgstr ""
+msgstr "没有可用描述。"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:387
 #, kde-format
 msgid "Capital"
-msgstr ""
+msgstr "行政中心"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:539
 #, kde-format
 msgid "&Info Boxes"
-msgstr ""
+msgstr "信息框(&I)"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:883
 #, kde-format
 msgid "Address Details"
-msgstr ""
+msgstr "地址详情"
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:35
+#: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:84
 #, kde-format
-msgid "Missing encoding tools"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:36
-#, kde-format
-msgid ""
-"Marble requires additional software in order to create movies. Please get %1 "
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:61
-#, kde-format
-msgid "AVI (mpeg4)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:62
-#, kde-format
-msgid "FLV"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:63
-#, kde-format
-msgid "Matroska (h264)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:64
-#, kde-format
-msgid "MPEG-4"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:65
-#, kde-format
-msgid "MPEG-2 PS (VOB)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:66
-#, kde-format
-msgid "OGG"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:67
-#, kde-format
-msgid "SWF"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:26
-#, kde-format
-msgctxt "Start recording a movie"
-msgid "&Start"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:56
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:67
-#, kde-format
-msgid "Codecs are unavailable"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:56
-#, kde-format
-msgid "Supported codecs are not found."
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:68
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:79
-#, kde-format
-msgid "Save video file"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:89
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:100
-#, kde-format
-msgid "Filename is not valid"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:90
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:101
-#, kde-format
-msgid "This file format is not supported. Please, use %1 instead"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:104
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:118
-#, kde-format
-msgid "Missing filename"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:105
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:119
-#, kde-format
-msgid ""
-"Destination video file is not set. I don't know where to save recorded "
-"video. Please, specify one."
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, TourCaptureDialog)
-#. i18n: ectx: property (windowTitle), widget (QDialog, MovieCaptureDialog)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:14
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:20
-#, kde-format
-msgid "Movie Recording"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:20
-#, kde-format
-msgid "Destination video:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, openButton)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:36
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:81
-#, kde-format
-msgid "Open..."
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:45
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:97
-#, kde-format
-msgid "FPS (frames per second)"
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
-#: core/utilities/geolocation/marble/NewBookmarkFolderDialog.ui:14
-#, kde-format
-msgid "New Bookmark Folder"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_namelbl)
-#: core/utilities/geolocation/marble/NewBookmarkFolderDialog.ui:22
-#, kde-format
-msgid "&Folder name:"
-msgstr ""
+msgid "No name specified"
+msgstr "未指定名称"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
-msgstr ""
+msgstr "请为此关系指定一个名称。"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:89
 #, kde-format
 msgid "No type tag specified"
-msgstr ""
+msgstr "未指定类型标签"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:90
 #, kde-format
 msgid "Please add a type tag for this relation."
-msgstr ""
+msgstr "请为此关系添加类型标签。"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:69
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget_p.cpp:80
 #, kde-format
 msgid "New Relation"
-msgstr ""
+msgstr "新建关系"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:23
 #, kde-format
 msgid "Current Relations"
-msgstr ""
+msgstr "当前关系"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:44
 #, kde-format
 msgid "Role"
-msgstr ""
+msgstr "角色"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_addRelation)
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:67
 #, kde-format
 msgid "Add Relation"
-msgstr ""
+msgstr "添加关系"
 
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.cpp:95
-#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:104
+#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:105
 #, kde-format
 msgid "value"
-msgstr ""
+msgstr "值"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:25
 #, kde-format
 msgid "Current Tags"
-msgstr ""
+msgstr "当前标签"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentTagsList)
 #. i18n: ectx: property (text), widget (QTreeWidget, m_recommendedTagsList)
@@ -56484,286 +56089,279 @@ msgstr ""
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:93
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_addTagButton)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:56
 #, kde-format
 msgid "<<"
-msgstr ""
+msgstr "<<"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_removeTagButton)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:69
 #, kde-format
 msgid ">>"
-msgstr ""
+msgstr ">>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:80
 #, kde-format
 msgid "Related Tags"
-msgstr ""
+msgstr "相关标签"
 
-#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:32
+#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:34
 #, kde-format
 msgid "Add custom tag..."
-msgstr ""
+msgstr "添加自定义标签..."
 
 #: core/utilities/geolocation/marble/PlacemarkEditHeader.cpp:210
 #, kde-format
 msgid "Open File"
-msgstr ""
+msgstr "打开文件"
 
 #: core/utilities/geolocation/marble/PlacemarkEditHeader.cpp:212
 #, kde-format
 msgid "All Supported Files (*.png)"
-msgstr ""
+msgstr "所有支持的文件 (*.png)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:64
+#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
+#, kde-format
+msgid "Name:"
+msgstr "名称："
 
 #. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
 #: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:81
 #, kde-format
 msgid "Icon link:"
-msgstr ""
+msgstr "图标链接："
 
 #. i18n: ectx: property (text), widget (QLabel, idLabel)
 #: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:91
 #, kde-format
 msgid "ID:"
-msgstr ""
+msgstr "ID："
 
 #. i18n: ectx: property (text), widget (QLabel, targetIdLabel)
 #: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:104
 #, kde-format
 msgid "Target ID:"
-msgstr ""
+msgstr "目标 ID："
 
 #: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:35
 #, kde-format
 msgid "Placemark position provider Plugin"
-msgstr ""
+msgstr "地点标记定位插件"
 
 #: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:45
 #, kde-format
 msgid "Placemark"
-msgstr ""
+msgstr "地点标记"
 
 #: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:55
 #, kde-format
 msgid "Reports the position of a placemark"
-msgstr ""
+msgstr "报告地点标记的位置。"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:233
 #, kde-format
 msgctxt "the planet"
 msgid "Mercury"
-msgstr ""
+msgstr "水星"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:235
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
-msgstr ""
+msgstr "金星"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:237
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
-msgstr ""
+msgstr "地球"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:239
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
-msgstr ""
+msgstr "火星"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:241
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
-msgstr ""
+msgstr "木星"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:243
 #, kde-format
 msgctxt "the planet"
 msgid "Saturn"
-msgstr ""
+msgstr "土星"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:245
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
-msgstr ""
+msgstr "天王星"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:247
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
-msgstr ""
+msgstr "海王星"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:250
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
-msgstr ""
+msgstr "冥王星"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:253
 #, kde-format
 msgctxt "the earth's star"
 msgid "Sun"
-msgstr ""
+msgstr "太阳"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:255
 #, kde-format
 msgctxt "the earth's moon"
 msgid "Moon"
-msgstr ""
+msgstr "月球"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:257
 #, kde-format
 msgid "Sky"
-msgstr ""
+msgstr "天空"
 
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:260
 #, kde-format
 msgctxt "a planet without data"
 msgid "Unknown Planet"
-msgstr ""
+msgstr "未知行星"
 
 #. i18n: ectx: property (text), widget (QPushButton, configureButton)
 #: core/utilities/geolocation/marble/PluginItemDelegate.cpp:366
 #: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:142
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "配置"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Compass Plugin"
-msgstr "配置此列"
+msgstr "配置指南针插件"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "&Themes"
+#, kde-format
 msgid "Theme"
-msgstr "主题(&T)"
+msgstr "主题"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:52
-#, fuzzy, kde-format
-#| msgid "Browse"
+#, kde-format
 msgid "Arrows"
-msgstr "浏览"
+msgstr "箭头"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:61
 #, kde-format
 msgid "Atom"
-msgstr ""
+msgstr "原子"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:70
-#, fuzzy, kde-format
-#| msgid "Magnetic Pole"
+#, kde-format
 msgid "Magnet"
-msgstr "磁极"
+msgstr "磁铁"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Show compass"
+#, kde-format
 msgid "Compass"
-msgstr "显示指南针"
+msgstr "指南针"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:63
-#, fuzzy, kde-format
-#| msgid "Show compass"
+#, kde-format
 msgid "&Compass"
-msgstr "显示指南针"
+msgstr "指南针(&C)"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgid "There is no item to process."
+#, kde-format
 msgid "This is a float item that provides a compass."
-msgstr "没有要处理的项目。"
+msgstr "显示浮动指南针。"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Raw File Handling</b>"
+#, kde-format
 msgid "Configure Scale Bar Plugin"
-msgstr "<b>配置 RAW 图像处理方式</b>"
+msgstr "配置比例尺插件"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRatioScaleCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show Ratio Scale"
-msgstr "显示图像标题"
+msgstr "显示比例尺度"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:30
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:52
 #, kde-format
 msgid "Minimize"
-msgstr ""
+msgstr "最小化"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:69
-#, fuzzy, kde-format
-#| msgid "Show scale bar"
+#, kde-format
 msgid "Scale Bar"
-msgstr "显示比例尺"
+msgstr "比例尺"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:74
-#, fuzzy, kde-format
-#| msgid "&Scale to:"
+#, kde-format
 msgid "&Scale Bar"
-msgstr "缩放为(&S)："
+msgstr "比例尺(&S)"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is the list of items that are about to be deleted."
+#, kde-format
 msgid "This is a float item that provides a map scale."
-msgstr "即将删除的项目列表。"
+msgstr "显示浮动地图比例尺。"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Original Colors:"
+#, kde-format
 msgid "Original Developer"
-msgstr "原始颜色："
+msgstr "原始开发人员"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:240
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:244
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:47
 #, kde-format
 msgid "km"
-msgstr ""
+msgstr "千米"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:248
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:31
 #, kde-format
 msgid "m"
-msgstr ""
+msgstr "米"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:253
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:36
 #, kde-format
 msgid "mi"
-msgstr ""
+msgstr "英里"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:264
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:59
 #, kde-format
 msgid "nm"
-msgstr ""
+msgstr "海里"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "&Ratio Scale"
-msgstr "有理数"
+msgstr "比例尺度(&R)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
@@ -56771,147 +56369,129 @@ msgstr "有理数"
 #: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:118
 #, kde-format
 msgid "Navigation"
-msgstr ""
+msgstr "导航"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
-#, fuzzy, kde-format
-#| msgid "Nation"
+#, kde-format
 msgid "&Navigation"
-msgstr "国家/地区"
+msgstr "导航按钮(&N)"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
 #, kde-format
 msgid "A mouse control to zoom and move the map"
-msgstr ""
+msgstr "显示供鼠标控制地图缩放和平移的按钮。"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
-#, fuzzy, kde-format
-#| msgid "Current Aspect Ratio"
+#, kde-format
 msgid "Current Location Button"
-msgstr "当前图像宽高比"
+msgstr "当前位置按钮"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
 #, kde-format
 msgid "Home Button"
-msgstr ""
+msgstr "归零按钮"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Overview Map"
-msgstr "显示概览地图"
+msgstr "概览地图"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:80
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "&Overview Map"
-msgstr "显示概览地图"
+msgstr "概览地图(&O)"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:95
 #, kde-format
 msgid "This is a float item that provides an overview map."
-msgstr ""
+msgstr "显示浮动的地图概览。"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:481
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Choose Overview Map"
-msgstr "显示概览地图"
+msgstr "选择概览地图"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:513
-#, fuzzy, kde-format
-#| msgid "Set here the color of the second line."
+#, kde-format
 msgid "Please choose the color for the position indicator"
-msgstr "设置第二条线的颜色。"
+msgstr "请选择位置框的颜色"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Preview Behavior</b>"
+#, kde-format
 msgid "Configure Overview Map"
-msgstr "<b>配置预览功能</b>"
+msgstr "配置概览地图"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgid "Map &Image"
-msgstr "%1 张图像"
+msgstr "地图图像(&I)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:28
 #, kde-format
 msgid "&Planet:"
-msgstr ""
+msgstr "行星(&P)："
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:71
-#, fuzzy, kde-format
-#| msgid "Size:"
+#, kde-format
 msgid "&Size:"
-msgstr "大小："
+msgstr "大小(&S)："
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
-#, fuzzy, kde-format
-#| msgctxt "Dimension separator, as in: '15 x 10 centimeters'"
-#| msgid "x"
+#, kde-format
 msgid "x"
 msgstr "x"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Colors"
+#, kde-format
 msgid "C&olors"
-msgstr "颜色"
+msgstr "颜色(&O)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Position I&ndicator:"
-msgstr "显示地理位置指示图标"
+msgstr "位置框(&N)："
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
-msgstr ""
+msgstr "OpenStreetMap Nominatim 反向地理编码"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:29
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Nominatim"
-msgstr "开放街道地图 (OSM)"
+msgstr "OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
 #, kde-format
 msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
-msgstr ""
+msgstr "使用 OpenStreetMap Nominatim 服务进行在线反向地理编码"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:20
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Osm File Parser"
-msgstr "文件传输"
+msgstr "OSM 文件解析器"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:35
 #, kde-format
 msgid "Create GeoDataDocument from Osm Files"
-msgstr ""
+msgstr "从 OSM 文件创建地理数据文档"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Data"
-msgstr "开放街道地图 (OSM)"
+msgstr "OpenStreetMap 数据"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
 msgid "Azimuthal Equidistant"
-msgstr ""
+msgstr "圆锥投影"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:63
 #, kde-format
@@ -56920,11 +56500,13 @@ msgid ""
 "p><p>Applications: Display of seismic and radio data and for use in digital "
 "planetariums.</p>"
 msgstr ""
+"<p><b>圆锥投影</b> (鱼眼)</p><p>适用场合：显示地震和无线电数据，或在数字天文"
+"馆使用。</p>"
 
 #: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:35
 #, kde-format
 msgid "Flat Map"
-msgstr ""
+msgstr "平面图"
 
 #: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:40
 #, kde-format
@@ -56932,11 +56514,13 @@ msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
 "De facto standard for global texture data sets for computer software.</p>"
 msgstr ""
+"<p><b>等距圆柱投影</b> (方格投影)</p><p>适用场合：计算机软件处理球体纹理数据"
+"时的事实标准。</p>"
 
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:64
 #, kde-format
 msgid "Gnomonic"
-msgstr ""
+msgstr "球心投影"
 
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:69
 #, kde-format
@@ -56945,11 +56529,13 @@ msgid ""
 "displaying panorama photography. Also used for navigation, radio and seismic "
 "work.</p>"
 msgstr ""
+"<p><b>球心投影</b> (直线)</p><p>适用场合：用于显示全景照片，也可以用于导航、"
+"显示无线电信号和地震信息。</p>"
 
 #: core/utilities/geolocation/marble/projections/LambertAzimuthalProjection.cpp:64
 #, kde-format
 msgid "Lambert Azimuthal Equal-Area"
-msgstr ""
+msgstr "兰勃特投影"
 
 #: core/utilities/geolocation/marble/projections/LambertAzimuthalProjection.cpp:69
 #, kde-format
@@ -56957,18 +56543,19 @@ msgid ""
 "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used "
 "in structural geology to plot directional data.</p>"
 msgstr ""
+"<p><b>兰勃特投影</b></p><p>适用场合：用于构造地质学的方向数据制图。</p>"
 
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:46
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
 "projection for navigation.</p>"
-msgstr ""
+msgstr "<p><b>墨卡托投影</b></p><p>适用场合：导航常用的标准地图投影方式。</p>"
 
 #: core/utilities/geolocation/marble/projections/SphericalProjection.cpp:66
 #, kde-format
 msgid "Globe"
-msgstr ""
+msgstr "地球仪"
 
 #: core/utilities/geolocation/marble/projections/SphericalProjection.cpp:71
 #, kde-format
@@ -56977,11 +56564,13 @@ msgid ""
 "perspective projection that is used to display the hemisphere of a globe as "
 "it appears from outer space.</p>"
 msgstr ""
+"<p><b>正交投影</b> (正交)</p><p>用途：一种透视投影法，用于从外太空显示地球仪"
+"半球。</p>"
 
 #: core/utilities/geolocation/marble/projections/StereographicProjection.cpp:64
 #, kde-format
 msgid "Stereographic"
-msgstr ""
+msgstr "球极平面投影"
 
 #: core/utilities/geolocation/marble/projections/StereographicProjection.cpp:69
 #, kde-format
@@ -56989,11 +56578,13 @@ msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
 "for planetary cartography, geology and panorama photography.</p>"
 msgstr ""
+"<p><b>球极平面投影</b> (正交)</p><p>用途：用于行星地图制图、地质学和全景摄"
+"影。</p>"
 
 #: core/utilities/geolocation/marble/projections/VerticalPerspectiveProjection.cpp:78
 #, kde-format
 msgid "Vertical Perspective Projection"
-msgstr ""
+msgstr "垂直透视投影"
 
 #: core/utilities/geolocation/marble/projections/VerticalPerspectiveProjection.cpp:83
 #, kde-format
@@ -57002,315 +56593,358 @@ msgid ""
 "earth as it appears from a relatively short distance above the surface. "
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
+"<p><b>垂直透视投影</b> (正交)</p><p>用途：从相对接近地面的高度显示地球仪。</"
+"p>"
 
 #: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:109
 #, kde-format
 msgid "View"
-msgstr ""
+msgstr "视图"
 
 #: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:126
 #, kde-format
 msgid "Cache and Proxy"
-msgstr ""
+msgstr "缓存和代理"
 
 #: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:134
 #, kde-format
 msgid "Date and Time"
-msgstr ""
+msgstr "日期和时间"
 
 #: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:138
 #, kde-format
 msgid "Routing"
-msgstr ""
+msgstr "路线规划"
 
 #: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:155
 #, kde-format
 msgid "Synchronization"
-msgstr ""
+msgstr "同步"
 
 #: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:271
 #, kde-format
 msgid "Never synchronized."
-msgstr ""
+msgstr "从未同步。"
 
 #: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:275
 #, kde-format
 msgid "Last synchronization: %1"
-msgstr ""
-
-#: core/utilities/geolocation/marble/RemoveItemEditWidget.cpp:35
-#, kde-format
-msgid "Choose item:"
-msgstr ""
+msgstr "上次同步：%1"
 
 #: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:30
 #, kde-format
 msgid "Current Route Position Provider Plugin"
-msgstr ""
+msgstr "当前路线定位插件"
 
 #: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:40
 #, kde-format
 msgid "Current Route"
-msgstr ""
+msgstr "当前路线"
 
 #: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:50
 #, kde-format
 msgid "Simulates traveling along the current route."
+msgstr "模拟沿当前路线行进。"
+
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:167
+#, kde-format
+msgid "Current Location: %1"
+msgstr "当前位置：%1"
+
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:353
+#, kde-format
+msgid "Address or search term"
+msgstr "地址或者搜索条件"
+
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:439
+#, kde-format
+msgctxt "Number of search results"
+msgid "%n result(s) found."
+msgstr "找到 %n 个结果。"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, GoTo)
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:14
+#, kde-format
+msgid "Go To..."
+msgstr "前往..."
+
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:78
+#, kde-format
+msgid ""
+"Enter a search term and press Enter. <a href=\"https://userbase.kde.org/"
+"Marble/Search\">Details...</a>"
 msgstr ""
+"输入搜索条件并按回车。<a href=\"https://userbase.kde.org/Marble/Search\">详"
+"情...</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, searchButton)
+#. i18n: ectx: property (text), widget (QRadioButton, searchButton)
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:103
+#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:203
+#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:86
+#, kde-format
+msgid "Search"
+msgstr "搜索"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:252
 #, kde-format
 msgid "Enter the roundabout."
-msgstr ""
+msgstr "进入环岛。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:260
 #, kde-format
 msgid "Take the exit."
-msgstr ""
+msgstr "从出口驶出。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:262
 #, kde-format
 msgid "Take the exit towards %1."
-msgstr ""
+msgstr "从出口驶出，进入 %1。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:266
 #, kde-format
 msgid "Take the ramp."
-msgstr ""
+msgstr "驶入匝道。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:268
 #, kde-format
 msgid "Take the ramp towards %1."
-msgstr ""
+msgstr "驶入匝道，进入 %1。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:324
 #, kde-format
 msgid "Follow the road for %1 %2."
-msgstr ""
+msgstr "沿前往 %1 的道路 %2。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:378
 #, kde-format
 msgid "Take the %1. exit in the roundabout."
-msgstr ""
+msgstr "从第 %1 个出口，驶出环岛。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:380
 #, kde-format
 msgid "Take the %1. exit in the roundabout into %2."
-msgstr ""
+msgstr "从第 %1 个出口，驶出环岛，进入 %2。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:388
 #, kde-format
 msgid "Continue."
-msgstr ""
+msgstr "继续行驶。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:390
 #, kde-format
 msgid "Merge."
-msgstr ""
+msgstr "并入道路。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:392
 #, kde-format
 msgid "Turn around."
-msgstr ""
+msgstr "掉头。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:394
 #, kde-format
 msgid "Turn sharp left."
-msgstr ""
+msgstr "向左急转。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:396
 #, kde-format
 msgid "Turn left."
-msgstr ""
+msgstr "左转。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:398
 #, kde-format
 msgid "Keep slightly left."
-msgstr ""
+msgstr "靠左前方行驶。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:400
 #, kde-format
 msgid "Go straight ahead."
-msgstr ""
+msgstr "直行。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:402
 #, kde-format
 msgid "Keep slightly right."
-msgstr ""
+msgstr "靠右前方行驶。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:404
 #, kde-format
 msgid "Turn right."
-msgstr ""
+msgstr "右转。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:406
 #, kde-format
 msgid "Turn sharp right."
-msgstr ""
+msgstr "向右急转。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:408
 #, kde-format
 msgid "Exit the roundabout."
-msgstr ""
+msgstr "驶出环岛。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:416
 #, kde-format
 msgid "Take the exit to the left."
-msgstr ""
+msgstr "从左侧出口驶出。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:418
 #, kde-format
 msgid "Take the exit to the right."
-msgstr ""
+msgstr "从右侧出口驶出。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:423
 #, kde-format
 msgid "Continue onto %1."
-msgstr ""
+msgstr "继续行驶，进入 %1。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:425
 #, kde-format
 msgid "Merge onto %1."
-msgstr ""
+msgstr "并入 %1。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:427
 #, kde-format
 msgid "Turn around onto %1."
-msgstr ""
+msgstr "掉头，进入 %1。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:429
 #, kde-format
 msgid "Turn sharp left on %1."
-msgstr ""
+msgstr "向左急转，进入 %1。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:431
 #, kde-format
 msgid "Turn left into %1."
-msgstr ""
+msgstr "左转，进入 %1。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:433
 #, kde-format
 msgid "Keep slightly left on %1."
-msgstr ""
+msgstr "朝 %1 方向，靠左前方行驶。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:435
 #, kde-format
 msgid "Continue on %1."
-msgstr ""
+msgstr "在 %1，继续行驶。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:437
 #, kde-format
 msgid "Keep slightly right on %1."
-msgstr ""
+msgstr "朝 %1 方向，靠右前方行驶。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:439
 #, kde-format
 msgid "Turn right into %1."
-msgstr ""
+msgstr "右转，进入 %1。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:441
 #, kde-format
 msgid "Turn sharp right into %1."
-msgstr ""
+msgstr "向右急转，进入 %1。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:443
 #, kde-format
 msgid "Exit the roundabout into %2."
-msgstr ""
+msgstr "驶出环岛，进入 %2。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:451
 #, kde-format
 msgid "Take the exit to the left onto %1."
-msgstr ""
+msgstr "从左侧出口驶出，进入 %1。"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:453
 #, kde-format
 msgid "Take the exit to the right onto %1."
-msgstr ""
+msgstr "从右侧出口驶出，进入 %1。"
+
+#: core/utilities/geolocation/marble/routing/MarbleLineEdit.cpp:56
+#, kde-format
+msgid "Clear"
+msgstr "清除"
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:110
 #, kde-format
 msgctxt "An address with parameters %1=house number, %2=road, %3=city"
 msgid "%1 %2, %3"
-msgstr ""
+msgstr "%1 %2，%3"
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:113
 #, kde-format
 msgctxt "An address with parameters %1=road, %2=city"
 msgid "%1, %2"
-msgstr ""
+msgstr "%2，%1"
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:136
 #, kde-format
 msgid "Address or search term..."
-msgstr ""
+msgstr "地址或者搜索条件..."
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:163
 #, kde-format
 msgid "Remove via point"
-msgstr ""
+msgstr "移除途径点"
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:180
 #, kde-format
 msgid "&Center Map here"
-msgstr ""
+msgstr "在此居中地图(&C)"
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:184
 #, kde-format
 msgid "Current &Location"
-msgstr ""
+msgstr "当前位置(&L)"
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:188
 #, kde-format
 msgid "From &Map..."
-msgstr ""
+msgstr "从地图指定(&M)..."
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:192
 #, kde-format
 msgid "From &Bookmark"
-msgstr ""
+msgstr "从书签指定(&B)"
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:201
 #, kde-format
 msgid "&Home"
-msgstr ""
+msgstr "归零(&H)"
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:305
 #: core/utilities/geolocation/marble/routing/RoutingManager.cpp:562
 #: core/utilities/geolocation/marble/routing/RoutingManager.cpp:565
 #, kde-format
 msgid "Current Location"
-msgstr ""
+msgstr "当前位置"
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:479
 #, kde-format
 msgid "Choose Placemark"
-msgstr ""
+msgstr "选择地点标记"
 
 #: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:187
 #, kde-format
 msgid "&Remove this Destination"
-msgstr ""
+msgstr "移除此目的地(&R)"
 
 #: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:190
 #, kde-format
 msgid "&Export Route..."
-msgstr ""
+msgstr "导出路线(&E)..."
 
 #: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:789
 #, kde-format
 msgid "Export Route"
-msgstr ""
+msgstr "导出路线"
 
 #: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:791
 #, kde-format
 msgid "GPX and KML files (*.gpx *.kml)"
-msgstr ""
+msgstr "GPX 和 KML 文件 (*.gpx *.kml)"
 
 #: core/utilities/geolocation/marble/routing/RoutingManager.cpp:515
 #, kde-format
 msgid "Caution: Driving instructions may be incomplete or wrong."
-msgstr ""
+msgstr "警告：行车导航可能不完整或包含错误。"
 
 #: core/utilities/geolocation/marble/routing/RoutingManager.cpp:516
 #, kde-format
@@ -57319,99 +56953,101 @@ msgid ""
 "suggested route not to be the most expedient or safest route to your "
 "destination."
 msgstr ""
+"道路施工、天气以及其他无法遇见的因素可能导致程序建议的路线并非前往目的地最快"
+"捷或安全的路线。"
 
 #: core/utilities/geolocation/marble/routing/RoutingManager.cpp:517
 #, kde-format
 msgid "Please use common sense while navigating."
-msgstr ""
+msgstr "请在行驶过程中多用常识观察实际情况。"
 
 #: core/utilities/geolocation/marble/routing/RoutingManager.cpp:518
 #, kde-format
 msgid "The Marble development team wishes you a pleasant and safe journey."
-msgstr ""
+msgstr "Marble 开发团队祝您一路顺风。"
 
 #: core/utilities/geolocation/marble/routing/RoutingManager.cpp:519
 #, kde-format
 msgid "Guidance Mode"
-msgstr ""
+msgstr "导航模式"
 
 #: core/utilities/geolocation/marble/routing/RoutingManager.cpp:520
 #, kde-format
 msgid "Show again"
-msgstr ""
+msgstr "再次显示"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, RoutingProfileSettingsDialog)
 #: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:14
 #, kde-format
 msgid "Configure Routing Profile"
-msgstr ""
+msgstr "配置路线规划插件"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:41
 #, kde-format
 msgid "Active Route Services"
-msgstr ""
+msgstr "激活的路线规划服务"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:65
 #, kde-format
 msgid "Service Settings"
-msgstr ""
+msgstr "服务设置"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:117
 #, kde-format
 msgid "No configuration available"
-msgstr ""
+msgstr "无可用配置"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:128
 #, kde-format
 msgid "Select Service to Configure"
-msgstr ""
+msgstr "选择要配置的服务"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
 #: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:112
 #: core/utilities/geolocation/marble/routing/RoutingWidget.ui:46
 #, kde-format
 msgid "Car (fastest)"
-msgstr ""
+msgstr "汽车 (耗时最少)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
 #: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:114
 #: core/utilities/geolocation/marble/routing/RoutingWidget.ui:51
 #, kde-format
 msgid "Car (shortest)"
-msgstr ""
+msgstr "汽车 (路程最短)"
 
 #: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:116
 #, kde-format
 msgid "Car (ecological)"
-msgstr ""
+msgstr "汽车 (最为环保)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
 #: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:118
 #: core/utilities/geolocation/marble/routing/RoutingWidget.ui:56
 #, kde-format
 msgid "Bicycle"
-msgstr ""
+msgstr "自行车"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
 #: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:120
 #: core/utilities/geolocation/marble/routing/RoutingWidget.ui:61
 #, kde-format
 msgid "Pedestrian"
-msgstr ""
+msgstr "步行"
 
 #: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:124
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: core/utilities/geolocation/marble/routing/RoutingProfilesWidget.cpp:75
 #, kde-format
 msgid "New Profile"
-msgstr ""
+msgstr "新建配置方案"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:22
@@ -57427,164 +57063,142 @@ msgstr "添加(&A)..."
 #: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:65
 #, kde-format
 msgid "Move &Up"
-msgstr ""
+msgstr "上移(&U)"
 
 #. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
 #: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:75
 #, kde-format
 msgid "Move &Down"
-msgstr ""
+msgstr "下移(&D)"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:192
 #, kde-format
 msgid "Get Directions"
-msgstr ""
+msgstr "获取路线"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:193
 #, kde-format
 msgid "Retrieve routing instructions for the selected destinations."
-msgstr ""
+msgstr "获取前往所选目的地的路线规划。"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:204
 #, kde-format
 msgid "Find places matching the search term"
-msgstr ""
+msgstr "查找符合搜索条件的地点"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:227
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:695
 #, kde-format
 msgid "Open Route"
-msgstr ""
+msgstr "打开路线"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:232
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:728
 #, kde-format
 msgid "Save Route"
-msgstr ""
+msgstr "保存路线"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:237
 #, kde-format
 msgid "Preview Route"
-msgstr ""
+msgstr "预览路线"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:242
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:243
 #, kde-format
 msgid "Upload to Cloud"
-msgstr ""
+msgstr "上传到云端"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:246
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:247
 #, kde-format
 msgid "Manage Cloud Routes"
-msgstr ""
+msgstr "管理云端路线"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:252
 #, kde-format
 msgid "Add Via"
-msgstr ""
+msgstr "添加途径点"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:257
 #, kde-format
 msgid "Reverse Route"
-msgstr ""
+msgstr "反向导航"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:262
 #, kde-format
 msgid "Clear Route"
-msgstr ""
+msgstr "清除路线"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:468
 #, kde-format
 msgid "placemarks found: %1"
-msgstr ""
+msgstr "已找到地点标记：%1"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:474
 #, kde-format
 msgid "No placemark found"
-msgstr ""
+msgstr "未找到地点标记"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:591
 #, kde-format
 msgid "No route found"
-msgstr ""
+msgstr "未找到路线"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:674
 #, kde-format
 msgid "routes found: %1"
-msgstr ""
+msgstr "已找到路线：%1"
 
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:748
 #, kde-format
 msgid "Uploading route..."
-msgstr ""
+msgstr "正在上传路线..."
 
 #. i18n: ectx: property (text), widget (QLabel, resultLabel)
 #: core/utilities/geolocation/marble/routing/RoutingWidget.ui:106
 #, kde-format
 msgid "No results."
-msgstr ""
+msgstr "无结果。"
 
 #. i18n: ectx: property (text), widget (QPushButton, showInstructionsButton)
 #: core/utilities/geolocation/marble/routing/RoutingWidget.ui:113
 #, kde-format
 msgid "Show Details"
-msgstr ""
+msgstr "显示详情"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, routeComboBox)
 #: core/utilities/geolocation/marble/routing/RoutingWidget.ui:149
 #, kde-format
 msgid "Choose alternative routes"
-msgstr ""
+msgstr "选择备选路线"
 
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:41
 #, kde-format
 msgid "ft"
-msgstr ""
+msgstr "英尺"
 
 #: core/utilities/geolocation/marble/RoutingRunner.cpp:72
 #, kde-format
 msgctxt "journey duration"
 msgid "%1:%2 h"
-msgstr ""
-
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:74
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:97
-#, kde-format
-msgid "Global Search"
-msgstr ""
-
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:77
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:97
-#, kde-format
-msgid "Area Search"
-msgstr ""
-
-#: core/utilities/geolocation/marble/SearchWidget.cpp:59
-#, kde-format
-msgid "Search Results"
-msgstr ""
-
-#: core/utilities/geolocation/marble/SearchWidget.cpp:76
-#, kde-format
-msgid "Search for '%1'"
-msgstr ""
+msgstr "%1：%2 小时"
 
 #: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
 #, kde-format
 msgid "Select sound files..."
-msgstr ""
+msgstr "选择音频文件..."
 
 #: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
 #, kde-format
 msgid "Supported Sound Files (*.mp3 *.ogg *.wav)"
-msgstr ""
+msgstr "支持的音频文件 (*.mp3 *.ogg *.wav)"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
 #: core/utilities/geolocation/marble/TileCreatorDialog.ui:20
 #, kde-format
 msgid "Creating Map"
-msgstr ""
+msgstr "正在创建地图"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
 #: core/utilities/geolocation/marble/TileCreatorDialog.ui:507
@@ -57600,6 +57214,15 @@ msgid ""
 "seen from Space. The map is based on NASA's beautiful \"Blue Marble Next "
 "Generation\" pictures. Credits: NASA's Earth Observatory</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
+"white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-"
+"weight:400; font-style:normal; text-decoration:none;\"><p style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">卫星图</"
+"span></p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">从太空中看到的地球。"
+"此地图基于 NASA Blue Marble Next Generation 工程的精美图像制作。鸣谢：NASA "
+"Earth Observatory</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
 #: core/utilities/geolocation/marble/TileCreatorDialog.ui:517
@@ -57607,79 +57230,37 @@ msgstr ""
 msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
 "take a few seconds."
-msgstr ""
+msgstr "Marble 将要创建此地图。本操作只需执行一次，可能要花费数分钟。"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:29
 #, kde-format
 msgid "Zoom"
-msgstr ""
+msgstr "缩放"
 
 #. i18n: ectx: property (text), widget (QLabel, tileLevelLabel)
 #: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:37
 #, kde-format
 msgid "&Tile level range:"
-msgstr ""
+msgstr "图块级别范围(&T)："
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, topSpinBox)
 #: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:47
 #, kde-format
 msgid "Minimum Tile Level"
-msgstr ""
+msgstr "最小图块级别"
 
 #. i18n: ectx: property (text), widget (QLabel, toLabel)
 #: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:63
 #, kde-format
 msgid "to"
-msgstr ""
+msgstr "到"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bottomSpinBox)
 #: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:70
 #, kde-format
 msgid "Maximum Tile Level"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:67
-#, kde-format
-msgid ""
-"Supported codecs are not found. (ffmpeg/avconv needs to be installed and in "
-"PATH.)"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:112
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:132
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:167
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:189
-#, kde-format
-msgid "Start"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:150
-#, kde-format
-msgid "Video writing failed."
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:168
-#, kde-format
-msgid "Video export completed."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:65
-#, kde-format
-msgid "Destination video"
-msgstr ""
-
-#: core/utilities/geolocation/marble/TourControlEditWidget.cpp:41
-#, kde-format
-msgid "Pause"
-msgstr ""
-
-#: core/utilities/geolocation/marble/WaitEditWidget.cpp:38
-#, kde-format
-msgid "Wait duration:"
-msgstr ""
+msgstr "最大图块级别"
 
 #: core/utilities/imageeditor/core/undoaction.cpp:147
 #, kde-format
@@ -63179,7 +62760,8 @@ msgstr ""
 msgid ""
 "Additional &image file extensions (<a href='image'>Currently-supported "
 "types</a>):"
-msgstr "额外的图像格式扩展名(<a href='image'>点击显示当前支持的格式</a>)(&I)："
+msgstr ""
+"额外的图像格式扩展名 (<a href='image'>点击显示当前支持的格式</a>) (&I)："
 
 #: core/utilities/setup/album/setupmime.cpp:107
 #, kde-format
@@ -63210,7 +62792,8 @@ msgstr "在此输入额外的图像格式扩展名。"
 msgid ""
 "Additional &video file extensions (<a href='video'>Currently-supported "
 "types</a>):"
-msgstr "额外的视频格式扩展名(<a href='video'>点击显示当前支持的格式</a>)(&V)："
+msgstr ""
+"额外的视频格式扩展名 (<a href='video'>点击显示当前支持的格式</a>) (&V)："
 
 #: core/utilities/setup/album/setupmime.cpp:140
 #, kde-format
@@ -63242,7 +62825,8 @@ msgstr "在此输入额外的视频格式扩展名。"
 msgid ""
 "Additional &audio file extensions (<a href='audio'>Currently-supported "
 "types</a>):"
-msgstr "额外的音频格式扩展名(<a href='audio'>点击显示当前支持的格式</a>)(&A)："
+msgstr ""
+"额外的音频格式扩展名 (<a href='audio'>点击显示当前支持的格式</a>) (&A)："
 
 #: core/utilities/setup/album/setupmime.cpp:175
 #, kde-format
@@ -64004,12 +63588,10 @@ msgid "Problem Adding Collection"
 msgstr "添加相册集合时出错"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1577
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
-msgstr "添加相册集合时出错"
+msgstr "更新相册集合时遇到问题"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1594
 #, kde-format
@@ -64018,8 +63600,7 @@ msgid "Adding Collection"
 msgstr "添加相册集合"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1598
-#, fuzzy, kde-format
-#| msgid "Update collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "更新相册集合"
@@ -64030,10 +63611,9 @@ msgid "Your new collection will be created with this name:"
 msgstr "新相册集合将以此名称创建："
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1610
-#, fuzzy, kde-format
-#| msgid "Your new collection will be created with this name:"
+#, kde-format
 msgid "Your collection will be updated to this name:"
-msgstr "新相册集合将以此名称创建："
+msgstr "您的相册集合将被更新到此名称："
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1693
 #, kde-format
@@ -65652,7 +65232,7 @@ msgstr "应用右侧栏更改时无需确认(&R)"
 #: core/utilities/setup/misc/setupmisc.cpp:67
 #, kde-format
 msgid "&Scan for new items at startup (makes startup slower)"
-msgstr "启动时扫描新增项目(会拖慢启动过程)(&S)"
+msgstr "启动时扫描新增项目(会拖慢启动过程) (&S)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:68
 #, kde-format
@@ -66962,12 +66542,377 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
 
-#~ msgctxt "@action:button"
-#~ msgid "&Apply"
-#~ msgstr "应用(&A)"
+#~ msgid "No URL specified"
+#~ msgstr "未指定 URL"
 
-#~ msgid "%1 input audio stream to process:"
-#~ msgstr "%1 首要处理的音频："
+#~ msgid "Please specify a URL for this link."
+#~ msgstr "请为此链接指定一个URL。"
 
-#~ msgid "Failed to open audio encoder"
-#~ msgstr "无法打开音频编码器"
+#~ msgid "Please specify a name for this link."
+#~ msgstr "请为此链接指定一个名称。"
+
+#~ msgid "Add link"
+#~ msgstr "添加链接"
+
+#~ msgid "Untitled Placemark"
+#~ msgstr "无标题地点标记"
+
+#~ msgid "Relations"
+#~ msgstr "关系"
+
+#~ msgid "Elevation"
+#~ msgstr "海拔"
+
+#~ msgid "Please specify a name for this placemark."
+#~ msgstr "请为此地点标记指定一个名称。"
+
+#~ msgid "No ID specified"
+#~ msgstr "未指定 ID"
+
+#~ msgid "Please specify a ID for this placemark."
+#~ msgstr "请为此地点标记指定一个 ID。"
+
+#~ msgid "ID is invalid"
+#~ msgstr "ID 无效"
+
+#~ msgid "Please specify a valid ID for this placemark."
+#~ msgstr "请为此地点标记指定一个有效的 ID。"
+
+#~ msgid "No image specified"
+#~ msgstr "未指定图像"
+
+#~ msgid "Please specify an icon for this placemark or add a valid tag."
+#~ msgstr "请为此地点标记指定一个图标或添加一个有效的标签。"
+
+#~ msgid "Invalid icon path"
+#~ msgstr "无效的图标路径"
+
+#~ msgid "Please specify a valid path for the icon file."
+#~ msgstr "请为图标文件指定有效的路径。"
+
+#~ msgid "Edit placemark"
+#~ msgstr "编辑地点标记"
+
+#~ msgid "Show Balloon Popup"
+#~ msgstr "显示弹窗信息"
+
+#~ msgid "Style, Color"
+#~ msgstr "风格/颜色"
+
+#~ msgid "Label"
+#~ msgstr "标记"
+
+#~ msgid "Color:"
+#~ msgstr "颜色："
+
+#~ msgid "Scale:"
+#~ msgstr "缩放："
+
+#~ msgid "Icon"
+#~ msgstr "图标"
+
+#~ msgid "Show placemark"
+#~ msgstr "显示地点标记"
+
+#~ msgid "Bold"
+#~ msgstr "粗体"
+
+#~ msgid "Italics"
+#~ msgstr "斜体"
+
+#~ msgid "Underlined"
+#~ msgstr "下划线"
+
+#~ msgid "Add image"
+#~ msgstr "添加图像"
+
+#~ msgctxt "seconds"
+#~ msgid " s"
+#~ msgstr "秒"
+
+#~ msgid "Mode:"
+#~ msgstr "模式："
+
+#~ msgid "Smooth"
+#~ msgstr "平滑"
+
+#~ msgid "Bounce"
+#~ msgstr "弹跳"
+
+#~ msgid "Current map center"
+#~ msgstr "当前地图中心"
+
+#~ msgid "Choose image"
+#~ msgstr "选择图像"
+
+#~ msgid "All Supported Files (*.png *.jpg *.jpeg)"
+#~ msgstr "所有支持的文件 (*.png *.jpg *.jpeg)"
+
+#~ msgid "Formatted text"
+#~ msgstr "带格式文本"
+
+#~ msgid "6"
+#~ msgstr "6"
+
+#~ msgid "8"
+#~ msgstr "8"
+
+#~ msgid "9"
+#~ msgstr "9"
+
+#~ msgid "10"
+#~ msgstr "10"
+
+#~ msgid "11"
+#~ msgstr "11"
+
+#~ msgid "12"
+#~ msgstr "12"
+
+#~ msgid "14"
+#~ msgstr "14"
+
+#~ msgid "16"
+#~ msgstr "16"
+
+#~ msgid "18"
+#~ msgstr "18"
+
+#~ msgid "20"
+#~ msgstr "20"
+
+#~ msgid "24"
+#~ msgstr "24"
+
+#~ msgid "36"
+#~ msgstr "36"
+
+#~ msgid "48"
+#~ msgstr "48"
+
+#~ msgid "72"
+#~ msgstr "72"
+
+#~ msgid "96"
+#~ msgstr "96"
+
+#~ msgid "toolBar"
+#~ msgstr "工具栏"
+
+#~ msgid "Color"
+#~ msgstr "颜色"
+
+#~ msgid "Missing encoding tools"
+#~ msgstr "缺少编码工具"
+
+#~ msgid ""
+#~ "Marble requires additional software in order to create movies. Please get "
+#~ "%1 "
+#~ msgstr "Marble 需要额外软件才能生成视频。请安装 %1 "
+
+#~ msgid "AVI (mpeg4)"
+#~ msgstr "AVI (mpeg4)"
+
+#~ msgid "FLV"
+#~ msgstr "FLV"
+
+#~ msgid "Matroska (h264)"
+#~ msgstr "Matroska (h264)"
+
+#~ msgid "MPEG-4"
+#~ msgstr "MPEG-4"
+
+#~ msgid "MPEG-2 PS (VOB)"
+#~ msgstr "MPEG-2 PS (VOB)"
+
+#~ msgid "OGG"
+#~ msgstr "OGG"
+
+#~ msgid "SWF"
+#~ msgstr "SWF"
+
+#~ msgctxt "Start recording a movie"
+#~ msgid "&Start"
+#~ msgstr "开始(&S)"
+
+#~ msgid "Codecs are unavailable"
+#~ msgstr "编解码器不可用"
+
+#~ msgid "Supported codecs are not found."
+#~ msgstr "无法找到支持的编解码器。"
+
+#~ msgid "Save video file"
+#~ msgstr "保存视频文件"
+
+#~ msgid "Filename is not valid"
+#~ msgstr "文件名无效"
+
+#~ msgid "This file format is not supported. Please, use %1 instead"
+#~ msgstr "不支持此文件格式。请改用 %1"
+
+#~ msgid "Missing filename"
+#~ msgstr "缺少文件名"
+
+#~ msgid ""
+#~ "Destination video file is not set. I don't know where to save recorded "
+#~ "video. Please, specify one."
+#~ msgstr "目标视频文件尚未设置。请为程序指定保存录制视频的位置。"
+
+#~ msgid "Movie Recording"
+#~ msgstr "正在录制视频"
+
+#~ msgid "Destination video:"
+#~ msgstr "目标视频："
+
+#~ msgid "Open..."
+#~ msgstr "打开..."
+
+#~ msgid "FPS (frames per second)"
+#~ msgstr "FPS (帧每秒)"
+
+#~ msgid "Installation aborted by user."
+#~ msgstr "安装已被用户终止。"
+
+#~ msgid "Choose item:"
+#~ msgstr "选择项目："
+
+#~ msgid "Global Search"
+#~ msgstr "全局搜索"
+
+#~ msgid "Area Search"
+#~ msgstr "区域搜索"
+
+#~ msgid "Search Results"
+#~ msgstr "搜索结果"
+
+#~ msgid "Search for '%1'"
+#~ msgstr "搜索“%1”"
+
+#~ msgid ""
+#~ "Supported codecs are not found. (ffmpeg/avconv needs to be installed and "
+#~ "in PATH.)"
+#~ msgstr ""
+#~ "找不到支持的编解码器 (需要在本机系统中安装 ffmpeg/avconv，并将它们的位置添"
+#~ "加到 PATH 环境参数中。)"
+
+#~ msgid "Start"
+#~ msgstr "开始"
+
+#~ msgid "Video writing failed."
+#~ msgstr "视频写入失败。"
+
+#~ msgid "Video export completed."
+#~ msgstr "视频导出完成。"
+
+#~ msgid "Destination video"
+#~ msgstr "目标视频"
+
+#~ msgid "Pause"
+#~ msgstr "暂停"
+
+#~ msgid "Play the tour"
+#~ msgstr "播放导览"
+
+#~ msgid "Pause the tour"
+#~ msgstr "暂停导览"
+
+#~ msgid "Wait for %1 seconds"
+#~ msgstr "等待 %1 秒"
+
+#~ msgid "Create item %1"
+#~ msgstr "创建项目 %1"
+
+#~ msgid "Remove item %1"
+#~ msgstr "移除项目 %1"
+
+#~ msgid "Change item %1"
+#~ msgstr "更改项目 %1"
+
+#~ msgid "Update items"
+#~ msgstr "更新项目"
+
+#~ msgid "Add Placemark to Tour"
+#~ msgstr "添加地点标记到导览"
+
+#~ msgid "Change Placemark in Tour"
+#~ msgstr "更改导览中的地点标记"
+
+#~ msgid "Add FlyTo"
+#~ msgstr "添加飞越"
+
+#~ msgid "Add Wait"
+#~ msgstr "添加等待"
+
+#~ msgid "Add SoundCue"
+#~ msgstr "添加声音提示"
+
+#~ msgid "Add Placemark"
+#~ msgstr "添加地点标记"
+
+#~ msgid "Remove placemark"
+#~ msgstr "移除地点标记"
+
+#~ msgid "Change placemark"
+#~ msgstr "更改地点标记"
+
+#~ msgid "Loop"
+#~ msgstr "循环播放"
+
+#~ msgid "Save tour"
+#~ msgstr "保存导览"
+
+#~ msgid "There are unsaved Tours. Do you want to save your changes?"
+#~ msgstr "导览更改后尚未保存，您想要保存该您所做的更改吗?"
+
+#~ msgid "Open Tour"
+#~ msgstr "打开导览"
+
+#~ msgid "KML Tours (*.kml)"
+#~ msgstr "KML 导览文件 (*.kml)"
+
+#~ msgid "Remove Selected Items"
+#~ msgstr "移除所选项目"
+
+#~ msgid "Are you sure want to remove selected items?"
+#~ msgstr "您确定要移除所选的项目吗?"
+
+#~ msgid "Save Tour as"
+#~ msgstr "导览另存为"
+
+#~ msgid "Discard Changes"
+#~ msgstr "丢弃更改"
+
+#~ msgid ""
+#~ "Are you sure want to discard all unsaved changes and close current "
+#~ "document?"
+#~ msgstr "您确定要放弃所有未保存的更改，并关闭当前文档吗？"
+
+#~ msgid "Tour"
+#~ msgstr "导览"
+
+#~ msgid "--:--"
+#~ msgstr "--:--"
+
+#~ msgid "New Tour"
+#~ msgstr "新建导览"
+
+#~ msgid "Save Tour"
+#~ msgstr "保存导览"
+
+#~ msgid "Save Tour As"
+#~ msgstr "导览另存为"
+
+#~ msgid "Begins touring"
+#~ msgstr "开始导览"
+
+#~ msgid "Stops touring (playing again will start tour from the start)"
+#~ msgstr "停止导览 (重新播放时将从头开始)"
+
+#~ msgid "Record tour"
+#~ msgstr "录制导览"
+
+#~ msgid "Converts the loaded tour into a movie"
+#~ msgstr "将加载的导览转换为视频"
+
+#~ msgid "Wait duration:"
+#~ msgstr "等待时长："
