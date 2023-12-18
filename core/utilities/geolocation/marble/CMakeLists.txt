@@ -26,9 +26,6 @@ endif()
 
 set(marblewidget_SRCS
 
-    AbstractDataPlugin.cpp
-    AbstractDataPluginItem.cpp
-    AbstractDataPluginModel.cpp
     AbstractFloatItem.cpp
     AbstractWorkerThread.cpp
     BranchFilterProxyModel.cpp
@@ -77,11 +74,9 @@ set(marblewidget_SRCS
     MathHelper.cpp
     MercatorScanlineTextureMapper.cpp
     OsmcSymbol.cpp
-    ParseRunnerPlugin.cpp
     ParsingRunner.cpp
     ParsingRunnerManager.cpp
     PlacemarkLayout.cpp
-    PlacemarkPositionProviderPlugin.cpp
     Planet.cpp
     PlanetFactory.cpp
     PlaybackAnimatedUpdateItem.cpp
@@ -90,30 +85,18 @@ set(marblewidget_SRCS
     PlaybackSoundCueItem.cpp
     PlaybackTourControlItem.cpp
     PlaybackWaitItem.cpp
-    PluginInterface.cpp
-    PluginItemDelegate.cpp
-    PluginManager.cpp
-    PositionProviderPlugin.cpp
-    PositionProviderPluginInterface.cpp
     PositionTracking.cpp
     Quaternion.cpp
     RemoteIconLoader.cpp
-    RenderPlugin.cpp
-    RenderPluginInterface.cpp
-    RenderPluginModel.cpp
     RenderState.cpp
     ReverseGeocodingRunner.cpp
     ReverseGeocodingRunnerManager.cpp
-    ReverseGeocodingRunnerPlugin.cpp
-    RouteSimulationPositionProviderPlugin.cpp
     RoutingRunnerManager.cpp
-    RoutingRunnerPlugin.cpp
     RoutingRunner.cpp
     RunnerTask.cpp
     ScanlineTextureMapperContext.cpp
     SearchRunner.cpp
     SearchRunnerManager.cpp
-    SearchRunnerPlugin.cpp
     SerialTrack.cpp
     ServerLayout.cpp
     SoundCueEditWidget.cpp
@@ -666,6 +649,24 @@ set(marblewidget_SRCS
     osm/OsmRelationEditorDialog.cpp
     osm/OsmRelationManagerWidget.cpp
     osm/OsmRelationManagerWidget_p.cpp
+
+    plugins/AbstractDataPlugin.cpp
+    plugins/AbstractDataPluginItem.cpp
+    plugins/AbstractDataPluginModel.cpp
+    plugins/ParseRunnerPlugin.cpp
+    plugins/PlacemarkPositionProviderPlugin.cpp
+    plugins/PluginInterface.cpp
+    plugins/PluginItemDelegate.cpp
+    plugins/PluginManager.cpp
+    plugins/PositionProviderPlugin.cpp
+    plugins/PositionProviderPluginInterface.cpp
+    plugins/RenderPlugin.cpp
+    plugins/RenderPluginInterface.cpp
+    plugins/RenderPluginModel.cpp
+    plugins/ReverseGeocodingRunnerPlugin.cpp
+    plugins/RouteSimulationPositionProviderPlugin.cpp
+    plugins/RoutingRunnerPlugin.cpp
+    plugins/SearchRunnerPlugin.cpp
 
     projections/AbstractProjection.cpp
     projections/CylindricalProjection.cpp
