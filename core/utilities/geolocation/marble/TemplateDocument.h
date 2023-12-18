@@ -33,36 +33,37 @@ class TemplateDocumentPrivate;
 class TemplateDocument
 {
 public:
+
     TemplateDocument();
-    explicit TemplateDocument(const QString &templateText);
-    ~TemplateDocument();
+    explicit TemplateDocument(const QString& templateText);
+    ~TemplateDocument(); 
 
     /**
      * @brief Returns the current template value of @p key
      * @param key template key (\<here\>)
      * @return value of the template
      */
-    QString value(const QString &key) const;
+    QString value(const QString& key) const;
 
     /**
      * @brief Change set template value into new one
      * @param key template key
      * @param value template value
      */
-    void setValue(const QString &key, const QString &value);
+    void setValue(const QString& key, const QString& value);
 
     /**
      * @brief Set template text
      * @param newTemplateText new template text
      */
-    void setTemplate(const QString &newTemplateText);
+    void setTemplate(const QString& newTemplateText);
 
     /**
      * @brief Indexator for template values
      * @param key template value's index
      * @return reference for the item
      */
-    QString& operator[](const QString &key);
+    QString& operator[](const QString& key);
 
     /**
      * @brief Final proceed text
@@ -72,7 +73,9 @@ public:
     QString finalText() const;
 
 private:
+
     Q_DISABLE_COPY(TemplateDocument)
+
     TemplateDocumentPrivate *d;
 };
 
