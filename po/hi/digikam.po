@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-17 00:39+0000\n"
+"POT-Creation-Date: 2023-12-18 00:39+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -1169,7 +1169,6 @@ msgid "Audio/Video Properties"
 msgstr "फ़ाइल गुण"
 
 #: core/app/items/utils/tooltipfiller.cpp:356
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:47
 #, fuzzy, kde-format
 msgid "Duration:"
 msgstr "अवधिः %1"
@@ -2653,7 +2652,7 @@ msgstr "मदद (&H)"
 msgid "Main Toolbar"
 msgstr "मुख्य औज़ार पट्टी"
 
-#: core/app/main/main.cpp:194 core/app/views/stack/welcomepageview.cpp:259
+#: core/app/main/main.cpp:196 core/app/views/stack/welcomepageview.cpp:259
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2663,46 +2662,46 @@ msgstr "मुख्य औज़ार पट्टी"
 msgid "digiKam"
 msgstr "डिज़ीकैम"
 
-#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:170
+#: core/app/main/main.cpp:205 core/showfoto/main/main.cpp:172
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "रविशंकर श्रीवास्तव, जी. करूणाकर"
 
-#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:171
+#: core/app/main/main.cpp:206 core/showfoto/main/main.cpp:173
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "raviratlami@aol.in,"
 
-#: core/app/main/main.cpp:212
+#: core/app/main/main.cpp:214
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "कैमरा संवाद यहां दिखाएं <पथ>"
 
-#: core/app/main/main.cpp:215
+#: core/app/main/main.cpp:217
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:220
 #, fuzzy, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "कैमरा का पता स्वचालित लगाकर उसे खोलें"
 
-#: core/app/main/main.cpp:220
+#: core/app/main/main.cpp:222
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "डिजिकैम को एलबम रूट में प्रारंभ करें <पथ>"
 
-#: core/app/main/main.cpp:223
+#: core/app/main/main.cpp:225
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "डिजिकैम को एलबम रूट में प्रारंभ करें <पथ>"
 
-#: core/app/main/main.cpp:250
+#: core/app/main/main.cpp:252
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2710,7 +2709,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:292
+#: core/app/main/main.cpp:294
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2718,7 +2717,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:301
+#: core/app/main/main.cpp:303
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2726,7 +2725,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:341
+#: core/app/main/main.cpp:343
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2951,7 +2950,6 @@ msgstr "मेरे एलबम"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:153
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3229,8 +3227,8 @@ msgstr "चयन"
 #. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:856
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:91
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:151
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:91
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:151
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -11489,8 +11487,8 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, bookmarkLabel)
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:220
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:141
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:62
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:118
+#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:62
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:118
 #: core/utilities/geolocation/marble/cloudsync/BookmarkSyncManager.cpp:650
 #, kde-format
 msgid "Bookmarks"
@@ -14351,11 +14349,9 @@ msgstr "ई-मेल:"
 msgid "Set here the contact e-mail."
 msgstr "<p>यहां पर भाषा कोड को चुनें."
 
-#. i18n: ectx: property (text), widget (QLabel, m_urlLabel)
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:131
 #: core/libs/template/templatepanel.cpp:373
 #: core/libs/template/templateviewer.cpp:207
-#: core/utilities/geolocation/marble/AddLinkDialog.ui:22
 #, kde-format
 msgid "URL:"
 msgstr "यूआरएल:"
@@ -20430,7 +20426,6 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:32
-#: core/utilities/geolocation/marble/TourControlEditWidget.cpp:38
 #, kde-format
 msgid "Play"
 msgstr "बजाएँ"
@@ -22746,7 +22741,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:120
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:486
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:486
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgid "Replace"
@@ -22758,7 +22753,7 @@ msgid "Item will be replacing the linked version."
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:127
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:487
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:487
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgid "Replace All"
@@ -23218,7 +23213,7 @@ msgstr "क्या आप जारी रखना चाहते हैं?
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:189
 #: core/libs/dialogs/webbrowserdlg.cpp:129
-#: core/utilities/geolocation/marble/GoToDialog.cpp:196
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:196
 #, kde-format
 msgid "Home"
 msgstr "घर"
@@ -27672,7 +27667,6 @@ msgstr ""
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:113
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
 #, kde-format
 msgid "Cancel"
@@ -32864,11 +32858,9 @@ msgctxt "@action:button"
 msgid "&Start"
 msgstr "सामर्थ्य:"
 
-#. i18n: ectx: property (text), widget (QPushButton, closeButton)
 #: core/libs/dplugins/webservices/wstooldialog.cpp:103
 #: core/libs/onlineversion/onlineversiondlg.cpp:321
 #: core/libs/onlineversion/onlineversiondlg.cpp:498
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:196
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgid "Close"
@@ -39891,7 +39883,7 @@ msgstr "छवि तारीख"
 
 #. i18n: ectx: property (text), widget (QRadioButton, browseButton)
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
-#: core/utilities/geolocation/marble/GoToDialog.ui:93
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:93
 #, fuzzy, kde-format
 #| msgid "&Browse"
 msgid "Browse"
@@ -48767,20 +48759,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "फ़ोल्डर से"
 
-#: core/showfoto/main/main.cpp:161
+#: core/showfoto/main/main.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:179
+#: core/showfoto/main/main.cpp:181
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "खोलने के लिए फ़ाइल फ़ोल्डर"
 
-#: core/showfoto/main/main.cpp:210
+#: core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -50532,10 +50524,8 @@ msgstr "छवि जानकारी आयातित"
 msgid "Key"
 msgstr "कुंजी"
 
-#. i18n: ectx: attribute (title), widget (QWidget, m_descriptionTab)
 #: core/utilities/advancedrename/parser/options/database/dbkeyselector.cpp:94
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:62
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:38
 #, kde-format
 msgid "Description"
 msgstr "वर्णन"
@@ -52204,6 +52194,12 @@ msgstr "रंग जगह"
 msgid "Unknown title"
 msgstr "अज्ञात त्रुटि"
 
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:89
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Add Bookmark"
+msgstr "कैमरा जोड़ें..."
+
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:94
 #, kde-format
 msgid ""
@@ -53210,63 +53206,15 @@ msgstr ""
 msgid "&Configure..."
 msgstr "कॉन्फ़िगर"
 
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:67
-#, fuzzy, kde-format
-#| msgid "Unspecified"
-msgid "No URL specified"
-msgstr "अविशिष्ट"
-
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:68
-#, kde-format
-msgid "Please specify a URL for this link."
-msgstr ""
-
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:71
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:371
-#: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:84
-#, fuzzy, kde-format
-#| msgid "Unspecified"
-msgid "No name specified"
-msgstr "अविशिष्ट"
-
-#: core/utilities/geolocation/marble/AddLinkDialog.cpp:72
-#, kde-format
-msgid "Please specify a name for this link."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiAddLinkDialog)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/AddLinkDialog.ui:14
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:380
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:383
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:244
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:247
-#, fuzzy, kde-format
-msgid "Add link"
-msgstr "फ़िल्म ग्रेन जोड़ें..."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#. i18n: ectx: property (text), widget (QLabel, m_nameLabel)
-#: core/utilities/geolocation/marble/AddLinkDialog.ui:32
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:64
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
-#, fuzzy, kde-format
-msgid "Name:"
-msgstr "नाम:"
-
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:58
-#: core/utilities/geolocation/marble/BookmarkManager.cpp:250
+#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:58
+#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:250
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
 #, fuzzy, kde-format
 msgid "Default"
 msgstr "डिफ़ॉल्ट"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:183
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:183
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -53276,125 +53224,125 @@ msgid ""
 msgstr ""
 "फ़ाइल नाम \"%1\"  पहले से ही अस्तित्व में है. क्या आप इसके ऊपर ही मिटाकर लिखना चाहेंगे?"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:184
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:184
 #, fuzzy, kde-format
 msgid "Remove Folder"
 msgstr "यह टैग मिटाएँ"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:418
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:418
 #, fuzzy, kde-format
 msgid "Export Bookmarks"
 msgstr "कैमरा जोड़ें..."
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:419
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:419
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:730
 #, fuzzy, kde-format
 #| msgid "XMP text Files (*.xmp)"
 msgid "KML files (*.kml)"
 msgstr "एक्सएमपी पाठ फ़ाइलें (*.xmp)"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:424
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:424
 #, kde-format
 msgid "Unable to save bookmarks. Please check that the file is writable."
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:425
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:425
 #, fuzzy, kde-format
 msgid "Bookmark Export"
 msgstr "इस स्थान पर जाएं"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:432
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:432
 #, fuzzy, kde-format
 msgid "Import Bookmarks"
 msgstr "कैमरा जोड़ें..."
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:433
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:433
 #: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:696
 #, fuzzy, kde-format
 #| msgid "XMP text Files (*.xmp)"
 msgid "KML Files (*.kml)"
 msgstr "एक्सएमपी पाठ फ़ाइलें (*.xmp)"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:440
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:440
 #, kde-format
 msgid "The file %1 cannot be opened as a KML file."
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:441
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:441
 #, fuzzy, kde-format
 msgid "Bookmark Import"
 msgstr "इस स्थान पर जाएं"
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:475
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:475
 #, kde-format
 msgid "The file contains a bookmark that already exists among your Bookmarks."
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:476
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:476
 #, fuzzy, kde-format
 msgid "Imported bookmark"
 msgstr "कैमरा जोड़ें..."
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:477
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:477
 #, fuzzy, kde-format
 msgid "Existing bookmark"
 msgstr "कैमरा जोड़ें..."
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:478
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:478
 #, kde-format
 msgid "Do you want to replace the existing bookmark with the imported one?"
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:488
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:488
 #, kde-format
 msgid "Skip"
 msgstr ""
 
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.cpp:489
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:489
 #, fuzzy, kde-format
 msgid "Skip All"
 msgstr "फ़ाइल को मिटाकर लिखें?"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, UiBookmarkManagerDialog)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:14
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:14
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgid "Bookmark Manager"
 msgstr "रंग प्रबंधन"
 
 #. i18n: ectx: property (text), widget (QPushButton, importButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:25
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:25
 #, fuzzy, kde-format
 msgid "Import Bookmarks..."
 msgstr "कैमरा जोड़ें..."
 
 #. i18n: ectx: property (text), widget (QPushButton, exportButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:35
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:35
 #, fuzzy, kde-format
 msgid "Export Bookmarks..."
 msgstr "कैमरा जोड़ें..."
 
 #. i18n: ectx: property (text), widget (QLabel, foldersLabel)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:64
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:64
 #, fuzzy, kde-format
 msgid "Folders"
 msgstr "फ़ोल्डर से"
 
 #. i18n: ectx: property (text), widget (QPushButton, newFolderButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:74
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:74
 #, fuzzy, kde-format
 msgid "New..."
 msgstr "नया... (&N)"
 
 #. i18n: ectx: property (text), widget (QPushButton, renameFolderButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:81
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:81
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:62
 #, kde-format
 msgid "Rename..."
 msgstr "नाम बदलें..."
 
 #. i18n: ectx: property (text), widget (QPushButton, editBookmarkButton)
-#: core/utilities/geolocation/marble/BookmarkManagerDialog.ui:141
+#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:141
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
 #: core/utilities/lighttable/lighttablethumbbar.cpp:264
@@ -53403,6 +53351,69 @@ msgstr "नाम बदलें..."
 #, kde-format
 msgid "Edit"
 msgstr "संपादन"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, UiEditBookmarkDialog)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:14
+#, fuzzy, kde-format
+msgid "Edit Bookmark"
+msgstr "कैमरा जोड़ें..."
+
+#. i18n: ectx: property (text), widget (QLabel, description_lbl)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:25
+#, fuzzy, kde-format
+msgid "&Description:"
+msgstr "वर्णन"
+
+#. i18n: ectx: property (html), widget (QTextEdit, m_description)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:50
+#, kde-format
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
+"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
+"<tr>\n"
+"<td style=\"border: none;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, folder_lbl)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:57
+#, fuzzy, kde-format
+msgid "&Folder:"
+msgstr "फ़ोल्डर से"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_newFolderButton)
+#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:79
+#, fuzzy, kde-format
+#| msgid "Add Folders..."
+msgid "&Add Folder..."
+msgstr "फ़ोल्डर जोड़ें..."
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
+#: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:14
+#, fuzzy, kde-format
+msgid "New Bookmark Folder"
+msgstr "इस स्थान पर जाएं"
+
+#. i18n: ectx: property (text), widget (QLabel, m_namelbl)
+#: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:22
+#, fuzzy, kde-format
+msgid "&Folder name:"
+msgstr "नया छवि फ़ाइल नाम"
 
 #: core/utilities/geolocation/marble/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -53638,224 +53649,6 @@ msgstr ""
 msgid "Estimated download size: %1 kB"
 msgstr ""
 
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiEditBookmarkDialog)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:14
-#, fuzzy, kde-format
-msgid "Edit Bookmark"
-msgstr "कैमरा जोड़ें..."
-
-#. i18n: ectx: property (text), widget (QLabel, description_lbl)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:25
-#, fuzzy, kde-format
-msgid "&Description:"
-msgstr "वर्णन"
-
-#. i18n: ectx: property (html), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:50
-#, kde-format
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-"<tr>\n"
-"<td style=\"border: none;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, folder_lbl)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:57
-#, fuzzy, kde-format
-msgid "&Folder:"
-msgstr "फ़ोल्डर से"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_newFolderButton)
-#: core/utilities/geolocation/marble/EditBookmarkDialog.ui:79
-#, fuzzy, kde-format
-#| msgid "Add Folders..."
-msgid "&Add Folder..."
-msgstr "फ़ोल्डर जोड़ें..."
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:111
-#, fuzzy, kde-format
-msgid "Untitled Placemark"
-msgstr "शीर्षक"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:159
-#, fuzzy, kde-format
-msgid "Relations"
-msgstr "इंटरफ़ेस विकल्प"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:168
-#, fuzzy, kde-format
-#| msgid "Iteration:"
-msgid "Elevation"
-msgstr "इटेरेशन:"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:372
-#, kde-format
-msgid "Please specify a name for this placemark."
-msgstr ""
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:375
-#, fuzzy, kde-format
-#| msgid "Unspecified"
-msgid "No ID specified"
-msgstr "अविशिष्ट"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:376
-#, kde-format
-msgid "Please specify a ID for this placemark."
-msgstr ""
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:379
-#, kde-format
-msgid "ID is invalid"
-msgstr ""
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:380
-#, kde-format
-msgid "Please specify a valid ID for this placemark."
-msgstr ""
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:383
-#, fuzzy, kde-format
-msgid "No image specified"
-msgstr "कोई वस्तु चुना नहीं गया"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:384
-#, kde-format
-msgid "Please specify an icon for this placemark or add a valid tag."
-msgstr ""
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:387
-#, fuzzy, kde-format
-msgid "Invalid icon path"
-msgstr "नया छवि फ़ाइल नाम"
-
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.cpp:388
-#, kde-format
-msgid "Please specify a valid path for the icon file."
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiEditPlacemarkDialog)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:20
-#, fuzzy, kde-format
-msgid "Edit placemark"
-msgstr "कैमरा जोड़ें..."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_isBalloonVisible)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:47
-#, kde-format
-msgid "Show Balloon Popup"
-msgstr ""
-
-#. i18n: ectx: attribute (title), widget (QWidget, style_color_tab)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:55
-#, fuzzy, kde-format
-msgid "Style, Color"
-msgstr "रंगः"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:61
-#, fuzzy, kde-format
-#| msgid "Labels"
-msgid "Label"
-msgstr "लेबल्स"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, m_iconColorField)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:74
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:186
-#, fuzzy, kde-format
-#| msgctxt "font color"
-#| msgid "Color:"
-msgid "Color:"
-msgstr "रंगः"
-
-#. i18n: ectx: property (text), widget (QLabel, m_labelScaleField)
-#. i18n: ectx: property (text), widget (QLabel, m_iconScaleField)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:129
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:244
-#, fuzzy, kde-format
-msgid "Scale:"
-msgstr "रेटिंग"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:170
-#, fuzzy, kde-format
-#| msgid "&Icon:"
-msgid "Icon"
-msgstr "प्रतीकः (&I)"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_isPlacemarkVisible)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:285
-#, fuzzy, kde-format
-msgid "Show placemark"
-msgstr "कैमरा तारीख दिखाएँ"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:326
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:329
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:190
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:193
-#, kde-format
-msgid "Bold"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:341
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:344
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:205
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:208
-#, fuzzy, kde-format
-msgid "Italics"
-msgstr "आज"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:356
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:359
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:220
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:223
-#, fuzzy, kde-format
-#| msgid "Not defined"
-msgid "Underlined"
-msgstr "पारिभाषित नहीं"
-
-#. i18n: ectx: property (text), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (toolTip), widget (QDialogButtonBox, buttonBox)
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#. i18n: ectx: property (toolTip), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:368
-#: core/utilities/geolocation/marble/EditPlacemarkDialog.ui:371
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:232
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:235
-#, fuzzy, kde-format
-msgid "Add image"
-msgstr "छवि लोड की जा रही है..."
-
 #. i18n: ectx: property (text), widget (QLabel, elevationLabel)
 #: core/utilities/geolocation/marble/ElevationWidget.ui:19
 #, fuzzy, kde-format
@@ -53874,155 +53667,6 @@ msgstr ""
 #, kde-format
 msgid "above sea level"
 msgstr ""
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:53
-#: core/utilities/geolocation/marble/WaitEditWidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "Seconds"
-#| msgid "s"
-msgctxt "seconds"
-msgid " s"
-msgstr "से."
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Model:"
-msgid "Mode:"
-msgstr "मॉडलः"
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:64
-#, fuzzy, kde-format
-msgid "Smooth"
-msgstr "मृदुलता:"
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:65
-#, kde-format
-msgid "Bounce"
-msgstr ""
-
-#: core/utilities/geolocation/marble/FlyToEditWidget.cpp:82
-#, fuzzy, kde-format
-msgid "Current map center"
-msgstr "खोज मिटाएँ"
-
-#: core/utilities/geolocation/marble/FormattedTextWidget.cpp:181
-#, fuzzy, kde-format
-#| msgid "Close view"
-msgid "Choose image"
-msgstr "पास से दृश्य"
-
-#: core/utilities/geolocation/marble/FormattedTextWidget.cpp:181
-#, fuzzy, kde-format
-msgid "All Supported Files (*.png *.jpg *.jpeg)"
-msgstr "फ़ाइल छोड़ा %1"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_isFormattedTextMode)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:46
-#, fuzzy, kde-format
-msgid "Formatted text"
-msgstr "निर्यात"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:70
-#, kde-format
-msgid "6"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:75
-#, kde-format
-msgid "8"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:80
-#, kde-format
-msgid "9"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:85
-#, kde-format
-msgid "10"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:90
-#, kde-format
-msgid "11"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:95
-#, kde-format
-msgid "12"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:100
-#, kde-format
-msgid "14"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:105
-#, kde-format
-msgid "16"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:110
-#, kde-format
-msgid "18"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:115
-#, kde-format
-msgid "20"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:120
-#, kde-format
-msgid "24"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:125
-#, kde-format
-msgid "36"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:130
-#, kde-format
-msgid "48"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:135
-#, kde-format
-msgid "72"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, m_fontSize)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:140
-#, kde-format
-msgid "96"
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QToolBar, m_formattedTextToolBar)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:148
-#, kde-format
-msgid "toolBar"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/FormattedTextWidget.ui:252
-#, fuzzy, kde-format
-msgid "Color"
-msgstr "रंग"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
@@ -55933,48 +55577,6 @@ msgstr "इंडैक्स्ड"
 msgid "Playlist"
 msgstr "सभी साफ करें"
 
-#: core/utilities/geolocation/marble/GoToDialog.cpp:167
-#, fuzzy, kde-format
-msgid "Current Location: %1"
-msgstr "छवि शीर्षक"
-
-#: core/utilities/geolocation/marble/GoToDialog.cpp:353
-#, kde-format
-msgid "Address or search term"
-msgstr ""
-
-#: core/utilities/geolocation/marble/GoToDialog.cpp:439
-#, kde-format
-msgctxt "Number of search results"
-msgid "%n result(s) found."
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, GoTo)
-#: core/utilities/geolocation/marble/GoToDialog.ui:14
-#, fuzzy, kde-format
-#| msgid "Go To"
-msgid "Go To..."
-msgstr " पर जाएं"
-
-#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/marble/GoToDialog.ui:78
-#, kde-format
-msgid ""
-"Enter a search term and press Enter. <a href=\"https://userbase.kde.org/"
-"Marble/Search\">Details...</a>"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, searchButton)
-#. i18n: ectx: property (text), widget (QPushButton, searchButton)
-#: core/utilities/geolocation/marble/GoToDialog.ui:103
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:203
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:86
-#, fuzzy, kde-format
-#| msgctxt "Advanced search images, access stored searches"
-#| msgid "Search"
-msgid "Search"
-msgstr "खोजें"
-
 #. i18n: ectx: property (windowTitle), widget (QWidget, LatLonBoxWidget)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:17
 #, fuzzy, kde-format
@@ -56295,11 +55897,6 @@ msgstr "ऊपरी"
 #| msgid "Error"
 msgid "Test Login"
 msgstr "त्रुटि"
-
-#: core/utilities/geolocation/marble/MarbleLineEdit.cpp:56
-#, fuzzy, kde-format
-msgid "Clear"
-msgstr "कैलेन्डर"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:122
 #, fuzzy, kde-format
@@ -57110,145 +56707,11 @@ msgstr ""
 msgid "Address Details"
 msgstr "पताः"
 
-#: core/utilities/geolocation/marble/MovieCapture.cpp:35
+#: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:84
 #, fuzzy, kde-format
-msgid "Missing encoding tools"
-msgstr "यह टैग आबंटित करें"
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:36
-#, kde-format
-msgid ""
-"Marble requires additional software in order to create movies. Please get %1 "
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:61
-#, kde-format
-msgid "AVI (mpeg4)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:62
-#, kde-format
-msgid "FLV"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:63
-#, kde-format
-msgid "Matroska (h264)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:64
-#, fuzzy, kde-format
-msgid "MPEG-4"
-msgstr "जेपीईजी 2000 गुण:"
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:65
-#, kde-format
-msgid "MPEG-2 PS (VOB)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:66
-#, kde-format
-msgid "OGG"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCapture.cpp:67
-#, kde-format
-msgid "SWF"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:26
-#, fuzzy, kde-format
-msgctxt "Start recording a movie"
-msgid "&Start"
-msgstr "सामर्थ्य:"
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:56
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:67
-#, fuzzy, kde-format
-#| msgid "No options available"
-msgid "Codecs are unavailable"
-msgstr "कोई विकल्प उपलब्ध नहीं हैं."
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:56
-#, fuzzy, kde-format
-msgid "Supported codecs are not found."
-msgstr "संग्रह: (&l)"
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:68
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:79
-#, fuzzy, kde-format
-msgid "Save video file"
-msgstr "मूवी फ़ाइलें"
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:89
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:100
-#, fuzzy, kde-format
-msgid "Filename is not valid"
-msgstr "लक्ष्य यूआरएल %1 वैध नहीं है. "
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:90
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:101
-#, kde-format
-msgid "This file format is not supported. Please, use %1 instead"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:104
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:118
-#, fuzzy, kde-format
-#| msgid "Calendar"
-msgid "Missing filename"
-msgstr "कैलेन्डर"
-
-#: core/utilities/geolocation/marble/MovieCaptureDialog.cpp:105
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:119
-#, kde-format
-msgid ""
-"Destination video file is not set. I don't know where to save recorded "
-"video. Please, specify one."
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, TourCaptureDialog)
-#. i18n: ectx: property (windowTitle), widget (QDialog, MovieCaptureDialog)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:14
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:20
-#, fuzzy, kde-format
-msgid "Movie Recording"
-msgstr "रॉ डिकोडिंग"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:20
-#, fuzzy, kde-format
-#| msgid "Destination:"
-msgid "Destination video:"
-msgstr "गंतव्य:"
-
-#. i18n: ectx: property (text), widget (QPushButton, openButton)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:36
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:81
-#, fuzzy, kde-format
-#| msgctxt "@action: file open dialog"
-#| msgid "Open..."
-msgid "Open..."
-msgstr "खोलें..."
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/MovieCaptureDialog.ui:45
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:97
-#, kde-format
-msgid "FPS (frames per second)"
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
-#: core/utilities/geolocation/marble/NewBookmarkFolderDialog.ui:14
-#, fuzzy, kde-format
-msgid "New Bookmark Folder"
-msgstr "इस स्थान पर जाएं"
-
-#. i18n: ectx: property (text), widget (QLabel, m_namelbl)
-#: core/utilities/geolocation/marble/NewBookmarkFolderDialog.ui:22
-#, fuzzy, kde-format
-msgid "&Folder name:"
-msgstr "नया छवि फ़ाइल नाम"
+#| msgid "Unspecified"
+msgid "No name specified"
+msgstr "अविशिष्ट"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
@@ -57292,7 +56755,7 @@ msgid "Add Relation"
 msgstr "संग्रह से"
 
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.cpp:95
-#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:104
+#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:105
 #, fuzzy, kde-format
 #| msgid "Tuvalu"
 msgid "value"
@@ -57332,7 +56795,7 @@ msgstr ">"
 msgid "Related Tags"
 msgstr "छवियाँ सहेजें"
 
-#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:32
+#: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:34
 #, fuzzy, kde-format
 #| msgid "Add Images..."
 msgid "Add custom tag..."
@@ -57347,6 +56810,14 @@ msgstr "फ़ोल्डर खोलें"
 #, fuzzy, kde-format
 msgid "All Supported Files (*.png)"
 msgstr "फ़ाइल छोड़ा %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:64
+#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
+#, fuzzy, kde-format
+msgid "Name:"
+msgstr "नाम:"
 
 #. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
 #: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:81
@@ -57851,11 +57322,6 @@ msgstr "सिंक्रोनाइज़"
 msgid "Last synchronization: %1"
 msgstr "छवि जानकारी आयातित"
 
-#: core/utilities/geolocation/marble/RemoveItemEditWidget.cpp:35
-#, fuzzy, kde-format
-msgid "Choose item:"
-msgstr "पिक्सेल्स:"
-
 #: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:30
 #, kde-format
 msgid "Current Route Position Provider Plugin"
@@ -57870,6 +57336,48 @@ msgstr "गणनाः"
 #, kde-format
 msgid "Simulates traveling along the current route."
 msgstr ""
+
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:167
+#, fuzzy, kde-format
+msgid "Current Location: %1"
+msgstr "छवि शीर्षक"
+
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:353
+#, kde-format
+msgid "Address or search term"
+msgstr ""
+
+#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:439
+#, kde-format
+msgctxt "Number of search results"
+msgid "%n result(s) found."
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, GoTo)
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:14
+#, fuzzy, kde-format
+#| msgid "Go To"
+msgid "Go To..."
+msgstr " पर जाएं"
+
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:78
+#, kde-format
+msgid ""
+"Enter a search term and press Enter. <a href=\"https://userbase.kde.org/"
+"Marble/Search\">Details...</a>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, searchButton)
+#. i18n: ectx: property (text), widget (QRadioButton, searchButton)
+#: core/utilities/geolocation/marble/routing/GoToDialog.ui:103
+#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:203
+#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:86
+#, fuzzy, kde-format
+#| msgctxt "Advanced search images, access stored searches"
+#| msgid "Search"
+msgid "Search"
+msgstr "खोजें"
 
 #: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:252
 #, fuzzy, kde-format
@@ -58048,6 +57556,11 @@ msgstr "संग्रह में नया रिक्त एलबम ब�
 #| msgid "Align text to the right"
 msgid "Take the exit to the right onto %1."
 msgstr "पाठ को दाईं ओर जमाएँ"
+
+#: core/utilities/geolocation/marble/routing/MarbleLineEdit.cpp:56
+#, fuzzy, kde-format
+msgid "Clear"
+msgstr "कैलेन्डर"
 
 #: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:110
 #, fuzzy, kde-format
@@ -58389,29 +57902,6 @@ msgctxt "journey duration"
 msgid "%1:%2 h"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:74
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:97
-#, fuzzy, kde-format
-msgid "Global Search"
-msgstr "मेरे खोज"
-
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:77
-#: core/utilities/geolocation/marble/SearchInputWidget.cpp:97
-#, fuzzy, kde-format
-msgid "Area Search"
-msgstr "मेरे खोज"
-
-#: core/utilities/geolocation/marble/SearchWidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Search Rules"
-msgid "Search Results"
-msgstr "ढूंढने के नियम"
-
-#: core/utilities/geolocation/marble/SearchWidget.cpp:76
-#, kde-format
-msgid "Search for '%1'"
-msgstr ""
-
 #: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
 #, fuzzy, kde-format
 #| msgid "Select None"
@@ -58484,50 +57974,6 @@ msgstr "स्वतः"
 #| msgid "Tile size:"
 msgid "Maximum Tile Level"
 msgstr "टाइल आकार:"
-
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:67
-#, kde-format
-msgid ""
-"Supported codecs are not found. (ffmpeg/avconv needs to be installed and in "
-"PATH.)"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:112
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:132
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:167
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:189
-#, fuzzy, kde-format
-msgid "Start"
-msgstr "सामर्थ्य:"
-
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:150
-#, fuzzy, kde-format
-msgid "Video writing failed."
-msgstr "कैमरा तारीख दिखाएँ"
-
-#: core/utilities/geolocation/marble/TourCaptureDialog.cpp:168
-#, fuzzy, kde-format
-msgid "Video export completed."
-msgstr "स्लाइड-शो"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/utilities/geolocation/marble/TourCaptureDialog.ui:65
-#, fuzzy, kde-format
-#| msgid "Destination:"
-msgid "Destination video"
-msgstr "गंतव्य:"
-
-#: core/utilities/geolocation/marble/TourControlEditWidget.cpp:41
-#, kde-format
-msgid "Pause"
-msgstr ""
-
-#: core/utilities/geolocation/marble/WaitEditWidget.cpp:38
-#, fuzzy, kde-format
-#| msgid "Saturation:"
-msgid "Wait duration:"
-msgstr "संतृप्ति:"
 
 #: core/utilities/imageeditor/core/undoaction.cpp:147
 #, fuzzy, kde-format
@@ -67541,6 +66987,212 @@ msgstr "<p>सभी फ़िल्टर पैरामीटर को उ�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "<p>सभी फ़िल्टर पैरामीटर को उनके डिफ़ॉल्ट मूल्य में रीसेट करें."
+
+#, fuzzy
+#~| msgid "Unspecified"
+#~ msgid "No URL specified"
+#~ msgstr "अविशिष्ट"
+
+#, fuzzy
+#~ msgid "Add link"
+#~ msgstr "फ़िल्म ग्रेन जोड़ें..."
+
+#, fuzzy
+#~ msgid "Untitled Placemark"
+#~ msgstr "शीर्षक"
+
+#, fuzzy
+#~ msgid "Relations"
+#~ msgstr "इंटरफ़ेस विकल्प"
+
+#, fuzzy
+#~| msgid "Iteration:"
+#~ msgid "Elevation"
+#~ msgstr "इटेरेशन:"
+
+#, fuzzy
+#~| msgid "Unspecified"
+#~ msgid "No ID specified"
+#~ msgstr "अविशिष्ट"
+
+#, fuzzy
+#~ msgid "No image specified"
+#~ msgstr "कोई वस्तु चुना नहीं गया"
+
+#, fuzzy
+#~ msgid "Invalid icon path"
+#~ msgstr "नया छवि फ़ाइल नाम"
+
+#, fuzzy
+#~ msgid "Edit placemark"
+#~ msgstr "कैमरा जोड़ें..."
+
+#, fuzzy
+#~ msgid "Style, Color"
+#~ msgstr "रंगः"
+
+#, fuzzy
+#~| msgid "Labels"
+#~ msgid "Label"
+#~ msgstr "लेबल्स"
+
+#, fuzzy
+#~| msgctxt "font color"
+#~| msgid "Color:"
+#~ msgid "Color:"
+#~ msgstr "रंगः"
+
+#, fuzzy
+#~ msgid "Scale:"
+#~ msgstr "रेटिंग"
+
+#, fuzzy
+#~| msgid "&Icon:"
+#~ msgid "Icon"
+#~ msgstr "प्रतीकः (&I)"
+
+#, fuzzy
+#~ msgid "Show placemark"
+#~ msgstr "कैमरा तारीख दिखाएँ"
+
+#, fuzzy
+#~ msgid "Italics"
+#~ msgstr "आज"
+
+#, fuzzy
+#~| msgid "Not defined"
+#~ msgid "Underlined"
+#~ msgstr "पारिभाषित नहीं"
+
+#, fuzzy
+#~ msgid "Add image"
+#~ msgstr "छवि लोड की जा रही है..."
+
+#, fuzzy
+#~| msgctxt "Seconds"
+#~| msgid "s"
+#~ msgctxt "seconds"
+#~ msgid " s"
+#~ msgstr "से."
+
+#, fuzzy
+#~| msgid "Model:"
+#~ msgid "Mode:"
+#~ msgstr "मॉडलः"
+
+#, fuzzy
+#~ msgid "Smooth"
+#~ msgstr "मृदुलता:"
+
+#, fuzzy
+#~ msgid "Current map center"
+#~ msgstr "खोज मिटाएँ"
+
+#, fuzzy
+#~| msgid "Close view"
+#~ msgid "Choose image"
+#~ msgstr "पास से दृश्य"
+
+#, fuzzy
+#~ msgid "All Supported Files (*.png *.jpg *.jpeg)"
+#~ msgstr "फ़ाइल छोड़ा %1"
+
+#, fuzzy
+#~ msgid "Formatted text"
+#~ msgstr "निर्यात"
+
+#, fuzzy
+#~ msgid "Color"
+#~ msgstr "रंग"
+
+#, fuzzy
+#~ msgid "Missing encoding tools"
+#~ msgstr "यह टैग आबंटित करें"
+
+#, fuzzy
+#~ msgid "MPEG-4"
+#~ msgstr "जेपीईजी 2000 गुण:"
+
+#, fuzzy
+#~ msgctxt "Start recording a movie"
+#~ msgid "&Start"
+#~ msgstr "सामर्थ्य:"
+
+#, fuzzy
+#~| msgid "No options available"
+#~ msgid "Codecs are unavailable"
+#~ msgstr "कोई विकल्प उपलब्ध नहीं हैं."
+
+#, fuzzy
+#~ msgid "Supported codecs are not found."
+#~ msgstr "संग्रह: (&l)"
+
+#, fuzzy
+#~ msgid "Save video file"
+#~ msgstr "मूवी फ़ाइलें"
+
+#, fuzzy
+#~ msgid "Filename is not valid"
+#~ msgstr "लक्ष्य यूआरएल %1 वैध नहीं है. "
+
+#, fuzzy
+#~| msgid "Calendar"
+#~ msgid "Missing filename"
+#~ msgstr "कैलेन्डर"
+
+#, fuzzy
+#~ msgid "Movie Recording"
+#~ msgstr "रॉ डिकोडिंग"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination video:"
+#~ msgstr "गंतव्य:"
+
+#, fuzzy
+#~| msgctxt "@action: file open dialog"
+#~| msgid "Open..."
+#~ msgid "Open..."
+#~ msgstr "खोलें..."
+
+#, fuzzy
+#~ msgid "Choose item:"
+#~ msgstr "पिक्सेल्स:"
+
+#, fuzzy
+#~ msgid "Global Search"
+#~ msgstr "मेरे खोज"
+
+#, fuzzy
+#~ msgid "Area Search"
+#~ msgstr "मेरे खोज"
+
+#, fuzzy
+#~| msgid "Search Rules"
+#~ msgid "Search Results"
+#~ msgstr "ढूंढने के नियम"
+
+#, fuzzy
+#~ msgid "Start"
+#~ msgstr "सामर्थ्य:"
+
+#, fuzzy
+#~ msgid "Video writing failed."
+#~ msgstr "कैमरा तारीख दिखाएँ"
+
+#, fuzzy
+#~ msgid "Video export completed."
+#~ msgstr "स्लाइड-शो"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination video"
+#~ msgstr "गंतव्य:"
+
+#, fuzzy
+#~| msgid "Saturation:"
+#~ msgid "Wait duration:"
+#~ msgstr "संतृप्ति:"
 
 #, fuzzy
 #~| msgid "Error"
