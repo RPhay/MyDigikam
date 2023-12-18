@@ -76,7 +76,6 @@ set(marblewidget_SRCS
     OsmcSymbol.cpp
     ParsingRunner.cpp
     ParsingRunnerManager.cpp
-    PlacemarkLayout.cpp
     Planet.cpp
     PlanetFactory.cpp
     PlaybackAnimatedUpdateItem.cpp
@@ -107,7 +106,6 @@ set(marblewidget_SRCS
     TreeViewDecoratorModel.cpp
     ViewParams.cpp
     ViewportParams.cpp
-    VisiblePlacemark.cpp
 
     astro/astrolib.cpp
     astro/astr2lib.cpp
@@ -620,10 +618,12 @@ set(marblewidget_SRCS
     layers/MarbleSplashLayer.cpp
     layers/MergedLayerDecorator.cpp
     layers/PlacemarkLayer.cpp
+    layers/PlacemarkLayout.cpp
     layers/PopupLayer.cpp
     layers/TileLayer.cpp
     layers/TextureLayer.cpp
     layers/VectorTileLayer.cpp
+    layers/VisiblePlacemark.cpp
 
     osm/OsmPlacemarkData.cpp
     osm/OsmObjectManager.cpp
