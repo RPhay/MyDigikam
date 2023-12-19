@@ -86,6 +86,8 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     QVariant compressAttr = imageGetAttribute(QLatin1String("compress"));
     bool compress         = compressAttr.isValid() ? compressAttr.toBool() : false;
 
+    qCDebug(DIGIKAM_DIMG_LOG_TIFF) << "TIFF Compression Enabled:" << compress;
+
     if (compress)
     {
         TIFFSetField(tif, TIFFTAG_COMPRESSION, COMPRESSION_ADOBE_DEFLATE);
