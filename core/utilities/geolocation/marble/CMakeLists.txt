@@ -26,18 +26,6 @@ endif()
 
 set(marblewidget_SRCS
 
-    AbstractFloatItem.cpp
-    AbstractWorkerThread.cpp
-    ClipPainter.cpp
-    EquirectScanlineTextureMapper.cpp
-    GenericScanlineTextureMapper.cpp
-    HttpDownloadManager.cpp
-    HttpJob.cpp
-    ImageF.cpp
-    LatLonBoxWidget.cpp
-    MapThemeManager.cpp
-    MapViewItemDelegate.cpp
-    MarbleAbstractPresenter.cpp
     MarbleClock.cpp
     MarbleColors.cpp
     MarbleDirs.cpp
@@ -50,30 +38,12 @@ set(marblewidget_SRCS
     MarbleWidgetInputHandler.cpp
     MarbleWidgetPopupMenu.cpp
     MarbleZip.cpp
-    MathHelper.cpp
-    MercatorScanlineTextureMapper.cpp
-    OsmcSymbol.cpp
     ParsingRunner.cpp
     ParsingRunnerManager.cpp
-    Planet.cpp
-    PlanetFactory.cpp
-    PositionTracking.cpp
-    Quaternion.cpp
-    RenderState.cpp
     ReverseGeocodingRunner.cpp
     ReverseGeocodingRunnerManager.cpp
-    RunnerTask.cpp
-    ScanlineTextureMapperContext.cpp
     SearchRunner.cpp
     SearchRunnerManager.cpp
-    SphericalScanlineTextureMapper.cpp
-    StyleBuilder.cpp
-    SunLocator.cpp
-    TemplateDocument.cpp
-    TextureColorizer.cpp
-    TextureMapperInterface.cpp
-    ViewParams.cpp
-    ViewportParams.cpp
 
     astro/astrolib.cpp
     astro/astr2lib.cpp
@@ -81,6 +51,9 @@ set(marblewidget_SRCS
     astro/eclsolar.cpp
     astro/planetarySats.cpp
     astro/solarsystem.cpp
+    astro/Planet.cpp
+    astro/PlanetFactory.cpp
+    astro/SunLocator.cpp
 
     blendings/Blending.cpp
     blendings/BlendingAlgorithms.cpp
@@ -104,6 +77,26 @@ set(marblewidget_SRCS
     cloudsync/MergeItem.cpp
     cloudsync/ConflictDialog.cpp
     cloudsync/OwncloudSyncBackend.cpp
+
+    core/AbstractFloatItem.cpp
+    core/AbstractWorkerThread.cpp
+    core/EquirectScanlineTextureMapper.cpp
+    core/ImageF.cpp
+    core/GenericScanlineTextureMapper.cpp
+    core/MarbleAbstractPresenter.cpp
+    core/MathHelper.cpp
+    core/MercatorScanlineTextureMapper.cpp
+    core/Quaternion.cpp
+    core/RenderState.cpp
+    core/RunnerTask.cpp
+    core/SphericalScanlineTextureMapper.cpp
+    core/ScanlineTextureMapperContext.cpp
+    core/StyleBuilder.cpp
+    core/TemplateDocument.cpp
+    core/TextureColorizer.cpp
+    core/TextureMapperInterface.cpp
+    core/ViewParams.cpp
+    core/ViewportParams.cpp
 
     geodata/data/LonLatParser.cpp
     geodata/data/GeoDataRegion.cpp
@@ -569,6 +562,7 @@ set(marblewidget_SRCS
 
     graphicsview/AbstractMarbleGraphicsLayout.cpp
     graphicsview/BillboardGraphicsItem.cpp
+    graphicsview/ClipPainter.cpp
     graphicsview/FrameGraphicsItem.cpp
     graphicsview/GeoGraphicsScene.cpp
     graphicsview/GeoGraphicsItem.cpp
@@ -602,11 +596,14 @@ set(marblewidget_SRCS
     models/GeoDataTreeModel.cpp
     models/kdescendantsproxymodel.cpp
     models/kineticmodel.cpp
+    models/MapThemeManager.cpp
     models/MapThemeSortFilterProxyModel.cpp
     models/MarbleModel.cpp
     models/MarblePlacemarkModel.cpp
+    models/PositionTracking.cpp
     models/TreeViewDecoratorModel.cpp
 
+    osm/OsmcSymbol.cpp
     osm/OsmPlacemarkData.cpp
     osm/OsmObjectManager.cpp
     osm/OsmTagEditorWidget.cpp
@@ -693,6 +690,9 @@ set(marblewidget_SRCS
     storage/FileManager.cpp
     storage/FileStoragePolicy.cpp
     storage/FileStorageWatcher.cpp
+    storage/HttpDownloadManager.cpp
+    storage/HttpJob.cpp
+    storage/LatLonBoxWidget.cpp
     storage/RemoteIconLoader.cpp
     storage/StoragePolicy.cpp
 
@@ -712,8 +712,6 @@ set(marblewidget_SRCS
 )
 
 set (marblewidget_UI
-
-    LatLonBoxWidget.ui
 
     bookmark/BookmarkManagerDialog.ui
     bookmark/EditBookmarkDialog.ui
@@ -737,6 +735,8 @@ set (marblewidget_UI
     settings/MarblePluginSettingsWidget.ui
     settings/MarbleTimeSettingsWidget.ui
     settings/MarbleViewSettingsWidget.ui
+
+    storage/LatLonBoxWidget.ui
 
     tile/TileCreatorDialog.ui
     tile/TileLevelRangeWidget.ui
