@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-18 00:39+0000\n"
-"PO-Revision-Date: 2023-12-15 08:10+0200\n"
+"POT-Creation-Date: 2023-12-19 00:39+0000\n"
+"PO-Revision-Date: 2023-12-18 12:33+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -3608,7 +3608,7 @@ msgstr ""
 "Серед нових можливостей у цьому випуску digiKam (порівняно із digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:210
-#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:351
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:351
 #, kde-format
 msgid "About"
 msgstr "Про програму"
@@ -6560,7 +6560,7 @@ msgstr ""
 #: core/dplugins/bqm/transform/crop/crop.cpp:96
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:349
 #: core/libs/template/templateviewer.cpp:145
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:115
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:115
 #, kde-format
 msgid "Position:"
 msgstr "Посада:"
@@ -20774,8 +20774,8 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:54
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:127
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:54
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:127
 #, kde-format
 msgid " MB"
 msgstr " МБ"
@@ -23508,7 +23508,7 @@ msgstr "Тепер слід використовувати метод POST дл�
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:540
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
-#: core/utilities/geolocation/marble/PositionProviderPluginInterface.cpp:25
+#: core/utilities/geolocation/marble/plugins/PositionProviderPluginInterface.cpp:25
 #, kde-format
 msgid "Unknown error"
 msgstr "Невідома помилка"
@@ -26180,7 +26180,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
 #: core/libs/dplugins/webservices/wslogindialog.cpp:89
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:181
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:181
 #, kde-format
 msgid "Password:"
 msgstr "Пароль:"
@@ -28784,7 +28784,7 @@ msgstr ""
 "%1\n"
 "(Початкове зображення)"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:193
+#: core/libs/database/item/scanner/itemscanner.cpp:192
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -42505,7 +42505,7 @@ msgstr "Змінити"
 
 #. i18n: ectx: property (text), widget (QPushButton, iconLinkButton)
 #: core/libs/widgets/files/dfileselector.cpp:58
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:46
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:46
 #, kde-format
 msgid "Browse..."
 msgstr "Вибрати…"
@@ -50296,7 +50296,7 @@ msgstr ""
 "зображень</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:142
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:145
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:145
 #, kde-format
 msgid "Plugins"
 msgstr "Додатки"
@@ -53751,12 +53751,10 @@ msgid "Unknown title"
 msgstr "Невідомий заголовок"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Bookmark"
-msgstr "Додати закладку"
+msgstr "Додавання закладки"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:94
 #, kde-format
@@ -55031,6 +55029,68 @@ msgstr "Т&ека:"
 msgid "&Add Folder..."
 msgstr "&Додати теку…"
 
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_intValueEditor)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:129
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:28
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:47
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:99
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:151
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:203
+#, kde-format
+msgid "°"
+msgstr "°"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:179
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:338
+#, kde-format
+msgid "'"
+msgstr "'"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:180
+#, kde-format
+msgid "\""
+msgstr "\""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:526
+#, kde-format
+msgctxt "East, the direction"
+msgid "E"
+msgstr "Сх"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:527
+#, kde-format
+msgctxt "West, the direction"
+msgid "W"
+msgstr "Зх"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:530
+#, kde-format
+msgctxt "North, the direction"
+msgid "N"
+msgstr "Пн"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:531
+#, kde-format
+msgctxt "South, the direction"
+msgid "S"
+msgstr "Пд"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:38
+#, kde-format
+msgid "′"
+msgstr "′"
+
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:54
+#, kde-format
+msgid "″"
+msgstr "″"
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
 #: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:14
 #, kde-format
@@ -55043,10 +55103,41 @@ msgstr "Нова тека закладок"
 msgid "&Folder name:"
 msgstr "&Назва теки:"
 
-#: core/utilities/geolocation/marble/CacheStoragePolicy.cpp:36
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:210
 #, kde-format
-msgid "Unable to insert data into cache"
-msgstr "Не вдалося додати дані до кешу"
+msgid "Open File"
+msgstr "Відкрити файл"
+
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:212
+#, kde-format
+msgid "All Supported Files (*.png)"
+msgstr "усі підтримувані файли (*.png)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:64
+#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
+#, kde-format
+msgid "Name:"
+msgstr "Назва:"
+
+#. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:81
+#, kde-format
+msgid "Icon link:"
+msgstr "Посилання піктограми:"
+
+#. i18n: ectx: property (text), widget (QLabel, idLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:91
+#, kde-format
+msgid "ID:"
+msgstr "Ід.:"
+
+#. i18n: ectx: property (text), widget (QLabel, targetIdLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:104
+#, kde-format
+msgid "Target ID:"
+msgstr "Ід. призначення:"
 
 #: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:33
 #: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:34
@@ -55191,105 +55282,6 @@ msgstr "Вилучити з «хмари»"
 #, kde-format
 msgid "Upload to cloud"
 msgstr "Вивантажити до «хмари»"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:136
-#, kde-format
-msgid "Visible region"
-msgstr "Видима ділянка"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:138
-#, kde-format
-msgid "Specify region"
-msgstr "Вказати ділянку"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:140
-#, kde-format
-msgid "Download Route"
-msgstr "Отримати маршрут"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:142
-#, kde-format
-msgid "Enabled when a route exists"
-msgstr "Увімкнено, якщо маршрут існує"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:155
-#, kde-format
-msgid "Offset from route:"
-msgstr "Відхилення від маршруту:"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:190
-#, kde-format
-msgid "Selection Method"
-msgstr "Спосіб вибору"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:198
-#, kde-format
-msgid "Number of tiles to download:"
-msgstr "Кількість елементів для отримання:"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:248
-#, kde-format
-msgid "Download Region"
-msgstr "Отримання ділянки"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:250
-#, kde-format
-msgid "Tile type to be downloaded:"
-msgstr "Тип плиток, які буде отримано:"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:252
-#, kde-format
-msgid "Texture tiles"
-msgstr "Плитки текстур"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:253
-#, kde-format
-msgid "Vector tiles"
-msgstr "Векторні плитки"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:254
-#, kde-format
-msgid "Allows selection between layer types that are visibly being rendered."
-msgstr ""
-"Надає змогу вибирати тип шарів, які буде показано під час обробки зображення."
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:523
-#, kde-format
-msgid "There is a limit of %1 tile(s) to download."
-msgstr "Передбачено обмеження отримання даних у %1 плиток."
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:533
-#, kde-format
-msgid "Approximate size of the tiles to be downloaded"
-msgstr "Приблизний об’єм даних, які доведеться отримати"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:537
-#, kde-format
-msgid "Estimated download size: %1 MB"
-msgstr "Приблизний об’єм отримання: %1 МБ"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:540
-#, kde-format
-msgid "Estimated download size: %1 kB"
-msgstr "Приблизний об’єм отримання: %1 кБ"
-
-#. i18n: ectx: property (text), widget (QLabel, elevationLabel)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:19
-#, kde-format
-msgid "Elevation:"
-msgstr "Висота над рівнем моря:"
-
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, elevationSpinBox)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:26
-#, kde-format
-msgid " m"
-msgstr " м"
-
-#. i18n: ectx: property (text), widget (QLabel, elevationModeLabel)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:36
-#, kde-format
-msgid "above sea level"
-msgstr "над рівнем моря"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
@@ -57157,21 +57149,6 @@ msgstr "Вибір географічної ділянки"
 msgid "Northern Latitude"
 msgstr "Північна широта"
 
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_intValueEditor)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:47
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:99
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:151
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:203
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:129
-#: core/utilities/geolocation/marble/LatLonEdit.ui:28
-#, kde-format
-msgid "°"
-msgstr "°"
-
 #. i18n: ectx: property (text), widget (QLabel, northLabel)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:66
 #, kde-format
@@ -57213,271 +57190,6 @@ msgstr "Південна широта"
 #, kde-format
 msgid "&S"
 msgstr "п&д. ш."
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:179
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:338
-#, kde-format
-msgid "'"
-msgstr "'"
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:180
-#, kde-format
-msgid "\""
-msgstr "\""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:526
-#, kde-format
-msgctxt "East, the direction"
-msgid "E"
-msgstr "Сх"
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:527
-#, kde-format
-msgctxt "West, the direction"
-msgid "W"
-msgstr "Зх"
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:530
-#, kde-format
-msgctxt "North, the direction"
-msgid "N"
-msgstr "Пн"
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:531
-#, kde-format
-msgctxt "South, the direction"
-msgid "S"
-msgstr "Пд"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
-#: core/utilities/geolocation/marble/LatLonEdit.ui:38
-#, kde-format
-msgid "′"
-msgstr "′"
-
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
-#: core/utilities/geolocation/marble/LatLonEdit.ui:54
-#, kde-format
-msgid "″"
-msgstr "″"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:20
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
-"used for Marble: The physical memory which is needed to keep map data in the "
-"computer's memory. Increasing the value will make the application more "
-"responsive. The hard disc memory cache is used by download contents from the "
-"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
-"to save space on the hard disc and if high usage of the Internet is not an "
-"issue. </p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble використовує два "
-"різновиди кешу. Перший з них — це фізична пам’ять комп’ютера, що "
-"використовується для зберігання даних карти. Збільшення її об’єму прискорює "
-"реакцію програми на дії користувача. Другий різновид кешу — це кеш на "
-"жорсткому диску, що використовується для отримання потрібних даних з мережі "
-"(наприклад даних з Вікіпедії або даних карт). Зменшіть його розмір, якщо ви "
-"бажаєте зекономити місце на жорсткому диску і якщо збільшення навантаження "
-"на мережу не є проблемою. </p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:23
-#, kde-format
-msgid "C&ache"
-msgstr "К&еш"
-
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:41
-#, kde-format
-msgid "&Physical memory:"
-msgstr "&Фізична пам’ять:"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:73
-#, kde-format
-msgid "C&lear"
-msgstr "&Очистити"
-
-#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:105
-#, kde-format
-msgid "&Hard disc:"
-msgstr "&Жорсткий диск:"
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:124
-#, kde-format
-msgid "Unlimited"
-msgstr "Без обмеження"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:146
-#, kde-format
-msgid "Cl&ear"
-msgstr "Оч&истити"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:172
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
-"local intranet. Please leave empty if there is no proxy.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Налаштування проксі-"
-"сервера у вашій локальній мережі. Будь ласка, залиште ці поля порожніми, "
-"якщо проксі-сервера немає.</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:175
-#, kde-format
-msgid "&Proxy"
-msgstr "&Проксі"
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:183
-#, kde-format
-msgid "&Proxy:"
-msgstr "&Проксі:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:200
-#, kde-format
-msgid "P&ort:"
-msgstr "П&орт:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:256
-#, kde-format
-msgid "Proxy type:"
-msgstr "Тип проксі:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:264
-#, kde-format
-msgid "Http"
-msgstr "Http"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:269
-#, kde-format
-msgid "Socks5"
-msgstr "Socks5"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
-#. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:308
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:320
-#, kde-format
-msgid "Requires authentication"
-msgstr "Потрібне розпізнавання"
-
-#. i18n: ectx: property (text), widget (QLabel, label_username)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:326
-#, kde-format
-msgid "U&sername:"
-msgstr "Кор&истувач:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_password)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:336
-#, kde-format
-msgid "&Password:"
-msgstr "П&ароль:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableSync)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:17
-#, kde-format
-msgid "Enable synchronization"
-msgstr "Увімкнути синхронізацію"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:48
-#, kde-format
-msgid ""
-"Allows you to store routes in owncloud. Each route must be uploaded/"
-"downloaded manually."
-msgstr ""
-"Надає вам змогу зберігати дані маршрутів у системі owncloud. Кожен запис "
-"маршруту слід вивантажувати і отримувати з сервера вручну."
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:51
-#, kde-format
-msgid "Enable route synchronization"
-msgstr "Увімкнути синхронізацію маршрутів"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:84
-#, kde-format
-msgid "Automatically sync all bookmarks to the server."
-msgstr "Автоматично синхронізувати усі записи закладок з сервером."
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:87
-#, kde-format
-msgid "Enable bookmark synchronization"
-msgstr "Увімкнути синхронізацію закладок"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_syncNow)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:119
-#, kde-format
-msgid "Sync now"
-msgstr "Синхронізувати"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:147
-#, kde-format
-msgid "Credentials"
-msgstr "Реєстраційні дані"
-
-#. i18n: ectx: property (text), widget (QLabel, labelServer)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:153
-#, kde-format
-msgid "Server:"
-msgstr "Сервер:"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, kcfg_owncloudServer)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:160
-#, kde-format
-msgid "Remote server URL, e.g. myserver.com/owncloud"
-msgstr "Адреса віддаленого сервера, наприклад myserver.com/owncloud"
-
-#. i18n: ectx: property (text), widget (QLabel, labelUsername)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:167
-#, kde-format
-msgid "Username:"
-msgstr "Користувач:"
-
-#. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:197
-#, kde-format
-msgid "Test Login"
-msgstr "Тестовий вхід"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:122
 #, kde-format
@@ -57532,794 +57244,6 @@ msgstr "миля"
 msgctxt "means nautical miles"
 msgid "nm"
 msgstr "мор. миля"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:17
-#, kde-format
-msgid "Dragging and Animation"
-msgstr "Перетягування і анімація"
-
-#. i18n: ectx: property (text), widget (QLabel, label_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:37
-#, kde-format
-msgid "&Drag location:"
-msgstr "&Перетягування місця:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:54
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the mouse "
-"there are two standard behaviours when dealing with a virtual globe:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The location below mouse "
-"pointer will follow the cursor exactly: As a result e.g. the north pole will "
-"not stay at the top which can lead to confusion. By default Marble makes "
-"sure that north is always up which results in a dragging behaviour where the "
-"location below the mouse pointer slightly \"detaches\" from the cursor. </"
-"p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Під час перетягування "
-"мишею можливі два типи поведінки обробки програмою зображення віртуального "
-"глобуса:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Місце під вказівником миші "
-"пересуватиметься разом з вказівником: У результаті, наприклад північний "
-"полюс не залишатиметься вгорі карти, що може призвести до плутанини. Типово "
-"Marble завжди розташовує північ згори, що призводить до такої поведінки, "
-"коли під час пересування місце під вказівником миші трохи «відокремлюється» "
-"від вказівника. </p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:58
-#, kde-format
-msgid "Keep Planet Axis Vertically"
-msgstr "Полярна вісь залишається вертикальною"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:63
-#, kde-format
-msgid "Follow Mouse Pointer"
-msgstr "Слідувати за мишею"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:73
-#, kde-format
-msgid "Use kinetic spinning when dragging the map"
-msgstr "Кінетичне гортання під час перетягування карти"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:76
-#, kde-format
-msgid "&Inertial globe rotation"
-msgstr "&Інерційне обертання глобуса"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:86
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
-"location Marble can either move instantly to the new location or it can show "
-"a travel animation from the previous place to the new place.</p></body></"
-"html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Під час пошуку нового "
-"місця Marble може або миттєво пересувати вас до нового місця на карті, або "
-"показувати уявну подорож картою з попереднього місця до нового.</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_animateTargetVoyage)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:89
-#, kde-format
-msgid "&Animate voyage to the target"
-msgstr "&Анімована подорож до мети"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:96
-#, kde-format
-msgid "Use right mouse button to rotate the camera around"
-msgstr "Користуватися правою кнопкою миші для обертання камери"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:99
-#, kde-format
-msgid "&Mouse view rotation"
-msgstr "Обертання перегляду &мишею"
-
-#. i18n: ectx: property (text), widget (QLabel, label_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:142
-#, kde-format
-msgid "&On startup:"
-msgstr "Після &запуску:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:155
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
-"display the home location immediately after the application has started. As "
-"an alternative it can also show the last position that was active when the "
-"user left the application. </p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Типово Marble показуватиме "
-"розташування домівки одразу після запуску програми. Як варіант програма може "
-"показувати останню активну позицію на час останнього використання програми. "
-"</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:159
-#, kde-format
-msgid "Show Home Location"
-msgstr "Показувати розташування домівки"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:164
-#, kde-format
-msgid "Return to Last Location Visited"
-msgstr "Повернутися до останнього місця"
-
-#. i18n: ectx: property (text), widget (QLabel, label_externalEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:184
-#, kde-format
-msgid "&External editor:"
-msgstr "&Зовнішній редактор:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:194
-#, kde-format
-msgid ""
-"<p>The application that is launched to edit maps. Potlatch (default) "
-"requires a web browser with flash support to be installed. When selecting "
-"josm or merkaartor, make sure that the respective application is installed.</"
-"p>"
-msgstr ""
-"<p>Програма, яку буде використано для редагування карт. Для роботи у "
-"Potlatch (типова програма) потрібне інтернет-з’єднання та встановлений у "
-"системі переглядач інтернету з підтримкою flash. Якщо ви надасте перевагу "
-"josm або merkaartor, не забудьте попередньо встановити відповідну програму.</"
-"p>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:198
-#, kde-format
-msgid "Always ask"
-msgstr "Завжди питати"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:203
-#, kde-format
-msgid "Potlatch (Web browser)"
-msgstr "Potlatch (з переглядача інтернету)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:208
-#, kde-format
-msgid "JOSM"
-msgstr "JOSM"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:213
-#, kde-format
-msgid "Merkaartor"
-msgstr "Merkaartor"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/MarblePluginSettingsWidget.ui:23
-#, kde-format
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
-"Here you can select and deselect the functionality that is provided through "
-"plugins. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
-"from the map, menus and toolbars. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
-"their configuration a bit. </span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-" p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Це машинне відділення Marble для досвідчених "
-"користувачів. Тут ви можете увімкнути або вимкнути функціональні можливості, "
-"робота яких забезпечується додатками. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Зняття позначки з запису додатка вилучить відповідну "
-"функціональну можливість з карти, меню та панелей інструментів. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Крім того, для деяких додатків передбачено можливість "
-"налаштування. </span></p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/MarblePluginSettingsWidget.ui:26
-#, kde-format
-msgid "P&lugins"
-msgstr "Д&одатки"
-
-#. i18n: ectx: property (title), widget (QGroupBox, timeZone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:23
-#, kde-format
-msgid "Time Zone"
-msgstr "Часовий пояс"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_utc)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:29
-#, kde-format
-msgid "UTC"
-msgstr "Світовий"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:39
-#, kde-format
-msgid "System time zone"
-msgstr "Часовий пояс системи"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_customTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:51
-#, kde-format
-msgid "Choose Time zone"
-msgstr "Виберіть часовий пояс"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:68
-#, kde-format
-msgid "Universal Time Coordinated"
-msgstr "Універсальний координований час (UTC)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:73
-#, kde-format
-msgid "European Central Time"
-msgstr "Центральноєвропейський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:78
-#, kde-format
-msgid "Eastern European Time"
-msgstr "Східноєвропейський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:83
-#, kde-format
-msgid "Egypt Standard Time"
-msgstr "Стандартний єгипетський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:88
-#, kde-format
-msgid "Eastern African Time"
-msgstr "Східноафриканський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:93
-#, kde-format
-msgid "Middle East Time"
-msgstr "Середньосхідний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:98
-#, kde-format
-msgid "Near East Time"
-msgstr "Близькосхідний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:103
-#, kde-format
-msgid "Pakistan Lahore Time"
-msgstr "Час Лахору (Пакистан)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:108
-#, kde-format
-msgid "India Standard Time"
-msgstr "Стандартний час (Індія)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:113
-#, kde-format
-msgid "Bangladesh Standard Time"
-msgstr "Стандартний час (Бангладеш)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:118
-#, kde-format
-msgid "Vietnam Standard Time"
-msgstr "Стандартний час (В’єтнам)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:123
-#, kde-format
-msgid "China Taiwan Time"
-msgstr "Час Тайваню (Китай)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:128
-#, kde-format
-msgid "Japan Standard Time"
-msgstr "Стандартний час (Японія)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:133
-#, kde-format
-msgid "Australia Central Time"
-msgstr "Центральноавстралійський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:138
-#, kde-format
-msgid "Australia Eastern Time"
-msgstr "Східноавстралійський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:143
-#, kde-format
-msgid "Solomon Standard Time"
-msgstr "Стандартний час (Соломонові острови)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:148
-#, kde-format
-msgid "New Zealand Standard Time"
-msgstr "Стандартний час (Нова Зеландія)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:153
-#, kde-format
-msgid "Midway Islands Time"
-msgstr "Час островів Мідуей"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:158
-#, kde-format
-msgid "Hawaii Standard Time"
-msgstr "Стандартний час (Гаваї)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:163
-#, kde-format
-msgid "Alaska Standard Time"
-msgstr "Стандартний час (Аляска)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:168
-#, kde-format
-msgid "Pacific Standard Time"
-msgstr "Тихокеанський стандартний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:173
-#, kde-format
-msgid "Phoenix Standard Time"
-msgstr "Стандартний час (Фінікс)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:178
-#, kde-format
-msgid "Mountain Standard Time"
-msgstr "Гірський стандартний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:183
-#, kde-format
-msgid "Central Standard Time"
-msgstr "Центральний стандартний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:188
-#, kde-format
-msgid "Eastern Standard Time"
-msgstr "Східний стандартний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:193
-#, kde-format
-msgid "Indiana Eastern Standard Time"
-msgstr "Східний стандартний час (Індіана)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:198
-#, kde-format
-msgid "Puerto Rico and US Virgin Islands Time"
-msgstr "Час Пуерто-Рико та Віргінських островів"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:203
-#, kde-format
-msgid "Canada Newfoundland Time"
-msgstr "Час поясу Ньюфаунленду (Канада)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:208
-#, kde-format
-msgid "Argentina Standard Time"
-msgstr "Стандартний аргентинський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:213
-#, kde-format
-msgid "Brazil Eastern Time"
-msgstr "Східнобразильський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:218
-#, kde-format
-msgid "Central African Time"
-msgstr "Центральноафриканський час"
-
-#. i18n: ectx: property (title), widget (QGroupBox, whenMarbleStarts)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:231
-#, kde-format
-msgid "When Marble starts"
-msgstr "Після запуску Marble"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTime)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:237
-#, kde-format
-msgid "Load system time"
-msgstr "Завантажити час системи"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_lastSessionTime)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:247
-#, kde-format
-msgid "Load last session time"
-msgstr "Завантажити час останнього сеансу"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:17
-#, kde-format
-msgid "&Units"
-msgstr "&Одиниці"
-
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:35
-#, kde-format
-msgid "&Distance:"
-msgstr "&Відстань:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:57
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
-"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Одиниця довжини, що "
-"використовуватиметься для вимірювання висоти, довжини та відстані (наприклад "
-"км, милі, фути).</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:61
-#, kde-format
-msgid "Kilometer, Meter"
-msgstr "Кілометр, метр"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:66
-#, kde-format
-msgid "Miles, Feet"
-msgstr "Милі, фути"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:71
-#, kde-format
-msgid "Nautical miles, Knots"
-msgstr "Морські милі, вузли"
-
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:85
-#, kde-format
-msgid "An&gle:"
-msgstr "&Кут:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:101
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
-"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
-"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
-"g. 54.5°).</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Визначає спосіб показу "
-"координатних кутів: Типово використовуються позначення Градус-Мінута-Секунда "
-"(наприклад 54°30'00\" ). Як альтернативу можна використовувати позначення у "
-"градусах з дробовою частиною (наприклад 54.5°).</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:105
-#, kde-format
-msgid "Degree (DMS)"
-msgstr "Градус (із хв. і сек.)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:110
-#, kde-format
-msgid "Degree (Decimal)"
-msgstr "Градус (десятковий)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:115
-#, kde-format
-msgid "Universal Transverse Mercator (UTM)"
-msgstr "Універсальна проєкція Меркатора (UTM)"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:126
-#, kde-format
-msgid "Map &Quality"
-msgstr "&Якість карти"
-
-#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:144
-#, kde-format
-msgid "&Still image:"
-msgstr "&Статична картинка:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:157
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed while there is no user input. Usually this allows for "
-"high map quality as speed is no concern.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Визначає якість показу "
-"карти, коли користувач нічого не вводить. Зазвичай, при цьому отримується "
-"висока якість показу карти, оскільки швидкість не є визначальною.</p></"
-"body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:164
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:219
-#, kde-format
-msgid "Outline Quality"
-msgstr "Якість ескіза"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:169
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:224
-#, kde-format
-msgid "Low Quality"
-msgstr "Низька якість"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:174
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:229
-#, kde-format
-msgid "Normal"
-msgstr "Звичайна"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:179
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:234
-#, kde-format
-msgid "High Quality"
-msgstr "Висока якість"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:184
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:239
-#, kde-format
-msgid "Print Quality"
-msgstr "Поліграфічна якість"
-
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:198
-#, kde-format
-msgid "During &animations:"
-msgstr "Під час &анімації:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:212
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed during map animations (e.g. while dragging the globe). </"
-"p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-"machines it is advisable to set this option to \"low quality\" as this will "
-"give better speed.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Визначає якість зображення "
-"карти під час руху карти (наприклад перетягування глобуса). </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Цей параметр "
-"рекомендується встановити у значення «низька якість» на повільних машинах, "
-"оскільки це забезпечить кращу інтерактивність.</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:266
-#, kde-format
-msgid "&Text Labels"
-msgstr "&Текстові мітки"
-
-#. i18n: ectx: property (text), widget (QLabel, label_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:286
-#, kde-format
-msgid "&Place names:"
-msgstr "&Назви місць:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:302
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
-"different names in different languages. The label on the map can show the "
-"name in the user's language. Alternatively it can display the name in the "
-"official language and glyphs of that place. </p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Різні місця мають "
-"неоднакові назви різними мовами. Мітка на карті може показувати назву місця "
-"мовою користувача. Як інший варіант, може бути відображено назву офіційною "
-"мовою і за допомогою офіційної абетки, що усталена у цьому місці. </p></"
-"body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:306
-#, kde-format
-msgid "Custom & Native Language"
-msgstr "Нетипова і місцева мови"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:311
-#, kde-format
-msgid "Custom Language"
-msgstr "Нетипова мова"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:316
-#, kde-format
-msgid "Native Language"
-msgstr "Місцева мова"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:340
-#, kde-format
-msgid "Default map &font:"
-msgstr "Типовий &шрифт написів:"
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:353
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Типовий шрифт, що "
-"використовуватиметься на карті.</p></body></html>"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:113
 #, kde-format
@@ -58463,57 +57387,6 @@ msgstr "Пов’язані мітки"
 msgid "Add custom tag..."
 msgstr "Додати нетипову мітку…"
 
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.cpp:210
-#, kde-format
-msgid "Open File"
-msgstr "Відкрити файл"
-
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.cpp:212
-#, kde-format
-msgid "All Supported Files (*.png)"
-msgstr "усі підтримувані файли (*.png)"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:64
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
-#, kde-format
-msgid "Name:"
-msgstr "Назва:"
-
-#. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:81
-#, kde-format
-msgid "Icon link:"
-msgstr "Посилання піктограми:"
-
-#. i18n: ectx: property (text), widget (QLabel, idLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:91
-#, kde-format
-msgid "ID:"
-msgstr "Ід.:"
-
-#. i18n: ectx: property (text), widget (QLabel, targetIdLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:104
-#, kde-format
-msgid "Target ID:"
-msgstr "Ід. призначення:"
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:35
-#, kde-format
-msgid "Placemark position provider Plugin"
-msgstr "Додаток визначення місця розташування позначки"
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:45
-#, kde-format
-msgid "Placemark"
-msgstr "Позначка місця"
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:55
-#, kde-format
-msgid "Reports the position of a placemark"
-msgstr "Повідомляє про розташування позначки місця"
-
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:233
 #, kde-format
 msgctxt "the planet"
@@ -58591,8 +57464,23 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Невідома планета"
 
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:35
+#, kde-format
+msgid "Placemark position provider Plugin"
+msgstr "Додаток визначення місця розташування позначки"
+
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:45
+#, kde-format
+msgid "Placemark"
+msgstr "Позначка місця"
+
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:55
+#, kde-format
+msgid "Reports the position of a placemark"
+msgstr "Повідомляє про розташування позначки місця"
+
 #. i18n: ectx: property (text), widget (QPushButton, configureButton)
-#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:366
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:366
 #: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:142
 #, kde-format
 msgid "Configure"
@@ -58715,7 +57603,7 @@ msgstr "&Коефіцієнт масштабування"
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:118
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:118
 #, kde-format
 msgid "Navigation"
 msgstr "Навігація"
@@ -58806,6 +57694,21 @@ msgstr "&Кольори"
 #, kde-format
 msgid "Position I&ndicator:"
 msgstr "Поз&начка позиції:"
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:30
+#, kde-format
+msgid "Current Route Position Provider Plugin"
+msgstr "Додаток надання даних щодо розташування на поточному маршруті"
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:40
+#, kde-format
+msgid "Current Route"
+msgstr "Поточний маршрут"
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:50
+#, kde-format
+msgid "Simulates traveling along the current route."
+msgstr "Імітує подорож за поточним маршрутом."
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -58956,56 +57859,6 @@ msgstr ""
 "<p><b>Проєкція вертикальної перспективи</b> («ортогональна»)</p><p>Показує "
 "Землю так, як вона виглядає з відносно невеликої відстані над поверхнею. "
 "Застосування: використовується для віртуальних глобусів.</p>"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:109
-#, kde-format
-msgid "View"
-msgstr "Перегляд"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:126
-#, kde-format
-msgid "Cache and Proxy"
-msgstr "Кеш і проксі-сервер"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:134
-#, kde-format
-msgid "Date and Time"
-msgstr "Дата і час"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:138
-#, kde-format
-msgid "Routing"
-msgstr "Маршрути"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:155
-#, kde-format
-msgid "Synchronization"
-msgstr "Синхронізація"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:271
-#, kde-format
-msgid "Never synchronized."
-msgstr "Синхронізація не виконувалася."
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:275
-#, kde-format
-msgid "Last synchronization: %1"
-msgstr "Остання синхронізація: %1"
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:30
-#, kde-format
-msgid "Current Route Position Provider Plugin"
-msgstr "Додаток надання даних щодо розташування на поточному маршруті"
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:40
-#, kde-format
-msgid "Current Route"
-msgstr "Поточний маршрут"
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:50
-#, kde-format
-msgid "Simulates traveling along the current route."
-msgstr "Імітує подорож за поточним маршрутом."
 
 #: core/utilities/geolocation/marble/routing/GoToDialog.cpp:167
 #, kde-format
@@ -59547,24 +58400,1141 @@ msgctxt "journey duration"
 msgid "%1:%2 h"
 msgstr "%1:%2 год"
 
-#: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:20
 #, kde-format
-msgid "Select sound files..."
-msgstr "Виберіть звукові файли…"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
+"used for Marble: The physical memory which is needed to keep map data in the "
+"computer's memory. Increasing the value will make the application more "
+"responsive. The hard disc memory cache is used by download contents from the "
+"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
+"to save space on the hard disc and if high usage of the Internet is not an "
+"issue. </p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble використовує два "
+"різновиди кешу. Перший з них — це фізична пам’ять комп’ютера, що "
+"використовується для зберігання даних карти. Збільшення її об’єму прискорює "
+"реакцію програми на дії користувача. Другий різновид кешу — це кеш на "
+"жорсткому диску, що використовується для отримання потрібних даних з мережі "
+"(наприклад даних з Вікіпедії або даних карт). Зменшіть його розмір, якщо ви "
+"бажаєте зекономити місце на жорсткому диску і якщо збільшення навантаження "
+"на мережу не є проблемою. </p></body></html>"
 
-#: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:23
 #, kde-format
-msgid "Supported Sound Files (*.mp3 *.ogg *.wav)"
-msgstr "підтримувані звукові файли (*.mp3 *.ogg *.wav)"
+msgid "C&ache"
+msgstr "К&еш"
+
+#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:41
+#, kde-format
+msgid "&Physical memory:"
+msgstr "&Фізична пам’ять:"
+
+#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:73
+#, kde-format
+msgid "C&lear"
+msgstr "&Очистити"
+
+#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:105
+#, kde-format
+msgid "&Hard disc:"
+msgstr "&Жорсткий диск:"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:124
+#, kde-format
+msgid "Unlimited"
+msgstr "Без обмеження"
+
+#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:146
+#, kde-format
+msgid "Cl&ear"
+msgstr "Оч&истити"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:172
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
+"local intranet. Please leave empty if there is no proxy.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Налаштування проксі-"
+"сервера у вашій локальній мережі. Будь ласка, залиште ці поля порожніми, "
+"якщо проксі-сервера немає.</p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:175
+#, kde-format
+msgid "&Proxy"
+msgstr "&Проксі"
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:183
+#, kde-format
+msgid "&Proxy:"
+msgstr "&Проксі:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:200
+#, kde-format
+msgid "P&ort:"
+msgstr "П&орт:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:256
+#, kde-format
+msgid "Proxy type:"
+msgstr "Тип проксі:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:264
+#, kde-format
+msgid "Http"
+msgstr "Http"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:269
+#, kde-format
+msgid "Socks5"
+msgstr "Socks5"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
+#. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:308
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:320
+#, kde-format
+msgid "Requires authentication"
+msgstr "Потрібне розпізнавання"
+
+#. i18n: ectx: property (text), widget (QLabel, label_username)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:326
+#, kde-format
+msgid "U&sername:"
+msgstr "Кор&истувач:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_password)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:336
+#, kde-format
+msgid "&Password:"
+msgstr "П&ароль:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableSync)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:17
+#, kde-format
+msgid "Enable synchronization"
+msgstr "Увімкнути синхронізацію"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncRoutes)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:48
+#, kde-format
+msgid ""
+"Allows you to store routes in owncloud. Each route must be uploaded/"
+"downloaded manually."
+msgstr ""
+"Надає вам змогу зберігати дані маршрутів у системі owncloud. Кожен запис "
+"маршруту слід вивантажувати і отримувати з сервера вручну."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncRoutes)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:51
+#, kde-format
+msgid "Enable route synchronization"
+msgstr "Увімкнути синхронізацію маршрутів"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncBookmarks)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:84
+#, kde-format
+msgid "Automatically sync all bookmarks to the server."
+msgstr "Автоматично синхронізувати усі записи закладок з сервером."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncBookmarks)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:87
+#, kde-format
+msgid "Enable bookmark synchronization"
+msgstr "Увімкнути синхронізацію закладок"
+
+#. i18n: ectx: property (text), widget (QPushButton, button_syncNow)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:119
+#, kde-format
+msgid "Sync now"
+msgstr "Синхронізувати"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:147
+#, kde-format
+msgid "Credentials"
+msgstr "Реєстраційні дані"
+
+#. i18n: ectx: property (text), widget (QLabel, labelServer)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:153
+#, kde-format
+msgid "Server:"
+msgstr "Сервер:"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, kcfg_owncloudServer)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:160
+#, kde-format
+msgid "Remote server URL, e.g. myserver.com/owncloud"
+msgstr "Адреса віддаленого сервера, наприклад myserver.com/owncloud"
+
+#. i18n: ectx: property (text), widget (QLabel, labelUsername)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:167
+#, kde-format
+msgid "Username:"
+msgstr "Користувач:"
+
+#. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:197
+#, kde-format
+msgid "Test Login"
+msgstr "Тестовий вхід"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:17
+#, kde-format
+msgid "Dragging and Animation"
+msgstr "Перетягування і анімація"
+
+#. i18n: ectx: property (text), widget (QLabel, label_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:37
+#, kde-format
+msgid "&Drag location:"
+msgstr "&Перетягування місця:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:54
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the mouse "
+"there are two standard behaviours when dealing with a virtual globe:</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The location below mouse "
+"pointer will follow the cursor exactly: As a result e.g. the north pole will "
+"not stay at the top which can lead to confusion. By default Marble makes "
+"sure that north is always up which results in a dragging behaviour where the "
+"location below the mouse pointer slightly \"detaches\" from the cursor. </"
+"p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Під час перетягування "
+"мишею можливі два типи поведінки обробки програмою зображення віртуального "
+"глобуса:</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Місце під вказівником миші "
+"пересуватиметься разом з вказівником: У результаті, наприклад північний "
+"полюс не залишатиметься вгорі карти, що може призвести до плутанини. Типово "
+"Marble завжди розташовує північ згори, що призводить до такої поведінки, "
+"коли під час пересування місце під вказівником миші трохи «відокремлюється» "
+"від вказівника. </p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:58
+#, kde-format
+msgid "Keep Planet Axis Vertically"
+msgstr "Полярна вісь залишається вертикальною"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:63
+#, kde-format
+msgid "Follow Mouse Pointer"
+msgstr "Слідувати за мишею"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:73
+#, kde-format
+msgid "Use kinetic spinning when dragging the map"
+msgstr "Кінетичне гортання під час перетягування карти"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:76
+#, kde-format
+msgid "&Inertial globe rotation"
+msgstr "&Інерційне обертання глобуса"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:86
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
+"location Marble can either move instantly to the new location or it can show "
+"a travel animation from the previous place to the new place.</p></body></"
+"html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Під час пошуку нового "
+"місця Marble може або миттєво пересувати вас до нового місця на карті, або "
+"показувати уявну подорож картою з попереднього місця до нового.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_animateTargetVoyage)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:89
+#, kde-format
+msgid "&Animate voyage to the target"
+msgstr "&Анімована подорож до мети"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:96
+#, kde-format
+msgid "Use right mouse button to rotate the camera around"
+msgstr "Користуватися правою кнопкою миші для обертання камери"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:99
+#, kde-format
+msgid "&Mouse view rotation"
+msgstr "Обертання перегляду &мишею"
+
+#. i18n: ectx: property (text), widget (QLabel, label_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:142
+#, kde-format
+msgid "&On startup:"
+msgstr "Після &запуску:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:155
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
+"display the home location immediately after the application has started. As "
+"an alternative it can also show the last position that was active when the "
+"user left the application. </p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Типово Marble показуватиме "
+"розташування домівки одразу після запуску програми. Як варіант програма може "
+"показувати останню активну позицію на час останнього використання програми. "
+"</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:159
+#, kde-format
+msgid "Show Home Location"
+msgstr "Показувати розташування домівки"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:164
+#, kde-format
+msgid "Return to Last Location Visited"
+msgstr "Повернутися до останнього місця"
+
+#. i18n: ectx: property (text), widget (QLabel, label_externalEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:184
+#, kde-format
+msgid "&External editor:"
+msgstr "&Зовнішній редактор:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:194
+#, kde-format
+msgid ""
+"<p>The application that is launched to edit maps. Potlatch (default) "
+"requires a web browser with flash support to be installed. When selecting "
+"josm or merkaartor, make sure that the respective application is installed.</"
+"p>"
+msgstr ""
+"<p>Програма, яку буде використано для редагування карт. Для роботи у "
+"Potlatch (типова програма) потрібне інтернет-з’єднання та встановлений у "
+"системі переглядач інтернету з підтримкою flash. Якщо ви надасте перевагу "
+"josm або merkaartor, не забудьте попередньо встановити відповідну програму.</"
+"p>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:198
+#, kde-format
+msgid "Always ask"
+msgstr "Завжди питати"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:203
+#, kde-format
+msgid "Potlatch (Web browser)"
+msgstr "Potlatch (з переглядача інтернету)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:208
+#, kde-format
+msgid "JOSM"
+msgstr "JOSM"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:213
+#, kde-format
+msgid "Merkaartor"
+msgstr "Merkaartor"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:23
+#, kde-format
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
+"Here you can select and deselect the functionality that is provided through "
+"plugins. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
+"from the map, menus and toolbars. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
+"their configuration a bit. </span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+" p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Це машинне відділення Marble для досвідчених "
+"користувачів. Тут ви можете увімкнути або вимкнути функціональні можливості, "
+"робота яких забезпечується додатками. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Зняття позначки з запису додатка вилучить відповідну "
+"функціональну можливість з карти, меню та панелей інструментів. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Крім того, для деяких додатків передбачено можливість "
+"налаштування. </span></p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:26
+#, kde-format
+msgid "P&lugins"
+msgstr "Д&одатки"
+
+#. i18n: ectx: property (title), widget (QGroupBox, timeZone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:23
+#, kde-format
+msgid "Time Zone"
+msgstr "Часовий пояс"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_utc)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:29
+#, kde-format
+msgid "UTC"
+msgstr "Світовий"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:39
+#, kde-format
+msgid "System time zone"
+msgstr "Часовий пояс системи"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_customTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:51
+#, kde-format
+msgid "Choose Time zone"
+msgstr "Виберіть часовий пояс"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:68
+#, kde-format
+msgid "Universal Time Coordinated"
+msgstr "Універсальний координований час (UTC)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:73
+#, kde-format
+msgid "European Central Time"
+msgstr "Центральноєвропейський час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:78
+#, kde-format
+msgid "Eastern European Time"
+msgstr "Східноєвропейський час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:83
+#, kde-format
+msgid "Egypt Standard Time"
+msgstr "Стандартний єгипетський час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:88
+#, kde-format
+msgid "Eastern African Time"
+msgstr "Східноафриканський час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:93
+#, kde-format
+msgid "Middle East Time"
+msgstr "Середньосхідний час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:98
+#, kde-format
+msgid "Near East Time"
+msgstr "Близькосхідний час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:103
+#, kde-format
+msgid "Pakistan Lahore Time"
+msgstr "Час Лахору (Пакистан)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:108
+#, kde-format
+msgid "India Standard Time"
+msgstr "Стандартний час (Індія)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:113
+#, kde-format
+msgid "Bangladesh Standard Time"
+msgstr "Стандартний час (Бангладеш)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:118
+#, kde-format
+msgid "Vietnam Standard Time"
+msgstr "Стандартний час (В’єтнам)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:123
+#, kde-format
+msgid "China Taiwan Time"
+msgstr "Час Тайваню (Китай)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:128
+#, kde-format
+msgid "Japan Standard Time"
+msgstr "Стандартний час (Японія)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:133
+#, kde-format
+msgid "Australia Central Time"
+msgstr "Центральноавстралійський час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:138
+#, kde-format
+msgid "Australia Eastern Time"
+msgstr "Східноавстралійський час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:143
+#, kde-format
+msgid "Solomon Standard Time"
+msgstr "Стандартний час (Соломонові острови)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:148
+#, kde-format
+msgid "New Zealand Standard Time"
+msgstr "Стандартний час (Нова Зеландія)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:153
+#, kde-format
+msgid "Midway Islands Time"
+msgstr "Час островів Мідуей"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:158
+#, kde-format
+msgid "Hawaii Standard Time"
+msgstr "Стандартний час (Гаваї)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:163
+#, kde-format
+msgid "Alaska Standard Time"
+msgstr "Стандартний час (Аляска)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:168
+#, kde-format
+msgid "Pacific Standard Time"
+msgstr "Тихокеанський стандартний час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:173
+#, kde-format
+msgid "Phoenix Standard Time"
+msgstr "Стандартний час (Фінікс)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:178
+#, kde-format
+msgid "Mountain Standard Time"
+msgstr "Гірський стандартний час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:183
+#, kde-format
+msgid "Central Standard Time"
+msgstr "Центральний стандартний час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:188
+#, kde-format
+msgid "Eastern Standard Time"
+msgstr "Східний стандартний час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:193
+#, kde-format
+msgid "Indiana Eastern Standard Time"
+msgstr "Східний стандартний час (Індіана)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:198
+#, kde-format
+msgid "Puerto Rico and US Virgin Islands Time"
+msgstr "Час Пуерто-Рико та Віргінських островів"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:203
+#, kde-format
+msgid "Canada Newfoundland Time"
+msgstr "Час поясу Ньюфаунленду (Канада)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:208
+#, kde-format
+msgid "Argentina Standard Time"
+msgstr "Стандартний аргентинський час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:213
+#, kde-format
+msgid "Brazil Eastern Time"
+msgstr "Східнобразильський час"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:218
+#, kde-format
+msgid "Central African Time"
+msgstr "Центральноафриканський час"
+
+#. i18n: ectx: property (title), widget (QGroupBox, whenMarbleStarts)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:231
+#, kde-format
+msgid "When Marble starts"
+msgstr "Після запуску Marble"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTime)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:237
+#, kde-format
+msgid "Load system time"
+msgstr "Завантажити час системи"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_lastSessionTime)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:247
+#, kde-format
+msgid "Load last session time"
+msgstr "Завантажити час останнього сеансу"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
+#, kde-format
+msgid "&Units"
+msgstr "&Одиниці"
+
+#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:35
+#, kde-format
+msgid "&Distance:"
+msgstr "&Відстань:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
+"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Одиниця довжини, що "
+"використовуватиметься для вимірювання висоти, довжини та відстані (наприклад "
+"км, милі, фути).</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:61
+#, kde-format
+msgid "Kilometer, Meter"
+msgstr "Кілометр, метр"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:66
+#, kde-format
+msgid "Miles, Feet"
+msgstr "Милі, фути"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:71
+#, kde-format
+msgid "Nautical miles, Knots"
+msgstr "Морські милі, вузли"
+
+#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:85
+#, kde-format
+msgid "An&gle:"
+msgstr "&Кут:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:101
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
+"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
+"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
+"g. 54.5°).</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Визначає спосіб показу "
+"координатних кутів: Типово використовуються позначення Градус-Мінута-Секунда "
+"(наприклад 54°30'00\" ). Як альтернативу можна використовувати позначення у "
+"градусах з дробовою частиною (наприклад 54.5°).</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:105
+#, kde-format
+msgid "Degree (DMS)"
+msgstr "Градус (із хв. і сек.)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:110
+#, kde-format
+msgid "Degree (Decimal)"
+msgstr "Градус (десятковий)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:115
+#, kde-format
+msgid "Universal Transverse Mercator (UTM)"
+msgstr "Універсальна проєкція Меркатора (UTM)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:126
+#, kde-format
+msgid "Map &Quality"
+msgstr "&Якість карти"
+
+#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:144
+#, kde-format
+msgid "&Still image:"
+msgstr "&Статична картинка:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:157
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
+"that gets displayed while there is no user input. Usually this allows for "
+"high map quality as speed is no concern.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Визначає якість показу "
+"карти, коли користувач нічого не вводить. Зазвичай, при цьому отримується "
+"висока якість показу карти, оскільки швидкість не є визначальною.</p></"
+"body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:164
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:219
+#, kde-format
+msgid "Outline Quality"
+msgstr "Якість ескіза"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:169
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:224
+#, kde-format
+msgid "Low Quality"
+msgstr "Низька якість"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:174
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:229
+#, kde-format
+msgid "Normal"
+msgstr "Звичайна"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:179
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:234
+#, kde-format
+msgid "High Quality"
+msgstr "Висока якість"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:184
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:239
+#, kde-format
+msgid "Print Quality"
+msgstr "Поліграфічна якість"
+
+#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:198
+#, kde-format
+msgid "During &animations:"
+msgstr "Під час &анімації:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:212
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
+"that gets displayed during map animations (e.g. while dragging the globe). </"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
+"machines it is advisable to set this option to \"low quality\" as this will "
+"give better speed.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Визначає якість зображення "
+"карти під час руху карти (наприклад перетягування глобуса). </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Цей параметр "
+"рекомендується встановити у значення «низька якість» на повільних машинах, "
+"оскільки це забезпечить кращу інтерактивність.</p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:266
+#, kde-format
+msgid "&Text Labels"
+msgstr "&Текстові мітки"
+
+#. i18n: ectx: property (text), widget (QLabel, label_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:286
+#, kde-format
+msgid "&Place names:"
+msgstr "&Назви місць:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:302
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
+"different names in different languages. The label on the map can show the "
+"name in the user's language. Alternatively it can display the name in the "
+"official language and glyphs of that place. </p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Різні місця мають "
+"неоднакові назви різними мовами. Мітка на карті може показувати назву місця "
+"мовою користувача. Як інший варіант, може бути відображено назву офіційною "
+"мовою і за допомогою офіційної абетки, що усталена у цьому місці. </p></"
+"body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:306
+#, kde-format
+msgid "Custom & Native Language"
+msgstr "Нетипова і місцева мови"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:311
+#, kde-format
+msgid "Custom Language"
+msgstr "Нетипова мова"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:316
+#, kde-format
+msgid "Native Language"
+msgstr "Місцева мова"
+
+#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:340
+#, kde-format
+msgid "Default map &font:"
+msgstr "Типовий &шрифт написів:"
+
+#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:353
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
+"used on the map.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Типовий шрифт, що "
+"використовуватиметься на карті.</p></body></html>"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:109
+#, kde-format
+msgid "View"
+msgstr "Перегляд"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:126
+#, kde-format
+msgid "Cache and Proxy"
+msgstr "Кеш і проксі-сервер"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:134
+#, kde-format
+msgid "Date and Time"
+msgstr "Дата і час"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:138
+#, kde-format
+msgid "Routing"
+msgstr "Маршрути"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:155
+#, kde-format
+msgid "Synchronization"
+msgstr "Синхронізація"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:271
+#, kde-format
+msgid "Never synchronized."
+msgstr "Синхронізація не виконувалася."
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:275
+#, kde-format
+msgid "Last synchronization: %1"
+msgstr "Остання синхронізація: %1"
+
+#: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
+#, kde-format
+msgid "Unable to insert data into cache"
+msgstr "Не вдалося додати дані до кешу"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:136
+#, kde-format
+msgid "Visible region"
+msgstr "Видима ділянка"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:138
+#, kde-format
+msgid "Specify region"
+msgstr "Вказати ділянку"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:140
+#, kde-format
+msgid "Download Route"
+msgstr "Отримати маршрут"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:142
+#, kde-format
+msgid "Enabled when a route exists"
+msgstr "Увімкнено, якщо маршрут існує"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:155
+#, kde-format
+msgid "Offset from route:"
+msgstr "Відхилення від маршруту:"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:190
+#, kde-format
+msgid "Selection Method"
+msgstr "Спосіб вибору"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:198
+#, kde-format
+msgid "Number of tiles to download:"
+msgstr "Кількість елементів для отримання:"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:248
+#, kde-format
+msgid "Download Region"
+msgstr "Отримання ділянки"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:250
+#, kde-format
+msgid "Tile type to be downloaded:"
+msgstr "Тип плиток, які буде отримано:"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:252
+#, kde-format
+msgid "Texture tiles"
+msgstr "Плитки текстур"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:253
+#, kde-format
+msgid "Vector tiles"
+msgstr "Векторні плитки"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:254
+#, kde-format
+msgid "Allows selection between layer types that are visibly being rendered."
+msgstr ""
+"Надає змогу вибирати тип шарів, які буде показано під час обробки зображення."
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
+#, kde-format
+msgid "There is a limit of %1 tile(s) to download."
+msgstr "Передбачено обмеження отримання даних у %1 плиток."
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:533
+#, kde-format
+msgid "Approximate size of the tiles to be downloaded"
+msgstr "Приблизний об’єм даних, які доведеться отримати"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:537
+#, kde-format
+msgid "Estimated download size: %1 MB"
+msgstr "Приблизний об’єм отримання: %1 МБ"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:540
+#, kde-format
+msgid "Estimated download size: %1 kB"
+msgstr "Приблизний об’єм отримання: %1 кБ"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:20
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:20
 #, kde-format
 msgid "Creating Map"
 msgstr "Створення карти"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:507
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:507
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
@@ -59589,7 +59559,7 @@ msgstr ""
 "body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:517
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:517
 #, kde-format
 msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
@@ -59599,31 +59569,31 @@ msgstr ""
 "займе декілька секунд."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:29
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:29
 #, kde-format
 msgid "Zoom"
 msgstr "Масштаб"
 
 #. i18n: ectx: property (text), widget (QLabel, tileLevelLabel)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:37
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:37
 #, kde-format
 msgid "&Tile level range:"
 msgstr "Діапазон рівнів &елементів від:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, topSpinBox)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:47
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:47
 #, kde-format
 msgid "Minimum Tile Level"
 msgstr "Мінімальний рівень елемента"
 
 #. i18n: ectx: property (text), widget (QLabel, toLabel)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:63
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:63
 #, kde-format
 msgid "to"
 msgstr "до"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bottomSpinBox)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:70
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:70
 #, kde-format
 msgid "Maximum Tile Level"
 msgstr "Максимальний рівень елемента"
@@ -69489,6 +69459,21 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Хочете відновити типові значення для усіх параметрів відео?"
+
+#~ msgid "Elevation:"
+#~ msgstr "Висота над рівнем моря:"
+
+#~ msgid " m"
+#~ msgstr " м"
+
+#~ msgid "above sea level"
+#~ msgstr "над рівнем моря"
+
+#~ msgid "Select sound files..."
+#~ msgstr "Виберіть звукові файли…"
+
+#~ msgid "Supported Sound Files (*.mp3 *.ogg *.wav)"
+#~ msgstr "підтримувані звукові файли (*.mp3 *.ogg *.wav)"
 
 #~ msgid "No URL specified"
 #~ msgstr "Не вказано адреси"

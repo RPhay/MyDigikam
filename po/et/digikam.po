@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-18 00:39+0000\n"
+"POT-Creation-Date: 2023-12-19 00:39+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -3800,7 +3800,7 @@ msgstr ""
 "versiooniga 6.x):"
 
 #: core/app/views/stack/welcomepageview.cpp:210
-#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:351
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:351
 #, kde-format
 msgid "About"
 msgstr "Teave"
@@ -7040,7 +7040,7 @@ msgstr ""
 #: core/dplugins/bqm/transform/crop/crop.cpp:96
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:349
 #: core/libs/template/templateviewer.cpp:145
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:115
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:115
 #, kde-format
 msgid "Position:"
 msgstr "Amet:"
@@ -21998,8 +21998,8 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:54
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:127
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:54
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:127
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -24716,7 +24716,7 @@ msgstr "Kõik setterid nõuavad nüüd POST-meetodit"
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:540
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
-#: core/utilities/geolocation/marble/PositionProviderPluginInterface.cpp:25
+#: core/utilities/geolocation/marble/plugins/PositionProviderPluginInterface.cpp:25
 #, kde-format
 msgid "Unknown error"
 msgstr "Tundmatu tõrge"
@@ -27625,7 +27625,7 @@ msgstr "Paroolivihje, mida näidatakse kasutajale paroolireal (pole nõutav)."
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
 #: core/libs/dplugins/webservices/wslogindialog.cpp:89
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:181
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:181
 #, kde-format
 msgid "Password:"
 msgstr "Parool:"
@@ -30317,7 +30317,7 @@ msgstr ""
 "%1\n"
 "(lähtepilt)"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:193
+#: core/libs/database/item/scanner/itemscanner.cpp:192
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -44573,7 +44573,7 @@ msgstr "Muuda"
 
 #. i18n: ectx: property (text), widget (QPushButton, iconLinkButton)
 #: core/libs/widgets/files/dfileselector.cpp:58
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:46
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:46
 #, kde-format
 msgid "Browse..."
 msgstr "Sirvi ..."
@@ -53662,7 +53662,7 @@ msgstr ""
 "salvestamisel vaikimisi kasutatavad seadistused</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:142
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:145
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:145
 #, kde-format
 msgid "Plugins"
 msgstr "Pluginad"
@@ -58522,6 +58522,70 @@ msgstr "Kataloog: "
 msgid "&Add Folder..."
 msgstr "Lisa katalooge..."
 
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_intValueEditor)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:129
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:28
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:47
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:99
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:151
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:203
+#, kde-format
+msgid "°"
+msgstr ""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:179
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:338
+#, kde-format
+msgid "'"
+msgstr ""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:180
+#, kde-format
+msgid "\""
+msgstr ""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:526
+#, kde-format
+msgctxt "East, the direction"
+msgid "E"
+msgstr ""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:527
+#, kde-format
+msgctxt "West, the direction"
+msgid "W"
+msgstr ""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:530
+#, fuzzy, kde-format
+#| msgctxt "Image filter reproducible: No"
+#| msgid "No"
+msgctxt "North, the direction"
+msgid "N"
+msgstr "Ei"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:531
+#, kde-format
+msgctxt "South, the direction"
+msgid "S"
+msgstr ""
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:38
+#, kde-format
+msgid "′"
+msgstr ""
+
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:54
+#, kde-format
+msgid "″"
+msgstr ""
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
 #: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:14
 #, fuzzy, kde-format
@@ -58536,11 +58600,47 @@ msgstr "Järjehoidjate kataloog"
 msgid "&Folder name:"
 msgstr "Faili nimi"
 
-#: core/utilities/geolocation/marble/CacheStoragePolicy.cpp:36
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:210
 #, fuzzy, kde-format
-#| msgid "Unable to save changes to file"
-msgid "Unable to insert data into cache"
-msgstr "Muudatuste salvestamine faili nurjus"
+#| msgid "Open File"
+msgid "Open File"
+msgstr "Faili avamine"
+
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:212
+#, fuzzy, kde-format
+#| msgid "All supported files (%1)"
+msgid "All Supported Files (*.png)"
+msgstr "Kõik toetatud failid (%1)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:64
+#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
+#, fuzzy, kde-format
+#| msgctxt "filename"
+#| msgid "Name:"
+msgid "Name:"
+msgstr "Nimi:"
+
+#. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:81
+#, fuzzy, kde-format
+#| msgid "Icon Size:"
+msgid "Icon link:"
+msgstr "Ikooni suurus:"
+
+#. i18n: ectx: property (text), widget (QLabel, idLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:91
+#, kde-format
+msgid "ID:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, targetIdLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:104
+#, fuzzy, kde-format
+#| msgid "Target"
+msgid "Target ID:"
+msgstr "Tulemus"
 
 #: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:33
 #: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:34
@@ -58702,116 +58802,6 @@ msgstr "Kustuta töövoog"
 #| msgid "Upload to Camera"
 msgid "Upload to cloud"
 msgstr "Laadi kaamerasse"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:136
-#, fuzzy, kde-format
-#| msgid "Visible to Friends"
-msgid "Visible region"
-msgstr "Nähtav sõpradele"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Specific Location"
-msgid "Specify region"
-msgstr "Konkreetne asukoht"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Download New"
-msgid "Download Route"
-msgstr "Laadi alla uued"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:142
-#, kde-format
-msgid "Enabled when a route exists"
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:155
-#, kde-format
-msgid "Offset from route:"
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:190
-#, fuzzy, kde-format
-#| msgid "Destination Folder:"
-msgid "Selection Method"
-msgstr "Sihtkataloog:"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:198
-#, kde-format
-msgid "Number of tiles to download:"
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Download New"
-msgid "Download Region"
-msgstr "Laadi alla uued"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has never been downloaded"
-msgid "Tile type to be downloaded:"
-msgstr "Seda elementi pole kunagi alla laaditud"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:252
-#, fuzzy, kde-format
-#| msgid "Texture Filter"
-msgid "Texture tiles"
-msgstr "Tekstuurifilter"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:253
-#, fuzzy, kde-format
-#| msgid "Video Files"
-msgid "Vector tiles"
-msgstr "Videofailid"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:254
-#, kde-format
-msgid "Allows selection between layer types that are visibly being rendered."
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:523
-#, kde-format
-msgid "There is a limit of %1 tile(s) to download."
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:533
-#, kde-format
-msgid "Approximate size of the tiles to be downloaded"
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:537
-#, kde-format
-msgid "Estimated download size: %1 MB"
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:540
-#, kde-format
-msgid "Estimated download size: %1 kB"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, elevationLabel)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:19
-#, fuzzy, kde-format
-#| msgid "Iteration:"
-msgid "Elevation:"
-msgstr "Kordused:"
-
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, elevationSpinBox)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:26
-#, kde-format
-msgid " m"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, elevationModeLabel)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:36
-#, kde-format
-msgid "above sea level"
-msgstr ""
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
@@ -60813,21 +60803,6 @@ msgstr "Aasta valimine"
 msgid "Northern Latitude"
 msgstr "Põhja-Iirimaa"
 
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_intValueEditor)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:47
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:99
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:151
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:203
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:129
-#: core/utilities/geolocation/marble/LatLonEdit.ui:28
-#, kde-format
-msgid "°"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QLabel, northLabel)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:66
 #, kde-format
@@ -60872,334 +60847,6 @@ msgstr "GPS-i laiuskraad"
 #, kde-format
 msgid "&S"
 msgstr ""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:179
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:338
-#, kde-format
-msgid "'"
-msgstr ""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:180
-#, kde-format
-msgid "\""
-msgstr ""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:526
-#, kde-format
-msgctxt "East, the direction"
-msgid "E"
-msgstr ""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:527
-#, kde-format
-msgctxt "West, the direction"
-msgid "W"
-msgstr ""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:530
-#, fuzzy, kde-format
-#| msgctxt "Image filter reproducible: No"
-#| msgid "No"
-msgctxt "North, the direction"
-msgid "N"
-msgstr "Ei"
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:531
-#, kde-format
-msgctxt "South, the direction"
-msgid "S"
-msgstr ""
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
-#: core/utilities/geolocation/marble/LatLonEdit.ui:38
-#, kde-format
-msgid "′"
-msgstr ""
-
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
-#: core/utilities/geolocation/marble/LatLonEdit.ui:54
-#, kde-format
-msgid "″"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
-"used for Marble: The physical memory which is needed to keep map data in the "
-"computer's memory. Increasing the value will make the application more "
-"responsive. The hard disc memory cache is used by download contents from the "
-"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
-"to save space on the hard disc and if high usage of the Internet is not an "
-"issue. </p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:23
-#, kde-format
-msgid "C&ache"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:41
-#, kde-format
-msgid "&Physical memory:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:73
-#, fuzzy, kde-format
-#| msgid "Clear"
-msgid "C&lear"
-msgstr "Puhasta"
-
-#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:105
-#, kde-format
-msgid "&Hard disc:"
-msgstr ""
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:124
-#, fuzzy, kde-format
-#| msgctxt "smug album privacy"
-#| msgid "Unlisted"
-msgid "Unlimited"
-msgstr "Avaldamata"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:146
-#, kde-format
-msgid "Cl&ear"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:172
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
-"local intranet. Please leave empty if there is no proxy.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:175
-#, kde-format
-msgid "&Proxy"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:183
-#, kde-format
-msgid "&Proxy:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:200
-#, fuzzy, kde-format
-#| msgid "Host Port:"
-msgid "P&ort:"
-msgstr "Serveri port:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:256
-#, fuzzy, kde-format
-#| msgid "Fix type"
-msgid "Proxy type:"
-msgstr "Paranduse tüüp"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:264
-#, kde-format
-msgid "Http"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:269
-#, kde-format
-msgid "Socks5"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
-#. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:308
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:320
-#, fuzzy, kde-format
-#| msgid "Presentation"
-msgid "Requires authentication"
-msgstr "Esitlus"
-
-#. i18n: ectx: property (text), widget (QLabel, label_username)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:326
-#, fuzzy, kde-format
-#| msgctxt "piwigo login settings"
-#| msgid "Username:"
-msgid "U&sername:"
-msgstr "Kasutajanimi:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_password)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:336
-#, fuzzy, kde-format
-#| msgid "Password:"
-msgid "&Password:"
-msgstr "Parool:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableSync)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:17
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Use lazy synchronization"
-msgid "Enable synchronization"
-msgstr "Laisa sünkroonimise kasutamine"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:48
-#, kde-format
-msgid ""
-"Allows you to store routes in owncloud. Each route must be uploaded/"
-"downloaded manually."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:51
-#, fuzzy, kde-format
-#| msgid "1 file awaits synchronization"
-#| msgid_plural "%1 files await synchronization"
-msgid "Enable route synchronization"
-msgstr "1 fail ootab sünkroonimist"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:84
-#, kde-format
-msgid "Automatically sync all bookmarks to the server."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:87
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Use lazy synchronization"
-msgid "Enable bookmark synchronization"
-msgstr "Laisa sünkroonimise kasutamine"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_syncNow)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:119
-#, kde-format
-msgid "Sync now"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:147
-#, fuzzy, kde-format
-#| msgid "Invalid credentials"
-msgid "Credentials"
-msgstr "Vigased kasutajatunnused"
-
-#. i18n: ectx: property (text), widget (QLabel, labelServer)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:153
-#, fuzzy, kde-format
-#| msgid "MySQL interface"
-msgid "Server:"
-msgstr "MySQL-i liides"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, kcfg_owncloudServer)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:160
-#, kde-format
-msgid "Remote server URL, e.g. myserver.com/owncloud"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, labelUsername)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:167
-#, fuzzy, kde-format
-#| msgctxt "piwigo login settings"
-#| msgid "Username:"
-msgid "Username:"
-msgstr "Kasutajanimi:"
-
-#. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:197
-#, fuzzy, kde-format
-#| msgid "Login:"
-msgid "Test Login"
-msgstr "Kasutajatunnus:"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:122
 #, fuzzy, kde-format
@@ -61261,1045 +60908,6 @@ msgstr ""
 msgctxt "means nautical miles"
 msgid "nm"
 msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:17
-#, kde-format
-msgid "Dragging and Animation"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:37
-#, fuzzy, kde-format
-#| msgid "Target location: "
-msgid "&Drag location:"
-msgstr "Sihtkoha asukoht:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:54
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the mouse "
-"there are two standard behaviours when dealing with a virtual globe:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The location below mouse "
-"pointer will follow the cursor exactly: As a result e.g. the north pole will "
-"not stay at the top which can lead to confusion. By default Marble makes "
-"sure that north is always up which results in a dragging behaviour where the "
-"location below the mouse pointer slightly \"detaches\" from the cursor. </"
-"p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:58
-#, fuzzy, kde-format
-#| msgid "Flip Vertically"
-msgid "Keep Planet Axis Vertically"
-msgstr "Peegeldamine vertikaalselt"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:63
-#, kde-format
-msgid "Follow Mouse Pointer"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:73
-#, kde-format
-msgid "Use kinetic spinning when dragging the map"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:76
-#, fuzzy, kde-format
-#| msgid "Invert Selection"
-msgid "&Inertial globe rotation"
-msgstr "Vaheta valik"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:86
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
-"location Marble can either move instantly to the new location or it can show "
-"a travel animation from the previous place to the new place.</p></body></"
-"html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_animateTargetVoyage)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:89
-#, kde-format
-msgid "&Animate voyage to the target"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:96
-#, fuzzy, kde-format
-#| msgid "Use CTRL+left mouse button to select a search area."
-msgid "Use right mouse button to rotate the camera around"
-msgstr "Ctrl+hiire vasak nupp võimaldab valida otsinguala."
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:99
-#, fuzzy, kde-format
-#| msgid "&Choose operation:"
-msgid "&Mouse view rotation"
-msgstr "&Toimingu valimine:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:142
-#, kde-format
-msgid "&On startup:"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:155
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
-"display the home location immediately after the application has started. As "
-"an alternative it can also show the last position that was active when the "
-"user left the application. </p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:159
-#, fuzzy, kde-format
-#| msgid "Show image caption"
-msgid "Show Home Location"
-msgstr "Pildi allkirja näitamine"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:164
-#, kde-format
-msgid "Return to Last Location Visited"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_externalEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:184
-#, fuzzy, kde-format
-#| msgid "Internal Error"
-msgid "&External editor:"
-msgstr "Sisemine tõrge"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:194
-#, kde-format
-msgid ""
-"<p>The application that is launched to edit maps. Potlatch (default) "
-"requires a web browser with flash support to be installed. When selecting "
-"josm or merkaartor, make sure that the respective application is installed.</"
-"p>"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:198
-#, fuzzy, kde-format
-#| msgid "Always ignore"
-msgid "Always ask"
-msgstr "Alati eiratakse"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:203
-#, kde-format
-msgid "Potlatch (Web browser)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:208
-#, kde-format
-msgid "JOSM"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:213
-#, kde-format
-msgid "Merkaartor"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/MarblePluginSettingsWidget.ui:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
-"Here you can select and deselect the functionality that is provided through "
-"plugins. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
-"from the map, menus and toolbars. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
-"their configuration a bit. </span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/MarblePluginSettingsWidget.ui:26
-#, fuzzy, kde-format
-#| msgid "Plugins"
-msgid "P&lugins"
-msgstr "Pluginad"
-
-#. i18n: ectx: property (title), widget (QGroupBox, timeZone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:23
-#, fuzzy, kde-format
-#| msgid "Time Zone:"
-msgid "Time Zone"
-msgstr "Ajavöönd:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_utc)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:29
-#, kde-format
-msgid "UTC"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:39
-#, fuzzy, kde-format
-#| msgid "Camera time zone:"
-msgid "System time zone"
-msgstr "Kaamera ajavöönd:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_customTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:51
-#, fuzzy, kde-format
-#| msgid "Camera time zone:"
-msgid "Choose Time zone"
-msgstr "Kaamera ajavöönd:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:68
-#, fuzzy, kde-format
-#| msgid "Unpolar Coordinates"
-msgid "Universal Time Coordinated"
-msgstr "Mittepolaarsed koordinaadid"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:73
-#, fuzzy, kde-format
-#| msgid "European Union"
-msgid "European Central Time"
-msgstr "Euroopa Liit"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:78
-#, kde-format
-msgid "Eastern European Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:83
-#, kde-format
-msgid "Egypt Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:88
-#, kde-format
-msgid "Eastern African Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:93
-#, fuzzy, kde-format
-#| msgid "Add Date & Time"
-msgid "Middle East Time"
-msgstr "K&uupäeva ja kellaaja lisamine"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:98
-#, fuzzy, kde-format
-#| msgid "Image Date Time"
-msgid "Near East Time"
-msgstr "Pildi kuupäev ja kellaaeg"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:103
-#, kde-format
-msgid "Pakistan Lahore Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:108
-#, kde-format
-msgid "India Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:113
-#, kde-format
-msgid "Bangladesh Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:118
-#, fuzzy, kde-format
-#| msgid "Video Standard:"
-msgid "Vietnam Standard Time"
-msgstr "Videostandard:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:123
-#, fuzzy, kde-format
-#| msgid "Chinese (Taiwan)"
-msgid "China Taiwan Time"
-msgstr "Hiina (Taiwan)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:128
-#, kde-format
-msgid "Japan Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:133
-#, kde-format
-msgid "Australia Central Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:138
-#, kde-format
-msgid "Australia Eastern Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:143
-#, fuzzy, kde-format
-#| msgid "Solomon Islands"
-msgid "Solomon Standard Time"
-msgstr "Saalomoni saared"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:148
-#, fuzzy, kde-format
-#| msgid "New Zealand"
-msgid "New Zealand Standard Time"
-msgstr "Uus-Meremaa"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:153
-#, fuzzy, kde-format
-#| msgid "Cayman Islands"
-msgid "Midway Islands Time"
-msgstr "Kaimanisaared"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:158
-#, kde-format
-msgid "Hawaii Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:163
-#, kde-format
-msgid "Alaska Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:168
-#, kde-format
-msgid "Pacific Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:173
-#, kde-format
-msgid "Phoenix Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:178
-#, kde-format
-msgid "Mountain Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:183
-#, kde-format
-msgid "Central Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:188
-#, fuzzy, kde-format
-#| msgid "Standard"
-msgid "Eastern Standard Time"
-msgstr "Standardne"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:193
-#, kde-format
-msgid "Indiana Eastern Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:198
-#, fuzzy, kde-format
-#| msgid "US Virgin Islands"
-msgid "Puerto Rico and US Virgin Islands Time"
-msgstr "USA Neitsisaared"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:203
-#, kde-format
-msgid "Canada Newfoundland Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:208
-#, kde-format
-msgid "Argentina Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:213
-#, kde-format
-msgid "Brazil Eastern Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:218
-#, fuzzy, kde-format
-#| msgid "Central African Republic"
-msgid "Central African Time"
-msgstr "Kesk-Aafrika Vabariik"
-
-#. i18n: ectx: property (title), widget (QGroupBox, whenMarbleStarts)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:231
-#, kde-format
-msgid "When Marble starts"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTime)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:237
-#, fuzzy, kde-format
-#| msgid "Load theme"
-msgid "Load system time"
-msgstr "Laadi teema"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_lastSessionTime)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:247
-#, kde-format
-msgid "Load last session time"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:17
-#, fuzzy, kde-format
-#| msgid "Units:"
-msgid "&Units"
-msgstr "Ühikud:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:35
-#, fuzzy, kde-format
-#| msgid "Distance:"
-msgid "&Distance:"
-msgstr "Kaugus:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
-"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:61
-#, kde-format
-msgid "Kilometer, Meter"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:66
-#, kde-format
-msgid "Miles, Feet"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:71
-#, kde-format
-msgid "Nautical miles, Knots"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:85
-#, fuzzy, kde-format
-#| msgid "Angle:"
-msgid "An&gle:"
-msgstr "Nurk:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:101
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
-"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
-"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
-"g. 54.5°).</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:105
-#, kde-format
-msgid "Degree (DMS)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:110
-#, kde-format
-msgid "Degree (Decimal)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:115
-#, kde-format
-msgid "Universal Transverse Mercator (UTM)"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:126
-#, fuzzy, kde-format
-#| msgid "Quality:"
-msgid "Map &Quality"
-msgstr "Kvaliteet:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:144
-#, fuzzy, kde-format
-#| msgid "&Shuffle images"
-msgid "&Still image:"
-msgstr "&Piltide segamine"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed while there is no user input. Usually this allows for "
-"high map quality as speed is no concern.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:164
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:219
-#, fuzzy, kde-format
-#| msgid "Outlined Text"
-msgid "Outline Quality"
-msgstr "Rõhutatud tekst"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:169
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:224
-#, fuzzy, kde-format
-#| msgid "Quality:"
-msgid "Low Quality"
-msgstr "Kvaliteet:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:174
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:229
-#, fuzzy, kde-format
-#| msgid "Normal"
-msgid "Normal"
-msgstr "Tavaline"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:179
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:234
-#, fuzzy, kde-format
-#| msgid "Quality:"
-msgid "High Quality"
-msgstr "Kvaliteet:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:184
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:239
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
-msgid "Print Quality"
-msgstr "Sordi hinnangu järgi"
-
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:198
-#, fuzzy, kde-format
-#| msgid "Duration:"
-msgid "During &animations:"
-msgstr "Kestus:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:212
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed during map animations (e.g. while dragging the globe). </"
-"p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-"machines it is advisable to set this option to \"low quality\" as this will "
-"give better speed.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:266
-#, fuzzy, kde-format
-#| msgid "Texture"
-msgid "&Text Labels"
-msgstr "Tekstuur"
-
-#. i18n: ectx: property (text), widget (QLabel, label_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:286
-#, fuzzy, kde-format
-#| msgid "File name"
-msgid "&Place names:"
-msgstr "Faili nimi"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:302
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
-"different names in different languages. The label on the map can show the "
-"name in the user's language. Alternatively it can display the name in the "
-"official language and glyphs of that place. </p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:306
-#, fuzzy, kde-format
-#| msgid "Custom Range"
-msgid "Custom & Native Language"
-msgstr "Kohandatud vahemik"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:311
-#, fuzzy, kde-format
-#| msgid "Custom Range"
-msgid "Custom Language"
-msgstr "Kohandatud vahemik"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:316
-#, fuzzy, kde-format
-#| msgid "Default Language"
-msgid "Native Language"
-msgstr "Vaikimisi keel"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:340
-#, fuzzy, kde-format
-#| msgid "Default Language"
-msgid "Default map &font:"
-msgstr "Vaikimisi keel"
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:353
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
-#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
-#| "icalshare.com</span></a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
-"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
-"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
-"icalshare.com</span></a> või ka mujalt.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
-"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
-"html>"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:113
 #, fuzzy, kde-format
@@ -62464,66 +61072,6 @@ msgstr "Seotud pildid"
 msgid "Add custom tag..."
 msgstr "Lisa valla silt"
 
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.cpp:210
-#, fuzzy, kde-format
-#| msgid "Open File"
-msgid "Open File"
-msgstr "Faili avamine"
-
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.cpp:212
-#, fuzzy, kde-format
-#| msgid "All supported files (%1)"
-msgid "All Supported Files (*.png)"
-msgstr "Kõik toetatud failid (%1)"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:64
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
-msgid "Name:"
-msgstr "Nimi:"
-
-#. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:81
-#, fuzzy, kde-format
-#| msgid "Icon Size:"
-msgid "Icon link:"
-msgstr "Ikooni suurus:"
-
-#. i18n: ectx: property (text), widget (QLabel, idLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:91
-#, kde-format
-msgid "ID:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, targetIdLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:104
-#, fuzzy, kde-format
-#| msgid "Target"
-msgid "Target ID:"
-msgstr "Tulemus"
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:35
-#, kde-format
-msgid "Placemark position provider Plugin"
-msgstr ""
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "Replace string"
-#| msgid "Replace:"
-msgid "Placemark"
-msgstr "Asendamine:"
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:55
-#, fuzzy, kde-format
-#| msgid "Set width position to center."
-msgid "Reports the position of a placemark"
-msgstr "Määra siin kärpimisvaliku laius keskmest."
-
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:233
 #, fuzzy, kde-format
 #| msgid "Mercator"
@@ -62606,8 +61154,26 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Tundmatu nimi"
 
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:35
+#, kde-format
+msgid "Placemark position provider Plugin"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:45
+#, fuzzy, kde-format
+#| msgctxt "Replace string"
+#| msgid "Replace:"
+msgid "Placemark"
+msgstr "Asendamine:"
+
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:55
+#, fuzzy, kde-format
+#| msgid "Set width position to center."
+msgid "Reports the position of a placemark"
+msgstr "Määra siin kärpimisvaliku laius keskmest."
+
 #. i18n: ectx: property (text), widget (QPushButton, configureButton)
-#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:366
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:366
 #: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:142
 #, fuzzy, kde-format
 #| msgid "Configure"
@@ -62747,7 +61313,7 @@ msgstr "Ratsionaalarv"
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:118
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:118
 #, fuzzy, kde-format
 #| msgid "Show navigation"
 msgid "Navigation"
@@ -62855,6 +61421,22 @@ msgstr "Värvid"
 #| msgid "Show Geolocation Indicator"
 msgid "Position I&ndicator:"
 msgstr "Geolokatsiooni tähise näitamine"
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:30
+#, kde-format
+msgid "Current Route Position Provider Plugin"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:40
+#, fuzzy, kde-format
+#| msgid "Current Name"
+msgid "Current Route"
+msgstr "Praegune nimi"
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:50
+#, kde-format
+msgid "Simulates traveling along the current route."
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -62983,64 +61565,6 @@ msgid ""
 "<p><b>Vertical Perspective Projection</b> (\"orthogonal\")</p><p> Shows the "
 "earth as it appears from a relatively short distance above the surface. "
 "Applications: Used for Virtual Globes.</p>"
-msgstr ""
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:109
-#, fuzzy, kde-format
-#| msgid "View"
-msgid "View"
-msgstr "Vaade"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:126
-#, kde-format
-msgid "Cache and Proxy"
-msgstr ""
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Date and time"
-msgid "Date and Time"
-msgstr "Kuupäev ja kellaaeg"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Rating"
-msgid "Routing"
-msgstr "Hinnang"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:155
-#, fuzzy, kde-format
-#| msgid "Synchronize"
-msgid "Synchronization"
-msgstr "Sünkroniseeri"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:271
-#, fuzzy, kde-format
-#| msgid "Synchronize"
-msgid "Never synchronized."
-msgstr "Sünkroniseeri"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:275
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Use lazy synchronization"
-msgid "Last synchronization: %1"
-msgstr "Laisa sünkroonimise kasutamine"
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:30
-#, kde-format
-msgid "Current Route Position Provider Plugin"
-msgstr ""
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:40
-#, fuzzy, kde-format
-#| msgid "Current Name"
-msgid "Current Route"
-msgstr "Praegune nimi"
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:50
-#, kde-format
-msgid "Simulates traveling along the current route."
 msgstr ""
 
 #: core/utilities/geolocation/marble/routing/GoToDialog.cpp:167
@@ -63642,26 +62166,1472 @@ msgctxt "journey duration"
 msgid "%1:%2 h"
 msgstr "%1:%2 (%3)"
 
-#: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:20
 #, fuzzy, kde-format
-#| msgid "Select sound files"
-msgid "Select sound files..."
-msgstr "Helifailide valimine"
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
+"used for Marble: The physical memory which is needed to keep map data in the "
+"computer's memory. Increasing the value will make the application more "
+"responsive. The hard disc memory cache is used by download contents from the "
+"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
+"to save space on the hard disc and if high usage of the Internet is not an "
+"issue. </p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
 
-#: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:23
 #, kde-format
-msgid "Supported Sound Files (*.mp3 *.ogg *.wav)"
+msgid "C&ache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:41
+#, kde-format
+msgid "&Physical memory:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:73
+#, fuzzy, kde-format
+#| msgid "Clear"
+msgid "C&lear"
+msgstr "Puhasta"
+
+#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:105
+#, kde-format
+msgid "&Hard disc:"
+msgstr ""
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:124
+#, fuzzy, kde-format
+#| msgctxt "smug album privacy"
+#| msgid "Unlisted"
+msgid "Unlimited"
+msgstr "Avaldamata"
+
+#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:146
+#, kde-format
+msgid "Cl&ear"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:172
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
+"local intranet. Please leave empty if there is no proxy.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:175
+#, kde-format
+msgid "&Proxy"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:183
+#, kde-format
+msgid "&Proxy:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:200
+#, fuzzy, kde-format
+#| msgid "Host Port:"
+msgid "P&ort:"
+msgstr "Serveri port:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:256
+#, fuzzy, kde-format
+#| msgid "Fix type"
+msgid "Proxy type:"
+msgstr "Paranduse tüüp"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:264
+#, kde-format
+msgid "Http"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:269
+#, kde-format
+msgid "Socks5"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
+#. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:308
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:320
+#, fuzzy, kde-format
+#| msgid "Presentation"
+msgid "Requires authentication"
+msgstr "Esitlus"
+
+#. i18n: ectx: property (text), widget (QLabel, label_username)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:326
+#, fuzzy, kde-format
+#| msgctxt "piwigo login settings"
+#| msgid "Username:"
+msgid "U&sername:"
+msgstr "Kasutajanimi:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_password)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:336
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgid "&Password:"
+msgstr "Parool:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableSync)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:17
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use lazy synchronization"
+msgid "Enable synchronization"
+msgstr "Laisa sünkroonimise kasutamine"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncRoutes)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:48
+#, kde-format
+msgid ""
+"Allows you to store routes in owncloud. Each route must be uploaded/"
+"downloaded manually."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncRoutes)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:51
+#, fuzzy, kde-format
+#| msgid "1 file awaits synchronization"
+#| msgid_plural "%1 files await synchronization"
+msgid "Enable route synchronization"
+msgstr "1 fail ootab sünkroonimist"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncBookmarks)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:84
+#, kde-format
+msgid "Automatically sync all bookmarks to the server."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncBookmarks)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:87
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use lazy synchronization"
+msgid "Enable bookmark synchronization"
+msgstr "Laisa sünkroonimise kasutamine"
+
+#. i18n: ectx: property (text), widget (QPushButton, button_syncNow)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:119
+#, kde-format
+msgid "Sync now"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:147
+#, fuzzy, kde-format
+#| msgid "Invalid credentials"
+msgid "Credentials"
+msgstr "Vigased kasutajatunnused"
+
+#. i18n: ectx: property (text), widget (QLabel, labelServer)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:153
+#, fuzzy, kde-format
+#| msgid "MySQL interface"
+msgid "Server:"
+msgstr "MySQL-i liides"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, kcfg_owncloudServer)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:160
+#, kde-format
+msgid "Remote server URL, e.g. myserver.com/owncloud"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, labelUsername)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:167
+#, fuzzy, kde-format
+#| msgctxt "piwigo login settings"
+#| msgid "Username:"
+msgid "Username:"
+msgstr "Kasutajanimi:"
+
+#. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:197
+#, fuzzy, kde-format
+#| msgid "Login:"
+msgid "Test Login"
+msgstr "Kasutajatunnus:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:17
+#, kde-format
+msgid "Dragging and Animation"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:37
+#, fuzzy, kde-format
+#| msgid "Target location: "
+msgid "&Drag location:"
+msgstr "Sihtkoha asukoht:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:54
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the mouse "
+"there are two standard behaviours when dealing with a virtual globe:</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The location below mouse "
+"pointer will follow the cursor exactly: As a result e.g. the north pole will "
+"not stay at the top which can lead to confusion. By default Marble makes "
+"sure that north is always up which results in a dragging behaviour where the "
+"location below the mouse pointer slightly \"detaches\" from the cursor. </"
+"p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Flip Vertically"
+msgid "Keep Planet Axis Vertically"
+msgstr "Peegeldamine vertikaalselt"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:63
+#, kde-format
+msgid "Follow Mouse Pointer"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:73
+#, kde-format
+msgid "Use kinetic spinning when dragging the map"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:76
+#, fuzzy, kde-format
+#| msgid "Invert Selection"
+msgid "&Inertial globe rotation"
+msgstr "Vaheta valik"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:86
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
+"location Marble can either move instantly to the new location or it can show "
+"a travel animation from the previous place to the new place.</p></body></"
+"html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_animateTargetVoyage)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:89
+#, kde-format
+msgid "&Animate voyage to the target"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:96
+#, fuzzy, kde-format
+#| msgid "Use CTRL+left mouse button to select a search area."
+msgid "Use right mouse button to rotate the camera around"
+msgstr "Ctrl+hiire vasak nupp võimaldab valida otsinguala."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:99
+#, fuzzy, kde-format
+#| msgid "&Choose operation:"
+msgid "&Mouse view rotation"
+msgstr "&Toimingu valimine:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:142
+#, kde-format
+msgid "&On startup:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:155
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
+"display the home location immediately after the application has started. As "
+"an alternative it can also show the last position that was active when the "
+"user left the application. </p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:159
+#, fuzzy, kde-format
+#| msgid "Show image caption"
+msgid "Show Home Location"
+msgstr "Pildi allkirja näitamine"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:164
+#, kde-format
+msgid "Return to Last Location Visited"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_externalEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:184
+#, fuzzy, kde-format
+#| msgid "Internal Error"
+msgid "&External editor:"
+msgstr "Sisemine tõrge"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:194
+#, kde-format
+msgid ""
+"<p>The application that is launched to edit maps. Potlatch (default) "
+"requires a web browser with flash support to be installed. When selecting "
+"josm or merkaartor, make sure that the respective application is installed.</"
+"p>"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:198
+#, fuzzy, kde-format
+#| msgid "Always ignore"
+msgid "Always ask"
+msgstr "Alati eiratakse"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:203
+#, kde-format
+msgid "Potlatch (Web browser)"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:208
+#, kde-format
+msgid "JOSM"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:213
+#, kde-format
+msgid "Merkaartor"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:23
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
+"Here you can select and deselect the functionality that is provided through "
+"plugins. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
+"from the map, menus and toolbars. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
+"their configuration a bit. </span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:26
+#, fuzzy, kde-format
+#| msgid "Plugins"
+msgid "P&lugins"
+msgstr "Pluginad"
+
+#. i18n: ectx: property (title), widget (QGroupBox, timeZone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:23
+#, fuzzy, kde-format
+#| msgid "Time Zone:"
+msgid "Time Zone"
+msgstr "Ajavöönd:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_utc)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:29
+#, kde-format
+msgid "UTC"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:39
+#, fuzzy, kde-format
+#| msgid "Camera time zone:"
+msgid "System time zone"
+msgstr "Kaamera ajavöönd:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_customTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:51
+#, fuzzy, kde-format
+#| msgid "Camera time zone:"
+msgid "Choose Time zone"
+msgstr "Kaamera ajavöönd:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:68
+#, fuzzy, kde-format
+#| msgid "Unpolar Coordinates"
+msgid "Universal Time Coordinated"
+msgstr "Mittepolaarsed koordinaadid"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:73
+#, fuzzy, kde-format
+#| msgid "European Union"
+msgid "European Central Time"
+msgstr "Euroopa Liit"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:78
+#, kde-format
+msgid "Eastern European Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:83
+#, kde-format
+msgid "Egypt Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:88
+#, kde-format
+msgid "Eastern African Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:93
+#, fuzzy, kde-format
+#| msgid "Add Date & Time"
+msgid "Middle East Time"
+msgstr "K&uupäeva ja kellaaja lisamine"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:98
+#, fuzzy, kde-format
+#| msgid "Image Date Time"
+msgid "Near East Time"
+msgstr "Pildi kuupäev ja kellaaeg"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:103
+#, kde-format
+msgid "Pakistan Lahore Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:108
+#, kde-format
+msgid "India Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:113
+#, kde-format
+msgid "Bangladesh Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:118
+#, fuzzy, kde-format
+#| msgid "Video Standard:"
+msgid "Vietnam Standard Time"
+msgstr "Videostandard:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:123
+#, fuzzy, kde-format
+#| msgid "Chinese (Taiwan)"
+msgid "China Taiwan Time"
+msgstr "Hiina (Taiwan)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:128
+#, kde-format
+msgid "Japan Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:133
+#, kde-format
+msgid "Australia Central Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:138
+#, kde-format
+msgid "Australia Eastern Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:143
+#, fuzzy, kde-format
+#| msgid "Solomon Islands"
+msgid "Solomon Standard Time"
+msgstr "Saalomoni saared"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:148
+#, fuzzy, kde-format
+#| msgid "New Zealand"
+msgid "New Zealand Standard Time"
+msgstr "Uus-Meremaa"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:153
+#, fuzzy, kde-format
+#| msgid "Cayman Islands"
+msgid "Midway Islands Time"
+msgstr "Kaimanisaared"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:158
+#, kde-format
+msgid "Hawaii Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:163
+#, kde-format
+msgid "Alaska Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:168
+#, kde-format
+msgid "Pacific Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:173
+#, kde-format
+msgid "Phoenix Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:178
+#, kde-format
+msgid "Mountain Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:183
+#, kde-format
+msgid "Central Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:188
+#, fuzzy, kde-format
+#| msgid "Standard"
+msgid "Eastern Standard Time"
+msgstr "Standardne"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:193
+#, kde-format
+msgid "Indiana Eastern Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:198
+#, fuzzy, kde-format
+#| msgid "US Virgin Islands"
+msgid "Puerto Rico and US Virgin Islands Time"
+msgstr "USA Neitsisaared"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:203
+#, kde-format
+msgid "Canada Newfoundland Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:208
+#, kde-format
+msgid "Argentina Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:213
+#, kde-format
+msgid "Brazil Eastern Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:218
+#, fuzzy, kde-format
+#| msgid "Central African Republic"
+msgid "Central African Time"
+msgstr "Kesk-Aafrika Vabariik"
+
+#. i18n: ectx: property (title), widget (QGroupBox, whenMarbleStarts)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:231
+#, kde-format
+msgid "When Marble starts"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTime)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:237
+#, fuzzy, kde-format
+#| msgid "Load theme"
+msgid "Load system time"
+msgstr "Laadi teema"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_lastSessionTime)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:247
+#, kde-format
+msgid "Load last session time"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
+#, fuzzy, kde-format
+#| msgid "Units:"
+msgid "&Units"
+msgstr "Ühikud:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:35
+#, fuzzy, kde-format
+#| msgid "Distance:"
+msgid "&Distance:"
+msgstr "Kaugus:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
+"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:61
+#, kde-format
+msgid "Kilometer, Meter"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:66
+#, kde-format
+msgid "Miles, Feet"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:71
+#, kde-format
+msgid "Nautical miles, Knots"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:85
+#, fuzzy, kde-format
+#| msgid "Angle:"
+msgid "An&gle:"
+msgstr "Nurk:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:101
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
+"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
+"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
+"g. 54.5°).</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:105
+#, kde-format
+msgid "Degree (DMS)"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:110
+#, kde-format
+msgid "Degree (Decimal)"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:115
+#, kde-format
+msgid "Universal Transverse Mercator (UTM)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:126
+#, fuzzy, kde-format
+#| msgid "Quality:"
+msgid "Map &Quality"
+msgstr "Kvaliteet:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:144
+#, fuzzy, kde-format
+#| msgid "&Shuffle images"
+msgid "&Still image:"
+msgstr "&Piltide segamine"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:157
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
+"that gets displayed while there is no user input. Usually this allows for "
+"high map quality as speed is no concern.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:164
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:219
+#, fuzzy, kde-format
+#| msgid "Outlined Text"
+msgid "Outline Quality"
+msgstr "Rõhutatud tekst"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:169
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:224
+#, fuzzy, kde-format
+#| msgid "Quality:"
+msgid "Low Quality"
+msgstr "Kvaliteet:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:174
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:229
+#, fuzzy, kde-format
+#| msgid "Normal"
+msgid "Normal"
+msgstr "Tavaline"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:179
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:234
+#, fuzzy, kde-format
+#| msgid "Quality:"
+msgid "High Quality"
+msgstr "Kvaliteet:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:184
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:239
+#, fuzzy, kde-format
+#| msgid "Sort by rating"
+msgid "Print Quality"
+msgstr "Sordi hinnangu järgi"
+
+#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:198
+#, fuzzy, kde-format
+#| msgid "Duration:"
+msgid "During &animations:"
+msgstr "Kestus:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:212
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
+"that gets displayed during map animations (e.g. while dragging the globe). </"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
+"machines it is advisable to set this option to \"low quality\" as this will "
+"give better speed.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:266
+#, fuzzy, kde-format
+#| msgid "Texture"
+msgid "&Text Labels"
+msgstr "Tekstuur"
+
+#. i18n: ectx: property (text), widget (QLabel, label_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:286
+#, fuzzy, kde-format
+#| msgid "File name"
+msgid "&Place names:"
+msgstr "Faili nimi"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:302
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
+"different names in different languages. The label on the map can show the "
+"name in the user's language. Alternatively it can display the name in the "
+"official language and glyphs of that place. </p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:306
+#, fuzzy, kde-format
+#| msgid "Custom Range"
+msgid "Custom & Native Language"
+msgstr "Kohandatud vahemik"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:311
+#, fuzzy, kde-format
+#| msgid "Custom Range"
+msgid "Custom Language"
+msgstr "Kohandatud vahemik"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:316
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgid "Native Language"
+msgstr "Vaikimisi keel"
+
+#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:340
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgid "Default map &font:"
+msgstr "Vaikimisi keel"
+
+#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:353
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"http://www.icalshare.com\"><span "
+#| "style=\" text-decoration: underline; color:#0057ae;\">http://www."
+#| "icalshare.com</span></a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
+"used on the map.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Oma riiki puudutava "
+"kalendri võib alla laadida saidilt <a href=\"http://www.icalshare.com"
+"\"><span style=\" text-decoration: underline; color:#0057ae;\">http://www."
+"icalshare.com</span></a> või ka mujalt.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">See ei ole kuidagi "
+"kohustuslik. Kõik selle kalendri sündmused trükitakse punaselt.</p></body></"
+"html>"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:109
+#, fuzzy, kde-format
+#| msgid "View"
+msgid "View"
+msgstr "Vaade"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:126
+#, kde-format
+msgid "Cache and Proxy"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:134
+#, fuzzy, kde-format
+#| msgid "Date and time"
+msgid "Date and Time"
+msgstr "Kuupäev ja kellaaeg"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:138
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgid "Routing"
+msgstr "Hinnang"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:155
+#, fuzzy, kde-format
+#| msgid "Synchronize"
+msgid "Synchronization"
+msgstr "Sünkroniseeri"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:271
+#, fuzzy, kde-format
+#| msgid "Synchronize"
+msgid "Never synchronized."
+msgstr "Sünkroniseeri"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:275
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use lazy synchronization"
+msgid "Last synchronization: %1"
+msgstr "Laisa sünkroonimise kasutamine"
+
+#: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
+#, fuzzy, kde-format
+#| msgid "Unable to save changes to file"
+msgid "Unable to insert data into cache"
+msgstr "Muudatuste salvestamine faili nurjus"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:136
+#, fuzzy, kde-format
+#| msgid "Visible to Friends"
+msgid "Visible region"
+msgstr "Nähtav sõpradele"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:138
+#, fuzzy, kde-format
+#| msgid "Specific Location"
+msgid "Specify region"
+msgstr "Konkreetne asukoht"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:140
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Download New"
+msgid "Download Route"
+msgstr "Laadi alla uued"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:142
+#, kde-format
+msgid "Enabled when a route exists"
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:155
+#, kde-format
+msgid "Offset from route:"
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:190
+#, fuzzy, kde-format
+#| msgid "Destination Folder:"
+msgid "Selection Method"
+msgstr "Sihtkataloog:"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:198
+#, kde-format
+msgid "Number of tiles to download:"
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:248
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Download New"
+msgid "Download Region"
+msgstr "Laadi alla uued"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:250
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "This item has never been downloaded"
+msgid "Tile type to be downloaded:"
+msgstr "Seda elementi pole kunagi alla laaditud"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:252
+#, fuzzy, kde-format
+#| msgid "Texture Filter"
+msgid "Texture tiles"
+msgstr "Tekstuurifilter"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:253
+#, fuzzy, kde-format
+#| msgid "Video Files"
+msgid "Vector tiles"
+msgstr "Videofailid"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:254
+#, kde-format
+msgid "Allows selection between layer types that are visibly being rendered."
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
+#, kde-format
+msgid "There is a limit of %1 tile(s) to download."
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:533
+#, kde-format
+msgid "Approximate size of the tiles to be downloaded"
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:537
+#, kde-format
+msgid "Estimated download size: %1 MB"
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:540
+#, kde-format
+msgid "Estimated download size: %1 kB"
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:20
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:20
 #, fuzzy, kde-format
 #| msgid "Creation date"
 msgid "Creating Map"
 msgstr "Loomise kuupäev"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:507
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:507
 #, fuzzy, kde-format
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -63709,7 +63679,7 @@ msgstr ""
 "html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:517
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:517
 #, kde-format
 msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
@@ -63717,33 +63687,33 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:29
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:29
 #, kde-format
 msgid "Zoom"
 msgstr "Suurendus"
 
 #. i18n: ectx: property (text), widget (QLabel, tileLevelLabel)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:37
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:37
 #, fuzzy, kde-format
 #| msgid "Title Change"
 msgid "&Tile level range:"
 msgstr "Nime muutmine"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, topSpinBox)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:47
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:47
 #, kde-format
 msgid "Minimum Tile Level"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, toLabel)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:63
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:63
 #, fuzzy, kde-format
 #| msgid "Auto"
 msgid "to"
 msgstr "Automaatne"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bottomSpinBox)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:70
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:70
 #, fuzzy, kde-format
 #| msgid "Maximum size:"
 msgid "Maximum Tile Level"
@@ -73839,6 +73809,16 @@ msgstr "Lähtestab kõik seadistused vaikeväärtustele."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Lähtestab kõik seadistused vaikeväärtustele."
+
+#, fuzzy
+#~| msgid "Iteration:"
+#~ msgid "Elevation:"
+#~ msgstr "Kordused:"
+
+#, fuzzy
+#~| msgid "Select sound files"
+#~ msgid "Select sound files..."
+#~ msgstr "Helifailide valimine"
 
 #, fuzzy
 #~| msgid "No photo specified"

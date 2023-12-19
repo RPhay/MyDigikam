@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-18 00:39+0000\n"
+"POT-Creation-Date: 2023-12-19 00:39+0000\n"
 "PO-Revision-Date: 2023-12-17 11:28\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3443,7 +3443,7 @@ msgid ""
 msgstr "这一版 digiKam 的新特性包括 (相比于 digiKam 7x)："
 
 #: core/app/views/stack/welcomepageview.cpp:210
-#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:351
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:351
 #, kde-format
 msgid "About"
 msgstr "软件简介"
@@ -6250,7 +6250,7 @@ msgstr "解析图像黑边以自动确定裁剪区域。"
 #: core/dplugins/bqm/transform/crop/crop.cpp:96
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:349
 #: core/libs/template/templateviewer.cpp:145
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:115
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:115
 #, kde-format
 msgid "Position:"
 msgstr "位置："
@@ -19721,8 +19721,8 @@ msgstr "勾选此项后，项目的所有属性，如注释、评分、标签等
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:54
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:127
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:54
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:127
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -22342,7 +22342,7 @@ msgstr "POST 方式对于所有设置者而言都是必需项目。"
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:540
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
-#: core/utilities/geolocation/marble/PositionProviderPluginInterface.cpp:25
+#: core/utilities/geolocation/marble/plugins/PositionProviderPluginInterface.cpp:25
 #, kde-format
 msgid "Unknown error"
 msgstr "未知错误"
@@ -24956,7 +24956,7 @@ msgstr "显示在密码输入框旁的密码提示信息 (可选)。"
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
 #: core/libs/dplugins/webservices/wslogindialog.cpp:89
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:181
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:181
 #, kde-format
 msgid "Password:"
 msgstr "密码："
@@ -27446,7 +27446,7 @@ msgstr ""
 "%1\n"
 "(来源图像)"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:193
+#: core/libs/database/item/scanner/itemscanner.cpp:192
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -40517,7 +40517,7 @@ msgstr "更改"
 
 #. i18n: ectx: property (text), widget (QPushButton, iconLinkButton)
 #: core/libs/widgets/files/dfileselector.cpp:58
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:46
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:46
 #, kde-format
 msgid "Browse..."
 msgstr "浏览..."
@@ -48225,7 +48225,7 @@ msgid ""
 msgstr "<qt>图像文件的保存方式设置<br/></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:142
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:145
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:145
 #, kde-format
 msgid "Plugins"
 msgstr "插件"
@@ -52714,6 +52714,68 @@ msgstr "文件夹(&F)："
 msgid "&Add Folder..."
 msgstr "添加文件夹(&A)..."
 
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_intValueEditor)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:129
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:28
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:47
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:99
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:151
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:203
+#, kde-format
+msgid "°"
+msgstr "°"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:179
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:338
+#, kde-format
+msgid "'"
+msgstr "'"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:180
+#, kde-format
+msgid "\""
+msgstr "\""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:526
+#, kde-format
+msgctxt "East, the direction"
+msgid "E"
+msgstr "东"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:527
+#, kde-format
+msgctxt "West, the direction"
+msgid "W"
+msgstr "西"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:530
+#, kde-format
+msgctxt "North, the direction"
+msgid "N"
+msgstr "北"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:531
+#, kde-format
+msgctxt "South, the direction"
+msgid "S"
+msgstr "南"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:38
+#, kde-format
+msgid "′"
+msgstr "′"
+
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:54
+#, kde-format
+msgid "″"
+msgstr "″"
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
 #: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:14
 #, kde-format
@@ -52726,10 +52788,41 @@ msgstr "新建书签文件夹"
 msgid "&Folder name:"
 msgstr "文件夹名称(&F)："
 
-#: core/utilities/geolocation/marble/CacheStoragePolicy.cpp:36
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:210
 #, kde-format
-msgid "Unable to insert data into cache"
-msgstr "无法将数据插入缓存"
+msgid "Open File"
+msgstr "打开文件"
+
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:212
+#, kde-format
+msgid "All Supported Files (*.png)"
+msgstr "所有支持的文件 (*.png)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:64
+#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
+#, kde-format
+msgid "Name:"
+msgstr "名称："
+
+#. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:81
+#, kde-format
+msgid "Icon link:"
+msgstr "图标链接："
+
+#. i18n: ectx: property (text), widget (QLabel, idLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:91
+#, kde-format
+msgid "ID:"
+msgstr "ID："
+
+#. i18n: ectx: property (text), widget (QLabel, targetIdLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:104
+#, kde-format
+msgid "Target ID:"
+msgstr "目标 ID："
 
 #: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:33
 #: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:34
@@ -52872,104 +52965,6 @@ msgstr "从云端移除"
 #, kde-format
 msgid "Upload to cloud"
 msgstr "上传到云端"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:136
-#, kde-format
-msgid "Visible region"
-msgstr "可见区域"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:138
-#, kde-format
-msgid "Specify region"
-msgstr "指定区域"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:140
-#, kde-format
-msgid "Download Route"
-msgstr "下载路线"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:142
-#, kde-format
-msgid "Enabled when a route exists"
-msgstr "路线存在时启用"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:155
-#, kde-format
-msgid "Offset from route:"
-msgstr "包括路线附近区域："
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:190
-#, kde-format
-msgid "Selection Method"
-msgstr "选择方式"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:198
-#, kde-format
-msgid "Number of tiles to download:"
-msgstr "要下载的图块数量："
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:248
-#, kde-format
-msgid "Download Region"
-msgstr "下载区域"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:250
-#, kde-format
-msgid "Tile type to be downloaded:"
-msgstr "要下载的图块类型："
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:252
-#, kde-format
-msgid "Texture tiles"
-msgstr "纹理图块"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:253
-#, kde-format
-msgid "Vector tiles"
-msgstr "矢量图块"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:254
-#, kde-format
-msgid "Allows selection between layer types that are visibly being rendered."
-msgstr "允许选择可见的图层类型。"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:523
-#, kde-format
-msgid "There is a limit of %1 tile(s) to download."
-msgstr "可下载图块数量不得超过 %1。"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:533
-#, kde-format
-msgid "Approximate size of the tiles to be downloaded"
-msgstr "要下载图块的预估大小"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:537
-#, kde-format
-msgid "Estimated download size: %1 MB"
-msgstr "预估下载大小：%1 MB"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:540
-#, kde-format
-msgid "Estimated download size: %1 kB"
-msgstr "预估下载大小：%1 kB"
-
-#. i18n: ectx: property (text), widget (QLabel, elevationLabel)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:19
-#, kde-format
-msgid "Elevation:"
-msgstr "海拔："
-
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, elevationSpinBox)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:26
-#, kde-format
-msgid " m"
-msgstr " 米"
-
-#. i18n: ectx: property (text), widget (QLabel, elevationModeLabel)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:36
-#, kde-format
-msgid "above sea level"
-msgstr "高出海平面"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
@@ -54831,21 +54826,6 @@ msgstr "选择地理区域"
 msgid "Northern Latitude"
 msgstr "北纬"
 
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_intValueEditor)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:47
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:99
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:151
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:203
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:129
-#: core/utilities/geolocation/marble/LatLonEdit.ui:28
-#, kde-format
-msgid "°"
-msgstr "°"
-
 #. i18n: ectx: property (text), widget (QLabel, northLabel)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:66
 #, kde-format
@@ -54887,264 +54867,6 @@ msgstr "南纬"
 #, kde-format
 msgid "&S"
 msgstr "南纬(&S)"
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:179
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:338
-#, kde-format
-msgid "'"
-msgstr "'"
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:180
-#, kde-format
-msgid "\""
-msgstr "\""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:526
-#, kde-format
-msgctxt "East, the direction"
-msgid "E"
-msgstr "东"
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:527
-#, kde-format
-msgctxt "West, the direction"
-msgid "W"
-msgstr "西"
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:530
-#, kde-format
-msgctxt "North, the direction"
-msgid "N"
-msgstr "北"
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:531
-#, kde-format
-msgctxt "South, the direction"
-msgid "S"
-msgstr "南"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
-#: core/utilities/geolocation/marble/LatLonEdit.ui:38
-#, kde-format
-msgid "′"
-msgstr "′"
-
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
-#: core/utilities/geolocation/marble/LatLonEdit.ui:54
-#, kde-format
-msgid "″"
-msgstr "″"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:20
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
-"used for Marble: The physical memory which is needed to keep map data in the "
-"computer's memory. Increasing the value will make the application more "
-"responsive. The hard disc memory cache is used by download contents from the "
-"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
-"to save space on the hard disc and if high usage of the Internet is not an "
-"issue. </p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble 使用两种缓存方式：物"
-"理内存缓存会将地图数据保存在计算机的内存中，增大此数值将使程序运行更加流畅。"
-"硬盘缓存用于保存从互联网下载的内容 (例如维基百科数据和地图数据)，减小此数值将"
-"减少硬盘空间的占用，但也会增加对互联网数据流量的依赖。</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:23
-#, kde-format
-msgid "C&ache"
-msgstr "缓存(&A)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:41
-#, kde-format
-msgid "&Physical memory:"
-msgstr "物理内存(&P)："
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:73
-#, kde-format
-msgid "C&lear"
-msgstr "清除(&l)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:105
-#, kde-format
-msgid "&Hard disc:"
-msgstr "硬盘(&H)："
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:124
-#, kde-format
-msgid "Unlimited"
-msgstr "不限制"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:146
-#, kde-format
-msgid "Cl&ear"
-msgstr "清除(&E)"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:172
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
-"local intranet. Please leave empty if there is no proxy.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">用于局域网的代理设置。如果"
-"没有使用代理，请留空。</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:175
-#, kde-format
-msgid "&Proxy"
-msgstr "代理服务器(&P)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:183
-#, kde-format
-msgid "&Proxy:"
-msgstr "代理服务器(&P)："
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:200
-#, kde-format
-msgid "P&ort:"
-msgstr "端口(&O)："
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:256
-#, kde-format
-msgid "Proxy type:"
-msgstr "代理服务器类型："
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:264
-#, kde-format
-msgid "Http"
-msgstr "Http"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:269
-#, kde-format
-msgid "Socks5"
-msgstr "Socks5"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
-#. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:308
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:320
-#, kde-format
-msgid "Requires authentication"
-msgstr "需要身份验证"
-
-#. i18n: ectx: property (text), widget (QLabel, label_username)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:326
-#, kde-format
-msgid "U&sername:"
-msgstr "用户名(&S)："
-
-#. i18n: ectx: property (text), widget (QLabel, label_password)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:336
-#, kde-format
-msgid "&Password:"
-msgstr "密码(&P)："
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableSync)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:17
-#, kde-format
-msgid "Enable synchronization"
-msgstr "启用同步功能"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:48
-#, kde-format
-msgid ""
-"Allows you to store routes in owncloud. Each route must be uploaded/"
-"downloaded manually."
-msgstr "将路线保存到 Owncloud 云服务。每条路线必须手动上传/下载。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:51
-#, kde-format
-msgid "Enable route synchronization"
-msgstr "启用路线同步"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:84
-#, kde-format
-msgid "Automatically sync all bookmarks to the server."
-msgstr "自动同步所有书签到服务器。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:87
-#, kde-format
-msgid "Enable bookmark synchronization"
-msgstr "启用书签同步"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_syncNow)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:119
-#, kde-format
-msgid "Sync now"
-msgstr "立即同步"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:147
-#, kde-format
-msgid "Credentials"
-msgstr "身份验证信息"
-
-#. i18n: ectx: property (text), widget (QLabel, labelServer)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:153
-#, kde-format
-msgid "Server:"
-msgstr "服务器："
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, kcfg_owncloudServer)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:160
-#, kde-format
-msgid "Remote server URL, e.g. myserver.com/owncloud"
-msgstr "远程服务器 URL，例如 myserver.com/owncloud"
-
-#. i18n: ectx: property (text), widget (QLabel, labelUsername)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:167
-#, kde-format
-msgid "Username:"
-msgstr "用户名："
-
-#. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:197
-#, kde-format
-msgid "Test Login"
-msgstr "登录测试"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:122
 #, kde-format
@@ -55199,778 +54921,6 @@ msgstr "英里"
 msgctxt "means nautical miles"
 msgid "nm"
 msgstr "海里"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:17
-#, kde-format
-msgid "Dragging and Animation"
-msgstr "拖动和动画"
-
-#. i18n: ectx: property (text), widget (QLabel, label_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:37
-#, kde-format
-msgid "&Drag location:"
-msgstr "拖动位置(&D)："
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:54
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the mouse "
-"there are two standard behaviours when dealing with a virtual globe:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The location below mouse "
-"pointer will follow the cursor exactly: As a result e.g. the north pole will "
-"not stay at the top which can lead to confusion. By default Marble makes "
-"sure that north is always up which results in a dragging behaviour where the "
-"location below the mouse pointer slightly \"detaches\" from the cursor. </"
-"p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">在对虚拟地球仪拖动鼠标时，"
-"可以设置 Marble 使用两种标准行为之一：</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">鼠标光标下方的位置将精确跟"
-"随光标，北极点将不会锁定在画面顶端，这会造成一些不便。Marble 的默认设置则是将"
-"北极点锁定到画面顶端，但这又会造成鼠标在每次拖动时都会稍微偏离光标的实际行"
-"程。</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:58
-#, kde-format
-msgid "Keep Planet Axis Vertically"
-msgstr "保持极轴垂直"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:63
-#, kde-format
-msgid "Follow Mouse Pointer"
-msgstr "跟随鼠标光标"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:73
-#, kde-format
-msgid "Use kinetic spinning when dragging the map"
-msgstr "拖动地图时使用动态旋转"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:76
-#, kde-format
-msgid "&Inertial globe rotation"
-msgstr "惯性旋转(&I)"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:86
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
-"location Marble can either move instantly to the new location or it can show "
-"a travel animation from the previous place to the new place.</p></body></"
-"html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">当搜索一个位置时，Marble 可"
-"以立即移动到该新地点，也可以显示飞越过渡动画，从当前位置移动到该新地点。</"
-"p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_animateTargetVoyage)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:89
-#, kde-format
-msgid "&Animate voyage to the target"
-msgstr "动画显示目标转向过程(&A)"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:96
-#, kde-format
-msgid "Use right mouse button to rotate the camera around"
-msgstr "使用鼠标右键旋转视角"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:99
-#, kde-format
-msgid "&Mouse view rotation"
-msgstr "鼠标视图旋转(&M)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:142
-#, kde-format
-msgid "&On startup:"
-msgstr "启动时(&O)："
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:155
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
-"display the home location immediately after the application has started. As "
-"an alternative it can also show the last position that was active when the "
-"user left the application. </p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble 默认会在启动后立即显"
-"示归零位置。您也可以选择启动后显示上次关闭程序时所在的最后活动位置。</p></"
-"body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:159
-#, kde-format
-msgid "Show Home Location"
-msgstr "显示归零位置"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:164
-#, kde-format
-msgid "Return to Last Location Visited"
-msgstr "返回最后访问的位置"
-
-#. i18n: ectx: property (text), widget (QLabel, label_externalEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:184
-#, kde-format
-msgid "&External editor:"
-msgstr "外部编辑器(&E)："
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:194
-#, kde-format
-msgid ""
-"<p>The application that is launched to edit maps. Potlatch (default) "
-"requires a web browser with flash support to be installed. When selecting "
-"josm or merkaartor, make sure that the respective application is installed.</"
-"p>"
-msgstr ""
-"<p>要启动的地图编辑程序。Potlatch (默认) 需要安装了 Flash 插件的网页浏览器。"
-"如果选择 JOSM 或 Merkaartor，请确保这些程序已经安装到本机。</p>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:198
-#, kde-format
-msgid "Always ask"
-msgstr "总是询问"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:203
-#, kde-format
-msgid "Potlatch (Web browser)"
-msgstr "Potlatch (网页浏览器)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:208
-#, kde-format
-msgid "JOSM"
-msgstr "JOSM"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:213
-#, kde-format
-msgid "Merkaartor"
-msgstr "墨卡托投影图"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/MarblePluginSettingsWidget.ui:23
-#, kde-format
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
-"Here you can select and deselect the functionality that is provided through "
-"plugins. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
-"from the map, menus and toolbars. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
-"their configuration a bit. </span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">熟悉 Marble 功能的高级用户可以在此启用和禁用通过插件提"
-"供的功能。</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">取消选择一款插件后，它的功能将不再显示在地图、菜单和工"
-"具栏。</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">某些插件还带有可配置的选项。</span></p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/MarblePluginSettingsWidget.ui:26
-#, kde-format
-msgid "P&lugins"
-msgstr "插件(&L)"
-
-#. i18n: ectx: property (title), widget (QGroupBox, timeZone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:23
-#, kde-format
-msgid "Time Zone"
-msgstr "时区"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_utc)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:29
-#, kde-format
-msgid "UTC"
-msgstr "UTC"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:39
-#, kde-format
-msgid "System time zone"
-msgstr "系统时区"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_customTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:51
-#, kde-format
-msgid "Choose Time zone"
-msgstr "选择时区"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:68
-#, kde-format
-msgid "Universal Time Coordinated"
-msgstr "协调世界时 (UTC)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:73
-#, kde-format
-msgid "European Central Time"
-msgstr "欧洲中部时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:78
-#, kde-format
-msgid "Eastern European Time"
-msgstr "欧洲东部时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:83
-#, kde-format
-msgid "Egypt Standard Time"
-msgstr "埃及标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:88
-#, kde-format
-msgid "Eastern African Time"
-msgstr "非洲东部时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:93
-#, kde-format
-msgid "Middle East Time"
-msgstr "中东时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:98
-#, kde-format
-msgid "Near East Time"
-msgstr "近东时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:103
-#, kde-format
-msgid "Pakistan Lahore Time"
-msgstr "巴基斯坦拉合尔时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:108
-#, kde-format
-msgid "India Standard Time"
-msgstr "印度标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:113
-#, kde-format
-msgid "Bangladesh Standard Time"
-msgstr "孟加拉标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:118
-#, kde-format
-msgid "Vietnam Standard Time"
-msgstr "越南标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:123
-#, kde-format
-msgid "China Taiwan Time"
-msgstr "中国大陆-中国台湾时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:128
-#, kde-format
-msgid "Japan Standard Time"
-msgstr "日本标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:133
-#, kde-format
-msgid "Australia Central Time"
-msgstr "澳大利亚中部时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:138
-#, kde-format
-msgid "Australia Eastern Time"
-msgstr "澳大利亚东部时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:143
-#, kde-format
-msgid "Solomon Standard Time"
-msgstr "所罗门群岛标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:148
-#, kde-format
-msgid "New Zealand Standard Time"
-msgstr "新西兰标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:153
-#, kde-format
-msgid "Midway Islands Time"
-msgstr "中途岛时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:158
-#, kde-format
-msgid "Hawaii Standard Time"
-msgstr "夏威夷标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:163
-#, kde-format
-msgid "Alaska Standard Time"
-msgstr "阿拉斯加标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:168
-#, kde-format
-msgid "Pacific Standard Time"
-msgstr "太平洋标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:173
-#, kde-format
-msgid "Phoenix Standard Time"
-msgstr "菲尼克斯标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:178
-#, kde-format
-msgid "Mountain Standard Time"
-msgstr "北美山区标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:183
-#, kde-format
-msgid "Central Standard Time"
-msgstr "北美中部标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:188
-#, kde-format
-msgid "Eastern Standard Time"
-msgstr "北美东部标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:193
-#, kde-format
-msgid "Indiana Eastern Standard Time"
-msgstr "印第安纳州东部标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:198
-#, kde-format
-msgid "Puerto Rico and US Virgin Islands Time"
-msgstr "波多黎各和美属维尔京群岛时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:203
-#, kde-format
-msgid "Canada Newfoundland Time"
-msgstr "加拿大纽芬兰时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:208
-#, kde-format
-msgid "Argentina Standard Time"
-msgstr "阿根廷标准时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:213
-#, kde-format
-msgid "Brazil Eastern Time"
-msgstr "巴西东部时间"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:218
-#, kde-format
-msgid "Central African Time"
-msgstr "非洲中部时间"
-
-#. i18n: ectx: property (title), widget (QGroupBox, whenMarbleStarts)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:231
-#, kde-format
-msgid "When Marble starts"
-msgstr "Marble 启动时"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTime)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:237
-#, kde-format
-msgid "Load system time"
-msgstr "加载系统时间"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_lastSessionTime)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:247
-#, kde-format
-msgid "Load last session time"
-msgstr "加载上次会话时间"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:17
-#, kde-format
-msgid "&Units"
-msgstr "单位(&U)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:35
-#, kde-format
-msgid "&Distance:"
-msgstr "距离(&D)："
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:57
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
-"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">用于测量海拔、长度和距离的"
-"单位 (例如千米、英里、英尺等)。</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:61
-#, kde-format
-msgid "Kilometer, Meter"
-msgstr "千米、米"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:66
-#, kde-format
-msgid "Miles, Feet"
-msgstr "英里、英尺"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:71
-#, kde-format
-msgid "Nautical miles, Knots"
-msgstr "海里、节"
-
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:85
-#, kde-format
-msgid "An&gle:"
-msgstr "角度(&G)："
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:101
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
-"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
-"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
-"g. 54.5°).</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">指定经纬度坐标中角度的标记"
-"方式：默认使用度-分-秒法 (例如 54°30'00\")。 您还可以选用小数点角度 (例如 "
-"54.5°)。</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:105
-#, kde-format
-msgid "Degree (DMS)"
-msgstr "度数 (度-分-秒)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:110
-#, kde-format
-msgid "Degree (Decimal)"
-msgstr "度数 (小数点)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:115
-#, kde-format
-msgid "Universal Transverse Mercator (UTM)"
-msgstr "通用横轴墨卡托投影 (UTM)"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:126
-#, kde-format
-msgid "Map &Quality"
-msgstr "地图画质(&Q)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:144
-#, kde-format
-msgid "&Still image:"
-msgstr "静止图像(&S)："
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:157
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed while there is no user input. Usually this allows for "
-"high map quality as speed is no concern.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">指定没有用户输入时显示的地"
-"图画质。由于地图静止不必考虑绘制速度，一般可使用高画质地图。</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:164
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:219
-#, kde-format
-msgid "Outline Quality"
-msgstr "轮廓画质"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:169
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:224
-#, kde-format
-msgid "Low Quality"
-msgstr "低画质"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:174
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:229
-#, kde-format
-msgid "Normal"
-msgstr "标准画质"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:179
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:234
-#, kde-format
-msgid "High Quality"
-msgstr "高画质"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:184
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:239
-#, kde-format
-msgid "Print Quality"
-msgstr "打印画质"
-
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:198
-#, kde-format
-msgid "During &animations:"
-msgstr "动画过程中(&A)："
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:212
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed during map animations (e.g. while dragging the globe). </"
-"p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-"machines it is advisable to set this option to \"low quality\" as this will "
-"give better speed.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">指定在动画绘制过程中 (例如"
-"拖动地球仪时) 的地图画质。</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">在性能较低的设备上运行时，"
-"建议将此选项设为“低画质”，以避免发生拖慢现象。</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:266
-#, kde-format
-msgid "&Text Labels"
-msgstr "文字标签(&T)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:286
-#, kde-format
-msgid "&Place names:"
-msgstr "地点名称(&P)："
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:302
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
-"different names in different languages. The label on the map can show the "
-"name in the user's language. Alternatively it can display the name in the "
-"official language and glyphs of that place. </p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">地点通常在不同的语言中有不"
-"同的名称。地图上的文字标记可以按照用户的语言显示，也可以按照当地的官方语言显"
-"示。</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:306
-#, kde-format
-msgid "Custom & Native Language"
-msgstr "自定义和当地语言"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:311
-#, kde-format
-msgid "Custom Language"
-msgstr "自定义语言"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:316
-#, kde-format
-msgid "Native Language"
-msgstr "当地语言"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:340
-#, kde-format
-msgid "Default map &font:"
-msgstr "默认地图字体(&F)："
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:353
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">地图使用的默认字体。</p></"
-"body></html>"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:113
 #, kde-format
@@ -56114,57 +55064,6 @@ msgstr "相关标签"
 msgid "Add custom tag..."
 msgstr "添加自定义标签..."
 
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.cpp:210
-#, kde-format
-msgid "Open File"
-msgstr "打开文件"
-
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.cpp:212
-#, kde-format
-msgid "All Supported Files (*.png)"
-msgstr "所有支持的文件 (*.png)"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:64
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
-#, kde-format
-msgid "Name:"
-msgstr "名称："
-
-#. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:81
-#, kde-format
-msgid "Icon link:"
-msgstr "图标链接："
-
-#. i18n: ectx: property (text), widget (QLabel, idLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:91
-#, kde-format
-msgid "ID:"
-msgstr "ID："
-
-#. i18n: ectx: property (text), widget (QLabel, targetIdLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:104
-#, kde-format
-msgid "Target ID:"
-msgstr "目标 ID："
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:35
-#, kde-format
-msgid "Placemark position provider Plugin"
-msgstr "地点标记定位插件"
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:45
-#, kde-format
-msgid "Placemark"
-msgstr "地点标记"
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:55
-#, kde-format
-msgid "Reports the position of a placemark"
-msgstr "报告地点标记的位置。"
-
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:233
 #, kde-format
 msgctxt "the planet"
@@ -56242,8 +55141,23 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "未知行星"
 
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:35
+#, kde-format
+msgid "Placemark position provider Plugin"
+msgstr "地点标记定位插件"
+
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:45
+#, kde-format
+msgid "Placemark"
+msgstr "地点标记"
+
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:55
+#, kde-format
+msgid "Reports the position of a placemark"
+msgstr "报告地点标记的位置。"
+
 #. i18n: ectx: property (text), widget (QPushButton, configureButton)
-#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:366
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:366
 #: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:142
 #, kde-format
 msgid "Configure"
@@ -56366,7 +55280,7 @@ msgstr "比例尺度(&R)"
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:118
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:118
 #, kde-format
 msgid "Navigation"
 msgstr "导航"
@@ -56457,6 +55371,21 @@ msgstr "颜色(&O)"
 #, kde-format
 msgid "Position I&ndicator:"
 msgstr "位置框(&N)："
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:30
+#, kde-format
+msgid "Current Route Position Provider Plugin"
+msgstr "当前路线定位插件"
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:40
+#, kde-format
+msgid "Current Route"
+msgstr "当前路线"
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:50
+#, kde-format
+msgid "Simulates traveling along the current route."
+msgstr "模拟沿当前路线行进。"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -56595,56 +55524,6 @@ msgid ""
 msgstr ""
 "<p><b>垂直透视投影</b> (正交)</p><p>用途：从相对接近地面的高度显示地球仪。</"
 "p>"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:109
-#, kde-format
-msgid "View"
-msgstr "视图"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:126
-#, kde-format
-msgid "Cache and Proxy"
-msgstr "缓存和代理"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:134
-#, kde-format
-msgid "Date and Time"
-msgstr "日期和时间"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:138
-#, kde-format
-msgid "Routing"
-msgstr "路线规划"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:155
-#, kde-format
-msgid "Synchronization"
-msgstr "同步"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:271
-#, kde-format
-msgid "Never synchronized."
-msgstr "从未同步。"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:275
-#, kde-format
-msgid "Last synchronization: %1"
-msgstr "上次同步：%1"
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:30
-#, kde-format
-msgid "Current Route Position Provider Plugin"
-msgstr "当前路线定位插件"
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:40
-#, kde-format
-msgid "Current Route"
-msgstr "当前路线"
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:50
-#, kde-format
-msgid "Simulates traveling along the current route."
-msgstr "模拟沿当前路线行进。"
 
 #: core/utilities/geolocation/marble/routing/GoToDialog.cpp:167
 #, kde-format
@@ -57184,24 +56063,1117 @@ msgctxt "journey duration"
 msgid "%1:%2 h"
 msgstr "%1：%2 小时"
 
-#: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:20
 #, kde-format
-msgid "Select sound files..."
-msgstr "选择音频文件..."
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
+"used for Marble: The physical memory which is needed to keep map data in the "
+"computer's memory. Increasing the value will make the application more "
+"responsive. The hard disc memory cache is used by download contents from the "
+"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
+"to save space on the hard disc and if high usage of the Internet is not an "
+"issue. </p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble 使用两种缓存方式：物"
+"理内存缓存会将地图数据保存在计算机的内存中，增大此数值将使程序运行更加流畅。"
+"硬盘缓存用于保存从互联网下载的内容 (例如维基百科数据和地图数据)，减小此数值将"
+"减少硬盘空间的占用，但也会增加对互联网数据流量的依赖。</p></body></html>"
 
-#: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:23
 #, kde-format
-msgid "Supported Sound Files (*.mp3 *.ogg *.wav)"
-msgstr "支持的音频文件 (*.mp3 *.ogg *.wav)"
+msgid "C&ache"
+msgstr "缓存(&A)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:41
+#, kde-format
+msgid "&Physical memory:"
+msgstr "物理内存(&P)："
+
+#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:73
+#, kde-format
+msgid "C&lear"
+msgstr "清除(&l)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:105
+#, kde-format
+msgid "&Hard disc:"
+msgstr "硬盘(&H)："
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:124
+#, kde-format
+msgid "Unlimited"
+msgstr "不限制"
+
+#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:146
+#, kde-format
+msgid "Cl&ear"
+msgstr "清除(&E)"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:172
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
+"local intranet. Please leave empty if there is no proxy.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">用于局域网的代理设置。如果"
+"没有使用代理，请留空。</p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:175
+#, kde-format
+msgid "&Proxy"
+msgstr "代理服务器(&P)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:183
+#, kde-format
+msgid "&Proxy:"
+msgstr "代理服务器(&P)："
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:200
+#, kde-format
+msgid "P&ort:"
+msgstr "端口(&O)："
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:256
+#, kde-format
+msgid "Proxy type:"
+msgstr "代理服务器类型："
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:264
+#, kde-format
+msgid "Http"
+msgstr "Http"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:269
+#, kde-format
+msgid "Socks5"
+msgstr "Socks5"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
+#. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:308
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:320
+#, kde-format
+msgid "Requires authentication"
+msgstr "需要身份验证"
+
+#. i18n: ectx: property (text), widget (QLabel, label_username)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:326
+#, kde-format
+msgid "U&sername:"
+msgstr "用户名(&S)："
+
+#. i18n: ectx: property (text), widget (QLabel, label_password)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:336
+#, kde-format
+msgid "&Password:"
+msgstr "密码(&P)："
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableSync)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:17
+#, kde-format
+msgid "Enable synchronization"
+msgstr "启用同步功能"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncRoutes)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:48
+#, kde-format
+msgid ""
+"Allows you to store routes in owncloud. Each route must be uploaded/"
+"downloaded manually."
+msgstr "将路线保存到 Owncloud 云服务。每条路线必须手动上传/下载。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncRoutes)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:51
+#, kde-format
+msgid "Enable route synchronization"
+msgstr "启用路线同步"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncBookmarks)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:84
+#, kde-format
+msgid "Automatically sync all bookmarks to the server."
+msgstr "自动同步所有书签到服务器。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncBookmarks)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:87
+#, kde-format
+msgid "Enable bookmark synchronization"
+msgstr "启用书签同步"
+
+#. i18n: ectx: property (text), widget (QPushButton, button_syncNow)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:119
+#, kde-format
+msgid "Sync now"
+msgstr "立即同步"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:147
+#, kde-format
+msgid "Credentials"
+msgstr "身份验证信息"
+
+#. i18n: ectx: property (text), widget (QLabel, labelServer)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:153
+#, kde-format
+msgid "Server:"
+msgstr "服务器："
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, kcfg_owncloudServer)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:160
+#, kde-format
+msgid "Remote server URL, e.g. myserver.com/owncloud"
+msgstr "远程服务器 URL，例如 myserver.com/owncloud"
+
+#. i18n: ectx: property (text), widget (QLabel, labelUsername)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:167
+#, kde-format
+msgid "Username:"
+msgstr "用户名："
+
+#. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:197
+#, kde-format
+msgid "Test Login"
+msgstr "登录测试"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:17
+#, kde-format
+msgid "Dragging and Animation"
+msgstr "拖动和动画"
+
+#. i18n: ectx: property (text), widget (QLabel, label_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:37
+#, kde-format
+msgid "&Drag location:"
+msgstr "拖动位置(&D)："
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:54
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the mouse "
+"there are two standard behaviours when dealing with a virtual globe:</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The location below mouse "
+"pointer will follow the cursor exactly: As a result e.g. the north pole will "
+"not stay at the top which can lead to confusion. By default Marble makes "
+"sure that north is always up which results in a dragging behaviour where the "
+"location below the mouse pointer slightly \"detaches\" from the cursor. </"
+"p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">在对虚拟地球仪拖动鼠标时，"
+"可以设置 Marble 使用两种标准行为之一：</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">鼠标光标下方的位置将精确跟"
+"随光标，北极点将不会锁定在画面顶端，这会造成一些不便。Marble 的默认设置则是将"
+"北极点锁定到画面顶端，但这又会造成鼠标在每次拖动时都会稍微偏离光标的实际行"
+"程。</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:58
+#, kde-format
+msgid "Keep Planet Axis Vertically"
+msgstr "保持极轴垂直"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:63
+#, kde-format
+msgid "Follow Mouse Pointer"
+msgstr "跟随鼠标光标"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:73
+#, kde-format
+msgid "Use kinetic spinning when dragging the map"
+msgstr "拖动地图时使用动态旋转"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:76
+#, kde-format
+msgid "&Inertial globe rotation"
+msgstr "惯性旋转(&I)"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:86
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
+"location Marble can either move instantly to the new location or it can show "
+"a travel animation from the previous place to the new place.</p></body></"
+"html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">当搜索一个位置时，Marble 可"
+"以立即移动到该新地点，也可以显示飞越过渡动画，从当前位置移动到该新地点。</"
+"p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_animateTargetVoyage)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:89
+#, kde-format
+msgid "&Animate voyage to the target"
+msgstr "动画显示目标转向过程(&A)"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:96
+#, kde-format
+msgid "Use right mouse button to rotate the camera around"
+msgstr "使用鼠标右键旋转视角"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:99
+#, kde-format
+msgid "&Mouse view rotation"
+msgstr "鼠标视图旋转(&M)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:142
+#, kde-format
+msgid "&On startup:"
+msgstr "启动时(&O)："
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:155
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
+"display the home location immediately after the application has started. As "
+"an alternative it can also show the last position that was active when the "
+"user left the application. </p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble 默认会在启动后立即显"
+"示归零位置。您也可以选择启动后显示上次关闭程序时所在的最后活动位置。</p></"
+"body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:159
+#, kde-format
+msgid "Show Home Location"
+msgstr "显示归零位置"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:164
+#, kde-format
+msgid "Return to Last Location Visited"
+msgstr "返回最后访问的位置"
+
+#. i18n: ectx: property (text), widget (QLabel, label_externalEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:184
+#, kde-format
+msgid "&External editor:"
+msgstr "外部编辑器(&E)："
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:194
+#, kde-format
+msgid ""
+"<p>The application that is launched to edit maps. Potlatch (default) "
+"requires a web browser with flash support to be installed. When selecting "
+"josm or merkaartor, make sure that the respective application is installed.</"
+"p>"
+msgstr ""
+"<p>要启动的地图编辑程序。Potlatch (默认) 需要安装了 Flash 插件的网页浏览器。"
+"如果选择 JOSM 或 Merkaartor，请确保这些程序已经安装到本机。</p>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:198
+#, kde-format
+msgid "Always ask"
+msgstr "总是询问"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:203
+#, kde-format
+msgid "Potlatch (Web browser)"
+msgstr "Potlatch (网页浏览器)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:208
+#, kde-format
+msgid "JOSM"
+msgstr "JOSM"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:213
+#, kde-format
+msgid "Merkaartor"
+msgstr "墨卡托投影图"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:23
+#, kde-format
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
+"Here you can select and deselect the functionality that is provided through "
+"plugins. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
+"from the map, menus and toolbars. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
+"their configuration a bit. </span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">熟悉 Marble 功能的高级用户可以在此启用和禁用通过插件提"
+"供的功能。</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">取消选择一款插件后，它的功能将不再显示在地图、菜单和工"
+"具栏。</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">某些插件还带有可配置的选项。</span></p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:26
+#, kde-format
+msgid "P&lugins"
+msgstr "插件(&L)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, timeZone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:23
+#, kde-format
+msgid "Time Zone"
+msgstr "时区"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_utc)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:29
+#, kde-format
+msgid "UTC"
+msgstr "UTC"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:39
+#, kde-format
+msgid "System time zone"
+msgstr "系统时区"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_customTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:51
+#, kde-format
+msgid "Choose Time zone"
+msgstr "选择时区"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:68
+#, kde-format
+msgid "Universal Time Coordinated"
+msgstr "协调世界时 (UTC)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:73
+#, kde-format
+msgid "European Central Time"
+msgstr "欧洲中部时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:78
+#, kde-format
+msgid "Eastern European Time"
+msgstr "欧洲东部时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:83
+#, kde-format
+msgid "Egypt Standard Time"
+msgstr "埃及标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:88
+#, kde-format
+msgid "Eastern African Time"
+msgstr "非洲东部时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:93
+#, kde-format
+msgid "Middle East Time"
+msgstr "中东时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:98
+#, kde-format
+msgid "Near East Time"
+msgstr "近东时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:103
+#, kde-format
+msgid "Pakistan Lahore Time"
+msgstr "巴基斯坦拉合尔时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:108
+#, kde-format
+msgid "India Standard Time"
+msgstr "印度标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:113
+#, kde-format
+msgid "Bangladesh Standard Time"
+msgstr "孟加拉标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:118
+#, kde-format
+msgid "Vietnam Standard Time"
+msgstr "越南标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:123
+#, kde-format
+msgid "China Taiwan Time"
+msgstr "中国大陆-中国台湾时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:128
+#, kde-format
+msgid "Japan Standard Time"
+msgstr "日本标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:133
+#, kde-format
+msgid "Australia Central Time"
+msgstr "澳大利亚中部时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:138
+#, kde-format
+msgid "Australia Eastern Time"
+msgstr "澳大利亚东部时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:143
+#, kde-format
+msgid "Solomon Standard Time"
+msgstr "所罗门群岛标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:148
+#, kde-format
+msgid "New Zealand Standard Time"
+msgstr "新西兰标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:153
+#, kde-format
+msgid "Midway Islands Time"
+msgstr "中途岛时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:158
+#, kde-format
+msgid "Hawaii Standard Time"
+msgstr "夏威夷标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:163
+#, kde-format
+msgid "Alaska Standard Time"
+msgstr "阿拉斯加标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:168
+#, kde-format
+msgid "Pacific Standard Time"
+msgstr "太平洋标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:173
+#, kde-format
+msgid "Phoenix Standard Time"
+msgstr "菲尼克斯标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:178
+#, kde-format
+msgid "Mountain Standard Time"
+msgstr "北美山区标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:183
+#, kde-format
+msgid "Central Standard Time"
+msgstr "北美中部标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:188
+#, kde-format
+msgid "Eastern Standard Time"
+msgstr "北美东部标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:193
+#, kde-format
+msgid "Indiana Eastern Standard Time"
+msgstr "印第安纳州东部标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:198
+#, kde-format
+msgid "Puerto Rico and US Virgin Islands Time"
+msgstr "波多黎各和美属维尔京群岛时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:203
+#, kde-format
+msgid "Canada Newfoundland Time"
+msgstr "加拿大纽芬兰时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:208
+#, kde-format
+msgid "Argentina Standard Time"
+msgstr "阿根廷标准时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:213
+#, kde-format
+msgid "Brazil Eastern Time"
+msgstr "巴西东部时间"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:218
+#, kde-format
+msgid "Central African Time"
+msgstr "非洲中部时间"
+
+#. i18n: ectx: property (title), widget (QGroupBox, whenMarbleStarts)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:231
+#, kde-format
+msgid "When Marble starts"
+msgstr "Marble 启动时"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTime)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:237
+#, kde-format
+msgid "Load system time"
+msgstr "加载系统时间"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_lastSessionTime)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:247
+#, kde-format
+msgid "Load last session time"
+msgstr "加载上次会话时间"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
+#, kde-format
+msgid "&Units"
+msgstr "单位(&U)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:35
+#, kde-format
+msgid "&Distance:"
+msgstr "距离(&D)："
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
+"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">用于测量海拔、长度和距离的"
+"单位 (例如千米、英里、英尺等)。</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:61
+#, kde-format
+msgid "Kilometer, Meter"
+msgstr "千米、米"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:66
+#, kde-format
+msgid "Miles, Feet"
+msgstr "英里、英尺"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:71
+#, kde-format
+msgid "Nautical miles, Knots"
+msgstr "海里、节"
+
+#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:85
+#, kde-format
+msgid "An&gle:"
+msgstr "角度(&G)："
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:101
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
+"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
+"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
+"g. 54.5°).</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">指定经纬度坐标中角度的标记"
+"方式：默认使用度-分-秒法 (例如 54°30'00\")。 您还可以选用小数点角度 (例如 "
+"54.5°)。</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:105
+#, kde-format
+msgid "Degree (DMS)"
+msgstr "度数 (度-分-秒)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:110
+#, kde-format
+msgid "Degree (Decimal)"
+msgstr "度数 (小数点)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:115
+#, kde-format
+msgid "Universal Transverse Mercator (UTM)"
+msgstr "通用横轴墨卡托投影 (UTM)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:126
+#, kde-format
+msgid "Map &Quality"
+msgstr "地图画质(&Q)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:144
+#, kde-format
+msgid "&Still image:"
+msgstr "静止图像(&S)："
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:157
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
+"that gets displayed while there is no user input. Usually this allows for "
+"high map quality as speed is no concern.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">指定没有用户输入时显示的地"
+"图画质。由于地图静止不必考虑绘制速度，一般可使用高画质地图。</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:164
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:219
+#, kde-format
+msgid "Outline Quality"
+msgstr "轮廓画质"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:169
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:224
+#, kde-format
+msgid "Low Quality"
+msgstr "低画质"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:174
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:229
+#, kde-format
+msgid "Normal"
+msgstr "标准画质"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:179
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:234
+#, kde-format
+msgid "High Quality"
+msgstr "高画质"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:184
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:239
+#, kde-format
+msgid "Print Quality"
+msgstr "打印画质"
+
+#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:198
+#, kde-format
+msgid "During &animations:"
+msgstr "动画过程中(&A)："
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:212
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
+"that gets displayed during map animations (e.g. while dragging the globe). </"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
+"machines it is advisable to set this option to \"low quality\" as this will "
+"give better speed.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">指定在动画绘制过程中 (例如"
+"拖动地球仪时) 的地图画质。</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">在性能较低的设备上运行时，"
+"建议将此选项设为“低画质”，以避免发生拖慢现象。</p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:266
+#, kde-format
+msgid "&Text Labels"
+msgstr "文字标签(&T)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:286
+#, kde-format
+msgid "&Place names:"
+msgstr "地点名称(&P)："
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:302
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
+"different names in different languages. The label on the map can show the "
+"name in the user's language. Alternatively it can display the name in the "
+"official language and glyphs of that place. </p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">地点通常在不同的语言中有不"
+"同的名称。地图上的文字标记可以按照用户的语言显示，也可以按照当地的官方语言显"
+"示。</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:306
+#, kde-format
+msgid "Custom & Native Language"
+msgstr "自定义和当地语言"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:311
+#, kde-format
+msgid "Custom Language"
+msgstr "自定义语言"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:316
+#, kde-format
+msgid "Native Language"
+msgstr "当地语言"
+
+#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:340
+#, kde-format
+msgid "Default map &font:"
+msgstr "默认地图字体(&F)："
+
+#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:353
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
+"used on the map.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">地图使用的默认字体。</p></"
+"body></html>"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:109
+#, kde-format
+msgid "View"
+msgstr "视图"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:126
+#, kde-format
+msgid "Cache and Proxy"
+msgstr "缓存和代理"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:134
+#, kde-format
+msgid "Date and Time"
+msgstr "日期和时间"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:138
+#, kde-format
+msgid "Routing"
+msgstr "路线规划"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:155
+#, kde-format
+msgid "Synchronization"
+msgstr "同步"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:271
+#, kde-format
+msgid "Never synchronized."
+msgstr "从未同步。"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:275
+#, kde-format
+msgid "Last synchronization: %1"
+msgstr "上次同步：%1"
+
+#: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
+#, kde-format
+msgid "Unable to insert data into cache"
+msgstr "无法将数据插入缓存"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:136
+#, kde-format
+msgid "Visible region"
+msgstr "可见区域"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:138
+#, kde-format
+msgid "Specify region"
+msgstr "指定区域"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:140
+#, kde-format
+msgid "Download Route"
+msgstr "下载路线"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:142
+#, kde-format
+msgid "Enabled when a route exists"
+msgstr "路线存在时启用"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:155
+#, kde-format
+msgid "Offset from route:"
+msgstr "包括路线附近区域："
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:190
+#, kde-format
+msgid "Selection Method"
+msgstr "选择方式"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:198
+#, kde-format
+msgid "Number of tiles to download:"
+msgstr "要下载的图块数量："
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:248
+#, kde-format
+msgid "Download Region"
+msgstr "下载区域"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:250
+#, kde-format
+msgid "Tile type to be downloaded:"
+msgstr "要下载的图块类型："
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:252
+#, kde-format
+msgid "Texture tiles"
+msgstr "纹理图块"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:253
+#, kde-format
+msgid "Vector tiles"
+msgstr "矢量图块"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:254
+#, kde-format
+msgid "Allows selection between layer types that are visibly being rendered."
+msgstr "允许选择可见的图层类型。"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
+#, kde-format
+msgid "There is a limit of %1 tile(s) to download."
+msgstr "可下载图块数量不得超过 %1。"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:533
+#, kde-format
+msgid "Approximate size of the tiles to be downloaded"
+msgstr "要下载图块的预估大小"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:537
+#, kde-format
+msgid "Estimated download size: %1 MB"
+msgstr "预估下载大小：%1 MB"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:540
+#, kde-format
+msgid "Estimated download size: %1 kB"
+msgstr "预估下载大小：%1 kB"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:20
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:20
 #, kde-format
 msgid "Creating Map"
 msgstr "正在创建地图"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:507
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:507
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
@@ -57225,7 +57197,7 @@ msgstr ""
 "Earth Observatory</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:517
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:517
 #, kde-format
 msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
@@ -57233,31 +57205,31 @@ msgid ""
 msgstr "Marble 将要创建此地图。本操作只需执行一次，可能要花费数分钟。"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:29
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:29
 #, kde-format
 msgid "Zoom"
 msgstr "缩放"
 
 #. i18n: ectx: property (text), widget (QLabel, tileLevelLabel)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:37
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:37
 #, kde-format
 msgid "&Tile level range:"
 msgstr "图块级别范围(&T)："
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, topSpinBox)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:47
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:47
 #, kde-format
 msgid "Minimum Tile Level"
 msgstr "最小图块级别"
 
 #. i18n: ectx: property (text), widget (QLabel, toLabel)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:63
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:63
 #, kde-format
 msgid "to"
 msgstr "到"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bottomSpinBox)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:70
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:70
 #, kde-format
 msgid "Maximum Tile Level"
 msgstr "最大图块级别"
@@ -66541,6 +66513,21 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
+
+#~ msgid "Elevation:"
+#~ msgstr "海拔："
+
+#~ msgid " m"
+#~ msgstr " 米"
+
+#~ msgid "above sea level"
+#~ msgstr "高出海平面"
+
+#~ msgid "Select sound files..."
+#~ msgstr "选择音频文件..."
+
+#~ msgid "Supported Sound Files (*.mp3 *.ogg *.wav)"
+#~ msgstr "支持的音频文件 (*.mp3 *.ogg *.wav)"
 
 #~ msgid "No URL specified"
 #~ msgstr "未指定 URL"
