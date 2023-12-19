@@ -41,6 +41,8 @@ void TemplateDocumentPrivate::processTemplateIncludes(QString& input)
         pos += rx.matchedLength();
     }
 
+    qCDebug(DIGIKAM_MARBLE_LOG) << "Template Includes" << includes;
+
     for (const QString& include : includes)
     {
         QFile includeFile(QLatin1String(":/htmlfeatures/includes/") + include + QLatin1String(".inc"));

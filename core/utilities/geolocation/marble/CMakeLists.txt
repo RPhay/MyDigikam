@@ -31,8 +31,6 @@ set(marblewidget_SRCS
     ClipPainter.cpp
     EquirectScanlineTextureMapper.cpp
     GenericScanlineTextureMapper.cpp
-    GeoGraphicsScene.cpp
-    GeoPainter.cpp
     HttpDownloadManager.cpp
     HttpJob.cpp
     ImageF.cpp
@@ -64,8 +62,6 @@ set(marblewidget_SRCS
     RenderState.cpp
     ReverseGeocodingRunner.cpp
     ReverseGeocodingRunnerManager.cpp
-    RoutingRunnerManager.cpp
-    RoutingRunner.cpp
     RunnerTask.cpp
     ScanlineTextureMapperContext.cpp
     SearchRunner.cpp
@@ -571,15 +567,17 @@ set(marblewidget_SRCS
     geodata/writer/GeoWriterBackend.cpp
     geodata/writer/GeoDataDocumentWriter.cpp
 
-    graphicsview/MarbleGraphicsItem.cpp
-    graphicsview/GeoGraphicsItem.cpp
-    graphicsview/BillboardGraphicsItem.cpp
-    graphicsview/ScreenGraphicsItem.cpp
-    graphicsview/FrameGraphicsItem.cpp
-    graphicsview/LabelGraphicsItem.cpp
-    graphicsview/WidgetGraphicsItem.cpp
     graphicsview/AbstractMarbleGraphicsLayout.cpp
+    graphicsview/BillboardGraphicsItem.cpp
+    graphicsview/FrameGraphicsItem.cpp
+    graphicsview/GeoGraphicsScene.cpp
+    graphicsview/GeoGraphicsItem.cpp
+    graphicsview/GeoPainter.cpp
+    graphicsview/LabelGraphicsItem.cpp
     graphicsview/MarbleGraphicsGridLayout.cpp
+    graphicsview/MarbleGraphicsItem.cpp
+    graphicsview/ScreenGraphicsItem.cpp
+    graphicsview/WidgetGraphicsItem.cpp
 
     layers/FloatItemsLayer.cpp
     layers/FogLayer.cpp
@@ -670,6 +668,8 @@ set(marblewidget_SRCS
     routing/RoutingProfilesWidget.cpp
     routing/RoutingProfilesModel.cpp
     routing/RoutingProfileSettingsDialog.cpp
+    routing/RoutingRunnerManager.cpp
+    routing/RoutingRunner.cpp
     routing/SerialTrack.cpp
     routing/SoundTrack.cpp
     routing/TourPlayback.cpp
