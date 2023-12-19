@@ -28,23 +28,16 @@ set(marblewidget_SRCS
 
     AbstractFloatItem.cpp
     AbstractWorkerThread.cpp
-    BranchFilterProxyModel.cpp
-    CelestialSortFilterProxyModel.cpp
     ClipPainter.cpp
-    ElevationModel.cpp
     EquirectScanlineTextureMapper.cpp
     GenericScanlineTextureMapper.cpp
-    GeoDataTreeModel.cpp
     GeoGraphicsScene.cpp
     GeoPainter.cpp
     HttpDownloadManager.cpp
     HttpJob.cpp
     ImageF.cpp
-    kdescendantsproxymodel.cpp
-    kineticmodel.cpp
     LatLonBoxWidget.cpp
     MapThemeManager.cpp
-    MapThemeSortFilterProxyModel.cpp
     MapViewItemDelegate.cpp
     MarbleAbstractPresenter.cpp
     MarbleClock.cpp
@@ -54,9 +47,7 @@ set(marblewidget_SRCS
     MarbleInputHandler.cpp
     MarbleLocale.cpp
     MarbleMap.cpp
-    MarbleModel.cpp
     MarblePhysics.cpp
-    MarblePlacemarkModel.cpp
     MarbleWidget.cpp
     MarbleWidgetInputHandler.cpp
     MarbleWidgetPopupMenu.cpp
@@ -79,14 +70,12 @@ set(marblewidget_SRCS
     ScanlineTextureMapperContext.cpp
     SearchRunner.cpp
     SearchRunnerManager.cpp
-    ServerLayout.cpp
     SphericalScanlineTextureMapper.cpp
     StyleBuilder.cpp
     SunLocator.cpp
     TemplateDocument.cpp
     TextureColorizer.cpp
     TextureMapperInterface.cpp
-    TreeViewDecoratorModel.cpp
     ViewParams.cpp
     ViewportParams.cpp
 
@@ -347,6 +336,7 @@ set(marblewidget_SRCS
     geodata/graphicsitem/BuildingGraphicsItem.cpp
     geodata/graphicsitem/GeoTrackGraphicsItem.cpp
     geodata/graphicsitem/ScreenOverlayGraphicsItem.cpp
+    geodata/graphicsitem/ServerLayout.cpp
     geodata/handlers/kml/KmlAddressTagHandler.cpp
     geodata/handlers/kml/KmlAltitudeModeTagHandler.cpp
     geodata/handlers/kml/KmlAltitudeTagHandler.cpp
@@ -607,6 +597,17 @@ set(marblewidget_SRCS
     layers/TextureLayer.cpp
     layers/VectorTileLayer.cpp
     layers/VisiblePlacemark.cpp
+
+    models/BranchFilterProxyModel.cpp
+    models/CelestialSortFilterProxyModel.cpp
+    models/ElevationModel.cpp
+    models/GeoDataTreeModel.cpp
+    models/kdescendantsproxymodel.cpp
+    models/kineticmodel.cpp
+    models/MapThemeSortFilterProxyModel.cpp
+    models/MarbleModel.cpp
+    models/MarblePlacemarkModel.cpp
+    models/TreeViewDecoratorModel.cpp
 
     osm/OsmPlacemarkData.cpp
     osm/OsmObjectManager.cpp
