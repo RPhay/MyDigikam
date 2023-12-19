@@ -48,7 +48,6 @@ if(Qt6_FOUND)
                  NO_MODULE COMPONENTS
                  StateMachine
                  SvgWidgets
-                 Core5Compat                # For Marble
     )
 
     find_package(Qt${QT_VERSION_MAJOR}

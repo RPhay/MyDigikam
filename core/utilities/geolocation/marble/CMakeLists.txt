@@ -17,13 +17,6 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLU
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-if(Qt6_FOUND)
-
-    # NOTE: one instance of QRegEx to port to QRegularExpression in TemplateDocument.cpp
-    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
-
-endif()
-
 set(marblewidget_SRCS
 
     astro/astrolib.cpp
