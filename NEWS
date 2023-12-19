@@ -65,7 +65,7 @@ BUGFIXES:
 052 ==> 478648 - All versions of digiKam past 7.3 give the error "Failed to update the database schema from version 13 to version 14."
 053 ==> 478693 - Unable to add a collection if its a sub folder of an existing collection.
 054 ==> 478674 - Find new items at startup very slow.
-055 ==> 
+055 ==> 478550 - Localization - main language settings are not used (can't change from German to US-English).
 056 ==> 
 057 ==> 
 058 ==> 
