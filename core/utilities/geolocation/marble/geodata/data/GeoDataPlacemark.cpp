@@ -15,7 +15,6 @@
 // Qt
 #include <QDataStream>
 #include <QString>
-#include <QStringRef>
 #include <QXmlStreamWriter>
 
 #include <klocalizedstring.h>
@@ -28,7 +27,6 @@
 #include "GeoDataModel.h"
 
 #include "digikam_debug.h"
-
 
 namespace Marble
 {

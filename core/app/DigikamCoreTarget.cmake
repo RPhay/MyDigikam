@@ -196,7 +196,6 @@ if(Qt6_FOUND)
                           PRIVATE
                           Qt${QT_VERSION_MAJOR}::StateMachine
                           Qt${QT_VERSION_MAJOR}::SvgWidgets
-                          Qt${QT_VERSION_MAJOR}::Core5Compat    # For Marble
     )
 
 endif()

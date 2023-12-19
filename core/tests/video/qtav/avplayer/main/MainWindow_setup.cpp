@@ -492,7 +492,7 @@ void MainWindow::setupUi()
 
 #else
 
-    // FIXME, QTextCodec is now in Qt5Compat
+    // FIXME, QTextCodec is now in Qt6::Core5Compat
 
 #endif
 
