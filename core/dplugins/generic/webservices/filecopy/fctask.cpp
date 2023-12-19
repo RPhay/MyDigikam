@@ -147,7 +147,8 @@ void FCTask::run()
 
                 if (meta->load(d->srcUrl.toLocalFile()))
                 {
-                    meta->saveToFile(dest.toLocalFile());
+                    meta->setMetadataWritingMode(DMetadata::WRITE_TO_FILE_ONLY);
+                    meta->save(dest.toLocalFile());
                 }
             }
         }
