@@ -87,7 +87,6 @@ public: // File I/O helpers
      */
     bool load(const QString& filePath, Backend* backend = nullptr);
     bool save(const QString& filePath, bool setVersion = false)                                                         const;
-    bool saveToFile(const QString& filePath, bool setVersion = false)                                                   const;
     bool applyChanges(bool setVersion = false)                                                                          const;
 
     /**
