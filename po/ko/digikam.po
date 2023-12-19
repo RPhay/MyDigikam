@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-18 00:39+0000\n"
+"POT-Creation-Date: 2023-12-19 00:39+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3470,7 +3470,7 @@ msgstr ""
 "준):"
 
 #: core/app/views/stack/welcomepageview.cpp:210
-#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:351
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:351
 #, kde-format
 msgid "About"
 msgstr "정보"
@@ -6624,7 +6624,7 @@ msgstr ""
 #: core/dplugins/bqm/transform/crop/crop.cpp:96
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:349
 #: core/libs/template/templateviewer.cpp:145
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:115
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:115
 #, kde-format
 msgid "Position:"
 msgstr "위치:"
@@ -20932,8 +20932,8 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:54
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:127
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:54
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:127
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -23604,7 +23604,7 @@ msgstr "POST 메서드가 모든 Setter에게 필요함"
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:540
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
-#: core/utilities/geolocation/marble/PositionProviderPluginInterface.cpp:25
+#: core/utilities/geolocation/marble/plugins/PositionProviderPluginInterface.cpp:25
 #, kde-format
 msgid "Unknown error"
 msgstr "알 수 없는 오류"
@@ -26384,7 +26384,7 @@ msgstr "앨범에 접근할 때 물어볼 암호 힌트입니다(선택)."
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
 #: core/libs/dplugins/webservices/wslogindialog.cpp:89
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:181
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:181
 #, kde-format
 msgid "Password:"
 msgstr "암호:"
@@ -28809,7 +28809,7 @@ msgid ""
 "(Source Image)"
 msgstr "RAW 그림"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:193
+#: core/libs/database/item/scanner/itemscanner.cpp:192
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -42342,7 +42342,7 @@ msgstr "변경"
 
 #. i18n: ectx: property (text), widget (QPushButton, iconLinkButton)
 #: core/libs/widgets/files/dfileselector.cpp:58
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:46
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:46
 #, kde-format
 msgid "Browse..."
 msgstr "찾아보기..."
@@ -50958,7 +50958,7 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:142
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:145
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:145
 #, kde-format
 msgid "Plugins"
 msgstr "플러그인"
@@ -55562,6 +55562,70 @@ msgstr "폴더:"
 msgid "&Add Folder..."
 msgstr "폴더 추가..."
 
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_intValueEditor)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:129
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:28
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:47
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:99
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:151
+#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:203
+#, kde-format
+msgid "°"
+msgstr ""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:179
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:338
+#, kde-format
+msgid "'"
+msgstr ""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:180
+#, kde-format
+msgid "\""
+msgstr ""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:526
+#, kde-format
+msgctxt "East, the direction"
+msgid "E"
+msgstr ""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:527
+#, kde-format
+msgctxt "West, the direction"
+msgid "W"
+msgstr ""
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:530
+#, fuzzy, kde-format
+#| msgctxt "Image filter reproducible: No"
+#| msgid "No"
+msgctxt "North, the direction"
+msgid "N"
+msgstr "아니요"
+
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:531
+#, kde-format
+msgctxt "South, the direction"
+msgid "S"
+msgstr ""
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:38
+#, kde-format
+msgid "′"
+msgstr ""
+
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
+#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:54
+#, kde-format
+msgid "″"
+msgstr ""
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
 #: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:14
 #, fuzzy, kde-format
@@ -55576,12 +55640,47 @@ msgstr "책갈피 폴더"
 msgid "&Folder name:"
 msgstr "파일 이름"
 
-#: core/utilities/geolocation/marble/CacheStoragePolicy.cpp:36
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:210
 #, fuzzy, kde-format
-msgid "Unable to insert data into cache"
+#| msgid "Open File"
+msgid "Open File"
+msgstr "파일 열기"
+
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:212
+#, fuzzy, kde-format
+#| msgid "All supported files (%1)"
+msgid "All Supported Files (*.png)"
+msgstr "모든 지원하는 파일 (%1)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:64
+#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
+#, fuzzy, kde-format
+#| msgctxt "filename"
+#| msgid "Name:"
+msgid "Name:"
+msgstr "이름:"
+
+#. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:81
+#, fuzzy, kde-format
+#| msgid "Icon Size:"
+msgid "Icon link:"
+msgstr "아이콘 크기:"
+
+#. i18n: ectx: property (text), widget (QLabel, idLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:91
+#, kde-format
+msgid "ID:"
 msgstr ""
-"\"%1\"\n"
-"그림을 표시할 수 없습니다"
+
+#. i18n: ectx: property (text), widget (QLabel, targetIdLabel)
+#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:104
+#, fuzzy, kde-format
+#| msgid "Target"
+msgid "Target ID:"
+msgstr "대상"
 
 #: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:33
 #: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:34
@@ -55740,115 +55839,6 @@ msgstr "삭제"
 #| msgid "Upload to Camera"
 msgid "Upload to cloud"
 msgstr "카메라로 업로드"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:136
-#, fuzzy, kde-format
-#| msgid "Visible to Friends"
-msgid "Visible region"
-msgstr "친구에게 공개"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Specific Location"
-msgid "Specify region"
-msgstr "특정 위치"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Download New"
-msgid "Download Route"
-msgstr "새로운 항목 다운로드"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:142
-#, kde-format
-msgid "Enabled when a route exists"
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:155
-#, kde-format
-msgid "Offset from route:"
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:190
-#, fuzzy, kde-format
-#| msgid "Destination Folder:"
-msgid "Selection Method"
-msgstr "대상 폴더:"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:198
-#, kde-format
-msgid "Number of tiles to download:"
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Download New"
-msgid "Download Region"
-msgstr "새로운 항목 다운로드"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has never been downloaded"
-msgid "Tile type to be downloaded:"
-msgstr "이 항목은 다운로드된 적이 없습니다"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:252
-#, fuzzy, kde-format
-msgid "Texture tiles"
-msgstr "RAW 그림"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:253
-#, fuzzy, kde-format
-#| msgid "Video Files"
-msgid "Vector tiles"
-msgstr "비디오 파일"
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:254
-#, kde-format
-msgid "Allows selection between layer types that are visibly being rendered."
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:523
-#, kde-format
-msgid "There is a limit of %1 tile(s) to download."
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:533
-#, kde-format
-msgid "Approximate size of the tiles to be downloaded"
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:537
-#, kde-format
-msgid "Estimated download size: %1 MB"
-msgstr ""
-
-#: core/utilities/geolocation/marble/DownloadRegionDialog.cpp:540
-#, kde-format
-msgid "Estimated download size: %1 kB"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, elevationLabel)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:19
-#, fuzzy, kde-format
-#| msgid "Iteration:"
-msgid "Elevation:"
-msgstr "반복:"
-
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, elevationSpinBox)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:26
-#, kde-format
-msgid " m"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, elevationModeLabel)
-#: core/utilities/geolocation/marble/ElevationWidget.ui:36
-#, kde-format
-msgid "above sea level"
-msgstr ""
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
@@ -57859,21 +57849,6 @@ msgstr "연도 선택"
 msgid "Northern Latitude"
 msgstr "북아일랜드"
 
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_intValueEditor)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:47
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:99
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:151
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:203
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:129
-#: core/utilities/geolocation/marble/LatLonEdit.ui:28
-#, kde-format
-msgid "°"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QLabel, northLabel)
 #: core/utilities/geolocation/marble/LatLonBoxWidget.ui:66
 #, kde-format
@@ -57919,294 +57894,6 @@ msgstr "GPS 위도"
 #, kde-format
 msgid "&S"
 msgstr ""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:179
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:338
-#, kde-format
-msgid "'"
-msgstr ""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:180
-#, kde-format
-msgid "\""
-msgstr ""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:526
-#, kde-format
-msgctxt "East, the direction"
-msgid "E"
-msgstr ""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:527
-#, kde-format
-msgctxt "West, the direction"
-msgid "W"
-msgstr ""
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:530
-#, fuzzy, kde-format
-#| msgctxt "Image filter reproducible: No"
-#| msgid "No"
-msgctxt "North, the direction"
-msgid "N"
-msgstr "아니요"
-
-#: core/utilities/geolocation/marble/LatLonEdit.cpp:531
-#, kde-format
-msgctxt "South, the direction"
-msgid "S"
-msgstr ""
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
-#: core/utilities/geolocation/marble/LatLonEdit.ui:38
-#, kde-format
-msgid "′"
-msgstr ""
-
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
-#: core/utilities/geolocation/marble/LatLonEdit.ui:54
-#, kde-format
-msgid "″"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:20
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
-"used for Marble: The physical memory which is needed to keep map data in the "
-"computer's memory. Increasing the value will make the application more "
-"responsive. The hard disc memory cache is used by download contents from the "
-"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
-"to save space on the hard disc and if high usage of the Internet is not an "
-"issue. </p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:23
-#, kde-format
-msgid "C&ache"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:41
-#, kde-format
-msgid "&Physical memory:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:73
-#, fuzzy, kde-format
-#| msgid "Clear"
-msgid "C&lear"
-msgstr "지우기"
-
-#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:105
-#, kde-format
-msgid "&Hard disc:"
-msgstr ""
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:124
-#, fuzzy, kde-format
-#| msgctxt "smug album privacy"
-#| msgid "Unlisted"
-msgid "Unlimited"
-msgstr "목록에서 숨기기"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:146
-#, kde-format
-msgid "Cl&ear"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:172
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
-"local intranet. Please leave empty if there is no proxy.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:175
-#, kde-format
-msgid "&Proxy"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:183
-#, kde-format
-msgid "&Proxy:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:200
-#, fuzzy, kde-format
-#| msgid "Host Port:"
-msgid "P&ort:"
-msgstr "호스트 포트:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:256
-#, fuzzy, kde-format
-#| msgid "Fix type"
-msgid "Proxy type:"
-msgstr "고정 형식"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:264
-#, kde-format
-msgid "Http"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:269
-#, kde-format
-msgid "Socks5"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
-#. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:308
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:320
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Presentation"
-msgid "Requires authentication"
-msgstr "프레젠테이션"
-
-#. i18n: ectx: property (text), widget (QLabel, label_username)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:326
-#, fuzzy, kde-format
-#| msgctxt "piwigo login settings"
-#| msgid "Username:"
-msgid "U&sername:"
-msgstr "사용자 이름:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_password)
-#: core/utilities/geolocation/marble/MarbleCacheSettingsWidget.ui:336
-#, fuzzy, kde-format
-#| msgid "Password:"
-msgid "&Password:"
-msgstr "암호:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableSync)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:17
-#, fuzzy, kde-format
-msgid "Enable synchronization"
-msgstr "속성"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:48
-#, kde-format
-msgid ""
-"Allows you to store routes in owncloud. Each route must be uploaded/"
-"downloaded manually."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:51
-#, fuzzy, kde-format
-msgid "Enable route synchronization"
-msgstr "속성"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:84
-#, kde-format
-msgid "Automatically sync all bookmarks to the server."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:87
-#, fuzzy, kde-format
-msgid "Enable bookmark synchronization"
-msgstr "속성"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_syncNow)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:119
-#, kde-format
-msgid "Sync now"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:147
-#, fuzzy, kde-format
-#| msgid "Invalid credentials"
-msgid "Credentials"
-msgstr "잘못된 인증 정보"
-
-#. i18n: ectx: property (text), widget (QLabel, labelServer)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:153
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Server"
-msgid "Server:"
-msgstr "서버"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, kcfg_owncloudServer)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:160
-#, kde-format
-msgid "Remote server URL, e.g. myserver.com/owncloud"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, labelUsername)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:167
-#, fuzzy, kde-format
-#| msgctxt "piwigo login settings"
-#| msgid "Username:"
-msgid "Username:"
-msgstr "사용자 이름:"
-
-#. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
-#: core/utilities/geolocation/marble/MarbleCloudSyncSettingsWidget.ui:197
-#, fuzzy, kde-format
-#| msgid "Login"
-msgid "Test Login"
-msgstr "로그인"
 
 #: core/utilities/geolocation/marble/MarbleLocale.cpp:122
 #, fuzzy, kde-format
@@ -58268,872 +57955,6 @@ msgstr ""
 msgctxt "means nautical miles"
 msgid "nm"
 msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:17
-#, kde-format
-msgid "Dragging and Animation"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:37
-#, fuzzy, kde-format
-#| msgid "Target location: "
-msgid "&Drag location:"
-msgstr "대상 위치: "
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:54
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the mouse "
-"there are two standard behaviours when dealing with a virtual globe:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The location below mouse "
-"pointer will follow the cursor exactly: As a result e.g. the north pole will "
-"not stay at the top which can lead to confusion. By default Marble makes "
-"sure that north is always up which results in a dragging behaviour where the "
-"location below the mouse pointer slightly \"detaches\" from the cursor. </"
-"p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:58
-#, fuzzy, kde-format
-#| msgid "Flip Vertically"
-msgid "Keep Planet Axis Vertically"
-msgstr "좌우 반전"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:63
-#, kde-format
-msgid "Follow Mouse Pointer"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:73
-#, kde-format
-msgid "Use kinetic spinning when dragging the map"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:76
-#, fuzzy, kde-format
-#| msgid "Invert Selection"
-msgid "&Inertial globe rotation"
-msgstr "선택 반전"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:86
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
-"location Marble can either move instantly to the new location or it can show "
-"a travel animation from the previous place to the new place.</p></body></"
-"html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_animateTargetVoyage)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:89
-#, kde-format
-msgid "&Animate voyage to the target"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:96
-#, kde-format
-msgid "Use right mouse button to rotate the camera around"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:99
-#, fuzzy, kde-format
-#| msgid "&Choose operation:"
-msgid "&Mouse view rotation"
-msgstr "작업 선택(&C):"
-
-#. i18n: ectx: property (text), widget (QLabel, label_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:142
-#, kde-format
-msgid "&On startup:"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:155
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
-"display the home location immediately after the application has started. As "
-"an alternative it can also show the last position that was active when the "
-"user left the application. </p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:159
-#, fuzzy, kde-format
-#| msgid "Show image caption"
-msgid "Show Home Location"
-msgstr "이미지 캡션 표시"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:164
-#, kde-format
-msgid "Return to Last Location Visited"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_externalEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:184
-#, fuzzy, kde-format
-#| msgid "Internal error"
-msgid "&External editor:"
-msgstr "내부 오류"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:194
-#, kde-format
-msgid ""
-"<p>The application that is launched to edit maps. Potlatch (default) "
-"requires a web browser with flash support to be installed. When selecting "
-"josm or merkaartor, make sure that the respective application is installed.</"
-"p>"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:198
-#, fuzzy, kde-format
-#| msgid "Always ignore"
-msgid "Always ask"
-msgstr "항상 무시"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:203
-#, kde-format
-msgid "Potlatch (Web browser)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:208
-#, kde-format
-msgid "JOSM"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/MarbleNavigationSettingsWidget.ui:213
-#, kde-format
-msgid "Merkaartor"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/MarblePluginSettingsWidget.ui:23
-#, fuzzy, kde-format
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
-"Here you can select and deselect the functionality that is provided through "
-"plugins. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
-"from the map, menus and toolbars. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
-"their configuration a bit. </span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/MarblePluginSettingsWidget.ui:26
-#, fuzzy, kde-format
-#| msgid "Plugins"
-msgid "P&lugins"
-msgstr "플러그인"
-
-#. i18n: ectx: property (title), widget (QGroupBox, timeZone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:23
-#, fuzzy, kde-format
-#| msgid "Time Zone:"
-msgid "Time Zone"
-msgstr "시간대:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_utc)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:29
-#, kde-format
-msgid "UTC"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:39
-#, fuzzy, kde-format
-#| msgid "Camera time zone:"
-msgid "System time zone"
-msgstr "카메라 시간대:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_customTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:51
-#, fuzzy, kde-format
-#| msgid "Camera time zone:"
-msgid "Choose Time zone"
-msgstr "카메라 시간대:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:68
-#, fuzzy, kde-format
-#| msgid "Unpolar Coordinates"
-msgid "Universal Time Coordinated"
-msgstr "반전 극좌표"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:73
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "European Union"
-msgid "European Central Time"
-msgstr "유럽 연합"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:78
-#, kde-format
-msgid "Eastern European Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:83
-#, kde-format
-msgid "Egypt Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:88
-#, kde-format
-msgid "Eastern African Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:93
-#, kde-format
-msgid "Middle East Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:98
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Image Date Time"
-msgid "Near East Time"
-msgstr "그림 날짜와 시간"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:103
-#, kde-format
-msgid "Pakistan Lahore Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:108
-#, kde-format
-msgid "India Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:113
-#, kde-format
-msgid "Bangladesh Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:118
-#, fuzzy, kde-format
-#| msgid "Video Standard:"
-msgid "Vietnam Standard Time"
-msgstr "비디오 표준:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:123
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Chinese (Taiwan)"
-msgid "China Taiwan Time"
-msgstr "중국어(대만)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:128
-#, kde-format
-msgid "Japan Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:133
-#, kde-format
-msgid "Australia Central Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:138
-#, kde-format
-msgid "Australia Eastern Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:143
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Solomon Islands"
-msgid "Solomon Standard Time"
-msgstr "솔로몬 제도"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:148
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "New Zealand"
-msgid "New Zealand Standard Time"
-msgstr "뉴질랜드"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:153
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Cayman Islands"
-msgid "Midway Islands Time"
-msgstr "케이맨 제도"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:158
-#, kde-format
-msgid "Hawaii Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:163
-#, kde-format
-msgid "Alaska Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:168
-#, kde-format
-msgid "Pacific Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:173
-#, kde-format
-msgid "Phoenix Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:178
-#, kde-format
-msgid "Mountain Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:183
-#, kde-format
-msgid "Central Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:188
-#, fuzzy, kde-format
-#| msgid "Standard"
-msgid "Eastern Standard Time"
-msgstr "표준"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:193
-#, kde-format
-msgid "Indiana Eastern Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:198
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "US Virgin Islands"
-msgid "Puerto Rico and US Virgin Islands Time"
-msgstr "미국령 버진 제도"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:203
-#, kde-format
-msgid "Canada Newfoundland Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:208
-#, kde-format
-msgid "Argentina Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:213
-#, kde-format
-msgid "Brazil Eastern Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:218
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Central African Republic"
-msgid "Central African Time"
-msgstr "중앙 아프리카 공화국"
-
-#. i18n: ectx: property (title), widget (QGroupBox, whenMarbleStarts)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:231
-#, kde-format
-msgid "When Marble starts"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTime)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:237
-#, fuzzy, kde-format
-#| msgid "Load image"
-msgid "Load system time"
-msgstr "이미지 불러오기"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_lastSessionTime)
-#: core/utilities/geolocation/marble/MarbleTimeSettingsWidget.ui:247
-#, kde-format
-msgid "Load last session time"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:17
-#, fuzzy, kde-format
-#| msgid "Units:"
-msgid "&Units"
-msgstr "단위:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:35
-#, fuzzy, kde-format
-#| msgid "Distance:"
-msgid "&Distance:"
-msgstr "거리:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:57
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
-"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:61
-#, kde-format
-msgid "Kilometer, Meter"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:66
-#, kde-format
-msgid "Miles, Feet"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:71
-#, kde-format
-msgid "Nautical miles, Knots"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:85
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Angle:"
-msgid "An&gle:"
-msgstr "각도:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:101
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
-"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
-"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
-"g. 54.5°).</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:105
-#, kde-format
-msgid "Degree (DMS)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:110
-#, kde-format
-msgid "Degree (Decimal)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:115
-#, kde-format
-msgid "Universal Transverse Mercator (UTM)"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:126
-#, fuzzy, kde-format
-#| msgid "Quality:"
-msgid "Map &Quality"
-msgstr "품질:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:144
-#, fuzzy, kde-format
-#| msgid "&Shuffle images"
-msgid "&Still image:"
-msgstr "이미지 순서 섞기(&S)"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:157
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed while there is no user input. Usually this allows for "
-"high map quality as speed is no concern.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:164
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:219
-#, fuzzy, kde-format
-msgid "Outline Quality"
-msgstr "RAW 그림"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:169
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:224
-#, fuzzy, kde-format
-#| msgid "Quality:"
-msgid "Low Quality"
-msgstr "품질:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:174
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:229
-#, fuzzy, kde-format
-#| msgctxt "@action: normal exif orientation"
-#| msgid "Normal"
-msgid "Normal"
-msgstr "일반"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:179
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:234
-#, fuzzy, kde-format
-#| msgid "Quality:"
-msgid "High Quality"
-msgstr "품질:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:184
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:239
-#, fuzzy, kde-format
-#| msgid "Quality:"
-msgid "Print Quality"
-msgstr "품질:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:198
-#, fuzzy, kde-format
-#| msgid "Duration:"
-msgid "During &animations:"
-msgstr "재생 시간:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:212
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed during map animations (e.g. while dragging the globe). </"
-"p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-"machines it is advisable to set this option to \"low quality\" as this will "
-"give better speed.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:266
-#, fuzzy, kde-format
-#| msgid "Date:"
-msgid "&Text Labels"
-msgstr "날짜:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:286
-#, fuzzy, kde-format
-#| msgid "File name"
-msgid "&Place names:"
-msgstr "파일 이름"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:302
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
-"different names in different languages. The label on the map can show the "
-"name in the user's language. Alternatively it can display the name in the "
-"official language and glyphs of that place. </p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:306
-#, fuzzy, kde-format
-#| msgid "Custom Range"
-msgid "Custom & Native Language"
-msgstr "사용자 정의 범위"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:311
-#, fuzzy, kde-format
-#| msgid "Custom Range"
-msgid "Custom Language"
-msgstr "사용자 정의 범위"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:316
-#, fuzzy, kde-format
-#| msgid "Default Language"
-msgid "Native Language"
-msgstr "기본 언어"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:340
-#, fuzzy, kde-format
-#| msgid "Default Language"
-msgid "Default map &font:"
-msgstr "기본 언어"
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/MarbleViewSettingsWidget.ui:353
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
-"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
-"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
-"포함된 달력을 다운로드할 수 있습니다.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
-"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
 
 #: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:113
 #, fuzzy, kde-format
@@ -59297,66 +58118,6 @@ msgstr "선택"
 msgid "Add custom tag..."
 msgstr "모든 태그"
 
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.cpp:210
-#, fuzzy, kde-format
-#| msgid "Open File"
-msgid "Open File"
-msgstr "파일 열기"
-
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.cpp:212
-#, fuzzy, kde-format
-#| msgid "All supported files (%1)"
-msgid "All Supported Files (*.png)"
-msgstr "모든 지원하는 파일 (%1)"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:64
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
-msgid "Name:"
-msgstr "이름:"
-
-#. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:81
-#, fuzzy, kde-format
-#| msgid "Icon Size:"
-msgid "Icon link:"
-msgstr "아이콘 크기:"
-
-#. i18n: ectx: property (text), widget (QLabel, idLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:91
-#, kde-format
-msgid "ID:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, targetIdLabel)
-#: core/utilities/geolocation/marble/PlacemarkEditHeader.ui:104
-#, fuzzy, kde-format
-#| msgid "Target"
-msgid "Target ID:"
-msgstr "대상"
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:35
-#, kde-format
-msgid "Placemark position provider Plugin"
-msgstr ""
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "Replace string"
-#| msgid "Replace:"
-msgid "Placemark"
-msgstr "바꿀 문자열:"
-
-#: core/utilities/geolocation/marble/PlacemarkPositionProviderPlugin.cpp:55
-#, fuzzy, kde-format
-#| msgid "Set width position to center."
-msgid "Reports the position of a placemark"
-msgstr "너비 위치를 가운데로 설정합니다."
-
 #: core/utilities/geolocation/marble/PlanetFactory.cpp:233
 #, fuzzy, kde-format
 #| msgid "Mercator"
@@ -59440,8 +58201,26 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "알 수 없는 제목"
 
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:35
+#, kde-format
+msgid "Placemark position provider Plugin"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:45
+#, fuzzy, kde-format
+#| msgctxt "Replace string"
+#| msgid "Replace:"
+msgid "Placemark"
+msgstr "바꿀 문자열:"
+
+#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:55
+#, fuzzy, kde-format
+#| msgid "Set width position to center."
+msgid "Reports the position of a placemark"
+msgstr "너비 위치를 가운데로 설정합니다."
+
 #. i18n: ectx: property (text), widget (QPushButton, configureButton)
-#: core/utilities/geolocation/marble/PluginItemDelegate.cpp:366
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:366
 #: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:142
 #, fuzzy, kde-format
 #| msgid "Configure"
@@ -59582,7 +58361,7 @@ msgstr "유리수"
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:118
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:118
 #, fuzzy, kde-format
 #| msgid "Show navigation"
 msgid "Navigation"
@@ -59689,6 +58468,22 @@ msgstr "색상"
 #| msgid "Show Geolocation Indicator"
 msgid "Position I&ndicator:"
 msgstr "지리적 위치 표시기 표시"
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:30
+#, kde-format
+msgid "Current Route Position Provider Plugin"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:40
+#, fuzzy, kde-format
+#| msgid "Current Name"
+msgid "Current Route"
+msgstr "현재 이름"
+
+#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:50
+#, kde-format
+msgid "Simulates traveling along the current route."
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -59818,63 +58613,6 @@ msgid ""
 "<p><b>Vertical Perspective Projection</b> (\"orthogonal\")</p><p> Shows the "
 "earth as it appears from a relatively short distance above the surface. "
 "Applications: Used for Virtual Globes.</p>"
-msgstr ""
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@action: dplugin"
-#| msgid "View"
-msgid "View"
-msgstr "보기"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:126
-#, kde-format
-msgid "Cache and Proxy"
-msgstr ""
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Date and time"
-msgid "Date and Time"
-msgstr "날짜와 시간"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Rating"
-msgid "Routing"
-msgstr "별점"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:155
-#, fuzzy, kde-format
-#| msgid "Synchronize"
-msgid "Synchronization"
-msgstr "동기화"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:271
-#, fuzzy, kde-format
-#| msgid "Synchronize"
-msgid "Never synchronized."
-msgstr "동기화"
-
-#: core/utilities/geolocation/marble/QtMarbleConfigDialog.cpp:275
-#, fuzzy, kde-format
-msgid "Last synchronization: %1"
-msgstr "속성"
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:30
-#, kde-format
-msgid "Current Route Position Provider Plugin"
-msgstr ""
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:40
-#, fuzzy, kde-format
-#| msgid "Current Name"
-msgid "Current Route"
-msgstr "현재 이름"
-
-#: core/utilities/geolocation/marble/RouteSimulationPositionProviderPlugin.cpp:50
-#, kde-format
-msgid "Simulates traveling along the current route."
 msgstr ""
 
 #: core/utilities/geolocation/marble/routing/GoToDialog.cpp:167
@@ -60478,26 +59216,1258 @@ msgctxt "journey duration"
 msgid "%1:%2 h"
 msgstr "%1:%2(%3)"
 
-#: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:20
 #, fuzzy, kde-format
-#| msgid "Select sound files"
-msgid "Select sound files..."
-msgstr "사운드 파일 선택"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
+"used for Marble: The physical memory which is needed to keep map data in the "
+"computer's memory. Increasing the value will make the application more "
+"responsive. The hard disc memory cache is used by download contents from the "
+"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
+"to save space on the hard disc and if high usage of the Internet is not an "
+"issue. </p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
 
-#: core/utilities/geolocation/marble/SoundCueEditWidget.cpp:70
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:23
 #, kde-format
-msgid "Supported Sound Files (*.mp3 *.ogg *.wav)"
+msgid "C&ache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:41
+#, kde-format
+msgid "&Physical memory:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:73
+#, fuzzy, kde-format
+#| msgid "Clear"
+msgid "C&lear"
+msgstr "지우기"
+
+#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:105
+#, kde-format
+msgid "&Hard disc:"
+msgstr ""
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:124
+#, fuzzy, kde-format
+#| msgctxt "smug album privacy"
+#| msgid "Unlisted"
+msgid "Unlimited"
+msgstr "목록에서 숨기기"
+
+#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:146
+#, kde-format
+msgid "Cl&ear"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:172
+#, fuzzy, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
+"local intranet. Please leave empty if there is no proxy.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:175
+#, kde-format
+msgid "&Proxy"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:183
+#, kde-format
+msgid "&Proxy:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:200
+#, fuzzy, kde-format
+#| msgid "Host Port:"
+msgid "P&ort:"
+msgstr "호스트 포트:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:256
+#, fuzzy, kde-format
+#| msgid "Fix type"
+msgid "Proxy type:"
+msgstr "고정 형식"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:264
+#, kde-format
+msgid "Http"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:269
+#, kde-format
+msgid "Socks5"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
+#. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:308
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:320
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Presentation"
+msgid "Requires authentication"
+msgstr "프레젠테이션"
+
+#. i18n: ectx: property (text), widget (QLabel, label_username)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:326
+#, fuzzy, kde-format
+#| msgctxt "piwigo login settings"
+#| msgid "Username:"
+msgid "U&sername:"
+msgstr "사용자 이름:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_password)
+#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:336
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgid "&Password:"
+msgstr "암호:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableSync)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:17
+#, fuzzy, kde-format
+msgid "Enable synchronization"
+msgstr "속성"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncRoutes)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:48
+#, kde-format
+msgid ""
+"Allows you to store routes in owncloud. Each route must be uploaded/"
+"downloaded manually."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncRoutes)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:51
+#, fuzzy, kde-format
+msgid "Enable route synchronization"
+msgstr "속성"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncBookmarks)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:84
+#, kde-format
+msgid "Automatically sync all bookmarks to the server."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncBookmarks)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:87
+#, fuzzy, kde-format
+msgid "Enable bookmark synchronization"
+msgstr "속성"
+
+#. i18n: ectx: property (text), widget (QPushButton, button_syncNow)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:119
+#, kde-format
+msgid "Sync now"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:147
+#, fuzzy, kde-format
+#| msgid "Invalid credentials"
+msgid "Credentials"
+msgstr "잘못된 인증 정보"
+
+#. i18n: ectx: property (text), widget (QLabel, labelServer)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:153
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Server"
+msgid "Server:"
+msgstr "서버"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, kcfg_owncloudServer)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:160
+#, kde-format
+msgid "Remote server URL, e.g. myserver.com/owncloud"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, labelUsername)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:167
+#, fuzzy, kde-format
+#| msgctxt "piwigo login settings"
+#| msgid "Username:"
+msgid "Username:"
+msgstr "사용자 이름:"
+
+#. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
+#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:197
+#, fuzzy, kde-format
+#| msgid "Login"
+msgid "Test Login"
+msgstr "로그인"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:17
+#, kde-format
+msgid "Dragging and Animation"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:37
+#, fuzzy, kde-format
+#| msgid "Target location: "
+msgid "&Drag location:"
+msgstr "대상 위치: "
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:54
+#, fuzzy, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the mouse "
+"there are two standard behaviours when dealing with a virtual globe:</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The location below mouse "
+"pointer will follow the cursor exactly: As a result e.g. the north pole will "
+"not stay at the top which can lead to confusion. By default Marble makes "
+"sure that north is always up which results in a dragging behaviour where the "
+"location below the mouse pointer slightly \"detaches\" from the cursor. </"
+"p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Flip Vertically"
+msgid "Keep Planet Axis Vertically"
+msgstr "좌우 반전"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:63
+#, kde-format
+msgid "Follow Mouse Pointer"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:73
+#, kde-format
+msgid "Use kinetic spinning when dragging the map"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:76
+#, fuzzy, kde-format
+#| msgid "Invert Selection"
+msgid "&Inertial globe rotation"
+msgstr "선택 반전"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:86
+#, fuzzy, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
+"location Marble can either move instantly to the new location or it can show "
+"a travel animation from the previous place to the new place.</p></body></"
+"html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_animateTargetVoyage)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:89
+#, kde-format
+msgid "&Animate voyage to the target"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:96
+#, kde-format
+msgid "Use right mouse button to rotate the camera around"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:99
+#, fuzzy, kde-format
+#| msgid "&Choose operation:"
+msgid "&Mouse view rotation"
+msgstr "작업 선택(&C):"
+
+#. i18n: ectx: property (text), widget (QLabel, label_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:142
+#, kde-format
+msgid "&On startup:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:155
+#, fuzzy, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
+"display the home location immediately after the application has started. As "
+"an alternative it can also show the last position that was active when the "
+"user left the application. </p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:159
+#, fuzzy, kde-format
+#| msgid "Show image caption"
+msgid "Show Home Location"
+msgstr "이미지 캡션 표시"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:164
+#, kde-format
+msgid "Return to Last Location Visited"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_externalEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:184
+#, fuzzy, kde-format
+#| msgid "Internal error"
+msgid "&External editor:"
+msgstr "내부 오류"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:194
+#, kde-format
+msgid ""
+"<p>The application that is launched to edit maps. Potlatch (default) "
+"requires a web browser with flash support to be installed. When selecting "
+"josm or merkaartor, make sure that the respective application is installed.</"
+"p>"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:198
+#, fuzzy, kde-format
+#| msgid "Always ignore"
+msgid "Always ask"
+msgstr "항상 무시"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:203
+#, kde-format
+msgid "Potlatch (Web browser)"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:208
+#, kde-format
+msgid "JOSM"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
+#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:213
+#, kde-format
+msgid "Merkaartor"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:23
+#, fuzzy, kde-format
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
+"Here you can select and deselect the functionality that is provided through "
+"plugins. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
+"from the map, menus and toolbars. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
+"their configuration a bit. </span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:26
+#, fuzzy, kde-format
+#| msgid "Plugins"
+msgid "P&lugins"
+msgstr "플러그인"
+
+#. i18n: ectx: property (title), widget (QGroupBox, timeZone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:23
+#, fuzzy, kde-format
+#| msgid "Time Zone:"
+msgid "Time Zone"
+msgstr "시간대:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_utc)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:29
+#, kde-format
+msgid "UTC"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:39
+#, fuzzy, kde-format
+#| msgid "Camera time zone:"
+msgid "System time zone"
+msgstr "카메라 시간대:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_customTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:51
+#, fuzzy, kde-format
+#| msgid "Camera time zone:"
+msgid "Choose Time zone"
+msgstr "카메라 시간대:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:68
+#, fuzzy, kde-format
+#| msgid "Unpolar Coordinates"
+msgid "Universal Time Coordinated"
+msgstr "반전 극좌표"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:73
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "European Union"
+msgid "European Central Time"
+msgstr "유럽 연합"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:78
+#, kde-format
+msgid "Eastern European Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:83
+#, kde-format
+msgid "Egypt Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:88
+#, kde-format
+msgid "Eastern African Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:93
+#, kde-format
+msgid "Middle East Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:98
+#, fuzzy, kde-format
+#| msgctxt "@info: xslt param"
+#| msgid "Image Date Time"
+msgid "Near East Time"
+msgstr "그림 날짜와 시간"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:103
+#, kde-format
+msgid "Pakistan Lahore Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:108
+#, kde-format
+msgid "India Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:113
+#, kde-format
+msgid "Bangladesh Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:118
+#, fuzzy, kde-format
+#| msgid "Video Standard:"
+msgid "Vietnam Standard Time"
+msgstr "비디오 표준:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:123
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Chinese (Taiwan)"
+msgid "China Taiwan Time"
+msgstr "중국어(대만)"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:128
+#, kde-format
+msgid "Japan Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:133
+#, kde-format
+msgid "Australia Central Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:138
+#, kde-format
+msgid "Australia Eastern Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:143
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Solomon Islands"
+msgid "Solomon Standard Time"
+msgstr "솔로몬 제도"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:148
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "New Zealand"
+msgid "New Zealand Standard Time"
+msgstr "뉴질랜드"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:153
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Cayman Islands"
+msgid "Midway Islands Time"
+msgstr "케이맨 제도"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:158
+#, kde-format
+msgid "Hawaii Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:163
+#, kde-format
+msgid "Alaska Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:168
+#, kde-format
+msgid "Pacific Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:173
+#, kde-format
+msgid "Phoenix Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:178
+#, kde-format
+msgid "Mountain Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:183
+#, kde-format
+msgid "Central Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:188
+#, fuzzy, kde-format
+#| msgid "Standard"
+msgid "Eastern Standard Time"
+msgstr "표준"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:193
+#, kde-format
+msgid "Indiana Eastern Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:198
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "US Virgin Islands"
+msgid "Puerto Rico and US Virgin Islands Time"
+msgstr "미국령 버진 제도"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:203
+#, kde-format
+msgid "Canada Newfoundland Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:208
+#, kde-format
+msgid "Argentina Standard Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:213
+#, kde-format
+msgid "Brazil Eastern Time"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:218
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Central African Republic"
+msgid "Central African Time"
+msgstr "중앙 아프리카 공화국"
+
+#. i18n: ectx: property (title), widget (QGroupBox, whenMarbleStarts)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:231
+#, kde-format
+msgid "When Marble starts"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTime)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:237
+#, fuzzy, kde-format
+#| msgid "Load image"
+msgid "Load system time"
+msgstr "이미지 불러오기"
+
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_lastSessionTime)
+#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:247
+#, kde-format
+msgid "Load last session time"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
+#, fuzzy, kde-format
+#| msgid "Units:"
+msgid "&Units"
+msgstr "단위:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:35
+#, fuzzy, kde-format
+#| msgid "Distance:"
+msgid "&Distance:"
+msgstr "거리:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
+#, fuzzy, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
+"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:61
+#, kde-format
+msgid "Kilometer, Meter"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:66
+#, kde-format
+msgid "Miles, Feet"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:71
+#, kde-format
+msgid "Nautical miles, Knots"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:85
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Angle:"
+msgid "An&gle:"
+msgstr "각도:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:101
+#, fuzzy, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
+"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
+"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
+"g. 54.5°).</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:105
+#, kde-format
+msgid "Degree (DMS)"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:110
+#, kde-format
+msgid "Degree (Decimal)"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:115
+#, kde-format
+msgid "Universal Transverse Mercator (UTM)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:126
+#, fuzzy, kde-format
+#| msgid "Quality:"
+msgid "Map &Quality"
+msgstr "품질:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:144
+#, fuzzy, kde-format
+#| msgid "&Shuffle images"
+msgid "&Still image:"
+msgstr "이미지 순서 섞기(&S)"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:157
+#, fuzzy, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
+"that gets displayed while there is no user input. Usually this allows for "
+"high map quality as speed is no concern.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:164
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:219
+#, fuzzy, kde-format
+msgid "Outline Quality"
+msgstr "RAW 그림"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:169
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:224
+#, fuzzy, kde-format
+#| msgid "Quality:"
+msgid "Low Quality"
+msgstr "품질:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:174
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:229
+#, fuzzy, kde-format
+#| msgctxt "@action: normal exif orientation"
+#| msgid "Normal"
+msgid "Normal"
+msgstr "일반"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:179
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:234
+#, fuzzy, kde-format
+#| msgid "Quality:"
+msgid "High Quality"
+msgstr "품질:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:184
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:239
+#, fuzzy, kde-format
+#| msgid "Quality:"
+msgid "Print Quality"
+msgstr "품질:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:198
+#, fuzzy, kde-format
+#| msgid "Duration:"
+msgid "During &animations:"
+msgstr "재생 시간:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:212
+#, fuzzy, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
+"that gets displayed during map animations (e.g. while dragging the globe). </"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
+"machines it is advisable to set this option to \"low quality\" as this will "
+"give better speed.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:266
+#, fuzzy, kde-format
+#| msgid "Date:"
+msgid "&Text Labels"
+msgstr "날짜:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:286
+#, fuzzy, kde-format
+#| msgid "File name"
+msgid "&Place names:"
+msgstr "파일 이름"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:302
+#, fuzzy, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
+"different names in different languages. The label on the map can show the "
+"name in the user's language. Alternatively it can display the name in the "
+"official language and glyphs of that place. </p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:306
+#, fuzzy, kde-format
+#| msgid "Custom Range"
+msgid "Custom & Native Language"
+msgstr "사용자 정의 범위"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:311
+#, fuzzy, kde-format
+#| msgid "Custom Range"
+msgid "Custom Language"
+msgstr "사용자 정의 범위"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:316
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgid "Native Language"
+msgstr "기본 언어"
+
+#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:340
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgid "Default map &font:"
+msgstr "기본 언어"
+
+#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:353
+#, fuzzy, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
+"used on the map.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"http://www."
+"icalshare.com\"><span style=\" text-decoration: underline; color:#0057ae;"
+"\">http://www.icalshare.com</span></a> 또는 기타 사이트에서 국가별 공휴일이 "
+"포함된 달력을 다운로드할 수 있습니다.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">이 기능은 선택 사항입니다. "
+"지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:109
+#, fuzzy, kde-format
+#| msgctxt "@action: dplugin"
+#| msgid "View"
+msgid "View"
+msgstr "보기"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:126
+#, kde-format
+msgid "Cache and Proxy"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:134
+#, fuzzy, kde-format
+#| msgid "Date and time"
+msgid "Date and Time"
+msgstr "날짜와 시간"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:138
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgid "Routing"
+msgstr "별점"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:155
+#, fuzzy, kde-format
+#| msgid "Synchronize"
+msgid "Synchronization"
+msgstr "동기화"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:271
+#, fuzzy, kde-format
+#| msgid "Synchronize"
+msgid "Never synchronized."
+msgstr "동기화"
+
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:275
+#, fuzzy, kde-format
+msgid "Last synchronization: %1"
+msgstr "속성"
+
+#: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
+#, fuzzy, kde-format
+msgid "Unable to insert data into cache"
+msgstr ""
+"\"%1\"\n"
+"그림을 표시할 수 없습니다"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:136
+#, fuzzy, kde-format
+#| msgid "Visible to Friends"
+msgid "Visible region"
+msgstr "친구에게 공개"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:138
+#, fuzzy, kde-format
+#| msgid "Specific Location"
+msgid "Specify region"
+msgstr "특정 위치"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:140
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Download New"
+msgid "Download Route"
+msgstr "새로운 항목 다운로드"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:142
+#, kde-format
+msgid "Enabled when a route exists"
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:155
+#, kde-format
+msgid "Offset from route:"
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:190
+#, fuzzy, kde-format
+#| msgid "Destination Folder:"
+msgid "Selection Method"
+msgstr "대상 폴더:"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:198
+#, kde-format
+msgid "Number of tiles to download:"
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:248
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Download New"
+msgid "Download Region"
+msgstr "새로운 항목 다운로드"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:250
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "This item has never been downloaded"
+msgid "Tile type to be downloaded:"
+msgstr "이 항목은 다운로드된 적이 없습니다"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:252
+#, fuzzy, kde-format
+msgid "Texture tiles"
+msgstr "RAW 그림"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:253
+#, fuzzy, kde-format
+#| msgid "Video Files"
+msgid "Vector tiles"
+msgstr "비디오 파일"
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:254
+#, kde-format
+msgid "Allows selection between layer types that are visibly being rendered."
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
+#, kde-format
+msgid "There is a limit of %1 tile(s) to download."
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:533
+#, kde-format
+msgid "Approximate size of the tiles to be downloaded"
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:537
+#, kde-format
+msgid "Estimated download size: %1 MB"
+msgstr ""
+
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:540
+#, kde-format
+msgid "Estimated download size: %1 kB"
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:20
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:20
 #, fuzzy, kde-format
 #| msgid "Creation date"
 msgid "Creating Map"
 msgstr "만든 날짜"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:507
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:507
 #, fuzzy, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
@@ -60527,7 +60497,7 @@ msgstr ""
 "지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: core/utilities/geolocation/marble/TileCreatorDialog.ui:517
+#: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:517
 #, kde-format
 msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
@@ -60535,34 +60505,34 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:29
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:29
 #, fuzzy, kde-format
 #| msgid "Zoom:"
 msgid "Zoom"
 msgstr "크기 조정:"
 
 #. i18n: ectx: property (text), widget (QLabel, tileLevelLabel)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:37
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:37
 #, fuzzy, kde-format
 #| msgid "Title Change"
 msgid "&Tile level range:"
 msgstr "제목 바꾸기"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, topSpinBox)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:47
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:47
 #, kde-format
 msgid "Minimum Tile Level"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, toLabel)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:63
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:63
 #, fuzzy, kde-format
 #| msgid "Auto"
 msgid "to"
 msgstr "자동"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bottomSpinBox)
-#: core/utilities/geolocation/marble/TileLevelRangeWidget.ui:70
+#: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:70
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Maximum size:"
@@ -69772,6 +69742,16 @@ msgstr "모든 항목을 기본값으로 초기화합니다."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "모든 항목을 기본값으로 초기화합니다."
+
+#, fuzzy
+#~| msgid "Iteration:"
+#~ msgid "Elevation:"
+#~ msgstr "반복:"
+
+#, fuzzy
+#~| msgid "Select sound files"
+#~ msgid "Select sound files..."
+#~ msgstr "사운드 파일 선택"
 
 #, fuzzy
 #~| msgid "No photo specified"
