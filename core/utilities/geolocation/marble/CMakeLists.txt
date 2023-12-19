@@ -26,25 +26,6 @@ endif()
 
 set(marblewidget_SRCS
 
-    MarbleClock.cpp
-    MarbleColors.cpp
-    MarbleDirs.cpp
-    MarbleGlobal.cpp
-    MarbleInputHandler.cpp
-    MarbleLocale.cpp
-    MarbleMap.cpp
-    MarblePhysics.cpp
-    MarbleWidget.cpp
-    MarbleWidgetInputHandler.cpp
-    MarbleWidgetPopupMenu.cpp
-    MarbleZip.cpp
-    ParsingRunner.cpp
-    ParsingRunnerManager.cpp
-    ReverseGeocodingRunner.cpp
-    ReverseGeocodingRunnerManager.cpp
-    SearchRunner.cpp
-    SearchRunnerManager.cpp
-
     astro/astrolib.cpp
     astro/astr2lib.cpp
     astro/attlib.cpp
@@ -84,6 +65,17 @@ set(marblewidget_SRCS
     core/ImageF.cpp
     core/GenericScanlineTextureMapper.cpp
     core/MarbleAbstractPresenter.cpp
+    core/MarbleClock.cpp
+    core/MarbleColors.cpp
+    core/MarbleDirs.cpp
+    core/MarbleGlobal.cpp
+    core/MarbleInputHandler.cpp
+    core/MarbleLocale.cpp
+    core/MarblePhysics.cpp
+    core/MarbleMap.cpp
+    core/MarbleWidget.cpp
+    core/MarbleWidgetInputHandler.cpp
+    core/MarbleWidgetPopupMenu.cpp
     core/MathHelper.cpp
     core/MercatorScanlineTextureMapper.cpp
     core/Quaternion.cpp
@@ -603,6 +595,7 @@ set(marblewidget_SRCS
     models/PositionTracking.cpp
     models/TreeViewDecoratorModel.cpp
 
+    osm/MarbleZip.cpp
     osm/OsmcSymbol.cpp
     osm/OsmPlacemarkData.cpp
     osm/OsmObjectManager.cpp
@@ -675,6 +668,13 @@ set(marblewidget_SRCS
     routing/instructions/RoutingPoint.cpp
     routing/instructions/RoutingWaypoint.cpp
     routing/instructions/WaypointParser.cpp
+
+    runners/ParsingRunner.cpp
+    runners/ParsingRunnerManager.cpp
+    runners/ReverseGeocodingRunner.cpp
+    runners/ReverseGeocodingRunnerManager.cpp
+    runners/SearchRunner.cpp
+    runners/SearchRunnerManager.cpp
 
     settings/DialogConfigurationInterface.cpp
     settings/MarblePluginSettingsWidget.cpp

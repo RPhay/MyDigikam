@@ -6,13 +6,13 @@
 #ifndef MARBLE_OSMWAY
 #define MARBLE_OSMWAY
 
-#include "OsmNode.h"
-#include "GeoDataBuilding.h"
-#include <osm/OsmPlacemarkData.h>
-#include <StyleBuilder.h>
-
 #include <QSet>
 #include <QString>
+
+#include "OsmNode.h"
+#include "GeoDataBuilding.h"
+#include "OsmPlacemarkData.h"
+#include "StyleBuilder.h"
 
 namespace Marble {
 

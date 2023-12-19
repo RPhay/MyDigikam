@@ -6,10 +6,10 @@
 #ifndef MARBLE_OSMNODE
 #define MARBLE_OSMNODE
 
-#include <osm/OsmPlacemarkData.h>
-#include <GeoDataPlacemark.h>
-
 #include <QString>
+
+#include "OsmPlacemarkData.h"
+#include "GeoDataPlacemark.h"
 
 class QXmlStreamAttributes;
 

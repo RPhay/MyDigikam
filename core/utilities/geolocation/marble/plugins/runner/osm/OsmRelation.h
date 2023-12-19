@@ -6,14 +6,14 @@
 #ifndef MARBLE_OSMRELATION
 #define MARBLE_OSMRELATION
 
-#include "OsmNode.h"
-#include "OsmWay.h"
-#include <osm/OsmPlacemarkData.h>
-#include <GeoDataLinearRing.h>
-
 #include <QString>
 #include <QXmlStreamAttributes>
 #include <QSet>
+
+#include "OsmNode.h"
+#include "OsmWay.h"
+#include "OsmPlacemarkData.h"
+#include "GeoDataLinearRing.h"
 
 namespace Marble {
 
