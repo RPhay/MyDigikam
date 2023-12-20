@@ -236,7 +236,7 @@ QPixmap OwncloudSyncBackend::createPreview( const QString &timestamp ) const
     mapWidget.setProjection( Mercator );
     mapWidget.setMapThemeId(QStringLiteral("earth/openstreetmap/openstreetmap.dgml"));
     mapWidget.resize( 512, 512 );
-
+/*
     RoutingManager* manager = mapWidget.model()->routingManager();
     manager->loadRoute( d->m_cacheDir.absolutePath() + QString::fromUtf8( "/%0.kml" ).arg( timestamp ) );
     GeoDataLatLonBox const bbox = manager->routingModel()->route().bounds();
@@ -244,7 +244,7 @@ QPixmap OwncloudSyncBackend::createPreview( const QString &timestamp ) const
     if ( !bbox.isEmpty() ) {
         mapWidget.centerOn( bbox );
     }
-
+*/
     QPixmap pixmap = mapWidget.grab();
     QDir( d->m_cacheDir.absolutePath() ).mkpath( QString::fromUtf8("preview") );
     pixmap.save(d->m_cacheDir.absolutePath() + QLatin1String("/preview/") + timestamp + QLatin1String(".jpg"));

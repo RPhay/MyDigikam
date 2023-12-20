@@ -142,12 +142,12 @@ private:
 
 RoutingWidgetPrivate::RoutingWidgetPrivate( RoutingWidget *parent, MarbleWidget *marbleWidget ) :
         m_widget( marbleWidget ),
-        m_routingManager( marbleWidget->model()->routingManager() ),
+        m_routingManager( nullptr/*marbleWidget->model()->routingManager()*/ ),
         m_routingLayer( nullptr ),
         m_activeInput( nullptr ),
         m_inputRequest( nullptr ),
         m_routingModel( m_routingManager->routingModel() ),
-        m_routeRequest( marbleWidget->model()->routingManager()->routeRequest() ),
+        m_routeRequest( nullptr/* marbleWidget->model()->routingManager()->routeRequest()*/ ),
         m_routeSyncManager( nullptr ),
         m_zoomRouteAfterDownload( false ),
         m_document( nullptr ),
@@ -887,7 +887,7 @@ void RoutingWidget::initializeTour()
     d->m_document->append( d->m_tour );
 
     d->m_tour->setPlaylist( new GeoDataPlaylist );
-    Route const route = d->m_widget->model()->routingManager()->routingModel()->route();
+    Route const route;// = d->m_widget->model()->routingManager()->routingModel()->route();
     GeoDataLineString path = route.path();
     if ( path.size() < 1 ){
         return;

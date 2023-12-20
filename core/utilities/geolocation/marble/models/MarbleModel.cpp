@@ -57,8 +57,6 @@
 #include "TileCreator.h"
 #include "TileCreatorDialog.h"
 #include "TileLoader.h"
-#include "RoutingManager.h"
-#include "RouteSimulationPositionProviderPlugin.h"
 #include "BookmarkManager.h"
 #include "ElevationModel.h"
 
@@ -89,7 +87,6 @@ class MarbleModelPrivate
           m_positionTracking( &m_treeModel ),
           m_trackedPlacemark( nullptr ),
           m_bookmarkManager( &m_treeModel ),
-          m_routingManager( nullptr ),
           m_legend( nullptr ),
           m_workOffline( false ),
           m_elevationModel( &m_downloadManager, &m_pluginManager )
@@ -159,7 +156,6 @@ class MarbleModelPrivate
     const GeoDataPlacemark  *m_trackedPlacemark;
 
     BookmarkManager          m_bookmarkManager;
-    RoutingManager          *m_routingManager;
     QTextDocument           *m_legend;
 
     bool                     m_workOffline;
@@ -180,13 +176,10 @@ MarbleModel::MarbleModel( QObject *parent )
     connect( &d->m_fileManager, SIGNAL(fileAdded(QString)),
              this, SLOT(assignFillColors(QString)) );
 
-    d->m_routingManager = new RoutingManager( this, this );
-
     connect(&d->m_clock,   SIGNAL(timeChanged()),
             &d->m_sunLocator, SLOT(update()) );
 
     d->m_pluginManager.addPositionProviderPlugin(new PlacemarkPositionProviderPlugin(this, this));
-    d->m_pluginManager.addPositionProviderPlugin(new RouteSimulationPositionProviderPlugin(this, this));
 }
 
 MarbleModel::~MarbleModel()
@@ -659,16 +652,6 @@ void MarbleModel::addDownloadPolicies( const GeoSceneDocument *mapTheme )
     for (; pos != end; ++pos ) {
         d->m_downloadManager.addDownloadPolicy( **pos );
     }
-}
-
-RoutingManager* MarbleModel::routingManager()
-{
-    return d->m_routingManager;
-}
-
-const RoutingManager* MarbleModel::routingManager() const
-{
-    return d->m_routingManager;
 }
 
 void MarbleModel::setClockDateTime( const QDateTime& datetime )

@@ -51,7 +51,6 @@ class GeoDataCoordinates;
 class GeoDataTreeModel;
 class GeoSceneDocument;
 class Planet;
-class RoutingManager;
 class BookmarkManager;
 class FileManager;
 class ElevationModel;
@@ -232,9 +231,6 @@ class DIGIKAM_EXPORT MarbleModel : public QObject
      * @return the planet object for the current map
      */
     const Planet *planet() const;
-
-    RoutingManager* routingManager();
-    const RoutingManager* routingManager() const;
 
     void setClockDateTime( const QDateTime& datetime );
 

@@ -42,11 +42,6 @@ set(marblewidget_SRCS
     bookmark/NewBookmarkFolderDialog.cpp
 
     cloudsync/CloudSyncManager.cpp
-    cloudsync/RouteSyncManager.cpp
-    cloudsync/CloudRouteModel.cpp
-    cloudsync/CloudRoutesDialog.cpp
-    cloudsync/RouteItem.cpp
-    cloudsync/RouteItemDelegate.cpp
     cloudsync/BookmarkSyncManager.cpp
     cloudsync/MergeItem.cpp
     cloudsync/ConflictDialog.cpp
@@ -656,6 +651,11 @@ set(marblewidget_SRCS
     routing/SerialTrack.cpp
     routing/SoundTrack.cpp
     routing/TourPlayback.cpp
+    routing/RouteSyncManager.cpp
+    routing/CloudRouteModel.cpp
+    routing/CloudRoutesDialog.cpp
+    routing/RouteItem.cpp
+    routing/RouteItemDelegate.cpp
     routing/instructions/InstructionTransformation.cpp
     routing/instructions/RoutingInstruction.cpp
     routing/instructions/RoutingPoint.cpp
@@ -712,11 +712,10 @@ set (marblewidget_UI
     bookmark/PlacemarkEditHeader.ui
     bookmark/NewBookmarkFolderDialog.ui
 
-    cloudsync/CloudRoutesDialog.ui
-
     osm/OsmTagEditorWidget.ui
     osm/OsmRelationManagerWidget.ui
 
+    routing/CloudRoutesDialog.ui
     routing/GoToDialog.ui
     routing/RoutingWidget.ui
     routing/RoutingSettingsWidget.ui

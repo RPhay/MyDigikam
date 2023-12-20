@@ -43,7 +43,7 @@ class Q_DECL_HIDDEN RoutingProfilesWidget::Private
 RoutingProfilesWidget::Private::Private( MarbleModel *marbleModel, RoutingProfilesWidget *parent ) :
     q( parent ),
     m_pluginManager( marbleModel->pluginManager() ),
-    m_profilesModel( marbleModel->routingManager()->profilesModel() )
+    m_profilesModel( nullptr )
 {
 }
 

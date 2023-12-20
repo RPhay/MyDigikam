@@ -115,7 +115,6 @@ RouteSimulationPositionProviderPlugin::~RouteSimulationPositionProviderPlugin()
 void RouteSimulationPositionProviderPlugin::initialize()
 {
     updateRoute();
-    connect(m_marbleModel->routingManager()->routingModel(), SIGNAL(currentRouteChanged()), this, SLOT(updateRoute()));
 }
 
 bool RouteSimulationPositionProviderPlugin::isInitialized() const
@@ -140,7 +139,7 @@ QDateTime RouteSimulationPositionProviderPlugin::timestamp() const
 
 void RouteSimulationPositionProviderPlugin::updateRoute(){
     m_currentIndex = -1;
-    m_lineString = m_lineStringInterpolated = m_marbleModel->routingManager()->routingModel()->route().path();
+    m_lineString = m_lineStringInterpolated = GeoDataLineString();//m_marbleModel->routingManager()->routingModel()->route().path();
     m_speed = 0;   //initialize speed to be around 25 m/s;
     bool const canWork = !m_lineString.isEmpty() || m_currentPosition.isValid();
     if (canWork) {

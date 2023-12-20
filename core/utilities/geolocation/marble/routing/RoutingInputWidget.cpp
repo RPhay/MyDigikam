@@ -150,7 +150,7 @@ RoutingInputWidgetPrivate::RoutingInputWidgetPrivate( MarbleModel* model, int in
         m_lineEdit( nullptr ),
         m_placemarkRunnerManager( m_marbleModel ),
         m_reverseGeocodingRunnerManager( m_marbleModel ),
-        m_placemarkModel( nullptr ), m_route( m_marbleModel->routingManager()->routeRequest() ), m_index( index ),
+        m_placemarkModel( nullptr ), m_route( nullptr ), m_index( index ),
         m_bookmarkAction( nullptr ), m_mapInput( nullptr ), m_currentLocationAction( nullptr ),
         m_centerAction( nullptr ),
         m_menu( nullptr )
@@ -280,8 +280,6 @@ RoutingInputWidget::RoutingInputWidget( MarbleModel* model, int index, QWidget *
              this, SLOT(setInvalid()) );
     connect( &d->m_placemarkRunnerManager, SIGNAL(searchFinished(QString)),
              this, SLOT(finishSearch()) );
-    connect( d->m_marbleModel->routingManager()->routeRequest(), SIGNAL(positionChanged(int,GeoDataCoordinates)),
-             this, SLOT(updatePosition(int,GeoDataCoordinates)) );
     connect( &d->m_nominatimTimer, SIGNAL(timeout()),
              this, SLOT(reverseGeocoding()) );
     connect( this, SIGNAL(targetValidityChanged(bool)), this, SLOT(updateCenterButton(bool)) );

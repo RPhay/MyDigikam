@@ -37,14 +37,11 @@
 #include "TileCoordsPyramid.h"
 #include "TileLevelRangeWidget.h"
 #include "TileLoaderHelper.h"
-#include "RoutingManager.h"
-#include "RoutingModel.h"
 #include "GeoDataCoordinates.h"
 #include "GeoDataLineString.h"
 #include "DownloadRegion.h"
 #include "GeoSceneDocument.h"
 #include "GeoSceneMap.h"
-#include "Route.h"
 
 #include "digikam_debug.h"
 
@@ -90,7 +87,6 @@ public:
     MarbleWidget *const m_widget;
     SelectionMethod m_selectionMethod;
     GeoDataLatLonAltBox m_visibleRegion;
-    RoutingModel *m_routingModel;
     DownloadRegion m_downloadRegion;
     TileType m_tileType;
 };
@@ -118,8 +114,7 @@ DownloadRegionDialog::Private::Private( MarbleWidget * const widget,
       m_model( widget->model() ),
       m_widget( widget ),
       m_selectionMethod( VisibleRegionMethod ),
-      m_visibleRegion(),
-      m_routingModel( widget->model()->routingManager()->routingModel() )
+      m_visibleRegion()
 {
     m_latLonBoxWidget->setEnabled( false );
     m_latLonBoxWidget->setLatLonBox( m_visibleRegion );
@@ -157,11 +152,6 @@ QWidget * DownloadRegionDialog::Private::createSelectionMethodBox()
 
     connect( m_buttonGroup, SIGNAL(buttonToggled(QAbstractButton*,bool)),
              m_dialog, SLOT(toggleSelectionMethod()) );
-    connect( m_routingModel, SIGNAL(modelReset()), m_dialog, SLOT(updateRouteDialog()) );
-    connect( m_routingModel, SIGNAL(rowsInserted(QModelIndex,int,int)),
-             m_dialog, SLOT(updateRouteDialog()) );
-    connect( m_routingModel, SIGNAL(rowsRemoved(QModelIndex,int,int)),
-             m_dialog, SLOT(updateRouteDialog()) );
 
     QHBoxLayout *routeOffsetLayout = new QHBoxLayout;
     routeOffsetLayout->addWidget( m_routeOffsetLabel );
@@ -227,7 +217,7 @@ QWidget * DownloadRegionDialog::Private::createOkCancelButtonBox()
 
 bool DownloadRegionDialog::Private::hasRoute() const
 {
-    return !m_routingModel->route().path().isEmpty();
+    return false;
 }
 
 bool DownloadRegionDialog::Private::hasTextureLayers() const
@@ -368,7 +358,7 @@ QVector<TileCoordsPyramid> DownloadRegionDialog::region() const
         if (d->m_routeOffsetSpinBox->suffix() == QLatin1String(" km")) {
             offset *= KM2METER;
         }
-        const GeoDataLineString waypoints = d->m_model->routingManager()->routingModel()->route().path();
+        const GeoDataLineString waypoints;// = d->m_model->routingManager()->routingModel()->route().path();
         return d->m_downloadRegion.fromPath( tileLayer, offset, waypoints );
     }
 

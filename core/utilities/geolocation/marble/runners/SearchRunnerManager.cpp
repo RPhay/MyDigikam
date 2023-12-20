@@ -19,11 +19,8 @@
 #include "PluginManager.h"
 #include "ParseRunnerPlugin.h"
 #include "ReverseGeocodingRunnerPlugin.h"
-#include "RoutingRunnerPlugin.h"
 #include "SearchRunnerPlugin.h"
 #include "RunnerTask.h"
-#include "RouteRequest.h"
-#include "RoutingProfilesModel.h"
 
 #include "digikam_debug.h"
 

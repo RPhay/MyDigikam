@@ -131,8 +131,8 @@ QVector<GeoDataPlacemark> TargetModel::viaPoints() const
         return QVector<GeoDataPlacemark>();
     }
 
-    RouteRequest* request = m_marbleModel->routingManager()->routeRequest();
     QVector<GeoDataPlacemark> result;
+/*    RouteRequest* request = m_marbleModel->routingManager()->routeRequest();
     for ( int i = 0; i < request->size(); ++i ) {
         if ( request->at( i ).isValid() ) {
             GeoDataPlacemark placemark;
@@ -140,7 +140,7 @@ QVector<GeoDataPlacemark> TargetModel::viaPoints() const
             placemark.setName( request->name( i ) );
             result.push_back( placemark );
         }
-    }
+    }*/
     return result;
 }
 
@@ -177,10 +177,10 @@ QVariant TargetModel::currentLocationData ( int role ) const
 
 QVariant TargetModel::routeData ( const QVector<GeoDataPlacemark> &via, int index, int role ) const
 {
-    RouteRequest* request = m_marbleModel->routingManager()->routeRequest();
+//    RouteRequest* request = m_marbleModel->routingManager()->routeRequest();
     switch( role ) {
     case Qt::DisplayRole: return via.at( index ).name();
-    case Qt::DecorationRole: return QIcon( request->pixmap( index ) );
+    case Qt::DecorationRole: return QIcon( /*request->pixmap( index )*/ );
     case MarblePlacemarkModel::CoordinateRole: {
         const GeoDataCoordinates coordinates = via.at( index ).coordinate();
         return QVariant::fromValue( coordinates );
