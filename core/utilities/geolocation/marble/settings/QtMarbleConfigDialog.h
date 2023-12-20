@@ -8,9 +8,10 @@
 
 #include <QDialog>
 
-#include "digikam_export.h"
 #include "MarbleGlobal.h"
 #include "MarbleLocale.h"
+
+#include "digikam_export.h"
 
 namespace Marble
 {

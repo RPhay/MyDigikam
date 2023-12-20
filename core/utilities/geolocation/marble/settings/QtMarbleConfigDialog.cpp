@@ -34,7 +34,6 @@
 #include "RenderPlugin.h"
 #include "RenderPluginModel.h"
 #include "MarbleClock.h"
-#include "RoutingProfilesWidget.h"
 #include "BookmarkSyncManager.h"
 #include "CloudSyncManager.h"
 
@@ -132,10 +131,6 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget, CloudSync
     QWidget *w_timeSettings = new QWidget( this );
     d->ui_timeSettings.setupUi( w_timeSettings );
     tabWidget->addTab( w_timeSettings, i18n( "Date and Time" ) );
-
-    // routing page
-    QWidget *w_routingSettings = new RoutingProfilesWidget( marbleWidget->model() );
-    tabWidget->addTab( w_routingSettings, i18n( "Routing" ) );
 
     // plugin page
     d->m_pluginModel.setRenderPlugins( d->m_marbleWidget->renderPlugins() );
@@ -338,8 +333,6 @@ void QtMarbleConfigDialog::readSettings()
     {
         d->m_marbleWidget->model()->setClockTimezone( d->m_timezone.value( chosenTimezone() ) );
     }
-
-    // Routing
 
     // ownCloud
     d->ui_cloudSyncSettings.kcfg_enableSync->setChecked( syncEnabled() );
