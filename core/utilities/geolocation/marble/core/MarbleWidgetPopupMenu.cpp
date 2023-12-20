@@ -43,9 +43,6 @@
 #include "MarbleClock.h"
 #include "PopupLayer.h"
 #include "Planet.h"
-#include "RoutingManager.h"
-#include "RoutingLayer.h"
-#include "RouteRequest.h"
 #include "EditBookmarkDialog.h"
 #include "BookmarkManager.h"
 #include "ReverseGeocodingRunnerManager.h"
@@ -55,11 +52,14 @@
 
 #include "digikam_debug.h"
 
-namespace Marble {
-/* TRANSLATOR Marble::MarbleWidgetPopupMenu */
+namespace Marble
+{
 
-class Q_DECL_HIDDEN MarbleWidgetPopupMenu::Private {
+class Q_DECL_HIDDEN MarbleWidgetPopupMenu::Private
+{
+
 public:
+
     const MarbleModel *const m_model;
     MarbleWidget *const m_widget;
 
@@ -70,8 +70,6 @@ public:
     QMenu m_rmbMenu;
 
     QAction *m_infoDialogAction;
-    QAction *m_directionsFromHereAction;
-    QAction *m_directionsToHereAction;
 
     QAction *const m_copyCoordinateAction;
     QAction *const m_copyGeoAction;
@@ -109,8 +107,6 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     m_widget(widget),
     m_lmbMenu( m_widget ),
     m_rmbMenu( m_widget ),
-    m_directionsFromHereAction( nullptr ),
-    m_directionsToHereAction( nullptr ),
     m_copyCoordinateAction(new QAction(QIcon(QStringLiteral(":/icons/copy-coordinates.png")), i18n("Copy Coordinates"), parent)),
     m_copyGeoAction(new QAction(QIcon(QStringLiteral(":/icons/copy-coordinates.png")), i18n("Copy geo: URL"), parent)),
     m_rmbExtensionPoint( nullptr ),
@@ -121,21 +117,11 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     m_infoDialogAction->setData( 0 );
 
     //  Tool actions (Right mouse button)
-    m_directionsFromHereAction = new QAction( i18n( "Directions &from here" ), parent );
-    m_directionsToHereAction = new QAction( i18n( "Directions &to here" ), parent );
-    RouteRequest* request = m_widget->model()->routingManager()->routeRequest();
-    if ( request ) {
-        m_directionsFromHereAction->setIcon( QIcon( request->pixmap( 0, 16 ) ) );
-        int const lastIndex = qMax( 1, request->size()-1 );
-        m_directionsToHereAction->setIcon( QIcon( request->pixmap( lastIndex, 16 ) ) );
-    }
     QAction* addBookmark = new QAction( QIcon(QStringLiteral(":/icons/bookmark-new.png")),
                                         i18n( "Add &Bookmark" ), parent );
 
     QMenu* infoBoxMenu = createInfoBoxMenu(m_widget);
 
-    m_rmbMenu.addAction( m_directionsFromHereAction );
-    m_rmbMenu.addAction( m_directionsToHereAction );
     m_rmbMenu.addSeparator();
     m_rmbMenu.addAction( addBookmark );
     m_rmbMenu.addAction( m_copyCoordinateAction );
@@ -146,8 +132,6 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     m_rmbMenu.addMenu( infoBoxMenu );
 
     parent->connect( &m_lmbMenu, SIGNAL(aboutToHide()), SLOT(resetMenu()) );
-    parent->connect( m_directionsFromHereAction, SIGNAL(triggered()), SLOT(directionsFromHere()) );
-    parent->connect( m_directionsToHereAction, SIGNAL(triggered()), SLOT(directionsToHere()) );
     parent->connect( addBookmark, SIGNAL(triggered()), SLOT(addBookmark()) );
     parent->connect( m_copyCoordinateAction, SIGNAL(triggered()), SLOT(slotCopyCoordinates()) );
     parent->connect( m_copyGeoAction, SIGNAL(triggered()), SLOT(slotCopyGeo()) );
@@ -594,7 +578,6 @@ void MarbleWidgetPopupMenu::showLmbMenu( int xpos, int ypos )
     }
 }
 
-
 void MarbleWidgetPopupMenu::showRmbMenu( int xpos, int ypos )
 {
     qreal lon, lat;
@@ -608,15 +591,6 @@ void MarbleWidgetPopupMenu::showRmbMenu( int xpos, int ypos )
     QPoint curpos = QPoint( xpos, ypos );
     d->m_copyCoordinateAction->setData( curpos );
     d->m_copyGeoAction->setData( curpos );
-
-    bool const showDirectionButtons = d->m_widget->routingLayer() && d->m_widget->routingLayer()->isInteractive();
-    d->m_directionsFromHereAction->setVisible( showDirectionButtons );
-    d->m_directionsToHereAction->setVisible( showDirectionButtons );
-    RouteRequest* request = d->m_widget->model()->routingManager()->routeRequest();
-    if ( request ) {
-        int const lastIndex = qMax( 1, request->size()-1 );
-        d->m_directionsToHereAction->setIcon( QIcon( request->pixmap( lastIndex, 16 ) ) );
-    }
 
     d->m_rmbMenu.popup( d->m_widget->mapToGlobal( curpos ) );
 }
@@ -797,40 +771,6 @@ void MarbleWidgetPopupMenu::addAction( Qt::MouseButton button, QAction* action )
         d->m_rmbMenu.insertAction( d->m_rmbExtensionPoint, action );
     } else {
         d->m_lmbMenu.addAction( action );
-    }
-}
-
-void MarbleWidgetPopupMenu::directionsFromHere()
-{
-    RouteRequest* request = d->m_widget->model()->routingManager()->routeRequest();
-    if ( request )
-    {
-        const GeoDataCoordinates coordinates = d->mouseCoordinates( d->m_copyCoordinateAction );
-        if ( coordinates.isValid() ) {
-            if ( request->size() > 0 ) {
-                request->setPosition( 0, coordinates );
-            } else {
-                request->append( coordinates );
-            }
-            d->m_widget->model()->routingManager()->retrieveRoute();
-        }
-    }
-}
-
-void MarbleWidgetPopupMenu::directionsToHere()
-{
-    RouteRequest* request = d->m_widget->model()->routingManager()->routeRequest();
-    if ( request )
-    {
-        const GeoDataCoordinates coordinates = d->mouseCoordinates( d->m_copyCoordinateAction );
-        if ( coordinates.isValid() ) {
-            if ( request->size() > 1 ) {
-                request->setPosition( request->size()-1, coordinates );
-            } else {
-                request->append( coordinates );
-            }
-            d->m_widget->model()->routingManager()->retrieveRoute();
-        }
     }
 }
 
