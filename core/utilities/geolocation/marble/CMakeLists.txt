@@ -612,8 +612,6 @@ set(marblewidget_SRCS
     plugins/RenderPluginInterface.cpp
     plugins/RenderPluginModel.cpp
     plugins/ReverseGeocodingRunnerPlugin.cpp
-    plugins/RouteSimulationPositionProviderPlugin.cpp
-    plugins/RoutingRunnerPlugin.cpp
     plugins/SearchRunnerPlugin.cpp
 
     projections/AbstractProjection.cpp
@@ -642,6 +640,7 @@ set(marblewidget_SRCS
     routing/Route.cpp
     routing/RouteRequest.cpp
     routing/RouteSegment.cpp
+    routing/RouteSimulationPositionProviderPlugin.cpp
     routing/RoutingModel.cpp
     routing/RoutingProfile.cpp
     routing/RoutingManager.cpp
@@ -652,6 +651,7 @@ set(marblewidget_SRCS
     routing/RoutingProfilesModel.cpp
     routing/RoutingProfileSettingsDialog.cpp
     routing/RoutingRunnerManager.cpp
+    routing/RoutingRunnerPlugin.cpp
     routing/RoutingRunner.cpp
     routing/SerialTrack.cpp
     routing/SoundTrack.cpp
