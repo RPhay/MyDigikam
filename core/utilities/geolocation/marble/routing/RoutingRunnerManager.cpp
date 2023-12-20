@@ -19,6 +19,7 @@
 #include "RunnerTask.h"
 #include "RouteRequest.h"
 #include "RoutingProfilesModel.h"
+#include "RoutingRunner.h"
 
 #include "digikam_debug.h"
 
@@ -26,6 +27,23 @@ namespace Marble
 {
 
 class MarbleModel;
+
+RoutingTask::RoutingTask( RoutingRunner *runner, RoutingRunnerManager *manager, const RouteRequest* routeRequest ) :
+    QObject(),
+    m_runner( runner ),
+    m_routeRequest( routeRequest )
+{
+    connect( m_runner, SIGNAL(routeCalculated(GeoDataDocument*)),
+             manager, SLOT(addRoutingResult(GeoDataDocument*)) );
+}
+
+void RoutingTask::run()
+{
+    m_runner->retrieveRoute( m_routeRequest );
+    m_runner->deleteLater();
+
+    Q_EMIT finished( this );
+}
 
 class Q_DECL_HIDDEN RoutingRunnerManager::Private
 {
