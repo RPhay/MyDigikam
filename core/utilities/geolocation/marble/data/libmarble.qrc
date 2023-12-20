@@ -1,9 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>svg/worldmap.svg</file>
-        <file>bitmaps/routing_remove.png</file>
-        <file>bitmaps/routing_pick.png</file>
-        <file>bitmaps/routing_step.png</file>
         <file alias="marble/cursor/bc.png">bitmaps/cursor_bc.png</file>
         <file alias="marble/cursor/bl.png">bitmaps/cursor_bl.png</file>
         <file alias="marble/cursor/br.png">bitmaps/cursor_br.png</file>
@@ -67,7 +64,6 @@
         <file alias="marble/webpopup/webpopup2_shadow.png">bitmaps/webpopup/webpopup2_shadow.png</file>
         <file alias="marble/webpopup/icon-print.png">bitmaps/webpopup/font-awesome-icon-print-16x16.png</file>
         <file alias="marble/webpopup/icon-remove.png">bitmaps/webpopup/font-awesome-icon-remove-16x16.png</file>
-        <file alias="marble/routing/icon-remove.png">bitmaps/webpopup/font-awesome-icon-remove-8x8.png</file>
         <file alias="marble/webpopup/icon-arrow-back.png">bitmaps/webpopup/font-awesome-icon-arrow-back-16x16.png</file>
         <file alias="marble/webpopup/arrow2_bottomleft.png">bitmaps/webpopup/arrow2_bottomleft.png</file>
         <file alias="marble/webpopup/arrow2_bottomleft_shadow.png">bitmaps/webpopup/arrow2_bottomleft_shadow.png</file>
