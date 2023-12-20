@@ -83,6 +83,7 @@ public:
     QPoint m_mousePosition;
 
 public:
+
     Private( MarbleWidget *widget, const MarbleModel *model, MarbleWidgetPopupMenu* parent );
     QMenu* createInfoBoxMenu(QWidget *parent);
 
@@ -130,32 +131,19 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     }
     QAction* addBookmark = new QAction( QIcon(QStringLiteral(":/icons/bookmark-new.png")),
                                         i18n( "Add &Bookmark" ), parent );
-    QAction* fullscreenAction = new QAction( i18n( "&Full Screen Mode" ), parent );
-    fullscreenAction->setCheckable( true );
 
     QMenu* infoBoxMenu = createInfoBoxMenu(m_widget);
-
-    const bool smallScreen = MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen;
-
-    if ( !smallScreen ) {
-        m_rmbExtensionPoint = m_rmbMenu.addSeparator();
-    }
 
     m_rmbMenu.addAction( m_directionsFromHereAction );
     m_rmbMenu.addAction( m_directionsToHereAction );
     m_rmbMenu.addSeparator();
     m_rmbMenu.addAction( addBookmark );
-    if ( !smallScreen ) {
-        m_rmbMenu.addAction( m_copyCoordinateAction );
-        m_rmbMenu.addAction( m_copyGeoAction );
-    }
+    m_rmbMenu.addAction( m_copyCoordinateAction );
+    m_rmbMenu.addAction( m_copyGeoAction );
+
     m_rmbMenu.addAction(QIcon(QStringLiteral(":/icons/addressbook-details.png")), i18n("&Address Details"), parent, SLOT(startReverseGeocoding()));
     m_rmbMenu.addSeparator();
     m_rmbMenu.addMenu( infoBoxMenu );
-
-    if ( smallScreen ) {
-        m_rmbMenu.addAction( fullscreenAction );
-    }
 
     parent->connect( &m_lmbMenu, SIGNAL(aboutToHide()), SLOT(resetMenu()) );
     parent->connect( m_directionsFromHereAction, SIGNAL(triggered()), SLOT(directionsFromHere()) );
@@ -164,7 +152,6 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     parent->connect( m_copyCoordinateAction, SIGNAL(triggered()), SLOT(slotCopyCoordinates()) );
     parent->connect( m_copyGeoAction, SIGNAL(triggered()), SLOT(slotCopyGeo()) );
     parent->connect( m_infoDialogAction, SIGNAL(triggered()), SLOT(slotInfoDialog()) );
-    parent->connect( fullscreenAction, SIGNAL(triggered(bool)), parent, SLOT(toggleFullscreen(bool)) );
 
     parent->connect( &m_runnerManager, SIGNAL(reverseGeocodingFinished(GeoDataCoordinates,GeoDataPlacemark)),
              parent, SLOT(showAddressInformation(GeoDataCoordinates,GeoDataPlacemark)) );
@@ -172,8 +159,9 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
 
 QString MarbleWidgetPopupMenu::Private::filterEmptyShortDescription(const QString &description)
 {
-    if(description.isEmpty())
+    if (description.isEmpty())
         return i18n("No description available.");
+
     return description;
 }
 
@@ -897,20 +885,6 @@ void MarbleWidgetPopupMenu::addBookmark()
             d->m_widget->model()->bookmarkManager()->addBookmark( dialog->folder(), dialog->bookmark() );
         }
         delete dialog;
-    }
-}
-
-void MarbleWidgetPopupMenu::toggleFullscreen( bool enabled )
-{
-    QWidget* parent = d->m_widget;
-    for ( ; parent->parentWidget(); parent = parent->parentWidget() ) {
-        // nothing to do
-    }
-
-    if ( enabled ) {
-        parent->setWindowState( parent->windowState() | Qt::WindowFullScreen );
-    } else {
-        parent->setWindowState( parent->windowState() & ~Qt::WindowFullScreen );
     }
 }
 

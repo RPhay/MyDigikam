@@ -7,9 +7,9 @@
 #ifndef MARBLE_MARBLEWIDGETPOPUPMENU_H
 #define MARBLE_MARBLEWIDGETPOPUPMENU_H
 
-#include "digikam_export.h"
-
 #include <QObject>
+
+#include "digikam_export.h"
 
 class QAction;
 class QPoint;
@@ -29,7 +29,8 @@ class DIGIKAM_EXPORT MarbleWidgetPopupMenu  : public QObject
 {
     Q_OBJECT
 
- public:
+public:
+
     MarbleWidgetPopupMenu( MarbleWidget*, const MarbleModel* );
 
     ~MarbleWidgetPopupMenu() override;
@@ -46,26 +47,30 @@ class DIGIKAM_EXPORT MarbleWidgetPopupMenu  : public QObject
      */
     QPoint mousePosition() const;
 
- public Q_SLOTS:
+public Q_SLOTS:
+
     void  showLmbMenu( int, int );
     void  showRmbMenu( int, int );
 
 private Q_SLOTS:
+
     void resetMenu();
     void slotInfoDialog();
     void slotCopyCoordinates();
     void slotCopyGeo();
 
 private Q_SLOTS:
+
     void directionsFromHere();
     void directionsToHere();
     void startReverseGeocoding();
     void showAddressInformation( const GeoDataCoordinates &coordinates, const GeoDataPlacemark &placemark );
     void addBookmark();
-    void toggleFullscreen( bool enabled );
 
  private:
+
     Q_DISABLE_COPY( MarbleWidgetPopupMenu )
+
     class Private;
     Private* const d;
 };
