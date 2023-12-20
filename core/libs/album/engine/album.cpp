@@ -39,11 +39,11 @@ namespace Digikam
 {
 
 Album::Album(Album::Type type, int id, bool root)
-    : m_root(root),
+    : m_root            (root),
       m_usedByLabelsTree(false),
-      m_id(id),
-      m_type(type),
-      m_parent(nullptr)
+      m_id              (id),
+      m_type            (type),
+      m_parent          (nullptr)
 {
 }
 
@@ -383,22 +383,22 @@ void Album::setUsedByLabelsTree(bool isUsed)
 int PAlbum::m_uniqueTrashId = -2;
 
 PAlbum::PAlbum(const QString& title)
-    : Album(Album::PHYSICAL, 0, true),
+    : Album             (Album::PHYSICAL, 0, true),
       m_isAlbumRootAlbum(false),
-      m_albumRootId(-1),
-      m_parentPath(QLatin1Char('/')),
-      m_iconId(0)
+      m_albumRootId     (-1),
+      m_parentPath      (QLatin1Char('/')),
+      m_iconId          (0)
 {
     setTitle(title);
     m_path.clear();
 }
 
 PAlbum::PAlbum(int albumRoot, const QString& label)
-    : Album(Album::PHYSICAL, -1, false),
+    : Album             (Album::PHYSICAL, -1, false),
       m_isAlbumRootAlbum(true),
-      m_albumRootId(albumRoot),
-      m_parentPath(QLatin1Char('/')),
-      m_iconId(0)
+      m_albumRootId     (albumRoot),
+      m_parentPath      (QLatin1Char('/')),
+      m_iconId          (0)
 {
     // set the id to -1 (line above). AlbumManager may change that later.
     setTitle(label);
@@ -406,25 +406,25 @@ PAlbum::PAlbum(int albumRoot, const QString& label)
 }
 
 PAlbum::PAlbum(int albumRoot, const QString& parentPath, const QString& title, int id)
-    : Album(Album::PHYSICAL, id, false),
+    : Album             (Album::PHYSICAL, id, false),
       m_isAlbumRootAlbum(false),
-      m_albumRootId(albumRoot),
-      m_path(title),
-      m_parentPath(parentPath + QLatin1Char('/')),
-      m_iconId(0),
-      m_date(QDate::currentDate())
+      m_albumRootId     (albumRoot),
+      m_path            (title),
+      m_parentPath      (parentPath + QLatin1Char('/')),
+      m_iconId          (0),
+      m_date            (QDate::currentDate())
 {
     // If path is /holidays/2007, title is only "2007", path is "/holidays"
     setTitle(title);
 }
 
 PAlbum::PAlbum(const QString& parentPath, int albumRoot)
-    : Album(Album::PHYSICAL, m_uniqueTrashId--, false),
+    : Album             (Album::PHYSICAL, m_uniqueTrashId--, false),
       m_isAlbumRootAlbum(false),
-      m_albumRootId(albumRoot),
-      m_path(QLatin1String("Trash")),
-      m_parentPath(parentPath + QLatin1Char('/')),
-      m_iconId(0)
+      m_albumRootId     (albumRoot),
+      m_path            (QLatin1String("Trash")),
+      m_parentPath      (parentPath + QLatin1Char('/')),
+      m_iconId          (0)
 {
     setTitle(i18n("Trash"));
 }
@@ -535,8 +535,8 @@ QString PAlbum::folderPath() const
 // --------------------------------------------------------------------------
 
 TAlbum::TAlbum(const QString& title, int id, bool root)
-    : Album(Album::TAG, id, root),
-      m_pid(0),
+    : Album   (Album::TAG, id, root),
+      m_pid   (0),
       m_iconId(0)
 {
     setTitle(title);
@@ -684,7 +684,7 @@ CoreDbUrl DAlbum::databaseUrl() const
 // --------------------------------------------------------------------------
 
 SAlbum::SAlbum(const QString& title, int id, bool root)
-    : Album(Album::SEARCH, id, root),
+    : Album       (Album::SEARCH, id, root),
       m_searchType(DatabaseSearch::UndefinedType)
 {
     setTitle(title);
@@ -859,7 +859,7 @@ QString SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarSearchType haarType)
 
 AlbumIterator::AlbumIterator(Album* const album)
     : m_current(album ? album->firstChild() : nullptr),
-      m_root(album)
+      m_root   (album)
 {
 }
 
