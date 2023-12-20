@@ -658,7 +658,7 @@ set (marblewidget_UI
     plugins/MarblePluginSettingsWidget.ui
 
     settings/MarbleCacheSettingsWidget.ui
-    settings/MarbleTimeSettingsWidget.ui
+    settings/MarbleNavigationSettingsWidget.ui
     settings/MarbleViewSettingsWidget.ui
 
     storage/LatLonBoxWidget.ui
