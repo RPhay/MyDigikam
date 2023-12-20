@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-19 00:39+0000\n"
+"POT-Creation-Date: 2023-12-20 00:39+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -4060,7 +4060,7 @@ msgstr "ឈ្មោះ​ឯកសារ​"
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
 #: core/libs/dialogs/deletedialog.cpp:177
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:385
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:383
 #, kde-format
 msgid "Path"
 msgstr "ផ្លូវ"
@@ -4192,7 +4192,7 @@ msgstr "តុល្យភាព​ពណ៌"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:81
 #: core/app/views/tableview/tableview_column_item.cpp:126
-#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:186
+#: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:186
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -24924,8 +24924,8 @@ msgstr "ព័ត៌មាន​អំពី​ការ​ច្រឹប"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1086
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1127
-#: core/utilities/geolocation/marble/MarbleInputHandler.cpp:666
-#: core/utilities/geolocation/marble/MarbleWidget.cpp:646
+#: core/utilities/geolocation/marble/core/MarbleInputHandler.cpp:666
+#: core/utilities/geolocation/marble/core/MarbleWidget.cpp:646
 #, fuzzy, kde-format
 #| msgid "Not available"
 msgid "not available"
@@ -54114,7 +54114,7 @@ msgid "Roadmap"
 msgstr "ផែនការ​សកម្មភាព"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:356
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:354
 #, kde-format
 msgid "Satellite"
 msgstr "ផ្កាយ​រណប​"
@@ -54125,7 +54125,7 @@ msgid "Hybrid"
 msgstr "លាយ​គ្នា"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:318
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "ផែនដី"
@@ -55333,24 +55333,87 @@ msgstr "មាន​​ឈ្មោះ​រួច​ហើយ"
 msgid "Non Geo-located Items"
 msgstr ""
 
-#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:271
-#, kde-format
-msgid "&Lock"
-msgstr ""
-
-#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:277
-#, kde-format
-msgid "&Hide"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, configureButton)
-#: core/utilities/geolocation/marble/AbstractFloatItem.cpp:286
-#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:378
-#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:32
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:233
 #, fuzzy, kde-format
-#| msgid "Configure"
-msgid "&Configure..."
-msgstr "ការ​កំណត់​រចនាសម្ព័ន្ធ​​"
+#| msgid "Mercator"
+msgctxt "the planet"
+msgid "Mercury"
+msgstr "មេកាទ័រ"
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:235
+#, kde-format
+msgctxt "the planet"
+msgid "Venus"
+msgstr ""
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:237
+#, kde-format
+msgctxt "the planet"
+msgid "Earth"
+msgstr ""
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:239
+#, kde-format
+msgctxt "the planet"
+msgid "Mars"
+msgstr ""
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:241
+#, kde-format
+msgctxt "the planet"
+msgid "Jupiter"
+msgstr ""
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:243
+#, fuzzy, kde-format
+#| msgid "Saturation:"
+msgctxt "the planet"
+msgid "Saturn"
+msgstr "តិត្ថិភាព​ ៖​"
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:245
+#, kde-format
+msgctxt "the planet"
+msgid "Uranus"
+msgstr ""
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:247
+#, kde-format
+msgctxt "the planet"
+msgid "Neptune"
+msgstr ""
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:250
+#, kde-format
+msgctxt "the planet"
+msgid "Pluto"
+msgstr ""
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:253
+#, fuzzy, kde-format
+#| msgid "Sudan"
+msgctxt "the earth's star"
+msgid "Sun"
+msgstr "ស៊ូដង់"
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:255
+#, fuzzy, kde-format
+#| msgid "In Flight"
+msgctxt "the earth's moon"
+msgid "Moon"
+msgstr "កំពុង​ហោះហើរ​​"
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:257
+#, kde-format
+msgid "Sky"
+msgstr ""
+
+#: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:260
+#, fuzzy, kde-format
+#| msgid "Unknown"
+msgctxt "a planet without data"
+msgid "Unknown Planet"
+msgstr "មិន​ស្គាល់​"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:58
@@ -55601,10 +55664,10 @@ msgstr "បន្ថែម​ថត..."
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
 #: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:129
 #: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:28
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:47
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:99
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:151
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:203
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:47
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:99
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:151
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:203
 #, kde-format
 msgid "°"
 msgstr ""
@@ -55711,23 +55774,6 @@ msgstr ""
 #| msgid "Target"
 msgid "Target ID:"
 msgstr "គោលដៅ​"
-
-#: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:33
-#: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:34
-#, fuzzy, kde-format
-#| msgid "In Flight"
-msgid "Moon"
-msgstr "កំពុង​ហោះហើរ​​"
-
-#: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:36
-#, kde-format
-msgid "moon"
-msgstr ""
-
-#: core/utilities/geolocation/marble/CelestialSortFilterProxyModel.cpp:38
-#, kde-format
-msgid "dwarf planet"
-msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CloudRoutesDialog)
 #: core/utilities/geolocation/marble/cloudsync/CloudRoutesDialog.ui:14
@@ -55864,6 +55910,191 @@ msgstr "លុប​ការ​ស្វែងរក​ឬ ?"
 msgid "Upload to cloud"
 msgstr "ទាញ​យក​ពី​ម៉ាស៊ីន​ថតរូប"
 
+#: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:271
+#, kde-format
+msgid "&Lock"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:277
+#, kde-format
+msgid "&Hide"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, configureButton)
+#: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:286
+#: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:378
+#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:32
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgid "&Configure..."
+msgstr "ការ​កំណត់​រចនាសម្ព័ន្ធ​​"
+
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:122
+#, kde-format
+msgctxt "means meter"
+msgid "m"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:124
+#, kde-format
+msgctxt "means milimeters"
+msgid "mm"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:126
+#, kde-format
+msgctxt "means kilometers"
+msgid "km"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:128
+#, kde-format
+msgctxt "means centimeters"
+msgid "cm"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:130
+#, fuzzy, kde-format
+#| msgctxt "rotate image left"
+#| msgid "Left"
+msgctxt "means feet"
+msgid "ft"
+msgstr "ឆ្វេង"
+
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:132
+#, kde-format
+msgctxt "means inches"
+msgid "in"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:134
+#, kde-format
+msgctxt "means yards"
+msgid "yd"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:136
+#, kde-format
+msgctxt "means miles"
+msgid "mi"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:138
+#, kde-format
+msgctxt "means nautical miles"
+msgid "nm"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:113
+#, fuzzy, kde-format
+#| msgid "Copy coordinates"
+msgid "Copy Coordinates"
+msgstr "ចម្លង​កូអរដោនេ​​"
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:114
+#, kde-format
+msgid "Copy geo: URL"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:123
+#, kde-format
+msgid "Directions &from here"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:124
+#, fuzzy, kde-format
+#| msgid "Enter your text here."
+msgid "Directions &to here"
+msgstr "បញ្ចូល​អត្ថបទ​របស់​អ្នក​នៅ​ទីនេះ ។"
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:132
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgid "Add &Bookmark"
+msgstr "ចំណាំ​"
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:133
+#, fuzzy, kde-format
+#| msgid "Full-length"
+msgid "&Full Screen Mode"
+msgstr "ប្រវែង​ពេញ​លេញ​"
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:152
+#, fuzzy, kde-format
+#| msgctxt "Street address"
+#| msgid "Address:"
+msgid "&Address Details"
+msgstr "អាសយដ្ឋាន​ ៖"
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:176
+#, fuzzy, kde-format
+#| msgid "Not available"
+msgid "No description available."
+msgstr "ដែល​មិន​អាច​រក​បាន​"
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:378
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:359
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:368
+#, kde-format
+msgid "National Capital"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:380
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:324
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:328
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:332
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:336
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:357
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#, fuzzy, kde-format
+#| msgid "City:"
+msgid "City"
+msgstr "ទីក្រុង​ ៖​"
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:382
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:326
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:330
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:334
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:338
+#, kde-format
+msgid "State Capital"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:384
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:325
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:329
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:333
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:337
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "County Capital"
+msgstr "ប្រទេស​ ៖​"
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:387
+#, kde-format
+msgid "Capital"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:395
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:366
+#, fuzzy, kde-format
+#| msgid "{Village}"
+msgid "Village"
+msgstr "{ភូមិ​}"
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:539
+#, kde-format
+msgid "&Info Boxes"
+msgstr ""
+
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:883
+#, fuzzy, kde-format
+#| msgctxt "Street address"
+#| msgid "Address:"
+msgid "Address Details"
+msgstr "អាសយដ្ឋាន​ ៖"
+
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
 msgid "W"
@@ -55888,1762 +56119,1716 @@ msgstr "គ្មាន"
 msgid "S"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:317
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:315
 #, kde-format
 msgid "Valley"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:319
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:317
 #, kde-format
 msgid "Crater"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:320
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:318
 #, fuzzy, kde-format
 #| msgid "Search"
 msgid "Sea"
 msgstr "ស្វែងរក​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:321
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:319
 #, kde-format
 msgid "Manned Landing Site"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:322
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:320
 #, kde-format
 msgid "Robotic Rover"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:323
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:321
 #, kde-format
 msgid "Unmanned Soft Landing Site"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:324
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:322
 #, kde-format
 msgid "Unmanned Hard Landing Site"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:325
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:343
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:323
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:341
 #, fuzzy, kde-format
 #| msgid "Count"
 msgid "Mountain"
 msgstr "ចំនួន"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:326
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:330
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:334
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:338
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:359
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:380
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
-#, fuzzy, kde-format
-#| msgid "City:"
-msgid "City"
-msgstr "ទីក្រុង​ ៖​"
-
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:327
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:331
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:335
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:339
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:384
-#, fuzzy, kde-format
-#| msgid "Country:"
-msgid "County Capital"
-msgstr "ប្រទេស​ ៖​"
-
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:328
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:332
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:336
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:340
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:382
-#, kde-format
-msgid "State Capital"
-msgstr ""
-
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:329
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:333
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:337
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:341
 #, fuzzy, kde-format
 msgid "Nation Capital"
 msgstr "ការ​បង្វិល ៖"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:342
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:340
 #, fuzzy, kde-format
 #| msgctxt "image caption"
 #| msgid "Caption"
 msgid "Nation"
 msgstr "ចំណងជើង​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:344
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:463
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:342
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:461
 #, kde-format
 msgid "Volcano"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:345
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:343
 #, fuzzy, kde-format
 #| msgid "Content"
 msgid "Continent"
 msgstr "មាតិកា​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:346
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:344
 #, kde-format
 msgid "Ocean"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:347
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:345
 #, kde-format
 msgid "Geographic Pole"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:348
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:346
 #, kde-format
 msgid "Magnetic Pole"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:349
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:347
 #, kde-format
 msgid "Ship Wreck"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:350
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:348
 #, fuzzy, kde-format
 #| msgid "Portrait"
 msgid "Air Port"
 msgstr "គំនូរ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:351
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:349
 #, fuzzy, kde-format
 #| msgid "Iteration:"
 msgid "Observatory"
 msgstr "ការ​ធ្វើ​សារ​ជា​ថ្មី ៖"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:352
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:350
 #, kde-format
 msgid "Military Danger Area"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:351
 #, kde-format
 msgid "OSM Site"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:354
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:352
 #, fuzzy, kde-format
 msgid "Coordinate"
 msgstr "Polar Coordinates"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:355
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgid "Bookmark"
 msgstr "ចំណាំ​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:360
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:358
 #, kde-format
 msgid "City Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:361
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:367
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:370
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:378
-#, kde-format
-msgid "National Capital"
-msgstr ""
-
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:362
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:360
 #, kde-format
 msgid "Suburb"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:363
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:361
 #, fuzzy, kde-format
 #| msgid "{Hamlet}"
 msgid "Hamlet"
 msgstr "{ឃុំ​}"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:364
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:362
 #, fuzzy, kde-format
 #| msgid "Normalize"
 msgid "Locality"
 msgstr "ធ្វើ​ឲ្យ​ធម្មតា"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:363
 #, fuzzy, kde-format
 #| msgid "{Town}"
 msgid "Town"
 msgstr "{ទីក្រុង​}"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:366
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:364
 #, kde-format
 msgid "Town Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:368
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:395
-#, fuzzy, kde-format
-#| msgid "{Village}"
-msgid "Village"
-msgstr "{ភូមិ​}"
-
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:369
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:367
 #, fuzzy, kde-format
 #| msgid "Add village tag"
 msgid "Village Capital"
 msgstr "បន្ថែម​ស្លាក​ភូមិ​​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:371
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:369
 #, kde-format
 msgid "Water"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:372
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:370
 #, kde-format
 msgid "Reef"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:373
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:371
 #, kde-format
 msgid "Wood"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:374
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:372
 #, kde-format
 msgid "Beach"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:375
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:373
 #, fuzzy, kde-format
 #| msgid "Iceland"
 msgid "Wetland"
 msgstr "អ៊ីស្លង់"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:376
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:374
 #, kde-format
 msgid "Glacier"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:377
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:375
 #, kde-format
 msgid "Ice Shelf"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:378
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:376
 #, kde-format
 msgid "Scrub"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:379
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:377
 #, kde-format
 msgid "Cliff"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:380
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:378
 #, kde-format
 msgid "Heath"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:381
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:379
 #, kde-format
 msgid "Traffic Signals"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:380
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Elevator"
 msgstr "ប្រតិទិន"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:383
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:381
 #, kde-format
 msgid "Steps"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:384
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, fuzzy, kde-format
 msgid "Unknown Road"
 msgstr "មិន​ស្គាល់"
 
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:384
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:386
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:388
 #, kde-format
 msgid "Footway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:387
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:584
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:385
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
 #, kde-format
 msgid "Track"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:389
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:387
 #, fuzzy, kde-format
 #| msgid "Cycle:"
 msgid "Cycleway"
 msgstr "ខួប​ ៖​​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:390
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:388
 #, fuzzy, kde-format
 #| msgid "Service ID:"
 msgid "Service Road"
 msgstr "លេខ​សម្គាល់​សេវា ៖"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:391
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:389
 #, fuzzy, kde-format
 #| msgid "Roadmap"
 msgid "Road"
 msgstr "ផែនការ​សកម្មភាព"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:392
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:390
 #, kde-format
 msgid "Residential Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:393
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:391
 #, kde-format
 msgid "Living Street"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:394
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:392
 #, kde-format
 msgid "Unclassified Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:395
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:393
 #, kde-format
 msgid "Tertiary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:396
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:394
 #, kde-format
 msgid "Tertiary Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:397
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:395
 #, kde-format
 msgid "Secondary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:398
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:396
 #, kde-format
 msgid "Secondary Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:399
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:397
 #, kde-format
 msgid "Primary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:400
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:398
 #, kde-format
 msgid "Primary Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:401
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:399
 #, kde-format
 msgid "Raceway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:402
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:400
 #, kde-format
 msgid "Trunk Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:403
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:401
 #, kde-format
 msgid "Trunk Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:404
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:402
 #, kde-format
 msgid "Motorway Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:405
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:403
 #, fuzzy, kde-format
 #| msgid "Norway"
 msgid "Motorway"
 msgstr "ន័រវែស"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:406
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:404
 #, fuzzy, kde-format
 msgid "Corridor"
 msgstr "ការ​កែតម្រូវ​ស្វ័យប្រវត្តិ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:407
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:405
 #, fuzzy, kde-format
 #| msgid "Color Profile Conversion"
 msgid "Building"
 msgstr "ការ​បម្លែង​ទម្រង់​ពណ៌"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:408
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:406
 #, kde-format
 msgid "Camping"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:409
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:407
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Hostel"
 msgstr "ឈ្មោះ ៖"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:410
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:408
 #, kde-format
 msgid "Hotel"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:411
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:409
 #, kde-format
 msgid "Motel"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:412
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:410
 #, kde-format
 msgid "Youth Hostel"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:413
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:411
 #, kde-format
 msgid "Guest House"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:414
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:412
 #, fuzzy, kde-format
 #| msgid "Gibraltar"
 msgid "Library"
 msgstr "ជីបាល់តា"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:415
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:413
 #, fuzzy, kde-format
 #| msgid "Under-water"
 msgid "Kindergarten"
 msgstr "នៅ​ក្រោម​ទឹក​​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:416
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:414
 #, kde-format
 msgid "College"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:417
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:415
 #, kde-format
 msgid "School"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:418
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:416
 #, kde-format
 msgid "University"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:419
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:417
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgid "Bar"
 msgstr "MacBinary II"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:420
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:418
 #, kde-format
 msgid "Biergarten"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:421
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:419
 #, kde-format
 msgid "Cafe"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:422
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:420
 #, kde-format
 msgid "Fast Food"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:423
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:421
 #, kde-format
 msgid "Pub"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:424
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:422
 #, fuzzy, kde-format
 #| msgid "Restoration..."
 msgid "Restaurant"
 msgstr "ការ​​ធ្វើ​ឲ្យ​​ប្រ​ល្អ..."
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:425
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:423
 #, kde-format
 msgid "Dentist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:426
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:424
 #, kde-format
 msgid "Doctors"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:427
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:425
 #, kde-format
 msgid "Hospital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:428
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:426
 #, kde-format
 msgid "Pharmacy"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:429
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:427
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgid "Veterinary"
 msgstr "MacBinary II"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:430
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:428
 #, kde-format
 msgid "ATM"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:431
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:429
 #, kde-format
 msgid "Bank"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:432
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:430
 #, kde-format
 msgid "Archaeological Site"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:433
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:431
 #, kde-format
 msgid "Embassy"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:434
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:432
 #, kde-format
 msgid "Emergency Phone"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:435
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:433
 #, kde-format
 msgid "Mountain Rescue"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:436
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:434
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgid "Water Park"
 msgstr "ចំណាំ​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:437
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:435
 #, fuzzy, kde-format
 msgid "Community Centre"
 msgstr "រក្សាទុក​ការផ្លាស់ប្ដូរ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:438
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:436
 #, fuzzy, kde-format
 #| msgid "Count"
 msgid "Fountain"
 msgstr "ចំនួន"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:439
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:437
 #, kde-format
 msgid "Night Club"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:440
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:438
 #, fuzzy, kde-format
 #| msgid "French"
 msgid "Bench"
 msgstr "បារាំង​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:441
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:439
 #, kde-format
 msgid "Court House"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:442
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:440
 #, fuzzy, kde-format
 #| msgid "Free Rotation"
 msgid "Fire Station"
 msgstr "ការ​បង្វិល​សេរី"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:443
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:441
 #, fuzzy, kde-format
 #| msgid "Printing Cancelled"
 msgid "Hunting Stand"
 msgstr "បានបោះបង់​ការ​បោះពុម្ព"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:444
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:442
 #, fuzzy, kde-format
 #| msgid "Polish"
 msgid "Police"
 msgstr "ប៉ូឡូញ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:445
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:443
 #, fuzzy, kde-format
 #| msgid "Postal code:"
 msgid "Post Box"
 msgstr "​លេខ​ប្រៃសណីយ៍​ ៖"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:446
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:444
 #, fuzzy, kde-format
 #| msgid "Postal code:"
 msgid "Post Office"
 msgstr "​លេខ​ប្រៃសណីយ៍​ ៖"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:447
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:445
 #, kde-format
 msgid "Prison"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:448
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:446
 #, kde-format
 msgid "Recycling"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:449
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:447
 #, fuzzy, kde-format
 #| msgid "Filter"
 msgid "Shelter"
 msgstr "តម្រង"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:450
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:448
 #, kde-format
 msgid "Telephone"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:451
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:449
 #, kde-format
 msgid "Toilets"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:452
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:450
 #, kde-format
 msgid "Town Hall"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:453
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:451
 #, kde-format
 msgid "Waste Basket"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:454
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:452
 #, fuzzy, kde-format
 #| msgid "Initializing database..."
 msgid "Drinking Water"
 msgstr "កំពុង​រៀបចំ​មូលដ្ឋាន​ទិន្នន័យ..."
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:455
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:453
 #, kde-format
 msgid "Graveyard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:456
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:454
 #, fuzzy, kde-format
 #| msgid "Orientation:"
 msgid "Charging Station"
 msgstr "ទិស ៖"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:457
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:455
 #, kde-format
 msgid "Car Wash"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:458
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:456
 #, kde-format
 msgid "Social Facility"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:459
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:457
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City Wall"
 msgstr "ទីក្រុង​ ៖​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:460
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:458
 #, kde-format
 msgid "Gate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:461
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:459
 #, kde-format
 msgid "Lift Gate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:462
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:670
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:460
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:668
 #, fuzzy, kde-format
 #| msgid "Wall"
 msgid "Wall"
 msgstr "ជញ្ជាំង"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:464
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:462
 #, kde-format
 msgid "Peak"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:465
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:463
 #, kde-format
 msgid "Tree"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:466
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:464
 #, kde-format
 msgid "Cave Entrance"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:467
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:465
 #, fuzzy, kde-format
 #| msgctxt "metering mode"
 #| msgid "Average"
 msgid "Beverages"
 msgstr "មធ្យម​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:468
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:466
 #, kde-format
 msgid "Hifi"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:469
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:467
 #, kde-format
 msgid "Supermarket"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:470
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:468
 #, kde-format
 msgid "Liquor Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:471
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:469
 #, kde-format
 msgid "Bakery"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:472
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:470
 #, fuzzy, kde-format
 #| msgid "Dutch"
 msgid "Butcher"
 msgstr "ហុល្លង់​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:473
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:471
 #, fuzzy, kde-format
 #| msgid "Geolocation Filter"
 msgid "Confectionery"
 msgstr "តម្រង​ភូមិសាស្ត្រ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:474
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:472
 #, kde-format
 msgid "Convenience Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:475
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:473
 #, fuzzy, kde-format
 #| msgid "Greece"
 msgid "Greengrocer"
 msgstr "ក្រិក"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:476
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:474
 #, kde-format
 msgid "Seafood Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:477
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:475
 #, kde-format
 msgid "Department Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:478
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:476
 #, kde-format
 msgid "Kiosk"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:479
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:477
 #, kde-format
 msgid "Bag Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:480
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:478
 #, kde-format
 msgid "Clothes Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:481
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:479
 #, fuzzy, kde-format
 #| msgid "Light Source Information"
 msgid "Fashion Shop"
 msgstr "ព័ត៌មាន​ប្រភព​ស្រាល​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:482
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:480
 #, kde-format
 msgid "Jewelry Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:483
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:481
 #, kde-format
 msgid "Shoe Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:484
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:482
 #, kde-format
 msgid "Variety Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:485
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:483
 #, fuzzy, kde-format
 #| msgid "Fuzzy Searches"
 msgid "Beauty Services"
 msgstr "ការ​ស្វែងរក​ស្រពិចស្រពិល"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:486
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:484
 #, kde-format
 msgid "Chemist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:487
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:485
 #, kde-format
 msgid "Cosmetics"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:488
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:486
 #, kde-format
 msgid "Hairdresser"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:489
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:487
 #, fuzzy, kde-format
 #| msgid "<b>Optimization</b>"
 msgid "Optician"
 msgstr "<b>ការ​ធ្វើ​ឲ្យ​ប្រសើ​របំផុត</b>"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:490
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:488
 #, kde-format
 msgid "Perfumery"
 msgstr ""
 
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:489
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:491
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:493
 #, kde-format
 msgid "Hardware Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:492
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:490
 #, kde-format
 msgid "Florist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:494
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:492
 #, kde-format
 msgid "Furniture Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:495
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:493
 #, kde-format
 msgid "Electronics Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:496
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:494
 #, kde-format
 msgid "Mobile Phone Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:497
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:495
 #, kde-format
 msgid "Bicycle Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:498
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:496
 #, kde-format
 msgid "Car Dealer"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:499
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:497
 #, kde-format
 msgid "Car Repair Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:500
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:498
 #, kde-format
 msgid "Car Parts"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:501
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:499
 #, kde-format
 msgid "Motorcycle Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:502
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:500
 #, kde-format
 msgid "Outdoor Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:503
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:501
 #, kde-format
 msgid "Sports Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:504
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:502
 #, fuzzy, kde-format
 #| msgid "Step Progress"
 msgid "Printing Services"
 msgstr "វឌ្ឍនភាព​​ការ​ផ្លាស់ទី"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:505
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:503
 #, kde-format
 msgid "Art Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:506
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:504
 #, kde-format
 msgid "Musical Instrument Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:507
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:505
 #, fuzzy, kde-format
 msgid "Photo Shop"
 msgstr "ការ​វាយ​តម្លៃ​ដែល​បាន​នាំចូល"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:508
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:506
 #, kde-format
 msgid "Bookshop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:509
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:507
 #, fuzzy, kde-format
 #| msgid "Light Source Information"
 msgid "Gift Shop"
 msgstr "ព័ត៌មាន​ប្រភព​ស្រាល​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:510
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:508
 #, fuzzy, kde-format
 #| msgid "Saturation:"
 msgid "Stationery"
 msgstr "តិត្ថិភាព​ ៖​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:511
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:509
 #, kde-format
 msgid "Laundry"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:512
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:510
 #, fuzzy, kde-format
 #| msgid "Light Source Information"
 msgid "Pet Shop"
 msgstr "ព័ត៌មាន​ប្រភព​ស្រាល​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:513
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:511
 #, kde-format
 msgid "Toy Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:514
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:512
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgid "Travel Agency"
 msgstr "ធ្វើ​ដំណើរ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:515
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:513
 #, kde-format
 msgid "Deli"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:516
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:514
 #, kde-format
 msgid "Tobacco Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:517
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:515
 #, kde-format
 msgid "Tea Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:518
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:516
 #, kde-format
 msgid "Computer Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:519
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:517
 #, kde-format
 msgid "Garden Centre"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:520
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:518
 #, kde-format
 msgid "Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:521
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:519
 #, kde-format
 msgid "Bridge"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:522
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:520
 #, fuzzy, kde-format
 #| msgid "Light source:"
 msgid "Lighthouse"
 msgstr "ប្រភព​ពន្លឺ​​ ៖​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:523
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:521
 #, kde-format
 msgid "Pier"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:524
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Water Tower"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:525
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:523
 #, kde-format
 msgid "Wind Mill"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:526
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:524
 #, kde-format
 msgid "Communications Tower"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:527
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:525
 #, fuzzy, kde-format
 msgid "Tourist Attraction"
 msgstr "ការ​កាត់​បន្ថយ​​សំឡេង​រំខាន"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:528
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:526
 #, kde-format
 msgid "Artwork"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:529
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:527
 #, kde-format
 msgid "Castle"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:530
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:528
 #, kde-format
 msgid "Cinema"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:531
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:529
 #, fuzzy, kde-format
 msgid "Information"
 msgstr "ព័ត៌មាន​អំពី​ការ​ច្រឹប"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:532
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:530
 #, fuzzy, kde-format
 #| msgctxt "type is a document"
 #| msgid "Document"
 msgid "Monument"
 msgstr "ឯកសារ​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:533
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:531
 #, kde-format
 msgid "Museum"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:534
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:532
 #, kde-format
 msgid "Ruin"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:535
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:533
 #, kde-format
 msgid "Theatre"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:536
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:534
 #, fuzzy, kde-format
 #| msgid "Technical Parameters"
 msgid "Theme Park"
 msgstr "ប៉ារ៉ាម៉ែត្រ​បច្ចេកទេស"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:537
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:535
 #, fuzzy, kde-format
 #| msgid "Set Point 1"
 msgid "View Point"
 msgstr "កំណត់​ចំណុច ១"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:538
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:536
 #, fuzzy, kde-format
 #| msgid "Zoom:"
 msgid "Zoo"
 msgstr "ពង្រីក ៖"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:537
 #, kde-format
 msgid "Alpine Hut"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:538
 #, kde-format
 msgid "Wilderness Hut"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
 #, fuzzy, kde-format
 #| msgid "Algeria"
 msgid "Memorial"
 msgstr "អាល់ហ្សេរី​​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
 #, kde-format
 msgid "Aerodrome"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
 #, kde-format
 msgid "Helipad"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
 #, kde-format
 msgid "Airport Gate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
 #, kde-format
 msgid "Airport Runway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:546
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Airport Apron"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:547
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
 #, kde-format
 msgid "Airport Taxiway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:546
 #, kde-format
 msgid "Airport Terminal"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:547
 #, fuzzy, kde-format
 #| msgid "Saturation:"
 msgid "Bus Station"
 msgstr "តិត្ថិភាព​ ៖​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:550
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgid "Bus Stop"
 msgstr "បញ្ឈប់"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:551
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
 #, kde-format
 msgid "Car Sharing"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:552
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:550
 #, fuzzy, kde-format
 #| msgid "Saturation:"
 msgid "Gas Station"
 msgstr "តិត្ថិភាព​ ៖​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:551
 #, kde-format
 msgid "Parking"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:552
 #, fuzzy, kde-format
 #| msgid "Printing Cancelled"
 msgid "Parking Space"
 msgstr "បានបោះបង់​ការ​បោះពុម្ព"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Platform"
 msgstr "ប្លែង"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:556
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
 #, kde-format
 msgid "Bicycle Rental"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:557
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
 #, kde-format
 msgid "Car Rental"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:558
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:556
 #, kde-format
 msgid "Ski Rental"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:557
 #, kde-format
 msgid "Taxi Rank"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:558
 #, fuzzy, kde-format
 #| msgid "Orientation:"
 msgid "Train Station"
 msgstr "ទិស ៖"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgid "Tram Stop"
 msgstr "បញ្ឈប់"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:562
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
 #, kde-format
 msgid "Bicycle Parking"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:563
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
 #, kde-format
 msgid "Motorcycle Parking"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:562
 #, kde-format
 msgid "Subway Entrance"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:563
 #, fuzzy, kde-format
 #| msgid "Supported RAW Cameras"
 msgid "Speed Camera"
 msgstr "បាន​គាំទ្រ​ម៉ាស៊ីន​ថតរូប​ដើម"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:566
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
 #, kde-format
 msgid "Place Of Worship"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:567
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
 #, fuzzy, kde-format
 #| msgid "Bahamas"
 msgid "Bahai"
 msgstr "បាហាម៉ា"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:568
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:566
 #, kde-format
 msgid "Buddhist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:569
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:567
 #, fuzzy, kde-format
 #| msgid "Croatian"
 msgid "Christian"
 msgstr "ក្រូអាត​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:570
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:568
 #, kde-format
 msgid "Muslim"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:571
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:569
 #, fuzzy, kde-format
 #| msgid "Hindi"
 msgid "Hindu"
 msgstr "ហិណ្ឌូ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:572
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:570
 #, kde-format
 msgid "Jain"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:573
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:571
 #, kde-format
 msgid "Jewish"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:574
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:572
 #, kde-format
 msgid "Shinto"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:575
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Sikh"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:576
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:574
 #, kde-format
 msgid "Taoist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:577
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:575
 #, kde-format
 msgid "Golf Course"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:578
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:576
 #, fuzzy, kde-format
 #| msgid "San Marino"
 msgid "Marina"
 msgstr "សាន់ សាម័រ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:579
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:577
 #, kde-format
 msgid "Park"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:580
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:578
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Background"
 msgid "Playground"
 msgstr "ផ្ទៃខាងក្រោយ​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:581
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:579
 #, kde-format
 msgid "Pitch"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:580
 #, kde-format
 msgid "Sports Centre"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:581
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
 msgid "Stadium"
 msgstr "មធ្យម​​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:585
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Swimming Pool"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:586
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:584
 #, kde-format
 msgid "Miniature Golf Course"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:587
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:585
 #, fuzzy, kde-format
 msgid "Allotments"
 msgstr "មតិយោបល់​រូបភាព"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:588
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:586
 #, kde-format
 msgid "Basin"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:589
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:587
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgid "Cemetery"
 msgstr "តម្រង"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:590
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:588
 #, kde-format
 msgid "Commercial"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:591
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:589
 #, fuzzy, kde-format
 msgid "Construction"
 msgstr "ការ​កែតម្រូវ​ស្វ័យប្រវត្តិ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:590
 #, fuzzy, kde-format
 #| msgid "Finland"
 msgid "Farmland"
 msgstr "ហ្វីនលែន​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:591
 #, kde-format
 msgid "Farmyard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:594
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
 #, fuzzy, kde-format
 #| msgid "Images"
 msgid "Garages"
 msgstr "រូបរាព"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:595
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
 #, kde-format
 msgid "Grass"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:596
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:594
 #, fuzzy, kde-format
 #| msgid "Austria"
 msgid "Industrial"
 msgstr "អូទ្រីស"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:597
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:595
 #, kde-format
 msgid "Landfill"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:596
 #, kde-format
 msgid "Meadow"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:597
 #, kde-format
 msgid "Military"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:600
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
 #, kde-format
 msgid "Quarry"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:601
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
 #, kde-format
 msgid "Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:602
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:600
 #, kde-format
 msgid "Reservoir"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:603
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:601
 #, kde-format
 msgid "Residential"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:604
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:602
 #, fuzzy, kde-format
 #| msgid "Details"
 msgid "Retail"
 msgstr "សេចក្ដី​លម្អិត​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:605
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:603
 #, kde-format
 msgid "Orchard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:606
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:604
 #, kde-format
 msgid "Vineyard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:607
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:605
 #, kde-format
 msgid "Rail"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:608
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:606
 #, kde-format
 msgid "Narrow Gauge"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:609
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:607
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:218
 #, kde-format
 msgid "Tram"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:610
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:608
 #, fuzzy, kde-format
 #| msgid "Light"
 msgid "Light Rail"
 msgstr "ស្រាល​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:609
 #, kde-format
 msgid "Abandoned Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:612
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:610
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:217
 #, kde-format
 msgid "Subway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:613
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
 #, fuzzy, kde-format
 #| msgid "Preserve Skin Tones"
 msgid "Preserved Railway"
 msgstr "ការពារ Skin Tones"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:614
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:612
 #, kde-format
 msgid "Miniature Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:615
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:613
 #, fuzzy, kde-format
 #| msgid "Special Instructions:"
 msgid "Railway Construction"
 msgstr "សេចក្ដី​ណែ​នាំ​ពិសេស​ ៖​"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:616
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:614
 #, kde-format
 msgid "Monorail"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:617
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:615
 #, kde-format
 msgid "Funicular Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:618
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:616
 #, kde-format
 msgid "Power Tower"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:619
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:617
 #, kde-format
 msgid "Aerialway Station"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:620
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:618
 #, kde-format
 msgctxt "A pylon supporting the aerialway cable e.g. on a ski lift"
 msgid "Pylon"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:621
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:619
 #, kde-format
 msgid "Cable Car"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:622
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:620
 #, kde-format
 msgid "Gondola"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:623
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:621
 #, fuzzy, kde-format
 #| msgid "Flat List"
 msgid "Chair Lift"
 msgstr "បញ្ជី​គ្មាន​ឋានានុក្រម"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:624
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:622
 #, kde-format
 msgid "Mixed Lift"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:625
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:623
 #, kde-format
 msgid "Drag Lift"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:626
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:624
 #, kde-format
 msgid "T-Bar"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:627
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:625
 #, kde-format
 msgid "J-Bar"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:628
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:626
 #, fuzzy, kde-format
 #| msgid "Matter:"
 msgid "Platter"
 msgstr "បញ្ហា ៖"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:629
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:627
 #, kde-format
 msgid "Rope Tow"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:630
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:628
 #, kde-format
 msgid "Magic Carpet"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:631
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:629
 #, kde-format
 msgid "Zip Line"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:632
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:630
 #, kde-format
 msgid "Goods"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:633
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:631
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:227
 #, kde-format
 msgid "Downhill Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:634
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:632
 #, kde-format
 msgid "Nordic Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:635
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:633
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:229
 #, kde-format
 msgid "Skitour"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:636
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:634
 #, kde-format
 msgid "Sled Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:637
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:635
 #, kde-format
 msgid "Winter Hike"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:638
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:636
 #, kde-format
 msgid "Sleigh Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:639
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:637
 #, kde-format
 msgid "Ice Skate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:640
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:638
 #, kde-format
 msgid "Snow Park"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:641
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:639
 #, kde-format
 msgid "Ski Playground"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:642
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:640
 #, kde-format
 msgid "Ski Jump"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:643
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:641
 #, kde-format
 msgid "Admin Boundary (Level 1)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:644
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:642
 #, kde-format
 msgid "Admin Boundary (Level 2)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:645
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:643
 #, kde-format
 msgid "Admin Boundary (Level 3)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:646
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:644
 #, kde-format
 msgid "Admin Boundary (Level 4)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:647
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:645
 #, kde-format
 msgid "Admin Boundary (Level 5)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:648
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:646
 #, kde-format
 msgid "Admin Boundary (Level 6)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:649
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:647
 #, kde-format
 msgid "Admin Boundary (Level 7)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:650
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:648
 #, kde-format
 msgid "Admin Boundary (Level 8)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:651
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:649
 #, kde-format
 msgid "Admin Boundary (Level 9)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:652
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:650
 #, kde-format
 msgid "Admin Boundary (Level 10)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:653
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:651
 #, kde-format
 msgid "Admin Boundary (Level 11)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:654
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:652
 #, kde-format
 msgid "Boundary (Maritime)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:655
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:653
 #, fuzzy, kde-format
 #| msgid "Unsharp Mask"
 msgid "Land Mass"
 msgstr "របាំង​សំឡេង"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:656
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:654
 #, kde-format
 msgid "Urban Area"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:657
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:655
 #, kde-format
 msgid "International Date Line"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:658
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:656
 #, kde-format
 msgid "Bathymetry"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:659
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:657
 #, fuzzy, kde-format
 #| msgid "Canada"
 msgid "Canal"
 msgstr "កាណាដា"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:660
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:658
 #, fuzzy, kde-format
 #| msgid "Terrain"
 msgid "Drain"
 msgstr "ផែនដី"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:661
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:659
 #, kde-format
 msgid "Ditch"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:662
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:660
 #, fuzzy, kde-format
 #| msgid "Eritrea"
 msgid "Stream"
 msgstr "អេរីត្រេ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:663
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:661
 #, kde-format
 msgid "River"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:664
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:662
 #, kde-format
 msgid "Weir"
 msgstr ""
 
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:663
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:664
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:665
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:667
 #, kde-format
 msgid "Crosswalk"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:668
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
 #, kde-format
 msgid "Railway Crossing"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:669
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:667
 #, kde-format
 msgid "Door"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:671
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:669
 #, kde-format
 msgid "Room"
 msgstr ""
@@ -57783,9 +57968,26 @@ msgstr ""
 msgid "This is an Invalid File"
 msgstr ""
 
+#: core/utilities/geolocation/marble/models/CelestialSortFilterProxyModel.cpp:33
+#: core/utilities/geolocation/marble/models/CelestialSortFilterProxyModel.cpp:34
+#, fuzzy, kde-format
+#| msgid "In Flight"
+msgid "Moon"
+msgstr "កំពុង​ហោះហើរ​​"
+
+#: core/utilities/geolocation/marble/models/CelestialSortFilterProxyModel.cpp:36
+#, kde-format
+msgid "moon"
+msgstr ""
+
+#: core/utilities/geolocation/marble/models/CelestialSortFilterProxyModel.cpp:38
+#, kde-format
+msgid "dwarf planet"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:184
-#: core/utilities/geolocation/marble/MapThemeManager.cpp:404
+#: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:184
+#: core/utilities/geolocation/marble/models/MapThemeManager.cpp:404
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:38
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:34
 #, fuzzy, kde-format
@@ -57793,200 +57995,22 @@ msgstr ""
 msgid "Name"
 msgstr "ឈ្មោះ ៖"
 
-#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:188
+#: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:188
 #, fuzzy, kde-format
 #| msgid "Priority:"
 msgid "Popularity"
 msgstr "អាទិភាព​"
 
-#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:190
+#: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:190
 #, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr ""
 
-#: core/utilities/geolocation/marble/GeoDataTreeModel.cpp:246
+#: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:246
 #, fuzzy, kde-format
 msgid "Playlist"
 msgstr "ជ្រើស​ទាំងអស់"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, LatLonBoxWidget)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:17
-#, fuzzy, kde-format
-msgid "Select a geographic region"
-msgstr "ជ្រើស​ធាតុ"
-
-#. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, northSpinBox)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:41
-#, fuzzy, kde-format
-#| msgid "Northern Ireland"
-msgid "Northern Latitude"
-msgstr "អៀរឡង់​ ខាង​ជើង​"
-
-#. i18n: ectx: property (text), widget (QLabel, northLabel)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:66
-#, kde-format
-msgid "&N"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, westSpinBox)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:93
-#, fuzzy, kde-format
-#| msgid "Longitude"
-msgid "Western Longitude"
-msgstr "រយៈបណ្ដោយ​​"
-
-#. i18n: ectx: property (text), widget (QLabel, westLabel)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:118
-#, kde-format
-msgid "&W"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, eastSpinBox)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:145
-#, fuzzy, kde-format
-#| msgid "Longitude"
-msgid "Eastern Longitude"
-msgstr "រយៈបណ្ដោយ​​"
-
-#. i18n: ectx: property (text), widget (QLabel, eastLabel)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:170
-#, kde-format
-msgid "&E"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, southSpinBox)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:197
-#, fuzzy, kde-format
-#| msgid "Latitude"
-msgid "Southern Latitude"
-msgstr "រយៈទទឹង​​"
-
-#. i18n: ectx: property (text), widget (QLabel, southLabel)
-#: core/utilities/geolocation/marble/LatLonBoxWidget.ui:222
-#, kde-format
-msgid "&S"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:122
-#, kde-format
-msgctxt "means meter"
-msgid "m"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:124
-#, kde-format
-msgctxt "means milimeters"
-msgid "mm"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:126
-#, kde-format
-msgctxt "means kilometers"
-msgid "km"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:128
-#, kde-format
-msgctxt "means centimeters"
-msgid "cm"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "rotate image left"
-#| msgid "Left"
-msgctxt "means feet"
-msgid "ft"
-msgstr "ឆ្វេង"
-
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:132
-#, kde-format
-msgctxt "means inches"
-msgid "in"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:134
-#, kde-format
-msgctxt "means yards"
-msgid "yd"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:136
-#, kde-format
-msgctxt "means miles"
-msgid "mi"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleLocale.cpp:138
-#, kde-format
-msgctxt "means nautical miles"
-msgid "nm"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Copy coordinates"
-msgid "Copy Coordinates"
-msgstr "ចម្លង​កូអរដោនេ​​"
-
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:114
-#, kde-format
-msgid "Copy geo: URL"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:123
-#, kde-format
-msgid "Directions &from here"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:124
-#, fuzzy, kde-format
-#| msgid "Enter your text here."
-msgid "Directions &to here"
-msgstr "បញ្ចូល​អត្ថបទ​របស់​អ្នក​នៅ​ទីនេះ ។"
-
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:132
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Add &Bookmark"
-msgstr "ចំណាំ​"
-
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:133
-#, fuzzy, kde-format
-#| msgid "Full-length"
-msgid "&Full Screen Mode"
-msgstr "ប្រវែង​ពេញ​លេញ​"
-
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:152
-#, fuzzy, kde-format
-#| msgctxt "Street address"
-#| msgid "Address:"
-msgid "&Address Details"
-msgstr "អាសយដ្ឋាន​ ៖"
-
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:176
-#, fuzzy, kde-format
-#| msgid "Not available"
-msgid "No description available."
-msgstr "ដែល​មិន​អាច​រក​បាន​"
-
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:387
-#, kde-format
-msgid "Capital"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:539
-#, kde-format
-msgid "&Info Boxes"
-msgstr ""
-
-#: core/utilities/geolocation/marble/MarbleWidgetPopupMenu.cpp:883
-#, fuzzy, kde-format
-#| msgctxt "Street address"
-#| msgid "Address:"
-msgid "Address Details"
-msgstr "អាសយដ្ឋាន​ ៖"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:84
 #, fuzzy, kde-format
@@ -58084,88 +58108,6 @@ msgstr "រូបភាព​ដែល​ទាក់ទង"
 #| msgid "Add county tag"
 msgid "Add custom tag..."
 msgstr "បន្ថែម​ស្លាក​ប្រទេស​"
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:233
-#, fuzzy, kde-format
-#| msgid "Mercator"
-msgctxt "the planet"
-msgid "Mercury"
-msgstr "មេកាទ័រ"
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:235
-#, kde-format
-msgctxt "the planet"
-msgid "Venus"
-msgstr ""
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:237
-#, kde-format
-msgctxt "the planet"
-msgid "Earth"
-msgstr ""
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:239
-#, kde-format
-msgctxt "the planet"
-msgid "Mars"
-msgstr ""
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:241
-#, kde-format
-msgctxt "the planet"
-msgid "Jupiter"
-msgstr ""
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:243
-#, fuzzy, kde-format
-#| msgid "Saturation:"
-msgctxt "the planet"
-msgid "Saturn"
-msgstr "តិត្ថិភាព​ ៖​"
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:245
-#, kde-format
-msgctxt "the planet"
-msgid "Uranus"
-msgstr ""
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:247
-#, kde-format
-msgctxt "the planet"
-msgid "Neptune"
-msgstr ""
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:250
-#, kde-format
-msgctxt "the planet"
-msgid "Pluto"
-msgstr ""
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:253
-#, fuzzy, kde-format
-#| msgid "Sudan"
-msgctxt "the earth's star"
-msgid "Sun"
-msgstr "ស៊ូដង់"
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:255
-#, fuzzy, kde-format
-#| msgid "In Flight"
-msgctxt "the earth's moon"
-msgid "Moon"
-msgstr "កំពុង​ហោះហើរ​​"
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:257
-#, kde-format
-msgid "Sky"
-msgstr ""
-
-#: core/utilities/geolocation/marble/PlanetFactory.cpp:260
-#, fuzzy, kde-format
-#| msgid "Unknown"
-msgctxt "a planet without data"
-msgid "Unknown Planet"
-msgstr "មិន​ស្គាល់​"
 
 #: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:35
 #, kde-format
@@ -58284,25 +58226,25 @@ msgstr "អ្នក​អភិវឌ្ឍន៍"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:240
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:244
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:47
+#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:47
 #, kde-format
 msgid "km"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:248
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:31
+#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:31
 #, kde-format
 msgid "m"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:253
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:36
+#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:36
 #, kde-format
 msgid "mi"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:264
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:59
+#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:59
 #, kde-format
 msgid "nm"
 msgstr ""
@@ -58995,6 +58937,19 @@ msgstr "មិន​ស្គាល់"
 msgid "New Profile"
 msgstr "ស្កេន​រូបភាព"
 
+#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "rotate image left"
+#| msgid "Left"
+msgid "ft"
+msgstr "ឆ្វេង"
+
+#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:72
+#, fuzzy, kde-format
+msgctxt "journey duration"
+msgid "%1:%2 h"
+msgstr "%1x%2 (%3Mpx)"
+
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:22
 #: core/utilities/setup/album/setupcategory.cpp:98
@@ -59132,19 +59087,6 @@ msgstr "សេចក្ដី​លម្អិត​"
 #| msgid "More options"
 msgid "Choose alternative routes"
 msgstr "ជម្រើស​បន្ថែម​"
-
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "rotate image left"
-#| msgid "Left"
-msgid "ft"
-msgstr "ឆ្វេង"
-
-#: core/utilities/geolocation/marble/RoutingRunner.cpp:72
-#, fuzzy, kde-format
-msgctxt "journey duration"
-msgid "%1:%2 h"
-msgstr "%1x%2 (%3Mpx)"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
 #: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:20
@@ -60552,6 +60494,64 @@ msgstr ""
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:540
 #, kde-format
 msgid "Estimated download size: %1 kB"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, LatLonBoxWidget)
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:17
+#, fuzzy, kde-format
+msgid "Select a geographic region"
+msgstr "ជ្រើស​ធាតុ"
+
+#. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, northSpinBox)
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:41
+#, fuzzy, kde-format
+#| msgid "Northern Ireland"
+msgid "Northern Latitude"
+msgstr "អៀរឡង់​ ខាង​ជើង​"
+
+#. i18n: ectx: property (text), widget (QLabel, northLabel)
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:66
+#, kde-format
+msgid "&N"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, westSpinBox)
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:93
+#, fuzzy, kde-format
+#| msgid "Longitude"
+msgid "Western Longitude"
+msgstr "រយៈបណ្ដោយ​​"
+
+#. i18n: ectx: property (text), widget (QLabel, westLabel)
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:118
+#, kde-format
+msgid "&W"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, eastSpinBox)
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:145
+#, fuzzy, kde-format
+#| msgid "Longitude"
+msgid "Eastern Longitude"
+msgstr "រយៈបណ្ដោយ​​"
+
+#. i18n: ectx: property (text), widget (QLabel, eastLabel)
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:170
+#, kde-format
+msgid "&E"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, southSpinBox)
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:197
+#, fuzzy, kde-format
+#| msgid "Latitude"
+msgid "Southern Latitude"
+msgstr "រយៈទទឹង​​"
+
+#. i18n: ectx: property (text), widget (QLabel, southLabel)
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:222
+#, kde-format
+msgid "&S"
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
