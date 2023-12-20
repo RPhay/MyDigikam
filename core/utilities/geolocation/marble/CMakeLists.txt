@@ -36,6 +36,7 @@ set(marblewidget_SRCS
 
     core/AbstractFloatItem.cpp
     core/AbstractWorkerThread.cpp
+    core/DialogConfigurationInterface.cpp
     core/EquirectScanlineTextureMapper.cpp
     core/ImageF.cpp
     core/GenericScanlineTextureMapper.cpp
@@ -590,6 +591,7 @@ set(marblewidget_SRCS
     plugins/PluginManager.cpp
     plugins/PositionProviderPlugin.cpp
     plugins/PositionProviderPluginInterface.cpp
+    plugins/MarblePluginSettingsWidget.cpp
     plugins/RenderPlugin.cpp
     plugins/RenderPluginInterface.cpp
     plugins/RenderPluginModel.cpp
@@ -615,8 +617,6 @@ set(marblewidget_SRCS
     runners/SearchRunner.cpp
     runners/SearchRunnerManager.cpp
 
-    settings/DialogConfigurationInterface.cpp
-    settings/MarblePluginSettingsWidget.cpp
     settings/QtMarbleConfigDialog.cpp
 
     storage/CacheStoragePolicy.cpp
@@ -655,9 +655,10 @@ set (marblewidget_UI
     osm/OsmTagEditorWidget.ui
     osm/OsmRelationManagerWidget.ui
 
+    plugins/MarblePluginSettingsWidget.ui
+
     settings/MarbleCacheSettingsWidget.ui
     settings/MarbleNavigationSettingsWidget.ui
-    settings/MarblePluginSettingsWidget.ui
     settings/MarbleTimeSettingsWidget.ui
     settings/MarbleViewSettingsWidget.ui
 
