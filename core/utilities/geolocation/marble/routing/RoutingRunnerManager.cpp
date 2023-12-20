@@ -145,7 +145,7 @@ void RoutingRunnerManager::retrieveRoute( const RouteRequest *request )
     d->m_routingTasks.clear();
     d->m_routingResult.clear();
 
-    QList<RoutingRunnerPlugin*> plugins = d->plugins( d->m_pluginManager->routingRunnerPlugins() );
+    QList<RoutingRunnerPlugin*> plugins;// = d->plugins( d->m_pluginManager->routingRunnerPlugins() );
     for( RoutingRunnerPlugin* plugin: plugins ) {
         if ( !profile.name().isEmpty() && !profile.pluginSettings().contains( plugin->nameId() ) ) {
             continue;

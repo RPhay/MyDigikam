@@ -486,12 +486,12 @@ RoutingProfile RoutingManager::defaultProfile( RoutingProfile::TransportType tra
         break;
     }
 
-    for( RoutingRunnerPlugin* plugin: d->m_pluginManager->routingRunnerPlugins() ) {
+/*    for( RoutingRunnerPlugin* plugin: d->m_pluginManager->routingRunnerPlugins() ) {
         if ( plugin->supportsTemplate( tpl ) ) {
             profile.pluginSettings()[plugin->nameId()] = plugin->templateSettings( tpl );
         }
     }
-
+*/
     return profile;
 }
 

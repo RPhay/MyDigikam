@@ -55,7 +55,7 @@ class DIGIKAM_EXPORT PluginInterface
      * provide enough information as to what the plugin is about in the context
      * of Marble.
      *
-     * Example: "Starry Sky Background", "OpenRouteService Routing"
+     * Example: "Starry Sky Background"
      */
     virtual QString name() const = 0;
 

@@ -18,7 +18,7 @@
 namespace Marble {
 
 
-RoutingProfileSettingsDialog::RoutingProfileSettingsDialog( const PluginManager *pluginManager, RoutingProfilesModel *profilesModel, QWidget* parent )
+RoutingProfileSettingsDialog::RoutingProfileSettingsDialog( const PluginManager* /*pluginManager*/, RoutingProfilesModel *profilesModel, QWidget* parent )
     : QDialog( parent ),
     m_profilesModel ( profilesModel ), m_dialog( nullptr ), m_dialogLayout( nullptr )
 {
@@ -31,7 +31,7 @@ RoutingProfileSettingsDialog::RoutingProfileSettingsDialog( const PluginManager 
       m_ui->buttonBox->hide();
     }
 
-    QList<RoutingRunnerPlugin*> allPlugins = pluginManager->routingRunnerPlugins();
+    QList<RoutingRunnerPlugin*> allPlugins;// = pluginManager->routingRunnerPlugins();
     for( RoutingRunnerPlugin* plugin: allPlugins ) {
         m_plugins << plugin;
         RoutingRunnerPlugin::ConfigWidget* configWidget = plugin->configWidget();

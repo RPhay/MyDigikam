@@ -19,7 +19,6 @@
 #include "PositionProviderPlugin.h"
 #include "ParseRunnerPlugin.h"
 #include "ReverseGeocodingRunnerPlugin.h"
-#include "RoutingRunnerPlugin.h"
 #include "SearchRunnerPlugin.h"
 
 #include "digikam_debug.h"
@@ -46,7 +45,6 @@ class PluginManagerPrivate
     QList<const PositionProviderPlugin *> m_positionProviderPluginTemplates;
     QList<const SearchRunnerPlugin *> m_searchRunnerPlugins;
     QList<const ReverseGeocodingRunnerPlugin *> m_reverseGeocodingRunnerPlugins;
-    QList<RoutingRunnerPlugin *> m_routingRunnerPlugins;
     QList<const ParseRunnerPlugin *> m_parsingRunnerPlugins;
     PluginManager* m_parent;
     static QStringList m_blacklist;
@@ -131,19 +129,6 @@ void PluginManager::addReverseGeocodingRunnerPlugin( const ReverseGeocodingRunne
     Q_EMIT reverseGeocodingRunnerPluginsChanged();
 }
 
-QList<RoutingRunnerPlugin *> PluginManager::routingRunnerPlugins() const
-{
-    d->loadPlugins();
-    return d->m_routingRunnerPlugins;
-}
-
-void PluginManager::addRoutingRunnerPlugin( RoutingRunnerPlugin *plugin )
-{
-    d->loadPlugins();
-    d->m_routingRunnerPlugins << plugin;
-    Q_EMIT routingRunnerPluginsChanged();
-}
-
 QList<const ParseRunnerPlugin *> PluginManager::parsingRunnerPlugins() const
 {
     d->loadPlugins();
@@ -214,8 +199,6 @@ bool PluginManagerPrivate::addPlugin(QObject *obj, const QPluginLoader *loader)
                 ( obj, loader, m_searchRunnerPlugins );
     isPlugin = isPlugin || appendPlugin<ReverseGeocodingRunnerPlugin>
                 ( obj, loader, m_reverseGeocodingRunnerPlugins );
-    isPlugin = isPlugin || appendPlugin<RoutingRunnerPlugin>
-                ( obj, loader, m_routingRunnerPlugins );
     isPlugin = isPlugin || appendPlugin<ParseRunnerPlugin>
                 ( obj, loader, m_parsingRunnerPlugins );
     if ( !isPlugin ) {
@@ -245,7 +228,6 @@ void PluginManagerPrivate::loadPlugins()
     Q_ASSERT( m_positionProviderPluginTemplates.isEmpty() );
     Q_ASSERT( m_searchRunnerPlugins.isEmpty() );
     Q_ASSERT( m_reverseGeocodingRunnerPlugins.isEmpty() );
-    Q_ASSERT( m_routingRunnerPlugins.isEmpty() );
     Q_ASSERT( m_parsingRunnerPlugins.isEmpty() );
 
     bool foundPlugin = false;
