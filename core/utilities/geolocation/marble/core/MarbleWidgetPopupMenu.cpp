@@ -43,8 +43,6 @@
 #include "MarbleClock.h"
 #include "PopupLayer.h"
 #include "Planet.h"
-#include "EditBookmarkDialog.h"
-#include "BookmarkManager.h"
 #include "ReverseGeocodingRunnerManager.h"
 #include "TemplateDocument.h"
 #include "OsmPlacemarkData.h"
@@ -113,17 +111,15 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     m_runnerManager( model )
 {
     // Property actions (Left mouse button)
+
     m_infoDialogAction = new QAction( parent );
     m_infoDialogAction->setData( 0 );
 
     //  Tool actions (Right mouse button)
-    QAction* addBookmark = new QAction( QIcon(QStringLiteral(":/icons/bookmark-new.png")),
-                                        i18n( "Add &Bookmark" ), parent );
 
     QMenu* infoBoxMenu = createInfoBoxMenu(m_widget);
 
     m_rmbMenu.addSeparator();
-    m_rmbMenu.addAction( addBookmark );
     m_rmbMenu.addAction( m_copyCoordinateAction );
     m_rmbMenu.addAction( m_copyGeoAction );
 
@@ -132,7 +128,6 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     m_rmbMenu.addMenu( infoBoxMenu );
 
     parent->connect( &m_lmbMenu, SIGNAL(aboutToHide()), SLOT(resetMenu()) );
-    parent->connect( addBookmark, SIGNAL(triggered()), SLOT(addBookmark()) );
     parent->connect( m_copyCoordinateAction, SIGNAL(triggered()), SLOT(slotCopyCoordinates()) );
     parent->connect( m_copyGeoAction, SIGNAL(triggered()), SLOT(slotCopyGeo()) );
     parent->connect( m_infoDialogAction, SIGNAL(triggered()), SLOT(slotInfoDialog()) );
@@ -809,22 +804,6 @@ void MarbleWidgetPopupMenu::showAddressInformation(const GeoDataCoordinates &, c
     QString text = placemark.address();
     if ( !text.isEmpty() ) {
         QMessageBox::information( d->m_widget, i18n( "Address Details" ), text, QMessageBox::Ok );
-    }
-}
-
-void MarbleWidgetPopupMenu::addBookmark()
-{
-    const GeoDataCoordinates coordinates = d->mouseCoordinates( d->m_copyCoordinateAction );
-    if ( coordinates.isValid() ) {
-        QPointer<EditBookmarkDialog> dialog = new EditBookmarkDialog( d->m_widget->model()->bookmarkManager(), d->m_widget );
-        dialog->setMarbleWidget( d->m_widget );
-        dialog->setCoordinates( coordinates );
-        dialog->setRange( d->m_widget->lookAt().range() );
-        dialog->setReverseGeocodeName();
-        if ( dialog->exec() == QDialog::Accepted ) {
-            d->m_widget->model()->bookmarkManager()->addBookmark( dialog->folder(), dialog->bookmark() );
-        }
-        delete dialog;
     }
 }
 

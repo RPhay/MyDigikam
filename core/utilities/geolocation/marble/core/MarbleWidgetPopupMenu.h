@@ -32,7 +32,6 @@ class DIGIKAM_EXPORT MarbleWidgetPopupMenu  : public QObject
 public:
 
     MarbleWidgetPopupMenu( MarbleWidget*, const MarbleModel* );
-
     ~MarbleWidgetPopupMenu() override;
 
     /**
@@ -63,7 +62,6 @@ private Q_SLOTS:
 
     void startReverseGeocoding();
     void showAddressInformation( const GeoDataCoordinates &coordinates, const GeoDataPlacemark &placemark );
-    void addBookmark();
 
  private:
 
