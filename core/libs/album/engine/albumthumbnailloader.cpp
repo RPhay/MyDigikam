@@ -179,11 +179,12 @@ QPixmap AlbumThumbnailLoader::getStandardAlbumIcon(PAlbum* const album, Relative
     }
     else if (album->isTrashAlbum())
     {
+/*
         if (album->countTrashAlbum() > 0)
         {
             return getStandardFullTrashIcon(relativeSize);
         }
-
+*/
         return getStandardEmptyTrashIcon(relativeSize);
     }
 

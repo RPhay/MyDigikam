@@ -77,7 +77,8 @@ QVariant AlbumModel::albumData(Album* a, int role) const
          showCount()              &&
          a->isTrashAlbum())
     {
-        return QString::fromUtf8("%1 (%2)").arg(albumName(a)).arg(a->countTrashAlbum());
+        //return QString::fromUtf8("%1 (%2)").arg(albumName(a)).arg(a->countTrashAlbum());
+        return QString::fromUtf8("%1").arg(albumName(a));
     }
 
     return AbstractCheckableAlbumModel::albumData(a, role);
