@@ -31,7 +31,6 @@
 #include "MarbleWidgetPopupMenu.h"
 #include "PopupLayer.h"
 #include "RenderPlugin.h"
-#include "RoutingLayer.h"
 
 #include "digikam_debug.h"
 
@@ -86,11 +85,6 @@ class MarbleWidgetInputHandlerPrivate
         bool layersEventFilter(QObject *o, QEvent *e)
         {   //FIXME - this should go up in hierarchy to MarbleInputHandler
             if (m_marbleWidget->popupLayer()->eventFilter(o, e))
-            {
-                return true;
-            }
-
-            if (m_marbleWidget->routingLayer()->eventFilter(o, e))
             {
                 return true;
             }

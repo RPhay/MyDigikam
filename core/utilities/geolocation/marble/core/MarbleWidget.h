@@ -45,7 +45,6 @@ class MarbleWidgetInputHandler;
 class MarbleWidgetPrivate;
 class RenderPlugin;
 class RenderState;
-class RoutingLayer;
 class TextureLayer;
 class VectorTileLayer;
 class TileCreator;
@@ -237,8 +236,6 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
      * @brief Remove a layer from being included in rendering.
      */
     void removeLayer( LayerInterface *layer );
-
-    RoutingLayer* routingLayer();
 
     PopupLayer* popupLayer();
 

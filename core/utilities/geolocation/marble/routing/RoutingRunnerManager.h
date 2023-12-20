@@ -10,6 +10,7 @@
 
 #include <QObject>
 #include <QVector>
+#include <QRunnable>
 
 #include "digikam_export.h"
 
@@ -19,7 +20,29 @@ namespace Marble
 class GeoDataDocument;
 class MarbleModel;
 class RouteRequest;
-class RoutingTask;
+class RoutingRunner;
+class RoutingRunnerManager;
+
+/** A RunnerTask that executes a route calculation */
+class RoutingTask : public QObject, public QRunnable
+{
+    Q_OBJECT
+
+public:
+    RoutingTask( RoutingRunner *runner, RoutingRunnerManager *manager, const RouteRequest* routeRequest );
+
+    /**
+     * @reimp
+     */
+    void run() override;
+
+Q_SIGNALS:
+    void finished( RoutingTask *task );
+
+private:
+    RoutingRunner *const m_runner;
+    const RouteRequest *const m_routeRequest;
+};
 
 class DIGIKAM_EXPORT RoutingRunnerManager : public QObject
 {

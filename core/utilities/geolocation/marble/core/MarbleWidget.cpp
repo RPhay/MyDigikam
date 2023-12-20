@@ -40,7 +40,6 @@
 #include "SunLocator.h"
 #include "TileCreatorDialog.h"
 #include "ViewportParams.h"
-#include "RoutingLayer.h"
 #include "MarbleAbstractPresenter.h"
 #include "StyleBuilder.h"
 
@@ -91,7 +90,6 @@ class MarbleWidgetPrivate
           m_map( &m_model ),
           m_presenter( &m_map ),
           m_inputhandler( nullptr ),
-          m_routingLayer( nullptr ),
           m_mapInfoDialog( nullptr ),
           m_customPaintLayer( parent ),
           m_popupmenu( nullptr ),
@@ -131,7 +129,6 @@ class MarbleWidgetPrivate
 
     MarbleWidgetInputHandler  *m_inputhandler;
 
-    RoutingLayer     *m_routingLayer;
     PopupLayer    *m_mapInfoDialog;
     MarbleWidget::CustomPaintLayer m_customPaintLayer;
 
@@ -227,11 +224,6 @@ void MarbleWidgetPrivate::construct()
                                                            const QString& ) ) );
 
     m_popupmenu = new MarbleWidgetPopupMenu( m_widget, &m_model );
-
-    m_routingLayer = new RoutingLayer( m_widget, m_widget );
-    m_routingLayer->setPlacemarkModel( nullptr );
-    QObject::connect( m_routingLayer, SIGNAL(repaintNeeded(QRect)),
-                      m_widget, SLOT(update()) );
 
     m_mapInfoDialog = new PopupLayer( m_widget, m_widget );
     m_mapInfoDialog->setVisible( false );
@@ -774,13 +766,7 @@ void MarbleWidget::setMapThemeId( const QString& mapThemeId )
 
 void MarbleWidgetPrivate::updateMapTheme()
 {
-    m_map.removeLayer( m_routingLayer );
-
     m_widget->setRadius( m_widget->radius() ); // Corrects zoom range, if needed
-
-    if (m_model.planetId() == QLatin1String("earth")) {
-        m_map.addLayer( m_routingLayer );
-    }
 
     Q_EMIT m_widget->themeChanged( m_map.mapThemeId() );
 
@@ -1034,13 +1020,6 @@ ViewContext MarbleWidget::viewContext() const
 
 void MarbleWidget::setViewContext( ViewContext viewContext )
 {
-    // Inform routing layer about view context change. If not done,
-    // the routing layer causes severe performance problems when dragging the
-    // map. So either do not remove this line, or keep a similar call in place
-    // when you refactor it and test your changes wrt drag performance at
-    // high zoom level with long routes!
-    d->m_routingLayer->setViewContext( viewContext );
-
     d->m_map.setViewContext( viewContext );
 }
 
@@ -1228,11 +1207,6 @@ qreal MarbleWidget::zoomFromDistance( qreal distance ) const
 qreal MarbleWidget::distanceFromZoom( qreal zoom ) const
 {
     return d->m_presenter.distanceFromZoom( zoom );
-}
-
-RoutingLayer* MarbleWidget::routingLayer()
-{
-    return d->m_routingLayer;
 }
 
 PopupLayer *MarbleWidget::popupLayer()

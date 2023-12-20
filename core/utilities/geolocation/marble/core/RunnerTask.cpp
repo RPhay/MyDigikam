@@ -12,9 +12,6 @@
 #include "SearchRunnerManager.h"
 #include "ReverseGeocodingRunner.h"
 #include "ReverseGeocodingRunnerManager.h"
-#include "RoutingRunner.h"
-#include "RoutingRunnerManager.h"
-#include "RouteRequest.h"
 
 #include "digikam_debug.h"
 
@@ -53,23 +50,6 @@ ReverseGeocodingTask::ReverseGeocodingTask( ReverseGeocodingRunner *runner, Reve
 void ReverseGeocodingTask::run()
 {
     m_runner->reverseGeocoding( m_coordinates );
-    m_runner->deleteLater();
-
-    Q_EMIT finished( this );
-}
-
-RoutingTask::RoutingTask( RoutingRunner *runner, RoutingRunnerManager *manager, const RouteRequest* routeRequest ) :
-    QObject(),
-    m_runner( runner ),
-    m_routeRequest( routeRequest )
-{
-    connect( m_runner, SIGNAL(routeCalculated(GeoDataDocument*)),
-             manager, SLOT(addRoutingResult(GeoDataDocument*)) );
-}
-
-void RoutingTask::run()
-{
-    m_runner->retrieveRoute( m_routeRequest );
     m_runner->deleteLater();
 
     Q_EMIT finished( this );

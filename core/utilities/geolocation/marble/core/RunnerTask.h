@@ -21,11 +21,9 @@ class ParsingRunner;
 class SearchRunner;
 class ReverseGeocodingRunner;
 class RouteRequest;
-class RoutingRunner;
 class ParsingRunnerManager;
 class SearchRunnerManager;
 class ReverseGeocodingRunnerManager;
-class RoutingRunnerManager;
 
 /** A RunnerTask that executes a placemark search */
 class SearchTask : public QObject, public QRunnable
@@ -68,28 +66,6 @@ Q_SIGNALS:
 private:
     ReverseGeocodingRunner *const m_runner;
     GeoDataCoordinates m_coordinates;
-};
-
-
-/** A RunnerTask that executes a route calculation */
-class RoutingTask : public QObject, public QRunnable
-{
-    Q_OBJECT
-
-public:
-    RoutingTask( RoutingRunner *runner, RoutingRunnerManager *manager, const RouteRequest* routeRequest );
-
-    /**
-     * @reimp
-     */
-    void run() override;
-
-Q_SIGNALS:
-    void finished( RoutingTask *task );
-
-private:
-    RoutingRunner *const m_runner;
-    const RouteRequest *const m_routeRequest;
 };
 
 /** A RunnerTask that executes a file Parsing */

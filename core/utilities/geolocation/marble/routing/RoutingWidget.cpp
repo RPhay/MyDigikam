@@ -143,7 +143,7 @@ private:
 RoutingWidgetPrivate::RoutingWidgetPrivate( RoutingWidget *parent, MarbleWidget *marbleWidget ) :
         m_widget( marbleWidget ),
         m_routingManager( marbleWidget->model()->routingManager() ),
-        m_routingLayer( marbleWidget->routingLayer() ),
+        m_routingLayer( nullptr ),
         m_activeInput( nullptr ),
         m_inputRequest( nullptr ),
         m_routingModel( m_routingManager->routingModel() ),
