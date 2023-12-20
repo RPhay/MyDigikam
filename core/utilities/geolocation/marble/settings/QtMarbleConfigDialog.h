@@ -24,7 +24,8 @@ class DIGIKAM_EXPORT QtMarbleConfigDialog : public QDialog
 {
     Q_OBJECT
 
-    public:
+public:
+
     explicit QtMarbleConfigDialog(MarbleWidget *marbleWidget,
                                    QWidget *parent = nullptr );
     ~QtMarbleConfigDialog() override;
@@ -89,16 +90,8 @@ class DIGIKAM_EXPORT QtMarbleConfigDialog : public QDialog
 
     void initializeCustomTimezone();
 
-    // CloudSync settings
-    bool syncEnabled() const;
-    QString syncBackend() const;
-    bool syncBookmarks() const;
-    bool syncRoutes() const;
-    QString owncloudServer() const;
-    QString owncloudUsername() const;
-    QString owncloudPassword() const;
+Q_SIGNALS:
 
-    Q_SIGNALS:
     /**
      * This signal is Q_EMITted when the loaded settings were changed.
      * Either by the user or by loading them initially from disk.
@@ -115,22 +108,7 @@ class DIGIKAM_EXPORT QtMarbleConfigDialog : public QDialog
      */
     void clearPersistentCacheClicked();
 
-    /**
-     * The user clicked on the button to manually synchronize bookmarks.
-     */
-    void syncNowClicked();
-
-    public Q_SLOTS:
-    /**
-     * Disable "Sync Now" button while sync or for 30 sec of timout
-     */
-    void disableSyncNow();
-    void enableSyncNow();
-
-    /**
-     * Sets new title for the "Last Sync" label indicator
-     */
-    void updateLastSync();
+public Q_SLOTS:
 
     /**
      * Read settings and update interface.
@@ -138,24 +116,19 @@ class DIGIKAM_EXPORT QtMarbleConfigDialog : public QDialog
     void readSettings();
 
     /**
-     * Show status on cloud sync settings tab
-     */
-    void updateCloudSyncStatus( const QString &status );
-
-    /**
      * Write settings to disk.
      */
     void writeSettings();
 
-    private Q_SLOTS:
+private Q_SLOTS:
+
     /**
      * Synchronize the loaded settings with the file on hard disk.
      */
     void syncSettings();
 
-    void updateCloudSyncCredentials();
+private:
 
-    private:
     Q_DISABLE_COPY( QtMarbleConfigDialog )
 
     QtMarbleConfigDialogPrivate * const d;

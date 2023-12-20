@@ -11,7 +11,6 @@
 #include "ui_MarbleViewSettingsWidget.h"
 #include "ui_MarbleNavigationSettingsWidget.h"
 #include "ui_MarbleTimeSettingsWidget.h"
-#include "ui_MarbleCloudSyncSettingsWidget.h"
 
 // Qt
 #include <QSettings>
@@ -49,7 +48,6 @@ class QtMarbleConfigDialogPrivate
           ui_timeSettings(),
           ui_cacheSettings(),
           w_pluginSettings( nullptr ),
-          m_cloudSyncStatusLabel( nullptr ),
           m_marbleWidget( marbleWidget ),
           m_pluginModel()
     {
@@ -59,18 +57,15 @@ class QtMarbleConfigDialogPrivate
     Ui::MarbleNavigationSettingsWidget ui_navigationSettings;
     Ui::MarbleTimeSettingsWidget       ui_timeSettings;
     Ui::MarbleCacheSettingsWidget      ui_cacheSettings;
-    Ui::MarbleCloudSyncSettingsWidget  ui_cloudSyncSettings;
-    MarblePluginSettingsWidget         *w_pluginSettings;
+    MarblePluginSettingsWidget*        w_pluginSettings;
 
-    QSettings m_settings;
+    QSettings                          m_settings;
 
-    QLabel *m_cloudSyncStatusLabel;
+    MarbleWidget* const                m_marbleWidget;
 
-    MarbleWidget *const m_marbleWidget;
+    RenderPluginModel                  m_pluginModel;
 
-    RenderPluginModel m_pluginModel;
-
-    QHash< int, int > m_timezone;
+    QHash< int, int >                  m_timezone;
 };
 
 QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget,
@@ -139,14 +134,6 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget,
     connect( this, SIGNAL(rejected()), &d->m_pluginModel, SLOT(retrievePluginState()) );
     connect( this, SIGNAL(accepted()), &d->m_pluginModel, SLOT(applyPluginState()) );
 
-    QWidget *w_cloudSyncSettings = new QWidget( this );
-    d->ui_cloudSyncSettings.setupUi( w_cloudSyncSettings );
-    tabWidget->addTab( w_cloudSyncSettings, i18n( "Synchronization" ) );
-    d->ui_cloudSyncSettings.button_syncNow->setEnabled( syncBookmarks() );
-    d->m_cloudSyncStatusLabel = d->ui_cloudSyncSettings.cloudSyncStatus;
-    connect( d->ui_cloudSyncSettings.button_syncNow, SIGNAL(clicked()), SIGNAL(syncNowClicked()) );
-    connect( d->ui_cloudSyncSettings.testLoginButton, SIGNAL(clicked()), this, SLOT(updateCloudSyncCredentials()) );
-
     // Layout
     QVBoxLayout *layout = new QVBoxLayout( this );
     layout->addWidget( tabWidget );
@@ -172,16 +159,23 @@ void QtMarbleConfigDialog::syncSettings()
     QNetworkProxy proxy;
 
     // Make sure that no proxy is used for an empty string or the default value:
-    if (proxyUrl().isEmpty() || proxyUrl() == QLatin1String("http://")) {
+
+    if (proxyUrl().isEmpty() || proxyUrl() == QLatin1String("http://"))
+    {
         proxy.setType( QNetworkProxy::NoProxy );
-    } else {
-        if ( proxyType() == Marble::Socks5Proxy ) {
+    }
+    else
+    {
+        if ( proxyType() == Marble::Socks5Proxy )
+        {
             proxy.setType( QNetworkProxy::Socks5Proxy );
         }
-        else if ( proxyType() == Marble::HttpProxy ) {
+        else if ( proxyType() == Marble::HttpProxy )
+        {
             proxy.setType( QNetworkProxy::HttpProxy );
         }
-        else {
+        else
+        {
             qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown proxy type! Using Http Proxy instead.";
             proxy.setType( QNetworkProxy::HttpProxy );
         }
@@ -190,28 +184,13 @@ void QtMarbleConfigDialog::syncSettings()
     proxy.setHostName( proxyUrl() );
     proxy.setPort( proxyPort() );
 
-    if ( proxyAuth() ) {
+    if ( proxyAuth() )
+    {
         proxy.setUser( proxyUser() );
         proxy.setPassword( proxyPass() );
     }
 
     QNetworkProxy::setApplicationProxy(proxy);
-}
-
-void QtMarbleConfigDialog::updateCloudSyncCredentials()
-{
-}
-
-void QtMarbleConfigDialog::disableSyncNow()
-{
-}
-
-void QtMarbleConfigDialog::enableSyncNow()
-{
-}
-
-void QtMarbleConfigDialog::updateLastSync()
-{
 }
 
 void QtMarbleConfigDialog::readSettings()
@@ -234,13 +213,20 @@ void QtMarbleConfigDialog::readSettings()
     d->ui_navigationSettings.kcfg_mouseViewRotation->setChecked( mouseViewRotation() );
     d->ui_navigationSettings.kcfg_animateTargetVoyage->setChecked( animateTargetVoyage() );
     int editorIndex = 0;
-    if (externalMapEditor() == QLatin1String("potlatch")) {
+
+    if (externalMapEditor() == QLatin1String("potlatch"))
+    {
         editorIndex = 1;
-    } else if (externalMapEditor() == QLatin1String("josm")) {
+    }
+    else if (externalMapEditor() == QLatin1String("josm"))
+    {
         editorIndex = 2;
-    } else if (externalMapEditor() == QLatin1String("merkaartor")) {
+    }
+    else if (externalMapEditor() == QLatin1String("merkaartor"))
+    {
         editorIndex = 3;
     }
+
     d->ui_navigationSettings.kcfg_externalMapEditor->setCurrentIndex( editorIndex );
 
     // Cache
@@ -260,6 +246,7 @@ void QtMarbleConfigDialog::readSettings()
     d->ui_timeSettings.kcfg_utc->setChecked( UTC() );
     d->ui_timeSettings.kcfg_systemTime->setChecked( systemTime() );
     d->ui_timeSettings.kcfg_lastSessionTime->setChecked( lastSessionTime() );
+
     if( systemTimezone() == true  )
     {
         QDateTime localTime = QDateTime::currentDateTime().toLocalTime();
@@ -275,23 +262,11 @@ void QtMarbleConfigDialog::readSettings()
         d->m_marbleWidget->model()->setClockTimezone( d->m_timezone.value( chosenTimezone() ) );
     }
 
-    // ownCloud
-    d->ui_cloudSyncSettings.kcfg_enableSync->setChecked( syncEnabled() );
-    d->ui_cloudSyncSettings.kcfg_syncBookmarks->setChecked( syncBookmarks() );
-    d->ui_cloudSyncSettings.kcfg_syncRoutes->setChecked( syncRoutes() );
-    d->ui_cloudSyncSettings.kcfg_owncloudServer->setText( owncloudServer() );
-    d->ui_cloudSyncSettings.kcfg_owncloudUsername->setText( owncloudUsername() );
-    d->ui_cloudSyncSettings.kcfg_owncloudPassword->setText( owncloudPassword() );
-
     // Read the settings of the plugins
     d->m_marbleWidget->readPluginSettings( d->m_settings );
 
     // The settings loaded in the config dialog have been changed.
     Q_EMIT settingsChanged();
-}
-
-void QtMarbleConfigDialog::updateCloudSyncStatus( const QString & )
-{
 }
 
 void QtMarbleConfigDialog::writeSettings()
@@ -311,17 +286,28 @@ void QtMarbleConfigDialog::writeSettings()
     d->m_settings.setValue( QLatin1String("inertialEarthRotation"), d->ui_navigationSettings.kcfg_inertialEarthRotation->isChecked() );
     d->m_settings.setValue( QLatin1String("mouseViewRotation"), d->ui_navigationSettings.kcfg_mouseViewRotation->isChecked() );
     d->m_settings.setValue( QLatin1String("animateTargetVoyage"), d->ui_navigationSettings.kcfg_animateTargetVoyage->isChecked() );
-    if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 0 ) {
+
+    if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 0 )
+    {
         d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("") );
-    } else if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 1 ) {
+    }
+    else if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 1 )
+    {
         d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("potlatch") );
-    } else if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 2 ) {
+    }
+    else if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 2 )
+    {
         d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("josm") );
-    } else if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 3 ) {
+    }
+    else if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 3 )
+    {
         d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("merkaartor") );
-    } else {
+    }
+    else
+    {
         Q_ASSERT( false && "Unexpected index of the external editor setting" );
     }
+
     d->m_settings.endGroup();
 
     d->m_settings.beginGroup( QLatin1String("Cache") );
@@ -330,13 +316,18 @@ void QtMarbleConfigDialog::writeSettings()
     d->m_settings.setValue( QLatin1String("proxyUrl"), d->ui_cacheSettings.kcfg_proxyUrl->text() );
     d->m_settings.setValue( QLatin1String("proxyPort"), d->ui_cacheSettings.kcfg_proxyPort->value() );
     d->m_settings.setValue( QLatin1String("proxyType"), d->ui_cacheSettings.kcfg_proxyType->currentIndex() );
-    if ( d->ui_cacheSettings.kcfg_proxyAuth->isChecked() ) {
+
+    if ( d->ui_cacheSettings.kcfg_proxyAuth->isChecked() )
+    {
         d->m_settings.setValue( QLatin1String("proxyAuth"), true );
         d->m_settings.setValue( QLatin1String("proxyUser"), d->ui_cacheSettings.kcfg_proxyUser->text() );
         d->m_settings.setValue( QLatin1String("proxyPass"), d->ui_cacheSettings.kcfg_proxyPass->text() );
-    } else {
+    }
+    else
+    {
         d->m_settings.setValue( QLatin1String("proxyAuth"), false );
     }
+
     d->m_settings.endGroup();
 
     d->m_settings.beginGroup( QLatin1String("Time") );
@@ -346,16 +337,6 @@ void QtMarbleConfigDialog::writeSettings()
     d->m_settings.setValue( QLatin1String("systemTime"), d->ui_timeSettings.kcfg_systemTime->isChecked() );
     d->m_settings.setValue( QLatin1String("lastSessionTime"), d->ui_timeSettings.kcfg_lastSessionTime->isChecked() );
     d->m_settings.setValue( QLatin1String("chosenTimezone"), d->ui_timeSettings.kcfg_chosenTimezone->currentIndex() );
-    d->m_settings.endGroup();
-
-    d->m_settings.beginGroup( QLatin1String("CloudSync") );
-    d->m_settings.setValue( QLatin1String("enableSync"), d->ui_cloudSyncSettings.kcfg_enableSync->isChecked() );
-    d->m_settings.setValue( QLatin1String("syncBackend"), QString::fromUtf8("owncloud") );
-    d->m_settings.setValue( QLatin1String("syncBookmarks"), d->ui_cloudSyncSettings.kcfg_syncBookmarks->isChecked() );
-    d->m_settings.setValue( QLatin1String("syncRoutes"), d->ui_cloudSyncSettings.kcfg_syncRoutes->isChecked() );
-    d->m_settings.setValue( QLatin1String("owncloudServer"), d->ui_cloudSyncSettings.kcfg_owncloudServer->text() );
-    d->m_settings.setValue( QLatin1String("owncloudUsername"), d->ui_cloudSyncSettings.kcfg_owncloudUsername->text() );
-    d->m_settings.setValue( QLatin1String("owncloudPassword"), d->ui_cloudSyncSettings.kcfg_owncloudPassword->text() );
     d->m_settings.endGroup();
 
     // Plugins
@@ -383,6 +364,7 @@ void QtMarbleConfigDialog::setAngleUnit(Marble::AngleUnit unit)
 {
     d->m_settings.setValue( QLatin1String("View/angleUnit"), (int)unit );
     d->ui_viewSettings.kcfg_angleUnit->setCurrentIndex( angleUnit() );
+
     Q_EMIT settingsChanged();
 }
 
@@ -407,6 +389,7 @@ int QtMarbleConfigDialog::onStartup() const
 {
     bool smallScreen = MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen;
     int defaultValue = smallScreen ? Marble::LastLocationVisited : Marble::ShowHomeLocation;
+
     return d->m_settings.value( QLatin1String("Navigation/onStartup"), defaultValue ).toInt();
 }
 
@@ -538,41 +521,6 @@ void QtMarbleConfigDialog::initializeCustomTimezone()
         d->m_timezone.insert( 29, -10800 );
         d->m_timezone.insert( 30, -3600 );
     }
-}
-
-bool QtMarbleConfigDialog::syncEnabled() const
-{
-    return d->m_settings.value( QLatin1String("CloudSync/enableSync"), false ).toBool();
-}
-
-QString QtMarbleConfigDialog::syncBackend() const
-{
-    return d->m_settings.value( QLatin1String("CloudSync/syncBackend"), QString::fromUtf8("") ).toString();
-}
-
-bool QtMarbleConfigDialog::syncBookmarks() const
-{
-    return d->m_settings.value( QLatin1String("CloudSync/syncBookmarks"), true ).toBool();
-}
-
-bool QtMarbleConfigDialog::syncRoutes() const
-{
-    return d->m_settings.value( QLatin1String("CloudSync/syncRoutes"), true ).toBool();
-}
-
-QString QtMarbleConfigDialog::owncloudServer() const
-{
-    return d->m_settings.value( QLatin1String("CloudSync/owncloudServer"), QString::fromUtf8("") ).toString();
-}
-
-QString QtMarbleConfigDialog::owncloudUsername() const
-{
-    return d->m_settings.value( QLatin1String("CloudSync/owncloudUsername"), QString::fromUtf8("") ).toString();
-}
-
-QString QtMarbleConfigDialog::owncloudPassword() const
-{
-    return d->m_settings.value( QLatin1String("CloudSync/owncloudPassword"), QString::fromUtf8("") ).toString();
 }
 
 }

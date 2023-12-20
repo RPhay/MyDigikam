@@ -41,12 +41,6 @@ set(marblewidget_SRCS
     bookmark/PlacemarkEditHeader.cpp
     bookmark/NewBookmarkFolderDialog.cpp
 
-#   cloudsync/CloudSyncManager.cpp
-#   cloudsync/BookmarkSyncManager.cpp
-#   cloudsync/MergeItem.cpp
-#   cloudsync/ConflictDialog.cpp
-#   cloudsync/OwncloudSyncBackend.cpp
-
     core/AbstractFloatItem.cpp
     core/AbstractWorkerThread.cpp
     core/EquirectScanlineTextureMapper.cpp
@@ -675,7 +669,6 @@ set (marblewidget_UI
     osm/OsmRelationManagerWidget.ui
 
     settings/MarbleCacheSettingsWidget.ui
-    settings/MarbleCloudSyncSettingsWidget.ui
     settings/MarbleNavigationSettingsWidget.ui
     settings/MarblePluginSettingsWidget.ui
     settings/MarbleTimeSettingsWidget.ui
