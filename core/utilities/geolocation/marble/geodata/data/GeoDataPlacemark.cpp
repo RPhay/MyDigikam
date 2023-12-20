@@ -350,7 +350,6 @@ QString GeoDataPlacemark::categoryName() const
     case MilitaryDangerArea: return i18n("Military Danger Area");
     case OsmSite: return i18n("OSM Site");
     case Coordinate: return i18n("Coordinate");
-    case Bookmark: return i18n("Bookmark");
     case Satellite: return i18n("Satellite");
 
     // OpenStreetMap categories

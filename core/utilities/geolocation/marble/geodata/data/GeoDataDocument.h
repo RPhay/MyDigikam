@@ -25,7 +25,6 @@ enum DocumentRole {
     MapDocument,
     UserDocument,
     TrackingDocument,
-    BookmarkDocument,
     SearchResultDocument
 };
 

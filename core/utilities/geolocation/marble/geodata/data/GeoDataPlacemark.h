@@ -143,8 +143,6 @@ class DIGIKAM_EXPORT GeoDataPlacemark: public GeoDataFeature
         UnmannedSoftLandingSite, // u
         UnmannedHardLandingSite, // i
 
-        Bookmark,
-
         Satellite,
 
         /*

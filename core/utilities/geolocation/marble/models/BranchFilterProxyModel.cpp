@@ -18,7 +18,7 @@ BranchFilterProxyModel::BranchFilterProxyModel( QObject *parent ) :
     // nothing to do
 }
 
-/// sets the folder index for which we want to see bookmarks
+/// sets the folder index for which we want to see
 void BranchFilterProxyModel::setBranchIndex( GeoDataTreeModel* treeModel, const QModelIndex &index )
 {
     Q_ASSERT( index.isValid() );

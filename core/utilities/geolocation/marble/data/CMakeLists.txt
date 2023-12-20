@@ -64,7 +64,6 @@ install (FILES
          svg/moon.png
          svg/glow.png
          svg/track_turtle.svg
-         svg/bookmark.svg
          svg/dot-circle-regular.svg
          DESTINATION ${MARBLE_DATA_INSTALL_PATH}/svg)
 

@@ -898,11 +898,6 @@ void StyleBuilder::Private::initializeDefaultStyles()
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/unmanned_hard_landing.png")),
                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
-    m_defaultStyle[GeoDataPlacemark::Bookmark]
-        = createPOIStyle(QFont(defaultFamily, defaultSize, 50, false),
-                         MarbleDirs::path(QString::fromUtf8("svg/bookmark.svg")), m_defaultLabelColor);
-    m_defaultStyle[GeoDataPlacemark::Bookmark]->iconStyle().setScale(0.75);
-
     QColor const shopColor("#ac39ac");
     QColor const transportationColor("#0092da");
     QColor const amenityColor("#734a08");
@@ -2566,7 +2561,6 @@ QString StyleBuilder::visualCategoryName(GeoDataPlacemark::GeoDataVisualCategory
         visualCategoryNames[GeoDataPlacemark::RoboticRover] = QString::fromUtf8("RoboticRover");
         visualCategoryNames[GeoDataPlacemark::UnmannedSoftLandingSite] = QString::fromUtf8("UnmannedSoftLandingSite");
         visualCategoryNames[GeoDataPlacemark::UnmannedHardLandingSite] = QString::fromUtf8("UnmannedHardLandingSite");
-        visualCategoryNames[GeoDataPlacemark::Bookmark] = QString::fromUtf8("Bookmark");
         visualCategoryNames[GeoDataPlacemark::NaturalWater] = QString::fromUtf8("NaturalWater");
         visualCategoryNames[GeoDataPlacemark::NaturalReef] = QString::fromUtf8("NaturalReef");
         visualCategoryNames[GeoDataPlacemark::NaturalWood] = QString::fromUtf8("NaturalWood");
