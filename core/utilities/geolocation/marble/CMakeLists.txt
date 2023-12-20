@@ -41,11 +41,11 @@ set(marblewidget_SRCS
     bookmark/PlacemarkEditHeader.cpp
     bookmark/NewBookmarkFolderDialog.cpp
 
-    cloudsync/CloudSyncManager.cpp
-    cloudsync/BookmarkSyncManager.cpp
-    cloudsync/MergeItem.cpp
-    cloudsync/ConflictDialog.cpp
-    cloudsync/OwncloudSyncBackend.cpp
+#   cloudsync/CloudSyncManager.cpp
+#   cloudsync/BookmarkSyncManager.cpp
+#   cloudsync/MergeItem.cpp
+#   cloudsync/ConflictDialog.cpp
+#   cloudsync/OwncloudSyncBackend.cpp
 
     core/AbstractFloatItem.cpp
     core/AbstractWorkerThread.cpp
@@ -621,47 +621,6 @@ set(marblewidget_SRCS
     projections/AzimuthalEquidistantProjection.cpp
     projections/VerticalPerspectiveProjection.cpp
 
-    routing/AlternativeRoutesModel.cpp
-    routing/AnimatedUpdateTrack.cpp
-    routing/GoToDialog.cpp
-    routing/Maneuver.cpp
-    routing/MarbleLineEdit.cpp
-    routing/PlaybackAnimatedUpdateItem.cpp
-    routing/PlaybackFlyToItem.cpp
-    routing/PlaybackItem.cpp
-    routing/PlaybackSoundCueItem.cpp
-    routing/PlaybackTourControlItem.cpp
-    routing/PlaybackWaitItem.cpp
-    routing/Route.cpp
-    routing/RouteRequest.cpp
-    routing/RouteSegment.cpp
-    routing/RouteSimulationPositionProviderPlugin.cpp
-    routing/RoutingModel.cpp
-    routing/RoutingProfile.cpp
-    routing/RoutingManager.cpp
-    routing/RoutingLayer.cpp
-    routing/RoutingInputWidget.cpp
-    routing/RoutingWidget.cpp
-    routing/RoutingProfilesWidget.cpp
-    routing/RoutingProfilesModel.cpp
-    routing/RoutingProfileSettingsDialog.cpp
-    routing/RoutingRunnerManager.cpp
-    routing/RoutingRunnerPlugin.cpp
-    routing/RoutingRunner.cpp
-    routing/SerialTrack.cpp
-    routing/SoundTrack.cpp
-    routing/TourPlayback.cpp
-    routing/RouteSyncManager.cpp
-    routing/CloudRouteModel.cpp
-    routing/CloudRoutesDialog.cpp
-    routing/RouteItem.cpp
-    routing/RouteItemDelegate.cpp
-    routing/instructions/InstructionTransformation.cpp
-    routing/instructions/RoutingInstruction.cpp
-    routing/instructions/RoutingPoint.cpp
-    routing/instructions/RoutingWaypoint.cpp
-    routing/instructions/WaypointParser.cpp
-
     runners/ParsingRunner.cpp
     runners/ParsingRunnerManager.cpp
     runners/ReverseGeocodingRunner.cpp
@@ -714,12 +673,6 @@ set (marblewidget_UI
 
     osm/OsmTagEditorWidget.ui
     osm/OsmRelationManagerWidget.ui
-
-    routing/CloudRoutesDialog.ui
-    routing/GoToDialog.ui
-    routing/RoutingWidget.ui
-    routing/RoutingSettingsWidget.ui
-    routing/RoutingProfileSettingsDialog.ui
 
     settings/MarbleCacheSettingsWidget.ui
     settings/MarbleCloudSyncSettingsWidget.ui
