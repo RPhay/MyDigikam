@@ -227,19 +227,6 @@ QWidget* BackendMarble::mapWidget()
             d->marbleWidget->addLayer(d->bmLayer);
         }
 
-        // hide Marble bookmark action in the right button context menu
-        // TODO: check with a new Marble version if the bookmark action position is still valid
-
-        if (d->marbleWidget->popupMenu())
-        {
-            QList<QAction*> actions = d->marbleWidget->popupMenu()->findChildren<QAction*>();
-
-            if ((actions.size() > 5) && actions[5])
-            {
-                actions[5]->setVisible(false);
-            }
-        }
-
         d->marbleWidget->installEventFilter(this);
 
         connect(d->marbleWidget, SIGNAL(zoomChanged(int)),
