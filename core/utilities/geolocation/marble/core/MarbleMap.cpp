@@ -65,7 +65,6 @@
 #include "ViewParams.h"
 #include "ViewportParams.h"
 #include "RenderState.h"
-#include "BookmarkManager.h"
 
 #include "digikam_debug.h"
 
@@ -181,8 +180,6 @@ MarbleMapPrivate::MarbleMapPrivate( MarbleMap *parent, MarbleModel *model ) :
     m_layerManager.addLayer( &m_geometryLayer );
     m_layerManager.addLayer( &m_placemarkLayer );
     m_layerManager.addLayer( &m_customPaintLayer );
-
-    m_model->bookmarkManager()->setStyleBuilder(&m_styleBuilder);
 
     QObject::connect( m_model, SIGNAL(themeChanged(QString)),
                       parent, SLOT(updateMapTheme()) );

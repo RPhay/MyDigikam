@@ -51,7 +51,6 @@ class GeoDataCoordinates;
 class GeoDataTreeModel;
 class GeoSceneDocument;
 class Planet;
-class BookmarkManager;
 class FileManager;
 class ElevationModel;
 
@@ -243,11 +242,6 @@ class DIGIKAM_EXPORT MarbleModel : public QObject
     void setClockTimezone( int timeInSec );
 
     int clockTimezone() const;
-
-    /**
-     * return instance of BookmarkManager
-    */
-    BookmarkManager *bookmarkManager();
 
     QTextDocument * legend();
 

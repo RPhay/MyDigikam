@@ -57,7 +57,6 @@
 #include "TileCreator.h"
 #include "TileCreatorDialog.h"
 #include "TileLoader.h"
-#include "BookmarkManager.h"
 #include "ElevationModel.h"
 
 #include "digikam_debug.h"
@@ -86,7 +85,6 @@ class MarbleModelPrivate
           m_fileManager( &m_treeModel, &m_pluginManager ),
           m_positionTracking( &m_treeModel ),
           m_trackedPlacemark( nullptr ),
-          m_bookmarkManager( &m_treeModel ),
           m_legend( nullptr ),
           m_workOffline( false ),
           m_elevationModel( &m_downloadManager, &m_pluginManager )
@@ -155,7 +153,6 @@ class MarbleModelPrivate
 
     const GeoDataPlacemark  *m_trackedPlacemark;
 
-    BookmarkManager          m_bookmarkManager;
     QTextDocument           *m_legend;
 
     bool                     m_workOffline;
@@ -187,11 +184,6 @@ MarbleModel::~MarbleModel()
     delete d;
 
     qCDebug(DIGIKAM_MARBLE_LOG) << "Model deleted:" << this;
-}
-
-BookmarkManager *MarbleModel::bookmarkManager()
-{
-    return &d->m_bookmarkManager;
 }
 
 QString MarbleModel::mapThemeId() const

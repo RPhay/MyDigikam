@@ -98,7 +98,6 @@ bool GeoParser::read( QIODevice* device )
             raiseError(QString());
         }
         // Defer the deletion to the dtor
-        // This allows the BookmarkManager to recover the broken .kml files it produced in Marble 1.0 and 1.1
         /** @todo: Remove this workaround around Marble 1.4 */
         // delete releaseDocument();
     }

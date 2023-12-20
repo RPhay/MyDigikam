@@ -34,13 +34,6 @@ set(marblewidget_SRCS
     blendings/BlendingFactory.cpp
     blendings/SunLightBlending.cpp
 
-    bookmark/BookmarkManager.cpp
-    bookmark/BookmarkManagerDialog.cpp
-    bookmark/EditBookmarkDialog.cpp
-    bookmark/LatLonEdit.cpp
-    bookmark/PlacemarkEditHeader.cpp
-    bookmark/NewBookmarkFolderDialog.cpp
-
     core/AbstractFloatItem.cpp
     core/AbstractWorkerThread.cpp
     core/EquirectScanlineTextureMapper.cpp
@@ -658,12 +651,6 @@ set(marblewidget_SRCS
 )
 
 set (marblewidget_UI
-
-    bookmark/BookmarkManagerDialog.ui
-    bookmark/EditBookmarkDialog.ui
-    bookmark/LatLonEdit.ui
-    bookmark/PlacemarkEditHeader.ui
-    bookmark/NewBookmarkFolderDialog.ui
 
     osm/OsmTagEditorWidget.ui
     osm/OsmRelationManagerWidget.ui
