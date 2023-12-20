@@ -34,8 +34,6 @@
 #include "RenderPlugin.h"
 #include "RenderPluginModel.h"
 #include "MarbleClock.h"
-#include "BookmarkSyncManager.h"
-#include "CloudSyncManager.h"
 
 #include "digikam_debug.h"
 
@@ -45,7 +43,7 @@ namespace Marble
 class QtMarbleConfigDialogPrivate
 {
  public:
-    QtMarbleConfigDialogPrivate( MarbleWidget *marbleWidget, CloudSyncManager *cloudSyncManager )
+    QtMarbleConfigDialogPrivate( MarbleWidget *marbleWidget )
         : ui_viewSettings(),
           ui_navigationSettings(),
           ui_timeSettings(),
@@ -53,8 +51,6 @@ class QtMarbleConfigDialogPrivate
           w_pluginSettings( nullptr ),
           m_cloudSyncStatusLabel( nullptr ),
           m_marbleWidget( marbleWidget ),
-          m_syncManager( cloudSyncManager ? cloudSyncManager->bookmarkSyncManager() : nullptr ),
-          m_cloudSyncManager(cloudSyncManager),
           m_pluginModel()
     {
     }
@@ -71,18 +67,16 @@ class QtMarbleConfigDialogPrivate
     QLabel *m_cloudSyncStatusLabel;
 
     MarbleWidget *const m_marbleWidget;
-    BookmarkSyncManager *const m_syncManager;
-    CloudSyncManager *const m_cloudSyncManager;
 
     RenderPluginModel m_pluginModel;
 
     QHash< int, int > m_timezone;
 };
 
-QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget, CloudSyncManager *cloudSyncManager,
+QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget,
                                            QWidget *parent )
     : QDialog( parent ),
-      d( new QtMarbleConfigDialogPrivate( marbleWidget, cloudSyncManager ) )
+      d( new QtMarbleConfigDialogPrivate( marbleWidget ) )
 {
     QTabWidget *tabWidget = new QTabWidget( this );
     QDialogButtonBox *buttons =
@@ -153,15 +147,6 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget, CloudSync
     connect( d->ui_cloudSyncSettings.button_syncNow, SIGNAL(clicked()), SIGNAL(syncNowClicked()) );
     connect( d->ui_cloudSyncSettings.testLoginButton, SIGNAL(clicked()), this, SLOT(updateCloudSyncCredentials()) );
 
-    if ( d->m_syncManager ) {
-        connect(d->m_syncManager, SIGNAL(syncComplete()), this, SLOT(updateLastSync()));
-        updateLastSync();
-    }
-    if ( d->m_cloudSyncManager ) {
-        connect( d->m_cloudSyncManager, SIGNAL(statusChanged(QString)),
-                 this, SLOT(updateCloudSyncStatus(QString)));
-    }
-
     // Layout
     QVBoxLayout *layout = new QVBoxLayout( this );
     layout->addWidget( tabWidget );
@@ -215,62 +200,18 @@ void QtMarbleConfigDialog::syncSettings()
 
 void QtMarbleConfigDialog::updateCloudSyncCredentials()
 {
-    if ( d->m_cloudSyncManager ) {
-        d->m_cloudSyncManager->setOwncloudCredentials(
-                    d->ui_cloudSyncSettings.kcfg_owncloudServer->text(),
-                    d->ui_cloudSyncSettings.kcfg_owncloudUsername->text(),
-                    d->ui_cloudSyncSettings.kcfg_owncloudPassword->text() );
-    }
 }
 
 void QtMarbleConfigDialog::disableSyncNow()
 {
-    if ( !d->m_syncManager ) {
-        return;
-    }
-
-    d->ui_cloudSyncSettings.button_syncNow->setDisabled(true);
-
-    QTimer *timeoutTimer = new QTimer(this);
-    connect(timeoutTimer, SIGNAL(timeout()),
-            timeoutTimer, SLOT(stop()));
-    connect(timeoutTimer, SIGNAL(timeout()),
-            this, SLOT(enableSyncNow()));
-
-    connect(d->m_syncManager, SIGNAL(syncComplete()),
-            this, SLOT(enableSyncNow()));
-    connect(d->m_syncManager, SIGNAL(syncComplete()),
-            timeoutTimer, SLOT(stop()));
-    connect(d->m_syncManager, SIGNAL(syncComplete()),
-            timeoutTimer, SLOT(deleteLater()));
-
-    timeoutTimer->start(30*1000); // 30 sec
 }
 
 void QtMarbleConfigDialog::enableSyncNow()
 {
-    if ( !d->m_syncManager ) {
-        return;
-    }
-
-    d->ui_cloudSyncSettings.button_syncNow->setEnabled(true);
 }
 
 void QtMarbleConfigDialog::updateLastSync()
 {
-    if ( !d->m_syncManager ) {
-        return;
-    }
-
-    if (!d->m_syncManager->lastSync().isValid()) {
-        d->ui_cloudSyncSettings.labelLastSync->setText(i18n("Never synchronized."));
-        return;
-    }
-
-    const QString title = i18n("Last synchronization: %1")
-            .arg(d->m_syncManager->lastSync().toString());
-
-    d->ui_cloudSyncSettings.labelLastSync->setText(title);
 }
 
 void QtMarbleConfigDialog::readSettings()
@@ -349,22 +290,8 @@ void QtMarbleConfigDialog::readSettings()
     Q_EMIT settingsChanged();
 }
 
-void QtMarbleConfigDialog::updateCloudSyncStatus( const QString &status )
+void QtMarbleConfigDialog::updateCloudSyncStatus( const QString & )
 {
-    d->m_cloudSyncStatusLabel->setText(status);
-    CloudSyncManager::Status status_type =
-            d->m_cloudSyncManager ? d->m_cloudSyncManager->status() : CloudSyncManager::Unknown;
-    switch (status_type) {
-        case CloudSyncManager::Success:
-            d->m_cloudSyncStatusLabel->setStyleSheet(QString::fromUtf8("QLabel { color : green; }"));
-            break;
-        case CloudSyncManager::Error:
-            d->m_cloudSyncStatusLabel->setStyleSheet(QString::fromUtf8("QLabel { color : red; }"));
-            break;
-        case CloudSyncManager::Unknown:
-            d->m_cloudSyncStatusLabel->setStyleSheet(QString::fromUtf8("QLabel { color : grey; }"));
-            break;
-    }
 }
 
 void QtMarbleConfigDialog::writeSettings()

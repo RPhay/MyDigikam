@@ -20,7 +20,6 @@ class MarbleModel;
 class ParsingRunner;
 class SearchRunner;
 class ReverseGeocodingRunner;
-class RouteRequest;
 class ParsingRunnerManager;
 class SearchRunnerManager;
 class ReverseGeocodingRunnerManager;

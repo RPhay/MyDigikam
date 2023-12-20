@@ -17,7 +17,6 @@ namespace Marble
 {
 
 class MarbleWidget;
-class CloudSyncManager;
 
 class QtMarbleConfigDialogPrivate;
 
@@ -26,7 +25,7 @@ class DIGIKAM_EXPORT QtMarbleConfigDialog : public QDialog
     Q_OBJECT
 
     public:
-    explicit QtMarbleConfigDialog(MarbleWidget *marbleWidget, CloudSyncManager *syncManager = nullptr,
+    explicit QtMarbleConfigDialog(MarbleWidget *marbleWidget,
                                    QWidget *parent = nullptr );
     ~QtMarbleConfigDialog() override;
 
