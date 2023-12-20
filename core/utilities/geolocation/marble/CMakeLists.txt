@@ -658,7 +658,6 @@ set (marblewidget_UI
     plugins/MarblePluginSettingsWidget.ui
 
     settings/MarbleCacheSettingsWidget.ui
-    settings/MarbleNavigationSettingsWidget.ui
     settings/MarbleTimeSettingsWidget.ui
     settings/MarbleViewSettingsWidget.ui
 

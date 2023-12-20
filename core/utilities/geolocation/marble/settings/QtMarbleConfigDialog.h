@@ -26,8 +26,8 @@ class DIGIKAM_EXPORT QtMarbleConfigDialog : public QDialog
 
 public:
 
-    explicit QtMarbleConfigDialog(MarbleWidget *marbleWidget,
-                                   QWidget *parent = nullptr );
+    explicit QtMarbleConfigDialog(MarbleWidget* const marbleWidget,
+                                  QWidget* const parent = nullptr );
     ~QtMarbleConfigDialog() override;
 
     // View Settings
@@ -40,6 +40,7 @@ public:
     QFont mapFont() const;
 
     // Navigation Settings
+
     int onStartup() const;
     bool animateTargetVoyage() const;
     QString externalMapEditor() const;
@@ -47,6 +48,7 @@ public:
     bool mouseViewRotation() const;
 
     // Cache Settings
+
     int volatileTileCacheLimit() const;
     int persistentTileCacheLimit() const;
     QString proxyUrl() const;
@@ -56,39 +58,6 @@ public:
     QString proxyPass() const;
     bool proxyType() const;
     bool proxyAuth() const;
-
-    // Time Settings
-    /**
-     * Read the value of 'Time/systemTime' key from settings
-     */
-    bool systemTime() const;
-
-    /**
-     * Read the value of 'Time/lastSessionTime' key from settings
-     */
-    bool lastSessionTime() const;
-
-    /**
-     * Read the value of 'Time/systemTimezone' key from settings
-     */
-    bool systemTimezone() const;
-
-    /**
-     * Read the value of 'Time/UTC' key from settings
-     */
-    bool UTC() const;
-
-    /**
-     * Read the value of 'Time/customTimezone' key from settings
-     */
-    bool customTimezone() const;
-
-    /**
-     * Read the value of 'Time/chosenTimezone' key from settings
-     */
-    int chosenTimezone() const;
-
-    void initializeCustomTimezone();
 
 Q_SIGNALS:
 

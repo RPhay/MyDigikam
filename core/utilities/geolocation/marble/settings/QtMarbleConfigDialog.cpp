@@ -10,7 +10,6 @@
 #include "ui_MarbleCacheSettingsWidget.h"
 #include "ui_MarbleViewSettingsWidget.h"
 #include "ui_MarbleNavigationSettingsWidget.h"
-#include "ui_MarbleTimeSettingsWidget.h"
 
 // Qt
 #include <QSettings>
@@ -41,23 +40,22 @@ namespace Marble
 
 class QtMarbleConfigDialogPrivate
 {
- public:
-    QtMarbleConfigDialogPrivate( MarbleWidget *marbleWidget )
-        : ui_viewSettings(),
+
+public:
+
+    QtMarbleConfigDialogPrivate(MarbleWidget* const marbleWidget)
+        : ui_viewSettings      (),
           ui_navigationSettings(),
-          ui_timeSettings(),
-          ui_cacheSettings(),
-          w_pluginSettings( nullptr ),
-          m_marbleWidget( marbleWidget ),
-          m_pluginModel()
+          ui_cacheSettings     (),
+          m_marbleWidget       (marbleWidget),
+          m_pluginModel        ()
     {
     }
 
     Ui::MarbleViewSettingsWidget       ui_viewSettings;
     Ui::MarbleNavigationSettingsWidget ui_navigationSettings;
-    Ui::MarbleTimeSettingsWidget       ui_timeSettings;
     Ui::MarbleCacheSettingsWidget      ui_cacheSettings;
-    MarblePluginSettingsWidget*        w_pluginSettings;
+    MarblePluginSettingsWidget*        w_pluginSettings = nullptr;
 
     QSettings                          m_settings;
 
@@ -65,33 +63,42 @@ class QtMarbleConfigDialogPrivate
 
     RenderPluginModel                  m_pluginModel;
 
-    QHash< int, int >                  m_timezone;
+    QHash<int, int>                    m_timezone;
 };
 
-QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget,
-                                           QWidget *parent )
-    : QDialog( parent ),
-      d( new QtMarbleConfigDialogPrivate( marbleWidget ) )
+QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget* const marbleWidget,
+                                           QWidget* const parent)
+    : QDialog(parent),
+      d(new QtMarbleConfigDialogPrivate(marbleWidget))
 {
-    QTabWidget *tabWidget = new QTabWidget( this );
-    QDialogButtonBox *buttons =
-    new QDialogButtonBox( QDialogButtonBox::Ok
-                        | QDialogButtonBox::Apply
-                        | QDialogButtonBox::Cancel,
-                          Qt::Horizontal,
-                          this );
+    QTabWidget* tabWidget     = new QTabWidget( this );
+    QDialogButtonBox* buttons =
+    new QDialogButtonBox(QDialogButtonBox::Ok    |
+                         QDialogButtonBox::Apply |
+                         QDialogButtonBox::Cancel,
+                         Qt::Horizontal,
+                         this);
 
     // Connect the signals of the ButtonBox
     // to the corresponding slots of the dialog.
-    connect( buttons, SIGNAL(accepted()), this, SLOT(accept()) ); // Ok
-    connect( buttons, SIGNAL(rejected()), this, SLOT(reject()) ); // Cancel
-    connect( buttons->button( QDialogButtonBox::Apply ),SIGNAL(clicked()),
+
+    connect( buttons, SIGNAL(accepted()),
+             this, SLOT(accept()) );                                   // Ok
+
+    connect( buttons, SIGNAL(rejected()),
+             this, SLOT(reject()) );                                // Cancel
+
+    connect( buttons->button( QDialogButtonBox::Apply ), SIGNAL(clicked()),
              this, SLOT(writeSettings()) );                         // Apply
+
     // If the dialog is accepted. Save the settings.
-    connect( this, SIGNAL(accepted()), this, SLOT(writeSettings()) );
+
+    connect( this, SIGNAL(accepted()),
+             this, SLOT(writeSettings()) );
 
     // view page
-    QWidget *w_viewSettings = new QWidget( this );
+
+    QWidget* w_viewSettings = new QWidget( this );
 
     d->ui_viewSettings.setupUi( w_viewSettings );
     tabWidget->addTab( w_viewSettings, i18n( "View" ) );
@@ -100,7 +107,8 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget,
     d->ui_viewSettings.label_labelLocalization->hide();
 
     // navigation page
-    QWidget *w_navigationSettings = new QWidget( this );
+
+    QWidget* w_navigationSettings = new QWidget( this );
 
     d->ui_navigationSettings.setupUi( w_navigationSettings );
     tabWidget->addTab( w_navigationSettings, i18n( "Navigation" ) );
@@ -108,20 +116,22 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget,
     d->ui_navigationSettings.label_dragLocation->hide();
 
     // cache page
-    QWidget *w_cacheSettings = new QWidget( this );
+
+    QWidget* w_cacheSettings = new QWidget( this );
 
     d->ui_cacheSettings.setupUi( w_cacheSettings );
     tabWidget->addTab( w_cacheSettings, i18n( "Cache and Proxy" ) );
-    // Forwarding clear button signals
-    connect( d->ui_cacheSettings.button_clearVolatileCache, SIGNAL(clicked()), SIGNAL(clearVolatileCacheClicked()) );
-    connect( d->ui_cacheSettings.button_clearPersistentCache, SIGNAL(clicked()), SIGNAL(clearPersistentCacheClicked()) );
 
-    // time page
-    QWidget *w_timeSettings = new QWidget( this );
-    d->ui_timeSettings.setupUi( w_timeSettings );
-    tabWidget->addTab( w_timeSettings, i18n( "Date and Time" ) );
+    // Forwarding clear button signals
+
+    connect( d->ui_cacheSettings.button_clearVolatileCache,
+             SIGNAL(clicked()), SIGNAL(clearVolatileCacheClicked()) );
+
+    connect( d->ui_cacheSettings.button_clearPersistentCache,
+             SIGNAL(clicked()), SIGNAL(clearPersistentCacheClicked()) );
 
     // plugin page
+
     d->m_pluginModel.setRenderPlugins( d->m_marbleWidget->renderPlugins() );
     d->w_pluginSettings = new MarblePluginSettingsWidget( this );
     d->w_pluginSettings->setModel( &d->m_pluginModel );
@@ -129,22 +139,27 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget *marbleWidget,
     tabWidget->addTab( d->w_pluginSettings, i18n( "Plugins" ) );
 
     // Setting the icons for the plugin dialog.
+
     d->w_pluginSettings->setConfigIcon(QIcon(QStringLiteral(":/icons/settings-configure.png")));
 
-    connect( this, SIGNAL(rejected()), &d->m_pluginModel, SLOT(retrievePluginState()) );
-    connect( this, SIGNAL(accepted()), &d->m_pluginModel, SLOT(applyPluginState()) );
+    connect( this, SIGNAL(rejected()),
+             &d->m_pluginModel, SLOT(retrievePluginState()) );
+
+    connect( this, SIGNAL(accepted()),
+             &d->m_pluginModel, SLOT(applyPluginState()) );
 
     // Layout
-    QVBoxLayout *layout = new QVBoxLayout( this );
+
+    QVBoxLayout* layout = new QVBoxLayout( this );
     layout->addWidget( tabWidget );
     layout->addWidget( buttons );
 
     this->setLayout( layout );
 
     // When the settings have been changed, write to disk.
-    connect( this, SIGNAL(settingsChanged()), this, SLOT(syncSettings()) );
 
-    initializeCustomTimezone();
+    connect( this, SIGNAL(settingsChanged()),
+             this, SLOT(syncSettings()) );
 }
 
 QtMarbleConfigDialog::~QtMarbleConfigDialog()
@@ -160,13 +175,13 @@ void QtMarbleConfigDialog::syncSettings()
 
     // Make sure that no proxy is used for an empty string or the default value:
 
-    if (proxyUrl().isEmpty() || proxyUrl() == QLatin1String("http://"))
+    if (proxyUrl().isEmpty() || (proxyUrl() == QLatin1String("http://")))
     {
         proxy.setType( QNetworkProxy::NoProxy );
     }
     else
     {
-        if ( proxyType() == Marble::Socks5Proxy )
+        if      ( proxyType() == Marble::Socks5Proxy )
         {
             proxy.setType( QNetworkProxy::Socks5Proxy );
         }
@@ -196,9 +211,11 @@ void QtMarbleConfigDialog::syncSettings()
 void QtMarbleConfigDialog::readSettings()
 {
     // Sync settings to make sure that we read the current settings.
+
     syncSettings();
 
     // View
+
     d->ui_viewSettings.kcfg_distanceUnit->setCurrentIndex( measurementSystem() );
     d->ui_viewSettings.kcfg_angleUnit->setCurrentIndex( angleUnit() );
     d->ui_viewSettings.kcfg_stillQuality->setCurrentIndex( stillQuality() );
@@ -207,6 +224,7 @@ void QtMarbleConfigDialog::readSettings()
     d->ui_viewSettings.kcfg_mapFont->setCurrentFont( mapFont() );
 
     // Navigation
+
     d->ui_navigationSettings.kcfg_dragLocation->setCurrentIndex( Marble::KeepAxisVertically );
     d->ui_navigationSettings.kcfg_onStartup->setCurrentIndex( onStartup() );
     d->ui_navigationSettings.kcfg_inertialEarthRotation->setChecked( inertialEarthRotation() );
@@ -230,6 +248,7 @@ void QtMarbleConfigDialog::readSettings()
     d->ui_navigationSettings.kcfg_externalMapEditor->setCurrentIndex( editorIndex );
 
     // Cache
+
     d->ui_cacheSettings.kcfg_volatileTileCacheLimit->setValue( volatileTileCacheLimit() );
     d->ui_cacheSettings.kcfg_persistentTileCacheLimit->setValue( persistentTileCacheLimit() );
     d->ui_cacheSettings.kcfg_proxyUrl->setText( proxyUrl() );
@@ -239,33 +258,12 @@ void QtMarbleConfigDialog::readSettings()
     d->ui_cacheSettings.kcfg_proxyType->setCurrentIndex( proxyType() );
     d->ui_cacheSettings.kcfg_proxyAuth->setChecked( proxyAuth() );
 
-    // Time
-    d->ui_timeSettings.kcfg_systemTimezone->setChecked( systemTimezone() );
-    d->ui_timeSettings.kcfg_customTimezone->setChecked( customTimezone() );
-    d->ui_timeSettings.kcfg_chosenTimezone->setCurrentIndex( chosenTimezone() );
-    d->ui_timeSettings.kcfg_utc->setChecked( UTC() );
-    d->ui_timeSettings.kcfg_systemTime->setChecked( systemTime() );
-    d->ui_timeSettings.kcfg_lastSessionTime->setChecked( lastSessionTime() );
-
-    if( systemTimezone() == true  )
-    {
-        QDateTime localTime = QDateTime::currentDateTime().toLocalTime();
-        localTime.setTimeSpec( Qt::UTC );
-        d->m_marbleWidget->model()->setClockTimezone( QDateTime::currentDateTime().toUTC().secsTo( localTime ) );
-    }
-    else if( UTC() == true )
-    {
-        d->m_marbleWidget->model()->setClockTimezone( 0 );
-    }
-    else if( customTimezone() == true )
-    {
-        d->m_marbleWidget->model()->setClockTimezone( d->m_timezone.value( chosenTimezone() ) );
-    }
-
     // Read the settings of the plugins
+
     d->m_marbleWidget->readPluginSettings( d->m_settings );
 
     // The settings loaded in the config dialog have been changed.
+
     Q_EMIT settingsChanged();
 }
 
@@ -287,19 +285,19 @@ void QtMarbleConfigDialog::writeSettings()
     d->m_settings.setValue( QLatin1String("mouseViewRotation"), d->ui_navigationSettings.kcfg_mouseViewRotation->isChecked() );
     d->m_settings.setValue( QLatin1String("animateTargetVoyage"), d->ui_navigationSettings.kcfg_animateTargetVoyage->isChecked() );
 
-    if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 0 )
+    if      ( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 0 )
     {
         d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("") );
     }
-    else if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 1 )
+    else if ( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 1 )
     {
         d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("potlatch") );
     }
-    else if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 2 )
+    else if ( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 2 )
     {
         d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("josm") );
     }
-    else if( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 3 )
+    else if ( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 3 )
     {
         d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("merkaartor") );
     }
@@ -330,16 +328,8 @@ void QtMarbleConfigDialog::writeSettings()
 
     d->m_settings.endGroup();
 
-    d->m_settings.beginGroup( QLatin1String("Time") );
-    d->m_settings.setValue( QLatin1String("systemTimezone"), d->ui_timeSettings.kcfg_systemTimezone->isChecked() );
-    d->m_settings.setValue( QLatin1String("UTC"), d->ui_timeSettings.kcfg_utc->isChecked() );
-    d->m_settings.setValue( QLatin1String("customTimezone"), d->ui_timeSettings.kcfg_customTimezone->isChecked() );
-    d->m_settings.setValue( QLatin1String("systemTime"), d->ui_timeSettings.kcfg_systemTime->isChecked() );
-    d->m_settings.setValue( QLatin1String("lastSessionTime"), d->ui_timeSettings.kcfg_lastSessionTime->isChecked() );
-    d->m_settings.setValue( QLatin1String("chosenTimezone"), d->ui_timeSettings.kcfg_chosenTimezone->currentIndex() );
-    d->m_settings.endGroup();
-
     // Plugins
+
     d->m_marbleWidget->writePluginSettings( d->m_settings );
 
     Q_EMIT settingsChanged();
@@ -347,11 +337,13 @@ void QtMarbleConfigDialog::writeSettings()
 
 MarbleLocale::MeasurementSystem QtMarbleConfigDialog::measurementSystem() const
 {
-    if( d->m_settings.contains( QString::fromUtf8("View/distanceUnit") ) ) {
+    if ( d->m_settings.contains( QString::fromUtf8("View/distanceUnit") ) )
+    {
         return (MarbleLocale::MeasurementSystem)d->m_settings.value( QString::fromUtf8("View/distanceUnit") ).toInt();
     }
 
-    MarbleLocale *locale = MarbleGlobal::getInstance()->locale();
+    MarbleLocale* locale = MarbleGlobal::getInstance()->locale();
+
     return locale->measurementSystem();
 }
 
@@ -401,6 +393,7 @@ QString QtMarbleConfigDialog::externalMapEditor() const
 bool QtMarbleConfigDialog::animateTargetVoyage() const
 {
     const bool smallScreen = MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen;
+
     return d->m_settings.value( QLatin1String("Navigation/animateTargetVoyage"), smallScreen ).toBool();
 }
 
@@ -417,6 +410,7 @@ bool QtMarbleConfigDialog::mouseViewRotation() const
 int QtMarbleConfigDialog::volatileTileCacheLimit() const
 {
     int defaultValue = (MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen) ? 6 : 100;
+
     return d->m_settings.value( QLatin1String("Cache/volatileTileCacheLimit"), defaultValue ).toInt();
 }
 
@@ -453,74 +447,6 @@ bool QtMarbleConfigDialog::proxyType() const
 bool QtMarbleConfigDialog::proxyAuth() const
 {
     return d->m_settings.value( QLatin1String("Cache/proxyAuth"), false ).toBool();
-}
-
-bool QtMarbleConfigDialog::systemTimezone() const
-{
-    return d->m_settings.value( QLatin1String("Time/systemTimezone"), true ).toBool();
-}
-
-bool QtMarbleConfigDialog::customTimezone() const
-{
-    return d->m_settings.value( QLatin1String("Time/customTimezone"), false ).toBool();
-}
-
-bool QtMarbleConfigDialog::UTC() const
-{
-    return d->m_settings.value( QLatin1String("Time/UTC"), false ).toBool();
-}
-
-bool QtMarbleConfigDialog::systemTime() const
-{
-    return d->m_settings.value( QLatin1String("Time/systemTime"), true ).toBool();
-}
-
-bool QtMarbleConfigDialog::lastSessionTime() const
-{
-    return d->m_settings.value( QLatin1String("Time/lastSessionTime"), false ).toBool();
-}
-
-int QtMarbleConfigDialog::chosenTimezone() const
-{
-    return d->m_settings.value( QLatin1String("Time/chosenTimezone"), 0 ).toInt();
-}
-
-void QtMarbleConfigDialog::initializeCustomTimezone()
-{
-    if( d->m_timezone.count() == 0)
-    {
-        d->m_timezone.insert( 0, 0 );
-        d->m_timezone.insert( 1, 3600 );
-        d->m_timezone.insert( 2, 7200 );
-        d->m_timezone.insert( 3, 7200 );
-        d->m_timezone.insert( 4, 10800 );
-        d->m_timezone.insert( 5, 12600 );
-        d->m_timezone.insert( 6, 14400 );
-        d->m_timezone.insert( 7, 18000 );
-        d->m_timezone.insert( 8, 19800 );
-        d->m_timezone.insert( 9, 21600 );
-        d->m_timezone.insert( 10, 25200 );
-        d->m_timezone.insert( 11, 28800 );
-        d->m_timezone.insert( 12, 32400 );
-        d->m_timezone.insert( 13, 34200 );
-        d->m_timezone.insert( 14, 36000 );
-        d->m_timezone.insert( 15, 39600 );
-        d->m_timezone.insert( 16, 43200 );
-        d->m_timezone.insert( 17, -39600 );
-        d->m_timezone.insert( 18, -36000 );
-        d->m_timezone.insert( 19, -32400 );
-        d->m_timezone.insert( 20, -28800 );
-        d->m_timezone.insert( 21, -25200 );
-        d->m_timezone.insert( 22, -25200 );
-        d->m_timezone.insert( 23, -21600 );
-        d->m_timezone.insert( 24, -18000 );
-        d->m_timezone.insert( 25, -18000 );
-        d->m_timezone.insert( 26, -14400 );
-        d->m_timezone.insert( 27, -12600 );
-        d->m_timezone.insert( 28, -10800 );
-        d->m_timezone.insert( 29, -10800 );
-        d->m_timezone.insert( 30, -3600 );
-    }
 }
 
 }
