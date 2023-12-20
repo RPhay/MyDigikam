@@ -74,6 +74,12 @@ public:
     void emptyDTrashItems(IOJobData* const data);
 
     /**
+     * @brief creates a job for count trash items from all collections
+     * @param data: IOJobsData container
+     */
+    void buildTrashCounters();
+
+    /**
      * @brief isCanceled
      * @return true if the thread was interrupted
      */
@@ -112,6 +118,7 @@ Q_SIGNALS:
     void signalRenameFailed(const QUrl& url);
 
     void collectionTrashItemInfo(const DTrashItemInfo& trashItemInfo);
+    void signalTrashCountersMap(const QMap<QString, int>& counterMap);
 
 private:
 

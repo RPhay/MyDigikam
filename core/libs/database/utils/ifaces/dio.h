@@ -20,6 +20,8 @@
 // Qt includes
 
 #include <QObject>
+#include <QMutex>
+#include <QMap>
 
 // Local includes
 
@@ -88,11 +90,14 @@ public:
     static void rename(const QUrl& src, const QString& newName, bool overwrite = false);
 
     /// Trash operations
+    static int  getTrashCounter(const QString& albumRootPath);
     static void restoreTrash(const DTrashItemInfoList& infos);
     static void emptyTrash(const DTrashItemInfoList& infos);
+    static void buildCollectionTrashCounters();
 
 Q_SIGNALS:
 
+    void signalTrashCounters();
     void signalTrashFinished();
     void signalRenameFinished();
     void signalRenameFailed(const QUrl& url);
@@ -110,8 +115,9 @@ private:
 private Q_SLOTS:
 
     void slotResult();
-    void slotOneProccessed(const QUrl& url);
     void slotCancel(ProgressItem* item);
+    void slotOneProccessed(const QUrl& url);
+    void slotTrashCounterMap(const QMap<QString, int>& counterMap);
 
 private:
 
@@ -122,7 +128,9 @@ private:
 
 private:
 
-    int          m_processingCount;
+    int                m_processingCount;
+    QMap<QString, int> m_trashCounterMap;
+    QMutex             m_trashCounterMutex;
 
     friend class DIOCreator;
 };

@@ -22,6 +22,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QMessageBox>
+#include <QMutexLocker>
 #include <QApplication>
 #include <QAbstractButton>
 
@@ -224,6 +225,22 @@ void DIO::del(PAlbum* const album, bool useTrash)
                                                  : IOJobData::Delete, album));
 }
 
+// Get Trash Counter --------------------------------------------------
+
+int DIO::getTrashCounter(const QString& albumRootPath)
+{
+    QString rootPath = albumRootPath;
+
+    if (rootPath.endsWith(QLatin1Char('/')))
+    {
+        rootPath.chop(1);
+    }
+
+    QMutexLocker locker(&instance()->m_trashCounterMutex);
+
+    return instance()->m_trashCounterMap.value(rootPath, 0);
+}
+
 // Restore Trash ------------------------------------------------------
 
 void DIO::restoreTrash(const DTrashItemInfoList& infos)
@@ -236,6 +253,16 @@ void DIO::restoreTrash(const DTrashItemInfoList& infos)
 void DIO::emptyTrash(const DTrashItemInfoList& infos)
 {
     instance()->createJob(new IOJobData(IOJobData::Empty, infos));
+}
+
+// Build Trash Counters -----------------------------------------------
+
+void DIO::buildCollectionTrashCounters()
+{
+    IOJobsThread* const jobThread = IOJobsManager::instance()->buildCollectionTrashCounters();
+
+    connect(jobThread, SIGNAL(signalTrashCountersMap(QMap<QString,int>)),
+            instance(), SLOT(slotTrashCounterMap(QMap<QString,int>)));
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -459,6 +486,13 @@ void DIO::slotResult()
                 QString scanPath = data->destUrl().adjusted(QUrl::StripTrailingSlash).toLocalFile();
                 ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
             }
+        }
+
+        if ((operation == IOJobData::Trash) ||
+            (operation == IOJobData::Empty) ||
+            (operation == IOJobData::Restore))
+        {
+            buildCollectionTrashCounters();
         }
     }
 
@@ -898,6 +932,17 @@ void DIO::slotCancel(ProgressItem* item)
     {
         item->setComplete();
     }
+}
+
+void DIO::slotTrashCounterMap(const QMap<QString, int>& counterMap)
+{
+    {
+        QMutexLocker locker(&m_trashCounterMutex);
+
+        m_trashCounterMap = counterMap;
+    }
+
+    Q_EMIT signalTrashCounters();
 }
 
 void DIO::addAlbumChildrenToList(QList<int>& list, Album* const album)

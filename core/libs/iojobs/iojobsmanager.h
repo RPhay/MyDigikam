@@ -58,6 +58,12 @@ public:
      */
     IOJobsThread* startDTrashItemsListingForCollection(const QString& collectionPath);
 
+    /**
+     * @brief Starts a thread for count trash items for all collections
+     * @return IOJobsThread pointer for signal/slot connection
+     */
+    IOJobsThread* buildCollectionTrashCounters();
+
 private:
 
     // Disable

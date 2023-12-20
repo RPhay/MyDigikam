@@ -181,6 +181,10 @@ DigikamApp::DigikamApp()
         loop.exec();
     }
 
+    // Build trash counters from all collections
+
+    DIO::buildCollectionTrashCounters();
+
     // Read albums from database
 
     if (d->splashScreen)

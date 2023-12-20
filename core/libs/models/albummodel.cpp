@@ -77,8 +77,14 @@ QVariant AlbumModel::albumData(Album* a, int role) const
          showCount()              &&
          a->isTrashAlbum())
     {
-        //return QString::fromUtf8("%1 (%2)").arg(albumName(a)).arg(a->countTrashAlbum());
-        return QString::fromUtf8("%1").arg(albumName(a));
+        PAlbum* const palbum = static_cast<PAlbum*>(a->parent());
+
+        if (palbum)
+        {
+            int counter = DIO::getTrashCounter(palbum->folderPath());
+
+            return QString::fromUtf8("%1 (%2)").arg(albumName(a)).arg(counter);
+        }
     }
 
     return AbstractCheckableAlbumModel::albumData(a, role);

@@ -36,5 +36,6 @@
 #include "applicationsettings.h"
 #include "albumthumbnailloader.h"
 #include "facetags.h"
+#include "dio.h"
 
 #endif // DIGIKAM_ALBUM_MODEL_P_H

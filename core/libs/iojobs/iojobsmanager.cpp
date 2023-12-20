@@ -102,4 +102,18 @@ IOJobsThread* IOJobsManager::startDTrashItemsListingForCollection(const QString&
     return thread;
 }
 
+IOJobsThread* IOJobsManager::buildCollectionTrashCounters()
+{
+    IOJobsThread* const thread = new IOJobsThread(this);
+    thread->buildTrashCounters();
+
+    connect(thread, SIGNAL(signalFinished()),
+            thread, SLOT(deleteLater()),
+            Qt::QueuedConnection);
+
+    thread->start();
+
+    return thread;
+}
+
 } // namespace Digikam

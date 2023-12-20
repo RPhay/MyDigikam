@@ -202,6 +202,30 @@ private:
     IOJobData* m_data;
 };
 
+// ----------------------------------------------
+
+class DIGIKAM_GUI_EXPORT BuildTrashCountersJob : public IOJob
+{
+    Q_OBJECT
+
+public:
+
+    explicit BuildTrashCountersJob();
+
+Q_SIGNALS:
+
+    void signalTrashCountersMap(const QMap<QString, int>& counterMap);
+
+protected:
+
+    void run() override;
+
+private:
+
+    // Disable
+    BuildTrashCountersJob(QObject*);
+};
+
 } // namespace Digikam
 
 #endif // DIGIKAM_IO_JOB_H

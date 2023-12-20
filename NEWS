@@ -67,7 +67,7 @@ BUGFIXES:
 054 ==> 478674 - Find new items at startup very slow.
 055 ==> 478550 - Localization - main language settings are not used (can't change from German to US-English).
 056 ==> 478728 - Lock while trying to name a face.
-057 ==> 
+057 ==> 478722 - Application slowdown due to large trash.
 058 ==> 
 059 ==> 
 060 ==> 

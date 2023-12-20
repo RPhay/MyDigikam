@@ -40,6 +40,7 @@
 #include "thumbnailloadthread.h"
 #include "thumbnailsize.h"
 #include "thumbnailcreator.h"
+#include "dio.h"
 
 namespace Digikam
 {
@@ -179,12 +180,16 @@ QPixmap AlbumThumbnailLoader::getStandardAlbumIcon(PAlbum* const album, Relative
     }
     else if (album->isTrashAlbum())
     {
-/*
-        if (album->countTrashAlbum() > 0)
+        PAlbum* const palbum = static_cast<PAlbum*>(album->parent());
+
+        if (palbum)
         {
-            return getStandardFullTrashIcon(relativeSize);
+            if (DIO::getTrashCounter(palbum->folderPath()) > 0)
+            {
+                return getStandardFullTrashIcon(relativeSize);
+            }
         }
-*/
+
         return getStandardEmptyTrashIcon(relativeSize);
     }
 

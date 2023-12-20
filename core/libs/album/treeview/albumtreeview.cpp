@@ -38,6 +38,10 @@ AlbumTreeView::AlbumTreeView(QWidget* const parent, Flags flags)
     {
         setAlbumModel(new AlbumModel(AlbumModel::IncludeRootAlbum, this));
     }
+/*
+    connect(DIO::instance(), SIGNAL(signalTrashCounters()),
+            this, SLOT(repaint()));
+*/
 }
 
 AlbumTreeView::~AlbumTreeView()

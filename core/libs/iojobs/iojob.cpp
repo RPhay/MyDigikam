@@ -34,6 +34,7 @@
 #include "coredbaccess.h"
 #include "albummanager.h"
 #include "dfileoperations.h"
+#include "collectionmanager.h"
 #include "coredboperationgroup.h"
 
 namespace Digikam
@@ -528,6 +529,39 @@ void EmptyDTrashItemsJob::run()
 
         CoreDbAccess().db()->removeItemsPermanently(imagesToRemove, albumsFromImages);
     }
+
+    Q_EMIT signalDone();
+}
+
+// ----------------------------------------------
+
+BuildTrashCountersJob::BuildTrashCountersJob()
+{
+}
+
+void BuildTrashCountersJob::run()
+{
+    QMap<QString, int> trashCountersMap;
+    QList<CollectionLocation> allLocations = CollectionManager::instance()->allAvailableLocations();
+
+    Q_FOREACH (const CollectionLocation& location, allLocations)
+    {
+        QString path = location.albumRootPath() + QLatin1Char('/') +
+                       DTrash::TRASH_FOLDER     + QLatin1Char('/') +
+                       DTrash::FILES_FOLDER;
+        QDir dir(path, QLatin1String(""), QDir::Unsorted, QDir::Files);
+
+        if (dir.exists() && dir.isReadable())
+        {
+            trashCountersMap.insert(location.albumRootPath(), dir.count());
+        }
+        else
+        {
+            trashCountersMap.insert(location.albumRootPath(), 0);
+        }
+    }
+
+    Q_EMIT signalTrashCountersMap(trashCountersMap);
 
     Q_EMIT signalDone();
 }

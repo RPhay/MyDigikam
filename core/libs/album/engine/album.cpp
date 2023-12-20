@@ -354,25 +354,6 @@ bool Album::isTrashAlbum() const
     return false;
 }
 
-int Album::countTrashAlbum() const
-{
-    if (isTrashAlbum())
-    {
-        PAlbum* const palbum = static_cast<PAlbum*>(parent());
-
-        if (palbum)
-        {
-            QString path = palbum->folderPath() + DTrash::TRASH_FOLDER +
-                           QLatin1Char('/')     + DTrash::FILES_FOLDER;
-            QDir dir(path, QLatin1String(""), QDir::Unsorted, QDir::Files);
-
-            return dir.count();
-        }
-    }
-
-    return 0;
-}
-
 void Album::setUsedByLabelsTree(bool isUsed)
 {
     m_usedByLabelsTree = isUsed;
@@ -637,8 +618,8 @@ QMap<QString, QString> TAlbum::properties() const
 int DAlbum::m_uniqueID = 0;
 
 DAlbum::DAlbum(const QDate& date, bool root, Range range)
-    : Album(Album::DATE, root ? 0 : ++m_uniqueID, root),
-      m_date(date),
+    : Album  (Album::DATE, root ? 0 : ++m_uniqueID, root),
+      m_date (date),
       m_range(range)
 {
     // Set the name of the date album

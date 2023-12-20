@@ -139,7 +139,6 @@ void IOJobsThread::listDTrashItems(const QString& collectionPath)
             this, SIGNAL(signalFinished()));
 
     collection.insert(j, 0);
-    d->jobsCount++;
 
     appendJobs(collection);
 }
@@ -170,6 +169,23 @@ void IOJobsThread::emptyDTrashItems(IOJobData* const data)
 
     collection.insert(j, 0);
     d->jobsCount++;
+
+    appendJobs(collection);
+}
+
+void IOJobsThread::buildTrashCounters()
+{
+    ActionJobCollection collection;
+
+    BuildTrashCountersJob* const j = new BuildTrashCountersJob();
+
+    connect(j, SIGNAL(signalTrashCountersMap(QMap<QString,int>)),
+            this, SIGNAL(signalTrashCountersMap(QMap<QString,int>)));
+
+    connect(j, SIGNAL(signalDone()),
+            this, SIGNAL(signalFinished()));
+
+    collection.insert(j, 0);
 
     appendJobs(collection);
 }
