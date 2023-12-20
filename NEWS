@@ -66,7 +66,7 @@ BUGFIXES:
 053 ==> 478693 - Unable to add a collection if its a sub folder of an existing collection.
 054 ==> 478674 - Find new items at startup very slow.
 055 ==> 478550 - Localization - main language settings are not used (can't change from German to US-English).
-056 ==> 
+056 ==> 478728 - Lock while trying to name a face.
 057 ==> 
 058 ==> 
 059 ==> 
