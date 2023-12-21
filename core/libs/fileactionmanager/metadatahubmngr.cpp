@@ -168,3 +168,5 @@ void MetadataHubMngr::requestShutDown()
 }
 
 } // namespace Digikam
+
+#include "moc_metadatahubmngr.cpp"

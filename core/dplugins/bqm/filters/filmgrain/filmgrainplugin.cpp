@@ -99,3 +99,5 @@ void FilmGrainPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmFilmGrainPlugin
+
+#include "moc_filmgrainplugin.cpp"

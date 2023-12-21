@@ -152,3 +152,5 @@ QStringList IccProfilesSettings::favoriteProfiles(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_iccprofilesettings.cpp"

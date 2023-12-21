@@ -871,3 +871,5 @@ void ColorCorrectionDlg::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_colorcorrectiondlg.cpp"

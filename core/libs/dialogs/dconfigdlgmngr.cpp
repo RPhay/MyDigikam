@@ -772,3 +772,5 @@ bool DConfigDlgMngr::isDefault() const
 }
 
 } // namespace Digikam
+
+#include "moc_dconfigdlgmngr.cpp"

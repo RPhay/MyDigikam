@@ -602,3 +602,5 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
 }
 
 } // namespace Digikam
+
+#include "moc_importitempropertiestab.cpp"

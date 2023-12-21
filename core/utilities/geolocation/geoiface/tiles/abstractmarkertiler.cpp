@@ -533,3 +533,5 @@ int AbstractMarkerTiler::Tile::nextNonEmptyIndex(int linearIndex) const
 }
 
 } // namespace Digikam
+
+#include "moc_abstractmarkertiler.cpp"

@@ -378,3 +378,5 @@ bool IPTCEditWidget::isModified() const
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_iptceditwidget.cpp"

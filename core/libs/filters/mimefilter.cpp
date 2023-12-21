@@ -66,3 +66,5 @@ int MimeFilter::mimeFilter()
 }
 
 } // namespace Digikam
+
+#include "moc_mimefilter.cpp"

@@ -286,3 +286,5 @@ void BackendOsmRG::cancelRequests()
 }
 
 } // namespace Digikam
+
+#include "moc_backend-osm-rg.cpp"

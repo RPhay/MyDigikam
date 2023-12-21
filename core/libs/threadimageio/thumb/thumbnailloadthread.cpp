@@ -816,3 +816,5 @@ QList<QImage> ThumbnailImageCatcher::waitForThumbnails()
 }
 
 } // namespace Digikam
+
+#include "moc_thumbnailloadthread.cpp"

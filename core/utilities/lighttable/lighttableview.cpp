@@ -472,3 +472,5 @@ void LightTableView::toggleFullScreen(bool set)
 }
 
 } // namespace Digikam
+
+#include "moc_lighttableview.cpp"

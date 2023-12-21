@@ -702,3 +702,5 @@ QImage AlbumThumbnailLoader::getAlbumPreviewDirectly(PAlbum* const album, int si
 */
 
 } // namespace Digikam
+
+#include "moc_albumthumbnailloader.cpp"

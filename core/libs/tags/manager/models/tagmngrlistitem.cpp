@@ -210,3 +210,5 @@ bool ListItem::equal(ListItem* const item) const
 }
 
 } // namespace Digikam
+
+#include "moc_tagmngrlistitem.cpp"

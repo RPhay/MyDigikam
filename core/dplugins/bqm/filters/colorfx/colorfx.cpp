@@ -113,3 +113,5 @@ bool ColorFX::toolOperations()
 }
 
 } // namespace DigikamBqmColorFXPlugin
+
+#include "moc_colorfx.cpp"

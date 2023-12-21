@@ -429,3 +429,5 @@ void AltLangStrEdit::slotTranslationFinished()
 }
 
 } // namespace Digikam
+
+#include "moc_altlangstredit.cpp"

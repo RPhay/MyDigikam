@@ -563,3 +563,5 @@ void ImportPreviewView::slotDeleteItem()
 } // namespace Digikam
 
 #include "importpreviewview.moc"
+
+#include "moc_importpreviewview.cpp"

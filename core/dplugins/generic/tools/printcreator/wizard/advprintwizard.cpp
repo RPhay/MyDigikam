@@ -401,3 +401,5 @@ bool AdvPrintWizard::eventFilter(QObject* o, QEvent* e)
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_advprintwizard.cpp"

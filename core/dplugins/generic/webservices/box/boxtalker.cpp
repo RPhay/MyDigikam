@@ -505,3 +505,5 @@ void BOXTalker::parseResponseCreateFolder(const QByteArray& data)
 }
 
 } // namespace DigikamGenericBoxPlugin
+
+#include "moc_boxtalker.cpp"

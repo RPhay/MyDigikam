@@ -71,3 +71,5 @@ void RecognitionWorker::aboutToDeactivate()
 }
 
 } // namespace Digikam
+
+#include "moc_recognitionworker.cpp"

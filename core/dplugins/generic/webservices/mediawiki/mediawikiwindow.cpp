@@ -380,3 +380,5 @@ bool MediaWikiWindow::eventFilter(QObject* /*obj*/, QEvent* event)
 }
 
 } // namespace DigikamGenericMediaWikiPlugin
+
+#include "moc_mediawikiwindow.cpp"

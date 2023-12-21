@@ -181,3 +181,5 @@ float CompressionDetector::normalize(const float number)
 }
 
 } // namspace Digikam
+
+#include "moc_compression_detector.cpp"

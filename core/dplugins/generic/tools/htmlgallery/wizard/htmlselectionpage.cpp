@@ -166,3 +166,5 @@ bool HTMLSelectionPage::isComplete() const
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_htmlselectionpage.cpp"

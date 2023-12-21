@@ -197,3 +197,5 @@ void ScanStateFilter::dispatch()
 }
 
 } // namespace Digikam
+
+#include "moc_scanstatefilter.cpp"

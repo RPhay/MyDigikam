@@ -700,3 +700,5 @@ void ExpoBlendingDlg::slotCloseClicked()
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_expoblendingdlg.cpp"

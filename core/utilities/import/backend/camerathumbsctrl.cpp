@@ -195,3 +195,5 @@ void CameraThumbsCtrl::setCacheSize(int numberOfItems)
 }
 
 } // namespace Digikam
+
+#include "moc_camerathumbsctrl.cpp"

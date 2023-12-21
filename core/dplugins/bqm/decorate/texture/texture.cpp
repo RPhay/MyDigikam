@@ -108,3 +108,5 @@ bool Texture::toolOperations()
 }
 
 } // namespace DigikamBqmTexturePlugin
+
+#include "moc_texture.cpp"

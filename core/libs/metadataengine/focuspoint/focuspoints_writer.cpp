@@ -103,3 +103,5 @@ void FocusPointsWriter::writeFocusPoint(const QRectF& rectF)
 }
 
 } // namespace Digikam
+
+#include "moc_focuspoints_writer.cpp"

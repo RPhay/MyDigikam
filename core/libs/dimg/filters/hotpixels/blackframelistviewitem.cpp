@@ -210,3 +210,5 @@ void BlackFrameListViewItem::emitHotPixelsParsed()
 }
 
 } // namespace Digikam
+
+#include "moc_blackframelistviewitem.cpp"

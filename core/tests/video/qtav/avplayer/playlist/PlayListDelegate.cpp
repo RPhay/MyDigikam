@@ -143,3 +143,5 @@ QSize PlayListDelegate::sizeHint(const QStyleOptionViewItem& option,
 }
 
 } // namespace AVPlayer
+
+#include "moc_PlayListDelegate.cpp"

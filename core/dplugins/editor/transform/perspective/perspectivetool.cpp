@@ -273,3 +273,5 @@ void PerspectiveTool::setBackgroundColor(const QColor& bg)
 }
 
 } // namespace DigikamEditorPerspectiveToolPlugin
+
+#include "moc_perspectivetool.cpp"

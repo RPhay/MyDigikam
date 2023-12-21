@@ -667,3 +667,5 @@ void PanoManager::startWizard()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_panomanager.cpp"

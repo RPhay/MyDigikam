@@ -56,3 +56,5 @@ WebWidget::~WebWidget()
 }
 
 } // namespace Digikam
+
+#include "moc_webwidget.cpp"

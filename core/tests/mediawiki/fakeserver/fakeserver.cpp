@@ -214,3 +214,5 @@ void FakeServer::clearRequest()
 {
     m_request.clear();
 }
+
+#include "moc_fakeserver.cpp"

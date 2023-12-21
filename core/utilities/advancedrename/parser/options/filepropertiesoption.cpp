@@ -102,3 +102,5 @@ QString FilePropertiesOption::parseOperation(ParseSettings& settings, const QReg
 }
 
 } // namespace Digikam
+
+#include "moc_filepropertiesoption.cpp"

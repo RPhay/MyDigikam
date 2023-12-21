@@ -875,3 +875,5 @@ void MapViewModelHelper::slotImageChange(const ImageChangeset& changeset)
 }
 
 } // namespace Digikam
+
+#include "moc_mapwidgetview.cpp"

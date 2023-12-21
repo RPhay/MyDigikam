@@ -664,3 +664,5 @@ void ManagedLoadSaveThread::save(const DImg& image, const QString& filePath, con
 }
 
 } // namespace Digikam
+
+#include "moc_managedloadsavethread.cpp"

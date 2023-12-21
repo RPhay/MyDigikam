@@ -164,3 +164,5 @@ void DatabaseMysqlInitTest::testMysqlInit()
 
     DatabaseServerStarter::instance()->stopServerManagerProcess();
 }
+
+#include "moc_databasemysqlinit_utest.cpp"

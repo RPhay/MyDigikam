@@ -147,3 +147,5 @@ void FTPlugin::slotFileTransferImport()
 }
 
 } // namespace DigikamGenericFileTransferPlugin
+
+#include "moc_ftplugin.cpp"

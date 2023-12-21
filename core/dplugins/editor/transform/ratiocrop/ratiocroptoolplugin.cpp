@@ -121,3 +121,5 @@ void RatioCropToolPlugin::slotRatioCrop()
 }
 
 } // namespace DigikamEditorRatioCropToolPlugin
+
+#include "moc_ratiocroptoolplugin.cpp"

@@ -221,3 +221,5 @@ QString DItemDelegate::squeezedText(const QFontMetrics& fm, int width, const QSt
 }
 
 } // namespace Digikam
+
+#include "moc_ditemdelegate.cpp"

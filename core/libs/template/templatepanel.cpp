@@ -500,3 +500,5 @@ void TemplatePanel::apply()
 }
 
 } // namespace Digikam
+
+#include "moc_templatepanel.cpp"

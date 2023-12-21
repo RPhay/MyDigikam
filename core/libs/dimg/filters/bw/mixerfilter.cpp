@@ -227,3 +227,5 @@ void MixerFilter::readParameters(const Digikam::FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_mixerfilter.cpp"

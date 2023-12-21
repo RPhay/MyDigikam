@@ -942,3 +942,5 @@ bool DatabaseSettingsWidget::isNotEqualToThumbName(const QString& name)
 }
 
 } // namespace Digikam
+
+#include "moc_dbsettingswidget.cpp"

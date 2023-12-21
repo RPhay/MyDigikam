@@ -261,3 +261,5 @@ void ShowfotoSetupToolTip::applySettings()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotosetuptooltip.cpp"

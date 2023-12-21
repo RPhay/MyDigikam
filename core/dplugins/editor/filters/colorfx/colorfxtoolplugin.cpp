@@ -118,3 +118,5 @@ void ColorFXToolPlugin::slotColorFX()
 }
 
 } // namespace DigikamEditorColorFxToolPlugin
+
+#include "moc_colorfxtoolplugin.cpp"

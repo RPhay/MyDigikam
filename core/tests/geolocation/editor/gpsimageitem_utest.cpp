@@ -114,3 +114,5 @@ void TestGPSItemContainer::testBasicLoading()
 }
 
 QTEST_GUILESS_MAIN(TestGPSItemContainer)
+
+#include "moc_gpsimageitem_utest.cpp"

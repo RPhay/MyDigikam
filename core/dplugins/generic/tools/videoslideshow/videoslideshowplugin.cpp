@@ -111,3 +111,5 @@ void VideoSlideShowPlugin::slotVideoSlideShow()
 }
 
 } // namespace DigikamGenericVideoSlideShowPlugin
+
+#include "moc_videoslideshowplugin.cpp"

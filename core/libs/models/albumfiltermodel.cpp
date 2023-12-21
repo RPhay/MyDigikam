@@ -525,3 +525,5 @@ void AlbumFilterModel::slotAlbumsHaveBeenUpdated(int type)
 }
 
 } // namespace Digikam
+
+#include "moc_albumfiltermodel.cpp"

@@ -278,3 +278,5 @@ void AVEncoderPrivate::applyOptionsForContext()
 }
 
 } // namespace QtAV
+
+#include "moc_AVEncoder.cpp"

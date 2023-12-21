@@ -174,3 +174,5 @@ GalleryTheme::Ptr HTMLWizard::galleryTheme() const
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_htmlwizard.cpp"

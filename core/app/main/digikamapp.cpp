@@ -1218,3 +1218,5 @@ DInfoInterface* DigikamApp::infoIface(DPluginAction* const ac)
 }
 
 } // namespace Digikam
+
+#include "moc_digikamapp.cpp"

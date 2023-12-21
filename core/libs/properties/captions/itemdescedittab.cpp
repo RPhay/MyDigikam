@@ -638,3 +638,5 @@ void ItemDescEditTab::slotApplyChangesToAllVersions()
 }
 
 } // namespace Digikam
+
+#include "moc_itemdescedittab.cpp"

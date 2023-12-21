@@ -615,3 +615,5 @@ void StackedView::slotPreviewLoaded(bool)
 }
 
 } // namespace Digikam
+
+#include "moc_stackedview.cpp"

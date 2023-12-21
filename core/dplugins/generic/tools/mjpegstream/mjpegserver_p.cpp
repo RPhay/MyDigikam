@@ -303,3 +303,5 @@ void MjpegServer::Private::clientWriteMultithreaded(int client, const QByteArray
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
+
+#include "moc_mjpegserver_p.cpp"

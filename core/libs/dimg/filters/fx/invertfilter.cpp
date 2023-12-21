@@ -104,3 +104,5 @@ void InvertFilter::readParameters(const FilterAction& /*action*/)
 }
 
 } // namespace Digikam
+
+#include "moc_invertfilter.cpp"

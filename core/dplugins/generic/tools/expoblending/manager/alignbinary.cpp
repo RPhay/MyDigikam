@@ -37,3 +37,5 @@ AlignBinary::~AlignBinary()
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_alignbinary.cpp"

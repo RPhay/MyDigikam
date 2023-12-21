@@ -257,3 +257,5 @@ void DImgAbstractHistoryTest::slotImageLoaded(const QString&, bool)
 void DImgAbstractHistoryTest::slotImageSaved(const QString&, bool)
 {
 }
+
+#include "moc_dimgabstracthistory_utest.cpp"

@@ -136,3 +136,5 @@ void FbPlugin::slotFaceBook()
 }
 
 } // namespace DigikamGenericFaceBookPlugin
+
+#include "moc_fbplugin.cpp"

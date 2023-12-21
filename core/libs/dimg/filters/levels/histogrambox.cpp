@@ -402,3 +402,5 @@ void HistogramBox::setHistogramType(HistogramBoxType type)
 }
 
 } // namespace Digikam
+
+#include "moc_histogrambox.cpp"

@@ -99,3 +99,5 @@ void UniqueModifier::reset()
 }
 
 } // namespace Digikam
+
+#include "moc_uniquemodifier.cpp"

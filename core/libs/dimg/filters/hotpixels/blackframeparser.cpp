@@ -262,3 +262,5 @@ void BlackFrameParser::validateAndConsolidate(HotPixelProps* const a, HotPixelPr
 }
 
 } // namespace Digikam
+
+#include "moc_blackframeparser.cpp"

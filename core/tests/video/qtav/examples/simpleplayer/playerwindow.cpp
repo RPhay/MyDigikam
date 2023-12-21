@@ -135,3 +135,5 @@ void PlayerWindow::updateSliderUnit()
     m_unit = m_player->notifyInterval();
     updateSlider();
 }
+
+#include "moc_playerwindow.cpp"

@@ -279,3 +279,5 @@ TableViewColumnConfigurationWidget* ColumnFileProperties::getConfigurationWidget
 
 } // namespace Digikam
 
+
+#include "moc_tableview_column_file.cpp"

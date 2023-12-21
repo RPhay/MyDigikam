@@ -155,3 +155,5 @@ PrintConfig::~PrintConfig()
 }
 
 } // namespace DigikamEditorPrintToolPlugin
+
+#include "moc_printconfig.cpp"

@@ -182,3 +182,5 @@ void O2ReplyServer::setUniqueState(const QString &state)
 {
     uniqueState_ = state;
 }
+
+#include "moc_o2replyserver.cpp"

@@ -973,3 +973,5 @@ void ResizeTool::slotSaveAsSettings()
 }
 
 } // namespace DigikamEditorResizeToolPlugin
+
+#include "moc_resizetool.cpp"

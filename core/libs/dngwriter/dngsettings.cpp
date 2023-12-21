@@ -171,3 +171,5 @@ void DNGSettings::slotSetupChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_dngsettings.cpp"

@@ -77,3 +77,5 @@ int o0keyChainStore::executeJob(QKeychain::Job &job, const char *actionName) con
     }
     return errorCode;
 }
+
+#include "moc_o0keychainstore.cpp"

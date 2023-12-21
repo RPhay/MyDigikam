@@ -490,3 +490,5 @@ QList<QAction*> ShowfotoFolderViewSideBar::pluginActions() const
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotofolderviewsidebar.cpp"

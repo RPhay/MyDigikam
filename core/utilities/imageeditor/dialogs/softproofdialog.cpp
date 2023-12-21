@@ -247,3 +247,5 @@ void SoftProofDialog::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_softproofdialog.cpp"

@@ -125,3 +125,5 @@ bool ConvertToHEIF::toolOperations()
 }
 
 } // namespace DigikamBqmConvertToHeifPlugin
+
+#include "moc_converttoheif.cpp"

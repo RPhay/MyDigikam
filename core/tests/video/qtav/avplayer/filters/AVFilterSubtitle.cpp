@@ -230,3 +230,5 @@ void AVFilterSubtitle::onStatusChanged()
 }
 
 } // namespace AVPlayer
+
+#include "moc_AVFilterSubtitle.cpp"

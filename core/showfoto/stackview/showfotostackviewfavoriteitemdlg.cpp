@@ -821,3 +821,5 @@ void ShowfotoStackViewFavoriteItemDlg::slotHelp()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotostackviewfavoriteitemdlg.cpp"

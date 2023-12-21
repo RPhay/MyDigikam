@@ -67,3 +67,5 @@ void TwWidget::updateLabels(const QString& name, const QString& url)
 }
 
 } // namespace DigikamGenericTwitterPlugin
+
+#include "moc_twitterwidget.cpp"

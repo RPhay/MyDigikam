@@ -492,3 +492,5 @@ VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface
 }
 
 } // namespace QtAV
+
+#include "moc_VideoDecoderFFmpegHW.cpp"

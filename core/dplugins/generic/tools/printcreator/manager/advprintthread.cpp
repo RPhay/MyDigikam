@@ -104,3 +104,5 @@ void AdvPrintThread::preview(AdvPrintSettings* const settings, const QSize& size
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_advprintthread.cpp"

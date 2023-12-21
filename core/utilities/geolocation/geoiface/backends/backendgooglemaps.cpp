@@ -1735,3 +1735,5 @@ void BackendGoogleMaps::centerOn(const Marble::GeoDataLatLonBox& latLonBox, cons
 #endif
 
 } // namespace Digikam
+
+#include "moc_backendgooglemaps.cpp"

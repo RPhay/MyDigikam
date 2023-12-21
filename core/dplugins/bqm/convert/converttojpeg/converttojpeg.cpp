@@ -127,3 +127,5 @@ bool ConvertToJPEG::toolOperations()
 }
 
 } // namespace DigikamBqmConvertToJpegPlugin
+
+#include "moc_converttojpeg.cpp"

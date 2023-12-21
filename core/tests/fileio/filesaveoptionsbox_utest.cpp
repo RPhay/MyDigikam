@@ -87,3 +87,5 @@ void FileSaveOptionsBoxTest::cleanupTestCase()
 {
     DPluginLoader::instance()->cleanUp();
 }
+
+#include "moc_filesaveoptionsbox_utest.cpp"

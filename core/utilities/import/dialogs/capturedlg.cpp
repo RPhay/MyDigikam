@@ -194,3 +194,5 @@ void CaptureDlg::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_capturedlg.cpp"

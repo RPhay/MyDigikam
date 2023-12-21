@@ -224,3 +224,5 @@ QString SqueezedComboBox::item(int index) const
 }
 
 } // namespace Digikam
+
+#include "moc_squeezedcombobox.cpp"

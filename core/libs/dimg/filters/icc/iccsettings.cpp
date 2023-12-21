@@ -379,3 +379,5 @@ void IccSettings::setUseManagedPreviews(bool useManagedPreviews)
 }
 
 } // namespace Digikam
+
+#include "moc_iccsettings.cpp"

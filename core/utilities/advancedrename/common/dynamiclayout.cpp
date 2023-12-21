@@ -234,3 +234,5 @@ int DynamicLayout::reLayout(const QRect& rect, bool testOnly) const
 }
 
 } // namespace Digikam
+
+#include "moc_dynamiclayout.cpp"

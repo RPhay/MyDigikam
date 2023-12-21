@@ -132,3 +132,5 @@ void ThumbsTask::slotThumbnailLoaded(const LoadingDescription&, const QImage& im
 }
 
 } // namespace Digikam
+
+#include "moc_thumbstask.cpp"

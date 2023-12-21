@@ -712,3 +712,5 @@ void SelectionModel::select(const QItemSelection& selection, QItemSelectionModel
 }
 
 } // namespace Digikam
+
+#include "moc_dconfigdlgview_p.cpp"

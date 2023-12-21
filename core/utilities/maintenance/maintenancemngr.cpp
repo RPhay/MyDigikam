@@ -405,3 +405,5 @@ void MaintenanceMngr::cancel()
 }
 
 } // namespace Digikam
+
+#include "moc_maintenancemngr.cpp"

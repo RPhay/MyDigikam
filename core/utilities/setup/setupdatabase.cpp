@@ -220,3 +220,5 @@ void SetupDatabase::showHashInformation()
 }
 
 } // namespace Digikam
+
+#include "moc_setupdatabase.cpp"

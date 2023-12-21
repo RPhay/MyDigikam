@@ -274,3 +274,5 @@ void IpfsWindow::saveSettings()
 }
 
 } // namespace DigikamGenericIpfsPlugin
+
+#include "moc_ipfswindow.cpp"

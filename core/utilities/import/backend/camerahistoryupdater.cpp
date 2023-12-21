@@ -171,3 +171,5 @@ void CameraHistoryUpdater::proccessMap(const QByteArray& id, CHUpdateItemMap& ma
 }
 
 } // namespace Digikam
+
+#include "moc_camerahistoryupdater.cpp"

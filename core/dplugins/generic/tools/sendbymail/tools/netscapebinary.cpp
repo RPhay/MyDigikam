@@ -39,3 +39,5 @@ NetscapeBinary::~NetscapeBinary()
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_netscapebinary.cpp"

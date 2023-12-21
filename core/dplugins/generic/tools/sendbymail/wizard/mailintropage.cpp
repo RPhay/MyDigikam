@@ -225,3 +225,5 @@ bool MailIntroPage::isComplete() const
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_mailintropage.cpp"

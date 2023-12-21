@@ -204,3 +204,5 @@ bool ActionSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelIn
 }
 
 } // namespace Digikam
+
+#include "moc_dcategorizedsortfilterproxymodel.cpp"

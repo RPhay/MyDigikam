@@ -78,3 +78,5 @@ MainWindow::~MainWindow()
 }
 
 } // namespace AVPlayer
+
+#include "moc_MainWindow.cpp"

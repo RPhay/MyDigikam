@@ -1061,3 +1061,5 @@ void PiwigoTalker::deleteTemporaryFile()
 }
 
 } // namespace DigikamGenericPiwigoPlugin
+
+#include "moc_piwigotalker.cpp"

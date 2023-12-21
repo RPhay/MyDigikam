@@ -115,3 +115,5 @@ void ResizeToolPlugin::slotResize()
 }
 
 } // namespace DigikamEditorResizeToolPlugin
+
+#include "moc_resizetoolplugin.cpp"

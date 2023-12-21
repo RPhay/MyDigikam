@@ -453,3 +453,5 @@ void WSTalker::slotResponseTokenReceived(const QMap<QString, QString>& /*rep*/)
 }
 
 } // namespace DigikamGenericUnifiedPlugin
+
+#include "moc_wstalker.cpp"

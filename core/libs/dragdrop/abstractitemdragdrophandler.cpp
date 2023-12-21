@@ -73,3 +73,5 @@ bool AbstractItemDragDropHandler::acceptsMimeData(const QMimeData* mime)
 }
 
 } // namespace Digikam
+
+#include "moc_abstractitemdragdrophandler.cpp"

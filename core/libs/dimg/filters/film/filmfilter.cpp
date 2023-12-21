@@ -467,3 +467,5 @@ void FilmFilter::readParameters(const FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_filmfilter.cpp"

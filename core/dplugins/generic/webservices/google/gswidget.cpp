@@ -140,3 +140,5 @@ void GSWidget::updateLabels(const QString& name, const QString& url)
 }
 
 } // namespace DigikamGenericGoogleServicesPlugin
+
+#include "moc_gswidget.cpp"

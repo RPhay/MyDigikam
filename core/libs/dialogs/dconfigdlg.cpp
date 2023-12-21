@@ -249,3 +249,5 @@ void DConfigDlg::setButtonBox(QDialogButtonBox* const box)
 }
 
 } // namespace Digikam
+
+#include "moc_dconfigdlg.cpp"

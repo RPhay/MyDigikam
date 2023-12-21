@@ -726,3 +726,5 @@ void MediaPlayerView::slotPlayerConfigChanged()
 } // namespace Digikam
 
 #include "mediaplayerview.moc"
+
+#include "moc_mediaplayerview.cpp"

@@ -137,3 +137,5 @@ void DMetadataSettings::readFromConfig()
 }
 
 } // namespace Digikam
+
+#include "moc_dmetadatasettings.cpp"

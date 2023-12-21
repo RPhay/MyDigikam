@@ -673,3 +673,5 @@ void ShowfotoSettings::syncConfig()
 }
 
 } // namespace Showfoto
+
+#include "moc_showfotosettings.cpp"

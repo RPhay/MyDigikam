@@ -419,3 +419,5 @@ QString DBinaryIface::goodBaseName(const QString& b)
 }
 
 } // namespace Digikam
+
+#include "moc_dbinaryiface.cpp"

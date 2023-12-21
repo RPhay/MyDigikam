@@ -334,3 +334,5 @@ void ImageRegionItem::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
 }
 
 } // namespace Digikam
+
+#include "moc_imageregionitem.cpp"

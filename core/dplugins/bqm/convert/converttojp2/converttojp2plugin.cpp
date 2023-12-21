@@ -101,3 +101,5 @@ void ConvertToJp2Plugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmConvertToJp2Plugin
+
+#include "moc_converttojp2plugin.cpp"

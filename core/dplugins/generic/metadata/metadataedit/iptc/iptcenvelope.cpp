@@ -717,3 +717,5 @@ void IPTCEnvelope::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_iptcenvelope.cpp"

@@ -87,3 +87,5 @@ void OpenGLWindowRenderer::showEvent(QShowEvent*)
 IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(OpenGLWindowRenderer)
 
 } // namespace QtAV
+
+#include "moc_OpenGLWindowRenderer.cpp"

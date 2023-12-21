@@ -664,3 +664,5 @@ QString GalleryGenerator::webifyFileName(const QString& fname)
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_gallerygenerator.cpp"

@@ -209,3 +209,5 @@ AlbumPointer<DAlbum> DateFolderView::currentAlbum() const
 }
 
 } // namespace Digikam
+
+#include "moc_datefolderview.cpp"

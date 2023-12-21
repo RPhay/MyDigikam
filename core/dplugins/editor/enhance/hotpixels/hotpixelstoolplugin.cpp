@@ -120,3 +120,5 @@ void HotPixelsToolPlugin::slotHotPixels()
 }
 
 } // namespace DigikamEditorHotPixelsToolPlugin
+
+#include "moc_hotpixelstoolplugin.cpp"

@@ -93,3 +93,5 @@ WelcomePage::~WelcomePage()
 }
 
 } // namespace Digikam
+
+#include "moc_welcomepage.cpp"

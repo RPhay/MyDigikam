@@ -201,3 +201,5 @@ bool HTMLOutputPage::isComplete() const
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_htmloutputpage.cpp"

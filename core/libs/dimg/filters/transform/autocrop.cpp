@@ -1078,3 +1078,5 @@ QRect AutoCrop::autoInnerCrop() const
 }
 
 } // namespace Digikam
+
+#include "moc_autocrop.cpp"

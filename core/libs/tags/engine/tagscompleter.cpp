@@ -240,3 +240,5 @@ void TagCompleter::slotHighlighted(const QModelIndex& index)
 }
 
 } // namespace Digikam
+
+#include "moc_tagscompleter.cpp"

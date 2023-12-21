@@ -131,3 +131,5 @@ void MetadataEditPlugin::slotEditMetadata()
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_metadataeditplugin.cpp"

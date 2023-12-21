@@ -109,3 +109,5 @@ QWidget* OverlayWidget::alignWidget() const
 }
 
 } // namespace Digikam
+
+#include "moc_overlaywidget.cpp"

@@ -91,3 +91,5 @@ void TestGeoCoordinates::testMovable()
 }
 
 QTEST_GUILESS_MAIN(TestGeoCoordinates)
+
+#include "moc_geocoordinates_utest.cpp"

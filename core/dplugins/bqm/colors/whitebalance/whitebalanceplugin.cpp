@@ -99,3 +99,5 @@ void WhiteBalancePlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmWhiteBalancePlugin
+
+#include "moc_whitebalanceplugin.cpp"

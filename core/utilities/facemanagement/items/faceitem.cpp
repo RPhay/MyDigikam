@@ -92,3 +92,5 @@ void FaceItem::updateCurrentTag()
 }
 
 } // namespace Digikam
+
+#include "moc_faceitem.cpp"

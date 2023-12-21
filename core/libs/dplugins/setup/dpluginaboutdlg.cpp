@@ -209,3 +209,5 @@ void DPluginAboutDlg::slotOnlineHandbook()
 }
 
 } // namespace Digikam
+
+#include "moc_dpluginaboutdlg.cpp"

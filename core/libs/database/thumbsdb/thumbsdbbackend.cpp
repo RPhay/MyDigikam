@@ -55,3 +55,5 @@ bool ThumbsDbBackend::initSchema(ThumbsDbSchemaUpdater* const updater)
 }
 
 } // namespace Digikam
+
+#include "moc_thumbsdbbackend.cpp"

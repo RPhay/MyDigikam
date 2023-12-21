@@ -40,3 +40,5 @@ void MapBackend::slotTrackManagerChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_mapbackend.cpp"

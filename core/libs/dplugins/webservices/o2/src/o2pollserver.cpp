@@ -115,3 +115,5 @@ void O2PollServer::onReplyFinished()
     }
     reply->deleteLater();
 }
+
+#include "moc_o2pollserver.cpp"

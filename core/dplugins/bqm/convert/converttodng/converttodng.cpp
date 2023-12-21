@@ -152,3 +152,5 @@ bool ConvertToDNG::toolOperations()
 }
 
 } // namespace DigikamBqmConvertToDngPlugin
+
+#include "moc_converttodng.cpp"

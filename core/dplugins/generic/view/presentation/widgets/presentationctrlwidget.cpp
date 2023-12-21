@@ -274,3 +274,5 @@ void PresentationCtrlWidget::slotMoveToTrash()
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentationctrlwidget.cpp"

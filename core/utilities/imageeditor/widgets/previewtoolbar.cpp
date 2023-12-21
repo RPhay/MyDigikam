@@ -342,3 +342,5 @@ void PreviewToolBar::writeSettings(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_previewtoolbar.cpp"

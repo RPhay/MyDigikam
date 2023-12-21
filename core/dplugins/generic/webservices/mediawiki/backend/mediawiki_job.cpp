@@ -65,3 +65,5 @@ void Job::processUploadProgress(qint64 bytesReceived, qint64 bytesTotal)
 }
 
 } // namespace MediaWiki
+
+#include "moc_mediawiki_job.cpp"

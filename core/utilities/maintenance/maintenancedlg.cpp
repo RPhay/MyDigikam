@@ -390,3 +390,5 @@ void MaintenanceDlg::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_maintenancedlg.cpp"

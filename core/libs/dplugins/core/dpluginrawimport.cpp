@@ -41,3 +41,5 @@ QString DPluginRawImport::getRawProgram() const
 }
 
 } // namespace Digikam
+
+#include "moc_dpluginrawimport.cpp"

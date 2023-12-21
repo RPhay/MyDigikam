@@ -115,3 +115,5 @@ void NoiseReductionToolPlugin::slotNoiseReduction()
 }
 
 } // namespace DigikamEditorNoiseReductionToolPlugin
+
+#include "moc_noisereductiontoolplugin.cpp"

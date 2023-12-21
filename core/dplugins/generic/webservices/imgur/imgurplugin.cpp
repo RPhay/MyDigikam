@@ -125,3 +125,5 @@ void ImgUrPlugin::slotImgUr()
 }
 
 } // namespace DigikamGenericImgUrPlugin
+
+#include "moc_imgurplugin.cpp"

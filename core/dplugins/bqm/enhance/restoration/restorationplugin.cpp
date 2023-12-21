@@ -99,3 +99,5 @@ void RestorationPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmRestorationPlugin
+
+#include "moc_restorationplugin.cpp"

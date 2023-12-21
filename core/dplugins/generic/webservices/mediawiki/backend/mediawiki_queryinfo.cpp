@@ -239,3 +239,5 @@ void QueryInfo::doWorkProcessReply()
 }
 
 } // namespace MediaWiki
+
+#include "moc_mediawiki_queryinfo.cpp"

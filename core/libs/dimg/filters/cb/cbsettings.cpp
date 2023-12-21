@@ -206,3 +206,5 @@ void CBSettings::writeSettings(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_cbsettings.cpp"

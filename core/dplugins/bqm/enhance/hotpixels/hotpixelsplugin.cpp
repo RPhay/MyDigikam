@@ -102,3 +102,5 @@ void HotPixelsPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmHotPixelsPlugin
+
+#include "moc_hotpixelsplugin.cpp"

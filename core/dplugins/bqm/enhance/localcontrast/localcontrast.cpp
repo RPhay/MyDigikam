@@ -180,3 +180,5 @@ bool LocalContrast::toolOperations()
 }
 
 } // namespace DigikamBqmLocalContrastPlugin
+
+#include "moc_localcontrast.cpp"

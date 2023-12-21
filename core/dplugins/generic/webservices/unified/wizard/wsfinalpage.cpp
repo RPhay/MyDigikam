@@ -165,3 +165,5 @@ bool WSFinalPage::isComplete() const
 }
 
 } // namespace DigikamGenericUnifiedPlugin
+
+#include "moc_wsfinalpage.cpp"

@@ -84,3 +84,5 @@ SlideEnd::~SlideEnd()
 }
 
 } // namespace DigikamGenericSlideShowPlugin
+
+#include "moc_slideend.cpp"

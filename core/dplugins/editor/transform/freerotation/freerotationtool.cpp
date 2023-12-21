@@ -582,3 +582,5 @@ QString FreeRotationTool::repeatString(const QString& str, int times) const
 }
 
 } // namespace DigikamEditorFreeRotationToolPlugin
+
+#include "moc_freerotationtool.cpp"

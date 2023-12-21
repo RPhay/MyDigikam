@@ -1927,3 +1927,5 @@ void INatTalker::slotTimeout()
 }
 
 } // namespace DigikamGenericINatPlugin
+
+#include "moc_inattalker.cpp"

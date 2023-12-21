@@ -174,3 +174,5 @@ void QuerySiteinfoUsergroups::doWorkProcessReply()
 }
 
 } // namespace MediaWiki
+
+#include "moc_mediawiki_querysiteinfousergroups.cpp"

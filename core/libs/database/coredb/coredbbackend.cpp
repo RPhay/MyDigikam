@@ -107,3 +107,5 @@ void CoreDbBackend::recordChangeset(const SearchChangeset& changeset)
 }
 
 } // namespace Digikam
+
+#include "moc_coredbbackend.cpp"

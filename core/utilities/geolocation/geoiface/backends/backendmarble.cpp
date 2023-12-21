@@ -2064,3 +2064,5 @@ void BackendMarble::slotScheduleUpdate()
 }
 
 } // namespace Digikam
+
+#include "moc_backendmarble.cpp"

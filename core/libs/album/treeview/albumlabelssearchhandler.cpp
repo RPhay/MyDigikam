@@ -553,3 +553,5 @@ void AlbumLabelsSearchHandler::slotData(const QList<ItemListerRecord>& data)
 }
 
 } // namespace Digikam
+
+#include "moc_albumlabelssearchhandler.cpp"

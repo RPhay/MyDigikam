@@ -681,3 +681,5 @@ void SketchWidget::updateDrawCursor()
 }
 
 } // namespace Digikam
+
+#include "moc_sketchwidget.cpp"

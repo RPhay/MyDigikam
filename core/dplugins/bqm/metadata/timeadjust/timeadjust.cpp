@@ -406,3 +406,5 @@ bool TimeAdjust::toolOperations()
 }
 
 } // namespace DigikamBqmTimeAdjustPlugin
+
+#include "moc_timeadjust.cpp"

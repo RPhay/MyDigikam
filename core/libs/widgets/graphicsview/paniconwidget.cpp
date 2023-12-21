@@ -656,3 +656,5 @@ void PanIconWidget::slotFlickerTimer()
 } // namespace Digikam
 
 #include "paniconwidget.moc"
+
+#include "moc_paniconwidget.cpp"

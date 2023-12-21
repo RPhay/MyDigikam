@@ -68,3 +68,5 @@ void LoadPGFDataTest::testLoadData()
     QVERIFY2(img.depth() == 32, "Incorrect Raw PGF stream image color depth...");
     QVERIFY2(img.format() == QImage::Format_ARGB32, "Incorrect Raw PGF stream image color format...");
 }
+
+#include "moc_loadpgfdata_utest.cpp"

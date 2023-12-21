@@ -96,3 +96,5 @@ void TooltipDialog::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_tooltipdialog.cpp"

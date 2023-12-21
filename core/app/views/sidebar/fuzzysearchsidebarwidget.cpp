@@ -145,3 +145,5 @@ void FuzzySearchSideBarWidget::newSimilarSearch(const ItemInfo& imageInfo)
 }
 
 } // namespace Digikam
+
+#include "moc_fuzzysearchsidebarwidget.cpp"

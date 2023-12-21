@@ -224,3 +224,5 @@ void ItemViewHoverButton::stopFading()
 }
 
 } // namespace Digikam
+
+#include "moc_itemviewhoverbutton.cpp"

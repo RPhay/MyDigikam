@@ -597,3 +597,5 @@ void BorderFilter::readParameters(const FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_borderfilter.cpp"

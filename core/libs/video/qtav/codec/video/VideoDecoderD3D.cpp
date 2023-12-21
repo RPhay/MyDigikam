@@ -698,3 +698,5 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext* avct
 }
 
 } // namespace QtAV
+
+#include "moc_VideoDecoderD3D.cpp"

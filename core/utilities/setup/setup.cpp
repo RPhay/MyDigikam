@@ -807,3 +807,5 @@ void Setup::onlineVersionCheck()
 }
 
 } // namespace Digikam
+
+#include "moc_setup.cpp"

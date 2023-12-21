@@ -41,3 +41,5 @@ void PNewAlbumDlg::getFolderTitle(PFolder& folder)
 }
 
 } // namespace DigikamGenericPinterestPlugin
+
+#include "moc_pnewalbumdlg.cpp"

@@ -101,3 +101,5 @@ void ConvertToWebpPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmConvertToWebpPlugin
+
+#include "moc_converttowebpplugin.cpp"

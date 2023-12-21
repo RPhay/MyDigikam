@@ -605,3 +605,5 @@ void QueuePool::applySettings()
 }
 
 } // namespace Digikam
+
+#include "moc_queuepool.cpp"

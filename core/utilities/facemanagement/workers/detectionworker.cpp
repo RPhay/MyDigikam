@@ -74,3 +74,5 @@ void DetectionWorker::setAccuracyAndModel(double accuracy, bool yolo)
 }
 
 } // namespace Digikam
+
+#include "moc_detectionworker.cpp"

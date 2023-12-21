@@ -301,3 +301,5 @@ bool MultiValuesEdit::isValid() const
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_multivaluesedit.cpp"

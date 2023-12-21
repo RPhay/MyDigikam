@@ -160,3 +160,5 @@ bool AdvPrintIntroPage::validatePage()
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_advprintintropage.cpp"

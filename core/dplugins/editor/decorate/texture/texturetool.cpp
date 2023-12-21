@@ -139,3 +139,5 @@ void TextureTool::setFinalImage()
 }
 
 } // namespace DigikamEditorTextureToolPlugin
+
+#include "moc_texturetool.cpp"

@@ -44,3 +44,5 @@ void Token::slotTriggered()
 }
 
 } // namespace Digikam
+
+#include "moc_token.cpp"

@@ -241,3 +241,5 @@ void VisibilityController::allSteps()
 } // namespace Digikam
 
 #include "visibilitycontroller.moc"
+
+#include "moc_visibilitycontroller.cpp"

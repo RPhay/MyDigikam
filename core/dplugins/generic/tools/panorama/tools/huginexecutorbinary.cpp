@@ -33,3 +33,5 @@ HuginExecutorBinary::~HuginExecutorBinary()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_huginexecutorbinary.cpp"

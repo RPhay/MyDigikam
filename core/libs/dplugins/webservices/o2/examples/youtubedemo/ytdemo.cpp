@@ -114,3 +114,5 @@ void YTDemo::onFinished(int requestId, QNetworkReply::NetworkError error, QByteA
     qInfo() << "Channel info: " << reply;
     emit channelInfoReceived();
 }
+
+#include "moc_ytdemo.cpp"

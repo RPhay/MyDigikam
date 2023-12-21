@@ -152,3 +152,5 @@ void DigikamItemDelegate::updateRects()
 }
 
 } // namespace Digikam
+
+#include "moc_digikamitemdelegate.cpp"

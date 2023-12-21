@@ -320,3 +320,5 @@ void MainWindow::slotUpdateDatabase()
 }
 
 } // namespace FaceEngineDemo
+
+#include "moc_demomainwindow.cpp"

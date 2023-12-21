@@ -136,3 +136,5 @@ bool ConvertToPNG::toolOperations()
 }
 
 } // namespace DigikamBqmConvertToPngPlugin
+
+#include "moc_converttopng.cpp"

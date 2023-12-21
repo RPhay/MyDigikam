@@ -207,3 +207,5 @@ void SearchWindow::keyPressEvent(QKeyEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_searchwindow.cpp"

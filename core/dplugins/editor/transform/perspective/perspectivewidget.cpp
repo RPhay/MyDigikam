@@ -1138,3 +1138,5 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
 }
 
 } // namespace DigikamEditorPerspectiveToolPlugin
+
+#include "moc_perspectivewidget.cpp"

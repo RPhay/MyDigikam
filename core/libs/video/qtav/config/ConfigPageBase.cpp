@@ -52,3 +52,5 @@ void ConfigPageBase::reset()
 }
 
 } // namespace QtAV
+
+#include "moc_ConfigPageBase.cpp"

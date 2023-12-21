@@ -48,3 +48,5 @@ Option::~Option()
 }
 
 } // namespace Digikam
+
+#include "moc_option.cpp"

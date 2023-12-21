@@ -128,3 +128,5 @@ void MediaServerPlugin::slotMediaServer()
 }
 
 } // namespace DigikamGenericMediaServerPlugin
+
+#include "moc_mediaserverplugin.cpp"

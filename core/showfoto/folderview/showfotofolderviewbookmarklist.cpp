@@ -318,3 +318,5 @@ QString ShowfotoFolderViewBookmarkList::bookmarkBaseName(const QString& path) co
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotofolderviewbookmarklist.cpp"

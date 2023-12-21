@@ -216,3 +216,5 @@ void WorkflowDlg::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_workflowdlg.cpp"

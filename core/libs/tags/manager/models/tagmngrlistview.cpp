@@ -187,3 +187,5 @@ void TagMngrListView::slotDeleteSelected()
 }
 
 } // namespace Digikam
+
+#include "moc_tagmngrlistview.cpp"

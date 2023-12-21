@@ -951,3 +951,5 @@ void ItemVisibilityController::objectDestroyed(QObject* item)
 }
 
 } // namespace Digikam
+
+#include "moc_itemvisibilitycontroller.cpp"

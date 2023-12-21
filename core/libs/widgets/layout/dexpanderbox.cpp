@@ -1141,3 +1141,5 @@ bool DExpanderBoxExclusive::isToolBox() const
 }
 
 } // namespace Digikam
+
+#include "moc_dexpanderbox.cpp"

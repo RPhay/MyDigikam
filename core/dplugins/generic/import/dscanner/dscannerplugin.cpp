@@ -156,3 +156,5 @@ void DigitalScannerPlugin::slotDigitalScanner()
 }
 
 } // namespace DigikamGenericDScannerPlugin
+
+#include "moc_dscannerplugin.cpp"

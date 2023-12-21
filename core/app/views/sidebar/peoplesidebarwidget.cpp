@@ -223,3 +223,5 @@ const QString PeopleSideBarWidget::getCaption()
 }
 
 } // namespace Digikam
+
+#include "moc_peoplesidebarwidget.cpp"

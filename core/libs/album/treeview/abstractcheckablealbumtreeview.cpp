@@ -266,3 +266,5 @@ void AbstractCheckableAlbumTreeView::doSaveState()
 }
 
 } // namespace Digikam
+
+#include "moc_abstractcheckablealbumtreeview.cpp"

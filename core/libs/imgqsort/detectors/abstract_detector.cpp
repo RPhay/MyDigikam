@@ -73,3 +73,5 @@ cv::Mat AbstractDetector::prepareForDetection(const DImg& inputImage)
 }
 
 } // namespace Digikam
+
+#include "moc_abstract_detector.cpp"

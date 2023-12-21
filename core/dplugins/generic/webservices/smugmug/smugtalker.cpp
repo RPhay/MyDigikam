@@ -1239,3 +1239,5 @@ QString SmugTalker::htmlToText(const QString& htmlText) const
 }
 
 } // namespace DigikamGenericSmugPlugin
+
+#include "moc_smugtalker.cpp"

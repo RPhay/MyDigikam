@@ -184,3 +184,5 @@ void DKCamera::printSupportedFeatures()
 }
 
 } // namespace Digikam
+
+#include "moc_dkcamera.cpp"

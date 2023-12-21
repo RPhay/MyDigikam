@@ -36,3 +36,5 @@ AutoOptimiserBinary::~AutoOptimiserBinary()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_autooptimiserbinary.cpp"

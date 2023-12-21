@@ -159,3 +159,5 @@ bool AssignTemplate::toolOperations()
 }
 
 } // namespace DigikamBqmAssignTemplatePlugin
+
+#include "moc_assigntemplate.cpp"

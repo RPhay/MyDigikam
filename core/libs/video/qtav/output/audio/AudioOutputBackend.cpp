@@ -164,3 +164,5 @@ void AudioOutput_RegisterAll()
 }
 
 } // namespace QtAV
+
+#include "moc_AudioOutputBackend.cpp"

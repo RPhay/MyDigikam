@@ -134,3 +134,5 @@ void ExpoBlendingPlugin::slotExpoBlending()
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_expoblendingplugin.cpp"

@@ -473,3 +473,5 @@ int CurvesBox::curvesLeftOffset() const
 }
 
 } // namespace Digikam
+
+#include "moc_curvesbox.cpp"

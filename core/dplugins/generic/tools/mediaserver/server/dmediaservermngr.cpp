@@ -369,3 +369,5 @@ bool DMediaServerMngr::load()
 }
 
 } // namespace DigikamGenericMediaServerPlugin
+
+#include "moc_dmediaservermngr.cpp"

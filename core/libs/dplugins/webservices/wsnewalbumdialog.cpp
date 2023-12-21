@@ -225,3 +225,5 @@ QDialogButtonBox* WSNewAlbumDialog::getButtonBox() const
 }
 
 } // namespace Digikam
+
+#include "moc_wsnewalbumdialog.cpp"

@@ -196,3 +196,5 @@ void SearchFieldGroupLabel::displayFolded()
 }
 
 } // namespace Digikam
+
+#include "moc_searchfieldgroup.cpp"

@@ -232,3 +232,5 @@ void PrivateProgressItemCreator::slotProgressItemCanceled(ProgressItem* item)
 }
 
 } // namespace Digikam
+
+#include "moc_fileactionmngr_p.cpp"

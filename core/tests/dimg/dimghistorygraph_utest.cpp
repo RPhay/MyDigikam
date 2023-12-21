@@ -487,3 +487,5 @@ void DImgHistoryGraphTest::slotImageSaved(const QString& fileName, bool success)
     qCDebug(DIGIKAM_TESTS_LOG) << "Saved to" << fileName;
     m_loop.quit();
 }
+
+#include "moc_dimghistorygraph_utest.cpp"

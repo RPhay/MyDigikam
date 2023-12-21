@@ -121,3 +121,5 @@ QString IccTransformFilter::readParametersError(const FilterAction& actionThatFa
 }
 
 } // namespace Digikam
+
+#include "moc_icctransformfilter.cpp"

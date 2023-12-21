@@ -1163,3 +1163,5 @@ void RatioCropTool::setBackgroundColor(const QColor& bg)
 }
 
 } // namespace DigikamEditorRatioCropToolPlugin
+
+#include "moc_ratiocroptool.cpp"

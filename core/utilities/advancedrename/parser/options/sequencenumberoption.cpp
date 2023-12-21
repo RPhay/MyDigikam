@@ -253,3 +253,5 @@ QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QReg
 }
 
 } // namespace Digikam
+
+#include "moc_sequencenumberoption.cpp"

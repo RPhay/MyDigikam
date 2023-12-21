@@ -1760,3 +1760,5 @@ int PresentationWidget::effectBlobs(bool aInit)
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentationwidget.cpp"

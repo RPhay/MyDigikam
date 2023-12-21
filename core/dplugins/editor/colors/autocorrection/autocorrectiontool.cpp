@@ -320,3 +320,5 @@ void AutoCorrectionTool::autoCorrection(DImg* const img, DImg* const ref, int ty
 }
 
 } // namespace DigikamEditorAutoCorrectionToolPlugin
+
+#include "moc_autocorrectiontool.cpp"

@@ -449,3 +449,5 @@ void SlideVideo::resizeEvent(QResizeEvent* e)
 } // namespace Digikam
 
 #include "slidevideo.moc"
+
+#include "moc_slidevideo.cpp"

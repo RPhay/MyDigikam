@@ -49,3 +49,5 @@ QString ImageShackNewAlbumDlg::getAlbumTitle()
 }
 
 } // namespace DigikamGenericImageShackPlugin
+
+#include "moc_imageshacknewalbumdlg.cpp"

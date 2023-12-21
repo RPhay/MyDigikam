@@ -1489,3 +1489,5 @@ void ItemModel::slotImageTagChange(const ImageTagChangeset& changeset)
 }
 
 } // namespace Digikam
+
+#include "moc_itemmodel.cpp"

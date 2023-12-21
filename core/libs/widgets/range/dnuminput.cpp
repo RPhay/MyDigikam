@@ -244,3 +244,5 @@ void DDoubleNumInput::slotValueChanged(double v)
 }
 
 } // namespace Digikam
+
+#include "moc_dnuminput.cpp"

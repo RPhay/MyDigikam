@@ -107,3 +107,5 @@ void GLWidgetRenderer::showEvent(QShowEvent*)
 IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(GLWidgetRenderer)
 
 } // namespace QtAV
+
+#include "moc_GLWidgetRenderer.cpp"

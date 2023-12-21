@@ -204,3 +204,5 @@ void ToolsView::slotHistoryEntryClicked(const QVariant& metadata)
 }
 
 } // namespace Digikam
+
+#include "moc_toolsview.cpp"

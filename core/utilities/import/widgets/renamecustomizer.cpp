@@ -324,3 +324,5 @@ void RenameCustomizer::saveSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_renamecustomizer.cpp"

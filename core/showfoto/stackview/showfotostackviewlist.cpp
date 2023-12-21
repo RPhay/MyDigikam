@@ -600,3 +600,5 @@ QUrl ShowfotoStackViewList::currentUrl() const
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotostackviewlist.cpp"

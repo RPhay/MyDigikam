@@ -68,3 +68,5 @@ void LoadFromBATest::loadFromByteArray(const QString& file)
     ret = meta->loadFromData(data);
     QVERIFY(ret);
 }
+
+#include "moc_loadfromba_utest.cpp"

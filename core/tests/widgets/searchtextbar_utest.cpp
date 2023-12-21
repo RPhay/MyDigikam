@@ -102,3 +102,5 @@ void SearchTextBarTest::newSearchTextSettings(const SearchTextSettings& settings
     lastSearchTextSettings = settings;
     callCount++;
 }
+
+#include "moc_searchtextbar_utest.cpp"

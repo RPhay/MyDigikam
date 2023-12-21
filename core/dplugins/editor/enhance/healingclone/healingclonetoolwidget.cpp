@@ -691,3 +691,5 @@ void HealingCloneToolWidget::slotImageRegionChanged()
 }
 
 } // namespace DigikamEditorHealingCloneToolPlugin
+
+#include "moc_healingclonetoolwidget.cpp"

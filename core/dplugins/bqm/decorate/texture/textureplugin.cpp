@@ -102,3 +102,5 @@ void TexturePlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmTexturePlugin
+
+#include "moc_textureplugin.cpp"

@@ -607,3 +607,5 @@ void ShowfotoNormalDelegate::updateRects()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotodelegate.cpp"

@@ -1967,3 +1967,5 @@ void BdEngineBackend::setForeignKeyChecks(bool check)
 }
 
 } // namespace Digikam
+
+#include "moc_dbenginebackend.cpp"

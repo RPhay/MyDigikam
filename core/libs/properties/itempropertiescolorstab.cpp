@@ -750,3 +750,5 @@ void ItemPropertiesColorsTab::getICCData()
 }
 
 } // namespace Digikam
+
+#include "moc_itempropertiescolorstab.cpp"

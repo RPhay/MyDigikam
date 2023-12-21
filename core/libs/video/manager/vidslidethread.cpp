@@ -55,3 +55,5 @@ void VidSlideThread::processStream(VidSlideSettings* const settings)
 }
 
 } // namespace Digikam
+
+#include "moc_vidslidethread.cpp"

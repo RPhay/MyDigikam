@@ -170,3 +170,5 @@ void QueryImages::doWorkProcessReply()
 }
 
 } // namespace MediaWiki;
+
+#include "moc_mediawiki_queryimages.cpp"

@@ -410,3 +410,5 @@ void ItemPropertiesTab::showOrHideCachedProperties()
 }
 
 } // namespace Digikam
+
+#include "moc_itempropertiestab.cpp"

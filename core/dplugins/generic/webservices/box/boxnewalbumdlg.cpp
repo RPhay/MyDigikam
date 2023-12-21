@@ -41,3 +41,5 @@ void BOXNewAlbumDlg::getFolderTitle(BOXFolder& folder)
 }
 
 } // namespace DigikamGenericBoxPlugin
+
+#include "moc_boxnewalbumdlg.cpp"

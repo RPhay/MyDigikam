@@ -312,3 +312,5 @@ void Task::run()
 }
 
 } // namespace Digikam
+
+#include "moc_task.cpp"

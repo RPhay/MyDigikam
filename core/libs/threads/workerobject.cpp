@@ -320,3 +320,5 @@ void WorkerObject::transitionToInactive()
 }
 
 } // namespace Digikam
+
+#include "moc_workerobject.cpp"

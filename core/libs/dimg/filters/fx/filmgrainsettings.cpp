@@ -560,3 +560,5 @@ void FilmGrainSettings::writeSettings(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_filmgrainsettings.cpp"

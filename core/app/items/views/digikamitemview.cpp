@@ -782,3 +782,5 @@ void DigikamItemView::scrollTo(const QModelIndex& index, ScrollHint hint)
 }
 
 } // namespace Digikam
+
+#include "moc_digikamitemview.cpp"

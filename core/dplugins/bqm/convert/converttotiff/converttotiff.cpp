@@ -120,3 +120,5 @@ bool ConvertToTIFF::toolOperations()
 }
 
 } // namespace DigikamBqmConvertToTiffPlugin
+
+#include "moc_converttotiff.cpp"

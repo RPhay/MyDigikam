@@ -326,3 +326,5 @@ void AssignNameWidget::showEvent(QShowEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_assignnamewidget.cpp"

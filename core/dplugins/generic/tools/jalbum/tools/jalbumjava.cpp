@@ -39,3 +39,5 @@ JalbumJava::~JalbumJava()
 }
 
 } // namespace DigikamGenericJAlbumPlugin
+
+#include "moc_jalbumjava.cpp"

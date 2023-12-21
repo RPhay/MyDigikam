@@ -207,3 +207,5 @@ void NewItemsFinder::slotPartialScanDone(const QString& path)
 }
 
 } // namespace Digikam
+
+#include "moc_newitemsfinder.cpp"

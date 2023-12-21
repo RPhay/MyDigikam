@@ -200,3 +200,5 @@ void EmbossFilter::readParameters(const Digikam::FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_embossfilter.cpp"

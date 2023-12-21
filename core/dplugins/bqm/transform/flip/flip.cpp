@@ -148,3 +148,5 @@ bool Flip::toolOperations()
 }
 
 } // namespace DigikamBqmFlipPlugin
+
+#include "moc_flip.cpp"

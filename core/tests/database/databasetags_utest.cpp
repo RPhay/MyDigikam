@@ -801,3 +801,5 @@ void DatabaseTagsTest::testSAlbumModel()
     delete albumModel;
 }
 */
+
+#include "moc_databasetags_utest.cpp"

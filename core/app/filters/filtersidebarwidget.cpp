@@ -532,3 +532,5 @@ void FilterSideBarWidget::doSaveState()
 }
 
 } // namespace Digikam
+
+#include "moc_filtersidebarwidget.cpp"

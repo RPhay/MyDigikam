@@ -264,3 +264,5 @@ void TestPrimitives::testGroupStateComputer()
 }
 
 QTEST_GUILESS_MAIN(TestPrimitives)
+
+#include "moc_primitives_utest.cpp"

@@ -287,3 +287,7 @@ void MediaIO::release()
 }
 
 } // namespace QtAV
+
+#include "moc_MediaIO.cpp"
+
+#include "moc_MediaIO_p.cpp"

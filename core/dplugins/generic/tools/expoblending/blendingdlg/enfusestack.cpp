@@ -430,3 +430,5 @@ void EnfuseStackList::setTemplateFileName(DSaveSettingsWidget::OutputFormat frm,
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_enfusestack.cpp"

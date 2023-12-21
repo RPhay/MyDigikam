@@ -360,3 +360,5 @@ int TagMngrListModel::rowCount(const QModelIndex& parent) const
 }
 
 } // namespace Digikam
+
+#include "moc_tagmngrlistmodel.cpp"

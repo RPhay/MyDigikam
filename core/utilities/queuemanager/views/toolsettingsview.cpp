@@ -321,3 +321,5 @@ void ToolSettingsView::slotSettingsChanged(const BatchToolSettings& settings)
 }
 
 } // namespace Digikam
+
+#include "moc_toolsettingsview.cpp"

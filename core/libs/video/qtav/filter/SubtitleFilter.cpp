@@ -261,3 +261,5 @@ void SubtitleFilter::process(Statistics* statistics, VideoFrame* frame)
 }
 
 } // namespace QtAV
+
+#include "moc_SubtitleFilter.cpp"

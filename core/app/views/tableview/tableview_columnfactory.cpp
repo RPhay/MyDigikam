@@ -347,3 +347,5 @@ TableViewColumnConfigurationWidget::~TableViewColumnConfigurationWidget()
 }
 
 } // namespace Digikam
+
+#include "moc_tableview_columnfactory.cpp"

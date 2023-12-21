@@ -336,3 +336,5 @@ void EditorToolIface::slotToolApplied()
 }
 
 } // namespace Digikam
+
+#include "moc_editortooliface.cpp"

@@ -874,3 +874,5 @@ bool LibAVFilter::Private::pushAudioFrame(Frame* frame, bool changed, const QStr
 Q_DECLARE_METATYPE(QtAV::AVFrameHolderRef)
 
 #endif
+
+#include "moc_LibAVFilter.cpp"

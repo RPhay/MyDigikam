@@ -2012,3 +2012,5 @@ bool GPCamera::findConnectedUsbCamera(int vendorId, int productId, QString& mode
 }
 
 } // namespace Digikam
+
+#include "moc_gpcamera.cpp"

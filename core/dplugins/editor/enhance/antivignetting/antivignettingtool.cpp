@@ -160,3 +160,5 @@ void AntiVignettingTool::setFinalImage()
 }
 
 } // namespace DigikamEditorAntivignettingToolPlugin
+
+#include "moc_antivignettingtool.cpp"

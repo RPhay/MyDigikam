@@ -453,3 +453,5 @@ void PWindow::closeEvent(QCloseEvent* e)
 }
 
 } // namespace DigikamGenericPinterestPlugin
+
+#include "moc_pwindow.cpp"

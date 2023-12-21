@@ -404,3 +404,5 @@ void EXIFCaption::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_exifcaption.cpp"

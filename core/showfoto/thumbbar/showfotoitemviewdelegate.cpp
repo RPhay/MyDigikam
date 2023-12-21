@@ -426,3 +426,5 @@ void ShowfotoItemViewDelegate::prepareBackground()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotoitemviewdelegate.cpp"

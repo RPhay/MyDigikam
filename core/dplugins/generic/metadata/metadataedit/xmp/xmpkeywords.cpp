@@ -276,3 +276,5 @@ void XMPKeywords::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_xmpkeywords.cpp"

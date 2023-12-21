@@ -172,3 +172,5 @@ void PresentationMngr::slotSlideShow()
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentationmngr.cpp"

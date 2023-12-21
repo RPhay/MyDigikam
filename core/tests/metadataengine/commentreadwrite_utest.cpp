@@ -161,3 +161,5 @@ void CommentReadWriteTest::testReadFromDisabledNamespaces()
     rez = dmeta->getItemComments(dmsettings);
     QCOMPARE(rez.value(QLatin1String("x-default")).caption, commentSet2.value(QLatin1String("x-default")).caption);
 }
+
+#include "moc_commentreadwrite_utest.cpp"

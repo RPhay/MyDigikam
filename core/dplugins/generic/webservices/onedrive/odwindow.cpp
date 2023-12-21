@@ -450,3 +450,5 @@ void ODWindow::closeEvent(QCloseEvent* e)
 }
 
 } // namespace DigikamGenericOneDrivePlugin
+
+#include "moc_odwindow.cpp"

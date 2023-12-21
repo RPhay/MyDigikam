@@ -122,3 +122,5 @@ void EraseMetadataTagTest::eraseMetadataTag(const QString& file,
         QFAIL(QString::fromLatin1("Metadata Tag not supported (%1)").arg(metadataTag).toLatin1().data());
     }
 }
+
+#include "moc_erasemetadatatag_utest.cpp"

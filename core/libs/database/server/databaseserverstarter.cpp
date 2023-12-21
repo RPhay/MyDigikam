@@ -112,3 +112,5 @@ void DatabaseServerStarter::stopServerManagerProcess()
 }
 
 } // namespace Digikam
+
+#include "moc_databaseserverstarter.cpp"

@@ -137,3 +137,5 @@ void FBDemo::onFinished() {
         emit linkingFailed();
     }
 }
+
+#include "moc_fbdemo.cpp"

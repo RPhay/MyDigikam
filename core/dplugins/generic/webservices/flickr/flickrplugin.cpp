@@ -128,3 +128,5 @@ void FlickrPlugin::slotFlickr()
 }
 
 } // namespace DigikamGenericFlickrPlugin
+
+#include "moc_flickrplugin.cpp"

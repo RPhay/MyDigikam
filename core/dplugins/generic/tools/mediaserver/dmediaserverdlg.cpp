@@ -367,3 +367,5 @@ void DMediaServerDlg::slotToggleMediaServer()
 }
 
 } // namespace DigikamGenericMediaServerPlugin
+
+#include "moc_dmediaserverdlg.cpp"

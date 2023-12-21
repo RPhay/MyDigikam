@@ -115,3 +115,5 @@ void IpfsPlugin::slotIpfs()
 }
 
 } // namespace DigikamGenericIpfsPlugin
+
+#include "moc_ipfsplugin.cpp"

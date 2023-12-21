@@ -142,3 +142,5 @@ void LoadSaveThreadTest::slotImageSaved(const QString& filePath, bool b)
 
     m_saved = true;
 }
+
+#include "moc_loadsavethread_utest.cpp"

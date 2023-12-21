@@ -131,3 +131,5 @@ MetaEngine::TagsMap ExifToolParser::tagsDbToOrderedMap(const ExifToolData& tagsD
 }
 
 } // namespace Digikam
+
+#include "moc_exiftoolparser.cpp"

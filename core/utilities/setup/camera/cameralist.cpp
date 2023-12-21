@@ -351,3 +351,5 @@ bool CameraList::changeCameraStartIndex(const QString& cameraTitle, int startInd
 }
 
 } // namespace Digikam
+
+#include "moc_cameralist.cpp"

@@ -70,3 +70,5 @@ CalIntroPage::~CalIntroPage()
 }
 
 } // namespace DigikamGenericCalendarPlugin
+
+#include "moc_calintropage.cpp"

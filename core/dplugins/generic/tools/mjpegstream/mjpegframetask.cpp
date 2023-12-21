@@ -236,3 +236,5 @@ void MjpegFrameTask::run()
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
+
+#include "moc_mjpegframetask.cpp"

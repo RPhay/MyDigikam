@@ -103,3 +103,5 @@ void AdvPrintCustomLayoutDlg::saveSettings()
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_advprintcustomdlg.cpp"

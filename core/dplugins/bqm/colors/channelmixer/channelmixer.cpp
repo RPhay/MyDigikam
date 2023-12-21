@@ -177,3 +177,5 @@ bool ChannelMixer::toolOperations()
 }
 
 } // namespace DigikamBqmChannelMixerPlugin
+
+#include "moc_channelmixer.cpp"

@@ -70,3 +70,5 @@ void ExifToolApplyChangesTest::testExifToolApplyChanges()
     QVERIFY2(parser->applyChanges(path, exvPath),
              QString::fromLatin1("Cannot apply changes with ExifTool on %1").arg(path).toLatin1().constData());
 }
+
+#include "moc_exiftoolapplychanges_utest.cpp"

@@ -451,3 +451,5 @@ void ItemPropertiesSideBar::slotLoadMetadataFilters()
 }
 
 } // namespace Digikam
+
+#include "moc_itempropertiessidebar.cpp"

@@ -125,3 +125,5 @@ QHash<LabelsTreeView::Labels, QList<int> > LabelsSideBarWidget::selectedLabels()
 }
 
 } // namespace Digikam
+
+#include "moc_labelssidebarwidget.cpp"

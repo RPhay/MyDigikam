@@ -448,3 +448,5 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
 }
 
 } // namespace Digikam
+
+#include "moc_daboutdata.cpp"

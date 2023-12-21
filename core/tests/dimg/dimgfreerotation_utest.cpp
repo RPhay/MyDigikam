@@ -124,3 +124,5 @@ double DImgFreeRotationTest::myRound(double val, int accuracy)
 
     return x;
 }
+
+#include "moc_dimgfreerotation_utest.cpp"

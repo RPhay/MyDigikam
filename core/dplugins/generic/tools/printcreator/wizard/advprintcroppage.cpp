@@ -225,3 +225,5 @@ void AdvPrintCropPage::slotBtnCropRotateRightClicked()
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_advprintcroppage.cpp"

@@ -117,3 +117,5 @@ int ExposureDetector::count_by_condition(const cv::Mat& image, int minVal, int m
 }
 
 } // namespace Digikam
+
+#include "moc_exposure_detector.cpp"

@@ -1181,3 +1181,5 @@ QString MediaWikiWidget::longitude() const
 }
 
 } // namespace DigikamGenericMediaWikiPlugin
+
+#include "moc_mediawikiwidget.cpp"

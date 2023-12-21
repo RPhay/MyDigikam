@@ -183,3 +183,5 @@ bool DPluginGeneric::reactivateToolDialog(QWidget* const dlg) const
 }
 
 } // namespace Digikam
+
+#include "moc_dplugingeneric.cpp"

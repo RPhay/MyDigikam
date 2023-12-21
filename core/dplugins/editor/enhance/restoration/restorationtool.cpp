@@ -405,3 +405,5 @@ void RestorationTool::slotSaveAsSettings()
 }
 
 } // namespace DigikamEditorRestorationToolPlugin
+
+#include "moc_restorationtool.cpp"

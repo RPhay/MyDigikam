@@ -218,3 +218,5 @@ QColor TrackManager::getNextFreeTrackColor()
 }
 
 } // namespace Digikam
+
+#include "moc_trackmanager.cpp"

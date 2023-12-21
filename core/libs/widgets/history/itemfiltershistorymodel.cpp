@@ -380,3 +380,5 @@ void ItemFiltersHistoryModel::enableEntries(int count)
 }
 
 } // namespace Digikam
+
+#include "moc_itemfiltershistorymodel.cpp"

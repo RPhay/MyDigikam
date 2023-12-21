@@ -634,3 +634,5 @@ void PresentationAudioPage::slotImageTotalTimeChanged(const QTime& imageTotalTim
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentation_audiopage.cpp"

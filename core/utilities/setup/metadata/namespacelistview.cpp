@@ -169,3 +169,5 @@ void NamespaceListView::slotMoveItemUp()
 }
 
 } // namespace Digikam
+
+#include "moc_namespacelistview.cpp"

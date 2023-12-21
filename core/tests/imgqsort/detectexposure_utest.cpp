@@ -67,3 +67,5 @@ void ImgQSortTestDetecteExposure::testParseTestImagesForExposureDetection_sun()
         QVERIFY(results.value(test_case));
     }
 }
+
+#include "moc_detectexposure_utest.cpp"

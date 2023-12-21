@@ -47,3 +47,5 @@ QMimeData* GPSItemListDragDropHandler::createMimeData(const QList<QPersistentMod
 }
 
 } // namespace Digikam
+
+#include "moc_gpsitemlistdragdrophandler.cpp"

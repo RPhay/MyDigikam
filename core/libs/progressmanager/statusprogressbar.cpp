@@ -257,3 +257,5 @@ ProgressItem* StatusProgressBar::currentProgressItem() const
 }
 
 } // namespace Digikam
+
+#include "moc_statusprogressbar.cpp"

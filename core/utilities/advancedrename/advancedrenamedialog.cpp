@@ -587,3 +587,5 @@ void AdvancedRenameDialog::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_advancedrenamedialog.cpp"

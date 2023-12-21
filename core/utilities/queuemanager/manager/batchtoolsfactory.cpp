@@ -151,3 +151,5 @@ BatchTool* BatchToolsFactory::findTool(const QString& name, BatchTool::BatchTool
 }
 
 } // namespace Digikam
+
+#include "moc_batchtoolsfactory.cpp"

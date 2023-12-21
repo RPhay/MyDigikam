@@ -208,3 +208,5 @@ void TextFilter::reset()
 }
 
 } // namespace Digikam
+
+#include "moc_textfilter.cpp"

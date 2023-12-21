@@ -287,3 +287,5 @@ void FileActionMngr::copyAttributes(const ItemInfo& source, const QStringList& d
 }
 
 } // namespace Digikam
+
+#include "moc_fileactionmngr.cpp"

@@ -154,3 +154,5 @@ void LightTablePreview::dropEvent(QDropEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_lighttablepreview.cpp"

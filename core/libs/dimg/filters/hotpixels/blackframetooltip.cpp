@@ -101,3 +101,5 @@ QString BlackFrameToolTip::tipContents()
 }
 
 } // namespace Digikam
+
+#include "moc_blackframetooltip.cpp"

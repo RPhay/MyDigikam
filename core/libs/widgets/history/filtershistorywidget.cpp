@@ -173,3 +173,5 @@ void FiltersHistoryWidget::clearData()
 }
 
 } // namespace Digikam
+
+#include "moc_filtershistorywidget.cpp"

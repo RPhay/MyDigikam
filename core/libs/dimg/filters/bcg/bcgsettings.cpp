@@ -185,3 +185,5 @@ void BCGSettings::writeSettings(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_bcgsettings.cpp"

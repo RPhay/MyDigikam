@@ -287,3 +287,5 @@ void IPTCKeywords::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_iptckeywords.cpp"

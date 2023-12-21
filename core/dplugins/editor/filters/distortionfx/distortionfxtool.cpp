@@ -347,3 +347,5 @@ void DistortionFXTool::blockWidgetSignals(bool b)
 }
 
 } // namespace DigikamEditorDistortionFxToolPlugin
+
+#include "moc_distortionfxtool.cpp"

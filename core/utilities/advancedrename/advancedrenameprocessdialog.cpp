@@ -255,3 +255,5 @@ void AdvancedRenameProcessDialog::getNextThumbnail()
 }
 
 } // namespace Digikam
+
+#include "moc_advancedrenameprocessdialog.cpp"

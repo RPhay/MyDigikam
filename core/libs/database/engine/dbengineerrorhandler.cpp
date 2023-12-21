@@ -27,3 +27,5 @@ DbEngineErrorHandler::~DbEngineErrorHandler()
 }
 
 } // namespace Digikam
+
+#include "moc_dbengineerrorhandler.cpp"

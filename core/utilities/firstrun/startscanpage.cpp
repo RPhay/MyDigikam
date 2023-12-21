@@ -63,3 +63,5 @@ StartScanPage::~StartScanPage()
 }
 
 } // namespace Digikam
+
+#include "moc_startscanpage.cpp"

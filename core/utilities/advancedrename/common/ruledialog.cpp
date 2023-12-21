@@ -158,3 +158,5 @@ void RuleDialog::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_ruledialog.cpp"

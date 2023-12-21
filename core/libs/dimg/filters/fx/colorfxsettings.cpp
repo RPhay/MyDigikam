@@ -424,3 +424,5 @@ QString ColorFXSettings::translateLuts(const QString& name) const
 }
 
 } // namespace Digikam
+
+#include "moc_colorfxsettings.cpp"

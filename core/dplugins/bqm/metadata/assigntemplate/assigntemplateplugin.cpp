@@ -99,3 +99,5 @@ void AssignTemplatePlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmAssignTemplatePlugin
+
+#include "moc_assigntemplateplugin.cpp"

@@ -72,3 +72,5 @@ VidPlayerDlg::~VidPlayerDlg()
 }
 
 } // namespace Digikam
+
+#include "moc_vidplayerdlg.cpp"

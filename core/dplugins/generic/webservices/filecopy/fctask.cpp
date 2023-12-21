@@ -324,3 +324,5 @@ QUrl FCTask::getUrlOrDelete(const QUrl& fileUrl) const
 }
 
 } // namespace DigikamGenericFileCopyPlugin
+
+#include "moc_fctask.cpp"

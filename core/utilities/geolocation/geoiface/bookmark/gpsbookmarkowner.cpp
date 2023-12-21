@@ -190,3 +190,5 @@ void GPSBookmarkOwner::setPositionAndTitle(const GeoCoordinates& coordinates,
 }
 
 } // namespace Digikam
+
+#include "moc_gpsbookmarkowner.cpp"

@@ -542,3 +542,5 @@ void GraphicsDImgView::toggleFullScreen(bool set)
 }
 
 } // namespace Digikam
+
+#include "moc_graphicsdimgview.cpp"

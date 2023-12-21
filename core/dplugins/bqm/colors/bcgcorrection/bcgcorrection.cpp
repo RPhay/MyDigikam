@@ -108,3 +108,5 @@ bool BCGCorrection::toolOperations()
 }
 
 } // namespace DigikamBqmBCGCorrectionPlugin
+
+#include "moc_bcgcorrection.cpp"

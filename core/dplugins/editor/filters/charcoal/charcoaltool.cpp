@@ -190,3 +190,5 @@ void CharcoalTool::setFinalImage()
 }
 
 } // namespace DigikamEditorCharcoalToolPlugin
+
+#include "moc_charcoaltool.cpp"

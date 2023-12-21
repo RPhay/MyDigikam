@@ -156,3 +156,5 @@ void TagFilterView::slotDeleteTagByContextMenu(TAlbum* tag)
 }
 
 } // namespace Digikam
+
+#include "moc_tagfilterview.cpp"

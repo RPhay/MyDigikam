@@ -839,3 +839,5 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_exifdevice.cpp"

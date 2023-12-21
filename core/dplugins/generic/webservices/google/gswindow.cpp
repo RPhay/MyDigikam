@@ -1327,3 +1327,5 @@ void GSWindow::closeEvent(QCloseEvent* e)
 }
 
 } // namespace DigikamGenericGoogleServicesPlugin
+
+#include "moc_gswindow.cpp"

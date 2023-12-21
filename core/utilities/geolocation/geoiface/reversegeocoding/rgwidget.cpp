@@ -1316,3 +1316,5 @@ void RGWidget::createCountryCodeMap()
 }
 
 } // namespace Digikam
+
+#include "moc_rgwidget.cpp"

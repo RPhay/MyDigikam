@@ -270,3 +270,5 @@ void DatabaseSwitchTest::testFromMysqlToSqlite()
     FaceDbAccess::cleanUpDatabase();
     SimilarityDbAccess::cleanUpDatabase();
 }
+
+#include "moc_databaseswitch_utest.cpp"

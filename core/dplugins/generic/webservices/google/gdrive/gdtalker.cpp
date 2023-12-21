@@ -466,3 +466,5 @@ void GDTalker::cancel()
 }
 
 } // namespace DigikamGenericGoogleServicesPlugin
+
+#include "moc_gdtalker.cpp"

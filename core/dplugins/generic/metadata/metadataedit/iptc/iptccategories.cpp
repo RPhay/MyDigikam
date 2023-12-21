@@ -357,3 +357,5 @@ void IPTCCategories::enableWidgets(bool checked1, bool checked2)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_iptccategories.cpp"

@@ -360,3 +360,5 @@ bool UserScript::toolOperations()
 }
 
 } // namespace DigikamBqmUserScriptPlugin
+
+#include "moc_userscript.cpp"

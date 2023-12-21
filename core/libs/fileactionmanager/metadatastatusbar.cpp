@@ -162,3 +162,5 @@ void MetadataStatusBar::slotCompletedProgressItem(ProgressItem* item)
 }
 
 } // namespace Digikam
+
+#include "moc_metadatastatusbar.cpp"

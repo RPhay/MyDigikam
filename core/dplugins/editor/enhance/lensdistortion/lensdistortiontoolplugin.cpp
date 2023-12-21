@@ -118,3 +118,5 @@ void LensDistortionToolPlugin::slotLensDistortion()
 }
 
 } // namespace DigikamEditorLensDistortionToolPlugin
+
+#include "moc_lensdistortiontoolplugin.cpp"

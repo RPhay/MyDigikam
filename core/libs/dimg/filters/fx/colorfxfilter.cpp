@@ -662,3 +662,5 @@ void ColorFXFilter::readParameters(const FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_colorfxfilter.cpp"

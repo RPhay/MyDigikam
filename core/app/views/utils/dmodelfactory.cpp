@@ -130,3 +130,5 @@ void DModelFactory::slotApplicationSettingsChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_dmodelfactory.cpp"

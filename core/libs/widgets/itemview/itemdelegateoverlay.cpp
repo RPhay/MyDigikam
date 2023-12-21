@@ -772,3 +772,5 @@ void ItemDelegateOverlayContainer::drawOverlays(QPainter* p,
 }
 
 } // namespace Digikam
+
+#include "moc_itemdelegateoverlay.cpp"

@@ -216,3 +216,5 @@ void ChannelMixerTool::slotSaveAsSettings()
 }
 
 } // namespace DigikamEditorChannelMixerToolPlugin
+
+#include "moc_channelmixertool.cpp"

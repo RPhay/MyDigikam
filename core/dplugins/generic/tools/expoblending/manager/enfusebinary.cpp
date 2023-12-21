@@ -61,3 +61,5 @@ bool EnfuseBinary::parseHeader(const QString& output)
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_enfusebinary.cpp"

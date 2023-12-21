@@ -116,3 +116,5 @@ void RajcePlugin::slotRajce()
 }
 
 } // namespace DigikamGenericRajcePlugin
+
+#include "moc_rajceplugin.cpp"

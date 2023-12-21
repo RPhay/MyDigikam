@@ -193,3 +193,5 @@ void DuplicatesFinder::slotCancel()
 }
 
 } // namespace Digikam
+
+#include "moc_duplicatesfinder.cpp"

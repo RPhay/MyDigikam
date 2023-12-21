@@ -125,3 +125,5 @@ bool ConvertToPGF::toolOperations()
 }
 
 } // namespace DigikamBqmConvertToPgfPlugin
+
+#include "moc_converttopgf.cpp"

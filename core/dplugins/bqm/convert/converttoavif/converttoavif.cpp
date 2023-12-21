@@ -127,3 +127,5 @@ bool ConvertToAVIF::toolOperations()
 }
 
 } // namespace DigikamBqmConvertToAvifPlugin
+
+#include "moc_converttoavif.cpp"

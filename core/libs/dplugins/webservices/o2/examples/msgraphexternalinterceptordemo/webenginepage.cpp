@@ -91,3 +91,5 @@ void WebEnginePage::onWindowCloseRequested()
     	}
     }
 }
+
+#include "moc_webenginepage.cpp"

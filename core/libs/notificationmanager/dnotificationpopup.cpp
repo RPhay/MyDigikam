@@ -712,3 +712,5 @@ DNotificationPopup* DNotificationPopup::message(int popupStyle, const QString& c
 }
 
 } // namespace Digikam
+
+#include "moc_dnotificationpopup.cpp"

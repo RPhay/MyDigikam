@@ -129,3 +129,5 @@ void ScriptingSettings::slotToolTipButtonToggled(bool /*checked*/)
 }
 
 } // namespace Digikam
+
+#include "moc_scriptingsettings.cpp"

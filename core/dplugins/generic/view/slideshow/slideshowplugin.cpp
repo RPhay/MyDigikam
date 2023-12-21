@@ -360,3 +360,5 @@ void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlay
 }
 
 } // namespace DigikamGenericSlideShowPlugin
+
+#include "moc_slideshowplugin.cpp"

@@ -132,3 +132,5 @@ void PanoramaPlugin::slotPanorama()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_panoramaplugin.cpp"

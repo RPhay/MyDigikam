@@ -248,3 +248,5 @@ void DbEngineGuiErrorHandler::consultUserForError(DbEngineErrorAnswer* answer, c
 }
 
 } // namespace Digikam
+
+#include "moc_dbengineguierrorhandler.cpp"

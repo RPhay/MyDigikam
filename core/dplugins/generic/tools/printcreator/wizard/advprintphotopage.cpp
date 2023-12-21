@@ -1658,3 +1658,5 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_advprintphotopage.cpp"

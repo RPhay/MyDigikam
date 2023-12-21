@@ -152,3 +152,5 @@ void FilmGrainTool::renderingFinished()
 }
 
 } // namespace DigikamEditorFilmGrainToolPlugin
+
+#include "moc_filmgraintool.cpp"

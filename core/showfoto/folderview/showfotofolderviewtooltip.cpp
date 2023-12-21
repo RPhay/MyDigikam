@@ -115,3 +115,5 @@ QString ShowfotoFolderViewToolTip::tipContents()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotofolderviewtooltip.cpp"

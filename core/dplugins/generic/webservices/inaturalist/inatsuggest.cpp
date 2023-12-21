@@ -452,3 +452,5 @@ void SuggestTaxonCompletion::slotImageLoaded(const QUrl& url, const QByteArray& 
 }
 
 } // namespace DigikamGenericINatPlugin
+
+#include "moc_inatsuggest.cpp"

@@ -116,3 +116,5 @@ void AltLangStringsEdit::slotSelectionChanged(const QString& lang)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_altlangstringedit.cpp"

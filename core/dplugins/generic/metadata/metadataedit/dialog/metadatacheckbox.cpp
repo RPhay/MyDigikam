@@ -48,3 +48,5 @@ void MetadataCheckBox::slotValid()
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_metadatacheckbox.cpp"

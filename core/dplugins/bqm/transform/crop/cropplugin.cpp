@@ -99,3 +99,5 @@ void CropPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmCropPlugin
+
+#include "moc_cropplugin.cpp"

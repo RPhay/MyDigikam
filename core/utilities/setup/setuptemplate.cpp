@@ -301,3 +301,5 @@ void SetupTemplate::slotRepTemplate()
 }
 
 } // namespace Digikam
+
+#include "moc_setuptemplate.cpp"

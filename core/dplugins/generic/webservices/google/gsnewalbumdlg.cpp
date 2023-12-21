@@ -155,3 +155,5 @@ void GSNewAlbumDlg::getAlbumProperties(GSFolder& album)
 }
 
 } // namespace DigikamGenericGoogleServicesPlugin
+
+#include "moc_gsnewalbumdlg.cpp"

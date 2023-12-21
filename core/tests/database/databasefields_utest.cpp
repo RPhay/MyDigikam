@@ -253,3 +253,5 @@ void DatabaseFieldsTest::testMinSizeType()
     DECLARE_MINSIZE_TEST(ImageHistoryInfo)
     DECLARE_MINSIZE_TEST(VideoMetadata)
 }
+
+#include "moc_databasefields_utest.cpp"

@@ -280,3 +280,5 @@ void OilPaintFilter::readParameters(const Digikam::FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_oilpaintfilter.cpp"

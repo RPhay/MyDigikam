@@ -119,3 +119,5 @@ void InsertTextToolPlugin::slotInsertText()
 }
 
 } // namespace DigikamEditorInsertTextToolPlugin
+
+#include "moc_inserttexttoolplugin.cpp"

@@ -36,3 +36,5 @@ NonaBinary::~NonaBinary()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_nonabinary.cpp"

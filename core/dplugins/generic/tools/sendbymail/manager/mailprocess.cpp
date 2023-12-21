@@ -658,3 +658,5 @@ void MailProcess::slotCleanUp()
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_mailprocess.cpp"

@@ -292,3 +292,5 @@ void BlackFrameListView::slotContextMenu()
 }
 
 } // namespace Digikam
+
+#include "moc_blackframelistview.cpp"

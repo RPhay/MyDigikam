@@ -242,3 +242,5 @@ void AVPlayerSlider::mousePressEvent(QMouseEvent* e)
 #endif
 
 } // namespace QtAV
+
+#include "moc_AVPlayerSlider.cpp"

@@ -636,3 +636,5 @@ HaarIfaceTest::~HaarIfaceTest()
 }
 
 QTEST_MAIN(HaarIfaceTest)
+
+#include "moc_haariface_utest.cpp"

@@ -432,3 +432,5 @@ void DHueSaturationSelector::drawPalette(QPixmap* pixmap)
 }
 
 } // namespace Digikam
+
+#include "moc_dhuesaturationselect.cpp"

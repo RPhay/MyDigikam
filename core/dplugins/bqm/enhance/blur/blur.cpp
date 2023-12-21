@@ -117,3 +117,5 @@ bool Blur::toolOperations()
 }
 
 } // namespace DigikamBqmBlurPlugin
+
+#include "moc_blur.cpp"

@@ -731,3 +731,5 @@ void LocalContrastSettings::saveAsSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_localcontrastsettings.cpp"

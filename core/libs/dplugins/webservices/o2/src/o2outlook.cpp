@@ -12,3 +12,5 @@ QUrl O2Outlook::redirectUrl()
 {
     return redirectUri_;
 }
+
+#include "moc_o2outlook.cpp"

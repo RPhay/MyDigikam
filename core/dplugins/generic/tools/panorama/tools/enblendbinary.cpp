@@ -36,3 +36,5 @@ EnblendBinary::~EnblendBinary()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_enblendbinary.cpp"

@@ -257,3 +257,5 @@ void ItemAlbumFilterModel::slotDelayedTagNamesTimer()
 } // namespace Digikam
 
 #include "itemalbumfiltermodel.moc"
+
+#include "moc_itemalbumfiltermodel.cpp"

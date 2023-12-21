@@ -578,3 +578,5 @@ void VideoWall::changeClockType()
     player->masterClock()->setClockAuto(false);
     player->masterClock()->setClockType(AVClock::ExternalClock);
 }
+
+#include "moc_VideoWall.cpp"

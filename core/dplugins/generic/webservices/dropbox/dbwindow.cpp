@@ -440,3 +440,5 @@ void DBWindow::closeEvent(QCloseEvent* e)
 }
 
 } // namespace DigikamGenericDropBoxPlugin
+
+#include "moc_dbwindow.cpp"

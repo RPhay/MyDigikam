@@ -65,3 +65,5 @@ void TestLookupAltitudeGeonames::testSimpleLookup()
 }
 
 QTEST_GUILESS_MAIN(TestLookupAltitudeGeonames)
+
+#include "moc_lookup_altitude_geonames_utest.cpp"

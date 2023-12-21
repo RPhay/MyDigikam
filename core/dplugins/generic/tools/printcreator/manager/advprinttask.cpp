@@ -726,3 +726,5 @@ void AdvPrintTask::printCaption(QPainter& p,
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_advprinttask.cpp"

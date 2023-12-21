@@ -259,3 +259,5 @@ QModelIndex SimpleTreeModel::itemToIndex(const Item* const item) const
 }
 
 } // namespace Digikam
+
+#include "moc_simpletreemodel.cpp"

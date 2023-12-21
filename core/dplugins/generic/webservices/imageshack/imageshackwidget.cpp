@@ -108,3 +108,5 @@ void ImageShackWidget::slotReloadGalleries()
 }
 
 } // namespace DigikamGenericImageShackPlugin
+
+#include "moc_imageshackwidget.cpp"

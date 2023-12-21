@@ -106,3 +106,5 @@ void CalPrinter::cancel()
 }
 
 } // namespace Digikam
+
+#include "moc_calprinter.cpp"

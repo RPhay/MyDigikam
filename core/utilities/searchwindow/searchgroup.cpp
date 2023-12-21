@@ -391,3 +391,5 @@ QList<QRect> SearchGroup::startupAnimationArea() const
 }
 
 } // namespace Digikam
+
+#include "moc_searchgroup.cpp"

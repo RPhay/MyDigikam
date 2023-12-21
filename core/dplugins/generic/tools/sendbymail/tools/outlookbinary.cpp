@@ -40,3 +40,5 @@ OutlookBinary::~OutlookBinary()
 }
 
 } // namespace Digikam
+
+#include "moc_outlookbinary.cpp"

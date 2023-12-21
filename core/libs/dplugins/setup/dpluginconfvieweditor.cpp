@@ -55,3 +55,5 @@ void DPluginConfViewEditor::loadPlugins()
 }
 
 } // namespace Digikam
+
+#include "moc_dpluginconfvieweditor.cpp"

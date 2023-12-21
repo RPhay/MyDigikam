@@ -274,3 +274,5 @@ void RedEyeCorrectionFilter::readParameters(const FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_redeyecorrectionfilter.cpp"

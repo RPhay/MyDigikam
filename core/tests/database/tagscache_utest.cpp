@@ -203,3 +203,5 @@ void TagsCacheTest::dumpTags()
 }
 
 QTEST_GUILESS_MAIN(TagsCacheTest)
+
+#include "moc_tagscache_utest.cpp"

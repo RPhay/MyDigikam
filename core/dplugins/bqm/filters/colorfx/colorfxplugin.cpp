@@ -99,3 +99,5 @@ void ColorFXPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmColorFXPlugin
+
+#include "moc_colorfxplugin.cpp"

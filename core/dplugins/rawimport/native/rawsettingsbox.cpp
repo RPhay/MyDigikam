@@ -509,3 +509,5 @@ void RawSettingsBox::slotFileDialogAboutToOpen()
 }
 
 } // namespace DigikamRawImportNativePlugin
+
+#include "moc_rawsettingsbox.cpp"

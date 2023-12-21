@@ -790,3 +790,5 @@ void RegionFrameItem::setRectInSceneCoordinatesAdjusted(const QRectF& rect)
 }
 
 } // namespace Digikam
+
+#include "moc_regionframeitem.cpp"

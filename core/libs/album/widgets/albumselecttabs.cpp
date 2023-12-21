@@ -271,3 +271,5 @@ AlbumLabelsSearchHandler* AlbumSelectTabs::albumLabelsHandler() const
 }
 
 } // namespace Digikam
+
+#include "moc_albumselecttabs.cpp"

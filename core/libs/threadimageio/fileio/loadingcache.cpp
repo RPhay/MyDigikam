@@ -482,3 +482,5 @@ void LoadingCache::CacheLock::timedWait()
 }
 
 } // namespace Digikam
+
+#include "moc_loadingcache.cpp"

@@ -243,3 +243,5 @@ bool Crop::toolOperations()
 }
 
 } // namespace DigikamBqmCropPlugin
+
+#include "moc_crop.cpp"

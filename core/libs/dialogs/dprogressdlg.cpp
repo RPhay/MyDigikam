@@ -183,3 +183,5 @@ void DProgressDlg::setTitle(const QString& text)
 }
 
 } // namespace Digikam
+
+#include "moc_dprogressdlg.cpp"

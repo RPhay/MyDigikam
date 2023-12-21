@@ -614,3 +614,5 @@ void DNGConverterDialog::slotDNGConverterAction(const DigikamGenericDNGConverter
 }
 
 } // namespace DigikamGenericDNGConverterPlugin
+
+#include "moc_dngconverterdialog.cpp"

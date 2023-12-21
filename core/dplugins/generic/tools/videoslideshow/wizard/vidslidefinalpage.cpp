@@ -204,3 +204,5 @@ bool VidSlideFinalPage::isComplete() const
 }
 
 } // namespace DigikamGenericVideoSlideShowPlugin
+
+#include "moc_vidslidefinalpage.cpp"

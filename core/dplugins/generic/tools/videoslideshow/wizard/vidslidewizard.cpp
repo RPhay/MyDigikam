@@ -153,3 +153,5 @@ void VidSlideWizard::slotCurrentIdChanged(int id)
 }
 
 } // namespace DigikamGenericVideoSlideShowPlugin
+
+#include "moc_vidslidewizard.cpp"

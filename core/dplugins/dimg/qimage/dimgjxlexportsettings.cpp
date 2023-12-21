@@ -145,3 +145,5 @@ void DImgJXLExportSettings::slotToggleJXLLossLess(bool b)
 }
 
 } // namespace Digikam
+
+#include "moc_dimgjxlexportsettings.cpp"

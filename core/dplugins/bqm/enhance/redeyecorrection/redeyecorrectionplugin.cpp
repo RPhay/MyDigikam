@@ -99,3 +99,5 @@ void RedEyeCorrectionPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmRedEyeCorrectionPlugin
+
+#include "moc_redeyecorrectionplugin.cpp"

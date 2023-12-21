@@ -585,3 +585,5 @@ void ODTalker::readSettings()
 }
 
 } // namespace DigikamGenericOneDrivePlugin
+
+#include "moc_odtalker.cpp"

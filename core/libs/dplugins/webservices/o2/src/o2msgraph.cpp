@@ -8,3 +8,5 @@ O2Msgraph::O2Msgraph(QObject *parent): O2(parent) {
     setTokenUrl(MsgraphTokenUrl);
     setRefreshTokenUrl(MsgraphTokenUrl);
 }
+
+#include "moc_o2msgraph.cpp"

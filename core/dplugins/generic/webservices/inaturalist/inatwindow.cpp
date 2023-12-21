@@ -1202,3 +1202,5 @@ void INatWindow::saveEditedPlaceName(const QString& text)
 }
 
 } // namespace DigikamGenericINatPlugin
+
+#include "moc_inatwindow.cpp"

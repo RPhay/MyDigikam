@@ -153,3 +153,5 @@ void RawImportNativePlugin::slotLoadRaw()
 }
 
 } // namespace DigikamRawImportNativePlugin
+
+#include "moc_rawimportnativeplugin.cpp"

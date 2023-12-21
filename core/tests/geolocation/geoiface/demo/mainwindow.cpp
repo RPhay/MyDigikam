@@ -619,3 +619,5 @@ GeoModelHelper::PropertyFlags MarkerModelHelper::modelFlags() const
 {
     return FlagMovable;
 }
+
+#include "moc_mainwindow.cpp"

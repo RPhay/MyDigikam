@@ -66,3 +66,5 @@ QString RemoveDoublesModifier::parseOperation(ParseSettings& settings, const QRe
 }
 
 } // namespace Digikam
+
+#include "moc_removedoublesmodifier.cpp"

@@ -39,3 +39,5 @@ ThunderbirdBinary::~ThunderbirdBinary()
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_thunderbirdbinary.cpp"

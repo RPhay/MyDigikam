@@ -69,3 +69,5 @@ void CalWidget::recreate()
 }
 
 } // Namespace Digikam
+
+#include "moc_calwidget.cpp"

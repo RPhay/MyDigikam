@@ -130,3 +130,5 @@ void BalooWrap::setSyncToDigikam(bool value)
 }
 
 } // namespace Digikam
+
+#include "moc_baloowrap.cpp"

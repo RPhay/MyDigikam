@@ -33,3 +33,5 @@ DImgThreadedAnalyser::~DImgThreadedAnalyser()
 }
 
 } // namespace Digikam
+
+#include "moc_dimgthreadedanalyser.cpp"

@@ -320,3 +320,5 @@ void DGradientSlider::setColors(const QColor& lcolor, const QColor& rcolor)
 }
 
 } // namespace Digikam
+
+#include "moc_dgradientslider.cpp"

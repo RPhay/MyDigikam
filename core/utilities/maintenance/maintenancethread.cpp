@@ -385,3 +385,5 @@ int MaintenanceThread::getChunkSize(int elementCount)
 */
 
 } // namespace Digikam
+
+#include "moc_maintenancethread.cpp"

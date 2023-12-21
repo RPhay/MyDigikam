@@ -303,3 +303,5 @@ int IccRenderingIntentComboBox::intent() const
 }
 
 } // namespace Digikam
+
+#include "moc_iccprofilescombobox.cpp"

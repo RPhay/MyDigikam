@@ -124,3 +124,5 @@ void FCPlugin::slotFileCopyExport()
 }
 
 } // namespace DigikamGenericFileCopyPlugin
+
+#include "moc_fcplugin.cpp"

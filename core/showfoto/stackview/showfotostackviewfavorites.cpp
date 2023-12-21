@@ -800,3 +800,5 @@ void ShowfotoStackViewFavorites::slotSearchResult(int found)
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotostackviewfavorites.cpp"

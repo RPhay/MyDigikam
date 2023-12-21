@@ -138,3 +138,5 @@ void RenameCustomizerTest::setUseDefault_case_lower_should_deliver_lowercase_fil
     customizer.setChangeCase(RenameCustomizer::LOWER);
     QCOMPARE(customizer.newName(QLatin1String("TeSt.pnG")), QLatin1String("test.png"));
 }
+
+#include "moc_renamecustomizer_utest.cpp"

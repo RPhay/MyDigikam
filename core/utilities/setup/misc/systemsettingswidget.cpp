@@ -172,3 +172,5 @@ void SystemSettingsWidget::slotBinaryDownload()
 }
 
 } // namespace Digikam
+
+#include "moc_systemsettingswidget.cpp"

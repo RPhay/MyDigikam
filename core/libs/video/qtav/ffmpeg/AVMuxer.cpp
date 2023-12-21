@@ -893,3 +893,5 @@ void AVMuxer::Private::applyOptionsForContext()
 }
 
 } // namespace QtAV
+
+#include "moc_AVMuxer.cpp"

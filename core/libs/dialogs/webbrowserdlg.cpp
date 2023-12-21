@@ -302,3 +302,5 @@ void WebBrowserDlg::slotDesktopWebBrowser()
 }
 
 } // namespace Digikam
+
+#include "moc_webbrowserdlg.cpp"

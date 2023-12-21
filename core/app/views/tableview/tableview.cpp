@@ -687,3 +687,5 @@ void TableView::rename()
 }
 
 } // namespace Digikam
+
+#include "moc_tableview.cpp"

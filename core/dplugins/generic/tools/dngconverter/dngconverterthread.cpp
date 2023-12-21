@@ -167,3 +167,5 @@ void DNGConverterActionThread::cancel()
 }
 
 }  // namespace DigikamGenericDNGConverterPlugin
+
+#include "moc_dngconverterthread.cpp"

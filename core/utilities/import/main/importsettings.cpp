@@ -754,3 +754,5 @@ bool ImportSettings::getIconShowCoordinates() const
 }
 
 } // namespace Digikam
+
+#include "moc_importsettings.cpp"

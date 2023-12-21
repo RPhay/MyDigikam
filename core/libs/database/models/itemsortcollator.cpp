@@ -114,3 +114,5 @@ int ItemSortCollator::albumCompare(const QString& a, const QString& b,
 }
 
 } // namespace Digikam
+
+#include "moc_itemsortcollator.cpp"

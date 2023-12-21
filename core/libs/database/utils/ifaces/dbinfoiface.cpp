@@ -872,3 +872,5 @@ void DBInfoIface::openSetupPage(SetupPage page)
 }
 
 } // namespace Digikam
+
+#include "moc_dbinfoiface.cpp"

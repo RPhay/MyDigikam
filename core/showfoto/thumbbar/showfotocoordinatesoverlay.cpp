@@ -111,3 +111,5 @@ void ShowfotoCoordinatesOverlay::slotEntered(const QModelIndex& index)
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotocoordinatesoverlay.cpp"

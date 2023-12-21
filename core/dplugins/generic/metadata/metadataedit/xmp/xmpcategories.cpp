@@ -341,3 +341,5 @@ void XMPCategories::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_xmpcategories.cpp"

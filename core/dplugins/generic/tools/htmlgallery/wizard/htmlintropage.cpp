@@ -121,3 +121,5 @@ bool HTMLIntroPage::validatePage()
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_htmlintropage.cpp"

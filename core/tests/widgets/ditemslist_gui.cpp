@@ -295,3 +295,5 @@ int main(int argc, char* argv[])
 }
 
 #include "ditemslist_gui.moc"
+
+#include "moc_ditemslist_gui.cpp"

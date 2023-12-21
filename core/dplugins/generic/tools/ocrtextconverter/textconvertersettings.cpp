@@ -316,3 +316,5 @@ void TextConverterSettings::slotLocalizeChanged()
 }
 
 } // namespace DigikamGenericTextConverterPlugin
+
+#include "moc_textconvertersettings.cpp"

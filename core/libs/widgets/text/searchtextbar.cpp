@@ -311,3 +311,5 @@ void SearchTextBar::setIgnoreCase(bool ignore)
 }
 
 } // namespace Digikam
+
+#include "moc_searchtextbar.cpp"

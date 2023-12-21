@@ -169,3 +169,5 @@ void TextConverterList::slotRemoveItems()
 }
 
 } // namespace DigikamGenericTextConverterPlugin
+
+#include "moc_textconverterlist.cpp"

@@ -212,3 +212,5 @@ void GSTalkerBase::doOAuth()
 }
 
 } // namespace DigikamGenericGoogleServicesPlugin
+
+#include "moc_gstalkerbase.cpp"

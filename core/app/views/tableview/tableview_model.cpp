@@ -1699,3 +1699,5 @@ int TableViewModel::findChildSortedPosition(TableViewModel::Item* const parentIt
 }
 
 } // namespace Digikam
+
+#include "moc_tableview_model.cpp"

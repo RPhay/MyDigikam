@@ -43,3 +43,5 @@ void DBNewAlbumDlg::getFolderTitle(DBFolder& folder)
 }
 
 } // namespace DigikamGenericDropBoxPlugin
+
+#include "moc_dbnewalbumdlg.cpp"

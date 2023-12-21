@@ -156,3 +156,5 @@ void SmugPlugin::slotSmugMugImport()
 }
 
 } // namespace DigikamGenericSmugPlugin
+
+#include "moc_smugplugin.cpp"

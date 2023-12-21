@@ -446,3 +446,5 @@ LqrRetVal s_carverProgressEnd(const gchar* /*end_message*/)
 }
 
 } // namespace Digikam
+
+#include "moc_contentawarefilter.cpp"

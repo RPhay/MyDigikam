@@ -1048,3 +1048,5 @@ bool GLViewerWidget::isReallyFullScreen() const
 }
 
 } // namespace DigikamGenericGLViewerPlugin
+
+#include "moc_glviewerwidget.cpp"

@@ -268,3 +268,5 @@ void BCGFilter::applyBCG(uchar* const bits, uint width, uint height, bool sixtee
 }
 
 } // namespace Digikam
+
+#include "moc_bcgfilter.cpp"

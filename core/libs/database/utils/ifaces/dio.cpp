@@ -967,3 +967,5 @@ void DIO::addAlbumChildrenToList(QList<int>& list, Album* const album)
 }
 
 } // namespace Digikam
+
+#include "moc_dio.cpp"

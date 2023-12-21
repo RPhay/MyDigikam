@@ -317,3 +317,5 @@ void ColumnAudioVideoProperties::setConfiguration(const TableViewColumnConfigura
 } // namespace TableViewColumns
 
 } // namespace Digikam
+
+#include "moc_tableview_column_audiovideo.cpp"

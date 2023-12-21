@@ -191,3 +191,5 @@ void OilPaintTool::setFinalImage()
 }
 
 } // namespace DigikamEditorOilPaintToolPlugin
+
+#include "moc_oilpainttool.cpp"

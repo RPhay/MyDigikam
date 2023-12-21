@@ -429,3 +429,5 @@ PickLabelMenuAction::~PickLabelMenuAction()
 }
 
 } // namespace Digikam
+
+#include "moc_picklabelwidget.cpp"

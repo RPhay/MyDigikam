@@ -487,3 +487,5 @@ void ImportContextMenuHelper::setSelectedItems(const QList<QUrl>& urls)
 }
 
 } // namespace Digikam
+
+#include "moc_importcontextmenu.cpp"

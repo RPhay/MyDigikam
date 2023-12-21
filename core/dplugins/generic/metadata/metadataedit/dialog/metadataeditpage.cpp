@@ -31,3 +31,5 @@ MetadataEditPage::~MetadataEditPage()
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_metadataeditpage.cpp"

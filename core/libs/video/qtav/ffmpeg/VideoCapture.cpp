@@ -380,3 +380,5 @@ void VideoCapture::setVideoFrame(const VideoFrame& frame)
 
 } // namespace QtAV
 
+
+#include "moc_VideoCapture.cpp"

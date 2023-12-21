@@ -594,3 +594,5 @@ void TimeAdjustSettings::setCurrentItemUrl(const QUrl& url)
 }
 
 } // namespace Digikam
+
+#include "moc_timeadjustsettings.cpp"

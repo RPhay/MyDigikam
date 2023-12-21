@@ -391,3 +391,5 @@ QList<qlonglong> ScanController::getNewIdsList() const
 }
 
 } // namespace Digikam
+
+#include "moc_scancontroller.cpp"

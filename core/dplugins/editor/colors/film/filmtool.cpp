@@ -690,3 +690,5 @@ bool FilmTool::eventFilter(QObject* obj, QEvent* ev)
 }
 
 } // namespace DigikamEditorFilmToolPlugin
+
+#include "moc_filmtool.cpp"

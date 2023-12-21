@@ -140,3 +140,5 @@ void ExpoBlendingIntroPage::slotExpoBlendingIntroPageIsValid()
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_expoblendingintropage.cpp"

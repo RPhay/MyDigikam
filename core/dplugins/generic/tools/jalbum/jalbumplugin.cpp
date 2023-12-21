@@ -108,3 +108,5 @@ void JAlbumPlugin::slotJAlbum()
 }
 
 } // namespace DigikamGenericJAlbumPlugin
+
+#include "moc_jalbumplugin.cpp"

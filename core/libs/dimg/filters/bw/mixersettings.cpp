@@ -717,3 +717,5 @@ void MixerSettings::saveAsSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_mixersettings.cpp"

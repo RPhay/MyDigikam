@@ -41,3 +41,5 @@ void TaxonEdit::focusInEvent(QFocusEvent* e)
 }
 
 } // namespace DigikamGenericINatPlugin
+
+#include "moc_inattaxonedit.cpp"

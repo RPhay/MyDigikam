@@ -161,3 +161,5 @@ VideoFormat::PixelFormat VideoEncoder::pixelFormat() const
 }
 
 } // namespace QtAV
+
+#include "moc_VideoEncoder.cpp"

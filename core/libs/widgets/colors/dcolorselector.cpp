@@ -150,3 +150,5 @@ void DColorSelector::paintEvent(QPaintEvent*)
 }
 
 } // namespace Digikam
+
+#include "moc_dcolorselector.cpp"

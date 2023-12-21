@@ -46,3 +46,5 @@ MakeBinary::~MakeBinary()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_makebinary.cpp"

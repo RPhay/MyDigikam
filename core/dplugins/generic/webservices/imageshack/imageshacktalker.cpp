@@ -572,3 +572,5 @@ void ImageShackTalker::parseAddPhotoToGalleryDone(const QByteArray& data)
 }
 
 } // namespace DigikamGenericImageShackPlugin
+
+#include "moc_imageshacktalker.cpp"

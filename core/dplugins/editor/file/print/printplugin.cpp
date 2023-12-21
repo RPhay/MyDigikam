@@ -127,3 +127,5 @@ void PrintToolPlugin::slotPrint()
 }
 
 } // namespace DigikamEditorPrintToolPlugin
+
+#include "moc_printplugin.cpp"

@@ -264,3 +264,5 @@ bool Rotate::toolOperations()
 }
 
 } // namespace DigikamBqmRotatePlugin
+
+#include "moc_rotate.cpp"

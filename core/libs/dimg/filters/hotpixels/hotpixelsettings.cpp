@@ -285,3 +285,5 @@ void HotPixelSettings::slotClearBlackFrameList()
 }
 
 } // namespace Digikam
+
+#include "moc_hotpixelsettings.cpp"

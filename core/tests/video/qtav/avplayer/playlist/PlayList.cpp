@@ -282,3 +282,5 @@ void PlayList::onAboutToPlay(const QModelIndex& index)
 }
 
 } // namespace AVPlayer
+
+#include "moc_PlayList.cpp"

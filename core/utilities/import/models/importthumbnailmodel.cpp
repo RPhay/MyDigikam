@@ -182,3 +182,5 @@ void ImportThumbnailModel::slotThumbInfoReady(const CamItemInfo& info)
 }
 
 } // namespace Digikam
+
+#include "moc_importthumbnailmodel.cpp"

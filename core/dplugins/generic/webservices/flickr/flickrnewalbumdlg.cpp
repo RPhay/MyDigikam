@@ -52,3 +52,5 @@ void FlickrNewAlbumDlg::getFolderProperties(FPhotoSet& folder)
 }
 
 } // namespace DigikamGenericFlickrPlugin
+
+#include "moc_flickrnewalbumdlg.cpp"

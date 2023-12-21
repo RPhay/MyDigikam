@@ -266,3 +266,5 @@ void Login::doWorkProcessReply()
 }
 
 } // namespace MediaWiki
+
+#include "moc_mediawiki_login.cpp"

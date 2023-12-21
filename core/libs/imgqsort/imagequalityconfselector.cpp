@@ -158,3 +158,5 @@ void ImageQualityConfSelector::slotSelectionChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_imagequalityconfselector.cpp"

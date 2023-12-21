@@ -118,3 +118,5 @@ void AbstractCountingAlbumTreeView::rowsInserted(const QModelIndex& parent, int 
 }
 
 } // namespace Digikam
+
+#include "moc_abstractcountingalbumtreeview.cpp"

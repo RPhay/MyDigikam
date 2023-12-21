@@ -327,3 +327,5 @@ void FCExportWidget::slotFileCopyButtonChanged(bool enabled)
 }
 
 } // namespace DigikamGenericFileCopyPlugin
+
+#include "moc_fcexportwidget.cpp"

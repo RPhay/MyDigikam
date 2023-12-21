@@ -241,3 +241,5 @@ int DPopupFrame::exec(int x, int y)
 } // namespace Digikam
 
 #include "dpopupframe.moc"
+
+#include "moc_dpopupframe.cpp"

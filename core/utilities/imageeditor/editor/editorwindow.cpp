@@ -2965,3 +2965,5 @@ void EditorWindow::registerExtraPluginsActions(QString& dom)
 }
 
 } // namespace Digikam
+
+#include "moc_editorwindow.cpp"

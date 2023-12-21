@@ -256,3 +256,5 @@ void ImportFilterDlg::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_importfilterdlg.cpp"

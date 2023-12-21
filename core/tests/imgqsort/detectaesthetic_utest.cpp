@@ -48,3 +48,5 @@ void ImgQSortTestDetectQesthetic::testParseTestImagesForAestheticDetection()
         QVERIFY(results.value(test_case));
     }
 }
+
+#include "moc_detectaesthetic_utest.cpp"

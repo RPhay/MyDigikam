@@ -93,3 +93,5 @@ void SearchTextBarDb::setFilterModel(AlbumFilterModel* const filterModel)
 }
 
 } // namespace Digikam
+
+#include "moc_searchtextbardb.cpp"

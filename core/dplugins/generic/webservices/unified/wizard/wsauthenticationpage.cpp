@@ -340,3 +340,5 @@ void WSAuthenticationWizard::slotAuthenticationComplete(bool isLinked)
 }
 
 } // namespace DigikamGenericUnifiedPlugin
+
+#include "moc_wsauthenticationpage.cpp"

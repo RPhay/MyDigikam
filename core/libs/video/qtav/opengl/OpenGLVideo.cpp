@@ -580,3 +580,5 @@ void OpenGLVideo::updateViewport()
 }
 
 } // namespace QtAV
+
+#include "moc_OpenGLVideo.cpp"

@@ -738,3 +738,5 @@ HistogramScale HistogramWidget::scaleType() const
 }
 
 } // namespace Digikam
+
+#include "moc_histogramwidget.cpp"

@@ -1253,3 +1253,5 @@ bool AVDemuxThread::tryPause(unsigned long timeout)
 } // namespace QtAV
 
 #include "AVDemuxThread.moc"
+
+#include "moc_AVDemuxThread.cpp"

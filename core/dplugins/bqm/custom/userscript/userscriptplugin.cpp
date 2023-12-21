@@ -99,3 +99,5 @@ void UserScriptPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmUserScriptPlugin
+
+#include "moc_userscriptplugin.cpp"

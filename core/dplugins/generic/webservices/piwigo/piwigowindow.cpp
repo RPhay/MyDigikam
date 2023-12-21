@@ -745,3 +745,5 @@ void PiwigoWindow::setUiInProgressState(bool inProgress)
 }
 
 } // namespace DigikamGenericPiwigoPlugin
+
+#include "moc_piwigowindow.cpp"

@@ -1210,3 +1210,5 @@ QList<int> TagsCache::tagsContaining(const QString& fragment, Qt::CaseSensitivit
 }
 
 } // namespace Digikam
+
+#include "moc_tagscache.cpp"

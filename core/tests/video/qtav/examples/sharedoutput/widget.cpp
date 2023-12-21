@@ -121,3 +121,5 @@ void Widget::testRTSP()
 
     player[1]->play(QString::fromLatin1("rtsp://rtsp.stream/movie"));
 }
+
+#include "moc_widget.cpp"

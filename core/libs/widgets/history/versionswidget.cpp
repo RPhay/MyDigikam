@@ -288,3 +288,5 @@ void VersionsWidget::slotSetupChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_versionswidget.cpp"

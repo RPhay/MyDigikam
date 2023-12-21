@@ -117,3 +117,5 @@ bool MailImagesPage::isComplete() const
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_mailimagespage.cpp"

@@ -115,3 +115,5 @@ void OpenFilePage::saveSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_openfilepage.cpp"

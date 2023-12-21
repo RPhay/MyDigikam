@@ -727,3 +727,5 @@ void EditorToolThreaded::deleteFilterInstance(bool b)
 }
 
 } // namespace Digikam
+
+#include "moc_editortool.cpp"

@@ -147,3 +147,5 @@ void ItemFiltersHistoryItemDelegate::paint(QPainter* painter, const QStyleOption
 }
 
 } //namespace Digikam
+
+#include "moc_itemfiltershistoryitemdelegate.cpp"

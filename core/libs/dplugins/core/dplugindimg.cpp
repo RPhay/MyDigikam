@@ -94,3 +94,5 @@ QString DPluginDImg::extraAboutDataTitle() const
 }
 
 } // namespace Digikam
+
+#include "moc_dplugindimg.cpp"

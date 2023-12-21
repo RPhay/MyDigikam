@@ -71,3 +71,5 @@ void GeolocationFilter::slotFilterChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_geolocationfilter.cpp"

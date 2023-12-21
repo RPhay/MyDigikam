@@ -328,3 +328,5 @@ bool EditorStackView::isZoomablePreview() const
 }
 
 } // namespace Digikam
+
+#include "moc_editorstackview.cpp"

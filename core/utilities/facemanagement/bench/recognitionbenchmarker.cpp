@@ -89,3 +89,5 @@ void RecognitionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& pac
 }
 
 } // namespace Digikam
+
+#include "moc_recognitionbenchmarker.cpp"

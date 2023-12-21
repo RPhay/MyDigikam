@@ -161,3 +161,5 @@ QWizard* DWizardPage::assistant() const
 }
 
 } // namespace Digikam
+
+#include "moc_dwizardpage.cpp"

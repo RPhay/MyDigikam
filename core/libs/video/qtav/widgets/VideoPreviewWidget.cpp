@@ -178,3 +178,5 @@ void VideoPreviewWidget::displayNoFrame()
 }
 
 } // namespace QtAV
+
+#include "moc_VideoPreviewWidget.cpp"

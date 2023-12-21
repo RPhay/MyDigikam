@@ -169,3 +169,5 @@ DImgLoaderSettings* DImgRAWPlugin::exportWidget(const QString& format) const
 }
 
 } // namespace DigikamRAWDImgPlugin
+
+#include "moc_dimgrawplugin.cpp"

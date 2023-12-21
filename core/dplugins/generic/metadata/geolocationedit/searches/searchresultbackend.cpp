@@ -312,3 +312,5 @@ QList<QPair<QString, QString> > SearchResultBackend::getBackends() const
 }
 
 } // namespace DigikamGenericGeolocationEditPlugin
+
+#include "moc_searchresultbackend.cpp"

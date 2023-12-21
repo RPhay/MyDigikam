@@ -548,3 +548,5 @@ void SetupAlbumView::slotUseLargeThumbsToggled(bool b)
 }
 
 } // namespace Digikam
+
+#include "moc_setupalbumview.cpp"

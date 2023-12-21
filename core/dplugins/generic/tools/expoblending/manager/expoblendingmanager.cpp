@@ -202,3 +202,5 @@ void ExpoBlendingManager::slotSetEnfuseVersion(double version)
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_expoblendingmanager.cpp"

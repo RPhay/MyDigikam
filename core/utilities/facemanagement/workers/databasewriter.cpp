@@ -165,3 +165,5 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
 }
 
 } // namespace Digikam
+
+#include "moc_databasewriter.cpp"

@@ -104,3 +104,5 @@ void AssignTagsPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmAssignTagsPlugin
+
+#include "moc_assigntagsplugin.cpp"

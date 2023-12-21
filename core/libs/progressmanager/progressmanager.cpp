@@ -660,3 +660,5 @@ ProgressItem* ProgressManager::createProgressItem(const QString& id, const QStri
 }
 
 } // namespace Digikam
+
+#include "moc_progressmanager.cpp"

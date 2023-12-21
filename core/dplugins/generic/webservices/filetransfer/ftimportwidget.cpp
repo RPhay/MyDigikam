@@ -127,3 +127,5 @@ QList<QUrl> FTImportWidget::sourceUrls() const
 }
 
 } // namespace DigikamGenericFileTransferPlugin
+
+#include "moc_ftimportwidget.cpp"

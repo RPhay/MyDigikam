@@ -816,3 +816,5 @@ void ImportNormalDelegate::updateRects()
 }
 
 } // namespace Digikam
+
+#include "moc_importdelegate.cpp"

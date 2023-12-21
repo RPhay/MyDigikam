@@ -353,3 +353,5 @@ void AdvPrintCropFrame::drawCropRectangle(bool draw)
 }
 
 } // Namespace Digikam
+
+#include "moc_advprintcropframe.cpp"

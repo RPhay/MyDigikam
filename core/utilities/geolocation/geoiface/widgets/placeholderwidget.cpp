@@ -59,3 +59,5 @@ void PlaceholderWidget::setMessage(const QString& message)
 }
 
 } // namespace Digikam
+
+#include "moc_placeholderwidget.cpp"

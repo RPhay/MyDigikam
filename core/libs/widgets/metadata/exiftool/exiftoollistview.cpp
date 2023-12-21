@@ -391,3 +391,5 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
 }
 
 } // namespace Digikam
+
+#include "moc_exiftoollistview.cpp"

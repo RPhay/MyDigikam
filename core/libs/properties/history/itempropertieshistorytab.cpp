@@ -158,3 +158,5 @@ void ItemPropertiesHistoryTab::disableEntry(bool disable)
 }
 
 } // namespace Digikam
+
+#include "moc_itempropertieshistorytab.cpp"

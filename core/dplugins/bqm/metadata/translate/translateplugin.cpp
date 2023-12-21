@@ -99,3 +99,5 @@ void TranslatePlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmTranslatePlugin
+
+#include "moc_translateplugin.cpp"

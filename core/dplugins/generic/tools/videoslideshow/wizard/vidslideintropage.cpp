@@ -122,3 +122,5 @@ bool VidSlideIntroPage::validatePage()
 }
 
 } // namespace DigikamGenericVideoSlideShowPlugin
+
+#include "moc_vidslideintropage.cpp"

@@ -247,3 +247,5 @@ bool WSSettingsPage::validatePage()
 }
 
 } // namespace DigikamGenericUnifiedPlugin
+
+#include "moc_wssettingspage.cpp"

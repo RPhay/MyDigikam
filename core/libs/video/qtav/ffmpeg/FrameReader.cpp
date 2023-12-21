@@ -610,3 +610,5 @@ bool FrameReader::seekInternal(qint64 value)
 }
 
 } // namespace QtAV
+
+#include "moc_FrameReader.cpp"

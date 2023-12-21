@@ -121,3 +121,5 @@ void ContentAwareResizeToolPlugin::slotContentAwareResize()
 }
 
 } // namespace DigikamEditorContentAwareResizeToolPlugin
+
+#include "moc_contentawareresizetoolplugin.cpp"

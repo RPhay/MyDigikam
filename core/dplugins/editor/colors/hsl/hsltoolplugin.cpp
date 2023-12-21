@@ -117,3 +117,5 @@ void HSLToolPlugin::slotHSL()
 }
 
 } // namespace DigikamEditorHSLToolPlugin
+
+#include "moc_hsltoolplugin.cpp"

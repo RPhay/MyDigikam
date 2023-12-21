@@ -157,3 +157,5 @@ TemplateListItem* TemplateList::find(const QString& title)
 }
 
 } // namespace Digikam
+
+#include "moc_templatelist.cpp"

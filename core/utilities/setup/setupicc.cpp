@@ -988,3 +988,5 @@ bool SetupICC::iccRepositoryIsValid()
 }
 
 } // namespace Digikam
+
+#include "moc_setupicc.cpp"

@@ -429,3 +429,5 @@ void AlbumModificationHelper::slotAlbumResetIcon()
 }
 
 } // namespace Digikam
+
+#include "moc_albummodificationhelper.cpp"

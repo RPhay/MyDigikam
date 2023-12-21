@@ -113,3 +113,5 @@ void AVFilterConfigPage::audioFilterChanged(const QString& name)
 }
 
 } // namespace QtAV
+
+#include "moc_AVFilterConfigPage.cpp"

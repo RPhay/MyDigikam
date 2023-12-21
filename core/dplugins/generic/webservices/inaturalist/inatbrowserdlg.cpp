@@ -372,3 +372,5 @@ void INatBrowserDlg::slotCookieRemoved(const QNetworkCookie& cookie)
 }
 
 } // namespace DigikamGenericINatPlugin
+
+#include "moc_inatbrowserdlg.cpp"

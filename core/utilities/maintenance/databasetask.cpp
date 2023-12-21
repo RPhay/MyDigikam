@@ -595,3 +595,5 @@ void DatabaseTask::run()
 }
 
 } // namespace Digikam
+
+#include "moc_databasetask.cpp"

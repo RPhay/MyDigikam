@@ -251,3 +251,5 @@ void UnsharpMaskFilter::readParameters(const FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_unsharpmaskfilter.cpp"

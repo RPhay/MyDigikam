@@ -102,3 +102,5 @@ void ApplyTagsTest::applyTags(const QString& file,
         }
     }
 }
+
+#include "moc_applytags_utest.cpp"

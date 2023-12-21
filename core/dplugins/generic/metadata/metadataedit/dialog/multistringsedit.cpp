@@ -294,3 +294,5 @@ void MultiStringsEdit::slotLineEditModified()
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_multistringsedit.cpp"

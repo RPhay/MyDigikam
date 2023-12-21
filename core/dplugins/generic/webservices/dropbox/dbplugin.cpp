@@ -118,3 +118,5 @@ void DBPlugin::slotDropBox()
 }
 
 } // namespace DigikamGenericDropBoxPlugin
+
+#include "moc_dbplugin.cpp"

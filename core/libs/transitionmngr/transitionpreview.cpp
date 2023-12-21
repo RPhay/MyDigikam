@@ -135,3 +135,5 @@ void TransitionPreview::slotRestart()
 }
 
 } // namespace Digikam
+
+#include "moc_transitionpreview.cpp"

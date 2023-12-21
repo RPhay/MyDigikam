@@ -166,3 +166,5 @@ void Restoration::cancel()
 }
 
 } // namespace DigikamBqmRestorationPlugin
+
+#include "moc_restoration.cpp"

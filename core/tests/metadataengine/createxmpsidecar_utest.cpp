@@ -84,3 +84,5 @@ void CreateXmpSidecarTest::createXmpSidecar(const QString& file,
     ret = meta2->load(pathXmp);
     QVERIFY(ret);
 }
+
+#include "moc_createxmpsidecar_utest.cpp"

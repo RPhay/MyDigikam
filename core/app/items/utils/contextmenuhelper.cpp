@@ -73,3 +73,5 @@ bool ContextMenuHelper::imageIdsHaveSameCategory(const imageIds& ids, DatabaseIt
 }
 
 } // namespace Digikam
+
+#include "moc_contextmenuhelper.cpp"

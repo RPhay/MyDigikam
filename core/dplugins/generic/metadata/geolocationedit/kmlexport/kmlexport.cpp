@@ -662,3 +662,5 @@ QDomElement KmlExport::addKmlHtmlElement(QDomElement& target,
 }
 
 } // namespace DigikamGenericGeolocationEditPlugin
+
+#include "moc_kmlexport.cpp"

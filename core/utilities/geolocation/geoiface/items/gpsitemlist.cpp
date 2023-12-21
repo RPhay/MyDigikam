@@ -307,3 +307,5 @@ void GPSItemList::slotColumnVisibilityActionTriggered(QAction* action)
 }
 
 } // namespace Digikam
+
+#include "moc_gpsitemlist.cpp"

@@ -827,3 +827,5 @@ void AlbumModelTest::testSAlbumModel()
     delete test;
     delete albumModel;
 }
+
+#include "moc_albummodel_utest.cpp"

@@ -160,3 +160,5 @@ void FingerPrintsGenerator::slotDone()
 }
 
 } // namespace Digikam
+
+#include "moc_fingerprintsgenerator.cpp"

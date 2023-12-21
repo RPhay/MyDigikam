@@ -640,3 +640,5 @@ bool DRawDecoder::isRawFile(const QUrl& url)
 }
 
 } // namespace Digikam
+
+#include "moc_drawdecoder.cpp"

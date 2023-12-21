@@ -366,3 +366,5 @@ bool VidSlideVideoPage::validatePage()
 }
 
 } // namespace DigikamGenericVideoSlideShowPlugin
+
+#include "moc_vidslidevideopage.cpp"

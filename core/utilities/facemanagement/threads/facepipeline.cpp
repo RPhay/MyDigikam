@@ -431,3 +431,5 @@ void FacePipeline::setAccuracyAndModel(double value, bool yolo)
 }
 
 } // namespace Digikam
+
+#include "moc_facepipeline.cpp"

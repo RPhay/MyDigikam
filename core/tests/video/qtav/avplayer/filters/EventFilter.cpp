@@ -633,3 +633,5 @@ bool WindowEventFilter::eventFilter(QObject* watched, QEvent* event)
 }
 
 } // namespace AVPlayer
+
+#include "moc_EventFilter.cpp"

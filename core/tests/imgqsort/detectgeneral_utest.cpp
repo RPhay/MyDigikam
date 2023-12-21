@@ -82,3 +82,5 @@ void ImgQSortTestGeneral::testParseTestImagesForGeneral_failCase()
         QVERIFY(results.value(test_case));
     }
 }
+
+#include "moc_detectgeneral_utest.cpp"

@@ -600,3 +600,5 @@ int ItemDelegate::calculatethumbSizeToFit(int ws)
 }
 
 } // namespace Digikam
+
+#include "moc_itemdelegate.cpp"

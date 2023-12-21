@@ -597,3 +597,5 @@ RatingMenuAction::~RatingMenuAction()
 }
 
 } // namespace Digikam
+
+#include "moc_ratingwidget.cpp"

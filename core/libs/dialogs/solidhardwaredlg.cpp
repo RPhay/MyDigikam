@@ -425,3 +425,5 @@ void SolidHardwareDlg::slotDeviceRemoved(const QString& udi)
 }
 
 } // namespace Digikam
+
+#include "moc_solidhardwaredlg.cpp"

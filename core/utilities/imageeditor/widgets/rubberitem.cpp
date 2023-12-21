@@ -58,3 +58,5 @@ void RubberItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 }
 
 } // namespace Digikam
+
+#include "moc_rubberitem.cpp"

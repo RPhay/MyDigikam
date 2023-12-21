@@ -597,3 +597,5 @@ QByteArray AddPhotoCommand::encode() const
 }
 
 } // namespace DigikamGenericRajcePlugin
+
+#include "moc_rajcecommand.cpp"

@@ -162,3 +162,5 @@ void CBTool::setFinalImage()
 }
 
 } // namespace DigikamEditorColorBalanceToolPlugin
+
+#include "moc_cbtool.cpp"

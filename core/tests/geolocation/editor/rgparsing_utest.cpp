@@ -158,3 +158,5 @@ void TestRGParsing::testVerifyRG()
 }
 
 QTEST_GUILESS_MAIN(TestRGParsing)
+
+#include "moc_rgparsing_utest.cpp"

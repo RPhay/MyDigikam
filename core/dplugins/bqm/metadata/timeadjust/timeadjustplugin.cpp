@@ -99,3 +99,5 @@ void TimeAdjustPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmTimeAdjustPlugin
+
+#include "moc_timeadjustplugin.cpp"

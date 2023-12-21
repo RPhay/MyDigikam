@@ -75,3 +75,5 @@ void OXTwitter::link() {
 #endif
     connect(reply, SIGNAL(finished()), this, SLOT(onTokenExchangeFinished()));
 }
+
+#include "moc_oxtwitter.cpp"

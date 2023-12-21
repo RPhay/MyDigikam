@@ -687,3 +687,5 @@ void UMSCamera::getUUIDFromSolid()
 }
 
 } // namespace Digikam
+
+#include "moc_umscamera.cpp"

@@ -194,3 +194,5 @@ void ExifToolProcess::Private::setCommandResult(int cmdStatus)
 }
 
 } // namespace Digikam
+
+#include "moc_exiftoolprocess_p.cpp"

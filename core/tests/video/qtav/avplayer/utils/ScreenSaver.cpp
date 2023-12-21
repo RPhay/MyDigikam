@@ -582,3 +582,5 @@ void ScreenSaver::timerEvent(QTimerEvent* e)
 }
 
 } // namespace AVPlayer
+
+#include "moc_ScreenSaver.cpp"

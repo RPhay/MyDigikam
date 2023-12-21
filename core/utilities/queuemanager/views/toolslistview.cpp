@@ -410,3 +410,5 @@ void ToolsListView::slotContextMenu()
 }
 
 } // namespace Digikam
+
+#include "moc_toolslistview.cpp"

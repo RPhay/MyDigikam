@@ -457,3 +457,5 @@ void QueryRevision::doWorkProcessReply()
 }
 
 } // namespace MediaWiki
+
+#include "moc_mediawiki_queryrevision.cpp"

@@ -64,3 +64,5 @@ void ICCPreviewWidget::slotClearPreview()
 }
 
 } // namespace Digikam
+
+#include "moc_iccpreviewwidget.cpp"

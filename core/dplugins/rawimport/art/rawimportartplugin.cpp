@@ -256,3 +256,5 @@ void ARTRawImportPlugin::slotProcessReadyRead()
 }
 
 } // namespace DigikamRawImportARTPlugin
+
+#include "moc_rawimportartplugin.cpp"

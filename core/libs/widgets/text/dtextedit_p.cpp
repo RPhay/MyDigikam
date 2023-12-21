@@ -152,3 +152,5 @@ void DPlainTextEdit::Private::init(DPlainTextEdit* const parent)
 }
 
 } // namespace Digikam
+
+#include "moc_dtextedit_p.cpp"

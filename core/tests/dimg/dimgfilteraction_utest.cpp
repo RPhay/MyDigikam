@@ -172,3 +172,5 @@ QDir DImgFilterActionTest::imageDir()
 
     return filesPath;
 }
+
+#include "moc_dimgfilteraction_utest.cpp"

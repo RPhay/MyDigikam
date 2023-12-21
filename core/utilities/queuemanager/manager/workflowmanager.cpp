@@ -572,3 +572,5 @@ bool WorkflowManager::load(QStringList& failed)
 }
 
 } // namespace Digikam
+
+#include "moc_workflowmanager.cpp"

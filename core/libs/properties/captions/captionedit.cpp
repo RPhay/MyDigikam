@@ -191,3 +191,5 @@ QLineEdit* CaptionEdit::authorEdit() const
 }
 
 } // namespace Digikam
+
+#include "moc_captionedit.cpp"

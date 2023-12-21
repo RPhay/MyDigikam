@@ -143,3 +143,5 @@ int MailWizard::nextId() const
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_mailwizard.cpp"

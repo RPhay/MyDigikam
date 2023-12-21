@@ -283,3 +283,5 @@ int CurvesSettings::curvesLeftOffset() const
 }
 
 } // namespace Digikam
+
+#include "moc_curvessettings.cpp"

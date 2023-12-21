@@ -1060,3 +1060,5 @@ void VideoThread::run()
 }
 
 } // namespace QtAV
+
+#include "moc_VideoThread.cpp"

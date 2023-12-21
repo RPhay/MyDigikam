@@ -267,3 +267,5 @@ void GraphicsDImgItem::contextMenuEvent(QGraphicsSceneContextMenuEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_graphicsdimgitem.cpp"

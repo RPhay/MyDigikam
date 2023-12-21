@@ -223,3 +223,5 @@ GeoModelHelper::PropertyFlags GPSGeoIfaceModelHelper::modelFlags() const
 }
 
 } // namespace Digikam
+
+#include "moc_gpsgeoifacemodelhelper.cpp"

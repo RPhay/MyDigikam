@@ -357,3 +357,5 @@ bool RemoveMetadata::toolOperations()
 }
 
 } // namespace DigikamBqmRemoveMetadataPlugin
+
+#include "moc_removemetadata.cpp"

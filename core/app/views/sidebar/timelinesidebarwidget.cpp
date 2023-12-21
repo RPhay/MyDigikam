@@ -554,3 +554,5 @@ void TimelineSideBarWidget::slotCheckAboutSelection()
 }
 
 } // namespace Digikam
+
+#include "moc_timelinesidebarwidget.cpp"

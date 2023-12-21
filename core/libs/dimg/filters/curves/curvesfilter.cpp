@@ -112,3 +112,5 @@ void CurvesFilter::readParameters(const FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_curvesfilter.cpp"

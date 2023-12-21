@@ -649,3 +649,5 @@ void GPSCorrelatorWidget::slotCurrentChanged(const QModelIndex& current, const Q
 }
 
 } // namespace Digikam
+
+#include "moc_gpscorrelatorwidget.cpp"

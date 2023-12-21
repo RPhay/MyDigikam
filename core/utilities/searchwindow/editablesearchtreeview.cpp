@@ -118,3 +118,5 @@ void EditableSearchTreeView::handleCustomContextMenuAction(QAction* action, cons
 }
 
 } // namespace Digikam
+
+#include "moc_editablesearchtreeview.cpp"

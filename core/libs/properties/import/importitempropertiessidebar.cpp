@@ -253,3 +253,5 @@ void ImportItemPropertiesSideBarImport::doSaveState()
 }
 
 } // namespace Digikam
+
+#include "moc_importitempropertiessidebar.cpp"

@@ -39,3 +39,5 @@ EvolutionBinary::~EvolutionBinary()
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_evolutionbinary.cpp"

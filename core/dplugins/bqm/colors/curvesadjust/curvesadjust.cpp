@@ -185,3 +185,5 @@ bool CurvesAdjust::toolOperations()
 }
 
 } // namespace DigikamBqmCurvesAdjustPlugin
+
+#include "moc_curvesadjust.cpp"

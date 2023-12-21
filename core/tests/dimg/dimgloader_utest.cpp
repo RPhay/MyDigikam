@@ -67,3 +67,5 @@ void DImgLoaderTest::testDImgLoader()
 
     DPluginLoader::instance()->cleanUp();
 }
+
+#include "moc_dimgloader_utest.cpp"

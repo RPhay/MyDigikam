@@ -528,3 +528,5 @@ void RajceWidget::writeSettings()
 }
 
 } // namespace DigikamGenericRajcePlugin
+
+#include "moc_rajcewidget.cpp"

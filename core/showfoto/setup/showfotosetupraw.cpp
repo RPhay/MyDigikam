@@ -80,3 +80,5 @@ void ShowfotoSetupRaw::readSettings()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotosetupraw.cpp"

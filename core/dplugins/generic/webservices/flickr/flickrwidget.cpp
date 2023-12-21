@@ -487,3 +487,5 @@ void FlickrWidget::slotAddExtraTagsToggled(bool status)
 }
 
 } // namespace DigikamGenericFlickrPlugin
+
+#include "moc_flickrwidget.cpp"

@@ -227,3 +227,5 @@ void ExifToolConfPanel::slotSearchTextChanged(const SearchTextSettings& settings
 }
 
 } // namespace Digikam
+
+#include "moc_exiftoolconfpanel.cpp"

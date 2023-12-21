@@ -170,3 +170,5 @@ void BCGTool::setFinalImage()
 }
 
 } // namespace DigikamEditorBCGToolPlugin
+
+#include "moc_bcgtool.cpp"

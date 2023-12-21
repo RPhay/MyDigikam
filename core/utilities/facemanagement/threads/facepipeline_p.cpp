@@ -354,3 +354,5 @@ ThumbnailLoadThread* FacePipeline::Private::createThumbnailLoadThread()
 }
 
 } // namespace Digikam
+
+#include "moc_facepipeline_p.cpp"

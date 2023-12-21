@@ -392,3 +392,5 @@ void FuzzySearchView::slotApplicationSettingsChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_fuzzysearchview.cpp"

@@ -164,3 +164,5 @@ QString VideoDecoder::name() const
 }
 
 } // namespace QtAV
+
+#include "moc_VideoDecoder.cpp"

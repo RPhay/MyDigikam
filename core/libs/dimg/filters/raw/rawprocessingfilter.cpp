@@ -164,3 +164,5 @@ void RawProcessingFilter::filterImage()
 }
 
 } // namespace Digikam
+
+#include "moc_rawprocessingfilter.cpp"

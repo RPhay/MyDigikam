@@ -323,3 +323,5 @@ void DImgPreviewItem::iccSettingsChanged(const ICCSettingsContainer& current, co
 }
 
 } // namespace Digikam
+
+#include "moc_dimgpreviewitem.cpp"

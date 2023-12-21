@@ -285,3 +285,5 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
 }
 
 } // namespace Digikam
+
+#include "moc_addtagscombobox.cpp"

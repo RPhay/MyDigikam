@@ -70,3 +70,5 @@ void ColorLabelFilter::slotColorLabelSelectionChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_colorlabelfilter.cpp"

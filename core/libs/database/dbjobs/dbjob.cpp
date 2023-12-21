@@ -394,3 +394,5 @@ bool SearchesJob::isCanceled() const
 }
 
 } // namespace Digikam
+
+#include "moc_dbjob.cpp"

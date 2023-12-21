@@ -385,3 +385,5 @@ void FileActionMngrDatabaseWorker::copyAttributes(const FileActionItemInfoList& 
 }
 
 } // namespace Digikam
+
+#include "moc_databaseworkeriface.cpp"

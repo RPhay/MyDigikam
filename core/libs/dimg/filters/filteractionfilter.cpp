@@ -256,3 +256,5 @@ void FilterActionFilter::filterImage()
 }
 
 } // namespace Digikam
+
+#include "moc_filteractionfilter.cpp"

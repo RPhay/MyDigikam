@@ -97,3 +97,5 @@ void InvisibleButtonGroup::setSelected(int id)
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_invisiblebuttongroup.cpp"

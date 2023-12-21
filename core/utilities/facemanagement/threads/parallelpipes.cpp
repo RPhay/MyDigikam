@@ -101,3 +101,5 @@ void ParallelPipes::process(const FacePipelineExtendedPackage::Ptr& package)
 }
 
 } // namespace Digikam
+
+#include "moc_parallelpipes.cpp"

@@ -753,3 +753,5 @@ void TextConverterDialog::slotProcessMenu()
 }
 
 } // namespace DigikamGenericTextConverterPlugin
+
+#include "moc_textconverterdialog.cpp"

@@ -307,3 +307,5 @@ void AlbumSelectWidget::slotSelectionChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_albumselectwidget.cpp"

@@ -41,3 +41,5 @@ KmailBinary::~KmailBinary()
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_kmailbinary.cpp"

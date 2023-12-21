@@ -787,3 +787,5 @@ void QueueSettingsView::slotSettingsChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_queuesettingsview.cpp"

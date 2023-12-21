@@ -452,3 +452,5 @@ void GPSItemDetails::slotSetActive(const bool state)
 }
 
 } // namespace DigikamGenericGeolocationEditPlugin
+
+#include "moc_gpsitemdetails.cpp"

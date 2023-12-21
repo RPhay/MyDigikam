@@ -82,3 +82,5 @@ void SetIptcPreviewTest::setIptcPreview(const QString& file)
 
     QCOMPARE(preview.size(), preview2.size());
 }
+
+#include "moc_setiptcpreview_utest.cpp"

@@ -108,3 +108,5 @@ void TestGPXParsing::testCustomParsing()
         QCOMPARE(time1.time(), QTime(12, 41, 02, 287));
     }
 }
+
+#include "moc_geoparsing_utest.cpp"

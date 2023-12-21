@@ -403,3 +403,5 @@ int RefocusFilter::maxMatrixSize()
 }
 
 } // namespace Digikam
+
+#include "moc_refocusfilter.cpp"

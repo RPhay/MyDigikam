@@ -652,3 +652,5 @@ void FbWindow::slotImageListChanged()
 }
 
 } // namespace DigikamGenericFaceBookPlugin
+
+#include "moc_fbwindow.cpp"

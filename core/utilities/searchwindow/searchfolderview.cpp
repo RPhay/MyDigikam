@@ -97,3 +97,5 @@ void NormalSearchTreeView::handleCustomContextMenuAction(QAction* action, const 
 }
 
 } // namespace Digikam
+
+#include "moc_searchfolderview.cpp"

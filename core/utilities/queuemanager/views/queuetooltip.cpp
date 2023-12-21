@@ -102,3 +102,5 @@ QString QueueToolTip::tipContents()
 }
 
 } // namespace Digikam
+
+#include "moc_queuetooltip.cpp"

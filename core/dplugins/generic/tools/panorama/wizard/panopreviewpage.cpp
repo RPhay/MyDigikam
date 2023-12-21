@@ -667,3 +667,5 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_panopreviewpage.cpp"

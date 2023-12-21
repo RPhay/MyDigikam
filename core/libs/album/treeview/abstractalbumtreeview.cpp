@@ -1218,3 +1218,7 @@ void AbstractAlbumTreeView::slotScrollBarActionTriggered(int action)
 }
 
 } // namespace Digikam
+
+#include "moc_abstractalbumtreeview.cpp"
+
+#include "moc_abstractalbumtreeview_p.cpp"

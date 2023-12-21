@@ -145,3 +145,5 @@ void Button::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 }
 
 } // namespace FaceEngineDemo
+
+#include "moc_demobutton.cpp"

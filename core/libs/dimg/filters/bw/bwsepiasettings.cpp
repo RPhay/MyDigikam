@@ -648,3 +648,5 @@ void BWSepiaSettings::setScaleType(HistogramScale scale)
 }
 
 } // namespace Digikam
+
+#include "moc_bwsepiasettings.cpp"

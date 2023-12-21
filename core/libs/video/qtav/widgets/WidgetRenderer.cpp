@@ -143,3 +143,5 @@ bool WidgetRenderer::onSetOrientation(int value)
 IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(WidgetRenderer)
 
 } // namespace QtAV
+
+#include "moc_WidgetRenderer.cpp"

@@ -118,3 +118,5 @@ void OilPaintToolPlugin::slotOilPaint()
 }
 
 } // namespace DigikamEditorOilPaintToolPlugin
+
+#include "moc_oilpainttoolplugin.cpp"

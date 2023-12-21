@@ -104,3 +104,5 @@ void PresentationCaptionPage::slotOpenFontDialog()
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentation_captionpage.cpp"

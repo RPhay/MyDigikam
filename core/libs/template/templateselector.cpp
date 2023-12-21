@@ -194,3 +194,5 @@ void TemplateSelector::slotTemplateListChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_templateselector.cpp"

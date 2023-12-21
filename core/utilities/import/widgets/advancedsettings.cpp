@@ -224,3 +224,5 @@ DownloadSettings AdvancedSettings::settings() const
 }
 
 } // namespace Digikam
+
+#include "moc_advancedsettings.cpp"

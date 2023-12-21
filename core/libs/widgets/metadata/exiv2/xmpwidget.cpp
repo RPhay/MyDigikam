@@ -192,3 +192,5 @@ void XmpWidget::slotSaveMetadataToFile()
 }
 
 } // namespace Digikam
+
+#include "moc_xmpwidget.cpp"

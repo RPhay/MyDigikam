@@ -324,3 +324,5 @@ void PresentationDlg::closeEvent(QCloseEvent* e)
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentationdlg.cpp"

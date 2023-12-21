@@ -214,3 +214,5 @@ void ColumnThumbnail::updateThumbnailSize()
 } // namespace TableViewColumns
 
 } // namespace Digikam
+
+#include "moc_tableview_column_thumbnail.cpp"

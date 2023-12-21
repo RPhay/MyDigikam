@@ -291,3 +291,5 @@ QList<int> DImgThreadedFilter::multithreadedSteps(int stop, int start) const
 }
 
 } // namespace Digikam
+
+#include "moc_dimgthreadedfilter.cpp"

@@ -90,3 +90,5 @@ bool DatabasePage::checkSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_databasepage.cpp"

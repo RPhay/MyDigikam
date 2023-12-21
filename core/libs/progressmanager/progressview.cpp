@@ -543,3 +543,5 @@ void ProgressView::slotToggleVisibility()
 }
 
 } // namespace Digikam
+
+#include "moc_progressview.cpp"

@@ -278,3 +278,5 @@ DImgLoaderSettings* DImgJPEG2000Plugin::exportWidget(const QString& format) cons
 }
 
 } // namespace DigikamJPEG2000DImgPlugin
+
+#include "moc_dimgjpeg2000plugin.cpp"

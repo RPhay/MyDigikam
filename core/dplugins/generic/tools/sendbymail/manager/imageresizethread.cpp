@@ -84,3 +84,5 @@ void ImageResizeThread::cancel()
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_imageresizethread.cpp"

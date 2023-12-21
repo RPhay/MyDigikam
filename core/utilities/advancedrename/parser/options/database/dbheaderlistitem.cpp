@@ -69,3 +69,5 @@ void DbHeaderListItem::slotThemeChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_dbheaderlistitem.cpp"

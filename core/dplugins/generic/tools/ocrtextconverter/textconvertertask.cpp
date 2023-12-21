@@ -129,3 +129,5 @@ void TextConverterTask::slotCancel()
 }
 
 } // namespace DigikamGenericTextConverterPlugin
+
+#include "moc_textconvertertask.cpp"

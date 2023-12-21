@@ -228,3 +228,5 @@ void ColorFxTool::setFinalImage()
 }
 
 } // namespace DigikamEditorColorFxToolPlugin
+
+#include "moc_colorfxtool.cpp"

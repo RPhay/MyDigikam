@@ -199,3 +199,5 @@ DImgLoaderSettings* DImgTIFFPlugin::exportWidget(const QString& format) const
 }
 
 } // namespace DigikamTIFFDImgPlugin
+
+#include "moc_dimgtiffplugin.cpp"

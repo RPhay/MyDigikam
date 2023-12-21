@@ -117,3 +117,5 @@ void AdjustCurvesToolPlugin::slotAdjustCurvesTool()
 }
 
 } // namespace DigikamEditorAdjustCurvesToolPlugin
+
+#include "moc_adjustcurvestoolplugin.cpp"

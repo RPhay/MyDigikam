@@ -291,3 +291,5 @@ void ChoiceSearchComboBox::installView(QAbstractItemView* v)
 }
 
 } // namespace Digikam
+
+#include "moc_choicesearchutilities.cpp"

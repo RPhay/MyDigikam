@@ -56,3 +56,5 @@ bool SimilarityDbBackend::initSchema(SimilarityDbSchemaUpdater* const updater)
 }
 
 } // namespace Digikam
+
+#include "moc_similaritydbbackend.cpp"

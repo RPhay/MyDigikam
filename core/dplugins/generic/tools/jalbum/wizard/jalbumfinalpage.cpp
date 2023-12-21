@@ -167,3 +167,5 @@ bool JAlbumFinalPage::isComplete() const
 }
 
 } // namespace DigikamGenericJAlbumPlugin
+
+#include "moc_jalbumfinalpage.cpp"

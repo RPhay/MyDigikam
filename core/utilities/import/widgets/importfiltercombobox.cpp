@@ -191,3 +191,5 @@ void ImportFilterComboBox::updateFilter()
 }
 
 } // namespace Digikam
+
+#include "moc_importfiltercombobox.cpp"

@@ -665,3 +665,5 @@ void AdvancedMetadataTab::saveModelData(QStandardItemModel* const model,
 }
 
 } // namespace Digikam
+
+#include "moc_advancedmetadatatab.cpp"

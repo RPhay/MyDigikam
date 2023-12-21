@@ -425,3 +425,5 @@ void PreviewList::slotFilterFinished(int id, const QPixmap& pix)
 }
 
 } // namespace Digikam
+
+#include "moc_previewlist.cpp"

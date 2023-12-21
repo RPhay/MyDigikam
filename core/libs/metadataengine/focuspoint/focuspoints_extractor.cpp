@@ -267,3 +267,5 @@ MetaEngine::ImageOrientation FocusPointsExtractor::orientation() const
 }
 
 } // namespace Digikam
+
+#include "moc_focuspoints_extractor.cpp"

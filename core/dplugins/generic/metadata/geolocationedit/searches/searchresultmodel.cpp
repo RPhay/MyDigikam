@@ -366,3 +366,5 @@ void SearchResultModel::removeRowsBySelection(const QItemSelection& selectionLis
 }
 
 } // namespace DigikamGenericGeolocationEditPlugin
+
+#include "moc_searchresultmodel.cpp"

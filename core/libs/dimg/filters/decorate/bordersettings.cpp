@@ -471,3 +471,5 @@ void BorderSettings::toggleBorderSlider(bool b)
 }
 
 } // namespace Digikam
+
+#include "moc_bordersettings.cpp"

@@ -113,3 +113,5 @@ void ItemFaceDelegate::clearModelDataCaches()
 }
 
 } // namespace Digikam
+
+#include "moc_itemfacedelegate.cpp"

@@ -186,3 +186,5 @@ void TagMngrTreeView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAl
 }
 
 } // namespace Digikam
+
+#include "moc_tagmngrtreeview.cpp"

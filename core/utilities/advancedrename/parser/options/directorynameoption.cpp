@@ -77,3 +77,5 @@ QString DirectoryNameOption::parseOperation(ParseSettings& settings, const QRegu
 }
 
 } // namespace Digikam
+
+#include "moc_directorynameoption.cpp"

@@ -202,3 +202,5 @@ void SlideImage::updatePixmap()
 }
 
 } // namespace DigikamGenericSlideShowPlugin
+
+#include "moc_slideimage.cpp"

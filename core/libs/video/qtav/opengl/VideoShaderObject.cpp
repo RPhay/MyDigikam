@@ -263,3 +263,5 @@ const char* DynamicShaderObject::userPostProcess() const
 }
 
 } // namespace QtAV
+
+#include "moc_VideoShaderObject.cpp"

@@ -291,3 +291,5 @@ bool Resize::toolOperations()
 }
 
 } // namespace DigikamBqmResizePlugin
+
+#include "moc_resize.cpp"

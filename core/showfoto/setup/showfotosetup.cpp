@@ -509,3 +509,5 @@ void ShowfotoSetup::onlineVersionCheck()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotosetup.cpp"

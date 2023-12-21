@@ -56,3 +56,5 @@ bool FaceDbBackend::initSchema(FaceDbSchemaUpdater* const updater)
 }
 
 } // namespace Digikam
+
+#include "moc_facedbbackend.cpp"

@@ -515,3 +515,5 @@ void MetadataSelectorView::selectDefault()
 }
 
 } // namespace Digikam
+
+#include "moc_metadataselector.cpp"

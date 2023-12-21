@@ -118,3 +118,5 @@ void BlurToolPlugin::slotBlur()
 }
 
 } // namespace DigikamEditorBlurToolPlugin
+
+#include "moc_blurtoolplugin.cpp"

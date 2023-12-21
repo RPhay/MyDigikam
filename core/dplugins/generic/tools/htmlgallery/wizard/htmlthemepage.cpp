@@ -171,3 +171,5 @@ GalleryTheme::Ptr HTMLThemePage::currentTheme() const
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_htmlthemepage.cpp"

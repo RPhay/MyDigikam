@@ -70,3 +70,5 @@ VideoShader* ShaderManager::prepareMaterial(VideoMaterial* material, qint32 mate
 }
 
 } // namespace QtAV
+
+#include "moc_ShaderManager.cpp"

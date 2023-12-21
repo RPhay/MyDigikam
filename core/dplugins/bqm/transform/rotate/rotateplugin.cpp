@@ -99,3 +99,5 @@ void RotatePlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmRotatePlugin
+
+#include "moc_rotateplugin.cpp"

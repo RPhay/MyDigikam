@@ -514,3 +514,5 @@ void DXmlGuiWindow::setupIconTheme()
 }
 
 } // namespace Digikam
+
+#include "moc_dxmlguiwindow.cpp"

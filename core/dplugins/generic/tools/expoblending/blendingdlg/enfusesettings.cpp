@@ -277,3 +277,5 @@ void EnfuseSettingsWidget::writeSettings(KConfigGroup& group)
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_enfusesettings.cpp"

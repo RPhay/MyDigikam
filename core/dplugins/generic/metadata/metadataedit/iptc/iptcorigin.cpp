@@ -734,3 +734,5 @@ void IPTCOrigin::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_iptcorigin.cpp"

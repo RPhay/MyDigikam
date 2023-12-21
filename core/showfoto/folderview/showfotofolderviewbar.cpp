@@ -506,3 +506,5 @@ void ShowfotoFolderViewBar::registerPluginActions(const QList<DPluginAction*>& a
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotofolderviewbar.cpp"

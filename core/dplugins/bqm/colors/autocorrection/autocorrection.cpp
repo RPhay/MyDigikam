@@ -144,3 +144,5 @@ bool AutoCorrection::toolOperations()
 }
 
 } // namespace DigikamBqmAutoCorrectionPlugin
+
+#include "moc_autocorrection.cpp"

@@ -349,3 +349,5 @@ void ObjectAttributesEdit::slotLineEditModified()
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_objectattributesedit.cpp"

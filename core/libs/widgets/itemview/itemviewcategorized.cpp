@@ -1174,3 +1174,5 @@ void ItemViewCategorized::scrollTo(const QModelIndex& index, ScrollHint hint)
 }
 
 } // namespace Digikam
+
+#include "moc_itemviewcategorized.cpp"

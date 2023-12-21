@@ -258,3 +258,5 @@ void ProfileConversionTool::fastConversion(const IccProfile& profile)
 }
 
 } // namespace DigikamEditorProfileConversionToolPlugin
+
+#include "moc_profileconversiontool.cpp"

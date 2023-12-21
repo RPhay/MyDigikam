@@ -450,3 +450,5 @@ void Sidebar::slotSplitterBtnClicked()
 }
 
 } // namespace Digikam
+
+#include "moc_sidebar.cpp"

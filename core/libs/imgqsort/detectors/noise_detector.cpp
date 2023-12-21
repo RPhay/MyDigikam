@@ -309,3 +309,5 @@ float NoiseDetector::normalize(const float number) const
 }
 
 } // namespace Digikam
+
+#include "moc_noise_detector.cpp"

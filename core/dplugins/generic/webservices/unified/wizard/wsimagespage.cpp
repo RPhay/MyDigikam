@@ -320,3 +320,5 @@ void WSImagesPage::slotCreateAlbumDone(int errCode, const QString& errMsg, const
 }
 
 } // namespace DigikamGenericUnifiedPlugin
+
+#include "moc_wsimagespage.cpp"

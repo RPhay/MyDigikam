@@ -239,3 +239,5 @@ void MdKeyListViewItem::slotThemeChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_mdkeylistviewitem.cpp"

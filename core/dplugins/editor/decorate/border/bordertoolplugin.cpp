@@ -118,3 +118,5 @@ void BorderToolPlugin::slotBorder()
 }
 
 } // namespace DigikamEditorBorderToolPlugin
+
+#include "moc_bordertoolplugin.cpp"

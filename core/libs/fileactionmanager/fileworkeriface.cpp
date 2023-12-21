@@ -356,3 +356,5 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 }
 
 } // namespace Digikam
+
+#include "moc_fileworkeriface.cpp"

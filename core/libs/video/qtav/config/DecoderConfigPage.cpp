@@ -593,3 +593,5 @@ QVector<VideoDecoderId> DecoderConfigPage::idsFromNames(const QStringList& names
 } // namespace QtAV
 
 #include "DecoderConfigPage.moc"
+
+#include "moc_DecoderConfigPage.cpp"

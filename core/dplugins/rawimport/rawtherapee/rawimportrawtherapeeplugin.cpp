@@ -255,3 +255,5 @@ void RawTherapeeRawImportPlugin::slotProcessReadyRead()
 }
 
 } // namespace DigikamRawImportRawTherapeePlugin
+
+#include "moc_rawimportrawtherapeeplugin.cpp"

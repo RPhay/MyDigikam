@@ -622,3 +622,5 @@ void AssignedListView::refreshIndex()
 }
 
 } // namespace Digikam
+
+#include "moc_assignedlist.cpp"

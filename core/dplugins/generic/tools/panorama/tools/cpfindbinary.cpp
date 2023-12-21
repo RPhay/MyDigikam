@@ -51,3 +51,5 @@ bool CPFindBinary::parseHeader(const QString& output)
 
 } // namespace DigikamGenericPanoramaPlugin
 
+
+#include "moc_cpfindbinary.cpp"

@@ -198,3 +198,5 @@ bool HTMLFinalPage::isComplete() const
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_htmlfinalpage.cpp"

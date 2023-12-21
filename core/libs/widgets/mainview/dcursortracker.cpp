@@ -222,3 +222,5 @@ bool DCursorTracker::canBeDisplayed()
 }
 
 } // namespace Digikam
+
+#include "moc_dcursortracker.cpp"

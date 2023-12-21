@@ -195,3 +195,5 @@ QString MetadataOption::parseMetadata(const QString& token, ParseSettings& setti
 }
 
 } // namespace Digikam
+
+#include "moc_metadataoption.cpp"

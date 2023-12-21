@@ -225,3 +225,5 @@ void ProfileConversionToolPlugin::slotProfileConversionTool()
 }
 
 } // namespace DigikamEditorProfileConversionToolPlugin
+
+#include "moc_profileconversiontoolplugin.cpp"

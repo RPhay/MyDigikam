@@ -888,3 +888,5 @@ void CurvesWidget::setScaleType(HistogramScale scale)
 }
 
 } // namespace Digikam
+
+#include "moc_curveswidget.cpp"

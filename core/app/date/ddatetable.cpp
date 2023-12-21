@@ -817,3 +817,5 @@ void DDateTable::unsetCustomDatePainting(const QDate& date)
 }
 
 } // namespace Digikam
+
+#include "moc_ddatetable.cpp"

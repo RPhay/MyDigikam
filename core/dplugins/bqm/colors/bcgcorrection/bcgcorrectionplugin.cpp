@@ -99,3 +99,5 @@ void BCGCorrectionPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmBCGCorrectionPlugin
+
+#include "moc_bcgcorrectionplugin.cpp"

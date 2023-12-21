@@ -560,3 +560,5 @@ void PresentationMainPage::setupConnections()
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentation_mainpage.cpp"

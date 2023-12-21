@@ -142,3 +142,5 @@ void DImgHEIFExportSettings::slotToggleHEIFLossLess(bool b)
 }
 
 } // namespace Digikam
+
+#include "moc_dimgheifexportsettings.cpp"

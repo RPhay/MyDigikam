@@ -382,3 +382,5 @@ QString AdvPrintCaptionPage::captionFormatter(AdvPrintPhoto* const photo)
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_advprintcaptionpage.cpp"

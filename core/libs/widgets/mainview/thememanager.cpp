@@ -225,3 +225,5 @@ void ThemeManager::updateThemeMenu()
 }
 
 } // namespace Digikam
+
+#include "moc_thememanager.cpp"

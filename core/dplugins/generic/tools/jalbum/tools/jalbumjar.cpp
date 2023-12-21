@@ -65,3 +65,5 @@ bool JalbumJar::checkDirForPath(const QString& possibleDir)
 }
 
 } // namespace DigikamGenericJAlbumPlugin
+
+#include "moc_jalbumjar.cpp"

@@ -117,3 +117,5 @@ void CBToolPlugin::slotColorBalance()
 }
 
 } // namespace DigikamEditorColorBalanceToolPlugin
+
+#include "moc_cbtoolplugin.cpp"

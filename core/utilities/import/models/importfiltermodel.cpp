@@ -593,3 +593,5 @@ bool NoDuplicatesImportFilterModel::filterAcceptsRow(int source_row, const QMode
 } // namespace Digikam
 
 #include "importfiltermodel.moc"
+
+#include "moc_importfiltermodel.cpp"

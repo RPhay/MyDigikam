@@ -509,3 +509,5 @@ void TreeViewLineEditComboBox::setLineEdit(QLineEdit* edit)
 } // namespace Digikam
 
 #include "comboboxutilities.moc"
+
+#include "moc_comboboxutilities.cpp"

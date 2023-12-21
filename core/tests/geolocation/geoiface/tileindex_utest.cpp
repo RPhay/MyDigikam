@@ -230,3 +230,5 @@ void TestTileIndex::testMovable()
 }
 
 QTEST_GUILESS_MAIN(TestTileIndex)
+
+#include "moc_tileindex_utest.cpp"

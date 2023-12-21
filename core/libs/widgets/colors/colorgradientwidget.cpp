@@ -159,3 +159,5 @@ void ColorGradientWidget::paintEvent(QPaintEvent*)
 }
 
 } // namespace Digikam
+
+#include "moc_colorgradientwidget.cpp"

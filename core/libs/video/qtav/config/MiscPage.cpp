@@ -163,3 +163,5 @@ void MiscPage::applyToUi()
 }
 
 } // namespace QtAV
+
+#include "moc_MiscPage.cpp"

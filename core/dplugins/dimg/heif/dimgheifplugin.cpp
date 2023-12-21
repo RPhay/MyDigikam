@@ -244,3 +244,5 @@ DImgLoaderSettings* DImgHEIFPlugin::exportWidget(const QString& format) const
 }
 
 } // namespace DigikamHEIFDImgPlugin
+
+#include "moc_dimgheifplugin.cpp"

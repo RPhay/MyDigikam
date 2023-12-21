@@ -64,3 +64,5 @@ void DBWidget::updateLabels(const QString& name, const QString& url)
 }
 
 } // namespace DigikamGenericDropBoxPlugin
+
+#include "moc_dbwidget.cpp"

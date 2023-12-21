@@ -215,3 +215,5 @@ void DSplashScreen::drawContents(QPainter* p)
 }
 
 } // namespace Digikam
+
+#include "moc_dsplashscreen.cpp"

@@ -120,3 +120,5 @@ void TimeAdjustPlugin::slotTimeAdjust()
 }
 
 } // namespace DigikamGenericTimeAdjustPlugin
+
+#include "moc_timeadjustplugin.cpp"

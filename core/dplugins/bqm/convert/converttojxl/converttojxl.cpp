@@ -127,3 +127,5 @@ bool ConvertToJXL::toolOperations()
 }
 
 } // namespace DigikamBqmConvertToJxlPlugin
+
+#include "moc_converttojxl.cpp"

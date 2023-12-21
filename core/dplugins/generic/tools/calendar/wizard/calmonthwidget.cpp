@@ -193,3 +193,5 @@ void CalMonthWidget::mouseReleaseEvent(QMouseEvent* e)
 }
 
 } // Namespace Digikam
+
+#include "moc_calmonthwidget.cpp"

@@ -101,3 +101,5 @@ void ConvertToJpegPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmConvertToJpegPlugin
+
+#include "moc_converttojpegplugin.cpp"

@@ -525,3 +525,5 @@ void SetupMisc::readSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_setupmisc.cpp"

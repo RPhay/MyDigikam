@@ -99,3 +99,5 @@ void AntiVignettingPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmAntiVignettingPlugin
+
+#include "moc_antivignettingplugin.cpp"

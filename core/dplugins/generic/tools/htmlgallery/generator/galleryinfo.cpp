@@ -129,3 +129,5 @@ QDebug operator<<(QDebug dbg, const GalleryInfo& t)
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_galleryinfo.cpp"

@@ -116,3 +116,5 @@ void PPlugin::slotPinterest()
 }
 
 } // namespace DigikamGenericPinterestPlugin
+
+#include "moc_pplugin.cpp"

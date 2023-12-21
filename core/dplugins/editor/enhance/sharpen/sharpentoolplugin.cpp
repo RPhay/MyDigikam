@@ -115,3 +115,5 @@ void SharpenToolPlugin::slotSharpen()
 }
 
 } // namespace DigikamEditorSharpenToolPlugin
+
+#include "moc_sharpentoolplugin.cpp"

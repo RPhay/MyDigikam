@@ -152,3 +152,5 @@ void SetupVideo::cancel()
 }
 
 } // namespace Digikam
+
+#include "moc_setupvideo.cpp"

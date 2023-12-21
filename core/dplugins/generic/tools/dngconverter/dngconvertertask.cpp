@@ -176,3 +176,5 @@ void DNGConverterTask::slotCancel()
 
 } // namespace DigikamGenericDNGConverterPlugin
 
+
+#include "moc_dngconvertertask.cpp"

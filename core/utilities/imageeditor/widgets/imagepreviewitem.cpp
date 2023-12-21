@@ -153,3 +153,5 @@ void ImagePreviewItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
 }
 
 } // namespace Digikam
+
+#include "moc_imagepreviewitem.cpp"

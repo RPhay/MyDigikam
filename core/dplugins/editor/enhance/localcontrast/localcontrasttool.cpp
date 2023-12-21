@@ -173,3 +173,5 @@ void LocalContrastTool::slotSaveAsSettings()
 }
 
 } // namespace DigikamEditorLocalContrastToolPlugin
+
+#include "moc_localcontrasttool.cpp"

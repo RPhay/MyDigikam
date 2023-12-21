@@ -142,3 +142,5 @@ void GeoModelHelper::onIndicesMoved(const QList<QPersistentModelIndex>& movedInd
 }
 
 } // namespace Digikam
+
+#include "moc_geomodelhelper.cpp"

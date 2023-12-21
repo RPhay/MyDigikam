@@ -596,3 +596,5 @@ void PresentationAudioWidget::slotError()
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentationaudiowidget.cpp"

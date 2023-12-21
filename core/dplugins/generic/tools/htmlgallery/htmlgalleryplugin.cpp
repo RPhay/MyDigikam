@@ -116,3 +116,5 @@ void HtmlGalleryPlugin::slotHtmlGallery()
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_htmlgalleryplugin.cpp"

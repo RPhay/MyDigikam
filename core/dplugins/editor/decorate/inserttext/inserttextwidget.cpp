@@ -815,3 +815,5 @@ void InsertTextWidget::mouseMoveEvent(QMouseEvent* e)
 }
 
 } // namespace DigikamEditorInsertTextToolPlugin
+
+#include "moc_inserttextwidget.cpp"

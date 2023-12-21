@@ -237,3 +237,5 @@ bool AestheticDetector::s_isEmptyModel()
 }
 
 } // namespace Digikam
+
+#include "moc_aesthetic_detector.cpp"

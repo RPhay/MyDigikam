@@ -715,3 +715,5 @@ void NamespaceEditDlg::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_namespaceeditdlg.cpp"

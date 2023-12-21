@@ -101,3 +101,5 @@ void ItemInfoAlbumsJob::slotComplete()
 }
 
 } // namespace Digikam
+
+#include "moc_iteminfoalbumsjob.cpp"

@@ -175,3 +175,5 @@ void TestGPXParsing::testInterpolation()
 }
 
 QTEST_GUILESS_MAIN(TestGPXParsing)
+
+#include "moc_correlator_utest.cpp"

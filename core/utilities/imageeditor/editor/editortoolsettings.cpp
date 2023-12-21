@@ -479,3 +479,5 @@ void EditorToolSettings::slotHelpPlugin()
 }
 
 } // namespace Digikam
+
+#include "moc_editortoolsettings.cpp"

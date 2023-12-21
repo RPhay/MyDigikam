@@ -33,3 +33,5 @@ bool ItemFilterModelWorker::checkVersion(const ItemFilterModelTodoPackage& packa
 }
 
 } // namespace Digikam
+
+#include "moc_itemfiltermodelthreads.cpp"

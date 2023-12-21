@@ -122,3 +122,5 @@ void AutoCropToolPlugin::slotAutoCrop()
 }
 
 } // namespace DigikamEditorAutoCropToolPlugin
+
+#include "moc_autocroptoolplugin.cpp"

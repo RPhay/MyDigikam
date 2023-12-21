@@ -217,3 +217,5 @@ void InfoDlg::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_infodlg.cpp"

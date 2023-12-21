@@ -130,3 +130,5 @@ QSize TableViewItemDelegate::sizeHint(const QStyleOptionViewItem& option, const 
 }
 
 } // namespace Digikam
+
+#include "moc_tableview_treeview_delegate.cpp"

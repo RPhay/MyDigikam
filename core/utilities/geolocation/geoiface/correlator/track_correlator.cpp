@@ -103,3 +103,5 @@ void TrackCorrelator::cancelCorrelation()
 }
 
 } // namespace Digikam
+
+#include "moc_track_correlator.cpp"

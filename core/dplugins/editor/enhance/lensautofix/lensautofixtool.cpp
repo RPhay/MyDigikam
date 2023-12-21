@@ -252,3 +252,5 @@ void LensAutoFixTool::setFinalImage()
 }
 
 } // namespace DigikamEditorLensAutoFixToolPlugin
+
+#include "moc_lensautofixtool.cpp"

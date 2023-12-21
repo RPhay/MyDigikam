@@ -181,3 +181,5 @@ bool ImageResizeJob::imageResize(MailSettings* const settings,
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_imageresizejob.cpp"

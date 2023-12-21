@@ -180,3 +180,5 @@ void GSPlugin::slotExportGdrive()
 }
 
 } // namespace DigikamGenericGoogleServicesPlugin
+
+#include "moc_gsplugin.cpp"

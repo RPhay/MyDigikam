@@ -205,3 +205,5 @@ bool AssignTags::toolOperations()
 }
 
 } // namespace DigikamBqmAssignTagsPlugin
+
+#include "moc_assigntags.cpp"

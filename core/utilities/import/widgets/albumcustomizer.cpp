@@ -259,3 +259,5 @@ void AlbumCustomizer::slotCustomizerChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_albumcustomizer.cpp"

@@ -1176,3 +1176,5 @@ void AVPlayerConfigMngr::save()
 }
 
 } // namespace QtAV
+
+#include "moc_AVPlayerConfigMngr.cpp"

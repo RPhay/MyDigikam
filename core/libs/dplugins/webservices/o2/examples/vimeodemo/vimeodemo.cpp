@@ -121,3 +121,5 @@ void VimeoDemo::onFinished(int requestId, QNetworkReply::NetworkError error, QBy
     qInfo() << "User name: " << nameRE.cap(1);
     emit userNameReceived();
 }
+
+#include "moc_vimeodemo.cpp"

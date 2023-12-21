@@ -250,3 +250,5 @@ bool LensAutoFix::toolOperations()
 }
 
 } // namespace DigikamBqmLensAutoFixPlugin
+
+#include "moc_lensautofix.cpp"

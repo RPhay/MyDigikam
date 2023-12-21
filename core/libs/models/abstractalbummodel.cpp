@@ -600,3 +600,5 @@ void AbstractAlbumModel::slotAlbumRenamed(Album* album)
 }
 
 } // namespace Digikam
+
+#include "moc_abstractalbummodel.cpp"

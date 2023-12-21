@@ -140,3 +140,5 @@ bool BWConvert::toolOperations()
 }
 
 } // namespace DigikamBqmBWConvertPlugin
+
+#include "moc_bwconvert.cpp"

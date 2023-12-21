@@ -644,3 +644,5 @@ void HistogramPainter::render(QPixmap& bufferPixmap)
 }
 
 } // namespace Digikam
+
+#include "moc_histogrampainter.cpp"

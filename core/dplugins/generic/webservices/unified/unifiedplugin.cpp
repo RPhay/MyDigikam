@@ -116,3 +116,5 @@ void UnifiedPlugin::slotUnified()
 }
 
 } // namespace DigikamGenericUnifiedPlugin
+
+#include "moc_unifiedplugin.cpp"

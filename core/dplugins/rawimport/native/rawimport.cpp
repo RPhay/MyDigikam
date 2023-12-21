@@ -255,3 +255,5 @@ void RawImport::ICCSettingsChanged()
 }
 
 } // namespace DigikamRawImportNativePlugin
+
+#include "moc_rawimport.cpp"

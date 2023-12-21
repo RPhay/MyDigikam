@@ -226,3 +226,5 @@ void DHistoryView::mouseMoveEvent(QMouseEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_dhistoryview.cpp"

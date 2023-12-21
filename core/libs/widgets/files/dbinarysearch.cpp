@@ -206,3 +206,5 @@ void DBinarySearch::slotAreBinariesFound()
 }
 
 } // namespace Digikam
+
+#include "moc_dbinarysearch.cpp"

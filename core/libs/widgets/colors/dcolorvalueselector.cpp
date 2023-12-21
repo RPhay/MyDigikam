@@ -485,3 +485,5 @@ void DColorValueSelector::drawPalette(QPixmap* pixmap)
 }
 
 } // namespace Digikam
+
+#include "moc_dcolorvalueselector.cpp"

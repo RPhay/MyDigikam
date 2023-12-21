@@ -410,3 +410,5 @@ void XbelWriter::writeItem(const BookmarkNode* const parent)
 }
 
 } // namespace Digikam
+
+#include "moc_bookmarknode.cpp"

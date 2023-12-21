@@ -128,3 +128,5 @@ int GPSItemDelegate::getThumbnailSize() const
 }
 
 } // namespace Digikam
+
+#include "moc_gpsitemdelegate.cpp"

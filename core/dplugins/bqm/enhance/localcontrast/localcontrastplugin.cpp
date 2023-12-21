@@ -99,3 +99,5 @@ void LocalContrastPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmLocalContrastPlugin
+
+#include "moc_localcontrastplugin.cpp"

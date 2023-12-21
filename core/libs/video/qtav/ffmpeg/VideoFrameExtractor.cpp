@@ -868,3 +868,5 @@ void VideoFrameExtractor::extractInternal(qint64 pos)
 } // namespace QtAV
 
 #include "VideoFrameExtractor.moc"
+
+#include "moc_VideoFrameExtractor.cpp"

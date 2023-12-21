@@ -332,3 +332,5 @@ void SetupSlideShowDialog::readSettings()
 }
 
 } // namespace DigikamGenericSlideShowPlugin
+
+#include "moc_setupslideshow_dialog.cpp"

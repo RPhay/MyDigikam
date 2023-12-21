@@ -117,3 +117,5 @@ void PrintTagsListTest::testPrintAllAvailableXmpTags()
         QWARN("Exiv2 has no XMP support...");
     }
 }
+
+#include "moc_printtagslist_utest.cpp"

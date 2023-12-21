@@ -84,3 +84,5 @@ QString FreeSpaceToolTip::tipContents()
 }
 
 } // namespace Digikam
+
+#include "moc_freespacetooltip.cpp"

@@ -230,3 +230,5 @@ void TimeStampUpdateTest::testRescanImageIfModifiedSet2False()
     dbModel = CoreDbAccess().db()->getImageMetadata(ids[0], DatabaseFields::Model);
     QVERIFY(dbModel.at(0).toString().isEmpty());
 }
+
+#include "moc_timestampupdate_utest.cpp"

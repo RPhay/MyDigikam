@@ -403,3 +403,5 @@ void EXIFLight::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_exiflight.cpp"

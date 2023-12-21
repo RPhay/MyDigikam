@@ -95,3 +95,5 @@ ImageQualityContainer SetupImageQualitySorter::getImageQualityContainer() const
 }
 
 } // namespace Digikam
+
+#include "moc_setupimagequalitysorter.cpp"

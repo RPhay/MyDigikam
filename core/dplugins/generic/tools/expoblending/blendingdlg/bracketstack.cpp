@@ -240,3 +240,5 @@ void BracketStackList::slotItemClicked(QTreeWidgetItem* item, int column)
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_bracketstack.cpp"

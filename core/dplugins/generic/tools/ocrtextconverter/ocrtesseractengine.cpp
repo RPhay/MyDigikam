@@ -315,3 +315,5 @@ void OcrTesseractEngine::cancelOcrProcess()
 }
 
 } // namespace DigikamGenericTextConverterPlugin
+
+#include "moc_ocrtesseractengine.cpp"

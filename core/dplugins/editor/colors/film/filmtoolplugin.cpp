@@ -116,3 +116,5 @@ void FilmToolPlugin::slotFilmTool()
 }
 
 } // namespace DigikamEditorFilmToolPlugin
+
+#include "moc_filmtoolplugin.cpp"

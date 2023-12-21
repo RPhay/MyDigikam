@@ -311,3 +311,5 @@ void StatisticsView::setMetadataItem(QTreeWidgetItem* parent,
 }
 
 } // namespace AVPlayer
+
+#include "moc_StatisticsView.cpp"

@@ -403,3 +403,5 @@ void SpellCheckConfig::slotAddWord()
 }
 
 } // namespace Digikam
+
+#include "moc_spellcheckconfig.cpp"

@@ -89,3 +89,5 @@ void Raw2DngTest::testRaw2Dng()
 
     DPluginLoader::instance()->cleanUp();
 }
+
+#include "moc_raw2dng_utest.cpp"

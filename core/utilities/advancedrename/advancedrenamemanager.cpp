@@ -590,3 +590,5 @@ void AdvancedRenameManager::addFile(const QString& filename, const QDateTime& da
 }
 
 } // namespace Digikam
+
+#include "moc_advancedrenamemanager.cpp"

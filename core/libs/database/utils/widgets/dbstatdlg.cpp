@@ -158,3 +158,5 @@ void DBStatDlg::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_dbstatdlg.cpp"

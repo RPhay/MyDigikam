@@ -521,3 +521,5 @@ QString SafeTemporaryFile::safeFilePath() const
 }
 
 } // namespace Digikam
+
+#include "moc_filereadwritelock.cpp"

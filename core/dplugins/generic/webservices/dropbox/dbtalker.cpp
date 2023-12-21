@@ -506,3 +506,5 @@ void DBTalker::parseResponseCreateFolder(const QByteArray& data)
 }
 
 } // namespace DigikamGenericDropBoxPlugin
+
+#include "moc_dbtalker.cpp"

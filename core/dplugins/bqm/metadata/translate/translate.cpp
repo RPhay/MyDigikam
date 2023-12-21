@@ -387,3 +387,5 @@ bool Translate::insertTranslation(int entry, const QString& trLang, DMetadata* c
 }
 
 } // namespace DigikamBqmTranslatePlugin
+
+#include "moc_translate.cpp"

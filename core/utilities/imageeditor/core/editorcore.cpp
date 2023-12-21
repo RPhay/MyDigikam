@@ -889,3 +889,5 @@ UndoState EditorCore::undoState() const
 }
 
 } // namespace Digikam
+
+#include "moc_editorcore.cpp"

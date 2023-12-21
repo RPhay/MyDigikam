@@ -257,3 +257,5 @@ QList<QUrl> ImageDialog::getImageURLs(QWidget* const parent, const QUrl& url, co
 }
 
 } // namespace Digikam
+
+#include "moc_imagedialog.cpp"

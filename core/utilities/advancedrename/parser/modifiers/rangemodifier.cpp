@@ -176,3 +176,5 @@ QString RangeModifier::parseOperation(ParseSettings& settings, const QRegularExp
 }
 
 } // namespace Digikam
+
+#include "moc_rangemodifier.cpp"

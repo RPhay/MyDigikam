@@ -487,3 +487,5 @@ QComboBox* WSSettingsWidget::getAlbumsCoB() const
 }
 
 } // namespace Digikam
+
+#include "moc_wssettingswidget.cpp"

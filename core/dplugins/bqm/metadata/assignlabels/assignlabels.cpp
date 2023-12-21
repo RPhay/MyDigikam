@@ -252,3 +252,5 @@ bool AssignLabels::toolOperations()
 }
 
 } // namespace DigikamBqmAssignLabelsPlugin
+
+#include "moc_assignlabels.cpp"

@@ -637,3 +637,5 @@ void ImportCategorizedView::slotIccSettingsChanged(const ICCSettingsContainer&, 
 } // namespace Digikam
 
 #include "importcategorizedview.moc"
+
+#include "moc_importcategorizedview.cpp"

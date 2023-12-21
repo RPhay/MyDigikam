@@ -479,3 +479,5 @@ QMimeData* AlbumDragDropHandler::createMimeData(const QList<Album*>& albums)
 }
 
 } // namespace Digikam
+
+#include "moc_albumdragdrop.cpp"

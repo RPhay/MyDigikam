@@ -119,3 +119,5 @@ void PrintCreatorPlugin::slotPrintCreator()
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_printcreatorplugin.cpp"

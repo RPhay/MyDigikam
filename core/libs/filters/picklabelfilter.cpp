@@ -70,3 +70,5 @@ void PickLabelFilter::slotPickLabelSelectionChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_picklabelfilter.cpp"

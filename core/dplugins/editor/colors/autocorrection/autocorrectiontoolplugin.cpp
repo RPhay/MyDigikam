@@ -119,3 +119,5 @@ void AutoCorrectionToolPlugin::slotAutoCorrection()
 }
 
 } // namespace DigikamEditorAutoCorrectionToolPlugin
+
+#include "moc_autocorrectiontoolplugin.cpp"

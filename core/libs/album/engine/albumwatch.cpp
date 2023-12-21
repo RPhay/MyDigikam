@@ -313,3 +313,5 @@ void AlbumWatch::slotQFSWatcherDirty(const QString& path)
 }
 
 } // namespace Digikam
+
+#include "moc_albumwatch.cpp"

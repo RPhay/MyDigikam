@@ -96,3 +96,5 @@ void PresentationAdvPage::slotUseMillisecondsToggled()
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentation_advpage.cpp"

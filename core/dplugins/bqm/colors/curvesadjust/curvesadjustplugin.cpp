@@ -99,3 +99,5 @@ void CurvesAdjustPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmCurvesAdjustPlugin
+
+#include "moc_curvesadjustplugin.cpp"

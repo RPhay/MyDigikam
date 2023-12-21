@@ -115,3 +115,5 @@ void CharcoalToolPlugin::slotCharcoal()
 }
 
 } // namespace DigikamEditorCharcoalToolPlugin
+
+#include "moc_charcoaltoolplugin.cpp"

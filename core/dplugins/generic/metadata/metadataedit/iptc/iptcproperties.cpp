@@ -742,3 +742,5 @@ void IPTCProperties::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_iptcproperties.cpp"

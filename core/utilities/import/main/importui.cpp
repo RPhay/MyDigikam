@@ -2775,3 +2775,5 @@ void ImportUI::slotColorManagementOptionsChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_importui.cpp"

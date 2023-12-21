@@ -58,3 +58,5 @@ void ODWidget::updateLabels(const QString& name, const QString& url)
 }
 
 } // namespace DigikamGenericOneDrivePlugin
+
+#include "moc_odwidget.cpp"

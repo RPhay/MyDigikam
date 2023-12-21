@@ -299,3 +299,5 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
 }
 
 } // namespace Digikam
+
+#include "moc_trackreader.cpp"

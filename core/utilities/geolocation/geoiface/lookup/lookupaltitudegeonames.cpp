@@ -300,3 +300,5 @@ void LookupAltitudeGeonames::cancel()
 }
 
 } // namespace Digikam
+
+#include "moc_lookupaltitudegeonames.cpp"

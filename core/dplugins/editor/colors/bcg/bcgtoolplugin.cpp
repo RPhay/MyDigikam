@@ -118,3 +118,5 @@ void BCGToolPlugin::slotBCGTool()
 }
 
 } // namespace DigikamEditorBCGToolPlugin
+
+#include "moc_bcgtoolplugin.cpp"

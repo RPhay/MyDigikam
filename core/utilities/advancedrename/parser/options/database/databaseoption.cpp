@@ -178,3 +178,5 @@ void DatabaseOption::addDbKeysCollection(DbKeysCollection* key)
 }
 
 } // namespace Digikam
+
+#include "moc_databaseoption.cpp"

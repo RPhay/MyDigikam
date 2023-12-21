@@ -119,3 +119,5 @@ AudioResampler* AudioDecoder::resampler()
 }
 
 } // namespace QtAV
+
+#include "moc_AudioDecoder.cpp"

@@ -203,3 +203,5 @@ DImgLoaderSettings* DImgJPEGPlugin::exportWidget(const QString& format) const
 }
 
 } // namespace DigikamJPEGDImgPlugin
+
+#include "moc_dimgjpegplugin.cpp"

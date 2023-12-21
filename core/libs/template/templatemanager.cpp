@@ -574,3 +574,5 @@ Template TemplateManager::fromIndex(int index) const
 }
 
 } // namespace Digikam
+
+#include "moc_templatemanager.cpp"

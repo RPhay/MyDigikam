@@ -118,3 +118,5 @@ void TwitterPlugin::slotTwitter()
 }
 
 } // namespace DigikamGenericTwitterPlugin
+
+#include "moc_twitterplugin.cpp"

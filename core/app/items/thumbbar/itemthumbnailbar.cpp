@@ -233,3 +233,5 @@ bool ItemThumbnailBar::hasHiddenGroupedImages(const ItemInfo& info) const
 }
 
 } // namespace Digikam
+
+#include "moc_itemthumbnailbar.cpp"

@@ -452,3 +452,5 @@ void ItemPropertiesGPSTab::setActive(const bool state)
 }
 
 } // namespace Digikam
+
+#include "moc_itempropertiesgpstab.cpp"

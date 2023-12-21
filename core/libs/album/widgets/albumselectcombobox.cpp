@@ -475,3 +475,5 @@ void TagTreeViewSelectComboBox::setAlbumModels(TagModel* model,
 } // namespace Digikam
 
 #include "albumselectcombobox.moc"
+
+#include "moc_albumselectcombobox.cpp"

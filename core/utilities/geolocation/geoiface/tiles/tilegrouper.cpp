@@ -417,3 +417,5 @@ void TileGrouper::updateClusters()
 }
 
 } // namespace Digikam
+
+#include "moc_tilegrouper.cpp"

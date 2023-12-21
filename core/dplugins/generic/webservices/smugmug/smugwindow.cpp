@@ -1032,3 +1032,5 @@ void SmugWindow::slotImageListChanged()
 }
 
 } // namespace DigikamGenericSmugPlugin
+
+#include "moc_smugwindow.cpp"

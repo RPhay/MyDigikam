@@ -115,3 +115,5 @@ void FaceRejectionOverlay::widgetLeaveEvent()
 }
 
 } // namespace Digikam
+
+#include "moc_facerejectionoverlay.cpp"

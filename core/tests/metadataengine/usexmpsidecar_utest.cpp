@@ -124,3 +124,5 @@ void UseXmpSidecarTest::useXmpSidecar(const QString& file,
 
     QCOMPARE(count, 0);
 }
+
+#include "moc_usexmpsidecar_utest.cpp"

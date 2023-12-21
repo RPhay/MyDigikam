@@ -894,3 +894,5 @@ void FlickrWindow::slotReloadPhotoSetRequest()
 }
 
 } // namespace DigikamGenericFlickrPlugin
+
+#include "moc_flickrwindow.cpp"

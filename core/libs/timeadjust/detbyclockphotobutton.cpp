@@ -56,3 +56,5 @@ void DetByClockPhotoButton::dropEvent(QDropEvent* event)
 }
 
 } // namespace Digikam
+
+#include "moc_detbyclockphotobutton.cpp"

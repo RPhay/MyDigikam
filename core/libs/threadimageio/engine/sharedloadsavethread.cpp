@@ -40,3 +40,5 @@ void SharedLoadSaveThread::load(const LoadingDescription& description,
 }
 
 } // namespace Digikam
+
+#include "moc_sharedloadsavethread.cpp"

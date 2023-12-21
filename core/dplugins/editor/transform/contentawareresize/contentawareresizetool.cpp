@@ -876,3 +876,5 @@ bool ContentAwareResizeTool::eventFilter(QObject* obj, QEvent* ev)
 }
 
 } // namespace DigikamEditorContentAwareResizeToolPlugin
+
+#include "moc_contentawareresizetool.cpp"

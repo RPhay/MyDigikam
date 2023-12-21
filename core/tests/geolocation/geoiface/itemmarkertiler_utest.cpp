@@ -822,3 +822,5 @@ void TestItemMarkerTiler::benchmarkIteratorWholeWorld()
 }
 
 QTEST_GUILESS_MAIN(TestItemMarkerTiler)
+
+#include "moc_itemmarkertiler_utest.cpp"

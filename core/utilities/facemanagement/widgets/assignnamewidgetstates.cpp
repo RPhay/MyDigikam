@@ -51,3 +51,5 @@ void AssignNameWidgetStates::slotStateChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_assignnamewidgetstates.cpp"

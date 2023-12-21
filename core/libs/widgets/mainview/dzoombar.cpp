@@ -352,3 +352,5 @@ void DZoomBar::setBarMode(BarMode mode)
 }
 
 } // namespace Digikam
+
+#include "moc_dzoombar.cpp"

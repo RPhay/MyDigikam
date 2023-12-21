@@ -153,3 +153,5 @@ QStringList ShowfotoFolderViewModel::currentFilesPath() const
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotofolderviewmodel.cpp"

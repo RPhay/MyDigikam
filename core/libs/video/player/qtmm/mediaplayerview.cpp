@@ -813,3 +813,5 @@ void MediaPlayerView::resizeEvent(QResizeEvent* e)
 }  // namespace Digikam
 
 #include "mediaplayerview.moc"
+
+#include "moc_mediaplayerview.cpp"

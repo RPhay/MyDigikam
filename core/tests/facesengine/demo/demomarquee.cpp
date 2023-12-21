@@ -274,3 +274,5 @@ void Marquee::mouseReleaseEvent(QGraphicsSceneMouseEvent* e)
 }
 
 } // namespace FaceEngineDemo
+
+#include "moc_demomarquee.cpp"

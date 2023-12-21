@@ -247,3 +247,5 @@ void GPSBookmarkModelHelper::snapItemsTo(const QModelIndex& targetIndex,
 }
 
 } // namespace Digikam
+
+#include "moc_gpsbookmarkmodelhelper.cpp"

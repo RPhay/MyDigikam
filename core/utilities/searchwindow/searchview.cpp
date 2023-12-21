@@ -557,3 +557,5 @@ void SearchViewBottomBar::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_searchview.cpp"

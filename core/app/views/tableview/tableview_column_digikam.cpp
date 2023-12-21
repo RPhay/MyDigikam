@@ -561,3 +561,5 @@ bool Digikam::TableViewColumns::ColumnDigikamProperties::columnAffectedByChanges
 } // namespace TableViewColumns
 
 } // namespace Digikam
+
+#include "moc_tableview_column_digikam.cpp"

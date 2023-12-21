@@ -1410,3 +1410,5 @@ void DPreviewImage::updateHighlight()
 }
 
 } // namespace Digikam
+
+#include "moc_dpreviewimage.cpp"

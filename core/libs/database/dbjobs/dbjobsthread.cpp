@@ -312,3 +312,5 @@ void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResu
 }
 
 } // namespace Digikam
+
+#include "moc_dbjobsthread.cpp"

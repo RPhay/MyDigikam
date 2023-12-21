@@ -336,3 +336,5 @@ void PanoLastPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAction
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_panolastpage.cpp"

@@ -191,3 +191,5 @@ void SimpleFilter::process(Statistics* statistics, VideoFrame* frame)
 */
     }
 }
+
+#include "moc_SimpleFilter.cpp"

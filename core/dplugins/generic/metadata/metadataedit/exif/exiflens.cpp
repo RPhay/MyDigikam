@@ -430,3 +430,5 @@ void EXIFLens::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_exiflens.cpp"

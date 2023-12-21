@@ -41,3 +41,5 @@ MysqlAdminBinary::~MysqlAdminBinary()
 }
 
 } // namespace Digikam
+
+#include "moc_mysqladminbinary.cpp"

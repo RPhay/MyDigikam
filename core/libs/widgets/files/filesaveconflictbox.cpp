@@ -145,3 +145,5 @@ void FileSaveConflictBox::writeSettings(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_filesaveconflictbox.cpp"

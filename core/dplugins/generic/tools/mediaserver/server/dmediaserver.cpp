@@ -173,3 +173,5 @@ void DMediaServer::addAlbumsOnServer(const MediaServerMap& map)
 }
 
 } // namespace DigikamGenericMediaServerPlugin
+
+#include "moc_dmediaserver.cpp"

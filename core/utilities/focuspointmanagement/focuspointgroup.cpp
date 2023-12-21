@@ -341,3 +341,5 @@ bool FocusPointGroup::isAllowedToAddFocusPoint() const
 }
 
 } // namespace Digikam
+
+#include "moc_focuspointgroup.cpp"

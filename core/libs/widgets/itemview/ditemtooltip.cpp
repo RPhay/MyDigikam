@@ -483,3 +483,5 @@ void DItemToolTip::paintEvent(QPaintEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_ditemtooltip.cpp"

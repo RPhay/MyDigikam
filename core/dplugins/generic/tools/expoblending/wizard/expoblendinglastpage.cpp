@@ -81,3 +81,5 @@ ExpoBlendingLastPage::~ExpoBlendingLastPage()
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_expoblendinglastpage.cpp"

@@ -304,3 +304,5 @@ void HTMLImageSettingsPage::initializePage()
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_htmlimagesettingspage.cpp"

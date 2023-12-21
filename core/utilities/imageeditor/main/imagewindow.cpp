@@ -1363,3 +1363,5 @@ DInfoInterface* ImageWindow::infoIface(DPluginAction* const ac)
 }
 
 } // namespace Digikam
+
+#include "moc_imagewindow.cpp"

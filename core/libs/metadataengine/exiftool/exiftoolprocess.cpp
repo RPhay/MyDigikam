@@ -493,3 +493,5 @@ void ExifToolProcess::slotApplySettingsAndStart()
 }
 
 } // namespace Digikam
+
+#include "moc_exiftoolprocess.cpp"

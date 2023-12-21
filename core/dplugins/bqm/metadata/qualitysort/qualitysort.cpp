@@ -288,3 +288,5 @@ void QualitySort::cancel()
 }
 
 } // namespace DigikamBqmQualitySortPlugin
+
+#include "moc_qualitysort.cpp"

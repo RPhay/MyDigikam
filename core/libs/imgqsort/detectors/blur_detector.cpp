@@ -421,3 +421,5 @@ cv::Mat BlurDetector::detectBackgroundRegion(const cv::Mat& image)    const
 }
 
 } // namespace Digikam
+
+#include "moc_blur_detector.cpp"

@@ -156,3 +156,5 @@ void ScanControllerLoadingCacheFileWatch::slotImageChanged(const ImageChangeset&
 }
 
 } // namespace Digikam
+
+#include "moc_scancontroller_p.cpp"

@@ -282,3 +282,5 @@ void HSLSettings::writeSettings(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_hslsettings.cpp"

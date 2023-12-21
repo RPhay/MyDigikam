@@ -351,3 +351,5 @@ void SlideVideo::slotHandlePlayerError(const QtAV::AVError& err)
 } // namespace Digikam
 
 #include "slidevideo.moc"
+
+#include "moc_slidevideo.cpp"

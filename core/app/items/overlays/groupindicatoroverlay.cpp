@@ -152,3 +152,5 @@ void GroupIndicatorOverlay::slotEntered(const QModelIndex& index)
 }
 
 } // namespace Digikam
+
+#include "moc_groupindicatoroverlay.cpp"

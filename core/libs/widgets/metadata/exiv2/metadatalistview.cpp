@@ -480,3 +480,5 @@ MdKeyListViewItem* MetadataListView::findMdKeyItem(const QString& key)
 }
 
 } // namespace Digikam
+
+#include "moc_metadatalistview.cpp"

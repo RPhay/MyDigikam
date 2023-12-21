@@ -102,3 +102,5 @@ QPixmap DWorkingPixmap::frameAt(int index) const
 }
 
 } // namespace Digikam
+
+#include "moc_dworkingpixmap.cpp"

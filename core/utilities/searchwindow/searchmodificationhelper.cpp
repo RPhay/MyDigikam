@@ -417,3 +417,5 @@ void SearchModificationHelper::slotCreateFuzzySearchFromImage(const QString& pro
 }
 
 } // namespace Digikam
+
+#include "moc_searchmodificationhelper.cpp"

@@ -99,3 +99,5 @@ void LensAutoFixPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmLensAutoFixPlugin
+
+#include "moc_lensautofixplugin.cpp"

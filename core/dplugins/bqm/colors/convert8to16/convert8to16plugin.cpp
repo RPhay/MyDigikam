@@ -99,3 +99,5 @@ void Convert8To16Plugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmConvert8To16Plugin
+
+#include "moc_convert8to16plugin.cpp"

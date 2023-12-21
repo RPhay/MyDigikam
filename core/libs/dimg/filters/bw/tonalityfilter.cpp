@@ -144,3 +144,5 @@ void TonalityFilter::readParameters(const Digikam::FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_tonalityfilter.cpp"

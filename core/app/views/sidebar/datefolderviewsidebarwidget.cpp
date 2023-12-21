@@ -123,3 +123,5 @@ const QString DateFolderViewSideBarWidget::getCaption()
 }
 
 } // namespace Digikam
+
+#include "moc_datefolderviewsidebarwidget.cpp"

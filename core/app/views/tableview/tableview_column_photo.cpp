@@ -508,3 +508,5 @@ void ColumnPhotoConfigurationWidget::slotUpdateUI()
 } // namespace TableViewColumns
 
 } // namespace Digikam
+
+#include "moc_tableview_column_photo.cpp"

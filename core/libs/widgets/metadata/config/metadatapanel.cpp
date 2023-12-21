@@ -427,3 +427,5 @@ QList<MetadataSelectorView*> MetadataPanel::viewers() const
 }
 
 } // namespace Digikam
+
+#include "moc_metadatapanel.cpp"

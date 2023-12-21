@@ -107,3 +107,5 @@ void ConvertToHeifPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmConvertToHeifPlugin
+
+#include "moc_converttoheifplugin.cpp"

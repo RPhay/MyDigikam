@@ -99,3 +99,5 @@ void AssignLabelsPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmAssignLabelsPlugin
+
+#include "moc_assignlabelsplugin.cpp"

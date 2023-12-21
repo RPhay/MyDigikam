@@ -700,3 +700,5 @@ void DeleteDialog::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_deletedialog.cpp"

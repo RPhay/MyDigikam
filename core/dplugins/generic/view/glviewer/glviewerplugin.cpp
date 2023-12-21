@@ -210,3 +210,5 @@ void GLViewerPlugin::slotGLViewer()
 }
 
 } // namespace DigikamGenericGLViewerPlugin
+
+#include "moc_glviewerplugin.cpp"

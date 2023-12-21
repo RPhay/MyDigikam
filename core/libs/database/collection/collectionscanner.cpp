@@ -83,3 +83,5 @@ QList<qlonglong> CollectionScanner::getNewIdsList() const
 }
 
 } // namespace Digikam
+
+#include "moc_collectionscanner.cpp"

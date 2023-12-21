@@ -436,3 +436,5 @@ void PropertyEditor::onBoolChange(bool value)
 }
 
 } // namespace QtAV
+
+#include "moc_PropertyEditor.cpp"

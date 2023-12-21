@@ -53,3 +53,5 @@ FileSaveOptionsDlg::~FileSaveOptionsDlg()
 }
 
 } // namespace Digikam
+
+#include "moc_filesaveoptionsdlg.cpp"

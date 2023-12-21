@@ -338,3 +338,5 @@ int LoadSaveThread::exifOrientation(const QString& filePath,
 }
 
 } // namespace Digikam
+
+#include "moc_loadsavethread.cpp"

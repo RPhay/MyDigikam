@@ -75,3 +75,5 @@ void FbNewAlbumDlg::getAlbumProperties(FbAlbum& album)
 }
 
 } // namespace DigikamGenericFaceBookPlugin
+
+#include "moc_fbnewalbumdlg.cpp"

@@ -1120,3 +1120,5 @@ bool ExpoBlendingThread::getXmpRational(const char* xmpTagName, long& num, long&
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_expoblendingthread.cpp"

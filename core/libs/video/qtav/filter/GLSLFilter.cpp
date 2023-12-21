@@ -192,3 +192,5 @@ void GLSLFilter::process(Statistics* statistics, VideoFrame* frame)
 }
 
 } // namespace QtAV
+
+#include "moc_GLSLFilter.cpp"

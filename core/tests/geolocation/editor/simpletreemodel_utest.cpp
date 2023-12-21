@@ -138,3 +138,5 @@ void TestSimpleTreeModel::testModel1()
 }
 
 QTEST_GUILESS_MAIN(TestSimpleTreeModel)
+
+#include "moc_simpletreemodel_utest.cpp"

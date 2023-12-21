@@ -293,3 +293,5 @@ void ModelCompleter::slotHighlighted(const QModelIndex& index)
 }
 
 } // namespace Digikam
+
+#include "moc_modelcompleter.cpp"

@@ -316,3 +316,5 @@ void DarkTableRawImportPlugin::slotProcessReadyRead()
 }
 
 } // namespace DigikamRawImportDarkTablePlugin
+
+#include "moc_rawimportdarktableplugin.cpp"

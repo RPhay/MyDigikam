@@ -126,3 +126,5 @@ void MetadataSyncTask::run()
 }
 
 } // namespace Digikam
+
+#include "moc_metadatasynctask.cpp"

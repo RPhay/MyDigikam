@@ -138,3 +138,5 @@ void CaptureConfigPage::browseCaptureDir()
 }
 
 } // namespace QtAV
+
+#include "moc_CaptureConfigPage.cpp"

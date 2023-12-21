@@ -59,3 +59,5 @@ bool Convert8to16::toolOperations()
 }
 
 } // namespace DigikamBqmConvert8To16Plugin
+
+#include "moc_convert8to16.cpp"

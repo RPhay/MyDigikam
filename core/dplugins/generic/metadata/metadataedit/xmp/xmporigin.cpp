@@ -688,3 +688,5 @@ void XMPOrigin::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_xmporigin.cpp"

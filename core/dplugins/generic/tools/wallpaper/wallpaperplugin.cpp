@@ -135,3 +135,5 @@ void WallpaperPlugin::slotWallpaper()
 }
 
 } // namespace DigikamGenericWallpaperPlugin
+
+#include "moc_wallpaperplugin.cpp"

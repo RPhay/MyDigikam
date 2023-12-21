@@ -431,3 +431,5 @@ int QPointSquareDistance(const QPoint& a, const QPoint& b)
 }
 
 } // namespace Digikam
+
+#include "moc_geoifacecommon.cpp"

@@ -386,3 +386,5 @@ bool DynamicThread::runningFlag() const volatile
 }
 
 } // namespace Digikam
+
+#include "moc_dynamicthread.cpp"

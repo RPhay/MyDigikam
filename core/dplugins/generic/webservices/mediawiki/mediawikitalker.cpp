@@ -263,3 +263,5 @@ void MediaWikiTalker::slotUploadProgress(KJob* job, unsigned long percent)
 }
 
 } // namespace DigikamGenericMediaWikiPlugin
+
+#include "moc_mediawikitalker.cpp"

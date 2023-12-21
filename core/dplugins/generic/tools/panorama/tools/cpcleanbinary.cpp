@@ -36,3 +36,5 @@ CPCleanBinary::~CPCleanBinary()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_cpcleanbinary.cpp"

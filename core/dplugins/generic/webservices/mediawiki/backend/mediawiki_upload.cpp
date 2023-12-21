@@ -295,3 +295,5 @@ void Upload::doWorkProcessReply()
 }
 
 } // namespace MediaWiki
+
+#include "moc_mediawiki_upload.cpp"

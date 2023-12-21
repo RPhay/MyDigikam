@@ -316,3 +316,5 @@ void IpfsTalker::doWork()
 }
 
 } // namespace DigikamGenericIpfsPlugin
+
+#include "moc_ipfstalker.cpp"

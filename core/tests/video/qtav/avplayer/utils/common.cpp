@@ -357,3 +357,5 @@ bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
 }
 
 } // namespace AVPlayer
+
+#include "moc_common.cpp"

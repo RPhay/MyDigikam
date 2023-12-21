@@ -521,3 +521,5 @@ QMimeData* TagDragDropHandler::createMimeData(const QList<Album*>& albums)
 }
 
 } // namespace Digikam
+
+#include "moc_tagdragdrop.cpp"

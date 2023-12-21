@@ -613,3 +613,5 @@ void AlbumHistory::slotAlbumsCleared()
 }
 
 } // namespace Digikam
+
+#include "moc_albumhistory.cpp"

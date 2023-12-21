@@ -157,3 +157,5 @@ QString WSSelectUserDlg::getUserName() const
 }
 
 } // namespace Digikam
+
+#include "moc_wsselectuserdlg.cpp"

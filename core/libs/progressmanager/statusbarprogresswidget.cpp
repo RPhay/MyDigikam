@@ -428,3 +428,5 @@ void StatusbarProgressWidget::slotProgressViewVisible(bool b)
 }
 
 } // namespace Digikam
+
+#include "moc_statusbarprogresswidget.cpp"

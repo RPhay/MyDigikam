@@ -94,3 +94,5 @@ PanoWizard::~PanoWizard()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_panowizard.cpp"

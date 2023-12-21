@@ -637,3 +637,5 @@ void OnlineVersionDlg::slotSetupUpdate()
 }
 
 } // namespace Digikam
+
+#include "moc_onlineversiondlg.cpp"

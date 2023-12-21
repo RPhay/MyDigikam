@@ -364,3 +364,5 @@ bool XMPEditWidget::isModified() const
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_xmpeditwidget.cpp"

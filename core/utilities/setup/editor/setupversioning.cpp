@@ -566,3 +566,5 @@ void SetupVersioning::losslessFormatToolTip(QString& formatHelp,
 }
 
 } // namespace Digikam
+
+#include "moc_setupversioning.cpp"

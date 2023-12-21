@@ -52,3 +52,5 @@ void MjpegFrameThread::createFrameJob(const MjpegStreamSettings& set)
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
+
+#include "moc_mjpegframethread.cpp"

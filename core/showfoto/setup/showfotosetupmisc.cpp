@@ -464,3 +464,5 @@ void ShowfotoSetupMisc::applySettings()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotosetupmisc.cpp"

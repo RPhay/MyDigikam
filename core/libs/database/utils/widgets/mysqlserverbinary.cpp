@@ -41,3 +41,5 @@ MysqlServerBinary::~MysqlServerBinary()
 }
 
 } // namespace Digikam
+
+#include "moc_mysqlserverbinary.cpp"

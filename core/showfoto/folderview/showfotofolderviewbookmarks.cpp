@@ -430,3 +430,5 @@ QList<QAction*> ShowfotoFolderViewBookmarks::pluginActions() const
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotofolderviewbookmarks.cpp"

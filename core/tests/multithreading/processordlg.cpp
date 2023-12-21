@@ -258,3 +258,5 @@ void ProcessorDlg::slotFailed(const QUrl& url, const QString& err)
         updateCount();
     }
 }
+
+#include "moc_processordlg.cpp"

@@ -278,3 +278,5 @@ void ImportCategoryDrawer::updateRectsAndPixmaps(int width)
 }
 
 } // namespace Digikam
+
+#include "moc_importcategorydrawer.cpp"

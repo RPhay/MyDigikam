@@ -119,3 +119,5 @@ bool VidSlideImagesPage::isComplete() const
 }
 
 } // namespace DigikamGenericVideoSlideShowPlugin
+
+#include "moc_vidslideimagespage.cpp"

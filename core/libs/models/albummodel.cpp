@@ -110,3 +110,5 @@ void AlbumModel::slotUpdateTrashCounters()
 }
 
 } // namespace Digikam
+
+#include "moc_albummodel.cpp"

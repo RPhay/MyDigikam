@@ -470,3 +470,5 @@ void DateOption::slotTokenTriggered(const QString& token)
 }
 
 } // namespace Digikam
+
+#include "moc_dateoption.cpp"

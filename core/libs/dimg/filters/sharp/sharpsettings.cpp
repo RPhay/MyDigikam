@@ -598,3 +598,5 @@ void SharpSettings::saveAsSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_sharpsettings.cpp"

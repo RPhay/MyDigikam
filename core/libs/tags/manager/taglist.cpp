@@ -271,3 +271,5 @@ void TagList::enableAddButton(bool value)
 }
 
 } // namespace Digikam
+
+#include "moc_taglist.cpp"

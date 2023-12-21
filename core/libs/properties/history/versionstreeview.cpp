@@ -285,3 +285,5 @@ bool VersionsTreeView::viewportEvent(QEvent* event)
 } // namespace Digikam
 
 #include "versionstreeview.moc"
+
+#include "moc_versionstreeview.cpp"

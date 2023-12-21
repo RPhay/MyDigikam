@@ -587,3 +587,5 @@ void ItemIconView::saveViewState()
 }
 
 } // namespace Digikam
+
+#include "moc_itemiconview.cpp"

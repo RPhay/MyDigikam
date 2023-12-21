@@ -117,3 +117,5 @@ void FacePreviewLoader::checkRestart()
 }
 
 } // namespace Digikam
+
+#include "moc_facepreviewloader.cpp"

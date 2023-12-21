@@ -84,3 +84,5 @@ void ItemPreviewCanvas::hoverMoveEvent(QGraphicsSceneHoverEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_itempreviewcanvas.cpp"

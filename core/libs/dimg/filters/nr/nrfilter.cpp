@@ -540,3 +540,5 @@ void NRFilter::ycbcr2srgb(float** const fimg, int size)
 }
 
 } // namespace Digikam
+
+#include "moc_nrfilter.cpp"

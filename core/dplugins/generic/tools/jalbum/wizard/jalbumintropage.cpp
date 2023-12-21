@@ -176,3 +176,5 @@ bool JAlbumIntroPage::isComplete() const
 }
 
 } // namespace DigikamGenericJAlbumPlugin
+
+#include "moc_jalbumintropage.cpp"

@@ -139,3 +139,5 @@ void PrintMetadataTest::loadXmp(const DMetadata& meta, bool expected)
         QWARN("Exiv2 has no XMP support...");
     }
 }
+
+#include "moc_printmetadata_utest.cpp"

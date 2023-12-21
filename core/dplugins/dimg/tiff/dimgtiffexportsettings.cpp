@@ -98,3 +98,5 @@ DImgLoaderPrms DImgTIFFExportSettings::settings() const
 }
 
 } // namespace Digikam
+
+#include "moc_dimgtiffexportsettings.cpp"

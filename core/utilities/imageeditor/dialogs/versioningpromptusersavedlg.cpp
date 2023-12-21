@@ -158,3 +158,5 @@ bool VersioningPromptUserSaveDialog::shallDiscard() const
 }
 
 } // namespace Digikam
+
+#include "moc_versioningpromptusersavedlg.cpp"

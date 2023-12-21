@@ -228,3 +228,5 @@ int CameraMessageBox::warningContinueCancelList(CameraThumbsCtrl* const ctrl,
 }
 
 } // namespace Digikam
+
+#include "moc_cameramessagebox.cpp"

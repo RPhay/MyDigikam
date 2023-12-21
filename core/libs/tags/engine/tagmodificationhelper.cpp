@@ -789,3 +789,5 @@ QSet<TAlbum*> TagModificationHelper::getFaceTags(const QList<TAlbum*>& tags)
 }
 
 } // namespace Digikam
+
+#include "moc_tagmodificationhelper.cpp"

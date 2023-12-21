@@ -590,3 +590,5 @@ bool DDatePicker::hasCloseButton() const
 }
 
 } // namespace Digikam
+
+#include "moc_ddatepicker.cpp"

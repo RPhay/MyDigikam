@@ -336,3 +336,5 @@ VideoFrame VideoDecoderFFmpegBase::frame()
 }
 
 } // namespace QtAV
+
+#include "moc_VideoDecoderFFmpegBase.cpp"

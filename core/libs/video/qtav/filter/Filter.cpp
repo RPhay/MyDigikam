@@ -217,3 +217,5 @@ void VideoFilter::apply(Statistics* statistics, VideoFrame* frame)
 }
 
 } // namespace QtAV
+
+#include "moc_Filter.cpp"

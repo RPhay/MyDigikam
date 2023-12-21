@@ -1135,3 +1135,5 @@ DInfoInterface* LightTableWindow::infoIface(DPluginAction* const ac)
 }
 
 } // namespace Digikam
+
+#include "moc_lighttablewindow.cpp"

@@ -925,3 +925,5 @@ void GPTalker::parseResponseUploadPhoto(const QByteArray& data)
 }
 
 } // namespace DigikamGenericGoogleServicesPlugin
+
+#include "moc_gptalker.cpp"

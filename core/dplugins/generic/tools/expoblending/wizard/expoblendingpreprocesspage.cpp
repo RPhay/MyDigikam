@@ -256,3 +256,5 @@ void ExpoBlendingPreProcessPage::slotExpoBlendingAction(const DigikamGenericExpo
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_expoblendingpreprocesspage.cpp"

@@ -537,3 +537,5 @@ void PanoActionThread::appendStitchingJobs(const QSharedPointer<Sequence>& js,
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_panoactionthread.cpp"

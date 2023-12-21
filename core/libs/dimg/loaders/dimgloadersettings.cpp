@@ -33,3 +33,5 @@ QStringList DImgLoaderSettings::parameters() const
 }
 
 } // namespace Digikam
+
+#include "moc_dimgloadersettings.cpp"

@@ -56,3 +56,5 @@ WebWidget::~WebWidget()
     delete d;
 }
 }
+
+#include "moc_webwidget_qwebengine.cpp"

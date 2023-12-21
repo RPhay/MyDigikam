@@ -248,3 +248,5 @@ void ShowfotoStackViewSideBar::doSaveState()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotostackviewsidebar.cpp"

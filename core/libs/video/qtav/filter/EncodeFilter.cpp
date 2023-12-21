@@ -515,3 +515,5 @@ void VideoEncodeFilter::encode(const VideoFrame& frame)
 }
 
 } // namespace QtAV
+
+#include "moc_EncodeFilter.cpp"

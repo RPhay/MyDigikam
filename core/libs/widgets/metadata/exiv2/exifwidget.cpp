@@ -178,3 +178,5 @@ void ExifWidget::slotSaveMetadataToFile()
 }
 
 } // namespace Digikam
+
+#include "moc_exifwidget.cpp"

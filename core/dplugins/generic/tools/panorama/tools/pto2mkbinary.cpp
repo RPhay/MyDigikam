@@ -36,3 +36,5 @@ Pto2MkBinary::~Pto2MkBinary()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_pto2mkbinary.cpp"

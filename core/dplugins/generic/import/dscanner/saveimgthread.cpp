@@ -488,3 +488,5 @@ void SaveImgThread::run()
 }
 
 } // namespace DigikamGenericDScannerPlugin
+
+#include "moc_saveimgthread.cpp"

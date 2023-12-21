@@ -778,3 +778,5 @@ void FbTalker::parseResponseListAlbums(const QByteArray& data)
 }
 
 } // namespace DigikamGenericFaceBookPlugin
+
+#include "moc_fbtalker_wizard.cpp"

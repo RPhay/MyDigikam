@@ -118,3 +118,5 @@ void FilmGrainToolPlugin::slotFilmGrain()
 }
 
 } // namespace DigikamEditorFilmGrainToolPlugin
+
+#include "moc_filmgraintoolplugin.cpp"

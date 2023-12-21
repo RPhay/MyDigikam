@@ -115,3 +115,5 @@ void RestoreToolPlugin::slotRestore()
 }
 
 } // namespace DigikamEditorRestorationToolPlugin
+
+#include "moc_restorationtoolplugin.cpp"

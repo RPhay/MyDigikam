@@ -60,3 +60,5 @@ void PWidget::updateLabels(const QString& name, const QString& url)
 }
 
 } // namespace DigikamGenericPinterestPlugin
+
+#include "moc_pwidget.cpp"

@@ -243,3 +243,5 @@ void DDatePickerPopup::slotPrevMonth()
 } // namespace Digikam
 
 #include "ddatepickerpopup.moc"
+
+#include "moc_ddatepickerpopup.cpp"

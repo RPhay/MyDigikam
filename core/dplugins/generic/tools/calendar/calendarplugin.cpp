@@ -118,3 +118,5 @@ void CalendarPlugin::slotCalendar()
 }
 
 } // namespace DigikamGenericCalendarPlugin
+
+#include "moc_calendarplugin.cpp"

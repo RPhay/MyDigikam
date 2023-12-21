@@ -382,3 +382,5 @@ void FaceItem::paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*)
 }
 
 } // namespace FaceEngineDemo
+
+#include "moc_demofaceitem.cpp"

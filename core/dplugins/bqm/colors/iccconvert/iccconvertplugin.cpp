@@ -99,3 +99,5 @@ void IccConvertPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmIccConvertPlugin
+
+#include "moc_iccconvertplugin.cpp"

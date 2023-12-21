@@ -125,3 +125,5 @@ void RedEyeToolPlugin::slotRedEye()
 }
 
 } // namespace DigikamEditorRedEyeToolPlugin
+
+#include "moc_redeyetoolplugin.cpp"

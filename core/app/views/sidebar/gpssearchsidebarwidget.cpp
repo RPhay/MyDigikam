@@ -125,3 +125,5 @@ const QString GPSSearchSideBarWidget::getCaption()
 }
 
 } // namespace Digikam
+
+#include "moc_gpssearchsidebarwidget.cpp"

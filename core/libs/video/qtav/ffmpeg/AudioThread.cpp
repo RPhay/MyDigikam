@@ -637,3 +637,5 @@ void AudioThread::run()
 }
 
 } // namespace QtAV
+
+#include "moc_AudioThread.cpp"

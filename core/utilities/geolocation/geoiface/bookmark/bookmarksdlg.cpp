@@ -488,3 +488,5 @@ void BookmarksDialog::saveSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_bookmarksdlg.cpp"

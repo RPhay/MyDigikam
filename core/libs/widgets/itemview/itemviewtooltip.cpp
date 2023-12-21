@@ -230,3 +230,5 @@ void ItemViewToolTip::mouseMoveEvent(QMouseEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_itemviewtooltip.cpp"

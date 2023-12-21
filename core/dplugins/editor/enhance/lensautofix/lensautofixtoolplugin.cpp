@@ -118,3 +118,5 @@ void LensAutoFixToolPlugin::slotLensAutoFix()
 }
 
 } // namespace DigikamEditorLensAutoFixToolPlugin
+
+#include "moc_lensautofixtoolplugin.cpp"

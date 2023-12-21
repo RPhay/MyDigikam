@@ -118,3 +118,5 @@ void PlayListModel::updateLayout()
 }
 
 } // namespace AVPlayer
+
+#include "moc_PlayListModel.cpp"

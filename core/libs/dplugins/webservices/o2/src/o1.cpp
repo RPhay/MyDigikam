@@ -452,3 +452,5 @@ QByteArray O1::nonce() {
 #endif
     return u.toLatin1();
 }
+
+#include "moc_o1.cpp"

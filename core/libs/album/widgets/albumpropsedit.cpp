@@ -487,3 +487,5 @@ void AlbumPropsEdit::slotHelp()
 } // namespace Digikam
 
 #include "albumpropsedit.moc"
+
+#include "moc_albumpropsedit.cpp"

@@ -261,3 +261,5 @@ void UFRawRawImportPlugin::slotProcessReadyRead()
 }
 
 } // namespace DigikamRawImportUFRawPlugin
+
+#include "moc_rawimportufrawplugin.cpp"

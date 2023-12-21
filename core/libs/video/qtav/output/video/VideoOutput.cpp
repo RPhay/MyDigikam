@@ -557,3 +557,5 @@ bool VideoOutput::onHanlePendingTasks()
 IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(VideoOutput)
 
 } // namespace QtAV
+
+#include "moc_VideoOutput.cpp"

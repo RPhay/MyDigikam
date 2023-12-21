@@ -92,3 +92,5 @@ void WorkingWidget::toggleTimer(bool turnOn)
 }
 
 } // namespace Digikam
+
+#include "moc_workingwidget.cpp"

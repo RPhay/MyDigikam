@@ -345,3 +345,5 @@ void SinglePhotoPreviewLayout::updateZoomAndSize()
 }
 
 } // namespace Digikam
+
+#include "moc_previewlayout.cpp"

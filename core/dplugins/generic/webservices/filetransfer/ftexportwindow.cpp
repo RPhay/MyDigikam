@@ -208,3 +208,5 @@ void FTExportWindow::slotUpload()
 }
 
 } // namespace DigikamGenericFileTransferPlugin
+
+#include "moc_ftexportwindow.cpp"

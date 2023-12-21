@@ -543,3 +543,5 @@ QString DAlbumInfo::albumPath() const
 }
 
 } // namespace Digikam
+
+#include "moc_dinfointerface.cpp"

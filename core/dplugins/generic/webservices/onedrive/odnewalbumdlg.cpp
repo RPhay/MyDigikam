@@ -41,3 +41,5 @@ void ODNewAlbumDlg::getFolderTitle(ODFolder& folder)
 }
 
 } // namespace DigikamGenericOneDrivePlugin
+
+#include "moc_odnewalbumdlg.cpp"

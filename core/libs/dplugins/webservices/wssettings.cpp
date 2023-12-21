@@ -146,3 +146,5 @@ QStringList WSSettings::allUserNames(const QString& serviceName)
 }
 
 } // namespace Digikam
+
+#include "moc_wssettings.cpp"

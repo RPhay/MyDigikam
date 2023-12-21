@@ -68,3 +68,5 @@ void FCThread::cancel()
 }
 
 } // namespace DigikamGenericFileCopyPlugin
+
+#include "moc_fcthread.cpp"

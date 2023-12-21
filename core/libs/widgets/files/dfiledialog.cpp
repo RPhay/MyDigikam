@@ -183,3 +183,5 @@ QFileDialog::Option DFileDialog::getNativeFileDialogOption()
 }
 
 } // namespace Digikam
+
+#include "moc_dfiledialog.cpp"

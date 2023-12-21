@@ -109,3 +109,5 @@ void SetupEditor::readSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_setupeditor.cpp"

@@ -99,3 +99,5 @@ void HSLCorrectionPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmHSLCorrectionPlugin
+
+#include "moc_hslcorrectionplugin.cpp"

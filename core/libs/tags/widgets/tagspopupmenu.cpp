@@ -888,3 +888,5 @@ void TagsPopupMenu::slotTagThumbnail(Album* album, const QPixmap& pix)
 } // namespace Digikam
 
 #include "tagspopupmenu.moc"
+
+#include "moc_tagspopupmenu.cpp"

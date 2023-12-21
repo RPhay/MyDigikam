@@ -163,3 +163,5 @@ void FreeRotationToolPlugin::slotFreeRotation()
 }
 
 } // namespace DigikamEditorFreeRotationToolPlugin
+
+#include "moc_freerotationtoolplugin.cpp"

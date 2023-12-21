@@ -533,3 +533,5 @@ void NREstimate::startAnalyse()
 }
 
 } // namespace Digikam
+
+#include "moc_nrestimate.cpp"

@@ -349,3 +349,5 @@ void WorkflowList::slotAssignQueueSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_workflowlist.cpp"

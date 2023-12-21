@@ -99,3 +99,5 @@ void BWConvertPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmBWConvertPlugin
+
+#include "moc_bwconvertplugin.cpp"

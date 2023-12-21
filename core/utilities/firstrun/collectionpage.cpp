@@ -224,3 +224,5 @@ bool CollectionPage::checkRootAlbum(QString& rootAlbumFolder)
 }
 
 } // namespace Digikam
+
+#include "moc_collectionpage.cpp"

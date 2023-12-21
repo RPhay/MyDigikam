@@ -62,3 +62,5 @@ void BOXWidget::updateLabels(const QString& name, const QString& url)
 }
 
 } // namespace DigikamGenericBoxPlugin
+
+#include "moc_boxwidget.cpp"

@@ -492,3 +492,5 @@ void LensFunFilter::readParameters(const Digikam::FilterAction& action)
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
 #endif
+
+#include "moc_lensfunfilter.cpp"

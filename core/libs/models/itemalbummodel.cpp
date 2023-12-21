@@ -790,3 +790,5 @@ void ItemAlbumModel::slotAlbumsCleared()
 }
 
 } // namespace Digikam
+
+#include "moc_itemalbummodel.cpp"

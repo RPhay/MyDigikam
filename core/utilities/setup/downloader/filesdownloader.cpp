@@ -645,3 +645,5 @@ DownloadInfo& DownloadInfo::operator=(const DownloadInfo& other)
 }
 
 } // namespace Digikam
+
+#include "moc_filesdownloader.cpp"

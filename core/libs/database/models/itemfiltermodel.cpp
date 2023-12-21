@@ -1347,3 +1347,5 @@ void NoDuplicatesItemFilterModel::slotRowsAboutToBeRemoved(const QModelIndex& pa
 */
 
 } // namespace Digikam
+
+#include "moc_itemfiltermodel.cpp"

@@ -41,3 +41,5 @@ MysqlInitBinary::~MysqlInitBinary()
 }
 
 } // namespace Digikam
+
+#include "moc_mysqlinitbinary.cpp"

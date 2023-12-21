@@ -556,3 +556,5 @@ void AlbumSelectors::updateTabText()
 } // namespace Digikam
 
 #include "albumselectors.moc"
+
+#include "moc_albumselectors.cpp"

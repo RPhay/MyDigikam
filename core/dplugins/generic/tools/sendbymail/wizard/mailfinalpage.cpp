@@ -181,3 +181,5 @@ bool MailFinalPage::isComplete() const
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_mailfinalpage.cpp"

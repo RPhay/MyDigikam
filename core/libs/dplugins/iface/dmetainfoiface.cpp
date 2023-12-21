@@ -342,3 +342,5 @@ QList<GPSItemContainer*> DMetaInfoIface::currentGPSItems() const
 #endif
 
 } // namespace Digikam
+
+#include "moc_dmetainfoiface.cpp"

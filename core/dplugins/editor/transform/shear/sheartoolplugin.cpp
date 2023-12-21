@@ -115,3 +115,5 @@ void ShearToolPlugin::slotShear()
 }
 
 } // namespace DigikamEditorShearToolPlugin
+
+#include "moc_sheartoolplugin.cpp"

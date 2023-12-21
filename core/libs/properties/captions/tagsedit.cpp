@@ -457,3 +457,5 @@ void TagsEdit::updateTagsView()
 }
 
 } // namespace Digikam
+
+#include "moc_tagsedit.cpp"

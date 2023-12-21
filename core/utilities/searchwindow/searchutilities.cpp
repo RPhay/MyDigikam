@@ -655,3 +655,5 @@ void StyleSheetDebugger::buttonClicked()
 } // namespace Digikam
 
 #include "searchutilities.moc"
+
+#include "moc_searchutilities.cpp"

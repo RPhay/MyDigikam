@@ -101,3 +101,5 @@ void ConvertToTiffPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmConvertToTiffPlugin
+
+#include "moc_converttotiffplugin.cpp"

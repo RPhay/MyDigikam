@@ -100,3 +100,5 @@ void AssignCaptionsPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmAssignCaptionsPlugin
+
+#include "moc_assigncaptionsplugin.cpp"

@@ -119,3 +119,5 @@ void WhiteBalanceToolPlugin::slotWhiteBalance()
 }
 
 } // namespace DigikamEditorWhiteBalanceToolPlugin
+
+#include "moc_whitebalancetoolplugin.cpp"

@@ -368,3 +368,5 @@ void EXIFAdjust::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_exifadjust.cpp"

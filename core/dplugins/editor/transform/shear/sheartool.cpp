@@ -329,3 +329,5 @@ void ShearTool::setFinalImage()
 }
 
 } // namespace DigikamEditorShearToolPlugin
+
+#include "moc_sheartool.cpp"

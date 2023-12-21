@@ -120,3 +120,5 @@ void EffectPreview::slotRestart()
 }
 
 } // namespace Digikam
+
+#include "moc_effectpreview.cpp"

@@ -132,3 +132,5 @@ bool WhiteBalance::toolOperations()
 }
 
 } // namespace DigikamBqmWhiteBalancePlugin
+
+#include "moc_whitebalance.cpp"

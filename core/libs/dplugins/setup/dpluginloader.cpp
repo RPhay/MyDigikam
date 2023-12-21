@@ -380,3 +380,5 @@ bool DPluginLoader::canExport(const QString& format) const
 }
 
 } // namespace Digikam
+
+#include "moc_dpluginloader.cpp"

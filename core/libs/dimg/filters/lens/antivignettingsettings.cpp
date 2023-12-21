@@ -320,3 +320,5 @@ void AntiVignettingSettings::slotSettingsChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_antivignettingsettings.cpp"

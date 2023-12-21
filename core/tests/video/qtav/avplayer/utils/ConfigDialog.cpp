@@ -170,3 +170,5 @@ void ConfigDialog::onCancel()
 }
 
 } // namespace AVPlayer
+
+#include "moc_ConfigDialog.cpp"

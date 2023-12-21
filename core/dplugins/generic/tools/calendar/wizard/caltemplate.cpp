@@ -199,3 +199,5 @@ void CalTemplate::yearChanged(int year)
 }
 
 } // Namespace Digikam
+
+#include "moc_caltemplate.cpp"

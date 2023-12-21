@@ -447,3 +447,5 @@ void AdvancedRenameInput::writeSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_advancedrenameinput.cpp"

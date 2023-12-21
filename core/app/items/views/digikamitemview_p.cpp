@@ -107,3 +107,5 @@ void DigikamItemView::Private::updateOverlays()
 }
 
 } // namespace Digikam
+
+#include "moc_digikamitemview_p.cpp"

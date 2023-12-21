@@ -287,3 +287,5 @@ QString DPluginConfView::filter() const
 }
 
 } // namespace Digikam
+
+#include "moc_dpluginconfview.cpp"

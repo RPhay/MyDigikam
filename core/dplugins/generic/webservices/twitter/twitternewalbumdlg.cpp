@@ -42,3 +42,5 @@ void TwNewAlbumDlg::getAlbumProperties(TwAlbum& album)
 }
 
 } // namespace DigikamGenericTwitterPlugin
+
+#include "moc_twitternewalbumdlg.cpp"

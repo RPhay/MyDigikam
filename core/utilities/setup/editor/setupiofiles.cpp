@@ -462,3 +462,5 @@ void SetupIOFiles::readSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_setupiofiles.cpp"

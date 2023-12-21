@@ -115,3 +115,5 @@ void BoxPlugin::slotBox()
 }
 
 } // namespace DigikamGenericBoxPlugin
+
+#include "moc_boxplugin.cpp"

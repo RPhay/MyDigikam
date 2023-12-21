@@ -211,3 +211,5 @@ void ThumbsGenerator::slotAdvance(const QImage& img)
 }
 
 } // namespace Digikam
+
+#include "moc_thumbsgenerator.cpp"

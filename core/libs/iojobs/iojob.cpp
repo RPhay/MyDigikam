@@ -566,3 +566,5 @@ void BuildTrashCountersJob::run()
 }
 
 } // namespace Digikam
+
+#include "moc_iojob.cpp"

@@ -325,3 +325,5 @@ void ImgurWindow::saveSettings()
 }
 
 } // namespace DigikamGenericImgUrPlugin
+
+#include "moc_imgurwindow.cpp"

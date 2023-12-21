@@ -112,3 +112,5 @@ int AudioEncoder::frameSize() const
 }
 
 } // namespace QtAV
+
+#include "moc_AudioEncoder.cpp"

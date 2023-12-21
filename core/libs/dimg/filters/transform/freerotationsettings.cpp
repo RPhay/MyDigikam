@@ -222,3 +222,5 @@ void FreeRotationSettings::writeSettings(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_freerotationsettings.cpp"

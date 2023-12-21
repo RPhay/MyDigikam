@@ -116,3 +116,5 @@ void ChannelMixerToolPlugin::slotChannelMixer()
 }
 
 } // namespace DigikamEditorChannelMixerToolPlugin
+
+#include "moc_channelmixertoolplugin.cpp"

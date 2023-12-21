@@ -71,3 +71,5 @@ void DateTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
 }
 
 } // namespace Digikam
+
+#include "moc_datetreeview.cpp"

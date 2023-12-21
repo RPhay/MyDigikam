@@ -139,3 +139,5 @@ void MainWindow::slot_plainTextEdit_textChanged()
     QString text = this->ui->plainTextEdit->toPlainText();
     this->ui->pushButton1->setEnabled(!text.isEmpty() && !text.isNull());
 }
+
+#include "moc_mainwindow.cpp"

@@ -120,3 +120,5 @@ void HealingCloneToolPlugin::slotHealingClone()
 }
 
 } // namespace DigikamEditorHealingCloneToolPlugin
+
+#include "moc_healingclonetoolplugin.cpp"

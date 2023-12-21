@@ -93,3 +93,5 @@ QList<QEvent::Type> DWItemDelegate::blockedEventTypes(QWidget* const widget) con
 }
 
 } // namespace Digikam
+
+#include "moc_dwitemdelegate.cpp"

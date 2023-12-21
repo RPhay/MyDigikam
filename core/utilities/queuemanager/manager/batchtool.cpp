@@ -648,3 +648,5 @@ void BatchTool::registerSettingsWidget()
 }
 
 } // namespace Digikam
+
+#include "moc_batchtool.cpp"

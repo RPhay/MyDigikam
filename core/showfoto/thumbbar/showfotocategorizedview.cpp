@@ -595,3 +595,5 @@ ShowfotoItemInfo ShowfotoCategorizedView::nextInfo(const ShowfotoItemInfo& info)
 } // namespace Showfoto
 
 #include "showfotocategorizedview.moc"
+
+#include "moc_showfotocategorizedview.cpp"

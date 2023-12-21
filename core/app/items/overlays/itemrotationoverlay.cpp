@@ -136,3 +136,5 @@ void ItemRotateOverlay::widgetLeaveEvent()
 }
 
 } // namespace Digikam
+
+#include "moc_itemrotationoverlay.cpp"

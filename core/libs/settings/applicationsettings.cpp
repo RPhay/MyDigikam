@@ -495,3 +495,5 @@ void ApplicationSettings::saveSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_applicationsettings.cpp"

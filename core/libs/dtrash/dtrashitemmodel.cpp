@@ -464,3 +464,5 @@ void DTrashItemModel::slotLoadItemsFinished()
 }
 
 } // namespace Digikam
+
+#include "moc_dtrashitemmodel.cpp"

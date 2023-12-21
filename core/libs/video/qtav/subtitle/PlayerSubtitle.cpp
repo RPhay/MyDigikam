@@ -383,3 +383,5 @@ void PlayerSubtitle::disconnectSignals()
 }
 
 } // namespace QtAV
+
+#include "moc_PlayerSubtitle.cpp"

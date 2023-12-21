@@ -162,3 +162,5 @@ void QtPGFTest::testQtPGFIface()
 
     qCDebug(DIGIKAM_TESTS_LOG) << "PNG Decoding time: " << double(end - start)/CLOCKS_PER_SEC << " s";
 }
+
+#include "moc_qtpgf_utest.cpp"

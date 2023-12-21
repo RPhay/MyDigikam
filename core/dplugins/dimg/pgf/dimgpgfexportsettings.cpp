@@ -142,3 +142,5 @@ void DImgPGFExportSettings::slotTogglePGFLossLess(bool b)
 }
 
 } // namespace Digikam
+
+#include "moc_dimgpgfexportsettings.cpp"

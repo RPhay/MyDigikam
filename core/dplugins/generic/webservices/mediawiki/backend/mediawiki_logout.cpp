@@ -107,3 +107,5 @@ void Logout::doWorkProcessReply()
 }
 
 } // namespace MediaWiki
+
+#include "moc_mediawiki_logout.cpp"

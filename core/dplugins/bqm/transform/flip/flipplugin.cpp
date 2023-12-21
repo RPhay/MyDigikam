@@ -99,3 +99,5 @@ void FlipPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmFlipPlugin
+
+#include "moc_flipplugin.cpp"

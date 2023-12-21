@@ -123,3 +123,5 @@ void DProgressWdg::slotProgressCanceled(const QString& id)
 }
 
 } // namespace Digikam
+
+#include "moc_dprogresswdg.cpp"

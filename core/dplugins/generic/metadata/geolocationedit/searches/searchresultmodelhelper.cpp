@@ -156,3 +156,5 @@ void SearchResultModelHelper::snapItemsTo(const QModelIndex& targetIndex,
 }
 
 } // namespace DigikamGenericGeolocationEditPlugin
+
+#include "moc_searchresultmodelhelper.cpp"

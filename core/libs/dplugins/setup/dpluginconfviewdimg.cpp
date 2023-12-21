@@ -69,3 +69,5 @@ void DPluginConfViewDImg::loadPlugins()
 }
 
 } // namespace Digikam
+
+#include "moc_dpluginconfviewdimg.cpp"

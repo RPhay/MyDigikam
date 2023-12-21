@@ -502,3 +502,5 @@ void ImportRotateOverlay::widgetLeaveEvent()
 }
 
 } // namespace Digikam
+
+#include "moc_importoverlays.cpp"

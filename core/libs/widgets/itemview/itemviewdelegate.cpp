@@ -810,3 +810,5 @@ QPixmap ItemViewDelegate::ratingPixmap(int rating, bool selected) const
 }
 
 } // namespace Digikam
+
+#include "moc_itemviewdelegate.cpp"

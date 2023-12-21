@@ -147,3 +147,5 @@ void TagTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
 }
 
 } // namespace Digikam
+
+#include "moc_tagtreeview.cpp"

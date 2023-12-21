@@ -112,3 +112,5 @@ ShowfotoItemModel* ShowfotoDragDropHandler::model() const
 }
 
 } // namespace Showfoto
+
+#include "moc_showfotodragdrophandler.cpp"

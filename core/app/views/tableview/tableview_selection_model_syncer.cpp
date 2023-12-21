@@ -355,3 +355,5 @@ void Digikam::TableViewSelectionModelSyncer::slotTargetModelRowsInserted(const Q
 }
 
 } // namespace Digikam
+
+#include "moc_tableview_selection_model_syncer.cpp"

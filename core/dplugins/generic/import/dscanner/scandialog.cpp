@@ -315,3 +315,5 @@ void ScanDialog::slotThreadDone(const QUrl& url, bool success)
 }
 
 } // namespace DigikamGenericDScannerPlugin
+
+#include "moc_scandialog.cpp"

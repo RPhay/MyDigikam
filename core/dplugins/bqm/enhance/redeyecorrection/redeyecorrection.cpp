@@ -114,3 +114,5 @@ void RedEyeCorrection::cancel()
 }
 
 } // namespace DigikamBqmRedEyeCorrectionPlugin
+
+#include "moc_redeyecorrection.cpp"

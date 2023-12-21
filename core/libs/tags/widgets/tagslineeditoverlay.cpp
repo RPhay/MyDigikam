@@ -198,3 +198,5 @@ void TagsLineEditOverlay::slotEntered(const QModelIndex& index)
 }
 
 } // namespace Digikam
+
+#include "moc_tagslineeditoverlay.cpp"

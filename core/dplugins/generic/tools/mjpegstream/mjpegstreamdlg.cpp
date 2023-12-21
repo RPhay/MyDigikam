@@ -115,3 +115,5 @@ void MjpegStreamDlg::slotOpenPreview()
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
+
+#include "moc_mjpegstreamdlg.cpp"

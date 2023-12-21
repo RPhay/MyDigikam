@@ -213,3 +213,5 @@ void FindDuplicatesAlbum::removeDuplicates()
 }
 
 } // namespace Digikam
+
+#include "moc_findduplicatesalbum.cpp"

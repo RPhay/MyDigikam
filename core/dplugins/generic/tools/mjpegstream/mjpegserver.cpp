@@ -119,3 +119,5 @@ void MjpegServer::stop()
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
+
+#include "moc_mjpegserver.cpp"

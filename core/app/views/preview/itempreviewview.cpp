@@ -752,3 +752,5 @@ void ItemPreviewView::mousePressEvent(QMouseEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_itempreviewview.cpp"

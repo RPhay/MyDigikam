@@ -135,3 +135,5 @@ void ItemThumbnailDelegate::updateRects()
 }
 
 } // namespace Digikam
+
+#include "moc_itemthumbnaildelegate.cpp"

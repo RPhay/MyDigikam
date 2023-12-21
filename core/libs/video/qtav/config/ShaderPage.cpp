@@ -95,3 +95,5 @@ void ShaderPage::applyFromUi()
 }
 
 } // namespace QtAV
+
+#include "moc_ShaderPage.cpp"

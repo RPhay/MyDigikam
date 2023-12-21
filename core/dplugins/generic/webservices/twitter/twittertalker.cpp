@@ -978,3 +978,5 @@ void TwTalker::parseResponseCreateFolder(const QByteArray& data)
 }
 
 } // namespace DigikamGenericTwitterPlugin
+
+#include "moc_twittertalker.cpp"

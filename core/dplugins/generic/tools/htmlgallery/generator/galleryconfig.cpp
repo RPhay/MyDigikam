@@ -320,3 +320,5 @@ QString GalleryConfig::imageSelectionTitle() const
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_galleryconfig.cpp"

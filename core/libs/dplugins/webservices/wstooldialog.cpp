@@ -141,3 +141,5 @@ void WSToolDialog::slotCloseClicked()
 }
 
 } // namespace Digikam
+
+#include "moc_wstooldialog.cpp"

@@ -86,3 +86,5 @@ void DDateTimeEdit::slotDateTimeChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_ddatetimeedit.cpp"

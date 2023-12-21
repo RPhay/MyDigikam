@@ -157,3 +157,5 @@ void RatingReadWriteTest::testReadFromDisabledNamespaces()
         QCOMPARE(rez, i);
     }
 }
+
+#include "moc_ratingreadwrite_utest.cpp"

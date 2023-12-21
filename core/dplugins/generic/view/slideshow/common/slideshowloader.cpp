@@ -875,3 +875,5 @@ void SlideShowLoader::slotScreenSelected(int screen)
 }
 
 } // namespace DigikamGenericSlideShowPlugin
+
+#include "moc_slideshowloader.cpp"

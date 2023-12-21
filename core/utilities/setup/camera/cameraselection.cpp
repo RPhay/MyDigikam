@@ -713,3 +713,5 @@ void CameraSelection::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_cameraselection.cpp"

@@ -198,3 +198,5 @@ void ClickDragReleaseItem::keyPressEvent(QKeyEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_clickdragreleaseitem.cpp"

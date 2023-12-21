@@ -450,3 +450,5 @@ void BOXWindow::closeEvent(QCloseEvent* e)
 }
 
 } // namespace DigikamGenericBoxPlugin
+
+#include "moc_boxwindow.cpp"

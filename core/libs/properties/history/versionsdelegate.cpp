@@ -345,3 +345,5 @@ void VersionsDelegate::paint(QPainter* painter, const QStyleOptionViewItem& opti
 */
 
 } // namespace Digikam
+
+#include "moc_versionsdelegate.cpp"

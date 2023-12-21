@@ -120,3 +120,5 @@ void FingerprintsTask::run()
 }
 
 } // namespace Digikam
+
+#include "moc_fingerprintstask.cpp"

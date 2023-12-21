@@ -338,3 +338,5 @@ bool s_inlineTranslateString(const QString& text, const QString& trCode, QString
 } // namespace Digikam
 
 #include "localizeselector.moc"
+
+#include "moc_localizeselector.cpp"

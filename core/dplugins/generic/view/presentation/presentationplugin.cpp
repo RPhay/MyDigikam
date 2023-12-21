@@ -129,3 +129,5 @@ void PresentationPlugin::slotPresentation()
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentationplugin.cpp"

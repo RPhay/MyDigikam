@@ -611,3 +611,5 @@ QString ICCProfileWidget::getTagDescription(const QString& key)
 }
 
 } // namespace Digikam
+
+#include "moc_iccprofilewidget.cpp"

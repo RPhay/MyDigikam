@@ -39,3 +39,5 @@ BalsaBinary::~BalsaBinary()
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_balsabinary.cpp"

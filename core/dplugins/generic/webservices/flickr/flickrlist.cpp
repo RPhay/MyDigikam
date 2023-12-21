@@ -691,3 +691,5 @@ FlickrList::ContentType FlickrListViewItem::contentType() const
 }
 
 } // namespace DigikamGenericFlickrPlugin
+
+#include "moc_flickrlist.cpp"

@@ -994,3 +994,5 @@ void ImageGuideWidget::setMaskCursor()
 }
 
 } // namespace Digikam
+
+#include "moc_imageguidewidget.cpp"

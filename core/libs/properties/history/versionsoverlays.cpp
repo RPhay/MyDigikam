@@ -281,3 +281,5 @@ bool ActionVersionsOverlay::checkIndex(const QModelIndex& index) const
 } // namespace Digikam
 
 #include "versionsoverlays.moc"
+
+#include "moc_versionsoverlays.cpp"

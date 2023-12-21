@@ -51,3 +51,5 @@ QString RGBackend::backendName()
 }
 
 } // namespace Digikam
+
+#include "moc_backend-rg.cpp"

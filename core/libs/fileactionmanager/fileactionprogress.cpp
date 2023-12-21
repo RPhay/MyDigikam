@@ -67,3 +67,5 @@ void FileActionProgress::slotCancel()
 }
 
 } // namespace Digikam
+
+#include "moc_fileactionprogress.cpp"

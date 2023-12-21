@@ -168,3 +168,5 @@ void EmbossTool::setFinalImage()
 }
 
 } // namespace DigikamEditorEmbossToolPlugin
+
+#include "moc_embosstool.cpp"

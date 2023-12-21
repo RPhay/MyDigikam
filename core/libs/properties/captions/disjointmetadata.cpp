@@ -870,3 +870,5 @@ void DisjointMetadata::setDataFields(const DisjointMetadataDataFields& data)
 }
 
 } // namespace Digikam
+
+#include "moc_disjointmetadata.cpp"

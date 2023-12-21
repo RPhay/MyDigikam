@@ -313,3 +313,5 @@ void QueryImageinfo::doWorkProcessReply()
 }
 
 } // namespace MediaWiki
+
+#include "moc_mediawiki_queryimageinfo.cpp"

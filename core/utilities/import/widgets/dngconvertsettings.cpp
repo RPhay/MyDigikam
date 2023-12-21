@@ -142,3 +142,5 @@ void DNGConvertSettings::slotSetupExifTool()
 }
 
 } // namespace Digikam
+
+#include "moc_dngconvertsettings.cpp"

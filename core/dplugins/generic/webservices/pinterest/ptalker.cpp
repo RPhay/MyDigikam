@@ -594,3 +594,5 @@ void PTalker::readSettings()
 }
 
 } // namespace DigikamGenericPinterestPlugin
+
+#include "moc_ptalker.cpp"

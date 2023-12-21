@@ -678,3 +678,5 @@ QString LibsInfoDlg::openCVGetDeviceTypeString(const cv::ocl::Device& device)
 }
 
 } // namespace Digikam
+
+#include "moc_libsinfodlg.cpp"

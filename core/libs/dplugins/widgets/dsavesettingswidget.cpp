@@ -232,3 +232,5 @@ QString DSaveSettingsWidget::extensionForFormat(DSaveSettingsWidget::OutputForma
 }
 
 } // namespace Digikam
+
+#include "moc_dsavesettingswidget.cpp"

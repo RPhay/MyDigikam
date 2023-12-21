@@ -280,3 +280,5 @@ QString ImgurImageListViewItem::ImgurDeleteUrl() const
 }
 
 } // namespace DigikamGenericImgUrPlugin
+
+#include "moc_imgurimageslist.cpp"

@@ -521,3 +521,5 @@ void ExifToolWidget::buildView()
 }
 
 } // namespace Digikam
+
+#include "moc_exiftoolwidget.cpp"

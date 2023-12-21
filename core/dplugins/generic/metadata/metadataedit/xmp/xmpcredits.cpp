@@ -688,3 +688,5 @@ void XMPCredits::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_xmpcredits.cpp"

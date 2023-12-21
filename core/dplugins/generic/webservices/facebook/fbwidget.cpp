@@ -81,3 +81,5 @@ void FbWidget::slotReloadAlbumsRequest()
 }
 
 } // namespace DigikamGenericFaceBookPlugin
+
+#include "moc_fbwidget.cpp"

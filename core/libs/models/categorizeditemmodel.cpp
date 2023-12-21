@@ -324,3 +324,5 @@ void ActionItemModel::slotActionChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_categorizeditemmodel.cpp"

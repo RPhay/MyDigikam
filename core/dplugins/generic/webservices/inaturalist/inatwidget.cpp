@@ -212,3 +212,5 @@ void INatWidget::updateLabels(const QString& name, const QString& /*url*/)
 }
 
 } // namespace DigikamGenericINatPlugin
+
+#include "moc_inatwidget.cpp"

@@ -107,3 +107,5 @@ void ItemCoordinatesOverlay::slotEntered(const QModelIndex& index)
 }
 
 } // namespace Digikam
+
+#include "moc_itemcoordinatesoverlay.cpp"

@@ -251,3 +251,5 @@ void FCExportWindow::slotCopy()
 }
 
 } // namespace DigikamGenericFileCopyPlugin
+
+#include "moc_fcexportwindow.cpp"

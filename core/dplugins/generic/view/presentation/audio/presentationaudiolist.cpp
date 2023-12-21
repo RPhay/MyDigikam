@@ -332,3 +332,5 @@ QList<QUrl> PresentationAudioList::fileUrls()
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentationaudiolist.cpp"

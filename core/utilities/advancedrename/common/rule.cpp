@@ -283,3 +283,5 @@ ParseResults Rule::parse(ParseSettings& settings)
 }
 
 } // namespace Digikam
+
+#include "moc_rule.cpp"

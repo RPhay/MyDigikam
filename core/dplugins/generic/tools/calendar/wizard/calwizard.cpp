@@ -370,3 +370,5 @@ void CalWizard::printComplete()
 }
 
 } // Namespace Digikam
+
+#include "moc_calwizard.cpp"

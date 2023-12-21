@@ -1269,3 +1269,5 @@ void AdvancedRenameTest::testEmptyParseString()
     parsed         = manager.newName(filePath);
     QCOMPARE(parsed, fileName);
 }
+
+#include "moc_advancedrename_utest.cpp"

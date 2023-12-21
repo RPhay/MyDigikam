@@ -846,3 +846,5 @@ void CIETongueWidget::slotProgressTimerDone()
 }
 
 } // namespace Digikam
+
+#include "moc_cietonguewidget.cpp"

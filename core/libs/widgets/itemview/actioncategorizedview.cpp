@@ -165,3 +165,5 @@ void ActionCategorizedView::leaveEvent(QEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_actioncategorizedview.cpp"

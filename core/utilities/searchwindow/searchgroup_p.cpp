@@ -36,3 +36,5 @@ RadioButtonHBox::RadioButtonHBox(QWidget* const left, QWidget* const right, Qt::
 }
 
 } // namespace Digikam
+
+#include "moc_searchgroup_p.cpp"

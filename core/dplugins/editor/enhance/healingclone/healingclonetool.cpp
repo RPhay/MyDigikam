@@ -659,3 +659,5 @@ void HealingCloneTool::refreshImage()
 }
 
 } // namespace DigikamEditorHealingCloneToolPlugin
+
+#include "moc_healingclonetool.cpp"

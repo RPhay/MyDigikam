@@ -822,3 +822,5 @@ void FbTalker::parseResponseLogoutUser()
 }
 
 } // namespace DigikamGenericFaceBookPlugin
+
+#include "moc_fbtalker.cpp"

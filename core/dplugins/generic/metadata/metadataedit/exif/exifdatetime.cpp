@@ -532,3 +532,5 @@ void EXIFDateTime::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_exifdatetime.cpp"

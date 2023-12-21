@@ -128,3 +128,5 @@ void DWizardDlg::saveDialogSize()
 }
 
 } // namespace Digikam
+
+#include "moc_dwizarddlg.cpp"

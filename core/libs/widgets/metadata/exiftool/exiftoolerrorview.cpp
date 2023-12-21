@@ -85,3 +85,5 @@ void ExifToolErrorView::setErrorText(const QString& err)
 }
 
 } // namespace Digikam
+
+#include "moc_exiftoolerrorview.cpp"

@@ -122,3 +122,5 @@ JAlbumSettings* JAlbumWizard::settings() const
 }
 
 } // namespace DigikamGenericJAlbumPlugin
+
+#include "moc_jalbumwizard.cpp"

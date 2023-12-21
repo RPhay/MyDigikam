@@ -1006,3 +1006,5 @@ void TagsManager::slotMarkNotAssignedTags()
 }
 
 } // namespace Digikam
+
+#include "moc_tagsmanager.cpp"

@@ -130,3 +130,5 @@ QString ReplaceModifier::parseOperation(ParseSettings& settings, const QRegularE
 }
 
 } // namespace Digikam
+
+#include "moc_replacemodifier.cpp"

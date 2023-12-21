@@ -75,3 +75,5 @@ QNetworkAccessManager* NetworkManager::getNetworkManager(QObject* const object) 
 }
 
 } // namespace Digikam
+
+#include "moc_networkmanager.cpp"

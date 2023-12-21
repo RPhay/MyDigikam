@@ -42,3 +42,5 @@ ExifToolBinary::~ExifToolBinary()
 }
 
 } // namespace Digikam
+
+#include "moc_exiftoolbinary.cpp"

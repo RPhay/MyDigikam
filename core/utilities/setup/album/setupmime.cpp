@@ -328,3 +328,5 @@ void SetupMime::slotShowCurrentAudioSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_setupmime.cpp"

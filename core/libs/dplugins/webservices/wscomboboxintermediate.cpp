@@ -96,3 +96,5 @@ void WSComboBoxIntermediate::slotIndexChanged(int)
 }
 
 } // namespace Digikam
+
+#include "moc_wscomboboxintermediate.cpp"

@@ -1096,3 +1096,5 @@ QModelIndex ImportItemModel::index(int row, int column, const QModelIndex& paren
 }
 
 } // namespace Digikam
+
+#include "moc_importimagemodel.cpp"

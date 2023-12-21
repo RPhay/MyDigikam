@@ -238,3 +238,5 @@ void MetadataRemover::slotAdvance()
 }
 
 } // namespace Digikam
+
+#include "moc_metadataremover.cpp"

@@ -118,3 +118,5 @@ void GeolocationEditPlugin::slotEditGeolocation()
 }
 
 } // namespace DigikamGenericGeolocationEditPlugin
+
+#include "moc_geolocationeditplugin.cpp"

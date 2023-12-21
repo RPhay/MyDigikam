@@ -165,3 +165,5 @@ void HSLTool::setFinalImage()
 }
 
 } // namespace DigikamEditorHSLToolPlugin
+
+#include "moc_hsltool.cpp"

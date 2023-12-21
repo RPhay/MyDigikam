@@ -117,3 +117,5 @@ IOJobsThread* IOJobsManager::buildCollectionTrashCounters()
 }
 
 } // namespace Digikam
+
+#include "moc_iojobsmanager.cpp"

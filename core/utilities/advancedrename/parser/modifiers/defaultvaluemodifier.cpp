@@ -114,3 +114,5 @@ QString DefaultValueModifier::parseOperation(ParseSettings& settings, const QReg
 }
 
 } // namespace Digikam
+
+#include "moc_defaultvaluemodifier.cpp"

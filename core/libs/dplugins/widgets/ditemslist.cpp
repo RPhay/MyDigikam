@@ -970,3 +970,7 @@ DItemsListIsLessThanHandler DItemsList::isLessThanHandler() const
 }
 
 } // namespace Digikam
+
+#include "moc_ditemslist.cpp"
+
+#include "moc_ditemslist_p.cpp"

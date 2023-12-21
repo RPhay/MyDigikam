@@ -116,3 +116,5 @@ void TooltipsPage::saveSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_tooltipspage.cpp"

@@ -127,3 +127,5 @@ bool ConvertToWEBP::toolOperations()
 }
 
 } // namespace DigikamBqmConvertToWebpPlugin
+
+#include "moc_converttowebp.cpp"

@@ -281,3 +281,5 @@ bool MigrateFromDigikam4Page::checkForMigration()
 }
 
 } // namespace Digikam
+
+#include "moc_migratefromdigikam4page.cpp"

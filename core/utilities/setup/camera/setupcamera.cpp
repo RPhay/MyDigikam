@@ -1044,3 +1044,5 @@ void SetupCamera::slotPreviewFullImageSizeClicked()
 }
 
 } // namespace Digikam
+
+#include "moc_setupcamera.cpp"

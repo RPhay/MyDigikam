@@ -39,3 +39,5 @@ SylpheedBinary::~SylpheedBinary()
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_sylpheedbinary.cpp"

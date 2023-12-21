@@ -203,3 +203,5 @@ void VideoEQConfigPage::onEngineChangedByUI()
 }
 
 } // namespace QtAV
+
+#include "moc_VideoEQConfigPage.cpp"

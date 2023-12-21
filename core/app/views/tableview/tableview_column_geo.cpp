@@ -296,3 +296,5 @@ void ColumnGeoProperties::setConfiguration(const TableViewColumnConfiguration& n
 } // namespace TableViewColumns
 
 } // namespace Digikam
+
+#include "moc_tableview_column_geo.cpp"

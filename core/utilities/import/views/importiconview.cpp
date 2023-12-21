@@ -513,3 +513,5 @@ void ImportIconView::assignRatingToSelected(int rating)
 }
 
 } // namespace Digikam
+
+#include "moc_importiconview.cpp"

@@ -697,3 +697,5 @@ double ImageHistogram::getMaximum(int channel, int start, int end) const
 }
 
 } // namespace Digikam
+
+#include "moc_imagehistogram.cpp"

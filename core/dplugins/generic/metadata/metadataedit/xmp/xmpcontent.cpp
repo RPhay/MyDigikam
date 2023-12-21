@@ -373,3 +373,5 @@ void XMPContent::slotSyncCopyrightOptionsEnabled(bool defaultLangAlt)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_xmpcontent.cpp"

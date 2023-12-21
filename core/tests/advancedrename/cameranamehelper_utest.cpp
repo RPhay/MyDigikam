@@ -147,3 +147,5 @@ void CameraNameHelperTest::testSameDevices()
 
     QCOMPARE(CameraNameHelper::sameDevices(deviceA, deviceB), result);
 }
+
+#include "moc_cameranamehelper_utest.cpp"

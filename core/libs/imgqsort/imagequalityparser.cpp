@@ -248,3 +248,5 @@ void ImageQualityParser::unloadDLModel()
 }
 
 } // namespace Digikam
+
+#include "moc_imagequalityparser.cpp"

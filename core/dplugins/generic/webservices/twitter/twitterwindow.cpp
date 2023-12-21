@@ -461,3 +461,5 @@ void TwWindow::closeEvent(QCloseEvent* e)
 }
 
 } // namespace DigikamGenericTwitterPlugin
+
+#include "moc_twitterwindow.cpp"

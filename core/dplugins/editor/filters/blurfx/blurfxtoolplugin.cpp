@@ -118,3 +118,5 @@ void BlurFXToolPlugin::slotBlurFX()
 }
 
 } // namespace DigikamEditorBlurFxToolPlugin
+
+#include "moc_blurfxtoolplugin.cpp"

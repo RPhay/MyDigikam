@@ -91,3 +91,5 @@ QMimeData* MyTreeWidget::mimeData(const QModelIndexList itemsToDrag) const      
 
     return mimeData;
 }
+
+#include "moc_mytreewidget.cpp"

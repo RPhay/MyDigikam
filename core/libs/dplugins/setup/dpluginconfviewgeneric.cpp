@@ -55,3 +55,5 @@ void DPluginConfViewGeneric::loadPlugins()
 }
 
 } // namespace Digikam
+
+#include "moc_dpluginconfviewgeneric.cpp"

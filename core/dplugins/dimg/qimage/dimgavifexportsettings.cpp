@@ -145,3 +145,5 @@ void DImgAVIFExportSettings::slotToggleAVIFLossLess(bool b)
 }
 
 } // namespace Digikam
+
+#include "moc_dimgavifexportsettings.cpp"

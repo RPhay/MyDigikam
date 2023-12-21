@@ -215,3 +215,5 @@ void FilterStatusBar::slotFilterSettingsChanged(const ItemFilterSettings& settin
 }
 
 } // namespace Digikam
+
+#include "moc_filterstatusbar.cpp"

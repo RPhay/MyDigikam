@@ -31,3 +31,5 @@ GeoDragDropHandler::~GeoDragDropHandler()
 }
 
 } // namespace Digikam
+
+#include "moc_geodragdrophandler.cpp"

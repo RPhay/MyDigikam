@@ -147,3 +147,5 @@ void DFileSelector::slotBtnClicked()
 }
 
 } // namespace Digikam
+
+#include "moc_dfileselector.cpp"

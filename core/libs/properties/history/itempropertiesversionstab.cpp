@@ -177,3 +177,5 @@ void ItemPropertiesVersionsTab::setEnabledHistorySteps(int count)
 }
 
 } // namespace Digikam
+
+#include "moc_itempropertiesversionstab.cpp"

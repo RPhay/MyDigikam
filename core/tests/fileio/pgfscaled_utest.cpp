@@ -62,3 +62,5 @@ void PGFScaledTest::testPGFScaled()
     QVERIFY2(img.depth() == 32, "Incorrect PGF image color depth...");
     QVERIFY2(img.format() == QImage::Format_RGB32, "Incorrect PGF image color format...");
 }
+
+#include "moc_pgfscaled_utest.cpp"

@@ -102,3 +102,5 @@ void SharpenPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmSharpenPlugin
+
+#include "moc_sharpenplugin.cpp"

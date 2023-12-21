@@ -116,3 +116,5 @@ void ODPlugin::slotOneDrive()
 }
 
 } // namespace DigikamGenericOneDrivePlugin
+
+#include "moc_odplugin.cpp"

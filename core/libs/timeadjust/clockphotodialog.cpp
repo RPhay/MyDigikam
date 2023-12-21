@@ -293,3 +293,5 @@ void ClockPhotoDialog::slotCancel()
 }
 
 } // namespace Digikam
+
+#include "moc_clockphotodialog.cpp"

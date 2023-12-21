@@ -464,3 +464,5 @@ void AVDecoderPrivate::applyOptionsForContext()
 }
 
 } // namespace QtAV
+
+#include "moc_AVDecoder.cpp"

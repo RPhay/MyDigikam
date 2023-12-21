@@ -94,3 +94,5 @@ void WebWindow::onCallbackCatchedSafe()
 }
 
 
+
+#include "moc_webwindow.cpp"

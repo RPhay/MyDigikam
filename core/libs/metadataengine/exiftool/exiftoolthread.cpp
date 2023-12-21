@@ -51,3 +51,5 @@ void ExifToolThread::run()
 }
 
 } // namespace Digikam
+
+#include "moc_exiftoolthread.cpp"

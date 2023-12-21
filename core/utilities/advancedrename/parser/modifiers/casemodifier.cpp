@@ -90,3 +90,5 @@ QString CaseModifier::firstupper(const QString& str2Modify)
 }
 
 } // namespace Digikam
+
+#include "moc_casemodifier.cpp"

@@ -142,3 +142,5 @@ void DComboBox::slotCurrentIndexChanged(int v)
 }
 
 } // namespace Digikam
+
+#include "moc_dcombobox.cpp"

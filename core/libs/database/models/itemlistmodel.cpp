@@ -61,3 +61,5 @@ void ItemListModel::slotCollectionImageChange(const CollectionImageChangeset& ch
 }
 
 } // namespace Digikam
+
+#include "moc_itemlistmodel.cpp"

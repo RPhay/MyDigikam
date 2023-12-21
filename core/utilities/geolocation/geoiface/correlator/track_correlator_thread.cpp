@@ -274,3 +274,5 @@ void TrackCorrelatorThread::run()
 }
 
 } // namespace Digikam
+
+#include "moc_track_correlator_thread.cpp"

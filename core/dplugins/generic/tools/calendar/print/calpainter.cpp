@@ -372,3 +372,5 @@ void CalPainter::paint(int month)
 }
 
 } // namespace Digikam
+
+#include "moc_calpainter.cpp"

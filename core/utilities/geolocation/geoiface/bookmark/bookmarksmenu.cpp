@@ -363,3 +363,5 @@ void BookmarksMenu::setInitialActions(const QList<QAction*>& actions)
 }
 
 } // namespace Digikam
+
+#include "moc_bookmarksmenu.cpp"

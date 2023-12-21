@@ -241,3 +241,5 @@ void XMPStatus::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_xmpstatus.cpp"

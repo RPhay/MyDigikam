@@ -380,3 +380,5 @@ void ItemThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadingDe
 }
 
 } // namespace Digikam
+
+#include "moc_itemthumbnailmodel.cpp"

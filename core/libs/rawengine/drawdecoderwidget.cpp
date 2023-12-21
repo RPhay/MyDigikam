@@ -1255,3 +1255,5 @@ void DRawDecoderWidget::writeSettings(const DRawDecoderSettings& prm, KConfigGro
 }
 
 } // NameSpace Digikam
+
+#include "moc_drawdecoderwidget.cpp"

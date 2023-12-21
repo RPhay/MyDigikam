@@ -284,3 +284,5 @@ void TimePreviewTask::run()
 }
 
 } // namespace DigikamGenericTimeAdjustPlugin
+
+#include "moc_timeadjusttask.cpp"

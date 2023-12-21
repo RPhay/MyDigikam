@@ -257,3 +257,5 @@ void ImageRegionWidget::updateImage(const DImg& img)
 }
 
 } // namespace Digikam
+
+#include "moc_imageregionwidget.cpp"

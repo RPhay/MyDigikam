@@ -476,3 +476,5 @@ void TagPropWidget::enableItems(TagPropWidget::ItemsEnable value)
 }
 
 } // namespace Digikam
+
+#include "moc_tagpropwidget.cpp"

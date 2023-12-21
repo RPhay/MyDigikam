@@ -110,3 +110,5 @@ void SetXmpFaceTest::setXmpFace(const QString& file)
     ret = meta4->getItemFacesMap(faces4);
     QVERIFY(!ret);   // Empty map must be returned
 }
+
+#include "moc_setxmpface_utest.cpp"

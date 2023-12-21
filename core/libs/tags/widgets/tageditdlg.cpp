@@ -573,3 +573,5 @@ TagsListCreationErrorDialog::TagsListCreationErrorDialog(QWidget* const parent, 
 } // namespace Digikam
 
 #include "tageditdlg.moc"
+
+#include "moc_tageditdlg.cpp"

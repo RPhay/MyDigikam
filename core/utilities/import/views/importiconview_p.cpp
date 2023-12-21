@@ -73,3 +73,5 @@ void ImportIconView::Private::updateOverlays()
 }
 
 } // namespace Digikam
+
+#include "moc_importiconview_p.cpp"

@@ -110,3 +110,5 @@ void TextConverterPlugin::slotTextConverter()
 }
 
 } // namespace DigikamGenericTextConverterPlugin
+
+#include "moc_textconverterplugin.cpp"

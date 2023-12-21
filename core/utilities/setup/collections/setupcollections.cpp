@@ -261,3 +261,5 @@ void SetupCollections::slotShowCurrentIgnoredDirectoriesSettings() const
 }
 
 } // namespace Digikam
+
+#include "moc_setupcollections.cpp"

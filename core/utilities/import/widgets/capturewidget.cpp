@@ -103,3 +103,5 @@ void CaptureWidget::resizeEvent(QResizeEvent*)
 }
 
 } // namespace Digikam
+
+#include "moc_capturewidget.cpp"

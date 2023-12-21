@@ -112,3 +112,5 @@ bool HSLCorrection::toolOperations()
 }
 
 } // namespace DigikamBqmHSLCorrectionPlugin
+
+#include "moc_hslcorrection.cpp"

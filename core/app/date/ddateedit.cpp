@@ -539,3 +539,5 @@ void DDateEdit::updateView()
 } // namespace Digikam
 
 #include "ddateedit.moc"
+
+#include "moc_ddateedit.cpp"

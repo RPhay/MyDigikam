@@ -157,3 +157,5 @@ void SetupLightTable::applySettings()
 }
 
 } // namespace Digikam
+
+#include "moc_setuplighttable.cpp"

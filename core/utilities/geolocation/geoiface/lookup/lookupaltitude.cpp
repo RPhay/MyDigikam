@@ -28,3 +28,5 @@ LookupAltitude::~LookupAltitude()
 }
 
 } // namespace Digikam
+
+#include "moc_lookupaltitude.cpp"

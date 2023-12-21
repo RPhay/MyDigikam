@@ -262,3 +262,5 @@ void DPreviewManager::slotProgressTimerDone()
 }
 
 } // namespace Digikam
+
+#include "moc_dpreviewmanager.cpp"

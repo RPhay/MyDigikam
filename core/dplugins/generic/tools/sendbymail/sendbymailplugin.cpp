@@ -114,3 +114,5 @@ void SendByMailPlugin::slotSendByMail()
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_sendbymailplugin.cpp"

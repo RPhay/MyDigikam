@@ -158,3 +158,5 @@ void MsgraphDemo::onFinished(int requestId, QNetworkReply::NetworkError error, Q
     qInfo() << "userPrincipalName: " << userPrincipalNameRE.cap(1);
     emit userPrincipalNameReceived();
 }
+
+#include "moc_msgraphdemo.cpp"

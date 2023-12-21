@@ -371,3 +371,5 @@ void GreycstorationSettings::saveSettings(QFile& file, const QString& header)
 }
 
 } // namespace Digikam
+
+#include "moc_greycstorationsettings.cpp"

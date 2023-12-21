@@ -386,3 +386,5 @@ void DNotificationWidget::slotTimerTimeout()
 }
 
 } // namespace Digikam
+
+#include "moc_dnotificationwidget.cpp"

@@ -154,3 +154,5 @@ void FTImportWindow::slotSourceAndTargetUpdated()
 }
 
 } // namespace DigikamGenericFileTransferPlugin
+
+#include "moc_ftimportwindow.cpp"

@@ -99,3 +99,5 @@ void InvertPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmInvertPlugin
+
+#include "moc_invertplugin.cpp"

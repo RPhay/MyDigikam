@@ -355,3 +355,5 @@ void PrintOptionsPage::slotSetupDlg()
 }
 
 } // namespace DigiKam
+
+#include "moc_printoptionspage.cpp"

@@ -348,3 +348,5 @@ FaceScanSettings FaceScanWidget::settings() const
 }
 
 } // namespace Digikam
+
+#include "moc_facescanwidget.cpp"

@@ -145,3 +145,5 @@ void MetadataRemoveTask::run()
 }
 
 } // namespace Digikam
+
+#include "moc_metadataremovetask.cpp"

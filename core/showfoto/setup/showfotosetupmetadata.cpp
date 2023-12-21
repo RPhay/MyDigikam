@@ -216,3 +216,5 @@ void ShowfotoSetupMetadata::readSettings()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotosetupmetadata.cpp"

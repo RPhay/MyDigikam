@@ -123,3 +123,5 @@ void DTextList::setLinesNumber(int l)
 }
 
 } // namespace Digikam
+
+#include "moc_itempropertiestxtlabel.cpp"

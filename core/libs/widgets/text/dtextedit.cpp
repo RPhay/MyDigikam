@@ -403,3 +403,5 @@ void DTextEdit::slotChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_dtextedit.cpp"

@@ -175,3 +175,5 @@ void MakerNoteWidget::slotSaveMetadataToFile()
 }
 
 } // namespace Digikam
+
+#include "moc_makernotewidget.cpp"

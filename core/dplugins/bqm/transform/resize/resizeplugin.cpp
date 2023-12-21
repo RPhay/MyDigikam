@@ -102,3 +102,5 @@ void ResizePlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmResizePlugin
+
+#include "moc_resizeplugin.cpp"

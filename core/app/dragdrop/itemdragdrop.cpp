@@ -883,3 +883,5 @@ QMimeData* ItemDragDropHandler::createMimeData(const QList<QModelIndex>& indexes
 }
 
 } // namespace Digikam
+
+#include "moc_itemdragdrop.cpp"

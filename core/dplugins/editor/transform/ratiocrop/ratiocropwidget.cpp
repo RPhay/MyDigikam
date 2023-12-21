@@ -1696,3 +1696,5 @@ void RatioCropWidget::setIsDrawingSelection(bool draw)
 }
 
 } // namespace DigikamEditorRatioCropToolPlugin
+
+#include "moc_ratiocropwidget.cpp"

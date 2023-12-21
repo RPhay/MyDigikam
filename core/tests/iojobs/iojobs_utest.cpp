@@ -167,3 +167,5 @@ void IOJobsTest::permanentDel_data()
 }
 
 QTEST_GUILESS_MAIN(IOJobsTest)
+
+#include "moc_iojobs_utest.cpp"

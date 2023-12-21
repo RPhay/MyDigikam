@@ -260,3 +260,5 @@ void ItemFilterModel::ItemFilterModelPrivate::packageDiscarded(const ItemFilterM
 }
 
 } // namespace Digikam
+
+#include "moc_itemfiltermodel_p.cpp"

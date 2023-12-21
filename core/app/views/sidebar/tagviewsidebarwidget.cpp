@@ -321,3 +321,5 @@ void TagViewSideBarWidget::slotToggleTagsSelection(int radioClicked)
 }
 
 } // namespace Digikam
+
+#include "moc_tagviewsidebarwidget.cpp"

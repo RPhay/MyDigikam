@@ -110,3 +110,5 @@ void RawPage::saveSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_rawpage.cpp"

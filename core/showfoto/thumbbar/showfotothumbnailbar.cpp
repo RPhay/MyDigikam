@@ -232,3 +232,5 @@ ShowfotoItemInfo ShowfotoThumbnailBar::findItemByUrl(const QUrl& url)
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotothumbnailbar.cpp"

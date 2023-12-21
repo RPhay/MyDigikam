@@ -1563,3 +1563,5 @@ void DCategorizedView::currentChanged(const QModelIndex& current, const QModelIn
 }
 
 } // namespace Digikam
+
+#include "moc_dcategorizedview.cpp"

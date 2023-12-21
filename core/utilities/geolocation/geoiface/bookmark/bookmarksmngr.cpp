@@ -981,3 +981,5 @@ void BookmarksManager::exportBookmarks()
 }
 
 } // namespace Digikam
+
+#include "moc_bookmarksmngr.cpp"

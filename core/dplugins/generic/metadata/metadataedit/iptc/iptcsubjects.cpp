@@ -134,3 +134,5 @@ void IPTCSubjects::slotLineEditModified()
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_iptcsubjects.cpp"

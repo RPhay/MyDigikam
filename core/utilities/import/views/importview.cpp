@@ -898,3 +898,5 @@ void ImportView::updateIconView()
 }
 
 } // namespace Digikam
+
+#include "moc_importview.cpp"

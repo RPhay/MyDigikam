@@ -119,3 +119,5 @@ void PanoItemsPage::slotImageListChanged()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_panoitemspage.cpp"

@@ -289,3 +289,5 @@ bool DWItemDelegatePrivate::eventFilter(QObject* watched, QEvent* event)
 }
 
 } // namespace Digikam
+
+#include "moc_dwitemdelegate_p.cpp"

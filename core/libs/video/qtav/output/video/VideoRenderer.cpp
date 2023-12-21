@@ -965,3 +965,5 @@ void VideoRenderer::updateUi()
 }
 
 } // namespace QtAV
+
+#include "moc_VideoRenderer.cpp"

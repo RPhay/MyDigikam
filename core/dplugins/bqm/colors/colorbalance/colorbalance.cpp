@@ -113,3 +113,5 @@ bool ColorBalance::toolOperations()
 }
 
 } // namespace DigikamBqmColorBalancePlugin
+
+#include "moc_colorbalance.cpp"

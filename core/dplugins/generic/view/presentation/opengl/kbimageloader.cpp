@@ -252,3 +252,5 @@ float KBImageLoader::imageAspect() const
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_kbimageloader.cpp"

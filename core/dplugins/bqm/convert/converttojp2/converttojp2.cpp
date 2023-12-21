@@ -124,3 +124,5 @@ bool ConvertToJP2::toolOperations()
 }
 
 } // namespace DigikamBqmConvertToJp2Plugin
+
+#include "moc_converttojp2.cpp"

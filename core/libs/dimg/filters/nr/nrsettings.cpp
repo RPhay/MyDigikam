@@ -447,3 +447,5 @@ void NRSettings::saveAsSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_nrsettings.cpp"

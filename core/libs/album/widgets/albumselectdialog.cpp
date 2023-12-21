@@ -190,3 +190,5 @@ void AlbumSelectDialog::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_albumselectdialog.cpp"

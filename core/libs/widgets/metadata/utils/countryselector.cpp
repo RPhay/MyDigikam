@@ -367,3 +367,5 @@ QString CountrySelector::countryForCode(const QString& countryCode)
 }
 
 } // namespace Digikam
+
+#include "moc_countryselector.cpp"

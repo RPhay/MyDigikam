@@ -161,3 +161,5 @@ void AutotagsAssignmentTask::run()
 }
 
 } // namespace Digikam
+
+#include "moc_autotagsassignmentask.cpp"

@@ -430,3 +430,5 @@ void WSAuthentication::slotAddPhotoDone(int errCode, const QString& errMsg)
 }
 
 } // namespace DigikamGenericUnifiedPlugin
+
+#include "moc_wsauthentication.cpp"

@@ -149,3 +149,5 @@ void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
 }
 
 } // namespace Digikam
+
+#include "moc_itemselectionpropertiestab.cpp"

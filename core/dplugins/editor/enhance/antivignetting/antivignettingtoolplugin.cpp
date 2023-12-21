@@ -118,3 +118,5 @@ void AntiVignettingToolPlugin::slotAntiVignetting()
 }
 
 } // namespace DigikamEditorAntivignettingToolPlugin
+
+#include "moc_antivignettingtoolplugin.cpp"

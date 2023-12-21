@@ -385,3 +385,5 @@ QRect FaceUtils::faceRectToDisplayRect(const QRect& rect)
 }
 
 } // Namespace Digikam
+
+#include "moc_faceutils.cpp"

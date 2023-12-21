@@ -200,3 +200,5 @@ void CameraFolderDialog::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_camerafolderdialog.cpp"

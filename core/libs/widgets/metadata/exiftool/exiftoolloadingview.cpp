@@ -125,3 +125,5 @@ void ExifToolLoadingView::slotProgressTimerDone()
 }
 
 } // namespace Digikam
+
+#include "moc_exiftoolloadingview.cpp"

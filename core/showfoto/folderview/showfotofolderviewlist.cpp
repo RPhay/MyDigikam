@@ -274,3 +274,5 @@ void ShowfotoFolderViewList::leaveEvent(QEvent* e)
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotofolderviewlist.cpp"

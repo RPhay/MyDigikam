@@ -1066,3 +1066,5 @@ void QueueMgrWindow::customizedFullScreenMode(bool set)
 }
 
 } // namespace Digikam
+
+#include "moc_queuemgrwindow.cpp"

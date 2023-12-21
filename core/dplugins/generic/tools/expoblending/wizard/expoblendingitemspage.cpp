@@ -166,3 +166,5 @@ void ItemsPage::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlugin::E
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_expoblendingitemspage.cpp"

@@ -105,3 +105,5 @@ void WaterMarkPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmWatermarkPlugin
+
+#include "moc_watermarkplugin.cpp"

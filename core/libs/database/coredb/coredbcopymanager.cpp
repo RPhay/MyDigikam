@@ -311,3 +311,5 @@ void CoreDbCopyManager::handleClosing(bool isStopThread,
 }
 
 } // namespace Digikam
+
+#include "moc_coredbcopymanager.cpp"

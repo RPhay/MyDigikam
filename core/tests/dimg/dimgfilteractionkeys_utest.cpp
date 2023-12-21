@@ -95,3 +95,5 @@ bool DImgFilterActionKeysTest::hasUniqueKeys(const FilterAction &action)
 
     return uniqueKeys;
 }
+
+#include "moc_dimgfilteractionkeys_utest.cpp"

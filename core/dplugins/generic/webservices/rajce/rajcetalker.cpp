@@ -258,3 +258,5 @@ void RajceTalker::init(const RajceSession& initialState)
 }
 
 } // namespace DigikamGenericRajcePlugin
+
+#include "moc_rajcetalker.cpp"

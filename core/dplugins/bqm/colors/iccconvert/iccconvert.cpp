@@ -122,3 +122,5 @@ bool IccConvert::toolOperations()
 }
 
 } // namespace DigikamBqmIccConvertPlugin
+
+#include "moc_iccconvert.cpp"

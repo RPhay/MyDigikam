@@ -106,3 +106,5 @@ void DDateTable::Private::setDate(const QDate& dt)
 }
 
 } // namespace Digikam
+
+#include "moc_ddatetable_p.cpp"

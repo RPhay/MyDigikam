@@ -312,3 +312,5 @@ void AlbumManager::slotImagesDeleted(const QList<qlonglong>& imageIds)
 }
 
 } // namespace Digikam
+
+#include "moc_albummanager.cpp"

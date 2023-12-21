@@ -155,3 +155,5 @@ void ItemGPSModelHelper::slotThumbnailLoaded(const LoadingDescription& loadingDe
 }
 
 } // namespace Digikam
+
+#include "moc_itemgpsmodelhelper.cpp"

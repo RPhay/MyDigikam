@@ -378,3 +378,5 @@ void SlideProperties::printTags(QPainter& p, int& offset, QStringList& tags)
 }
 
 } // namespace DigikamGenericSlideShowPlugin
+
+#include "moc_slideproperties.cpp"

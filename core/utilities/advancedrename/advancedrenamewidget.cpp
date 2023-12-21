@@ -484,3 +484,5 @@ void AdvancedRenameWidget::writeSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_advancedrenamewidget.cpp"

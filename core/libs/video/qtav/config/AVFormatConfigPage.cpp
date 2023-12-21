@@ -94,3 +94,5 @@ void AVFormatConfigPage::applyToUi()
 }
 
 } // namespace QtAV
+
+#include "moc_AVFormatConfigPage.cpp"

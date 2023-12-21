@@ -325,3 +325,5 @@ void HSLFilter::readParameters(const Digikam::FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_hslfilter.cpp"

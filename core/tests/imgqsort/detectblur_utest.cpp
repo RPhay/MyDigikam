@@ -118,3 +118,5 @@ void ImgQSortTestDetectBlur::testParseTestImagesForBlurDetection_FailCase()
         QVERIFY(results.value(test_case));
     }
 }
+
+#include "moc_detectblur_utest.cpp"

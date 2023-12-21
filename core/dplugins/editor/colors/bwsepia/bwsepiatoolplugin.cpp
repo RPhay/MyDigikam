@@ -118,3 +118,5 @@ void BWSepiaToolPlugin::slotBWSepia()
 }
 
 } // namespace DigikamEditorBWSepiaToolPlugin
+
+#include "moc_bwsepiatoolplugin.cpp"

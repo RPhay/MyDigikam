@@ -176,3 +176,5 @@ bool DPluginAction::pluginActionLessThan(DPluginAction* const a, DPluginAction* 
 }
 
 } // namespace Digikam
+
+#include "moc_dpluginaction.cpp"

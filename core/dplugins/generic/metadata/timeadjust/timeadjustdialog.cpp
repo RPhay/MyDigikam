@@ -445,3 +445,5 @@ void TimeAdjustDialog::slotThreadFinished()
 }
 
 } // namespace DigikamGenericTimeAdjustPlugin
+
+#include "moc_timeadjustdialog.cpp"

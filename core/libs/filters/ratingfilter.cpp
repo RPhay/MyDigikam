@@ -399,3 +399,5 @@ void RatingFilter::reset()
 }
 
 } // namespace Digikam
+
+#include "moc_ratingfilter.cpp"

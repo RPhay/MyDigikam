@@ -227,3 +227,5 @@ void DPluginSetup::slotSearchResult(int found)
 }
 
 } // namespace Digikam
+
+#include "moc_dpluginsetup.cpp"

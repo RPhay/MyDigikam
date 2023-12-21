@@ -591,3 +591,5 @@ ColorLabelMenuAction::~ColorLabelMenuAction()
 }
 
 } // namespace Digikam
+
+#include "moc_colorlabelwidget.cpp"

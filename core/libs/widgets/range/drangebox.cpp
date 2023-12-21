@@ -142,3 +142,5 @@ void DIntRangeBox::slotMinimumChanged(int newValue)
 }
 
 } // namespace Digikam
+
+#include "moc_drangebox.cpp"

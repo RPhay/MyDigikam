@@ -447,3 +447,5 @@ TableViewColumn::ColumnCompareResult ColumnItemProperties::compare(TableViewMode
 } // namespace TableViewColumns
 
 } // namespace Digikam
+
+#include "moc_tableview_column_item.cpp"

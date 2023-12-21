@@ -179,3 +179,5 @@ int ItemVersionsModel::listIndexOf(const QString& item) const
 }
 
 } // namespace Digikam
+
+#include "moc_itemversionsmodel.cpp"

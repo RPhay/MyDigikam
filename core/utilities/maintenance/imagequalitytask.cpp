@@ -137,3 +137,5 @@ void ImageQualityTask::run()
 }
 
 } // namespace Digikam
+
+#include "moc_imagequalitytask.cpp"

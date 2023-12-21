@@ -142,3 +142,5 @@ void DImgJPEG2000ExportSettings::slotToggleJPEG2000LossLess(bool b)
 }
 
 } // namespace Digikam
+
+#include "moc_dimgjpeg2000exportsettings.cpp"

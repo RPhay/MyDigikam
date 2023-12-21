@@ -1161,3 +1161,5 @@ void GeolocationEdit::adjustMapLayout(const bool syncSettings)
 }
 
 } // namespace DigikamGenericGeolocationEditPlugin
+
+#include "moc_geolocationedit.cpp"

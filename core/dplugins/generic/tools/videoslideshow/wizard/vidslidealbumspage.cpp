@@ -103,3 +103,5 @@ bool VidSlideAlbumsPage::isComplete() const
 }
 
 } // namespace DigikamGenericVideoSlideShowPlugin
+
+#include "moc_vidslidealbumspage.cpp"

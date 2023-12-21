@@ -191,3 +191,5 @@ void SearchField::setValidValueState(bool valueIsValid)
 }
 
 } // namespace Digikam
+
+#include "moc_searchfields.cpp"

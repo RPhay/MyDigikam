@@ -134,3 +134,5 @@ bool DPluginBqm::hasVisibilityProperty() const
 }
 
 } // namespace Digikam
+
+#include "moc_dpluginbqm.cpp"

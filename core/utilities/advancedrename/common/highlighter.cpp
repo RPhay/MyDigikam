@@ -177,3 +177,5 @@ void Highlighter::setupHighlightingGrammar()
 }
 
 } // namespace Digikam
+
+#include "moc_highlighter.cpp"

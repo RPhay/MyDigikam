@@ -408,3 +408,5 @@ void FreeSpaceWidget::slotTimeout()
 }
 
 } // namespace Digikam
+
+#include "moc_freespacewidget.cpp"

@@ -325,3 +325,5 @@ void AVClock::stopCorrectionTimer()
 }
 
 } // namespace QtAV
+
+#include "moc_AVClock.cpp"

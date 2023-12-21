@@ -99,3 +99,5 @@ void AutoCorrectionPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmAutoCorrectionPlugin
+
+#include "moc_autocorrectionplugin.cpp"

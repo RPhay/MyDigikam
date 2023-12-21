@@ -228,3 +228,5 @@ QModelIndex ImportThumbnailBar::lastIndex() const
 }
 
 } // namespace Digikam
+
+#include "moc_importthumbnailbar.cpp"

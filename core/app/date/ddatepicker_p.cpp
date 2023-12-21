@@ -224,3 +224,5 @@ QDate DDatePicker::Private::validDateInYearMonth(int year, int month)
 }
 
 } // namespace Digikam
+
+#include "moc_ddatepicker_p.cpp"

@@ -111,3 +111,5 @@ bool HotPixels::toolOperations()
 }
 
 } // namespace DigikamBqmHotPixelsPlugin
+
+#include "moc_hotpixels.cpp"

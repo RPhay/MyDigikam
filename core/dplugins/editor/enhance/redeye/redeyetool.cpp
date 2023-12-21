@@ -177,3 +177,5 @@ void RedEyeTool::setFinalImage()
 }
 
 } // namespace DigikamEditorRedEyeToolPlugin
+
+#include "moc_redeyetool.cpp"

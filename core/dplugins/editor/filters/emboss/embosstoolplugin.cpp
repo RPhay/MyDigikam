@@ -118,3 +118,5 @@ void EmbossToolPlugin::slotEmboss()
 }
 
 } // namespace DigikamEditorEmbossToolPlugin
+
+#include "moc_embosstoolplugin.cpp"

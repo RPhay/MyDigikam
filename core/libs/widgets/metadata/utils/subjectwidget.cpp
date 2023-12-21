@@ -730,3 +730,5 @@ QStringList SubjectWidget::subjectsList() const
 }
 
 } // namespace Digikam
+
+#include "moc_subjectwidget.cpp"

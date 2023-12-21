@@ -1079,3 +1079,5 @@ QModelIndex ItemHistoryGraphModel::parent(const QModelIndex& index) const
 }
 
 } // namespace Digikam
+
+#include "moc_itemhistorygraphmodel.cpp"

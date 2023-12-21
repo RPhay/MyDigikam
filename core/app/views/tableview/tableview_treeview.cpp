@@ -364,3 +364,5 @@ void TableViewTreeView::slotModelGroupingModeChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_tableview_treeview.cpp"

@@ -261,3 +261,5 @@ void GPSItemInfoSorter::slotSortOptionTriggered()
 }
 
 } // namespace Digikam
+
+#include "moc_gpsiteminfosorter.cpp"

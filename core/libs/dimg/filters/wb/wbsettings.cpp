@@ -600,3 +600,5 @@ void WBSettings::saveAsSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_wbsettings.cpp"

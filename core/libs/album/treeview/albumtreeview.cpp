@@ -97,3 +97,5 @@ void AlbumTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
 }
 
 } // namespace Digikam
+
+#include "moc_albumtreeview.cpp"

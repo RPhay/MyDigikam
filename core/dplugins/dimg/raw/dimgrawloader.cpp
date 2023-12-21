@@ -356,3 +356,5 @@ bool DImgRAWLoader::sixteenBit() const
 }
 
 } // namespace DigikamRAWDImgPlugin
+
+#include "moc_dimgrawloader.cpp"

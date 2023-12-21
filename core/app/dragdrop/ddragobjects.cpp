@@ -375,3 +375,5 @@ bool DCameraDragObject::decode(const QMimeData* e, CameraType& ctype)
 }
 
 } // namespace Digikam
+
+#include "moc_ddragobjects.cpp"

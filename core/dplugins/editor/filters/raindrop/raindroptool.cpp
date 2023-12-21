@@ -237,3 +237,5 @@ void RainDropTool::blockWidgetSignals(bool b)
 }
 
 } // namespace DigikamEditorRainDropToolPlugin
+
+#include "moc_raindroptool.cpp"

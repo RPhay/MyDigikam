@@ -387,3 +387,5 @@ void PanoOptimizePage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAc
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_panooptimizepage.cpp"

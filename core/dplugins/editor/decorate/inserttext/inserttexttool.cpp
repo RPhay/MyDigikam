@@ -451,3 +451,5 @@ void InsertTextTool::finalRendering()
 }
 
 } // namespace DigikamEditorInsertTextToolPlugin
+
+#include "moc_inserttexttool.cpp"

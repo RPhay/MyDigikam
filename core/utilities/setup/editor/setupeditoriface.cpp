@@ -358,3 +358,5 @@ void SetupEditorIface::applySettings()
 }
 
 } // namespace Digikam
+
+#include "moc_setupeditoriface.cpp"

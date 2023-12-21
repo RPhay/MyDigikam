@@ -99,3 +99,5 @@ void ChannelMixerPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmChannelMixerPlugin
+
+#include "moc_channelmixerplugin.cpp"

@@ -237,3 +237,5 @@ int DNotificationWidget::Private::bestContentHeight() const
 }
 
 } // namespace Digikam
+
+#include "moc_dnotificationwidget_p.cpp"

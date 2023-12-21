@@ -73,3 +73,5 @@ bool RajceNewAlbumDlg::albumVisible() const
 }
 
 } // namespace DigikamGenericRajcePlugin
+
+#include "moc_rajcenewalbumdlg.cpp"

@@ -99,3 +99,5 @@ void NoiseReductionPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmNoiseReductionPlugin
+
+#include "moc_noisereductionplugin.cpp"

@@ -346,3 +346,5 @@ void MetaReaderThreadTest::runMetaReader(const QString& path,
     thread->cancel();
     delete thread;
 }
+
+#include "moc_metareaderthread_utest.cpp"

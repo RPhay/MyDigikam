@@ -808,3 +808,5 @@ void PresentationKB::slotClose()
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentationkb.cpp"

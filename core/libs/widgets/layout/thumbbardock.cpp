@@ -360,3 +360,5 @@ QPixmap ThumbBarDock::generateFuzzyRectForGroup(const QSize& size, const QColor&
 }
 
 } // namespace Digikam
+
+#include "moc_thumbbardock.cpp"

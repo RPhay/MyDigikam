@@ -1259,3 +1259,5 @@ void FlickrTalker::parseResponseSetGeoLocation(const QByteArray& data)
 }
 
 } // namespace DigikamGenericFlickrPlugin
+
+#include "moc_flickrtalker.cpp"

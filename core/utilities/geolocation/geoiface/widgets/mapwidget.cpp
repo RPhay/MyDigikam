@@ -2542,3 +2542,5 @@ void MapWidget::setTrackManager(TrackManager* const trackManager)
 }
 
 } // namespace Digikam
+
+#include "moc_mapwidget.cpp"

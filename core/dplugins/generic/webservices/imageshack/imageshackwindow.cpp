@@ -439,3 +439,5 @@ void ImageShackWindow::slotNewAlbumRequest()
 }
 
 } // namespace DigikamGenericImageShackPlugin
+
+#include "moc_imageshackwindow.cpp"

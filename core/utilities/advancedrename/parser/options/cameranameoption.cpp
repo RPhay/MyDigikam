@@ -90,3 +90,5 @@ QString CameraNameOption::parseOperation(ParseSettings& settings, const QRegular
 }
 
 } // namespace Digikam
+
+#include "moc_cameranameoption.cpp"

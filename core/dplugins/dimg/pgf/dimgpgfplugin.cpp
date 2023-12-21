@@ -190,3 +190,5 @@ DImgLoaderSettings* DImgPGFPlugin::exportWidget(const QString& format) const
 }
 
 } // namespace DigikamPGFDImgPlugin
+
+#include "moc_dimgpgfplugin.cpp"

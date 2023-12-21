@@ -228,3 +228,5 @@ void AntiVignettingFilter::readParameters(const Digikam::FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_antivignettingfilter.cpp"

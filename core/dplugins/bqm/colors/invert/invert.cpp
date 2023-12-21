@@ -63,3 +63,5 @@ bool Invert::toolOperations()
 }
 
 } // namespace DigikamBqmInvertPlugin
+
+#include "moc_invert.cpp"

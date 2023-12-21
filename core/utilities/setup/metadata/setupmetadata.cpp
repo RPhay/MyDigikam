@@ -340,3 +340,5 @@ void SetupMetadata::slotWriteRawFilesToggled(bool b)
 }
 
 } // namespace Digikam
+
+#include "moc_setupmetadata.cpp"

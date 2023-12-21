@@ -158,3 +158,5 @@ void BlurTool::setFinalImage()
 }
 
 } // namespace DigikamEditorBlurToolPlugin
+
+#include "moc_blurtool.cpp"

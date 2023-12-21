@@ -125,3 +125,5 @@ bool AntiVignetting::toolOperations()
 }
 
 } // namespace DigikamBqmAntiVignettingPlugin
+
+#include "moc_antivignetting.cpp"

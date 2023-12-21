@@ -399,3 +399,5 @@ bool MjpegServerMngr::load()
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
+
+#include "moc_mjpegservermngr.cpp"

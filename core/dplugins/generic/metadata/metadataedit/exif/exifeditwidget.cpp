@@ -310,3 +310,5 @@ bool EXIFEditWidget::isModified() const
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_exifeditwidget.cpp"

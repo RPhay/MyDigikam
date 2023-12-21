@@ -209,3 +209,5 @@ void TestTracks::testSaxLoaderError()
         qCDebug(DIGIKAM_TESTS_LOG) << fileData.loadError;
     }
 }
+
+#include "moc_tracks_utest.cpp"

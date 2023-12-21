@@ -117,3 +117,5 @@ void InvertToolPlugin::slotInvert()
 }
 
 } // namespace DigikamEditorInvertToolPlugin
+
+#include "moc_inverttoolplugin.cpp"

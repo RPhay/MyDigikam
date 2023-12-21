@@ -486,3 +486,5 @@ void FacesDetector::slotShowOneDetected(const FacePipelinePackage& /*package*/)
 } // namespace Digikam
 
 #include "facesdetector.moc"
+
+#include "moc_facesdetector.cpp"

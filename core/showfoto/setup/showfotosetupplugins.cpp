@@ -103,3 +103,5 @@ void ShowfotoSetupPlugins::applySettings()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotosetupplugins.cpp"

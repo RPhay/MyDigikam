@@ -107,3 +107,5 @@ void XMPSubjects::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_xmpsubjects.cpp"

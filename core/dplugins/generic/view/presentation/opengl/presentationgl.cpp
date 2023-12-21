@@ -1901,3 +1901,5 @@ bool PresentationGL::checkOpenGL() const
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "moc_presentationgl.cpp"

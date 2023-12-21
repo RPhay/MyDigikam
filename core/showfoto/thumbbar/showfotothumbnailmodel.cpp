@@ -426,3 +426,5 @@ void ShowfotoThumbnailModel::slotThumbInfoLoaded(const ShowfotoItemInfo& info, c
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotothumbnailmodel.cpp"

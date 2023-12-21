@@ -99,3 +99,5 @@ void ColorBalancePlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmColorBalancePlugin
+
+#include "moc_colorbalanceplugin.cpp"

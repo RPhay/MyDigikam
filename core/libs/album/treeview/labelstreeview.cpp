@@ -519,3 +519,5 @@ void LabelsTreeView::restoreSelectionFromHistory(QHash<Labels, QList<int> > need
 }
 
 } // namespace Digikam
+
+#include "moc_labelstreeview.cpp"

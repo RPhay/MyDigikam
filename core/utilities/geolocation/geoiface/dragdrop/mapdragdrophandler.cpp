@@ -78,3 +78,5 @@ QMimeData* MapDragDropHandler::createMimeData(const QList<QPersistentModelIndex>
 }
 
 } // namespace Digikam
+
+#include "moc_mapdragdrophandler.cpp"

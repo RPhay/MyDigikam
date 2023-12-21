@@ -308,3 +308,5 @@ void DatabaseMigrationDialog::slotHandleSmallStepStarted(int currentValue, int m
 }
 
 } // namespace Digikam
+
+#include "moc_dbmigrationdlg.cpp"

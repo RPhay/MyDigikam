@@ -405,3 +405,5 @@ void SlideOSD::setLoadingReady(bool b)
 }
 
 } // namespace DigikamGenericSlideShowPlugin
+
+#include "moc_slideosd.cpp"

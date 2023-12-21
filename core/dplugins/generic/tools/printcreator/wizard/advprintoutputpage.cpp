@@ -178,3 +178,5 @@ bool AdvPrintOutputPage::isComplete() const
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_advprintoutputpage.cpp"

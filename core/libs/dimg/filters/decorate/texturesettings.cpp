@@ -177,3 +177,5 @@ void TextureSettings::writeSettings(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_texturesettings.cpp"

@@ -1444,3 +1444,5 @@ void SubtitleAPIProxy::setFontFileForced(bool value)
 }
 
 } // namespace QtAV
+
+#include "moc_Subtitle.cpp"

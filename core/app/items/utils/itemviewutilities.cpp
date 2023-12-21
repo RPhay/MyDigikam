@@ -630,3 +630,5 @@ void ItemViewUtilities::createGroupByTimelapseFromInfoList(const ItemInfoList& i
 }
 
 } // namespace Digikam
+
+#include "moc_itemviewutilities.cpp"

@@ -29,3 +29,5 @@ SidebarWidget::~SidebarWidget()
 }
 
 } // namespace Digikam
+
+#include "moc_sidebarwidget.cpp"

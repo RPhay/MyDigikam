@@ -113,3 +113,5 @@ GPSDBJobsThread* DBJobsManager::startGPSJobThread(const GPSDBJobInfo& jInfo)
 }
 
 } // namespace Digikam
+
+#include "moc_dbjobsmanager.cpp"

@@ -136,3 +136,5 @@ void TimeAdjustList::setWaitStatus()
 }
 
 } // namespace DigikamGenericTimeAdjustPlugin
+
+#include "moc_timeadjustlist.cpp"

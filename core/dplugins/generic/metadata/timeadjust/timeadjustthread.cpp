@@ -281,3 +281,5 @@ int TimeAdjustThread::indexForUrl(const QUrl& url) const
 }
 
 } // namespace DigikamGenericTimeAdjustPlugin
+
+#include "moc_timeadjustthread.cpp"

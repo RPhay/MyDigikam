@@ -55,3 +55,5 @@ void ShowfotoInfoIface::openSetupPage(SetupPage page)
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotoinfoiface.cpp"

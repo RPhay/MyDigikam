@@ -299,3 +299,5 @@ Qt::DropActions GPSItemModel::supportedDragActions() const
 }
 
 } // namespace Digikam
+
+#include "moc_gpsitemmodel.cpp"

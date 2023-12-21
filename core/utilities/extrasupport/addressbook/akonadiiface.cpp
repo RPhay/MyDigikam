@@ -139,3 +139,5 @@ void AkonadiIface::slotABCMenuTriggered(QAction* action)
 }
 
 } // namespace Digikam
+
+#include "moc_akonadiiface.cpp"

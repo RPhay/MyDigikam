@@ -283,3 +283,5 @@ void WelcomePageView::slotThemeChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_welcomepageview.cpp"

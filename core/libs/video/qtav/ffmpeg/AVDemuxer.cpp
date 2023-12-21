@@ -2080,3 +2080,5 @@ bool AVDemuxer::Private::prepareStreams()
 }
 
 } // namespace QtAV
+
+#include "moc_AVDemuxer.cpp"

@@ -146,3 +146,5 @@ const QString AlbumFolderViewSideBarWidget::getCaption()
 }
 
 } // namespace Digikam
+
+#include "moc_albumfolderviewsidebarwidget.cpp"

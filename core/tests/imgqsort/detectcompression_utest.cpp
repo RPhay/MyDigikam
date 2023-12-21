@@ -63,3 +63,5 @@ void ImgQSortTestDetectCompression::testParseTestImagesForCompressionDetection_f
         QVERIFY(results.value(test_case));
     }
 }
+
+#include "moc_detectcompression_utest.cpp"

@@ -286,3 +286,5 @@ void TagCheckView::toggleAutoActionSelected(QAction* action)
 }
 
 } // namespace Digikam
+
+#include "moc_tagcheckview.cpp"

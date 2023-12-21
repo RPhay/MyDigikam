@@ -450,3 +450,5 @@ bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
 } // namespace Digikam
 
 #include "albumselectiontreeview.moc"
+
+#include "moc_albumselectiontreeview.cpp"

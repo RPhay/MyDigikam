@@ -160,3 +160,5 @@ void ExpoBlendingWizard::slotItemsPageIsValid(bool valid)
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
+
+#include "moc_expoblendingwizard.cpp"

@@ -693,3 +693,5 @@ void SetupToolTip::refreshCameraOptions()
 }
 
 } // namespace Digikam
+
+#include "moc_setuptooltip.cpp"

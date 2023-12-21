@@ -397,3 +397,5 @@ void HotPixelFixer::weightPixels(DImg& img,
 }
 
 } // namespace Digikam
+
+#include "moc_hotpixelfixer.cpp"

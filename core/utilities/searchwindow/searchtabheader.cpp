@@ -704,3 +704,5 @@ QString SearchTabHeader::keywordsFromQuery(const QString& query) const
 } // namespace Digikam
 
 #include "searchtabheader.moc"
+
+#include "moc_searchtabheader.cpp"

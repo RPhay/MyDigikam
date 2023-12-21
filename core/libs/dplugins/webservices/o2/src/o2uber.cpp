@@ -100,3 +100,5 @@ void O2Uber::onTokenReplyFinished(){
         qWarning() << "O2Uber::onTokenReplyFinished:" << tokenReply->errorString();
     }
 }
+
+#include "moc_o2uber.cpp"

@@ -163,3 +163,5 @@ void BorderTool::setFinalImage()
 }
 
 } // namespace DigikamEditorBorderToolPlugin
+
+#include "moc_bordertool.cpp"

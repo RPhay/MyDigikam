@@ -99,3 +99,5 @@ void RemoveMetadataPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmRemoveMetadataPlugin
+
+#include "moc_removemetadataplugin.cpp"

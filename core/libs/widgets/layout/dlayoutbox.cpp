@@ -136,3 +136,5 @@ DVBox::~DVBox()
 }
 
 } // namespace Digikam
+
+#include "moc_dlayoutbox.cpp"

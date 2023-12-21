@@ -114,3 +114,5 @@ void TextConverterActionThread::cancel()
 }
 
 }  // namespace DigikamGenericTextConverterPlugin
+
+#include "moc_textconverterthread.cpp"

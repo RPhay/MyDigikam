@@ -383,3 +383,5 @@ bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext)
 }
 
 } // namespace Digikam
+
+#include "moc_onlineversionchecker.cpp"

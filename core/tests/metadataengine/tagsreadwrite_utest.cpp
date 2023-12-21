@@ -268,3 +268,5 @@ void TagsReadWriteTest::testTagReadAlternativeNameSpace()
 
     QCOMPARE(actual, tagSet1);
 }
+
+#include "moc_tagsreadwrite_utest.cpp"

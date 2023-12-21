@@ -98,3 +98,5 @@ void CameraInfoDialog::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_camerainfodialog.cpp"

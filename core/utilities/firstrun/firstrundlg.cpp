@@ -198,3 +198,5 @@ void FirstRunDlg::slotFinishPressed()
 }
 
 } // namespace Digikam
+
+#include "moc_firstrundlg.cpp"

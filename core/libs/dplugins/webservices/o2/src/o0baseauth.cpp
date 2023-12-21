@@ -172,3 +172,5 @@ QByteArray O0BaseAuth::createQueryParameters(const QList<O0RequestParameter> &pa
     }
     return ret;
 }
+
+#include "moc_o0baseauth.cpp"

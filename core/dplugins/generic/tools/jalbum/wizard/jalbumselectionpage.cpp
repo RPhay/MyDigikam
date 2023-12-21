@@ -162,3 +162,5 @@ bool JAlbumSelectionPage::isComplete() const
 }
 
 } // namespace DigikamGenericJAlbumPlugin
+
+#include "moc_jalbumselectionpage.cpp"

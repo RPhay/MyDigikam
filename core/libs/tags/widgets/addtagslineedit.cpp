@@ -230,3 +230,5 @@ TaggingAction AddTagsLineEdit::currentTaggingAction() const
 }
 
 } // namespace Digikam
+
+#include "moc_addtagslineedit.cpp"

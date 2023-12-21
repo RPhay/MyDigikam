@@ -120,3 +120,5 @@ void HSPreviewWidget::updatePixmap()
 }
 
 } // namespace Digikam
+
+#include "moc_hspreviewwidget.cpp"

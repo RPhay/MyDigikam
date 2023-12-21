@@ -2508,3 +2508,5 @@ void AVPlayerCore::setSaturation(int val)
 }
 
 } // namespace QtAV
+
+#include "moc_AVPlayerCore.cpp"

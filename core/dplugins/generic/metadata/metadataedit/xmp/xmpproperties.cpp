@@ -577,3 +577,5 @@ void XMPProperties::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_xmpproperties.cpp"

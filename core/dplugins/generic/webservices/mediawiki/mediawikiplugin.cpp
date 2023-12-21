@@ -124,3 +124,5 @@ void MediaWikiPlugin::slotMediaWiki()
 }
 
 } // namespace DigikamGenericMediaWikiPlugin
+
+#include "moc_mediawikiplugin.cpp"

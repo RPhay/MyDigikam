@@ -158,3 +158,5 @@ void FullScreenSettings::saveSettings(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_fullscreensettings.cpp"

@@ -425,3 +425,5 @@ void LocalizeConfig::readSettings()
 } // namespace Digikam
 
 #include "localizeconfig.moc"
+
+#include "moc_localizeconfig.cpp"

@@ -1028,3 +1028,5 @@ int WaterMark::queryFontSize(const QString& text, const QFont& font, int length)
 }
 
 } // namespace DigikamBqmWatermarkPlugin
+
+#include "moc_watermark.cpp"

@@ -91,3 +91,5 @@ void DBusyDlg::slotComplete()
 }
 
 } // namespace Digikam
+
+#include "moc_dbusydlg.cpp"

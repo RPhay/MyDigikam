@@ -220,3 +220,5 @@ void ComboBoxDelegate::slotResetEditedState(QObject*)
 }
 
 } // namespace Digikam
+
+#include "moc_wscomboboxdelegate.cpp"

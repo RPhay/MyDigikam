@@ -134,3 +134,5 @@ void Convert16To8ToolPlugin::slotConvert16To8()
 }
 
 } // namespace DigikamEditorConvert16To8ToolPlugin
+
+#include "moc_convert16to8toolplugin.cpp"

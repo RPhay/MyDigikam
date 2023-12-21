@@ -548,3 +548,5 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
 }
 
 } // namespace QtAV
+
+#include "moc_AVThread.cpp"

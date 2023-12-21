@@ -47,3 +47,5 @@ void ClickableMenu::mouseReleaseEvent(QMouseEvent* e)
 }
 
 } // namespace QtAV
+
+#include "moc_ClickableMenu.cpp"

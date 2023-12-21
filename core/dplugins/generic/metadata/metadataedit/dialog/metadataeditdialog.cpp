@@ -372,3 +372,5 @@ void MetadataEditDialog::slotSetReadOnly(bool state)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_metadataeditdialog.cpp"

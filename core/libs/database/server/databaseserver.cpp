@@ -838,3 +838,5 @@ QString DatabaseServer::processErrorLog(QProcess* const process, const QString& 
 }
 
 } // namespace Digikam
+
+#include "moc_databaseserver.cpp"

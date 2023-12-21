@@ -497,3 +497,5 @@ bool GraphicsItemRenderer::sceneEvent(QEvent* event)
 IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(GraphicsItemRenderer)
 
 } // namespace QtAV
+
+#include "moc_GraphicsItemRenderer.cpp"

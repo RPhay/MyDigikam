@@ -114,3 +114,5 @@ void MetadataPage::saveSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_metadatapage.cpp"

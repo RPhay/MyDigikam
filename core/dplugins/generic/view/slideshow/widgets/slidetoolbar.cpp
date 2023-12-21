@@ -429,3 +429,5 @@ void SlideToolBar::slotRemoveImage()
 }
 
 } // namespace DigikamGenericSlideShowPlugin
+
+#include "moc_slidetoolbar.cpp"

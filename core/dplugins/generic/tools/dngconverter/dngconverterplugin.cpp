@@ -117,3 +117,5 @@ void DNGConverterPlugin::slotDNGConverter()
 }
 
 } // namespace DigikamGenericDNGConverterPlugin
+
+#include "moc_dngconverterplugin.cpp"

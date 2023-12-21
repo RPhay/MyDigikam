@@ -168,3 +168,5 @@ QStringList DPluginEditor::categories() const
 }
 
 } // namespace Digikam
+
+#include "moc_dplugineditor.cpp"

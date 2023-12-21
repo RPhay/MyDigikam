@@ -161,3 +161,5 @@ void QuerySiteInfoGeneral::doWorkProcessReply()
 }
 
 } // namespace MediaWiki
+
+#include "moc_mediawiki_querysiteinfogeneral.cpp"

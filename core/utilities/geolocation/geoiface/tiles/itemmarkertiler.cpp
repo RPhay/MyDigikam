@@ -814,3 +814,5 @@ GeoGroupState ItemMarkerTiler::getGlobalGroupState()
 }
 
 } // namespace Digikam
+
+#include "moc_itemmarkertiler.cpp"

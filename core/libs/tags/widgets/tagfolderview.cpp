@@ -360,3 +360,5 @@ void TagFolderView::keyPressEvent(QKeyEvent* event)
 }
 
 } // namespace Digikam
+
+#include "moc_tagfolderview.cpp"

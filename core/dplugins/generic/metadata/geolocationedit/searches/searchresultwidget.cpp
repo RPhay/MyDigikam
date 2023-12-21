@@ -480,3 +480,5 @@ void SearchResultWidget::slotRemoveSelectedFromResultsList()
 }
 
 } // namespace DigikamGenericGeolocationEditPlugin
+
+#include "moc_searchresultwidget.cpp"

@@ -105,3 +105,5 @@ void ConvertToDngPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmConvertToDngPlugin
+
+#include "moc_converttodngplugin.cpp"

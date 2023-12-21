@@ -320,3 +320,5 @@ void ShowfotoKineticScroller::setScrollFlow(QListView::Flow flow)
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotokineticscroller.cpp"

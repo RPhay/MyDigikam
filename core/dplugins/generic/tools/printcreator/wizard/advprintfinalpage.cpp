@@ -428,3 +428,5 @@ bool AdvPrintFinalPage::print()
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_advprintfinalpage.cpp"

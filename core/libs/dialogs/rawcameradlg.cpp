@@ -147,3 +147,5 @@ void RawCameraDlg::updateHeader(int results)
 }
 
 } // namespace Digikam
+
+#include "moc_rawcameradlg.cpp"

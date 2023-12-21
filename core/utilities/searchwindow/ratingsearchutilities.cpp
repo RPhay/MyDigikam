@@ -467,3 +467,5 @@ void RatingComboBox::ratingWidgetChanged(int rv)
 }
 
 } // namespace Digikam
+
+#include "moc_ratingsearchutilities.cpp"

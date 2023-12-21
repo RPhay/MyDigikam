@@ -185,3 +185,5 @@ void AutotagsAssignment::slotAdvance(const QImage& img)
 }
 
 } // namespace Digikam
+
+#include "moc_autotagsassignment.cpp"

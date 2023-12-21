@@ -165,3 +165,5 @@ void DLogoAction::deleteWidget(QWidget* widget)
 }
 
 } // namespace Digikam
+
+#include "moc_dlogoaction.cpp"

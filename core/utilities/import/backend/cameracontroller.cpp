@@ -1315,3 +1315,5 @@ void CameraController::openFile(const QString& folder, const QString& file)
 }
 
 } // namespace Digikam
+
+#include "moc_cameracontroller.cpp"

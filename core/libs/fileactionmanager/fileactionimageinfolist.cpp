@@ -131,3 +131,5 @@ FileActionItemInfoList FileActionItemInfoList::continueTask(const QList<ItemInfo
 }
 
 } // namespace Digikam
+
+#include "moc_fileactionimageinfolist.cpp"

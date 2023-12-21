@@ -112,3 +112,5 @@ QStringList TesseractBinary::tesseractLanguages() const
 }
 
 } // namespace DigikamGenericTextConverterPlugin
+
+#include "moc_tesseractbinary.cpp"

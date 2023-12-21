@@ -113,3 +113,5 @@ void DPluginDialog::saveDialogSize()
 }
 
 } // namespace Digikam
+
+#include "moc_dplugindialog.cpp"

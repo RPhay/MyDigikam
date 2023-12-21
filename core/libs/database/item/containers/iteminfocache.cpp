@@ -410,3 +410,5 @@ void ItemInfoCache::slotAlbumChange(const AlbumChangeset& changeset)
 }
 
 } // namespace Digikam
+
+#include "moc_iteminfocache.cpp"

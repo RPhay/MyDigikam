@@ -487,3 +487,5 @@ void LightTableThumbBar::slotSetupChanged()
 } // namespace Digikam
 
 #include "lighttablethumbbar.moc"
+
+#include "moc_lighttablethumbbar.cpp"

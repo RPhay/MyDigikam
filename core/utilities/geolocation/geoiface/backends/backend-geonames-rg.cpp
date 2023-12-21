@@ -275,3 +275,5 @@ void BackendGeonamesRG::cancelRequests()
 }
 
 } // namespace Digikam
+
+#include "moc_backend-geonames-rg.cpp"

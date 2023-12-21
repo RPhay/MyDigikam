@@ -120,3 +120,5 @@ void ItemFullScreenOverlay::widgetLeaveEvent()
 }
 
 } // namespace Digikam
+
+#include "moc_itemfullscreenoverlay.cpp"

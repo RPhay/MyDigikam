@@ -713,3 +713,5 @@ void FindDuplicatesView::slotRemoveDuplicates()
 }
 
 } // namespace Digikam
+
+#include "moc_findduplicatesview.cpp"

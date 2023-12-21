@@ -113,3 +113,5 @@ TableViewColumnConfiguration TableViewConfigurationDialog::getNewConfiguration()
 }
 
 } // namespace Digikam
+
+#include "moc_tableview_column_configuration_dialog.cpp"

@@ -630,3 +630,5 @@ int RainDropFilter::pixelOffset(int Width, int X, int Y, int bytesDepth)
 }
 
 } // namespace Digikam
+
+#include "moc_raindropfilter.cpp"

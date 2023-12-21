@@ -47,3 +47,5 @@ void DMemoryInfoTest::operators()
     QVERIFY(m.totalPhysical() != 0);
     QCOMPARE(m.totalPhysical(), m1.totalPhysical());     // cppcheck-suppress knownConditionTrueFalse
 }
+
+#include "moc_dmemoryinfo_utest.cpp"

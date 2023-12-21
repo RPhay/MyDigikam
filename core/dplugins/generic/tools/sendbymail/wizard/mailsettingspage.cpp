@@ -308,3 +308,5 @@ bool MailSettingsPage::validatePage()
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_mailsettingspage.cpp"

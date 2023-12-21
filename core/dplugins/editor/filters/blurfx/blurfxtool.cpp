@@ -383,3 +383,5 @@ void BlurFXTool::blockWidgetSignals(bool b)
 }
 
 } // namespace DigikamEditorBlurFxToolPlugin
+
+#include "moc_blurfxtool.cpp"

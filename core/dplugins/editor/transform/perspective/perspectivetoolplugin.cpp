@@ -118,3 +118,5 @@ void PerspectiveToolPlugin::slotPerspective()
 }
 
 } // namespace DigikamEditorPerspectiveToolPlugin
+
+#include "moc_perspectivetoolplugin.cpp"

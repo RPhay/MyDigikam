@@ -1206,3 +1206,5 @@ QString RGTagModel::translateSpacer(const QString& text) const
 }
 
 } // namespace Digikam
+
+#include "moc_rgtagmodel.cpp"

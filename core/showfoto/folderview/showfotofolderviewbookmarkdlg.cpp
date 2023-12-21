@@ -337,3 +337,5 @@ void ShowfotoFolderViewBookmarkDlg::slotHelp()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotofolderviewbookmarkdlg.cpp"

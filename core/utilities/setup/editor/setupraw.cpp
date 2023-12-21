@@ -325,3 +325,5 @@ void SetupRaw::slotAboutRawImportPlugin()
 }
 
 } // namespace Digikam
+
+#include "moc_setupraw.cpp"

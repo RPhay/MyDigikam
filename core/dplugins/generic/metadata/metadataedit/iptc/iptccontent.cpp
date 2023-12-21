@@ -263,3 +263,5 @@ void IPTCContent::applyMetadata(const DMetadata& meta)
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
+
+#include "moc_iptccontent.cpp"

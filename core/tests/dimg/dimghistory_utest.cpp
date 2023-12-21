@@ -151,3 +151,5 @@ void DImgHistoryTest::slotImageSaved(const QString& fileName, bool success)
 
     m_loop.quit();
 }
+
+#include "moc_dimghistory_utest.cpp"

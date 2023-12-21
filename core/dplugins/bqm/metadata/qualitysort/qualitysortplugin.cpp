@@ -100,3 +100,5 @@ void QualitySortPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmQualitySortPlugin
+
+#include "moc_qualitysortplugin.cpp"

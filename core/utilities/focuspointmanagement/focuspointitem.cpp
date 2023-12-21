@@ -108,3 +108,5 @@ void FocusPointItem::setEditable(bool allowEdit)
 }
 
 } // namespace Digikam
+
+#include "moc_focuspointitem.cpp"

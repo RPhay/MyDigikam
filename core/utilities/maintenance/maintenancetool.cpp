@@ -123,3 +123,5 @@ void MaintenanceTool::slotCancel()
 }
 
 } // namespace Digikam
+
+#include "moc_maintenancetool.cpp"

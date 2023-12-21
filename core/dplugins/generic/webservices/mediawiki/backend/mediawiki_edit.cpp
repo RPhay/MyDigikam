@@ -472,3 +472,5 @@ void Edit::finishedCaptcha(const QString& captcha)
 }
 
 } // namespace MediaWiki
+
+#include "moc_mediawiki_edit.cpp"

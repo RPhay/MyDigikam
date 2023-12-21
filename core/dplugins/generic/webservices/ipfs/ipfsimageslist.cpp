@@ -182,3 +182,5 @@ QString IpfsImagesListViewItem::IpfsUrl() const
 }
 
 } // namespace DigikamGenericIpfsPlugin
+
+#include "moc_ipfsimageslist.cpp"

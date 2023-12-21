@@ -274,3 +274,5 @@ void ItemPropertiesMetadataTab::setCurrentData(DMetadata* const metaData, const 
 }
 
 } // namespace Digikam
+
+#include "moc_itempropertiesmetadatatab.cpp"

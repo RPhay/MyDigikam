@@ -131,3 +131,5 @@ void MjpegStreamPlugin::slotMjpegStream()
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
+
+#include "moc_mjpegstreamplugin.cpp"

@@ -248,3 +248,5 @@ void SetupCategory::readSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_setupcategory.cpp"

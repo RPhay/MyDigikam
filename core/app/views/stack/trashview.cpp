@@ -555,3 +555,5 @@ void ThumbnailAligningDelegate::paint(QPainter* painter, const QStyleOptionViewI
 }
 
 } // namespace Digikam
+
+#include "moc_trashview.cpp"

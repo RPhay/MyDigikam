@@ -289,3 +289,5 @@ void JAlbumGenerator::setProgressWidgets(DHistoryView* const pView, DProgressWdg
 }
 
 } // namespace DigikamGenericJAlbumPlugin
+
+#include "moc_jalbumgenerator.cpp"

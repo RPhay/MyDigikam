@@ -734,3 +734,5 @@ void ItemCategorizedView::slotIccSettingsChanged(const ICCSettingsContainer&, co
 } // namespace Digikam
 
 #include "itemcategorizedview.moc"
+
+#include "moc_itemcategorizedview.cpp"

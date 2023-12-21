@@ -110,3 +110,5 @@ void DatabaseSqliteInitTest::testSqliteInit()
     ThumbsDbAccess::cleanUpDatabase();
     FaceDbAccess::cleanUpDatabase();
 }
+
+#include "moc_databasesqliteinit_utest.cpp"

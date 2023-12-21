@@ -99,3 +99,5 @@ void BlurPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmBlurPlugin
+
+#include "moc_blurplugin.cpp"

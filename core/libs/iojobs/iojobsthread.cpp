@@ -246,3 +246,5 @@ void IOJobsThread::slotCancel()
 }
 
 } // namespace Digikam
+
+#include "moc_iojobsthread.cpp"

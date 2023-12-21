@@ -202,3 +202,5 @@ DImgLoaderSettings* DImgQImagePlugin::exportWidget(const QString& format) const
 }
 
 } // namespace DigikamQImageDImgPlugin
+
+#include "moc_dimgqimageplugin.cpp"

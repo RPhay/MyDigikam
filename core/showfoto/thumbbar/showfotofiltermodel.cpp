@@ -527,3 +527,5 @@ bool NoDuplicatesShowfotoFilterModel::filterAcceptsRow(int source_row, const QMo
 } // namespace ShowFoto
 
 #include "showfotofiltermodel.moc"
+
+#include "moc_showfotofiltermodel.cpp"

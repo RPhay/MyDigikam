@@ -327,3 +327,5 @@ void SharpenFilter::readParameters(const Digikam::FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_sharpenfilter.cpp"

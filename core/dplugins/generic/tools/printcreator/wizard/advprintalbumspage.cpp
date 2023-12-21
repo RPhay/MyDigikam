@@ -109,3 +109,5 @@ bool AdvPrintAlbumsPage::isComplete() const
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_advprintalbumspage.cpp"

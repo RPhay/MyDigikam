@@ -165,3 +165,5 @@ void DFontSelect::slotChangeMode(int index)
 }
 
 } // namespace Digikam
+
+#include "moc_dfontselect.cpp"

@@ -114,3 +114,5 @@ QString DPlugin::handbookReference() const
 }
 
 } // namespace Digikam
+
+#include "moc_dplugin.cpp"

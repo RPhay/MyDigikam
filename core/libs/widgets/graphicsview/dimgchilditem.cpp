@@ -319,3 +319,5 @@ QRectF DImgChildItem::boundingRect() const
 }
 
 } // namespace Digikam
+
+#include "moc_dimgchilditem.cpp"

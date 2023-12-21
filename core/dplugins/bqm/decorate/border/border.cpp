@@ -164,3 +164,5 @@ bool Border::toolOperations()
 }
 
 } // namespace DigikamBqmBorderPlugin
+
+#include "moc_border.cpp"

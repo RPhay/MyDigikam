@@ -177,3 +177,5 @@ void WSWizard::slotBusy(bool val)
 }
 
 } // namespace DigikamGenericUnifiedPlugin
+
+#include "moc_wswizard.cpp"

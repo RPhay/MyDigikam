@@ -137,3 +137,5 @@ bool NoiseReduction::toolOperations()
 }
 
 } // namespace DigikamBqmNoiseReductionPlugin
+
+#include "moc_noisereduction.cpp"

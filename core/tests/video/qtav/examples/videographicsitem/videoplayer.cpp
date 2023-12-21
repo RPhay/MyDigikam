@@ -158,3 +158,5 @@ void VideoPlayer::open()
 
     play(f);
 }
+
+#include "moc_videoplayer.cpp"

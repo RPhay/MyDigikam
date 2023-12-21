@@ -515,3 +515,5 @@ void HTMLWidget::setSharedGeoIfaceObject(GeoIfaceSharedData* const sharedData)
 }
 
 } // namespace Digikam
+
+#include "moc_htmlwidget_qwebengine.cpp"

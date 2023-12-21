@@ -143,3 +143,5 @@ void PlayerWindow::onCaptureError()
     QMessageBox::warning(nullptr, QString::fromLatin1("QtAV video capture"),
                          QLatin1String("Failed to capture video frame"));
 }
+
+#include "moc_playerwindow.cpp"

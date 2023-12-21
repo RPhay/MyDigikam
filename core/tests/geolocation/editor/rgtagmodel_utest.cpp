@@ -274,3 +274,5 @@ void TestRGTagModel::testModelSpacerTags()
 }
 
 QTEST_GUILESS_MAIN(TestRGTagModel)
+
+#include "moc_rgtagmodel_utest.cpp"

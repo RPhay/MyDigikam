@@ -151,3 +151,5 @@ void PiwigoLoginDlg::slotOk()
 }
 
 } // namespace DigikamGenericPiwigoPlugin
+
+#include "moc_piwigologindlg.cpp"

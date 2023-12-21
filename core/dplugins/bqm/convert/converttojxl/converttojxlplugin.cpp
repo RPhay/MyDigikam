@@ -101,3 +101,5 @@ void ConvertToJxlPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmConvertToJxlPlugin
+
+#include "moc_converttojxlplugin.cpp"

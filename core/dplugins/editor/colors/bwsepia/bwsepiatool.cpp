@@ -205,3 +205,5 @@ void BWSepiaTool::slotScaleChanged()
 }
 
 } // namespace DigikamEditorBWSepiaToolPlugin
+
+#include "moc_bwsepiatool.cpp"

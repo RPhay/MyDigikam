@@ -790,3 +790,5 @@ void LocalContrastFilter::readParameters(const FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_localcontrastfilter.cpp"

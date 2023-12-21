@@ -336,3 +336,5 @@ QString OnlineVersionDwnl::downloadedPath() const
 }
 
 } // namespace Digikam
+
+#include "moc_onlineversiondwnl.cpp"

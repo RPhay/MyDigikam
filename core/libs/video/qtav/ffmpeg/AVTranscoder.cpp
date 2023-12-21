@@ -529,3 +529,5 @@ void AVTranscoder::tryFinish()
 }
 
 } // namespace QtAV
+
+#include "moc_AVTranscoder.cpp"

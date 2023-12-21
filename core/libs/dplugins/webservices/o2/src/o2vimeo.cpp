@@ -11,3 +11,5 @@ O2Vimeo::O2Vimeo(QObject *parent): O2(parent) {
     setRefreshTokenUrl(VimeoTokenUrl);
     setScope(VimeoScope);
 }
+
+#include "moc_o2vimeo.cpp"

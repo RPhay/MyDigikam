@@ -110,3 +110,5 @@ bool MailAlbumsPage::isComplete() const
 }
 
 } // namespace DigikamGenericSendByMailPlugin
+
+#include "moc_mailalbumspage.cpp"

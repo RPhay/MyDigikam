@@ -68,3 +68,5 @@ QMimeData* MyDragDropHandler::createMimeData(const QList<QPersistentModelIndex>&
 {
     return nullptr;
 }
+
+#include "moc_mydragdrophandler.cpp"

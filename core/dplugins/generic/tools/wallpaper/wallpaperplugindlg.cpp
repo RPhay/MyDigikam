@@ -117,3 +117,5 @@ int WallpaperPluginDlg::wallpaperLayout() const
 }
 
 } // namespace DigikamGenericWallpaperPlugin
+
+#include "moc_wallpaperplugindlg.cpp"

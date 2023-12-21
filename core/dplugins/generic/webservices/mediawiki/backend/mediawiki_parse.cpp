@@ -169,3 +169,5 @@ void Parse::doWorkProcessReply()
 }
 
 } // namespace MediaWiki
+
+#include "moc_mediawiki_parse.cpp"

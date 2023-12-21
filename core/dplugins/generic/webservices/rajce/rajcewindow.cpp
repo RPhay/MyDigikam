@@ -92,3 +92,5 @@ void RajceWindow::closeEvent(QCloseEvent* e)
 }
 
 } // namespace DigikamGenericRajcePlugin
+
+#include "moc_rajcewindow.cpp"

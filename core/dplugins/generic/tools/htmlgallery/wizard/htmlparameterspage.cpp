@@ -180,3 +180,5 @@ void HTMLParametersPage::initializePage()
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
+
+#include "moc_htmlparameterspage.cpp"

@@ -457,3 +457,5 @@ void CoreDbWatch::slotSearchChangeDBus(const QString& databaseIdentifier,
 #endif
 
 } // namespace Digikam
+
+#include "moc_coredbwatch.cpp"

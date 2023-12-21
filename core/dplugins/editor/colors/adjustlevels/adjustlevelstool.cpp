@@ -946,3 +946,5 @@ void AdjustLevelsTool::slotSaveAsSettings()
 }
 
 } // namespace DigikamEditorAdjustLevelsToolPlugin
+
+#include "moc_adjustlevelstool.cpp"

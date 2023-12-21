@@ -212,3 +212,5 @@ void PrintItemInfoTest::printXmpSubCategories(const DMetadata& meta, bool expect
         QWARN("Exiv2 has no XMP support...");
     }
 }
+
+#include "moc_printiteminfo_utest.cpp"

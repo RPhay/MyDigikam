@@ -13,3 +13,5 @@ O2GoogleDevice::O2GoogleDevice(QObject *parent) : O2(parent) {
     setTokenUrl(GoogleDeviceTokenUrl);
     setRefreshTokenUrl(GoogleDeviceRefreshUrl);
 }
+
+#include "moc_o2googledevice.cpp"

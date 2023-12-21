@@ -318,3 +318,5 @@ void LensDistortionTool::blockWidgetSignals(bool b)
 }
 
 } // namespace DigikamEditorLensDistortionToolPlugin
+
+#include "moc_lensdistortiontool.cpp"

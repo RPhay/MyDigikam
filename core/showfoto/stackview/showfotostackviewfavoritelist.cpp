@@ -424,3 +424,5 @@ QString ShowfotoStackViewFavoriteList::filter() const
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotostackviewfavoritelist.cpp"

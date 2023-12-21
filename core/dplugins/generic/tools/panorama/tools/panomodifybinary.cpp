@@ -36,3 +36,5 @@ PanoModifyBinary::~PanoModifyBinary()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_panomodifybinary.cpp"

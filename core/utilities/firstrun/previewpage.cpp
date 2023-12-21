@@ -114,3 +114,5 @@ void PreviewPage::saveSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_previewpage.cpp"

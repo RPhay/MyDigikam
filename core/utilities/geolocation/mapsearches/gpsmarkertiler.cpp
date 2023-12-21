@@ -1029,3 +1029,5 @@ void GPSMarkerTiler::addMarkerToTileAndChildren(const qlonglong imageId, const T
 }
 
 } // namespace Digikam
+
+#include "moc_gpsmarkertiler.cpp"

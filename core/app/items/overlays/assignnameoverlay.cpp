@@ -434,3 +434,5 @@ bool AssignNameOverlay::eventFilter(QObject* o, QEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_assignnameoverlay.cpp"

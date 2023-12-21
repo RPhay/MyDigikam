@@ -294,3 +294,5 @@ bool AssignCaptions::toolOperations()
 }
 
 } // namespace DigikamBqmAssignCaptionsPlugin
+
+#include "moc_assigncaptions.cpp"

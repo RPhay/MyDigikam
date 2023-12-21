@@ -273,3 +273,5 @@ void TemplateViewer::setTemplate(const Template& t)
 }
 
 } // namespace Digikam
+
+#include "moc_templateviewer.cpp"

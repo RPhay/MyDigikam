@@ -595,3 +595,5 @@ void DbShrinkDialog::slotProgressTimerDone()
 }
 
 } // namespace Digikam
+
+#include "moc_dbcleaner.cpp"

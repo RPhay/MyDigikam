@@ -320,3 +320,5 @@ void PanoIntroPage::initializePage()
 }
 
 } // namespace DigikamGenericPanoramaPlugin
+
+#include "moc_panointropage.cpp"

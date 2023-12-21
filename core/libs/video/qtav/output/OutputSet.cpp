@@ -156,3 +156,5 @@ void OutputSet::resumeThread()
 }
 
 } // namespace QtAV
+
+#include "moc_OutputSet.cpp"

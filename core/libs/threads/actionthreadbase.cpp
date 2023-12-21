@@ -237,3 +237,5 @@ void ActionThreadBase::run()
 }
 
 } // namespace Digikam
+
+#include "moc_actionthreadbase.cpp"

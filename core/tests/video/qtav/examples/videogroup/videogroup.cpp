@@ -358,3 +358,5 @@ void VideoGroup::updateROI()
                                       qreal(w) / qreal(W), qreal(h) / qreal(H));
     }
 }
+
+#include "moc_videogroup.cpp"

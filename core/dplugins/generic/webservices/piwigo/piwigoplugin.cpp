@@ -127,3 +127,5 @@ void PiwigoPlugin::slotPiwigo()
 }
 
 } // namespace DigikamGenericPiwigoPlugin
+
+#include "moc_piwigoplugin.cpp"

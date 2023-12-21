@@ -174,3 +174,5 @@ void MainWindow::slot_lineEdit_textChanged(const QString& text)
 {
     this->ui->pushButton->setEnabled(!text.isEmpty() && !text.isNull());
 }
+
+#include "moc_mainwindow.cpp"

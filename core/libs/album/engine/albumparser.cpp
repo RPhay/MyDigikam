@@ -144,3 +144,5 @@ void AlbumParser::slotCancel()
 }
 
 } // namespace Digikam
+
+#include "moc_albumparser.cpp"

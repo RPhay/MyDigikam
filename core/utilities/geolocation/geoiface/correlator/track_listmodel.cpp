@@ -268,3 +268,5 @@ TrackManager::Track TrackListModel::getTrackForIndex(const QModelIndex& index) c
 }
 
 } // namespace Digikam
+
+#include "moc_track_listmodel.cpp"

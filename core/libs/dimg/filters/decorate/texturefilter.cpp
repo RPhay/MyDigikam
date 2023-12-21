@@ -232,3 +232,5 @@ void TextureFilter::readParameters(const Digikam::FilterAction& action)
 }
 
 } // namespace Digikam
+
+#include "moc_texturefilter.cpp"

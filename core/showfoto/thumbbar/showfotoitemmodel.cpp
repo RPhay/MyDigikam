@@ -674,3 +674,5 @@ QVariant ShowfotoItemModel::data(const QModelIndex& index, int role) const
 }
 
 } // namespace Showfoto
+
+#include "moc_showfotoitemmodel.cpp"

@@ -928,3 +928,5 @@ void ItemPropertiesSideBarDB::slotPropertiesButtonPressed(int index)
 }
 
 } // namespace Digikam
+
+#include "moc_itempropertiessidebardb.cpp"

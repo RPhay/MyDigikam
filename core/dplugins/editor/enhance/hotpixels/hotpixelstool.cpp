@@ -176,3 +176,5 @@ void HotPixelsTool::slotHotPixels(const QPolygon& pointList)
 }
 
 } // namespace DigikamEditorHotPixelsToolPlugin
+
+#include "moc_hotpixelstool.cpp"

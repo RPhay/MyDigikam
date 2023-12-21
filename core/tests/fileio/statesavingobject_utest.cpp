@@ -283,3 +283,5 @@ void StateSavingObjectTest::testRecursiveChildrenSaving()
 }
 
 #endif // __clang_analyzer__
+
+#include "moc_statesavingobject_utest.cpp"

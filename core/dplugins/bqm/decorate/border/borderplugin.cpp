@@ -99,3 +99,5 @@ void BorderPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmBorderPlugin
+
+#include "moc_borderplugin.cpp"

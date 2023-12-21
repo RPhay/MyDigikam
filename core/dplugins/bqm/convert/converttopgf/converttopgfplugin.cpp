@@ -101,3 +101,5 @@ void ConvertToPgfPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmConvertToPgfPlugin
+
+#include "moc_converttopgfplugin.cpp"

@@ -234,3 +234,5 @@ bool Sharpen::toolOperations()
 }
 
 } // namespace DigikamBqmSharpenPlugin
+
+#include "moc_sharpen.cpp"

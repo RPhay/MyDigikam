@@ -81,3 +81,5 @@ void SlideError::setCurrentUrl(const QUrl& url)
 }
 
 } // namespace DigikamGenericSlideShowPlugin
+
+#include "moc_slideerror.cpp"

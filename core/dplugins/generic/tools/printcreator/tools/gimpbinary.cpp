@@ -53,3 +53,5 @@ GimpBinary::~GimpBinary()
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin
+
+#include "moc_gimpbinary.cpp"

@@ -145,3 +145,5 @@ void DImgWEBPExportSettings::slotToggleWEBPLossLess(bool b)
 }
 
 } // namespace Digikam
+
+#include "moc_dimgwebpexportsettings.cpp"

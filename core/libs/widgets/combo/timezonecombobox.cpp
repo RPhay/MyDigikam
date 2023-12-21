@@ -110,3 +110,5 @@ int TimeZoneComboBox::timeZoneOffset() const
 }
 
 } // namespace Digikam
+
+#include "moc_timezonecombobox.cpp"

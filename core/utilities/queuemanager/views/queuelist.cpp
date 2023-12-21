@@ -1238,3 +1238,5 @@ void QueueListView::slotProgressTimerDone()
 }
 
 } // namespace Digikam
+
+#include "moc_queuelist.cpp"

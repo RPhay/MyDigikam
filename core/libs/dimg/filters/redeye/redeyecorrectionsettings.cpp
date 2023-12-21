@@ -140,3 +140,5 @@ void RedEyeCorrectionSettings::writeSettings(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_redeyecorrectionsettings.cpp"

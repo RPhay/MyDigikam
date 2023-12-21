@@ -311,3 +311,5 @@ void ThreadManager::slotDestroyed(QObject*)
 } // namespace Digikam
 
 #include "threadmanager.moc"
+
+#include "moc_threadmanager.cpp"

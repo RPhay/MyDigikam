@@ -83,3 +83,5 @@ void ImgQSortTestDetectNoise::testParseTestImagesForVariousTypeNoiseFailCase()
         QVERIFY(results.value(test_case));
     }
 }
+
+#include "moc_detectnoise_utest.cpp"

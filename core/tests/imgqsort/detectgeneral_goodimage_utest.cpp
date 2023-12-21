@@ -59,3 +59,5 @@ void ImgQSortTestGeneral::testParseTestImagesForGeneralGoodImage()
         QVERIFY(results.value(test_case));
     }
 }
+
+#include "moc_detectgeneral_goodimage_utest.cpp"

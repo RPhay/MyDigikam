@@ -139,3 +139,5 @@ void ItemSelectionOverlay::slotSelectionChanged(const QItemSelection& selected, 
 }
 
 } // namespace Digikam
+
+#include "moc_itemselectionoverlay.cpp"

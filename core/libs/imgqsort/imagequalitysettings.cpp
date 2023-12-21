@@ -481,3 +481,5 @@ ImageQualityContainer ImageQualitySettings::defaultSettings() const
 }
 
 } // namespace Digikam
+
+#include "moc_imagequalitysettings.cpp"

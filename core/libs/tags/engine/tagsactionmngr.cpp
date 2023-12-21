@@ -511,3 +511,5 @@ void TagsActionMngr::slotAssignFromShortcut()
 }
 
 } // namespace Digikam
+
+#include "moc_tagsactionmngr.cpp"

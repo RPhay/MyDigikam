@@ -450,3 +450,5 @@ void StretchFilter::readParameters(const FilterAction& /*action*/)
 }
 
 } // namespace Digikam
+
+#include "moc_stretchfilter.cpp"

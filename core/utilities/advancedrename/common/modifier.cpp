@@ -48,3 +48,5 @@ Modifier::~Modifier()
 }
 
 } // namespace Digikam
+
+#include "moc_modifier.cpp"

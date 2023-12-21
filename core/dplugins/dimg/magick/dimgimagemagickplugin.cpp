@@ -393,3 +393,5 @@ DImgLoaderSettings* DImgImageMagickPlugin::exportWidget(const QString& format) c
 }
 
 } // namespace DigikamImageMagickDImgPlugin
+
+#include "moc_dimgimagemagickplugin.cpp"

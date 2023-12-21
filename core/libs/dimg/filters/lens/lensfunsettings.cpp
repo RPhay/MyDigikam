@@ -221,3 +221,5 @@ void LensFunSettings::writeSettings(KConfigGroup& group)
 }
 
 } // namespace Digikam
+
+#include "moc_lensfunsettings.cpp"

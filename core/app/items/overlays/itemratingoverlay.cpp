@@ -172,3 +172,5 @@ void ItemRatingOverlay::slotDataChanged(const QModelIndex& topLeft, const QModel
 }
 
 } // namespace Digikam
+
+#include "moc_itemratingoverlay.cpp"

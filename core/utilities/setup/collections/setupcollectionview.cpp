@@ -1779,3 +1779,5 @@ void SetupCollectionModel::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_setupcollectionview.cpp"

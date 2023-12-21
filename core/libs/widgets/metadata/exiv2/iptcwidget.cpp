@@ -166,3 +166,5 @@ void IptcWidget::slotSaveMetadataToFile()
 }
 
 } // namespace Digikam
+
+#include "moc_iptcwidget.cpp"

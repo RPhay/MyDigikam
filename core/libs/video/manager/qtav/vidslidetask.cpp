@@ -285,3 +285,5 @@ void VidSlideTask::run()
 }
 
 } // namespace Digikam
+
+#include "moc_vidslidetask.cpp"

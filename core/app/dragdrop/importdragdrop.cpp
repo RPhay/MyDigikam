@@ -295,3 +295,5 @@ ImportItemModel* ImportDragDropHandler::model() const
 }
 
 } // namespace Digikam
+
+#include "moc_importdragdrop.cpp"

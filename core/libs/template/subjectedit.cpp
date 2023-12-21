@@ -93,3 +93,5 @@ void SubjectEdit::slotRefChanged()
 }
 
 } // namespace Digikam
+
+#include "moc_subjectedit.cpp"

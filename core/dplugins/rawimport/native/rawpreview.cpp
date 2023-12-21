@@ -222,3 +222,5 @@ QImage RawPreview::previewToQImage() const
 }
 
 } // namespace DigikamRawImportNativePlugin
+
+#include "moc_rawpreview.cpp"

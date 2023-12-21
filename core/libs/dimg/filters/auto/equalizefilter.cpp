@@ -252,3 +252,5 @@ void EqualizeFilter::readParameters(const FilterAction& /*action*/)
 }
 
 } // namespace Digikam
+
+#include "moc_equalizefilter.cpp"

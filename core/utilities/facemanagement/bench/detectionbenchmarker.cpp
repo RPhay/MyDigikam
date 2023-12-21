@@ -200,3 +200,5 @@ QString DetectionBenchmarker::result() const
 }
 
 } // namespace Digikam
+
+#include "moc_detectionbenchmarker.cpp"

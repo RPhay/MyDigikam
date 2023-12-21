@@ -327,3 +327,5 @@ int ReplaceDialog::getResult()
 }
 
 } // namespace DigikamGenericGoogleServicesPlugin
+
+#include "moc_gsreplacedlg.cpp"

@@ -187,3 +187,5 @@ void CameraFolderView::clear()
 }
 
 } // namespace Digikam
+
+#include "moc_camerafolderview.cpp"

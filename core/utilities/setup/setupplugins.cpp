@@ -115,3 +115,5 @@ void SetupPlugins::applySettings()
 }
 
 } // namespace Digikam
+
+#include "moc_setupplugins.cpp"

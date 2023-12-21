@@ -680,3 +680,5 @@ void GPSSearchView::slotClearImages()
 }
 
 } // namespace Digikam
+
+#include "moc_gpssearchview.cpp"

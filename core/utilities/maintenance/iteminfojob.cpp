@@ -177,3 +177,5 @@ void ItemInfoJob::slotData(const QList<ItemListerRecord>& records)
 }
 
 } // namespace Digikam
+
+#include "moc_iteminfojob.cpp"

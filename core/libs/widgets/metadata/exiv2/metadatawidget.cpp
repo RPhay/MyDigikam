@@ -526,3 +526,5 @@ void MetadataWidget::buildView()
 }
 
 } // namespace Digikam
+
+#include "moc_metadatawidget.cpp"

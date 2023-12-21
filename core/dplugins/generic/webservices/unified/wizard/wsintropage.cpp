@@ -228,3 +228,5 @@ bool WSIntroPage::validatePage()
 }
 
 } // namespace DigikamGenericUnifiedPlugin
+
+#include "moc_wsintropage.cpp"

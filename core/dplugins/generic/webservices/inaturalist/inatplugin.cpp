@@ -118,3 +118,5 @@ void INatPlugin::slotINat()
 }
 
 } // namespace DigikamGenericINatPlugin
+
+#include "moc_inatplugin.cpp"

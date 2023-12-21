@@ -232,3 +232,5 @@ QGroupBox* SmugNewAlbumDlg::privateGroupBox() const
 }
 
 } // namespace DigikamGenericSmugPlugin
+
+#include "moc_smugnewalbumdlg.cpp"

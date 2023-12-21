@@ -92,3 +92,5 @@ void ImageQualityThreadPool::end()
 }
 
 } // namespace Digikam
+
+#include "moc_imagequalitythread.cpp"

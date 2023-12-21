@@ -350,3 +350,5 @@ void SmugWidget::slotResizeChecked()
 }
 
 } // namespace DigikamGenericSmugPlugin
+
+#include "moc_smugwidget.cpp"

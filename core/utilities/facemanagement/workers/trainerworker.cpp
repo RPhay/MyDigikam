@@ -155,3 +155,5 @@ void TrainerWorker::aboutToDeactivate()
 }
 
 } // namespace Digikam
+
+#include "moc_trainerworker.cpp"

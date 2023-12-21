@@ -167,3 +167,5 @@ void NoiseReductionTool::analyserCompleted()
 }
 
 } // namespace DigikamEditorNoiseReductionToolPlugin
+
+#include "moc_noisereductiontool.cpp"

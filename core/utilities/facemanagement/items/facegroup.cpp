@@ -783,3 +783,5 @@ void ItemPreviewView::suggestFaces()
 */
 
 } // namespace Digikam
+
+#include "moc_facegroup.cpp"

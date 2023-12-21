@@ -116,3 +116,5 @@ void ImageShackPlugin::slotImageShack()
 }
 
 } // namespace DigikamGenericImageShackPlugin
+
+#include "moc_imageshackplugin.cpp"

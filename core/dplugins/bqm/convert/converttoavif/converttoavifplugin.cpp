@@ -102,3 +102,5 @@ void ConvertToAvifPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmConvertToAvifPlugin
+
+#include "moc_converttoavifplugin.cpp"

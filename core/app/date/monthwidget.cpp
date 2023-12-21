@@ -524,3 +524,5 @@ void MonthWidget::slotModelDestroyed()
 }
 
 } // namespace Digikam
+
+#include "moc_monthwidget.cpp"

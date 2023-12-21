@@ -79,3 +79,5 @@ bool AlbumModelDragDropHandler::acceptsMimeData(const QMimeData* mime)
 }
 
 } // namespace Digikam
+
+#include "moc_albummodeldragdrophandler.cpp"

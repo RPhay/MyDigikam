@@ -837,3 +837,5 @@ void LensFunCameraSelector::slotDistanceChanged()
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
 #endif
+
+#include "moc_lensfuncameraselector.cpp"

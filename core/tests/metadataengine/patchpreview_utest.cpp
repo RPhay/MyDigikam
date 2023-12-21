@@ -110,3 +110,5 @@ void PatchPreviewTest::cleanupTestCase()
 
     DPluginLoader::instance()->cleanUp();
 }
+
+#include "moc_patchpreview_utest.cpp"

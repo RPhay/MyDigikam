@@ -171,3 +171,5 @@ QString DNGConverterListViewItem::destPath() const
 }
 
 } // namespace DigikamGenericDNGConverterPlugin
+
+#include "moc_dngconverterlist.cpp"

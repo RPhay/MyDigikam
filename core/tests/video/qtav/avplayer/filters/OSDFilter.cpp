@@ -50,3 +50,5 @@ void OSDFilter::process(Statistics* statistics, VideoFrame* frame)
 }
 
 } // namespace AVPlayer
+
+#include "moc_OSDFilter.cpp"

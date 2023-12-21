@@ -55,3 +55,5 @@ void DPluginConfViewBqm::loadPlugins()
 }
 
 } // namespace Digikam
+
+#include "moc_dpluginconfviewbqm.cpp"

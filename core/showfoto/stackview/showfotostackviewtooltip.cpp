@@ -102,3 +102,5 @@ QString ShowfotoStackViewToolTip::tipContents()
 }
 
 } // namespace ShowFoto
+
+#include "moc_showfotostackviewtooltip.cpp"

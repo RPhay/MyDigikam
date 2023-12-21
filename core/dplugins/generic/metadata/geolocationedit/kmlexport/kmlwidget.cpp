@@ -471,3 +471,5 @@ void KmlWidget::saveSettings()
 }
 
 } // namespace DigikamGenericGeolocationEditPlugin
+
+#include "moc_kmlwidget.cpp"

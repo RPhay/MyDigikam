@@ -206,3 +206,5 @@ void FTExportWidget::slotLabelUrlChanged()
 }
 
 } // namespace DigikamGenericFileTransferPlugin
+
+#include "moc_ftexportwidget.cpp"

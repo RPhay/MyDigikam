@@ -194,3 +194,5 @@ void RAWToPNGConverterThread::slotJobStarted()
 }
 
 #include "rawtopngconverterthread.moc"
+
+#include "moc_rawtopngconverterthread.cpp"

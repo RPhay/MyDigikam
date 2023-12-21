@@ -2146,3 +2146,5 @@ void TimeLineWidget::handleSelectionRange(const QDateTime& selEndDateTime)
 }
 
 } // namespace Digikam
+
+#include "moc_timelinewidget.cpp"

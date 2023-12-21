@@ -167,3 +167,5 @@ void WSLoginDialog::slotAccept()
 }
 
 } // namespace Digikam
+
+#include "moc_wslogindialog.cpp"

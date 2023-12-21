@@ -448,3 +448,5 @@ void ImgurTalker::doWork()
 }
 
 } // namespace DigikamGenericImgUrPlugin
+
+#include "moc_imgurtalker.cpp"

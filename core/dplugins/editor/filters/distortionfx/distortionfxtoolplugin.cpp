@@ -118,3 +118,5 @@ void DistortionFXToolPlugin::slotDistortionFX()
 }
 
 } // namespace DigikamEditorDistortionFxToolPlugin
+
+#include "moc_distortionfxtoolplugin.cpp"

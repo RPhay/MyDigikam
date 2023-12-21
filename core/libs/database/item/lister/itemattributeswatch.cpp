@@ -161,3 +161,5 @@ void ItemAttributesWatch::imageCaptionChanged(qint64 imageId)
 */
 
 } // namespace Digikam
+
+#include "moc_itemattributeswatch.cpp"

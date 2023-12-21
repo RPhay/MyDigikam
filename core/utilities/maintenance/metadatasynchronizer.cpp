@@ -211,3 +211,5 @@ void MetadataSynchronizer::slotAdvance()
 }
 
 } // namespace Digikam
+
+#include "moc_metadatasynchronizer.cpp"

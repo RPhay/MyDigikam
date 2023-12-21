@@ -447,3 +447,5 @@ void FileSaveOptionsBox::readSettings()
 }
 
 } // namespace Digikam
+
+#include "moc_filesaveoptionsbox.cpp"

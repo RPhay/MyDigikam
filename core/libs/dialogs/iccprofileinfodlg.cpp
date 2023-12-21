@@ -74,3 +74,5 @@ void ICCProfileInfoDlg::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "moc_iccprofileinfodlg.cpp"

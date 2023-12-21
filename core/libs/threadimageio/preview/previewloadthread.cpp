@@ -145,3 +145,5 @@ DImg PreviewLoadThread::loadSynchronously(const LoadingDescription& description)
 }
 
 } // namespace Digikam
+
+#include "moc_previewloadthread.cpp"

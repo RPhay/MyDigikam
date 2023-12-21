@@ -514,3 +514,5 @@ void DOnlineTranslator::addSpaceBetweenParts(QString& text)
 }
 
 } // namespace Digikam
+
+#include "moc_donlinetranslator.cpp"

@@ -19,3 +19,5 @@ CoreDbWatchAdaptor::CoreDbWatchAdaptor(Digikam::CoreDbWatch* const watch)
 {
     setAutoRelaySignals(true);
 }
+
+#include "moc_coredbwatchadaptor.cpp"

@@ -283,3 +283,5 @@ void DbKeySelectorView::removeChildlessHeaders()
 }
 
 } // namespace Digikam
+
+#include "moc_dbkeyselector.cpp"

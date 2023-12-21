@@ -152,3 +152,5 @@ void ActionThread::slotThreadFinished()
 }
 
 } // namespace Digikam
+
+#include "moc_actionthread.cpp"

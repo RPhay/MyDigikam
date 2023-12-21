@@ -59,3 +59,5 @@ void DActiveLabel::updateData(const QUrl& url, const QImage& img)
 }
 
 } // namespace Digikam
+
+#include "moc_dactivelabel.cpp"

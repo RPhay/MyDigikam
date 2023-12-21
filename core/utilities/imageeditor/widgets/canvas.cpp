@@ -703,3 +703,5 @@ void Canvas::dropEvent(QDropEvent* e)
 }
 
 } // namespace Digikam
+
+#include "moc_canvas.cpp"

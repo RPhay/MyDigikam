@@ -167,3 +167,5 @@ bool FilmGrain::toolOperations()
 }
 
 } // namespace DigikamBqmFilmGrainPlugin
+
+#include "moc_filmgrain.cpp"

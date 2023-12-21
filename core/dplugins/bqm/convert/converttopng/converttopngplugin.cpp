@@ -101,3 +101,5 @@ void ConvertToPngPlugin::setup(QObject* const parent)
 }
 
 } // namespace DigikamBqmConvertToPngPlugin
+
+#include "moc_converttopngplugin.cpp"

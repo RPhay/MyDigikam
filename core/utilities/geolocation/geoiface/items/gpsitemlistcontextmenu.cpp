@@ -843,3 +843,5 @@ void GPSItemListContextMenu::slotAltitudeLookupCancel()
 }
 
 } // namespace Digikam
+
+#include "moc_gpsitemlistcontextmenu.cpp"

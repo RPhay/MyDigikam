@@ -1134,3 +1134,5 @@ void AudioOutput::onCallback()
 }
 
 } // namespace QtAV
+
+#include "moc_AudioOutput.cpp"

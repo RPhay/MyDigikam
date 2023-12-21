@@ -157,3 +157,5 @@ void SearchSideBarWidget::newAdvancedSearch()
 }
 
 } // namespace Digikam
+
+#include "moc_searchsidebarwidget.cpp"
