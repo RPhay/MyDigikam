@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2020-2022 Gilles Caulier <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2020-2023 Gilles Caulier <caulier dot gilles at gmail dot com>
 # SPDX-License-Identifier: CC0-1.0
 #
 # See targets available at https://invent.kde.org/sysadmin/ci-utilities/-/tree/master/gitlab-templates
@@ -6,12 +6,24 @@
 include:
   - project: sysadmin/ci-utilities
     file:
+      #
+      # --- Continuous Integration Qt5 ---
+      #
       - /gitlab-templates/linux.yml
       # - /gitlab-templates/freebsd.yml
       # - /gitlab-templates/windows.yml
-      # FIXME: opencv is missing on Linux Qt6 docker
-      #  - /gitlab-templates/linux-qt6.yml
-      # QtWebEngine is not available under Android -> port digiKam to QtWebView (https://doc.qt.io/qt-5/qtwebview-index.html)
-      #  - /gitlab-templates/android.yml
+      #
+      # --- Continuous Integration Qt6 ---
+      #
+      # - /gitlab-templates/linux-qt6.yml                   FIXME: opencv is missing on Linux Qt6 docker
       # - /gitlab-templates/craft-windows-x86-64.yml
+      #
+      # --- Continuous Deployement Qt5 ---
+      #
+      - /gitlab-templates/flatpak.yml
+      - /gitlab-templates/craft-appimage.yml
+      #
       # - /gitlab-templates/craft-windows-appx-qt5.yml
+      #
+      # --- Continuous Deployement Qt6 ---
+      #
