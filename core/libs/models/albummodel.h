@@ -41,6 +41,10 @@ public:
 
     PAlbum* albumForIndex(const QModelIndex& index) const;
 
+private Q_SLOTS:
+
+    void slotUpdateTrashCounters();
+
 protected:
 
     QVariant albumData(Album* a, int role)          const override;

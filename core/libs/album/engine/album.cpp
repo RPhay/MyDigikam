@@ -16,10 +16,6 @@
 
 #include "album.h"
 
-// Qt includes
-
-#include <QDir>
-
 // KDE includes
 
 #include <klocalizedstring.h>
