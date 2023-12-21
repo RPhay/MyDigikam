@@ -584,12 +584,12 @@ set(marblewidget_SRCS
     plugins/AbstractDataPluginItem.cpp
     plugins/AbstractDataPluginModel.cpp
     plugins/ParseRunnerPlugin.cpp
-    plugins/PlacemarkPositionProviderPlugin.cpp
+#    plugins/PlacemarkPositionProviderPlugin.cpp
     plugins/PluginInterface.cpp
     plugins/PluginItemDelegate.cpp
     plugins/PluginManager.cpp
-    plugins/PositionProviderPlugin.cpp
-    plugins/PositionProviderPluginInterface.cpp
+#    plugins/PositionProviderPlugin.cpp
+#    plugins/PositionProviderPluginInterface.cpp
     plugins/MarblePluginSettingsWidget.cpp
     plugins/RenderPlugin.cpp
     plugins/RenderPluginInterface.cpp

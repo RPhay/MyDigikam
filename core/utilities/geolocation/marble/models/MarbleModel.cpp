@@ -47,7 +47,6 @@
 #include "MarbleDirs.h"
 #include "FileManager.h"
 #include "GeoDataTreeModel.h"
-#include "PlacemarkPositionProviderPlugin.h"
 #include "Planet.h"
 #include "PlanetFactory.h"
 #include "PluginManager.h"
@@ -170,8 +169,6 @@ MarbleModel::MarbleModel( QObject *parent )
 
     connect(&d->m_clock,   SIGNAL(timeChanged()),
             &d->m_sunLocator, SLOT(update()) );
-
-    d->m_pluginManager.addPositionProviderPlugin(new PlacemarkPositionProviderPlugin(this, this));
 }
 
 MarbleModel::~MarbleModel()

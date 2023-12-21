@@ -16,7 +16,6 @@
 // Local dir
 #include "MarbleDirs.h"
 #include "RenderPlugin.h"
-#include "PositionProviderPlugin.h"
 #include "ParseRunnerPlugin.h"
 #include "ReverseGeocodingRunnerPlugin.h"
 #include "SearchRunnerPlugin.h"
@@ -42,7 +41,6 @@ class PluginManagerPrivate
 
     bool m_pluginsLoaded;
     QList<const RenderPlugin *> m_renderPluginTemplates;
-    QList<const PositionProviderPlugin *> m_positionProviderPluginTemplates;
     QList<const SearchRunnerPlugin *> m_searchRunnerPlugins;
     QList<const ReverseGeocodingRunnerPlugin *> m_reverseGeocodingRunnerPlugins;
     QList<const ParseRunnerPlugin *> m_parsingRunnerPlugins;
@@ -88,19 +86,6 @@ void PluginManager::addRenderPlugin( const RenderPlugin *plugin )
     d->loadPlugins();
     d->m_renderPluginTemplates << plugin;
     Q_EMIT renderPluginsChanged();
-}
-
-QList<const PositionProviderPlugin *> PluginManager::positionProviderPlugins() const
-{
-    d->loadPlugins();
-    return d->m_positionProviderPluginTemplates;
-}
-
-void PluginManager::addPositionProviderPlugin( const PositionProviderPlugin *plugin )
-{
-    d->loadPlugins();
-    d->m_positionProviderPluginTemplates << plugin;
-    Q_EMIT positionProviderPluginsChanged();
 }
 
 QList<const SearchRunnerPlugin *> PluginManager::searchRunnerPlugins() const
@@ -193,8 +178,6 @@ bool PluginManagerPrivate::addPlugin(QObject *obj, const QPluginLoader *loader)
 {
     bool isPlugin = appendPlugin<RenderPluginInterface>
                 ( obj, loader, m_renderPluginTemplates );
-    isPlugin = isPlugin || appendPlugin<PositionProviderPluginInterface>
-                ( obj, loader, m_positionProviderPluginTemplates );
     isPlugin = isPlugin || appendPlugin<SearchRunnerPlugin>
                 ( obj, loader, m_searchRunnerPlugins );
     isPlugin = isPlugin || appendPlugin<ReverseGeocodingRunnerPlugin>
@@ -225,7 +208,6 @@ void PluginManagerPrivate::loadPlugins()
     MarbleDirs::debug();
 
     Q_ASSERT( m_renderPluginTemplates.isEmpty() );
-    Q_ASSERT( m_positionProviderPluginTemplates.isEmpty() );
     Q_ASSERT( m_searchRunnerPlugins.isEmpty() );
     Q_ASSERT( m_reverseGeocodingRunnerPlugins.isEmpty() );
     Q_ASSERT( m_parsingRunnerPlugins.isEmpty() );
