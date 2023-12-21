@@ -51,7 +51,6 @@
 #include "tagdragdrop.h"
 #include "tagmodificationhelper.h"
 #include "coredb.h"
-#include "dio.h"
 
 namespace Digikam
 {

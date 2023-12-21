@@ -399,7 +399,7 @@ PAlbum::PAlbum(const QString& parentPath, int albumRoot)
     : Album             (Album::PHYSICAL, m_uniqueTrashId--, false),
       m_isAlbumRootAlbum(false),
       m_albumRootId     (albumRoot),
-      m_path            (QLatin1String("Trash")),
+      m_path            (DTrash::TRASH_FOLDER),
       m_parentPath      (parentPath + QLatin1Char('/')),
       m_iconId          (0)
 {
