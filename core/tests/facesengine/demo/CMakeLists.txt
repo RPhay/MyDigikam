@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -18,7 +18,7 @@ set(facesenginedemo_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demofaceengine.cpp
                              ${CMAKE_CURRENT_SOURCE_DIR}/demofancyrect.cpp
 )
 
-ki18n_wrap_ui(facesenginedemo_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demomainwindow.ui)
+qt_wrap_ui(facesenginedemo_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demomainwindow.ui)
 add_executable(facesenginedemo_gui ${facesenginedemo_gui_SRCS})
 
 target_link_libraries(facesenginedemo_gui
