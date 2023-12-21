@@ -652,8 +652,8 @@ set (marblewidget_UI
     osm/OsmRelationManagerWidget.ui
 
     settings/MarblePluginSettingsWidget.ui
-    settings/MarbleProxySettingsWidget.ui
     settings/MarbleViewSettingsWidget.ui
+    settings/ProxySettingsWidget.ui
 
     storage/LatLonBoxWidget.ui
 

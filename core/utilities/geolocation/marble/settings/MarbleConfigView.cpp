@@ -30,8 +30,9 @@
 #include "RenderPluginModel.h"
 #include "MarbleClock.h"
 #include "MarblePluginSettingsWidget.h"
-#include "ui_MarbleProxySettingsWidget.h"
 #include "ui_MarbleViewSettingsWidget.h"
+
+#include "ui_ProxySettingsWidget.h"
 
 #include "digikam_debug.h"
 
@@ -52,7 +53,7 @@ public:
     }
 
     Ui::MarbleViewSettingsWidget       ui_viewSettings;
-    Ui::MarbleProxySettingsWidget      ui_proxySettings;
+    Ui::ProxySettingsWidget            ui_proxySettings;
     MarblePluginSettingsWidget*        w_pluginSettings = nullptr;
 
     QSettings                          m_settings;
@@ -76,20 +77,18 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     d->ui_viewSettings.setupUi( w_viewSettings );
     addTab( w_viewSettings, i18n( "View" ) );
 
+    connect( d->ui_viewSettings.button_clearVolatileCache,
+             SIGNAL(clicked()), SIGNAL(clearVolatileCacheClicked()) );
+
+    connect( d->ui_viewSettings.button_clearPersistentCache,
+             SIGNAL(clicked()), SIGNAL(clearPersistentCacheClicked()) );
+
     // proxy page
 
     QWidget* const w_proxySettings = new QWidget( this );
 
     d->ui_proxySettings.setupUi( w_proxySettings );
     addTab( w_proxySettings, i18n( "Proxy" ) );
-
-    // Forwarding clear button signals
-
-    connect( d->ui_proxySettings.button_clearVolatileCache,
-             SIGNAL(clicked()), SIGNAL(clearVolatileCacheClicked()) );
-
-    connect( d->ui_proxySettings.button_clearPersistentCache,
-             SIGNAL(clicked()), SIGNAL(clearPersistentCacheClicked()) );
 
     // plugin page
 
@@ -171,11 +170,11 @@ void MarbleConfigView::readSettings()
     d->ui_viewSettings.kcfg_mapFont->setCurrentFont( mapFont() );
     d->ui_viewSettings.kcfg_inertialEarthRotation->setChecked( inertialEarthRotation() );
     d->ui_viewSettings.kcfg_mouseViewRotation->setChecked( mouseViewRotation() );
+    d->ui_viewSettings.kcfg_volatileTileCacheLimit->setValue( volatileTileCacheLimit() );
+    d->ui_viewSettings.kcfg_persistentTileCacheLimit->setValue( persistentTileCacheLimit() );
 
     // Proxy
 
-    d->ui_proxySettings.kcfg_volatileTileCacheLimit->setValue( volatileTileCacheLimit() );
-    d->ui_proxySettings.kcfg_persistentTileCacheLimit->setValue( persistentTileCacheLimit() );
     d->ui_proxySettings.kcfg_proxyUrl->setText( proxyUrl() );
     d->ui_proxySettings.kcfg_proxyPort->setValue( proxyPort() );
     d->ui_proxySettings.kcfg_proxyUser->setText( proxyUser() );
