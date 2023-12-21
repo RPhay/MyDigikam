@@ -653,7 +653,7 @@ set (marblewidget_UI
 
     settings/MarblePluginSettingsWidget.ui
     settings/MarbleViewSettingsWidget.ui
-    settings/ProxySettingsWidget.ui
+    settings/proxysettingswidget.ui
 
     storage/LatLonBoxWidget.ui
 

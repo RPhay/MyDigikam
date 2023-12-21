@@ -32,7 +32,7 @@
 #include "MarblePluginSettingsWidget.h"
 #include "ui_MarbleViewSettingsWidget.h"
 
-#include "ui_ProxySettingsWidget.h"
+#include "ui_proxysettingswidget.h"
 
 #include "digikam_debug.h"
 
