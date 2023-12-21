@@ -421,9 +421,9 @@ bool MetaEngine::applyChanges(bool setVersion) const
 
 bool MetaEngine::exportChanges(const QString& exvTmpFile) const
 {
-    if (d->filePath.isEmpty())
+    if (exvTmpFile.isEmpty())
     {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "Failed to export changes: file path is empty!";
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Failed to export changes: temp path is empty!";
         return false;
     }
 
