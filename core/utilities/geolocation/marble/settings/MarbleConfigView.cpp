@@ -5,7 +5,7 @@
 //
 
 // Own
-#include "QtMarbleConfigDialog.h"
+#include "MarbleConfigView.h"
 
 #include "ui_MarbleCacheSettingsWidget.h"
 #include "ui_MarbleViewSettingsWidget.h"
@@ -37,12 +37,12 @@
 namespace Marble
 {
 
-class QtMarbleConfigDialogPrivate
+class MarbleConfigViewPrivate
 {
 
 public:
 
-    QtMarbleConfigDialogPrivate(MarbleWidget* const marbleWidget)
+    MarbleConfigViewPrivate(MarbleWidget* const marbleWidget)
         : ui_viewSettings      (),
           ui_cacheSettings     (),
           m_marbleWidget       (marbleWidget),
@@ -63,49 +63,24 @@ public:
     QHash<int, int>                    m_timezone;
 };
 
-QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget* const marbleWidget,
-                                           QWidget* const parent)
-    : QDialog(parent),
-      d(new QtMarbleConfigDialogPrivate(marbleWidget))
+MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
+                                   QWidget* const parent)
+    : QTabWidget(parent),
+      d      (new MarbleConfigViewPrivate(marbleWidget))
 {
-    QTabWidget* tabWidget     = new QTabWidget( this );
-    QDialogButtonBox* buttons =
-    new QDialogButtonBox(QDialogButtonBox::Ok    |
-                         QDialogButtonBox::Apply |
-                         QDialogButtonBox::Cancel,
-                         Qt::Horizontal,
-                         this);
-
-    // Connect the signals of the ButtonBox
-    // to the corresponding slots of the dialog.
-
-    connect( buttons, SIGNAL(accepted()),
-             this, SLOT(accept()) );                                // Ok
-
-    connect( buttons, SIGNAL(rejected()),
-             this, SLOT(reject()) );                                // Cancel
-
-    connect( buttons->button( QDialogButtonBox::Apply ), SIGNAL(clicked()),
-             this, SLOT(writeSettings()) );                         // Apply
-
-    // If the dialog is accepted. Save the settings.
-
-    connect( this, SIGNAL(accepted()),
-             this, SLOT(writeSettings()) );
-
     // view page
 
     QWidget* w_viewSettings = new QWidget( this );
 
     d->ui_viewSettings.setupUi( w_viewSettings );
-    tabWidget->addTab( w_viewSettings, i18n( "View" ) );
+    addTab( w_viewSettings, i18n( "View" ) );
 
     // cache page
 
     QWidget* w_cacheSettings = new QWidget( this );
 
     d->ui_cacheSettings.setupUi( w_cacheSettings );
-    tabWidget->addTab( w_cacheSettings, i18n( "Cache and Proxy" ) );
+    addTab( w_cacheSettings, i18n( "Cache and Proxy" ) );
 
     // Forwarding clear button signals
 
@@ -121,7 +96,7 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget* const marbleWidget,
     d->w_pluginSettings = new MarblePluginSettingsWidget( this );
     d->w_pluginSettings->setModel( &d->m_pluginModel );
     d->w_pluginSettings->setObjectName( QLatin1String("plugin_page") );
-    tabWidget->addTab( d->w_pluginSettings, i18n( "Plugins" ) );
+    addTab( d->w_pluginSettings, i18n( "Plugins" ) );
 
     // Setting the icons for the plugin dialog.
 
@@ -133,26 +108,18 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget* const marbleWidget,
     connect( this, SIGNAL(accepted()),
              &d->m_pluginModel, SLOT(applyPluginState()) );
 
-    // Layout
-
-    QVBoxLayout* layout = new QVBoxLayout( this );
-    layout->addWidget( tabWidget );
-    layout->addWidget( buttons );
-
-    this->setLayout( layout );
-
     // When the settings have been changed, write to disk.
 
     connect( this, SIGNAL(settingsChanged()),
              this, SLOT(syncSettings()) );
 }
 
-QtMarbleConfigDialog::~QtMarbleConfigDialog()
+MarbleConfigView::~MarbleConfigView()
 {
     delete d;
 }
 
-void QtMarbleConfigDialog::syncSettings()
+void MarbleConfigView::syncSettings()
 {
     d->m_settings.sync();
 
@@ -193,7 +160,7 @@ void QtMarbleConfigDialog::syncSettings()
     QNetworkProxy::setApplicationProxy(proxy);
 }
 
-void QtMarbleConfigDialog::readSettings()
+void MarbleConfigView::readSettings()
 {
     // Sync settings to make sure that we read the current settings.
 
@@ -229,7 +196,7 @@ void QtMarbleConfigDialog::readSettings()
     Q_EMIT settingsChanged();
 }
 
-void QtMarbleConfigDialog::writeSettings()
+void MarbleConfigView::writeSettings()
 {
     syncSettings();
 
@@ -270,7 +237,7 @@ void QtMarbleConfigDialog::writeSettings()
     Q_EMIT settingsChanged();
 }
 
-MarbleLocale::MeasurementSystem QtMarbleConfigDialog::measurementSystem() const
+MarbleLocale::MeasurementSystem MarbleConfigView::measurementSystem() const
 {
     if ( d->m_settings.contains( QString::fromUtf8("View/distanceUnit") ) )
     {
@@ -282,12 +249,12 @@ MarbleLocale::MeasurementSystem QtMarbleConfigDialog::measurementSystem() const
     return locale->measurementSystem();
 }
 
-Marble::AngleUnit QtMarbleConfigDialog::angleUnit() const
+Marble::AngleUnit MarbleConfigView::angleUnit() const
 {
     return (Marble::AngleUnit) d->m_settings.value( QLatin1String("View/angleUnit"), Marble::DMSDegree ).toInt();
 }
 
-void QtMarbleConfigDialog::setAngleUnit(Marble::AngleUnit unit)
+void MarbleConfigView::setAngleUnit(Marble::AngleUnit unit)
 {
     d->m_settings.setValue( QLatin1String("View/angleUnit"), (int)unit );
     d->ui_viewSettings.kcfg_angleUnit->setCurrentIndex( angleUnit() );
@@ -295,75 +262,75 @@ void QtMarbleConfigDialog::setAngleUnit(Marble::AngleUnit unit)
     Q_EMIT settingsChanged();
 }
 
-Marble::MapQuality QtMarbleConfigDialog::stillQuality() const
+Marble::MapQuality MarbleConfigView::stillQuality() const
 {
     return (Marble::MapQuality) d->m_settings.value( QLatin1String("View/stillQuality"),
                                 Marble::HighQuality ).toInt();
 }
 
-Marble::MapQuality QtMarbleConfigDialog::animationQuality() const
+Marble::MapQuality MarbleConfigView::animationQuality() const
 {
     return (Marble::MapQuality) d->m_settings.value( QLatin1String("View/animationQuality"),
                                 Marble::LowQuality ).toInt();
 }
 
-QFont QtMarbleConfigDialog::mapFont() const
+QFont MarbleConfigView::mapFont() const
 {
     return d->m_settings.value( QLatin1String("View/mapFont"), QApplication::font() ).value<QFont>();
 }
 
-bool QtMarbleConfigDialog::inertialEarthRotation() const
+bool MarbleConfigView::inertialEarthRotation() const
 {
     return d->m_settings.value( QLatin1String("Navigation/inertialEarthRotation"), true ).toBool();
 }
 
-bool QtMarbleConfigDialog::mouseViewRotation() const
+bool MarbleConfigView::mouseViewRotation() const
 {
     return d->m_settings.value( QLatin1String("Navigation/mouseViewRotation"), true ).toBool();
 }
 
-int QtMarbleConfigDialog::volatileTileCacheLimit() const
+int MarbleConfigView::volatileTileCacheLimit() const
 {
     int defaultValue = (MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen) ? 6 : 100;
 
     return d->m_settings.value( QLatin1String("Cache/volatileTileCacheLimit"), defaultValue ).toInt();
 }
 
-int QtMarbleConfigDialog::persistentTileCacheLimit() const
+int MarbleConfigView::persistentTileCacheLimit() const
 {
     return d->m_settings.value( QLatin1String("Cache/persistentTileCacheLimit"), 0 ).toInt(); // default to unlimited
 }
 
-QString QtMarbleConfigDialog::proxyUrl() const
+QString MarbleConfigView::proxyUrl() const
 {
     return d->m_settings.value( QLatin1String("Cache/proxyUrl"), QString::fromUtf8("") ).toString();
 }
 
-int QtMarbleConfigDialog::proxyPort() const
+int MarbleConfigView::proxyPort() const
 {
     return d->m_settings.value( QLatin1String("Cache/proxyPort"), 8080 ).toInt();
 }
 
-QString QtMarbleConfigDialog::proxyUser() const
+QString MarbleConfigView::proxyUser() const
 {
     return d->m_settings.value( QLatin1String("Cache/proxyUser"), QString::fromUtf8("") ).toString();
 }
 
-QString QtMarbleConfigDialog::proxyPass() const
+QString MarbleConfigView::proxyPass() const
 {
     return d->m_settings.value( QLatin1String("Cache/proxyPass"), QString::fromUtf8("") ).toString();
 }
 
-bool QtMarbleConfigDialog::proxyType() const
+bool MarbleConfigView::proxyType() const
 {
     return d->m_settings.value( QLatin1String("Cache/proxyType"), Marble::HttpProxy ).toInt();
 }
 
-bool QtMarbleConfigDialog::proxyAuth() const
+bool MarbleConfigView::proxyAuth() const
 {
     return d->m_settings.value( QLatin1String("Cache/proxyAuth"), false ).toBool();
 }
 
-}
+} // namespace Marble
 
-#include "moc_QtMarbleConfigDialog.cpp"
+#include "moc_MarbleConfigView.cpp"

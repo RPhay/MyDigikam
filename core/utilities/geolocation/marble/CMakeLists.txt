@@ -612,7 +612,7 @@ set(marblewidget_SRCS
     runners/SearchRunner.cpp
     runners/SearchRunnerManager.cpp
 
-    settings/QtMarbleConfigDialog.cpp
+    settings/MarbleConfigView.cpp
     settings/MarblePluginSettingsWidget.cpp
 
     storage/CacheStoragePolicy.cpp

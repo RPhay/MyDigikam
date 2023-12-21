@@ -3,10 +3,10 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_QTMARBLECONFIGDIALOG_H
-#define MARBLE_QTMARBLECONFIGDIALOG_H
+#ifndef DIGIKAM_MARBLE_CONFIG_VIEW_H
+#define DIGIKAM_MARBLE_CONFIG_VIEW_H
 
-#include <QDialog>
+#include <QTabWidget>
 
 #include "MarbleGlobal.h"
 #include "MarbleLocale.h"
@@ -18,17 +18,17 @@ namespace Marble
 
 class MarbleWidget;
 
-class QtMarbleConfigDialogPrivate;
+class MarbleConfigViewPrivate;
 
-class DIGIKAM_EXPORT QtMarbleConfigDialog : public QDialog
+class DIGIKAM_EXPORT MarbleConfigView : public QTabWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit QtMarbleConfigDialog(MarbleWidget* const marbleWidget,
-                                  QWidget* const parent = nullptr );
-    ~QtMarbleConfigDialog() override;
+    explicit MarbleConfigView(MarbleWidget* const marbleWidget,
+                              QWidget* const parent = nullptr );
+    ~MarbleConfigView() override;
 
     // View Settings
 
@@ -92,11 +92,11 @@ private Q_SLOTS:
 
 private:
 
-    Q_DISABLE_COPY( QtMarbleConfigDialog )
+    Q_DISABLE_COPY( MarbleConfigView )
 
-    QtMarbleConfigDialogPrivate * const d;
+    MarbleConfigViewPrivate * const d;
 };
 
-} // Marble namespace
+} // namespace Marble
 
-#endif
+#endif // DIGIKAM_MARBLE_CONFIG_VIEW_H
