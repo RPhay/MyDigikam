@@ -33,36 +33,30 @@ public:
     // View Settings
 
     MarbleLocale::MeasurementSystem measurementSystem() const;
-    Marble::AngleUnit angleUnit() const;
+    Marble::AngleUnit angleUnit()                       const;
     void setAngleUnit(Marble::AngleUnit unit);
-    Marble::MapQuality stillQuality() const;
-    Marble::MapQuality animationQuality() const;
-    QFont mapFont() const;
-
-    // Navigation Settings
-
-    int onStartup() const;
-    bool animateTargetVoyage() const;
-    QString externalMapEditor() const;
-    bool inertialEarthRotation() const;
-    bool mouseViewRotation() const;
+    Marble::MapQuality stillQuality()                   const;
+    Marble::MapQuality animationQuality()               const;
+    QFont mapFont()                                     const;
+    bool inertialEarthRotation()                        const;
+    bool mouseViewRotation()                            const;
 
     // Cache Settings
 
-    int volatileTileCacheLimit() const;
-    int persistentTileCacheLimit() const;
-    QString proxyUrl() const;
-    int proxyPort() const;
+    int volatileTileCacheLimit()                        const;
+    int persistentTileCacheLimit()                      const;
+    QString proxyUrl()                                  const;
+    int proxyPort()                                     const;
 
-    QString proxyUser() const;
-    QString proxyPass() const;
-    bool proxyType() const;
-    bool proxyAuth() const;
+    QString proxyUser()                                 const;
+    QString proxyPass()                                 const;
+    bool proxyType()                                    const;
+    bool proxyAuth()                                    const;
 
 Q_SIGNALS:
 
     /**
-     * This signal is Q_EMITted when the loaded settings were changed.
+     * This signal is emitted when the loaded settings were changed.
      * Either by the user or by loading them initially from disk.
      */
     void settingsChanged();

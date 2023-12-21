@@ -587,7 +587,6 @@ set(marblewidget_SRCS
     plugins/PluginInterface.cpp
     plugins/PluginItemDelegate.cpp
     plugins/PluginManager.cpp
-    plugins/MarblePluginSettingsWidget.cpp
     plugins/RenderPlugin.cpp
     plugins/RenderPluginInterface.cpp
     plugins/RenderPluginModel.cpp
@@ -614,6 +613,7 @@ set(marblewidget_SRCS
     runners/SearchRunnerManager.cpp
 
     settings/QtMarbleConfigDialog.cpp
+    settings/MarblePluginSettingsWidget.cpp
 
     storage/CacheStoragePolicy.cpp
     storage/DiscCache.cpp
@@ -651,10 +651,8 @@ set (marblewidget_UI
     osm/OsmTagEditorWidget.ui
     osm/OsmRelationManagerWidget.ui
 
-    plugins/MarblePluginSettingsWidget.ui
-
     settings/MarbleCacheSettingsWidget.ui
-    settings/MarbleNavigationSettingsWidget.ui
+    settings/MarblePluginSettingsWidget.ui
     settings/MarbleViewSettingsWidget.ui
 
     storage/LatLonBoxWidget.ui

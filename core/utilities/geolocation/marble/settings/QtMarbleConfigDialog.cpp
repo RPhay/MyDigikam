@@ -9,7 +9,6 @@
 
 #include "ui_MarbleCacheSettingsWidget.h"
 #include "ui_MarbleViewSettingsWidget.h"
-#include "ui_MarbleNavigationSettingsWidget.h"
 
 // Qt
 #include <QSettings>
@@ -45,7 +44,6 @@ public:
 
     QtMarbleConfigDialogPrivate(MarbleWidget* const marbleWidget)
         : ui_viewSettings      (),
-          ui_navigationSettings(),
           ui_cacheSettings     (),
           m_marbleWidget       (marbleWidget),
           m_pluginModel        ()
@@ -53,7 +51,6 @@ public:
     }
 
     Ui::MarbleViewSettingsWidget       ui_viewSettings;
-    Ui::MarbleNavigationSettingsWidget ui_navigationSettings;
     Ui::MarbleCacheSettingsWidget      ui_cacheSettings;
     MarblePluginSettingsWidget*        w_pluginSettings = nullptr;
 
@@ -83,7 +80,7 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget* const marbleWidget,
     // to the corresponding slots of the dialog.
 
     connect( buttons, SIGNAL(accepted()),
-             this, SLOT(accept()) );                                   // Ok
+             this, SLOT(accept()) );                                // Ok
 
     connect( buttons, SIGNAL(rejected()),
              this, SLOT(reject()) );                                // Cancel
@@ -102,13 +99,6 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget* const marbleWidget,
 
     d->ui_viewSettings.setupUi( w_viewSettings );
     tabWidget->addTab( w_viewSettings, i18n( "View" ) );
-
-    // navigation page
-
-    QWidget* w_navigationSettings = new QWidget( this );
-
-    d->ui_navigationSettings.setupUi( w_navigationSettings );
-    tabWidget->addTab( w_navigationSettings, i18n( "Navigation" ) );
 
     // cache page
 
@@ -216,29 +206,8 @@ void QtMarbleConfigDialog::readSettings()
     d->ui_viewSettings.kcfg_stillQuality->setCurrentIndex( stillQuality() );
     d->ui_viewSettings.kcfg_animationQuality->setCurrentIndex( animationQuality() );
     d->ui_viewSettings.kcfg_mapFont->setCurrentFont( mapFont() );
-
-    // Navigation
-
-    d->ui_navigationSettings.kcfg_onStartup->setCurrentIndex( onStartup() );
-    d->ui_navigationSettings.kcfg_inertialEarthRotation->setChecked( inertialEarthRotation() );
-    d->ui_navigationSettings.kcfg_mouseViewRotation->setChecked( mouseViewRotation() );
-    d->ui_navigationSettings.kcfg_animateTargetVoyage->setChecked( animateTargetVoyage() );
-    int editorIndex = 0;
-
-    if (externalMapEditor() == QLatin1String("potlatch"))
-    {
-        editorIndex = 1;
-    }
-    else if (externalMapEditor() == QLatin1String("josm"))
-    {
-        editorIndex = 2;
-    }
-    else if (externalMapEditor() == QLatin1String("merkaartor"))
-    {
-        editorIndex = 3;
-    }
-
-    d->ui_navigationSettings.kcfg_externalMapEditor->setCurrentIndex( editorIndex );
+    d->ui_viewSettings.kcfg_inertialEarthRotation->setChecked( inertialEarthRotation() );
+    d->ui_viewSettings.kcfg_mouseViewRotation->setChecked( mouseViewRotation() );
 
     // Cache
 
@@ -270,35 +239,8 @@ void QtMarbleConfigDialog::writeSettings()
     d->m_settings.setValue( QLatin1String("stillQuality"), d->ui_viewSettings.kcfg_stillQuality->currentIndex() );
     d->m_settings.setValue( QLatin1String("animationQuality"), d->ui_viewSettings.kcfg_animationQuality->currentIndex() );
     d->m_settings.setValue( QLatin1String("mapFont"), d->ui_viewSettings.kcfg_mapFont->currentFont() );
-    d->m_settings.endGroup();
-
-    d->m_settings.beginGroup( QLatin1String("Navigation") );
-    d->m_settings.setValue( QLatin1String("onStartup"), d->ui_navigationSettings.kcfg_onStartup->currentIndex() );
-    d->m_settings.setValue( QLatin1String("inertialEarthRotation"), d->ui_navigationSettings.kcfg_inertialEarthRotation->isChecked() );
-    d->m_settings.setValue( QLatin1String("mouseViewRotation"), d->ui_navigationSettings.kcfg_mouseViewRotation->isChecked() );
-    d->m_settings.setValue( QLatin1String("animateTargetVoyage"), d->ui_navigationSettings.kcfg_animateTargetVoyage->isChecked() );
-
-    if      ( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 0 )
-    {
-        d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("") );
-    }
-    else if ( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 1 )
-    {
-        d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("potlatch") );
-    }
-    else if ( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 2 )
-    {
-        d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("josm") );
-    }
-    else if ( d->ui_navigationSettings.kcfg_externalMapEditor->currentIndex() == 3 )
-    {
-        d->m_settings.setValue( QLatin1String("externalMapEditor"), QString::fromUtf8("merkaartor") );
-    }
-    else
-    {
-        Q_ASSERT( false && "Unexpected index of the external editor setting" );
-    }
-
+    d->m_settings.setValue( QLatin1String("inertialEarthRotation"), d->ui_viewSettings.kcfg_inertialEarthRotation->isChecked() );
+    d->m_settings.setValue( QLatin1String("mouseViewRotation"), d->ui_viewSettings.kcfg_mouseViewRotation->isChecked() );
     d->m_settings.endGroup();
 
     d->m_settings.beginGroup( QLatin1String("Cache") );
@@ -368,26 +310,6 @@ Marble::MapQuality QtMarbleConfigDialog::animationQuality() const
 QFont QtMarbleConfigDialog::mapFont() const
 {
     return d->m_settings.value( QLatin1String("View/mapFont"), QApplication::font() ).value<QFont>();
-}
-
-int QtMarbleConfigDialog::onStartup() const
-{
-    bool smallScreen = MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen;
-    int defaultValue = smallScreen ? Marble::LastLocationVisited : Marble::ShowHomeLocation;
-
-    return d->m_settings.value( QLatin1String("Navigation/onStartup"), defaultValue ).toInt();
-}
-
-QString QtMarbleConfigDialog::externalMapEditor() const
-{
-    return d->m_settings.value( QLatin1String("Navigation/externalMapEditor"), QString::fromUtf8("") ).toString();
-}
-
-bool QtMarbleConfigDialog::animateTargetVoyage() const
-{
-    const bool smallScreen = MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen;
-
-    return d->m_settings.value( QLatin1String("Navigation/animateTargetVoyage"), smallScreen ).toBool();
 }
 
 bool QtMarbleConfigDialog::inertialEarthRotation() const
