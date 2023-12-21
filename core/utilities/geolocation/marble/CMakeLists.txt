@@ -568,7 +568,6 @@ set(marblewidget_SRCS
     models/MapThemeSortFilterProxyModel.cpp
     models/MarbleModel.cpp
     models/MarblePlacemarkModel.cpp
-    models/PositionTracking.cpp
     models/TreeViewDecoratorModel.cpp
 
     osm/MarbleZip.cpp

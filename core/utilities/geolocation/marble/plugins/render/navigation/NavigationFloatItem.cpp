@@ -19,7 +19,6 @@
 #include "ViewportParams.h"
 #include "MarbleWidget.h"
 #include "MarbleModel.h"
-#include "PositionTracking.h"
 #include "WidgetGraphicsItem.h"
 #include "MarbleGraphicsGridLayout.h"
 
@@ -310,9 +309,6 @@ void NavigationFloatItem::activateHomeButton()
 
 void NavigationFloatItem::centerOnCurrentLocation()
 {
-    if ( m_marbleWidget->model()->positionTracking()->currentLocation().isValid() ) {
-        m_marbleWidget->centerOn( m_marbleWidget->model()->positionTracking()->currentLocation(), true );
-    }
 }
 
 QHash<QString,QVariant> NavigationFloatItem::settings() const

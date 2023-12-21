@@ -43,7 +43,6 @@
 #include "MarbleClock.h"
 #include "FileStoragePolicy.h"
 #include "FileStorageWatcher.h"
-#include "PositionTracking.h"
 #include "HttpDownloadManager.h"
 #include "MarbleDirs.h"
 #include "FileManager.h"
@@ -83,7 +82,6 @@ class MarbleModelPrivate
           m_placemarkProxyModel(),
           m_placemarkSelectionModel( nullptr ),
           m_fileManager( &m_treeModel, &m_pluginManager ),
-          m_positionTracking( &m_treeModel ),
           m_trackedPlacemark( nullptr ),
           m_legend( nullptr ),
           m_workOffline( false ),
@@ -147,9 +145,6 @@ class MarbleModelPrivate
     QItemSelectionModel      m_placemarkSelectionModel;
 
     FileManager              m_fileManager;
-
-    //Gps Stuff
-    PositionTracking         m_positionTracking;
 
     const GeoDataPlacemark  *m_trackedPlacemark;
 
@@ -481,11 +476,6 @@ const QAbstractItemModel *MarbleModel::groundOverlayModel() const
 QItemSelectionModel *MarbleModel::placemarkSelectionModel()
 {
     return &d->m_placemarkSelectionModel;
-}
-
-PositionTracking *MarbleModel::positionTracking() const
-{
-    return &d->m_positionTracking;
 }
 
 FileManager *MarbleModel::fileManager()

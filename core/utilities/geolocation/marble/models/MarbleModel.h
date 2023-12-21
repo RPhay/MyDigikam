@@ -12,7 +12,6 @@
 #ifndef MARBLE_MARBLEMODEL_H
 #define MARBLE_MARBLEMODEL_H
 
-
 /** @file
  * This file contains the headers for MarbleModel
  *
@@ -20,14 +19,12 @@
  * @author Inge Wallin  <inge@lysator.liu.se>
  */
 
-
-
-#include "digikam_export.h"
-
 #include <QObject>
 #include <QString>
 
 #include "MarbleGlobal.h"
+
+#include "digikam_export.h"
 
 class QItemSelectionModel;
 class QAbstractItemModel;
@@ -40,7 +37,6 @@ namespace Marble
 class GeoDataPlacemark;
 class GeoPainter;
 class MeasureTool;
-class PositionTracking;
 class HttpDownloadManager;
 class MarbleModelPrivate;
 class MarbleClock;
@@ -195,9 +191,7 @@ class DIGIKAM_EXPORT MarbleModel : public QObject
      */
     void removeGeoData( const QString& key );
 
-    FileManager       *fileManager();
-
-    PositionTracking   *positionTracking() const;
+    FileManager*          fileManager();
 
     qreal                 planetRadius()   const;
     QString               planetName()     const;
