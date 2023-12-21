@@ -795,8 +795,10 @@ void MainWindow::onBufferProgress(qreal percent)
     else
         s = QString::fromLatin1("%1B/s").arg(bs, 6, 'f', 1);
 
-    setWindowTitle(QString::fromUtf8("Buffering... %1% @%2 %3",
-                   QString::fromLatin1("%1").arg(percent*100.0, 5, 'f', 1), s, d->Title));
+    setWindowTitle(QString::fromUtf8("Buffering... %1% @%2 %3")
+                   .arg(QString::fromLatin1("%1").arg(percent*100.0, 5, 'f', 1))
+                   .arg(s)
+                   .arg(d->Title));
 }
 
 void MainWindow::onVideoEQEngineChanged()
@@ -902,9 +904,9 @@ void MainWindow::onCaptureConfigChanged()
         d->pPlayer->videoCapture()->setSaveFormat(AVPlayerConfigMngr::instance().captureFormat());
     }
 
-    d->pCaptureBtn->setToolTip(QString::fromUtf8("Capture video frame\nSave to: %1\nFormat: %2",
-                             d->pPlayer->videoCapture()->captureDir(),
-                             AVPlayerConfigMngr::instance().captureFormat()));
+    d->pCaptureBtn->setToolTip(QString::fromUtf8("Capture video frame\nSave to: %1\nFormat: %2")
+                               .arg(d->pPlayer->videoCapture()->captureDir())
+                               .arg(AVPlayerConfigMngr::instance().captureFormat()));
 }
 
 void MainWindow::onAVFilterVideoConfigChanged()
