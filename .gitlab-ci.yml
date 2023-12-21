@@ -10,12 +10,12 @@ include:
       # --- Continuous Integration Qt5 ---
       #
       - /gitlab-templates/linux.yml
-      - /gitlab-templates/windows.yml
+      # - /gitlab-templates/windows.yml
       # - /gitlab-templates/freebsd.yml
       #
       # --- Continuous Integration Qt6 ---
       #
-      # - /gitlab-templates/linux-qt6.yml                   FIXME: opencv is missing on Linux Qt6 docker
+      - /gitlab-templates/linux-qt6.yml
       # - /gitlab-templates/craft-windows-x86-64.yml
       #
       # --- Continuous Deployement Qt5 ---
