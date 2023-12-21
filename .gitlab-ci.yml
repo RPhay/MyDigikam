@@ -10,8 +10,8 @@ include:
       # --- Continuous Integration Qt5 ---
       #
       - /gitlab-templates/linux.yml
+      - /gitlab-templates/windows.yml
       # - /gitlab-templates/freebsd.yml
-      # - /gitlab-templates/windows.yml
       #
       # --- Continuous Integration Qt6 ---
       #
@@ -21,7 +21,7 @@ include:
       # --- Continuous Deployement Qt5 ---
       #
       - /gitlab-templates/flatpak.yml
-      - /gitlab-templates/craft-appimage.yml
+      # - /gitlab-templates/craft-appimage.yml
       #
       # - /gitlab-templates/craft-windows-appx-qt5.yml
       #
