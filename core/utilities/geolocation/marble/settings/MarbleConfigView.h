@@ -40,11 +40,11 @@ public:
     QFont mapFont()                                     const;
     bool inertialEarthRotation()                        const;
     bool mouseViewRotation()                            const;
-
-    // Cache Settings
-
     int volatileTileCacheLimit()                        const;
     int persistentTileCacheLimit()                      const;
+
+    // Proxy Settings
+
     QString proxyUrl()                                  const;
     int proxyPort()                                     const;
 
@@ -53,13 +53,9 @@ public:
     bool proxyType()                                    const;
     bool proxyAuth()                                    const;
 
-Q_SIGNALS:
+    void applySettings();
 
-    /**
-     * This signal is emitted when the loaded settings were changed.
-     * Either by the user or by loading them initially from disk.
-     */
-    void settingsChanged();
+Q_SIGNALS:
 
     /**
      * The user clicked on the button to clear volatile tile cache.
@@ -71,24 +67,9 @@ Q_SIGNALS:
      */
     void clearPersistentCacheClicked();
 
-public Q_SLOTS:
+private:
 
-    /**
-     * Read settings and update interface.
-     */
     void readSettings();
-
-    /**
-     * Write settings to disk.
-     */
-    void writeSettings();
-
-private Q_SLOTS:
-
-    /**
-     * Synchronize the loaded settings with the file on hard disk.
-     */
-    void syncSettings();
 
 private:
 
