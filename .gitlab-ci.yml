@@ -10,6 +10,7 @@ include:
       # --- CI Validators ---
 
       - /gitlab-templates/reuse-lint.yml
+      - /gitlab-templates/json-validation.yml
 
       # --- Continuous Integration Qt5 ---
 
