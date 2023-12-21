@@ -1,4 +1,4 @@
-COMMIT POLICY
+# COMMIT POLICY
 
 Everybody is welcome to committing small fixes and one-liners
 without prior notification to the maintainer, provided that the
@@ -18,11 +18,11 @@ commits with one "git push", git preserves your commit info.
 
 For the todo list, see bugzilla for details which is the complete story of the project.
 
-CODING STYLE
+# CODING STYLE
 
 See the coding style detailed at this [Doxygen page](https://www.digikam.org/api/index.html#codecontrib).
 
-DOCUMENTATION
+# DOCUMENTATION
 
 See The API documentation to generate with Doxygen. You will find all information about the dependencies,
 the configuration options, the rules to compile and install, and all pointers to contribute to the project as a developer.
@@ -32,3 +32,18 @@ directly from this folder or consult the Mainpage.dox file.
 
 [Online version](https://www.digikam.org/api/index.html)
 
+# LICENSING
+
+See the guideline of licenses policy:
+
+[SPDX](https://spdx.org/licenses/)
+[KDE](https://community.kde.org/Policies/Licensing_Policy)
+
+License files are hosted in LICENSE/ directory.
+
+Usual usages:
+
+BSD-3       : cmake, sh, rb, py, pl.
+GPL2+/LGPL2+: cpp, c, h, xsl, conf, nsh, nsl.
+CC0-1       : yml.
+MIT         : css, js.
