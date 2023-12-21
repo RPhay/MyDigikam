@@ -103,17 +103,12 @@ QtMarbleConfigDialog::QtMarbleConfigDialog(MarbleWidget* const marbleWidget,
     d->ui_viewSettings.setupUi( w_viewSettings );
     tabWidget->addTab( w_viewSettings, i18n( "View" ) );
 
-    d->ui_viewSettings.kcfg_labelLocalization->hide();
-    d->ui_viewSettings.label_labelLocalization->hide();
-
     // navigation page
 
     QWidget* w_navigationSettings = new QWidget( this );
 
     d->ui_navigationSettings.setupUi( w_navigationSettings );
     tabWidget->addTab( w_navigationSettings, i18n( "Navigation" ) );
-    d->ui_navigationSettings.kcfg_dragLocation->hide();
-    d->ui_navigationSettings.label_dragLocation->hide();
 
     // cache page
 
@@ -220,12 +215,10 @@ void QtMarbleConfigDialog::readSettings()
     d->ui_viewSettings.kcfg_angleUnit->setCurrentIndex( angleUnit() );
     d->ui_viewSettings.kcfg_stillQuality->setCurrentIndex( stillQuality() );
     d->ui_viewSettings.kcfg_animationQuality->setCurrentIndex( animationQuality() );
-    d->ui_viewSettings.kcfg_labelLocalization->setCurrentIndex( Marble::Native );
     d->ui_viewSettings.kcfg_mapFont->setCurrentFont( mapFont() );
 
     // Navigation
 
-    d->ui_navigationSettings.kcfg_dragLocation->setCurrentIndex( Marble::KeepAxisVertically );
     d->ui_navigationSettings.kcfg_onStartup->setCurrentIndex( onStartup() );
     d->ui_navigationSettings.kcfg_inertialEarthRotation->setChecked( inertialEarthRotation() );
     d->ui_navigationSettings.kcfg_mouseViewRotation->setChecked( mouseViewRotation() );
