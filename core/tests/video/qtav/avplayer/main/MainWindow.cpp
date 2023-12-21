@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget* const parent)
 */
     setupUi();
 /*
-    setToolTip(i18n("Click black area to use shortcut (see right click menu)"));
+    setToolTip(QString::fromUtf8("Click black area to use shortcut (see right click menu)"));
 */
     WindowEventFilter* const we = new WindowEventFilter(this);
     installEventFilter(we);

@@ -171,7 +171,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     {
         QMessageBox::critical(qApp->activeWindow(),
                               qApp->applicationName(),
-                              i18nc("#info", "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</p>"
+                              QString::fromUtf8("<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</p>"
                                     "<p>Please install the 64-bit version of AVPlayer to get "
                                     "a better experience with AVPlayer.</p>"));
     }

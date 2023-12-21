@@ -34,48 +34,48 @@ namespace AVPlayer
 QStringList getBaseInfoKeys()
 {
     return QStringList()
-            << i18nc("@option: base", "Url")
-            << i18nc("@option: base", "Format")
-            << i18nc("@option: base", "Bit rate")
-            << i18nc("@option: base", "Start time")
-            << i18nc("@option: base", "Duration")
+            << QString::fromUtf8("Url")
+            << QString::fromUtf8("Format")
+            << QString::fromUtf8("Bit rate")
+            << QString::fromUtf8("Start time")
+            << QString::fromUtf8("Duration")
     ;
 }
 
 QStringList getCommonInfoKeys()
 {
     return QStringList()
-            << i18nc("@option: common", "Available")
-            << i18nc("@option: common", "Codec")
-            << i18nc("@option: common", "Decoder")
-            << i18nc("@option: common", "Decoder detail")
-            << i18nc("@option: common", "Total time")
-            << i18nc("@option: common", "Start time")
-            << i18nc("@option: common", "Bit rate")
-            << i18nc("@option: common", "Frames")
-            << i18nc("@option: common", "FPS")          // avg_frame_rate. guessed by FFmpeg
+            << QString::fromUtf8("Available")
+            << QString::fromUtf8("Codec")
+            << QString::fromUtf8("Decoder")
+            << QString::fromUtf8("Decoder detail")
+            << QString::fromUtf8("Total time")
+            << QString::fromUtf8("Start time")
+            << QString::fromUtf8("Bit rate")
+            << QString::fromUtf8("Frames")
+            << QString::fromUtf8("FPS")          // avg_frame_rate. guessed by FFmpeg
     ;
 }
 
 QStringList getVideoInfoKeys()
 {
     return getCommonInfoKeys()
-            << i18nc("@option: video", "FPS Now")       // current display fps
-            << i18nc("@option: video", "Pixel format")
-            << i18nc("@option: video", "Size")          // w x h
-            << i18nc("@option: video", "Coded size")    // w x h
-            << i18nc("@option: video", "GOP size")
+            << QString::fromUtf8("FPS Now")       // current display fps
+            << QString::fromUtf8("Pixel format")
+            << QString::fromUtf8("Size")          // w x h
+            << QString::fromUtf8("Coded size")    // w x h
+            << QString::fromUtf8("GOP size")
     ;
 }
 
 QStringList getAudioInfoKeys()
 {
     return getCommonInfoKeys()
-            << i18nc("@option: audio", "Sample format")
-            << i18nc("@option: audio", "Sample rate")
-            << i18nc("@option: audio", "Channels")
-            << i18nc("@option: audio", "Channel layout")
-            << i18nc("@option: audio", "Frame size")
+            << QString::fromUtf8("Sample format")
+            << QString::fromUtf8("Sample rate")
+            << QString::fromUtf8("Channels")
+            << QString::fromUtf8("Channel layout")
+            << QString::fromUtf8("Frame size")
     ;
 }
 
@@ -137,40 +137,40 @@ StatisticsView::StatisticsView(QWidget* const parent)
       mpAudioBitRate(nullptr),
       mpVideoBitRate(nullptr)
 {
-    setWindowTitle(i18nc("@title:window", "Media Info"));
+    setWindowTitle(QString::fromUtf8("Media Info"));
     setModal(false);
     setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
     mpView                = new QTreeWidget();
     mpView->setAnimated(true);
     mpView->setHeaderHidden(false);
     mpView->setColumnCount(2);
-    mpView->headerItem()->setText(0, i18nc("@title", "Key"));
-    mpView->headerItem()->setText(1, i18nc("@title", "Value"));
+    mpView->headerItem()->setText(0, QString::fromUtf8("Key"));
+    mpView->headerItem()->setText(1, QString::fromUtf8("Value"));
     initBaseItems(&mBaseItems);
     mpView->addTopLevelItems(mBaseItems);
     mpMetadata            = new QTreeWidgetItem();
-    mpMetadata->setText(0, i18nc("@item: video info", "Metadata"));
+    mpMetadata->setText(0, QString::fromUtf8("Metadata"));
     mpView->addTopLevelItem(mpMetadata);
-    QTreeWidgetItem* item = createNodeWithItems(mpView, i18nc("@item: video stats", "Video"),
+    QTreeWidgetItem* item = createNodeWithItems(mpView, QString::fromUtf8("Video"),
                                                 getVideoInfoKeys(), &mVideoItems);
     mpFPS                 = item->child(9);
 
     // mpVideoBitRate =
 
     mpVideoMetadata = new QTreeWidgetItem(item);
-    mpVideoMetadata->setText(0, i18nc("@option", "Metadata"));
+    mpVideoMetadata->setText(0, QString::fromUtf8("Metadata"));
     mpView->addTopLevelItem(item);
-    item            = createNodeWithItems(mpView, i18nc("@option", "Audio"),
+    item            = createNodeWithItems(mpView, QString::fromUtf8("Audio"),
                                           getAudioInfoKeys(), &mAudioItems);
 
     // mpAudioBitRate =
 
     mpAudioMetadata              = new QTreeWidgetItem(item);
-    mpAudioMetadata->setText(0, i18nc("@option", "Metadata"));
+    mpAudioMetadata->setText(0, QString::fromUtf8("Metadata"));
     mpView->addTopLevelItem(item);
     mpView->resizeColumnToContents(0); // call this after content is done
 
-    QPushButton* const btn       = new QPushButton(i18nc("@action", "Ok"));
+    QPushButton* const btn       = new QPushButton(QString::fromUtf8("Ok"));
     QHBoxLayout* const btnLayout = new QHBoxLayout;
     btnLayout->addStretch();
     btnLayout->addWidget(btn);

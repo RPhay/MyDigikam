@@ -99,7 +99,7 @@ void MainWindow::play(const QUrl& url)
 
 void MainWindow::openFile()
 {
-    QString file = QFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Open a Media File"),
+    QString file = QFileDialog::getOpenFileName(nullptr, QString::fromUtf8("Open a Media File"),
                                                 AVPlayerConfigMngr::instance().lastFile());
 
     if (file.isEmpty())
@@ -507,8 +507,8 @@ void MainWindow::about()
 
 void MainWindow::openUrl()
 {
-    QString url = QInputDialog::getText(nullptr, i18nc("@title:window", "Open an Url"),
-                                        i18nc("@info", "Url"));
+    QString url = QInputDialog::getText(nullptr, QString::fromUtf8("Open an Url"),
+                                        QString::fromUtf8("Url"));
 
     if (url.isEmpty())
         return;
@@ -565,7 +565,7 @@ void MainWindow::switchAspectRatio(QAction *action)
     else
     {
         if (r == -2)
-            r = QInputDialog::getDouble(0, i18nc("@option", "Aspect ratio"), QString(), 1.0);
+            r = QInputDialog::getDouble(0, QString::fromUtf8("Aspect ratio"), QString(), 1.0);
 
         d->pPlayer->renderer()->setOutAspectRatioMode(QtAV::CustomAspectRation);
         d->pPlayer->renderer()->setOutAspectRatio(r);
@@ -699,7 +699,7 @@ void MainWindow::onTimeSliderLeave()
 
 void MainWindow::handleError(const AVError& e)
 {
-    QMessageBox::warning(nullptr, i18nc("@title:window", "Player Error"), e.string());
+    QMessageBox::warning(nullptr, QString::fromUtf8("Player Error"), e.string());
 }
 
 void MainWindow::onMediaStatusChanged()
@@ -721,49 +721,49 @@ void MainWindow::onMediaStatusChanged()
     {
         case NoMedia:
         {
-            status = i18nc("@info: media loading", "No media");
+            status = QString::fromUtf8("No media");
 
             break;
         }
 
         case InvalidMedia:
         {
-            status = i18nc("@info: media loading", "Invalid media");
+            status = QString::fromUtf8("Invalid media");
 
             break;
         }
 
         case BufferingMedia:
         {
-            status = i18nc("@info: media loading", "Buffering...");
+            status = QString::fromUtf8("Buffering...");
 
             break;
         }
 
         case BufferedMedia:
         {
-            status = i18nc("@info: media loading", "Buffered");
+            status = QString::fromUtf8("Buffered");
 
             break;
         }
 
         case LoadingMedia:
         {
-            status = i18nc("@info: media loading", "Loading...");
+            status = QString::fromUtf8("Loading...");
 
             break;
         }
 
         case LoadedMedia:
         {
-            status = i18nc("@info: media loading", "Loaded");
+            status = QString::fromUtf8("Loaded");
 
             break;
         }
 
         case StalledMedia:
         {
-            status = i18nc("@info: media loading", "Stalled");
+            status = QString::fromUtf8("Stalled");
 
             break;
         }
@@ -795,7 +795,7 @@ void MainWindow::onBufferProgress(qreal percent)
     else
         s = QString::fromLatin1("%1B/s").arg(bs, 6, 'f', 1);
 
-    setWindowTitle(i18nc("@title:window, media loading state", "Buffering... %1% @%2 %3",
+    setWindowTitle(QString::fromUtf8("Buffering... %1% @%2 %3",
                    QString::fromLatin1("%1").arg(percent*100.0, 5, 'f', 1), s, d->Title));
 }
 
@@ -902,7 +902,7 @@ void MainWindow::onCaptureConfigChanged()
         d->pPlayer->videoCapture()->setSaveFormat(AVPlayerConfigMngr::instance().captureFormat());
     }
 
-    d->pCaptureBtn->setToolTip(i18nc("@info", "Capture video frame\nSave to: %1\nFormat: %2",
+    d->pCaptureBtn->setToolTip(QString::fromUtf8("Capture video frame\nSave to: %1\nFormat: %2",
                              d->pPlayer->videoCapture()->captureDir(),
                              AVPlayerConfigMngr::instance().captureFormat()));
 }
@@ -1015,7 +1015,7 @@ void MainWindow::toggleSubtitleAutoLoad(bool value)
 
 void MainWindow::openSubtitle()
 {
-    QString file = QFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Open a Subtitle File"));
+    QString file = QFileDialog::getOpenFileName(nullptr, QString::fromUtf8("Open a Subtitle File"));
 
     if (file.isEmpty())
         return;

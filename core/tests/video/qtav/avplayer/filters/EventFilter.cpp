@@ -68,7 +68,7 @@ EventFilter::~EventFilter()
 
 void EventFilter::openLocalFile()
 {
-    QString file = QFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Open a Video"));
+    QString file = QFileDialog::getOpenFileName(nullptr, QString::fromUtf8("Open a Video"));
 
     if (file.isEmpty())
         return;
@@ -80,8 +80,8 @@ void EventFilter::openLocalFile()
 void EventFilter::openUrl()
 {
     QString url = QInputDialog::getText(nullptr,
-                                        i18nc("@title:window", "Open an Url"),
-                                        i18nc("@info", "Url"));
+                                        QString::fromUtf8("Open an Url"),
+                                        QString::fromUtf8("Url"));
 
     if (url.isEmpty())
         return;
@@ -103,28 +103,28 @@ void EventFilter::aboutFFmpeg()
 void EventFilter::help()
 {
     static QString help = QLatin1String("<qt><h4>")                                                                                    +
-        i18nc("@info", "Drag and drop a file to player\n")                               + QLatin1String("</h4><p>") +
-        i18nc("@info", "A: switch aspect ratio")                                         + QLatin1String("</p><p>")  +
-        i18nc("@info", "Double click to switch fullscreen")                              + QLatin1String("</p><p>")  +
-        i18nc("@info", "Shortcut:\n")                                                    + QLatin1String("</p><p>")  +
-        i18nc("@info", "Space: pause/continue\n")                                        + QLatin1String("</p><p>")  +
-        i18nc("@info", "F: fullscreen on/off\n")                                         + QLatin1String("</p><p>")  +
-        i18nc("@info", "T: stays on top on/off\n")                                       + QLatin1String("</p><p>")  +
-        i18nc("@info", "N: show next frame. Continue the playing by pressing 'Space'\n") + QLatin1String("</p><p>")  +
-        i18nc("@info", "Ctrl+O: open a file\n")                                          + QLatin1String("</p><p>")  +
-        i18nc("@info", "O: On Screen Display\n")                                         + QLatin1String("</p><p>")  +
-        i18nc("@info", "P: replay\n")                                                    + QLatin1String("</p><p>")  +
-        i18nc("@info", "Q/ESC: quit\n")                                                  + QLatin1String("</p><p>")  +
-        i18nc("@info", "S: stop\n")                                                      + QLatin1String("</p><p>")  +
-        i18nc("@info", "R: rotate 90 degrees")                                           + QLatin1String("</p><p>")  +
-        i18nc("@info", "M: mute on/off\n")                                               + QLatin1String("</p><p>")  +
-        i18nc("@info", "C: capture video")                                               + QLatin1String("</p><p>")  +
-        i18nc("@info", "Up/Down: volume +/-\n")                                          + QLatin1String("</p><p>")  +
-        i18nc("@info", "Ctrl+Up/Down: speed +/-\n")                                      + QLatin1String("</p><p>")  +
-        i18nc("@info", "-&gt;/&lt;-: seek forward/backward\n")                                                             +
+        QString::fromUtf8("Drag and drop a file to player\n")                               + QLatin1String("</h4><p>") +
+        QString::fromUtf8("A: switch aspect ratio")                                         + QLatin1String("</p><p>")  +
+        QString::fromUtf8("Double click to switch fullscreen")                              + QLatin1String("</p><p>")  +
+        QString::fromUtf8("Shortcut:\n")                                                    + QLatin1String("</p><p>")  +
+        QString::fromUtf8("Space: pause/continue\n")                                        + QLatin1String("</p><p>")  +
+        QString::fromUtf8("F: fullscreen on/off\n")                                         + QLatin1String("</p><p>")  +
+        QString::fromUtf8("T: stays on top on/off\n")                                       + QLatin1String("</p><p>")  +
+        QString::fromUtf8("N: show next frame. Continue the playing by pressing 'Space'\n") + QLatin1String("</p><p>")  +
+        QString::fromUtf8("Ctrl+O: open a file\n")                                          + QLatin1String("</p><p>")  +
+        QString::fromUtf8("O: On Screen Display\n")                                         + QLatin1String("</p><p>")  +
+        QString::fromUtf8("P: replay\n")                                                    + QLatin1String("</p><p>")  +
+        QString::fromUtf8("Q/ESC: quit\n")                                                  + QLatin1String("</p><p>")  +
+        QString::fromUtf8("S: stop\n")                                                      + QLatin1String("</p><p>")  +
+        QString::fromUtf8("R: rotate 90 degrees")                                           + QLatin1String("</p><p>")  +
+        QString::fromUtf8("M: mute on/off\n")                                               + QLatin1String("</p><p>")  +
+        QString::fromUtf8("C: capture video")                                               + QLatin1String("</p><p>")  +
+        QString::fromUtf8("Up/Down: volume +/-\n")                                          + QLatin1String("</p><p>")  +
+        QString::fromUtf8("Ctrl+Up/Down: speed +/-\n")                                      + QLatin1String("</p><p>")  +
+        QString::fromUtf8("-&gt;/&lt;-: seek forward/backward\n")                                                             +
         QLatin1String("</qt>");
 
-    QMessageBox::about(nullptr, i18nc("@title:window", "Help"), help);
+    QMessageBox::about(nullptr, QString::fromUtf8("Help"), help);
 }
 
 bool EventFilter::eventFilter(QObject* watched, QEvent* event)
@@ -525,11 +525,11 @@ void EventFilter::showMenu(const QPoint& p)
     if (!menu)
     {
         menu = new QMenu();
-        menu->addAction(i18nc("@action: open new media",  "Open"),     this, SLOT(openLocalFile()));
-        menu->addAction(i18nc("@action: open new stream", "Open Url"), this, SLOT(openUrl()));
+        menu->addAction(QString::fromUtf8("Open"),     this, SLOT(openLocalFile()));
+        menu->addAction(QString::fromUtf8("Open Url"), this, SLOT(openUrl()));
         menu->addSeparator();
-        menu->addAction(i18nc("@action: about AVPlayer",  "About"),    this, SLOT(about()));
-        menu->addAction(i18nc("@action: AVPlayer help",   "Help"),     this, SLOT(help()));
+        menu->addAction(QString::fromUtf8("About"),    this, SLOT(about()));
+        menu->addAction(QString::fromUtf8("Help"),     this, SLOT(help()));
         menu->addSeparator();
     }
 
