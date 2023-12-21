@@ -85,14 +85,6 @@ enum MapQuality {
 };
 
 /**
- * @brief This enum is used to specify the proxy that is used.
- */
-enum ProxyType {
-    HttpProxy,          ///< Uses an Http proxy
-    Socks5Proxy         ///< Uses a Socks5Proxy
-};
-
-/**
  * @brief This enum is used to choose the localization of the labels.
  */
 enum LabelPositionFlag {

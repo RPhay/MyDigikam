@@ -8,7 +8,6 @@
 
 // Qt includes
 
-#include <QNetworkProxy>
 #include <QApplication>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
@@ -32,8 +31,6 @@
 #include "MarblePluginSettingsWidget.h"
 #include "ui_MarbleViewSettingsWidget.h"
 
-#include "ui_proxysettingswidget.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -46,14 +43,12 @@ public:
 
     MarbleConfigViewPrivate(MarbleWidget* const marbleWidget)
         : ui_viewSettings (),
-          ui_proxySettings(),
           m_marbleWidget  (marbleWidget),
           m_pluginModel   ()
     {
     }
 
     Ui::MarbleViewSettingsWidget       ui_viewSettings;
-    Ui::ProxySettingsWidget            ui_proxySettings;
     MarblePluginSettingsWidget*        w_pluginSettings = nullptr;
 
     QSettings                          m_settings;
@@ -70,7 +65,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     : QTabWidget(parent),
       d      (new MarbleConfigViewPrivate(marbleWidget))
 {
-    // view page
+    // View page
 
     QWidget* const w_viewSettings = new QWidget( this );
 
@@ -83,14 +78,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     connect( d->ui_viewSettings.button_clearPersistentCache,
              SIGNAL(clicked()), SIGNAL(clearPersistentCacheClicked()) );
 
-    // proxy page
-
-    QWidget* const w_proxySettings = new QWidget( this );
-
-    d->ui_proxySettings.setupUi( w_proxySettings );
-    addTab( w_proxySettings, i18n( "Proxy" ) );
-
-    // plugin page
+    // Plugins page
 
     d->m_pluginModel.setRenderPlugins( d->m_marbleWidget->renderPlugins() );
     d->w_pluginSettings = new MarblePluginSettingsWidget( this );
@@ -125,42 +113,6 @@ void MarbleConfigView::readSettings()
 
     d->m_settings.sync();
 
-    QNetworkProxy proxy;
-
-    // Make sure that no proxy is used for an empty string or the default value:
-
-    if (proxyUrl().isEmpty() || (proxyUrl() == QLatin1String("http://")))
-    {
-        proxy.setType( QNetworkProxy::NoProxy );
-    }
-    else
-    {
-        if      ( proxyType() == Marble::Socks5Proxy )
-        {
-            proxy.setType( QNetworkProxy::Socks5Proxy );
-        }
-        else if ( proxyType() == Marble::HttpProxy )
-        {
-            proxy.setType( QNetworkProxy::HttpProxy );
-        }
-        else
-        {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown proxy type! Using Http Proxy instead.";
-            proxy.setType( QNetworkProxy::HttpProxy );
-        }
-    }
-
-    proxy.setHostName( proxyUrl() );
-    proxy.setPort( proxyPort() );
-
-    if ( proxyAuth() )
-    {
-        proxy.setUser( proxyUser() );
-        proxy.setPassword( proxyPass() );
-    }
-
-    QNetworkProxy::setApplicationProxy(proxy);
-
     // View
 
     d->ui_viewSettings.kcfg_distanceUnit->setCurrentIndex( measurementSystem() );
@@ -172,15 +124,6 @@ void MarbleConfigView::readSettings()
     d->ui_viewSettings.kcfg_mouseViewRotation->setChecked( mouseViewRotation() );
     d->ui_viewSettings.kcfg_volatileTileCacheLimit->setValue( volatileTileCacheLimit() );
     d->ui_viewSettings.kcfg_persistentTileCacheLimit->setValue( persistentTileCacheLimit() );
-
-    // Proxy
-
-    d->ui_proxySettings.kcfg_proxyUrl->setText( proxyUrl() );
-    d->ui_proxySettings.kcfg_proxyPort->setValue( proxyPort() );
-    d->ui_proxySettings.kcfg_proxyUser->setText( proxyUser() );
-    d->ui_proxySettings.kcfg_proxyPass->setText( proxyPass() );
-    d->ui_proxySettings.kcfg_proxyType->setCurrentIndex( proxyType() );
-    d->ui_proxySettings.kcfg_proxyAuth->setChecked( proxyAuth() );
 
     // Read the settings of the plugins
 
@@ -199,24 +142,6 @@ void MarbleConfigView::applySettings()
     d->m_settings.setValue( QLatin1String("mouseViewRotation"), d->ui_viewSettings.kcfg_mouseViewRotation->isChecked() );
     d->m_settings.setValue( QLatin1String("volatileTileCacheLimit"), d->ui_viewSettings.kcfg_volatileTileCacheLimit->value() );
     d->m_settings.setValue( QLatin1String("persistentTileCacheLimit"), d->ui_viewSettings.kcfg_persistentTileCacheLimit->value() );
-    d->m_settings.endGroup();
-
-    d->m_settings.beginGroup( QLatin1String("Proxy") );
-    d->m_settings.setValue( QLatin1String("proxyUrl"), d->ui_proxySettings.kcfg_proxyUrl->text() );
-    d->m_settings.setValue( QLatin1String("proxyPort"), d->ui_proxySettings.kcfg_proxyPort->value() );
-    d->m_settings.setValue( QLatin1String("proxyType"), d->ui_proxySettings.kcfg_proxyType->currentIndex() );
-
-    if ( d->ui_proxySettings.kcfg_proxyAuth->isChecked() )
-    {
-        d->m_settings.setValue( QLatin1String("proxyAuth"), true );
-        d->m_settings.setValue( QLatin1String("proxyUser"), d->ui_proxySettings.kcfg_proxyUser->text() );
-        d->m_settings.setValue( QLatin1String("proxyPass"), d->ui_proxySettings.kcfg_proxyPass->text() );
-    }
-    else
-    {
-        d->m_settings.setValue( QLatin1String("proxyAuth"), false );
-    }
-
     d->m_settings.endGroup();
 
     // Plugins
@@ -292,41 +217,6 @@ int MarbleConfigView::persistentTileCacheLimit() const
                                 0 ).toInt(); // default to unlimited
 }
 
-QString MarbleConfigView::proxyUrl() const
-{
-    return d->m_settings.value( QLatin1String("Proxy/proxyUrl"),
-                                QString::fromUtf8("") ).toString();
-}
-
-int MarbleConfigView::proxyPort() const
-{
-    return d->m_settings.value( QLatin1String("Proxy/proxyPort"),
-                                8080 ).toInt();
-}
-
-QString MarbleConfigView::proxyUser() const
-{
-    return d->m_settings.value( QLatin1String("Proxy/proxyUser"),
-                                QString::fromUtf8("") ).toString();
-}
-
-QString MarbleConfigView::proxyPass() const
-{
-    return d->m_settings.value( QLatin1String("Proxy/proxyPass"),
-                                QString::fromUtf8("") ).toString();
-}
-
-bool MarbleConfigView::proxyType() const
-{
-    return d->m_settings.value( QLatin1String("Proxy/proxyType"),
-                                Marble::HttpProxy ).toInt();
-}
-
-bool MarbleConfigView::proxyAuth() const
-{
-    return d->m_settings.value( QLatin1String("Proxy/proxyAuth"),
-                                false ).toBool();
-}
 
 } // namespace Marble
 

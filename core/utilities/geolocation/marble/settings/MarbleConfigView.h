@@ -43,16 +43,6 @@ public:
     int volatileTileCacheLimit()                        const;
     int persistentTileCacheLimit()                      const;
 
-    // Proxy Settings
-
-    QString proxyUrl()                                  const;
-    int proxyPort()                                     const;
-
-    QString proxyUser()                                 const;
-    QString proxyPass()                                 const;
-    bool proxyType()                                    const;
-    bool proxyAuth()                                    const;
-
     void applySettings();
 
 Q_SIGNALS:

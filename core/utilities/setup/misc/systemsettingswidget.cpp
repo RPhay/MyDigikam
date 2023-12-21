@@ -32,6 +32,7 @@
 #include "digikam_debug.h"
 #include "systemsettings.h"
 #include "filesdownloader.h"
+#include "ui_proxysettingswidget.h"
 
 namespace Digikam
 {
@@ -47,18 +48,21 @@ public:
         disableOpenCLCheck    (nullptr),
         enableLoggingCheck    (nullptr),
         filesDownloadButton   (nullptr),
-        filesDownloader       (nullptr)
+        filesDownloader       (nullptr),
+        uiProxySettings       ()
     {
     }
 
-    QCheckBox*       useHighDpiScalingCheck;
-    QCheckBox*       useHighDpiPixmapsCheck;
-    QCheckBox*       disableOpenCLCheck;
-    QCheckBox*       enableLoggingCheck;
+    QCheckBox*              useHighDpiScalingCheck;
+    QCheckBox*              useHighDpiPixmapsCheck;
+    QCheckBox*              disableOpenCLCheck;
+    QCheckBox*              enableLoggingCheck;
 
-    QPushButton*     filesDownloadButton;
+    QPushButton*            filesDownloadButton;
 
-    FilesDownloader* filesDownloader;
+    FilesDownloader*        filesDownloader;
+
+    Ui::ProxySettingsWidget uiProxySettings;
 };
 
 SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
@@ -79,6 +83,13 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     d->filesDownloadButton    = new QPushButton(i18n("Download required binary data..."), this);
 
+    // Proxy Settings
+
+    QWidget* const proxySettings = new QWidget(this);
+    d->uiProxySettings.setupUi(proxySettings);
+
+    // ---
+
     if (qApp->applicationName() == QLatin1String("showfoto"))
     {
         d->disableOpenCLCheck->hide();
@@ -95,9 +106,10 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     layout->addWidget(d->disableOpenCLCheck,     2, 0, 1, 1);
     layout->addWidget(d->enableLoggingCheck,     3, 0, 1, 1);
     layout->addWidget(d->filesDownloadButton,    4, 0, 1, 1);
-    layout->addWidget(systemNote,                5, 0, 1, 2);
+    layout->addWidget(proxySettings,             5, 0, 1, 1);
+    layout->addWidget(systemNote,                6, 0, 1, 2);
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
-    layout->setRowStretch(6, 10);
+    layout->setRowStretch(7, 10);
 
     connect(d->filesDownloadButton, &QPushButton::pressed,
             this, &SystemSettingsWidget::slotBinaryDownload);
@@ -116,6 +128,15 @@ void SystemSettingsWidget::readSettings()
     d->useHighDpiPixmapsCheck->setChecked(system.useHighDpiPixmaps);
     d->enableLoggingCheck->setChecked(system.enableLogging);
     d->disableOpenCLCheck->setChecked(system.disableOpenCL);
+
+    // Proxy Settings
+
+    d->uiProxySettings.kcfg_proxyUrl->setText(system.proxyUrl);
+    d->uiProxySettings.kcfg_proxyPort->setValue(system.proxyPort);
+    d->uiProxySettings.kcfg_proxyUser->setText(system.proxyUser);
+    d->uiProxySettings.kcfg_proxyPass->setText(system.proxyPass);
+    d->uiProxySettings.kcfg_proxyType->setCurrentIndex(system.proxyType);
+    d->uiProxySettings.kcfg_proxyAuth->setChecked(system.proxyAuth);
 }
 
 void SystemSettingsWidget::saveSettings()
@@ -126,6 +147,21 @@ void SystemSettingsWidget::saveSettings()
     system.useHighDpiPixmaps = d->useHighDpiPixmapsCheck->isChecked();
     system.enableLogging     = d->enableLoggingCheck->isChecked();
     system.disableOpenCL     = d->disableOpenCLCheck->isChecked();
+
+    system.proxyUrl          = d->uiProxySettings.kcfg_proxyUrl->text();
+    system.proxyPort         = d->uiProxySettings.kcfg_proxyPort->value();
+    system.proxyType         = d->uiProxySettings.kcfg_proxyType->currentIndex();
+
+    if (d->uiProxySettings.kcfg_proxyAuth->isChecked())
+    {
+        system.proxyAuth = true;
+        system.proxyUser = d->uiProxySettings.kcfg_proxyUser->text();
+        system.proxyPass = d->uiProxySettings.kcfg_proxyPass->text();
+    }
+    else
+    {
+        system.proxyAuth = false;
+    }
 
     system.saveSettings();
 }

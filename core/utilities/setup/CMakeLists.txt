@@ -29,6 +29,8 @@ set(libsetupshowfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/misc/systemsettings.cpp
 )
 
+ki18n_wrap_ui(libsetupshowfoto_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/misc/proxysettingswidget.ui)
+
 # Used by digikamcore
 add_library(core_setupcommon_obj OBJECT  ${libsetupshowfoto_SRCS})
 

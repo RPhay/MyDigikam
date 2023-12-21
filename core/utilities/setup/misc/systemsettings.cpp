@@ -18,6 +18,7 @@
 
 #include <QSettings>
 #include <QStandardPaths>
+#include <QNetworkProxy>
 
 // Local includes
 
@@ -86,7 +87,52 @@ void SystemSettings::readSettings()
     enableAutoTags       = settings.value(QLatin1String("enableAutoTags"),    true).toBool();
     enableLogging        = settings.value(QLatin1String("enableLogging"),     false).toBool();
     disableOpenCL        = settings.value(QLatin1String("disableOpenCL"),     true).toBool();
+
+    // Proxy Settings
+
+    proxyUrl             = settings.value(QLatin1String("proxyUrl"),          QString()).toString();
+    proxyPort            = settings.value(QLatin1String("proxyPort"),         8080).toInt();
+    proxyUser            = settings.value(QLatin1String("proxyUser"),         QString()).toString();
+    proxyPass            = settings.value(QLatin1String("proxyPass"),         QString()).toString();
+    proxyType            = settings.value(QLatin1String("proxyType"),         HttpProxy).toInt();
+    proxyAuth            = settings.value(QLatin1String("proxyAuth"),         false).toBool();
     settings.endGroup();
+
+    QNetworkProxy proxy;
+
+    // Make sure that no proxy is used for an empty string or the default value:
+
+    if (proxyUrl.isEmpty() || (proxyUrl == QLatin1String("http://")))
+    {
+        proxy.setType(QNetworkProxy::NoProxy);
+    }
+    else
+    {
+        if      (proxyType == Socks5Proxy)
+        {
+            proxy.setType(QNetworkProxy::Socks5Proxy);
+        }
+        else if (proxyType == HttpProxy)
+        {
+            proxy.setType(QNetworkProxy::HttpProxy);
+        }
+        else
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Unknown proxy type! Using Http Proxy instead.";
+            proxy.setType(QNetworkProxy::HttpProxy);
+        }
+    }
+
+    proxy.setHostName(proxyUrl);
+    proxy.setPort(proxyPort);
+
+    if (proxyAuth)
+    {
+        proxy.setUser(proxyUser);
+        proxy.setPassword(proxyPass);
+    }
+
+    QNetworkProxy::setApplicationProxy(proxy);
 }
 
 void SystemSettings::saveSettings()
@@ -110,6 +156,21 @@ void SystemSettings::saveSettings()
     if (settings.contains(QLatin1String("disableFaceEngine")))
     {
         settings.remove(QLatin1String("disableFaceEngine"));
+    }
+
+    settings.setValue(QLatin1String("proxyUrl"),         proxyUrl);
+    settings.setValue(QLatin1String("proxyPort"),        proxyPort);
+    settings.setValue(QLatin1String("proxyType"),        proxyType);
+
+    if (proxyAuth)
+    {
+        settings.setValue(QLatin1String("proxyAuth"), true);
+        settings.setValue(QLatin1String("proxyUser"), proxyUser);
+        settings.setValue(QLatin1String("proxyPass"), proxyPass);
+    }
+    else
+    {
+        settings.setValue(QLatin1String("proxyAuth"), false);
     }
 
     settings.endGroup();

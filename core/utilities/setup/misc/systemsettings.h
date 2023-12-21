@@ -28,6 +28,16 @@ namespace Digikam
 
 class DIGIKAM_EXPORT SystemSettings
 {
+public:
+
+    /**
+     * @brief This enum is used to specify the proxy that is used.
+     */
+    enum ProxyType
+    {
+        HttpProxy,          ///< Uses an Http proxy
+        Socks5Proxy         ///< Uses a Socks5Proxy
+    };
 
 public:
 
@@ -41,18 +51,21 @@ public:
 public:
 
     bool useHighDpiScaling;
-
     bool useHighDpiPixmaps;
-
     bool enableFaceEngine;
-
     bool enableAesthetic;
-
     bool enableAutoTags;
-
     bool enableLogging;
-
     bool disableOpenCL;
+
+    // Proxy Settings.
+
+    QString proxyUrl;
+    int     proxyPort;
+    QString proxyUser;
+    QString proxyPass;
+    bool    proxyType;
+    bool    proxyAuth;
 
 private:
 
