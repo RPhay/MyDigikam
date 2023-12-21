@@ -73,7 +73,7 @@ BUGFIXES:
 059 ==> 478830 - Crash when renaming face.
 060 ==> 379608 - Add Proxy support for geo-localisation with GoogleMaps.
 061 ==> 302598 - Add Proxy support with MediaWiki server.
-062 ==> 
+062 ==> 478847 - 8.2.0 for Windows contains 8.1.0.
 063 ==> 
 064 ==> 
 065 ==> 
