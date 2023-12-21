@@ -6,16 +6,6 @@
 
 APPLY_COMMON_POLICIES()
 
-# To fill MacOS and Windows bundles metadata
-
-#set(BUNDLE_APP_NAME_STRING          "avplayer")
-#set(BUNDLE_APP_DESCRIPTION_STRING   "Stand alone Audio and Video Player from digiKam Project")
-#set(BUNDLE_LEGAL_COPYRIGHT_STRING   "GNU Public License V2")
-#set(BUNDLE_COMMENT_STRING           "Free and open source software to play audio and video")
-#set(BUNDLE_LONG_VERSION_STRING      ${DIGIKAM_VERSION_STRING})
-#set(BUNDLE_SHORT_VERSION_STRING     ${DIGIKAM_VERSION_SHORT})
-#set(BUNDLE_VERSION_STRING           ${DIGIKAM_VERSION_STRING})
-
 set(avplayer_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/utils/ConfigDialog.cpp
                   ${CMAKE_CURRENT_SOURCE_DIR}/utils/StatisticsView.cpp
                   ${CMAKE_CURRENT_SOURCE_DIR}/utils/ScreenSaver.cpp
@@ -38,8 +28,6 @@ set(avplayer_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/utils/ConfigDialog.cpp
 
 # Set the application icon on the application
 
-#file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-avplayer.png")
-
 if(WIN32)
 
     # Build the main implementation into a DLL to be called by a stub EXE.
@@ -51,14 +39,11 @@ if(WIN32)
 
 elseif(APPLE)
 
-#    ecm_add_app_icon(avplayer_SRCS ICONS ${ICONS_SRCS})
-#    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/main/AVPlayerInfo.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
     add_executable(avplayer ${avplayer_SRCS})
     set_target_properties(avplayer PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
 
 else()
 
-#    ecm_add_app_icon(avplayer_SRCS ICONS ${ICONS_SRCS})
     add_executable(avplayer ${avplayer_SRCS})
 
 endif()
@@ -135,21 +120,12 @@ target_compile_definitions(avplayer
                            ${MEDIAPLAYER_DEFINITIONS}
 )
 
-#install(TARGETS  avplayer                                                      ${INSTALL_TARGETS_DEFAULT_ARGS})
-#install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})
-#install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.appdata.xml DESTINATION ${KDE_INSTALL_FULL_METAINFODIR})
-
 if(WIN32)
-
-#    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
 
     set(avplayer_windows_stub_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp)
 
-#    ecm_add_app_icon(avplayer_windows_stub_SRCS ICONS ${ICONS_SRCS})
-
     add_executable(avplayer_windows_stub_exe
                    ${avplayer_windows_stub_SRCS}
-#                   ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
     )
 
     if(NOT Qt6_FOUND)
@@ -160,7 +136,5 @@ if(WIN32)
 
     set_target_properties(avplayer_windows_stub_exe PROPERTIES OUTPUT_NAME "avplayer")
     target_include_directories(avplayer_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
-
-#    install(TARGETS avplayer_windows_stub_exe ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 endif()
