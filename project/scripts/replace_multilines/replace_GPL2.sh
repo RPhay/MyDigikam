@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Script to replace GPL2+ header with SDPX-GPL2 licensing
-#
-# SPDX-FileCopyrightText: 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2008-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
+#
+# Script to replace GPL2+ header with SDPX-GPL2
 #
 
 find .. -type f -name "*.cpp" \
