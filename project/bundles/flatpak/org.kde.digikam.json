@@ -109,7 +109,7 @@
                 "-DWITH_IMGCODEC_HDR=OFF",
                 "-DWITH_IMGCODEC_SUNRASTER=OFF",
                 "-DWITH_IMGCODEC_PXM=OFF",
-                "-DWITH_OPENJPEG=OFF"
+                "-DWITH_OPENJPEG=OFF",
                 "-DCV_TRACE=OFF",
                 "-DCV_ENABLE_INTRINSICS=OFF",
                 "-DCV_DISABLE_OPTIMIZATION=ON",
@@ -121,7 +121,7 @@
                 "-DWITH_OPENCL_SVM=ON",
                 "-DWITH_OPENCLAMDFFT=ON",
                 "-DWITH_OPENCLAMDBLAS=ON",
-                "-DWITH_OPENCL_D3D11_NV=ON",
+                "-DWITH_OPENCL_D3D11_NV=ON"
             ],
             "sources": [ { "type": "git", "url": "https://github.com/Itseez/opencv.git", "tag": "4.5.1" } ]
         },
@@ -188,21 +188,6 @@
             ],
             "builddir": true,
             "sources": [ { "type": "git", "url": "https://github.com/Exiv2/exiv2.git", "tag": "0.27-maintenance" } ]
-        },
-        {
-            "name": "marble",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DWITH_DESIGNER_PLUGIN=OFF",
-                "-DBUILD_MARBLE_TESTS=OFF",
-                "-DBUILD_MARBLE_TOOLS=OFF",
-                "-DBUILD_MARBLE_EXAMPLES=OFF",
-                "-DBUILD_MARBLE_APPS=OFF",
-                "-DBUILD_WITH_DBUS=ON",
-                "-DBUILD_TESTING=OFF"
-            ],
-            "builddir": true,
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/education/marble.git", "tag": "v20.12.1" } ]
         },
         {
             "name": "lensfun",
