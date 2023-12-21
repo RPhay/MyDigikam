@@ -7,6 +7,8 @@
 # VAAPI_LIBRARIES    - the VAAPI libraries
 # VAAPI_DEFINITIONS  - the VAAPI definitions
 #
+# SPDX-FileCopyrightText: 2016-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+#
 # SPDX-License-Identifier: BSD-3-Clause
 #
 

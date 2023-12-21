@@ -1,4 +1,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
+//
+// SPDX-FileCopyrightText: 2010 Jens-Michael Hoffmann <jmho@c-xx.com>
+//
 
 #ifndef MARBLE_DOWNLOADREGIONDIALOG_H
 #define MARBLE_DOWNLOADREGIONDIALOG_H

@@ -8,12 +8,10 @@
  *
  * Date        : 2019-11-17
  * Description : An HTML gallery theme based on HTML5, CSS3,
- * UTF-8 and the PhotoSwipe utility.
+ *               UTF-8 and the PhotoSwipe utility.
  *
- * Created in 2019 by Bobulous <https://www.bobulous.org.uk>,
- * based on a heavily modified derivative of the Elegant theme
- * which was created in 2007 by Wojciech Jarosz
- * <jiri at boha dot cz>.
+ * SPDX-FileCopyrightText: 2007 by Wojciech Jarosz <jiri at boha dot cz>
+ * SPDX-FileCopyrightText: 2019 by Bobulous <https://www.bobulous.org.uk>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

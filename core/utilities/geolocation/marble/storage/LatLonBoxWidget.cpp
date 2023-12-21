@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
+//
+// SPDX-FileCopyrightText: 2007 Torsten Rahn <tackat@kde.org>
 
 #include "LatLonBoxWidget.h"
 

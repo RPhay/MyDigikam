@@ -1,7 +1,8 @@
 #!/usr/bin/perl
 
 $version="1.8.3";
-# Author: Rainer Krienke, krienke@uni-koblenz.de
+
+# SPDX-FileCopyrightText: Rainer Krienke, krienke@uni-koblenz.de
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

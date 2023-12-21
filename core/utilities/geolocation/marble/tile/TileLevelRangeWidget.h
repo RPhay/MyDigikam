@@ -1,4 +1,9 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
+/*
+    SPDX-FileCopyrightText: 2010 Jens-Michael Hoffmann <jmho@c-xx.com>
+    SPDX-FileCopyrightText: 2010-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
+
+    SPDX-License-Identifier: LGPL-2.1-or-later
+*/
 
 #ifndef MARBLE_TILELEVELRANGEWIDGET_H
 #define MARBLE_TILELEVELRANGEWIDGET_H

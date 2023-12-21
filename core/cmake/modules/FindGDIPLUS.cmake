@@ -6,7 +6,8 @@
 #  GDIPLUS_LIBRARIES   - List of libraries when using GDI+.
 #  GDIPLUS_FOUND       - True if GDI+ found.
 #
-# SPDX-FileCopyrightText : 2021-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2016-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+#
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
