@@ -19,7 +19,6 @@
 
 #include <QDir>
 #include <QFile>
-#include <QDirIterator>
 
 // KDE includes
 

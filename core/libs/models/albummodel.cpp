@@ -25,6 +25,9 @@ AlbumModel::AlbumModel(RootAlbumBehavior rootBehavior, QObject* const parent)
     m_columnHeader = i18n("Albums");
     setupThumbnailLoading();
 
+    connect(DIO::instance(), SIGNAL(signalTrashCounters()),
+            this, SLOT(slotUpdateTrashCounters()));
+
     connect(AlbumManager::instance(), SIGNAL(signalPAlbumsDirty(QHash<int,int>)),
             this, SLOT(setCountHash(QHash<int,int>)));
 
@@ -88,6 +91,22 @@ QVariant AlbumModel::albumData(Album* a, int role) const
     }
 
     return AbstractCheckableAlbumModel::albumData(a, role);
+}
+
+void AlbumModel::slotUpdateTrashCounters()
+{
+    Q_FOREACH (Album* const album, AlbumManager::instance()->allPAlbums())
+    {
+        if (album->isTrashAlbum())
+        {
+            QModelIndex index = indexForAlbum(album);
+
+            if (index.isValid())
+            {
+                Q_EMIT dataChanged(index, index);
+            }
+        }
+    }
 }
 
 } // namespace Digikam
