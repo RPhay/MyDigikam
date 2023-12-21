@@ -15,7 +15,7 @@ include:
       #
       # --- Continuous Integration Qt6 ---
       #
-      - /gitlab-templates/linux-qt6.yml
+      # - /gitlab-templates/linux-qt6.yml
       # - /gitlab-templates/craft-windows-x86-64.yml
       #
       # --- Continuous Deployement Qt5 ---
