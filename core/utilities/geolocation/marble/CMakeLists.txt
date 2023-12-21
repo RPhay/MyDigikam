@@ -669,7 +669,7 @@ set (marblewidget_UI
 
 qt_add_resources(marblewidget_SRCS data/libmarble.qrc)
 
-qt_wrap_ui(marblewidget_SRCS ${marblewidget_UI})
+ki18n_wrap_ui(marblewidget_SRCS ${marblewidget_UI})
 
 # Used by digikamcore
 add_library(core_marble_obj OBJECT ${marblewidget_SRCS})
