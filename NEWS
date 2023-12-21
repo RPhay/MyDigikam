@@ -68,7 +68,7 @@ BUGFIXES:
 055 ==> 478550 - Localization - main language settings are not used (can't change from German to US-English).
 056 ==> 478728 - Lock while trying to name a face.
 057 ==> 478722 - Application slowdown due to large trash.
-058 ==> 
+058 ==> 478803 - If you try to create a new name in the preview, the program crashes.
 059 ==> 
 060 ==> 
 061 ==> 
