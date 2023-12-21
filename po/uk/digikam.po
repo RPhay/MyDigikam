@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-20 00:39+0000\n"
+"POT-Creation-Date: 2023-12-21 00:40+0000\n"
 "PO-Revision-Date: 2023-12-18 12:33+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1341,12 +1341,12 @@ msgstr "Перевірка сховища профілів ICC…"
 msgid "Clean up Database..."
 msgstr "Спорожнити базу даних…"
 
-#: core/app/main/digikamapp.cpp:188
+#: core/app/main/digikamapp.cpp:192
 #, kde-format
 msgid "Loading albums..."
 msgstr "Завантаження списку альбомів…"
 
-#: core/app/main/digikamapp.cpp:334
+#: core/app/main/digikamapp.cpp:338
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1358,7 +1358,7 @@ msgstr ""
 "цьому випадку, «Керування кольорами» буде вимкнено до того часу, коли ви "
 "розв'яжете цю проблему.</p>"
 
-#: core/app/main/digikamapp.cpp:661 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:665 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1367,7 +1367,7 @@ msgstr[1] "Нічого не вибрано (%1 пункти)"
 msgstr[2] "Нічого не вибрано (%1 пунктів)"
 msgstr[3] "Нічого не вибрано (1 пункт)"
 
-#: core/app/main/digikamapp.cpp:667
+#: core/app/main/digikamapp.cpp:671
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1376,7 +1376,7 @@ msgstr[1] "Нічого не позначено (%1 [%2] записи)"
 msgstr[2] "Нічого не позначено (%1 [%2] записів)"
 msgstr[3] "Нічого не позначено (%1 [%2] запис)"
 
-#: core/app/main/digikamapp.cpp:672
+#: core/app/main/digikamapp.cpp:676
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1385,7 +1385,7 @@ msgstr[1] "Нічого не позначено (%1 записи. Зі згру�
 msgstr[2] "Нічого не позначено (%1 записів. Зі згрупованим записами: %2)"
 msgstr[3] "Нічого не позначено (%1 запис. Зі згрупованим записами: %2)"
 
-#: core/app/main/digikamapp.cpp:683
+#: core/app/main/digikamapp.cpp:687
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1394,7 +1394,7 @@ msgstr[1] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[2] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[3] "Позначено один запис з %2 (%3 з %4)"
 
-#: core/app/main/digikamapp.cpp:696
+#: core/app/main/digikamapp.cpp:700
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1403,7 +1403,7 @@ msgstr[1] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[2] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[3] "Позначено один запис з %2 [%3] (%4 з %5)"
 
-#: core/app/main/digikamapp.cpp:704
+#: core/app/main/digikamapp.cpp:708
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1412,7 +1412,7 @@ msgstr[1] "Позначено %1 із %2 записів. Загалом, зі з
 msgstr[2] "Позначено %1 із %2 записів. Загалом, зі згрупованими записами: %3"
 msgstr[3] "Позначено один запис з %2. Загалом, зі згрупованими записами: %3"
 
-#: core/app/main/digikamapp.cpp:712
+#: core/app/main/digikamapp.cpp:716
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1421,7 +1421,7 @@ msgstr[1] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[2] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[3] "Позначено один запис з %2 [%3 з %4] (%5 з %6)"
 
-#: core/app/main/digikamapp.cpp:721
+#: core/app/main/digikamapp.cpp:725
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1430,22 +1430,22 @@ msgstr[1] "Позначено %1 із %2 записів. Зі згрупован
 msgstr[2] "Позначено %1 із %2 записів. Зі згрупованими записами: %3 із %4"
 msgstr[3] "Позначено один запис з %2. Зі згрупованими записами: %3 із %4"
 
-#: core/app/main/digikamapp.cpp:752
+#: core/app/main/digikamapp.cpp:756
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 з %2)"
 
-#: core/app/main/digikamapp.cpp:766
+#: core/app/main/digikamapp.cpp:770
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 з %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:770
+#: core/app/main/digikamapp.cpp:774
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 з %2. Загалом, зі згрупованими записами: %3)"
 
-#: core/app/main/digikamapp.cpp:781
+#: core/app/main/digikamapp.cpp:785
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1454,7 +1454,7 @@ msgstr[1] "Приховано %1 записи"
 msgstr[2] "Приховано %1 записів"
 msgstr[3] "Приховано один запис"
 
-#: core/app/main/digikamapp.cpp:832
+#: core/app/main/digikamapp.cpp:836
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1463,7 +1463,7 @@ msgstr[1] "Записати метадані до позначених файл�
 msgstr[2] "Записати метадані до позначених файлів"
 msgstr[3] "Записати метадані до файла"
 
-#: core/app/main/digikamapp.cpp:834
+#: core/app/main/digikamapp.cpp:838
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2878,7 +2878,7 @@ msgstr "Показати на весь екран"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:508
+#: core/libs/album/engine/album.cpp:489
 #: core/libs/album/manager/albummanager.cpp:165
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2970,7 +2970,7 @@ msgid "No Tags Album"
 msgstr "Альбом без міток"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:581
+#: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:168
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3272,12 +3272,8 @@ msgstr "Ви справді хочете вилучити усе це остат
 msgid "Selection"
 msgstr "Позначене"
 
-#. i18n: ectx: property (text), widget (QPushButton, removeFolderButton)
-#. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:856
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:91
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:151
+#: core/libs/database/utils/ifaces/dio.cpp:890
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -3934,7 +3930,7 @@ msgstr "Назва файла"
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
 #: core/libs/dialogs/deletedialog.cpp:177
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:383
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
 msgstr "Шлях"
@@ -6556,11 +6552,9 @@ msgstr ""
 "Автоматично обчислити параметри області обрізання шляхом обробки країв "
 "зображення."
 
-#. i18n: ectx: property (text), widget (QLabel, positionLabel)
 #: core/dplugins/bqm/transform/crop/crop.cpp:96
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:349
 #: core/libs/template/templateviewer.cpp:145
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:115
 #, kde-format
 msgid "Position:"
 msgstr "Посада:"
@@ -10381,7 +10375,6 @@ msgstr "Автоматичне коригування"
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:269
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
@@ -12181,12 +12174,8 @@ msgstr "Вилучити зі списку результатів"
 msgid "Select which service you would like to use."
 msgstr "Вкажіть, якою службою ви бажаєте скористатися."
 
-#. i18n: ectx: property (text), widget (QLabel, bookmarkLabel)
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:220
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:141
-#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:62
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:118
-#: core/utilities/geolocation/marble/cloudsync/BookmarkSyncManager.cpp:650
 #, kde-format
 msgid "Bookmarks"
 msgstr "Закладки"
@@ -23944,7 +23933,6 @@ msgstr ""
 "надсилатиме запитів щодо дій."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:120
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:486
 #, kde-format
 msgid "Replace"
 msgstr "Замінити"
@@ -23955,7 +23943,6 @@ msgid "Item will be replacing the linked version."
 msgstr "Елемент замінить пов'язану версію."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:127
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:487
 #, kde-format
 msgid "Replace All"
 msgstr "Замінити всі"
@@ -24433,7 +24420,6 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:189
 #: core/libs/dialogs/webbrowserdlg.cpp:129
-#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:196
 #, kde-format
 msgid "Home"
 msgstr "Домівка"
@@ -24912,7 +24898,7 @@ msgstr "від спостереження"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1086
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1127
 #: core/utilities/geolocation/marble/core/MarbleInputHandler.cpp:666
-#: core/utilities/geolocation/marble/core/MarbleWidget.cpp:646
+#: core/utilities/geolocation/marble/core/MarbleWidget.cpp:638
 #, kde-format
 msgid "not available"
 msgstr "немає доступу"
@@ -26176,11 +26162,9 @@ msgstr ""
 "Підказка для введення пароля, яку буде показано разом з запитом на введення "
 "пароля (необов'язкова)."
 
-#. i18n: ectx: property (text), widget (QLabel, labelPassword)
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
 #: core/libs/dplugins/webservices/wslogindialog.cpp:89
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:181
 #, kde-format
 msgid "Password:"
 msgstr "Пароль:"
@@ -26976,38 +26960,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Перетворення цифрових негативів UFRaw"
 
-#: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:861
+#: core/libs/album/engine/album.cpp:410
+#: core/libs/database/utils/ifaces/dio.cpp:895
 #, kde-format
 msgid "Trash"
 msgstr "Смітник"
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:761
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Поточний пошук за розкладом"
 
-#: core/libs/album/engine/album.cpp:786
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Поточний нечіткий пошук за зображенням"
 
-#: core/libs/album/engine/album.cpp:790
+#: core/libs/album/engine/album.cpp:771
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Поточний нечіткий пошук за ескізом"
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:778
 #, kde-format
 msgid "Current Map Search"
 msgstr "Поточний пошук за картою"
 
-#: core/libs/album/engine/album.cpp:802
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Search"
 msgstr "Поточний пошук"
 
-#: core/libs/album/engine/album.cpp:805
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Поточний пошук дублікатів"
@@ -27584,7 +27568,7 @@ msgid "Context menu"
 msgstr "Контекстне меню"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:905
 #, kde-format
 msgid "Empty Trash"
 msgstr "Спорожнити смітник"
@@ -28991,13 +28975,13 @@ msgstr ""
 "Версію схеми поточної бази даних неможливо перевірити. Спробуйте почати з "
 "порожньої бази даних. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:321
+#: core/libs/database/utils/ifaces/dio.cpp:348
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Конфлікт файлів"
 
-#: core/libs/database/utils/ifaces/dio.cpp:322
+#: core/libs/database/utils/ifaces/dio.cpp:349
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29018,55 +29002,55 @@ msgstr ""
 "Автоматично перезаписати: конфліктні файли буде перезаписано.\n"
 "Автоматично пропустити: конфліктні файли буде перезаписано."
 
-#: core/libs/database/utils/ifaces/dio.cpp:331
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Автоматично перейменувати"
 
-#: core/libs/database/utils/ifaces/dio.cpp:333
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Автоматично перезаписати"
 
-#: core/libs/database/utils/ifaces/dio.cpp:335
+#: core/libs/database/utils/ifaces/dio.cpp:362
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Автоматично пропустити"
 
-#: core/libs/database/utils/ifaces/dio.cpp:825
+#: core/libs/database/utils/ifaces/dio.cpp:859
 #, kde-format
 msgid "Copy Album"
 msgstr "Копіювати альбом"
 
-#: core/libs/database/utils/ifaces/dio.cpp:830
+#: core/libs/database/utils/ifaces/dio.cpp:864
 #, kde-format
 msgid "Copy Images"
 msgstr "Копіювати зображення"
 
-#: core/libs/database/utils/ifaces/dio.cpp:836
+#: core/libs/database/utils/ifaces/dio.cpp:870
 #, kde-format
 msgid "Copy Files"
 msgstr "Копіювати файли"
 
-#: core/libs/database/utils/ifaces/dio.cpp:841
+#: core/libs/database/utils/ifaces/dio.cpp:875
 #, kde-format
 msgid "Move Album"
 msgstr "Пересунути альбом"
 
-#: core/libs/database/utils/ifaces/dio.cpp:846
+#: core/libs/database/utils/ifaces/dio.cpp:880
 #, kde-format
 msgid "Move Images"
 msgstr "Пересунути зображення"
 
-#: core/libs/database/utils/ifaces/dio.cpp:851
+#: core/libs/database/utils/ifaces/dio.cpp:885
 #, kde-format
 msgid "Move Files"
 msgstr "Пересунути файли"
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:900
 #, kde-format
 msgid "Restore Trash"
 msgstr "Відновити зі смітника"
@@ -35621,22 +35605,22 @@ msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Визначати, чи є зображення недоекспонованими або переекспонованими"
 
-#: core/libs/iojobs/iojob.cpp:70
+#: core/libs/iojobs/iojob.cpp:71
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "Файла або теки %1 вже не існує"
 
-#: core/libs/iojobs/iojob.cpp:76
+#: core/libs/iojobs/iojob.cpp:77
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "Альбому %1 вже не існує"
 
-#: core/libs/iojobs/iojob.cpp:103
+#: core/libs/iojobs/iojob.cpp:104
 #, kde-format
 msgid "Could not overwrite image %1"
 msgstr "Не вдалося перезаписати зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:111
+#: core/libs/iojobs/iojob.cpp:112
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35645,17 +35629,17 @@ msgstr ""
 "Не вдалося пересунути зображення %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «%2» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:139
+#: core/libs/iojobs/iojob.cpp:140
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "У %2 вже є файл або тека з назвою %1"
 
-#: core/libs/iojobs/iojob.cpp:169
+#: core/libs/iojobs/iojob.cpp:170
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Не вдалося пересунути теку %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:176
+#: core/libs/iojobs/iojob.cpp:177
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -35664,43 +35648,43 @@ msgstr ""
 "Не вдалося пересунути теку %1 до альбому %2. Теку %1 також було скопійовано "
 "до альбому %2."
 
-#: core/libs/iojobs/iojob.cpp:188
+#: core/libs/iojobs/iojob.cpp:189
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Не вдалося пересунути додатковий файл для файла %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:194
+#: core/libs/iojobs/iojob.cpp:195
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Не вдалося пересунути файл %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:218
+#: core/libs/iojobs/iojob.cpp:219
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Не вдалося скопіювати теку %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:231
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr ""
 "Не вдалося виконати копіювання додаткового файла для файла %1 до теки %2"
 
-#: core/libs/iojobs/iojob.cpp:238
+#: core/libs/iojobs/iojob.cpp:239
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Не вдалося виконати копіювання файла %1 до теки %2"
 
-#: core/libs/iojobs/iojob.cpp:243
+#: core/libs/iojobs/iojob.cpp:244
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Не вдалося скопіювати файл %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:287
+#: core/libs/iojobs/iojob.cpp:288
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Файла або теки %1 не існує"
 
-#: core/libs/iojobs/iojob.cpp:299
+#: core/libs/iojobs/iojob.cpp:300
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35710,7 +35694,7 @@ msgstr ""
 "Не вдалося пересунути теку %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «.dtrash» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:311
+#: core/libs/iojobs/iojob.cpp:312
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35720,32 +35704,32 @@ msgstr ""
 "Не вдалося пересунути зображення %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «.dtrash» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:328
+#: core/libs/iojobs/iojob.cpp:329
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Не вдалося вилучити альбом %1"
 
-#: core/libs/iojobs/iojob.cpp:340
+#: core/libs/iojobs/iojob.cpp:341
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Не вдалося вилучити зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:386
+#: core/libs/iojobs/iojob.cpp:387
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Не вдалося пересунути зображення %1 до смітника збірки"
 
-#: core/libs/iojobs/iojob.cpp:396
+#: core/libs/iojobs/iojob.cpp:397
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Там уже є зображення із назвою %1"
 
-#: core/libs/iojobs/iojob.cpp:411
+#: core/libs/iojobs/iojob.cpp:412
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Не вдалося перейменувати зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:483
+#: core/libs/iojobs/iojob.cpp:484
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Не вдалося відновити файл %1 зі смітника"
@@ -42047,9 +42031,7 @@ msgstr "Додатково"
 msgid "AVFormat"
 msgstr "AVFormat"
 
-#. i18n: ectx: property (text), widget (QRadioButton, browseButton)
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
-#: core/utilities/geolocation/marble/routing/GoToDialog.ui:93
 #, kde-format
 msgid "Browse"
 msgstr "Вибрати"
@@ -42503,9 +42485,7 @@ msgstr ""
 msgid "Change"
 msgstr "Змінити"
 
-#. i18n: ectx: property (text), widget (QPushButton, iconLinkButton)
 #: core/libs/widgets/files/dfileselector.cpp:58
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:46
 #, kde-format
 msgid "Browse..."
 msgstr "Вибрати…"
@@ -50296,7 +50276,7 @@ msgstr ""
 "зображень</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:142
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:145
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:139
 #, kde-format
 msgid "Plugins"
 msgstr "Додатки"
@@ -53603,7 +53583,7 @@ msgid "Roadmap"
 msgstr "Карта доріг"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:354
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "Супутник"
@@ -53646,7 +53626,7 @@ msgid "Google Maps"
 msgstr "Карти Google"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:473
 #, kde-format
 msgid "Float items"
 msgstr "Рухомі записи"
@@ -53667,69 +53647,69 @@ msgstr "Повідомлення Javascript"
 msgid "Marble Virtual Globe"
 msgstr "Віртуальний глобус Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:340
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
 #, kde-format
 msgid "Atlas map"
 msgstr "Атлас"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:341
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
 #, kde-format
 msgid "Satellite map"
 msgstr "Супутникова карта"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:342
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:343
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
 #, kde-format
 msgid "OpenStreetMap (Vector)"
 msgstr "OpenStreetMap (вектор)"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Сферична"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:406
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:393
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Проєкція Меркатора"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:398
 #, kde-format
 msgid "Equirectangular"
 msgstr "Циліндрична"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:422
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:409
 #, kde-format
 msgid "Show compass"
 msgstr "Показати компас"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:427
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:414
 #, kde-format
 msgid "Show scale bar"
 msgstr "Показати шкалу масштабу"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:432
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:419
 #, kde-format
 msgid "Show navigation"
 msgstr "Показати навігаційну панель"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:424
 #, kde-format
 msgid "Show overview map"
 msgstr "Показати огляд карти"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Інші теми Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:477
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:464
 #, kde-format
 msgid "Projection"
 msgstr "Проєкція"
@@ -53779,9 +53759,7 @@ msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Зміна закладки геопозиціювання"
 
-#. i18n: ectx: property (text), widget (QPushButton, removeButton)
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:233
-#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:42
 #: core/utilities/setup/album/setupcategory.cpp:99
 #: core/utilities/setup/camera/setupcamera.cpp:319
 #: core/utilities/setup/camera/setupcamera.cpp:441
@@ -54874,458 +54852,6 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Невідома планета"
 
-#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:58
-#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:250
-#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
-#, kde-format
-msgid "Default"
-msgstr "Типовий"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:183
-#, kde-format
-msgid ""
-"The folder %1 is not empty. Removing it will delete all bookmarks it "
-"contains. Are you sure you want to delete the folder?"
-msgstr ""
-"Тека %1 містить закладки. Вилучення теки призведе до вилучення всіх "
-"закладок, що у ній містяться. Ви справді бажаєте вилучити цю теку?"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:184
-#, kde-format
-msgid "Remove Folder"
-msgstr "Вилучення теки"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:418
-#, kde-format
-msgid "Export Bookmarks"
-msgstr "Експорт закладок"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:419
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:730
-#, kde-format
-msgid "KML files (*.kml)"
-msgstr "файли KML (*.kml)"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:424
-#, kde-format
-msgid "Unable to save bookmarks. Please check that the file is writable."
-msgstr ""
-"Не вдалося зберегти закладки. Будь ласка, перевірте, чи можливий запис до "
-"файла."
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:425
-#, kde-format
-msgid "Bookmark Export"
-msgstr "Експорт закладок"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:432
-#, kde-format
-msgid "Import Bookmarks"
-msgstr "Імпорт закладок"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:433
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:696
-#, kde-format
-msgid "KML Files (*.kml)"
-msgstr "файли KML (*.kml)"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:440
-#, kde-format
-msgid "The file %1 cannot be opened as a KML file."
-msgstr "Файл %1 не вдалося відкрити як файл KML."
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:441
-#, kde-format
-msgid "Bookmark Import"
-msgstr "Імпорт закладок"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:475
-#, kde-format
-msgid "The file contains a bookmark that already exists among your Bookmarks."
-msgstr "У файлі міститься закладка, яка вже є у списку ваших закладок."
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:476
-#, kde-format
-msgid "Imported bookmark"
-msgstr "Імпортована закладка"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:477
-#, kde-format
-msgid "Existing bookmark"
-msgstr "Поточна закладка"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:478
-#, kde-format
-msgid "Do you want to replace the existing bookmark with the imported one?"
-msgstr "Бажаєте замінити поточну закладку імпортованою?"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:488
-#, kde-format
-msgid "Skip"
-msgstr "Пропустити"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:489
-#, kde-format
-msgid "Skip All"
-msgstr "Пропустити всі"
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiBookmarkManagerDialog)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:14
-#, kde-format
-msgid "Bookmark Manager"
-msgstr "Керування закладками"
-
-#. i18n: ectx: property (text), widget (QPushButton, importButton)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:25
-#, kde-format
-msgid "Import Bookmarks..."
-msgstr "Імпортувати закладки…"
-
-#. i18n: ectx: property (text), widget (QPushButton, exportButton)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:35
-#, kde-format
-msgid "Export Bookmarks..."
-msgstr "Експортувати закладки…"
-
-#. i18n: ectx: property (text), widget (QLabel, foldersLabel)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:64
-#, kde-format
-msgid "Folders"
-msgstr "Теки"
-
-#. i18n: ectx: property (text), widget (QPushButton, newFolderButton)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:74
-#, kde-format
-msgid "New..."
-msgstr "Створити…"
-
-#. i18n: ectx: property (text), widget (QPushButton, renameFolderButton)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:81
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:62
-#, kde-format
-msgid "Rename..."
-msgstr "Перейменувати…"
-
-#. i18n: ectx: property (text), widget (QPushButton, editBookmarkButton)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:141
-#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
-#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
-#, kde-format
-msgid "Edit"
-msgstr "Змінити"
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiEditBookmarkDialog)
-#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:14
-#, kde-format
-msgid "Edit Bookmark"
-msgstr "Редагування закладки"
-
-#. i18n: ectx: property (text), widget (QLabel, description_lbl)
-#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:25
-#, kde-format
-msgid "&Description:"
-msgstr "&Опис:"
-
-#. i18n: ectx: property (html), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:50
-#, kde-format
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-"<tr>\n"
-"<td style=\"border: none;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-"<tr>\n"
-"<td style=\"border: none;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-
-#. i18n: ectx: property (text), widget (QLabel, folder_lbl)
-#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:57
-#, kde-format
-msgid "&Folder:"
-msgstr "Т&ека:"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_newFolderButton)
-#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:79
-#, kde-format
-msgid "&Add Folder..."
-msgstr "&Додати теку…"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_intValueEditor)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:129
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:28
-#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:47
-#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:99
-#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:151
-#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:203
-#, kde-format
-msgid "°"
-msgstr "°"
-
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:179
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:338
-#, kde-format
-msgid "'"
-msgstr "'"
-
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:180
-#, kde-format
-msgid "\""
-msgstr "\""
-
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:526
-#, kde-format
-msgctxt "East, the direction"
-msgid "E"
-msgstr "Сх"
-
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:527
-#, kde-format
-msgctxt "West, the direction"
-msgid "W"
-msgstr "Зх"
-
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:530
-#, kde-format
-msgctxt "North, the direction"
-msgid "N"
-msgstr "Пн"
-
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:531
-#, kde-format
-msgctxt "South, the direction"
-msgid "S"
-msgstr "Пд"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:38
-#, kde-format
-msgid "′"
-msgstr "′"
-
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:54
-#, kde-format
-msgid "″"
-msgstr "″"
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
-#: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:14
-#, kde-format
-msgid "New Bookmark Folder"
-msgstr "Нова тека закладок"
-
-#. i18n: ectx: property (text), widget (QLabel, m_namelbl)
-#: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:22
-#, kde-format
-msgid "&Folder name:"
-msgstr "&Назва теки:"
-
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:210
-#, kde-format
-msgid "Open File"
-msgstr "Відкрити файл"
-
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:212
-#, kde-format
-msgid "All Supported Files (*.png)"
-msgstr "усі підтримувані файли (*.png)"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:64
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
-#, kde-format
-msgid "Name:"
-msgstr "Назва:"
-
-#. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:81
-#, kde-format
-msgid "Icon link:"
-msgstr "Посилання піктограми:"
-
-#. i18n: ectx: property (text), widget (QLabel, idLabel)
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:91
-#, kde-format
-msgid "ID:"
-msgstr "Ід.:"
-
-#. i18n: ectx: property (text), widget (QLabel, targetIdLabel)
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:104
-#, kde-format
-msgid "Target ID:"
-msgstr "Ід. призначення:"
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, CloudRoutesDialog)
-#: core/utilities/geolocation/marble/cloudsync/CloudRoutesDialog.ui:14
-#, kde-format
-msgid "Cloud Routes"
-msgstr "Маршрути з обчислювальної «хмари»"
-
-#. i18n: ectx: property (text), widget (QLabel, labelNoRoute)
-#: core/utilities/geolocation/marble/cloudsync/CloudRoutesDialog.ui:20
-#, kde-format
-msgid "No route available."
-msgstr "Немає даних маршрутів."
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:106
-#, kde-format
-msgid "Use local"
-msgstr "Використовувати локальне"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:107
-#, kde-format
-msgid "Use cloud"
-msgstr "Використовувати «хмару»"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:108
-#, kde-format
-msgid "Always use local"
-msgstr "Завжди використовувати локальне"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:109
-#, kde-format
-msgid "Always use cloud"
-msgstr "Завжди використовувати з «хмари»"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:123
-#, kde-format
-msgid "Local placemark"
-msgstr "Локальна позначка"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:124
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:143
-#, kde-format
-msgid "Path: %1 <br /> Name: %2 <br /> Description: %3 <br /> Status: %4"
-msgstr "Шлях: %1 <br /> Назва: %2 <br /> Опис: %3 <br /> Стан: %4"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:127
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:146
-#, kde-format
-msgid "Changed"
-msgstr "Змінено"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:130
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:149
-#, kde-format
-msgid "Deleted"
-msgstr "Вилучено"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:142
-#, kde-format
-msgid "Cloud placemark"
-msgstr "Позначка з «хмари»"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:164
-#, kde-format
-msgid ""
-"A bookmark on this device conflicts with a cloud bookmark. Which one do you "
-"want to keep?"
-msgstr ""
-"Запис закладки на пристрої суперечить запису закладки у «хмарі». Який із "
-"записів слід зберегти?"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:175
-#, kde-format
-msgid "Synchronization Conflict"
-msgstr "Конфлікт синхронізації"
-
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:301
-#, kde-format
-msgid "Server '%1' could not be reached"
-msgstr "Не вдалося встановити зв’язок із сервером «%1»"
-
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:319
-#, kde-format
-msgid "The Marble app is not installed on the ownCloud server"
-msgstr "Програму Marble на сервері ownCloud не встановлено"
-
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:321
-#, kde-format
-msgid "The server is not an ownCloud server"
-msgstr "Цей сервер не є сервером ownCloud"
-
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:325
-#, kde-format
-msgid "Username or password are incorrect"
-msgstr "Вказано помилкове ім’я користувача або пароль"
-
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:328
-#, kde-format
-msgid "Login successful"
-msgstr "Вхід здійснено"
-
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:178
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:199
-#, kde-format
-msgid "Open"
-msgstr "Відкрити"
-
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:179
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:204
-#, kde-format
-msgid "Load"
-msgstr "Завантажити"
-
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:180
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:209
-#, kde-format
-msgid "Remove from device"
-msgstr "Вилучити з пристрою"
-
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:181
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:214
-#, kde-format
-msgid "Delete from cloud"
-msgstr "Вилучити з «хмари»"
-
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:219
-#, kde-format
-msgid "Upload to cloud"
-msgstr "Вивантажити до «хмари»"
-
 #: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:271
 #, kde-format
 msgid "&Lock"
@@ -55336,10 +54862,8 @@ msgstr "За&блокувати"
 msgid "&Hide"
 msgstr "С&ховати"
 
-#. i18n: ectx: property (text), widget (QPushButton, configureButton)
 #: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:286
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:378
-#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:32
 #, kde-format
 msgid "&Configure..."
 msgstr "&Налаштувати…"
@@ -55398,66 +54922,46 @@ msgctxt "means nautical miles"
 msgid "nm"
 msgstr "мор. миля"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:113
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:108
 #, kde-format
 msgid "Copy Coordinates"
 msgstr "Копіювати координати"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:114
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:109
 #, kde-format
 msgid "Copy geo: URL"
 msgstr "Копіювати геодані: адреса"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:123
-#, kde-format
-msgid "Directions &from here"
-msgstr "По&чати звідси"
-
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:124
-#, kde-format
-msgid "Directions &to here"
-msgstr "&Дістатися сюди"
-
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:132
-#, kde-format
-msgid "Add &Bookmark"
-msgstr "Додати &закладку"
-
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:133
-#, kde-format
-msgid "&Full Screen Mode"
-msgstr "&Повноекранний режим"
-
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:152
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:126
 #, kde-format
 msgid "&Address Details"
 msgstr "П&араметри адреси"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:176
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:142
 #, kde-format
 msgid "No description available."
 msgstr "Немає опису."
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:378
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:359
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:368
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:345
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:358
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:364
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:367
 #, kde-format
 msgid "National Capital"
 msgstr "Столиця країни"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:380
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:347
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:324
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:328
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:332
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:336
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:357
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:356
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "City"
 msgstr "Місто"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:382
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:349
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:326
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:330
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:334
@@ -55466,7 +54970,7 @@ msgstr "Місто"
 msgid "State Capital"
 msgstr "Адміністративний центр регіону"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:384
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:351
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:325
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:329
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:333
@@ -55475,23 +54979,23 @@ msgstr "Адміністративний центр регіону"
 msgid "County Capital"
 msgstr "Адміністративний центр округу"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:387
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:354
 #, kde-format
 msgid "Capital"
 msgstr "Адміністративний центр"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:395
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:366
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:362
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
 #, kde-format
 msgid "Village"
 msgstr "Село"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:539
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:506
 #, kde-format
 msgid "&Info Boxes"
 msgstr "&Інформаційні панелі"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:883
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:806
 #, kde-format
 msgid "Address Details"
 msgstr "Параметри адреси"
@@ -55573,7 +55077,7 @@ msgid "Nation"
 msgstr "Країна"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:342
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:461
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:460
 #, kde-format
 msgid "Volcano"
 msgstr "Вулкан"
@@ -55628,1518 +55132,1513 @@ msgstr "Сайт OSM"
 msgid "Coordinate"
 msgstr "Координата"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
-#, kde-format
-msgid "Bookmark"
-msgstr "Закладка"
-
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:358
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:357
 #, kde-format
 msgid "City Capital"
 msgstr "Центр міста"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:360
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:359
 #, kde-format
 msgid "Suburb"
 msgstr "Передмістя"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:361
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:360
 #, kde-format
 msgid "Hamlet"
 msgstr "Хутір"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:362
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:361
 #, kde-format
 msgid "Locality"
 msgstr "Район"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:363
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:362
 #, kde-format
 msgid "Town"
 msgstr "Місто"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:364
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:363
 #, kde-format
 msgid "Town Capital"
 msgstr "Центр міста"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:367
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:366
 #, kde-format
 msgid "Village Capital"
 msgstr "Центр села"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:369
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:368
 #, kde-format
 msgid "Water"
 msgstr "Вода"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:370
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:369
 #, kde-format
 msgid "Reef"
 msgstr "Риф"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:371
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:370
 #, kde-format
 msgid "Wood"
 msgstr "Дерева"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:372
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:371
 #, kde-format
 msgid "Beach"
 msgstr "Пляж"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:373
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:372
 #, kde-format
 msgid "Wetland"
 msgstr "Болото"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:374
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:373
 #, kde-format
 msgid "Glacier"
 msgstr "Льодовик"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:375
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:374
 #, kde-format
 msgid "Ice Shelf"
 msgstr "Шельфовий льодовик"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:376
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:375
 #, kde-format
 msgid "Scrub"
 msgstr "Чагарники"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:377
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:376
 #, kde-format
 msgid "Cliff"
 msgstr "Бескид"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:378
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:377
 #, kde-format
 msgid "Heath"
 msgstr "Пустир"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:379
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:378
 #, kde-format
 msgid "Traffic Signals"
 msgstr "Сигнали руху"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:380
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:379
 #, kde-format
 msgid "Elevator"
 msgstr "Ліфт"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:381
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:380
 #, kde-format
 msgid "Steps"
 msgstr "Степ"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:381
 #, kde-format
 msgid "Unknown Road"
 msgstr "Невідома дорога"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:384
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:386
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:383
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:385
 #, kde-format
 msgid "Footway"
 msgstr "Пішохідна доріжка"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:385
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:384
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:581
 #, kde-format
 msgid "Track"
 msgstr "Польова дорога"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:387
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:386
 #, kde-format
 msgid "Cycleway"
 msgstr "Велосипедна доріжка"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:388
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:387
 #, kde-format
 msgid "Service Road"
 msgstr "Службова дорога"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:389
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:388
 #, kde-format
 msgid "Road"
 msgstr "Дорога"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:390
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:389
 #, kde-format
 msgid "Residential Road"
 msgstr "Дорога у житловому районі"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:391
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:390
 #, kde-format
 msgid "Living Street"
 msgstr "Житлова вулиця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:392
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:391
 #, kde-format
 msgid "Unclassified Road"
 msgstr "Дорога місцевого значення"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:393
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:392
 #, kde-format
 msgid "Tertiary Link Road"
 msgstr "Третьорядна проміжна дорога"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:394
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:393
 #, kde-format
 msgid "Tertiary Road"
 msgstr "Третьорядна дорога"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:395
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:394
 #, kde-format
 msgid "Secondary Link Road"
 msgstr "Другорядна проміжна дорога"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:396
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:395
 #, kde-format
 msgid "Secondary Road"
 msgstr "Другорядна дорога"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:397
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:396
 #, kde-format
 msgid "Primary Link Road"
 msgstr "Магістральна проміжна дорога"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:398
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:397
 #, kde-format
 msgid "Primary Road"
 msgstr "Магістральна дорога"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:399
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:398
 #, kde-format
 msgid "Raceway"
 msgstr "Автодром"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:400
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:399
 #, kde-format
 msgid "Trunk Link Road"
 msgstr "Проміжна автомагістраль"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:401
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:400
 #, kde-format
 msgid "Trunk Road"
 msgstr "Автомагістраль"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:402
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:401
 #, kde-format
 msgid "Motorway Link Road"
 msgstr "Проміжна автострада"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:403
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:402
 #, kde-format
 msgid "Motorway"
 msgstr "Автострада"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:404
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:403
 #, kde-format
 msgid "Corridor"
 msgstr "Коридор"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:405
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:404
 #, kde-format
 msgid "Building"
 msgstr "Будинок"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:406
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:405
 #, kde-format
 msgid "Camping"
 msgstr "Кемпінг"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:407
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:406
 #, kde-format
 msgid "Hostel"
 msgstr "Турбаза"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:408
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:407
 #, kde-format
 msgid "Hotel"
 msgstr "Готель"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:409
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:408
 #, kde-format
 msgid "Motel"
 msgstr "Мотель"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:410
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:409
 #, kde-format
 msgid "Youth Hostel"
 msgstr "Молодіжний гуртожиток"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:411
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:410
 #, kde-format
 msgid "Guest House"
 msgstr "Гостьовий будинок"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:412
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:411
 #, kde-format
 msgid "Library"
 msgstr "Бібліотека"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:413
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:412
 #, kde-format
 msgid "Kindergarten"
 msgstr "Дитсадок"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:414
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:413
 #, kde-format
 msgid "College"
 msgstr "Коледж"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:415
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:414
 #, kde-format
 msgid "School"
 msgstr "Школа"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:416
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:415
 #, kde-format
 msgid "University"
 msgstr "Університет"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:417
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:416
 #, kde-format
 msgid "Bar"
 msgstr "Бар"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:418
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:417
 #, kde-format
 msgid "Biergarten"
 msgstr "Вулична пив’ярня"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:419
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:418
 #, kde-format
 msgid "Cafe"
 msgstr "Кав’ярня"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:420
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:419
 #, kde-format
 msgid "Fast Food"
 msgstr "Фастфуд"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:421
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:420
 #, kde-format
 msgid "Pub"
 msgstr "Пив’ярня"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:422
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:421
 #, kde-format
 msgid "Restaurant"
 msgstr "Ресторан"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:423
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:422
 #, kde-format
 msgid "Dentist"
 msgstr "Дантист"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:424
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:423
 #, kde-format
 msgid "Doctors"
 msgstr "Лікар"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:425
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:424
 #, kde-format
 msgid "Hospital"
 msgstr "Лікарня"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:426
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:425
 #, kde-format
 msgid "Pharmacy"
 msgstr "Аптека"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:427
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:426
 #, kde-format
 msgid "Veterinary"
 msgstr "Ветеринар"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:428
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:427
 #, kde-format
 msgid "ATM"
 msgstr "Банкомат"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:429
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:428
 #, kde-format
 msgid "Bank"
 msgstr "Банк"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:430
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:429
 #, kde-format
 msgid "Archaeological Site"
 msgstr "Місце археологічних розкопок"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:431
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:430
 #, kde-format
 msgid "Embassy"
 msgstr "Посольство"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:432
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:431
 #, kde-format
 msgid "Emergency Phone"
 msgstr "Телефон для надзвичайних ситуацій"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:433
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:432
 #, kde-format
 msgid "Mountain Rescue"
 msgstr "Гірничо-рятувальна служба"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:434
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:433
 #, kde-format
 msgid "Water Park"
 msgstr "Аквапарк"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:435
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:434
 #, kde-format
 msgid "Community Centre"
 msgstr "Центр спільноти"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:436
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:435
 #, kde-format
 msgid "Fountain"
 msgstr "Фонтан"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:437
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:436
 #, kde-format
 msgid "Night Club"
 msgstr "Нічний клуб"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:438
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:437
 #, kde-format
 msgid "Bench"
 msgstr "Лава"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:439
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:438
 #, kde-format
 msgid "Court House"
 msgstr "Будинок суду"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:440
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:439
 #, kde-format
 msgid "Fire Station"
 msgstr "Пожежна станція"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:441
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:440
 #, kde-format
 msgid "Hunting Stand"
 msgstr "Місце для полювання"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:442
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:441
 #, kde-format
 msgid "Police"
 msgstr "Поліція"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:443
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:442
 #, kde-format
 msgid "Post Box"
 msgstr "Поштова скринька"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:444
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:443
 #, kde-format
 msgid "Post Office"
 msgstr "Поштове відділення"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:445
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:444
 #, kde-format
 msgid "Prison"
 msgstr "В’язниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:446
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:445
 #, kde-format
 msgid "Recycling"
 msgstr "Пункт переробки"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:447
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:446
 #, kde-format
 msgid "Shelter"
 msgstr "Притулок"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:448
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:447
 #, kde-format
 msgid "Telephone"
 msgstr "Телефон"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:449
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:448
 #, kde-format
 msgid "Toilets"
 msgstr "Туалети"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:450
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:449
 #, kde-format
 msgid "Town Hall"
 msgstr "Мерія"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:451
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:450
 #, kde-format
 msgid "Waste Basket"
 msgstr "Смітник"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:452
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:451
 #, kde-format
 msgid "Drinking Water"
 msgstr "Питна вода"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:453
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:452
 #, kde-format
 msgid "Graveyard"
 msgstr "Цвинтар"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:454
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:453
 #, kde-format
 msgid "Charging Station"
 msgstr "Заряджальна станція"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:455
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:454
 #, kde-format
 msgid "Car Wash"
 msgstr "Автомийка"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:456
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:455
 #, kde-format
 msgid "Social Facility"
 msgstr "Соціальний об’єкт"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:457
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:456
 #, kde-format
 msgid "City Wall"
 msgstr "Міський мур"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:458
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:457
 #, kde-format
 msgid "Gate"
 msgstr "Ворота"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:459
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:458
 #, kde-format
 msgid "Lift Gate"
 msgstr "Підйомні ворота"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:460
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:668
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:459
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:667
 #, kde-format
 msgid "Wall"
 msgstr "Стіна"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:462
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:461
 #, kde-format
 msgid "Peak"
 msgstr "Пік"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:463
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:462
 #, kde-format
 msgid "Tree"
 msgstr "Дерево"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:464
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:463
 #, kde-format
 msgid "Cave Entrance"
 msgstr "Вхід до печери"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:465
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:464
 #, kde-format
 msgid "Beverages"
 msgstr "Напої"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:466
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:465
 #, kde-format
 msgid "Hifi"
 msgstr "Дискобар"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:467
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:466
 #, kde-format
 msgid "Supermarket"
 msgstr "Супермаркет"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:468
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:467
 #, kde-format
 msgid "Liquor Store"
 msgstr "Винна крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:469
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:468
 #, kde-format
 msgid "Bakery"
 msgstr "Пекарня"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:470
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:469
 #, kde-format
 msgid "Butcher"
 msgstr "Торгівля м’ясом"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:471
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:470
 #, kde-format
 msgid "Confectionery"
 msgstr "Кондитерська"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:472
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:471
 #, kde-format
 msgid "Convenience Shop"
 msgstr "Місцевий магазин"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:473
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:472
 #, kde-format
 msgid "Greengrocer"
 msgstr "Овочевий магазин"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:474
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:473
 #, kde-format
 msgid "Seafood Shop"
 msgstr "Магазин морської їжі"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:475
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:474
 #, kde-format
 msgid "Department Store"
 msgstr "Районний магазин"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:476
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:475
 #, kde-format
 msgid "Kiosk"
 msgstr "Кіоск"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:477
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:476
 #, kde-format
 msgid "Bag Shop"
 msgstr "Сумки"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:478
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:477
 #, kde-format
 msgid "Clothes Shop"
 msgstr "Одяг"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:479
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:478
 #, kde-format
 msgid "Fashion Shop"
 msgstr "Модний одяг"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:480
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:479
 #, kde-format
 msgid "Jewelry Shop"
 msgstr "Ювелірна крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:481
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:480
 #, kde-format
 msgid "Shoe Shop"
 msgstr "Взуттєва крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:482
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:481
 #, kde-format
 msgid "Variety Store"
 msgstr "Магазин фіксованих цін"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:483
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:482
 #, kde-format
 msgid "Beauty Services"
 msgstr "Салон краси"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:484
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:483
 #, kde-format
 msgid "Chemist"
 msgstr "Хімія"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:485
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:484
 #, kde-format
 msgid "Cosmetics"
 msgstr "Косметика"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:486
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:485
 #, kde-format
 msgid "Hairdresser"
 msgstr "Перукарня"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:487
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:486
 #, kde-format
 msgid "Optician"
 msgstr "Оптика"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:488
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:487
 #, kde-format
 msgid "Perfumery"
 msgstr "Парфумерія"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:489
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:491
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:488
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:490
 #, kde-format
 msgid "Hardware Store"
 msgstr "Магазин обладнання"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:490
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:489
 #, kde-format
 msgid "Florist"
 msgstr "Квіткова крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:492
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:491
 #, kde-format
 msgid "Furniture Store"
 msgstr "Меблева крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:493
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:492
 #, kde-format
 msgid "Electronics Shop"
 msgstr "Магазин електроніки"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:494
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:493
 #, kde-format
 msgid "Mobile Phone Shop"
 msgstr "Товари для мобільних телефонів"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:495
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:494
 #, kde-format
 msgid "Bicycle Shop"
 msgstr "Веломагазин"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:496
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:495
 #, kde-format
 msgid "Car Dealer"
 msgstr "Продаж авто"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:497
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:496
 #, kde-format
 msgid "Car Repair Shop"
 msgstr "Автодеталі"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:498
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:497
 #, kde-format
 msgid "Car Parts"
 msgstr "Запчастини до авто"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:499
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:498
 #, kde-format
 msgid "Motorcycle Shop"
 msgstr "Мотоциклетна крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:500
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:499
 #, kde-format
 msgid "Outdoor Shop"
 msgstr "Магазин на вулиці"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:501
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:500
 #, kde-format
 msgid "Sports Shop"
 msgstr "Спортмагазин"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:502
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:501
 #, kde-format
 msgid "Printing Services"
 msgstr "Послуги друку"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:503
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:502
 #, kde-format
 msgid "Art Shop"
 msgstr "Художня крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:504
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:503
 #, kde-format
 msgid "Musical Instrument Shop"
 msgstr "Магазин музичних інструментів"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:505
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:504
 #, kde-format
 msgid "Photo Shop"
 msgstr "Фотокрамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:506
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:505
 #, kde-format
 msgid "Bookshop"
 msgstr "Книгарня"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:507
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:506
 #, kde-format
 msgid "Gift Shop"
 msgstr "Подарункова крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:508
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:507
 #, kde-format
 msgid "Stationery"
 msgstr "Канцелярське приладдя"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:509
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:508
 #, kde-format
 msgid "Laundry"
 msgstr "Пральня"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:510
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:509
 #, kde-format
 msgid "Pet Shop"
 msgstr "Зоомагазин"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:511
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:510
 #, kde-format
 msgid "Toy Store"
 msgstr "Іграшкова крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:512
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:511
 #, kde-format
 msgid "Travel Agency"
 msgstr "Турагенція"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:513
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:512
 #, kde-format
 msgid "Deli"
 msgstr "Гастроном"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:514
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:513
 #, kde-format
 msgid "Tobacco Shop"
 msgstr "Тютюнова крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:515
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:514
 #, kde-format
 msgid "Tea Shop"
 msgstr "Чайна крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:516
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:515
 #, kde-format
 msgid "Computer Shop"
 msgstr "Комп'ютерна крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:517
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:516
 #, kde-format
 msgid "Garden Centre"
 msgstr "Центр садівництва"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:518
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:517
 #, kde-format
 msgid "Shop"
 msgstr "Крамниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:519
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:518
 #, kde-format
 msgid "Bridge"
 msgstr "Міст"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:520
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:519
 #, kde-format
 msgid "Lighthouse"
 msgstr "Маяк"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:521
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:520
 #, kde-format
 msgid "Pier"
 msgstr "Пірс"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:522
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:521
 #, kde-format
 msgid "Water Tower"
 msgstr "Водонапірна вежа"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:523
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Wind Mill"
 msgstr "Вітряк"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:524
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:523
 #, kde-format
 msgid "Communications Tower"
 msgstr "Радіопередавальна вежа"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:525
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:524
 #, kde-format
 msgid "Tourist Attraction"
 msgstr "Туристичний атракціон"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:526
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:525
 #, kde-format
 msgid "Artwork"
 msgstr "Художня робота"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:527
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:526
 #, kde-format
 msgid "Castle"
 msgstr "Замок"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:528
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:527
 #, kde-format
 msgid "Cinema"
 msgstr "Кінотеатр"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:529
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:528
 #, kde-format
 msgid "Information"
 msgstr "Відомості"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:530
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:529
 #, kde-format
 msgid "Monument"
 msgstr "Монумент"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:531
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:530
 #, kde-format
 msgid "Museum"
 msgstr "Музей"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:532
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:531
 #, kde-format
 msgid "Ruin"
 msgstr "Руїни"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:533
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:532
 #, kde-format
 msgid "Theatre"
 msgstr "Театр"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:534
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:533
 #, kde-format
 msgid "Theme Park"
 msgstr "Тематичний парк"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:535
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:534
 #, kde-format
 msgid "View Point"
 msgstr "Точка спостереження"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:536
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:535
 #, kde-format
 msgid "Zoo"
 msgstr "Зоопарк"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:537
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:536
 #, kde-format
 msgid "Alpine Hut"
 msgstr "Альпійська хижа"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:538
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:537
 #, kde-format
 msgid "Wilderness Hut"
 msgstr "Занедбана хижа"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:538
 #, kde-format
 msgid "Memorial"
 msgstr "Меморіал"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
 #, kde-format
 msgid "Aerodrome"
 msgstr "Аеродром"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
 #, kde-format
 msgid "Helipad"
 msgstr "Вертолітний майданчик"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
 #, kde-format
 msgid "Airport Gate"
 msgstr "Термінал аеропорту"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
 #, kde-format
 msgid "Airport Runway"
 msgstr "Злітно-посадкова смуга"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
 #, kde-format
 msgid "Airport Apron"
 msgstr "Перон аеропорту"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Airport Taxiway"
 msgstr "Рульова смуга аеропорту"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:546
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
 #, kde-format
 msgid "Airport Terminal"
 msgstr "Термінал аеропорту"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:547
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:546
 #, kde-format
 msgid "Bus Station"
 msgstr "Автостанція"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:547
 #, kde-format
 msgid "Bus Stop"
 msgstr "Автобусна зупинка"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
 #, kde-format
 msgid "Car Sharing"
 msgstr "Користування авто"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:550
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
 #, kde-format
 msgid "Gas Station"
 msgstr "Автозаправка"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:551
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:550
 #, kde-format
 msgid "Parking"
 msgstr "Стоянка"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:552
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:551
 #, kde-format
 msgid "Parking Space"
 msgstr "Місце для паркування"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:552
 #, kde-format
 msgid "Platform"
 msgstr "Платформа"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
 #, kde-format
 msgid "Bicycle Rental"
 msgstr "Прокат велосипедів"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
 #, kde-format
 msgid "Car Rental"
 msgstr "Оренда автомобілів"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:556
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
 #, kde-format
 msgid "Ski Rental"
 msgstr "Оренда лиж"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:557
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:556
 #, kde-format
 msgid "Taxi Rank"
 msgstr "Таксопарк"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:558
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:557
 #, kde-format
 msgid "Train Station"
 msgstr "Залізнична станція"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:558
 #, kde-format
 msgid "Tram Stop"
 msgstr "Трамвайна зупинка"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
 #, kde-format
 msgid "Bicycle Parking"
 msgstr "Паркування велосипедів"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
 #, kde-format
 msgid "Motorcycle Parking"
 msgstr "Паркування мотоциклів"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:562
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
 #, kde-format
 msgid "Subway Entrance"
 msgstr "Вхід у метро"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:563
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:562
 #, kde-format
 msgid "Speed Camera"
 msgstr "Камера контролю швидкості"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:563
 #, kde-format
 msgid "Place Of Worship"
 msgstr "Місце поклоніння"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
 #, kde-format
 msgid "Bahai"
 msgstr "Бахаїстський"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:566
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
 #, kde-format
 msgid "Buddhist"
 msgstr "Буддійський"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:567
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:566
 #, kde-format
 msgid "Christian"
 msgstr "Християнський"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:568
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:567
 #, kde-format
 msgid "Muslim"
 msgstr "Мусульманський"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:569
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:568
 #, kde-format
 msgid "Hindu"
 msgstr "Індуїстський"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:570
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:569
 #, kde-format
 msgid "Jain"
 msgstr "Джайнійський"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:571
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:570
 #, kde-format
 msgid "Jewish"
 msgstr "Іудаїстський"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:572
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:571
 #, kde-format
 msgid "Shinto"
 msgstr "Сінтоїстський"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:573
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:572
 #, kde-format
 msgid "Sikh"
 msgstr "Сикхський"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:574
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Taoist"
 msgstr "Даоський"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:575
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:574
 #, kde-format
 msgid "Golf Course"
 msgstr "Поле для гольфу"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:576
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:575
 #, kde-format
 msgid "Marina"
 msgstr "Моря"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:577
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:576
 #, kde-format
 msgid "Park"
 msgstr "Парк"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:578
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:577
 #, kde-format
 msgid "Playground"
 msgstr "Ігровий майданчик"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:579
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:578
 #, kde-format
 msgid "Pitch"
 msgstr "Майданчик"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:580
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:579
 #, kde-format
 msgid "Sports Centre"
 msgstr "Спортивний центр"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:581
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:580
 #, kde-format
 msgid "Stadium"
 msgstr "Стадіон"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
 #, kde-format
 msgid "Swimming Pool"
 msgstr "Басейн"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:584
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Miniature Golf Course"
 msgstr "Мініатюрне поле для гольфу"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:585
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:584
 #, kde-format
 msgid "Allotments"
 msgstr "Орендована земля"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:586
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:585
 #, kde-format
 msgid "Basin"
 msgstr "Резервуар"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:587
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:586
 #, kde-format
 msgid "Cemetery"
 msgstr "Цвинтар"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:588
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:587
 #, kde-format
 msgid "Commercial"
 msgstr "Комерція"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:589
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:588
 #, kde-format
 msgid "Construction"
 msgstr "Будівництво"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:590
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:589
 #, kde-format
 msgid "Farmland"
 msgstr "Ферма"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:591
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:590
 #, kde-format
 msgid "Farmyard"
 msgstr "Двір ферми"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:591
 #, kde-format
 msgid "Garages"
 msgstr "Гаражі"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
 #, kde-format
 msgid "Grass"
 msgstr "Трава"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:594
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
 #, kde-format
 msgid "Industrial"
 msgstr "Промисловість"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:595
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:594
 #, kde-format
 msgid "Landfill"
 msgstr "Звалище"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:596
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:595
 #, kde-format
 msgid "Meadow"
 msgstr "Луки"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:597
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:596
 #, kde-format
 msgid "Military"
 msgstr "Військо"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:597
 #, kde-format
 msgid "Quarry"
 msgstr "Кар’єр"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
 #, kde-format
 msgid "Railway"
 msgstr "Залізнична колія"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:600
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
 #, kde-format
 msgid "Reservoir"
 msgstr "Водойма"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:601
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:600
 #, kde-format
 msgid "Residential"
 msgstr "Житло"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:602
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:601
 #, kde-format
 msgid "Retail"
 msgstr "Роздрібна торгівля"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:603
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:602
 #, kde-format
 msgid "Orchard"
 msgstr "Фруктовий сад"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:604
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:603
 #, kde-format
 msgid "Vineyard"
 msgstr "Виноградник"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:605
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:604
 #, kde-format
 msgid "Rail"
 msgstr "Колія"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:606
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:605
 #, kde-format
 msgid "Narrow Gauge"
 msgstr "Вузька колія"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:607
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:606
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:218
 #, kde-format
 msgid "Tram"
 msgstr "Трамвай"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:608
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:607
 #, kde-format
 msgid "Light Rail"
 msgstr "Легка колія"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:609
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:608
 #, kde-format
 msgid "Abandoned Railway"
 msgstr "Закинута залізнична колія"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:610
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:609
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:217
 #, kde-format
 msgid "Subway"
 msgstr "Метрополітен"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:610
 #, kde-format
 msgid "Preserved Railway"
 msgstr "Законсервована залізниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:612
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
 #, kde-format
 msgid "Miniature Railway"
 msgstr "Мініатюрна залізниця"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:613
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:612
 #, kde-format
 msgid "Railway Construction"
 msgstr "Будівництво залізниці"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:614
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:613
 #, kde-format
 msgid "Monorail"
 msgstr "Монорейка"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:615
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:614
 #, kde-format
 msgid "Funicular Railway"
 msgstr "Колія фунікулера"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:616
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:615
 #, kde-format
 msgid "Power Tower"
 msgstr "Опора електромережі"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:617
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:616
 #, kde-format
 msgid "Aerialway Station"
 msgstr "Станція канатної дороги"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:618
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:617
 #, kde-format
 msgctxt "A pylon supporting the aerialway cable e.g. on a ski lift"
 msgid "Pylon"
 msgstr "Пілон"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:619
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:618
 #, kde-format
 msgid "Cable Car"
 msgstr "Канатна дорога"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:620
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:619
 #, kde-format
 msgid "Gondola"
 msgstr "Гондола"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:621
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:620
 #, kde-format
 msgid "Chair Lift"
 msgstr "Крісельний підйомник"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:622
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:621
 #, kde-format
 msgid "Mixed Lift"
 msgstr "Мішаний підйомник"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:623
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:622
 #, kde-format
 msgid "Drag Lift"
 msgstr "Тяговий підйомник"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:624
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:623
 #, kde-format
 msgid "T-Bar"
 msgstr "T-підйомник"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:625
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:624
 #, kde-format
 msgid "J-Bar"
 msgstr "J-підйомник"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:626
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:625
 #, kde-format
 msgid "Platter"
 msgstr "Тарільчатий підйомник"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:627
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:626
 #, kde-format
 msgid "Rope Tow"
 msgstr "Бугельний підйомник"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:628
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:627
 #, kde-format
 msgid "Magic Carpet"
 msgstr "Чарівний килим"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:629
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:628
 #, kde-format
 msgid "Zip Line"
 msgstr "Зіплайн"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:630
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:629
 #, kde-format
 msgid "Goods"
 msgstr "Вантажний підйомник"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:631
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:630
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:227
 #, kde-format
 msgid "Downhill Piste"
 msgstr "Траса для швидкісного спуску"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:632
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:631
 #, kde-format
 msgid "Nordic Piste"
 msgstr "Бігова лижна траса"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:633
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:632
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:229
 #, kde-format
 msgid "Skitour"
 msgstr "Лижні подорожі"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:634
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:633
 #, kde-format
 msgid "Sled Piste"
 msgstr "Санна траса"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:635
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:634
 #, kde-format
 msgid "Winter Hike"
 msgstr "Зимова екскурсійна траса"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:636
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:635
 #, kde-format
 msgid "Sleigh Piste"
 msgstr "Бобслейна траса"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:637
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:636
 #, kde-format
 msgid "Ice Skate"
 msgstr "Льодовий каток"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:638
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:637
 #, kde-format
 msgid "Snow Park"
 msgstr "Сніговий парк"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:639
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:638
 #, kde-format
 msgid "Ski Playground"
 msgstr "Лижний ігровий майданчик"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:640
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:639
 #, kde-format
 msgid "Ski Jump"
 msgstr "Лижний трамплін"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:641
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:640
 #, kde-format
 msgid "Admin Boundary (Level 1)"
 msgstr "Адміністративна межа (рівень 1)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:642
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:641
 #, kde-format
 msgid "Admin Boundary (Level 2)"
 msgstr "Адміністративна межа (рівень 2)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:643
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:642
 #, kde-format
 msgid "Admin Boundary (Level 3)"
 msgstr "Адміністративна межа (рівень 3)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:644
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:643
 #, kde-format
 msgid "Admin Boundary (Level 4)"
 msgstr "Адміністративна межа (рівень 4)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:645
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:644
 #, kde-format
 msgid "Admin Boundary (Level 5)"
 msgstr "Адміністративна межа (рівень 5)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:646
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:645
 #, kde-format
 msgid "Admin Boundary (Level 6)"
 msgstr "Адміністративна межа (рівень 6)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:647
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:646
 #, kde-format
 msgid "Admin Boundary (Level 7)"
 msgstr "Адміністративна межа (рівень 7)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:648
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:647
 #, kde-format
 msgid "Admin Boundary (Level 8)"
 msgstr "Адміністративна межа (рівень 8)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:649
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:648
 #, kde-format
 msgid "Admin Boundary (Level 9)"
 msgstr "Адміністративна межа (рівень 9)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:650
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:649
 #, kde-format
 msgid "Admin Boundary (Level 10)"
 msgstr "Адміністративна межа (рівень 10)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:651
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:650
 #, kde-format
 msgid "Admin Boundary (Level 11)"
 msgstr "Адміністративна межа (рівень 11)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:652
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:651
 #, kde-format
 msgid "Boundary (Maritime)"
 msgstr "Кордони (у морі)"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:653
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:652
 #, kde-format
 msgid "Land Mass"
 msgstr "Суходіл"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:654
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:653
 #, kde-format
 msgid "Urban Area"
 msgstr "Міська територія"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:655
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:654
 #, kde-format
 msgid "International Date Line"
 msgstr "Міжнародна лінія зміни дат"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:656
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:655
 #, kde-format
 msgid "Bathymetry"
 msgstr "Вимірювання глибини"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:657
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:656
 #, kde-format
 msgid "Canal"
 msgstr "Канал"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:658
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:657
 #, kde-format
 msgid "Drain"
 msgstr "Дренаж"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:659
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:658
 #, kde-format
 msgid "Ditch"
 msgstr "Рівчак"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:660
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:659
 #, kde-format
 msgid "Stream"
 msgstr "Ручай"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:661
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:660
 #, kde-format
 msgid "River"
 msgstr "Ріка"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:662
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:661
 #, kde-format
 msgid "Weir"
 msgstr "Гребля"
 
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:662
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:663
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:664
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:665
 #, kde-format
 msgid "Crosswalk"
 msgstr "Перехід"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:665
 #, kde-format
 msgid "Railway Crossing"
 msgstr "Перехід через колію"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:667
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
 #, kde-format
 msgid "Door"
 msgstr "Двері"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:669
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:668
 #, kde-format
 msgid "Room"
 msgstr "Кімната"
@@ -57272,12 +56771,12 @@ msgstr ""
 "Помилка під час обробки рядка %1. Наприкінці документа залишилося %2 "
 "незакритих теґів."
 
-#: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:126
+#: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:125
 #, kde-format
 msgid "Error parsing file at line: %1 and column %2 . "
 msgstr "Помилка обробки у рядку %1, позиція %2. "
 
-#: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:128
+#: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:127
 #, kde-format
 msgid "This is an Invalid File"
 msgstr "Цей файл не є коректним"
@@ -57349,6 +56848,15 @@ msgstr "Будь ласка, додайте мітку типу для цьог�
 msgid "New Relation"
 msgstr "Новий зв’язок"
 
+#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
+#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
+#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:61
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
+#, kde-format
+msgid "Edit"
+msgstr "Змінити"
+
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:23
 #, kde-format
@@ -57410,6 +56918,58 @@ msgstr "Пов’язані мітки"
 msgid "Add custom tag..."
 msgstr "Додати нетипову мітку…"
 
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/plugins/MarblePluginSettingsWidget.ui:23
+#, kde-format
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
+"Here you can select and deselect the functionality that is provided through "
+"plugins. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
+"from the map, menus and toolbars. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
+"their configuration a bit. </span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+" p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Це машинне відділення Marble для досвідчених "
+"користувачів. Тут ви можете увімкнути або вимкнути функціональні можливості, "
+"робота яких забезпечується додатками. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Зняття позначки з запису додатка вилучить відповідну "
+"функціональну можливість з карти, меню та панелей інструментів. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Крім того, для деяких додатків передбачено можливість "
+"налаштування. </span></p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/plugins/MarblePluginSettingsWidget.ui:26
+#, kde-format
+msgid "P&lugins"
+msgstr "Д&одатки"
+
 #: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:35
 #, kde-format
 msgid "Placemark position provider Plugin"
@@ -57425,9 +56985,7 @@ msgstr "Позначка місця"
 msgid "Reports the position of a placemark"
 msgstr "Повідомляє про розташування позначки місця"
 
-#. i18n: ectx: property (text), widget (QPushButton, configureButton)
 #: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:366
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:142
 #, kde-format
 msgid "Configure"
 msgstr "Налаштувати"
@@ -57443,6 +57001,12 @@ msgstr "Налаштування додатка компаса"
 #, kde-format
 msgid "Theme"
 msgstr "Тема"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
+#, kde-format
+msgid "Default"
+msgstr "Типовий"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:52
@@ -57518,25 +57082,21 @@ msgstr "Перший розробник"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:240
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:244
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:47
 #, kde-format
 msgid "km"
 msgstr "км"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:248
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:31
 #, kde-format
 msgid "m"
 msgstr "м"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:253
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:36
 #, kde-format
 msgid "mi"
 msgstr "милі"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:264
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:59
 #, kde-format
 msgid "nm"
 msgstr "мор. миля"
@@ -57549,7 +57109,7 @@ msgstr "&Коефіцієнт масштабування"
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:118
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:114
 #, kde-format
 msgid "Navigation"
 msgstr "Навігація"
@@ -57640,21 +57200,6 @@ msgstr "&Кольори"
 #, kde-format
 msgid "Position I&ndicator:"
 msgstr "Поз&начка позиції:"
-
-#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:30
-#, kde-format
-msgid "Current Route Position Provider Plugin"
-msgstr "Додаток надання даних щодо розташування на поточному маршруті"
-
-#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:40
-#, kde-format
-msgid "Current Route"
-msgstr "Поточний маршрут"
-
-#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:50
-#, kde-format
-msgid "Simulates traveling along the current route."
-msgstr "Імітує подорож за поточним маршрутом."
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -57806,546 +57351,6 @@ msgstr ""
 "Землю так, як вона виглядає з відносно невеликої відстані над поверхнею. "
 "Застосування: використовується для віртуальних глобусів.</p>"
 
-#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:167
-#, kde-format
-msgid "Current Location: %1"
-msgstr "Поточне розташування: %1"
-
-#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:353
-#, kde-format
-msgid "Address or search term"
-msgstr "Адреса або ключ пошуку"
-
-#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:439
-#, kde-format
-msgctxt "Number of search results"
-msgid "%n result(s) found."
-msgstr "Знайдено %n результат."
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, GoTo)
-#: core/utilities/geolocation/marble/routing/GoToDialog.ui:14
-#, kde-format
-msgid "Go To..."
-msgstr "Перехід до…"
-
-#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/marble/routing/GoToDialog.ui:78
-#, kde-format
-msgid ""
-"Enter a search term and press Enter. <a href=\"https://userbase.kde.org/"
-"Marble/Search\">Details...</a>"
-msgstr ""
-"Вкажіть ключове слово пошуку і натисніть Enter. <a href=\"https://userbase."
-"kde.org/Special:myLanguage/Marble/Search\">Докладніше…</a>"
-
-#. i18n: ectx: property (text), widget (QPushButton, searchButton)
-#. i18n: ectx: property (text), widget (QRadioButton, searchButton)
-#: core/utilities/geolocation/marble/routing/GoToDialog.ui:103
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:203
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:86
-#, kde-format
-msgid "Search"
-msgstr "Пошук"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:252
-#, kde-format
-msgid "Enter the roundabout."
-msgstr "В’їзд на об’їздну."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:260
-#, kde-format
-msgid "Take the exit."
-msgstr "З’їжджайте."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:262
-#, kde-format
-msgid "Take the exit towards %1."
-msgstr "З’їжджайте у напрямку %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:266
-#, kde-format
-msgid "Take the ramp."
-msgstr "Заїжджайте на пандус."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:268
-#, kde-format
-msgid "Take the ramp towards %1."
-msgstr "Заїжджайте на пандус у напрямку %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:324
-#, kde-format
-msgid "Follow the road for %1 %2."
-msgstr "Продовжуйте рух дорогою %1 %2."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:378
-#, kde-format
-msgid "Take the %1. exit in the roundabout."
-msgstr "Виберіть %1 виїзд на повороті."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:380
-#, kde-format
-msgid "Take the %1. exit in the roundabout into %2."
-msgstr "Виберіть %1 виїзд на повороті до %2."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:388
-#, kde-format
-msgid "Continue."
-msgstr "Продовжуйте."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:390
-#, kde-format
-msgid "Merge."
-msgstr "Приєднуйтеся."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:392
-#, kde-format
-msgid "Turn around."
-msgstr "Розверніться."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:394
-#, kde-format
-msgid "Turn sharp left."
-msgstr "Різко поверніть ліворуч."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:396
-#, kde-format
-msgid "Turn left."
-msgstr "Поверніть ліворуч."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:398
-#, kde-format
-msgid "Keep slightly left."
-msgstr "Поверніть трошки ліворуч."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:400
-#, kde-format
-msgid "Go straight ahead."
-msgstr "Їдьте прямо."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:402
-#, kde-format
-msgid "Keep slightly right."
-msgstr "Поверніть трошки праворуч."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:404
-#, kde-format
-msgid "Turn right."
-msgstr "Поверніть праворуч."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:406
-#, kde-format
-msgid "Turn sharp right."
-msgstr "Різко поверніть праворуч."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:408
-#, kde-format
-msgid "Exit the roundabout."
-msgstr "Виїзд з об’їздної."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:416
-#, kde-format
-msgid "Take the exit to the left."
-msgstr "З’їжджайте ліворуч."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:418
-#, kde-format
-msgid "Take the exit to the right."
-msgstr "З’їжджайте праворуч."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:423
-#, kde-format
-msgid "Continue onto %1."
-msgstr "Продовжуйте рух %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:425
-#, kde-format
-msgid "Merge onto %1."
-msgstr "Приєднуйтеся до %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:427
-#, kde-format
-msgid "Turn around onto %1."
-msgstr "Розверніться на %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:429
-#, kde-format
-msgid "Turn sharp left on %1."
-msgstr "Поверніть строго ліворуч на %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:431
-#, kde-format
-msgid "Turn left into %1."
-msgstr "Поверніть ліворуч до %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:433
-#, kde-format
-msgid "Keep slightly left on %1."
-msgstr "Трошки праворуч на %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:435
-#, kde-format
-msgid "Continue on %1."
-msgstr "Продовжуйте рух %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:437
-#, kde-format
-msgid "Keep slightly right on %1."
-msgstr "Трошки ліворуч на %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:439
-#, kde-format
-msgid "Turn right into %1."
-msgstr "Поверніть праворуч на %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:441
-#, kde-format
-msgid "Turn sharp right into %1."
-msgstr "Поверніть строго праворуч на %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:443
-#, kde-format
-msgid "Exit the roundabout into %2."
-msgstr "Виїзд на повороті до %2."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:451
-#, kde-format
-msgid "Take the exit to the left onto %1."
-msgstr "Виберіть виїзд ліворуч на %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:453
-#, kde-format
-msgid "Take the exit to the right onto %1."
-msgstr "Виберіть виїзд праворуч на %1."
-
-#: core/utilities/geolocation/marble/routing/MarbleLineEdit.cpp:56
-#, kde-format
-msgid "Clear"
-msgstr "Спорожнити"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:110
-#, kde-format
-msgctxt "An address with parameters %1=house number, %2=road, %3=city"
-msgid "%1 %2, %3"
-msgstr "%2, %1, %3"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:113
-#, kde-format
-msgctxt "An address with parameters %1=road, %2=city"
-msgid "%1, %2"
-msgstr "%1, %2"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:136
-#, kde-format
-msgid "Address or search term..."
-msgstr "Адреса або ключ пошуку…"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:163
-#, kde-format
-msgid "Remove via point"
-msgstr "Вилучити проміжний пункт"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:180
-#, kde-format
-msgid "&Center Map here"
-msgstr "&Центрувати карту тут"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:184
-#, kde-format
-msgid "Current &Location"
-msgstr "Поточне &розташування"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:188
-#, kde-format
-msgid "From &Map..."
-msgstr "З &карти…"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:192
-#, kde-format
-msgid "From &Bookmark"
-msgstr "З з&акладки"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:201
-#, kde-format
-msgid "&Home"
-msgstr "&Домівка"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:305
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:562
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:565
-#, kde-format
-msgid "Current Location"
-msgstr "Поточне розташування"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:479
-#, kde-format
-msgid "Choose Placemark"
-msgstr "Вибір позначки"
-
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:187
-#, kde-format
-msgid "&Remove this Destination"
-msgstr "Ви&лучити цей пункт"
-
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:190
-#, kde-format
-msgid "&Export Route..."
-msgstr "&Експортувати маршрут…"
-
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:789
-#, kde-format
-msgid "Export Route"
-msgstr "Експорт маршруту"
-
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:791
-#, kde-format
-msgid "GPX and KML files (*.gpx *.kml)"
-msgstr "файли GPX і KML (*.gpx *.kml)"
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:515
-#, kde-format
-msgid "Caution: Driving instructions may be incomplete or wrong."
-msgstr ""
-"Попередження: настанови щодо навігації можуть бути неповними або помилковими."
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:516
-#, kde-format
-msgid ""
-"Road construction, weather and other unforeseen variables can result in the "
-"suggested route not to be the most expedient or safest route to your "
-"destination."
-msgstr ""
-"Ремонт доріг, погода або інші непередбачені обставини можуть призвести до "
-"того, що запропонований маршрут не буде найдоцільнішим або найбезпечнішим "
-"маршрутом до вашого пункту призначення."
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:517
-#, kde-format
-msgid "Please use common sense while navigating."
-msgstr "Будь ласка, не забувайте про здоровий глузд під час вибору маршруту."
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:518
-#, kde-format
-msgid "The Marble development team wishes you a pleasant and safe journey."
-msgstr "Команда розробників Marble бажає вам приємної і безпечної подорожі."
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:519
-#, kde-format
-msgid "Guidance Mode"
-msgstr "Режим путівника"
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:520
-#, kde-format
-msgid "Show again"
-msgstr "Показувати знову"
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, RoutingProfileSettingsDialog)
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:14
-#, kde-format
-msgid "Configure Routing Profile"
-msgstr "Налаштування профілю маршруту"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:41
-#, kde-format
-msgid "Active Route Services"
-msgstr "Активні служби визначення маршрутів"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:65
-#, kde-format
-msgid "Service Settings"
-msgstr "Параметри служби"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:117
-#, kde-format
-msgid "No configuration available"
-msgstr "Налаштування неможливе"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:128
-#, kde-format
-msgid "Select Service to Configure"
-msgstr "Виберіть службу для налаштування"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:112
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:46
-#, kde-format
-msgid "Car (fastest)"
-msgstr "Автомобілем (найшвидший)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:114
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:51
-#, kde-format
-msgid "Car (shortest)"
-msgstr "Автомобілем (найкоротший)"
-
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:116
-#, kde-format
-msgid "Car (ecological)"
-msgstr "Автомобілем (екологічний)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:118
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:56
-#, kde-format
-msgid "Bicycle"
-msgstr "Велосипедом"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:120
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:61
-#, kde-format
-msgid "Pedestrian"
-msgstr "Пішки"
-
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:124
-#, kde-format
-msgid "Unknown"
-msgstr "Невідомо"
-
-#: core/utilities/geolocation/marble/routing/RoutingProfilesWidget.cpp:75
-#, kde-format
-msgid "New Profile"
-msgstr "Новий профіль"
-
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:41
-#, kde-format
-msgid "ft"
-msgstr "фут"
-
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:72
-#, kde-format
-msgctxt "journey duration"
-msgid "%1:%2 h"
-msgstr "%1:%2 год"
-
-#. i18n: ectx: property (text), widget (QPushButton, addButton)
-#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:22
-#: core/utilities/setup/album/setupcategory.cpp:98
-#: core/utilities/setup/camera/setupcamera.cpp:317
-#: core/utilities/setup/camera/setupcamera.cpp:439
-#: core/utilities/setup/setuptemplate.cpp:114
-#, kde-format
-msgid "&Add..."
-msgstr "&Додати…"
-
-#. i18n: ectx: property (text), widget (QPushButton, moveUpButton)
-#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:65
-#, kde-format
-msgid "Move &Up"
-msgstr "Пересунути &вгору"
-
-#. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
-#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:75
-#, kde-format
-msgid "Move &Down"
-msgstr "Пересунути в&низ"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:192
-#, kde-format
-msgid "Get Directions"
-msgstr "Отримати настанови"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:193
-#, kde-format
-msgid "Retrieve routing instructions for the selected destinations."
-msgstr "Отримати маршрути для позначених точок призначення"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:204
-#, kde-format
-msgid "Find places matching the search term"
-msgstr "Знайти місця, що відповідають ключу пошуку"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:227
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:695
-#, kde-format
-msgid "Open Route"
-msgstr "Відкриття маршруту"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:232
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:728
-#, kde-format
-msgid "Save Route"
-msgstr "Збереження маршруту"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:237
-#, kde-format
-msgid "Preview Route"
-msgstr "Перегляд маршруту"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:242
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:243
-#, kde-format
-msgid "Upload to Cloud"
-msgstr "Вивантажити до «хмари»"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:246
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:247
-#, kde-format
-msgid "Manage Cloud Routes"
-msgstr "Керування маршрутами з обчислювальної «хмари»"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:252
-#, kde-format
-msgid "Add Via"
-msgstr "Додати проміжний пункт"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:257
-#, kde-format
-msgid "Reverse Route"
-msgstr "Зворотній маршрут"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:262
-#, kde-format
-msgid "Clear Route"
-msgstr "Вилучити маршрут"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:468
-#, kde-format
-msgid "placemarks found: %1"
-msgstr "знайдено позначок місць: %1"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:474
-#, kde-format
-msgid "No placemark found"
-msgstr "Не знайдено позначок місць"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:591
-#, kde-format
-msgid "No route found"
-msgstr "Маршруту не знайдено"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:674
-#, kde-format
-msgid "routes found: %1"
-msgstr "знайдено маршрутів: %1"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:748
-#, kde-format
-msgid "Uploading route..."
-msgstr "Вивантаження маршруту…"
-
-#. i18n: ectx: property (text), widget (QLabel, resultLabel)
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:106
-#, kde-format
-msgid "No results."
-msgstr "Нічого не знайдено."
-
-#. i18n: ectx: property (text), widget (QPushButton, showInstructionsButton)
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:113
-#, kde-format
-msgid "Show Details"
-msgstr "Показати подробиці"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, routeComboBox)
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:149
-#, kde-format
-msgid "Choose alternative routes"
-msgstr "Вибір альтернативних маршрутів"
-
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
 #: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:20
 #, kde-format
@@ -58493,76 +57498,6 @@ msgstr "Кор&истувач:"
 #, kde-format
 msgid "&Password:"
 msgstr "П&ароль:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableSync)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:17
-#, kde-format
-msgid "Enable synchronization"
-msgstr "Увімкнути синхронізацію"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:48
-#, kde-format
-msgid ""
-"Allows you to store routes in owncloud. Each route must be uploaded/"
-"downloaded manually."
-msgstr ""
-"Надає вам змогу зберігати дані маршрутів у системі owncloud. Кожен запис "
-"маршруту слід вивантажувати і отримувати з сервера вручну."
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:51
-#, kde-format
-msgid "Enable route synchronization"
-msgstr "Увімкнути синхронізацію маршрутів"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:84
-#, kde-format
-msgid "Automatically sync all bookmarks to the server."
-msgstr "Автоматично синхронізувати усі записи закладок з сервером."
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:87
-#, kde-format
-msgid "Enable bookmark synchronization"
-msgstr "Увімкнути синхронізацію закладок"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_syncNow)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:119
-#, kde-format
-msgid "Sync now"
-msgstr "Синхронізувати"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:147
-#, kde-format
-msgid "Credentials"
-msgstr "Реєстраційні дані"
-
-#. i18n: ectx: property (text), widget (QLabel, labelServer)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:153
-#, kde-format
-msgid "Server:"
-msgstr "Сервер:"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, kcfg_owncloudServer)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:160
-#, kde-format
-msgid "Remote server URL, e.g. myserver.com/owncloud"
-msgstr "Адреса віддаленого сервера, наприклад myserver.com/owncloud"
-
-#. i18n: ectx: property (text), widget (QLabel, labelUsername)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:167
-#, kde-format
-msgid "Username:"
-msgstr "Користувач:"
-
-#. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:197
-#, kde-format
-msgid "Test Login"
-msgstr "Тестовий вхід"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:17
@@ -58769,286 +57704,6 @@ msgstr "JOSM"
 #, kde-format
 msgid "Merkaartor"
 msgstr "Merkaartor"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:23
-#, kde-format
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
-"Here you can select and deselect the functionality that is provided through "
-"plugins. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
-"from the map, menus and toolbars. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
-"their configuration a bit. </span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-" p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Це машинне відділення Marble для досвідчених "
-"користувачів. Тут ви можете увімкнути або вимкнути функціональні можливості, "
-"робота яких забезпечується додатками. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Зняття позначки з запису додатка вилучить відповідну "
-"функціональну можливість з карти, меню та панелей інструментів. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Крім того, для деяких додатків передбачено можливість "
-"налаштування. </span></p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:26
-#, kde-format
-msgid "P&lugins"
-msgstr "Д&одатки"
-
-#. i18n: ectx: property (title), widget (QGroupBox, timeZone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:23
-#, kde-format
-msgid "Time Zone"
-msgstr "Часовий пояс"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_utc)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:29
-#, kde-format
-msgid "UTC"
-msgstr "Світовий"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:39
-#, kde-format
-msgid "System time zone"
-msgstr "Часовий пояс системи"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_customTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:51
-#, kde-format
-msgid "Choose Time zone"
-msgstr "Виберіть часовий пояс"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:68
-#, kde-format
-msgid "Universal Time Coordinated"
-msgstr "Універсальний координований час (UTC)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:73
-#, kde-format
-msgid "European Central Time"
-msgstr "Центральноєвропейський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:78
-#, kde-format
-msgid "Eastern European Time"
-msgstr "Східноєвропейський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:83
-#, kde-format
-msgid "Egypt Standard Time"
-msgstr "Стандартний єгипетський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:88
-#, kde-format
-msgid "Eastern African Time"
-msgstr "Східноафриканський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:93
-#, kde-format
-msgid "Middle East Time"
-msgstr "Середньосхідний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:98
-#, kde-format
-msgid "Near East Time"
-msgstr "Близькосхідний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:103
-#, kde-format
-msgid "Pakistan Lahore Time"
-msgstr "Час Лахору (Пакистан)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:108
-#, kde-format
-msgid "India Standard Time"
-msgstr "Стандартний час (Індія)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:113
-#, kde-format
-msgid "Bangladesh Standard Time"
-msgstr "Стандартний час (Бангладеш)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:118
-#, kde-format
-msgid "Vietnam Standard Time"
-msgstr "Стандартний час (В’єтнам)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:123
-#, kde-format
-msgid "China Taiwan Time"
-msgstr "Час Тайваню (Китай)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:128
-#, kde-format
-msgid "Japan Standard Time"
-msgstr "Стандартний час (Японія)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:133
-#, kde-format
-msgid "Australia Central Time"
-msgstr "Центральноавстралійський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:138
-#, kde-format
-msgid "Australia Eastern Time"
-msgstr "Східноавстралійський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:143
-#, kde-format
-msgid "Solomon Standard Time"
-msgstr "Стандартний час (Соломонові острови)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:148
-#, kde-format
-msgid "New Zealand Standard Time"
-msgstr "Стандартний час (Нова Зеландія)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:153
-#, kde-format
-msgid "Midway Islands Time"
-msgstr "Час островів Мідуей"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:158
-#, kde-format
-msgid "Hawaii Standard Time"
-msgstr "Стандартний час (Гаваї)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:163
-#, kde-format
-msgid "Alaska Standard Time"
-msgstr "Стандартний час (Аляска)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:168
-#, kde-format
-msgid "Pacific Standard Time"
-msgstr "Тихокеанський стандартний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:173
-#, kde-format
-msgid "Phoenix Standard Time"
-msgstr "Стандартний час (Фінікс)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:178
-#, kde-format
-msgid "Mountain Standard Time"
-msgstr "Гірський стандартний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:183
-#, kde-format
-msgid "Central Standard Time"
-msgstr "Центральний стандартний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:188
-#, kde-format
-msgid "Eastern Standard Time"
-msgstr "Східний стандартний час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:193
-#, kde-format
-msgid "Indiana Eastern Standard Time"
-msgstr "Східний стандартний час (Індіана)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:198
-#, kde-format
-msgid "Puerto Rico and US Virgin Islands Time"
-msgstr "Час Пуерто-Рико та Віргінських островів"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:203
-#, kde-format
-msgid "Canada Newfoundland Time"
-msgstr "Час поясу Ньюфаунленду (Канада)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:208
-#, kde-format
-msgid "Argentina Standard Time"
-msgstr "Стандартний аргентинський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:213
-#, kde-format
-msgid "Brazil Eastern Time"
-msgstr "Східнобразильський час"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:218
-#, kde-format
-msgid "Central African Time"
-msgstr "Центральноафриканський час"
-
-#. i18n: ectx: property (title), widget (QGroupBox, whenMarbleStarts)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:231
-#, kde-format
-msgid "When Marble starts"
-msgstr "Після запуску Marble"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTime)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:237
-#, kde-format
-msgid "Load system time"
-msgstr "Завантажити час системи"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_lastSessionTime)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:247
-#, kde-format
-msgid "Load last session time"
-msgstr "Завантажити час останнього сеансу"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
@@ -59352,123 +58007,98 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Типовий шрифт, що "
 "використовуватиметься на карті.</p></body></html>"
 
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:109
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:104
 #, kde-format
 msgid "View"
 msgstr "Перегляд"
 
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:126
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:123
 #, kde-format
 msgid "Cache and Proxy"
 msgstr "Кеш і проксі-сервер"
-
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:134
-#, kde-format
-msgid "Date and Time"
-msgstr "Дата і час"
-
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:138
-#, kde-format
-msgid "Routing"
-msgstr "Маршрути"
-
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:155
-#, kde-format
-msgid "Synchronization"
-msgstr "Синхронізація"
-
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:271
-#, kde-format
-msgid "Never synchronized."
-msgstr "Синхронізація не виконувалася."
-
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:275
-#, kde-format
-msgid "Last synchronization: %1"
-msgstr "Остання синхронізація: %1"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
 msgid "Unable to insert data into cache"
 msgstr "Не вдалося додати дані до кешу"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:136
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:131
 #, kde-format
 msgid "Visible region"
 msgstr "Видима ділянка"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:138
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:133
 #, kde-format
 msgid "Specify region"
 msgstr "Вказати ділянку"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:140
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:135
 #, kde-format
 msgid "Download Route"
 msgstr "Отримати маршрут"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:142
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:137
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr "Увімкнено, якщо маршрут існує"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:155
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:150
 #, kde-format
 msgid "Offset from route:"
 msgstr "Відхилення від маршруту:"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:190
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:180
 #, kde-format
 msgid "Selection Method"
 msgstr "Спосіб вибору"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:198
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:188
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr "Кількість елементів для отримання:"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:248
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:238
 #, kde-format
 msgid "Download Region"
 msgstr "Отримання ділянки"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:250
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:240
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Тип плиток, які буде отримано:"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:252
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:242
 #, kde-format
 msgid "Texture tiles"
 msgstr "Плитки текстур"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:253
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:243
 #, kde-format
 msgid "Vector tiles"
 msgstr "Векторні плитки"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:254
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:244
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 "Надає змогу вибирати тип шарів, які буде показано під час обробки зображення."
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:513
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Передбачено обмеження отримання даних у %1 плиток."
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:533
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Приблизний об’єм даних, які доведеться отримати"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:537
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:527
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Приблизний об’єм отримання: %1 МБ"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:540
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:530
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Приблизний об’єм отримання: %1 кБ"
@@ -59484,6 +58114,18 @@ msgstr "Вибір географічної ділянки"
 #, kde-format
 msgid "Northern Latitude"
 msgstr "Північна широта"
+
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:47
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:99
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:151
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:203
+#, kde-format
+msgid "°"
+msgstr "°"
 
 #. i18n: ectx: property (text), widget (QLabel, northLabel)
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:66
@@ -63803,6 +62445,11 @@ msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
 msgstr "Ви справді бажаєте вилучити позначений процес «%1»?"
 
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:62
+#, kde-format
+msgid "Rename..."
+msgstr "Перейменувати…"
+
 #: core/utilities/searchwindow/ratingsearchutilities.cpp:210
 #, kde-format
 msgid "(No Value Selected)"
@@ -65328,6 +63975,14 @@ msgid ""
 msgstr ""
 "Тут ви можете додати або вилучити типи категорій альбомів, щоб покращити "
 "можливості digiKam у впорядкуванні ваших альбомів."
+
+#: core/utilities/setup/album/setupcategory.cpp:98
+#: core/utilities/setup/camera/setupcamera.cpp:317
+#: core/utilities/setup/camera/setupcamera.cpp:439
+#: core/utilities/setup/setuptemplate.cpp:114
+#, kde-format
+msgid "&Add..."
+msgstr "&Додати…"
 
 #: core/utilities/setup/album/setupmime.cpp:85
 #, kde-format
@@ -69459,6 +68114,754 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Хочете відновити типові значення для усіх параметрів відео?"
+
+#~ msgid ""
+#~ "The folder %1 is not empty. Removing it will delete all bookmarks it "
+#~ "contains. Are you sure you want to delete the folder?"
+#~ msgstr ""
+#~ "Тека %1 містить закладки. Вилучення теки призведе до вилучення всіх "
+#~ "закладок, що у ній містяться. Ви справді бажаєте вилучити цю теку?"
+
+#~ msgid "Remove Folder"
+#~ msgstr "Вилучення теки"
+
+#~ msgid "Export Bookmarks"
+#~ msgstr "Експорт закладок"
+
+#~ msgid "KML files (*.kml)"
+#~ msgstr "файли KML (*.kml)"
+
+#~ msgid "Unable to save bookmarks. Please check that the file is writable."
+#~ msgstr ""
+#~ "Не вдалося зберегти закладки. Будь ласка, перевірте, чи можливий запис до "
+#~ "файла."
+
+#~ msgid "Bookmark Export"
+#~ msgstr "Експорт закладок"
+
+#~ msgid "Import Bookmarks"
+#~ msgstr "Імпорт закладок"
+
+#~ msgid "KML Files (*.kml)"
+#~ msgstr "файли KML (*.kml)"
+
+#~ msgid "The file %1 cannot be opened as a KML file."
+#~ msgstr "Файл %1 не вдалося відкрити як файл KML."
+
+#~ msgid "Bookmark Import"
+#~ msgstr "Імпорт закладок"
+
+#~ msgid ""
+#~ "The file contains a bookmark that already exists among your Bookmarks."
+#~ msgstr "У файлі міститься закладка, яка вже є у списку ваших закладок."
+
+#~ msgid "Imported bookmark"
+#~ msgstr "Імпортована закладка"
+
+#~ msgid "Existing bookmark"
+#~ msgstr "Поточна закладка"
+
+#~ msgid "Do you want to replace the existing bookmark with the imported one?"
+#~ msgstr "Бажаєте замінити поточну закладку імпортованою?"
+
+#~ msgid "Skip"
+#~ msgstr "Пропустити"
+
+#~ msgid "Skip All"
+#~ msgstr "Пропустити всі"
+
+#~ msgid "Bookmark Manager"
+#~ msgstr "Керування закладками"
+
+#~ msgid "Import Bookmarks..."
+#~ msgstr "Імпортувати закладки…"
+
+#~ msgid "Export Bookmarks..."
+#~ msgstr "Експортувати закладки…"
+
+#~ msgid "Folders"
+#~ msgstr "Теки"
+
+#~ msgid "New..."
+#~ msgstr "Створити…"
+
+#~ msgid "Edit Bookmark"
+#~ msgstr "Редагування закладки"
+
+#~ msgid "&Description:"
+#~ msgstr "&Опис:"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
+#~ "bottom:4px; margin-left:4px; margin-right:4px;\">\n"
+#~ "<tr>\n"
+#~ "<td style=\"border: none;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'Ubuntu';\"><br /></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'Ubuntu';\"><br /></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
+#~ "bottom:4px; margin-left:4px; margin-right:4px;\">\n"
+#~ "<tr>\n"
+#~ "<td style=\"border: none;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'Ubuntu';\"><br /></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'Ubuntu';\"><br /></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
+
+#~ msgid "&Folder:"
+#~ msgstr "Т&ека:"
+
+#~ msgid "&Add Folder..."
+#~ msgstr "&Додати теку…"
+
+#~ msgid "'"
+#~ msgstr "'"
+
+#~ msgid "\""
+#~ msgstr "\""
+
+#~ msgctxt "East, the direction"
+#~ msgid "E"
+#~ msgstr "Сх"
+
+#~ msgctxt "West, the direction"
+#~ msgid "W"
+#~ msgstr "Зх"
+
+#~ msgctxt "North, the direction"
+#~ msgid "N"
+#~ msgstr "Пн"
+
+#~ msgctxt "South, the direction"
+#~ msgid "S"
+#~ msgstr "Пд"
+
+#~ msgid "′"
+#~ msgstr "′"
+
+#~ msgid "″"
+#~ msgstr "″"
+
+#~ msgid "New Bookmark Folder"
+#~ msgstr "Нова тека закладок"
+
+#~ msgid "&Folder name:"
+#~ msgstr "&Назва теки:"
+
+#~ msgid "Open File"
+#~ msgstr "Відкрити файл"
+
+#~ msgid "All Supported Files (*.png)"
+#~ msgstr "усі підтримувані файли (*.png)"
+
+#~ msgid "Name:"
+#~ msgstr "Назва:"
+
+#~ msgid "Icon link:"
+#~ msgstr "Посилання піктограми:"
+
+#~ msgid "ID:"
+#~ msgstr "Ід.:"
+
+#~ msgid "Target ID:"
+#~ msgstr "Ід. призначення:"
+
+#~ msgid "Cloud Routes"
+#~ msgstr "Маршрути з обчислювальної «хмари»"
+
+#~ msgid "No route available."
+#~ msgstr "Немає даних маршрутів."
+
+#~ msgid "Use local"
+#~ msgstr "Використовувати локальне"
+
+#~ msgid "Use cloud"
+#~ msgstr "Використовувати «хмару»"
+
+#~ msgid "Always use local"
+#~ msgstr "Завжди використовувати локальне"
+
+#~ msgid "Always use cloud"
+#~ msgstr "Завжди використовувати з «хмари»"
+
+#~ msgid "Local placemark"
+#~ msgstr "Локальна позначка"
+
+#~ msgid "Path: %1 <br /> Name: %2 <br /> Description: %3 <br /> Status: %4"
+#~ msgstr "Шлях: %1 <br /> Назва: %2 <br /> Опис: %3 <br /> Стан: %4"
+
+#~ msgid "Changed"
+#~ msgstr "Змінено"
+
+#~ msgid "Deleted"
+#~ msgstr "Вилучено"
+
+#~ msgid "Cloud placemark"
+#~ msgstr "Позначка з «хмари»"
+
+#~ msgid ""
+#~ "A bookmark on this device conflicts with a cloud bookmark. Which one do "
+#~ "you want to keep?"
+#~ msgstr ""
+#~ "Запис закладки на пристрої суперечить запису закладки у «хмарі». Який із "
+#~ "записів слід зберегти?"
+
+#~ msgid "Synchronization Conflict"
+#~ msgstr "Конфлікт синхронізації"
+
+#~ msgid "Server '%1' could not be reached"
+#~ msgstr "Не вдалося встановити зв’язок із сервером «%1»"
+
+#~ msgid "The Marble app is not installed on the ownCloud server"
+#~ msgstr "Програму Marble на сервері ownCloud не встановлено"
+
+#~ msgid "The server is not an ownCloud server"
+#~ msgstr "Цей сервер не є сервером ownCloud"
+
+#~ msgid "Username or password are incorrect"
+#~ msgstr "Вказано помилкове ім’я користувача або пароль"
+
+#~ msgid "Login successful"
+#~ msgstr "Вхід здійснено"
+
+#~ msgid "Open"
+#~ msgstr "Відкрити"
+
+#~ msgid "Load"
+#~ msgstr "Завантажити"
+
+#~ msgid "Remove from device"
+#~ msgstr "Вилучити з пристрою"
+
+#~ msgid "Delete from cloud"
+#~ msgstr "Вилучити з «хмари»"
+
+#~ msgid "Upload to cloud"
+#~ msgstr "Вивантажити до «хмари»"
+
+#~ msgid "Directions &from here"
+#~ msgstr "По&чати звідси"
+
+#~ msgid "Directions &to here"
+#~ msgstr "&Дістатися сюди"
+
+#~ msgid "Add &Bookmark"
+#~ msgstr "Додати &закладку"
+
+#~ msgid "&Full Screen Mode"
+#~ msgstr "&Повноекранний режим"
+
+#~ msgid "Bookmark"
+#~ msgstr "Закладка"
+
+#~ msgid "Current Route Position Provider Plugin"
+#~ msgstr "Додаток надання даних щодо розташування на поточному маршруті"
+
+#~ msgid "Current Route"
+#~ msgstr "Поточний маршрут"
+
+#~ msgid "Simulates traveling along the current route."
+#~ msgstr "Імітує подорож за поточним маршрутом."
+
+#~ msgid "Current Location: %1"
+#~ msgstr "Поточне розташування: %1"
+
+#~ msgid "Address or search term"
+#~ msgstr "Адреса або ключ пошуку"
+
+#~ msgctxt "Number of search results"
+#~ msgid "%n result(s) found."
+#~ msgstr "Знайдено %n результат."
+
+#~ msgid "Go To..."
+#~ msgstr "Перехід до…"
+
+#~ msgid ""
+#~ "Enter a search term and press Enter. <a href=\"https://userbase.kde.org/"
+#~ "Marble/Search\">Details...</a>"
+#~ msgstr ""
+#~ "Вкажіть ключове слово пошуку і натисніть Enter. <a href=\"https://"
+#~ "userbase.kde.org/Special:myLanguage/Marble/Search\">Докладніше…</a>"
+
+#~ msgid "Search"
+#~ msgstr "Пошук"
+
+#~ msgid "Enter the roundabout."
+#~ msgstr "В’їзд на об’їздну."
+
+#~ msgid "Take the exit."
+#~ msgstr "З’їжджайте."
+
+#~ msgid "Take the exit towards %1."
+#~ msgstr "З’їжджайте у напрямку %1."
+
+#~ msgid "Take the ramp."
+#~ msgstr "Заїжджайте на пандус."
+
+#~ msgid "Take the ramp towards %1."
+#~ msgstr "Заїжджайте на пандус у напрямку %1."
+
+#~ msgid "Follow the road for %1 %2."
+#~ msgstr "Продовжуйте рух дорогою %1 %2."
+
+#~ msgid "Take the %1. exit in the roundabout."
+#~ msgstr "Виберіть %1 виїзд на повороті."
+
+#~ msgid "Take the %1. exit in the roundabout into %2."
+#~ msgstr "Виберіть %1 виїзд на повороті до %2."
+
+#~ msgid "Continue."
+#~ msgstr "Продовжуйте."
+
+#~ msgid "Merge."
+#~ msgstr "Приєднуйтеся."
+
+#~ msgid "Turn around."
+#~ msgstr "Розверніться."
+
+#~ msgid "Turn sharp left."
+#~ msgstr "Різко поверніть ліворуч."
+
+#~ msgid "Turn left."
+#~ msgstr "Поверніть ліворуч."
+
+#~ msgid "Keep slightly left."
+#~ msgstr "Поверніть трошки ліворуч."
+
+#~ msgid "Go straight ahead."
+#~ msgstr "Їдьте прямо."
+
+#~ msgid "Keep slightly right."
+#~ msgstr "Поверніть трошки праворуч."
+
+#~ msgid "Turn right."
+#~ msgstr "Поверніть праворуч."
+
+#~ msgid "Turn sharp right."
+#~ msgstr "Різко поверніть праворуч."
+
+#~ msgid "Exit the roundabout."
+#~ msgstr "Виїзд з об’їздної."
+
+#~ msgid "Take the exit to the left."
+#~ msgstr "З’їжджайте ліворуч."
+
+#~ msgid "Take the exit to the right."
+#~ msgstr "З’їжджайте праворуч."
+
+#~ msgid "Continue onto %1."
+#~ msgstr "Продовжуйте рух %1."
+
+#~ msgid "Merge onto %1."
+#~ msgstr "Приєднуйтеся до %1."
+
+#~ msgid "Turn around onto %1."
+#~ msgstr "Розверніться на %1."
+
+#~ msgid "Turn sharp left on %1."
+#~ msgstr "Поверніть строго ліворуч на %1."
+
+#~ msgid "Turn left into %1."
+#~ msgstr "Поверніть ліворуч до %1."
+
+#~ msgid "Keep slightly left on %1."
+#~ msgstr "Трошки праворуч на %1."
+
+#~ msgid "Continue on %1."
+#~ msgstr "Продовжуйте рух %1."
+
+#~ msgid "Keep slightly right on %1."
+#~ msgstr "Трошки ліворуч на %1."
+
+#~ msgid "Turn right into %1."
+#~ msgstr "Поверніть праворуч на %1."
+
+#~ msgid "Turn sharp right into %1."
+#~ msgstr "Поверніть строго праворуч на %1."
+
+#~ msgid "Exit the roundabout into %2."
+#~ msgstr "Виїзд на повороті до %2."
+
+#~ msgid "Take the exit to the left onto %1."
+#~ msgstr "Виберіть виїзд ліворуч на %1."
+
+#~ msgid "Take the exit to the right onto %1."
+#~ msgstr "Виберіть виїзд праворуч на %1."
+
+#~ msgid "Clear"
+#~ msgstr "Спорожнити"
+
+#~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
+#~ msgid "%1 %2, %3"
+#~ msgstr "%2, %1, %3"
+
+#~ msgctxt "An address with parameters %1=road, %2=city"
+#~ msgid "%1, %2"
+#~ msgstr "%1, %2"
+
+#~ msgid "Address or search term..."
+#~ msgstr "Адреса або ключ пошуку…"
+
+#~ msgid "Remove via point"
+#~ msgstr "Вилучити проміжний пункт"
+
+#~ msgid "&Center Map here"
+#~ msgstr "&Центрувати карту тут"
+
+#~ msgid "Current &Location"
+#~ msgstr "Поточне &розташування"
+
+#~ msgid "From &Map..."
+#~ msgstr "З &карти…"
+
+#~ msgid "From &Bookmark"
+#~ msgstr "З з&акладки"
+
+#~ msgid "&Home"
+#~ msgstr "&Домівка"
+
+#~ msgid "Current Location"
+#~ msgstr "Поточне розташування"
+
+#~ msgid "Choose Placemark"
+#~ msgstr "Вибір позначки"
+
+#~ msgid "&Remove this Destination"
+#~ msgstr "Ви&лучити цей пункт"
+
+#~ msgid "&Export Route..."
+#~ msgstr "&Експортувати маршрут…"
+
+#~ msgid "Export Route"
+#~ msgstr "Експорт маршруту"
+
+#~ msgid "GPX and KML files (*.gpx *.kml)"
+#~ msgstr "файли GPX і KML (*.gpx *.kml)"
+
+#~ msgid "Caution: Driving instructions may be incomplete or wrong."
+#~ msgstr ""
+#~ "Попередження: настанови щодо навігації можуть бути неповними або "
+#~ "помилковими."
+
+#~ msgid ""
+#~ "Road construction, weather and other unforeseen variables can result in "
+#~ "the suggested route not to be the most expedient or safest route to your "
+#~ "destination."
+#~ msgstr ""
+#~ "Ремонт доріг, погода або інші непередбачені обставини можуть призвести до "
+#~ "того, що запропонований маршрут не буде найдоцільнішим або найбезпечнішим "
+#~ "маршрутом до вашого пункту призначення."
+
+#~ msgid "Please use common sense while navigating."
+#~ msgstr ""
+#~ "Будь ласка, не забувайте про здоровий глузд під час вибору маршруту."
+
+#~ msgid "The Marble development team wishes you a pleasant and safe journey."
+#~ msgstr "Команда розробників Marble бажає вам приємної і безпечної подорожі."
+
+#~ msgid "Guidance Mode"
+#~ msgstr "Режим путівника"
+
+#~ msgid "Show again"
+#~ msgstr "Показувати знову"
+
+#~ msgid "Configure Routing Profile"
+#~ msgstr "Налаштування профілю маршруту"
+
+#~ msgid "Active Route Services"
+#~ msgstr "Активні служби визначення маршрутів"
+
+#~ msgid "Service Settings"
+#~ msgstr "Параметри служби"
+
+#~ msgid "No configuration available"
+#~ msgstr "Налаштування неможливе"
+
+#~ msgid "Select Service to Configure"
+#~ msgstr "Виберіть службу для налаштування"
+
+#~ msgid "Car (fastest)"
+#~ msgstr "Автомобілем (найшвидший)"
+
+#~ msgid "Car (shortest)"
+#~ msgstr "Автомобілем (найкоротший)"
+
+#~ msgid "Car (ecological)"
+#~ msgstr "Автомобілем (екологічний)"
+
+#~ msgid "Bicycle"
+#~ msgstr "Велосипедом"
+
+#~ msgid "Pedestrian"
+#~ msgstr "Пішки"
+
+#~ msgid "Unknown"
+#~ msgstr "Невідомо"
+
+#~ msgid "New Profile"
+#~ msgstr "Новий профіль"
+
+#~ msgid "ft"
+#~ msgstr "фут"
+
+#~ msgctxt "journey duration"
+#~ msgid "%1:%2 h"
+#~ msgstr "%1:%2 год"
+
+#~ msgid "Move &Up"
+#~ msgstr "Пересунути &вгору"
+
+#~ msgid "Move &Down"
+#~ msgstr "Пересунути в&низ"
+
+#~ msgid "Get Directions"
+#~ msgstr "Отримати настанови"
+
+#~ msgid "Retrieve routing instructions for the selected destinations."
+#~ msgstr "Отримати маршрути для позначених точок призначення"
+
+#~ msgid "Find places matching the search term"
+#~ msgstr "Знайти місця, що відповідають ключу пошуку"
+
+#~ msgid "Open Route"
+#~ msgstr "Відкриття маршруту"
+
+#~ msgid "Save Route"
+#~ msgstr "Збереження маршруту"
+
+#~ msgid "Preview Route"
+#~ msgstr "Перегляд маршруту"
+
+#~ msgid "Upload to Cloud"
+#~ msgstr "Вивантажити до «хмари»"
+
+#~ msgid "Manage Cloud Routes"
+#~ msgstr "Керування маршрутами з обчислювальної «хмари»"
+
+#~ msgid "Add Via"
+#~ msgstr "Додати проміжний пункт"
+
+#~ msgid "Reverse Route"
+#~ msgstr "Зворотній маршрут"
+
+#~ msgid "Clear Route"
+#~ msgstr "Вилучити маршрут"
+
+#~ msgid "placemarks found: %1"
+#~ msgstr "знайдено позначок місць: %1"
+
+#~ msgid "No placemark found"
+#~ msgstr "Не знайдено позначок місць"
+
+#~ msgid "No route found"
+#~ msgstr "Маршруту не знайдено"
+
+#~ msgid "routes found: %1"
+#~ msgstr "знайдено маршрутів: %1"
+
+#~ msgid "Uploading route..."
+#~ msgstr "Вивантаження маршруту…"
+
+#~ msgid "No results."
+#~ msgstr "Нічого не знайдено."
+
+#~ msgid "Show Details"
+#~ msgstr "Показати подробиці"
+
+#~ msgid "Choose alternative routes"
+#~ msgstr "Вибір альтернативних маршрутів"
+
+#~ msgid "Enable synchronization"
+#~ msgstr "Увімкнути синхронізацію"
+
+#~ msgid ""
+#~ "Allows you to store routes in owncloud. Each route must be uploaded/"
+#~ "downloaded manually."
+#~ msgstr ""
+#~ "Надає вам змогу зберігати дані маршрутів у системі owncloud. Кожен запис "
+#~ "маршруту слід вивантажувати і отримувати з сервера вручну."
+
+#~ msgid "Enable route synchronization"
+#~ msgstr "Увімкнути синхронізацію маршрутів"
+
+#~ msgid "Automatically sync all bookmarks to the server."
+#~ msgstr "Автоматично синхронізувати усі записи закладок з сервером."
+
+#~ msgid "Enable bookmark synchronization"
+#~ msgstr "Увімкнути синхронізацію закладок"
+
+#~ msgid "Sync now"
+#~ msgstr "Синхронізувати"
+
+#~ msgid "Credentials"
+#~ msgstr "Реєстраційні дані"
+
+#~ msgid "Server:"
+#~ msgstr "Сервер:"
+
+#~ msgid "Remote server URL, e.g. myserver.com/owncloud"
+#~ msgstr "Адреса віддаленого сервера, наприклад myserver.com/owncloud"
+
+#~ msgid "Username:"
+#~ msgstr "Користувач:"
+
+#~ msgid "Test Login"
+#~ msgstr "Тестовий вхід"
+
+#~ msgid "Time Zone"
+#~ msgstr "Часовий пояс"
+
+#~ msgid "UTC"
+#~ msgstr "Світовий"
+
+#~ msgid "System time zone"
+#~ msgstr "Часовий пояс системи"
+
+#~ msgid "Choose Time zone"
+#~ msgstr "Виберіть часовий пояс"
+
+#~ msgid "Universal Time Coordinated"
+#~ msgstr "Універсальний координований час (UTC)"
+
+#~ msgid "European Central Time"
+#~ msgstr "Центральноєвропейський час"
+
+#~ msgid "Eastern European Time"
+#~ msgstr "Східноєвропейський час"
+
+#~ msgid "Egypt Standard Time"
+#~ msgstr "Стандартний єгипетський час"
+
+#~ msgid "Eastern African Time"
+#~ msgstr "Східноафриканський час"
+
+#~ msgid "Middle East Time"
+#~ msgstr "Середньосхідний час"
+
+#~ msgid "Near East Time"
+#~ msgstr "Близькосхідний час"
+
+#~ msgid "Pakistan Lahore Time"
+#~ msgstr "Час Лахору (Пакистан)"
+
+#~ msgid "India Standard Time"
+#~ msgstr "Стандартний час (Індія)"
+
+#~ msgid "Bangladesh Standard Time"
+#~ msgstr "Стандартний час (Бангладеш)"
+
+#~ msgid "Vietnam Standard Time"
+#~ msgstr "Стандартний час (В’єтнам)"
+
+#~ msgid "China Taiwan Time"
+#~ msgstr "Час Тайваню (Китай)"
+
+#~ msgid "Japan Standard Time"
+#~ msgstr "Стандартний час (Японія)"
+
+#~ msgid "Australia Central Time"
+#~ msgstr "Центральноавстралійський час"
+
+#~ msgid "Australia Eastern Time"
+#~ msgstr "Східноавстралійський час"
+
+#~ msgid "Solomon Standard Time"
+#~ msgstr "Стандартний час (Соломонові острови)"
+
+#~ msgid "New Zealand Standard Time"
+#~ msgstr "Стандартний час (Нова Зеландія)"
+
+#~ msgid "Midway Islands Time"
+#~ msgstr "Час островів Мідуей"
+
+#~ msgid "Hawaii Standard Time"
+#~ msgstr "Стандартний час (Гаваї)"
+
+#~ msgid "Alaska Standard Time"
+#~ msgstr "Стандартний час (Аляска)"
+
+#~ msgid "Pacific Standard Time"
+#~ msgstr "Тихокеанський стандартний час"
+
+#~ msgid "Phoenix Standard Time"
+#~ msgstr "Стандартний час (Фінікс)"
+
+#~ msgid "Mountain Standard Time"
+#~ msgstr "Гірський стандартний час"
+
+#~ msgid "Central Standard Time"
+#~ msgstr "Центральний стандартний час"
+
+#~ msgid "Eastern Standard Time"
+#~ msgstr "Східний стандартний час"
+
+#~ msgid "Indiana Eastern Standard Time"
+#~ msgstr "Східний стандартний час (Індіана)"
+
+#~ msgid "Puerto Rico and US Virgin Islands Time"
+#~ msgstr "Час Пуерто-Рико та Віргінських островів"
+
+#~ msgid "Canada Newfoundland Time"
+#~ msgstr "Час поясу Ньюфаунленду (Канада)"
+
+#~ msgid "Argentina Standard Time"
+#~ msgstr "Стандартний аргентинський час"
+
+#~ msgid "Brazil Eastern Time"
+#~ msgstr "Східнобразильський час"
+
+#~ msgid "Central African Time"
+#~ msgstr "Центральноафриканський час"
+
+#~ msgid "When Marble starts"
+#~ msgstr "Після запуску Marble"
+
+#~ msgid "Load system time"
+#~ msgstr "Завантажити час системи"
+
+#~ msgid "Load last session time"
+#~ msgstr "Завантажити час останнього сеансу"
+
+#~ msgid "Date and Time"
+#~ msgstr "Дата і час"
+
+#~ msgid "Routing"
+#~ msgstr "Маршрути"
+
+#~ msgid "Synchronization"
+#~ msgstr "Синхронізація"
+
+#~ msgid "Never synchronized."
+#~ msgstr "Синхронізація не виконувалася."
+
+#~ msgid "Last synchronization: %1"
+#~ msgstr "Остання синхронізація: %1"
 
 #~ msgid "Elevation:"
 #~ msgstr "Висота над рівнем моря:"

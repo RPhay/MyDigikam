@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-20 00:39+0000\n"
+"POT-Creation-Date: 2023-12-21 00:40+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1455,13 +1455,13 @@ msgstr ""
 msgid "Clean up Database..."
 msgstr "Bunachar sonraí á léamh..."
 
-#: core/app/main/digikamapp.cpp:188
+#: core/app/main/digikamapp.cpp:192
 #, fuzzy, kde-format
 #| msgid "Loading cameras..."
 msgid "Loading albums..."
 msgstr "Ceamaraí á luchtú..."
 
-#: core/app/main/digikamapp.cpp:334
+#: core/app/main/digikamapp.cpp:338
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1469,7 +1469,7 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:661 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:665 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1479,7 +1479,7 @@ msgstr[2] "Níl aon mhír roghnaithe (%1 mhír)"
 msgstr[3] "Níl aon mhír roghnaithe (%1 mír)"
 msgstr[4] "Níl aon mhír roghnaithe (%1 mír)"
 
-#: core/app/main/digikamapp.cpp:667
+#: core/app/main/digikamapp.cpp:671
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1491,7 +1491,7 @@ msgstr[2] "Níl aon mhír roghnaithe (%1 mhír)"
 msgstr[3] "Níl aon mhír roghnaithe (%1 mír)"
 msgstr[4] "Níl aon mhír roghnaithe (%1 mír)"
 
-#: core/app/main/digikamapp.cpp:672
+#: core/app/main/digikamapp.cpp:676
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1503,7 +1503,7 @@ msgstr[2] "Níl aon mhír roghnaithe (%1 mhír)"
 msgstr[3] "Níl aon mhír roghnaithe (%1 mír)"
 msgstr[4] "Níl aon mhír roghnaithe (%1 mír)"
 
-#: core/app/main/digikamapp.cpp:683
+#: core/app/main/digikamapp.cpp:687
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1515,7 +1515,7 @@ msgstr[2] "Roghnaíodh %2/%1 mhír"
 msgstr[3] "Roghnaíodh %2/%1 mhír"
 msgstr[4] "Roghnaíodh %2/%1 mhír"
 
-#: core/app/main/digikamapp.cpp:696
+#: core/app/main/digikamapp.cpp:700
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1527,7 +1527,7 @@ msgstr[2] "Roghnaíodh %2/%1 mhír"
 msgstr[3] "Roghnaíodh %2/%1 mhír"
 msgstr[4] "Roghnaíodh %2/%1 mhír"
 
-#: core/app/main/digikamapp.cpp:704
+#: core/app/main/digikamapp.cpp:708
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1539,7 +1539,7 @@ msgstr[2] "Níl aon mhír roghnaithe (%1 mhír)"
 msgstr[3] "Níl aon mhír roghnaithe (%1 mír)"
 msgstr[4] "Níl aon mhír roghnaithe (%1 mír)"
 
-#: core/app/main/digikamapp.cpp:712
+#: core/app/main/digikamapp.cpp:716
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1551,7 +1551,7 @@ msgstr[2] "Roghnaíodh %2/%1 mhír"
 msgstr[3] "Roghnaíodh %2/%1 mhír"
 msgstr[4] "Roghnaíodh %2/%1 mhír"
 
-#: core/app/main/digikamapp.cpp:721
+#: core/app/main/digikamapp.cpp:725
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1563,23 +1563,23 @@ msgstr[2] "Níl aon mhír roghnaithe (%1 mhír)"
 msgstr[3] "Níl aon mhír roghnaithe (%1 mír)"
 msgstr[4] "Níl aon mhír roghnaithe (%1 mír)"
 
-#: core/app/main/digikamapp.cpp:752
+#: core/app/main/digikamapp.cpp:756
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 as %2)"
 
-#: core/app/main/digikamapp.cpp:766
+#: core/app/main/digikamapp.cpp:770
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 as %2)"
 
-#: core/app/main/digikamapp.cpp:770
+#: core/app/main/digikamapp.cpp:774
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:781
+#: core/app/main/digikamapp.cpp:785
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1591,7 +1591,7 @@ msgstr[2] "%1 mhír"
 msgstr[3] "%1 mír"
 msgstr[4] "%1 mír"
 
-#: core/app/main/digikamapp.cpp:832
+#: core/app/main/digikamapp.cpp:836
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1603,7 +1603,7 @@ msgstr[2] "Scríobh meiteashonraí sna híomhánna"
 msgstr[3] "Scríobh meiteashonraí sna híomhánna"
 msgstr[4] "Scríobh meiteashonraí sna híomhánna"
 
-#: core/app/main/digikamapp.cpp:834
+#: core/app/main/digikamapp.cpp:838
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -3091,7 +3091,7 @@ msgstr "Scoir ón mhód lánscáileáin"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:508
+#: core/libs/album/engine/album.cpp:489
 #: core/libs/album/manager/albummanager.cpp:165
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -3181,7 +3181,7 @@ msgid "No Tags Album"
 msgstr "Níl a leithéid d'albam ann"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:581
+#: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:168
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3477,12 +3477,8 @@ msgstr ""
 msgid "Selection"
 msgstr "<p>Roghnúchán"
 
-#. i18n: ectx: property (text), widget (QPushButton, removeFolderButton)
-#. i18n: ectx: property (text), widget (QPushButton, removeBookmarkButton)
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:856
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:91
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:151
+#: core/libs/database/utils/ifaces/dio.cpp:890
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -4095,7 +4091,7 @@ msgstr "Ainm comhaid"
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
 #: core/libs/dialogs/deletedialog.cpp:177
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:383
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
 msgstr "Conair"
@@ -6678,11 +6674,9 @@ msgid ""
 "borders."
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, positionLabel)
 #: core/dplugins/bqm/transform/crop/crop.cpp:96
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:349
 #: core/libs/template/templateviewer.cpp:145
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:115
 #, kde-format
 msgid "Position:"
 msgstr "Ionad:"
@@ -10195,7 +10189,6 @@ msgstr "Coigeartú Uathoibríoch"
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:269
 #, kde-format
 msgid "Settings"
 msgstr "Socruithe"
@@ -11987,12 +11980,8 @@ msgstr ""
 msgid "Select which service you would like to use."
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, bookmarkLabel)
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:220
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:141
-#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:62
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:118
-#: core/utilities/geolocation/marble/cloudsync/BookmarkSyncManager.cpp:650
 #, kde-format
 msgid "Bookmarks"
 msgstr "Leabharmharcanna"
@@ -23932,7 +23921,6 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:120
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:486
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgid "Replace"
@@ -23944,7 +23932,6 @@ msgid "Item will be replacing the linked version."
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:127
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:487
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgid "Replace All"
@@ -24450,7 +24437,6 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:189
 #: core/libs/dialogs/webbrowserdlg.cpp:129
-#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:196
 #, kde-format
 msgid "Home"
 msgstr ""
@@ -24961,7 +24947,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1086
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1127
 #: core/utilities/geolocation/marble/core/MarbleInputHandler.cpp:666
-#: core/utilities/geolocation/marble/core/MarbleWidget.cpp:646
+#: core/utilities/geolocation/marble/core/MarbleWidget.cpp:638
 #, fuzzy, kde-format
 #| msgid "Not available"
 msgid "not available"
@@ -26256,11 +26242,9 @@ msgstr ""
 msgid "Password hint to present to users in the password prompt (optional)."
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, labelPassword)
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
 #: core/libs/dplugins/webservices/wslogindialog.cpp:89
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:181
 #, fuzzy, kde-format
 #| msgid "Password"
 msgid "Password:"
@@ -27037,38 +27021,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:861
+#: core/libs/album/engine/album.cpp:410
+#: core/libs/database/utils/ifaces/dio.cpp:895
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:761
 #, kde-format
 msgid "Current Timeline Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:786
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Cuardach Reatha Dóiléir ar Íomhá"
 
-#: core/libs/album/engine/album.cpp:790
+#: core/libs/album/engine/album.cpp:771
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Cuardach Reatha Dóiléir ar Sceitse"
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:778
 #, kde-format
 msgid "Current Map Search"
 msgstr "Cuardach Reatha Mapa"
 
-#: core/libs/album/engine/album.cpp:802
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Search"
 msgstr "Cuardach Reatha"
 
-#: core/libs/album/engine/album.cpp:805
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr ""
@@ -27588,7 +27572,7 @@ msgid "Context menu"
 msgstr "Roghchlár comhthéacs"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:905
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -28936,14 +28920,14 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:321
+#: core/libs/database/utils/ifaces/dio.cpp:348
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Scagaire ainm comhaid:"
 
-#: core/libs/database/utils/ifaces/dio.cpp:322
+#: core/libs/database/utils/ifaces/dio.cpp:349
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28956,64 +28940,64 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:331
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Forscríobh go huathoibríoch"
 
-#: core/libs/database/utils/ifaces/dio.cpp:333
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Forscríobh go huathoibríoch"
 
-#: core/libs/database/utils/ifaces/dio.cpp:335
+#: core/libs/database/utils/ifaces/dio.cpp:362
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Forscríobh go huathoibríoch"
 
-#: core/libs/database/utils/ifaces/dio.cpp:825
+#: core/libs/database/utils/ifaces/dio.cpp:859
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "De Réir Albaim"
 
-#: core/libs/database/utils/ifaces/dio.cpp:830
+#: core/libs/database/utils/ifaces/dio.cpp:864
 #, fuzzy, kde-format
 #| msgid "&Group Images"
 msgid "Copy Images"
 msgstr "&Grúpáil Íomhánna"
 
-#: core/libs/database/utils/ifaces/dio.cpp:836
+#: core/libs/database/utils/ifaces/dio.cpp:870
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy Files"
 msgstr "&Cóipeáil Anseo"
 
-#: core/libs/database/utils/ifaces/dio.cpp:841
+#: core/libs/database/utils/ifaces/dio.cpp:875
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgid "Move Album"
 msgstr "Albam Nua"
 
-#: core/libs/database/utils/ifaces/dio.cpp:846
+#: core/libs/database/utils/ifaces/dio.cpp:880
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "Sábháil Íomhánna"
 
-#: core/libs/database/utils/ifaces/dio.cpp:851
+#: core/libs/database/utils/ifaces/dio.cpp:885
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "Comhaid Scannáin"
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:900
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "Athchóiriú"
@@ -35349,82 +35333,82 @@ msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:70
+#: core/libs/iojobs/iojob.cpp:71
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "Níl an comhad ann"
 
-#: core/libs/iojobs/iojob.cpp:76
+#: core/libs/iojobs/iojob.cpp:77
 #, fuzzy, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "Níl an comhad ann"
 
-#: core/libs/iojobs/iojob.cpp:103
+#: core/libs/iojobs/iojob.cpp:104
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgid "Could not overwrite image %1"
 msgstr "Níorbh fhéidir oscailt: %1"
 
-#: core/libs/iojobs/iojob.cpp:111
+#: core/libs/iojobs/iojob.cpp:112
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
 "Check the file permission on the trash folder \"%2\" in the image collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:139
+#: core/libs/iojobs/iojob.cpp:140
 #, fuzzy, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Tá teimpléad meiteashonraí darb ainm '%1' ann cheana."
 
-#: core/libs/iojobs/iojob.cpp:169
+#: core/libs/iojobs/iojob.cpp:170
 #, fuzzy, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:176
+#: core/libs/iojobs/iojob.cpp:177
 #, fuzzy, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:188
+#: core/libs/iojobs/iojob.cpp:189
 #, fuzzy, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:194
+#: core/libs/iojobs/iojob.cpp:195
 #, fuzzy, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:218
+#: core/libs/iojobs/iojob.cpp:219
 #, fuzzy, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:231
 #, fuzzy, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:238
+#: core/libs/iojobs/iojob.cpp:239
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:243
+#: core/libs/iojobs/iojob.cpp:244
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:287
+#: core/libs/iojobs/iojob.cpp:288
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Níl an comhad ann"
 
-#: core/libs/iojobs/iojob.cpp:299
+#: core/libs/iojobs/iojob.cpp:300
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35432,7 +35416,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:311
+#: core/libs/iojobs/iojob.cpp:312
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35440,34 +35424,34 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:328
+#: core/libs/iojobs/iojob.cpp:329
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Ní cheadaítear ainm folamh ar an albam."
 
-#: core/libs/iojobs/iojob.cpp:340
+#: core/libs/iojobs/iojob.cpp:341
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:386
+#: core/libs/iojobs/iojob.cpp:387
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:396
+#: core/libs/iojobs/iojob.cpp:397
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "Tá clib eile leis an ainm céanna ann.\n"
 "Roghnaigh ainm eile."
 
-#: core/libs/iojobs/iojob.cpp:411
+#: core/libs/iojobs/iojob.cpp:412
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:483
+#: core/libs/iojobs/iojob.cpp:484
 #, fuzzy, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
@@ -41814,9 +41798,7 @@ msgstr "Clibeanna íomhá"
 msgid "AVFormat"
 msgstr "Formáid"
 
-#. i18n: ectx: property (text), widget (QRadioButton, browseButton)
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
-#: core/utilities/geolocation/marble/routing/GoToDialog.ui:93
 #, fuzzy, kde-format
 #| msgid "&Browse"
 msgid "Browse"
@@ -42302,9 +42284,7 @@ msgstr ""
 msgid "Change"
 msgstr "Cainéal:"
 
-#. i18n: ectx: property (text), widget (QPushButton, iconLinkButton)
 #: core/libs/widgets/files/dfileselector.cpp:58
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:46
 #, fuzzy, kde-format
 msgid "Browse..."
 msgstr "Brabhsáil Clibeanna..."
@@ -51726,7 +51706,7 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:142
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:145
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:139
 #, fuzzy, kde-format
 #| msgid "Kipi-Plugins"
 msgid "Plugins"
@@ -54890,7 +54870,7 @@ msgid "Roadmap"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:354
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "Satailít"
@@ -54934,7 +54914,7 @@ msgid "Google Maps"
 msgstr "Google Maps"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:473
 #, kde-format
 msgid "Float items"
 msgstr ""
@@ -54957,72 +54937,72 @@ msgstr "Bainisteoir Scripteanna"
 msgid "Marble Virtual Globe"
 msgstr "Cruinneog Fhíorúil Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:340
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
 #, kde-format
 msgid "Atlas map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:341
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "Satailít"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:342
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap (OSM)"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:343
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap (Vector)"
 msgstr "OpenStreetMap (OSM)"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:406
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:393
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:398
 #, kde-format
 msgid "Equirectangular"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:422
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:409
 #, kde-format
 msgid "Show compass"
 msgstr "Taispeáin compás"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:427
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:414
 #, kde-format
 msgid "Show scale bar"
 msgstr "Taispeáin barra scála"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:432
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:419
 #, fuzzy, kde-format
 #| msgid "Show image caption"
 msgid "Show navigation"
 msgstr "Taispeáin foscríbhinn na híomhá"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:424
 #, kde-format
 msgid "Show overview map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:450
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:477
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:464
 #, kde-format
 msgid "Projection"
 msgstr "Teilgean"
@@ -55077,9 +55057,7 @@ msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Geolocation"
 
-#. i18n: ectx: property (text), widget (QPushButton, removeButton)
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:233
-#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:42
 #: core/utilities/setup/album/setupcategory.cpp:99
 #: core/utilities/setup/camera/setupcamera.cpp:319
 #: core/utilities/setup/camera/setupcamera.cpp:441
@@ -56168,479 +56146,6 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Scagaire anaithnid"
 
-#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:58
-#: core/utilities/geolocation/marble/bookmark/BookmarkManager.cpp:250
-#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
-#, fuzzy, kde-format
-#| msgctxt "default theme name"
-#| msgid "Default"
-msgid "Default"
-msgstr "Réamhshocrú"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:183
-#, fuzzy, kde-format
-#| msgid ""
-#| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
-msgid ""
-"The folder %1 is not empty. Removing it will delete all bookmarks it "
-"contains. Are you sure you want to delete the folder?"
-msgstr ""
-"Tá comhad darb ainm \"%1\" ann cheana. An bhfuil tú cinnte gur mian leat "
-"scríobh air?"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:184
-#, fuzzy, kde-format
-#| msgid "Remove filter"
-msgid "Remove Folder"
-msgstr "Bain an scagaire"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:418
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Export Bookmarks"
-msgstr "Leabharmharcanna"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:419
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:730
-#, fuzzy, kde-format
-#| msgid "XMP text Files (*.xmp)"
-msgid "KML files (*.kml)"
-msgstr "Téacschomhaid XMP (*.xmp)"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:424
-#, kde-format
-msgid "Unable to save bookmarks. Please check that the file is writable."
-msgstr ""
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:425
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Bookmark Export"
-msgstr "Leabharmharcanna"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:432
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Import Bookmarks"
-msgstr "Leabharmharcanna"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:433
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:696
-#, fuzzy, kde-format
-#| msgid "XMP text Files (*.xmp)"
-msgid "KML Files (*.kml)"
-msgstr "Téacschomhaid XMP (*.xmp)"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:440
-#, kde-format
-msgid "The file %1 cannot be opened as a KML file."
-msgstr ""
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:441
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Bookmark Import"
-msgstr "Leabharmharcanna"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:475
-#, kde-format
-msgid "The file contains a bookmark that already exists among your Bookmarks."
-msgstr ""
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:476
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Imported bookmark"
-msgstr "Leabharmharcanna"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:477
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Existing bookmark"
-msgstr "Leabharmharcanna"
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:478
-#, kde-format
-msgid "Do you want to replace the existing bookmark with the imported one?"
-msgstr ""
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:488
-#, kde-format
-msgid "Skip"
-msgstr ""
-
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.cpp:489
-#, fuzzy, kde-format
-#| msgid "Overwrite automatically"
-msgid "Skip All"
-msgstr "Forscríobh go huathoibríoch"
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiBookmarkManagerDialog)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:14
-#, fuzzy, kde-format
-#| msgid "Color Management"
-msgid "Bookmark Manager"
-msgstr "Bainisteoireacht na nDathanna"
-
-#. i18n: ectx: property (text), widget (QPushButton, importButton)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:25
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Import Bookmarks..."
-msgstr "Leabharmharcanna"
-
-#. i18n: ectx: property (text), widget (QPushButton, exportButton)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:35
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Export Bookmarks..."
-msgstr "Leabharmharcanna"
-
-#. i18n: ectx: property (text), widget (QLabel, foldersLabel)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:64
-#, fuzzy, kde-format
-#| msgid "Folder: "
-msgid "Folders"
-msgstr "Fillteán: "
-
-#. i18n: ectx: property (text), widget (QPushButton, newFolderButton)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:74
-#, fuzzy, kde-format
-#| msgctxt "Create new search"
-#| msgid "New..."
-msgid "New..."
-msgstr "Nua..."
-
-#. i18n: ectx: property (text), widget (QPushButton, renameFolderButton)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:81
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:62
-#, kde-format
-msgid "Rename..."
-msgstr "Athainmnigh..."
-
-#. i18n: ectx: property (text), widget (QPushButton, editBookmarkButton)
-#: core/utilities/geolocation/marble/bookmark/BookmarkManagerDialog.ui:141
-#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
-#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
-#, kde-format
-msgid "Edit"
-msgstr "Eagar"
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiEditBookmarkDialog)
-#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:14
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Edit Bookmark"
-msgstr "Leabharmharcanna"
-
-#. i18n: ectx: property (text), widget (QLabel, description_lbl)
-#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:25
-#, fuzzy, kde-format
-#| msgid "Description:"
-msgid "&Description:"
-msgstr "Cur Síos:"
-
-#. i18n: ectx: property (html), widget (QTextEdit, m_description)
-#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:50
-#, kde-format
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-"bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-"<tr>\n"
-"<td style=\"border: none;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, folder_lbl)
-#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:57
-#, fuzzy, kde-format
-#| msgid "Folder: "
-msgid "&Folder:"
-msgstr "Fillteán: "
-
-#. i18n: ectx: property (text), widget (QPushButton, m_newFolderButton)
-#: core/utilities/geolocation/marble/bookmark/EditBookmarkDialog.ui:79
-#, fuzzy, kde-format
-#| msgid "Add Folders..."
-msgid "&Add Folder..."
-msgstr "Cuir Fillteáin Leis..."
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_intValueEditor)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:129
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:28
-#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:47
-#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:99
-#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:151
-#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:203
-#, kde-format
-msgid "°"
-msgstr ""
-
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:179
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:338
-#, kde-format
-msgid "'"
-msgstr ""
-
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:180
-#, kde-format
-msgid "\""
-msgstr ""
-
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:526
-#, kde-format
-msgctxt "East, the direction"
-msgid "E"
-msgstr ""
-
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:527
-#, kde-format
-msgctxt "West, the direction"
-msgid "W"
-msgstr ""
-
-# see "Yes" comments
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:530
-#, fuzzy, kde-format
-#| msgctxt "Image filter reproducible: No"
-#| msgid "No"
-msgctxt "North, the direction"
-msgid "N"
-msgstr "Níl"
-
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.cpp:531
-#, kde-format
-msgctxt "South, the direction"
-msgid "S"
-msgstr ""
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, m_uintValueEditor)
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:38
-#, kde-format
-msgid "′"
-msgstr ""
-
-#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, m_floatValueEditor)
-#: core/utilities/geolocation/marble/bookmark/LatLonEdit.ui:54
-#, kde-format
-msgid "″"
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, UiNewBookmarkFolderDialog)
-#: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:14
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "New Bookmark Folder"
-msgstr "Leabharmharcanna"
-
-#. i18n: ectx: property (text), widget (QLabel, m_namelbl)
-#: core/utilities/geolocation/marble/bookmark/NewBookmarkFolderDialog.ui:22
-#, fuzzy, kde-format
-#| msgid "Filename"
-msgid "&Folder name:"
-msgstr "Ainm comhaid"
-
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:210
-#, fuzzy, kde-format
-msgid "Open File"
-msgstr "Oscail fillteán"
-
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.cpp:212
-#, fuzzy, kde-format
-msgid "All Supported Files (*.png)"
-msgstr "Uirlisí Anaithnide"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:64
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:25
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
-msgid "Name:"
-msgstr "Ainm:"
-
-#. i18n: ectx: property (text), widget (QLabel, iconLinkLabel)
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:81
-#, fuzzy, kde-format
-#| msgid "Size:"
-msgid "Icon link:"
-msgstr "Méid:"
-
-#. i18n: ectx: property (text), widget (QLabel, idLabel)
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:91
-#, kde-format
-msgid "ID:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, targetIdLabel)
-#: core/utilities/geolocation/marble/bookmark/PlacemarkEditHeader.ui:104
-#, fuzzy, kde-format
-#| msgid "Target"
-msgid "Target ID:"
-msgstr "Sprioc"
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, CloudRoutesDialog)
-#: core/utilities/geolocation/marble/cloudsync/CloudRoutesDialog.ui:14
-#, fuzzy, kde-format
-#| msgctxt "light source"
-#| msgid "Cloudy weather"
-msgid "Cloud Routes"
-msgstr "Aimsir scamallach"
-
-#. i18n: ectx: property (text), widget (QLabel, labelNoRoute)
-#: core/utilities/geolocation/marble/cloudsync/CloudRoutesDialog.ui:20
-#, fuzzy, kde-format
-#| msgid "Not available"
-msgid "No route available."
-msgstr "Níl ar Fáil"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:106
-#, fuzzy, kde-format
-#| msgid "Database"
-msgid "Use local"
-msgstr "Bunachar Sonraí"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:107
-#, kde-format
-msgid "Use cloud"
-msgstr ""
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:108
-#, kde-format
-msgid "Always use local"
-msgstr ""
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:109
-#, kde-format
-msgid "Always use cloud"
-msgstr ""
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:123
-#, kde-format
-msgid "Local placemark"
-msgstr ""
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:124
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:143
-#, kde-format
-msgid "Path: %1 <br /> Name: %2 <br /> Description: %3 <br /> Status: %4"
-msgstr ""
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:127
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:146
-#, fuzzy, kde-format
-#| msgid "Channel:"
-msgid "Changed"
-msgstr "Cainéal:"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:130
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:149
-#, fuzzy, kde-format
-#| msgid "Delete"
-msgid "Deleted"
-msgstr "Scrios"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "light source"
-#| msgid "Cloudy weather"
-msgid "Cloud placemark"
-msgstr "Aimsir scamallach"
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:164
-#, kde-format
-msgid ""
-"A bookmark on this device conflicts with a cloud bookmark. Which one do you "
-"want to keep?"
-msgstr ""
-
-#: core/utilities/geolocation/marble/cloudsync/ConflictDialog.cpp:175
-#, kde-format
-msgid "Synchronization Conflict"
-msgstr ""
-
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:301
-#, fuzzy, kde-format
-msgid "Server '%1' could not be reached"
-msgstr "Ní cheadaítear ainm folamh ar an albam."
-
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:319
-#, kde-format
-msgid "The Marble app is not installed on the ownCloud server"
-msgstr ""
-
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:321
-#, kde-format
-msgid "The server is not an ownCloud server"
-msgstr ""
-
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:325
-#, kde-format
-msgid "Username or password are incorrect"
-msgstr ""
-
-#: core/utilities/geolocation/marble/cloudsync/OwncloudSyncBackend.cpp:328
-#, kde-format
-msgid "Login successful"
-msgstr ""
-
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:178
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:199
-#, fuzzy, kde-format
-msgid "Open"
-msgstr "Oscail Le..."
-
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:179
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:204
-#, fuzzy, kde-format
-#| msgctxt "load theme"
-#| msgid "&Load"
-msgid "Load"
-msgstr "&Luchtaigh"
-
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:180
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:209
-#, fuzzy, kde-format
-#| msgid "Remove Metadata"
-msgid "Remove from device"
-msgstr "Bain Meiteashonraí"
-
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:181
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:214
-#, fuzzy, kde-format
-msgid "Delete from cloud"
-msgstr "Scrios Uile"
-
-#: core/utilities/geolocation/marble/cloudsync/RouteItemDelegate.cpp:219
-#, fuzzy, kde-format
-#| msgid "Upload to Camera"
-msgid "Upload to cloud"
-msgstr "Uasluchtaigh go dtí an gceamara"
-
 #: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:271
 #, kde-format
 msgid "&Lock"
@@ -56651,10 +56156,8 @@ msgstr ""
 msgid "&Hide"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QPushButton, configureButton)
 #: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:286
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:378
-#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:32
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "&Configure..."
@@ -56716,72 +56219,50 @@ msgctxt "means nautical miles"
 msgid "nm"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:113
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:108
 #, fuzzy, kde-format
 #| msgid "Copy coordinates"
 msgid "Copy Coordinates"
 msgstr "Cóipeáil comhordanáidí"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:114
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:109
 #, kde-format
 msgid "Copy geo: URL"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:123
-#, kde-format
-msgid "Directions &from here"
-msgstr ""
-
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:124
-#, fuzzy, kde-format
-#| msgid "Enter your text here."
-msgid "Directions &to here"
-msgstr "Iontráil do chuid téacs anseo."
-
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:132
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Add &Bookmark"
-msgstr "Leabharmharcanna"
-
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:133
-#, fuzzy, kde-format
-msgid "&Full Screen Mode"
-msgstr "Scoir ón mhód lánscáileáin"
-
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:152
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:126
 #, fuzzy, kde-format
 #| msgid "Address:"
 msgid "&Address Details"
 msgstr "Seoladh:"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:176
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:142
 #, fuzzy, kde-format
 #| msgid "No description available"
 msgid "No description available."
 msgstr "Níl cur síos ar fáil"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:378
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:359
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:368
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:345
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:358
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:364
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:367
 #, kde-format
 msgid "National Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:380
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:347
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:324
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:328
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:332
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:336
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:357
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:356
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Cathair:"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:382
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:349
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:326
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:330
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:334
@@ -56790,7 +56271,7 @@ msgstr "Cathair:"
 msgid "State Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:384
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:351
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:325
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:329
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:333
@@ -56800,24 +56281,24 @@ msgstr ""
 msgid "County Capital"
 msgstr "Tír:"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:387
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:354
 #, kde-format
 msgid "Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:395
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:366
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:362
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
 #, fuzzy, kde-format
 #| msgid "{Village}"
 msgid "Village"
 msgstr "{Sráidbhaile}"
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:539
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:506
 #, kde-format
 msgid "&Info Boxes"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:883
+#: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:806
 #, fuzzy, kde-format
 #| msgid "Address:"
 msgid "Address Details"
@@ -56906,7 +56387,7 @@ msgid "Nation"
 msgstr "Foscríbhinn"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:342
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:461
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:460
 #, kde-format
 msgid "Volcano"
 msgstr ""
@@ -56964,1619 +56445,1613 @@ msgstr ""
 msgid "Coordinate"
 msgstr "Comhordanáidí Polacha"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Bookmark"
-msgstr "Leabharmharcanna"
-
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:358
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:357
 #, kde-format
 msgid "City Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:360
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:359
 #, kde-format
 msgid "Suburb"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:361
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:360
 #, fuzzy, kde-format
 #| msgid "{Hamlet}"
 msgid "Hamlet"
 msgstr "{Clochán}"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:362
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:361
 #, fuzzy, kde-format
 #| msgid "Normalize"
 msgid "Locality"
 msgstr "Normalaigh"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:363
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:362
 #, fuzzy, kde-format
 #| msgid "{Town}"
 msgid "Town"
 msgstr "{Baile}"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:364
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:363
 #, kde-format
 msgid "Town Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:367
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:366
 #, kde-format
 msgid "Village Capital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:369
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:368
 #, kde-format
 msgid "Water"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:370
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:369
 #, kde-format
 msgid "Reef"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:371
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:370
 #, kde-format
 msgid "Wood"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:372
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:371
 #, kde-format
 msgid "Beach"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:373
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:372
 #, fuzzy, kde-format
 #| msgid "Iceland"
 msgid "Wetland"
 msgstr "An Íoslainn"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:374
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:373
 #, kde-format
 msgid "Glacier"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:375
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:374
 #, kde-format
 msgid "Ice Shelf"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:376
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:375
 #, kde-format
 msgid "Scrub"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:377
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:376
 #, kde-format
 msgid "Cliff"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:378
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:377
 #, kde-format
 msgid "Heath"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:379
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:378
 #, kde-format
 msgid "Traffic Signals"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:380
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:379
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Elevator"
 msgstr "Féilire"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:381
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:380
 #, fuzzy, kde-format
 #| msgctxt "stepping for custom range"
 #| msgid "Step:"
 msgid "Steps"
 msgstr "Céim:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:381
 #, fuzzy, kde-format
 msgid "Unknown Road"
 msgstr "Uirlisí Anaithnide"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:384
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:386
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:383
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:385
 #, kde-format
 msgid "Footway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:385
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:384
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:581
 #, kde-format
 msgid "Track"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:387
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:386
 #, fuzzy, kde-format
 #| msgid "Cycle:"
 msgid "Cycleway"
 msgstr "Ciogal:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:388
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:387
 #, fuzzy, kde-format
 #| msgid "Service ID:"
 msgid "Service Road"
 msgstr "Aitheantas Seirbhíse:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:389
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:388
 #, kde-format
 msgid "Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:390
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:389
 #, kde-format
 msgid "Residential Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:391
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:390
 #, kde-format
 msgid "Living Street"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:392
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:391
 #, kde-format
 msgid "Unclassified Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:393
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:392
 #, kde-format
 msgid "Tertiary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:394
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:393
 #, kde-format
 msgid "Tertiary Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:395
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:394
 #, kde-format
 msgid "Secondary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:396
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:395
 #, kde-format
 msgid "Secondary Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:397
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:396
 #, kde-format
 msgid "Primary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:398
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:397
 #, kde-format
 msgid "Primary Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:399
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:398
 #, kde-format
 msgid "Raceway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:400
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:399
 #, kde-format
 msgid "Trunk Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:401
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:400
 #, kde-format
 msgid "Trunk Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:402
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:401
 #, kde-format
 msgid "Motorway Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:403
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:402
 #, fuzzy, kde-format
 #| msgid "Norway"
 msgid "Motorway"
 msgstr "An Iorua"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:404
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:403
 #, fuzzy, kde-format
 msgid "Corridor"
 msgstr "Bailiúcháin"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:405
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:404
 #, fuzzy, kde-format
 #| msgid "Profile Version"
 msgid "Building"
 msgstr "Leagan na Próifíle"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:406
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:405
 #, fuzzy, kde-format
 #| msgid "Damping:"
 msgid "Camping"
 msgstr "Maolú:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:407
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:406
 #, fuzzy, kde-format
 #| msgid "Host Name"
 msgid "Hostel"
 msgstr "Óstainm"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:408
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:407
 #, kde-format
 msgid "Hotel"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:409
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:408
 #, kde-format
 msgid "Motel"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:410
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:409
 #, kde-format
 msgid "Youth Hostel"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:411
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:410
 #, kde-format
 msgid "Guest House"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:412
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:411
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgid "Library"
 msgstr "Leabharlann Albam"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:413
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:412
 #, fuzzy, kde-format
 #| msgid "Under-water"
 msgid "Kindergarten"
 msgstr "Faoi uisce"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:414
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:413
 #, kde-format
 msgid "College"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:415
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:414
 #, kde-format
 msgid "School"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:416
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:415
 #, fuzzy, kde-format
 #| msgid "Intensity:"
 msgid "University"
 msgstr "Déine:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:417
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:416
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgid "Bar"
 msgstr "MacBinary II"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:418
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:417
 #, kde-format
 msgid "Biergarten"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:419
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:418
 #, kde-format
 msgid "Cafe"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:420
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:419
 #, fuzzy, kde-format
 #| msgctxt "Fast 'find duplicates' search method"
 #| msgid "Fast"
 msgid "Fast Food"
 msgstr "Tapa"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:421
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:420
 #, kde-format
 msgid "Pub"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:422
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:421
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgid "Restaurant"
 msgstr "Athchóiriú"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:423
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:422
 #, kde-format
 msgid "Dentist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:424
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:423
 #, kde-format
 msgid "Doctors"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:425
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:424
 #, kde-format
 msgid "Hospital"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:426
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:425
 #, kde-format
 msgid "Pharmacy"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:427
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:426
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgid "Veterinary"
 msgstr "MacBinary II"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:428
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:427
 #, kde-format
 msgid "ATM"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:429
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:428
 #, kde-format
 msgid "Bank"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:430
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:429
 #, kde-format
 msgid "Archaeological Site"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:431
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:430
 #, kde-format
 msgid "Embassy"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:432
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:431
 #, kde-format
 msgid "Emergency Phone"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:433
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:432
 #, fuzzy, kde-format
 #| msgid "Contains"
 msgid "Mountain Rescue"
 msgstr "Ina bhfuil"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:434
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:433
 #, fuzzy, kde-format
 #| msgid "Add Watermark"
 msgid "Water Park"
 msgstr "Cuir Comhartha Uisce Leis"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:435
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:434
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
 msgid "Community Centre"
 msgstr "Sábháil na hAthruithe"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:436
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:435
 #, fuzzy, kde-format
 #| msgid "Contains"
 msgid "Fountain"
 msgstr "Ina bhfuil"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:437
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:436
 #, kde-format
 msgid "Night Club"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:438
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:437
 #, fuzzy, kde-format
 #| msgid "French"
 msgid "Bench"
 msgstr "Fraincis"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:439
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:438
 #, kde-format
 msgid "Court House"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:440
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:439
 #, fuzzy, kde-format
 msgid "Fire Station"
 msgstr "Athchóiriú..."
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:441
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:440
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgid "Hunting Stand"
 msgstr "Cealaíodh an Próiseas..."
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:442
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:441
 #, fuzzy, kde-format
 #| msgid "Polish"
 msgid "Police"
 msgstr "Polainnis"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:443
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:442
 #, fuzzy, kde-format
 #| msgid "Postal code:"
 msgid "Post Box"
 msgstr "Cód poist:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:444
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:443
 #, fuzzy, kde-format
 #| msgid "Postal code:"
 msgid "Post Office"
 msgstr "Cód poist:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:445
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:444
 #, kde-format
 msgid "Prison"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:446
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:445
 #, fuzzy, kde-format
 #| msgid "Scaling"
 msgid "Recycling"
 msgstr "Scálú"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:447
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:446
 #, fuzzy, kde-format
 #| msgid "Sepia Filter"
 msgid "Shelter"
 msgstr "Scagaire Donnrua"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:448
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:447
 #, kde-format
 msgid "Telephone"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:449
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:448
 #, kde-format
 msgid "Toilets"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:450
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:449
 #, kde-format
 msgid "Town Hall"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:451
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:450
 #, kde-format
 msgid "Waste Basket"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:452
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:451
 #, fuzzy, kde-format
 #| msgid "Initializing database..."
 msgid "Drinking Water"
 msgstr "Bunachar sonraí á thúsú..."
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:453
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:452
 #, kde-format
 msgid "Graveyard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:454
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:453
 #, fuzzy, kde-format
 #| msgid "Orientation"
 msgid "Charging Station"
 msgstr "Treoshuíomh"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:455
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:454
 #, kde-format
 msgid "Car Wash"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:456
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:455
 #, kde-format
 msgid "Social Facility"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:457
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:456
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City Wall"
 msgstr "Cathair:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:458
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:457
 #, kde-format
 msgid "Gate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:459
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:458
 #, kde-format
 msgid "Lift Gate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:460
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:668
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:459
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:667
 #, fuzzy, kde-format
 #| msgid "Wall"
 msgid "Wall"
 msgstr "Balla"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:462
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:461
 #, kde-format
 msgid "Peak"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:463
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:462
 #, kde-format
 msgid "Tree"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:464
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:463
 #, kde-format
 msgid "Cave Entrance"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:465
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:464
 #, fuzzy, kde-format
 #| msgctxt "metering mode"
 #| msgid "Average"
 msgid "Beverages"
 msgstr "Meán"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:466
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:465
 #, kde-format
 msgid "Hifi"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:467
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:466
 #, kde-format
 msgid "Supermarket"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:468
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:467
 #, kde-format
 msgid "Liquor Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:469
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:468
 #, kde-format
 msgid "Bakery"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:470
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:469
 #, fuzzy, kde-format
 #| msgid "Dutch"
 msgid "Butcher"
 msgstr "Ollainnis"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:471
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:470
 #, fuzzy, kde-format
 #| msgid "Connection failed."
 msgid "Confectionery"
 msgstr "Theip ar cheangal."
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:472
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:471
 #, kde-format
 msgid "Convenience Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:473
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:472
 #, fuzzy, kde-format
 #| msgid "Greece"
 msgid "Greengrocer"
 msgstr "An Ghréig"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:474
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:473
 #, kde-format
 msgid "Seafood Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:475
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:474
 #, fuzzy, kde-format
 #| msgid "Decorative Stone"
 msgid "Department Store"
 msgstr "Cloch Mhaisiúil"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:476
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:475
 #, kde-format
 msgid "Kiosk"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:477
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:476
 #, kde-format
 msgid "Bag Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:478
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:477
 #, kde-format
 msgid "Clothes Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:479
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:478
 #, fuzzy, kde-format
 #| msgid "Light Source Information"
 msgid "Fashion Shop"
 msgstr "Eolas Faoin Fhoinse Solais"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:480
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:479
 #, kde-format
 msgid "Jewelry Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:481
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:480
 #, fuzzy, kde-format
 #| msgid "Slide Show"
 msgid "Shoe Shop"
 msgstr "Taispeántas Sleamhnán"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:482
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:481
 #, kde-format
 msgid "Variety Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:483
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:482
 #, fuzzy, kde-format
 #| msgid "Fuzzy Searches"
 msgid "Beauty Services"
 msgstr "Cuardaigh Dhóiléire"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:484
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:483
 #, kde-format
 msgid "Chemist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:485
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:484
 #, kde-format
 msgid "Cosmetics"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:486
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:485
 #, kde-format
 msgid "Hairdresser"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:487
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:486
 #, fuzzy, kde-format
 #| msgid "<b>Dimensions</b>:"
 msgid "Optician"
 msgstr "<b>Toisí</b>:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:488
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:487
 #, kde-format
 msgid "Perfumery"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:489
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:491
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:488
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:490
 #, kde-format
 msgid "Hardware Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:490
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:489
 #, kde-format
 msgid "Florist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:492
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:491
 #, kde-format
 msgid "Furniture Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:493
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:492
 #, kde-format
 msgid "Electronics Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:494
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:493
 #, fuzzy, kde-format
 #| msgid "Adobe Photoshop"
 msgid "Mobile Phone Shop"
 msgstr "Adobe Photoshop"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:495
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:494
 #, kde-format
 msgid "Bicycle Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:496
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:495
 #, kde-format
 msgid "Car Dealer"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:497
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:496
 #, kde-format
 msgid "Car Repair Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:498
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:497
 #, kde-format
 msgid "Car Parts"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:499
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:498
 #, kde-format
 msgid "Motorcycle Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:500
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:499
 #, kde-format
 msgid "Outdoor Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:501
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:500
 #, kde-format
 msgid "Sports Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:502
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:501
 #, fuzzy, kde-format
 #| msgid "Rotating images"
 msgid "Printing Services"
 msgstr "Íomhánna á rothlú"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:503
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:502
 #, kde-format
 msgid "Art Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:504
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:503
 #, kde-format
 msgid "Musical Instrument Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:505
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:504
 #, fuzzy, kde-format
 msgid "Photo Shop"
 msgstr "Teideal na hÍomhá"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:506
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:505
 #, kde-format
 msgid "Bookshop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:507
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:506
 #, fuzzy, kde-format
 #| msgid "Light Source Information"
 msgid "Gift Shop"
 msgstr "Eolas Faoin Fhoinse Solais"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:508
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:507
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgid "Stationery"
 msgstr "Sáithiú"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:509
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:508
 #, kde-format
 msgid "Laundry"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:510
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:509
 #, fuzzy, kde-format
 #| msgid "Light Source Information"
 msgid "Pet Shop"
 msgstr "Eolas Faoin Fhoinse Solais"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:511
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:510
 #, kde-format
 msgid "Toy Store"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:512
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:511
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgid "Travel Agency"
 msgstr "Taisteal"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:513
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:512
 #, kde-format
 msgid "Deli"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:514
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:513
 #, kde-format
 msgid "Tobacco Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:515
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:514
 #, kde-format
 msgid "Tea Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:516
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:515
 #, kde-format
 msgid "Computer Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:517
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:516
 #, kde-format
 msgid "Garden Centre"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:518
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:517
 #, kde-format
 msgid "Shop"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:519
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:518
 #, kde-format
 msgid "Bridge"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:520
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:519
 #, fuzzy, kde-format
 #| msgid "Light source:"
 msgid "Lighthouse"
 msgstr "Foinse solais:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:521
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:520
 #, kde-format
 msgid "Pier"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:522
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:521
 #, kde-format
 msgid "Water Tower"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:523
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Wind Mill"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:524
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:523
 #, kde-format
 msgid "Communications Tower"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:525
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:524
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgid "Tourist Attraction"
 msgstr "Gan roghnúchán"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:526
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:525
 #, kde-format
 msgid "Artwork"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:527
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:526
 #, kde-format
 msgid "Castle"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:528
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:527
 #, kde-format
 msgid "Cinema"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:529
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:528
 #, fuzzy, kde-format
 #| msgid "Information"
 msgid "Information"
 msgstr "Eolas"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:530
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:529
 #, fuzzy, kde-format
 #| msgctxt "type is a document"
 #| msgid "Document"
 msgid "Monument"
 msgstr "Cáipéis"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:531
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:530
 #, kde-format
 msgid "Museum"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:532
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:531
 #, kde-format
 msgid "Ruin"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:533
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:532
 #, kde-format
 msgid "Theatre"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:534
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:533
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Parameters"
 msgid "Theme Park"
 msgstr "Paraiméadair"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:535
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:534
 #, fuzzy, kde-format
 #| msgid "Set Point 1"
 msgid "View Point"
 msgstr "Socraigh Pointe 1"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:536
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:535
 #, fuzzy, kde-format
 #| msgid "Zoom"
 msgid "Zoo"
 msgstr "Súmáil"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:537
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:536
 #, kde-format
 msgid "Alpine Hut"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:538
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:537
 #, kde-format
 msgid "Wilderness Hut"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:538
 #, fuzzy, kde-format
 #| msgid "Serial"
 msgid "Memorial"
 msgstr "Srathach"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
 #, kde-format
 msgid "Aerodrome"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
 #, kde-format
 msgid "Helipad"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
 #, kde-format
 msgid "Airport Gate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
 #, fuzzy, kde-format
 #| msgid "First Run"
 msgid "Airport Runway"
 msgstr "An Chéad Úsáid"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
 #, kde-format
 msgid "Airport Apron"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Airport Taxiway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:546
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
 #, kde-format
 msgid "Airport Terminal"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:547
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:546
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgid "Bus Station"
 msgstr "Sáithiú"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:547
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgid "Bus Stop"
 msgstr "Stad"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
 #, kde-format
 msgid "Car Sharing"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:550
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgid "Gas Station"
 msgstr "Sáithiú"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:551
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:550
 #, kde-format
 msgid "Parking"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:552
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:551
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgid "Parking Space"
 msgstr "Cealaíodh an Próiseas..."
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:552
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Platform"
 msgstr "Trasfhoirmigh"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
 #, kde-format
 msgid "Bicycle Rental"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
 #, kde-format
 msgid "Car Rental"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:556
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
 #, kde-format
 msgid "Ski Rental"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:557
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:556
 #, kde-format
 msgid "Taxi Rank"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:558
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:557
 #, fuzzy, kde-format
 #| msgid "Orientation"
 msgid "Train Station"
 msgstr "Treoshuíomh"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:558
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgid "Tram Stop"
 msgstr "Stad"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
 #, kde-format
 msgid "Bicycle Parking"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
 #, kde-format
 msgid "Motorcycle Parking"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:562
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
 #, kde-format
 msgid "Subway Entrance"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:563
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:562
 #, fuzzy, kde-format
 #| msgid "Mounted Camera"
 msgid "Speed Camera"
 msgstr "Ceamara Feistithe"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:563
 #, kde-format
 msgid "Place Of Worship"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
 #, fuzzy, kde-format
 #| msgid "Bahamas"
 msgid "Bahai"
 msgstr "Na Bahámaí"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:566
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
 #, kde-format
 msgid "Buddhist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:567
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:566
 #, fuzzy, kde-format
 #| msgid "Croatian"
 msgid "Christian"
 msgstr "Cróitis"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:568
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:567
 #, kde-format
 msgid "Muslim"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:569
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:568
 #, fuzzy, kde-format
 #| msgid "Hindi"
 msgid "Hindu"
 msgstr "Hiondúis"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:570
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:569
 #, kde-format
 msgid "Jain"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:571
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:570
 #, kde-format
 msgid "Jewish"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:572
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:571
 #, kde-format
 msgid "Shinto"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:573
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:572
 #, kde-format
 msgid "Sikh"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:574
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Taoist"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:575
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:574
 #, kde-format
 msgid "Golf Course"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:576
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:575
 #, fuzzy, kde-format
 #| msgid "San Marino"
 msgid "Marina"
 msgstr "San Mairíne"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:577
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:576
 #, kde-format
 msgid "Park"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:578
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:577
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Background"
 msgid "Playground"
 msgstr "Cúlra"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:579
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:578
 #, kde-format
 msgid "Pitch"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:580
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:579
 #, kde-format
 msgid "Sports Centre"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:581
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:580
 #, fuzzy, kde-format
 #| msgid "Medium"
 msgid "Stadium"
 msgstr "Measartha"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
 #, kde-format
 msgid "Swimming Pool"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:584
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Miniature Golf Course"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:585
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:584
 #, fuzzy, kde-format
 msgid "Allotments"
 msgstr "Nótaí:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:586
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:585
 #, kde-format
 msgid "Basin"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:587
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:586
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Parameters"
 msgid "Cemetery"
 msgstr "Paraiméadair"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:588
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:587
 #, kde-format
 msgid "Commercial"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:589
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:588
 #, fuzzy, kde-format
 #| msgid "Instructions:"
 msgid "Construction"
 msgstr "Treoracha:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:590
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:589
 #, fuzzy, kde-format
 #| msgid "Finland"
 msgid "Farmland"
 msgstr "An Fhionlainn"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:591
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:590
 #, kde-format
 msgid "Farmyard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:591
 #, fuzzy, kde-format
 #| msgid "Images"
 msgid "Garages"
 msgstr "Íomhánna"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
 #, kde-format
 msgid "Grass"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:594
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
 #, fuzzy, kde-format
 #| msgid "Austria"
 msgid "Industrial"
 msgstr "An Ostair"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:595
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:594
 #, kde-format
 msgid "Landfill"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:596
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:595
 #, kde-format
 msgid "Meadow"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:597
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:596
 #, kde-format
 msgid "Military"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:597
 #, kde-format
 msgid "Quarry"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
 #, kde-format
 msgid "Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:600
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
 #, kde-format
 msgid "Reservoir"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:601
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:600
 #, kde-format
 msgid "Residential"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:602
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:601
 #, fuzzy, kde-format
 #| msgid "Details"
 msgid "Retail"
 msgstr "Mionsonraí"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:603
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:602
 #, kde-format
 msgid "Orchard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:604
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:603
 #, kde-format
 msgid "Vineyard"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:605
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:604
 #, kde-format
 msgid "Rail"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:606
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:605
 #, kde-format
 msgid "Narrow Gauge"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:607
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:606
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:218
 #, kde-format
 msgid "Tram"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:608
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:607
 #, fuzzy, kde-format
 #| msgid "Light"
 msgid "Light Rail"
 msgstr "Solas"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:609
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:608
 #, kde-format
 msgid "Abandoned Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:610
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:609
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:217
 #, kde-format
 msgid "Subway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:610
 #, fuzzy, kde-format
 #| msgid "Preserve luminosity"
 msgid "Preserved Railway"
 msgstr "Caomhnaigh an lonrachas"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:612
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
 #, kde-format
 msgid "Miniature Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:613
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:612
 #, fuzzy, kde-format
 #| msgid "Special Instructions:"
 msgid "Railway Construction"
 msgstr "Treoracha Speisialta:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:614
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:613
 #, kde-format
 msgid "Monorail"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:615
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:614
 #, kde-format
 msgid "Funicular Railway"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:616
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:615
 #, fuzzy, kde-format
 #| msgid "Power"
 msgid "Power Tower"
 msgstr "Cumhacht"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:617
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:616
 #, kde-format
 msgid "Aerialway Station"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:618
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:617
 #, kde-format
 msgctxt "A pylon supporting the aerialway cable e.g. on a ski lift"
 msgid "Pylon"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:619
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:618
 #, fuzzy, kde-format
 #| msgid "Change Case"
 msgid "Cable Car"
 msgstr "Athraigh an Cás"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:620
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:619
 #, kde-format
 msgid "Gondola"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:621
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:620
 #, fuzzy, kde-format
 #| msgid "Clear List"
 msgid "Chair Lift"
 msgstr "Glan an Liosta"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:622
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:621
 #, kde-format
 msgid "Mixed Lift"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:623
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:622
 #, kde-format
 msgid "Drag Lift"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:624
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:623
 #, kde-format
 msgid "T-Bar"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:625
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:624
 #, kde-format
 msgid "J-Bar"
 msgstr ""
 
 # #-#-#-#-#  kspread.po (koffice/kspread.po)  #-#-#-#-#
 # OLT as is -- KPS
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:626
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:625
 #, fuzzy, kde-format
 #| msgid "Matter:"
 msgid "Platter"
 msgstr "Ábhar:"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:627
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:626
 #, kde-format
 msgid "Rope Tow"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:628
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:627
 #, kde-format
 msgid "Magic Carpet"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:629
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:628
 #, kde-format
 msgid "Zip Line"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:630
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:629
 #, kde-format
 msgid "Goods"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:631
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:630
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:227
 #, kde-format
 msgid "Downhill Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:632
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:631
 #, kde-format
 msgid "Nordic Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:633
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:632
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:229
 #, kde-format
 msgid "Skitour"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:634
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:633
 #, kde-format
 msgid "Sled Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:635
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:634
 #, kde-format
 msgid "Winter Hike"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:636
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:635
 #, kde-format
 msgid "Sleigh Piste"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:637
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:636
 #, kde-format
 msgid "Ice Skate"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:638
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:637
 #, kde-format
 msgid "Snow Park"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:639
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:638
 #, kde-format
 msgid "Ski Playground"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:640
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:639
 #, kde-format
 msgid "Ski Jump"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:641
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:640
 #, kde-format
 msgid "Admin Boundary (Level 1)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:642
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:641
 #, kde-format
 msgid "Admin Boundary (Level 2)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:643
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:642
 #, kde-format
 msgid "Admin Boundary (Level 3)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:644
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:643
 #, kde-format
 msgid "Admin Boundary (Level 4)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:645
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:644
 #, kde-format
 msgid "Admin Boundary (Level 5)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:646
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:645
 #, kde-format
 msgid "Admin Boundary (Level 6)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:647
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:646
 #, kde-format
 msgid "Admin Boundary (Level 7)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:648
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:647
 #, kde-format
 msgid "Admin Boundary (Level 8)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:649
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:648
 #, kde-format
 msgid "Admin Boundary (Level 9)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:650
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:649
 #, kde-format
 msgid "Admin Boundary (Level 10)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:651
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:650
 #, kde-format
 msgid "Admin Boundary (Level 11)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:652
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:651
 #, kde-format
 msgid "Boundary (Maritime)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:653
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:652
 #, fuzzy, kde-format
 #| msgctxt "contrast mode"
 #| msgid "Hard"
 msgid "Land Mass"
 msgstr "Crua"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:654
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:653
 #, kde-format
 msgid "Urban Area"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:655
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:654
 #, kde-format
 msgid "International Date Line"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:656
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:655
 #, kde-format
 msgid "Bathymetry"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:657
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:656
 #, fuzzy, kde-format
 #| msgid "Canada"
 msgid "Canal"
 msgstr "Ceanada"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:658
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:657
 #, fuzzy, kde-format
 #| msgid "Terrain"
 msgid "Drain"
 msgstr "Tír-raon"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:659
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:658
 #, kde-format
 msgid "Ditch"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:660
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:659
 #, fuzzy, kde-format
 #| msgid "Eritrea"
 msgid "Stream"
 msgstr "An Eiritré"
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:661
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:660
 #, kde-format
 msgid "River"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:662
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:661
 #, kde-format
 msgid "Weir"
 msgstr ""
 
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:662
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:663
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:664
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:665
 #, kde-format
 msgid "Crosswalk"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:665
 #, kde-format
 msgid "Railway Crossing"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:667
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
 #, kde-format
 msgid "Door"
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:669
+#: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:668
 #, kde-format
 msgid "Room"
 msgstr ""
@@ -58706,12 +58181,12 @@ msgstr ""
 msgid "Parsing failed line %1. Still %2 unclosed tag(s) after document end. "
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:126
+#: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:125
 #, kde-format
 msgid "Error parsing file at line: %1 and column %2 . "
 msgstr ""
 
-#: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:128
+#: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:127
 #, fuzzy, kde-format
 #| msgid "This is the original image"
 msgid "This is an Invalid File"
@@ -58792,6 +58267,15 @@ msgstr ""
 msgid "New Relation"
 msgstr "An Nua-Shéalainn"
 
+#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
+#: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
+#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:61
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
+#, kde-format
+msgid "Edit"
+msgstr "Eagar"
+
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:23
 #, fuzzy, kde-format
@@ -58859,6 +58343,39 @@ msgstr "Íomhánna Gaolmhara"
 msgid "Add custom tag..."
 msgstr "Cuir Íomhánna Leis..."
 
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/plugins/MarblePluginSettingsWidget.ui:23
+#, kde-format
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
+"Here you can select and deselect the functionality that is provided through "
+"plugins. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
+"from the map, menus and toolbars. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
+"their configuration a bit. </span></p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/plugins/MarblePluginSettingsWidget.ui:26
+#, fuzzy, kde-format
+#| msgid "Kipi-Plugins"
+msgid "P&lugins"
+msgstr "Breiseáin Kipi"
+
 #: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:35
 #, kde-format
 msgid "Placemark position provider Plugin"
@@ -58877,9 +58394,7 @@ msgstr "Ionadaigh:"
 msgid "Reports the position of a placemark"
 msgstr "Theip ar cheangal."
 
-#. i18n: ectx: property (text), widget (QPushButton, configureButton)
 #: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:366
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:142
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Configure"
@@ -58897,6 +58412,14 @@ msgstr "Cumraíocht..."
 #| msgid "&Themes"
 msgid "Theme"
 msgstr "&Téamaí"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
+#, fuzzy, kde-format
+#| msgctxt "default theme name"
+#| msgid "Default"
+msgid "Default"
+msgstr "Réamhshocrú"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:52
@@ -58981,25 +58504,21 @@ msgstr "Bundathanna:"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:240
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:244
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:47
 #, kde-format
 msgid "km"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:248
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:31
 #, kde-format
 msgid "m"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:253
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:36
 #, kde-format
 msgid "mi"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:264
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:59
 #, kde-format
 msgid "nm"
 msgstr ""
@@ -59012,7 +58531,7 @@ msgstr "Rothlú"
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:118
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:114
 #, fuzzy, kde-format
 #| msgid "Show image caption"
 msgid "Navigation"
@@ -59112,22 +58631,6 @@ msgstr "Dathanna"
 #, fuzzy, kde-format
 msgid "Position I&ndicator:"
 msgstr "Taispeáin dáta cruthaithe na híomhá"
-
-#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:30
-#, kde-format
-msgid "Current Route Position Provider Plugin"
-msgstr ""
-
-#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:40
-#, fuzzy, kde-format
-#| msgid "Current Name"
-msgid "Current Route"
-msgstr "Ainm Reatha"
-
-#: core/utilities/geolocation/marble/plugins/RouteSimulationPositionProviderPlugin.cpp:50
-#, kde-format
-msgid "Simulates traveling along the current route."
-msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -59258,588 +58761,6 @@ msgid ""
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:167
-#, fuzzy, kde-format
-#| msgid "Show image caption"
-msgid "Current Location: %1"
-msgstr "Taispeáin foscríbhinn na híomhá"
-
-#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:353
-#, kde-format
-msgid "Address or search term"
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/GoToDialog.cpp:439
-#, kde-format
-msgctxt "Number of search results"
-msgid "%n result(s) found."
-msgstr ""
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, GoTo)
-#: core/utilities/geolocation/marble/routing/GoToDialog.ui:14
-#, fuzzy, kde-format
-#| msgid "Go To"
-msgid "Go To..."
-msgstr "Téigh Go"
-
-#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/marble/routing/GoToDialog.ui:78
-#, kde-format
-msgid ""
-"Enter a search term and press Enter. <a href=\"https://userbase.kde.org/"
-"Marble/Search\">Details...</a>"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, searchButton)
-#. i18n: ectx: property (text), widget (QRadioButton, searchButton)
-#: core/utilities/geolocation/marble/routing/GoToDialog.ui:103
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:203
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:86
-#, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search"
-msgstr "Cuardaigh"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:252
-#, fuzzy, kde-format
-msgid "Enter the roundabout."
-msgstr "Iontráil clib nua anseo..."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:260
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save Changes"
-msgid "Take the exit."
-msgstr "Sábháil na hAthruithe"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:262
-#, kde-format
-msgid "Take the exit towards %1."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:266
-#, fuzzy, kde-format
-#| msgid "Make of the camera"
-msgid "Take the ramp."
-msgstr "Déanamh an cheamara"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:268
-#, kde-format
-msgid "Take the ramp towards %1."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:324
-#, kde-format
-msgid "Follow the road for %1 %2."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:378
-#, kde-format
-msgid "Take the %1. exit in the roundabout."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:380
-#, kde-format
-msgid "Take the %1. exit in the roundabout into %2."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:388
-#, fuzzy, kde-format
-#| msgid "Continue"
-msgid "Continue."
-msgstr "Lean ar aghaidh"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:390
-#, kde-format
-msgid "Merge."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:392
-#, kde-format
-msgid "Turn around."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:394
-#, kde-format
-msgid "Turn sharp left."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:396
-#, fuzzy, kde-format
-#| msgid "On left"
-msgid "Turn left."
-msgstr "Ar chlé"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:398
-#, kde-format
-msgid "Keep slightly left."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:400
-#, kde-format
-msgid "Go straight ahead."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:402
-#, kde-format
-msgid "Keep slightly right."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:404
-#, fuzzy, kde-format
-#| msgid "On right"
-msgid "Turn right."
-msgstr "Ar dheis"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:406
-#, fuzzy, kde-format
-#| msgid "Top right"
-msgid "Turn sharp right."
-msgstr "Barr ar Dheis"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:408
-#, kde-format
-msgid "Exit the roundabout."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:416
-#, fuzzy, kde-format
-#| msgid "Rotate Left"
-msgid "Take the exit to the left."
-msgstr "Rothlaigh go Tuathalach"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:418
-#, fuzzy, kde-format
-#| msgid "Insert Text"
-msgid "Take the exit to the right."
-msgstr "Ionsáigh Téacs"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:423
-#, fuzzy, kde-format
-#| msgid "Continue"
-msgid "Continue onto %1."
-msgstr "Lean ar aghaidh"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:425
-#, kde-format
-msgid "Merge onto %1."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:427
-#, kde-format
-msgid "Turn around onto %1."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:429
-#, kde-format
-msgid "Turn sharp left on %1."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:431
-#, fuzzy, kde-format
-#| msgid "Rating equal to %1."
-msgid "Turn left into %1."
-msgstr "Rátáil cothrom le %1."
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:433
-#, kde-format
-msgid "Keep slightly left on %1."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:435
-#, fuzzy, kde-format
-#| msgid "Continue"
-msgid "Continue on %1."
-msgstr "Lean ar aghaidh"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:437
-#, kde-format
-msgid "Keep slightly right on %1."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:439
-#, kde-format
-msgid "Turn right into %1."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:441
-#, kde-format
-msgid "Turn sharp right into %1."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:443
-#, kde-format
-msgid "Exit the roundabout into %2."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:451
-#, fuzzy, kde-format
-#| msgid "Add Collection"
-msgid "Take the exit to the left onto %1."
-msgstr "Cuir Bailiúchán Leis"
-
-#: core/utilities/geolocation/marble/routing/instructions/RoutingInstruction.cpp:453
-#, fuzzy, kde-format
-#| msgid "Insert Text"
-msgid "Take the exit to the right onto %1."
-msgstr "Ionsáigh Téacs"
-
-#: core/utilities/geolocation/marble/routing/MarbleLineEdit.cpp:56
-#, fuzzy, kde-format
-#| msgid "Clear"
-msgid "Clear"
-msgstr "Glan"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "month-name year-string"
-#| msgid "%1 %2"
-msgctxt "An address with parameters %1=house number, %2=road, %3=city"
-msgid "%1 %2, %3"
-msgstr "%1 %2"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:113
-#, kde-format
-msgctxt "An address with parameters %1=road, %2=city"
-msgid "%1, %2"
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:136
-#, kde-format
-msgid "Address or search term..."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:163
-#, fuzzy, kde-format
-#| msgid "Remove collection"
-msgid "Remove via point"
-msgstr "Bain bailiúchán"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:180
-#, fuzzy, kde-format
-msgid "&Center Map here"
-msgstr "Iontráil clib nua anseo..."
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:184
-#, fuzzy, kde-format
-msgid "Current &Location"
-msgstr "Cóimheas Treoíochta:"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:188
-#, kde-format
-msgid "From &Map..."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:192
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "From &Bookmark"
-msgstr "Leabharmharcanna"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:201
-#, kde-format
-msgid "&Home"
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:305
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:562
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:565
-#, fuzzy, kde-format
-msgid "Current Location"
-msgstr "Cóimheas Treoíochta:"
-
-#: core/utilities/geolocation/marble/routing/RoutingInputWidget.cpp:479
-#, kde-format
-msgid "Choose Placemark"
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:187
-#, fuzzy, kde-format
-#| msgid "Remove this Tag"
-msgid "&Remove this Destination"
-msgstr "Bain an Chlib Seo"
-
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:190
-#, fuzzy, kde-format
-#| msgid "Export Tools"
-msgid "&Export Route..."
-msgstr "Uirlis Easpórtála"
-
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:789
-#, fuzzy, kde-format
-#| msgid "Export Tools"
-msgid "Export Route"
-msgstr "Uirlis Easpórtála"
-
-#: core/utilities/geolocation/marble/routing/RoutingLayer.cpp:791
-#, kde-format
-msgid "GPX and KML files (*.gpx *.kml)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:515
-#, kde-format
-msgid "Caution: Driving instructions may be incomplete or wrong."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:516
-#, kde-format
-msgid ""
-"Road construction, weather and other unforeseen variables can result in the "
-"suggested route not to be the most expedient or safest route to your "
-"destination."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:517
-#, kde-format
-msgid "Please use common sense while navigating."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:518
-#, kde-format
-msgid "The Marble development team wishes you a pleasant and safe journey."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:519
-#, kde-format
-msgid "Guidance Mode"
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingManager.cpp:520
-#, fuzzy, kde-format
-#| msgid "Show image caption"
-msgid "Show again"
-msgstr "Taispeáin foscríbhinn na híomhá"
-
-#. i18n: ectx: property (windowTitle), widget (QDialog, RoutingProfileSettingsDialog)
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:14
-#, fuzzy, kde-format
-msgid "Configure Routing Profile"
-msgstr "Cumraíocht..."
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:41
-#, fuzzy, kde-format
-msgid "Active Route Services"
-msgstr "Easpórtáil"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:65
-#, fuzzy, kde-format
-#| msgid "Capture Device Settings"
-msgid "Service Settings"
-msgstr "Socruithe Gléis Gabhála"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:117
-#, fuzzy, kde-format
-#| msgid "No options available"
-msgid "No configuration available"
-msgstr "Níl aon roghanna ar fáil"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: core/utilities/geolocation/marble/routing/RoutingProfileSettingsDialog.ui:128
-#, fuzzy, kde-format
-#| msgid "Select service:"
-msgid "Select Service to Configure"
-msgstr "Roghnaigh seirbhís:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:112
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:46
-#, kde-format
-msgid "Car (fastest)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:114
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:51
-#, kde-format
-msgid "Car (shortest)"
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:116
-#, kde-format
-msgid "Car (ecological)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:118
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:56
-#, fuzzy, kde-format
-#| msgid "Cycle:"
-msgid "Bicycle"
-msgstr "Ciogal:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, routingProfileComboBox)
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:120
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:61
-#, kde-format
-msgid "Pedestrian"
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingProfilesModel.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
-msgid "Unknown"
-msgstr "Anaithnid"
-
-#: core/utilities/geolocation/marble/routing/RoutingProfilesWidget.cpp:75
-#, fuzzy, kde-format
-msgid "New Profile"
-msgstr "Sábháil i bhFormáid"
-
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "rotate image left"
-#| msgid "Left"
-msgid "ft"
-msgstr "Go Tuathalach"
-
-#: core/utilities/geolocation/marble/routing/RoutingRunner.cpp:72
-#, fuzzy, kde-format
-msgctxt "journey duration"
-msgid "%1:%2 h"
-msgstr "%1×%2 (%3Mpct)"
-
-#. i18n: ectx: property (text), widget (QPushButton, addButton)
-#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:22
-#: core/utilities/setup/album/setupcategory.cpp:98
-#: core/utilities/setup/camera/setupcamera.cpp:317
-#: core/utilities/setup/camera/setupcamera.cpp:439
-#: core/utilities/setup/setuptemplate.cpp:114
-#, kde-format
-msgid "&Add..."
-msgstr "&Cuir Leis..."
-
-#. i18n: ectx: property (text), widget (QPushButton, moveUpButton)
-#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:65
-#, fuzzy, kde-format
-msgid "Move &Up"
-msgstr "Bog suas"
-
-#. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
-#: core/utilities/geolocation/marble/routing/RoutingSettingsWidget.ui:75
-#, fuzzy, kde-format
-msgid "Move &Down"
-msgstr "Bog síos"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:192
-#, fuzzy, kde-format
-msgid "Get Directions"
-msgstr "Feidhm:"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:193
-#, kde-format
-msgid "Retrieve routing instructions for the selected destinations."
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:204
-#, kde-format
-msgid "Find places matching the search term"
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:227
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:695
-#, fuzzy, kde-format
-#| msgctxt "type is a document"
-#| msgid "Document"
-msgid "Open Route"
-msgstr "Cáipéis"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:232
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:728
-#, fuzzy, kde-format
-msgid "Save Route"
-msgstr "Sábháil an Leagan Nua Mar..."
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:237
-#, fuzzy, kde-format
-msgid "Preview Route"
-msgstr "Scoir den Mhód Réamhamhairc"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:242
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:243
-#, fuzzy, kde-format
-#| msgid "Upload to Camera"
-msgid "Upload to Cloud"
-msgstr "Uasluchtaigh go dtí an gceamara"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:246
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:247
-#, kde-format
-msgid "Manage Cloud Routes"
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:252
-#, fuzzy, kde-format
-#| msgid "Add new tag"
-msgid "Add Via"
-msgstr "Cuir clib nua leis"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:257
-#, kde-format
-msgid "Reverse Route"
-msgstr ""
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:262
-#, fuzzy, kde-format
-#| msgid "Clear Queue"
-msgid "Clear Route"
-msgstr "Glan an Ciú"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:468
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "placemarks found: %1"
-msgstr "Aimsíodh íomhánna i %1"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:474
-#, fuzzy, kde-format
-#| msgid "1 Kipi plugin found"
-#| msgid_plural "%1 Kipi plugins found"
-msgid "No placemark found"
-msgstr "Aimsíodh 1 bhreiseán Kipi"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:591
-#, fuzzy, kde-format
-#| msgid "1 Kipi plugin found"
-#| msgid_plural "%1 Kipi plugins found"
-msgid "No route found"
-msgstr "Aimsíodh 1 bhreiseán Kipi"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:674
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "routes found: %1"
-msgstr "Aimsíodh íomhánna i %1"
-
-#: core/utilities/geolocation/marble/routing/RoutingWidget.cpp:748
-#, fuzzy, kde-format
-#| msgid "Loading themes..."
-msgid "Uploading route..."
-msgstr "Téamaí á luchtú..."
-
-#. i18n: ectx: property (text), widget (QLabel, resultLabel)
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:106
-#, kde-format
-msgid "No results."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, showInstructionsButton)
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:113
-#, fuzzy, kde-format
-#| msgid "Details"
-msgid "Show Details"
-msgstr "Mionsonraí"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, routeComboBox)
-#: core/utilities/geolocation/marble/routing/RoutingWidget.ui:149
-#, fuzzy, kde-format
-#| msgid "Cancel this operation."
-msgid "Choose alternative routes"
-msgstr "Cealaigh an oibríocht seo."
-
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
 #: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:20
 #, kde-format
@@ -59969,78 +58890,6 @@ msgstr "Úsáideoir"
 #| msgid "Password"
 msgid "&Password:"
 msgstr "Focal Faire"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableSync)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:17
-#, kde-format
-msgid "Enable synchronization"
-msgstr ""
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:48
-#, kde-format
-msgid ""
-"Allows you to store routes in owncloud. Each route must be uploaded/"
-"downloaded manually."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncRoutes)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:51
-#, kde-format
-msgid "Enable route synchronization"
-msgstr ""
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:84
-#, kde-format
-msgid "Automatically sync all bookmarks to the server."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_syncBookmarks)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:87
-#, kde-format
-msgid "Enable bookmark synchronization"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, button_syncNow)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:119
-#, kde-format
-msgid "Sync now"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:147
-#, fuzzy, kde-format
-#| msgid "Credits"
-msgid "Credentials"
-msgstr "Admhálacha"
-
-#. i18n: ectx: property (text), widget (QLabel, labelServer)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:153
-#, fuzzy, kde-format
-#| msgid "Panoramic view"
-msgid "Server:"
-msgstr "Amharc lánléargais"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, kcfg_owncloudServer)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:160
-#, kde-format
-msgid "Remote server URL, e.g. myserver.com/owncloud"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, labelUsername)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:167
-#, fuzzy, kde-format
-#| msgid "User"
-msgid "Username:"
-msgstr "Úsáideoir"
-
-#. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
-#: core/utilities/geolocation/marble/settings/MarbleCloudSyncSettingsWidget.ui:197
-#, fuzzy, kde-format
-#| msgid "Error"
-msgid "Test Login"
-msgstr "Earráid"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:17
@@ -60211,286 +59060,6 @@ msgstr ""
 #: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:213
 #, kde-format
 msgid "Merkaartor"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:23
-#, kde-format
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
-"Here you can select and deselect the functionality that is provided through "
-"plugins. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
-"from the map, menus and toolbars. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
-"their configuration a bit. </span></p></body></html>"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:26
-#, fuzzy, kde-format
-#| msgid "Kipi-Plugins"
-msgid "P&lugins"
-msgstr "Breiseáin Kipi"
-
-#. i18n: ectx: property (title), widget (QGroupBox, timeZone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:23
-#, fuzzy, kde-format
-#| msgid "Time Unit:"
-msgid "Time Zone"
-msgstr "Aonad Ama:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_utc)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:29
-#, kde-format
-msgid "UTC"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:39
-#, fuzzy, kde-format
-msgid "System time zone"
-msgstr "Ainm an cheamara"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_customTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:51
-#, fuzzy, kde-format
-msgid "Choose Time zone"
-msgstr "Ainm an cheamara"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:68
-#, kde-format
-msgid "Universal Time Coordinated"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:73
-#, fuzzy, kde-format
-#| msgid "European Union"
-msgid "European Central Time"
-msgstr "An tAontas Eorpach"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:78
-#, kde-format
-msgid "Eastern European Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:83
-#, kde-format
-msgid "Egypt Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:88
-#, kde-format
-msgid "Eastern African Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:93
-#, fuzzy, kde-format
-#| msgid "Add Date && Time"
-msgid "Middle East Time"
-msgstr "Cuir Dáta agus Am Leis"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:98
-#, fuzzy, kde-format
-#| msgid "Date & Time"
-msgid "Near East Time"
-msgstr "Dáta agus Am"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:103
-#, kde-format
-msgid "Pakistan Lahore Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:108
-#, kde-format
-msgid "India Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:113
-#, kde-format
-msgid "Bangladesh Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:118
-#, fuzzy, kde-format
-#| msgid "Standard"
-msgid "Vietnam Standard Time"
-msgstr "Caighdeánach"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:123
-#, fuzzy, kde-format
-#| msgid "Chinese (Taiwan)"
-msgid "China Taiwan Time"
-msgstr "Sínis (An Téaváin)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:128
-#, kde-format
-msgid "Japan Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:133
-#, kde-format
-msgid "Australia Central Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:138
-#, kde-format
-msgid "Australia Eastern Time"
-msgstr ""
-
-# #-#-#-#-#  kspread.po (koffice/kspread.po)  #-#-#-#-#
-# not in refs/corpus -- KPS
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:143
-#, fuzzy, kde-format
-#| msgid "Solomon Islands"
-msgid "Solomon Standard Time"
-msgstr "Oileáin Sholamón"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:148
-#, fuzzy, kde-format
-#| msgid "New Zealand"
-msgid "New Zealand Standard Time"
-msgstr "An Nua-Shéalainn"
-
-# #-#-#-#-#  kspread.po (koffice/kspread.po)  #-#-#-#-#
-# not in refs/corpus -- KPS
-# #-#-#-#-#  kaddressbook.po (kdepim/kaddressbook.po)  #-#-#-#-#
-# not in refs/corpus -- KPS
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:153
-#, fuzzy, kde-format
-#| msgid "Cayman Islands"
-msgid "Midway Islands Time"
-msgstr "Oileáin Cayman"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:158
-#, kde-format
-msgid "Hawaii Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:163
-#, kde-format
-msgid "Alaska Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:168
-#, kde-format
-msgid "Pacific Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:173
-#, kde-format
-msgid "Phoenix Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:178
-#, kde-format
-msgid "Mountain Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:183
-#, kde-format
-msgid "Central Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:188
-#, fuzzy, kde-format
-#| msgid "Standard"
-msgid "Eastern Standard Time"
-msgstr "Caighdeánach"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:193
-#, kde-format
-msgid "Indiana Eastern Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:198
-#, fuzzy, kde-format
-#| msgid "US Virgin Islands"
-msgid "Puerto Rico and US Virgin Islands Time"
-msgstr "Oileáin na Maighdean S.A.M."
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:203
-#, kde-format
-msgid "Canada Newfoundland Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:208
-#, kde-format
-msgid "Argentina Standard Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:213
-#, kde-format
-msgid "Brazil Eastern Time"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_chosenTimezone)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:218
-#, fuzzy, kde-format
-#| msgid "Central African Republic"
-msgid "Central African Time"
-msgstr "Poblacht na hAfraice Láir"
-
-#. i18n: ectx: property (title), widget (QGroupBox, whenMarbleStarts)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:231
-#, kde-format
-msgid "When Marble starts"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_systemTime)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:237
-#, fuzzy, kde-format
-#| msgid "Load image"
-msgid "Load system time"
-msgstr "Luchtaigh íomhá"
-
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_lastSessionTime)
-#: core/utilities/geolocation/marble/settings/MarbleTimeSettingsWidget.ui:247
-#, kde-format
-msgid "Load last session time"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
@@ -60749,44 +59318,15 @@ msgid ""
 "used on the map.</p></body></html>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:109
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:104
 #, fuzzy, kde-format
 #| msgid "Views"
 msgid "View"
 msgstr "Amhairc"
 
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:126
+#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:123
 #, kde-format
 msgid "Cache and Proxy"
-msgstr ""
-
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Date and time"
-msgid "Date and Time"
-msgstr "Dáta agus am"
-
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Rating"
-msgid "Routing"
-msgstr "Rátáil"
-
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:155
-#, fuzzy, kde-format
-#| msgid "Synchronize"
-msgid "Synchronization"
-msgstr "Sioncrónaigh"
-
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:271
-#, fuzzy, kde-format
-#| msgid "Synchronize"
-msgid "Never synchronized."
-msgstr "Sioncrónaigh"
-
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:275
-#, kde-format
-msgid "Last synchronization: %1"
 msgstr ""
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
@@ -60794,85 +59334,85 @@ msgstr ""
 msgid "Unable to insert data into cache"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:136
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:131
 #, fuzzy, kde-format
 msgid "Visible region"
 msgstr "Ionad na hÍomhá"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:138
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:133
 #, fuzzy, kde-format
 #| msgid "Location"
 msgid "Specify region"
 msgstr "Suíomh"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:140
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:135
 #, fuzzy, kde-format
 msgid "Download Route"
 msgstr "Íosluchtaigh Cinn Nua"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:142
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:137
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:155
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:150
 #, kde-format
 msgid "Offset from route:"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:190
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:180
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Selection Method"
 msgstr "Ceann Scríbe:"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:198
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:188
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:248
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:238
 #, fuzzy, kde-format
 msgid "Download Region"
 msgstr "Íosluchtaigh Cinn Nua"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:250
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:240
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:252
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:242
 #, fuzzy, kde-format
 #| msgid "Texture Filter"
 msgid "Texture tiles"
 msgstr "Scagaire Uigeachta"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:253
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:243
 #, fuzzy, kde-format
 msgid "Vector tiles"
 msgstr "Comhaid Fhíse"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:254
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:244
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:513
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:533
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:537
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:527
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:540
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:530
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr ""
@@ -60889,6 +59429,18 @@ msgstr "Roghnaigh Mír"
 #| msgid "Northern Ireland"
 msgid "Northern Latitude"
 msgstr "Tuaisceart Éireann"
+
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, eastSpinBox)
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, southSpinBox)
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:47
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:99
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:151
+#: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:203
+#, kde-format
+msgid "°"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, northLabel)
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:66
@@ -65117,6 +63669,11 @@ msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
 msgstr ""
 
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:62
+#, kde-format
+msgid "Rename..."
+msgstr "Athainmnigh..."
+
 #: core/utilities/searchwindow/ratingsearchutilities.cpp:210
 #, kde-format
 msgid "(No Value Selected)"
@@ -66694,6 +65251,14 @@ msgid ""
 "You can add or remove Album category types here to improve how your Albums "
 "are sorted in digiKam."
 msgstr ""
+
+#: core/utilities/setup/album/setupcategory.cpp:98
+#: core/utilities/setup/camera/setupcamera.cpp:317
+#: core/utilities/setup/camera/setupcamera.cpp:439
+#: core/utilities/setup/setuptemplate.cpp:114
+#, kde-format
+msgid "&Add..."
+msgstr "&Cuir Leis..."
 
 #: core/utilities/setup/album/setupmime.cpp:85
 #, kde-format
@@ -70376,6 +68941,624 @@ msgstr "Réamhshocrú"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Réamhshocrú"
+
+#, fuzzy
+#~| msgid ""
+#~| "A file named \"%1\" already exists. Are you sure you want to overwrite "
+#~| "it?"
+#~ msgid ""
+#~ "The folder %1 is not empty. Removing it will delete all bookmarks it "
+#~ "contains. Are you sure you want to delete the folder?"
+#~ msgstr ""
+#~ "Tá comhad darb ainm \"%1\" ann cheana. An bhfuil tú cinnte gur mian leat "
+#~ "scríobh air?"
+
+#, fuzzy
+#~| msgid "Remove filter"
+#~ msgid "Remove Folder"
+#~ msgstr "Bain an scagaire"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Export Bookmarks"
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~| msgid "XMP text Files (*.xmp)"
+#~ msgid "KML files (*.kml)"
+#~ msgstr "Téacschomhaid XMP (*.xmp)"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Bookmark Export"
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Import Bookmarks"
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~| msgid "XMP text Files (*.xmp)"
+#~ msgid "KML Files (*.kml)"
+#~ msgstr "Téacschomhaid XMP (*.xmp)"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Bookmark Import"
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Imported bookmark"
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Existing bookmark"
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~| msgid "Overwrite automatically"
+#~ msgid "Skip All"
+#~ msgstr "Forscríobh go huathoibríoch"
+
+#, fuzzy
+#~| msgid "Color Management"
+#~ msgid "Bookmark Manager"
+#~ msgstr "Bainisteoireacht na nDathanna"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Import Bookmarks..."
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Export Bookmarks..."
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~| msgid "Folder: "
+#~ msgid "Folders"
+#~ msgstr "Fillteán: "
+
+#, fuzzy
+#~| msgctxt "Create new search"
+#~| msgid "New..."
+#~ msgid "New..."
+#~ msgstr "Nua..."
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Edit Bookmark"
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "&Description:"
+#~ msgstr "Cur Síos:"
+
+#, fuzzy
+#~| msgid "Folder: "
+#~ msgid "&Folder:"
+#~ msgstr "Fillteán: "
+
+#, fuzzy
+#~| msgid "Add Folders..."
+#~ msgid "&Add Folder..."
+#~ msgstr "Cuir Fillteáin Leis..."
+
+# see "Yes" comments
+#, fuzzy
+#~| msgctxt "Image filter reproducible: No"
+#~| msgid "No"
+#~ msgctxt "North, the direction"
+#~ msgid "N"
+#~ msgstr "Níl"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "New Bookmark Folder"
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~| msgid "Filename"
+#~ msgid "&Folder name:"
+#~ msgstr "Ainm comhaid"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "Oscail fillteán"
+
+#, fuzzy
+#~ msgid "All Supported Files (*.png)"
+#~ msgstr "Uirlisí Anaithnide"
+
+#, fuzzy
+#~| msgctxt "filename"
+#~| msgid "Name:"
+#~ msgid "Name:"
+#~ msgstr "Ainm:"
+
+#, fuzzy
+#~| msgid "Size:"
+#~ msgid "Icon link:"
+#~ msgstr "Méid:"
+
+#, fuzzy
+#~| msgid "Target"
+#~ msgid "Target ID:"
+#~ msgstr "Sprioc"
+
+#, fuzzy
+#~| msgctxt "light source"
+#~| msgid "Cloudy weather"
+#~ msgid "Cloud Routes"
+#~ msgstr "Aimsir scamallach"
+
+#, fuzzy
+#~| msgid "Not available"
+#~ msgid "No route available."
+#~ msgstr "Níl ar Fáil"
+
+#, fuzzy
+#~| msgid "Database"
+#~ msgid "Use local"
+#~ msgstr "Bunachar Sonraí"
+
+#, fuzzy
+#~| msgid "Channel:"
+#~ msgid "Changed"
+#~ msgstr "Cainéal:"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "Deleted"
+#~ msgstr "Scrios"
+
+#, fuzzy
+#~| msgctxt "light source"
+#~| msgid "Cloudy weather"
+#~ msgid "Cloud placemark"
+#~ msgstr "Aimsir scamallach"
+
+#, fuzzy
+#~ msgid "Server '%1' could not be reached"
+#~ msgstr "Ní cheadaítear ainm folamh ar an albam."
+
+#, fuzzy
+#~ msgid "Open"
+#~ msgstr "Oscail Le..."
+
+#, fuzzy
+#~| msgctxt "load theme"
+#~| msgid "&Load"
+#~ msgid "Load"
+#~ msgstr "&Luchtaigh"
+
+#, fuzzy
+#~| msgid "Remove Metadata"
+#~ msgid "Remove from device"
+#~ msgstr "Bain Meiteashonraí"
+
+#, fuzzy
+#~ msgid "Delete from cloud"
+#~ msgstr "Scrios Uile"
+
+#, fuzzy
+#~| msgid "Upload to Camera"
+#~ msgid "Upload to cloud"
+#~ msgstr "Uasluchtaigh go dtí an gceamara"
+
+#, fuzzy
+#~| msgid "Enter your text here."
+#~ msgid "Directions &to here"
+#~ msgstr "Iontráil do chuid téacs anseo."
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Add &Bookmark"
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~ msgid "&Full Screen Mode"
+#~ msgstr "Scoir ón mhód lánscáileáin"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Bookmark"
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~| msgid "Current Name"
+#~ msgid "Current Route"
+#~ msgstr "Ainm Reatha"
+
+#, fuzzy
+#~| msgid "Show image caption"
+#~ msgid "Current Location: %1"
+#~ msgstr "Taispeáin foscríbhinn na híomhá"
+
+#, fuzzy
+#~| msgid "Go To"
+#~ msgid "Go To..."
+#~ msgstr "Téigh Go"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search"
+#~ msgstr "Cuardaigh"
+
+#, fuzzy
+#~ msgid "Enter the roundabout."
+#~ msgstr "Iontráil clib nua anseo..."
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Save Changes"
+#~ msgid "Take the exit."
+#~ msgstr "Sábháil na hAthruithe"
+
+#, fuzzy
+#~| msgid "Make of the camera"
+#~ msgid "Take the ramp."
+#~ msgstr "Déanamh an cheamara"
+
+#, fuzzy
+#~| msgid "Continue"
+#~ msgid "Continue."
+#~ msgstr "Lean ar aghaidh"
+
+#, fuzzy
+#~| msgid "On left"
+#~ msgid "Turn left."
+#~ msgstr "Ar chlé"
+
+#, fuzzy
+#~| msgid "On right"
+#~ msgid "Turn right."
+#~ msgstr "Ar dheis"
+
+#, fuzzy
+#~| msgid "Top right"
+#~ msgid "Turn sharp right."
+#~ msgstr "Barr ar Dheis"
+
+#, fuzzy
+#~| msgid "Rotate Left"
+#~ msgid "Take the exit to the left."
+#~ msgstr "Rothlaigh go Tuathalach"
+
+#, fuzzy
+#~| msgid "Insert Text"
+#~ msgid "Take the exit to the right."
+#~ msgstr "Ionsáigh Téacs"
+
+#, fuzzy
+#~| msgid "Continue"
+#~ msgid "Continue onto %1."
+#~ msgstr "Lean ar aghaidh"
+
+#, fuzzy
+#~| msgid "Rating equal to %1."
+#~ msgid "Turn left into %1."
+#~ msgstr "Rátáil cothrom le %1."
+
+#, fuzzy
+#~| msgid "Continue"
+#~ msgid "Continue on %1."
+#~ msgstr "Lean ar aghaidh"
+
+#, fuzzy
+#~| msgid "Add Collection"
+#~ msgid "Take the exit to the left onto %1."
+#~ msgstr "Cuir Bailiúchán Leis"
+
+#, fuzzy
+#~| msgid "Insert Text"
+#~ msgid "Take the exit to the right onto %1."
+#~ msgstr "Ionsáigh Téacs"
+
+#, fuzzy
+#~| msgid "Clear"
+#~ msgid "Clear"
+#~ msgstr "Glan"
+
+#, fuzzy
+#~| msgctxt "month-name year-string"
+#~| msgid "%1 %2"
+#~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
+#~ msgid "%1 %2, %3"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Remove collection"
+#~ msgid "Remove via point"
+#~ msgstr "Bain bailiúchán"
+
+#, fuzzy
+#~ msgid "&Center Map here"
+#~ msgstr "Iontráil clib nua anseo..."
+
+#, fuzzy
+#~ msgid "Current &Location"
+#~ msgstr "Cóimheas Treoíochta:"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "From &Bookmark"
+#~ msgstr "Leabharmharcanna"
+
+#, fuzzy
+#~ msgid "Current Location"
+#~ msgstr "Cóimheas Treoíochta:"
+
+#, fuzzy
+#~| msgid "Remove this Tag"
+#~ msgid "&Remove this Destination"
+#~ msgstr "Bain an Chlib Seo"
+
+#, fuzzy
+#~| msgid "Export Tools"
+#~ msgid "&Export Route..."
+#~ msgstr "Uirlis Easpórtála"
+
+#, fuzzy
+#~| msgid "Export Tools"
+#~ msgid "Export Route"
+#~ msgstr "Uirlis Easpórtála"
+
+#, fuzzy
+#~| msgid "Show image caption"
+#~ msgid "Show again"
+#~ msgstr "Taispeáin foscríbhinn na híomhá"
+
+#, fuzzy
+#~ msgid "Configure Routing Profile"
+#~ msgstr "Cumraíocht..."
+
+#, fuzzy
+#~ msgid "Active Route Services"
+#~ msgstr "Easpórtáil"
+
+#, fuzzy
+#~| msgid "Capture Device Settings"
+#~ msgid "Service Settings"
+#~ msgstr "Socruithe Gléis Gabhála"
+
+#, fuzzy
+#~| msgid "No options available"
+#~ msgid "No configuration available"
+#~ msgstr "Níl aon roghanna ar fáil"
+
+#, fuzzy
+#~| msgid "Select service:"
+#~ msgid "Select Service to Configure"
+#~ msgstr "Roghnaigh seirbhís:"
+
+#, fuzzy
+#~| msgid "Cycle:"
+#~ msgid "Bicycle"
+#~ msgstr "Ciogal:"
+
+#, fuzzy
+#~| msgctxt "unknown / invalid image dimension"
+#~| msgid "Unknown"
+#~ msgid "Unknown"
+#~ msgstr "Anaithnid"
+
+#, fuzzy
+#~ msgid "New Profile"
+#~ msgstr "Sábháil i bhFormáid"
+
+#, fuzzy
+#~| msgctxt "rotate image left"
+#~| msgid "Left"
+#~ msgid "ft"
+#~ msgstr "Go Tuathalach"
+
+#, fuzzy
+#~ msgctxt "journey duration"
+#~ msgid "%1:%2 h"
+#~ msgstr "%1×%2 (%3Mpct)"
+
+#, fuzzy
+#~ msgid "Move &Up"
+#~ msgstr "Bog suas"
+
+#, fuzzy
+#~ msgid "Move &Down"
+#~ msgstr "Bog síos"
+
+#, fuzzy
+#~ msgid "Get Directions"
+#~ msgstr "Feidhm:"
+
+#, fuzzy
+#~| msgctxt "type is a document"
+#~| msgid "Document"
+#~ msgid "Open Route"
+#~ msgstr "Cáipéis"
+
+#, fuzzy
+#~ msgid "Save Route"
+#~ msgstr "Sábháil an Leagan Nua Mar..."
+
+#, fuzzy
+#~ msgid "Preview Route"
+#~ msgstr "Scoir den Mhód Réamhamhairc"
+
+#, fuzzy
+#~| msgid "Upload to Camera"
+#~ msgid "Upload to Cloud"
+#~ msgstr "Uasluchtaigh go dtí an gceamara"
+
+#, fuzzy
+#~| msgid "Add new tag"
+#~ msgid "Add Via"
+#~ msgstr "Cuir clib nua leis"
+
+#, fuzzy
+#~| msgid "Clear Queue"
+#~ msgid "Clear Route"
+#~ msgstr "Glan an Ciú"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "placemarks found: %1"
+#~ msgstr "Aimsíodh íomhánna i %1"
+
+#, fuzzy
+#~| msgid "1 Kipi plugin found"
+#~| msgid_plural "%1 Kipi plugins found"
+#~ msgid "No placemark found"
+#~ msgstr "Aimsíodh 1 bhreiseán Kipi"
+
+#, fuzzy
+#~| msgid "1 Kipi plugin found"
+#~| msgid_plural "%1 Kipi plugins found"
+#~ msgid "No route found"
+#~ msgstr "Aimsíodh 1 bhreiseán Kipi"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "routes found: %1"
+#~ msgstr "Aimsíodh íomhánna i %1"
+
+#, fuzzy
+#~| msgid "Loading themes..."
+#~ msgid "Uploading route..."
+#~ msgstr "Téamaí á luchtú..."
+
+#, fuzzy
+#~| msgid "Details"
+#~ msgid "Show Details"
+#~ msgstr "Mionsonraí"
+
+#, fuzzy
+#~| msgid "Cancel this operation."
+#~ msgid "Choose alternative routes"
+#~ msgstr "Cealaigh an oibríocht seo."
+
+#, fuzzy
+#~| msgid "Credits"
+#~ msgid "Credentials"
+#~ msgstr "Admhálacha"
+
+#, fuzzy
+#~| msgid "Panoramic view"
+#~ msgid "Server:"
+#~ msgstr "Amharc lánléargais"
+
+#, fuzzy
+#~| msgid "User"
+#~ msgid "Username:"
+#~ msgstr "Úsáideoir"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Test Login"
+#~ msgstr "Earráid"
+
+#, fuzzy
+#~| msgid "Time Unit:"
+#~ msgid "Time Zone"
+#~ msgstr "Aonad Ama:"
+
+#, fuzzy
+#~ msgid "System time zone"
+#~ msgstr "Ainm an cheamara"
+
+#, fuzzy
+#~ msgid "Choose Time zone"
+#~ msgstr "Ainm an cheamara"
+
+#, fuzzy
+#~| msgid "European Union"
+#~ msgid "European Central Time"
+#~ msgstr "An tAontas Eorpach"
+
+#, fuzzy
+#~| msgid "Add Date && Time"
+#~ msgid "Middle East Time"
+#~ msgstr "Cuir Dáta agus Am Leis"
+
+#, fuzzy
+#~| msgid "Date & Time"
+#~ msgid "Near East Time"
+#~ msgstr "Dáta agus Am"
+
+#, fuzzy
+#~| msgid "Standard"
+#~ msgid "Vietnam Standard Time"
+#~ msgstr "Caighdeánach"
+
+#, fuzzy
+#~| msgid "Chinese (Taiwan)"
+#~ msgid "China Taiwan Time"
+#~ msgstr "Sínis (An Téaváin)"
+
+# #-#-#-#-#  kspread.po (koffice/kspread.po)  #-#-#-#-#
+# not in refs/corpus -- KPS
+#, fuzzy
+#~| msgid "Solomon Islands"
+#~ msgid "Solomon Standard Time"
+#~ msgstr "Oileáin Sholamón"
+
+#, fuzzy
+#~| msgid "New Zealand"
+#~ msgid "New Zealand Standard Time"
+#~ msgstr "An Nua-Shéalainn"
+
+# #-#-#-#-#  kspread.po (koffice/kspread.po)  #-#-#-#-#
+# not in refs/corpus -- KPS
+# #-#-#-#-#  kaddressbook.po (kdepim/kaddressbook.po)  #-#-#-#-#
+# not in refs/corpus -- KPS
+#, fuzzy
+#~| msgid "Cayman Islands"
+#~ msgid "Midway Islands Time"
+#~ msgstr "Oileáin Cayman"
+
+#, fuzzy
+#~| msgid "Standard"
+#~ msgid "Eastern Standard Time"
+#~ msgstr "Caighdeánach"
+
+#, fuzzy
+#~| msgid "US Virgin Islands"
+#~ msgid "Puerto Rico and US Virgin Islands Time"
+#~ msgstr "Oileáin na Maighdean S.A.M."
+
+#, fuzzy
+#~| msgid "Central African Republic"
+#~ msgid "Central African Time"
+#~ msgstr "Poblacht na hAfraice Láir"
+
+#, fuzzy
+#~| msgid "Load image"
+#~ msgid "Load system time"
+#~ msgstr "Luchtaigh íomhá"
+
+#, fuzzy
+#~| msgid "Date and time"
+#~ msgid "Date and Time"
+#~ msgstr "Dáta agus am"
+
+#, fuzzy
+#~| msgid "Rating"
+#~ msgid "Routing"
+#~ msgstr "Rátáil"
+
+#, fuzzy
+#~| msgid "Synchronize"
+#~ msgid "Synchronization"
+#~ msgstr "Sioncrónaigh"
+
+#, fuzzy
+#~| msgid "Synchronize"
+#~ msgid "Never synchronized."
+#~ msgstr "Sioncrónaigh"
 
 #, fuzzy
 #~| msgid "Iteration:"
