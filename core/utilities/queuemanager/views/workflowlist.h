@@ -44,6 +44,9 @@ public:
 
     QString title()                                            const;
     int     count()                                            const;
+    void    setItem(const QString& title = QString(),
+                    const QString& desc = QString(),
+                    int count = 0);
 
 private:
 

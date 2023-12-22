@@ -77,7 +77,7 @@ BUGFIXES:
 063 ==> 297297 - Share/load maps from other mapping software.
 064 ==> 478790 - Locations metadata not written to IPTC or XMP after reverse geocoding.
 065 ==> 175493 - Allow distance measurement over the map.
-066 ==> 
+066 ==> 478781 - Assigned tools not updated in "Workflow" , "Tools" column.
 067 ==> 
 068 ==> 
 069 ==> 
