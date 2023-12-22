@@ -8,6 +8,7 @@ Maintenance:  Add new tool to assign tag automatically to images using deep lear
               https://community.kde.org/GSoc/2023/StatusReports/QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam
 QueueManager: New tool to assign tag automatically to images using deep learning neural network engine.
 General     : Add Generic Network Proxy Settings to acess on Internet ressources.
+Bundles     : AppImage uses frameworks Qt 5.15.12 and KDE 5.113.
 
 *****************************************************************************************************
 BUGFIXES:
