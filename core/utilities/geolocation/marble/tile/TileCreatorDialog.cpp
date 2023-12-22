@@ -28,13 +28,13 @@ class TileCreatorDialogPrivate
     TileCreator *m_creator;
 };
 
-    
+
 TileCreatorDialog::TileCreatorDialog(TileCreator *creator, QWidget *parent)
     : QDialog(parent),
       d( new TileCreatorDialogPrivate )
 {
     d->m_creator = creator;
-    
+
     d->uiWidget.setupUi(this);
 
     connect( d->m_creator, SIGNAL(progress(int)),
@@ -72,14 +72,14 @@ void TileCreatorDialog::setProgress( int progress )
 
     if ( progress == 100 )
     {
-        QTimer::singleShot( 0, this, SLOT(accept()) ); 
+        QTimer::singleShot( 0, this, SLOT(accept()) );
     }
 }
 
 void TileCreatorDialog::setSummary( const QString& name, 
                                     const QString& description )
 { 
-    const QString summary = QLatin1String("<b>") + QCoreApplication::translate("DGML", name.toUtf8().constData()) + QLatin1String("</b><br>") + QCoreApplication::translate("DGML", description.toUtf8().constData());
+    const QString summary = QLatin1String("<b>") + name + QLatin1String("</b><br>") + description;
     d->uiWidget.descriptionLabel->setText( summary );
 }
 
