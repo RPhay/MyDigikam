@@ -6,7 +6,7 @@
  * Date        : 2020-27-07
  * Description : system settings widget
  *
- * SPDX-FileCopyrightText: 2020 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2023 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -42,25 +42,16 @@ class Q_DECL_HIDDEN SystemSettingsWidget::Private
 
 public:
 
-    explicit Private()
-      : useHighDpiScalingCheck(nullptr),
-        useHighDpiPixmapsCheck(nullptr),
-        disableOpenCLCheck    (nullptr),
-        enableLoggingCheck    (nullptr),
-        filesDownloadButton   (nullptr),
-        filesDownloader       (nullptr),
-        uiProxySettings       ()
-    {
-    }
+    Private() = default;
 
-    QCheckBox*              useHighDpiScalingCheck;
-    QCheckBox*              useHighDpiPixmapsCheck;
-    QCheckBox*              disableOpenCLCheck;
-    QCheckBox*              enableLoggingCheck;
+    QCheckBox*              useHighDpiScalingCheck = nullptr;
+    QCheckBox*              useHighDpiPixmapsCheck = nullptr;
+    QCheckBox*              disableOpenCLCheck     = nullptr;
+    QCheckBox*              enableLoggingCheck     = nullptr;
 
-    QPushButton*            filesDownloadButton;
+    QPushButton*            filesDownloadButton    = nullptr;
 
-    FilesDownloader*        filesDownloader;
+    FilesDownloader*        filesDownloader        = nullptr;
 
     Ui::ProxySettingsWidget uiProxySettings;
 };
@@ -87,6 +78,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     QWidget* const proxySettings = new QWidget(this);
     d->uiProxySettings.setupUi(proxySettings);
+    proxySettings->setContentsMargins(QMargins(0, 0, 0 ,0));
 
     // ---
 

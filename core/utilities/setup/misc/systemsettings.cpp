@@ -6,7 +6,7 @@
  * Date        : 2020-07-26
  * Description : System settings container.
  *
- * SPDX-FileCopyrightText: 2020 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2023 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -158,19 +158,19 @@ void SystemSettings::saveSettings()
         settings.remove(QLatin1String("disableFaceEngine"));
     }
 
-    settings.setValue(QLatin1String("proxyUrl"),         proxyUrl);
-    settings.setValue(QLatin1String("proxyPort"),        proxyPort);
-    settings.setValue(QLatin1String("proxyType"),        proxyType);
+    settings.setValue(QLatin1String("proxyUrl"),          proxyUrl);
+    settings.setValue(QLatin1String("proxyPort"),         proxyPort);
+    settings.setValue(QLatin1String("proxyType"),         proxyType);
 
     if (proxyAuth)
     {
-        settings.setValue(QLatin1String("proxyAuth"), true);
-        settings.setValue(QLatin1String("proxyUser"), proxyUser);
-        settings.setValue(QLatin1String("proxyPass"), proxyPass);
+        settings.setValue(QLatin1String("proxyAuth"),     true);
+        settings.setValue(QLatin1String("proxyUser"),     proxyUser);
+        settings.setValue(QLatin1String("proxyPass"),     proxyPass);
     }
     else
     {
-        settings.setValue(QLatin1String("proxyAuth"), false);
+        settings.setValue(QLatin1String("proxyAuth"),     false);
     }
 
     settings.endGroup();
