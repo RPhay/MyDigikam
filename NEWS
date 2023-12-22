@@ -81,7 +81,7 @@ BUGFIXES:
 066 ==> 478781 - Assigned tools not updated in "Workflow", "Tools" column.
 067 ==> 469781 - Neither a marker nor a thumbnail are displayed in the map view with GoopleMaps.
 068 ==> 469191 - Markers and thumbnails not showing on any map view when Google Maps is the selected map.
-069 ==> 
+069 ==> 478899 - Tags not written in xmp for pictures taken with latest Pixel7 pro camera.
 070 ==> 
 071 ==> 
 072 ==> 
