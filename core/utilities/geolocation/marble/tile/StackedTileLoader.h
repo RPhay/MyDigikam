@@ -32,9 +32,9 @@ class StackedTileLoaderPrivate;
  * @short Tile loading from a quad tree
  *
  * This class loads tiles into memory. For faster access
- * we keep the tileIDs and their respective pointers to 
+ * we keep the tileIDs and their respective pointers to
  * the tiles in a hashtable.
- * The class also contains convenience methods to remove entries 
+ * The class also contains convenience methods to remove entries
  * from the hashtable and to return more detailed properties
  * about each tile level and their tiles.
  *

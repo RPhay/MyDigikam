@@ -211,7 +211,7 @@ uint StackedTile::pixelF(qreal x, qreal y, const QRgb& topLeftValue) const
 
 uint StackedTile::pixelF( qreal x, qreal y, const QRgb& topLeftValue ) const
 {
-    // Bilinear interpolation to determine the color of a subpixel 
+    // Bilinear interpolation to determine the color of a subpixel
 
     int iX = (int)(x);
     int iY = (int)(y);
@@ -258,7 +258,7 @@ uint StackedTile::pixelF( qreal x, qreal y, const QRgb& topLeftValue ) const
 
             qreal fX = x - iX;
 
-            if ( fX == 0.0 ) 
+            if ( fX == 0.0 )
                 return topLeftValue;
 
             QRgb topRightValue    =  pixel( iX + 1, iY );

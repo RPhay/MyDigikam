@@ -76,9 +76,9 @@ void TileCreatorDialog::setProgress( int progress )
     }
 }
 
-void TileCreatorDialog::setSummary( const QString& name, 
+void TileCreatorDialog::setSummary( const QString& name,
                                     const QString& description )
-{ 
+{
     const QString summary = QLatin1String("<b>") + name + QLatin1String("</b><br>") + description;
     d->uiWidget.descriptionLabel->setText( summary );
 }
