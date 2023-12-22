@@ -9,83 +9,12 @@
         <file alias="marble/cursor/tc.png">bitmaps/cursor_tc.png</file>
         <file alias="marble/cursor/tl.png">bitmaps/cursor_tl.png</file>
         <file alias="marble/cursor/tr.png">bitmaps/cursor_tr.png</file>
-        <file>bitmaps/turn-around.png</file>
-        <file>bitmaps/turn-continue.png</file>
-        <file>bitmaps/turn-left.png</file>
-        <file>bitmaps/turn-right.png</file>
-        <file>bitmaps/turn-roundabout-ccw-far.png</file>
-        <file>bitmaps/turn-roundabout-ccw-first.png</file>
-        <file>bitmaps/turn-roundabout-ccw-second.png</file>
-        <file>bitmaps/turn-roundabout-ccw-third.png</file>
-        <file>bitmaps/turn-sharp-left.png</file>
-        <file>bitmaps/turn-sharp-right.png</file>
-        <file>bitmaps/turn-slight-left.png</file>
-        <file>bitmaps/turn-slight-right.png</file>
-        <file>bitmaps/turn-merge.png</file>
-        <file>bitmaps/turn-exit-left.png</file>
-        <file>bitmaps/turn-exit-right.png</file>
-        <file alias="marble/turn-around.svg">svg/turn-around.svg</file>
-        <file alias="marble/turn-continue.svg">svg/turn-continue.svg</file>
-        <file alias="marble/turn-left.svg">svg/turn-left.svg</file>
-        <file alias="marble/turn-right.svg">svg/turn-right.svg</file>
-        <file alias="marble/turn-roundabout-far.svg">svg/turn-roundabout-far.svg</file>
-        <file alias="marble/turn-roundabout-first.svg">svg/turn-roundabout-first.svg</file>
-        <file alias="marble/turn-roundabout-second.svg">svg/turn-roundabout-second.svg</file>
-        <file alias="marble/turn-roundabout-third.svg">svg/turn-roundabout-third.svg</file>
-        <file alias="marble/turn-sharp-left.svg">svg/turn-sharp-left.svg</file>
-        <file alias="marble/turn-sharp-right.svg">svg/turn-sharp-right.svg</file>
-        <file alias="marble/turn-slight-left.svg">svg/turn-slight-left.svg</file>
-        <file alias="marble/turn-slight-right.svg">svg/turn-slight-right.svg</file>
-        <file alias="marble/turn-merge.svg">svg/turn-merge.svg</file>
-        <file alias="marble/turn-exit-left.svg">svg/turn-exit-left.svg</file>
-        <file alias="marble/turn-exit-right.svg">svg/turn-exit-right.svg</file>
-        <file alias="marble/flag-green.svg">svg/flag-green.svg</file>
-        <file alias="marble/places.png">icons/places.png</file>
-        <file alias="marble/edit-clear.png">icons/16x16/edit-clear.png</file>
+
         <file alias="marble/list-add.png">icons/16x16/list-add.png</file>
-        <file alias="marble/list-remove.png">icons/16x16/list-remove.png</file>
-        <file alias="marble/go-up.png">icons/16x16/go-up.png</file>
-        <file alias="marble/go-down.png">icons/16x16/go-down.png</file>
-        <file alias="marble/reverse.png">icons/16x16/reverse.png</file>
-        <file alias="marble/dialog-ok.png">icons/16x16/dialog-ok.png</file>
-        <file alias="marble/edit-delete.png">icons/16x16/edit-delete.png</file>
-        <file alias="marble/system-software-update.png">icons/16x16/system-software-update.png</file>
-        <file alias="marble/document-new.png">icons/16x16/document-new.png</file>
-        <file alias="marble/document-open.png">icons/16x16/document-open.png</file>
-        <file alias="marble/document-save.png">icons/16x16/document-save.png</file>
-        <file alias="marble/document-save-as.png">icons/document-save-as.png</file>
-        <file alias="marble/playback-pause.png">icons/16x16/media-playback-pause.png</file>
-        <file alias="marble/playback-play.png">icons/16x16/media-playback-start.png</file>
-        <file alias="marble/playback-stop.png">icons/16x16/media-playback-stop.png</file>
-        <file alias="marble/tour-capture.png">icons/16x16/tool-animator.png</file>
-        <file alias="marble/webpopup/arrow2_topleft.png">bitmaps/webpopup/arrow2_topleft.png</file>
-        <file alias="marble/webpopup/arrow2_topleft_shadow.png">bitmaps/webpopup/arrow2_topleft_shadow.png</file>
-        <file alias="marble/webpopup/webpopup2.png">bitmaps/webpopup/webpopup2.png</file>
-        <file alias="marble/webpopup/webpopup2_shadow.png">bitmaps/webpopup/webpopup2_shadow.png</file>
-        <file alias="marble/webpopup/icon-print.png">bitmaps/webpopup/font-awesome-icon-print-16x16.png</file>
-        <file alias="marble/webpopup/icon-remove.png">bitmaps/webpopup/font-awesome-icon-remove-16x16.png</file>
-        <file alias="marble/webpopup/icon-arrow-back.png">bitmaps/webpopup/font-awesome-icon-arrow-back-16x16.png</file>
-        <file alias="marble/webpopup/arrow2_bottomleft.png">bitmaps/webpopup/arrow2_bottomleft.png</file>
-        <file alias="marble/webpopup/arrow2_bottomleft_shadow.png">bitmaps/webpopup/arrow2_bottomleft_shadow.png</file>
-        <file alias="marble/webpopup/arrow2_bottomright.png">bitmaps/webpopup/arrow2_bottomright.png</file>
-        <file alias="marble/webpopup/arrow2_bottomright_shadow.png">bitmaps/webpopup/arrow2_bottomright_shadow.png</file>
-        <file alias="marble/webpopup/arrow2_topright.png">bitmaps/webpopup/arrow2_topright.png</file>
-        <file alias="marble/webpopup/arrow2_topright_shadow.png">bitmaps/webpopup/arrow2_topright_shadow.png</file>
-        <file alias="marble/webpopup/arrow2_vertical_bottomleft.png">bitmaps/webpopup/arrow_vertical_bottomleft.png</file>
-        <file alias="marble/webpopup/arrow2_vertical_bottomleft_shadow.png">bitmaps/webpopup/arrow_vertical_bottomleft_shadow.png</file>
-        <file alias="marble/webpopup/arrow2_vertical_bottomright.png">bitmaps/webpopup/arrow_vertical_bottomright.png</file>
-        <file alias="marble/webpopup/arrow2_vertical_bottomright_shadow.png">bitmaps/webpopup/arrow_vertical_bottomright_shadow.png</file>
-        <file alias="marble/webpopup/arrow2_vertical_topleft.png">bitmaps/webpopup/arrow_vertical_topleft.png</file>
-        <file alias="marble/webpopup/arrow2_vertical_topleft_shadow.png">bitmaps/webpopup/arrow_vertical_topleft_shadow.png</file>
-        <file alias="marble/webpopup/arrow2_vertical_topright.png">bitmaps/webpopup/arrow_vertical_topright.png</file>
-        <file alias="marble/webpopup/arrow2_vertical_topright_shadow.png">bitmaps/webpopup/arrow_vertical_topright_shadow.png</file>
+
         <file alias="marble/frames/shadowframe.png">bitmaps/shadowframe.png</file>
-        <file alias="marble/flag.png">bitmaps/flag.png</file>
-        <file alias="marble/document-edit.png">bitmaps/document-edit.png</file>
-        <file alias="marble/media-playback-pause.png">bitmaps/media-playback-pause.png</file>
-        <file alias="marble/player-time.png">bitmaps/player-time.png</file>
-        <file alias="marble/audio-x-generic.png">bitmaps/audio-x-generic.png</file>
     </qresource>
+
     <qresource prefix="/marble/webpopup">
         <file alias="deco_places.png">webpopup/marble_deco_places.png</file>
         <file alias="placesscreen.css">webpopup/placesscreen.css</file>
@@ -96,10 +25,12 @@
         <file alias="photooverlay.html">webpopup/photooverlay.html</file>
         <file alias="osm.html">webpopup/osm.html</file>
     </qresource>
+
     <qresource prefix="/htmlfeatures">
         <file alias="files/bootstrap.min.css">htmlfeatures/bootstrap.min.css</file>
         <file alias="includes/bootstrap.inc">htmlfeatures/bootstrap.inc</file>
     </qresource>
+
     <qresource prefix="/osmc-symbols">
         <file alias="dot.svg">svg/osmc-symbols/dot.svg</file>
         <file alias="bowl.svg">svg/osmc-symbols/bowl.svg</file>
