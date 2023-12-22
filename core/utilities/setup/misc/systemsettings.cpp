@@ -16,6 +16,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QSettings>
 #include <QStandardPaths>
 #include <QNetworkProxy>
@@ -29,18 +30,11 @@ namespace Digikam
 {
 
 SystemSettings::SystemSettings(const QString& name)
-    : useHighDpiScaling(false),
-      useHighDpiPixmaps(false),
-      enableFaceEngine (false),
-      enableAesthetic  (false),
-      enableAutoTags   (false),
-      enableLogging    (false),
-      disableOpenCL    (true)
 {
     if (!name.isEmpty())
     {
         m_path = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
-                 QLatin1Char('/') + name + QLatin1String("_systemrc");
+                 QDir::separator() + name + QLatin1String("_systemrc");
     }
 
     readSettings();

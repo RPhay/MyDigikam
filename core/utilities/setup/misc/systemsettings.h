@@ -35,8 +35,8 @@ public:
      */
     enum ProxyType
     {
-        HttpProxy,          ///< Uses an Http proxy
-        Socks5Proxy         ///< Uses a Socks5Proxy
+        HttpProxy   = 0,    ///< Uses an Http proxy.
+        Socks5Proxy         ///< Uses a Socks5 proxy.
     };
 
 public:
@@ -50,22 +50,22 @@ public:
 
 public:
 
-    bool useHighDpiScaling;
-    bool useHighDpiPixmaps;
-    bool enableFaceEngine;
-    bool enableAesthetic;
-    bool enableAutoTags;
-    bool enableLogging;
-    bool disableOpenCL;
+    bool useHighDpiScaling = false;
+    bool useHighDpiPixmaps = false;
+    bool enableFaceEngine  = false;
+    bool enableAesthetic   = false;
+    bool enableAutoTags    = false;
+    bool enableLogging     = false;
+    bool disableOpenCL     = true;
 
     // Proxy Settings.
 
     QString proxyUrl;
-    int     proxyPort;
+    int     proxyPort      = 8080;
     QString proxyUser;
     QString proxyPass;
-    bool    proxyType;
-    bool    proxyAuth;
+    int     proxyType      = HttpProxy;
+    bool    proxyAuth      = false;
 
 private:
 
