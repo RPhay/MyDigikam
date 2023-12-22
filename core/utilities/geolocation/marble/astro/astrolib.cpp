@@ -2209,7 +2209,7 @@ double Eclipse::duration (double jd, double tdut, double& width)
 
   // this is for very slant shadow angles respective to movement
   lm = lm * umbold;
-  umbold = fabs(pa * d_umbra); 
+  umbold = fabs(pa * d_umbra);
   if (umbold > lm) width = umbold;
   else width = lm;
 
@@ -2224,7 +2224,7 @@ double Eclipse::duration (double jd, double tdut, double& width)
   lm = fabs(lm);
 
   if (lm > width) width = lm;
-  width = width * 6378.14;  
+  width = width * 6378.14;
 
   return dur;
  }

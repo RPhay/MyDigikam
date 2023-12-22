@@ -15,7 +15,7 @@
 #include "attlib.h"
 #include <cmath>
 using namespace std;
-                       
+
 /*********************************************************************/
 double atan20 (double y, double x)
 {
@@ -241,7 +241,7 @@ Mat3::Mat3 (const Mat3& c)
    for (j=0; j<3; j++) m[i][j] = c.m[i][j];
  }
 
-void Mat3::assign (double x11, double x12, double x13, 
+void Mat3::assign (double x11, double x12, double x13,
                    double x21, double x22, double x23,
                    double x31, double x32, double x33)
  {
@@ -282,7 +282,7 @@ double Mat3::GetMij (int i, int j)
 Mat3& Mat3::operator = (const Mat3& c)
  {
   int i, j;
-  
+
   for (i=0; i<3; i++)
    for (j=0; j<3; j++) m[i][j] = c.m[i][j];
 
@@ -518,7 +518,7 @@ Mat3 yrot (double a)
   m1.m[2][0] = s;
   m1.m[2][1] = 0.0;
   m1.m[2][2] = c;
-  
+
   return m1;
  }
 
@@ -539,7 +539,7 @@ Mat3 zrot (double a)
   m1.m[2][0] = 0.0;
   m1.m[2][1] = 0.0;
   m1.m[2][2] = 1.0;
-  
+
   return m1;
  }
 
@@ -548,7 +548,7 @@ Mat3 csmx (double p, double y, double r)
   // Form cosine matrix m from pitch p, yaw y and roll r angles.
   //      The angles are to be given in radians.
   //     Roll is rotation about the x-axis, pitch about y, yaw about z.
-  //    
+  //
   Mat3 pitch, yaw, roll, result;
 
   pitch = yrot (p);
@@ -574,7 +574,7 @@ void vcpy (Vec3& v, double& p, double& y)
  {
   // Convert direction given by cartesion vector v into a corresponding
   // pitch (p) / yaw (y) sequence. The angles are in radians.
- 
+
   p = atan20 (-v[2], v[0]);
   y = atan20 (v[1], sqrt (v[0]*v[0] + v[2]*v[2]));
  }
@@ -596,12 +596,12 @@ void mxevc (const Mat3& m, double& a, Vec3& v)
   double ri, rj, rk, q1, q2, q3, q4;
 
   // using the 3-1-3 rotation matrix, first get the corresponding
-  // angles ri, rj, rk of rotation about the x-, y-, z-axis. 
+  // angles ri, rj, rk of rotation about the x-, y-, z-axis.
   ri = atan20 (m.m[2][0], -m.m[2][1]);
   rj = 0.5 * acos (m.m[2][2]);
   rk = atan20 (m.m[0][2], m.m[1][2]);
 
-  //  now convert to quaternions 
+  //  now convert to quaternions
   q4 = sin (rj);
   q1 = q4 * cos (0.5 * (ri - rk));
   q2 = q4 * sin (0.5 * (ri - rk));
@@ -609,12 +609,12 @@ void mxevc (const Mat3& m, double& a, Vec3& v)
   q3 = q4 * sin (0.5 * (ri + rk));
   q4 = q4 * cos (0.5 * (ri + rk));
 
-  // now get the eigen angle and eigen vector 
+  // now get the eigen angle and eigen vector
   v.assign(q1, q2, q3);
   ri = abs (v);
   if (ri == 0)
    {
-    // treat singularity for 3-1-3 matrix 
+    // treat singularity for 3-1-3 matrix
     v.assign (0.0, 0.0, 1.0);
     q4 = 0.5 * sqrt (1.0 + m.m[0][0] + m.m[1][1] + m.m[2][2]);
    }
@@ -626,12 +626,12 @@ void mxevc (const Mat3& m, double& a, Vec3& v)
 Mat3 mxrox (double& a, Vec3& v)
  {
   // Convert eigenvalue a (eigen angle in radians) and eigenvector v
-  // into a corresponding cosine rotation matrix m. 
+  // into a corresponding cosine rotation matrix m.
 
   double q1, q2, q3, q4, q12, q22, q32, q42;
   Mat3 result;
 
-  // calculate quaternions and their squares 
+  // calculate quaternions and their squares
   q4 = sin ( 0.5 * a);
   q1 = v[0] * q4;
   q2 = v[1] * q4;
@@ -642,7 +642,7 @@ Mat3 mxrox (double& a, Vec3& v)
   q32 = q3 * q3;
   q42 = q4 * q4;
 
-  // now get the matrix elements 
+  // now get the matrix elements
   result.assign ((q12 - q22 - q32 + q42), (2.0 * (q1*q2 + q3*q4)),
                  (2.0 * (q1*q3 - q2*q4)), (2.0 * (q1*q2 - q3*q4)),
                  (-q12 + q22 - q32 + q42),(2.0 * (q2*q3 + q1*q4)),

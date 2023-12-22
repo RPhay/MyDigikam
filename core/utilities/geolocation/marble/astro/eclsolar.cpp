@@ -81,7 +81,7 @@ void EclSolar::esinit()
   eb_del_auto = 1;
   DefTime();
   eb_time = 0;
-  eb_del_tdut = DefTdUt(eb_year);  
+  eb_del_tdut = DefTdUt(eb_year);
   eb_geolat = 0;
   eb_geolong = 0;
   eb_geoheight = 0;
@@ -135,8 +135,8 @@ void EclSolar::putYear(int yr)
   if (eb_del_auto)  eb_del_tdut = DefTdUt(eb_year);
   moonph();
 
-}  
-  
+}
+
 int EclSolar::getNumberEclYear()
 {
  // RETURN the number of eclipses of the currently selected year
@@ -912,7 +912,7 @@ double EclSolar::phmjd (double yearf, double phase, double tdut,
   int tst;
   Eclipse eclp;
 
-  // preliminary (modified) Julian Date 
+  // preliminary (modified) Julian Date
   k = floor ((yearf - 1900.0) * 12.3685) + phase;
   tt = k / 1236.85;
   jd = 166.56 + (132.87 - 0.009173*tt)*tt;
@@ -922,18 +922,18 @@ double EclSolar::phmjd (double yearf, double phase, double tdut,
 
   eph = 0;   // assume no eclipse
 
-  // Sun's mean anomaly 
+  // Sun's mean anomaly
   m = degrad * (359.2242 + 29.10535608*k
                - (0.0000333 - 0.00000347*tt)*tt*tt);
-  // Moon's mean anomaly 
+  // Moon's mean anomaly
   p = degrad * (306.0253 + 385.81691808*k
               + (0.0107306 + 0.00001236*tt)*tt*tt);
-  // 2* Moon's argument of latitude 
+  // 2* Moon's argument of latitude
   f = 2.0 * degrad * (21.2964 + 390.67050646*k
                    - (0.0016528 - 0.00000239*tt)*tt*tt);
 
-  if ((phase == 0) || (phase == 0.5))  // for Full and New Moon 
-   { 
+  if ((phase == 0) || (phase == 0.5))  // for Full and New Moon
+   {
     k = (0.1734 - 0.000393*tt) * sin (m)
         + 0.0021 * sin (2.0 * m)
         - 0.4068 * sin (p)
@@ -1038,8 +1038,8 @@ double EclSolar::phmjd (double yearf, double phase, double tdut,
      }
    };
 
-  if ((phase == 0.25) || (phase == 0.75)) // for first and last quarter 
-   { 
+  if ((phase == 0.25) || (phase == 0.75)) // for first and last quarter
+   {
     k = (0.1721 - 0.0004*tt) * sin (m)
         + 0.0021 * sin (2.0 * m)
         - 0.6280 * sin (p)
@@ -1056,11 +1056,11 @@ double EclSolar::phmjd (double yearf, double phase, double tdut,
         + 0.0004 * sin (m - 2.0*p)
         - 0.0003 * sin (2.0*m + p);
     if (phase == 0.25)
-     { 
+     {
       k += 0.0028 - 0.0004*cos(m) + 0.0003*cos(p);
      };
     if (phase == 0.75)
-     { 
+     {
       k += -0.0028 + 0.0004*cos(m) - 0.0003*cos(p);
      };
    };
@@ -1085,10 +1085,10 @@ void EclSolar::ckphase (double minmjd, double maxmjd, double yr,
   int j, eph;
 
   td = phmjd (yr, phase, deltdut*86400.0, eph, ejd, emag);
-  // correct difference between UT and TDT 
+  // correct difference between UT and TDT
   td = td - deltdut;  // correct for difference between TDT and UT.
 
-  // check whether the date is within the respective year 
+  // check whether the date is within the respective year
 
   if ((td >= minmjd) &&  (td <= maxmjd) && (mp < MAXLUN))
    {
@@ -1107,13 +1107,13 @@ void EclSolar::ckphase (double minmjd, double maxmjd, double yr,
      };
    };
 
-  // now the eclipses 
+  // now the eclipses
   if (eph != 0)
    {
     td = ejd;
     td = td - deltdut;  // correct for difference between TDT and UT.
 
-    // check whether the date is within the respective year 
+    // check whether the date is within the respective year
     if ((td >= minmjd)&&(td <= maxmjd)&&(eb_numecl<GBL_ECLBUF))
      {
       if (eb_numecl == 0)
@@ -1150,7 +1150,7 @@ void EclSolar::dtmstr(double jdmoon, char *dts)
   double hh, sec;
   char mchr[4];
 
-  // convert MJD into corresponding date and time 
+  // convert MJD into corresponding date and time
   caldat(jdmoon, dd, mm, yy, hh);
   dms (hh,deg,mnt,sec);
   if (sec>30.0) {mnt++;};
@@ -1160,7 +1160,7 @@ void EclSolar::dtmstr(double jdmoon, char *dts)
     mnt=0;
    };
 
-  // store data in their positions 
+  // store data in their positions
   GetMonth (mm, mchr);
   dts[0]=mchr[0];
   dts[1]=mchr[1];
@@ -1174,7 +1174,7 @@ void EclSolar::dtmstr(double jdmoon, char *dts)
 
 void EclSolar::moonph()
 {
-  int mp0, mp25, mp5, mp75;  // counter of respective phase entries 
+  int mp0, mp25, mp5, mp75;  // counter of respective phase entries
   PMJD p0, p25, p5, p75;
   int day, month, year, j;
   double yr, yx, hour, deltdut;
@@ -1217,12 +1217,12 @@ void EclSolar::moonph()
      parameter assures that we catch all the different lunations */
 
   while (yr < yx)
-   {                      // calculate and check the phases 
+   {                      // calculate and check the phases
     ckphase(minmjd,maxmjd,yr,deltdut, mp0, p0, 0.0);
     ckphase(minmjd,maxmjd,yr,deltdut, mp25, p25, 0.25);
     ckphase(minmjd,maxmjd,yr,deltdut, mp5, p5, 0.5);
     ckphase(minmjd,maxmjd,yr,deltdut, mp75, p75, 0.75);
-    yr+=0.02;  // increase by 1/50th of a year (about two weeks) 
+    yr+=0.02;  // increase by 1/50th of a year (about two weeks)
    };
 
   for (j=0; j<eb_numecl; j++)
@@ -1271,7 +1271,7 @@ double EclSolar::getlocmag(double jd, double ep2, double phi, double lamda,
      totflg : 1 if total or annular, 0 otherwise
 
      RETURN: The magnitude of the eclipse (0 if no eclipse)
-  */ 
+  */
 
   const double ds = 218.245445;  // diameter of Sun in Earth radii
   const double dm = 0.544986;   // diameter of Moon in Earth radii

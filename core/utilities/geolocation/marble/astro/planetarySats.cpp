@@ -38,7 +38,7 @@ PlanetarySats::~PlanetarySats()
 
 double PlanetarySats::atan23 (double y, double x)
  {
-  // redefine atan2 so that it doesn't crash when both x and y are 0 
+  // redefine atan2 so that it doesn't crash when both x and y are 0
   double result;
 
   if ((x == 0) && (y == 0)) result = 0;
@@ -137,7 +137,7 @@ void PlanetarySats::setMJD(int year, int month, int day, int hour, int min, doub
     pls_time = jd;
 
     if (pls_del_auto) pls_del_tdut = DefTdUt(pls_year);
-    
+
 }
 
 void PlanetarySats::getDatefromMJD(double mjd, int &year, int &month, int &day, int &hour, int &min, double &sec)
@@ -159,7 +159,7 @@ void PlanetarySats::getDatefromMJD(double mjd, int &year, int &month, int &day, 
 void PlanetarySats::setSatFile(char* fname)
 {
   strcpy (pls_satelmfl, fname);
-  
+
 }
 
 void PlanetarySats::setStateVector(double mjd, double x, double y, double z, double vx, double vy, double vz)
@@ -188,7 +188,7 @@ int PlanetarySats::getStateVector(int nsat)
  // read the state vector from the planetary sat file
  // nsat = number of eligible sat to select (1 if first or only sat)
  // RETURN number of eligible sat selected, 0 if no suitable sats of file problems
- 
+
  int fsc, j, k, nst, utc;
  int yr, month, day, hour, min;
  double sec;
@@ -196,7 +196,7 @@ int PlanetarySats::getStateVector(int nsat)
  ifstream cfle;
  char satname[40];  // name of satellite
  char plntname[40]; // name of planet
- 
+
  strcpy(satname, "");
  strcpy(plntname, "");
  nst = 0;
@@ -216,7 +216,7 @@ int PlanetarySats::getStateVector(int nsat)
   {
     fsc = 1;
 
-    if (!cfle.getline(satname,40)) fsc = 0; 
+    if (!cfle.getline(satname,40)) fsc = 0;
     else
     {
      k = strlen(satname);
@@ -224,14 +224,14 @@ int PlanetarySats::getStateVector(int nsat)
      {
       for (j=1; j<k; ++j)
       {
-       pls_satname[j-1] = satname[j]; 
+       pls_satname[j-1] = satname[j];
        if(pls_satname[j-1] == '\n') pls_satname[j-1] = '\0';
       };
       pls_satname[k-1] = '\0';
      }
      else fsc = 0;
     };
-  
+
     if (cfle.eof())
     {
      fsc = 0;
@@ -293,13 +293,13 @@ int PlanetarySats::getStateVector(int nsat)
       };
     };
   };
-  cfle.close(); 
+  cfle.close();
  };
 
  if (fsc == 0) nst = 0;
 
- return nst;                
-}   
+ return nst;
+}
 
 void PlanetarySats::setPlanet(char* pname)
 {
@@ -310,21 +310,21 @@ void PlanetarySats::setPlanet(char* pname)
   if (strncmp("Mercury", pname, 4) == 0) getMercury();
   if (strncmp("Moon", pname, 4) == 0) getMoon();
 }
-    
+
 void PlanetarySats::stateToKepler()
 {
  // convert state vector (mean equatorial J2000.0) into planetary Kepler elements
- 
+
  double t, dt, ag, gm, re, j2;
  double n, c, w, a, ecc, inc;
  Vec3 r1, v1;
  Mat3 mx;
- 
+
  dt = (pls_tepoch - 51544.5) / 36525.0;
  gm = pls_GM * 7.4649600000; // convert from m^3/s^2 into km^3/d^2
  re = pls_R0;
  j2 = pls_J2;
-    
+
  // convert into planet equatorial reference frame
  if (pls_moonflg)
  {
@@ -335,26 +335,26 @@ void PlanetarySats::stateToKepler()
  }
  else
  {
-   ag = (pls_axl0 + pls_axl1 * dt) * M_PI / 180.0; 
+   ag = (pls_axl0 + pls_axl1 * dt) * M_PI / 180.0;
    mx = zrot(ag + M_PI / 2.0);
    r1 = mxvct (mx, pls_rep);
    v1 = mxvct (mx, pls_vep);
-   
-   ag = (pls_axb0 + pls_axb1 * dt) * M_PI / 180.0; 
+
+   ag = (pls_axb0 + pls_axb1 * dt) * M_PI / 180.0;
    mx = xrot(M_PI / 2.0 - ag);
    r1 = mxvct (mx, r1);
    v1 = mxvct (mx, v1);
  };
 
  v1 *= 86400.0;  // convert into km / day
- 
+
  oscelm(gm, pls_tepoch, r1, v1, t, pls_m0, pls_a, pls_ecc, pls_ra, pls_per, pls_inc);
 
  // now the mean motion
  a = pls_a;
  ecc = pls_ecc;
  inc = pls_inc;
-      
+
  //  preliminary n
  if (a == 0) a = 1.0; // just in case
  if (a < 0) a = -a;   // just in case
@@ -374,9 +374,9 @@ void PlanetarySats::stateToKepler()
  if (n > 1000.0) n = 1000.0;  // avoid possible errors
 
  pls_n0 = n;
-                                
+
 }
-    
+
 void PlanetarySats::getKeplerElements(double &perc, double &apoc, double &inc, double &ecc, double &ra, double &tano, double &m0, double &a, double &n0)
 {
   // get Kepler elements of orbit with regard to the planetary equator and prime meridian.
@@ -389,12 +389,12 @@ void PlanetarySats::getKeplerElements(double &perc, double &apoc, double &inc, d
   if (pls_moonflg)  // for the Moon we normally work in J2000. Now get it into planetary
   {
     gm = pls_GM * 7.4649600000; // convert from m^3/s^2 into km^3/d^2
-    
+
     mx = getSelenographic(pls_tepoch);
     r1 = mxvct (mx, pls_rep);
     v1 = mxvct (mx, pls_vep);
     v1 *= 86400.0;  // convert into km / day
- 
+
     oscelm(gm, pls_tepoch, r1, v1, t, m0, a, ecc, ra, tano, inc);
 
     // now the mean motion
@@ -415,7 +415,7 @@ void PlanetarySats::getKeplerElements(double &perc, double &apoc, double &inc, d
   };
 
   perc = pls_a * (1.0 - pls_ecc) - pls_R0;
-  apoc = pls_a * (1.0 + pls_ecc) - pls_R0;  
+  apoc = pls_a * (1.0 + pls_ecc) - pls_R0;
 
 }
 
@@ -424,13 +424,13 @@ int PlanetarySats::selectSat(char* sname)
   // select specified satellite
   // RETURN 1 if successful, 0 if no suitable satellite found
 
-  int nst, res, sl; 
+  int nst, res, sl;
   bool searching;
 
   searching = true;
   nst = 1;
   sl = strlen(sname);
-  
+
   while (searching)
   {
     res = getStateVector(nst);
@@ -439,22 +439,22 @@ int PlanetarySats::selectSat(char* sname)
       if (strncmp(pls_satname, sname, sl) == 0) searching = false;
     }
     else searching = false;
-    nst++; 
-  }; 
-  
+    nst++;
+  };
+
   return res;
 }
-    
+
 void PlanetarySats::getSatName(char* sname) const
 {
   strcpy (sname, pls_satname);
 }
-    
+
 void PlanetarySats::currentPos()
 {
   getSatPos(pls_time);
 }
-    
+
 void PlanetarySats::nextStep()
 {
   pls_time = pls_time + pls_step / 86400.0;
@@ -469,11 +469,11 @@ double PlanetarySats::getLastMJD() const
 void PlanetarySats::getPlanetographic(double &lng, double &lat, double &height) const
 {
   // planetographic coordinates from current state vector
-  
+
   lng = pls_lng;
   lat = pls_lat;
   height = pls_height;
-    
+
 }
 
 void PlanetarySats::getFixedFrame(double &x, double &y, double &z, double &vx, double &vy, double &vz)
@@ -490,7 +490,7 @@ void PlanetarySats::getFixedFrame(double &x, double &y, double &z, double &vx, d
 
 void PlanetarySats::getSatPos (double tutc)
 {
-  // Get Position of Satellite at MJD-time t (UTC) 
+  // Get Position of Satellite at MJD-time t (UTC)
 
   const double mp2 = 2.0*M_PI;
 
@@ -540,7 +540,7 @@ void PlanetarySats::getSatPos (double tutc)
   k = sqrt(gm/a);
   v1.assign (-k*s/m0, k*fac*c/m0, 0.0);
 
-  // convert into reference plane 
+  // convert into reference plane
   m1 = zrot (-aper);
   m2 = xrot (-inc);
   m1 *= m2;
@@ -595,14 +595,14 @@ void PlanetarySats::getSatPos (double tutc)
     sh = sqrt(s+sh*sh) - b2;
     pls_height = sh;
    }
-  } 
+  }
   else pls_height = 0;  // this should never happen
-  
+
   pls_lat = pls_lat * 180.0 / M_PI;
   pls_lng = pls_lng * 180.0 / M_PI;
 
  }
-    
+
 
 void PlanetarySats::getMars()  // Mars planetary constants
 {
@@ -612,60 +612,60 @@ void PlanetarySats::getMars()  // Mars planetary constants
   pls_axl0 = 317.681;
   pls_axl1 = -0.108;
   pls_axb0 = 52.886;
-  pls_axb1 = -0.061;    
+  pls_axb1 = -0.061;
   pls_W = 176.868;
   pls_Wd = 350.8919830;
   pls_GM = 4.282828596416e+13; // 4.282837405582e+13
-}   
+}
 
 void PlanetarySats::getVenus()  // Venus planetary constants
-{ 
+{
   pls_J2 = 0.027e-3;
   pls_R0 = 6051.9;
   pls_flat = 0.0;
   pls_axl0 = 272.72;
   pls_axl1 = 0.0;
   pls_axb0 = 67.15;
-  pls_axb1 = 0.0;   
+  pls_axb1 = 0.0;
   pls_W = 160.26;
   pls_Wd = -1.4813596;
-  pls_GM = 3.24858761e+14;  
-}   
+  pls_GM = 3.24858761e+14;
+}
 
 void PlanetarySats::getMercury()  // Mercury planetary constants
-{ 
+{
   pls_J2 = 0.0;
   pls_R0 = 2439.7;
   pls_flat = 0.0;
   pls_axl0 = 281.01;
   pls_axl1 = -0.033;
   pls_axb0 = 61.45;
-  pls_axb1 = -0.005;    
+  pls_axb1 = -0.005;
   pls_W = 329.71;
   pls_Wd = 6.1385025;
-  pls_GM = 2.20320802e+13;  
-}   
+  pls_GM = 2.20320802e+13;
+}
 
 void PlanetarySats::getMoon()  // Moon planetary constants
 {
-  pls_moonflg = true; 
+  pls_moonflg = true;
   pls_J2 = 0.2027e-3;
   pls_R0 = 1738.0;
   pls_flat = 0.0;
   pls_axl0 = 0.0;
   pls_axl1 = 0.0;
   pls_axb0 = 90.0;
-  pls_axb1 = 0.0;   
+  pls_axb1 = 0.0;
   pls_W = 0.0;
   pls_Wd = 13.17635898;
-  pls_GM = 4.90279412e+12;  
-}   
+  pls_GM = 4.90279412e+12;
+}
 
 Mat3 PlanetarySats::getSelenographic (double jd)
 {
   // Calculate the Matrix to transform from Mean of J2000 into selenographic
   // coordinates at MJD time jd.
-  
+
   double t, gam, gmp, l, omg, mln;
   double a, b, c, ic, gn, gp, omp;
   double const degrad = M_PI / 180.0;

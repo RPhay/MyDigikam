@@ -10,7 +10,7 @@
   and modified correspondingly.
   The library Astrolib has to be included.
 
-  Copyright :Gerhard HOLTKAMP          26-MAR-2014   
+  Copyright :Gerhard HOLTKAMP          26-MAR-2014
   ========================================================================= */
 
 #include "astr2lib.h"
@@ -1031,7 +1031,7 @@ Vec3 Plan200::Pluto (double t)   // position of Pluto at time t
   California, 1992. A number of errors in chapter 6 of this book have
   been identified and corrected in the code used here.
 
-  Copyright :Gerhard HOLTKAMP          25-MAR-2014   
+  Copyright :Gerhard HOLTKAMP          25-MAR-2014
   ========================================================================= */
 
 
@@ -1495,7 +1495,7 @@ Vec3 PosCallisto (double t)
 /*-------------------- Mimas, Enceladus, Dione ---------------------*/
 Vec3 PosSMimas (double t)
 {
- /* Ecliptic coordinates (in A.U.) of Mimas with respect to Saturn 
+ /* Ecliptic coordinates (in A.U.) of Mimas with respect to Saturn
     for Equinox of Date.
     t is the time in Julian centuries since J2000.
   ===================================================================*/
@@ -1504,7 +1504,7 @@ Vec3 PosSMimas (double t)
 
  double d, dt, tt, a, n, ecc, gam, th1, l1, p, m;
  Vec3 rs;
- Mat3 mt1; 
+ Mat3 mt1;
 
  d = 36525.0*t + 40452.0;
  dt = d / 365.25;
@@ -1548,7 +1548,7 @@ Vec3 PosSMimas (double t)
 
 Vec3 PosSEnceladus (double t)
 {
- /* Ecliptic coordinates (in A.U.) of Enceladus with respect to Saturn 
+ /* Ecliptic coordinates (in A.U.) of Enceladus with respect to Saturn
     for Equinox of Date.
     t is the time in Julian centuries since J2000.
   ===================================================================*/
@@ -1567,7 +1567,7 @@ Vec3 PosSEnceladus (double t)
  gam = 0.000628319; //  0.036;
  th1 = 145.0 - 152.7*dt;
  l1 = 200.155 + n*d + 0.256333 * sin((59.4+32.73*dt)*M_PI/180.0)
-      + 0.217333 * sin((119.2+93.18*dt)*M_PI/180.0); 
+      + 0.217333 * sin((119.2+93.18*dt)*M_PI/180.0);
  p = 312.7 + 123.42*dt;
 
  // in-orbit-plane position vector
@@ -1597,10 +1597,10 @@ Vec3 PosSEnceladus (double t)
 
  return rs;
 }
- 
+
 Vec3 PosSDione (double t)
 {
- /* Ecliptic coordinates (in A.U.) of Dione with respect to Saturn 
+ /* Ecliptic coordinates (in A.U.) of Dione with respect to Saturn
     for Equinox of Date.
     t is the time in Julian centuries since J2000.
   ===================================================================*/
