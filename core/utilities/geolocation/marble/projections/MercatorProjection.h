@@ -69,7 +69,7 @@ class MercatorProjection : public CylindricalProjection
      * @return @c true  if the geographical coordinates are visible on the screen
      *         @c false if the geographical coordinates are not visible on the screen
      */
-    bool screenCoordinates( const GeoDataCoordinates &coordinates, 
+    bool screenCoordinates( const GeoDataCoordinates &coordinates,
                             const ViewportParams *params,
                             qreal &x, qreal &y, bool &globeHidesPoint ) const override;
 

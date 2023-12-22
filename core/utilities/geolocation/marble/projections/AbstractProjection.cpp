@@ -172,7 +172,7 @@ bool AbstractProjection::screenCoordinates( const GeoDataCoordinates &geopoint,
 GeoDataLatLonAltBox AbstractProjection::latLonAltBox( const QRect& screenRect,
                                                       const ViewportParams *viewport ) const
 {
-    // For the case where the whole viewport gets covered there is a 
+    // For the case where the whole viewport gets covered there is a
     // pretty dirty and generic detection algorithm:
 
     // Move along the screenborder and save the highest and lowest lon-lat values.
@@ -218,7 +218,7 @@ GeoDataLatLonAltBox AbstractProjection::latLonAltBox( const QRect& screenRect,
     }
 
     GeoDataLatLonAltBox latLonAltBox = boundingLineString.latLonAltBox();
-    
+
     // Now we need to check whether maxLat (e.g. the north pole) gets displayed
     // inside the viewport.
 

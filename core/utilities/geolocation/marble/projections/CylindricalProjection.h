@@ -15,7 +15,7 @@
 
 #include "AbstractProjection.h"
 
-namespace Marble 
+namespace Marble
 {
 
 class CylindricalProjectionPrivate;
@@ -27,9 +27,9 @@ class AbstractProjectionPrivate;
 
 class CylindricalProjection : public AbstractProjection
 {
-    // Not a QObject so far because we don't need to send signals.  
+    // Not a QObject so far because we don't need to send signals.
   public:
-    
+
     CylindricalProjection();
 
     ~CylindricalProjection() override;
@@ -49,7 +49,7 @@ class CylindricalProjection : public AbstractProjection
 
     QPainterPath mapShape( const ViewportParams *viewport ) const override;
 
- protected: 
+ protected:
     explicit CylindricalProjection( CylindricalProjectionPrivate* dd );
 
  private:
