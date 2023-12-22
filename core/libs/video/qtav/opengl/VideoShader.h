@@ -27,7 +27,6 @@
 #include "OpenGLTypes.h"
 #include "VideoFrame.h"
 
-class QOpenGLShaderProgram;
 
 namespace QtAV
 {

@@ -21,7 +21,6 @@
 #include <QPoint>
 
 class QMenu;
-class QPoint;
 
 namespace QtAV
 {

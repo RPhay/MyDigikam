@@ -42,7 +42,6 @@
 #include "digikam_debug.h"
 #include "itemvisibilitycontroller.h"
 
-class QGraphicsSceneHoverEvent;
 
 namespace Digikam
 {

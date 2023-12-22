@@ -31,7 +31,6 @@
  * QPainterFilterContext, D2DFilterContext, ...
  */
 
-class QPainter;
 class QPaintDevice;
 class QTextDocument;
 

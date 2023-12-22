@@ -28,7 +28,6 @@
 #include "graphicsdimgview.h"
 #include "loadingdescription.h"
 
-class QPixmap;
 
 using namespace Digikam;
 
