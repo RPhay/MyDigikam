@@ -50,9 +50,7 @@ WorkflowItem::WorkflowItem(WorkflowList* const parent, const QString& title)
     Workflow q = WorkflowManager::instance()->findByTitle(title);
 
     setIcon(0, QIcon::fromTheme(QLatin1String("step")));
-    setText(0, title);
-    setText(1, QString::number(q.aTools.count()));
-    setText(2, q.desc);
+    setItem(title, q.desc, q.aTools.count());
 }
 
 WorkflowItem::~WorkflowItem()
@@ -67,6 +65,24 @@ QString WorkflowItem::title() const
 int WorkflowItem::count() const
 {
     return text(1).toInt();
+}
+
+void WorkflowItem::setItem(const QString& title, const QString& desc, int count)
+{
+    if (!title.isEmpty())
+    {
+        setText(0, title);
+    }
+
+    if (!desc.isEmpty())
+    {
+        setText(2, desc);
+    }
+
+    if (count > 0)
+    {
+        setText(1, QString::number(count));
+    }
 }
 
 // ---------------------------------------------------------------------------
@@ -303,14 +319,24 @@ void WorkflowList::slotContextMenu()
             mngr->remove(wfOld);
             mngr->insert(wfNew);
             mngr->save();
-            removeItemWidget(item, 0);
-            delete item;
 
+            if (wfOld.title != wfNew.title)
+            {
+                removeItemWidget(item, 0);
+                delete item;
+            }
+            else
+            {
+                item->setItem(QString(), wfNew.desc);
+            }
         }
     }
     else if (choice == updAction)
     {
         Q_EMIT signalUpdateQueueSettings(item->title());
+
+        Workflow q = WorkflowManager::instance()->findByTitle(item->title());
+        item->setItem(QString(), QString(), q.aTools.count());
     }
     else if (choice == delAction)
     {
