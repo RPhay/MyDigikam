@@ -78,9 +78,9 @@ BUGFIXES:
 063 ==> 297297 - Share/load maps from other mapping software.
 064 ==> 478790 - Locations metadata not written to IPTC or XMP after reverse geocoding.
 065 ==> 175493 - Allow distance measurement over the map.
-066 ==> 478781 - Assigned tools not updated in "Workflow" , "Tools" column.
-067 ==> 
-068 ==> 
+066 ==> 478781 - Assigned tools not updated in "Workflow", "Tools" column.
+067 ==> 469781 - Neither a marker nor a thumbnail are displayed in the map view with GoopleMaps.
+068 ==> 469191 - Markers and thumbnails not showing on any map view when Google Maps is the selected map.
 069 ==> 
 070 ==> 
 071 ==> 
