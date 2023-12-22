@@ -50,26 +50,26 @@ typedef struct {
     char* tagPair;
     int64_t nodeId;
     int64_t wayId;
-    int64_t wayNodeId;  
-    int64_t relId;  
+    int64_t wayNodeId;
+    int64_t relId;
     int64_t nodeRefId;
     int64_t wayRefId;
     int64_t relRefId;
     int32_t lon;
-    int32_t lat;    
+    int32_t lat;
     uint8_t canIterateTags;
     uint8_t canIterateNds;
     uint8_t canIterateRefs;
     char** strPairTable;
 } O5mreader;
 
-typedef struct {    
-    uint8_t type;   
+typedef struct {
+    uint8_t type;
     uint64_t id;
     uint32_t version;
     uint8_t isEmpty;
     int32_t lon;
-    int32_t lat;    
+    int32_t lat;
 } O5mreaderDataset;
 
 #if defined (__cplusplus)

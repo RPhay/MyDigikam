@@ -200,7 +200,7 @@ void OverviewMap::paintContent( QPainter *painter )
             mapPainter.begin( &m_worldmap );
             mapPainter.setViewport( m_worldmap.rect() );
             m_svgobj.render( &mapPainter );
-            mapPainter.end(); 
+            mapPainter.end();
         }
 
         painter->drawPixmap( QPoint( 0, 0 ), m_worldmap );
@@ -234,11 +234,11 @@ void OverviewMap::paintContent( QPainter *painter )
     }
 
     // Now draw the latitude longitude bounding box
-    qreal xWest = mapRect.width() / 2.0 
+    qreal xWest = mapRect.width() / 2.0
                     + mapRect.width() / ( 2.0 * M_PI ) * m_latLonAltBox.west();
     qreal xEast = mapRect.width() / 2.0
                     + mapRect.width() / ( 2.0 * M_PI ) * m_latLonAltBox.east();
-    qreal xNorth = mapRect.height() / 2.0 
+    qreal xNorth = mapRect.height() / 2.0
                     - mapRect.height() / M_PI * m_latLonAltBox.north();
     qreal xSouth = mapRect.height() / 2.0
                     - mapRect.height() / M_PI * m_latLonAltBox.south();
@@ -266,7 +266,7 @@ void OverviewMap::paintContent( QPainter *painter )
         painter->drawRect( QRectF( xWest, xNorth, boxWidth, boxHeight ) );
     }
     else {
-        // If the dateline is shown in the viewport  and if the poles are not 
+        // If the dateline is shown in the viewport  and if the poles are not
         // then there are two boxes that represent the latLonBox of the view.
 
         boxWidth = xEast;
@@ -409,7 +409,7 @@ bool OverviewMap::eventFilter( QObject *object, QEvent *e )
             // Double click triggers recentering the map at the specified position
             if ( e->type() == QEvent::MouseButtonDblClick ) {
                 QRectF mapRect( contentRect() );
-                QPointF pos = event->pos() - floatItemRect.topLeft() 
+                QPointF pos = event->pos() - floatItemRect.topLeft()
                     - QPointF(padding(),padding());
 
                 qreal lon = ( pos.x() - mapRect.width() / 2.0 ) / mapRect.width() * 360.0 ;
@@ -420,7 +420,7 @@ bool OverviewMap::eventFilter( QObject *object, QEvent *e )
             }
         }
 
-        if ( cursorAboveFloatItem && e->type() == QEvent::MouseMove 
+        if ( cursorAboveFloatItem && e->type() == QEvent::MouseMove
                 && !(event->buttons() & Qt::LeftButton) )
         {
             // Cross hair cursor when moving above the float item without pressing a button
@@ -509,8 +509,8 @@ void OverviewMap::showCurrentPlanetPreview() const
 
 void OverviewMap::choosePositionIndicatorColor()
 {
-    QColor c = QColorDialog::getColor( m_posColor, nullptr, 
-                                       i18n( "Please choose the color for the position indicator" ), 
+    QColor c = QColorDialog::getColor( m_posColor, nullptr,
+                                       i18n( "Please choose the color for the position indicator" ),
                                        QColorDialog::ShowAlphaChannel );
     if( c.isValid() )
     {

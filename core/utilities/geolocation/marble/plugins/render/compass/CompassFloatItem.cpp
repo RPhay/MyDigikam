@@ -163,7 +163,7 @@ void CompassFloatItem::paintContent( QPainter *painter )
 
     int compassLength = static_cast<int>( compassRect.height() ) - 5 - fontheight;
 
-    QSize compassSize( compassLength, compassLength ); 
+    QSize compassSize( compassLength, compassLength );
 
     // Rerender compass pixmap if the size has changed
     if ( m_compass.isNull() || m_compass.size() != compassSize ) {
@@ -171,7 +171,7 @@ void CompassFloatItem::paintContent( QPainter *painter )
         m_compass.fill( Qt::transparent );
         QPainter mapPainter( &m_compass );
         mapPainter.setViewport( m_compass.rect() );
-        m_svgobj->render( &mapPainter ); 
+        m_svgobj->render( &mapPainter );
     }
     painter->drawPixmap( QPoint( static_cast<int>( compassRect.width() - compassLength ) / 2, fontheight + 5 ), m_compass );
 

@@ -36,7 +36,7 @@ class OverviewMap : public AbstractFloatItem, public DialogConfigurationInterfac
     Q_INTERFACES( Marble::RenderPluginInterface )
     Q_INTERFACES( Marble::DialogConfigurationInterface )
     MARBLE_PLUGIN( OverviewMap )
-    
+
  public:
     OverviewMap();
     explicit OverviewMap( const MarbleModel *marbleModel );
