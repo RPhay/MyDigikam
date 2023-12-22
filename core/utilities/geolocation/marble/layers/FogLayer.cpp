@@ -14,7 +14,7 @@
 
 namespace Marble
 {
-    
+
 QStringList FogLayer::renderPosition() const
 {
     return QStringList(QStringLiteral("ATMOSPHERE"));

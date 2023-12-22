@@ -40,7 +40,7 @@ class GroundLayer : public LayerInterface
 
  private:
     QColor m_color;  // Gets the color specified via DGML's <map bgcolor="">
-    
+
 };
 
 }

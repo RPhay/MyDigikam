@@ -50,7 +50,7 @@ qreal GroundLayer::zValue() const
 }
 
 void GroundLayer::setColor( const QColor &color )
-{   
+{
     m_color = color;
 }
 
