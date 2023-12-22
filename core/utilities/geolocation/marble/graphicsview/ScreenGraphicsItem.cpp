@@ -83,11 +83,11 @@ bool ScreenGraphicsItem::eventFilter( QObject *object, QEvent *e )
         if (!visible() || !d->isMovable()) {
             return false;
         }
-        
+
         if ( e->type() == QEvent::MouseMove ) {
             return false;
         }
-        
+
         // Move ScreenGraphicsItem
         if ( e->type() == QEvent::MouseButtonPress )
         {
@@ -102,7 +102,7 @@ bool ScreenGraphicsItem::eventFilter( QObject *object, QEvent *e )
                 }
             }
         }
-        
+
         return false;
     }
     else {
@@ -166,7 +166,7 @@ bool ScreenGraphicsItem::eventFilter( QObject *object, QEvent *e )
                 return true;
             }
         }
-        
+
         return MarbleGraphicsItem::eventFilter( object, e );
     }
 }

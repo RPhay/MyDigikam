@@ -340,21 +340,21 @@ void GeoPainter::drawEllipse ( const GeoDataCoordinates & centerPosition,
         const qreal centerLat = centerPosition.latitude( GeoDataCoordinates::Degree );
         const qreal altitude = centerPosition.altitude();
 
-        // Ensure a valid latitude range: 
+        // Ensure a valid latitude range:
         if ( centerLat + 0.5 * height > 90.0 || centerLat - 0.5 * height < -90.0 ) {
             return;
         }
 
         // Don't show the ellipse if it's too small:
         GeoDataLatLonBox ellipseBox( centerLat + 0.5 * height, centerLat - 0.5 * height,
-                                     centerLon + 0.5 * width,  centerLon - 0.5 * width, 
+                                     centerLon + 0.5 * width,  centerLon - 0.5 * width,
                                      GeoDataCoordinates::Degree );
         if ( !d->m_viewport->viewLatLonAltBox().intersects( ellipseBox ) ||
              !d->m_viewport->resolves( ellipseBox ) ) return;
 
         GeoDataLinearRing ellipse;
 
-        // Optimizing the precision by determining the size which the 
+        // Optimizing the precision by determining the size which the
         // ellipse covers on the screen:
         const qreal degreeResolution = d->m_viewport->angularResolution() * RAD2DEG;
         // To create a circle shape even for very small precision we require uneven numbers:
@@ -374,7 +374,7 @@ void GeoPainter::drawEllipse ( const GeoDataCoordinates & centerPosition,
             const qreal lon = centerLon + 0.5 * width * t;
             ellipse << GeoDataCoordinates( lon, lat, altitude, GeoDataCoordinates::Degree );
         }
-        
+
         drawPolygon( ellipse );
 
     }
@@ -458,7 +458,7 @@ QRegion GeoPainter::regionFromEllipse ( const GeoDataCoordinates & centerPositio
         return regionFromPolygon( ellipse, Qt::OddEvenFill, strokeWidth );
     }
 }
-    
+
 
 void GeoPainter::drawImage ( const GeoDataCoordinates & centerPosition,
                              const QImage & image /*, bool isGeoProjected */ )
@@ -824,7 +824,7 @@ QRegion GeoPainter::regionFromPolygon ( const GeoDataLinearRing & linearRing,
 void GeoPainter::drawPolygon ( const GeoDataPolygon & polygon,
                                Qt::FillRule fillRule )
 {
-    // If the object is not visible in the viewport return 
+    // If the object is not visible in the viewport return
     if ( ! d->m_viewport->viewLatLonAltBox().intersects( polygon.outerBoundary().latLonAltBox() ) ||
     // If the size of the object is below the resolution of the viewport then return
          ! d->m_viewport->resolves( polygon.outerBoundary().latLonAltBox() )

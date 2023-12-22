@@ -21,7 +21,7 @@ class WidgetGraphicsItemPrivate : public ScreenGraphicsItemPrivate
                               MarbleGraphicsItem *parent);
 
     ~WidgetGraphicsItemPrivate() override;
-    
+
     QWidget *m_widget;
     QWidget *m_marbleWidget;
     QWidget *m_activeWidget;
