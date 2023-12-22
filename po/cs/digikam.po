@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-21 00:40+0000\n"
+"POT-Creation-Date: 2023-12-22 00:39+0000\n"
 "PO-Revision-Date: 2023-11-21 15:39+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2831,7 +2831,7 @@ msgstr "Zobrazit na celou obrazovku"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:489
+#: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:165
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2918,7 +2918,7 @@ msgid "No Tags Album"
 msgstr "Album bez značek"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:562
+#: core/libs/album/engine/album.cpp:558
 #: core/libs/album/manager/albummanager.cpp:168
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3210,7 +3210,7 @@ msgid "Selection"
 msgstr "Výběr"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:890
+#: core/libs/database/utils/ifaces/dio.cpp:886
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -19664,8 +19664,8 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:54
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:127
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:377
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:450
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -22230,7 +22230,6 @@ msgstr "Je vyžadována metoda POST"
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:540
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
-#: core/utilities/geolocation/marble/plugins/PositionProviderPluginInterface.cpp:25
 #, kde-format
 msgid "Unknown error"
 msgstr "Neznámá chyba"
@@ -25549,38 +25548,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Převod RAW UFRaw"
 
-#: core/libs/album/engine/album.cpp:410
-#: core/libs/database/utils/ifaces/dio.cpp:895
+#: core/libs/album/engine/album.cpp:406
+#: core/libs/database/utils/ifaces/dio.cpp:891
 #, kde-format
 msgid "Trash"
 msgstr "Koš"
 
-#: core/libs/album/engine/album.cpp:761
+#: core/libs/album/engine/album.cpp:757
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Současné hledání v časové ose"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:763
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Současné přibližné hledání na základě náčrtu"
 
-#: core/libs/album/engine/album.cpp:771
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Současné přibližné hledání na základě náčrtu"
 
-#: core/libs/album/engine/album.cpp:778
+#: core/libs/album/engine/album.cpp:774
 #, kde-format
 msgid "Current Map Search"
 msgstr "Současné hledání na mapě"
 
-#: core/libs/album/engine/album.cpp:783
+#: core/libs/album/engine/album.cpp:779
 #, kde-format
 msgid "Current Search"
 msgstr "Současné hledání"
 
-#: core/libs/album/engine/album.cpp:786
+#: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Současné hledání duplicit"
@@ -26126,7 +26125,7 @@ msgid "Context menu"
 msgstr "Místní nabídka"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
-#: core/libs/database/utils/ifaces/dio.cpp:905
+#: core/libs/database/utils/ifaces/dio.cpp:901
 #, kde-format
 msgid "Empty Trash"
 msgstr "Vyprázdnit koš"
@@ -27498,13 +27497,13 @@ msgstr ""
 "Databáze je neplatná: nastavení \"DBThumbnailsVersion\" neexistuje. Současné "
 "schéma databáze nešlo ověřit. Zkuste začít s prázdnou databází. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:348
+#: core/libs/database/utils/ifaces/dio.cpp:344
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Konflikt souborů"
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:345
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -27517,55 +27516,55 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:354
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Přejmenovat automaticky"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Automaticky přepsat"
 
-#: core/libs/database/utils/ifaces/dio.cpp:362
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automaticky přeskočit"
 
-#: core/libs/database/utils/ifaces/dio.cpp:859
+#: core/libs/database/utils/ifaces/dio.cpp:855
 #, kde-format
 msgid "Copy Album"
 msgstr "Kopírovat album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:864
+#: core/libs/database/utils/ifaces/dio.cpp:860
 #, kde-format
 msgid "Copy Images"
 msgstr "Kopírovat obrázky"
 
-#: core/libs/database/utils/ifaces/dio.cpp:870
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopírovat soubory"
 
-#: core/libs/database/utils/ifaces/dio.cpp:875
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Move Album"
 msgstr "Přesunout album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:880
+#: core/libs/database/utils/ifaces/dio.cpp:876
 #, kde-format
 msgid "Move Images"
 msgstr "Přesunout obrázky"
 
-#: core/libs/database/utils/ifaces/dio.cpp:885
+#: core/libs/database/utils/ifaces/dio.cpp:881
 #, kde-format
 msgid "Move Files"
 msgstr "Přesunout soubory"
 
-#: core/libs/database/utils/ifaces/dio.cpp:900
+#: core/libs/database/utils/ifaces/dio.cpp:896
 #, kde-format
 msgid "Restore Trash"
 msgstr "Obnovit koš"
@@ -33931,39 +33930,39 @@ msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:71
+#: core/libs/iojobs/iojob.cpp:70
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "Soubor nebo složka %1 již neexistuje"
 
-#: core/libs/iojobs/iojob.cpp:77
+#: core/libs/iojobs/iojob.cpp:76
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "Album %1 již neexistuje"
 
-#: core/libs/iojobs/iojob.cpp:104
+#: core/libs/iojobs/iojob.cpp:103
 #, kde-format
 msgid "Could not overwrite image %1"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:112
+#: core/libs/iojobs/iojob.cpp:111
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
 "Check the file permission on the trash folder \"%2\" in the image collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:140
+#: core/libs/iojobs/iojob.cpp:139
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Složka nebo soubor pojmenovaný %1 již existuje v %2 "
 
-#: core/libs/iojobs/iojob.cpp:170
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Nelze přesunout složku %1 do alba %2"
 
-#: core/libs/iojobs/iojob.cpp:177
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -33972,42 +33971,42 @@ msgstr ""
 "Nelze přesunout složku %1 do alba %2. Složka %1 byla také zkopírována do "
 "alba %2"
 
-#: core/libs/iojobs/iojob.cpp:189
+#: core/libs/iojobs/iojob.cpp:188
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:195
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Nelze přesunout soubor %1 do alba %2"
 
-#: core/libs/iojobs/iojob.cpp:219
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Nelze zkopírovat složku %1 do alba %2"
 
-#: core/libs/iojobs/iojob.cpp:231
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:239
+#: core/libs/iojobs/iojob.cpp:238
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:244
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Nelze zkopírovat soubor %1 do alba %2"
 
-#: core/libs/iojobs/iojob.cpp:288
+#: core/libs/iojobs/iojob.cpp:287
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Soubor nebo složka %1 neexistuje"
 
-#: core/libs/iojobs/iojob.cpp:300
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -34015,7 +34014,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:312
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -34023,27 +34022,27 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:329
+#: core/libs/iojobs/iojob.cpp:328
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Album %1 nelze odstranit"
 
-#: core/libs/iojobs/iojob.cpp:341
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Obrázek %1 nelze odstranit"
 
-#: core/libs/iojobs/iojob.cpp:387
+#: core/libs/iojobs/iojob.cpp:386
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Nelze přesunout obrázek %1 do koše sbírky"
 
-#: core/libs/iojobs/iojob.cpp:397
+#: core/libs/iojobs/iojob.cpp:396
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Obrázek se stejným názvem %1 zde již existuje"
 
-#: core/libs/iojobs/iojob.cpp:412
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Obrázek %1 nelze přejmenovat"
@@ -48261,7 +48260,7 @@ msgstr ""
 "při ukládání obrázků</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:142
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:139
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:87
 #, kde-format
 msgid "Plugins"
 msgstr "Moduly"
@@ -54722,53 +54721,6 @@ msgstr ""
 msgid "Add custom tag..."
 msgstr ""
 
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/plugins/MarblePluginSettingsWidget.ui:23
-#, kde-format
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
-"Here you can select and deselect the functionality that is provided through "
-"plugins. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
-"from the map, menus and toolbars. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
-"their configuration a bit. </span></p></body></html>"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
-#: core/utilities/geolocation/marble/plugins/MarblePluginSettingsWidget.ui:26
-#, kde-format
-msgid "P&lugins"
-msgstr "Přídavné modul&y"
-
-#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:35
-#, kde-format
-msgid "Placemark position provider Plugin"
-msgstr ""
-
-#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:45
-#, kde-format
-msgid "Placemark"
-msgstr ""
-
-#: core/utilities/geolocation/marble/plugins/PlacemarkPositionProviderPlugin.cpp:55
-#, kde-format
-msgid "Reports the position of a placemark"
-msgstr ""
-
 #: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:366
 #, kde-format
 msgid "Configure"
@@ -54892,28 +54844,27 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:114
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
 #, kde-format
 msgid "Navigation"
 msgstr "Navigace"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:65
 #, kde-format
 msgid "&Navigation"
 msgstr "&Navigace"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:80
 #, kde-format
 msgid "A mouse control to zoom and move the map"
 msgstr "Ovládání myši pro přibližování a oddalování mapy a její posunování"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:239
 #, kde-format
 msgid "Current Location Button"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:242
 #, kde-format
 msgid "Home Button"
 msgstr "Zobrazit tlačítko domovského adresáře"
@@ -55110,352 +55061,42 @@ msgid ""
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
 
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:20
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:73
+#, kde-format
+msgid "View"
+msgstr "Pohled"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:23
 #, kde-format
 msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
-"used for Marble: The physical memory which is needed to keep map data in the "
-"computer's memory. Increasing the value will make the application more "
-"responsive. The hard disc memory cache is used by download contents from the "
-"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
-"to save space on the hard disc and if high usage of the Internet is not an "
-"issue. </p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
+"Here you can select and deselect the functionality that is provided through "
+"plugins. </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble používá dva druhy "
-"mezipaměti: Fyzickou paměť, která je nezbytná pro udržení mapových dat v "
-"paměti počítače. Zvětšení této hodnoty bude mít za následek, že aplikace "
-"bude pohotovější. Mezipaměť pevného disku se používá při stahování obsahu z "
-"internetu (např. dat z Wikipedie nebo mapových dat). Zmenšete tuto hodnotu, "
-"jestliže si přejete ušetřit místo na pevném disku a jestliže časté používání "
-"internetu není problém. </p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:23
-#, kde-format
-msgid "C&ache"
-msgstr "Mezip&aměť"
-
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:41
-#, kde-format
-msgid "&Physical memory:"
-msgstr "&Fyzická paměť:"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:73
-#, kde-format
-msgid "C&lear"
-msgstr "Vyči&stit"
-
-#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:105
-#, kde-format
-msgid "&Hard disc:"
-msgstr "Pe&vný disk:"
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:124
-#, kde-format
-msgid "Unlimited"
-msgstr "Bez omezení"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:146
-#, kde-format
-msgid "Cl&ear"
-msgstr "Vyči&stit"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:172
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
+"from the map, menus and toolbars. </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
-"local intranet. Please leave empty if there is no proxy.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Nastavení proxy vašeho "
-"místního intranetu. Pokud není žádné proxy, ponechte, prosím, prázdné.</p></"
-"body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:175
-#, kde-format
-msgid "&Proxy"
-msgstr "&Proxy"
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:183
-#, kde-format
-msgid "&Proxy:"
-msgstr "&Proxy:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:200
-#, kde-format
-msgid "P&ort:"
-msgstr "P&ort:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_proxyType)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:256
-#, kde-format
-msgid "Proxy type:"
-msgstr "Typ proxy:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:264
-#, kde-format
-msgid "Http"
-msgstr "Http"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:269
-#, kde-format
-msgid "Socks5"
-msgstr "Socks5"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
-#. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:308
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:320
-#, kde-format
-msgid "Requires authentication"
-msgstr "Vyžaduje ověření totožnosti"
-
-#. i18n: ectx: property (text), widget (QLabel, label_username)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:326
-#, kde-format
-msgid "U&sername:"
-msgstr "Jmé&no uživatele:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_password)
-#: core/utilities/geolocation/marble/settings/MarbleCacheSettingsWidget.ui:336
-#, kde-format
-msgid "&Password:"
-msgstr "&Heslo:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:17
-#, kde-format
-msgid "Dragging and Animation"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
+"their configuration a bit. </span></p></body></html>"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, label_dragLocation)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:37
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.ui:26
 #, kde-format
-msgid "&Drag location:"
-msgstr "&Přetáhnout umístění:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:54
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the mouse "
-"there are two standard behaviours when dealing with a virtual globe:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The location below mouse "
-"pointer will follow the cursor exactly: As a result e.g. the north pole will "
-"not stay at the top which can lead to confusion. By default Marble makes "
-"sure that north is always up which results in a dragging behaviour where the "
-"location below the mouse pointer slightly \"detaches\" from the cursor. </"
-"p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Při tažení myší se "
-"používají dva standardní způsoby chování pro zacházení s virtuální zeměkoulí:"
-"</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Umístění pod ukazatelem "
-"myši  bude přesně následovat kurzor: Výsledkem bude, že např. severní pól "
-"nezůstane nahoře, což může vést až ke zmatení uživatele. Při výchozím "
-"nastavení Marble zajistí, že sever je vždy nahoře, čehož výsledkem je "
-"chování při tažení myší,  kdy umístění pod myší ukazatel lehce \"oddělí\" od "
-"kurzoru. </p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:58
-#, kde-format
-msgid "Keep Planet Axis Vertically"
-msgstr "Udržovat planetární osu svisle"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:63
-#, kde-format
-msgid "Follow Mouse Pointer"
-msgstr "Sledovat ukazatel myši"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:73
-#, kde-format
-msgid "Use kinetic spinning when dragging the map"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:76
-#, kde-format
-msgid "&Inertial globe rotation"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:86
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
-"location Marble can either move instantly to the new location or it can show "
-"a travel animation from the previous place to the new place.</p></body></"
-"html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Při hledání umístění se "
-"může Marble ihned přesunout na nové umístění nebo může ukázat animaci cesty "
-"z předešlého místa na nové.</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_animateTargetVoyage)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:89
-#, kde-format
-msgid "&Animate voyage to the target"
-msgstr "&Animovat cestu k cíli"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:96
-#, kde-format
-msgid "Use right mouse button to rotate the camera around"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:99
-#, kde-format
-msgid "&Mouse view rotation"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_onStartup)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:142
-#, kde-format
-msgid "&On startup:"
-msgstr "Při &spuštění:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:155
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
-"display the home location immediately after the application has started. As "
-"an alternative it can also show the last position that was active when the "
-"user left the application. </p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Při výchozím nastavení "
-"bude Marble zobrazovat umístění domovské složky okamžitě po spuštění "
-"aplikace. Alternativně může ukázat i poslední polohu, která byla aktivní, "
-"když uživatel naposledy ukončil aplikaci. </p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:159
-#, kde-format
-msgid "Show Home Location"
-msgstr "Zobrazit umístění domova"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:164
-#, kde-format
-msgid "Return to Last Location Visited"
-msgstr "Vrátit se na poslední navštívenou polohu"
-
-#. i18n: ectx: property (text), widget (QLabel, label_externalEditor)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:184
-#, kde-format
-msgid "&External editor:"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:194
-#, kde-format
-msgid ""
-"<p>The application that is launched to edit maps. Potlatch (default) "
-"requires a web browser with flash support to be installed. When selecting "
-"josm or merkaartor, make sure that the respective application is installed.</"
-"p>"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:198
-#, kde-format
-msgid "Always ask"
-msgstr "Vždy se dotázat"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:203
-#, kde-format
-msgid "Potlatch (Web browser)"
-msgstr "Potlatch (Webový prohlížeč)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:208
-#, kde-format
-msgid "JOSM"
-msgstr "JOSM"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_externalMapEditor)
-#: core/utilities/geolocation/marble/settings/MarbleNavigationSettingsWidget.ui:213
-#, kde-format
-msgid "Merkaartor"
-msgstr "Merkaartor"
+msgid "P&lugins"
+msgstr "Přídavné modul&y"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
@@ -55680,64 +55321,14 @@ msgstr ""
 msgid "&Text Labels"
 msgstr "Te&xtové štítky"
 
-#. i18n: ectx: property (text), widget (QLabel, label_labelLocalization)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:286
-#, kde-format
-msgid "&Place names:"
-msgstr "Umí&stit názvy:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:302
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
-"different names in different languages. The label on the map can show the "
-"name in the user's language. Alternatively it can display the name in the "
-"official language and glyphs of that place. </p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Místa mají v různých "
-"jazycích často odlišné názvy. Štítek na mapě může název ukázat v jazyku "
-"uživatele. Alternativně může název zobrazit v oficiálně uváděném jazyku a k "
-"tomu obrázky toho místa. </p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:306
-#, kde-format
-msgid "Custom & Native Language"
-msgstr "Vlastní a místní jazyk"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:311
-#, kde-format
-msgid "Custom Language"
-msgstr "Vlastní jazyk"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:316
-#, kde-format
-msgid "Native Language"
-msgstr "Rodný jazyk"
-
 #. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:340
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:286
 #, kde-format
 msgid "Default map &font:"
 msgstr "&Písmo pro mapu:"
 
 #. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:353
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:299
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -55758,15 +55349,104 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Písmo používané v mapě "
 "jako výchozí.</p></body></html>"
 
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:104
-#, kde-format
-msgid "View"
-msgstr "Pohled"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:311
+#, fuzzy, kde-format
+#| msgid "Behavior"
+msgid "Mouse Behavior"
+msgstr "Chování"
 
-#: core/utilities/geolocation/marble/settings/QtMarbleConfigDialog.cpp:123
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:317
 #, kde-format
-msgid "Cache and Proxy"
+msgid "Use kinetic spinning when dragging the map"
 msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:320
+#, kde-format
+msgid "&Inertial globe rotation"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:327
+#, kde-format
+msgid "Use right mouse button to rotate the camera around"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:330
+#, kde-format
+msgid "&Mouse view rotation"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:343
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
+"used for Marble: The physical memory which is needed to keep map data in the "
+"computer's memory. Increasing the value will make the application more "
+"responsive. The hard disc memory cache is used by download contents from the "
+"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
+"to save space on the hard disc and if high usage of the Internet is not an "
+"issue. </p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble používá dva druhy "
+"mezipaměti: Fyzickou paměť, která je nezbytná pro udržení mapových dat v "
+"paměti počítače. Zvětšení této hodnoty bude mít za následek, že aplikace "
+"bude pohotovější. Mezipaměť pevného disku se používá při stahování obsahu z "
+"internetu (např. dat z Wikipedie nebo mapových dat). Zmenšete tuto hodnotu, "
+"jestliže si přejete ušetřit místo na pevném disku a jestliže časté používání "
+"internetu není problém. </p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:346
+#, kde-format
+msgid "C&ache"
+msgstr "Mezip&aměť"
+
+#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:364
+#, kde-format
+msgid "&Physical memory:"
+msgstr "&Fyzická paměť:"
+
+#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:396
+#, kde-format
+msgid "C&lear"
+msgstr "Vyči&stit"
+
+#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:428
+#, kde-format
+msgid "&Hard disc:"
+msgstr "Pe&vný disk:"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:447
+#, kde-format
+msgid "Unlimited"
+msgstr "Bez omezení"
+
+#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:469
+#, kde-format
+msgid "Cl&ear"
+msgstr "Vyči&stit"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -64022,6 +63702,86 @@ msgctxt "@title:tab"
 msgid "Sidecars"
 msgstr "Pomocné soubory (Sidecar)"
 
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
+#: core/utilities/setup/misc/proxysettingswidget.ui:20
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
+"local intranet. Please leave empty if there is no proxy.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Nastavení proxy vašeho "
+"místního intranetu. Pokud není žádné proxy, ponechte, prosím, prázdné.</p></"
+"body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
+#: core/utilities/setup/misc/proxysettingswidget.ui:23
+#, fuzzy, kde-format
+#| msgid "Network error"
+msgid "&Network Proxy"
+msgstr "Chyba sítě"
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
+#: core/utilities/setup/misc/proxysettingswidget.ui:31
+#, kde-format
+msgid "&Proxy:"
+msgstr "&Proxy:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
+#: core/utilities/setup/misc/proxysettingswidget.ui:48
+#, kde-format
+msgid "P&ort:"
+msgstr "P&ort:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_proxyType)
+#: core/utilities/setup/misc/proxysettingswidget.ui:104
+#, kde-format
+msgid "Proxy type:"
+msgstr "Typ proxy:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: core/utilities/setup/misc/proxysettingswidget.ui:112
+#, kde-format
+msgid "Http"
+msgstr "Http"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: core/utilities/setup/misc/proxysettingswidget.ui:117
+#, kde-format
+msgid "Socks5"
+msgstr "Socks5"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
+#. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
+#: core/utilities/setup/misc/proxysettingswidget.ui:156
+#: core/utilities/setup/misc/proxysettingswidget.ui:168
+#, kde-format
+msgid "Requires authentication"
+msgstr "Vyžaduje ověření totožnosti"
+
+#. i18n: ectx: property (text), widget (QLabel, label_username)
+#: core/utilities/setup/misc/proxysettingswidget.ui:174
+#, kde-format
+msgid "U&sername:"
+msgstr "Jmé&no uživatele:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_password)
+#: core/utilities/setup/misc/proxysettingswidget.ui:184
+#, kde-format
+msgid "&Password:"
+msgstr "&Heslo:"
+
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
 msgid "Get album date source:"
@@ -64279,32 +64039,32 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Seskupování"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:75
+#: core/utilities/setup/misc/systemsettingswidget.cpp:79
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:76
+#: core/utilities/setup/misc/systemsettingswidget.cpp:80
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:77
+#: core/utilities/setup/misc/systemsettingswidget.cpp:81
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr "Vypnout hardware akceleraci OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:78
+#: core/utilities/setup/misc/systemsettingswidget.cpp:82
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Povolit interní ladicí záznamy"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:80
+#: core/utilities/setup/misc/systemsettingswidget.cpp:84
 #, kde-format
 msgid "Download required binary data..."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:87
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -65485,6 +65245,157 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
+
+#~ msgid "&Proxy"
+#~ msgstr "&Proxy"
+
+#~ msgid "&Drag location:"
+#~ msgstr "&Přetáhnout umístění:"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the "
+#~ "mouse there are two standard behaviours when dealing with a virtual globe:"
+#~ "</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The location below "
+#~ "mouse pointer will follow the cursor exactly: As a result e.g. the north "
+#~ "pole will not stay at the top which can lead to confusion. By default "
+#~ "Marble makes sure that north is always up which results in a dragging "
+#~ "behaviour where the location below the mouse pointer slightly \"detaches"
+#~ "\" from the cursor. </p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Při tažení myší se "
+#~ "používají dva standardní způsoby chování pro zacházení s virtuální "
+#~ "zeměkoulí:</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Umístění pod ukazatelem "
+#~ "myši  bude přesně následovat kurzor: Výsledkem bude, že např. severní pól "
+#~ "nezůstane nahoře, což může vést až ke zmatení uživatele. Při výchozím "
+#~ "nastavení Marble zajistí, že sever je vždy nahoře, čehož výsledkem je "
+#~ "chování při tažení myší,  kdy umístění pod myší ukazatel lehce \"oddělí\" "
+#~ "od kurzoru. </p></body></html>"
+
+#~ msgid "Keep Planet Axis Vertically"
+#~ msgstr "Udržovat planetární osu svisle"
+
+#~ msgid "Follow Mouse Pointer"
+#~ msgstr "Sledovat ukazatel myši"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
+#~ "location Marble can either move instantly to the new location or it can "
+#~ "show a travel animation from the previous place to the new place.</p></"
+#~ "body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Při hledání umístění se "
+#~ "může Marble ihned přesunout na nové umístění nebo může ukázat animaci "
+#~ "cesty z předešlého místa na nové.</p></body></html>"
+
+#~ msgid "&Animate voyage to the target"
+#~ msgstr "&Animovat cestu k cíli"
+
+#~ msgid "&On startup:"
+#~ msgstr "Při &spuštění:"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
+#~ "display the home location immediately after the application has started. "
+#~ "As an alternative it can also show the last position that was active when "
+#~ "the user left the application. </p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Při výchozím nastavení "
+#~ "bude Marble zobrazovat umístění domovské složky okamžitě po spuštění "
+#~ "aplikace. Alternativně může ukázat i poslední polohu, která byla aktivní, "
+#~ "když uživatel naposledy ukončil aplikaci. </p></body></html>"
+
+#~ msgid "Show Home Location"
+#~ msgstr "Zobrazit umístění domova"
+
+#~ msgid "Return to Last Location Visited"
+#~ msgstr "Vrátit se na poslední navštívenou polohu"
+
+#~ msgid "Always ask"
+#~ msgstr "Vždy se dotázat"
+
+#~ msgid "Potlatch (Web browser)"
+#~ msgstr "Potlatch (Webový prohlížeč)"
+
+#~ msgid "JOSM"
+#~ msgstr "JOSM"
+
+#~ msgid "Merkaartor"
+#~ msgstr "Merkaartor"
+
+#~ msgid "&Place names:"
+#~ msgstr "Umí&stit názvy:"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
+#~ "different names in different languages. The label on the map can show the "
+#~ "name in the user's language. Alternatively it can display the name in the "
+#~ "official language and glyphs of that place. </p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Místa mají v různých "
+#~ "jazycích často odlišné názvy. Štítek na mapě může název ukázat v jazyku "
+#~ "uživatele. Alternativně může název zobrazit v oficiálně uváděném jazyku a "
+#~ "k tomu obrázky toho místa. </p></body></html>"
+
+#~ msgid "Custom & Native Language"
+#~ msgstr "Vlastní a místní jazyk"
+
+#~ msgid "Custom Language"
+#~ msgstr "Vlastní jazyk"
+
+#~ msgid "Native Language"
+#~ msgstr "Rodný jazyk"
 
 #~ msgid "Remove Folder"
 #~ msgstr "Odstranit složku"

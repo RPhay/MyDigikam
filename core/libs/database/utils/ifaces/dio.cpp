@@ -229,16 +229,12 @@ void DIO::del(PAlbum* const album, bool useTrash)
 
 int DIO::getTrashCounter(const QString& albumRootPath)
 {
-    QString rootPath = albumRootPath;
-
-    if (rootPath.endsWith(QLatin1Char('/')))
-    {
-        rootPath.chop(1);
-    }
+    QUrl url = QUrl::fromLocalFile(albumRootPath);
+    url      = url.adjusted(QUrl::StripTrailingSlash);
 
     QMutexLocker locker(&instance()->m_trashCounterMutex);
 
-    return instance()->m_trashCounterMap.value(rootPath, 0);
+    return instance()->m_trashCounterMap.value(url.toLocalFile(), 0);
 }
 
 // Restore Trash ------------------------------------------------------

@@ -432,8 +432,9 @@ void DTrashItemsListingJob::run()
 {
     DTrashItemInfo itemInfo;
 
-    QString collectionTrashFilesPath = m_collectionPath + QLatin1Char('/') + DTrash::TRASH_FOLDER +
-                                       QLatin1Char('/') + DTrash::FILES_FOLDER;
+    QString collectionTrashFilesPath = m_collectionPath     + QLatin1Char('/') +
+                                       DTrash::TRASH_FOLDER + QLatin1Char('/') +
+                                       DTrash::FILES_FOLDER;
 
     qCDebug(DIGIKAM_IOJOB_LOG) << "Collection trash files path:" << collectionTrashFilesPath;
 
@@ -548,6 +549,7 @@ void BuildTrashCountersJob::run()
         QString path = location.albumRootPath() + QLatin1Char('/') +
                        DTrash::TRASH_FOLDER     + QLatin1Char('/') +
                        DTrash::FILES_FOLDER;
+
         QDir dir(path, QLatin1String(""), QDir::Unsorted, QDir::Files);
 
         if (dir.exists() && dir.isReadable())
