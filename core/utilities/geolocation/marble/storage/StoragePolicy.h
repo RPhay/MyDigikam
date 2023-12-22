@@ -19,10 +19,10 @@ namespace Marble
 class StoragePolicy : public QObject
 {
     Q_OBJECT
-    
+
     public:
         explicit StoragePolicy( QObject *parent = nullptr );
-    
+
         ~StoragePolicy() override {}
 
         virtual bool fileExists( const QString &fileName ) const = 0;
@@ -35,11 +35,11 @@ class StoragePolicy : public QObject
     virtual void clearCache() = 0;
 
         virtual QString lastErrorMessage() const = 0;
-    
+
     Q_SIGNALS:
     void cleared();
     void sizeChanged( qint64 );
-    
+
     private:
     Q_DISABLE_COPY( StoragePolicy )
 };

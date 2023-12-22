@@ -14,7 +14,7 @@ namespace Marble
 class FileStoragePolicy : public StoragePolicy
 {
     Q_OBJECT
-    
+
     public:
         /**
          * Creates a new file storage policy.
@@ -51,7 +51,7 @@ class FileStoragePolicy : public StoragePolicy
 
     private:
     Q_DISABLE_COPY( FileStoragePolicy )
-    
+
         QString m_dataDirectory;
         QString m_errorMsg;
 };
