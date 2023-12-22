@@ -41,7 +41,7 @@ bool MapThemeSortFilterProxyModel::filterAcceptsRow( int sourceRow, const QModel
      QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
      return (sourceModel()->data( index, Qt::UserRole + 1 ).toString().contains( filterRegularExpression() ) );
  }
- 
+
 bool MapThemeSortFilterProxyModel::isFavorite( const QModelIndex& index )
 {
     const QAbstractItemModel *model = index.model();
