@@ -21,16 +21,16 @@ bool DgmlVectorTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Vector) );
     writer.writeAttribute( QLatin1String("name"), vector->name() );
     writer.writeAttribute( QLatin1String("feature"), vector->feature() );
-    
+
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_SourceFile) );
     writer.writeAttribute( QLatin1String("format"), vector->fileFormat() );
     writer.writeCharacters( vector->sourceFile() );
     writer.writeEndElement();
-    
+
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Pen) );
     writer.writeAttribute( QLatin1String("color"), vector->pen().color().name() );
     writer.writeEndElement();
-        
+
     writer.writeEndElement();
     return true;
 }

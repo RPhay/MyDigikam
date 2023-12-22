@@ -51,7 +51,7 @@ class GeoDataLineStringPrivate : public GeoDataGeometryPrivate
 
 
     GeoDataGeometryPrivate *copy() const override
-    { 
+    {
         GeoDataLineStringPrivate* copy = new GeoDataLineStringPrivate;
         *copy = *this;
         return copy;
@@ -82,8 +82,8 @@ class GeoDataLineStringPrivate : public GeoDataGeometryPrivate
     mutable bool                m_dirtyRange;
 
     mutable bool                m_dirtyBox; // tells whether there have been changes to the
-                                            // GeoDataPoints since the LatLonAltBox has 
-                                            // been calculated. Saves performance. 
+                                            // GeoDataPoints since the LatLonAltBox has
+                                            // been calculated. Saves performance.
     TessellationFlags           m_tessellationFlags;
     mutable qreal  m_previousResolution;
     mutable quint8 m_level;

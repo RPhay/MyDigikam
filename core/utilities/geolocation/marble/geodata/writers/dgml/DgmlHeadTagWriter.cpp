@@ -29,19 +29,19 @@ bool DgmlHeadTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
     writer.writeStartElement( QString::fromUtf8("description") );
     writer.writeCDATA( head->description() );
     writer.writeEndElement();
-    
+
     const GeoSceneIcon &icon = static_cast<const GeoSceneIcon&>( *head->icon() );
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Icon) );
     writer.writeAttribute( QString::fromUtf8("pixmap"), icon.pixmap() );
     writer.writeEndElement();
-    
+
     const GeoSceneZoom &zoom = static_cast<const GeoSceneZoom&>( *head->zoom() );
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Zoom) );
     writer.writeElement( QString::fromUtf8("discrete"), zoom.discrete() ? QString::fromUtf8("true") : QString::fromUtf8("false") );
     writer.writeTextElement( QString::fromUtf8("minimum"), QString::number( zoom.minimum() ) );
     writer.writeTextElement( QString::fromUtf8("maximum"), QString::number( zoom.maximum() ) );
     writer.writeEndElement();
-    
+
     writer.writeEndElement();
 
     return true;

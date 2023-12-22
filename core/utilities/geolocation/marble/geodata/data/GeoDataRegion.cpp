@@ -70,7 +70,7 @@ const GeoDataLatLonAltBox& GeoDataRegion::latLonAltBox() const
 
     // If the latLonAltBox hasn't been set try to determine it automatically
     if ( !d->m_latLonAltBox ) {
-        // If there is a parent try to 
+        // If there is a parent try to
         if ( d->m_parent ) {
 
             if (const GeoDataPlacemark *placemark = geodata_cast<GeoDataPlacemark>(d->m_parent)) {
@@ -94,7 +94,7 @@ const GeoDataLatLonAltBox& GeoDataRegion::latLonAltBox() const
             d->m_latLonAltBox = new GeoDataLatLonAltBox();
         }
     }
-    
+
     return *(d->m_latLonAltBox);
 }
 

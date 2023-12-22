@@ -24,7 +24,7 @@ GeoNode* KmlopenTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_open)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if( parentItem.is<GeoDataFeature>() ) {
         QString open = parser.readElementText().trimmed();
 /*        if (open == QLatin1String("1"))

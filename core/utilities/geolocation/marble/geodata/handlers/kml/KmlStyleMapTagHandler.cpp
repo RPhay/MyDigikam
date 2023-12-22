@@ -27,7 +27,7 @@ GeoNode* KmlStyleMapTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_StyleMap)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if( parentItem.represents( kmlTag_Document ) ) {
         GeoDataStyleMap styleMap;
         KmlObjectTagHandler::parseIdentifiers( parser, &styleMap );

@@ -16,7 +16,7 @@ namespace Marble
 class GeoDataLineStylePrivate
 {
   public:
-    GeoDataLineStylePrivate() 
+    GeoDataLineStylePrivate()
         : m_width( 1.0 ), m_physicalWidth( 0.0 ),
           m_capStyle( Qt::FlatCap ), m_penStyle( Qt::SolidLine ),
           m_cosmeticOutline( false ), m_background( false )
@@ -159,7 +159,7 @@ void GeoDataLineStyle::setDashPattern( const QVector< qreal >& pattern )
 void GeoDataLineStyle::pack( QDataStream& stream ) const
 {
     GeoDataColorStyle::pack( stream );
-    
+
     stream << d->m_width;
     stream << d->m_physicalWidth;
     stream << (int)d->m_penStyle;
@@ -170,7 +170,7 @@ void GeoDataLineStyle::pack( QDataStream& stream ) const
 void GeoDataLineStyle::unpack( QDataStream& stream )
 {
     GeoDataColorStyle::unpack( stream );
-    
+
     stream >> d->m_width;
     stream >> d->m_physicalWidth;
     int style;

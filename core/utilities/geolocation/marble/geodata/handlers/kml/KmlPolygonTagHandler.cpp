@@ -27,7 +27,7 @@ GeoNode* KmlPolygonTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_Polygon)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     GeoDataPolygon *polygon = new GeoDataPolygon;
     KmlObjectTagHandler::parseIdentifiers( parser, polygon );
 

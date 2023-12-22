@@ -29,7 +29,7 @@ bool GeoWriter::write(QIODevice* device, const GeoNode *feature)
 
     //FIXME: write the starting tags. Possibly register a tag handler to do this
     // with a null string as the object name?
-    
+
     GeoTagWriter::QualifiedName name( QString(), m_documentType );
     const GeoTagWriter* writer = GeoTagWriter::recognizes(name);
     if( writer ) {
@@ -39,11 +39,11 @@ bool GeoWriter::write(QIODevice* device, const GeoNode *feature)
         qCDebug(DIGIKAM_MARBLE_LOG) << "There is no GeoWriter registered for: " << name;
         return false;
     }
-    
+
     if( ! writeElement( feature ) ) {
         return false;
     }
-    
+
     //close the document
     writeEndElement();
     return true;

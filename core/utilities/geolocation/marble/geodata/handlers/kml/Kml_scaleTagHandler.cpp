@@ -28,12 +28,12 @@ GeoNode* KmlscaleTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_scale)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if ( parentItem.represents( kmlTag_IconStyle ) ) {
-        parentItem.nodeAs<GeoDataIconStyle>()->setScale( 
+        parentItem.nodeAs<GeoDataIconStyle>()->setScale(
         parser.readElementText().trimmed().toFloat() );
     } else if( parentItem.represents( kmlTag_LabelStyle ) ) {
-        parentItem.nodeAs<GeoDataLabelStyle>()->setScale( 
+        parentItem.nodeAs<GeoDataLabelStyle>()->setScale(
         parser.readElementText().trimmed().toFloat() );
     }
     return nullptr;

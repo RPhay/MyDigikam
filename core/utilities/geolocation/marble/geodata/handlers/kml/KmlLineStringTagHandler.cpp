@@ -27,7 +27,7 @@ GeoNode* KmlLineStringTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_LineString)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     GeoDataLineString *lineString = new GeoDataLineString;
     KmlObjectTagHandler::parseIdentifiers( parser, lineString );
 

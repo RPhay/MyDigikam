@@ -28,7 +28,7 @@ GeoNode* KmltessellateTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_tessellate)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     QString content = parser.readElementText().trimmed();
 
     if( parentItem.is<GeoDataLineString>() ) {

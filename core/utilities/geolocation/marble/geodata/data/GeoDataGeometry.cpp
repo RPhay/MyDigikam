@@ -71,7 +71,7 @@ GeoDataGeometry& GeoDataGeometry::operator=( const GeoDataGeometry& other )
 
     d_ptr = other.d_ptr;
     d_ptr->ref.ref();
-    
+
     return *this;
 }
 

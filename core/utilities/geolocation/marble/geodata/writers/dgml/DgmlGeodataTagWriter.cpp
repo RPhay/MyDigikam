@@ -20,11 +20,11 @@ bool DgmlGeodataTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
     const GeoSceneGeodata *geodata = static_cast<const GeoSceneGeodata*>( node );
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Geodata) );
     writer.writeAttribute( QString::fromUtf8("name"), geodata->name() );
-    
+
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_SourceFile) );
     writer.writeCharacters( geodata->sourceFile() );
     writer.writeEndElement();
-    
+
     writer.writeEndElement();
     return true;
 }

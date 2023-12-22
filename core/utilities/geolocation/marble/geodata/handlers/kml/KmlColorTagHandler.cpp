@@ -24,7 +24,7 @@ GeoNode* KmlcolorTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_color)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if ( parentItem.is<GeoDataColorStyle>() || parentItem.is<GeoDataOverlay>() ) {
         QColor const color = parseColor( parser.readElementText().trimmed() );
         if ( parentItem.is<GeoDataColorStyle>() ) {

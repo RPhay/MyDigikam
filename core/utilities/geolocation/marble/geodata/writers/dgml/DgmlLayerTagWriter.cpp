@@ -27,12 +27,12 @@ bool DgmlLayerTagWriter::write(const GeoNode *node, GeoWriter& writer) const
     {
         writer.writeAttribute( QString::fromUtf8("role"), layer->role() );
     }
-    
+
     for( int i = 0; i < layer->datasets().count(); ++i )
     {
         writeElement( layer->datasets().at( i ), writer );
     }
-    
+
     writer.writeEndElement();
     return true;
 }

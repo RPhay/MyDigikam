@@ -47,7 +47,7 @@ bool operator==( GeoDataLatLonAltBox const& lhs, GeoDataLatLonAltBox const& rhs 
 GeoDataLatLonAltBox& GeoDataLatLonAltBox::operator=( const GeoDataLatLonAltBox &other )
 {
     GeoDataLatLonBox::operator=( other );
-    
+
     *d = *other.d;
     return *this;
 }
@@ -98,7 +98,7 @@ GeoDataLatLonAltBox::GeoDataLatLonAltBox( const GeoDataCoordinates & coordinates
     setEast( coordinates.longitude() );
     setNorth( coordinates.latitude() );
     setSouth( coordinates.latitude() );
-    
+
     d->m_minAltitude = coordinates.altitude();
     d->m_maxAltitude = coordinates.altitude();
 }
@@ -145,11 +145,11 @@ GeoDataCoordinates GeoDataLatLonAltBox::center() const
         return GeoDataCoordinates();
     if( crossesDateLine() )
         return GeoDataCoordinates( GeoDataCoordinates::normalizeLon(east() + 2 * M_PI - (east() + 2 * M_PI - west()) / 2),
-                                north() - (north() - south()) / 2, 
+                                north() - (north() - south()) / 2,
                                 d->m_maxAltitude - (d->m_maxAltitude - d->m_minAltitude) / 2);
     else
         return GeoDataCoordinates( east() - (east() - west()) / 2,
-                                north() - (north() - south()) / 2, 
+                                north() - (north() - south()) / 2,
                                 d->m_maxAltitude - (d->m_maxAltitude - d->m_minAltitude) / 2);
 }
 
@@ -191,7 +191,7 @@ bool GeoDataLatLonAltBox::intersects( const GeoDataLatLonAltBox &other ) const
             // Case 2: maximum altitude of this box intersects:
          || ( other.maxAltitude() >= d->m_maxAltitude && other.minAltitude() <= d->m_maxAltitude )
             // Case 3: minimum altitude of other box intersects:
-         || ( d->m_maxAltitude >= other.minAltitude() && d->m_minAltitude <= other.minAltitude() ) 
+         || ( d->m_maxAltitude >= other.minAltitude() && d->m_minAltitude <= other.minAltitude() )
             // Case 4: minimum altitude of this box intersects:
          || ( other.maxAltitude() >= d->m_minAltitude && other.minAltitude() <= d->m_minAltitude ) ) {
 

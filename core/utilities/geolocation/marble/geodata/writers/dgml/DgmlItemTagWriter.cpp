@@ -21,10 +21,10 @@ static GeoTagWriterRegistrar s_writerItem( GeoTagWriter::QualifiedName( QString:
 bool DgmlItemTagWriter::write(const GeoNode *node, GeoWriter& writer) const
 {
     const GeoSceneItem *item = static_cast<const GeoSceneItem*>( node );
-    
+
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Item) );
     writer.writeAttribute( QString::fromUtf8("name"), item->name() );
-    
+
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Icon) );
     if( !item->icon()->pixmap().isEmpty() ) {
         writer.writeAttribute( QString::fromUtf8("pixmap"), item->icon()->pixmap() );
@@ -33,7 +33,7 @@ bool DgmlItemTagWriter::write(const GeoNode *node, GeoWriter& writer) const
     }
     writer.writeEndElement();
     writer.writeElement( QString::fromUtf8("text"), item->text() );
-    
+
     writer.writeEndElement();
     return true;
 }

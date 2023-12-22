@@ -27,7 +27,7 @@ GeoNode* KmlstyleUrlTagHandler::parse( GeoParser& parser ) const
 
     GeoStackItem parentItem = parser.parentElement();
     GeoStackItem grandParentItem = parser.parentElement();
-    
+
     if( parentItem.represents( kmlTag_Pair ) ) {
         QString content = parser.readElementText().trimmed();
 

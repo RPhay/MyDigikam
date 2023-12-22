@@ -26,7 +26,7 @@ GeoNode* KmlIconTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_Icon)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if ( parentItem.represents( kmlTag_IconStyle ) ) {
         return parentItem.nodeAs<GeoDataIconStyle>();
     } else if ( parentItem.represents( kmlTag_GroundOverlay ) ) {

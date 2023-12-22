@@ -99,8 +99,8 @@ bool GeoDataPolygon::tessellate() const
 void GeoDataPolygon::setTessellate( bool tessellate )
 {
     // According to the KML reference the tesselation is done along great circles
-    // for polygons in Google Earth. Our "Tesselate" flag does this. 
-    // Only for pure line strings and linear rings the 
+    // for polygons in Google Earth. Our "Tesselate" flag does this.
+    // Only for pure line strings and linear rings the
     // latitude circles are followed for subsequent points that share the same latitude.
     detach();
 
@@ -200,8 +200,8 @@ void GeoDataPolygon::pack( QDataStream& stream ) const
 
     stream << d->inner.size();
     stream << (qint32)(d->m_tessellationFlags);
-   
-    for( QVector<GeoDataLinearRing>::const_iterator iterator 
+
+    for( QVector<GeoDataLinearRing>::const_iterator iterator
           = d->inner.constBegin();
          iterator != d->inner.constEnd();
          ++iterator ) {

@@ -88,7 +88,7 @@ void GeoDataStyleMap::pack( QDataStream& stream ) const
 void GeoDataStyleMap::unpack( QDataStream& stream )
 {
     GeoDataStyleSelector::unpack( stream );
-    
+
     stream >> *this;
 }
 

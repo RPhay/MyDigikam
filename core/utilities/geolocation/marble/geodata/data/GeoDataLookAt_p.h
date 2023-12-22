@@ -25,7 +25,7 @@ class GeoDataLookAtPrivate
           ref( 1 )
     {
     }
-    
+
     GeoDataCoordinates m_coordinates;
     qreal m_range;
 

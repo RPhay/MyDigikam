@@ -158,7 +158,7 @@ bool AbstractGeoPolygonGraphicsItem::configurePainter(GeoPainter *painter, const
             }
         }
 
-        if (!polyStyle.fill()) {            
+        if (!polyStyle.fill()) {
             painter->setBrush(Qt::transparent);
         }
         else {

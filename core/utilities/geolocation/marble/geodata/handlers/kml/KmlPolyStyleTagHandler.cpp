@@ -25,8 +25,8 @@ GeoNode* KmlPolyStyleTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_PolyStyle)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
-    
+
+
     if ( parentItem.represents( kmlTag_Style ) ) {
         GeoDataPolyStyle style;
         KmlObjectTagHandler::parseIdentifiers( parser, &style );

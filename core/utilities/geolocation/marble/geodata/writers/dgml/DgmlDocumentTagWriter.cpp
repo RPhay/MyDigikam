@@ -22,21 +22,21 @@ static GeoTagWriterRegistrar s_writerDocument( GeoTagWriter::QualifiedName( QStr
 bool DgmlDocumentTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
 {
     const GeoSceneDocument *document = static_cast<const GeoSceneDocument*>( node );
-    
+
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Document) );
-    
+
     const GeoSceneHead *head = document->head();
     writeElement( head, writer );
-    
+
     const GeoSceneMap *map = document->map() ;
     writeElement( map, writer );
-    
+
     const GeoSceneSettings *settings = document->settings();
     writeElement( settings, writer );
-    
+
     const GeoSceneLegend *legend = document->legend();
     writeElement( legend, writer );
-    
+
     writer.writeEndDocument();
     return true;
 }

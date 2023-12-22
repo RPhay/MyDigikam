@@ -49,7 +49,7 @@ class GeoDataMultiGeometryPrivate : public GeoDataGeometryPrivate
     }
 
     GeoDataGeometryPrivate *copy() const override
-    { 
+    {
         GeoDataMultiGeometryPrivate* copy = new GeoDataMultiGeometryPrivate;
         *copy = *this;
         return copy;

@@ -24,7 +24,7 @@ class GeoDataLinearRingPrivate : public GeoDataLineStringPrivate
     }
 
     GeoDataGeometryPrivate *copy() const override
-    { 
+    {
         GeoDataLinearRingPrivate* copy = new GeoDataLinearRingPrivate;
         *copy = *this;
         return copy;

@@ -25,10 +25,10 @@ GeoNode* KmlkeyTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_key)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if( parentItem.represents( kmlTag_Pair ) ) {
         QString content = parser.readElementText().trimmed();
-        
+
         parentItem.nodeAs<GeoDataStyleMap>()->setLastKey( content );
     }
 

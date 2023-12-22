@@ -23,7 +23,7 @@ GeoNode* KmlvisibilityTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_visibility)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if( parentItem.is<GeoDataFeature>() ) {
         QString visibility = parser.readElementText().trimmed();
         const bool visible = (visibility == QLatin1String("1"));

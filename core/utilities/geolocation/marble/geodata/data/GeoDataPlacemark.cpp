@@ -78,7 +78,7 @@ GeoDataPlacemark &GeoDataPlacemark::operator=( const GeoDataPlacemark &other )
 }
 
 bool GeoDataPlacemark::operator==( const GeoDataPlacemark& other ) const
-{ 
+{
     Q_D(const GeoDataPlacemark);
     const GeoDataPlacemarkPrivate* const other_d = other.d_func();
     if (!equals(other) ||
@@ -219,7 +219,7 @@ GeoDataCoordinates GeoDataPlacemark::coordinate( const QDateTime &dateTime, bool
     Q_D(const GeoDataPlacemark);
     bool hasIcon = false;
     GeoDataCoordinates coord;
- 
+
     if (d->m_geometry) {
         // Beware: comparison between pointers, not strings.
         if (geodata_cast<GeoDataPoint>(d->m_geometry)

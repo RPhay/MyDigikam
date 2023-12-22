@@ -275,9 +275,9 @@ void GeoDataMultiGeometry::unpack( QDataStream& stream )
     GeoDataGeometry::unpack( stream );
 
     int size = 0;
-    
+
     stream >> size;
-    
+
     for( int i = 0; i < size; i++ ) {
         int geometryId;
         stream >> geometryId;

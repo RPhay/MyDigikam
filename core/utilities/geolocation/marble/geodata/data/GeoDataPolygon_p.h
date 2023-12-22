@@ -29,7 +29,7 @@ class GeoDataPolygonPrivate : public GeoDataGeometryPrivate
     }
 
     GeoDataGeometryPrivate *copy() const override
-    { 
+    {
          GeoDataPolygonPrivate* copy = new  GeoDataPolygonPrivate;
         *copy = *this;
         return copy;
@@ -38,8 +38,8 @@ class GeoDataPolygonPrivate : public GeoDataGeometryPrivate
     GeoDataLinearRing           outer;
     QVector<GeoDataLinearRing>  inner;
     bool                        m_dirtyBox; // tells whether there have been changes to the
-                                            // GeoDataPoints since the LatLonAltBox has 
-                                            // been calculated. Saves performance. 
+                                            // GeoDataPoints since the LatLonAltBox has
+                                            // been calculated. Saves performance.
     TessellationFlags           m_tessellationFlags;
     int                         m_renderOrder;
 };

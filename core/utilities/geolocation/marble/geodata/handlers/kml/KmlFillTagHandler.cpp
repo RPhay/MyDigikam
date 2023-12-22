@@ -23,10 +23,10 @@ GeoNode* KmlfillTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_fill)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if( parentItem.represents( kmlTag_PolyStyle ) ) {
         bool fill = static_cast<bool>( parser.readElementText().trimmed().toInt() );
-        
+
         parentItem.nodeAs<GeoDataPolyStyle>()->setFill( fill );
     }
 

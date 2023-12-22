@@ -23,10 +23,10 @@ GeoNode* KmloutlineTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_outline)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if( parentItem.represents( kmlTag_PolyStyle ) ) {
         bool outline = static_cast<bool>( parser.readElementText().trimmed().toInt() );
-        
+
         parentItem.nodeAs<GeoDataPolyStyle>()->setOutline( outline );
     }
 

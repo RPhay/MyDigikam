@@ -21,7 +21,7 @@ bool DgmlSettingsTagWriter::write(const GeoNode *node, GeoWriter& writer) const
 {
     const GeoSceneSettings *settings = static_cast<const GeoSceneSettings*>( node );
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Settings) );
-    
+
     for( int i = 0; i < settings->allProperties().count(); ++i )
     {
         const GeoSceneProperty *property = settings->allProperties().at( i );
@@ -31,7 +31,7 @@ bool DgmlSettingsTagWriter::write(const GeoNode *node, GeoWriter& writer) const
         writer.writeElement( QString::fromUtf8(dgml::dgmlTag_Available), property->available() ? QString::fromUtf8("true") : QString::fromUtf8("false") );
         writer.writeEndElement();
     }
-    
+
     writer.writeEndElement();
     return true;
 }

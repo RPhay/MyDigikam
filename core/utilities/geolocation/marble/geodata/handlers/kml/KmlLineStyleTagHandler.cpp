@@ -25,7 +25,7 @@ GeoNode* KmlLineStyleTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_LineStyle)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if ( parentItem.represents( kmlTag_Style ) ) {
         GeoDataLineStyle style;
         KmlObjectTagHandler::parseIdentifiers( parser, &style );

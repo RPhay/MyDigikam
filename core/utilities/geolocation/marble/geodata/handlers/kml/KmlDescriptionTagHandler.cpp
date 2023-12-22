@@ -24,7 +24,7 @@ GeoNode* KmldescriptionTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_description)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if( parentItem.is<GeoDataFeature>() ) {
 
         QString result;
@@ -53,7 +53,7 @@ GeoNode* KmldescriptionTagHandler::parse( GeoParser& parser ) const
         }
 
         QString description = result.trimmed();
-        
+
         parentItem.nodeAs<GeoDataFeature>()->setDescription( description );
         parentItem.nodeAs<GeoDataFeature>()->setDescriptionCDATA( isCDATA );
     }

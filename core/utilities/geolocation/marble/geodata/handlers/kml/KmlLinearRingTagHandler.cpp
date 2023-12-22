@@ -28,7 +28,7 @@ GeoNode* KmlLinearRingTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_LinearRing)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     if( parentItem.represents( kmlTag_outerBoundaryIs ) ) {
         GeoDataLinearRing linearRing;
         KmlObjectTagHandler::parseIdentifiers( parser, &linearRing );

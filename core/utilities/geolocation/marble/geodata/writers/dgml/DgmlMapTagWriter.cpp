@@ -25,7 +25,7 @@ bool DgmlMapTagWriter::write(const GeoNode *node, GeoWriter& writer) const
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Map) );
     writer.writeAttribute( QString::fromUtf8("bgcolor"), map->backgroundColor().name() );
     writer.writeAttribute( QString::fromUtf8("labelColor"), map->labelColor().name() );
-    
+
     writer.writeStartElement( QString::fromUtf8("canvas") );
     writer.writeEndElement();
 
@@ -43,15 +43,15 @@ bool DgmlMapTagWriter::write(const GeoNode *node, GeoWriter& writer) const
                                 + map->center().at(3).toString());
         }
     }
-    
+
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Target));
     writer.writeEndElement();
-    
+
     for( int i = 0; i < map->layers().count(); ++i )
     {
         writeElement( map->layers().at( i ), writer );
     }
-    
+
     writer.writeEndElement();
     return true;
 }

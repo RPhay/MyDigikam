@@ -24,7 +24,7 @@ static const int defaultSize = 8;
 class GeoDataLabelStylePrivate
 {
   public:
-    GeoDataLabelStylePrivate() 
+    GeoDataLabelStylePrivate()
         : m_scale( 1.0 ),
           m_alignment( GeoDataLabelStyle::Corner ),
           m_font( QFont(QStringLiteral("Sans Serif")).family(), defaultSize, 50, false ),

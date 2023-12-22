@@ -25,7 +25,7 @@ GeoNode* KmlheadingTagHandler::parse( GeoParser& parser ) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_heading)));
 
     GeoStackItem parentItem = parser.parentElement();
-    
+
     int const heading = parser.readElementText().toInt();
     if ( heading >= 0 && heading <= 360 ) {
         if ( parentItem.represents( kmlTag_IconStyle ) ) {

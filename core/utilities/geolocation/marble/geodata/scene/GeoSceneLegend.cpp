@@ -21,7 +21,7 @@ class GeoSceneLegendPrivate
     }
 
      /// The vector holding all the sections in the legend.
-    /// (We want to preserve the order and don't care 
+    /// (We want to preserve the order and don't care
     /// much about speed here), so we don't use a hash
     QVector<const GeoSceneSection*> m_sections;
 };

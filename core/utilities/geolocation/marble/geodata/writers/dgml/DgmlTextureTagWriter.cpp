@@ -26,7 +26,7 @@ bool DgmlTextureTagWriter::write(const GeoNode *node, GeoWriter& writer) const
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Texture) );
     writer.writeAttribute( QString::fromUtf8("name"), texture->name() );
     writer.writeAttribute( QString::fromUtf8("expire"), QString::number( texture->expire() ) );
-    
+
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_SourceDir) );
     writer.writeAttribute( QString::fromUtf8("format"), texture->fileFormat() );
     if( texture->expire() ) {
@@ -40,7 +40,7 @@ bool DgmlTextureTagWriter::write(const GeoNode *node, GeoWriter& writer) const
     writer.writeEndElement();
 
     writer.writeOptionalElement( QString::fromUtf8(dgml::dgmlTag_InstallMap), texture->installMap() );
-    
+
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_StorageLayout) );
     if( texture->hasMaximumTileLevel() )
     {
@@ -50,7 +50,7 @@ bool DgmlTextureTagWriter::write(const GeoNode *node, GeoWriter& writer) const
         writer.writeAttribute( QString::fromUtf8("mode"), texture->serverLayout()->name() );
     }
     writer.writeEndElement();
-    
+
     if ( texture->downloadUrls().size() > 0 )
     {
         for( int i = 0; i < texture->downloadUrls().size(); ++i )
@@ -73,26 +73,26 @@ bool DgmlTextureTagWriter::write(const GeoNode *node, GeoWriter& writer) const
             writer.writeEndElement();
         }
     }
-    
+
     for( const DownloadPolicy *policy: texture->downloadPolicies() )
     {
         writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_DownloadPolicy) );
-        
+
         if( policy->key().usage() == DownloadBrowse )
         {
             writer.writeAttribute( QString::fromUtf8("usage"), QString::fromUtf8("Browse") );
             writer.writeAttribute( QString::fromUtf8("maximumConnections"), QString::number( policy->maximumConnections() ) );
         }
-        
+
         else if( policy->key().usage()  == DownloadBulk )
         {
             writer.writeAttribute( QString::fromUtf8("usage"), QString::fromUtf8("Bulk") );
             writer.writeAttribute( QString::fromUtf8("maximumConnections"), QString::number( policy->maximumConnections() ) );
         }
-        
-        writer.writeEndElement();    
+
+        writer.writeEndElement();
     }
-    
+
     writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Projection) );
     const GeoSceneAbstractTileProjection::Type tileProjectionType = texture->tileProjectionType();
     if (tileProjectionType == GeoSceneAbstractTileProjection::Mercator) {

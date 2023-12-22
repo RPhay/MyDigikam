@@ -47,7 +47,7 @@ GeoNode* DgmlGeodataTagHandler::parse(GeoParser& parser) const
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
 
-    // Check parent type and make sure that the dataSet type 
+    // Check parent type and make sure that the dataSet type
     // matches the backend of the parent layer
     if (parentItem.represents(dgmlTag_Layer)
     && parentItem.nodeAs<GeoSceneLayer>()->backend() == QString::fromUtf8(dgmlValue_geodata)) {
