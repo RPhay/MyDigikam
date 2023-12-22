@@ -75,7 +75,7 @@ BUGFIXES:
 061 ==> 302598 - Add Proxy support with MediaWiki server.
 062 ==> 478847 - 8.2.0 for Windows contains 8.1.0.
 063 ==> 297297 - Share/load maps from other mapping software.
-064 ==> 
+064 ==> 478790 - Locations metadata not written to IPTC or XMP after reverse geocoding.
 065 ==> 
 066 ==> 
 067 ==> 
