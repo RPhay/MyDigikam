@@ -9,7 +9,7 @@ APPLY_COMMON_POLICIES()
 set(mapscale_SRCS MapScaleFloatItem.cpp)
 set(mapscale_UI MapScaleConfigWidget.ui)
 
-qt_wrap_ui(mapscale_SRCS ${mapscale_UI})
+ki18n_wrap_ui(mapscale_SRCS ${mapscale_UI})
 
 marble_add_plugin(NAME    MapScaleFloatItem
                   SOURCES ${mapscale_SRCS})

@@ -10,7 +10,7 @@ set(navigation_SRCS NavigationFloatItem.cpp ArrowDiscWidget.cpp NavigationButton
 set(navigation_UI navigation.ui)
 
 qt_add_resources(navigation_SRCS navigation.qrc)
-qt_wrap_ui(navigation_SRCS ${navigation_UI})
+ki18n_wrap_ui(navigation_SRCS ${navigation_UI})
 
 marble_add_plugin(NAME    NavigationFloatItem
                   SOURCES ${navigation_SRCS})

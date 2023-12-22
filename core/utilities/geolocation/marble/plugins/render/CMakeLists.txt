@@ -6,5 +6,6 @@
 
 add_subdirectory(compass)
 add_subdirectory(mapscale)
+add_subdirectory(measure)
 add_subdirectory(navigation)
 add_subdirectory(overviewmap)
