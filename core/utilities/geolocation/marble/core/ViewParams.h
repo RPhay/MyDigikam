@@ -10,7 +10,7 @@
 
 /** @file
  * This file contains the headers for ViewParameters.
- * 
+ *
  * @author Inge Wallin  <inge@lysator.liu.se>
  */
 
@@ -22,7 +22,7 @@ namespace Marble
 
 class ViewParamsPrivate;
 
-/** 
+/**
  * @short A public class that controls the painting of a MarbleWidget
  *
  */

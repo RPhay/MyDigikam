@@ -36,7 +36,7 @@ public:
 
     TemplateDocument();
     explicit TemplateDocument(const QString& templateText);
-    ~TemplateDocument(); 
+    ~TemplateDocument();
 
     /**
      * @brief Returns the current template value of @p key

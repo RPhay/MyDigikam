@@ -45,7 +45,7 @@ void ScanlineTextureMapperContext::pixelValueF( const qreal lon, const qreal lat
     // However we need the qreal version to create the high quality mode.
 
     // Convert the lon and lat coordinates of the position on the scanline
-    // measured in radian to the pixel position of the requested 
+    // measured in radian to the pixel position of the requested
     // coordinate on the current tile.
 
     m_prevPixelX = rad2PixelX( lon );
@@ -54,8 +54,8 @@ void ScanlineTextureMapperContext::pixelValueF( const qreal lon, const qreal lat
     qreal posX = m_toTileCoordinatesLon + m_prevPixelX;
     qreal posY = m_toTileCoordinatesLat + m_prevPixelY;
 
-    // Most of the time while moving along the scanLine we'll stay on the 
-    // same tile. However at the tile border we might "fall off". If that 
+    // Most of the time while moving along the scanLine we'll stay on the
+    // same tile. However at the tile border we might "fall off". If that
     // happens we need to find out the next tile that needs to be loaded.
 
     if ( posX  >= (qreal)( m_tileSize.width() )
@@ -83,7 +83,7 @@ void ScanlineTextureMapperContext::pixelValue( const qreal lon, const qreal lat,
     // However we need the qreal version to create the high quality mode.
 
     // Convert the lon and lat coordinates of the position on the scanline
-    // measured in radian to the pixel position of the requested 
+    // measured in radian to the pixel position of the requested
     // coordinate on the current tile.
 
     m_prevPixelX = rad2PixelX( lon );
@@ -91,11 +91,11 @@ void ScanlineTextureMapperContext::pixelValue( const qreal lon, const qreal lat,
     int iPosX = (int)( m_toTileCoordinatesLon + m_prevPixelX );
     int iPosY = (int)( m_toTileCoordinatesLat + m_prevPixelY );
 
-    // Most of the time while moving along the scanLine we'll stay on the 
-    // same tile. However at the tile border we might "fall off". If that 
+    // Most of the time while moving along the scanLine we'll stay on the
+    // same tile. However at the tile border we might "fall off". If that
     // happens we need to find out the next tile that needs to be loaded.
 
-    if ( iPosX  >= m_tileSize.width() 
+    if ( iPosX  >= m_tileSize.width()
          || iPosX < 0
          || iPosY >= m_tileSize.height()
          || iPosY < 0 )
@@ -115,13 +115,13 @@ void ScanlineTextureMapperContext::pixelValue( const qreal lon, const qreal lat,
 }
 
 // This method interpolates color values for skipped pixels in a scanline.
-// 
+//
 // While moving along the scanline we don't move from pixel to pixel but
-// leave out n pixels each time and calculate the exact position and 
-// color value for the new pixel. The pixel values in between get 
-// approximated through linear interpolation across the direct connecting 
+// leave out n pixels each time and calculate the exact position and
+// color value for the new pixel. The pixel values in between get
+// approximated through linear interpolation across the direct connecting
 // line on the original tiles directly.
-// This method will do by far most of the calculations for the 
+// This method will do by far most of the calculations for the
 // texturemapping, so we move towards integer math to improve speed.
 
 void ScanlineTextureMapperContext::pixelValueApproxF( const qreal lon, const qreal lat,
@@ -132,7 +132,7 @@ void ScanlineTextureMapperContext::pixelValueApproxF( const qreal lon, const qre
     qreal stepLat = lat - m_prevLat;
     qreal stepLon = lon - m_prevLon;
 
-    // As long as the distance is smaller than 180 deg we can assume that 
+    // As long as the distance is smaller than 180 deg we can assume that
     // we didn't cross the dateline.
 
     const qreal nInverse = 1.0 / (qreal)(n);
@@ -141,8 +141,8 @@ void ScanlineTextureMapperContext::pixelValueApproxF( const qreal lon, const qre
         const qreal itStepLon = ( rad2PixelX( lon ) - m_prevPixelX ) * nInverse;
         const qreal itStepLat = ( rad2PixelY( lat ) - m_prevPixelY ) * nInverse;
 
-        // To improve speed we unroll 
-        // AbstractScanlineTextureMapper::pixelValue(...) here and 
+        // To improve speed we unroll
+        // AbstractScanlineTextureMapper::pixelValue(...) here and
         // calculate the performance critical issues via integers
 
         qreal itLon = m_prevPixelX + m_toTileCoordinatesLon;
@@ -162,7 +162,7 @@ void ScanlineTextureMapperContext::pixelValueApproxF( const qreal lon, const qre
 
         const bool alwaysCheckTileRange =
                 isOutOfTileRangeF( itLon, itLat, itStepLon, itStepLat, n );
-        
+
         for ( int j=1; j < n; ++j ) {
             qreal posX = itLon + itStepLon * j;
             qreal posY = itLat + itStepLat * j;
@@ -182,7 +182,7 @@ void ScanlineTextureMapperContext::pixelValueApproxF( const qreal lon, const qre
 
             *scanLine = m_tile->pixelF( posX, posY );
 
-            // Just perform bilinear interpolation if there's a color change compared to the 
+            // Just perform bilinear interpolation if there's a color change compared to the
             // last pixel that was evaluated. This speeds up things greatly for maps like OSM
             if ( *scanLine != oldRgb ) {
                 if ( oldPosX != -1 ) {
@@ -205,15 +205,15 @@ void ScanlineTextureMapperContext::pixelValueApproxF( const qreal lon, const qre
         }
     }
 
-    // For the case where we cross the dateline between (lon, lat) and 
+    // For the case where we cross the dateline between (lon, lat) and
     // (prevlon, prevlat) we need a more sophisticated calculation.
-    // However as this will happen rather rarely, we use 
+    // However as this will happen rather rarely, we use
     // pixelValue(...) directly to make the code more readable.
 
     else {
         stepLon = ( TWOPI - fabs(stepLon) ) * nInverse;
         stepLat = stepLat * nInverse;
-        // We need to distinguish two cases:  
+        // We need to distinguish two cases:
         // crossing the dateline from east to west ...
 
         if ( m_prevLon < lon ) {
@@ -221,7 +221,7 @@ void ScanlineTextureMapperContext::pixelValueApproxF( const qreal lon, const qre
             for ( int j = 1; j < n; ++j ) {
                 m_prevLat += stepLat;
                 m_prevLon -= stepLon;
-                if ( m_prevLon <= -M_PI ) 
+                if ( m_prevLon <= -M_PI )
                     m_prevLon += TWOPI;
                 pixelValueF( m_prevLon, m_prevLat, scanLine );
                 ++scanLine;
@@ -230,7 +230,7 @@ void ScanlineTextureMapperContext::pixelValueApproxF( const qreal lon, const qre
 
         // ... and vice versa: from west to east.
 
-        else { 
+        else {
             qreal curStepLon = lon - n * stepLon;
 
             for ( int j = 1; j < n; ++j ) {
@@ -270,7 +270,7 @@ void ScanlineTextureMapperContext::pixelValueApprox( const qreal lon, const qrea
     qreal stepLat = lat - m_prevLat;
     qreal stepLon = lon - m_prevLon;
 
-    // As long as the distance is smaller than 180 deg we can assume that 
+    // As long as the distance is smaller than 180 deg we can assume that
     // we didn't cross the dateline.
 
     const qreal nInverse = 1.0 / (qreal)(n);
@@ -279,8 +279,8 @@ void ScanlineTextureMapperContext::pixelValueApprox( const qreal lon, const qrea
         const int itStepLon = (int)( ( rad2PixelX( lon ) - m_prevPixelX ) * nInverse * 128.0 );
         const int itStepLat = (int)( ( rad2PixelY( lat ) - m_prevPixelY ) * nInverse * 128.0 );
 
-        // To improve speed we unroll 
-        // AbstractScanlineTextureMapper::pixelValue(...) here and 
+        // To improve speed we unroll
+        // AbstractScanlineTextureMapper::pixelValue(...) here and
         // calculate the performance critical issues via integers
 
         int itLon = (int)( ( m_prevPixelX + m_toTileCoordinatesLon ) * 128.0 );
@@ -291,7 +291,7 @@ void ScanlineTextureMapperContext::pixelValueApprox( const qreal lon, const qrea
 
         const bool alwaysCheckTileRange =
                 isOutOfTileRange( itLon, itLat, itStepLon, itStepLat, n );
-                                  
+
         if ( !alwaysCheckTileRange ) {
             int iPosXf = itLon;
             int iPosYf = itLat;
@@ -301,7 +301,7 @@ void ScanlineTextureMapperContext::pixelValueApprox( const qreal lon, const qrea
                 *scanLine = m_tile->pixel( iPosXf >> 7, iPosYf >> 7 );
                 ++scanLine;
             }
-        }        
+        }
         else {
             for ( int j = 1; j < n; ++j ) {
                 int iPosX = ( itLon + itStepLon * j ) >> 7;
@@ -332,15 +332,15 @@ void ScanlineTextureMapperContext::pixelValueApprox( const qreal lon, const qrea
         }
     }
 
-    // For the case where we cross the dateline between (lon, lat) and 
+    // For the case where we cross the dateline between (lon, lat) and
     // (prevlon, prevlat) we need a more sophisticated calculation.
-    // However as this will happen rather rarely, we use 
+    // However as this will happen rather rarely, we use
     // pixelValue(...) directly to make the code more readable.
 
     else {
         stepLon = ( TWOPI - fabs(stepLon) ) * nInverse;
         stepLat = stepLat * nInverse;
-        // We need to distinguish two cases:  
+        // We need to distinguish two cases:
         // crossing the dateline from east to west ...
 
         if ( m_prevLon < lon ) {
@@ -348,7 +348,7 @@ void ScanlineTextureMapperContext::pixelValueApprox( const qreal lon, const qrea
             for ( int j = 1; j < n; ++j ) {
                 m_prevLat += stepLat;
                 m_prevLon -= stepLon;
-                if ( m_prevLon <= -M_PI ) 
+                if ( m_prevLon <= -M_PI )
                     m_prevLon += TWOPI;
                 pixelValue( m_prevLon, m_prevLat, scanLine );
                 ++scanLine;
@@ -357,7 +357,7 @@ void ScanlineTextureMapperContext::pixelValueApprox( const qreal lon, const qrea
 
         // ... and vice versa: from west to east.
 
-        else { 
+        else {
             qreal curStepLon = lon - n * stepLon;
 
             for ( int j = 1; j < n; ++j ) {
@@ -399,7 +399,7 @@ int ScanlineTextureMapperContext::interpolationStep( const ViewportParams *viewp
         return 8;
     }
 
-    // Find the optimal interpolation interval m_nBest for the 
+    // Find the optimal interpolation interval m_nBest for the
     // current image canvas width
     const int width = viewport->width();
 
@@ -409,7 +409,7 @@ int ScanlineTextureMapperContext::interpolationStep( const ViewportParams *viewp
         int nEval = ( width - 1 ) / it + ( width - 1 ) % it;
         if ( nEval < nEvalMin ) {
             nEvalMin = nEval;
-            nBest = it; 
+            nBest = it;
         }
     }
 
@@ -431,8 +431,8 @@ QImage::Format ScanlineTextureMapperContext::optimalCanvasImageFormat( const Vie
 
 void ScanlineTextureMapperContext::nextTile( int &posX, int &posY )
 {
-    // Move from tile coordinates to global texture coordinates 
-    // ( with origin in upper left corner, measured in pixel) 
+    // Move from tile coordinates to global texture coordinates
+    // ( with origin in upper left corner, measured in pixel)
 
     int lon = posX + m_tilePosX;
     if ( lon >= m_globalWidth )
@@ -455,8 +455,8 @@ void ScanlineTextureMapperContext::nextTile( int &posX, int &posY )
     m_tile = m_tileLoader->loadTile( TileId( 0, m_tileLevel, tileCol, tileRow ) );
 
     // Update position variables:
-    // m_tilePosX/Y stores the position of the tiles in 
-    // global texture coordinates 
+    // m_tilePosX/Y stores the position of the tiles in
+    // global texture coordinates
     // ( origin upper left, measured in pixels )
 
     m_tilePosX = tileCol * m_tileSize.width();
@@ -470,8 +470,8 @@ void ScanlineTextureMapperContext::nextTile( int &posX, int &posY )
 
 void ScanlineTextureMapperContext::nextTile( qreal &posX, qreal &posY )
 {
-    // Move from tile coordinates to global texture coordinates 
-    // ( with origin in upper left corner, measured in pixel) 
+    // Move from tile coordinates to global texture coordinates
+    // ( with origin in upper left corner, measured in pixel)
 
     int lon = (int)(posX + m_tilePosX);
     if ( lon >= m_globalWidth )
@@ -494,8 +494,8 @@ void ScanlineTextureMapperContext::nextTile( qreal &posX, qreal &posY )
     m_tile = m_tileLoader->loadTile( TileId( 0, m_tileLevel, tileCol, tileRow ) );
 
     // Update position variables:
-    // m_tilePosX/Y stores the position of the tiles in 
-    // global texture coordinates 
+    // m_tilePosX/Y stores the position of the tiles in
+    // global texture coordinates
     // ( origin upper left, measured in pixels )
 
     m_tilePosX = tileCol * m_tileSize.width();

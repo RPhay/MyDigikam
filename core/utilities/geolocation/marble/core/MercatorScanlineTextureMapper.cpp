@@ -119,7 +119,7 @@ void MercatorScanlineTextureMapper::mapTexture( const ViewportParams *viewport, 
     const int yTop     = qBound(qreal(0.0), realYTop, qreal(imageHeight));
     int yPaintedTop    = yTop;
     int yPaintedBottom = qBound(qreal(0.0), realYBottom, qreal(imageHeight));
- 
+
     yPaintedTop = qBound(0, yPaintedTop, imageHeight);
     yPaintedBottom = qBound(0, yPaintedBottom, imageHeight);
 
@@ -234,7 +234,7 @@ void MercatorScanlineTextureMapper::RenderJob::run()
         }
 
         // copy scanline to improve performance
-        if ( interlaced && y + 1 < m_yPaintedBottom ) { 
+        if ( interlaced && y + 1 < m_yPaintedBottom ) {
 
             const int pixelByteSize = m_canvasImage->bytesPerLine() / imageWidth;
 

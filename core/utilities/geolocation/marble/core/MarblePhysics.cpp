@@ -55,7 +55,7 @@ public:
         else if (m_mode == Jump) {
             qreal jumpDuration = m_timeline.duration();
 
-            // Purely cinematic approach to calculate the jump path        
+            // Purely cinematic approach to calculate the jump path
             const qreal totalDistance = m_planetRadius * m_source.coordinates().sphericalDistanceTo(m_target.coordinates());
             qreal g = qMin(m_source.range(), m_target.range()); // Min altitude
             qreal k = qMax(m_source.range(), m_target.range()); // Base altitude

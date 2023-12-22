@@ -132,7 +132,7 @@ TextureColorizer::TextureColorizer( const QString &seafile,
         offset += 256;
     }
     shadingPainter.end();  // Need to explicitly tell painter lifetime to avoid crash
-    gradientPainter.end(); // on some systems. 
+    gradientPainter.end(); // on some systems.
 
     qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Time elapsed:" << t.elapsed() << "ms";
 }
@@ -167,7 +167,7 @@ void TextureColorizer::setShowRelief( bool show )
 // In addition to this, a simple form of bump mapping is performed to
 // increase the illusion of height differences (see the variable
 // showRelief).
-// 
+//
 
 void TextureColorizer::drawIndividualDocument( GeoPainter *painter, const GeoDataDocument *document )
 {
@@ -265,7 +265,7 @@ void TextureColorizer::colorize( QImage *origimg, const ViewportParams *viewport
 
             EmbossFifo  emboss;
 
-            for ( uchar* readData = readDataStart; 
+            for ( uchar* readData = readDataStart;
                   readData < readDataEnd;
                   readData += 4, ++writeData, ++coastData )
             {
@@ -295,11 +295,11 @@ void TextureColorizer::colorize( QImage *origimg, const ViewportParams *viewport
         for ( int y = yTop; y < yBottom; ++y ) {
             const int  dy = imgry - y;
             int  rx = (int)sqrt( (qreal)( radius * radius - dy * dy ) );
-            int  xLeft  = 0; 
+            int  xLeft  = 0;
             int  xRight = imgwidth;
 
             if ( imgrx-rx > 0 ) {
-                xLeft  = imgrx - rx; 
+                xLeft  = imgrx - rx;
                 xRight = imgrx + rx;
             }
 
@@ -309,7 +309,7 @@ void TextureColorizer::colorize( QImage *origimg, const ViewportParams *viewport
             uchar *readDataStart     = origimg->scanLine( y ) + xLeft * 4;
             const uchar *readDataEnd = origimg->scanLine( y ) + xRight * 4;
 
- 
+
             for ( uchar* readData = readDataStart;
                   readData < readDataEnd;
                   readData += 4, ++writeData, ++coastData )

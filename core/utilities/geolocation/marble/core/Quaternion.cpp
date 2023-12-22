@@ -38,7 +38,7 @@ Quaternion Quaternion::fromSpherical(qreal lon, qreal lat)
     return Quaternion( w, x, y, z );
 }
 
-void Quaternion::getSpherical(qreal &lon, qreal &lat) const 
+void Quaternion::getSpherical(qreal &lon, qreal &lat) const
 {
     qreal  y = v[Q_Y];
     if ( y > 1.0 )
@@ -48,13 +48,13 @@ void Quaternion::getSpherical(qreal &lon, qreal &lat) const
 
     lat = asin( y );
 
-    if(v[Q_X] * v[Q_X] + v[Q_Z] * v[Q_Z] > 0.00005) 
+    if(v[Q_X] * v[Q_X] + v[Q_Z] * v[Q_Z] > 0.00005)
         lon = atan2(v[Q_X], v[Q_Z]);
     else
         lon = 0.0;
 }
 
-void Quaternion::normalize() 
+void Quaternion::normalize()
 {
     (*this) *= 1.0 / length();
 }
@@ -125,7 +125,7 @@ qreal Quaternion::yaw() const // "attitude", theta
                   ( 1.0 - 2.0*(v[Q_Y]*v[Q_Y]+v[Q_Z]*v[Q_Z]) ) );
 }
 
-qreal Quaternion::roll() const // "bank", psi 
+qreal Quaternion::roll() const // "bank", psi
 {
     return asin(2.0*(v[Q_X]*v[Q_Y]+v[Q_Z]*v[Q_W]));
 }

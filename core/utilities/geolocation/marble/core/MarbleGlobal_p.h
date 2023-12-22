@@ -4,7 +4,7 @@
 //
 
 //
-// Description: AbstractTile contains the base class for a single quadtile 
+// Description: AbstractTile contains the base class for a single quadtile
 //
 
 
@@ -23,11 +23,11 @@ class MarbleGlobalPrivate
 {
  public:
     MarbleGlobalPrivate();
-    
+
     virtual ~MarbleGlobalPrivate();
 
     MarbleLocale m_locale;
-    
+
     MarbleGlobal::Profiles m_profiles;
 };
 

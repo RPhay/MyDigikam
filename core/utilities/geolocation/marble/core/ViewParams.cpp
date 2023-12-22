@@ -66,7 +66,7 @@ MapQuality ViewParams::mapQuality( ViewContext viewContext ) const
         return d->m_stillQuality;
 
     Q_ASSERT( viewContext == Animation );
-    return d->m_animationQuality; 
+    return d->m_animationQuality;
 }
 
 MapQuality ViewParams::mapQuality() const

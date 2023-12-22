@@ -348,7 +348,7 @@ qreal ViewportParams::centerLatitude() const
 const GeoDataLatLonAltBox& ViewportParams::viewLatLonAltBox() const
 {
     if (d->m_dirtyBox) {
-        d->m_viewLatLonAltBox = d->m_currentProjection->latLonAltBox( QRect( QPoint( 0, 0 ), 
+        d->m_viewLatLonAltBox = d->m_currentProjection->latLonAltBox( QRect( QPoint( 0, 0 ),
                         d->m_size ),
                         this );
         d->m_dirtyBox = false;
@@ -365,7 +365,7 @@ GeoDataLatLonAltBox ViewportParams::latLonAltBox( const QRect &screenRect ) cons
 qreal ViewportParams::angularResolution() const
 {
     // We essentially divide the diameter by 180 deg and
-    // take half of the result as a guess for the angle per pixel resolution. 
+    // take half of the result as a guess for the angle per pixel resolution.
     // d->m_angularResolution = 0.25 * M_PI / fabs( (qreal)(d->m_radius);
     return d->m_angularResolution;
 }
@@ -382,7 +382,7 @@ bool ViewportParams::resolves ( const GeoDataLatLonAltBox &latLonAltBox, qreal p
            || latLonAltBox.maxAltitude() - latLonAltBox.minAltitude() > altitude;
 }
 
-bool ViewportParams::resolves ( const GeoDataCoordinates &coord1, 
+bool ViewportParams::resolves ( const GeoDataCoordinates &coord1,
                                 const GeoDataCoordinates &coord2 ) const
 {
     qreal lon1, lat1;

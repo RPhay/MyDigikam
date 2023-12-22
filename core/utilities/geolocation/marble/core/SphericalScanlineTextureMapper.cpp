@@ -111,7 +111,7 @@ void SphericalScanlineTextureMapper::mapTexture( const ViewportParams *viewport,
     const int imageHeight = m_canvasImage.height();
     const qint64  radius      = viewport->radius();
 
-    // Calculate the actual y-range of the map on the screen 
+    // Calculate the actual y-range of the map on the screen
     const int skip = ( mapQuality == LowQuality ) ? 1
                                                   : 0;
     const int yTop = ( imageHeight / 2 - radius >= 0 ) ? imageHeight / 2 - radius
@@ -177,10 +177,10 @@ void SphericalScanlineTextureMapper::RenderJob::run()
                                           * ( y - imageHeight / 2 ) ) ) );
 
         // Calculate the actual x-range of the map within the current scanline.
-        // 
+        //
         // If the circular border of the earth disk is still visible then xLeft
         // equals the scanline position of the most left pixel that gets covered
-        // by the earth disk. In terms of math this equals the half image width minus 
+        // by the earth disk. In terms of math this equals the half image width minus
         // the radius component on the current scanline in x direction ("rx").
         //
         // If the zoom factor is high enough then the whole screen gets covered
@@ -198,13 +198,13 @@ void SphericalScanlineTextureMapper::RenderJob::run()
         const int xIpLeft  = ( imageWidth / 2 - rx > 0 ) ? n * (int)( xLeft / n + 1 )
                                                          : 1;
         const int xIpRight = ( imageWidth / 2 - rx > 0 ) ? n * (int)( xRight / n - 1 )
-                                                         : n * (int)( xRight / n - 1 ) + 1; 
+                                                         : n * (int)( xRight / n - 1 ) + 1;
 
         // Decrease pole distortion due to linear approximation ( y-axis )
         bool crossingPoleArea = false;
         if ( northPole.v[Q_Z] > 0
              && northPoleY - ( n * 0.75 ) <= y
-             && northPoleY + ( n * 0.75 ) >= y ) 
+             && northPoleY + ( n * 0.75 ) >= y )
         {
             crossingPoleArea = true;
         }
@@ -232,7 +232,7 @@ void SphericalScanlineTextureMapper::RenderJob::run()
                     x += n - 1;
                     interpolate = !printQuality;
                     ++ncount;
-                } 
+                }
             }
             else
                 interpolate = false;
@@ -265,7 +265,7 @@ void SphericalScanlineTextureMapper::RenderJob::run()
 //          Comment out the pixelValue line and run Marble if you want
 //          to understand the interpolation:
 
-//          Uncomment the crossingPoleArea line to check precise 
+//          Uncomment the crossingPoleArea line to check precise
 //          rendering around north pole:
 
 //            if ( !crossingPoleArea )
@@ -280,12 +280,12 @@ void SphericalScanlineTextureMapper::RenderJob::run()
         }
 
         // copy scanline to improve performance
-        if ( interlaced && y + 1 < m_yBottom ) { 
+        if ( interlaced && y + 1 < m_yBottom ) {
 
             const int pixelByteSize = m_canvasImage->bytesPerLine() / imageWidth;
 
-            memcpy( m_canvasImage->scanLine( y + 1 ) + xLeft * pixelByteSize, 
-                    m_canvasImage->scanLine( y ) + xLeft * pixelByteSize, 
+            memcpy( m_canvasImage->scanLine( y + 1 ) + xLeft * pixelByteSize,
+                    m_canvasImage->scanLine( y ) + xLeft * pixelByteSize,
                     ( xRight - xLeft ) * pixelByteSize );
             ++y;
         }

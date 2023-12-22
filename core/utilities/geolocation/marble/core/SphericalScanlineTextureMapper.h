@@ -26,7 +26,7 @@ class StackedTileLoader;
  * @short Texture mapping onto a sphere
  *
  * This class provides a fast way to map textures onto a sphere
- * without making use of hardware acceleration. 
+ * without making use of hardware acceleration.
  *
  * @author Torsten Rahn <rahn@kde.org>
  */

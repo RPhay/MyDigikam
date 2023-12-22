@@ -51,8 +51,8 @@ private:
     // method for precise interpolation
     void nextTile( qreal& posx, qreal& posy );
 
-    // Converts Radian to global texture coordinates 
-    // ( with origin in center, measured in pixel) 
+    // Converts Radian to global texture coordinates
+    // ( with origin in center, measured in pixel)
     qreal rad2PixelX( const qreal lon ) const;
     qreal rad2PixelY( const qreal lat ) const;
 
@@ -83,12 +83,12 @@ private:
     // Coordinate transformations:
 
     // Position of the tile in global Texture Coordinates
-    // ( with origin in upper left corner, measured in pixel) 
+    // ( with origin in upper left corner, measured in pixel)
     int          m_tilePosX;
     int          m_tilePosY;
 
-    // Converts global texture coordinates 
-    // ( with origin in center, measured in pixel) 
+    // Converts global texture coordinates
+    // ( with origin in center, measured in pixel)
     // to tile coordinates ( measured in pixel )
     qreal  m_toTileCoordinatesLon;
     qreal  m_toTileCoordinatesLat;
@@ -123,8 +123,8 @@ inline qreal ScanlineTextureMapperContext::rad2PixelY( const qreal lat ) const
     case GeoSceneAbstractTileProjection::Mercator:
         if ( fabs( lat ) < 1.4835 ) {
             // We develop the inverse Gudermannian into a MacLaurin Series:
-            // In spite of the many elements needed to get decent 
-            // accuracy this is still faster by far than calculating the 
+            // In spite of the many elements needed to get decent
+            // accuracy this is still faster by far than calculating the
             // trigonometric expression:
             // return - asinh( tan( lat ) ) * 0.5 * m_normGlobalHeight;
 
@@ -134,10 +134,10 @@ inline qreal ScanlineTextureMapperContext::rad2PixelY( const qreal lat ) const
         }
         if ( lat >= +1.4835 )
             // asinh( tan (1.4835)) => 3.1309587
-            return - 3.1309587 * 0.5 * m_normGlobalHeight; 
+            return - 3.1309587 * 0.5 * m_normGlobalHeight;
         if ( lat <= -1.4835 )
             // asinh( tan( -1.4835 )) => −3.1309587
-            return 3.1309587 * 0.5 * m_normGlobalHeight; 
+            return 3.1309587 * 0.5 * m_normGlobalHeight;
     }
 
     // Dummy value to avoid a warning.

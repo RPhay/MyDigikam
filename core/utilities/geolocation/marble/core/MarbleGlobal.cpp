@@ -36,13 +36,13 @@ MarbleGlobal::~MarbleGlobal()
 
 MarbleGlobal * MarbleGlobal::getInstance()
 {
-    static MarbleGlobal instance; 
-    return &instance; 
+    static MarbleGlobal instance;
+    return &instance;
 }
 
 MarbleLocale * MarbleGlobal::locale() const
 {
-    return &d->m_locale; 
+    return &d->m_locale;
 }
 
 MarbleGlobal::Profiles MarbleGlobal::profiles() const {

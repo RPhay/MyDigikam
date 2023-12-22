@@ -234,7 +234,7 @@ void EquirectScanlineTextureMapper::RenderJob::run()
         }
 
         // copy scanline to improve performance
-        if ( interlaced && y + 1 < m_yPaintedBottom ) { 
+        if ( interlaced && y + 1 < m_yPaintedBottom ) {
 
             const int pixelByteSize = m_canvasImage->bytesPerLine() / imageWidth;
 
