@@ -9,6 +9,7 @@ Maintenance:  Add new tool to assign tag automatically to images using deep lear
 QueueManager: New tool to assign tag automatically to images using deep learning neural network engine.
 General     : Add Generic Network Proxy Settings to acess on Internet ressources.
 Bundles     : AppImage uses frameworks Qt 5.15.12 and KDE 5.113.
+General     : Update internal Libraw to 0.21.2 (https://www.libraw.org/news/libraw-0-21-2-release).
 
 *****************************************************************************************************
 BUGFIXES:
