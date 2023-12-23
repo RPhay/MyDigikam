@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : manager to load external plugins at run-time: private container
  *
- * SPDX-FileCopyrightText: 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -119,7 +119,8 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
         {
             it.next();
 
-            if (!it.filePath().contains(QLatin1String("dSYM")) &&  // Ignore debug binary extensions under MacOS
+            if (!it.filePath().contains(QLatin1String("dSYM"))   &&  // Ignore debug binary extensions under MacOS
+                !it.filePath().contains(QLatin1String("marble")) &&  // Ignore Marble plugins.
                 !dupFiles.contains(it.fileInfo().baseName()))
             {
                 dupFiles << it.fileInfo().baseName();
