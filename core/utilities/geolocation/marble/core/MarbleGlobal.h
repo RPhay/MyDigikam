@@ -282,14 +282,12 @@ class  DIGIKAM_EXPORT MarbleGlobal
     Profiles profiles() const;
     void setProfiles( Profiles profiles );
 
-    /** @deprecated Profiles are detected automatically now. This only returns profiles() anymore */
-     static Profiles detectProfiles();
-
  private:
-    MarbleGlobal();
 
+    MarbleGlobal();
     Q_DISABLE_COPY( MarbleGlobal )
-    MarbleGlobalPrivate  * const d;
+
+    MarbleGlobalPrivate* const d;
 };
 
 }

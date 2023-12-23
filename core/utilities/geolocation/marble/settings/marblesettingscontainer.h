@@ -17,107 +17,52 @@
 
 // Qt includes
 
-#include <QFlags>
 #include <QDebug>
-#include <QStringList>
 
 // Local includes
 
+#include "MarbleGlobal.h"
+#include "MarbleLocale.h"
 #include "digikam_export.h"
-#include "metaengine.h"
 
 class KConfigGroup;
+
+using namespace Marble;
 
 namespace Digikam
 {
 
 /**
- * The class MarbleSettingsContainer encapsulates all metadata related settings.
- * NOTE: this allows supply changed arguments to MetadataHub without changing the global settings.
+ * The class MarbleSettingsContainer encapsulates all Marble related settings.
  */
 class DIGIKAM_EXPORT MarbleSettingsContainer
 {
 public:
 
-    /**
-     * Describes the allowed and desired operation when rotating a picture.
-     * The modes are in escalating order and describe if an operation is allowed.
-     * What is actually done will be governed by what is possible:
-     * 1) RAW files cannot by rotated by content, setting the metadata may be problematic
-     * 2) Read-Only files cannot edited, neither content nor metadata
-     * 3) Writable files will have lossy compression
-     * 4) Only JPEG and PGF offer lossless rotation
-     * Using a contents-based rotation always implies resetting the flag.
-     */
-    enum RotationBehaviorFlag
-    {
-        NoRotation               = 0,
-        RotateByInternalFlag     = 1 << 0,
-        RotateByMetadataFlag     = 1 << 1,
-        RotateByLosslessRotation = 1 << 2,
-        RotateByLossyRotation    = 1 << 3,
-
-        RotatingFlags            = RotateByInternalFlag     | RotateByMetadataFlag,
-        RotatingPixels           = RotateByLosslessRotation | RotateByLossyRotation
-    };
-    Q_DECLARE_FLAGS(RotationBehaviorFlags, RotationBehaviorFlag)
-
-    enum AlbumDateSource
-    {
-        NewestItemDate = 0,
-        OldestItemDate,
-        AverageDate,
-        FolderDate,
-        IgnoreDate
-    };
-
-public:
-
-    explicit MarbleSettingsContainer();
-    ~MarbleSettingsContainer();
+    MarbleSettingsContainer()  = default;
+    ~MarbleSettingsContainer() = default;
 
 public:
 
     void readFromConfig(KConfigGroup& group);
-    void writeToConfig(KConfigGroup& group)  const;
-
-    QStringList defaultExifToolSearchPaths() const;
+    void writeToConfig(KConfigGroup& group) const;
 
 public:
 
-    bool                            exifRotate;
-    bool                            exifSetOrientation;
+    MarbleLocale::MeasurementSystem measurementSys           = MarbleLocale::MetricSystem;
 
-    bool                            saveComments;
-    bool                            saveDateTime;
-    bool                            savePickLabel;
-    bool                            saveColorLabel;
-    bool                            saveRating;
+    Marble::AngleUnit               angleUnit                = Marbleglobal::DecimalDegree;
 
-    bool                            saveTemplate;
-    bool                            saveTags;
-    bool                            saveFaceTags;
-    bool                            savePosition;
+    Marble::MapQuality              stillQ                   = MarbleGlobal::HighQuality;
+    Marble::MapQuality              animationQ               = MarbleGlobal::LowQuality;
 
-    bool                            writeWithExifTool;
-    bool                            writeRawFiles;
-    bool                            writeDngFiles;
-    bool                            updateFileTimeStamp;
-    bool                            rescanImageIfModified;
-    bool                            useXMPSidecar4Reading;
-    bool                            useCompatibleFileName;
-    bool                            useLazySync;
-    bool                            useFastScan;
+    QFont                           mapFont;
 
-    MetaEngine::MetadataWritingMode metadataWritingMode;
+    bool                            inertialRotation         = true;
+    bool                            mouseRotation            = true;
 
-    RotationBehaviorFlags           rotationBehavior;
-
-    AlbumDateSource                 albumDateFrom;
-
-    QStringList                     sidecarExtensions;
-
-    QString                         exifToolPath;
+    int                             volatileTileCacheLimit   = 100;
+    int                             persistentTileCacheLimit = 999999;
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.
