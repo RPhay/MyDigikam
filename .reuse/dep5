@@ -3,15 +3,43 @@ Upstream-Name: digiKam
 Upstream-Contact: digiKam team <digikamdeveloper@gmail.com>
 Source: https://invent.kde.org/graphics/digikam/
 
-Files: project/NEWS*
+Files: .*
 Copyright: none
 License: GPL-2.0
 
-Files: project/*README*
+Files: core/*rc
 Copyright: none
 License: GPL-2.0
 
-Files: project/*TODO*
+Files: AUTHORS
+Copyright: none
+License: GPL-2.0
+
+Files: ChangeLog
+Copyright: none
+License: GPL-2.0
+
+Files: Mainpage.dox
+Copyright: none
+License: GPL-2.0
+
+Files: PACKAGING
+Copyright: none
+License: GPL-2.0
+
+Files: *.md
+Copyright: none
+License: GPL-2.0
+
+Files: *NEWS*
+Copyright: none
+License: GPL-2.0
+
+Files: *README*
+Copyright: none
+License: GPL-2.0
+
+Files: *TODO*
 Copyright: none
 License: GPL-2.0
 
@@ -20,10 +48,6 @@ Copyright: none
 License: GPL-2.0
 
 Files: project/*xsl
-Copyright: none
-License: GPL-2.0
-
-Files: project/*GPL*.txt
 Copyright: none
 License: GPL-2.0
 

@@ -7,7 +7,7 @@ NEW FEATURES:
 BUGFIXES:
 
 001 ==> 344484 - digiKam 4.8.0 compilation error : undefined reference to `cv::Exception::Exception.
-002 ==> 203733 - Syncing EXIF Artist and Copyright fields with IPTC/XMP.
+002 ==> 203733 - Syncing EXIF Artist and Right fields with IPTC/XMP.
 003 ==> 338753 - Exif ImageDescription field is being used incorrectly.
 004 ==> 330224 - Add collection from network share is silently ignored [patch].
 005 ==> 344699 - Maintenance is using the wrong face data management [patch].
