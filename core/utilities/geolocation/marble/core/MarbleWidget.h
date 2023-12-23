@@ -251,7 +251,6 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
      * @return @c Mercator          another flat map
      */
     Projection projection() const;
-//    int projection() const;
 
     //@}
 
@@ -1009,6 +1008,7 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
     //@{
 
     void clearVolatileTileCache();
+
     /**
      * @brief  Set the limit of the volatile (in RAM) tile cache.
      * @param  kiloBytes The limit in kilobytes.
@@ -1063,6 +1063,7 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
     //@}
 
  Q_SIGNALS:
+
     /**
      * @brief Signal that the zoom has changed, and to what.
      * @param zoom  The new zoom value.
@@ -1090,14 +1091,14 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
     void framesPerSecond( qreal fps );
 
     /**
-     * This signal is Q_EMIT when a new rectangle region is selected over the map.
+     * This signal is emitted when a new rectangle region is selected over the map.
      *
      * @param boundingBox The geographical coordinates of the selected region
      */
     void regionSelected(const GeoDataLatLonBox &boundingBox);
 
     /**
-     * This signal is Q_EMIT when the settings of a plugin changed.
+     * This signal is emitted when the settings of a plugin changed.
      */
     void pluginSettingsChanged();
 
@@ -1107,7 +1108,7 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
     void renderPluginInitialized( RenderPlugin *renderPlugin );
 
     /**
-     * This signal is Q_EMITted when the visible region of the map changes. This typically happens
+     * This signal is emitted when the visible region of the map changes. This typically happens
      * when the user moves the map around or zooms.
      */
     void visibleLatLonAltBoxChanged( const GeoDataLatLonAltBox& visibleLatLonAltBox );
