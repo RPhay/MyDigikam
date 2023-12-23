@@ -54,14 +54,14 @@ void set_point_type(FocusPoint& point,
 {
     point.setType(FocusPoint::TypePoint::Inactive);
 
-    if (af_selected.contains(QString::number(index)))
+    if (af_infocus.isEmpty() && af_selected.contains(QString::number(index)))
     {
-        point.setType( FocusPoint::TypePoint::Selected);
+        point.setType(FocusPoint::TypePoint::Selected);
     }
 
     if (af_infocus.contains(QString::number(index)))
     {
-        point.setType(point.getType() | FocusPoint::TypePoint::Selected);
+        point.setType(FocusPoint::TypePoint::SelectedInFocus);
     }
 }
 
@@ -188,6 +188,27 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
                                                                              << QLatin1String("AFPointsInFocus"),
                                                   true).toStringList();
     QStringList af_infocus  = findValue(TagNameRoot, QLatin1String("AFPointsInFocus"), true).toStringList();
+
+    // Check and remove possible (none) keyword
+
+    if (af_infocus.size() == 1)
+    {
+        bool ok     = false;
+        int afPoint = af_infocus.first().toInt(&ok);
+
+        if ((afPoint == 0) && !ok)
+        {
+            af_infocus.clear();
+        }
+    }
+
+    // If we have focus points in AFPointsInFocus,
+    // remove them from AFPointsSelected
+
+    Q_FOREACH (const QString& key, af_infocus)
+    {
+        af_selected.removeAll(key);
+    }
 
     // Get direction
 
