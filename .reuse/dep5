@@ -23,7 +23,7 @@ Files: project/*xsl
 Copyright: none
 License: GPL-2.0
 
-Files: project/*txt
+Files: project/*GPL*.txt
 Copyright: none
 License: GPL-2.0
 
@@ -47,9 +47,53 @@ Files: project/documents/*
 Copyright: none
 License: GPL-2.0
 
-Files: core/data/*
+Files: core/data/*html
+Copyright: none
+License: GPL-2.0
+
+Files: core/data/*jpg
 Copyright: none
 License: CC0-1.0
+
+Files: core/data/*png
+Copyright: none
+License: CC0-1.0
+
+Files: core/data/*svg*
+Copyright: none
+License: CC0-1.0
+
+Files: core/data/*desktop*
+Copyright: none
+License: CC0-1.0
+
+Files: core/data/*colors
+Copyright: none
+License: GPL-2.0
+
+Files: core/data/*dkamp
+Copyright: none
+License: GPL-2.0
+
+Files: core/data/*xml
+Copyright: none
+License: GPL-2.0
+
+Files: core/data/*icc
+Copyright: none
+License: GPL-2.0
+
+Files: core/data/*icm
+Copyright: none
+License: GPL-2.0
+
+Files: core/data/*.1
+Copyright: none
+License: GPL-2.0
+
+Files: core/data/*docbook
+Copyright: none
+License: GPL-2.0
 
 Files: core/utilities/geolocation/marble/data/flags/*
 Copyright: none
