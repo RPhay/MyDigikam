@@ -65,7 +65,7 @@ QString AzimuthalEquidistantProjection::description() const
 
 QIcon AzimuthalEquidistantProjection::icon() const
 {
-    return QIcon::fromtheme(QStringLiteral("map-globe"));
+    return QIcon::fromTheme(QStringLiteral("map-globe"));
 }
 
 AzimuthalEquidistantProjectionPrivate::AzimuthalEquidistantProjectionPrivate( AzimuthalEquidistantProjection * parent )
