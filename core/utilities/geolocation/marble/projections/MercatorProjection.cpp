@@ -48,7 +48,7 @@ QString MercatorProjection::description() const
 
 QIcon MercatorProjection::icon() const
 {
-    return QIcon(QStringLiteral(":/icons/map-mercator.png"));
+    return QIcon::fromTheme(QStringLiteral("map-mercator"));
 }
 
 qreal MercatorProjection::maxValidLat() const

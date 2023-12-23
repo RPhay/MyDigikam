@@ -71,7 +71,7 @@ QString GnomonicProjection::description() const
 
 QIcon GnomonicProjection::icon() const
 {
-    return QIcon(QStringLiteral(":/icons/map-gnomonic.png"));
+    return QIcon::fromTheme(QStringLiteral("map-gnomonic"));
 }
 
 qreal GnomonicProjection::clippingRadius() const

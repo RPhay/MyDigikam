@@ -73,7 +73,7 @@ QString SphericalProjection::description() const
 
 QIcon SphericalProjection::icon() const
 {
-    return QIcon(QStringLiteral(":/icons/map-globe.png"));
+    return QIcon::fromTheme(QStringLiteral("map-globe"));
 }
 
 bool SphericalProjection::screenCoordinates( const GeoDataCoordinates &coordinates,

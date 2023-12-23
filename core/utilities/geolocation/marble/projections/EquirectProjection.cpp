@@ -42,7 +42,7 @@ QString EquirectProjection::description() const
 
 QIcon EquirectProjection::icon() const
 {
-    return QIcon(QStringLiteral(":/icons/map-flat.png"));
+    return QIcon::fromTheme(QStringLiteral("map-flat"));
 }
 
 bool EquirectProjection::screenCoordinates( const GeoDataCoordinates &geopoint,

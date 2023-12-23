@@ -85,7 +85,7 @@ QString VerticalPerspectiveProjection::description() const
 
 QIcon VerticalPerspectiveProjection::icon() const
 {
-    return QIcon(QStringLiteral(":/icons/map-globe.png"));
+    return QIcon::fromtheme(QStringLiteral("map-globe"));
 }
 
 void VerticalPerspectiveProjectionPrivate::calculateConstants(qreal radius) const

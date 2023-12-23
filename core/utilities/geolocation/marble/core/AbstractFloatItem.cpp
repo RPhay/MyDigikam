@@ -268,7 +268,7 @@ QMenu* AbstractFloatItem::contextMenu()
     {
         d->m_contextMenu = new QMenu;
 
-        QAction *lockAction = d->m_contextMenu->addAction(QIcon(QStringLiteral(":/icons/unlock.png")), i18n("&Lock"));
+        QAction *lockAction = d->m_contextMenu->addAction(QIcon::fromTheme(QStringLiteral("unlock")), i18n("&Lock"));
         lockAction->setCheckable( true );
         lockAction->setChecked( positionLocked() );
         connect( lockAction, SIGNAL(triggered(bool)), this, SLOT(setPositionLocked(bool)) );
