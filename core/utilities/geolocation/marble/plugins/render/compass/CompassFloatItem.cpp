@@ -92,7 +92,7 @@ QVector<PluginAuthor> CompassFloatItem::pluginAuthors() const
 
 QIcon CompassFloatItem::icon() const
 {
-    return QIcon(QStringLiteral(":/icons/compass.png"));
+    return QIcon::fromTheme(QStringLiteral("compass"));
 }
 
 void CompassFloatItem::initialize()

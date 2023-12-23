@@ -104,7 +104,7 @@ QVector<PluginAuthor> MapScaleFloatItem::pluginAuthors() const
 
 QIcon MapScaleFloatItem::icon () const
 {
-    return QIcon(QStringLiteral(":/icons/scalebar.png"));
+    return QIcon::fromTheme(QStringLiteral("transform-scale-vertical"));
 }
 
 

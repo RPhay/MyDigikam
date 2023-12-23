@@ -95,7 +95,7 @@ QVector<PluginAuthor> NavigationFloatItem::pluginAuthors() const
 
 QIcon NavigationFloatItem::icon() const
 {
-    return QIcon(QStringLiteral(":/icons/navigation.png"));
+    return QIcon::fromTheme(QStringLiteral("circular-arrow-shape"));
 }
 
 void NavigationFloatItem::initialize()
@@ -238,7 +238,7 @@ void NavigationFloatItem::contextMenuEvent( QWidget *w, QContextMenuEvent *e )
         m_activateCurrentPositionButtonAction = new QAction( QIcon(),
                                                              i18n( "Current Location Button" ),
                                                              m_contextMenu );
-        m_activateHomeButtonAction = new QAction(QIcon(QStringLiteral(":/icons/go-home.png")),
+        m_activateHomeButtonAction = new QAction(QIcon::fromTheme(QStringLiteral("go-home")),
                                                              i18n( "Home Button" ),
                                                              m_contextMenu );
         m_activateHomeButtonAction->setVisible( !m_showHomeButton );

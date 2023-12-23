@@ -127,7 +127,7 @@ QVector<PluginAuthor> MeasureToolPlugin::pluginAuthors() const
 
 QIcon MeasureToolPlugin::icon () const
 {
-    return QIcon(QStringLiteral(":/icons/measure.png"));
+    return QIcon::fromTheme(QStringLiteral("measure"));
 }
 
 void MeasureToolPlugin::initialize ()
@@ -137,7 +137,7 @@ void MeasureToolPlugin::initialize ()
 
 bool MeasureToolPlugin::isInitialized () const
 {
-    return m_fontascent >= 0;
+    return (m_fontascent >= 0);
 }
 
 QDialog *MeasureToolPlugin::configDialog()
@@ -618,7 +618,7 @@ void MeasureToolPlugin::addContextItems()
     MarbleWidgetPopupMenu *menu = m_marbleWidget->popupMenu();
 
     // Connect the inputHandler and the measure tool to the popup menu
-    m_addMeasurePointAction = new QAction(QIcon(QStringLiteral(":/icons/measure.png")), i18n("Add &Measure Point"), this);
+    m_addMeasurePointAction = new QAction(QIcon::fromTheme(QStringLiteral("measure")), i18n("Add &Measure Point"), this);
     m_removeLastMeasurePointAction = new QAction( i18n( "Remove &Last Measure Point" ), this );
     m_removeLastMeasurePointAction->setEnabled( false );
     m_removeMeasurePointsAction = new QAction( i18n( "&Remove Measure Points" ), this );

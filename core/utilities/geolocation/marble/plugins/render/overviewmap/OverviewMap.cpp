@@ -108,7 +108,7 @@ QVector<PluginAuthor> OverviewMap::pluginAuthors() const
 
 QIcon OverviewMap::icon () const
 {
-    return QIcon(QStringLiteral(":/icons/worldmap.png"));
+    return QIcon::fromTheme(QStringLiteral("map-globe"));
 }
 
 QDialog *OverviewMap::configDialog()
