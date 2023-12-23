@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 00:39+0000\n"
+"POT-Creation-Date: 2023-12-23 00:39+0000\n"
 "PO-Revision-Date: 2023-11-13 16:53+0300\n"
 "Last-Translator: Алевтина  <karashokovaaa@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -2966,8 +2966,10 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Карта"
 
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:119
 #: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Labels"
@@ -57051,6 +57053,198 @@ msgstr ""
 msgid "&Ratio Scale"
 msgstr "Рациональное число"
 
+#. i18n: ectx: property (windowTitle), widget (QDialog, MeasureConfigDialog)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:14
+#, fuzzy, kde-format
+#| msgid "Database Configuration"
+msgid "Measure Tool Configuration"
+msgstr "Параметры базы данных"
+
+#. i18n: ectx: property (text), widget (QLabel, modeLabel)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:20
+#, fuzzy, kde-format
+#| msgid "Album Type"
+msgid "Ruler Type"
+msgstr "Тип альбома"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
+#. i18n: ectx: attribute (title), widget (QWidget, tab_1)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:28
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:45
+#, kde-format
+msgid "Polygon"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:33
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:127
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Circle"
+msgstr "Круг"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:51
+#, fuzzy, kde-format
+#| msgid "Image labels"
+msgid "Segment labels"
+msgstr "Ярлыки изображения"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:60
+#, fuzzy, kde-format
+#| msgid "Distance:"
+msgid "Distance "
+msgstr "Расстояние:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:70
+#, fuzzy, kde-format
+#| msgctxt "@info: media loading"
+#| msgid "Buffering..."
+msgid "Bearing"
+msgstr "Буферизация..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelChangeCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:80
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Saving changes -"
+msgid "Bearing Change"
+msgstr "Сохранение изменений —"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showPerimeter)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:90
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Parameters"
+msgid "Perimeter"
+msgstr "Параметры"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showPolygonAreaLabelChangeCheckBox)
+#. i18n: ectx: property (text), widget (QCheckBox, m_showCircleAreaLabelChangeCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:100
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:159
+#, kde-format
+msgid "Area"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showRadiusLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:142
+#, fuzzy, kde-format
+#| msgid "Radius:"
+msgid "Radius"
+msgstr "Радиус:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showCircumference)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:152
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Reference"
+msgid "Circumference"
+msgstr "Ссылка"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:87
+#, fuzzy, kde-format
+#| msgid "Base Tools"
+msgid "Measure Tool"
+msgstr "Основные инструменты"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:92
+#, fuzzy, kde-format
+#| msgid "Base Tools"
+msgid "&Measure Tool"
+msgstr "Основные инструменты"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:107
+#, kde-format
+msgid "Measure distances between two or more points."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:367
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:482
+#, kde-format
+msgid ""
+"Area:\n"
+"%1"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:385
+#, kde-format
+msgid ""
+"Circumference:\n"
+"%1"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:500
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Parameters"
+msgid ""
+"Perimeter:\n"
+"%1"
+msgstr "Параметры"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:558
+#, kde-format
+msgid "Polygon Ruler"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:560
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Circle Ruler"
+msgstr "Круг"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:563
+#, kde-format
+msgid "Total Distance: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:565
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:574
+#, fuzzy, kde-format
+#| msgid "Author: %1<br/><br/>"
+msgid "Area: %1<br/>\n"
+msgstr "Автор: %1<br/><br/>"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:567
+#, kde-format
+msgid "Perimeter: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:570
+#, fuzzy, kde-format
+#| msgid "Radius:"
+msgid "Radius: %1<br/>\n"
+msgstr "Радиус:"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:572
+#, kde-format
+msgid "Circumference: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:621
+#, fuzzy, kde-format
+#| msgid "Add a focus point"
+msgid "Add &Measure Point"
+msgstr "Добавить точку фокусировки"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:622
+#, fuzzy, kde-format
+#| msgid "Remove Account"
+msgid "Remove &Last Measure Point"
+msgstr "Удалить учётную запись"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:624
+#, fuzzy, kde-format
+#| msgid "Remove Account"
+msgid "&Remove Measure Points"
+msgstr "Удалить учётную запись"
+
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
@@ -62247,31 +62441,31 @@ msgstr "Описание:"
 msgid "New Workflow"
 msgstr "Новый профиль пакетной обработки"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:90
+#: core/utilities/queuemanager/views/workflowlist.cpp:106
 #, kde-format
 msgctxt "@title: batch workflow name"
 msgid "Title"
 msgstr "Заголовок"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:91
+#: core/utilities/queuemanager/views/workflowlist.cpp:107
 #, kde-format
 msgctxt "@title: batch workflow tools list"
 msgid "Tools"
 msgstr "Инструменты"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:92
+#: core/utilities/queuemanager/views/workflowlist.cpp:108
 #, kde-format
 msgctxt "@title: batch workflow description"
 msgid "Description"
 msgstr "Описание"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:115
+#: core/utilities/queuemanager/views/workflowlist.cpp:131
 #, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "Управление очередями пакетной обработки"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:116
+#: core/utilities/queuemanager/views/workflowlist.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62281,37 +62475,37 @@ msgstr ""
 "Некоторые профили пакетной обработки не удалось загрузить из файла "
 "конфигурации вследствие несовместимой версии инструментария."
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:274
+#: core/utilities/queuemanager/views/workflowlist.cpp:290
 #, kde-format
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "Привязать профиль пакетной обработки к текущей очереди"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:275
+#: core/utilities/queuemanager/views/workflowlist.cpp:291
 #, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "Изменить профиль пакетной обработки"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:276
+#: core/utilities/queuemanager/views/workflowlist.cpp:292
 #, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "Обновить рабочий процесс"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:277
+#: core/utilities/queuemanager/views/workflowlist.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "Удалить профиль пакетной обработки"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:318
+#: core/utilities/queuemanager/views/workflowlist.cpp:344
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "Удаление профиля пакетной обработки"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:319
+#: core/utilities/queuemanager/views/workflowlist.cpp:345
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
@@ -66422,7 +66616,7 @@ msgid "Sidecars"
 msgstr "Дополнительные файлы"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/setup/misc/proxysettingswidget.ui:20
+#: core/utilities/setup/misc/proxysettingswidget.ui:32
 #, fuzzy, kde-format
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
@@ -66469,48 +66663,48 @@ msgstr ""
 "</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/setup/misc/proxysettingswidget.ui:23
+#: core/utilities/setup/misc/proxysettingswidget.ui:35
 #, fuzzy, kde-format
-#| msgid "Network error"
-msgid "&Network Proxy"
-msgstr "Ошибка сети"
+#| msgid "Remote Server Settings"
+msgid "&Network Proxy Server Settings"
+msgstr "Параметры удалённого сервера"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
-#: core/utilities/setup/misc/proxysettingswidget.ui:31
+#: core/utilities/setup/misc/proxysettingswidget.ui:43
 #, kde-format
 msgid "&Proxy:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
-#: core/utilities/setup/misc/proxysettingswidget.ui:48
+#: core/utilities/setup/misc/proxysettingswidget.ui:60
 #, fuzzy, kde-format
 #| msgid "Host Port:"
 msgid "P&ort:"
 msgstr "Порт:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:104
+#: core/utilities/setup/misc/proxysettingswidget.ui:116
 #, fuzzy, kde-format
 #| msgid "Fix type"
 msgid "Proxy type:"
 msgstr "Тип фиксации:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:112
+#: core/utilities/setup/misc/proxysettingswidget.ui:124
 #, kde-format
 msgid "Http"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:117
+#: core/utilities/setup/misc/proxysettingswidget.ui:129
 #, kde-format
 msgid "Socks5"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
 #. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
-#: core/utilities/setup/misc/proxysettingswidget.ui:156
 #: core/utilities/setup/misc/proxysettingswidget.ui:168
+#: core/utilities/setup/misc/proxysettingswidget.ui:180
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Presentation"
@@ -66518,7 +66712,7 @@ msgid "Requires authentication"
 msgstr "Презентация"
 
 #. i18n: ectx: property (text), widget (QLabel, label_username)
-#: core/utilities/setup/misc/proxysettingswidget.ui:174
+#: core/utilities/setup/misc/proxysettingswidget.ui:186
 #, fuzzy, kde-format
 #| msgctxt "piwigo login settings"
 #| msgid "Username:"
@@ -66526,7 +66720,7 @@ msgid "U&sername:"
 msgstr "Имя пользователя:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_password)
-#: core/utilities/setup/misc/proxysettingswidget.ui:184
+#: core/utilities/setup/misc/proxysettingswidget.ui:196
 #, fuzzy, kde-format
 #| msgid "Password:"
 msgid "&Password:"
@@ -66811,35 +67005,35 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Группировка"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:79
+#: core/utilities/setup/misc/systemsettingswidget.cpp:70
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 "Использовать масштабирование с высоким разрешением на основе коэффициента "
 "экранирования"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:80
+#: core/utilities/setup/misc/systemsettingswidget.cpp:71
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Использовать растровые изображения с высоким разрешением DPI"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:81
+#: core/utilities/setup/misc/systemsettingswidget.cpp:72
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr "Отключить аппаратное ускорение OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:82
+#: core/utilities/setup/misc/systemsettingswidget.cpp:73
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Включить внутреннее журналирование отладки"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:84
+#: core/utilities/setup/misc/systemsettingswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Download required files"
 msgid "Download required binary data..."
 msgstr "Загрузить необходимые файлы"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:90
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -68053,6 +68247,11 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "Сбросить все параметры видео до исходных значений?"
 
 #, fuzzy
+#~| msgid "Network error"
+#~ msgid "&Network Proxy"
+#~ msgstr "Ошибка сети"
+
+#, fuzzy
 #~| msgid "Place:"
 #~ msgid "Placemark"
 #~ msgstr "Место:"
@@ -68730,11 +68929,6 @@ msgstr "Сбросить все параметры видео до исходн�
 #~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
 #~ msgid "%1 %2, %3"
 #~ msgstr "%1 %2"
-
-#, fuzzy
-#~| msgid "Remove Account"
-#~ msgid "Remove via point"
-#~ msgstr "Удалить учётную запись"
 
 #, fuzzy
 #~| msgid "Enter tag here."
@@ -71718,10 +71912,6 @@ msgstr "Сбросить все параметры видео до исходн�
 #~ msgctxt "@info: media loading"
 #~ msgid "Invalid media"
 #~ msgstr "Недопустимый медиафайл"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Buffering..."
-#~ msgstr "Буферизация..."
 
 #~ msgctxt "@info: media loading"
 #~ msgid "Buffered"
@@ -81008,9 +81198,6 @@ msgstr "Сбросить все параметры видео до исходн�
 
 #~ msgid "Co&llection:"
 #~ msgstr "Ко&ллекция:"
-
-#~ msgid "Album Type"
-#~ msgstr "Тип альбома"
 
 #~ msgid "Album Type Settings"
 #~ msgstr "Настройки типов альбомов"

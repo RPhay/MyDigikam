@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 00:39+0000\n"
+"POT-Creation-Date: 2023-12-23 00:39+0000\n"
 "PO-Revision-Date: 2023-08-28 07:33+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -2804,8 +2804,10 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Peta"
 
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:119
 #: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Labels"
@@ -56322,6 +56324,189 @@ msgstr ""
 msgid "&Ratio Scale"
 msgstr "Rasional"
 
+#. i18n: ectx: property (windowTitle), widget (QDialog, MeasureConfigDialog)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:14
+#, fuzzy, kde-format
+#| msgid "Database Configuration"
+msgid "Measure Tool Configuration"
+msgstr "Konfigurasi Database"
+
+#. i18n: ectx: property (text), widget (QLabel, modeLabel)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:20
+#, kde-format
+msgid "Ruler Type"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
+#. i18n: ectx: attribute (title), widget (QWidget, tab_1)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:28
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:45
+#, kde-format
+msgid "Polygon"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:33
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:127
+#, kde-format
+msgid "Circle"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:51
+#, fuzzy, kde-format
+#| msgid "Labels"
+msgid "Segment labels"
+msgstr "Label"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:60
+#, fuzzy, kde-format
+#| msgid "Distance:"
+msgid "Distance "
+msgstr "Jarak:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:70
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "San Marino"
+msgid "Bearing"
+msgstr "San Marino"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelChangeCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:80
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save Changes"
+msgid "Bearing Change"
+msgstr "Simpan Perubahan"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showPerimeter)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:90
+#, fuzzy, kde-format
+#| msgctxt "@title:tab"
+#| msgid "Parameters"
+msgid "Perimeter"
+msgstr "Parameter"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showPolygonAreaLabelChangeCheckBox)
+#. i18n: ectx: property (text), widget (QCheckBox, m_showCircleAreaLabelChangeCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:100
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:159
+#, kde-format
+msgid "Area"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showRadiusLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:142
+#, fuzzy, kde-format
+#| msgid "Radius:"
+msgid "Radius"
+msgstr "Radius:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showCircumference)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:152
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgid "Circumference"
+msgstr "Referensi:"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:87
+#, kde-format
+msgid "Measure Tool"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:92
+#, kde-format
+msgid "&Measure Tool"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:107
+#, kde-format
+msgid "Measure distances between two or more points."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:367
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:482
+#, kde-format
+msgid ""
+"Area:\n"
+"%1"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:385
+#, kde-format
+msgid ""
+"Circumference:\n"
+"%1"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:500
+#, fuzzy, kde-format
+#| msgctxt "@title:tab"
+#| msgid "Parameters"
+msgid ""
+"Perimeter:\n"
+"%1"
+msgstr "Parameter"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:558
+#, kde-format
+msgid "Polygon Ruler"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:560
+#, kde-format
+msgid "Circle Ruler"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:563
+#, kde-format
+msgid "Total Distance: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:565
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:574
+#, kde-format
+msgid "Area: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:567
+#, kde-format
+msgid "Perimeter: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:570
+#, fuzzy, kde-format
+#| msgid "Radius:"
+msgid "Radius: %1<br/>\n"
+msgstr "Radius:"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:572
+#, kde-format
+msgid "Circumference: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:621
+#, fuzzy, kde-format
+#| msgid "Add tags per image"
+msgid "Add &Measure Point"
+msgstr "Tambahkan tag tiap citra"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:622
+#, fuzzy, kde-format
+#| msgid "Remove Account"
+msgid "Remove &Last Measure Point"
+msgstr "Hapus Akun"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:624
+#, fuzzy, kde-format
+#| msgid "Remove Account"
+msgid "&Remove Measure Points"
+msgstr "Hapus Akun"
+
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
@@ -61332,34 +61517,34 @@ msgstr "Deskripsi:"
 msgid "New Workflow"
 msgstr ""
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:90
+#: core/utilities/queuemanager/views/workflowlist.cpp:106
 #, kde-format
 msgctxt "@title: batch workflow name"
 msgid "Title"
 msgstr "Judul"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:91
+#: core/utilities/queuemanager/views/workflowlist.cpp:107
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title: batch workflow tools list"
 msgid "Tools"
 msgstr "Peralatan"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:92
+#: core/utilities/queuemanager/views/workflowlist.cpp:108
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: batch workflow description"
 msgid "Description"
 msgstr "Deskripsi"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:115
+#: core/utilities/queuemanager/views/workflowlist.cpp:131
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "Batch Queue Manager"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:116
+#: core/utilities/queuemanager/views/workflowlist.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61367,42 +61552,42 @@ msgid ""
 "version of a tool."
 msgstr ""
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:274
+#: core/utilities/queuemanager/views/workflowlist.cpp:290
 #, fuzzy, kde-format
 #| msgid "Add to Current Queue"
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "Tambahkan ke Antrean Saat Ini"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:275
+#: core/utilities/queuemanager/views/workflowlist.cpp:291
 #, fuzzy, kde-format
 #| msgid "Delete Workflow"
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "Hapus Alurkerja"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:276
+#: core/utilities/queuemanager/views/workflowlist.cpp:292
 #, fuzzy, kde-format
 #| msgid "Delete Workflow"
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "Hapus Alurkerja"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:277
+#: core/utilities/queuemanager/views/workflowlist.cpp:293
 #, fuzzy, kde-format
 #| msgid "Delete Workflow"
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "Hapus Alurkerja"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:318
+#: core/utilities/queuemanager/views/workflowlist.cpp:344
 #, fuzzy, kde-format
 #| msgid "Delete Workflow?"
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "Hapus Alurkerja?"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:319
+#: core/utilities/queuemanager/views/workflowlist.cpp:345
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to delete the selected workflow \"%1\"?"
 msgctxt "@info"
@@ -65181,7 +65366,7 @@ msgid "Sidecars"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/setup/misc/proxysettingswidget.ui:20
+#: core/utilities/setup/misc/proxysettingswidget.ui:32
 #, fuzzy, kde-format
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
@@ -65227,46 +65412,46 @@ msgstr ""
 "peristiwa dari kalender ini akan dicetak merah.</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/setup/misc/proxysettingswidget.ui:23
+#: core/utilities/setup/misc/proxysettingswidget.ui:35
 #, fuzzy, kde-format
 #| msgid "Error"
-msgid "&Network Proxy"
+msgid "&Network Proxy Server Settings"
 msgstr "Error"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
-#: core/utilities/setup/misc/proxysettingswidget.ui:31
+#: core/utilities/setup/misc/proxysettingswidget.ui:43
 #, kde-format
 msgid "&Proxy:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
-#: core/utilities/setup/misc/proxysettingswidget.ui:48
+#: core/utilities/setup/misc/proxysettingswidget.ui:60
 #, kde-format
 msgid "P&ort:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:104
+#: core/utilities/setup/misc/proxysettingswidget.ui:116
 #, kde-format
 msgid "Proxy type:"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:112
+#: core/utilities/setup/misc/proxysettingswidget.ui:124
 #, kde-format
 msgid "Http"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:117
+#: core/utilities/setup/misc/proxysettingswidget.ui:129
 #, kde-format
 msgid "Socks5"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
 #. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
-#: core/utilities/setup/misc/proxysettingswidget.ui:156
 #: core/utilities/setup/misc/proxysettingswidget.ui:168
+#: core/utilities/setup/misc/proxysettingswidget.ui:180
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Presentation"
@@ -65274,14 +65459,14 @@ msgid "Requires authentication"
 msgstr "Presentasi"
 
 #. i18n: ectx: property (text), widget (QLabel, label_username)
-#: core/utilities/setup/misc/proxysettingswidget.ui:174
+#: core/utilities/setup/misc/proxysettingswidget.ui:186
 #, fuzzy, kde-format
 #| msgid "Filename:"
 msgid "U&sername:"
 msgstr "Nama file:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_password)
-#: core/utilities/setup/misc/proxysettingswidget.ui:184
+#: core/utilities/setup/misc/proxysettingswidget.ui:196
 #, fuzzy, kde-format
 #| msgid "Site Password:"
 msgid "&Password:"
@@ -65513,33 +65698,33 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Pengelompokan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:79
+#: core/utilities/setup/misc/systemsettingswidget.cpp:70
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:80
+#: core/utilities/setup/misc/systemsettingswidget.cpp:71
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:81
+#: core/utilities/setup/misc/systemsettingswidget.cpp:72
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:82
+#: core/utilities/setup/misc/systemsettingswidget.cpp:73
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:84
+#: core/utilities/setup/misc/systemsettingswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Download required files"
 msgid "Download required binary data..."
 msgstr "Unduh file-file yang diperlukan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:90
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -67250,11 +67435,6 @@ msgstr "Set ulang semua pengaturan ke nilai baku-nya."
 #~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
 #~ msgid "%1 %2, %3"
 #~ msgstr "%1 %2"
-
-#, fuzzy
-#~| msgid "Remove Account"
-#~ msgid "Remove via point"
-#~ msgstr "Hapus Akun"
 
 #, fuzzy
 #~| msgid "Enter tag here."

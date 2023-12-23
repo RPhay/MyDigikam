@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 00:39+0000\n"
+"POT-Creation-Date: 2023-12-23 00:39+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2840,8 +2840,10 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "지도"
 
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:119
 #: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Labels"
@@ -57736,6 +57738,192 @@ msgstr ""
 msgid "&Ratio Scale"
 msgstr "유리수"
 
+#. i18n: ectx: property (windowTitle), widget (QDialog, MeasureConfigDialog)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:14
+#, fuzzy, kde-format
+msgid "Measure Tool Configuration"
+msgstr "RAW 그림"
+
+#. i18n: ectx: property (text), widget (QLabel, modeLabel)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:20
+#, kde-format
+msgid "Ruler Type"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
+#. i18n: ectx: attribute (title), widget (QWidget, tab_1)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:28
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:45
+#, kde-format
+msgid "Polygon"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:33
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:127
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Circle"
+msgstr "원형으로 사라짐"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:51
+#, fuzzy, kde-format
+#| msgid "Image labels"
+msgid "Segment labels"
+msgstr "이미지 레이블"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:60
+#, fuzzy, kde-format
+#| msgid "Distance:"
+msgid "Distance "
+msgstr "거리:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:70
+#, fuzzy, kde-format
+#| msgid "Aborting..."
+msgid "Bearing"
+msgstr "중단 중..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelChangeCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:80
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Saving changes -"
+msgid "Bearing Change"
+msgstr "변경 사항 저장 -"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showPerimeter)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:90
+#, fuzzy, kde-format
+#| msgid "Theme Parameters"
+msgid "Perimeter"
+msgstr "테마 인자"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showPolygonAreaLabelChangeCheckBox)
+#. i18n: ectx: property (text), widget (QCheckBox, m_showCircleAreaLabelChangeCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:100
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:159
+#, kde-format
+msgid "Area"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showRadiusLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:142
+#, fuzzy, kde-format
+#| msgid "Radius:"
+msgid "Radius"
+msgstr "반지름:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showCircumference)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:152
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgid "Circumference"
+msgstr "참조:"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:87
+#, fuzzy, kde-format
+#| msgid "Shear Tool"
+msgid "Measure Tool"
+msgstr "기울이기 도구"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:92
+#, fuzzy, kde-format
+#| msgid "Shear Tool"
+msgid "&Measure Tool"
+msgstr "기울이기 도구"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:107
+#, kde-format
+msgid "Measure distances between two or more points."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:367
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:482
+#, kde-format
+msgid ""
+"Area:\n"
+"%1"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:385
+#, kde-format
+msgid ""
+"Circumference:\n"
+"%1"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:500
+#, fuzzy, kde-format
+#| msgid "Theme Parameters"
+msgid ""
+"Perimeter:\n"
+"%1"
+msgstr "테마 인자"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:558
+#, kde-format
+msgid "Polygon Ruler"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:560
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Circle Ruler"
+msgstr "원형으로 사라짐"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:563
+#, kde-format
+msgid "Total Distance: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:565
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:574
+#, fuzzy, kde-format
+#| msgid "Author: %1<br/><br/>"
+msgid "Area: %1<br/>\n"
+msgstr "작성자: %1<br/><br/>"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:567
+#, kde-format
+msgid "Perimeter: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:570
+#, fuzzy, kde-format
+#| msgid "Radius:"
+msgid "Radius: %1<br/>\n"
+msgstr "반지름:"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:572
+#, kde-format
+msgid "Circumference: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:621
+#, fuzzy, kde-format
+#| msgid "Add a focus point"
+msgid "Add &Measure Point"
+msgstr "초점 지점 추가"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:622
+#, fuzzy, kde-format
+#| msgid "Remove Account"
+msgid "Remove &Last Measure Point"
+msgstr "계정 삭제"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:624
+#, fuzzy, kde-format
+#| msgid "Remove Account"
+msgid "&Remove Measure Points"
+msgstr "계정 삭제"
+
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
@@ -62673,33 +62861,33 @@ msgstr "설명:"
 msgid "New Workflow"
 msgstr ""
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:90
+#: core/utilities/queuemanager/views/workflowlist.cpp:106
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@title: batch workflow name"
 msgid "Title"
 msgstr "제목"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:91
+#: core/utilities/queuemanager/views/workflowlist.cpp:107
 #, kde-format
 msgctxt "@title: batch workflow tools list"
 msgid "Tools"
 msgstr "도구"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:92
+#: core/utilities/queuemanager/views/workflowlist.cpp:108
 #, kde-format
 msgctxt "@title: batch workflow description"
 msgid "Description"
 msgstr "설명"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:115
+#: core/utilities/queuemanager/views/workflowlist.cpp:131
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "일괄 작업 대기열 관리자"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:116
+#: core/utilities/queuemanager/views/workflowlist.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62707,40 +62895,40 @@ msgid ""
 "version of a tool."
 msgstr ""
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:274
+#: core/utilities/queuemanager/views/workflowlist.cpp:290
 #, fuzzy, kde-format
 #| msgid "Add to Current Queue"
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "현재 대기열에 추가"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:275
+#: core/utilities/queuemanager/views/workflowlist.cpp:291
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "작업 흐름"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:276
+#: core/utilities/queuemanager/views/workflowlist.cpp:292
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "작업 흐름"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:277
+#: core/utilities/queuemanager/views/workflowlist.cpp:293
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "삭제"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:318
+#: core/utilities/queuemanager/views/workflowlist.cpp:344
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "삭제"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:319
+#: core/utilities/queuemanager/views/workflowlist.cpp:345
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to delete %1 item permanently?"
 #| msgid_plural "Are you sure you want to delete %1 items permanently?"
@@ -66519,7 +66707,7 @@ msgid "Sidecars"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/setup/misc/proxysettingswidget.ui:20
+#: core/utilities/setup/misc/proxysettingswidget.ui:32
 #, fuzzy, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -66548,49 +66736,48 @@ msgstr ""
 "지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/setup/misc/proxysettingswidget.ui:23
+#: core/utilities/setup/misc/proxysettingswidget.ui:35
 #, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Network Error"
-msgid "&Network Proxy"
-msgstr "네트워크 오류"
+#| msgid "Remote Server Settings"
+msgid "&Network Proxy Server Settings"
+msgstr "원격 서버 설정"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
-#: core/utilities/setup/misc/proxysettingswidget.ui:31
+#: core/utilities/setup/misc/proxysettingswidget.ui:43
 #, kde-format
 msgid "&Proxy:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
-#: core/utilities/setup/misc/proxysettingswidget.ui:48
+#: core/utilities/setup/misc/proxysettingswidget.ui:60
 #, fuzzy, kde-format
 #| msgid "Host Port:"
 msgid "P&ort:"
 msgstr "호스트 포트:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:104
+#: core/utilities/setup/misc/proxysettingswidget.ui:116
 #, fuzzy, kde-format
 #| msgid "Fix type"
 msgid "Proxy type:"
 msgstr "고정 형식"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:112
+#: core/utilities/setup/misc/proxysettingswidget.ui:124
 #, kde-format
 msgid "Http"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:117
+#: core/utilities/setup/misc/proxysettingswidget.ui:129
 #, kde-format
 msgid "Socks5"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
 #. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
-#: core/utilities/setup/misc/proxysettingswidget.ui:156
 #: core/utilities/setup/misc/proxysettingswidget.ui:168
+#: core/utilities/setup/misc/proxysettingswidget.ui:180
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Presentation"
@@ -66598,7 +66785,7 @@ msgid "Requires authentication"
 msgstr "프레젠테이션"
 
 #. i18n: ectx: property (text), widget (QLabel, label_username)
-#: core/utilities/setup/misc/proxysettingswidget.ui:174
+#: core/utilities/setup/misc/proxysettingswidget.ui:186
 #, fuzzy, kde-format
 #| msgctxt "piwigo login settings"
 #| msgid "Username:"
@@ -66606,7 +66793,7 @@ msgid "U&sername:"
 msgstr "사용자 이름:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_password)
-#: core/utilities/setup/misc/proxysettingswidget.ui:184
+#: core/utilities/setup/misc/proxysettingswidget.ui:196
 #, fuzzy, kde-format
 #| msgid "Password:"
 msgid "&Password:"
@@ -66843,33 +67030,33 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "그룹화"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:79
+#: core/utilities/setup/misc/systemsettingswidget.cpp:70
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:80
+#: core/utilities/setup/misc/systemsettingswidget.cpp:71
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:81
+#: core/utilities/setup/misc/systemsettingswidget.cpp:72
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:82
+#: core/utilities/setup/misc/systemsettingswidget.cpp:73
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:84
+#: core/utilities/setup/misc/systemsettingswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Downloading remote files for \"%1\""
 msgid "Download required binary data..."
 msgstr "\"%1\"의 원격 파일 다운로드 중"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:90
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -67990,6 +68177,12 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "모든 항목을 기본값으로 초기화합니다."
 
 #, fuzzy
+#~| msgctxt "@title: window"
+#~| msgid "Network Error"
+#~ msgid "&Network Proxy"
+#~ msgstr "네트워크 오류"
+
+#, fuzzy
 #~| msgctxt "Replace string"
 #~| msgid "Replace:"
 #~ msgid "Placemark"
@@ -68573,11 +68766,6 @@ msgstr "모든 항목을 기본값으로 초기화합니다."
 #~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
 #~ msgid "%1 %2, %3"
 #~ msgstr "%2 %1"
-
-#, fuzzy
-#~| msgid "Remove Account"
-#~ msgid "Remove via point"
-#~ msgstr "계정 삭제"
 
 #, fuzzy
 #~| msgid "Enter tag here."
@@ -69489,12 +69677,6 @@ msgstr "모든 항목을 기본값으로 초기화합니다."
 #~ msgctxt "@info: media loading"
 #~ msgid "Invalid media"
 #~ msgstr "서명 잘못됨"
-
-#, fuzzy
-#~| msgid "Aborting..."
-#~ msgctxt "@info: media loading"
-#~ msgid "Buffering..."
-#~ msgstr "중단 중..."
 
 #, fuzzy
 #~| msgctxt "NAME OF TRANSLATORS"

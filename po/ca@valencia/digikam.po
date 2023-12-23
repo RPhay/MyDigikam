@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 00:39+0000\n"
-"PO-Revision-Date: 2023-12-18 10:47+0100\n"
+"POT-Creation-Date: 2023-12-23 00:39+0000\n"
+"PO-Revision-Date: 2023-12-22 13:32+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2271,7 +2271,7 @@ msgstr "Re&talla"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
-msgstr "Retalla la selecció al porta-retalls"
+msgstr "Retalla la selecció a dins del porta-retalls"
 
 #: core/app/main/digikamapp_setup.cpp:953
 #, kde-format
@@ -2871,8 +2871,10 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Mapa"
 
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:119
 #: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Labels"
@@ -56876,6 +56878,195 @@ msgstr "nm"
 msgid "&Ratio Scale"
 msgstr "&Relació d'escala"
 
+#. i18n: ectx: property (windowTitle), widget (QDialog, MeasureConfigDialog)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:14
+#, fuzzy, kde-format
+#| msgid "Database Configuration"
+msgid "Measure Tool Configuration"
+msgstr "Configureu la base de dades"
+
+#. i18n: ectx: property (text), widget (QLabel, modeLabel)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:20
+#, kde-format
+msgid "Ruler Type"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
+#. i18n: ectx: attribute (title), widget (QWidget, tab_1)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:28
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:45
+#, kde-format
+msgid "Polygon"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:33
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:127
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Circle"
+msgstr "Cercle cap enfora"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:51
+#, fuzzy, kde-format
+#| msgid "Image labels"
+msgid "Segment labels"
+msgstr "Rètols de la imatge"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:60
+#, fuzzy, kde-format
+#| msgid "Distance:"
+msgid "Distance "
+msgstr "Distància:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:70
+#, fuzzy, kde-format
+#| msgid "Marina"
+msgid "Bearing"
+msgstr "Marina"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelChangeCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:80
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Saving changes -"
+msgid "Bearing Change"
+msgstr "Es guarden els canvis -"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showPerimeter)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:90
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Parameters"
+msgid "Perimeter"
+msgstr "Paràmetres"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showPolygonAreaLabelChangeCheckBox)
+#. i18n: ectx: property (text), widget (QCheckBox, m_showCircleAreaLabelChangeCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:100
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:159
+#, kde-format
+msgid "Area"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showRadiusLabelsCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:142
+#, fuzzy, kde-format
+#| msgid "Radius:"
+msgid "Radius"
+msgstr "Radi:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_showCircumference)
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:152
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Reference"
+msgid "Circumference"
+msgstr "Referència"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:87
+#, fuzzy, kde-format
+#| msgid "Base Tools"
+msgid "Measure Tool"
+msgstr "Eines base"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:92
+#, fuzzy, kde-format
+#| msgid "Base Tools"
+msgid "&Measure Tool"
+msgstr "Eines base"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:107
+#, kde-format
+msgid "Measure distances between two or more points."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:367
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:482
+#, kde-format
+msgid ""
+"Area:\n"
+"%1"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:385
+#, kde-format
+msgid ""
+"Circumference:\n"
+"%1"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:500
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Parameters"
+msgid ""
+"Perimeter:\n"
+"%1"
+msgstr "Paràmetres"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:558
+#, kde-format
+msgid "Polygon Ruler"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:560
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Circle Ruler"
+msgstr "Cercle cap enfora"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:563
+#, kde-format
+msgid "Total Distance: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:565
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:574
+#, fuzzy, kde-format
+#| msgid "Author: %1<br/><br/>"
+msgid "Area: %1<br/>\n"
+msgstr "Autoria: %1<br/><br/>"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:567
+#, kde-format
+msgid "Perimeter: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:570
+#, fuzzy, kde-format
+#| msgid "Radius:"
+msgid "Radius: %1<br/>\n"
+msgstr "Radi:"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:572
+#, kde-format
+msgid "Circumference: %1<br/>\n"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:621
+#, fuzzy, kde-format
+#| msgid "Add a focus point"
+msgid "Add &Measure Point"
+msgstr "Afig un punt d'enfocament"
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:622
+#, kde-format
+msgid "Remove &Last Measure Point"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:624
+#, fuzzy, kde-format
+#| msgid "Remove processed items"
+msgid "&Remove Measure Points"
+msgstr "Elimina els elements processats"
+
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
@@ -57429,10 +57620,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:311
-#, fuzzy, kde-format
-#| msgid "Behavior"
+#, kde-format
 msgid "Mouse Behavior"
-msgstr "Comportament"
+msgstr "Comportament del ratolí"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:317
@@ -61864,31 +62054,31 @@ msgstr "Descripció:"
 msgid "New Workflow"
 msgstr "Flux de treball nou"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:90
+#: core/utilities/queuemanager/views/workflowlist.cpp:106
 #, kde-format
 msgctxt "@title: batch workflow name"
 msgid "Title"
 msgstr "Títol"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:91
+#: core/utilities/queuemanager/views/workflowlist.cpp:107
 #, kde-format
 msgctxt "@title: batch workflow tools list"
 msgid "Tools"
 msgstr "Eines"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:92
+#: core/utilities/queuemanager/views/workflowlist.cpp:108
 #, kde-format
 msgctxt "@title: batch workflow description"
 msgid "Description"
 msgstr "Descripció"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:115
+#: core/utilities/queuemanager/views/workflowlist.cpp:131
 #, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "Gestor de la cua per lots"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:116
+#: core/utilities/queuemanager/views/workflowlist.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61898,37 +62088,37 @@ msgstr ""
 "Alguns fluxos de treball no s'ha pogut carregar des del fitxer de "
 "configuració a causa d'una versió incompatible d'una eina."
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:274
+#: core/utilities/queuemanager/views/workflowlist.cpp:290
 #, kde-format
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "Assigna un flux de treball a la cua actual"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:275
+#: core/utilities/queuemanager/views/workflowlist.cpp:291
 #, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "Edita el flux de treball"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:276
+#: core/utilities/queuemanager/views/workflowlist.cpp:292
 #, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "Actualitza el flux de treball"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:277
+#: core/utilities/queuemanager/views/workflowlist.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "Suprimix el flux de treball"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:318
+#: core/utilities/queuemanager/views/workflowlist.cpp:344
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "Voleu suprimir el flux de treball?"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:319
+#: core/utilities/queuemanager/views/workflowlist.cpp:345
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
@@ -66073,7 +66263,7 @@ msgid "Sidecars"
 msgstr "Laterals"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/setup/misc/proxysettingswidget.ui:20
+#: core/utilities/setup/misc/proxysettingswidget.ui:32
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -66096,58 +66286,58 @@ msgstr ""
 "intermediari.</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
-#: core/utilities/setup/misc/proxysettingswidget.ui:23
+#: core/utilities/setup/misc/proxysettingswidget.ui:35
 #, fuzzy, kde-format
-#| msgid "Network error"
-msgid "&Network Proxy"
-msgstr "S'ha produït un error de la xarxa"
+#| msgid "Remote Server Settings"
+msgid "&Network Proxy Server Settings"
+msgstr "Configureu el servidor remot"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
-#: core/utilities/setup/misc/proxysettingswidget.ui:31
+#: core/utilities/setup/misc/proxysettingswidget.ui:43
 #, kde-format
 msgid "&Proxy:"
 msgstr "&Servidor intermediari:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
-#: core/utilities/setup/misc/proxysettingswidget.ui:48
+#: core/utilities/setup/misc/proxysettingswidget.ui:60
 #, kde-format
 msgid "P&ort:"
 msgstr "P&ort:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:104
+#: core/utilities/setup/misc/proxysettingswidget.ui:116
 #, kde-format
 msgid "Proxy type:"
 msgstr "Tipus de servidor intermediari:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:112
+#: core/utilities/setup/misc/proxysettingswidget.ui:124
 #, kde-format
 msgid "Http"
 msgstr "Http"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
-#: core/utilities/setup/misc/proxysettingswidget.ui:117
+#: core/utilities/setup/misc/proxysettingswidget.ui:129
 #, kde-format
 msgid "Socks5"
 msgstr "Socks5"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
 #. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
-#: core/utilities/setup/misc/proxysettingswidget.ui:156
 #: core/utilities/setup/misc/proxysettingswidget.ui:168
+#: core/utilities/setup/misc/proxysettingswidget.ui:180
 #, kde-format
 msgid "Requires authentication"
 msgstr "Requerix autenticació"
 
 #. i18n: ectx: property (text), widget (QLabel, label_username)
-#: core/utilities/setup/misc/proxysettingswidget.ui:174
+#: core/utilities/setup/misc/proxysettingswidget.ui:186
 #, kde-format
 msgid "U&sername:"
 msgstr "Nom d'&usuari:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_password)
-#: core/utilities/setup/misc/proxysettingswidget.ui:184
+#: core/utilities/setup/misc/proxysettingswidget.ui:196
 #, kde-format
 msgid "&Password:"
 msgstr "&Contrasenya:"
@@ -66426,32 +66616,32 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Agrupament"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:79
+#: core/utilities/setup/misc/systemsettingswidget.cpp:70
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Utilitza l'escalat del PPP alt a partir del factor de pantalla"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:80
+#: core/utilities/setup/misc/systemsettingswidget.cpp:71
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Utilitza mapes de píxels amb resolucions de PPP alt"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:81
+#: core/utilities/setup/misc/systemsettingswidget.cpp:72
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr "Desactiva l'acceleració de maquinari OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:82
+#: core/utilities/setup/misc/systemsettingswidget.cpp:73
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Activa el registre intern de depuració"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:84
+#: core/utilities/setup/misc/systemsettingswidget.cpp:75
 #, kde-format
 msgid "Download required binary data..."
 msgstr "Baixa les dades binàries requerides..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:90
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -67098,7 +67288,7 @@ msgid ""
 "Windows/Color/</li></ul>On your system, currently these paths exist and are "
 "scanned:<ul><li>%3</li></ul>"
 msgstr ""
-"A Windows, els camins de busca predeterminats inclouen <ul><li>%1/Windows/"
+"En Windows, els camins de busca predeterminats inclouen <ul><li>%1/Windows/"
 "System32/spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</"
 "li><li>%2/Windows/Color/</li></ul>Actualment estos camins existixen al "
 "vostre sistema i s'han escanejat:<ul><li>%3</li></ul>"
@@ -67113,12 +67303,12 @@ msgid ""
 "icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
-"A macOS, els camins de busca predeterminats inclouen <ul><li>/System/Library/"
-"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/"
-"Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/."
-"local/share/icc/</li><li>~/.color/icc/</li></ul>Actualment estos camins "
-"existixen al vostre sistema i s'han escanejat:<ul><li>%2</li></ul>"
+"En macOS, els camins de busca predeterminats inclouen <ul><li>/System/"
+"Library/ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/"
+"Library/ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/"
+"Contents/Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</"
+"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>Actualment estos "
+"camins existixen al vostre sistema i s'han escanejat:<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:937
 #, kde-format
@@ -67676,950 +67866,5 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
 
-#~ msgid "Placemark position provider Plugin"
-#~ msgstr "Connector del proveïdor de posició de marques de lloc"
-
-#~ msgid "Placemark"
-#~ msgstr "Marca de lloc"
-
-#~ msgid "Reports the position of a placemark"
-#~ msgstr "Informa de la posició d'una marca de lloc"
-
-#~ msgid "&Proxy"
-#~ msgstr "&Servidor intermediari"
-
-#~ msgid "Dragging and Animation"
-#~ msgstr "Arrossegament i animació"
-
-#~ msgid "&Drag location:"
-#~ msgstr "&Arrossega l'emplaçament:"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the "
-#~ "mouse there are two standard behaviours when dealing with a virtual globe:"
-#~ "</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The location below "
-#~ "mouse pointer will follow the cursor exactly: As a result e.g. the north "
-#~ "pole will not stay at the top which can lead to confusion. By default "
-#~ "Marble makes sure that north is always up which results in a dragging "
-#~ "behaviour where the location below the mouse pointer slightly \"detaches"
-#~ "\" from the cursor. </p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Hi ha dos comportaments "
-#~ "usuals mentre es mou un globus terraqüi virtual amb el ratolí:</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">L'emplaçament davall el "
-#~ "punter del ratolí seguirà exactament el cursor: En conseqüència p. ex., "
-#~ "el pol nord no restarà al capdamunt, cosa que pot induir a confusió. De "
-#~ "manera predeterminada, Marble s'assegura que el nord quede sempre a dalt, "
-#~ "cosa que fa que en arrossegar el globus terraqüi, l'emplaçament davall el "
-#~ "punter no seguisca exactament el cursor.</p></body></html>"
-
-#~ msgid "Keep Planet Axis Vertically"
-#~ msgstr "Mantín vertical l'eix del planeta"
-
-#~ msgid "Follow Mouse Pointer"
-#~ msgstr "Seguix el punter del ratolí"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
-#~ "location Marble can either move instantly to the new location or it can "
-#~ "show a travel animation from the previous place to the new place.</p></"
-#~ "body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">En buscar un "
-#~ "emplaçament Marble pot moure's instantàniament a l'emplaçament nou o pot "
-#~ "mostrar una animació del viatge des del lloc anterior al lloc nou.</p></"
-#~ "body></html>"
-
-#~ msgid "&Animate voyage to the target"
-#~ msgstr "&Anima el desplaçament fins a l'objectiu"
-
-#~ msgid "&On startup:"
-#~ msgstr "&En arrancar:"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
-#~ "display the home location immediately after the application has started. "
-#~ "As an alternative it can also show the last position that was active when "
-#~ "the user left the application. </p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">De manera "
-#~ "predeterminada, Marble mostrarà l'emplaçament de casa vostra "
-#~ "immediatament després d'iniciar. Com a alternativa, també es pot mostrar "
-#~ "l'última posició que es va visitar just abans de tancar l'aplicació. </"
-#~ "p></body></html>"
-
-#~ msgid "Show Home Location"
-#~ msgstr "Mostra l'emplaçament de casa"
-
-#~ msgid "Return to Last Location Visited"
-#~ msgstr "Retorna a l'últim emplaçament visitat"
-
-#~ msgid "&External editor:"
-#~ msgstr "&Editor extern:"
-
-#~ msgid ""
-#~ "<p>The application that is launched to edit maps. Potlatch (default) "
-#~ "requires a web browser with flash support to be installed. When selecting "
-#~ "josm or merkaartor, make sure that the respective application is "
-#~ "installed.</p>"
-#~ msgstr ""
-#~ "<p>L'aplicació que s'inicia per a editar els mapes. Potlatch "
-#~ "(predeterminat) requerix que s'instal·le un navegador web que admeta "
-#~ "flash. Quan seleccioneu josm o merkaartor, assegureu-vos que les "
-#~ "respectives aplicacions estan instal·lades.</p>"
-
-#~ msgid "Always ask"
-#~ msgstr "Pregunta sempre"
-
-#~ msgid "Potlatch (Web browser)"
-#~ msgstr "Potlatch (navegador web)"
-
-#~ msgid "JOSM"
-#~ msgstr "JOSM"
-
-#~ msgid "Merkaartor"
-#~ msgstr "Merkaartor"
-
-#~ msgid "&Place names:"
-#~ msgstr "&Mostra els noms:"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
-#~ "different names in different languages. The label on the map can show the "
-#~ "name in the user's language. Alternatively it can display the name in the "
-#~ "official language and glyphs of that place. </p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Sovint els llocs tenen "
-#~ "noms diferents en llengües diferents. L'etiqueta en el mapa pot mostrar "
-#~ "el nom en la llengua de l'usuari. De manera alternativa, pot mostrar el "
-#~ "nom en l'idioma i caràcters oficials d'aquell lloc. </p></body></html>"
-
-#~ msgid "Custom & Native Language"
-#~ msgstr "Idioma personalitzat i natiu"
-
-#~ msgid "Custom Language"
-#~ msgstr "Idioma personalitzat"
-
-#~ msgid "Native Language"
-#~ msgstr "Idioma natiu"
-
-#~ msgid "Cache and Proxy"
-#~ msgstr "Memòria cau i Intermediari"
-
-#~ msgid ""
-#~ "The folder %1 is not empty. Removing it will delete all bookmarks it "
-#~ "contains. Are you sure you want to delete the folder?"
-#~ msgstr ""
-#~ "La carpeta %1 no està buida. Si l'elimineu, se suprimiran tots els punts "
-#~ "d'interés que conté. Segur que voleu suprimir la carpeta?"
-
-#~ msgid "Remove Folder"
-#~ msgstr "Elimina la carpeta"
-
-#~ msgid "Export Bookmarks"
-#~ msgstr "Exporta els punts d'interés"
-
-#~ msgid "KML files (*.kml)"
-#~ msgstr "Fitxers KML (*.kml)"
-
-#~ msgid "Unable to save bookmarks. Please check that the file is writable."
-#~ msgstr ""
-#~ "No s'han pogut guardar els punts d'interés. Comproveu que el fitxer té "
-#~ "permís d'escriptura."
-
-#~ msgid "Bookmark Export"
-#~ msgstr "Exporteu els punts d'interés"
-
-#~ msgid "Import Bookmarks"
-#~ msgstr "Importa punts d'interés"
-
-#~ msgid "KML Files (*.kml)"
-#~ msgstr "Fitxers KML (*.kml)"
-
-#~ msgid "The file %1 cannot be opened as a KML file."
-#~ msgstr "El fitxer %1 no es pot obrir com a fitxer KML."
-
-#~ msgid "Bookmark Import"
-#~ msgstr "Importeu els punts d'interés"
-
-#~ msgid ""
-#~ "The file contains a bookmark that already exists among your Bookmarks."
-#~ msgstr "El fitxer conté un punt d'interés que ja figura entre les vostres."
-
-#~ msgid "Imported bookmark"
-#~ msgstr "Punt d'interés importat"
-
-#~ msgid "Existing bookmark"
-#~ msgstr "Punt d'interés existent"
-
-#~ msgid "Do you want to replace the existing bookmark with the imported one?"
-#~ msgstr ""
-#~ "Voleu substituir el punt d'interés existent amb el que s'està important?"
-
-#~ msgid "Skip"
-#~ msgstr "Omet"
-
-#~ msgid "Skip All"
-#~ msgstr "Omet-ho tot"
-
-#~ msgid "Bookmark Manager"
-#~ msgstr "Gestor de punts d'interés"
-
-#~ msgid "Import Bookmarks..."
-#~ msgstr "Importa punts d'interés..."
-
-#~ msgid "Export Bookmarks..."
-#~ msgstr "Exporta els punts d'interés..."
-
-#~ msgid "Folders"
-#~ msgstr "Carpetes"
-
-#~ msgid "New..."
-#~ msgstr "Nova..."
-
-#~ msgid "Edit Bookmark"
-#~ msgstr "Editeu el punt d'interés"
-
-#~ msgid "&Description:"
-#~ msgstr "&Descripció:"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-#~ "bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-#~ "<tr>\n"
-#~ "<td style=\"border: none;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-#~ "bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-#~ "<tr>\n"
-#~ "<td style=\"border: none;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-
-#~ msgid "&Folder:"
-#~ msgstr "&Carpeta:"
-
-#~ msgid "&Add Folder..."
-#~ msgstr "Afi&g una carpeta..."
-
-# skip-rule: t-apo_fim
-#~ msgid "'"
-#~ msgstr "'"
-
-#~ msgid "\""
-#~ msgstr "\""
-
-#~ msgctxt "East, the direction"
-#~ msgid "E"
-#~ msgstr "E"
-
-#~ msgctxt "West, the direction"
-#~ msgid "W"
-#~ msgstr "O"
-
-#~ msgctxt "North, the direction"
-#~ msgid "N"
-#~ msgstr "N"
-
-#~ msgctxt "South, the direction"
-#~ msgid "S"
-#~ msgstr "S"
-
-#~ msgid "′"
-#~ msgstr "′"
-
-#~ msgid "″"
-#~ msgstr "″"
-
-#~ msgid "New Bookmark Folder"
-#~ msgstr "Carpeta nova de punt d'interés"
-
-#~ msgid "&Folder name:"
-#~ msgstr "&Nom de la carpeta:"
-
-#~ msgid "Open File"
-#~ msgstr "Obri un fitxer"
-
-#~ msgid "All Supported Files (*.png)"
-#~ msgstr "Tots els fitxers admesos (*.png)"
-
-#~ msgid "Name:"
-#~ msgstr "Nom:"
-
-#~ msgid "Icon link:"
-#~ msgstr "Enllaç de la icona:"
-
-#~ msgid "ID:"
-#~ msgstr "ID:"
-
-#~ msgid "Target ID:"
-#~ msgstr "ID del destí:"
-
-#~ msgid "Cloud Routes"
-#~ msgstr "Itineraris al núvol"
-
-#~ msgid "No route available."
-#~ msgstr "No hi ha cap itinerari disponible."
-
-#~ msgid "Use local"
-#~ msgstr "Utilitza el local"
-
-#~ msgid "Use cloud"
-#~ msgstr "Utilitza el núvol"
-
-#~ msgid "Always use local"
-#~ msgstr "Utilitza sempre el local"
-
-#~ msgid "Always use cloud"
-#~ msgstr "Utilitza sempre el núvol"
-
-#~ msgid "Local placemark"
-#~ msgstr "Marca de lloc local"
-
-#~ msgid "Path: %1 <br /> Name: %2 <br /> Description: %3 <br /> Status: %4"
-#~ msgstr "Camí: %1 <br /> Nom: %2 <br /> Descripció: %3 <br /> Estat: %4"
-
-#~ msgid "Changed"
-#~ msgstr "Canviat"
-
-#~ msgid "Deleted"
-#~ msgstr "Suprimit"
-
-#~ msgid "Cloud placemark"
-#~ msgstr "Marca de lloc al núvol"
-
-#~ msgid ""
-#~ "A bookmark on this device conflicts with a cloud bookmark. Which one do "
-#~ "you want to keep?"
-#~ msgstr ""
-#~ "Un punt d'interés en este dispositiu entra en conflicte amb un punt "
-#~ "d'interés al núvol. Quin voleu mantindre?"
-
-#~ msgid "Synchronization Conflict"
-#~ msgstr "Conflicte de sincronització"
-
-#~ msgid "Server '%1' could not be reached"
-#~ msgstr "No s'ha pogut accedir a l'amfitrió «%1»"
-
-#~ msgid "The Marble app is not installed on the ownCloud server"
-#~ msgstr "L'app de Marble no està instal·lada en el servidor d'ownCloud"
-
-#~ msgid "The server is not an ownCloud server"
-#~ msgstr "El servidor no és cap servidor d'ownCloud"
-
-#~ msgid "Username or password are incorrect"
-#~ msgstr "Nom d'usuari o contrasenya incorrectes"
-
-#~ msgid "Login successful"
-#~ msgstr "Connexió correcta"
-
-#~ msgid "Open"
-#~ msgstr "Obri"
-
-#~ msgid "Load"
-#~ msgstr "Carrega"
-
-#~ msgid "Remove from device"
-#~ msgstr "Elimina del dispositiu"
-
-#~ msgid "Delete from cloud"
-#~ msgstr "Suprimix del núvol"
-
-#~ msgid "Upload to cloud"
-#~ msgstr "Publica al núvol"
-
-#~ msgid "Directions &from here"
-#~ msgstr "Indicacions &des d'ací"
-
-#~ msgid "Directions &to here"
-#~ msgstr "Indicacions &cap ací"
-
-#~ msgid "Add &Bookmark"
-#~ msgstr "Afi&g un punt d'interés"
-
-#~ msgid "&Full Screen Mode"
-#~ msgstr "Mode de &pantalla completa"
-
-#~ msgid "Bookmark"
-#~ msgstr "Punt d'interés"
-
-#~ msgid "Current Route Position Provider Plugin"
-#~ msgstr "Connector del proveïdor de posició de l'itinerari actual"
-
-#~ msgid "Current Route"
-#~ msgstr "Itinerari actual"
-
-#~ msgid "Simulates traveling along the current route."
-#~ msgstr "Simula el viatge per l'itinerari actual."
-
-#~ msgid "Current Location: %1"
-#~ msgstr "Emplaçament actual: %1"
-
-#~ msgid "Address or search term"
-#~ msgstr "Adreça o terme que s'ha de buscar"
-
-#~ msgctxt "Number of search results"
-#~ msgid "%n result(s) found."
-#~ msgstr "S'ha/n trobat %n resultats."
-
-#~ msgid "Go To..."
-#~ msgstr "Ves fins a..."
-
-#~ msgid ""
-#~ "Enter a search term and press Enter. <a href=\"https://userbase.kde.org/"
-#~ "Marble/Search\">Details...</a>"
-#~ msgstr ""
-#~ "Introduïu un terme de busca i premeu «Retorn». <a href=\"https://userbase."
-#~ "kde.org/ Marble/Search\">Detalls...</a>"
-
-#~ msgid "Search"
-#~ msgstr "Busca"
-
-#~ msgid "Enter the roundabout."
-#~ msgstr "Entreu a la rotonda."
-
-#~ msgid "Take the exit."
-#~ msgstr "Preneu l'eixida."
-
-#~ msgid "Take the exit towards %1."
-#~ msgstr "Preneu l'eixida cap a %1."
-
-#~ msgid "Take the ramp."
-#~ msgstr "Preneu la rampa."
-
-#~ msgid "Take the ramp towards %1."
-#~ msgstr "Preneu la rampa cap a %1."
-
-#~ msgid "Follow the road for %1 %2."
-#~ msgstr "Seguiu la carretera per %1 %2."
-
-#~ msgid "Take the %1. exit in the roundabout."
-#~ msgstr "Preneu l'eixida %1 de la rotonda."
-
-#~ msgid "Take the %1. exit in the roundabout into %2."
-#~ msgstr "Preneu l'eixida %1 de la rotonda cap a %2."
-
-#~ msgid "Continue."
-#~ msgstr "Continueu."
-
-#~ msgid "Merge."
-#~ msgstr "Unir-se."
-
-#~ msgid "Turn around."
-#~ msgstr "Doneu la volta."
-
-#~ msgid "Turn sharp left."
-#~ msgstr "Gireu a l'esquerra pronunciadament."
-
-#~ msgid "Turn left."
-#~ msgstr "Gireu a l'esquerra."
-
-#~ msgid "Keep slightly left."
-#~ msgstr "Manteniu-vos lleugerament a l'esquerra."
-
-#~ msgid "Go straight ahead."
-#~ msgstr "Seguiu recte avant."
-
-#~ msgid "Keep slightly right."
-#~ msgstr "Manteniu-vos lleugerament a la dreta."
-
-#~ msgid "Turn right."
-#~ msgstr "Gireu a la dreta."
-
-#~ msgid "Turn sharp right."
-#~ msgstr "Gireu a la dreta pronunciadament."
-
-#~ msgid "Exit the roundabout."
-#~ msgstr "Eixiu de la rotonda."
-
-#~ msgid "Take the exit to the left."
-#~ msgstr "Preneu l'eixida cap a l'esquerra."
-
-#~ msgid "Take the exit to the right."
-#~ msgstr "Preneu l'eixida cap a la dreta."
-
-#~ msgid "Continue onto %1."
-#~ msgstr "Continueu a %1."
-
-#~ msgid "Merge onto %1."
-#~ msgstr "Unió a %1."
-
-#~ msgid "Turn around onto %1."
-#~ msgstr "Doneu la volta a %1."
-
-#~ msgid "Turn sharp left on %1."
-#~ msgstr "Gireu a l'esquerra pronunciadament a %1."
-
-#~ msgid "Turn left into %1."
-#~ msgstr "Gireu a l'esquerra cap a %1."
-
-#~ msgid "Keep slightly left on %1."
-#~ msgstr "Manteniu-vos lleugerament a l'esquerra a %1."
-
-#~ msgid "Continue on %1."
-#~ msgstr "Continueu a %1."
-
-#~ msgid "Keep slightly right on %1."
-#~ msgstr "Manteniu-vos lleugerament a la dreta a %1."
-
-#~ msgid "Turn right into %1."
-#~ msgstr "Gireu a la dreta cap a %1."
-
-#~ msgid "Turn sharp right into %1."
-#~ msgstr "Gireu a la dreta pronunciadament cap a %1."
-
-#~ msgid "Exit the roundabout into %2."
-#~ msgstr "Eixiu de la rotonda cap a %2."
-
-#~ msgid "Take the exit to the left onto %1."
-#~ msgstr "Preneu l'eixida de l'esquerra a %1."
-
-#~ msgid "Take the exit to the right onto %1."
-#~ msgstr "Preneu l'eixida de la dreta a %1."
-
-#~ msgid "Clear"
-#~ msgstr "Neteja"
-
-#~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
-#~ msgid "%1 %2, %3"
-#~ msgstr "%2, %1, %3"
-
-#~ msgctxt "An address with parameters %1=road, %2=city"
-#~ msgid "%1, %2"
-#~ msgstr "%1, %2"
-
-#~ msgid "Address or search term..."
-#~ msgstr "Adreça o terme que s'ha de buscar..."
-
-#~ msgid "Remove via point"
-#~ msgstr "Elimina el punt de pas"
-
-#~ msgid "&Center Map here"
-#~ msgstr "&Centra el mapa ací"
-
-#~ msgid "Current &Location"
-#~ msgstr "&Emplaçament actual"
-
-#~ msgid "From &Map..."
-#~ msgstr "Des del &mapa..."
-
-#~ msgid "From &Bookmark"
-#~ msgstr "Des d'un punt d'&interés"
-
-#~ msgid "&Home"
-#~ msgstr "&Inici"
-
-#~ msgid "Current Location"
-#~ msgstr "Emplaçament actual"
-
-#~ msgid "Choose Placemark"
-#~ msgstr "Seleccioneu la marca de lloc"
-
-#~ msgid "&Remove this Destination"
-#~ msgstr "&Elimina esta destinació"
-
-#~ msgid "&Export Route..."
-#~ msgstr "&Exporta itinerari..."
-
-#~ msgid "Export Route"
-#~ msgstr "Exporta itinerari"
-
-#~ msgid "GPX and KML files (*.gpx *.kml)"
-#~ msgstr "Fitxers GPX i KML (*.gpx *.kml)"
-
-#~ msgid "Caution: Driving instructions may be incomplete or wrong."
-#~ msgstr ""
-#~ "Precaució: les instruccions de conducció poden ser incompletes o errònies."
-
-#~ msgid ""
-#~ "Road construction, weather and other unforeseen variables can result in "
-#~ "the suggested route not to be the most expedient or safest route to your "
-#~ "destination."
-#~ msgstr ""
-#~ "Les obres, la meteorologia i altres variables imprevistes poden fer que "
-#~ "l'itinerari suggerit no siga el més ràpid o segur per a atényer la vostra "
-#~ "destinació."
-
-#~ msgid "Please use common sense while navigating."
-#~ msgstr "Utilitzeu el sentit comú mentre conduïu."
-
-#~ msgid "The Marble development team wishes you a pleasant and safe journey."
-#~ msgstr ""
-#~ "L'equip de desenvolupament de Marble vos desitja que tingueu un trajecte "
-#~ "plaent i segur."
-
-#~ msgid "Guidance Mode"
-#~ msgstr "Mode de guiatge"
-
-#~ msgid "Show again"
-#~ msgstr "Torna a mostrar"
-
-#~ msgid "Configure Routing Profile"
-#~ msgstr "Configura el perfil de l'itinerari"
-
-#~ msgid "Active Route Services"
-#~ msgstr "Serveis d'itinerari actius"
-
-#~ msgid "Service Settings"
-#~ msgstr "Configureu el servei"
-
-#~ msgid "No configuration available"
-#~ msgstr "No hi ha cap configuració disponible"
-
-#~ msgid "Select Service to Configure"
-#~ msgstr "Selecciona el servei que s'ha de configurar"
-
-#~ msgid "Car (fastest)"
-#~ msgstr "Cotxe (més ràpida)"
-
-#~ msgid "Car (shortest)"
-#~ msgstr "Cotxe (més curta)"
-
-#~ msgid "Car (ecological)"
-#~ msgstr "Cotxe (ecològic)"
-
-#~ msgid "Bicycle"
-#~ msgstr "Bicicleta"
-
-#~ msgid "Pedestrian"
-#~ msgstr "Vianant"
-
-#~ msgid "Unknown"
-#~ msgstr "Desconeguda"
-
-#~ msgid "New Profile"
-#~ msgstr "Perfil nou"
-
-#~ msgid "ft"
-#~ msgstr "ft"
-
-#~ msgctxt "journey duration"
-#~ msgid "%1:%2 h"
-#~ msgstr "%1:%2 h"
-
-#~ msgid "Move &Up"
-#~ msgstr "Mou cap am&unt"
-
-#~ msgid "Move &Down"
-#~ msgstr "Mou cap a&vall"
-
-#~ msgid "Get Directions"
-#~ msgstr "Obtín les indicacions"
-
-#~ msgid "Retrieve routing instructions for the selected destinations."
-#~ msgstr ""
-#~ "Recupera les instruccions dels itineraris per als destins seleccionats."
-
-#~ msgid "Find places matching the search term"
-#~ msgstr "Busca llocs que coincidisquen amb el terme de busca"
-
-#~ msgid "Open Route"
-#~ msgstr "Obri itinerari"
-
-#~ msgid "Save Route"
-#~ msgstr "Guarda l'itinerari"
-
-#~ msgid "Preview Route"
-#~ msgstr "Vista prèvia de la ruta"
-
-#~ msgid "Upload to Cloud"
-#~ msgstr "Publica al núvol"
-
-#~ msgid "Manage Cloud Routes"
-#~ msgstr "Gestiona els itineraris al núvol"
-
-#~ msgid "Add Via"
-#~ msgstr "Afig una via"
-
-#~ msgid "Reverse Route"
-#~ msgstr "Invertix l'itinerari"
-
-#~ msgid "Clear Route"
-#~ msgstr "Neteja l'itinerari"
-
-#~ msgid "placemarks found: %1"
-#~ msgstr "marques de lloc trobades: %1"
-
-#~ msgid "No placemark found"
-#~ msgstr "No s'ha trobat cap marca de lloc"
-
-#~ msgid "No route found"
-#~ msgstr "No s'ha trobat cap itinerari"
-
-#~ msgid "routes found: %1"
-#~ msgstr "itineraris trobats: %1"
-
-#~ msgid "Uploading route..."
-#~ msgstr "S'està publicant l'itinerari..."
-
-#~ msgid "No results."
-#~ msgstr "Sense resultats."
-
-#~ msgid "Show Details"
-#~ msgstr "Mostra els detalls"
-
-#~ msgid "Choose alternative routes"
-#~ msgstr "Trieu itineraris alternatius"
-
-#~ msgid "Enable synchronization"
-#~ msgstr "Activa la sincronització"
-
-#~ msgid ""
-#~ "Allows you to store routes in owncloud. Each route must be uploaded/"
-#~ "downloaded manually."
-#~ msgstr ""
-#~ "Permet emmagatzemar rutes al núvol propi. Cada itinerari s'haurà de "
-#~ "publicar/baixar manualment."
-
-#~ msgid "Enable route synchronization"
-#~ msgstr "Activa la sincronització de l'itinerari"
-
-#~ msgid "Automatically sync all bookmarks to the server."
-#~ msgstr ""
-#~ "Sincronitza automàticament tots els punts d'interés amb el servidor."
-
-#~ msgid "Enable bookmark synchronization"
-#~ msgstr "Activa la sincronització dels punts d'interés"
-
-#~ msgid "Sync now"
-#~ msgstr "Sincronitza ara"
-
-#~ msgid "Credentials"
-#~ msgstr "Credencials"
-
-#~ msgid "Server:"
-#~ msgstr "Servidor:"
-
-#~ msgid "Remote server URL, e.g. myserver.com/owncloud"
-#~ msgstr "L'URL del servidor remot, p. ex., servidor_meu.com/núvol_propi"
-
-#~ msgid "Username:"
-#~ msgstr "Nom d'usuari:"
-
-#~ msgid "Test Login"
-#~ msgstr "Prova la identificació"
-
-#~ msgid "Time Zone"
-#~ msgstr "Zona horària"
-
-#~ msgid "UTC"
-#~ msgstr "UTC"
-
-#~ msgid "System time zone"
-#~ msgstr "Zona horària del sistema"
-
-#~ msgid "Choose Time zone"
-#~ msgstr "Escolliu la zona horària"
-
-#~ msgid "Universal Time Coordinated"
-#~ msgstr "Temps Coordinat Universal"
-
-#~ msgid "European Central Time"
-#~ msgstr "Hora de l'Europa central"
-
-#~ msgid "Eastern European Time"
-#~ msgstr "Hora de l'Europa oriental"
-
-#~ msgid "Egypt Standard Time"
-#~ msgstr "Hora estàndard d'Egipte"
-
-#~ msgid "Eastern African Time"
-#~ msgstr "Hora d'Àfrica oriental"
-
-#~ msgid "Middle East Time"
-#~ msgstr "Hora de l'Orient Mitjà"
-
-#~ msgid "Near East Time"
-#~ msgstr "Hora del Pròxim Orient"
-
-#~ msgid "Pakistan Lahore Time"
-#~ msgstr "Hora del Lahore pakistanés"
-
-#~ msgid "India Standard Time"
-#~ msgstr "Hora estàndard de l'Índia"
-
-#~ msgid "Bangladesh Standard Time"
-#~ msgstr "Hora estàndard de Bangladesh"
-
-#~ msgid "Vietnam Standard Time"
-#~ msgstr "Hora estàndard de Vietnam"
-
-#~ msgid "China Taiwan Time"
-#~ msgstr "Hora del Taiwan xinés"
-
-#~ msgid "Japan Standard Time"
-#~ msgstr "Hora estàndard del Japó"
-
-#~ msgid "Australia Central Time"
-#~ msgstr "Hora d'Austràlia central"
-
-#~ msgid "Australia Eastern Time"
-#~ msgstr "Hora d'Austràlia oriental"
-
-#~ msgid "Solomon Standard Time"
-#~ msgstr "Hora estàndard de les Salomó"
-
-#~ msgid "New Zealand Standard Time"
-#~ msgstr "Hora estàndard de Nova Zelanda"
-
-#~ msgid "Midway Islands Time"
-#~ msgstr "Hora de les Illes Midway"
-
-#~ msgid "Hawaii Standard Time"
-#~ msgstr "Hora estàndard de Hawaii"
-
-#~ msgid "Alaska Standard Time"
-#~ msgstr "Hora estàndard d'Alaska"
-
-#~ msgid "Pacific Standard Time"
-#~ msgstr "Hora estàndard del pacífic"
-
-#~ msgid "Phoenix Standard Time"
-#~ msgstr "Hora estàndard de Phoenix"
-
-#~ msgid "Mountain Standard Time"
-#~ msgstr "Hora estàndard de les muntanyes"
-
-#~ msgid "Central Standard Time"
-#~ msgstr "Hora estàndard central"
-
-#~ msgid "Eastern Standard Time"
-#~ msgstr "Hora estàndard oriental"
-
-#~ msgid "Indiana Eastern Standard Time"
-#~ msgstr "Hora estàndard oriental d'Indiana"
-
-#~ msgid "Puerto Rico and US Virgin Islands Time"
-#~ msgstr "Hora de Puerto Rico i Illes Verges Americanes"
-
-#~ msgid "Canada Newfoundland Time"
-#~ msgstr "Hora de Newfoundland canadenc"
-
-#~ msgid "Argentina Standard Time"
-#~ msgstr "Hora estàndard d'Argentina"
-
-#~ msgid "Brazil Eastern Time"
-#~ msgstr "Hora oriental del Brasil"
-
-#~ msgid "Central African Time"
-#~ msgstr "Hora central africana"
-
-#~ msgid "When Marble starts"
-#~ msgstr "Quan s'inicie Marble"
-
-#~ msgid "Load system time"
-#~ msgstr "Carrega l'hora del sistema"
-
-#~ msgid "Load last session time"
-#~ msgstr "Carrega l'hora de l'última sessió"
-
-#~ msgid "Date and Time"
-#~ msgstr "Data i hora"
-
-#~ msgid "Routing"
-#~ msgstr "Itineraris"
-
-#~ msgid "Synchronization"
-#~ msgstr "Sincronització"
-
-#~ msgid "Never synchronized."
-#~ msgstr "No s'ha sincronitzat mai."
-
-#~ msgid "Last synchronization: %1"
-#~ msgstr "Última sincronització: %1"
-
-#~ msgid "Elevation:"
-#~ msgstr "Desnivell:"
-
-#~ msgid " m"
-#~ msgstr " m"
-
-#~ msgid "above sea level"
-#~ msgstr "sobre el nivell del mar"
-
-#~ msgid "Select sound files..."
-#~ msgstr "Selecciona els fitxers de so..."
-
-#~ msgid "Supported Sound Files (*.mp3 *.ogg *.wav)"
-#~ msgstr "Fitxers de so admesos (*.mp3 *.ogg *.wav)"
+#~ msgid "&Network Proxy"
+#~ msgstr "Servidor intermediari de la xarxa"
