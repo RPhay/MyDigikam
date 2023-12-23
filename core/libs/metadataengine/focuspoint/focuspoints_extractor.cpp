@@ -94,7 +94,16 @@ QVariant FocusPointsExtractor::findValue(const QString& tagName, bool isList) co
 
     if (isList)
     {
-        return result[0].toString().split(QLatin1String(" "));
+        QString str = result[0].toString();
+
+        if (str.contains(QLatin1Char(',')))
+        {
+            return str.split(QLatin1Char(','));
+        }
+        else
+        {
+            return str.split(QLatin1Char(' '));
+        }
     }
     else
     {
@@ -116,14 +125,14 @@ QVariant FocusPointsExtractor::findNumValue(const QString& tagName) const
 
 QVariant FocusPointsExtractor::findValue(const QString& tagNameRoot, const QString& key, bool isList) const
 {
-    return findValue(tagNameRoot + QLatin1String(".") + key,isList);
+    return findValue(tagNameRoot + QLatin1String(".") + key, isList);
 }
 
 QVariant FocusPointsExtractor::findValueFirstMatch(const QStringList& listTagNames, bool isList) const
 {
     for (const QString& tagName : listTagNames)
     {
-        QVariant tmp = findValue(tagName,isList);
+        QVariant tmp = findValue(tagName, isList);
 
         if (!tmp.isNull())
         {
@@ -138,7 +147,7 @@ QVariant FocusPointsExtractor::findValueFirstMatch(const QString& tagNameRoot, c
 {
     for (const QString& key : keys)
     {
-        QVariant tmp = findValue(tagNameRoot,key,isList);
+        QVariant tmp = findValue(tagNameRoot, key, isList);
 
         if (!tmp.isNull())
         {
