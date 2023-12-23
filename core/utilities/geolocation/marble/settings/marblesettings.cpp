@@ -122,8 +122,11 @@ MarbleSettingsContainer MarbleSettings::settings() const
 void MarbleSettings::setSettings(const MarbleSettingsContainer& settings)
 {
     MarbleSettingsContainer old = d->setSettings(settings);
+
     Q_EMIT signalMarbleSettingsChanged(settings, old);
+
     Q_EMIT signalSettingsChanged();
+
     d->writeToConfig();
 }
 
@@ -131,7 +134,9 @@ void MarbleSettings::readFromConfig()
 {
     MarbleSettingsContainer s   = d->readFromConfig();
     MarbleSettingsContainer old = d->setSettings(s);
+
     Q_EMIT signalMarbleSettingsChanged(s, old);
+
     Q_EMIT signalSettingsChanged();
 }
 

@@ -180,7 +180,7 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
      * @brief Returns a list of all RenderPlugins on the widget, this includes float items
      * @return the list of RenderPlugins
      */
-    QList<RenderPlugin *> renderPlugins() const;
+    QList<RenderPlugin*> renderPlugins() const;
 
     /**
      * @brief Returns a list of all FloatItems on the widget
@@ -197,20 +197,14 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
     AbstractFloatItem * floatItem( const QString &nameId ) const;
 
     /**
-     * Reads the plugin settings from the passed QSettings.
-     * You shouldn't use this in a KDE application as these use KConfig. Here you could
-     * use MarblePart which is handling this automatically.
-     * @param settings The QSettings object to be used.
+     * Reads the plugin settings.
      */
-    void readPluginSettings( QSettings& settings );
+    void readPluginSettings();
 
     /**
-     * Writes the plugin settings in the passed QSettings.
-     * You shouldn't use this in a KDE application as these use KConfig. Here you could
-     * use MarblePart which is handling this automatically.
-     * @param settings The QSettings object to be used.
+     * Writes the plugin settings.
      */
-    void writePluginSettings( QSettings& settings ) const;
+    void writePluginSettings() const;
 
     /**
      * @brief Retrieve the view context (i.e. still or animated map)

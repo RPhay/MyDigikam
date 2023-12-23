@@ -19,6 +19,8 @@
 #include <QMetaMethod>
 
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 
 #include "FpsLayer.h"
 #include "FileManager.h"
@@ -50,7 +52,8 @@ namespace Marble
 
 class MarbleWidget::CustomPaintLayer : public LayerInterface
 {
- public:
+public:
+
     explicit CustomPaintLayer( MarbleWidget *widget )
         : m_widget( widget )
     {
@@ -78,14 +81,15 @@ class MarbleWidget::CustomPaintLayer : public LayerInterface
     QString runtimeTrace() const override { return QStringLiteral("MarbleWidget::CustomPaintLayer"); }
 
  private:
+ 
     MarbleWidget *const m_widget;
 };
 
 class MarbleWidgetPrivate
 {
  public:
-    explicit MarbleWidgetPrivate( MarbleWidget *parent ) :
-          m_widget( parent ),
+    explicit MarbleWidgetPrivate( MarbleWidget* parent )
+        : m_widget( parent ),
           m_model(),
           m_map( &m_model ),
           m_presenter( &m_map ),
@@ -93,7 +97,8 @@ class MarbleWidgetPrivate
           m_mapInfoDialog( nullptr ),
           m_customPaintLayer( parent ),
           m_popupmenu( nullptr ),
-          m_showFrameRate( false )
+          m_showFrameRate( false ),
+          configGroup(QLatin1String("Marble Settings"))
     {
     }
 
@@ -120,21 +125,23 @@ class MarbleWidgetPrivate
       */
     void updateSystemBackgroundAttribute();
 
-    MarbleWidget    *const m_widget;
+    MarbleWidget* const             m_widget;
 
-    MarbleModel m_model;
-    MarbleMap m_map;
+    MarbleModel                     m_model;
+    MarbleMap                       m_map;
 
-    MarbleAbstractPresenter m_presenter;
+    MarbleAbstractPresenter         m_presenter;
 
-    MarbleWidgetInputHandler  *m_inputhandler;
+    MarbleWidgetInputHandler*       m_inputhandler;
 
-    PopupLayer    *m_mapInfoDialog;
-    MarbleWidget::CustomPaintLayer m_customPaintLayer;
+    PopupLayer*                     m_mapInfoDialog;
+    MarbleWidget::CustomPaintLayer  m_customPaintLayer;
 
-    MarbleWidgetPopupMenu *m_popupmenu;
+    MarbleWidgetPopupMenu*          m_popupmenu;
 
-    bool             m_showFrameRate;
+    bool                            m_showFrameRate;
+
+    const QString                   configGroup;
 };
 
 MarbleWidget::MarbleWidget(QWidget *parent)
@@ -1099,37 +1106,44 @@ QList<RenderPlugin *> MarbleWidget::renderPlugins() const
     return d->m_map.renderPlugins();
 }
 
-void MarbleWidget::readPluginSettings( QSettings& settings )
+void MarbleWidget::readPluginSettings()
 {
-    for( RenderPlugin *plugin: renderPlugins() ) {
-        settings.beginGroup(QLatin1String("plugin_") + plugin->nameId());
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
 
-        QHash<QString,QVariant> hash;
+    for (RenderPlugin* const plugin : renderPlugins())
+    {
+        KConfigGroup group = config->group(d->configGroup           +
+                                           QLatin1String("plugin_") +
+                                           plugin->nameId());
+        QHash<QString, QVariant> hash;
 
-        for ( const QString& key: settings.childKeys() ) {
-            hash.insert( key, settings.value( key ) );
+        for (const QString& key : group.keyList())
+        {
+            hash.insert(key, group.readEntry(key));
         }
 
-        plugin->setSettings( hash );
-
-        settings.endGroup();
+        plugin->setSettings(hash);
     }
 }
 
-void MarbleWidget::writePluginSettings( QSettings& settings ) const
+void MarbleWidget::writePluginSettings() const
 {
-    for( RenderPlugin *plugin: renderPlugins() ) {
-        settings.beginGroup(QLatin1String("plugin_") + plugin->nameId());
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
 
-        QHash<QString,QVariant> hash = plugin->settings();
+    for (RenderPlugin* const plugin : renderPlugins())
+    {
+        KConfigGroup group                    = config->group(d->configGroup           +
+                                                              QLatin1String("plugin_") +
+                                                              plugin->nameId());
 
-        QHash<QString,QVariant>::iterator it = hash.begin();
-        while( it != hash.end() ) {
-            settings.setValue( it.key(), it.value() );
+        QHash<QString, QVariant> hash         = plugin->settings();
+        QHash<QString, QVariant>::iterator it = hash.begin();
+
+        while (it != hash.end())
+        {
+            group.writeEntry(it.key(), it.value());
             ++it;
         }
-
-        settings.endGroup();
     }
 }
 
