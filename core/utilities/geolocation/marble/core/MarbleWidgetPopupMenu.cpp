@@ -105,8 +105,8 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     m_widget(widget),
     m_lmbMenu( m_widget ),
     m_rmbMenu( m_widget ),
-    m_copyCoordinateAction(new QAction(QIcon(QStringLiteral(":/icons/copy-coordinates.png")), i18n("Copy Coordinates"), parent)),
-    m_copyGeoAction(new QAction(QIcon(QStringLiteral(":/icons/copy-coordinates.png")), i18n("Copy geo: URL"), parent)),
+    m_copyCoordinateAction(new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Coordinates"), parent)),
+    m_copyGeoAction(new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy geo: URL"), parent)),
     m_rmbExtensionPoint( nullptr ),
     m_runnerManager( model )
 {
@@ -123,7 +123,7 @@ MarbleWidgetPopupMenu::Private::Private( MarbleWidget *widget, const MarbleModel
     m_rmbMenu.addAction( m_copyCoordinateAction );
     m_rmbMenu.addAction( m_copyGeoAction );
 
-    m_rmbMenu.addAction(QIcon(QStringLiteral(":/icons/addressbook-details.png")), i18n("&Address Details"), parent, SLOT(startReverseGeocoding()));
+    m_rmbMenu.addAction(QIcon::fromTheme(QStringLiteral("addressbook-details")), i18n("&Address Details"), parent, SLOT(startReverseGeocoding()));
     m_rmbMenu.addSeparator();
     m_rmbMenu.addMenu( infoBoxMenu );
 
