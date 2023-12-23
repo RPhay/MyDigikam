@@ -18,6 +18,7 @@
 // Qt includes
 
 #include <QDebug>
+#include <QFont>
 
 // Local includes
 
@@ -49,12 +50,12 @@ public:
 
 public:
 
-    MarbleLocale::MeasurementSystem measurementSys           = MarbleLocale::MetricSystem;
+    MarbleLocale::MeasurementSystem distanceUnit             = MarbleLocale::MetricSystem;
 
-    Marble::AngleUnit               angleUnit                = Marbleglobal::DecimalDegree;
+    Marble::AngleUnit               angleUnit                = Marble::DecimalDegree;
 
-    Marble::MapQuality              stillQ                   = MarbleGlobal::HighQuality;
-    Marble::MapQuality              animationQ               = MarbleGlobal::LowQuality;
+    Marble::MapQuality              stillQuality             = Marble::HighQuality;
+    Marble::MapQuality              animationQuality         = Marble::LowQuality;
 
     QFont                           mapFont;
 
@@ -69,7 +70,5 @@ public:
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const MarbleSettingsContainer& inf);
 
 } // namespace Digikam
-
-Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::MarbleSettingsContainer::RotationBehaviorFlags)
 
 #endif // DIGIKAM_MARBLE_SETTINGS_CONTAINER_H

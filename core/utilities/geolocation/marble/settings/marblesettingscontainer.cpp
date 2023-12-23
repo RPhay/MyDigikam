@@ -27,10 +27,10 @@ namespace Digikam
 
 void MarbleSettingsContainer::readFromConfig(KConfigGroup& group)
 {
-    measurementSys           = group.readEntry("Measurement System",          MarbleLocale::MetricSystem);
-    angleUnit                = group.readEntry("Angle Unit",                  Marbleglobal::DecimalDegree);
-    stillQ                   = group.readEntry("Still Quality",               MarbleGlobal::HighQuality);
-    animationQ               = group.readEntry("Animation Quality",           MarbleGlobal::LowQuality);
+    distanceUnit             = (MarbleLocale::MeasurementSystem)group.readEntry("Distance Unit",               (int)MarbleLocale::MetricSystem);
+    angleUnit                = (Marble::AngleUnit)              group.readEntry("Angle Unit",                  (int)Marble::DecimalDegree);
+    stillQuality             = (Marble::MapQuality)             group.readEntry("Still Quality",               (int)Marble::HighQuality);
+    animationQuality         = (Marble::MapQuality)             group.readEntry("Animation Quality",           (int)Marble::LowQuality);
     mapFont                  = group.readEntry("Map Font",                    QFont());
     inertialRotation         = group.readEntry("Inertial Rotation",           true);
     mouseRotation            = group.readEntry("Mouse Rotation",              true);
@@ -40,10 +40,10 @@ void MarbleSettingsContainer::readFromConfig(KConfigGroup& group)
 
 void MarbleSettingsContainer::writeToConfig(KConfigGroup& group) const
 {
-    group.writeEntry("Measurement System",          measurementSys);
-    group.writeEntry("Angle Unit",                  angleUnit);
-    group.writeEntry("Still Quality",               stillQ);
-    group.writeEntry("Animation Quality",           animationQ);
+    group.writeEntry("Distance Unit",               (int)distanceUnit);
+    group.writeEntry("Angle Unit",                  (int)angleUnit);
+    group.writeEntry("Still Quality",               (int)stillQuality);
+    group.writeEntry("Animation Quality",           (int)animationQuality);
     group.writeEntry("Map Font",                    mapFont);
     group.writeEntry("Inertial Rotation",           (bool)inertialRotation);
     group.writeEntry("Mouse Rotation",              (bool)mouseRotation);
@@ -53,14 +53,14 @@ void MarbleSettingsContainer::writeToConfig(KConfigGroup& group) const
 
 QDebug operator<<(QDebug dbg, const MarbleSettingsContainer& inf)
 {
-    dbg.nospace() << "[MarbleSettingsContainer] measurementSys("
-                  << inf.measurementSys << "), ";
+    dbg.nospace() << "[MarbleSettingsContainer] distanceUnit("
+                  << inf.distanceUnit << "), ";
     dbg.nospace() << "angleUnit("
                   << inf.angleUnit << "), ";
-    dbg.nospace() << "stillQ("
-                  << inf.stillQ << "), ";
-    dbg.nospace() << "animationQ("
-                  << inf.animationQ << "), ";
+    dbg.nospace() << "stillQuality("
+                  << inf.stillQuality << "), ";
+    dbg.nospace() << "animationQuality("
+                  << inf.animationQuality << "), ";
     dbg.nospace() << "mapFont("
                   << inf.mapFont << "), ";
     dbg.nospace() << "inertialRotation("

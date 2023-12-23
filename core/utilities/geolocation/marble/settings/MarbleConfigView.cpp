@@ -14,7 +14,6 @@
 #include <QWidget>
 #include <QDateTime>
 #include <QTimer>
-#include <QSettings>
 
 // KDE includes
 
@@ -30,18 +29,21 @@
 #include "MarbleClock.h"
 #include "MarblePluginSettingsWidget.h"
 #include "ui_MarbleViewSettingsWidget.h"
+#include "marblesettings.h"
 
 #include "digikam_debug.h"
+
+using namespace Digikam;
 
 namespace Marble
 {
 
-class MarbleConfigViewPrivate
+class Q_DECL_HIDDEN MarbleConfigView::Private
 {
 
 public:
 
-    MarbleConfigViewPrivate(MarbleWidget* const marbleWidget)
+    explicit Private(MarbleWidget* const marbleWidget)
         : ui_viewSettings (),
           m_marbleWidget  (marbleWidget),
           m_pluginModel   ()
@@ -50,8 +52,6 @@ public:
 
     Ui::MarbleViewSettingsWidget       ui_viewSettings;
     MarblePluginSettingsWidget*        w_pluginSettings = nullptr;
-
-    QSettings                          m_settings;
 
     MarbleWidget* const                m_marbleWidget;
 
@@ -63,7 +63,7 @@ public:
 MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
                                    QWidget* const parent)
     : QTabWidget(parent),
-      d      (new MarbleConfigViewPrivate(marbleWidget))
+      d      (new Private(marbleWidget))
 {
     // View page
 
@@ -109,114 +109,47 @@ MarbleConfigView::~MarbleConfigView()
 
 void MarbleConfigView::readSettings()
 {
-    // Sync settings to make sure that we read the current settings.
+    // Read settings from config file.
 
-    d->m_settings.sync();
+    MarbleSettingsContainer settings = MarbleSettings::instance()->settings();
 
     // View
 
-    d->ui_viewSettings.kcfg_distanceUnit->setCurrentIndex( measurementSystem() );
-    d->ui_viewSettings.kcfg_angleUnit->setCurrentIndex( angleUnit() );
-    d->ui_viewSettings.kcfg_stillQuality->setCurrentIndex( stillQuality() );
-    d->ui_viewSettings.kcfg_animationQuality->setCurrentIndex( animationQuality() );
-    d->ui_viewSettings.kcfg_mapFont->setCurrentFont( mapFont() );
-    d->ui_viewSettings.kcfg_inertialEarthRotation->setChecked( inertialEarthRotation() );
-    d->ui_viewSettings.kcfg_mouseViewRotation->setChecked( mouseViewRotation() );
-    d->ui_viewSettings.kcfg_volatileTileCacheLimit->setValue( volatileTileCacheLimit() );
-    d->ui_viewSettings.kcfg_persistentTileCacheLimit->setValue( persistentTileCacheLimit() );
+    d->ui_viewSettings.kcfg_distanceUnit->setCurrentIndex(settings.distanceUnit);
+    d->ui_viewSettings.kcfg_angleUnit->setCurrentIndex(settings.angleUnit);
+    d->ui_viewSettings.kcfg_stillQuality->setCurrentIndex(settings.stillQuality);
+    d->ui_viewSettings.kcfg_animationQuality->setCurrentIndex(settings.animationQuality);
+    d->ui_viewSettings.kcfg_mapFont->setCurrentFont(settings.mapFont);
+    d->ui_viewSettings.kcfg_inertialEarthRotation->setChecked(settings.inertialRotation);
+    d->ui_viewSettings.kcfg_mouseViewRotation->setChecked(settings.mouseRotation);
+    d->ui_viewSettings.kcfg_volatileTileCacheLimit->setValue(settings.volatileTileCacheLimit);
+    d->ui_viewSettings.kcfg_persistentTileCacheLimit->setValue(settings.persistentTileCacheLimit);
 
     // Read the settings of the plugins
 
-    d->m_marbleWidget->readPluginSettings( d->m_settings );
+//    d->m_marbleWidget->readPluginSettings(d->m_settings);
 }
 
 void MarbleConfigView::applySettings()
 {
-    d->m_settings.beginGroup( QLatin1String("View") );
-    d->m_settings.setValue( QLatin1String("distanceUnit"), d->ui_viewSettings.kcfg_distanceUnit->currentIndex() );
-    d->m_settings.setValue( QLatin1String("angleUnit"), d->ui_viewSettings.kcfg_angleUnit->currentIndex() );
-    d->m_settings.setValue( QLatin1String("stillQuality"), d->ui_viewSettings.kcfg_stillQuality->currentIndex() );
-    d->m_settings.setValue( QLatin1String("animationQuality"), d->ui_viewSettings.kcfg_animationQuality->currentIndex() );
-    d->m_settings.setValue( QLatin1String("mapFont"), d->ui_viewSettings.kcfg_mapFont->currentFont() );
-    d->m_settings.setValue( QLatin1String("inertialEarthRotation"), d->ui_viewSettings.kcfg_inertialEarthRotation->isChecked() );
-    d->m_settings.setValue( QLatin1String("mouseViewRotation"), d->ui_viewSettings.kcfg_mouseViewRotation->isChecked() );
-    d->m_settings.setValue( QLatin1String("volatileTileCacheLimit"), d->ui_viewSettings.kcfg_volatileTileCacheLimit->value() );
-    d->m_settings.setValue( QLatin1String("persistentTileCacheLimit"), d->ui_viewSettings.kcfg_persistentTileCacheLimit->value() );
-    d->m_settings.endGroup();
+    MarbleSettingsContainer settings;
+
+    settings.distanceUnit             = (Marble::MarbleLocale::MeasurementSystem)d->ui_viewSettings.kcfg_distanceUnit->currentIndex();
+    settings.angleUnit                = (Marble::AngleUnit)d->ui_viewSettings.kcfg_angleUnit->currentIndex();
+    settings.stillQuality             = (Marble::MapQuality)d->ui_viewSettings.kcfg_stillQuality->currentIndex();
+    settings.animationQuality         = (Marble::MapQuality)d->ui_viewSettings.kcfg_animationQuality->currentIndex();
+    settings.mapFont                  = d->ui_viewSettings.kcfg_mapFont->currentFont();
+    settings.inertialRotation         = d->ui_viewSettings.kcfg_inertialEarthRotation->isChecked();
+    settings.mouseRotation            = d->ui_viewSettings.kcfg_mouseViewRotation->isChecked();
+    settings.volatileTileCacheLimit   = d->ui_viewSettings.kcfg_volatileTileCacheLimit->value();
+    settings.persistentTileCacheLimit = d->ui_viewSettings.kcfg_persistentTileCacheLimit->value();
+
+    MarbleSettings::instance()->setSettings(settings);
 
     // Plugins
 
-    d->m_marbleWidget->writePluginSettings( d->m_settings );
+//    d->m_marbleWidget->writePluginSettings( d->m_settings );
 }
-
-MarbleLocale::MeasurementSystem MarbleConfigView::measurementSystem() const
-{
-    if ( d->m_settings.contains( QString::fromUtf8("View/distanceUnit") ) )
-    {
-        return (MarbleLocale::MeasurementSystem)d->m_settings.value( QString::fromUtf8("View/distanceUnit") ).toInt();
-    }
-
-    MarbleLocale* const locale = MarbleGlobal::getInstance()->locale();
-
-    return locale->measurementSystem();
-}
-
-Marble::AngleUnit MarbleConfigView::angleUnit() const
-{
-    return (Marble::AngleUnit) d->m_settings.value( QLatin1String("View/angleUnit"),
-                               Marble::DMSDegree ).toInt();
-}
-
-void MarbleConfigView::setAngleUnit(Marble::AngleUnit unit)
-{
-    d->m_settings.setValue( QLatin1String("View/angleUnit"), (int)unit );
-    d->ui_viewSettings.kcfg_angleUnit->setCurrentIndex( angleUnit() );
-}
-
-Marble::MapQuality MarbleConfigView::stillQuality() const
-{
-    return (Marble::MapQuality) d->m_settings.value( QLatin1String("View/stillQuality"),
-                                Marble::HighQuality ).toInt();
-}
-
-Marble::MapQuality MarbleConfigView::animationQuality() const
-{
-    return (Marble::MapQuality) d->m_settings.value( QLatin1String("View/animationQuality"),
-                                Marble::LowQuality ).toInt();
-}
-
-QFont MarbleConfigView::mapFont() const
-{
-    return d->m_settings.value( QLatin1String("View/mapFont"),
-                                QApplication::font() ).value<QFont>();
-}
-
-bool MarbleConfigView::inertialEarthRotation() const
-{
-    return d->m_settings.value( QLatin1String("Navigation/inertialEarthRotation"),
-                                true ).toBool();
-}
-
-bool MarbleConfigView::mouseViewRotation() const
-{
-    return d->m_settings.value( QLatin1String("Navigation/mouseViewRotation"),
-                                true ).toBool();
-}
-
-int MarbleConfigView::volatileTileCacheLimit() const
-{
-    int defaultValue = (MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen) ? 6 : 100;
-
-    return d->m_settings.value( QLatin1String("Cache/volatileTileCacheLimit"),
-                                defaultValue ).toInt();
-}
-
-int MarbleConfigView::persistentTileCacheLimit() const
-{
-    return d->m_settings.value( QLatin1String("Cache/persistentTileCacheLimit"),
-                                0 ).toInt(); // default to unlimited
-}
-
 
 } // namespace Marble
 

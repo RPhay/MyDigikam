@@ -18,8 +18,6 @@ namespace Marble
 
 class MarbleWidget;
 
-class MarbleConfigViewPrivate;
-
 class DIGIKAM_EXPORT MarbleConfigView : public QTabWidget
 {
     Q_OBJECT
@@ -29,24 +27,6 @@ public:
     explicit MarbleConfigView(MarbleWidget* const marbleWidget,
                               QWidget* const parent = nullptr );
     ~MarbleConfigView() override;
-
-    // View Settings
-
-    MarbleLocale::MeasurementSystem measurementSystem() const;
-
-    Marble::AngleUnit angleUnit()                       const;
-    void setAngleUnit(Marble::AngleUnit unit);
-
-    Marble::MapQuality stillQuality()                   const;
-    Marble::MapQuality animationQuality()               const;
-
-    QFont mapFont()                                     const;
-
-    bool inertialEarthRotation()                        const;
-    bool mouseViewRotation()                            const;
-
-    int volatileTileCacheLimit()                        const;
-    int persistentTileCacheLimit()                      const;
 
     void applySettings();
 
@@ -70,7 +50,8 @@ private:
 
     Q_DISABLE_COPY( MarbleConfigView )
 
-    MarbleConfigViewPrivate * const d;
+    class Private;
+    Private* const d;
 };
 
 } // namespace Marble

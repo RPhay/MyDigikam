@@ -38,19 +38,19 @@ public:
 
     explicit Private ()
         : mutex      (),
-          configGroup(QLatin1String("Metadata Settings"))
+          configGroup(QLatin1String("Marble Settings"))
     {
     }
 
     MarbleSettingsContainer settings;
-    QMutex                      mutex;
+    QMutex                  mutex;
 
-    const QString               configGroup;
+    const QString           configGroup;
 
 public:
 
     MarbleSettingsContainer readFromConfig() const;
-    void                        writeToConfig()  const;
+    void                    writeToConfig()  const;
     MarbleSettingsContainer setSettings(const MarbleSettingsContainer& s);
 };
 
@@ -117,11 +117,6 @@ MarbleSettingsContainer MarbleSettings::settings() const
     MarbleSettingsContainer s(d->settings);
 
     return s;
-}
-
-bool MarbleSettings::exifRotate() const
-{
-    return d->settings.exifRotate;
 }
 
 void MarbleSettings::setSettings(const MarbleSettingsContainer& settings)

@@ -15,6 +15,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLU
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Concurrent,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 set(marblewidget_SRCS
@@ -614,6 +615,8 @@ set(marblewidget_SRCS
 
     settings/MarbleConfigView.cpp
     settings/MarblePluginSettingsWidget.cpp
+    settings/marblesettings.cpp
+    settings/marblesettingscontainer.cpp
 
     storage/CacheStoragePolicy.cpp
     storage/DiscCache.cpp

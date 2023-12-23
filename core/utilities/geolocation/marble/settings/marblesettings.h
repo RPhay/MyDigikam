@@ -48,11 +48,6 @@ public:
      */
     void setSettings(const MarbleSettingsContainer& settings);
 
-    /**
-     * Shortcut to get exif rotation settings from container.
-     */
-    bool exifRotate()                      const;
-
 Q_SIGNALS:
 
     void signalSettingsChanged();
