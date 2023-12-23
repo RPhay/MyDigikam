@@ -88,7 +88,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
 
     // Setting the icons for the plugin dialog.
 
-    d->w_pluginSettings->setConfigIcon(QIcon(QStringLiteral(":/icons/settings-configure.png")));
+    d->w_pluginSettings->setConfigIcon(QIcon::fromTheme(QLatin1String("configure")));
 
     connect( this, SIGNAL(rejected()),
              &d->m_pluginModel, SLOT(retrievePluginState()) );

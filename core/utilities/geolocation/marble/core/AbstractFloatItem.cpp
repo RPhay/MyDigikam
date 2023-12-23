@@ -283,7 +283,7 @@ QMenu* AbstractFloatItem::contextMenu()
         if( dialog )
         {
             d->m_contextMenu->addSeparator();
-            QAction *configAction = d->m_contextMenu->addAction(QIcon(QStringLiteral(":/icons/settings-configure.png")), i18n("&Configure..."));
+            QAction *configAction = d->m_contextMenu->addAction(QIcon::fromTheme(QLatin1String("configure")), i18n("&Configure..."));
             connect( configAction, SIGNAL(triggered()), dialog, SLOT(exec()) );
         }
     }
