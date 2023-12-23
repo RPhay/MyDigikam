@@ -11,10 +11,6 @@ Files: core/data/*
 Copyright: none
 License: CC0-1.0
 
-Files: core/tests/*
-Copyright: none
-License: GPL-2.0
-
 Files: core/utilities/geolocation/marble/data/flags/*
 Copyright: none
 License: CC0-1.0
