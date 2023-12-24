@@ -48,6 +48,10 @@
 #include "dxmlguiwindow.h"
 #include "onlineversiondlg.h"
 
+#ifdef HAVE_MARBLE
+#   include "setupgeolocation.h"
+#endif
+
 #if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 #   include "setupvideo.h"
 #endif
@@ -74,6 +78,13 @@ public:
         page_metadata           (nullptr),
         page_template           (nullptr),
         page_lighttable         (nullptr),
+
+#ifdef HAVE_MARBLE
+
+        page_geolocation        (nullptr),
+
+#endif
+
         page_editor             (nullptr),
         page_imagequalitysorter (nullptr),
         page_icc                (nullptr),
@@ -94,6 +105,13 @@ public:
         metadataPage            (nullptr),
         templatePage            (nullptr),
         lighttablePage          (nullptr),
+
+#ifdef HAVE_MARBLE
+
+        geolocationPage         (nullptr),
+
+#endif
+
         editorPage              (nullptr),
         imageQualitySorterPage  (nullptr),
         iccPage                 (nullptr),
@@ -117,6 +135,13 @@ public:
     DConfigDlgWdgItem*       page_metadata;
     DConfigDlgWdgItem*       page_template;
     DConfigDlgWdgItem*       page_lighttable;
+
+#ifdef HAVE_MARBLE
+
+    DConfigDlgWdgItem*       page_geolocation;
+
+#endif
+
     DConfigDlgWdgItem*       page_editor;
     DConfigDlgWdgItem*       page_imagequalitysorter;
     DConfigDlgWdgItem*       page_icc;
@@ -138,6 +163,13 @@ public:
     SetupMetadata*           metadataPage;
     SetupTemplate*           templatePage;
     SetupLightTable*         lighttablePage;
+
+#ifdef HAVE_MARBLE
+
+    SetupGeolocation*        geolocationPage;
+
+#endif
+
     SetupEditor*             editorPage;
     SetupImageQualitySorter* imageQualitySorterPage;
     SetupICC*                iccPage;
@@ -216,8 +248,17 @@ Setup::Setup(QWidget* const parent)
 
     d->lighttablePage  = new SetupLightTable();
     d->page_lighttable = addPage(d->lighttablePage, i18nc("@title: settings section", "Light Table"));
-    d->page_lighttable->setHeader(i18nc("@title", "Light Table Settings\nCustomize tool used to compare images"));
+    d->page_lighttable->setHeader(i18nc("@title", "Light Table Settings\nCustomize tool used to compare items"));
     d->page_lighttable->setIcon(QIcon::fromTheme(QLatin1String("lighttable")));
+
+#ifdef HAVE_MARBLE
+
+    d->geolocationPage = new SetupGeolocation();
+    d->page_geolocation = addPage(d->lighttablePage, i18nc("@title: settings section", "Geolocation"));
+    d->page_geolocation->setHeader(i18nc("@title", "Geolocation Settings\nCustomize view to geolocalize items"));
+    d->page_geolocation->setIcon(QIcon::fromTheme(QLatin1String("map_globe")));
+
+#endif
 
     d->imageQualitySorterPage = new SetupImageQualitySorter();
     d->page_imagequalitysorter = addPage(d->imageQualitySorterPage, i18nc("@title: settings section", "Image Quality Sorter"));
@@ -295,6 +336,13 @@ Setup::~Setup()
     group.writeEntry(QLatin1String("Metadata Tab"),    (int)d->metadataPage->activeTab());
     group.writeEntry(QLatin1String("Metadata SubTab"), (int)d->metadataPage->activeSubTab());
     group.writeEntry(QLatin1String("Editor Tab"),      (int)d->editorPage->activeTab());
+
+#ifdef HAVE_MARBLE
+
+    group.writeEntry(QLatin1String("Geolocation Tab"), (int)d->geolocationPage->activeTab());
+
+#endif
+
     group.writeEntry(QLatin1String("ICC Tab"),         (int)d->iccPage->activeTab());
     group.writeEntry(QLatin1String("Camera Tab"),      (int)d->cameraPage->activeTab());
     group.writeEntry(QLatin1String("Plugin Tab"),      (int)d->pluginsPage->activeTab());
@@ -557,6 +605,13 @@ void Setup::slotOkClicked()
     d->metadataPage->applySettings();
     d->templatePage->applySettings();
     d->lighttablePage->applySettings();
+
+#ifdef HAVE_MARBLE
+
+    d->geolocationPage->applySettings();
+
+#endif
+
     d->editorPage->applySettings();
     d->imageQualitySorterPage->applySettings();
     d->iccPage->applySettings();
@@ -608,6 +663,13 @@ void Setup::showPage(Setup::Page page)
 
         d->metadataPage->setActiveTab((SetupMetadata::MetadataTab)group.readEntry(QLatin1String("Metadata Tab"), (int)SetupMetadata::Behavior));
         d->metadataPage->setActiveSubTab((SetupMetadata::MetadataSubTab)group.readEntry(QLatin1String("Metadata SubTab"), (int)SetupMetadata::ExifViewer));
+
+#ifdef HAVE_MARBLE
+
+        d->geolocationPage->setActiveTab((SetupGeolocation::GeolocationTab)group.readEntry(QLatin1String("Geolocation Tab"), (int)SetupGeolocation::View));
+
+#endif
+
         d->editorPage->setActiveTab((SetupEditor::EditorTab)group.readEntry(QLatin1String("Editor Tab"), (int)SetupEditor::EditorWindow));
         d->iccPage->setActiveTab((SetupICC::ICCTab)group.readEntry(QLatin1String("ICC Tab"), (int)SetupICC::Behavior));
         d->cameraPage->setActiveTab((SetupCamera::CameraTab)group.readEntry(QLatin1String("Camera Tab"), (int)SetupCamera::Devices));
@@ -669,6 +731,15 @@ Setup::Page Setup::activePageIndex() const
     {
         return LightTablePage;
     }
+
+#ifdef HAVE_MARBLE
+
+    if (cur == d->page_geolocation)
+    {
+        return GeolocationPage;
+    }
+
+#endif
 
     if (cur == d->page_editor)
     {
@@ -750,6 +821,15 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
         {
             return page_lighttable;
         }
+
+#ifdef HAVE_MARBLE
+
+        case Setup::GeolocationPage:
+        {
+            return page_geolocation;
+        }
+
+#endif
 
         case Setup::EditorPage:
         {

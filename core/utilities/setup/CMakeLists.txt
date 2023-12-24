@@ -21,6 +21,7 @@ set(libsetupshowfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupeditoriface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupiofiles.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupraw.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setupgeolocation.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupicc.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/downloader/filesdownloader.cpp
@@ -29,10 +30,18 @@ set(libsetupshowfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/misc/systemsettings.cpp
 )
 
+if(${Marble_FOUND})
+
+    set(libsetupshowfoto_SRCS ${libsetupshowfoto_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/setupgeolocation.cpp
+    )
+
+endif()
+
 ki18n_wrap_ui(libsetupshowfoto_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/misc/proxysettingswidget.ui)
 
 # Used by digikamcore
-add_library(core_setupcommon_obj OBJECT  ${libsetupshowfoto_SRCS})
+add_library(core_setupcommon_obj OBJECT ${libsetupshowfoto_SRCS})
 
 target_compile_definitions(core_setupcommon_obj
                            PRIVATE

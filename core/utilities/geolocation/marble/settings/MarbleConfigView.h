@@ -6,11 +6,14 @@
 #ifndef DIGIKAM_MARBLE_CONFIG_VIEW_H
 #define DIGIKAM_MARBLE_CONFIG_VIEW_H
 
+// Qt includes
+
 #include <QTabWidget>
+
+// Local includes
 
 #include "MarbleGlobal.h"
 #include "MarbleLocale.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -25,9 +28,10 @@ class DIGIKAM_EXPORT MarbleConfigView : public QTabWidget
 public:
 
     explicit MarbleConfigView(MarbleWidget* const marbleWidget,
-                              QWidget* const parent = nullptr );
+                              QWidget* const parent = nullptr);
     ~MarbleConfigView() override;
 
+    void readSettings();
     void applySettings();
 
 Q_SIGNALS:
@@ -44,11 +48,7 @@ Q_SIGNALS:
 
 private:
 
-    void readSettings();
-
-private:
-
-    Q_DISABLE_COPY( MarbleConfigView )
+    Q_DISABLE_COPY(MarbleConfigView)
 
     class Private;
     Private* const d;

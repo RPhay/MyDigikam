@@ -53,6 +53,13 @@ public:
         EditorPage,
         ICCPage,
         LightTablePage,
+
+#ifdef HAVE_MARBLE
+
+        GeolocationPage,
+
+#endif
+
         ImageQualityPage,
         CameraPage,
         PluginsPage,

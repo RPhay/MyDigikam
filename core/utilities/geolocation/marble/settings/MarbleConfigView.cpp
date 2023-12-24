@@ -56,8 +56,6 @@ public:
     MarbleWidget* const                m_marbleWidget;
 
     RenderPluginModel                  m_pluginModel;
-
-    QHash<int, int>                    m_timezone;
 };
 
 MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
@@ -127,7 +125,10 @@ void MarbleConfigView::readSettings()
 
     // Read the settings of the plugins
 
-//    d->m_marbleWidget->readPluginSettings(d->m_settings);
+    if (d->m_marbleWidget)
+    {
+        d->m_marbleWidget->readPluginSettings();
+    }
 }
 
 void MarbleConfigView::applySettings()
@@ -148,7 +149,10 @@ void MarbleConfigView::applySettings()
 
     // Plugins
 
-//    d->m_marbleWidget->writePluginSettings( d->m_settings );
+    if (d->m_marbleWidget)
+    {
+        d->m_marbleWidget->writePluginSettings();
+    }
 }
 
 } // namespace Marble
