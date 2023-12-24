@@ -21,8 +21,11 @@
 
 // Local includes
 
+#include "MarbleWidget.h"
 #include "digikam_export.h"
 #include "marblesettingscontainer.h"
+
+using namespace Marble;
 
 namespace Digikam
 {
@@ -48,6 +51,8 @@ public:
      */
     void setSettings(const MarbleSettingsContainer& settings);
 
+    void registerWidget(MarbleWidget* const widget);
+
 Q_SIGNALS:
 
     void signalSettingsChanged();
@@ -63,6 +68,8 @@ private:
     ~MarbleSettings() override;
 
     void readFromConfig();
+
+    void applySettingsToWidgets(const MarbleSettingsContainer& settings);
 
 private:
 

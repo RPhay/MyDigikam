@@ -19,6 +19,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QMutex>
+#include <QVector>
 
 // KDE includes
 
@@ -28,6 +29,9 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "MarbleGlobal.h"
+#include "MarbleModel.h"
+#include "MarbleWidgetInputHandler.h"
 
 namespace Digikam
 {
@@ -46,6 +50,8 @@ public:
     QMutex                  mutex;
 
     const QString           configGroup;
+
+    QVector<MarbleWidget*>  widgets;
 
 public:
 
@@ -109,6 +115,31 @@ MarbleSettings::MarbleSettings()
 MarbleSettings::~MarbleSettings()
 {
     delete d;
+}
+
+void MarbleSettings::registerWidget(MarbleWidget* const widget)
+{
+    d->widgets << widget;
+}
+
+void MarbleSettings::applySettingsToWidgets(const MarbleSettingsContainer& settings)
+{
+    Q_FOREACH (MarbleWidget* const w, d->widgets)
+    {
+        if (w)
+        {
+            MarbleGlobal::getInstance()->locale()->setMeasurementSystem(settings.distanceUnit);
+            w->model()->setPersistentTileCacheLimit(settings.persistentTileCacheLimit * 1024);
+            w->setDefaultFont(settings.mapFont);
+            w->setMapQualityForViewContext(settings.stillQuality,     Marble::Still);
+            w->setMapQualityForViewContext(settings.animationQuality, Marble::Animation);
+            w->setDefaultAngleUnit(settings.angleUnit);
+            w->inputHandler()->setInertialEarthRotationEnabled(settings.inertialRotation);
+            w->inputHandler()->setMouseViewRotationEnabled(settings.mouseRotation);
+            w->setVolatileTileCacheLimit(settings.volatileTileCacheLimit * 1024);
+            w->update();
+        }
+    }
 }
 
 MarbleSettingsContainer MarbleSettings::settings() const

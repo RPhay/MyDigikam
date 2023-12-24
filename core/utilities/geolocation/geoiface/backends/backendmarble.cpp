@@ -50,6 +50,7 @@
 #include "backendmarblelayer.h"
 #include "abstractmarkertiler.h"
 #include "mapwidget.h"
+#include "marblesettings.h"
 #include "geomodelhelper.h"
 
 namespace Digikam
@@ -224,6 +225,8 @@ QWidget* BackendMarble::mapWidget()
             d->bmLayer      = new BackendMarbleLayer(this);
 
             d->marbleWidget->addLayer(d->bmLayer);
+
+            MarbleSettings::instance()->registerWidget(d->marbleWidget);
         }
 
         d->marbleWidget->installEventFilter(this);
