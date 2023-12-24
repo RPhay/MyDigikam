@@ -31,8 +31,6 @@
 #include "graphicsdimgview.h"
 #include "editorcore.h"
 
-class QWheelEvent;
-class QKeyEvent;
 
 namespace Digikam
 {

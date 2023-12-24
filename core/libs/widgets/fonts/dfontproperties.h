@@ -29,7 +29,6 @@
 
 #include "digikam_export.h"
 
-class QFont;
 
 namespace Digikam
 {

@@ -27,7 +27,6 @@
 #include "dinfointerface.h"
 
 class QCloseEvent;
-class QUrl;
 
 using namespace Digikam;
 

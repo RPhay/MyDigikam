@@ -27,7 +27,6 @@
 
 #include "digikam_export.h"
 
-class QDebug;
 
 namespace Digikam
 {

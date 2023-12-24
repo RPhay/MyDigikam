@@ -152,12 +152,6 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
         qputenv("OPENCV_OPENCL_DEVICE",  "disabled");
     }
 
-#ifdef Q_OS_WIN
-
-    QCoreApplication::setAttribute(Qt::AA_ForceRasterWidgets);
-
-#endif
-
     QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::RoundPreferFloor);
 
 #ifdef HAVE_QWEBENGINE
