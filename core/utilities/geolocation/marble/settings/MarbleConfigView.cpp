@@ -67,7 +67,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
 
     QWidget* const page = new QWidget(this);
     d->viewSettings.setupUi(page);
-    addTab(page, i18n("View"));
+    addTab(page, i18n("Marble View"));
 
     connect(d->viewSettings.button_clearVolatileCache, SIGNAL(clicked()),
             this, SIGNAL(clearVolatileCacheClicked()));
@@ -85,7 +85,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     d->pluginSettings = new MarblePluginSettingsWidget(this);
     d->pluginSettings->setModel(&d->pluginModel);
     d->pluginSettings->setObjectName(QLatin1String("plugin_page"));
-    addTab(d->pluginSettings, i18n("Plugins"));
+    addTab(d->pluginSettings, i18n("Marble Plugins"));
 
     // Setting the icons for the plugin view.
 
