@@ -29,8 +29,6 @@ void AlbumManager::scanDAlbums()
         d->dateListJob = nullptr;
     }
 
-    d->datesTestTimer.start();
-
     DatesDBJobInfo jInfo;
     jInfo.setFoldersJob();
     d->dateListJob = DBJobsManager::instance()->startDatesJobThread(jInfo);
@@ -107,8 +105,6 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
     {
         return;
     }
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Dates DB Job time:" << d->datesTestTimer.elapsed();
 
     // insert all the DAlbums into a qmap for quick access
 
@@ -258,8 +254,6 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
 
     Q_EMIT signalDAlbumsDirty(yearMonthMap);
     Q_EMIT signalDatesHashDirty(datesStatHash);
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Dates create time:" << d->datesTestTimer.elapsed();
 }
 
 void AlbumManager::scanDAlbumsScheduled()

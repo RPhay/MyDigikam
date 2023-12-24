@@ -192,7 +192,6 @@ public:
     /// Unconfirmed face counts
     QHash<int, int>             uAlbumsCount;
     QList<int>                  toUpdatedFaces;
-    QElapsedTimer               datesTestTimer;
 
 public:
 
