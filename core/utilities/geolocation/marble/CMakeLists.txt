@@ -568,7 +568,6 @@ set(marblewidget_SRCS
     models/MapThemeManager.cpp
     models/MarbleModel.cpp
     models/MarblePlacemarkModel.cpp
-    models/TreeViewDecoratorModel.cpp
 
     osm/MarbleZip.cpp
     osm/OsmcSymbol.cpp
