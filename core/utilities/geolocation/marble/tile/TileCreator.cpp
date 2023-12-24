@@ -74,7 +74,7 @@ public:
     QSize fullImageSize() const override
     {
         if ( m_sourceImage.size().width() > 21600 || m_sourceImage.height() > 10800 ) {
-            qDebug("Install map too large!");
+            qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Install map too large!");
             return QSize();
         }
         return m_sourceImage.size();
@@ -227,7 +227,7 @@ void TileCreator::run()
     qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "TileCreator::createTiles() image dimensions %1 x %2").arg(imageWidth).arg(imageHeight);
 
     if ( imageWidth < 1 || imageHeight < 1 ) {
-        qDebug("Invalid imagemap!");
+        qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Invalid imagemap!");
         return;
     }
 

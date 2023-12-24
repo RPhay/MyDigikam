@@ -13,6 +13,8 @@
 #include <QDirIterator>
 #include <QDataStream>
 
+#include "digikam_debug.h"
+
 using namespace Marble;
 
 static QString indexFileName( const QString &cacheDirectory )
@@ -39,7 +41,7 @@ DiscCache::DiscCache( const QString &cacheDirectory )
             s >> m_Entries;
 
         } else {
-            qWarning( "Unable to open cache directory %s", qPrintable( m_CacheDirectory ) );
+            qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Unable to open cache directory %s").arg(m_CacheDirectory);
         }
     }
 }

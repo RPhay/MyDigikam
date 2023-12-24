@@ -107,7 +107,7 @@ void OsmPbfParser::parsePrimitiveBlock(const uint8_t *data, std::size_t len)
         const auto &group = block.primitivegroup(i);
 
         if (group.nodes_size()) {
-            qWarning() << "non-dense nodes - not implemented yet!";
+            qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8() << "non-dense nodes - not implemented yet!";
         } else if (group.has_dense()) {
             parseDenseNodes(block, group);
         } else if (group.ways_size()) {

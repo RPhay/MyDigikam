@@ -184,7 +184,7 @@ void FileLoader::run()
         buffer.open( QIODevice::ReadOnly );
 
         if ( !parser.read( &buffer ) ) {
-            qWarning( "Could not import kml buffer!" );
+            qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "Could not import kml buffer!" );
             Q_EMIT loaderFinished( this );
             return;
         }

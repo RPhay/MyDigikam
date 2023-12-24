@@ -583,7 +583,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString &fileName, c
                 data.resize(len);
                 break;
             case Z_MEM_ERROR:
-                qWarning("QZip: Z_MEM_ERROR: Not enough memory to compress file, skipping");
+                qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("QZip: Z_MEM_ERROR: Not enough memory to compress file, skipping");
                 data.resize(0);
                 break;
             case Z_BUF_ERROR:
@@ -600,7 +600,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString &fileName, c
 
     header.file_name = fileName.toLocal8Bit();
     if (header.file_name.size() > 0xffff) {
-        qWarning("QZip: Filename too long, chopping it to 65535 characters");
+        qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("QZip: Filename too long, chopping it to 65535 characters");
         header.file_name = header.file_name.left(0xffff);
     }
     writeUShort(header.h.file_name_length, header.file_name.length());
@@ -827,7 +827,7 @@ QByteArray MarbleZipReader::fileData(const QString &fileName) const
     int compressed_size = readUInt(header.h.compressed_size);
     int uncompressed_size = readUInt(header.h.uncompressed_size);
     int start = readUInt(header.h.offset_local_header);
-    //qDebug("uncompressing file %d: local header at %d", i, start);
+    //qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("uncompressing file %d: local header at %d", i, start);
 
     d->device->seek(start);
     LocalFileHeader lh;
@@ -836,9 +836,9 @@ QByteArray MarbleZipReader::fileData(const QString &fileName) const
     d->device->seek(d->device->pos() + skip);
 
     int compression_method = readUShort(lh.compression_method);
-    //qDebug("file=%s: compressed_size=%d, uncompressed_size=%d", fileName.toLocal8Bit().data(), compressed_size, uncompressed_size);
+    //qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("file=%s: compressed_size=%d, uncompressed_size=%d", fileName.toLocal8Bit().data(), compressed_size, uncompressed_size);
 
-    //qDebug("file at %lld", d->device->pos());
+    //qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("file at %lld", d->device->pos());
     QByteArray compressed = d->device->read(compressed_size);
     if (compression_method == 0) {
         // no compression
@@ -846,7 +846,7 @@ QByteArray MarbleZipReader::fileData(const QString &fileName) const
         return compressed;
     } else if (compression_method == 8) {
         // Deflate
-        //qDebug("compressed=%d", compressed.size());
+        //qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("compressed=%d", compressed.size());
         compressed.truncate(compressed_size);
         QByteArray baunzip;
         ulong len = qMax(uncompressed_size,  1);
@@ -862,13 +862,13 @@ QByteArray MarbleZipReader::fileData(const QString &fileName) const
                     baunzip.resize(len);
                 break;
             case Z_MEM_ERROR:
-                qWarning("QZip: Z_MEM_ERROR: Not enough memory");
+                qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("QZip: Z_MEM_ERROR: Not enough memory");
                 break;
             case Z_BUF_ERROR:
                 len *= 2;
                 break;
             case Z_DATA_ERROR:
-                qWarning("QZip: Z_DATA_ERROR: Input data is corrupted");
+                qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("QZip: Z_DATA_ERROR: Input data is corrupted");
                 break;
             }
         } while (res == Z_BUF_ERROR);
@@ -1208,7 +1208,7 @@ void MarbleZipWriter::close()
         return;
     }
 
-    //qDebug("QZip::close writing directory, %d entries", d->fileHeaders.size());
+    //qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("QZip::close writing directory, %d entries", d->fileHeaders.size());
     d->device->seek(d->start_of_directory);
     // write new directory
     for (int i = 0; i < d->fileHeaders.size(); ++i) {

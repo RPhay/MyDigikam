@@ -128,6 +128,8 @@ void MarbleSettings::applySettingsToWidgets(const MarbleSettingsContainer& setti
     {
         if (w)
         {
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Marble Widget:" << w;
+
             MarbleGlobal::getInstance()->locale()->setMeasurementSystem(settings.distanceUnit);
             w->model()->setPersistentTileCacheLimit(settings.persistentTileCacheLimit * 1024);
             w->setDefaultFont(settings.mapFont);

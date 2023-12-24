@@ -66,7 +66,7 @@ public:
     int                             persistentTileCacheLimit = 999999;
 };
 
-//! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.
+//! qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8() stream operator. Writes property @a inf to the debug output in a nicely formatted way.
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const MarbleSettingsContainer& inf);
 
 } // namespace Digikam

@@ -559,7 +559,7 @@ void MarbleModel::clearPersistentTileCache()
             tileCreatorDlg->setSummary( d->m_mapTheme->head()->name(),
                                         d->m_mapTheme->head()->description() );
             tileCreatorDlg->exec();
-            qDebug("Tile creation completed");
+            qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Tile creation completed");
             delete tileCreatorDlg;
         }
     }
