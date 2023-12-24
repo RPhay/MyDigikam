@@ -40,7 +40,6 @@
 // Qt includes
 
 #include <QRegion>
-#include <QColor>
 #include <QPainter>
 #include <QBrush>
 #include <QPixmap>

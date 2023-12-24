@@ -17,7 +17,6 @@
 
 // C++ includes
 
-#include <limits>
 
 // Qt includes
 
@@ -35,7 +34,6 @@
 #include "AudioDecoder.h"
 #include "MediaIO.h"
 #include "VideoRenderer.h"
-#include "AVClock.h"
 #include "VideoCapture.h"
 #include "FilterManager.h"
 #include "OutputSet.h"

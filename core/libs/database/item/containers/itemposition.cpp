@@ -18,7 +18,6 @@
 
 #include "coredbaccess.h"
 #include "coredb.h"
-#include "coredbfields.h"
 #include "dmetadata.h"
 #include "metadatainfo.h"
 

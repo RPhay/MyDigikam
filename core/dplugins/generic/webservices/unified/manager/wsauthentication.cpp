@@ -17,7 +17,6 @@
 // Qt includes
 
 #include <QApplication>
-#include <QMap>
 #include <QMessageBox>
 #include <QFile>
 #include <QFileInfo>

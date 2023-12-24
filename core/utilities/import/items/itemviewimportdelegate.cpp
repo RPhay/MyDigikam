@@ -29,7 +29,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "itemdelegateoverlay.h"
 #include "thememanager.h"
 #include "itemscanner.h"
 #include "itempropertiestab.h"

@@ -1,6 +1,5 @@
 #include <QCryptographicHash>
 #include <QNetworkRequest>
-#include <QNetworkAccessManager>
 #include <QDateTime>
 #include <QByteArray>
 #include <QDebug>

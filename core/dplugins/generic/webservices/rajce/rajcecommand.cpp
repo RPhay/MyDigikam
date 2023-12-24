@@ -30,7 +30,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "rajcempform.h"
 #include "digikam_version.h"
 #include "dmetadata.h"
 #include "wstoolutils.h"

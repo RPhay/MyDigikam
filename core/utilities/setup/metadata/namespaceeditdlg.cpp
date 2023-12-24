@@ -19,7 +19,6 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QDialogButtonBox>
-#include <QDialog>
 #include <QPushButton>
 #include <QApplication>
 #include <QStyle>

@@ -24,7 +24,6 @@
 // Qt includes
 
 #include <QTime>
-#include <QList>
 #include <QPair>
 #include <QStringList>
 #include <QAction>

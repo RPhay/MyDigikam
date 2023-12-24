@@ -17,7 +17,6 @@
 
 // C++ includes
 
-#include <limits>
 #include <new>
 #include <cstddef>
 
@@ -27,7 +26,6 @@
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "dimg_p.h"
 #include "dmetadata.h"
 #include "dimgloaderobserver.h"

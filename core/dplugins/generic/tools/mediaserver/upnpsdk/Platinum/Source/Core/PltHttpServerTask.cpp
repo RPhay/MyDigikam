@@ -36,7 +36,6 @@
 |   includes
 +---------------------------------------------------------------------*/
 #include "PltHttpServerTask.h"
-#include "PltHttp.h"
 #include "PltVersion.h"
 
 NPT_SET_LOCAL_LOGGER("platinum.core.http.servertask")

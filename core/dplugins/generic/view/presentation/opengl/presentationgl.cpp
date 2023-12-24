@@ -32,15 +32,11 @@
 #include <QFileInfo>
 #include <QFontMetrics>
 #include <QImage>
-#include <QKeyEvent>
-#include <QList>
-#include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
 #include <QPainterPathStroker>
 #include <QPixmap>
 #include <QTimer>
-#include <QWheelEvent>
 #include <QApplication>
 #include <QOpenGLTexture>
 

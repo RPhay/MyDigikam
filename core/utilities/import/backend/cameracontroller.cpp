@@ -27,7 +27,6 @@
 #include <QImage>
 #include <QFile>
 #include <QRegularExpression>
-#include <QFileInfo>
 #include <QUrl>
 #include <QDir>
 #include <QMessageBox>

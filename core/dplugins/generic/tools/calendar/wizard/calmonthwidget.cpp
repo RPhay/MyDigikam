@@ -26,7 +26,6 @@
 #include <QMouseEvent>
 #include <QPaintEvent>
 #include <QPainter>
-#include <QPixmap>
 #include <QStandardPaths>
 #include <QMimeData>
 #include <QUrl>

@@ -20,7 +20,6 @@
 #include <QGroupBox>
 #include <QLabel>
 #include <QRadioButton>
-#include <QScrollArea>
 #include <QCheckBox>
 #include <QTimer>
 #include <QTreeWidget>

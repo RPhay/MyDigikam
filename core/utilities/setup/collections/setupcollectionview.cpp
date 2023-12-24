@@ -46,7 +46,6 @@
 #include "dmessagebox.h"
 #include "dfiledialog.h"
 #include "applicationsettings.h"
-#include "collectionlocation.h"
 #include "collectionmanager.h"
 #include "newitemsfinder.h"
 #include "dtextedit.h"

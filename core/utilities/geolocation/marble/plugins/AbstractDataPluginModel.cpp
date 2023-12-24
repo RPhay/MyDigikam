@@ -9,7 +9,6 @@
 #include <cmath>
 
 // Qt
-#include <QUrl>
 #include <QTimer>
 #include <QPointF>
 #include <QRectF>

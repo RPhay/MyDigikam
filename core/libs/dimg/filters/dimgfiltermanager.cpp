@@ -29,7 +29,6 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
-#include "dimgfiltergenerator.h"
 #include "dimgbuiltinfilter.h"
 #include "filteraction.h"
 #include "rawprocessingfilter.h"

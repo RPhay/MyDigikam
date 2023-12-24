@@ -31,7 +31,6 @@
 
 #include "dlayoutbox.h"
 #include "digikam_debug.h"
-#include "dbengineparameters.h"
 #include "dbsettingswidget.h"
 
 namespace Digikam

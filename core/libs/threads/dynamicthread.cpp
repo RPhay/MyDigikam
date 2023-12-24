@@ -17,7 +17,6 @@
 // Qt includes
 
 #include <QMutex>
-#include <QMutexLocker>
 #include <QWaitCondition>
 
 // Local includes

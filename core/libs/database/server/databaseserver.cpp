@@ -40,8 +40,6 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "dbengineparameters.h"
-#include "databaseserverstarter.h"
 
 namespace Digikam
 {

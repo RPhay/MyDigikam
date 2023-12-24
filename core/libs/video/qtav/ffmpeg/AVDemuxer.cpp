@@ -29,7 +29,6 @@
 // Local includes
 
 #include "MediaIO.h"
-#include "AVCompat.h"
 #include "QtAV_internal.h"
 #include "digikam_debug.h"
 

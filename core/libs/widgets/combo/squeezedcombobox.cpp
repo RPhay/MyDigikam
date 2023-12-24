@@ -19,7 +19,6 @@
 
 // Qt includes
 
-#include <QComboBox>
 #include <QTimer>
 #include <QStyle>
 #include <QApplication>

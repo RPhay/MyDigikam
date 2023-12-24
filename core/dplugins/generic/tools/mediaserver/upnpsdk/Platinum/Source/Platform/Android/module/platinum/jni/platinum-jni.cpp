@@ -11,7 +11,6 @@
 |       includes
 +---------------------------------------------------------------------*/
 #include <assert.h>
-#include <jni.h>
 #include <string.h>
 #include <sys/types.h>
 

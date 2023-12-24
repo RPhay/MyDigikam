@@ -23,8 +23,6 @@
 #include <QJsonValue>
 #include <QJsonArray>
 #include <QByteArray>
-#include <QList>
-#include <QPair>
 #include <QFileInfo>
 #include <QWidget>
 #include <QSettings>
@@ -43,7 +41,6 @@
 #include "digikam_version.h"
 #include "wstoolutils.h"
 #include "boxwindow.h"
-#include "boxitem.h"
 #include "previewloadthread.h"
 #include "o0settingsstore.h"
 #include "networkmanager.h"

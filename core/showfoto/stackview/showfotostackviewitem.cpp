@@ -18,7 +18,6 @@
 
 #include <QIcon>
 #include <QPainter>
-#include <QPixmap>
 #include <QLocale>
 #include <QDateTime>
 #include <QMimeDatabase>

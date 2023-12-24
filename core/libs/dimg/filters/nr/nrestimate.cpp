@@ -37,7 +37,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "nrfilter.h"
 
 namespace Digikam
 {

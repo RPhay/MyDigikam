@@ -19,7 +19,6 @@
 
 #include <QDir>
 #include <QDomDocument>
-#include <QDomElement>
 #include <QDomNode>
 #include <QDomNodeList>
 #include <QFile>

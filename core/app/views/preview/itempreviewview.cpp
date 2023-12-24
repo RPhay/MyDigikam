@@ -65,7 +65,6 @@
 #include "digikamapp.h"
 #include "dimg.h"
 #include "dimgpreviewitem.h"
-#include "iteminfo.h"
 #include "fileactionmngr.h"
 #include "metaenginesettings.h"
 #include "regionframeitem.h"

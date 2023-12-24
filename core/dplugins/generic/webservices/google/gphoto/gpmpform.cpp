@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QByteArray>
 #include <QUrl>
 #include <QFile>
 #include <QMimeDatabase>

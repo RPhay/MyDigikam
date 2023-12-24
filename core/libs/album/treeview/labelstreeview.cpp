@@ -18,7 +18,6 @@
 // QT includes
 
 #include <QApplication>
-#include <QTreeWidget>
 #include <QPainter>
 #include <QUrl>
 
@@ -35,9 +34,7 @@
 #include "searchtabheader.h"
 #include "albummanager.h"
 #include "albumtreeview.h"
-#include "coredbconstants.h"
 #include "itemlister.h"
-#include "statesavingobject.h"
 #include "coredbaccess.h"
 #include "coredb.h"
 #include "colorlabelfilter.h"

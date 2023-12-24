@@ -35,7 +35,6 @@
 #include "digikam_debug.h"
 #include "albummanager.h"
 #include "applicationsettings.h"
-#include "labelstreeview.h"
 
 namespace Digikam
 {

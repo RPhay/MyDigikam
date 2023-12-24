@@ -18,7 +18,6 @@
 // Qt includes
 
 #include <QFile>
-#include <QXmlStreamReader>
 #include <QXmlStreamAttributes>
 
 // KDE includes

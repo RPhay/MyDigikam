@@ -37,7 +37,6 @@
 +---------------------------------------------------------------------*/
 #include "PltUPnP.h"
 #include "PltMediaServer.h"
-#include "PltMediaItem.h"
 #include "PltService.h"
 #include "PltTaskManager.h"
 #include "PltHttpServer.h"

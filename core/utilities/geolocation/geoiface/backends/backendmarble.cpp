@@ -51,7 +51,6 @@
 #include "abstractmarkertiler.h"
 #include "mapwidget.h"
 #include "geomodelhelper.h"
-#include "trackmanager.h"
 
 namespace Digikam
 {

@@ -45,7 +45,6 @@
 #include "dprogresswdg.h"
 #include "dmetadata.h"
 #include "previewloadthread.h"
-#include "smugitem.h"
 #include "smugtalker.h"
 #include "smugwidget.h"
 #include "smugnewalbumdlg.h"

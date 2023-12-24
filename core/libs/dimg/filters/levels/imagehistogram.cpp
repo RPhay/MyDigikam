@@ -22,7 +22,6 @@
 
 // Qt includes
 
-#include <QObject>
 
 // Local includes
 

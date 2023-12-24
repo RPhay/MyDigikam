@@ -18,18 +18,12 @@
 // Qt includes
 
 #include <QStringList>
-#include <QObject>
-#include <QDir>
-#include <QMultiMap>
-#include <QTest>
 
 // Local includes
 
 #include "dimg.h"
 #include "previewloadthread.h"
 #include "imagequalityparser.h"
-#include "digikam_debug.h"
-#include "digikam_globals.h"
 #include "imagequalitycontainer.h"
 #include "dpluginloader.h"
 

@@ -37,8 +37,6 @@
 +---------------------------------------------------------------------*/
 #include "PltDeviceHost.h"
 #include "PltCtrlPointTask.h"
-#include "PltCtrlPoint.h"
-#include "PltDatagramStream.h"
 
 /*----------------------------------------------------------------------
 |    PLT_CtrlPointGetDescriptionTask::PLT_CtrlPointGetDescriptionTask

@@ -18,7 +18,6 @@
 
 // Qt includes
 
-#include <QList>
 #include <QWidget>
 #include <QInputEvent>
 #include <QApplication>

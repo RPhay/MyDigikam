@@ -25,14 +25,11 @@
 #include <QPainter>
 #include <QPoint>
 #include <QPen>
-#include <QEvent>
 #include <QTimer>
 #include <QRect>
 #include <QColor>
 #include <QFont>
 #include <QFontMetrics>
-#include <QPaintEvent>
-#include <QMouseEvent>
 #include <QPainterPath>
 
 // KDE includes
@@ -46,7 +43,6 @@
 #include "dimg.h"
 #include "imagehistogram.h"
 #include "imagecurves.h"
-#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "histogrampainter.h"
 #include "dworkingpixmap.h"

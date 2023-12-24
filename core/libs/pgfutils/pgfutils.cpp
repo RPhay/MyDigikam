@@ -30,8 +30,6 @@ extern "C"
 
 // Qt includes
 
-#include <QImage>
-#include <QByteArray>
 #include <QFile>
 #include <qplatformdefs.h>
 

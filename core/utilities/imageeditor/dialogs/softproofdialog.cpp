@@ -35,7 +35,6 @@
 
 #include "dlayoutbox.h"
 #include "iccprofilescombobox.h"
-#include "iccsettingscontainer.h"
 #include "iccsettings.h"
 #include "iccprofileinfodlg.h"
 #include "dexpanderbox.h"

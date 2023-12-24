@@ -18,14 +18,12 @@
 // Qt includes
 
 #include <QPointer>
-#include <QTime>
 #include <QIcon>
 #include <QMessageBox>
 #include <QDialogButtonBox>
 
 // Local includes
 
-#include "presentationaudiowidget.h"
 #include "presentation_mainpage.h"
 #include "presentationcontainer.h"
 #include "digikam_debug.h"

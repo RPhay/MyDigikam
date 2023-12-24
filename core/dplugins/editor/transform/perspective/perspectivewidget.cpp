@@ -28,9 +28,6 @@
 #include <QPen>
 #include <QBrush>
 #include <QImage>
-#include <QResizeEvent>
-#include <QMouseEvent>
-#include <QPaintEvent>
 #include <QPixmap>
 #include <QPolygon>
 

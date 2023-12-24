@@ -22,7 +22,6 @@
 #include <QSpacerItem>
 #include <QGridLayout>
 #include <QScrollArea>
-#include <QByteArray>
 #include <QMap>
 #include <QLabel>
 

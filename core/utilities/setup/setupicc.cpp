@@ -20,13 +20,10 @@
 
 #include <QButtonGroup>
 #include <QCheckBox>
-#include <QDir>
-#include <QUrl>
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QIcon>
 #include <QLabel>
-#include <QMap>
 #include <QPixmap>
 #include <QPushButton>
 #include <QRadioButton>

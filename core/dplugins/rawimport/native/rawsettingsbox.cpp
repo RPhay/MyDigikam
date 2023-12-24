@@ -38,7 +38,6 @@
 #include "dexpanderbox.h"
 #include "dnuminput.h"
 #include "colorgradientwidget.h"
-#include "curveswidget.h"
 #include "histogrambox.h"
 #include "histogramwidget.h"
 #include "iccpreviewwidget.h"

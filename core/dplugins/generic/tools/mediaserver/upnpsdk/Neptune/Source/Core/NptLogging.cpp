@@ -38,8 +38,6 @@
 #include <stdarg.h>
 
 #include "NptLogging.h"
-#include "NptList.h"
-#include "NptStreams.h"
 #include "NptSockets.h"
 #include "NptUtils.h"
 #include "NptFile.h"

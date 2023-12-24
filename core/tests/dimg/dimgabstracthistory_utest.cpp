@@ -32,8 +32,6 @@
 #include "autolevelsfilter.h"
 #include "infraredfilter.h"
 #include "blurfilter.h"
-#include "dimagehistory.h"
-#include "editorcore.h"
 #include "editortooliface.h"
 #include "editorwindow.h"
 #include "iccsettings.h"

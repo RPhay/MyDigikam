@@ -39,8 +39,6 @@
 #include "PltDeviceHost.h"
 #include "PltUPnP.h"
 #include "PltUtilities.h"
-#include "PltSsdp.h"
-#include "PltHttpServer.h"
 #include "PltVersion.h"
 
 NPT_SET_LOCAL_LOGGER("platinum.core.devicehost")

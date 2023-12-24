@@ -18,7 +18,6 @@
 // Qt includes
 
 #include <QDir>
-#include <QUrl>
 #include <QPointer>
 #include <QProcess>
 #include <QFileInfo>

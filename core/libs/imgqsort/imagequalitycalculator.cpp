@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QList>
 #include <QRecursiveMutex>
 
 namespace Digikam

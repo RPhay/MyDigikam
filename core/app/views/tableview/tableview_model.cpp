@@ -29,7 +29,6 @@
 #include "digikam_debug.h"
 #include "coredb.h"
 #include "coredbaccess.h"
-#include "coredbchangesets.h"
 #include "coredbfields.h"
 #include "coredbwatch.h"
 #include "itemfiltermodel.h"

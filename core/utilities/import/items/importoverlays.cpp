@@ -24,7 +24,6 @@
 #include "importcategorizedview.h"
 #include "importdelegate.h"
 #include "camiteminfo.h"
-#include "ratingwidget.h"
 
 namespace Digikam
 {

@@ -28,7 +28,6 @@
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
 #include "applicationsettings.h"
 #include "welcomepageview.h"
@@ -41,7 +40,6 @@
 #include "itemthumbnailbar.h"
 #include "loadingcacheinterface.h"
 #include "previewlayout.h"
-#include "thumbbardock.h"
 #include "tableview.h"
 #include "trashview.h"
 #include "dimg.h"

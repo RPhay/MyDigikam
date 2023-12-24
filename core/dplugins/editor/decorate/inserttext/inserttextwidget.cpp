@@ -17,13 +17,8 @@
 
 // Qt includes
 
-#include <QFont>
 #include <QFontMetrics>
-#include <QMouseEvent>
-#include <QPaintEvent>
 #include <QPainter>
-#include <QPixmap>
-#include <QResizeEvent>
 
 namespace DigikamEditorInsertTextToolPlugin
 {

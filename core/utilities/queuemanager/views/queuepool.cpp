@@ -16,7 +16,6 @@
 
 // Qt includes
 
-#include <QTabBar>
 #include <QApplication>
 #include <QIcon>
 

@@ -16,7 +16,6 @@
 // Local includes
 
 #include "geodragdrophandler.h"
-#include "geoifacetypes.h"
 
 namespace Digikam
 {

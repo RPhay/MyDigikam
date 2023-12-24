@@ -26,7 +26,6 @@
 #include "coredbchangesets.h"
 #include "coredbfields.h"
 #include "coredbwatch.h"
-#include "iteminfo.h"
 #include "iteminfolist.h"
 #include "abstractitemdragdrophandler.h"
 

@@ -39,7 +39,6 @@
 
 #include "digikam_debug.h"
 #include "dnotificationwrapper.h"
-#include "mjpegserver.h"
 #include "mjpegframethread.h"
 
 using namespace Digikam;

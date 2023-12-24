@@ -33,7 +33,6 @@
 
 #include "drawdecoder.h"
 #include "digikam_debug.h"
-#include "coredbbackend.h"
 #include "coredbtransaction.h"
 #include "coredbchecker.h"
 #include "collectionmanager.h"

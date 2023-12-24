@@ -23,7 +23,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "iccprofile.h"
 #include "icctransform.h"
 
 namespace Digikam

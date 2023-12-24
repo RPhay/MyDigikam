@@ -26,7 +26,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "imgqsorttest.h"
 
 using namespace Digikam;
 

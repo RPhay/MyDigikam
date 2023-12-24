@@ -26,7 +26,6 @@
 
 #include "digikam_debug.h"
 #include "metaengine.h"
-#include "dimg.h"
 #include "dpluginloader.h"
 #include "dtestdatadir.h"
 #include "drawdecoding.h"

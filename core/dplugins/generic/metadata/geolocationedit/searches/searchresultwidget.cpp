@@ -24,7 +24,6 @@
 #include <QToolButton>
 #include <QTreeView>
 #include <QVBoxLayout>
-#include <QWidget>
 #include <QMenu>
 #include <QAction>
 #include <QComboBox>
@@ -42,7 +41,6 @@
 // Local includes
 
 #include "dlayoutbox.h"
-#include "mapwidget.h"
 #include "searchresultmodel.h"
 #include "searchresultmodelhelper.h"
 #include "gpscommon.h"

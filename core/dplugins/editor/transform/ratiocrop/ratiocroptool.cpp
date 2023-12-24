@@ -25,7 +25,6 @@
 #include <QImage>
 #include <QLabel>
 #include <QPixmap>
-#include <QRect>
 #include <QSpinBox>
 #include <QTimer>
 #include <QToolButton>

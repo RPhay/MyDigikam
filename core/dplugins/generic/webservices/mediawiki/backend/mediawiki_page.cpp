@@ -21,7 +21,6 @@
 
 // Qt includes
 
-#include <QUrl>
 
 namespace MediaWiki
 {

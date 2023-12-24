@@ -25,7 +25,6 @@
 #include <QCoreApplication>
 #include <QFileInfo>
 #include <QHash>
-#include <QMap>
 #include <QRegularExpression>
 #include <QSqlDatabase>
 #include <QSqlDriver>

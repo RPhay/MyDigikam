@@ -16,9 +16,6 @@
 #include <QFileInfo>
 #include <QFileSystemWatcher>
 #include <QScopedPointer>
-#include <QString>
-#include <QStringList>
-#include <QStandardItemModel>
 
 #include <klocalizedstring.h>
 

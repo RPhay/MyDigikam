@@ -20,11 +20,9 @@
 #include <QHeaderView>
 #include <QPainter>
 #include <QFileInfo>
-#include <QList>
 #include <QTimer>
 #include <QMenu>
 #include <QAction>
-#include <QIcon>
 
 // KDE includes
 

@@ -36,7 +36,6 @@
 #include "digikam_debug.h"
 #include "album.h"
 #include "albummodificationhelper.h"
-#include "albumtreeview.h"
 #include "albumthumbnailloader.h"
 #include "collectionmanager.h"
 #include "contextmenuhelper.h"

@@ -18,13 +18,10 @@
 
 #include <QBrush>
 #include <QColor>
-#include <QEvent>
 #include <QFont>
 #include <QFontMetrics>
-#include <QMouseEvent>
 #include <QPixmap>
 #include <QPainter>
-#include <QPaintEvent>
 #include <QPen>
 #include <QPropertyAnimation>
 #include <QRect>
@@ -36,11 +33,8 @@
 
 // Local includes
 
-#include "dimg.h"
 #include "ditemtooltip.h"
 #include "imagehistogram.h"
-#include "digikam_globals.h"
-#include "digikam_debug.h"
 #include "histogrampainter.h"
 #include "dlayoutbox.h"
 #include "dworkingpixmap.h"

@@ -22,8 +22,6 @@
 #include <QJsonValue>
 #include <QJsonArray>
 #include <QByteArray>
-#include <QList>
-#include <QPair>
 #include <QFileInfo>
 #include <QWidget>
 #include <QMessageBox>
@@ -47,7 +45,6 @@
 #include "wstoolutils.h"
 #include "odwindow.h"
 #include "odmpform.h"
-#include "oditem.h"
 
 namespace DigikamGenericOneDrivePlugin
 {

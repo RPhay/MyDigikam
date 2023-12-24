@@ -27,7 +27,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "ddragobjects.h"
 #include "showfotocategorizedview.h"
 #include "showfotoiteminfo.h"
 

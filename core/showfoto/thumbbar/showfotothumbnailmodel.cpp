@@ -30,9 +30,6 @@
 #include "drawdecoder.h"
 #include "digikam_debug.h"
 #include "dmetadata.h"
-#include "thumbnailsize.h"
-#include "thumbnailloadthread.h"
-#include "loadingdescription.h"
 
 using namespace Digikam;
 

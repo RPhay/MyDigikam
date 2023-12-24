@@ -22,7 +22,6 @@
 #   include <QTextCodec>
 #endif
 
-#include <QFile>
 #include <qplatformdefs.h>
 
 // Local includes

@@ -21,7 +21,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "progressmanager.h"
 
 namespace Digikam
 {

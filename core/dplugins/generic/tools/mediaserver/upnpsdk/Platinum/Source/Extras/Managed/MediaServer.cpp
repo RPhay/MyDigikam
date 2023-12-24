@@ -37,7 +37,6 @@
 #include "StdAfx.h"
 #include "PltMimeType.h"
 #include "MediaServer.h"
-#include "DeviceHost.h"
 #include "MediaServerEventBridge.h"
 
 Platinum::MediaServer::MediaServer(PLT_MediaServer* server) :

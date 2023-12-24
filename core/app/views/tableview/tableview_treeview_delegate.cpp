@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QTreeView>
 
 // Local includes
 
@@ -33,10 +32,8 @@
 #include "importimagemodel.h"
 #include "importui.h"
 #include "tableview_column_configuration_dialog.h"
-#include "tableview_columnfactory.h"
 #include "tableview_model.h"
 #include "tableview_selection_model_syncer.h"
-#include "thumbnailloadthread.h"
 
 namespace Digikam
 {

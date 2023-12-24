@@ -36,7 +36,6 @@
 
 #include "digikam_debug.h"
 #include "itempropertiestab.h"
-#include "itemdelegateoverlay.h"
 #include "thememanager.h"
 #include "colorlabelwidget.h"
 #include "ratingwidget.h"

@@ -29,7 +29,6 @@
 
 // Local includes
 
-#include "mapwidget.h"
 
 namespace Digikam
 {

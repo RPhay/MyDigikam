@@ -20,21 +20,18 @@
 // Qt includes
 
 #include <QTimer>
-#include <QUrl>
 #include <QUrlQuery>
 #include <QXmlStreamReader>
 #include <QCryptographicHash>
 #include <QStringList>
 
 #include <QNetworkCookie>
-#include <QNetworkCookieJar>
 #include <QNetworkReply>
 #include <QNetworkRequest>
 
 // Local includes
 
 #include "mediawiki_iface.h"
-#include "mediawiki_queryinfo.h"
 #include "mediawiki_job_p.h"
 
 namespace MediaWiki

@@ -28,9 +28,7 @@
 #include <QStringList>
 #include <QSpinBox>
 #include <QFileInfo>
-#include <QPointer>
 #include <QDesktopServices>
-#include <QUrl>
 #include <QScopedPointer>
 
 // KDE includes
@@ -46,7 +44,6 @@
 #include "digikam_version.h"
 #include "dprogresswdg.h"
 #include "gdtalker.h"
-#include "gsitem.h"
 #include "gsnewalbumdlg.h"
 #include "gswidget.h"
 #include "gptalker.h"

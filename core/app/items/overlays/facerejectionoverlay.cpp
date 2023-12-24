@@ -22,8 +22,6 @@
 // Local includes
 
 #include "itemcategorizedview.h"
-#include "itemviewhoverbutton.h"
-#include "iteminfo.h"
 #include "itemfacedelegate.h"
 #include "itemmodel.h"
 

@@ -29,7 +29,6 @@
 #include <QTreeView>
 #include <QVBoxLayout>
 #include <QMenu>
-#include <QUrl>
 #include <QInputDialog>
 #include <QAction>
 #include <QComboBox>
@@ -43,11 +42,9 @@
 
 // local includes
 
-#include "geoifacetypes.h"
 #include "dlayoutbox.h"
 #include "gpsundocommand.h"
 #include "gpsitemmodel.h"
-#include "gpsitemcontainer.h"
 #include "backend-geonames-rg.h"
 #include "backend-osm-rg.h"
 #include "backend-geonamesUS-rg.h"

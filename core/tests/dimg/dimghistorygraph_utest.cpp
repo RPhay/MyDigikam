@@ -16,12 +16,10 @@
 
 // Qt includes
 
-#include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QTime>
 #include <QTreeView>
-#include <QTest>
 #include <QUrl>
 
 // Local includes

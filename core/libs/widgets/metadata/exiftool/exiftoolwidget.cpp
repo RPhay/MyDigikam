@@ -21,7 +21,6 @@
 #include <QPushButton>
 #include <QToolButton>
 #include <QMenu>
-#include <QAction>
 #include <QMimeData>
 #include <QApplication>
 #include <QPrinter>

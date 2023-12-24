@@ -34,7 +34,6 @@
 #include "digikam_config.h"
 #include "curvescontainer.h"
 #include "filteraction.h"
-#include "digikam_globals.h"
 
 namespace Digikam
 {

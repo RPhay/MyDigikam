@@ -17,7 +17,6 @@
 // Qt includes
 
 #include <QIcon>
-#include <QPrinter>
 #include <QPrinterInfo>
 #include <QWidget>
 #include <QApplication>

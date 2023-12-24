@@ -20,7 +20,6 @@
 
 #include <QTime>
 #include <QUrl>
-#include <QKeyEvent>
 #include <QIcon>
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA

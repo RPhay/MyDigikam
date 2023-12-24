@@ -22,8 +22,6 @@
 #include <QJsonObject>
 #include <QJsonValue>
 #include <QJsonArray>
-#include <QMap>
-#include <QString>
 #include <QDomDocument>
 #include <QDomElement>
 #include <QDomNode>

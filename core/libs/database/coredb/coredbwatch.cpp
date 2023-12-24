@@ -28,7 +28,6 @@
 // Local includes
 
 #include "collectionmanager.h"
-#include "digikam_config.h"
 
 namespace Digikam
 {

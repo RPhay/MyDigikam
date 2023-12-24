@@ -33,7 +33,6 @@
 // Local includes
 
 #include "glviewertimer.h"
-#include "glviewertexture.h"
 #include "dpluginaboutdlg.h"
 #include "digikam_debug.h"
 

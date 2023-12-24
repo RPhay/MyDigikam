@@ -22,9 +22,7 @@
 // Qt includes
 
 #include <QObject>
-#include <QRunnable>
 #include <QTime>
-#include <QTimer>
 
 // Local includes
 

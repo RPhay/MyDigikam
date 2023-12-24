@@ -31,7 +31,6 @@
 // Local includes
 
 #include "highlighter.h"
-#include "parser.h"
 
 // Constants
 

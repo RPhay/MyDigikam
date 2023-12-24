@@ -27,7 +27,6 @@
 #include "showfotofiltermodel.h"
 #include "itemviewtooltip.h"
 #include "showfototooltipfiller.h"
-#include "showfotocategorizedview.h"
 #include "itemselectionoverlay.h"
 #include "showfotokineticscroller.h"
 #include "showfotocoordinatesoverlay.h"

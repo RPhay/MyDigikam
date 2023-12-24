@@ -18,7 +18,6 @@
 // Qt includes
 
 #include <QHash>
-#include <QList>
 
 namespace Digikam
 {

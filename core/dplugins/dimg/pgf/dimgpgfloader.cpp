@@ -75,7 +75,6 @@ extern "C"
 // Local includes
 
 #include "digikam_debug.h"
-#include "dimg.h"
 #include "dimgloaderobserver.h"
 #include "pgfutils.h"
 #include "metaengine.h"

@@ -33,14 +33,12 @@
 
 // Qt includes
 
-#include <QByteArray>
 #include <QString>
 #include <QBuffer>
 #include <QtConcurrent>              // krazy:exclude=includes
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "actionthreadbase.h"
 
 namespace DigikamGenericMjpegStreamPlugin

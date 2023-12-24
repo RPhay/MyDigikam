@@ -22,7 +22,6 @@
 // Local includes
 
 #include "AVPlayerCore.h"
-#include "Filter.h"
 #include "AVOutput.h"
 #include "digikam_debug.h"
 

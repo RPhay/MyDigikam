@@ -20,7 +20,6 @@
 
 #include <QToolButton>
 #include <QHBoxLayout>
-#include <QKeyEvent>
 #include <QPixmap>
 #include <QApplication>
 #include <QIcon>

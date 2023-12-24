@@ -26,7 +26,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_opencv.h"
 #include "fullobjectdetection.h"
 
 namespace Digikam

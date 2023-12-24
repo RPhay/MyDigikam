@@ -34,7 +34,6 @@
 
 #include "digikam_debug.h"
 #include "dfiledialog.h"
-#include "ditemslist.h"
 #include "wstoolutils.h"
 #include "dlayoutbox.h"
 

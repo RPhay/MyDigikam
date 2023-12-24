@@ -22,7 +22,6 @@
 
 #include "digikam_debug.h"
 #include "showfoto.h"
-#include "showfotoiteminfo.h"
 
 namespace ShowFoto
 {

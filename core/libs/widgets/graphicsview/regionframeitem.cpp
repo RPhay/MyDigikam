@@ -22,7 +22,6 @@
 // Qt includes
 
 #include <QApplication>
-#include <QFlags>
 #include <QGraphicsProxyWidget>
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>

@@ -20,7 +20,6 @@
 #include <QTreeView>
 #include <QMenu>
 #include <QLabel>
-#include <QUrl>
 
 // KDE includes
 

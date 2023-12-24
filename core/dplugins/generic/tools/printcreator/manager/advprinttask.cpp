@@ -20,9 +20,7 @@
 
 // Qt includes
 
-#include <QImage>
 #include <QSize>
-#include <QPainter>
 #include <QFileInfo>
 #include <QScopedPointer>
 

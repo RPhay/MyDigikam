@@ -18,7 +18,6 @@
 
 #include <QApplication>
 #include <QDateTime>
-#include <QLabel>
 #include <QPainter>
 #include <QPixmap>
 #include <QStyle>

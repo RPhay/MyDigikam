@@ -24,7 +24,6 @@
 // Local includes
 
 #include "albumselecttabs.h"
-#include "applicationsettings.h"
 #include "album.h"
 #include "albummodel.h"
 #include "albummanager.h"

@@ -19,7 +19,6 @@
 
 #include <QFontMetrics>
 #include <QImage>
-#include <QPainter>
 #include <QTextDocument>
 
 // Local includes

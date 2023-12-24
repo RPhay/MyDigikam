@@ -20,7 +20,6 @@
 
 // Local includes
 
-#include "batchtool.h"
 #include "batchtoolsfactory.h"
 
 namespace Digikam

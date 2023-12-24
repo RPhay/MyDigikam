@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QStringList>
 #include <QScopedPointer>
 
 // Local includes

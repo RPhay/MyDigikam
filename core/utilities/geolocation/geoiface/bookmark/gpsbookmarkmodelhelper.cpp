@@ -27,7 +27,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "bookmarksmngr.h"
 #include "bookmarknode.h"
 #include "gpsbookmarkowner.h"
 #include "gpsundocommand.h"

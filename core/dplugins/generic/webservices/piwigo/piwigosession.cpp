@@ -20,7 +20,6 @@
 
 // Qt includes
 
-#include <QString>
 #include <QApplication>
 
 // KDE includes

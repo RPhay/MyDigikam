@@ -12,8 +12,6 @@
 // ------------------------------------------------------------------------------------------- //
 #pragma once
 
-#include <string>
-#include <vcclr.h>
 
 // CLI extensions namespace
 namespace clix {

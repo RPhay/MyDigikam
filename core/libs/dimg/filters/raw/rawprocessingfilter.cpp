@@ -20,7 +20,6 @@
 #include "drawdecoder.h"
 #include "bcgfilter.h"
 #include "curvesfilter.h"
-#include "digikam_export.h"
 #include "dimgloaderobserver.h"
 #include "filteraction.h"
 #include "icctransform.h"

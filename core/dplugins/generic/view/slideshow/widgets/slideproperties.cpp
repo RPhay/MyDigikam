@@ -20,7 +20,6 @@
 #include <QTextDocument>
 #include <QApplication>
 #include <QDateTime>
-#include <QPainter>
 #include <QPixmap>
 #include <QLocale>
 

@@ -58,7 +58,6 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "drawdecoder.h"
-#include "metaengine.h"
 #include "dimg.h"
 #include "dimgloaderobserver.h"
 #include "drawdecoderwidget.h"

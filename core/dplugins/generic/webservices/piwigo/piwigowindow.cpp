@@ -51,7 +51,6 @@
 #include "digikam_debug.h"
 #include "piwigosession.h"
 #include "piwigologindlg.h"
-#include "piwigoitem.h"
 #include "piwigotalker.h"
 #include "imagedialog.h"
 #include "ditemslist.h"

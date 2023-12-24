@@ -26,10 +26,8 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_export.h"
 #include "dimgbuiltinfilter.h"
 #include "dimgfiltermanager.h"
-#include "filteraction.h"
 
 namespace Digikam
 {

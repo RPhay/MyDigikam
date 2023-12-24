@@ -19,10 +19,8 @@
 #include <QApplication>
 #include <QDrag>
 #include <QHeaderView>
-#include <QMap>
 #include <QMimeData>
 #include <QPainter>
-#include <QPixmap>
 #include <QMenu>
 #include <QAction>
 #include <QIcon>

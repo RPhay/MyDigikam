@@ -4,7 +4,6 @@
 
 #include <QSizePolicy>
 #include <QThread>
-#include <QWebEngineView>
 #include <QWebEngineProfile>
 #include <QWebEngineCookieStore>
 #include <QWebEngineSettings>

@@ -33,7 +33,6 @@
 |   includes
 +---------------------------------------------------------------------*/
 #include "NptConfig.h"
-#include "NptTypes.h"
 #include "NptXml.h"
 #include "NptUtils.h"
 #include "NptMap.h"

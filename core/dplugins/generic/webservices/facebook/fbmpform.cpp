@@ -22,7 +22,6 @@
 #include <QMimeDatabase>
 #include <QMimeType>
 #include <QUrl>
-#include <QString>
 
 // Local includes
 

@@ -33,10 +33,7 @@
 |   includes
 +---------------------------------------------------------------------*/
 #include "NptHttp.h"
-#include "NptSockets.h"
-#include "NptBufferedStreams.h"
 #include "NptDebug.h"
-#include "NptVersion.h"
 #include "NptUtils.h"
 #include "NptFile.h"
 #include "NptSystem.h"

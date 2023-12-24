@@ -19,7 +19,6 @@
 
 #include <QApplication>
 #include <QGridLayout>
-#include <QProgressBar>
 #include <QWidget>
 #include <QList>
 #include <QSqlQuery>
@@ -42,11 +41,8 @@
 #include "digikam_globals.h"
 #include "applicationsettings.h"
 #include "coredbaccess.h"
-#include "dbsettingswidget.h"
-#include "coredbbackend.h"
 #include "dbengineparameters.h"
 #include "coredbschemaupdater.h"
-#include "coredbcopymanager.h"
 
 namespace Digikam
 {

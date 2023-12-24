@@ -18,10 +18,7 @@
 
 // Qt includes
 
-#include <QVBoxLayout>
 #include <QHBoxLayout>
-#include <QRadioButton>
-#include <QDialogButtonBox>
 #include <QIcon>
 #include <QApplication>
 #include <QPushButton>

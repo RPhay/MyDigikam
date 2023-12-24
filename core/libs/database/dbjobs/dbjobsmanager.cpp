@@ -16,8 +16,6 @@
 
 // Local includes
 
-#include "dbjobsthread.h"
-#include "dbjobinfo.h"
 
 namespace Digikam
 {

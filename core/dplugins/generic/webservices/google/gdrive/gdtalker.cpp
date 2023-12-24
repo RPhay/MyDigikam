@@ -25,7 +25,6 @@
 #include <QJsonValue>
 #include <QJsonArray>
 #include <QByteArray>
-#include <QList>
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QUrlQuery>

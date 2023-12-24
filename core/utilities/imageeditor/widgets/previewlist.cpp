@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QPixmap>
 #include <QTimer>
 #include <QPainter>
 #include <QMap>

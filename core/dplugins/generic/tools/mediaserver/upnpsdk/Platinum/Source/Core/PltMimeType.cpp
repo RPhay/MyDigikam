@@ -36,7 +36,6 @@
 |   includes
 +---------------------------------------------------------------------*/
 #include "PltMimeType.h"
-#include "PltHttp.h"
 //#include "NptLogging.h"
 
 //NPT_SET_LOCAL_LOGGER("platinum.media.server.mimetype")

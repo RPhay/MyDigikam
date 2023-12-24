@@ -43,7 +43,6 @@
 #include "albumpointer.h"
 #include "facepipeline.h"
 #include "facescansettings.h"
-#include "iteminfo.h"
 #include "iteminfojob.h"
 #include "facetags.h"
 

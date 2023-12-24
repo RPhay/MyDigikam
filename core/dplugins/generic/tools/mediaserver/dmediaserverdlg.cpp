@@ -36,7 +36,6 @@
 
 // Local includes
 
-#include "dinfointerface.h"
 #include "ditemslist.h"
 #include "dxmlguiwindow.h"
 #include "workingwidget.h"

@@ -35,7 +35,6 @@
 #include "NptFile.h"
 #include "NptUtils.h"
 #include "NptConstants.h"
-#include "NptStreams.h"
 #include "NptDataBuffer.h"
 #include "NptLogging.h"
 

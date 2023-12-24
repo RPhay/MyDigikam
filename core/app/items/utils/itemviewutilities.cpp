@@ -40,7 +40,6 @@
 #include "deletedialog.h"
 #include "dfiledialog.h"
 #include "dio.h"
-#include "iteminfo.h"
 #include "imagewindow.h"
 #include "lighttablewindow.h"
 #include "loadingcacheinterface.h"

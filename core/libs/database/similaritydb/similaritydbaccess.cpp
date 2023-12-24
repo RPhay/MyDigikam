@@ -33,7 +33,6 @@
 #include "similaritydbbackend.h"
 #include "similaritydb.h"
 #include "similaritydbschemaupdater.h"
-#include "dbengineparameters.h"
 #include "dbengineaccess.h"
 #include "dbengineerrorhandler.h"
 

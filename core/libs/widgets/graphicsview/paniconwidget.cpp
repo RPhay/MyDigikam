@@ -25,13 +25,8 @@
 // Qt includes
 
 #include <QPainter>
-#include <QPixmap>
 #include <QPen>
 #include <QTimer>
-#include <QTimerEvent>
-#include <QPaintEvent>
-#include <QMouseEvent>
-#include <QHideEvent>
 #include <QToolButton>
 #include <QIcon>
 #include <QApplication>

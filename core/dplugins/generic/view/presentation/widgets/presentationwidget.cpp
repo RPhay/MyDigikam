@@ -32,8 +32,6 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
-#include <QPixmap>
-#include <QPolygon>
 #include <QTimer>
 #include <QWheelEvent>
 #include <QApplication>

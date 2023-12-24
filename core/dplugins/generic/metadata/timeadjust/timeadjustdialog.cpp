@@ -59,7 +59,6 @@
 #include "timeadjustlist.h"
 #include "digikam_version.h"
 #include "timeadjustthread.h"
-#include "timeadjustsettings.h"
 
 namespace DigikamGenericTimeAdjustPlugin
 {

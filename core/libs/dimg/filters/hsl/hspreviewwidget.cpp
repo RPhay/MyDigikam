@@ -20,8 +20,6 @@
 #include <QImage>
 #include <QPainter>
 #include <QPixmap>
-#include <QPaintEvent>
-#include <QResizeEvent>
 
 // Local includes
 

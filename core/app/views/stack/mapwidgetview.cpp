@@ -18,7 +18,6 @@
 
 // Qt includes
 
-#include <QWidget>
 #include <QVBoxLayout>
 #include <QApplication>
 #include <QItemSelectionModel>

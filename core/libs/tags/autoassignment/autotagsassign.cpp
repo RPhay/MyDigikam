@@ -27,7 +27,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_opencv.h"
 #include "dnnyolodetector.h"
 #include "dnnresnetdetector.h"
 

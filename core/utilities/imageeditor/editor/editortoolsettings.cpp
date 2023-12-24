@@ -43,8 +43,6 @@
 #include "dnuminput.h"
 #include "colorgradientwidget.h"
 #include "histogramwidget.h"
-#include "histogrambox.h"
-#include "digikam_globals.h"
 #include "dcolorselector.h"
 #include "dpluginaboutdlg.h"
 #include "dplugineditor.h"

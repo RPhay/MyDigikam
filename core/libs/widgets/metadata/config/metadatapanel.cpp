@@ -33,7 +33,6 @@
 #include "metaengine.h"
 #include "metadataselector.h"
 #include "dmetadata.h"
-#include "exiftoolparser.h"
 
 namespace Digikam
 {

@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QSettings>
 
 // KDE includes
 

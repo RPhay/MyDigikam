@@ -17,8 +17,6 @@
 // Qt includes
 
 #include <QApplication>
-#include <QList>
-#include <QUrl>
 #include <QFile>
 #include <QStandardPaths>
 

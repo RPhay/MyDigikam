@@ -28,7 +28,6 @@
 #include <QPixmap>
 #include <QFile>
 #include <QTimer>
-#include <QPaintEvent>
 
 // KDE includes
 

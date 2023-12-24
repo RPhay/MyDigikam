@@ -33,7 +33,6 @@
 // Local includes
 
 #include "dlayoutbox.h"
-#include "imagequalitycontainer.h"
 #include "imagequalitysettings.h"
 
 namespace Digikam

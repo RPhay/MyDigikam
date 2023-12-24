@@ -19,7 +19,6 @@
 // Qt includes
 
 #include <QSize>
-#include <QEvent>
 #include <QTimer>
 #include <QTreeView>
 #include <QApplication>

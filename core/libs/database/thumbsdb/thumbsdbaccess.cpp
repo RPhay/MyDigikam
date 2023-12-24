@@ -32,7 +32,6 @@
 #include "thumbsdbbackend.h"
 #include "thumbsdb.h"
 #include "thumbsdbschemaupdater.h"
-#include "dbengineparameters.h"
 #include "dbengineaccess.h"
 #include "dbengineerrorhandler.h"
 

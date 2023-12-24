@@ -27,7 +27,6 @@
 #include <QFontMetrics>
 #include <QFont>
 #include <QToolButton>
-#include <QMenu>
 
 // KDE includes
 
@@ -55,7 +54,6 @@
 
 // Local includes
 
-#include "dlayoutbox.h"
 #include "dxmlguiwindow.h"
 #include "dexpanderbox.h"
 

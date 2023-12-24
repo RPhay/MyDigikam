@@ -19,9 +19,6 @@
 // Qt includes
 
 #include <QGraphicsScene>
-#include <QGraphicsItem>
-#include <QRectF>
-#include <QPainter>
 
 namespace FaceEngineDemo
 {

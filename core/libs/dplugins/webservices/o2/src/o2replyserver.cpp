@@ -1,8 +1,4 @@
-#include <QTcpServer>
 #include <QTcpSocket>
-#include <QByteArray>
-#include <QString>
-#include <QMap>
 #include <QPair>
 #include <QTimer>
 #include <QStringList>

@@ -53,7 +53,6 @@
 
 // Local includes
 
-#include "dlayoutbox.h"
 #include "dxmlguiwindow.h"
 #include "dexpanderbox.h"
 

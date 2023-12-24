@@ -21,7 +21,6 @@
 #include <QMutexLocker>
 #include <QSqlDatabase>
 #include <QSqlError>
-#include <QThread>
 #include <QWaitCondition>
 #include <QProgressDialog>
 #include <QMessageBox>

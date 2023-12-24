@@ -7,8 +7,6 @@
 #include "MarbleDirs.h"
 
 #include <QFile>
-#include <QString>
-#include <QStringList>
 #include <QCoreApplication>
 #include <QLibraryInfo>
 #include <QStandardPaths>

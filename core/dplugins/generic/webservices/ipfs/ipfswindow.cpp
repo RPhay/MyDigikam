@@ -33,7 +33,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "dinfointerface.h"
 #include "digikam_version.h"
 
 namespace DigikamGenericIpfsPlugin

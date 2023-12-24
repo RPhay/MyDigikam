@@ -29,7 +29,6 @@
 #include "dinfointerface.h"
 #include "dfileoperations.h"
 #include "timeadjustlist.h"
-#include "timeadjustthread.h"
 #include "metaenginesettings.h"
 
 namespace DigikamGenericTimeAdjustPlugin

@@ -27,9 +27,7 @@
 
 #include "digikam_debug.h"
 #include "album.h"
-#include "iteminfo.h"
 #include "albummanager.h"
-#include "labelstreeview.h"
 
 // NOTE: ust be declared outside namespace
 

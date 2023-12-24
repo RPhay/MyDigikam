@@ -34,7 +34,6 @@
 
 // Local includes
 
-#include "digikam_config.h"
 #include "gpsundocommand.h"
 #include "gpscommon.h"
 #include "gpsitemcontainer.h"

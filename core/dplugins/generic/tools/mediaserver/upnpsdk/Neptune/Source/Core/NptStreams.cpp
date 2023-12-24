@@ -34,8 +34,6 @@
 +---------------------------------------------------------------------*/
 #include "NptStreams.h"
 #include "NptUtils.h"
-#include "NptConstants.h"
-#include "NptStrings.h"
 #include "NptDebug.h"
 
 /*----------------------------------------------------------------------

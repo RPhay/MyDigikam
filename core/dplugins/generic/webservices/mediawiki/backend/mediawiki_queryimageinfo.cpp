@@ -33,7 +33,6 @@
 
 #include "mediawiki_job_p.h"
 #include "mediawiki_iface.h"
-#include "mediawiki_imageinfo.h"
 
 namespace MediaWiki
 {

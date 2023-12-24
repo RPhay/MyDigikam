@@ -17,7 +17,6 @@
 
 // Local includes
 
-#include "iteminfo.h"
 
 namespace Digikam
 {

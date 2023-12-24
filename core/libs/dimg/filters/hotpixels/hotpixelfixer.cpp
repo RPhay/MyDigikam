@@ -22,7 +22,6 @@
 
 // Qt includes
 
-#include <QList>
 #include <QColor>
 #include <QStringList>
 

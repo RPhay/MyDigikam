@@ -19,12 +19,8 @@
 // Qt includes
 
 #include <QPointer>
-#include <QString>
-#include <QWidget>
 #include <QEvent>
 #include <QFileInfo>
-#include <QDropEvent>
-#include <QDragEnterEvent>
 #include <QIcon>
 #include <QBrush>
 #include <QMimeData>

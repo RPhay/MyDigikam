@@ -24,7 +24,6 @@
 
 // Local includes
 
-#include "importcategorizedview.h"
 #include "importoverlays.h"
 #include "importsettings.h"
 #include "camitemsortsettings.h"

@@ -32,9 +32,7 @@
 /*----------------------------------------------------------------------
 |   includes
 +---------------------------------------------------------------------*/
-#include "NptTypes.h"
 #include "NptInterfaces.h"
-#include "NptConstants.h"
 #include "NptBufferedStreams.h"
 #include "NptUtils.h"
 #include "NptLogging.h"

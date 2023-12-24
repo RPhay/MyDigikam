@@ -19,7 +19,6 @@
 // Qt includes
 
 #include <QFileInfo>
-#include <QScrollArea>
 #include <QUrl>
 
 // Local includes

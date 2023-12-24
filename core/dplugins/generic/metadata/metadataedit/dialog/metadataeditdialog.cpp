@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QCloseEvent>
 #include <QKeyEvent>
 #include <QPointer>
 #include <QObject>

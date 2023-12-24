@@ -23,7 +23,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "album.h"
 #include "albummanager.h"
 #include "coredbsearchxml.h"
 #include "deletedialog.h"

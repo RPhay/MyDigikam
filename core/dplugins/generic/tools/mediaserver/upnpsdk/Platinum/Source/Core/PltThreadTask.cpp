@@ -36,7 +36,6 @@
 |   includes
 +---------------------------------------------------------------------*/
 #include "PltThreadTask.h"
-#include "PltTaskManager.h"
 
 NPT_SET_LOCAL_LOGGER("platinum.core.threadtask")
 

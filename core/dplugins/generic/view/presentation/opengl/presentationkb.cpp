@@ -25,13 +25,11 @@
 
 // Qt includes
 
-#include <QList>
 #include <QImage>
 #include <QPainter>
 #include <QFont>
 #include <QCursor>
 #include <QPixmap>
-#include <QMouseEvent>
 #include <QApplication>
 #include <QScreen>
 #include <QWindow>

@@ -5,7 +5,6 @@
 //
 #include "Planet.h"
 
-#include <QDateTime>
 #include <QString>
 
 #include "PlanetFactory.h"

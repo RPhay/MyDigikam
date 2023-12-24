@@ -21,7 +21,6 @@
 
 // Local includes
 
-#include "identity.h"
 
 namespace Digikam
 {

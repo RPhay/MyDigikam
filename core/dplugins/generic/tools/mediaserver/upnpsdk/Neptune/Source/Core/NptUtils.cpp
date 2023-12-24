@@ -34,8 +34,6 @@
 +---------------------------------------------------------------------*/
 #include <math.h>
 
-#include "NptConfig.h"
-#include "NptTypes.h"
 #include "NptDebug.h"
 #include "NptUtils.h"
 #include "NptResults.h"

@@ -58,7 +58,6 @@
 #include "dlayoutbox.h"
 #include "digikam_config.h"
 #include "itemmarkertiler.h"
-#include "trackmanager.h"
 #include "gpscommon.h"
 #include "gpsitemmodel.h"
 #include "mapdragdrophandler.h"

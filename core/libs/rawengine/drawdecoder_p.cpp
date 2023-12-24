@@ -17,7 +17,6 @@
 // Qt includes
 
 #include <QString>
-#include <QFile>
 #include <QScopedPointer>
 
 // DNG SDK includes
@@ -28,8 +27,6 @@
 
 // Local includes
 
-#include "digikam_debug.h"
-#include "digikam_config.h"
 #include "metaengine.h"
 
 namespace Digikam

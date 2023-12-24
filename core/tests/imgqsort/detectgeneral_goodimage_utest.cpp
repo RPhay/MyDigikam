@@ -21,7 +21,6 @@
 #include <QStringList>
 #include <QFileInfoList>
 #include <QDebug>
-#include <QDir>
 
 // Local includes
 

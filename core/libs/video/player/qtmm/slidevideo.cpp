@@ -19,7 +19,6 @@
 #include <QApplication>
 #include <QProxyStyle>
 #include <QGridLayout>
-#include <QWidget>
 #include <QString>
 #include <QSlider>
 #include <QStyle>

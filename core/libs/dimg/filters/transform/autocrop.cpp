@@ -27,8 +27,6 @@
 #include <QTextStream>
 #include <QFile>
 #include <QPoint>
-#include <QRect>
-#include <QImage>
 #include <QColor>
 
 // Local includes

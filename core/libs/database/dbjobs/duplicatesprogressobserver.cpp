@@ -16,7 +16,6 @@
 
 // Local includes
 
-#include "dbjob.h"
 
 namespace Digikam
 {

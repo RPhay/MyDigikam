@@ -20,7 +20,6 @@
 #include <QLabel>
 #include <QDialog>
 #include <QHBoxLayout>
-#include <QTest>
 
 // Local includes
 

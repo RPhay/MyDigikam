@@ -19,7 +19,6 @@
 // Qt includes
 
 #include <QEvent>
-#include <QFrame>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QMouseEvent>

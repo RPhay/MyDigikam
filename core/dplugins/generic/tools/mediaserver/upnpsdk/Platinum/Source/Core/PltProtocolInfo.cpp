@@ -37,7 +37,6 @@
 +---------------------------------------------------------------------*/
 #include "PltProtocolInfo.h"
 #include "PltMimeType.h"
-#include "PltHttp.h"
 
 NPT_SET_LOCAL_LOGGER("platinum.media.server.protocolinfo")
 

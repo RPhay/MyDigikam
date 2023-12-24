@@ -20,7 +20,6 @@
 #include <QFile>
 #include <QStringList>
 #include <QTimer>
-#include <QUrl>
 #include <QUrlQuery>
 #include <QXmlStreamReader>
 #include <QNetworkAccessManager>
@@ -32,7 +31,6 @@
 
 #include "mediawiki_job_p.h"
 #include "mediawiki_iface.h"
-#include "mediawiki_queryinfo.h"
 
 namespace MediaWiki
 {

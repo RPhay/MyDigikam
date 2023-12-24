@@ -19,7 +19,6 @@
 // Qt includes
 
 #include <QMap>
-#include <QImage>
 #include <QPainter>
 #include <QThread>
 #include <QMutex>

@@ -22,7 +22,6 @@
 
 // Local includes
 
-#include "QtAV_Global.h"
 #include "OpenGLHelper.h"
 #include "digikam_debug.h"
 

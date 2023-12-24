@@ -25,7 +25,6 @@
 // KDE includes
 
 #include <ThreadWeaver/Queue>
-#include <ThreadWeaver/Sequence>
 #include <ThreadWeaver/QObjectDecorator>
 #include <threadweaver/debuggingaids.h>
 

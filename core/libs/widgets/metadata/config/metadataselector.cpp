@@ -16,7 +16,6 @@
 
 // Qt includes
 
-#include <QTreeWidget>
 #include <QHeaderView>
 #include <QGridLayout>
 #include <QApplication>

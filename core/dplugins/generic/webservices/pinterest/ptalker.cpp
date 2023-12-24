@@ -22,8 +22,6 @@
 #include <QJsonValue>
 #include <QJsonArray>
 #include <QByteArray>
-#include <QList>
-#include <QPair>
 #include <QFileInfo>
 #include <QWidget>
 #include <QMessageBox>
@@ -46,7 +44,6 @@
 #include "webbrowserdlg.h"
 #include "wstoolutils.h"
 #include "pwindow.h"
-#include "pitem.h"
 
 namespace DigikamGenericPinterestPlugin
 {

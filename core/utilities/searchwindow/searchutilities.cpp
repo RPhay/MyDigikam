@@ -23,7 +23,6 @@
 
 #include <QAbstractListModel>
 #include <QItemDelegate>
-#include <QLineEdit>
 #include <QLinearGradient>
 #include <QListView>
 #include <QMouseEvent>

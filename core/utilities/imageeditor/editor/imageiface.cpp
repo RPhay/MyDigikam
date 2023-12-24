@@ -19,7 +19,6 @@
 
 #include <QWidget>
 #include <QSize>
-#include <QPixmap>
 #include <QBitmap>
 #include <QPainter>
 

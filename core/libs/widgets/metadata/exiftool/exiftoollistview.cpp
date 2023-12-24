@@ -18,7 +18,6 @@
 
 #include <QApplication>
 #include <QHeaderView>
-#include <QStringList>
 #include <QStyle>
 
 // KDE includes

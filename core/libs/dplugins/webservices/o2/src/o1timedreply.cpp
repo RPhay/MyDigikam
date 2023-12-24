@@ -1,5 +1,3 @@
-#include <QTimer>
-#include <QNetworkReply>
 
 #include "o1timedreply.h"
 

@@ -33,7 +33,6 @@
 #include <QFileInfo>
 #include <QImage>
 #include <QStringList>
-#include <QUrl>
 #include <QUrlQuery>
 #include <QApplication>
 #include <QDir>

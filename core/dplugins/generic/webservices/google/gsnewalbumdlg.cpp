@@ -20,7 +20,6 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QGroupBox>
-#include <QRadioButton>
 #include <QDialogButtonBox>
 #include <QIcon>
 #include <QApplication>

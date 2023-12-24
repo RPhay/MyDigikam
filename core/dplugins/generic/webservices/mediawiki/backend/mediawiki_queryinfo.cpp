@@ -17,9 +17,7 @@
 
 // Qt includes
 
-#include <QDateTime>
 #include <QTimer>
-#include <QUrl>
 #include <QUrlQuery>
 #include <QXmlStreamReader>
 #include <QRegularExpression>

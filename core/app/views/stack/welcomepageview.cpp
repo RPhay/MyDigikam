@@ -22,8 +22,6 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QTimer>
-#include <QWidget>
-#include <QLabel>
 #include <QApplication>
 #include <QStandardPaths>
 

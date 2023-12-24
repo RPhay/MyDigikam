@@ -44,7 +44,6 @@
 #include "rajcesession.h"
 #include "ditemslist.h"
 #include "wslogindialog.h"
-#include "dinfointerface.h"
 #include "dprogresswdg.h"
 
 namespace DigikamGenericRajcePlugin

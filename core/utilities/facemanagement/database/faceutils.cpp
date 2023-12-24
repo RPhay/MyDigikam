@@ -29,7 +29,6 @@
 #include "coredb.h"
 #include "dimg.h"
 #include "facetags.h"
-#include "iteminfo.h"
 #include "itemtagpair.h"
 #include "tagproperties.h"
 #include "tagscache.h"

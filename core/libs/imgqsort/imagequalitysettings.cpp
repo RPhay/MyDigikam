@@ -39,7 +39,6 @@
 #include "dlayoutbox.h"
 #include "picklabelwidget.h"
 #include "dnuminput.h"
-#include "imagequalitycontainer.h"
 
 namespace Digikam
 {

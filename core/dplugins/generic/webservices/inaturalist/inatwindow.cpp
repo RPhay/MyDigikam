@@ -46,8 +46,6 @@
 // Local includes
 
 #include "dprogresswdg.h"
-#include "inattalker.h"
-#include "inattaxon.h"
 #include "ditemslist.h"
 #include "dmetadata.h"
 #include "dtextedit.h"

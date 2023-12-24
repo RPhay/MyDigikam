@@ -20,7 +20,6 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QTime>
-#include <QTest>
 
 // Local includes
 

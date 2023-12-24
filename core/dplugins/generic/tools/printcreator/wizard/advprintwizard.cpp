@@ -54,7 +54,6 @@
 #include "advprintfinalpage.h"
 #include "templateicon.h"
 #include "dwizardpage.h"
-#include "dinfointerface.h"
 #include "dfiledialog.h"
 #include "dmetadata.h"
 

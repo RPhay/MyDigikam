@@ -25,7 +25,6 @@
 
 // Local include
 
-#include "AVCompat.h"
 #include "digikam_debug.h"
 
 namespace QtAV

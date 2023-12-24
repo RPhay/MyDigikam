@@ -36,7 +36,6 @@
 
 // Local includes
 
-#include "ditemslist.h"
 
 namespace DigikamGenericSmugPlugin
 {

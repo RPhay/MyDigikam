@@ -22,7 +22,6 @@
 #include <QLabel>
 #include <QApplication>
 #include <QStyle>
-#include <QTreeWidget>
 #include <QHeaderView>
 #include <QPushButton>
 #include <QCheckBox>

@@ -21,7 +21,6 @@
 
 // Local includes
 
-#include "track_correlator.h"
 
 namespace Digikam
 {

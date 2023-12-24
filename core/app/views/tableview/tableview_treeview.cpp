@@ -19,7 +19,6 @@
 
 #include <QContextMenuEvent>
 #include <QHeaderView>
-#include <QTreeView>
 #include <QMenu>
 #include <QAction>
 
@@ -34,7 +33,6 @@
 #include "iteminfo.h"
 #include "itemmodel.h"
 #include "tableview_column_configuration_dialog.h"
-#include "tableview_columnfactory.h"
 #include "tableview_model.h"
 #include "tableview_selection_model_syncer.h"
 #include "tableview_treeview_delegate.h"

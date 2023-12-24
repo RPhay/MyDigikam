@@ -20,7 +20,6 @@
 // Qt includes
 
 #include <QFontDatabase>
-#include <QApplication>
 
 // KDE includes
 

@@ -18,9 +18,7 @@
 
 #include <QString>
 #include <QPainter>
-#include <QPixmap>
 #include <QFileInfo>
-#include <QResizeEvent>
 #include <QFontMetrics>
 #include <QApplication>
 

@@ -22,7 +22,6 @@
 
 #include <QTimer>
 #include <QLayout>
-#include <QDialogButtonBox>
 
 namespace Digikam
 {

@@ -26,7 +26,6 @@
 
 // Local includes
 
-#include "ruledialog.h"
 #include "ui_replacemodifierdialogwidget.h"
 
 namespace Digikam

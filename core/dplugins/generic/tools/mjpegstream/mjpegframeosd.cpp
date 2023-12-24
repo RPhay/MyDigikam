@@ -22,7 +22,6 @@
 #include <QApplication>
 #include <QFontMetrics>
 #include <QPainter>
-#include <QDateTime>
 
 // KDE includes
 

@@ -17,11 +17,8 @@
 // Qt includes
 
 #include <QApplication>
-#include <QDir>
 #include <QSqlDatabase>
-#include <QString>
 #include <QTimer>
-#include <QTest>
 #include <QCommandLineParser>
 
 // KDE includes

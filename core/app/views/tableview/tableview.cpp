@@ -37,12 +37,10 @@
 
 #include "advancedrenamedialog.h"
 #include "advancedrenameprocessdialog.h"
-#include "applicationsettings.h"
 #include "contextmenuhelper.h"
 #include "digikam_debug.h"
 #include "fileactionmngr.h"
 #include "album.h"
-#include "itemviewutilities.h"
 #include "tableview_columnfactory.h"
 #include "tableview_model.h"
 #include "tableview_selection_model_syncer.h"

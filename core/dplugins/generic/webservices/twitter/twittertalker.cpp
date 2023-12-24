@@ -25,8 +25,6 @@
 #include <QByteArray>
 #include <QUrl>
 #include <QUrlQuery>
-#include <QList>
-#include <QPair>
 #include <QFileInfo>
 #include <QWidget>
 #include <QScopedPointer>
@@ -52,7 +50,6 @@
 #include "digikam_version.h"
 #include "wstoolutils.h"
 #include "twitterwindow.h"
-#include "twitteritem.h"
 #include "twittermpform.h"
 #include "previewloadthread.h"
 #include "networkmanager.h"

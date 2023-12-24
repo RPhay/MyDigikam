@@ -16,7 +16,6 @@
 
 // Qt includes
 
-#include <QAbstractItemModel>
 #include <QUrl>
 #include <QDebug>
 

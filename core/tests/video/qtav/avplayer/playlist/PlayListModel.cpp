@@ -21,7 +21,6 @@
 
 // Local includes
 
-#include "PlayListItem.h"
 
 namespace AVPlayer
 {

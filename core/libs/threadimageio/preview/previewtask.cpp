@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QImage>
 #include <QVariant>
 #include <QScopedPointer>
 

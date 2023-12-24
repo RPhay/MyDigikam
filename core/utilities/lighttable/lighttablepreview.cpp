@@ -18,7 +18,6 @@
 
 #include <QList>
 #include <QPainter>
-#include <QString>
 #include <QFontMetrics>
 #include <QPixmap>
 #include <QPalette>

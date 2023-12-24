@@ -16,7 +16,6 @@
 
 // Qt includes
 
-#include <QTest>
 
 // Local includes
 

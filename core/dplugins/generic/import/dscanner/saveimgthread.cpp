@@ -16,7 +16,6 @@
 
 // Qt includes
 
-#include <QImage>
 #include <QDateTime>
 #include <QScopedPointer>
 

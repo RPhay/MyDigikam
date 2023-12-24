@@ -21,7 +21,6 @@
 
 // Local includes
 
-#include "trackmanager.h"
 
 namespace Digikam
 {

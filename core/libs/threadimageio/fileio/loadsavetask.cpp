@@ -23,7 +23,6 @@
 #include "loadsavethread.h"
 #include "managedloadsavethread.h"
 #include "sharedloadsavethread.h"
-#include "loadingcache.h"
 
 namespace Digikam
 {

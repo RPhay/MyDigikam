@@ -37,7 +37,6 @@
 #include "digikam_debug.h"
 #include "dfileselector.h"
 #include "wstoolutils.h"
-#include "ditemslist.h"
 #include "dlayoutbox.h"
 #include "fctask.h"
 

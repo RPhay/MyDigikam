@@ -19,8 +19,6 @@
 
 #include <QApplication>
 #include <QScrollBar>
-#include <QAbstractScrollArea>
-#include <QListView>
 #include <QMouseEvent>
 #include <QEvent>
 #include <QTimer>

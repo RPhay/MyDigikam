@@ -18,7 +18,6 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QString>
-#include <QWidget>
 #include <QApplication>
 #include <QStyle>
 

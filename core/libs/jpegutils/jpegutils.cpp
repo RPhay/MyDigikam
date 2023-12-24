@@ -75,7 +75,6 @@ extern "C"
 
 #include "dimg.h"
 #include "digikam_debug.h"
-#include "digikam_config.h"
 #include "dfileoperations.h"
 #include "metaenginesettings.h"
 #include "filereadwritelock.h"

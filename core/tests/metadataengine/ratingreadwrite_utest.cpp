@@ -17,7 +17,6 @@
 // Qt includes
 
 #include <QTest>
-#include <QStringList>
 #include <QString>
 
 // Local includes

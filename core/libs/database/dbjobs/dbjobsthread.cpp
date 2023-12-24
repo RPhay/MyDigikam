@@ -17,8 +17,6 @@
 // Local includes
 
 #include "coredbaccess.h"
-#include "dbjobinfo.h"
-#include "dbjob.h"
 #include "duplicatesprogressobserver.h"
 #include "digikam_debug.h"
 

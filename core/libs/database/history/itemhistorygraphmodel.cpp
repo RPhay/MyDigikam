@@ -16,7 +16,6 @@
 
 // Qt includes
 
-#include <QAbstractItemModel>
 #include <QTreeWidgetItem>
 #include <QIcon>
 

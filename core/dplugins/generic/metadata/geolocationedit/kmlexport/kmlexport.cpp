@@ -24,7 +24,6 @@
 #include <QStandardPaths>
 #include <QApplication>
 #include <QIODevice>
-#include <QDir>
 
 // KDE includes
 

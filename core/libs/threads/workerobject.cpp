@@ -20,7 +20,6 @@
 #include <QCoreApplication>
 #include <QEvent>
 #include <QMutex>
-#include <QThread>
 #include <QWaitCondition>
 
 // Local includes

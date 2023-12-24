@@ -20,7 +20,6 @@
 #include <QDir>
 #include <QIcon>
 #include <QPointer>
-#include <QPrinter>
 #include <QPrinterInfo>
 #include <QWidget>
 #include <QMessageBox>
@@ -29,7 +28,6 @@
 #include <QMenu>
 #include <QAction>
 #include <QPageSetupDialog>
-#include <QXmlStreamWriter>
 #include <QXmlStreamAttributes>
 #include <QDomDocument>
 #include <QDomNode>

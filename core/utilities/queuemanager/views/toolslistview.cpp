@@ -18,10 +18,8 @@
 
 #include <QDrag>
 #include <QHeaderView>
-#include <QMap>
 #include <QMimeData>
 #include <QPainter>
-#include <QPixmap>
 #include <QAction>
 #include <QMenu>
 #include <QIcon>

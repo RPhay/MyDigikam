@@ -37,11 +37,8 @@
 +---------------------------------------------------------------------*/
 #include "PltCtrlPoint.h"
 #include "PltUPnP.h"
-#include "PltDeviceData.h"
 #include "PltUtilities.h"
 #include "PltCtrlPointTask.h"
-#include "PltSsdp.h"
-#include "PltHttpServer.h"
 #include "PltConstants.h"
 
 NPT_SET_LOCAL_LOGGER("platinum.core.ctrlpoint")

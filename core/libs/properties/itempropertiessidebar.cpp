@@ -16,7 +16,6 @@
 
 // Qt includes
 
-#include <QRect>
 #include <QSplitter>
 #include <QFileInfo>
 #include <QApplication>
@@ -33,7 +32,6 @@
 // Local includes
 
 #include "drawdecoder.h"
-#include "digikam_config.h"
 #include "digikam_debug.h"
 #include "dimg.h"
 #include "dmetadata.h"

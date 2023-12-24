@@ -21,9 +21,7 @@
 #include <QStyle>
 #include <QStylePainter>
 #include <QStyleOptionFrame>
-#include <QEvent>
 #include <QFrame>
-#include <QLabel>
 #include <QMouseEvent>
 #include <QPointer>
 #include <QTimer>

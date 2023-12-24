@@ -22,7 +22,6 @@
 #include <QWidget>
 #include <QApplication>
 #include <QStandardPaths>
-#include <QString>
 #include <QLabel>
 #include <QStringList>
 

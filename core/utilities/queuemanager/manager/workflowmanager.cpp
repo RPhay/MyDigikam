@@ -29,7 +29,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "queuesettings.h"
 #include "batchtoolsfactory.h"
 
 namespace Digikam

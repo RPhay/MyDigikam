@@ -30,7 +30,6 @@
 #include <QtAlgorithms>
 #include <QVBoxLayout>
 #include <QLineEdit>
-#include <QList>
 #include <QDesktopServices>
 #include <QApplication>
 #include <QPushButton>

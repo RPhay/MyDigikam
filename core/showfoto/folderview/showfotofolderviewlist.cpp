@@ -24,10 +24,8 @@
 #include <QDir>
 #include <QTimer>
 #include <QMenu>
-#include <QModelIndex>
 #include <QMimeData>
 #include <QScrollBar>
-#include <QContextMenuEvent>
 
 // KDE includes
 

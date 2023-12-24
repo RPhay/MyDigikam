@@ -26,7 +26,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "metaengine.h"
 #include "metaengine_rotation.h"
 
 namespace Digikam

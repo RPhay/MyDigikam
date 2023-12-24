@@ -26,7 +26,6 @@
 #include <QDrag>
 #include <QMenu>
 #include <QAction>
-#include <QIcon>
 
 // KDE includes
 

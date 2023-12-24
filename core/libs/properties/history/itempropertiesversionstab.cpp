@@ -19,8 +19,6 @@
 #include <QListView>
 #include <QGridLayout>
 #include <QLabel>
-#include <QModelIndex>
-#include <QUrl>
 #include <QIcon>
 #include <QString>
 
@@ -34,7 +32,6 @@
 #include "digikam_debug.h"
 #include "itemversionsmodel.h"
 #include "dmetadata.h"
-#include "dimagehistory.h"
 #include "iteminfo.h"
 #include "iteminfolist.h"
 #include "versionswidget.h"

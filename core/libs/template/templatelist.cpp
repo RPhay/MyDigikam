@@ -17,7 +17,6 @@
 // Qt includes
 
 #include <QHeaderView>
-#include <QTreeWidget>
 #include <QTreeWidgetItemIterator>
 
 // KDE includes
@@ -27,7 +26,6 @@
 // Local includes
 
 #include "templatemanager.h"
-#include "template.h"
 
 namespace Digikam
 {

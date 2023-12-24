@@ -18,7 +18,6 @@
 
 #include <QPointer>
 #include <QFile>
-#include <QDateTime>
 
 // KDE includes
 

@@ -37,7 +37,6 @@
 +---------------------------------------------------------------------*/
 #include "PltHttp.h"
 #include "PltDatagramStream.h"
-#include "PltVersion.h"
 #include "PltUtilities.h"
 
 NPT_SET_LOCAL_LOGGER("platinum.core.http")

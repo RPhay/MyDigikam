@@ -23,7 +23,6 @@
 #include <QPaintEvent>
 #include <QToolButton>
 #include <QTreeView>
-#include <QUrl>
 #include <QIcon>
 
 // KDE includes

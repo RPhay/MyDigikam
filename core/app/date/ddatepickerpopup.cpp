@@ -18,7 +18,6 @@
 
 // Qt includes
 
-#include <QDateTime>
 #include <QWidgetAction>
 
 // KDE includes

@@ -27,7 +27,6 @@
 #include <QString>
 #include <QToolButton>
 #include <QVBoxLayout>
-#include <QWidget>
 #include <QComboBox>
 #include <QIcon>
 
@@ -37,10 +36,8 @@
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "colorgradientwidget.h"
 #include "histogramwidget.h"
-#include "digikam_globals.h"
 
 namespace Digikam
 {

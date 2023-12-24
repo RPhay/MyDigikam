@@ -23,7 +23,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "album.h"
 #include "itemlister.h"
 #include "dnotificationwrapper.h"
 #include "digikamapp.h"

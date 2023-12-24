@@ -20,7 +20,6 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include <QStringList>
 #include <QDirIterator>
 #include <QTextDocument>
 #include <QtGlobal>

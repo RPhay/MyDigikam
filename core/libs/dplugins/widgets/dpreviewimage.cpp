@@ -25,7 +25,6 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QPixmap>
-#include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
 #include <QWheelEvent>
 #include <QScrollBar>

@@ -20,9 +20,7 @@
 #include <QStandardPaths>
 #include <QFile>
 #include <QValidator>
-#include <QCheckBox>
 #include <QGridLayout>
-#include <QLabel>
 #include <QPushButton>
 #include <QRadioButton>
 #include <QButtonGroup>

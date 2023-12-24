@@ -23,7 +23,6 @@
 // Local includes
 
 #include "dmetadata.h"
-#include "dinfointerface.h"
 #include "timeadjusttask.h"
 
 namespace DigikamGenericTimeAdjustPlugin

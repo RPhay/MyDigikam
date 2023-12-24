@@ -20,7 +20,6 @@
 #include <QStyle>
 #include <QLabel>
 #include <QDir>
-#include <QUrl>
 #include <QStandardPaths>
 #include <QFileInfo>
 #include <QVBoxLayout>

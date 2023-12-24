@@ -27,7 +27,6 @@
 
 // Local includes
 
-#include "tableview_columnfactory.h"
 #include "tableview_model.h"
 #include "tableview_selection_model_syncer.h"
 #include "thumbnailloadthread.h"

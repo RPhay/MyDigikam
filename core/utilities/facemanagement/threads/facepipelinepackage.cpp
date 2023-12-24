@@ -17,7 +17,6 @@
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "databasewriter.h"
 #include "detectionbenchmarker.h"
 #include "detectionworker.h"

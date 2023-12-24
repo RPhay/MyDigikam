@@ -20,7 +20,6 @@
 #include "coredbaccess.h"
 #include "coredbconstants.h"
 #include "coredboperationgroup.h"
-#include "facetags.h"
 #include "iteminfo.h"
 #include "itemtagpair.h"
 #include "tagproperties.h"

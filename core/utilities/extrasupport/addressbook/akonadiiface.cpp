@@ -17,9 +17,7 @@
 // Qt includes
 
 #include <QApplication>
-#include <QAction>
 #include <QString>
-#include <QMenu>
 #include <QIcon>
 
 // KDE includes

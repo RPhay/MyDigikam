@@ -18,8 +18,6 @@
 
 #include <QFileInfo>
 #include <QSet>
-#include <QMenu>
-#include <QIcon>
 #include <QAction>
 
 // KDE includes

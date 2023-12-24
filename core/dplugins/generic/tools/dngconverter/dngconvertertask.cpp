@@ -26,7 +26,6 @@
 
 #include "drawinfo.h"
 #include "drawdecoder.h"
-#include "dngconverteractions.h"
 #include "dmetadata.h"
 #include "digikam_debug.h"
 

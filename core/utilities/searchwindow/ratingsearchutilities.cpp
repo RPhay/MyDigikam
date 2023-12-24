@@ -16,8 +16,6 @@
 
 // Qt includes
 
-#include <QAbstractListModel>
-#include <QItemDelegate>
 #include <QLineEdit>
 #include <QLinearGradient>
 #include <QListView>
@@ -37,7 +35,6 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "ratingwidget.h"
 
 namespace Digikam
 {

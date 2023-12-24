@@ -22,10 +22,8 @@
 
 #include <QAbstractItemView>
 #include <QApplication>
-#include <QEvent>
 #include <QKeyEvent>
 #include <QLineEdit>
-#include <QMouseEvent>
 #include <QValidator>
 #include <QWindow>
 #include <QScreen>

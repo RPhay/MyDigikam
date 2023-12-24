@@ -20,7 +20,6 @@
 // Qt includes
 
 #include <QDir>
-#include <QRect>
 #include <QColor>
 #include <QSplitter>
 #include <QFileInfo>

@@ -37,7 +37,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "album.h"
 #include "albummanager.h"
 #include "albumselectors.h"
 #include "similaritydb.h"

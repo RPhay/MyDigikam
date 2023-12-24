@@ -38,8 +38,6 @@
 #include "Neptune.h"
 #include "PltVersion.h"
 #include "PltUPnP.h"
-#include "PltDeviceHost.h"
-#include "PltCtrlPoint.h"
 #include "PltSsdp.h"
 
 NPT_SET_LOCAL_LOGGER("platinum.core.upnp")

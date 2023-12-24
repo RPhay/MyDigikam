@@ -22,11 +22,8 @@
 #include <QEvent>
 #include <QGridLayout>
 #include <QHBoxLayout>
-#include <QLabel>
 #include <QPainter>
 #include <QShowEvent>
-#include <QTimeLine>
-#include <QToolButton>
 #include <QStyle>
 
 // KDE includes

@@ -17,12 +17,10 @@
 
 // Qt includes
 
-#include <QList>
 #include <QCoreApplication>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QProgressBar>
-#include <QDialog>
 #include <QThreadPool>
 #include <QFileInfo>
 #include <QDialogButtonBox>

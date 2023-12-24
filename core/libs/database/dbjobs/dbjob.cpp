@@ -21,7 +21,6 @@
 #include "coredb.h"
 #include "facetags.h"
 #include "itemlister.h"
-#include "digikam_export.h"
 #include "digikam_debug.h"
 #include "dbjobsthread.h"
 

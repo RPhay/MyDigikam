@@ -28,8 +28,6 @@
 #include "AudioResampler.h"
 #include "MediaIO.h"
 #include "VideoCapture.h"
-#include "AVCompat.h"
-#include "digikam_debug.h"
 
 // FFMpeg includes
 

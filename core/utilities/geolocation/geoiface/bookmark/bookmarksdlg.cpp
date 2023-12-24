@@ -44,7 +44,6 @@
 
 // Local includes
 
-#include "bookmarksmngr.h"
 #include "bookmarknode.h"
 #include "dxmlguiwindow.h"
 #include "itempropertiesgpstab.h"

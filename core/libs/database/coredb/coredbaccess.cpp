@@ -39,7 +39,6 @@
 #include "coredbbackend.h"
 #include "dbengineerrorhandler.h"
 #include "tagscache.h"
-#include "dbengineparameters.h"
 #include "dbengineaccess.h"
 
 namespace Digikam

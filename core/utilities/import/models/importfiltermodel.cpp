@@ -18,7 +18,6 @@
 
 #include "camiteminfo.h"
 #include "importfilter.h"
-#include "importimagemodel.h"
 
 namespace Digikam
 {

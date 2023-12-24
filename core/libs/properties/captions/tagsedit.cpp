@@ -45,7 +45,6 @@
 #include "albummanager.h"
 #include "albumthumbnailloader.h"
 #include "metadatahub.h"
-#include "disjointmetadata.h"
 
 namespace Digikam
 {

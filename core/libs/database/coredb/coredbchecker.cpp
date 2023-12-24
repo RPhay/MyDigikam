@@ -22,7 +22,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "coredbbackend.h"
 
 namespace Digikam
 {

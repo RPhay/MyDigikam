@@ -19,11 +19,7 @@
 #endif
 #endif
 
-#include "NptConfig.h"
-#include "NptTypes.h"
 #include "NptConstants.h"
-#include "NptThreads.h"
-#include "NptDebug.h"
 #include "NptResults.h"
 #include "NptWin32Threads.h"
 #include "NptTime.h"

@@ -20,7 +20,6 @@
 #include <QStyle>
 #include <QLabel>
 #include <QTimer>
-#include <QImage>
 #include <QPixmap>
 #include <QPushButton>
 #include <QVBoxLayout>

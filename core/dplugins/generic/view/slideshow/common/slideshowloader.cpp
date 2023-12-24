@@ -20,10 +20,6 @@
 
 #include <QMimeDatabase>
 #include <QApplication>
-#include <QWheelEvent>
-#include <QMouseEvent>
-#include <QPaintEvent>
-#include <QKeyEvent>
 #include <QScreen>
 #include <QWindow>
 #include <QCursor>

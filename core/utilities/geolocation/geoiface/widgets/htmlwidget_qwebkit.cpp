@@ -25,8 +25,6 @@
 
 // Local includes
 
-#include "geoifacecommon.h"
-#include "geoifacetypes.h"
 #include "digikam_debug.h"
 
 namespace Digikam

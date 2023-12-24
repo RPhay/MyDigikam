@@ -22,7 +22,6 @@
 // Local includes
 
 #include "itemcategorizedview.h"
-#include "itemviewhoverbutton.h"
 
 namespace Digikam
 {

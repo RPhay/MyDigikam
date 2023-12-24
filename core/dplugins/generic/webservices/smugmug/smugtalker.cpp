@@ -45,7 +45,6 @@
 #include "digikam_debug.h"
 #include "digikam_version.h"
 #include "smugmpform.h"
-#include "smugitem.h"
 
 // OAuth2 library includes
 
@@ -57,8 +56,6 @@
 #include "wstoolutils.h"
 #include "networkmanager.h"
 #include "o0settingsstore.h"
-#include "o1requestor.h"
-#include "o0globals.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop

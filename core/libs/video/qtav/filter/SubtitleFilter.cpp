@@ -23,7 +23,6 @@
 
 #include "Filter_p.h"
 #include "PlayerSubtitle.h"
-#include "Subtitle.h"
 #include "VideoFrame.h"
 #include "digikam_debug.h"
 

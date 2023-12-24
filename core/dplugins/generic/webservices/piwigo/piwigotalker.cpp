@@ -38,7 +38,6 @@
 
 #include "dmetadata.h"
 #include "digikam_debug.h"
-#include "piwigoitem.h"
 #include "digikam_version.h"
 #include "wstoolutils.h"
 #include "networkmanager.h"

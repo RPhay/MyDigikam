@@ -42,7 +42,6 @@
 // Local includes
 
 #include "dlayoutbox.h"
-#include "dimg.h"
 #include "imagehistogram.h"
 #include "histogramwidget.h"
 #include "histogrambox.h"

@@ -22,7 +22,6 @@
 
 // Local includes
 
-#include "searchtextbar.h"
 
 using namespace Digikam;
 using namespace QTest;

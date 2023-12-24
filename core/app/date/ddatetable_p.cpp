@@ -19,7 +19,6 @@
 
 // C++ includes
 
-#include <cmath>
 
 // Qt includes
 

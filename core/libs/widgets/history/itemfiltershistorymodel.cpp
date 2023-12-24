@@ -18,7 +18,6 @@
 
 #include <QHashIterator>
 #include <QPixmap>
-#include <QUrl>
 #include <QIcon>
 #include <QScopedPointer>
 

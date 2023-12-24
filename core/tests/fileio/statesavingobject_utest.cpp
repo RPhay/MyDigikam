@@ -29,7 +29,6 @@
 
 // Local includes
 
-#include "statesavingobject.h"
 
 using namespace Digikam;
 

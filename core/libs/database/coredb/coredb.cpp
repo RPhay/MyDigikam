@@ -30,7 +30,6 @@
 #include "collectionmanager.h"
 #include "dbengineactiontype.h"
 #include "tagscache.h"
-#include "album.h"
 
 namespace Digikam
 {

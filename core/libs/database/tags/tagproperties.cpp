@@ -17,7 +17,6 @@
 // Qt includes
 
 #include <QSharedData>
-#include <QMultiMap>
 
 // Local includes
 

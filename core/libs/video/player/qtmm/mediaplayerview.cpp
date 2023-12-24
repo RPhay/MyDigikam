@@ -28,7 +28,6 @@
 #include <QSlider>
 #include <QLabel>
 #include <QFrame>
-#include <QEvent>
 #include <QStyle>
 #include <QTransform>
 #include <QGraphicsView>

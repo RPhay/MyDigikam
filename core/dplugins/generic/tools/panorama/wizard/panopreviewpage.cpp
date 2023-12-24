@@ -19,7 +19,6 @@
 
 #include <QLabel>
 #include <QMutex>
-#include <QMutexLocker>
 #include <QTextDocument>
 #include <QStandardPaths>
 #include <QVBoxLayout>

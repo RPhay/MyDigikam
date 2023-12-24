@@ -38,7 +38,6 @@
 #include "ddragobjects.h"
 #include "dio.h"
 #include "itemcategorizedview.h"
-#include "iteminfo.h"
 #include "iteminfolist.h"
 #include "tableview_treeview.h"
 #include "digikamitemview.h"

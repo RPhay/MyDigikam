@@ -1,5 +1,4 @@
 #include "o2gft.h"
-#include "o2google.h"
 
 static const char *GftScope = "https://www.googleapis.com/auth/fusiontables";
 
