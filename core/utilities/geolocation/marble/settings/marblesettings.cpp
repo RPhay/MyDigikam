@@ -160,6 +160,7 @@ void MarbleSettings::setSettings(const MarbleSettingsContainer& settings)
 
     Q_EMIT signalSettingsChanged();
 
+    applySettingsToWidgets(settings);
     d->writeToConfig();
 }
 
