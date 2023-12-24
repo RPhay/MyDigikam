@@ -44,64 +44,58 @@ class Q_DECL_HIDDEN MarbleConfigView::Private
 public:
 
     explicit Private(MarbleWidget* const marbleWidget)
-        : ui_viewSettings (),
-          m_marbleWidget  (marbleWidget),
-          m_pluginModel   ()
+        : viewSettings(),
+          marbleWidget(marbleWidget),
+          pluginModel ()
     {
     }
 
-    Ui::MarbleViewSettingsWidget       ui_viewSettings;
-    MarblePluginSettingsWidget*        w_pluginSettings = nullptr;
+    Ui::MarbleViewSettingsWidget       viewSettings;
+    MarblePluginSettingsWidget*        pluginSettings = nullptr;
 
-    MarbleWidget* const                m_marbleWidget;
+    MarbleWidget* const                marbleWidget;
 
-    RenderPluginModel                  m_pluginModel;
+    RenderPluginModel                  pluginModel;
 };
 
 MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
                                    QWidget* const parent)
     : QTabWidget(parent),
-      d      (new Private(marbleWidget))
+      d         (new Private(marbleWidget))
 {
     // View page
 
-    QWidget* const w_viewSettings = new QWidget( this );
+    QWidget* const page = new QWidget(this);
+    d->viewSettings.setupUi(page);
+    addTab(page, i18n("View"));
 
-    d->ui_viewSettings.setupUi( w_viewSettings );
-    addTab( w_viewSettings, i18n( "View" ) );
+    connect(d->viewSettings.button_clearVolatileCache, SIGNAL(clicked()),
+            this, SIGNAL(clearVolatileCacheClicked()));
 
-    connect( d->ui_viewSettings.button_clearVolatileCache,
-             SIGNAL(clicked()), SIGNAL(clearVolatileCacheClicked()) );
-
-    connect( d->ui_viewSettings.button_clearPersistentCache,
-             SIGNAL(clicked()), SIGNAL(clearPersistentCacheClicked()) );
+    connect(d->viewSettings.button_clearPersistentCache, SIGNAL(clicked()),
+            this, SIGNAL(clearPersistentCacheClicked()));
 
     // Plugins page
 
-    if (d->m_marbleWidget)
+    if (d->marbleWidget)
     {
-        d->m_pluginModel.setRenderPlugins(d->m_marbleWidget->renderPlugins());
+        d->pluginModel.setRenderPlugins(d->marbleWidget->renderPlugins());
     }
 
-    d->w_pluginSettings = new MarblePluginSettingsWidget( this );
-    d->w_pluginSettings->setModel( &d->m_pluginModel );
-    d->w_pluginSettings->setObjectName( QLatin1String("plugin_page") );
-    addTab( d->w_pluginSettings, i18n( "Plugins" ) );
+    d->pluginSettings = new MarblePluginSettingsWidget(this);
+    d->pluginSettings->setModel(&d->pluginModel);
+    d->pluginSettings->setObjectName(QLatin1String("plugin_page"));
+    addTab(d->pluginSettings, i18n("Plugins"));
 
-    // Setting the icons for the plugin dialog.
+    // Setting the icons for the plugin view.
 
-    d->w_pluginSettings->setConfigIcon(QIcon::fromTheme(QLatin1String("configure")));
+    d->pluginSettings->setConfigIcon(QIcon::fromTheme(QLatin1String("configure")));
 
-    connect( this, SIGNAL(rejected()),
-             &d->m_pluginModel, SLOT(retrievePluginState()) );
+    connect(this, SIGNAL(rejected()),
+            &d->pluginModel, SLOT(retrievePluginState()));
 
-    connect( this, SIGNAL(accepted()),
-             &d->m_pluginModel, SLOT(applyPluginState()) );
-
-    // When the settings have been changed, write to disk.
-
-    connect( this, SIGNAL(settingsChanged()),
-             this, SLOT(syncSettings()) );
+    connect(this, SIGNAL(accepted()),
+            &d->pluginModel, SLOT(applyPluginState()));
 }
 
 MarbleConfigView::~MarbleConfigView()
@@ -117,21 +111,21 @@ void MarbleConfigView::readSettings()
 
     // View
 
-    d->ui_viewSettings.kcfg_distanceUnit->setCurrentIndex(settings.distanceUnit);
-    d->ui_viewSettings.kcfg_angleUnit->setCurrentIndex(settings.angleUnit);
-    d->ui_viewSettings.kcfg_stillQuality->setCurrentIndex(settings.stillQuality);
-    d->ui_viewSettings.kcfg_animationQuality->setCurrentIndex(settings.animationQuality);
-    d->ui_viewSettings.kcfg_mapFont->setCurrentFont(settings.mapFont);
-    d->ui_viewSettings.kcfg_inertialEarthRotation->setChecked(settings.inertialRotation);
-    d->ui_viewSettings.kcfg_mouseViewRotation->setChecked(settings.mouseRotation);
-    d->ui_viewSettings.kcfg_volatileTileCacheLimit->setValue(settings.volatileTileCacheLimit);
-    d->ui_viewSettings.kcfg_persistentTileCacheLimit->setValue(settings.persistentTileCacheLimit);
+    d->viewSettings.kcfg_distanceUnit->setCurrentIndex(settings.distanceUnit);
+    d->viewSettings.kcfg_angleUnit->setCurrentIndex(settings.angleUnit);
+    d->viewSettings.kcfg_stillQuality->setCurrentIndex(settings.stillQuality);
+    d->viewSettings.kcfg_animationQuality->setCurrentIndex(settings.animationQuality);
+    d->viewSettings.kcfg_mapFont->setCurrentFont(settings.mapFont);
+    d->viewSettings.kcfg_inertialEarthRotation->setChecked(settings.inertialRotation);
+    d->viewSettings.kcfg_mouseViewRotation->setChecked(settings.mouseRotation);
+    d->viewSettings.kcfg_volatileTileCacheLimit->setValue(settings.volatileTileCacheLimit);
+    d->viewSettings.kcfg_persistentTileCacheLimit->setValue(settings.persistentTileCacheLimit);
 
     // Read the settings of the plugins
 
-    if (d->m_marbleWidget)
+    if (d->marbleWidget)
     {
-        d->m_marbleWidget->readPluginSettings();
+        d->marbleWidget->readPluginSettings();
     }
 }
 
@@ -139,23 +133,23 @@ void MarbleConfigView::applySettings()
 {
     MarbleSettingsContainer settings;
 
-    settings.distanceUnit             = (Marble::MarbleLocale::MeasurementSystem)d->ui_viewSettings.kcfg_distanceUnit->currentIndex();
-    settings.angleUnit                = (Marble::AngleUnit)d->ui_viewSettings.kcfg_angleUnit->currentIndex();
-    settings.stillQuality             = (Marble::MapQuality)d->ui_viewSettings.kcfg_stillQuality->currentIndex();
-    settings.animationQuality         = (Marble::MapQuality)d->ui_viewSettings.kcfg_animationQuality->currentIndex();
-    settings.mapFont                  = d->ui_viewSettings.kcfg_mapFont->currentFont();
-    settings.inertialRotation         = d->ui_viewSettings.kcfg_inertialEarthRotation->isChecked();
-    settings.mouseRotation            = d->ui_viewSettings.kcfg_mouseViewRotation->isChecked();
-    settings.volatileTileCacheLimit   = d->ui_viewSettings.kcfg_volatileTileCacheLimit->value();
-    settings.persistentTileCacheLimit = d->ui_viewSettings.kcfg_persistentTileCacheLimit->value();
+    settings.distanceUnit             = (Marble::MarbleLocale::MeasurementSystem)d->viewSettings.kcfg_distanceUnit->currentIndex();
+    settings.angleUnit                = (Marble::AngleUnit)d->viewSettings.kcfg_angleUnit->currentIndex();
+    settings.stillQuality             = (Marble::MapQuality)d->viewSettings.kcfg_stillQuality->currentIndex();
+    settings.animationQuality         = (Marble::MapQuality)d->viewSettings.kcfg_animationQuality->currentIndex();
+    settings.mapFont                  = d->viewSettings.kcfg_mapFont->currentFont();
+    settings.inertialRotation         = d->viewSettings.kcfg_inertialEarthRotation->isChecked();
+    settings.mouseRotation            = d->viewSettings.kcfg_mouseViewRotation->isChecked();
+    settings.volatileTileCacheLimit   = d->viewSettings.kcfg_volatileTileCacheLimit->value();
+    settings.persistentTileCacheLimit = d->viewSettings.kcfg_persistentTileCacheLimit->value();
 
     MarbleSettings::instance()->setSettings(settings);
 
     // Plugins
 
-    if (d->m_marbleWidget)
+    if (d->marbleWidget)
     {
-        d->m_marbleWidget->writePluginSettings();
+        d->marbleWidget->writePluginSettings();
     }
 }
 

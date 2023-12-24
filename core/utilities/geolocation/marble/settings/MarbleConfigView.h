@@ -3,8 +3,8 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef DIGIKAM_MARBLE_CONFIG_VIEW_H
-#define DIGIKAM_MARBLE_CONFIG_VIEW_H
+#ifndef MARBLE_CONFIG_VIEW_H
+#define MARBLE_CONFIG_VIEW_H
 
 // Qt includes
 
@@ -56,4 +56,4 @@ private:
 
 } // namespace Marble
 
-#endif // DIGIKAM_MARBLE_CONFIG_VIEW_H
+#endif // MARBLE_CONFIG_VIEW_H
