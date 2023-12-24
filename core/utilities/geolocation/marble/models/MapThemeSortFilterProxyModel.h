@@ -19,17 +19,20 @@ class MapThemeSortFilterProxyModel : public QSortFilterProxyModel
     Q_OBJECT
 
 public:
+
     explicit MapThemeSortFilterProxyModel(QObject *parent = nullptr);
 
 protected:
+
     bool lessThan( const QModelIndex &left, const QModelIndex &right ) const override;
     bool filterAcceptsRow( int sourceRow, const QModelIndex &sourceParent ) const override;
 
 private:
+
     static bool isFavorite( const QModelIndex& index );
     static QDateTime favoriteDateTime( const QModelIndex& index );
 };
 
-}
+} // namespace Marble
 
-#endif
+#endif // MARBLE_MAPTHEMESORTFILTERPROXYMODEL_H
