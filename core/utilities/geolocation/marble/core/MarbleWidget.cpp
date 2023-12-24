@@ -10,7 +10,6 @@
 
 #include <qmath.h>
 #include <QHash>
-#include <QSettings>
 #include <QElapsedTimer>
 #include <QPaintEvent>
 #include <QPaintEngine>

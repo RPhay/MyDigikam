@@ -23,7 +23,6 @@
 #include "digikam_export.h"
 
 // Qt
-class QSettings;
 class QPixmap;
 
 namespace Marble
