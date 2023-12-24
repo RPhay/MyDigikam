@@ -566,7 +566,7 @@ set(marblewidget_SRCS
     models/kdescendantsproxymodel.cpp
     models/kineticmodel.cpp
     models/MapThemeManager.cpp
-    models/MapThemeSortFilterProxyModel.cpp
+#    models/MapThemeSortFilterProxyModel.cpp
     models/MarbleModel.cpp
     models/MarblePlacemarkModel.cpp
     models/TreeViewDecoratorModel.cpp
