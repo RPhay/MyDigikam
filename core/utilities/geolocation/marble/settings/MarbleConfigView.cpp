@@ -78,7 +78,11 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
 
     // Plugins page
 
-    d->m_pluginModel.setRenderPlugins( d->m_marbleWidget->renderPlugins() );
+    if (d->m_marbleWidget)
+    {
+        d->m_pluginModel.setRenderPlugins(d->m_marbleWidget->renderPlugins());
+    }
+
     d->w_pluginSettings = new MarblePluginSettingsWidget( this );
     d->w_pluginSettings->setModel( &d->m_pluginModel );
     d->w_pluginSettings->setObjectName( QLatin1String("plugin_page") );

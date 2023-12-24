@@ -254,9 +254,9 @@ Setup::Setup(QWidget* const parent)
 #ifdef HAVE_MARBLE
 
     d->geolocationPage = new SetupGeolocation();
-    d->page_geolocation = addPage(d->lighttablePage, i18nc("@title: settings section", "Geolocation"));
+    d->page_geolocation = addPage(d->geolocationPage, i18nc("@title: settings section", "Geolocation"));
     d->page_geolocation->setHeader(i18nc("@title", "Geolocation Settings\nCustomize view to geolocalize items"));
-    d->page_geolocation->setIcon(QIcon::fromTheme(QLatin1String("map_globe")));
+    d->page_geolocation->setIcon(QIcon::fromTheme(QLatin1String("map-globe")));
 
 #endif
 
