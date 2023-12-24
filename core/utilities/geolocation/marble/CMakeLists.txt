@@ -560,7 +560,6 @@ set(marblewidget_SRCS
     layers/VisiblePlacemark.cpp
 
     models/BranchFilterProxyModel.cpp
-    models/CelestialSortFilterProxyModel.cpp
     models/ElevationModel.cpp
     models/GeoDataTreeModel.cpp
     models/kdescendantsproxymodel.cpp
