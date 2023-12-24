@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 00:39+0000\n"
+"POT-Creation-Date: 2023-12-24 00:40+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -24368,7 +24368,7 @@ msgstr "اطلاعات"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1086
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1127
 #: core/utilities/geolocation/marble/core/MarbleInputHandler.cpp:666
-#: core/utilities/geolocation/marble/core/MarbleWidget.cpp:638
+#: core/utilities/geolocation/marble/core/MarbleWidget.cpp:645
 #, fuzzy, kde-format
 msgid "not available"
 msgstr "<p align=\"center\">گزینه‌ای در دسترس نیست.</p>"
