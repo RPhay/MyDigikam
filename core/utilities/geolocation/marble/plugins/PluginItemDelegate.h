@@ -37,13 +37,13 @@ class PluginItemDelegate : public QAbstractItemDelegate
 
  Q_SIGNALS:
     /**
-     * This signal is Q_EMITted if the user clicks on a "about"-button of an item in the view
+     * This signal is emitted if the user clicks on a "about"-button of an item in the view
      * passed to the constructor.
      */
     void aboutPluginClicked( const QModelIndex &index );
 
     /**
-     * This signal is Q_EMITted if the user clicks on a "configure"-button of an item in the view
+     * This signal is emitted if the user clicks on a "configure"-button of an item in the view
      * passed to the constructor.
      */
     void configPluginClicked( const QModelIndex &index );

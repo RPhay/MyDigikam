@@ -21,33 +21,43 @@ namespace Marble
 
 class MarblePluginSettingsWidgetPrivate : public Ui::MarblePluginSettingsWidget
 {
- public:
-    explicit MarblePluginSettingsWidgetPrivate( Marble::MarblePluginSettingsWidget *parent ) :
-        q( parent ),
-        m_itemDelegate( nullptr )
-    {}
+public:
+
+    explicit MarblePluginSettingsWidgetPrivate(Marble::MarblePluginSettingsWidget* const parent)
+        : q             (parent),
+          m_itemDelegate(nullptr)
+    {
+    }
 
     /**
      * Shows the configuration dialog for the plugin with the corresponding @p nameId.
      */
-    void showPluginConfigDialog( const QModelIndex &index );
+    void showPluginConfigDialog(const QModelIndex& index);
 
-    Marble::MarblePluginSettingsWidget *const q;
-    PluginItemDelegate *m_itemDelegate;
-    QPointer<RenderPluginModel> m_pluginModel;
+public:
+
+    Marble::MarblePluginSettingsWidget* const q;
+    PluginItemDelegate*                       m_itemDelegate;
+    QPointer<RenderPluginModel>               m_pluginModel;
 };
 
-void MarblePluginSettingsWidgetPrivate::showPluginConfigDialog( const QModelIndex &index )
+void MarblePluginSettingsWidgetPrivate::showPluginConfigDialog(const QModelIndex& index)
 {
-    if ( m_pluginModel.isNull() )
+    if (m_pluginModel.isNull())
+    {
         return;
+    }
 
-    DialogConfigurationInterface *configInterface = m_pluginModel->pluginDialogConfigurationInterface( index );
-    QDialog *configDialog = configInterface ? configInterface->configDialog() : nullptr;
-    if ( configDialog ) {
-        configDialog->show();
+    DialogConfigurationInterface* const configInterface = m_pluginModel->pluginDialogConfigurationInterface(index);
+    QDialog* const configDialog                         = configInterface ? configInterface->configDialog() : nullptr;
+
+    if (configDialog)
+    {
+        configDialog->exec();
     }
 }
+
+// ---
 
 MarblePluginSettingsWidget::MarblePluginSettingsWidget( QWidget *parent )
     : QWidget( parent ),
@@ -57,8 +67,9 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget( QWidget *parent )
 
     d->m_itemDelegate = new PluginItemDelegate( d->m_pluginListView, this );
     d->m_pluginListView->setItemDelegate( d->m_itemDelegate );
+
     connect( d->m_itemDelegate, SIGNAL(configPluginClicked(QModelIndex)),
-             this,              SLOT(showPluginConfigDialog(QModelIndex)) );
+             this, SLOT(showPluginConfigDialog(QModelIndex)) );
 }
 
 MarblePluginSettingsWidget::~MarblePluginSettingsWidget()
@@ -73,16 +84,18 @@ void MarblePluginSettingsWidget::setConfigIcon( const QIcon& icon )
 
 void MarblePluginSettingsWidget::setModel( RenderPluginModel* pluginModel )
 {
-    if ( !d->m_pluginModel.isNull() ) {
+    if ( !d->m_pluginModel.isNull() )
+    {
         disconnect( d->m_pluginModel.data(), nullptr, this, nullptr );
     }
 
     d->m_pluginModel = pluginModel;
     d->m_pluginListView->setModel( pluginModel );
 
-    if ( !d->m_pluginModel.isNull() ) {
+    if ( !d->m_pluginModel.isNull() )
+    {
         connect( d->m_pluginModel.data(), SIGNAL(itemChanged(QStandardItem*)),
-                 this,                    SIGNAL(pluginListViewClicked()) );
+                 this, SIGNAL(pluginListViewClicked()) );
     }
 }
 
