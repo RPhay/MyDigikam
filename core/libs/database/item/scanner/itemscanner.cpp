@@ -132,12 +132,14 @@ void ItemScanner::loadFromDisk()
 
     MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
     QDateTime modificationDate           = d->fileInfo.lastModified();
+    modificationDate.setTimeSpec(Qt::UTC);
 
     if (settings.useXMPSidecar4Reading              &&
         DMetadata::hasSidecar(d->fileInfo.filePath()))
     {
         QString filePath      = DMetadata::sidecarPath(d->fileInfo.filePath());
         QDateTime sidecarDate = QFileInfo(filePath).lastModified();
+        sidecarDate.setTimeSpec(Qt::UTC);
 
         if (sidecarDate > modificationDate)
         {
