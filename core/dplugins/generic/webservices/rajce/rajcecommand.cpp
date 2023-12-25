@@ -7,7 +7,7 @@
  * Description : A tool to export items to Rajce web service
  *
  * SPDX-FileCopyrightText: 2011      by Lukas Krejci <krejci.l at centrum dot cz>
- * SPDX-FileCopyrightText: 2011-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

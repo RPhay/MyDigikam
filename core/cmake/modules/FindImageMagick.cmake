@@ -62,7 +62,7 @@
 #
 # Based on cmake project implementation <https://cmake.org>
 #
-# SPDX-FileCopyrightText: 2019-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2019-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

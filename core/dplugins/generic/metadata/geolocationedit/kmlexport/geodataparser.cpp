@@ -7,7 +7,7 @@
  * Description : GPS data file parser.
  *               (GPX format https://www.topografix.com/gpx.asp).
  *
- * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

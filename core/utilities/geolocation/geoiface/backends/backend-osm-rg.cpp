@@ -6,7 +6,7 @@
  * Date        : 2010-05-12
  * Description : OSM Nominatim backend for Reverse Geocoding
  *
- * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010      by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText: 2010      by Gabriel Voicu <ping dot gabi at gmail dot com>
  *

@@ -6,7 +6,7 @@
  * Date        : 2017-05-15
  * Description : low level manager for bookmarks
  *
- * SPDX-FileCopyrightText: 2017-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

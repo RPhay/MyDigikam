@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : Google-Maps-backend for geolocation interface
  *
- * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText: 2014      by Justus Schwartz <justus at gmx dot li>
  *
