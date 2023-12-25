@@ -100,6 +100,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     // Setting the icons for the plugin view.
 
     d->pluginSettings->setConfigIcon(QIcon::fromTheme(QLatin1String("configure")));
+    d->pluginSettings->setAboutIcon(QIcon::fromTheme(QLatin1String("help-about")));
 }
 
 MarbleConfigView::~MarbleConfigView()

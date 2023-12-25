@@ -60,6 +60,11 @@ void MarblePluginSettingsWidgetPrivate::showPluginAboutDialog(const QModelIndex&
     }
 
     QMessageBox* const dlg = new QMessageBox(q);
+    dlg->setWindowFlags((dlg->windowFlags() & ~Qt::Dialog) |
+                   Qt::Window                    |
+                   Qt::WindowCloseButtonHint     |
+                   Qt::WindowMinMaxButtonsHint);
+
     dlg->setWindowTitle(i18n("About Plugin %1", m_pluginModel->data(index, RenderPluginModel::Name).toString()));
     dlg->setIconPixmap(qvariant_cast<QIcon>(m_pluginModel->data(index, RenderPluginModel::Icon)).pixmap(48, 48));
     dlg->addButton(QMessageBox::Ok);
@@ -111,6 +116,11 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* parent)
 MarblePluginSettingsWidget::~MarblePluginSettingsWidget()
 {
     delete d;
+}
+
+void MarblePluginSettingsWidget::setAboutIcon(const QIcon& icon)
+{
+    d->m_itemDelegate->setAboutIcon(icon);
 }
 
 void MarblePluginSettingsWidget::setConfigIcon(const QIcon& icon)

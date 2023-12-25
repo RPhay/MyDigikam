@@ -41,6 +41,7 @@ public:
 
     void setModel(RenderPluginModel* pluginModel);
 
+    void setAboutIcon(const QIcon& icon);
     void setConfigIcon(const QIcon& icon);
 
 Q_SIGNALS:
