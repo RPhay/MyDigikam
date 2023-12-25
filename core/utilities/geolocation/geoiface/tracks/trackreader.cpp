@@ -6,7 +6,7 @@
  * Date        : 2006-09-19
  * Description : Track file reader
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -245,7 +245,7 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
 
     QXmlStreamReader XmlReader(&file);
 
-    while (!XmlReader.atEnd() && !XmlReader.hasError() ) 
+    while (!XmlReader.atEnd() && !XmlReader.hasError() )
     {
         QXmlStreamReader::TokenType token = XmlReader.readNext();
 
@@ -262,11 +262,11 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
         }
     }
 
-    // error not well formed XML file 
+    // error not well formed XML file
 
     parsedData.isValid = !XmlReader.hasError() ;
 
-    if (!parsedData.isValid) 
+    if (!parsedData.isValid)
     {
         if (XmlReader.error() == QXmlStreamReader::NotWellFormedError)
         {
@@ -276,7 +276,7 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
         return parsedData;
     }
 
-    // error no track points 
+    // error no track points
 
     parsedData.isValid = !parsedData.track.points.isEmpty();
 

@@ -7,7 +7,7 @@
  * Description : a command line tool to extract info from a DNG file
  *
  * SPDX-FileCopyrightText: 2011      by Jens Mueller <tschenser at gmx dot de>
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

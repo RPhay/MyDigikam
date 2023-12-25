@@ -6,7 +6,7 @@
  * Date        : 2010-07-14
  * Description : Common internal data structures for geolocation interface
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText:      2014 by Justus Schwartz <justus at gmx dot li>
  *

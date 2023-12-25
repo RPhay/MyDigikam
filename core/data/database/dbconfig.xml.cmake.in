@@ -10,7 +10,7 @@
  *
  * SPDX-FileCopyrightText:      2009 by Holger Foerster <hamsi2k at freenet dot de>
  * SPDX-FileCopyrightText: 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2018 by Mario Frank    <mario dot frank at uni minus potsdam dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -1037,7 +1037,7 @@
                 <!-- Nothing to do for SQLite -->
             </dbaction>
 
-            <!-- 
+            <!--
               statements for shrinking the databases. We need actions for each database since MySQL has only vacuum
               and integtrity check for tables. Thus, MySQL needs at least one action per table.
               Vacuum (SQLite) creates a temporary database that replaces the current one on successful vacuuming.
@@ -1624,7 +1624,7 @@
                     );
 
                     IF IFNULL(@Index_cnt, 0) = 0 THEN
-                        set @index_sql = CONCAT( 
+                        set @index_sql = CONCAT(
                             CONVERT( 'ALTER TABLE ' USING latin1),
                             CONVERT( table_name_vc USING latin1),
                             CONVERT( ' ADD INDEX ' USING latin1),
@@ -1744,7 +1744,7 @@
                     );
 
                     IF IFNULL(@Index_cnt, 0) = 0 THEN
-                        set @index_sql = CONCAT( 
+                        set @index_sql = CONCAT(
                             CONVERT( 'ALTER TABLE ' USING latin1),
                             CONVERT( table_name_vc USING latin1),
                             CONVERT( ' ADD INDEX ' USING latin1),
@@ -2756,7 +2756,7 @@
                 <statement mode="query">OPTIMIZE TABLE ImageSimilarity, ImageHaarMatrix, SimilaritySettings;</statement>
             </dbaction>
 
-            <dbaction name="checkCoreDbIntegrity"> 
+            <dbaction name="checkCoreDbIntegrity">
                 <statement mode="unprepared">CHECK TABLE Albums, Images, ImageInformation, ImageMetadata, VideoMetadata, ImagePositions, ImageComments, ImageCopyright, ImageProperties, ImageHistory, ImageRelations, Tags, ImageTags, ImageTagProperties;</statement>
             </dbaction>
 

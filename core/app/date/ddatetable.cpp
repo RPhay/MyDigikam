@@ -6,7 +6,7 @@
  * Date        : 1997-04-21
  * Description : Date selection table.
  *
- * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 1997      by Tim D. Gilman <tdgilman at best dot org>
  * SPDX-FileCopyrightText: 1998-2001 by Mirko Boehm <mirko at kde dot org>
  * SPDX-FileCopyrightText: 2007      by John Layt <john at layt dot net>
