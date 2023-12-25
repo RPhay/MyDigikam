@@ -559,8 +559,6 @@ set(marblewidget_SRCS
     layers/VectorTileLayer.cpp
     layers/VisiblePlacemark.cpp
 
-    models/BranchFilterProxyModel.cpp
-    models/CelestialSortFilterProxyModel.cpp
     models/ElevationModel.cpp
     models/GeoDataTreeModel.cpp
     models/kdescendantsproxymodel.cpp
@@ -568,7 +566,6 @@ set(marblewidget_SRCS
     models/MapThemeManager.cpp
     models/MarbleModel.cpp
     models/MarblePlacemarkModel.cpp
-    models/TreeViewDecoratorModel.cpp
 
     osm/MarbleZip.cpp
     osm/OsmcSymbol.cpp

@@ -97,7 +97,7 @@ void DatesJob::run()
         {
             if (!value.isNull())
             {
-                QDateTime dateTime = value.toDateTime();
+                QDateTime dateTime = value.toDateTime().toUTC();
 
                 if (!dateTime.isValid())
                 {

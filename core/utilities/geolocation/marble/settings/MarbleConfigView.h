@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-12-21
+ * Description : Marble Settings View.
+ *
+ * SPDX-FileCopyrightText: 2009      by Bastian Holst <bastianholst at gmx dot de>
+ * SPDX-FileCopyrightText: 2022-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #ifndef MARBLE_CONFIG_VIEW_H
 #define MARBLE_CONFIG_VIEW_H

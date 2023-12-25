@@ -144,6 +144,19 @@ void MarbleSettings::applySettingsToWidgets(const MarbleSettingsContainer& setti
     }
 }
 
+MarbleWidget* MarbleSettings::mainMarbleWidget() const
+{
+    Q_FOREACH (MarbleWidget* const w, d->widgets)
+    {
+        if (w)
+        {
+            return w;
+        }
+    }
+
+    return nullptr;
+}
+
 MarbleSettingsContainer MarbleSettings::settings() const
 {
     QMutexLocker lock(&d->mutex);

@@ -51,7 +51,16 @@ public:
      */
     void setSettings(const MarbleSettingsContainer& settings);
 
+    /**
+     * Store one MarbleWidget instance in the collection.
+     */
     void registerWidget(MarbleWidget* const widget);
+
+    /**
+     * Return the first registered MarbleWidget instance stored in the collection.
+     * If no valid instance is found, nullptr is returned.
+     */
+    MarbleWidget* mainMarbleWidget() const;
 
 Q_SIGNALS:
 
