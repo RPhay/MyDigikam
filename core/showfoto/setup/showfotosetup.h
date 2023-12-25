@@ -17,6 +17,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "dconfigdlg.h"
 
 using namespace Digikam;
@@ -40,6 +41,13 @@ public:
         RawPage,
         IOFilesPage,
         ICCPage,
+
+#ifdef HAVE_MARBLE
+
+        GeolocationPage,
+
+#endif
+
         PluginsPage,
         MiscellaneousPage,
 
@@ -61,6 +69,12 @@ public:
      */
     static bool execSinglePage(Page page);
     static bool execSinglePage(QWidget* const parent, Page page);
+
+#ifdef HAVE_MARBLE
+
+    static bool execGeolocation(QWidget* const parent, int tab);
+
+#endif
 
     static void onlineVersionCheck();
 

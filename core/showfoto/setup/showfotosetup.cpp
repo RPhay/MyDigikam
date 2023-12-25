@@ -41,6 +41,10 @@
 #include "dxmlguiwindow.h"
 #include "onlineversiondlg.h"
 
+#ifdef HAVE_MARBLE
+#   include "setupgeolocation.h"
+#endif
+
 namespace ShowFoto
 {
 
@@ -55,6 +59,13 @@ public:
         page_raw        (nullptr),
         page_iofiles    (nullptr),
         page_icc        (nullptr),
+
+#ifdef HAVE_MARBLE
+
+        page_geolocation(nullptr),
+
+#endif
+
         page_plugins    (nullptr),
         page_misc       (nullptr),
         metadataPage    (nullptr),
@@ -62,6 +73,13 @@ public:
         miscPage        (nullptr),
         rawPage         (nullptr),
         pluginsPage     (nullptr),
+
+#ifdef HAVE_MARBLE
+
+        geolocationPage (nullptr),
+
+#endif
+
         editorIfacePage (nullptr),
         iofilesPage     (nullptr),
         iccPage         (nullptr)
@@ -74,6 +92,13 @@ public:
     DConfigDlgWdgItem*            page_raw;
     DConfigDlgWdgItem*            page_iofiles;
     DConfigDlgWdgItem*            page_icc;
+
+#ifdef HAVE_MARBLE
+
+    DConfigDlgWdgItem*            page_geolocation;
+
+#endif
+
     DConfigDlgWdgItem*            page_plugins;
     DConfigDlgWdgItem*            page_misc;
 
@@ -82,6 +107,12 @@ public:
     ShowfotoSetupMisc*            miscPage;
     ShowfotoSetupRaw*             rawPage;
     ShowfotoSetupPlugins*         pluginsPage;
+
+#ifdef HAVE_MARBLE
+
+    Digikam::SetupGeolocation*    geolocationPage;
+
+#endif
 
     Digikam::SetupEditorIface*    editorIfacePage;
     Digikam::SetupIOFiles*        iofilesPage;
@@ -138,6 +169,15 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
                                     "<i>Set default configuration used to save images</i></qt>"));
     d->page_iofiles->setIcon(QIcon::fromTheme(QLatin1String("document-save-all")));
 
+#ifdef HAVE_MARBLE
+
+    d->geolocationPage  = new SetupGeolocation();
+    d->page_geolocation = addPage(d->geolocationPage, i18nc("@title: settings section", "Geolocation"));
+    d->page_geolocation->setHeader(i18nc("@title", "Geolocation Settings\nCustomize view to geolocalize items"));
+    d->page_geolocation->setIcon(QIcon::fromTheme(QLatin1String("map-globe")));
+
+#endif
+
     d->pluginsPage    = new ShowfotoSetupPlugins();
     d->page_plugins   = addPage(d->pluginsPage, i18n("Plugins"));
     d->page_plugins->setHeader(i18n("<qt>Main Interface Plug-in Settings<br/>"
@@ -184,6 +224,13 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
         d->rawPage->setActiveTab((ShowfotoSetupRaw::RAWTab)group.readEntry(QLatin1String("RAW Tab"), (int)ShowfotoSetupRaw::RAWBehavior));
         d->iccPage->setActiveTab((Digikam::SetupICC::ICCTab)group.readEntry(QLatin1String("ICC Tab"), (int)Digikam::SetupICC::Behavior));
         d->pluginsPage->setActiveTab((ShowfotoSetupPlugins::PluginTab)group.readEntry(QLatin1String("Plugin Tab"), (int)ShowfotoSetupPlugins::Generic));
+
+#ifdef HAVE_MARBLE
+
+        d->geolocationPage->setActiveTab((SetupGeolocation::GeolocationTab)group.readEntry(QLatin1String("Geolocation Tab"), (int)SetupGeolocation::MarbleView));
+
+#endif
+
         d->miscPage->setActiveTab((ShowfotoSetupMisc::MiscTab)group.readEntry(QLatin1String("Misc Tab"), (int)ShowfotoSetupMisc::Behaviour));
     }
     else
@@ -206,6 +253,13 @@ ShowfotoSetup::~ShowfotoSetup()
     group.writeEntry(QLatin1String("RAW Tab"),         (int)d->rawPage->activeTab());
     group.writeEntry(QLatin1String("ICC Tab"),         (int)d->iccPage->activeTab());
     group.writeEntry(QLatin1String("Plugin Tab"),      (int)d->pluginsPage->activeTab());
+
+#ifdef HAVE_MARBLE
+
+    group.writeEntry(QLatin1String("Geolocation Tab"), (int)d->geolocationPage->activeTab());
+
+#endif
+
     group.writeEntry(QLatin1String("Misc Tab"),        (int)d->miscPage->activeTab());
     Digikam::DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     config->sync();
@@ -235,6 +289,13 @@ void ShowfotoSetup::slotOkClicked()
     d->iofilesPage->applySettings();
     d->iccPage->applySettings();
     d->pluginsPage->applySettings();
+
+#ifdef HAVE_MARBLE
+
+    d->geolocationPage->applySettings();
+
+#endif
+
     d->miscPage->applySettings();
 
     qApp->restoreOverrideCursor();
@@ -281,6 +342,16 @@ void ShowfotoSetup::showPage(ShowfotoSetup::Page page)
             setCurrentPage(d->page_plugins);
             break;
         }
+
+#ifdef HAVE_MARBLE
+
+        case GeolocationPage:
+        {
+            setCurrentPage(d->page_geolocation);
+            break;
+        }
+
+#endif
 
         case MiscellaneousPage:
         {
@@ -330,6 +401,15 @@ ShowfotoSetup::Page ShowfotoSetup::activePageIndex()
         return PluginsPage;
     }
 
+#ifdef HAVE_MARBLE
+
+    if (cur == d->page_geolocation)
+    {
+        return GeolocationPage;
+    }
+
+#endif
+
     if (cur == d->page_misc)
     {
         return MiscellaneousPage;
@@ -377,6 +457,11 @@ DConfigDlgWdgItem* ShowfotoSetup::Private::pageItem(ShowfotoSetup::Page page) co
             return page_plugins;
         }
 
+        case ShowfotoSetup::GeolocationPage:
+        {
+            return page_geolocation;
+        }
+
         case ShowfotoSetup::MiscellaneousPage:
         {
             return page_misc;
@@ -405,6 +490,38 @@ bool ShowfotoSetup::execSinglePage(QWidget* const parent, Page page)
 
     return success;
 }
+
+#ifdef HAVE_MARBLE
+
+bool ShowfotoSetup::execGeolocation(QWidget* const parent, int tab)
+{
+    QPointer<ShowfotoSetup> setup  = new ShowfotoSetup(parent);
+    setup->showPage(GeolocationPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur   = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    Digikam::SetupGeolocation* const widget = dynamic_cast<Digikam::SetupGeolocation*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
+
+    widget->setActiveTab((Digikam::SetupGeolocation::GeolocationTab)tab);
+
+    bool success                   = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
+#endif
 
 bool ShowfotoSetup::execMetadataFilters(QWidget* const parent, int tab)
 {

@@ -103,6 +103,10 @@
 #include "localizesettings.h"
 #include "networkmanager.h"
 
+#ifdef HAVE_MARBLE
+#   include "marblesettings.h"
+#endif
+
 namespace ShowFoto
 {
 
