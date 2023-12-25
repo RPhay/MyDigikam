@@ -208,8 +208,11 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
         }
     }
 
-    connect(buttonBox()->button(QDialogButtonBox::Ok),
-            &QPushButton::clicked, this, &ShowfotoSetup::slotOkClicked);
+    connect(buttonBox()->button(QDialogButtonBox::Ok), &QPushButton::clicked,
+            this, &ShowfotoSetup::slotOkClicked);
+
+    connect(buttonBox()->button(QDialogButtonBox::Cancel), &QPushButton::clicked,
+            this, &ShowfotoSetup::slotCancelClicked);
 
     connect(buttonBox(), SIGNAL(helpRequested()),
             this, SLOT(slotHelp()));
@@ -270,6 +273,17 @@ ShowfotoSetup::~ShowfotoSetup()
 void ShowfotoSetup::slotHelp()
 {
     Digikam::openOnlineDocumentation(QLatin1String("showfoto_editor"), QLatin1String("showfoto_setup"));
+}
+
+void ShowfotoSetup::slotCancelClicked()
+{
+
+#ifdef HAVE_MARBLE
+
+    d->geolocationPage->cancel();
+
+#endif
+
 }
 
 void ShowfotoSetup::slotOkClicked()

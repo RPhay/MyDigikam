@@ -100,17 +100,16 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     // Setting the icons for the plugin view.
 
     d->pluginSettings->setConfigIcon(QIcon::fromTheme(QLatin1String("configure")));
-
-    connect(this, SIGNAL(rejected()),
-            &d->pluginModel, SLOT(retrievePluginState()));
-
-    connect(this, SIGNAL(accepted()),
-            &d->pluginModel, SLOT(applyPluginState()));
 }
 
 MarbleConfigView::~MarbleConfigView()
 {
     delete d;
+}
+
+void MarbleConfigView::cancel()
+{
+    d->pluginModel.retrievePluginState();
 }
 
 void MarbleConfigView::readSettings()
@@ -141,6 +140,8 @@ void MarbleConfigView::readSettings()
 
 void MarbleConfigView::applySettings()
 {
+    d->pluginModel.applyPluginState();
+
     MarbleSettingsContainer settings;
 
     settings.distanceUnit             = (Marble::MarbleLocale::MeasurementSystem)d->viewSettings.kcfg_distanceUnit->currentIndex();

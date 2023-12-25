@@ -43,6 +43,7 @@ public:
 
     void readSettings();
     void applySettings();
+    void cancel();
 
 Q_SIGNALS:
 

@@ -672,6 +672,12 @@ void Setup::slotCancelClicked()
 
 #endif
 
+#ifdef HAVE_MARBLE
+
+    d->geolocationPage->cancel();
+
+#endif
+
 }
 
 void Setup::showPage(Setup::Page page)

@@ -69,6 +69,11 @@ SetupGeolocation::~SetupGeolocation()
     delete d;
 }
 
+void SetupGeolocation::cancel()
+{
+    d->tab->cancel();
+}
+
 void SetupGeolocation::setActiveTab(GeolocationTab tab)
 {
     d->tab->setCurrentIndex(tab);

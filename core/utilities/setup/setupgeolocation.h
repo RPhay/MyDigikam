@@ -45,6 +45,7 @@ public:
     ~SetupGeolocation() override;
 
     void applySettings();
+    void cancel();
 
     void setActiveTab(GeolocationTab tab);
     GeolocationTab activeTab() const;
