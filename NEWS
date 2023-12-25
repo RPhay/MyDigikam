@@ -85,7 +85,7 @@ BUGFIXES:
 069 ==> 478899 - Tags not written in xmp for pictures taken with latest Pixel7 pro camera.
 070 ==> 478848 - AF points in focus not shown.
 071 ==> 478955 - Crash when changing face tag in preview /rectangle.
-072 ==> 
+072 ==> 477853 - digiKam 8.3.0 slow startup on Windows 10 operating system.
 073 ==> 
 074 ==> 
 075 ==> 

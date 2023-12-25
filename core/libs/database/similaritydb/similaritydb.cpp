@@ -206,8 +206,11 @@ bool SimilarityDb::hasDirtyOrMissingFingerprint(const ItemInfo& imageInfo, Fuzzy
 
             if (values.size() == 2)
             {
-                if ((values.at(0).toDateTime() != imageInfo.modDateTime()) ||
-                    (values.at(1).toString()   != imageInfo.uniqueHash()))
+                QDateTime modDateTime = values.at(0).toDateTime();
+                modDateTime.setTimeSpec(Qt::UTC);
+
+                if ((modDateTime             != imageInfo.modDateTime()) ||
+                    (values.at(1).toString() != imageInfo.uniqueHash()))
                 {
                     return true;
                 }
@@ -245,8 +248,11 @@ QList<qlonglong> SimilarityDb::getDirtyOrMissingFingerprints(const QList<ItemInf
 
                 if (values.size() == 2)
                 {
-                    if ((values.at(0).toDateTime() != info.modDateTime()) ||
-                        (values.at(1).toString()   != info.uniqueHash()))
+                    QDateTime modDateTime = values.at(0).toDateTime();
+                    modDateTime.setTimeSpec(Qt::UTC);
+
+                    if ((modDateTime             != info.modDateTime()) ||
+                        (values.at(1).toString() != info.uniqueHash()))
                     {
                         itemIDs << info.id();
                     }
@@ -285,8 +291,11 @@ QStringList SimilarityDb::getDirtyOrMissingFingerprintURLs(const QList<ItemInfo>
 
                 if (values.size() == 2)
                 {
-                    if ((values.at(0).toDateTime() != info.modDateTime()) ||
-                        (values.at(1).toString()   != info.uniqueHash()))
+                    QDateTime modDateTime = values.at(0).toDateTime();
+                    modDateTime.setTimeSpec(Qt::UTC);
+
+                    if ((modDateTime             != info.modDateTime()) ||
+                        (values.at(1).toString() != info.uniqueHash()))
                     {
                         urls << info.filePath();
                     }

@@ -1482,8 +1482,10 @@ QVariantList CoreDB::getImagesFields(qlonglong imageID, DatabaseFields::Images f
 
         if ((fields & DatabaseFields::ModificationDate))
         {
-            int index     = fieldNames.indexOf(QLatin1String("modificationDate"));
-            values[index] = values.at(index).toDateTime();
+            int index          = fieldNames.indexOf(QLatin1String("modificationDate"));
+            QDateTime dateTime = values.at(index).toDateTime();
+            dateTime.setTimeSpec(Qt::UTC);
+            values[index]      = QVariant(dateTime);
         }
     }
 
@@ -1512,14 +1514,18 @@ QVariantList CoreDB::getItemInformation(qlonglong imageID, DatabaseFields::ItemI
 
         if ((fields & DatabaseFields::CreationDate))
         {
-            int index     = fieldNames.indexOf(QLatin1String("creationDate"));
-            values[index] = values.at(index).toDateTime();
+            int index          = fieldNames.indexOf(QLatin1String("creationDate"));
+            QDateTime dateTime = values.at(index).toDateTime();
+            dateTime.setTimeSpec(Qt::UTC);
+            values[index]      = QVariant(dateTime);
         }
 
         if ((fields & DatabaseFields::DigitizationDate))
         {
-            int index     = fieldNames.indexOf(QLatin1String("digitizationDate"));
-            values[index] = values.at(index).toDateTime();
+            int index          = fieldNames.indexOf(QLatin1String("digitizationDate"));
+            QDateTime dateTime = values.at(index).toDateTime();
+            dateTime.setTimeSpec(Qt::UTC);
+            values[index]      = QVariant(dateTime);
         }
     }
 
@@ -1909,6 +1915,7 @@ QList<CommentInfo> CoreDB::getItemComments(qlonglong imageID) const
         info.author   = (*it).toString();
         ++it;
         info.date     = (*it).toDateTime();
+        info.date.setTimeSpec(Qt::UTC);
         ++it;
         info.comment  = (*it).toString();
         ++it;
@@ -2732,6 +2739,7 @@ QList<ItemScanInfo> CoreDB::getIdenticalFiles(const QString& uniqueHash, qlonglo
         info.category         = (DatabaseItem::Category)(*it).toInt();
         ++it;
         info.modificationDate = (*it).toDateTime();
+        info.modificationDate.setTimeSpec(Qt::UTC);
         ++it;
         info.fileSize         = (*it).toLongLong();
         ++it;
@@ -3332,7 +3340,10 @@ QDateTime CoreDB::getAlbumModificationDate(int albumID) const
         return QDateTime();
     }
 
-    return values.first().toDateTime();
+    QDateTime dateTime = values.first().toDateTime();
+    dateTime.setTimeSpec(Qt::UTC);
+
+    return dateTime;
 }
 
 QMap<QString, QDateTime> CoreDB::getAlbumModificationMap(int albumRootId) const
@@ -3349,6 +3360,7 @@ QMap<QString, QDateTime> CoreDB::getAlbumModificationMap(int albumRootId) const
         QString relativePath = (*it).toString();
         ++it;
         QDateTime dateTime   = (*it).toDateTime();
+        dateTime.setTimeSpec(Qt::UTC);
         ++it;
 
         pathDateMap.insert(relativePath, dateTime);
@@ -4050,6 +4062,7 @@ QList<ItemScanInfo> CoreDB::getItemScanInfos(int albumID) const
             info.status           = (DatabaseItem::Status)query.value(3).toInt();
             info.category         = (DatabaseItem::Category)query.value(4).toInt();
             info.modificationDate = query.value(5).toDateTime();
+            info.modificationDate.setTimeSpec(Qt::UTC);
             info.fileSize         = query.value(6).toLongLong();
             info.uniqueHash       = query.value(7).toString();
 
@@ -4085,6 +4098,7 @@ ItemScanInfo CoreDB::getItemScanInfo(qlonglong imageID) const
         info.category         = (DatabaseItem::Category)(*it).toInt();
         ++it;
         info.modificationDate = (*it).toDateTime();
+        info.modificationDate.setTimeSpec(Qt::UTC);
         ++it;
         info.fileSize         = (*it).toLongLong();
         ++it;
@@ -4253,6 +4267,7 @@ QDate CoreDB::getAlbumAverageDate(int albumID) const
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; ++it)
     {
         QDateTime itemDateTime = (*it).toDateTime();
+        itemDateTime.setTimeSpec(Qt::UTC);
 
         if (itemDateTime.isValid())
         {

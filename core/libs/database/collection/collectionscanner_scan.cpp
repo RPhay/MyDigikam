@@ -480,6 +480,7 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
             else
             {
                 modified = QFileInfo(folder).lastModified();
+                modified.setTimeSpec(Qt::UTC);
             }
 
             if (s_modificationDateEquals(modified, it.value()))
@@ -586,7 +587,9 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
             }
             else
             {
-                d->albumDateCache.insert(fileInfo.filePath(), fileInfo.lastModified());
+                QDateTime dateTime = fileInfo.lastModified();
+                dateTime.setTimeSpec(Qt::UTC);
+                d->albumDateCache.insert(fileInfo.filePath(), dateTime);
             }
         }
     }
@@ -699,6 +702,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
     int albumID                          = checkAlbum(location, album);
     QDateTime albumDateTime              = QFileInfo(dir.path()).lastModified();
+    albumDateTime.setTimeSpec(Qt::UTC);
     QDateTime albumModified              = CoreDbAccess().db()->getAlbumModificationDate(albumID);
 
     if (checkDate && s_modificationDateEquals(albumDateTime, albumModified))
@@ -945,7 +949,9 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& scanInfo,
                                        bool checkSidecar, const QFileInfo* const sidecarInfo)
 {
-    bool hasAnyHint = d->hints && d->hints->hasAnyNormalHint(scanInfo.id);
+    bool hasAnyHint            = d->hints && d->hints->hasAnyNormalHint(scanInfo.id);
+    QDateTime modificationDate = fi.lastModified();
+    modificationDate.setTimeSpec(Qt::UTC);
 
     // if the date is null, this signals a full rescan
 
@@ -997,7 +1003,7 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
     {
         // if the file need not be scanned because of modification, update the hash
 
-        if (s_modificationDateEquals(fi.lastModified(), scanInfo.modificationDate) &&
+        if (s_modificationDateEquals(modificationDate, scanInfo.modificationDate) &&
             (fi.size() == scanInfo.fileSize))
         {
             scanFileUpdateHashReuseThumbnail(fi, scanInfo, false);
@@ -1007,13 +1013,13 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
     }
 
     MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
-    QDateTime modificationDate           = fi.lastModified();
 
     if (checkSidecar && settings.useXMPSidecar4Reading)
     {
         if      (sidecarInfo)
         {
             QDateTime sidecarDate = sidecarInfo->lastModified();
+            sidecarDate.setTimeSpec(Qt::UTC);
 
             if (sidecarDate > modificationDate)
             {
@@ -1024,6 +1030,7 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
         {
             QString filePath      = DMetadata::sidecarPath(fi.filePath());
             QDateTime sidecarDate = QFileInfo(filePath).lastModified();
+            sidecarDate.setTimeSpec(Qt::UTC);
 
             if (sidecarDate > modificationDate)
             {

@@ -97,7 +97,8 @@ void DatesJob::run()
         {
             if (!value.isNull())
             {
-                QDateTime dateTime = value.toDateTime().toUTC();
+                QDateTime dateTime = value.toDateTime();
+                dateTime.setTimeSpec(Qt::UTC);
 
                 if (!dateTime.isValid())
                 {
