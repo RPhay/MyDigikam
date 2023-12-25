@@ -237,6 +237,8 @@ bool GPSItemContainer::loadImageData()
         {
             m_dateTime = qMin(ctime, mtime);
         }
+
+        m_dateTime.setTimeSpec(Qt::UTC);
     }
 
     if (!meta)

@@ -987,6 +987,8 @@ void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemNam
                 {
                     info.ctime = QDateTime::currentDateTime();
                 }
+
+                info.ctime.setTimeSpec(Qt::UTC);
             }
         }
         else
@@ -1000,6 +1002,8 @@ void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemNam
             {
                 info.ctime = QDateTime::currentDateTime();
             }
+
+            info.ctime.setTimeSpec(Qt::UTC);
 
             if (cfinfo.file.fields & GP_FILE_INFO_WIDTH)
             {
