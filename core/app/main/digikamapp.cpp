@@ -81,6 +81,17 @@ DigikamApp::DigikamApp()
     LocalizeSettings::instance();
     NetworkManager::instance();
 
+#ifdef HAVE_MARBLE
+
+    connect(MarbleSettings::instance(), &MarbleSettings::signalSetupGeolocation,
+            this, [=](int tab)
+        {
+            Setup::execGeolocation(this, tab);
+        }
+    );
+
+#endif
+
     connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
             this, [=]()
         {
@@ -215,7 +226,7 @@ DigikamApp::DigikamApp()
     BalooWrap* const baloo = BalooWrap::instance();
     Q_UNUSED(baloo);
 
-#endif //HAVE_KFILEMETADATA
+#endif // HAVE_KFILEMETADATA
 
     setAutoSaveSettings(group, true);
 

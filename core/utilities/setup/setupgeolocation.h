@@ -34,8 +34,8 @@ public:
 
     enum GeolocationTab
     {
-        View = 0,
-        Plugins,
+        MarbleView = 0,
+        MarblePlugins,
         GoogleMaps
     };
 

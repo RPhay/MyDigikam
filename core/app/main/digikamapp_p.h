@@ -144,6 +144,10 @@
 #include "localizesettings.h"
 #include "networkmanager.h"
 
+#ifdef HAVE_MARBLE
+#   include "marblesettings.h"
+#endif
+
 #ifdef HAVE_DBUS
 #   include "digikamadaptor.h"
 #endif

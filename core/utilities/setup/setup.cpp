@@ -463,6 +463,38 @@ bool Setup::execTemplateEditor(QWidget* const parent, const Template& t)
     return success;
 }
 
+#ifdef HAVE_MARBLE
+
+bool Setup::execGeolocation(QWidget* const parent, int tab)
+{
+    QPointer<Setup> setup        = new Setup(parent);
+    setup->showPage(GeolocationPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur   = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    SetupGeolocation* const widget = dynamic_cast<SetupGeolocation*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
+
+    widget->setActiveTab((SetupGeolocation::GeolocationTab)tab);
+
+    bool success                   = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
+#endif
+
 bool Setup::execMetadataFilters(QWidget* const parent, int tab)
 {
     QPointer<Setup> setup        = new Setup(parent);
@@ -666,7 +698,7 @@ void Setup::showPage(Setup::Page page)
 
 #ifdef HAVE_MARBLE
 
-        d->geolocationPage->setActiveTab((SetupGeolocation::GeolocationTab)group.readEntry(QLatin1String("Geolocation Tab"), (int)SetupGeolocation::View));
+        d->geolocationPage->setActiveTab((SetupGeolocation::GeolocationTab)group.readEntry(QLatin1String("Geolocation Tab"), (int)SetupGeolocation::MarbleView));
 
 #endif
 

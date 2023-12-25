@@ -21,9 +21,14 @@
 
 // Local includes
 
-#include "MarbleWidget.h"
 #include "digikam_export.h"
 #include "marblesettingscontainer.h"
+#include "setupgeolocation.h"
+
+namespace Marble
+{
+    class MarbleWidget;
+}
 
 using namespace Marble;
 
@@ -62,12 +67,16 @@ public:
      */
     MarbleWidget* mainMarbleWidget() const;
 
+    void openSetupGeolocation(SetupGeolocation::GeolocationTab tab);
+
 Q_SIGNALS:
 
     void signalSettingsChanged();
 
     void signalMarbleSettingsChanged(const MarbleSettingsContainer& current,
                                      const MarbleSettingsContainer& previous);
+
+    void signalSetupGeolocation(int tab);
 
 private:
 

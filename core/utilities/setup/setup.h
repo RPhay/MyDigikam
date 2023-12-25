@@ -95,6 +95,12 @@ public:
 
     static bool execImageQualitySorter(QWidget* const parent);
 
+#ifdef HAVE_MARBLE
+
+    static bool execGeolocation(QWidget* const parent, int tab);
+
+#endif
+
     QSize sizeHint() const  override;
 
 private Q_SLOTS:

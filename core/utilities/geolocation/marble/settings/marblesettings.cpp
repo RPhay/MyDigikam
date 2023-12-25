@@ -30,6 +30,7 @@
 
 #include "digikam_debug.h"
 #include "MarbleGlobal.h"
+#include "MarbleWidget.h"
 #include "MarbleModel.h"
 #include "MarbleWidgetInputHandler.h"
 
@@ -185,6 +186,11 @@ void MarbleSettings::readFromConfig()
     Q_EMIT signalMarbleSettingsChanged(s, old);
 
     Q_EMIT signalSettingsChanged();
+}
+
+void MarbleSettings::openSetupGeolocation(SetupGeolocation::GeolocationTab tab)
+{
+    Q_EMIT signalSetupGeolocation(tab);
 }
 
 } // namespace Digikam

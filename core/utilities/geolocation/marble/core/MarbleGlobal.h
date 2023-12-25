@@ -217,7 +217,10 @@ const qreal M2CM = 100.0;
 const qreal CM2M = 1.0 / M2CM;
 
 // Conversion degree vs. radians
+#ifndef DEG2RAD
 const qreal DEG2RAD = M_PI / 180.0;
+#endif
+
 const qreal RAD2DEG = 180.0 / M_PI;
 
 // Conversion meter vs kilometer

@@ -481,6 +481,18 @@ void BackendMarble::addActionsToConfigurationMenu(QMenu* const configurationMenu
         floatItemsSubMenu->addAction(floatActions.at(i));
     }
 
+    configurationMenu->addSeparator();
+
+    QAction* const settings = new QAction(i18n("Settings..."), configurationMenu);
+    configurationMenu->addAction(settings);
+
+    connect(settings, &QAction::triggered,
+            this, []()
+        {
+            MarbleSettings::instance()->openSetupGeolocation(SetupGeolocation::MarbleView);
+        }
+    );
+
     updateActionAvailability();
 }
 
