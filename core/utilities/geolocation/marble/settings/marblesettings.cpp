@@ -6,7 +6,7 @@
  * Date        : 2023-12-21
  * Description : Marble Settings Container.
  *
- * SPDX-FileCopyrightText: 2022-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -142,6 +142,19 @@ void MarbleSettings::applySettingsToWidgets(const MarbleSettingsContainer& setti
             w->update();
         }
     }
+}
+
+MarbleWidget* MarbleSettings::mainMarbleWidget() const
+{
+    Q_FOREACH (MarbleWidget* const w, d->widgets)
+    {
+        if (w)
+        {
+            return w;
+        }
+    }
+
+    return nullptr;
 }
 
 MarbleSettingsContainer MarbleSettings::settings() const

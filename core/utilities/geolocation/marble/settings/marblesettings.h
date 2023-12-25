@@ -6,7 +6,7 @@
  * Date        : 2023-12-21
  * Description : Marble Settings.
  *
- * SPDX-FileCopyrightText: 2022-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -51,7 +51,16 @@ public:
      */
     void setSettings(const MarbleSettingsContainer& settings);
 
+    /**
+     * Store one MarbleWidget instance in the collection.
+     */
     void registerWidget(MarbleWidget* const widget);
+
+    /**
+     * Return the first registered MarbleWidget instance stored in the collection.
+     * If no valid instance is found, nullptr is returned.
+     */
+    MarbleWidget* mainMarbleWidget() const;
 
 Q_SIGNALS:
 

@@ -29,6 +29,7 @@
 // Local includes
 
 #include "MarbleConfigView.h"
+#include "marblesettings.h"
 #include "digikam_debug.h"
 
 using namespace Marble;
@@ -56,10 +57,7 @@ SetupGeolocation::SetupGeolocation(QWidget* const parent)
     QVBoxLayout* const vbl = new QVBoxLayout();
     panel->setLayout(vbl);
 
-    d->tab                 = new MarbleConfigView(
-                                                  nullptr,      // FIXME
-                                                  this
-                                                 );
+    d->tab                 = new MarbleConfigView(MarbleSettings::instance()->mainMarbleWidget(), this);
 
     vbl->addWidget(d->tab);
 
