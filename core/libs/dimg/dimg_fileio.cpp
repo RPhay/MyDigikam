@@ -328,15 +328,22 @@ QDateTime DImg::creationDateFromFilesystem(const QFileInfo& fileInfo) const
 
     if (ctime.isValid())
     {
+        ctime.setTimeSpec(Qt::UTC);
+
         return ctime;
     }
 
     if (mtime.isValid())
     {
+        mtime.setTimeSpec(Qt::UTC);
+
         return mtime;
     }
 
-    return QDateTime::currentDateTime();
+    QDateTime dateTime = QDateTime::currentDateTime();
+    dateTime.setTimeSpec(Qt::UTC);
+
+    return dateTime;
 }
 
 } // namespace Digikam
