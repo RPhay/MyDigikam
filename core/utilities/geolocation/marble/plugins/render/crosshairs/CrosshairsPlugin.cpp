@@ -107,7 +107,7 @@ QVector<PluginAuthor> CrosshairsPlugin::pluginAuthors() const
 
 QIcon CrosshairsPlugin::icon () const
 {
-    return QIcon(QStringLiteral(":/icons/crosshairs.png"));
+    return QIcon::fromTheme(QStringLiteral("crosshairs"));
 }
 
 void CrosshairsPlugin::initialize ()
