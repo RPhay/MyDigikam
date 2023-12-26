@@ -10,7 +10,7 @@
 
 * AUTHORS
 
-    (c) 2015-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+    (c) 2015-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
 
 
 * DESCRIPTION

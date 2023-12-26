@@ -4,7 +4,7 @@
 # and copies them next to the EXE.
 #
 # SPDX-FileCopyrightText:      2015 by Martin Preisler <martin at preisler dot me>
-# SPDX-FileCopyrightText: 2016-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2016-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # Blog post         : https://martin.preisler.me/2015/03/mingw-bundledlls-automatically-bundle-dlls/
 # Github repository : https://github.com/mpreisler/mingw-bundledlls

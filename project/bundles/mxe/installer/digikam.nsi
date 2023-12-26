@@ -9,7 +9,7 @@
  ;
  ; SPDX-FileCopyrightText: 2010      by Julien Narboux <julien at narboux dot fr>
  ; SPDX-FileCopyrightText: 2011-2014 by Ananta Palani  <anantapalani at gmail dot com>
- ; SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ ; SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  ;
  ; Script arguments:
  ; VERSION    : the digiKam version as string.

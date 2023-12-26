@@ -8,7 +8,7 @@
 # Date:        2016-08-15
 # Description: Script to find no really internationlized source code.
 #
-# Copyright (C) 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# Copyright (C) 2016-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
