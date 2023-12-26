@@ -101,13 +101,13 @@ public:
     MarbleSettings object;
 };
 
-Q_GLOBAL_STATIC(MarbleSettingsCreator, metaEngineSettingsCreator)
+Q_GLOBAL_STATIC(MarbleSettingsCreator, marbleSettingsCreator)
 
 // -----------------------------------------------------------------------------------------------
 
 MarbleSettings* MarbleSettings::instance()
 {
-    return &metaEngineSettingsCreator->object;
+    return &marbleSettingsCreator->object;
 }
 
 MarbleSettings::MarbleSettings()
