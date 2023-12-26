@@ -22,12 +22,10 @@ class QModelIndex;
 
 /**
  * @short A public class that adds methods to the UI Plugins Settings Widget.
- *
  */
 namespace Marble
 {
 
-class MarblePluginSettingsWidgetPrivate;
 class RenderPluginModel;
 
 class DIGIKAM_EXPORT MarblePluginSettingsWidget : public QWidget
@@ -36,10 +34,10 @@ class DIGIKAM_EXPORT MarblePluginSettingsWidget : public QWidget
 
 public:
 
-    explicit MarblePluginSettingsWidget(QWidget* parent = nullptr);
+    explicit MarblePluginSettingsWidget(QWidget* const parent = nullptr);
     ~MarblePluginSettingsWidget() override;
 
-    void setModel(RenderPluginModel* pluginModel);
+    void setModel(RenderPluginModel* const pluginModel);
 
     void setAboutIcon(const QIcon& icon);
     void setConfigIcon(const QIcon& icon);
@@ -48,14 +46,15 @@ Q_SIGNALS:
 
     void pluginListViewClicked();
 
+private Q_SLOTS:
+
+    void slotPluginAboutDialog(const QModelIndex&);
+    void slotPluginConfigDialog(const QModelIndex&);
+
 private:
 
-    Q_PRIVATE_SLOT( d, void showPluginAboutDialog( const QModelIndex & ) )
-    Q_PRIVATE_SLOT( d, void showPluginConfigDialog( const QModelIndex & ) )
-
-private:
-
-    MarblePluginSettingsWidgetPrivate* d;
+    class Private;
+    Private* const d;
 };
 
 } // namespace Marble

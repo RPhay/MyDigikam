@@ -5,12 +5,18 @@
 //
 
 #include "MarblePluginSettingsWidget.h"
-#include "ui_MarblePluginSettingsWidget.h"
 
 // Qt includes
 
 #include <QPointer>
 #include <QMessageBox>
+#include <QListView>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QPushButton>
 
 // KDE includes
 
@@ -25,92 +31,37 @@
 namespace Marble
 {
 
-class MarblePluginSettingsWidgetPrivate : public Ui::MarblePluginSettingsWidget
+class MarblePluginSettingsWidget::Private
 {
 public:
 
-    explicit MarblePluginSettingsWidgetPrivate(Marble::MarblePluginSettingsWidget* const parent)
-        : q             (parent),
-          m_itemDelegate(nullptr)
-    {
-    }
-
-    /**
-     * Shows the about dialog for the plugin with the corresponding @p nameId.
-     */
-    void showPluginAboutDialog(const QModelIndex& index);
-
-    /**
-     * Shows the configuration dialog for the plugin with the corresponding @p nameId.
-     */
-    void showPluginConfigDialog(const QModelIndex& index);
+    Private() = default;
 
 public:
 
-    Marble::MarblePluginSettingsWidget* const q;
-    PluginItemDelegate*                       m_itemDelegate;
-    QPointer<RenderPluginModel>               m_pluginModel;
+    QListView*                  pluginListView = nullptr;
+    PluginItemDelegate*         itemDelegate   = nullptr;
+    QPointer<RenderPluginModel> pluginModel;
 };
-
-void MarblePluginSettingsWidgetPrivate::showPluginAboutDialog(const QModelIndex& index)
-{
-    if (m_pluginModel.isNull())
-    {
-        return;
-    }
-
-    QMessageBox* const dlg = new QMessageBox(q);
-    dlg->setWindowFlags((dlg->windowFlags() & ~Qt::Dialog) |
-                   Qt::Window                    |
-                   Qt::WindowCloseButtonHint     |
-                   Qt::WindowMinMaxButtonsHint);
-
-    dlg->setWindowTitle(i18n("About Plugin %1", m_pluginModel->data(index, RenderPluginModel::Name).toString()));
-    dlg->setIconPixmap(qvariant_cast<QIcon>(m_pluginModel->data(index, RenderPluginModel::Icon)).pixmap(48, 48));
-    dlg->addButton(QMessageBox::Ok);
-    dlg->setText(i18n(
-                      "<p>Version: %1</p>"
-                      "<p>Description: %2</p>",
-                      m_pluginModel->data(index, RenderPluginModel::Version).toString(),
-                      m_pluginModel->data(index, RenderPluginModel::AboutDataText).toString()
-                     )
-                );
-
-    dlg->exec();
-}
-
-void MarblePluginSettingsWidgetPrivate::showPluginConfigDialog(const QModelIndex& index)
-{
-    if (m_pluginModel.isNull())
-    {
-        return;
-    }
-
-    DialogConfigurationInterface* const configInterface = m_pluginModel->pluginDialogConfigurationInterface(index);
-    QDialog* const configDialog                         = configInterface ? configInterface->configDialog() : nullptr;
-
-    if (configDialog)
-    {
-        configDialog->exec();
-    }
-}
 
 // ---
 
-MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* parent)
+MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
     : QWidget(parent),
-      d      (new MarblePluginSettingsWidgetPrivate(this))
+      d      (new Private)
 {
-    d->setupUi(this);
+    d->pluginListView       = new QListView(this);
+    QVBoxLayout* const vlay = new QVBoxLayout(this);
+    vlay->addWidget(d->pluginListView);
 
-    d->m_itemDelegate = new PluginItemDelegate(d->m_pluginListView, this);
-    d->m_pluginListView->setItemDelegate(d->m_itemDelegate);
+    d->itemDelegate         = new PluginItemDelegate(d->pluginListView, this);
+    d->pluginListView->setItemDelegate(d->itemDelegate);
 
-    connect(d->m_itemDelegate, SIGNAL(aboutPluginClicked(QModelIndex)),
-            this, SLOT(showPluginAboutDialog(QModelIndex)));
+    connect(d->itemDelegate, SIGNAL(aboutPluginClicked(QModelIndex)),
+            this, SLOT(slotPluginAboutDialog(QModelIndex)));
 
-    connect(d->m_itemDelegate, SIGNAL(configPluginClicked(QModelIndex)),
-            this, SLOT(showPluginConfigDialog(QModelIndex)));
+    connect(d->itemDelegate, SIGNAL(configPluginClicked(QModelIndex)),
+            this, SLOT(slotPluginConfigDialog(QModelIndex)));
 }
 
 MarblePluginSettingsWidget::~MarblePluginSettingsWidget()
@@ -120,28 +71,86 @@ MarblePluginSettingsWidget::~MarblePluginSettingsWidget()
 
 void MarblePluginSettingsWidget::setAboutIcon(const QIcon& icon)
 {
-    d->m_itemDelegate->setAboutIcon(icon);
+    d->itemDelegate->setAboutIcon(icon);
 }
 
 void MarblePluginSettingsWidget::setConfigIcon(const QIcon& icon)
 {
-    d->m_itemDelegate->setConfigIcon(icon);
+    d->itemDelegate->setConfigIcon(icon);
 }
 
-void MarblePluginSettingsWidget::setModel(RenderPluginModel* pluginModel)
+void MarblePluginSettingsWidget::setModel(RenderPluginModel* const pluginModel)
 {
-    if (!d->m_pluginModel.isNull())
+    if (!d->pluginModel.isNull())
     {
-        disconnect(d->m_pluginModel.data(), nullptr, this, nullptr);
+        disconnect(d->pluginModel.data(), nullptr, this, nullptr);
     }
 
-    d->m_pluginModel = pluginModel;
-    d->m_pluginListView->setModel(pluginModel);
+    d->pluginModel = pluginModel;
+    d->pluginListView->setModel(pluginModel);
 
-    if (!d->m_pluginModel.isNull())
+    if (!d->pluginModel.isNull())
     {
-        connect(d->m_pluginModel.data(), SIGNAL(itemChanged(QStandardItem*)),
+        connect(d->pluginModel.data(), SIGNAL(itemChanged(QStandardItem*)),
                 this, SIGNAL(pluginListViewClicked()));
+    }
+}
+
+void MarblePluginSettingsWidget::slotPluginAboutDialog(const QModelIndex& index)
+{
+    if (d->pluginModel.isNull())
+    {
+        return;
+    }
+
+    QDialog* const dlg = new QDialog(this);
+    dlg->setWindowFlags((dlg->windowFlags() & ~Qt::Dialog) |
+                   Qt::Window                              |
+                   Qt::WindowCloseButtonHint               |
+                   Qt::WindowMinMaxButtonsHint);
+
+    dlg->setWindowTitle(i18n("About Plugin %1", d->pluginModel->data(index, RenderPluginModel::Name).toString()));
+    QLabel* const icon      = new QLabel(dlg);
+    icon->setPixmap(qvariant_cast<QIcon>(d->pluginModel->data(index, RenderPluginModel::Icon)).pixmap(48, 48));
+    QLabel* const text      = new QLabel(dlg);
+    text->setText(i18n(
+                       "<p>Version %1</p>"
+                       "<p>%2</p>",
+                       d->pluginModel->data(index, RenderPluginModel::Version).toString(),
+                       d->pluginModel->data(index, RenderPluginModel::Description).toString()
+                      )
+                 );
+
+    QDialogButtonBox* const btn = new QDialogButtonBox(QDialogButtonBox::Ok, this);
+    btn->button(QDialogButtonBox::Ok)->setDefault(true);
+
+    QVBoxLayout* const vlay = new QVBoxLayout(dlg);
+    QHBoxLayout* const hlay = new QHBoxLayout;
+    hlay->addWidget(icon);
+    hlay->addWidget(text);
+    vlay->addLayout(hlay);
+    vlay->addWidget(btn);
+
+    connect(btn->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+            dlg, SLOT(accept()));
+
+    dlg->adjustSize();
+    dlg->exec();
+}
+
+void MarblePluginSettingsWidget::slotPluginConfigDialog(const QModelIndex& index)
+{
+    if (d->pluginModel.isNull())
+    {
+        return;
+    }
+
+    DialogConfigurationInterface* const configInterface = d->pluginModel->pluginDialogConfigurationInterface(index);
+    QDialog* const configDialog                         = configInterface ? configInterface->configDialog() : nullptr;
+
+    if (configDialog)
+    {
+        configDialog->exec();
     }
 }
 

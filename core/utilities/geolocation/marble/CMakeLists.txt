@@ -650,7 +650,6 @@ set (marblewidget_UI
     osm/OsmTagEditorWidget.ui
     osm/OsmRelationManagerWidget.ui
 
-    settings/MarblePluginSettingsWidget.ui
     settings/MarbleViewSettingsWidget.ui
 
     storage/LatLonBoxWidget.ui
