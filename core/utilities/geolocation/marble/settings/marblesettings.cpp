@@ -29,6 +29,10 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "backendgooglemaps.h"
+#include "backendmarble.h"
+#include "mapwidget.h"
+#include "marblesettings.h"
 #include "MarbleGlobal.h"
 #include "MarbleWidget.h"
 #include "MarbleModel.h"
@@ -52,7 +56,7 @@ public:
 
     const QString           configGroup;
 
-    QVector<MarbleWidget*>  widgets;
+    QVector<MapWidget*>     widgets;
 
 public:
 
@@ -118,44 +122,99 @@ MarbleSettings::~MarbleSettings()
     delete d;
 }
 
-void MarbleSettings::registerWidget(MarbleWidget* const widget)
+void MarbleSettings::registerWidget(MapWidget* const widget)
 {
     d->widgets << widget;
 }
 
 void MarbleSettings::applySettingsToWidgets(const MarbleSettingsContainer& settings)
 {
-    Q_FOREACH (MarbleWidget* const w, d->widgets)
+    Q_FOREACH (MapWidget* const w, d->widgets)
     {
         if (w)
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "Marble Widget:" << w;
+            Q_FOREACH (MapBackend* const b, w->backends())
+            {
+                BackendMarble* const mb = dynamic_cast<BackendMarble*>(b);
 
-            MarbleGlobal::getInstance()->locale()->setMeasurementSystem(settings.distanceUnit);
-            w->model()->setPersistentTileCacheLimit(settings.persistentTileCacheLimit * 1024);
-            w->setDefaultFont(settings.mapFont);
-            w->setMapQualityForViewContext(settings.stillQuality,     Marble::Still);
-            w->setMapQualityForViewContext(settings.animationQuality, Marble::Animation);
-            w->setDefaultAngleUnit(settings.angleUnit);
-            w->inputHandler()->setInertialEarthRotationEnabled(settings.inertialRotation);
-            w->inputHandler()->setMouseViewRotationEnabled(settings.mouseRotation);
-            w->setVolatileTileCacheLimit(settings.volatileTileCacheLimit * 1024);
-            w->update();
+                if (mb)
+                {
+                    MarbleWidget* const mw = static_cast<MarbleWidget*>(mb->mapWidget());
+                    qCDebug(DIGIKAM_MARBLE_LOG) << "Marble Widget:" << mb;
+
+                    MarbleGlobal::getInstance()->locale()->setMeasurementSystem(settings.distanceUnit);
+                    mw->model()->setPersistentTileCacheLimit(settings.persistentTileCacheLimit * 1024);
+                    mw->setDefaultFont(settings.mapFont);
+                    mw->setMapQualityForViewContext(settings.stillQuality,     Marble::Still);
+                    mw->setMapQualityForViewContext(settings.animationQuality, Marble::Animation);
+                    mw->setDefaultAngleUnit(settings.angleUnit);
+                    mw->inputHandler()->setInertialEarthRotationEnabled(settings.inertialRotation);
+                    mw->inputHandler()->setMouseViewRotationEnabled(settings.mouseRotation);
+                    mw->setVolatileTileCacheLimit(settings.volatileTileCacheLimit * 1024);
+                    mw->update();
+                }
+            }
         }
     }
 }
 
 MarbleWidget* MarbleSettings::mainMarbleWidget() const
 {
-    Q_FOREACH (MarbleWidget* const w, d->widgets)
+    Q_FOREACH (MapWidget* const w, d->widgets)
     {
         if (w)
         {
-            return w;
+            Q_FOREACH (MapBackend* const b, w->backends())
+            {
+                BackendMarble* const mb = dynamic_cast<BackendMarble*>(b);
+
+                if (mb)
+                {
+                    return (static_cast<MarbleWidget*>(mb->mapWidget()));
+                }
+            }
         }
     }
 
     return nullptr;
+}
+
+void MarbleSettings::reloadGoogleMaps()
+{
+    Q_FOREACH (MapWidget* const w, d->widgets)
+    {
+        if (w)
+        {
+            Q_FOREACH (MapBackend* const b, w->backends())
+            {
+                BackendGoogleMaps* const gb = dynamic_cast<BackendGoogleMaps*>(b);
+
+                if (gb)
+                {
+                    gb->reload();
+                }
+            }
+        }
+    }
+}
+
+void MarbleSettings::googleMapsApiKeyChanged()
+{
+    Q_FOREACH (MapWidget* const w, d->widgets)
+    {
+        if (w)
+        {
+            Q_FOREACH (MapBackend* const b, w->backends())
+            {
+                BackendGoogleMaps* const gb = dynamic_cast<BackendGoogleMaps*>(b);
+
+                if (gb)
+                {
+                    gb->setApiKeyChanged();
+                }
+            }
+        }
+    }
 }
 
 MarbleSettingsContainer MarbleSettings::settings() const

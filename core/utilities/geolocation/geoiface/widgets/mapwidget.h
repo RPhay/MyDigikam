@@ -20,6 +20,7 @@
 // Qt includes
 
 #include <QWidget>
+#include <QList>
 #include <QStringList>
 
 // local includes
@@ -45,6 +46,7 @@ class GeoModelHelper;
 class GeoDragDropHandler;
 class AbstractMarkerTiler;
 class TrackManager;
+class MapBackend;
 
 class DIGIKAM_EXPORT MapWidget : public QWidget
 {
@@ -89,6 +91,8 @@ public:
     //@{
     QStringList availableBackends() const;
     bool setBackend(const QString& backendName);
+
+    QList<MapBackend*> backends() const;
 
     GeoCoordinates getCenter() const;
     void setCenter(const GeoCoordinates& coordinate);

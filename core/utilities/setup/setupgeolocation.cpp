@@ -21,6 +21,7 @@
 #include <QLabel>
 #include <QFileInfo>
 #include <QFile>
+#include <QDir>
 #include <QStandardPaths>
 #include <QLineEdit>
 #include <QPushButton>
@@ -48,21 +49,31 @@ public:
 
     Private() = default;
 
-    MarbleConfigView* tab  = nullptr;
-    QWidget* gMapView      = nullptr;
-    QLineEdit* gMapApi     = nullptr;
+    MarbleConfigView* tab      = nullptr;
+    QWidget* gMapView          = nullptr;
+    QLineEdit* gMapApi         = nullptr;
 
 public:
-/*
-    QString htmlFilePath() const
-    {
-        QString htmlPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
-        htmlPath        += QLatin1String("/digikam/geoiface/");
-        QString htmlFile = htmlPath + d->htmlFileName;
 
-        return htmlFile;
+    QString htmlFilePath(QString& htmlPath) const
+    {
+        htmlPath  = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
+        htmlPath += QLatin1String("/digikam/geoiface/");
+
+        return (htmlPath + QLatin1String("backend-googlemaps.html"));
     }
-*/
+
+    QString htmlTemplate() const
+    {
+        return QLatin1String("<html>\n<head>\n"
+                             "<script type=\"text/javascript\" src=\"https://maps.google.com/maps/"
+                             "api/js?key=%1\"></script>\n"
+                             "<script type=\"text/javascript\" src=\"%2\"></script>\n"
+                             "</head>\n"
+                             "<body onload=\"kgeomapInitialize()\" style=\"padding: 0px; margin: 0px;\">\n"
+                             "    <div id=\"map_canvas\" style=\"width:100%; height:400px;\"></div>\n"
+                             "</body>\n</html>\n");
+    }
 };
 
 SetupGeolocation::SetupGeolocation(QWidget* const parent)
@@ -121,9 +132,10 @@ SetupGeolocation::GeolocationTab SetupGeolocation::activeTab() const
 void SetupGeolocation::applySettings()
 {
     d->tab->applySettings();
-/*
+
+    QString htmlPath;
     QString key      = d->gMapApi->text().trimmed();
-    QString htmlFile = htmlFilePath();
+    QString htmlFile = d->htmlFilePath(htmlPath);
 
     if (key.isEmpty())
     {
@@ -132,9 +144,7 @@ void SetupGeolocation::applySettings()
             QFile::remove(htmlFile);
         }
 
-        const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
-        d->htmlWidget->load(htmlUrl);
-
+        MarbleSettings::instance()->reloadGoogleMaps();
         return;
     }
 
@@ -146,7 +156,7 @@ void SetupGeolocation::applySettings()
         return;
     }
 
-    QString htmlText = d->htmlTemplate.arg(key).arg(QUrl::fromLocalFile(jsFile).toString());
+    QString htmlText = d->htmlTemplate().arg(key).arg(QUrl::fromLocalFile(jsFile).toString());
 
     if (!QFileInfo::exists(htmlPath))
     {
@@ -158,10 +168,10 @@ void SetupGeolocation::applySettings()
     if (writeFile.open(QIODevice::WriteOnly))
     {
         writeFile.write(htmlText.toLatin1());
-        d->keyChanged = true;
         writeFile.close();
+
+        MarbleSettings::instance()->googleMapsApiKeyChanged();
     }
-*/
 }
 
 void SetupGeolocation::readSettings()
@@ -169,8 +179,9 @@ void SetupGeolocation::readSettings()
     d->tab->readSettings();
 
     // Read Google API key
-/*
-    QString htmlFile = htmlFilePath();
+
+    QString htmlPath;
+    QString htmlFile = d->htmlFilePath(htmlPath);
     QString oldKey;
 
     if (QFileInfo::exists(htmlFile))
@@ -200,7 +211,6 @@ void SetupGeolocation::readSettings()
     }
 
     d->gMapApi->setText(oldKey);
-*/
 }
 
 } // namespace Digikam

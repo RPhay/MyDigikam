@@ -63,6 +63,7 @@
 #include "digikam_debug.h"
 #include "abstractmarkertiler.h"
 #include "backendgooglemaps.h"
+#include "marblesettings.h"
 
 #ifdef HAVE_MARBLE
 
@@ -249,6 +250,8 @@ MapWidget::MapWidget(QWidget* const parent)
     createActionsForBackendSelection();
 
     setAcceptDrops(true);
+
+    MarbleSettings::instance()->registerWidget(this);
 }
 
 void MapWidget::createActions()
@@ -439,6 +442,11 @@ QStringList MapWidget::availableBackends() const
     }
 
     return result;
+}
+
+QList<MapBackend*> MapWidget::backends() const
+{
+    return d->loadedBackends;
 }
 
 bool MapWidget::setBackend(const QString& backendName)

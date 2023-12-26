@@ -35,6 +35,8 @@ using namespace Marble;
 namespace Digikam
 {
 
+class MapWidget;
+
 class DIGIKAM_EXPORT MarbleSettings : public QObject
 {
     Q_OBJECT
@@ -57,9 +59,9 @@ public:
     void setSettings(const MarbleSettingsContainer& settings);
 
     /**
-     * Store one MarbleWidget instance in the collection.
+     * Store one MapWidget instance in the collection.
      */
-    void registerWidget(MarbleWidget* const widget);
+    void registerWidget(MapWidget* const widget);
 
     /**
      * Return the first registered MarbleWidget instance stored in the collection.
@@ -68,6 +70,9 @@ public:
     MarbleWidget* mainMarbleWidget() const;
 
     void openSetupGeolocation(SetupGeolocation::GeolocationTab tab);
+
+    void reloadGoogleMaps();
+    void googleMapsApiKeyChanged();
 
 Q_SIGNALS:
 

@@ -74,6 +74,7 @@ public:
 */
     void updateActionAvailability()                                                       override;
 
+    void setApiKeyChanged();
     QString getMapType()                                                            const;
     void setMapType(const QString& newMapType);
     void setShowMapTypeControl(const bool state);
@@ -90,6 +91,8 @@ public:
     void centerOn(const Marble::GeoDataLatLonBox& latLonBox, const bool useSaneZoomLevel) override;
 
 #endif
+
+    void reload()                                                                         override;
 
 public Q_SLOTS:
 

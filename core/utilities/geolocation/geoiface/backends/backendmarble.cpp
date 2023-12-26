@@ -225,8 +225,6 @@ QWidget* BackendMarble::mapWidget()
             d->bmLayer      = new BackendMarbleLayer(this);
 
             d->marbleWidget->addLayer(d->bmLayer);
-
-            MarbleSettings::instance()->registerWidget(d->marbleWidget);
         }
 
         d->marbleWidget->installEventFilter(this);
@@ -619,12 +617,17 @@ void BackendMarble::readSettingsFromGroup(const KConfigGroup* const group)
 
 void BackendMarble::updateMarkers()
 {
+    // just redraw, that's it:
+
+    reload();
+}
+
+void BackendMarble::reload()
+{
     if (!d->marbleWidget)
     {
         return;
     }
-
-    // just redraw, that's it:
 
     d->marbleWidget->update();
 }

@@ -102,6 +102,8 @@ public:
                   const bool useSaneZoomLevel)                                override;
     void setActive(const bool state)                                          override;
 
+    void reload()                                                             override;
+
 public Q_SLOTS:
 
     void slotClustersNeedUpdating()                                           override;

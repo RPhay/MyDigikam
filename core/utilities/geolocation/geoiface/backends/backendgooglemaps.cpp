@@ -133,9 +133,8 @@ public:
     QAction*                                  showNavigationControlAction;
     QAction*                                  showScaleControlAction;
     QAction*                                  inputUserAPIKeyAction;
-
-    const QString                             htmlTemplate;
-    const QString                             htmlFileName;
+    QString                                   htmlTemplate;
+    QString                                   htmlFileName;
     QString                                   cacheMapType;
     bool                                      cacheShowMapTypeControl;
     bool                                      cacheShowNavigationControl;
@@ -292,13 +291,17 @@ QWidget* BackendGoogleMaps::mapWidget()
         }
         else
         {
-            const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
-
-            d->htmlWidget->load(htmlUrl);
+            reload();
         }
     }
 
     return d->htmlWidgetWrapper.data();
+}
+
+void BackendGoogleMaps::reload()
+{
+    const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
+    d->htmlWidget->load(htmlUrl);
 }
 
 GeoCoordinates BackendGoogleMaps::getCenter() const
@@ -1700,6 +1703,11 @@ void BackendGoogleMaps::slotInputUserAPIKey()
 
     const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
     d->htmlWidget->load(htmlUrl);
+}
+
+void BackendGoogleMaps::setApiKeyChanged()
+{
+        d->keyChanged = true;
 }
 
 void BackendGoogleMaps::slotMessageEvent(const QString& message)

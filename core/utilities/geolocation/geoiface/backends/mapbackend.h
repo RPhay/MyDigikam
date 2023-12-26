@@ -107,6 +107,8 @@ public:
 
 #endif
 
+    virtual void reload()                                                         = 0;
+
 public Q_SLOTS:
 
     virtual void slotClustersNeedUpdating()                                       = 0;
