@@ -2455,7 +2455,10 @@ void ImportUI::postProcessAfterDownload()
                     }
                 }
 
-                FileActionMngr::instance()->transform(infoList, MetaEngineRotation::NoTransformation);
+                if (!infoList.isEmpty())
+                {
+                    FileActionMngr::instance()->transform(infoList, MetaEngineRotation::NoTransformation);
+                }
 
                 if (d->waitAutoRotate)
                 {
