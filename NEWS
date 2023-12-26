@@ -86,7 +86,7 @@ BUGFIXES:
 070 ==> 478848 - AF points in focus not shown.
 071 ==> 478955 - Crash when changing face tag in preview /rectangle.
 072 ==> 477853 - digiKam 8.3.0 slow startup on Windows 10 operating system.
-073 ==> 
+073 ==> 478954 - No visible images in target folder after import from SD card.
 074 ==> 
 075 ==> 
 076 ==> 

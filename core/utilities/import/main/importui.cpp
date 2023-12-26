@@ -2339,6 +2339,11 @@ void ImportUI::postProcessAfterDownload()
             newName = d->renameCustomizer->newName(srcFile);
         }
 
+        if (newName == srcInfo.fileName())
+        {
+            newName = orgName;
+        }
+
         QString dstFile = srcInfo.path() + QLatin1Char('/') + newName;
         QFileInfo dstInfo(dstFile);
 
