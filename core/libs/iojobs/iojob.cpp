@@ -442,6 +442,11 @@ void DTrashItemsListingJob::run()
 
     Q_FOREACH (const QFileInfo& fileInfo, filesDir.entryInfoList(QDir::Files))
     {
+        if (m_cancel)
+        {
+            break;
+        }
+
         qCDebug(DIGIKAM_IOJOB_LOG) << "File in trash:" << fileInfo.filePath();
         itemInfo.trashPath = fileInfo.filePath();
 

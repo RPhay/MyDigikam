@@ -96,6 +96,11 @@ public:
      */
     void changeThumbSize(int size);
 
+    /**
+     * @brief Stop loading of trash
+     */
+    void stopLoadingTrash();
+
 /// QAbstractItemModel interface
 public:
 

@@ -84,6 +84,8 @@ DTrashItemModel::DTrashItemModel(QObject* const parent)
 
 DTrashItemModel::~DTrashItemModel()
 {
+    stopLoadingTrash();
+
     delete d->thumbnailThread;
     delete d;
 }
@@ -370,6 +372,8 @@ void DTrashItemModel::clearCurrentData()
 
 void DTrashItemModel::loadItemsForCollection(const QString& colPath)
 {
+    stopLoadingTrash();
+
     Q_EMIT signalLoadingStarted();
 
     d->sortEnabled    = false;
@@ -449,6 +453,20 @@ void DTrashItemModel::changeThumbSize(int size)
     QTimer::singleShot(100, this, SLOT(refreshLayout()));
 }
 
+void DTrashItemModel::stopLoadingTrash()
+{
+    if (d->itemsLoadingThread)
+    {
+        disconnect(d->itemsLoadingThread, nullptr, this, nullptr);
+
+        d->itemsLoadingThread->cancel();
+        d->itemsLoadingThread = nullptr;
+    }
+
+    d->thumbnailThread->stopAllTasks();
+    d->thumbnailThread->wait();
+}
+
 QString DTrashItemModel::trashAlbumPath() const
 {
     return d->trashAlbumPath;
@@ -456,7 +474,8 @@ QString DTrashItemModel::trashAlbumPath() const
 
 void DTrashItemModel::slotLoadItemsFinished()
 {
-    d->sortEnabled = true;
+    d->sortEnabled        = true;
+    d->itemsLoadingThread = nullptr;
     sort(d->sortColumn, d->sortOrder);
 
     Q_EMIT dataChange();

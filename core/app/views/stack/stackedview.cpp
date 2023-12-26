@@ -36,6 +36,7 @@
 #include "dbinfoiface.h"
 #include "itemalbummodel.h"
 #include "itemalbumfiltermodel.h"
+#include "dtrashitemmodel.h"
 #include "itempreviewview.h"
 #include "itemthumbnailbar.h"
 #include "loadingcacheinterface.h"
@@ -411,6 +412,11 @@ void StackedView::setViewMode(const StackedViewMode mode)
     }
 
 #endif // HAVE_MEDIAPLAYER
+
+    if ((viewMode() == TrashViewMode) && (mode != TrashViewMode))
+    {
+        d->trashView->model()->stopLoadingTrash();
+    }
 
     if ((mode < StackedViewModeFirst) || (mode > StackedViewModeLast))
     {
