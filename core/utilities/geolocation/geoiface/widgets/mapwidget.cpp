@@ -698,16 +698,11 @@ void MapWidget::readSettingsFromGroup(const KConfigGroup* const group)
         return;
     }
 
-    if (d->currentBackendName.isEmpty())
-    {
-
 #ifdef HAVE_MARBLE
 
-        setBackend(group->readEntry("Backend", "marble"));
+    setBackend(group->readEntry("Backend", "marble"));
 
 #endif
-
-    }
 
     // Options concerning the display of markers
 
