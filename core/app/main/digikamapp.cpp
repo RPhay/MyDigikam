@@ -83,7 +83,7 @@ DigikamApp::DigikamApp()
 
 #ifdef HAVE_MARBLE
 
-    connect(MarbleSettings::instance(), &MarbleSettings::signalSetupGeolocation,
+    connect(GeolocationSettings::instance(), &GeolocationSettings::signalSetupGeolocation,
             this, [=](int tab)
         {
             Setup::execGeolocation(this, tab);

@@ -12,7 +12,7 @@
  *
  * ============================================================ */
 
-#include "marblesettingscontainer.h"
+#include "geolocationsettingscontainer.h"
 
 // KDE includes
 
@@ -20,12 +20,12 @@
 
 // Local includes
 
-#include "marblesettings.h"
+#include "geolocationsettings.h"
 
 namespace Digikam
 {
 
-void MarbleSettingsContainer::readFromConfig(KConfigGroup& group)
+void GeolocationSettingsContainer::readFromConfig(KConfigGroup& group)
 {
     distanceUnit             = (MarbleLocale::MeasurementSystem)group.readEntry("Distance Unit",               (int)MarbleLocale::MetricSystem);
     angleUnit                = (Marble::AngleUnit)              group.readEntry("Angle Unit",                  (int)Marble::DecimalDegree);
@@ -38,7 +38,7 @@ void MarbleSettingsContainer::readFromConfig(KConfigGroup& group)
     persistentTileCacheLimit = group.readEntry("Persistent Tile Cache Limit", 999999);
 }
 
-void MarbleSettingsContainer::writeToConfig(KConfigGroup& group) const
+void GeolocationSettingsContainer::writeToConfig(KConfigGroup& group) const
 {
     group.writeEntry("Distance Unit",               (int)distanceUnit);
     group.writeEntry("Angle Unit",                  (int)angleUnit);
@@ -51,9 +51,9 @@ void MarbleSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Persistent Tile Cache Limit", persistentTileCacheLimit);
 }
 
-QDebug operator<<(QDebug dbg, const MarbleSettingsContainer& inf)
+QDebug operator<<(QDebug dbg, const GeolocationSettingsContainer& inf)
 {
-    dbg.nospace() << "[MarbleSettingsContainer] distanceUnit("
+    dbg.nospace() << "[GeolocationSettingsContainer] distanceUnit("
                   << inf.distanceUnit << "), ";
     dbg.nospace() << "angleUnit("
                   << inf.angleUnit << "), ";

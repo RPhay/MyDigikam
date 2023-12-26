@@ -58,7 +58,7 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
 #ifdef HAVE_MARBLE
 
-    connect(Digikam::MarbleSettings::instance(), &Digikam::MarbleSettings::signalSetupGeolocation,
+    connect(Digikam::GeolocationSettings::instance(), &Digikam::GeolocationSettings::signalSetupGeolocation,
             this, [=](int tab)
         {
             ShowfotoSetup::execGeolocation(this, tab);

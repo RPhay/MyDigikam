@@ -104,7 +104,7 @@
 #include "networkmanager.h"
 
 #ifdef HAVE_MARBLE
-#   include "marblesettings.h"
+#   include "geolocationsettings.h"
 #endif
 
 namespace ShowFoto

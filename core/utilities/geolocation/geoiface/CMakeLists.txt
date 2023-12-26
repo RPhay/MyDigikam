@@ -66,6 +66,8 @@ set(libgeoiface_SRCS
                      ${CMAKE_CURRENT_SOURCE_DIR}/core/gpscommon.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/core/gpsundocommand.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/core/gpsgeoifacemodelhelper.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/core/geolocationsettings.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/core/geolocationsettingscontainer.cpp
 
                      ${CMAKE_CURRENT_SOURCE_DIR}/bookmark/gpsbookmarkowner.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/bookmark/gpsbookmarkmodelhelper.cpp

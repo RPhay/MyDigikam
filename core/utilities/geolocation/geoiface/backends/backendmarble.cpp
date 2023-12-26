@@ -50,7 +50,7 @@
 #include "backendmarblelayer.h"
 #include "abstractmarkertiler.h"
 #include "mapwidget.h"
-#include "marblesettings.h"
+#include "geolocationsettings.h"
 #include "geomodelhelper.h"
 
 namespace Digikam
@@ -487,7 +487,7 @@ void BackendMarble::addActionsToConfigurationMenu(QMenu* const configurationMenu
     connect(settings, &QAction::triggered,
             this, []()
         {
-            MarbleSettings::instance()->openSetupGeolocation(SetupGeolocation::MarbleView);
+            GeolocationSettings::instance()->openSetupGeolocation(SetupGeolocation::MarbleView);
         }
     );
 

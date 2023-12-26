@@ -39,7 +39,7 @@
 #include "MarbleClock.h"
 #include "MarblePluginSettingsWidget.h"
 #include "ui_MarbleViewSettingsWidget.h"
-#include "marblesettings.h"
+#include "geolocationsettings.h"
 
 #include "digikam_debug.h"
 
@@ -117,7 +117,7 @@ void MarbleConfigView::readSettings()
 {
     // Read settings from config file.
 
-    MarbleSettingsContainer settings = MarbleSettings::instance()->settings();
+    GeolocationSettingsContainer settings = GeolocationSettings::instance()->settings();
 
     // View
 
@@ -143,7 +143,7 @@ void MarbleConfigView::applySettings()
 {
     d->pluginModel.applyPluginState();
 
-    MarbleSettingsContainer settings;
+    GeolocationSettingsContainer settings;
 
     settings.distanceUnit             = (Marble::MarbleLocale::MeasurementSystem)d->viewSettings.kcfg_distanceUnit->currentIndex();
     settings.angleUnit                = (Marble::AngleUnit)d->viewSettings.kcfg_angleUnit->currentIndex();
@@ -155,7 +155,7 @@ void MarbleConfigView::applySettings()
     settings.volatileTileCacheLimit   = d->viewSettings.kcfg_volatileTileCacheLimit->value();
     settings.persistentTileCacheLimit = d->viewSettings.kcfg_persistentTileCacheLimit->value();
 
-    MarbleSettings::instance()->setSettings(settings);
+    GeolocationSettings::instance()->setSettings(settings);
 
     // Plugins
 

@@ -22,7 +22,7 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "marblesettingscontainer.h"
+#include "geolocationsettingscontainer.h"
 #include "setupgeolocation.h"
 
 namespace Marble
@@ -37,7 +37,7 @@ namespace Digikam
 
 class MapWidget;
 
-class DIGIKAM_EXPORT MarbleSettings : public QObject
+class DIGIKAM_EXPORT GeolocationSettings : public QObject
 {
     Q_OBJECT
 
@@ -46,17 +46,17 @@ public:
     /**
      * Global container for Metadata settings. All accessor methods are thread-safe.
      */
-    static MarbleSettings* instance();
+    static GeolocationSettings* instance();
 
     /**
      * Returns the current Metadata settings.
      */
-    MarbleSettingsContainer settings() const;
+    GeolocationSettingsContainer settings() const;
 
     /**
      * Sets the current Metadata settings and writes them to config.
      */
-    void setSettings(const MarbleSettingsContainer& settings);
+    void setSettings(const GeolocationSettingsContainer& settings);
 
     /**
      * Store one MapWidget instance in the collection.
@@ -78,28 +78,28 @@ Q_SIGNALS:
 
     void signalSettingsChanged();
 
-    void signalMarbleSettingsChanged(const MarbleSettingsContainer& current,
-                                     const MarbleSettingsContainer& previous);
+    void signalGeolocationSettingsChanged(const GeolocationSettingsContainer& current,
+                                          const GeolocationSettingsContainer& previous);
 
     void signalSetupGeolocation(int tab);
 
 private:
 
     // Disabled
-    MarbleSettings();
-    explicit MarbleSettings(QObject*);
-    ~MarbleSettings() override;
+    GeolocationSettings();
+    explicit GeolocationSettings(QObject*);
+    ~GeolocationSettings() override;
 
     void readFromConfig();
 
-    void applySettingsToWidgets(const MarbleSettingsContainer& settings);
+    void applySettingsToWidgets(const GeolocationSettingsContainer& settings);
 
 private:
 
     class Private;
     Private* const d;
 
-    friend class MarbleSettingsCreator;
+    friend class GeolocationSettingsCreator;
 };
 
 } // namespace Digikam

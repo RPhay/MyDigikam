@@ -145,7 +145,7 @@
 #include "networkmanager.h"
 
 #ifdef HAVE_MARBLE
-#   include "marblesettings.h"
+#   include "geolocationsettings.h"
 #endif
 
 #ifdef HAVE_DBUS

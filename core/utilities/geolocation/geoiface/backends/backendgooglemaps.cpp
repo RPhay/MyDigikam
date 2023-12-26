@@ -52,7 +52,7 @@
 #include "mapwidget.h"
 #include "abstractmarkertiler.h"
 #include "geomodelhelper.h"
-#include "marblesettings.h"
+#include "geolocationsettings.h"
 
 #ifdef HAVE_QWEBENGINE
 
@@ -426,7 +426,7 @@ void BackendGoogleMaps::addActionsToConfigurationMenu(QMenu* const configuration
     connect(settings, &QAction::triggered,
             this, []()
         {
-            MarbleSettings::instance()->openSetupGeolocation(SetupGeolocation::GoogleMaps);
+            GeolocationSettings::instance()->openSetupGeolocation(SetupGeolocation::GoogleMaps);
         }
     );
 

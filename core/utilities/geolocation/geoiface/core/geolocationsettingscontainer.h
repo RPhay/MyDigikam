@@ -34,14 +34,14 @@ namespace Digikam
 {
 
 /**
- * The class MarbleSettingsContainer encapsulates all Marble related settings.
+ * The class GeolocationSettingsContainer encapsulates all Marble related settings.
  */
-class DIGIKAM_EXPORT MarbleSettingsContainer
+class DIGIKAM_EXPORT GeolocationSettingsContainer
 {
 public:
 
-    MarbleSettingsContainer()  = default;
-    ~MarbleSettingsContainer() = default;
+    GeolocationSettingsContainer()  = default;
+    ~GeolocationSettingsContainer() = default;
 
 public:
 
@@ -67,7 +67,7 @@ public:
 };
 
 //! qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8() stream operator. Writes property @a inf to the debug output in a nicely formatted way.
-DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const MarbleSettingsContainer& inf);
+DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const GeolocationSettingsContainer& inf);
 
 } // namespace Digikam
 

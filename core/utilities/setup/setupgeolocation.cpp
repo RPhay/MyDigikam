@@ -35,7 +35,7 @@
 // Local includes
 
 #include "MarbleConfigView.h"
-#include "marblesettings.h"
+#include "geolocationsettings.h"
 #include "digikam_debug.h"
 
 using namespace Marble;
@@ -87,7 +87,7 @@ SetupGeolocation::SetupGeolocation(QWidget* const parent)
     QVBoxLayout* const vbl = new QVBoxLayout();
     panel->setLayout(vbl);
 
-    d->tab                 = new MarbleConfigView(MarbleSettings::instance()->mainMarbleWidget(), this);
+    d->tab                 = new MarbleConfigView(GeolocationSettings::instance()->mainMarbleWidget(), this);
 
     // ---
 
@@ -144,7 +144,7 @@ void SetupGeolocation::applySettings()
             QFile::remove(htmlFile);
         }
 
-        MarbleSettings::instance()->reloadGoogleMaps();
+        GeolocationSettings::instance()->reloadGoogleMaps();
         return;
     }
 
@@ -170,7 +170,7 @@ void SetupGeolocation::applySettings()
         writeFile.write(htmlText.toLatin1());
         writeFile.close();
 
-        MarbleSettings::instance()->googleMapsApiKeyChanged();
+        GeolocationSettings::instance()->googleMapsApiKeyChanged();
     }
 }
 

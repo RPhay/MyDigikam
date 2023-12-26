@@ -12,7 +12,7 @@
  *
  * ============================================================ */
 
-#include "marblesettings.h"
+#include "geolocationsettings.h"
 
 // Qt includes
 
@@ -32,7 +32,7 @@
 #include "backendgooglemaps.h"
 #include "backendmarble.h"
 #include "mapwidget.h"
-#include "marblesettings.h"
+#include "geolocationsettings.h"
 #include "MarbleGlobal.h"
 #include "MarbleWidget.h"
 #include "MarbleModel.h"
@@ -41,7 +41,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN MarbleSettings::Private
+class Q_DECL_HIDDEN GeolocationSettings::Private
 {
 public:
 
@@ -51,7 +51,7 @@ public:
     {
     }
 
-    MarbleSettingsContainer settings;
+    GeolocationSettingsContainer settings;
     QMutex                  mutex;
 
     const QString           configGroup;
@@ -60,14 +60,14 @@ public:
 
 public:
 
-    MarbleSettingsContainer readFromConfig() const;
-    void                    writeToConfig()  const;
-    MarbleSettingsContainer setSettings(const MarbleSettingsContainer& s);
+    GeolocationSettingsContainer readFromConfig() const;
+    void                         writeToConfig()  const;
+    GeolocationSettingsContainer setSettings(const GeolocationSettingsContainer& s);
 };
 
-MarbleSettingsContainer MarbleSettings::Private::readFromConfig() const
+GeolocationSettingsContainer GeolocationSettings::Private::readFromConfig() const
 {
-    MarbleSettingsContainer s;
+    GeolocationSettingsContainer s;
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroup);
     s.readFromConfig(group);
@@ -75,17 +75,17 @@ MarbleSettingsContainer MarbleSettings::Private::readFromConfig() const
     return s;
 }
 
-void MarbleSettings::Private::writeToConfig() const
+void GeolocationSettings::Private::writeToConfig() const
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroup);
     settings.writeToConfig(group);
 }
 
-MarbleSettingsContainer MarbleSettings::Private::setSettings(const MarbleSettingsContainer& s)
+GeolocationSettingsContainer GeolocationSettings::Private::setSettings(const GeolocationSettingsContainer& s)
 {
     QMutexLocker lock(&mutex);
-    MarbleSettingsContainer old;
+    GeolocationSettingsContainer old;
     old      = settings;
     settings = s;
 
@@ -94,40 +94,40 @@ MarbleSettingsContainer MarbleSettings::Private::setSettings(const MarbleSetting
 
 // -----------------------------------------------------------------------------------------------
 
-class Q_DECL_HIDDEN MarbleSettingsCreator
+class Q_DECL_HIDDEN GeolocationSettingsCreator
 {
 public:
 
-    MarbleSettings object;
+    GeolocationSettings object;
 };
 
-Q_GLOBAL_STATIC(MarbleSettingsCreator, marbleSettingsCreator)
+Q_GLOBAL_STATIC(GeolocationSettingsCreator, geolocationSettingsCreator)
 
 // -----------------------------------------------------------------------------------------------
 
-MarbleSettings* MarbleSettings::instance()
+GeolocationSettings* GeolocationSettings::instance()
 {
-    return &marbleSettingsCreator->object;
+    return &geolocationSettingsCreator->object;
 }
 
-MarbleSettings::MarbleSettings()
+GeolocationSettings::GeolocationSettings()
     : d(new Private)
 {
     readFromConfig();
-    qRegisterMetaType<MarbleSettingsContainer>("MarbleSettingsContainer");
+    qRegisterMetaType<GeolocationSettingsContainer>("GeolocationSettingsContainer");
 }
 
-MarbleSettings::~MarbleSettings()
+GeolocationSettings::~GeolocationSettings()
 {
     delete d;
 }
 
-void MarbleSettings::registerWidget(MapWidget* const widget)
+void GeolocationSettings::registerWidget(MapWidget* const widget)
 {
     d->widgets << widget;
 }
 
-void MarbleSettings::applySettingsToWidgets(const MarbleSettingsContainer& settings)
+void GeolocationSettings::applySettingsToWidgets(const GeolocationSettingsContainer& settings)
 {
     Q_FOREACH (MapWidget* const w, d->widgets)
     {
@@ -158,7 +158,7 @@ void MarbleSettings::applySettingsToWidgets(const MarbleSettingsContainer& setti
     }
 }
 
-MarbleWidget* MarbleSettings::mainMarbleWidget() const
+MarbleWidget* GeolocationSettings::mainMarbleWidget() const
 {
     Q_FOREACH (MapWidget* const w, d->widgets)
     {
@@ -179,7 +179,7 @@ MarbleWidget* MarbleSettings::mainMarbleWidget() const
     return nullptr;
 }
 
-void MarbleSettings::reloadGoogleMaps()
+void GeolocationSettings::reloadGoogleMaps()
 {
     Q_FOREACH (MapWidget* const w, d->widgets)
     {
@@ -198,7 +198,7 @@ void MarbleSettings::reloadGoogleMaps()
     }
 }
 
-void MarbleSettings::googleMapsApiKeyChanged()
+void GeolocationSettings::googleMapsApiKeyChanged()
 {
     Q_FOREACH (MapWidget* const w, d->widgets)
     {
@@ -217,19 +217,19 @@ void MarbleSettings::googleMapsApiKeyChanged()
     }
 }
 
-MarbleSettingsContainer MarbleSettings::settings() const
+GeolocationSettingsContainer GeolocationSettings::settings() const
 {
     QMutexLocker lock(&d->mutex);
-    MarbleSettingsContainer s(d->settings);
+    GeolocationSettingsContainer s(d->settings);
 
     return s;
 }
 
-void MarbleSettings::setSettings(const MarbleSettingsContainer& settings)
+void GeolocationSettings::setSettings(const GeolocationSettingsContainer& settings)
 {
-    MarbleSettingsContainer old = d->setSettings(settings);
+    GeolocationSettingsContainer old = d->setSettings(settings);
 
-    Q_EMIT signalMarbleSettingsChanged(settings, old);
+    Q_EMIT signalGeolocationSettingsChanged(settings, old);
 
     Q_EMIT signalSettingsChanged();
 
@@ -237,21 +237,21 @@ void MarbleSettings::setSettings(const MarbleSettingsContainer& settings)
     d->writeToConfig();
 }
 
-void MarbleSettings::readFromConfig()
+void GeolocationSettings::readFromConfig()
 {
-    MarbleSettingsContainer s   = d->readFromConfig();
-    MarbleSettingsContainer old = d->setSettings(s);
+    GeolocationSettingsContainer s   = d->readFromConfig();
+    GeolocationSettingsContainer old = d->setSettings(s);
 
-    Q_EMIT signalMarbleSettingsChanged(s, old);
+    Q_EMIT signalGeolocationSettingsChanged(s, old);
 
     Q_EMIT signalSettingsChanged();
 }
 
-void MarbleSettings::openSetupGeolocation(SetupGeolocation::GeolocationTab tab)
+void GeolocationSettings::openSetupGeolocation(SetupGeolocation::GeolocationTab tab)
 {
     Q_EMIT signalSetupGeolocation(tab);
 }
 
 } // namespace Digikam
 
-#include "moc_marblesettings.cpp"
+#include "moc_geolocationsettings.cpp"

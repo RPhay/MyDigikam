@@ -611,8 +611,6 @@ set(marblewidget_SRCS
 
     settings/MarbleConfigView.cpp
     settings/MarblePluginSettingsWidget.cpp
-    settings/marblesettings.cpp
-    settings/marblesettingscontainer.cpp
 
     storage/CacheStoragePolicy.cpp
     storage/DiscCache.cpp

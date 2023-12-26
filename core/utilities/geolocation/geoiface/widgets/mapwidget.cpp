@@ -63,7 +63,7 @@
 #include "digikam_debug.h"
 #include "abstractmarkertiler.h"
 #include "backendgooglemaps.h"
-#include "marblesettings.h"
+#include "geolocationsettings.h"
 
 #ifdef HAVE_MARBLE
 
@@ -251,7 +251,7 @@ MapWidget::MapWidget(QWidget* const parent)
 
     setAcceptDrops(true);
 
-    MarbleSettings::instance()->registerWidget(this);
+    GeolocationSettings::instance()->registerWidget(this);
 }
 
 void MapWidget::createActions()
