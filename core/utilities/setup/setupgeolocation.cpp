@@ -17,6 +17,7 @@
 // Qt includes
 
 #include <QApplication>
+#include <QStyle>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QFileInfo>
@@ -81,14 +82,17 @@ SetupGeolocation::SetupGeolocation(QWidget* const parent)
     : QScrollArea(parent),
       d          (new Private)
 {
-    QWidget* const panel    = new QWidget(viewport());
+    QWidget* const panel     = new QWidget(viewport());
     setWidget(panel);
     setWidgetResizable(true);
 
-    QVBoxLayout* const vbl = new QVBoxLayout();
+    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    QVBoxLayout* const vbl  = new QVBoxLayout();
     panel->setLayout(vbl);
 
-    d->tab                 = new MarbleConfigView(GeolocationSettings::instance()->mainMarbleWidget(), this);
+    d->tab                  = new MarbleConfigView(GeolocationSettings::instance()->mainMarbleWidget(), this);
 
     // ---
 
@@ -97,9 +101,29 @@ SetupGeolocation::SetupGeolocation(QWidget* const parent)
     d->gMapApi              = new QLineEdit(d->gMapView);
     d->gMapApi->setEchoMode(QLineEdit::Normal);
 
+    QFrame* const infoBox       = new QFrame;
+    QVBoxLayout* const infoVlay = new QVBoxLayout;
+    infoBox->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
+
+    QLabel* const explanation   = new QLabel(infoBox);
+    explanation->setOpenExternalLinks(true);
+    explanation->setWordWrap(true);
+    QString txt = i18nc("@info", "Google Maps requires to work friendly an API key that end users must buy online "
+                                 "to gain credentials. Without this key, Google Maps is still usable but with an "
+                                 "overlay frame annotated \"For Develomepent Only\". For more information, see this "
+                                 "<a href='https://mapsplatform.google.com/pricing/'>Google page</a> about "
+                                 "usages, practices, and prices.");
+
+    explanation->setText(txt);
+    infoVlay->addWidget(explanation);
+    infoVlay->setContentsMargins(spacing, spacing, spacing, spacing);
+    infoVlay->setSpacing(0);
+    infoBox->setLayout(infoVlay);
+
     QVBoxLayout* const vlay = new QVBoxLayout(d->gMapView);
     vlay->addWidget(title);
     vlay->addWidget(d->gMapApi);
+    vlay->addWidget(infoBox);
     vlay->addStretch();
     d->tab->insertTab(GoogleMaps, d->gMapView, i18n("Google Maps"));
 
