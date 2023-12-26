@@ -7,7 +7,7 @@
  * Description : a combo box with a width not depending of text
  *               content size
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2008 by Andi Clemens <andi dot clemens at googlemail dot com>
  * SPDX-FileCopyrightText:      2005 by Tom Albers <tomalbers at kde dot nl>
  *

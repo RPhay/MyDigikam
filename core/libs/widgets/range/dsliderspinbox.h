@@ -6,7 +6,7 @@
  * Date        : 2014-11-30
  * Description : Save space slider widget
  *
- * SPDX-FileCopyrightText: 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2014-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2010 by Justin Noel <justin at ics dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

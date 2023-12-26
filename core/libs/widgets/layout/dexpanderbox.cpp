@@ -7,7 +7,7 @@
  * Description : A widget to host settings as expander box
  *
  * SPDX-FileCopyrightText: 2008-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2010 by Manuel Viet <contact at 13zenrv dot fr>
  * SPDX-FileCopyrightText: 2001      by Frerich Raabe <raabe at kde dot org>
  *

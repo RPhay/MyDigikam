@@ -8,7 +8,7 @@
  *               LDR ToneMapper zynaddsubfx.sourceforge.net/other/tonemapping
  *
  * SPDX-FileCopyrightText: 2009      by Julien Pontabry <julien dot pontabry at gmail dot com>
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

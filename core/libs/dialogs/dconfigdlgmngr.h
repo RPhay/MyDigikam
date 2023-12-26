@@ -6,7 +6,7 @@
  * Date        : 2003-11-03
  * Description : Automatic retrieving, saving and resetting skeleton based settings in a dialog.
  *
- * SPDX-FileCopyrightText: 2019-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2003      by Benjamin C Meyer <ben plus kdelibs at meyerhome dot net>
  * SPDX-FileCopyrightText: 2003      by Waldo Bastian <bastian at kde dot org>
  *

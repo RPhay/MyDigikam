@@ -8,7 +8,7 @@
  *               in file dialog preview.
  *
  * SPDX-FileCopyrightText: 2006-2007 by Francisco J. Cruz <fj dot cruz at supercable dot es>
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

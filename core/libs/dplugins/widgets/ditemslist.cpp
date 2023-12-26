@@ -6,7 +6,7 @@
  * Date        : 2008-05-21
  * Description : widget to display a list of items
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2008-2010 by Andi Clemens <andi dot clemens at googlemail dot com>
  * SPDX-FileCopyrightText: 2009-2010 by Luka Renko <lure at kubuntu dot org>
  *

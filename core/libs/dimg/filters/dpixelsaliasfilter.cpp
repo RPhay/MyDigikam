@@ -6,7 +6,7 @@
  * Date        : 2005-24-01
  * Description : pixels antialiasing filter
  *
- * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * Original channel mixer algorithm copyrighted 2002 by

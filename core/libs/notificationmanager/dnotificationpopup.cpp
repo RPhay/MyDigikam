@@ -6,7 +6,7 @@
  * Date        : 2004-07-03
  * Description : dialog-like popup that displays messages without interrupting the user
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2001-2006 by Richard Moore <rich at kde dot org>
  * SPDX-FileCopyrightText: 2004-2005 by Sascha Cunz <sascha.cunz at tiscali dot de>
  *

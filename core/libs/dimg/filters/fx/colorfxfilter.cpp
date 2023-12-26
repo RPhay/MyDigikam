@@ -6,7 +6,7 @@
  * Date        : 2004-02-14
  * Description : Color FX threaded image filter.
  *
- * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  * SPDX-FileCopyrightText: 2015      by Andrej Krutak <dev at andree dot sk>

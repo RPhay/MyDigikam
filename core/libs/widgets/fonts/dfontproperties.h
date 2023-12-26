@@ -6,7 +6,7 @@
  * Date        : 2008-12-23
  * Description : a widget to change font properties.
  *
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      1996 by Bernd Johannes Wuebben  <wuebben at kde dot org>
  * SPDX-FileCopyrightText:      1999 by Preston Brown <pbrown at kde dot org>
  * SPDX-FileCopyrightText:      1999 by Mario Weilguni <mweilguni at kde dot org>

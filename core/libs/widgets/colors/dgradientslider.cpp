@@ -6,7 +6,7 @@
  * Date        : 2008-07-03
  * Description : a color gradient slider
  *
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2008 by Cyrille Berger <cberger at cberger dot net>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

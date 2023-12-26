@@ -23,7 +23,7 @@
  * MKV files  : Matroska container tags.
  * QT files   : Quicktime container tags (Apple).
  *
- * SPDX-FileCopyrightText: 2019-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

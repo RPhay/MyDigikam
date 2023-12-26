@@ -6,7 +6,7 @@
  * Date        : 2010-06-13
  * Description : A QCompleter for AbstractAlbumModels
  *
- * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
