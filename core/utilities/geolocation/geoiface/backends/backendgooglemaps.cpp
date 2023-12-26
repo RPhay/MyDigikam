@@ -319,8 +319,8 @@ void BackendGoogleMaps::setCenter(const GeoCoordinates& coordinate)
 void BackendGoogleMaps::slotSetCenterTimer()
 {
     d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetCenter(%1, %2);")
-                             .arg(d->cacheCenter.latString())
-                             .arg(d->cacheCenter.lonString()));
+                                 .arg(d->cacheCenter.latString())
+                                 .arg(d->cacheCenter.lonString()));
 }
 
 bool BackendGoogleMaps::isReady() const
@@ -332,8 +332,8 @@ void BackendGoogleMaps::slotHTMLInitialized()
 {
     d->isReady     = true;
     d->htmlWidget->runScript(QString::fromLatin1("kgeomapWidgetResized(%1, %2)")
-                             .arg(d->htmlWidgetWrapper->width())
-                             .arg(d->htmlWidgetWrapper->height()));
+                                 .arg(d->htmlWidgetWrapper->width())
+                                 .arg(d->htmlWidgetWrapper->height()));
 
     // TODO: call javascript directly here and update action availability in one shot
 
@@ -460,9 +460,9 @@ void BackendGoogleMaps::readSettingsFromGroup(const KConfigGroup* const group)
         return;
     }
 
-    setMapType(group->readEntry("GoogleMaps Map Type", "ROADMAP"));
-    setShowScaleControl(group->readEntry("GoogleMaps Show Scale Control", true));
-    setShowMapTypeControl(group->readEntry("GoogleMaps Show Map Type Control", true));
+    setMapType(group->readEntry("GoogleMaps Map Type",                              "ROADMAP"));
+    setShowScaleControl(group->readEntry("GoogleMaps Show Scale Control",           true));
+    setShowMapTypeControl(group->readEntry("GoogleMaps Show Map Type Control",      true));
     setShowNavigationControl(group->readEntry("GoogleMaps Show Navigation Control", true));
 }
 
@@ -520,13 +520,15 @@ void BackendGoogleMaps::slotUngroupedModelChanged(const int mindex)
         // TODO: use the pixmap supplied by the modelHelper
 
         d->htmlWidget->runScript(QString::fromLatin1("kgeomapAddMarker(%1, %2, %3, %4, %5, %6);")
-                .arg(mindex)
-                .arg(row)
-                .arg(currentCoordinates.latString())
-                .arg(currentCoordinates.lonString())
-                .arg(itemFlags.testFlag(GeoModelHelper::FlagMovable) ? QLatin1String("true") : QLatin1String("false"))
-                .arg(itemFlags.testFlag(GeoModelHelper::FlagSnaps) ? QLatin1String("true") : QLatin1String("false"))
-            );
+                                     .arg(mindex)
+                                     .arg(row)
+                                     .arg(currentCoordinates.latString())
+                                     .arg(currentCoordinates.lonString())
+                                     .arg(itemFlags.testFlag(GeoModelHelper::FlagMovable) ? QLatin1String("true")
+                                                                                          : QLatin1String("false"))
+                                     .arg(itemFlags.testFlag(GeoModelHelper::FlagSnaps) ? QLatin1String("true")
+                                                                                        : QLatin1String("false"))
+                                );
 
         QPoint     markerCenterPoint;
         QSize      markerSize;
@@ -872,20 +874,24 @@ void BackendGoogleMaps::updateClusters()
                               s->markerModel->tilerFlags().testFlag(AbstractMarkerTiler::FlagMovable);
 
     d->htmlWidget->runScript(QLatin1String("kgeomapClearClusters();"));
-    d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetIsInEditMode(%1);").arg(s->showThumbnails?QLatin1String("false" ):QLatin1String("true" )));
+    d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetIsInEditMode(%1);")
+                                 .arg(s->showThumbnails ? QLatin1String("false")
+                                                        : QLatin1String("true"))
+                            );
 
     for (int currentIndex = 0 ; currentIndex < s->clusterList.size() ; ++currentIndex)
     {
         const GeoIfaceCluster& currentCluster = s->clusterList.at(currentIndex);
 
         d->htmlWidget->runScript(QString::fromLatin1("kgeomapAddCluster(%1, %2, %3, %4, %5, %6);")
-                .arg(currentIndex)
-                .arg(currentCluster.coordinates.latString())
-                .arg(currentCluster.coordinates.lonString())
-                .arg(canMoveItems ? QLatin1String("true") : QLatin1String("false"))
-                .arg(currentCluster.markerCount)
-                .arg(currentCluster.markerSelectedCount)
-            );
+                                     .arg(currentIndex)
+                                     .arg(currentCluster.coordinates.latString())
+                                     .arg(currentCluster.coordinates.lonString())
+                                     .arg(canMoveItems ? QLatin1String("true")
+                                                       : QLatin1String("false"))
+                                     .arg(currentCluster.markerCount)
+                                     .arg(currentCluster.markerSelectedCount)
+                                );
 
         // TODO: for now, only set generated pixmaps when not in edit mode
         // this can be changed once we figure out how to appropriately handle
@@ -936,8 +942,8 @@ bool BackendGoogleMaps::geoCoordinates(const QPoint& point, GeoCoordinates* cons
 
     const bool isValid = d->htmlWidget->runScript2Coordinates(
         QString::fromLatin1("kgeomapPixelToLatLng(%1, %2);")
-                .arg(point.x())
-                .arg(point.y()),
+            .arg(point.x())
+            .arg(point.y()),
             coordinates);
 
     return isValid;
@@ -983,9 +989,10 @@ void BackendGoogleMaps::setShowScaleControl(const bool state)
         return;
     }
 
-    d->htmlWidget->runScript(
-        QString::fromLatin1("kgeomapSetShowScaleControl(%1);")
-        .arg(state ? QLatin1String("true") : QLatin1String("false")));
+    d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetShowScaleControl(%1);")
+                                 .arg(state ? QLatin1String("true")
+                                            : QLatin1String("false"))
+                            );
 }
 
 void BackendGoogleMaps::setShowNavigationControl(const bool state)
@@ -1002,9 +1009,10 @@ void BackendGoogleMaps::setShowNavigationControl(const bool state)
         return;
     }
 
-    d->htmlWidget->runScript(
-        QString::fromLatin1("kgeomapSetShowNavigationControl(%1);")
-        .arg(state ? QLatin1String("true") : QLatin1String("false")));
+    d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetShowNavigationControl(%1);")
+                                 .arg(state ? QLatin1String("true")
+                                            : QLatin1String("false"))
+                            );
 }
 
 void BackendGoogleMaps::setShowMapTypeControl(const bool state)
@@ -1021,9 +1029,10 @@ void BackendGoogleMaps::setShowMapTypeControl(const bool state)
         return;
     }
 
-    d->htmlWidget->runScript(
-        QString::fromLatin1("kgeomapSetShowMapTypeControl(%1);")
-        .arg(state ? QLatin1String("true") : QLatin1String("false")));
+    d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetShowMapTypeControl(%1);")
+                                 .arg(state ? QLatin1String("true")
+                                            : QLatin1String("false"))
+                            );
 }
 
 void BackendGoogleMaps::slotClustersNeedUpdating()
@@ -1230,13 +1239,13 @@ void BackendGoogleMaps::setClusterPixmap(const int clusterId, const QPoint& cent
 
     const QString imageData = QString::fromLatin1("data:image/png;base64,%1").arg(QString::fromLatin1(bytes.toBase64()));
     d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetClusterPixmap(%1,%5,%6,%2,%3,'%4');")
-                    .arg(clusterId)
-                    .arg(centerPoint.x())
-                    .arg(centerPoint.y())
-                    .arg(imageData)
-                    .arg(clusterPixmap.width())
-                    .arg(clusterPixmap.height())
-                );
+                                 .arg(clusterId)
+                                 .arg(centerPoint.x())
+                                 .arg(centerPoint.y())
+                                 .arg(imageData)
+                                 .arg(clusterPixmap.width())
+                                 .arg(clusterPixmap.height())
+                            );
 }
 
 void BackendGoogleMaps::setMarkerPixmap(const int modelId, const int markerId,
@@ -1252,14 +1261,14 @@ void BackendGoogleMaps::setMarkerPixmap(const int modelId, const int markerId,
 
     const QString imageData = QString::fromLatin1("data:image/png;base64,%1").arg(QString::fromLatin1(bytes.toBase64()));
     d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetMarkerPixmap(%7,%1,%5,%6,%2,%3,'%4');")
-                    .arg(markerId)
-                    .arg(centerPoint.x())
-                    .arg(centerPoint.y())
-                    .arg(imageData)
-                    .arg(markerPixmap.width())
-                    .arg(markerPixmap.height())
-                    .arg(modelId)
-                );
+                                 .arg(markerId)
+                                 .arg(centerPoint.x())
+                                 .arg(centerPoint.y())
+                                 .arg(imageData)
+                                 .arg(markerPixmap.width())
+                                 .arg(markerPixmap.height())
+                                 .arg(modelId)
+                            );
 }
 
 void BackendGoogleMaps::setMarkerPixmap(const int modelId, const int markerId,
@@ -1269,14 +1278,14 @@ void BackendGoogleMaps::setMarkerPixmap(const int modelId, const int markerId,
     /// @todo Sort the parameters
 
     d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetMarkerPixmap(%7,%1,%5,%6,%2,%3,'%4');")
-                    .arg(markerId)
-                    .arg(centerPoint.x())
-                    .arg(centerPoint.y())
-                    .arg(iconUrl.url()) /// @todo Escape characters like apostrophe
-                    .arg(iconSize.width())
-                    .arg(iconSize.height())
-                    .arg(modelId)
-                );
+                                 .arg(markerId)
+                                 .arg(centerPoint.x())
+                                 .arg(centerPoint.y())
+                                 .arg(iconUrl.url()) /// @todo Escape characters like apostrophe
+                                 .arg(iconSize.width())
+                                 .arg(iconSize.height())
+                                 .arg(modelId)
+                            );
 }
 
 bool BackendGoogleMaps::eventFilter(QObject* object, QEvent* event)
@@ -1295,8 +1304,9 @@ bool BackendGoogleMaps::eventFilter(QObject* object, QEvent* event)
                 if (d->isReady)
                 {
                     d->htmlWidget->runScript(QString::fromLatin1("kgeomapWidgetResized(%1, %2)")
-                                             .arg(d->htmlWidgetWrapper->width())
-                                             .arg(d->htmlWidgetWrapper->height()));
+                                                 .arg(d->htmlWidgetWrapper->width())
+                                                 .arg(d->htmlWidgetWrapper->height())
+                                            );
                 }
             }
         }
