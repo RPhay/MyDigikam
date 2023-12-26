@@ -115,10 +115,20 @@ void ActionThread::slotUpdateItemInfo(const Digikam::ActionData& ad)
 {
     if (ad.status == ActionData::BatchDone)
     {
+        ItemInfo info;
         CollectionScanner scanner;
         ItemInfo source = ItemInfo::fromUrl(ad.fileUrl);
-        ItemInfo info(scanner.scanFile(ad.destUrl.toLocalFile(),
-                                       CollectionScanner::NormalScan));
+
+        if (ad.fileUrl == ad.destUrl)
+        {
+            info = ItemInfo(scanner.scanFile(ad.destUrl.toLocalFile(),
+                                             CollectionScanner::Rescan));
+        }
+        else
+        {
+            info = ItemInfo(scanner.scanFile(ad.destUrl.toLocalFile(),
+                                             CollectionScanner::NormalScan));
+        }
 
         // Copy the digiKam attributes from original file to the new file
 

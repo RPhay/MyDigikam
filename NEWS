@@ -89,7 +89,7 @@ BUGFIXES:
 073 ==> 478954 - No visible images in target folder after import from SD card.
 074 ==> 479017 - Can't move video file to new album after viewing it.
 075 ==> 478623 - MetadataEdit contents are disabled.
-076 ==> 
+076 ==> 478991 - BQM removes tags and ratings.
 077 ==> 
 078 ==> 
 079 ==> 
