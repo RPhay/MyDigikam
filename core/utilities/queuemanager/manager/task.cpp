@@ -144,9 +144,9 @@ void Task::run()
 
     // ItemInfo must be tread-safe.
 
-    ItemInfo source     = ItemInfo::fromUrl(d->tools.m_itemUrl);
-    bool isMetadataTool = false;
-    bool timeAdjust     = false;
+    ItemInfo source      = ItemInfo::fromUrl(d->tools.m_itemUrl);
+    bool noWriteMetadata = false;
+    bool timeAdjust      = false;
 
     Q_FOREACH (const BatchToolSet& set, d->tools.m_toolsList)
     {
@@ -169,10 +169,10 @@ void Task::run()
 
         // Only true if it is also the last tool
 
-        isMetadataTool = (set.group == BatchTool::MetadataTool);
-        timeAdjust    |= (set.name == QLatin1String("TimeAdjust"));
-        inUrl          = outUrl;
-        index          = set.index + 1;
+        noWriteMetadata = (set.name == QLatin1String("RemoveMetadata"));
+        timeAdjust     |= (set.name == QLatin1String("TimeAdjust"));
+        inUrl           = outUrl;
+        index           = set.index + 1;
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Tool : index= " << index
                  << " :: name= "     << set.name
@@ -296,7 +296,7 @@ void Task::run()
                                              timeAdjust))
         {
             emitActionData(ActionData::BatchDone, i18n("Item processed successfully %1", renameMess),
-                           dest, isMetadataTool);
+                           dest, noWriteMetadata);
         }
         else
         {
