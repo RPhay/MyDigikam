@@ -88,7 +88,7 @@ BUGFIXES:
 072 ==> 477853 - digiKam 8.3.0 slow startup on Windows 10 operating system.
 073 ==> 478954 - No visible images in target folder after import from SD card.
 074 ==> 479017 - Can't move video file to new album after viewing it.
-075 ==> 
+075 ==> 478623 - MetadataEdit contents are disabled.
 076 ==> 
 077 ==> 
 078 ==> 
