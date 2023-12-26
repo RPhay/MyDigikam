@@ -8,7 +8,7 @@
 #   - ImageMagick for the rune-time dll.
 #   - Msys2/Rsync CLI tools for Windows.
 #
-# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2024 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

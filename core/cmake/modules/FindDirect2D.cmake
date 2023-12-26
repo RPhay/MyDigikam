@@ -7,7 +7,7 @@
 #  Direct2D_FOUND        - If false, do not try to use Direct2D.
 #  DirectX_ROOT_DIR      - directory where DirectX was installed.
 #
-# SPDX-FileCopyrightText: 2016-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2016-2024 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
