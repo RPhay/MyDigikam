@@ -66,16 +66,19 @@ Q_SIGNALS:
      */
     void signalDone();
 
-public:
-
-    QElapsedTimer m_timer;
-
 public Q_SLOTS:
 
     /**
      * Call this method to cancel job.
      */
     void cancel();
+
+public:
+
+    /**
+     * Timer to determine the running time of the job.
+     */
+    QElapsedTimer m_timer;
 
 protected:
 

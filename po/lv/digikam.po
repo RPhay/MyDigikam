@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-25 00:39+0000\n"
+"POT-Creation-Date: 2023-12-26 00:39+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1341,27 +1341,27 @@ msgstr "<i>nav pieejams</i>"
 msgid "Initializing..."
 msgstr "Inicializē..."
 
-#: core/app/main/digikamapp.cpp:133 core/showfoto/main/showfoto.cpp:95
+#: core/app/main/digikamapp.cpp:144 core/showfoto/main/showfoto.cpp:106
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Ielādē spraudņus..."
 
-#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:169 core/showfoto/main/showfoto.cpp:88
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Pārbauda ICC repozitoriju..."
 
-#: core/app/main/digikamapp.cpp:170
+#: core/app/main/digikamapp.cpp:181
 #, fuzzy, kde-format
 msgid "Clean up Database..."
 msgstr "Lasa datubāzi"
 
-#: core/app/main/digikamapp.cpp:192
+#: core/app/main/digikamapp.cpp:203
 #, kde-format
 msgid "Loading albums..."
 msgstr "Ielādē albumus..."
 
-#: core/app/main/digikamapp.cpp:338
+#: core/app/main/digikamapp.cpp:349
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1372,7 +1372,7 @@ msgstr ""
 "izvēlieties \"Jā\", pretējā gadījumā izvēlieties \"Nē\", un \"Krāsu "
 "pārvaldība\" tiks atslēgta, līdz jūs atrisināsiet šo problēmu.</p>"
 
-#: core/app/main/digikamapp.cpp:665 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:676 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1380,7 +1380,7 @@ msgstr[0] "Nekas nav atlasīts (no %1)"
 msgstr[1] "Nekas nav atlasīts (no %1)"
 msgstr[2] "Nekas nav atlasīts (no %1)"
 
-#: core/app/main/digikamapp.cpp:671
+#: core/app/main/digikamapp.cpp:682
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1388,7 +1388,7 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:676
+#: core/app/main/digikamapp.cpp:687
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1396,7 +1396,7 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:687
+#: core/app/main/digikamapp.cpp:698
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1406,7 +1406,7 @@ msgstr[0] "izvēlēts %1/%2"
 msgstr[1] "izvēlēts %1/%2"
 msgstr[2] "izvēlēts %1/%2"
 
-#: core/app/main/digikamapp.cpp:700
+#: core/app/main/digikamapp.cpp:711
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1416,7 +1416,7 @@ msgstr[0] "izvēlēts %1/%2"
 msgstr[1] "izvēlēts %1/%2"
 msgstr[2] "izvēlēts %1/%2"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:719
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1424,7 +1424,7 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:716
+#: core/app/main/digikamapp.cpp:727
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1434,7 +1434,7 @@ msgstr[0] "izvēlēts %1/%2"
 msgstr[1] "izvēlēts %1/%2"
 msgstr[2] "izvēlēts %1/%2"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:736
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1442,22 +1442,22 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:756
+#: core/app/main/digikamapp.cpp:767
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1. no %2)"
 
-#: core/app/main/digikamapp.cpp:770
+#: core/app/main/digikamapp.cpp:781
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1. no %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:774
+#: core/app/main/digikamapp.cpp:785
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:785
+#: core/app/main/digikamapp.cpp:796
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1467,7 +1467,7 @@ msgstr[0] "%1 vienība"
 msgstr[1] "%1 vienības"
 msgstr[2] "%1 vienību"
 
-#: core/app/main/digikamapp.cpp:836
+#: core/app/main/digikamapp.cpp:847
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1475,7 +1475,7 @@ msgstr[0] "Ierakstīt metadatus attēlā"
 msgstr[1] "Ierakstīt metadatus atlasītajos attēlos"
 msgstr[2] "Ierakstīt metadatus atlasītajos attēlos"
 
-#: core/app/main/digikamapp.cpp:838
+#: core/app/main/digikamapp.cpp:849
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2999,7 +2999,7 @@ msgstr "Mani albumi"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:106
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3873,7 +3873,7 @@ msgstr "Faila īpašības"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
@@ -3939,7 +3939,7 @@ msgstr "Polāras koordinātas"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
 #, fuzzy, kde-format
 msgid "Altitude"
 msgstr "<b>Augstums</b>:"
@@ -4203,7 +4203,7 @@ msgstr "Laika vienība:"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:264
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Thumbnail"
 msgstr "Sīktēls"
@@ -8861,6 +8861,7 @@ msgstr "Izmantot krāsu pārvaldību drukāšanai"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
@@ -11196,31 +11197,31 @@ msgid "Edit Geolocation"
 msgstr "Rediģēt ģeolokāciju"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
 #, kde-format
 msgid "Latitude"
 msgstr "Platums"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
 #, kde-format
 msgid "Longitude"
 msgstr "Garums"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
 #, kde-format
 msgid "Speed"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
 #, kde-format
 msgid "# satellites"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
 #, kde-format
 msgid "Fix type"
 msgstr ""
@@ -11236,7 +11237,7 @@ msgid "3-d"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
 #, kde-format
 msgid "DOP"
 msgstr ""
@@ -15449,7 +15450,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
 #, kde-format
 msgid "Status"
 msgstr "Statuss"
@@ -27950,7 +27951,7 @@ msgid ""
 "(Source Image)"
 msgstr "&Kārtot attēlus"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:192
+#: core/libs/database/item/scanner/itemscanner.cpp:194
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -35899,7 +35900,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Krāsu iezīme"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1385
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1389
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -36793,7 +36794,7 @@ msgstr "Īpašības"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:431
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
 msgstr "Metadati"
@@ -42154,7 +42155,7 @@ msgid "Mod.: %1"
 msgstr "mainīts: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:418
-#: core/showfoto/main/showfoto.cpp:245
+#: core/showfoto/main/showfoto.cpp:256
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
 #: core/utilities/import/items/itemviewimportdelegate.cpp:358
 #, kde-format
@@ -42207,7 +42208,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:68
 #, fuzzy, kde-format
 #| msgid "(c) 2001-2022, digiKam developers team"
-msgid "(c) 2001-2023, digiKam developers team"
+msgid "(c) 2001-2024, digiKam developers team"
 msgstr "(c) 2001-2022, digiKam izstrādātāju komanda"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
@@ -42579,7 +42580,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:161
 #, kde-format
 msgid "Color Management"
 msgstr "Krāsu pārvaldība"
@@ -49931,12 +49932,12 @@ msgid ""
 "experience with Showfoto.</p>"
 msgstr ""
 
-#: core/showfoto/main/showfoto.cpp:86
+#: core/showfoto/main/showfoto.cpp:97
 #, kde-format
 msgid "Loading themes..."
 msgstr "Ielādē rīkus..."
 
-#: core/showfoto/main/showfoto.cpp:204
+#: core/showfoto/main/showfoto.cpp:215
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -49948,13 +49949,13 @@ msgstr ""
 "tiks atslēgta iespēja \"Krāsu pārvaldība\", līdz jūs atrisināsiet šo "
 "problēmu</p>"
 
-#: core/showfoto/main/showfoto.cpp:244
+#: core/showfoto/main/showfoto.cpp:255
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Nezināms"
 
-#: core/showfoto/main/showfoto.cpp:269
+#: core/showfoto/main/showfoto.cpp:280
 #: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -50085,19 +50086,19 @@ msgstr "&Atkodēt"
 msgid "Effec&ts"
 msgstr "Efek&ti"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:194
+#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:194
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Konfigurēt"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:137
 #, fuzzy, kde-format
 msgid "Editor Window"
 msgstr "Ietilpināt &logā"
 
-#: core/showfoto/setup/showfotosetup.cpp:107
+#: core/showfoto/setup/showfotosetup.cpp:138
 #, fuzzy, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
@@ -50105,7 +50106,7 @@ msgstr ""
 "<qt>Attēlu redaktora iestatījumi<br/><i>Pielāgo attēlu redaktora uzvedību</"
 "i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:113
+#: core/showfoto/setup/showfotosetup.cpp:144
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -50114,12 +50115,12 @@ msgstr ""
 "<qt>Attēlos iegultās informācijas pārvaldība<br/><i>Konfigurēt atbilstību "
 "starp attēliem un metadatiem</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:149
 #, kde-format
 msgid "Tool Tip"
 msgstr "Izlecošie padomi"
 
-#: core/showfoto/setup/showfotosetup.cpp:119
+#: core/showfoto/setup/showfotosetup.cpp:150
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -50131,12 +50132,12 @@ msgstr ""
 "<qt>Sīktēlu izlecošo padomu iestatījumi<br/><i>Pielāgo padomos rādīto "
 "informāciju</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:155
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW dekodēšana"
 
-#: core/showfoto/setup/showfotosetup.cpp:125
+#: core/showfoto/setup/showfotosetup.cpp:156
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -50145,7 +50146,7 @@ msgstr ""
 "<qt>RAW fail atkodēšanas iestatījumi<br/><i>Pielāgo noklusētos RAW "
 "atkodēšanas iestatījumus</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:131
+#: core/showfoto/setup/showfotosetup.cpp:162
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -50154,12 +50155,12 @@ msgstr ""
 "<qt>Krāsu pārvaldības iestatījumi<br/><i>Pielāgo krāsu pārvaldības "
 "iestatījumus</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:167
 #, kde-format
 msgid "Save Images"
 msgstr "Attēlu saglabāšana"
 
-#: core/showfoto/setup/showfotosetup.cpp:137
+#: core/showfoto/setup/showfotosetup.cpp:168
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
@@ -50168,26 +50169,45 @@ msgstr ""
 "<qt>Attēlu saglabāšanas iestatījumi<br/><i>Iestata noklusēto attēlu "
 "saglabāšanas konfigurāciju</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
+#, fuzzy, kde-format
+#| msgid "Geolocation"
+msgctxt "@title: settings section"
+msgid "Geolocation"
+msgstr "Ģeolokācija"
+
+#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
+#| "qt>"
+msgctxt "@title"
+msgid ""
+"Geolocation Settings\n"
+"Customize view to geolocalize items"
+msgstr ""
+"<qt>Albumu skata iestatījumi<br/><i>Pielāgo albumu skata izskatu</i></qt>"
+
+#: core/showfoto/setup/showfotosetup.cpp:182
 #, kde-format
 msgid "Plugins"
 msgstr "Spraudņi"
 
-#: core/showfoto/setup/showfotosetup.cpp:143
+#: core/showfoto/setup/showfotosetup.cpp:183
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:188
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Dažādi"
 
-#: core/showfoto/setup/showfotosetup.cpp:149
+#: core/showfoto/setup/showfotosetup.cpp:189
 #, fuzzy, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -52060,7 +52080,7 @@ msgid "Tilt"
 msgstr "Flīzes"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
 #, fuzzy, kde-format
 msgid "Accuracy"
 msgstr "Precīza"
@@ -53911,64 +53931,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "Punkti"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:414
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:416
 #, kde-format
 msgid "Not available"
 msgstr "Nav pieejams"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:453
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:455
 #, kde-format
 msgid "DOP: %1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:460
 #, kde-format
 msgid "Fix: %1d"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:465
 #, kde-format
 msgid "#Sat: %1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:506
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:508
 #, kde-format
 msgid "%1d"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:530
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:532
 #, kde-format
 msgid "Modified"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
 #, kde-format
 msgid "Date and time"
 msgstr "Datums un laiks"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:843
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:845
 #, kde-format
 msgid "Failed to open file."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:917
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:927
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:929
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:964
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:972
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:996
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1006
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1008
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr ""
@@ -57321,18 +57341,28 @@ msgid ""
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:70
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:80
 #, fuzzy, kde-format
 #| msgid "Marble widget"
 msgid "Marble View"
 msgstr "Marble logdaļa"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:88
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:98
 #, fuzzy, kde-format
 #| msgctxt "imageplugins shortcuts"
 #| msgid "Image Plugins"
 msgid "Marble Plugins"
 msgstr "Attēlu spraudņi"
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:68
+#, kde-format
+msgid "About Plugin %1"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:72
+#, kde-format
+msgid "<p>Version: %1</p><p>Description: %2</p>"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
@@ -59273,7 +59303,7 @@ msgstr "Neizdevās pārslēgt slēgu failam \"%1\"."
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1533
+#: core/utilities/import/backend/gpcamera.cpp:1537
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -59284,7 +59314,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1540
+#: core/utilities/import/backend/gpcamera.cpp:1544
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -59304,23 +59334,23 @@ msgstr ""
 "Dzēst mapes: \"%6\"\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1546
-#: core/utilities/import/backend/gpcamera.cpp:1547
-#: core/utilities/import/backend/gpcamera.cpp:1548
-#: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
+#: core/utilities/import/backend/gpcamera.cpp:1552
+#: core/utilities/import/backend/gpcamera.cpp:1553
+#: core/utilities/import/backend/gpcamera.cpp:1554
+#: core/utilities/import/backend/gpcamera.cpp:1555
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "jā"
 
-#: core/utilities/import/backend/gpcamera.cpp:1546
-#: core/utilities/import/backend/gpcamera.cpp:1547
-#: core/utilities/import/backend/gpcamera.cpp:1548
-#: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
+#: core/utilities/import/backend/gpcamera.cpp:1552
+#: core/utilities/import/backend/gpcamera.cpp:1553
+#: core/utilities/import/backend/gpcamera.cpp:1554
+#: core/utilities/import/backend/gpcamera.cpp:1555
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"
@@ -66355,25 +66385,6 @@ msgid ""
 msgstr ""
 "<qt>Gaismas galda iestatījumi<br/><i>Pielāgo attēlu salīdzināšanas rīku</i></"
 "qt>"
-
-#: core/utilities/setup/setup.cpp:257
-#, fuzzy, kde-format
-#| msgid "Geolocation"
-msgctxt "@title: settings section"
-msgid "Geolocation"
-msgstr "Ģeolokācija"
-
-#: core/utilities/setup/setup.cpp:258
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
-#| "qt>"
-msgctxt "@title"
-msgid ""
-"Geolocation Settings\n"
-"Customize view to geolocalize items"
-msgstr ""
-"<qt>Albumu skata iestatījumi<br/><i>Pielāgo albumu skata izskatu</i></qt>"
 
 #: core/utilities/setup/setup.cpp:264
 #, fuzzy, kde-format

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-25 00:39+0000\n"
+"POT-Creation-Date: 2023-12-26 00:39+0000\n"
 "PO-Revision-Date: 2023-12-22 20:56+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1328,27 +1328,27 @@ msgstr "<i>Двоични данни</i>"
 msgid "Initializing..."
 msgstr "Стартиране..."
 
-#: core/app/main/digikamapp.cpp:133 core/showfoto/main/showfoto.cpp:95
+#: core/app/main/digikamapp.cpp:144 core/showfoto/main/showfoto.cpp:106
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Зареждане на приставки..."
 
-#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:169 core/showfoto/main/showfoto.cpp:88
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Проверка на ICC хранилището..."
 
-#: core/app/main/digikamapp.cpp:170
+#: core/app/main/digikamapp.cpp:181
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Почистване на базата данни..."
 
-#: core/app/main/digikamapp.cpp:192
+#: core/app/main/digikamapp.cpp:203
 #, kde-format
 msgid "Loading albums..."
 msgstr "Зареждане на албуми..."
 
-#: core/app/main/digikamapp.cpp:338
+#: core/app/main/digikamapp.cpp:349
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1360,92 +1360,92 @@ msgstr ""
 "фунционалността \"Управление на цветовете\" ще бъде изключена докато този "
 "приблем бъде разрешен.</p>"
 
-#: core/app/main/digikamapp.cpp:665 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:676 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Няма избран елемент (%1 елемент)"
 msgstr[1] "Не е избран елемент (%1 елементи)"
 
-#: core/app/main/digikamapp.cpp:671
+#: core/app/main/digikamapp.cpp:682
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Няма избран елемент (%1 [%2] елемент)"
 msgstr[1] "Няма избран елемент (%1 [%2] елементи)"
 
-#: core/app/main/digikamapp.cpp:676
+#: core/app/main/digikamapp.cpp:687
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Няма избран елемент (%1 елемент. С групирани елементи: %2)"
 msgstr[1] "Няма избран елемент (%1 елементи. С групирани елементи: %2)"
 
-#: core/app/main/digikamapp.cpp:687
+#: core/app/main/digikamapp.cpp:698
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 избран елемент (%3/%4)"
 msgstr[1] "%1/%2 избрани елемента (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:700
+#: core/app/main/digikamapp.cpp:711
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] избран елемент (%4/%5)"
 msgstr[1] "%1/%2 [%3] избрани елемента (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:719
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "Избран е 1/%2 елемент. Общо с групираните елементи: %3"
 msgstr[1] "%1/%2 избрани елементи. Общо с групираните елементи: %3"
 
-#: core/app/main/digikamapp.cpp:716
+#: core/app/main/digikamapp.cpp:727
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] избран елемент (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] избрани елемента (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:736
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 избран елемент. С групирани елементи: %3/%4"
 msgstr[1] "%1/%2 избрани елементи. С групирани елементи: %3/%4"
 
-#: core/app/main/digikamapp.cpp:756
+#: core/app/main/digikamapp.cpp:767
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 от %2)"
 
-#: core/app/main/digikamapp.cpp:770
+#: core/app/main/digikamapp.cpp:781
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 от %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:774
+#: core/app/main/digikamapp.cpp:785
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 от %2. Общо с групираните елементи: %3)"
 
-#: core/app/main/digikamapp.cpp:785
+#: core/app/main/digikamapp.cpp:796
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 скрит елемент"
 msgstr[1] "%1 скрити елемента"
 
-#: core/app/main/digikamapp.cpp:836
+#: core/app/main/digikamapp.cpp:847
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Запис на метаданните във файл"
 msgstr[1] "Запис на метаданните в избраните файлове"
 
-#: core/app/main/digikamapp.cpp:838
+#: core/app/main/digikamapp.cpp:849
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2959,7 +2959,7 @@ msgstr "Няма албум с етикети"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:106
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3899,7 +3899,7 @@ msgstr "Свойства за файла"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
@@ -3965,7 +3965,7 @@ msgstr "Координати"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
 #, kde-format
 msgid "Altitude"
 msgstr "Височина"
@@ -4221,7 +4221,7 @@ msgstr "Единица"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:264
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Thumbnail"
 msgstr "Миниатюра"
@@ -9082,6 +9082,7 @@ msgstr "Използване на управление на цветовете �
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
@@ -11522,31 +11523,31 @@ msgid "Edit Geolocation"
 msgstr "Редактиране на геолокацията"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
 #, kde-format
 msgid "Latitude"
 msgstr "Географска ширина"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
 #, kde-format
 msgid "Longitude"
 msgstr "Географска дължина"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
 #, kde-format
 msgid "Speed"
 msgstr "Скорост"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
 #, kde-format
 msgid "# satellites"
 msgstr "# сателити"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
 #, kde-format
 msgid "Fix type"
 msgstr "Вид на корекцията"
@@ -11562,7 +11563,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -15925,7 +15926,7 @@ msgstr "Актуализирано клеймо за време"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
 #, kde-format
 msgid "Status"
 msgstr "Състояние"
@@ -28679,7 +28680,7 @@ msgstr ""
 "%1\n"
 "(Изображение източник)"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:192
+#: core/libs/database/item/scanner/itemscanner.cpp:194
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -36719,7 +36720,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Цвят на етикет"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1385
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1389
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -37628,7 +37629,7 @@ msgstr "Настройки"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:431
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
 msgstr "Метаданни"
@@ -43060,7 +43061,7 @@ msgid "Mod.: %1"
 msgstr "Мод.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:418
-#: core/showfoto/main/showfoto.cpp:245
+#: core/showfoto/main/showfoto.cpp:256
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
 #: core/utilities/import/items/itemviewimportdelegate.cpp:358
 #, kde-format
@@ -43112,8 +43113,9 @@ msgid "A KDE Family Project"
 msgstr "Проект на семейството на KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, kde-format
-msgid "(c) 2001-2023, digiKam developers team"
+#, fuzzy, kde-format
+#| msgid "(c) 2001-2023, digiKam developers team"
+msgid "(c) 2001-2024, digiKam developers team"
 msgstr "(c) 2001-2023, digiKam developers team"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
@@ -43500,7 +43502,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:161
 #, kde-format
 msgid "Color Management"
 msgstr "Управление на цветовете"
@@ -49871,12 +49873,12 @@ msgstr ""
 "p><p>Моля, инсталирайте 64-битовата версия на Showfoto, за да получите по-"
 "добро изживяване.</p>"
 
-#: core/showfoto/main/showfoto.cpp:86
+#: core/showfoto/main/showfoto.cpp:97
 #, kde-format
 msgid "Loading themes..."
 msgstr "Зареждане на изгледи..."
 
-#: core/showfoto/main/showfoto.cpp:204
+#: core/showfoto/main/showfoto.cpp:215
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -49888,13 +49890,13 @@ msgstr ""
 "случай функцията \"Управление на цветовете\" ще бъде деактивирана, докато не "
 "разрешите този проблем</p>"
 
-#: core/showfoto/main/showfoto.cpp:244
+#: core/showfoto/main/showfoto.cpp:255
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/showfoto/main/showfoto.cpp:269
+#: core/showfoto/main/showfoto.cpp:280
 #: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -50023,18 +50025,18 @@ msgstr "&Декориране"
 msgid "Effec&ts"
 msgstr "Е&фекти"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:194
+#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:194
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Настройки"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:137
 #, kde-format
 msgid "Editor Window"
 msgstr "Прозорец на редактора"
 
-#: core/showfoto/setup/showfotosetup.cpp:107
+#: core/showfoto/setup/showfotosetup.cpp:138
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
@@ -50042,7 +50044,7 @@ msgstr ""
 "<qt>Настройки на прозорците на редактора<br/><i>Персонализирайте поведението "
 "на прозореца на редактора</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:113
+#: core/showfoto/setup/showfotosetup.cpp:144
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -50051,12 +50053,12 @@ msgstr ""
 "<qt>Вградено управление на информацията за изображението<br/><i>Настройване "
 "на връзки между изображения и метаданни</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:149
 #, kde-format
 msgid "Tool Tip"
 msgstr "Подсказка"
 
-#: core/showfoto/setup/showfotosetup.cpp:119
+#: core/showfoto/setup/showfotosetup.cpp:150
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
@@ -50065,12 +50067,12 @@ msgstr ""
 "<qt>Настройки на подсказки на елементи в изгледа на миниатюри и папки<br/"
 "><i>Персонализиране на информацията в подсказките за инструменти</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:155
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW декодиране"
 
-#: core/showfoto/setup/showfotosetup.cpp:125
+#: core/showfoto/setup/showfotosetup.cpp:156
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -50079,7 +50081,7 @@ msgstr ""
 "<qt>Настройки за декодиране на RAW файлове<br/><i>Персонализиране на "
 "настройките по подразбиране за декодиране на RAW файлове</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:131
+#: core/showfoto/setup/showfotosetup.cpp:162
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -50088,12 +50090,12 @@ msgstr ""
 "<qt>Настройки за управление на цветовете<br/><i>Персонализиране на "
 "настройките за управление на цветовете</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:167
 #, kde-format
 msgid "Save Images"
 msgstr "Запазване на снимките"
 
-#: core/showfoto/setup/showfotosetup.cpp:137
+#: core/showfoto/setup/showfotosetup.cpp:168
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
@@ -50102,12 +50104,33 @@ msgstr ""
 "<qt>Настройки за запазване на файлове с изображения<br/><i>Задайте "
 "конфигурация по подразбиране, използвана за запазване на изображения</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
+#, fuzzy, kde-format
+#| msgid "Geolocation"
+msgctxt "@title: settings section"
+msgid "Geolocation"
+msgstr "Местоположение"
+
+#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid ""
+#| "Application Views Settings\n"
+#| "Customize the look of the views"
+msgctxt "@title"
+msgid ""
+"Geolocation Settings\n"
+"Customize view to geolocalize items"
+msgstr ""
+"Настройки на изгледите на приложението\n"
+"Персонализиране на външния вид на изгледите"
+
+#: core/showfoto/setup/showfotosetup.cpp:182
 #, kde-format
 msgid "Plugins"
 msgstr "Приставки"
 
-#: core/showfoto/setup/showfotosetup.cpp:143
+#: core/showfoto/setup/showfotosetup.cpp:183
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -50116,13 +50139,13 @@ msgstr ""
 "<qt>Настройки за пристваки на основния интерфейс<br/><i>Задайте кои  "
 "приставки да  бъдат достъпни от приложението</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:188
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Разни"
 
-#: core/showfoto/setup/showfotosetup.cpp:149
+#: core/showfoto/setup/showfotosetup.cpp:189
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -52002,7 +52025,7 @@ msgid "Tilt"
 msgstr "Наклон"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
 #, kde-format
 msgid "Accuracy"
 msgstr "Точност"
@@ -53936,64 +53959,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#точки"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:414
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:416
 #, kde-format
 msgid "Not available"
 msgstr "Не е налично"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:453
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:455
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:460
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Поправка: %1D"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:465
 #, kde-format
 msgid "#Sat: %1"
 msgstr "#Sat: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:506
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:508
 #, kde-format
 msgid "%1d"
 msgstr "%1 д"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:530
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:532
 #, kde-format
 msgid "Modified"
 msgstr "Последна промяна"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
 #, kde-format
 msgid "Date and time"
 msgstr "Дата и час"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:843
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:845
 #, kde-format
 msgid "Failed to open file."
 msgstr "Неуспешно отваряне на файла."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:917
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Не успя да се добави GPS информация към изображението."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:927
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:929
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Неуспешно премахване на GPS информация от изображението"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:964
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:972
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:996
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Грешка при запазване на таговете във файла."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1006
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1008
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Невъзможно е да се запазят промените във файла"
@@ -57248,18 +57271,30 @@ msgstr ""
 "показва земята, както се появява от сравнително кратко разстояние над "
 "повърхността. Приложения: използва се за виртуални глобуси. </p> "
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:70
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@item: texture type"
 #| msgid "Marble 2"
 msgid "Marble View"
 msgstr "Мрамор 2"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:88
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:98
 #, fuzzy, kde-format
 #| msgid "Plugins"
 msgid "Marble Plugins"
 msgstr "Приставки"
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:68
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "About %1 Plugin"
+msgid "About Plugin %1"
+msgstr "Относно приставка %1"
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:72
+#, kde-format
+msgid "<p>Version: %1</p><p>Description: %2</p>"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
@@ -59241,7 +59276,7 @@ msgstr ""
 "Неуспешно превключване на файл за заключване <b>%1</b>. Искате ли да "
 "продължите?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1533
+#: core/utilities/import/backend/gpcamera.cpp:1537
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -59257,7 +59292,7 @@ msgstr ""
 "Път: \"%4\"\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1540
+#: core/utilities/import/backend/gpcamera.cpp:1544
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -59277,23 +59312,23 @@ msgstr ""
 "Изтриване на директории: \"%6 \"\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1546
-#: core/utilities/import/backend/gpcamera.cpp:1547
-#: core/utilities/import/backend/gpcamera.cpp:1548
-#: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
+#: core/utilities/import/backend/gpcamera.cpp:1552
+#: core/utilities/import/backend/gpcamera.cpp:1553
+#: core/utilities/import/backend/gpcamera.cpp:1554
+#: core/utilities/import/backend/gpcamera.cpp:1555
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "да"
 
-#: core/utilities/import/backend/gpcamera.cpp:1546
-#: core/utilities/import/backend/gpcamera.cpp:1547
-#: core/utilities/import/backend/gpcamera.cpp:1548
-#: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
+#: core/utilities/import/backend/gpcamera.cpp:1552
+#: core/utilities/import/backend/gpcamera.cpp:1553
+#: core/utilities/import/backend/gpcamera.cpp:1554
+#: core/utilities/import/backend/gpcamera.cpp:1555
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"
@@ -66731,27 +66766,6 @@ msgid ""
 msgstr ""
 "Настройки на светлинната маса\n"
 "Персонализиране на инструмента за сравняване на изображения"
-
-#: core/utilities/setup/setup.cpp:257
-#, fuzzy, kde-format
-#| msgid "Geolocation"
-msgctxt "@title: settings section"
-msgid "Geolocation"
-msgstr "Местоположение"
-
-#: core/utilities/setup/setup.cpp:258
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Application Views Settings\n"
-#| "Customize the look of the views"
-msgctxt "@title"
-msgid ""
-"Geolocation Settings\n"
-"Customize view to geolocalize items"
-msgstr ""
-"Настройки на изгледите на приложението\n"
-"Персонализиране на външния вид на изгледите"
 
 #: core/utilities/setup/setup.cpp:264
 #, kde-format

@@ -131,8 +131,8 @@ void ActionThreadBase::slotJobFinished()
         return;
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "One job is done" << job
-                                 << "time:" << job->m_timer.elapsed();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "One job is done " << job
+                                 << " time:" << job->m_timer.elapsed();
 
     QMutexLocker lock(&d->mutex);
 
@@ -216,8 +216,6 @@ void ActionThreadBase::run()
             {
                 ActionJob* const job = it.key();
                 int priority         = it.value();
-
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Action Thread run" << job;
 
                 connect(job, SIGNAL(signalDone()),
                         this, SLOT(slotJobFinished()));

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-25 00:39+0000\n"
+"POT-Creation-Date: 2023-12-26 00:39+0000\n"
 "PO-Revision-Date: 2023-12-17 19:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1379,30 +1379,30 @@ msgstr "<i>二進位資料</i>"
 msgid "Initializing..."
 msgstr "初始化中..."
 
-#: core/app/main/digikamapp.cpp:133 core/showfoto/main/showfoto.cpp:95
+#: core/app/main/digikamapp.cpp:144 core/showfoto/main/showfoto.cpp:106
 #, fuzzy, kde-format
 #| msgid "Loading..."
 msgid "Load Plugins..."
 msgstr "載入中..."
 
-#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:169 core/showfoto/main/showfoto.cpp:88
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "正在檢查 ICC 儲存庫..."
 
-#: core/app/main/digikamapp.cpp:170
+#: core/app/main/digikamapp.cpp:181
 #, fuzzy, kde-format
 #| msgid "Database..."
 msgid "Clean up Database..."
 msgstr "資料庫..."
 
-#: core/app/main/digikamapp.cpp:192
+#: core/app/main/digikamapp.cpp:203
 #, fuzzy, kde-format
 #| msgid "Parsing all albums"
 msgid "Loading albums..."
 msgstr "剖析所有相簿"
 
-#: core/app/main/digikamapp.cpp:338
+#: core/app/main/digikamapp.cpp:349
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1412,13 +1412,13 @@ msgstr ""
 "<p>此 ICC 描述檔資料夾似乎無效。</p><p>如果您想要再設定一次，在這裡點選"
 "「是」，反之請選「否」，而「色彩管理」功能會停用，直到您解決這個問題。</p>"
 
-#: core/app/main/digikamapp.cpp:665 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:676 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:671
+#: core/app/main/digikamapp.cpp:682
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1426,7 +1426,7 @@ msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:676
+#: core/app/main/digikamapp.cpp:687
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1434,7 +1434,7 @@ msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:687
+#: core/app/main/digikamapp.cpp:698
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1442,7 +1442,7 @@ msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%2/%1 個項目已選擇"
 
-#: core/app/main/digikamapp.cpp:700
+#: core/app/main/digikamapp.cpp:711
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1450,7 +1450,7 @@ msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%2/%1 個項目已選擇"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:719
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1458,7 +1458,7 @@ msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:716
+#: core/app/main/digikamapp.cpp:727
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1466,7 +1466,7 @@ msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%2/%1 個項目已選擇"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:736
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1474,29 +1474,29 @@ msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:756
+#: core/app/main/digikamapp.cpp:767
 #, kde-format
 msgid " (%1 of %2)"
 msgstr "(第 %1 張，共 %2 張)"
 
-#: core/app/main/digikamapp.cpp:770
+#: core/app/main/digikamapp.cpp:781
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr "(第 %1 張，共 %2 張)"
 
-#: core/app/main/digikamapp.cpp:774
+#: core/app/main/digikamapp.cpp:785
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:785
+#: core/app/main/digikamapp.cpp:796
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 個隱藏項目"
 
-#: core/app/main/digikamapp.cpp:836
+#: core/app/main/digikamapp.cpp:847
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1504,7 +1504,7 @@ msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "將中繼資料寫入選擇的影像"
 
-#: core/app/main/digikamapp.cpp:838
+#: core/app/main/digikamapp.cpp:849
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"
@@ -3114,7 +3114,7 @@ msgstr "沒有標籤的相簿"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:106
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3992,7 +3992,7 @@ msgstr "檔案屬性"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
@@ -4059,7 +4059,7 @@ msgstr "座標"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
 #, kde-format
 msgid "Altitude"
 msgstr "高度"
@@ -4332,7 +4332,7 @@ msgstr "單位"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:264
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Thumbnail"
 msgstr "縮圖"
@@ -9072,6 +9072,7 @@ msgstr "列印使用的色彩管理"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
@@ -11487,31 +11488,31 @@ msgid "Edit Geolocation"
 msgstr "地理位置"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
 #, kde-format
 msgid "Latitude"
 msgstr "緯度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
 #, kde-format
 msgid "Longitude"
 msgstr "經度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
 #, kde-format
 msgid "Speed"
 msgstr "速度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
 #, kde-format
 msgid "# satellites"
 msgstr "衛星數"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
 #, kde-format
 msgid "Fix type"
 msgstr "固定型態"
@@ -11527,7 +11528,7 @@ msgid "3-d"
 msgstr "三維"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -16101,7 +16102,7 @@ msgstr "時間"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
 #, kde-format
 msgid "Status"
 msgstr "狀態"
@@ -29079,7 +29080,7 @@ msgstr ""
 "%1\n"
 "（來源影像）"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:192
+#: core/libs/database/item/scanner/itemscanner.cpp:194
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -37257,7 +37258,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "色彩旗標"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1385
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1389
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -38131,7 +38132,7 @@ msgstr "屬性"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:431
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
 msgstr "中繼資料"
@@ -43575,7 +43576,7 @@ msgid "Mod.: %1"
 msgstr "例：%1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:418
-#: core/showfoto/main/showfoto.cpp:245
+#: core/showfoto/main/showfoto.cpp:256
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
 #: core/utilities/import/items/itemviewimportdelegate.cpp:358
 #, kde-format
@@ -43633,7 +43634,7 @@ msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
 #, fuzzy, kde-format
-msgid "(c) 2001-2023, digiKam developers team"
+msgid "(c) 2001-2024, digiKam developers team"
 msgstr "(c) 2002-2014，digiKam 開發團隊"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
@@ -44010,7 +44011,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:161
 #, kde-format
 msgid "Color Management"
 msgstr "色彩管理"
@@ -51490,12 +51491,12 @@ msgid ""
 "experience with Showfoto.</p>"
 msgstr ""
 
-#: core/showfoto/main/showfoto.cpp:86
+#: core/showfoto/main/showfoto.cpp:97
 #, kde-format
 msgid "Loading themes..."
 msgstr "正在載入佈景主題..."
 
-#: core/showfoto/main/showfoto.cpp:204
+#: core/showfoto/main/showfoto.cpp:215
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -51505,13 +51506,13 @@ msgstr ""
 "<p>此 ICC 描述擋路徑似乎無效。</p><p>如果您想現在設定，點選「是」，不然請選"
 "「否」。這種情況下會停用「色彩管理」的功能直到您解決這個問題</p>"
 
-#: core/showfoto/main/showfoto.cpp:244
+#: core/showfoto/main/showfoto.cpp:255
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/showfoto/main/showfoto.cpp:269
+#: core/showfoto/main/showfoto.cpp:280
 #: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -51645,19 +51646,19 @@ msgstr "裝飾(&D)"
 msgid "Effec&ts"
 msgstr "效果"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:194
+#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:194
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "組態設定"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:137
 #, kde-format
 msgid "Editor Window"
 msgstr "編輯視窗"
 
-#: core/showfoto/setup/showfotosetup.cpp:107
+#: core/showfoto/setup/showfotosetup.cpp:138
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Window Settings<br/><i>Customize the image editor "
@@ -51666,19 +51667,19 @@ msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
 msgstr "<qt>影像編輯器視窗設定值<br/><i>自訂影像編輯器視窗</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:113
+#: core/showfoto/setup/showfotosetup.cpp:144
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr "<qt>內嵌的影像資訊管理<br/><i>自訂影像和中繼資料之間的關聯</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:149
 #, kde-format
 msgid "Tool Tip"
 msgstr "工具提示"
 
-#: core/showfoto/setup/showfotosetup.cpp:119
+#: core/showfoto/setup/showfotosetup.cpp:150
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -51688,56 +51689,77 @@ msgid ""
 "information in tool-tips</i></qt>"
 msgstr "<qt>縮圖列項目工具提示設定<br/><i>自訂在工具提示中的資訊</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:155
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW 解碼"
 
-#: core/showfoto/setup/showfotosetup.cpp:125
+#: core/showfoto/setup/showfotosetup.cpp:156
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr "<qt>RAW 檔解碼設定<br/><i>自訂預設的 RAW 解碼設定值</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:131
+#: core/showfoto/setup/showfotosetup.cpp:162
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
 "settings</i></qt>"
 msgstr "<qt>色彩管理設定<br/><i>自訂色彩管理設定值</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:167
 #, kde-format
 msgid "Save Images"
 msgstr "儲存影像"
 
-#: core/showfoto/setup/showfotosetup.cpp:137
+#: core/showfoto/setup/showfotosetup.cpp:168
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr "<qt>儲存影像檔設定值<br/><i>設定影像儲存的預設組態設定</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
+#, fuzzy, kde-format
+#| msgid "Geolocation"
+msgctxt "@title: settings section"
+msgid "Geolocation"
+msgstr "地理位置"
+
+#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid ""
+#| "Application Views Settings\n"
+#| "Customize the look of the views"
+msgctxt "@title"
+msgid ""
+"Geolocation Settings\n"
+"Customize view to geolocalize items"
+msgstr ""
+"應用程式檢視設定值\n"
+"自訂各個檢視的外觀"
+
+#: core/showfoto/setup/showfotosetup.cpp:182
 #, kde-format
 msgid "Plugins"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:143
+#: core/showfoto/setup/showfotosetup.cpp:183
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:188
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: core/showfoto/setup/showfotosetup.cpp:149
+#: core/showfoto/setup/showfotosetup.cpp:189
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -53625,7 +53647,7 @@ msgid "Tilt"
 msgstr "傾斜"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
 #, kde-format
 msgid "Accuracy"
 msgstr "精準度"
@@ -55549,64 +55571,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#點"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:414
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:416
 #, kde-format
 msgid "Not available"
 msgstr "無法使用"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:453
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:455
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP：%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:460
 #, kde-format
 msgid "Fix: %1d"
 msgstr "固定：%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:465
 #, kde-format
 msgid "#Sat: %1"
 msgstr "衛星數：%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:506
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:508
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:530
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:532
 #, kde-format
 msgid "Modified"
 msgstr "已變更"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
 #, kde-format
 msgid "Date and time"
 msgstr "日期和時間"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:843
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:845
 #, kde-format
 msgid "Failed to open file."
 msgstr "開啟檔案失敗。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:917
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "加入 GPS 資訊到影像中失敗。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:927
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:929
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "從影像中移除 GPS 資訊失敗。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:964
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:972
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:996
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "儲存標籤到檔案中失敗。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1006
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1008
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "無法儲存變更到檔案"
@@ -59031,17 +59053,27 @@ msgid ""
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:70
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:80
 #, fuzzy, kde-format
 #| msgid "Marble 2"
 msgid "Marble View"
 msgstr "大理石 2"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:88
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:98
 #, fuzzy, kde-format
 #| msgid "Loading..."
 msgid "Marble Plugins"
 msgstr "載入中..."
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:68
+#, kde-format
+msgid "About Plugin %1"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:72
+#, kde-format
+msgid "<p>Version: %1</p><p>Description: %2</p>"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
@@ -61010,7 +61042,7 @@ msgstr "切換檔案 <filename>%1</filename> 的鎖定失敗。"
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "切換檔案 <filename>%1</filename> 的鎖定失敗。您要繼續嗎？"
 
-#: core/utilities/import/backend/gpcamera.cpp:1533
+#: core/utilities/import/backend/gpcamera.cpp:1537
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -61021,7 +61053,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1540
+#: core/utilities/import/backend/gpcamera.cpp:1544
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -61041,24 +61073,24 @@ msgstr ""
 "刪除目錄：\"%6\"\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1546
-#: core/utilities/import/backend/gpcamera.cpp:1547
-#: core/utilities/import/backend/gpcamera.cpp:1548
-#: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
+#: core/utilities/import/backend/gpcamera.cpp:1552
+#: core/utilities/import/backend/gpcamera.cpp:1553
+#: core/utilities/import/backend/gpcamera.cpp:1554
+#: core/utilities/import/backend/gpcamera.cpp:1555
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "是"
 
-#: core/utilities/import/backend/gpcamera.cpp:1546
-#: core/utilities/import/backend/gpcamera.cpp:1547
-#: core/utilities/import/backend/gpcamera.cpp:1548
-#: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
+#: core/utilities/import/backend/gpcamera.cpp:1552
+#: core/utilities/import/backend/gpcamera.cpp:1553
+#: core/utilities/import/backend/gpcamera.cpp:1554
+#: core/utilities/import/backend/gpcamera.cpp:1555
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: gphoto backend feature"
@@ -68386,27 +68418,6 @@ msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
 msgstr "<qt>數位光桌設定值<br/><i>用於比較影像的自訂工具</i></qt>"
-
-#: core/utilities/setup/setup.cpp:257
-#, fuzzy, kde-format
-#| msgid "Geolocation"
-msgctxt "@title: settings section"
-msgid "Geolocation"
-msgstr "地理位置"
-
-#: core/utilities/setup/setup.cpp:258
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Application Views Settings\n"
-#| "Customize the look of the views"
-msgctxt "@title"
-msgid ""
-"Geolocation Settings\n"
-"Customize view to geolocalize items"
-msgstr ""
-"應用程式檢視設定值\n"
-"自訂各個檢視的外觀"
 
 #: core/utilities/setup/setup.cpp:264
 #, fuzzy, kde-format

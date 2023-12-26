@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-25 00:39+0000\n"
+"POT-Creation-Date: 2023-12-26 00:39+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1324,28 +1324,28 @@ msgstr "<i>उपलब्ध छैन</i>"
 msgid "Initializing..."
 msgstr "मुख्य दृश्य थालनी"
 
-#: core/app/main/digikamapp.cpp:133 core/showfoto/main/showfoto.cpp:95
+#: core/app/main/digikamapp.cpp:144 core/showfoto/main/showfoto.cpp:106
 #, fuzzy, kde-format
 msgid "Load Plugins..."
 msgstr "किपि प्लगइन"
 
-#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:169 core/showfoto/main/showfoto.cpp:88
 #, fuzzy, kde-format
 msgid "Checking ICC repository..."
 msgstr "ICC भण्डारण चेकिङ"
 
-#: core/app/main/digikamapp.cpp:170
+#: core/app/main/digikamapp.cpp:181
 #, fuzzy, kde-format
 msgid "Clean up Database..."
 msgstr "डाटाबेस पढाइ"
 
-#: core/app/main/digikamapp.cpp:192
+#: core/app/main/digikamapp.cpp:203
 #, fuzzy, kde-format
 #| msgid "Parsing all albums"
 msgid "Loading albums..."
 msgstr "सबै एल्बम पद वर्णन"
 
-#: core/app/main/digikamapp.cpp:338
+#: core/app/main/digikamapp.cpp:349
 #, fuzzy, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1356,92 +1356,92 @@ msgstr ""
 "भने, \"हो\" चयन गर्नुहोस्, अन्यथा \"होइन\" चयन गर्नुहोस् । यस्तो अवस्थामा, तपाईँले सो "
 "विषय समाधान नगरेसम्म \"रङ व्यवस्थापन\" सुविधा अक्षम गरिन्छ</p></qt>"
 
-#: core/app/main/digikamapp.cpp:665 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:676 core/app/views/stack/trashview.cpp:514
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "वस्तु चयन गरेको छैन"
 msgstr[1] "वस्तु चयन गरेको छैन"
 
-#: core/app/main/digikamapp.cpp:671
+#: core/app/main/digikamapp.cpp:682
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "वस्तु चयन गरेको छैन"
 msgstr[1] "वस्तु चयन गरेको छैन"
 
-#: core/app/main/digikamapp.cpp:676
+#: core/app/main/digikamapp.cpp:687
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "वस्तु चयन गरेको छैन"
 msgstr[1] "वस्तु चयन गरेको छैन"
 
-#: core/app/main/digikamapp.cpp:687
+#: core/app/main/digikamapp.cpp:698
 #, fuzzy, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1 वस्तु चयन गरेको छ"
 msgstr[1] "%1 वस्तु चयन गरेको छ"
 
-#: core/app/main/digikamapp.cpp:700
+#: core/app/main/digikamapp.cpp:711
 #, fuzzy, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1 वस्तु चयन गरेको छ"
 msgstr[1] "%1 वस्तु चयन गरेको छ"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:719
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "वस्तु चयन गरेको छैन"
 msgstr[1] "वस्तु चयन गरेको छैन"
 
-#: core/app/main/digikamapp.cpp:716
+#: core/app/main/digikamapp.cpp:727
 #, fuzzy, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1 वस्तु चयन गरेको छ"
 msgstr[1] "%1 वस्तु चयन गरेको छ"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:736
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "वस्तु चयन गरेको छैन"
 msgstr[1] "वस्तु चयन गरेको छैन"
 
-#: core/app/main/digikamapp.cpp:756
+#: core/app/main/digikamapp.cpp:767
 #, fuzzy, kde-format
 msgid " (%1 of %2)"
 msgstr " (%3 को %2)"
 
-#: core/app/main/digikamapp.cpp:770
+#: core/app/main/digikamapp.cpp:781
 #, fuzzy, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%3 को %2)"
 
-#: core/app/main/digikamapp.cpp:774
+#: core/app/main/digikamapp.cpp:785
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:785
+#: core/app/main/digikamapp.cpp:796
 #, fuzzy, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "१६ बिट"
 msgstr[1] "१६ बिट"
 
-#: core/app/main/digikamapp.cpp:836
+#: core/app/main/digikamapp.cpp:847
 #, fuzzy, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "प्रत्येक फाइलमा मेटाडेटा लेख्नुहोस्"
 msgstr[1] "प्रत्येक फाइलमा मेटाडेटा लेख्नुहोस्"
 
-#: core/app/main/digikamapp.cpp:838
+#: core/app/main/digikamapp.cpp:849
 #, fuzzy, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2931,7 +2931,7 @@ msgstr "मेरो एल्बम"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:106
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3788,7 +3788,7 @@ msgstr "फाइल गुण"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, fuzzy, kde-format
 msgid "Filename"
@@ -3854,7 +3854,7 @@ msgstr ""
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
 #, fuzzy, kde-format
 msgid "Altitude"
 msgstr "<b>प्वाल</b>:"
@@ -4112,7 +4112,7 @@ msgstr "फाइल साइज देखाउनुहोस्"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:264
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, fuzzy, kde-format
 msgid "Thumbnail"
 msgstr "थम्बनेल देखाउनुहोस्"
@@ -8631,6 +8631,7 @@ msgstr "मुद्रणका लागि रङ व्यवस्थाप
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
@@ -10932,31 +10933,31 @@ msgid "Edit Geolocation"
 msgstr "चयन"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
 #, fuzzy, kde-format
 msgid "Latitude"
 msgstr "<b>प्वाल</b>:"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
 #, fuzzy, kde-format
 msgid "Longitude"
 msgstr "<b>मोडल</b>:"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
 #, kde-format
 msgid "Speed"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
 #, kde-format
 msgid "# satellites"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
 #, kde-format
 msgid "Fix type"
 msgstr ""
@@ -10972,7 +10973,7 @@ msgid "3-d"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
 #, kde-format
 msgid "DOP"
 msgstr ""
@@ -15147,7 +15148,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
 #, fuzzy, kde-format
 msgid "Status"
 msgstr "तथ्याङ्क"
@@ -27256,7 +27257,7 @@ msgid ""
 "(Source Image)"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:192
+#: core/libs/database/item/scanner/itemscanner.cpp:194
 #, fuzzy, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -34899,7 +34900,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "रङ गहिराइ:"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1385
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1389
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -35780,7 +35781,7 @@ msgstr "फाइल गुण"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:431
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
 msgstr "मेटाडेटा"
@@ -41008,7 +41009,7 @@ msgid "Mod.: %1"
 msgstr "नमुना:"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:418
-#: core/showfoto/main/showfoto.cpp:245
+#: core/showfoto/main/showfoto.cpp:256
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
 #: core/utilities/import/items/itemviewimportdelegate.cpp:358
 #, fuzzy, kde-format
@@ -41059,7 +41060,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:68
 #, fuzzy, kde-format
 #| msgid "(c) 2002-2007, digiKam developers team"
-msgid "(c) 2001-2023, digiKam developers team"
+msgid "(c) 2001-2024, digiKam developers team"
 msgstr "(प्रतिलिपि अधिकार) २००२-२००७, डिजिक्याम विकासकर्ता समूह"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
@@ -41431,7 +41432,7 @@ msgid "Francisco J. Cruz"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:161
 #, kde-format
 msgid "Color Management"
 msgstr "रङ व्यवस्थापन"
@@ -47999,12 +48000,12 @@ msgid ""
 "experience with Showfoto.</p>"
 msgstr ""
 
-#: core/showfoto/main/showfoto.cpp:86
+#: core/showfoto/main/showfoto.cpp:97
 #, fuzzy, kde-format
 msgid "Loading themes..."
 msgstr "विषयवस्तु लोडिङ"
 
-#: core/showfoto/main/showfoto.cpp:204
+#: core/showfoto/main/showfoto.cpp:215
 #, fuzzy, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -48015,13 +48016,13 @@ msgstr ""
 "भने, \"हो\" चयन गर्नुहोस्, अन्यथा \"होइन\" चयन गर्नुहोस् । यस्तो अवस्थामा, तपाईँले सो "
 "विषय समाधान नगरेसम्म \"रङ व्यवस्थापन\" सुविधा अक्षम गरिन्छ</p></qt>"
 
-#: core/showfoto/main/showfoto.cpp:244
+#: core/showfoto/main/showfoto.cpp:255
 #, fuzzy, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: core/showfoto/main/showfoto.cpp:269
+#: core/showfoto/main/showfoto.cpp:280
 #: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, fuzzy, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -48152,92 +48153,106 @@ msgstr "घुमाउनुहोस्"
 msgid "Effec&ts"
 msgstr "रङ गहिराइ:"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:194
+#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:194
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "क्यामेरा कन्फिगरेसन"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:137
 #, kde-format
 msgid "Editor Window"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:107
+#: core/showfoto/setup/showfotosetup.cpp:138
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:113
+#: core/showfoto/setup/showfotosetup.cpp:144
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:149
 #, kde-format
 msgid "Tool Tip"
 msgstr "उपकरण टिप"
 
-#: core/showfoto/setup/showfotosetup.cpp:119
+#: core/showfoto/setup/showfotosetup.cpp:150
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:155
 #, fuzzy, kde-format
 msgid "RAW Decoding"
 msgstr "कच्चा असङ्केतन"
 
-#: core/showfoto/setup/showfotosetup.cpp:125
+#: core/showfoto/setup/showfotosetup.cpp:156
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:131
+#: core/showfoto/setup/showfotosetup.cpp:162
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
 "settings</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:167
 #, kde-format
 msgid "Save Images"
 msgstr "छवि बचत गर्नुहोस्"
 
-#: core/showfoto/setup/showfotosetup.cpp:137
+#: core/showfoto/setup/showfotosetup.cpp:168
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
+#, fuzzy, kde-format
+msgctxt "@title: settings section"
+msgid "Geolocation"
+msgstr "चयन"
+
+#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
+#, kde-format
+msgctxt "@title"
+msgid ""
+"Geolocation Settings\n"
+"Customize view to geolocalize items"
+msgstr ""
+
+#: core/showfoto/setup/showfotosetup.cpp:182
 #, fuzzy, kde-format
 msgid "Plugins"
 msgstr "किपि प्लगइन"
 
-#: core/showfoto/setup/showfotosetup.cpp:143
+#: core/showfoto/setup/showfotosetup.cpp:183
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:188
 #, fuzzy, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "विविध सेटिङ"
 
-#: core/showfoto/setup/showfotosetup.cpp:149
+#: core/showfoto/setup/showfotosetup.cpp:189
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -50038,7 +50053,7 @@ msgid "Tilt"
 msgstr "शीर्षक"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
 #, fuzzy, kde-format
 msgid "Accuracy"
 msgstr "स्वत: परिक्रमण पृष्ठ"
@@ -51792,64 +51807,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "%1 मुद्रण गर्नुहोस्"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:414
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:416
 #, fuzzy, kde-format
 msgid "Not available"
 msgstr "विकल्प उपलब्ध छैन"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:453
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:455
 #, kde-format
 msgid "DOP: %1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:460
 #, fuzzy, kde-format
 msgid "Fix: %1d"
 msgstr "साइज:"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:465
 #, fuzzy, kde-format
 msgid "#Sat: %1"
 msgstr "ट्याग: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:506
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:508
 #, kde-format
 msgid "%1d"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:530
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:532
 #, fuzzy, kde-format
 msgid "Modified"
 msgstr "परिमार्जन:"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
 #, fuzzy, kde-format
 msgid "Date and time"
 msgstr "टोन फिल्टर होइन"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:843
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:845
 #, fuzzy, kde-format
 msgid "Failed to open file."
 msgstr "\"%1\" छवि लोड गर्न असफल"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:917
 #, fuzzy, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "\"%1\" छवि लोड गर्न असफल"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:927
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:929
 #, fuzzy, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "क्यामेराबाट %1 फाइल पुन: प्राप्त गर्न असफल"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:964
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:972
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:996
 #, fuzzy, kde-format
 msgid "Failed to save tags to file."
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1006
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1008
 #, fuzzy, kde-format
 msgid "Unable to save changes to file"
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
@@ -55073,16 +55088,26 @@ msgid ""
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:70
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:80
 #, fuzzy, kde-format
 #| msgid "More"
 msgid "Marble View"
 msgstr "बढि"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:88
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:98
 #, fuzzy, kde-format
 msgid "Marble Plugins"
 msgstr "छवि प्लगइन"
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:68
+#, kde-format
+msgid "About Plugin %1"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:72
+#, kde-format
+msgid "<p>Version: %1</p><p>Description: %2</p>"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
@@ -57017,7 +57042,7 @@ msgstr ""
 "'%1' ट्यागमा %n सहायक ट्याग छ । यसलाई मेट्दा त्यसका सबै सहायक ट्यागहरू मेटिन्छ । तपाईँले "
 "जारी राख्न यकिन हुनुहुन्छ ?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1533
+#: core/utilities/import/backend/gpcamera.cpp:1537
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -57028,7 +57053,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1540
+#: core/utilities/import/backend/gpcamera.cpp:1544
 #, fuzzy, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -57052,24 +57077,24 @@ msgstr ""
 "डाइरेक्टरी मेट्न समर्थन: %9\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1546
-#: core/utilities/import/backend/gpcamera.cpp:1547
-#: core/utilities/import/backend/gpcamera.cpp:1548
-#: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
+#: core/utilities/import/backend/gpcamera.cpp:1552
+#: core/utilities/import/backend/gpcamera.cpp:1553
+#: core/utilities/import/backend/gpcamera.cpp:1554
+#: core/utilities/import/backend/gpcamera.cpp:1555
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "हो"
 
-#: core/utilities/import/backend/gpcamera.cpp:1546
-#: core/utilities/import/backend/gpcamera.cpp:1547
-#: core/utilities/import/backend/gpcamera.cpp:1548
-#: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
+#: core/utilities/import/backend/gpcamera.cpp:1552
+#: core/utilities/import/backend/gpcamera.cpp:1553
+#: core/utilities/import/backend/gpcamera.cpp:1554
+#: core/utilities/import/backend/gpcamera.cpp:1555
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: gphoto backend feature"
@@ -63900,20 +63925,6 @@ msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
-msgstr ""
-
-#: core/utilities/setup/setup.cpp:257
-#, fuzzy, kde-format
-msgctxt "@title: settings section"
-msgid "Geolocation"
-msgstr "चयन"
-
-#: core/utilities/setup/setup.cpp:258
-#, kde-format
-msgctxt "@title"
-msgid ""
-"Geolocation Settings\n"
-"Customize view to geolocalize items"
 msgstr ""
 
 #: core/utilities/setup/setup.cpp:264
