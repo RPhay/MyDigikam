@@ -107,15 +107,16 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
 
     d->iface = iface;
 
-    m_buttons->addButton(QDialogButtonBox::Ok);
+    m_buttons->addButton(QDialogButtonBox::Yes);
     m_buttons->addButton(QDialogButtonBox::Apply);
     m_buttons->addButton(QDialogButtonBox::Close);
-    m_buttons->button(QDialogButtonBox::Ok)->setAutoDefault(false);
+    m_buttons->button(QDialogButtonBox::Yes)->setText(i18n("OK"));
+    m_buttons->button(QDialogButtonBox::Yes)->setAutoDefault(false);
     m_buttons->button(QDialogButtonBox::Apply)->setAutoDefault(false);
     m_buttons->button(QDialogButtonBox::Close)->setAutoDefault(false);
 
-    m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info:tooltip",
-                                                              "Write the corrected date and time for each image and close dialog"));
+    m_buttons->button(QDialogButtonBox::Yes)->setToolTip(i18nc("@info:tooltip",
+                                                               "Write the corrected date and time for each image and close dialog"));
     m_buttons->button(QDialogButtonBox::Apply)->setToolTip(i18nc("@info:tooltip",
                                                                  "Write the corrected date and time for each image"));
 
@@ -188,7 +189,7 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
     connect(m_buttons->button(QDialogButtonBox::Apply), SIGNAL(clicked()),
             this, SLOT(slotUpdateTimestamps()));
 
-    connect(m_buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+    connect(m_buttons->button(QDialogButtonBox::Yes), SIGNAL(clicked()),
             this, SLOT(slotOkExitTimestamps()));
 
     connect(d->settingsView, SIGNAL(signalSettingsChangedTool()),
@@ -383,7 +384,7 @@ void TimeAdjustDialog::slotCancelThread()
 
     d->exitAfterOk = false;
 
-    if (m_buttons->button(QDialogButtonBox::Ok)->isEnabled())
+    if (m_buttons->button(QDialogButtonBox::Yes)->isEnabled())
     {
         accept();
     }
@@ -405,7 +406,7 @@ void TimeAdjustDialog::setBusy(bool busy)
     }
 
     m_buttons->button(QDialogButtonBox::Apply)->setEnabled(!busy);
-    m_buttons->button(QDialogButtonBox::Ok)->setEnabled(!busy);
+    m_buttons->button(QDialogButtonBox::Yes)->setEnabled(!busy);
     d->settingsView->setEnabled(!busy);
 }
 
