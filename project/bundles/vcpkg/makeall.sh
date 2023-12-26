@@ -3,7 +3,7 @@
 # Script to run all VCPKG based sub-scripts to build Windows installer.
 # Possible option : "-f" to force operations without to ask confirmation to user.
 #
-# SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2013-2024 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

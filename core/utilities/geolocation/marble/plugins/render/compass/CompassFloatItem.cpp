@@ -7,14 +7,14 @@
 #include "CompassFloatItem.h"
 #include "ui_CompassConfigWidget.h"
 
-#include "ViewportParams.h"
-
 #include <QRect>
 #include <QColor>
 #include <QPainter>
 #include <QPainterPath>
 #include <QPushButton>
 #include <QSvgRenderer>
+
+#include "ViewportParams.h"
 
 #include <klocalizedstring.h>
 

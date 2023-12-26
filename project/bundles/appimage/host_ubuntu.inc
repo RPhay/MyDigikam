@@ -2,7 +2,7 @@
 
 # Rules to prepare Ubuntu 18.04 and later Linux host.
 #
-# Copyright (c) 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2024 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.

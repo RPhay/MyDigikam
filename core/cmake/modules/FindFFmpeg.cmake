@@ -31,7 +31,7 @@
 # SPDX-FileCopyrightText: 2006,     by Matthias Kretz, <kretz at kde dot org>
 # SPDX-FileCopyrightText: 2008,     by Alexander Neundorf, <neundorf at kde dot org>
 # SPDX-FileCopyrightText: 2011      by Michael Jansen, <kde at michael-jansen dot biz>
-# SPDX-FileCopyrightText: 2016-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2016-2024 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

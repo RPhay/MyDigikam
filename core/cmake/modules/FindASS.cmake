@@ -10,7 +10,7 @@
 #
 #   ASS::ASS   - The ASS library
 #
-# SPDX-FileCopyrightText: 2016-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2016-2024 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
