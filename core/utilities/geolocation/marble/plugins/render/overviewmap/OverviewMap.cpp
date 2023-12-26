@@ -14,17 +14,16 @@
 #include <QHBoxLayout>
 #include <QColorDialog>
 
+#include <klocalizedstring.h>
+
 #include "MarbleDirs.h"
 #include "MarbleModel.h"
-#include "ui_OverviewMapConfigWidget.h"
-
 #include "GeoDataPoint.h"
 #include "ViewportParams.h"
 #include "MarbleWidget.h"
 #include "Planet.h"
 #include "PlanetFactory.h"
-
-#include <klocalizedstring.h>
+#include "ui_OverviewMapConfigWidget.h"
 
 namespace Marble
 {
