@@ -332,15 +332,16 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     connect(d->progressCancelButton, SIGNAL(clicked()),
             this, SLOT(slotProgressCancelButtonClicked()));
 
-    m_buttons->addButton(QDialogButtonBox::Ok);
+    m_buttons->addButton(QDialogButtonBox::Yes);
     m_buttons->addButton(QDialogButtonBox::Apply);
     m_buttons->addButton(QDialogButtonBox::Close);
-    m_buttons->button(QDialogButtonBox::Ok)->setAutoDefault(false);
+    m_buttons->button(QDialogButtonBox::Yes)->setText(i18n("OK"));
+    m_buttons->button(QDialogButtonBox::Yes)->setAutoDefault(false);
     m_buttons->button(QDialogButtonBox::Apply)->setAutoDefault(false);
     m_buttons->button(QDialogButtonBox::Close)->setAutoDefault(false);
     m_buttons->setParent(hbox);
 
-    connect(m_buttons->button(QDialogButtonBox::Ok), &QPushButton::clicked,
+    connect(m_buttons->button(QDialogButtonBox::Yes), &QPushButton::clicked,
             this, &GeolocationEdit::slotOkClicked);
 
     connect(m_buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
