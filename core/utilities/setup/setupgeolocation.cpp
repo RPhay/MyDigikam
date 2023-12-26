@@ -196,6 +196,7 @@ void SetupGeolocation::applySettings()
         writeFile.close();
 
         GeolocationSettings::instance()->googleMapsApiKeyChanged();
+        GeolocationSettings::instance()->reloadGoogleMaps();
     }
 }
 

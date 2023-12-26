@@ -294,8 +294,11 @@ QWidget* BackendGoogleMaps::mapWidget()
 
 void BackendGoogleMaps::reload()
 {
-    const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
-    d->htmlWidget->load(htmlUrl);
+    if (d->htmlWidget)
+    {
+        const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
+        d->htmlWidget->load(htmlUrl);
+    }
 }
 
 GeoCoordinates BackendGoogleMaps::getCenter() const

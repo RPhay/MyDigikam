@@ -32,7 +32,6 @@
 #include "backendgooglemaps.h"
 #include "backendmarble.h"
 #include "mapwidget.h"
-#include "geolocationsettings.h"
 #include "MarbleGlobal.h"
 #include "MarbleWidget.h"
 #include "MarbleModel.h"
