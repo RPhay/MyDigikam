@@ -43,12 +43,12 @@ class Q_DECL_HIDDEN DTrashItemModel::Private
 public:
 
     explicit Private()
-      : thumbSize         (ThumbnailSize::Large),
-        sortColumn        (DTrashTimeStamp),
-        sortOrder         (Qt::DescendingOrder),
-        sortEnabled       (true),
-        itemsLoadingThread(nullptr),
-        thumbnailThread   (nullptr)
+      : thumbSize      (ThumbnailSize::Large),
+        sortColumn     (DTrashTimeStamp),
+        sortOrder      (Qt::DescendingOrder),
+        sortEnabled    (true),
+        itemsLoadingJob(nullptr),
+        thumbnailThread(nullptr)
     {
     }
 
@@ -60,7 +60,7 @@ public:
     Qt::SortOrder        sortOrder;
     bool                 sortEnabled;
 
-    IOJobsThread*        itemsLoadingThread;
+    IOJobsThread*        itemsLoadingJob;
     ThumbnailLoadThread* thumbnailThread;
 
     QString              trashAlbumPath;
@@ -285,7 +285,7 @@ QVariant DTrashItemModel::headerData(int section, Qt::Orientation orientation, i
 
 void DTrashItemModel::append(const DTrashItemInfo& itemInfo)
 {
-    if (d->itemsLoadingThread != sender())
+    if (d->itemsLoadingJob != sender())
     {
         return;
     }
@@ -381,13 +381,13 @@ void DTrashItemModel::loadItemsForCollection(const QString& colPath)
 
     clearCurrentData();
 
-    d->itemsLoadingThread = IOJobsManager::instance()->startDTrashItemsListingForCollection(colPath);
+    d->itemsLoadingJob = IOJobsManager::instance()->startDTrashItemsListingForCollection(colPath);
 
-    connect(d->itemsLoadingThread, SIGNAL(collectionTrashItemInfo(DTrashItemInfo)),
+    connect(d->itemsLoadingJob, SIGNAL(collectionTrashItemInfo(DTrashItemInfo)),
             this, SLOT(append(DTrashItemInfo)),
             Qt::QueuedConnection);
 
-    connect(d->itemsLoadingThread, SIGNAL(signalFinished()),
+    connect(d->itemsLoadingJob, SIGNAL(signalFinished()),
             this, SLOT(slotLoadItemsFinished()),
             Qt::QueuedConnection);
 }
@@ -455,12 +455,12 @@ void DTrashItemModel::changeThumbSize(int size)
 
 void DTrashItemModel::stopLoadingTrash()
 {
-    if (d->itemsLoadingThread)
+    if (d->itemsLoadingJob)
     {
-        disconnect(d->itemsLoadingThread, nullptr, this, nullptr);
+        disconnect(d->itemsLoadingJob, nullptr, this, nullptr);
 
-        d->itemsLoadingThread->cancel();
-        d->itemsLoadingThread = nullptr;
+        d->itemsLoadingJob->cancel();
+        d->itemsLoadingJob = nullptr;
     }
 
     d->thumbnailThread->stopAllTasks();
@@ -474,8 +474,8 @@ QString DTrashItemModel::trashAlbumPath() const
 
 void DTrashItemModel::slotLoadItemsFinished()
 {
-    d->sortEnabled        = true;
-    d->itemsLoadingThread = nullptr;
+    d->sortEnabled     = true;
+    d->itemsLoadingJob = nullptr;
     sort(d->sortColumn, d->sortOrder);
 
     Q_EMIT dataChange();
