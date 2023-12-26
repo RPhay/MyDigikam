@@ -120,24 +120,32 @@ void AlbumManager::cleanUp()
 
     if (d->dateListJob)
     {
+        disconnect(d->dateListJob, nullptr, this, nullptr);
+
         d->dateListJob->cancel();
         d->dateListJob = nullptr;
     }
 
     if (d->albumListJob)
     {
+        disconnect(d->albumListJob, nullptr, this, nullptr);
+
         d->albumListJob->cancel();
         d->albumListJob = nullptr;
     }
 
     if (d->tagListJob)
     {
+        disconnect(d->tagListJob, nullptr, this, nullptr);
+
         d->tagListJob->cancel();
         d->tagListJob = nullptr;
     }
 
     if (d->personListJob)
     {
+        disconnect(d->personListJob, nullptr, this, nullptr);
+
         d->personListJob->cancel();
         d->personListJob = nullptr;
     }

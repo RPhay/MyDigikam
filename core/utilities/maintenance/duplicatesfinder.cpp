@@ -185,6 +185,8 @@ void DuplicatesFinder::slotCancel()
 {
     if (d->job)
     {
+        disconnect(d->job, nullptr, this, nullptr);
+
         d->job->cancel();
         d->job = nullptr;
     }

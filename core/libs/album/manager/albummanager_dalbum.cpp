@@ -25,6 +25,8 @@ void AlbumManager::scanDAlbums()
 
     if (d->dateListJob)
     {
+        disconnect(d->dateListJob, nullptr, this, nullptr);
+
         d->dateListJob->cancel();
         d->dateListJob = nullptr;
     }

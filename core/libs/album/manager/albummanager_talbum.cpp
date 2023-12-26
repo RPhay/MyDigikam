@@ -189,6 +189,8 @@ void AlbumManager::tagItemsCount()
 {
     if (d->tagListJob)
     {
+        disconnect(d->tagListJob, nullptr, this, nullptr);
+
         d->tagListJob->cancel();
         d->tagListJob = nullptr;
     }

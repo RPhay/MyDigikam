@@ -216,6 +216,8 @@ void AlbumManager::getAlbumItemsCount()
 
     if (d->albumListJob)
     {
+        disconnect(d->albumListJob, nullptr, this, nullptr);
+
         d->albumListJob->cancel();
         d->albumListJob = nullptr;
     }
