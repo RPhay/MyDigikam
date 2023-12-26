@@ -7,6 +7,7 @@
 add_subdirectory(atmosphere)
 add_subdirectory(compass)
 add_subdirectory(crosshairs)
+add_subdirectory(graticule)
 add_subdirectory(mapscale)
 add_subdirectory(measure)
 add_subdirectory(navigation)
