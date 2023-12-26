@@ -119,14 +119,26 @@ void MarblePluginSettingsWidget::slotPluginAboutDialog(const QModelIndex& index)
                    Qt::WindowCloseButtonHint               |
                    Qt::WindowMinMaxButtonsHint);
 
+    QString auth;
+
+    for (const PluginAuthor& author: d->pluginModel->pluginAuthors(index))
+    {
+        auth += author.name + QLatin1String(", ");
+    }
+
+    auth.truncate(auth.size() - 2);
+
     dlg->setWindowTitle(i18n("About Plugin %1", d->pluginModel->data(index, RenderPluginModel::Name).toString()));
     QLabel* const icon      = new QLabel(dlg);
     icon->setPixmap(qvariant_cast<QIcon>(d->pluginModel->data(index, RenderPluginModel::Icon)).pixmap(48, 48));
     QLabel* const text      = new QLabel(dlg);
+    text->setWordWrap(true);
     text->setText(i18n(
-                       "<p>Version %1</p>"
-                       "<p>%2</p>",
+                       "<p><u>Version:</u> %1</p>"
+                       "<p><u>Authors:</u> %2</p>"
+                       "<p><u>Description:</u> %3</p>",
                        d->pluginModel->data(index, RenderPluginModel::Version).toString(),
+                       auth,
                        d->pluginModel->data(index, RenderPluginModel::Description).toString()
                       )
                  );
