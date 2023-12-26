@@ -55,6 +55,8 @@ public:
     QWidget* gMapView          = nullptr;
     QLineEdit* gMapApi         = nullptr;
 
+    QString oldKey;
+
 public:
 
     QString htmlFilePath(QString& htmlPath) const
@@ -158,6 +160,11 @@ void SetupGeolocation::applySettings()
 {
     d->tab->applySettings();
 
+    if (d->gMapApi->text() == d->oldKey)
+    {
+        return;
+    }
+
     QString htmlPath;
     QString key      = d->gMapApi->text().trimmed();
     QString htmlFile = d->htmlFilePath(htmlPath);
@@ -208,7 +215,6 @@ void SetupGeolocation::readSettings()
 
     QString htmlPath;
     QString htmlFile = d->htmlFilePath(htmlPath);
-    QString oldKey;
 
     if (QFileInfo::exists(htmlFile))
     {
@@ -229,14 +235,14 @@ void SetupGeolocation::readSettings()
 
                     if (lastIdx > (firstIdx + 4))
                     {
-                        oldKey = oldHtml.mid(firstIdx + 4, lastIdx - firstIdx - 4);
+                        d->oldKey = oldHtml.mid(firstIdx + 4, lastIdx - firstIdx - 4);
                     }
                 }
             }
         }
     }
 
-    d->gMapApi->setText(oldKey);
+    d->gMapApi->setText(d->oldKey);
 }
 
 } // namespace Digikam
