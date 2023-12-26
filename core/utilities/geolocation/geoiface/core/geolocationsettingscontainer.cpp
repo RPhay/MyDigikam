@@ -27,10 +27,10 @@ namespace Digikam
 
 void GeolocationSettingsContainer::readFromConfig(KConfigGroup& group)
 {
-    distanceUnit             = (MarbleLocale::MeasurementSystem)group.readEntry("Distance Unit",               (int)MarbleLocale::MetricSystem);
-    angleUnit                = (Marble::AngleUnit)              group.readEntry("Angle Unit",                  (int)Marble::DecimalDegree);
-    stillQuality             = (Marble::MapQuality)             group.readEntry("Still Quality",               (int)Marble::HighQuality);
-    animationQuality         = (Marble::MapQuality)             group.readEntry("Animation Quality",           (int)Marble::LowQuality);
+    distanceUnit             = (MarbleLocale::MeasurementSystem)group.readEntry("Distance Unit",     (int)MarbleLocale::MetricSystem);
+    angleUnit                = (Marble::AngleUnit)              group.readEntry("Angle Unit",        (int)Marble::DecimalDegree);
+    stillQuality             = (Marble::MapQuality)             group.readEntry("Still Quality",     (int)Marble::HighQuality);
+    animationQuality         = (Marble::MapQuality)             group.readEntry("Animation Quality", (int)Marble::LowQuality);
     mapFont                  = group.readEntry("Map Font",                    QFont());
     inertialRotation         = group.readEntry("Inertial Rotation",           true);
     mouseRotation            = group.readEntry("Mouse Rotation",              true);
