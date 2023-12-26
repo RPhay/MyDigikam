@@ -52,6 +52,7 @@
 #include "mapwidget.h"
 #include "abstractmarkertiler.h"
 #include "geomodelhelper.h"
+#include "marblesettings.h"
 
 #ifdef HAVE_QWEBENGINE
 
@@ -98,7 +99,6 @@ public:
         showMapTypeControlAction    (nullptr),
         showNavigationControlAction (nullptr),
         showScaleControlAction      (nullptr),
-        inputUserAPIKeyAction       (nullptr),
         htmlTemplate                (QLatin1String("<html>\n<head>\n"
                                                    "<script type=\"text/javascript\" src=\"https://maps.google.com/maps/"
                                                    "api/js?key=%1\"></script>\n"
@@ -132,7 +132,6 @@ public:
     QAction*                                  showMapTypeControlAction;
     QAction*                                  showNavigationControlAction;
     QAction*                                  showScaleControlAction;
-    QAction*                                  inputUserAPIKeyAction;
     QString                                   htmlTemplate;
     QString                                   htmlFileName;
     QString                                   cacheMapType;
@@ -228,11 +227,6 @@ void BackendGoogleMaps::createActions()
     d->showScaleControlAction->setCheckable(true);
     d->showScaleControlAction->setChecked(d->cacheShowScaleControl);
     d->showScaleControlAction->setData(QLatin1String("showscalecontrol"));
-
-    d->inputUserAPIKeyAction = new QAction(i18n("Google Maps API Key"), this);
-
-    connect(d->inputUserAPIKeyAction, SIGNAL(triggered()),
-            this, SLOT(slotInputUserAPIKey()));
 }
 
 QString BackendGoogleMaps::backendName() const
@@ -426,9 +420,15 @@ void BackendGoogleMaps::addActionsToConfigurationMenu(QMenu* const configuration
 
     configurationMenu->addSeparator();
 
-    QMenu* const settingsSubMenu = new QMenu(i18n("Settings"), configurationMenu);
-    configurationMenu->addMenu(settingsSubMenu);
-    settingsSubMenu->addAction(d->inputUserAPIKeyAction);
+    QAction* const settings = new QAction(i18n("Settings..."), configurationMenu);
+    configurationMenu->addAction(settings);
+
+    connect(settings, &QAction::triggered,
+            this, []()
+        {
+            MarbleSettings::instance()->openSetupGeolocation(SetupGeolocation::GoogleMaps);
+        }
+    );
 
     updateActionAvailability();
 }
@@ -1613,101 +1613,9 @@ void BackendGoogleMaps::slotTrackVisibilityChanged(const bool newState)
     }
 }
 
-void BackendGoogleMaps::slotInputUserAPIKey()
-{
-    QString htmlPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
-    htmlPath        += QLatin1String("/digikam/geoiface/");
-    QString htmlFile = htmlPath + d->htmlFileName;
-    QString oldKey;
-
-    if (QFileInfo::exists(htmlFile))
-    {
-        QFile readFile(htmlFile);
-
-        if (readFile.open(QIODevice::ReadOnly))
-        {
-            QString oldHtml = QString::fromLatin1(readFile.readAll());
-            readFile.close();
-
-            if (!oldHtml.isEmpty())
-            {
-                int firstIdx = oldHtml.indexOf(QLatin1String("key="));
-
-                if (firstIdx != -1)
-                {
-                    int lastIdx = oldHtml.indexOf(QLatin1String("\"></script>"), firstIdx);
-
-                    if (lastIdx > (firstIdx + 4))
-                    {
-                        oldKey = oldHtml.mid(firstIdx + 4, lastIdx - firstIdx - 4);
-                    }
-                }
-            }
-        }
-    }
-
-    QPointer<QInputDialog> dialog = new QInputDialog(qApp->activeWindow());
-    dialog->setWindowTitle(i18n("Google Maps API Key"));
-    dialog->resize(450, dialog->sizeHint().height());
-    dialog->setInputMode(QInputDialog::TextInput);
-    dialog->setTextEchoMode(QLineEdit::Normal);
-    dialog->setLabelText(i18n("API Key:"));
-    dialog->setTextValue(oldKey);
-
-    int ret     = dialog->exec();
-    QString key = dialog->textValue().trimmed();
-
-    delete dialog;
-
-    if (ret != QDialog::Accepted)
-    {
-        return;
-    }
-
-    if (key.isEmpty())
-    {
-        if (QFileInfo::exists(htmlFile))
-        {
-            QFile::remove(htmlFile);
-        }
-
-        const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
-        d->htmlWidget->load(htmlUrl);
-
-        return;
-    }
-
-    QString jsFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                            QLatin1String("digikam/geoiface/backend-googlemaps-js.js"));
-
-    if (!QFileInfo::exists(jsFile))
-    {
-        return;
-    }
-
-    QString htmlText = d->htmlTemplate.arg(key).arg(QUrl::fromLocalFile(jsFile).toString());
-
-    if (!QFileInfo::exists(htmlPath))
-    {
-        QDir().mkpath(htmlPath);
-    }
-
-    QFile writeFile(htmlFile);
-
-    if (writeFile.open(QIODevice::WriteOnly))
-    {
-        writeFile.write(htmlText.toLatin1());
-        d->keyChanged = true;
-        writeFile.close();
-    }
-
-    const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
-    d->htmlWidget->load(htmlUrl);
-}
-
 void BackendGoogleMaps::setApiKeyChanged()
 {
-        d->keyChanged = true;
+    d->keyChanged = true;
 }
 
 void BackendGoogleMaps::slotMessageEvent(const QString& message)
