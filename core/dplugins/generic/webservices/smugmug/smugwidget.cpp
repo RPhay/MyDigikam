@@ -7,7 +7,7 @@
  * Description : a tool to export images to Smugmug web service
  *
  * SPDX-FileCopyrightText: 2008-2009 by Luka Renko <lure at kubuntu dot org>
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

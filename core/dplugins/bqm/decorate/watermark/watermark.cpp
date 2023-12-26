@@ -6,7 +6,7 @@
  * Date        : 2009-02-28
  * Description : batch tool to add visible watermark.
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010      by Mikkel Baekhoej Christensen <mbc at baekhoej dot dk>
  * SPDX-FileCopyrightText: 2017      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  *

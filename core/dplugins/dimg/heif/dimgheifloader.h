@@ -6,7 +6,7 @@
  * Date        : 2019-09-26
  * Description : A HEIF IO file for DImg framework
  *
- * SPDX-FileCopyrightText: 2019-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Other HEIF loader implementions:
  *     https://github.com/KDE/krita/tree/master/plugins/impex/heif

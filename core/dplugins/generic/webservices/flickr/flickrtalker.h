@@ -7,7 +7,7 @@
  * Description : a tool to export images to Flickr web service
  *
  * SPDX-FileCopyrightText: 2005-2009 by Vardhman Jain <vardhman at gmail dot com>
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2017-2019 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

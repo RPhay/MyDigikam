@@ -7,7 +7,7 @@
  * Description : A TIFF IO file for DImg framework
  *
  * SPDX-FileCopyrightText: 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Specifications & references:
  * - TIFF 6.0  : partners.adobe.com/public/developer/en/tiff/TIFF6.pdf

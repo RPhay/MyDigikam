@@ -7,7 +7,7 @@
  * Description : XMP credits settings page.
  *
  * SPDX-FileCopyrightText: 2014      by Alan Pater <alan dot pater at gmail dot com>
- * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

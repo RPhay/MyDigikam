@@ -7,7 +7,7 @@
  * Description : a tool to create panorama by fusion of several images.
  *
  * SPDX-FileCopyrightText: 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

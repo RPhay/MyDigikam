@@ -7,7 +7,7 @@
  * Description : a tool to export images to MediaWiki web service
  *
  * SPDX-FileCopyrightText: 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
- * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2012      by Parthasarathy Gopavarapu <gparthasarathy93 at gmail dot com>
  * SPDX-FileCopyrightText: 2012      by Nathan Damie <nathan dot damie at gmail dot com>
  * SPDX-FileCopyrightText: 2012      by Iliya Ivanov <ilko2002 at abv dot bg>

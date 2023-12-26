@@ -7,7 +7,7 @@
  * Description : A tool for importing images via KIO
  *
  * SPDX-FileCopyrightText: 2009      by Johannes Wienke <languitar at semipol dot de>
- * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

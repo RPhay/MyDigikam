@@ -10,7 +10,7 @@
  * SPDX-FileCopyrightText: 2006      by Tom Albers <tomalbers at kde dot nl>
  * SPDX-FileCopyrightText: 2007-2008 by Orgad Shaneh <orgads at gmail dot com>
  * SPDX-FileCopyrightText: 2012      by Angelo Naselli <anaselli at linux dot it>
- * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

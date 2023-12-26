@@ -6,7 +6,7 @@
  * Date        : 2017-06-15
  * Description : a tool to replace part of the image using another
  *
- * SPDX-FileCopyrightText: 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2004-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2017      by Shaza Ismail Kaoud <shaza dot ismail dot k at gmail dot com>
  * SPDX-FileCopyrightText: 2019      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
