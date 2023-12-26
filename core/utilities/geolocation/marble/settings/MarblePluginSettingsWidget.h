@@ -17,14 +17,11 @@
 #ifndef MARBLE_MARBLEPLUGINSETTINGSWIDGET_H
 #define MARBLE_MARBLEPLUGINSETTINGSWIDGET_H
 
-/** @file
- * This file contains the multiple inheritance ui-wrapper for the
- * MarblePluginSettingsWidget ui file.
- *
- * @author Torsten Rahn  <torsten@kde.org>
- */
+// Qt includes
 
 #include <QWidget>
+
+// Local includes
 
 #include "digikam_export.h"
 
