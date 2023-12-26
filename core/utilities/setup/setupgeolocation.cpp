@@ -22,6 +22,7 @@
 #include <QFileInfo>
 #include <QFile>
 #include <QDir>
+#include <QUrl>
 #include <QStandardPaths>
 #include <QLineEdit>
 #include <QPushButton>
