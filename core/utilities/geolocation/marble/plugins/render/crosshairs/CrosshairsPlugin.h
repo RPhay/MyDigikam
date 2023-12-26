@@ -26,13 +26,11 @@ namespace Ui
 namespace Marble
 {
 
-
 /**
  * @short The class that specifies the Marble layer interface of a plugin.
- *
  */
-
-class CrosshairsPlugin : public RenderPlugin, public DialogConfigurationInterface
+class CrosshairsPlugin : public RenderPlugin,
+                         public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.CrosshairsPlugin")
