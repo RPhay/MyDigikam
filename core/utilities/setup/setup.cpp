@@ -48,7 +48,7 @@
 #include "dxmlguiwindow.h"
 #include "onlineversiondlg.h"
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #   include "setupgeolocation.h"
 #endif
 
@@ -79,7 +79,7 @@ public:
         page_template           (nullptr),
         page_lighttable         (nullptr),
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         page_geolocation        (nullptr),
 
@@ -106,7 +106,7 @@ public:
         templatePage            (nullptr),
         lighttablePage          (nullptr),
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         geolocationPage         (nullptr),
 
@@ -136,7 +136,7 @@ public:
     DConfigDlgWdgItem*       page_template;
     DConfigDlgWdgItem*       page_lighttable;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     DConfigDlgWdgItem*       page_geolocation;
 
@@ -164,7 +164,7 @@ public:
     SetupTemplate*           templatePage;
     SetupLightTable*         lighttablePage;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     SetupGeolocation*        geolocationPage;
 
@@ -251,7 +251,7 @@ Setup::Setup(QWidget* const parent)
     d->page_lighttable->setHeader(i18nc("@title", "Light Table Settings\nCustomize tool used to compare items"));
     d->page_lighttable->setIcon(QIcon::fromTheme(QLatin1String("lighttable")));
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->geolocationPage  = new SetupGeolocation();
     d->page_geolocation = addPage(d->geolocationPage, i18nc("@title: settings section", "Geolocation"));
@@ -337,7 +337,7 @@ Setup::~Setup()
     group.writeEntry(QLatin1String("Metadata SubTab"), (int)d->metadataPage->activeSubTab());
     group.writeEntry(QLatin1String("Editor Tab"),      (int)d->editorPage->activeTab());
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     group.writeEntry(QLatin1String("Geolocation Tab"), (int)d->geolocationPage->activeTab());
 
@@ -463,7 +463,7 @@ bool Setup::execTemplateEditor(QWidget* const parent, const Template& t)
     return success;
 }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 bool Setup::execGeolocation(QWidget* const parent, int tab)
 {
@@ -638,7 +638,7 @@ void Setup::slotOkClicked()
     d->templatePage->applySettings();
     d->lighttablePage->applySettings();
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->geolocationPage->applySettings();
 
@@ -672,7 +672,7 @@ void Setup::slotCancelClicked()
 
 #endif
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->geolocationPage->cancel();
 
@@ -702,7 +702,7 @@ void Setup::showPage(Setup::Page page)
         d->metadataPage->setActiveTab((SetupMetadata::MetadataTab)group.readEntry(QLatin1String("Metadata Tab"), (int)SetupMetadata::Behavior));
         d->metadataPage->setActiveSubTab((SetupMetadata::MetadataSubTab)group.readEntry(QLatin1String("Metadata SubTab"), (int)SetupMetadata::ExifViewer));
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         d->geolocationPage->setActiveTab((SetupGeolocation::GeolocationTab)group.readEntry(QLatin1String("Geolocation Tab"), (int)SetupGeolocation::MarbleView));
 
@@ -770,7 +770,7 @@ Setup::Page Setup::activePageIndex() const
         return LightTablePage;
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     if (cur == d->page_geolocation)
     {
@@ -860,7 +860,7 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
             return page_lighttable;
         }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         case Setup::GeolocationPage:
         {

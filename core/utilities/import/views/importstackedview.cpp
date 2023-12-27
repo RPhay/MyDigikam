@@ -48,11 +48,11 @@ public:
         importIconView(nullptr),
         importPreviewView(nullptr),
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         mapWidgetView(nullptr),
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -72,11 +72,11 @@ public:
     ImportIconView*     importIconView;
     ImportPreviewView*  importPreviewView;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     MapWidgetView*      mapWidgetView;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -101,7 +101,7 @@ ImportStackedView::ImportStackedView(QWidget* const parent)
     d->thumbBarDock->setWidget(d->thumbBar);
     d->thumbBarDock->setObjectName(QLatin1String("import_thumbbar"));
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     // TODO refactor MapWidgetView not to require the models on startup?
 
@@ -110,7 +110,7 @@ ImportStackedView::ImportStackedView(QWidget* const parent)
                                              MapWidgetView::ApplicationImportUI);
     d->mapWidgetView->setObjectName(QLatin1String("import_mapwidgetview"));
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -121,11 +121,11 @@ ImportStackedView::ImportStackedView(QWidget* const parent)
     insertWidget(PreviewCameraMode, d->importIconView);
     insertWidget(PreviewImageMode,  d->importPreviewView);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     insertWidget(MapWidgetMode,     d->mapWidgetView);
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -252,14 +252,14 @@ ImportPreviewView* ImportStackedView::importPreviewView() const
     return d->importPreviewView;
 }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 MapWidgetView* ImportStackedView::mapWidgetView() const
 {
     return d->mapWidgetView;
 }
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -396,25 +396,25 @@ void ImportStackedView::setViewMode(const StackedViewMode mode)
         setCurrentIndex(mode);
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->mapWidgetView->setActive(mode == MapWidgetMode);
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     if      (mode == PreviewCameraMode)
     {
         d->importIconView->setFocus();
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     else if (mode == MapWidgetMode)
     {
         d->mapWidgetView->setFocus();
     }
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     Q_EMIT signalViewModeChanged();
 }

@@ -71,11 +71,11 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
 
     d->iconView  = d->stackedView->imageIconView();
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->mapView   = d->stackedView->mapWidgetView();
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     d->tableView = d->stackedView->tableView();
     d->trashView = d->stackedView->trashView();
@@ -152,7 +152,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     connect(d->fuzzySearchSideBar, SIGNAL(signalNotificationError(QString,int)),
             this, SLOT(slotNotificationError(QString,int)));
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->gpsSearchSideBar    = new GPSSearchSideBarWidget(d->leftSideBar,
                                                         d->modelCollection->getSearchModel(),
@@ -162,7 +162,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
 
     d->leftSideBarWidgets << d->gpsSearchSideBar;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     // People Sidebar
 
@@ -380,12 +380,12 @@ void ItemIconView::setupConnections()
     connect(this, SIGNAL(signalNoCurrentItem()),
             d->rightSideBar, SLOT(slotNoCurrentItem()));
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     connect(d->gpsSearchSideBar, SIGNAL(signalMapSoloItems(QList<qlonglong>,QString)),
             d->iconView->imageFilterModel(), SLOT(setIdWhitelist(QList<qlonglong>,QString)));
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     // -- Filter Bars Connections ---------------------------------
 
@@ -525,11 +525,11 @@ void ItemIconView::loadViewState()
 
     d->initialAlbumID = group.readEntry(QLatin1String("InitialAlbumID"), 0);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->mapView->loadState();
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     d->tableView->loadState();
     d->rightSideBar->loadState();
@@ -576,11 +576,11 @@ void ItemIconView::saveViewState()
         group.writeEntry(QLatin1String("InitialAlbumID"), 0);
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->mapView->saveState();
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     d->tableView->saveState();
     d->rightSideBar->saveState();

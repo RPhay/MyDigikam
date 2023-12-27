@@ -45,11 +45,11 @@ class MediaPlayerView;
 
 #endif //HAVE_MEDIAPLAYER
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 class MapWidgetView;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 class StackedView : public QStackedWidget
 {
@@ -91,11 +91,11 @@ public:
 
 #endif //HAVE_MEDIAPLAYER
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     MapWidgetView*    mapWidgetView()    const;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     /**
      * Single-file mode is image preview or media player,

@@ -338,7 +338,7 @@ void DigikamApp::setupActions()
     connect(d->imagePreviewAction, SIGNAL(triggered()), d->view, SLOT(slotImagePreview()));
     d->imageViewSelectionAction->addAction(d->imagePreviewAction);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->imageMapViewAction = new QAction(QIcon::fromTheme(QLatin1String("globe")),
                                         i18nc("@action: Switch to map view", "Map"), this);
@@ -347,7 +347,7 @@ void DigikamApp::setupActions()
     connect(d->imageMapViewAction, SIGNAL(triggered()), d->view, SLOT(slotMapWidgetView()));
     d->imageViewSelectionAction->addAction(d->imageMapViewAction);
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     d->imageTableViewAction = new QAction(QIcon::fromTheme(QLatin1String("view-list-details")),
                                           i18nc("@action: Switch to table view", "Table"), this);

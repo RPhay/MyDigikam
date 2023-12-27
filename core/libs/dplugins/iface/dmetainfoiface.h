@@ -63,7 +63,7 @@ public:
 
     Q_SIGNAL void signalRemoveImageFromAlbum(const QUrl&);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     QList<GPSItemContainer*> currentGPSItems()              const override;
 

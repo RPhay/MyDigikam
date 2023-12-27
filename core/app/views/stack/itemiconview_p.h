@@ -102,10 +102,10 @@
 #   include "mediaplayerview.h"
 #endif //HAVE_MEDIAPLAYER
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #include "gpssearchsidebarwidget.h"
 #   include "mapwidgetview.h"
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 namespace Digikam
 {
@@ -131,12 +131,12 @@ public:
         searchSideBar           (nullptr),
         fuzzySearchSideBar      (nullptr),
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         gpsSearchSideBar        (nullptr),
         mapView                 (nullptr),
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
         peopleSideBar           (nullptr),
         parent                  (nullptr),
@@ -225,12 +225,12 @@ public:
     SearchSideBarWidget*          searchSideBar;
     FuzzySearchSideBarWidget*     fuzzySearchSideBar;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     GPSSearchSideBarWidget*       gpsSearchSideBar;
     MapWidgetView*                mapView;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     PeopleSideBarWidget*          peopleSideBar;
     DigikamApp*                   parent;

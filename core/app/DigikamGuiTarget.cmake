@@ -121,7 +121,7 @@ set(libdigikamgui_SRCS
     ${digikamadaptor_SRCS}
 )
 
-if(${Marble_FOUND})
+if(${ENABLE_GEOLOCATION})
     set(libdigikamgui_SRCS
         ${libdigikamgui_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/mapwidgetview.cpp
@@ -194,7 +194,7 @@ set(DIGIKAMGUI_OBJECTS
             $<TARGET_OBJECTS:gui_focuspointmanagement_obj>
 )
 
-if(${Marble_FOUND})
+if(${ENABLE_GEOLOCATION})
 
     set(DIGIKAMGUI_OBJECTS
         ${DIGIKAMGUI_OBJECTS}
@@ -315,15 +315,6 @@ if(KF${QT_VERSION_MAJOR}KIO_FOUND)
                           PRIVATE
                           KF${QT_VERSION_MAJOR}::KIOWidgets
     )
-
-endif()
-
-if(${Marble_FOUND})
-
-     target_link_libraries(digikamgui
-                           PRIVATE
-                           ${MARBLE_LIBRARIES}
-     )
 
 endif()
 

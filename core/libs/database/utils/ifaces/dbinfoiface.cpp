@@ -54,7 +54,7 @@
 #include "tagsactionmngr.h"
 #include "setup.h"
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #   include "itemgps.h"
 #endif
 
@@ -803,7 +803,7 @@ QAbstractItemModel* DBInfoIface::tagFilterModel()
     return filterModel;
 }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 QList<GPSItemContainer*> DBInfoIface::currentGPSItems() const
 {

@@ -325,7 +325,7 @@ void DMetaInfoIface::deleteImage(const QUrl& url)
     Q_EMIT signalRemoveImageFromAlbum(url);
 }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 QList<GPSItemContainer*> DMetaInfoIface::currentGPSItems() const
 {

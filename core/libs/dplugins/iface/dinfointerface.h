@@ -38,7 +38,7 @@
 #include "captionvalues.h"
 #include "metaengine.h"
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #   include "gpsitemcontainer.h"
 #endif
 
@@ -128,7 +128,7 @@ public:
     /// Return an instance of tag filter model if host application support this feature, else null pointer.
     virtual QAbstractItemModel* tagFilterModel();
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     virtual QList<GPSItemContainer*> currentGPSItems()                              const;
 

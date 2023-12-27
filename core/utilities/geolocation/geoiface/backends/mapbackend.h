@@ -31,7 +31,7 @@ class QWidget;
 
 class KConfigGroup;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 namespace Marble
 {
@@ -100,7 +100,7 @@ public:
 
     virtual void setActive(const bool state)                                      = 0;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     virtual void centerOn(const Marble::GeoDataLatLonBox& box,
                           const bool useSaneZoomLevel = true)                     = 0;

@@ -17,7 +17,7 @@
 
 // Marble includes
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 #   include "GeoDataCoordinates.h"
 
@@ -257,7 +257,7 @@ GeoCoordinates::Pair GeoCoordinates::makePair(const qreal lat1,
     return Pair(GeoCoordinates(lat1, lon1), GeoCoordinates(lat2, lon2));
 }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 Marble::GeoDataCoordinates GeoCoordinates::toMarbleCoordinates() const
 {
@@ -282,7 +282,7 @@ GeoCoordinates GeoCoordinates::fromMarbleCoordinates(const Marble::GeoDataCoordi
                           marbleCoordinates.altitude());
 }
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 } // namespace Digikam
 

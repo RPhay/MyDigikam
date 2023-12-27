@@ -75,7 +75,7 @@ public:
 
     void        openSetupPage(SetupPage page)                                             override;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     QList<GPSItemContainer*> currentGPSItems()                                      const override;
 

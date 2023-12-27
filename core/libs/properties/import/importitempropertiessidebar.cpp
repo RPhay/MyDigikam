@@ -33,9 +33,9 @@
 #include "importitempropertiestab.h"
 #include "itempropertiesmetadatatab.h"
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #   include "itempropertiesgpstab.h"
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 namespace Digikam
 {
@@ -50,11 +50,11 @@ public:
         dirtyGpsTab         (false),
         metaData            (nullptr),
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         gpsTab              (nullptr),
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
         metadataTab         (nullptr),
         cameraItemTab       (nullptr)
@@ -69,11 +69,11 @@ public:
 
     CamItemInfo                itemInfo;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     ItemPropertiesGPSTab*      gpsTab;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     ItemPropertiesMetadataTab* metadataTab;
     ImportItemPropertiesTab*   cameraItemTab;
@@ -92,12 +92,12 @@ ImportItemPropertiesSideBarImport::ImportItemPropertiesSideBarImport(QWidget* co
     appendTab(d->cameraItemTab, QIcon::fromTheme(QLatin1String("configure")),             i18n("Properties"));
     appendTab(d->metadataTab,   QIcon::fromTheme(QLatin1String("format-text-code")),              i18n("Metadata")); // krazy:exclude=iconnames
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->gpsTab        = new ItemPropertiesGPSTab(parent);
     appendTab(d->gpsTab,        QIcon::fromTheme(QLatin1String("globe")), i18n("Geolocation"));
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     // --- NOTE: use dynamic binding as slotChangedTab() is a virtual method which can be re-implemented in derived classes.
 
@@ -160,11 +160,11 @@ void ImportItemPropertiesSideBarImport::slotNoCurrentItem()
     d->cameraItemTab->setCurrentItem();
     d->metadataTab->setCurrentURL();
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->gpsTab->setCurrentURL();
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 }
 
@@ -189,7 +189,7 @@ void ImportItemPropertiesSideBarImport::slotChangedTab(QWidget* tab)
         d->dirtyMetadataTab = true;
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     else if ((tab == d->gpsTab) && !d->dirtyGpsTab)
     {
@@ -199,7 +199,7 @@ void ImportItemPropertiesSideBarImport::slotChangedTab(QWidget* tab)
 
     d->gpsTab->setActive(tab == d->gpsTab);
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     unsetCursor();
 }
@@ -217,12 +217,12 @@ void ImportItemPropertiesSideBarImport::doLoadState()
     KConfigGroup groupCameraItemTab     = KConfigGroup(&group, entryName(QLatin1String("Camera Item Properties Tab")));
     d->cameraItemTab->readSettings(groupCameraItemTab);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     KConfigGroup groupGPSTab            = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     d->gpsTab->readSettings(groupGPSTab);
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     const KConfigGroup groupMetadataTab = KConfigGroup(&group, entryName(QLatin1String("Metadata Properties Tab")));
     d->metadataTab->readSettings(groupMetadataTab);
@@ -241,12 +241,12 @@ void ImportItemPropertiesSideBarImport::doSaveState()
     KConfigGroup groupCameraItemTab = KConfigGroup(&group, entryName(QLatin1String("Camera Item Properties Tab")));
     d->cameraItemTab->writeSettings(groupCameraItemTab);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     KConfigGroup groupGPSTab        = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     d->gpsTab->writeSettings(groupGPSTab);
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     KConfigGroup groupMetadataTab   = KConfigGroup(&group, entryName(QLatin1String("Metadata Properties Tab")));
     d->metadataTab->writeSettings(groupMetadataTab);

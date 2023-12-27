@@ -41,7 +41,7 @@
 #include "dxmlguiwindow.h"
 #include "onlineversiondlg.h"
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #   include "setupgeolocation.h"
 #endif
 
@@ -60,7 +60,7 @@ public:
         page_iofiles    (nullptr),
         page_icc        (nullptr),
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         page_geolocation(nullptr),
 
@@ -74,7 +74,7 @@ public:
         rawPage         (nullptr),
         pluginsPage     (nullptr),
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         geolocationPage (nullptr),
 
@@ -93,7 +93,7 @@ public:
     DConfigDlgWdgItem*            page_iofiles;
     DConfigDlgWdgItem*            page_icc;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     DConfigDlgWdgItem*            page_geolocation;
 
@@ -108,7 +108,7 @@ public:
     ShowfotoSetupRaw*             rawPage;
     ShowfotoSetupPlugins*         pluginsPage;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     Digikam::SetupGeolocation*    geolocationPage;
 
@@ -169,7 +169,7 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
                                     "<i>Set default configuration used to save images</i></qt>"));
     d->page_iofiles->setIcon(QIcon::fromTheme(QLatin1String("document-save-all")));
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->geolocationPage  = new SetupGeolocation();
     d->page_geolocation = addPage(d->geolocationPage, i18nc("@title: settings section", "Geolocation"));
@@ -228,7 +228,7 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
         d->iccPage->setActiveTab((Digikam::SetupICC::ICCTab)group.readEntry(QLatin1String("ICC Tab"), (int)Digikam::SetupICC::Behavior));
         d->pluginsPage->setActiveTab((ShowfotoSetupPlugins::PluginTab)group.readEntry(QLatin1String("Plugin Tab"), (int)ShowfotoSetupPlugins::Generic));
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         d->geolocationPage->setActiveTab((SetupGeolocation::GeolocationTab)group.readEntry(QLatin1String("Geolocation Tab"), (int)SetupGeolocation::MarbleView));
 
@@ -257,7 +257,7 @@ ShowfotoSetup::~ShowfotoSetup()
     group.writeEntry(QLatin1String("ICC Tab"),         (int)d->iccPage->activeTab());
     group.writeEntry(QLatin1String("Plugin Tab"),      (int)d->pluginsPage->activeTab());
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     group.writeEntry(QLatin1String("Geolocation Tab"), (int)d->geolocationPage->activeTab());
 
@@ -278,7 +278,7 @@ void ShowfotoSetup::slotHelp()
 void ShowfotoSetup::slotCancelClicked()
 {
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->geolocationPage->cancel();
 
@@ -304,7 +304,7 @@ void ShowfotoSetup::slotOkClicked()
     d->iccPage->applySettings();
     d->pluginsPage->applySettings();
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->geolocationPage->applySettings();
 
@@ -357,7 +357,7 @@ void ShowfotoSetup::showPage(ShowfotoSetup::Page page)
             break;
         }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         case GeolocationPage:
         {
@@ -415,7 +415,7 @@ ShowfotoSetup::Page ShowfotoSetup::activePageIndex()
         return PluginsPage;
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     if (cur == d->page_geolocation)
     {
@@ -505,7 +505,7 @@ bool ShowfotoSetup::execSinglePage(QWidget* const parent, Page page)
     return success;
 }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 bool ShowfotoSetup::execGeolocation(QWidget* const parent, int tab)
 {

@@ -373,14 +373,14 @@ void ImportUI::setupActions()
     connect(d->camItemPreviewAction, SIGNAL(triggered()), d->view, SLOT(slotImagePreview()));
     d->imageViewSelectionAction->addAction(d->camItemPreviewAction);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
     d->mapViewAction = new QAction(QIcon::fromTheme(QLatin1String("globe")),
                                    i18nc("@action Switch to map view", "Map"), this);
     d->mapViewAction->setCheckable(true);
     ac->addAction(QLatin1String("importui_map_view"), d->mapViewAction);
     connect(d->mapViewAction, SIGNAL(triggered()), d->view, SLOT(slotMapWidgetView()));
     d->imageViewSelectionAction->addAction(d->mapViewAction);
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     /// @todo Add table view stuff here
 
@@ -2704,7 +2704,7 @@ void ImportUI::slotSwitchedToMapView()
 {
     d->zoomBar->setBarMode(DZoomBar::ThumbsSizeCtrl);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->imageViewSelectionAction->setCurrentAction(d->mapViewAction);
 

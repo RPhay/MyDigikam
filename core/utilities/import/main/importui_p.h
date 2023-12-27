@@ -197,11 +197,11 @@ public:
         iconViewAction                  (nullptr),
         camItemPreviewAction            (nullptr),
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         mapViewAction                   (nullptr),
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
         viewCMViewAction                (nullptr),
         cameraActions                   (nullptr),
@@ -296,11 +296,11 @@ public:
     QAction*                                 iconViewAction;
     QAction*                                 camItemPreviewAction;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     QAction*                                 mapViewAction;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     QAction*                                 viewCMViewAction;
 

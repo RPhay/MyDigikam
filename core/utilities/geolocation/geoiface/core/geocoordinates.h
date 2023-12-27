@@ -28,7 +28,7 @@
 #include "digikam_config.h"
 #include "digikam_export.h"
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 /// NOTE: forward declaration only to declare interoperability operators
 namespace Marble
@@ -36,7 +36,7 @@ namespace Marble
     class GeoDataCoordinates;
 }
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 namespace Digikam
 {
@@ -97,12 +97,12 @@ public:
     static GeoCoordinates fromGeoUrl(const QString& url, bool* const parsedOkay = nullptr);
     static Pair makePair(const qreal lat1, const qreal lon1, const qreal lat2, const qreal lon2);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     Marble::GeoDataCoordinates toMarbleCoordinates() const;
     static GeoCoordinates fromMarbleCoordinates(const Marble::GeoDataCoordinates& marbleCoordinates);
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 private:
 

@@ -50,10 +50,10 @@
 #include "tagscache.h"
 #include "dtrash.h"
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #   include "itempropertiesgpstab.h"
 #   include "gpsiteminfosorter.h"
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 namespace Digikam
 {
@@ -359,7 +359,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
         d->dirtyDesceditTab = true;
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     else if ((tab == m_gpsTab) && !m_dirtyGpsTab)
     {
@@ -395,7 +395,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
         m_dirtyGpsTab = true;
     }
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     else if ((tab == d->versionsHistoryTab) && !m_dirtyHistoryTab)
     {
@@ -415,11 +415,11 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
         m_dirtyHistoryTab = true;
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     m_gpsTab->setActive(tab == m_gpsTab);
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     unsetCursor();
 }
@@ -454,11 +454,11 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
 
         if      ((tab == m_propertiesStackedView)
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
             || (tab == m_gpsTab)
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
            )
         {
@@ -485,11 +485,11 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
 
                 if ((tab == m_propertiesStackedView)
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
                     || (tab == m_gpsTab)
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
                    )
                 {
@@ -865,7 +865,7 @@ void ItemPropertiesSideBarDB::slotPopupTagsView()
     d->desceditTab->setFocusToTagsView();
 }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 bool ItemPropertiesSideBarDB::GPSItemInfofromItemInfo(const ItemInfo& imageInfo, GPSItemInfo* const gpsItemInfo)
 {
@@ -891,7 +891,7 @@ bool ItemPropertiesSideBarDB::GPSItemInfofromItemInfo(const ItemInfo& imageInfo,
     return true;
 }
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 void ItemPropertiesSideBarDB::slotPropertiesButtonPressed(int index)
 {

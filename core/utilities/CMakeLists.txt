@@ -36,7 +36,7 @@ add_subdirectory(extrasupport)
 add_subdirectory(facemanagement)
 add_subdirectory(focuspointmanagement)
 
-if(${Marble_FOUND})
+if(${ENABLE_GEOLOCATION})
 
     add_subdirectory(geolocation)
 

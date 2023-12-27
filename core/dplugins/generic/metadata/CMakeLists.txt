@@ -7,7 +7,7 @@
 add_subdirectory(metadataedit)
 add_subdirectory(timeadjust)
 
-if(${Marble_FOUND})
+if(${ENABLE_GEOLOCATION})
 
     add_subdirectory(geolocationedit)
 

@@ -35,9 +35,9 @@
 #   include "mediaplayerview.h"
 #endif //HAVE_MEDIAPLAYER
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #   include "mapwidgetview.h"
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 namespace Digikam
 {
@@ -53,7 +53,7 @@ public:
         PreviewCameraMode = 0, ///< previewing the set of items on the camera
         PreviewImageMode,
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         MapWidgetMode,
         MediaPlayerMode
@@ -63,7 +63,7 @@ public:
         MediaPlayerMode,
         MapWidgetMode
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     };
 
@@ -79,11 +79,11 @@ public:
     ImportIconView*     importIconView()    const;
     ImportPreviewView*  importPreviewView() const;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     MapWidgetView*      mapWidgetView()     const;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 #ifdef HAVE_MEDIAPLAYER
 

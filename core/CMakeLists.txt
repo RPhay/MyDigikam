@@ -85,18 +85,13 @@ find_package(LibXml2)                              # For HTMLGallery tool.
 
 if(ENABLE_GEOLOCATION)
 
-    set(Marble_FOUND TRUE)
-    set(MARBLE_LIBRARIES "")
     set(MARBLE_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/marble
                            ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/marble/geodata/data
     )
 
 else()
 
-    set(Marble_FOUND FALSE)
-    set(MARBLE_LIBRARIES "")
-    set(MARBLE_INCLUDE_DIR ""
-    )
+    set(MARBLE_INCLUDE_DIR "")
 
 endif()
 
@@ -218,7 +213,7 @@ MACRO_BOOL_TO_01(LensFun_FOUND                                  HAVE_LENSFUN)
 MACRO_BOOL_TO_01(Gphoto2_FOUND                                  HAVE_GPHOTO2)
 MACRO_BOOL_TO_01(Jasper_FOUND                                   HAVE_JASPER)
 MACRO_BOOL_TO_01(Eigen3_FOUND                                   HAVE_EIGEN3)
-MACRO_BOOL_TO_01(Marble_FOUND                                   HAVE_MARBLE)
+MACRO_BOOL_TO_01(ENABLE_GEOLOCATION                             HAVE_GEOLOCATION)
 MACRO_BOOL_TO_01(ENABLE_AKONADICONTACTSUPPORT                   HAVE_AKONADICONTACT)
 MACRO_BOOL_TO_01(ENABLE_MYSQLSUPPORT                            HAVE_MYSQLSUPPORT)
 MACRO_BOOL_TO_01(ENABLE_INTERNALMYSQL                           HAVE_INTERNALMYSQL)

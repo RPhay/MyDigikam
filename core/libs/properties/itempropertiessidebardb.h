@@ -69,11 +69,11 @@ public:
     virtual void itemChanged(const ItemInfoList& infos, const ItemInfoList& allInfos);
 
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     static bool GPSItemInfofromItemInfo(const ItemInfo&, GPSItemInfo* const);
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 Q_SIGNALS:
 

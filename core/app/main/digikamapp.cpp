@@ -81,7 +81,7 @@ DigikamApp::DigikamApp()
     LocalizeSettings::instance();
     NetworkManager::instance();
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     connect(GeolocationSettings::instance(), &GeolocationSettings::signalSetupGeolocation,
             this, [=](int tab)
@@ -1069,11 +1069,11 @@ void DigikamApp::slotSwitchedToMapView()
 
     d->zoomBar->setBarMode(DZoomBar::ThumbsSizeCtrl);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->imageMapViewAction->setChecked(true);
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     customizedTrashView(true);
     toggleShowBar();
@@ -1111,7 +1111,7 @@ void DigikamApp::customizedTrashView(bool set)
     d->imageTableViewAction->setEnabled(set);
     d->imageIconViewAction->setEnabled(set);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->imageMapViewAction->setEnabled(set);
 

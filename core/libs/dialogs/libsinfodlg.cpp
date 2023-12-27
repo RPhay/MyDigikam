@@ -55,7 +55,7 @@
 #   include "lensfuniface.h"
 #endif
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #   include "backendmarble.h"
 #endif
 
@@ -319,7 +319,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "LibJasper support") <<              SUPPORTED_NO);
 #endif
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Geolocation support") <<            SUPPORTED_YES);
 #else

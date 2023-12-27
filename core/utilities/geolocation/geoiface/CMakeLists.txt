@@ -17,7 +17,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLU
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-if(${Marble_FOUND})
+if(${ENABLE_GEOLOCATION})
 
     include_directories(${MARBLE_INCLUDE_DIR})
 
@@ -92,7 +92,7 @@ set(libgeoiface_SRCS
                      ${CMAKE_CURRENT_SOURCE_DIR}/widgets/mapwidget.cpp
 )
 
-if(${Marble_FOUND})
+if(${ENABLE_GEOLOCATION})
 
     set(libgeoiface_SRCS ${libgeoiface_SRCS}
 

@@ -173,7 +173,7 @@ if(ENABLE_MEDIAPLAYER AND NOT ENABLE_QTMULTIMEDIA)
     add_subdirectory(video)
 endif()
 
-if(Marble_FOUND)
+if(ENABLE_GEOLOCATION)
     add_subdirectory(geolocation)               # Some unit-tests based on ModelTest
 endif()
 

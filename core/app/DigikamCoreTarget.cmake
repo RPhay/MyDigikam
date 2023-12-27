@@ -70,7 +70,7 @@ if(ENABLE_MEDIAPLAYER)
 
 endif()
 
-if(Marble_FOUND)
+if(ENABLE_GEOLOCATION)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
@@ -296,15 +296,6 @@ if(KF${QT_VERSION_MAJOR}Sonnet_FOUND)
                           PRIVATE
                           KF${QT_VERSION_MAJOR}::SonnetCore
                           KF${QT_VERSION_MAJOR}::SonnetUi
-    )
-
-endif()
-
-if(Marble_FOUND)
-
-    target_link_libraries(digikamcore
-                          PRIVATE
-                          ${MARBLE_LIBRARIES}
     )
 
 endif()

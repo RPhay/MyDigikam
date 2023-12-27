@@ -44,7 +44,7 @@
 
 // Marble includes
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 #   include "GeoDataLineString.h"
 #   include "GeoDataLatLonBox.h"
@@ -65,7 +65,7 @@
 #include "backendgooglemaps.h"
 #include "geolocationsettings.h"
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 #   include "backendmarble.h"
 
@@ -238,7 +238,7 @@ MapWidget::MapWidget(QWidget* const parent)
 
     d->loadedBackends.append(new BackendGoogleMaps(s, this));
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->loadedBackends.append(new BackendMarble(s, this));
 
@@ -698,7 +698,7 @@ void MapWidget::readSettingsFromGroup(const KConfigGroup* const group)
         return;
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     setBackend(group->readEntry("Backend", "marble"));
 
@@ -1245,7 +1245,7 @@ QString MapWidget::convertZoomToBackendZoom(const QString& someZoom,
     const int sourceZoom = zoomParts.last().toInt();
     int targetZoom       = -1;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     // all of these values were found experimentally!
 
@@ -1527,7 +1527,7 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
         (s->currentMouseMode == MouseModeRegionSelectionFromIcon))
     {
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         int maxTileLevel = 0;
 
@@ -2392,7 +2392,7 @@ void MapWidget::adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel)
         return;
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     Marble::GeoDataLineString tileString;
 

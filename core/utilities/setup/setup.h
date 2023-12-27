@@ -54,7 +54,7 @@ public:
         ICCPage,
         LightTablePage,
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         GeolocationPage,
 
@@ -95,7 +95,7 @@ public:
 
     static bool execImageQualitySorter(QWidget* const parent);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     static bool execGeolocation(QWidget* const parent, int tab);
 

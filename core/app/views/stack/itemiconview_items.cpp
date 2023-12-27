@@ -472,12 +472,12 @@ ItemInfo ItemIconView::currentInfo() const
         case StackedView::TableViewMode:
             return d->tableView->currentInfo();
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         case StackedView::MapWidgetMode:
             return d->mapView->currentItemInfo();
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
         case StackedView::MediaPlayerMode:
         case StackedView::PreviewImageMode:

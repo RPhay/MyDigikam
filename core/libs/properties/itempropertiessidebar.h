@@ -39,11 +39,11 @@ class ItemSelectionPropertiesTab;
 class ItemPropertiesMetadataTab;
 class ItemPropertiesColorsTab;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 class ItemPropertiesGPSTab;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 class DIGIKAM_EXPORT ItemPropertiesSideBar : public Sidebar
 {
@@ -108,11 +108,11 @@ protected:
     ItemPropertiesMetadataTab*  m_metadataTab;
     ItemPropertiesColorsTab*    m_colorTab;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     ItemPropertiesGPSTab*       m_gpsTab;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 };
 

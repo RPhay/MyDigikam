@@ -144,7 +144,7 @@
 #include "localizesettings.h"
 #include "networkmanager.h"
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #   include "geolocationsettings.h"
 #endif
 
@@ -221,11 +221,11 @@ public:
         imageViewSelectionAction            (nullptr),
         imagePreviewAction                  (nullptr),
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         imageMapViewAction                  (nullptr),
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
         imageTableViewAction                (nullptr),
         imageIconViewAction                 (nullptr),
@@ -345,11 +345,11 @@ public:
     KSelectAction*                      imageViewSelectionAction;
     QAction*                            imagePreviewAction;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     QAction*                            imageMapViewAction;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     QAction*                            imageTableViewAction;
     QAction*                            imageIconViewAction;

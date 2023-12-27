@@ -30,7 +30,7 @@ set(libsetupshowfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/misc/systemsettings.cpp
 )
 
-if(${Marble_FOUND})
+if(${ENABLE_GEOLOCATION})
 
     set(libsetupshowfoto_SRCS ${libsetupshowfoto_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/setupgeolocation.cpp

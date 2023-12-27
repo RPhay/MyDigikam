@@ -228,7 +228,7 @@ set(libdatabasemain_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/scan/scancontroller_stop.cpp
 )
 
-if(Marble_FOUND)
+if(ENABLE_GEOLOCATION)
     set(libdatabasemain_SRCS
         ${libdatabasemain_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/utils/ifaces/itemgps.cpp

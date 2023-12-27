@@ -49,9 +49,9 @@
 #   include "mediaplayerview.h"
 #endif // HAVE_MEDIAPLAYER
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #   include "mapwidgetview.h"
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 namespace Digikam
 {
@@ -76,11 +76,11 @@ public:
 
 #endif // HAVE_MEDIAPLAYER
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         mapWidgetView   (nullptr),
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
         tableView       (nullptr),
         trashView       (nullptr)
@@ -106,11 +106,11 @@ public:
 
 #endif // HAVE_MEDIAPLAYER
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     MapWidgetView*    mapWidgetView;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     TableView*        tableView;
     TrashView*        trashView;
@@ -139,14 +139,14 @@ StackedView::StackedView(QWidget* const parent)
 
     d->trashView        = new TrashView(this);
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->mapWidgetView    = new MapWidgetView(d->imageIconView->getSelectionModel(),
                                             d->imageIconView->imageFilterModel(), this,
                                             MapWidgetView::ApplicationDigikam);
     d->mapWidgetView->setObjectName(QLatin1String("mainwindow_mapwidgetview"));
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -162,11 +162,11 @@ StackedView::StackedView(QWidget* const parent)
     d->stackMap[addWidget(d->tableView)]        = TableViewMode;
     d->stackMap[addWidget(d->trashView)]        = TrashViewMode;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->stackMap[addWidget(d->mapWidgetView)]    = MapWidgetMode;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -280,14 +280,14 @@ ItemPreviewView* StackedView::imagePreviewView() const
     return d->imagePreviewView;
 }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 MapWidgetView* StackedView::mapWidgetView() const
 {
     return d->mapWidgetView;
 }
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 TableView* StackedView::tableView() const
 {
@@ -446,11 +446,11 @@ void StackedView::setViewMode(const StackedViewMode mode)
         setCurrentIndex(d->stackMap.key(mode));
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->mapWidgetView->setActive(mode == MapWidgetMode);
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     d->tableView->slotSetActive(mode == TableViewMode);
 
@@ -459,14 +459,14 @@ void StackedView::setViewMode(const StackedViewMode mode)
         d->imageIconView->setFocus();
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     else if (mode == MapWidgetMode)
     {
         d->mapWidgetView->setFocus();
     }
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     else if (mode == TableViewMode)
     {

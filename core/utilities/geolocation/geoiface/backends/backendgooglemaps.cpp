@@ -39,7 +39,7 @@
 
 // Marble includes
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 #   include "GeoDataLatLonAltBox.h"
 
@@ -1641,7 +1641,7 @@ void BackendGoogleMaps::slotMessageEvent(const QString& message)
     }
 }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 void BackendGoogleMaps::centerOn(const Marble::GeoDataLatLonBox& latLonBox, const bool useSaneZoomLevel)
 {

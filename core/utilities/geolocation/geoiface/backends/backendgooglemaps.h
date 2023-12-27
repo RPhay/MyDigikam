@@ -86,7 +86,7 @@ public:
 
     void setActive(const bool state)                                                      override;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     void centerOn(const Marble::GeoDataLatLonBox& latLonBox, const bool useSaneZoomLevel) override;
 

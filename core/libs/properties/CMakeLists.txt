@@ -36,7 +36,7 @@ set(libitemproperties_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/captionedit.cpp
 )
 
-if(${Marble_FOUND})
+if(${ENABLE_GEOLOCATION})
     set(libitemproperties_SRCS
         ${libitemproperties_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/geolocation/itempropertiesgpstab.cpp

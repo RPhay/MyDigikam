@@ -40,9 +40,9 @@
 #include "dzoombar.h"
 #include "camitemsortsettings.h"
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 #   include "mapwidgetview.h"
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 namespace Digikam
 {
@@ -60,11 +60,11 @@ public:
         parent        (nullptr),
         iconView      (nullptr),
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
         mapView(nullptr),
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
         stackedView(nullptr),
         lastViewMode(ImportStackedView::PreviewCameraMode)
@@ -92,11 +92,11 @@ public:
 
     ImportIconView*                    iconView;
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     MapWidgetView*                     mapView;
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     ImportStackedView*                 stackedView;
     ImportStackedView::StackedViewMode lastViewMode;
@@ -141,11 +141,11 @@ ImportView::ImportView(ImportUI* const ui, QWidget* const parent)
 
     d->iconView = d->stackedView->importIconView();
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->mapView  = d->stackedView->mapWidgetView();
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     d->addPageUpDownActions(this, d->stackedView->importPreviewView());
     d->addPageUpDownActions(this, d->stackedView->thumbBar());
@@ -305,11 +305,11 @@ void ImportView::loadViewState()
     thumbbarState = group.readEntry("ThumbbarState", thumbbarState);
     d->dockArea->restoreState(QByteArray::fromBase64(thumbbarState));
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->mapView->loadState();
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 }
 
@@ -334,11 +334,11 @@ void ImportView::saveViewState()
     d->stackedView->thumbBarDock()->close();
     group.writeEntry("ThumbbarState", d->dockArea->saveState().toBase64());
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     d->mapView->saveState();
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
 }
 
@@ -684,7 +684,7 @@ void ImportView::slotImagePreview()
         currentInfo = d->iconView->currentInfo();
     }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
     // TODO: Implement MapWidget
     else if (currentPreviewMode == ImportStackedView::MapWidgetMode)
@@ -692,7 +692,7 @@ void ImportView::slotImagePreview()
         currentInfo = d->mapView->currentCamItemInfo();
     }
 
-#endif // HAVE_MARBLE
+#endif // HAVE_GEOLOCATION
 
     slotTogglePreviewMode(currentInfo, false);
 }

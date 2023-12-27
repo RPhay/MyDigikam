@@ -130,7 +130,7 @@ QAbstractItemModel* DInfoInterface::tagFilterModel()
     return nullptr;
 }
 
-#ifdef HAVE_MARBLE
+#ifdef HAVE_GEOLOCATION
 
 QList<GPSItemContainer*> DInfoInterface::currentGPSItems() const
 {
