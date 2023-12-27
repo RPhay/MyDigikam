@@ -50,8 +50,13 @@ public:
 
 public:
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     bool useHighDpiScaling = false;
     bool useHighDpiPixmaps = false;
+
+#endif
+
     bool enableFaceEngine  = false;
     bool enableAesthetic   = false;
     bool enableAutoTags    = false;

@@ -44,8 +44,13 @@ public:
 
     Private() = default;
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     QCheckBox*              useHighDpiScalingCheck = nullptr;
     QCheckBox*              useHighDpiPixmapsCheck = nullptr;
+
+#endif
+
     QCheckBox*              disableOpenCLCheck     = nullptr;
     QCheckBox*              enableLoggingCheck     = nullptr;
 
@@ -67,8 +72,13 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     d->filesDownloader        = new FilesDownloader(this);
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     d->useHighDpiScalingCheck = new QCheckBox(i18n("Use high DPI scaling from the screen factor"), this);
     d->useHighDpiPixmapsCheck = new QCheckBox(i18n("Use pixmaps with high DPI resolution"), this);
+
+#endif
+
     d->disableOpenCLCheck     = new QCheckBox(i18n("Disable hardware acceleration OpenCL"), this);
     d->enableLoggingCheck     = new QCheckBox(i18n("Enable internal debug logging"), this);
 
@@ -78,7 +88,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     QWidget* const proxySettings = new QWidget(this);
     d->uiProxySettings.setupUi(proxySettings);
-    proxySettings->setContentsMargins(QMargins(0, 0, 0 ,0));
+    proxySettings->setContentsMargins(QMargins());
 
     // ---
 
@@ -93,15 +103,22 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     systemNote->setWordWrap(true);
     systemNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
-    layout->addWidget(d->useHighDpiScalingCheck, 0, 0, 1, 1);
-    layout->addWidget(d->useHighDpiPixmapsCheck, 1, 0, 1, 1);
-    layout->addWidget(d->disableOpenCLCheck,     2, 0, 1, 1);
-    layout->addWidget(d->enableLoggingCheck,     3, 0, 1, 1);
-    layout->addWidget(d->filesDownloadButton,    4, 0, 1, 1);
-    layout->addWidget(proxySettings,             5, 0, 1, 1);
-    layout->addWidget(systemNote,                6, 0, 1, 2);
+    int row = 0;
+
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
+    layout->addWidget(d->useHighDpiScalingCheck, row++, 0, 1, 1);
+    layout->addWidget(d->useHighDpiPixmapsCheck, row++, 0, 1, 1);
+
+#endif
+
+    layout->addWidget(d->disableOpenCLCheck,     row++, 0, 1, 1);
+    layout->addWidget(d->enableLoggingCheck,     row++, 0, 1, 1);
+    layout->addWidget(d->filesDownloadButton,    row++, 0, 1, 1);
+    layout->addWidget(proxySettings,             row++, 0, 1, 1);
+    layout->addWidget(systemNote,                row++, 0, 1, 2);
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
-    layout->setRowStretch(7, 10);
+    layout->setRowStretch(row, 10);
 
     connect(d->filesDownloadButton, &QPushButton::pressed,
             this, &SystemSettingsWidget::slotBinaryDownload);
@@ -116,8 +133,13 @@ void SystemSettingsWidget::readSettings()
 {
     SystemSettings system(qApp->applicationName());
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     d->useHighDpiScalingCheck->setChecked(system.useHighDpiScaling);
     d->useHighDpiPixmapsCheck->setChecked(system.useHighDpiPixmaps);
+
+#endif
+
     d->enableLoggingCheck->setChecked(system.enableLogging);
     d->disableOpenCLCheck->setChecked(system.disableOpenCL);
 
@@ -135,8 +157,13 @@ void SystemSettingsWidget::saveSettings()
 {
     SystemSettings system(qApp->applicationName());
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     system.useHighDpiScaling = d->useHighDpiScalingCheck->isChecked();
     system.useHighDpiPixmaps = d->useHighDpiPixmapsCheck->isChecked();
+
+#endif
+
     system.enableLogging     = d->enableLoggingCheck->isChecked();
     system.disableOpenCL     = d->disableOpenCLCheck->isChecked();
 

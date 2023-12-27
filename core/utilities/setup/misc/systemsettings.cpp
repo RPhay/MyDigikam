@@ -55,15 +55,19 @@ void SystemSettings::readSettings()
 
     settings.beginGroup(QLatin1String("System"));
 
-#ifdef Q_OS_LINUX
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
+    #ifdef Q_OS_LINUX
 
     useHighDpiScaling    = settings.value(QLatin1String("useHighDpiScaling"), true).toBool();
     useHighDpiPixmaps    = settings.value(QLatin1String("useHighDpiPixmaps"), true).toBool();
 
-#else
+    #else
 
     useHighDpiScaling    = settings.value(QLatin1String("useHighDpiScaling"), false).toBool();
     useHighDpiPixmaps    = settings.value(QLatin1String("useHighDpiPixmaps"), false).toBool();
+
+    #endif
 
 #endif
 
@@ -139,8 +143,14 @@ void SystemSettings::saveSettings()
     QSettings settings(m_path, QSettings::IniFormat);
 
     settings.beginGroup(QLatin1String("System"));
+
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     settings.setValue(QLatin1String("useHighDpiScaling"), useHighDpiScaling);
     settings.setValue(QLatin1String("useHighDpiPixmaps"), useHighDpiPixmaps);
+
+#endif
+
     settings.setValue(QLatin1String("enableFaceEngine"),  enableFaceEngine);
     settings.setValue(QLatin1String("enableAesthetic"),   enableAesthetic);
     settings.setValue(QLatin1String("enableAutoTags"),    enableAutoTags);
