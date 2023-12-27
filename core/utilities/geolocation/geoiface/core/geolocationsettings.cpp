@@ -150,6 +150,7 @@ void GeolocationSettings::applySettingsToWidgets(const GeolocationSettingsContai
                     mw->inputHandler()->setInertialEarthRotationEnabled(settings.inertialRotation);
                     mw->inputHandler()->setMouseViewRotationEnabled(settings.mouseRotation);
                     mw->setVolatileTileCacheLimit(settings.volatileTileCacheLimit * 1024);
+                    mw->setShowGrid(settings.showGrid);
                     mw->update();
                 }
             }

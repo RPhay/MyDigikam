@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>893</width>
-    <height>364</height>
+    <width>913</width>
+    <height>372</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -450,6 +450,13 @@ p, li { white-space: pre-wrap; }
        </layout>
       </item>
      </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="kcfg_showGrid">
+     <property name="text">
+      <string>Show Grid</string>
+     </property>
     </widget>
    </item>
   </layout>

@@ -36,6 +36,7 @@ void GeolocationSettingsContainer::readFromConfig(KConfigGroup& group)
     mouseRotation            = group.readEntry("Mouse Rotation",              true);
     volatileTileCacheLimit   = group.readEntry("Volatile Tile Cache Limit",   100);
     persistentTileCacheLimit = group.readEntry("Persistent Tile Cache Limit", 999999);
+    showGrid                 = group.readEntry("Show Grid",                   true);
 }
 
 void GeolocationSettingsContainer::writeToConfig(KConfigGroup& group) const
@@ -49,6 +50,7 @@ void GeolocationSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Mouse Rotation",              (bool)mouseRotation);
     group.writeEntry("Volatile Tile Cache Limit",   volatileTileCacheLimit);
     group.writeEntry("Persistent Tile Cache Limit", persistentTileCacheLimit);
+    group.writeEntry("Show Grid",                   (bool)showGrid);
 }
 
 QDebug operator<<(QDebug dbg, const GeolocationSettingsContainer& inf)
@@ -70,7 +72,9 @@ QDebug operator<<(QDebug dbg, const GeolocationSettingsContainer& inf)
     dbg.nospace() << "volatileTileCacheLimit("
                   << inf.volatileTileCacheLimit << "), ";
     dbg.nospace() << "persistentTileCacheLimit("
-                  << inf.persistentTileCacheLimit << ")";
+                  << inf.persistentTileCacheLimit << "), ";
+    dbg.nospace() << "showGrid("
+                  << inf.showGrid << ")";
 
     return dbg.space();
 }

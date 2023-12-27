@@ -130,6 +130,7 @@ void MarbleConfigView::readSettings()
     d->viewSettings.kcfg_mouseViewRotation->setChecked(settings.mouseRotation);
     d->viewSettings.kcfg_volatileTileCacheLimit->setValue(settings.volatileTileCacheLimit);
     d->viewSettings.kcfg_persistentTileCacheLimit->setValue(settings.persistentTileCacheLimit);
+    d->viewSettings.kcfg_showGrid->setChecked(settings.showGrid);
 
     // Read the settings of the plugins
 
@@ -154,6 +155,7 @@ void MarbleConfigView::applySettings()
     settings.mouseRotation            = d->viewSettings.kcfg_mouseViewRotation->isChecked();
     settings.volatileTileCacheLimit   = d->viewSettings.kcfg_volatileTileCacheLimit->value();
     settings.persistentTileCacheLimit = d->viewSettings.kcfg_persistentTileCacheLimit->value();
+    settings.showGrid                 = d->viewSettings.kcfg_showGrid->isChecked();
 
     GeolocationSettings::instance()->setSettings(settings);
 
