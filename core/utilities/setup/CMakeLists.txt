@@ -21,7 +21,6 @@ set(libsetupshowfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupeditoriface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupiofiles.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupraw.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setupgeolocation.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupicc.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/downloader/filesdownloader.cpp
