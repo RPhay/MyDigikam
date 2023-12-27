@@ -86,7 +86,7 @@ LensFunFilter::~LensFunFilter()
 
     if (d->modifier)
     {
-        d->modifier->Destroy();
+        lf_modifier_destroy(d->modifier);
     }
 
     delete d->iface;
