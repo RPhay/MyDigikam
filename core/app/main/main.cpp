@@ -134,7 +134,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
 #else
 
-    QImageReader::setAllocationLimit(0);
+    QImageReader::setAllocationLimit(2048);
 
 #endif
 
