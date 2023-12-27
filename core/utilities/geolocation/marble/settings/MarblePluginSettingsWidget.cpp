@@ -129,15 +129,17 @@ void MarblePluginSettingsWidget::slotPluginAboutDialog(const QModelIndex& index)
 
     auth.truncate(auth.size() - 2);
 
-    dlg->setWindowTitle(i18n("About Plugin %1", d->pluginModel->data(index, RenderPluginModel::Name).toString()));
+    dlg->setWindowTitle(i18n("About Plugin"));
     QLabel* const icon      = new QLabel(dlg);
     icon->setPixmap(qvariant_cast<QIcon>(d->pluginModel->data(index, RenderPluginModel::Icon)).pixmap(48, 48));
     QLabel* const text      = new QLabel(dlg);
     text->setWordWrap(true);
     text->setText(i18n(
-                       "<p><u>Version:</u> %1</p>"
-                       "<p><u>Copyrights:</u> %2</p>"
-                       "<p><u>Description:</u> %3</p>",
+                       "<p><u>Name:</u> %1</p>"
+                       "<p><u>Version:</u> %2</p>"
+                       "<p><u>Copyrights:</u> %3</p>"
+                       "<p><u>Description:</u> %4</p>",
+                       d->pluginModel->data(index, RenderPluginModel::Name).toString(),
                        d->pluginModel->data(index, RenderPluginModel::Version).toString(),
                        auth,
                        d->pluginModel->data(index, RenderPluginModel::Description).toString()
