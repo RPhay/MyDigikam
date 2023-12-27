@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-26 00:39+0000\n"
+"POT-Creation-Date: 2023-12-27 00:39+0000\n"
 "PO-Revision-Date: 2023-04-10 18:05+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -2827,9 +2827,9 @@ msgstr "Bara de unelte principală"
 
 #: core/app/main/main.cpp:196 core/app/views/stack/welcomepageview.cpp:257
 #: core/libs/album/manager/albummanager_album.cpp:128
-#: core/libs/album/manager/albummanager_dalbum.cpp:94
-#: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:977
+#: core/libs/album/manager/albummanager_dalbum.cpp:96
+#: core/libs/album/manager/albummanager_falbum.cpp:68
+#: core/libs/album/manager/albummanager_talbum.cpp:979
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -3038,7 +3038,7 @@ msgstr "Arată pe tot ecranul"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:485
-#: core/libs/album/manager/albummanager.cpp:165
+#: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -3068,6 +3068,7 @@ msgstr "Hartă"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:118
 #: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
@@ -3127,7 +3128,7 @@ msgstr "Albumele mele"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:558
-#: core/libs/album/manager/albummanager.cpp:168
+#: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:106
@@ -4357,7 +4358,7 @@ msgstr "Unitate"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:264
+#: core/libs/dtrash/dtrashitemmodel.cpp:266
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Thumbnail"
@@ -9060,7 +9061,8 @@ msgstr ""
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:484
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
@@ -10209,7 +10211,6 @@ msgstr "Ajustare automată"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
 #, kde-format
 msgid "Settings"
 msgstr "Configurări"
@@ -11251,77 +11252,88 @@ msgctxt "@item"
 msgid "Two maps - top and bottom"
 msgstr "Răstoarnă orizontal"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:361
+#. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
+#: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
+#: core/utilities/maintenance/facesdetector.cpp:66
+#: core/utilities/searchwindow/searchutilities.cpp:633
+#, kde-format
+msgid "OK"
+msgstr ""
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, fuzzy, kde-format
 #| msgid "Sorting"
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Sortare"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:368
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
 #, fuzzy, kde-format
 #| msgid "Show oldest first"
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Afișează întâi cele mai vechi"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Afișează întâi cele mai recente"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Detalii"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "Calendar"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
 #, fuzzy, kde-format
 #| msgid "Undo/Redo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Desfă/Refă"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
 #, fuzzy, kde-format
 #| msgid "RAW Decoding"
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Decodare RAW"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Caută"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
 #, fuzzy, kde-format
 #| msgid "KML Export"
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Export KML"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:635
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
 #, fuzzy, kde-format
 #| msgid "Loading metadata -"
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Se încarcă metadate -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:826
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
 #, fuzzy, kde-format
 #| msgid "You have 1 modified image."
 #| msgid_plural "You have %1 modified images."
@@ -11332,27 +11344,27 @@ msgstr[0] "Aveți 1 imagine modificată"
 msgstr[1] "Aveți %1 imagini modificate"
 msgstr[2] "Aveți %1 de imagini modificate"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:833
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
 #, fuzzy, kde-format
 #| msgid "Unsaved changes"
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Modificări nesalvate"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:950
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
 #, fuzzy, kde-format
 #| msgid "Saving changes -"
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Se salvează modificările -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:243
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11397,14 +11409,14 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Eroare"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Salvarea unor informații a eșuat:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1048
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -15668,28 +15680,28 @@ msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Adaugă proprietățile fișierului"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:118
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:119
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr "Scrie metadate în fiecare fișier"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:120
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Scrie metadate în fiecare fișier"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:366
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:367
 #, fuzzy, kde-format
 #| msgid "Adjustment:"
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Ajustare:"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:396
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
 #: core/utilities/imageeditor/editor/editorwindow.cpp:598
 #, fuzzy, kde-format
@@ -15698,14 +15710,14 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Renunță"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Se anulează operația curentă, așteptați..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
 #, fuzzy, kde-format
 #| msgid "&Close"
@@ -15713,7 +15725,7 @@ msgctxt "@action"
 msgid "Close"
 msgstr "În&chide"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
 #, fuzzy, kde-format
 msgctxt "@info"
@@ -19786,15 +19798,6 @@ msgstr "Listă personalizată"
 #, fuzzy, kde-format
 msgid "Photos per page"
 msgstr "Proprietăți fotografie"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
-#: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:633
-#, kde-format
-msgid "OK"
-msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:47
@@ -26650,7 +26653,7 @@ msgstr "Introduceți numele noului album:"
 msgid "Scanning albums"
 msgstr "Examinează albumele"
 
-#: core/libs/album/manager/albummanager.cpp:171
+#: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/widgets/albumselecttabs.cpp:193
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
@@ -26961,10 +26964,10 @@ msgstr "Adăugarea albumului la baza de date a eșuat"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
-#: core/libs/album/manager/albummanager_talbum.cpp:365
-#: core/libs/album/manager/albummanager_talbum.cpp:457
-#: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:584
+#: core/libs/album/manager/albummanager_talbum.cpp:367
+#: core/libs/album/manager/albummanager_talbum.cpp:459
+#: core/libs/album/manager/albummanager_talbum.cpp:498
+#: core/libs/album/manager/albummanager_talbum.cpp:586
 #, kde-format
 msgid "No such album"
 msgstr "Nu există un astfel de album"
@@ -27003,52 +27006,52 @@ msgstr "Redenumirea albumului a eșuat"
 msgid "Cannot edit root album"
 msgstr "Nu se poate edita albumul rădăcină"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:289
+#: core/libs/album/manager/albummanager_talbum.cpp:291
 #, kde-format
 msgid "No parent found for tag"
 msgstr "Nu s-a găsit părinte pentru etichetă"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:297
+#: core/libs/album/manager/albummanager_talbum.cpp:299
 #, kde-format
 msgid "Tag name cannot be empty"
 msgstr "Numele etichetei nu poate fi vid"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:303
-#: core/libs/album/manager/albummanager_talbum.cpp:469
+#: core/libs/album/manager/albummanager_talbum.cpp:305
+#: core/libs/album/manager/albummanager_talbum.cpp:471
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "Numele etichetei nu poate conține „/”"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:311
+#: core/libs/album/manager/albummanager_talbum.cpp:313
 #: core/libs/tags/widgets/tageditdlg.cpp:476
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Numele etichetei există deja"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:320
+#: core/libs/album/manager/albummanager_talbum.cpp:322
 #, kde-format
 msgid "Failed to add tag to database"
 msgstr "Adăugarea etichetei la baza de date a eșuat"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:371
+#: core/libs/album/manager/albummanager_talbum.cpp:373
 #, fuzzy, kde-format
 #| msgid "Cannot delete Root Tag"
 msgid "Cannot delete root tag"
 msgstr "Nu se poate șterge eticheta rădăcină"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:377
+#: core/libs/album/manager/albummanager_talbum.cpp:379
 #, fuzzy, kde-format
 #| msgid "Cannot delete Root Tag"
 msgid "Cannot delete required face tag"
 msgstr "Nu se poate șterge eticheta rădăcină"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:700
+#: core/libs/album/manager/albummanager_talbum.cpp:465
+#: core/libs/album/manager/albummanager_talbum.cpp:702
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Nu se poate edita eticheta rădăcină"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:477
+#: core/libs/album/manager/albummanager_talbum.cpp:479
 #, fuzzy, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27057,17 +27060,17 @@ msgstr ""
 "Un alt album cu același nume există deja.\n"
 "Alegeți alt nume."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:502
+#: core/libs/album/manager/albummanager_talbum.cpp:504
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:508
+#: core/libs/album/manager/albummanager_talbum.cpp:510
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Nu se poate muta eticheta rădăcină"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:516
+#: core/libs/album/manager/albummanager_talbum.cpp:518
 #, fuzzy, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27076,40 +27079,40 @@ msgstr ""
 "Un alt album cu același nume există deja.\n"
 "Alegeți alt nume."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:590
+#: core/libs/album/manager/albummanager_talbum.cpp:592
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge root tag"
 msgstr "Nu se poate muta eticheta rădăcină"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:596
+#: core/libs/album/manager/albummanager_talbum.cpp:598
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge required face tag"
 msgstr "Nu se poate muta eticheta rădăcină"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:602
+#: core/libs/album/manager/albummanager_talbum.cpp:604
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:614
+#: core/libs/album/manager/albummanager_talbum.cpp:616
 #, fuzzy, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Doriți să eliminați colecția „%1” din lista de colecții?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1118
+#: core/libs/album/manager/albummanager_talbum.cpp:620
+#: core/libs/album/manager/albummanager_talbum.cpp:1120
 #, fuzzy, kde-format
 msgid "Don't ask again at this session"
 msgstr "Nu întreb&a din nou"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:694
+#: core/libs/album/manager/albummanager_talbum.cpp:696
 #, kde-format
 msgid "No such tag"
 msgstr "Nu există o astfel de etichetă"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1113
+#: core/libs/album/manager/albummanager_talbum.cpp:1115
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -34276,12 +34279,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "&Ajutor"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:269
+#: core/libs/dtrash/dtrashitemmodel.cpp:271
 #, kde-format
 msgid "Relative Path"
 msgstr "Calea relativă"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:274
+#: core/libs/dtrash/dtrashitemmodel.cpp:276
 #, kde-format
 msgid "Deletion Time"
 msgstr "Momentul ștergerii"
@@ -35106,7 +35109,7 @@ msgstr ""
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:484
+#: core/libs/iojobs/iojob.cpp:489
 #, fuzzy, kde-format
 #| msgid "Failed to open file for writing"
 msgid "Could not restore file %1 from trash"
@@ -53543,68 +53546,56 @@ msgid ""
 "Fuzzy search"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:195
 #, kde-format
 msgid "Roadmap"
 msgstr "Hartă rutieră"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:196
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #, kde-format
 msgid "Hybrid"
 msgstr "Hibrid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "Teren"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:218
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:216
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Arată controlul de tip de hartă"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:221
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Arată controlul de navigare"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:228
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:226
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Arată controlul de scalare"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
-#, fuzzy, kde-format
-#| msgid "Google Maps"
-msgid "Google Maps API Key"
-msgstr "Hărți Google"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:239
+#: core/utilities/setup/setupgeolocation.cpp:130
 #, kde-format
 msgid "Google Maps"
 msgstr "Hărți Google"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:475
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:473
 #, kde-format
 msgid "Float items"
 msgstr "Elemente flotante"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
-#, fuzzy, kde-format
-#| msgid "URL:"
-msgid "API Key:"
-msgstr "URL:"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1639
 #, fuzzy, kde-format
 #| msgid "Select an Image"
 msgctxt "@title:window"
@@ -53616,72 +53607,72 @@ msgstr "Selectați o imagine"
 msgid "Marble Virtual Globe"
 msgstr "Globul virtual Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
 #, kde-format
 msgid "Atlas map"
 msgstr "Hartă Atlas"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:331
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:332
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap (Vector)"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:390
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Sferică"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:395
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:393
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:398
 #, kde-format
 msgid "Equirectangular"
 msgstr "Echirectangular"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:409
 #, kde-format
 msgid "Show compass"
 msgstr "Arată compasul"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:416
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:414
 #, kde-format
 msgid "Show scale bar"
 msgstr "Arată bara de măsură"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:419
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Show navigation"
 msgstr "Arată controlul de navigare"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:424
 #, kde-format
 msgid "Show overview map"
 msgstr "Arată harta sumară"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:466
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:464
 #, kde-format
 msgid "Projection"
 msgstr "Proiecție"
@@ -54543,98 +54534,98 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:258
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:261
 #, kde-format
 msgid "Zoom in"
 msgstr "Apropiere"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:265
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:268
 #, kde-format
 msgid "Zoom out"
 msgstr "Îndepărtare"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:271
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:274
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Comută între marcaje și miniaturi."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:289
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
 #, kde-format
 msgid "Preview single items"
 msgstr "Previzualizează elemente separate"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Previzualizează elemente grupate"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:298
 #, kde-format
 msgid "Show numbers"
 msgstr "Afișează numerele"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:301
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Mărește dimensiunea miniaturilor pe hartă"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:307
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Micșorează dimensiunea miniaturilor pe hartă"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:314
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Șterge selecția curentă de regiune"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:319
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:322
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Selectează imagini prin desenarea unui dreptunghi"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:324
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
 #, kde-format
 msgid "Pan mode"
 msgstr "Regim panoramic"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:331
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:334
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Apropie un grup"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:340
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Creează o selecție de regiune dintr-o miniatură"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
 #, kde-format
 msgid "Filter images"
 msgstr "Filtrează imaginile"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:351
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Elimină filtrul curent"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:356
 #, kde-format
 msgid "Select images"
 msgstr "Selectează imagini"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:359
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
 #, kde-format
 msgid "Lock the map position"
 msgstr "Blochează poziția hărții"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:365
 #, fuzzy, kde-format
 #| msgid "Load playlist from a file."
 msgid "Load tracks from albums"
 msgstr "Încarcă lista de redare dintr-un fișier."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:823
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:826
 #, kde-format
 msgid "Map settings"
 msgstr "Parametrii hărții"
@@ -56960,6 +56951,21 @@ msgstr "Adăugare imagini..."
 msgid "Configure"
 msgstr "Configurează"
 
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:62
+#, kde-format
+msgid "Atmosphere"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:67
+#, kde-format
+msgid "&Atmosphere"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
+#, kde-format
+msgid "Shows the atmosphere around the earth."
+msgstr ""
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
 #, fuzzy, kde-format
@@ -56969,6 +56975,7 @@ msgstr "Configurează această coloană"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:20
 #, fuzzy, kde-format
 #| msgid "&Themes"
 msgid "Theme"
@@ -56976,6 +56983,7 @@ msgstr "&Tematici"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:43
 #, fuzzy, kde-format
 #| msgctxt "default theme name"
 #| msgid "Default"
@@ -57017,6 +57025,207 @@ msgstr "Arată compasul"
 #, fuzzy, kde-format
 msgid "This is a float item that provides a compass."
 msgstr "Editați proprietățile albumului și informațiile colecției."
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
+#, fuzzy, kde-format
+#| msgid "Configure this column"
+msgid "Configure Crosshairs Plugin"
+msgstr "Configurează această coloană"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
+#, kde-format
+msgid "Gun 1"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
+#, kde-format
+msgid "Gun 2"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Circled"
+msgstr "Cerc în afară"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:79
+#, fuzzy, kde-format
+#| msgid "Germany"
+msgid "German"
+msgstr "Germania"
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:73
+#, kde-format
+msgid "Crosshairs"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:78
+#, kde-format
+msgid "Cross&hairs"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#, kde-format
+msgid "A plugin that shows crosshairs."
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
+#, fuzzy, kde-format
+msgid "Coordinate Grid Plugin"
+msgstr "Coordonate polare"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:20
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "C&olors"
+msgstr "Culori"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:444
+#, kde-format
+msgid "&Grid:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:497
+#, fuzzy, kde-format
+#| msgid "Color model of the image"
+msgid "Color of the coordinate grid."
+msgstr "Modelul de culoare al imaginii"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:922
+#, fuzzy, kde-format
+#| msgid "Topic"
+msgid "&Tropics:"
+msgstr "Subiect"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, tropicsPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:938
+#, kde-format
+msgid "Color of the tropical circles."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1363
+#, kde-format
+msgid "&Equator:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1379
+#, fuzzy, kde-format
+#| msgid "Color model of the image"
+msgid "Color of the equator."
+msgstr "Modelul de culoare al imaginii"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1398
+#, fuzzy, kde-format
+#| msgid "Texture"
+msgid "&Named Labels"
+msgstr "Textură"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1408
+#, kde-format
+msgid "Show Labels for Prime meridian, Equator, Tropics."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1415
+#, fuzzy, kde-format
+#| msgid "Vertically first"
+msgid "&Numerical Labels"
+msgstr "Întâi pe verticală"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1425
+#, fuzzy, kde-format
+msgid "Show numerical Labels."
+msgstr "Afișează etichetele imaginilor"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:71
+#, fuzzy, kde-format
+msgid "Coordinate Grid"
+msgstr "Coordonate polare"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:76
+#, fuzzy, kde-format
+msgid "Coordinate &Grid"
+msgstr "Coordonate polare"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:91
+#, kde-format
+msgid "A plugin that shows a coordinate grid."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:213
+#, fuzzy, kde-format
+#| msgid "Set here the color of the main border."
+msgid "Please choose the color for the coordinate grid."
+msgstr "Stabiliți aici culoarea conturului principal:"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:224
+#, fuzzy, kde-format
+#| msgid "Set here the color of the main border."
+msgid "Please choose the color for the tropic circles."
+msgstr "Stabiliți aici culoarea conturului principal:"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:235
+#, fuzzy, kde-format
+#| msgid "Set here the color of the main border."
+msgid "Please choose the color for the equator."
+msgstr "Stabiliți aici culoarea conturului principal:"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:315
+#, fuzzy, kde-format
+#| msgid "Calendar"
+msgid "Equator"
+msgstr "Calendar"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
+#, fuzzy, kde-format
+msgid "Prime Meridian"
+msgstr "Părinți"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:321
+#, kde-format
+msgid "Antimeridian"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
+#, kde-format
+msgid "Tropic of Cancer"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:408
+#, kde-format
+msgid "Tropic of Capricorn"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Arctic Circle"
+msgstr "Cerc în afară"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:412
+#, fuzzy, kde-format
+#| msgid "Antarctica"
+msgid "Antarctic Circle"
+msgstr "Antarctica"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -57299,30 +57508,30 @@ msgstr "Raportul aspectului curent"
 msgid "Home Button"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:75
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:74
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "Overview Map"
 msgstr "Arată harta sumară"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:80
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:79
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "&Overview Map"
 msgstr "Arată harta sumară"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:95
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
 #, fuzzy, kde-format
 msgid "This is a float item that provides an overview map."
 msgstr "Editați proprietățile albumului și informațiile colecției."
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:481
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:480
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "Choose Overview Map"
 msgstr "Arată harta sumară"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:513
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:512
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr ""
@@ -57363,18 +57572,26 @@ msgstr "Mărime: "
 msgid "x"
 msgstr "x"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Colors"
-msgid "C&olors"
-msgstr "Culori"
-
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
 #, fuzzy, kde-format
 msgid "Position I&ndicator:"
 msgstr "Restaurează filtrele de etichetă"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:81
+#, fuzzy, kde-format
+msgid "Download Progress Indicator"
+msgstr "Indicatori de expunere"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:86
+#, fuzzy, kde-format
+msgid "&Download Progress"
+msgstr "Descarcă"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:101
+#, fuzzy, kde-format
+msgid "Shows a pie chart download progress indicator"
+msgstr "Indicatori de expunere"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -57517,15 +57734,21 @@ msgstr "Controlul grafic Marble"
 msgid "Marble Plugins"
 msgstr "Module imagini"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:68
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:131
 #, kde-format
 msgid "About Plugin %1"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:72
-#, kde-format
-msgid "<p>Version: %1</p><p>Description: %2</p>"
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:137
+#, fuzzy, kde-format
+#| msgid ""
+#| "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</"
+#| "p>"
+msgid ""
+"<p><u>Version:</u> %1</p><p><u>Authors:</u> %2</p><p><u>Description:</u> %3</"
+"p>"
 msgstr ""
+"<b>Titlu: </b><p>%1</p><b>Valoare: </b><p>%2</p><b>Descriere: </b><p>%3</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
@@ -59587,7 +59810,7 @@ msgstr "Eșec la încărcarea fișierului „%1”."
 
 #: core/utilities/import/backend/cameracontroller.cpp:628
 #: core/utilities/import/backend/cameracontroller.cpp:995
-#: core/utilities/import/main/importui.cpp:2414
+#: core/utilities/import/main/importui.cpp:2419
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -60486,25 +60709,25 @@ msgstr[0] "%2/%1 element selectat"
 msgstr[1] "%2/%1 elemente selectate"
 msgstr[2] "%2/%1 de elemente selectate"
 
-#: core/utilities/import/main/importui.cpp:2349
+#: core/utilities/import/main/importui.cpp:2354
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Eșec la încărcarea fișierului „%1”."
 
-#: core/utilities/import/main/importui.cpp:2371
+#: core/utilities/import/main/importui.cpp:2376
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Eșec la încărcarea fișierului „%1”."
 
-#: core/utilities/import/main/importui.cpp:2394
+#: core/utilities/import/main/importui.cpp:2399
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Eșec la încărcarea fișierului „%1”."
 
-#: core/utilities/import/main/importui.cpp:2468
+#: core/utilities/import/main/importui.cpp:2476
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -60512,19 +60735,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2476
+#: core/utilities/import/main/importui.cpp:2484
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Marchează ca descărcată"
 
-#: core/utilities/import/main/importui.cpp:2502
+#: core/utilities/import/main/importui.cpp:2510
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Un fișier cu aceeași denumire (%1) există deja în dosarul %2."
 
-#: core/utilities/import/main/importui.cpp:2515
+#: core/utilities/import/main/importui.cpp:2523
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -66848,6 +67071,23 @@ msgctxt "@info:tooltip"
 msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr ""
 
+#: core/utilities/setup/setupgeolocation.cpp:102
+#, fuzzy, kde-format
+#| msgid "URL:"
+msgid "API Key:"
+msgstr "URL:"
+
+#: core/utilities/setup/setupgeolocation.cpp:113
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Google Maps requires to work friendly an API key that end users must buy "
+"online to gain credentials. Without this key, Google Maps is still usable "
+"but with an overlay frame annotated \"For Develomepent Only\". For more "
+"information, see this <a href='https://mapsplatform.google.com/"
+"pricing/'>Google page</a> about usages, practices, and prices."
+msgstr ""
+
 #: core/utilities/setup/setupicc.cpp:178
 #, kde-format
 msgid "Enable Color Management"
@@ -67725,6 +67965,11 @@ msgstr "Revenire la parametrii impliciți"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Revenire la parametrii impliciți"
+
+#, fuzzy
+#~| msgid "Google Maps"
+#~ msgid "Google Maps API Key"
+#~ msgstr "Hărți Google"
 
 #, fuzzy
 #~| msgid "Moonlight"

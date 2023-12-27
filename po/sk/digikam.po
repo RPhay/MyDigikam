@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-26 00:39+0000\n"
+"POT-Creation-Date: 2023-12-27 00:39+0000\n"
 "PO-Revision-Date: 2023-09-28 22:38+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -2638,9 +2638,9 @@ msgstr "Hlavný panel nástrojov"
 
 #: core/app/main/main.cpp:196 core/app/views/stack/welcomepageview.cpp:257
 #: core/libs/album/manager/albummanager_album.cpp:128
-#: core/libs/album/manager/albummanager_dalbum.cpp:94
-#: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:977
+#: core/libs/album/manager/albummanager_dalbum.cpp:96
+#: core/libs/album/manager/albummanager_falbum.cpp:68
+#: core/libs/album/manager/albummanager_talbum.cpp:979
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -2869,7 +2869,7 @@ msgstr "Zobraziť na celej obrazovke"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:485
-#: core/libs/album/manager/albummanager.cpp:165
+#: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -2899,6 +2899,7 @@ msgstr "Mapa"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:118
 #: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
@@ -2961,7 +2962,7 @@ msgstr "Album bez štítkov"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:558
-#: core/libs/album/manager/albummanager.cpp:168
+#: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:106
@@ -4181,7 +4182,7 @@ msgstr "Jednotka"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:264
+#: core/libs/dtrash/dtrashitemmodel.cpp:266
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Thumbnail"
@@ -8830,7 +8831,8 @@ msgstr "Použiť správu farieb pre tlačenie"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:484
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
@@ -10019,7 +10021,6 @@ msgstr "Automatická oprava"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
 #, kde-format
 msgid "Settings"
 msgstr "Nastavenia"
@@ -11057,67 +11058,78 @@ msgctxt "@item"
 msgid "Two maps - top and bottom"
 msgstr "Dve mapy - vodorovné"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:361
+#. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
+#: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
+#: core/utilities/maintenance/facesdetector.cpp:66
+#: core/utilities/searchwindow/searchutilities.cpp:633
+#, kde-format
+msgid "OK"
+msgstr "OK"
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Triedenie"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:368
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Najprv zobrazovať najstaršie"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Najprv zobrazovať najnovšie"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS korelátor"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Naspäť/Dopredu"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Reverzná geolokácia"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Hľadať"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML Export"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:635
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Metadáta sa nacítavajú -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:826
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11126,7 +11138,7 @@ msgstr[0] "Zmenili ste jeden obrázok."
 msgstr[1] "Zmenili ste %1 obrázky."
 msgstr[2] "Zmenili ste %1 obrázkov."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:833
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Unsaved changes"
@@ -11134,19 +11146,19 @@ msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Neuložené zmeny"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Chcete uložiť zmeny, ktoré ste v nich vykonali?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:950
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Zmeny sa ukladajú -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:243
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11190,13 +11202,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Chyba"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Niektoré informácie sa nepodarilo uložiť:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1048
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -15564,7 +15576,7 @@ msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Upraviť dátum a čas"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:118
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:119
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Write the corrected date and time for each image"
@@ -15572,19 +15584,19 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr "Zapísať opravený dátum a čas do každého obrázka"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:120
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Zapísať opravený dátum a čas do každého obrázka"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:366
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:367
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Upraviť dátum a čas"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:396
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
 #: core/utilities/imageeditor/editor/editorwindow.cpp:598
 #, kde-format
@@ -15592,21 +15604,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Zrušiť aktuálnu operáciu"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Zavrieť"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
 #, kde-format
 msgctxt "@info"
@@ -19666,15 +19678,6 @@ msgstr "Automatické rozvrhnutie:"
 #, kde-format
 msgid "Photos per page"
 msgstr "Fotografií na stranu"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
-#: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:633
-#, kde-format
-msgid "OK"
-msgstr "OK"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:47
@@ -26535,7 +26538,7 @@ msgstr "Zadajte nové meno albumu:"
 msgid "Scanning albums"
 msgstr "Hľadajú sa odstránené albumy"
 
-#: core/libs/album/manager/albummanager.cpp:171
+#: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/widgets/albumselecttabs.cpp:193
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
@@ -26901,10 +26904,10 @@ msgstr "Pridanie albumu do databázy zlyhalo"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
-#: core/libs/album/manager/albummanager_talbum.cpp:365
-#: core/libs/album/manager/albummanager_talbum.cpp:457
-#: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:584
+#: core/libs/album/manager/albummanager_talbum.cpp:367
+#: core/libs/album/manager/albummanager_talbum.cpp:459
+#: core/libs/album/manager/albummanager_talbum.cpp:498
+#: core/libs/album/manager/albummanager_talbum.cpp:586
 #, kde-format
 msgid "No such album"
 msgstr "Album neexistuje"
@@ -26943,52 +26946,52 @@ msgstr "Premenovanie albumu zlyhalo"
 msgid "Cannot edit root album"
 msgstr "Nemožno editovať domovský album"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:289
+#: core/libs/album/manager/albummanager_talbum.cpp:291
 #, kde-format
 msgid "No parent found for tag"
 msgstr "Nebol nájdený rodič štítka"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:297
+#: core/libs/album/manager/albummanager_talbum.cpp:299
 #, kde-format
 msgid "Tag name cannot be empty"
 msgstr "Názov štítka nesmie byť prázdny"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:303
-#: core/libs/album/manager/albummanager_talbum.cpp:469
+#: core/libs/album/manager/albummanager_talbum.cpp:305
+#: core/libs/album/manager/albummanager_talbum.cpp:471
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "Názov štítka nesmie obsahovať „/“"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:311
+#: core/libs/album/manager/albummanager_talbum.cpp:313
 #: core/libs/tags/widgets/tageditdlg.cpp:476
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Názov štítka už existuje"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:320
+#: core/libs/album/manager/albummanager_talbum.cpp:322
 #, kde-format
 msgid "Failed to add tag to database"
 msgstr "Nepodarilo sa pridať štítok do databázy"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:371
+#: core/libs/album/manager/albummanager_talbum.cpp:373
 #, fuzzy, kde-format
 #| msgid "Cannot delete Root Tag"
 msgid "Cannot delete root tag"
 msgstr "Nie je možné zmazať koreňový štítok"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:377
+#: core/libs/album/manager/albummanager_talbum.cpp:379
 #, fuzzy, kde-format
 #| msgid "Cannot delete Root Tag"
 msgid "Cannot delete required face tag"
 msgstr "Nie je možné zmazať koreňový štítok"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:700
+#: core/libs/album/manager/albummanager_talbum.cpp:465
+#: core/libs/album/manager/albummanager_talbum.cpp:702
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Nie je možné upravovať koreňový štítok"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:477
+#: core/libs/album/manager/albummanager_talbum.cpp:479
 #, fuzzy, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26997,17 +27000,17 @@ msgstr ""
 "Už existuje album s rovnakým menom.\n"
 "Prosím vyberte iné meno."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:502
+#: core/libs/album/manager/albummanager_talbum.cpp:504
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:508
+#: core/libs/album/manager/albummanager_talbum.cpp:510
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Nie je možné presunúť koreňový štítok"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:516
+#: core/libs/album/manager/albummanager_talbum.cpp:518
 #, fuzzy, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27016,40 +27019,40 @@ msgstr ""
 "Už existuje album s rovnakým menom.\n"
 "Prosím vyberte iné meno."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:590
+#: core/libs/album/manager/albummanager_talbum.cpp:592
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge root tag"
 msgstr "Nie je možné presunúť koreňový štítok"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:596
+#: core/libs/album/manager/albummanager_talbum.cpp:598
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge required face tag"
 msgstr "Nie je možné presunúť koreňový štítok"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:602
+#: core/libs/album/manager/albummanager_talbum.cpp:604
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Zlúčiť sa dá iba štítok bez detí!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:614
+#: core/libs/album/manager/albummanager_talbum.cpp:616
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Naozaj chcete zlúčiť štítok '%1' do štítku '%2'?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1118
+#: core/libs/album/manager/albummanager_talbum.cpp:620
+#: core/libs/album/manager/albummanager_talbum.cpp:1120
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Až do ďalšieho spustenia programu sa už nepýtať"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:694
+#: core/libs/album/manager/albummanager_talbum.cpp:696
 #, kde-format
 msgid "No such tag"
 msgstr "Taký štítok neexistuje"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1113
+#: core/libs/album/manager/albummanager_talbum.cpp:1115
 #, fuzzy, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -34373,12 +34376,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Pomocník"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:269
+#: core/libs/dtrash/dtrashitemmodel.cpp:271
 #, kde-format
 msgid "Relative Path"
 msgstr "Relatívna cesta"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:274
+#: core/libs/dtrash/dtrashitemmodel.cpp:276
 #, fuzzy, kde-format
 msgid "Deletion Time"
 msgstr "Čas vytvorenia"
@@ -35267,7 +35270,7 @@ msgstr ""
 msgid "Image %1 could not be renamed"
 msgstr "Obrázok %1 sa nedá premenovať"
 
-#: core/libs/iojobs/iojob.cpp:484
+#: core/libs/iojobs/iojob.cpp:489
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Nemôžem obnoviť súbor %1 z koša"
@@ -54245,69 +54248,56 @@ msgstr ""
 "podľa ktorej sa vykoná\n"
 "fuzzy hľadanie."
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:195
 #, kde-format
 msgid "Roadmap"
 msgstr "Cestovná mapa"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:196
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #, kde-format
 msgid "Hybrid"
 msgstr "Hybrid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "Terén"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:218
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:216
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Zobraziť ovládač typu mapy"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:221
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Zobraziť ovládač navigácie"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:228
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:226
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Zobraziť ovládač mierky"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
-#, fuzzy, kde-format
-#| msgid "Google Maps"
-msgid "Google Maps API Key"
-msgstr "Google mapy"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:239
+#: core/utilities/setup/setupgeolocation.cpp:130
 #, kde-format
 msgid "Google Maps"
 msgstr "Google mapy"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:475
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:473
 #, kde-format
 msgid "Float items"
 msgstr "Plávajúce položky"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "API URL:"
-msgid "API Key:"
-msgstr "API URL:"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1639
 #, kde-format
 msgctxt "@title:window"
 msgid "Javascript Message"
@@ -54318,71 +54308,71 @@ msgstr ""
 msgid "Marble Virtual Globe"
 msgstr "Marble - virtuálny glóbus"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
 #, kde-format
 msgid "Atlas map"
 msgstr "Mapa atlasu"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:331
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:332
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap (Vector)"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:390
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Sférické"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:395
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:393
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Mercatorove"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:398
 #, kde-format
 msgid "Equirectangular"
 msgstr "Ekvirektangulárne"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:409
 #, kde-format
 msgid "Show compass"
 msgstr "Zobraziť kompas"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:416
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:414
 #, kde-format
 msgid "Show scale bar"
 msgstr "Zobraziť grafickú mierku"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:419
 #, kde-format
 msgid "Show navigation"
 msgstr "Zobraziť navigáciu"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:424
 #, kde-format
 msgid "Show overview map"
 msgstr "Zobraziť orientačnú mapu"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Ďalšie motívy Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:466
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:464
 #, kde-format
 msgid "Projection"
 msgstr "Zobrazenie"
@@ -55271,98 +55261,98 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr "Súbor je GPX súbor, ale nenašli sa žiadne dátové body."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:258
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:261
 #, kde-format
 msgid "Zoom in"
 msgstr "Priblížiť"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:265
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:268
 #, kde-format
 msgid "Zoom out"
 msgstr "Oddialiť"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:271
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:274
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Prepnúť medzi označníkmi a náhľadmi."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:289
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
 #, kde-format
 msgid "Preview single items"
 msgstr "Náhľad jednoduchých položiek"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Náhľad zoskupených položiek"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:298
 #, kde-format
 msgid "Show numbers"
 msgstr "Zobraziť čísla"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:301
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Zväčšiť veľkosť náhľadu na mape"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:307
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Zmenšiť veľkosť náhľadu na mape"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:314
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Odstrániť výber aktuálnej oblasti"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:319
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:322
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Vybrať obrázky nakreslením obdĺžnika"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:324
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
 #, kde-format
 msgid "Pan mode"
 msgstr "Režim posúvania"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:331
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:334
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Priblížiť na skupinu"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:340
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Vytvorte výber oblasti z náhľadu"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
 #, kde-format
 msgid "Filter images"
 msgstr "Filtrovať obrázky"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:351
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Odstrániť aktuálny filter"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:356
 #, kde-format
 msgid "Select images"
 msgstr "Vybrať obrázky"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:359
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
 #, kde-format
 msgid "Lock the map position"
 msgstr "Zamknúť polohu mapy"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:365
 #, fuzzy, kde-format
 #| msgid "Load playlist from a file."
 msgid "Load tracks from albums"
 msgstr "Načíta zoznam zo súboru."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:823
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:826
 #, kde-format
 msgid "Map settings"
 msgstr "Nastavenie mapy"
@@ -57771,6 +57761,21 @@ msgstr "Pridať nový tag"
 msgid "Configure"
 msgstr "Nastaviť"
 
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:62
+#, kde-format
+msgid "Atmosphere"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:67
+#, kde-format
+msgid "&Atmosphere"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
+#, kde-format
+msgid "Shows the atmosphere around the earth."
+msgstr ""
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
 #, fuzzy, kde-format
@@ -57780,12 +57785,14 @@ msgstr "Nastaviť tento stĺpec"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:20
 #, fuzzy, kde-format
 msgid "Theme"
 msgstr "&Témy"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:43
 #, fuzzy, kde-format
 #| msgctxt "default theme name"
 #| msgid "Default"
@@ -57829,6 +57836,215 @@ msgstr "Zobraziť kompas"
 #| msgid "This item has geolocation information."
 msgid "This is a float item that provides a compass."
 msgstr "Táto položka obsahuje informácie o geolokácii."
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
+#, fuzzy, kde-format
+#| msgid "Configure this column"
+msgid "Configure Crosshairs Plugin"
+msgstr "Nastaviť tento stĺpec"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
+#, kde-format
+msgid "Gun 1"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
+#, kde-format
+msgid "Gun 2"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Circled"
+msgstr "Kotúč"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:79
+#, fuzzy, kde-format
+#| msgctxt "@info: contry code"
+#| msgid "German"
+msgid "German"
+msgstr "Nemčina"
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:73
+#, kde-format
+msgid "Crosshairs"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:78
+#, kde-format
+msgid "Cross&hairs"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#, kde-format
+msgid "A plugin that shows crosshairs."
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
+#, fuzzy, kde-format
+#| msgid "Coordinates"
+msgid "Coordinate Grid Plugin"
+msgstr "Súradnice"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:20
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "C&olors"
+msgstr "Farby"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:444
+#, kde-format
+msgid "&Grid:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:497
+#, fuzzy, kde-format
+msgid "Color of the coordinate grid."
+msgstr "Farba okraja obrázku"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:922
+#, fuzzy, kde-format
+#| msgctxt "@item: type code"
+#| msgid "Topic"
+msgid "&Tropics:"
+msgstr "Téma"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, tropicsPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:938
+#, kde-format
+msgid "Color of the tropical circles."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1363
+#, kde-format
+msgid "&Equator:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1379
+#, fuzzy, kde-format
+msgid "Color of the equator."
+msgstr "Farba okraja obrázku"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1398
+#, fuzzy, kde-format
+#| msgid "Labels"
+msgid "&Named Labels"
+msgstr "Menovky"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1408
+#, kde-format
+msgid "Show Labels for Prime meridian, Equator, Tropics."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1415
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Vertical Lines"
+#| msgid "Vertical Lines"
+msgid "&Numerical Labels"
+msgstr "Vertikálne čiary"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1425
+#, fuzzy, kde-format
+#| msgid "Show image labels"
+msgid "Show numerical Labels."
+msgstr "Zobraziť menovky obrázkov"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:71
+#, fuzzy, kde-format
+#| msgid "Coordinates"
+msgid "Coordinate Grid"
+msgstr "Súradnice"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:76
+#, fuzzy, kde-format
+#| msgid "Coordinates"
+msgid "Coordinate &Grid"
+msgstr "Súradnice"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:91
+#, kde-format
+msgid "A plugin that shows a coordinate grid."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:213
+#, fuzzy, kde-format
+#| msgid "Set here the color of the second line."
+msgid "Please choose the color for the coordinate grid."
+msgstr "Tu môžete nastaviť farbu druhej čiary."
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:224
+#, fuzzy, kde-format
+#| msgid "Set here the color of the second line."
+msgid "Please choose the color for the tropic circles."
+msgstr "Tu môžete nastaviť farbu druhej čiary."
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:235
+#, fuzzy, kde-format
+#| msgid "Set here the color of the second line."
+msgid "Please choose the color for the equator."
+msgstr "Tu môžete nastaviť farbu druhej čiary."
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:315
+#, fuzzy, kde-format
+#| msgctxt "@label: item creator"
+#| msgid "Creator"
+msgid "Equator"
+msgstr "Vytvoril(a)"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
+#, fuzzy, kde-format
+#| msgid "Theme Parameters"
+msgid "Prime Meridian"
+msgstr "Parametre motívu"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:321
+#, kde-format
+msgid "Antimeridian"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
+#, kde-format
+msgid "Tropic of Cancer"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:408
+#, kde-format
+msgid "Tropic of Capricorn"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Arctic Circle"
+msgstr "Kotúč"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:412
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Antarctica"
+msgid "Antarctic Circle"
+msgstr "Antarktída"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -58121,32 +58337,32 @@ msgstr "Aktuálny pomer strán"
 msgid "Home Button"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:75
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:74
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "Overview Map"
 msgstr "Zobraziť orientačnú mapu"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:80
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:79
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "&Overview Map"
 msgstr "Zobraziť orientačnú mapu"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:95
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "This item has geolocation information."
 msgid "This is a float item that provides an overview map."
 msgstr "Táto položka obsahuje informácie o geolokácii."
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:481
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:480
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "Choose Overview Map"
 msgstr "Zobraziť orientačnú mapu"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:513
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:512
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the position indicator"
@@ -58186,18 +58402,29 @@ msgstr "Veľkosť:"
 msgid "x"
 msgstr "x"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Colors"
-msgid "C&olors"
-msgstr "Farby"
-
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
 #, fuzzy, kde-format
 msgid "Position I&ndicator:"
 msgstr "Pridať filter"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:81
+#, fuzzy, kde-format
+#| msgid "Show progress indicator"
+msgid "Download Progress Indicator"
+msgstr "Zobrazovať ukazovateľ priebehu"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:86
+#, fuzzy, kde-format
+#| msgid "Download error"
+msgid "&Download Progress"
+msgstr "Chyba sťahovania"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:101
+#, fuzzy, kde-format
+#| msgid "Show progress indicator"
+msgid "Shows a pie chart download progress indicator"
+msgstr "Zobrazovať ukazovateľ priebehu"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -58341,17 +58568,23 @@ msgstr "Informačný komponent"
 msgid "Marble Plugins"
 msgstr "Zásuvné moduly obrázkov"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:68
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:131
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "About %1 Plugin"
 msgid "About Plugin %1"
 msgstr "O plugine %1"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:72
-#, kde-format
-msgid "<p>Version: %1</p><p>Description: %2</p>"
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:137
+#, fuzzy, kde-format
+#| msgid ""
+#| "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</"
+#| "p>"
+msgid ""
+"<p><u>Version:</u> %1</p><p><u>Authors:</u> %2</p><p><u>Description:</u> %3</"
+"p>"
 msgstr ""
+"<b>Názov: </b><p>%1</p><b>Hodnota: </b><p>%2</p><b>Popis: </b><p>%3</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
@@ -60418,7 +60651,7 @@ msgstr "Nepodarilo sa zmazať súbor <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:628
 #: core/utilities/import/backend/cameracontroller.cpp:995
-#: core/utilities/import/main/importui.cpp:2414
+#: core/utilities/import/main/importui.cpp:2419
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Zlyhalo stiahnutie <filename>%1</filename>"
@@ -61349,22 +61582,22 @@ msgstr[0] "zvolená %2/%1 položka"
 msgstr[1] "zvolené %2/%1 položky"
 msgstr[2] "zvolených %2/%1 položiek"
 
-#: core/utilities/import/main/importui.cpp:2349
+#: core/utilities/import/main/importui.cpp:2354
 #, fuzzy, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/utilities/import/main/importui.cpp:2371
+#: core/utilities/import/main/importui.cpp:2376
 #, fuzzy, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Nepodarilo sa zamknúť <filename>%1</filename>...."
 
-#: core/utilities/import/main/importui.cpp:2394
+#: core/utilities/import/main/importui.cpp:2399
 #, fuzzy, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/utilities/import/main/importui.cpp:2468
+#: core/utilities/import/main/importui.cpp:2476
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -61374,13 +61607,13 @@ msgstr ""
 "Sťahovanie obrázkov bolo dokončené, môžete odpojiť váš fotoaparát, kým sú "
 "obrazky automaticky otáčané"
 
-#: core/utilities/import/main/importui.cpp:2476
+#: core/utilities/import/main/importui.cpp:2484
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "&Označiť ako dôležité"
 
-#: core/utilities/import/main/importui.cpp:2502
+#: core/utilities/import/main/importui.cpp:2510
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
@@ -61388,7 +61621,7 @@ msgstr ""
 "Súbor s rovnakým názvom (<filename>%1</filename>) už existuje v priečinku "
 "<resource>%2</resource>."
 
-#: core/utilities/import/main/importui.cpp:2515
+#: core/utilities/import/main/importui.cpp:2523
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -68109,6 +68342,24 @@ msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr ""
 "Získať informácie o <interface>aktualizácii odtlačkov súborov</interface>"
 
+#: core/utilities/setup/setupgeolocation.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "API URL:"
+msgid "API Key:"
+msgstr "API URL:"
+
+#: core/utilities/setup/setupgeolocation.cpp:113
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Google Maps requires to work friendly an API key that end users must buy "
+"online to gain credentials. Without this key, Google Maps is still usable "
+"but with an overlay frame annotated \"For Develomepent Only\". For more "
+"information, see this <a href='https://mapsplatform.google.com/"
+"pricing/'>Google page</a> about usages, practices, and prices."
+msgstr ""
+
 #: core/utilities/setup/setupicc.cpp:178
 #, kde-format
 msgid "Enable Color Management"
@@ -69027,6 +69278,11 @@ msgstr "Obnoviť vetky nastavenia na predvolené hodnoty."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Obnoviť vetky nastavenia na predvolené hodnoty."
+
+#, fuzzy
+#~| msgid "Google Maps"
+#~ msgid "Google Maps API Key"
+#~ msgstr "Google mapy"
 
 #, fuzzy
 #~| msgctxt "@item: WB temperature preset"

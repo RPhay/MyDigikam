@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-26 00:39+0000\n"
+"POT-Creation-Date: 2023-12-27 00:39+0000\n"
 "PO-Revision-Date: 2023-12-23 07:10+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -2613,9 +2613,9 @@ msgstr "Ĉefa ilobreto"
 
 #: core/app/main/main.cpp:196 core/app/views/stack/welcomepageview.cpp:257
 #: core/libs/album/manager/albummanager_album.cpp:128
-#: core/libs/album/manager/albummanager_dalbum.cpp:94
-#: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:977
+#: core/libs/album/manager/albummanager_dalbum.cpp:96
+#: core/libs/album/manager/albummanager_falbum.cpp:68
+#: core/libs/album/manager/albummanager_talbum.cpp:979
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -2841,7 +2841,7 @@ msgstr "Montri Plenekranon"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:485
-#: core/libs/album/manager/albummanager.cpp:165
+#: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -2871,6 +2871,7 @@ msgstr "Mapigi"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:118
 #: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
@@ -2935,7 +2936,7 @@ msgstr "Neniu Etikedo Albumo"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:558
-#: core/libs/album/manager/albummanager.cpp:168
+#: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:106
@@ -4185,7 +4186,7 @@ msgstr "Unuoj"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:264
+#: core/libs/dtrash/dtrashitemmodel.cpp:266
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Thumbnail"
@@ -8930,7 +8931,8 @@ msgstr "Uzi Koloran Administradon por Presado"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:484
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
@@ -10135,7 +10137,6 @@ msgstr "Aŭtomata Alĝustigo"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
 #, kde-format
 msgid "Settings"
 msgstr "Agordo"
@@ -11165,67 +11166,78 @@ msgctxt "@item"
 msgid "Two maps - top and bottom"
 msgstr "Du mapoj - supre kaj malsupre"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:361
+#. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
+#: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
+#: core/utilities/maintenance/facesdetector.cpp:66
+#: core/utilities/searchwindow/searchutilities.cpp:633
+#, kde-format
+msgid "OK"
+msgstr "bone"
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Ordigado"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:368
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Montri plej malnovan unue"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Montri plej juna unue"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Detaloj"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS Korelatoro"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Malfari/Refari"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Inversa Geokodado"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Serĉo"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML-eksporto"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:635
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Ŝargante metadatenojn -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:826
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11233,25 +11245,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Vi havas 1 modifitan bildon."
 msgstr[1] "Vi havas %1 modifitajn bildojn."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:833
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Nekonservitaj Ŝanĝoj"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Ĉu vi ŝatus konservi la ŝanĝojn kiujn vi faris al ili?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:950
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Konservante ŝanĝojn -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:243
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11295,13 +11307,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Eraro"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Malsukcesis konservi iujn informojn:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1048
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -15607,25 +15619,25 @@ msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Alĝustigi Tempon kaj Daton"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:118
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr "Skribi la korektitan daton kaj horon por ĉiu bildo kaj fermi dialogon"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:120
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Skribi la korektitan daton kaj horon por ĉiu bildo"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:366
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:367
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Alĝustigi Tempon kaj Daton"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:396
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
 #: core/utilities/imageeditor/editor/editorwindow.cpp:598
 #, kde-format
@@ -15633,21 +15645,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Rezigni"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Nuligi nunan operacion"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Fermu"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
 #, kde-format
 msgctxt "@info"
@@ -19678,15 +19690,6 @@ msgstr "Aŭtomata aranĝo:"
 #, kde-format
 msgid "Photos per page"
 msgstr "Fotoj po paĝo"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
-#: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:633
-#, kde-format
-msgid "OK"
-msgstr "bone"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:47
@@ -26532,7 +26535,7 @@ msgstr "Enigu la nomon de la nova albumo:"
 msgid "Scanning albums"
 msgstr "Skanado de albumoj"
 
-#: core/libs/album/manager/albummanager.cpp:171
+#: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/widgets/albumselecttabs.cpp:193
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
@@ -26901,10 +26904,10 @@ msgstr "Malsukcesis aldoni albumon al datumbazo"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
-#: core/libs/album/manager/albummanager_talbum.cpp:365
-#: core/libs/album/manager/albummanager_talbum.cpp:457
-#: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:584
+#: core/libs/album/manager/albummanager_talbum.cpp:367
+#: core/libs/album/manager/albummanager_talbum.cpp:459
+#: core/libs/album/manager/albummanager_talbum.cpp:498
+#: core/libs/album/manager/albummanager_talbum.cpp:586
 #, kde-format
 msgid "No such album"
 msgstr "Ne tia albumo"
@@ -26943,50 +26946,50 @@ msgstr "Malsukcesis renomi Albumon"
 msgid "Cannot edit root album"
 msgstr "Ne povas redakti radikan albumon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:289
+#: core/libs/album/manager/albummanager_talbum.cpp:291
 #, kde-format
 msgid "No parent found for tag"
 msgstr "Neniu gepatro trovita por etikedo"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:297
+#: core/libs/album/manager/albummanager_talbum.cpp:299
 #, kde-format
 msgid "Tag name cannot be empty"
 msgstr "La nomo de la etikedo ne povas esti malplena"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:303
-#: core/libs/album/manager/albummanager_talbum.cpp:469
+#: core/libs/album/manager/albummanager_talbum.cpp:305
+#: core/libs/album/manager/albummanager_talbum.cpp:471
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "La nomo de etikedo ne povas enhavi '/'"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:311
+#: core/libs/album/manager/albummanager_talbum.cpp:313
 #: core/libs/tags/widgets/tageditdlg.cpp:476
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Etikednomo jam ekzistas"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:320
+#: core/libs/album/manager/albummanager_talbum.cpp:322
 #, kde-format
 msgid "Failed to add tag to database"
 msgstr "Malsukcesis aldoni etikedon al datumbazo"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:371
+#: core/libs/album/manager/albummanager_talbum.cpp:373
 #, kde-format
 msgid "Cannot delete root tag"
 msgstr "Ne povas forigi radikan etikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:377
+#: core/libs/album/manager/albummanager_talbum.cpp:379
 #, kde-format
 msgid "Cannot delete required face tag"
 msgstr "Ne povas forigi bezonatan vizaĝetikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:700
+#: core/libs/album/manager/albummanager_talbum.cpp:465
+#: core/libs/album/manager/albummanager_talbum.cpp:702
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Ne povas redakti radikan etikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:477
+#: core/libs/album/manager/albummanager_talbum.cpp:479
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26995,17 +26998,17 @@ msgstr ""
 "Alia etikedo kun la sama nomo jam ekzistas.\n"
 "Bonvolu elekti alian nomon."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:502
+#: core/libs/album/manager/albummanager_talbum.cpp:504
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr "Provu movi TAlbum al nenie"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:508
+#: core/libs/album/manager/albummanager_talbum.cpp:510
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Ne povas movi radikan etikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:516
+#: core/libs/album/manager/albummanager_talbum.cpp:518
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27014,38 +27017,38 @@ msgstr ""
 "Alia etikedo kun la sama nomo jam ekzistas.\n"
 "Ĉu vi volas kunfandi la etikedojn?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:590
+#: core/libs/album/manager/albummanager_talbum.cpp:592
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Ne povas kunfandi radikan etikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:596
+#: core/libs/album/manager/albummanager_talbum.cpp:598
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Ne povas kunfandi bezonatan vizaĝetikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:602
+#: core/libs/album/manager/albummanager_talbum.cpp:604
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Nur etikedo sen infanoj povas esti kunfandita!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:614
+#: core/libs/album/manager/albummanager_talbum.cpp:616
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Ĉu vi volas kunfandi etikedon '%1' en etikedon '%2'?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1118
+#: core/libs/album/manager/albummanager_talbum.cpp:620
+#: core/libs/album/manager/albummanager_talbum.cpp:1120
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Ne demandi denove ĉe ĉi tiu seanco"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:694
+#: core/libs/album/manager/albummanager_talbum.cpp:696
 #, kde-format
 msgid "No such tag"
 msgstr "Ne tia etikedo"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1113
+#: core/libs/album/manager/albummanager_talbum.cpp:1115
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -34207,12 +34210,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Helpo"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:269
+#: core/libs/dtrash/dtrashitemmodel.cpp:271
 #, kde-format
 msgid "Relative Path"
 msgstr "Relativa Vojo"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:274
+#: core/libs/dtrash/dtrashitemmodel.cpp:276
 #, kde-format
 msgid "Deletion Time"
 msgstr "Tempo de Forigo"
@@ -35064,7 +35067,7 @@ msgstr "Bildo kun la sama nomo %1 jam tie"
 msgid "Image %1 could not be renamed"
 msgstr "Bildo %1 ne povis esti renomita"
 
-#: core/libs/iojobs/iojob.cpp:484
+#: core/libs/iojobs/iojob.cpp:489
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Ne eblis restarigi dosieron %1 el rubujo"
@@ -52716,66 +52719,56 @@ msgstr ""
 "por fari\n"
 "Neklaran serĉon"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:195
 #, kde-format
 msgid "Roadmap"
 msgstr "Vojmapo"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:196
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "Satelito"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #, kde-format
 msgid "Hybrid"
 msgstr "Hibrido"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "Tereno"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:218
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:216
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Montri Kontrolon de Tipo de Mapo"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:221
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Montri Navigada Kontrolo"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:228
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:226
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Montri Skalan Kontrolon"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
-#, kde-format
-msgid "Google Maps API Key"
-msgstr "API-Ŝlosilo de Google-Mapoj"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:239
+#: core/utilities/setup/setupgeolocation.cpp:130
 #, kde-format
 msgid "Google Maps"
 msgstr "Google-Mapoj"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:475
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:473
 #, kde-format
 msgid "Float items"
 msgstr "Flosigi erojn"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
-#, kde-format
-msgid "API Key:"
-msgstr "API-Ŝlosilo:"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1639
 #, kde-format
 msgctxt "@title:window"
 msgid "Javascript Message"
@@ -52786,69 +52779,69 @@ msgstr "Ĝavaskript-Mesaĝo"
 msgid "Marble Virtual Globe"
 msgstr "Marble Virtuala Globo"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
 #, kde-format
 msgid "Atlas map"
 msgstr "Mapo de Atlaso"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
 #, kde-format
 msgid "Satellite map"
 msgstr "Satelita mapo"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:331
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:332
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
 #, kde-format
 msgid "OpenStreetMap (Vector)"
 msgstr "OpenStreetMap (Vektora)"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:390
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Sfera"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:395
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:393
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:398
 #, kde-format
 msgid "Equirectangular"
 msgstr "Ekvirektangula"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:409
 #, kde-format
 msgid "Show compass"
 msgstr "Montri kompason"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:416
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:414
 #, kde-format
 msgid "Show scale bar"
 msgstr "Montri skalon"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:419
 #, kde-format
 msgid "Show navigation"
 msgstr "Montri navigadon"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:424
 #, kde-format
 msgid "Show overview map"
 msgstr "Montri superrigardan mapon"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Aliaj Marble-Etosoj"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:466
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:464
 #, kde-format
 msgid "Projection"
 msgstr "Projekcio"
@@ -53715,97 +53708,97 @@ msgstr ""
 "Dosiero estas GPX-dosiero, sed neniuj spurpunktoj kun validaj tempomarkoj "
 "estis trovitaj."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:258
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:261
 #, kde-format
 msgid "Zoom in"
 msgstr "Zoom en"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:265
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:268
 #, kde-format
 msgid "Zoom out"
 msgstr "Malzomi"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:271
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:274
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Ŝanĝi inter markiloj kaj bildetoj."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:289
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
 #, kde-format
 msgid "Preview single items"
 msgstr "Antaŭrigardi ununurajn erojn"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Antaŭrigardi grupigitajn erojn"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:298
 #, kde-format
 msgid "Show numbers"
 msgstr "Montri nombrojn"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:301
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Pliigi la grandecon de bildetoj sur la mapo"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:307
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Malpliigi la grandecon de bildetoj sur la mapo"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:314
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Forigi la nunan regionan elekton"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:319
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:322
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Elekti bildojn desegnante rektangulon"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:324
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
 #, kde-format
 msgid "Pan mode"
 msgstr "Pan-reĝimo"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:331
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:334
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Zomi en grupon"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:340
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Krei regionan elekton el bildeto"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
 #, kde-format
 msgid "Filter images"
 msgstr "Filtri bildojn"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:351
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Forigi la nunan filtrilon"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:356
 #, kde-format
 msgid "Select images"
 msgstr "Elekti bildojn"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:359
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
 #, kde-format
 msgid "Lock the map position"
 msgstr "Ŝlosi la mappozicion"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:365
 #, kde-format
 msgid "Load tracks from albums"
 msgstr "Ŝargi trakojn de albumoj"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:823
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:826
 #, kde-format
 msgid "Map settings"
 msgstr "Map-agordoj"
@@ -56020,6 +56013,21 @@ msgstr "Aldoni propran etikedon..."
 msgid "Configure"
 msgstr "Agordi"
 
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:62
+#, kde-format
+msgid "Atmosphere"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:67
+#, kde-format
+msgid "&Atmosphere"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
+#, kde-format
+msgid "Shows the atmosphere around the earth."
+msgstr ""
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
 #, kde-format
@@ -56028,12 +56036,14 @@ msgstr "Agordi Kompas-Kromaĵon"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:20
 #, kde-format
 msgid "Theme"
 msgstr "Etoso"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:43
 #, kde-format
 msgid "Default"
 msgstr "Defaŭlta"
@@ -56070,6 +56080,215 @@ msgstr "&Kompaso"
 #, kde-format
 msgid "This is a float item that provides a compass."
 msgstr "Ĉi tio estas flosila objekto, kiu provizas kompason."
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
+#, fuzzy, kde-format
+#| msgid "Configure Compass Plugin"
+msgid "Configure Crosshairs Plugin"
+msgstr "Agordi Kompas-Kromaĵon"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
+#, kde-format
+msgid "Gun 1"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
+#, kde-format
+msgid "Gun 2"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
+#, fuzzy, kde-format
+#| msgid "Circle"
+msgid "Circled"
+msgstr "Cirklo"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:79
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "German"
+msgid "German"
+msgstr "Germana"
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Crosswalk"
+msgid "Crosshairs"
+msgstr "Krucvojo"
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:78
+#, fuzzy, kde-format
+#| msgid "Crosswalk"
+msgid "Cross&hairs"
+msgstr "Krucvojo"
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#, kde-format
+msgid "A plugin that shows crosshairs."
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
+#, fuzzy, kde-format
+#| msgid "Coordinate"
+msgid "Coordinate Grid Plugin"
+msgstr "Koordinato"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:20
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
+#, kde-format
+msgid "C&olors"
+msgstr "K&oloroj"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:444
+#, kde-format
+msgid "&Grid:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:497
+#, fuzzy, kde-format
+#| msgid "Color model of the image"
+msgid "Color of the coordinate grid."
+msgstr "Kolora modelo de la bildo"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:922
+#, fuzzy, kde-format
+#| msgctxt "@item: type code"
+#| msgid "Topic"
+msgid "&Tropics:"
+msgstr "Temo"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, tropicsPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:938
+#, kde-format
+msgid "Color of the tropical circles."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1363
+#, kde-format
+msgid "&Equator:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1379
+#, fuzzy, kde-format
+#| msgid "Color model of the image"
+msgid "Color of the equator."
+msgstr "Kolora modelo de la bildo"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1398
+#, fuzzy, kde-format
+#| msgid "&Text Labels"
+msgid "&Named Labels"
+msgstr "&Tekstaj Etikedoj"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1408
+#, kde-format
+msgid "Show Labels for Prime meridian, Equator, Tropics."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1415
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Vertical Lines"
+#| msgid "Vertical Lines"
+msgid "&Numerical Labels"
+msgstr "Vertikalaj Linioj"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1425
+#, fuzzy, kde-format
+#| msgid "Show image labels"
+msgid "Show numerical Labels."
+msgstr "Montri bildajn etikedojn"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:71
+#, fuzzy, kde-format
+#| msgid "Coordinate"
+msgid "Coordinate Grid"
+msgstr "Koordinato"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:76
+#, fuzzy, kde-format
+#| msgid "Coordinate"
+msgid "Coordinate &Grid"
+msgstr "Koordinato"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:91
+#, kde-format
+msgid "A plugin that shows a coordinate grid."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:213
+#, fuzzy, kde-format
+#| msgid "Please choose the color for the position indicator"
+msgid "Please choose the color for the coordinate grid."
+msgstr "Bonvolu elekti la koloron por la pozicia indikilo."
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:224
+#, fuzzy, kde-format
+#| msgid "Please choose the color for the position indicator"
+msgid "Please choose the color for the tropic circles."
+msgstr "Bonvolu elekti la koloron por la pozicia indikilo."
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:235
+#, fuzzy, kde-format
+#| msgid "Please choose the color for the position indicator"
+msgid "Please choose the color for the equator."
+msgstr "Bonvolu elekti la koloron por la pozicia indikilo."
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:315
+#, fuzzy, kde-format
+#| msgid "Elevator"
+msgid "Equator"
+msgstr "Lifto"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
+#, fuzzy, kde-format
+#| msgid "Perimeter"
+msgid "Prime Meridian"
+msgstr "Perimetro"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:321
+#, kde-format
+msgid "Antimeridian"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
+#, kde-format
+msgid "Tropic of Cancer"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:408
+#, kde-format
+msgid "Tropic of Capricorn"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
+#, fuzzy, kde-format
+#| msgid "Circle"
+msgid "Arctic Circle"
+msgstr "Cirklo"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:412
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Antarctica"
+msgid "Antarctic Circle"
+msgstr "Antarktiko"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -56335,27 +56554,27 @@ msgstr "Aktuala Lokbutono"
 msgid "Home Button"
 msgstr "Hejmbutono"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:75
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:74
 #, kde-format
 msgid "Overview Map"
 msgstr "Superrigarda Mapo"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:80
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:79
 #, kde-format
 msgid "&Overview Map"
 msgstr "Superrigarda Map&o"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:95
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
 #, kde-format
 msgid "This is a float item that provides an overview map."
 msgstr "Ĉi tio estas flosila objekto, kiu provizas superrigardan mapon."
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:481
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:480
 #, kde-format
 msgid "Choose Overview Map"
 msgstr "Elekti Superrigardan Mapon"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:513
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:512
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr "Bonvolu elekti la koloron por la pozicia indikilo."
@@ -56390,17 +56609,30 @@ msgstr "Grande&co:"
 msgid "x"
 msgstr "x"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
-#, kde-format
-msgid "C&olors"
-msgstr "K&oloroj"
-
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
 #, kde-format
 msgid "Position I&ndicator:"
 msgstr "Pozicia I&ndikilo:"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:81
+#, fuzzy, kde-format
+#| msgid "Show progress indicator"
+msgid "Download Progress Indicator"
+msgstr "Montri progresindikilon"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Error"
+msgid "&Download Progress"
+msgstr "Elŝuta Eraro"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:101
+#, fuzzy, kde-format
+#| msgid "Show progress indicator"
+msgid "Shows a pie chart download progress indicator"
+msgstr "Montri progresindikilon"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -56559,17 +56791,23 @@ msgstr "Marble 2"
 msgid "Marble Plugins"
 msgstr "Kromaĵoj"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:68
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:131
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "About %1 Plugin"
 msgid "About Plugin %1"
 msgstr "Pri %1 Kromaĵo"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:72
-#, kde-format
-msgid "<p>Version: %1</p><p>Description: %2</p>"
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:137
+#, fuzzy, kde-format
+#| msgid ""
+#| "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</"
+#| "p>"
+msgid ""
+"<p><u>Version:</u> %1</p><p><u>Authors:</u> %2</p><p><u>Description:</u> %3</"
+"p>"
 msgstr ""
+"<b>Titolo: </b><p>%1</p><b>Valoro: </b><p>%2</p><b>Priskribo: </b><p>%3 </p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
@@ -58440,7 +58678,7 @@ msgstr "Malsukcesis akiri metadatumojn por <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:628
 #: core/utilities/import/backend/cameracontroller.cpp:995
-#: core/utilities/import/main/importui.cpp:2414
+#: core/utilities/import/main/importui.cpp:2419
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Malsukcesis elŝuti <filename>%1</filename>"
@@ -59354,22 +59592,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 ero elektita"
 msgstr[1] "%2/%1 eroj elektitaj"
 
-#: core/utilities/import/main/importui.cpp:2349
+#: core/utilities/import/main/importui.cpp:2354
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Preterpasita dosiero <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2371
+#: core/utilities/import/main/importui.cpp:2376
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Alinomi dosieron al <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2394
+#: core/utilities/import/main/importui.cpp:2399
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Malsukcesis konservi kroman dosieron por <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2468
+#: core/utilities/import/main/importui.cpp:2476
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -59379,19 +59617,19 @@ msgstr ""
 "Elŝuto de bildoj finiĝis, vi nun povas dekroĉi vian fotilon dum la bildoj "
 "aŭtomate turniĝas"
 
-#: core/utilities/import/main/importui.cpp:2476
+#: core/utilities/import/main/importui.cpp:2484
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Elŝuto de bildoj finiĝis"
 
-#: core/utilities/import/main/importui.cpp:2502
+#: core/utilities/import/main/importui.cpp:2510
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Dosiero kun la sama nomo (\"%1\") jam ekzistas en dosierujo \"%2\"."
 
-#: core/utilities/import/main/importui.cpp:2515
+#: core/utilities/import/main/importui.cpp:2523
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -66007,6 +66245,22 @@ msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr ""
 "Akiri informojn pri <interface>Ĝisdatigi Dosierajn Haketojn</interface>"
 
+#: core/utilities/setup/setupgeolocation.cpp:102
+#, kde-format
+msgid "API Key:"
+msgstr "API-Ŝlosilo:"
+
+#: core/utilities/setup/setupgeolocation.cpp:113
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Google Maps requires to work friendly an API key that end users must buy "
+"online to gain credentials. Without this key, Google Maps is still usable "
+"but with an overlay frame annotated \"For Develomepent Only\". For more "
+"information, see this <a href='https://mapsplatform.google.com/"
+"pricing/'>Google page</a> about usages, practices, and prices."
+msgstr ""
+
 #: core/utilities/setup/setupicc.cpp:178
 #, kde-format
 msgid "Enable Color Management"
@@ -66921,6 +67175,9 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ĉu vi volas restarigi ĉiujn video-agordojn al la defaŭlta valoro?"
+
+#~ msgid "Google Maps API Key"
+#~ msgstr "API-Ŝlosilo de Google-Mapoj"
 
 #~ msgid "Moon"
 #~ msgstr "Luno"

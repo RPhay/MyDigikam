@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-26 00:39+0000\n"
+"POT-Creation-Date: 2023-12-27 00:39+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -2886,9 +2886,9 @@ msgstr "Pagrindinė įrankinė"
 
 #: core/app/main/main.cpp:196 core/app/views/stack/welcomepageview.cpp:257
 #: core/libs/album/manager/albummanager_album.cpp:128
-#: core/libs/album/manager/albummanager_dalbum.cpp:94
-#: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:977
+#: core/libs/album/manager/albummanager_dalbum.cpp:96
+#: core/libs/album/manager/albummanager_falbum.cpp:68
+#: core/libs/album/manager/albummanager_talbum.cpp:979
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -3105,7 +3105,7 @@ msgstr ""
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:485
-#: core/libs/album/manager/albummanager.cpp:165
+#: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -3136,6 +3136,7 @@ msgstr "Žemėlapis"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:118
 #: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
@@ -3195,7 +3196,7 @@ msgstr "Eiti į albumus"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:558
-#: core/libs/album/manager/albummanager.cpp:168
+#: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:106
@@ -4448,7 +4449,7 @@ msgstr "Vienetas"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:264
+#: core/libs/dtrash/dtrashitemmodel.cpp:266
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Thumbnail"
@@ -9071,7 +9072,8 @@ msgstr "Naudoti spalvų valdymą spausdinimui"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:486
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:484
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
@@ -10212,7 +10214,6 @@ msgstr "Automatinė korekcija"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
 #, kde-format
 msgid "Settings"
 msgstr "Nuostatos"
@@ -11240,75 +11241,86 @@ msgctxt "@item"
 msgid "Two maps - top and bottom"
 msgstr "Apsukti horizontaliai"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:361
+#. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
+#: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
+#: core/utilities/maintenance/facesdetector.cpp:66
+#: core/utilities/searchwindow/searchutilities.cpp:633
+#, kde-format
+msgid "OK"
+msgstr "Gerai"
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, fuzzy, kde-format
 #| msgid "Sorting"
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Rikiavimas"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:368
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
 #, fuzzy, kde-format
 #| msgid "Show oldest first"
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Pirmiausia rodyti seniausius"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, fuzzy, kde-format
 #| msgid "Show oldest first"
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Pirmiausia rodyti seniausius"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, fuzzy, kde-format
 #| msgid "Detail:"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Detalės:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
 #, fuzzy, kde-format
 #| msgid "Correlation:"
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "Koreliacija:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Atšaukti"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
 #, fuzzy, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Atbulinis rikiavimas"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
 #, fuzzy, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Ieškoti"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Eksportuoti"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:635
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
 #, fuzzy, kde-format
 #| msgid "Print metadata"
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Spausdinti metaduomenis"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:826
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
 #, fuzzy, kde-format
 #| msgid "You have edited the image title. "
 #| msgid_plural "You have edited the titles of %1 images. "
@@ -11320,7 +11332,7 @@ msgstr[1] "Pakeitėte %1 paveikslėlių antraštes. "
 msgstr[2] "Pakeitėte %1 paveikslėlių antraštes. "
 msgstr[3] "Pakeitėte %1 paveikslėlio antraštę. "
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:833
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -11328,20 +11340,20 @@ msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Išsaugoti pakeitimus"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:950
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
 #, fuzzy, kde-format
 #| msgid "Saving Images"
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Paveikslėlių saugojimas"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:243
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11386,13 +11398,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Klaida"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Failo/paveikslėlio informacija"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1048
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -15790,28 +15802,28 @@ msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Pridėti failo savybių"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:118
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:119
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr "Rašyti metaduomenis į kiekvieną failą"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:120
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Rašyti metaduomenis į kiekvieną failą"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:366
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:367
 #, fuzzy, kde-format
 #| msgid "Adjustment:"
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Reguliavimas:"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:396
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
 #: core/utilities/imageeditor/editor/editorwindow.cpp:598
 #, fuzzy, kde-format
@@ -15820,7 +15832,7 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Atšaukti"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
@@ -15828,14 +15840,14 @@ msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Atšaukti šią operaciją."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
 #, fuzzy, kde-format
 #| msgctxt "@action Finish editing, close editor, back to main window"
@@ -20045,15 +20057,6 @@ msgstr "Pasirinktas sąrašas"
 #, fuzzy, kde-format
 msgid "Photos per page"
 msgstr "Nuotraukos savybės"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
-#: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:633
-#, kde-format
-msgid "OK"
-msgstr "Gerai"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:47
@@ -27127,7 +27130,7 @@ msgstr "Įveskite naują albumo pavadinimą:"
 msgid "Scanning albums"
 msgstr "Skenuojami albumai..."
 
-#: core/libs/album/manager/albummanager.cpp:171
+#: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/widgets/albumselecttabs.cpp:193
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
@@ -27436,10 +27439,10 @@ msgstr ""
 
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
-#: core/libs/album/manager/albummanager_talbum.cpp:365
-#: core/libs/album/manager/albummanager_talbum.cpp:457
-#: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:584
+#: core/libs/album/manager/albummanager_talbum.cpp:367
+#: core/libs/album/manager/albummanager_talbum.cpp:459
+#: core/libs/album/manager/albummanager_talbum.cpp:498
+#: core/libs/album/manager/albummanager_talbum.cpp:586
 #, kde-format
 msgid "No such album"
 msgstr "Nėra tokio albumo"
@@ -27476,51 +27479,51 @@ msgstr ""
 msgid "Cannot edit root album"
 msgstr "Negalima keisti šakninio albumo"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:289
+#: core/libs/album/manager/albummanager_talbum.cpp:291
 #, kde-format
 msgid "No parent found for tag"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:297
+#: core/libs/album/manager/albummanager_talbum.cpp:299
 #, kde-format
 msgid "Tag name cannot be empty"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:303
-#: core/libs/album/manager/albummanager_talbum.cpp:469
+#: core/libs/album/manager/albummanager_talbum.cpp:305
+#: core/libs/album/manager/albummanager_talbum.cpp:471
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:311
+#: core/libs/album/manager/albummanager_talbum.cpp:313
 #: core/libs/tags/widgets/tageditdlg.cpp:476
 #, kde-format
 msgid "Tag name already exists"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:320
+#: core/libs/album/manager/albummanager_talbum.cpp:322
 #, kde-format
 msgid "Failed to add tag to database"
 msgstr "Nepavyko pridėti žymės į duomenų bazę"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:371
+#: core/libs/album/manager/albummanager_talbum.cpp:373
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot delete root tag"
 msgstr "Negalima perkelti root žymės"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:377
+#: core/libs/album/manager/albummanager_talbum.cpp:379
 #, kde-format
 msgid "Cannot delete required face tag"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:700
+#: core/libs/album/manager/albummanager_talbum.cpp:465
+#: core/libs/album/manager/albummanager_talbum.cpp:702
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:477
+#: core/libs/album/manager/albummanager_talbum.cpp:479
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27529,17 +27532,17 @@ msgstr ""
 "Kita žymė su tokiu pavadinimu jau yra.\n"
 "Prašome pasirinkti kitą pavadinimą."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:502
+#: core/libs/album/manager/albummanager_talbum.cpp:504
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:508
+#: core/libs/album/manager/albummanager_talbum.cpp:510
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Negalima perkelti root žymės"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:516
+#: core/libs/album/manager/albummanager_talbum.cpp:518
 #, fuzzy, kde-format
 #| msgid ""
 #| "Another tag with the same name already exists.\n"
@@ -27551,41 +27554,41 @@ msgstr ""
 "Kita žymė su tokiu pavadinimu jau yra.\n"
 "Prašome pasirinkti kitą pavadinimą."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:590
+#: core/libs/album/manager/albummanager_talbum.cpp:592
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge root tag"
 msgstr "Negalima perkelti root žymės"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:596
+#: core/libs/album/manager/albummanager_talbum.cpp:598
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge required face tag"
 msgstr "Negalima perkelti root žymės"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:602
+#: core/libs/album/manager/albummanager_talbum.cpp:604
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:614
+#: core/libs/album/manager/albummanager_talbum.cpp:616
 #, fuzzy, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Ar norite pašalinti kolekciją „%1“ iš savo kolekcijų sąrašo?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1118
+#: core/libs/album/manager/albummanager_talbum.cpp:620
+#: core/libs/album/manager/albummanager_talbum.cpp:1120
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
 msgid "Don't ask again at this session"
 msgstr "Daugiau nebeklausti"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:694
+#: core/libs/album/manager/albummanager_talbum.cpp:696
 #, kde-format
 msgid "No such tag"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1113
+#: core/libs/album/manager/albummanager_talbum.cpp:1115
 #, fuzzy, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -34721,12 +34724,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "&Pagalba"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:269
+#: core/libs/dtrash/dtrashitemmodel.cpp:271
 #, kde-format
 msgid "Relative Path"
 msgstr ""
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:274
+#: core/libs/dtrash/dtrashitemmodel.cpp:276
 #, fuzzy, kde-format
 msgid "Deletion Time"
 msgstr "Sukūrimo laikas"
@@ -35547,7 +35550,7 @@ msgstr ""
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:484
+#: core/libs/iojobs/iojob.cpp:489
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Could not restore file %1 from trash"
@@ -54463,68 +54466,56 @@ msgstr ""
 "apytikslę paiešką,\n"
 "pieškite čia eskizą"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:195
 #, kde-format
 msgid "Roadmap"
 msgstr "Veiklos grafikas"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:196
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "Palydovas"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #, kde-format
 msgid "Hybrid"
 msgstr "Mišrus"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "Žemės paviršius"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:218
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:216
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Rodyti žemėlapio tipo valdiklį"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:221
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Rodyti žvalgiklio valdiklį"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:228
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:226
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Rodyti skalės valdiklį"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
-#, fuzzy, kde-format
-#| msgid "Google Maps"
-msgid "Google Maps API Key"
-msgstr "Google žemėlapiai"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:239
+#: core/utilities/setup/setupgeolocation.cpp:130
 #, kde-format
 msgid "Google Maps"
 msgstr "Google žemėlapiai"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:475
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:473
 #, kde-format
 msgid "Float items"
 msgstr "Plaukiojantys elementai"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
-#, fuzzy, kde-format
-#| msgid "URL:"
-msgid "API Key:"
-msgstr "URL:"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1639
 #, fuzzy, kde-format
 #| msgid "Script Manager"
 msgctxt "@title:window"
@@ -54536,72 +54527,72 @@ msgstr "Scenarijaus tvarkytuvė"
 msgid "Marble Virtual Globe"
 msgstr "Marble virtualus gaublys"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
 #, kde-format
 msgid "Atlas map"
 msgstr "Atlas žemėlapis"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "Palydovas"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:331
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:332
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap (Vector)"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:390
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Sferinis"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:395
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:393
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Merkatorius"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:400
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:398
 #, kde-format
 msgid "Equirectangular"
 msgstr "Lygiatarpė"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:411
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:409
 #, kde-format
 msgid "Show compass"
 msgstr "Rodyti kompasą"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:416
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:414
 #, kde-format
 msgid "Show scale bar"
 msgstr "Rodyti mastelio liniją"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:419
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Show navigation"
 msgstr "Rodyti žvalgiklio valdiklį"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:424
 #, kde-format
 msgid "Show overview map"
 msgstr "Rodyti apžvalginį žemėlapį"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:466
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:464
 #, kde-format
 msgid "Projection"
 msgstr "Projekcija"
@@ -55483,98 +55474,98 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:258
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:261
 #, kde-format
 msgid "Zoom in"
 msgstr "Padidinti"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:265
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:268
 #, kde-format
 msgid "Zoom out"
 msgstr "Sumažinti"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:271
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:274
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Perjungti tarp žymių ir miniatiūrų"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:289
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
 #, kde-format
 msgid "Preview single items"
 msgstr "Peržiūrėti pavienius elementus"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Peržiūrėti sugrupuotus elementus"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:298
 #, kde-format
 msgid "Show numbers"
 msgstr "Rodyti numerius"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:301
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Padidinti miniatiūrų dydį žemėlapyje"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:307
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Sumažinti miniatiūrų dydį žemėlapyje"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:314
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Pašalinti esamą regiono pažymėjimą"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:319
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:322
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Pasirinkite paveikslėlius brėždami stačiakampį"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:324
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
 #, kde-format
 msgid "Pan mode"
 msgstr "Panoraminė veiksena"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:331
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:334
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Padidinti grupę"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:340
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Sukurti regiono pažymėjimą iš miniatiūros"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
 #, kde-format
 msgid "Filter images"
 msgstr "Filtruoti paveikslėlius"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:351
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Pašalinti dabartinį filtrą"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:356
 #, kde-format
 msgid "Select images"
 msgstr "Pasirinkite paveikslėlius"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:359
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
 #, kde-format
 msgid "Lock the map position"
 msgstr "Fiksuoti žemėlapio padėtį"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:365
 #, fuzzy, kde-format
 #| msgid "Load playlist from a file."
 msgid "Load tracks from albums"
 msgstr "Įkelti grojaraštį iš failo."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:823
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:826
 #, kde-format
 msgid "Map settings"
 msgstr "Žemėlapio nuostatos"
@@ -57916,6 +57907,21 @@ msgstr "Pridėti paveikslėlius..."
 msgid "Configure"
 msgstr "Konfigūruoti"
 
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:62
+#, kde-format
+msgid "Atmosphere"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:67
+#, kde-format
+msgid "&Atmosphere"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
+#, kde-format
+msgid "Shows the atmosphere around the earth."
+msgstr ""
+
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
 #, fuzzy, kde-format
@@ -57925,6 +57931,7 @@ msgstr "Konfigūruoti šį stulpelį"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:20
 #, fuzzy, kde-format
 #| msgid "&Themes"
 msgid "Theme"
@@ -57932,6 +57939,7 @@ msgstr "&Apipavidalinimai"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:43
 #, fuzzy, kde-format
 #| msgctxt "default theme name"
 #| msgid "Default"
@@ -57973,6 +57981,209 @@ msgstr "Rodyti kompasą"
 #, fuzzy, kde-format
 msgid "This is a float item that provides a compass."
 msgstr "Taisyti albumo savybes ir kolekcijos informaciją."
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
+#, fuzzy, kde-format
+#| msgid "Configure this column"
+msgid "Configure Crosshairs Plugin"
+msgstr "Konfigūruoti šį stulpelį"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
+#, kde-format
+msgid "Gun 1"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
+#, kde-format
+msgid "Gun 2"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Circled"
+msgstr "Apskritas išėjimas"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:79
+#, fuzzy, kde-format
+#| msgid "Germany"
+msgid "German"
+msgstr "Vokietija"
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:73
+#, kde-format
+msgid "Crosshairs"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:78
+#, kde-format
+msgid "Cross&hairs"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#, kde-format
+msgid "A plugin that shows crosshairs."
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
+#, fuzzy, kde-format
+#| msgid "Coordinates"
+msgid "Coordinate Grid Plugin"
+msgstr "Koordinatės"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:20
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "C&olors"
+msgstr "Spalvos"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:444
+#, kde-format
+msgid "&Grid:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:497
+#, fuzzy, kde-format
+#| msgid "Color model of the image"
+msgid "Color of the coordinate grid."
+msgstr "Nuotraukos spalvų modelis"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:922
+#, kde-format
+msgid "&Tropics:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, tropicsPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:938
+#, kde-format
+msgid "Color of the tropical circles."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1363
+#, kde-format
+msgid "&Equator:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1379
+#, fuzzy, kde-format
+#| msgid "Color model of the image"
+msgid "Color of the equator."
+msgstr "Nuotraukos spalvų modelis"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1398
+#, fuzzy, kde-format
+#| msgid "Labels"
+msgid "&Named Labels"
+msgstr "Etiketės"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1408
+#, kde-format
+msgid "Show Labels for Prime meridian, Equator, Tropics."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1415
+#, fuzzy, kde-format
+#| msgid "Vertically first"
+msgid "&Numerical Labels"
+msgstr "Iš pradžių vertikaliai"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1425
+#, fuzzy, kde-format
+#| msgid "Show image labels"
+msgid "Show numerical Labels."
+msgstr "Rodyti paveikslėlio etiketes"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:71
+#, fuzzy, kde-format
+#| msgid "Coordinates"
+msgid "Coordinate Grid"
+msgstr "Koordinatės"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:76
+#, fuzzy, kde-format
+#| msgid "Coordinates"
+msgid "Coordinate &Grid"
+msgstr "Koordinatės"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:91
+#, kde-format
+msgid "A plugin that shows a coordinate grid."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:213
+#, kde-format
+msgid "Please choose the color for the coordinate grid."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:224
+#, kde-format
+msgid "Please choose the color for the tropic circles."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:235
+#, kde-format
+msgid "Please choose the color for the equator."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:315
+#, fuzzy, kde-format
+#| msgid "My Calendar"
+msgid "Equator"
+msgstr "Kalendorius"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
+#, fuzzy, kde-format
+#| msgctxt "@title:tab"
+#| msgid "Parameters"
+msgid "Prime Meridian"
+msgstr "Parametrai"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:321
+#, kde-format
+msgid "Antimeridian"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
+#, kde-format
+msgid "Tropic of Cancer"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:408
+#, kde-format
+msgid "Tropic of Capricorn"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
+#, fuzzy, kde-format
+#| msgctxt "Filter Effect: Circle Out"
+#| msgid "Circle Out"
+msgid "Arctic Circle"
+msgstr "Apskritas išėjimas"
+
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:412
+#, fuzzy, kde-format
+#| msgid "Antarctica"
+msgid "Antarctic Circle"
+msgstr "Antarktida"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -58261,30 +58472,30 @@ msgstr "Dabartinės proporcijos"
 msgid "Home Button"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:75
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:74
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "Overview Map"
 msgstr "Rodyti apžvalginį žemėlapį"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:80
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:79
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "&Overview Map"
 msgstr "Rodyti apžvalginį žemėlapį"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:95
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
 #, fuzzy, kde-format
 msgid "This is a float item that provides an overview map."
 msgstr "Taisyti albumo savybes ir kolekcijos informaciją."
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:481
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:480
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "Choose Overview Map"
 msgstr "Rodyti apžvalginį žemėlapį"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:513
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:512
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr ""
@@ -58325,18 +58536,28 @@ msgstr "Dydis:"
 msgid "x"
 msgstr "x"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Colors"
-msgid "C&olors"
-msgstr "Spalvos"
-
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
 #, fuzzy, kde-format
 msgid "Position I&ndicator:"
 msgstr "Geoolokacijos filtras"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:81
+#, fuzzy, kde-format
+msgid "Download Progress Indicator"
+msgstr "Rodyti detalų progreso langą"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Download New"
+msgid "&Download Progress"
+msgstr "Atsisiųsti naują"
+
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:101
+#, fuzzy, kde-format
+msgid "Shows a pie chart download progress indicator"
+msgstr "Rodyti detalų progreso langą"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -58478,14 +58699,16 @@ msgstr "Marble valdiklis"
 msgid "Marble Plugins"
 msgstr "Paveikslėlių failai"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:68
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:131
 #, kde-format
 msgid "About Plugin %1"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:72
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:137
 #, kde-format
-msgid "<p>Version: %1</p><p>Description: %2</p>"
+msgid ""
+"<p><u>Version:</u> %1</p><p><u>Authors:</u> %2</p><p><u>Description:</u> %3</"
+"p>"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
@@ -60551,7 +60774,7 @@ msgstr "Įkrauti failo nepavyko."
 
 #: core/utilities/import/backend/cameracontroller.cpp:628
 #: core/utilities/import/backend/cameracontroller.cpp:995
-#: core/utilities/import/main/importui.cpp:2414
+#: core/utilities/import/main/importui.cpp:2419
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -61464,25 +61687,25 @@ msgstr[1] "Pažymėti %2/%1 objektai"
 msgstr[2] "Pažymėta %2/%1 objektų"
 msgstr[3] "Pažymėtas %2/%1 objektas"
 
-#: core/utilities/import/main/importui.cpp:2349
+#: core/utilities/import/main/importui.cpp:2354
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Įkrauti failo nepavyko."
 
-#: core/utilities/import/main/importui.cpp:2371
+#: core/utilities/import/main/importui.cpp:2376
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Įkrauti failo nepavyko."
 
-#: core/utilities/import/main/importui.cpp:2394
+#: core/utilities/import/main/importui.cpp:2399
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Įkrauti failo nepavyko."
 
-#: core/utilities/import/main/importui.cpp:2468
+#: core/utilities/import/main/importui.cpp:2476
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -61490,19 +61713,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2476
+#: core/utilities/import/main/importui.cpp:2484
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Atsisiųsta: "
 
-#: core/utilities/import/main/importui.cpp:2502
+#: core/utilities/import/main/importui.cpp:2510
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Failas, tokiu  pačiu pavadinimu (%1) jau egzistuoja aplanke %2"
 
-#: core/utilities/import/main/importui.cpp:2515
+#: core/utilities/import/main/importui.cpp:2523
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -67998,6 +68221,23 @@ msgctxt "@info:tooltip"
 msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr ""
 
+#: core/utilities/setup/setupgeolocation.cpp:102
+#, fuzzy, kde-format
+#| msgid "URL:"
+msgid "API Key:"
+msgstr "URL:"
+
+#: core/utilities/setup/setupgeolocation.cpp:113
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Google Maps requires to work friendly an API key that end users must buy "
+"online to gain credentials. Without this key, Google Maps is still usable "
+"but with an overlay frame annotated \"For Develomepent Only\". For more "
+"information, see this <a href='https://mapsplatform.google.com/"
+"pricing/'>Google page</a> about usages, practices, and prices."
+msgstr ""
+
 #: core/utilities/setup/setupicc.cpp:178
 #, kde-format
 msgid "Enable Color Management"
@@ -68858,6 +69098,11 @@ msgstr "<p>Iš naujo nustatyti numatytąsias reikšmes filtrų parametruose."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "<p>Iš naujo nustatyti numatytąsias reikšmes filtrų parametruose."
+
+#, fuzzy
+#~| msgid "Google Maps"
+#~ msgid "Google Maps API Key"
+#~ msgstr "Google žemėlapiai"
 
 #, fuzzy
 #~| msgid "Moonlight"
