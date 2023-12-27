@@ -471,10 +471,14 @@ DConfigDlgWdgItem* ShowfotoSetup::Private::pageItem(ShowfotoSetup::Page page) co
             return page_plugins;
         }
 
+#ifdef HAVE_GEOLOCATION
+
         case ShowfotoSetup::GeolocationPage:
         {
             return page_geolocation;
         }
+
+#endif
 
         case ShowfotoSetup::MiscellaneousPage:
         {
