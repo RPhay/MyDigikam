@@ -4204,7 +4204,7 @@ void dng_negative::BuildStage2Image (dng_host &host)
 
 		// Transparency masks are only supported in DNG version 1.4 and
 		// later.  In this case, the flattening of the transparency mask happens
-		// on the the stage3 image.
+		// on the stage3 image.
 
 		if (TransparencyMask () && host.SaveDNGVersion () < dngVersion_1_4_0_0)
 			{

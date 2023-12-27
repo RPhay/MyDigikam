@@ -5835,7 +5835,7 @@ void dng_image_writer::WriteDNGWithMetadata (dng_host &host,
 
 	uint32 compression = uncompressed ? ccUncompressed : ccJPEG;
 
-	// Was the the original file lossy JPEG compressed?
+	// Was the original file lossy JPEG compressed?
 
 	const dng_jpeg_image *rawJPEGImage = negative.RawJPEGImage ();
 
