@@ -22,6 +22,7 @@ export Options='-DBUILD_STATIC=OFF \
                 -DBUILD_FOR_SSE=OFF \
                 -DBUILD_FOR_SSE2=OFF \
                 -DBUILD_DOC=OFF \
+                -DINSTALL_PYTHON_MODULE=OFF \
                 -DINSTALL_HELPER_SCRIPTS=OFF \
                 -DBUILD_TESTS=OFF'
 
