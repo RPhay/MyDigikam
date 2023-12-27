@@ -67,7 +67,7 @@ public:
 LensFunIface::LensFunIface()
     : d(new Private)
 {
-    d->lfDb          = lf_db_create();
+    d->lfDb          = lf_db_new();
 
     // Lensfun host XML files in a dedicated sub-directory.
 
@@ -576,7 +576,7 @@ bool LensFunIface::supportsDistortion() const
 
     lfLensCalibDistortion res;
 
-    return d->usedLens->InterpolateDistortion(1.0, d->settings.focalLength, res);
+    return d->usedLens->InterpolateDistortion(d->settings.focalLength, res);
 }
 
 bool LensFunIface::supportsCCA() const
@@ -588,7 +588,7 @@ bool LensFunIface::supportsCCA() const
 
     lfLensCalibTCA res;
 
-    return d->usedLens->InterpolateTCA(1.0, d->settings.focalLength, res);
+    return d->usedLens->InterpolateTCA(d->settings.focalLength, res);
 }
 
 bool LensFunIface::supportsVig() const
@@ -600,8 +600,7 @@ bool LensFunIface::supportsVig() const
 
     lfLensCalibVignetting res;
 
-    return d->usedLens->InterpolateVignetting(1.0,
-                                              d->settings.focalLength,
+    return d->usedLens->InterpolateVignetting(d->settings.focalLength,
                                               d->settings.aperture,
                                               d->settings.subjectDistance, res);
 }
