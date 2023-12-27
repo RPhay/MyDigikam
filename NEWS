@@ -92,7 +92,7 @@ BUGFIXES:
 075 ==> 478623 - MetadataEdit contents are disabled.
 076 ==> 478991 - BQM removes tags and ratings.
 077 ==> 479090 - Object Recognition for automatic tag generation, easier searching.
-078 ==> 
+078 ==> 478131 - dK 8.2.0 very slow and crashes in Windows 10.
 079 ==> 
 080 ==> 
 081 ==> 
