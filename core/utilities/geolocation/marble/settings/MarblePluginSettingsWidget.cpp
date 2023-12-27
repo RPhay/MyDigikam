@@ -119,7 +119,8 @@ void MarblePluginSettingsWidget::slotPluginAboutDialog(const QModelIndex& index)
                    Qt::WindowCloseButtonHint               |
                    Qt::WindowMinMaxButtonsHint);
 
-    QString auth;
+    QString years = d->pluginModel->data(index, RenderPluginModel::CopyrightYears).toString();
+    QString auth  = years + i18n(" by ");
 
     for (const PluginAuthor& author: d->pluginModel->pluginAuthors(index))
     {
@@ -135,7 +136,7 @@ void MarblePluginSettingsWidget::slotPluginAboutDialog(const QModelIndex& index)
     text->setWordWrap(true);
     text->setText(i18n(
                        "<p><u>Version:</u> %1</p>"
-                       "<p><u>Authors:</u> %2</p>"
+                       "<p><u>Copyrights:</u> %2</p>"
                        "<p><u>Description:</u> %3</p>",
                        d->pluginModel->data(index, RenderPluginModel::Version).toString(),
                        auth,
