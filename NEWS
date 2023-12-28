@@ -94,7 +94,7 @@ BUGFIXES:
 077 ==> 479090 - Object Recognition for automatic tag generation, easier searching.
 078 ==> 478131 - dK 8.2.0 very slow and crashes in Windows 10.
 079 ==> 479096 - Gimp xcf 2.10.36 images no longer show a preview.
-080 ==> 
+080 ==> 478900 - Preview No Longer Works. It works in 8.1.0.
 081 ==> 
 082 ==> 
 083 ==> 

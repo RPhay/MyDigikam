@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-27 00:39+0000\n"
+"POT-Creation-Date: 2023-12-28 00:39+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -20205,8 +20205,8 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:377
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:450
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:300
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:347
 #, kde-format
 msgid " MB"
 msgstr " م.بايت"
@@ -57304,40 +57304,46 @@ msgstr "رخام 2"
 msgid "Marble Plugins"
 msgstr "جاري التّحميل صورة ملحقات"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:131
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:123
+#, kde-format
+msgid " by "
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "About %1 Plugin"
-msgid "About Plugin %1"
+msgid "About Plugin"
 msgstr "عن الملحقة %1"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:137
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:138
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</"
 #| "p>"
 msgid ""
-"<p><u>Version:</u> %1</p><p><u>Authors:</u> %2</p><p><u>Description:</u> %3</"
-"p>"
+"<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
+"p><p><u>Description:</u> %4</p>"
 msgstr ""
 "<b>العنوان: </b><p>%1</p><b>القيمة: </b><p>%2</p><b>الوصف: </b><p>%3</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:19
 #, fuzzy, kde-format
 #| msgid "Units:"
 msgid "&Units"
 msgstr "الوحدات:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:31
 #, fuzzy, kde-format
-#| msgid "Distance:"
-msgid "&Distance:"
-msgstr "المسافة:"
+#| msgctxt "@label"
+#| msgid "Angle:"
+msgid "An&gle:"
+msgstr "الزاوية:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:53
 #, fuzzy, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57366,33 +57372,32 @@ msgstr ""
 "كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:61
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
 #, kde-format
 msgid "Kilometer, Meter"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:66
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:62
 #, kde-format
 msgid "Miles, Feet"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:71
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:67
 #, kde-format
 msgid "Nautical miles, Knots"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:85
+#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:87
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Angle:"
-msgid "An&gle:"
-msgstr "الزاوية:"
+#| msgid "Distance:"
+msgid "&Distance:"
+msgstr "المسافة:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:101
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:103
 #, fuzzy, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57423,39 +57428,46 @@ msgstr ""
 "كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:105
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:107
 #, kde-format
 msgid "Degree (DMS)"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:110
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:112
 #, kde-format
 msgid "Degree (Decimal)"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:115
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:117
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:126
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:128
 #, fuzzy, kde-format
 #| msgid "Quality"
 msgid "Map &Quality"
 msgstr "الجودة"
 
 #. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:144
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:146
 #, fuzzy, kde-format
 #| msgid "&Shuffle images"
 msgid "&Still image:"
 msgstr "ا&خلط الصّور"
 
+#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:162
+#, fuzzy, kde-format
+#| msgid "Duration:"
+msgid "During &animations:"
+msgstr "المدّة:"
+
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:157
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:175
 #, fuzzy, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57486,16 +57498,16 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:164
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:219
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:182
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:221
 #, fuzzy, kde-format
 msgid "Outline Quality"
 msgstr "كامل نص"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:169
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:224
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:187
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:226
 #, fuzzy, kde-format
 #| msgid "Quality"
 msgid "Low Quality"
@@ -57503,8 +57515,8 @@ msgstr "الجودة"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:174
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:229
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:192
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:231
 #, fuzzy, kde-format
 #| msgctxt "@action: normal exif orientation"
 #| msgid "Normal"
@@ -57513,8 +57525,8 @@ msgstr "عادي"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:179
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:234
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:197
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:236
 #, fuzzy, kde-format
 #| msgid "Quality"
 msgid "High Quality"
@@ -57522,21 +57534,14 @@ msgstr "الجودة"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:184
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:239
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:202
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:241
 #, fuzzy, kde-format
 msgid "Print Quality"
 msgstr "السحوبات:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:198
-#, fuzzy, kde-format
-#| msgid "Duration:"
-msgid "During &animations:"
-msgstr "المدّة:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:212
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:214
 #, fuzzy, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57569,84 +57574,41 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. ستُطبع "
 "كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:266
-#, fuzzy, kde-format
-msgid "&Text Labels"
-msgstr "النسيج"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:286
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
-msgid "Default map &font:"
-msgstr "بلا"
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:299
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم لدولتك "
-"من <a href=\"http://www.icalshare.com\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">http://www.icalshare.com</span></a> أو أيّ موقع "
-"آخر.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. ستُطبع "
-"كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:311
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:256
 #, fuzzy, kde-format
 #| msgid "Behavior"
 msgid "Mouse Behavior"
 msgstr "السّلوك"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:317
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:262
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:320
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:265
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgid "&Inertial globe rotation"
 msgstr "اعكس التّحديد"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:327
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:272
 #, fuzzy, kde-format
 msgid "Use right mouse button to rotate the camera around"
 msgstr "<p> ضبط خيار إلى عرض صورة."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:330
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:275
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
 msgid "&Mouse view rotation"
 msgstr "ألغِ العمليّة."
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:343
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:288
 #, fuzzy, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57680,42 +57642,94 @@ msgstr ""
 "كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:346
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:291
 #, kde-format
 msgid "C&ache"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:364
+#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:325
 #, kde-format
-msgid "&Physical memory:"
+msgid "&Hard disc:"
+msgstr ""
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:344
+#, kde-format
+msgid "Unlimited"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:396
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:366
 #, fuzzy, kde-format
 #| msgctxt "@action: search bar"
 #| msgid "Clear"
 msgid "C&lear"
 msgstr "امسح"
 
-#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:428
-#, kde-format
-msgid "&Hard disc:"
-msgstr ""
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:447
-#, kde-format
-msgid "Unlimited"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:469
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:379
 #, kde-format
 msgid "Cl&ear"
 msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:398
+#, kde-format
+msgid "&Physical memory:"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:413
+#, fuzzy, kde-format
+#| msgctxt "@item: iptc"
+#| msgid "Content"
+msgid "Map Contents"
+msgstr "المحتوى"
+
+#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:433
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Default Language"
+msgid "Default &font:"
+msgstr "بلا"
+
+#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:446
+#, fuzzy, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
+"used on the map.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم لدولتك "
+"من <a href=\"http://www.icalshare.com\"><span style=\" text-decoration: "
+"underline; color:#0057ae;\">http://www.icalshare.com</span></a> أو أيّ موقع "
+"آخر.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. ستُطبع "
+"كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showGrid)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:458
+#, fuzzy, kde-format
+#| msgid "Show grid"
+msgid "Show Grid"
+msgstr "اعرض الشّبكة"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, fuzzy, kde-format
@@ -66327,32 +66341,32 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "يجمّع"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:70
+#: core/utilities/setup/misc/systemsettingswidget.cpp:77
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:71
+#: core/utilities/setup/misc/systemsettingswidget.cpp:78
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:72
+#: core/utilities/setup/misc/systemsettingswidget.cpp:82
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:73
+#: core/utilities/setup/misc/systemsettingswidget.cpp:83
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:75
+#: core/utilities/setup/misc/systemsettingswidget.cpp:85
 #, fuzzy, kde-format
 msgid "Download required binary data..."
 msgstr "يجري التنزيل ملفّ."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:90
+#: core/utilities/setup/misc/systemsettingswidget.cpp:100
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -66643,7 +66657,7 @@ msgctxt "@info"
 msgid ""
 "Google Maps requires to work friendly an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
-"but with an overlay frame annotated \"For Develomepent Only\". For more "
+"but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
@@ -67486,6 +67500,10 @@ msgstr "صفّر كلّ الإعدادات إلى قيمها الافتراضي�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "صفّر كلّ الإعدادات إلى قيمها الافتراضيّة."
+
+#, fuzzy
+#~ msgid "&Text Labels"
+#~ msgstr "النسيج"
 
 #, fuzzy
 #~| msgid "Google Maps"
