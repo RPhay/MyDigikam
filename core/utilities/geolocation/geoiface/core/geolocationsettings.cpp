@@ -168,6 +168,16 @@ void GeolocationSettings::registerWidget(MapWidget* const widget)
     d->applySettingsToWidget(widget, d->settings);
 }
 
+void GeolocationSettings::unRegisterWidget(MapWidget* const widget)
+{
+    if (!widget)
+    {
+        return;
+    }
+
+    d->widgets.removeAll(widget);
+}
+
 void GeolocationSettings::applySettingsToWidgets(const GeolocationSettingsContainer& settings)
 {
     Q_FOREACH (MapWidget* const w, d->widgets)

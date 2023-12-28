@@ -64,6 +64,11 @@ public:
     void registerWidget(MapWidget* const widget);
 
     /**
+     * Remove one MapWidget instance in the collection.
+     */
+    void unRegisterWidget(MapWidget* const widget);
+
+    /**
      * Return the first registered MarbleWidget instance stored in the collection.
      * If no valid instance is found, nullptr is returned.
      */
