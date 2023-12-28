@@ -105,7 +105,7 @@ void GeolocationSettings::Private::applySettingsToWidget(MapWidget* const w,
             if (mb)
             {
                 MarbleWidget* const mw = static_cast<MarbleWidget*>(mb->mapWidget());
-                qCDebug(DIGIKAM_MARBLE_LOG) << "Marble Widget:" << mw;
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Apply settings to Marble Widget instance:" << mw;
 
                 MarbleGlobal::getInstance()->locale()->setMeasurementSystem(settings.distanceUnit);
                 mw->model()->setPersistentTileCacheLimit(settings.persistentTileCacheLimit * 1024);
@@ -155,6 +155,11 @@ GeolocationSettings::~GeolocationSettings()
 
 void GeolocationSettings::registerWidget(MapWidget* const widget)
 {
+    if (!widget)
+    {
+        return;
+    }
+
     if (!d->widgets.contains(widget))
     {
         d->widgets << widget;

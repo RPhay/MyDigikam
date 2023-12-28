@@ -250,8 +250,6 @@ MapWidget::MapWidget(QWidget* const parent)
     createActionsForBackendSelection();
 
     setAcceptDrops(true);
-
-    GeolocationSettings::instance()->registerWidget(this);
 }
 
 void MapWidget::createActions()
@@ -553,6 +551,8 @@ bool MapWidget::setBackend(const QString& backendName)
             return true;
         }
     }
+
+    GeolocationSettings::instance()->registerWidget(this);
 
     return false;
 }
