@@ -163,8 +163,9 @@ void GeolocationSettings::registerWidget(MapWidget* const widget)
     if (!d->widgets.contains(widget))
     {
         d->widgets << widget;
-        d->applySettingsToWidget(widget, d->settings);
     }
+
+    d->applySettingsToWidget(widget, d->settings);
 }
 
 void GeolocationSettings::applySettingsToWidgets(const GeolocationSettingsContainer& settings)
