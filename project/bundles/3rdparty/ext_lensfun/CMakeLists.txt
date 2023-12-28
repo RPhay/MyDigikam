@@ -56,7 +56,8 @@ elseif (APPLE)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-#        GIT_TAG v0.3.3
+        # Git revision before deprecated functions removal (dec. 2023).
+        GIT_TAG 03e4a1057b9a53b8f6c50df52137e7aac818b469
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
 
@@ -83,7 +84,8 @@ elseif(MSVC) # VCPKG
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-        #GIT_TAG v0.3.3
+        # Git revision before deprecated functions removal (dec. 2023).
+        GIT_TAG 03e4a1057b9a53b8f6c50df52137e7aac818b469
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
 
@@ -109,7 +111,8 @@ else() # Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-        #GIT_TAG v0.3.3
+        # Git revision before deprecated functions removal (dec. 2023).
+        GIT_TAG 03e4a1057b9a53b8f6c50df52137e7aac818b469
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
 
