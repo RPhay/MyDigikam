@@ -21,6 +21,7 @@
 // Local includes
 
 #include "geolocationsettings.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -55,25 +56,26 @@ void GeolocationSettingsContainer::writeToConfig(KConfigGroup& group) const
 
 QDebug operator<<(QDebug dbg, const GeolocationSettingsContainer& inf)
 {
-    dbg.nospace() << "[GeolocationSettingsContainer] distanceUnit("
-                  << inf.distanceUnit << "), ";
-    dbg.nospace() << "angleUnit("
-                  << inf.angleUnit << "), ";
-    dbg.nospace() << "stillQuality("
-                  << inf.stillQuality << "), ";
-    dbg.nospace() << "animationQuality("
-                  << inf.animationQuality << "), ";
-    dbg.nospace() << "mapFont("
-                  << inf.mapFont << "), ";
-    dbg.nospace() << "inertialRotation("
-                  << inf.inertialRotation << "), ";
-    dbg.nospace() << "mouseRotation("
-                  << inf.mouseRotation << "), ";
-    dbg.nospace() << "volatileTileCacheLimit("
-                  << inf.volatileTileCacheLimit << "), ";
-    dbg.nospace() << "persistentTileCacheLimit("
-                  << inf.persistentTileCacheLimit << "), ";
-    dbg.nospace() << "showGrid("
+    dbg.nospace() << "[GeolocationSettingsContainer]"       << QT_ENDL;
+    dbg.nospace() << "   distanceUnit("
+                  << inf.distanceUnit << "), "              << QT_ENDL;
+    dbg.nospace() << "   angleUnit("
+                  << inf.angleUnit << "), "                 << QT_ENDL;
+    dbg.nospace() << "   stillQuality("
+                  << inf.stillQuality << "), "              << QT_ENDL;
+    dbg.nospace() << "   animationQuality("
+                  << inf.animationQuality << "), "          << QT_ENDL;
+    dbg.nospace() << "   mapFont("
+                  << inf.mapFont << "), "                   << QT_ENDL;
+    dbg.nospace() << "   inertialRotation("
+                  << inf.inertialRotation << "), "          << QT_ENDL;
+    dbg.nospace() << "   mouseRotation("
+                  << inf.mouseRotation << "), "             << QT_ENDL;
+    dbg.nospace() << "   volatileTileCacheLimit("
+                  << inf.volatileTileCacheLimit << "), "    << QT_ENDL;
+    dbg.nospace() << "   persistentTileCacheLimit("
+                  << inf.persistentTileCacheLimit << "), "  << QT_ENDL;
+    dbg.nospace() << "   showGrid("
                   << inf.showGrid << ")";
 
     return dbg.space();

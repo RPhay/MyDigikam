@@ -90,6 +90,8 @@ DigikamApp::DigikamApp()
         }
     );
 
+    qCDebug(DIGIKAM_GENERAL_LOG) << GeolocationSettings::instance()->settings();
+
 #endif
 
     connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
