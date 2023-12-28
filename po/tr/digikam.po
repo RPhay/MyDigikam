@@ -52,8 +52,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-27 00:39+0000\n"
-"PO-Revision-Date: 2023-12-18 15:24+0300\n"
+"POT-Creation-Date: 2023-12-28 00:39+0000\n"
+"PO-Revision-Date: 2023-12-27 13:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -61,7 +61,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.01.85\n"
 
 #: core/app/date/ddateedit.cpp:497
 #, kde-format
@@ -3373,7 +3373,7 @@ msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
-"Gelişmiş yeniden adlandırma: {unique:n,c} ile benzersiz değiştirici için "
+"Gelişmiş yeniden adlandırma: {unique:n,c} ile benzersiz niteleyici için "
 "yapılandırılabilir ilk karakter eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:153
@@ -20487,8 +20487,8 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:377
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:450
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:300
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:347
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -32136,8 +32136,7 @@ msgid ""
 "Anisotropic (directional) modifier of the details. Keep it small for "
 "Gaussian noise."
 msgstr ""
-"Detayların anisotropic(eşyönlü) ayarlayıcısı. Gauss kirlenmesi için bunu "
-"küçük tutun."
+"Ayrıntıların eşyönlü niteleyicisi. Gauss kirlenmesi için bunu küçük tutun."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:143
 #, kde-format
@@ -51962,7 +51961,7 @@ msgstr "oluşturuldu: %1"
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:228
 #, kde-format
 msgid "By Name"
-msgstr "İsme Göre"
+msgstr "Ada Göre"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:229
 #, kde-format
@@ -51991,7 +51990,7 @@ msgstr "Azalan"
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:266
 #, kde-format
 msgid "Current Name"
-msgstr "Şu Anki Ad"
+msgstr "Geçerli Ad"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:266
 #, kde-format
@@ -52005,9 +52004,9 @@ msgid ""
 "name collision, either because the new name is equal to the current name, or "
 "because the name has already been assigned to another item."
 msgstr ""
-"Bu liste, sizin yeniden adlandırma kalıbınızın sonuçlarını gösterir. Kırmızı "
-"ögeler, renk çakışmasını gösterir, ya yeni isim mevcut isme eşittir ya da "
-"isim zaten başka bir ögeye atanmıştır."
+"Bu liste, yeniden adlandırma dizginize ilişkin sonuçları gösterir. Kırmızı "
+"ögeler, yeni adın geçerli ada eşit olması veya adın halihazırda başka bir "
+"ögeye atanmış olması nedeniyle bir ad çakışmasını gösterir."
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:326
 #, kde-format
@@ -52019,12 +52018,12 @@ msgstr[1] "Yeniden Adlandır (%1 görsel)"
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:428
 #, kde-format
 msgid "Sort Images"
-msgstr "Resimleri Sırala"
+msgstr "Görselleri Sırala"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:71
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
-msgstr "<b>Resimler yeniden adlandırılıyor. Lütfen bekleyin...</b>"
+msgstr "<b>Görseller yeniden adlandırılıyor. Lütfen bekleyin...</b>"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #, fuzzy, kde-format
@@ -52085,9 +52084,9 @@ msgid ""
 "renaming options and modifiers. For further explanation, use the information "
 "button.</p>"
 msgstr ""
-"<p>Yeniden adlandırma deseninizi buraya girin. Yeniden adlandırma "
-"seçeneklerini ve değiştiricileri hızlı bir şekilde eklemek için erişim "
-"düğmelerini kullanın. Daha fazla açıklama için, bilgi düğmesini kullanın.</p>"
+"<p>Yeniden adlandırma dizginizi buraya girin. Yeniden adlandırma "
+"seçeneklerini ve niteleyicilerini tez eklemek için erişim düğmelerini "
+"kullanın. Daha fazla açıklama için bilgi düğmesini kullanın.</p>"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:349
 #: core/utilities/import/widgets/scriptingsettings.cpp:85
@@ -52099,7 +52098,7 @@ msgstr "Tüm kullanılabilir seçeneklerin listesini göster"
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #, kde-format
 msgid "Modifiers"
-msgstr "Değiştiriciler"
+msgstr "Niteleyiciler"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:355
 #, kde-format
@@ -52107,9 +52106,9 @@ msgid ""
 "<p>Add a modifier to a renaming option. To activate this button, place the "
 "cursor behind a renaming option or an already assigned modifier.</p>"
 msgstr ""
-"<p>Yeniden adlandırma seçeneğine değiştirici ekleyin. Bu düğmeyi "
-"etkinleştirmek için imleci bir yeniden adlandırma seçeneğinin veya zaten "
-"atanmış bir değiştiricinin arkasına getirin.</p>"
+"<p>Yeniden adlandırma seçeneğine niteleyici ekleyin. Bu düğmeyi "
+"etkinleştirmek için imleci bir yeniden adlandırma seçeneğinin veya önceden "
+"atanmış bir niteleyicinin arkasına getirin.</p>"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:369
 #, kde-format
@@ -52130,7 +52129,7 @@ msgstr ""
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
 msgid "Modifiers can be applied to every renaming option."
-msgstr "Değiştiriciler her yeniden adlandırma seçeneğine uygulanabilir."
+msgstr "Niteleyiciler tüm yeniden adlandırma seçeneklerine uygulanabilir."
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:52
 #, kde-format
@@ -52138,8 +52137,8 @@ msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
 "in the order you assign them."
 msgstr ""
-"Bir seçeneğe birden fazla değiştirici atamak mümkün, bunlar atadığınız "
-"sıraya göre uygulanır."
+"Bir seçeneğe birden fazla niteleyici atamak olanaklıdır; bunlar sizin "
+"atadığınız sıraya göre uygulanır."
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:54
 #, kde-format
@@ -52148,7 +52147,7 @@ msgid ""
 "information about renaming and modifier options."
 msgstr ""
 "Hızlı erişim düğmelerini kullandığınızdan emin olun: Yeniden adlandırma ve "
-"değiştirici seçenekleri hakkında ek bilgi sağlayabilirler."
+"niteleyici seçenekleri hakkında ek bilgi sağlayabilirler."
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:56
 #, kde-format
@@ -52169,42 +52168,42 @@ msgstr "Bilgi"
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:29
 #, kde-format
 msgid "Change Case"
-msgstr "Büyük/küçük harf değişimi"
+msgstr "BÜYÜK/küçük Harf Değiştir"
 
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:29
 #, kde-format
 msgid "change the case of a renaming option"
-msgstr "yeniden adlandırma seçeneğinin durumunu değiştir"
+msgstr "yeniden adlandırma seçeneğinin BÜYÜK/küçük durumunu değiştir"
 
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:33
 #, kde-format
 msgid "Convert to uppercase"
-msgstr "Büyük harfe dönüştür"
+msgstr "BÜYÜK harfe dönüştür"
 
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:34
 #, kde-format
 msgid "Uppercase"
-msgstr "Büyük Harf"
+msgstr "BÜYÜK Harf"
 
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:36
 #, kde-format
 msgid "Convert to lowercase"
-msgstr "Küçük harfe dönüştür"
+msgstr "küçük harfe dönüştür"
 
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:37
 #, kde-format
 msgid "Lowercase"
-msgstr "Küçük Harf"
+msgstr "küçük Harf"
 
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:39
 #, kde-format
 msgid "Convert the first letter of each word to uppercase"
-msgstr "Her kelimenin ilk harfini büyük harfe dönüştürün"
+msgstr "Her sözcüğün ilk harfini BÜYÜK harfe dönüştür"
 
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:40
 #, kde-format
 msgid "First Letter of Each Word Uppercase"
-msgstr "Her kelimenin ilk harfi Büyük"
+msgstr "Her Sözcüğün İlk Harfi BÜYÜK"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:41
 #, kde-format
@@ -52217,9 +52216,9 @@ msgid ""
 "<p>Set a default value for empty strings.<br/>When applied to a renaming "
 "option, an empty string will be replaced by the value you specify here.</p>"
 msgstr ""
-"<p>Boş dizeler için öntanımlı bir değer ayarlayın.<br/>Yeniden adlandırma "
-"seçeneğine uygulandığında, boş bir dize burada belirttiğiniz değer ile "
-"değiştirilir.</p>"
+"<p>Boş diziler için öntanımlı bir değer belirleyin.<br/>Yeniden adlandırma "
+"seçeneğine uygulandığında, boş dizi burada belirttiğiniz değerle "
+"değiştirilecektir.</p>"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:70
 #, kde-format
@@ -52230,7 +52229,7 @@ msgstr "Öntanımlı Değer..."
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:71
 #, kde-format
 msgid "Set a default value for empty strings"
-msgstr "Boş dizeler için öntanımlı bir değer ayarlayın"
+msgstr "Boş diziler için öntanımlı bir değer ayarla"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/modifiers/fillmodifierdialogwidget.ui:19
@@ -52256,7 +52255,7 @@ msgstr "Karakter:"
 #: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:63
 #, kde-format
 msgid "Range..."
-msgstr "Aralık..."
+msgstr "Erim..."
 
 #: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
 #, kde-format
@@ -52268,14 +52267,14 @@ msgstr ""
 #, kde-format
 msgid ""
 "Extract a specific range (if '||to||' is omitted, go to the end of string)"
-msgstr "Belirli bir aralık gir (eğer '||to||' atlanmışsa dizgenin sonuna git)"
+msgstr "Belirli bir erimi çıkar (eğer '||to||' atlanmışsa dizinin sonuna git)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/modifiers/rangemodifierdialogwidget.ui:19
 #, kde-format
 msgctxt "start of the range"
 msgid "From:"
-msgstr "Gönderen:"
+msgstr "Nereden:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, toTheEndCheckBox)
 #: core/utilities/advancedrename/parser/modifiers/rangemodifierdialogwidget.ui:33
@@ -52289,7 +52288,7 @@ msgstr "en sona"
 #, kde-format
 msgctxt "end of the range"
 msgid "To:"
-msgstr "Şuraya:"
+msgstr "Nereye:"
 
 #: core/utilities/advancedrename/parser/modifiers/removedoublesmodifier.cpp:32
 #, kde-format
@@ -52299,7 +52298,7 @@ msgstr "Çiftleri Kaldır"
 #: core/utilities/advancedrename/parser/modifiers/removedoublesmodifier.cpp:33
 #, kde-format
 msgid "Remove duplicate words"
-msgstr "Tekrarlanan kelimeleri kaldır"
+msgstr "Yinelenen sözcükleri kaldır"
 
 #: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:52
 #, kde-format
@@ -52318,7 +52317,7 @@ msgid ""
 "Replace text (||options||: ||r|| = regular expression, ||i|| = ignore case)"
 msgstr ""
 "Metin seçeneklerini değiştir (||options| : ||r|| = düzenli ifade, ||i|| = "
-"büyük/küçük harf yok say)"
+"BÜYÜK/küçük harf yok say)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:19
@@ -52332,19 +52331,19 @@ msgstr "Değiştir:"
 #, kde-format
 msgctxt "The string to replace the text with"
 msgid "With:"
-msgstr "İle:"
+msgstr "Şununla:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, caseSensitive)
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:55
 #, kde-format
 msgid "Case Sensitive"
-msgstr "Harf Büyüklüğüne Duyarlı"
+msgstr "BÜYÜK/küçük harf duyarlı"
 
 #. i18n: ectx: property (text), widget (QCheckBox, isRegExp)
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:62
 #, kde-format
 msgid "Regular Expression"
-msgstr "Düzenli İfade"
+msgstr "Düzenli ifade"
 
 #: core/utilities/advancedrename/parser/modifiers/trimmedmodifier.cpp:29
 #, kde-format
@@ -52354,25 +52353,25 @@ msgstr "Kırpılmış"
 #: core/utilities/advancedrename/parser/modifiers/trimmedmodifier.cpp:30
 #, kde-format
 msgid "Remove leading, trailing and extra whitespace"
-msgstr "Baştaki, sondaki ve ekstra boşlukları kaldır"
+msgstr "Baştaki, sondaki ve ek boşlukları kaldır"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:34
 #, kde-format
 msgctxt "unique value for duplicate strings"
 msgid "Unique"
-msgstr "Tek"
+msgstr "Benzersiz"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:35
 #, kde-format
 msgid "Add a suffix number to have unique strings in duplicate values"
 msgstr ""
-"Yinelenen değerlerde benzersiz dizgiler oluşturmak için bir son ek numarası "
-"ekleyin"
+"Yinelenen değerlerde benzersiz diziler oluşturmak için bir sonek numarası "
+"ekle"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:41
 #, kde-format
 msgid "Add a suffix number, ||n|| specifies the number of digits to use"
-msgstr "Ön ek numarası ekle, ||n|| kullanılacak basamak sayısını belirtir"
+msgstr "Sonek numarası ekle, ||n|| kullanılacak basamak sayısını belirtir"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
 #, fuzzy, kde-format
@@ -58562,40 +58561,46 @@ msgstr "Mermer 2"
 msgid "Marble Plugins"
 msgstr "Eklentiler"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:131
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:123
+#, kde-format
+msgid " by "
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "About %1 Plugin"
-msgid "About Plugin %1"
+msgid "About Plugin"
 msgstr "Eklenti %1 hakkında"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:137
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:138
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</"
 #| "p>"
 msgid ""
-"<p><u>Version:</u> %1</p><p><u>Authors:</u> %2</p><p><u>Description:</u> %3</"
-"p>"
+"<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
+"p><p><u>Description:</u> %4</p>"
 msgstr ""
 "<b>Başlık: </b><p>%1</p><b>Değer: </b><p>%2</p><b>Açıklama: </b><p>%3</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:19
 #, fuzzy, kde-format
 #| msgid "Units:"
 msgid "&Units"
 msgstr "Birimler:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:31
 #, fuzzy, kde-format
-#| msgid "Distance:"
-msgid "&Distance:"
-msgstr "Uzaklık:"
+#| msgctxt "@label"
+#| msgid "Angle:"
+msgid "An&gle:"
+msgstr "Açı:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:53
 #, fuzzy, kde-format
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
@@ -58642,33 +58647,32 @@ msgstr ""
 "body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:61
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
 #, kde-format
 msgid "Kilometer, Meter"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:66
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:62
 #, kde-format
 msgid "Miles, Feet"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:71
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:67
 #, kde-format
 msgid "Nautical miles, Knots"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:85
+#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:87
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Angle:"
-msgid "An&gle:"
-msgstr "Açı:"
+#| msgid "Distance:"
+msgid "&Distance:"
+msgstr "Uzaklık:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:101
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:103
 #, fuzzy, kde-format
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
@@ -58717,39 +58721,46 @@ msgstr ""
 "body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:105
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:107
 #, kde-format
 msgid "Degree (DMS)"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:110
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:112
 #, kde-format
 msgid "Degree (Decimal)"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:115
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:117
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:126
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:128
 #, fuzzy, kde-format
 #| msgid "Quality:"
 msgid "Map &Quality"
 msgstr "Kalite:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:144
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:146
 #, fuzzy, kde-format
 #| msgid "&Shuffle images"
 msgid "&Still image:"
 msgstr "Görselleri &karıştır"
 
+#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:162
+#, fuzzy, kde-format
+#| msgid "Duration:"
+msgid "During &animations:"
+msgstr "Süre:"
+
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:157
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:175
 #, fuzzy, kde-format
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
@@ -58798,8 +58809,8 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:164
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:219
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:182
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:221
 #, fuzzy, kde-format
 #| msgid "Outlined Text"
 msgid "Outline Quality"
@@ -58807,8 +58818,8 @@ msgstr "Çerçeveli Metin"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:169
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:224
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:187
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:226
 #, fuzzy, kde-format
 #| msgid "Quality:"
 msgid "Low Quality"
@@ -58816,8 +58827,8 @@ msgstr "Kalite:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:174
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:229
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:192
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:231
 #, fuzzy, kde-format
 #| msgctxt "@action: normal exif orientation"
 #| msgid "Normal"
@@ -58826,8 +58837,8 @@ msgstr "Normal"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:179
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:234
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:197
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:236
 #, fuzzy, kde-format
 #| msgid "Quality:"
 msgid "High Quality"
@@ -58835,22 +58846,15 @@ msgstr "Kalite:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:184
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:239
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:202
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:241
 #, fuzzy, kde-format
 #| msgid "Quality:"
 msgid "Print Quality"
 msgstr "Kalite:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:198
-#, fuzzy, kde-format
-#| msgid "Duration:"
-msgid "During &animations:"
-msgstr "Süre:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:212
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:214
 #, fuzzy, kde-format
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
@@ -58901,103 +58905,41 @@ msgstr ""
 "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
 "body></html>"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:266
-#, fuzzy, kde-format
-#| msgid "Labels"
-msgid "&Text Labels"
-msgstr "Etiketler"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:286
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
-msgid "Default map &font:"
-msgstr "Öntanımlı Dil"
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:299
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#| "TR/REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></"
-#| "a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir takvimi "
-"<a href=\"www.icalshare.com\"><span style=\" text-decoration: underline; "
-"color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya başka "
-"sitelerden indirebilirsiniz.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-"bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-"body></html>"
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:311
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:256
 #, fuzzy, kde-format
 #| msgid "Behavior"
 msgid "Mouse Behavior"
 msgstr "Davranış"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:317
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:262
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:320
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:265
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgid "&Inertial globe rotation"
 msgstr "Seçimi Tersine Çevir"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:327
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:272
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:330
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:275
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
 msgid "&Mouse view rotation"
 msgstr "Bu işlemi iptal et."
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:343
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:288
 #, fuzzy, kde-format
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
@@ -59049,43 +58991,113 @@ msgstr ""
 "body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:346
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:291
 #, kde-format
 msgid "C&ache"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:364
-#, kde-format
-msgid "&Physical memory:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:396
-#, fuzzy, kde-format
-#| msgid "Clear"
-msgid "C&lear"
-msgstr "Temizle"
-
 #. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:428
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:325
 #, kde-format
 msgid "&Hard disc:"
 msgstr ""
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:447
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:344
 #, fuzzy, kde-format
 #| msgctxt "smug album privacy"
 #| msgid "Unlisted"
 msgid "Unlimited"
 msgstr "Listelenmeyen"
 
+#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:366
+#, fuzzy, kde-format
+#| msgid "Clear"
+msgid "C&lear"
+msgstr "Temizle"
+
 #. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:469
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:379
 #, kde-format
 msgid "Cl&ear"
 msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:398
+#, kde-format
+msgid "&Physical memory:"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:413
+#, fuzzy, kde-format
+#| msgctxt "@item: iptc"
+#| msgid "Content"
+msgid "Map Contents"
+msgstr "İçerik"
+
+#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:433
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Default Language"
+msgid "Default &font:"
+msgstr "Öntanımlı Dil"
+
+#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:446
+#, fuzzy, kde-format
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
+#| "TR/REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#| "font-weight:400; font-style:italic;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
+#| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
+#| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></"
+#| "a> or other sites.</p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
+#| "All the events from this calendar will be printed in red.</p></body></"
+#| "html>"
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
+"used on the map.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir takvimi "
+"<a href=\"www.icalshare.com\"><span style=\" text-decoration: underline; "
+"color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya başka "
+"sitelerden indirebilirsiniz.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
+"bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
+"body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showGrid)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:458
+#, fuzzy, kde-format
+#| msgid "Show grid"
+msgid "Show Grid"
+msgstr "Izgarayı göster"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, fuzzy, kde-format
@@ -68463,33 +68475,33 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Gruplama"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:70
+#: core/utilities/setup/misc/systemsettingswidget.cpp:77
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:71
+#: core/utilities/setup/misc/systemsettingswidget.cpp:78
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:72
+#: core/utilities/setup/misc/systemsettingswidget.cpp:82
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:73
+#: core/utilities/setup/misc/systemsettingswidget.cpp:83
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "İçsel hata ayıklama günlüklemesini etkinleştir"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:75
+#: core/utilities/setup/misc/systemsettingswidget.cpp:85
 #, fuzzy, kde-format
 #| msgid "Downloading remote files for \"%1\""
 msgid "Download required binary data..."
 msgstr "\"%1\" için uzak dosyalar indiriliyor"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:90
+#: core/utilities/setup/misc/systemsettingswidget.cpp:100
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -68838,7 +68850,7 @@ msgctxt "@info"
 msgid ""
 "Google Maps requires to work friendly an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
-"but with an overlay frame annotated \"For Develomepent Only\". For more "
+"but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
@@ -69768,6 +69780,11 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Tüm video ayarlarını öntanımlı değerlere sıfırlamak istediğinizden emin "
 "misiniz?"
+
+#, fuzzy
+#~| msgid "Labels"
+#~ msgid "&Text Labels"
+#~ msgstr "Etiketler"
 
 #, fuzzy
 #~| msgid "Google Maps"

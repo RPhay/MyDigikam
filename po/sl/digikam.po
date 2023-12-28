@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-27 00:39+0000\n"
-"PO-Revision-Date: 2023-12-26 07:53+0100\n"
+"POT-Creation-Date: 2023-12-28 00:39+0000\n"
+"PO-Revision-Date: 2023-12-27 17:32+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -48,7 +48,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
 "%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: core/app/date/ddateedit.cpp:497
 #, kde-format
@@ -20469,8 +20469,8 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:377
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:450
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:300
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:347
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -56292,17 +56292,17 @@ msgstr "Konfiguriraj"
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:62
 #, kde-format
 msgid "Atmosphere"
-msgstr ""
+msgstr "Atmosfera"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:67
 #, kde-format
 msgid "&Atmosphere"
-msgstr ""
+msgstr "&Atmosfera"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
 #, kde-format
 msgid "Shows the atmosphere around the earth."
-msgstr ""
+msgstr "Prikazuje atmosfero okrog zemlje."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
@@ -56359,61 +56359,54 @@ msgstr "To je premikajoči se predmet, ki nudi kompas."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure Compass Plugin"
+#, kde-format
 msgid "Configure Crosshairs Plugin"
-msgstr "Konfiguriraj vtičnik kompasa"
+msgstr "Konfiguriraj vtičnik merilnega križa"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
 #, kde-format
 msgid "Gun 1"
-msgstr ""
+msgstr "Top 1"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
 #, kde-format
 msgid "Gun 2"
-msgstr ""
+msgstr "Top 2"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
-#, fuzzy, kde-format
-#| msgid "Circle"
+#, kde-format
 msgid "Circled"
-msgstr "Krog"
+msgstr "Obkroženo"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "German"
+#, kde-format
 msgid "German"
 msgstr "Nemško"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:73
-#, fuzzy, kde-format
-#| msgid "Crosswalk"
+#, kde-format
 msgid "Crosshairs"
-msgstr "Prehod"
+msgstr "Križ"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:78
-#, fuzzy, kde-format
-#| msgid "Crosswalk"
+#, kde-format
 msgid "Cross&hairs"
-msgstr "Prehod"
+msgstr "Križ"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
 #, kde-format
 msgid "A plugin that shows crosshairs."
-msgstr ""
+msgstr "Vtičnik, ki kaže križ."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate Grid Plugin"
-msgstr "Koordinate"
+msgstr "Vtičnik za koordinate"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -56427,144 +56420,126 @@ msgstr "Barve"
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:444
 #, kde-format
 msgid "&Grid:"
-msgstr ""
+msgstr "Mreža:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:497
-#, fuzzy, kde-format
-#| msgid "Color model of the image"
+#, kde-format
 msgid "Color of the coordinate grid."
-msgstr "Barvni model slike"
+msgstr "Barva koordinatne mreže"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:922
-#, fuzzy, kde-format
-#| msgctxt "@item: type code"
-#| msgid "Topic"
+#, kde-format
 msgid "&Tropics:"
-msgstr "Topika"
+msgstr "Tropi:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, tropicsPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:938
 #, kde-format
 msgid "Color of the tropical circles."
-msgstr ""
+msgstr "Barva tropskih povratnikov."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1363
 #, kde-format
 msgid "&Equator:"
-msgstr ""
+msgstr "Ekvator:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1379
-#, fuzzy, kde-format
-#| msgid "Color model of the image"
+#, kde-format
 msgid "Color of the equator."
-msgstr "Barvni model slike"
+msgstr "Barva ekvatorja."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1398
-#, fuzzy, kde-format
-#| msgid "&Text Labels"
+#, kde-format
 msgid "&Named Labels"
-msgstr "Besedilne oznake"
+msgstr "Poimenovane oznake"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1408
 #, kde-format
 msgid "Show Labels for Prime meridian, Equator, Tropics."
-msgstr ""
+msgstr "Pokaži oznake za prvi poldnevnik, ekvator, trope."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1415
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Vertical Lines"
-#| msgid "Vertical Lines"
+#, kde-format
 msgid "&Numerical Labels"
-msgstr "Navpične črte"
+msgstr "Številčne oznake"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1425
-#, fuzzy, kde-format
-#| msgid "Show image labels"
+#, kde-format
 msgid "Show numerical Labels."
-msgstr "Pokaži oznake slike"
+msgstr "Pokaži številčne oznake."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:71
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate Grid"
-msgstr "Koordinate"
+msgstr "Koordinatna mreža"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:76
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate &Grid"
-msgstr "Koordinate"
+msgstr "Koordinatna mreža"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:91
 #, kde-format
 msgid "A plugin that shows a coordinate grid."
-msgstr ""
+msgstr "Vtičnik, ki prikazuje koordinatno mrežo."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:213
-#, fuzzy, kde-format
-#| msgid "Please choose the color for the position indicator"
+#, kde-format
 msgid "Please choose the color for the coordinate grid."
-msgstr "Izberite barvo indikatorja pozicije"
+msgstr "Izberite barvo koordinatne mreže."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:224
-#, fuzzy, kde-format
-#| msgid "Please choose the color for the position indicator"
+#, kde-format
 msgid "Please choose the color for the tropic circles."
-msgstr "Izberite barvo indikatorja pozicije"
+msgstr "Izberite barvo tropskih povratnikov."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:235
-#, fuzzy, kde-format
-#| msgid "Please choose the color for the position indicator"
+#, kde-format
 msgid "Please choose the color for the equator."
-msgstr "Izberite barvo indikatorja pozicije"
+msgstr "Izberite barvo ekvatorja."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:315
-#, fuzzy, kde-format
-#| msgid "Elevator"
+#, kde-format
 msgid "Equator"
-msgstr "Dvigalo"
+msgstr "Ekvator"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
-#, fuzzy, kde-format
-#| msgid "Perimeter"
+#, kde-format
 msgid "Prime Meridian"
-msgstr "Perimeter"
+msgstr "Prvi poldnevnik"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:321
 #, kde-format
 msgid "Antimeridian"
-msgstr ""
+msgstr "Antimeridian"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
 #, kde-format
 msgid "Tropic of Cancer"
-msgstr ""
+msgstr "Rakov (severni) povratnik"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:408
 #, kde-format
 msgid "Tropic of Capricorn"
-msgstr ""
+msgstr "Kozorogov (južni) povratnik"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
-#, fuzzy, kde-format
-#| msgid "Circle"
+#, kde-format
 msgid "Arctic Circle"
-msgstr "Krog"
+msgstr "Arktični krog"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Antarctica"
+#, kde-format
 msgid "Antarctic Circle"
-msgstr "Antarktika"
+msgstr "Antarktični krog"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -56892,23 +56867,19 @@ msgid "Position I&ndicator:"
 msgstr "Indikator pozicije:"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:81
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Download Progress Indicator"
-msgstr "Pokaži kazalnik napredka"
+msgstr "Prenesi kazalnik napredka"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Error"
+#, kde-format
 msgid "&Download Progress"
-msgstr "Napaka prenosa"
+msgstr "Prenesi napredek"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:101
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Shows a pie chart download progress indicator"
-msgstr "Pokaži kazalnik napredka"
+msgstr "Pokaži krožnik kazalnik napredka"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -57068,33 +57039,42 @@ msgstr "Pogled Marble"
 msgid "Marble Plugins"
 msgstr "Vtičniki Marble"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:131
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:123
 #, kde-format
-msgid "About Plugin %1"
+msgid " by "
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:132
+#, fuzzy, kde-format
+#| msgid "About Plugin %1"
+msgid "About Plugin"
 msgstr "O vstavku %1"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:137
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:138
 #, fuzzy, kde-format
-#| msgid "<p>Version: %1</p><p>Description: %2</p>"
+#| msgid ""
+#| "<p><u>Version:</u> %1</p><p><u>Authors:</u> %2</p><p><u>Description:</u> "
+#| "%3</p>"
 msgid ""
-"<p><u>Version:</u> %1</p><p><u>Authors:</u> %2</p><p><u>Description:</u> %3</"
-"p>"
-msgstr "<p>Različica: %1</p><p>Opis: %2</p>"
+"<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
+"p><p><u>Description:</u> %4</p>"
+msgstr ""
+"<p><u>Različica:</u> %1</p><p><u>Avtorji:</u> %2</p><p><u>Opis:</u> %3</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:19
 #, kde-format
 msgid "&Units"
 msgstr "Enote"
 
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:31
 #, kde-format
-msgid "&Distance:"
-msgstr "Oddaljenost:"
+msgid "An&gle:"
+msgstr "Kot:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:53
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57117,31 +57097,31 @@ msgstr ""
 "p></body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:61
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
 #, kde-format
 msgid "Kilometer, Meter"
 msgstr "Kilometer, Meter"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:66
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:62
 #, kde-format
 msgid "Miles, Feet"
 msgstr "Milje, Čevlji"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:71
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:67
 #, kde-format
 msgid "Nautical miles, Knots"
 msgstr "Navtična milje, Vozli"
 
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:85
+#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:87
 #, kde-format
-msgid "An&gle:"
-msgstr "Kot:"
+msgid "&Distance:"
+msgstr "Oddaljenost:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:101
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:103
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57167,37 +57147,43 @@ msgstr ""
 "html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:105
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:107
 #, kde-format
 msgid "Degree (DMS)"
 msgstr "Stopinja (DMS)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:110
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:112
 #, kde-format
 msgid "Degree (Decimal)"
 msgstr "Stopinja (Decimalno)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:115
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:117
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
 msgstr "Universal Transverse Mercator (UTM)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:126
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:128
 #, kde-format
 msgid "Map &Quality"
 msgstr "Zemljevid in kakovost"
 
 #. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:144
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:146
 #, kde-format
 msgid "&Still image:"
 msgstr "Mirujoča slika:"
 
+#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:162
+#, kde-format
+msgid "During &animations:"
+msgstr "Med animacijami:"
+
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:157
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:175
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57222,52 +57208,46 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:164
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:219
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:182
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:221
 #, kde-format
 msgid "Outline Quality"
 msgstr "Kakovost orisov"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:169
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:224
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:187
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:226
 #, kde-format
 msgid "Low Quality"
 msgstr "Nizka kakovost"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:174
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:229
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:192
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:231
 #, kde-format
 msgid "Normal"
 msgstr "Normalno"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:179
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:234
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:197
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:236
 #, kde-format
 msgid "High Quality"
 msgstr "Visoka kakovost"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:184
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:239
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:202
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:241
 #, kde-format
 msgid "Print Quality"
 msgstr "Kakovost za tisk"
 
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:198
-#, kde-format
-msgid "During &animations:"
-msgstr "Med animacijami:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:212
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:214
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57298,72 +57278,38 @@ msgstr ""
 "strojih je priporočljivo, da to možnost nastavite na \"Nizka kakovost\", saj "
 "bo to dalo boljšo hitrost.</p></body></html>"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:266
-#, kde-format
-msgid "&Text Labels"
-msgstr "Besedilne oznake"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:286
-#, kde-format
-msgid "Default map &font:"
-msgstr "Privzeti zemljevid in pisava:"
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:299
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Privzeta pisava "
-"uporabljena na zemljevidu.</p></body></html>"
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:311
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:256
 #, kde-format
 msgid "Mouse Behavior"
 msgstr "Obnašanje miške"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:317
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:262
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
 msgstr "Pri vlečenju zemljevida uporabite kinetično vrtenje"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:320
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:265
 #, kde-format
 msgid "&Inertial globe rotation"
 msgstr "Inercialna rotacija globusa"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:327
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:272
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
 msgstr "Z desnim gumbom miške zavrtite kamero"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:330
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:275
 #, kde-format
 msgid "&Mouse view rotation"
 msgstr "Miškin pogled vrtenja"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:343
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:288
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57395,40 +57341,84 @@ msgstr ""
 "visoka poraba interneta ni težava.</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:346
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:291
 #, kde-format
 msgid "C&ache"
 msgstr "Predpomnilnik"
 
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:364
-#, kde-format
-msgid "&Physical memory:"
-msgstr "Fizični pomnilnik:"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:396
-#, kde-format
-msgid "C&lear"
-msgstr "Počisti"
-
 #. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:428
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:325
 #, kde-format
 msgid "&Hard disc:"
 msgstr "Trdi disk:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:447
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:344
 #, kde-format
 msgid "Unlimited"
 msgstr "Neomenjen"
 
+#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:366
+#, kde-format
+msgid "C&lear"
+msgstr "Počisti"
+
 #. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:469
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:379
 #, kde-format
 msgid "Cl&ear"
 msgstr "Očisti"
+
+#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:398
+#, kde-format
+msgid "&Physical memory:"
+msgstr "Fizični pomnilnik:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:413
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Load Contents"
+msgid "Map Contents"
+msgstr "Naloži vsebine"
+
+#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:433
+#, fuzzy, kde-format
+#| msgid "Default map &font:"
+msgid "Default &font:"
+msgstr "Privzeti zemljevid in pisava:"
+
+#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:446
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
+"used on the map.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Privzeta pisava "
+"uporabljena na zemljevidu.</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showGrid)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:458
+#, fuzzy, kde-format
+#| msgid "Show grid"
+msgid "Show Grid"
+msgstr "Pokaži mrežo"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -66216,32 +66206,32 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Združevanje"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:70
+#: core/utilities/setup/misc/systemsettingswidget.cpp:77
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Uporabite merilo visoke ločljivosti DPI glede na faktor zaslona"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:71
+#: core/utilities/setup/misc/systemsettingswidget.cpp:78
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Uporabi točkovne slike z visoko ločljivostjo DPI"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:72
+#: core/utilities/setup/misc/systemsettingswidget.cpp:82
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr "Onemogoči strojno pospeševanje OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:73
+#: core/utilities/setup/misc/systemsettingswidget.cpp:83
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Omogoči notranje beleženje napak"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:75
+#: core/utilities/setup/misc/systemsettingswidget.cpp:85
 #, kde-format
 msgid "Download required binary data..."
 msgstr "Prenesi zahtevane binarne podatke..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:90
+#: core/utilities/setup/misc/systemsettingswidget.cpp:100
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -66535,15 +66525,28 @@ msgid "API Key:"
 msgstr "API ključ:"
 
 #: core/utilities/setup/setupgeolocation.cpp:113
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Google Maps requires to work friendly an API key that end users must buy "
+#| "online to gain credentials. Without this key, Google Maps is still usable "
+#| "but with an overlay frame annotated \"For Develomepent Only\". For more "
+#| "information, see this <a href='https://mapsplatform.google.com/"
+#| "pricing/'>Google page</a> about usages, practices, and prices."
 msgctxt "@info"
 msgid ""
 "Google Maps requires to work friendly an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
-"but with an overlay frame annotated \"For Develomepent Only\". For more "
+"but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
+"Google Zemljevidi za prijazno delovanje potrebujejo ključ API, ki ga morajo "
+"končni uporabniki kupitina spletu, da pridobite poverilnice. Brez tega "
+"ključa so Google Zemljevidi še vedno uporabnivendar s prekrivnim okvirjem z "
+"oznako \"For Develomepent Only - Samo za razvoj\". Za večinformacij, glejte "
+"to <a href='https://mapsplatform.google.com/pricing/'>Googlovo stran</a> o "
+"uporabah, praksah in cenah."
 
 #: core/utilities/setup/setupicc.cpp:178
 #, kde-format
@@ -67459,6 +67462,9 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ali želite ponovno nastaviti vse nastavitve na privzete vrednosti?"
+
+#~ msgid "&Text Labels"
+#~ msgstr "Besedilne oznake"
 
 #~ msgid "Google Maps API Key"
 #~ msgstr "API ključ za Google Maps"

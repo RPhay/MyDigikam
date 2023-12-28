@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-27 00:39+0000\n"
-"PO-Revision-Date: 2023-12-26 10:41+0100\n"
+"POT-Creation-Date: 2023-12-28 00:39+0000\n"
+"PO-Revision-Date: 2023-12-27 12:28+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -20692,8 +20692,8 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:377
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:450
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:300
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:347
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -56632,17 +56632,17 @@ msgstr "Configureren"
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:62
 #, kde-format
 msgid "Atmosphere"
-msgstr ""
+msgstr "Atmosfeer"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:67
 #, kde-format
 msgid "&Atmosphere"
-msgstr ""
+msgstr "&Dampkring"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
 #, kde-format
 msgid "Shows the atmosphere around the earth."
-msgstr ""
+msgstr "Toont de dampkring rond de aarde."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
@@ -56699,61 +56699,54 @@ msgstr "Dit is een zwevend item dat voor een windroos zorgt."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure Compass Plugin"
+#, kde-format
 msgid "Configure Crosshairs Plugin"
-msgstr "Plugin voor kompas instellen"
+msgstr "Plugin kruisdraden instellen"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
 #, kde-format
 msgid "Gun 1"
-msgstr ""
+msgstr "Spuit 1"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
 #, kde-format
 msgid "Gun 2"
-msgstr ""
+msgstr "Spuit 2"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
-#, fuzzy, kde-format
-#| msgid "Circle"
+#, kde-format
 msgid "Circled"
-msgstr "Cirkel"
+msgstr "Omcirkeld"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "German"
+#, kde-format
 msgid "German"
 msgstr "Duits"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:73
-#, fuzzy, kde-format
-#| msgid "Crosswalk"
+#, kde-format
 msgid "Crosshairs"
-msgstr "Oversteekplaats"
+msgstr "Kruisdraad"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:78
-#, fuzzy, kde-format
-#| msgid "Crosswalk"
+#, kde-format
 msgid "Cross&hairs"
-msgstr "Oversteekplaats"
+msgstr "&Kruisdraad"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
 #, kde-format
 msgid "A plugin that shows crosshairs."
-msgstr ""
+msgstr "Een plugin die een kruisdraad toont."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate Grid Plugin"
-msgstr "Coördinaat"
+msgstr "Plugin voor coördinatenrooster"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -56767,144 +56760,126 @@ msgstr "Kl&euren"
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:444
 #, kde-format
 msgid "&Grid:"
-msgstr ""
+msgstr "&Rooster:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:497
-#, fuzzy, kde-format
-#| msgid "Color model of the image"
+#, kde-format
 msgid "Color of the coordinate grid."
-msgstr "Kleurmodel van de afbeelding"
+msgstr "Kleur van coördinaten."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:922
-#, fuzzy, kde-format
-#| msgctxt "@item: type code"
-#| msgid "Topic"
+#, kde-format
 msgid "&Tropics:"
-msgstr "Onderwerp"
+msgstr "&Tropen:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, tropicsPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:938
 #, kde-format
 msgid "Color of the tropical circles."
-msgstr ""
+msgstr "Kleur van de keerkringen."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1363
 #, kde-format
 msgid "&Equator:"
-msgstr ""
+msgstr "&Equator:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1379
-#, fuzzy, kde-format
-#| msgid "Color model of the image"
+#, kde-format
 msgid "Color of the equator."
-msgstr "Kleurmodel van de afbeelding"
+msgstr "Kleur van de evenaar."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1398
-#, fuzzy, kde-format
-#| msgid "&Text Labels"
+#, kde-format
 msgid "&Named Labels"
-msgstr "&Tekst"
+msgstr "Teksten met namen"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1408
 #, kde-format
 msgid "Show Labels for Prime meridian, Equator, Tropics."
-msgstr ""
+msgstr "Namen tonen van de eerste meridiaan, equator, tropen."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1415
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Vertical Lines"
-#| msgid "Vertical Lines"
+#, kde-format
 msgid "&Numerical Labels"
-msgstr "Verticale lijnen"
+msgstr "&Getallen"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1425
-#, fuzzy, kde-format
-#| msgid "Show image labels"
+#, kde-format
 msgid "Show numerical Labels."
-msgstr "Afbeeldingslabels tonen"
+msgstr "Getallen tonen"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:71
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate Grid"
-msgstr "Coördinaat"
+msgstr "Coördinatenrooster"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:76
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate &Grid"
-msgstr "Coördinaat"
+msgstr "Coördinaten&rooster"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:91
 #, kde-format
 msgid "A plugin that shows a coordinate grid."
-msgstr ""
+msgstr "Een plugin die een coördinatenrooster toont."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:213
-#, fuzzy, kde-format
-#| msgid "Please choose the color for the position indicator"
+#, kde-format
 msgid "Please choose the color for the coordinate grid."
-msgstr "Kies de kleur van de positieaanwijzer"
+msgstr "Kies de kleur van de coördinaten."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:224
-#, fuzzy, kde-format
-#| msgid "Please choose the color for the position indicator"
+#, kde-format
 msgid "Please choose the color for the tropic circles."
-msgstr "Kies de kleur van de positieaanwijzer"
+msgstr "Kies de kleur van de keerkringen."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:235
-#, fuzzy, kde-format
-#| msgid "Please choose the color for the position indicator"
+#, kde-format
 msgid "Please choose the color for the equator."
-msgstr "Kies de kleur van de positieaanwijzer"
+msgstr "Kies de kleur van de evenaar."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:315
-#, fuzzy, kde-format
-#| msgid "Elevator"
+#, kde-format
 msgid "Equator"
-msgstr "Lift"
+msgstr "Evenaar"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
-#, fuzzy, kde-format
-#| msgid "Perimeter"
+#, kde-format
 msgid "Prime Meridian"
-msgstr "Omtrek"
+msgstr "Eerste meridiaan"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:321
 #, kde-format
 msgid "Antimeridian"
-msgstr ""
+msgstr "Antimeridiaan"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
 #, kde-format
 msgid "Tropic of Cancer"
-msgstr ""
+msgstr "Kreeftskeerkring"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:408
 #, kde-format
 msgid "Tropic of Capricorn"
-msgstr ""
+msgstr "Steenbokskeerkring"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
-#, fuzzy, kde-format
-#| msgid "Circle"
+#, kde-format
 msgid "Arctic Circle"
-msgstr "Cirkel"
+msgstr "Noordelijke poolcirkel"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Antarctica"
+#, kde-format
 msgid "Antarctic Circle"
-msgstr "Antarctica"
+msgstr "Zuidelijke poolcirkel"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -57232,23 +57207,19 @@ msgid "Position I&ndicator:"
 msgstr "Positie&aanwijzer:"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:81
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Download Progress Indicator"
-msgstr "Voortgangsindicator tonen"
+msgstr "Indicatie voor downloadvoortgang"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Error"
+#, kde-format
 msgid "&Download Progress"
-msgstr "Fout bij downloaden"
+msgstr "Voortgangsindicatie &download"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:101
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Shows a pie chart download progress indicator"
-msgstr "Voortgangsindicator tonen"
+msgstr "Toont een voortgangsindicatie in de vorm van een taartdiagram"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -57409,33 +57380,43 @@ msgstr "Marble-weergave"
 msgid "Marble Plugins"
 msgstr "Marble-plug-ins"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:131
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:123
 #, kde-format
-msgid "About Plugin %1"
+msgid " by "
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:132
+#, fuzzy, kde-format
+#| msgid "About Plugin %1"
+msgid "About Plugin"
 msgstr "Over plug-in %1"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:137
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:138
 #, fuzzy, kde-format
-#| msgid "<p>Version: %1</p><p>Description: %2</p>"
+#| msgid ""
+#| "<p><u>Version:</u> %1</p><p><u>Authors:</u> %2</p><p><u>Description:</u> "
+#| "%3</p>"
 msgid ""
-"<p><u>Version:</u> %1</p><p><u>Authors:</u> %2</p><p><u>Description:</u> %3</"
+"<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
+"p><p><u>Description:</u> %4</p>"
+msgstr ""
+"<p><u>Versie:</u> %1</p><p><u>Auteurs:</u> %2</p><p><u>Beschrijving:</u> %3</"
 "p>"
-msgstr "<p>Versie: %1</p><p>Beschrijving: %2</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:17
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:19
 #, kde-format
 msgid "&Units"
 msgstr "&Eenheden"
 
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:31
 #, kde-format
-msgid "&Distance:"
-msgstr "&Afstand:"
+msgid "An&gle:"
+msgstr "&Hoek:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:53
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57458,31 +57439,31 @@ msgstr ""
 "p></body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:61
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
 #, kde-format
 msgid "Kilometer, Meter"
 msgstr "Kilometer, Meter"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:66
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:62
 #, kde-format
 msgid "Miles, Feet"
 msgstr "Mijl, voet"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:71
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:67
 #, kde-format
 msgid "Nautical miles, Knots"
 msgstr "Zeemijl/uur, knopen"
 
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:85
+#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:87
 #, kde-format
-msgid "An&gle:"
-msgstr "&Hoek:"
+msgid "&Distance:"
+msgstr "&Afstand:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:101
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:103
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57508,37 +57489,43 @@ msgstr ""
 "decimale graden (b.v. 54.5°).</p></body></html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:105
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:107
 #, kde-format
 msgid "Degree (DMS)"
 msgstr "Graad (GMS)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:110
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:112
 #, kde-format
 msgid "Degree (Decimal)"
 msgstr "Graad (decimaal)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:115
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:117
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
 msgstr "Universele Transversale Mercatorprojectie (UTM)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:126
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:128
 #, kde-format
 msgid "Map &Quality"
 msgstr "Kaartk&waliteit"
 
 #. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:144
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:146
 #, kde-format
 msgid "&Still image:"
 msgstr "&Niet-bewegende afbeelding:"
 
+#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:162
+#, kde-format
+msgid "During &animations:"
+msgstr "Tijdens &animaties:"
+
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:157
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:175
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57563,52 +57550,46 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:164
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:219
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:182
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:221
 #, kde-format
 msgid "Outline Quality"
 msgstr "Uitlijnkwaliteit"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:169
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:224
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:187
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:226
 #, kde-format
 msgid "Low Quality"
 msgstr "Lage kwaliteit"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:174
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:229
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:192
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:231
 #, kde-format
 msgid "Normal"
 msgstr "Normaal"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:179
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:234
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:197
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:236
 #, kde-format
 msgid "High Quality"
 msgstr "Hoge kwaliteit"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:184
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:239
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:202
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:241
 #, kde-format
 msgid "Print Quality"
 msgstr "Afdrukkwaliteit"
 
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:198
-#, kde-format
-msgid "During &animations:"
-msgstr "Tijdens &animaties:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:212
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:214
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57639,72 +57620,38 @@ msgstr ""
 "is het aan te raden om dit op \"lage kwaliteit\" te zetten omdat dit een "
 "hogere snelheid zal opleveren.</p></body></html>"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:266
-#, kde-format
-msgid "&Text Labels"
-msgstr "&Tekst"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:286
-#, kde-format
-msgid "Default map &font:"
-msgstr "Standaard kaart&lettertype:"
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:299
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Het standaard lettertype "
-"dat op de kaart gebruikt wordt.</p></body></html>"
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:311
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:256
 #, kde-format
 msgid "Mouse Behavior"
 msgstr "Muisgedrag"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:317
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:262
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
 msgstr "Kinetisch draaien gebruiken bij slepen van de kaart"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:320
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:265
 #, kde-format
 msgid "&Inertial globe rotation"
 msgstr "&Inertiële globerotatie"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:327
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:272
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
 msgstr "Met de rechter muisknop kunt u de camera ronddraaien"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:330
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:275
 #, kde-format
 msgid "&Mouse view rotation"
 msgstr "Beeldrotatie met &muisknop"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:343
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:288
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
@@ -57736,40 +57683,84 @@ msgstr ""
 "internetgebruik geen probleem is.</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:346
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:291
 #, kde-format
 msgid "C&ache"
 msgstr "C&ache"
 
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:364
-#, kde-format
-msgid "&Physical memory:"
-msgstr "&Fysiek geheugen:"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:396
-#, kde-format
-msgid "C&lear"
-msgstr "W&issen"
-
 #. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:428
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:325
 #, kde-format
 msgid "&Hard disc:"
 msgstr "&Harde schijf:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:447
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:344
 #, kde-format
 msgid "Unlimited"
 msgstr "Onbeperkt"
 
+#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:366
+#, kde-format
+msgid "C&lear"
+msgstr "W&issen"
+
 #. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:469
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:379
 #, kde-format
 msgid "Cl&ear"
 msgstr "W&issen"
+
+#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:398
+#, kde-format
+msgid "&Physical memory:"
+msgstr "&Fysiek geheugen:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:413
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Load Contents"
+msgid "Map Contents"
+msgstr "Inhoud laden"
+
+#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:433
+#, fuzzy, kde-format
+#| msgid "Default map &font:"
+msgid "Default &font:"
+msgstr "Standaard kaart&lettertype:"
+
+#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:446
+#, kde-format
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
+"used on the map.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Het standaard lettertype "
+"dat op de kaart gebruikt wordt.</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showGrid)
+#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:458
+#, fuzzy, kde-format
+#| msgid "Show grid"
+msgid "Show Grid"
+msgstr "Raster tonen"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -66672,32 +66663,32 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Groepering"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:70
+#: core/utilities/setup/misc/systemsettingswidget.cpp:77
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Hoge DPI schaling gebruiken uit de schermfactor"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:71
+#: core/utilities/setup/misc/systemsettingswidget.cpp:78
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Pixmaps gebruiken met hoge DPI resolutie"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:72
+#: core/utilities/setup/misc/systemsettingswidget.cpp:82
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr "Hardware-versnelling OpenCL uitschakelen"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:73
+#: core/utilities/setup/misc/systemsettingswidget.cpp:83
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Interne debug-loggen inschakelen"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:75
+#: core/utilities/setup/misc/systemsettingswidget.cpp:85
 #, kde-format
 msgid "Download required binary data..."
 msgstr "De vereiste binaire gegevens downloaden..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:90
+#: core/utilities/setup/misc/systemsettingswidget.cpp:100
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -66992,15 +66983,28 @@ msgid "API Key:"
 msgstr "API-sleutel:"
 
 #: core/utilities/setup/setupgeolocation.cpp:113
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Google Maps requires to work friendly an API key that end users must buy "
+#| "online to gain credentials. Without this key, Google Maps is still usable "
+#| "but with an overlay frame annotated \"For Develomepent Only\". For more "
+#| "information, see this <a href='https://mapsplatform.google.com/"
+#| "pricing/'>Google page</a> about usages, practices, and prices."
 msgctxt "@info"
 msgid ""
 "Google Maps requires to work friendly an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
-"but with an overlay frame annotated \"For Develomepent Only\". For more "
+"but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
+"Om Google Maps vriendelijk te laten werken is een API-sleutel vereist die "
+"eindgebruikers online moeten kopen om credentials te verkrijgen. Zonder deze "
+"sleutel is Google Maps nog steeds te gebruiken maar met een overlay "
+"geannoteerd met \"For Develomepent Only\". Voor meer informatie, zie dit <a "
+"href='https://mapsplatform.google.com/pricing/'>Google pagina</a> over "
+"gebruik, praktijken en prijzen."
 
 #: core/utilities/setup/setupicc.cpp:178
 #, kde-format
@@ -67923,6 +67927,9 @@ msgstr "Zet alle instellingen terug naar hun standaardwaarden."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
+
+#~ msgid "&Text Labels"
+#~ msgstr "&Tekst"
 
 #~ msgid "Google Maps API Key"
 #~ msgstr "Google Maps API-sleutel"
