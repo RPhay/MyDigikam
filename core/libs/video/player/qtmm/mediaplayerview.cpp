@@ -29,6 +29,7 @@
 #include <QLabel>
 #include <QFrame>
 #include <QStyle>
+#include <QTimer>
 #include <QTransform>
 #include <QGraphicsView>
 #include <QGraphicsScene>
@@ -806,7 +807,8 @@ void MediaPlayerView::slotNativeSizeChanged()
 void MediaPlayerView::resizeEvent(QResizeEvent* e)
 {
     QStackedWidget::resizeEvent(e);
-    d->adjustVideoSize();
+
+    QTimer::singleShot(0, this, SLOT(slotNativeSizeChanged()));
 }
 
 }  // namespace Digikam
