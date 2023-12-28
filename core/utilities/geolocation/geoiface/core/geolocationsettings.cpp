@@ -51,17 +51,19 @@ public:
     }
 
     GeolocationSettingsContainer settings;
-    QMutex                  mutex;
+    QMutex                       mutex;
 
-    const QString           configGroup;
+    const QString                configGroup;
 
-    QVector<MapWidget*>     widgets;
+    QVector<MapWidget*>          widgets;
 
 public:
 
     GeolocationSettingsContainer readFromConfig() const;
     void                         writeToConfig()  const;
     GeolocationSettingsContainer setSettings(const GeolocationSettingsContainer& s);
+
+    void applySettingsToWidget(MapWidget* const w, const GeolocationSettingsContainer& settings);
 };
 
 GeolocationSettingsContainer GeolocationSettings::Private::readFromConfig() const
@@ -89,6 +91,36 @@ GeolocationSettingsContainer GeolocationSettings::Private::setSettings(const Geo
     settings = s;
 
     return old;
+}
+
+void GeolocationSettings::Private::applySettingsToWidget(MapWidget* const w,
+                                                         const GeolocationSettingsContainer& settings)
+{
+    if (w)
+    {
+        Q_FOREACH (MapBackend* const b, w->backends())
+        {
+            BackendMarble* const mb = dynamic_cast<BackendMarble*>(b);
+
+            if (mb)
+            {
+                MarbleWidget* const mw = static_cast<MarbleWidget*>(mb->mapWidget());
+                qCDebug(DIGIKAM_MARBLE_LOG) << "Marble Widget:" << mw;
+
+                MarbleGlobal::getInstance()->locale()->setMeasurementSystem(settings.distanceUnit);
+                mw->model()->setPersistentTileCacheLimit(settings.persistentTileCacheLimit * 1024);
+                mw->setDefaultFont(settings.mapFont);
+                mw->setMapQualityForViewContext(settings.stillQuality,     Marble::Still);
+                mw->setMapQualityForViewContext(settings.animationQuality, Marble::Animation);
+                mw->setDefaultAngleUnit(settings.angleUnit);
+                mw->inputHandler()->setInertialEarthRotationEnabled(settings.inertialRotation);
+                mw->inputHandler()->setMouseViewRotationEnabled(settings.mouseRotation);
+                mw->setVolatileTileCacheLimit(settings.volatileTileCacheLimit * 1024);
+                mw->setShowGrid(settings.showGrid);
+                mw->update();
+            }
+        }
+    }
 }
 
 // -----------------------------------------------------------------------------------------------
@@ -124,37 +156,14 @@ GeolocationSettings::~GeolocationSettings()
 void GeolocationSettings::registerWidget(MapWidget* const widget)
 {
     d->widgets << widget;
+    d->applySettingsToWidget(widget, d->settings);
 }
 
 void GeolocationSettings::applySettingsToWidgets(const GeolocationSettingsContainer& settings)
 {
     Q_FOREACH (MapWidget* const w, d->widgets)
     {
-        if (w)
-        {
-            Q_FOREACH (MapBackend* const b, w->backends())
-            {
-                BackendMarble* const mb = dynamic_cast<BackendMarble*>(b);
-
-                if (mb)
-                {
-                    MarbleWidget* const mw = static_cast<MarbleWidget*>(mb->mapWidget());
-                    qCDebug(DIGIKAM_MARBLE_LOG) << "Marble Widget:" << mb;
-
-                    MarbleGlobal::getInstance()->locale()->setMeasurementSystem(settings.distanceUnit);
-                    mw->model()->setPersistentTileCacheLimit(settings.persistentTileCacheLimit * 1024);
-                    mw->setDefaultFont(settings.mapFont);
-                    mw->setMapQualityForViewContext(settings.stillQuality,     Marble::Still);
-                    mw->setMapQualityForViewContext(settings.animationQuality, Marble::Animation);
-                    mw->setDefaultAngleUnit(settings.angleUnit);
-                    mw->inputHandler()->setInertialEarthRotationEnabled(settings.inertialRotation);
-                    mw->inputHandler()->setMouseViewRotationEnabled(settings.mouseRotation);
-                    mw->setVolatileTileCacheLimit(settings.volatileTileCacheLimit * 1024);
-                    mw->setShowGrid(settings.showGrid);
-                    mw->update();
-                }
-            }
-        }
+        d->applySettingsToWidget(w, settings);
     }
 }
 
