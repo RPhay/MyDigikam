@@ -19,7 +19,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QMutex>
-#include <QVector>
+#include <QList>
 
 // KDE includes
 
@@ -55,7 +55,7 @@ public:
 
     const QString                configGroup;
 
-    QVector<MapWidget*>          widgets;
+    QList<MapWidget*>            widgets;
 
 public:
 
