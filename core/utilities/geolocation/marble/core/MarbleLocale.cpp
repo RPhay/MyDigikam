@@ -5,7 +5,6 @@
 //
 
 #include "MarbleLocale.h"
-#include "MarbleLocale_p.h"
 
 // Qt
 #include <QLocale>
@@ -19,6 +18,16 @@
 namespace Marble
 {
 
+class MarbleLocalePrivate
+{
+public:
+
+    MarbleLocalePrivate();
+    virtual ~MarbleLocalePrivate();
+
+    MarbleLocale::MeasurementSystem m_measurementSystem;
+};
+
 MarbleLocalePrivate::MarbleLocalePrivate()
     : m_measurementSystem( MarbleLocale::MetricSystem )
 {
@@ -27,6 +36,8 @@ MarbleLocalePrivate::MarbleLocalePrivate()
 MarbleLocalePrivate::~MarbleLocalePrivate()
 {
 }
+
+// ---
 
 MarbleLocale::MarbleLocale()
     : d ( new MarbleLocalePrivate )
@@ -53,91 +64,104 @@ void MarbleLocale::meterToTargetUnit(qreal meters, MeasurementSystem targetSyste
 {
     targetValue = meters;
 
-    switch (targetSystem) {
-    case MetricSystem: {
-        if (targetValue > 1000.0) {
-            targetValue *= METER2KM;
-            targetUnit = Kilometer;
+    switch (targetSystem)
+    {
+        case MetricSystem:
+        {
+            if (targetValue > 1000.0)
+            {
+                targetValue *= METER2KM;
+                targetUnit = Kilometer;
+                break;
+            }
+
+            if (targetValue < 1.0 && targetValue >= 0.01)
+            {
+                targetValue *= M2CM;
+                targetUnit = Centimeter;
+                break;
+            }
+
+            if (targetValue < 0.01)
+            {
+                targetValue *= M2MM;
+                targetUnit = Milimeter;
+                break;
+            }
+
+            targetUnit = Meter;
             break;
         }
 
-        if (targetValue < 1.0 && targetValue >= 0.01) {
-            targetValue *= M2CM;
-            targetUnit = Centimeter;
+        case ImperialSystem:
+        {
+            // meters into feet
+            qreal ftValue = targetValue * M2FT;
+
+            if (ftValue < 1)
+            {
+                targetValue *= M2IN;
+                targetUnit = Inch;
+                break;
+            }
+
+            if (ftValue >= 3 && ftValue < 5280.0)
+            {
+                targetValue *= M2YD;
+                targetUnit = Yard;
+                break;
+            }
+
+            if (ftValue >= 5280.0)
+            {
+                targetValue *= METER2KM * KM2MI;
+                targetUnit = Mile;
+                break;
+            }
+
+            targetValue *= M2FT;
+            targetUnit = Foot;
             break;
         }
 
-        if (targetValue < 0.01) {
-            targetValue *= M2MM;
-            targetUnit = Milimeter;
+        case NauticalSystem:
+        {
+            targetValue *= METER2KM * KM2NM;
+            targetUnit = NauticalMile;
             break;
         }
 
-        targetUnit = Meter;
-        break;
-    }
-
-    case ImperialSystem: {
-        // meters into feet
-        qreal ftValue = targetValue * M2FT;
-
-        if (ftValue < 1) {
-            targetValue *= M2IN;
-            targetUnit = Inch;
-            break;
+        default:
+        {
+            qCWarning(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Unknown measurement system!";
         }
-
-        if (ftValue >= 3 && ftValue < 5280.0) {
-            targetValue *= M2YD;
-            targetUnit = Yard;
-            break;
-        }
-
-        if (ftValue >= 5280.0) {
-            targetValue *= METER2KM * KM2MI;
-            targetUnit = Mile;
-            break;
-        }
-
-        targetValue *= M2FT;
-        targetUnit = Foot;
-        break;
-    }
-
-    case NauticalSystem: {
-        targetValue *= METER2KM * KM2NM;
-        targetUnit = NauticalMile;
-        break;
-    }
-
-    default:
-        qCWarning(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Unknown measurement system!";
     }
 }
 
 QString MarbleLocale::unitAbbreviation(MeasureUnit unit)
 {
-    switch (unit) {
-    case Meter:
-        return i18nc("means meter", "m");
-    case Milimeter:
-        return i18nc("means milimeters", "mm");
-    case Kilometer:
-        return i18nc("means kilometers", "km");
-    case Centimeter:
-        return i18nc("means centimeters", "cm");
-    case Foot:
-        return i18nc("means feet", "ft");
-    case Inch:
-        return i18nc("means inches", "in");
-    case Yard:
-        return i18nc("means yards", "yd");
-    case Mile:
-        return i18nc("means miles", "mi");
-    case NauticalMile:
-        return i18nc("means nautical miles", "nm");
-    default:
-        return QString::fromUtf8("");
+    switch (unit)
+    {
+        case Meter:
+            return i18nc("means meter", "m");
+        case Milimeter:
+            return i18nc("means milimeters", "mm");
+        case Kilometer:
+            return i18nc("means kilometers", "km");
+        case Centimeter:
+            return i18nc("means centimeters", "cm");
+        case Foot:
+            return i18nc("means feet", "ft");
+        case Inch:
+            return i18nc("means inches", "in");
+        case Yard:
+            return i18nc("means yards", "yd");
+        case Mile:
+            return i18nc("means miles", "mi");
+        case NauticalMile:
+            return i18nc("means nautical miles", "nm");
+        default:
+            return QString::fromUtf8("");
     }
 }
 
@@ -147,14 +171,19 @@ QString MarbleLocale::languageCode()
     QString code;
 
     int index = lang.indexOf(QLatin1Char('_'));
-    if (lang == QLatin1String("C")) {
+
+    if      (lang == QLatin1String("C"))
+    {
         code = QString::fromUtf8("en");
     }
-    else if ( index != -1 ) {
+    else if ( index != -1 )
+    {
         code = lang.left ( index );
     }
-    else {
+    else
+    {
         index = lang.indexOf(QLatin1Char('@'));
+
         if ( index != -1 )
             code = lang.left ( index );
         else

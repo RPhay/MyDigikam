@@ -8,9 +8,9 @@
 #ifndef MARBLE_MARBLELOCALE_H
 #define MARBLE_MARBLELOCALE_H
 
-#include "digikam_export.h"
-
 #include <QtGlobal>
+
+#include "digikam_export.h"
 
 namespace Marble
 {
@@ -22,20 +22,23 @@ class MarbleLocalePrivate;
  *
  * The class stores properties like the measurement system.
  */
-
 class DIGIKAM_EXPORT MarbleLocale
 {
- public:
+
+public:
+
     MarbleLocale();
     ~MarbleLocale();
 
-    enum MeasurementSystem {
+    enum MeasurementSystem
+    {
         MetricSystem = 0,
         ImperialSystem,
         NauticalSystem
     };
 
-    enum MeasureUnit {
+    enum MeasureUnit
+    {
         Meter = 0,
         Kilometer,
         Milimeter,
@@ -65,9 +68,10 @@ class DIGIKAM_EXPORT MarbleLocale
      */
     static QString unitAbbreviation(MeasureUnit unit);
 
- private:
+private:
+
     Q_DISABLE_COPY( MarbleLocale )
-    MarbleLocalePrivate  * const d;
+    MarbleLocalePrivate* const d;
 };
 
 }
