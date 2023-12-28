@@ -168,7 +168,7 @@ void GeolocationSettings::registerWidget(MapWidget* const widget)
     d->applySettingsToWidget(widget, d->settings);
 }
 
-void GeolocationSettings::unRegisterWidget(MapWidget* const widget)
+void GeolocationSettings::unregisterWidget(MapWidget* const widget)
 {
     if (!widget)
     {

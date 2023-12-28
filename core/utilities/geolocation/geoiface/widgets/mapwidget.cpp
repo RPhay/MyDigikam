@@ -421,7 +421,7 @@ MapWidget::~MapWidget()
         d->stackedLayout->removeWidget(d->stackedLayout->widget(i));
     }
 
-    GeolocationSettings::instance()->unRegisterWidget(this);
+    GeolocationSettings::instance()->unregisterWidget(this);
 
     qDeleteAll(d->loadedBackends);
     d->currentBackend = nullptr;
