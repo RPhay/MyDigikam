@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 00:39+0000\n"
-"PO-Revision-Date: 2023-12-14 03:09+0100\n"
+"POT-Creation-Date: 2023-12-29 00:39+0000\n"
+"PO-Revision-Date: 2023-12-28 17:01+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1354,27 +1354,27 @@ msgstr "<i>Datos binarios</i>"
 msgid "Initializing..."
 msgstr "Inicializando..."
 
-#: core/app/main/digikamapp.cpp:144 core/showfoto/main/showfoto.cpp:106
+#: core/app/main/digikamapp.cpp:146 core/showfoto/main/showfoto.cpp:106
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Cargar complementos..."
 
-#: core/app/main/digikamapp.cpp:169 core/showfoto/main/showfoto.cpp:88
+#: core/app/main/digikamapp.cpp:171 core/showfoto/main/showfoto.cpp:88
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Verificando el repositorio ICC..."
 
-#: core/app/main/digikamapp.cpp:181
+#: core/app/main/digikamapp.cpp:183
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Limpiar la base de datos..."
 
-#: core/app/main/digikamapp.cpp:203
+#: core/app/main/digikamapp.cpp:205
 #, kde-format
 msgid "Loading albums..."
 msgstr "Cargando álbumes..."
 
-#: core/app/main/digikamapp.cpp:349
+#: core/app/main/digikamapp.cpp:351
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1386,21 +1386,21 @@ msgstr ""
 "la función de «gestión de color» no se activará hasta que resuelva este "
 "problema.</p>"
 
-#: core/app/main/digikamapp.cpp:676 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:678 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "No se ha seleccionado ningún elemento (%1 elemento)"
 msgstr[1] "No se ha seleccionado ningún elemento (%1 elementos)"
 
-#: core/app/main/digikamapp.cpp:682
+#: core/app/main/digikamapp.cpp:684
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "No se ha seleccionado ningún elemento (%1 [%2] elemento)"
 msgstr[1] "No se ha seleccionado ningún elemento (%1 [%2] elementos)"
 
-#: core/app/main/digikamapp.cpp:687
+#: core/app/main/digikamapp.cpp:689
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1411,71 +1411,71 @@ msgstr[1] ""
 "No se ha seleccionado ningún elemento (%1 elementos. Con elementos "
 "agrupados: %2)"
 
-#: core/app/main/digikamapp.cpp:698
+#: core/app/main/digikamapp.cpp:700
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 elemento seleccionado (%3/%4)"
 msgstr[1] "%1/%2 elementos seleccionados (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:711
+#: core/app/main/digikamapp.cpp:713
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] elemento seleccionado (%4/%5)"
 msgstr[1] "%1/%2 [%3] elementos seleccionados (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:719
+#: core/app/main/digikamapp.cpp:721
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 elemento seleccionado. Total con elementos agrupados: %3"
 msgstr[1] "%1/%2 elementos seleccionados. Total con elementos agrupados: %3"
 
-#: core/app/main/digikamapp.cpp:727
+#: core/app/main/digikamapp.cpp:729
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] elemento seleccionado (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elementos seleccionados (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:736
+#: core/app/main/digikamapp.cpp:738
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 elemento seleccionado. Con elementos agrupados: %3/%4"
 msgstr[1] "%1/%2 elementos seleccionados. Con elementos agrupados: %3/%4"
 
-#: core/app/main/digikamapp.cpp:767
+#: core/app/main/digikamapp.cpp:769
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 de %2)"
 
-#: core/app/main/digikamapp.cpp:781
+#: core/app/main/digikamapp.cpp:783
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 de %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:785
+#: core/app/main/digikamapp.cpp:787
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 de %2. Total con elementos agrupados: %3)"
 
-#: core/app/main/digikamapp.cpp:796
+#: core/app/main/digikamapp.cpp:798
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 elemento oculto"
 msgstr[1] "%1 elementos ocultos"
 
-#: core/app/main/digikamapp.cpp:847
+#: core/app/main/digikamapp.cpp:849
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Escribir metadatos en el archivo"
 msgstr[1] "Escribir metadatos en los archivos seleccionados"
 
-#: core/app/main/digikamapp.cpp:849
+#: core/app/main/digikamapp.cpp:851
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2840,7 +2840,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
 #: core/libs/video/player/qtav/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2848,7 +2848,7 @@ msgstr "Atrás"
 
 #: core/app/views/preview/itempreviewview.cpp:187
 #: core/libs/video/player/qtav/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -4286,7 +4286,7 @@ msgstr "Eliminar esta columna"
 #: core/app/views/tableview/tableview_treeview.cpp:90
 #, kde-format
 msgid "Configure this column"
-msgstr "Configurara esta columna"
+msgstr "Configurar esta columna"
 
 #: core/app/views/utils/componentsinfodlg.cpp:79
 #, kde-format
@@ -15895,12 +15895,11 @@ msgid "Adjust Time & Date"
 msgstr "Ajustar fecha y hora"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
-msgstr "Escribir la fecha y hora corregidas para cada imagen"
+msgstr ""
+"Escribir la fecha y hora corregidas para cada imagen y cerrar el diálogo"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
 #, kde-format
@@ -41640,27 +41639,27 @@ msgid "Default from Desktop"
 msgstr "Por omisión del escritorio"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:196
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pausa/Reproducir"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:198
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:268
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Capturar"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:201
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:278
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Ha ocurrido un error en el reproductor multimedia..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Conmutar la reproducción en bucle"
@@ -43181,10 +43180,9 @@ msgid "A KDE Family Project"
 msgstr "Un proyecto de la familia KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2023, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2024, digiKam developers team"
-msgstr "© 2001-2023, el equipo de desarrollo de digiKam"
+msgstr "© 2001-2024, el equipo de desarrollo de digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
@@ -50177,25 +50175,20 @@ msgstr ""
 "configuración por defecto para guardar imágenes</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
-#, fuzzy, kde-format
-#| msgid "Geolocation"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolocalización"
 
 #: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Application Views Settings\n"
-#| "Customize the look of the views"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Geolocation Settings\n"
 "Customize view to geolocalize items"
 msgstr ""
-"Preferencias de las vistas de la aplicación\n"
-"Personalizar el aspecto de las vistas"
+"Preferencias de geolocalización\n"
+"Personalizar la vista para geolocalizar elementos"
 
 #: core/showfoto/setup/showfotosetup.cpp:182
 #, kde-format
@@ -53541,10 +53534,9 @@ msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap (Vector)"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap (Vectorial)"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
@@ -53610,9 +53602,7 @@ msgid "Unknown title"
 msgstr "Título desconocido"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Bookmark"
 msgstr "Añadir marcador"
@@ -54464,97 +54454,97 @@ msgstr ""
 "Es un archivo GPX, pero no se han encontrado puntos de trayecto con marcas "
 "temporales válidos."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:261
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:259
 #, kde-format
 msgid "Zoom in"
 msgstr "Acercar"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:268
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:266
 #, kde-format
 msgid "Zoom out"
 msgstr "Alejar"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:274
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:272
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Cambiar entre marcadores y miniaturas."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:290
 #, kde-format
 msgid "Preview single items"
 msgstr "Vista previa de elementos aislados"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:293
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Vista previa de elementos agrupados"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:298
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:296
 #, kde-format
 msgid "Show numbers"
 msgstr "Mostrar números"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:302
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Aumentar el tamaño de las miniaturas sobre el mapa"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:307
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:305
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Disminuir el tamaño de las miniaturas sobre el mapa"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:314
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:312
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Eliminaf la selección de región actual"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:322
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:320
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Seleccionar imágenes dibujando un rectángulo"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:325
 #, kde-format
 msgid "Pan mode"
 msgstr "Modo panorámico"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:334
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Acercar en un grupo"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:340
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:338
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Crear una selección de región desde una miniatura"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:344
 #, kde-format
 msgid "Filter images"
 msgstr "Filtrar imágenes"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:351
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:349
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Eliminar el filtro actual"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:356
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:354
 #, kde-format
 msgid "Select images"
 msgstr "Seleccionar imágenes"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:360
 #, kde-format
 msgid "Lock the map position"
 msgstr "Bloquear la posición del mapa"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:365
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:363
 #, kde-format
 msgid "Load tracks from albums"
 msgstr "Cargar pistas de los álbumes"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:826
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:828
 #, kde-format
 msgid "Map settings"
 msgstr "Preferencias del mapa"
@@ -54734,63 +54724,59 @@ msgstr "&Ocultar"
 msgid "&Configure..."
 msgstr "&Configurar..."
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:122
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:146
 #, kde-format
 msgctxt "means meter"
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:124
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:148
 #, kde-format
 msgctxt "means milimeters"
 msgid "mm"
 msgstr "mm"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:126
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:150
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:128
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:152
 #, kde-format
 msgctxt "means centimeters"
 msgid "cm"
 msgstr "cm"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@action: rotate image left"
-#| msgid "Left"
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:154
+#, kde-format
 msgctxt "means feet"
 msgid "ft"
-msgstr "Izquierda"
+msgstr "ft"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "Inches"
-#| msgid "in"
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:156
+#, kde-format
 msgctxt "means inches"
 msgid "in"
 msgstr "in"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:134
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:158
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
-msgstr ""
+msgstr "yd"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:136
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:160
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
-msgstr ""
+msgstr "mi"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:138
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:162
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
-msgstr ""
+msgstr "nm"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:108
 #, kde-format
@@ -54803,11 +54789,9 @@ msgid "Copy geo: URL"
 msgstr ""
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Details"
+#, kde-format
 msgid "&Address Details"
-msgstr "Detalles"
+msgstr "&Detalles de la dirección"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:142
 #, kde-format
@@ -54865,14 +54849,12 @@ msgstr "Aldea"
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:506
 #, kde-format
 msgid "&Info Boxes"
-msgstr ""
+msgstr "Cuadros de &información"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:806
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Details"
+#, kde-format
 msgid "Address Details"
-msgstr "Detalles"
+msgstr "Detalles de la dirección"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
@@ -54917,7 +54899,7 @@ msgid "Manned Landing Site"
 msgstr "Sitio de aterrizaje tripulado"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:320
-#, fuzzy, kde-format
+#, kde-format
 msgid "Robotic Rover"
 msgstr "Rover robótico"
 
@@ -55103,11 +55085,9 @@ msgid "Elevator"
 msgstr "Ascensor"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:380
-#, fuzzy, kde-format
-#| msgctxt "stepping for custom range"
-#| msgid "Step:"
+#, kde-format
 msgid "Steps"
-msgstr "Paso:"
+msgstr "Pasos"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:381
 #, kde-format
@@ -55635,7 +55615,7 @@ msgstr "Optimización"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:487
 #, kde-format
 msgid "Perfumery"
-msgstr ""
+msgstr "Perfumería"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:488
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:490
@@ -55654,22 +55634,19 @@ msgid "Furniture Store"
 msgstr ""
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:492
-#, fuzzy, kde-format
-#| msgctxt "@item: WB settings"
-#| msgid "electronic photo flash"
+#, kde-format
 msgid "Electronics Shop"
-msgstr "flash fotográfico electrónico"
+msgstr "Tienda de electrónica"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:493
-#, fuzzy, kde-format
-#| msgid "Adobe Photoshop"
+#, kde-format
 msgid "Mobile Phone Shop"
-msgstr "Adobe Photoshop"
+msgstr "Tienda de telefonía móvil"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:494
 #, kde-format
 msgid "Bicycle Shop"
-msgstr ""
+msgstr "Tienda de bicicletas"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:495
 #, kde-format
@@ -55699,13 +55676,12 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:500
 #, kde-format
 msgid "Sports Shop"
-msgstr ""
+msgstr "Tienda de deportes"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:501
-#, fuzzy, kde-format
-#| msgid "Printing in Progress"
+#, kde-format
 msgid "Printing Services"
-msgstr "Impresión en proceso"
+msgstr "Servicios de impresión"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:502
 #, kde-format
@@ -55972,17 +55948,17 @@ msgstr "forma"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
 #, kde-format
 msgid "Bicycle Rental"
-msgstr ""
+msgstr "Alquiler de bicicletas"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
 #, kde-format
 msgid "Car Rental"
-msgstr ""
+msgstr "Alquiler de automóviles"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
 #, kde-format
 msgid "Ski Rental"
-msgstr ""
+msgstr "Alquiler de esquí"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:556
 #, kde-format
@@ -56003,12 +55979,12 @@ msgstr "Detener"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
 #, kde-format
 msgid "Bicycle Parking"
-msgstr ""
+msgstr "Aparcamiento de bicicletas"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
 #, kde-format
 msgid "Motorcycle Parking"
-msgstr ""
+msgstr "Aparcamiento de motocicletas"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
 #, kde-format
@@ -56097,7 +56073,7 @@ msgstr "Mari"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:576
 #, kde-format
 msgid "Park"
-msgstr ""
+msgstr "Parque"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:577
 #, fuzzy, kde-format
@@ -56124,7 +56100,7 @@ msgstr "Estadio"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
 #, kde-format
 msgid "Swimming Pool"
-msgstr ""
+msgstr "Piscina"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
@@ -56176,7 +56152,7 @@ msgstr "Imágenes"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
 #, kde-format
 msgid "Grass"
-msgstr ""
+msgstr "Césped"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
 #, fuzzy, kde-format
@@ -56208,7 +56184,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
 #, kde-format
 msgid "Railway"
-msgstr ""
+msgstr "Ferrocarril"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
 #, fuzzy, kde-format
@@ -56734,23 +56710,22 @@ msgstr "Lista de reproducción"
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:84
 #, kde-format
 msgid "No name specified"
-msgstr "No se ha especificado ningún nombre"
+msgstr "No se ha indicado ningún nombre"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
-msgstr ""
+msgstr "Indique un nombre para esta relación."
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:89
-#, fuzzy, kde-format
-#| msgid "No photo specified"
+#, kde-format
 msgid "No type tag specified"
-msgstr "No se ha especificado ninguna foto"
+msgstr "No se ha especificado ninguna etiqueta de tipo"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:90
 #, kde-format
 msgid "Please add a type tag for this relation."
-msgstr ""
+msgstr "Añada una etiqueta de tipo para esta relación."
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:69
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget_p.cpp:80
@@ -56793,10 +56768,9 @@ msgstr "valor"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:25
-#, fuzzy, kde-format
-#| msgid "Current Page"
+#, kde-format
 msgid "Current Tags"
-msgstr "Página actual"
+msgstr "Etiquetas actuales"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentTagsList)
 #. i18n: ectx: property (text), widget (QTreeWidget, m_recommendedTagsList)
@@ -56837,24 +56811,23 @@ msgstr "Configurar"
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:62
 #, kde-format
 msgid "Atmosphere"
-msgstr ""
+msgstr "Atmósfera"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:67
 #, kde-format
 msgid "&Atmosphere"
-msgstr ""
+msgstr "&Atmósfera"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
 #, kde-format
 msgid "Shows the atmosphere around the earth."
-msgstr ""
+msgstr "Muestra la atmósfera alrededor de la Tierra."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Compass Plugin"
-msgstr "Configurara esta columna"
+msgstr "Configurar el complemento de la brújula"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
@@ -56902,18 +56875,16 @@ msgid "&Compass"
 msgstr "Mostrar brújula"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has geolocation information."
+#, kde-format
 msgid "This is a float item that provides a compass."
-msgstr "Este elemento tiene información de geolocalización."
+msgstr "Este elemento flotante proporciona una brújula."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
 #, fuzzy, kde-format
 #| msgid "Configure this column"
 msgid "Configure Crosshairs Plugin"
-msgstr "Configurara esta columna"
+msgstr "Configurar esta columna"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
@@ -58004,7 +57975,7 @@ msgstr "Invertir la selección"
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:272
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
-msgstr ""
+msgstr "Usar el botón derecho del ratón para girar la cámara"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:275
@@ -58079,11 +58050,9 @@ msgstr "D&isco duro:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:344
-#, fuzzy, kde-format
-#| msgctxt "smug album privacy"
-#| msgid "Unlisted"
+#, kde-format
 msgid "Unlimited"
-msgstr "Sin listar"
+msgstr "Ilimitado"
 
 #. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:366
@@ -58105,40 +58074,19 @@ msgstr "Memoria &física:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:413
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Load Contents"
+#, kde-format
 msgid "Map Contents"
-msgstr "Cargar el contenido"
+msgstr "Contenido del mapa"
 
 #. i18n: ectx: property (text), widget (QLabel, label_mapFont)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:433
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Default Language:"
+#, kde-format
 msgid "Default &font:"
-msgstr "Idioma predeterminado:"
+msgstr "&Tipo de letra predeterminado:"
 
 #. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:446
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#| "TR/REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></"
-#| "a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
+#, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -58149,27 +58097,18 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
 "used on the map.</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Podrá obtener un "
-"calendario para su país a partir de <a href=\"www.icalshare.com\"><span "
-"style=\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-"span></a> o desde otros enlaces.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Esto es completamente "
-"opcional. Todos los eventos de este calendario se imprimirán en rojo.</p></"
-"body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">El tipo de letra "
+"predeterminado que se usa en el mapa.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showGrid)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:458
-#, fuzzy, kde-format
-#| msgid "Show grid"
+#, kde-format
 msgid "Show Grid"
 msgstr "Mostrar cuadrícula"
 
@@ -58219,11 +58158,9 @@ msgid "Download Region"
 msgstr "Descargar región"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has never been downloaded"
+#, kde-format
 msgid "Tile type to be downloaded:"
-msgstr "Este elemento no se ha descargado nunca"
+msgstr "Tipo de cuadrícula que se descargará:"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:242
 #, kde-format
@@ -58407,7 +58344,7 @@ msgstr "Cambio de título"
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:47
 #, kde-format
 msgid "Minimum Tile Level"
-msgstr ""
+msgstr "Tamaño de cuadrícula mínimo"
 
 #. i18n: ectx: property (text), widget (QLabel, toLabel)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:63
@@ -58418,11 +58355,9 @@ msgstr "Auto"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bottomSpinBox)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:70
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Maximum size:"
+#, kde-format
 msgid "Maximum Tile Level"
-msgstr "Tamaño máximo:"
+msgstr "Tamaño de cuadrícula máximo"
 
 #: core/utilities/imageeditor/core/undoaction.cpp:147
 #, kde-format
@@ -66743,24 +66678,7 @@ msgstr "Archivos anexos"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#| "TR/REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></"
-#| "a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
+#, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -66771,29 +66689,20 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
 "local intranet. Please leave empty if there is no proxy.</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Podrá obtener un "
-"calendario para su país a partir de <a href=\"www.icalshare.com\"><span "
-"style=\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-"span></a> o desde otros enlaces.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Esto es completamente "
-"opcional. Todos los eventos de este calendario se imprimirán en rojo.</p></"
-"body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Preferencias del proxy de "
+"su intranet local. Déjelas en blanco si no hay proxy.</p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:35
-#, fuzzy, kde-format
-#| msgid "Remote Server Settings"
+#, kde-format
 msgid "&Network Proxy Server Settings"
-msgstr "Preferencias del servidor remoto"
+msgstr "Pre&ferencias del servidor proxy"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
 #: core/utilities/setup/misc/proxysettingswidget.ui:43
@@ -67309,18 +67218,14 @@ msgid "Light Table"
 msgstr "Mesa de Luz"
 
 #: core/utilities/setup/setup.cpp:251
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare images"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
 msgstr ""
 "Preferencias de la mesa de luz\n"
-"Personalizar la herramienta de comparación de imágenes"
+"Personalizar la herramienta de comparación de elementos"
 
 #: core/utilities/setup/setup.cpp:264
 #, kde-format

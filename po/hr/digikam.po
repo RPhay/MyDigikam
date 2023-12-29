@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 00:39+0000\n"
+"POT-Creation-Date: 2023-12-29 00:39+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -1320,27 +1320,27 @@ msgstr ""
 msgid "Initializing..."
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:144 core/showfoto/main/showfoto.cpp:106
+#: core/app/main/digikamapp.cpp:146 core/showfoto/main/showfoto.cpp:106
 #, fuzzy, kde-format
 msgid "Load Plugins..."
 msgstr "Učitaj GPX-datoteku…"
 
-#: core/app/main/digikamapp.cpp:169 core/showfoto/main/showfoto.cpp:88
+#: core/app/main/digikamapp.cpp:171 core/showfoto/main/showfoto.cpp:88
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:181
+#: core/app/main/digikamapp.cpp:183
 #, fuzzy, kde-format
 msgid "Clean up Database..."
 msgstr "Ne mogu spremiti sliku '%1' u '%2'"
 
-#: core/app/main/digikamapp.cpp:203
+#: core/app/main/digikamapp.cpp:205
 #, fuzzy, kde-format
 msgid "Loading albums..."
 msgstr "Datoteka: "
 
-#: core/app/main/digikamapp.cpp:349
+#: core/app/main/digikamapp.cpp:351
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1348,7 +1348,7 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:676 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:678 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1356,7 +1356,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/app/main/digikamapp.cpp:682
+#: core/app/main/digikamapp.cpp:684
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1364,7 +1364,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/app/main/digikamapp.cpp:687
+#: core/app/main/digikamapp.cpp:689
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1372,7 +1372,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/app/main/digikamapp.cpp:698
+#: core/app/main/digikamapp.cpp:700
 #, fuzzy, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1380,7 +1380,7 @@ msgstr[0] "Dodaj oznaku za lokaciju"
 msgstr[1] "Dodaj oznaku za lokaciju"
 msgstr[2] "Dodaj oznaku za lokaciju"
 
-#: core/app/main/digikamapp.cpp:711
+#: core/app/main/digikamapp.cpp:713
 #, fuzzy, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1388,7 +1388,7 @@ msgstr[0] "Dodaj oznaku za lokaciju"
 msgstr[1] "Dodaj oznaku za lokaciju"
 msgstr[2] "Dodaj oznaku za lokaciju"
 
-#: core/app/main/digikamapp.cpp:719
+#: core/app/main/digikamapp.cpp:721
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1396,7 +1396,7 @@ msgstr[0] "Dodaj oznaku za lokaciju"
 msgstr[1] "Dodaj oznaku za lokaciju"
 msgstr[2] "Dodaj oznaku za lokaciju"
 
-#: core/app/main/digikamapp.cpp:727
+#: core/app/main/digikamapp.cpp:729
 #, fuzzy, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1404,7 +1404,7 @@ msgstr[0] "Dodaj oznaku za lokaciju"
 msgstr[1] "Dodaj oznaku za lokaciju"
 msgstr[2] "Dodaj oznaku za lokaciju"
 
-#: core/app/main/digikamapp.cpp:736
+#: core/app/main/digikamapp.cpp:738
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1412,22 +1412,22 @@ msgstr[0] "Dodaj oznaku za lokaciju"
 msgstr[1] "Dodaj oznaku za lokaciju"
 msgstr[2] "Dodaj oznaku za lokaciju"
 
-#: core/app/main/digikamapp.cpp:767
+#: core/app/main/digikamapp.cpp:769
 #, kde-format
 msgid " (%1 of %2)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:781
+#: core/app/main/digikamapp.cpp:783
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:785
+#: core/app/main/digikamapp.cpp:787
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:796
+#: core/app/main/digikamapp.cpp:798
 #, fuzzy, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1435,7 +1435,7 @@ msgstr[0] "Dodaj oznaku za lokaciju"
 msgstr[1] "Dodaj oznaku za lokaciju"
 msgstr[2] "Dodaj oznaku za lokaciju"
 
-#: core/app/main/digikamapp.cpp:847
+#: core/app/main/digikamapp.cpp:849
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1443,7 +1443,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/app/main/digikamapp.cpp:849
+#: core/app/main/digikamapp.cpp:851
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2759,7 +2759,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
 #: core/libs/video/player/qtav/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2767,7 +2767,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:187
 #: core/libs/video/player/qtav/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -38668,27 +38668,27 @@ msgid "Default from Desktop"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:196
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:198
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:268
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:201
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:278
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -52041,97 +52041,97 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:261
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:259
 #, kde-format
 msgid "Zoom in"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:268
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:266
 #, kde-format
 msgid "Zoom out"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:274
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:272
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:290
 #, kde-format
 msgid "Preview single items"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:293
 #, kde-format
 msgid "Preview grouped items"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:298
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:296
 #, kde-format
 msgid "Show numbers"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:302
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:307
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:305
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:314
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:312
 #, kde-format
 msgid "Remove the current region selection"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:322
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:320
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:325
 #, kde-format
 msgid "Pan mode"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:334
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
 #, kde-format
 msgid "Zoom into a group"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:340
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:338
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:344
 #, fuzzy, kde-format
 msgid "Filter images"
 msgstr "Datoteka: "
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:351
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:349
 #, kde-format
 msgid "Remove the current filter"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:356
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:354
 #, fuzzy, kde-format
 msgid "Select images"
 msgstr "Datoteka: "
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:360
 #, kde-format
 msgid "Lock the map position"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:365
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:363
 #, kde-format
 msgid "Load tracks from albums"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:826
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:828
 #, kde-format
 msgid "Map settings"
 msgstr ""
@@ -52307,55 +52307,55 @@ msgstr ""
 msgid "&Configure..."
 msgstr "Konfiguracija"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:122
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:146
 #, kde-format
 msgctxt "means meter"
 msgid "m"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:124
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:148
 #, kde-format
 msgctxt "means milimeters"
 msgid "mm"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:126
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:150
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:128
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:152
 #, kde-format
 msgctxt "means centimeters"
 msgid "cm"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:130
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:154
 #, kde-format
 msgctxt "means feet"
 msgid "ft"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:132
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:156
 #, kde-format
 msgctxt "means inches"
 msgid "in"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:134
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:158
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:136
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:160
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
 msgstr ""
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:138
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:162
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"

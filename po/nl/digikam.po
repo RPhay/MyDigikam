@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 00:39+0000\n"
-"PO-Revision-Date: 2023-12-27 12:28+0100\n"
+"POT-Creation-Date: 2023-12-29 00:39+0000\n"
+"PO-Revision-Date: 2023-12-28 23:56+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1357,27 +1357,27 @@ msgstr "<i>Binaire gegevens</i>"
 msgid "Initializing..."
 msgstr "Initialiseren..."
 
-#: core/app/main/digikamapp.cpp:144 core/showfoto/main/showfoto.cpp:106
+#: core/app/main/digikamapp.cpp:146 core/showfoto/main/showfoto.cpp:106
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Plug-ins laden..."
 
-#: core/app/main/digikamapp.cpp:169 core/showfoto/main/showfoto.cpp:88
+#: core/app/main/digikamapp.cpp:171 core/showfoto/main/showfoto.cpp:88
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Controleert de ICC-opslag..."
 
-#: core/app/main/digikamapp.cpp:181
+#: core/app/main/digikamapp.cpp:183
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Database opschonen..."
 
-#: core/app/main/digikamapp.cpp:203
+#: core/app/main/digikamapp.cpp:205
 #, kde-format
 msgid "Loading albums..."
 msgstr "Albums laden..."
 
-#: core/app/main/digikamapp.cpp:349
+#: core/app/main/digikamapp.cpp:351
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1388,92 +1388,92 @@ msgstr ""
 "kies \"Ja\", anders \"Nee\". Bij \"Nee\", zal \"Kleurbeheer\" uitgezet "
 "worden totdat dit is opgelost.</p>"
 
-#: core/app/main/digikamapp.cpp:676 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:678 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Geen item geselecteerd (%1 item)"
 msgstr[1] "Geen item geselecteerd (%1 items)"
 
-#: core/app/main/digikamapp.cpp:682
+#: core/app/main/digikamapp.cpp:684
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Geen item geselecteerd (%1 [%2] item)"
 msgstr[1] "Geen item geselecteerd (%1 [%2] items)"
 
-#: core/app/main/digikamapp.cpp:687
+#: core/app/main/digikamapp.cpp:689
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Geen item geselecteerd (%1 item. Met gegroepeerde items: %2)"
 msgstr[1] "Geen item geselecteerd (%1 items. Met gegroepeerde items: %2)"
 
-#: core/app/main/digikamapp.cpp:698
+#: core/app/main/digikamapp.cpp:700
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 item geselecteerd (%3/%4)"
 msgstr[1] "%1/%2 items geselecteerd (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:711
+#: core/app/main/digikamapp.cpp:713
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] item geselecteerd (%4/%5)"
 msgstr[1] "%1/%2 [%3] items geselecteerd (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:719
+#: core/app/main/digikamapp.cpp:721
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 item geselecteerd. Totaal met gegroepeerde items: %3"
 msgstr[1] "%1/%2 items geselecteerd. Totaal met gegroepeerde items: %3"
 
-#: core/app/main/digikamapp.cpp:727
+#: core/app/main/digikamapp.cpp:729
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] item geselecteerd (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] items geselecteerd (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:736
+#: core/app/main/digikamapp.cpp:738
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 items geselecteerd. Met gegroepeerde items: %3/%4"
 msgstr[1] "%1/%2 items geselecteerd. Met gegroepeerde items: %3/%4"
 
-#: core/app/main/digikamapp.cpp:767
+#: core/app/main/digikamapp.cpp:769
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 van %2)"
 
-#: core/app/main/digikamapp.cpp:781
+#: core/app/main/digikamapp.cpp:783
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 van %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:785
+#: core/app/main/digikamapp.cpp:787
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 van %2. Totaal met gegroepeerde items: %3)"
 
-#: core/app/main/digikamapp.cpp:796
+#: core/app/main/digikamapp.cpp:798
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 item verborgen"
 msgstr[1] "%1 items verborgen"
 
-#: core/app/main/digikamapp.cpp:847
+#: core/app/main/digikamapp.cpp:849
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Metagegevens naar bestand schrijven"
 msgstr[1] "Metagegevens naar geselecteerde bestanden schrijven"
 
-#: core/app/main/digikamapp.cpp:849
+#: core/app/main/digikamapp.cpp:851
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2834,7 +2834,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
 #: core/libs/video/player/qtav/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2842,7 +2842,7 @@ msgstr "Terug"
 
 #: core/app/views/preview/itempreviewview.cpp:187
 #: core/libs/video/player/qtav/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -41541,27 +41541,27 @@ msgid "Default from Desktop"
 msgstr "Standaard uit bureaublad"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:196
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pauzeren/afspelen"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:198
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:268
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Opname"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:201
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:278
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Er deed zich een fout voor met de mediaspeler..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Afspelen in een loop omschakelen"
@@ -54323,97 +54323,97 @@ msgstr ""
 "Bestand is een GPX-bestand, maar er zijn geen trackpunten met geldige "
 "tijdstempels gevonden."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:261
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:259
 #, kde-format
 msgid "Zoom in"
 msgstr "Inzoomen"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:268
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:266
 #, kde-format
 msgid "Zoom out"
 msgstr "Uitzoomen"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:274
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:272
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Tussen markeringen en miniaturen schakelen."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:290
 #, kde-format
 msgid "Preview single items"
 msgstr "Voor beeld van enkele items tonen"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:293
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Voorbeeld van gegroepeerde afbeeldingen tonen"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:298
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:296
 #, kde-format
 msgid "Show numbers"
 msgstr "Nummers tonen"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:302
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Miniatuurgrootte vergroten op de kaart"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:307
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:305
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Miniatuurgrootte verkleinen op de kaart"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:314
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:312
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "De huidige regioselectie verwijderen."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:322
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:320
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Afbeeldingen selecteren door een rechthoek te tekenen"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:325
 #, kde-format
 msgid "Pan mode"
 msgstr "Beweging volgen modus"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:334
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Op een groep inzoomen"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:340
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:338
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Een regioselectie uit een miniatuur"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:344
 #, kde-format
 msgid "Filter images"
 msgstr "Afbeeldingen filteren"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:351
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:349
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Huidig filter verwijderen"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:356
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:354
 #, kde-format
 msgid "Select images"
 msgstr "Afbeeldingen selecteren"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:360
 #, kde-format
 msgid "Lock the map position"
 msgstr "De kaartpositie vergrendelen"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:365
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:363
 #, kde-format
 msgid "Load tracks from albums"
 msgstr "Tracks uit albums laden"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:826
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:828
 #, kde-format
 msgid "Map settings"
 msgstr "Mappinginstellingen"
@@ -54593,55 +54593,55 @@ msgstr "&Verbergen"
 msgid "&Configure..."
 msgstr "&Configureren..."
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:122
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:146
 #, kde-format
 msgctxt "means meter"
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:124
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:148
 #, kde-format
 msgctxt "means milimeters"
 msgid "mm"
 msgstr "mm"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:126
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:150
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:128
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:152
 #, kde-format
 msgctxt "means centimeters"
 msgid "cm"
 msgstr "cm"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:130
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:154
 #, kde-format
 msgctxt "means feet"
 msgid "ft"
 msgstr "ft"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:132
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:156
 #, kde-format
 msgctxt "means inches"
 msgid "in"
 msgstr "inch"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:134
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:158
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
 msgstr "yd"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:136
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:160
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
 msgstr "mi"
 
-#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:138
+#: core/utilities/geolocation/marble/core/MarbleLocale.cpp:162
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
@@ -57383,25 +57383,21 @@ msgstr "Marble-plug-ins"
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:123
 #, kde-format
 msgid " by "
-msgstr ""
+msgstr " door "
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "About Plugin %1"
+#, kde-format
 msgid "About Plugin"
-msgstr "Over plug-in %1"
+msgstr "Over plug-in"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:138
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><u>Version:</u> %1</p><p><u>Authors:</u> %2</p><p><u>Description:</u> "
-#| "%3</p>"
+#, kde-format
 msgid ""
 "<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
 "p><p><u>Description:</u> %4</p>"
 msgstr ""
-"<p><u>Versie:</u> %1</p><p><u>Auteurs:</u> %2</p><p><u>Beschrijving:</u> %3</"
-"p>"
+"<p><u>Naam:</u> %1</p><p><u>Versie:</u> %2</p><p><u>Copyrights:</u> %3</"
+"p><p><u>Beschrijving:</u> %4</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:19
@@ -57720,18 +57716,15 @@ msgstr "&Fysiek geheugen:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:413
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Load Contents"
+#, kde-format
 msgid "Map Contents"
-msgstr "Inhoud laden"
+msgstr "Inhoud van kaart"
 
 #. i18n: ectx: property (text), widget (QLabel, label_mapFont)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:433
-#, fuzzy, kde-format
-#| msgid "Default map &font:"
+#, kde-format
 msgid "Default &font:"
-msgstr "Standaard kaart&lettertype:"
+msgstr "Standaard &lettertype:"
 
 #. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:446
@@ -57757,8 +57750,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showGrid)
 #: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:458
-#, fuzzy, kde-format
-#| msgid "Show grid"
+#, kde-format
 msgid "Show Grid"
 msgstr "Raster tonen"
 
@@ -66983,14 +66975,7 @@ msgid "API Key:"
 msgstr "API-sleutel:"
 
 #: core/utilities/setup/setupgeolocation.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Google Maps requires to work friendly an API key that end users must buy "
-#| "online to gain credentials. Without this key, Google Maps is still usable "
-#| "but with an overlay frame annotated \"For Develomepent Only\". For more "
-#| "information, see this <a href='https://mapsplatform.google.com/"
-#| "pricing/'>Google page</a> about usages, practices, and prices."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Google Maps requires to work friendly an API key that end users must buy "
@@ -67002,7 +66987,7 @@ msgstr ""
 "Om Google Maps vriendelijk te laten werken is een API-sleutel vereist die "
 "eindgebruikers online moeten kopen om credentials te verkrijgen. Zonder deze "
 "sleutel is Google Maps nog steeds te gebruiken maar met een overlay "
-"geannoteerd met \"For Develomepent Only\". Voor meer informatie, zie dit <a "
+"geannoteerd met \"For Development Only\". Voor meer informatie, zie dit <a "
 "href='https://mapsplatform.google.com/pricing/'>Google pagina</a> over "
 "gebruik, praktijken en prijzen."
 
