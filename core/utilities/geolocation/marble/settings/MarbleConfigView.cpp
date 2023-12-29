@@ -142,8 +142,9 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     d->aniCb->insertItem(Marble::NormalQuality,    i18n("Normal"));
     d->aniCb->insertItem(Marble::HighQuality,      i18n("High Quality"));
     d->aniCb->insertItem(Marble::PrintQuality,     i18n("Print Quality"));
-    d->aniCb->setToolTip(i18n("Specifies the map quality that gets displayed during map animations (e.g. while dragging the globe).\n"
-                              "Especially on slow machines it is advisable to set this option to \"low quality\" as this will give better speed."));
+    d->aniCb->setToolTip(i18n("Specifies the map quality that gets displayed during map animations\n"
+                              "(e.g. while dragging the globe). Especially on slow machines it is\n"
+                              "advisable to set this option to \"low quality\" as this will give better speed."));
 
     gridQa->addWidget(stillLbl,    0, 0, 1, 1);
     gridQa->addWidget(d->stillCb,  0, 1, 1, 1);
@@ -199,6 +200,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     QGridLayout* const gridMap   = new QGridLayout(grpMap);
     QLabel* const fntLbl         = new QLabel(i18n("Default Font:"), grpMap);
     d->mapFont                   = new QFontComboBox(grpMap);
+    d->mapFont->setToolTip(i18n("The default font that gets used on the map."));
 
     d->showGrid                  = new QCheckBox(i18n("Show Grid"), grpMap);
     d->showGrid->setToolTip(i18n("Show world-map grid overlay"));
