@@ -67,6 +67,7 @@ public:
 
     bool                            showGrid                 = true;
     bool                            showCross                = true;
+    bool                            showAtmos                = false;
 };
 
 //! qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8() stream operator. Writes property @a inf to the debug output in a nicely formatted way.

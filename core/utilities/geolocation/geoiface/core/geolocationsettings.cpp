@@ -118,6 +118,7 @@ void GeolocationSettings::Private::applySettingsToWidget(MapWidget* const w,
                 mw->setVolatileTileCacheLimit(settings.volatileTileCacheLimit * 1024);
                 mw->setShowGrid(settings.showGrid);
                 mw->setShowCrosshairs(settings.showCross);
+                mw->setShowAtmosphere(settings.showAtmos);
                 mw->update();
             }
         }

@@ -82,6 +82,7 @@ public:
     QFontComboBox*                     mapFont          = nullptr;
     QCheckBox*                         showGrid         = nullptr;
     QCheckBox*                         showCross        = nullptr;
+    QCheckBox*                         showAtmos        = nullptr;
 
     MarbleWidget* const                marbleWidget;
 
@@ -204,12 +205,14 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     d->mapFont->setToolTip(i18n("The default font that gets used on the map."));
 
     d->showGrid                  = new QCheckBox(i18n("Show Grid"), grpMap);
-    d->showGrid->setToolTip(i18n("Show world-map grid overlay"));
+    d->showGrid->setToolTip(i18n("Show the world-map grid overlay"));
 
     d->showCross                 = new QCheckBox(i18n("Show Cross-Hair"), grpMap);
     d->showCross->setToolTip(i18n("Show cross-hair on a center of the map"));
 
-    // Add Atmosphere
+    d->showAtmos                 = new QCheckBox(i18n("Show Atmosphere"), grpMap);
+    d->showAtmos->setToolTip(i18n("Show the world-map atmosphere overlay"));
+
     // Add Clouds
     // Add SunShading
     // Add CityLights
@@ -228,6 +231,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     gridMap->addWidget(d->mapFont,   0, 1, 1, 1);
     gridMap->addWidget(d->showGrid,  1, 0, 1, 1);
     gridMap->addWidget(d->showCross, 1, 1, 1, 1);
+    gridMap->addWidget(d->showAtmos, 2, 0, 1, 1);
 
     // ---
 
@@ -293,6 +297,7 @@ void MarbleConfigView::readSettings()
     d->mapFont->setCurrentFont(settings.mapFont);
     d->showGrid->setChecked(settings.showGrid);
     d->showCross->setChecked(settings.showCross);
+    d->showAtmos->setChecked(settings.showAtmos);
 
     // Read the settings of the plugins
 
@@ -319,6 +324,7 @@ void MarbleConfigView::applySettings()
     settings.mapFont                  = d->mapFont->currentFont();
     settings.showGrid                 = d->showGrid->isChecked();
     settings.showCross                = d->showCross->isChecked();
+    settings.showAtmos                = d->showAtmos->isChecked();
 
     GeolocationSettings::instance()->setSettings(settings);
 
