@@ -120,8 +120,8 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->symLinkButton            = new QRadioButton(i18n("Create symlinks"), this);
     d->relativeButton           = new QRadioButton(i18n("Create relative symlinks"), this);
 
-    d->sidecars                 = new QCheckBox(i18n("Include the sidecars of the items"), this);
-    d->writeMetadataToFile      = new QCheckBox(i18n("Write metadata to the items"), this);
+    d->sidecars                 = new QCheckBox(i18n("Include the sidecar of the items"), this);
+    d->writeMetadataToFile      = new QCheckBox(i18n("Write sidecar metadata to the items"), this);
     d->overwrite                = new QCheckBox(i18n("Overwrite existing items in the target"), this);
     d->albumPath                = new QCheckBox(i18n("Use the album path of the items in the target"), this);
 
