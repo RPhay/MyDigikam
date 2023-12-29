@@ -45,18 +45,6 @@ public:
     void applySettings();
     void cancel();
 
-Q_SIGNALS:
-
-    /**
-     * The user clicked on the button to clear volatile tile cache.
-     */
-    void clearVolatileCacheClicked();
-
-    /**
-     * The user clicked on the button to clear persistent tile cache.
-     */
-    void clearPersistentCacheClicked();
-
 private:
 
     Q_DISABLE_COPY(MarbleConfigView)

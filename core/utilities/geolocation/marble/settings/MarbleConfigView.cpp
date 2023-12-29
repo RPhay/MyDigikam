@@ -19,11 +19,18 @@
 // Qt includes
 
 #include <QApplication>
-#include <QDialogButtonBox>
+#include <QPushButton>
 #include <QVBoxLayout>
+#include <QGridLayout>
+#include <QFontComboBox>
+#include <QComboBox>
+#include <QGroupBox>
 #include <QWidget>
+#include <QSpinBox>
+#include <QCheckBox>
 #include <QDateTime>
 #include <QTimer>
+#include <QLabel>
 
 // KDE includes
 
@@ -34,13 +41,13 @@
 #include "MarbleDirs.h"
 #include "MarbleWidget.h"
 #include "MarbleModel.h"
+#include "MarbleLocale.h"
+#include "MarbleGlobal.h"
 #include "RenderPlugin.h"
 #include "RenderPluginModel.h"
 #include "MarbleClock.h"
 #include "MarblePluginSettingsWidget.h"
-#include "ui_MarbleViewSettingsWidget.h"
 #include "geolocationsettings.h"
-
 #include "digikam_debug.h"
 
 using namespace Digikam;
@@ -54,14 +61,26 @@ class Q_DECL_HIDDEN MarbleConfigView::Private
 public:
 
     explicit Private(MarbleWidget* const marbleWidget)
-        : viewSettings(),
-          marbleWidget(marbleWidget),
+        : marbleWidget(marbleWidget),
           pluginModel ()
     {
     }
 
-    Ui::MarbleViewSettingsWidget       viewSettings;
-    MarblePluginSettingsWidget*        pluginSettings = nullptr;
+    MarblePluginSettingsWidget*        pluginSettings   = nullptr;
+
+    QComboBox*                         distCb           = nullptr;
+    QComboBox*                         angleCb          = nullptr;
+    QComboBox*                         stillCb          = nullptr;
+    QComboBox*                         aniCb            = nullptr;
+
+    QCheckBox*                         inertialRotation = nullptr;
+    QCheckBox*                         viewRotation     = nullptr;
+
+    QSpinBox*                          phySb            = nullptr;
+    QSpinBox*                          discSb           = nullptr;
+
+    QFontComboBox*                     mapFont          = nullptr;
+    QCheckBox*                         showGrid         = nullptr;
 
     MarbleWidget* const                marbleWidget;
 
@@ -75,15 +94,135 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
 {
     // View page
 
-    QWidget* const page = new QWidget(this);
-    d->viewSettings.setupUi(page);
-    addTab(page, i18n("Marble View"));
+    QWidget* const viewSettings  = new QWidget(this);
 
-    connect(d->viewSettings.button_clearVolatileCache, SIGNAL(clicked()),
-            this, SIGNAL(clearVolatileCacheClicked()));
+    // --- Unit Settings
 
-    connect(d->viewSettings.button_clearPersistentCache, SIGNAL(clicked()),
-            this, SIGNAL(clearPersistentCacheClicked()));
+    QGroupBox* const grpUnits    = new QGroupBox(i18n("Units"), viewSettings);
+    QGridLayout* const gridUnits = new QGridLayout(grpUnits);
+    QLabel* const distLbl        = new QLabel(i18n("Distance:"), grpUnits);
+    d->distCb                    = new QComboBox(grpUnits);
+    d->distCb->insertItem(MarbleLocale::MetricSystem,   i18n("Kilometer, Meter"));
+    d->distCb->insertItem(MarbleLocale::ImperialSystem, i18n("Miles, Feet"));
+    d->distCb->insertItem(MarbleLocale::NauticalSystem, i18n("Nautical miles, Knots"));
+    d->distCb->setToolTip(i18n("The unit that gets used to measure altitude, lengths and distances (e.g. km, mi, ft)."));
+
+    QLabel* const angleLbl       = new QLabel(i18n("Angle:"), grpUnits);
+    d->angleCb                   = new QComboBox(grpUnits);
+    d->angleCb->insertItem(Marble::DMSDegree,     i18n("Degree (DMS)"));
+    d->angleCb->insertItem(Marble::DecimalDegree, i18n("Degree (Decimal)"));
+    d->angleCb->insertItem(Marble::UTM,           i18n("Universal Transverse Mercator (UTM)"));
+    d->angleCb->setToolTip(i18n("Specifies the notation of angles in coordinates.\n"
+                                "By default the Degree-Minute-Second notation (e.g. 54\302\26030'00\" ) gets used.\n"
+                                "As an alternative you can choose decimal degrees (e.g. 54.5\302\260)."));
+
+    gridUnits->addWidget(distLbl,    0, 0, 1, 1);
+    gridUnits->addWidget(d->distCb,  0, 1, 1, 1);
+    gridUnits->addWidget(angleLbl,   1, 0, 1, 1);
+    gridUnits->addWidget(d->angleCb, 1, 1, 1, 1);
+
+    // --- Map quality settings
+
+    QGroupBox* const grpQa       = new QGroupBox(i18n("Map Quality"), viewSettings);
+    QGridLayout* const gridQa    = new QGridLayout(grpQa);
+    QLabel* const stillLbl       = new QLabel(i18n("Still Image:"), grpQa);
+    d->stillCb                   = new QComboBox(grpQa);
+    d->stillCb->insertItem(Marble::OutlineQuality,   i18n("Outline Quality"));
+    d->stillCb->insertItem(Marble::LowQuality,       i18n("Low Quality"));
+    d->stillCb->insertItem(Marble::NormalQuality,    i18n("Normal"));
+    d->stillCb->insertItem(Marble::HighQuality,      i18n("High Quality"));
+    d->stillCb->insertItem(Marble::PrintQuality,     i18n("Print Quality"));
+    d->stillCb->setToolTip(i18n("Specifies the map quality that gets displayed while there is no user input.\n"
+                                "Usually this allows for high map quality as speed is no concern."));
+
+    QLabel* const aniLbl         = new QLabel(i18n("During Animations:"), grpQa);
+    d->aniCb                     = new QComboBox(grpQa);
+    d->aniCb->insertItem(Marble::OutlineQuality,   i18n("Outline Quality"));
+    d->aniCb->insertItem(Marble::LowQuality,       i18n("Low Quality"));
+    d->aniCb->insertItem(Marble::NormalQuality,    i18n("Normal"));
+    d->aniCb->insertItem(Marble::HighQuality,      i18n("High Quality"));
+    d->aniCb->insertItem(Marble::PrintQuality,     i18n("Print Quality"));
+    d->aniCb->setToolTip(i18n("Specifies the map quality that gets displayed during map animations (e.g. while dragging the globe).\n"
+                              "Especially on slow machines it is advisable to set this option to \"low quality\" as this will give better speed."));
+
+    gridQa->addWidget(stillLbl,    0, 0, 1, 1);
+    gridQa->addWidget(d->stillCb,  0, 1, 1, 1);
+    gridQa->addWidget(aniLbl,      1, 0, 1, 1);
+    gridQa->addWidget(d->aniCb,    1, 1, 1, 1);
+
+    // --- Mouse behavior settings
+
+    QGroupBox* const grpMouse    = new QGroupBox(i18n("Mouse Behavior"), viewSettings);
+    QGridLayout* const gridMouse = new QGridLayout(grpMouse);
+    d->inertialRotation          = new QCheckBox(i18n("Inertial Globe Rotation"), grpMouse);
+    d->inertialRotation->setToolTip(i18n("Use kinetic spinning when dragging the map"));
+    d->viewRotation              = new QCheckBox(i18n("Mouse View Rotation"), grpMouse);
+    d->viewRotation->setToolTip(i18n("Use right mouse button to rotate the camera around"));
+
+    gridMouse->addWidget(d->inertialRotation, 0, 0, 1, 1);
+    gridMouse->addWidget(d->viewRotation,     1, 0, 1, 1);
+
+    // --- Cache settings
+
+    QGroupBox* const grpCache    = new QGroupBox(i18n("Cache"), viewSettings);
+    grpCache->setToolTip(i18n("There are two caches being used:\n"
+                              "The \"physical memory\" which is needed to keep map data in the computer's memory.\n"
+                              "Increasing the value will make the application more responsive.\n"
+                              "The \"hard disc memory\" cache is used by download map data from the Internet.\n"
+                              "Decrease this value if you want to save space on the hard disc\n"
+                              "and if high usage of the Internet is not an issue."));
+    QGridLayout* const gridCache = new QGridLayout(grpCache);
+    QLabel* const phyLbl         = new QLabel(i18n("Physical Memory:"), grpCache);
+    d->phySb                     = new QSpinBox(grpCache);
+    d->phySb->setRange(10, 999999);
+    d->phySb->setValue(100);
+    d->phySb->setSuffix(i18n(" MB"));
+    QPushButton* const phyBtn    = new QPushButton(i18n("Clear"), grpCache);
+
+    QLabel* const discLbl        = new QLabel(i18n("Hard Disc:"), grpCache);
+    d->discSb                    = new QSpinBox(grpCache);
+    d->discSb->setRange(10, 999999);
+    d->discSb->setValue(999999);
+    d->discSb->setSuffix(i18n(" MB"));
+    QPushButton* const discBtn   = new QPushButton(i18n("Clear"), grpCache);
+
+    gridCache->addWidget(phyLbl,              0, 0, 1, 1);
+    gridCache->addWidget(d->phySb,            0, 1, 1, 1);
+    gridCache->addWidget(phyBtn,              0, 2, 1, 1);
+    gridCache->addWidget(discLbl,             1, 0, 1, 1);
+    gridCache->addWidget(d->discSb,           1, 1, 1, 1);
+    gridCache->addWidget(discBtn,             1, 2, 1, 1);
+
+    // --- Map content settings
+
+    QGroupBox* const grpMap      = new QGroupBox(i18n("Map Contents"), viewSettings);
+    QGridLayout* const gridMap   = new QGridLayout(grpMap);
+    QLabel* const fntLbl         = new QLabel(i18n("Default Font:"), grpMap);
+    d->mapFont                   = new QFontComboBox(grpMap);
+
+    d->showGrid                  = new QCheckBox(i18n("Show Grid"), grpMap);
+    d->showGrid->setToolTip(i18n("Show world-map grid overlay"));
+
+    gridMap->addWidget(fntLbl,      0, 0, 1, 1);
+    gridMap->addWidget(d->mapFont,  0, 1, 1, 1);
+    gridMap->addWidget(d->showGrid, 1, 0, 1, 2);
+
+    // ---
+
+    QGridLayout* const viewGrid  = new QGridLayout(viewSettings);
+    viewGrid->addWidget(grpUnits, 0, 0, 1, 1);
+    viewGrid->addWidget(grpQa,    0, 1, 1, 1);
+    viewGrid->addWidget(grpMouse, 1, 0, 1, 1);
+    viewGrid->addWidget(grpCache, 1, 1, 1, 1);
+    viewGrid->addWidget(grpMap,   2, 0, 1, 2);
+
+    addTab(viewSettings, i18n("Marble View"));
+
+    connect(phyBtn, SIGNAL(clicked()),
+            d->marbleWidget, SLOT(clearVolatileTileCache()));
+
+    connect(discBtn, SIGNAL(clicked()),
+            d->marbleWidget->model(), SLOT(clearPersistentTileCache()));
 
     // Plugins page
 
@@ -121,16 +260,16 @@ void MarbleConfigView::readSettings()
 
     // View
 
-    d->viewSettings.kcfg_distanceUnit->setCurrentIndex(settings.distanceUnit);
-    d->viewSettings.kcfg_angleUnit->setCurrentIndex(settings.angleUnit);
-    d->viewSettings.kcfg_stillQuality->setCurrentIndex(settings.stillQuality);
-    d->viewSettings.kcfg_animationQuality->setCurrentIndex(settings.animationQuality);
-    d->viewSettings.kcfg_mapFont->setCurrentFont(settings.mapFont);
-    d->viewSettings.kcfg_inertialEarthRotation->setChecked(settings.inertialRotation);
-    d->viewSettings.kcfg_mouseViewRotation->setChecked(settings.mouseRotation);
-    d->viewSettings.kcfg_volatileTileCacheLimit->setValue(settings.volatileTileCacheLimit);
-    d->viewSettings.kcfg_persistentTileCacheLimit->setValue(settings.persistentTileCacheLimit);
-    d->viewSettings.kcfg_showGrid->setChecked(settings.showGrid);
+    d->distCb->setCurrentIndex(settings.distanceUnit);
+    d->angleCb->setCurrentIndex(settings.angleUnit);
+    d->stillCb->setCurrentIndex(settings.stillQuality);
+    d->aniCb->setCurrentIndex(settings.animationQuality);
+    d->inertialRotation->setChecked(settings.inertialRotation);
+    d->viewRotation->setChecked(settings.mouseRotation);
+    d->phySb->setValue(settings.volatileTileCacheLimit);
+    d->discSb->setValue(settings.persistentTileCacheLimit);
+    d->mapFont->setCurrentFont(settings.mapFont);
+    d->showGrid->setChecked(settings.showGrid);
 
     // Read the settings of the plugins
 
@@ -146,16 +285,16 @@ void MarbleConfigView::applySettings()
 
     GeolocationSettingsContainer settings;
 
-    settings.distanceUnit             = (Marble::MarbleLocale::MeasurementSystem)d->viewSettings.kcfg_distanceUnit->currentIndex();
-    settings.angleUnit                = (Marble::AngleUnit)d->viewSettings.kcfg_angleUnit->currentIndex();
-    settings.stillQuality             = (Marble::MapQuality)d->viewSettings.kcfg_stillQuality->currentIndex();
-    settings.animationQuality         = (Marble::MapQuality)d->viewSettings.kcfg_animationQuality->currentIndex();
-    settings.mapFont                  = d->viewSettings.kcfg_mapFont->currentFont();
-    settings.inertialRotation         = d->viewSettings.kcfg_inertialEarthRotation->isChecked();
-    settings.mouseRotation            = d->viewSettings.kcfg_mouseViewRotation->isChecked();
-    settings.volatileTileCacheLimit   = d->viewSettings.kcfg_volatileTileCacheLimit->value();
-    settings.persistentTileCacheLimit = d->viewSettings.kcfg_persistentTileCacheLimit->value();
-    settings.showGrid                 = d->viewSettings.kcfg_showGrid->isChecked();
+    settings.distanceUnit             = (Marble::MarbleLocale::MeasurementSystem)d->distCb->currentIndex();
+    settings.angleUnit                = (Marble::AngleUnit)d->angleCb->currentIndex();
+    settings.stillQuality             = (Marble::MapQuality)d->stillCb->currentIndex();
+    settings.animationQuality         = (Marble::MapQuality)d->aniCb->currentIndex();
+    settings.inertialRotation         = d->inertialRotation->isChecked();
+    settings.mouseRotation            = d->viewRotation->isChecked();
+    settings.volatileTileCacheLimit   = d->phySb->value();
+    settings.persistentTileCacheLimit = d->discSb->value();
+    settings.mapFont                  = d->mapFont->currentFont();
+    settings.showGrid                 = d->showGrid->isChecked();
 
     GeolocationSettings::instance()->setSettings(settings);
 

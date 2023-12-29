@@ -648,8 +648,6 @@ set (marblewidget_UI
     osm/OsmTagEditorWidget.ui
     osm/OsmRelationManagerWidget.ui
 
-    settings/MarbleViewSettingsWidget.ui
-
     storage/LatLonBoxWidget.ui
 
     tile/TileCreatorDialog.ui
