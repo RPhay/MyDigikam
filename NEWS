@@ -96,7 +96,7 @@ BUGFIXES:
 079 ==> 479096 - Gimp xcf 2.10.36 images no longer show a preview.
 080 ==> 478900 - Preview No Longer Works. It works in 8.1.0.
 081 ==> 479137 - Face tagging - digikam crashes every time (!) when I set a rectangle to tag a face in preview ("Vorschau").
-082 ==> 
+082 ==> 479156 - Digikam crashes when I attempt to "Download&Delete all" from SD Card.
 083 ==> 
 084 ==> 
 085 ==> 
