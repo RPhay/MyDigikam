@@ -141,7 +141,8 @@ void FCTask::run()
                                           sidecarDest.toLocalFile());
             }
 
-            if (d->settings.writeMetadataToFile && MetaEngineSettings::instance()->settings().metadataWritingMode == MetaEngine::WRITE_TO_SIDECAR_ONLY)
+            if (d->settings.writeMetadataToFile &&
+                (MetaEngineSettings::instance()->settings().metadataWritingMode == MetaEngine::WRITE_TO_SIDECAR_ONLY))
             {
                 QScopedPointer<DMetadata> meta(new DMetadata);
 
