@@ -83,6 +83,7 @@ public:
     QCheckBox*                         showGrid         = nullptr;
     QCheckBox*                         showCross        = nullptr;
     QCheckBox*                         showAtmos        = nullptr;
+    QCheckBox*                         showSunShading   = nullptr;
 
     MarbleWidget* const                marbleWidget;
 
@@ -213,25 +214,28 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     d->showAtmos                 = new QCheckBox(i18n("Show Atmosphere"), grpMap);
     d->showAtmos->setToolTip(i18n("Show the world-map atmosphere overlay"));
 
-    // Add Clouds
+    d->showSunShading            = new QCheckBox(i18n("Show Sun-Shading"), grpMap);
+    d->showAtmos->setToolTip(i18n("Show the world-map sun-shading overlay"));
+
     // Add SunShading
     // Add CityLights
-    // Add CrossHair
     // Add Cities
     // Add Relief
     // Add IceLayer
     // Add Borders
     // Add Rivers
     // Add Lakes
+    // Add Clouds ???
     // Add Terrain ???
     // Add Places ???
     // Add OtherPlaces ???
 
-    gridMap->addWidget(fntLbl,       0, 0, 1, 1);
-    gridMap->addWidget(d->mapFont,   0, 1, 1, 1);
-    gridMap->addWidget(d->showGrid,  1, 0, 1, 1);
-    gridMap->addWidget(d->showCross, 1, 1, 1, 1);
-    gridMap->addWidget(d->showAtmos, 2, 0, 1, 1);
+    gridMap->addWidget(fntLbl,            0, 0, 1, 1);
+    gridMap->addWidget(d->mapFont,        0, 1, 1, 1);
+    gridMap->addWidget(d->showGrid,       1, 0, 1, 1);
+    gridMap->addWidget(d->showCross,      1, 1, 1, 1);
+    gridMap->addWidget(d->showAtmos,      2, 0, 1, 1);
+    gridMap->addWidget(d->showSunShading, 2, 1, 1, 1);
 
     // ---
 
@@ -298,6 +302,7 @@ void MarbleConfigView::readSettings()
     d->showGrid->setChecked(settings.showGrid);
     d->showCross->setChecked(settings.showCross);
     d->showAtmos->setChecked(settings.showAtmos);
+    d->showSunShading->setChecked(settings.showSunShading);
 
     // Read the settings of the plugins
 
@@ -325,6 +330,7 @@ void MarbleConfigView::applySettings()
     settings.showGrid                 = d->showGrid->isChecked();
     settings.showCross                = d->showCross->isChecked();
     settings.showAtmos                = d->showAtmos->isChecked();
+    settings.showSunShading           = d->showSunShading->isChecked();
 
     GeolocationSettings::instance()->setSettings(settings);
 

@@ -40,6 +40,7 @@ void GeolocationSettingsContainer::readFromConfig(KConfigGroup& group)
     showGrid                 = group.readEntry("Show Grid",                   true);
     showCross                = group.readEntry("Show Cross",                  true);
     showCross                = group.readEntry("Show Atmosphere",             false);
+    showSunShading           = group.readEntry("Show Sun Shading",            false);
 }
 
 void GeolocationSettingsContainer::writeToConfig(KConfigGroup& group) const
@@ -56,6 +57,7 @@ void GeolocationSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Show Grid",                   (bool)showGrid);
     group.writeEntry("Show Cross",                  (bool)showCross);
     group.writeEntry("Show Atmosphere",             (bool)showAtmos);
+    group.writeEntry("Show Sun Shading",            (bool)showSunShading);
 }
 
 QDebug operator<<(QDebug dbg, const GeolocationSettingsContainer& inf)
@@ -84,7 +86,9 @@ QDebug operator<<(QDebug dbg, const GeolocationSettingsContainer& inf)
     dbg.nospace() << "   showCross("
                   << inf.showCross << "), "                 << QT_ENDL;
     dbg.nospace() << "   showAtmos("
-                  << inf.showAtmos << ")";
+                  << inf.showAtmos << "), "                 << QT_ENDL;
+    dbg.nospace() << "   showSunShading("
+                  << inf.showSunShading << ")";
 
     return dbg.space();
 }
