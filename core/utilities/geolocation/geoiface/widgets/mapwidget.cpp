@@ -550,13 +550,18 @@ bool MapWidget::setBackend(const QString& backendName)
 
             d->currentBackend->setActive(s->activeState);
 
-            GeolocationSettings::instance()->registerWidget(this);
+            QTimer::singleShot(1000, this, SLOT(slotApplySettings()));
 
             return true;
         }
     }
 
     return false;
+}
+
+void MapWidget::slotApplySettings()
+{
+    GeolocationSettings::instance()->registerWidget(this);
 }
 
 void MapWidget::applyCacheToBackend()

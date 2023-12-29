@@ -210,6 +210,10 @@ protected Q_SLOTS:
     void slotRemoveCurrentRegionSelection();
     //@}
 
+private Q_SLOTS:
+
+    void slotApplySettings();
+
 private:
 
     const QExplicitlySharedDataPointer<GeoIfaceSharedData> s;
