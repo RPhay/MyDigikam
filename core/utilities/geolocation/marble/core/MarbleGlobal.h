@@ -7,7 +7,6 @@
 #ifndef MARBLE_GLOBAL_H
 #define MARBLE_GLOBAL_H
 
-
 #include <cmath>
 
 #include <QString>
@@ -20,22 +19,21 @@
 #define MARBLE_LIB_VERSION_PATCH 70
 #define MARBLE_LIB_VERSION ((23<<16)|(11<<8)|(70))
 
-// #define QT_STRICT_ITERATORS
-
 /* M_PI is a #define that may or may not be handled in <cmath> */
 #ifndef M_PI
-#define M_PI 3.14159265358979323846264338327950288419717
+#   define M_PI 3.14159265358979323846264338327950288419717
 #endif
 
 namespace Marble
 {
 
-enum TessellationFlag {
-    NoTessellation = 0x0,
-    Tessellate = 0x1,
-    RespectLatitudeCircle = 0x2,
-    FollowGround = 0x4,
-    PreventNodeFiltering = 0x8
+enum TessellationFlag
+{
+    NoTessellation          = 0x0,
+    Tessellate              = 0x1,
+    RespectLatitudeCircle   = 0x2,
+    FollowGround            = 0x4,
+    PreventNodeFiltering    = 0x8
 };
 
 Q_DECLARE_FLAGS(TessellationFlags, TessellationFlag)
@@ -43,15 +41,17 @@ Q_DECLARE_FLAGS(TessellationFlags, TessellationFlag)
 /**
  * @brief This enum is used to choose the projection shown in the view.
  */
-enum Projection {
-    Spherical,          ///< Spherical projection ("Orthographic")
-    Equirectangular,    ///< Flat projection ("plate carree")
-    Mercator,           ///< Mercator projection
-    Gnomonic,           ///< Gnomonic projection
-    Stereographic,      ///< Stereographic projection
-    LambertAzimuthal,   ///< Lambert Azimuthal Equal-Area projection
+enum Projection
+{
+    Spherical,              ///< Spherical projection ("Orthographic")
+    Equirectangular,        ///< Flat projection ("plate carree")
+    Mercator,               ///< Mercator projection
+    Gnomonic,               ///< Gnomonic projection
+    Stereographic,          ///< Stereographic projection
+    LambertAzimuthal,       ///< Lambert Azimuthal Equal-Area projection
     AzimuthalEquidistant,   ///< Azimuthal Equidistant projection
-    VerticalPerspective ///< Vertical perspective projection
+    VerticalPerspective     ///< Vertical perspective projection
+
     // NOTE: MarbleWidget::setProjection(int) relies on VerticalPerspective being the last
     // value above. Adjust that method if you do changes here
 };
@@ -59,7 +59,8 @@ enum Projection {
 /**
  * @brief This enum is used to choose the unit chosen to measure angles.
  */
-enum AngleUnit {
+enum AngleUnit
+{
     DMSDegree,          ///< Degrees in DMS notation
     DecimalDegree,      ///< Degrees in decimal notation
     UTM                 ///< UTM
@@ -68,7 +69,8 @@ enum AngleUnit {
 /**
  * @brief This enum is used to choose context in which map quality gets used.
  */
-enum ViewContext {
+enum ViewContext
+{
     Still,              ///< still image
     Animation           ///< animated view (e.g. while rotating the globe)
 };
@@ -76,7 +78,8 @@ enum ViewContext {
 /**
  * @brief This enum is used to choose the map quality shown in the view.
  */
-enum MapQuality {
+enum MapQuality
+{
     OutlineQuality,     ///< Only a wire representation is drawn
     LowQuality,         ///< Low resolution (e.g. interlaced)
     NormalQuality,      ///< Normal quality
@@ -87,14 +90,15 @@ enum MapQuality {
 /**
  * @brief This enum is used to choose the localization of the labels.
  */
-enum LabelPositionFlag {
-    NoLabel = 0x0,
-    LineStart = 0x1,
-    LineCenter = 0x2,
-    LineEnd = 0x4,
-    IgnoreXMargin = 0x8,
-    IgnoreYMargin = 0x10,
-    FollowLine = 0x20
+enum LabelPositionFlag
+{
+    NoLabel         = 0x0,
+    LineStart       = 0x1,
+    LineCenter      = 0x2,
+    LineEnd         = 0x4,
+    IgnoreXMargin   = 0x8,
+    IgnoreYMargin   = 0x10,
+    FollowLine      = 0x20
 };
 
 Q_DECLARE_FLAGS(LabelPositionFlags, LabelPositionFlag)
@@ -102,7 +106,8 @@ Q_DECLARE_FLAGS(LabelPositionFlags, LabelPositionFlag)
 /**
  * @brief This enum is used to choose the localization of the labels.
  */
-enum LabelLocalization {
+enum LabelLocalization
+{
     CustomAndNative,    ///< Custom and native labels
     Custom,             ///< Shows the name in the user's language
     Native              ///< Display the name in the official language and
@@ -112,7 +117,8 @@ enum LabelLocalization {
 /**
  * @brief This enum is used to choose how the globe behaves while dragging.
  */
-enum DragLocation {
+enum DragLocation
+{
     KeepAxisVertically, ///< Keep planet axis vertically
     FollowMousePointer  ///< Follow mouse pointer exactly
 };
@@ -120,26 +126,30 @@ enum DragLocation {
 /**
  * @brief This enum is used to choose how the globe behaves while dragging.
  */
-enum OnStartup {
+enum OnStartup
+{
     ShowHomeLocation,   ///< Show home location on startup
     LastLocationVisited ///< Show last location visited on quit
 };
 
-enum AltitudeMode {
-    ClampToGround,      ///< Altitude always sticks to ground level
-    RelativeToGround,   ///< Altitude is always given relative to ground level
+enum AltitudeMode
+{
+    ClampToGround,       ///< Altitude always sticks to ground level
+    RelativeToGround,    ///< Altitude is always given relative to ground level
     Absolute,            ///< Altitude is given relative to the sealevel
     RelativeToSeaFloor,  ///< Altitude is given relative to the sea floor
     ClampToSeaFloor      ///< Altitude always sticks to sea floor
 };
 
-enum Pole {
+enum Pole
+{
     AnyPole,             ///< Any pole
     NorthPole,           ///< Only North Pole
     SouthPole            ///< Only South Pole
 };
 
-enum TileType {
+enum TileType
+{
     TextureTileType,        ///< Tiles that consist of bitmap data
     VectorTileType          ///< Tiles that consist of vector data
 };
@@ -147,7 +157,8 @@ enum TileType {
 /**
  * @brief This enum is used to describe the type of download
  */
-enum DownloadUsage {
+enum DownloadUsage
+{
     DownloadBulk,       ///< Bulk download, for example "File/Download region"
     DownloadBrowse      ///< Browsing mode, normal operation of Marble, like a web browser
 };
@@ -156,33 +167,36 @@ enum DownloadUsage {
  * @brief Describes possible flight mode (interpolation between source
  *        and target camera positions)
  */
-enum FlyToMode {
-    Automatic, ///< A sane value is chosen automatically depending on animation settings and the action
-    Instant, ///< Change camera position immediately (no interpolation)
-    Linear, ///< Linear interpolation of lon, lat and distance to ground
-    Jump ///< Linear interpolation of lon and lat, distance increases towards the middle point, then decreases
+enum FlyToMode
+{
+    Automatic,  ///< A sane value is chosen automatically depending on animation settings and the action
+    Instant,    ///< Change camera position immediately (no interpolation)
+    Linear,     ///< Linear interpolation of lon, lat and distance to ground
+    Jump        ///< Linear interpolation of lon and lat, distance increases towards the middle point, then decreases
 };
 
 /**
  * @brief Search mode: Global (worldwide) versus area (local, regional) search
  */
-enum SearchMode {
-    GlobalSearch, ///< Search a whole planet
-    AreaSearch ///< Search a certain region of a planet (e.g. visible region)
+enum SearchMode
+{
+    GlobalSearch,   ///< Search a whole planet
+    AreaSearch      ///< Search a certain region of a planet (e.g. visible region)
 };
 
 /**
  * @brief
  */
-enum RenderStatus {
-    Complete, ///< All data is there and up to date
-    WaitingForUpdate, ///< Rendering is based on complete, but outdated data, data update was requested
-    WaitingForData, ///< Rendering is based on no or partial data, more data was requested (e.g. pending network queries)
-    Incomplete ///< Data is missing and some error occurred when trying to retrieve it (e.g. network failure)
+enum RenderStatus
+{
+    Complete,           ///< All data is there and up to date
+    WaitingForUpdate,   ///< Rendering is based on complete, but outdated data, data update was requested
+    WaitingForData,     ///< Rendering is based on no or partial data, more data was requested (e.g. pending network queries)
+    Incomplete          ///< Data is missing and some error occurred when trying to retrieve it (e.g. network failure)
 };
 
 const int defaultLevelZeroColumns = 2;
-const int defaultLevelZeroRows = 1;
+const int defaultLevelZeroRows    = 1;
 
 // Conversion Metric / Imperial System: km vs. miles
 const qreal MI2KM = 1.609344;
@@ -246,9 +260,7 @@ const qreal TWOPI = 2 * M_PI;
 // String for about dialog and http user agent
 const QString MARBLE_VERSION_STRING = QString::fromLatin1( MARBLE_LIB_VERSION_STRING );
 
-// API Version id:
-// up until the 21.04 release, this was supposed to be 0xMMmmpp (major,minor,patch), but in reality it was stuck at version 0.27.0
-// now it is  ((major<<16)|(minor<<8)|(patch))
+// API Version id: ((major<<16)|(minor<<8)|(patch))
 #define MARBLE_VERSION MARBLE_LIB_VERSION
 
 const int tileDigits = 6;
@@ -268,24 +280,26 @@ class MarbleLocale;
 
 class  DIGIKAM_EXPORT MarbleGlobal
 {
- public:
+
+public:
+ 
     static MarbleGlobal * getInstance();
     ~MarbleGlobal();
 
-    MarbleLocale * locale() const;
+    MarbleLocale* locale() const;
 
-    enum Profile {
-        Default = 0x0,
-        SmallScreen = 0x1,
-        HighResolution = 0x2
+    enum Profile
+    {
+        Default         = 0x0,
+        SmallScreen     = 0x1,
+        HighResolution  = 0x2
     };
-
     Q_DECLARE_FLAGS( Profiles, Profile )
 
     Profiles profiles() const;
     void setProfiles( Profiles profiles );
 
- private:
+private:
 
     MarbleGlobal();
     Q_DISABLE_COPY( MarbleGlobal )

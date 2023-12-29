@@ -4,18 +4,31 @@
 //
 
 #include "MarbleGlobal.h"
-#include "MarbleGlobal_p.h"
-
+#include "MarbleLocale.h"
 
 namespace Marble
 {
 
+class MarbleGlobalPrivate
+{
+public:
+
+    MarbleGlobalPrivate();
+    virtual ~MarbleGlobalPrivate();
+
+    MarbleLocale           m_locale;
+    MarbleGlobal::Profiles m_profiles;
+};
+
 MarbleGlobalPrivate::MarbleGlobalPrivate()
     : m_profiles(MarbleGlobal::Default)
 {
+
 #ifdef Q_OS_ANDROID
+
     m_profiles |= MarbleGlobal::SmallScreen;
     m_profiles |= MarbleGlobal::HighResolution;
+
 #endif
 
 }
@@ -23,6 +36,8 @@ MarbleGlobalPrivate::MarbleGlobalPrivate()
 MarbleGlobalPrivate::~MarbleGlobalPrivate()
 {
 }
+
+// ---
 
 MarbleGlobal::MarbleGlobal()
     : d ( new MarbleGlobalPrivate )
@@ -34,22 +49,25 @@ MarbleGlobal::~MarbleGlobal()
     delete d;
 }
 
-MarbleGlobal * MarbleGlobal::getInstance()
+MarbleGlobal* MarbleGlobal::getInstance()
 {
     static MarbleGlobal instance;
+
     return &instance;
 }
 
-MarbleLocale * MarbleGlobal::locale() const
+MarbleLocale* MarbleGlobal::locale() const
 {
     return &d->m_locale;
 }
 
-MarbleGlobal::Profiles MarbleGlobal::profiles() const {
+MarbleGlobal::Profiles MarbleGlobal::profiles() const
+{
     return d->m_profiles;
 }
 
-void MarbleGlobal::setProfiles( MarbleGlobal::Profiles profiles ) {
+void MarbleGlobal::setProfiles( MarbleGlobal::Profiles profiles )
+{
     d->m_profiles = profiles;
 }
 
