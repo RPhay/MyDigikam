@@ -81,6 +81,7 @@ public:
 
     QFontComboBox*                     mapFont          = nullptr;
     QCheckBox*                         showGrid         = nullptr;
+    QCheckBox*                         showCross        = nullptr;
 
     MarbleWidget* const                marbleWidget;
 
@@ -205,9 +206,28 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     d->showGrid                  = new QCheckBox(i18n("Show Grid"), grpMap);
     d->showGrid->setToolTip(i18n("Show world-map grid overlay"));
 
-    gridMap->addWidget(fntLbl,      0, 0, 1, 1);
-    gridMap->addWidget(d->mapFont,  0, 1, 1, 1);
-    gridMap->addWidget(d->showGrid, 1, 0, 1, 2);
+    d->showCross                 = new QCheckBox(i18n("Show Cross-Hair"), grpMap);
+    d->showCross->setToolTip(i18n("Show cross-hair on a center of the map"));
+
+    // Add Atmosphere
+    // Add Clouds
+    // Add SunShading
+    // Add CityLights
+    // Add CrossHair
+    // Add Cities
+    // Add Relief
+    // Add IceLayer
+    // Add Borders
+    // Add Rivers
+    // Add Lakes
+    // Add Terrain ???
+    // Add Places ???
+    // Add OtherPlaces ???
+
+    gridMap->addWidget(fntLbl,       0, 0, 1, 1);
+    gridMap->addWidget(d->mapFont,   0, 1, 1, 1);
+    gridMap->addWidget(d->showGrid,  1, 0, 1, 1);
+    gridMap->addWidget(d->showCross, 1, 1, 1, 1);
 
     // ---
 
@@ -272,6 +292,7 @@ void MarbleConfigView::readSettings()
     d->discSb->setValue(settings.persistentTileCacheLimit);
     d->mapFont->setCurrentFont(settings.mapFont);
     d->showGrid->setChecked(settings.showGrid);
+    d->showCross->setChecked(settings.showCross);
 
     // Read the settings of the plugins
 
@@ -297,6 +318,7 @@ void MarbleConfigView::applySettings()
     settings.persistentTileCacheLimit = d->discSb->value();
     settings.mapFont                  = d->mapFont->currentFont();
     settings.showGrid                 = d->showGrid->isChecked();
+    settings.showCross                = d->showCross->isChecked();
 
     GeolocationSettings::instance()->setSettings(settings);
 

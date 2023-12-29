@@ -66,6 +66,7 @@ public:
     int                             persistentTileCacheLimit = 999999;
 
     bool                            showGrid                 = true;
+    bool                            showCross                = true;
 };
 
 //! qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8() stream operator. Writes property @a inf to the debug output in a nicely formatted way.
