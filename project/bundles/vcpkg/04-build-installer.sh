@@ -146,10 +146,6 @@ cp -r $VCPKG_INSTALL_PREFIX/bin/data/locale                               $BUNDL
 # digiKam translations
 cp -r $VCPKG_INSTALL_PREFIX/share/locale                                  $BUNDLEDIR/data                       2>/dev/null
 
-echo -e "\n---------- Xdg"
-cp -r $VCPKG_INSTALL_PREFIX/etc/xdg                                       $BUNDLEDIR/etc                        2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/bin/data/xdg                                  $BUNDLEDIR/share                      2>/dev/null
-
 # See bug 471058
 echo -e "\n---------- Freedesktop"
 mkdir -p $BUNDLEDIR/share/mime/packages/                                                                        2>/dev/null
@@ -170,9 +166,6 @@ done
 
 echo -e "\n---------- Qt6 plugins"
 cp -r $VCPKG_INSTALL_PREFIX/Qt6/plugins                                   $BUNDLEDIR/                           2>/dev/null
-
-echo -e "\n---------- digiKam and KF6 plugins"
-cp -r $VCPKG_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- OpenAL for QtAV"
 cp -r $VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                           2>/dev/null

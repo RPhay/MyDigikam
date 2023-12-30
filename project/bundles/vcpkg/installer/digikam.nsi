@@ -247,9 +247,6 @@
             File "${BUNDLEPATH}\*.pdb"
         !endif
 
-        SetOutPath "$INSTDIR\etc"
-        File /r "${BUNDLEPATH}\etc\*.*"
-
         SetOutPath "$INSTDIR\data"
         File /r "${BUNDLEPATH}\data\*.*"
 
@@ -347,7 +344,6 @@
         Delete "$INSTDIR\releasenotes.html"
         Delete "$INSTDIR\digikam-uninstaller.ico"
 
-        RMDir /r "$INSTDIR\etc"
         RMDir /r "$INSTDIR\data"
         RMDir /r "$INSTDIR\share"
         RMDir /r "$INSTDIR\plugins"
@@ -356,6 +352,7 @@
 
         ;MXE Legacy
         Delete "$INSTDIR\*.yes"
+        RMDir /r "$INSTDIR\etc"
         RMDir /r "$INSTDIR\bin"
         RMDir /r "$INSTDIR\libgphoto2"
         RMDir /r "$INSTDIR\libgphoto2_port"
