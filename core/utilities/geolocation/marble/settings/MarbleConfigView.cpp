@@ -84,6 +84,7 @@ public:
     QCheckBox*                         showCross        = nullptr;
     QCheckBox*                         showAtmos        = nullptr;
     QCheckBox*                         showSunShading   = nullptr;
+    QCheckBox*                         showCities       = nullptr;
 
     MarbleWidget* const                marbleWidget;
 
@@ -217,14 +218,15 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     d->showSunShading            = new QCheckBox(i18n("Show Sun-Shading"), grpMap);
     d->showAtmos->setToolTip(i18n("Show the world-map sun-shading overlay"));
 
-    // Add SunShading
-    // Add CityLights
-    // Add Cities
+    d->showCities                = new QCheckBox(i18n("Show Cities"), grpMap);
+    d->showCities->setToolTip(i18n("Show the world-map cities overlay"));
+
     // Add Relief
     // Add IceLayer
     // Add Borders
     // Add Rivers
     // Add Lakes
+    // Add CityLights
     // Add Clouds ???
     // Add Terrain ???
     // Add Places ???
@@ -236,6 +238,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     gridMap->addWidget(d->showCross,      1, 1, 1, 1);
     gridMap->addWidget(d->showAtmos,      2, 0, 1, 1);
     gridMap->addWidget(d->showSunShading, 2, 1, 1, 1);
+    gridMap->addWidget(d->showCities,     3, 0, 1, 1);
 
     // ---
 
@@ -303,6 +306,7 @@ void MarbleConfigView::readSettings()
     d->showCross->setChecked(settings.showCross);
     d->showAtmos->setChecked(settings.showAtmos);
     d->showSunShading->setChecked(settings.showSunShading);
+    d->showCities->setChecked(settings.showCities);
 
     // Read the settings of the plugins
 
@@ -331,6 +335,7 @@ void MarbleConfigView::applySettings()
     settings.showCross                = d->showCross->isChecked();
     settings.showAtmos                = d->showAtmos->isChecked();
     settings.showSunShading           = d->showSunShading->isChecked();
+    settings.showCities               = d->showCities->isChecked();
 
     GeolocationSettings::instance()->setSettings(settings);
 

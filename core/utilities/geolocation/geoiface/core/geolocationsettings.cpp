@@ -120,6 +120,7 @@ void GeolocationSettings::Private::applySettingsToWidget(MapWidget* const w,
                 mw->setShowCrosshairs(settings.showCross);
                 mw->setShowAtmosphere(settings.showAtmos);
                 mw->setShowSunShading(settings.showSunShading);
+                mw->setShowCities(settings.showCities);
                 mw->update();
             }
         }
