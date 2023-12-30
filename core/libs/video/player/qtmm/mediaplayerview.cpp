@@ -722,7 +722,6 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     d->player->setSource(d->currentItem);
     setPreviewMode(Private::PlayerView);
-    d->player->setPosition(10);
     d->player->play();
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Play video with QtMultimedia started:" << d->player->source();
