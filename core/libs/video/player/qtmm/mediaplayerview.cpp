@@ -282,15 +282,15 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     // --------------------------------------------------------------------------
 
-    d->playerView  = new QFrame(this);
-    d->videoScene  = new QGraphicsScene(this);
-    d->videoView   = new QGraphicsView(d->videoScene);
+    d->playerView = new QFrame(this);
+    d->videoScene = new QGraphicsScene(this);
+    d->videoView  = new QGraphicsView(d->videoScene);
     d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
-    d->videoItem   = new QGraphicsVideoItem();
-    d->player      = new QMediaPlayer(this);
-    d->audio       = new QAudioOutput;
+    d->videoItem  = new QGraphicsVideoItem();
+    d->player     = new QMediaPlayer(this);
+    d->audio      = new QAudioOutput;
     d->player->setAudioOutput(d->audio);
     d->player->setVideoOutput(d->videoItem);
     d->videoScene->addItem(d->videoItem);
@@ -305,7 +305,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->slider         = new QSlider(Qt::Horizontal, hbox);
     d->slider->setStyle(new PlayerVideoStyle());
     d->slider->setRange(0, 0);
-    d->tlabel               = new QLabel(hbox);
+    d->tlabel         = new QLabel(hbox);
     d->tlabel->setText(QLatin1String("00:00:00 / 00:00:00"));
     d->loopPlay       = new QPushButton(hbox);
     d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
