@@ -5,6 +5,7 @@
 #
 
 add_subdirectory(cache)
+add_subdirectory(gpsbabel)
 add_subdirectory(json)
 add_subdirectory(nominatim-reversegeocoding)
 add_subdirectory(osm)
