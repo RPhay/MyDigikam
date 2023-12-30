@@ -70,7 +70,7 @@ public:
     QString htmlTemplate() const
     {
         return QLatin1String("<html>\n<head>\n"
-                             "<base href=\"%1\">\n"
+                             "<base href=\"%1\"/>\n"
                              "<script type=\"text/javascript\" src=\"https://maps.google.com/maps/"
                              "api/js?key=%2\"></script>\n"
                              "<script type=\"text/javascript\" src=\"backend-googlemaps-js.js\"></script>\n"
