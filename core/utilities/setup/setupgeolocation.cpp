@@ -201,7 +201,7 @@ void SetupGeolocation::applySettings()
 
     if (writeFile.open(QIODevice::WriteOnly))
     {
-        writeFile.write(htmlText.toLatin1());
+        writeFile.write(htmlText.toUtf8());
         writeFile.close();
 
         GeolocationSettings::instance()->googleMapsApiKeyChanged();
@@ -224,7 +224,7 @@ void SetupGeolocation::readSettings()
 
         if (readFile.open(QIODevice::ReadOnly))
         {
-            QString oldHtml = QString::fromLatin1(readFile.readAll());
+            QString oldHtml = QString::fromUtf8(readFile.readAll());
             readFile.close();
 
             if (!oldHtml.isEmpty())
