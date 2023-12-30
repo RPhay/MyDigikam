@@ -48,7 +48,9 @@
 #include "MarbleClock.h"
 #include "MarblePluginSettingsWidget.h"
 #include "geolocationsettings.h"
+
 #include "digikam_debug.h"
+#include "dexpanderbox.h"
 
 using namespace Digikam;
 
@@ -205,25 +207,39 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     QGridLayout* const gridMap   = new QGridLayout(grpMap);
     QLabel* const fntLbl         = new QLabel(i18n("Default Font:"), grpMap);
     d->mapFont                   = new QFontComboBox(grpMap);
-    d->mapFont->setToolTip(i18n("The default font that gets used on the map."));
+    d->mapFont->setToolTip(i18n("The default font that gets used on the map.\n"
+                                "This setting take effect only with the Atlas and Satellite Maps\n"
+                                "not the Open-Street Map."));
 
     d->showGrid                  = new QCheckBox(i18n("Show Coordinate Grid"), grpMap);
-    d->showGrid->setToolTip(i18n("Show the world-map coordinate grid overlay"));
+    d->showGrid->setToolTip(i18n("Show the world-map coordinate grid overlay\n"
+                                 "This setting take effect only with the Atlas,\n"
+                                 "the Satellite, and the Open-Street Maps."));
 
     d->showCross                 = new QCheckBox(i18n("Show Cross-Hair"), grpMap);
-    d->showCross->setToolTip(i18n("Show cross-hair on a center of the map"));
+    d->showCross->setToolTip(i18n("Show cross-hair on a center of the map\n"
+                                  "This setting take effect only with the Atlas,\n"
+                                  "the Satellite, and the Open-Street Maps."));
 
     d->showAtmos                 = new QCheckBox(i18n("Show Atmospheric Glow"), grpMap);
-    d->showAtmos->setToolTip(i18n("Show the world-map atmospheric glow overlay"));
+    d->showAtmos->setToolTip(i18n("Show the world-map atmospheric glow overlay\n"
+                                  "This setting take effect only with the Atlas,\n"
+                                  "the Satellite, and the Open-Street Maps."));
 
     d->showSunShading            = new QCheckBox(i18n("Show Night Shadow"), grpMap);
-    d->showAtmos->setToolTip(i18n("Show the world-map night shadow overlay"));
+    d->showSunShading->setToolTip(i18n("Show the world-map night shadow overlay\n"
+                                       "This setting take effect only with the Atlas,\n"
+                                       "the Satellite, and the Open-Street Maps."));
 
     d->showCities                = new QCheckBox(i18n("Show City Place Mark"), grpMap);
-    d->showCities->setToolTip(i18n("Show the world-map city place mark overlay"));
+    d->showCities->setToolTip(i18n("Show the world-map city place mark overlay\n"
+                                   "This setting take effect only with the Atlas and Satellite Maps\n"
+                                   "not the Open-Street Map."));
 
     d->showRelief                = new QCheckBox(i18n("Show Relief"), grpMap);
-    d->showRelief->setToolTip(i18n("Show the world-map relief overlay"));
+    d->showRelief->setToolTip(i18n("Show the world-map relief overlay\n"
+                                   "This setting take effect only with the Atlas and Satellite Maps\n"
+                                   "not the Open-Street Map."));
 
     // Add IceLayer
     // Add Borders
@@ -235,14 +251,15 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     // Add Places ???
     // Add OtherPlaces ???
 
-    gridMap->addWidget(fntLbl,            0, 0, 1, 1);
-    gridMap->addWidget(d->mapFont,        0, 1, 1, 1);
-    gridMap->addWidget(d->showGrid,       1, 0, 1, 1);
-    gridMap->addWidget(d->showCross,      1, 1, 1, 1);
-    gridMap->addWidget(d->showAtmos,      2, 0, 1, 1);
-    gridMap->addWidget(d->showSunShading, 2, 1, 1, 1);
-    gridMap->addWidget(d->showCities,     3, 0, 1, 1);
-    gridMap->addWidget(d->showRelief,     3, 1, 1, 1);
+    gridMap->addWidget(d->showGrid,                             0, 0, 1, 1);
+    gridMap->addWidget(d->showCross,                            0, 1, 1, 1);
+    gridMap->addWidget(d->showAtmos,                            1, 0, 1, 1);
+    gridMap->addWidget(d->showSunShading,                       1, 1, 1, 1);
+    gridMap->addWidget(new DLineWidget(Qt::Horizontal, grpMap), 2, 0, 1, 2);
+    gridMap->addWidget(d->showCities,                           3, 0, 1, 1);
+    gridMap->addWidget(d->showRelief,                           3, 1, 1, 1);
+    gridMap->addWidget(fntLbl,                                  4, 0, 1, 1);
+    gridMap->addWidget(d->mapFont,                              4, 1, 1, 1);
 
     // ---
 
