@@ -9,13 +9,22 @@
 SET(EXTPREFIX_lensfun "${EXTPREFIX}" )
 
 set(Lensfun_Conf -DBUILD_STATIC=OFF
-                 -DBUILD_WITH_MSVC_STATIC_RUNTIME=OFF
                  -DBUILD_TESTS=OFF
                  -DBUILD_LENSTOOL=OFF
                  -DBUILD_DOC=OFF
                  -DINSTALL_PYTHON_MODULE=OFF
                  -DINSTALL_HELPER_SCRIPTS=OFF
 )
+
+if (MSVC)
+
+    set(Lensfun_Conf ${Lensfun_Conf} -DBUILD_WITH_MSVC_STATIC_RUNTIME=ON)
+
+else()
+
+    set(Lensfun_Conf ${Lensfun_Conf} -DBUILD_WITH_MSVC_STATIC_RUNTIME=OFF)
+
+endif()
 
 JoinListAsString("${Lensfun_Conf}" " " BASH_OPTIONS)
 
