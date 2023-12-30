@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 00:39+0000\n"
+"POT-Creation-Date: 2023-12-30 00:39+0000\n"
 "PO-Revision-Date: 2023-12-28 12:53+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -45,8 +45,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Lokalize 23.08.4\n"
 
@@ -9240,6 +9240,7 @@ msgstr ""
 "zapolnjevanjem celic s povprečno vrednostjo slikovnih točk.</p>"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:144
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:106
 #, kde-format
 msgid "Distance:"
 msgstr "Oddaljenost:"
@@ -10172,7 +10173,7 @@ msgstr "Nova širina:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
 msgid " px"
@@ -20001,7 +20002,7 @@ msgstr "Neobvezni izvajalni programi za Gimp"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:163
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:172
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, kde-format
 msgid "Image Format:"
@@ -20330,7 +20331,7 @@ msgid "Thunderbird"
 msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
 #: core/libs/dplugins/webservices/wssettings.cpp:128
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -20338,7 +20339,7 @@ msgid "Jpeg"
 msgstr "Jpeg"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
 #: core/libs/dplugins/webservices/wssettings.cpp:129
 #, kde-format
 msgctxt "Image format: PNG"
@@ -20466,11 +20467,9 @@ msgstr ""
 "Če omogočite to možnost, bodo vse lastnosti izdelka kot so komentarji, ocene "
 "ali značke dodane kot priložena datoteka."
 
-#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
-#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:300
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:347
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -20481,14 +20480,14 @@ msgid "Maximum email size limit:"
 msgstr "Največja velikost pošiljke e-pošte:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:137
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, kde-format
 msgid "Adjust image properties"
 msgstr "Prilagodi lastnosti datoteke"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:139
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, kde-format
 msgid ""
@@ -20499,14 +20498,14 @@ msgstr ""
 "želite poslati in jih ponovno stisniti."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:145
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:154
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid "Image Properties"
 msgstr "Lastnosti slike"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid ""
@@ -20517,14 +20516,14 @@ msgstr ""
 "ohranjeno."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:156
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, kde-format
 msgid "Image Length:"
 msgstr "Dolžina slike:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:167
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:176
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
@@ -20549,21 +20548,21 @@ msgstr ""
 "vrednost)<br/> <b>100</b>: brez stiskanja</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:185
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:194
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, kde-format
 msgid "Image quality:"
 msgstr "Kakovost slike:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:190
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:199
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, kde-format
 msgid "Remove all metadata"
 msgstr "Odstrani vse metapodatke"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:191
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:200
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, kde-format
 msgid ""
@@ -22677,59 +22676,67 @@ msgstr ""
 msgid "Facebook Call Failed: %1"
 msgstr "Facebook klic ni uspel: %1"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:107
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:110
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
 #, kde-format
 msgid "Target location: "
 msgstr "Ciljna lokacija: "
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:111
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
 #, kde-format
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "Ciljna mapa"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
 #, kde-format
 msgid "Sets the target address to copy the items to."
 msgstr "Nastavi ciljni naslov za kopiranje predmetov."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
 #, kde-format
 msgid "Target file behavior:"
 msgstr "Obnašanje ciljne datoteke:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:116
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
 #, kde-format
 msgid "Copy files"
 msgstr "Kopiraj datoteke"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:120
 #, kde-format
 msgid "Create symlinks"
 msgstr "Ustvari simbolične povezave"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, kde-format
 msgid "Create relative symlinks"
 msgstr "Ustvari relativne simbolične povezave"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:120
-#, kde-format
-msgid "Include the sidecars of the items"
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
+#, fuzzy, kde-format
+#| msgid "Include the sidecars of the items"
+msgid "Include the sidecar of the items"
 msgstr "Vključi priklopne datoteke postavkam"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Write metadata to each file"
+msgid "Write sidecar metadata to the items"
+msgstr "Piši metapodatke v vsako datoteko"
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:125
 #, kde-format
 msgid "Overwrite existing items in the target"
 msgstr "Prepiši obstoječe predmete v cilju"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:126
 #, kde-format
 msgid "Use the album path of the items in the target"
 msgstr "Uporabi pot do albuma postavk v cilju"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:187
 #, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -22742,38 +22749,38 @@ msgstr ""
 "srednja kompresija<br/> <b>75</b>: nizka kompresija (privzeta vrednost)<br/> "
 "<b>100</b>: brez stiskanja</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:216
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:225
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "To je seznam predmetov za kopiranje na določen cilj."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:93
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "Izvozi v lokalni medij"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:96
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Začni izvoz"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:97
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Začni izvoz v določen cilj"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:221
 #, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "Kopiranje ni bilo dokončano"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:222
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -54070,7 +54077,7 @@ msgstr "Zakleni položaj zemljevida"
 msgid "Load tracks from albums"
 msgstr "Naloži sledi iz albumov"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:828
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
 #, kde-format
 msgid "Map settings"
 msgstr "Nastavitve zemljevida"
@@ -57029,12 +57036,285 @@ msgstr ""
 "Prikazuje zemljo, kot je videti z razmeroma kratke razdalje nad površjem. "
 "Aplikacije: Uporablja se za virtualne globuse.</p>"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:80
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:104
+#, fuzzy, kde-format
+#| msgid "Units:"
+msgid "Units"
+msgstr "Enote:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
+#, kde-format
+msgid "Kilometer, Meter"
+msgstr "Kilometer, Meter"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
+#, kde-format
+msgid "Miles, Feet"
+msgstr "Milje, Čevlji"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
+#, kde-format
+msgid "Nautical miles, Knots"
+msgstr "Navtična milje, Vozli"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:111
+#, kde-format
+msgid ""
+"The unit that gets used to measure altitude, lengths and distances (e.g. km, "
+"mi, ft)."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Angle:"
+msgid "Angle:"
+msgstr "Kot:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
+#, kde-format
+msgid "Degree (DMS)"
+msgstr "Stopinja (DMS)"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:116
+#, kde-format
+msgid "Degree (Decimal)"
+msgstr "Stopinja (Decimalno)"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#, kde-format
+msgid "Universal Transverse Mercator (UTM)"
+msgstr "Universal Transverse Mercator (UTM)"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
+#, kde-format
+msgid ""
+"Specifies the notation of angles in coordinates.\n"
+"By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
+"As an alternative you can choose decimal degrees (e.g. 54.5°)."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:129
+#, fuzzy, kde-format
+#| msgid "Map &Quality"
+msgid "Map Quality"
+msgstr "Zemljevid in kakovost"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:131
+#, fuzzy, kde-format
+#| msgid "&Still image:"
+msgid "Still Image:"
+msgstr "Mirujoča slika:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:143
+#, kde-format
+msgid "Outline Quality"
+msgstr "Kakovost orisov"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:144
+#, kde-format
+msgid "Low Quality"
+msgstr "Nizka kakovost"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
+#, kde-format
+msgid "Normal"
+msgstr "Normalno"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
+#, kde-format
+msgid "High Quality"
+msgstr "Visoka kakovost"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
+#, kde-format
+msgid "Print Quality"
+msgstr "Kakovost za tisk"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#, kde-format
+msgid ""
+"Specifies the map quality that gets displayed while there is no user input.\n"
+"Usually this allows for high map quality as speed is no concern."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#, fuzzy, kde-format
+#| msgid "During &animations:"
+msgid "During Animations:"
+msgstr "Med animacijami:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#, kde-format
+msgid ""
+"Specifies the map quality that gets displayed during map animations\n"
+"(e.g. while dragging the globe). Especially on slow machines it is\n"
+"advisable to set this option to \"low quality\" as this will give better "
+"speed."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:159
+#, kde-format
+msgid "Mouse Behavior"
+msgstr "Obnašanje miške"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:161
+#, fuzzy, kde-format
+#| msgid "&Inertial globe rotation"
+msgid "Inertial Globe Rotation"
+msgstr "Inercialna rotacija globusa"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:162
+#, kde-format
+msgid "Use kinetic spinning when dragging the map"
+msgstr "Pri vlečenju zemljevida uporabite kinetično vrtenje"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
+#, fuzzy, kde-format
+#| msgid "&Mouse view rotation"
+msgid "Mouse View Rotation"
+msgstr "Miškin pogled vrtenja"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
+#, kde-format
+msgid "Use right mouse button to rotate the camera around"
+msgstr "Z desnim gumbom miške zavrtite kamero"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:171
+#, fuzzy, kde-format
+#| msgid "C&ache"
+msgid "Cache"
+msgstr "Predpomnilnik"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:172
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#| "font-weight:400; font-style:normal;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches "
+#| "being used for Marble: The physical memory which is needed to keep map "
+#| "data in the computer's memory. Increasing the value will make the "
+#| "application more responsive. The hard disc memory cache is used by "
+#| "download contents from the Internet (e.g. Wikipedia data or map data). "
+#| "Decrease this value if you want to save space on the hard disc and if "
+#| "high usage of the Internet is not an issue. </p></body></html>"
+msgid ""
+"There are two caches being used:\n"
+"The \"physical memory\" which is needed to keep map data in the computer's "
+"memory.\n"
+"Increasing the value will make the application more responsive.\n"
+"The \"hard disc memory\" cache is used by download map data from the "
+"Internet.\n"
+"Decrease this value if you want to save space on the hard disc\n"
+"and if high usage of the Internet is not an issue."
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Za Marble se uporabljata "
+"dva predpomnilnika: fizični pomnilnik, ki je potreben za shranjevanje "
+"podatkov zemljevida v pomnilnik računalnika. Če povečate vrednost, bo "
+"aplikacija bolj odzivna. Predpomnilnik trdega diska se uporablja za prenos "
+"vsebine iz interneta (npr. podatki Wikipedije ali podatki zemljevida). "
+"Zmanjšajte to vrednost, če želite prihraniti prostor na trdem disku in če "
+"visoka poraba interneta ni težava.</p></body></html>"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:179
+#, fuzzy, kde-format
+#| msgid "&Physical memory:"
+msgid "Physical Memory:"
+msgstr "Fizični pomnilnik:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
+#, kde-format
+msgid "Clear"
+msgstr "Počisti"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:186
+#, fuzzy, kde-format
+#| msgid "&Hard disc:"
+msgid "Hard Disc:"
+msgstr "Trdi disk:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:202
+#, kde-format
+msgid "Map Contents"
+msgstr "Preslikaj vsebine"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:204
+#, fuzzy, kde-format
+#| msgid "Default &font:"
+msgid "Default Font:"
+msgstr "Privzeta pisava:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
+#, kde-format
+msgid "The default font that gets used on the map."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:208
+#, kde-format
+msgid "Show Grid"
+msgstr "Pokaži mrežo"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
+#, kde-format
+msgid "Show the world-map grid overlay"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
+#, fuzzy, kde-format
+#| msgid "Crosshairs"
+msgid "Show Cross-Hair"
+msgstr "Križ"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:212
+#, kde-format
+msgid "Show cross-hair on a center of the map"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:214
+#, fuzzy, kde-format
+#| msgid "Atmosphere"
+msgid "Show Atmosphere"
+msgstr "Atmosfera"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
+#, fuzzy, kde-format
+#| msgid "Shows the atmosphere around the earth."
+msgid "Show the world-map atmosphere overlay"
+msgstr "Prikazuje atmosfero okrog zemlje."
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:217
+#, fuzzy, kde-format
+#| msgid "Show again"
+msgid "Show Sun-Shading"
+msgstr "Prikaži ponovno"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:218
+#, kde-format
+msgid "Show the world-map sun-shading overlay"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:249
 #, kde-format
 msgid "Marble View"
 msgstr "Pogled Marble"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:98
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:267
 #, kde-format
 msgid "Marble Plugins"
 msgstr "Vtičniki Marble"
@@ -57057,361 +57337,6 @@ msgid ""
 msgstr ""
 "<p><u>Ime:</u> %1</p><p><u>Različica:</u> %2</p><p><u>Avtorske pravice:</u> "
 "%3</p><p><u>Opis:</u> %4</p>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:19
-#, kde-format
-msgid "&Units"
-msgstr "Enote"
-
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:31
-#, kde-format
-msgid "An&gle:"
-msgstr "Kot:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:53
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
-"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Enota, ki je v navadi za "
-"merjenje nadmorske višine, dolžine in razdalje (npr. km, milje, čevlji).</"
-"p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
-#, kde-format
-msgid "Kilometer, Meter"
-msgstr "Kilometer, Meter"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:62
-#, kde-format
-msgid "Miles, Feet"
-msgstr "Milje, Čevlji"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:67
-#, kde-format
-msgid "Nautical miles, Knots"
-msgstr "Navtična milje, Vozli"
-
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:87
-#, kde-format
-msgid "&Distance:"
-msgstr "Oddaljenost:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:103
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
-"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
-"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
-"g. 54.5°).</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Določa zapis za kote v "
-"koordinatah: privzeto zapis stopinja-minuta-sekunda (npr. 54°30'00\"). "
-"Namesto tega lahko izberete decimalne stopinje (npr. 54,5°).</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:107
-#, kde-format
-msgid "Degree (DMS)"
-msgstr "Stopinja (DMS)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:112
-#, kde-format
-msgid "Degree (Decimal)"
-msgstr "Stopinja (Decimalno)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:117
-#, kde-format
-msgid "Universal Transverse Mercator (UTM)"
-msgstr "Universal Transverse Mercator (UTM)"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:128
-#, kde-format
-msgid "Map &Quality"
-msgstr "Zemljevid in kakovost"
-
-#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:146
-#, kde-format
-msgid "&Still image:"
-msgstr "Mirujoča slika:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:162
-#, kde-format
-msgid "During &animations:"
-msgstr "Med animacijami:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:175
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed while there is no user input. Usually this allows for "
-"high map quality as speed is no concern.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Določa kakovost "
-"zemljevida, ki se prikaže, ko ni vnosa uporabnika. Običajno to omogoča "
-"visoka kakovost zemljevida, saj hitrost ni pomembna.</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:182
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:221
-#, kde-format
-msgid "Outline Quality"
-msgstr "Kakovost orisov"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:187
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:226
-#, kde-format
-msgid "Low Quality"
-msgstr "Nizka kakovost"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:192
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:231
-#, kde-format
-msgid "Normal"
-msgstr "Normalno"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:197
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:236
-#, kde-format
-msgid "High Quality"
-msgstr "Visoka kakovost"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:202
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:241
-#, kde-format
-msgid "Print Quality"
-msgstr "Kakovost za tisk"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:214
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed during map animations (e.g. while dragging the globe). </"
-"p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-"machines it is advisable to set this option to \"low quality\" as this will "
-"give better speed.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Določa kakovost "
-"zemljevidaki se prikaže med animacijami zemljevida (npr. med vlečenjem "
-"globusa).</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Še posebej na počasnih "
-"strojih je priporočljivo, da to možnost nastavite na \"Nizka kakovost\", saj "
-"bo to dalo boljšo hitrost.</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:256
-#, kde-format
-msgid "Mouse Behavior"
-msgstr "Obnašanje miške"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:262
-#, kde-format
-msgid "Use kinetic spinning when dragging the map"
-msgstr "Pri vlečenju zemljevida uporabite kinetično vrtenje"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:265
-#, kde-format
-msgid "&Inertial globe rotation"
-msgstr "Inercialna rotacija globusa"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:272
-#, kde-format
-msgid "Use right mouse button to rotate the camera around"
-msgstr "Z desnim gumbom miške zavrtite kamero"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:275
-#, kde-format
-msgid "&Mouse view rotation"
-msgstr "Miškin pogled vrtenja"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:288
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
-"used for Marble: The physical memory which is needed to keep map data in the "
-"computer's memory. Increasing the value will make the application more "
-"responsive. The hard disc memory cache is used by download contents from the "
-"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
-"to save space on the hard disc and if high usage of the Internet is not an "
-"issue. </p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Za Marble se uporabljata "
-"dva predpomnilnika: fizični pomnilnik, ki je potreben za shranjevanje "
-"podatkov zemljevida v pomnilnik računalnika. Če povečate vrednost, bo "
-"aplikacija bolj odzivna. Predpomnilnik trdega diska se uporablja za prenos "
-"vsebine iz interneta (npr. podatki Wikipedije ali podatki zemljevida). "
-"Zmanjšajte to vrednost, če želite prihraniti prostor na trdem disku in če "
-"visoka poraba interneta ni težava.</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:291
-#, kde-format
-msgid "C&ache"
-msgstr "Predpomnilnik"
-
-#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:325
-#, kde-format
-msgid "&Hard disc:"
-msgstr "Trdi disk:"
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:344
-#, kde-format
-msgid "Unlimited"
-msgstr "Neomenjen"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:366
-#, kde-format
-msgid "C&lear"
-msgstr "Počisti"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:379
-#, kde-format
-msgid "Cl&ear"
-msgstr "Očisti"
-
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:398
-#, kde-format
-msgid "&Physical memory:"
-msgstr "Fizični pomnilnik:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:413
-#, kde-format
-msgid "Map Contents"
-msgstr "Preslikaj vsebine"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:433
-#, kde-format
-msgid "Default &font:"
-msgstr "Privzeta pisava:"
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:446
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Privzeta pisava "
-"uporabljena na zemljevidu.</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showGrid)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:458
-#, kde-format
-msgid "Show Grid"
-msgstr "Pokaži mrežo"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -67449,6 +67374,137 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ali želite ponovno nastaviti vse nastavitve na privzete vrednosti?"
 
+#~ msgid "&Units"
+#~ msgstr "Enote"
+
+#~ msgid "An&gle:"
+#~ msgstr "Kot:"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used "
+#~ "to measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Enota, ki je v navadi "
+#~ "za merjenje nadmorske višine, dolžine in razdalje (npr. km, milje, "
+#~ "čevlji).</p></body></html>"
+
+#~ msgid "&Distance:"
+#~ msgstr "Oddaljenost:"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation "
+#~ "of angles in coordinates: By default the Degree-Minute-Second notation (e."
+#~ "g. 54°30'00\" ) gets used. As an alternative you can choose decimal "
+#~ "degrees (e.g. 54.5°).</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Določa zapis za kote v "
+#~ "koordinatah: privzeto zapis stopinja-minuta-sekunda (npr. 54°30'00\"). "
+#~ "Namesto tega lahko izberete decimalne stopinje (npr. 54,5°).</p></body></"
+#~ "html>"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
+#~ "quality that gets displayed while there is no user input. Usually this "
+#~ "allows for high map quality as speed is no concern.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Določa kakovost "
+#~ "zemljevida, ki se prikaže, ko ni vnosa uporabnika. Običajno to omogoča "
+#~ "visoka kakovost zemljevida, saj hitrost ni pomembna.</p></body></html>"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
+#~ "quality that gets displayed during map animations (e.g. while dragging "
+#~ "the globe). </p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
+#~ "machines it is advisable to set this option to \"low quality\" as this "
+#~ "will give better speed.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Določa kakovost "
+#~ "zemljevidaki se prikaže med animacijami zemljevida (npr. med vlečenjem "
+#~ "globusa).</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Še posebej na počasnih "
+#~ "strojih je priporočljivo, da to možnost nastavite na \"Nizka kakovost\", "
+#~ "saj bo to dalo boljšo hitrost.</p></body></html>"
+
+#~ msgid "Unlimited"
+#~ msgstr "Neomenjen"
+
+#~ msgid "C&lear"
+#~ msgstr "Počisti"
+
+#~ msgid "Cl&ear"
+#~ msgstr "Očisti"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that "
+#~ "gets used on the map.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Privzeta pisava "
+#~ "uporabljena na zemljevidu.</p></body></html>"
+
 #~ msgid "&Text Labels"
 #~ msgstr "Besedilne oznake"
 
@@ -68094,9 +68150,6 @@ msgstr "Ali želite ponovno nastaviti vse nastavitve na privzete vrednosti?"
 #~ msgid "Take the exit to the right onto %1."
 #~ msgstr "Zapustite krožišče na desno na %1."
 
-#~ msgid "Clear"
-#~ msgstr "Počisti"
-
 #~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
 #~ msgid "%1 %2, %3"
 #~ msgstr "%1 %2, %3"
@@ -68160,9 +68213,6 @@ msgstr "Ali želite ponovno nastaviti vse nastavitve na privzete vrednosti?"
 
 #~ msgid "Guidance Mode"
 #~ msgstr "Način vodenja"
-
-#~ msgid "Show again"
-#~ msgstr "Prikaži ponovno"
 
 #~ msgid "Configure Routing Profile"
 #~ msgstr "Konfiguriraj usmerjevalni profil"

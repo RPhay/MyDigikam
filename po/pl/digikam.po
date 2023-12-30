@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 00:39+0000\n"
+"POT-Creation-Date: 2023-12-30 00:39+0000\n"
 "PO-Revision-Date: 2023-12-27 19:41+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -9255,6 +9255,7 @@ msgstr ""
 "barw pikseli.</p>"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:144
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:106
 #, kde-format
 msgid "Distance:"
 msgstr "Odległość:"
@@ -10193,7 +10194,7 @@ msgstr "Nowa szerokość:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
 msgid " px"
@@ -20036,7 +20037,7 @@ msgstr "Dodatkowe narzędzia Gimpa"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:163
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:172
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, kde-format
 msgid "Image Format:"
@@ -20366,7 +20367,7 @@ msgid "Thunderbird"
 msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
 #: core/libs/dplugins/webservices/wssettings.cpp:128
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -20374,7 +20375,7 @@ msgid "Jpeg"
 msgstr "Jpeg"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
 #: core/libs/dplugins/webservices/wssettings.cpp:129
 #, kde-format
 msgctxt "Image format: PNG"
@@ -20503,11 +20504,9 @@ msgstr ""
 "Jeśli ta opcja zostanie włączona, wszystkie właściwości takje jak "
 "komentarze, oceny czy znaczniki zostaną dodane jako załączniki."
 
-#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
-#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:300
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:347
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -20518,14 +20517,14 @@ msgid "Maximum email size limit:"
 msgstr "Maksymalny rozmiar e-maila:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:137
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, kde-format
 msgid "Adjust image properties"
 msgstr "Dopasuj właściwości obrazu"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:139
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, kde-format
 msgid ""
@@ -20536,14 +20535,14 @@ msgstr ""
 "operacjom zmiany rozmiaru oraz ponownej kompresji."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:145
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:154
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid "Image Properties"
 msgstr "Właściwości obrazu"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid ""
@@ -20552,14 +20551,14 @@ msgid ""
 msgstr "Wybierz długośc obrazów do wysłania. Ich kształt zostanie zachowany."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:156
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, kde-format
 msgid "Image Length:"
 msgstr "Długość obrazu:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:167
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:176
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
@@ -20584,21 +20583,21 @@ msgstr ""
 "><b>100</b>: bez kompresji</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:185
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:194
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, kde-format
 msgid "Image quality:"
 msgstr "Jakość obrazu:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:190
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:199
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, kde-format
 msgid "Remove all metadata"
 msgstr "Usuń wszystkie meta-dane"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:191
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:200
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, kde-format
 msgid ""
@@ -22718,59 +22717,67 @@ msgstr ""
 msgid "Facebook Call Failed: %1"
 msgstr "Nieudane wywołanie Facebook'a: %1"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:107
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:110
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
 #, kde-format
 msgid "Target location: "
 msgstr "Miejsce docelowe: "
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:111
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
 #, kde-format
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "Katalog docelowy"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
 #, kde-format
 msgid "Sets the target address to copy the items to."
 msgstr "Ustawia adres docelowy, do którego skopiować rzeczy."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
 #, kde-format
 msgid "Target file behavior:"
 msgstr "Zachowanie pliku docelowego:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:116
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
 #, kde-format
 msgid "Copy files"
 msgstr "Skopiuj pliki"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:120
 #, kde-format
 msgid "Create symlinks"
 msgstr "Utwórz dowiązania symboliczne"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, kde-format
 msgid "Create relative symlinks"
 msgstr "Utwórz względne dowiązania symboliczne"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:120
-#, kde-format
-msgid "Include the sidecars of the items"
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
+#, fuzzy, kde-format
+#| msgid "Include the sidecars of the items"
+msgid "Include the sidecar of the items"
 msgstr "Dołącz piliki przyboczne do rzeczy"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Write metadata to each file"
+msgid "Write sidecar metadata to the items"
+msgstr "Zapisz metadane do każdego pliku"
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:125
 #, kde-format
 msgid "Overwrite existing items in the target"
 msgstr "Zastąp istniejące rzeczy w miejscu docelowym"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:126
 #, kde-format
 msgid "Use the album path of the items in the target"
 msgstr "Użyj ścieżki albumu rzeczy w miejscu docelowym"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:187
 #, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -22783,38 +22790,38 @@ msgstr ""
 "średnia kompresja<br/><b>75</b>: niska kompresja (domyślnie)<br/><b>100</b>: "
 "bez kompresji</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:216
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:225
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Oto lista rzeczy do skopiowania do wskazanego celu."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:93
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "Wyeksportuj do pamięci miejscowej"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:96
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Rozpocznij eksportowanie"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:97
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Rozpocznij eksportowanie do wybranego miejsca"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:221
 #, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "Nie ukończono kopiowania"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:222
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -54072,7 +54079,7 @@ msgstr "Zablokuj pozycję mapy"
 msgid "Load tracks from albums"
 msgstr "Wczytuj ścieżki z albumów"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:828
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
 #, kde-format
 msgid "Map settings"
 msgstr "Ustawienia mapy"
@@ -57031,12 +57038,291 @@ msgstr ""
 "Pokazuje Ziemię w sposób w jaki wygląda z małej odległości ponad jej "
 "powierzchnią. Zastosowania: Używane dla wirtualnych globów.</p>"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:80
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:104
+#, fuzzy, kde-format
+#| msgid "Units:"
+msgid "Units"
+msgstr "Jednostki:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
+#, kde-format
+msgid "Kilometer, Meter"
+msgstr "Kilometr, metr"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
+#, kde-format
+msgid "Miles, Feet"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
+#, kde-format
+msgid "Nautical miles, Knots"
+msgstr "Mile morskie, Węzły"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:111
+#, kde-format
+msgid ""
+"The unit that gets used to measure altitude, lengths and distances (e.g. km, "
+"mi, ft)."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Angle:"
+msgid "Angle:"
+msgstr "Kąt:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
+#, kde-format
+msgid "Degree (DMS)"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:116
+#, kde-format
+msgid "Degree (Decimal)"
+msgstr "Stopień (dziesiętne)"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#, kde-format
+msgid "Universal Transverse Mercator (UTM)"
+msgstr "Uniwersalny Poprzeczny Mercator (UTM)"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
+#, kde-format
+msgid ""
+"Specifies the notation of angles in coordinates.\n"
+"By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
+"As an alternative you can choose decimal degrees (e.g. 54.5°)."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:129
+#, fuzzy, kde-format
+#| msgid "Map &Quality"
+msgid "Map Quality"
+msgstr "Jak&ość mapy"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:131
+#, fuzzy, kde-format
+#| msgid "&Still image:"
+msgid "Still Image:"
+msgstr "&Nieruchomy obraz:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:143
+#, kde-format
+msgid "Outline Quality"
+msgstr "Jakość szkicu"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:144
+#, kde-format
+msgid "Low Quality"
+msgstr "Niska jakość"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
+#, kde-format
+msgid "Normal"
+msgstr "Normalny"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
+#, kde-format
+msgid "High Quality"
+msgstr "Wysoka jakość"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
+#, kde-format
+msgid "Print Quality"
+msgstr "Jakość wydruku"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#, kde-format
+msgid ""
+"Specifies the map quality that gets displayed while there is no user input.\n"
+"Usually this allows for high map quality as speed is no concern."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#, fuzzy, kde-format
+#| msgid "During &animations:"
+msgid "During Animations:"
+msgstr "Podczas &animacji:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#, kde-format
+msgid ""
+"Specifies the map quality that gets displayed during map animations\n"
+"(e.g. while dragging the globe). Especially on slow machines it is\n"
+"advisable to set this option to \"low quality\" as this will give better "
+"speed."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:159
+#, kde-format
+msgid "Mouse Behavior"
+msgstr "Zachowanie myszy"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:161
+#, fuzzy, kde-format
+#| msgid "&Inertial globe rotation"
+msgid "Inertial Globe Rotation"
+msgstr "&Bezwładny obrót globem"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:162
+#, kde-format
+msgid "Use kinetic spinning when dragging the map"
+msgstr "Użyj obrotu kinetycznego przy przeciąganiu mapy"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
+#, fuzzy, kde-format
+#| msgid "&Mouse view rotation"
+msgid "Mouse View Rotation"
+msgstr "Obrót widoku &myszą"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
+#, kde-format
+msgid "Use right mouse button to rotate the camera around"
+msgstr "Aby obracać kamerą wokół, użyj prawego przycisku myszy"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:171
+#, kde-format
+msgid "Cache"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:172
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#| "font-weight:400; font-style:normal;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches "
+#| "being used for Marble: The physical memory which is needed to keep map "
+#| "data in the computer's memory. Increasing the value will make the "
+#| "application more responsive. The hard disc memory cache is used by "
+#| "download contents from the Internet (e.g. Wikipedia data or map data). "
+#| "Decrease this value if you want to save space on the hard disc and if "
+#| "high usage of the Internet is not an issue. </p></body></html>"
+msgid ""
+"There are two caches being used:\n"
+"The \"physical memory\" which is needed to keep map data in the computer's "
+"memory.\n"
+"Increasing the value will make the application more responsive.\n"
+"The \"hard disc memory\" cache is used by download map data from the "
+"Internet.\n"
+"Decrease this value if you want to save space on the hard disc\n"
+"and if high usage of the Internet is not an issue."
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble używa dwóch "
+"rodzajów pamięci podręcznej: Pamięci fizycznej, potrzebnej do przechowywania "
+"danych mapy w pamięci komputera. Zwiększając wartość, program będzie "
+"reagował szybciej. Pamięć podręczna dysku twardego jest używana do "
+"pobierania treści z internetu (np. danych Wikipedia lub danych mapy). Jeśli "
+"chcesz zwiększyć przestrzeń na dysku twardym oraz nie zależy Ci na "
+"maksymalnym wykorzystaniu zasobów internetu, powinieneś zmniejszyć tą "
+"wartość. </p></body></html>"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:179
+#, fuzzy, kde-format
+#| msgid "&Physical memory:"
+msgid "Physical Memory:"
+msgstr "Pamięć &fizyczna:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
+#, fuzzy, kde-format
+#| msgctxt "@action: search bar"
+#| msgid "Clear"
+msgid "Clear"
+msgstr "Wyczyść"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:186
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Hard Mask"
+msgid "Hard Disc:"
+msgstr "Twarda maska"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:202
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Load Contents"
+msgid "Map Contents"
+msgstr "Wczytaj zawartość"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:204
+#, fuzzy, kde-format
+#| msgid "Default map &font:"
+msgid "Default Font:"
+msgstr "&Domyślna czcionka mapy:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
+#, kde-format
+msgid "The default font that gets used on the map."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:208
+#, fuzzy, kde-format
+#| msgid "Show grid"
+msgid "Show Grid"
+msgstr "Pokaż siatkę"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
+#, kde-format
+msgid "Show the world-map grid overlay"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
+#, kde-format
+msgid "Show Cross-Hair"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:212
+#, kde-format
+msgid "Show cross-hair on a center of the map"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:214
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Show item permanently"
+msgid "Show Atmosphere"
+msgstr "Trwale pokaż rzecz"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
+#, fuzzy, kde-format
+#| msgid "Shows the atmosphere around the earth."
+msgid "Show the world-map atmosphere overlay"
+msgstr "Pokazuje atmosferę wokół Ziemi."
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:217
+#, fuzzy, kde-format
+#| msgid "Show navigation"
+msgid "Show Sun-Shading"
+msgstr "Pokaż sterowanie"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:218
+#, kde-format
+msgid "Show the world-map sun-shading overlay"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:249
 #, kde-format
 msgid "Marble View"
 msgstr "Widok Marble"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:98
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:267
 #, kde-format
 msgid "Marble Plugins"
 msgstr "Wtyczki Marble"
@@ -57062,366 +57348,6 @@ msgid ""
 "p><p><u>Description:</u> %4</p>"
 msgstr ""
 "<p><u>Wersja:</u> %1</p><p><u>Autorzy:</u> %2</p><p><u>Opis:</u> %3</p>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:19
-#, kde-format
-msgid "&Units"
-msgstr "&Jednostki"
-
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:31
-#, kde-format
-msgid "An&gle:"
-msgstr "&Kąt:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:53
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
-"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Jednostka używana do "
-"pomiaru wysokości, długości i odległości (np. km, mi, ft).</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
-#, kde-format
-msgid "Kilometer, Meter"
-msgstr "Kilometr, metr"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:62
-#, kde-format
-msgid "Miles, Feet"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:67
-#, kde-format
-msgid "Nautical miles, Knots"
-msgstr "Mile morskie, Węzły"
-
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:87
-#, kde-format
-msgid "&Distance:"
-msgstr "&Odległość:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:103
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
-"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
-"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
-"g. 54.5°).</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Określa sposób zapisu "
-"kątów we współrzędnych geograficznych: Domyślnym zapisem jest stopnie-minuty-"
-"sekundy (np. 54°30'00\"). Możesz również wybrać stopnie dziesiętne (np. "
-"54.5°).</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:107
-#, kde-format
-msgid "Degree (DMS)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:112
-#, kde-format
-msgid "Degree (Decimal)"
-msgstr "Stopień (dziesiętne)"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:117
-#, kde-format
-msgid "Universal Transverse Mercator (UTM)"
-msgstr "Uniwersalny Poprzeczny Mercator (UTM)"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:128
-#, kde-format
-msgid "Map &Quality"
-msgstr "Jak&ość mapy"
-
-#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:146
-#, kde-format
-msgid "&Still image:"
-msgstr "&Nieruchomy obraz:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:162
-#, kde-format
-msgid "During &animations:"
-msgstr "Podczas &animacji:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:175
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed while there is no user input. Usually this allows for "
-"high map quality as speed is no concern.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Określa jakość mapy "
-"wyświetlanej, gdy nie ma aktywności użytkownika. Zazwyczaj pozwala to na "
-"uzyskanie wysokiej jakości obrazu, zachowując satysfakcjonującą szybkość.</"
-"p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:182
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:221
-#, kde-format
-msgid "Outline Quality"
-msgstr "Jakość szkicu"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:187
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:226
-#, kde-format
-msgid "Low Quality"
-msgstr "Niska jakość"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:192
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:231
-#, kde-format
-msgid "Normal"
-msgstr "Normalny"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:197
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:236
-#, kde-format
-msgid "High Quality"
-msgstr "Wysoka jakość"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:202
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:241
-#, kde-format
-msgid "Print Quality"
-msgstr "Jakość wydruku"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:214
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed during map animations (e.g. while dragging the globe). </"
-"p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-"machines it is advisable to set this option to \"low quality\" as this will "
-"give better speed.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Określa jakość mapy "
-"wyświetlanej podczas animacji mapy (np. przy animowanej zmianie położenia). "
-"</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Na wolniejszych "
-"komputerach zalecane jest wybranie opcji \"niska jakość\", gdyż przyspieszy "
-"to pracę komputera.</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:256
-#, kde-format
-msgid "Mouse Behavior"
-msgstr "Zachowanie myszy"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:262
-#, kde-format
-msgid "Use kinetic spinning when dragging the map"
-msgstr "Użyj obrotu kinetycznego przy przeciąganiu mapy"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:265
-#, kde-format
-msgid "&Inertial globe rotation"
-msgstr "&Bezwładny obrót globem"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:272
-#, kde-format
-msgid "Use right mouse button to rotate the camera around"
-msgstr "Aby obracać kamerą wokół, użyj prawego przycisku myszy"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:275
-#, kde-format
-msgid "&Mouse view rotation"
-msgstr "Obrót widoku &myszą"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:288
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
-"used for Marble: The physical memory which is needed to keep map data in the "
-"computer's memory. Increasing the value will make the application more "
-"responsive. The hard disc memory cache is used by download contents from the "
-"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
-"to save space on the hard disc and if high usage of the Internet is not an "
-"issue. </p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble używa dwóch "
-"rodzajów pamięci podręcznej: Pamięci fizycznej, potrzebnej do przechowywania "
-"danych mapy w pamięci komputera. Zwiększając wartość, program będzie "
-"reagował szybciej. Pamięć podręczna dysku twardego jest używana do "
-"pobierania treści z internetu (np. danych Wikipedia lub danych mapy). Jeśli "
-"chcesz zwiększyć przestrzeń na dysku twardym oraz nie zależy Ci na "
-"maksymalnym wykorzystaniu zasobów internetu, powinieneś zmniejszyć tą "
-"wartość. </p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:291
-#, kde-format
-msgid "C&ache"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:325
-#, kde-format
-msgid "&Hard disc:"
-msgstr ""
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:344
-#, kde-format
-msgid "Unlimited"
-msgstr "Nieograniczona"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:366
-#, kde-format
-msgid "C&lear"
-msgstr "&Wyczyść"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:379
-#, kde-format
-msgid "Cl&ear"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:398
-#, kde-format
-msgid "&Physical memory:"
-msgstr "Pamięć &fizyczna:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:413
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Load Contents"
-msgid "Map Contents"
-msgstr "Wczytaj zawartość"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:433
-#, fuzzy, kde-format
-#| msgid "Default map &font:"
-msgid "Default &font:"
-msgstr "&Domyślna czcionka mapy:"
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:446
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Domyślna czcionka używana "
-"na mapie.</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showGrid)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:458
-#, fuzzy, kde-format
-#| msgid "Show grid"
-msgid "Show Grid"
-msgstr "Pokaż siatkę"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -67480,6 +67406,135 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Czy wyzerować wszystkie ustawienia obraz do wartości domyślnych?"
 
+#~ msgid "&Units"
+#~ msgstr "&Jednostki"
+
+#~ msgid "An&gle:"
+#~ msgstr "&Kąt:"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used "
+#~ "to measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Jednostka używana do "
+#~ "pomiaru wysokości, długości i odległości (np. km, mi, ft).</p></body></"
+#~ "html>"
+
+#~ msgid "&Distance:"
+#~ msgstr "&Odległość:"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation "
+#~ "of angles in coordinates: By default the Degree-Minute-Second notation (e."
+#~ "g. 54°30'00\" ) gets used. As an alternative you can choose decimal "
+#~ "degrees (e.g. 54.5°).</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Określa sposób zapisu "
+#~ "kątów we współrzędnych geograficznych: Domyślnym zapisem jest stopnie-"
+#~ "minuty-sekundy (np. 54°30'00\"). Możesz również wybrać stopnie dziesiętne "
+#~ "(np. 54.5°).</p></body></html>"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
+#~ "quality that gets displayed while there is no user input. Usually this "
+#~ "allows for high map quality as speed is no concern.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Określa jakość mapy "
+#~ "wyświetlanej, gdy nie ma aktywności użytkownika. Zazwyczaj pozwala to na "
+#~ "uzyskanie wysokiej jakości obrazu, zachowując satysfakcjonującą szybkość."
+#~ "</p></body></html>"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
+#~ "quality that gets displayed during map animations (e.g. while dragging "
+#~ "the globe). </p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
+#~ "machines it is advisable to set this option to \"low quality\" as this "
+#~ "will give better speed.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Określa jakość mapy "
+#~ "wyświetlanej podczas animacji mapy (np. przy animowanej zmianie "
+#~ "położenia). </p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Na wolniejszych "
+#~ "komputerach zalecane jest wybranie opcji \"niska jakość\", gdyż "
+#~ "przyspieszy to pracę komputera.</p></body></html>"
+
+#~ msgid "Unlimited"
+#~ msgstr "Nieograniczona"
+
+#~ msgid "C&lear"
+#~ msgstr "&Wyczyść"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that "
+#~ "gets used on the map.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Domyślna czcionka "
+#~ "używana na mapie.</p></body></html>"
+
 #~| msgid "Labels"
 #~ msgid "&Text Labels"
 #~ msgstr "Etykiety &tekstowe"
@@ -68233,12 +68288,6 @@ msgstr "Czy wyzerować wszystkie ustawienia obraz do wartości domyślnych?"
 #~ msgstr "Wyrównaj tekst do prawej"
 
 #, fuzzy
-#~| msgctxt "@action: search bar"
-#~| msgid "Clear"
-#~ msgid "Clear"
-#~ msgstr "Wyczyść"
-
-#, fuzzy
 #~| msgctxt "@info: month-name year-string"
 #~| msgid "%1 %2"
 #~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
@@ -68294,11 +68343,6 @@ msgstr "Czy wyzerować wszystkie ustawienia obraz do wartości domyślnych?"
 #~| msgid "Luminance Noise"
 #~ msgid "Guidance Mode"
 #~ msgstr "Szum luminancji"
-
-#, fuzzy
-#~| msgid "Show navigation"
-#~ msgid "Show again"
-#~ msgstr "Pokaż sterowanie"
 
 #, fuzzy
 #~| msgid "Configure this column"
