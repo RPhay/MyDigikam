@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 00:39+0000\n"
+"POT-Creation-Date: 2023-12-30 00:39+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -8840,6 +8840,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:144
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:106
 #, fuzzy, kde-format
 msgid "Distance:"
 msgstr "सेतो सन्तुलन:"
@@ -9722,7 +9723,7 @@ msgstr "मार्गदर्शन चौडाइ:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
 msgid " px"
@@ -19189,7 +19190,7 @@ msgstr "सेटिङ..."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:163
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:172
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, fuzzy, kde-format
 msgid "Image Format:"
@@ -19519,7 +19520,7 @@ msgid "Thunderbird"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
 #: core/libs/dplugins/webservices/wssettings.cpp:128
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -19527,7 +19528,7 @@ msgid "Jpeg"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
 #: core/libs/dplugins/webservices/wssettings.cpp:129
 #, fuzzy, kde-format
 msgctxt "Image format: PNG"
@@ -19646,11 +19647,9 @@ msgid ""
 "will be added as an attached file."
 msgstr ""
 
-#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
-#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:300
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:347
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
 #, kde-format
 msgid " MB"
 msgstr ""
@@ -19661,14 +19660,14 @@ msgid "Maximum email size limit:"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:137
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, fuzzy, kde-format
 msgid "Adjust image properties"
 msgstr "फाइल गुण"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:139
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, fuzzy, kde-format
 #| msgid "<p>If you enable this option, you will see the target image."
@@ -19678,14 +19677,14 @@ msgid ""
 msgstr "<p>तपाईँले यो विकल्प सक्षम पार्नुभएमा, तपाईँले लक्ष्य छवि देख्नुहुनेछ ।"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:145
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:154
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, fuzzy, kde-format
 msgid "Image Properties"
 msgstr "फाइल गुण"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid ""
@@ -19694,14 +19693,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:156
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, fuzzy, kde-format
 msgid "Image Length:"
 msgstr "छवि सम्पादक"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:167
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:176
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, fuzzy, kde-format
 msgid "Select your preferred format to convert image."
@@ -19723,21 +19722,21 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:185
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:194
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, fuzzy, kde-format
 msgid "Image quality:"
 msgstr "छवि सम्पादक"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:190
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:199
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, fuzzy, kde-format
 msgid "Remove all metadata"
 msgstr "मेटाडेटा"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:191
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:200
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, fuzzy, kde-format
 #| msgid "<p>If you enable this option, you will see the target image."
@@ -21762,62 +21761,68 @@ msgstr ""
 msgid "Facebook Call Failed: %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:107
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:110
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
 #, fuzzy, kde-format
 #| msgid "Image Caption"
 msgid "Target location: "
 msgstr "छवि क्याप्सन"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:111
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "फोल्डरद्वारा"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
 #, fuzzy, kde-format
 msgid "Sets the target address to copy the items to."
 msgstr "<p>एल्बम नाम प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
 #, fuzzy, kde-format
 msgid "Target file behavior:"
 msgstr "छवि फाइल"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:116
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy files"
 msgstr "यहाँ प्रतिलिपि बनाउनुहोस्"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:120
 #, fuzzy, kde-format
 msgid "Create symlinks"
 msgstr "फोल्डर सिर्जना असफल"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, fuzzy, kde-format
 msgid "Create relative symlinks"
 msgstr "ट्याग मानाङ्कन गर्नुहोस्"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:120
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, kde-format
-msgid "Include the sidecars of the items"
+msgid "Include the sidecar of the items"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
+#, fuzzy, kde-format
+#| msgid "Write metadata to each file"
+msgid "Write sidecar metadata to the items"
+msgstr "प्रत्येक फाइलमा मेटाडेटा लेख्नुहोस्"
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:125
 #, kde-format
 msgid "Overwrite existing items in the target"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:126
 #, fuzzy, kde-format
 msgid "Use the album path of the items in the target"
 msgstr "पहिलो वस्तुमा जानुहोस्"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:187
 #, fuzzy, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -21830,18 +21835,18 @@ msgstr ""
 "फाइल साइज तर लामो सङ्कुचन अवधि)<p><b>द्रष्टव्य: PNG सधै नोक्सान रहित छवि सङ्कुचन ढाँचा "
 "हो ।</b>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:216
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:225
 #, fuzzy, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "यो मेट्न लागेको वस्तुको सूची हो ।"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:93
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "टिप्पणी:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:96
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
 #, fuzzy, kde-format
 #| msgid "Start Index:"
@@ -21849,7 +21854,7 @@ msgctxt "@action:button"
 msgid "Start Export"
 msgstr "अनुक्रमणिका सुरु गर्नुहोस्:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:97
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
 #, fuzzy, kde-format
 #| msgid "&Rotate"
@@ -21857,14 +21862,14 @@ msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "घुमाउनुहोस्"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:221
 #, fuzzy, kde-format
 #| msgid "Download Selected"
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "चयन गरेको डाउनलोड गर्नुहोस्"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:222
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -52337,7 +52342,7 @@ msgstr "फोटोग्राफ सूचना"
 msgid "Load tracks from albums"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:828
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
 #, fuzzy, kde-format
 msgid "Map settings"
 msgstr "सेटिङ"
@@ -55292,13 +55297,246 @@ msgid ""
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:80
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:104
+#, fuzzy, kde-format
+msgid "Units"
+msgstr "फाइल साइज देखाउनुहोस्"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
+#, kde-format
+msgid "Kilometer, Meter"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
+#, kde-format
+msgid "Miles, Feet"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
+#, kde-format
+msgid "Nautical miles, Knots"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:111
+#, kde-format
+msgid ""
+"The unit that gets used to measure altitude, lengths and distances (e.g. km, "
+"mi, ft)."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
+#, fuzzy, kde-format
+msgid "Angle:"
+msgstr "दायरा:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
+#, kde-format
+msgid "Degree (DMS)"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:116
+#, kde-format
+msgid "Degree (Decimal)"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#, kde-format
+msgid "Universal Transverse Mercator (UTM)"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
+#, kde-format
+msgid ""
+"Specifies the notation of angles in coordinates.\n"
+"By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
+"As an alternative you can choose decimal degrees (e.g. 54.5°)."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:129
+#, fuzzy, kde-format
+msgid "Map Quality"
+msgstr "जेपीईजी गुणस्तर:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:131
+#, fuzzy, kde-format
+msgid "Still Image:"
+msgstr "छवि बचत गर्नुहोस्"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:143
+#, fuzzy, kde-format
+msgid "Outline Quality"
+msgstr "पूरा पाठ"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:144
+#, fuzzy, kde-format
+msgid "Low Quality"
+msgstr "जेपीईजी गुणस्तर:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
+#, fuzzy, kde-format
+msgid "Normal"
+msgstr "सामान्य"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
+#, fuzzy, kde-format
+msgid "High Quality"
+msgstr "जेपीईजी गुणस्तर:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
+#, fuzzy, kde-format
+#| msgid "Saturation:"
+msgid "Print Quality"
+msgstr "स्याचुरेसन:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#, kde-format
+msgid ""
+"Specifies the map quality that gets displayed while there is no user input.\n"
+"Usually this allows for high map quality as speed is no concern."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#, fuzzy, kde-format
+msgid "During Animations:"
+msgstr "अवधि: %1"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#, kde-format
+msgid ""
+"Specifies the map quality that gets displayed during map animations\n"
+"(e.g. while dragging the globe). Especially on slow machines it is\n"
+"advisable to set this option to \"low quality\" as this will give better "
+"speed."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:159
+#, fuzzy, kde-format
+msgid "Mouse Behavior"
+msgstr "व्यवहार"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:161
+#, fuzzy, kde-format
+#| msgid "&Invert Selection"
+msgid "Inertial Globe Rotation"
+msgstr "चयन उल्टाउनुहोस्"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:162
+#, kde-format
+msgid "Use kinetic spinning when dragging the map"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
+#, fuzzy, kde-format
+msgid "Mouse View Rotation"
+msgstr "क्यामेरा सूचना"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
+#, fuzzy, kde-format
+#| msgid "<p>Set this option to display image type."
+msgid "Use right mouse button to rotate the camera around"
+msgstr "<p>छवि प्रकार प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:171
+#, kde-format
+msgid "Cache"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:172
+#, kde-format
+msgid ""
+"There are two caches being used:\n"
+"The \"physical memory\" which is needed to keep map data in the computer's "
+"memory.\n"
+"Increasing the value will make the application more responsive.\n"
+"The \"hard disc memory\" cache is used by download map data from the "
+"Internet.\n"
+"Decrease this value if you want to save space on the hard disc\n"
+"and if high usage of the Internet is not an issue."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:179
+#, kde-format
+msgid "Physical Memory:"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
+#, fuzzy, kde-format
+msgid "Clear"
+msgstr "मानक"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:186
+#, kde-format
+msgid "Hard Disc:"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:202
+#, fuzzy, kde-format
+msgid "Map Contents"
+msgstr "व्यतिरेक:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:204
+#, fuzzy, kde-format
+msgid "Default Font:"
+msgstr "पूर्वनिर्धारित प्रोफाइल प्रयोग गर्नुहोस्"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
+#, kde-format
+msgid "The default font that gets used on the map."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:208
+#, fuzzy, kde-format
+msgid "Show Grid"
+msgstr "तस्विर दर देखाउनुहोस्"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
+#, kde-format
+msgid "Show the world-map grid overlay"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
+#, kde-format
+msgid "Show Cross-Hair"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:212
+#, kde-format
+msgid "Show cross-hair on a center of the map"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:214
+#, fuzzy, kde-format
+msgid "Show Atmosphere"
+msgstr "छवि प्रकार देखाउनुहोस्"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
+#, kde-format
+msgid "Show the world-map atmosphere overlay"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:217
+#, fuzzy, kde-format
+msgid "Show Sun-Shading"
+msgstr "तस्विर दर देखाउनुहोस्"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:218
+#, kde-format
+msgid "Show the world-map sun-shading overlay"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:249
 #, fuzzy, kde-format
 #| msgid "More"
 msgid "Marble View"
 msgstr "बढि"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:98
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:267
 #, fuzzy, kde-format
 msgid "Marble Plugins"
 msgstr "छवि प्लगइन"
@@ -55319,302 +55557,6 @@ msgid ""
 "<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
 "p><p><u>Description:</u> %4</p>"
 msgstr "<b>शीर्षक: </b><p>%1<p><b>मान: </b><p>%2<p><b>वर्णन: </b><p>%3"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:19
-#, fuzzy, kde-format
-msgid "&Units"
-msgstr "फाइल साइज देखाउनुहोस्"
-
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:31
-#, fuzzy, kde-format
-msgid "An&gle:"
-msgstr "दायरा:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:53
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
-"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
-#, kde-format
-msgid "Kilometer, Meter"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:62
-#, kde-format
-msgid "Miles, Feet"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:67
-#, kde-format
-msgid "Nautical miles, Knots"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:87
-#, fuzzy, kde-format
-msgid "&Distance:"
-msgstr "सेतो सन्तुलन:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:103
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
-"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
-"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
-"g. 54.5°).</p></body></html>"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:107
-#, kde-format
-msgid "Degree (DMS)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:112
-#, kde-format
-msgid "Degree (Decimal)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:117
-#, kde-format
-msgid "Universal Transverse Mercator (UTM)"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:128
-#, fuzzy, kde-format
-msgid "Map &Quality"
-msgstr "जेपीईजी गुणस्तर:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:146
-#, fuzzy, kde-format
-msgid "&Still image:"
-msgstr "छवि बचत गर्नुहोस्"
-
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:162
-#, fuzzy, kde-format
-msgid "During &animations:"
-msgstr "अवधि: %1"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:175
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed while there is no user input. Usually this allows for "
-"high map quality as speed is no concern.</p></body></html>"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:182
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:221
-#, fuzzy, kde-format
-msgid "Outline Quality"
-msgstr "पूरा पाठ"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:187
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:226
-#, fuzzy, kde-format
-msgid "Low Quality"
-msgstr "जेपीईजी गुणस्तर:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:192
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:231
-#, fuzzy, kde-format
-msgid "Normal"
-msgstr "सामान्य"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:197
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:236
-#, fuzzy, kde-format
-msgid "High Quality"
-msgstr "जेपीईजी गुणस्तर:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:202
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:241
-#, fuzzy, kde-format
-#| msgid "Saturation:"
-msgid "Print Quality"
-msgstr "स्याचुरेसन:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:214
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed during map animations (e.g. while dragging the globe). </"
-"p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-"machines it is advisable to set this option to \"low quality\" as this will "
-"give better speed.</p></body></html>"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:256
-#, fuzzy, kde-format
-msgid "Mouse Behavior"
-msgstr "व्यवहार"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:262
-#, kde-format
-msgid "Use kinetic spinning when dragging the map"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:265
-#, fuzzy, kde-format
-#| msgid "&Invert Selection"
-msgid "&Inertial globe rotation"
-msgstr "चयन उल्टाउनुहोस्"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:272
-#, fuzzy, kde-format
-#| msgid "<p>Set this option to display image type."
-msgid "Use right mouse button to rotate the camera around"
-msgstr "<p>छवि प्रकार प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:275
-#, fuzzy, kde-format
-msgid "&Mouse view rotation"
-msgstr "क्यामेरा सूचना"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:288
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
-"used for Marble: The physical memory which is needed to keep map data in the "
-"computer's memory. Increasing the value will make the application more "
-"responsive. The hard disc memory cache is used by download contents from the "
-"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
-"to save space on the hard disc and if high usage of the Internet is not an "
-"issue. </p></body></html>"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:291
-#, kde-format
-msgid "C&ache"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:325
-#, kde-format
-msgid "&Hard disc:"
-msgstr ""
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:344
-#, kde-format
-msgid "Unlimited"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:366
-#, fuzzy, kde-format
-msgid "C&lear"
-msgstr "मानक"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:379
-#, kde-format
-msgid "Cl&ear"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:398
-#, kde-format
-msgid "&Physical memory:"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:413
-#, fuzzy, kde-format
-msgid "Map Contents"
-msgstr "व्यतिरेक:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:433
-#, fuzzy, kde-format
-msgid "Default &font:"
-msgstr "पूर्वनिर्धारित प्रोफाइल प्रयोग गर्नुहोस्"
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:446
-#, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showGrid)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:458
-#, fuzzy, kde-format
-msgid "Show Grid"
-msgstr "तस्विर दर देखाउनुहोस्"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, fuzzy, kde-format
@@ -65112,6 +65054,22 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "<p>सबै फिल्टर परिमितिहरूलाई तिनीहरूको पूर्वनिर्धारित मानमा रिसेट गर्नुहोस् ।"
 
 #, fuzzy
+#~ msgid "&Units"
+#~ msgstr "फाइल साइज देखाउनुहोस्"
+
+#, fuzzy
+#~ msgid "An&gle:"
+#~ msgstr "दायरा:"
+
+#, fuzzy
+#~ msgid "&Distance:"
+#~ msgstr "सेतो सन्तुलन:"
+
+#, fuzzy
+#~ msgid "C&lear"
+#~ msgstr "मानक"
+
+#, fuzzy
 #~| msgid "Nature"
 #~ msgid "&Text Labels"
 #~ msgstr "प्रकृति"
@@ -65440,10 +65398,6 @@ msgstr "<p>सबै फिल्टर परिमितिहरूलाई 
 #~ msgstr "घुमाउनुहोस्"
 
 #, fuzzy
-#~ msgid "Clear"
-#~ msgstr "मानक"
-
-#, fuzzy
 #~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
 #~ msgid "%1 %2, %3"
 #~ msgstr "%1 (%2)"
@@ -65475,10 +65429,6 @@ msgstr "<p>सबै फिल्टर परिमितिहरूलाई 
 #, fuzzy
 #~ msgid "Export Route"
 #~ msgstr "निर्यात"
-
-#, fuzzy
-#~ msgid "Show again"
-#~ msgstr "तस्विर दर देखाउनुहोस्"
 
 #, fuzzy
 #~ msgid "Configure Routing Profile"
@@ -69390,10 +69340,6 @@ msgstr "<p>सबै फिल्टर परिमितिहरूलाई 
 #, fuzzy
 #~ msgid "Show item date"
 #~ msgstr "फाइल मिति देखाउनुहोस्"
-
-#, fuzzy
-#~ msgid "Show item type"
-#~ msgstr "छवि प्रकार देखाउनुहोस्"
 
 #, fuzzy
 #~ msgid "MIME Types"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 00:39+0000\n"
+"POT-Creation-Date: 2023-12-30 00:39+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -9016,6 +9016,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:144
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:106
 #, kde-format
 msgid "Distance:"
 msgstr "المسافة:"
@@ -9883,7 +9884,7 @@ msgstr "العرض الجديد:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
 msgid " px"
@@ -19718,7 +19719,7 @@ msgstr "ثنائيّات الصّور البانوراميّة"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:163
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:172
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, kde-format
 msgid "Image Format:"
@@ -20074,7 +20075,7 @@ msgid "Thunderbird"
 msgstr "طائر الرعد"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
 #: core/libs/dplugins/webservices/wssettings.cpp:128
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -20082,7 +20083,7 @@ msgid "Jpeg"
 msgstr "JPEG"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
 #: core/libs/dplugins/webservices/wssettings.cpp:129
 #, kde-format
 msgctxt "Image format: PNG"
@@ -20202,11 +20203,9 @@ msgid ""
 "will be added as an attached file."
 msgstr ""
 
-#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_volatileTileCacheLimit)
-#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_persistentTileCacheLimit)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:300
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:347
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
 #, kde-format
 msgid " MB"
 msgstr " م.بايت"
@@ -20217,7 +20216,7 @@ msgid "Maximum email size limit:"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:137
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, fuzzy, kde-format
 #| msgid "Add file properties"
@@ -20225,7 +20224,7 @@ msgid "Adjust image properties"
 msgstr "أضف خصائص الملفّ"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:139
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, fuzzy, kde-format
 msgid ""
@@ -20234,14 +20233,14 @@ msgid ""
 msgstr "<p> إذا تمكين خيار هدف صورة."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:145
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:154
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid "Image Properties"
 msgstr "خصائص الصورة"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid ""
@@ -20250,7 +20249,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:156
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, fuzzy, kde-format
 #| msgid "Image List"
@@ -20258,7 +20257,7 @@ msgid "Image Length:"
 msgstr "قائمة الصّور"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:167
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:176
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, fuzzy, kde-format
 #| msgid "Select the profile of the color space to convert to."
@@ -20281,14 +20280,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:185
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:194
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, kde-format
 msgid "Image quality:"
 msgstr "جودة الصورة:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:190
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:199
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, fuzzy, kde-format
 #| msgid "Remove Metadata"
@@ -20296,7 +20295,7 @@ msgid "Remove all metadata"
 msgstr "أزل البيانات الوصفيّة"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:191
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:200
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, fuzzy, kde-format
 msgid ""
@@ -22427,66 +22426,72 @@ msgstr ""
 msgid "Facebook Call Failed: %1"
 msgstr "فشل نداء «فيسبوك»: %1"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:107
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:110
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
 #, kde-format
 msgid "Target location: "
 msgstr "المكان الهدف: "
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:111
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
 #, fuzzy, kde-format
 #| msgid "Target Folder"
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "المجلّد الهدف"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "Set this option to display the item date."
 msgid "Sets the target address to copy the items to."
 msgstr "اضبط هذا الخيار لعرض تاريخ العنصر."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "If Target File Exists:"
 msgid "Target file behavior:"
 msgstr "إن وُجد الملفّ الهدف:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:116
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
 #, kde-format
 msgid "Copy files"
 msgstr "انسخ الملفّات"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Created tables"
 msgid "Create symlinks"
 msgstr "أُنشأت الجداول"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, fuzzy, kde-format
 #| msgid "Ignore grouping"
 msgid "Create relative symlinks"
 msgstr "تجاهل التّجميع"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:120
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, kde-format
-msgid "Include the sidecars of the items"
+msgid "Include the sidecar of the items"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
+#, fuzzy, kde-format
+#| msgid "Write metadata to each file"
+msgid "Write sidecar metadata to the items"
+msgstr "اكتب البيانات الوصفيّة في كلّ ملفّ"
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:125
 #, kde-format
 msgid "Overwrite existing items in the target"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:126
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Go to the album of this image"
 msgid "Use the album path of the items in the target"
 msgstr "انتقل إلى ألبوم هذه الصّورة"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:187
 #, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -22495,20 +22500,20 @@ msgid ""
 "no compression</p>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:216
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:225
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
 msgid "This is the list of items to copy to the specified target."
 msgstr "هذه قائمة الصّور لمعالجتها دفعة واحدة."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "استورد من ماسحة ضوئيّة..."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:96
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
 #, fuzzy, kde-format
 #| msgid "Start export"
@@ -22516,7 +22521,7 @@ msgctxt "@action:button"
 msgid "Start Export"
 msgstr "ابدأ التّصدير"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:97
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
 #, fuzzy, kde-format
 #| msgid "Start export to the specified target"
@@ -22524,13 +22529,13 @@ msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "ابدأ التّصدير إلى الهدف المحدّد"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:221
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "نزّل مختار"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:222
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -54087,7 +54092,7 @@ msgstr ""
 msgid "Load tracks from albums"
 msgstr "حمّل قائمة تشغيل من ملفّ."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:828
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
 #, kde-format
 msgid "Map settings"
 msgstr "إعدادات الخريطة"
@@ -57292,14 +57297,280 @@ msgid ""
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:80
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:104
+#, fuzzy, kde-format
+#| msgid "Units:"
+msgid "Units"
+msgstr "الوحدات:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
+#, kde-format
+msgid "Kilometer, Meter"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
+#, kde-format
+msgid "Miles, Feet"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
+#, kde-format
+msgid "Nautical miles, Knots"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:111
+#, kde-format
+msgid ""
+"The unit that gets used to measure altitude, lengths and distances (e.g. km, "
+"mi, ft)."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Angle:"
+msgid "Angle:"
+msgstr "الزاوية:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
+#, kde-format
+msgid "Degree (DMS)"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:116
+#, kde-format
+msgid "Degree (Decimal)"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#, kde-format
+msgid "Universal Transverse Mercator (UTM)"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
+#, kde-format
+msgid ""
+"Specifies the notation of angles in coordinates.\n"
+"By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
+"As an alternative you can choose decimal degrees (e.g. 54.5°)."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:129
+#, fuzzy, kde-format
+#| msgid "Quality"
+msgid "Map Quality"
+msgstr "الجودة"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:131
+#, fuzzy, kde-format
+#| msgid "&Shuffle images"
+msgid "Still Image:"
+msgstr "ا&خلط الصّور"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:143
+#, fuzzy, kde-format
+msgid "Outline Quality"
+msgstr "كامل نص"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:144
+#, fuzzy, kde-format
+#| msgid "Quality"
+msgid "Low Quality"
+msgstr "الجودة"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
+#, fuzzy, kde-format
+#| msgctxt "@action: normal exif orientation"
+#| msgid "Normal"
+msgid "Normal"
+msgstr "عادي"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
+#, fuzzy, kde-format
+#| msgid "Quality"
+msgid "High Quality"
+msgstr "الجودة"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
+#, fuzzy, kde-format
+msgid "Print Quality"
+msgstr "السحوبات:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#, kde-format
+msgid ""
+"Specifies the map quality that gets displayed while there is no user input.\n"
+"Usually this allows for high map quality as speed is no concern."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#, fuzzy, kde-format
+#| msgid "Duration:"
+msgid "During Animations:"
+msgstr "المدّة:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#, kde-format
+msgid ""
+"Specifies the map quality that gets displayed during map animations\n"
+"(e.g. while dragging the globe). Especially on slow machines it is\n"
+"advisable to set this option to \"low quality\" as this will give better "
+"speed."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:159
+#, fuzzy, kde-format
+#| msgid "Behavior"
+msgid "Mouse Behavior"
+msgstr "السّلوك"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:161
+#, fuzzy, kde-format
+#| msgid "Invert Selection"
+msgid "Inertial Globe Rotation"
+msgstr "اعكس التّحديد"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:162
+#, kde-format
+msgid "Use kinetic spinning when dragging the map"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
+#, fuzzy, kde-format
+#| msgid "Cancel this operation."
+msgid "Mouse View Rotation"
+msgstr "ألغِ العمليّة."
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
+#, fuzzy, kde-format
+msgid "Use right mouse button to rotate the camera around"
+msgstr "<p> ضبط خيار إلى عرض صورة."
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:171
+#, kde-format
+msgid "Cache"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:172
+#, fuzzy, kde-format
+msgid ""
+"There are two caches being used:\n"
+"The \"physical memory\" which is needed to keep map data in the computer's "
+"memory.\n"
+"Increasing the value will make the application more responsive.\n"
+"The \"hard disc memory\" cache is used by download map data from the "
+"Internet.\n"
+"Decrease this value if you want to save space on the hard disc\n"
+"and if high usage of the Internet is not an issue."
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم لدولتك "
+"من <a href=\"http://www.icalshare.com\"><span style=\" text-decoration: "
+"underline; color:#0057ae;\">http://www.icalshare.com</span></a> أو أيّ موقع "
+"آخر.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. ستُطبع "
+"كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:179
+#, kde-format
+msgid "Physical Memory:"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
+#, fuzzy, kde-format
+#| msgctxt "@action: search bar"
+#| msgid "Clear"
+msgid "Clear"
+msgstr "امسح"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:186
+#, kde-format
+msgid "Hard Disc:"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:202
+#, fuzzy, kde-format
+#| msgctxt "@item: iptc"
+#| msgid "Content"
+msgid "Map Contents"
+msgstr "المحتوى"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:204
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Default Language"
+msgid "Default Font:"
+msgstr "بلا"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
+#, kde-format
+msgid "The default font that gets used on the map."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:208
+#, fuzzy, kde-format
+#| msgid "Show grid"
+msgid "Show Grid"
+msgstr "اعرض الشّبكة"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
+#, kde-format
+msgid "Show the world-map grid overlay"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
+#, kde-format
+msgid "Show Cross-Hair"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:212
+#, kde-format
+msgid "Show cross-hair on a center of the map"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:214
+#, fuzzy, kde-format
+msgid "Show Atmosphere"
+msgstr "اعرض صورة نوع"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
+#, kde-format
+msgid "Show the world-map atmosphere overlay"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:217
+#, fuzzy, kde-format
+#| msgid "Show Navigation Control"
+msgid "Show Sun-Shading"
+msgstr "أظهر التحكم بالانتقال"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:218
+#, kde-format
+msgid "Show the world-map sun-shading overlay"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:249
 #, fuzzy, kde-format
 #| msgctxt "@item: texture type"
 #| msgid "Marble 2"
 msgid "Marble View"
 msgstr "رخام 2"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:98
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:267
 #, fuzzy, kde-format
 msgid "Marble Plugins"
 msgstr "جاري التّحميل صورة ملحقات"
@@ -57326,410 +57597,6 @@ msgid ""
 "p><p><u>Description:</u> %4</p>"
 msgstr ""
 "<b>العنوان: </b><p>%1</p><b>القيمة: </b><p>%2</p><b>الوصف: </b><p>%3</p>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:19
-#, fuzzy, kde-format
-#| msgid "Units:"
-msgid "&Units"
-msgstr "الوحدات:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:31
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Angle:"
-msgid "An&gle:"
-msgstr "الزاوية:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:53
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
-"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم لدولتك "
-"من <a href=\"http://www.icalshare.com\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">http://www.icalshare.com</span></a> أو أيّ موقع "
-"آخر.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. ستُطبع "
-"كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:57
-#, kde-format
-msgid "Kilometer, Meter"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:62
-#, kde-format
-msgid "Miles, Feet"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:67
-#, kde-format
-msgid "Nautical miles, Knots"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:87
-#, fuzzy, kde-format
-#| msgid "Distance:"
-msgid "&Distance:"
-msgstr "المسافة:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:103
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
-"angles in coordinates: By default the Degree-Minute-Second notation (e.g. "
-"54°30'00\" ) gets used. As an alternative you can choose decimal degrees (e."
-"g. 54.5°).</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم لدولتك "
-"من <a href=\"http://www.icalshare.com\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">http://www.icalshare.com</span></a> أو أيّ موقع "
-"آخر.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. ستُطبع "
-"كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:107
-#, kde-format
-msgid "Degree (DMS)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:112
-#, kde-format
-msgid "Degree (Decimal)"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:117
-#, kde-format
-msgid "Universal Transverse Mercator (UTM)"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:128
-#, fuzzy, kde-format
-#| msgid "Quality"
-msgid "Map &Quality"
-msgstr "الجودة"
-
-#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:146
-#, fuzzy, kde-format
-#| msgid "&Shuffle images"
-msgid "&Still image:"
-msgstr "ا&خلط الصّور"
-
-#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:162
-#, fuzzy, kde-format
-#| msgid "Duration:"
-msgid "During &animations:"
-msgstr "المدّة:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:175
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed while there is no user input. Usually this allows for "
-"high map quality as speed is no concern.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم لدولتك "
-"من <a href=\"http://www.icalshare.com\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">http://www.icalshare.com</span></a> أو أيّ موقع "
-"آخر.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. ستُطبع "
-"كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:182
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:221
-#, fuzzy, kde-format
-msgid "Outline Quality"
-msgstr "كامل نص"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:187
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:226
-#, fuzzy, kde-format
-#| msgid "Quality"
-msgid "Low Quality"
-msgstr "الجودة"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:192
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:231
-#, fuzzy, kde-format
-#| msgctxt "@action: normal exif orientation"
-#| msgid "Normal"
-msgid "Normal"
-msgstr "عادي"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:197
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:236
-#, fuzzy, kde-format
-#| msgid "Quality"
-msgid "High Quality"
-msgstr "الجودة"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:202
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:241
-#, fuzzy, kde-format
-msgid "Print Quality"
-msgstr "السحوبات:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:214
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
-"that gets displayed during map animations (e.g. while dragging the globe). </"
-"p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-"machines it is advisable to set this option to \"low quality\" as this will "
-"give better speed.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم لدولتك "
-"من <a href=\"http://www.icalshare.com\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">http://www.icalshare.com</span></a> أو أيّ موقع "
-"آخر.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. ستُطبع "
-"كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:256
-#, fuzzy, kde-format
-#| msgid "Behavior"
-msgid "Mouse Behavior"
-msgstr "السّلوك"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:262
-#, kde-format
-msgid "Use kinetic spinning when dragging the map"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inertialEarthRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:265
-#, fuzzy, kde-format
-#| msgid "Invert Selection"
-msgid "&Inertial globe rotation"
-msgstr "اعكس التّحديد"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:272
-#, fuzzy, kde-format
-msgid "Use right mouse button to rotate the camera around"
-msgstr "<p> ضبط خيار إلى عرض صورة."
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_mouseViewRotation)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:275
-#, fuzzy, kde-format
-#| msgid "Cancel this operation."
-msgid "&Mouse view rotation"
-msgstr "ألغِ العمليّة."
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:288
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
-"used for Marble: The physical memory which is needed to keep map data in the "
-"computer's memory. Increasing the value will make the application more "
-"responsive. The hard disc memory cache is used by download contents from the "
-"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
-"to save space on the hard disc and if high usage of the Internet is not an "
-"issue. </p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم لدولتك "
-"من <a href=\"http://www.icalshare.com\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">http://www.icalshare.com</span></a> أو أيّ موقع "
-"آخر.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. ستُطبع "
-"كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:291
-#, kde-format
-msgid "C&ache"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:325
-#, kde-format
-msgid "&Hard disc:"
-msgstr ""
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:344
-#, kde-format
-msgid "Unlimited"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:366
-#, fuzzy, kde-format
-#| msgctxt "@action: search bar"
-#| msgid "Clear"
-msgid "C&lear"
-msgstr "امسح"
-
-#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:379
-#, kde-format
-msgid "Cl&ear"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:398
-#, kde-format
-msgid "&Physical memory:"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:413
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Content"
-msgid "Map Contents"
-msgstr "المحتوى"
-
-#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:433
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
-msgid "Default &font:"
-msgstr "بلا"
-
-#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:446
-#, fuzzy, kde-format
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
-"used on the map.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم لدولتك "
-"من <a href=\"http://www.icalshare.com\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">http://www.icalshare.com</span></a> أو أيّ موقع "
-"آخر.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. ستُطبع "
-"كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showGrid)
-#: core/utilities/geolocation/marble/settings/MarbleViewSettingsWidget.ui:458
-#, fuzzy, kde-format
-#| msgid "Show grid"
-msgid "Show Grid"
-msgstr "اعرض الشّبكة"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, fuzzy, kde-format
@@ -67502,6 +67369,172 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "صفّر كلّ الإعدادات إلى قيمها الافتراضيّة."
 
 #, fuzzy
+#~| msgid "Units:"
+#~ msgid "&Units"
+#~ msgstr "الوحدات:"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Angle:"
+#~ msgid "An&gle:"
+#~ msgstr "الزاوية:"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used "
+#~ "to measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:italic;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم "
+#~ "لدولتك من <a href=\"http://www.icalshare.com\"><span style=\" text-"
+#~ "decoration: underline; color:#0057ae;\">http://www.icalshare.com</span></"
+#~ "a> أو أيّ موقع آخر.</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. "
+#~ "ستُطبع كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
+
+#, fuzzy
+#~| msgid "Distance:"
+#~ msgid "&Distance:"
+#~ msgstr "المسافة:"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation "
+#~ "of angles in coordinates: By default the Degree-Minute-Second notation (e."
+#~ "g. 54°30'00\" ) gets used. As an alternative you can choose decimal "
+#~ "degrees (e.g. 54.5°).</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:italic;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم "
+#~ "لدولتك من <a href=\"http://www.icalshare.com\"><span style=\" text-"
+#~ "decoration: underline; color:#0057ae;\">http://www.icalshare.com</span></"
+#~ "a> أو أيّ موقع آخر.</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. "
+#~ "ستُطبع كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
+#~ "quality that gets displayed while there is no user input. Usually this "
+#~ "allows for high map quality as speed is no concern.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:italic;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم "
+#~ "لدولتك من <a href=\"http://www.icalshare.com\"><span style=\" text-"
+#~ "decoration: underline; color:#0057ae;\">http://www.icalshare.com</span></"
+#~ "a> أو أيّ موقع آخر.</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. "
+#~ "ستُطبع كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
+#~ "quality that gets displayed during map animations (e.g. while dragging "
+#~ "the globe). </p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
+#~ "machines it is advisable to set this option to \"low quality\" as this "
+#~ "will give better speed.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:italic;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم "
+#~ "لدولتك من <a href=\"http://www.icalshare.com\"><span style=\" text-"
+#~ "decoration: underline; color:#0057ae;\">http://www.icalshare.com</span></"
+#~ "a> أو أيّ موقع آخر.</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. "
+#~ "ستُطبع كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
+
+#, fuzzy
+#~| msgctxt "@action: search bar"
+#~| msgid "Clear"
+#~ msgid "C&lear"
+#~ msgstr "امسح"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that "
+#~ "gets used on the map.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:italic;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">يمكنك تنزيل تقويم "
+#~ "لدولتك من <a href=\"http://www.icalshare.com\"><span style=\" text-"
+#~ "decoration: underline; color:#0057ae;\">http://www.icalshare.com</span></"
+#~ "a> أو أيّ موقع آخر.</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">هذا اختياريّ تمامًا. "
+#~ "ستُطبع كلّ الأحداث في هذا التّقويم بالأحمر.</p></body></html>"
+
+#, fuzzy
 #~ msgid "&Text Labels"
 #~ msgstr "النسيج"
 
@@ -68142,12 +68175,6 @@ msgstr "صفّر كلّ الإعدادات إلى قيمها الافتراضي�
 #~ msgstr "حاذِ النّصّ إلى اليمين"
 
 #, fuzzy
-#~| msgctxt "@action: search bar"
-#~| msgid "Clear"
-#~ msgid "Clear"
-#~ msgstr "امسح"
-
-#, fuzzy
 #~| msgctxt "@info: month-name year-string"
 #~| msgid "%1 %2"
 #~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
@@ -68195,11 +68222,6 @@ msgstr "صفّر كلّ الإعدادات إلى قيمها الافتراضي�
 #~| msgid "Export Tools"
 #~ msgid "Export Route"
 #~ msgstr "أدوات التّصدير"
-
-#, fuzzy
-#~| msgid "Show Navigation Control"
-#~ msgid "Show again"
-#~ msgstr "أظهر التحكم بالانتقال"
 
 #, fuzzy
 #~| msgid "Configure this column"
@@ -72688,10 +72710,6 @@ msgstr "صفّر كلّ الإعدادات إلى قيمها الافتراضي�
 #, fuzzy
 #~ msgid "Show item date"
 #~ msgstr "اعرض ملفّ التاريخ"
-
-#, fuzzy
-#~ msgid "Show item type"
-#~ msgstr "اعرض صورة نوع"
 
 #, fuzzy
 #~ msgctxt "@title:tab"
