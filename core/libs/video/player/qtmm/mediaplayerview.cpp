@@ -17,7 +17,6 @@
 // Qt includes
 
 #include <QApplication>
-#include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QMouseEvent>
 #include <QProxyStyle>
@@ -48,10 +47,11 @@
 
 // Local includes
 
-#include "stackedview.h"
-#include "thememanager.h"
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "thememanager.h"
+#include "stackedview.h"
+#include "dlayoutbox.h"
 #include "metaengine.h"
 #include "dmetadata.h"
 
@@ -266,13 +266,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
                                          i18nc("capture video frame", "Capture"), this);
 
-    d->toolBar             = new QToolBar(this);
-    d->toolBar->addAction(d->prevAction);
-    d->toolBar->addAction(d->nextAction);
-    d->toolBar->addAction(d->playAction);
-    d->toolBar->addAction(d->grabAction);
-    d->toolBar->setStyleSheet(toolButtonStyleSheet());
-
     d->errorView           = new QFrame(this);
     QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player..."), this);
 
@@ -281,8 +274,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->errorView->setLineWidth(1);
 
     QVBoxLayout* const vbox1 = new QVBoxLayout(d->errorView);
-    vbox1->addWidget(d->toolBar,  1);
-    vbox1->addWidget(errorMsg,   10);
+    vbox1->addWidget(errorMsg, 10);
     vbox1->setContentsMargins(QMargins());
     vbox1->setSpacing(spacing);
 
@@ -303,47 +295,49 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->player->setVideoOutput(d->videoItem);
     d->videoScene->addItem(d->videoItem);
 
-    QHBoxLayout* const hbox = new QHBoxLayout(this);
-    d->slider               = new QSlider(Qt::Horizontal, this);
+    d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
+    d->playerView->setLineWidth(1);
+
+    d->videoItem->setAspectRatioMode(Qt::IgnoreAspectRatio);
+    d->videoView->setMouseTracking(true);
+
+    DHBox* const hbox = new DHBox(this);
+    d->slider         = new QSlider(Qt::Horizontal, hbox);
     d->slider->setStyle(new PlayerVideoStyle());
     d->slider->setRange(0, 0);
-    d->tlabel               = new QLabel(this);
+    d->tlabel               = new QLabel(hbox);
     d->tlabel->setText(QLatin1String("00:00:00 / 00:00:00"));
-    d->loopPlay             = new QPushButton(this);
+    d->loopPlay       = new QPushButton(hbox);
     d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
     d->loopPlay->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     d->loopPlay->setToolTip(i18n("Toggle playing in a loop"));
     d->loopPlay->setFocusPolicy(Qt::NoFocus);
     d->loopPlay->setMinimumSize(22, 22);
     d->loopPlay->setCheckable(true);
-    QLabel* const spk       = new QLabel(this);
+    QLabel* const spk = new QLabel(hbox);
     spk->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
-    d->volume               = new QSlider(Qt::Horizontal, this);
+    d->volume         = new QSlider(Qt::Horizontal, hbox);
     d->volume->setRange(0, 100);
     d->volume->setValue(50);
 
-    hbox->addWidget(d->toolBar,   0);
-    hbox->addWidget(d->slider,   10);
-    hbox->addWidget(d->tlabel,    0);
-    hbox->addWidget(d->loopPlay,  0);
-    hbox->addWidget(spk,          0);
-    hbox->addWidget(d->volume,    0);
+    hbox->setStretchFactor(d->slider, 10);
     hbox->setContentsMargins(QMargins());
     hbox->setSpacing(spacing);
 
-    d->videoItem->setAspectRatioMode(Qt::IgnoreAspectRatio);
-    d->videoView->setMouseTracking(true);
-
-    d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
-    d->playerView->setLineWidth(1);
-
     QVBoxLayout* const vbox2 = new QVBoxLayout(d->playerView);
-    vbox2->addLayout(hbox,           0);
-    vbox2->addWidget(d->videoView, 100);
+    vbox2->addWidget(d->videoView, 10);
+    vbox2->addWidget(hbox,          0);
     vbox2->setContentsMargins(QMargins());
     vbox2->setSpacing(spacing);
 
     insertWidget(Private::PlayerView, d->playerView);
+
+    d->toolBar               = new QToolBar(this);
+    d->toolBar->addAction(d->prevAction);
+    d->toolBar->addAction(d->nextAction);
+    d->toolBar->addAction(d->playAction);
+    d->toolBar->addAction(d->grabAction);
+    d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
     setPreviewMode(Private::PlayerView);
 
