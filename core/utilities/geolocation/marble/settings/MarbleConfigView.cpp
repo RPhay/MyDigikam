@@ -207,20 +207,20 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     d->mapFont                   = new QFontComboBox(grpMap);
     d->mapFont->setToolTip(i18n("The default font that gets used on the map."));
 
-    d->showGrid                  = new QCheckBox(i18n("Show Grid"), grpMap);
-    d->showGrid->setToolTip(i18n("Show the world-map grid overlay"));
+    d->showGrid                  = new QCheckBox(i18n("Show Coordinate Grid"), grpMap);
+    d->showGrid->setToolTip(i18n("Show the world-map coordinate grid overlay"));
 
     d->showCross                 = new QCheckBox(i18n("Show Cross-Hair"), grpMap);
     d->showCross->setToolTip(i18n("Show cross-hair on a center of the map"));
 
-    d->showAtmos                 = new QCheckBox(i18n("Show Atmosphere"), grpMap);
-    d->showAtmos->setToolTip(i18n("Show the world-map atmosphere overlay"));
+    d->showAtmos                 = new QCheckBox(i18n("Show Atmospheric Glow"), grpMap);
+    d->showAtmos->setToolTip(i18n("Show the world-map atmospheric glow overlay"));
 
-    d->showSunShading            = new QCheckBox(i18n("Show Sun-Shading"), grpMap);
-    d->showAtmos->setToolTip(i18n("Show the world-map sun-shading overlay"));
+    d->showSunShading            = new QCheckBox(i18n("Show Night Shadow"), grpMap);
+    d->showAtmos->setToolTip(i18n("Show the world-map night shadow overlay"));
 
-    d->showCities                = new QCheckBox(i18n("Show Cities"), grpMap);
-    d->showCities->setToolTip(i18n("Show the world-map cities overlay"));
+    d->showCities                = new QCheckBox(i18n("Show City Place Mark"), grpMap);
+    d->showCities->setToolTip(i18n("Show the world-map city place mark overlay"));
 
     d->showRelief                = new QCheckBox(i18n("Show Relief"), grpMap);
     d->showRelief->setToolTip(i18n("Show the world-map relief overlay"));
