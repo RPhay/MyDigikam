@@ -121,6 +121,7 @@ void GeolocationSettings::Private::applySettingsToWidget(MapWidget* const w,
                 mw->setShowAtmosphere(settings.showAtmos);
                 mw->setShowSunShading(settings.showSunShading);
                 mw->setShowCities(settings.showCities);
+                mw->setShowRelief(settings.showRelief);
                 mw->update();
             }
         }

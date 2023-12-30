@@ -85,6 +85,7 @@ public:
     QCheckBox*                         showAtmos        = nullptr;
     QCheckBox*                         showSunShading   = nullptr;
     QCheckBox*                         showCities       = nullptr;
+    QCheckBox*                         showRelief       = nullptr;
 
     MarbleWidget* const                marbleWidget;
 
@@ -221,7 +222,9 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     d->showCities                = new QCheckBox(i18n("Show Cities"), grpMap);
     d->showCities->setToolTip(i18n("Show the world-map cities overlay"));
 
-    // Add Relief
+    d->showRelief                = new QCheckBox(i18n("Show Relief"), grpMap);
+    d->showRelief->setToolTip(i18n("Show the world-map relief overlay"));
+
     // Add IceLayer
     // Add Borders
     // Add Rivers
@@ -239,6 +242,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     gridMap->addWidget(d->showAtmos,      2, 0, 1, 1);
     gridMap->addWidget(d->showSunShading, 2, 1, 1, 1);
     gridMap->addWidget(d->showCities,     3, 0, 1, 1);
+    gridMap->addWidget(d->showRelief,     3, 1, 1, 1);
 
     // ---
 
@@ -307,6 +311,7 @@ void MarbleConfigView::readSettings()
     d->showAtmos->setChecked(settings.showAtmos);
     d->showSunShading->setChecked(settings.showSunShading);
     d->showCities->setChecked(settings.showCities);
+    d->showRelief->setChecked(settings.showRelief);
 
     // Read the settings of the plugins
 
@@ -336,6 +341,7 @@ void MarbleConfigView::applySettings()
     settings.showAtmos                = d->showAtmos->isChecked();
     settings.showSunShading           = d->showSunShading->isChecked();
     settings.showCities               = d->showCities->isChecked();
+    settings.showRelief               = d->showRelief->isChecked();
 
     GeolocationSettings::instance()->setSettings(settings);
 

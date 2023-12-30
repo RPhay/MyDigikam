@@ -550,7 +550,7 @@ bool MapWidget::setBackend(const QString& backendName)
 
             d->currentBackend->setActive(s->activeState);
 
-            QTimer::singleShot(1000, this, SLOT(slotApplySettings()));
+            QTimer::singleShot(3000, this, SLOT(slotApplySettings()));
 
             return true;
         }
