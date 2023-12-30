@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-add_subdirectory(atmosphere)
-add_subdirectory(compass)
-add_subdirectory(crosshairs)
-add_subdirectory(graticule)
-add_subdirectory(mapscale)
-add_subdirectory(measure)
-add_subdirectory(navigation)
-add_subdirectory(overviewmap)
-add_subdirectory(progress)
+add_subdirectory(atmosphere)        # Atmospheric Glow Overlay   (setup Geolocation)
+add_subdirectory(compass)           # Compass Overlay            (map context menu)
+add_subdirectory(crosshairs)        # Cross-hair Overlay         (setup Geolocation)
+add_subdirectory(graticule)         # Coordinates Grid Overlay   (map context menu)
+add_subdirectory(mapscale)          # Map-scale Overlay          (map context menu)
+add_subdirectory(measure)           # Distance Measurement Tool  (map context menu)
+add_subdirectory(navigation)        # Navigation Overlay         (map context menu)
+add_subdirectory(overviewmap)       # Map Overview Overlay       (map context menu)
+add_subdirectory(progress)          # Loading Map Indicator      (map context menu)
