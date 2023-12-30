@@ -70,9 +70,10 @@ public:
     QString htmlTemplate() const
     {
         return QLatin1String("<html>\n<head>\n"
+                             "<base href=\"%1\">\n"
                              "<script type=\"text/javascript\" src=\"https://maps.google.com/maps/"
-                             "api/js?key=%1\"></script>\n"
-                             "<script type=\"text/javascript\" src=\"%2\"></script>\n"
+                             "api/js?key=%2\"></script>\n"
+                             "<script type=\"text/javascript\" src=\"backend-googlemaps-js.js\"></script>\n"
                              "</head>\n"
                              "<body onload=\"kgeomapInitialize()\" style=\"padding: 0px; margin: 0px;\">\n"
                              "    <div id=\"map_canvas\" style=\"width:100%; height:400px;\"></div>\n"
@@ -188,7 +189,8 @@ void SetupGeolocation::applySettings()
         return;
     }
 
-    QString htmlText = d->htmlTemplate().arg(key).arg(QUrl::fromLocalFile(jsFile).toString());
+    QUrl baseUrl     = QUrl::fromLocalFile(jsFile).adjusted(QUrl::RemoveFilename);
+    QString htmlText = d->htmlTemplate().arg(baseUrl.toString()).arg(key);
 
     if (!QFileInfo::exists(htmlPath))
     {
