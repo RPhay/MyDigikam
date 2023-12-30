@@ -6,6 +6,7 @@
 
 add_subdirectory(cache)
 add_subdirectory(gpsbabel)
+add_subdirectory(gpx)
 add_subdirectory(json)
 add_subdirectory(kml)
 add_subdirectory(nominatim-reversegeocoding)
