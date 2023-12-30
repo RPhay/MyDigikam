@@ -7,3 +7,4 @@
 add_subdirectory(cache)
 add_subdirectory(nominatim-reversegeocoding)
 add_subdirectory(osm)
+add_subdirectory(pn2)
