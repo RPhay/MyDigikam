@@ -182,7 +182,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     : QStackedWidget(parent),
       d             (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     const int spacing      = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
