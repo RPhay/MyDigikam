@@ -321,7 +321,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->volume->setValue(50);
 
     hbox->setStretchFactor(d->slider, 10);
-    hbox->setContentsMargins(QMargins());
+    hbox->setContentsMargins(0, 0, 0, spacing);
     hbox->setSpacing(spacing);
 
     QVBoxLayout* const vbox2 = new QVBoxLayout(d->playerView);
