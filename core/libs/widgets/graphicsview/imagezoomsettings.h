@@ -149,7 +149,7 @@ public:
 
 private:
 
-    double deviceRatio()                                                            const;
+    double displayRatio()                                                           const;
 
 protected:
 

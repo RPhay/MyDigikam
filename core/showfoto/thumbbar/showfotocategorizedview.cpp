@@ -194,7 +194,7 @@ void ShowfotoCategorizedView::setItemDelegate(ShowfotoDelegate* delegate)
     }
 
     d->delegate = delegate;
-    delegate->setThumbnailSize(oldSize);
+    d->delegate->setThumbnailSize(oldSize);
 
     if (oldDelegate)
     {

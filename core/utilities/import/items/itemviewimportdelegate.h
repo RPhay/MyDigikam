@@ -39,14 +39,15 @@ class ItemViewImportDelegate : public DItemDelegate, public ItemDelegateOverlayC
 
 public:
 
-    explicit ItemViewImportDelegate(QObject* const parent = nullptr);
+    explicit ItemViewImportDelegate(QWidget* const parent);
     ~ItemViewImportDelegate() override;
 
-    ThumbnailSize thumbnailSize() const;
-    int           spacing() const;
-    QRect         rect() const;
+    ThumbnailSize thumbnailSize()                                                     const;
+    double        displayRatio()                                                      const;
+    int           spacing()                                                           const;
+    QRect         rect()                                                              const;
 
-    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)      const override;
     QSize gridSize() const override;
 
     /// reimplemented from DItemDelegate
@@ -55,15 +56,15 @@ public:
     void setSpacing(int spacing) override;
     void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
     bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
-                                const QModelIndex& index, QRect* tooltipRect = nullptr) const override;
+                        const QModelIndex& index, QRect* tooltipRect = nullptr)       const override;
     bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
-                                   const QModelIndex& index, QRect* activationRect = nullptr) const override;
+                           const QModelIndex& index, QRect* activationRect = nullptr) const override;
 
     /**
      * Returns the area where the pixmap is drawn,
      * or null if not supported
      */
-    virtual QRect pixmapRect() const;
+    virtual QRect pixmapRect()                                                        const;
 
     /**
      * Returns the area where the image information is drawn,
@@ -72,7 +73,7 @@ public:
      * but not the pixmap. The ratingRect() will e.g. typically
      * be contained in this area.
      */
-    virtual QRect imageInformationRect() const;
+    virtual QRect imageInformationRect()                                              const;
 
     /**
      * Can be used to temporarily disable drawing of the rating.
@@ -86,14 +87,14 @@ public:
      */
     virtual QRect ratingRect() const;
 
-    void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index) override;
+    void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index)      override;
 
 protected Q_SLOTS:
 
     void slotThemeChanged();
     void slotSetupChanged();
 
-    void overlayDestroyed(QObject* o) override;
+    void overlayDestroyed(QObject* o)                                                       override;
 
 Q_SIGNALS:
 
@@ -136,7 +137,7 @@ protected:
 protected:
 
     ItemViewImportDelegatePrivate* const d_ptr;
-    ItemViewImportDelegate(ItemViewImportDelegatePrivate& dd, QObject* const parent);
+    ItemViewImportDelegate(ItemViewImportDelegatePrivate& dd, QWidget* const parent);
 
 private:
 

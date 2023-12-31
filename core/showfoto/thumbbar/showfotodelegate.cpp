@@ -30,12 +30,12 @@ void ShowfotoDelegate::ShowfotoDelegatePrivate::clearRects()
     coordinatesRect      = QRect(0, 0, 0, 0);
 }
 
-ShowfotoDelegate::ShowfotoDelegate(QObject* const parent)
+ShowfotoDelegate::ShowfotoDelegate(QWidget* const parent)
     : ShowfotoItemViewDelegate(*new ShowfotoDelegatePrivate, parent)
 {
 }
 
-ShowfotoDelegate::ShowfotoDelegate(ShowfotoDelegate::ShowfotoDelegatePrivate& dd, QObject* const parent)
+ShowfotoDelegate::ShowfotoDelegate(ShowfotoDelegate::ShowfotoDelegatePrivate& dd, QWidget* const parent)
     : ShowfotoItemViewDelegate(dd, parent)
 {
 }
@@ -256,7 +256,7 @@ QPixmap ShowfotoDelegate::pixmapForDrag(const QStyleOptionViewItem& option,
         icon = thumbnailPixmap(indexes.first());
     }
 
-    return makeDragPixmap(option, indexes, icon);
+    return makeDragPixmap(option, indexes, displayRatio(), icon);
 }
 
 bool ShowfotoDelegate::acceptsToolTip(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,

@@ -38,7 +38,7 @@ class ImportDelegate : public ItemViewImportDelegate
 
 public:
 
-    explicit ImportDelegate(QObject* const parent = nullptr);
+    explicit ImportDelegate(QWidget* const parent);
     ~ImportDelegate() override;
 
     void setView(ImportCategorizedView* view);
@@ -89,7 +89,7 @@ protected:
 
     void setModel(QAbstractItemModel* model);
 
-    ImportDelegate(ImportDelegate::ImportDelegatePrivate& dd, QObject* const parent);
+    ImportDelegate(ImportDelegate::ImportDelegatePrivate& dd, QWidget* const parent);
 
     /**
      * Reimplement this to set contentWidth. This is the maximum width of all
@@ -148,12 +148,12 @@ public:
 
     void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
     bool acceptsActivation(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,
-                                   QRect* activationRect) const override;
+                           QRect* activationRect) const            override;
 
 protected:
 
-    void updateContentWidth() override;
-    void updateRects() override;
+    void updateContentWidth()                                      override;
+    void updateRects()                                             override;
     int thumbnailPixmapSize(bool withHighlight, int size);
 
 private:
@@ -176,7 +176,7 @@ protected:
 
     ImportNormalDelegate(ImportNormalDelegatePrivate& dd, ImportCategorizedView* const parent);
 
-    void updateRects() override;
+    void updateRects()      override;
 
 private:
 

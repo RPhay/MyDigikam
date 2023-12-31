@@ -52,7 +52,7 @@ public:
     ShowfotoItemViewDelegatePrivate();
     virtual ~ShowfotoItemViewDelegatePrivate() = default;
 
-    void init(ShowfotoItemViewDelegate* const _q);
+    void init(ShowfotoItemViewDelegate* const _q, QWidget* const _widget);
 
     /// Resets cached rects. Remember to reimplement in subclass for added rects.
     virtual void clearRects();
@@ -76,6 +76,8 @@ public:
     ThumbnailSize             thumbSize;
 
     ShowfotoItemViewDelegate* q;
+
+    QWidget*                  displayWidget;
 
     QRect                     oneRowRegRect;
     QRect                     oneRowComRect;

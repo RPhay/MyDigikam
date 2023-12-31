@@ -68,12 +68,12 @@ void ItemDelegate::ItemDelegatePrivate::clearRects()
     groupRect            = QRect(0, 0, 0, 0);
 }
 
-ItemDelegate::ItemDelegate(QObject* const parent)
+ItemDelegate::ItemDelegate(QWidget* const parent)
     : ItemViewDelegate(*new ItemDelegatePrivate, parent)
 {
 }
 
-ItemDelegate::ItemDelegate(ItemDelegate::ItemDelegatePrivate& dd, QObject* const parent)
+ItemDelegate::ItemDelegate(ItemDelegate::ItemDelegatePrivate& dd, QWidget* const parent)
     : ItemViewDelegate(dd, parent)
 {
 }
@@ -391,7 +391,7 @@ QPixmap ItemDelegate::pixmapForDrag(const QStyleOptionViewItem& option, const QL
         icon = thumbnailPixmap(indexes.first());
     }
 
-    return makeDragPixmap(option, indexes, icon);
+    return makeDragPixmap(option, indexes, displayRatio(), icon);
 }
 
 bool ItemDelegate::acceptsToolTip(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,

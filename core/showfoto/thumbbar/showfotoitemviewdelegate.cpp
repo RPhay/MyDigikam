@@ -18,17 +18,19 @@ namespace ShowFoto
 {
 
 ShowfotoItemViewDelegatePrivate::ShowfotoItemViewDelegatePrivate()
-    : spacing   (0),
-      thumbSize (ThumbnailSize(0)),
-      q         (nullptr),
-      radius    (3),                ///< painting constants
-      margin    (5)
+    : spacing      (0),
+      thumbSize    (ThumbnailSize(0)),
+      q            (nullptr),
+      displayWidget(nullptr),
+      radius       (3),                ///< painting constants
+      margin       (5)
 {
 }
 
-void ShowfotoItemViewDelegatePrivate::init(ShowfotoItemViewDelegate* const _q)
+void ShowfotoItemViewDelegatePrivate::init(ShowfotoItemViewDelegate* const _q, QWidget* const _widget)
 {
-    q = _q;
+    q             = _q;
+    displayWidget = _widget;
 
     q->connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
                q, SLOT(slotThemeChanged()));
@@ -42,18 +44,18 @@ void ShowfotoItemViewDelegatePrivate::clearRects()
 
 // ---- ShowfotoItemViewDelegate -----------------------------------------------
 
-ShowfotoItemViewDelegate::ShowfotoItemViewDelegate(QObject* const parent)
+ShowfotoItemViewDelegate::ShowfotoItemViewDelegate(QWidget* const parent)
     : DItemDelegate(parent),
       d_ptr        (new ShowfotoItemViewDelegatePrivate)
 {
-    d_ptr->init(this);
+    d_ptr->init(this, parent);
 }
 
-ShowfotoItemViewDelegate::ShowfotoItemViewDelegate(ShowfotoItemViewDelegatePrivate& dd, QObject* const parent)
+ShowfotoItemViewDelegate::ShowfotoItemViewDelegate(ShowfotoItemViewDelegatePrivate& dd, QWidget* const parent)
     : DItemDelegate(parent),
       d_ptr        (&dd)
 {
-    d_ptr->init(this);
+    d_ptr->init(this, parent);
 }
 
 ShowfotoItemViewDelegate::~ShowfotoItemViewDelegate()
@@ -69,6 +71,20 @@ ThumbnailSize ShowfotoItemViewDelegate::thumbnailSize() const
     Q_D(const ShowfotoItemViewDelegate);
 
     return d->thumbSize;
+}
+
+double ShowfotoItemViewDelegate::displayRatio() const
+{
+    Q_D(const ShowfotoItemViewDelegate);
+
+    if (d->displayWidget)
+    {
+        return d->displayWidget->devicePixelRatio();
+    }
+
+    qCWarning(DIGIKAM_GENERAL_LOG) << "ShowfotoItemViewDelegate: display widget not set";
+
+    return 1.0;
 }
 
 void ShowfotoItemViewDelegate::setThumbnailSize(const ThumbnailSize& thumbSize)
@@ -216,10 +232,10 @@ QRect ShowfotoItemViewDelegate::drawThumbnail(QPainter* p, const QRect& thumbRec
         return QRect();
     }
 
-    QRect r      = thumbRect;
-    double ratio = qApp->devicePixelRatio();
-    int thumbW   = qRound((double)thumbnail.width()  / ratio);
-    int thumbH   = qRound((double)thumbnail.height() / ratio);
+    QRect r    = thumbRect;
+    double dpr = displayRatio();
+    int thumbW = qRound((double)thumbnail.width()  / dpr);
+    int thumbH = qRound((double)thumbnail.height() / dpr);
 
     QRect actualPixmapRect(r.x() + (r.width()  - thumbW) / 2,
                            r.y() + (r.height() - thumbH) / 2,

@@ -70,7 +70,7 @@ double ImageZoomSettings::zoomFactor() const
 
 double ImageZoomSettings::realZoomFactor() const
 {
-    return (m_zoom / deviceRatio());
+    return (m_zoom / displayRatio());
 }
 
 QSizeF ImageZoomSettings::imageSize() const
@@ -85,7 +85,7 @@ QSizeF ImageZoomSettings::originalImageSize() const
 
 QSizeF ImageZoomSettings::zoomedSize() const
 {
-    return (m_size / (m_zoomConst * deviceRatio()) * m_zoom);
+    return (m_size / (m_zoomConst * displayRatio()) * m_zoom);
 }
 
 QRectF ImageZoomSettings::sourceRect(const QRectF& imageRect) const
@@ -119,11 +119,11 @@ double ImageZoomSettings::fitToSizeZoomFactor(const QSizeF& frameSize, FitToSize
 
     if ((frameSize.width() / frameSize.height()) < (m_size.width() / m_size.height()))
     {
-        zoom = m_zoomConst * deviceRatio() * frameSize.width() / m_size.width();
+        zoom = m_zoomConst * displayRatio() * frameSize.width() / m_size.width();
     }
     else
     {
-        zoom = m_zoomConst * deviceRatio() * frameSize.height() / m_size.height();
+        zoom = m_zoomConst * displayRatio() * frameSize.height() / m_size.height();
     }
 
     // Zoom rounding down and scroll bars are never activated.
@@ -145,24 +145,24 @@ double ImageZoomSettings::fitToSizeZoomFactor(const QSizeF& frameSize, FitToSize
 
 QRectF ImageZoomSettings::mapZoomToImage(const QRectF& zoomedRect) const
 {
-    return QRectF(zoomedRect.topLeft() / (m_zoom / (m_zoomConst * deviceRatio())),
-                  zoomedRect.size()    / (m_zoom / (m_zoomConst * deviceRatio())));
+    return QRectF(zoomedRect.topLeft() / (m_zoom / (m_zoomConst * displayRatio())),
+                  zoomedRect.size()    / (m_zoom / (m_zoomConst * displayRatio())));
 }
 
 QRectF ImageZoomSettings::mapImageToZoom(const QRectF& imageRect) const
 {
-    return QRectF(imageRect.topLeft() * (m_zoom / (m_zoomConst * deviceRatio())),
-                  imageRect.size()    * (m_zoom / (m_zoomConst * deviceRatio())));
+    return QRectF(imageRect.topLeft() * (m_zoom / (m_zoomConst * displayRatio())),
+                  imageRect.size()    * (m_zoom / (m_zoomConst * displayRatio())));
 }
 
 QPointF ImageZoomSettings::mapZoomToImage(const QPointF& zoomedPoint) const
 {
-    return (zoomedPoint / (m_zoom / (m_zoomConst * deviceRatio())));
+    return (zoomedPoint / (m_zoom / (m_zoomConst * displayRatio())));
 }
 
 QPointF ImageZoomSettings::mapImageToZoom(const QPointF& imagePoint) const
 {
-    return (imagePoint * (m_zoom / (m_zoomConst * deviceRatio())));
+    return (imagePoint * (m_zoom / (m_zoomConst * displayRatio())));
 }
 
 inline static bool lessThanLimitedPrecision(double a, double b)
@@ -233,7 +233,7 @@ double ImageZoomSettings::snappedZoomFactor(double zoom, const QSizeF& frameSize
     return zoom;
 }
 
-double ImageZoomSettings::deviceRatio() const
+double ImageZoomSettings::displayRatio() const
 {
     if (m_displayWidget)
     {

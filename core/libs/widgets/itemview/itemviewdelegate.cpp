@@ -48,15 +48,17 @@ ItemViewDelegatePrivate::ItemViewDelegatePrivate()
       ratingPixmaps(QVector<QPixmap>(10)),
       thumbSize    (ThumbnailSize(0)),
       q            (nullptr),
+      displayWidget(nullptr),
       radius       (3), // painting constants
       margin       (5)
 {
     makeStarPolygon();
 }
 
-void ItemViewDelegatePrivate::init(ItemViewDelegate* const _q)
+void ItemViewDelegatePrivate::init(ItemViewDelegate* const _q, QWidget* const _widget)
 {
-    q = _q;
+    q             = _q;
+    displayWidget = _widget;
 
     q->connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
                q, SLOT(slotThemeChanged()));
@@ -77,18 +79,18 @@ void ItemViewDelegatePrivate::makeStarPolygon()
     starPolygonSize = QSize(15, 15);
 }
 
-ItemViewDelegate::ItemViewDelegate(QObject* const parent)
+ItemViewDelegate::ItemViewDelegate(QWidget* const parent)
     : DItemDelegate(parent),
       d_ptr        (new ItemViewDelegatePrivate)
 {
-    d_ptr->init(this);
+    d_ptr->init(this, parent);
 }
 
-ItemViewDelegate::ItemViewDelegate(ItemViewDelegatePrivate& dd, QObject* const parent)
+ItemViewDelegate::ItemViewDelegate(ItemViewDelegatePrivate& dd, QWidget* const parent)
     : DItemDelegate(parent),
       d_ptr        (&dd)
 {
-    d_ptr->init(this);
+    d_ptr->init(this, parent);
 }
 
 ItemViewDelegate::~ItemViewDelegate()
@@ -104,6 +106,20 @@ ThumbnailSize ItemViewDelegate::thumbnailSize() const
     Q_D(const ItemViewDelegate);
 
     return d->thumbSize;
+}
+
+double ItemViewDelegate::displayRatio() const
+{
+    Q_D(const ItemViewDelegate);
+
+    if (d->displayWidget)
+    {
+        return d->displayWidget->devicePixelRatio();
+    }
+
+    qCWarning(DIGIKAM_GENERAL_LOG) << "ItemViewDelegate: display widget not set";
+
+    return 1.0;
 }
 
 void ItemViewDelegate::setThumbnailSize(const ThumbnailSize& thumbSize)
@@ -267,10 +283,10 @@ QRect ItemViewDelegate::drawThumbnail(QPainter* p, const QRect& thumbRect, const
         return QRect();
     }
 
-    QRect r      = thumbRect;
-    double ratio = qApp->devicePixelRatio();
-    int thumbW   = qRound((double)thumbnail.width()  / ratio);
-    int thumbH   = qRound((double)thumbnail.height() / ratio);
+    QRect r    = thumbRect;
+    double dpr = displayRatio();
+    int thumbW = qRound((double)thumbnail.width()  / dpr);
+    int thumbH = qRound((double)thumbnail.height() / dpr);
 
     QRect actualPixmapRect(r.x() + (r.width()  - thumbW) / 2,
                            r.y() + (r.height() - thumbH) / 2,
@@ -745,7 +761,7 @@ void ItemViewDelegate::prepareRatingPixmaps(bool composeOverBackground)
             basePix.fill(Qt::transparent);
         }
 
-        double dpr = qApp->devicePixelRatio();
+        double dpr = displayRatio();
         basePix    = basePix.scaled(d->ratingRect.size() * dpr);
         basePix.setDevicePixelRatio(dpr);
 

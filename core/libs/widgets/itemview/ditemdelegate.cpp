@@ -107,10 +107,10 @@ QPixmap DItemDelegate::thumbnailBorderPixmap(const QSize& pixSize, bool isGroupe
 
 QPixmap DItemDelegate::makeDragPixmap(const QStyleOptionViewItem& option,
                                       const QList<QModelIndex>& indexes,
+                                      double displayRatio,
                                       const QPixmap& suggestedPixmap)
 {
-    double ratio = qApp->devicePixelRatio();
-    int iconSize = qRound(64.0 * ratio);
+    int iconSize = qRound(64.0 * displayRatio);
     QPixmap icon = suggestedPixmap;
 
     if (icon.isNull())
@@ -128,13 +128,13 @@ QPixmap DItemDelegate::makeDragPixmap(const QStyleOptionViewItem& option,
     int h                 = icon.height();
     const int borderWidth = 6;
 
-    QSizeF drawSize       = QSizeF(w, h) / ratio;
-    QRect  rect(0, 0, w + qRound((double)borderWidth * 2.0 * ratio),
-                      h + qRound((double)borderWidth * 2.0 * ratio));
+    QSizeF drawSize       = QSizeF(w, h) / displayRatio;
+    QRect  rect(0, 0, w + qRound((double)borderWidth * 2.0 * displayRatio),
+                      h + qRound((double)borderWidth * 2.0 * displayRatio));
     QRect  pixmapRect(QPoint(borderWidth, borderWidth), drawSize.toSize());
 
     QPixmap pix(rect.size());
-    pix.setDevicePixelRatio(ratio);
+    pix.setDevicePixelRatio(displayRatio);
     QPainter p(&pix);
 
 /*

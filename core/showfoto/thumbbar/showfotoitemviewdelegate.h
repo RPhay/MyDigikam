@@ -37,11 +37,11 @@ class ShowfotoItemViewDelegate : public DItemDelegate,
 
 public:
 
-    explicit ShowfotoItemViewDelegate(QObject* const parent = nullptr);
+    explicit ShowfotoItemViewDelegate(QWidget* const parent);
     ~ShowfotoItemViewDelegate()                                                               override;
 
     ThumbnailSize thumbnailSize()                                                       const;
-
+    double        displayRatio()                                                        const;
     int           spacing()                                                             const;
     QRect         rect()                                                                const;
 
@@ -117,7 +117,7 @@ protected:
 
 protected:
 
-    ShowfotoItemViewDelegate(ShowfotoItemViewDelegatePrivate& dd, QObject* const parent);
+    ShowfotoItemViewDelegate(ShowfotoItemViewDelegatePrivate& dd, QWidget* const parent);
 
 private:
 

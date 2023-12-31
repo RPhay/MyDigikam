@@ -17,6 +17,7 @@
 
 // Qt includes
 
+#include <QWidget>
 #include <QAbstractItemDelegate>
 
 // Local includes
@@ -75,7 +76,7 @@ public:
     static QString squeezedText(const QFontMetrics& fm, int width, const QString& text);
     static QString dateToString(const QDateTime& datetime);
     static QPixmap makeDragPixmap(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes,
-                                  const QPixmap& suggestedPixmap = QPixmap());
+                                  double displayRatio, const QPixmap& suggestedPixmap = QPixmap());
 
 Q_SIGNALS:
 

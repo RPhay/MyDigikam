@@ -24,6 +24,7 @@
 
 #include <QCache>
 #include <QFont>
+#include <QWidget>
 #include <QPainter>
 #include <QPolygon>
 
@@ -44,7 +45,7 @@ public:
     explicit ItemViewDelegatePrivate();
     virtual ~ItemViewDelegatePrivate() = default;
 
-    void init(ItemViewDelegate* const _q);
+    void init(ItemViewDelegate* const _q, QWidget* const _widget);
 
     void makeStarPolygon();
 
@@ -78,6 +79,8 @@ public:
     QPersistentModelIndex     editingRating;
 
     ItemViewDelegate*         q;
+
+    QWidget*                  displayWidget;
 
     QRect                     oneRowRegRect;
     QRect                     oneRowComRect;

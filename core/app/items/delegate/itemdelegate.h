@@ -37,7 +37,7 @@ class ItemDelegate : public ItemViewDelegate
 
 public:
 
-    explicit ItemDelegate(QObject* const parent = nullptr);
+    explicit ItemDelegate(QWidget* const parent);
     ~ItemDelegate()                                                                                    override;
 
     void setView(ItemCategorizedView* view);
@@ -106,7 +106,7 @@ protected:
 
     void setModel(QAbstractItemModel* model);
 
-    ItemDelegate(ItemDelegate::ItemDelegatePrivate& dd, QObject* const parent);
+    ItemDelegate(ItemDelegate::ItemDelegatePrivate& dd, QWidget* const parent);
 
 protected Q_SLOTS:
 

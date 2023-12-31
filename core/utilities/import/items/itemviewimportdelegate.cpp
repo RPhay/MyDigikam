@@ -40,20 +40,22 @@ namespace Digikam
 {
 
 ItemViewImportDelegatePrivate::ItemViewImportDelegatePrivate()
-    : spacing(0),
-      thumbSize(ThumbnailSize(0)),
-      q(nullptr),
-      radius(3),       // painting constants
-      margin(5)
+    : spacing      (0),
+      thumbSize    (ThumbnailSize(0)),
+      q            (nullptr),
+      displayWidget(nullptr),
+      radius       (3),       // painting constants
+      margin       (5)
 {
     makeStarPolygon();
 
     ratingPixmaps = QVector<QPixmap>(10);
 }
 
-void ItemViewImportDelegatePrivate::init(ItemViewImportDelegate* const _q)
+void ItemViewImportDelegatePrivate::init(ItemViewImportDelegate* const _q, QWidget* const _widget)
 {
-    q = _q;
+    q             = _q;
+    displayWidget = _widget;
 
     q->connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
                q, SLOT(slotThemeChanged()));
@@ -76,16 +78,16 @@ void ItemViewImportDelegatePrivate::makeStarPolygon()
 
 // ---- ItemViewImportDelegate -----------------------------------------------
 
-ItemViewImportDelegate::ItemViewImportDelegate(QObject* const parent)
+ItemViewImportDelegate::ItemViewImportDelegate(QWidget* const parent)
     : DItemDelegate(parent), d_ptr(new ItemViewImportDelegatePrivate)
 {
-    d_ptr->init(this);
+    d_ptr->init(this, parent);
 }
 
-ItemViewImportDelegate::ItemViewImportDelegate(ItemViewImportDelegatePrivate& dd, QObject* const parent)
+ItemViewImportDelegate::ItemViewImportDelegate(ItemViewImportDelegatePrivate& dd, QWidget* const parent)
     : DItemDelegate(parent), d_ptr(&dd)
 {
-    d_ptr->init(this);
+    d_ptr->init(this, parent);
 }
 
 ItemViewImportDelegate::~ItemViewImportDelegate()
@@ -101,6 +103,20 @@ ThumbnailSize ItemViewImportDelegate::thumbnailSize() const
     Q_D(const ItemViewImportDelegate);
 
     return d->thumbSize;
+}
+
+double ItemViewImportDelegate::displayRatio() const
+{
+    Q_D(const ItemViewImportDelegate);
+
+    if (d->displayWidget)
+    {
+        return d->displayWidget->devicePixelRatio();
+    }
+
+    qCWarning(DIGIKAM_GENERAL_LOG) << "ItemViewImportDelegate: display widget not set";
+
+    return 1.0;
 }
 
 void ItemViewImportDelegate::setThumbnailSize(const ThumbnailSize& thumbSize)
@@ -649,7 +665,7 @@ void ItemViewImportDelegate::prepareRatingPixmaps(bool composeOverBackground)
             basePix.fill(Qt::transparent);
         }
 
-        double dpr = qApp->devicePixelRatio();
+        double dpr = displayRatio();
         basePix    = basePix.scaled(d->ratingRect.size() * dpr);
         basePix.setDevicePixelRatio(dpr);
 

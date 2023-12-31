@@ -59,12 +59,12 @@ void ImportDelegate::ImportDelegatePrivate::clearRects()
     groupRect            = QRect(0, 0, 0, 0);
 }
 
-ImportDelegate::ImportDelegate(QObject* const parent)
+ImportDelegate::ImportDelegate(QWidget* const parent)
     : ItemViewImportDelegate(*new ImportDelegatePrivate, parent)
 {
 }
 
-ImportDelegate::ImportDelegate(ImportDelegate::ImportDelegatePrivate& dd, QObject* const parent)
+ImportDelegate::ImportDelegate(ImportDelegate::ImportDelegatePrivate& dd, QWidget* const parent)
     : ItemViewImportDelegate(dd, parent)
 {
 }
@@ -374,7 +374,7 @@ QPixmap ImportDelegate::pixmapForDrag(const QStyleOptionViewItem& option, const 
         icon = thumbnailPixmap(indexes.first());
     }
 
-    return makeDragPixmap(option, indexes, icon);
+    return makeDragPixmap(option, indexes, displayRatio(), icon);
 }
 
 bool ImportDelegate::acceptsToolTip(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,

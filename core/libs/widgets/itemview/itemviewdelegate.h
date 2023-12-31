@@ -35,12 +35,13 @@ class DIGIKAM_EXPORT ItemViewDelegate : public DItemDelegate,
 
 public:
 
-    explicit ItemViewDelegate(QObject* const parent = nullptr);
+    explicit ItemViewDelegate(QWidget* const parent);
     ~ItemViewDelegate() override;
 
-    ThumbnailSize thumbnailSize()                                                             const;
-    int spacing()                                                                             const;
-    QRect rect()                                                                              const;
+    ThumbnailSize thumbnailSize()                                                     const;
+    double        displayRatio()                                                      const;
+    int           spacing()                                                           const;
+    QRect         rect()                                                              const;
 
     /**
      * Can be used to temporarily disable drawing of the rating.
@@ -139,7 +140,7 @@ protected:
 protected:
 
     ItemViewDelegatePrivate* const d_ptr;
-    ItemViewDelegate(ItemViewDelegatePrivate& dd, QObject* const parent);
+    ItemViewDelegate(ItemViewDelegatePrivate& dd, QWidget* const parent);
 
 private:
 

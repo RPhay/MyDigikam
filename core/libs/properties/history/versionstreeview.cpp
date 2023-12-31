@@ -216,7 +216,7 @@ QPixmap VersionsTreeView::pixmapForDrag(const QList<QModelIndex>& indexes) const
         pix = indexes.first().data(Qt::DecorationRole).value<QPixmap>();
     }
 
-    return DItemDelegate::makeDragPixmap(option, indexes, pix);
+    return DItemDelegate::makeDragPixmap(option, indexes, devicePixelRatio(), pix);
 }
 
 bool VersionsTreeView::viewportEvent(QEvent* event)

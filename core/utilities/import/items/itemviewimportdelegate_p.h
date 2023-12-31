@@ -21,6 +21,7 @@
 
 #include <QCache>
 #include <QFont>
+#include <QWidget>
 #include <QPainter>
 #include <QPolygon>
 #include <QModelIndex>
@@ -43,7 +44,7 @@ public:
     explicit ItemViewImportDelegatePrivate();
     virtual ~ItemViewImportDelegatePrivate() = default;
 
-    void init(ItemViewImportDelegate* const _q);
+    void init(ItemViewImportDelegate* const _q, QWidget* const _widget);
 
     void makeStarPolygon();
 
@@ -75,6 +76,8 @@ public:
     QPersistentModelIndex     editingRating;
 
     ItemViewImportDelegate*   q;
+
+    QWidget*                  displayWidget;
 
     QRect                     oneRowRegRect;
     QRect                     oneRowComRect;

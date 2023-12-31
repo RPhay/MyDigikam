@@ -39,7 +39,7 @@ class ShowfotoDelegate : public ShowfotoItemViewDelegate
 
 public:
 
-    explicit ShowfotoDelegate(QObject* const parent = nullptr);
+    explicit ShowfotoDelegate(QWidget* const parent);
     ~ShowfotoDelegate()                                                                                override;
 
     void setView(ShowfotoThumbnailBar* view);
@@ -82,7 +82,7 @@ protected:
 
     void setModel(QAbstractItemModel* model);
 
-    ShowfotoDelegate(ShowfotoDelegate::ShowfotoDelegatePrivate& dd, QObject* const parent);
+    ShowfotoDelegate(ShowfotoDelegate::ShowfotoDelegatePrivate& dd, QWidget* const parent);
 
     /**
      * Reimplement this to set contentWidth. This is the maximum width of all
