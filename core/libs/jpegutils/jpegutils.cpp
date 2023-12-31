@@ -721,6 +721,17 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 
 #else
 
+    if (((srcinfo.image_width % 8) != 0) || ((srcinfo.image_height % 8) != 0))
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: Transformation is not perfect";
+        jpeg_destroy_decompress(&srcinfo);
+        jpeg_destroy_compress(&dstinfo);
+        fclose(input_file);
+        fclose(output_file);
+
+        return false;
+    }
+
     jtransform_request_workspace(&srcinfo, &transformoption);
 
 #endif

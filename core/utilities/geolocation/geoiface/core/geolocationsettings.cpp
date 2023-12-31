@@ -231,25 +231,6 @@ void GeolocationSettings::reloadGoogleMaps()
     }
 }
 
-void GeolocationSettings::googleMapsApiKeyChanged()
-{
-    Q_FOREACH (MapWidget* const w, d->widgets)
-    {
-        if (w)
-        {
-            Q_FOREACH (MapBackend* const b, w->backends())
-            {
-                BackendGoogleMaps* const gb = dynamic_cast<BackendGoogleMaps*>(b);
-
-                if (gb)
-                {
-                    gb->setApiKeyChanged();
-                }
-            }
-        }
-    }
-}
-
 GeolocationSettingsContainer GeolocationSettings::settings() const
 {
     QMutexLocker lock(&d->mutex);

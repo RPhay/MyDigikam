@@ -18,17 +18,13 @@
 
 // Qt includes
 
-#include <QDir>
-#include <QFile>
-#include <QBuffer>
-#include <QActionGroup>
 #include <QMenu>
+#include <QTimer>
+#include <QAction>
+#include <QBuffer>
 #include <QPointer>
 #include <QResizeEvent>
-#include <QAction>
-#include <QTimer>
-#include <QMessageBox>
-#include <QInputDialog>
+#include <QActionGroup>
 #include <QApplication>
 #include <QStandardPaths>
 
@@ -99,14 +95,6 @@ public:
         showMapTypeControlAction    (nullptr),
         showNavigationControlAction (nullptr),
         showScaleControlAction      (nullptr),
-        htmlTemplate                (QLatin1String("<html>\n<head>\n"
-                                                   "<script type=\"text/javascript\" src=\"https://maps.google.com/maps/"
-                                                   "api/js?key=%1\"></script>\n"
-                                                   "<script type=\"text/javascript\" src=\"%2\"></script>\n"
-                                                   "</head>\n"
-                                                   "<body onload=\"kgeomapInitialize()\" style=\"padding: 0px; margin: 0px;\">\n"
-                                                   "    <div id=\"map_canvas\" style=\"width:100%; height:400px;\"></div>\n"
-                                                   "</body>\n</html>\n")),
         htmlFileName                (QLatin1String("backend-googlemaps.html")),
         cacheMapType                (QLatin1String("ROADMAP")),
         cacheShowMapTypeControl     (true),
@@ -117,7 +105,6 @@ public:
         cacheMinZoom                (0),
         cacheCenter                 (52.0, 6.0),
         cacheBounds                 (),
-        keyChanged                  (false),
         activeState                 (false),
         widgetIsDocked              (false),
         trackChangeTracker          ()
@@ -132,7 +119,6 @@ public:
     QAction*                                  showMapTypeControlAction;
     QAction*                                  showNavigationControlAction;
     QAction*                                  showScaleControlAction;
-    QString                                   htmlTemplate;
     QString                                   htmlFileName;
     QString                                   cacheMapType;
     bool                                      cacheShowMapTypeControl;
@@ -143,7 +129,6 @@ public:
     int                                       cacheMinZoom;
     GeoCoordinates                            cacheCenter;
     QPair<GeoCoordinates, GeoCoordinates>     cacheBounds;
-    bool                                      keyChanged;
     bool                                      activeState;
     bool                                      widgetIsDocked;
     QList<TrackManager::TrackChanges>         trackChangeTracker;
@@ -1626,19 +1611,11 @@ void BackendGoogleMaps::slotTrackVisibilityChanged(const bool newState)
     }
 }
 
-void BackendGoogleMaps::setApiKeyChanged()
+void BackendGoogleMaps::slotMessageEvent(const QString& /*message*/)
 {
-    d->keyChanged = true;
-}
-
-void BackendGoogleMaps::slotMessageEvent(const QString& message)
-{
-    if (d->keyChanged && message.contains(QLatin1String("Billing")))
-    {
-        QMessageBox::information(qApp->activeWindow(),
-                                 i18nc("@title:window", "Javascript Message"), message);
-        d->keyChanged = false;
-    }
+/*
+    qCDebug(DIGIKAM_GEOIFACE_LOG) << "Javascript Message:" << message;
+*/
 }
 
 #ifdef HAVE_GEOLOCATION

@@ -77,7 +77,6 @@ public:
     void openSetupGeolocation(SetupGeolocation::GeolocationTab tab);
 
     void reloadGoogleMaps();
-    void googleMapsApiKeyChanged();
 
 Q_SIGNALS:
 

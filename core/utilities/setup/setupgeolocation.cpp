@@ -204,7 +204,6 @@ void SetupGeolocation::applySettings()
         writeFile.write(htmlText.toUtf8());
         writeFile.close();
 
-        GeolocationSettings::instance()->googleMapsApiKeyChanged();
         GeolocationSettings::instance()->reloadGoogleMaps();
     }
 }
