@@ -117,6 +117,11 @@ QDialog *OverviewMap::configDialog()
         m_configDialog = new QDialog();
         ui_configWidget = new Ui::OverviewMapConfigWidget;
         ui_configWidget->setupUi( m_configDialog );
+        ui_configWidget->label_3->setVisible(false);
+        ui_configWidget->m_planetComboBox->setVisible(false);
+        ui_configWidget->m_fileChooserButton->setVisible(false);
+        ui_configWidget->m_tableWidget->setVisible(false);
+
         for( int i = 0; i < m_planetID.size(); ++i ) {
             ui_configWidget->m_planetComboBox->addItem( PlanetFactory::localizedName(m_planetID.value( i ) ) );
         }
