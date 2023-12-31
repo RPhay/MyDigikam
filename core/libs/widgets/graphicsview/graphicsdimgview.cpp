@@ -98,6 +98,7 @@ void GraphicsDImgView::setItem(GraphicsDImgItem* const item)
     d->item = item;
     d->scene->addItem(d->item);
     d->layout->addItem(d->item);
+    d->item->zoomSettings()->setTrackingWidget(this);
 }
 
 GraphicsDImgItem* GraphicsDImgView::item() const

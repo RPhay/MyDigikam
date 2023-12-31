@@ -21,7 +21,6 @@
 // Qt includes
 
 #include <QList>
-#include <QApplication>
 
 // Local includes
 
@@ -31,16 +30,16 @@ namespace Digikam
 {
 
 ImageZoomSettings::ImageZoomSettings()
-    : m_zoom(1.0),
-      m_zoomConst(1.0),
-      m_zoomRatio(qApp->devicePixelRatio())
+    : m_zoom          (1.0),
+      m_zoomConst     (1.0),
+      m_trackingWidget(nullptr)
 {
 }
 
 ImageZoomSettings::ImageZoomSettings(const QSize& imageSize, const QSize& originalSize)
-    : m_zoom(1.0),
-      m_zoomConst(1.0),
-      m_zoomRatio(qApp->devicePixelRatio())
+    : m_zoom          (1.0),
+      m_zoomConst     (1.0),
+      m_trackingWidget(nullptr)
 {
     setImageSize(imageSize, originalSize);
 }
@@ -59,6 +58,11 @@ void ImageZoomSettings::setImageSize(const QSize& size, const QSize& originalSiz
     }
 }
 
+void ImageZoomSettings::setTrackingWidget(QWidget* const widget)
+{
+    m_trackingWidget = widget;
+}
+
 double ImageZoomSettings::zoomFactor() const
 {
     return m_zoom;
@@ -66,7 +70,7 @@ double ImageZoomSettings::zoomFactor() const
 
 double ImageZoomSettings::realZoomFactor() const
 {
-    return (m_zoom / m_zoomRatio);
+    return (m_zoom / deviceRatio());
 }
 
 QSizeF ImageZoomSettings::imageSize() const
@@ -81,7 +85,7 @@ QSizeF ImageZoomSettings::originalImageSize() const
 
 QSizeF ImageZoomSettings::zoomedSize() const
 {
-    return (m_size / (m_zoomConst * m_zoomRatio) * m_zoom);
+    return (m_size / (m_zoomConst * deviceRatio()) * m_zoom);
 }
 
 QRectF ImageZoomSettings::sourceRect(const QRectF& imageRect) const
@@ -115,11 +119,11 @@ double ImageZoomSettings::fitToSizeZoomFactor(const QSizeF& frameSize, FitToSize
 
     if ((frameSize.width() / frameSize.height()) < (m_size.width() / m_size.height()))
     {
-        zoom = m_zoomConst * m_zoomRatio * frameSize.width() / m_size.width();
+        zoom = m_zoomConst * deviceRatio() * frameSize.width() / m_size.width();
     }
     else
     {
-        zoom = m_zoomConst * m_zoomRatio * frameSize.height() / m_size.height();
+        zoom = m_zoomConst * deviceRatio() * frameSize.height() / m_size.height();
     }
 
     // Zoom rounding down and scroll bars are never activated.
@@ -141,24 +145,24 @@ double ImageZoomSettings::fitToSizeZoomFactor(const QSizeF& frameSize, FitToSize
 
 QRectF ImageZoomSettings::mapZoomToImage(const QRectF& zoomedRect) const
 {
-    return QRectF(zoomedRect.topLeft() / (m_zoom / (m_zoomConst * m_zoomRatio)),
-                  zoomedRect.size()    / (m_zoom / (m_zoomConst * m_zoomRatio)));
+    return QRectF(zoomedRect.topLeft() / (m_zoom / (m_zoomConst * deviceRatio())),
+                  zoomedRect.size()    / (m_zoom / (m_zoomConst * deviceRatio())));
 }
 
 QRectF ImageZoomSettings::mapImageToZoom(const QRectF& imageRect) const
 {
-    return QRectF(imageRect.topLeft() * (m_zoom / (m_zoomConst * m_zoomRatio)),
-                  imageRect.size()    * (m_zoom / (m_zoomConst * m_zoomRatio)));
+    return QRectF(imageRect.topLeft() * (m_zoom / (m_zoomConst * deviceRatio())),
+                  imageRect.size()    * (m_zoom / (m_zoomConst * deviceRatio())));
 }
 
 QPointF ImageZoomSettings::mapZoomToImage(const QPointF& zoomedPoint) const
 {
-    return (zoomedPoint / (m_zoom / (m_zoomConst * m_zoomRatio)));
+    return (zoomedPoint / (m_zoom / (m_zoomConst * deviceRatio())));
 }
 
 QPointF ImageZoomSettings::mapImageToZoom(const QPointF& imagePoint) const
 {
-    return (imagePoint * (m_zoom / (m_zoomConst * m_zoomRatio)));
+    return (imagePoint * (m_zoom / (m_zoomConst * deviceRatio())));
 }
 
 inline static bool lessThanLimitedPrecision(double a, double b)
@@ -227,6 +231,18 @@ double ImageZoomSettings::snappedZoomFactor(double zoom, const QSizeF& frameSize
     }
 
     return zoom;
+}
+
+double ImageZoomSettings::deviceRatio() const
+{
+    if (m_trackingWidget)
+    {
+        return m_trackingWidget->devicePixelRatio();
+    }
+
+    qCWarning(DIGIKAM_GENERAL_LOG) << "ImageZoomSettings: tracking widget not set";
+
+    return 1.0;
 }
 
 } // namespace Digikam

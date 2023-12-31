@@ -70,7 +70,9 @@ ImageRegionItem::ImageRegionItem(ImageRegionWidget* const widget, bool paintExtr
     dd->view        = widget;
     dd->iface       = new ImageIface;
     dd->paintExtras = paintExtras;
+
     setAcceptHoverEvents(true);
+    zoomSettings()->setTrackingWidget(widget);
     setImage(dd->iface->original() ? dd->iface->original()->copy() : DImg());
 }
 

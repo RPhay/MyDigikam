@@ -20,6 +20,7 @@
 #include <QSizeF>
 #include <QRectF>
 #include <QPointF>
+#include <QWidget>
 
 // Local includes
 
@@ -52,6 +53,11 @@ public:
      * The zoom factor is unchanged, you need to call fitToSize again.
      */
     void setImageSize(const QSize& size, const QSize& originalSize = QSize());
+
+    /**
+     * Set the graphics view widget to track the device pixel ratio.
+     */
+    void setTrackingWidget(QWidget* const widget);
 
     /**
      * Return the currently set zoom factor
@@ -141,12 +147,17 @@ public:
      */
     double snappedZoomFactor(double newZoom, const QSizeF& frameSize)               const;
 
+private:
+
+    double deviceRatio()                                                            const;
+
 protected:
 
-    QSizeF m_size;
-    double m_zoom;
-    double m_zoomConst;
-    double m_zoomRatio;
+    QSizeF   m_size;
+    double   m_zoom;
+    double   m_zoomConst;
+
+    QWidget* m_trackingWidget;
 };
 
 } // namespace Digikam
