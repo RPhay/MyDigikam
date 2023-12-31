@@ -99,7 +99,7 @@ BUGFIXES:
 081 ==> 479137 - Face tagging - digikam crashes every time (!) when I set a rectangle to tag a face in preview ("Vorschau").
 082 ==> 479156 - Digikam crashes when I attempt to "Download&Delete all" from SD Card.
 083 ==> 479167 - digiKam 8.3 does not take into account the "aspect ratio" property.
-084 ==> 
+084 ==> 479221 - Crash on Tagging Faces (W10).
 085 ==> 
 086 ==> 
 087 ==> 
