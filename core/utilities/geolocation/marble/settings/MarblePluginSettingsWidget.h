@@ -26,6 +26,7 @@
 #include "digikam_export.h"
 
 class QModelIndex;
+class QListWidgetItem;
 
 /**
  * @short A public class that adds methods to the UI Plugins Settings Widget.
@@ -34,6 +35,7 @@ namespace Marble
 {
 
 class RenderPluginModel;
+class ParseRunnerPlugin;
 
 class DIGIKAM_EXPORT MarblePluginSettingsWidget : public QWidget
 {
@@ -45,6 +47,7 @@ public:
     ~MarblePluginSettingsWidget() override;
 
     void setModel(RenderPluginModel* const pluginModel);
+    void setRunnerPlugins(const QList<const ParseRunnerPlugin*>& list);
 
     void setAboutIcon(const QIcon& icon);
     void setConfigIcon(const QIcon& icon);
@@ -55,8 +58,9 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotPluginAboutDialog(const QModelIndex&);
-    void slotPluginConfigDialog(const QModelIndex&);
+    void slotAboutRenderPlugin(const QModelIndex&);
+    void slotAboutRunnerPlugin(QListWidgetItem*, int);
+    void slotRenderPluginConfigDialog(const QModelIndex&);
 
 private:
 

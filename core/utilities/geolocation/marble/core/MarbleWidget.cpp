@@ -35,9 +35,11 @@
 #include "MarbleWidgetInputHandler.h"
 #include "MarbleWidgetPopupMenu.h"
 #include "Planet.h"
+#include "PluginManager.h"
 #include "PopupLayer.h"
 #include "RenderState.h"
 #include "RenderPlugin.h"
+#include "ParseRunnerPlugin.h"
 #include "SunLocator.h"
 #include "TileCreatorDialog.h"
 #include "ViewportParams.h"
@@ -1100,9 +1102,14 @@ void MarbleWidget::setInputEnabled( bool enabled )
     }
 }
 
-QList<RenderPlugin *> MarbleWidget::renderPlugins() const
+QList<RenderPlugin*> MarbleWidget::renderPlugins() const
 {
     return d->m_map.renderPlugins();
+}
+
+QList<const ParseRunnerPlugin*> MarbleWidget::runnerPlugins() const
+{
+    return d->m_model.pluginManager()->parsingRunnerPlugins();
 }
 
 void MarbleWidget::readPluginSettings()

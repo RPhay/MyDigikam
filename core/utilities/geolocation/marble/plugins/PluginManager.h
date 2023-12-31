@@ -9,8 +9,8 @@
 
 #include <QObject>
 #include <QList>
-#include "digikam_export.h"
 
+#include "digikam_export.h"
 
 namespace Marble
 {
@@ -38,7 +38,8 @@ class DIGIKAM_EXPORT PluginManager : public QObject
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit PluginManager( QObject* parent = nullptr );
 
     ~PluginManager() override;
@@ -115,6 +116,7 @@ class DIGIKAM_EXPORT PluginManager : public QObject
     static void whitelistPlugin(const QString &filename);
 
 Q_SIGNALS:
+
     void renderPluginsChanged();
 
     void positionProviderPluginsChanged();
@@ -125,14 +127,17 @@ Q_SIGNALS:
 
     void parseRunnerPluginsChanged();
 
- private:
+private:
+
     Q_DISABLE_COPY( PluginManager )
 
 #ifdef Q_OS_ANDROID
+
     void installPluginsFromAssets() const;
+
 #endif
 
-    PluginManagerPrivate  * const d;
+    PluginManagerPrivate* const d;
 };
 
 }

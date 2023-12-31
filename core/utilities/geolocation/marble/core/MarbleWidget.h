@@ -43,6 +43,7 @@ class MarbleWidgetPopupMenu;
 class MarbleWidgetInputHandler;
 class MarbleWidgetPrivate;
 class RenderPlugin;
+class ParseRunnerPlugin;
 class RenderState;
 class TextureLayer;
 class VectorTileLayer;
@@ -180,6 +181,12 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
      * @return the list of RenderPlugins
      */
     QList<RenderPlugin*> renderPlugins() const;
+
+    /**
+     * @brief Returns a list of all ParseRunnerPlugins loaded internally.
+     * @return the list of ParseRunnerPlugins
+     */
+    QList<const ParseRunnerPlugin*> runnerPlugins() const;
 
     /**
      * @brief Returns a list of all FloatItems on the widget

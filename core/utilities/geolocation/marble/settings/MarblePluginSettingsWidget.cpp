@@ -18,10 +18,13 @@
 
 // Qt includes
 
+#include <QList>
 #include <QPointer>
 #include <QMessageBox>
 #include <QGroupBox>
 #include <QListView>
+#include <QListWidget>
+#include <QListWidgetItem>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -33,10 +36,12 @@
 
 // Local includes
 
-#include "geopluginaboutdlg.h"
 #include "DialogConfigurationInterface.h"
+#include "ParseRunnerPlugin.h"
 #include "PluginItemDelegate.h"
 #include "RenderPluginModel.h"
+
+#include "geopluginaboutdlg.h"
 
 using namespace Digikam;
 
@@ -51,10 +56,11 @@ public:
 
 public:
 
-    QListView*                  renderListView = nullptr;
-    QListView*                  runnerListView = nullptr;
-    PluginItemDelegate*         itemDelegate   = nullptr;
-    QPointer<RenderPluginModel> pluginModel;
+    QListView*                      renderListView = nullptr;
+    QListWidget*                    runnerListView = nullptr;
+    PluginItemDelegate*             itemDelegate   = nullptr;
+    QPointer<RenderPluginModel>     renderPluginModel;
+    QList<const ParseRunnerPlugin*> runnerPluginList;
 };
 
 // ---
@@ -72,7 +78,7 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
 
     QGroupBox* const grpRunner    = new QGroupBox(i18n("Runner Tools"), this);
     QVBoxLayout* const vlayRunner = new QVBoxLayout(grpRunner);
-    d->runnerListView             = new QListView(grpRunner);
+    d->runnerListView             = new QListWidget(grpRunner);
     vlayRunner->addWidget(d->runnerListView);
 
     QVBoxLayout* const vlay = new QVBoxLayout(this);
@@ -80,10 +86,13 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
     vlay->addWidget(grpRunner);
 
     connect(d->itemDelegate, SIGNAL(aboutPluginClicked(QModelIndex)),
-            this, SLOT(slotPluginAboutDialog(QModelIndex)));
+            this, SLOT(slotAboutRenderPlugin(QModelIndex)));
 
     connect(d->itemDelegate, SIGNAL(configPluginClicked(QModelIndex)),
-            this, SLOT(slotPluginConfigDialog(QModelIndex)));
+            this, SLOT(slotRenderPluginConfigDialog(QModelIndex)));
+
+    connect(d->runnerListView, SIGNAL(itemDoubleClicked(QListWidgetItem*,int)),
+            this, SLOT(slotAboutRunnerPlugin(QListWidgetItem*,int)));
 }
 
 MarblePluginSettingsWidget::~MarblePluginSettingsWidget()
@@ -103,41 +112,73 @@ void MarblePluginSettingsWidget::setConfigIcon(const QIcon& icon)
 
 void MarblePluginSettingsWidget::setModel(RenderPluginModel* const pluginModel)
 {
-    if (!d->pluginModel.isNull())
+    if (!d->renderPluginModel.isNull())
     {
-        disconnect(d->pluginModel.data(), nullptr, this, nullptr);
+        disconnect(d->renderPluginModel.data(), nullptr, this, nullptr);
     }
 
-    d->pluginModel = pluginModel;
-    d->renderListView->setModel(pluginModel);
+    d->renderPluginModel = pluginModel;
+    d->renderListView->setModel(d->renderPluginModel);
 
-    if (!d->pluginModel.isNull())
+    if (!d->renderPluginModel.isNull())
     {
-        connect(d->pluginModel.data(), SIGNAL(itemChanged(QStandardItem*)),
+        connect(d->renderPluginModel.data(), SIGNAL(itemChanged(QStandardItem*)),
                 this, SIGNAL(pluginListViewClicked()));
     }
 }
 
-void MarblePluginSettingsWidget::slotPluginAboutDialog(const QModelIndex& index)
+void MarblePluginSettingsWidget::setRunnerPlugins(const QList<const ParseRunnerPlugin*>& list)
 {
-    if (d->pluginModel.isNull())
+    d->runnerPluginList = list;
+
+    Q_FOREACH (const ParseRunnerPlugin* plug, d->runnerPluginList)
+    {
+        QListWidgetItem* const item = new QListWidgetItem(plug->icon(), plug->name());
+        item->setToolTip(plug->description());
+        d->runnerListView->addItem(item);
+    }
+}
+
+void MarblePluginSettingsWidget::slotAboutRenderPlugin(const QModelIndex& index)
+{
+    if (d->renderPluginModel.isNull())
     {
         return;
     }
 
-    QPointer<GeoPluginAboutDlg> dlg = new GeoPluginAboutDlg(d->pluginModel->pluginIface(index), this);
+    QPointer<GeoPluginAboutDlg> dlg = new GeoPluginAboutDlg(d->renderPluginModel->pluginIface(index), this);
     dlg->exec();
     delete dlg;
 }
 
-void MarblePluginSettingsWidget::slotPluginConfigDialog(const QModelIndex& index)
+void MarblePluginSettingsWidget::slotAboutRunnerPlugin(QListWidgetItem* item, int)
 {
-    if (d->pluginModel.isNull())
+    if (!item)
     {
         return;
     }
 
-    DialogConfigurationInterface* const configInterface = d->pluginModel->pluginDialogConfigurationInterface(index);
+    Q_FOREACH (const ParseRunnerPlugin* plug, d->runnerPluginList)
+    {
+        if (plug->name() == item->text())
+        {
+            QPointer<GeoPluginAboutDlg> dlg = new GeoPluginAboutDlg((PluginInterface*)(plug), this);
+            dlg->exec();
+            delete dlg;
+
+            break;
+        }
+    }
+}
+
+void MarblePluginSettingsWidget::slotRenderPluginConfigDialog(const QModelIndex& index)
+{
+    if (d->renderPluginModel.isNull())
+    {
+        return;
+    }
+
+    DialogConfigurationInterface* const configInterface = d->renderPluginModel->pluginDialogConfigurationInterface(index);
     QDialog* const configDialog                         = configInterface ? configInterface->configDialog() : nullptr;
 
     if (configDialog)

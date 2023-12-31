@@ -45,10 +45,11 @@
 #include "MarbleGlobal.h"
 #include "RenderPlugin.h"
 #include "RenderPluginModel.h"
+#include "ParseRunnerPlugin.h"
 #include "MarbleClock.h"
 #include "MarblePluginSettingsWidget.h"
-#include "geolocationsettings.h"
 
+#include "geolocationsettings.h"
 #include "digikam_debug.h"
 #include "dexpanderbox.h"
 
@@ -280,12 +281,15 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
 
     // Plugins page
 
+
+    d->pluginSettings = new MarblePluginSettingsWidget(this);
+
     if (d->marbleWidget)
     {
         d->pluginModel.setRenderPlugins(d->marbleWidget->renderPlugins());
+        d->pluginSettings->setRunnerPlugins(d->marbleWidget->runnerPlugins());
     }
 
-    d->pluginSettings = new MarblePluginSettingsWidget(this);
     d->pluginSettings->setModel(&d->pluginModel);
     d->pluginSettings->setObjectName(QLatin1String("plugin_page"));
     addTab(d->pluginSettings, i18n("Marble Plugins"));
