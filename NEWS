@@ -101,7 +101,7 @@ BUGFIXES:
 083 ==> 479167 - digiKam 8.3 does not take into account the "aspect ratio" property.
 084 ==> 479221 - Crash on Tagging Faces (W10).
 085 ==> 479227 - Broken link on support page.
-086 ==> 
+086 ==> 477795 - Scaled images are jagged.
 087 ==> 
 088 ==> 
 089 ==> 
