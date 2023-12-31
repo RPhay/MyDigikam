@@ -91,8 +91,8 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
     connect(d->itemDelegate, SIGNAL(configPluginClicked(QModelIndex)),
             this, SLOT(slotRenderPluginConfigDialog(QModelIndex)));
 
-    connect(d->runnerListView, SIGNAL(itemDoubleClicked(QListWidgetItem*,int)),
-            this, SLOT(slotAboutRunnerPlugin(QListWidgetItem*,int)));
+    connect(d->runnerListView, SIGNAL(itemDoubleClicked(QListWidgetItem*)),
+            this, SLOT(slotAboutRunnerPlugin(QListWidgetItem*)));
 }
 
 MarblePluginSettingsWidget::~MarblePluginSettingsWidget()
@@ -151,7 +151,7 @@ void MarblePluginSettingsWidget::slotAboutRenderPlugin(const QModelIndex& index)
     delete dlg;
 }
 
-void MarblePluginSettingsWidget::slotAboutRunnerPlugin(QListWidgetItem* item, int)
+void MarblePluginSettingsWidget::slotAboutRunnerPlugin(QListWidgetItem* item)
 {
     if (!item)
     {

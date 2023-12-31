@@ -38,6 +38,8 @@ public:
     explicit GeoPluginAboutDlg(PluginInterface* const tool, QWidget* const parent = nullptr);
     ~GeoPluginAboutDlg() override;
 
+private Q_SLOTS:
+
     void slotOnlineHandbook();
 
 private:

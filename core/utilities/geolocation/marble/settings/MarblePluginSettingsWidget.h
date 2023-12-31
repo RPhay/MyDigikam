@@ -59,7 +59,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotAboutRenderPlugin(const QModelIndex&);
-    void slotAboutRunnerPlugin(QListWidgetItem*, int);
+    void slotAboutRunnerPlugin(QListWidgetItem*);
     void slotRenderPluginConfigDialog(const QModelIndex&);
 
 private:
