@@ -145,7 +145,9 @@ void MarblePluginSettingsWidget::setRunnerPlugins(const QList<const ParseRunnerP
 
     Q_FOREACH (const ParseRunnerPlugin* plug, d->runnerPluginList)
     {
-        QTreeWidgetItem* const item = new QTreeWidgetItem(QStringList() << plug->name());
+        QTreeWidgetItem* const item = new QTreeWidgetItem();
+        item->setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
+        item->setText(0, plug->name());
         item->setIcon(0, plug->icon());
         item->setToolTip(0, plug->description());
         d->runnerListView->addTopLevelItem(item);
