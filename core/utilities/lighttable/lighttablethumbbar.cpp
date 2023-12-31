@@ -67,7 +67,7 @@ class Q_DECL_HIDDEN LightTableItemListModel : public ItemListModel
 
 public:
 
-    explicit LightTableItemListModel(QObject* const parent = nullptr)
+    explicit LightTableItemListModel(QWidget* const parent)
         : ItemListModel(parent),
           m_exclusive  (false)
     {

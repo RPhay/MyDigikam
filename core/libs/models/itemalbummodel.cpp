@@ -65,7 +65,7 @@ public:
     bool              extraValueJob;
 };
 
-ItemAlbumModel::ItemAlbumModel(QObject* const parent)
+ItemAlbumModel::ItemAlbumModel(QWidget* const parent)
     : ItemThumbnailModel(parent),
       d(new Private)
 {

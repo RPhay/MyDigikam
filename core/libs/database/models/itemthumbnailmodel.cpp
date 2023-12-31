@@ -18,7 +18,6 @@
 // Qt includes
 
 #include <QHash>
-#include <QApplication>
 
 // Local includes
 
@@ -34,7 +33,8 @@ class Q_DECL_HIDDEN ItemThumbnailModel::Private
 public:
 
     explicit Private()
-      : loadingThread      (nullptr),
+      : displayWidget      (nullptr),
+        loadingThread      (nullptr),
         storageThread      (nullptr),
         preloadThread      (nullptr),
         thumbSize          (0),
@@ -44,6 +44,8 @@ public:
     {
         staticListContainingThumbnailRole << ItemModel::ThumbnailRole;
     }
+
+    QWidget*               displayWidget;
 
     ThumbnailLoadThread*   loadingThread;
     ThumbnailLoadThread*   storageThread;
@@ -69,10 +71,11 @@ public:
     }
 };
 
-ItemThumbnailModel::ItemThumbnailModel(QObject* const parent)
+ItemThumbnailModel::ItemThumbnailModel(QWidget* const parent)
     : ItemModel(parent),
       d        (new Private)
 {
+    d->displayWidget = parent;
     d->storageThread = new ThumbnailLoadThread;
     d->storageThread->setSendSurrogatePixmap(false);
 
@@ -228,8 +231,8 @@ QVariant ItemThumbnailModel::data(const QModelIndex& index, int role) const
 
         }
 
-        double ratio  = qApp->devicePixelRatio();
-        int thumbSize = qRound((double)d->thumbSize.size() * ratio);
+        double dpr    = d->displayWidget->devicePixelRatio();
+        int thumbSize = qRound((double)d->thumbSize.size() * dpr);
 
         if (!d->detailRect.isNull())
         {

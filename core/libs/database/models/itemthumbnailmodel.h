@@ -40,7 +40,7 @@ public:
      *  Adjust the thumbnail size to your needs.
      *  Note that setKeepsFilePathCache is enabled per default.
      */
-    explicit ItemThumbnailModel(QObject* const parent);
+    explicit ItemThumbnailModel(QWidget* const parent);
     ~ItemThumbnailModel()                                                             override;
 
     /**

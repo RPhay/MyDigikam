@@ -291,8 +291,9 @@ class Q_DECL_HIDDEN ItemHistoryGraphModel::Private
 public:
 
     explicit Private()
-        : mode    (ItemHistoryGraphModel::CombinedTreeMode),
-          rootItem(nullptr)
+        : mode      (ItemHistoryGraphModel::CombinedTreeMode),
+          rootItem  (nullptr),
+          imageModel(nullptr)
     {
     }
 
@@ -303,7 +304,7 @@ public:
 
     HistoryTreeItem*                                   rootItem;
     QList<VertexItem*>                                 vertexItems;
-    ItemListModel                                      imageModel;
+    ItemListModel*                                     imageModel;
     QList<HistoryGraph::Vertex>                        path;
     QHash<HistoryGraph::Vertex, HistoryImageId::Types> categories;
 
@@ -349,7 +350,7 @@ VertexItem* ItemHistoryGraphModel::Private::createVertexItem(const HistoryGraph:
 {
     const HistoryVertexProperties& props = graph().properties(v);
     ItemInfo info                        = givenInfo.isNull() ? props.firstItemInfo() : givenInfo;
-    QModelIndex index                    = imageModel.indexForItemInfo(info);
+    QModelIndex index                    = imageModel->indexForItemInfo(info);
 /*
     qCDebug(DIGIKAM_DATABASE_LOG) << "Added" << info.id() << index;
 */
@@ -692,11 +693,12 @@ void ItemHistoryGraphModel::Private::addIdenticalItems(HistoryTreeItem* parentIt
 
 // ------------------------------------------------------------------------
 
-ItemHistoryGraphModel::ItemHistoryGraphModel(QObject* const parent)
+ItemHistoryGraphModel::ItemHistoryGraphModel(QWidget* const parent)
     : QAbstractItemModel(parent),
       d                 (new Private)
 {
-    d->rootItem = new HistoryTreeItem;
+    d->rootItem   = new HistoryTreeItem;
+    d->imageModel = new ItemListModel(parent);
 }
 
 ItemHistoryGraphModel::~ItemHistoryGraphModel()
@@ -739,8 +741,8 @@ void ItemHistoryGraphModel::setHistory(const ItemInfo& subject, const ItemHistor
 
     // fill helper model
 
-    d->imageModel.clearItemInfos();
-    d->imageModel.addItemInfos(d->historyGraph.allImages());
+    d->imageModel->clearItemInfos();
+    d->imageModel->addItemInfos(d->historyGraph.allImages());
 
     d->build();
 
@@ -780,7 +782,7 @@ FilterAction ItemHistoryGraphModel::filterAction(const QModelIndex& index) const
 
 bool ItemHistoryGraphModel::hasImage(const ItemInfo& info)
 {
-    return d->imageModel.hasImage(info);
+    return d->imageModel->hasImage(info);
 }
 
 ItemInfo ItemHistoryGraphModel::imageInfo(const QModelIndex& index) const
@@ -960,7 +962,7 @@ bool ItemHistoryGraphModel::setData(const QModelIndex& index, const QVariant& va
     {
         if (vertexItem->index.isValid())
         {
-            return d->imageModel.setData(vertexItem->index, value, role);
+            return d->imageModel->setData(vertexItem->index, value, role);
         }
     }
 
@@ -969,7 +971,7 @@ bool ItemHistoryGraphModel::setData(const QModelIndex& index, const QVariant& va
 
 ItemListModel* ItemHistoryGraphModel::imageModel() const
 {
-    return &d->imageModel;
+    return d->imageModel;
 }
 
 QModelIndex ItemHistoryGraphModel::imageModelIndex(const QModelIndex& index) const
@@ -1014,7 +1016,7 @@ Qt::ItemFlags ItemHistoryGraphModel::flags(const QModelIndex& index) const
 
     if_isItem(VertexItem, vertexItem, item)
     {
-        return d->imageModel.flags(vertexItem->index);
+        return d->imageModel->flags(vertexItem->index);
     }
 
     if (item)

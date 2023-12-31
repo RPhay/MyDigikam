@@ -41,7 +41,7 @@ public:
      * Adjust the thumbnail size to your needs.
      * Note that setKeepsFilePatindexesForPathhCache is enabled per default.
      */
-    explicit ShowfotoThumbnailModel(QObject* const parent);
+    explicit ShowfotoThumbnailModel(QWidget* const parent);
     ~ShowfotoThumbnailModel()                                                                     override;
 
     /**

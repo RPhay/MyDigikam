@@ -16,7 +16,6 @@
 
 // Qt includes
 
-#include <QApplication>
 #include <QFileInfo>
 #include <QScopedPointer>
 
@@ -41,7 +40,8 @@ class Q_DECL_HIDDEN ShowfotoThumbnailModel::Private
 public:
 
     explicit Private()
-      : thread              (nullptr),
+      : displayWidget       (nullptr),
+        loadingThread       (nullptr),
         preloadThread       (nullptr),
         thumbSize           (0),
         lastGlobalThumbSize (0),
@@ -63,7 +63,9 @@ public:
 
 public:
 
-    ThumbnailLoadThread* thread;
+    QWidget*             displayWidget;
+
+    ThumbnailLoadThread* loadingThread;
     ThumbnailLoadThread* preloadThread;
     ThumbnailSize        thumbSize;
     ThumbnailSize        lastGlobalThumbSize;
@@ -73,10 +75,12 @@ public:
     bool                 emitDataChanged;
 };
 
-ShowfotoThumbnailModel::ShowfotoThumbnailModel(QObject* const parent)
+ShowfotoThumbnailModel::ShowfotoThumbnailModel(QWidget* const parent)
     : ShowfotoItemModel(parent),
       d                (new Private)
 {
+    d->displayWidget = parent;
+
     connect(this, &ShowfotoThumbnailModel::signalThumbInfo,
             this, &ShowfotoThumbnailModel::slotThumbInfoLoaded);
 }
@@ -91,15 +95,15 @@ ShowfotoThumbnailModel::~ShowfotoThumbnailModel()
 
 void ShowfotoThumbnailModel::setThumbnailLoadThread(ThumbnailLoadThread* thread)
 {
-    d->thread = thread;
+    d->loadingThread = thread;
 
-    connect(d->thread, &ThumbnailLoadThread::signalThumbnailLoaded,
+    connect(d->loadingThread, &ThumbnailLoadThread::signalThumbnailLoaded,
             this, &ShowfotoThumbnailModel::slotThumbnailLoaded);
 }
 
 ThumbnailLoadThread* ShowfotoThumbnailModel::thumbnailLoadThread() const
 {
-    return d->thread;
+    return d->loadingThread;
 }
 
 ThumbnailSize ShowfotoThumbnailModel::thumbnailSize() const
@@ -133,7 +137,7 @@ void ShowfotoThumbnailModel::showfotoItemInfosCleared()
 
 QVariant ShowfotoThumbnailModel::data(const QModelIndex& index, int role) const
 {
-    if ((role == ThumbnailRole) && (d->thread && index.isValid()))
+    if ((role == ThumbnailRole) && (d->loadingThread && index.isValid()))
     {
         QImage    thumbnailImage;
         QPixmap   pixmap;
@@ -162,8 +166,8 @@ QVariant ShowfotoThumbnailModel::data(const QModelIndex& index, int role) const
             return pixmap;
         }
 
-        double ratio  = qApp->devicePixelRatio();
-        int thumbSize = qRound((double)d->thumbSize.size() * ratio);
+        double dpr    = d->displayWidget->devicePixelRatio();
+        int thumbSize = qRound((double)d->thumbSize.size() * dpr);
 
         // if pixmapForItem Failed
 
@@ -363,14 +367,14 @@ bool ShowfotoThumbnailModel::getThumbnail(const ShowfotoItemInfo& itemInfo, QIma
 
 bool ShowfotoThumbnailModel::pixmapForItem(const QString& url, QPixmap& pix) const
 {
-    double ratio  = qApp->devicePixelRatio();
-    int thumbSize = qRound((double)d->thumbSize.size() * ratio);
+    double dpr    = d->displayWidget->devicePixelRatio();
+    int thumbSize = qRound((double)d->thumbSize.size() * dpr);
 
     if (thumbSize > d->maxThumbSize)
     {
         // TODO: Install a widget maximum size to prevent this situation
 
-        bool hasPixmap = d->thread->find(ThumbnailIdentifier(url), pix, d->maxThumbSize);
+        bool hasPixmap = d->loadingThread->find(ThumbnailIdentifier(url), pix, d->maxThumbSize);
 
         if (hasPixmap)
         {
@@ -391,7 +395,7 @@ bool ShowfotoThumbnailModel::pixmapForItem(const QString& url, QPixmap& pix) con
     }
     else
     {
-        return d->thread->find(ThumbnailIdentifier(url), pix, thumbSize);
+        return d->loadingThread->find(ThumbnailIdentifier(url), pix, thumbSize);
     }
 }
 

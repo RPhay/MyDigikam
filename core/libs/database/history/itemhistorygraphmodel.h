@@ -62,7 +62,7 @@ public:
 
 public:
 
-    explicit ItemHistoryGraphModel(QObject* const parent = nullptr);
+    explicit ItemHistoryGraphModel(QWidget* const parent);
     ~ItemHistoryGraphModel()                                                                        override;
 
     void setMode(Mode mode);

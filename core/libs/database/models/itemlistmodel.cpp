@@ -26,7 +26,7 @@
 namespace Digikam
 {
 
-ItemListModel::ItemListModel(QObject* const parent)
+ItemListModel::ItemListModel(QWidget* const parent)
     : ItemThumbnailModel(parent)
 {
     connect(CoreDbAccess::databaseWatch(), SIGNAL(collectionImageChange(CollectionImageChangeset)),
