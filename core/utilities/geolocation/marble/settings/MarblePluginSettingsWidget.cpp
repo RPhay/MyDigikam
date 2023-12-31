@@ -82,6 +82,7 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
     d->runnerListView             = new QTreeWidget(grpRunner);
     d->runnerListView->setColumnCount(2);
     d->runnerListView->setRootIsDecorated(false);
+    d->runnerListView->setUniformRowHeights(true);
     d->runnerListView->setSelectionMode(QAbstractItemView::SingleSelection);
     d->runnerListView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     d->runnerListView->setAllColumnsShowFocus(true);
@@ -89,7 +90,9 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
     d->runnerListView->sortByColumn(0, Qt::AscendingOrder);
     d->runnerListView->setIconSize(QSize(16, 16));
     d->runnerListView->setHeaderHidden(true);
-    d->runnerListView->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    d->runnerListView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
+    d->runnerListView->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    d->runnerListView->header()->setSortIndicatorShown(false);
 
     vlayRunner->addWidget(d->runnerListView);
 
@@ -145,12 +148,11 @@ void MarblePluginSettingsWidget::setRunnerPlugins(const QList<const ParseRunnerP
 
     Q_FOREACH (const ParseRunnerPlugin* plug, d->runnerPluginList)
     {
-        QTreeWidgetItem* const item = new QTreeWidgetItem();
+        QTreeWidgetItem* const item = new QTreeWidgetItem(d->runnerListView);
         item->setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
         item->setText(0, plug->name());
         item->setIcon(0, plug->icon());
         item->setToolTip(0, plug->description());
-        d->runnerListView->addTopLevelItem(item);
     }
 }
 
