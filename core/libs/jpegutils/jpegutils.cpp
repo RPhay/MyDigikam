@@ -421,7 +421,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         return true;
     }
 
-    bool        ret  = false;
+    bool        ret  = true;
     QString     dest = m_destFile;
     QString     src  = m_file;
     QString     dir  = fi.path();
@@ -452,6 +452,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
             if (!(behavior & MetaEngineSettingsContainer::RotateByLossyRotation))
             {
                 removeLater << tempFile;
+                ret = false;
                 break;
             }
 
@@ -462,6 +463,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
             if (!srcImg.load(src))
             {
                 removeLater << tempFile;
+                ret = false;
                 break;
             }
 
@@ -477,6 +479,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Lossy transform failed for" << src;
 
                 removeLater << tempFile;
+                ret = false;
                 break;
             }
 
@@ -516,6 +519,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
                                              << "to" << sidecarDest << "failed";
 
                 removeLater << sidecarTemp;
+                ret = false;
                 break;
             }
         }
@@ -533,11 +537,8 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
                                          << "to" << dest << "failed";
 
             removeLater << tempFile;
+            ret = false;
             break;
-        }
-        else
-        {
-            ret = true;
         }
     }
 
