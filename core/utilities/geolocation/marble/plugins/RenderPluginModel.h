@@ -3,20 +3,21 @@
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_RENDERPLUGINMODEL_H
-#define MARBLE_RENDERPLUGINMODEL_H
+#ifndef MARBLE_RENDER_PLUGIN_MODEL_H
+#define MARBLE_RENDER_PLUGIN_MODEL_H
 
-#include "digikam_export.h"
 #include <QStandardItemModel>
-
 #include <QList>
 
 #include "PluginInterface.h"
+
+#include "digikam_export.h"
 
 namespace Marble
 {
 
 class DialogConfigurationInterface;
+class PluginInterface;
 class RenderPlugin;
 
 /**
@@ -30,7 +31,8 @@ public:
     /**
      * This enum contains the data roles for the QStandardItems.
      */
-    enum ItemDataRole {
+    enum ItemDataRole
+    {
         Name = Qt::DisplayRole,          // QString
         Icon = Qt::DecorationRole,       // QIcon
         Description = Qt::ToolTipRole,   // QString
@@ -42,7 +44,7 @@ public:
         CopyrightYears                   // QString
     };
 
-    explicit RenderPluginModel( QObject *parent = nullptr );
+    explicit RenderPluginModel(QObject* parent = nullptr);
 
     ~RenderPluginModel() override;
 
@@ -54,13 +56,16 @@ public:
      *
      * @param renderPlugins the RenderPlugins to be managed
      */
-    void setRenderPlugins( const QList<RenderPlugin *> &renderPlugins );
+    void setRenderPlugins(const QList<RenderPlugin*>& renderPlugins);
 
-    QVector<PluginAuthor> pluginAuthors( const QModelIndex &index ) const;
+    QVector<PluginAuthor> pluginAuthors(const QModelIndex& index) const;
 
-    DialogConfigurationInterface *pluginDialogConfigurationInterface( const QModelIndex &index );
+    DialogConfigurationInterface* pluginDialogConfigurationInterface(const QModelIndex& index);
+    RenderPlugin* plugin(const QModelIndex& index);
+    PluginInterface* pluginIface(const QModelIndex& index);
 
 public Q_SLOTS:
+
     /**
      * Retrieve the current plugin state for the user interface.
      */
@@ -72,11 +77,13 @@ public Q_SLOTS:
     void applyPluginState();
 
 private:
+
     class Private;
     Private *const d;
+
     friend class Private;
 };
 
 }
 
-#endif // MARBLE_RENDERPLUGINMODEL_H
+#endif // MARBLE_RENDER_PLUGIN_MODEL_H

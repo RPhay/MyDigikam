@@ -62,12 +62,13 @@ set(libgeoiface_SRCS
                      ${CMAKE_CURRENT_SOURCE_DIR}/core/geocoordinates.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/core/geoifacecommon.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/core/geomodelhelper.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/core/geopluginaboutdlg.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/core/geolocationsettings.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/core/geolocationsettingscontainer.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/core/groupstatecomputer.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/core/gpscommon.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/core/gpsundocommand.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/core/gpsgeoifacemodelhelper.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/core/geolocationsettings.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/core/geolocationsettingscontainer.cpp
 
                      ${CMAKE_CURRENT_SOURCE_DIR}/bookmark/gpsbookmarkowner.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/bookmark/gpsbookmarkmodelhelper.cpp

@@ -24,8 +24,6 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QDialog>
-#include <QDialogButtonBox>
 #include <QPushButton>
 
 // KDE includes
@@ -34,9 +32,12 @@
 
 // Local includes
 
+#include "geopluginaboutdlg.h"
 #include "DialogConfigurationInterface.h"
 #include "PluginItemDelegate.h"
 #include "RenderPluginModel.h"
+
+using namespace Digikam;
 
 namespace Marble
 {
@@ -113,54 +114,9 @@ void MarblePluginSettingsWidget::slotPluginAboutDialog(const QModelIndex& index)
         return;
     }
 
-    QDialog* const dlg = new QDialog(this);
-    dlg->setWindowFlags((dlg->windowFlags() & ~Qt::Dialog) |
-                   Qt::Window                              |
-                   Qt::WindowCloseButtonHint               |
-                   Qt::WindowMinMaxButtonsHint);
-
-    QString years = d->pluginModel->data(index, RenderPluginModel::CopyrightYears).toString();
-    QString auth  = years + i18n(" by ");
-
-    for (const PluginAuthor& author: d->pluginModel->pluginAuthors(index))
-    {
-        auth += author.name + QLatin1String(", ");
-    }
-
-    auth.truncate(auth.size() - 2);
-
-    dlg->setWindowTitle(i18n("About Plugin"));
-    QLabel* const icon      = new QLabel(dlg);
-    icon->setPixmap(qvariant_cast<QIcon>(d->pluginModel->data(index, RenderPluginModel::Icon)).pixmap(48, 48));
-    QLabel* const text      = new QLabel(dlg);
-    text->setWordWrap(true);
-    text->setText(i18n(
-                       "<p><u>Name:</u> %1</p>"
-                       "<p><u>Version:</u> %2</p>"
-                       "<p><u>Copyrights:</u> %3</p>"
-                       "<p><u>Description:</u> %4</p>",
-                       d->pluginModel->data(index, RenderPluginModel::Name).toString(),
-                       d->pluginModel->data(index, RenderPluginModel::Version).toString(),
-                       auth,
-                       d->pluginModel->data(index, RenderPluginModel::Description).toString()
-                      )
-                 );
-
-    QDialogButtonBox* const btn = new QDialogButtonBox(QDialogButtonBox::Ok, this);
-    btn->button(QDialogButtonBox::Ok)->setDefault(true);
-
-    QVBoxLayout* const vlay = new QVBoxLayout(dlg);
-    QHBoxLayout* const hlay = new QHBoxLayout;
-    hlay->addWidget(icon);
-    hlay->addWidget(text);
-    vlay->addLayout(hlay);
-    vlay->addWidget(btn);
-
-    connect(btn->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
-            dlg, SLOT(accept()));
-
-    dlg->adjustSize();
+    QPointer<GeoPluginAboutDlg> dlg = new GeoPluginAboutDlg(d->pluginModel->pluginIface(index), this);
     dlg->exec();
+    delete dlg;
 }
 
 void MarblePluginSettingsWidget::slotPluginConfigDialog(const QModelIndex& index)

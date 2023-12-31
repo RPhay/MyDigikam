@@ -6,6 +6,7 @@
 #include "RenderPluginModel.h"
 
 #include "DialogConfigurationInterface.h"
+#include "PluginInterface.h"
 #include "RenderPlugin.h"
 
 namespace Marble
@@ -14,87 +15,108 @@ namespace Marble
 class Q_DECL_HIDDEN RenderPluginModel::Private
 {
 public:
+
     Private();
 
-    static bool renderPluginGuiStringLessThan( RenderPlugin* one, RenderPlugin* two )
+    static bool renderPluginGuiStringLessThan(RenderPlugin* one, RenderPlugin* two)
     {
         // Sort by gui string ignoring keyboard accelerators
-        return one->guiString().remove( QLatin1Char( '&' ) ) < two->guiString().remove( QLatin1Char( '&' ) );
+
+        return one->guiString().remove(QLatin1Char('&')) < two->guiString().remove(QLatin1Char('&'));
     }
 
-    QList<RenderPlugin *> m_renderPlugins;
+    QList<RenderPlugin*> m_renderPlugins;
 };
 
-RenderPluginModel::Private::Private() :
-    m_renderPlugins()
+RenderPluginModel::Private::Private()
+    : m_renderPlugins()
 {
 }
 
-RenderPluginModel::RenderPluginModel( QObject *parent ) :
-    QStandardItemModel( parent ),
-    d( new Private )
+RenderPluginModel::RenderPluginModel(QObject* parent)
+    : QStandardItemModel(parent),
+      d                 (new Private)
 {
 }
 
 RenderPluginModel::~RenderPluginModel()
 {
     // our model doesn't own the items, so take them away
-    while ( invisibleRootItem()->hasChildren() ) {
-        invisibleRootItem()->takeRow( 0 );
+
+    while (invisibleRootItem()->hasChildren())
+    {
+        invisibleRootItem()->takeRow(0);
     }
 
     delete d;
 }
 
-void RenderPluginModel::setRenderPlugins( const QList<RenderPlugin *> &renderPlugins )
+void RenderPluginModel::setRenderPlugins(const QList<RenderPlugin*> &renderPlugins)
 {
     // our model doesn't own the items, so take them away
-    while ( invisibleRootItem()->hasChildren() ) {
-        invisibleRootItem()->takeRow( 0 );
+
+    while (invisibleRootItem()->hasChildren())
+    {
+        invisibleRootItem()->takeRow(0);
     }
 
     d->m_renderPlugins = renderPlugins;
-    std::sort( d->m_renderPlugins.begin(), d->m_renderPlugins.end(), Private::renderPluginGuiStringLessThan );
+    std::sort(d->m_renderPlugins.begin(), d->m_renderPlugins.end(), Private::renderPluginGuiStringLessThan);
 
-    QStandardItem *parentItem = invisibleRootItem();
-    for ( RenderPlugin *plugin: d->m_renderPlugins ) {
-        parentItem->appendRow( plugin->item() );
+    QStandardItem* parentItem = invisibleRootItem();
+
+    for (RenderPlugin* plugin : d->m_renderPlugins)
+    {
+        parentItem->appendRow(plugin->item());
     }
 }
 
 QVector<PluginAuthor> RenderPluginModel::pluginAuthors( const QModelIndex &index ) const
 {
-    if ( !index.isValid() )
+    if (!index.isValid())
         return QVector<PluginAuthor>();
 
-    if ( index.row() < 0 || index.row() >= d->m_renderPlugins.count() )
+    if ((index.row() < 0) || (index.row() >= d->m_renderPlugins.count()))
         return QVector<PluginAuthor>();
 
-    return d->m_renderPlugins.at( index.row() )->pluginAuthors();
+    return d->m_renderPlugins.at(index.row())->pluginAuthors();
 }
 
-DialogConfigurationInterface *RenderPluginModel::pluginDialogConfigurationInterface( const QModelIndex &index )
+RenderPlugin* RenderPluginModel::plugin(const QModelIndex& index)
 {
-    if ( !index.isValid() )
+    if (!index.isValid())
         return nullptr;
 
-    if ( index.row() < 0 || index.row() >= d->m_renderPlugins.count() )
+    if ((index.row() < 0) || (index.row() >= d->m_renderPlugins.count()))
         return nullptr;
 
-    RenderPlugin *plugin = d->m_renderPlugins.at( index.row() );
-    return qobject_cast<DialogConfigurationInterface *>( plugin );
+    RenderPlugin* const plugin = d->m_renderPlugins.at(index.row());
+
+    return plugin;
+}
+
+DialogConfigurationInterface* RenderPluginModel::pluginDialogConfigurationInterface(const QModelIndex& index)
+{
+    return qobject_cast<DialogConfigurationInterface*>(plugin(index));
+}
+
+PluginInterface* RenderPluginModel::pluginIface(const QModelIndex& index)
+{
+    return dynamic_cast<PluginInterface*>(plugin(index));
 }
 
 void RenderPluginModel::retrievePluginState()
 {
-    for ( RenderPlugin *plugin: d->m_renderPlugins ) {
+    for (RenderPlugin* plugin : d->m_renderPlugins)
+    {
         plugin->retrieveItemState();
     }
 }
 
 void RenderPluginModel::applyPluginState()
 {
-    for ( RenderPlugin *plugin: d->m_renderPlugins ) {
+    for (RenderPlugin* plugin : d->m_renderPlugins)
+    {
         plugin->applyItemState();
     }
 }
