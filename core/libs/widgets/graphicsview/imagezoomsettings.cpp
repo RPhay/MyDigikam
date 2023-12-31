@@ -30,16 +30,16 @@ namespace Digikam
 {
 
 ImageZoomSettings::ImageZoomSettings()
-    : m_zoom          (1.0),
-      m_zoomConst     (1.0),
-      m_trackingWidget(nullptr)
+    : m_zoom         (1.0),
+      m_zoomConst    (1.0),
+      m_displayWidget(nullptr)
 {
 }
 
 ImageZoomSettings::ImageZoomSettings(const QSize& imageSize, const QSize& originalSize)
-    : m_zoom          (1.0),
-      m_zoomConst     (1.0),
-      m_trackingWidget(nullptr)
+    : m_zoom         (1.0),
+      m_zoomConst    (1.0),
+      m_displayWidget(nullptr)
 {
     setImageSize(imageSize, originalSize);
 }
@@ -58,9 +58,9 @@ void ImageZoomSettings::setImageSize(const QSize& size, const QSize& originalSiz
     }
 }
 
-void ImageZoomSettings::setTrackingWidget(QWidget* const widget)
+void ImageZoomSettings::setDisplayWidget(QWidget* const widget)
 {
-    m_trackingWidget = widget;
+    m_displayWidget = widget;
 }
 
 double ImageZoomSettings::zoomFactor() const
@@ -235,12 +235,12 @@ double ImageZoomSettings::snappedZoomFactor(double zoom, const QSizeF& frameSize
 
 double ImageZoomSettings::deviceRatio() const
 {
-    if (m_trackingWidget)
+    if (m_displayWidget)
     {
-        return m_trackingWidget->devicePixelRatio();
+        return m_displayWidget->devicePixelRatio();
     }
 
-    qCWarning(DIGIKAM_GENERAL_LOG) << "ImageZoomSettings: tracking widget not set";
+    qCWarning(DIGIKAM_GENERAL_LOG) << "ImageZoomSettings: display widget not set";
 
     return 1.0;
 }

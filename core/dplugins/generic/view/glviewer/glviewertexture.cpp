@@ -18,7 +18,6 @@
 // Qt includes
 
 #include <QUrl>
-#include <QApplication>
 #include <QScopedPointer>
 
 // Local includes
@@ -40,21 +39,22 @@ class Q_DECL_HIDDEN GLViewerTexture::Private
 public:
 
     explicit Private()
-      : rdx       (0.0),
-        rdy       (0.0),
-        z         (0.0),
-        ux        (0.0),
-        uy        (0.0),
-        rtx       (0.0),
-        rty       (0.0),
-        vtop      (0.0),
-        vbottom   (0.0),
-        vleft     (0.0),
-        vright    (0.0),
-        display_x (0),
-        display_y (0),
-        rotate_idx(0),
-        iface     (nullptr)
+      : rdx          (0.0),
+        rdy          (0.0),
+        z            (0.0),
+        ux           (0.0),
+        uy           (0.0),
+        rtx          (0.0),
+        rty          (0.0),
+        vtop         (0.0),
+        vbottom      (0.0),
+        vleft        (0.0),
+        vright       (0.0),
+        display_x    (0),
+        display_y    (0),
+        rotate_idx   (0),
+        iface        (nullptr),
+        displayWidget(nullptr)
     {
         rotate_list[0] = DMetadata::ORIENTATION_ROT_90;
         rotate_list[1] = DMetadata::ORIENTATION_ROT_180;
@@ -72,6 +72,7 @@ public:
     int                         rotate_idx;
     IccProfile                  iccProfile;
     DInfoInterface*             iface;
+    QWidget*                    displayWidget;
 
 private:
 
@@ -84,6 +85,7 @@ GLViewerTexture::GLViewerTexture(DInfoInterface* const iface, QWidget* const dis
       d             (new Private)
 {
     d->iface                      = iface;
+    d->displayWidget              = display;
     ICCSettingsContainer settings = IccSettings::instance()->settings();
 
     if (settings.enableCM && settings.useManagedPreviews)
@@ -484,7 +486,7 @@ void GLViewerTexture::zoomToOriginal()
         zoomfactorToOriginal = float(d->display_y) / imgSize.height();
     }
 
-    zoomfactorToOriginal *= qApp->devicePixelRatio();
+    zoomfactorToOriginal *= d->displayWidget->devicePixelRatio();
 
     zoom(zoomfactorToOriginal, QPoint(d->display_x / 2, d->display_y / 2));
 }

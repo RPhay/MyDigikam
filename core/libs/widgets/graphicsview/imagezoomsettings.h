@@ -57,7 +57,7 @@ public:
     /**
      * Set the graphics view widget to track the device pixel ratio.
      */
-    void setTrackingWidget(QWidget* const widget);
+    void setDisplayWidget(QWidget* const widget);
 
     /**
      * Return the currently set zoom factor
@@ -157,7 +157,7 @@ protected:
     double   m_zoom;
     double   m_zoomConst;
 
-    QWidget* m_trackingWidget;
+    QWidget* m_displayWidget;
 };
 
 } // namespace Digikam

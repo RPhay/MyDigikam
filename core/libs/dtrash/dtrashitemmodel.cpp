@@ -20,7 +20,6 @@
 #include <QTimer>
 #include <QPixmap>
 #include <QMimeType>
-#include <QApplication>
 #include <QMimeDatabase>
 #include <QPersistentModelIndex>
 
@@ -47,6 +46,7 @@ public:
         sortColumn     (DTrashTimeStamp),
         sortOrder      (Qt::DescendingOrder),
         sortEnabled    (true),
+        displayWidget  (nullptr),
         itemsLoadingJob(nullptr),
         thumbnailThread(nullptr)
     {
@@ -60,6 +60,8 @@ public:
     Qt::SortOrder        sortOrder;
     bool                 sortEnabled;
 
+    QWidget*             displayWidget;
+
     IOJobsThread*        itemsLoadingJob;
     ThumbnailLoadThread* thumbnailThread;
 
@@ -70,11 +72,13 @@ public:
     DTrashItemInfoList   data;
 };
 
-DTrashItemModel::DTrashItemModel(QObject* const parent)
+DTrashItemModel::DTrashItemModel(QObject* const parent, QWidget* const widget)
     : QAbstractTableModel(parent),
       d                  (new Private)
 {
     qRegisterMetaType<DTrashItemInfo>("DTrashItemInfo");
+
+    d->displayWidget   = widget;
     d->thumbnailThread = new ThumbnailLoadThread;
     d->thumbnailThread->setSendSurrogatePixmap(false);
 
@@ -238,7 +242,7 @@ void DTrashItemModel::sort(int column, Qt::SortOrder order)
 
 bool DTrashItemModel::pixmapForItem(const QString& path, QPixmap& pix) const
 {
-    double ratio  = qApp->devicePixelRatio();
+    double ratio  = d->displayWidget->devicePixelRatio();
     int thumbSize = qMin(qRound((double)d->thumbSize * ratio), (int)ThumbnailSize::HD);
 
     bool ret      = d->thumbnailThread->find(ThumbnailIdentifier(path), pix, thumbSize);

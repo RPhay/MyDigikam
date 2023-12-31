@@ -17,6 +17,7 @@
 
 // Qt includes
 
+#include <QWidget>
 #include <QAbstractTableModel>
 
 // Local includes
@@ -43,7 +44,7 @@ public:
 
 public:
 
-    explicit DTrashItemModel(QObject* const parent = nullptr);
+    explicit DTrashItemModel(QObject* const parent, QWidget* const widget);
     ~DTrashItemModel() override;
 
     /**

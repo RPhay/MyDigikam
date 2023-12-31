@@ -98,7 +98,7 @@ TrashView::TrashView(QWidget* const parent)
     // View and tools
 
     d->tableView     = new QTableView(this);
-    d->model         = new DTrashItemModel(this);
+    d->model         = new DTrashItemModel(this, this);
     d->thumbDelegate = new ThumbnailAligningDelegate(this);
 
     // Table view settings
