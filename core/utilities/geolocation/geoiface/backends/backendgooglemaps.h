@@ -74,7 +74,6 @@ public:
 */
     void updateActionAvailability()                                                       override;
 
-    void setApiKeyChanged();
     QString getMapType()                                                            const;
     void setMapType(const QString& newMapType);
     void setShowMapTypeControl(const bool state);

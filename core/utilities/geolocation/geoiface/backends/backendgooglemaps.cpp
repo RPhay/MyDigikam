@@ -18,17 +18,13 @@
 
 // Qt includes
 
-#include <QDir>
-#include <QFile>
-#include <QBuffer>
-#include <QActionGroup>
 #include <QMenu>
+#include <QTimer>
+#include <QAction>
+#include <QBuffer>
 #include <QPointer>
 #include <QResizeEvent>
-#include <QAction>
-#include <QTimer>
-#include <QMessageBox>
-#include <QInputDialog>
+#include <QActionGroup>
 #include <QApplication>
 #include <QStandardPaths>
 
@@ -109,7 +105,6 @@ public:
         cacheMinZoom                (0),
         cacheCenter                 (52.0, 6.0),
         cacheBounds                 (),
-        keyChanged                  (false),
         activeState                 (false),
         widgetIsDocked              (false),
         trackChangeTracker          ()
@@ -134,7 +129,6 @@ public:
     int                                       cacheMinZoom;
     GeoCoordinates                            cacheCenter;
     QPair<GeoCoordinates, GeoCoordinates>     cacheBounds;
-    bool                                      keyChanged;
     bool                                      activeState;
     bool                                      widgetIsDocked;
     QList<TrackManager::TrackChanges>         trackChangeTracker;
@@ -1617,19 +1611,11 @@ void BackendGoogleMaps::slotTrackVisibilityChanged(const bool newState)
     }
 }
 
-void BackendGoogleMaps::setApiKeyChanged()
+void BackendGoogleMaps::slotMessageEvent(const QString& /*message*/)
 {
-    d->keyChanged = true;
-}
-
-void BackendGoogleMaps::slotMessageEvent(const QString& message)
-{
-    if (d->keyChanged && message.contains(QLatin1String("Billing")))
-    {
-        QMessageBox::information(qApp->activeWindow(),
-                                 i18nc("@title:window", "Javascript Message"), message);
-        d->keyChanged = false;
-    }
+/*
+    qCDebug(DIGIKAM_GEOIFACE_LOG) << "Javascript Message:" << message;
+*/
 }
 
 #ifdef HAVE_GEOLOCATION
