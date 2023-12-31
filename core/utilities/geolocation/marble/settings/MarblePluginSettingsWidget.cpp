@@ -20,6 +20,7 @@
 
 #include <QPointer>
 #include <QMessageBox>
+#include <QGroupBox>
 #include <QListView>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -50,7 +51,8 @@ public:
 
 public:
 
-    QListView*                  pluginListView = nullptr;
+    QListView*                  renderListView = nullptr;
+    QListView*                  runnerListView = nullptr;
     PluginItemDelegate*         itemDelegate   = nullptr;
     QPointer<RenderPluginModel> pluginModel;
 };
@@ -61,12 +63,21 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    d->pluginListView       = new QListView(this);
-    QVBoxLayout* const vlay = new QVBoxLayout(this);
-    vlay->addWidget(d->pluginListView);
+    QGroupBox* const grpRender    = new QGroupBox(i18n("Render Tools"), this);
+    QVBoxLayout* const vlayRender = new QVBoxLayout(grpRender);
+    d->renderListView             = new QListView(grpRender);
+    d->itemDelegate               = new PluginItemDelegate(d->renderListView, this);
+    d->renderListView->setItemDelegate(d->itemDelegate);
+    vlayRender->addWidget(d->renderListView);
 
-    d->itemDelegate         = new PluginItemDelegate(d->pluginListView, this);
-    d->pluginListView->setItemDelegate(d->itemDelegate);
+    QGroupBox* const grpRunner    = new QGroupBox(i18n("Runner Tools"), this);
+    QVBoxLayout* const vlayRunner = new QVBoxLayout(grpRunner);
+    d->runnerListView             = new QListView(grpRunner);
+    vlayRunner->addWidget(d->runnerListView);
+
+    QVBoxLayout* const vlay = new QVBoxLayout(this);
+    vlay->addWidget(grpRender);
+    vlay->addWidget(grpRunner);
 
     connect(d->itemDelegate, SIGNAL(aboutPluginClicked(QModelIndex)),
             this, SLOT(slotPluginAboutDialog(QModelIndex)));
@@ -98,7 +109,7 @@ void MarblePluginSettingsWidget::setModel(RenderPluginModel* const pluginModel)
     }
 
     d->pluginModel = pluginModel;
-    d->pluginListView->setModel(pluginModel);
+    d->renderListView->setModel(pluginModel);
 
     if (!d->pluginModel.isNull())
     {
