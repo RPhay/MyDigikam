@@ -133,13 +133,13 @@ bool ColumnThumbnail::paint(QPainter* const painter, const QStyleOptionViewItem&
         // to be as high as the row height as long as the width can stretch enough
         // because the column is wider than the thumbnail size.
 
-        maxSize     = qMin(maxSize, availableSize.width());
+        maxSize    = qMin(maxSize, availableSize.width());
 
         // However, digiKam limits the thumbnail size, so we also do that here
 
-        maxSize     = qMin(maxSize, (int)ThumbnailSize::maxThumbsSize());
-        double dpr  = m_displayWidget->devicePixelRatio();
-        maxSize     = qRound((double)maxSize * dpr);
+        maxSize    = qMin(maxSize, (int)ThumbnailSize::maxThumbsSize());
+        double dpr = m_displayWidget->devicePixelRatio();
+        maxSize    = qRound((double)maxSize * dpr);
 
         QPixmap thumbnail;
 
