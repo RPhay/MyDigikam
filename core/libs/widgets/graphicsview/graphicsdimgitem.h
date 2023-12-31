@@ -51,6 +51,8 @@ public:
     const ImageZoomSettings* zoomSettings()                     const;
     ImageZoomSettings*       zoomSettings();
 
+    void setDisplayWidget(QWidget* const widget);
+
     void sizeHasChanged();
     void clearCache();
 

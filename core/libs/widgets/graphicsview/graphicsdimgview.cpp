@@ -96,9 +96,10 @@ GraphicsDImgView::~GraphicsDImgView()
 void GraphicsDImgView::setItem(GraphicsDImgItem* const item)
 {
     d->item = item;
+    d->item->setDisplayWidget(this);
+
     d->scene->addItem(d->item);
     d->layout->addItem(d->item);
-    d->item->zoomSettings()->setDisplayWidget(this);
 }
 
 GraphicsDImgItem* GraphicsDImgView::item() const

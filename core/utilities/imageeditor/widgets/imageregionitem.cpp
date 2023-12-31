@@ -71,8 +71,8 @@ ImageRegionItem::ImageRegionItem(ImageRegionWidget* const widget, bool paintExtr
     dd->iface       = new ImageIface;
     dd->paintExtras = paintExtras;
 
+    setDisplayWidget(widget);
     setAcceptHoverEvents(true);
-    zoomSettings()->setDisplayWidget(widget);
     setImage(dd->iface->original() ? dd->iface->original()->copy() : DImg());
 }
 

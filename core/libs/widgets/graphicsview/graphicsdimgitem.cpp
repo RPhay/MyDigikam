@@ -188,6 +188,13 @@ ImageZoomSettings* GraphicsDImgItem::zoomSettings()
     return &d->zoomSettings;
 }
 
+void GraphicsDImgItem::setDisplayWidget(QWidget* const widget)
+{
+    Q_D(GraphicsDImgItem);
+
+    d->zoomSettings.setDisplayWidget(widget);
+}
+
 QRectF GraphicsDImgItem::boundingRect() const
 {
     Q_D(const GraphicsDImgItem);
