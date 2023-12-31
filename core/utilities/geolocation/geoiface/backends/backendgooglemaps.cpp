@@ -99,14 +99,6 @@ public:
         showMapTypeControlAction    (nullptr),
         showNavigationControlAction (nullptr),
         showScaleControlAction      (nullptr),
-        htmlTemplate                (QLatin1String("<html>\n<head>\n"
-                                                   "<script type=\"text/javascript\" src=\"https://maps.google.com/maps/"
-                                                   "api/js?key=%1\"></script>\n"
-                                                   "<script type=\"text/javascript\" src=\"%2\"></script>\n"
-                                                   "</head>\n"
-                                                   "<body onload=\"kgeomapInitialize()\" style=\"padding: 0px; margin: 0px;\">\n"
-                                                   "    <div id=\"map_canvas\" style=\"width:100%; height:400px;\"></div>\n"
-                                                   "</body>\n</html>\n")),
         htmlFileName                (QLatin1String("backend-googlemaps.html")),
         cacheMapType                (QLatin1String("ROADMAP")),
         cacheShowMapTypeControl     (true),
@@ -132,7 +124,6 @@ public:
     QAction*                                  showMapTypeControlAction;
     QAction*                                  showNavigationControlAction;
     QAction*                                  showScaleControlAction;
-    QString                                   htmlTemplate;
     QString                                   htmlFileName;
     QString                                   cacheMapType;
     bool                                      cacheShowMapTypeControl;
