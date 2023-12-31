@@ -112,14 +112,7 @@ double ItemViewDelegate::displayRatio() const
 {
     Q_D(const ItemViewDelegate);
 
-    if (d->displayWidget)
-    {
-        return d->displayWidget->devicePixelRatio();
-    }
-
-    qCWarning(DIGIKAM_GENERAL_LOG) << "ItemViewDelegate: display widget not set";
-
-    return 1.0;
+    return d->displayWidget->devicePixelRatio();
 }
 
 void ItemViewDelegate::setThumbnailSize(const ThumbnailSize& thumbSize)
