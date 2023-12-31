@@ -18,7 +18,6 @@
 // Qt includes
 
 #include <QPainter>
-#include <QApplication>
 #include <QStyleOptionViewItem>
 
 // KDE includes
@@ -46,9 +45,10 @@ namespace TableViewColumns
 
 ColumnThumbnail::ColumnThumbnail(TableViewShared* const tableViewShared,
                                  const TableViewColumnConfiguration& pConfiguration,
-                                 QObject* const parent)
+                                 QWidget* const parent)
     : TableViewColumn(tableViewShared, pConfiguration, parent),
-      m_thumbnailSize(s->tableView->getThumbnailSize().size())
+      m_thumbnailSize(s->tableView->getThumbnailSize().size()),
+      m_displayWidget(parent)
 {
     connect(s->thumbnailLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
             this, SLOT(slotThumbnailLoaded(LoadingDescription,QPixmap)));
@@ -61,7 +61,7 @@ ColumnThumbnail::~ColumnThumbnail()
 bool ColumnThumbnail::CreateFromConfiguration(TableViewShared* const tableViewShared,
                                               const TableViewColumnConfiguration& pConfiguration,
                                               TableViewColumn** const pNewColumn,
-                                              QObject* const parent)
+                                              QWidget* const parent)
 {
     if (pConfiguration.columnId != QLatin1String("thumbnail"))
     {
@@ -133,23 +133,23 @@ bool ColumnThumbnail::paint(QPainter* const painter, const QStyleOptionViewItem&
         // to be as high as the row height as long as the width can stretch enough
         // because the column is wider than the thumbnail size.
 
-        maxSize       = qMin(maxSize, availableSize.width());
+        maxSize     = qMin(maxSize, availableSize.width());
 
         // However, digiKam limits the thumbnail size, so we also do that here
 
-        maxSize       = qMin(maxSize, (int)ThumbnailSize::maxThumbsSize());
-        double ratio  = qApp->devicePixelRatio();
-        maxSize       = qRound((double)maxSize * ratio);
+        maxSize     = qMin(maxSize, (int)ThumbnailSize::maxThumbsSize());
+        double dpr  = m_displayWidget->devicePixelRatio();
+        maxSize     = qRound((double)maxSize * dpr);
 
         QPixmap thumbnail;
 
         if (s->thumbnailLoadThread->find(info.thumbnailIdentifier(), thumbnail, maxSize))
         {
-            thumbnail.setDevicePixelRatio(ratio);
+            thumbnail.setDevicePixelRatio(dpr);
 
             /// @todo Is slotThumbnailLoaded still called when the thumbnail is found right away?
 
-            QSize pixmapSize = (QSizeF(thumbnail.size()) / ratio).toSize();
+            QSize pixmapSize = (QSizeF(thumbnail.size()) / dpr).toSize();
             pixmapSize       = pixmapSize.boundedTo(availableSize);
             QSize alignSize  = option.rect.size();
 

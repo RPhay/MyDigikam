@@ -184,9 +184,9 @@ void SlideImage::updatePixmap()
      * pixmap.
      */
 
-    double ratio   = qApp->devicePixelRatio();
+    double dpr     = devicePixelRatio();
 
-    QSize fullSize = QSizeF(ratio * width(), ratio * height()).toSize();
+    QSize fullSize = QSizeF(dpr * width(), dpr * height()).toSize();
     d->pixmap      = QPixmap(fullSize);
     d->pixmap.fill(Qt::black);
     QPainter p(&(d->pixmap));

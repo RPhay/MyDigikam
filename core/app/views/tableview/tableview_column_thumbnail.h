@@ -36,7 +36,7 @@ private:
 
     explicit ColumnThumbnail(TableViewShared* const tableViewShared,
                              const TableViewColumnConfiguration& pConfiguration,
-                             QObject* const parent = nullptr);
+                             QWidget* const parent);
     ~ColumnThumbnail() override;
 
 public:
@@ -51,7 +51,7 @@ public:
     static bool CreateFromConfiguration(TableViewShared* const tableViewShared,
                                         const TableViewColumnConfiguration& pConfiguration,
                                         TableViewColumn** const pNewColumn,
-                                        QObject* const parent = nullptr);
+                                        QWidget* const parent);
 
     static TableViewColumnDescription getDescription();
 
@@ -61,7 +61,8 @@ private Q_SLOTS:
 
 private:
 
-    int m_thumbnailSize;
+    int      m_thumbnailSize;
+    QWidget* m_displayWidget;
 };
 
 } // namespace TableViewColumns

@@ -456,9 +456,9 @@ QList<LoadingDescription> ThumbnailLoadThread::lastDescriptions() const
 bool ThumbnailLoadThread::checkSize(int size)
 {
     size             = d->thumbnailSizeForPixmapSize(size);
-    double ratio     = qApp->devicePixelRatio();
-    int maxThumbSize = (ratio > 1.0) ? ThumbnailSize::MAX
-                                     : ThumbnailSize::maxThumbsSize();
+    double dpr       = qApp->devicePixelRatio();
+    int maxThumbSize = (dpr > 1.0) ? ThumbnailSize::MAX
+                                   : ThumbnailSize::maxThumbsSize();
 
     if      (size <= 0)
     {

@@ -45,9 +45,10 @@ TableViewColumn::~TableViewColumn()
 // ---------------------------------------------------------------------------------------------
 
 TableViewColumnFactory::TableViewColumnFactory(TableViewShared* const tableViewShared,
-                                               QObject* const parent)
-    : QObject(parent),
-      s      (tableViewShared)
+                                               QWidget* const parent)
+    : QObject        (parent),
+      m_displayWidget(parent),
+      s              (tableViewShared)
 {
 }
 
@@ -55,7 +56,7 @@ TableViewColumn* TableViewColumnFactory::getColumn(const Digikam::TableViewColum
 {
     TableViewColumn* newColumn = nullptr;
 
-    if (TableViewColumns::ColumnThumbnail::CreateFromConfiguration(s, columnConfiguration, &newColumn, this))
+    if (TableViewColumns::ColumnThumbnail::CreateFromConfiguration(s, columnConfiguration, &newColumn, m_displayWidget))
     {
         return newColumn;
     }

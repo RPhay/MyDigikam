@@ -100,11 +100,11 @@ int ThumbnailCreator::Private::storageSize() const
     // on-disk thumbnail sizes according to freedesktop spec
     // for thumbnail db it's always max size
 
-    double ratio = qApp->devicePixelRatio();
+    double dpr = qApp->devicePixelRatio();
 
     if (onlyLargeThumbnails)
     {
-        if ((ratio > 1.0) && (thumbnailStorage == ThumbnailDatabase))
+        if ((dpr > 1.0) && (thumbnailStorage == ThumbnailDatabase))
         {
             return ThumbnailSize::getUseLargeThumbs() ? ThumbnailSize::MAX
                                                       : ThumbnailSize::HD;
@@ -116,7 +116,7 @@ int ThumbnailCreator::Private::storageSize() const
     }
     else
     {
-        if ((ratio > 1.0) && (thumbnailStorage == ThumbnailDatabase))
+        if ((dpr > 1.0) && (thumbnailStorage == ThumbnailDatabase))
         {
             return (thumbnailSize <= ThumbnailSize::Small) ? ThumbnailSize::Huge
                                                            : ThumbnailSize::HD;

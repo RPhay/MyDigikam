@@ -39,7 +39,7 @@ class SlideImage : public QWidget
 
 public:
 
-    explicit SlideImage(QWidget* const parent = nullptr);
+    explicit SlideImage(QWidget* const parent);
     ~SlideImage() override;
 
     void setPreviewSettings(const PreviewSettings& settings);
