@@ -18,6 +18,7 @@
 
 // Qt includes
 
+#include <QIcon>
 #include <QList>
 #include <QPointer>
 #include <QMessageBox>
@@ -151,7 +152,7 @@ void MarblePluginSettingsWidget::setRunnerPlugins(const QList<const ParseRunnerP
         QTreeWidgetItem* const item = new QTreeWidgetItem(d->runnerListView);
         item->setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
         item->setText(0, plug->name());
-        item->setIcon(0, plug->icon());
+        item->setIcon(0, QIcon::fromTheme(QLatin1String("plugins")));
         item->setToolTip(0, plug->description());
     }
 }

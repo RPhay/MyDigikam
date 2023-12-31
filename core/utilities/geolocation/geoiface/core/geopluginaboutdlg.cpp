@@ -33,6 +33,7 @@
 #include <QHeaderView>
 #include <QFileInfo>
 #include <QLocale>
+#include <QIcon>
 #include <QDateTime>
 
 // KDE includes
@@ -68,7 +69,8 @@ GeoPluginAboutDlg::GeoPluginAboutDlg(PluginInterface* const tool, QWidget* const
     // --------------------------------------------------------
 
     QLabel* const logo              = new QLabel(page);
-    logo->setPixmap(tool->icon().pixmap(QSize(48, 48)));
+    logo->setPixmap(!tool->icon().isNull() ? tool->icon().pixmap(QSize(48, 48))
+                                           : QIcon::fromTheme(QLatin1String("plugins")).pixmap(QSize(48, 48)));
 
     // --------------------------------------------------------
 
