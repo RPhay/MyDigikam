@@ -213,32 +213,32 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
                                 "not the Open-Street Map."));
 
     d->showGrid                  = new QCheckBox(i18n("Show Coordinate Grid"), grpMap);
-    d->showGrid->setToolTip(i18n("Show the world-map coordinate grid overlay\n"
+    d->showGrid->setToolTip(i18n("Show the world-map coordinate grid overlay.\n"
                                  "This setting take effect only with the Atlas,\n"
                                  "the Satellite, and the Open-Street Maps."));
 
     d->showCross                 = new QCheckBox(i18n("Show Cross-Hair"), grpMap);
-    d->showCross->setToolTip(i18n("Show cross-hair on a center of the map\n"
+    d->showCross->setToolTip(i18n("Show cross-hair on a center of the map.\n"
                                   "This setting take effect only with the Atlas,\n"
                                   "the Satellite, and the Open-Street Maps."));
 
     d->showAtmos                 = new QCheckBox(i18n("Show Atmospheric Glow"), grpMap);
-    d->showAtmos->setToolTip(i18n("Show the world-map atmospheric glow overlay\n"
+    d->showAtmos->setToolTip(i18n("Show the world-map atmospheric glow overlay.\n"
                                   "This setting take effect only with the Atlas,\n"
                                   "the Satellite, and the Open-Street Maps."));
 
     d->showSunShading            = new QCheckBox(i18n("Show Night Shadow"), grpMap);
-    d->showSunShading->setToolTip(i18n("Show the world-map night shadow overlay\n"
+    d->showSunShading->setToolTip(i18n("Show the world-map night shadow overlay.\n"
                                        "This setting take effect only with the Atlas,\n"
                                        "the Satellite, and the Open-Street Maps."));
 
     d->showCities                = new QCheckBox(i18n("Show City Place Mark"), grpMap);
-    d->showCities->setToolTip(i18n("Show the world-map city place mark overlay\n"
+    d->showCities->setToolTip(i18n("Show the world-map city place mark overlay.\n"
                                    "This setting take effect only with the Atlas and Satellite Maps\n"
                                    "not the Open-Street Map."));
 
     d->showRelief                = new QCheckBox(i18n("Show Relief"), grpMap);
-    d->showRelief->setToolTip(i18n("Show the world-map relief overlay\n"
+    d->showRelief->setToolTip(i18n("Show the world-map relief overlay.\n"
                                    "This setting take effect only with the Atlas and Satellite Maps\n"
                                    "not the Open-Street Map."));
 
