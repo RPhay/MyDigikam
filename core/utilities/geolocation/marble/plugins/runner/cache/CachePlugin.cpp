@@ -4,6 +4,8 @@
 
 #include "CachePlugin.h"
 
+#include <QIcon>
+
 #include <klocalizedstring.h>
 
 #include "CacheRunner.h"
@@ -14,6 +16,11 @@ namespace Marble
 CachePlugin::CachePlugin(QObject* parent)
     : ParseRunnerPlugin(parent)
 {
+}
+
+QIcon CachePlugin::icon() const
+{
+    return QIcon::fromTheme(QStringLiteral("media-memory"));
 }
 
 QString CachePlugin::name() const

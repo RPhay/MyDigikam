@@ -26,7 +26,7 @@
 #include "digikam_export.h"
 
 class QModelIndex;
-class QListWidgetItem;
+class QTreeWidgetItem;
 
 /**
  * @short A public class that adds methods to the UI Plugins Settings Widget.
@@ -59,7 +59,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotAboutRenderPlugin(const QModelIndex&);
-    void slotAboutRunnerPlugin(QListWidgetItem*);
+    void slotAboutRunnerPlugin(QTreeWidgetItem*, int);
     void slotRenderPluginConfigDialog(const QModelIndex&);
 
 private:

@@ -20,6 +20,8 @@ public:
 
     explicit CachePlugin( QObject *parent = nullptr );
 
+    QIcon icon () const override;
+
     QString name() const override;
 
     QString nameId() const override;

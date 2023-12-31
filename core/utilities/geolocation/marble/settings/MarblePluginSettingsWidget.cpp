@@ -23,8 +23,9 @@
 #include <QMessageBox>
 #include <QGroupBox>
 #include <QListView>
-#include <QListWidget>
-#include <QListWidgetItem>
+#include <QHeaderView>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -57,7 +58,7 @@ public:
 public:
 
     QListView*                      renderListView = nullptr;
-    QListWidget*                    runnerListView = nullptr;
+    QTreeWidget*                    runnerListView = nullptr;
     PluginItemDelegate*             itemDelegate   = nullptr;
     QPointer<RenderPluginModel>     renderPluginModel;
     QList<const ParseRunnerPlugin*> runnerPluginList;
@@ -78,7 +79,18 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
 
     QGroupBox* const grpRunner    = new QGroupBox(i18n("Runner Tools"), this);
     QVBoxLayout* const vlayRunner = new QVBoxLayout(grpRunner);
-    d->runnerListView             = new QListWidget(grpRunner);
+    d->runnerListView             = new QTreeWidget(grpRunner);
+    d->runnerListView->setColumnCount(2);
+    d->runnerListView->setRootIsDecorated(false);
+    d->runnerListView->setSelectionMode(QAbstractItemView::SingleSelection);
+    d->runnerListView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    d->runnerListView->setAllColumnsShowFocus(true);
+    d->runnerListView->setSortingEnabled(true);
+    d->runnerListView->sortByColumn(0, Qt::AscendingOrder);
+    d->runnerListView->setIconSize(QSize(16, 16));
+    d->runnerListView->setHeaderHidden(true);
+    d->runnerListView->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+
     vlayRunner->addWidget(d->runnerListView);
 
     QVBoxLayout* const vlay = new QVBoxLayout(this);
@@ -91,8 +103,8 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
     connect(d->itemDelegate, SIGNAL(configPluginClicked(QModelIndex)),
             this, SLOT(slotRenderPluginConfigDialog(QModelIndex)));
 
-    connect(d->runnerListView, SIGNAL(itemDoubleClicked(QListWidgetItem*)),
-            this, SLOT(slotAboutRunnerPlugin(QListWidgetItem*)));
+    connect(d->runnerListView, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
+            this, SLOT(slotAboutRunnerPlugin(QTreeWidgetItem*,int)));
 }
 
 MarblePluginSettingsWidget::~MarblePluginSettingsWidget()
@@ -133,9 +145,10 @@ void MarblePluginSettingsWidget::setRunnerPlugins(const QList<const ParseRunnerP
 
     Q_FOREACH (const ParseRunnerPlugin* plug, d->runnerPluginList)
     {
-        QListWidgetItem* const item = new QListWidgetItem(plug->icon(), plug->name());
-        item->setToolTip(plug->description());
-        d->runnerListView->addItem(item);
+        QTreeWidgetItem* const item = new QTreeWidgetItem(QStringList() << plug->name());
+        item->setIcon(0, plug->icon());
+        item->setToolTip(0, plug->description());
+        d->runnerListView->addTopLevelItem(item);
     }
 }
 
@@ -151,7 +164,7 @@ void MarblePluginSettingsWidget::slotAboutRenderPlugin(const QModelIndex& index)
     delete dlg;
 }
 
-void MarblePluginSettingsWidget::slotAboutRunnerPlugin(QListWidgetItem* item)
+void MarblePluginSettingsWidget::slotAboutRunnerPlugin(QTreeWidgetItem* item, int)
 {
     if (!item)
     {
@@ -160,7 +173,7 @@ void MarblePluginSettingsWidget::slotAboutRunnerPlugin(QListWidgetItem* item)
 
     Q_FOREACH (const ParseRunnerPlugin* plug, d->runnerPluginList)
     {
-        if (plug->name() == item->text())
+        if (plug->name() == item->text(0))
         {
             QPointer<GeoPluginAboutDlg> dlg = new GeoPluginAboutDlg((PluginInterface*)(plug), this);
             dlg->exec();
