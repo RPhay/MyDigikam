@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 00:39+0000\n"
-"PO-Revision-Date: 2023-12-23 08:02\n"
+"POT-Creation-Date: 2023-12-31 00:39+0000\n"
+"PO-Revision-Date: 2023-12-30 13:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -2729,16 +2729,16 @@ msgstr ""
 "代码分支：%7"
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/qtav/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
+#: core/libs/video/player/qtav/mediaplayerview.cpp:191
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "后退"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/qtav/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
+#: core/libs/video/player/qtav/mediaplayerview.cpp:193
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -8831,7 +8831,7 @@ msgstr ""
 "像分割成许多小方格，然后用以每格的平均颜色数值对每格进行填充。</p>"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:144
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:106
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
 #, kde-format
 msgid "Distance:"
 msgstr "模糊距离："
@@ -19715,8 +19715,8 @@ msgid ""
 msgstr "勾选此项后，项目的所有属性，如注释、评分、标签等都将被添加为一个附件。"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:187
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:194
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -39799,28 +39799,28 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "桌面默认值"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:196
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
+#: core/libs/video/player/qtav/mediaplayerview.cpp:195
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "暂停/播放"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:198
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:268
+#: core/libs/video/player/qtav/mediaplayerview.cpp:197
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "捕获"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:201
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:278
+#: core/libs/video/player/qtav/mediaplayerview.cpp:200
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "媒体播放器发生错误..."
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtav/mediaplayerview.cpp:233
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "打开/关闭循环播放"
@@ -41290,10 +41290,9 @@ msgid "A KDE Family Project"
 msgstr "KDE 社区软件项目"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2023, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2024, digiKam developers team"
-msgstr "(c) 2001-2023, digiKam developers team"
+msgstr "(c) 2001-2024, digiKam developers team"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
@@ -48218,23 +48217,18 @@ msgid ""
 msgstr "<qt>图像文件的保存方式设置<br/></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
-#, fuzzy, kde-format
-#| msgid "Geolocation"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "地理位置"
 
 #: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Application Views Settings\n"
-#| "Customize the look of the views"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Geolocation Settings\n"
 "Customize view to geolocalize items"
-msgstr "视图设置"
+msgstr "地理位置设置"
 
 #: core/showfoto/setup/showfotosetup.cpp:182
 #, kde-format
@@ -51382,7 +51376,7 @@ msgid "Show Scale Control"
 msgstr "显示缩放控制"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:239
-#: core/utilities/setup/setupgeolocation.cpp:130
+#: core/utilities/setup/setupgeolocation.cpp:131
 #, kde-format
 msgid "Google Maps"
 msgstr "Google 地图"
@@ -54609,17 +54603,17 @@ msgstr "配置"
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:62
 #, kde-format
 msgid "Atmosphere"
-msgstr ""
+msgstr "大气层"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:67
 #, kde-format
 msgid "&Atmosphere"
-msgstr ""
+msgstr "大气层(&A)"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
 #, kde-format
 msgid "Shows the atmosphere around the earth."
-msgstr ""
+msgstr "显示地球周围的大气层。"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
@@ -54676,62 +54670,54 @@ msgstr "显示浮动指南针。"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure Compass Plugin"
+#, kde-format
 msgid "Configure Crosshairs Plugin"
-msgstr "配置指南针插件"
+msgstr "配置十字准星插件"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
 #, kde-format
 msgid "Gun 1"
-msgstr ""
+msgstr "枪式 1"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
 #, kde-format
 msgid "Gun 2"
-msgstr ""
+msgstr "枪式 2"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circled"
-msgstr "圆形扫描"
+msgstr "圈式"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "German"
+#, kde-format
 msgid "German"
-msgstr "德语"
+msgstr "德式"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:73
-#, fuzzy, kde-format
-#| msgid "Crosswalk"
+#, kde-format
 msgid "Crosshairs"
-msgstr "人行横道"
+msgstr "十字准星"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:78
-#, fuzzy, kde-format
-#| msgid "Crosswalk"
+#, kde-format
 msgid "Cross&hairs"
-msgstr "人行横道"
+msgstr "十字准星(&H)"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
 #, kde-format
 msgid "A plugin that shows crosshairs."
-msgstr ""
+msgstr "显示十字准星的插件。"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate Grid Plugin"
-msgstr "坐标"
+msgstr "坐标网格插件"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -54745,146 +54731,126 @@ msgstr "颜色(&O)"
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:444
 #, kde-format
 msgid "&Grid:"
-msgstr ""
+msgstr "网格(&G)："
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:497
-#, fuzzy, kde-format
-#| msgid "Color model of the image"
+#, kde-format
 msgid "Color of the coordinate grid."
-msgstr "图像色彩模型"
+msgstr "坐标网格颜色。"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:922
-#, fuzzy, kde-format
-#| msgctxt "@item: type code"
-#| msgid "Topic"
+#, kde-format
 msgid "&Tropics:"
-msgstr "主旨"
+msgstr "回归线(&T)："
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, tropicsPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:938
 #, kde-format
 msgid "Color of the tropical circles."
-msgstr ""
+msgstr "回归线颜色。"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1363
 #, kde-format
 msgid "&Equator:"
-msgstr ""
+msgstr "赤道(&E)："
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1379
-#, fuzzy, kde-format
-#| msgid "Color model of the image"
+#, kde-format
 msgid "Color of the equator."
-msgstr "图像色彩模型"
+msgstr "赤道颜色。"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1398
-#, fuzzy, kde-format
-#| msgid "&Text Labels"
+#, kde-format
 msgid "&Named Labels"
-msgstr "文字标签(&T)"
+msgstr "文字标记(&N)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1408
 #, kde-format
 msgid "Show Labels for Prime meridian, Equator, Tropics."
-msgstr ""
+msgstr "显示本初子午线、赤道、回归线的文字标记。"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1415
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Vertical Lines"
-#| msgid "Vertical Lines"
+#, kde-format
 msgid "&Numerical Labels"
-msgstr "垂直线"
+msgstr "数字标记(&N)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1425
-#, fuzzy, kde-format
-#| msgid "Show image labels"
+#, kde-format
 msgid "Show numerical Labels."
-msgstr "显示图像标记"
+msgstr "显示数字标记。"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:71
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate Grid"
-msgstr "坐标"
+msgstr "坐标网格"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:76
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate &Grid"
-msgstr "坐标"
+msgstr "坐标网格(&G)"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:91
 #, kde-format
 msgid "A plugin that shows a coordinate grid."
-msgstr ""
+msgstr "显示坐标网格的插件。"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:213
-#, fuzzy, kde-format
-#| msgid "Please choose the color for the position indicator"
+#, kde-format
 msgid "Please choose the color for the coordinate grid."
-msgstr "请选择位置框的颜色"
+msgstr "请选择坐标网格的颜色。"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:224
-#, fuzzy, kde-format
-#| msgid "Please choose the color for the position indicator"
+#, kde-format
 msgid "Please choose the color for the tropic circles."
-msgstr "请选择位置框的颜色"
+msgstr "请选择回归线的颜色。"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:235
-#, fuzzy, kde-format
-#| msgid "Please choose the color for the position indicator"
+#, kde-format
 msgid "Please choose the color for the equator."
-msgstr "请选择位置框的颜色"
+msgstr "请选择赤道的颜色。"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:315
-#, fuzzy, kde-format
-#| msgid "Elevator"
+#, kde-format
 msgid "Equator"
-msgstr "电梯"
+msgstr "赤道"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Parameters"
+#, kde-format
 msgid "Prime Meridian"
-msgstr "参数"
+msgstr "本初子午线"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:321
 #, kde-format
 msgid "Antimeridian"
-msgstr ""
+msgstr "对向子午线"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
 #, kde-format
 msgid "Tropic of Cancer"
-msgstr ""
+msgstr "北回归线"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:408
 #, kde-format
 msgid "Tropic of Capricorn"
-msgstr ""
+msgstr "南回归线"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Arctic Circle"
-msgstr "圆形扫描"
+msgstr "北极圈"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Antarctica"
+#, kde-format
 msgid "Antarctic Circle"
-msgstr "南极洲"
+msgstr "南极圈"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -54953,16 +54919,15 @@ msgstr "比例尺度(&R)"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MeasureConfigDialog)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:14
-#, fuzzy, kde-format
-#| msgid "Database Configuration"
+#, kde-format
 msgid "Measure Tool Configuration"
-msgstr "数据库配置"
+msgstr "测量工具配置"
 
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:20
 #, kde-format
 msgid "Ruler Type"
-msgstr ""
+msgstr "尺规类型"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_1)
@@ -54970,54 +54935,45 @@ msgstr ""
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:45
 #, kde-format
 msgid "Polygon"
-msgstr ""
+msgstr "折线"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:33
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:127
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circle"
-msgstr "圆形扫描"
+msgstr "圆圈"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:51
-#, fuzzy, kde-format
-#| msgid "Image labels"
+#, kde-format
 msgid "Segment labels"
-msgstr "图像标记"
+msgstr "线段标记"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:60
-#, fuzzy, kde-format
-#| msgid "Distance:"
+#, kde-format
 msgid "Distance "
-msgstr "模糊距离："
+msgstr "距离 "
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:70
-#, fuzzy, kde-format
-#| msgid "Marina"
+#, kde-format
 msgid "Bearing"
-msgstr "小船坞"
+msgstr "方位"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelChangeCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:80
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Saving changes -"
+#, kde-format
 msgid "Bearing Change"
-msgstr "正在保存更改 -"
+msgstr "方位变化"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPerimeter)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:90
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Parameters"
+#, kde-format
 msgid "Perimeter"
-msgstr "参数"
+msgstr "周长"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPolygonAreaLabelChangeCheckBox)
 #. i18n: ectx: property (text), widget (QCheckBox, m_showCircleAreaLabelChangeCheckBox)
@@ -55025,39 +54981,34 @@ msgstr "参数"
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:159
 #, kde-format
 msgid "Area"
-msgstr ""
+msgstr "面积"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRadiusLabelsCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:142
-#, fuzzy, kde-format
-#| msgid "Radius:"
+#, kde-format
 msgid "Radius"
-msgstr "半径："
+msgstr "半径"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showCircumference)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:152
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference"
+#, kde-format
 msgid "Circumference"
-msgstr "参考图像"
+msgstr "圆周长"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:87
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgid "Measure Tool"
-msgstr "基础工具"
+msgstr "测量工具"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:92
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgid "&Measure Tool"
-msgstr "基础工具"
+msgstr "测量工具(&M)"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:107
 #, kde-format
 msgid "Measure distances between two or more points."
-msgstr ""
+msgstr "测量两个以及以上的点之间的距离。"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:367
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:482
@@ -55066,6 +55017,8 @@ msgid ""
 "Area:\n"
 "%1"
 msgstr ""
+"面积：\n"
+"%1"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:385
 #, kde-format
@@ -55073,72 +55026,68 @@ msgid ""
 "Circumference:\n"
 "%1"
 msgstr ""
+"圆周长：\n"
+"%1"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:500
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Parameters"
+#, kde-format
 msgid ""
 "Perimeter:\n"
 "%1"
-msgstr "参数"
+msgstr ""
+"周长：\n"
+"%1"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:558
 #, kde-format
 msgid "Polygon Ruler"
-msgstr ""
+msgstr "折线尺规"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:560
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circle Ruler"
-msgstr "圆形扫描"
+msgstr "圆形尺规"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:563
 #, kde-format
 msgid "Total Distance: %1<br/>\n"
-msgstr ""
+msgstr "总距离：%1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:565
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:574
-#, fuzzy, kde-format
-#| msgid "Author: %1<br/><br/>"
+#, kde-format
 msgid "Area: %1<br/>\n"
-msgstr "作者：%1<br/><br/>"
+msgstr "面积：%1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:567
 #, kde-format
 msgid "Perimeter: %1<br/>\n"
-msgstr ""
+msgstr "周长：%1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:570
-#, fuzzy, kde-format
-#| msgid "Radius:"
+#, kde-format
 msgid "Radius: %1<br/>\n"
-msgstr "半径："
+msgstr "半径：%1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:572
 #, kde-format
 msgid "Circumference: %1<br/>\n"
-msgstr ""
+msgstr "圆周长：%1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:621
-#, fuzzy, kde-format
-#| msgid "Add a focus point"
+#, kde-format
 msgid "Add &Measure Point"
-msgstr "添加焦点"
+msgstr "添加测量点(&M)"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:622
 #, kde-format
 msgid "Remove &Last Measure Point"
-msgstr ""
+msgstr "移除最后一个测量点(&L)"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:624
-#, fuzzy, kde-format
-#| msgid "Remove processed items"
+#, kde-format
 msgid "&Remove Measure Points"
-msgstr "移除已处理项目"
+msgstr "移除测量点(&R)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
@@ -55229,23 +55178,107 @@ msgid "Position I&ndicator:"
 msgstr "位置框(&N)："
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:81
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Download Progress Indicator"
-msgstr "显示进度条"
+msgstr "下载进度指示器"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Error"
+#, kde-format
 msgid "&Download Progress"
-msgstr "下载错误"
+msgstr "下载进度指示器(&D)"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:101
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Shows a pie chart download progress indicator"
-msgstr "显示进度条"
+msgstr "显示浮动下载进度饼状图。"
+
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Cache File Parser"
+msgstr "OSM 文件解析器"
+
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:36
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from Cache Files"
+msgstr "从 OSM 文件创建地理数据文档"
+
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:52
+#, fuzzy, kde-format
+#| msgid "Marble View"
+msgid "Marble Cache Files"
+msgstr "Marble 地图视图"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "GPSBabel NMEA File Parser"
+msgstr "OSM 文件解析器"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
+#, kde-format
+msgid "Allows loading of NMEA files through GPSBabel."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Save files as"
+msgid "GPSBabel files"
+msgstr "文件保存为"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Gpx File Parser"
+msgstr "OSM 文件解析器"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from Gpx Files"
+msgstr "从 OSM 文件创建地理数据文档"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
+#, fuzzy, kde-format
+#| msgid "Data"
+msgid "GPS Data"
+msgstr "数据"
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "GeoJSON File Parser"
+msgstr "OSM 文件解析器"
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from GeoJSON Files"
+msgstr "从 OSM 文件创建地理数据文档"
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
+#, kde-format
+msgid "GeoJSON"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "KML File Parser"
+msgstr "OSM 文件解析器"
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from KML and KMZ Files"
+msgstr "从 OSM 文件创建地理数据文档"
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
+#, kde-format
+msgid "Google Earth KML"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -55276,6 +55309,40 @@ msgstr "从 OSM 文件创建地理数据文档"
 #, kde-format
 msgid "OpenStreetMap Data"
 msgstr "OpenStreetMap 数据"
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Pn2 File Parser"
+msgstr "OSM 文件解析器"
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from Pn2 Files"
+msgstr "从 OSM 文件创建地理数据文档"
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
+#, kde-format
+msgid "Compressed Pnt"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Pnt File Parser"
+msgstr "OSM 文件解析器"
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from Pnt Files"
+msgstr "从 OSM 文件创建地理数据文档"
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
+#, kde-format
+msgid "Micro World Database II"
+msgstr ""
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -55385,57 +55452,57 @@ msgstr ""
 "<p><b>垂直透视投影</b> (正交)</p><p>用途：从相对接近地面的高度显示地球仪。</"
 "p>"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:104
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
 #, fuzzy, kde-format
 #| msgid "Units:"
 msgid "Units"
 msgstr "单位："
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:112
 #, kde-format
 msgid "Kilometer, Meter"
 msgstr "千米、米"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
 #, kde-format
 msgid "Miles, Feet"
 msgstr "英里、英尺"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:114
 #, kde-format
 msgid "Nautical miles, Knots"
 msgstr "海里、节"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:111
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
 #, kde-format
 msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
 "mi, ft)."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Angle:"
 msgid "Angle:"
 msgstr "角度："
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:119
 #, kde-format
 msgid "Degree (DMS)"
 msgstr "度数 (度-分-秒)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:116
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:120
 #, kde-format
 msgid "Degree (Decimal)"
 msgstr "度数 (小数点)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:121
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
 msgstr "通用横轴墨卡托投影 (UTM)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
 #, kde-format
 msgid ""
 "Specifies the notation of angles in coordinates.\n"
@@ -55443,62 +55510,62 @@ msgid ""
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:129
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
 #, fuzzy, kde-format
 #| msgid "Map &Quality"
 msgid "Map Quality"
 msgstr "地图画质(&Q)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:131
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
 #, fuzzy, kde-format
 #| msgid "&Still image:"
 msgid "Still Image:"
 msgstr "静止图像(&S)："
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:143
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
 #, kde-format
 msgid "Outline Quality"
 msgstr "轮廓画质"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:144
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
 #, kde-format
 msgid "Low Quality"
 msgstr "低画质"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:139
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:149
 #, kde-format
 msgid "Normal"
 msgstr "标准画质"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:140
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:150
 #, kde-format
 msgid "High Quality"
 msgstr "高画质"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:151
 #, kde-format
 msgid "Print Quality"
 msgstr "打印画质"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:142
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
 "Usually this allows for high map quality as speed is no concern."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
 #, fuzzy, kde-format
 #| msgid "During &animations:"
 msgid "During Animations:"
 msgstr "动画过程中(&A)："
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:152
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed during map animations\n"
@@ -55507,40 +55574,40 @@ msgid ""
 "speed."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:159
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
 #, kde-format
 msgid "Mouse Behavior"
 msgstr "鼠标行为"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:161
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:165
 #, fuzzy, kde-format
 #| msgid "&Inertial globe rotation"
 msgid "Inertial Globe Rotation"
 msgstr "惯性旋转(&I)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:162
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
 msgstr "拖动地图时使用动态旋转"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
 #, fuzzy, kde-format
 #| msgid "&Mouse view rotation"
 msgid "Mouse View Rotation"
 msgstr "鼠标视图旋转(&M)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
 msgstr "使用鼠标右键旋转视角"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:171
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:175
 #, fuzzy, kde-format
 #| msgid "C&ache"
 msgid "Cache"
 msgstr "缓存(&A)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:172
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
 #, fuzzy, kde-format
 #| msgid ""
 #| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
@@ -55577,122 +55644,155 @@ msgstr ""
 "硬盘缓存用于保存从互联网下载的内容 (例如维基百科数据和地图数据)，减小此数值将"
 "减少硬盘空间的占用，但也会增加对互联网数据流量的依赖。</p></body></html>"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:179
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
 #, fuzzy, kde-format
 #| msgid "&Physical memory:"
 msgid "Physical Memory:"
 msgstr "物理内存(&P)："
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
 #, fuzzy, kde-format
 #| msgctxt "@action: search bar"
 #| msgid "Clear"
 msgid "Clear"
 msgstr "清除"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:186
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
 #, fuzzy, kde-format
 #| msgid "&Hard disc:"
 msgid "Hard Disc:"
 msgstr "硬盘(&H)："
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:202
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Load Contents"
-msgid "Map Contents"
-msgstr "加载内容"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:204
-#, fuzzy, kde-format
-#| msgid "Default map &font:"
-msgid "Default Font:"
-msgstr "默认地图字体(&F)："
-
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
 #, kde-format
-msgid "The default font that gets used on the map."
-msgstr ""
+msgid "Map Contents"
+msgstr "地图内容"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:208
 #, fuzzy, kde-format
-#| msgid "Show grid"
-msgid "Show Grid"
-msgstr "显示网格"
+#| msgid "Default &font:"
+msgid "Default Font:"
+msgstr "默认字体(&F)："
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:210
 #, kde-format
-msgid "Show the world-map grid overlay"
-msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
-#, fuzzy, kde-format
-#| msgid "Crosswalk"
-msgid "Show Cross-Hair"
-msgstr "人行横道"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:212
-#, kde-format
-msgid "Show cross-hair on a center of the map"
+msgid ""
+"The default font that gets used on the map.\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:214
 #, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Show item permanently"
-msgid "Show Atmosphere"
-msgstr "总是显示项目"
+#| msgid "Coordinate Grid"
+msgid "Show Coordinate Grid"
+msgstr "坐标网格"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
 #, kde-format
-msgid "Show the world-map atmosphere overlay"
+msgid ""
+"Show the world-map coordinate grid overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:217
-#, kde-format
-msgid "Show Sun-Shading"
-msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:218
-#, kde-format
-msgid "Show the world-map sun-shading overlay"
-msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:249
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:219
 #, fuzzy, kde-format
-#| msgctxt "@item: texture type"
-#| msgid "Marble 2"
+#| msgid "Crosshairs"
+msgid "Show Cross-Hair"
+msgstr "十字准星"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
+#, kde-format
+msgid ""
+"Show cross-hair on a center of the map\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:224
+#, kde-format
+msgid "Show Atmospheric Glow"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
+#, kde-format
+msgid ""
+"Show the world-map atmospheric glow overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:229
+#, fuzzy, kde-format
+#| msgid "Show on right panel"
+msgid "Show Night Shadow"
+msgstr "显示到右视图"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
+#, kde-format
+msgid ""
+"Show the world-map night shadow overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:234
+#, kde-format
+msgid "Show City Place Mark"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
+#, kde-format
+msgid ""
+"Show the world-map city place mark overlay\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:239
+#, fuzzy, kde-format
+#| msgid "Show Preview"
+msgid "Show Relief"
+msgstr "显示预览"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
+#, kde-format
+msgid ""
+"Show the world-map relief overlay\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:273
+#, kde-format
 msgid "Marble View"
-msgstr "大理石 2"
+msgstr "Marble 地图视图"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:267
-#, fuzzy, kde-format
-#| msgid "Plugins"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:291
+#, kde-format
 msgid "Marble Plugins"
-msgstr "插件"
+msgstr "Marble 地图插件"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:123
 #, kde-format
 msgid " by "
-msgstr ""
+msgstr " 作者 "
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "About %1 Plugin"
+#, kde-format
 msgid "About Plugin"
-msgstr "关于 %1 插件"
+msgstr "关于插件"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:138
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</"
-#| "p>"
+#, kde-format
 msgid ""
 "<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
 "p><p><u>Description:</u> %4</p>"
-msgstr "<b>名称：</b><p>%1</p><b>数值：</b><p>%2</p><b>描述：</b><p>%3</p>"
+msgstr ""
+"<p><u>名称：</u> %1</p><p><u>版本：</u> %2</p><p><u>版权：</u> %3</p><p><u>描"
+"述：</u> %4</p>"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -63826,10 +63926,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:35
-#, fuzzy, kde-format
-#| msgid "Remote Server Settings"
+#, kde-format
 msgid "&Network Proxy Server Settings"
-msgstr "远程服务器设置"
+msgstr "网络代理服务器设置(&N)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
 #: core/utilities/setup/misc/proxysettingswidget.ui:43
@@ -64296,16 +64395,12 @@ msgid "Light Table"
 msgstr "多图对比工具"
 
 #: core/utilities/setup/setup.cpp:251
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare images"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
-msgstr "多图对比工具设置"
+msgstr "多图对比设置"
 
 #: core/utilities/setup/setup.cpp:264
 #, kde-format
@@ -64412,12 +64507,12 @@ msgctxt "@info:tooltip"
 msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr "点击查看<interface>更新文件哈希值</interface>的有关信息"
 
-#: core/utilities/setup/setupgeolocation.cpp:102
+#: core/utilities/setup/setupgeolocation.cpp:103
 #, kde-format
 msgid "API Key:"
 msgstr "API 密钥："
 
-#: core/utilities/setup/setupgeolocation.cpp:113
+#: core/utilities/setup/setupgeolocation.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64427,6 +64522,10 @@ msgid ""
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
+"谷歌地图的用户必须在线购买它的 API 密钥才能获取登录信息以得到更为友好的使用体"
+"验。如果没有此密钥，谷歌地图依然能够工作，但它会在画面上叠加“For "
+"Develomepent Only (仅供开发使用)”字样。谷歌地图的使用方式、政策、定价等详情请"
+"参考<a href='https://mapsplatform.google.com/pricing/'>此页面</a>。"
 
 #: core/utilities/setup/setupicc.cpp:178
 #, kde-format
@@ -65432,68 +65531,5 @@ msgstr "您想要重置所有视频设置为默认值吗？"
 #~ "right:0px; -qt-block-indent:0; text-indent:0px;\">地图使用的默认字体。</"
 #~ "p></body></html>"
 
-#~ msgid "&Text Labels"
-#~ msgstr "文字标签(&T)"
-
-#~ msgid "Google Maps API Key"
-#~ msgstr "Google Maps API 密钥"
-
-#~ msgid "Moon"
-#~ msgstr "月球"
-
-#~ msgid "moon"
-#~ msgstr "月球"
-
-#~ msgid "dwarf planet"
-#~ msgstr "矮行星"
-
-#~ msgid "View"
-#~ msgstr "视图"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">This is Marble's machine room for advanced users. "
-#~ "Here you can select and deselect the functionality that is provided "
-#~ "through plugins. </span></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
-#~ "from the map, menus and toolbars. </span></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
-#~ "their configuration a bit. </span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">熟悉 Marble 功能的高级用户可以在此启用和禁用通过插"
-#~ "件提供的功能。</span></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">取消选择一款插件后，它的功能将不再显示在地图、菜单"
-#~ "和工具栏。</span></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">某些插件还带有可配置的选项。</span></p></body></"
-#~ "html>"
-
-#~ msgid "P&lugins"
-#~ msgstr "插件(&L)"
-
-#~ msgid "&Network Proxy"
-#~ msgstr "网络代理服务器(&N)"
+#~ msgid "Show Grid"
+#~ msgstr "显示网格"

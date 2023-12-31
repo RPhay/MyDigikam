@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 00:39+0000\n"
-"PO-Revision-Date: 2023-12-24 04:57+0100\n"
+"POT-Creation-Date: 2023-12-31 00:39+0000\n"
+"PO-Revision-Date: 2023-12-30 06:04+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2712,16 +2712,16 @@ msgid ""
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/qtav/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
+#: core/libs/video/player/qtav/mediaplayerview.cpp:191
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "უკან"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/qtav/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
+#: core/libs/video/player/qtav/mediaplayerview.cpp:193
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -8508,7 +8508,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:144
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:106
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
 #, kde-format
 msgid "Distance:"
 msgstr "მანძილი:"
@@ -19116,8 +19116,8 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:187
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:194
 #, kde-format
 msgid " MB"
 msgstr " მბ"
@@ -21230,11 +21230,9 @@ msgid "Include the sidecar of the items"
 msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Write metadata to each file"
+#, kde-format
 msgid "Write sidecar metadata to the items"
-msgstr "მეტამონაცემების თითოეულ ფაილში ჩაწერა"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:125
 #, kde-format
@@ -38468,28 +38466,28 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "ნაგულისხმევი, სამუშაო მაგიდიდან"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:196
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
+#: core/libs/video/player/qtav/mediaplayerview.cpp:195
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "დაკვრა/პაუზა"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:198
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:268
+#: core/libs/video/player/qtav/mediaplayerview.cpp:197
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "ჩაჭერა"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:201
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:278
+#: core/libs/video/player/qtav/mediaplayerview.cpp:200
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr ""
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtav/mediaplayerview.cpp:233
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -41311,7 +41309,7 @@ msgstr "ფილტრის გარეშე"
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Photograph"
-msgstr ""
+msgstr "ფოტო"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:164
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:139
@@ -46822,8 +46820,7 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
-#, fuzzy, kde-format
-#| msgid "Geolocation"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "გეოლოკაცია"
@@ -49860,7 +49857,7 @@ msgid "Show Scale Control"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:239
-#: core/utilities/setup/setupgeolocation.cpp:130
+#: core/utilities/setup/setupgeolocation.cpp:131
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
@@ -53073,7 +53070,7 @@ msgstr "მორგება"
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:62
 #, kde-format
 msgid "Atmosphere"
-msgstr ""
+msgstr "ატმოსფერო"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:67
 #, kde-format
@@ -53140,10 +53137,9 @@ msgstr "ეს მცურავმძიმიანი ჩანაწერ�
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure Compass Plugin"
+#, kde-format
 msgid "Configure Crosshairs Plugin"
-msgstr "კომპასის დამატების გამართვა"
+msgstr "Crosshairs დამატების მორგება"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
@@ -53159,23 +53155,20 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
-#, fuzzy, kde-format
-#| msgid "Circle"
+#, kde-format
 msgid "Circled"
-msgstr "წრე"
+msgstr "წრით"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "German"
+#, kde-format
 msgid "German"
 msgstr "გერმანული"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:73
 #, kde-format
 msgid "Crosshairs"
-msgstr ""
+msgstr "გადაჯვარედინება"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:78
 #, kde-format
@@ -53189,10 +53182,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate Grid Plugin"
-msgstr "კოორდინატი"
+msgstr "კოორდინატების ბადის დამატება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -53206,7 +53198,7 @@ msgstr "&ფერები"
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:444
 #, kde-format
 msgid "&Grid:"
-msgstr ""
+msgstr "&ბადე:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:497
@@ -53216,11 +53208,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:922
-#, fuzzy, kde-format
-#| msgctxt "@item: type code"
-#| msgid "Topic"
+#, kde-format
 msgid "&Tropics:"
-msgstr "თემა"
+msgstr "&ტროპიკები:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, tropicsPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:938
@@ -53232,7 +53222,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1363
 #, kde-format
 msgid "&Equator:"
-msgstr ""
+msgstr "&ეკვატორი:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1379
@@ -53242,10 +53232,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1398
-#, fuzzy, kde-format
-#| msgid "&Text Labels"
+#, kde-format
 msgid "&Named Labels"
-msgstr "&ტექსტური ჭდეები"
+msgstr "&სახელიანი ჭდეები"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1408
@@ -53255,30 +53244,25 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1415
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Vertical Lines"
-#| msgid "Vertical Lines"
+#, kde-format
 msgid "&Numerical Labels"
-msgstr "ვერტიკალური ხაზები"
+msgstr "&რიცხვითი ჭდეები"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1425
-#, fuzzy, kde-format
-#| msgid "Show numbers"
+#, kde-format
 msgid "Show numerical Labels."
-msgstr "ნომრების ჩვენება"
+msgstr "რიცხვითი ჭდეების ჩვენება."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:71
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate Grid"
-msgstr "კოორდინატი"
+msgstr "კოორდინატების ბადე"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:76
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate &Grid"
-msgstr "კოორდინატი"
+msgstr "კოორდინატების &ბადე"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:91
 #, kde-format
@@ -53301,16 +53285,14 @@ msgid "Please choose the color for the equator."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:315
-#, fuzzy, kde-format
-#| msgid "Elevator"
+#, kde-format
 msgid "Equator"
-msgstr "ლიფტი"
+msgstr "ეკვატორი"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
-#, fuzzy, kde-format
-#| msgid "Perimeter"
+#, kde-format
 msgid "Prime Meridian"
-msgstr "პერიმეტრი"
+msgstr "მთავარი მერიდიანი"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:321
 #, kde-format
@@ -53328,17 +53310,14 @@ msgid "Tropic of Capricorn"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
-#, fuzzy, kde-format
-#| msgid "Circle"
+#, kde-format
 msgid "Arctic Circle"
-msgstr "წრე"
+msgstr "არქტიკული წრე"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Antarctica"
+#, kde-format
 msgid "Antarctic Circle"
-msgstr "ანტარქტიკა"
+msgstr "ანტარქტიკის წრე"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -53664,23 +53643,102 @@ msgid "Position I&ndicator:"
 msgstr "მიმდინარეობის &მაჩვენებელი:"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:81
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Download Progress Indicator"
-msgstr "მიმდინარეობის ინდიკატორის ჩვენება"
+msgstr "გადმოწერის მიმდინარეობის მაჩვენებელი"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Error"
+#, kde-format
 msgid "&Download Progress"
-msgstr "გადმოწერის შეცდომა"
+msgstr "გადმოწერის &მიმდინარეობა"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:101
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Shows a pie chart download progress indicator"
-msgstr "მიმდინარეობის ინდიკატორის ჩვენება"
+msgstr "გადმოწერის მიმდინარეობის მაჩვენებლის ჩვენება"
+
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Cache File Parser"
+msgstr "Osm ფალის დამმუშავებელი"
+
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:36
+#, kde-format
+msgid "Create GeoDataDocument from Cache Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:52
+#, fuzzy, kde-format
+#| msgid "Marble View"
+msgid "Marble Cache Files"
+msgstr "Marble-ის ხედი"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "GPSBabel NMEA File Parser"
+msgstr "Osm ფალის დამმუშავებელი"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
+#, kde-format
+msgid "Allows loading of NMEA files through GPSBabel."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
+#, fuzzy, kde-format
+#| msgid "Save Profile"
+msgid "GPSBabel files"
+msgstr "ფაილის შენახვა"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Gpx File Parser"
+msgstr "Osm ფალის დამმუშავებელი"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
+#, kde-format
+msgid "Create GeoDataDocument from Gpx Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
+#, fuzzy, kde-format
+#| msgid "Data"
+msgid "GPS Data"
+msgstr "მონაცემები"
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "GeoJSON File Parser"
+msgstr "Osm ფალის დამმუშავებელი"
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
+#, kde-format
+msgid "Create GeoDataDocument from GeoJSON Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
+#, kde-format
+msgid "GeoJSON"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "KML File Parser"
+msgstr "Osm ფალის დამმუშავებელი"
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
+#, kde-format
+msgid "Create GeoDataDocument from KML and KMZ Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
+#, kde-format
+msgid "Google Earth KML"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -53711,6 +53769,40 @@ msgstr ""
 #, kde-format
 msgid "OpenStreetMap Data"
 msgstr "OpenStreetMap-ის მონაცემები"
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Pn2 File Parser"
+msgstr "Osm ფალის დამმუშავებელი"
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
+#, kde-format
+msgid "Create GeoDataDocument from Pn2 Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Compression Weight:"
+msgid "Compressed Pnt"
+msgstr "შეკუმშვის წონა:"
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Pnt File Parser"
+msgstr "Osm ფალის დამმუშავებელი"
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
+#, kde-format
+msgid "Create GeoDataDocument from Pnt Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
+#, kde-format
+msgid "Micro World Database II"
+msgstr ""
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -53807,57 +53899,54 @@ msgid ""
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:104
-#, fuzzy, kde-format
-#| msgid "Units:"
-msgid "Units"
-msgstr "ერთეულები:"
-
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
+#, kde-format
+msgid "Units"
+msgstr "ერთეულები"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:112
 #, kde-format
 msgid "Kilometer, Meter"
 msgstr "კილომეტრი, მეტრი"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
 #, kde-format
 msgid "Miles, Feet"
 msgstr "მილი, ფუტი"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:114
 #, kde-format
 msgid "Nautical miles, Knots"
 msgstr "საზღვაო მილი, კვანძი"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:111
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
 #, kde-format
 msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
 "mi, ft)."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Angle:"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#, kde-format
 msgid "Angle:"
 msgstr "კუთხე:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:119
 #, kde-format
 msgid "Degree (DMS)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:116
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:120
 #, kde-format
 msgid "Degree (Decimal)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:121
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
 #, kde-format
 msgid ""
 "Specifies the notation of angles in coordinates.\n"
@@ -53865,62 +53954,59 @@ msgid ""
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:129
-#, fuzzy, kde-format
-#| msgid "Map &Quality"
-msgid "Map Quality"
-msgstr "რუკის &ხარისხი"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:131
-#, fuzzy, kde-format
-#| msgid "&Still image:"
-msgid "Still Image:"
-msgstr "&სტატიკური გამოსახულება:"
-
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:143
 #, kde-format
-msgid "Outline Quality"
-msgstr "კონტურის ხარისხი"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:144
-#, kde-format
-msgid "Low Quality"
-msgstr "დაბალი ხარისხი"
+msgid "Map Quality"
+msgstr "რუკის ხარისხი"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
 #, kde-format
-msgid "Normal"
-msgstr "ჩვეულებრივი"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
-#, kde-format
-msgid "High Quality"
-msgstr "მაღალი ხარისხი"
+msgid "Still Image:"
+msgstr "სტატიკური გამოსახულება:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
 #, kde-format
+msgid "Outline Quality"
+msgstr "კონტურის ხარისხი"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#, kde-format
+msgid "Low Quality"
+msgstr "დაბალი ხარისხი"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:139
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:149
+#, kde-format
+msgid "Normal"
+msgstr "ჩვეულებრივი"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:140
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:150
+#, kde-format
+msgid "High Quality"
+msgstr "მაღალი ხარისხი"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:151
+#, kde-format
 msgid "Print Quality"
 msgstr "ბეჭდვის ხარისხი"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:142
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
 "Usually this allows for high map quality as speed is no concern."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
-#, fuzzy, kde-format
-#| msgid "During &animations:"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
+#, kde-format
 msgid "During Animations:"
-msgstr "&ანიმაციებისას:"
+msgstr "ანიმაციებისას:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:152
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed during map animations\n"
@@ -53929,40 +54015,37 @@ msgid ""
 "speed."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:159
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
 #, kde-format
 msgid "Mouse Behavior"
 msgstr "თაგუნას ქცევა"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:161
-#, fuzzy, kde-format
-#| msgid "&Inertial globe rotation"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:165
+#, kde-format
 msgid "Inertial Globe Rotation"
-msgstr "&გლობუსის ინერციული ბრუნვა"
+msgstr "გლობუსის ინერციული ბრუნვა"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:162
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
-#, fuzzy, kde-format
-#| msgid "&Mouse view rotation"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
+#, kde-format
 msgid "Mouse View Rotation"
-msgstr "&თაგუნას ხედვის ტრიალი"
+msgstr "თაგუნას ხედვის ტრიალი"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:171
-#, fuzzy, kde-format
-#| msgid "C&ache"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:175
+#, kde-format
 msgid "Cache"
-msgstr "&ქეში"
+msgstr "კეში"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:172
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
 #, kde-format
 msgid ""
 "There are two caches being used:\n"
@@ -53975,96 +54058,130 @@ msgid ""
 "and if high usage of the Internet is not an issue."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:179
-#, fuzzy, kde-format
-#| msgid "&Physical memory:"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
+#, kde-format
 msgid "Physical Memory:"
-msgstr "&ფიზიკური მეხსიერება:"
+msgstr "ფიზიკური მეხსიერება:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
 #, kde-format
 msgid "Clear"
 msgstr "გაწმენდა"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:186
-#, fuzzy, kde-format
-#| msgid "&Hard disc:"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
+#, kde-format
 msgid "Hard Disc:"
-msgstr "&მყარი დისკი:"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:202
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Load Contents"
-msgid "Map Contents"
-msgstr "შემცველობის ჩატვირთვა"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:204
-#, fuzzy, kde-format
-#| msgid "Default map &font:"
-msgid "Default Font:"
-msgstr "ნაგულისხმევი რუკის &ფონტი:"
+msgstr "მყარი დისკი:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
 #, kde-format
-msgid "The default font that gets used on the map."
-msgstr ""
+msgid "Map Contents"
+msgstr "რუკის შემცველობა"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:208
-#, fuzzy, kde-format
-#| msgid "Show grid"
-msgid "Show Grid"
-msgstr "ბადის ჩვენება"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
 #, kde-format
-msgid "Show the world-map grid overlay"
+msgid "Default Font:"
+msgstr "ნაგულისხმევი ფონტი:"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:210
+#, kde-format
+msgid ""
+"The default font that gets used on the map.\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:214
+#, fuzzy, kde-format
+#| msgid "Coordinate Grid"
+msgid "Show Coordinate Grid"
+msgstr "კოორდინატების ბადე"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
+#, kde-format
+msgid ""
+"Show the world-map coordinate grid overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:219
 #, kde-format
 msgid "Show Cross-Hair"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:212
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
 #, kde-format
-msgid "Show cross-hair on a center of the map"
+msgid ""
+"Show cross-hair on a center of the map\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:214
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:224
 #, kde-format
-msgid "Show Atmosphere"
+msgid "Show Atmospheric Glow"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
 #, kde-format
-msgid "Show the world-map atmosphere overlay"
+msgid ""
+"Show the world-map atmospheric glow overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:217
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:229
+#, kde-format
+msgid "Show Night Shadow"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
+#, kde-format
+msgid ""
+"Show the world-map night shadow overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:234
 #, fuzzy, kde-format
-#| msgid "Show again"
-msgid "Show Sun-Shading"
-msgstr "კიდევ მაჩვენე"
+#| msgid "Show placemark"
+msgid "Show City Place Mark"
+msgstr "მდებარეობის ნიშნის ჩვენება"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:218
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
 #, kde-format
-msgid "Show the world-map sun-shading overlay"
+msgid ""
+"Show the world-map city place mark overlay\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:249
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:239
 #, fuzzy, kde-format
-#| msgctxt "@item: texture type"
-#| msgid "Marble"
+#| msgid "Show Preview"
+msgid "Show Relief"
+msgstr "გადახედვის ჩვენება"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
+#, kde-format
+msgid ""
+"Show the world-map relief overlay\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:273
+#, kde-format
 msgid "Marble View"
-msgstr "Marble"
+msgstr "Marble-ის ხედი"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:267
-#, fuzzy, kde-format
-#| msgid "Plugins"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:291
+#, kde-format
 msgid "Marble Plugins"
-msgstr "დამატებები"
+msgstr "Marble-ის დამატებები"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:123
 #, kde-format
@@ -54072,22 +54189,18 @@ msgid " by "
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Plugins"
+#, kde-format
 msgid "About Plugin"
-msgstr "დამატებები"
+msgstr "დამატების შესახებ"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:138
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</"
-#| "p>"
+#, kde-format
 msgid ""
 "<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
 "p><p><u>Description:</u> %4</p>"
 msgstr ""
-"<b>სათაური: </b><p>%1</p><b>მნიშვნელობა: </b><p>%2</p><b>აღწერა: </b><p>%3</"
-"p>"
+"<p><u>სახელი:</u> %1</p><p><u>ვერსია:</u> %2</p><p><u>საავტორო უფლებები:</u> "
+"%3</p><p><u>აღწერა:</u> %4</p>"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -56644,7 +56757,7 @@ msgstr "ტექსტი"
 #, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "Local Settings"
-msgstr ""
+msgstr "ლოკალური პარამეტრები"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:115
 #, kde-format
@@ -62387,12 +62500,12 @@ msgctxt "@info:tooltip"
 msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr ""
 
-#: core/utilities/setup/setupgeolocation.cpp:102
+#: core/utilities/setup/setupgeolocation.cpp:103
 #, kde-format
 msgid "API Key:"
 msgstr "API-ის გასაღები:"
 
-#: core/utilities/setup/setupgeolocation.cpp:113
+#: core/utilities/setup/setupgeolocation.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63228,6 +63341,12 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 
+#~ msgid "Show Grid"
+#~ msgstr "ბადის ჩვენება"
+
+#~ msgid "Show Sun-Shading"
+#~ msgstr "მზის ჩრდილის ჩვენება"
+
 #~ msgid "&Units"
 #~ msgstr "&ერთეულები"
 
@@ -63895,9 +64014,6 @@ msgstr ""
 
 #~ msgid "Icon"
 #~ msgstr "ხატულა"
-
-#~ msgid "Show placemark"
-#~ msgstr "მდებარეობის ნიშნის ჩვენება"
 
 #~ msgid "Bold"
 #~ msgstr "სქელი"
@@ -64707,10 +64823,6 @@ msgstr ""
 #~ msgctxt "@label"
 #~ msgid "Noise Weight:"
 #~ msgstr "ხმაურის წონა:"
-
-#~ msgctxt "@label"
-#~ msgid "Compression Weight:"
-#~ msgstr "შეკუმშვის წონა:"
 
 #~ msgctxt "@option:check"
 #~ msgid "Enable Image Quality Sorting"

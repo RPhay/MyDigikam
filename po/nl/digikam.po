@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 00:39+0000\n"
-"PO-Revision-Date: 2023-12-28 23:56+0100\n"
+"POT-Creation-Date: 2023-12-31 00:39+0000\n"
+"PO-Revision-Date: 2023-12-30 23:00+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2833,16 +2833,16 @@ msgstr ""
 "Branch: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/qtav/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
+#: core/libs/video/player/qtav/mediaplayerview.cpp:191
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Terug"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/qtav/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
+#: core/libs/video/player/qtav/mediaplayerview.cpp:193
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -9319,7 +9319,7 @@ msgstr ""
 "cellen te vullen met de gemiddelde pixelwaarde.</p>"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:144
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:106
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
 #, kde-format
 msgid "Distance:"
 msgstr "Afstand:"
@@ -20691,8 +20691,8 @@ msgstr ""
 "Waardering of Tags, toegevoegd als een bijgevoegd bestand."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:187
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:194
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -22959,17 +22959,14 @@ msgid "Create relative symlinks"
 msgstr "Relatieve symbolische koppelingen aanmaken"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Include the sidecars of the items"
+#, kde-format
 msgid "Include the sidecar of the items"
 msgstr "Neem de aanhangsel-bestanden van de items mee"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Write metadata to each file"
+#, kde-format
 msgid "Write sidecar metadata to the items"
-msgstr "Metagegevens naar elk bestand schrijven"
+msgstr "Metagegevens aanhangsel naar de items schrijven"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:125
 #, kde-format
@@ -41547,28 +41544,28 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Standaard uit bureaublad"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:196
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
+#: core/libs/video/player/qtav/mediaplayerview.cpp:195
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pauzeren/afspelen"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:198
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:268
+#: core/libs/video/player/qtav/mediaplayerview.cpp:197
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Opname"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:201
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:278
+#: core/libs/video/player/qtav/mediaplayerview.cpp:200
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Er deed zich een fout voor met de mediaspeler..."
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtav/mediaplayerview.cpp:233
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Afspelen in een loop omschakelen"
@@ -53375,7 +53372,7 @@ msgid "Show Scale Control"
 msgstr "Besturing van de schaal tonen"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:239
-#: core/utilities/setup/setupgeolocation.cpp:130
+#: core/utilities/setup/setupgeolocation.cpp:131
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
@@ -57228,6 +57225,94 @@ msgstr "Voortgangsindicatie &download"
 msgid "Shows a pie chart download progress indicator"
 msgstr "Toont een voortgangsindicatie in de vorm van een taartdiagram"
 
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Cache File Parser"
+msgstr "Ontleder van Osm-bestand"
+
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:36
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from Cache Files"
+msgstr "Vanuit Osm-bestanden GeoDataDocument aanmaken"
+
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:52
+#, fuzzy, kde-format
+#| msgid "Marble View"
+msgid "Marble Cache Files"
+msgstr "Marble-weergave"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "GPSBabel NMEA File Parser"
+msgstr "Ontleder van Osm-bestand"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
+#, kde-format
+msgid "Allows loading of NMEA files through GPSBabel."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Save files as"
+msgid "GPSBabel files"
+msgstr "Bestanden opslaan als"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Gpx File Parser"
+msgstr "Ontleder van Osm-bestand"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from Gpx Files"
+msgstr "Vanuit Osm-bestanden GeoDataDocument aanmaken"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
+#, fuzzy, kde-format
+#| msgid "Data"
+msgid "GPS Data"
+msgstr "Gegevens"
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "GeoJSON File Parser"
+msgstr "Ontleder van Osm-bestand"
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from GeoJSON Files"
+msgstr "Vanuit Osm-bestanden GeoDataDocument aanmaken"
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
+#, kde-format
+msgid "GeoJSON"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "KML File Parser"
+msgstr "Ontleder van Osm-bestand"
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from KML and KMZ Files"
+msgstr "Vanuit Osm-bestanden GeoDataDocument aanmaken"
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
+#, kde-format
+msgid "Google Earth KML"
+msgstr ""
+
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
@@ -57257,6 +57342,42 @@ msgstr "Vanuit Osm-bestanden GeoDataDocument aanmaken"
 #, kde-format
 msgid "OpenStreetMap Data"
 msgstr "Gegevens van OpenStreetMap"
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Pn2 File Parser"
+msgstr "Ontleder van Osm-bestand"
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from Pn2 Files"
+msgstr "Vanuit Osm-bestanden GeoDataDocument aanmaken"
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
+#, fuzzy, kde-format
+#| msgctxt "@title: Name of the component"
+#| msgid "Component"
+msgid "Compressed Pnt"
+msgstr "Component"
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
+#, fuzzy, kde-format
+#| msgid "Osm File Parser"
+msgid "Pnt File Parser"
+msgstr "Ontleder van Osm-bestand"
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
+#, fuzzy, kde-format
+#| msgid "Create GeoDataDocument from Osm Files"
+msgid "Create GeoDataDocument from Pnt Files"
+msgstr "Vanuit Osm-bestanden GeoDataDocument aanmaken"
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
+#, kde-format
+msgid "Micro World Database II"
+msgstr ""
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -57377,120 +57498,123 @@ msgstr ""
 "de aarde  zoals die te zien is van betrekkelijk geringe hoogte. "
 "Toepassingen: Gebruikt voor virtuele globes.</p>"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:104
-#, fuzzy, kde-format
-#| msgid "Units:"
-msgid "Units"
-msgstr "Eenheden:"
-
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
+#, kde-format
+msgid "Units"
+msgstr "Eenheden"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:112
 #, kde-format
 msgid "Kilometer, Meter"
 msgstr "Kilometer, Meter"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
 #, kde-format
 msgid "Miles, Feet"
 msgstr "Mijl, voet"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:114
 #, kde-format
 msgid "Nautical miles, Knots"
 msgstr "Zeemijl/uur, knopen"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:111
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
 #, kde-format
 msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
 "mi, ft)."
 msgstr ""
+"De eenheid die gebruikt wordt voor het meten van hoogtes, lengten en "
+"afstanden (bijv. km, mi, ft)."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Angle:"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#, kde-format
 msgid "Angle:"
 msgstr "Hoek:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:119
 #, kde-format
 msgid "Degree (DMS)"
 msgstr "Graad (GMS)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:116
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:120
 #, kde-format
 msgid "Degree (Decimal)"
 msgstr "Graad (decimaal)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:121
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
 msgstr "Universele Transversale Mercatorprojectie (UTM)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
 #, kde-format
 msgid ""
 "Specifies the notation of angles in coordinates.\n"
 "By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:129
-#, fuzzy, kde-format
-#| msgid "Map &Quality"
-msgid "Map Quality"
-msgstr "Kaartk&waliteit"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:131
-#, fuzzy, kde-format
-#| msgid "&Still image:"
-msgid "Still Image:"
-msgstr "&Niet-bewegende afbeelding:"
+"Specificeert de notatie voor hoeken in de coördinaten\n"
+"Standaard wordt de notatie Graden-Minuten-Seconden (bijv. 54°30'00\" ) "
+"gebruikt.\n"
+"Een alternatief is decimale graden te gebruiken (bijv. 54,5°)"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:143
 #, kde-format
-msgid "Outline Quality"
-msgstr "Uitlijnkwaliteit"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:144
-#, kde-format
-msgid "Low Quality"
-msgstr "Lage kwaliteit"
+msgid "Map Quality"
+msgstr "Kaartkwaliteit"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
 #, kde-format
-msgid "Normal"
-msgstr "Normaal"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
-#, kde-format
-msgid "High Quality"
-msgstr "Hoge kwaliteit"
+msgid "Still Image:"
+msgstr "Stilstaande afbeelding:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
 #, kde-format
+msgid "Outline Quality"
+msgstr "Uitlijnkwaliteit"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#, kde-format
+msgid "Low Quality"
+msgstr "Lage kwaliteit"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:139
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:149
+#, kde-format
+msgid "Normal"
+msgstr "Normaal"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:140
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:150
+#, kde-format
+msgid "High Quality"
+msgstr "Hoge kwaliteit"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:151
+#, kde-format
 msgid "Print Quality"
 msgstr "Afdrukkwaliteit"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:142
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
 "Usually this allows for high map quality as speed is no concern."
 msgstr ""
+"Specificeert de kwaliteit van kaarten als de gebruiker niets instelt. "
+"Normaal gezien maakt dit een hoge kwaliteit van de kaarten mogelijk als "
+"snelheid niet belangrijk is."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
-#, fuzzy, kde-format
-#| msgid "During &animations:"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
+#, kde-format
 msgid "During Animations:"
-msgstr "Tijdens &animaties:"
+msgstr "Tijdens animaties:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:152
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed during map animations\n"
@@ -57498,56 +57622,43 @@ msgid ""
 "advisable to set this option to \"low quality\" as this will give better "
 "speed."
 msgstr ""
+"Specificeert de kwaliteit in van de kaarten tijdens animaties\n"
+"(bijv. tijdens het slepen van de globe). Vooral bij trage machines\n"
+"is het aan te raden om dit op \"lage kwaliteit\" in te stellen, waardoor een "
+"hogere animatiesnelheid mogelijk wordt."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:159
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
 #, kde-format
 msgid "Mouse Behavior"
 msgstr "Muisgedrag"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:161
-#, fuzzy, kde-format
-#| msgid "&Inertial globe rotation"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:165
+#, kde-format
 msgid "Inertial Globe Rotation"
-msgstr "&Inertiële globerotatie"
+msgstr "Inertiële globerotatie"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:162
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
 msgstr "Kinetisch draaien gebruiken bij slepen van de kaart"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
-#, fuzzy, kde-format
-#| msgid "&Mouse view rotation"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
+#, kde-format
 msgid "Mouse View Rotation"
-msgstr "Beeldrotatie met &muisknop"
+msgstr "Beeldrotatie met muisknop"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
 msgstr "Met de rechter muisknop kunt u de camera ronddraaien"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:171
-#, fuzzy, kde-format
-#| msgid "C&ache"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:175
+#, kde-format
 msgid "Cache"
-msgstr "C&ache"
+msgstr "Cache"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:172
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#| "font-weight:400; font-style:normal;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches "
-#| "being used for Marble: The physical memory which is needed to keep map "
-#| "data in the computer's memory. Increasing the value will make the "
-#| "application more responsive. The hard disc memory cache is used by "
-#| "download contents from the Internet (e.g. Wikipedia data or map data). "
-#| "Decrease this value if you want to save space on the hard disc and if "
-#| "high usage of the Internet is not an issue. </p></body></html>"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
+#, kde-format
 msgid ""
 "There are two caches being used:\n"
 "The \"physical memory\" which is needed to keep map data in the computer's "
@@ -57558,104 +57669,138 @@ msgid ""
 "Decrease this value if you want to save space on the hard disc\n"
 "and if high usage of the Internet is not an issue."
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Er worden twee caches "
-"gebruikt voor Marble: Het fysiek geheugen dat nodig is om kaartgegevens in "
-"het computergeheugen te bewaren. De waarde ervan verhogen zal het programma "
-"sneller doen reageren. De cache van de hardeschijf wordt gebruikt voor "
-"downloads van het internet (b.v. Wikipediagegevens of kaartgegevens). U kunt "
-"deze waarde verlagen als u ruimte op uw harde schijf wilt sparen of als hoog "
-"internetgebruik geen probleem is.</p></body></html>"
+"Er worden twee caches gebruikt:\n"
+"Het \"fysieke geheugen\" dat nodig is om kaartgegevens in het "
+"computergeheugen te bewaren.\n"
+"De waarde ervan verhogen zal het programma sneller doen reageren.\n"
+"De cache van de harde schijf wordt gebruikt voor downloads van kaartgegevens "
+"van het internet.\n"
+"Deze waarde verlagen als u ruimte op uw harde schijf wilt sparen\n"
+"of als hoog internetgebruik geen probleem is."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:179
-#, fuzzy, kde-format
-#| msgid "&Physical memory:"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
+#, kde-format
 msgid "Physical Memory:"
-msgstr "&Fysiek geheugen:"
+msgstr "Fysiek geheugen:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
 #, kde-format
 msgid "Clear"
 msgstr "Wissen"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:186
-#, fuzzy, kde-format
-#| msgid "&Hard disc:"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
+#, kde-format
 msgid "Hard Disc:"
-msgstr "&Harde schijf:"
+msgstr "Harde schijf:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:202
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
 #, kde-format
 msgid "Map Contents"
 msgstr "Inhoud van kaart"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:204
-#, fuzzy, kde-format
-#| msgid "Default &font:"
-msgid "Default Font:"
-msgstr "Standaard &lettertype:"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
-#, kde-format
-msgid "The default font that gets used on the map."
-msgstr ""
-
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:208
 #, kde-format
-msgid "Show Grid"
-msgstr "Raster tonen"
+msgid "Default Font:"
+msgstr "Standaard lettertype:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:210
 #, kde-format
-msgid "Show the world-map grid overlay"
-msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
-#, fuzzy, kde-format
-#| msgid "Crosshairs"
-msgid "Show Cross-Hair"
-msgstr "Kruisdraad"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:212
-#, kde-format
-msgid "Show cross-hair on a center of the map"
+msgid ""
+"The default font that gets used on the map.\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:214
 #, fuzzy, kde-format
-#| msgid "Atmosphere"
-msgid "Show Atmosphere"
-msgstr "Atmosfeer"
+#| msgid "Coordinate Grid"
+msgid "Show Coordinate Grid"
+msgstr "Coördinatenrooster"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
-#, fuzzy, kde-format
-#| msgid "Shows the atmosphere around the earth."
-msgid "Show the world-map atmosphere overlay"
-msgstr "Toont de dampkring rond de aarde."
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:217
-#, fuzzy, kde-format
-#| msgid "Show again"
-msgid "Show Sun-Shading"
-msgstr "Opnieuw tonen"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:218
 #, kde-format
-msgid "Show the world-map sun-shading overlay"
+msgid ""
+"Show the world-map coordinate grid overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:249
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:219
+#, kde-format
+msgid "Show Cross-Hair"
+msgstr "Kruisdraad tonen"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
+#, kde-format
+msgid ""
+"Show cross-hair on a center of the map\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:224
+#, fuzzy, kde-format
+#| msgid "Show Atmosphere"
+msgid "Show Atmospheric Glow"
+msgstr "Dampkring tonen"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
+#, kde-format
+msgid ""
+"Show the world-map atmospheric glow overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:229
+#, fuzzy, kde-format
+#| msgid "Show on right panel"
+msgid "Show Night Shadow"
+msgstr "Op rechter paneel tonen"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
+#, kde-format
+msgid ""
+"Show the world-map night shadow overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:234
+#, fuzzy, kde-format
+#| msgid "Show placemark"
+msgid "Show City Place Mark"
+msgstr "Plaatsmerk tonen"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
+#, kde-format
+msgid ""
+"Show the world-map city place mark overlay\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:239
+#, fuzzy, kde-format
+#| msgid "Show help"
+msgid "Show Relief"
+msgstr "Help tonen"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
+#, kde-format
+msgid ""
+"Show the world-map relief overlay\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:273
 #, kde-format
 msgid "Marble View"
 msgstr "Marble-weergave"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:267
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:291
 #, kde-format
 msgid "Marble Plugins"
 msgstr "Marble-plug-ins"
@@ -66894,12 +67039,12 @@ msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr ""
 "Informatie ophalen over <interface>Bestandshashes bijwerken</interface>"
 
-#: core/utilities/setup/setupgeolocation.cpp:102
+#: core/utilities/setup/setupgeolocation.cpp:103
 #, kde-format
 msgid "API Key:"
 msgstr "API-sleutel:"
 
-#: core/utilities/setup/setupgeolocation.cpp:113
+#: core/utilities/setup/setupgeolocation.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67837,6 +67982,29 @@ msgstr "Zet alle instellingen terug naar hun standaardwaarden."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
+
+#~ msgid "The default font that gets used on the map."
+#~ msgstr "Het standaard lettertype dat in de kaart gebruikt wordt."
+
+#~ msgid "Show Grid"
+#~ msgstr "Raster tonen"
+
+#~ msgid "Show the world-map grid overlay"
+#~ msgstr "De raster overlay van de wereldkaart tonen"
+
+#~ msgid "Show cross-hair on a center of the map"
+#~ msgstr "Kruisdraad tonen in het centrum van de kaart"
+
+#~| msgid "Shows the atmosphere around the earth."
+#~ msgid "Show the world-map atmosphere overlay"
+#~ msgstr "De overlay van de dampkring van de wereldkaart tonen."
+
+#~| msgid "Show again"
+#~ msgid "Show Sun-Shading"
+#~ msgstr "Zonschaduw tonen"
+
+#~ msgid "Show the world-map sun-shading overlay"
+#~ msgstr "De overlay van de zonschaduw van de wereldkaart tonen"
 
 #~ msgid "&Units"
 #~ msgstr "&Eenheden"
@@ -69043,9 +69211,6 @@ msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
 
 #~ msgid "Icon"
 #~ msgstr "Pictogram"
-
-#~ msgid "Show placemark"
-#~ msgstr "Plaatsmerk tonen"
 
 #~ msgid "Bold"
 #~ msgstr "Vet"
@@ -71517,10 +71682,6 @@ msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
 #~ msgctxt "@item: component info"
 #~ msgid "AkonadiContact support"
 #~ msgstr "Ondersteuning van AkonadiContact"
-
-#~ msgctxt "@title: Name of the component"
-#~ msgid "Component"
-#~ msgstr "Component"
 
 #~ msgctxt "@title: Is supported / version of the component"
 #~ msgid "Info"
@@ -78495,9 +78656,6 @@ msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
 #~ "op de voorgrond.<br/><b>Groen</b>: Teken het groene afbeeldingskanaal op "
 #~ "de voorgrond.<br/> <b>Blauw</b>: Teken het blauwe afbeeldingskanaal op de "
 #~ "voorgrond.</p>"
-
-#~ msgid "Show help"
-#~ msgstr "Help tonen"
 
 #~ msgid "Quickly add a renaming option"
 #~ msgstr "Snel toevoegen van een optie voor hernoemen"

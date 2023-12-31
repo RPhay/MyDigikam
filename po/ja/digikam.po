@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 00:39+0000\n"
+"POT-Creation-Date: 2023-12-31 00:39+0000\n"
 "PO-Revision-Date: 2023-05-29 20:03-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2785,8 +2785,8 @@ msgstr ""
 
 # ACCELERATOR added by translator
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/qtav/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
+#: core/libs/video/player/qtav/mediaplayerview.cpp:191
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2794,8 +2794,8 @@ msgstr "戻る"
 
 # ACCELERATOR added by translator
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/qtav/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
+#: core/libs/video/player/qtav/mediaplayerview.cpp:193
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -9107,7 +9107,7 @@ msgstr ""
 "これらのセルをピクセルの平均値で埋めて写真を再構成します。</p>"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:144
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:106
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
 #, kde-format
 msgid "Distance:"
 msgstr "距離:"
@@ -20754,8 +20754,8 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:187
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:194
 #, kde-format
 msgid " MB"
 msgstr ""
@@ -41849,15 +41849,15 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:196
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
+#: core/libs/video/player/qtav/mediaplayerview.cpp:195
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:198
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:268
+#: core/libs/video/player/qtav/mediaplayerview.cpp:197
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Capture"
@@ -41865,15 +41865,15 @@ msgctxt "capture video frame"
 msgid "Capture"
 msgstr "キャプチャ"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:201
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:278
+#: core/libs/video/player/qtav/mediaplayerview.cpp:200
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "メディアプレーヤーにエラーが発生しました..."
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtav/mediaplayerview.cpp:233
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -54904,7 +54904,7 @@ msgid "Show Scale Control"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:239
-#: core/utilities/setup/setupgeolocation.cpp:130
+#: core/utilities/setup/setupgeolocation.cpp:131
 #, kde-format
 msgid "Google Maps"
 msgstr ""
@@ -58933,6 +58933,85 @@ msgstr "新しいものをダウンロード"
 msgid "Shows a pie chart download progress indicator"
 msgstr "進捗インジケータを表示"
 
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:21
+#, fuzzy, kde-format
+msgid "Cache File Parser"
+msgstr "変換(&N)"
+
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:36
+#, kde-format
+msgid "Create GeoDataDocument from Cache Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:52
+#, fuzzy, kde-format
+#| msgid "Marble 2"
+msgid "Marble Cache Files"
+msgstr "大理石 2"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
+#, fuzzy, kde-format
+msgid "GPSBabel NMEA File Parser"
+msgstr "変換(&N)"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
+#, kde-format
+msgid "Allows loading of NMEA files through GPSBabel."
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Save files as"
+msgid "GPSBabel files"
+msgstr "画像を次の形式で保存する"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
+#, fuzzy, kde-format
+msgid "Gpx File Parser"
+msgstr "変換(&N)"
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
+#, kde-format
+msgid "Create GeoDataDocument from Gpx Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
+#, fuzzy, kde-format
+#| msgid "Data"
+msgid "GPS Data"
+msgstr "データ"
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
+#, fuzzy, kde-format
+msgid "GeoJSON File Parser"
+msgstr "変換(&N)"
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
+#, kde-format
+msgid "Create GeoDataDocument from GeoJSON Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
+#, kde-format
+msgid "GeoJSON"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
+#, fuzzy, kde-format
+msgid "KML File Parser"
+msgstr "変換(&N)"
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
+#, kde-format
+msgid "Create GeoDataDocument from KML and KMZ Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
+#, kde-format
+msgid "Google Earth KML"
+msgstr ""
+
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
@@ -58964,6 +59043,36 @@ msgstr ""
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap Data"
 msgstr "OpenStreetMap"
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
+#, fuzzy, kde-format
+msgid "Pn2 File Parser"
+msgstr "変換(&N)"
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
+#, kde-format
+msgid "Create GeoDataDocument from Pn2 Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
+#, kde-format
+msgid "Compressed Pnt"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
+#, fuzzy, kde-format
+msgid "Pnt File Parser"
+msgstr "変換(&N)"
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
+#, kde-format
+msgid "Create GeoDataDocument from Pnt Files"
+msgstr ""
+
+#: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
+#, kde-format
+msgid "Micro World Database II"
+msgstr ""
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -59061,57 +59170,57 @@ msgid ""
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:104
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
 #, fuzzy, kde-format
 #| msgid "Time Unit:"
 msgid "Units"
 msgstr "時間の単位:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:112
 #, kde-format
 msgid "Kilometer, Meter"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
 #, kde-format
 msgid "Miles, Feet"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:114
 #, kde-format
 msgid "Nautical miles, Knots"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:111
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
 #, kde-format
 msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
 "mi, ft)."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Angle:"
 msgid "Angle:"
 msgstr "角度:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:119
 #, kde-format
 msgid "Degree (DMS)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:116
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:120
 #, kde-format
 msgid "Degree (Decimal)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:121
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
 #, kde-format
 msgid ""
 "Specifies the notation of angles in coordinates.\n"
@@ -59119,63 +59228,63 @@ msgid ""
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:129
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
 #, fuzzy, kde-format
 msgid "Map Quality"
 msgstr "PGF 画質:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:131
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
 #, fuzzy, kde-format
 #| msgid "Sharpen images"
 msgid "Still Image:"
 msgstr "画像をシャープ化"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:143
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
 #, fuzzy, kde-format
 msgid "Outline Quality"
 msgstr "テキスト"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:144
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
 #, fuzzy, kde-format
 msgid "Low Quality"
 msgstr "PGF 画質:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:139
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:149
 #, fuzzy, kde-format
 #| msgctxt "@action: normal exif orientation"
 #| msgid "Normal"
 msgid "Normal"
 msgstr "ノーマル"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:140
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:150
 #, fuzzy, kde-format
 msgid "High Quality"
 msgstr "PGF 画質:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:151
 #, fuzzy, kde-format
 msgid "Print Quality"
 msgstr "PGF 画質:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:142
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
 "Usually this allows for high map quality as speed is no concern."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
 #, fuzzy, kde-format
 #| msgid "Duration:"
 msgid "During Animations:"
 msgstr "長さ:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:152
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed during map animations\n"
@@ -59184,39 +59293,39 @@ msgid ""
 "speed."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:159
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
 #, fuzzy, kde-format
 #| msgid "Behavior"
 msgid "Mouse Behavior"
 msgstr "動作"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:161
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:165
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgid "Inertial Globe Rotation"
 msgstr "選択反転"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:162
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
 #, fuzzy, kde-format
 msgid "Mouse View Rotation"
 msgstr "ローカル設定"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:171
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:175
 #, kde-format
 msgid "Cache"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:172
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
 #, fuzzy, kde-format
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -59248,89 +59357,131 @@ msgstr ""
 "他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあくまでオ"
 "プションです。このカレンダーのイベントはすべて赤で印刷されます。</p></html>"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:179
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
 #, kde-format
 msgid "Physical Memory:"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
 #, fuzzy, kde-format
 #| msgid "Clear"
 msgid "Clear"
 msgstr "クリア"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:186
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
 #, fuzzy, kde-format
 #| msgid "Unsharp Mask"
 msgid "Hard Disc:"
 msgstr "アンシャープマスク"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:202
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
 #, fuzzy, kde-format
 #| msgid "Content"
 msgid "Map Contents"
 msgstr "コンテンツ"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:204
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:208
 #, fuzzy, kde-format
 msgid "Default Font:"
 msgstr "デフォルトの言語"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:210
 #, kde-format
-msgid "The default font that gets used on the map."
-msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:208
-#, fuzzy, kde-format
-#| msgid "Show grid"
-msgid "Show Grid"
-msgstr "グリッドを表示する"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
-#, kde-format
-msgid "Show the world-map grid overlay"
-msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
-#, kde-format
-msgid "Show Cross-Hair"
-msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:212
-#, kde-format
-msgid "Show cross-hair on a center of the map"
+msgid ""
+"The default font that gets used on the map.\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:214
 #, fuzzy, kde-format
-msgid "Show Atmosphere"
-msgstr "アイテムを左パネルに表示"
+#| msgid "Coordinates"
+msgid "Show Coordinate Grid"
+msgstr "座標"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
 #, kde-format
-msgid "Show the world-map atmosphere overlay"
+msgid ""
+"Show the world-map coordinate grid overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:217
-#, fuzzy, kde-format
-#| msgid "Show image caption"
-msgid "Show Sun-Shading"
-msgstr "画像のキャプションを表示"
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:218
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:219
 #, kde-format
-msgid "Show the world-map sun-shading overlay"
+msgid "Show Cross-Hair"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:249
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
+#, kde-format
+msgid ""
+"Show cross-hair on a center of the map\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:224
+#, fuzzy, kde-format
+msgid "Show Atmospheric Glow"
+msgstr "アイテムを左パネルに表示"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
+#, kde-format
+msgid ""
+"Show the world-map atmospheric glow overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:229
+#, fuzzy, kde-format
+#| msgid "Show on right panel"
+msgid "Show Night Shadow"
+msgstr "右パネルに表示"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
+#, kde-format
+msgid ""
+"Show the world-map night shadow overlay\n"
+"This setting take effect only with the Atlas,\n"
+"the Satellite, and the Open-Street Maps."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:234
+#, kde-format
+msgid "Show City Place Mark"
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
+#, kde-format
+msgid ""
+"Show the world-map city place mark overlay\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:239
+#, fuzzy, kde-format
+#| msgid "Show embedded preview"
+msgid "Show Relief"
+msgstr "埋め込みプレビューを表示"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
+#, kde-format
+msgid ""
+"Show the world-map relief overlay\n"
+"This setting take effect only with the Atlas and Satellite Maps\n"
+"not the Open-Street Map."
+msgstr ""
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:273
 #, fuzzy, kde-format
 #| msgid "Marble 2"
 msgid "Marble View"
 msgstr "大理石 2"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:267
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:291
 #, fuzzy, kde-format
 msgid "Marble Plugins"
 msgstr "Kipi プラグイン"
@@ -68589,13 +68740,13 @@ msgctxt "@info:tooltip"
 msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr ""
 
-#: core/utilities/setup/setupgeolocation.cpp:102
+#: core/utilities/setup/setupgeolocation.cpp:103
 #, fuzzy, kde-format
 #| msgid "URL:"
 msgid "API Key:"
 msgstr "URL:"
 
-#: core/utilities/setup/setupgeolocation.cpp:113
+#: core/utilities/setup/setupgeolocation.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -69508,1516 +69659,11 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "すべての設定を標準の値に戻します。"
 
 #, fuzzy
-#~| msgid "Time Unit:"
-#~ msgid "&Units"
-#~ msgstr "時間の単位:"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "Angle:"
-#~ msgid "An&gle:"
-#~ msgstr "角度:"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"http://www.icalshare.com"
-#~| "\"><span style=\" text-decoration: underline; color:#0057ae;\">http://"
-#~| "www.icalshare.com</span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used "
-#~ "to measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></"
-#~ "html>"
-#~ msgstr ""
-#~ "<html><p><a href=\"http://www.icalshare.com\">http://www.icalshare.com</"
-#~ "a> や他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあ"
-#~ "くまでオプションです。このカレンダーのイベントはすべて赤で印刷されます。</"
-#~ "p></html>"
-
-#, fuzzy
-#~| msgid "Distance:"
-#~ msgid "&Distance:"
-#~ msgstr "距離:"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"http://www.icalshare.com"
-#~| "\"><span style=\" text-decoration: underline; color:#0057ae;\">http://"
-#~| "www.icalshare.com</span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation "
-#~ "of angles in coordinates: By default the Degree-Minute-Second notation (e."
-#~ "g. 54°30'00\" ) gets used. As an alternative you can choose decimal "
-#~ "degrees (e.g. 54.5°).</p></body></html>"
-#~ msgstr ""
-#~ "<html><p><a href=\"http://www.icalshare.com\">http://www.icalshare.com</"
-#~ "a> や他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあ"
-#~ "くまでオプションです。このカレンダーのイベントはすべて赤で印刷されます。</"
-#~ "p></html>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"http://www.icalshare.com"
-#~| "\"><span style=\" text-decoration: underline; color:#0057ae;\">http://"
-#~| "www.icalshare.com</span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
-#~ "quality that gets displayed while there is no user input. Usually this "
-#~ "allows for high map quality as speed is no concern.</p></body></html>"
-#~ msgstr ""
-#~ "<html><p><a href=\"http://www.icalshare.com\">http://www.icalshare.com</"
-#~ "a> や他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあ"
-#~ "くまでオプションです。このカレンダーのイベントはすべて赤で印刷されます。</"
-#~ "p></html>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"http://www.icalshare.com"
-#~| "\"><span style=\" text-decoration: underline; color:#0057ae;\">http://"
-#~| "www.icalshare.com</span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
-#~ "quality that gets displayed during map animations (e.g. while dragging "
-#~ "the globe). </p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-#~ "machines it is advisable to set this option to \"low quality\" as this "
-#~ "will give better speed.</p></body></html>"
-#~ msgstr ""
-#~ "<html><p><a href=\"http://www.icalshare.com\">http://www.icalshare.com</"
-#~ "a> や他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあ"
-#~ "くまでオプションです。このカレンダーのイベントはすべて赤で印刷されます。</"
-#~ "p></html>"
-
-#, fuzzy
-#~| msgid "Clear"
-#~ msgid "C&lear"
-#~ msgstr "クリア"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"http://www.icalshare.com"
-#~| "\"><span style=\" text-decoration: underline; color:#0057ae;\">http://"
-#~| "www.icalshare.com</span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that "
-#~ "gets used on the map.</p></body></html>"
-#~ msgstr ""
-#~ "<html><p><a href=\"http://www.icalshare.com\">http://www.icalshare.com</"
-#~ "a> や他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあ"
-#~ "くまでオプションです。このカレンダーのイベントはすべて赤で印刷されます。</"
-#~ "p></html>"
-
-#, fuzzy
-#~| msgid "Labels"
-#~ msgid "&Text Labels"
-#~ msgstr "ラベル"
-
-#, fuzzy
-#~| msgid "Moonlight"
-#~ msgid "Moon"
-#~ msgstr "月光"
-
-#, fuzzy
-#~ msgid "View"
-#~ msgstr "表示"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"http://www.icalshare.com"
-#~| "\"><span style=\" text-decoration: underline; color:#0057ae;\">http://"
-#~| "www.icalshare.com</span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">This is Marble's machine room for advanced users. "
-#~ "Here you can select and deselect the functionality that is provided "
-#~ "through plugins. </span></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
-#~ "from the map, menus and toolbars. </span></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
-#~ "their configuration a bit. </span></p></body></html>"
-#~ msgstr ""
-#~ "<html><p><a href=\"http://www.icalshare.com\">http://www.icalshare.com</"
-#~ "a> や他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあ"
-#~ "くまでオプションです。このカレンダーのイベントはすべて赤で印刷されます。</"
-#~ "p></html>"
-
-#, fuzzy
-#~ msgid "P&lugins"
-#~ msgstr "Kipi プラグイン"
-
-#, fuzzy
-#~| msgid "Error"
-#~ msgid "&Network Proxy"
-#~ msgstr "エラー"
-
-#, fuzzy
-#~| msgctxt "Replace string"
-#~| msgid "Replace:"
-#~ msgid "Placemark"
-#~ msgstr "置換:"
-
-#, fuzzy
-#~| msgid "Set width position to center."
-#~ msgid "Reports the position of a placemark"
-#~ msgstr "設定した幅の中心を画像の中央に合わせます。"
+#~| msgid "Show grid"
+#~ msgid "Show Grid"
+#~ msgstr "グリッドを表示する"
 
 #, fuzzy
 #~| msgid "Show image caption"
-#~ msgid "&Drag location:"
+#~ msgid "Show Sun-Shading"
 #~ msgstr "画像のキャプションを表示"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"http://www.icalshare.com"
-#~| "\"><span style=\" text-decoration: underline; color:#0057ae;\">http://"
-#~| "www.icalshare.com</span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the "
-#~ "mouse there are two standard behaviours when dealing with a virtual globe:"
-#~ "</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The location below "
-#~ "mouse pointer will follow the cursor exactly: As a result e.g. the north "
-#~ "pole will not stay at the top which can lead to confusion. By default "
-#~ "Marble makes sure that north is always up which results in a dragging "
-#~ "behaviour where the location below the mouse pointer slightly \"detaches"
-#~ "\" from the cursor. </p></body></html>"
-#~ msgstr ""
-#~ "<html><p><a href=\"http://www.icalshare.com\">http://www.icalshare.com</"
-#~ "a> や他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあ"
-#~ "くまでオプションです。このカレンダーのイベントはすべて赤で印刷されます。</"
-#~ "p></html>"
-
-#, fuzzy
-#~| msgid "Flip Vertically"
-#~ msgid "Keep Planet Axis Vertically"
-#~ msgstr "上下反転"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"http://www.icalshare.com"
-#~| "\"><span style=\" text-decoration: underline; color:#0057ae;\">http://"
-#~| "www.icalshare.com</span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
-#~ "location Marble can either move instantly to the new location or it can "
-#~ "show a travel animation from the previous place to the new place.</p></"
-#~ "body></html>"
-#~ msgstr ""
-#~ "<html><p><a href=\"http://www.icalshare.com\">http://www.icalshare.com</"
-#~ "a> や他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあ"
-#~ "くまでオプションです。このカレンダーのイベントはすべて赤で印刷されます。</"
-#~ "p></html>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"http://www.icalshare.com"
-#~| "\"><span style=\" text-decoration: underline; color:#0057ae;\">http://"
-#~| "www.icalshare.com</span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
-#~ "display the home location immediately after the application has started. "
-#~ "As an alternative it can also show the last position that was active when "
-#~ "the user left the application. </p></body></html>"
-#~ msgstr ""
-#~ "<html><p><a href=\"http://www.icalshare.com\">http://www.icalshare.com</"
-#~ "a> や他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあ"
-#~ "くまでオプションです。このカレンダーのイベントはすべて赤で印刷されます。</"
-#~ "p></html>"
-
-#, fuzzy
-#~| msgid "Show image caption"
-#~ msgid "Show Home Location"
-#~ msgstr "画像のキャプションを表示"
-
-#, fuzzy
-#~ msgid "&External editor:"
-#~ msgstr "補間法:"
-
-#, fuzzy
-#~| msgid "Always ignore"
-#~ msgid "Always ask"
-#~ msgstr "常に無視"
-
-#, fuzzy
-#~| msgid "Schema Name"
-#~ msgid "&Place names:"
-#~ msgstr "スキーマ名"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"http://www.icalshare.com"
-#~| "\"><span style=\" text-decoration: underline; color:#0057ae;\">http://"
-#~| "www.icalshare.com</span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
-#~ "different names in different languages. The label on the map can show the "
-#~ "name in the user's language. Alternatively it can display the name in the "
-#~ "official language and glyphs of that place. </p></body></html>"
-#~ msgstr ""
-#~ "<html><p><a href=\"http://www.icalshare.com\">http://www.icalshare.com</"
-#~ "a> や他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあ"
-#~ "くまでオプションです。このカレンダーのイベントはすべて赤で印刷されます。</"
-#~ "p></html>"
-
-#, fuzzy
-#~ msgid "Custom & Native Language"
-#~ msgstr "カスタムフォント"
-
-#, fuzzy
-#~ msgid "Custom Language"
-#~ msgstr "カスタムフォント"
-
-#, fuzzy
-#~ msgid "Native Language"
-#~ msgstr "デフォルトの言語"
-
-#, fuzzy
-#~ msgid "Remove Folder"
-#~ msgstr "アイテムを取り除く"
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Export Bookmarks"
-#~ msgstr "ブックマーク"
-
-#, fuzzy
-#~| msgid "XMP text Files (*.xmp)"
-#~ msgid "KML files (*.kml)"
-#~ msgstr "XMP テキストファイル (*.xmp)"
-
-#, fuzzy
-#~ msgid "Bookmark Export"
-#~ msgstr "場所に移動"
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Import Bookmarks"
-#~ msgstr "ブックマーク"
-
-#, fuzzy
-#~| msgid "XMP text Files (*.xmp)"
-#~ msgid "KML Files (*.kml)"
-#~ msgstr "XMP テキストファイル (*.xmp)"
-
-#, fuzzy
-#~| msgid "This file is damaged and may not be playable."
-#~ msgid "The file %1 cannot be opened as a KML file."
-#~ msgstr "このファイルは壊れていて再生できないかもしれません。"
-
-#, fuzzy
-#~ msgid "Bookmark Import"
-#~ msgstr "場所に移動"
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Imported bookmark"
-#~ msgstr "ブックマーク"
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Existing bookmark"
-#~ msgstr "ブックマーク"
-
-#, fuzzy
-#~| msgid "Overwrite automatically"
-#~ msgid "Skip All"
-#~ msgstr "自動的に上書きする"
-
-#, fuzzy
-#~| msgid "Color Management"
-#~ msgid "Bookmark Manager"
-#~ msgstr "カラーマネージメント"
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Import Bookmarks..."
-#~ msgstr "ブックマーク"
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Export Bookmarks..."
-#~ msgstr "ブックマーク"
-
-#, fuzzy
-#~| msgid "Folder: "
-#~ msgid "Folders"
-#~ msgstr "フォルダ: "
-
-#, fuzzy
-#~| msgctxt "Create new search"
-#~| msgid "New..."
-#~ msgid "New..."
-#~ msgstr "新規..."
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Edit Bookmark"
-#~ msgstr "ブックマーク"
-
-#, fuzzy
-#~| msgid "Description:"
-#~ msgid "&Description:"
-#~ msgstr "説明:"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"http://www.icalshare.com"
-#~| "\"><span style=\" text-decoration: underline; color:#0057ae;\">http://"
-#~| "www.icalshare.com</span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-#~ "bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-#~ "<tr>\n"
-#~ "<td style=\"border: none;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-#~ msgstr ""
-#~ "<html><p><a href=\"http://www.icalshare.com\">http://www.icalshare.com</"
-#~ "a> や他のサイトから各国のカレンダーをダウンロードできます。</p><p>これはあ"
-#~ "くまでオプションです。このカレンダーのイベントはすべて赤で印刷されます。</"
-#~ "p></html>"
-
-#, fuzzy
-#~| msgid "Folder: "
-#~ msgid "&Folder:"
-#~ msgstr "フォルダ: "
-
-#, fuzzy
-#~| msgid "Add Folders..."
-#~ msgid "&Add Folder..."
-#~ msgstr "フォルダを追加..."
-
-#, fuzzy
-#~| msgctxt "Image filter reproducible: No"
-#~| msgid "No"
-#~ msgctxt "North, the direction"
-#~ msgid "N"
-#~ msgstr "いいえ"
-
-#, fuzzy
-#~ msgid "New Bookmark Folder"
-#~ msgstr "場所に移動"
-
-#, fuzzy
-#~| msgid "Filename"
-#~ msgid "&Folder name:"
-#~ msgstr "ファイル名"
-
-#, fuzzy
-#~ msgid "Open File"
-#~ msgstr "フォルダを開く"
-
-#, fuzzy
-#~| msgid "All supported files (%1)"
-#~ msgid "All Supported Files (*.png)"
-#~ msgstr "サポートされた全ファイル (%1)"
-
-#, fuzzy
-#~| msgctxt "filename"
-#~| msgid "Name:"
-#~ msgid "Name:"
-#~ msgstr "名前:"
-
-#, fuzzy
-#~| msgid "Grain Size:"
-#~ msgid "Icon link:"
-#~ msgstr "粒子サイズ:"
-
-#, fuzzy
-#~| msgid "Target"
-#~ msgid "Target ID:"
-#~ msgstr "処理後"
-
-#, fuzzy
-#~| msgid "Not available"
-#~ msgid "No route available."
-#~ msgstr "情報がありません"
-
-#, fuzzy
-#~| msgid "Database Folder"
-#~ msgid "Use local"
-#~ msgstr "データベースフォルダ"
-
-#, fuzzy
-#~| msgid "Use background"
-#~ msgid "Use cloud"
-#~ msgstr "背景を使用"
-
-#, fuzzy
-#~| msgid "Channel:"
-#~ msgid "Changed"
-#~ msgstr "チャンネル:"
-
-#, fuzzy
-#~| msgid "Delete"
-#~ msgid "Deleted"
-#~ msgstr "削除"
-
-#, fuzzy
-#~ msgid "Server '%1' could not be reached"
-#~ msgstr "アルバム名は空白にできません。"
-
-#, fuzzy
-#~| msgid "Image saved successfully"
-#~ msgid "Login successful"
-#~ msgstr "画像の保存に成功しました"
-
-#, fuzzy
-#~ msgid "Open"
-#~ msgstr "開く..."
-
-#, fuzzy
-#~| msgctxt "@action: open file dialog"
-#~| msgid "Load..."
-#~ msgid "Load"
-#~ msgstr "読み込み..."
-
-#, fuzzy
-#~| msgid "Read metadata from Baloo"
-#~ msgid "Remove from device"
-#~ msgstr "Baloo からメタデータを読み込み"
-
-#, fuzzy
-#~| msgid "Delete Workflow"
-#~ msgid "Delete from cloud"
-#~ msgstr "ワークフローを削除"
-
-#, fuzzy
-#~| msgid "Upload to Camera"
-#~ msgid "Upload to cloud"
-#~ msgstr "カメラへアップロード"
-
-#, fuzzy
-#~| msgid "Enter caption text here."
-#~ msgid "Directions &to here"
-#~ msgstr "ここにキャプションのテキストを入力します。"
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Add &Bookmark"
-#~ msgstr "ブックマーク"
-
-#, fuzzy
-#~| msgid "Full-screen Options"
-#~ msgid "&Full Screen Mode"
-#~ msgstr "フルスクリーンのオプション"
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Bookmark"
-#~ msgstr "ブックマーク"
-
-#, fuzzy
-#~| msgid "Current Name"
-#~ msgid "Current Route"
-#~ msgstr "現在の名前"
-
-#, fuzzy
-#~| msgid "Show image caption"
-#~ msgid "Current Location: %1"
-#~ msgstr "画像のキャプションを表示"
-
-#, fuzzy
-#~| msgctxt "@action: context menu"
-#~| msgid "Go To"
-#~ msgid "Go To..."
-#~ msgstr "移動"
-
-#, fuzzy
-#~| msgctxt "Advanced search images, access stored searches"
-#~| msgid "Search"
-#~ msgid "Search"
-#~ msgstr "検索"
-
-#, fuzzy
-#~| msgid "Enter tag here."
-#~ msgid "Enter the roundabout."
-#~ msgstr "ここにタグを入力します。"
-
-#, fuzzy
-#~| msgctxt "@action:button"
-#~| msgid "Save Changes"
-#~ msgid "Take the exit."
-#~ msgstr "変更を保存"
-
-#, fuzzy
-#~| msgid "Make of the camera"
-#~ msgid "Take the ramp."
-#~ msgstr "カメラのメーカー"
-
-#, fuzzy
-#~| msgid "Continue"
-#~ msgid "Continue."
-#~ msgstr "続行"
-
-#, fuzzy
-#~| msgid "On left"
-#~ msgid "Turn left."
-#~ msgstr "左に"
-
-#, fuzzy
-#~| msgid "On right"
-#~ msgid "Turn right."
-#~ msgstr "右に"
-
-#, fuzzy
-#~| msgctxt "@item: placement position"
-#~| msgid "Top right"
-#~ msgid "Turn sharp right."
-#~ msgstr "右上"
-
-#, fuzzy
-#~| msgid "Align text to the left"
-#~ msgid "Take the exit to the left."
-#~ msgstr "テキストを左揃え"
-
-#, fuzzy
-#~| msgid "Align text to the right"
-#~ msgid "Take the exit to the right."
-#~ msgstr "テキストを右揃え"
-
-#, fuzzy
-#~| msgid "Continue"
-#~ msgid "Continue onto %1."
-#~ msgstr "続行"
-
-#, fuzzy
-#~| msgid "Rating equal to %1."
-#~ msgid "Turn left into %1."
-#~ msgstr "評価が %1 と等しい。"
-
-#, fuzzy
-#~| msgid "Continue"
-#~ msgid "Continue on %1."
-#~ msgstr "続行"
-
-#, fuzzy
-#~| msgctxt "@info: setup"
-#~| msgid "Creates a new empty Album in the collection."
-#~ msgid "Take the exit to the left onto %1."
-#~ msgstr "コレクションに新しい空のアルバムを作成します。"
-
-#, fuzzy
-#~| msgid "Align text to the right"
-#~ msgid "Take the exit to the right onto %1."
-#~ msgstr "テキストを右揃え"
-
-#, fuzzy
-#~| msgctxt "@info: month-name year-string"
-#~| msgid "%1 %2"
-#~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
-#~ msgid "%1 %2, %3"
-#~ msgstr "%2年%1月"
-
-#, fuzzy
-#~| msgid "Enter tag here."
-#~ msgid "&Center Map here"
-#~ msgstr "ここにタグを入力します。"
-
-#, fuzzy
-#~| msgid "Current aspect ratio"
-#~ msgid "Current &Location"
-#~ msgstr "現在のアスペクト比"
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "From &Bookmark"
-#~ msgstr "ブックマーク"
-
-#, fuzzy
-#~| msgid "Current aspect ratio"
-#~ msgid "Current Location"
-#~ msgstr "現在のアスペクト比"
-
-#, fuzzy
-#~| msgid "Remove this Tag"
-#~ msgid "&Remove this Destination"
-#~ msgstr "このタグを取り除く"
-
-#, fuzzy
-#~ msgid "&Export Route..."
-#~ msgstr "エクスポート"
-
-#, fuzzy
-#~ msgid "Export Route"
-#~ msgstr "エクスポート"
-
-#, fuzzy
-#~| msgid "Luminance Noise"
-#~ msgid "Guidance Mode"
-#~ msgstr "明度ノイズ"
-
-#, fuzzy
-#~| msgid "Configure this column"
-#~ msgid "Configure Routing Profile"
-#~ msgstr "このコラムを設定"
-
-#, fuzzy
-#~| msgid "Sort by rating"
-#~ msgid "Active Route Services"
-#~ msgstr "評価でソート"
-
-#, fuzzy
-#~| msgid "Capture Device Settings"
-#~ msgid "Service Settings"
-#~ msgstr "記録デバイスの設定"
-
-#, fuzzy
-#~| msgid "No options available"
-#~ msgid "No configuration available"
-#~ msgstr "オプションはありません"
-
-#, fuzzy
-#~| msgid "Select folder to parse"
-#~ msgid "Select Service to Configure"
-#~ msgstr "解析するフォルダを選択"
-
-#, fuzzy
-#~| msgid "Cycle:"
-#~ msgid "Bicycle"
-#~ msgstr "サイクル:"
-
-#, fuzzy
-#~| msgctxt "unknown / invalid image dimension"
-#~| msgid "Unknown"
-#~ msgid "Unknown"
-#~ msgstr "不明"
-
-#, fuzzy
-#~ msgid "New Profile"
-#~ msgstr "画像ファイル"
-
-#, fuzzy
-#~| msgctxt "@action: rotate image left"
-#~| msgid "Left"
-#~ msgid "ft"
-#~ msgstr "左"
-
-#, fuzzy
-#~| msgctxt "width : height (Aspect Ratio)"
-#~| msgid "%1:%2 (%3)"
-#~ msgctxt "journey duration"
-#~ msgid "%1:%2 h"
-#~ msgstr "%1:%2 (%3)"
-
-#, fuzzy
-#~ msgid "Move &Up"
-#~ msgstr "上へ移動"
-
-#, fuzzy
-#~ msgid "Move &Down"
-#~ msgstr "下へ移動"
-
-#, fuzzy
-#~| msgid "Golden sections"
-#~ msgid "Get Directions"
-#~ msgstr "黄金分割"
-
-#, fuzzy
-#~| msgctxt "@action: setup"
-#~| msgid "Open the image editor."
-#~ msgid "Open Route"
-#~ msgstr "画像エディタを開きます。"
-
-#, fuzzy
-#~| msgctxt "@action:button"
-#~| msgid "Save Changes"
-#~ msgid "Save Route"
-#~ msgstr "変更を保存"
-
-#, fuzzy
-#~| msgctxt "@action Select image editor preview mode"
-#~| msgid "Preview Mode"
-#~ msgid "Preview Route"
-#~ msgstr "プレビューモード"
-
-#, fuzzy
-#~| msgid "Upload to Camera"
-#~ msgid "Upload to Cloud"
-#~ msgstr "カメラへアップロード"
-
-#, fuzzy
-#~| msgid "Add film grain"
-#~ msgid "Add Via"
-#~ msgstr "フィルム粒子を加える"
-
-#, fuzzy
-#~| msgid "Reverse ordering"
-#~ msgid "Reverse Route"
-#~ msgstr "降順ソート"
-
-#, fuzzy
-#~| msgid "Clear Queue"
-#~ msgid "Clear Route"
-#~ msgstr "キューをクリア"
-
-#, fuzzy
-#~| msgid "Images found in %1"
-#~ msgid "placemarks found: %1"
-#~ msgstr "%1 内で検出された画像"
-
-#, fuzzy
-#~| msgid "Kipi Plugins Handbook"
-#~ msgid "No placemark found"
-#~ msgstr "Kipi プラグインハンドブック"
-
-#, fuzzy
-#~| msgid "Kipi Plugins Handbook"
-#~ msgid "No route found"
-#~ msgstr "Kipi プラグインハンドブック"
-
-#, fuzzy
-#~| msgid "Images found in %1"
-#~ msgid "routes found: %1"
-#~ msgstr "%1 内で検出された画像"
-
-#, fuzzy
-#~| msgid "Loading themes..."
-#~ msgid "Uploading route..."
-#~ msgstr "テーマを読み込み中..."
-
-#, fuzzy
-#~| msgid "Details"
-#~ msgid "Show Details"
-#~ msgstr "ディテール"
-
-#, fuzzy
-#~ msgid "Choose alternative routes"
-#~ msgstr "ローカル設定"
-
-#, fuzzy
-#~ msgid "Enable synchronization"
-#~ msgstr "ブラックポイント補正を使う"
-
-#, fuzzy
-#~ msgid "Enable route synchronization"
-#~ msgstr "ブラックポイント補正を使う"
-
-#, fuzzy
-#~ msgid "Enable bookmark synchronization"
-#~ msgstr "ブラックポイント補正を使う"
-
-#, fuzzy
-#~| msgid "Credits"
-#~ msgid "Credentials"
-#~ msgstr "クレジット"
-
-#, fuzzy
-#~| msgid "MySQL interface"
-#~ msgid "Server:"
-#~ msgstr "MySQL インターフェース"
-
-#, fuzzy
-#~| msgid "User"
-#~ msgid "Username:"
-#~ msgstr "ユーザ"
-
-#, fuzzy
-#~| msgid "Profile Error"
-#~ msgid "Test Login"
-#~ msgstr "プロファイルのエラー"
-
-#, fuzzy
-#~| msgid "Time Unit:"
-#~ msgid "Time Zone"
-#~ msgstr "時間の単位:"
-
-#, fuzzy
-#~| msgid "Camera model"
-#~ msgid "System time zone"
-#~ msgstr "カメラのモデル"
-
-#, fuzzy
-#~| msgid "Camera model"
-#~ msgid "Choose Time zone"
-#~ msgstr "カメラのモデル"
-
-#, fuzzy
-#~| msgid "Unpolar Coordinates"
-#~ msgid "Universal Time Coordinated"
-#~ msgstr "反転極座標"
-
-#, fuzzy
-#~| msgid "European Union"
-#~ msgid "European Central Time"
-#~ msgstr "欧州連合"
-
-#, fuzzy
-#~| msgid "Date & Time"
-#~ msgid "Near East Time"
-#~ msgstr "日付と時間"
-
-#, fuzzy
-#~| msgid "Standard"
-#~ msgid "Vietnam Standard Time"
-#~ msgstr "標準"
-
-#, fuzzy
-#~| msgid "Chinese (Taiwan)"
-#~ msgid "China Taiwan Time"
-#~ msgstr "中国語 (台湾)"
-
-#, fuzzy
-#~| msgid "Solomon Islands"
-#~ msgid "Solomon Standard Time"
-#~ msgstr "ソロモン諸島"
-
-#, fuzzy
-#~| msgid "New Zealand"
-#~ msgid "New Zealand Standard Time"
-#~ msgstr "ニュージーランド"
-
-#, fuzzy
-#~| msgid "Cayman Islands"
-#~ msgid "Midway Islands Time"
-#~ msgstr "ケイマン諸島"
-
-#, fuzzy
-#~| msgid "Standard"
-#~ msgid "Eastern Standard Time"
-#~ msgstr "標準"
-
-#, fuzzy
-#~| msgid "US Virgin Islands"
-#~ msgid "Puerto Rico and US Virgin Islands Time"
-#~ msgstr "米領バージン諸島"
-
-#, fuzzy
-#~| msgid "Central African Republic"
-#~ msgid "Central African Time"
-#~ msgstr "中央アフリカ共和国"
-
-#, fuzzy
-#~| msgid "Load image"
-#~ msgid "Load system time"
-#~ msgstr "画像を読み込み"
-
-#, fuzzy
-#~| msgid "Date and time"
-#~ msgid "Date and Time"
-#~ msgstr "日付と時刻"
-
-#, fuzzy
-#~| msgid "Rating"
-#~ msgid "Routing"
-#~ msgstr "評価"
-
-#, fuzzy
-#~| msgid "Synchronize"
-#~ msgid "Synchronization"
-#~ msgstr "同期"
-
-#, fuzzy
-#~| msgid "Synchronize"
-#~ msgid "Never synchronized."
-#~ msgstr "同期"
-
-#, fuzzy
-#~ msgid "Last synchronization: %1"
-#~ msgstr "ブラックポイント補正を使う"
-
-#, fuzzy
-#~| msgid "Iteration:"
-#~ msgid "Elevation:"
-#~ msgstr "反復回数:"
-
-#, fuzzy
-#~| msgid "Select None"
-#~ msgid "Select sound files..."
-#~ msgstr "すべて選択解除"
-
-#, fuzzy
-#~| msgid "Unspecified"
-#~ msgid "No URL specified"
-#~ msgstr "不明"
-
-#, fuzzy
-#~| msgid "Add film grain"
-#~ msgid "Add link"
-#~ msgstr "フィルム粒子を加える"
-
-#, fuzzy
-#~| msgid "Untitled"
-#~ msgid "Untitled Placemark"
-#~ msgstr "タイトルなし"
-
-#, fuzzy
-#~ msgid "Relations"
-#~ msgstr "名前変更のオプション"
-
-#, fuzzy
-#~| msgid "Iteration:"
-#~ msgid "Elevation"
-#~ msgstr "反復回数:"
-
-#, fuzzy
-#~| msgid "Unspecified"
-#~ msgid "No ID specified"
-#~ msgstr "不明"
-
-#, fuzzy
-#~| msgid "No image selected"
-#~ msgid "No image specified"
-#~ msgstr "画像が選択されていません"
-
-#, fuzzy
-#~| msgid "Filename"
-#~ msgid "Invalid icon path"
-#~ msgstr "ファイル名"
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Edit placemark"
-#~ msgstr "ブックマーク"
-
-#, fuzzy
-#~| msgctxt "font color"
-#~| msgid "Color:"
-#~ msgid "Style, Color"
-#~ msgstr "色:"
-
-#, fuzzy
-#~| msgid "Labels"
-#~ msgid "Label"
-#~ msgstr "ラベル"
-
-#, fuzzy
-#~| msgctxt "font color"
-#~| msgid "Color:"
-#~ msgid "Color:"
-#~ msgstr "色:"
-
-#, fuzzy
-#~| msgid "&Scale to:"
-#~ msgid "Scale:"
-#~ msgstr "このサイズに拡大/縮小する(&S):"
-
-#, fuzzy
-#~| msgid "&Icon:"
-#~ msgid "Icon"
-#~ msgstr "アイコン(&I):"
-
-#, fuzzy
-#~| msgid "Show Face Tags"
-#~ msgid "Show placemark"
-#~ msgstr "顔タグを表示"
-
-#, fuzzy
-#~| msgid "Italian"
-#~ msgid "Italics"
-#~ msgstr "イタリア語"
-
-#, fuzzy
-#~| msgid "Not defined"
-#~ msgid "Underlined"
-#~ msgstr "定義なし"
-
-#, fuzzy
-#~| msgid "Load image"
-#~ msgid "Add image"
-#~ msgstr "画像を読み込み"
-
-#, fuzzy
-#~| msgctxt "Seconds"
-#~| msgid "s"
-#~ msgctxt "seconds"
-#~ msgid " s"
-#~ msgstr "秒"
-
-#, fuzzy
-#~| msgctxt "camera model"
-#~| msgid "Model:"
-#~ msgid "Mode:"
-#~ msgstr "モデル:"
-
-#, fuzzy
-#~| msgctxt "smoothing value of the pencil"
-#~| msgid "Smooth:"
-#~ msgid "Smooth"
-#~ msgstr "滑らかさ:"
-
-#, fuzzy
-#~| msgid "Current Map Search"
-#~ msgid "Current map center"
-#~ msgstr "現在の地図検索"
-
-#, fuzzy
-#~| msgid "Close view"
-#~ msgid "Choose image"
-#~ msgstr "近景"
-
-#, fuzzy
-#~| msgid "All supported files (%1)"
-#~ msgid "All Supported Files (*.png *.jpg *.jpeg)"
-#~ msgstr "サポートされた全ファイル (%1)"
-
-#, fuzzy
-#~ msgid "Formatted text"
-#~ msgstr "エクスポート"
-
-#, fuzzy
-#~| msgid "Color"
-#~ msgid "Color"
-#~ msgstr "色"
-
-#, fuzzy
-#~| msgid "Assign tools"
-#~ msgid "Missing encoding tools"
-#~ msgstr "ツールを割り当て"
-
-#, fuzzy
-#~| msgid "JPEG"
-#~ msgid "MPEG-4"
-#~ msgstr "JPEG"
-
-#, fuzzy
-#~ msgctxt "Start recording a movie"
-#~ msgid "&Start"
-#~ msgstr "開始値:"
-
-#, fuzzy
-#~ msgid "Codecs are unavailable"
-#~ msgstr "オプションはありません"
-
-#, fuzzy
-#~| msgid "Collection not found"
-#~ msgid "Supported codecs are not found."
-#~ msgstr "コレクションが見つかりません"
-
-#, fuzzy
-#~ msgid "Save video file"
-#~ msgstr "画像ファイル"
-
-#, fuzzy
-#~ msgid "Filename is not valid"
-#~ msgstr "ターゲットの URL %1 が無効です。"
-
-#, fuzzy
-#~ msgid "This file format is not supported. Please, use %1 instead"
-#~ msgstr "指定されたカメラ (%1) はサポートしていません。"
-
-#, fuzzy
-#~| msgid "Print Image"
-#~ msgid "Missing filename"
-#~ msgstr "画像の印刷"
-
-#, fuzzy
-#~ msgid "Movie Recording"
-#~ msgstr "降順ソート"
-
-#, fuzzy
-#~| msgid "Destination:"
-#~ msgid "Destination video:"
-#~ msgstr "送り先:"
-
-#, fuzzy
-#~| msgctxt "@action: file open dialog"
-#~| msgid "Open..."
-#~ msgid "Open..."
-#~ msgstr "開く..."
-
-#, fuzzy
-#~ msgid "Choose item:"
-#~ msgstr "ピクセル数: "
-
-#, fuzzy
-#~| msgid "Map Search"
-#~ msgid "Global Search"
-#~ msgstr "地図検索"
-
-#, fuzzy
-#~| msgid "Map Search"
-#~ msgid "Area Search"
-#~ msgstr "地図検索"
-
-#, fuzzy
-#~| msgid "Searches"
-#~ msgid "Search Results"
-#~ msgstr "検索"
-
-#, fuzzy
-#~ msgid "Start"
-#~ msgstr "開始値:"
-
-#, fuzzy
-#~| msgid "Show image creation date"
-#~ msgid "Video writing failed."
-#~ msgstr "画像の作成日時を表示"
-
-#, fuzzy
-#~ msgid "Video export completed."
-#~ msgstr "スライドショー"
-
-#, fuzzy
-#~| msgid "Destination:"
-#~ msgid "Destination video"
-#~ msgstr "送り先:"
-
-#, fuzzy
-#~| msgid "Saturation:"
-#~ msgid "Wait duration:"
-#~ msgstr "彩度:"
-
-#, fuzzy
-#~| msgid "Create \"%1\""
-#~ msgid "Create item %1"
-#~ msgstr "\"%1\" を作成"
-
-#, fuzzy
-#~| msgid "Remove item"
-#~ msgid "Remove item %1"
-#~ msgstr "アイテムを取り除く"
-
-#, fuzzy
-#~ msgid "Change item %1"
-#~ msgstr "文字種別を変更:"
-
-#, fuzzy
-#~ msgid "Update items"
-#~ msgstr "更新"
-
-#, fuzzy
-#~| msgid "Change Face Tag"
-#~ msgid "Change Placemark in Tour"
-#~ msgstr "顔タグを変更"
-
-#, fuzzy
-#~| msgid "Add Folders..."
-#~ msgid "Add FlyTo"
-#~ msgstr "フォルダを追加..."
-
-#, fuzzy
-#~| msgid "Add film grain"
-#~ msgid "Add Wait"
-#~ msgstr "フィルム粒子を加える"
-
-#, fuzzy
-#~| msgid "Add Border"
-#~ msgid "Add SoundCue"
-#~ msgstr "枠を追加"
-
-#, fuzzy
-#~| msgid "Add Watermark"
-#~ msgid "Add Placemark"
-#~ msgstr "ウォーターマークを追加"
-
-#, fuzzy
-#~| msgid "Remove tool"
-#~ msgid "Remove placemark"
-#~ msgstr "ツールを削除"
-
-#, fuzzy
-#~| msgid "Change Face Tag"
-#~ msgid "Change placemark"
-#~ msgstr "顔タグを変更"
-
-#, fuzzy
-#~ msgid "Loop"
-#~ msgstr "繰り返し(&L)"
-
-#, fuzzy
-#~ msgid "Save tour"
-#~ msgstr "画像ファイル"
-
-#, fuzzy
-#~ msgid "There are unsaved Tours. Do you want to save your changes?"
-#~ msgstr "現在の画像は変更されています。<nl/>変更を保存しますか？"
-
-#, fuzzy
-#~ msgid "Open Tour"
-#~ msgstr "エクスポート"
-
-#, fuzzy
-#~| msgid "Remove selected tag"
-#~ msgid "Remove Selected Items"
-#~ msgstr "選択したタグを削除"
-
-#, fuzzy
-#~| msgid "Are you sure you want to restore %1 item?"
-#~| msgid_plural "Are you sure you want to restore %1 items?"
-#~ msgid "Are you sure want to remove selected items?"
-#~ msgstr "本当に %1 を復元しますか？"
-
-#, fuzzy
-#~| msgctxt "@action Save As New Version...Save in format..."
-#~| msgid "Save in Format"
-#~ msgid "Save Tour as"
-#~ msgstr "ファイル形式を指定して保存"
-
-#, fuzzy
-#~| msgctxt "@action:button"
-#~| msgid "Discard Changes"
-#~ msgid "Discard Changes"
-#~ msgstr "変更を破棄"
-
-#, fuzzy
-#~| msgid "By Folder"
-#~ msgid "New Tour"
-#~ msgstr "フォルダで"
-
-#, fuzzy
-#~ msgid "Save Tour"
-#~ msgstr "画像ファイル"
-
-#, fuzzy
-#~ msgid "Save Tour As"
-#~ msgstr "新しいバージョンに名前を付けて保存..."
-
-#, fuzzy
-#~| msgid "Apply"
-#~ msgctxt "@action:button"
-#~ msgid "&Apply"
-#~ msgstr "適用"
-
-#, fuzzy
-#~| msgid "Custom process"
-#~ msgid "%1 input audio stream to process:"
-#~ msgstr "カスタム処理"
-
-#, fuzzy
-#~| msgid "Failed to open file."
-#~ msgid "Failed to open audio encoder"
-#~ msgstr "画像を開けませんでした。"
-
-#, fuzzy
-#~| msgid "Info"
-#~ msgid "GpsInfo"
-#~ msgstr "情報"
-
-#, fuzzy
-#~| msgid "Info"
-#~ msgid "&GpsInfo"
-#~ msgstr "情報"
-
-#, fuzzy
-#~ msgid "Direction"
-#~ msgstr "ファイル名"
-
-#, fuzzy
-#~| msgid "Permissions: "
-#~ msgid "Precision"
-#~ msgstr "パーミッション: "
