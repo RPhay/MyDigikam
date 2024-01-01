@@ -18,9 +18,7 @@ class CachePlugin : public ParseRunnerPlugin
 
 public:
 
-    explicit CachePlugin( QObject *parent = nullptr );
-
-    QIcon icon () const override;
+    explicit CachePlugin(QObject* const parent = nullptr );
 
     QString name() const override;
 
@@ -41,6 +39,6 @@ public:
     ParsingRunner* newRunner() const override;
 };
 
-}
+} // namespace Marble
 
 #endif // MARBLE_CACHE_PLUGIN_H
