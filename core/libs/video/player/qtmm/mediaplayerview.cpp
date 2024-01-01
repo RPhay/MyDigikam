@@ -28,7 +28,6 @@
 #include <QLabel>
 #include <QFrame>
 #include <QStyle>
-#include <QTimer>
 #include <QTransform>
 #include <QGraphicsView>
 #include <QGraphicsScene>
