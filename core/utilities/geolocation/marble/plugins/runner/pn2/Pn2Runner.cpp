@@ -4,24 +4,24 @@
 // SPDX-FileCopyrightText: 2012 Cezar Mocan <mocancezar@gmail.com>
 // SPDX-FileCopyrightText: 2014 Abhinav Gangwar <abhgang@gmail.com>
 //
-// For the Natural Earth Layer providing the Default data set at 0.5 arcminute resolution should be enough. 
-// This fileformat allows for even better packed data than the PNT format. For detailed polygons at arcminute 
+// For the Natural Earth Layer providing the Default data set at 0.5 arcminute resolution should be enough.
+// This fileformat allows for even better packed data than the PNT format. For detailed polygons at arcminute
 // scale on average it should use only 33% of the amount used by PNT.
 //
 // Description of the file format
 //
-// In the fileformat initially a file header is provided that provides the file format version and the number 
-// of polygons stored inside the file. A Polygon starts with the Polygon Header which provides the feature id 
-// and the number of so called "absolute nodes" that are about to follow. Absolute nodes always contain 
-// absolute geodetic coordinates. The Polygon Header also provides a flag that allows to specify whether the 
-// polygon is supposed to represent a line string ("0") or a linear ring ("1"). Each absolute node can be followed 
-// by relative nodes: These relative nodes are always nodes that follow in correct order inside the polygon after 
-// "their" absolute node. Each absolute node specifies the number of relative nodes which contain relative 
-// coordinates in reference to their absolute node. So an absolute node provides the absolute reference for 
-// relative nodes across a theoretical area of 2x2 squaredegree-area (which in practice frequently might rather 
+// In the fileformat initially a file header is provided that provides the file format version and the number
+// of polygons stored inside the file. A Polygon starts with the Polygon Header which provides the feature id
+// and the number of so called "absolute nodes" that are about to follow. Absolute nodes always contain
+// absolute geodetic coordinates. The Polygon Header also provides a flag that allows to specify whether the
+// polygon is supposed to represent a line string ("0") or a linear ring ("1"). Each absolute node can be followed
+// by relative nodes: These relative nodes are always nodes that follow in correct order inside the polygon after
+// "their" absolute node. Each absolute node specifies the number of relative nodes which contain relative
+// coordinates in reference to their absolute node. So an absolute node provides the absolute reference for
+// relative nodes across a theoretical area of 2x2 squaredegree-area (which in practice frequently might rather
 // amount to 1x1 square degrees).
 //
-// So much of the compression works by just referencing lat/lon diffs to special "absolute nodes". Hence the 
+// So much of the compression works by just referencing lat/lon diffs to special "absolute nodes". Hence the
 // compression will especially work well for polygons with many nodes with a high node density.
 //
 // The parser has to convert these relative coordinates to absolute coordinates.
@@ -57,7 +57,7 @@ Pn2Runner::~Pn2Runner()
 {
 }
 
-bool Pn2Runner::errorCheckLat( qint16 lat ) 
+bool Pn2Runner::errorCheckLat( qint16 lat )
 {
     return !(lat >= -10800 && lat <= +10800);
 }
@@ -67,7 +67,7 @@ bool Pn2Runner::errorCheckLon( qint16 lon )
     return !(lon >= -21600 && lon <= +21600);
 }
 
-bool Pn2Runner::importPolygon( QDataStream &stream, GeoDataLineString* linestring, quint32 nrAbsoluteNodes ) 
+bool Pn2Runner::importPolygon( QDataStream &stream, GeoDataLineString* linestring, quint32 nrAbsoluteNodes )
 {
     qint16 lat, lon, nrRelativeNodes;
     qint8 relativeLat, relativeLon;
@@ -88,7 +88,7 @@ bool Pn2Runner::importPolygon( QDataStream &stream, GeoDataLineString* linestrin
         for ( qint16 relativeNode = 1; relativeNode <= nrRelativeNodes; ++relativeNode ) {
             stream >> relativeLat >> relativeLon;
 
-            qint16 currLat = relativeLat + lat; 
+            qint16 currLat = relativeLat + lat;
             qint16 currLon = relativeLon + lon;
 
 
