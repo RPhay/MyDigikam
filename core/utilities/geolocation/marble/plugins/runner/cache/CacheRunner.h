@@ -16,11 +16,12 @@ class CacheRunner : public ParsingRunner
 
 public:
 
-    explicit CacheRunner(QObject *parent = nullptr);
+    explicit CacheRunner(QObject* const parent = nullptr);
     ~CacheRunner() override;
 
     GeoDataDocument* parseFile( const QString &fileName, DocumentRole role, QString& error ) override;
 };
 
-}
+} // namespace Marble
+
 #endif // MARBLE_CACHE_RUNNER_H

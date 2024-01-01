@@ -4,15 +4,18 @@
 
 #include "CacheRunner.h"
 
+// Qt includes
+
 #include <QFile>
 #include <QDataStream>
 #include <QSet>
+
+// Local includes
 
 #include "GeoDataDocument.h"
 #include "GeoDataExtendedData.h"
 #include "GeoDataData.h"
 #include "GeoDataPlacemark.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -20,8 +23,8 @@ namespace Marble
 
 const quint32 MarbleMagicNumber = 0x31415926;
 
-CacheRunner::CacheRunner(QObject *parent) :
-    ParsingRunner(parent)
+CacheRunner::CacheRunner(QObject* const parent)
+    : ParsingRunner(parent)
 {
 }
 
@@ -32,7 +35,9 @@ CacheRunner::~CacheRunner()
 GeoDataDocument* CacheRunner::parseFile( const QString &fileName, DocumentRole role, QString& error )
 {
     QFile file( fileName );
-    if ( !file.exists() ) {
+
+    if ( !file.exists() )
+    {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
         return nullptr;
@@ -44,24 +49,30 @@ GeoDataDocument* CacheRunner::parseFile( const QString &fileName, DocumentRole r
     // Read and check the header
     quint32 magic;
     in >> magic;
-    if ( magic != MarbleMagicNumber ) {
+
+    if ( magic != MarbleMagicNumber )
+    {
         return nullptr;
     }
 
     // Read the version
     qint32 version;
     in >> version;
-    if ( version < 015 ) {
+
+    if ( version < 015 )
+    {
         error = QStringLiteral("Bad cache file %1: Version %2 is too old, need 15 or later").arg(fileName).arg(version);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
         return nullptr;
     }
+
     /*
       if (version > 002) {
-      qDebug( "Bad file - too new!" );
+      qCDebug(DIGIKAM_MARBLE_LOG) << "Bad file - too new!";
       return;
       }
     */
+
     GeoDataDocument *document = new GeoDataDocument();
     document->setDocumentRole( role );
 
@@ -69,6 +80,7 @@ GeoDataDocument* CacheRunner::parseFile( const QString &fileName, DocumentRole r
 
     // Read the data itself
     // Use double to provide a single cache file format across architectures
+
     double   lon;
     double   lat;
     double   alt;
@@ -84,7 +96,8 @@ GeoDataDocument* CacheRunner::parseFile( const QString &fileName, DocumentRole r
     const QString gmtId = QStringLiteral("gmt");
     const QString dstId = QStringLiteral("dst");
 
-    while ( !in.atEnd() ) {
+    while ( !in.atEnd() )
+    {
         GeoDataPlacemark *mark = new GeoDataPlacemark;
         in >> tmpstr; tmpstr = *stringPool.insert(tmpstr);
         mark->setName( tmpstr );
@@ -109,12 +122,14 @@ GeoDataDocument* CacheRunner::parseFile( const QString &fileName, DocumentRole r
 
         document->append( mark );
     }
+
     document->setFileName( fileName );
 
     file.close();
+
     return document;
 }
 
-}
+} // namespace Marble
 
 #include "moc_CacheRunner.cpp"
