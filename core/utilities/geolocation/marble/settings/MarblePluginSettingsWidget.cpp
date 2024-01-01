@@ -85,10 +85,10 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
     d->runnerListView             = new QTreeWidget(grpRunner);
     d->runnerListView->setColumnCount(2);
     d->runnerListView->setRootIsDecorated(false);
-    d->runnerListView->setUniformRowHeights(true);
-    d->runnerListView->setSelectionMode(QAbstractItemView::NoSelection);
+    d->runnerListView->setUniformRowHeights(false);
     d->runnerListView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    d->runnerListView->setAllColumnsShowFocus(false);
+    d->runnerListView->setAllColumnsShowFocus(true);
+    d->runnerListView->setSelectionMode(QAbstractItemView::NoSelection);
     d->runnerListView->setSortingEnabled(true);
     d->runnerListView->sortByColumn(0, Qt::AscendingOrder);
     d->runnerListView->setIconSize(QSize(16, 16));
