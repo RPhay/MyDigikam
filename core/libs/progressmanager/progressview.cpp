@@ -194,6 +194,7 @@ TransactionItem::TransactionItem(QWidget* const parent, ProgressItem* const item
     h->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
 
     d->progress = new QProgressBar(h);
+    d->progress->setFormat(i18nc("%p is the percent value, % is the percent sign", "%p%"));
     d->progress->setMaximum(100);
     d->progress->setValue(item->progress());
     h->layout()->addWidget(d->progress);

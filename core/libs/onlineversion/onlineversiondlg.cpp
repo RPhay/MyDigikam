@@ -191,6 +191,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     }
 
     d->bar                 = new QProgressBar(page);
+    d->bar->setFormat(i18nc("%p is the percent value, % is the percent sign", "%p%"));
     d->bar->setMaximum(1);
     d->bar->setMinimum(0);
     d->bar->setValue(0);

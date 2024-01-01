@@ -28,6 +28,10 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 
+// KDE includes
+
+#include <KLocalizedString>
+
 // Local includes
 
 #include "digikam_globals.h"
@@ -71,6 +75,7 @@ DProgressDlg::DProgressDlg(QWidget* const parent, const QString& caption)
     d->actionLabel          = new DAdjustableLabel(page);
     d->logo                 = new QLabel(page);
     d->progress             = new QProgressBar(page);
+    d->progress->setFormat(i18nc("%p is the percent value, % is the percent sign", "%p%"));
     d->title                = new QLabel(page);
     d->label                = new QLabel(page);
     d->actionPix->setFixedSize(QSize(32, 32));

@@ -92,7 +92,7 @@ QString BlackFrameListViewItem::toolTipString() const
 void BlackFrameListViewItem::slotLoadingProgress(float v)
 {
     setText(SIZE,      i18n("Loading Frame"));
-    setText(HOTPIXELS, QString::fromLatin1("%1 %").arg((int)(v*100)));
+    setText(HOTPIXELS, i18nc("%1 is the percent value, % is the percent sign", "%1%", ((int)(v*100))));
 }
 
 void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hotPixels)

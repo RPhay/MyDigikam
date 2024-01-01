@@ -35,7 +35,7 @@
 
 // KDE includes
 
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 // Local includes
 
@@ -298,7 +298,7 @@ void FreeSpaceWidget::paintEvent(QPaintEvent*)
         p.drawRect(gRect);
 
         QRect tRect(d->iconPix.height() + 3, 2, width() - 3 - d->iconPix.width() - 2, height() - 5);
-        QString text        = QString::fromUtf8("%1%").arg(peUsed);
+        QString text        = i18nc("%1 is the percent value, % is the percent sign", "%1%", peUsed);
         QFontMetrics fontMt = p.fontMetrics();
 /*
         QRect fontRect      = fontMt.boundingRect(tRect.x(), tRect.y(),

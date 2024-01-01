@@ -93,6 +93,7 @@ StatusbarProgressWidget::StatusbarProgressWidget(ProgressView* const progressVie
     QSize iconSize  = d->pButton->iconSize();
 
     d->pProgressBar = new QProgressBar(this);
+    d->pProgressBar->setFormat(i18nc("%p is the percent value, % is the percent sign", "%p%"));
     d->pProgressBar->installEventFilter(this);
     d->pProgressBar->setMinimumWidth(w);
     d->pProgressBar->setAttribute(Qt::WA_LayoutUsesWidgetRect, true);

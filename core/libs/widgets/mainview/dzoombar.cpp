@@ -32,7 +32,7 @@
 
 // KDE includes
 
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 // Local includes
 
@@ -117,7 +117,7 @@ DZoomBar::DZoomBar(QWidget* const parent)
 
     for (const double zoom : std::as_const(zoomLevels))
     {
-        d->zoomCombo->addItem(QString::fromLatin1("%1%").arg((int)zoom), QVariant(zoom));
+        d->zoomCombo->addItem(i18nc("%1 is the zoom percent value, % is the percent sign", "%1%", (int)zoom), QVariant(zoom));
     }
 
     layout()->setContentsMargins(QMargins());
