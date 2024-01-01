@@ -89,6 +89,7 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
     d->runnerListView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     d->runnerListView->setAllColumnsShowFocus(true);
     d->runnerListView->setSelectionMode(QAbstractItemView::NoSelection);
+    d->runnerListView->setFocusPolicy(Qt::NoFocus);
     d->runnerListView->setSortingEnabled(true);
     d->runnerListView->sortByColumn(0, Qt::AscendingOrder);
     d->runnerListView->setIconSize(QSize(16, 16));
