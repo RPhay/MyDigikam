@@ -186,7 +186,7 @@ bool DBinarySearch::allBinariesFound()
         }
         else if (binary->hasError())
         {
-            d->items[index]->setIcon(Status, QIcon::fromTheme(QLatin1String("question")).pixmap(16, 16));
+            d->items[index]->setIcon(Status, QIcon::fromTheme(QLatin1String("data-error")).pixmap(16, 16));
             d->items[index]->setToolTip(Status, i18n("The binary file found does not appear to be "
                                                      "working as intended."));
 
