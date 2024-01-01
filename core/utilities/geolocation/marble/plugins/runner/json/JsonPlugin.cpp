@@ -48,7 +48,7 @@ QVector<PluginAuthor> JsonPlugin::pluginAuthors() const
 {
     return QVector<PluginAuthor>()
             << PluginAuthor(QStringLiteral("Ander Pijoan"), QStringLiteral("ander.pijoan@deusto.es"))
-	    << PluginAuthor(QStringLiteral("John Zaitseff"), QStringLiteral("J.Zaitseff@zap.org.au"));
+        << PluginAuthor(QStringLiteral("John Zaitseff"), QStringLiteral("J.Zaitseff@zap.org.au"));
 }
 
 QString JsonPlugin::fileFormatDescription() const
