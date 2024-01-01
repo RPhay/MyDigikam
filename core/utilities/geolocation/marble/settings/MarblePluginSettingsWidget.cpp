@@ -166,7 +166,7 @@ void MarblePluginSettingsWidget::setRunnerPlugins(const QList<const ParseRunnerP
         d->runnerListView->setItemWidget(item, 1, bbox);
         d->runnerBtnMap.insert(btn, item);
 
-        connect(btn, SIGNAL(pressed()),
+        connect(btn, SIGNAL(released()),
                this, SLOT(slotAboutRunnerPlugin()));
     }
 }

@@ -242,6 +242,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
                                    "This setting take effect only with the Atlas and Satellite Maps\n"
                                    "not the Open-Street Map."));
 
+    // TODO:
     // Add IceLayer
     // Add Borders
     // Add Rivers
