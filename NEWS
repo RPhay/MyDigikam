@@ -111,7 +111,7 @@ BUGFIXES:
 093 ==> 442130 - Satellite View.
 094 ==> 433746 - Google Maps do not work anymore.
 095 ==> 479242 - Adding a Face Tag instantly crashes DK8.2.
-096 ==> 
+096 ==> 403082 - Allow to produce a Screenshot in Geolocator.
 097 ==> 
 098 ==> 
 099 ==> 
