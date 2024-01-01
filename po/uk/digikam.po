@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-31 00:39+0000\n"
-"PO-Revision-Date: 2023-12-30 08:57+0200\n"
+"POT-Creation-Date: 2024-01-01 00:39+0000\n"
+"PO-Revision-Date: 2023-12-31 09:26+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -4245,7 +4245,7 @@ msgstr "Одиниці"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:266
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Thumbnail"
@@ -9132,7 +9132,7 @@ msgstr "Використовувати керування кольорами д�
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:411
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:484
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
@@ -9365,7 +9365,7 @@ msgstr ""
 "комірок кольором середнього для комірки значення.</p>"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:144
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:111
 #, kde-format
 msgid "Distance:"
 msgstr "Відстань:"
@@ -20768,8 +20768,8 @@ msgstr ""
 "оцінку і мітки, буде додано як файл долучення."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:187
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:194
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
 #, kde-format
 msgid " MB"
 msgstr " МБ"
@@ -24907,7 +24907,7 @@ msgstr "від спостереження"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1084
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1125
 #: core/utilities/geolocation/marble/core/MarbleInputHandler.cpp:666
-#: core/utilities/geolocation/marble/core/MarbleWidget.cpp:644
+#: core/utilities/geolocation/marble/core/MarbleWidget.cpp:646
 #, kde-format
 msgid "not available"
 msgstr "немає доступу"
@@ -28721,43 +28721,43 @@ msgstr ""
 "<p><b>Сталася помилка під час роботи з базою даних.</b></p>Подробиці:\n"
 "%1"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:456
+#: core/libs/database/history/itemhistorygraphmodel.cpp:457
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "Початкові зображення"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:485
+#: core/libs/database/history/itemhistorygraphmodel.cpp:486
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "Журнал змін зображення"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:568
+#: core/libs/database/history/itemhistorygraphmodel.cpp:569
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Похідні зображення"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:578
+#: core/libs/database/history/itemhistorygraphmodel.cpp:579
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Пов'язані зображення"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:585
+#: core/libs/database/history/itemhistorygraphmodel.cpp:586
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Тотожні зображення"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:641
+#: core/libs/database/history/itemhistorygraphmodel.cpp:642
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Проміжні кроки:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:854
+#: core/libs/database/history/itemhistorygraphmodel.cpp:856
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28767,7 +28767,7 @@ msgstr ""
 "%1\n"
 "(Початкове зображення)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:859
+#: core/libs/database/history/itemhistorygraphmodel.cpp:861
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -34191,12 +34191,14 @@ msgid "Type-Mimes"
 msgstr "Типи MIME"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
+#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "About %1 Plugin"
 msgstr "Про додаток %1"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:81
+#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:83
 #, kde-format
 msgctxt "@label"
 msgid "Version"
@@ -34209,6 +34211,7 @@ msgid "Details"
 msgstr "Докладно"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:124
+#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:110
 #, kde-format
 msgctxt "@title"
 msgid "Authors"
@@ -34866,12 +34869,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Довідка"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:271
+#: core/libs/dtrash/dtrashitemmodel.cpp:275
 #, kde-format
 msgid "Relative Path"
 msgstr "Відносний шлях"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:276
+#: core/libs/dtrash/dtrashitemmodel.cpp:280
 #, kde-format
 msgid "Deletion Time"
 msgstr "Час вилучення"
@@ -43246,25 +43249,25 @@ msgstr[3] ""
 "Застосування дії до \n"
 "позначеного зображення"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:402
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:411
 #, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
 msgstr "Змін.: %1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:418
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
 #: core/showfoto/main/showfoto.cpp:256
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
-#: core/utilities/import/items/itemviewimportdelegate.cpp:358
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:325
+#: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Мпк)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:423
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:443
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
-#: core/utilities/import/items/itemviewimportdelegate.cpp:363
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:432
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:452
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:330
+#: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, kde-format
 msgctxt "unknown image resolution"
 msgid "Unknown"
@@ -51438,8 +51441,8 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "&Скасувати"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:254
-#: core/utilities/import/items/itemviewimportdelegate.cpp:311
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:263
+#: core/utilities/import/items/itemviewimportdelegate.cpp:320
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
@@ -53601,60 +53604,54 @@ msgstr ""
 "ескіз для виконання\n"
 "нечіткого пошуку"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:195
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:180
 #, kde-format
 msgid "Roadmap"
 msgstr "Карта доріг"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:196
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:181
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "Супутник"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:182
 #, kde-format
 msgid "Hybrid"
 msgstr "Гібридне"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:183
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "Місцевість"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:216
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:201
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Показати керування типом карти"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:221
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:206
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Показати керування навігацією"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:226
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:211
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Показати керування масштабом"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:239
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:224
 #: core/utilities/setup/setupgeolocation.cpp:131
 #, kde-format
 msgid "Google Maps"
 msgstr "Карти Google"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:402
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:473
 #, kde-format
 msgid "Float items"
 msgstr "Рухомі записи"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1639
-#, kde-format
-msgctxt "@title:window"
-msgid "Javascript Message"
-msgstr "Повідомлення Javascript"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
 #, kde-format
@@ -57452,12 +57449,12 @@ msgstr "&Перегляд карти"
 msgid "This is a float item that provides an overview map."
 msgstr "Це рухомий елемент з загальним виглядом карти."
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:480
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
 #, kde-format
 msgid "Choose Overview Map"
 msgstr "Вибір оглядової карти"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:512
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:517
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr "Будь ласка, виберіть колір позначки позиції"
@@ -57513,93 +57510,80 @@ msgstr "П&оступ отримання"
 msgid "Shows a pie chart download progress indicator"
 msgstr "Показувати круговий індикатор поступу отримання"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:28
+#, kde-format
 msgid "Cache File Parser"
-msgstr "Обробник файлів OSM"
+msgstr "Обробник файлів кешу"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:43
+#, kde-format
 msgid "Create GeoDataDocument from Cache Files"
-msgstr "Створити GeoDataDocument з файлів OSM"
+msgstr "Створити GeoDataDocument на основі файлів кешу"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "Marble View"
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:59
+#, kde-format
 msgid "Marble Cache Files"
-msgstr "Перегляд Marble"
+msgstr "Файли кешу Marble"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "GPSBabel NMEA File Parser"
-msgstr "Обробник файлів OSM"
+msgstr "Обробник файлів NMEA GPSBabel"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
 msgid "Allows loading of NMEA files through GPSBabel."
-msgstr ""
+msgstr "Надає змогу завантажувати файли NMEA за допомогою GPSBabel."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Save files as"
+#, kde-format
 msgid "GPSBabel files"
-msgstr "Зберігати файли у форматі"
+msgstr "файли GPSBabel"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Gpx File Parser"
-msgstr "Обробник файлів OSM"
+msgstr "Обробник файлів GPX"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "Create GeoDataDocument from Gpx Files"
-msgstr "Створити GeoDataDocument з файлів OSM"
+msgstr "Створити GeoDataDocument на основі файлів GPX"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "Data"
+#, kde-format
 msgid "GPS Data"
-msgstr "Дані"
+msgstr "Дані GPS"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "GeoJSON File Parser"
-msgstr "Обробник файлів OSM"
+msgstr "Обробник файлів GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "Create GeoDataDocument from GeoJSON Files"
-msgstr "Створити GeoDataDocument з файлів OSM"
+msgstr "Створити GeoDataDocument на основі файлів GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
 #, kde-format
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "KML File Parser"
-msgstr "Обробник файлів OSM"
+msgstr "Обробник файлів KML"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "Create GeoDataDocument from KML and KMZ Files"
-msgstr "Створити GeoDataDocument з файлів OSM"
+msgstr "Створити GeoDataDocument на основі файлів KML та KMZ"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
 #, kde-format
 msgid "Google Earth KML"
-msgstr ""
+msgstr "KML Google Earth"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -57634,40 +57618,34 @@ msgid "OpenStreetMap Data"
 msgstr "Дані OpenStreetMap"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Pn2 File Parser"
-msgstr "Обробник файлів OSM"
+msgstr "Обробник файлів Pn2"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "Create GeoDataDocument from Pn2 Files"
-msgstr "Створити GeoDataDocument з файлів OSM"
+msgstr "Створити GeoDataDocument на основі файлів Pn2"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@title: Name of the component"
-#| msgid "Component"
+#, kde-format
 msgid "Compressed Pnt"
-msgstr "Компонент"
+msgstr "Стиснений Pnt"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Pnt File Parser"
-msgstr "Обробник файлів OSM"
+msgstr "Обробник файлів PNT"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "Create GeoDataDocument from Pnt Files"
-msgstr "Створити GeoDataDocument з файлів OSM"
+msgstr "Створити GeoDataDocument на основі файлів PNT"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
 msgid "Micro World Database II"
-msgstr ""
+msgstr "Micro World Database II"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -57787,27 +57765,27 @@ msgstr ""
 "Землю так, як вона виглядає з відносно невеликої відстані над поверхнею. "
 "Застосування: використовується для віртуальних глобусів.</p>"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
 #, kde-format
 msgid "Units"
 msgstr "Одиниці"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:112
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
 #, kde-format
 msgid "Kilometer, Meter"
 msgstr "Кілометр, метр"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:114
 #, kde-format
 msgid "Miles, Feet"
 msgstr "Милі, фути"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:114
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
 #, kde-format
 msgid "Nautical miles, Knots"
 msgstr "Морські милі, вузли"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:116
 #, kde-format
 msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
@@ -57816,27 +57794,27 @@ msgstr ""
 "Одиниця, у якій вимірюватимуться висота, довжина і відстань (наприклад "
 "кілометр, миля, фут)."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
 #, kde-format
 msgid "Angle:"
 msgstr "Кут:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:119
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:120
 #, kde-format
 msgid "Degree (DMS)"
 msgstr "Градус (із хв. і сек.)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:120
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:121
 #, kde-format
 msgid "Degree (Decimal)"
 msgstr "Градус (десятковий)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:121
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
 msgstr "Універсальна проєкція Меркатора (UTM)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:123
 #, kde-format
 msgid ""
 "Specifies the notation of angles in coordinates.\n"
@@ -57847,47 +57825,47 @@ msgstr ""
 "позначення градус-мінута-секунда (наприклад 54°30'00) Іншим варіантом є "
 "показ кутів у вигляді долей градуса (наприклад 54,5°)."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
 #, kde-format
 msgid "Map Quality"
 msgstr "Якість карти"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
 #, kde-format
 msgid "Still Image:"
 msgstr "Статична картинка:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
 #, kde-format
 msgid "Outline Quality"
 msgstr "Якість ескіза"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:139
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:149
 #, kde-format
 msgid "Low Quality"
 msgstr "Низька якість"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:139
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:149
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:140
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:150
 #, kde-format
 msgid "Normal"
 msgstr "Звичайна"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:140
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:150
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:151
 #, kde-format
 msgid "High Quality"
 msgstr "Висока якість"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:151
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:142
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:152
 #, kde-format
 msgid "Print Quality"
 msgstr "Поліграфічна якість"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:142
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:143
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
@@ -57897,12 +57875,12 @@ msgstr ""
 "Зазвичай, при цьому отримується висока якість показу карти, оскільки "
 "швидкість не є визначальною."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
 #, kde-format
 msgid "During Animations:"
 msgstr "Під час анімації:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:152
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:153
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed during map animations\n"
@@ -57916,37 +57894,37 @@ msgstr ""
 "якість» \n"
 "на повільних машинах, оскільки це забезпечить кращу інтерактивність."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
 #, kde-format
 msgid "Mouse Behavior"
 msgstr "Поведінка миші"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:165
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
 #, kde-format
 msgid "Inertial Globe Rotation"
 msgstr "Інерційне обертання глобуса"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
 msgstr "Кінетичне гортання під час перетягування карти"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
 #, kde-format
 msgid "Mouse View Rotation"
 msgstr "Обертання перегляду мишею"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:169
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
 msgstr "Користуватися правою кнопкою миші для обертання камери"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:175
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
 #, kde-format
 msgid "Cache"
 msgstr "Кеш"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:177
 #, kde-format
 msgid ""
 "There are two caches being used:\n"
@@ -57967,151 +57945,191 @@ msgstr ""
 "Зменшіть його розмір, якщо ви бажаєте заощадити місце на жорсткому диску\n"
 "і якщо збільшення навантаження на мережу не є проблемою."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
 #, kde-format
 msgid "Physical Memory:"
 msgstr "Фізична пам’ять:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:189
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:196
 #, kde-format
 msgid "Clear"
 msgstr "Спорожнити"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
 #, kde-format
 msgid "Hard Disc:"
 msgstr "Жорсткий диск:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:207
 #, kde-format
 msgid "Map Contents"
 msgstr "Вміст карти"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:208
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
 #, kde-format
 msgid "Default Font:"
 msgstr "Типовий шрифт:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:210
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
 #, kde-format
 msgid ""
 "The default font that gets used on the map.\n"
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:214
-#, fuzzy, kde-format
-#| msgid "Coordinate Grid"
-msgid "Show Coordinate Grid"
-msgstr "Координатна сітка"
+"Типовий шрифт, який буде використано на карті.\n"
+"Значення цього параметра буде враховано лише для атласу та супутникової "
+"карти,\n"
+"але не для Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
 #, kde-format
+msgid "Show Coordinate Grid"
+msgstr "Показувати координатну сітку"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:216
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the world-map coordinate grid overlay\n"
+#| "This setting take effect only with the Atlas,\n"
+#| "the Satellite, and the Open-Street Maps."
 msgid ""
-"Show the world-map coordinate grid overlay\n"
+"Show the world-map coordinate grid overlay.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Показувати накладку координатної сітки на карті світу\n"
+"Значення цього параметра буде враховано лише для атласу та супутникової "
+"карти,\n"
+"але не для Open-Street Map."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:219
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
 #, kde-format
 msgid "Show Cross-Hair"
 msgstr "Показувати перехрестя"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
-#, kde-format
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:221
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show cross-hair on a center of the map\n"
+#| "This setting take effect only with the Atlas,\n"
+#| "the Satellite, and the Open-Street Maps."
 msgid ""
-"Show cross-hair on a center of the map\n"
+"Show cross-hair on a center of the map.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:224
-#, fuzzy, kde-format
-#| msgid "Show Atmosphere"
-msgid "Show Atmospheric Glow"
-msgstr "Показувати атмосферу"
+"Показувати перехрестя у центрі карти\n"
+"Значення цього параметра буде враховано лише для атласу та супутникової "
+"карти,\n"
+"але не для Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
 #, kde-format
+msgid "Show Atmospheric Glow"
+msgstr "Показувати гало атмосфери"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:226
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the world-map atmospheric glow overlay\n"
+#| "This setting take effect only with the Atlas,\n"
+#| "the Satellite, and the Open-Street Maps."
 msgid ""
-"Show the world-map atmospheric glow overlay\n"
+"Show the world-map atmospheric glow overlay.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:229
-#, fuzzy, kde-format
-#| msgid "Show on right panel"
-msgid "Show Night Shadow"
-msgstr "Показ на правій панелі"
+"Показувати накладку атмосферного гало на карті світу\n"
+"Значення цього параметра буде враховано лише для атласу та супутникової "
+"карти,\n"
+"але не для Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
 #, kde-format
+msgid "Show Night Shadow"
+msgstr "Показувати тінь"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:231
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the world-map night shadow overlay\n"
+#| "This setting take effect only with the Atlas,\n"
+#| "the Satellite, and the Open-Street Maps."
 msgid ""
-"Show the world-map night shadow overlay\n"
+"Show the world-map night shadow overlay.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:234
-#, fuzzy, kde-format
-#| msgid "Show placemark"
-msgid "Show City Place Mark"
-msgstr "Показувати позначки місць"
+"Показувати накладку тіньового боку планети на карті світу\n"
+"Значення цього параметра буде враховано лише для атласу та супутникової "
+"карти,\n"
+"але не для Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
 #, kde-format
+msgid "Show City Place Mark"
+msgstr "Показувати позначки міст"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:236
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the world-map city place mark overlay\n"
+#| "This setting take effect only with the Atlas and Satellite Maps\n"
+#| "not the Open-Street Map."
 msgid ""
-"Show the world-map city place mark overlay\n"
+"Show the world-map city place mark overlay.\n"
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:239
-#, fuzzy, kde-format
-#| msgid "Show Preview"
-msgid "Show Relief"
-msgstr "Показати попередній перегляд"
+"Показувати накладку позначок міст на карті світу\n"
+"Значення цього параметра буде враховано лише для атласу та супутникової "
+"карти,\n"
+"але не для Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
 #, kde-format
+msgid "Show Relief"
+msgstr "Показувати рельєф"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:241
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the world-map relief overlay\n"
+#| "This setting take effect only with the Atlas and Satellite Maps\n"
+#| "not the Open-Street Map."
 msgid ""
-"Show the world-map relief overlay\n"
+"Show the world-map relief overlay.\n"
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Показувати накладку рельєфу на карті світу\n"
+"Значення цього параметра буде враховано лише для атласу та супутникової "
+"карти,\n"
+"але не для Open-Street Map."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:273
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:274
 #, kde-format
 msgid "Marble View"
 msgstr "Перегляд Marble"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:291
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:295
 #, kde-format
 msgid "Marble Plugins"
 msgstr "Додатки Marble"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:123
-#, kde-format
-msgid " by "
-msgstr " — "
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:74
+#, fuzzy, kde-format
+#| msgid "Border Tool"
+msgid "Render Tools"
+msgstr "Інструмент рамки"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:132
-#, kde-format
-msgid "About Plugin"
-msgstr "Про додаток"
-
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:138
-#, kde-format
-msgid ""
-"<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
-"p><p><u>Description:</u> %4</p>"
-msgstr ""
-"<p><u>Назва:</u> %1</p><p><u>Версія:</u> %2</p><p><u>Авторські права:</u> "
-"%3</p><p><u>Опис:</u> %4</p>"
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:81
+#, fuzzy, kde-format
+#| msgid "Shear Tool"
+msgid "Runner Tools"
+msgstr "Інструмент зсування"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -59459,18 +59477,18 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Після"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:192
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:203
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:245
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:275
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:194
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:205
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:247
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:277
 #, kde-format
 msgid "Before"
 msgstr "До"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:193
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:218
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:248
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:278
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:195
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:220
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:250
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:280
 #, kde-format
 msgid "After"
 msgstr "Після"
@@ -68311,6 +68329,23 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Хочете відновити типові значення для усіх параметрів відео?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Javascript Message"
+#~ msgstr "Повідомлення Javascript"
+
+#~ msgid " by "
+#~ msgstr " — "
+
+#~ msgid "About Plugin"
+#~ msgstr "Про додаток"
+
+#~ msgid ""
+#~ "<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
+#~ "p><p><u>Description:</u> %4</p>"
+#~ msgstr ""
+#~ "<p><u>Назва:</u> %1</p><p><u>Версія:</u> %2</p><p><u>Авторські права:</u> "
+#~ "%3</p><p><u>Опис:</u> %4</p>"
 
 #~ msgid "The default font that gets used on the map."
 #~ msgstr "Типовий шрифт, який буде використано на карті."

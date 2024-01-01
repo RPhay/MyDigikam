@@ -2,19 +2,19 @@
 # Copyright (C) 2004-2023 This_file_is_part_of_KDE
 # This file is distributed under the same license as the digikam package.
 #
+# SPDX-FileCopyrightText: 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Antoni Bella Pérez <antonibella5@yahoo.com>
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2006.
 # Joan Sanz i Rabadan <joansanzrab@gmail.com>, 2005, 2006.
 # Joan Maspons <joanmaspons@gmail.com>, 2009, 2010.
-# SPDX-FileCopyrightText: 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Antoni Bella Pérez <antonibella5@yahoo.com>
 # Orestes Mas <orestes@tsc.upc.edu>, 2014.
 # Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-31 00:39+0000\n"
-"PO-Revision-Date: 2023-12-30 18:07+0100\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"POT-Creation-Date: 2024-01-01 00:39+0000\n"
+"PO-Revision-Date: 2023-12-31 09:41+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/app/date/ddateedit.cpp:497
 #, kde-format
@@ -4209,7 +4209,7 @@ msgstr "Unitat"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:266
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Thumbnail"
@@ -9058,7 +9058,7 @@ msgstr "Utilitza la gestió del color per a imprimir"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:411
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:484
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
@@ -9287,7 +9287,7 @@ msgstr ""
 "emplenant-la amb el valor mitjà dels píxels.</p>"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:144
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:110
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:111
 #, kde-format
 msgid "Distance:"
 msgstr "Distància:"
@@ -20651,8 +20651,8 @@ msgstr ""
 "comentaris, valoració o etiquetes s'afegiran com un fitxer adjunt."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:187
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:194
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
 #, kde-format
 msgid " MB"
 msgstr " MB"
@@ -24801,7 +24801,7 @@ msgstr "des de l'observació"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1084
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1125
 #: core/utilities/geolocation/marble/core/MarbleInputHandler.cpp:666
-#: core/utilities/geolocation/marble/core/MarbleWidget.cpp:644
+#: core/utilities/geolocation/marble/core/MarbleWidget.cpp:646
 #, kde-format
 msgid "not available"
 msgstr "no disponible"
@@ -28601,43 +28601,43 @@ msgstr ""
 "<p><b>S'ha produït un error de la base de dades.</b></p>Detalls:\n"
 " %1"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:456
+#: core/libs/database/history/itemhistorygraphmodel.cpp:457
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "Imatges d'origen"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:485
+#: core/libs/database/history/itemhistorygraphmodel.cpp:486
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "Historial de la imatge"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:568
+#: core/libs/database/history/itemhistorygraphmodel.cpp:569
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Imatges derivades"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:578
+#: core/libs/database/history/itemhistorygraphmodel.cpp:579
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Imatges relacionades"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:585
+#: core/libs/database/history/itemhistorygraphmodel.cpp:586
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Imatges idèntiques"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:641
+#: core/libs/database/history/itemhistorygraphmodel.cpp:642
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Passos intermedis:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:854
+#: core/libs/database/history/itemhistorygraphmodel.cpp:856
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28647,7 +28647,7 @@ msgstr ""
 "%1\n"
 "(Imatge original)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:859
+#: core/libs/database/history/itemhistorygraphmodel.cpp:861
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -29818,9 +29818,9 @@ msgid ""
 "most filesystems are unable to undelete deleted items reliably.</p>"
 msgstr ""
 "<p>Si se selecciona esta casella, els elements s'<b>eliminaran "
-"definitivament</b> en lloc d'ubicar-los a la paperera.</p><p><em>Utilitzeu "
-"esta opció amb compte</em>: la majoria de sistemes de fitxers no poden "
-"recuperar amb fiabilitat els elements suprimits.</p>"
+"definitivament</b> en lloc d'ubicar-los a dins de la paperera.</"
+"p><p><em>Utilitzeu esta opció amb compte</em>: la majoria de sistemes de "
+"fitxers no poden recuperar amb fiabilitat els elements suprimits.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:311
 #, kde-format
@@ -34088,12 +34088,14 @@ msgid "Type-Mimes"
 msgstr "Tipus MIME"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
+#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "About %1 Plugin"
 msgstr "Quant al connector %1"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:81
+#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:83
 #, kde-format
 msgctxt "@label"
 msgid "Version"
@@ -34106,6 +34108,7 @@ msgid "Details"
 msgstr "Detalls"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:124
+#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:110
 #, kde-format
 msgctxt "@title"
 msgid "Authors"
@@ -34757,12 +34760,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Ajuda"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:271
+#: core/libs/dtrash/dtrashitemmodel.cpp:275
 #, kde-format
 msgid "Relative Path"
 msgstr "Camí relatiu"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:276
+#: core/libs/dtrash/dtrashitemmodel.cpp:280
 #, kde-format
 msgid "Deletion Time"
 msgstr "Hora de la supressió"
@@ -43090,25 +43093,25 @@ msgstr[1] ""
 "S'està aplicant l'operació a\n"
 "«%1» imatges seleccionades"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:402
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:411
 #, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
 msgstr "Mod.: %1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:418
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
 #: core/showfoto/main/showfoto.cpp:256
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
-#: core/utilities/import/items/itemviewimportdelegate.cpp:358
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:325
+#: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:423
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:443
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
-#: core/utilities/import/items/itemviewimportdelegate.cpp:363
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:432
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:452
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:330
+#: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, kde-format
 msgctxt "unknown image resolution"
 msgid "Unknown"
@@ -51306,8 +51309,8 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "C&ancel·la"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:254
-#: core/utilities/import/items/itemviewimportdelegate.cpp:311
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:263
+#: core/utilities/import/items/itemviewimportdelegate.cpp:320
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
@@ -53448,60 +53451,54 @@ msgstr ""
 "per a realitzar una\n"
 "busca aproximada"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:195
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:180
 #, kde-format
 msgid "Roadmap"
 msgstr "Mapa de carreteres"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:196
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:181
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "Satèl·lit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:182
 #, kde-format
 msgid "Hybrid"
 msgstr "Híbrid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:183
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "Terreny"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:216
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:201
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Mostra el control del tipus de mapa"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:221
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:206
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Mostra el control de la navegació"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:226
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:211
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Mostra el control de l'escala"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:239
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:224
 #: core/utilities/setup/setupgeolocation.cpp:131
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:402
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:473
 #, kde-format
 msgid "Float items"
 msgstr "Elements flotants"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1639
-#, kde-format
-msgctxt "@title:window"
-msgid "Javascript Message"
-msgstr "Missatge de JavaScript"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
 #, kde-format
@@ -57291,12 +57288,12 @@ msgstr "Mapa &general"
 msgid "This is a float item that provides an overview map."
 msgstr "És un element flotant que mostra un mapa global resumit."
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:480
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
 #, kde-format
 msgid "Choose Overview Map"
 msgstr "Tria el mapa general"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:512
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:517
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr "Seleccioneu el color de l'indicador de posició"
@@ -57352,93 +57349,80 @@ msgstr "Progrés de la &baixada"
 msgid "Shows a pie chart download progress indicator"
 msgstr "Mostra un diagrama de sectors indicant el progrés de la baixada"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:28
+#, kde-format
 msgid "Cache File Parser"
-msgstr "Intèrpret de fitxers OSM"
+msgstr "Intèrpret de fitxers de memòria cau"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:43
+#, kde-format
 msgid "Create GeoDataDocument from Cache Files"
-msgstr "Crea un document GeoData a partir de fitxers OSM"
+msgstr "Crea un document GeoData a partir dels fitxers de memòria cau"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "Marble View"
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:59
+#, kde-format
 msgid "Marble Cache Files"
-msgstr "Vista de Marble"
+msgstr "Fitxers de memòria cau de Marble"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "GPSBabel NMEA File Parser"
-msgstr "Intèrpret de fitxers OSM"
+msgstr "Intèrpret de fitxers NMEA de GPSBabel"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
 msgid "Allows loading of NMEA files through GPSBabel."
-msgstr ""
+msgstr "Permet la càrrega de fitxers NMEA a través de GPSBabel."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Save files as"
+#, kde-format
 msgid "GPSBabel files"
-msgstr "Anomeneu i guardeu els fitxers"
+msgstr "Fitxers GPSBabel"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Gpx File Parser"
-msgstr "Intèrpret de fitxers OSM"
+msgstr "Intèrpret de fitxers GPX"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "Create GeoDataDocument from Gpx Files"
-msgstr "Crea un document GeoData a partir de fitxers OSM"
+msgstr "Crea un document GeoData a partir de fitxers GPX"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "Data"
+#, kde-format
 msgid "GPS Data"
-msgstr "Dades"
+msgstr "Dades de GPS"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "GeoJSON File Parser"
-msgstr "Intèrpret de fitxers OSM"
+msgstr "Intèrpret de fitxers GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "Create GeoDataDocument from GeoJSON Files"
-msgstr "Crea un document GeoData a partir de fitxers OSM"
+msgstr "Crea un document GeoData a partir de fitxers GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
 #, kde-format
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "KML File Parser"
-msgstr "Intèrpret de fitxers OSM"
+msgstr "Intèrpret de fitxers KML"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "Create GeoDataDocument from KML and KMZ Files"
-msgstr "Crea un document GeoData a partir de fitxers OSM"
+msgstr "Crea un document GeoData a partir de fitxers KML i KMZ"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
 #, kde-format
 msgid "Google Earth KML"
-msgstr ""
+msgstr "Google Earth KML"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
 #, kde-format
@@ -57473,38 +57457,34 @@ msgid "OpenStreetMap Data"
 msgstr "Dades d'OpenStreetMap"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Pn2 File Parser"
-msgstr "Intèrpret de fitxers OSM"
+msgstr "Intèrpret de fitxers PN2"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "Create GeoDataDocument from Pn2 Files"
-msgstr "Crea un document GeoData a partir de fitxers OSM"
+msgstr "Crea un document GeoData a partir de fitxers PN2"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
 #, kde-format
 msgid "Compressed Pnt"
-msgstr ""
+msgstr "PNT comprimit"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Pnt File Parser"
-msgstr "Intèrpret de fitxers OSM"
+msgstr "Intèrpret de fitxers PNT"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "Create GeoDataDocument from Pnt Files"
-msgstr "Crea un document GeoData a partir de fitxers OSM"
+msgstr "Crea un document GeoData a partir de fitxers PNT"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
 msgid "Micro World Database II"
-msgstr ""
+msgstr "Micro World Database II"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -57623,27 +57603,27 @@ msgstr ""
 "terra tal com apareix des d'una distància relativament curta sobre la "
 "superfície. Aplicacions: S'utilitza en mapamundis virtuals.</p>"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:108
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
 #, kde-format
 msgid "Units"
 msgstr "Unitats"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:112
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
 #, kde-format
 msgid "Kilometer, Meter"
 msgstr "Quilòmetres, Metres"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:114
 #, kde-format
 msgid "Miles, Feet"
 msgstr "Milles, Peus"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:114
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
 #, kde-format
 msgid "Nautical miles, Knots"
 msgstr "Milles nàutiques, Nusos"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:116
 #, kde-format
 msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
@@ -57652,27 +57632,27 @@ msgstr ""
 "La unitat que s'utilitza per a mesurar l'altitud, llargària i distàncies (p. "
 "ex., quilòmetres, milles, peus)."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:117
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
 #, kde-format
 msgid "Angle:"
 msgstr "Angle:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:119
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:120
 #, kde-format
 msgid "Degree (DMS)"
 msgstr "Graus (GMS)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:120
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:121
 #, kde-format
 msgid "Degree (Decimal)"
 msgstr "Graus (Decimal)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:121
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
 msgstr "Universal Transversa de Mercator (UTM)"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:123
 #, kde-format
 msgid ""
 "Specifies the notation of angles in coordinates.\n"
@@ -57684,47 +57664,47 @@ msgstr ""
 "(p. ex., 54°30'00\" ).\n"
 "Com a alternativa es poden escollir graus decimals (p. ex., 54,5°)."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:133
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
 #, kde-format
 msgid "Map Quality"
 msgstr "Qualitat del mapa"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:135
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
 #, kde-format
 msgid "Still Image:"
 msgstr "Imatge estàtica:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:137
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:147
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
 #, kde-format
 msgid "Outline Quality"
 msgstr "Qualitat del contorn"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:139
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:149
 #, kde-format
 msgid "Low Quality"
 msgstr "Baixa qualitat"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:139
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:149
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:140
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:150
 #, kde-format
 msgid "Normal"
 msgstr "Normal"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:140
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:150
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:151
 #, kde-format
 msgid "High Quality"
 msgstr "Alta qualitat"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:151
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:142
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:152
 #, kde-format
 msgid "Print Quality"
 msgstr "Qualitat d'impressió"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:142
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:143
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
@@ -57735,12 +57715,12 @@ msgstr ""
 "Normalment açò permet una qualitat alta del mapa mentre la velocitat no siga "
 "una preocupació."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:145
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
 #, kde-format
 msgid "During Animations:"
 msgstr "Durant les animacions:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:152
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:153
 #, kde-format
 msgid ""
 "Specifies the map quality that gets displayed during map animations\n"
@@ -57753,37 +57733,37 @@ msgstr ""
 "aconsellable establir esta opció a «Qualitat baixa», ja que açò donarà més "
 "velocitat."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:163
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
 #, kde-format
 msgid "Mouse Behavior"
 msgstr "Comportament del ratolí"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:165
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
 #, kde-format
 msgid "Inertial Globe Rotation"
 msgstr "Gir inercial del globus"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
 msgstr "Utilitza un gir cinètic en arrossegar el mapa"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
 #, kde-format
 msgid "Mouse View Rotation"
 msgstr "Gir de la vista amb el ratolí"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:169
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
 msgstr "Utilitzeu el botó dret del ratolí per a fer girar la càmera al voltant"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:175
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
 #, kde-format
 msgid "Cache"
 msgstr "Memòria cau"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:177
 #, kde-format
 msgid ""
 "There are two caches being used:\n"
@@ -57804,150 +57784,184 @@ msgstr ""
 "Disminuïu este valor si voleu estalviar espai en disc\n"
 "i si no és un problema fer un ús elevat de la connexió amb Internet."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:183
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
 #, kde-format
 msgid "Physical Memory:"
 msgstr "Memòria física:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:189
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:196
 #, kde-format
 msgid "Clear"
 msgstr "Neteja"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:190
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
 #, kde-format
 msgid "Hard Disc:"
 msgstr "Disc dur:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:206
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:207
 #, kde-format
 msgid "Map Contents"
 msgstr "Contingut del mapa"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:208
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
 #, kde-format
 msgid "Default Font:"
 msgstr "Lletra predeterminada:"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:210
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
 #, kde-format
 msgid ""
 "The default font that gets used on the map.\n"
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:214
-#, fuzzy, kde-format
-#| msgid "Coordinate Grid"
-msgid "Show Coordinate Grid"
-msgstr "Quadrícula de coordenades"
+"La lletra predeterminada que s'utilitzarà en el mapa.\n"
+"Esta configuració només té efecte amb l'atles i els mapes de satèl·lit\n"
+"no en Open Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
 #, kde-format
+msgid "Show Coordinate Grid"
+msgstr "Mostra la quadrícula de coordenades"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:216
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the world-map coordinate grid overlay\n"
+#| "This setting take effect only with the Atlas,\n"
+#| "the Satellite, and the Open-Street Maps."
 msgid ""
-"Show the world-map coordinate grid overlay\n"
+"Show the world-map coordinate grid overlay.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Mostra la capa de quadrícula de coordenades del mapamundi\n"
+"Esta configuració només té efecte amb els mapes de l'atles,\n"
+"satèl·lit i Open Street Map."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:219
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
 #, kde-format
 msgid "Show Cross-Hair"
 msgstr "Mostra un punt de mira"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
-#, kde-format
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:221
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show cross-hair on a center of the map\n"
+#| "This setting take effect only with the Atlas,\n"
+#| "the Satellite, and the Open-Street Maps."
 msgid ""
-"Show cross-hair on a center of the map\n"
+"Show cross-hair on a center of the map.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:224
-#, fuzzy, kde-format
-#| msgid "Show Atmosphere"
-msgid "Show Atmospheric Glow"
-msgstr "Mostra l'atmosfera"
+"Mostra un punt de mira en el centre del mapa\n"
+"Esta configuració només té efecte amb els mapes de l'atles,\n"
+"satèl·lit i Open Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
 #, kde-format
+msgid "Show Atmospheric Glow"
+msgstr "Mostra la lluïssor de l'atmosfera"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:226
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the world-map atmospheric glow overlay\n"
+#| "This setting take effect only with the Atlas,\n"
+#| "the Satellite, and the Open-Street Maps."
 msgid ""
-"Show the world-map atmospheric glow overlay\n"
+"Show the world-map atmospheric glow overlay.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:229
-#, fuzzy, kde-format
-#| msgid "Show on right panel"
-msgid "Show Night Shadow"
-msgstr "Mostra en el quadro dret"
+"Mostra la capa de lluïssor atmosfèrica del mapamundi\n"
+"Esta configuració només té efecte amb els mapes de l'atles,\n"
+"satèl·lit i Open Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
 #, kde-format
+msgid "Show Night Shadow"
+msgstr "Mostra l'ombra nocturna"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:231
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the world-map night shadow overlay\n"
+#| "This setting take effect only with the Atlas,\n"
+#| "the Satellite, and the Open-Street Maps."
 msgid ""
-"Show the world-map night shadow overlay\n"
+"Show the world-map night shadow overlay.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:234
-#, kde-format
-msgid "Show City Place Mark"
-msgstr ""
+"Mostra la capa d'ombra nocturna del mapamundi\n"
+"Esta configuració només té efecte amb els mapes de l'atles,\n"
+"satèl·lit i Open Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
 #, kde-format
+msgid "Show City Place Mark"
+msgstr "Mostra les marques de lloc de ciutats"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:236
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the world-map city place mark overlay\n"
+#| "This setting take effect only with the Atlas and Satellite Maps\n"
+#| "not the Open-Street Map."
 msgid ""
-"Show the world-map city place mark overlay\n"
+"Show the world-map city place mark overlay.\n"
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
-
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:239
-#, fuzzy, kde-format
-#| msgid "Show Preview"
-msgid "Show Relief"
-msgstr "Mostra la vista prèvia"
+"Mostra la capa de marques de lloc de ciutat del mapamundi\n"
+"Esta configuració només té efecte amb l'atles i els mapes de satèl·lit\n"
+"no en Open Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
 #, kde-format
+msgid "Show Relief"
+msgstr "Mostra el relleu"
+
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:241
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the world-map relief overlay\n"
+#| "This setting take effect only with the Atlas and Satellite Maps\n"
+#| "not the Open-Street Map."
 msgid ""
-"Show the world-map relief overlay\n"
+"Show the world-map relief overlay.\n"
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Mostra la capa de relleu del mapamundi\n"
+"Esta configuració només té efecte amb l'atles i els mapes de satèl·lit\n"
+"no en Open Street Map."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:273
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:274
 #, kde-format
 msgid "Marble View"
 msgstr "Vista de Marble"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:291
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:295
 #, kde-format
 msgid "Marble Plugins"
 msgstr "Connectors de Marble"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:123
-#, kde-format
-msgid " by "
-msgstr " per "
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:74
+#, fuzzy, kde-format
+#| msgid "Border Tool"
+msgid "Render Tools"
+msgstr "Eina per a les vores"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:132
-#, kde-format
-msgid "About Plugin"
-msgstr "Quant al connector"
-
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:138
-#, kde-format
-msgid ""
-"<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
-"p><p><u>Description:</u> %4</p>"
-msgstr ""
-"<p><u>Nom:</u> %1</p><p><u>Versió:</u> %2</p><p><u>Copyrights:</u> %3</"
-"p><p><u>Descripció:</u> %4</p>"
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:81
+#, fuzzy, kde-format
+#| msgid "Shear Tool"
+msgid "Runner Tools"
+msgstr "Eina per a inclinar"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -59296,18 +59310,18 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Després"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:192
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:203
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:245
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:275
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:194
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:205
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:247
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:277
 #, kde-format
 msgid "Before"
 msgstr "Abans"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:193
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:218
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:248
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:278
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:195
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:220
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:250
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:280
 #, kde-format
 msgid "After"
 msgstr "Després"
@@ -66658,7 +66672,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:64
 #, kde-format
 msgid "Confirm when moving items to the &trash"
-msgstr "Confirma en moure elements a la &paperera"
+msgstr "Confirma en moure elements cap a dins de la &paperera"
 
 #: core/utilities/setup/misc/setupmisc.cpp:65
 #, kde-format
@@ -68120,23 +68134,19 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
 
-#~ msgid "The default font that gets used on the map."
-#~ msgstr "La lletra predeterminada que s'utilitzarà en el mapa."
+#~ msgctxt "@title:window"
+#~ msgid "Javascript Message"
+#~ msgstr "Missatge de JavaScript"
 
-#~ msgid "Show Grid"
-#~ msgstr "Mostra la quadrícula"
+#~ msgid " by "
+#~ msgstr " per "
 
-#~ msgid "Show the world-map grid overlay"
-#~ msgstr "Mostra la superposició d'una quadrícula del mapa del món"
+#~ msgid "About Plugin"
+#~ msgstr "Quant al connector"
 
-#~ msgid "Show cross-hair on a center of the map"
-#~ msgstr "Mostra un punt de mira en el centre del mapa"
-
-#~ msgid "Show the world-map atmosphere overlay"
-#~ msgstr "Mostra la superposició de l'atmosfera del mapa del món"
-
-#~ msgid "Show Sun-Shading"
-#~ msgstr "Mostra l'ombra solar"
-
-#~ msgid "Show the world-map sun-shading overlay"
-#~ msgstr "Mostra la superposició de l'ombra solar del mapa del món"
+#~ msgid ""
+#~ "<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
+#~ "p><p><u>Description:</u> %4</p>"
+#~ msgstr ""
+#~ "<p><u>Nom:</u> %1</p><p><u>Versió:</u> %2</p><p><u>Copyrights:</u> %3</"
+#~ "p><p><u>Descripció:</u> %4</p>"
