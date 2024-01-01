@@ -800,7 +800,7 @@ void MediaPlayerView::resizeEvent(QResizeEvent* e)
 {
     QStackedWidget::resizeEvent(e);
 
-    QTimer::singleShot(0, this, SLOT(slotNativeSizeChanged()));
+    d->adjustVideoSize();
 }
 
 }  // namespace Digikam
