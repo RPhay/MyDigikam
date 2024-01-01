@@ -116,6 +116,10 @@ public Q_SLOTS:
                                                 const QPixmap& pixmap);
     virtual void slotTrackManagerChanged();
 
+protected Q_SLOTS:
+
+    void slotExportScreenshot();
+
 Q_SIGNALS:
 
     void signalBackendReadyChanged(const QString& backendName);

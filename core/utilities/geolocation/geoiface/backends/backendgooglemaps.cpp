@@ -418,6 +418,12 @@ void BackendGoogleMaps::addActionsToConfigurationMenu(QMenu* const configuration
         }
     );
 
+    QAction* const exportAs = new QAction(i18n("Export as..."), configurationMenu);
+    configurationMenu->addAction(exportAs);
+
+    connect(exportAs, SIGNAL(triggered()),
+            this, SLOT(slotExportScreenshot()));
+
     updateActionAvailability();
 }
 
