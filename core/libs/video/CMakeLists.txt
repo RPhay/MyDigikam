@@ -17,9 +17,17 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 ###
 
 set(libvideotoolscommon_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpegconfighelper.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidesettings.cpp
 )
+
+if(ENABLE_MEDIAPLAYER)
+
+    set(libvideotoolscommon_SRCS
+        ${libvideotoolscommon_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/ffmpegconfighelper.cpp
+    )
+
+endif()
 
 # Used by digikamcore
 add_library(core_videotoolscommon_obj OBJECT ${libvideotoolscommon_SRCS})
@@ -28,6 +36,8 @@ target_compile_definitions(core_videotoolscommon_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
+
+
 
 ###
 
