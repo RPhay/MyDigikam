@@ -245,7 +245,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     // TODO:
     // Add IceLayer
     // Add Borders
-    // Add Rivers
+    // Add Rivers       ==> Do not works!
     // Add Lakes
     // Add CityLights
     // Add Clouds ???
