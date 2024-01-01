@@ -49,7 +49,6 @@ set(DIGIKAMCORE_OBJECTS
 
             $<TARGET_OBJECTS:core_digikamdatabase_obj>
             $<TARGET_OBJECTS:core_digikamfacesengine_obj>
-            $<TARGET_OBJECTS:core_videotoolscommon_obj>
 )
 
 if(ENABLE_MEDIAPLAYER)
@@ -57,6 +56,7 @@ if(ENABLE_MEDIAPLAYER)
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
         $<TARGET_OBJECTS:core_videotools_obj>
+        $<TARGET_OBJECTS:core_videotoolscommon_obj>
     )
 
     if (NOT ENABLE_QTMULTIMEDIA)
