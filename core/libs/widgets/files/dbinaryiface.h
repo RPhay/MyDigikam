@@ -66,6 +66,7 @@ public:
     bool                versionIsRight()            const;
     bool                versionIsRight(const float) const;
     inline bool         isValid()                   const { return (m_isFound && versionIsRight()); }
+    inline bool         hasError()                  const { return m_hasError;                      }
     inline bool         developmentVersion()        const { return m_developmentVersion;            }
     const QString&      description()               const { return m_description;                   }
 
@@ -119,6 +120,7 @@ protected:
     const QUrl          m_url;
 
     bool                m_isFound;
+    bool                m_hasError;
     bool                m_developmentVersion;
 
     QString             m_version;

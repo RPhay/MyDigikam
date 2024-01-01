@@ -112,7 +112,7 @@ BUGFIXES:
 094 ==> 433746 - Google Maps do not work anymore.
 095 ==> 479242 - Adding a Face Tag instantly crashes DK8.2.
 096 ==> 403082 - Allow to produce a Screenshot in Geolocator.
-097 ==> 
+097 ==> 479268 - Provide helpful info on why exiftool is not recognised.
 098 ==> 
 099 ==> 
 100 ==> 

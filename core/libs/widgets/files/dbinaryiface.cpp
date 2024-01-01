@@ -53,6 +53,7 @@ DBinaryIface::DBinaryIface(const QString& binaryName,
       m_projectName         (projectName),
       m_url                 (QUrl(url)),
       m_isFound             (false),
+      m_hasError            (false),
       m_developmentVersion  (false),
       m_version             (QLatin1String("")),
       m_pathDir             (QLatin1String("")),
@@ -86,6 +87,7 @@ DBinaryIface::DBinaryIface(const QString& binaryName,
       m_projectName         (projectName),
       m_url                 (QUrl(url)),
       m_isFound             (false),
+      m_hasError            (false),
       m_developmentVersion  (false),
       m_version             (QLatin1String("")),
       m_pathDir             (QLatin1String("")),
@@ -353,7 +355,7 @@ bool DBinaryIface::checkDirForPath(const QString& possibleDir)
                 }
                 else
                 {
-                    // TODO: do something if the version is not right or not found
+                    m_hasError = true;
                 }
             }
             else
@@ -364,6 +366,10 @@ bool DBinaryIface::checkDirForPath(const QString& possibleDir)
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Found " << path();
                 ret       = true;
             }
+        }
+        else if (QFile::exists(possiblePath))
+        {
+            m_hasError = true;
         }
     }
 
