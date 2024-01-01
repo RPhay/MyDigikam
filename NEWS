@@ -104,12 +104,12 @@ BUGFIXES:
 086 ==> 477795 - Scaled images are jagged.
 087 ==> 404316 - No search results.
 088 ==> 479237 - Chinese characters displaying in the digiKam GUI.
-089 ==> 
-090 ==> 
-091 ==> 
-092 ==> 
-093 ==> 
-094 ==> 
+089 ==> 433732 - Google Maps labelled "For development purposes only".
+090 ==> 440503 - Cannot use Google Map.
+091 ==> 435137 - This page can't load google maps correctly.
+092 ==> 447677 - Google Maps not showing correctly.
+093 ==> 442130 - Satellite View.
+094 ==> 433746 - Google Maps do not work anymore.
 095 ==> 
 096 ==> 
 097 ==> 
