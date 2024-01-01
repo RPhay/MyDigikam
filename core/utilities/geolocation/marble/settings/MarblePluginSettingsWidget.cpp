@@ -30,7 +30,8 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QPushButton>
+#include <QMap>
+#include <QToolButton>
 
 // KDE includes
 
@@ -58,11 +59,12 @@ public:
 
 public:
 
-    QListView*                      renderListView = nullptr;
-    QTreeWidget*                    runnerListView = nullptr;
-    PluginItemDelegate*             itemDelegate   = nullptr;
-    QPointer<RenderPluginModel>     renderPluginModel;
-    QList<const ParseRunnerPlugin*> runnerPluginList;
+    QListView*                           renderListView = nullptr;
+    QTreeWidget*                         runnerListView = nullptr;
+    PluginItemDelegate*                  itemDelegate   = nullptr;
+    QPointer<RenderPluginModel>          renderPluginModel;
+    QList<const ParseRunnerPlugin*>      runnerPluginList;
+    QMap<QToolButton*, QTreeWidgetItem*> runnerBtnMap;
 };
 
 // ---
@@ -84,15 +86,15 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
     d->runnerListView->setColumnCount(2);
     d->runnerListView->setRootIsDecorated(false);
     d->runnerListView->setUniformRowHeights(true);
-    d->runnerListView->setSelectionMode(QAbstractItemView::SingleSelection);
+    d->runnerListView->setSelectionMode(QAbstractItemView::NoSelection);
     d->runnerListView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    d->runnerListView->setAllColumnsShowFocus(true);
+    d->runnerListView->setAllColumnsShowFocus(false);
     d->runnerListView->setSortingEnabled(true);
     d->runnerListView->sortByColumn(0, Qt::AscendingOrder);
     d->runnerListView->setIconSize(QSize(16, 16));
     d->runnerListView->setHeaderHidden(true);
     d->runnerListView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
-    d->runnerListView->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    d->runnerListView->header()->setSectionResizeMode(1, QHeaderView::Fixed);
     d->runnerListView->header()->setSortIndicatorShown(false);
 
     vlayRunner->addWidget(d->runnerListView);
@@ -106,9 +108,6 @@ MarblePluginSettingsWidget::MarblePluginSettingsWidget(QWidget* const parent)
 
     connect(d->itemDelegate, SIGNAL(configPluginClicked(QModelIndex)),
             this, SLOT(slotRenderPluginConfigDialog(QModelIndex)));
-
-    connect(d->runnerListView, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
-            this, SLOT(slotAboutRunnerPlugin(QTreeWidgetItem*,int)));
 }
 
 MarblePluginSettingsWidget::~MarblePluginSettingsWidget()
@@ -154,6 +153,20 @@ void MarblePluginSettingsWidget::setRunnerPlugins(const QList<const ParseRunnerP
         item->setText(0, plug->name());
         item->setIcon(0, QIcon::fromTheme(QLatin1String("plugins")));
         item->setToolTip(0, plug->description());
+
+        QWidget* const bbox     = new QWidget(d->runnerListView);
+        QHBoxLayout* const hlay = new QHBoxLayout(bbox);
+        QToolButton* const btn  = new QToolButton(bbox);
+        hlay->addStretch();
+        hlay->addWidget(btn);
+        hlay->setContentsMargins(QMargins(0, 0, 0 ,0));
+        btn->setIcon(QIcon::fromTheme(QLatin1String("help-about")));
+        btn->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
+        d->runnerListView->setItemWidget(item, 1, bbox);
+        d->runnerBtnMap.insert(btn, item);
+
+        connect(btn, SIGNAL(pressed()),
+               this, SLOT(slotAboutRunnerPlugin()));
     }
 }
 
@@ -169,8 +182,17 @@ void MarblePluginSettingsWidget::slotAboutRenderPlugin(const QModelIndex& index)
     delete dlg;
 }
 
-void MarblePluginSettingsWidget::slotAboutRunnerPlugin(QTreeWidgetItem* item, int)
+void MarblePluginSettingsWidget::slotAboutRunnerPlugin()
 {
+    QToolButton* const btn = dynamic_cast<QToolButton*>(sender());
+
+    if (!btn)
+    {
+        return;
+    }
+
+    QTreeWidgetItem* const item = d->runnerBtnMap.value(btn);
+
     if (!item)
     {
         return;

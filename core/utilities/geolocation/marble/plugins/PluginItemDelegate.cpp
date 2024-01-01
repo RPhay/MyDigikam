@@ -24,7 +24,6 @@
 #include "digikam_debug.h"
 
 using namespace Marble;
-/* TRANSLATOR Marble::PluginItemDelegate */
 
 const QSize iconSize( 16, 16 );
 
