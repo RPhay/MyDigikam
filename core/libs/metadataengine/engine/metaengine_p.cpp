@@ -225,7 +225,7 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
 
             image = Exiv2::ImageFactory::open((const wchar_t*)finfo.filePath().utf16());
 
-#elif defined Q_OS_WIN
+#elif defined __MINGW32__
 
             image = Exiv2::ImageFactory::open(QFile::encodeName(finfo.filePath()).constData());
 

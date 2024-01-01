@@ -147,7 +147,7 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
         image        = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
 
-#elif defined Q_OS_WIN
+#elif defined __MINGW32__
 
         image        = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
 
@@ -251,7 +251,7 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
 
                 xmpsidecar = Exiv2::ImageFactory::open((const wchar_t*)xmpSidecarPath.utf16());
 
-#elif defined Q_OS_WIN
+#elif defined __MINGW32__
 
                 xmpsidecar = Exiv2::ImageFactory::open(QFile::encodeName(xmpSidecarPath).constData());
 
