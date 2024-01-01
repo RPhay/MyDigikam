@@ -3,6 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Jens-Michael Hoffmann <jensmh@gmx.de>
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
+
 #include "PluginInterface.h"
 
 namespace Marble
@@ -17,4 +18,4 @@ QString PluginInterface::aboutDataText() const
     return QString();
 }
 
-}
+} // namespace Marble

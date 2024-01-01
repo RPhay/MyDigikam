@@ -6,13 +6,21 @@
 // SPDX-FileCopyrightText: 2009 Jens-Michael Hoffmann <jensmh@gmx.de>
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
-#ifndef MARBLE_PLUGININTERFACE_H
-#define MARBLE_PLUGININTERFACE_H
+
+#ifndef MARBLE_PLUGIN_INTERFACE_H
+#define MARBLE_PLUGIN_INTERFACE_H
+
+// Qt includes
 
 #include <QVector>
-#include <QCoreApplication> // for Q_DECLARE_TR_FUNCTIONS
 #include <QString>
 #include <QtPlugin>
+
+// KDE includes
+
+#include <klocalizedstring.h>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -23,16 +31,19 @@ namespace Marble
 
 struct DIGIKAM_EXPORT PluginAuthor
 {
-    Q_DECLARE_TR_FUNCTIONS(PluginAuthor)
-public:
-    PluginAuthor()
-    {}
 
-    PluginAuthor( const QString &name_, const QString &email_, const QString &task_ = PluginAuthor::tr( "Developer" ) ) :
-        name( name_ ),
-        task( task_ ),
-        email( email_ )
-    {}
+public:
+
+    PluginAuthor()
+    {
+    }
+
+    PluginAuthor( const QString &name_, const QString &email_, const QString &task_ = i18n( "Developer" ) )
+        : name( name_ ),
+          task( task_ ),
+          email( email_ )
+    {
+    }
 
     QString name;
     QString task;
@@ -46,6 +57,7 @@ public:
 class DIGIKAM_EXPORT PluginInterface
 {
  public:
+
     virtual ~PluginInterface();
 
     /**
@@ -94,10 +106,10 @@ class DIGIKAM_EXPORT PluginInterface
     virtual QString aboutDataText() const;
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_TYPEINFO(Marble::PluginAuthor, Q_MOVABLE_TYPE);
 
 Q_DECLARE_INTERFACE( Marble::PluginInterface, "org.kde.Marble.PluginInterface/1.1" )
 
-#endif
+#endif // MARBLE_PLUGIN_INTERFACE_H
