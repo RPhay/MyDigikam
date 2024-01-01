@@ -80,7 +80,9 @@ private:
     int  previewMode();
     void setPreviewMode(int mode);
 
-    void resizeEvent(QResizeEvent*) override;
+protected:
+
+    void resizeEvent(QResizeEvent* e) override;
 
 private:
 
