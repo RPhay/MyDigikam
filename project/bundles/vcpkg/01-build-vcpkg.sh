@@ -88,6 +88,7 @@ $VCPKG_DIR/vcpkg update
 #################################################################################################
 # Dependencies build and installation
 
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install angle
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install mesa[offscreen]
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install openssl
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install pthreads
