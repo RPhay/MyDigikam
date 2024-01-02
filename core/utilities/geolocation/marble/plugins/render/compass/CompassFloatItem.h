@@ -3,8 +3,8 @@
 // SPDX-FileCopyrightText: 2008 Torsten Rahn <tackat@kde.org>
 //
 
-#ifndef COMPASS_FLOAT_ITEM_H
-#define COMPASS_FLOAT_ITEM_H
+#ifndef MARBLE_COMPASS_FLOAT_ITEM_H
+#define MARBLE_COMPASS_FLOAT_ITEM_H
 
 #include <QPixmap>
 
@@ -95,6 +95,6 @@ private Q_SLOTS:
     Ui::CompassConfigWidget* m_uiConfigWidget;
 };
 
-}
+} // namespace Marble
 
-#endif
+#endif // MARBLE_COMPASS_FLOAT_ITEM_H

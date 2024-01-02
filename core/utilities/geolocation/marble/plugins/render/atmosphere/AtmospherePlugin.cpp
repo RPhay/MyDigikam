@@ -79,7 +79,7 @@ QString AtmospherePlugin::version() const
 
 QString AtmospherePlugin::description() const
 {
-    return i18n( "Shows the atmosphere around the earth." );
+    return i18n( "A plugin to show the atmosphere around the earth." );
 }
 
 QIcon AtmospherePlugin::icon() const
@@ -186,6 +186,6 @@ void AtmospherePlugin::repaintPixmap(const ViewportParams *viewParams)
     renderPainter.drawEllipse(0, 0, diameter, diameter);
 }
 
-}
+} // namespace Marble
 
 #include "moc_AtmospherePlugin.cpp"

@@ -91,7 +91,7 @@ QString OverviewMap::version() const
 
 QString OverviewMap::description() const
 {
-    return i18n("This is a float item that provides an overview map.");
+    return i18n("A plugin to add a float item that provides an overview map.");
 }
 
 QString OverviewMap::copyrightYears() const
@@ -535,6 +535,6 @@ void OverviewMap::useMapSuggestion( int index )
     showCurrentPlanetPreview();
 }
 
-}
+} // namespace Marble
 
 #include "moc_OverviewMap.cpp"

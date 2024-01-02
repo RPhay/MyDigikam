@@ -8,8 +8,8 @@
 // This class is a crosshairs plugin.
 //
 
-#ifndef MARBLE_CROSSHAIRSPLUGIN_H
-#define MARBLE_CROSSHAIRSPLUGIN_H
+#ifndef MARBLE_CROSS_HAIRS_PLUGIN_H
+#define MARBLE_CROSS_HAIRS_PLUGIN_H
 
 #include <QPixmap>
 
@@ -104,6 +104,6 @@ private Q_SLOTS:
     Ui::CrosshairsConfigWidget* m_uiConfigWidget;
 };
 
-}
+} // namespace Marble
 
-#endif // MARBLE_CROSSHAIRSPLUGIN_H
+#endif // MARBLE_CROSS_HAIRS_PLUGIN_H

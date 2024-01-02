@@ -4,8 +4,8 @@
 // SPDX-FileCopyrightText: 2011 Jens-Michael Hoffmann <jmho@c-xx.com>
 //
 
-#ifndef MARBLE_ATMOSPHEREPLUGIN_H
-#define MARBLE_ATMOSPHEREPLUGIN_H
+#ifndef MARBLE_ATMOSPHERE_PLUGIN_H
+#define MARBLE_ATMOSPHERE_PLUGIN_H
 
 #include "RenderPlugin.h"
 
@@ -71,6 +71,6 @@ private:
     int m_renderRadius;
 };
 
-}
+} // namespace Marble
 
-#endif // MARBLE_ATMOSPHEREPLUGIN_H
+#endif // MARBLE_ATMOSPHERE_PLUGIN_H

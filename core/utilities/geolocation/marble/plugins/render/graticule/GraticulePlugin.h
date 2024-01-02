@@ -3,12 +3,8 @@
 // SPDX-FileCopyrightText: 2009 Torsten Rahn <tackat@kde.org>
 //
 
-//
-// This class is a graticule plugin.
-//
-
-#ifndef MARBLE_GRATICULEPLUGIN_H
-#define MARBLE_GRATICULEPLUGIN_H
+#ifndef MARBLE_GRATICULE_PLUGIN_H
+#define MARBLE_GRATICULE_PLUGIN_H
 
 #include <QMap>
 #include <QHash>
@@ -20,7 +16,6 @@
 #include "RenderPlugin.h"
 #include "GeoDataCoordinates.h"
 #include "GeoDataLatLonAltBox.h"
-
 
 namespace Ui
 {
@@ -39,7 +34,8 @@ class GeoDataLatLonAltBox;
  * on the degree system.
  */
 
-class GraticulePlugin : public RenderPlugin, public DialogConfigurationInterface
+class GraticulePlugin : public RenderPlugin,
+                        public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.GraticulePlugin")
@@ -218,6 +214,6 @@ class GraticulePlugin : public RenderPlugin, public DialogConfigurationInterface
     QDialog *m_configDialog;
 };
 
-}
+} // namespace Marble
 
 #endif // MARBLE_GRATICULEPLUGIN_H

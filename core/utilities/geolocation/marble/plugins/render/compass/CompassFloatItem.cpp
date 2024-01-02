@@ -5,7 +5,6 @@
 //
 
 #include "CompassFloatItem.h"
-#include "ui_CompassConfigWidget.h"
 
 #include <QRect>
 #include <QColor>
@@ -14,9 +13,10 @@
 #include <QPushButton>
 #include <QSvgRenderer>
 
-#include "ViewportParams.h"
-
 #include <klocalizedstring.h>
+
+#include "ui_CompassConfigWidget.h"
+#include "ViewportParams.h"
 
 namespace Marble
 {
@@ -75,7 +75,7 @@ QString CompassFloatItem::version() const
 
 QString CompassFloatItem::description() const
 {
-    return i18n( "This is a float item that provides a compass." );
+    return i18n( "A plugin to show a float item that provides a compass over the map." );
 }
 
 QString CompassFloatItem::copyrightYears() const
@@ -250,6 +250,6 @@ void CompassFloatItem::writeSettings()
     Q_EMIT settingsChanged( nameId() );
 }
 
-}
+} // namespace Marble
 
 #include "moc_CompassFloatItem.cpp"

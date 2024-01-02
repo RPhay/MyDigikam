@@ -4,13 +4,12 @@
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef NAVIGATION_FLOAT_ITEM_H
-#define NAVIGATION_FLOAT_ITEM_H
+#ifndef MARBLE_NAVIGATION_FLOAT_ITEM_H
+#define MARBLE_NAVIGATION_FLOAT_ITEM_H
 
 #include <QMenu>
 
 #include "MarbleGlobal.h"
-
 #include "AbstractFloatItem.h"
 
 namespace Ui
@@ -28,16 +27,17 @@ class WidgetGraphicsItem;
  * @short Provides a float item with zoom and move controls
  *
  */
-class NavigationFloatItem: public AbstractFloatItem
+class NavigationFloatItem : public AbstractFloatItem
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.NavigationFloatItem")
 
     Q_INTERFACES( Marble::RenderPluginInterface )
 
-MARBLE_PLUGIN( NavigationFloatItem )
+    MARBLE_PLUGIN( NavigationFloatItem )
 
- public:
+public:
+
     explicit NavigationFloatItem( const MarbleModel *marbleModel = nullptr );
     ~NavigationFloatItem() override;
 
@@ -71,12 +71,14 @@ MARBLE_PLUGIN( NavigationFloatItem )
 
     void setSettings( const QHash<QString, QVariant> &settings ) override;
 
- protected:
+protected:
+
     bool eventFilter( QObject *object, QEvent *e ) override;
     void paintContent( QPainter *painter ) override;
     void contextMenuEvent( QWidget *w, QContextMenuEvent *e ) override;
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     /** Map theme was changed, adjust controls */
     void selectTheme( const QString& theme );
 
@@ -87,7 +89,8 @@ MARBLE_PLUGIN( NavigationFloatItem )
     void activateHomeButton();
     void centerOnCurrentLocation();
 
- private:
+private:
+
     /** MarbleWidget this float item is installed as event filter for */
     MarbleWidget *m_marbleWidget;
 
@@ -114,6 +117,6 @@ MARBLE_PLUGIN( NavigationFloatItem )
     bool m_showHomeButton;
 };
 
-}
+} // namespace Marble
 
-#endif // NAVIGATION_FLOAT_ITEM_H
+#endif // MARBLE_NAVIGATION_FLOAT_ITEM_H

@@ -4,7 +4,6 @@
 //
 
 #include "GraticulePlugin.h"
-#include "ui_GraticuleConfigWidget.h"
 
 // Qt includes
 
@@ -16,13 +15,13 @@
 
 #include <klocalizedstring.h>
 
+#include "ui_GraticuleConfigWidget.h"
 #include "MarbleDirs.h"
 #include "GeoPainter.h"
 #include "GeoDataLineString.h"
 #include "Planet.h"
 #include "MarbleModel.h"
 #include "ViewportParams.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -88,7 +87,7 @@ QString GraticulePlugin::version() const
 
 QString GraticulePlugin::description() const
 {
-    return i18n( "A plugin that shows a coordinate grid." );
+    return i18n( "A plugin that shows a coordinate grid over the map." );
 }
 
 QString GraticulePlugin::copyrightYears() const
@@ -792,6 +791,6 @@ void GraticulePlugin::initLineMaps( GeoDataCoordinates::Notation notation)
     m_currentNotation = notation;
 }
 
-}
+} // namespace Marble
 
 #include "moc_GraticulePlugin.cpp"

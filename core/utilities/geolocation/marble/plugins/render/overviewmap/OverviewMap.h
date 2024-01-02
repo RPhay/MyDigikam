@@ -3,8 +3,8 @@
 // SPDX-FileCopyrightText: 2008 Torsten Rahn <tackat@kde.org>
 //
 
-#ifndef MARBLEOVERVIEWMAP_H
-#define MARBLEOVERVIEWMAP_H
+#ifndef MARBLE_OVERVIEW_MAP_H
+#define MARBLE_OVERVIEW_MAP_H
 
 #include <QHash>
 #include <QColor>
@@ -29,7 +29,8 @@ namespace Marble
  *
  */
 
-class OverviewMap : public AbstractFloatItem, public DialogConfigurationInterface
+class OverviewMap : public AbstractFloatItem,
+                    public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.OverviewMap")
@@ -37,7 +38,8 @@ class OverviewMap : public AbstractFloatItem, public DialogConfigurationInterfac
     Q_INTERFACES( Marble::DialogConfigurationInterface )
     MARBLE_PLUGIN( OverviewMap )
 
- public:
+public:
+
     OverviewMap();
     explicit OverviewMap( const MarbleModel *marbleModel );
     ~OverviewMap() override;
@@ -80,15 +82,18 @@ class OverviewMap : public AbstractFloatItem, public DialogConfigurationInterfac
      */
     void setSettings( const QHash<QString,QVariant> &settings ) override;
 
- public Q_SLOTS:
+public Q_SLOTS:
+
     void readSettings();
     void writeSettings();
     void updateSettings();
 
- protected:
+protected:
+
     bool eventFilter( QObject *object, QEvent *e ) override;
 
- private:
+private:
+
     void changeBackground( const QString& target );
     QSvgWidget *currentWidget() const;
     void setCurrentWidget( QSvgWidget *widget );
@@ -113,7 +118,8 @@ class OverviewMap : public AbstractFloatItem, public DialogConfigurationInterfac
     qreal m_centerLon;
     bool m_mapChanged;
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     void chooseCustomMap();
     void synchronizeSpinboxes();
     void showCurrentPlanetPreview() const;
@@ -121,6 +127,6 @@ class OverviewMap : public AbstractFloatItem, public DialogConfigurationInterfac
     void useMapSuggestion( int index );
 };
 
-}
+} // namespace Marble
 
-#endif
+#endif // MARBLE_OVERVIEW_MAP_H

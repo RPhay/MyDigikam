@@ -15,6 +15,8 @@
 #include <QPainter>
 #include <QPixmapCache>
 
+#include <klocalizedstring.h>
+
 #include "ui_navigation.h"
 #include "ViewportParams.h"
 #include "MarbleWidget.h"
@@ -22,9 +24,8 @@
 #include "WidgetGraphicsItem.h"
 #include "MarbleGraphicsGridLayout.h"
 
-#include <klocalizedstring.h>
-
-using namespace Marble;
+namespace Marble
+{
 
 NavigationFloatItem::NavigationFloatItem( const MarbleModel *marbleModel )
     : AbstractFloatItem( marbleModel, QPointF( -10, -30 ) ),
@@ -77,7 +78,7 @@ QString NavigationFloatItem::version() const
 
 QString NavigationFloatItem::description() const
 {
-    return i18n("A mouse control to zoom and move the map");
+    return i18n("A plugin to add mouse control to zoom and move the map");
 }
 
 QString NavigationFloatItem::copyrightYears() const
@@ -328,5 +329,7 @@ void NavigationFloatItem::setSettings( const QHash<QString, QVariant> &settings 
         activateCurrentPositionButton();
     }
 }
+
+} // namespace Marble
 
 #include "moc_NavigationFloatItem.cpp"

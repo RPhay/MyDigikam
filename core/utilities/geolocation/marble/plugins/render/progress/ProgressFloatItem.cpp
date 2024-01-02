@@ -20,7 +20,6 @@
 #include "MarbleWidget.h"
 #include "ViewportParams.h"
 #include "HttpDownloadManager.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -98,7 +97,7 @@ QString ProgressFloatItem::version() const
 
 QString ProgressFloatItem::description() const
 {
-    return i18n( "Shows a pie chart download progress indicator" );
+    return i18n( "A plugin to show a pie chart download progress indicator over the map" );
 }
 
 QString ProgressFloatItem::copyrightYears() const
@@ -288,6 +287,6 @@ void ProgressFloatItem::scheduleRepaint()
     }
 }
 
-}
+} // namespace Marble
 
 #include "moc_ProgressFloatItem.cpp"

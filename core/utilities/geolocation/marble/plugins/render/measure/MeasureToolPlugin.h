@@ -9,8 +9,8 @@
 // MeasureToolPlugin enables Marble to set and display measure points
 //
 
-#ifndef MARBLE_MEASURETOOLPLUGIN_H
-#define MARBLE_MEASURETOOLPLUGIN_H
+#ifndef MARBLE_MEASURE_TOOL_PLUGIN_H
+#define MARBLE_MEASURE_TOOL_PLUGIN_H
 
 #include <QFont>
 #include <QPen>
@@ -27,7 +27,9 @@ namespace Marble
 {
 
 class MeasureConfigDialog;
-class MeasureToolPlugin : public RenderPlugin, public DialogConfigurationInterface
+
+class MeasureToolPlugin : public RenderPlugin,
+                          public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.MeasureToolPlugin")
@@ -35,13 +37,17 @@ class MeasureToolPlugin : public RenderPlugin, public DialogConfigurationInterfa
     Q_INTERFACES( Marble::DialogConfigurationInterface )
     MARBLE_PLUGIN( MeasureToolPlugin )
 
- public:
-    explicit MeasureToolPlugin( const MarbleModel *marbleModel = nullptr );
+public:
 
-    enum PaintMode {
+    enum PaintMode
+    {
         Polygon = 0,
         Circular
     };
+
+public:
+
+    explicit MeasureToolPlugin( const MarbleModel *marbleModel = nullptr );
 
     QStringList backendTypes() const override;
     QString renderPolicy() const override;
@@ -70,20 +76,24 @@ class MeasureToolPlugin : public RenderPlugin, public DialogConfigurationInterfa
     QHash<QString,QVariant> settings() const override;
     void setSettings( const QHash<QString,QVariant> &settings ) override;
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void  numberOfMeasurePointsChanged( int newNumber );
 
- public Q_SLOTS:
+public Q_SLOTS:
+
     bool  eventFilter( QObject *object, QEvent *event ) override;
 
- private:
+private:
+
     void  drawMeasurePoints( GeoPainter *painter );
     void  drawInfobox( GeoPainter *painter ) const;
     void  drawSegments( GeoPainter *painter );
     void  addContextItems();
     void  removeContextItems();
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     void  setNumberOfMeasurePoints( int number );
     void  addMeasurePointEvent();
 
@@ -93,7 +103,8 @@ class MeasureToolPlugin : public RenderPlugin, public DialogConfigurationInterfa
 
     void writeSettings();
 
- private:
+private:
+
     Q_DISABLE_COPY( MeasureToolPlugin )
 
     static QString meterToPreferredUnit(qreal meters, bool isSquare = false);
@@ -137,6 +148,6 @@ class MeasureToolPlugin : public RenderPlugin, public DialogConfigurationInterfa
     PaintMode m_paintMode;
 };
 
-}
+} // namespace Marble
 
-#endif // MARBLE_MEASURETOOLPLUGIN_H
+#endif // MARBLE_MEASURE_TOOL_PLUGIN_H

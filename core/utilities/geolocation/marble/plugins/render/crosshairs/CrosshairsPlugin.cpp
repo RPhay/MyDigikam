@@ -5,7 +5,6 @@
 //
 
 #include "CrosshairsPlugin.h"
-#include "ui_CrosshairsConfigWidget.h"
 
 #include <QRect>
 #include <QColor>
@@ -15,10 +14,10 @@
 
 #include <klocalizedstring.h>
 
+#include "ui_CrosshairsConfigWidget.h"
 #include "GeoPainter.h"
 #include "MarbleDirs.h"
 #include "ViewportParams.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -90,7 +89,7 @@ QString CrosshairsPlugin::version() const
 
 QString CrosshairsPlugin::description() const
 {
-    return i18n( "A plugin that shows crosshairs." );
+    return i18n( "A plugin that shows crosshairs over the map." );
 }
 
 QString CrosshairsPlugin::copyrightYears() const
@@ -264,6 +263,6 @@ bool CrosshairsPlugin::render( GeoPainter *painter, ViewportParams *viewport,
     return true;
 }
 
-}
+} // namespace Marble
 
 #include "moc_CrosshairsPlugin.cpp"

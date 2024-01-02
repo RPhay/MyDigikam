@@ -15,6 +15,8 @@
 #include <QMenu>
 #include <QToolTip>
 
+#include <klocalizedstring.h>
+
 #include "ui_MapScaleConfigWidget.h"
 #include "MarbleColors.h"
 #include "MarbleGlobal.h"
@@ -23,8 +25,6 @@
 #include "MarbleModel.h"
 #include "ViewportParams.h"
 #include "GeoDataLatLonAltBox.h"
-
-#include <klocalizedstring.h>
 
 namespace Marble
 {
@@ -86,7 +86,7 @@ QString MapScaleFloatItem::version() const
 
 QString MapScaleFloatItem::description() const
 {
-    return i18n("This is a float item that provides a map scale.");
+    return i18n("A plugin to show a float item that provides a map scale.");
 }
 
 QString MapScaleFloatItem::copyrightYears() const
@@ -449,6 +449,6 @@ void MapScaleFloatItem::toggleMinimized()
     }
 }
 
-}
+} // namespace Marble
 
 #include "moc_MapScaleFloatItem.cpp"

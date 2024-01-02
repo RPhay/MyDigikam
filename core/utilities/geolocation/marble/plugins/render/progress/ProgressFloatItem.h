@@ -100,7 +100,6 @@ private:
     QTimer m_repaintTimer;
 };
 
-}
+} // namespace Marble
 
-#endif
-
+#endif // MARBLE_PROGRESS_FLOAT_ITEM_H
