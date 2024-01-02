@@ -799,6 +799,8 @@ void MediaPlayerView::resizeEvent(QResizeEvent* e)
 {
     QStackedWidget::resizeEvent(e);
 
+    qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Resize:" << size() << d->playerView->size();
+
     d->adjustVideoSize();
 }
 
