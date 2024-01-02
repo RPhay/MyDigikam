@@ -116,6 +116,10 @@ public Q_SLOTS:
                                                 const QPixmap& pixmap);
     virtual void slotTrackManagerChanged();
 
+protected:
+
+    void addCommonOptions(QMenu* const configurationMenu);
+
 protected Q_SLOTS:
 
     void slotExportScreenshot();

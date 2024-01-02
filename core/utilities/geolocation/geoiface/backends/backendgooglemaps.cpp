@@ -48,7 +48,6 @@
 #include "mapwidget.h"
 #include "abstractmarkertiler.h"
 #include "geomodelhelper.h"
-#include "geolocationsettings.h"
 
 #ifdef HAVE_QWEBENGINE
 
@@ -408,21 +407,7 @@ void BackendGoogleMaps::addActionsToConfigurationMenu(QMenu* const configuration
 
     configurationMenu->addSeparator();
 
-    QAction* const settings = new QAction(i18n("Settings..."), configurationMenu);
-    configurationMenu->addAction(settings);
-
-    connect(settings, &QAction::triggered,
-            this, []()
-        {
-            GeolocationSettings::instance()->openSetupGeolocation(SetupGeolocation::GoogleMaps);
-        }
-    );
-
-    QAction* const exportAs = new QAction(i18n("Export as..."), configurationMenu);
-    configurationMenu->addAction(exportAs);
-
-    connect(exportAs, SIGNAL(triggered()),
-            this, SLOT(slotExportScreenshot()));
+    addCommonOptions(configurationMenu);
 
     updateActionAvailability();
 }

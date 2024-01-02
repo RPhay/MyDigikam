@@ -20,6 +20,7 @@
 #include <QMessageBox>
 #include <QImageWriter>
 #include <QAction>
+#include <QMenu>
 #include <QApplication>
 
 // KDE includes
@@ -29,6 +30,7 @@
 // Local includes
 
 #include "dfiledialog.h"
+#include "geolocationsettings.h"
 #include "digikam_debug.h"
 
 namespace Digikam
@@ -53,6 +55,25 @@ void MapBackend::slotThumbnailAvailableForIndex(const QVariant& index, const QPi
 
 void MapBackend::slotTrackManagerChanged()
 {
+}
+
+void MapBackend::addCommonOptions(QMenu* const configurationMenu)
+{
+    QAction* const settings = new QAction(i18n("Settings..."), configurationMenu);
+    configurationMenu->addAction(settings);
+
+    connect(settings, &QAction::triggered,
+            this, []()
+        {
+            GeolocationSettings::instance()->openSetupGeolocation(SetupGeolocation::GoogleMaps);
+        }
+    );
+
+    QAction* const exportAs = new QAction(i18n("Export as..."), configurationMenu);
+    configurationMenu->addAction(exportAs);
+
+    connect(exportAs, SIGNAL(triggered()),
+            this, SLOT(slotExportScreenshot()));
 }
 
 void MapBackend::slotExportScreenshot()
