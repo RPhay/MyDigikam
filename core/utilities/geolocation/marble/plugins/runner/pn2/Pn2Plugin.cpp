@@ -11,8 +11,8 @@
 namespace Marble
 {
 
-Pn2Plugin::Pn2Plugin( QObject *parent ) :
-    ParseRunnerPlugin( parent )
+Pn2Plugin::Pn2Plugin(QObject* const parent)
+    : ParseRunnerPlugin( parent )
 {
 }
 
@@ -33,7 +33,7 @@ QString Pn2Plugin::version() const
 
 QString Pn2Plugin::description() const
 {
-    return i18n( "Create GeoDataDocument from Pn2 Files" );
+    return i18n( "A plugin to create Geolocation Data Document from Pn2 Files" );
 }
 
 QString Pn2Plugin::copyrightYears() const
@@ -62,6 +62,6 @@ ParsingRunner* Pn2Plugin::newRunner() const
     return new Pn2Runner;
 }
 
-}
+} // namespace Marble
 
 #include "moc_Pn2Plugin.cpp"

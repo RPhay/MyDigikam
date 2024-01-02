@@ -21,7 +21,7 @@ class JsonPlugin : public ParseRunnerPlugin
 
 public:
 
-    explicit JsonPlugin( QObject *parent = nullptr );
+    explicit JsonPlugin(QObject* const parent = nullptr);
 
     QString name() const override;
 
@@ -42,6 +42,6 @@ public:
     ParsingRunner* newRunner() const override;
 };
 
-}
+} // namespace Marble
 
 #endif

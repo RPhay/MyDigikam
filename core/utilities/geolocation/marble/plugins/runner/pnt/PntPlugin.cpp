@@ -11,8 +11,8 @@
 namespace Marble
 {
 
-PntPlugin::PntPlugin( QObject *parent )
-    : ParseRunnerPlugin( parent )
+PntPlugin::PntPlugin(QObject * const parent)
+    : ParseRunnerPlugin(parent)
 {
 }
 
@@ -33,7 +33,7 @@ QString PntPlugin::version() const
 
 QString PntPlugin::description() const
 {
-    return i18n( "Create GeoDataDocument from Pnt Files" );
+    return i18n( "A plugin to create Geolocation Data Document from Micro World Database II Files" );
 }
 
 QString PntPlugin::copyrightYears() const
@@ -62,6 +62,6 @@ ParsingRunner* PntPlugin::newRunner() const
     return new PntRunner;
 }
 
-}
+} // namespace Marble
 
 #include "moc_PntPlugin.cpp"

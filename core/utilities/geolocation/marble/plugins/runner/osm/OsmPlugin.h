@@ -2,8 +2,8 @@
 //
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLEOSMPLUGIN_H
-#define MARBLEOSMPLUGIN_H
+#ifndef MARBLE_OSM_PLUGIN_H
+#define MARBLE_OSM_PLUGIN_H
 
 #include "ParseRunnerPlugin.h"
 
@@ -17,7 +17,8 @@ class OsmPlugin : public ParseRunnerPlugin
     Q_INTERFACES( Marble::ParseRunnerPlugin )
 
 public:
-    explicit OsmPlugin( QObject *parent = nullptr );
+
+    explicit OsmPlugin(QObject* const parent = nullptr);
 
     QString name() const override;
 
@@ -38,5 +39,6 @@ public:
     ParsingRunner* newRunner() const override;
 };
 
-}
-#endif // MARBLEOSMPLUGIN_H
+} // namespace Marble
+
+#endif // MARBLE_OSM_PLUGIN_H

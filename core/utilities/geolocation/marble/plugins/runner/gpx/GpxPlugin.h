@@ -18,7 +18,7 @@ class GpxPlugin : public ParseRunnerPlugin
 
 public:
 
-    explicit GpxPlugin( QObject *parent = nullptr );
+    explicit GpxPlugin( QObject* const parent = nullptr );
 
     QString name() const override;
 
@@ -39,5 +39,6 @@ public:
     ParsingRunner* newRunner() const override;
 };
 
-}
+} // namespace Marble
+
 #endif // MARBLE_GPX_PLUGIN_H

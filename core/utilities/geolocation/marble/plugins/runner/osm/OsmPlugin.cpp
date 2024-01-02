@@ -3,15 +3,16 @@
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 
 #include "OsmPlugin.h"
-#include "OsmRunner.h"
 
 #include <klocalizedstring.h>
+
+#include "OsmRunner.h"
 
 namespace Marble
 {
 
-OsmPlugin::OsmPlugin( QObject *parent ) :
-    ParseRunnerPlugin( parent )
+OsmPlugin::OsmPlugin(QObject* const parent)
+    : ParseRunnerPlugin( parent )
 {
 }
 
@@ -32,7 +33,7 @@ QString OsmPlugin::version() const
 
 QString OsmPlugin::description() const
 {
-    return i18n( "Create GeoDataDocument from Osm Files" );
+    return i18n( "A plugin to create Geolocation Data Document from Osm Files" );
 }
 
 QString OsmPlugin::copyrightYears() const
@@ -62,6 +63,6 @@ ParsingRunner* OsmPlugin::newRunner() const
     return new OsmRunner;
 }
 
-}
+} // namespace Marble
 
 #include "moc_OsmPlugin.cpp"

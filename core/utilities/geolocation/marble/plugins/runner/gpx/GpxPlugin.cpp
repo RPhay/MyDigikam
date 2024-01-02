@@ -11,8 +11,8 @@
 namespace Marble
 {
 
-GpxPlugin::GpxPlugin( QObject *parent )
-    : ParseRunnerPlugin( parent )
+GpxPlugin::GpxPlugin(QObject* const parent)
+    : ParseRunnerPlugin(parent)
 {
 }
 
@@ -33,7 +33,7 @@ QString GpxPlugin::version() const
 
 QString GpxPlugin::description() const
 {
-    return i18n( "Create GeoDataDocument from Gpx Files" );
+    return i18n( "A plugin to create Geolocation Data Document from Gpx Files" );
 }
 
 QString GpxPlugin::copyrightYears() const
@@ -62,6 +62,6 @@ ParsingRunner* GpxPlugin::newRunner() const
     return new GpxRunner;
 }
 
-}
+} // namespace Marble
 
 #include "moc_GpxPlugin.cpp"

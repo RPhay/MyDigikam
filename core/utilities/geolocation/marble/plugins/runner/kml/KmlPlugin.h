@@ -18,7 +18,7 @@ class KmlPlugin : public ParseRunnerPlugin
 
 public:
 
-    explicit KmlPlugin( QObject *parent = nullptr );
+    explicit KmlPlugin(QObject* const parent = nullptr);
 
     QString name() const override;
 
@@ -39,5 +39,6 @@ public:
     ParsingRunner* newRunner() const override;
 };
 
-}
+} // namespace Marble
+
 #endif // MARBLE_KML_PLUGIN_H

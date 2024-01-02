@@ -41,7 +41,7 @@ QString CachePlugin::version() const
 
 QString CachePlugin::description() const
 {
-    return i18n( "Create GeoDataDocument from Cache Files" );
+    return i18n( "A plugin to create Geolocation Data Document from Cache Files" );
 }
 
 QString CachePlugin::copyrightYears() const

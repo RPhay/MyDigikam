@@ -14,8 +14,8 @@
 namespace Marble
 {
 
-JsonPlugin::JsonPlugin( QObject *parent ) :
-    ParseRunnerPlugin( parent )
+JsonPlugin::JsonPlugin(QObject* const parent)
+    : ParseRunnerPlugin( parent )
 {
 }
 
@@ -36,7 +36,7 @@ QString JsonPlugin::version() const
 
 QString JsonPlugin::description() const
 {
-    return i18n( "Create GeoDataDocument from GeoJSON Files" );
+    return i18n( "A plugin to create Geolocation Data Document from GeoJSON Files" );
 }
 
 QString JsonPlugin::copyrightYears() const
@@ -66,6 +66,6 @@ ParsingRunner* JsonPlugin::newRunner() const
     return new JsonRunner;
 }
 
-}
+} // namespace Marble
 
 #include "moc_JsonPlugin.cpp"

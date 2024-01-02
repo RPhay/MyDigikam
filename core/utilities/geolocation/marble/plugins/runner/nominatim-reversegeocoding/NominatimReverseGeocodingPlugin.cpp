@@ -5,15 +5,16 @@
 //
 
 #include "NominatimReverseGeocodingPlugin.h"
-#include "OsmNominatimReverseGeocodingRunner.h"
 
 #include <klocalizedstring.h>
+
+#include "OsmNominatimReverseGeocodingRunner.h"
 
 namespace Marble
 {
 
-NominatimPlugin::NominatimPlugin( QObject* parent )
-    : ReverseGeocodingRunnerPlugin( parent )
+NominatimPlugin::NominatimPlugin(QObject* const parent)
+    : ReverseGeocodingRunnerPlugin(parent)
 {
     setSupportedCelestialBodies(QStringList(QStringLiteral("earth")));
     setCanWorkOffline( false );
@@ -41,7 +42,7 @@ QString NominatimPlugin::version() const
 
 QString NominatimPlugin::description() const
 {
-    return i18n( "Online reverse geocoding using the OpenStreetMap Nominatim service" );
+    return i18n( "A plugin to process Online reverse geocoding using the OpenStreetMap Nominatim service" );
 }
 
 QString NominatimPlugin::copyrightYears() const
@@ -61,6 +62,6 @@ ReverseGeocodingRunner* NominatimPlugin::newRunner() const
     return new OsmNominatimRunner;
 }
 
-}
+} // namespace Marble
 
 #include "moc_NominatimReverseGeocodingPlugin.cpp"

@@ -11,8 +11,8 @@
 namespace Marble
 {
 
-GpsbabelPlugin::GpsbabelPlugin( QObject *parent )
-    : ParseRunnerPlugin( parent )
+GpsbabelPlugin::GpsbabelPlugin(QObject* const parent)
+    : ParseRunnerPlugin(parent)
 {
 }
 
@@ -33,7 +33,7 @@ QString GpsbabelPlugin::version() const
 
 QString GpsbabelPlugin::description() const
 {
-    return i18n( "Allows loading of NMEA files through GPSBabel." );
+    return i18n( "A plugin to allow loading of NMEA files through GPSBabel." );
 }
 
 QString GpsbabelPlugin::copyrightYears() const
@@ -69,6 +69,6 @@ ParsingRunner* GpsbabelPlugin::newRunner() const
     return new GpsbabelRunner;
 }
 
-}
+} // namespace Marble
 
 #include "moc_GpsbabelPlugin.cpp"

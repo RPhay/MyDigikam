@@ -12,8 +12,8 @@
 namespace Marble
 {
 
-KmlPlugin::KmlPlugin( QObject *parent ) :
-    ParseRunnerPlugin( parent )
+KmlPlugin::KmlPlugin(QObject* const parent)
+    : ParseRunnerPlugin( parent )
 {
 }
 
@@ -34,7 +34,7 @@ QString KmlPlugin::version() const
 
 QString KmlPlugin::description() const
 {
-    return i18n( "Create GeoDataDocument from KML and KMZ Files" );
+    return i18n( "A plugin to create Geolocation Data Document from KML and KMZ Files" );
 }
 
 QString KmlPlugin::copyrightYears() const
@@ -64,6 +64,6 @@ ParsingRunner* KmlPlugin::newRunner() const
     return new KmlRunner;
 }
 
-}
+} // namespace Marble
 
 #include "moc_KmlPlugin.cpp"

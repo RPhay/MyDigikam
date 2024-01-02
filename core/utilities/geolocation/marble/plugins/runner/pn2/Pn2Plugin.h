@@ -18,7 +18,7 @@ class Pn2Plugin : public ParseRunnerPlugin
 
 public:
 
-    explicit Pn2Plugin( QObject *parent = nullptr );
+    explicit Pn2Plugin(QObject* const parent = nullptr);
 
     QString name() const override;
 
@@ -39,6 +39,6 @@ public:
     ParsingRunner* newRunner() const override;
 };
 
-}
+} // namespace Marble
 
 #endif // MARBLE_PN2_PLUGIN_H

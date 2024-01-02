@@ -18,7 +18,7 @@ class PntPlugin : public ParseRunnerPlugin
 
 public:
 
-    explicit PntPlugin( QObject *parent = nullptr );
+    explicit PntPlugin(QObject* const parent = nullptr);
 
     QString name() const override;
 
@@ -39,6 +39,6 @@ public:
     ParsingRunner* newRunner() const override;
 };
 
-}
+} // namespace Marble
 
 #endif // MARBLE_PNT_PLUGIN_H

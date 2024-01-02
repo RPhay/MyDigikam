@@ -18,7 +18,7 @@ class GpsbabelPlugin : public ParseRunnerPlugin
 
 public:
 
-    explicit GpsbabelPlugin( QObject *parent = nullptr );
+    explicit GpsbabelPlugin(QObject* const parent = nullptr);
 
     QString name() const override;
 
@@ -39,6 +39,6 @@ public:
     ParsingRunner* newRunner() const override;
 };
 
-}
+} // namespace Marble
 
 #endif // MARBLE_GPSBABEL_PLUGIN_H

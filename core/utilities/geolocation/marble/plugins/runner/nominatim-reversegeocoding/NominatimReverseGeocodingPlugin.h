@@ -4,8 +4,8 @@
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_NOMINATIMREVERSEGEOCODINGPLUGIN_H
-#define MARBLE_NOMINATIMREVERSEGEOCODINGPLUGIN_H
+#ifndef MARBLE_NOMINATIM_REVERSE_GEOCODING_PLUGIN_H
+#define MARBLE_NOMINATIM_REVERSE_GEOCODING_PLUGIN_H
 
 #include "ReverseGeocodingRunnerPlugin.h"
 
@@ -20,7 +20,7 @@ class NominatimPlugin : public ReverseGeocodingRunnerPlugin
 
 public:
 
-    explicit NominatimPlugin( QObject *parent = nullptr );
+    explicit NominatimPlugin(QObject * const parent = nullptr);
 
     QString name() const override;
 
@@ -39,6 +39,6 @@ public:
     ReverseGeocodingRunner* newRunner() const override;
 };
 
-}
+} // namespace Marble
 
-#endif
+#endif // MARBLE_NOMINATIM_REVERSE_GEOCODING_PLUGIN_H
