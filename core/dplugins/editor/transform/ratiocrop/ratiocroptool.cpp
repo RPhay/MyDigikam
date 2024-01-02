@@ -424,6 +424,7 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     d->guideLinesCB->addItem(i18n("Diagonal Method"));
     d->guideLinesCB->addItem(i18n("Harmonious Triangles"));
     d->guideLinesCB->addItem(i18n("Golden Mean"));
+    d->guideLinesCB->addItem(i18n("Center Lines"));
     d->guideLinesCB->addItem(i18nc("no geometric form", "None"));
     d->guideLinesCB->setDefaultIndex(RatioCropWidget::GuideNone);
     d->guideLinesCB->setCurrentIndex(3);

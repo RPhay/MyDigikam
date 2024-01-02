@@ -114,7 +114,7 @@ BUGFIXES:
 096 ==> 403082 - Allow to produce a Screenshot in Geolocator.
 097 ==> 479268 - Provide helpful info on why exiftool is not recognised.
 098 ==> 474176 - Add more third party geolocation map api support.
-099 ==> 
+099 ==> 479297 - Add center lines to composition guides.
 100 ==> 
 101 ==> 
 102 ==> 

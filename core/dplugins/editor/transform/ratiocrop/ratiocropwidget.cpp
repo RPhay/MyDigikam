@@ -922,6 +922,16 @@ void RatioCropWidget::drawRulesOfThirds(QPainter& p, const int& xThird, const in
 
 }
 
+void RatioCropWidget::drawRulesOfCenter(QPainter& p, const int& xHalf, const int& yHalf)
+{
+
+    p.drawLine(d->localRegionSelection.left() + xHalf, d->localRegionSelection.top(),
+               d->localRegionSelection.left() + xHalf, d->localRegionSelection.bottom());
+
+    p.drawLine(d->localRegionSelection.left(),  d->localRegionSelection.top() + yHalf,
+               d->localRegionSelection.right(), d->localRegionSelection.top() + yHalf);
+}
+
 void RatioCropWidget::drawDiagonalMethod(QPainter& p, const int& w, const int& h)
 {
     p.setRenderHint(QPainter::Antialiasing);
@@ -1233,6 +1243,19 @@ void RatioCropWidget::updatePixmap()
             p.setPen(QPen(d->guideColor, d->guideSize, Qt::DotLine));
             drawGoldenMean(p, R1, R2, R3, R4, R5, R6, R7);
 
+            break;
+        }
+
+        case CenterLines:
+        {
+            int xHalf = d->localRegionSelection.width()  / 2;
+            int yHalf = d->localRegionSelection.height() / 2;
+
+            p.setPen(QPen(Qt::white, d->guideSize, Qt::SolidLine));
+            drawRulesOfCenter(p, xHalf, yHalf);
+
+            p.setPen(QPen(d->guideColor, d->guideSize, Qt::DotLine));
+            drawRulesOfCenter(p, xHalf, yHalf);
             break;
         }
     }

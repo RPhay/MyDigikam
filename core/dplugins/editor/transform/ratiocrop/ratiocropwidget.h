@@ -80,6 +80,7 @@ public:
         DiagonalMethod,            ///< Diagonal Method to improve composition.
         HarmoniousTriangles,       ///< Harmonious Triangle to improve composition.
         GoldenMean,                ///< Guides tools using Phi ratio (1.618).
+        CenterLines,               ///< Line guides position to 1/2 width and height.
         GuideNone                  ///< No guide line.
     };
 
@@ -165,6 +166,7 @@ private:
 
     // drawing functions for the various guide types
     void   drawRulesOfThirds(QPainter& p, const int& xThird, const int& yThird);
+    void   drawRulesOfCenter(QPainter& p, const int& xHalf, const int& yHalf);
     void   drawDiagonalMethod(QPainter& p, const int& w, const int& h);
     void   drawHarmoniousTriangles(QPainter& p, const int& dst);
     void   drawGoldenMean(QPainter& p, const QRect& R1, const QRect& R2,
