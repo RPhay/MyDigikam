@@ -78,58 +78,7 @@ class Q_DECL_HIDDEN MapWidget::Private
 {
 public:
 
-    explicit Private()
-      : loadedBackends                          (),
-        currentBackend                          (nullptr),
-        currentBackendName                      (),
-        stackedLayout                           (nullptr),
-        cacheCenterCoordinate                   (52.0, 6.0),
-        cacheZoom                               (QLatin1String("marble:900")),
-        configurationMenu                       (nullptr),
-        actionGroupBackendSelection             (nullptr),
-        actionZoomIn                            (nullptr),
-        actionZoomOut                           (nullptr),
-        actionShowThumbnails                    (nullptr),
-        mouseModesHolder                        (nullptr),
-        controlWidget                           (nullptr),
-        actionPreviewSingleItems                (nullptr),
-        actionPreviewGroupedItems               (nullptr),
-        actionShowNumbersOnItems                (nullptr),
-        lazyReclusteringRequested               (false),
-        dragDropHandler                         (nullptr),
-        sortMenu                                (nullptr),
-        actionIncreaseThumbnailSize             (nullptr),
-        actionDecreaseThumbnailSize             (nullptr),
-        hBoxForAdditionalControlWidgetItems     (nullptr),
-        mouseModeActionGroup                    (nullptr),
-        actionRemoveCurrentRegionSelection      (nullptr),
-        actionSetRegionSelectionMode            (nullptr),
-        actionSetPanMode                        (nullptr),
-        actionSetZoomIntoGroupMode              (nullptr),
-        actionSetRegionSelectionFromIconMode    (nullptr),
-        actionSetFilterMode                     (nullptr),
-        actionRemoveFilter                      (nullptr),
-        actionSetSelectThumbnailMode            (nullptr),
-        actionLoadTracksFromAlbums              (nullptr),
-        setPanModeButton                        (nullptr),
-        setSelectionModeButton                  (nullptr),
-        removeCurrentSelectionButton            (nullptr),
-        setZoomModeButton                       (nullptr),
-        setRegionSelectionFromIconModeButton    (nullptr),
-        setFilterModeButton                     (nullptr),
-        removeFilterModeButton                  (nullptr),
-        setSelectThumbnailMode                  (nullptr),
-        loadTracksFromAlbums                    (nullptr),
-        thumbnailTimer                          (nullptr),
-        thumbnailTimerCount                     (0),
-        thumbnailsHaveBeenLoaded                (false),
-        availableExtraActions                   (),
-        visibleExtraActions                     (),
-        actionStickyMode                        (nullptr),
-        buttonStickyMode                        (nullptr),
-        placeholderWidget                       (nullptr)
-    {
-    }
+    explicit Private();
 
     QList<MapBackend*>      loadedBackends;
     MapBackend*             currentBackend;
