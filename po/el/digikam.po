@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-01 00:39+0000\n"
+"POT-Creation-Date: 2024-01-02 00:39+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -2850,7 +2850,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
 #: core/libs/video/player/qtav/mediaplayerview.cpp:191
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:260
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2858,7 +2858,7 @@ msgstr "Πίσω"
 
 #: core/app/views/preview/itempreviewview.cpp:187
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -3590,7 +3590,7 @@ msgstr ""
 "(σε σύγκριση με το digiKam 4.x):"
 
 #: core/app/views/stack/welcomepageview.cpp:208
-#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:351
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:350
 #, kde-format
 msgid "About"
 msgstr "Περίγραμμα"
@@ -11550,6 +11550,7 @@ msgid "Scan Images"
 msgstr "Σάρωση εικόνας"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:83
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1870
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
@@ -11558,23 +11559,27 @@ msgid "New Image File Name"
 msgstr "Νέο όνομα αρχείου εικόνας"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:131
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Άγνωστος τύπος αποθήκευσης"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:216
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:132
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Ο τύπος αρχείου προορισμού \"%1\" δεν υποστηρίζεται."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:144
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Αδυναμία αποθήκευσης του \"%1\" αρχείου"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:145
 #, kde-format
 msgid ""
 "Failed to save file\n"
@@ -11586,6 +11591,7 @@ msgstr ""
 "\"%2\"."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:160
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2344
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2363
 #, fuzzy, kde-format
@@ -11595,6 +11601,7 @@ msgid "Overwrite File?"
 msgstr "Αντικατάσταση αρχείου;"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:245
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -19344,6 +19351,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:361
 #: core/libs/widgets/mainview/daboutdata.cpp:367
 #: core/libs/widgets/mainview/daboutdata.cpp:378
+#: core/utilities/geolocation/marble/plugins/PluginInterface.h:41
 #, kde-format
 msgid "Developer"
 msgstr "Προγραμματιστής"
@@ -43652,28 +43660,28 @@ msgid "Default from Desktop"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Σύλληψη"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:200
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:269
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "Συνέβη ένα σφάλμα με τον αναπαραγωγέα μέσων..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:233
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, fuzzy, kde-format
 #| msgid "Display in loop"
 msgid "Toggle playing in a loop"
@@ -44359,7 +44367,7 @@ msgctxt "@info:tooltip"
 msgid "Reset to default value"
 msgstr "Επαναφορά στην προκαθορισμένη τιμή"
 
-#: core/libs/widgets/files/dbinaryiface.cpp:215
+#: core/libs/widgets/files/dbinaryiface.cpp:217
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@title:window"
@@ -44427,6 +44435,11 @@ msgstr ""
 #, kde-format
 msgid "Change"
 msgstr "Αλλαγή"
+
+#: core/libs/widgets/files/dbinarysearch.cpp:190
+#, kde-format
+msgid "The binary file found does not appear to be working as intended."
+msgstr ""
 
 #: core/libs/widgets/files/dfileselector.cpp:58
 #, kde-format
@@ -56878,6 +56891,13 @@ msgstr "Google Maps"
 msgid "Float items"
 msgstr "Κινητά αντικείμενα"
 
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:494
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgid "Export as..."
+msgstr "Σελιδοδείκτες"
+
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
 #, kde-format
 msgid "Marble Virtual Globe"
@@ -57156,6 +57176,12 @@ msgstr "Σελιδοδείκτες"
 #| msgid "Add Border..."
 msgid "Add Bookmark..."
 msgstr "Προσθήκη περιγράμματος..."
+
+#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
+#, fuzzy, kde-format
+#| msgid "<p>Arguments: %1</p>"
+msgid "<p>Copyright %1</p>"
+msgstr "<p>Ορίσματα: %1</p>"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, kde-format
@@ -57890,98 +57916,98 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr "Το αρχείο είναι GPX, αλλά δεν βρέθηκαν σημεία."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:259
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:58
 #, kde-format
 msgid "Zoom in"
 msgstr "Μεγέθυνση"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:266
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:65
 #, kde-format
 msgid "Zoom out"
 msgstr "Σμίκρυνση"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:272
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:71
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Αλλαγή ανάμεσα σε "
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:290
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:89
 #, kde-format
 msgid "Preview single items"
 msgstr "Προεπισκόπηση μεμονωμένων αντικειμένων"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:293
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:92
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Προεπισκόπηση ομάδων αντικειμένων"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:296
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:95
 #, fuzzy, kde-format
 msgid "Show numbers"
 msgstr "Εμφάνιση εικόνων επισκόπησης"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:302
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:101
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Αύξηση μεγέθους των εικόνων προεπισκόπησης πάνω στο χάρτη"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:305
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:104
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Μείωση μεγέθους των εικόνων προεπισκόπησης πάνω στο χάρτη"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:312
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:111
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Αφαίρεση της τρέχουσας επιλεγμένης περιοχής"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:320
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:119
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Επιλογή εικόνων με σχεδιασμό ορθογώνιου παραλληλογράμμου"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:325
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:124
 #, fuzzy, kde-format
 msgid "Pan mode"
 msgstr "Λειτουργία φλας"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:131
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Ζουμ σε ομάδα"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:338
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:137
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Δημιουργία επιλεγμένης περιοχής από εικόνα προεπισκόπησης"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:344
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:143
 #, fuzzy, kde-format
 msgid "Filter images"
 msgstr "Πρώτη εικόνα"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:349
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:148
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Αφαίρεση του τρέχοντος φίλτρου"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:354
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:153
 #, kde-format
 msgid "Select images"
 msgstr "Επιλογή εικόνων"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:360
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:159
 #, kde-format
 msgid "Lock the map position"
 msgstr "Κλείδωμα της θέσης στο χάρτη"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:363
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:162
 #, fuzzy, kde-format
 #| msgid "Load playlist from a file."
 msgid "Load tracks from albums"
 msgstr "Φόρτωση λίστας αναπαραγωγής από αρχείο."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:632
 #, fuzzy, kde-format
 msgid "Map settings"
 msgstr "Ρυθμίσεις"
@@ -60342,7 +60368,7 @@ msgstr "Συναφείς εικόνες"
 msgid "Add custom tag..."
 msgstr "Προσθήκη ετικέτας επαρχίας"
 
-#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:366
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:365
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Configure"
@@ -61010,18 +61036,18 @@ msgstr "Λήψη νέου"
 msgid "Shows a pie chart download progress indicator"
 msgstr "Εμφάνιση παραθύρου λεπτομερειών προόδου"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:28
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Cache File Parser"
 msgstr "Μετασχηματισμός"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:43
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
 msgid "Create GeoDataDocument from Cache Files"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:59
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "Marble Widget"
 msgid "Marble Cache Files"
@@ -61579,26 +61605,26 @@ msgid ""
 "not the Open-Street Map."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:274
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
 #, fuzzy, kde-format
 #| msgid "Marble Widget"
 msgid "Marble View"
 msgstr "Γραφικό συστατικό του Marble"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:295
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
 #, fuzzy, kde-format
 #| msgctxt "imageplugins shortcuts"
 #| msgid "Image Plugins"
 msgid "Marble Plugins"
 msgstr "Πρόσθετα εικόνας"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:74
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
 #, fuzzy, kde-format
 #| msgid "Border Tool"
 msgid "Render Tools"
 msgstr "Εργαλείο περιθωρίου"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:81
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:83
 #, fuzzy, kde-format
 #| msgid "Unknown Tools"
 msgid "Runner Tools"
@@ -72997,11 +73023,6 @@ msgstr ""
 #~ msgstr "Σελιδοδείκτες"
 
 #, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Export Bookmarks..."
-#~ msgstr "Σελιδοδείκτες"
-
-#, fuzzy
 #~| msgid "Folder: "
 #~ msgid "Folders"
 #~ msgstr "Φάκελος: "
@@ -79205,9 +79226,6 @@ msgstr ""
 #~ "Αδυναμία εκκίνησης της εντολής init της βάσης δεδομένων.\n"
 #~ "Εκτελέσιμο: %1\n"
 #~ "Σφάλμα διεργασίας:%2"
-
-#~ msgid "<p>Arguments: %1</p>"
-#~ msgstr "<p>Ορίσματα: %1</p>"
 
 #~ msgid "<p>Process error: %1</p>"
 #~ msgstr "<p>Σφάλμα διεργασίας: %1</p>"

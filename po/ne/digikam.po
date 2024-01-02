@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-01 00:39+0000\n"
+"POT-Creation-Date: 2024-01-02 00:39+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -2781,7 +2781,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
 #: core/libs/video/player/qtav/mediaplayerview.cpp:191
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:260
 #, fuzzy, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2789,7 +2789,7 @@ msgstr "पछाडि"
 
 #: core/app/views/preview/itempreviewview.cpp:187
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, fuzzy, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -3470,7 +3470,7 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:208
-#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:351
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:350
 #, fuzzy, kde-format
 msgid "About"
 msgstr "परित्याग गर्नुहोस्"
@@ -10679,6 +10679,7 @@ msgid "Scan Images"
 msgstr "थप्नका लागि छवि चयन गर्नुहोस्"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:83
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1870
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
@@ -10687,23 +10688,27 @@ msgid "New Image File Name"
 msgstr "नयाँ छवि फाइलनाम"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:131
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "अज्ञात"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:216
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:132
 #, fuzzy, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "लक्ष्य छवि फाइल ढाँचा \"%1\" समर्थन गर्दैन ।"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:144
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "फाइल बचत गर्दा त्रुटि"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:145
 #, kde-format
 msgid ""
 "Failed to save file\n"
@@ -10715,6 +10720,7 @@ msgstr ""
 "\"%2\"मा बचत गर्न असफल"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:160
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2344
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2363
 #, fuzzy, kde-format
@@ -10724,6 +10730,7 @@ msgid "Overwrite File?"
 msgstr "फाइल अधिलेखन गर्नुहुन्छ ?"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:245
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -17592,6 +17599,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:361
 #: core/libs/widgets/mainview/daboutdata.cpp:367
 #: core/libs/widgets/mainview/daboutdata.cpp:378
+#: core/utilities/geolocation/marble/plugins/PluginInterface.h:41
 #, kde-format
 msgid "Developer"
 msgstr "विकासकर्ता"
@@ -39531,27 +39539,27 @@ msgid "Default from Desktop"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "प्रकृति"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:200
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:269
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:233
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, fuzzy, kde-format
 #| msgid "Display in loop"
 msgid "Toggle playing in a loop"
@@ -40182,7 +40190,7 @@ msgctxt "@info:tooltip"
 msgid "Reset to default value"
 msgstr "<p>सबै फिल्टर परिमितिहरूलाई तिनीहरूको पूर्वनिर्धारित मानमा रिसेट गर्नुहोस् ।"
 
-#: core/libs/widgets/files/dbinaryiface.cpp:215
+#: core/libs/widgets/files/dbinaryiface.cpp:217
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
@@ -40241,6 +40249,11 @@ msgstr ""
 #| msgid "Channel:"
 msgid "Change"
 msgstr "च्यानल:"
+
+#: core/libs/widgets/files/dbinarysearch.cpp:190
+#, kde-format
+msgid "The binary file found does not appear to be working as intended."
+msgstr ""
 
 #: core/libs/widgets/files/dfileselector.cpp:58
 #, fuzzy, kde-format
@@ -51345,6 +51358,12 @@ msgstr ""
 msgid "Float items"
 msgstr "मिति छैन"
 
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:494
+#, fuzzy, kde-format
+msgid "Export as..."
+msgstr "क्यामेरा थप्नुहोस्..."
+
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
 #, kde-format
 msgid "Marble Virtual Globe"
@@ -51595,6 +51614,12 @@ msgstr "क्यामेरा थप्नुहोस्..."
 #, fuzzy, kde-format
 msgid "Add Bookmark..."
 msgstr "क्यामेरा थप्नुहोस्..."
+
+#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
+#, fuzzy, kde-format
+#| msgid "Copyright"
+msgid "<p>Copyright %1</p>"
+msgstr "प्रतिलिपि अधिकार"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, fuzzy, kde-format
@@ -52248,97 +52273,97 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:259
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:58
 #, fuzzy, kde-format
 msgid "Zoom in"
 msgstr "जुम बढाउनुहोस्"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:266
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:65
 #, fuzzy, kde-format
 msgid "Zoom out"
 msgstr "जुम घटाउनुहोस्"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:272
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:71
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:290
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:89
 #, fuzzy, kde-format
 msgid "Preview single items"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:293
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:92
 #, fuzzy, kde-format
 msgid "Preview grouped items"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:296
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:95
 #, fuzzy, kde-format
 msgid "Show numbers"
 msgstr "थम्बनेल देखाउनुहोस्"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:302
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:101
 #, fuzzy, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "थम्बनेल साइज बढाउनुहोस्"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:305
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:104
 #, fuzzy, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "थम्बनेल साइज बढाउनुहोस्"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:312
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:111
 #, fuzzy, kde-format
 msgid "Remove the current region selection"
 msgstr "चयन उल्टाउनुहोस्"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:320
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:119
 #, fuzzy, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "\"अत्यावश्यक\" ट्यागको रूपमा छवि दर बचत गर्नुहोस्"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:325
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:124
 #, fuzzy, kde-format
 msgid "Pan mode"
 msgstr "फ्ल्यास:"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:131
 #, kde-format
 msgid "Zoom into a group"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:338
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:137
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:344
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:143
 #, fuzzy, kde-format
 msgid "Filter images"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:349
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:148
 #, fuzzy, kde-format
 msgid "Remove the current filter"
 msgstr "सङ्कलनद्वारा"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:354
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:153
 #, fuzzy, kde-format
 msgid "Select images"
 msgstr "छवि बचत गर्नुहोस्"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:360
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:159
 #, fuzzy, kde-format
 msgid "Lock the map position"
 msgstr "फोटोग्राफ सूचना"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:363
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:162
 #, kde-format
 msgid "Load tracks from albums"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:632
 #, fuzzy, kde-format
 msgid "Map settings"
 msgstr "सेटिङ"
@@ -54567,7 +54592,7 @@ msgstr "छवि बचत गर्नुहोस्"
 msgid "Add custom tag..."
 msgstr "मेरो ट्याग"
 
-#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:366
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:365
 #, fuzzy, kde-format
 msgid "Configure"
 msgstr "क्यामेरा कन्फिगरेसन"
@@ -55168,17 +55193,17 @@ msgstr "डाउनलोड गर्नुहोस्"
 msgid "Shows a pie chart download progress indicator"
 msgstr "प्रर्दशन सूचक"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:28
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
 #, fuzzy, kde-format
 msgid "Cache File Parser"
 msgstr "रूपान्तरण"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:43
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
 msgid "Create GeoDataDocument from Cache Files"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:59
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "More"
 msgid "Marble Cache Files"
@@ -55673,23 +55698,23 @@ msgid ""
 "not the Open-Street Map."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:274
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
 #, fuzzy, kde-format
 #| msgid "More"
 msgid "Marble View"
 msgstr "बढि"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:295
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
 #, fuzzy, kde-format
 msgid "Marble Plugins"
 msgstr "छवि प्लगइन"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:74
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
 #, fuzzy, kde-format
 msgid "Render Tools"
 msgstr "मार्गदर्शन रङ:"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:81
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:83
 #, fuzzy, kde-format
 msgid "Runner Tools"
 msgstr "अज्ञात"
@@ -65349,10 +65374,6 @@ msgstr "<p>सबै फिल्टर परिमितिहरूलाई 
 
 #, fuzzy
 #~ msgid "Import Bookmarks..."
-#~ msgstr "क्यामेरा थप्नुहोस्..."
-
-#, fuzzy
-#~ msgid "Export Bookmarks..."
 #~ msgstr "क्यामेरा थप्नुहोस्..."
 
 #, fuzzy

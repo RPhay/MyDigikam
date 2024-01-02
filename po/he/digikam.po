@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-01 00:39+0000\n"
+"POT-Creation-Date: 2024-01-02 00:39+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -2827,7 +2827,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
 #: core/libs/video/player/qtav/mediaplayerview.cpp:191
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:260
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2835,7 +2835,7 @@ msgstr "אחורה"
 
 #: core/app/views/preview/itempreviewview.cpp:187
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -3519,7 +3519,7 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:208
-#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:351
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:350
 #, fuzzy, kde-format
 msgid "About"
 msgstr "אודות"
@@ -10568,6 +10568,7 @@ msgid "Scan Images"
 msgstr "בחירת תמונה"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:83
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1870
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
@@ -10576,23 +10577,27 @@ msgid "New Image File Name"
 msgstr "שם חדש לקובץ תמונה"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:131
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "לא ידוע"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:216
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:132
 #, fuzzy, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "תצורת קובץ התמונה \"%1\" אינה נתמכת."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:144
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "שגיאה בעת שמירת הקובץ"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:145
 #, kde-format
 msgid ""
 "Failed to save file\n"
@@ -10604,6 +10609,7 @@ msgstr ""
 "\"%2\"."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:160
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2344
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2363
 #, fuzzy, kde-format
@@ -10613,6 +10619,7 @@ msgid "Overwrite File?"
 msgstr "לשכתב את הקובץ?"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:245
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -17419,6 +17426,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:361
 #: core/libs/widgets/mainview/daboutdata.cpp:367
 #: core/libs/widgets/mainview/daboutdata.cpp:378
+#: core/utilities/geolocation/marble/plugins/PluginInterface.h:41
 #, kde-format
 msgid "Developer"
 msgstr "מפתח"
@@ -39253,27 +39261,27 @@ msgid "Default from Desktop"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "לכידה"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:200
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:269
 #, fuzzy, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "תקלה נגרמה בעת השימוש בנגן הסרטים"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:233
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -39907,7 +39915,7 @@ msgctxt "@info:tooltip"
 msgid "Reset to default value"
 msgstr "איפוס הכל מאפייני המסנן לערכי ברירת מחדל."
 
-#: core/libs/widgets/files/dbinaryiface.cpp:215
+#: core/libs/widgets/files/dbinaryiface.cpp:217
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
@@ -39965,6 +39973,11 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Change"
 msgstr "ערוץ:"
+
+#: core/libs/widgets/files/dbinarysearch.cpp:190
+#, kde-format
+msgid "The binary file found does not appear to be working as intended."
+msgstr ""
 
 #: core/libs/widgets/files/dfileselector.cpp:58
 #, fuzzy, kde-format
@@ -51083,6 +51096,12 @@ msgstr ""
 msgid "Float items"
 msgstr "ללא תאריך"
 
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:494
+#, fuzzy, kde-format
+msgid "Export as..."
+msgstr "התאמת תצוגה לגודל החלון"
+
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
 #, kde-format
 msgid "Marble Virtual Globe"
@@ -51333,6 +51352,12 @@ msgstr ""
 #, kde-format
 msgid "Add Bookmark..."
 msgstr ""
+
+#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
+#, fuzzy, kde-format
+#| msgid "Copyright"
+msgid "<p>Copyright %1</p>"
+msgstr "זכויות יוצרים"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, fuzzy, kde-format
@@ -51986,97 +52011,97 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:259
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:58
 #, fuzzy, kde-format
 msgid "Zoom in"
 msgstr "התקרבות"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:266
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:65
 #, fuzzy, kde-format
 msgid "Zoom out"
 msgstr "התרחקות"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:272
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:71
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:290
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:89
 #, fuzzy, kde-format
 msgid "Preview single items"
 msgstr "תמונה קודמת"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:293
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:92
 #, fuzzy, kde-format
 msgid "Preview grouped items"
 msgstr "סידור תמונות"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:296
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:95
 #, fuzzy, kde-format
 msgid "Show numbers"
 msgstr "הצגת תמונות-ממוזערות"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:302
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:101
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:305
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:104
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:312
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:111
 #, fuzzy, kde-format
 msgid "Remove the current region selection"
 msgstr "ביטול הבחירה הנוכחית"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:320
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:119
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:325
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:124
 #, fuzzy, kde-format
 msgid "Pan mode"
 msgstr "מצב מבזק:"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:131
 #, kde-format
 msgid "Zoom into a group"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:338
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:137
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:344
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:143
 #, fuzzy, kde-format
 msgid "Filter images"
 msgstr "תמונה ראשונה"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:349
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:148
 #, fuzzy, kde-format
 msgid "Remove the current filter"
 msgstr "לפי אוסף"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:354
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:153
 #, fuzzy, kde-format
 msgid "Select images"
 msgstr "בחירת תמונות"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:360
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:159
 #, fuzzy, kde-format
 msgid "Lock the map position"
 msgstr "שחזור תצלום"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:363
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:162
 #, kde-format
 msgid "Load tracks from albums"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:632
 #, fuzzy, kde-format
 msgid "Map settings"
 msgstr "הגדרות"
@@ -54325,7 +54350,7 @@ msgstr "בחירת תמונות"
 msgid "Add custom tag..."
 msgstr "כל תווית"
 
-#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:366
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:365
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Configure"
@@ -54925,17 +54950,17 @@ msgstr "העתקה למחשב"
 msgid "Shows a pie chart download progress indicator"
 msgstr "מכווני חשיפה"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:28
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
 #, fuzzy, kde-format
 msgid "Cache File Parser"
 msgstr "המרה"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:43
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
 msgid "Create GeoDataDocument from Cache Files"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:59
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "Marble 2"
 msgid "Marble Cache Files"
@@ -55431,23 +55456,23 @@ msgid ""
 "not the Open-Street Map."
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:274
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
 #, fuzzy, kde-format
 #| msgid "Marble 2"
 msgid "Marble View"
 msgstr "שיש 2"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:295
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
 #, fuzzy, kde-format
 msgid "Marble Plugins"
 msgstr "תוספי KIPI"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:74
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
 #, fuzzy, kde-format
 msgid "Render Tools"
 msgstr "צבע מסגרת:"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:81
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:83
 #, fuzzy, kde-format
 msgid "Runner Tools"
 msgstr "לא ידוע"
@@ -64981,10 +65006,6 @@ msgstr "איפוס הכל מאפייני המסנן לערכי ברירת מחד
 
 #, fuzzy
 #~ msgid "Import Bookmarks..."
-#~ msgstr "התאמת תצוגה לגודל החלון"
-
-#, fuzzy
-#~ msgid "Export Bookmarks..."
 #~ msgstr "התאמת תצוגה לגודל החלון"
 
 #, fuzzy

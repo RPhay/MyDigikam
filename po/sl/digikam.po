@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-01 00:39+0000\n"
-"PO-Revision-Date: 2023-12-31 11:25+0100\n"
+"POT-Creation-Date: 2024-01-02 00:39+0000\n"
+"PO-Revision-Date: 2024-01-01 10:49+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -47,8 +47,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
 "%100<=4 ? 2 : 3);\n"
-"Translator: Martin Srebotnjak <miles@filmsi.net>\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: core/app/date/ddateedit.cpp:497
 #, kde-format
@@ -2840,7 +2839,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
 #: core/libs/video/player/qtav/mediaplayerview.cpp:191
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:260
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2848,7 +2847,7 @@ msgstr "Nazaj"
 
 #: core/app/views/preview/itempreviewview.cpp:187
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -3608,7 +3607,7 @@ msgstr ""
 "primerjavi z digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:208
-#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:351
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:350
 #, kde-format
 msgid "About"
 msgstr "O programu"
@@ -11154,6 +11153,7 @@ msgid "Scan Images"
 msgstr "Optično preberi slike"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:83
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1870
 #, kde-format
 msgctxt "@title:window"
@@ -11161,23 +11161,27 @@ msgid "New Image File Name"
 msgstr "Ime datoteke za novo sliko"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:131
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Nepodprti format"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:216
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:132
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Vrsta datoteke cilja, \"%1\", ni podprta."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:144
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Ni mogoče shraniti datoteke"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:145
 #, kde-format
 msgid ""
 "Failed to save file\n"
@@ -11189,6 +11193,7 @@ msgstr ""
 "\"%2\"."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:160
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2344
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2363
 #, kde-format
@@ -11197,6 +11202,7 @@ msgid "Overwrite File?"
 msgstr "Naj prepišem datoteko?"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:245
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -18307,6 +18313,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:361
 #: core/libs/widgets/mainview/daboutdata.cpp:367
 #: core/libs/widgets/mainview/daboutdata.cpp:378
+#: core/utilities/geolocation/marble/plugins/PluginInterface.h:41
 #, kde-format
 msgid "Developer"
 msgstr "Razvijalec"
@@ -41240,27 +41247,27 @@ msgid "Default from Desktop"
 msgstr "Privzeto iz namizja"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Premor/Predvajaj"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Zajemi"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:200
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:269
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Prišlo je do napake pri predstavnostnem predvajalniku..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:233
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Preklapljaj predvajanje v zanki"
@@ -41901,7 +41908,7 @@ msgctxt "@info:tooltip"
 msgid "Reset to default value"
 msgstr "Ponovno nastavi na privzeto vrednost"
 
-#: core/libs/widgets/files/dbinaryiface.cpp:215
+#: core/libs/widgets/files/dbinaryiface.cpp:217
 #, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
@@ -41965,6 +41972,11 @@ msgstr ""
 #, kde-format
 msgid "Change"
 msgstr "Sprememba"
+
+#: core/libs/widgets/files/dbinarysearch.cpp:190
+#, kde-format
+msgid "The binary file found does not appear to be working as intended."
+msgstr ""
 
 #: core/libs/widgets/files/dfileselector.cpp:58
 #, kde-format
@@ -44627,7 +44639,7 @@ msgstr "Arabsko (Irak)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:51
 msgctxt "@info: country code"
 msgid "Arabic (Israel)"
-msgstr "arabsko (Izrael)"
+msgstr "Arabsko (Izrael)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:52
 msgctxt "@info: country code"
@@ -45649,7 +45661,7 @@ msgstr "Hausa (Čad)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:257
 msgctxt "@info: country code"
 msgid "Hawaiian (US state of Hawaii)"
-msgstr "havajsko (Država Havaji ZDA)"
+msgstr "Havajsko (Država Havaji ZDA)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:258
 msgctxt "@info: country code"
@@ -45669,12 +45681,12 @@ msgstr "Hmong (Laos)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:261
 msgctxt "@info: country code"
 msgid "Croatian (Bosnia and Herzegovina, Latin)"
-msgstr "hrvaško (Bosna in Hercegovina, latinica)"
+msgstr "Hrvaško (Bosna in Hercegovina, latinica)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:262
 msgctxt "@info: country code"
 msgid "Croatian (Croatia)"
-msgstr "hrvaško (Hrvaška)"
+msgstr "Hrvaško (Hrvaška)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:263
 msgctxt "@info: country code"
@@ -53034,6 +53046,13 @@ msgstr "Google Maps"
 msgid "Float items"
 msgstr "Lebdeči predmeti"
 
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:421
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:494
+#, fuzzy, kde-format
+#| msgid "Export Bookmarks..."
+msgid "Export as..."
+msgstr "Izvozi zaznamke..."
+
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
 #, kde-format
 msgid "Marble Virtual Globe"
@@ -53283,6 +53302,13 @@ msgstr "Uredi zaznamke"
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Dodaj zaznamek..."
+
+#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
+#, fuzzy, kde-format
+#| msgctxt "@item: icc profile properties"
+#| msgid "Copyright"
+msgid "<p>Copyright %1</p>"
+msgstr "Avtorske pravice"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, kde-format
@@ -53981,97 +54007,97 @@ msgstr ""
 "Datoteka je datoteka GPX, a ni bilo najdenih nobenih točk z veljavnimi "
 "časovnimi vrednostmi."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:259
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:58
 #, kde-format
 msgid "Zoom in"
 msgstr "Približaj"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:266
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:65
 #, kde-format
 msgid "Zoom out"
 msgstr "Oddalji"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:272
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:71
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Preklopi med označevalniki in sličicami."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:290
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:89
 #, kde-format
 msgid "Preview single items"
 msgstr "Predogled enojnih predmetov"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:293
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:92
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Predogled predmetov v skupini"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:296
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:95
 #, kde-format
 msgid "Show numbers"
 msgstr "Pokaži številke"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:302
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:101
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Poveča velikost sličice na zemljevidu"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:305
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:104
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Zmanjša velikost sličice na zemljevidu"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:312
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:111
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Odstrani trenutno izbiro območja"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:320
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:119
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Izberite slike tako, da narišete pravokotnik"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:325
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:124
 #, kde-format
 msgid "Pan mode"
 msgstr "Način pomikanja"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:131
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Približaj v skupino"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:338
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:137
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Ustvari izbiro območja iz sličice"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:344
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:143
 #, kde-format
 msgid "Filter images"
 msgstr "Filtriraj slike"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:349
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:148
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Odstrani trenutni filter"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:354
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:153
 #, kde-format
 msgid "Select images"
 msgstr "Izberite slike"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:360
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:159
 #, kde-format
 msgid "Lock the map position"
 msgstr "Zakleni položaj zemljevida"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:363
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:162
 #, kde-format
 msgid "Load tracks from albums"
 msgstr "Naloži sledi iz albumov"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:833
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:632
 #, kde-format
 msgid "Map settings"
 msgstr "Nastavitve zemljevida"
@@ -56285,7 +56311,7 @@ msgstr "Oznake v relaciji"
 msgid "Add custom tag..."
 msgstr "Dodaj oznako po meri..."
 
-#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:366
+#: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:365
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguriraj"
@@ -56427,7 +56453,7 @@ msgstr "Mreža:"
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:497
 #, kde-format
 msgid "Color of the coordinate grid."
-msgstr "Barva koordinatne mreže"
+msgstr "Barva koordinatne mreže."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:922
@@ -56882,17 +56908,17 @@ msgstr "Prenesi napredek"
 msgid "Shows a pie chart download progress indicator"
 msgstr "Pokaži krožnik kazalnik napredka"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:28
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
 #, kde-format
 msgid "Cache File Parser"
-msgstr "razčlenjevalnik datoteke v medpomnilniku"
+msgstr "Razčlenjevalnik datoteke v medpomnilniku"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:43
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
 msgid "Create GeoDataDocument from Cache Files"
 msgstr "Ustvari GeoDataDocument iz datotek v medpomnilniku"
 
-#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:59
+#: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
 #, kde-format
 msgid "Marble Cache Files"
 msgstr "Marble datoteke v medpomnilniku"
@@ -56905,7 +56931,7 @@ msgstr "razčlenjevalnik datoteke GPSBabel NMEA"
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
 msgid "Allows loading of NMEA files through GPSBabel."
-msgstr "Dovoljuje nalaganje datotek NMEA prek GPSBabel"
+msgstr "Dovoljuje nalaganje datotek NMEA prek GPSBabel."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
 #, kde-format
@@ -57356,17 +57382,13 @@ msgid "Show Coordinate Grid"
 msgstr "Prikaži koordinatno mrežo"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:216
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the world-map coordinate grid overlay\n"
-#| "This setting take effect only with the Atlas,\n"
-#| "the Satellite, and the Open-Street Maps."
+#, kde-format
 msgid ""
 "Show the world-map coordinate grid overlay.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-"Prikaži plast koordinatne mreže zemljevida sveta\n"
+"Prikaži plast koordinatne mreže zemljevida sveta.\n"
 "Ta nastavitev velja samo z Atlasom,\n"
 "Satellite in Open-Street Map."
 
@@ -57376,17 +57398,13 @@ msgid "Show Cross-Hair"
 msgstr "Prikaži merilni križec"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:221
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show cross-hair on a center of the map\n"
-#| "This setting take effect only with the Atlas,\n"
-#| "the Satellite, and the Open-Street Maps."
+#, kde-format
 msgid ""
 "Show cross-hair on a center of the map.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-"Pokaži merilni križec na sredini zemljevida\n"
+"Pokaži merilni križec na sredini zemljevida.\n"
 "Ta nastavitev velja samo z Atlasom,\n"
 "Satellite in Open-Street Map."
 
@@ -57396,17 +57414,13 @@ msgid "Show Atmospheric Glow"
 msgstr "Prikaži sijaj atmosfere"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the world-map atmospheric glow overlay\n"
-#| "This setting take effect only with the Atlas,\n"
-#| "the Satellite, and the Open-Street Maps."
+#, kde-format
 msgid ""
 "Show the world-map atmospheric glow overlay.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-"Pokaži prekrivni sloj sijaja atmosfere zemljevida sveta\n"
+"Pokaži prekrivni sloj sijaja atmosfere zemljevida sveta.\n"
 "Ta nastavitev velja samo z Atlasom,\n"
 "Satellite in Open-Street Map."
 
@@ -57416,17 +57430,13 @@ msgid "Show Night Shadow"
 msgstr "Prikaži senco noči"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:231
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the world-map night shadow overlay\n"
-#| "This setting take effect only with the Atlas,\n"
-#| "the Satellite, and the Open-Street Maps."
+#, kde-format
 msgid ""
 "Show the world-map night shadow overlay.\n"
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-"Prikaži prekrivni sloj sence noči zemljevida sveta\n"
+"Prikaži prekrivni sloj sence noči zemljevida sveta.\n"
 "Ta nastavitev velja samo z Atlasom,\n"
 "Satellite in Open-Street Map."
 
@@ -57436,17 +57446,13 @@ msgid "Show City Place Mark"
 msgstr "Pokaži oznako mesta"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:236
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the world-map city place mark overlay\n"
-#| "This setting take effect only with the Atlas and Satellite Maps\n"
-#| "not the Open-Street Map."
+#, kde-format
 msgid ""
 "Show the world-map city place mark overlay.\n"
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
-"Prikaži sloj oznak mest na zemljevidu sveta\n"
+"Prikaži sloj oznak mest na zemljevidu sveta.\n"
 "Ta nastavitev velja samo z Atlasom in Satelitskimi zemljevidi\n"
 "ne Open-Street Map."
 
@@ -57456,41 +57462,35 @@ msgid "Show Relief"
 msgstr "Prikaži relief"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:241
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the world-map relief overlay\n"
-#| "This setting take effect only with the Atlas and Satellite Maps\n"
-#| "not the Open-Street Map."
+#, kde-format
 msgid ""
 "Show the world-map relief overlay.\n"
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
-"Prikaži sloj reliefa na zemljevidu sveta\n"
+"Prikaži sloj reliefa na zemljevidu sveta.\n"
 "Ta nastavitev velja samo z Atlasom in Satelitskimi zemljevidi\n"
 "ne Open-Street Map."
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:274
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
 #, kde-format
 msgid "Marble View"
 msgstr "Pogled Marble"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:295
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
 #, kde-format
 msgid "Marble Plugins"
 msgstr "Vtičniki Marble"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Border Tool"
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
+#, kde-format
 msgid "Render Tools"
-msgstr "Orodje za obrobe"
+msgstr "Orodja za upodabljanje"
 
-#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:81
-#, fuzzy, kde-format
-#| msgid "Shear Tool"
+#: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:83
+#, kde-format
 msgid "Runner Tools"
-msgstr "Orodje za nagibanje"
+msgstr "Orodja za tek"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -60674,7 +60674,7 @@ msgstr "Odstrani vse slike iz osvetlitvene mize ob zaprtju"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
-msgstr "Približaj na 100 %"
+msgstr "Približaj na 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:188
@@ -68005,9 +68005,6 @@ msgstr "Ali želite ponovno nastaviti vse nastavitve na privzete vrednosti?"
 
 #~ msgid "Import Bookmarks..."
 #~ msgstr "Uvozi zaznamke..."
-
-#~ msgid "Export Bookmarks..."
-#~ msgstr "Izvozi zaznamke..."
 
 #~ msgid "Folders"
 #~ msgstr "Mape"
