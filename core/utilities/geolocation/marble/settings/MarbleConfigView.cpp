@@ -272,7 +272,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     viewGrid->addWidget(grpCache, 1, 1, 1, 1);
     viewGrid->addWidget(grpMap,   2, 0, 1, 2);
 
-    addTab(viewSettings, i18n("Marble View"));
+    addTab(viewSettings, i18n("Map View"));
 
     connect(phyBtn, SIGNAL(clicked()),
             d->marbleWidget, SLOT(clearVolatileTileCache()));
@@ -293,7 +293,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
 
     d->pluginSettings->setModel(&d->pluginModel);
     d->pluginSettings->setObjectName(QLatin1String("plugin_page"));
-    addTab(d->pluginSettings, i18n("Marble Plugins"));
+    addTab(d->pluginSettings, i18n("Map Plugins"));
 
     // Setting the icons for the plugin view.
 
