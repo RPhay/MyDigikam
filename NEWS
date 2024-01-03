@@ -118,7 +118,7 @@ BUGFIXES:
 100 ==> 479295 - Feature request for digiKam's geo tagging.
 101 ==> 479275 - Duplicate tags created with "\" as separator since upgrade to 8.3.
 102 ==> 479148 - Startup stuck at Loading tools.
-103 ==> 
+103 ==> 479369 - digiKam 8.3 does not write the information to the file.
 104 ==> 
 105 ==> 
 106 ==> 
