@@ -119,7 +119,7 @@ BUGFIXES:
 101 ==> 479275 - Duplicate tags created with "\" as separator since upgrade to 8.3.
 102 ==> 479148 - Startup stuck at Loading tools.
 103 ==> 479369 - digiKam 8.3 does not write the information to the file.
-104 ==> 
+104 ==> 479365 - Unintended Time Shift in Calendar Time Stamp settings.
 105 ==> 
 106 ==> 
 107 ==> 
