@@ -53,7 +53,7 @@ bool MetaEngine::canWriteExif(const QString& filePath)
 
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
 
-#elif defined __MINGW32__
+#elif defined Q_OS_WIN
 
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
 
