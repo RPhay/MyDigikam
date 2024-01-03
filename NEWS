@@ -117,7 +117,7 @@ BUGFIXES:
 099 ==> 479297 - Add center lines to composition guides.
 100 ==> 479295 - Feature request for digiKam's geo tagging.
 101 ==> 479275 - Duplicate tags created with "\" as separator since upgrade to 8.3.
-102 ==> 
+102 ==> 479148 - Startup stuck at Loading tools.
 103 ==> 
 104 ==> 
 105 ==> 
