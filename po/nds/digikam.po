@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-02 00:39+0000\n"
+"POT-Creation-Date: 2024-01-03 00:39+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1120,7 +1120,7 @@ msgid "Unknown"
 msgstr "Nich begäng"
 
 #: core/app/items/utils/tooltipfiller.cpp:109
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1091
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1092
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:96
 #: core/utilities/import/items/importtooltipfiller.cpp:94
 #, kde-format
@@ -9125,8 +9125,7 @@ msgstr "Klöörpleeg för't Drucken bruken"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:411
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:484
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
@@ -10503,8 +10502,8 @@ msgid "Perspective Adjustment"
 msgstr "Kiekwinkel topassen"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:206
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1128
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1134
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1129
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1135
 #, kde-format
 msgid "Aspect Ratio Crop"
 msgstr "Proportschonaal Tosnieden"
@@ -10558,26 +10557,26 @@ msgid "Custom"
 msgstr "Egen"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:289
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:860
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:861
 #, fuzzy, kde-format
 #| msgid "Format"
 msgid "Format DIN A"
 msgstr "Formaat"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:290
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:861
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:862
 #, kde-format
 msgid "Golden Ratio"
 msgstr "Gollen Snitt"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:291
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:862
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:863
 #, fuzzy, kde-format
 msgid "Current Aspect Ratio"
 msgstr "Bildproportschoon wohren"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:292
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:863
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:864
 #, kde-format
 msgctxt "no aspect ratio"
 msgid "None"
@@ -10714,12 +10713,17 @@ msgid "Golden Mean"
 msgstr "Gollen Merrn"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:427
+#, fuzzy, kde-format
+msgid "Center Lines"
+msgstr "Zentimeters"
+
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:428
 #, kde-format
 msgctxt "no geometric form"
 msgid "None"
 msgstr "Keen"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:430
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:431
 #, kde-format
 msgid ""
 "With this option, you can display guide lines to help compose your "
@@ -10728,91 +10732,91 @@ msgstr ""
 "Mit disse Optschoon kannst Du Hölpstreek wiesen, mit de Du Dien Foto beter "
 "opbuen kannst."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:433
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:434
 #, kde-format
 msgid "Golden sections"
 msgstr "Gollen Sneed"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:434
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:435
 #, kde-format
 msgid "Enable this option to show golden sections."
 msgstr "Bruuk disse Optschoon, wenn Du de gollen Sneed wiest hebben wullt."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:436
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:437
 #, kde-format
 msgid "Golden spiral sections"
 msgstr "Gollen Spiraal-Sneed"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:437
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:438
 #, kde-format
 msgid "Enable this option to show golden spiral sections."
 msgstr ""
 "Bruuk disse Optschoon, wenn Du de gollen Spiraal-Sneed wiest hebben wullt."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:439
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:440
 #, kde-format
 msgid "Golden spiral"
 msgstr "Gollen Spiraal"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:440
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:441
 #, kde-format
 msgid "Enable this option to show a golden spiral guide."
 msgstr "Bruuk disse Optschoon, wenn Du en gollen Spiraal wiest hebben wullt."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:442
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:443
 #, kde-format
 msgid "Golden triangles"
 msgstr "Gollen Dre'ecks"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:443
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:444
 #, kde-format
 msgid "Enable this option to show golden triangles."
 msgstr ""
 "Maak disse Optschoon an, wenn Du de gollen Dre'ecks wiest hebben wullt."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:445
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:446
 #, kde-format
 msgid "Flip horizontally"
 msgstr "Kimmrecht ümdreihen"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:446
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:447
 #, kde-format
 msgid "Enable this option to flip the guidelines horizontally."
 msgstr ""
 "Maak disse Optschoon an, wenn Du de Hülplienen kimmrecht ümdreihen wullt."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:448
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:449
 #, kde-format
 msgid "Flip vertically"
 msgstr "Pielrecht ümdreihen"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:449
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:450
 #, kde-format
 msgid "Enable this option to flip the guidelines vertically."
 msgstr ""
 "Maak disse Optschoon an, wenn Du de Hülplienen pielrecht ümdreihen wullt."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:451
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:452
 #, kde-format
 msgid "Color and width:"
 msgstr "Klöör un Breed:"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:457
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:458
 #, kde-format
 msgid "Set here the color used to draw composition guides."
 msgstr "Hier kannst Du de Klöör för de Hölplienen fastleggen."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:458
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:459
 #, kde-format
 msgid "Set here the width in pixels used to draw composition guides."
 msgstr "Hier kannst Du de Breed vun de Hölplienen in Pixels fastleggen."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:477
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:478
 #, kde-format
 msgid "Composition Guides"
 msgstr "Tosamensett-Hülp"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:830
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:831
 #, kde-format
 msgctxt "custom ratio crop settings"
 msgid "Custom"
@@ -11317,7 +11321,7 @@ msgid "Scan Images"
 msgstr "Bild inlesen"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:83
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:104
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1870
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
@@ -11326,27 +11330,27 @@ msgid "New Image File Name"
 msgstr "Nieg Bilddatei-Naam"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:131
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:152
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Nich begäng"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:216
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:132
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:153
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Teelbild-Dateiformaat \"%1\" nich ünnerstütt."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:144
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:165
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Datei \"%1\" lett sik nich sekern."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:145
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:166
 #, kde-format
 msgid ""
 "Failed to save file\n"
@@ -11358,7 +11362,7 @@ msgstr ""
 "na \"%2\"."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:160
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:181
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2344
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2363
 #, fuzzy, kde-format
@@ -11368,7 +11372,7 @@ msgid "Overwrite File?"
 msgstr "Datei överschrieven?"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:245
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:182
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -55128,136 +55132,135 @@ msgstr ""
 "as Vörlaag för de\n"
 "Liekheit-Söök"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:180
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:179
 #, kde-format
 msgid "Roadmap"
 msgstr "Stratenkoort"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:181
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:180
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "Satellitenbild"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:182
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:181
 #, kde-format
 msgid "Hybrid"
 msgstr "Misch-Ansicht"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:183
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:182
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "Landschap"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:201
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Koortentyp-Kuntrull wiesen"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:206
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Navigatschoonkuntrull wiesen"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:211
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Maatkuntrull wiesen"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:224
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
 #: core/utilities/setup/setupgeolocation.cpp:131
 #, kde-format
 msgid "Google Maps"
 msgstr "Google-Koorten"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:402
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:473
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:472
 #, kde-format
 msgid "Float items"
 msgstr "Sweevelementen"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:421
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:494
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Export as..."
-msgstr "Leestekens"
-
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:195
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr "Marble, de virtuelle Globus"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:326
 #, kde-format
 msgid "Atlas map"
 msgstr "Atlaskoort"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "Satellitenbild"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap (Vector)"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:387
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Kugel"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:393
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:392
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:398
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:397
 #, kde-format
 msgid "Equirectangular"
 msgstr "Längdenliek Zylinnerprojizeren"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:409
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:408
 #, kde-format
 msgid "Show compass"
 msgstr "Kompass wiesen"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:414
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:413
 #, kde-format
 msgid "Show scale bar"
 msgstr "Maatbalken wiesen"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:419
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:418
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Show navigation"
 msgstr "Navigatschoonkuntrull wiesen"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:424
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:423
 #, kde-format
 msgid "Show overview map"
 msgstr "Översichtkoort wiesen"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:464
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:463
 #, kde-format
 msgid "Projection"
 msgstr "Projizeren"
+
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:72
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgid "Export as..."
+msgstr "Leestekens"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:160
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:183
@@ -58597,7 +58600,7 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
 #, kde-format
-msgid "Shows the atmosphere around the earth."
+msgid "A plugin to show the atmosphere around the earth."
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
@@ -58656,7 +58659,7 @@ msgstr "Kompass wiesen"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
 #, fuzzy, kde-format
-msgid "This is a float item that provides a compass."
+msgid "A plugin to show a float item that provides a compass over the map."
 msgstr "Albumegenschappen un Sammelninformatschonen bewerken"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
@@ -58692,19 +58695,19 @@ msgstr "Krink rut"
 msgid "German"
 msgstr "Hoochdüütsch"
 
-#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:73
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:72
 #, kde-format
 msgid "Crosshairs"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:78
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:77
 #, kde-format
 msgid "Cross&hairs"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
 #, kde-format
-msgid "A plugin that shows crosshairs."
+msgid "A plugin that shows crosshairs over the map."
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
@@ -58785,73 +58788,73 @@ msgstr "Pielrecht toeerst"
 msgid "Show numerical Labels."
 msgstr "Bildslötelwöör wiesen"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:71
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:70
 #, fuzzy, kde-format
 msgid "Coordinate Grid"
 msgstr "Poolkoordinaten"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:76
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:75
 #, fuzzy, kde-format
 msgid "Coordinate &Grid"
 msgstr "Poolkoordinaten"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:91
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:90
 #, kde-format
-msgid "A plugin that shows a coordinate grid."
+msgid "A plugin that shows a coordinate grid over the map."
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:213
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:212
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the coordinate grid."
 msgstr "Leggt de Klöör vun den tweten Streek fast."
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:224
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:223
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the tropic circles."
 msgstr "Leggt de Klöör vun den tweten Streek fast."
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:235
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:234
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the equator."
 msgstr "Leggt de Klöör vun den tweten Streek fast."
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:315
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:314
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Equator"
 msgstr "Kalenner"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:319
 #, fuzzy, kde-format
 msgid "Prime Meridian"
 msgstr "Öllern"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:321
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
 #, kde-format
 msgid "Antimeridian"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:406
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:408
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:410
 #, fuzzy, kde-format
 #| msgctxt "Filter Effect: Circle Out"
 #| msgid "Circle Out"
 msgid "Arctic Circle"
 msgstr "Krink rut"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:412
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
 #, fuzzy, kde-format
 #| msgid "Antarctica"
 msgid "Antarctic Circle"
@@ -58890,7 +58893,7 @@ msgstr "Topassen &op:"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
 #, fuzzy, kde-format
-msgid "This is a float item that provides a map scale."
+msgid "A plugin to show a float item that provides a map scale."
 msgstr "Albumegenschappen un Sammelninformatschonen bewerken"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
@@ -59108,29 +59111,29 @@ msgstr "Sammeln wegmaken"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Navigation"
 msgstr "Navigatschoonkuntrull wiesen"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:65
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "&Navigation"
 msgstr "Navigatschoonkuntrull wiesen"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:80
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
 #, kde-format
-msgid "A mouse control to zoom and move the map"
+msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:239
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
 #, fuzzy, kde-format
 msgid "Current Location Button"
 msgstr "Bildproportschoon wohren"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:242
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
 #, kde-format
 msgid "Home Button"
 msgstr ""
@@ -59149,7 +59152,7 @@ msgstr "Översichtkoort wiesen"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
 #, fuzzy, kde-format
-msgid "This is a float item that provides an overview map."
+msgid "A plugin to add a float item that provides an overview map."
 msgstr "Albumegenschappen un Sammelninformatschonen bewerken"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
@@ -59206,19 +59209,19 @@ msgstr "x"
 msgid "Position I&ndicator:"
 msgstr "Gröönfilter"
 
-#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:81
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:80
 #, fuzzy, kde-format
 msgid "Download Progress Indicator"
 msgstr "Belichten-Wiesers"
 
-#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:86
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:85
 #, fuzzy, kde-format
 msgid "&Download Progress"
 msgstr "Daalladen"
 
-#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:101
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:100
 #, fuzzy, kde-format
-msgid "Shows a pie chart download progress indicator"
+msgid "A plugin to show a pie chart download progress indicator over the map"
 msgstr "Belichten-Wiesers"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
@@ -59229,7 +59232,7 @@ msgstr "Ümformen"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
-msgid "Create GeoDataDocument from Cache Files"
+msgid "A plugin to create Geolocation Data Document from Cache Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
@@ -59246,7 +59249,7 @@ msgstr "Ümformen"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
-msgid "Allows loading of NMEA files through GPSBabel."
+msgid "A plugin to allow loading of NMEA files through GPSBabel."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
@@ -59262,7 +59265,7 @@ msgstr "Ümformen"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Gpx Files"
+msgid "A plugin to create Geolocation Data Document from Gpx Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
@@ -59279,7 +59282,7 @@ msgstr "Ümformen"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
 #, kde-format
-msgid "Create GeoDataDocument from GeoJSON Files"
+msgid "A plugin to create Geolocation Data Document from GeoJSON Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
@@ -59295,7 +59298,7 @@ msgstr "Ümformen"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
-msgid "Create GeoDataDocument from KML and KMZ Files"
+msgid "A plugin to create Geolocation Data Document from KML and KMZ Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
@@ -59303,34 +59306,36 @@ msgstr ""
 msgid "Google Earth KML"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:25
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:29
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:30
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap Nominatim"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
 #, kde-format
-msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
+msgid ""
+"A plugin to process Online reverse geocoding using the OpenStreetMap "
+"Nominatim service"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:20
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:21
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Osm File Parser"
 msgstr "Ümformen"
 
-#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:35
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Osm Files"
+msgid "A plugin to create Geolocation Data Document from Osm Files"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:52
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap Data"
@@ -59344,7 +59349,7 @@ msgstr "Ümformen"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Pn2 Files"
+msgid "A plugin to create Geolocation Data Document from Pn2 Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
@@ -59360,7 +59365,9 @@ msgstr "Ümformen"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Pnt Files"
+msgid ""
+"A plugin to create Geolocation Data Document from Micro World Database II "
+"Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
@@ -59785,14 +59792,14 @@ msgstr ""
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
 #, fuzzy, kde-format
 #| msgid "Marble Widget"
-msgid "Marble View"
+msgid "Map View"
 msgstr "Marble-Lüttprogramm"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
 #, fuzzy, kde-format
 #| msgctxt "imageplugins shortcuts"
 #| msgid "Image Plugins"
-msgid "Marble Plugins"
+msgid "Map Plugins"
 msgstr "Bildmodulen"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76

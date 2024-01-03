@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-02 00:39+0000\n"
+"POT-Creation-Date: 2024-01-03 00:39+0000\n"
 "PO-Revision-Date: 2023-12-17 19:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1104,7 +1104,7 @@ msgid "Unknown"
 msgstr "不明"
 
 #: core/app/items/utils/tooltipfiller.cpp:109
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1091
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1092
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:96
 #: core/utilities/import/items/importtooltipfiller.cpp:94
 #, kde-format
@@ -9073,8 +9073,7 @@ msgstr "列印使用的色彩管理"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:411
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:484
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
@@ -10433,8 +10432,8 @@ msgid "Perspective Adjustment"
 msgstr "透視調整"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:206
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1128
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1134
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1129
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1135
 #, kde-format
 msgid "Aspect Ratio Crop"
 msgstr "外觀比例裁剪"
@@ -10486,27 +10485,27 @@ msgid "Custom"
 msgstr "自訂"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:289
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:860
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:861
 #, fuzzy, kde-format
 #| msgid "Format"
 msgid "Format DIN A"
 msgstr "格式"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:290
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:861
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:862
 #, kde-format
 msgid "Golden Ratio"
 msgstr "黃金比例"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:291
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:862
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:863
 #, fuzzy, kde-format
 #| msgid "Current aspect ratio"
 msgid "Current Aspect Ratio"
 msgstr "目前影像比例"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:292
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:863
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:864
 #, kde-format
 msgctxt "no aspect ratio"
 msgid "None"
@@ -10659,99 +10658,105 @@ msgid "Golden Mean"
 msgstr "黃金平均"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:427
+#, fuzzy, kde-format
+#| msgid "Center"
+msgid "Center Lines"
+msgstr "置中"
+
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:428
 #, kde-format
 msgctxt "no geometric form"
 msgid "None"
 msgstr "無"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:430
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:431
 #, kde-format
 msgid ""
 "With this option, you can display guide lines to help compose your "
 "photograph."
 msgstr "使用這個選項，您可以顯示參考線來協助編排您的相片。"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:433
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:434
 #, kde-format
 msgid "Golden sections"
 msgstr "黃金區段"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:434
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:435
 #, kde-format
 msgid "Enable this option to show golden sections."
 msgstr "啟用這個選項來顯示黃金區段。"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:436
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:437
 #, kde-format
 msgid "Golden spiral sections"
 msgstr "黃金螺旋區段"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:437
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:438
 #, kde-format
 msgid "Enable this option to show golden spiral sections."
 msgstr "啟用這個選項來顯示黃金螺旋區段。"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:439
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:440
 #, kde-format
 msgid "Golden spiral"
 msgstr "黃金螺旋"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:440
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:441
 #, kde-format
 msgid "Enable this option to show a golden spiral guide."
 msgstr "啟用這個選項來顯示黃金螺旋參考線。"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:442
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:443
 #, kde-format
 msgid "Golden triangles"
 msgstr "黃金三角"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:443
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:444
 #, kde-format
 msgid "Enable this option to show golden triangles."
 msgstr "啟用這個選項來顯示黃金三角。"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:445
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:446
 #, kde-format
 msgid "Flip horizontally"
 msgstr "水平翻轉"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:446
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:447
 #, kde-format
 msgid "Enable this option to flip the guidelines horizontally."
 msgstr "啟用這個選項來水平翻轉參考線。"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:448
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:449
 #, kde-format
 msgid "Flip vertically"
 msgstr "垂直翻轉"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:449
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:450
 #, kde-format
 msgid "Enable this option to flip the guidelines vertically."
 msgstr "啟用這個選項來垂直翻轉參考線。"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:451
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:452
 #, kde-format
 msgid "Color and width:"
 msgstr "顏色和寬度："
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:457
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:458
 #, kde-format
 msgid "Set here the color used to draw composition guides."
 msgstr "在這裡用於繪製編排參考線的顏色。"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:458
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:459
 #, kde-format
 msgid "Set here the width in pixels used to draw composition guides."
 msgstr "在這裡用於繪製編排參考線的寬度，單位為像素。"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:477
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:478
 #, kde-format
 msgid "Composition Guides"
 msgstr "編排參考線："
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:830
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:831
 #, kde-format
 msgctxt "custom ratio crop settings"
 msgid "Custom"
@@ -11228,7 +11233,7 @@ msgid "Scan Images"
 msgstr "掃描影像"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:83
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:104
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1870
 #, kde-format
 msgctxt "@title:window"
@@ -11236,27 +11241,27 @@ msgid "New Image File Name"
 msgstr "新的影像檔案名稱"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:131
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:152
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "未知格式"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:216
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:132
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:153
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "不支援目標影像檔案格式「%1」。"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:144
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:165
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "無法儲存「%1」檔案"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:145
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:166
 #, kde-format
 msgid ""
 "Failed to save file\n"
@@ -11267,7 +11272,7 @@ msgstr ""
 "到 \"%2\" 失敗。"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:160
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:181
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2344
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2363
 #, kde-format
@@ -11276,7 +11281,7 @@ msgid "Overwrite File?"
 msgstr "覆寫檔案嗎？"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:245
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:182
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -55024,135 +55029,134 @@ msgstr ""
 "在這裡繪製速寫\n"
 "以執行模糊搜尋"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:180
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:179
 #, kde-format
 msgid "Roadmap"
 msgstr "路線圖"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:181
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:180
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "衛星"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:182
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:181
 #, kde-format
 msgid "Hybrid"
 msgstr "混合"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:183
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:182
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "地域"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:201
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "顯示地圖型態控制"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:206
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "顯示導航控制"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:211
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Scale Control"
 msgstr "顯示縮放控制"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:224
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
 #: core/utilities/setup/setupgeolocation.cpp:131
 #, kde-format
 msgid "Google Maps"
 msgstr "Google 地圖"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:402
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:473
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:472
 #, kde-format
 msgid "Float items"
 msgstr "浮動項目"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:421
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:494
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgid "Export as..."
-msgstr "書籤"
-
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:195
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr "Marble 虛擬地球儀"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:326
 #, kde-format
 msgid "Atlas map"
 msgstr "地圖集"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
 #, kde-format
 msgid "Satellite map"
 msgstr "衛星地圖"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "開放街圖"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap (Vector)"
 msgstr "開放街圖"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:387
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "球狀"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:393
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:392
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "麥卡托投影（Mercator）"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:398
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:397
 #, kde-format
 msgid "Equirectangular"
 msgstr "等量投影（Equirectangular）"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:409
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:408
 #, kde-format
 msgid "Show compass"
 msgstr "顯示羅盤"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:414
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:413
 #, kde-format
 msgid "Show scale bar"
 msgstr "顯示刻度列"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:419
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:418
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Show navigation"
 msgstr "顯示導航控制"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:424
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:423
 #, kde-format
 msgid "Show overview map"
 msgstr "顯示概要地圖"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:464
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:463
 #, kde-format
 msgid "Projection"
 msgstr "投影"
+
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:72
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgid "Export as..."
+msgstr "書籤"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:160
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:183
@@ -58528,7 +58532,7 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
 #, kde-format
-msgid "Shows the atmosphere around the earth."
+msgid "A plugin to show the atmosphere around the earth."
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
@@ -58588,7 +58592,7 @@ msgstr "顯示羅盤"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
 #, fuzzy, kde-format
-msgid "This is a float item that provides a compass."
+msgid "A plugin to show a float item that provides a compass over the map."
 msgstr "新增基於外觀比例資訊的過濾器；"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
@@ -58625,19 +58629,19 @@ msgstr "圓形擴大"
 msgid "German"
 msgstr "德語"
 
-#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:73
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:72
 #, kde-format
 msgid "Crosshairs"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:78
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:77
 #, kde-format
 msgid "Cross&hairs"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
 #, kde-format
-msgid "A plugin that shows crosshairs."
+msgid "A plugin that shows crosshairs over the map."
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
@@ -58722,77 +58726,77 @@ msgstr "先調整垂直"
 msgid "Show numerical Labels."
 msgstr "顯示影像標籤"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:71
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:70
 #, fuzzy, kde-format
 #| msgid "Coordinates"
 msgid "Coordinate Grid"
 msgstr "座標"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:76
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:75
 #, fuzzy, kde-format
 #| msgid "Coordinates"
 msgid "Coordinate &Grid"
 msgstr "座標"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:91
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:90
 #, kde-format
-msgid "A plugin that shows a coordinate grid."
+msgid "A plugin that shows a coordinate grid over the map."
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:213
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:212
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the coordinate grid."
 msgstr "在這裡設定第二條線的顏色。"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:224
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:223
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the tropic circles."
 msgstr "在這裡設定第二條線的顏色。"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:235
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:234
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the equator."
 msgstr "在這裡設定第二條線的顏色。"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:315
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:314
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgid "Equator"
 msgstr "我的行事曆"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:319
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Parameters"
 msgid "Prime Meridian"
 msgstr "參數"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:321
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
 #, kde-format
 msgid "Antimeridian"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:406
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:408
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:410
 #, fuzzy, kde-format
 #| msgctxt "Filter Effect: Circle Out"
 #| msgid "Circle Out"
 msgid "Arctic Circle"
 msgstr "圓形擴大"
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:412
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
 #, fuzzy, kde-format
 #| msgid "Antarctica"
 msgid "Antarctic Circle"
@@ -58833,7 +58837,7 @@ msgstr "調整大小到(&S)："
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
 #, fuzzy, kde-format
-msgid "This is a float item that provides a map scale."
+msgid "A plugin to show a float item that provides a map scale."
 msgstr "新增基於外觀比例資訊的過濾器；"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
@@ -59059,30 +59063,30 @@ msgstr "移除收藏"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Navigation"
 msgstr "顯示導航控制"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:65
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "&Navigation"
 msgstr "顯示導航控制"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:80
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
 #, kde-format
-msgid "A mouse control to zoom and move the map"
+msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:239
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
 #, fuzzy, kde-format
 #| msgid "Current aspect ratio"
 msgid "Current Location Button"
 msgstr "目前影像比例"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:242
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
 #, kde-format
 msgid "Home Button"
 msgstr ""
@@ -59101,7 +59105,7 @@ msgstr "顯示概要地圖"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
 #, fuzzy, kde-format
-msgid "This is a float item that provides an overview map."
+msgid "A plugin to add a float item that provides an overview map."
 msgstr "新增基於外觀比例資訊的過濾器；"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
@@ -59159,21 +59163,21 @@ msgstr "px"
 msgid "Position I&ndicator:"
 msgstr "地理位置濾鏡"
 
-#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:81
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:80
 #, fuzzy, kde-format
 msgid "Download Progress Indicator"
 msgstr "顯示詳情進度對視窗"
 
-#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:86
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:85
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
 msgid "&Download Progress"
 msgstr "下載新項目"
 
-#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:101
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:100
 #, fuzzy, kde-format
-msgid "Shows a pie chart download progress indicator"
+msgid "A plugin to show a pie chart download progress indicator over the map"
 msgstr "顯示詳情進度對視窗"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
@@ -59184,7 +59188,7 @@ msgstr "變形"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
-msgid "Create GeoDataDocument from Cache Files"
+msgid "A plugin to create Geolocation Data Document from Cache Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
@@ -59201,7 +59205,7 @@ msgstr "變形"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
-msgid "Allows loading of NMEA files through GPSBabel."
+msgid "A plugin to allow loading of NMEA files through GPSBabel."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
@@ -59219,7 +59223,7 @@ msgstr "變形"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Gpx Files"
+msgid "A plugin to create Geolocation Data Document from Gpx Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
@@ -59236,7 +59240,7 @@ msgstr "變形"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
 #, kde-format
-msgid "Create GeoDataDocument from GeoJSON Files"
+msgid "A plugin to create Geolocation Data Document from GeoJSON Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
@@ -59252,7 +59256,7 @@ msgstr "變形"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
-msgid "Create GeoDataDocument from KML and KMZ Files"
+msgid "A plugin to create Geolocation Data Document from KML and KMZ Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
@@ -59260,34 +59264,36 @@ msgstr ""
 msgid "Google Earth KML"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:25
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:29
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:30
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap Nominatim"
 msgstr "開放街圖"
 
-#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
 #, kde-format
-msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
+msgid ""
+"A plugin to process Online reverse geocoding using the OpenStreetMap "
+"Nominatim service"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:20
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:21
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Osm File Parser"
 msgstr "變形"
 
-#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:35
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Osm Files"
+msgid "A plugin to create Geolocation Data Document from Osm Files"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:52
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap Data"
@@ -59301,7 +59307,7 @@ msgstr "變形"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Pn2 Files"
+msgid "A plugin to create Geolocation Data Document from Pn2 Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
@@ -59317,7 +59323,9 @@ msgstr "變形"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Pnt Files"
+msgid ""
+"A plugin to create Geolocation Data Document from Micro World Database II "
+"Files"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
@@ -59715,13 +59723,13 @@ msgstr ""
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
 #, fuzzy, kde-format
 #| msgid "Marble 2"
-msgid "Marble View"
+msgid "Map View"
 msgstr "大理石 2"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
 #, fuzzy, kde-format
 #| msgid "Loading..."
-msgid "Marble Plugins"
+msgid "Map Plugins"
 msgstr "載入中..."
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
