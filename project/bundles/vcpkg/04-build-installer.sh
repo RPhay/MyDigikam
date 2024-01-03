@@ -167,8 +167,8 @@ done
 echo -e "\n---------- Qt6 plugins"
 cp -r $VCPKG_INSTALL_PREFIX/Qt6/plugins                                   $BUNDLEDIR/                           2>/dev/null
 
-echo -e "\n---------- OpenAL for QtAV"
-cp -r $VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                           2>/dev/null
+echo -e "\n---------- OpenGl Software for Qt6"
+cp -r $ORIG_WD/data/opengl32sw.dll                                        $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- ImageMagick"
 
