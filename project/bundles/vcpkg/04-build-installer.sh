@@ -168,6 +168,8 @@ echo -e "\n---------- Qt6 plugins"
 cp -r $VCPKG_INSTALL_PREFIX/Qt6/plugins                                   $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- OpenGl Software for Qt6"
+# Taken from https://download.qt.io/development_releases/prebuilt/llvmpipe/windows/
+# See bug #479148
 cp -r $ORIG_WD/data/opengl32sw.dll                                        $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- ImageMagick"
