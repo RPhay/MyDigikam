@@ -120,6 +120,14 @@ public:
     void setZoom(const QString& newZoom);
     QString getZoom();
 
+    /**
+     * @brief Adjusts the visible map area such that all grouped markers are visible.
+     *
+     * Note that a call to this function currently has no effect if the widget has been
+     * set inactive via setActive() or the backend is not yet ready.
+     *
+     * @param useSaneZoomLevel Stop zooming at a sane level, if markers are too close together.
+     */
     void adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel = true);
     void refreshMap();
 
@@ -141,7 +149,12 @@ protected:
     void applyCacheToBackend();
     void saveBackendToCache();
     void setShowPlaceholderWidget(const bool state);
+
+    /**
+     * @brief Set @p widgetForFrame as the widget in the frame, but does not show it.
+     */
     void setMapWidgetInFrame(QWidget* const widgetForFrame);
+
     void removeMapWidgetFromFrame();
 
 public Q_SLOTS:
@@ -155,8 +168,18 @@ protected Q_SLOTS:
     void slotBackendZoomChanged(const QString& newZoom);
     void slotClustersMoved(const QIntList& clusterIndices, const QPair<int, QModelIndex>& snapTarget);
     void slotClustersClicked(const QIntList& clusterIndices);
+
+    /**
+     * @brief Helper function to buffer reclustering
+     */
     void slotLazyReclusteringRequestCallBack();
+
+    /**
+     * @brief Request reclustering, repeated calls should generate only one actual update of the clusters
+     */
     void slotRequestLazyReclustering();
+
+    void slotRemoveCurrentRegionSelection();
     void slotNewSelectionFromMap(const Digikam::GeoCoordinates::Pair& sel);
 
 Q_SIGNALS:
@@ -216,8 +239,6 @@ public Q_SLOTS:
 protected Q_SLOTS:
 
     void slotMouseModeChanged(QAction* triggeredAction);
-    void slotRemoveCurrentRegionSelection();
-
 
 protected:
 
@@ -252,6 +273,17 @@ public:
 
     QString convertZoomToBackendZoom(const QString& someZoom, const QString& targetBackend) const;
 
+    /**
+     * @brief Return color and style information for rendering the cluster
+     * @param clusterIndex Index of the cluster
+     * @param fillColor Color used to fill the circle
+     * @param strokeColor Color used for the stroke around the circle
+     * @param strokeStyle Style used to draw the stroke around the circle
+     * @param labelText Text for the label
+     * @param labelColor Color for the label text
+     * @param overrideSelection Get the colors for a different selection state
+     * @param overrideCount Get the colors for a different amount of markers
+     */
     void getColorInfos(const int clusterIndex, QColor* fillColor, QColor* strokeColor,
                        Qt::PenStyle* strokeStyle, QString* labelText, QColor* labelColor,
                        const GeoGroupState* const overrideSelection = nullptr,
