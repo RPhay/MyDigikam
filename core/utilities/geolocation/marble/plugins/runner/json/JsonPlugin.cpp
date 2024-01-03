@@ -36,7 +36,7 @@ QString JsonPlugin::version() const
 
 QString JsonPlugin::description() const
 {
-    return i18n( "A plugin to create Geolocation Data Document from GeoJSON Files" );
+    return i18n( "A plugin to load Geolocation Data from the GeoJSON data file format." );
 }
 
 QString JsonPlugin::copyrightYears() const
@@ -48,7 +48,7 @@ QVector<PluginAuthor> JsonPlugin::pluginAuthors() const
 {
     return QVector<PluginAuthor>()
             << PluginAuthor(QStringLiteral("Ander Pijoan"), QStringLiteral("ander.pijoan@deusto.es"))
-        << PluginAuthor(QStringLiteral("John Zaitseff"), QStringLiteral("J.Zaitseff@zap.org.au"));
+            << PluginAuthor(QStringLiteral("John Zaitseff"), QStringLiteral("J.Zaitseff@zap.org.au"));
 }
 
 QString JsonPlugin::fileFormatDescription() const
@@ -58,7 +58,8 @@ QString JsonPlugin::fileFormatDescription() const
 
 QStringList JsonPlugin::fileExtensions() const
 {
-    return QStringList() << QStringLiteral("json") << QStringLiteral("geojson");
+    return QStringList() << QStringLiteral("json")
+                         << QStringLiteral("geojson");
 }
 
 ParsingRunner* JsonPlugin::newRunner() const

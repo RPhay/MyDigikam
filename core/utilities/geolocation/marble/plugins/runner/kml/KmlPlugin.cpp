@@ -34,7 +34,7 @@ QString KmlPlugin::version() const
 
 QString KmlPlugin::description() const
 {
-    return i18n( "A plugin to create Geolocation Data Document from KML and KMZ Files" );
+    return i18n( "A plugin to load Geolocation Data from the KML and KMZ data file format." );
 }
 
 QString KmlPlugin::copyrightYears() const
@@ -56,7 +56,8 @@ QString KmlPlugin::fileFormatDescription() const
 
 QStringList KmlPlugin::fileExtensions() const
 {
-    return QStringList() << QStringLiteral("kml") << QStringLiteral("kmz");
+    return QStringList() << QStringLiteral("kml")
+                         << QStringLiteral("kmz");
 }
 
 ParsingRunner* KmlPlugin::newRunner() const

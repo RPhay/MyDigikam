@@ -33,7 +33,7 @@ QString GpsbabelPlugin::version() const
 
 QString GpsbabelPlugin::description() const
 {
-    return i18n( "A plugin to allow loading of NMEA files through GPSBabel." );
+    return i18n( "A plugin to load Geolocation Data from NMEA files through GPSBabel command line tool." );
 }
 
 QString GpsbabelPlugin::copyrightYears() const

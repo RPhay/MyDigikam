@@ -33,7 +33,7 @@ QString Pn2Plugin::version() const
 
 QString Pn2Plugin::description() const
 {
-    return i18n( "A plugin to create Geolocation Data Document from Pn2 Files" );
+    return i18n( "A plugin to load Geolocation Data from the compressed Pnt data files format" );
 }
 
 QString Pn2Plugin::copyrightYears() const

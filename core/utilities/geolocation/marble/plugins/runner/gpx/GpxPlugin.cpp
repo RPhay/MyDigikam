@@ -33,7 +33,7 @@ QString GpxPlugin::version() const
 
 QString GpxPlugin::description() const
 {
-    return i18n( "A plugin to create Geolocation Data Document from Gpx Files" );
+    return i18n( "A plugin to load Geolocation Data from the Gpx data File format." );
 }
 
 QString GpxPlugin::copyrightYears() const

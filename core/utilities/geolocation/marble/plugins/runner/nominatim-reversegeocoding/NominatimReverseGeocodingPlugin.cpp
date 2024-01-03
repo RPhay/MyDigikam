@@ -42,7 +42,7 @@ QString NominatimPlugin::version() const
 
 QString NominatimPlugin::description() const
 {
-    return i18n( "A plugin to process Online reverse geocoding using the OpenStreetMap Nominatim service" );
+    return i18n( "A plugin to process Online reverse geocoding using the OpenStreetMap Nominatim web-service" );
 }
 
 QString NominatimPlugin::copyrightYears() const
