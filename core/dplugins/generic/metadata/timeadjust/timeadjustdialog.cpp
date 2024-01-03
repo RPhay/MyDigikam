@@ -268,11 +268,13 @@ void TimeAdjustDialog::readSettings()
     KConfigGroup group        = config->group(QLatin1String("Time Adjust Settings"));
 
     prm.customDate     = group.readEntry(QLatin1String("Custom Date"),                   QDateTime());
+    prm.customDate.setTimeSpec(Qt::UTC);
     prm.customTime     = group.readEntry(QLatin1String("Custom Time"),                   QDateTime());
-
+    prm.customTime.setTimeSpec(Qt::UTC);
     prm.adjustmentType = group.readEntry(QLatin1String("Adjustment Type"),               0);
     prm.adjustmentDays = group.readEntry(QLatin1String("Adjustment Days"),               0);
     prm.adjustmentTime = group.readEntry(QLatin1String("Adjustment Time"),               QDateTime());
+    prm.adjustmentTime.setTimeSpec(Qt::UTC);
 
     prm.updIfAvailable = group.readEntry(QLatin1String("Update Only If Available Time"), true);
     prm.updFileModDate = group.readEntry(QLatin1String("Update File Modification Time"), true);
