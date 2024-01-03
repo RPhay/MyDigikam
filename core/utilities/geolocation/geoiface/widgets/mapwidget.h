@@ -23,7 +23,7 @@
 #include <QList>
 #include <QStringList>
 
-// local includes
+// Local includes
 
 #include "digikam_export.h"
 #include "digikam_config.h"
@@ -83,6 +83,8 @@ public:
     explicit MapWidget(QWidget* const parent = nullptr);
     ~MapWidget() override;
 
+// --------------------------------------------------
+
 /// @name Settings related functions
 //@{
 
@@ -99,6 +101,8 @@ private Q_SLOTS:
 
     void slotApplySettings();
 //@}
+
+// --------------------------------------------------
 
 /// @name Map related functions
 //@{
@@ -118,7 +122,49 @@ public:
 
     void adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel = true);
     void refreshMap();
+
+    void setRegionSelection(const GeoCoordinates::Pair& region);
+    GeoCoordinates::Pair getRegionSelection();
+    void clearRegionSelection();
+
+    void updateMarkers();
+    void updateClusters();
+    void markClustersAsDirty();
+
+    QPixmap getDecoratedPixmapForCluster(const int clusterId, const GeoGroupState* const selectedStateOverride,
+                                         const int* const countOverride, QPoint* const centerPoint);
+    QVariant getClusterRepresentativeMarker(const int clusterIndex, const int sortKey);
+
+protected:
+
+    bool currentBackendReady() const;
+    void applyCacheToBackend();
+    void saveBackendToCache();
+    void setShowPlaceholderWidget(const bool state);
+    void setMapWidgetInFrame(QWidget* const widgetForFrame);
+    void removeMapWidgetFromFrame();
+
+public Q_SLOTS:
+
+    void slotClustersNeedUpdating();
+
+protected Q_SLOTS:
+
+    void slotBackendReadyChanged(const QString& backendName);
+    void slotChangeBackend(QAction* action);
+    void slotBackendZoomChanged(const QString& newZoom);
+    void slotClustersMoved(const QIntList& clusterIndices, const QPair<int, QModelIndex>& snapTarget);
+    void slotClustersClicked(const QIntList& clusterIndices);
+    void slotLazyReclusteringRequestCallBack();
+    void slotRequestLazyReclustering();
+    void slotNewSelectionFromMap(const Digikam::GeoCoordinates::Pair& sel);
+
+Q_SIGNALS:
+
+    void signalRegionSelectionChanged();
 //@}
+
+// --------------------------------------------------
 
 /// @name Data Management
 //@{
@@ -130,7 +176,17 @@ public:
     void setGroupedModel(AbstractMarkerTiler* const markerModel);
     void setDragDropHandler(GeoDragDropHandler* const dragDropHandler);
     void setTrackManager(TrackManager* const trackManager);
+
+protected Q_SLOTS:
+
+    void slotUngroupedModelChanged();
+
+Q_SIGNALS:
+
+    void signalUngroupedModelChanged(const int index);
 //@}
+
+// --------------------------------------------------
 
 /// @name UI setup
 //@{
@@ -151,7 +207,35 @@ public:
     void setStickyModeState(const bool state);
     void setVisibleExtraActions(const GeoExtraActions actions);
     void setEnabledExtraActions(const GeoExtraActions actions);
+
+public Q_SLOTS:
+
+    void slotUpdateActionsEnabled();
+    void slotStickyModeChanged();
+
+protected Q_SLOTS:
+
+    void slotMouseModeChanged(QAction* triggeredAction);
+    void slotRemoveCurrentRegionSelection();
+
+
+protected:
+
+    void rebuildConfigurationMenu();
+    void createActions();
+    void createActionsForBackendSelection();
+
+    void dropEvent(QDropEvent* event)           override;
+    void dragMoveEvent(QDragMoveEvent* event)   override;
+    void dragEnterEvent(QDragEnterEvent* event) override;
+    void dragLeaveEvent(QDragLeaveEvent* event) override;
+
+Q_SIGNALS:
+
+    void signalMouseModeChanged(const Digikam::GeoMouseModes& currentMouseMode);
 //@}
+
+// --------------------------------------------------
 
 /// @name Appearance
 //@{
@@ -166,32 +250,7 @@ public:
     int  getUndecoratedThumbnailSize() const;
     void setShowThumbnails(const bool state);
 
-public Q_SLOTS:
-
-    void slotZoomIn();
-    void slotZoomOut();
-    void slotDecreaseThumbnailSize();
-    void slotIncreaseThumbnailSize();
-//@}
-
-/// @name Region selection
-//@{
-
-public:
-
-    void setRegionSelection(const GeoCoordinates::Pair& region);
-    GeoCoordinates::Pair getRegionSelection();
-    void clearRegionSelection();
-//@}
-
-/// @name Internal Functions
-//@{
-
-public:
-
-    void updateMarkers();
-    void updateClusters();
-    void markClustersAsDirty();
+    QString convertZoomToBackendZoom(const QString& someZoom, const QString& targetBackend) const;
 
     void getColorInfos(const int clusterIndex, QColor* fillColor, QColor* strokeColor,
                        Qt::PenStyle* strokeStyle, QString* labelText, QColor* labelColor,
@@ -203,65 +262,26 @@ public:
                        QColor* fillColor, QColor* strokeColor,
                        Qt::PenStyle* strokeStyle, QString* labelText, QColor* labelColor) const;
 
-    QString convertZoomToBackendZoom(const QString& someZoom, const QString& targetBackend) const;
-    QPixmap getDecoratedPixmapForCluster(const int clusterId, const GeoGroupState* const selectedStateOverride,
-                                         const int* const countOverride, QPoint* const centerPoint);
-    QVariant getClusterRepresentativeMarker(const int clusterIndex, const int sortKey);
-
 public Q_SLOTS:
 
-    void slotUpdateActionsEnabled();
-    void slotClustersNeedUpdating();
+    void slotZoomIn();
+    void slotZoomOut();
+    void slotDecreaseThumbnailSize();
+    void slotIncreaseThumbnailSize();
     void stopThumbnailTimer();
-    void slotStickyModeChanged();
-//@}
+
+protected Q_SLOTS:
+
+    void slotShowThumbnailsChanged();
 
 Q_SIGNALS:
 
-    void signalUngroupedModelChanged(const int index);
-    void signalRegionSelectionChanged();
     void signalRemoveCurrentFilter();
     void signalStickyModeChanged();
-    void signalMouseModeChanged(const Digikam::GeoMouseModes& currentMouseMode);
     void signalLoadTracksFromAlbums();
-
-protected:
-
-    bool currentBackendReady() const;
-    void applyCacheToBackend();
-    void saveBackendToCache();
-    void rebuildConfigurationMenu();
-    void dropEvent(QDropEvent* event)           override;
-    void dragMoveEvent(QDragMoveEvent* event)   override;
-    void dragEnterEvent(QDragEnterEvent* event) override;
-    void dragLeaveEvent(QDragLeaveEvent* event) override;
-    void createActions();
-    void createActionsForBackendSelection();
-    void setShowPlaceholderWidget(const bool state);
-    void setMapWidgetInFrame(QWidget* const widgetForFrame);
-    void removeMapWidgetFromFrame();
-
-protected Q_SLOTS:
-
-    void slotBackendReadyChanged(const QString& backendName);
-    void slotChangeBackend(QAction* action);
-    void slotBackendZoomChanged(const QString& newZoom);
-    void slotClustersMoved(const QIntList& clusterIndices, const QPair<int, QModelIndex>& snapTarget);
-    void slotClustersClicked(const QIntList& clusterIndices);
-    void slotShowThumbnailsChanged();
-    void slotRequestLazyReclustering();
-    void slotLazyReclusteringRequestCallBack();
-    void slotUngroupedModelChanged();
-    void slotNewSelectionFromMap(const Digikam::GeoCoordinates::Pair& sel);
-
-/// @name Mouse modes
-//@{
-
-protected Q_SLOTS:
-
-    void slotMouseModeChanged(QAction* triggeredAction);
-    void slotRemoveCurrentRegionSelection();
 //@}
+
+// --------------------------------------------------
 
 private:
 
