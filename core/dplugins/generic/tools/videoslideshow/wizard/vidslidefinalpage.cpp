@@ -51,7 +51,7 @@ public:
       : progressView(nullptr),
         progressBar(nullptr),
         complete(false),
-        encoder(nullptr),
+//        encoder(nullptr),
         wizard(nullptr),
         settings(nullptr),
         iface(nullptr)
@@ -68,7 +68,7 @@ public:
     DHistoryView*     progressView;
     DProgressWdg*     progressBar;
     bool              complete;
-    VidSlideThread*   encoder;
+//    VidSlideThread*   encoder;
     VidSlideWizard*   wizard;
     VidSlideSettings* settings;
     DInfoInterface*   iface;
@@ -95,8 +95,9 @@ VidSlideFinalPage::VidSlideFinalPage(QWizard* const dialog, const QString& title
 
 VidSlideFinalPage::~VidSlideFinalPage()
 {
-    if (d->encoder)
-        d->encoder->cancel();
+// FIXME
+//    if (d->encoder)
+//        d->encoder->cancel();
 
     delete d;
 }
@@ -134,7 +135,7 @@ void VidSlideFinalPage::slotProcess()
 
     d->progressBar->setMinimum(0);
     d->progressBar->setMaximum(d->settings->inputImages.count());
-
+/*
     d->encoder = new VidSlideThread(this);
 
     connect(d->encoder, SIGNAL(signalProgress(int)),
@@ -148,12 +149,13 @@ void VidSlideFinalPage::slotProcess()
 
     d->encoder->processStream(d->settings);
     d->encoder->start();
+*/
 }
 
 void VidSlideFinalPage::cleanupPage()
 {
-    if (d->encoder)
-        d->encoder->cancel();
+//    if (d->encoder)
+//        d->encoder->cancel();
 }
 
 void VidSlideFinalPage::slotMessage(const QString& mess, bool err)
@@ -182,6 +184,7 @@ void VidSlideFinalPage::slotDone(bool completed)
             d->progressView->addEntry(i18n("Opening video stream in player..."),
                                       DHistoryView::ProgressEntry);
 
+/* FIXME
             if (d->settings->outputPlayer == VidSlideSettings::INTERNAL)
             {
                 VidPlayerDlg* const player = new VidPlayerDlg(d->settings->outputVideo, this);
@@ -189,9 +192,9 @@ void VidSlideFinalPage::slotDone(bool completed)
                 player->resize(800, 600);
             }
             else
-            {
+            {*/
                 QDesktopServices::openUrl(QUrl::fromLocalFile(d->settings->outputVideo));
-            }
+//            }
         }
     }
 

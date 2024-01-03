@@ -31,17 +31,11 @@
 
 #include <klocalizedstring.h>
 
-// QtAv includes
-
-#include <VideoEncoder.h>
-
 // Local includes
 
 #include "vidslidewizard.h"
 #include "transitionpreview.h"
 #include "effectpreview.h"
-
-using namespace QtAV;
 
 namespace DigikamGenericVideoSlideShowPlugin
 {
@@ -183,10 +177,11 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
 
         VidSlideSettings tmp;
         tmp.vCodec = (VidSlideSettings::VidCodec)it5.key();
-
+/*
+        // FIXME: port FFMPEG cli
         if (!VideoEncoder::supportedCodecs().contains(tmp.videoCodec()))
             d->codecVal->setItemData((int)it5.key(), false, Qt::UserRole-1);
-
+*/
         ++it5;
     }
 

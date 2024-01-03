@@ -19,6 +19,7 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QComboBox>
+#include <QGroupBox>
 #include <QIcon>
 
 // KDE includes
@@ -31,6 +32,8 @@
 #include "dlayoutbox.h"
 #include "vidslidewizard.h"
 #include "vidslidesettings.h"
+#include "ffmpegbinary.h"
+#include "dbinarysearch.h"
 
 namespace DigikamGenericVideoSlideShowPlugin
 {
@@ -40,10 +43,6 @@ class Q_DECL_HIDDEN VidSlideIntroPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : imageGetOption(nullptr),
-        hbox(nullptr),
-        wizard(nullptr),
-        iface(nullptr)
     {
         wizard = dynamic_cast<VidSlideWizard*>(dialog);
 
@@ -53,15 +52,17 @@ public:
         }
     }
 
-    QComboBox*       imageGetOption;
-    DHBox*           hbox;
-    VidSlideWizard*  wizard;
-    DInfoInterface*  iface;
+    QComboBox*       imageGetOption = nullptr;
+    DHBox*           hbox           = nullptr;
+    VidSlideWizard*  wizard         = nullptr;
+    DInfoInterface*  iface          = nullptr;
+    FFmpegBinary     ffmpegBin;
+    DBinarySearch*   binSearch      = nullptr;
 };
 
 VidSlideIntroPage::VidSlideIntroPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DVBox* const vbox  = new DVBox(this);
     QLabel* const desc = new QLabel(vbox);
@@ -90,6 +91,33 @@ VidSlideIntroPage::VidSlideIntroPage(QWizard* const dialog, const QString& title
     d->imageGetOption->insertItem(VidSlideSettings::IMAGES, i18n("Images"));
     getImageLabel->setBuddy(d->imageGetOption);
 
+    // ---------------------
+
+    QGroupBox* const binaryBox      = new QGroupBox(vbox);
+    QGridLayout* const binaryLayout = new QGridLayout;
+    binaryBox->setLayout(binaryLayout);
+    binaryBox->setTitle(i18nc("@title:group", "FFmpeg Binary"));
+    d->binSearch = new DBinarySearch(binaryBox);
+    d->binSearch->addBinary(d->ffmpegBin);
+
+#ifdef Q_OS_MACOS
+
+    // Std Macports install
+
+    d->binSearch->addDirectory(QLatin1String("/opt/local/bin"));
+
+#endif
+
+#ifdef Q_OS_WIN
+
+    d->binSearch->addDirectory(QLatin1String("C:/Program Files/FFmpeg"));
+
+#endif
+
+    vbox->setStretchFactor(desc,      2);
+    vbox->setStretchFactor(d->hbox,   1);
+    vbox->setStretchFactor(binaryBox, 3);
+
     setPageWidget(vbox);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("view-presentation")));
 }
@@ -112,11 +140,19 @@ void VidSlideIntroPage::initializePage()
     {
         d->imageGetOption->setCurrentIndex(d->wizard->settings()->selMode);
     }
+
+    d->binSearch->allBinariesFound();
 }
 
 bool VidSlideIntroPage::validatePage()
 {
     d->wizard->settings()->selMode = (VidSlideSettings::Selection)d->imageGetOption->currentIndex();
+
+    if (d->ffmpegBin.isValid())
+    {
+        d->wizard->settings()->ffmpegPath = d->ffmpegBin.path();
+        return true;
+    }
 
     return true;
 }

@@ -29,17 +29,11 @@
 
 #include <klocalizedstring.h>
 
-// QtAv includes
-
-#include <AVMuxer.h>
-
 // Local includes
 
 #include "vidslidewizard.h"
 #include "dfileselector.h"
 #include "filesaveconflictbox.h"
-
-using namespace QtAV;
 
 namespace DigikamGenericVideoSlideShowPlugin
 {
@@ -99,10 +93,11 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
 
         VidSlideSettings tmp;
         tmp.vFormat = (VidSlideSettings::VidFormat)it.key();
-
+/*
+        // TODO: Port to FFmpeg CLI
         if (!AVMuxer::supportedExtensions().contains(tmp.videoFormat()))
             d->formatVal->setItemData((int)it.key(), false, Qt::UserRole-1);
-
+*/
         ++it;
     }
 
