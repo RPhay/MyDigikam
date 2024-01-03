@@ -77,6 +77,7 @@ required_packages=("cmake"                   # To Compile Source Code
                    "libqt5printsupport5"     # Qt 5 PrintSupport module
                    "libqt5svg5"              # Qt 5 Svg module
                    "libqt5webengine5"        # Qt 5 webengine module
+                   "qtwebengine5-dev"        # Qt 5 webengine module
                    "libqt5networkauth5-dev"  # Qt 5 network authentification.
 
                    "libkf5config-dev"        # Configuration settings framework for Qt
@@ -290,7 +291,6 @@ optional_packages=("ruby"                               # For i18n extraction
                     #TODO add new optional packages
                     )
 
-
 for pkg in ${optional_packages[@]}; do
     sudo apt-get install -y ${pkg}
     echo "-------------------------------------------------------------------"
@@ -301,7 +301,7 @@ done
 sudo ln -sf /usr/share/java              /opt/saxon
 sudo ln -sf /usr/share/java/Saxon-HE.jar /usr/share/java/saxon9he.jar
 
-echo "Remove SNAP and install Firefox package"
+echo "Remove SNAP and install Native Firefox package"
 echo "-------------------------------------------------------------------"
 
 sudo systemctl disable snapd.service
@@ -325,7 +325,7 @@ sudo rm -rf /var/cache/snapd/
 sudo apt autoremove --purge snapd
 rm -rf ~/snap
 
-sudo cat > /etc/apt/preferences.d/firefox-no-snap << EOF
+sudo tee > /etc/apt/preferences.d/firefox-no-snap << EOF
 Package: firefox*
 Pin: release o=Ubuntu*
 Pin-Priority: -1
