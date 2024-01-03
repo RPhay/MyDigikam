@@ -15,17 +15,12 @@ add_subdirectory(wallpaper)
 add_subdirectory(dngconverter)      # NOTE: for Showfoto only
 add_subdirectory(ocrtextconverter)
 
+# Port to FFmpeg CLI
+#add_subdirectory(videoslideshow)
+
 if(LibXml2_FOUND AND LibXslt_FOUND)
 
     add_subdirectory(htmlgallery)
-
-endif()
-
-if(ENABLE_MEDIAPLAYER AND NOT ENABLE_QTMULTIMEDIA)
-
-    # TODO: port to pure ffmpeg API
-
-    add_subdirectory(videoslideshow)
 
 endif()
 
