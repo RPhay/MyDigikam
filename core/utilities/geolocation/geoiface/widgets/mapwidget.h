@@ -76,27 +76,63 @@ class MapBackend;
 
 class DIGIKAM_EXPORT MapWidget : public QWidget
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
 
     explicit MapWidget(QWidget* const parent = nullptr);
     ~MapWidget() override;
 
+/// @name Settings related functions
+//@{
+
+public:
+
     void saveSettingsToGroup(KConfigGroup* const group);
     void readSettingsFromGroup(const KConfigGroup* const group);
 
-    /// @name Data
-    //@{
+private Q_SLOTS:
+
+    void slotApplySettings();
+//@}
+
+/// @name Map related functions
+//@{
+
+public:
+
+    QStringList availableBackends() const;
+    bool setBackend(const QString& backendName);
+
+    QList<MapBackend*> backends() const;
+
+    GeoCoordinates getCenter() const;
+    void setCenter(const GeoCoordinates& coordinate);
+
+    void setZoom(const QString& newZoom);
+    QString getZoom();
+
+    void adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel = true);
+    void refreshMap();
+//@}
+
+/// @name Data Management
+//@{
+
+public:
+
     void addUngroupedModel(GeoModelHelper* const modelHelper);
     void removeUngroupedModel(GeoModelHelper* const modelHelper);
     void setGroupedModel(AbstractMarkerTiler* const markerModel);
     void setDragDropHandler(GeoDragDropHandler* const dragDropHandler);
     void setTrackManager(TrackManager* const trackManager);
-    //@}
+//@}
 
-    /// @name UI setup
-    //@{
+/// @name UI setup
+//@{
+
+public:
+
     QAction* getControlAction(const QString& actionName);
     QWidget* getControlWidget();
     void addWidgetToControlWidget(QWidget* const newWidget);
@@ -111,27 +147,13 @@ public:
     void setStickyModeState(const bool state);
     void setVisibleExtraActions(const GeoExtraActions actions);
     void setEnabledExtraActions(const GeoExtraActions actions);
-    //@}
+//@}
 
-    /// @name Map related functions
-    //@{
-    QStringList availableBackends() const;
-    bool setBackend(const QString& backendName);
+/// @name Appearance
+//@{
 
-    QList<MapBackend*> backends() const;
+public:
 
-    GeoCoordinates getCenter() const;
-    void setCenter(const GeoCoordinates& coordinate);
-
-    void setZoom(const QString& newZoom);
-    QString getZoom();
-
-    void adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel = true);
-    void refreshMap();
-    //@}
-
-    /// @name Appearance
-    //@{
     void setSortKey(const int sortKey);
     void setThumnailSize(const int newThumbnailSize);
     void setThumbnailGroupingRadius(const int newGroupingRadius);
@@ -139,20 +161,30 @@ public:
     int  getThumbnailSize() const;
     int  getUndecoratedThumbnailSize() const;
     void setShowThumbnails(const bool state);
-    //@}
 
-    /// @name Region selection
-    //@{
+public Q_SLOTS:
+
+    void slotZoomIn();
+    void slotZoomOut();
+    void slotDecreaseThumbnailSize();
+    void slotIncreaseThumbnailSize();
+//@}
+
+/// @name Region selection
+//@{
+
+public:
+
     void setRegionSelection(const GeoCoordinates::Pair& region);
     GeoCoordinates::Pair getRegionSelection();
     void clearRegionSelection();
-    //@}
+//@}
 
-    /**
-     * @name Internal
-     * Functions that are only used internally and should be hidden from the public interface
-     */
-    //@{
+/// @name Internal Functions
+//@{
+
+public:
+
     void updateMarkers();
     void updateClusters();
     void markClustersAsDirty();
@@ -171,25 +203,14 @@ public:
     QPixmap getDecoratedPixmapForCluster(const int clusterId, const GeoGroupState* const selectedStateOverride,
                                          const int* const countOverride, QPoint* const centerPoint);
     QVariant getClusterRepresentativeMarker(const int clusterIndex, const int sortKey);
-    //@}
 
 public Q_SLOTS:
 
-    /// @name Appearance
-    //@{
-    void slotZoomIn();
-    void slotZoomOut();
-    void slotDecreaseThumbnailSize();
-    void slotIncreaseThumbnailSize();
-    //@}
-
-    /// @name Internal?
-    //@{
     void slotUpdateActionsEnabled();
     void slotClustersNeedUpdating();
     void stopThumbnailTimer();
     void slotStickyModeChanged();
-    //@}
+//@}
 
 Q_SIGNALS:
 
@@ -230,15 +251,14 @@ protected Q_SLOTS:
     void slotUngroupedModelChanged();
     void slotNewSelectionFromMap(const Digikam::GeoCoordinates::Pair& sel);
 
-    /// @name Mouse modes
-    //@{
+/// @name Mouse modes
+//@{
+
+protected Q_SLOTS:
+
     void slotMouseModeChanged(QAction* triggeredAction);
     void slotRemoveCurrentRegionSelection();
-    //@}
-
-private Q_SLOTS:
-
-    void slotApplySettings();
+//@}
 
 private:
 
