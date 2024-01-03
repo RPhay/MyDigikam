@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to generate video slideshow from images.
  *
- * SPDX-FileCopyrightText: 2017-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -216,11 +216,13 @@ public:
     // -- Generator settings ------
 
     QList<QUrl>                       inputImages;      ///< Images stream.
+    QList<QUrl>                       inputAudio;       ///< Soundtracks stream.
 
     TransitionMngr::TransType         transition;       ///< Transition type between images.
 
     int                               imgFrames;        ///< Amount of frames by image to encode in video (ex: 125 frames = 5 s at 25 img/s).
 
+    int                               abitRate;         ///< Encoded Audio stream bit rate in bit/s.
     VidBitRate                        vbitRate;         ///< Encoded Video stream bit rate in bit/s.
     VidStd                            vStandard;        ///< Encoded Video standard => frame rate in img/s.
     VidType                           vType;            ///< Encoded video type.

@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to generate video slideshow from images.
  *
- * SPDX-FileCopyrightText: 2017-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -30,6 +30,7 @@ VidSlideSettings::VidSlideSettings()
     : selMode       (IMAGES),
       transition    (TransitionMngr::None),
       imgFrames     (125),
+      abitRate      (64000),
       vbitRate      (VBR12),
       vStandard     (PAL),
       vType         (BLUERAY),
@@ -64,6 +65,8 @@ void VidSlideSettings::readSettings(KConfigGroup& group)
                    (int)MP4);
     vEffect      = (EffectMngr::EffectType)group.readEntry("VEffect",
                    (int)EffectMngr::None);
+    abitRate     = group.readEntry("ABitRate",
+                   64000);
     transition   = (TransitionMngr::TransType)group.readEntry("Transition",
                    (int)TransitionMngr::None);
     conflictRule = (FileSaveConflictBox::ConflictRule)group.readEntry("ConflictRule",
@@ -85,6 +88,7 @@ void VidSlideSettings::writeSettings(KConfigGroup& group)
     group.writeEntry("VFormat",      (int)vFormat);
     group.writeEntry("VEffect",      (int)vEffect);
     group.writeEntry("Transition",   (int)transition);
+    group.writeEntry("ABitRate",     abitRate);
     group.writeEntry("ConflictRule", (int)conflictRule);
     group.writeEntry("OutputDir",    outputDir);
     group.writeEntry("OutputPlayer", (int)outputPlayer);
