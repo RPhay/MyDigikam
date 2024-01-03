@@ -73,5 +73,3 @@ MapWidget::Private::Private()
 }
 
 } // namespace Digikam
-
-#include "moc_mapwidget_p.cpp"

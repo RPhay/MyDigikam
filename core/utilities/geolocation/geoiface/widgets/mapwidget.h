@@ -91,6 +91,10 @@ public:
     void saveSettingsToGroup(KConfigGroup* const group);
     void readSettingsFromGroup(const KConfigGroup* const group);
 
+protected Q_SLOTS:
+
+    void slotItemDisplaySettingsChanged();
+
 private Q_SLOTS:
 
     void slotApplySettings();
@@ -247,7 +251,6 @@ protected Q_SLOTS:
     void slotShowThumbnailsChanged();
     void slotRequestLazyReclustering();
     void slotLazyReclusteringRequestCallBack();
-    void slotItemDisplaySettingsChanged();
     void slotUngroupedModelChanged();
     void slotNewSelectionFromMap(const Digikam::GeoCoordinates::Pair& sel);
 
