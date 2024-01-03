@@ -206,6 +206,7 @@ protected Q_SLOTS:
 
 Q_SIGNALS:
 
+    void signalLoadTracksFromAlbums();
     void signalUngroupedModelChanged(const int index);
 //@}
 
@@ -310,7 +311,6 @@ Q_SIGNALS:
 
     void signalRemoveCurrentFilter();
     void signalStickyModeChanged();
-    void signalLoadTracksFromAlbums();
 //@}
 
 // --------------------------------------------------

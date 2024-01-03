@@ -757,101 +757,6 @@ QString MapWidget::convertZoomToBackendZoom(const QString& someZoom,
     return QString::fromLatin1("%1:%2").arg(targetBackend).arg(targetZoom);
 }
 
-void MapWidget::addUngroupedModel(GeoModelHelper* const modelHelper)
-{
-    s->ungroupedModels << modelHelper;
-
-    /// @todo monitor all model signals!
-
-    connect(modelHelper->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-            this, SLOT(slotUngroupedModelChanged()));
-
-    connect(modelHelper->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
-            this, SLOT(slotUngroupedModelChanged()));
-
-    connect(modelHelper->model(), SIGNAL(modelReset()),
-            this, SLOT(slotUngroupedModelChanged()));
-
-    connect(modelHelper, SIGNAL(signalVisibilityChanged()),
-            this, SLOT(slotUngroupedModelChanged()));
-
-    if (modelHelper->selectionModel())
-    {
-        connect(modelHelper->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
-                this, SLOT(slotUngroupedModelChanged()));
-    }
-
-    Q_EMIT signalUngroupedModelChanged(s->ungroupedModels.count() - 1);
-}
-
-void MapWidget::removeUngroupedModel(GeoModelHelper* const modelHelper)
-{
-    if (!modelHelper)
-    {
-        return;
-    }
-
-    const int modelIndex = s->ungroupedModels.indexOf(modelHelper);
-
-    if (modelIndex < 0)
-    {
-        return;
-    }
-
-    /// @todo monitor all model signals!
-
-    disconnect(modelHelper->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-               this, SLOT(slotUngroupedModelChanged()));
-
-    disconnect(modelHelper->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
-               this, SLOT(slotUngroupedModelChanged()));
-
-    disconnect(modelHelper->model(), SIGNAL(modelReset()),
-               this, SLOT(slotUngroupedModelChanged()));
-
-    disconnect(modelHelper, SIGNAL(signalVisibilityChanged()),
-               this, SLOT(slotUngroupedModelChanged()));
-
-    if (modelHelper->selectionModel())
-    {
-        disconnect(modelHelper->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
-                   this, SLOT(slotUngroupedModelChanged()));
-    }
-
-    s->ungroupedModels.removeAt(modelIndex);
-
-    // the indices changed, therefore send out notifications
-    // sending out a signal with i=s->ungroupedModel.count()
-    // will cause the backends to see that the last model is missing
-
-    for (int i = modelIndex ; i <= s->ungroupedModels.count() ; ++i)
-    {
-        Q_EMIT signalUngroupedModelChanged(i);
-    }
-}
-
-void MapWidget::setGroupedModel(AbstractMarkerTiler* const markerModel)
-{
-    s->markerModel = markerModel;
-
-    if (s->markerModel)
-    {
-        s->markerModel->setActive(s->activeState);
-
-        /// @todo this needs some buffering for the google maps backend
-
-        connect(s->markerModel, SIGNAL(signalTilesOrSelectionChanged()),
-                this, SLOT(slotRequestLazyReclustering()));
-
-        if (d->currentBackend)
-        {
-            connect(s->markerModel, SIGNAL(signalThumbnailAvailableForIndex(QVariant,QPixmap)),
-                    d->currentBackend, SLOT(slotThumbnailAvailableForIndex(QVariant,QPixmap)));
-        }
-    }
-
-    slotRequestLazyReclustering();
-}
 
 void MapWidget::setShowThumbnails(const bool state)
 {
@@ -943,11 +848,6 @@ void MapWidget::dragLeaveEvent(QDragLeaveEvent* event)
 /*
     d->currentBackend->updateDragDropMarker(QPoint(), 0);
 */
-}
-
-void MapWidget::setDragDropHandler(GeoDragDropHandler* const dragDropHandler)
-{
-    d->dragDropHandler = dragDropHandler;
 }
 
 void MapWidget::setSortOptionsMenu(QMenu* const sortMenu)
@@ -1055,60 +955,6 @@ int MapWidget::getThumbnailSize() const
 int MapWidget::getUndecoratedThumbnailSize() const
 {
     return s->thumbnailSize-2;
-}
-
-void MapWidget::slotUngroupedModelChanged()
-{
-    // determine the index under which we handle this model
-
-    QObject* const senderObject           = sender();
-    QAbstractItemModel* const senderModel = qobject_cast<QAbstractItemModel*>(senderObject);
-
-    if (senderModel)
-    {
-        for (int i = 0 ; i < s->ungroupedModels.count() ; ++i)
-        {
-            if (s->ungroupedModels.at(i)->model() == senderModel)
-            {
-                Q_EMIT signalUngroupedModelChanged(i);
-
-                break;
-            }
-        }
-        return;
-    }
-
-    GeoModelHelper* const senderHelper = qobject_cast<GeoModelHelper*>(senderObject);
-
-    if (senderHelper)
-    {
-        for (int i = 0 ; i < s->ungroupedModels.count() ; ++i)
-        {
-            if (s->ungroupedModels.at(i) == senderHelper)
-            {
-                Q_EMIT signalUngroupedModelChanged(i);
-
-                break;
-            }
-        }
-    }
-
-    QItemSelectionModel* const senderSelectionModel = qobject_cast<QItemSelectionModel*>(senderObject);
-
-    if (senderSelectionModel)
-    {
-        for (int i = 0 ; i < s->ungroupedModels.count() ; ++i)
-        {
-            if (s->ungroupedModels.at(i)->selectionModel() == senderSelectionModel)
-            {
-                Q_EMIT signalUngroupedModelChanged(i);
-
-                break;
-            }
-        }
-
-        return;
-    }
 }
 
 void MapWidget::addWidgetToControlWidget(QWidget* const newWidget)
@@ -1285,19 +1131,6 @@ void MapWidget::setMouseMode(const GeoMouseModes mouseMode)
     }
 
     slotUpdateActionsEnabled();
-}
-
-void MapWidget::setTrackManager(TrackManager* const trackManager)
-{
-    s->trackManager = trackManager;
-
-    // Some backends track the track manager activity even when not active
-    // therefore they have to be notified.
-
-    Q_FOREACH (MapBackend* const backend, d->loadedBackends)
-    {
-        backend->slotTrackManagerChanged();
-    }
 }
 
 } // namespace Digikam
