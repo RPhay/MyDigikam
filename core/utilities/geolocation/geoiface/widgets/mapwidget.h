@@ -85,7 +85,7 @@ public:
 
 // --------------------------------------------------
 
-/// @name Settings related functions
+/// @name Settings Management related functions
 //@{
 
 public:
@@ -218,7 +218,12 @@ Q_SIGNALS:
 public:
 
     QAction* getControlAction(const QString& actionName);
+
+    /**
+     * @brief Returns the control widget instance.
+     */
     QWidget* getControlWidget();
+
     void addWidgetToControlWidget(QWidget* const newWidget);
     void setSortOptionsMenu(QMenu* const sortMenu);
     void setMouseMode(const GeoMouseModes mouseMode);

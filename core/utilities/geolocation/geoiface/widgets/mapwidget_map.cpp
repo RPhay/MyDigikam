@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-12-01
- * Description : world map widget library
+ * Description : world map widget library - Map Managament
  *
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Michael G. Hansen <mike at mghansen dot de>

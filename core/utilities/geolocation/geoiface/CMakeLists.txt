@@ -95,6 +95,7 @@ set(libgeoiface_SRCS
                      ${CMAKE_CURRENT_SOURCE_DIR}/widgets/mapwidget_settings.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/widgets/mapwidget_map.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/widgets/mapwidget_data.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/mapwidget_setup.cpp
 )
 
 if(${ENABLE_GEOLOCATION})
