@@ -173,7 +173,7 @@ void VidSlideTask::run()
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Frame generated:" << framePath;
             }
 
-            out << QString::fromUtf8("file '%1'").arg(framePath) << QT_ENDL;
+            out << QString::fromUtf8("file '%1'").arg(QFileInfo(framePath).fileName()) << QT_ENDL;
             ++frameId;
         }
         while ((ttmout != -1) && !m_cancel);
@@ -202,7 +202,7 @@ void VidSlideTask::run()
                     qCDebug(DIGIKAM_GENERAL_LOG) << "Frame generated:" << ":" << framePath;
                 }
 
-                out << QString::fromUtf8("file '%1'").arg(framePath) << QT_ENDL;
+                out << QString::fromUtf8("file '%1'").arg(QFileInfo(framePath).fileName()) << QT_ENDL;
                 ++frameId;
                 ++count;
             }
