@@ -342,6 +342,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     d->errorView->installEventFilter(new MediaPlayerMouseClickFilter(this));
     d->videoView->installEventFilter(new MediaPlayerMouseClickFilter(this));
+    d->playerView->installEventFilter(this);
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
@@ -795,13 +796,14 @@ void MediaPlayerView::slotNativeSizeChanged()
     d->adjustVideoSize();
 }
 
-void MediaPlayerView::resizeEvent(QResizeEvent* e)
+bool MediaPlayerView::eventFilter(QObject* watched, QEvent* event)
 {
-    QStackedWidget::resizeEvent(e);
+    if ((watched == d->playerView) && (event->type() == QEvent::Resize))
+    {
+        d->adjustVideoSize();
+    }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Resize:" << size() << d->playerView->size();
-
-    d->adjustVideoSize();
+    return QStackedWidget::eventFilter(watched, event);
 }
 
 }  // namespace Digikam
