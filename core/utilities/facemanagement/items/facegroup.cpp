@@ -495,7 +495,9 @@ void FaceGroup::focusRandomFace()
 
         if ((comboBox) && (!face.isConfirmedName()))
         {
+            comboBox->lineEdit()->selectAll();
             comboBox->lineEdit()->setFocus();
+
             return;
         }
     }
