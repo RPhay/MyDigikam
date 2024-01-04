@@ -25,6 +25,7 @@
 #include <QSize>
 #include <QPainter>
 #include <QFileInfo>
+#include <QDateTime>
 
 // KDE includes
 
@@ -50,6 +51,7 @@ public:
 
 public:
 
+    QString                     tempDir;            ///< To store temporary frames.
     VidSlideSettings*           settings = nullptr;
     QList<QUrl>::const_iterator curAudioFile;
 };
@@ -75,13 +77,15 @@ VidSlideTask::~VidSlideTask()
 void VidSlideTask::run()
 {
     int frameId = 1;
+    d->tempDir  = d->settings->outputDir + QDir::separator() + QLatin1Char('.') +
+                  QString::number(QDateTime().toSecsSinceEpoch());
 
     // ---------------------------------------------
     // Setup output video file
 
     QUrl dest       = QUrl::fromLocalFile(d->settings->outputDir);
     dest            = dest.adjusted(QUrl::StripTrailingSlash);
-    dest.setPath(dest.path() + QLatin1String("/videoslideshow.") + d->settings->videoFormat());
+    dest.setPath(dest.path() + QDir::separator() + QLatin1String("videoslideshow.") + d->settings->videoFormat());
     QString outFile = dest.toLocalFile();
     QFileInfo fi(outFile);
 
@@ -127,14 +131,20 @@ void VidSlideTask::run()
 
         int ttmout = 0;
         QImage frame;
+        QString framePath;
 
         do
         {
-            frame = QImage(transmngr.currentFrame(ttmout));
+            frame     = QImage(transmngr.currentFrame(ttmout));
+            framePath = d->tempDir + QDir::separator() + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
 
-            if (!frame.save(dest.path() + QDir::separator() + QString::fromLatin1(".frame_%1").arg(frameId), "JPEG"))
+            if (!frame.save(framePath, "JPEG"))
             {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot encode transition frame" << frameId;
+                qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot encode frame:" << framePath;
+            }
+            else
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Frame generated:" << framePath;
             }
 
             ++frameId;
@@ -152,12 +162,17 @@ void VidSlideTask::run()
 
             do
             {
-                qiimg = effmngr.currentFrame(itmout);
-                frame = qiimg;
+                qiimg     = effmngr.currentFrame(itmout);
+                frame     = qiimg;
+                framePath = d->tempDir + QDir::separator() + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
 
-                if (!frame.save(dest.path() + QDir::separator() + QString::fromLatin1(".frame_%1").arg(frameId), "JPEG"))
+                if (!frame.save(framePath, "JPEG"))
                 {
-                    qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot encode transition frame" << frameId;
+                    qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot encode frame:" << framePath;
+                }
+                else
+                {
+                    qCDebug(DIGIKAM_GENERAL_LOG) << "Frame generated:" << ":" << framePath;
                 }
 
                 ++frameId;
