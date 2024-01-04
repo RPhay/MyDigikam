@@ -250,7 +250,7 @@ void VidSlideTask::run()
     // ---------------------------------------------
     // Setup output video file
 
-    QUrl dest       = d->settings->outputDir;
+    QUrl dest       = QUrl::fromLocalFile(d->settings->outputDir);
     dest            = dest.adjusted(QUrl::StripTrailingSlash);
     dest.setPath(dest.path() + QLatin1String("/videoslideshow.") + d->settings->videoFormat());
     QString outFile = dest.toLocalFile();
