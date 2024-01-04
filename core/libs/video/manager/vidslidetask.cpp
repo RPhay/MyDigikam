@@ -28,6 +28,7 @@
 #include <QPainter>
 #include <QFileInfo>
 #include <QFile>
+#include <QIODevice>
 #include <QDateTime>
 #include <QProcess>
 #include <QProcessEnvironment>
