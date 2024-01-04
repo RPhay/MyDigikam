@@ -31,10 +31,6 @@ class Q_DECL_HIDDEN VidSlideAlbumsPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : albumSupport(false),
-        albumSelector(nullptr),
-        wizard(nullptr),
-        iface(nullptr)
     {
         wizard = dynamic_cast<VidSlideWizard*>(dialog);
 
@@ -44,15 +40,15 @@ public:
         }
     }
 
-    bool             albumSupport;
-    QWidget*         albumSelector;
-    VidSlideWizard*  wizard;
-    DInfoInterface*  iface;
+    bool             albumSupport  = false;
+    QWidget*         albumSelector = nullptr;
+    VidSlideWizard*  wizard        = nullptr;
+    DInfoInterface*  iface         = nullptr;
 };
 
 VidSlideAlbumsPage::VidSlideAlbumsPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     if (d->iface)
     {

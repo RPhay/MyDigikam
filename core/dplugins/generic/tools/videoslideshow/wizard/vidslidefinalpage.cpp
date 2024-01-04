@@ -48,13 +48,6 @@ class Q_DECL_HIDDEN VidSlideFinalPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : progressView(nullptr),
-        progressBar(nullptr),
-        complete(false),
-//        encoder(nullptr),
-        wizard(nullptr),
-        settings(nullptr),
-        iface(nullptr)
     {
         wizard = dynamic_cast<VidSlideWizard*>(dialog);
 
@@ -65,18 +58,18 @@ public:
         }
     }
 
-    DHistoryView*     progressView;
-    DProgressWdg*     progressBar;
-    bool              complete;
-//    VidSlideThread*   encoder;
-    VidSlideWizard*   wizard;
-    VidSlideSettings* settings;
-    DInfoInterface*   iface;
+    DHistoryView*     progressView = nullptr;
+    DProgressWdg*     progressBar  = nullptr;
+    bool              complete     = false;
+//    VidSlideThread*   encoder      = nullptr;
+    VidSlideWizard*   wizard       = nullptr;
+    VidSlideSettings* settings     = nullptr;
+    DInfoInterface*   iface        = nullptr;
 };
 
 VidSlideFinalPage::VidSlideFinalPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     setObjectName(QLatin1String("FinalPage"));
 

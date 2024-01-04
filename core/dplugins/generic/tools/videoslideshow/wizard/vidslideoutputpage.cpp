@@ -43,12 +43,6 @@ class Q_DECL_HIDDEN VidSlideOutputPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : destUrl(nullptr),
-        conflictBox(nullptr),
-        playerVal(nullptr),
-        formatVal(nullptr),
-        wizard(nullptr),
-        settings(nullptr)
     {
         wizard = dynamic_cast<VidSlideWizard*>(dialog);
 
@@ -58,17 +52,17 @@ public:
         }
     }
 
-    DFileSelector*       destUrl;
-    FileSaveConflictBox* conflictBox;
-    QComboBox*           playerVal;
-    QComboBox*           formatVal;
-    VidSlideWizard*      wizard;
-    VidSlideSettings*    settings;
+    DFileSelector*       destUrl     = nullptr;
+    FileSaveConflictBox* conflictBox = nullptr;
+    QComboBox*           playerVal   = nullptr;
+    QComboBox*           formatVal   = nullptr;
+    VidSlideWizard*      wizard      = nullptr;
+    VidSlideSettings*    settings    = nullptr;
 };
 
 VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     setObjectName(QLatin1String("OutputPage"));
 
@@ -174,7 +168,7 @@ VidSlideOutputPage::~VidSlideOutputPage()
 void VidSlideOutputPage::initializePage()
 {
     d->formatVal->setCurrentIndex(d->settings->vFormat);
-    d->destUrl->setFileDlgPath(d->settings->outputDir.toLocalFile());
+    d->destUrl->setFileDlgPath(d->settings->outputDir);
     d->conflictBox->setConflictRule(d->settings->conflictRule);
     d->playerVal->setCurrentIndex(d->settings->outputPlayer);
 }
@@ -185,7 +179,7 @@ bool VidSlideOutputPage::validatePage()
         return false;
 
     d->settings->vFormat      = (VidSlideSettings::VidFormat)d->formatVal->currentIndex();
-    d->settings->outputDir    = QUrl::fromLocalFile(d->destUrl->fileDlgPath());
+    d->settings->outputDir    = d->destUrl->fileDlgPath();
     d->settings->conflictRule = d->conflictBox->conflictRule();
     d->settings->outputPlayer = (VidSlideSettings::VidPlayer)d->playerVal->currentIndex();
 

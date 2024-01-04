@@ -48,31 +48,21 @@ class Q_DECL_HIDDEN VidSlideWizard::Private
 {
 public:
 
-    explicit Private()
-      : iface(nullptr),
-        introPage(nullptr),
-        albumsPage(nullptr),
-        imagesPage(nullptr),
-        videoPage(nullptr),
-        outputPage(nullptr),
-        finalPage(nullptr),
-        settings(nullptr)
-    {
-    }
+    Private() = default;
 
-    DInfoInterface*         iface;
-    VidSlideIntroPage*      introPage;
-    VidSlideAlbumsPage*     albumsPage;
-    VidSlideImagesPage*     imagesPage;
-    VidSlideVideoPage*      videoPage;
-    VidSlideOutputPage*     outputPage;
-    VidSlideFinalPage*      finalPage;
-    VidSlideSettings*       settings;
+    DInfoInterface*         iface      = nullptr;
+    VidSlideIntroPage*      introPage  = nullptr;
+    VidSlideAlbumsPage*     albumsPage = nullptr;
+    VidSlideImagesPage*     imagesPage = nullptr;
+    VidSlideVideoPage*      videoPage  = nullptr;
+    VidSlideOutputPage*     outputPage = nullptr;
+    VidSlideFinalPage*      finalPage  = nullptr;
+    VidSlideSettings*       settings   = nullptr;
 };
 
 VidSlideWizard::VidSlideWizard(QWidget* const parent, DInfoInterface* const iface)
     : DWizardDlg(parent, QLatin1String("Video SlideShow Dialog")),
-      d(new Private)
+      d         (new Private)
 {
     setOption(QWizard::NoCancelButtonOnLastPage);
     setWindowTitle(i18nc("@title:window", "Create a Video Slideshow"));

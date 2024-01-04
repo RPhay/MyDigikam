@@ -38,7 +38,7 @@ VidSlideSettings::VidSlideSettings()
       vFormat       (MP4),
       vEffect       (EffectMngr::None),
       conflictRule  (FileSaveConflictBox::OVERWRITE),
-      outputDir     (QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::MoviesLocation))),
+      outputDir     (QStandardPaths::writableLocation(QStandardPaths::MoviesLocation)),
       outputPlayer  (INTERNAL)
 {
 }
@@ -72,7 +72,7 @@ void VidSlideSettings::readSettings(KConfigGroup& group)
     conflictRule = (FileSaveConflictBox::ConflictRule)group.readEntry("ConflictRule",
                    (int)FileSaveConflictBox::OVERWRITE);
     outputDir    = group.readEntry("OutputDir",
-                   QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::MoviesLocation)));
+                   QStandardPaths::writableLocation(QStandardPaths::MoviesLocation));
     outputPlayer = (VidPlayer)group.readEntry("OutputPlayer",
                    (int)INTERNAL);
 }

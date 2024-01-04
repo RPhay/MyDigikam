@@ -45,18 +45,6 @@ class Q_DECL_HIDDEN VidSlideVideoPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : framesVal   (nullptr),
-        typeVal     (nullptr),
-        bitrateVal  (nullptr),
-        stdVal      (nullptr),
-        codecVal    (nullptr),
-        transVal    (nullptr),
-        effVal      (nullptr),
-        duration    (nullptr),
-        wizard      (nullptr),
-        settings    (nullptr),
-        transPreview(nullptr),
-        effPreview  (nullptr)
     {
         wizard = dynamic_cast<VidSlideWizard*>(dialog);
 
@@ -66,18 +54,18 @@ public:
         }
     }
 
-    QSpinBox*          framesVal;
-    QComboBox*         typeVal;
-    QComboBox*         bitrateVal;
-    QComboBox*         stdVal;
-    QComboBox*         codecVal;
-    QComboBox*         transVal;
-    QComboBox*         effVal;
-    QLabel*            duration;
-    VidSlideWizard*    wizard;
-    VidSlideSettings*  settings;
-    TransitionPreview* transPreview;
-    EffectPreview*     effPreview;
+    QSpinBox*          framesVal    = nullptr;
+    QComboBox*         typeVal      = nullptr;
+    QComboBox*         bitrateVal   = nullptr;
+    QComboBox*         stdVal       = nullptr;
+    QComboBox*         codecVal     = nullptr;
+    QComboBox*         transVal     = nullptr;
+    QComboBox*         effVal       = nullptr;
+    QLabel*            duration     = nullptr;
+    VidSlideWizard*    wizard       = nullptr;
+    VidSlideSettings*  settings     = nullptr;
+    TransitionPreview* transPreview = nullptr;
+    EffectPreview*     effPreview   = nullptr;
 };
 
 VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title)

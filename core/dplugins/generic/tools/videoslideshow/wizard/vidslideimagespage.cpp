@@ -35,12 +35,10 @@ namespace DigikamGenericVideoSlideShowPlugin
 
 class Q_DECL_HIDDEN VidSlideImagesPage::Private
 {
+
 public:
 
     explicit Private(QWizard* const dialog)
-      : imageList(nullptr),
-        wizard(nullptr),
-        iface(nullptr)
     {
         wizard = dynamic_cast<VidSlideWizard*>(dialog);
 
@@ -50,9 +48,9 @@ public:
         }
     }
 
-    DItemsList*     imageList;
-    VidSlideWizard*  wizard;
-    DInfoInterface*  iface;
+    DItemsList*     imageList = nullptr;
+    VidSlideWizard* wizard    = nullptr;
+    DInfoInterface* iface     = nullptr;
 };
 
 VidSlideImagesPage::VidSlideImagesPage(QWizard* const dialog, const QString& title)
