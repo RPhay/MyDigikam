@@ -99,7 +99,7 @@ void VidSlideTask::run()
     d->filesList = d->tempDir + QLatin1String("fileslist.txt");
     QFile fList(d->filesList);
 
-    if (!fList.open(QIODeviceBase::WriteOnly | QIODeviceBase::Text))
+    if (!fList.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create files list:" << d->filesList;
     }
