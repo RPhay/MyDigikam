@@ -21,11 +21,17 @@
 // Qt includes
 
 #include <QDir>
+#include <QString>
+#include <QStringList>
 #include <QImage>
 #include <QSize>
 #include <QPainter>
 #include <QFileInfo>
+#include <QFile>
 #include <QDateTime>
+#include <QProcess>
+#include <QProcessEnvironment>
+#include <QTextStream>
 
 // KDE includes
 
@@ -35,6 +41,7 @@
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "frameutils.h"
 #include "dfileoperations.h"
 #include "transitionmngr.h"
@@ -51,9 +58,11 @@ public:
 
 public:
 
-    QString                     tempDir;            ///< To store temporary frames.
-    VidSlideSettings*           settings = nullptr;
+    QString                     filesList;                  ///< To host list of temporary frames file names.
+    QString                     tempDir;                    ///< To store temporary frames.
+    VidSlideSettings*           settings        = nullptr;
     QList<QUrl>::const_iterator curAudioFile;
+    QProcess*                   ffmpegProc      = nullptr;
 };
 
 VidSlideTask::VidSlideTask(VidSlideSettings* const settings)
@@ -77,8 +86,24 @@ VidSlideTask::~VidSlideTask()
 void VidSlideTask::run()
 {
     int frameId = 1;
-    d->tempDir  = d->settings->outputDir + QDir::separator() + QLatin1Char('.') +
-                  QString::number(QDateTime().toSecsSinceEpoch());
+    d->tempDir  = d->settings->outputDir + QDir::separator() + QLatin1Char('.')    +
+                  QString::number(QDateTime::currentDateTime().toSecsSinceEpoch()) +
+                  QDir::separator();
+
+    if (!QDir().mkpath(d->tempDir))
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create temporary directory:" << d->tempDir;
+    }
+
+    d->filesList = d->tempDir + QLatin1String("fileslist.txt");
+    QFile fList(d->filesList);
+
+    if (!fList.open(QIODeviceBase::WriteOnly | QIODeviceBase::Text))
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create files list:" << d->filesList;
+    }
+
+    QTextStream out(&fList);
 
     // ---------------------------------------------
     // Setup output video file
@@ -136,7 +161,7 @@ void VidSlideTask::run()
         do
         {
             frame     = QImage(transmngr.currentFrame(ttmout));
-            framePath = d->tempDir + QDir::separator() + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
+            framePath = d->tempDir + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
 
             if (!frame.save(framePath, "JPEG"))
             {
@@ -147,6 +172,7 @@ void VidSlideTask::run()
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Frame generated:" << framePath;
             }
 
+            out << QString::fromUtf8("file '%1'").arg(framePath) << QT_ENDL;
             ++frameId;
         }
         while ((ttmout != -1) && !m_cancel);
@@ -164,7 +190,7 @@ void VidSlideTask::run()
             {
                 qiimg     = effmngr.currentFrame(itmout);
                 frame     = qiimg;
-                framePath = d->tempDir + QDir::separator() + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
+                framePath = d->tempDir + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
 
                 if (!frame.save(framePath, "JPEG"))
                 {
@@ -175,16 +201,51 @@ void VidSlideTask::run()
                     qCDebug(DIGIKAM_GENERAL_LOG) << "Frame generated:" << ":" << framePath;
                 }
 
+                out << QString::fromUtf8("file '%1'").arg(framePath) << QT_ENDL;
                 ++frameId;
                 ++count;
             }
             while ((count < d->settings->imgFrames) && !m_cancel);
         }
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Encoded image" << i << "done";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Preparing image" << i << "done";
 
-        Q_EMIT signalMessage(i18n("Encoding %1 Done", ofile), false);
+        Q_EMIT signalMessage(i18n("Preparing %1 Done", ofile), false);
         Q_EMIT signalProgress(i);
+    }
+
+    fList.close();
+
+    // Run FFmpeg CLI to encode temporary JPEG frames
+    // https://shotstack.io/learn/use-ffmpeg-to-convert-images-to-video/
+    // ffmpeg -f concat -i fileslist.txt output.mp4
+
+    d->ffmpegProc = new QProcess();
+    d->ffmpegProc->setWorkingDirectory(d->settings->outputDir);
+    d->ffmpegProc->setProcessChannelMode(QProcess::MergedChannels);
+
+    QProcessEnvironment env = adjustedEnvironmentForAppImage();
+    d->ffmpegProc->setProcessEnvironment(env);
+
+    QString prog            = d->settings->ffmpegPath;
+    QStringList arguments   = QStringList() << QLatin1String("-f")
+                                            << QLatin1String("concat")
+                                            << QLatin1String("-i")
+                                            << d->filesList
+                                            << outFile;
+    d->ffmpegProc->start(prog, arguments);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Start encoding:" << d->ffmpegProc->program() << d->ffmpegProc->arguments();
+
+    bool successFlag = d->ffmpegProc->waitForFinished(-1) && (d->ffmpegProc->exitStatus() == QProcess::NormalExit);
+    QString output   = QString::fromLocal8Bit(d->ffmpegProc->readAll());
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Encoding return:" << successFlag;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Encoding trace :" << output;
+
+    if (!successFlag)
+    {
+        Q_EMIT signalMessage(i18n("Cannot generate output video %1", outFile), false);
     }
 
     if (!m_cancel)
