@@ -141,6 +141,11 @@
 #define NPT_CONFIG_HAVE_GETADDRINFO
 #endif
 
+/* OpenBSD */
+#if defined(__OpenBSD__)
+#define NPT_CONFIG_HAVE_GETADDRINFO
+#endif
+
 /* linux */
 #if defined(__linux__)
 #define NPT_CONFIG_HAVE_GETADDRINFO
