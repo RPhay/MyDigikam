@@ -33,7 +33,7 @@ QString PntPlugin::version() const
 
 QString PntPlugin::description() const
 {
-    return i18n( "A plugin to loac Geolocation Data from the Micro World Database II Files format" );
+    return i18n( "A plugin to load Geolocation Data from the Micro World Database II Files format" );
 }
 
 QString PntPlugin::copyrightYears() const
