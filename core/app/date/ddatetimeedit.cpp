@@ -71,7 +71,10 @@ DDateTimeEdit::~DDateTimeEdit()
 
 QDateTime DDateTimeEdit::dateTime() const
 {
-    return QDateTime(d->datePopUp->date(), d->timePopUp->time());
+    QDateTime dateTime(d->datePopUp->date(), d->timePopUp->time());
+    dateTime.setTimeSpec(Qt::UTC);
+
+    return dateTime;
 }
 
 void DDateTimeEdit::setDateTime(const QDateTime& dateTime)

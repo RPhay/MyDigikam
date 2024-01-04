@@ -114,8 +114,10 @@ void ItemLister::listSearch(ItemListerReceiver* const receiver,
         record.format            = (*it).toString();
         ++it;
         record.creationDate      = (*it).toDateTime();
+        record.creationDate.setTimeSpec(Qt::UTC);
         ++it;
         record.modificationDate  = (*it).toDateTime();
+        record.modificationDate.setTimeSpec(Qt::UTC);
         ++it;
         record.fileSize          = (*it).toLongLong();
         ++it;
@@ -367,8 +369,10 @@ void ItemLister::listFromHaarSearch(ItemListerReceiver* const receiver,
         record.format            = (*it).toString();
         ++it;
         record.creationDate      = (*it).toDateTime();
+        record.creationDate.setTimeSpec(Qt::UTC);
         ++it;
         record.modificationDate  = (*it).toDateTime();
+        record.modificationDate.setTimeSpec(Qt::UTC);
         ++it;
         record.fileSize          = (*it).toLongLong();
         ++it;
@@ -431,6 +435,7 @@ void ItemLister::listAreaRange(ItemListerReceiver* const receiver,
         record.rating            = (*it).toInt();
         ++it;
         record.creationDate      = (*it).toDateTime();
+        record.creationDate.setTimeSpec(Qt::UTC);
         ++it;
         lat                      = (*it).toDouble();
         ++it;

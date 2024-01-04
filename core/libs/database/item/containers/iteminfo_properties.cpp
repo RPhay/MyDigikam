@@ -437,7 +437,6 @@ void ItemInfo::setDateTime(const QDateTime& dateTime)
     {
         ItemInfoWriteLocker lock;
         m_data->creationDate       = dateTime;
-        m_data->creationDate.setTimeSpec(Qt::UTC);
         m_data->creationDateCached = true;
     }
 
@@ -454,7 +453,6 @@ void ItemInfo::setModDateTime(const QDateTime& dateTime)
     {
         ItemInfoWriteLocker lock;
         m_data->modificationDate       = dateTime;
-        m_data->modificationDate.setTimeSpec(Qt::UTC);
         m_data->modificationDateCached = true;
     }
 

@@ -3305,6 +3305,8 @@ QVariantList CoreDB::getAllCreationDates() const
                                      " WHERE Images.status=1;"),
                    &values);
 
+    // UTC is set in the DatesJob
+
     return values;
 }
 
@@ -4235,7 +4237,10 @@ QDate CoreDB::getAlbumLowestDate(int albumID) const
         return QDate();
     }
 
-    return values.first().toDate();
+    QDateTime albumDateTime = values.first().toDateTime();
+    albumDateTime.setTimeSpec(Qt::UTC);
+
+    return albumDateTime.date();
 }
 
 QDate CoreDB::getAlbumHighestDate(int albumID) const
@@ -4251,7 +4256,10 @@ QDate CoreDB::getAlbumHighestDate(int albumID) const
         return QDate();
     }
 
-    return values.first().toDate();
+    QDateTime albumDateTime = values.first().toDateTime();
+    albumDateTime.setTimeSpec(Qt::UTC);
+
+    return albumDateTime.date();
 }
 
 QDate CoreDB::getAlbumAverageDate(int albumID) const

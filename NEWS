@@ -121,7 +121,7 @@ BUGFIXES:
 103 ==> 479369 - digiKam 8.3 does not write the information to the file.
 104 ==> 479365 - Unintended Time Shift in Calendar Time Stamp settings.
 105 ==> 479375 - Face Tag Entry Crashes digiKam.
-106 ==> 
+106 ==> 479386 - Files sorted by creation date are at the wrong position after adding a tag.
 107 ==> 
 108 ==> 
 109 ==> 
