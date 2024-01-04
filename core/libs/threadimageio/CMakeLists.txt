@@ -28,7 +28,6 @@ set(libthreadimageio_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/fileio/loadingcacheinterface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/fileio/loadsavetask.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dmemoryinfo.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dfileoperations.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/filereadwritelock.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/managedloadsavethread.cpp
@@ -64,6 +63,7 @@ include_directories(
 
     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::Service,INTERFACE_INCLUDE_DIRECTORIES>
 )
 

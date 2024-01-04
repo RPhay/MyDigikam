@@ -34,8 +34,9 @@
 
 // KDE includes
 
-#include <kxmlgui_version.h>
 #include <klocalizedstring.h>
+#include <kmemoryinfo.h>
+#include <kxmlgui_version.h>
 
 // Local includes
 
@@ -47,7 +48,6 @@
 #include "metaengine.h"
 #include "dngwriter.h"
 #include "exiftoolparser.h"
-#include "dmemoryinfo.h"
 #include "loadingcache.h"
 #include "itempropertiestab.h"
 
@@ -343,11 +343,11 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
 
-    DMemoryInfo memory;
+    KMemoryInfo memInfo;
 
-    if (!memory.isNull())
+    if (!memInfo.isNull())
     {
-        quint64 available = memory.totalPhysical();
+        quint64 available = memInfo.totalPhysical();
 
         if (available > 0)
         {

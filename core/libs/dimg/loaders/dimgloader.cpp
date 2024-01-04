@@ -24,12 +24,15 @@
 
 #include <QScopedPointer>
 
+// KDE includes
+
+#include <kmemoryinfo.h>
+
 // Local includes
 
 #include "dimg_p.h"
 #include "dmetadata.h"
 #include "dimgloaderobserver.h"
-#include "dmemoryinfo.h"
 
 namespace Digikam
 {
@@ -167,16 +170,16 @@ qint64 DImgLoader::checkAllocation(qint64 fullSize)
 
     if (fullSize > (qint64)(100 * 1024 * 1024))
     {
-        DMemoryInfo memory;
+        KMemoryInfo memInfo;
 
-        if (memory.isNull())
+        if (memInfo.isNull())
         {
             qCWarning(DIGIKAM_DIMG_LOG) << "Not a recognized platform to get memory information";
 
             return -1;
         }
 
-        qint64 available = memory.availablePhysical();
+        qint64 available = memInfo.availablePhysical();
 
         if (available == 0)
         {

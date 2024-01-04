@@ -19,11 +19,14 @@
 #include <QCache>
 #include <QHash>
 
+// KDE includes
+
+#include <kmemoryinfo.h>
+
 // Local includes
 
 #include "digikam_debug.h"
 #include "iccsettings.h"
-#include "dmemoryinfo.h"
 #include "metaengine.h"
 #include "thumbnailsize.h"
 
@@ -179,8 +182,8 @@ void LoadingCache::cleanUp()
 LoadingCache::LoadingCache()
     : d(new Private(this))
 {
-    DMemoryInfo memory;
-    setCacheSize(qBound(100, int(memory.totalPhysical() / 1024 / 1024 * 0.06), 1024));
+    KMemoryInfo memInfo;
+    setCacheSize(qBound(100, int(memInfo.totalPhysical() / 1024 / 1024 * 0.06), 1024));
 
     // the pixmap number should not be based on system memory, it's graphics memory
 
