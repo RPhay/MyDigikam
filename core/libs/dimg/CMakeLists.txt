@@ -150,7 +150,7 @@ set(libdimgfilters_SRCS
 # TODO is this hack anymore required?
 if(CMAKE_COMPILER_IS_GNUCXX)
 
-    exec_program(${CMAKE_CXX_COMPILER} ARGS ${CMAKE_CXX_COMPILER_ARG1} -dumpversion OUTPUT_VARIABLE GCC_VERSION)
+    execute_process(COMMAND "${CMAKE_CXX_COMPILER}" "${CMAKE_CXX_COMPILER_ARG1}" "-dumpversion" OUTPUT_VARIABLE GCC_VERSION)
 
     if (${GCC_VERSION} VERSION_LESS "4.3.0")
         message(STATUS "Adjusting compilation flags for GCC version (${GCC_VERSION} )")

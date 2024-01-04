@@ -37,7 +37,7 @@ macro(CheckSSESupport)
 
     if(CMAKE_SYSTEM_NAME MATCHES "Linux")
 
-        exec_program(cat ARGS "/proc/cpuinfo" OUTPUT_VARIABLE CPUINFO)
+        execute_process(COMMAND cat "/proc/cpuinfo" OUTPUT_VARIABLE CPUINFO)
 
         string(REGEX REPLACE "^.*(sse2).*$" "\\1" SSE_THERE ${CPUINFO})
         string(COMPARE EQUAL "sse2" "${SSE_THERE}" SSE2_TRUE)
@@ -115,7 +115,7 @@ macro(CheckSSESupport)
 
     elseif(CMAKE_SYSTEM_NAME MATCHES "Darwin")
 
-        exec_program("/usr/sbin/sysctl -n machdep.cpu.features" OUTPUT_VARIABLE CPUINFO)
+        execute_process(COMMAND "/usr/sbin/sysctl" "-n machdep.cpu.features" OUTPUT_VARIABLE CPUINFO)
 
         string(REGEX REPLACE "^.*[^S](SSE2).*$" "\\1" SSE_THERE ${CPUINFO})
         string(COMPARE EQUAL "SSE2" "${SSE_THERE}" SSE2_TRUE)
@@ -208,7 +208,7 @@ macro(CheckSSESupport)
 
     if(CMAKE_COMPILER_IS_GNUCXX)
 
-        execute_process(COMMAND ${CMAKE_CXX_COMPILER} -dumpversion OUTPUT_VARIABLE GCC_VERSION)
+        execute_process(COMMAND "${CMAKE_CXX_COMPILER}" "-dumpversion" OUTPUT_VARIABLE GCC_VERSION)
 
         if(GCC_VERSION VERSION_LESS 4.2)
 
