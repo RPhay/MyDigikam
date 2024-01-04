@@ -37,7 +37,7 @@
 #include "digikam_debug.h"
 #include "dprogresswdg.h"
 #include "dhistoryview.h"
-//#include "vidslidethread.h"
+#include "vidslidethread.h"
 #include "vidplayerdlg.h"
 
 namespace DigikamGenericVideoSlideShowPlugin
@@ -61,7 +61,7 @@ public:
     DHistoryView*     progressView = nullptr;
     DProgressWdg*     progressBar  = nullptr;
     bool              complete     = false;
-//    VidSlideThread*   encoder      = nullptr;
+    VidSlideThread*   encoder      = nullptr;
     VidSlideWizard*   wizard       = nullptr;
     VidSlideSettings* settings     = nullptr;
     DInfoInterface*   iface        = nullptr;
@@ -88,9 +88,10 @@ VidSlideFinalPage::VidSlideFinalPage(QWizard* const dialog, const QString& title
 
 VidSlideFinalPage::~VidSlideFinalPage()
 {
-// FIXME
-//    if (d->encoder)
-//        d->encoder->cancel();
+    if (d->encoder)
+    {
+        d->encoder->cancel();
+    }
 
     delete d;
 }
@@ -98,7 +99,9 @@ VidSlideFinalPage::~VidSlideFinalPage()
 void VidSlideFinalPage::initializePage()
 {
     d->complete = false;
+
     Q_EMIT completeChanged();
+
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
 
@@ -128,7 +131,7 @@ void VidSlideFinalPage::slotProcess()
 
     d->progressBar->setMinimum(0);
     d->progressBar->setMaximum(d->settings->inputImages.count());
-/*
+
     d->encoder = new VidSlideThread(this);
 
     connect(d->encoder, SIGNAL(signalProgress(int)),
@@ -142,13 +145,14 @@ void VidSlideFinalPage::slotProcess()
 
     d->encoder->processStream(d->settings);
     d->encoder->start();
-*/
 }
 
 void VidSlideFinalPage::cleanupPage()
 {
-//    if (d->encoder)
-//        d->encoder->cancel();
+    if (d->encoder)
+    {
+        d->encoder->cancel();
+    }
 }
 
 void VidSlideFinalPage::slotMessage(const QString& mess, bool err)
