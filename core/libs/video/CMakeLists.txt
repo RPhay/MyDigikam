@@ -38,20 +38,19 @@ target_compile_definitions(core_videotoolscommon_obj
                            digikamcore_EXPORTS
 )
 
-
-
 ###
 
 if(ENABLE_MEDIAPLAYER)
+
+    set(libvideotools_SRCS
+        ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
+    )
 
     if(Qt6_FOUND AND ENABLE_QTMULTIMEDIA)
 
         # NOTE: this part depends of QtMultimedia
 
-        include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::MultimediaWidgets,INTERFACE_INCLUDE_DIRECTORIES>
-        )
-
-        set(libvideotools_SRCS
+        set(libvideotools_SRCS ${libvideotools_SRCS}
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtmm/mediaplayerview.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtmm/slidevideo.cpp
         )
@@ -60,10 +59,9 @@ if(ENABLE_MEDIAPLAYER)
 
         # NOTE: this part depends of QtAv
 
-        set(libvideotools_SRCS
+        set(libvideotools_SRCS ${libvideotools_SRCS}
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/mediaplayerview.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/slidevideo.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
 
             ${CMAKE_CURRENT_SOURCE_DIR}/manager/qtav/vidslidetask.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp

@@ -442,7 +442,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     HEADER_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/libs DK_LOCAL_INCLUDES_RAW)
 
-    # This macro will set all paths which do not contain libjpeg-
+    # This macro will set all paths which do not contain libjpeg-, qtav, and qtmm.
     # We will add later the directory we need
 
     foreach(var ${DK_LOCAL_INCLUDES_RAW})
@@ -456,6 +456,8 @@ if(DIGIKAM_CAN_BE_COMPILED)
         string(REGEX MATCH "extra/xmp_sdk"     _item_libxmp  ${var})
         string(REGEX MATCH "pgfutils/libpgf"   _item_libpgf  ${var})
         string(REGEX MATCH "rawengine/libraw/" _item_libraw  ${var})
+        string(REGEX MATCH "/qtav"             _item_qtav    ${var})
+        string(REGEX MATCH "/qtmm"             _item_qtmm    ${var})
 
         if(
            _item_libjpeg STREQUAL "" AND
@@ -464,7 +466,9 @@ if(DIGIKAM_CAN_BE_COMPILED)
            _item_libmd5  STREQUAL "" AND
            _item_libxmp  STREQUAL "" AND
            _item_libpgf  STREQUAL "" AND
-           _item_libraw  STREQUAL ""
+           _item_libraw  STREQUAL "" AND
+           _item_qtav    STREQUAL "" AND
+           _item_qtmm    STREQUAL ""
           )
 
             list(APPEND DK_LOCAL_INCLUDES ${var})

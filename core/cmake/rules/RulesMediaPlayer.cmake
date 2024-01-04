@@ -16,6 +16,11 @@ if(ENABLE_MEDIAPLAYER)
                      MultimediaWidgets
         )
 
+        include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Multimedia,INTERFACE_INCLUDE_DIRECTORIES>
+                            $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::MultimediaWidgets,INTERFACE_INCLUDE_DIRECTORIES>
+                            ${CMAKE_SOURCE_DIR}/core/libs/video/player/qtmm
+        )
+
         set(ENABLE_QTMULTIMEDIA ON)
         message(STATUS "MediaPlayer type:     Qt6::Multimedia")
 
@@ -489,6 +494,28 @@ if(ENABLE_MEDIAPLAYER)
             message(STATUS "MediaPlayer libraries  : ${MEDIAPLAYER_LIBRARIES}")
             message(STATUS "MediaPlayer definitions: ${MEDIAPLAYER_DEFINITIONS}")
             message(STATUS "MediaPlayer flags      : ${MEDIAPLAYER_FLAGS}")
+
+            include_directories(${CMAKE_SOURCE_DIR}/core/libs/video/qtav/ffmpeg
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/subtitle
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/utils
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/filter
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/io
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/output
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/output/audio
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/output/video
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/codec
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/codec/audio
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/codec/video
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/widgets
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/opengl
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/config
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/windows
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/X11
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/vaapi
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/cuda
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/player/qtav
+                                ${CMAKE_SOURCE_DIR}/core/libs/video/manager/qtav
+            )
 
         endif()
 
