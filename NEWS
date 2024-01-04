@@ -122,7 +122,7 @@ BUGFIXES:
 104 ==> 479365 - Unintended Time Shift in Calendar Time Stamp settings.
 105 ==> 479375 - Face Tag Entry Crashes digiKam.
 106 ==> 479386 - Files sorted by creation date are at the wrong position after adding a tag.
-107 ==> 
+107 ==> 479410 - Highlight next focused unconfirmed name, instead of putting cursor at end of name.
 108 ==> 
 109 ==> 
 110 ==> 
