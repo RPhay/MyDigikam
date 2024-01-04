@@ -1,5 +1,5 @@
 /** \mainpage digiKam API reference page.
-    \author (c) 2001-2023 digiKam team.
+    \author (c) 2001-2024 digiKam team.
     \brief digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and macOS.
     \image html logo-digikam.png
 
@@ -298,7 +298,7 @@ The full list of mandatory (X) and (optional) external dependencies required to 
 | KF::WindowSystem     |      X      | >= 5.89.0     | >= 5.91.0     | https://invent.kde.org/frameworks/kwindowsystem       |                                                        |                                                                                       |
 | KF::Service          |      X      | >= 5.89.0     | >= 5.91.0     | https://invent.kde.org/frameworks/kservice            | TODO: make optional for Linux desktop (DFileOperations)|                                                                                       |
 | KF::Solid            |      X      | >= 5.89.0     | >= 5.91.0     | https://invent.kde.org/frameworks/solid               |                                                        |                                                                                       |
-| KF::CoreAddons       |      X      | >= 5.89.0     | >= 5.91.0     | https://invent.kde.org/frameworks/kcoreaddons         | Needs for KAboutData                                   |                                                                                       |
+| KF::CoreAddons       |      X      | >= 5.89.0     | >= 5.91.0     | https://invent.kde.org/frameworks/kcoreaddons         | Needs for KAboutData and KMemoryInfo                   |                                                                                       |
 | KF::NotifyConfig     |   optional  | >= 5.89.0     | >= 5.91.0     | https://invent.kde.org/frameworks/knotifyconfig       | For Linux desktop application notify configuration     |                                                                                       |
 | KF::Notifications    |   optional  | >= 5.89.0     | >= 5.91.0     | https://invent.kde.org/frameworks/knotifications      | For Linux desktop notifications integrations           |                                                                                       |
 | KF::ThreadWeaver     |   optional  | >= 5.89.0     | >= 5.91.0     | https://invent.kde.org/frameworks/threadweaver        | For panorama tool                                      |                                                                                       |
