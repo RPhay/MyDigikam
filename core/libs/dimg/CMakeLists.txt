@@ -140,25 +140,6 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/redeye/redeyecorrectioncontainer.cpp
 )
 
-# ==================================================================================================
-# get the gcc version
-
-# CImg.h version 1.2.8 do not compile fine with gcc 4.3.x
-# See bug #163118: digikam-0.9.4_beta5 compilation hangs with gcc 4.3
-# Using -fno-tree-pre is work around this problem.
-
-# TODO is this hack anymore required?
-if(CMAKE_COMPILER_IS_GNUCXX)
-
-    execute_process(COMMAND "${CMAKE_CXX_COMPILER}" "${CMAKE_CXX_COMPILER_ARG1}" "-dumpversion" OUTPUT_VARIABLE GCC_VERSION)
-
-    if (${GCC_VERSION} VERSION_LESS "4.3.0")
-        message(STATUS "Adjusting compilation flags for GCC version (${GCC_VERSION} )")
-        add_definitions(-fno-tree-pre)
-    endif()
-
-endif()
-
 if(GLIB2_FOUND)
 
     set(libdimgfilters_SRCS
