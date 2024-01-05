@@ -90,7 +90,7 @@ if(KF${QT_VERSION_MAJOR}FileMetaData_FOUND)
 
 endif()
 
-if(KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
+if(KPim${QT_VERSION_MAJOR}AkonadiContact_FOUND)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
@@ -397,11 +397,11 @@ if(KF${QT_VERSION_MAJOR}FileMetaData_FOUND)
 
 endif()
 
-if(KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
+if(KPim${QT_VERSION_MAJOR}AkonadiContact_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          KF${QT_VERSION_MAJOR}::AkonadiContact
+                          KPim${QT_VERSION_MAJOR}::AkonadiContact
     )
 
 endif()
