@@ -16,7 +16,6 @@
 
 // Qt includes
 
-#include <QApplication>
 #include <QByteArray>
 #include <QProcess>
 #include <QElapsedTimer>
