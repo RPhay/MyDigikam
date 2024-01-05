@@ -1,0 +1,72 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2015-04-13
+ * Description : Generic process launcher with a capture of console output
+ *
+ * SPDX-FileCopyrightText: 2011-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
+#ifndef DIGIKAM_PROCESS_LAUNCHER_H
+#define DIGIKAM_PROCESS_LAUNCHER_H
+
+// Qt includes
+
+#include <QObject>
+#include <QString>
+#include <QStringList>
+
+// Local includes
+
+#include "digikam_export.h"
+
+namespace Digikam
+{
+
+class DIGIKAM_EXPORT ProcessLauncher : public QObject
+{
+    Q_OBJECT
+
+public:
+
+    explicit ProcessLauncher(QObject* const parent = nullptr);
+    ~ProcessLauncher();
+
+    void setProgram(const QString& prog);
+    void setArguments(const QStringList& args);
+    void setWorkingDirectory(const QString& dir);
+    void setTimeOut(int msecs);
+
+    /**
+     * Start the process. Retrun true if process is started and stopped properly.
+     */
+    bool startProcess()     const;
+
+    /**
+     * Return the exit code from the process.
+     */
+    int exitCode()          const;
+
+    /**
+     * Return the elapsed time in ms to run the process.
+     */
+    qint64 elapsedTime()    const;
+
+private Q_SLOTS:
+
+    void slotReadyRead();
+
+private:
+
+    class Private;
+    Private* const d;
+};
+
+} // namespace Digikam
+
+#endif // DIGIKAM_PROCESS_LAUNCHER_H
