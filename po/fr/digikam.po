@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 00:39+0000\n"
-"PO-Revision-Date: 2024-01-02 17:07+0100\n"
+"POT-Creation-Date: 2024-01-05 00:39+0000\n"
+"PO-Revision-Date: 2024-01-03 10:32+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -1075,8 +1075,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:232
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:183
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:220
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
@@ -1220,7 +1220,7 @@ msgid " fps"
 msgstr " fps"
 
 #: core/app/items/utils/tooltipfiller.cpp:389
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:153
 #, kde-format
 msgid "Video Codec:"
 msgstr "Codec vidéo :"
@@ -6228,6 +6228,13 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
+"<p><b>Cet outil permet d'associer automatiquement des étiquettes aux images "
+"par analyse de contenu à l’aide d’un réseau neuronal d’apprentissage "
+"profond. </b></p><p>Les paramètres ci-dessous déterminent le modèle "
+"d’apprentissage profond à utiliser lors de l’analyse du contenu des images "
+"pour déterminer les sujets de la photographie. Le réseau neuronal utilisé en "
+"arrière-plan générera automatiquement une série d'étiquettes décrivant le "
+"contenu et enregistrera les résultats dans la base de données. </p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
 #: core/utilities/maintenance/maintenancedlg.cpp:191
@@ -17648,7 +17655,7 @@ msgstr "Créer une galerie HTML…"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:112
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -17787,7 +17794,7 @@ msgstr "Dossier de destination :"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:109
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -17876,7 +17883,7 @@ msgid "Theme Parameters"
 msgstr "Paramètres du thème"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
 #, kde-format
 msgid "Output Settings"
 msgstr "Paramètres de sortie"
@@ -20392,13 +20399,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "Choisissez le format d'image dans lequel exporter l'impression."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Destination folder:"
 msgstr "Dossier de destination :"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20468,7 +20475,7 @@ msgstr "Bienvenue dans le créateur d'impression"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
@@ -20967,7 +20974,7 @@ msgid "Welcome to Email Tool"
 msgstr "Bienvenue dans l'outil courriel"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:89
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
@@ -21015,32 +21022,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Créer un diaporama vidéo…"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:124
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "Début de la génération du diaporama vidéo…"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:127
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 images en entrée à traiter"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:171
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Le diaporama vidéo n'est pas terminé."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:176
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Diaporama vidéo terminé."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:181
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Ouverture du premier flux vidéo…"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:66
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:64
 #, kde-format
 msgid ""
 "<p>This view list all items to include on video stream.</p><p>The first one "
@@ -21081,47 +21088,47 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "Binaire"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Format du conteneur de média :"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Le nom du fichier vidéo de sortie sera généré automatiquement."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:129
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
 #, kde-format
 msgid "Open in Player:"
 msgstr "Ouvrir dans le lecteur :"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:95
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:83
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr "Nombre de trames par image :"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:92
 #, kde-format
 msgid "Video Standard:"
 msgstr "Standard vidéo :"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:111
 #, kde-format
 msgid "Video Type:"
 msgstr "Type de vidéo :"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:146
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:134
 #, kde-format
 msgid "Video Bit Rate:"
 msgstr "Débit vidéo :"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:180
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr "Effet pendant l'affichage des images"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:212
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:200
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -21132,12 +21139,12 @@ msgstr ""
 "d'une image. La durée de l'effet suivra le nombre de trames utilisées pour "
 "afficher l'image dans le flux vidéo.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:229
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:217
 #, kde-format
 msgid "Transition Between Images"
 msgstr "Transition entre les images"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:249
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:237
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -21148,29 +21155,29 @@ msgstr ""
 "certains effets, la durée peut dépendre de valeurs aléatoires et changer "
 "pendant le diaporama.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:330
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:318
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 "Durée : %1 secondes par élément, %2 secondes au total (sans les transitions)"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Créer un diaporama vidéo"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr "Bienvenue dans l'outil diaporama vidéo"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, kde-format
 msgid "Video Settings"
 msgstr "Paramètres de la vidéo"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:82
 #, kde-format
 msgid "Generating Video Slideshow"
 msgstr "Génération de diaporamas vidéo"
@@ -41417,31 +41424,6 @@ msgid ""
 "video."
 msgstr ""
 
-#: core/libs/video/manager/qtav/vidslidetask.cpp:278
-#, kde-format
-msgid "Failed to open video encoder"
-msgstr "Impossible d'ouvrir l'encodeur vidéo"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:294
-#, kde-format
-msgid "Failed to open audio encoder"
-msgstr "Impossible d'ouvrir l'encodeur audio"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:324
-#, kde-format
-msgid "Failed to open muxer"
-msgstr "Impossible d'ouvrir muxer"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:410
-#, kde-format
-msgid "Encoding %1 Done"
-msgstr "Encodage %1 terminé"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:445
-#, kde-format
-msgid "Output video is %1"
-msgstr "La vidéo de sortie est %1"
-
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
 msgctxt "Video Type: QVGA"
@@ -41921,6 +41903,23 @@ msgstr "Interne"
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Par défaut selon le bureau"
+
+#: core/libs/video/manager/vidslidetask.cpp:214
+#, fuzzy, kde-format
+#| msgid "Encoding %1 Done"
+msgid "Preparing %1 Done"
+msgstr "Encodage %1 terminé"
+
+#: core/libs/video/manager/vidslidetask.cpp:249
+#, fuzzy, kde-format
+#| msgid "Cannot create directory %1"
+msgid "Cannot generate output video %1"
+msgstr "Impossible de créer le dossier %1."
+
+#: core/libs/video/manager/vidslidetask.cpp:254
+#, kde-format
+msgid "Output video is %1"
+msgstr "La vidéo de sortie est %1"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -43480,10 +43479,9 @@ msgid "A KDE Family Project"
 msgstr "Une projet de la famille KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2023, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2024, digiKam developers team"
-msgstr "(c) 2001 - 2023, L'équipe de développement de digiKam"
+msgstr "(c) 2001 - 2024, L'équipe de développement de DigiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
@@ -54129,10 +54127,9 @@ msgid "Add Bookmark..."
 msgstr "Ajouter un signet…"
 
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
-#, fuzzy, kde-format
-#| msgid "<p>Arguments: %1</p>"
+#, kde-format
 msgid "<p>Copyright %1</p>"
-msgstr "<p>Arguments : %1</p>"
+msgstr "<p>Licence : %1</p>"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, kde-format
@@ -55268,7 +55265,7 @@ msgstr "Mer"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:319
 #, kde-format
 msgid "Manned Landing Site"
-msgstr ""
+msgstr "Site d'atterrissage manuel"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:320
 #, kde-format
@@ -57036,7 +57033,7 @@ msgstr "Aucun nom spécifié"
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
-msgstr ""
+msgstr "Veuillez spécifier un nom pour cette relation."
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:89
 #, kde-format
@@ -57046,7 +57043,7 @@ msgstr "Aucune étiquette de type spécifiée"
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:90
 #, kde-format
 msgid "Please add a type tag for this relation."
-msgstr ""
+msgstr "Veuillez ajouter une étiquette de type pour cette relation."
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:69
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget_p.cpp:80
@@ -57589,7 +57586,7 @@ msgstr "Cercle en sortie"
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:563
 #, kde-format
 msgid "Total Distance: %1<br/>\n"
-msgstr ""
+msgstr "Distance totale : %1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:565
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:574
@@ -57818,10 +57815,9 @@ msgid "OpenStreetMap Nominatim Reverse Geocoding"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:30
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Nominatim"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
 #, kde-format
@@ -57872,7 +57868,7 @@ msgstr "Analyseur de fichiers « pnt »"
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to loac Geolocation Data from the Micro World Database II Files "
+"A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
 
@@ -57893,6 +57889,9 @@ msgid ""
 "p><p>Applications: Display of seismic and radio data and for use in digital "
 "planetariums.</p>"
 msgstr ""
+"<p><b>Projection équidistante azimutale</b> (Grand Angle type « Fish Eye »)</"
+"p><p>Applications : affichage des données sismiques et radio, pour une "
+"utilisation dans les planétariums numériques.</p>"
 
 #: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:35
 #, kde-format
@@ -57905,6 +57904,9 @@ msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
 "De facto standard for global texture data sets for computer software.</p>"
 msgstr ""
+"<p><b>Projection équirectangulaire</b> (« Plate Carrée »)</"
+"p><p>Applications : standard de-facto pour les ensembles de données de "
+"texture globale pour les logiciels informatiques.</p>"
 
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:64
 #, kde-format
@@ -57918,6 +57920,9 @@ msgid ""
 "displaying panorama photography. Also used for navigation, radio and seismic "
 "work.</p>"
 msgstr ""
+"<p><b>Projection gnomonique</b>(« Rectiligne »)</p><p>Applications : utilisé "
+"pour afficher une photographie en panorama. Également utilisé pour la "
+"navigation, la radio et le travail sismique. </p>"
 
 #: core/utilities/geolocation/marble/projections/LambertAzimuthalProjection.cpp:64
 #, kde-format
@@ -57950,6 +57955,9 @@ msgid ""
 "perspective projection that is used to display the hemisphere of a globe as "
 "it appears from outer space.</p>"
 msgstr ""
+"<p><b>Projection orthographique</b> (« Orthogonal ») </p><p>Applications : "
+"une projection de perspective qui est utilisée pour afficher l'hémisphère "
+"d'un globe tel qu'il apparaît de l'espace.</p>"
 
 #: core/utilities/geolocation/marble/projections/StereographicProjection.cpp:64
 #, kde-format
@@ -57962,11 +57970,14 @@ msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
 "for planetary cartography, geology and panorama photography.</p>"
 msgstr ""
+"<p><b>Projection stéréographique </b> (« Orthogonal »)</p><p>Applications : "
+"utilisé pour la cartographie planétaire, la géologie et la photographie en "
+"panorama.</p>"
 
 #: core/utilities/geolocation/marble/projections/VerticalPerspectiveProjection.cpp:78
 #, kde-format
 msgid "Vertical Perspective Projection"
-msgstr ""
+msgstr "Projection verticale de perspective"
 
 #: core/utilities/geolocation/marble/projections/VerticalPerspectiveProjection.cpp:83
 #, kde-format
@@ -57975,6 +57986,10 @@ msgid ""
 "earth as it appears from a relatively short distance above the surface. "
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
+"<p> <b> Projection de perspective verticale</b> (« Orthogonal »)</p><p> "
+"Affiche la Terre telle qu'elle apparaît à partir d'une distance relativement "
+"courte au-dessus de la surface. Applications : utilisé pour les globes "
+"virtuels. </p>"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
 #, kde-format
@@ -58021,7 +58036,7 @@ msgstr "Degré (décimal)"
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
-msgstr ""
+msgstr "Universal Transverse Mercator (UTM)"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:123
 #, kde-format
@@ -58030,6 +58045,11 @@ msgid ""
 "By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
+"Spécifie la notation des angles dans les coordonnées.\n"
+"Par défaut, la notation en degré-minute-seconde (Par exemple, 54 ° 30' 00 "
+"\") est utilisée.\n"
+"Comme alternative, vous pouvez choisir des degrés décimaux (Par exemple, "
+"54,5 °)."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
 #, kde-format
@@ -58078,6 +58098,10 @@ msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
 "Usually this allows for high map quality as speed is no concern."
 msgstr ""
+"Définit la qualité de la carte qui s'affiche alors qu'il n'y a aucune entrée "
+"utilisateur.\n"
+"Habituellement, cela permet une qualité de carte élevée car la vitesse n'est "
+"pas préoccupante."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
 #, kde-format
@@ -58092,6 +58116,12 @@ msgid ""
 "advisable to set this option to \"low quality\" as this will give better "
 "speed."
 msgstr ""
+"Spécifie la qualité de la carte qui s'affiche pendant les animations de la "
+"carte\n"
+"(Par exemple lors d'un glisser sur le globe). En particulier sur les "
+"machines lentes, il est\n"
+"conseillé de définir cette option à « Faible qualité » car cela donnera une "
+"meilleure vitesse."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
 #, kde-format
@@ -58124,24 +58154,7 @@ msgid "Cache"
 msgstr "Cache"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:177
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#| "TR/REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></"
-#| "a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
+#, kde-format
 msgid ""
 "There are two caches being used:\n"
 "The \"physical memory\" which is needed to keep map data in the computer's "
@@ -58152,22 +58165,15 @@ msgid ""
 "Decrease this value if you want to save space on the hard disc\n"
 "and if high usage of the Internet is not an issue."
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Vous pouvez télécharger un "
-"agenda de votre pays à partir de <a href=\"www.icalshare.com\"><span style="
-"\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></a> "
-"ou d'autres sites.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Cette opération est "
-"totalement facultative. Tous les évènements provenant de cet agenda seront "
-"imprimés en rouge.</p></body></html>"
+"Deux caches sont utilisées : \n"
+"La « mémoire physique » nécessaire pour conserver les données "
+"cartographiques dans la mémoire de l’ordinateur.  \n"
+"L’augmentation de cette valeur rendra l'application plus réactive. \n"
+"La mémoire cache pour le disque dur est utilisée pour télécharger les "
+"données cartographiques à partir d’Internet.  \n"
+"Vous pouvez diminuer cette valeur si vous voulez économiser de l’espace sur "
+"le disque dur \n"
+"et si une utilisation importante d’Internet n’est pas un problème."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
 #, kde-format
@@ -58204,6 +58210,9 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"La police par défaut qui est utilisée sur la carte.\n"
+"Ce paramètre ne fonctionne qu'avec les cartes d'atlas et satellitaires\n"
+"et non pas avec des cartes OpenStreetMap."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
 #, kde-format
@@ -58243,12 +58252,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Afficher la superposition de la lueur atmosphérique sur la carte mondiale.\n"
+"Ce paramètre ne fonctionne qu'avec les cartes d'atlas et satellitaires\n"
+"et non pas des cartes OpenStreetMap."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
-#, fuzzy, kde-format
-#| msgid "Show on right panel"
+#, kde-format
 msgid "Show Night Shadow"
-msgstr "Afficher dans le panneau de droite"
+msgstr "Afficher l'ombre nocturne"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:231
 #, kde-format
@@ -58309,10 +58320,9 @@ msgid "Runner Tools"
 msgstr "Outils inconnus"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
-#, fuzzy, kde-format
-#| msgid "Unable to save changes to file"
+#, kde-format
 msgid "Unable to insert data into cache"
-msgstr "Impossible d'enregistrer les changements dans un fichier"
+msgstr "Impossible d'insérer les données dans le cache"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:131
 #, kde-format
@@ -61899,6 +61909,13 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
+"<p><b>Cet outil permet d'associer automatiquement des étiquettes aux images "
+"par analyse de contenu à l’aide d’un réseau neuronal d’apprentissage "
+"profond. </b></p><p>Les paramètres ci-dessous déterminent le modèle "
+"d’apprentissage profond à utiliser lors de l’analyse du contenu des images "
+"pour déterminer les sujets de la photographie. Le réseau neuronal utilisé en "
+"arrière-plan générera automatiquement une série d'étiquettes décrivant le "
+"contenu et enregistrera les résultats dans la base de données. </p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:179
 #, kde-format
@@ -67489,18 +67506,14 @@ msgid "Light Table"
 msgstr "Table lumineuse"
 
 #: core/utilities/setup/setup.cpp:251
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare images"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
 msgstr ""
 "Configuration de la table lumineuse\n"
-"Personnalisez l'outil utilisé pour la comparaison des images"
+"Personnalisez l'outil utilisé pour la comparaison des éléments."
 
 #: core/utilities/setup/setup.cpp:264
 #, kde-format
@@ -67640,6 +67653,13 @@ msgid ""
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
+"Pour travailler confortablement, Google Maps nécessite l'utilisation d'une "
+"clé API que les utilisateurs finaux doivent acheter en ligne pour obtenir "
+"des identifiants. Sans cette clé, Google Maps est toujours utilisable mais "
+"avec un filigrane  « Pour le développement uniquement ». Pour plus "
+"d'informations, veuillez consulter la <a href='https://mapsplatform.google."
+"com/pricing/'>page de Google</a> concernant les utilisations, les modes "
+"opératoires et les prix."
 
 #: core/utilities/setup/setupicc.cpp:178
 #, kde-format
@@ -68591,6 +68611,17 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Voulez-vous réinitialiser tous les paramètres de vidéos à leurs valeurs par "
 "défaut ?"
+
+#~ msgid "Failed to open video encoder"
+#~ msgstr "Impossible d'ouvrir l'encodeur vidéo"
+
+#, fuzzy
+#~| msgid "Failed to open audio encoder"
+#~ msgid "Failed to open audio encoder"
+#~ msgstr "Impossible d'ouvrir l'encodeur audio"
+
+#~ msgid "Failed to open muxer"
+#~ msgstr "Impossible d'ouvrir muxer"
 
 #~ msgctxt "@title:window"
 #~ msgid "Javascript Message"

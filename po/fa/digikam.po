@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 00:39+0000\n"
+"POT-Creation-Date: 2024-01-05 00:39+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -1417,8 +1417,8 @@ msgstr ""
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:232
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:183
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:220
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
@@ -1562,7 +1562,7 @@ msgid " fps"
 msgstr ""
 
 #: core/app/items/utils/tooltipfiller.cpp:389
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:153
 #, fuzzy, kde-format
 msgid "Video Codec:"
 msgstr "پرونده‌های صوتی"
@@ -17316,7 +17316,7 @@ msgstr "کاریکاتور"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:112
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, fuzzy, kde-format
 msgid "Internal Error"
@@ -17459,7 +17459,7 @@ msgstr "توصیف:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:109
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, fuzzy, kde-format
 msgctxt "@title:window"
@@ -17555,7 +17555,7 @@ msgid "Theme Parameters"
 msgstr "پارامترها"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
 #, fuzzy, kde-format
 msgid "Output Settings"
 msgstr "تنظیمات عمومی"
@@ -19920,13 +19920,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "<p>مقدار اشباع را در اینجا تنظیم کنید."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, fuzzy, kde-format
 msgid "Destination folder:"
 msgstr "توصیف:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, fuzzy, kde-format
 #| msgid "Output device"
@@ -19997,7 +19997,7 @@ msgstr "%1 - پوشه دوربین را برگزینید"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, fuzzy, kde-format
 msgid "Albums Selection"
@@ -20481,7 +20481,7 @@ msgid "Welcome to Email Tool"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:89
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, fuzzy, kde-format
 msgid "Images List"
@@ -20522,33 +20522,33 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "انتساب این برچسب"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:124
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #, fuzzy, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "کاریکاتور"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:127
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, fuzzy, kde-format
 msgid "%1 input images to process"
 msgstr "سفارشی"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:171
 #, fuzzy, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "&نمایش اسلاید‌"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:176
 #, fuzzy, kde-format
 msgid "Video Slideshow completed."
 msgstr "&نمایش اسلاید‌"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:181
 #, fuzzy, kde-format
 #| msgid "Open folder"
 msgid "Opening video stream in player..."
 msgstr "باز کردن پوشه"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:66
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:64
 #, kde-format
 msgid ""
 "<p>This view list all items to include on video stream.</p><p>The first one "
@@ -20575,49 +20575,49 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
 #, fuzzy, kde-format
 #| msgid "Linear"
 msgid "Media Container Format:"
 msgstr "خطی"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:129
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgid "Open in Player:"
 msgstr "باز کردن در مدیر پرونده"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:95
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:83
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:92
 #, fuzzy, kde-format
 msgid "Video Standard:"
 msgstr "استاندارد"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:111
 #, fuzzy, kde-format
 msgid "Video Type:"
 msgstr "پرونده‌های صوتی"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:146
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:134
 #, fuzzy, kde-format
 msgid "Video Bit Rate:"
 msgstr "پرونده‌های صوتی"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:180
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:212
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:200
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -20625,13 +20625,13 @@ msgid ""
 "render the image on video stream.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:229
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:217
 #, fuzzy, kde-format
 #| msgid "Or Between Tags"
 msgid "Transition Between Images"
 msgstr "یا بین برچسبها"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:249
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:237
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -20639,29 +20639,29 @@ msgid ""
 "slideshow.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:330
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:318
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:68
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "انتساب این برچسب"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, fuzzy, kde-format
 #| msgid "Slide Show Settings"
 msgid "Video Settings"
 msgstr "تنظیمات نمایش اسلاید"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:82
 #, fuzzy, kde-format
 msgid "Generating Video Slideshow"
 msgstr "انتساب این برچسب"
@@ -40016,31 +40016,6 @@ msgid ""
 "video."
 msgstr ""
 
-#: core/libs/video/manager/qtav/vidslidetask.cpp:278
-#, fuzzy, kde-format
-msgid "Failed to open video encoder"
-msgstr "خرابی در بار کردن تصویر »%1«"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:294
-#, fuzzy, kde-format
-msgid "Failed to open audio encoder"
-msgstr "خرابی در بار کردن تصویر »%1«"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:324
-#, fuzzy, kde-format
-msgid "Failed to open muxer"
-msgstr "خرابی در بار کردن تصویر »%1«"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:410
-#, kde-format
-msgid "Encoding %1 Done"
-msgstr ""
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:445
-#, fuzzy, kde-format
-msgid "Output video is %1"
-msgstr "خرابی در تغییر نام آلبوم"
-
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
 msgctxt "Video Type: QVGA"
@@ -40521,6 +40496,21 @@ msgstr "درون‌یابی:"
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
+
+#: core/libs/video/manager/vidslidetask.cpp:214
+#, fuzzy, kde-format
+msgid "Preparing %1 Done"
+msgstr "آماده‌سازی نمایش اسلاید. لطفاً، منتظر بمانید..."
+
+#: core/libs/video/manager/vidslidetask.cpp:249
+#, fuzzy, kde-format
+msgid "Cannot generate output video %1"
+msgstr "خرابی در تغییر نام آلبوم"
+
+#: core/libs/video/manager/vidslidetask.cpp:254
+#, fuzzy, kde-format
+msgid "Output video is %1"
+msgstr "خرابی در تغییر نام آلبوم"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -56524,7 +56514,7 @@ msgstr "تبدیل"
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to loac Geolocation Data from the Micro World Database II Files "
+"A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
 
@@ -66584,6 +66574,18 @@ msgstr "<p>بازنشانی کل پارامترهای پالایه به مقاد
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "<p>بازنشانی کل پارامترهای پالایه به مقادیر پیش‌فرض آنها."
+
+#, fuzzy
+#~ msgid "Failed to open video encoder"
+#~ msgstr "خرابی در بار کردن تصویر »%1«"
+
+#, fuzzy
+#~ msgid "Failed to open audio encoder"
+#~ msgstr "خرابی در بار کردن تصویر »%1«"
+
+#, fuzzy
+#~ msgid "Failed to open muxer"
+#~ msgstr "خرابی در بار کردن تصویر »%1«"
 
 #, fuzzy
 #~| msgid "Script Manager"

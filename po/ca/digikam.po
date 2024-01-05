@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 00:39+0000\n"
-"PO-Revision-Date: 2024-01-03 17:07+0200\n"
+"POT-Creation-Date: 2024-01-05 00:39+0000\n"
+"PO-Revision-Date: 2024-01-04 08:44+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1017,8 +1017,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:232
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:183
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:220
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
@@ -1162,7 +1162,7 @@ msgid " fps"
 msgstr " fps"
 
 #: core/app/items/utils/tooltipfiller.cpp:389
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:153
 #, kde-format
 msgid "Video Codec:"
 msgstr "Còdec de vídeo:"
@@ -17497,7 +17497,7 @@ msgstr "Crea una galeria HTML..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:112
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -17638,7 +17638,7 @@ msgstr "Carpeta de destinació:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:109
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -17727,7 +17727,7 @@ msgid "Theme Parameters"
 msgstr "Paràmetres del tema"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
 #, kde-format
 msgid "Output Settings"
 msgstr "Configuració de la sortida"
@@ -20226,13 +20226,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "Seleccioneu el format preferit en exportar la impressió com a imatge."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Destination folder:"
 msgstr "Carpeta de destinació:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20302,7 +20302,7 @@ msgstr "Us donem la benvinguda al creador d'impressió"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
@@ -20797,7 +20797,7 @@ msgid "Welcome to Email Tool"
 msgstr "Us donem la benvinguda a l'eina de correu electrònic"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:89
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
@@ -20846,33 +20846,33 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Crea un vídeo de presentació de diapositives..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:124
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr ""
 "S'està començant a generar el vídeo de la presentació de diapositives..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:127
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 imatges d'entrada a processar"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:171
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "El vídeo de la presentació de diapositives no està complet"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:176
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "El vídeo de la presentació de diapositives està complet."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:181
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "S'està obrint el flux de vídeo en el reproductor..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:66
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:64
 #, kde-format
 msgid ""
 "<p>This view list all items to include on video stream.</p><p>The first one "
@@ -20906,54 +20906,52 @@ msgstr ""
 "transició i pistes d'àudio per a visualitzar en una pantalla de TV.</p></qt>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title: binary properties"
-#| msgid "Binary"
+#, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
-msgstr "Executable"
+msgstr "Executable del FFmpeg"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Format del contenidor multimèdia:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "El nom del fitxer de sortida de vídeo es generarà automàticament."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:129
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
 #, kde-format
 msgid "Open in Player:"
 msgstr "Obre al reproductor:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:95
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:83
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr "Nombre de fotogrames per imatge:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:92
 #, kde-format
 msgid "Video Standard:"
 msgstr "Estàndard de vídeo:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:111
 #, kde-format
 msgid "Video Type:"
 msgstr "Tipus de vídeo:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:146
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:134
 #, kde-format
 msgid "Video Bit Rate:"
 msgstr "Taxa de bits del vídeo:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:180
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr "Efecte en mostrar imatges"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:212
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:200
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -20964,12 +20962,12 @@ msgstr ""
 "una imatge. La durada de l'efecte seguirà el nombre de fotogrames emprats "
 "per a renderitzar la imatge en el flux de vídeo.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:229
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:217
 #, kde-format
 msgid "Transition Between Images"
 msgstr "Transició entre imatges"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:249
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:237
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -20980,29 +20978,29 @@ msgstr ""
 "alguns efectes, la durada pot dependre de valors aleatoris i pot canviar "
 "durant la presentació de diapositives.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:330
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:318
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Durada: %1 segons per element, total %2 segons (sense transicions)"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Creació de vídeo de presentació de diapositives"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr ""
 "Us donem la benvinguda a l'eina de vídeo de presentació de diapositives"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, kde-format
 msgid "Video Settings"
 msgstr "Configuració del vídeo"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:82
 #, kde-format
 msgid "Generating Video Slideshow"
 msgstr "S'està generant el vídeo de presentació de diapositives"
@@ -26978,8 +26976,8 @@ msgid ""
 "The MySQL binary tools was not found, please set the correct location in the "
 "next dialog."
 msgstr ""
-"No es troben les eines binàries de MySQL, establiu la ubicació correcta en "
-"el diàleg següent."
+"No es troben les eines executables del MySQL, establiu la ubicació correcta "
+"en el diàleg següent."
 
 #: core/libs/album/manager/albummanager_database.cpp:130
 #, kde-format
@@ -41138,31 +41136,8 @@ msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:278
-#, kde-format
-msgid "Failed to open video encoder"
-msgstr "Ha fallat en obrir el codificador de vídeo"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:294
-#, kde-format
-msgid "Failed to open audio encoder"
-msgstr "Ha fallat en obrir el codificador d'àudio"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:324
-#, kde-format
-msgid "Failed to open muxer"
-msgstr "Ha fallat en obrir el «muxer»"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:410
-#, kde-format
-msgid "Encoding %1 Done"
-msgstr "S'ha fet la codificació de %1"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:445
-#, kde-format
-msgid "Output video is %1"
-msgstr "El vídeo de sortida és %1"
+"Una solució completa i multiplataforma per a enregistrar, convertir i "
+"transmetre àudio i vídeo."
 
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
@@ -41643,6 +41618,23 @@ msgstr "Intern"
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Predeterminat de l'escriptori"
+
+#: core/libs/video/manager/vidslidetask.cpp:214
+#, fuzzy, kde-format
+#| msgid "Encoding %1 Done"
+msgid "Preparing %1 Done"
+msgstr "S'ha fet la codificació de %1"
+
+#: core/libs/video/manager/vidslidetask.cpp:249
+#, fuzzy, kde-format
+#| msgid "Cannot create directory %1"
+msgid "Cannot generate output video %1"
+msgstr "No s'ha pogut crear el directori %1"
+
+#: core/libs/video/manager/vidslidetask.cpp:254
+#, kde-format
+msgid "Output video is %1"
+msgstr "El vídeo de sortida és %1"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -42376,7 +42368,7 @@ msgstr "Canvia"
 #: core/libs/widgets/files/dbinarysearch.cpp:190
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
-msgstr "El fitxer binari trobat no sembla que funcioni com s'espera."
+msgstr "El fitxer executable trobat no sembla que funcioni com s'espera."
 
 #: core/libs/widgets/files/dfileselector.cpp:58
 #, kde-format
@@ -43999,9 +43991,9 @@ msgstr ""
 "Photoshop, així com els formats de metadades específics del fabricant de "
 "moltes càmeres digitals.\n"
 "\n"
-"Aquí podreu configurar la ubicació on es troba el binari de l'ExifTool. "
-"L'aplicació intentarà trobar aquest binari automàticament si ja es troba en "
-"el vostre ordinador."
+"Aquí podreu configurar la ubicació on es troba l'executable de l'ExifTool. "
+"L'aplicació intentarà trobar aquest executable automàticament si ja es troba "
+"en el vostre ordinador."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:90
 #, kde-format
@@ -57398,12 +57390,11 @@ msgid "Cache File Parser"
 msgstr "Intèrpret de fitxers de memòria cau"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from Cache Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
-"Un connector per a crear un document de dades de geolocalització a partir de "
-"fitxers de memòria cau"
+"Un connector per a crear dades de geolocalització a partir dels fitxers "
+"binaris de la memòria cau."
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
 #, kde-format
@@ -57416,13 +57407,13 @@ msgid "GPSBabel NMEA File Parser"
 msgstr "Intèrpret de fitxers NMEA del GPSBabel"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "A plugin to allow loading of NMEA files through GPSBabel."
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr ""
-"Un connector per a permetre la càrrega de fitxers NMEA a través del GPSBabel."
+"Un connector per a carregar dades de geolocalització a partir de fitxers "
+"NMEA a través de l'eina de la línia d'ordres del GPSBabel."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
 #, kde-format
@@ -57435,12 +57426,11 @@ msgid "Gpx File Parser"
 msgstr "Intèrpret de fitxers GPX"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from Gpx Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
-"Un connector per a crear un document de dades de geolocalització a partir de "
-"fitxers Gpx"
+"Un connector per a carregar dades de geolocalització a partir del format de "
+"fitxer de dades Gpx."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
 #, kde-format
@@ -57453,12 +57443,11 @@ msgid "GeoJSON File Parser"
 msgstr "Intèrpret de fitxers GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from GeoJSON Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
-"Un connector per a crear un document de dades de geolocalització a partir de "
-"fitxers GeoJSON"
+"Un connector per a carregar dades de geolocalització a partir del format de "
+"fitxer de dades GeoJSON."
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
 #, kde-format
@@ -57471,13 +57460,12 @@ msgid "KML File Parser"
 msgstr "Intèrpret de fitxers KML"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from KML and KMZ Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
-"Un connector per a crear un document de dades de geolocalització a partir de "
-"fitxers KML i KMZ"
+"Un connector per a carregar dades de geolocalització a partir del format de "
+"fitxer de dades KML i KMZ."
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
 #, kde-format
@@ -57495,16 +57483,13 @@ msgid "OpenStreetMap Nominatim"
 msgstr "Nominatim de l'OpenStreetMap"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
-#, fuzzy, kde-format
-#| msgid ""
-#| "A plugin to process Online reverse geocoding using the OpenStreetMap "
-#| "Nominatim service"
+#, kde-format
 msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
 msgstr ""
 "Un connector per a processar la geocodificació inversa en línia usant el "
-"servei Nominatim de l'OpenStreetMap"
+"servei web Nominatim de l'OpenStreetMap"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:21
 #, kde-format
@@ -57512,13 +57497,12 @@ msgid "Osm File Parser"
 msgstr "Intèrpret de fitxers OSM"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from Cache Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenSteetMap data file format."
 msgstr ""
-"Un connector per a crear un document de dades de geolocalització a partir de "
-"fitxers de memòria cau"
+"Un connector per a carregar dades de geolocalització a partir del format de "
+"fitxer de dades OpenStreetMap."
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, kde-format
@@ -57531,13 +57515,12 @@ msgid "Pn2 File Parser"
 msgstr "Intèrpret de fitxers PN2"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from Pn2 Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr ""
-"Un connector per a crear un document de dades de geolocalització a partir de "
-"fitxers PN2"
+"Un connector per a carregar dades de geolocalització a partir del format de "
+"fitxer de dades comprimides PNT"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
 #, kde-format
@@ -57552,14 +57535,14 @@ msgstr "Intèrpret de fitxers PNT"
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, fuzzy, kde-format
 #| msgid ""
-#| "A plugin to create Geolocation Data Document from Micro World Database II "
-#| "Files"
+#| "A plugin to loac Geolocation Data from the Micro World Database II Files "
+#| "format"
 msgid ""
-"A plugin to loac Geolocation Data from the Micro World Database II Files "
+"A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
-"Un connector per a crear un document de dades de geolocalització a partir de "
-"fitxers Micro World Database II"
+"Un connector per a carregar dades de geolocalització a partir de fitxers "
+"Micro World Database II"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
@@ -68193,6 +68176,15 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
+
+#~ msgid "Failed to open video encoder"
+#~ msgstr "Ha fallat en obrir el codificador de vídeo"
+
+#~ msgid "Failed to open audio encoder"
+#~ msgstr "Ha fallat en obrir el codificador d'àudio"
+
+#~ msgid "Failed to open muxer"
+#~ msgstr "Ha fallat en obrir el «muxer»"
 
 #~| msgid "Create GeoDataDocument from Osm Files"
 #~ msgid "A plugin to create Geolocation Data Document from Osm Files"

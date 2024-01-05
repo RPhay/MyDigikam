@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 00:39+0000\n"
+"POT-Creation-Date: 2024-01-05 00:39+0000\n"
 "PO-Revision-Date: 2023-05-29 20:03-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1020,8 +1020,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:232
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:183
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:220
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
@@ -1165,7 +1165,7 @@ msgid " fps"
 msgstr " fps"
 
 #: core/app/items/utils/tooltipfiller.cpp:389
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:153
 #, kde-format
 msgid "Video Codec:"
 msgstr "動画コーデック:"
@@ -17559,7 +17559,7 @@ msgstr "スキーマを作成..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:112
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -17708,7 +17708,7 @@ msgstr "送り先:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:109
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, fuzzy, kde-format
 #| msgid "Destination:"
@@ -17808,7 +17808,7 @@ msgid "Theme Parameters"
 msgstr "パラメータ"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "Queue Settings"
 msgid "Output Settings"
@@ -20298,14 +20298,14 @@ msgid "Select your preferred format to export printing as image."
 msgstr "変換先カラースペースのプロファイルを選択します。"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Destination folder:"
 msgstr "送り先:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, fuzzy, kde-format
 #| msgid "Output device"
@@ -20380,7 +20380,7 @@ msgstr "<b>パノラマツールへようこそ</b>"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, fuzzy, kde-format
 #| msgid "Show album collection"
@@ -20880,7 +20880,7 @@ msgid "Welcome to Email Tool"
 msgstr "<b>パノラマツールへようこそ</b>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:89
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, fuzzy, kde-format
 msgid "Images List"
@@ -20923,35 +20923,35 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "このタグを付ける"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:124
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgid "Starting to generate video slideshow..."
 msgstr "スキーマを作成..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:127
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "%1 input images to process"
 msgstr "カスタム処理"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:171
 #, fuzzy, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "スライドショー"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:176
 #, fuzzy, kde-format
 msgid "Video Slideshow completed."
 msgstr "スライドショー"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:181
 #, fuzzy, kde-format
 #| msgid "Open folder"
 msgid "Opening video stream in player..."
 msgstr "フォルダを開く"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:66
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:64
 #, kde-format
 msgid ""
 "<p>This view list all items to include on video stream.</p><p>The first one "
@@ -20979,53 +20979,53 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "MacBinary II"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
 #, fuzzy, kde-format
 #| msgid "Baloo support"
 msgid "Media Container Format:"
 msgstr "Baloo サポート"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
 
 # ACCELERATOR added by translator
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:129
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgid "Open in Player:"
 msgstr "ファイルマネージャで開く(&M)"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:95
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:83
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:92
 #, fuzzy, kde-format
 #| msgid "Standard"
 msgid "Video Standard:"
 msgstr "標準"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:111
 #, fuzzy, kde-format
 #| msgid "Video Codec:"
 msgid "Video Type:"
 msgstr "動画コーデック:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:146
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:134
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate:"
 msgid "Video Bit Rate:"
 msgstr "音声ビットレート:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:180
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:212
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:200
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -21033,13 +21033,13 @@ msgid ""
 "render the image on video stream.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:229
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:217
 #, fuzzy, kde-format
 #| msgid "&Delay between images:"
 msgid "Transition Between Images"
 msgstr "画像間の遅延秒数(&D):"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:249
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:237
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -21047,30 +21047,30 @@ msgid ""
 "slideshow.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:330
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:318
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:68
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "このタグを付ける"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #, fuzzy, kde-format
 #| msgid "<b>Welcome to Panorama Tool</b>"
 msgid "Welcome to Video Slideshow Tool"
 msgstr "<b>パノラマツールへようこそ</b>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, fuzzy, kde-format
 #| msgid "Image Settings"
 msgid "Video Settings"
 msgstr "画像の設定"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:82
 #, fuzzy, kde-format
 msgid "Generating Video Slideshow"
 msgstr "このタグを付ける"
@@ -41376,34 +41376,6 @@ msgid ""
 "video."
 msgstr ""
 
-#: core/libs/video/manager/qtav/vidslidetask.cpp:278
-#, fuzzy, kde-format
-#| msgid "Failed to open file."
-msgid "Failed to open video encoder"
-msgstr "画像を開けませんでした。"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:294
-#, fuzzy, kde-format
-#| msgid "Failed to open file."
-msgid "Failed to open audio encoder"
-msgstr "画像を開けませんでした。"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:324
-#, fuzzy, kde-format
-#| msgid "Failed to open file."
-msgid "Failed to open muxer"
-msgstr "画像を開けませんでした。"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:410
-#, kde-format
-msgid "Encoding %1 Done"
-msgstr ""
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:445
-#, fuzzy, kde-format
-msgid "Output video is %1"
-msgstr "ディレクトリの作成に失敗しました。"
-
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
 msgctxt "Video Type: QVGA"
@@ -41884,6 +41856,22 @@ msgstr "補間法:"
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
+
+#: core/libs/video/manager/vidslidetask.cpp:214
+#, fuzzy, kde-format
+#| msgid "Preparing slideshow"
+msgid "Preparing %1 Done"
+msgstr "スライドショーを準備しています"
+
+#: core/libs/video/manager/vidslidetask.cpp:249
+#, fuzzy, kde-format
+msgid "Cannot generate output video %1"
+msgstr "ディレクトリの作成に失敗しました。"
+
+#: core/libs/video/manager/vidslidetask.cpp:254
+#, fuzzy, kde-format
+msgid "Output video is %1"
+msgstr "ディレクトリの作成に失敗しました。"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -59120,7 +59108,7 @@ msgstr "変換(&N)"
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to loac Geolocation Data from the Micro World Database II Files "
+"A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
 
@@ -69703,6 +69691,21 @@ msgstr "すべての設定を標準の値に戻します。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "すべての設定を標準の値に戻します。"
+
+#, fuzzy
+#~| msgid "Failed to open file."
+#~ msgid "Failed to open video encoder"
+#~ msgstr "画像を開けませんでした。"
+
+#, fuzzy
+#~| msgid "Failed to open file."
+#~ msgid "Failed to open audio encoder"
+#~ msgstr "画像を開けませんでした。"
+
+#, fuzzy
+#~| msgid "Failed to open file."
+#~ msgid "Failed to open muxer"
+#~ msgstr "画像を開けませんでした。"
 
 #, fuzzy
 #~ msgid "About Plugin"

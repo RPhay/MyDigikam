@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 00:39+0000\n"
-"PO-Revision-Date: 2024-01-03 12:37+0100\n"
+"POT-Creation-Date: 2024-01-05 00:39+0000\n"
+"PO-Revision-Date: 2024-01-04 10:28+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1066,8 +1066,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:232
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:183
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:220
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
@@ -1211,7 +1211,7 @@ msgid " fps"
 msgstr " fps"
 
 #: core/app/items/utils/tooltipfiller.cpp:389
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:153
 #, kde-format
 msgid "Video Codec:"
 msgstr "Video-codec:"
@@ -17517,7 +17517,7 @@ msgstr "HTML-galerij aanmaken..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:112
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -17658,7 +17658,7 @@ msgstr "Doelmap:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:109
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -17747,7 +17747,7 @@ msgid "Theme Parameters"
 msgstr "Themaparameters"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
 #, kde-format
 msgid "Output Settings"
 msgstr "Uitvoerinstellingen"
@@ -20246,13 +20246,13 @@ msgstr ""
 "Selecteer uw voorkeursformaat voor exporteren van afdrukken als afbeelding."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Destination folder:"
 msgstr "Doelmap:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20323,7 +20323,7 @@ msgstr "Welkom bij het hulpmiddel Maker van afdrukken"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
@@ -20820,7 +20820,7 @@ msgid "Welcome to Email Tool"
 msgstr "Welkom bij het hulpmiddel E-mail"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:89
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
@@ -20867,32 +20867,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Diashow als video aanmaken..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:124
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "Beginnen met aanmaken diashow als video..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:127
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 te verwerken invoerafbeeldingen:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:171
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Diavoorstelling als video is niet voltooid"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:176
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Diavoorstelling als video is voltooid."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:181
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Videostream in speler openen..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:66
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:64
 #, kde-format
 msgid ""
 "<p>This view list all items to include on video stream.</p><p>The first one "
@@ -20926,55 +20926,53 @@ msgstr ""
 "vertonen op een TV scherm.</p></qt>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title: binary properties"
-#| msgid "Binary"
+#, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
-msgstr "Binair"
+msgstr "Binair programma FFmpeg"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Formaat van mediacontainer:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
 "De bestandsnaam van de videouitvoer zal automatisch worden gegenereerd."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:129
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
 #, kde-format
 msgid "Open in Player:"
 msgstr "In speler openen:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:95
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:83
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr "Aantal frames per afbeelding:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:92
 #, kde-format
 msgid "Video Standard:"
 msgstr "Video-standaard:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:111
 #, kde-format
 msgid "Video Type:"
 msgstr "Type video:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:146
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:134
 #, kde-format
 msgid "Video Bit Rate:"
 msgstr "Video-bitsnelheid:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:180
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr "Effect bij tonen van afbeeldingen"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:212
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:200
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -20985,12 +20983,12 @@ msgstr ""
 "afbeelding wordt getoond. De duur van het effect zal het aantal frames "
 "volgen dat gebruikt wordt om de afbeelding in de videostream te renderen.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:229
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:217
 #, kde-format
 msgid "Transition Between Images"
 msgstr "Transitie tussen afbeeldingen"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:249
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:237
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -21001,29 +20999,29 @@ msgstr ""
 "Voor sommige effecten kan de duur afhangen van willekeurige waarden en "
 "kunnen wijzigen tijdens de diashow.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:330
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:318
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 "Tijdsduur : %1 seconden per item, totaal %2 seconden (zonder transities)"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Een diashow als video aanmaken"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr "Welkom bij het hulpmiddel Diashow als video"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, kde-format
 msgid "Video Settings"
 msgstr "Video-instellingen"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:82
 #, kde-format
 msgid "Generating Video Slideshow"
 msgstr "Diashow als video wordt aangemaakt"
@@ -41073,31 +41071,8 @@ msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:278
-#, kde-format
-msgid "Failed to open video encoder"
-msgstr "Openen van videocodering is mislukt"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:294
-#, kde-format
-msgid "Failed to open audio encoder"
-msgstr "Openen van audiocodering is mislukt"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:324
-#, kde-format
-msgid "Failed to open muxer"
-msgstr "Openen van mixer is mislukt"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:410
-#, kde-format
-msgid "Encoding %1 Done"
-msgstr "Codering van %1 is gedaan"
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:445
-#, kde-format
-msgid "Output video is %1"
-msgstr "Uitvoervideo is %1"
+"Een volledige, cross-platform oplossing om geluid en video op te nemen, te "
+"converteren en te streamen."
 
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
@@ -41578,6 +41553,23 @@ msgstr "Intern"
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Standaard uit bureaublad"
+
+#: core/libs/video/manager/vidslidetask.cpp:214
+#, fuzzy, kde-format
+#| msgid "Encoding %1 Done"
+msgid "Preparing %1 Done"
+msgstr "Codering van %1 is gedaan"
+
+#: core/libs/video/manager/vidslidetask.cpp:249
+#, fuzzy, kde-format
+#| msgid "Cannot create directory %1"
+msgid "Cannot generate output video %1"
+msgstr "Kan map %1 niet aanmaken"
+
+#: core/libs/video/manager/vidslidetask.cpp:254
+#, kde-format
+msgid "Output video is %1"
+msgstr "Uitvoervideo is %1"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -57284,12 +57276,10 @@ msgid "Cache File Parser"
 msgstr "Ontleder van cache-bestand"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from Cache Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
-"Een plug-in om uit cache-bestanden een Geolocatie gegevensdocument aan te "
-"maken"
+"Een plug-in om uit binaire cache-bestanden een Geolocatiegegevens te laden"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
 #, kde-format
@@ -57302,12 +57292,13 @@ msgid "GPSBabel NMEA File Parser"
 msgstr "Lezen GPSBabel NMEA-bestand"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "A plugin to allow loading of NMEA files through GPSBabel."
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
-msgstr "Een plug-in die voor het laden van NMEA-bestanden via GPSBabel zorgt."
+msgstr ""
+"Een plug-in om Geolocatiegegevens te laden uit NMEA-bestanden via het "
+"GPSBabel hulpmiddel voor de opdrachtregel."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
 #, kde-format
@@ -57320,11 +57311,11 @@ msgid "Gpx File Parser"
 msgstr "Inlezen Gpx-bestand"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from Gpx Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
-"Een plug-in om uit Gpx-bestanden een Geolocatie gegevensdocument aan te maken"
+"Een plug-in om uit het Gpx-gegevensbestandsformaat Geolocatiegegevens te "
+"laden"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
 #, kde-format
@@ -57337,12 +57328,11 @@ msgid "GeoJSON File Parser"
 msgstr "Lezen GeoJSON-bestand"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from GeoJSON Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
-"Een plug-in om uit GeoJSON-bestanden een Geolocatie gegevensdocument aan te "
-"maken"
+"Een plug-in om uit het GeoJSON-gegevensbestandsformaat Geolocatiegegevens te "
+"laden"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
 #, kde-format
@@ -57355,13 +57345,12 @@ msgid "KML File Parser"
 msgstr "Kml-bestand lezen"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from KML and KMZ Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
-"Een plug-in om uit KML- en KMZ-bestanden een Geolocatie gegevensdocument aan "
-"te maken"
+"Een plug-in om uit het KML- en KMZgegevensbestandsformaat Geolocatiegegevens "
+"te laden"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
 #, kde-format
@@ -57379,16 +57368,13 @@ msgid "OpenStreetMap Nominatim"
 msgstr "OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
-#, fuzzy, kde-format
-#| msgid ""
-#| "A plugin to process Online reverse geocoding using the OpenStreetMap "
-#| "Nominatim service"
+#, kde-format
 msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
 msgstr ""
 "Een plug-in om online omgekeerde geocoding te verwerken met de Nominatim-"
-"dienst van OpenStreetMap"
+"webservice van OpenStreetMap"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:21
 #, kde-format
@@ -57396,13 +57382,12 @@ msgid "Osm File Parser"
 msgstr "Ontleder van Osm-bestand"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from Cache Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenSteetMap data file format."
 msgstr ""
-"Een plug-in om uit cache-bestanden een Geolocatie gegevensdocument aan te "
-"maken"
+"Een plug-in om uit het OpenSteetMap-gegevensbestandsformaat "
+"Geolocatiegegevens te laden"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, kde-format
@@ -57415,12 +57400,12 @@ msgid "Pn2 File Parser"
 msgstr "Inlezen Pn2-bestand"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "A plugin to create Geolocation Data Document from Pn2 Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr ""
-"Een plug-in om uit Pn2-bestanden een Geolocatie gegevensdocument aan te maken"
+"Een plug-in om uit het gecomprimeerde Pnt-gegevensbestandsformaat "
+"Geolocatiegegevens te laden"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
 #, kde-format
@@ -57435,14 +57420,14 @@ msgstr "Inlezen Pnt-bestand"
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, fuzzy, kde-format
 #| msgid ""
-#| "A plugin to create Geolocation Data Document from Micro World Database II "
-#| "Files"
+#| "A plugin to loac Geolocation Data from the Micro World Database II Files "
+#| "format"
 msgid ""
-"A plugin to loac Geolocation Data from the Micro World Database II Files "
+"A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
-"Een plug-in om uit Micro World Database II-bestanden een Geolocatie "
-"gegevensdocument aan te maken"
+"Een plug-in om uit het Micro World Database II-bestandsformaat "
+"Geolocatiegegevens te laden"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
@@ -68059,6 +68044,15 @@ msgstr "Zet alle instellingen terug naar hun standaardwaarden."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
+
+#~ msgid "Failed to open video encoder"
+#~ msgstr "Openen van videocodering is mislukt"
+
+#~ msgid "Failed to open audio encoder"
+#~ msgstr "Openen van audiocodering is mislukt"
+
+#~ msgid "Failed to open muxer"
+#~ msgstr "Openen van mixer is mislukt"
 
 #~| msgid "Create GeoDataDocument from Osm Files"
 #~ msgid "A plugin to create Geolocation Data Document from Osm Files"
