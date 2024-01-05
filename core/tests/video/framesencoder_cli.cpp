@@ -54,7 +54,7 @@ int main(int argc, char** argv)
     MetaEngine::initializeExiv2();
 
     VidSlideThread* const encoder = new VidSlideThread(&app);
-    encoder->processStream(&settings);
+    encoder->prepareFrames(&settings);
     encoder->start();
 
     QObject::connect(encoder, SIGNAL(signalDone(bool)),
