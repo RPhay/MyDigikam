@@ -33,7 +33,7 @@ QString OsmPlugin::version() const
 
 QString OsmPlugin::description() const
 {
-    return i18n( "A plugin to load Geolocation Data from the OpenSteetMap data file format." );
+    return i18n( "A plugin to load Geolocation Data from the OpenStreetMap data file format." );
 }
 
 QString OsmPlugin::copyrightYears() const
