@@ -19,9 +19,11 @@
 #include <QByteArray>
 #include <QProcess>
 #include <QElapsedTimer>
+#include <QProcessEnvironment>
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 
 namespace Digikam
@@ -94,6 +96,9 @@ bool ProcessLauncher::startProcess() const
     d->proc = new QProcess(parent());
     d->proc->setProcessChannelMode(QProcess::MergedChannels);
     d->proc->setWorkingDirectory(d->dir);
+
+    QProcessEnvironment env = adjustedEnvironmentForAppImage();
+    d->proc->setProcessEnvironment(env);
 
     connect(d->proc, SIGNAL(readyRead()),
             this, SLOT(slotReadyRead()));

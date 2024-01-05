@@ -235,6 +235,9 @@ public:
 
     // ---------------------
 
+    QString                           tempDir;          ///< To store temporary frames.
+    QString                           outputFile;       ///< Path to encoded video.
+    QString                           filesList;        ///< Path to list of frame files to encode.
     QString                           outputVideo;      ///< Target video file encoded at end.
     VidPlayer                         outputPlayer;     ///< Open video stream in player at end.
     QString                           ffmpegPath;       ///< Path to FFmpeg binary.

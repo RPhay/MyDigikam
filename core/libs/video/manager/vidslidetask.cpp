@@ -4,9 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2017-05-25
- * Description : a tool to generate video slideshow from images.
+ * Description : a tool to generate video slideshow frames from images.
  *
- * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -30,8 +30,6 @@
 #include <QFile>
 #include <QIODevice>
 #include <QDateTime>
-#include <QProcess>
-#include <QProcessEnvironment>
 #include <QTextStream>
 
 // KDE includes
@@ -59,11 +57,8 @@ public:
 
 public:
 
-    QString                     filesList;                  ///< To host list of temporary frames file names.
-    QString                     tempDir;                    ///< To store temporary frames.
     VidSlideSettings*           settings        = nullptr;
     QList<QUrl>::const_iterator curAudioFile;
-    QProcess*                   ffmpegProc      = nullptr;
 };
 
 VidSlideTask::VidSlideTask(VidSlideSettings* const settings)
@@ -87,21 +82,21 @@ VidSlideTask::~VidSlideTask()
 void VidSlideTask::run()
 {
     int frameId = 1;
-    d->tempDir  = d->settings->outputDir + QDir::separator() + QLatin1Char('.')    +
-                  QString::number(QDateTime::currentDateTime().toSecsSinceEpoch()) +
-                  QDir::separator();
+    d->settings->tempDir  = d->settings->outputDir + QDir::separator() + QLatin1Char('.')    +
+                            QString::number(QDateTime::currentDateTime().toSecsSinceEpoch()) +
+                            QDir::separator();
 
-    if (!QDir().mkpath(d->tempDir))
+    if (!QDir().mkpath(d->settings->tempDir))
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create temporary directory:" << d->tempDir;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create temporary directory:" << d->settings->tempDir;
     }
 
-    d->filesList = d->tempDir + QLatin1String("fileslist.txt");
-    QFile fList(d->filesList);
+    d->settings->filesList = d->settings->tempDir + QLatin1String("fileslist.txt");
+    QFile fList(d->settings->filesList);
 
     if (!fList.open(QIODevice::WriteOnly | QIODevice::Text))
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create files list:" << d->filesList;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create files list:" << d->settings->filesList;
     }
 
     QTextStream out(&fList);
@@ -162,7 +157,7 @@ void VidSlideTask::run()
         do
         {
             frame     = QImage(transmngr.currentFrame(ttmout));
-            framePath = d->tempDir + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
+            framePath = d->settings->tempDir + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
 
             if (!frame.save(framePath, "JPEG"))
             {
@@ -191,7 +186,7 @@ void VidSlideTask::run()
             {
                 qiimg     = effmngr.currentFrame(itmout);
                 frame     = qiimg;
-                framePath = d->tempDir + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
+                framePath = d->settings->tempDir + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
 
                 if (!frame.save(framePath, "JPEG"))
                 {
@@ -217,43 +212,7 @@ void VidSlideTask::run()
 
     fList.close();
 
-    // Run FFmpeg CLI to encode temporary JPEG frames
-    // https://shotstack.io/learn/use-ffmpeg-to-convert-images-to-video/
-    // ffmpeg -f concat -i fileslist.txt output.mp4
-
-    d->ffmpegProc = new QProcess();
-    d->ffmpegProc->setWorkingDirectory(d->settings->outputDir);
-    d->ffmpegProc->setProcessChannelMode(QProcess::MergedChannels);
-
-    QProcessEnvironment env = adjustedEnvironmentForAppImage();
-    d->ffmpegProc->setProcessEnvironment(env);
-
-    QString prog            = d->settings->ffmpegPath;
-    QStringList arguments   = QStringList() << QLatin1String("-f")
-                                            << QLatin1String("concat")
-                                            << QLatin1String("-i")
-                                            << d->filesList
-                                            << outFile;
-    d->ffmpegProc->start(prog, arguments);
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Start encoding:" << d->ffmpegProc->program() << d->ffmpegProc->arguments();
-
-    bool successFlag = d->ffmpegProc->waitForFinished(-1) && (d->ffmpegProc->exitStatus() == QProcess::NormalExit);
-    QString output   = QString::fromLocal8Bit(d->ffmpegProc->readAll());
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Encoding return:" << successFlag;
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Encoding trace :" << output;
-
-    if (!successFlag)
-    {
-        Q_EMIT signalMessage(i18n("Cannot generate output video %1", outFile), false);
-    }
-
-    if (!m_cancel)
-    {
-        Q_EMIT signalMessage(i18n("Output video is %1", outFile), false);
-        d->settings->outputVideo = outFile;
-    }
+    d->settings->outputFile = outFile;
 
     Q_EMIT signalDone(!m_cancel);
 }

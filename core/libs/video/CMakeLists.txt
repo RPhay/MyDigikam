@@ -19,6 +19,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 set(libvideotoolscommon_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidesettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/ffmpegbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/ffmpeglauncher.cpp
 )
 
 if(ENABLE_MEDIAPLAYER)
