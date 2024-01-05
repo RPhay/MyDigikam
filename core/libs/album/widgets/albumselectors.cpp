@@ -177,8 +177,9 @@ AlbumSelectors::~AlbumSelectors()
 void AlbumSelectors::initAlbumWidget()
 {
     d->albumWidget             = new QWidget(this);
-    d->wholeAlbums             = new QCheckBox(i18nc("@option", "Whole albums collection"), d->albumWidget);
-    d->recursiveSelectionAlbum = new QCheckBox(i18nc("@option", "Recursive Selection"), d->albumWidget);
+    d->wholeAlbums             = new QCheckBox(i18nc("@option", "All albums"), d->albumWidget);
+    d->recursiveSelectionAlbum = new QCheckBox(i18nc("@option", "Recursive"), d->albumWidget);
+    d->recursiveSelectionAlbum->setToolTip(i18nc("@info:tooltip", "Recursive selection."));
     d->recursiveSelectionAlbum->setChecked(true);
 
     if (!d->allowRecursive)
@@ -233,8 +234,9 @@ void AlbumSelectors::initAlbumWidget()
 void AlbumSelectors::initTagWidget()
 {
     d->tagWidget              = new QWidget(this);
-    d->wholeTags              = new QCheckBox(i18nc("@option", "Whole tags collection"), d->tagWidget);
-    d->recursiveSelectionTags = new QCheckBox(i18nc("@option", "Recursive Selection"), d->albumWidget);
+    d->wholeTags              = new QCheckBox(i18nc("@option", "All tags"), d->tagWidget);
+    d->recursiveSelectionTags = new QCheckBox(i18nc("@option", "Recursive"), d->albumWidget);
+    d->recursiveSelectionTags->setToolTip(i18nc("@info:tooltip", "Recursive selection."));
     d->recursiveSelectionTags->setChecked(true);
 
     if (!d->allowRecursive)
