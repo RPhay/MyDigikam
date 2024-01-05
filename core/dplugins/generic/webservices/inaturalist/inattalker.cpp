@@ -1741,7 +1741,10 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
     QString tmpImage;
     QString path = request.m_images.front().toLocalFile();
 
-    if (request.m_rescale)
+    bool isJpeg = (path.endsWith(QLatin1String(".jpg"), Qt::CaseInsensitive) ||
+                   path.endsWith(QLatin1String(".jpeg"), Qt::CaseInsensitive));
+
+    if (request.m_rescale || !isJpeg)
     {
         QImage image = PreviewLoadThread::loadHighQualitySynchronously(path).
                        copyQImage();
@@ -1764,6 +1767,11 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
             }
 
             image.save(tmpImage, "JPEG", request.m_quality);
+
+            if (!isJpeg)
+            {
+                path += QLatin1String(".jpeg");
+            }
         }
     }
 
