@@ -59,6 +59,13 @@ void VidSlideThread::prepareFrames(VidSlideSettings* const settings)
 
 void VidSlideThread::slotEncodeFrames(bool prepareDone)
 {
+    if (!prepareDone)
+    {
+        Q_EMIT signalDone(false);
+
+        return;
+    }
+
     FFmpegLauncher encoder(this);
     encoder.setSettings(m_settings);
 
