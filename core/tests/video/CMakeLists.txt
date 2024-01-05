@@ -63,17 +63,18 @@ if(ENABLE_MEDIAPLAYER)
 
     # -------------------------------------------------
 
+
+    add_executable(framesencoder_cli ${CMAKE_CURRENT_SOURCE_DIR}/framesencoder_cli.cpp)
+    ecm_mark_nongui_executable(framesencoder_cli)
+
+    target_link_libraries(framesencoder_cli
+
+                          digikamcore
+
+                          ${COMMON_TEST_LINK}
+    )
+
     if(NOT ENABLE_QTMULTIMEDIA)
-
-        add_executable(framesencoder_cli ${CMAKE_CURRENT_SOURCE_DIR}/framesencoder_cli.cpp)
-        ecm_mark_nongui_executable(framesencoder_cli)
-
-        target_link_libraries(framesencoder_cli
-
-                              digikamcore
-
-                              ${COMMON_TEST_LINK}
-        )
 
         add_subdirectory(qtav)
 
