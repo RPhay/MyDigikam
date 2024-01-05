@@ -167,11 +167,13 @@ QDateTime TimeAdjustContainer::getDateTimeFromString(const QString& dateStr) con
             dateString.remove(QLatin1Char('H'));
 
             dateTime = QDateTime::fromString(dateString, format);
+            dateTime.setTimeSpec(Qt::UTC);
 
             if (!dateTime.isValid() && !secondFormat.isEmpty())
             {
                 format   = secondFormat;
                 dateTime = QDateTime::fromString(dateString, format);
+                dateTime.setTimeSpec(Qt::UTC);
             }
 
             if (dateTime.isValid() && (format.count(QLatin1Char('y')) == 2))
