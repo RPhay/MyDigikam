@@ -125,7 +125,7 @@ BUGFIXES:
 107 ==> 479410 - Highlight next focused unconfirmed name, instead of putting cursor at end of name.
 108 ==> 479389 - Using "OR" in search (e.g., search for list of files).
 109 ==> 479436 - Wrong path divider for Windows.
-110 ==> 
+110 ==> 479266 - Unable to export a RAW to iNaturalist.
 111 ==> 
 112 ==> 
 113 ==> 
