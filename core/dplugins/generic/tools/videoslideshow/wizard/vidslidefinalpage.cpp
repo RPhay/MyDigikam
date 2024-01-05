@@ -143,7 +143,7 @@ void VidSlideFinalPage::slotProcess()
     connect(d->encoder, SIGNAL(signalDone(bool)),
             this, SLOT(slotDone(bool)));
 
-    d->encoder->processStream(d->settings);
+    d->encoder->prepareFrames(d->settings);
     d->encoder->start();
 }
 

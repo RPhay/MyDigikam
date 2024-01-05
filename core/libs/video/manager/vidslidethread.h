@@ -34,13 +34,27 @@ public:
     explicit VidSlideThread(QObject* const parent);
     ~VidSlideThread() override;
 
-    void processStream(VidSlideSettings* const settings);
+    /**
+     * Stage 1: prepare frames in temporary directory.
+     */
+    void prepareFrames(VidSlideSettings* const settings);
 
 Q_SIGNALS:
 
     void signalProgress(int);
     void signalDone(bool);
     void signalMessage(const QString&, bool);
+
+private Q_SLOTS:
+
+    /**
+     * Stage 2: encode frames as video stream.
+     */
+    void slotEncodeFrames(bool prepareDone);
+
+private:
+
+    VidSlideSettings* m_settings = nullptr;
 };
 
 } // namespace Digikam

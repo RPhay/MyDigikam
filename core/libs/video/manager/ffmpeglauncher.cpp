@@ -48,10 +48,10 @@ bool FFmpegLauncher::encodeFrames()
     setArguments(QStringList() << QLatin1String("-f")
                                << QLatin1String("concat")
                                << QLatin1String("-i")
-                               << m_settings->filesList
-                               << m_settings->outputFile);
+                               << m_settings->filesList             // File list of frames to encode.
+                               << QLatin1String("-y")               // Overwrite target.
+                               << m_settings->outputFile);          // Target video stream.
     bool successFlag = startProcess();
-
 
 //    QString output   = QString::fromLocal8Bit(d->ffmpegProc->readAll());
 
@@ -60,14 +60,14 @@ bool FFmpegLauncher::encodeFrames()
 
     if (!successFlag)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot generate output video" << m_settings->outputVideo;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot generate output video" << m_settings->outputFile;
     }
     else
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Output video is" << m_settings->outputVideo;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Output video is" << m_settings->outputFile;
     }
 
-    return true;
+    return successFlag;
 }
 
 } // namespace Digikam

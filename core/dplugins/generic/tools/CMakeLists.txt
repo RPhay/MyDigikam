@@ -14,9 +14,7 @@ add_subdirectory(mjpegstream)
 add_subdirectory(wallpaper)
 add_subdirectory(dngconverter)      # NOTE: for Showfoto only
 add_subdirectory(ocrtextconverter)
-
-# Port to FFmpeg CLI
-#add_subdirectory(videoslideshow)
+add_subdirectory(videoslideshow)
 
 if(LibXml2_FOUND AND LibXslt_FOUND)
 

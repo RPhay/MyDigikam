@@ -18,6 +18,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "ffmpeglauncher.h"
 
 namespace Digikam
 {
@@ -34,8 +35,10 @@ VidSlideThread::~VidSlideThread()
     wait();
 }
 
-void VidSlideThread::processStream(VidSlideSettings* const settings)
+void VidSlideThread::prepareFrames(VidSlideSettings* const settings)
 {
+    m_settings = settings;
+
     ActionJobCollection collection;
 
     VidSlideTask* const t = new VidSlideTask(settings);
@@ -43,15 +46,25 @@ void VidSlideThread::processStream(VidSlideSettings* const settings)
     connect(t, SIGNAL(signalProgress(int)),
             this, SIGNAL(signalProgress(int)));
 
-    connect(t, SIGNAL(signalDone(bool)),
-            this, SIGNAL(signalDone(bool)));
-
     connect(t, SIGNAL(signalMessage(QString,bool)),
             this, SIGNAL(signalMessage(QString,bool)));
+
+    connect(t, SIGNAL(signalDone(bool)),
+            this, SLOT(slotEncodeFrames(bool)));
 
     collection.insert(t, 0);
 
     appendJobs(collection);
+}
+
+void VidSlideThread::slotEncodeFrames(bool prepareDone)
+{
+    FFmpegLauncher encoder(this);
+    encoder.setSettings(m_settings);
+
+    bool b = encoder.encodeFrames();
+
+    Q_EMIT signalDone(b);
 }
 
 } // namespace Digikam
