@@ -16,9 +16,10 @@
 
 // Qt includes
 
+#include <QDir>
+#include <QIODevice>
 #include <QByteArray>
 #include <QDataStream>
-#include <QIODevice>
 
 // Local includes
 
@@ -58,7 +59,7 @@ DItemDrag::DItemDrag(const QList<QUrl>& urls,
 
 #ifdef Q_OS_WIN
 
-        txt.append(QString::fromUtf8("%1\r\n").arg(url.toLocalFile()));
+        txt.append(QString::fromUtf8("%1\r\n").arg(QDir::toNativeSeparators(url.toLocalFile())));
 
 #else
 
