@@ -183,13 +183,13 @@ void VidSlideFinalPage::slotDone(bool completed)
 
             if (d->settings->outputPlayer == VidSlideSettings::INTERNAL)
             {
-                VidPlayerDlg* const player = new VidPlayerDlg(d->settings->outputVideo, this);
+                VidPlayerDlg* const player = new VidPlayerDlg(d->settings->outputFile, this);
                 player->show();
                 player->resize(800, 600);
             }
             else
             {
-                QDesktopServices::openUrl(QUrl::fromLocalFile(d->settings->outputVideo));
+                QDesktopServices::openUrl(QUrl::fromLocalFile(d->settings->outputFile));
             }
         }
     }
