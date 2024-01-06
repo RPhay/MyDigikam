@@ -14,6 +14,10 @@
 
 #include "ffmpeglauncher.h"
 
+// C++ includes
+
+#include <cmath>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -48,9 +52,15 @@ bool FFmpegLauncher::encodeFrames()
     setArguments(QStringList() << QLatin1String("-f")
                                << QLatin1String("concat")
                                << QLatin1String("-i")
-                               << m_settings->filesList             // File list of frames to encode.
-                               << QLatin1String("-y")               // Overwrite target.
-                               << m_settings->outputFile);          // Target video stream.
+                               << m_settings->filesList                                 // File list of frames to encode.
+                               << QLatin1String("-b:v")                                 // Video bits-rate/
+                               << QString::number(m_settings->videoBitRate())
+                               << QLatin1String("-r")                                   // Video frames-rate.
+                               << QString::number(ceil(m_settings->videoFrameRate()))
+                               << QLatin1String("-vcodec")                              // Video codec.
+                               << m_settings->videoCodec()
+                               << QLatin1String("-y")                                   // Overwrite target.
+                               << m_settings->outputFile);                              // Target video stream.
     bool successFlag = startProcess();
 
 //    QString output   = QString::fromLocal8Bit(d->ffmpegProc->readAll());
