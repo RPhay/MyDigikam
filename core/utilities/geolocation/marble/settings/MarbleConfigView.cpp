@@ -274,11 +274,14 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
 
     addTab(viewSettings, i18n("Map View"));
 
-    connect(phyBtn, SIGNAL(clicked()),
-            d->marbleWidget, SLOT(clearVolatileTileCache()));
+    if (d->marbleWidget)
+    {
+        connect(phyBtn, SIGNAL(clicked()),
+                d->marbleWidget, SLOT(clearVolatileTileCache()));
 
-    connect(discBtn, SIGNAL(clicked()),
-            d->marbleWidget->model(), SLOT(clearPersistentTileCache()));
+        connect(discBtn, SIGNAL(clicked()),
+                d->marbleWidget->model(), SLOT(clearPersistentTileCache()));
+    }
 
     // Plugins page
 
