@@ -111,7 +111,7 @@ SetupGeolocation::SetupGeolocation(QWidget* const parent)
     QLabel* const explanation   = new QLabel(infoBox);
     explanation->setOpenExternalLinks(true);
     explanation->setWordWrap(true);
-    QString txt = i18nc("@info", "Google Maps requires to work friendly an API key that end users must buy online "
+    QString txt = i18nc("@info", "To work friendly, Google Maps requires an API key that end users must buy online "
                                  "to gain credentials. Without this key, Google Maps is still usable but with an "
                                  "overlay frame annotated \"For Development Only\". For more information, see this "
                                  "<a href='https://mapsplatform.google.com/pricing/'>Google page</a> about "
