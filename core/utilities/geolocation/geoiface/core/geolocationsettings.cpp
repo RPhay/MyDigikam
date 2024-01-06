@@ -102,7 +102,7 @@ void GeolocationSettings::Private::applySettingsToWidget(MapWidget* const w,
         {
             BackendMarble* const mb = dynamic_cast<BackendMarble*>(b);
 
-            if (mb)
+            if (mb && mb->isReady())
             {
                 MarbleWidget* const mw = static_cast<MarbleWidget*>(mb->mapWidget());
                 qCDebug(DIGIKAM_GEOIFACE_LOG) << "Apply settings to Marble Widget instance:" << mw;

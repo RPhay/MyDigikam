@@ -137,8 +137,6 @@ bool MapWidget::setBackend(const QString& backendName)
 
             d->currentBackend->setActive(s->activeState);
 
-            QTimer::singleShot(3000, this, SLOT(slotApplySettings()));
-
             return true;
         }
     }
@@ -228,6 +226,14 @@ void MapWidget::slotBackendReadyChanged(const QString& backendName)
     updateMarkers();
     markClustersAsDirty();
     rebuildConfigurationMenu();
+
+    if (dynamic_cast<BackendMarble*>(sender()) ||
+        (dynamic_cast<QActionGroup*>(sender()) &&
+        (backendName == QLatin1String("marble")))
+       )
+    {
+        QTimer::singleShot(2000, this, SLOT(slotApplySettings()));
+    }
 }
 
 void MapWidget::setZoom(const QString& newZoom)
