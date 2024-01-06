@@ -534,6 +534,7 @@
       <li xml:lang="uk">стіл із підсвічуванням для порівняння фотографій;</li>
       <li xml:lang="x-test">xxLight Table to compare photo side by sidexx</li>
       <li xml:lang="zh-CN">提供了用于并排比较照片的多图对比工具</li>
+      <li xml:lang="zh-TW">並排比對相片用的光桌</li>
       <li>Extended features using extra tools</li>
       <li xml:lang="ar">ميزات موسعة باستخدام أدوات إضافية</li>
       <li xml:lang="bg">Разширени функции с помощта на допълнителни инструменти</li>
@@ -673,6 +674,7 @@
       <caption xml:lang="uk">Керування чергою пакетної обробки digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Batch Queue Managerxx</caption>
       <caption xml:lang="zh-CN">digiKam 批处理管理器</caption>
+      <caption xml:lang="zh-TW">digiKam 批次佇列管理器</caption>
       <image>https://www.digikam.org/img/content/about/overview_bqm.png</image>
     </screenshot>
     <screenshot type="default">
@@ -705,6 +707,7 @@
       <caption xml:lang="uk">Редактор зображень digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Image Editorxx</caption>
       <caption xml:lang="zh-CN">digiKam 图像编辑器</caption>
+      <caption xml:lang="zh-TW">digiKam 影像編輯器</caption>
       <image>https://www.digikam.org/img/content/about/overview_imageeditor.png</image>
     </screenshot>
     <screenshot type="default">
@@ -737,6 +740,7 @@
       <caption xml:lang="uk">Імпортування з камери у digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Import From Cameraxx</caption>
       <caption xml:lang="zh-CN">digiKam 导入相机照片</caption>
+      <caption xml:lang="zh-TW">digiKam 從相機匯入</caption>
       <image>https://www.digikam.org/img/content/about/overview_import.png</image>
     </screenshot>
     <screenshot type="default">
@@ -769,6 +773,7 @@
       <caption xml:lang="uk">Стіл із підсвічуванням digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Light Tablexx</caption>
       <caption xml:lang="zh-CN">digiKam 多图对比工具</caption>
+      <caption xml:lang="zh-TW">digiKam 光桌</caption>
       <image>https://www.digikam.org/img/content/about/overview_lighttable.png</image>
     </screenshot>
     <screenshot type="default">
@@ -801,6 +806,7 @@
       <caption xml:lang="uk">Панель перегляду міток digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Tags Viewxx</caption>
       <caption xml:lang="zh-CN">digiKam 标签视图</caption>
+      <caption xml:lang="zh-TW">digiKam 標籤檢視</caption>
       <image>https://www.digikam.org/img/content/about/overview_tagsview.png</image>
     </screenshot>
   </screenshots>
@@ -920,6 +926,7 @@
   <developer_name xml:lang="uk">Команда digiKam</developer_name>
   <developer_name xml:lang="x-test">xxdigiKam Teamxx</developer_name>
   <developer_name xml:lang="zh-CN">digiKam 开发团队</developer_name>
+  <developer_name xml:lang="zh-TW">digiKam 團隊</developer_name>
   <project_group>KDE</project_group>
   <provides>
     <binary>digikam</binary>
