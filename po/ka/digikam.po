@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
-"PO-Revision-Date: 2023-12-30 06:04+0100\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
+"PO-Revision-Date: 2024-01-05 05:01+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -9750,10 +9750,9 @@ msgid "Golden Mean"
 msgstr ""
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:427
-#, fuzzy, kde-format
-#| msgid "Centered"
+#, kde-format
 msgid "Center Lines"
-msgstr "შუაზე გასწორებული"
+msgstr "ხაზების ცენტრზე გასწორება"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:428
 #, kde-format
@@ -19329,12 +19328,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title: binary properties"
-#| msgid "Binary"
+#, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
-msgstr "ბინარული"
+msgstr "FFmpeg-ის გამშვები ფაილი"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
 #, kde-format
@@ -22653,13 +22650,13 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -26000,7 +25997,7 @@ msgid "Select Album"
 msgstr "ალბომის არჩევა"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -26013,73 +26010,88 @@ msgid "Tags (0)"
 msgstr "ჭდეები (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Albums"
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr ""
+msgid "All albums"
+msgstr "ყველა ალბომი"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "რეკურსიული მონიშვნა"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "რეკურსიული მონიშვნა"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:236
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr ""
+msgid "All tags"
+msgstr "ყველა ჭდე"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "ალბომები (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "ჭდეები (ყველა)"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -38477,22 +38489,10 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "ნაგულისხმევი, სამუშაო მაგიდიდან"
 
-#: core/libs/video/manager/vidslidetask.cpp:214
-#, fuzzy, kde-format
-#| msgid "Preparing files..."
-msgid "Preparing %1 Done"
-msgstr "ფაილების მომზადება..."
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-#| msgid "Cannot create directory %1"
-msgid "Cannot generate output video %1"
-msgstr "საქაღალდის შექმნის შეცდომა: %1"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, kde-format
-msgid "Output video is %1"
-msgstr ""
+msgid "Preparing %1 Done"
+msgstr "მომზადება. %1 მზადაა"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -49974,10 +49974,9 @@ msgid "Projection"
 msgstr "პროექცია"
 
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:72
-#, fuzzy, kde-format
-#| msgid "Export Bookmarks..."
+#, kde-format
 msgid "Export as..."
-msgstr "სანიშნეების გატანა...."
+msgstr "გატანა, როგორც..."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:160
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:183
@@ -50156,11 +50155,9 @@ msgid "Add Bookmark..."
 msgstr "სანიშნეს დამატება..."
 
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@item: icc profile properties"
-#| msgid "Copyright"
+#, kde-format
 msgid "<p>Copyright %1</p>"
-msgstr "საავტორო უფლებები"
+msgstr "<p>საავტორო უფლებები %1</p>"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, kde-format
@@ -53171,10 +53168,10 @@ msgid "&Compass"
 msgstr "&კომპასი"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a compass."
+#, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
-msgstr "ეს მცურავმძიმიანი ჩანაწერია, რომელიც GPS ინფორმაციას შეიცავს."
+msgstr ""
+"ეს დამატება აჩვენებს მცურავმძიმიან ჩანაწერს, რომელიც რუკაზე კომპასს აჩვენებს."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
@@ -53390,10 +53387,10 @@ msgid "&Scale Bar"
 msgstr "&მასშტაბის ზოლი"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a map scale."
+#, kde-format
 msgid "A plugin to show a float item that provides a map scale."
-msgstr "ეს მცურავმძიმიანი ჩანაწერია, რომელიც რუკის მასშტაბს შეიცავს."
+msgstr ""
+"ეს დამატება აჩვენებს მცურავმძიმიან ჩანაწერის, რომელიც რუკის მასშტაბს შეიცავს."
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
 #, kde-format
@@ -53634,10 +53631,10 @@ msgid "&Overview Map"
 msgstr "&მიმოხილვის რუკა"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides an overview map."
+#, kde-format
 msgid "A plugin to add a float item that provides an overview map."
-msgstr "ეს მცურავმძიმიანი ჩანაწერია, რომელიც მიმოხილვის რუკას შეიცავს."
+msgstr ""
+"ეს დამატება ამატებს მცურავმძიმიან ჩანაწერს, რომელიც მიმოხილვის რუკას შეიცავს."
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
 #, kde-format
@@ -53696,16 +53693,14 @@ msgid "&Download Progress"
 msgstr "გადმოწერის &მიმდინარეობა"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Shows a pie chart download progress indicator"
+#, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
-msgstr "გადმოწერის მიმდინარეობის მაჩვენებლის ჩვენება"
+msgstr "დამატება რუკაზე გადმოწერის მიმდინარეობის საჩვენებლად"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Cache File Parser"
-msgstr "Osm ფალის დამმუშავებელი"
+msgstr "კეშის ფაილების დამმუშავებელი"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
@@ -53713,16 +53708,14 @@ msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
-#, fuzzy, kde-format
-#| msgid "Marble View"
+#, kde-format
 msgid "Marble Cache Files"
-msgstr "Marble-ის ხედი"
+msgstr "Marble-ის კეშის ფაილები"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "GPSBabel NMEA File Parser"
-msgstr "Osm ფალის დამმუშავებელი"
+msgstr "GPSBabel NMEA ფაილების დამმუშავებელი"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
@@ -53732,16 +53725,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "Save Profile"
+#, kde-format
 msgid "GPSBabel files"
-msgstr "ფაილის შენახვა"
+msgstr "GPSBabel ფაილები"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Gpx File Parser"
-msgstr "Osm ფალის დამმუშავებელი"
+msgstr "Gpx ფაილების დამმუშავებელი"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
 #, kde-format
@@ -53749,16 +53740,14 @@ msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "Data"
+#, kde-format
 msgid "GPS Data"
-msgstr "მონაცემები"
+msgstr "GPS მონაცემები"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "GeoJSON File Parser"
-msgstr "Osm ფალის დამმუშავებელი"
+msgstr "GeoJSON ფაილების დამმუშავებელი"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
 #, kde-format
@@ -53768,13 +53757,12 @@ msgstr ""
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
 #, kde-format
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "KML File Parser"
-msgstr "Osm ფალის დამმუშავებელი"
+msgstr "KML ფაილების დამმუშავებელი"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
@@ -53812,7 +53800,7 @@ msgstr "Osm ფალის დამმუშავებელი"
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
@@ -53821,10 +53809,9 @@ msgid "OpenStreetMap Data"
 msgstr "OpenStreetMap-ის მონაცემები"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Pn2 File Parser"
-msgstr "Osm ფალის დამმუშავებელი"
+msgstr "Pn2 ფაილების დამმუშავებელი"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
 #, kde-format
@@ -53833,17 +53820,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Compression Weight:"
+#, kde-format
 msgid "Compressed Pnt"
-msgstr "შეკუმშვის წონა:"
+msgstr "შეკუმშული Pnt"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Pnt File Parser"
-msgstr "Osm ფალის დამმუშავებელი"
+msgstr "Pnt ფაილების დამმუშავებელი"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
@@ -54146,10 +54130,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
-#, fuzzy, kde-format
-#| msgid "Coordinate Grid"
+#, kde-format
 msgid "Show Coordinate Grid"
-msgstr "კოორდინატების ბადე"
+msgstr "კოორდინატების ბადის ჩვენება"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:216
 #, kde-format
@@ -54199,10 +54182,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
-#, fuzzy, kde-format
-#| msgid "Show placemark"
+#, kde-format
 msgid "Show City Place Mark"
-msgstr "მდებარეობის ნიშნის ჩვენება"
+msgstr "ქალაქის მდებარეობის ნიშნის ჩვენება"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:236
 #, kde-format
@@ -54213,10 +54195,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
-#, fuzzy, kde-format
-#| msgid "Show Preview"
+#, kde-format
 msgid "Show Relief"
-msgstr "გადახედვის ჩვენება"
+msgstr "რელიეფის ჩვენება"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:241
 #, kde-format
@@ -54227,30 +54208,24 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
-#, fuzzy, kde-format
-#| msgid "Marble View"
+#, kde-format
 msgid "Map View"
-msgstr "Marble-ის ხედი"
+msgstr "რუკის ხედი"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
-#, fuzzy, kde-format
-#| msgid "Marble Plugins"
+#, kde-format
 msgid "Map Plugins"
-msgstr "Marble-ის დამატებები"
+msgstr "რუკის დამატებები"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@title Main Tools"
-#| msgid "Main Tools"
+#, kde-format
 msgid "Render Tools"
-msgstr "მთავარი ხელსაწყოები"
+msgstr "რენდერის ხელსაწყოები"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@title Main Tools"
-#| msgid "Main Tools"
+#, kde-format
 msgid "Runner Tools"
-msgstr "მთავარი ხელსაწყოები"
+msgstr "გამშვების ხელსაწყოები"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -63390,6 +63365,9 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
+
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "გამოსატანი ვიდეოს %1 გენერაცია ჩავარდა"
 
 #~ msgid "Failed to open video encoder"
 #~ msgstr "ვიდეო ენკოდერის გახსნის შეცდომა"

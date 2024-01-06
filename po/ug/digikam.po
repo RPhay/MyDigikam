@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -23798,14 +23798,14 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -27320,7 +27320,7 @@ msgid "Select Album"
 msgstr "ئالبوم ئۆچۈر"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
@@ -27336,78 +27336,86 @@ msgstr "خەتكۈچلەر: "
 
 #: core/libs/album/widgets/albumselectors.cpp:180
 #, fuzzy, kde-format
-#| msgid "Collection:"
+#| msgid "All Albums"
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "توپلام:"
+msgid "All albums"
+msgstr "بارلىق ئالبوملار"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:238
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "تاللاش"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "تاللاش"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, fuzzy, kde-format
 #| msgid "Collection:"
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "توپلام:"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, fuzzy, kde-format
-#| msgid "Collection:"
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "توپلام:"
+msgid "All tags"
+msgstr "بارلىق خەتكۈش"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "چۈشۈرگىنى: "
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "ئالبوملار"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "خەتكۈچلەر: "
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
@@ -40324,23 +40332,11 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/libs/video/manager/vidslidetask.cpp:214
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, fuzzy, kde-format
 #| msgid "Connection failed."
 msgid "Preparing %1 Done"
 msgstr "باغلىنالمىدى."
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-#| msgid "Cannot create thumbnail for %1"
-msgid "Cannot generate output video %1"
-msgstr "%1 ئۈچۈن كىچىك سۈرەت قۇرغىلى بولمىدى"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
-#, fuzzy, kde-format
-#| msgid "Cannot create thumbnail for %1"
-msgid "Output video is %1"
-msgstr "%1 ئۈچۈن كىچىك سۈرەت قۇرغىلى بولمىدى"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -57170,7 +57166,7 @@ msgstr "ئۆزگەرتىش"
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
@@ -67055,6 +67051,28 @@ msgstr "كۆڭۈلدىكى قىممەت"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "كۆڭۈلدىكى قىممەت"
+
+#, fuzzy
+#~| msgid "Collection:"
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "توپلام:"
+
+#, fuzzy
+#~| msgid "Collection:"
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "توپلام:"
+
+#, fuzzy
+#~| msgid "Cannot create thumbnail for %1"
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "%1 ئۈچۈن كىچىك سۈرەت قۇرغىلى بولمىدى"
+
+#, fuzzy
+#~| msgid "Cannot create thumbnail for %1"
+#~ msgid "Output video is %1"
+#~ msgstr "%1 ئۈچۈن كىچىك سۈرەت قۇرغىلى بولمىدى"
 
 #, fuzzy
 #~| msgid "Failed to load image"

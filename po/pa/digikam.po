@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -24095,14 +24095,14 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "ਚਿੱਤਰ ਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "ਚਿੱਤਰ ਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -27691,7 +27691,7 @@ msgid "Select Album"
 msgstr "ਐਲਬਮ ਚੁਣੋ"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
@@ -27707,77 +27707,87 @@ msgstr "ਟੈਗ: "
 
 #: core/libs/album/widgets/albumselectors.cpp:180
 #, fuzzy, kde-format
+#| msgid "All Albums"
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "ਐਲਬਮ ਭੰਡਾਰ ਵੇਖੋ"
+msgid "All albums"
+msgstr "ਸਭ ਐਲਬਮ"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:238
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "ਚੋਣ"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "ਚੋਣ"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, fuzzy, kde-format
 #| msgid "No Album Selected"
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "ਕੋਈ ਐਲਬਮ ਨਹੀਂ ਚੁਣੀ"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "ਚੁਣੀਆਂ ਐਲਬਮਾਂ ਹਟਾਉਣ ਲਈ ਤਿਆਰ"
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, fuzzy, kde-format
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "ਐਲਬਮ ਭੰਡਾਰ ਵੇਖੋ"
+msgid "All tags"
+msgstr "ਸਭ ਟੈਗ"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, fuzzy, kde-format
 #| msgid "No Tag Selected"
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "ਕੋਈ ਟੈਗ ਨਹੀਂ ਚੁਣਿਆ"
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "ਸਮੱਗਰੀ ਮੁੜ-ਸੈੱਟ"
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "ਐਲਬਮ"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "ਟੈਗ: "
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"
@@ -40906,21 +40916,11 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/libs/video/manager/vidslidetask.cpp:214
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, fuzzy, kde-format
 #| msgid "Preparing slideshow"
 msgid "Preparing %1 Done"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋ ਤਿਆਰੀ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-msgid "Cannot generate output video %1"
-msgstr "ਡਾਇਰੈਕਟਰੀ ਬਣਾਉਣ ਲਈ ਫੇਲ੍ਹ ਹੈ,"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
-#, fuzzy, kde-format
-msgid "Output video is %1"
-msgstr "ਡਾਇਰੈਕਟਰੀ ਬਣਾਉਣ ਲਈ ਫੇਲ੍ਹ ਹੈ,"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -57771,7 +57771,7 @@ msgstr "ਟਰਾਂਸਫਰਮ"
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
@@ -67886,6 +67886,24 @@ msgstr "ਸਭ ਸੈਟਿੰਗਾਂ ਨੂੰ ਉਨ੍ਹਾਂ ਦੇ ਡ�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "ਸਭ ਸੈਟਿੰਗਾਂ ਨੂੰ ਉਨ੍ਹਾਂ ਦੇ ਡਿਫਾਲਟ ਮੁੱਲਾਂ ਲਈ ਰੀ-ਸੈੱਟ ਕਰੋ।"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "ਐਲਬਮ ਭੰਡਾਰ ਵੇਖੋ"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "ਐਲਬਮ ਭੰਡਾਰ ਵੇਖੋ"
+
+#, fuzzy
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "ਡਾਇਰੈਕਟਰੀ ਬਣਾਉਣ ਲਈ ਫੇਲ੍ਹ ਹੈ,"
+
+#, fuzzy
+#~ msgid "Output video is %1"
+#~ msgstr "ਡਾਇਰੈਕਟਰੀ ਬਣਾਉਣ ਲਈ ਫੇਲ੍ਹ ਹੈ,"
 
 #, fuzzy
 #~ msgid "Failed to open video encoder"

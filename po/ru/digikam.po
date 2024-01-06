@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
 "PO-Revision-Date: 2023-11-13 16:53+0300\n"
 "Last-Translator: Алевтина  <karashokovaaa@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -24423,13 +24423,13 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "Ошибка отправки изображения"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "Ошибка удаления записи наблюдения"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr "Превышено время ожидания после %1 сек"
@@ -27993,7 +27993,7 @@ msgid "Select Album"
 msgstr "Выбор альбома"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -28006,73 +28006,88 @@ msgid "Tags (0)"
 msgstr "Метки (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Albums"
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "Коллекция всех альбомов"
+msgid "All albums"
+msgstr "Все альбомы"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "Выбор в обратном порядке"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "Выбор в обратном порядке"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Выбрать все альбомы, которые нужно обработать"
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Нет выбранных альбомов"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Сбросить выбор альбомов"
 
-#: core/libs/album/widgets/albumselectors.cpp:236
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "Коллекция всех меток"
+msgid "All tags"
+msgstr "Все метки"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Выбрать все метки, которые нужно обработать"
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Нет выбранных меток"
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Сбросить выбранные метки"
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Альбомы (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Метки (Все)"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -41566,22 +41581,11 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Системный"
 
-#: core/libs/video/manager/vidslidetask.cpp:214
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, fuzzy, kde-format
 #| msgid "Encoding %1 Done"
 msgid "Preparing %1 Done"
 msgstr "Завершено кодирование «%1»"
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-#| msgid "Cannot create directory %1"
-msgid "Cannot generate output video %1"
-msgstr "Не удалось создать каталог «%1»"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
-#, kde-format
-msgid "Output video is %1"
-msgstr "Вывод видео выполнен в «%1»"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -57765,7 +57769,7 @@ msgstr "Передача файла"
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
@@ -68464,6 +68468,22 @@ msgstr "Сбросить все параметры видео до исходн�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Сбросить все параметры видео до исходных значений?"
+
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "Коллекция всех альбомов"
+
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "Коллекция всех меток"
+
+#, fuzzy
+#~| msgid "Cannot create directory %1"
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "Не удалось создать каталог «%1»"
+
+#~ msgid "Output video is %1"
+#~ msgstr "Вывод видео выполнен в «%1»"
 
 #~ msgid "Failed to open video encoder"
 #~ msgstr "Не удалось открыть программу для кодирования видеопотока"

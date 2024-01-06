@@ -52,8 +52,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
-"PO-Revision-Date: 2024-01-04 14:53+0300\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
+"PO-Revision-Date: 2024-01-05 14:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24209,13 +24209,13 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "Fotoğraf Karşıya Yükleme Hatası"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "Gözlem Silme Hatası"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr "%1 saniye geçildi ve zaman aşımı oluştu"
@@ -26635,19 +26635,19 @@ msgstr "UFRaw RAW Dönüştürme"
 
 #: core/libs/album/engine/album.cpp:406
 #: core/libs/database/utils/ifaces/dio.cpp:891
-#, fuzzy, kde-format
+#, kde-format
 msgid "Trash"
-msgstr "Çöp"
+msgstr "Çöp Kutusu"
 
 #: core/libs/album/engine/album.cpp:757
 #, kde-format
 msgid "Current Timeline Search"
-msgstr "Mevcut Zaman Çizgisi Arama"
+msgstr "Geçerli Zaman Akışı Araması"
 
 #: core/libs/album/engine/album.cpp:763
 #, kde-format
 msgid "Current Fuzzy Image Search"
-msgstr "Şimdiki Bulanık Resim Araması"
+msgstr "Geçerli Bulanık Görsel Araması"
 
 #: core/libs/album/engine/album.cpp:767
 #, kde-format
@@ -26667,7 +26667,7 @@ msgstr "Geçerli Arama"
 #: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Duplicates Search"
-msgstr "Mecut Yinelenenler Araması"
+msgstr "Geçerli Yinelenenler Araması"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:241
 #, kde-format
@@ -26675,42 +26675,40 @@ msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
 "in digiKam.</p><p>Do you want to continue?</p>"
 msgstr ""
+"<p>Silmek istediğiniz albüm, digiKam'de görüntülenmeyen dosyalar (%1) "
+"içeriyor.</p><p>Sürdürmek istiyor musunuz?</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:254
-#, fuzzy, kde-format
-#| msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
+#, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
 "</p>"
-msgstr "<b>%1</b> dosyasının silinmesi başarısız. Devam etmek istiyor musunuz"
+msgstr ""
+"<p>Silmek istediğiniz albüm boş değil.</p><p>Sürdürmek istiyor musunuz?</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:286
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:144
-#, fuzzy, kde-format
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
-msgstr "(%1) Albümünü Sil"
+msgstr "Albümü Yeniden Adlandır (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:290
-#, fuzzy, kde-format
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
-msgstr "(%1) Albümünü Sil"
+msgstr "Albüm Kökünü Yeniden Adlandır (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
 #, kde-format
 msgid "Enter new album name:"
-msgstr "Yeni albüm adını girin:"
+msgstr "Yeni albüm adını gir:"
 
 #: core/libs/album/engine/albumparser.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scanning faces"
+#, kde-format
 msgid "Scanning albums"
-msgstr "Yüzler taranıyor"
+msgstr "Albümler taranıyor"
 
 #: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/widgets/albumselecttabs.cpp:193
@@ -26726,6 +26724,8 @@ msgid ""
 "The MySQL database directory was not found, please set the correct location "
 "in the next dialog."
 msgstr ""
+"MySQL veritabanı dizini bulunamadı; lütfen bir sonraki iletişim kutusunda "
+"doğru konumu ayarlayın."
 
 #: core/libs/album/manager/albummanager_database.cpp:122
 #, kde-format
@@ -26733,6 +26733,8 @@ msgid ""
 "The MySQL binary tools was not found, please set the correct location in the "
 "next dialog."
 msgstr ""
+"MySQL ikilisi araçları bulunamadı; lütfen bir sonraki iletişim kutusunda "
+"doğru konumu ayarlayın."
 
 #: core/libs/album/manager/albummanager_database.cpp:130
 #, kde-format
@@ -26740,6 +26742,8 @@ msgid ""
 "The SQLite core database was not found, please set the correct location in "
 "the next dialog."
 msgstr ""
+"SQLite çekirdek veritabanı bulunamadı; lütfen bir sonraki iletişim kutusunda "
+"doğru konumu ayarlayın."
 
 #: core/libs/album/manager/albummanager_database.cpp:140
 #, kde-format
@@ -26749,39 +26753,36 @@ msgid ""
 "If you want to start with a new configuration and with a first run wizard, "
 "delete the file %1"
 msgstr ""
+"\n"
+"\n"
+"İlk kullanım sihirbazı ile yeni bir yapılandırma başlatmak istiyorsanız %1 "
+"dosyasını silin"
 
 #: core/libs/album/manager/albummanager_database.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><b>An error occurred during the internal server start.</b></"
-#| "p>Details:\n"
-#| " %1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.\n"
 "\n"
 "Details:\n"
 "%1"
 msgstr ""
-"<p><b>Dahili sunucu başlatılırken bir hata oluştu.</b></p>Ayrıntılar:\n"
-" %1"
+"İçsel sunucu başlatılırken bir hata oluştu.\n"
+"\n"
+"Ayrıntılar:\n"
+"%1"
 
 #: core/libs/album/manager/albummanager_database.cpp:169
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
-#| "working database. digiKam will attempt to start now, but it will <b>not</"
-#| "b> be functional. Please check the database settings in the "
-#| "<b>configuration menu</b>.</p>"
+#, kde-format
 msgid ""
 "Failed to open the database.\n"
 "\n"
 "You cannot use digiKam without a working database.\n"
 "Please check the database settings in the next dialog."
 msgstr ""
-"<p>Veritabanı açılamadı. </p><p>Digikam'ı çalışan bir veritabanı olmadan "
-"kullanamazsınız. digiKam şimdi başlatılmaya çalışılacak, ancak tam işlevsel "
-"<b>olmayacak</b>. Lütfen <b>yapılandırma menüsünden</b>veritabanı ayarlarını "
-"kontrol edin.</p>"
+"Veritabanı açılamadı.\n"
+"\n"
+"Çalışan bir veritabanı olmadan digiKam'i kullanamazsınız.\n"
+"Lütfen bir sonraki iletişim kutusunda veritabanı ayarlarını denetleyin."
 
 #: core/libs/album/manager/albummanager_database.cpp:178
 #, kde-format
@@ -26789,54 +26790,37 @@ msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
 "p>"
 msgstr ""
+"<p>digiKam şimdi başlatılmaya çalışılacak; ancak işlevsel durumda "
+"<b>olmayacak</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:214
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
-#| "working database. digiKam will attempt to start now, but it will <b>not</"
-#| "b> be functional. Please check the database settings in the "
-#| "<b>configuration menu</b>.</p>"
+#, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
 "working database. digiKam will attempt to start now, but it will <b>not</b> "
 "be functional. Please check the database settings in the <b>configuration "
 "menu</b>.</p>"
 msgstr ""
-"<p>Veritabanı açılamadı. </p><p>Digikam'ı çalışan bir veritabanı olmadan "
-"kullanamazsınız. digiKam şimdi başlatılmaya çalışılacak, ancak tam işlevsel "
-"<b>olmayacak</b>. Lütfen <b>yapılandırma menüsünden</b>veritabanı ayarlarını "
-"kontrol edin.</p>"
+"<p>Veritabanı açılamadı.</p><p>Çalışan bir veritabanı olmadan digiKam'i "
+"kullanamazsınız. digiKam şimdi başlatılmaya çalışılacak; ancak işlevsel "
+"durumda <b>olmayacak</b>. Lütfen <b>yapılandırma menüsünde</b> veritabanı "
+"ayarlarını denetleyin.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:223
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
-#| "b></p></p><p>You cannot use digiKam without a working database. digiKam "
-#| "will attempt to start now, but it will <b>not</b> be functional. Please "
-#| "check the database settings in the <b>configuration menu</b>.</p>"
+#, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
 "b></p><p>You cannot use digiKam without a working database. digiKam will "
 "attempt to start now, but it will <b>not</b> be functional. Please check the "
 "database settings in the <b>configuration menu</b>.</p>"
 msgstr ""
-"<p>Veritabanı açılamadı. Veritabanından gelen hata mesajı:</p><p><b>%1</b></"
-"p></p><p>digiKam'ı çalışan bir veritabanı olmadan kullanamazsınız. digiKam "
-"şimdi başlatılmaya çalışılacak, ancak işlevsel <b>olmayacak</b>. Lütfen "
-"<b>yapılandırma menüsünden</b>veritabanı ayarlarını kontrol edin.</p>"
+"<p>Veritabanı açılamadı. Hata iletisi:</p><p><b>%1</b></p><p>Çalışan bir "
+"veritabanı olmadan digiKam'i kullanamazsınız. digiKam şimdi başlatılmaya "
+"çalışılacak; ancak işlevsel durumda <b>olmayacak</b>. Lütfen <b>yapılandırma "
+"menüsünde</b> veritabanı ayarlarını denetleyin.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:256
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your locale has changed since this album was last opened.\n"
-#| "Old locale: %1, new locale: %2\n"
-#| "If you have recently changed your locale, you need not be concerned.\n"
-#| "Please note that if you switched to a locale that does not support some "
-#| "of the filenames in your collection, these files may no longer be found "
-#| "in the collection. If you are sure that you want to continue, click "
-#| "'Yes'. Otherwise, click 'No' and correct your locale setting before "
-#| "restarting digiKam."
+#, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
 "Old character set: %1, new character set: %2\n"
@@ -26848,28 +26832,25 @@ msgid ""
 "'Yes'. Otherwise, click 'No' and correct your database character set setting "
 "before restarting digiKam."
 msgstr ""
-"Bu albüm son açıldığından beri yerel ayarınız değişti.\n"
-"Eski yerel ayar: %1, yeni yerel ayar: %2\n"
-"Yakın zamanda yerel ayarınızı değiştirdiyseniz endişe duymanıza gerek yok.\n"
-"Koleksiyonunuzdaki bazı dosya adlarını desteklemeyen bir yerel klasöre "
-"geçtiyseniz bu dosyaların artık koleksiyonda bulunamayacağını lütfen "
-"unutmayın. Devam etmek istediğinizden eminseniz 'Evet'i tıklayın. Aksi "
-"takdirde, digiKam'ı yeniden başlatmadan önce 'Hayır'ı tıklayın ve yerel "
-"ayarınızı düzeltin."
+"Bu albüm son açıldığından bu yana veritabanı karakter kümesi değişti.\n"
+"Eski karakter kümesi: %1, yeni karakter kümesi: %2\n"
+"Yakın zamanda bu ayarı değiştirdiyseniz endişelenmeniz gereken bir şey yok.\n"
+"Koleksiyonunuzdaki bazı dosya adlarını desteklemeyen bir veritabanı karakter "
+"kümesine geçiş yaptıysanız bu dosyaların artık koleksiyonda "
+"bulunamayabileceğini lütfen unutmayın. Sürdürmek istediğinizden eminseniz "
+"'Evet'e tıklayın. Aksi takdirde, 'Hayır'a tıklayın ve digiKam'i yeniden "
+"başlatmadan önce veritabanı karakter kümesi ayarlarınızı düzeltin."
 
 #: core/libs/album/manager/albummanager_database.cpp:299
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
-#| "on your system.<br/> Please choose the most appropriate option to handle "
-#| "this situation:</p>"
+#, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
 "your system.<br/> Please choose the most appropriate  option to handle this "
 "situation:</p>"
 msgstr ""
-"<p>Koleksiyon</p><p><b>%1</b><br/>(%2)</p><p>şu anda sisteminizde "
-"bulunamıyor.<br/>Lütfen bu durumu çözmek için en uygun seçeneği seçin:</p>"
+"<p></p><p><b>%1</b><br/>(%2)</p><p> koleksiyonu şu anda sisteminizde "
+"bulunamadı.<br/>Lütfen bu durumla başa çıkmak için en uygun seçeneği seçin:</"
+"p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:318
 #, kde-format
@@ -26878,10 +26859,10 @@ msgid ""
 "can be caused by restoring a backup, changing the partition layout or the "
 "file system settings.<br/>The collection is now located at this place:</p>"
 msgstr ""
-"<p>Koleksiyon hala kullanılabilir; ancak tanımlayıcısı değişti.<br/>Buna, "
-"bir yedeklemenin geri yüklenmesiyle bölüntü düzeninin veya dosya sistemi "
-"ayarlarının değiştirilmesi sebep olabilir.<br/>Koleksiyon şimdi şurada "
-"bulunuyor:</p>"
+"<p>Koleksiyon hâlâ kullanılabilir; ancak tanımlayıcısı değişti.<br/>Bu "
+"durum; bir yedeğin geri yüklenmesinden, bölüntü yerleşiminin veya dosya "
+"sistemi ayarlarının değiştirilmesinden kaynaklanabilir.<br/>Koleksiyon şu "
+"anda şu konumda bulunuyor: </p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:337
 #, kde-format
@@ -26889,8 +26870,8 @@ msgid ""
 "The collection is located on a storage device which is not always attached. "
 "Mark the collection as a removable collection."
 msgstr ""
-"Koleksiyon, her zaman bağlı olmayan bir depolama aygıtında bulunur. "
-"Koleksiyonu kaldırılabilir bir koleksiyon olarak imleyin."
+"Koleksiyon, her zaman bağlı olmayan bir depolama aygıtında bulunuyor. "
+"Koleksiyonu kaldırılabilir koleksiyon olarak imleyin."
 
 #: core/libs/album/manager/albummanager_database.cpp:344
 #, kde-format
@@ -26898,22 +26879,20 @@ msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
 "dialog"
 msgstr ""
-"Şimdi işlem yapma. Kurulum iletişim kutusunu kullanarak sorunu daha sonra "
-"çözmek isterim"
+"Şimdi hiçbir işlem yapmayın. Sorunu daha sonra kurulum iletişim kutusunu "
+"kullanarak çözmek istiyorum."
 
 #: core/libs/album/manager/albummanager_database.cpp:358
-#, fuzzy, kde-format
-#| msgid "Collection not found"
+#, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
-msgstr "Koleksiyon bulunamadı"
+msgstr "Koleksiyon Bulunamadı"
 
 #: core/libs/album/manager/albummanager_database.cpp:464
-#, fuzzy, kde-format
-#| msgid "Database Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
-msgstr "Veritabanı Dizini"
+msgstr "Veritabanı Klasörü"
 
 #: core/libs/album/manager/albummanager_database.cpp:465
 #, kde-format
@@ -26924,18 +26903,17 @@ msgid ""
 "database file was indeed created for the pictures located in the folder "
 "\"%2\" - or ignore the old file and start with a new database?</p> "
 msgstr ""
-"<p>Veritabanını saklamak için \"%1\" klasörü seçtiniz. Bu klasörde "
-"digiKam'ın eski bir sürümünden bir veritabanı dosyası bulunuyor.</p> <p>Bu "
-"veritabanı dosyasının gerçekten \"%2\" klasöründe bulunan resimler için "
-"oluşturulduğunu teyit ederek - eski veritabanı dosyasını yükseltmek ister "
-"misiniz - ya da eski dosyayı yok sayarak yeni bir veritabanı ile başlamak "
-"ister misiniz?</p> "
+"<p>Veritabanının depolanacağı yer olarak \"%1\" klasörünü seçtiniz. Bu "
+"klasörde digiKam'ın eski bir sürümünden bir veritabanı dosyası bulundu.</"
+"p><p>Eski veritabanı dosyasını yükseltmek ister misiniz - bu veritabanı "
+"dosyasının gerçekten \"%2\" klasöründe bulunan resimler için oluşturulduğunu "
+"onaylayın - yoksa eski dosyayı yok sayıp yeni bir veritabanıyla mı "
+"başlarsınız?</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:475
 #: core/libs/album/manager/albummanager_database.cpp:543
 #: core/libs/album/manager/albummanager_database.cpp:565
-#, fuzzy, kde-format
-#| msgid "Upgrade Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Veritabanını Yükselt"
@@ -26967,17 +26945,16 @@ msgid ""
 "database, or copy the current database to this location and continue using "
 "it?</p> "
 msgstr ""
-"<p>Veritabanını saklamak için yeni bir yer olan \"%1\" klasörünü seçtiniz. "
-"bu klasörde digiKam'ın eski bir sürümünden bir veritabanı dosyası bulundu.</"
-"p> <p>Eski veritabanı dosyasını yükseltmek, yeni bir veritabanı ile başlamak "
-"veya mevcut veritabanını bu konuma kopyalamak ve kullanmaya devam etmek "
-"ister misiniz?</p> "
+"<p>Veritabanının depolanacağı yeni yer olarak \"%1\" klasörünü seçtiniz. Bu "
+"klasörde digiKam'ın eski bir sürümünden bir veritabanı dosyası bulundu.</"
+"p><p>Eski veritabanı dosyasını yükseltmek, yeni bir veritabanıyla başlamak "
+"veya geçerli veritabanını bu konuma kopyalayıp kullanmayı sürdürmek mi "
+"istiyorsunuz?</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:547
 #: core/libs/album/manager/albummanager_database.cpp:617
 #: core/libs/album/manager/albummanager_database.cpp:648
-#, fuzzy, kde-format
-#| msgid "Copy Current Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Geçerli Veritabanını Kopyala"
@@ -26990,10 +26967,10 @@ msgid ""
 "p> <p>Would you like to upgrade the old database file or start with a new "
 "database?</p>"
 msgstr ""
-"<p>Veritabanını saklamak için yeni bir yer olan \"%1\" klasörünü seçtiniz. "
-"Bu klasörde digiKam'ın eski bir sürümünden bir veritabanı dosyası bulundu.</"
-"p> <p>Eski veritabanı dosyasını yükseltmek veya yeni bir veritabanı ile "
-"başlamak ister misiniz?</p>"
+"<p>Veritabanının depolanacağı yeni yer olarak \"%1\" klasörünü seçtiniz. Bu "
+"klasörde digiKam'ın eski bir sürümünden bir veritabanı dosyası bulundu.</"
+"p><p>Eski veritabanı dosyasını yükseltmek mi yoksa yeni bir veritabanıyla mı "
+"başlamak istiyorsunuz?</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:593
 #, kde-format
@@ -27001,8 +26978,8 @@ msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
 "Trying to upgrade old databases."
 msgstr ""
-"Eski veritabanı dosyası (\"%1\") yeni yerine kopyalanamadı (\"%2\"). Eski "
-"veritabanlarını yükseltmeye çalışılıyor."
+"Eski veritabanı dosyası (\"%1\") yeni konumuna (\"%2\") kopyalanamadı. Eski "
+"veritabanları yükseltmeye çalışılıyor."
 
 #: core/libs/album/manager/albummanager_database.cpp:608
 #, kde-format
@@ -27011,9 +26988,10 @@ msgid ""
 "</p><p>Would you like to copy the current database to this location and "
 "continue using it, or start with a new database?</p> "
 msgstr ""
-"<p>Veritabanını saklamak için \"%1\" klasörü olarak yeni bir yer seçtiniz.</"
-"p><p>Geçerli veritabanını bu konuma kopyalayıp kullanmaya devam etmek mi, "
-"yoksa yeni bir veritabanı ile başlatmak mı istiyorsunuz?</p> "
+"<p>Veritabanının depolanacağı yeni yer olarak \"%1\" klasörünü seçtiniz. Bu "
+"klasörde digiKam'ın eski bir sürümünden bir veritabanı dosyası bulundu.</"
+"p><p>Geçerli veritabanını bu konuma kopyalayıp kullanmayı sürdürmek mi yoksa "
+"yeni bir veritabanıyla mı başlamak istersiniz?</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:640
 #, kde-format
@@ -27023,14 +27001,13 @@ msgid ""
 "use this existing file as the new database, or remove it and copy the "
 "current database to this place?</p> "
 msgstr ""
-"<p>Veritabanını depolamak için yeni yer olarak \"%1\" klasörünü seçtiniz. Bu "
-"konumda halihazırda bir veritabanı dosyası var.</p> <p>Bu var olan dosyayı "
+"<p>Veritabanının depolanacağı yeni yer olarak \"%1\" klasörünü seçtiniz. Bu "
+"konumda halihazırda bir veritabanı dosyası var.</p><p>Bu var olan dosyayı "
 "yeni veritabanı olarak kullanmak mı yoksa onu kaldırıp geçerli veritabanını "
-"bu yere kopyalamak mı istersiniz?</p>"
+"bu konuma kopyalamak mı istiyorsunuz?</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:650
-#, fuzzy, kde-format
-#| msgid "Use Existing File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Var Olan Dosyayı Kullan"
@@ -27050,8 +27027,8 @@ msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
 "Starting with an empty database."
 msgstr ""
-"Eski veritabanı dosyasının (\"%1\") yeni yerine kopyalanması (\"%2\") "
-"başarısız. Boş bir veritabanıyla başlanıyor."
+"Eski veritabanı dosyası (\"%1\") yeni yerine (\"%2\") kopyalanamadı. Boş bir "
+"veritabanıyla başlanıyor."
 
 #: core/libs/album/manager/albummanager_database.cpp:756
 #, kde-format
@@ -27077,32 +27054,32 @@ msgstr "Albüm için bir üst albüm bulunamadı."
 #: core/libs/album/manager/albummanager_palbum.cpp:376
 #, kde-format
 msgid "Album name cannot be empty."
-msgstr "Albüm ismi boş bırakılamaz."
+msgstr "Albüm adı boş bırakılamaz."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:382
 #, kde-format
 msgid "Album name cannot contain '/'."
-msgstr "Albüm ismi '/' içeremez."
+msgstr "Albüm adı '/' içeremez."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:388
 #, kde-format
 msgid "createPAlbum does not accept the root album as parent."
-msgstr "createPAlbum, kök albümleri eş olarak kabul etmez."
+msgstr "createPAlbum, kök albümü üst albüm olarak kabul etmiyor."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:403
 #, kde-format
 msgid "An existing album has the same name."
-msgstr "Aynı ismi taşıyan başka bir albüm var."
+msgstr "Var olan bir albümün adı aynı."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:419
 #, kde-format
 msgid "Failed to create directory '%1'"
-msgstr "'%1' dizinini yaratma işlemi başarısız oldu"
+msgstr "'%1' dizini oluşturulamadı"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:428
 #, kde-format
 msgid "Failed to add album to database"
-msgstr "Albüm, veritabanına eklenemedi"
+msgstr "Albüm veritabanına eklenemedi"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
@@ -27117,17 +27094,17 @@ msgstr "Böyle bir albüm yok"
 #: core/libs/album/manager/albummanager_palbum.cpp:461
 #, kde-format
 msgid "Cannot rename root album"
-msgstr "Kök albümü yeniden adlandıramazsınız"
+msgstr "Kök albüm yeniden adlandırılamaz"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:467
 #, kde-format
 msgid "Cannot rename album root album"
-msgstr "Kök albümü yeniden adlandıramazsınız"
+msgstr "Kök albüm yeniden adlandırılamaz"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:473
 #, kde-format
 msgid "Album name cannot contain '/'"
-msgstr "Albüm ismi '/' içeremez"
+msgstr "Albüm adı '/' içeremez"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:481
 #, kde-format
@@ -27135,13 +27112,13 @@ msgid ""
 "Another album with the same name already exists.\n"
 "Please choose another name."
 msgstr ""
-"Aynı ada sahip başka bir albüm zaten mevcut.\n"
-"Lütfen başka bir isim seçin."
+"Aynı ada sahip başka bir albüm halihazırda var.\n"
+"Lütfen başka bir ad seçin."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:500
 #, kde-format
 msgid "Failed to rename Album"
-msgstr "Albüm yeniden isimlendirilemedi"
+msgstr "Albüm yeniden adlandırılamadı"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:545
 #, kde-format
@@ -27151,47 +27128,45 @@ msgstr "Kök albüm düzenlenemez"
 #: core/libs/album/manager/albummanager_talbum.cpp:291
 #, kde-format
 msgid "No parent found for tag"
-msgstr "Üst etiket bulunamadı"
+msgstr "Etiket için bir üst öge bulunamadı"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:299
 #, kde-format
 msgid "Tag name cannot be empty"
-msgstr "Etiket ismi boş bırakılamaz"
+msgstr "Etiket adı boş bırakılamaz"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:305
 #: core/libs/album/manager/albummanager_talbum.cpp:471
 #, kde-format
 msgid "Tag name cannot contain '/'"
-msgstr "Etiket ismi '/' içeremez"
+msgstr "Etiket adı '/' içeremez"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:313
 #: core/libs/tags/widgets/tageditdlg.cpp:476
 #, kde-format
 msgid "Tag name already exists"
-msgstr "Etiket adı zaten var"
+msgstr "Etiket adı halihazırda var"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:322
 #, kde-format
 msgid "Failed to add tag to database"
-msgstr "Etiket, veritabanına eklenemedi"
+msgstr "Etiket veritabanına eklenemedi"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:373
-#, fuzzy, kde-format
-#| msgid "Cannot delete Root Tag"
+#, kde-format
 msgid "Cannot delete root tag"
-msgstr "Kök etiketi silemezsiniz"
+msgstr "Kök etiket silinemiyor"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:379
-#, fuzzy, kde-format
-#| msgid "Cannot delete Root Tag"
+#, kde-format
 msgid "Cannot delete required face tag"
-msgstr "Kök etiketi silemezsiniz"
+msgstr "Gerekli yüz etiketi silinemiyor"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:465
 #: core/libs/album/manager/albummanager_talbum.cpp:702
 #, kde-format
 msgid "Cannot edit root tag"
-msgstr "Kök etiketi düzenleyemezsiniz"
+msgstr "Kök etiket düzenlenemez"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:479
 #, kde-format
@@ -27199,8 +27174,8 @@ msgid ""
 "Another tag with the same name already exists.\n"
 "Please choose another name."
 msgstr ""
-"Aynı ada sahip başka bir etiket zaten mevcut.\n"
-"Lütfen başka bir isim seçin."
+"Aynı ada sahip başka bir etiket halihazırda var.\n"
+"Lütfen başka bir ad seçin."
 
 #: core/libs/album/manager/albummanager_talbum.cpp:504
 #, kde-format
@@ -27210,53 +27185,42 @@ msgstr "TAlbum olmayan bir yere taşınmaya çalışıldı"
 #: core/libs/album/manager/albummanager_talbum.cpp:510
 #, kde-format
 msgid "Cannot move root tag"
-msgstr "Kök etiketi taşınamaz"
+msgstr "Kök etiket taşınamıyor"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:518
-#, fuzzy, kde-format
-#| msgid ""
-#| "Another tag with the same name already exists.\n"
-#| "Please choose another name."
+#, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
 "Do you want to merge the tags?"
 msgstr ""
-"Aynı ada sahip başka bir etiket zaten mevcut.\n"
-"Lütfen başka bir isim seçin."
+"Aynı ada sahip başka bir etiket halihazırda var.\n"
+"Etiketleri birleştirmek istiyor musunuz?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:592
-#, fuzzy, kde-format
-#| msgid "Cannot move root tag"
+#, kde-format
 msgid "Cannot merge root tag"
-msgstr "Kök etiketi taşınamaz"
+msgstr "Kök etiket birleştirilemiyor"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:598
-#, fuzzy, kde-format
-#| msgid "Cannot move root tag"
+#, kde-format
 msgid "Cannot merge required face tag"
-msgstr "Kök etiketi taşınamaz"
+msgstr "Gerekli yüz etiketi birleştirilemiyor"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:604
 #, kde-format
 msgid "Only a tag without children can be merged!"
-msgstr ""
+msgstr "Yalnızca bir alt ögesi olmayan etiket birleştirilebilir!"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:616
-#, fuzzy, kde-format
-#| msgid "Do you really want to remove the selected tag from all images?"
-#| msgid_plural ""
-#| "Do you really want to remove the selected tags from all images?"
+#, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
-msgstr ""
-"Seçili etiketi tüm resimlerden gerçekten kaldırmak istiyor musunuz?Seçili "
-"etiketleri tüm resimlerden gerçekten kaldırmak istiyor musunuz?"
+msgstr "'%1' etiketini '%2' içine birleştirmek istiyor musunuz?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:620
 #: core/libs/album/manager/albummanager_talbum.cpp:1120
-#, fuzzy, kde-format
-#| msgid "Do not ask again"
+#, kde-format
 msgid "Don't ask again at this session"
-msgstr "Tekrar sorma"
+msgstr "Bu oturumda bir daha sorma"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:696
 #, kde-format
@@ -27264,16 +27228,13 @@ msgid "No such tag"
 msgstr "Böyle bir etiket yok"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:1115
-#, fuzzy, kde-format
-#| msgid ""
-#| "This operation can take long time depending on collection size.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
 "Do you want to write the metadata to %1 files now?"
 msgstr ""
-"Bu işlem koleksiyon boyutuna bağlı olmakla birlikte uzun zaman alabilir.\n"
-"Devam etmek istiyor musunuz?"
+"Bu işlem arka planda uzunca bir vakit alabilir.\n"
+"Üst veriyi %1 dosyaya yazmak istiyor musunuz?"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:48
 #, kde-format
@@ -27282,10 +27243,9 @@ msgstr "Bağlam menüsü"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
 #: core/libs/database/utils/ifaces/dio.cpp:901
-#, fuzzy, kde-format
-#| msgid "Trash"
+#, kde-format
 msgid "Empty Trash"
-msgstr "Çöp"
+msgstr "Çöp Kutusunu Boşalt"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
 #, kde-format
@@ -27297,7 +27257,7 @@ msgstr "Derecelendirme: "
 #, kde-format
 msgctxt "@info: rating label"
 msgid "No Rating"
-msgstr "Derecelendirme Yok"
+msgstr "Derecelendirme yok"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:305
 #, kde-format
@@ -27309,7 +27269,7 @@ msgstr "Renkler: "
 #, kde-format
 msgctxt "@info: color label name"
 msgid "No Color"
-msgstr "Renksiz"
+msgstr "Renk yok"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:318
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
@@ -27351,7 +27311,7 @@ msgstr "Mavi"
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
-msgstr "Macenta"
+msgstr "Camgöbeği"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:342
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
@@ -27375,18 +27335,16 @@ msgid "White"
 msgstr "Beyaz"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:366
-#, fuzzy, kde-format
-#| msgid "Picks: "
+#, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Picks: "
 msgstr "Seçimler: "
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:375
-#, fuzzy, kde-format
-#| msgid "No Pick"
+#, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
-msgstr "Seçme"
+msgstr "Seçim yok"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:379
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:312
@@ -27410,18 +27368,16 @@ msgid "Accepted"
 msgstr "Kabul edildi"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:452
-#, fuzzy, kde-format
-#| msgid "Exported Labels"
+#, kde-format
 msgctxt "@info: search label default title"
 msgid "Exported Labels"
-msgstr "Dışa Aktarılmış Etiketler"
+msgstr "Dışa Aktarılan Etiketler"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:456
-#, fuzzy, kde-format
-#| msgid "Labels Album"
+#, kde-format
 msgctxt "@info: search label default title"
 msgid "Labels Album"
-msgstr "Albümü Etiketler"
+msgstr "Etiketler Albümü"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
@@ -27432,42 +27388,37 @@ msgid "Expand Selected Nodes"
 msgstr "Seçili Düğümleri Genişlet"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
-#, fuzzy, kde-format
-#| msgid "By Album"
+#, kde-format
 msgid "Expand all Albums"
-msgstr "Albüme Göre"
+msgstr "Tüm Albümleri Genişlet"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #: core/libs/tags/widgets/tagfolderview.cpp:139
 #: core/libs/tags/widgets/tagfolderview.cpp:242
 #, kde-format
 msgid "Collapse Selected Recursively"
-msgstr "Yinelemeli Olarak Seçilenleri Daralt"
+msgstr "Seçiliyi Özyineli Olarak Daralt"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:225
-#, fuzzy, kde-format
-#| msgid "By Album"
+#, kde-format
 msgid "Collapse all Albums"
-msgstr "Albüme Göre"
+msgstr "Tüm Albümleri Daralt"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:228
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Find Duplicates..."
-msgstr "Aynısı Olanları Bul..."
+msgstr "Yinelenenleri Bul..."
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scanning faces"
+#, kde-format
 msgid "Scan for Faces"
-msgstr "Yüzler taranıyor"
+msgstr "Yüzleri Tara"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:234
-#, fuzzy, kde-format
-#| msgid "Separate Items"
+#, kde-format
 msgid "Repair hidden Items"
-msgstr "Ögeleri Ayır"
+msgstr "Gizli Ögeleri Onar"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:237
 #, kde-format
@@ -27475,17 +27426,15 @@ msgid "Refresh"
 msgstr "Yenile"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:302
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scanning faces"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
-msgstr "Yüzler taranıyor"
+msgstr "Yüzleri Tara"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:303
 #, kde-format
 msgid "Should sub-albums be scanned too?"
-msgstr ""
+msgstr "Alt albümler de taransın mı?"
 
 #: core/libs/album/treeview/labelstreeview.cpp:100
 #, kde-format
@@ -27503,39 +27452,34 @@ msgstr "Derecelendirme"
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
-msgstr "Derecelendirme Yok"
+msgstr "Derecelendirme yok"
 
 #: core/libs/album/treeview/labelstreeview.cpp:401
-#, fuzzy, kde-format
-#| msgid "Pick"
+#, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
-msgstr "Seç"
+msgstr "Seçim"
 
 #: core/libs/album/treeview/labelstreeview.cpp:406
-#, fuzzy, kde-format
-#| msgid "No Pick"
+#, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
-msgstr "Seçme"
+msgstr "Seçim yok"
 
 #: core/libs/album/treeview/labelstreeview.cpp:407
-#, fuzzy, kde-format
-#| msgid "Rejected Item"
+#, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
-msgstr "Reddedilen Öge"
+msgstr "Reddedilen öge"
 
 #: core/libs/album/treeview/labelstreeview.cpp:408
-#, fuzzy, kde-format
-#| msgid "Pending Item"
+#, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Bekleyen öge"
 
 #: core/libs/album/treeview/labelstreeview.cpp:409
-#, fuzzy, kde-format
-#| msgid "Accepted Item"
+#, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Kabul edilen öge"
@@ -27550,7 +27494,7 @@ msgstr "Renk"
 #, kde-format
 msgctxt "@item: color tree"
 msgid "No Color"
-msgstr "Renksiz"
+msgstr "Renk yok"
 
 #: core/libs/album/treeview/labelstreeview.cpp:446
 #, kde-format
@@ -27586,7 +27530,7 @@ msgstr "Mavi"
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Magenta"
-msgstr "Macenta"
+msgstr "Camgöbeği"
 
 #: core/libs/album/treeview/labelstreeview.cpp:449
 #, kde-format
@@ -27613,21 +27557,20 @@ msgid "New Album"
 msgstr "Yeni Albüm"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Edit Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Albümü Düzenle"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:136
-#, fuzzy, kde-format
-#| msgid "Album Properties"
+#, kde-format
 msgctxt "@label: album properties"
 msgid ""
 "\"%1\"\n"
 "Album Properties"
-msgstr "Albüm Özellikleri"
+msgstr ""
+"\"%1\"\n"
+"Albüm Özellikleri"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
@@ -27636,11 +27579,10 @@ msgid "&Title:"
 msgstr "&Başlık:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:148
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
-msgstr "İçerik sağlayıcıyı buradan belirleyin."
+msgstr "Yeni albüm başlığını burada ayarlayın"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
@@ -27652,14 +27594,13 @@ msgstr "Ka&tegori:"
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
-msgstr "Şunun ç&ocuğu:"
+msgstr "Şunun &alt ögesi:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:166
-#, fuzzy, kde-format
-#| msgid "Ca&ption:"
+#, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
-msgstr "&Resim yazısı:"
+msgstr "A&lt yazı:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:171
 #, kde-format
@@ -27678,15 +27619,13 @@ msgstr "Albüm &tarihi:"
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
-msgstr "&En eski"
+msgstr "&En Eski"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:181
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
-msgstr ""
-"Seçili albümü tekrarlanan ögeler açısından taramak için bu düğmeyi kullan."
+msgstr "Albümdeki en eski görselin tarihini seçmek için bu düğmeyi kullanın."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
@@ -27696,27 +27635,25 @@ msgid "&Average"
 msgstr "&Ortalama"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:183
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr ""
-"Seçili albümü tekrarlanan ögeler açısından taramak için bu düğmeyi kullan."
+"Albümünüzdeki görsellerin ortalama tarihini hesaplamak için bu düğmeyi "
+"kullanın."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
-msgstr "En yeni"
+msgstr "En Yeni"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:185
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
-msgstr ""
-"Seçili albümü tekrarlanan ögeler açısından taramak için bu düğmeyi kullan."
+msgstr "Albümdeki en yeni görselin tarihini seçmek için bu düğmeyi kullanın."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:269
 #, kde-format
@@ -27740,7 +27677,7 @@ msgstr "Seçili koleksiyonun dizin kökü"
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
-msgstr "Sınıflandırılmamış albüm"
+msgstr "Kategorisiz albüm"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:432
 #, kde-format
@@ -27749,13 +27686,11 @@ msgid ""
 "Create new Album in\n"
 "\"%1\""
 msgstr ""
-"Şurada yeni albüm oluştur:\n"
-"\"%1\""
+"\"%1\"\n"
+"konumunda yeni albüm oluştur"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:477
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Ortalama Hesaplanamadı"
@@ -27770,139 +27705,147 @@ msgstr "Bu albüm için tarih ortalaması hesaplanamadı."
 #: core/libs/album/widgets/albumselectcombobox.cpp:90
 #, kde-format
 msgid "No Album Selected"
-msgstr "Albüm Seçilmedi"
+msgstr "Seçili albüm yok"
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:97
 #, kde-format
 msgid "No Tag Selected"
-msgstr "Hiç Etiket Seçilmedi"
+msgstr "Seçili etiket yok"
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:274
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
-msgstr[0] "1 Etiket seçildi"
-msgstr[1] "%1 Etiket seçildi"
+msgstr[0] "1 etiket seçili"
+msgstr[1] "%1 etiket seçili"
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:278
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
-msgstr[0] "1 Albüm seçildi"
-msgstr[1] "%1 Albüm seçildi"
+msgstr[0] "1 albüm seçili"
+msgstr[1] "%1 albüm seçili"
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:287
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
-msgstr[0] "1 Etiket hariç tutuldu"
-msgstr[1] "%1 Etiket hariç tutuldu"
+msgstr[0] "1 etiket dışarıda tutuldu"
+msgstr[1] "%1 etiket dışarıda tutuldu"
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:291
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
-msgstr[0] "1 Albüm hariç tutuldu"
-msgstr[1] "%1 Albüm hariç tutuldu"
+msgstr[0] "1 albüm dışarıda tutuldu"
+msgstr[1] "%1 albüm dışarıda tutuldu"
 
 #: core/libs/album/widgets/albumselectdialog.cpp:80
-#, fuzzy, kde-format
-#| msgid "Select Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Albüm Seç"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
-#, fuzzy, kde-format
-#| msgid "Album List"
+#: core/libs/album/widgets/albumselectors.cpp:548
+#, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
-msgstr "Albüm Listesi"
+msgstr "Albümler (Tümü)"
 
 #: core/libs/album/widgets/albumselectors.cpp:148
-#, fuzzy, kde-format
-#| msgid "Tags: "
+#, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
-msgstr "Etiketler: "
+msgstr "Etiketler (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Albums"
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "Tüm albüm koleksiyonu"
+msgid "All albums"
+msgstr "Tüm Albümler"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:238
 #, fuzzy, kde-format
-#| msgid "Theme Selection"
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
-msgstr "Tema Seçimi"
+msgid "Recursive"
+msgstr "Özyineli seçim"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "Özyineli seçim"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
-msgstr "İşlenecek tüm albümleri seçin."
+msgstr "İşlenmesi gereken tüm albümleri seçin."
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
-msgstr "Albüm Seçilmedi"
+msgstr "Seçili albüm yok"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Seçili albümleri sıfırla"
 
-#: core/libs/album/widgets/albumselectors.cpp:236
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "Tüm etiket koleksiyonu"
+msgid "All tags"
+msgstr "Tüm Etiketler"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
-msgstr "İşlenecek tüm etiketleri seçin."
+msgstr "İşlenmesi gereken tüm etiketleri seçin."
 
-#: core/libs/album/widgets/albumselectors.cpp:250
-#, fuzzy, kde-format
-#| msgid "No Tag Selected"
+#: core/libs/album/widgets/albumselectors.cpp:252
+#, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
-msgstr "Hiç Etiket Seçilmedi"
+msgstr "Seçili etiket yok"
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Seçili etiketleri sıfırla"
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albümler (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
-#, fuzzy, kde-format
-#| msgid "Tags: "
+#: core/libs/album/widgets/albumselectors.cpp:552
+#, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
-msgstr "Etiketler: "
+msgstr "Etiketler (Tümü)"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
-#, fuzzy, kde-format
-#| msgid "Tags: %1\n"
+#: core/libs/album/widgets/albumselectors.cpp:553
+#, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
-msgstr "Etiketler: %1\n"
+msgstr "Etiketler (%1)"
 
 #: core/libs/album/widgets/albumselectwidget.cpp:69
 #, kde-format
@@ -27922,18 +27865,18 @@ msgstr "Yeni albüm oluştur"
 #: core/libs/database/collection/collectionmanager_location.cpp:229
 #, kde-format
 msgid "Sorry, digiKam does not support remote URLs as collections."
-msgstr "Üzgünüz, digiKam uzaktaki URL'leri koleksiyon olarak desteklemez."
+msgstr "Üzgünüz, digiKam uzak URL'leri koleksiyon olarak desteklemiyor."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:247
 #: core/libs/database/collection/collectionmanager_location.cpp:450
 #, kde-format
 msgid "The selected folder does not exist or is not readable"
-msgstr "Seçilen dizin bulunamıyor veya okunabilir değil"
+msgstr "Seçili klasör bulunamıyor veya okunabilir değil"
 
 #: core/libs/database/collection/collectionmanager_location.cpp:262
 #, kde-format
 msgid "There is already a collection containing the folder \"%1\""
-msgstr "\"%1\" dizinini kullanan bir koleksiyon daha var"
+msgstr "\"%1\" klasörünü içeren bir koleksiyon halihazırda var"
 
 #: core/libs/database/collection/collectionmanager_location.cpp:284
 #, kde-format
@@ -27943,7 +27886,7 @@ msgstr "Depolama ortamı benzersiz bir biçimde tanımlanabilir."
 #: core/libs/database/collection/collectionmanager_location.cpp:296
 #, kde-format
 msgid "The collection is located on your harddisk"
-msgstr "Koleksiyon sabit diskinize yerleştirildi"
+msgstr "Koleksiyon sabit diskinize bulunuyor"
 
 #: core/libs/database/collection/collectionmanager_location.cpp:334
 #, kde-format
@@ -27955,11 +27898,12 @@ msgid ""
 "please set a unique label on your CDs and DVDs if you intend to use them "
 "with digiKam."
 msgstr ""
-"Bu, CD yazma uygulamasında ayarlayabileceğiniz etiketle tanımlanan bir CD/"
-"DVD'dir. Aynı etiketle zaten başka bir giriş var. Bu ikisi, üst dizindeki "
-"dosyalarla ayırt edilecek, bu nedenle dosyaları CD'ye eklemeyin aksi "
-"taktirde tanınmayacak. Gelecekte digiKam ile kullanmak istiyorsanız lütfen "
-"CD'lerinizde ve DVD'lerinizde benzersiz bir etiket oluşturun."
+"Bu, CD yazma uygulamanızda ayarlayabileceğiniz etiketle tanımlanan bir CD/"
+"DVD'dir. Aynı etikete sahip başka bir giriş halihazırda var. İkisi üst "
+"dizindeki dosyalar tarafından ayırt edilecektir, bu nedenle lütfen dosyaları "
+"CD'ye eklemeyin, aksi takdirde tanınmayacaktır. Gelecekte, digiKam ile "
+"kullanmayı düşünüyorsanız lütfen CD ve DVD'lerinize benzersiz bir etiket "
+"koyun."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:349
 #, kde-format
@@ -27968,9 +27912,9 @@ msgid ""
 "set in your CD burning application. If you create further CDs for use with "
 "digikam in the future, please remember to give them a unique label as well."
 msgstr ""
-"Bu CD/DVD ortamı (\"%1\") etiketi ile CD yazma uygulamanızda belirttiğiniz "
-"gibi tanımlanacak. Eğer ileride digiKam ile kullanmak üzere CD'ler "
-"oluşturacaksanız etiketlerinin benzersiz olmasına dikkat edin."
+"Bu bir CD/DVD'dir. CD yazma uygulamanızda ayarladığınız etiketle (\"%1\") "
+"tanımlanacaktır. Gelecekte digikam ile kullanmak üzere başka CD'ler "
+"oluşturursanız lütfen onlara da benzersiz bir etiket vermeyi unutmayın."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:365
 #, kde-format
@@ -27978,8 +27922,7 @@ msgid ""
 "This is a removable storage medium that will be identified by its label "
 "(\"%1\")"
 msgstr ""
-"Bu etiketi (\"%1\") tarafından tanımlanacak bir çıkarılabilir depolama "
-"ortamıdır"
+"Bu, etiketi (\"%1\") ile tanımlanacak kaldırılabilir bir depolama ortamıdır."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:381
 #, kde-format
@@ -27988,8 +27931,8 @@ msgid ""
 "system (\"%1\"). No more specific means of identification (UUID, label) is "
 "available."
 msgstr ""
-"Bu girdi yalnızca sisteminde bulunan yol tarafından (\"%1\") isimlendirilmiş "
-"olacak."
+"Bu giriş yalnızca sisteminizde bulunduğu yolla (\"%1\") tanımlanacaktır. "
+"Daha spesifik bir tanımlama aracı (UUID, etiket) kullanılabilir değildir."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:398
 #, kde-format
@@ -27998,9 +27941,9 @@ msgid ""
 "path. It will be added using the file path as the only identifier. This will "
 "work well for your local hard disk."
 msgstr ""
-"Sisteminizde bu yolun depolama ortamını tanımlamak mümkün değildir. Dosya "
-"tanıtıcısı olarak yalnızca dosya yolu kullanılarak eklenecektir. Bu yerel "
-"sabit diskiniz için de iyi bir sonuç olacaktır."
+"Bu yolun depolama ortamını sisteminizde tanımlamak olanaklı değildir. Tek "
+"tanımlayıcı olarak dosya yolu kullanılarak eklenecektir. Bu, yerel sabit "
+"diskiniz ile iyi uyumludur."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:423
 #, kde-format
@@ -28009,7 +27952,7 @@ msgid ""
 "not support smb:// URLs. "
 msgstr ""
 "Samba paylaşımınızı yerel olarak bağlamanız gerekir. Üzgünüz, digiKam şu "
-"anda smb:// URL'leri desteklememektedir. "
+"anda smb:// URL'lerini desteklememektedir."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:428
 #, kde-format
@@ -28017,13 +27960,14 @@ msgid ""
 "Your network storage must be set up to be accessible as files and folders "
 "through the operating system. digiKam does not support remote URLs."
 msgstr ""
-"Ağ depolama alanınız, işletim sistemi aracılığıyla dosya ve klasörler olarak "
-"erişilebilecek şekilde ayarlanmalıdır. digiKam, uzak URL'leri desteklemez."
+"Ağ depolama alanınız, işletim sistemi aracılığıyla dosya ve klasörler "
+"halinde erişilebilecek şekilde ayarlanmalıdır. digiKam uzak URL'leri "
+"desteklemez."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:465
 #, kde-format
 msgid "There is already a collection for a network share with the same path."
-msgstr "Aynı yola sahip olan bir ağ paylaşımı için zaten bir koleksiyon var."
+msgstr "Aynı yola sahip bir ağ paylaşımı için bir koleksiyon halihazırda var."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:478
 #, kde-format
@@ -28031,8 +27975,8 @@ msgid ""
 "The network share will be identified by the path you selected. If the path "
 "is empty, the share will be considered unavailable."
 msgstr ""
-"Ağ paylaşımı, seçtiğiniz konum ile tanımlanacak. Konum boş ise paylaşım "
-"kullanılamayacak."
+"Ağ paylaşımı seçtiğiniz yolla tanımlanacaktır. Yol boşsa paylaşımın "
+"kullanılamadığı kabul edilecektir."
 
 #: core/libs/database/collection/collectionmanager_p.cpp:467
 #, kde-format
@@ -28041,7 +27985,7 @@ msgid ""
 "\"relative path\" on harddisk partition with \"UUID\"\n"
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr ""
-"\"UUID\"li sabit disk bölüntüsündeki \"göreceli yol\"\n"
+"\"UUID\" olan sabit disk bölüntüsündeki \"göreceli yol\"\n"
 "\"%2\" kimlikli disk bölümündeki \"%1\" klasörü"
 
 #: core/libs/database/collection/collectionmanager_p.cpp:475
@@ -28051,16 +27995,14 @@ msgid ""
 "\"relative path\" on harddisk partition with \"label\"\n"
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
-"\"etiket\"li sabit disk bölüntüsündeki \"göreceli yol\"\n"
+"\"etiket\" olan sabit disk bölüntüsündeki \"göreceli yol\"\n"
 "\"%2\" etiketli disk bölümündeki \"%1\" klasörü"
 
 #: core/libs/database/collection/collectionmanager_p.cpp:489
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Shared directory mounted at <b>%1</b>"
+#, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
-msgstr "<b>%1</b> adresine takılı paylaşılan dizin"
+msgstr "Paylaşılan dizin \"%1\" konumunda bağlı"
 
 #: core/libs/database/coredb/coredbaccess.cpp:310
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
@@ -28077,7 +28019,7 @@ msgstr ""
 #: core/libs/database/coredb/coredbcopymanager.cpp:62
 #, kde-format
 msgid "Error while opening the source database."
-msgstr "Kaynak veritabanını açarken hata."
+msgstr "Kaynak veritabanı açılırken hata."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:72
 #, kde-format
@@ -28092,7 +28034,7 @@ msgstr "Hedef veritabanı hazırlanırken hata."
 #: core/libs/database/coredb/coredbcopymanager.cpp:130
 #, kde-format
 msgid "Error while scrubbing the target database."
-msgstr "Hedef veritabanı temizlenirken hata."
+msgstr "Hedef veritabanı ovulurken hata."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:142
 #, kde-format
@@ -28102,7 +28044,7 @@ msgstr "Şema Oluştur..."
 #: core/libs/database/coredb/coredbcopymanager.cpp:146
 #, kde-format
 msgid "Error while creating the database schema."
-msgstr "Veritabanı şeması oluşturulurken hata."
+msgstr "Veritabanı şemasını oluştururken hata."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:288
 #, kde-format
@@ -28110,8 +28052,8 @@ msgid ""
 "Error while converting the database.\n"
 " Details: %1"
 msgstr ""
-"Veritabanı dönüştürülürken hata oluştu.\n"
-" Ayrıntılar: %1"
+"Veritabanını dönüştürürken hata.\n"
+"Ayrıntılar: %1"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:206
 #, kde-format
@@ -28121,10 +28063,10 @@ msgid ""
 " %1\n"
 "Check your privileges on the database and restart digiKam."
 msgstr ""
-"Veritabanı üzerinde yetersiz ayrıcalıklarınız var.\n"
-"Aşağıdaki ayrıcalıklar size devredilmiyor:\n"
+"Veritabanında yeterli ayrıcalığınız yok.\n"
+"Aşağıdaki ayrıcalıklar size atanmadı:\n"
 " %1\n"
-"Veritabanındaki ayrıcalıklarınızı kontrol edin ve digiKam'ı yeniden başlatın."
+"Veritabanındaki ayrıcalıklarınızı denetleyin ve digiKam'i yeniden başlatın."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:240
 #, kde-format
@@ -28133,8 +28075,8 @@ msgid ""
 "current database schema version cannot be verified. Try to start with an "
 "empty database. "
 msgstr ""
-"Veritabanı geçerli değil: \"DBVersion\" ayarı yok. Geçerli veritabanı şema "
-"sürümü doğrulanamıyor. Boş bir veritabanı ile başlamayı deneyin. "
+"Veritabanı geçerli değil: \"DBVersion\" ayarı yok. Geçerli veritabanı şeması "
+"sürümü doğrulanamıyor. Boş bir veritabanıyla başlamayı deneyin."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:270
 #, kde-format
@@ -28144,11 +28086,11 @@ msgid ""
 "(This means this digiKam version is too old, or the database format is too "
 "recent.) Please use the more recent version of digiKam that you used before. "
 msgstr ""
-"Veritabanı, digiKam'in daha yeni bir sürümüyle kullanılmıştır ve bu sürümle "
-"kullanılamayan bir veritabanı şemasına güncellenmiştir. (Bu, bu digiKam "
-"sürümünün çok eski veya veritabanı biçiminin çok yeni olduğu anlamına "
-"gelir.) Lütfen daha önce kullandığınız digiKam'in daha yeni sürümünü "
-"kullanın. "
+"Veritabanı digiKam'ın daha yeni bir sürümüyle kullanılmış ve bu sürümle "
+"kullanılamayacak bir veritabanı şemasıyla güncellenmiştir. (Bu, digiKam "
+"sürümünün çok eski olduğu veya veritabanı biçiminin çok yeni olduğu anlamına "
+"gelir.) Lütfen daha önce kullandığınız digiKam'ın daha yeni sürümünü "
+"kullanın."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:332
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
@@ -28162,13 +28104,7 @@ msgstr ""
 " "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:353
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to open a database transaction on your database file \"%1\". This "
-#| "is unusual. Please check that you can access the file and no other "
-#| "process has currently locked the file. If the problem persists you can "
-#| "get help from the digikam-devel@kde.org mailing list. As well, please "
-#| "have a look at what digiKam prints on the console. "
+#, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
 "unusual. Please check that you can access the file and no other process has "
@@ -28176,21 +28112,14 @@ msgid ""
 "digikam developers mailing list (see www.digikam.org/support). As well, "
 "please have a look at what digiKam prints on the console. "
 msgstr ""
-"Veritabanı dosyanız \"%1\" üzerinde bir veritabanı işlemi açılamadı. Bu "
-"beklenmeyen bir durum. Lütfen dosyaya erişim hakkınız olduğunu ve dosyanın "
-"başka bir uygulama tarafından kullanım için kilitlenmediğini doğrulayın. "
-"Eğer problem devam ederse digikam-devel@kde.org mektuplaşma listesinden "
-"yardım alabilirsiniz. Ayrıca digiKam konsol çıktıları nelerdir bir bakınız."
+"\"%1\" veritabanı dosyanızda bir veritabanı işlemi açılamadı. Bu alışılmadık "
+"bir durum. Lütfen dosyaya erişebildiğinizi ve şu anda başka hiçbir işlemin "
+"dosyayı kilitlemediğini denetleyin. Sorun sürerse digiKam geliştiricilerinin "
+"e-posta listesinden yardım alabilirsiniz (bkz. www.digikam.org/support). "
+"Lütfen digiKam'ın konsolda ne yazdırdığına da bir göz atın."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:414
-#, fuzzy, kde-format
-#| msgid ""
-#| "The schema updating process from version 4 to 6 failed, caused by an "
-#| "error that we did not expect. You can try to discard your old database "
-#| "and start with an empty one. (In this case, please move the database "
-#| "files \"%1\" and \"%2\" from the directory \"%3\"). More probably you "
-#| "will want to report this error to the digikam-devel@kde.org mailing list. "
-#| "As well, please have a look at what digiKam prints on the console. "
+#, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
 "that we did not expect. You can try to discard your old database and start "
@@ -28199,43 +28128,37 @@ msgid ""
 "this error to the digikam developers mailing list (see www.digikam.org/"
 "support). As well, please have a look at what digiKam prints on the console. "
 msgstr ""
-"Sürüm 4'den 6'ya güncelleme şeması, beklenmeyen bir hata nedeniyle başarısız "
-"oldu. Eski veritabanınızı çıkarabilir ve boş bir veritabanı ile "
-"başlayabilirsiniz. (Bu durumda lütfen \"%1\" ve \"%2\" veritabanı "
-"dosyalarını \"%3\" dizininden taşıyın). Muhtemelen bu hatayı digikam-"
-"devel@kde.org e-posta listesine bildirmek isteyeceksiniz. Ayrıca, digiKam'ın "
-"konsoldaki adımlarına bir göz atın. "
+"Sürüm 4'ten 6'ya şema güncelleme işlemi, beklemediğimiz bir hata nedeniyle "
+"başarısız oldu. Eski veritabanınızı atmayı ve boş bir veritabanıyla "
+"başlamayı deneyebilirsiniz. (Bu durumda, lütfen \"%1\" ve \"%2\" veritabanı "
+"dosyalarını \"%3\" dizininden taşıyın). Büyük olasılıkla bu hatayı digiKam "
+"geliştiricilerinin e-posta listesine bildirmek isteyeceksiniz (bkz. www."
+"digikam.org/support). Lütfen digiKam'ın konsolda ne yazdırdığına da bir göz "
+"atın."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:452
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to update the database schema from version %1 to version %2. "
-#| "Please read the error messages printed on the console and report this "
-#| "error as a bug at bugs.kde.org. "
+#, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
 "The cause could be a missing upgrade of the database to the current server "
 "version. Now start digiKam again to perform a required upgrade of the "
 "database."
 msgstr ""
-"Veritabanı şemasının %1 sürümünden %2 sürümüne güncelleştirilemesi başarısız "
-"oldu. Lütfen konsoldaki hata mesajlarını okuyun ve bu hatayı bugs.kde.org "
-"adresine bir hata olarak bildirin. "
+"Veritabanı şeması %1 sürümünden %2 sürümüne güncellenemedi.\n"
+"Bunun nedeni, veritabanının geçerli sunucu sürümüne eksik yükseltilmesi "
+"olabilir. Şimdi veritabanının gerekli yükseltmesini gerçekleştirmek için "
+"digiKam'ı yeniden başlatın."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:461
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to update the database schema from version %1 to version %2. "
-#| "Please read the error messages printed on the console and report this "
-#| "error as a bug at bugs.kde.org. "
+#, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
 "Please read the error messages printed on the console and report this error "
 "as a bug at bugs.kde.org."
 msgstr ""
-"Veritabanı şemasının %1 sürümünden %2 sürümüne güncelleştirilemesi başarısız "
-"oldu. Lütfen konsoldaki hata mesajlarını okuyun ve bu hatayı bugs.kde.org "
-"adresine bir hata olarak bildirin. "
+"Veritabanı şeması %1 sürümünden %2 sürümüne güncellenemedi.\n"
+"Lütfen konsolda yazılı olan hata iletilerini okuyun ve bu hatayı bugs.kde."
+"org adresinde bir hata olarak bildirin."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:680
 #, kde-format
@@ -28244,8 +28167,8 @@ msgid ""
 "xml file of the current version of digiKam is installed at the correct "
 "place. "
 msgstr ""
-"Veritabanı güncelleme eylemi bulunamadı. Lütfen digiKam'in güncel sürümünün "
-"dbconfig.xml dosyasının doğru yere kurulu olduğundan emin olun. "
+"Veritabanı güncelleme eylemi bulunamıyor. Lütfen digiKam'ın güncel sürümünün "
+"dbconfig.xml dosyasının doğru yere kurulduğundan emin olun."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:701
 #, kde-format
@@ -28259,14 +28182,13 @@ msgid ""
 "Error message: \"%3\". Please make sure that the file can be copied, or "
 "delete it."
 msgstr ""
-"Eski veritabanı dosyasının (\"%1\") yeni yerine (\"%2\") kopyalanması "
-"başarısız oldu. Hata mesajı: \"%3\". Lütfen dosyanın kopyalanabileceğinden "
-"emin olun veya dosyayı silin."
+"Eski veritabanı dosyası (\"%1\") yeni konumuna (\"%2\") kopyalanamadı. Hata "
+"iletisi: \"%3\". Lütfen dosyanın kopyalanabildiğinden emin olun veya silin."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:869
 #, kde-format
 msgid "Copied database file"
-msgstr "Kopyalanmış veritabanı dosyası"
+msgstr "Kopyalanan veritabanı dosyası"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:874
 #, kde-format
@@ -28275,24 +28197,24 @@ msgid ""
 "but it cannot be opened. Please delete both files and try again, starting "
 "with an empty database. "
 msgstr ""
-"Eski veritabanı dosyası (\"%1\") yeni yerine (\"%2\") kopyalandı; ancak "
-"açılamıyor. Her iki dosyası da silip boş bir veritabanı dosyasıyla "
-"başlayarak yeniden deneyin. "
+"Eski veritabanı dosyası (\"%1\") yeni konuma (\"%2\") kopyalandı; ancak "
+"açılamıyor. Lütfen her iki dosyayı da silin ve boş bir veritabanıyla "
+"başlayarak yeniden deneyin."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:895
 #, kde-format
 msgid "Opened new database file"
-msgstr "Açılan yeni veritabanı dosyası"
+msgstr "Yeni veritabanı dosyası açıldı"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:994
 #, kde-format
 msgid "Prepared table creation"
-msgstr "Hazırlanmış tablo yaratımı"
+msgstr "Tablo oluşumu hazırlandı"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1013
 #, kde-format
 msgid "Created tables"
-msgstr "Oluşturulmuş tablolar"
+msgstr "Tablolar oluşturuldu"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1026
 #, kde-format
@@ -28301,9 +28223,9 @@ msgid ""
 "the schema updating process. Please try with an empty database, or repair "
 "your configuration."
 msgstr ""
-"Yapılandırma dosyasında hiç albüm kitaplığı yolu bulunamadı. Biçim "
-"güncelleme işlemine son verildi. Lütfen boş bir veritabanıyla deneyin ya da "
-"yapılandırmanızı gözden geçirin."
+"Yapılandırma dosyasında albüm kitaplığı yolu bulunamadı. Şema güncelleme "
+"işleminden vazgeçiliyor. Lütfen boş bir veritabanıyla deneyin veya "
+"yapılandırmanızı onarın."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1048
 #, kde-format
@@ -28316,64 +28238,64 @@ msgid ""
 "process will now be aborted because we do not want to create a new database "
 "based on false assumptions from a broken installation."
 msgstr ""
-"albumLibrartPath'inizi (\"%1\") sisteminizin depolama disk bölümüyle "
-"ilişkilendirirken bir hata oluştu. Bu sorun, kurulumunuzla ilgili bir sorun "
-"olduğunu gösterebilir. Linux üzerinde çalışıyorsanız HAL'ın kurulu ve "
-"çalışır durumda olduğunu denetleyin. Her durumda, digikam geliştiricileri "
-"posta listesinden tavsiye alabilirsiniz (bkz. www.digikam.org/support). "
-"Bozuk bir kurulumdan yanlış varsayımlara dayanan yeni bir veritabanı "
-"oluşturmak istemediğimiz için veritabanı güncelleme işlemi şimdi iptal "
-"edilecek."
+"albumLibraryPath'inizi (\"%1\") sisteminizin depolama birimiyle "
+"ilişkilendirirken bir hata oluştu. Bu durum, kurulumunuzda bir sorun "
+"olduğunu gösterebilir. Linux üzerinde çalışıyorsanız HAL'in kurulu ve "
+"çalışır durumda olduğunu denetleyin. Her durumda, digiKam geliştiricilerinin "
+"e-posta listesinden öneriler alabilirsiniz (bkz. www.digikam.org/support). "
+"Bozuk bir kurulumdan kaynaklanan yanlış varsayımlara dayalı yeni bir "
+"veritabanı oluşturmak istemediğimiz için veritabanı güncelleme işlemi artık "
+"iptal edilecek."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1075
 #, kde-format
 msgid "Configured one album root"
-msgstr "Yapılandırılmış kök albüm"
+msgstr "Bir albüm kökü yapılandırıldı"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1101
 #, kde-format
 msgid "Imported albums"
-msgstr "İçe aktarılmış albümler"
+msgstr "Albümler içe aktarıldı"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1138
 #, kde-format
 msgid "Imported images information"
-msgstr "İçe aktarılmış resim bilgileri"
+msgstr "Görsel bilgisi içe aktarıldı"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1168
 #, kde-format
 msgid "Last Search (0.9)"
-msgstr "Son Arama (0.9)"
+msgstr "Son Arama (0,9)"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1229
 #, kde-format
 msgid "Initialized and imported file suffix filter"
-msgstr "Sıfırlanmış ve içe aktarılmış dosya soneki süzgeci"
+msgstr "Dosya sonek süzgeci ilklendirildi ve içe aktarıldı"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1251
 #, kde-format
 msgid "Did the initial full scan"
-msgstr "Yapılmış ilk tam tarama"
+msgstr "İlk tam tarama gerçekleştirildi"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1275
 #, kde-format
 msgid "Imported creation dates"
-msgstr "İçe aktarılmış oluşturma tarihleri"
+msgstr "Oluşturulma tarihleri içe aktarıldı"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1306
 #, kde-format
 msgid "Imported comments"
-msgstr "İçe aktarılan yorumlar"
+msgstr "Açıklamalar içe aktarıldı"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1333
 #, kde-format
 msgid "Imported ratings"
-msgstr "İçe aktarılan derecelendirmeler"
+msgstr "Derecelendirmeler içe aktarıldı"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1344
 #, kde-format
 msgid "Dropped v3 tables"
-msgstr "Kaldırılan v3 tabloları"
+msgstr "v3 tabloları bırakıldı"
 
 #: core/libs/database/engine/dbengineaccess.cpp:55
 #, kde-format
@@ -28381,8 +28303,8 @@ msgid ""
 "The driver \"SQLITE\" for Sqlite3 databases is not available.\n"
 "digiKam depends on the drivers provided by the Qt::SQL module."
 msgstr ""
-"Sqlite3 veritabanları için \"SQLITE\" sürücüsü kullanılamaz.\n"
-"digiKam Qt::SQL modülünün sağladığı sürücülere dayanmaktadır."
+"Sqlite3 veritabanları için \"SQLITE\" sürücüsü kullanılabilir değil.\n"
+"digiKam, Qt::SQL modülü tarafından sağlanan sürücülere bağlıdır."
 
 #: core/libs/database/engine/dbengineaccess.cpp:70
 #, kde-format
@@ -28390,8 +28312,8 @@ msgid ""
 "The driver \"MYSQL\" for MySQL databases is not available.\n"
 "digiKam depends on the drivers provided by the Qt::SQL module."
 msgstr ""
-"MySQL veritabanları için \"MYSQL\" sürücüsü kullanılamaz.\n"
-"digiKam Qt::SQL modülünün sağladığı sürücülere dayanmaktadır."
+"MySQL veritabanları için \"MYSQL\" sürücüsü kullanılabilir değil.\n"
+"digiKam, Qt::SQL modülü tarafından sağlanan sürücülere bağlıdır."
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:170
 #, kde-format
@@ -28400,14 +28322,14 @@ msgid ""
 "the digikam application and is absolutely required to run digikam. Please "
 "check your installation."
 msgstr ""
-"<b>%1</b> yapılandırma dosyası açılamadı. Bu dosya digiKam uygulaması ile "
-"birlikte kurulur ve digikam'ın çalışması için mutlaka gereklidir. Lütfen "
+"<b>%1</b> yapılandırma dosyası açılamadı. Bu dosya digiKam uygulamasıyla "
+"birlikte kurulur ve digiKam'ı çalıştırmak için kesinlikle gereklidir. Lütfen "
 "kurulumunuzu denetleyin."
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:179
 #, kde-format
 msgid "Could not open configuration file <b>%1</b>"
-msgstr "Yapılandırma dosyası <b>%1</b> açılamadı"
+msgstr "<b>%1</b> yapılandırma dosyası açılamadı"
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:187
 #, kde-format
@@ -28421,15 +28343,16 @@ msgid ""
 "The XML in the configuration file <b>%1</b> is missing the required element "
 "<icode>%2</icode>"
 msgstr ""
-"<b>%1</b> yapılandırma dosyasındaki XML'de gerekli öge eksik <icode>%2</"
-"icode>"
+"<b>%1</b> yapılandırma dosyasındaki XML'de gerekli <icode>%2</icode> ögesi "
+"eksik"
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:209
 #, kde-format
 msgid ""
 "The XML in the configuration file <b>%1</b> is missing the required element "
 "<b>%2</b>"
-msgstr "<b>%1</b> yapılandırma dosyasındaki XML'de gerekli öge eksik <b>%2</b>"
+msgstr ""
+"<b>%1</b> yapılandırma dosyasındaki XML'de gerekli <b>%2</b> ögesi eksik"
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:228
 #, kde-format
@@ -28437,8 +28360,8 @@ msgid ""
 "An old version of the configuration file <b>%1</b> is found. Please ensure "
 "that the version released with the running version of digiKam is installed. "
 msgstr ""
-"<b>%1</b> yapılandırma dosyasının eski bir sürümü bulundu. Lütfen digiKam'in "
-"çalışan sürümüyle yayımlanan sürümün kurulu olduğundan emin olun. "
+"<b>%1</b> yapılandırma dosyasının eski bir sürümü bulundu. Lütfen digiKam'ın "
+"çalışan sürümüyle birlikte yayımlanan sürümün kurulu olduğundan emin olun."
 
 #: core/libs/database/engine/dbengineguierrorhandler.cpp:211
 #, kde-format
@@ -28446,8 +28369,8 @@ msgid ""
 "Error while opening the database.\n"
 "digiKam will try to automatically reconnect to the database."
 msgstr ""
-"Veritabanı açılırken hata oluştu.\n"
-"digiKam veritabanına otomatik olarak yeniden bağlanmaya çalışacak."
+"Veritabanı açılırken hata.\n"
+"digiKam veritabanına kendiliğinden yeniden bağlanmayı deneyecektir."
 
 #: core/libs/database/engine/dbengineguierrorhandler.cpp:243
 #, kde-format
@@ -28462,31 +28385,31 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
-msgstr "Kaynak Resimler"
+msgstr "Kaynak Görseller"
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:486
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
-msgstr "Resim Geçmişi"
+msgstr "Görsel Geçmişi"
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:569
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
-msgstr "Türetilmiş Resimler"
+msgstr "Türetilen Görseller"
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:579
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
-msgstr "İlişkili Resimler"
+msgstr "İlgili Görseller"
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:586
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
-msgstr "Özdeş Resimler"
+msgstr "Özdeş Görseller"
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:642
 #, kde-format
@@ -28502,7 +28425,7 @@ msgid ""
 "(Original Image)"
 msgstr ""
 "%1\n"
-"(Orjinal Resim)"
+"(Özgün Görsel)"
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:861
 #, kde-format
@@ -28512,45 +28435,43 @@ msgid ""
 "(Source Image)"
 msgstr ""
 "%1\n"
-"(Kaynak Resim)"
+"(Kaynak Görsel)"
 
 #: core/libs/database/item/scanner/itemscanner.cpp:194
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
-msgstr "RAW (ham) resim dosyası (%1)"
+msgstr "RAW görsel dosyası (%1)"
 
 #: core/libs/database/models/itemfiltermodel.cpp:385
-#, fuzzy, kde-format
-#| msgid "Select images"
+#, kde-format
 msgctxt "@item: filter model"
 msgid "%1 Face"
 msgid_plural "%1 Faces"
-msgstr[0] "Resimleri seç"
-msgstr[1] "Resimleri seç"
+msgstr[0] "%1 yüz"
+msgstr[1] "%1 yüz"
 
 #: core/libs/database/models/itemfiltermodel.cpp:388
-#, fuzzy, kde-format
-#| msgid "No flash"
+#, kde-format
 msgctxt "@item: filter model"
 msgid "No face"
-msgstr "Flaşsız"
+msgstr "Yüz yok"
 
 #: core/libs/database/models/itemfiltermodel.cpp:399
 #, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
-msgstr "Onaylandı"
+msgstr "Onaylı"
 
 #: core/libs/database/models/itemversionsmodel.cpp:95
 #, kde-format
 msgid "No image selected"
-msgstr "Hiçbir resim seçilmedi"
+msgstr "Seçili görsel yok"
 
 #: core/libs/database/models/itemversionsmodel.cpp:120
 #, kde-format
 msgid "This is the original image"
-msgstr "Bu orjinal resimdir"
+msgstr "Bu, özgün görseldir"
 
 #: core/libs/database/server/databaseserver.cpp:153
 #, kde-format
@@ -28558,28 +28479,25 @@ msgid "Database type is not supported."
 msgstr "Veritabanı türü desteklenmiyor."
 
 #: core/libs/database/server/databaseserver.cpp:294
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file!"
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
-msgstr "Yapılandırma dosyasında mysql sunucu komut kümesine yol yok!"
+msgstr "Yapılandırma dosyasında ayarlı MySQL yükseltme komutuna olan yol yok."
 
 #: core/libs/database/server/databaseserver.cpp:303
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file!"
+#, kde-format
 msgid "No path to mysql server command set in configuration file."
-msgstr "Yapılandırma dosyasında mysql sunucu komut kümesine yol yok!"
+msgstr "Yapılandırma dosyasında ayarlı MySQL sunucu komutuna olan yol yok."
 
 #: core/libs/database/server/databaseserver.cpp:312
-#, fuzzy, kde-format
-#| msgid "No path to mysql initialization command set in configuration file!."
+#, kde-format
 msgid "No path to mysql administration command set in configuration file."
-msgstr "Yapılandırma dosyasında mysql başlatma komutu kümesi için yol yok!."
+msgstr "Yapılandırma dosyasında ayarlı MySQL yönetim komutuna olan yol yok."
 
 #: core/libs/database/server/databaseserver.cpp:321
-#, fuzzy, kde-format
-#| msgid "No path to mysql initialization command set in configuration file!."
+#, kde-format
 msgid "No path to mysql initialization command set in configuration file."
-msgstr "Yapılandırma dosyasında mysql başlatma komutu kümesi için yol yok!."
+msgstr ""
+"Yapılandırma dosyasında ayarlı MySQL ilklendirme komutuna olan yol yok."
 
 #: core/libs/database/server/databaseserver.cpp:331
 #: core/libs/database/server/databaseserver.cpp:341
@@ -28595,48 +28513,46 @@ msgid ""
 "the default configuration file</p><p>%1</p><p>was not readable or the target "
 "file</p><p>%2</p><p>could not be written.</p>"
 msgstr ""
-"MySQL sunucu yapılandırma dosyası oluşturulamadı.<p>Öntanımlı yapılandırma "
-"dosyası</p><p>%1</p><p>okunamıyor veya hedef dosya</p><p>%2</p><p>yazılamadı."
-"</p>"
+"MySQL sunucusu yapılandırma dosyası oluşturulamıyor.<p>Bu, ya</p><p>%1</"
+"p><p>öntanımlı yapılandırma dosyasının okunabilir olmadığı ya da</p><p>%2</"
+"p><p>hedef dosyasının yazılamadığı anlamına gelir.</p>"
 
 #: core/libs/database/server/databaseserver.cpp:453
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
-msgstr "MySQL sunucu öntanımlı yapılandırması (mysql-global.conf) bulunamıyor."
+msgstr ""
+"MySQL sunucusunun öntanımlı yapılandırması (mysql-global.conf) bulunamıyor."
 
 #: core/libs/database/server/databaseserver.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
-msgstr "Ön işleme sürüyor, lütfen bekleyin."
+msgstr "İçsel MySQL veritabanı ilklendiriliyor; lütfen bekleyin..."
 
 #: core/libs/database/server/databaseserver.cpp:549
 #, kde-format
 msgid "Could not start database initializer."
-msgstr "Veri tabanı başlatıcısı başlatılamadı."
+msgstr "Veritabanı ilklendiricisi başlatılamadı."
 
 #: core/libs/database/server/databaseserver.cpp:612
 #, kde-format
 msgid "Could not start database server."
-msgstr "Veri tabanı sunucusu başlatılamadı."
+msgstr "Veritabanı sunucusu başlatılamadı."
 
 #: core/libs/database/server/databaseserver.cpp:654
 #, kde-format
 msgid "Invalid database object during database server startup"
-msgstr "Veritabanı sunucusu başlatılırken geçersiz veritabanı nesnesi"
+msgstr "Veritabanı sunucusu başlangıcı sırasında geçersiz veritabanı nesnesi"
 
 #: core/libs/database/server/databaseserver.cpp:685
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
-"İlk bağlantı sırasında veritabanı işlemesi beklenmedik bir şekilde işlemden "
-"çıktı."
+"İlk bağlantı sırasında veritabanı işleminden beklenmedik bir biçimde çıkıldı."
 
 #: core/libs/database/server/databaseserver.cpp:691
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
-msgstr "60 saniye denendikten sonra Veritabanına bağlanılamadı."
+msgstr "60 saniye boyunca denedikten sonra veritabanına bağlanılamadı."
 
 #: core/libs/database/server/databaseserver.cpp:724
 #, kde-format
@@ -28646,37 +28562,29 @@ msgstr ""
 "Veritabanı oluşturulamadı<p>Sorgu hatası: %1</p><p>Veritabanı hatası: %2</p>"
 
 #: core/libs/database/server/databaseserver.cpp:748
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
-msgstr "Ön işleme sürüyor, lütfen bekleyin."
+msgstr "Bir MySQL veritabanı yükseltme işlemi sürüyor; lütfen bekleyin..."
 
 #: core/libs/database/server/databaseserver.cpp:792
-#, fuzzy, kde-format
-#| msgid "Could not start database server."
+#, kde-format
 msgid "Could not upgrade database."
-msgstr "Veri tabanı sunucusu başlatılamadı."
+msgstr "Veritabanı yükseltilemedi."
 
 #: core/libs/database/server/databaseserver.cpp:828
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
-msgstr ""
-"%1<p>Çalıştırılabilir: %2</p><p>Parametreler: %3</p><p>İşlem hatası: %4</p>"
+msgstr "%1<p>Yürütülebilir: %2</p><p>Argümanlar: %3</p><p>Süreç hatası: %4</p>"
 
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:143
-#, fuzzy, kde-format
-#| msgid ""
-#| "The database is not valid: the \"DBVersion\" setting does not exist. The "
-#| "current database schema version cannot be verified. Try to start with an "
-#| "empty database. "
+#, kde-format
 msgid ""
 "The database is not valid: the \"DBSimilarityVersion\" setting does not "
 "exist. The current database schema version cannot be verified. Try to start "
 "with an empty database. "
 msgstr ""
-"Veritabanı geçerli değil: \"DBVersion\" ayarı mevcut değil. Yürürlükteki "
-"veritabanı şema sürümü doğrulanamadı. Boş bir veritabanı ile başlamayı "
+"Veritabanı geçerli değil: \"DBSimilarityVersion\" ayarı yok. Geçerli "
+"veritabanı şeması sürümü doğrulanamıyor. Boş bir veritabanıyla başlamayı "
 "deneyin."
 
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:173
@@ -28688,10 +28596,11 @@ msgid ""
 "(This means this digiKam version is too old, or the database format is to "
 "recent) Please use the more recent version of digikam that you used before. "
 msgstr ""
-"Veritabanı digiKam'ın daha yeni sürümüyle kullanılmış ve bu sürümde "
-"kullanılmayan bir veritabanı biçimiyle güncellenmiş (Bu demektir ki "
-"kullandığınız digiKam sürümü çok eski, ya da veritabanı biçimi yeni sürüm "
-"için). Lütfen daha yeni digiKam sürümü kullanın."
+"Veritabanı digiKam'ın daha yeni bir sürümüyle kullanılmış ve bu sürümle "
+"kullanılamayacak bir veritabanı şemasıyla güncellenmiştir. (Bu, digiKam "
+"sürümünün çok eski olduğu veya veritabanı biçiminin çok yeni olduğu anlamına "
+"gelir.) Lütfen daha önce kullandığınız digiKam'ın daha yeni sürümünü "
+"kullanın."
 
 #: core/libs/database/tags/facetags.cpp:398
 #, kde-format
@@ -28709,14 +28618,13 @@ msgstr "Bilinmeyen"
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
-msgstr "Onaylanmamış"
+msgstr "Onaylanmayan"
 
 #: core/libs/database/tags/facetags.cpp:502
-#, fuzzy, kde-format
-#| msgid "Monitor profile:"
+#, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
-msgstr "Monitör profili:"
+msgstr "Yok sayılan"
 
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:145
 #, kde-format
@@ -28725,16 +28633,15 @@ msgid ""
 "exist. The current database schema version cannot be verified. Try to start "
 "with an empty database. "
 msgstr ""
-"Veritabanı geçerli değil: \"DBThumbnailsVersion\" ayarı mevcut değil. "
-"Geçerli veritabanı şeması sürümü doğrulanamıyor. Boş bir veritabanıyla "
-"başlamayı deneyin. "
+"Veritabanı geçerli değil: \"DBThumbnailsVersion\" ayarı yok. Geçerli "
+"veritabanı şeması sürümü doğrulanamıyor. Boş bir veritabanıyla başlamayı "
+"deneyin."
 
 #: core/libs/database/utils/ifaces/dio.cpp:344
-#, fuzzy, kde-format
-#| msgid "File name filter:"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
-msgstr "Dosya adı filtresi:"
+msgstr "Dosya Çakışması"
 
 #: core/libs/database/utils/ifaces/dio.cpp:345
 #, kde-format
@@ -28748,104 +28655,97 @@ msgid ""
 "Overwrite automatically: conflicting files will be overwritten.\n"
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
+"Hedef klasörde aynı ada sahip dosya veya klasörler halihazırda var.\n"
+"\n"
+"Dosya çakışması durumunda hangi eylem uygulanmalıdır?\n"
+"\n"
+"Kullanılabilir seçenekler şunlardır:\n"
+"Kendiliğinden yeniden adlandır: Çakışan dosyalar yeniden adlandırılır.\n"
+"Kendiliğinden üzerine yaz: Çakışan dosyaların üzerine yazılır.\n"
+"Kendiliğinden atla: Çakışan dosyalar atlanır."
 
 #: core/libs/database/utils/ifaces/dio.cpp:354
-#, fuzzy, kde-format
-#| msgid "Overwrite automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
-msgstr "Otomatik olarak üzerine yaz"
+msgstr "Kendiliğinden Yeniden Adlandır"
 
 #: core/libs/database/utils/ifaces/dio.cpp:356
-#, fuzzy, kde-format
-#| msgid "Overwrite automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
-msgstr "Otomatik olarak üzerine yaz"
+msgstr "Kendiliğinden Üzerine Yaz"
 
 #: core/libs/database/utils/ifaces/dio.cpp:358
-#, fuzzy, kde-format
-#| msgid "Skip automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
-msgstr "Otomatik olarak atla"
+msgstr "Kendiliğinden Atla"
 
 #: core/libs/database/utils/ifaces/dio.cpp:855
-#, fuzzy, kde-format
-#| msgid "By Album"
+#, kde-format
 msgid "Copy Album"
-msgstr "Albüme Göre"
+msgstr "Albümü Kopyala"
 
 #: core/libs/database/utils/ifaces/dio.cpp:860
-#, fuzzy, kde-format
-#| msgid "&Group Images"
+#, kde-format
 msgid "Copy Images"
-msgstr "Resimleri &Gruplandır"
+msgstr "Görselleri Kopyala"
 
 #: core/libs/database/utils/ifaces/dio.cpp:866
-#, fuzzy, kde-format
-#| msgctxt "copy timestamp as well"
-#| msgid "Copy value"
+#, kde-format
 msgid "Copy Files"
-msgstr "Değeri kopyala"
+msgstr "Dosyaları Kopyala"
 
 #: core/libs/database/utils/ifaces/dio.cpp:871
-#, fuzzy, kde-format
-#| msgid "&Move to Album..."
+#, kde-format
 msgid "Move Album"
-msgstr "Albüme &Taşı..."
+msgstr "Albümü Taşı"
 
 #: core/libs/database/utils/ifaces/dio.cpp:876
-#, fuzzy, kde-format
-#| msgid "Save Images"
+#, kde-format
 msgid "Move Images"
-msgstr "Resimler Kaydet"
+msgstr "Görselleri Taşı"
 
 #: core/libs/database/utils/ifaces/dio.cpp:881
-#, fuzzy, kde-format
-#| msgid "Movie Files"
+#, kde-format
 msgid "Move Files"
-msgstr "Film Dosyaları"
+msgstr "Dosyaları Taşı"
 
 #: core/libs/database/utils/ifaces/dio.cpp:896
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgid "Restore Trash"
-msgstr "Geri Yükle"
+msgstr "Çöp Kutusunu Geri Yükle"
 
 #: core/libs/database/utils/scan/scancontroller.cpp:120
-#, fuzzy, kde-format
-#| msgid "Initializing database..."
+#, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
-msgstr "Veritabanı başlatılıyor..."
+msgstr "Veritabanı ilklendiriliyor..."
 
 #: core/libs/database/utils/scan/scancontroller.cpp:144
-#, fuzzy, kde-format
-#| msgid "<b>Scanning collections, please wait...</b>"
+#, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
-msgstr "<b>Bağlantılar taranıyor, lütfen bekleyin...</b>"
+msgstr "Koleksiyonlar taranıyor; lütfen bekleyin..."
 
 #: core/libs/database/utils/scan/scancontroller.cpp:146
-#, fuzzy, kde-format
-#| msgid ""
-#| "This shows the progress of the scan. During the scan, all files on disk "
-#| "are registered in a database."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This shows the progress of the scan. During the scan, all files on disk are "
 "registered in a database. Note: this dialog can appear automatically if a "
 "previous scan of collections have not been fully completed."
 msgstr ""
-"Bu, tarama işleminin sürecini gösterir. Tarama sırasında diskteki tüm "
-"dosyalar bir veri tabanına yazılır."
+"Bu, taramanın ilerlemesini gösterir. Tarama sırasında diskteki tüm dosyalar "
+"bir veritabanına kaydedilir. Not: Daha önceki koleksiyon taraması tam olarak "
+"tamamlanmadıysa bu iletişim kutusu kendiliğinden görüntülenebilir."
 
 #: core/libs/database/utils/scan/scancontroller.cpp:264
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
-msgstr "Derleme taranıyor"
+msgstr "Koleksiyon taranıyor..."
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:87
 #: core/libs/tags/widgets/tageditdlg.cpp:546
@@ -28861,17 +28761,17 @@ msgstr "Koleksiyon taraması hazırlanıyor..."
 #: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
-msgstr "Silinen albümler taranıyor..."
+msgstr "Kaldırılan albümler taranıyor..."
 
 #: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
-msgstr "Kişisel albümlerdeki resimler taranıyor..."
+msgstr "Kişisel albümlerdeki görseller taranıyor..."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:136
 #, kde-format
 msgid "Migrate ->"
-msgstr "Taşı ->"
+msgstr "Göç Et ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
@@ -28901,15 +28801,14 @@ msgid "Database type or location must be different!"
 msgstr "Veritabanı türü veya konumu farklı olmalıdır!"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
-#, fuzzy, kde-format
-#| msgid "Media Server cannot be started!"
+#, kde-format
 msgid "Internal server can only be used once!"
-msgstr "Ortam sunucusu başlatılamıyor!"
+msgstr "İçsel sunucu yalnızca bir kez kullanılabilir!"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:237
 #, kde-format
 msgid "Internal server is not used and is not active!"
-msgstr "Dahili sunucu kullanılmıyor ve etkin değil!"
+msgstr "İçsel sunucu kullanılmadı ve etkin değil!"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
 #, kde-format
@@ -28937,16 +28836,14 @@ msgid "SQLite"
 msgstr "SQLite"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "Internal"
+#, kde-format
 msgid "Mysql Internal"
-msgstr "Dahili"
+msgstr "İçsel MySQL"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:66
-#, fuzzy, kde-format
-#| msgid "MySQL interface"
+#, kde-format
 msgid "MySQL Server"
-msgstr "MySQL arayüzü"
+msgstr "MySQL Sunucusu"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:71
 #, kde-format
@@ -34728,10 +34625,11 @@ msgid ""
 "(This means this digiKam version is too old, or the database format is to "
 "recent.) Please use the more recent version of digiKam that you used before."
 msgstr ""
-"Veritabanı digiKam'ın daha yeni sürümüyle kullanılmış ve bu sürümde "
-"kullanılamayan bir veritabanı biçimiyle güncellenmiş. (Bu demektir ki "
-"kullandığınız digiKam sürümü çok eski, ya da veritabanı biçimi çok yeni). "
-"Lütfen daha önce kullandığınız en güncel digiKam sürümünü kullanın."
+"Veritabanı digiKam'ın daha yeni bir sürümüyle kullanılmış ve bu sürümle "
+"kullanılamayacak bir veritabanı şemasıyla güncellenmiştir. (Bu, digiKam "
+"sürümünün çok eski olduğu veya veritabanı biçiminin çok yeni olduğu anlamına "
+"gelir.) Lütfen daha önce kullandığınız digiKam'ın daha yeni sürümünü "
+"kullanın."
 
 #: core/libs/facesengine/facedb/facedbschemaupdater.cpp:191
 #, kde-format
@@ -41810,22 +41708,11 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Masaüstünden öntanımlı"
 
-#: core/libs/video/manager/vidslidetask.cpp:214
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, fuzzy, kde-format
 #| msgid "Encoding %1 Done"
 msgid "Preparing %1 Done"
 msgstr "%1 Kodlaması Tamamlandı"
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-#| msgid "Cannot create directory %1"
-msgid "Cannot generate output video %1"
-msgstr "%1 dizini oluşturulamıyor"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
-#, kde-format
-msgid "Output video is %1"
-msgstr "Çıktı videosu %1"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -58394,7 +58281,7 @@ msgstr "Dosya Aktarımı"
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
@@ -69574,1843 +69461,18 @@ msgstr ""
 "Tüm video ayarlarını öntanımlı değerlere sıfırlamak istediğinizden emin "
 "misiniz?"
 
-#~ msgid "Failed to open video encoder"
-#~ msgstr "Video kodlayıcısının açılması başarısız"
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "Tam albümler koleksiyonu"
 
-#~ msgid "Failed to open audio encoder"
-#~ msgstr "Ses çözücü açılırken hata"
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "Tam etiket koleksiyonu"
 
-#~ msgid "Failed to open muxer"
-#~ msgstr "Değiştirici açılırken hata"
-
-#, fuzzy
-#~| msgctxt "@title"
-#~| msgid "About %1 Plugin"
-#~ msgid "About Plugin"
-#~ msgstr "Eklenti %1 hakkında"
-
-#, fuzzy
-#~| msgid ""
-#~| "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</"
-#~| "p>"
-#~ msgid ""
-#~ "<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
-#~ "p><p><u>Description:</u> %4</p>"
-#~ msgstr ""
-#~ "<b>Başlık: </b><p>%1</p><b>Değer: </b><p>%2</p><b>Açıklama: </b><p>%3</p>"
-
-#, fuzzy
-#~| msgid "Show grid"
-#~ msgid "Show Grid"
-#~ msgstr "Izgarayı göster"
-
-#, fuzzy
-#~| msgid "Show navigation"
-#~ msgid "Show Sun-Shading"
-#~ msgstr "Gezinmeyi göster"
-
-#, fuzzy
-#~| msgid "Units:"
-#~ msgid "&Units"
-#~ msgstr "Birimler:"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "Angle:"
-#~ msgid "An&gle:"
-#~ msgstr "Açı:"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-#~| "span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed in red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used "
-#~ "to measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></"
-#~ "html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~ "TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:italic;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir "
-#~ "takvimi <a href=\"www.icalshare.com\"><span style=\" text-decoration: "
-#~ "underline; color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya "
-#~ "başka sitelerden indirebilirsiniz.</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-#~ "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-#~ "body></html>"
-
-#, fuzzy
-#~| msgid "Distance:"
-#~ msgid "&Distance:"
-#~ msgstr "Uzaklık:"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-#~| "span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed in red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation "
-#~ "of angles in coordinates: By default the Degree-Minute-Second notation (e."
-#~ "g. 54°30'00\" ) gets used. As an alternative you can choose decimal "
-#~ "degrees (e.g. 54.5°).</p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~ "TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:italic;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir "
-#~ "takvimi <a href=\"www.icalshare.com\"><span style=\" text-decoration: "
-#~ "underline; color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya "
-#~ "başka sitelerden indirebilirsiniz.</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-#~ "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-#~ "body></html>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-#~| "span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed in red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
-#~ "quality that gets displayed while there is no user input. Usually this "
-#~ "allows for high map quality as speed is no concern.</p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~ "TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:italic;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir "
-#~ "takvimi <a href=\"www.icalshare.com\"><span style=\" text-decoration: "
-#~ "underline; color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya "
-#~ "başka sitelerden indirebilirsiniz.</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-#~ "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-#~ "body></html>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-#~| "span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed in red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
-#~ "quality that gets displayed during map animations (e.g. while dragging "
-#~ "the globe). </p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-#~ "machines it is advisable to set this option to \"low quality\" as this "
-#~ "will give better speed.</p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~ "TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:italic;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir "
-#~ "takvimi <a href=\"www.icalshare.com\"><span style=\" text-decoration: "
-#~ "underline; color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya "
-#~ "başka sitelerden indirebilirsiniz.</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-#~ "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-#~ "body></html>"
-
-#, fuzzy
-#~| msgctxt "smug album privacy"
-#~| msgid "Unlisted"
-#~ msgid "Unlimited"
-#~ msgstr "Listelenmeyen"
-
-#, fuzzy
-#~| msgid "Clear"
-#~ msgid "C&lear"
-#~ msgstr "Temizle"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-#~| "span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed in red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that "
-#~ "gets used on the map.</p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~ "TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:italic;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir "
-#~ "takvimi <a href=\"www.icalshare.com\"><span style=\" text-decoration: "
-#~ "underline; color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya "
-#~ "başka sitelerden indirebilirsiniz.</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-#~ "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-#~ "body></html>"
-
-#, fuzzy
-#~| msgid "Labels"
-#~ msgid "&Text Labels"
-#~ msgstr "Etiketler"
-
-#, fuzzy
-#~| msgid "Google Maps"
-#~ msgid "Google Maps API Key"
-#~ msgstr "Google Haritalar"
-
-#, fuzzy
-#~| msgctxt "@item: WB temperature preset"
-#~| msgid "Moonlight"
-#~ msgid "Moon"
-#~ msgstr "Ay Işığı"
-
-#, fuzzy
-#~| msgctxt "@action: dplugin"
-#~| msgid "View"
-#~ msgid "View"
-#~ msgstr "Görünüm"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-#~| "span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed in red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">This is Marble's machine room for advanced users. "
-#~ "Here you can select and deselect the functionality that is provided "
-#~ "through plugins. </span></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
-#~ "from the map, menus and toolbars. </span></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
-#~ "their configuration a bit. </span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~ "TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:italic;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir "
-#~ "takvimi <a href=\"www.icalshare.com\"><span style=\" text-decoration: "
-#~ "underline; color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya "
-#~ "başka sitelerden indirebilirsiniz.</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-#~ "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-#~ "body></html>"
-
-#, fuzzy
-#~| msgid "Plugins"
-#~ msgid "P&lugins"
-#~ msgstr "Eklentiler"
-
-#, fuzzy
-#~| msgid "Network"
-#~ msgid "&Network Proxy"
-#~ msgstr "Ağ"
-
-#, fuzzy
-#~| msgctxt "Replace string"
-#~| msgid "Replace:"
-#~ msgid "Placemark"
-#~ msgstr "Değiştir:"
-
-#, fuzzy
-#~| msgid "Set width position to center."
-#~ msgid "Reports the position of a placemark"
-#~ msgstr "Ortalamak için genişliği ayarlayın."
-
-#, fuzzy
-#~| msgid "Target location: "
-#~ msgid "&Drag location:"
-#~ msgstr "Hedef konum: "
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-#~| "span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed in red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the "
-#~ "mouse there are two standard behaviours when dealing with a virtual globe:"
-#~ "</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The location below "
-#~ "mouse pointer will follow the cursor exactly: As a result e.g. the north "
-#~ "pole will not stay at the top which can lead to confusion. By default "
-#~ "Marble makes sure that north is always up which results in a dragging "
-#~ "behaviour where the location below the mouse pointer slightly \"detaches"
-#~ "\" from the cursor. </p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~ "TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:italic;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir "
-#~ "takvimi <a href=\"www.icalshare.com\"><span style=\" text-decoration: "
-#~ "underline; color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya "
-#~ "başka sitelerden indirebilirsiniz.</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-#~ "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-#~ "body></html>"
-
-#, fuzzy
-#~| msgid "Flip Vertically"
-#~ msgid "Keep Planet Axis Vertically"
-#~ msgstr "Dikey Olarak Ters Çevir"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-#~| "span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed in red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
-#~ "location Marble can either move instantly to the new location or it can "
-#~ "show a travel animation from the previous place to the new place.</p></"
-#~ "body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~ "TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:italic;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir "
-#~ "takvimi <a href=\"www.icalshare.com\"><span style=\" text-decoration: "
-#~ "underline; color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya "
-#~ "başka sitelerden indirebilirsiniz.</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-#~ "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-#~ "body></html>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-#~| "span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed in red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
-#~ "display the home location immediately after the application has started. "
-#~ "As an alternative it can also show the last position that was active when "
-#~ "the user left the application. </p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~ "TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:italic;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir "
-#~ "takvimi <a href=\"www.icalshare.com\"><span style=\" text-decoration: "
-#~ "underline; color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya "
-#~ "başka sitelerden indirebilirsiniz.</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-#~ "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-#~ "body></html>"
-
-#, fuzzy
-#~| msgid "Show image caption"
-#~ msgid "Show Home Location"
-#~ msgstr "Resim başlığını göster"
-
-#, fuzzy
-#~| msgid "Internal error"
-#~ msgid "&External editor:"
-#~ msgstr "İç hata"
-
-#, fuzzy
-#~| msgid "Always ignore"
-#~ msgid "Always ask"
-#~ msgstr "Her zaman yok say"
-
-#, fuzzy
-#~| msgid "Face Db name"
-#~ msgid "&Place names:"
-#~ msgstr "Yüz Veritabanı adı"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-#~| "span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed in red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
-#~ "different names in different languages. The label on the map can show the "
-#~ "name in the user's language. Alternatively it can display the name in the "
-#~ "official language and glyphs of that place. </p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~ "TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:italic;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir "
-#~ "takvimi <a href=\"www.icalshare.com\"><span style=\" text-decoration: "
-#~ "underline; color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya "
-#~ "başka sitelerden indirebilirsiniz.</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-#~ "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-#~ "body></html>"
-
-#, fuzzy
-#~| msgid "Custom Range"
-#~ msgid "Custom & Native Language"
-#~ msgstr "Özel Aralık"
-
-#, fuzzy
-#~| msgid "Custom Range"
-#~ msgid "Custom Language"
-#~ msgstr "Özel Aralık"
-
-#, fuzzy
-#~| msgctxt "@info: country code"
-#~| msgid "Default Language"
-#~ msgid "Native Language"
-#~ msgstr "Öntanımlı Dil"
-
-#, fuzzy
-#~| msgid "Remove filter"
-#~ msgid "Remove Folder"
-#~ msgstr "Filtre kaldır"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Edit Bookmark"
-#~ msgid "Export Bookmarks"
-#~ msgstr "Yer İmini Düzenle"
-
-#, fuzzy
-#~| msgid "XMP text Files (*.xmp)"
-#~ msgid "KML files (*.kml)"
-#~ msgstr "XMP metin Dosyaları (*.xmp)"
-
-#, fuzzy
-#~| msgid "Bookmark folder"
-#~ msgid "Bookmark Export"
-#~ msgstr "Yer imleri klasörü"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Edit Bookmark"
-#~ msgid "Import Bookmarks"
-#~ msgstr "Yer İmini Düzenle"
-
-#, fuzzy
-#~| msgid "XMP text Files (*.xmp)"
-#~ msgid "KML Files (*.kml)"
-#~ msgstr "XMP metin Dosyaları (*.xmp)"
-
-#, fuzzy
-#~| msgid "This file may not be playable."
-#~ msgid "The file %1 cannot be opened as a KML file."
-#~ msgstr "Bu dosya çalınabilir olmayabilir."
-
-#, fuzzy
-#~| msgid "Bookmark folder"
-#~ msgid "Bookmark Import"
-#~ msgstr "Yer imleri klasörü"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Edit Bookmark"
-#~ msgid "Imported bookmark"
-#~ msgstr "Yer İmini Düzenle"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Edit Bookmark"
-#~ msgid "Existing bookmark"
-#~ msgstr "Yer İmini Düzenle"
-
-#, fuzzy
-#~| msgid "&Skip"
-#~ msgid "Skip"
-#~ msgstr "&Atla"
-
-#, fuzzy
-#~| msgid "&Skip"
-#~ msgid "Skip All"
-#~ msgstr "&Atla"
-
-#, fuzzy
-#~| msgid "Color Management"
-#~ msgid "Bookmark Manager"
-#~ msgstr "Renk Yönetimi"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Edit Bookmark"
-#~ msgid "Import Bookmarks..."
-#~ msgstr "Yer İmini Düzenle"
-
-#, fuzzy
-#~| msgctxt "@label: item properties"
-#~| msgid "Folder: "
-#~ msgid "Folders"
-#~ msgstr "Dizin: "
-
-#, fuzzy
-#~| msgctxt "Create new search"
-#~| msgid "New..."
-#~ msgid "New..."
-#~ msgstr "Yeni..."
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Edit Bookmark"
-#~ msgid "Edit Bookmark"
-#~ msgstr "Yer İmini Düzenle"
-
-#, fuzzy
-#~| msgid "Description:"
-#~ msgid "&Description:"
-#~ msgstr "Açıklama:"
-
-#, fuzzy
-#~| msgid ""
-#~| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~| "TR/REC-html40/strict.dtd\">\n"
-#~| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~| "css\">\n"
-#~| "p, li { white-space: pre-wrap; }\n"
-#~| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~| "font-weight:400; font-style:italic;\">\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-#~| "span></a> or other sites.</p>\n"
-#~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
-#~| "optional. All the events from this calendar will be printed in red.</p></"
-#~| "body></html>"
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-#~ "bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-#~ "<tr>\n"
-#~ "<td style=\"border: none;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#~ "TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:italic;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir "
-#~ "takvimi <a href=\"www.icalshare.com\"><span style=\" text-decoration: "
-#~ "underline; color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya "
-#~ "başka sitelerden indirebilirsiniz.</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-#~ "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-#~ "body></html>"
-
-#, fuzzy
-#~| msgctxt "@label: item properties"
-#~| msgid "Folder: "
-#~ msgid "&Folder:"
-#~ msgstr "Dizin: "
-
-#, fuzzy
-#~| msgid "Add Folders..."
-#~ msgid "&Add Folder..."
-#~ msgstr "Klasörler Ekle..."
-
-#, fuzzy
-#~| msgctxt "Image filter reproducible: No"
-#~| msgid "No"
-#~ msgctxt "North, the direction"
-#~ msgid "N"
-#~ msgstr "Hayır"
-
-#, fuzzy
-#~| msgid "Bookmark folder"
-#~ msgid "New Bookmark Folder"
-#~ msgstr "Yer imleri klasörü"
-
-#, fuzzy
-#~| msgid "Filename:"
-#~ msgid "&Folder name:"
-#~ msgstr "Dosya adı:"
-
-#, fuzzy
-#~| msgid "Open File"
-#~ msgid "Open File"
-#~ msgstr "Dosya Aç"
-
-#, fuzzy
-#~| msgid "All supported files (%1)"
-#~ msgid "All Supported Files (*.png)"
-#~ msgstr "Desteklenen tüm dosyalar (%1)"
-
-#, fuzzy
-#~| msgctxt "filename"
-#~| msgid "Name:"
-#~ msgid "Name:"
-#~ msgstr "Ad:"
-
-#, fuzzy
-#~| msgid "Icon Size:"
-#~ msgid "Icon link:"
-#~ msgstr "Simge Boyutu:"
-
-#, fuzzy
-#~| msgid "Target"
-#~ msgid "Target ID:"
-#~ msgstr "Hedef"
-
-#, fuzzy
-#~| msgctxt "light source"
-#~| msgid "Cloudy weather"
-#~ msgid "Cloud Routes"
-#~ msgstr "Bulutlu hava"
-
-#, fuzzy
-#~| msgid "Not available"
-#~ msgid "No route available."
-#~ msgstr "Kullanılabilir değil"
-
-#, fuzzy
-#~| msgid "Database locale"
-#~ msgid "Use local"
-#~ msgstr "Veritabanı yerel ayarı"
-
-#, fuzzy
-#~| msgid "Use background"
-#~ msgid "Use cloud"
-#~ msgstr "Arka plan kullan"
-
-#, fuzzy
-#~| msgid "Change"
-#~ msgid "Changed"
-#~ msgstr "Değiştir"
-
-#, fuzzy
-#~| msgid "Delete"
-#~ msgid "Deleted"
-#~ msgstr "Sil"
-
-#, fuzzy
-#~| msgctxt "light source"
-#~| msgid "Cloudy weather"
-#~ msgid "Cloud placemark"
-#~ msgstr "Bulutlu hava"
-
-#, fuzzy
-#~| msgid "Image %1 could not be renamed"
-#~ msgid "Server '%1' could not be reached"
-#~ msgstr "%1 resmi yeniden adlandırılamaz"
-
-#, fuzzy
-#~| msgid "Incorrect username or password specified"
-#~ msgid "Username or password are incorrect"
-#~ msgstr "Geçersiz kullanıcı adı veya parolası belirtildi"
-
-#, fuzzy
-#~| msgid "%1 resized successfully"
-#~ msgid "Login successful"
-#~ msgstr "%1, başarıyla yeniden boyutlandırıldı"
-
-#, fuzzy
-#~| msgctxt "@action: open image"
-#~| msgid "Open"
-#~ msgid "Open"
-#~ msgstr "Aç"
-
-#, fuzzy
-#~| msgctxt "@action: open file dialog"
-#~| msgid "Load..."
-#~ msgid "Load"
-#~ msgstr "Yükle..."
-
-#, fuzzy
-#~| msgid "Remove from results list"
-#~ msgid "Remove from device"
-#~ msgstr "Sonuç listesinden kaldır"
-
-#, fuzzy
-#~| msgid "Delete Workflow"
-#~ msgid "Delete from cloud"
-#~ msgstr "İş Akışını Sil"
-
-#, fuzzy
-#~| msgid "Upload to Camera"
-#~ msgid "Upload to cloud"
-#~ msgstr "Kameraya Yükle"
-
-#, fuzzy
-#~| msgctxt "@info"
-#~| msgid "Enter caption text here."
-#~ msgid "Directions &to here"
-#~ msgstr "Alt yazı metninizi buraya girin."
-
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "Add Bookmark"
-#~ msgid "Add &Bookmark"
-#~ msgstr "Yer İmi Ekle"
-
-#, fuzzy
-#~| msgctxt "@title:tab"
-#~| msgid "Full-Screen"
-#~ msgid "&Full Screen Mode"
-#~ msgstr "Tam-Ekran"
-
-#, fuzzy
-#~| msgid "Bookmarks"
-#~ msgid "Bookmark"
-#~ msgstr "Yer İmleri"
-
-#, fuzzy
-#~| msgid "Current Page"
-#~ msgid "Current Route"
-#~ msgstr "Geçerli Sayfa"
-
-#, fuzzy
-#~| msgid "Target location: "
-#~ msgid "Current Location: %1"
-#~ msgstr "Hedef konum: "
-
-#, fuzzy
-#~| msgctxt "@action: context menu"
-#~| msgid "Go To"
-#~ msgid "Go To..."
-#~ msgstr "Git"
-
-#, fuzzy
-#~| msgctxt "Advanced search images, access stored searches"
-#~| msgid "Search"
-#~ msgid "Search"
-#~ msgstr "Ara"
-
-#, fuzzy
-#~| msgid "Enter tag here."
-#~ msgid "Enter the roundabout."
-#~ msgstr "Etiketi buraya girin."
-
-#, fuzzy
-#~| msgid "Save the list."
-#~ msgid "Take the exit."
-#~ msgstr "Listeyi kaydet."
-
-#, fuzzy
-#~| msgid "Make of the camera"
-#~ msgid "Take the ramp."
-#~ msgstr "Kameranın üreticisi"
-
-#, fuzzy
-#~| msgid "Continue"
-#~ msgid "Continue."
-#~ msgstr "Sürdür"
-
-#, fuzzy
-#~| msgid "On left"
-#~ msgid "Turn left."
-#~ msgstr "Solda"
-
-#, fuzzy
-#~| msgid "On right"
-#~ msgid "Turn right."
-#~ msgstr "Sağdan"
-
-#, fuzzy
-#~| msgctxt "@item: placement position"
-#~| msgid "Top right"
-#~ msgid "Turn sharp right."
-#~ msgstr "Sağ üst"
-
-#, fuzzy
-#~| msgid "Align text to the left"
-#~ msgid "Take the exit to the left."
-#~ msgstr "Metni sola hizala"
-
-#, fuzzy
-#~| msgid "Align text to the right"
-#~ msgid "Take the exit to the right."
-#~ msgstr "Metni sağa hizala"
-
-#, fuzzy
-#~| msgid "Continue"
-#~ msgid "Continue onto %1."
-#~ msgstr "Sürdür"
-
-#, fuzzy
-#~| msgid "Navigate to %1"
-#~ msgid "Turn left into %1."
-#~ msgstr "%1'e git"
-
-#, fuzzy
-#~| msgid "Continue"
-#~ msgid "Continue on %1."
-#~ msgstr "Sürdür"
-
-#, fuzzy
-#~| msgctxt "@info: setup"
-#~| msgid "Creates a new empty Album in the collection."
-#~ msgid "Take the exit to the left onto %1."
-#~ msgstr "Koleksiyonda yeni bir boş Albüm oluşturur."
-
-#, fuzzy
-#~| msgid "Align text to the right"
-#~ msgid "Take the exit to the right onto %1."
-#~ msgstr "Metni sağa hizala"
-
-#, fuzzy
-#~| msgctxt "@info: month-name year-string"
-#~| msgid "%1 %2"
-#~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
-#~ msgid "%1 %2, %3"
-#~ msgstr "%1 %2"
-
-#, fuzzy
-#~| msgid "Enter tag here."
-#~ msgid "&Center Map here"
-#~ msgstr "Etiketi buraya girin."
-
-#, fuzzy
-#~| msgid "Current Aspect Ratio"
-#~ msgid "Current &Location"
-#~ msgstr "Geçerli En-Boy Oranı"
-
-#, fuzzy
-#~| msgctxt "@action:inmenu"
-#~| msgid "Show Bookmarks"
-#~ msgid "From &Bookmark"
-#~ msgstr "Yer İmlerini Göster"
-
-#, fuzzy
-#~| msgid "Home"
-#~ msgid "&Home"
-#~ msgstr "Başlangıç"
-
-#, fuzzy
-#~| msgid "Current Aspect Ratio"
-#~ msgid "Current Location"
-#~ msgstr "Geçerli En-Boy Oranı"
-
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "Remove this entry"
-#~ msgid "&Remove this Destination"
-#~ msgstr "Bu girdiyi kaldır"
-
-#, fuzzy
-#~| msgid "Export error"
-#~ msgid "&Export Route..."
-#~ msgstr "Dışarıya aktarma hatası"
-
-#, fuzzy
-#~| msgid "Export error"
-#~ msgid "Export Route"
-#~ msgstr "Dışarıya aktarma hatası"
-
-#, fuzzy
-#~| msgid "Luminance Noise"
-#~ msgid "Guidance Mode"
-#~ msgstr "Parlaklık Gürültüsü"
-
-#, fuzzy
-#~| msgid "Configure this column"
-#~ msgid "Configure Routing Profile"
-#~ msgstr "Bu sütunu yapılandır"
-
-#, fuzzy
-#~| msgid "Export by Email"
-#~ msgid "Active Route Services"
-#~ msgstr "Eposta ile dışa aktar"
-
-#, fuzzy
-#~| msgid "Remote Server Settings"
-#~ msgid "Service Settings"
-#~ msgstr "Sunucu Ayarlarını Uzaktan Yönet"
-
-#, fuzzy
-#~| msgid "No options available"
-#~ msgid "No configuration available"
-#~ msgstr "Seçenek mevcut değil"
-
-#, fuzzy
-#~| msgid "Select service:"
-#~ msgid "Select Service to Configure"
-#~ msgstr "Hizmet seç:"
-
-#, fuzzy
-#~| msgid "Cycle:"
-#~ msgid "Bicycle"
-#~ msgstr "Dolaşım:"
-
-#, fuzzy
-#~| msgctxt "unknown / invalid image dimension"
-#~| msgid "Unknown"
-#~ msgid "Unknown"
-#~ msgstr "Bilinmiyor"
-
-#, fuzzy
-#~| msgid "Save File"
-#~ msgid "New Profile"
-#~ msgstr "Dosyayı Kaydet"
-
-#, fuzzy
-#~| msgctxt "@action: rotate image left"
-#~| msgid "Left"
-#~ msgid "ft"
-#~ msgstr "Sol"
-
-#, fuzzy
-#~| msgctxt "@info: width : height (Aspect Ratio)"
-#~| msgid "%1:%2 (%3)"
-#~ msgctxt "journey duration"
-#~ msgid "%1:%2 h"
-#~ msgstr "%1:%2 (%3)"
-
-#, fuzzy
-#~| msgid "Move Up"
-#~ msgid "Move &Up"
-#~ msgstr "Yukarı Taşı"
-
 #, fuzzy
-#~| msgid "Move Down"
-#~ msgid "Move &Down"
-#~ msgstr "Aşağı Taşı"
+#~| msgid "Cannot create directory %1"
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "%1 dizini oluşturulamıyor"
 
-#, fuzzy
-#~| msgid "Golden sections"
-#~ msgid "Get Directions"
-#~ msgstr "Altın bölgeler"
-
-#, fuzzy
-#~| msgid "Open timed out"
-#~ msgid "Open Route"
-#~ msgstr "Açma zaman aşımına uğradı"
-
-#, fuzzy
-#~| msgctxt "@title"
-#~| msgid "Save Result"
-#~ msgid "Save Route"
-#~ msgstr "Sonucu Kaydet"
-
-#, fuzzy
-#~| msgctxt "@action Select image editor preview mode"
-#~| msgid "Preview Mode"
-#~ msgid "Preview Route"
-#~ msgstr "Önizleme Kipi"
-
-#, fuzzy
-#~| msgid "Upload to Camera"
-#~ msgid "Upload to Cloud"
-#~ msgstr "Kameraya Yükle"
-
-#, fuzzy
-#~| msgid "Add city tag"
-#~ msgid "Add Via"
-#~ msgstr "Şehir etiketi ekle"
-
-#, fuzzy
-#~| msgid "Reverse ordering"
-#~ msgid "Reverse Route"
-#~ msgstr "Sıralamayı tersine çevir"
-
-#, fuzzy
-#~| msgid "Clear Queue"
-#~ msgid "Clear Route"
-#~ msgstr "Kuyruğu Temizle"
-
-#, fuzzy
-#~| msgid "Images found in %1"
-#~ msgid "placemarks found: %1"
-#~ msgstr "%1 içinde bulunan görseller"
-
-#, fuzzy
-#~| msgid "1 Kipi plugin found"
-#~| msgid_plural "%1 Kipi plugins found"
-#~ msgid "No placemark found"
-#~ msgstr "1 Kipi eklentisi bulundu"
-
-#, fuzzy
-#~| msgid "1 Kipi plugin found"
-#~| msgid_plural "%1 Kipi plugins found"
-#~ msgid "No route found"
-#~ msgstr "1 Kipi eklentisi bulundu"
-
-#, fuzzy
-#~| msgid "Images found in %1"
-#~ msgid "routes found: %1"
-#~ msgstr "%1 içinde bulunan görseller"
-
-#, fuzzy
-#~| msgid "Loading themes..."
-#~ msgid "Uploading route..."
-#~ msgstr "Temalar yükleniyor..."
-
-#, fuzzy
-#~| msgctxt "@item: map tool"
-#~| msgid "Details"
-#~ msgid "Show Details"
-#~ msgstr "Ayrıntılar"
-
-#, fuzzy
-#~| msgid "Cancel this operation."
-#~ msgid "Choose alternative routes"
-#~ msgstr "Bu işlemi iptal et."
-
-#, fuzzy
-#~| msgctxt "@option:check"
-#~| msgid "Use lazy synchronization"
-#~ msgid "Enable synchronization"
-#~ msgstr "Tembel senkronizasyonu kullan"
-
-#, fuzzy
-#~| msgid "1 file awaits synchronization"
-#~| msgid_plural "%1 files await synchronization"
-#~ msgid "Enable route synchronization"
-#~ msgstr "1 dosya senkronizasyon bekliyor"
-
-#, fuzzy
-#~| msgctxt "@option:check"
-#~| msgid "Use lazy synchronization"
-#~ msgid "Enable bookmark synchronization"
-#~ msgstr "Tembel senkronizasyonu kullan"
-
-#, fuzzy
-#~| msgctxt "@item: iptc"
-#~| msgid "Credits"
-#~ msgid "Credentials"
-#~ msgstr "Emeği geçenler"
-
-#, fuzzy
-#~| msgctxt "@title"
-#~| msgid "Server"
-#~ msgid "Server:"
-#~ msgstr "Sunucu"
-
-#, fuzzy
-#~| msgctxt "piwigo login settings"
-#~| msgid "Username:"
-#~ msgid "Username:"
-#~ msgstr "Kullanıcı adı:"
-
-#, fuzzy
-#~| msgid "Login"
-#~ msgid "Test Login"
-#~ msgstr "Oturum Aç"
-
-#, fuzzy
-#~| msgid "Time Zone:"
-#~ msgid "Time Zone"
-#~ msgstr "Zaman dilimi:"
-
-#, fuzzy
-#~| msgid "Camera time zone:"
-#~ msgid "System time zone"
-#~ msgstr "Kamera zaman dilimi:"
-
-#, fuzzy
-#~| msgid "Camera time zone:"
-#~ msgid "Choose Time zone"
-#~ msgstr "Kamera zaman dilimi:"
-
-#, fuzzy
-#~| msgid "Unpolar Coordinates"
-#~ msgid "Universal Time Coordinated"
-#~ msgstr "Ters Kutupsal Koordinatlar"
-
-#, fuzzy
-#~| msgctxt "@info: country code"
-#~| msgid "European Union"
-#~ msgid "European Central Time"
-#~ msgstr "Avrupa Birliği"
-
-#, fuzzy
-#~| msgctxt "@info: xslt param"
-#~| msgid "Image Date Time"
-#~ msgid "Near East Time"
-#~ msgstr "Görsel Tarihi ve Zamanı"
-
-#, fuzzy
-#~| msgid "Video Standard:"
-#~ msgid "Vietnam Standard Time"
-#~ msgstr "Video standardı:"
-
-#, fuzzy
-#~| msgctxt "@info: country code"
-#~| msgid "Chinese (Taiwan)"
-#~ msgid "China Taiwan Time"
-#~ msgstr "Çince (Tayvan)"
-
-#, fuzzy
-#~| msgctxt "@info: country code"
-#~| msgid "Solomon Islands"
-#~ msgid "Solomon Standard Time"
-#~ msgstr "Solomon Adaları"
-
-#, fuzzy
-#~| msgctxt "@info: country code"
-#~| msgid "New Zealand"
-#~ msgid "New Zealand Standard Time"
-#~ msgstr "Yeni Zelanda"
-
-#, fuzzy
-#~| msgctxt "@info: country code"
-#~| msgid "Cayman Islands"
-#~ msgid "Midway Islands Time"
-#~ msgstr "Cayman Adaları"
-
-#, fuzzy
-#~| msgctxt "@label: subject widget"
-#~| msgid "Use standard"
-#~ msgid "Eastern Standard Time"
-#~ msgstr "Standardı kullan"
-
-#, fuzzy
-#~| msgctxt "@info: country code"
-#~| msgid "US Virgin Islands"
-#~ msgid "Puerto Rico and US Virgin Islands Time"
-#~ msgstr "US Virgin Adaları"
-
-#, fuzzy
-#~| msgctxt "@info: country code"
-#~| msgid "Central African Republic"
-#~ msgid "Central African Time"
-#~ msgstr "Orta Afrika Cumhuriyeti"
-
-#, fuzzy
-#~| msgid "Load image"
-#~ msgid "Load system time"
-#~ msgstr "Resim yükle"
-
-#, fuzzy
-#~| msgid "Date and time"
-#~ msgid "Date and Time"
-#~ msgstr "Tarih ve zaman"
-
-#, fuzzy
-#~| msgid "Rating"
-#~ msgid "Routing"
-#~ msgstr "Derecelendirme"
-
-#, fuzzy
-#~| msgid "Synchronize"
-#~ msgid "Synchronization"
-#~ msgstr "Eşitle"
-
-#, fuzzy
-#~| msgid "Synchronize"
-#~ msgid "Never synchronized."
-#~ msgstr "Eşitle"
-
-#, fuzzy
-#~| msgctxt "@option:check"
-#~| msgid "Use lazy synchronization"
-#~ msgid "Last synchronization: %1"
-#~ msgstr "Tembel senkronizasyonu kullan"
-
-#, fuzzy
-#~| msgid "Iteration:"
-#~ msgid "Elevation:"
-#~ msgstr "Yineleme:"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Select Sound Files"
-#~ msgid "Select sound files..."
-#~ msgstr "Ses Dosyaları Seç"
-
-#, fuzzy
-#~| msgid "No photo specified"
-#~ msgid "No URL specified"
-#~ msgstr "Hiç fotoğraf belirtilmedi"
-
-#, fuzzy
-#~| msgid "Add again"
-#~ msgid "Add link"
-#~ msgstr "Yeniden ekle"
-
-#, fuzzy
-#~| msgid "Untitled"
-#~ msgid "Untitled Placemark"
-#~ msgstr "Başlıksız"
-
-#, fuzzy
-#~| msgid "Read Options"
-#~ msgid "Relations"
-#~ msgstr "Okuma Seçenekleri"
-
-#, fuzzy
-#~| msgid "Iteration:"
-#~ msgid "Elevation"
-#~ msgstr "Yineleme:"
-
-#, fuzzy
-#~| msgid "No photo specified"
-#~ msgid "No ID specified"
-#~ msgstr "Hiç fotoğraf belirtilmedi"
-
-#, fuzzy
-#~| msgctxt "@action: dplugin"
-#~| msgid "Invalid"
-#~ msgid "ID is invalid"
-#~ msgstr "Geçersiz"
-
-#, fuzzy
-#~| msgid "No image selected"
-#~ msgid "No image specified"
-#~ msgstr "Hiçbir resim seçilmedi"
-
-#, fuzzy
-#~| msgid "Invalid signature"
-#~ msgid "Invalid icon path"
-#~ msgstr "Geçersiz imza"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Edit Bookmark"
-#~ msgid "Edit placemark"
-#~ msgstr "Yer İmini Düzenle"
-
-#, fuzzy
-#~| msgid "Text Color:"
-#~ msgid "Style, Color"
-#~ msgstr "Metin rengi:"
-
-#, fuzzy
-#~| msgid "Labels"
-#~ msgid "Label"
-#~ msgstr "Etiketler"
-
-#, fuzzy
-#~| msgctxt "font color"
-#~| msgid "Color:"
-#~ msgid "Color:"
-#~ msgstr "Renk:"
-
-#, fuzzy
-#~| msgid "&Scale to:"
-#~ msgid "Scale:"
-#~ msgstr "Şuna &boyutlandır:"
-
-#, fuzzy
-#~| msgctxt "@title:tab"
-#~| msgid "Icons"
-#~ msgid "Icon"
-#~ msgstr "Simgeler"
-
-#, fuzzy
-#~| msgctxt "@item: font style"
-#~| msgid "Bold"
-#~ msgid "Bold"
-#~ msgstr "Kalın"
-
-#, fuzzy
-#~| msgctxt "@item: font style"
-#~| msgid "Italic"
-#~ msgid "Italics"
-#~ msgstr "Yatık"
-
-#, fuzzy
-#~| msgctxt "@label: no GPS coordinates"
-#~| msgid "Undefined"
-#~ msgid "Underlined"
-#~ msgstr "Tanımlanmamış"
-
-#, fuzzy
-#~| msgid "Load image"
-#~ msgid "Add image"
-#~ msgstr "Resim yükle"
-
-#, fuzzy
-#~| msgctxt "Seconds"
-#~| msgid "s"
-#~ msgctxt "seconds"
-#~ msgid " s"
-#~ msgstr "s"
-
-#, fuzzy
-#~| msgctxt "camera model"
-#~| msgid "Model:"
-#~ msgid "Mode:"
-#~ msgstr "Model:"
-
-#, fuzzy
-#~| msgctxt "smoothing value of the pencil"
-#~| msgid "Smooth:"
-#~ msgid "Smooth"
-#~ msgstr "PürüzsüzlÜK:"
-
-#, fuzzy
-#~| msgid "Current Map Search"
-#~ msgid "Current map center"
-#~ msgstr "Geçerli Harita Araması"
-
-#, fuzzy
-#~| msgid "Close message"
-#~ msgid "Choose image"
-#~ msgstr "İletiyi Kapat"
-
-#, fuzzy
-#~| msgid "All supported files (%1)"
-#~ msgid "All Supported Files (*.png *.jpg *.jpeg)"
-#~ msgstr "Desteklenen tüm dosyalar (%1)"
-
-#, fuzzy
-#~| msgid "Export error"
-#~ msgid "Formatted text"
-#~ msgstr "Dışarıya aktarma hatası"
-
-#, fuzzy
-#~| msgctxt "@item: color tree"
-#~| msgid "Color"
-#~ msgid "Color"
-#~ msgstr "Renk"
-
-#, fuzzy
-#~| msgid "Assign tools"
-#~ msgid "Missing encoding tools"
-#~ msgstr "Atama araçları"
-
-#, fuzzy
-#~| msgctxt "Video Standard MP4"
-#~| msgid "MP4 - MPEG-4"
-#~ msgid "MPEG-4"
-#~ msgstr "MP4 - MPEG-4"
-
-#, fuzzy
-#~| msgctxt "@action: button"
-#~| msgid "&Start"
-#~ msgctxt "Start recording a movie"
-#~ msgid "&Start"
-#~ msgstr "&Başlat"
-
-#, fuzzy
-#~| msgid "No detail available"
-#~ msgid "Codecs are unavailable"
-#~ msgstr "Kullanılabilir ayrıntı yok"
-
-#, fuzzy
-#~| msgid "Collection not found"
-#~ msgid "Supported codecs are not found."
-#~ msgstr "Koleksiyon bulunamadı"
-
-#, fuzzy
-#~| msgctxt "@action:inmenu"
-#~| msgid "Save in file"
-#~ msgid "Save video file"
-#~ msgstr "Dosya içine kaydet"
-
-#, fuzzy
-#~| msgctxt "@info Custom date format"
-#~| msgid "Format is not valid..."
-#~ msgid "Filename is not valid"
-#~ msgstr "Biçim geçersiz..."
-
-#, fuzzy
-#~| msgid "Media format is not supported yet"
-#~ msgid "This file format is not supported. Please, use %1 instead"
-#~ msgstr "Ortam türü henüz desteklenmiyor"
-
-#, fuzzy
-#~| msgid "Missing signature"
-#~ msgid "Missing filename"
-#~ msgstr "İmza yok"
-
-#, fuzzy
-#~| msgctxt "@item: map tool"
-#~| msgid "Reverse Geocoding"
-#~ msgid "Movie Recording"
-#~ msgstr "Ters Coğrafi Konumlama"
-
-#, fuzzy
-#~| msgid "Destination folder:"
-#~ msgid "Destination video:"
-#~ msgstr "Hedef klasör:"
-
-#, fuzzy
-#~| msgctxt "@action: file open dialog"
-#~| msgid "Open..."
-#~ msgid "Open..."
-#~ msgstr "Aç..."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "Frames by Second:"
-#~ msgid "FPS (frames per second)"
-#~ msgstr "Saniye başına kare:"
-
-#, fuzzy
-#~| msgid "User account"
-#~ msgid "Choose item:"
-#~ msgstr "Kullanıcı hesabı"
-
-#, fuzzy
-#~| msgid "Map Search"
-#~ msgid "Global Search"
-#~ msgstr "Aramayı Eşlemle"
-
-#, fuzzy
-#~| msgid "Map Search"
-#~ msgid "Area Search"
-#~ msgstr "Aramayı Eşlemle"
-
-#, fuzzy
-#~| msgid "Searches"
-#~ msgid "Search Results"
-#~ msgstr "Aramalar"
-
-#, fuzzy
-#~| msgctxt "@action: button"
-#~| msgid "Start"
-#~ msgid "Start"
-#~ msgstr "Başlat"
-
-#, fuzzy
-#~| msgid "Tiff image creation failed."
-#~ msgid "Video writing failed."
-#~ msgstr "Tiff görseli oluşturulamadı."
-
-#, fuzzy
-#~| msgid "Video Slideshow completed."
-#~ msgid "Video export completed."
-#~ msgstr "Video Slayt Gösterisi tamamlandı."
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Destination Folder"
-#~ msgid "Destination video"
-#~ msgstr "Hedef Klasör"
-
-#, fuzzy
-#~| msgctxt "pause/play video"
-#~| msgid "Pause/Play"
-#~ msgid "Pause"
-#~ msgstr "Durdur/Oynat"
-
-#, fuzzy
-#~| msgid "Saturation:"
-#~ msgid "Wait duration:"
-#~ msgstr "Doygunluk:"
-
-#, fuzzy
-#~| msgid "Create \"%1\""
-#~ msgid "Create item %1"
-#~ msgstr "\"%1\" oluştur"
-
-#, fuzzy
-#~| msgid "Remove item"
-#~ msgid "Remove item %1"
-#~ msgstr "Ögeyi kaldır"
-
-#, fuzzy
-#~| msgid "Change Case"
-#~ msgid "Change item %1"
-#~ msgstr "Büyük/küçük harf değişimi"
-
-#, fuzzy
-#~| msgid "Updates"
-#~ msgid "Update items"
-#~ msgstr "Güncellemeler"
-
-#, fuzzy
-#~| msgid "Change Face Tag"
-#~ msgid "Change Placemark in Tour"
-#~ msgstr "Yüz Etiketini Değiştir"
-
-#, fuzzy
-#~| msgid "Add Folder"
-#~ msgid "Add FlyTo"
-#~ msgstr "Dizin Ekle"
-
-#, fuzzy
-#~| msgid "Add again"
-#~ msgid "Add Wait"
-#~ msgstr "Yeniden ekle"
-
-#, fuzzy
-#~| msgid "Add Border"
-#~ msgid "Add SoundCue"
-#~ msgstr "Kenarlık Ekle"
-
-#, fuzzy
-#~| msgctxt "@title"
-#~| msgid "Add Watermark"
-#~ msgid "Add Placemark"
-#~ msgstr "Filigran Ekle"
-
-#, fuzzy
-#~| msgid "Remove Bookmark"
-#~ msgid "Remove placemark"
-#~ msgstr "Yer İmini Kaldır"
-
-#, fuzzy
-#~| msgid "Change Face Tag"
-#~ msgid "Change placemark"
-#~ msgstr "Yüz Etiketini Değiştir"
-
-#, fuzzy
-#~| msgid "&Loop"
-#~ msgid "Loop"
-#~ msgstr "&Döngü Yap"
-
-#, fuzzy
-#~| msgid "Save File"
-#~ msgid "Save tour"
-#~ msgstr "Dosyayı Kaydet"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "<qt>The current image has been changed.<br>Do you wish to save your "
-#~| "changes?</qt>"
-#~ msgid "There are unsaved Tours. Do you want to save your changes?"
-#~ msgstr ""
-#~ "<qt>Geçerli resim değiştirildi.<br>Değişikliklerinizi kaydetmek ister "
-#~ "misiniz?</qt>"
-
-#, fuzzy
-#~| msgid "Export error"
-#~ msgid "Open Tour"
-#~ msgstr "Dışarıya aktarma hatası"
-
-#, fuzzy
-#~| msgid "Remove selected tag"
-#~ msgid "Remove Selected Items"
-#~ msgstr "Seçilen etiketleri sil"
-
-#, fuzzy
-#~| msgid "Are you sure you want to restore %1 item?"
-#~| msgid_plural "Are you sure you want to restore %1 items?"
-#~ msgid "Are you sure want to remove selected items?"
-#~ msgstr "%1 ögeyi geri yüklemek istediğinizden emin misiniz?"
-
-#, fuzzy
-#~| msgctxt "@action Save As New Version...Save in format..."
-#~| msgid "Save in Format"
-#~ msgid "Save Tour as"
-#~ msgstr "Şu Biçimde Kaydet"
-
-#, fuzzy
-#~| msgctxt "@action:button"
-#~| msgid "Discard Changes"
-#~ msgid "Discard Changes"
-#~ msgstr "Değişikliklerden Vazgeç"
-
-#, fuzzy
-#~| msgid "New Folder"
-#~ msgid "New Tour"
-#~ msgstr "Yeni Klasör"
-
-#, fuzzy
-#~| msgid "Save File"
-#~ msgid "Save Tour"
-#~ msgstr "Dosyayı Kaydet"
-
-#, fuzzy
-#~| msgctxt "@action: save current filter settings"
-#~| msgid "Save As..."
-#~ msgid "Save Tour As"
-#~ msgstr "Farklı Kaydet..."
-
-#~ msgctxt "@action:button"
-#~ msgid "&Apply"
-#~ msgstr "&Uygula"
-
-#~ msgid "%1 input audio stream to process:"
-#~ msgstr "İşlenecek %1 ses akışı girdisi:"
-
-#, fuzzy
-#~| msgid "Info"
-#~ msgid "GpsInfo"
-#~ msgstr "Bilgiler"
-
-#, fuzzy
-#~| msgid "Info"
-#~ msgid "&GpsInfo"
-#~ msgstr "Bilgiler"
-
-#, fuzzy
-#~| msgctxt "renaming option for directory related information"
-#~| msgid "Directory"
-#~ msgid "Direction"
-#~ msgstr "Dizin"
-
-#, fuzzy
-#~| msgctxt "@label: item properties"
-#~| msgid "Permissions: "
-#~ msgid "Precision"
-#~ msgstr "İzinler: "
-
-#, fuzzy
-#~| msgid "Export error"
-#~ msgctxt "@title:window"
-#~ msgid "Export error"
-#~ msgstr "Dışarıya aktarma hatası"
-
-#, fuzzy
-#~| msgid "GPS Sync"
-#~ msgctxt "@title:window"
-#~ msgid "GPS Sync"
-#~ msgstr "GPS Eşzamanlama"
-
-#, fuzzy
-#~| msgid "Visit Exiv2 project website"
-#~ msgctxt "@info:whatsthis"
-#~ msgid "Visit Exiv2 project website"
-#~ msgstr "Exiv2 projesi internet sitesini ziyaret edin"
+#~ msgid "Output video is %1"
+#~ msgstr "Çıktı videosu %1"

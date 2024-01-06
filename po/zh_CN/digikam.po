@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
 "PO-Revision-Date: 2023-12-30 13:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -23353,13 +23353,13 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "上传照片时出错"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "删除观察记录时出错"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr "超过 %1 秒，已超时"
@@ -26812,7 +26812,7 @@ msgid "Select Album"
 msgstr "选择相册"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -26825,73 +26825,88 @@ msgid "Tags (0)"
 msgstr "标签 (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Albums"
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "整个相册集合"
+msgid "All albums"
+msgstr "所有相册"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "递归选择"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "递归选择"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "选择需要处理的所有相册。"
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "未选择相册"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "重置已选中相册"
 
-#: core/libs/album/widgets/albumselectors.cpp:236
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "整个标签集合"
+msgid "All tags"
+msgstr "所有标签"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "选择需要处理的全部标签。"
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "未选择标签"
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "重置已选中标签"
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "相册 (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "标签 (全部)"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -39810,22 +39825,11 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "桌面默认值"
 
-#: core/libs/video/manager/vidslidetask.cpp:214
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, fuzzy, kde-format
 #| msgid "Encoding %1 Done"
 msgid "Preparing %1 Done"
 msgstr "编码 %1 完成"
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-#| msgid "Cannot create directory %1"
-msgid "Cannot generate output video %1"
-msgstr "无法创建目录“%1”"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
-#, kde-format
-msgid "Output video is %1"
-msgstr "输出视频为 %1"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -55359,7 +55363,7 @@ msgstr "OSM 文件解析器"
 #, fuzzy, kde-format
 #| msgid "Create GeoDataDocument from Osm Files"
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr "从 OSM 文件创建地理数据文档"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
@@ -65458,6 +65462,22 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
+
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "整个相册集合"
+
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "整个标签集合"
+
+#, fuzzy
+#~| msgid "Cannot create directory %1"
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "无法创建目录“%1”"
+
+#~ msgid "Output video is %1"
+#~ msgstr "输出视频为 %1"
 
 #~ msgid "Failed to open video encoder"
 #~ msgstr "无法打开视频编码器"

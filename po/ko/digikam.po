@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -24675,14 +24675,14 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "사진을 업로드할 수 없음"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, fuzzy, kde-format
 #| msgid "Failed to upload photo"
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "사진을 업로드할 수 없음"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -28237,7 +28237,7 @@ msgid "Select Album"
 msgstr "앨범 삭제"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, fuzzy, kde-format
 #| msgid "Album is full."
 msgctxt "@title"
@@ -28253,75 +28253,87 @@ msgstr "태그: "
 
 #: core/libs/album/widgets/albumselectors.cpp:180
 #, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Albums"
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "선택 반전"
+msgid "All albums"
+msgstr "모든 앨범"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:238
 #, fuzzy, kde-format
 #| msgid "Theme Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "테마 선택"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgid "Theme Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "테마 선택"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "선택 반전"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "선택 반전"
+msgid "All tags"
+msgstr "모든 태그"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "태그를 선택하지 않았음"
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "태그 아이콘 초기화"
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, fuzzy, kde-format
 #| msgid "Album is full."
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "앨범이 가득 찼습니다."
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "태그: "
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, fuzzy, kde-format
 #| msgid "Tags: %1\n"
 msgctxt "@title"
@@ -41557,22 +41569,11 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "데스크톱 기본값"
 
-#: core/libs/video/manager/vidslidetask.cpp:214
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, fuzzy, kde-format
 #| msgid "Encoding %1 Done"
 msgid "Preparing %1 Done"
 msgstr "%1 인코딩 완료됨"
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-#| msgid "Cannot create directory %1"
-msgid "Cannot generate output video %1"
-msgstr "%1 디렉터리를 만들 수 없음"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
-#, kde-format
-msgid "Output video is %1"
-msgstr "출력 비디오: %1"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -58426,7 +58427,7 @@ msgstr "파일 전송"
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
@@ -68482,6 +68483,24 @@ msgstr "모든 항목을 기본값으로 초기화합니다."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "모든 항목을 기본값으로 초기화합니다."
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "선택 반전"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "선택 반전"
+
+#, fuzzy
+#~| msgid "Cannot create directory %1"
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "%1 디렉터리를 만들 수 없음"
+
+#~ msgid "Output video is %1"
+#~ msgstr "출력 비디오: %1"
 
 #~ msgid "Failed to open video encoder"
 #~ msgstr "비디오 인코더를 열 수 없음"

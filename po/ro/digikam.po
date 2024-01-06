@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
 "PO-Revision-Date: 2023-04-10 18:05+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -24172,13 +24172,13 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "Eșec la încărcarea fișierului „%1”."
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "Eșec la încărcarea fișierului „%1”."
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -27697,7 +27697,7 @@ msgid "Select Album"
 msgstr "Selectează albumul"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
@@ -27713,75 +27713,84 @@ msgstr "Etichete:"
 #: core/libs/album/widgets/albumselectors.cpp:180
 #, fuzzy, kde-format
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "Afișează colecția de albume"
+msgid "All albums"
+msgstr "Albume"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:238
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "Selecție"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "Selecție"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, fuzzy, kde-format
 #| msgid "No Album Selected"
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Nici un album selectat"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Pe cale de a șterge albumele alese"
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, fuzzy, kde-format
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "Afișează colecția de albume"
+msgid "All tags"
+msgstr "Toate etichetele"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, fuzzy, kde-format
 #| msgid "No Tag Selected"
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Nici o etichetă selectată"
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Reinițializează conținutul"
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albume"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Etichete:"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"
@@ -40998,20 +41007,10 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/libs/video/manager/vidslidetask.cpp:214
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, fuzzy, kde-format
 msgid "Preparing %1 Done"
 msgstr "Se pregătește examinarea colecției"
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-msgid "Cannot generate output video %1"
-msgstr "Crearea directorului a eșuat,"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
-#, fuzzy, kde-format
-msgid "Output video is %1"
-msgstr "Crearea directorului a eșuat,"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -57746,7 +57745,7 @@ msgstr "Transformă"
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
@@ -67944,6 +67943,24 @@ msgstr "Revenire la parametrii impliciți"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Revenire la parametrii impliciți"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "Afișează colecția de albume"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "Afișează colecția de albume"
+
+#, fuzzy
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "Crearea directorului a eșuat,"
+
+#, fuzzy
+#~ msgid "Output video is %1"
+#~ msgstr "Crearea directorului a eșuat,"
 
 #, fuzzy
 #~ msgid "Failed to open video encoder"

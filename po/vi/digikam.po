@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -23456,13 +23456,13 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "Lỗi nạp ảnh « %1 »"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "Lỗi nạp ảnh « %1 »"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -26935,7 +26935,7 @@ msgid "Select Album"
 msgstr "Chọn tập ảnh"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
@@ -26951,73 +26951,82 @@ msgstr "Thẻ:"
 #: core/libs/album/widgets/albumselectors.cpp:180
 #, fuzzy, kde-format
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "Tập hợp tập ảnh"
+msgid "All albums"
+msgstr "Tập"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:238
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "Vùng chọn"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "Vùng chọn"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "%1 mục đã chọn"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Sắp xoá các tập ảnh đã chọn"
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, fuzzy, kde-format
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "Tập hợp tập ảnh"
+msgid "All tags"
+msgstr "Mọi thẻ"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "%1 mục đã chọn"
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Đặt lại biểu tượng thẻ"
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Tập"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Thẻ:"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"
@@ -39942,20 +39951,10 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/libs/video/manager/vidslidetask.cpp:214
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, fuzzy, kde-format
 msgid "Preparing %1 Done"
 msgstr "Đang chuẩn bị chiếu ảnh. Hãy đợi..."
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-msgid "Cannot generate output video %1"
-msgstr "Lỗi thay đổi tên của tập ảnh"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
-#, fuzzy, kde-format
-msgid "Output video is %1"
-msgstr "Lỗi thay đổi tên của tập ảnh"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -55803,7 +55802,7 @@ msgstr "Chuyể&n dạng"
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
@@ -65793,6 +65792,24 @@ msgstr "<p>Đặt lại mọi tham số lọc thành giá trị mặc định."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "<p>Đặt lại mọi tham số lọc thành giá trị mặc định."
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "Tập hợp tập ảnh"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "Tập hợp tập ảnh"
+
+#, fuzzy
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "Lỗi thay đổi tên của tập ảnh"
+
+#, fuzzy
+#~ msgid "Output video is %1"
+#~ msgstr "Lỗi thay đổi tên của tập ảnh"
 
 #, fuzzy
 #~ msgid "Failed to open video encoder"

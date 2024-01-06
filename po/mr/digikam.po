@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -23290,13 +23290,13 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -26719,7 +26719,7 @@ msgid "Select Album"
 msgstr "सर्व काढून टाका"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
@@ -26734,75 +26734,85 @@ msgstr "टॅग्स :"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
 #, fuzzy, kde-format
+#| msgid "Albums"
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "(निवड नाही)"
+msgid "All albums"
+msgstr "अल्बम्स"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:238
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "निवड"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "निवड"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, fuzzy, kde-format
 #| msgid "Collection:"
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "संग्रह :"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, fuzzy, kde-format
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "(निवड नाही)"
+msgid "All tags"
+msgstr "सर्व टॅग"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "डाउनलोड केलेले"
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "अल्बम्स"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "टॅग्स :"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -39490,22 +39500,10 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/libs/video/manager/vidslidetask.cpp:214
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, fuzzy, kde-format
 msgid "Preparing %1 Done"
 msgstr "गुणधर्म"
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-#| msgid "Cannot create thumbnail for %1"
-msgid "Cannot generate output video %1"
-msgstr "%1 करिता लघुप्रतिमा बनवू शकत नाही"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
-#, fuzzy, kde-format
-#| msgid "Cannot create thumbnail for %1"
-msgid "Output video is %1"
-msgstr "%1 करिता लघुप्रतिमा बनवू शकत नाही"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -56069,7 +56067,7 @@ msgstr "स्वरूप बदला"
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
@@ -65842,6 +65840,26 @@ msgstr "मूलभूत मूल्य"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "मूलभूत मूल्य"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "(निवड नाही)"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "(निवड नाही)"
+
+#, fuzzy
+#~| msgid "Cannot create thumbnail for %1"
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "%1 करिता लघुप्रतिमा बनवू शकत नाही"
+
+#, fuzzy
+#~| msgid "Cannot create thumbnail for %1"
+#~ msgid "Output video is %1"
+#~ msgstr "%1 करिता लघुप्रतिमा बनवू शकत नाही"
 
 #, fuzzy
 #~ msgid "Failed to open audio encoder"

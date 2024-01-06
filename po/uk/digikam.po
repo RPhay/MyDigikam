@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
-"PO-Revision-Date: 2024-01-04 09:07+0200\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
+"PO-Revision-Date: 2024-01-05 08:45+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -24534,13 +24534,13 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "ПОМИЛКА під час спроби вивантаження фотографії"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "ПОМИЛКА під час вилучення запису спостереження"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr "Перевищення часу очікування після того, як сплинув період у %1 секунд"
@@ -28110,7 +28110,7 @@ msgid "Select Album"
 msgstr "Виберіть альбом"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -28123,73 +28123,88 @@ msgid "Tags (0)"
 msgstr "Мітки (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Albums"
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "Уся збірка альбомів"
+msgid "All albums"
+msgstr "Всі альбоми"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "Рекурсивний вибір"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "Рекурсивний вибір"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Позначте всі альбоми, які слід обробити."
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Не вибрано жодного альбому"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Скасувати позначення альбомів"
 
-#: core/libs/album/widgets/albumselectors.cpp:236
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "Уся збірка міток"
+msgid "All tags"
+msgstr "Всі мітки"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Позначте всі мітки, які слід обробити."
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Не вибрано жодної мітки"
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Скасувати позначення міток"
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Альбоми (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Мітки (Усі)"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -41776,22 +41791,10 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Типовий зі стільниці"
 
-#: core/libs/video/manager/vidslidetask.cpp:214
-#, fuzzy, kde-format
-#| msgid "Encoding %1 Done"
-msgid "Preparing %1 Done"
-msgstr "Кодування %1 завершено"
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-#| msgid "Cannot create directory %1"
-msgid "Cannot generate output video %1"
-msgstr "Не вдалося створити каталог %1"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, kde-format
-msgid "Output video is %1"
-msgstr "Виведене відео — %1"
+msgid "Preparing %1 Done"
+msgstr "Приготування %1 завершено"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -57662,9 +57665,11 @@ msgid "Osm File Parser"
 msgstr "Обробник файлів OSM"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "A plugin to load Geolocation Data from the OpenSteetMap data file format."
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 "Додаток для завантаження даних геопозиціювання з файлів у форматі даних "
 "OpenSteetMap."
@@ -57698,10 +57703,7 @@ msgid "Pnt File Parser"
 msgstr "Обробник файлів PNT"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "A plugin to loac Geolocation Data from the Micro World Database II Files "
-#| "format"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
@@ -68370,6 +68372,21 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Хочете відновити типові значення для усіх параметрів відео?"
+
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "Уся збірка альбомів"
+
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "Уся збірка міток"
+
+#~| msgid "Cannot create directory %1"
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "Не вдалося створити відео-результат %1"
+
+#~ msgid "Output video is %1"
+#~ msgstr "Виведене відео — %1"
 
 #~ msgid "Failed to open video encoder"
 #~ msgstr "Не вдалося відкрити кодувальник відео"

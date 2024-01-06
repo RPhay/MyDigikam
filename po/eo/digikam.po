@@ -23,16 +23,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
-"PO-Revision-Date: 2024-01-04 17:06+0100\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
+"PO-Revision-Date: 2024-01-05 17:23+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:497
 #, kde-format
@@ -24072,13 +24072,13 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "ERARO Dum Alŝuto de Foto"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "ERARO Dum Forigo de Observado"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr "Tempo post superado de %1 sekundoj"
@@ -27590,7 +27590,7 @@ msgid "Select Album"
 msgstr "Elekti Albumon"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -27603,73 +27603,88 @@ msgid "Tags (0)"
 msgstr "Etikedoj (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Albums"
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "Tutaj albumoj kolekto"
+msgid "All albums"
+msgstr "Ĉiuj albumoj"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "Rikura Elekto"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "Rikura Elekto"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Elektu ĉiujn albumojn, kiuj devas esti prilaboritaj."
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Neniu Albumo Elektita"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Restarigi elektitajn albumojn"
 
-#: core/libs/album/widgets/albumselectors.cpp:236
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "Tuta kolekto de etikedoj"
+msgid "All tags"
+msgstr "Ĉiuj Etikedoj"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Elektu ĉiujn etikedojn, kiuj devas esti prilaboritaj."
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Neniu Etikedo Elektita"
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Restarigi elektitajn etikedojn"
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albumoj (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Etikedoj (Ĉiuj)"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -40518,6 +40533,8 @@ msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
+"Kompleta, plurplatforma solvo por registri, konverti kaj flui audaĵojn kaj "
+"vidaĵojn."
 
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
@@ -40999,22 +41016,10 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Defaŭlte de Labortablo"
 
-#: core/libs/video/manager/vidslidetask.cpp:214
-#, fuzzy, kde-format
-#| msgid "Encoding %1 Done"
-msgid "Preparing %1 Done"
-msgstr "Kodigado de %1 Farita"
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-#| msgid "Cannot create directory %1"
-msgid "Cannot generate output video %1"
-msgstr "Ne povas krei dosierujon %1"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, kde-format
-msgid "Output video is %1"
-msgstr "Eliga video estas %1"
+msgid "Preparing %1 Done"
+msgstr "Preparado de %1 Finita"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -56748,9 +56753,11 @@ msgid "Osm File Parser"
 msgstr "Osm-Dosiera Analizilo"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "A plugin to load Geolocation Data from the OpenSteetMap data file format."
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 "Kromprogramo por ŝargi Geolokajn Datenojn el la OpenStreetMap-datena "
 "dosierformato."
@@ -56784,10 +56791,7 @@ msgid "Pnt File Parser"
 msgstr "Pnt-Dosiera Analizilo"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "A plugin to loac Geolocation Data from the Micro World Database II Files "
-#| "format"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
@@ -67252,11 +67256,16 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ĉu vi volas restarigi ĉiujn video-agordojn al la defaŭlta valoro?"
 
-#~ msgid "Failed to open video encoder"
-#~ msgstr "Malsukcesis malfermi videokodilon"
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "Tutaj albumoj kolekto"
 
-#~ msgid "Failed to open audio encoder"
-#~ msgstr "Malsukcesis malfermi aŭdkodilon"
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "Tuta kolekto de etikedoj"
 
-#~ msgid "Failed to open muxer"
-#~ msgstr "Malsukcesis malfermi muxer"
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "Ne povas krei eligan filmon %1"
+
+#~ msgid "Output video is %1"
+#~ msgstr "Eliga filmo estas %1"

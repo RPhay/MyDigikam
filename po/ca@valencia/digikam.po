@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:39+0000\n"
-"PO-Revision-Date: 2024-01-02 08:25+0200\n"
+"POT-Creation-Date: 2024-01-06 00:39+0000\n"
+"PO-Revision-Date: 2024-01-05 08:09+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -10664,10 +10664,9 @@ msgid "Golden Mean"
 msgstr "Secció àuria"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:427
-#, fuzzy, kde-format
-#| msgid "Centered"
+#, kde-format
 msgid "Center Lines"
-msgstr "Centrada"
+msgstr "Línies del centre"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:428
 #, kde-format
@@ -20889,12 +20888,10 @@ msgstr ""
 "transició i pistes d'àudio per a visualitzar en una pantalla de TV.</p></qt>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title: binary properties"
-#| msgid "Binary"
+#, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
-msgstr "Executable"
+msgstr "Executable de FFmpeg"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
 #, kde-format
@@ -24429,13 +24426,13 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "ERROR en pujar la fotografia"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "ERROR en suprimir l'observació"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr "Temps d'espera després d'excedir %1 segons"
@@ -26967,8 +26964,8 @@ msgid ""
 "The MySQL binary tools was not found, please set the correct location in the "
 "next dialog."
 msgstr ""
-"No es troben les eines binàries de MySQL, establiu la ubicació correcta en "
-"el diàleg següent."
+"No es troben les eines executables de MySQL, establiu la ubicació correcta "
+"en el diàleg següent."
 
 #: core/libs/album/manager/albummanager_database.cpp:130
 #, kde-format
@@ -27990,7 +27987,7 @@ msgid "Select Album"
 msgstr "Seleccioneu un àlbum"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -28003,73 +28000,88 @@ msgid "Tags (0)"
 msgstr "Etiquetes (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Albums"
 msgctxt "@option"
-msgid "Whole albums collection"
-msgstr "Tota la col·lecció d'àlbums"
+msgid "All albums"
+msgstr "Tots els àlbums"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr "Selecció recursiva"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr "Selecció recursiva"
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Seleccioneu tots els àlbums que s'haurien de processar."
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "No hi ha cap àlbum seleccionat"
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Reinicia els àlbums seleccionats"
 
-#: core/libs/album/widgets/albumselectors.cpp:236
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "All Tags"
 msgctxt "@option"
-msgid "Whole tags collection"
-msgstr "Tota la col·lecció d'etiquetes"
+msgid "All tags"
+msgstr "Totes les etiquetes"
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Seleccioneu totes les etiquetes que s'haurien de processar."
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "No hi ha cap etiqueta seleccionada"
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Reinicia les etiquetes seleccionades"
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Àlbums (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Etiquetes (totes)"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -41137,6 +41149,8 @@ msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
+"Una solució completa i multiplataforma per a enregistrar, convertir i "
+"transmetre àudio i vídeo."
 
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
@@ -41618,22 +41632,10 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Predeterminat de l'escriptori"
 
-#: core/libs/video/manager/vidslidetask.cpp:214
-#, fuzzy, kde-format
-#| msgid "Encoding %1 Done"
-msgid "Preparing %1 Done"
-msgstr "S'ha fet la codificació de %1"
-
-#: core/libs/video/manager/vidslidetask.cpp:249
-#, fuzzy, kde-format
-#| msgid "Cannot create directory %1"
-msgid "Cannot generate output video %1"
-msgstr "No s'ha pogut crear el directori %1"
-
-#: core/libs/video/manager/vidslidetask.cpp:254
+#: core/libs/video/manager/vidslidetask.cpp:209
 #, kde-format
-msgid "Output video is %1"
-msgstr "El vídeo d'eixida és %1"
+msgid "Preparing %1 Done"
+msgstr "S'ha fet la preparació de %1"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -42367,7 +42369,7 @@ msgstr "Canvia"
 #: core/libs/widgets/files/dbinarysearch.cpp:190
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
-msgstr "El fitxer binari trobat no pareix que funcione com s'espera."
+msgstr "El fitxer executable trobat no pareix que funcione com s'espera."
 
 #: core/libs/widgets/files/dfileselector.cpp:58
 #, kde-format
@@ -43990,9 +43992,9 @@ msgstr ""
 "com els formats de metadades específics del fabricant de moltes càmeres "
 "digitals.\n"
 "\n"
-"Ací podreu configurar la ubicació on es troba el binari d'ExifTool. "
-"L'aplicació intentarà trobar este binari automàticament si ja es troba en el "
-"vostre ordinador."
+"Ací podreu configurar la ubicació on es troba l'executable d'ExifTool. "
+"L'aplicació intentarà trobar este executable automàticament si ja es troba "
+"en el vostre ordinador."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:90
 #, kde-format
@@ -56807,10 +56809,9 @@ msgid "&Atmosphere"
 msgstr "&Atmosfera"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
-#, fuzzy, kde-format
-#| msgid "Shows the atmosphere around the earth."
+#, kde-format
 msgid "A plugin to show the atmosphere around the earth."
-msgstr "Mostra l'atmosfera al voltant de la terra."
+msgstr "Un connector per a mostrar l'atmosfera al voltant de la terra."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
@@ -56861,10 +56862,11 @@ msgid "&Compass"
 msgstr "&Brúixola"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a compass."
+#, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
-msgstr "Este és un element flotant que proporciona una brúixola."
+msgstr ""
+"Un connector per a mostrar un element flotant que proporciona una brúixola "
+"sobre el mapa."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
@@ -56907,10 +56909,9 @@ msgid "Cross&hairs"
 msgstr "Punts de &mira"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
-#, fuzzy, kde-format
-#| msgid "A plugin that shows crosshairs."
+#, kde-format
 msgid "A plugin that shows crosshairs over the map."
-msgstr "Un connector que mostra punts de mira."
+msgstr "Un connector que mostra punts de mira sobre el mapa."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
@@ -56998,10 +56999,9 @@ msgid "Coordinate &Grid"
 msgstr "&Quadrícula de coordenades"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:90
-#, fuzzy, kde-format
-#| msgid "A plugin that shows a coordinate grid."
+#, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
-msgstr "Un connector que mostra una quadrícula de coordenades."
+msgstr "Un connector que mostra una quadrícula de coordenades sobre el mapa."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:212
 #, kde-format
@@ -57083,10 +57083,11 @@ msgid "&Scale Bar"
 msgstr "Barra d'e&scala"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a map scale."
+#, kde-format
 msgid "A plugin to show a float item that provides a map scale."
-msgstr "Este és un element flotant que mostra l'escala del mapa."
+msgstr ""
+"Un connector per a mostrar un element flotant que proporciona una escala del "
+"mapa."
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
 #, kde-format
@@ -57304,10 +57305,10 @@ msgid "&Navigation"
 msgstr "&Navegació"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
-#, fuzzy, kde-format
-#| msgid "A mouse control to zoom and move the map"
+#, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
-msgstr "Un control per a moure el mapa i fer zoom amb el ratolí"
+msgstr ""
+"Un connector per a afegir un control de ratolí per a fer zoom i moure el mapa"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
 #, kde-format
@@ -57330,10 +57331,11 @@ msgid "&Overview Map"
 msgstr "Mapa &general"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides an overview map."
+#, kde-format
 msgid "A plugin to add a float item that provides an overview map."
-msgstr "És un element flotant que mostra un mapa global resumit."
+msgstr ""
+"Un connector per a afegir un element flotant que proporciona un mapa global "
+"resumit."
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
 #, kde-format
@@ -57392,10 +57394,11 @@ msgid "&Download Progress"
 msgstr "Progrés de la &baixada"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Shows a pie chart download progress indicator"
+#, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
-msgstr "Mostra un diagrama de sectors indicant el progrés de la baixada"
+msgstr ""
+"Un connector per a mostrar un diagrama de sectors indicant el progrés de la "
+"baixada sobre el mapa"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
 #, kde-format
@@ -57403,10 +57406,11 @@ msgid "Cache File Parser"
 msgstr "Intèrpret de fitxers de memòria cau"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Cache Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
-msgstr "Crea un document GeoData a partir dels fitxers de memòria cau"
+msgstr ""
+"Un connector per a crear dades de geolocalització a partir dels fitxers "
+"binaris de la memòria cau."
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
 #, kde-format
@@ -57419,12 +57423,13 @@ msgid "GPSBabel NMEA File Parser"
 msgstr "Intèrpret de fitxers NMEA de GPSBabel"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Allows loading of NMEA files through GPSBabel."
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
-msgstr "Permet la càrrega de fitxers NMEA a través de GPSBabel."
+msgstr ""
+"Un connector per a carregar dades de geolocalització a partir de fitxers "
+"NMEA a través de l'eina de la línia d'ordres de GPSBabel."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
 #, kde-format
@@ -57437,10 +57442,11 @@ msgid "Gpx File Parser"
 msgstr "Intèrpret de fitxers GPX"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Gpx Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
-msgstr "Crea un document GeoData a partir de fitxers GPX"
+msgstr ""
+"Un connector per a carregar dades de geolocalització a partir del format de "
+"fitxer de dades Gpx."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
 #, kde-format
@@ -57453,10 +57459,11 @@ msgid "GeoJSON File Parser"
 msgstr "Intèrpret de fitxers GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from GeoJSON Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
-msgstr "Crea un document GeoData a partir de fitxers GeoJSON"
+msgstr ""
+"Un connector per a carregar dades de geolocalització a partir del format de "
+"fitxer de dades GeoJSON."
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
 #, kde-format
@@ -57469,11 +57476,12 @@ msgid "KML File Parser"
 msgstr "Intèrpret de fitxers KML"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from KML and KMZ Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
-msgstr "Crea un document GeoData a partir de fitxers KML i KMZ"
+msgstr ""
+"Un connector per a carregar dades de geolocalització a partir del format de "
+"fitxer de dades KML i KMZ."
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
 #, kde-format
@@ -57491,14 +57499,13 @@ msgid "OpenStreetMap Nominatim"
 msgstr "Nominatim d'OpenStreetMap"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
-#, fuzzy, kde-format
-#| msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
+#, kde-format
 msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
 msgstr ""
-"La geocodificació inversa en línia utilitza el servei Nominatim "
-"d'OpenStreetMap"
+"Un connector per a processar la geocodificació inversa en línia utilitzant "
+"el servei web Nominatim d'OpenStreetMap"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:21
 #, kde-format
@@ -57507,10 +57514,13 @@ msgstr "Intèrpret de fitxers OSM"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Cache Files"
+#| msgid ""
+#| "A plugin to load Geolocation Data from the OpenSteetMap data file format."
 msgid ""
-"A plugin to load Geolocation Data from the OpenSteetMap data file format."
-msgstr "Crea un document GeoData a partir dels fitxers de memòria cau"
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
+msgstr ""
+"Un connector per a carregar dades de geolocalització a partir del format de "
+"fitxer de dades OpenStreetMap."
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, kde-format
@@ -57523,11 +57533,12 @@ msgid "Pn2 File Parser"
 msgstr "Intèrpret de fitxers PN2"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Pn2 Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
-msgstr "Crea un document GeoData a partir de fitxers PN2"
+msgstr ""
+"Un connector per a carregar dades de geolocalització a partir del format de "
+"fitxer de dades comprimides PNT"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
 #, kde-format
@@ -57540,12 +57551,13 @@ msgid "Pnt File Parser"
 msgstr "Intèrpret de fitxers PNT"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Cache Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
-msgstr "Crea un document GeoData a partir dels fitxers de memòria cau"
+msgstr ""
+"Un connector per a carregar dades de geolocalització a partir de fitxers "
+"Micro World Database II"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
@@ -57984,16 +57996,14 @@ msgstr ""
 "no en Open Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
-#, fuzzy, kde-format
-#| msgid "Marble View"
+#, kde-format
 msgid "Map View"
-msgstr "Vista de Marble"
+msgstr "Vista de mapa"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
-#, fuzzy, kde-format
-#| msgid "Marble Plugins"
+#, kde-format
 msgid "Map Plugins"
-msgstr "Connectors de Marble"
+msgstr "Connectors de mapes"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
 #, kde-format
@@ -68176,21 +68186,16 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
 
-#~ msgid "Failed to open video encoder"
-#~ msgstr "No s'ha pogut obrir el codificador de vídeo"
+#~ msgctxt "@option"
+#~ msgid "Whole albums collection"
+#~ msgstr "Tota la col·lecció d'àlbums"
 
-#, fuzzy
-#~| msgid "Failed to open video encoder"
-#~ msgid "Failed to open audio encoder"
-#~ msgstr "No s'ha pogut obrir el codificador de vídeo"
+#~ msgctxt "@option"
+#~ msgid "Whole tags collection"
+#~ msgstr "Tota la col·lecció d'etiquetes"
 
-#~ msgid "Failed to open muxer"
-#~ msgstr "No s'ha pogut obrir «muxer»"
+#~ msgid "Cannot generate output video %1"
+#~ msgstr "No s'ha pogut generar el vídeo d'eixida %1"
 
-#, fuzzy
-#~| msgid "Create GeoDataDocument from Osm Files"
-#~ msgid "A plugin to create Geolocation Data Document from Osm Files"
-#~ msgstr "Crea un document GeoData a partir de fitxers OSM"
-
-#~ msgid "Create GeoDataDocument from Pnt Files"
-#~ msgstr "Crea un document GeoData a partir de fitxers PNT"
+#~ msgid "Output video is %1"
+#~ msgstr "El vídeo d'eixida és %1"
