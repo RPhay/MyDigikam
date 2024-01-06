@@ -924,7 +924,6 @@ void RatioCropWidget::drawRulesOfThirds(QPainter& p, const int& xThird, const in
 
 void RatioCropWidget::drawRulesOfCenter(QPainter& p, const int& xHalf, const int& yHalf)
 {
-
     p.drawLine(d->localRegionSelection.left() + xHalf, d->localRegionSelection.top(),
                d->localRegionSelection.left() + xHalf, d->localRegionSelection.bottom());
 
