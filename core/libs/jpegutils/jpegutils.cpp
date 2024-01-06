@@ -486,6 +486,10 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
             qCDebug(DIGIKAM_GENERAL_LOG) << "Lossy transform done for" << src;
         }
 
+        // update metadata
+
+        updateMetadata(matrix);
+
         if (i + 1 != actions.size())
         {
             // another round
@@ -495,9 +499,9 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
             continue;
         }
 
-        // finalize
+        // finalize metadata
 
-        updateMetadata(tempFile, matrix);
+        writeMetadata(tempFile);
 
         // atomic rename
 
@@ -550,11 +554,33 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
     return ret;
 }
 
-void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotation &matrix)
+void JpegRotator::writeMetadata(const QString& fileName)
+{
+    // We write all new metadata now.
+
+    m_metadata->save(fileName, true);
+
+    // File properties restoration.
+
+    // See bug #329608: Restore file modification time from original file
+    // only if updateFileTimeStamp for Setup/Metadata is turned off.
+
+    if (!MetaEngineSettings::instance()->settings().updateFileTimeStamp)
+    {
+        DFileOperations::copyModificationTime(m_file, fileName);
+    }
+
+    // Restore permissions in all cases
+
+    QFile::Permissions permissions = QFile::permissions(m_file);
+    QFile::setPermissions(fileName, permissions);
+}
+
+void JpegRotator::updateMetadata(const MetaEngineRotation &matrix)
 {
     QTransform qmatrix = matrix.toTransform();
     QRect r(QPoint(0, 0), m_originalSize);
-    QSize newSize   = qmatrix.mapRect(r).size();
+    QSize newSize      = qmatrix.mapRect(r).size();
 
     // Get the new image dimension of the temp image. Using a dummy QImage object here
     // has a sense because the Exif dimension information can be missing from original image.
@@ -581,25 +607,6 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
     // Reset the Exif orientation tag of the temp image to normal
 
     m_metadata->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-
-    // We update all new metadata now...
-
-    m_metadata->save(fileName, true);
-
-    // File properties restoration.
-
-    // See bug #329608: Restore file modification time from original file
-    // only if updateFileTimeStamp for Setup/Metadata is turned off.
-
-    if (!MetaEngineSettings::instance()->settings().updateFileTimeStamp)
-    {
-        DFileOperations::copyModificationTime(m_file, fileName);
-    }
-
-    // Restore permissions in all cases
-
-    QFile::Permissions permissions = QFile::permissions(m_file);
-    QFile::setPermissions(fileName, permissions);
 }
 
 bool JpegRotator::performJpegTransform(TransformAction action, const QString& src, const QString& dest)

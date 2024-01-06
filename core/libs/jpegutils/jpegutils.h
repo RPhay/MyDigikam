@@ -102,7 +102,8 @@ protected:
 
 protected:
 
-    void updateMetadata(const QString& fileName, const MetaEngineRotation& matrix);
+    void writeMetadata(const QString& fileName);
+    void updateMetadata(const MetaEngineRotation& matrix);
     bool performJpegTransform(TransformAction action, const QString& src, const QString& dest);
 
 private:
