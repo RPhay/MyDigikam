@@ -14,6 +14,10 @@
 
 #include "vidslidethread.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -66,10 +70,23 @@ void VidSlideThread::slotEncodeFrames(bool prepareDone)
         return;
     }
 
+    Q_EMIT signalMessage(i18n("Encoding frames..."), false);
+
+    // TODO: move to a separate thread.
+
     FFmpegLauncher encoder(this);
     encoder.setSettings(m_settings);
 
     bool b = encoder.encodeFrames();
+
+    if (b)
+    {
+        Q_EMIT signalMessage(i18n("Encoding done."), false);
+    }
+    else
+    {
+        Q_EMIT signalMessage(i18n("Error while encoding frames!"), true);
+    }
 
     Q_EMIT signalDone(b);
 }
