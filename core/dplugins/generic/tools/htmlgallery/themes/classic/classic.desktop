@@ -363,6 +363,7 @@ Name[tr]=Görsel Kenarlık Boyutu
 Name[uk]=Розмір рамки зображення
 Name[x-test]=xxImage Border Sizexx
 Name[zh_CN]=图像边框大小
+Name[zh_TW]=影像邊框大小
 Type=int
 Default=1
 Min=1
@@ -408,6 +409,7 @@ Name[tr]=Görsel Kenarlık Rengi
 Name[uk]=Колір рамки зображення
 Name[x-test]=xxImage Border Colorxx
 Name[zh_CN]=图片边框颜色
+Name[zh_TW]=影像邊框色彩
 Type=color
 Default=#d0ffd0
 

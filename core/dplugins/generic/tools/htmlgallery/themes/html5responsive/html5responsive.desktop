@@ -254,6 +254,7 @@ Name[tr]=Sayfa başına görsel
 Name[uk]=Кількість зображень на сторінку
 Name[x-test]=xxImages per pagexx
 Name[zh_CN]=每页图像
+Name[zh_TW]=每頁影像數
 Type=int
 Default=20
 
@@ -290,6 +291,7 @@ Name[tr]=Sayfa bağlantıları konumu
 Name[uk]=Розташування посилань на сторінці
 Name[x-test]=xxPage links locationxx
 Name[zh_CN]=页面链接位置
+Name[zh_TW]=頁面連結位置
 Type=list
 Default=top
 Value-0=bottom

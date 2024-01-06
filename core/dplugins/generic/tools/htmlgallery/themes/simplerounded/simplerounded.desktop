@@ -177,6 +177,7 @@ Name[tr]=Sayfa başına görsel
 Name[uk]=Кількість зображень на сторінку
 Name[x-test]=xxImages per pagexx
 Name[zh_CN]=每页图像
+Name[zh_TW]=每頁影像數
 Type=int
 Default= 15
 Min=1
