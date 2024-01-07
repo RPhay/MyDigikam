@@ -128,7 +128,7 @@ BUGFIXES:
 110 ==> 479266 - Unable to export a RAW to iNaturalist.
 111 ==> 479430 - Assigning Ratings using Ctrl+[1..9] assigns a color code during preview && modifies "By Date" sort order.
 112 ==> 479487 - Winget sees wrong version of digikam (8.1.0 not 8.2.0).
-113 ==> 
+113 ==> 479497 - AVIF bit depth selection or 12bits default.
 114 ==> 
 115 ==> 
 116 ==> 

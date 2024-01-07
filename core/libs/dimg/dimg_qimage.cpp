@@ -26,16 +26,10 @@ QImage DImg::copyQImage() const
         return QImage();
     }
 
-    if (sixteenBit())
-    {
-        DImg img(*this);
-        img.detach();
-        img.convertDepth(32);
+    QImage::Format format = sixteenBit() ? QImage::Format_RGBA64
+                                         : QImage::Format_ARGB32;
 
-        return img.copyQImage();
-    }
-
-    QImage img(width(), height(), QImage::Format_ARGB32);
+    QImage img(width(), height(), format);
 
     if (img.isNull())
     {
@@ -44,13 +38,27 @@ QImage DImg::copyQImage() const
         return QImage();
     }
 
-    uchar* sptr = bits();
-    uint*  dptr = reinterpret_cast<uint*>(img.bits());
-
-    for (uint i = 0 ; i < width()*height() ; ++i)
+    if (!sixteenBit())
     {
-        *dptr++ = qRgba(sptr[2], sptr[1], sptr[0], sptr[3]);
-        sptr   += 4;
+        uchar* sptr = bits();
+        QRgb*  dptr = reinterpret_cast<QRgb*>(img.bits());
+
+        for (uint i = 0 ; i < width() * height() ; ++i)
+        {
+            *dptr++ = qRgba(sptr[2], sptr[1], sptr[0], sptr[3]);
+            sptr   += 4;
+        }
+    }
+    else
+    {
+        ushort*  sptr = reinterpret_cast<ushort*>(bits());
+        QRgba64* dptr = reinterpret_cast<QRgba64*>(img.bits());
+
+        for (uint i = 0 ; i < width() * height() ; ++i)
+        {
+            *dptr++ = qRgba64(sptr[2], sptr[1], sptr[0], sptr[3]);
+            sptr   += 4;
+        }
     }
 
     // NOTE: Qt4 do not provide anymore QImage::setAlphaChannel() because
