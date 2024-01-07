@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 00:39+0000\n"
-"PO-Revision-Date: 2024-01-05 11:15+0100\n"
+"POT-Creation-Date: 2024-01-07 00:39+0000\n"
+"PO-Revision-Date: 2024-01-06 05:07+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -27720,30 +27720,24 @@ msgid "Tags (0)"
 msgstr "Značke (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Albums"
+#, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Vsi albumi"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive"
-msgstr "Rekurzivni izbor"
+msgstr "Rekurzivno"
 
 #: core/libs/album/widgets/albumselectors.cpp:182
 #: core/libs/album/widgets/albumselectors.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
-msgstr "Rekurzivni izbor"
+msgstr "Rekurzivna izbira."
 
 #: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
@@ -27764,9 +27758,7 @@ msgid "Reset selected albums"
 msgstr "Ponastavi izbrane albume"
 
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Tags"
+#, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Vse značke"
@@ -41264,6 +41256,24 @@ msgstr "Privzeto iz namizja"
 #, kde-format
 msgid "Preparing %1 Done"
 msgstr "Pripravljanje %1 Končano"
+
+#: core/libs/video/manager/vidslidethread.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Loading cameras..."
+msgid "Encoding frames..."
+msgstr "Nalaganje fotoaparatov..."
+
+#: core/libs/video/manager/vidslidethread.cpp:84
+#, kde-format
+msgid "Encoding done."
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:88
+#, fuzzy, kde-format
+#| msgid "Error while opening the source database."
+msgid "Error while encoding frames!"
+msgstr "Napaka med odpiranjem izvorne podatkovne zbirke."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -57032,12 +57042,12 @@ msgid "Osm File Parser"
 msgstr "Osm razčlenjevalnik datoteke"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "A plugin to load Geolocation Data from the OpenSteetMap data file format."
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
-msgstr "Vtičnik za nalaganje geolokacijskih podatkov iz datotek OpenStreetMap."
+msgstr ""
+"Vtičnik za nalaganje geolokacijskih podatkov iz datotek v formatu "
+"OpenStreetMap."
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, kde-format
@@ -57512,7 +57522,7 @@ msgstr ""
 msgid "Map View"
 msgstr "Pogled zemljevida"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
 #, kde-format
 msgid "Map Plugins"
 msgstr "Vtičniki zamljevida"
@@ -66632,10 +66642,17 @@ msgid "API Key:"
 msgstr "API ključ:"
 
 #: core/utilities/setup/setupgeolocation.cpp:114
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Google Maps requires to work friendly an API key that end users must buy "
+#| "online to gain credentials. Without this key, Google Maps is still usable "
+#| "but with an overlay frame annotated \"For Development Only\". For more "
+#| "information, see this <a href='https://mapsplatform.google.com/"
+#| "pricing/'>Google page</a> about usages, practices, and prices."
 msgctxt "@info"
 msgid ""
-"Google Maps requires to work friendly an API key that end users must buy "
+"To work friendly, Google Maps requires an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
 "but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"

@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 00:39+0000\n"
-"PO-Revision-Date: 2024-01-05 17:23+0100\n"
+"POT-Creation-Date: 2024-01-07 00:39+0000\n"
+"PO-Revision-Date: 2024-01-06 08:14+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -27603,30 +27603,24 @@ msgid "Tags (0)"
 msgstr "Etikedoj (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Albums"
+#, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Ĉiuj albumoj"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive"
-msgstr "Rikura Elekto"
+msgstr "Rikura"
 
 #: core/libs/album/widgets/albumselectors.cpp:182
 #: core/libs/album/widgets/albumselectors.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
-msgstr "Rikura Elekto"
+msgstr "Rikura elekto."
 
 #: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
@@ -27647,12 +27641,10 @@ msgid "Reset selected albums"
 msgstr "Restarigi elektitajn albumojn"
 
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Tags"
+#, kde-format
 msgctxt "@option"
 msgid "All tags"
-msgstr "Ĉiuj Etikedoj"
+msgstr "Ĉiuj etikedoj"
 
 #: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
@@ -41020,6 +41012,24 @@ msgstr "Defaŭlte de Labortablo"
 #, kde-format
 msgid "Preparing %1 Done"
 msgstr "Preparado de %1 Finita"
+
+#: core/libs/video/manager/vidslidethread.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Loading cameras..."
+msgid "Encoding frames..."
+msgstr "Ŝargante fotilojn..."
+
+#: core/libs/video/manager/vidslidethread.cpp:84
+#, kde-format
+msgid "Encoding done."
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:88
+#, fuzzy, kde-format
+#| msgid "Error while opening the source database."
+msgid "Error while encoding frames!"
+msgstr "Eraro dum malfermo de la fonta datumbazo."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -56753,9 +56763,7 @@ msgid "Osm File Parser"
 msgstr "Osm-Dosiera Analizilo"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "A plugin to load Geolocation Data from the OpenSteetMap data file format."
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
@@ -56974,6 +56982,10 @@ msgid ""
 "By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
+"Specifas la notacion de anguloj en koordinatoj.\n"
+"Defaŭlte la Grado-Minuto-Sekunda skribmaniero (ekz. 54°30'00\" ) estas "
+"uzata.\n"
+"Kiel alternativo vi povas elekti dekumajn gradojn (ekz. 54.5°)."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
 #, kde-format
@@ -57021,6 +57033,8 @@ msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
 "Usually this allows for high map quality as speed is no concern."
 msgstr ""
+"Specifas la mapkvaliton kiu montriĝas dum ne ekzistas uzanta enigo.\n"
+"Kutime ĉi tio permesas altan mapkvaliton ĉar rapideco ne gravas."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
 #, kde-format
@@ -57035,6 +57049,10 @@ msgid ""
 "advisable to set this option to \"low quality\" as this will give better "
 "speed."
 msgstr ""
+"Difinas la mapkvaliton kiu montriĝas dum mapaj animacioj\n"
+"(ekz. dum trenado de la globo). Specife sur malrapidaj maŝinoj estas\n"
+"konsilinda meti ĉi elekteblon al \"malalta kvalito\" ĉar tio donos pli bonan "
+"rapidecon."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
 #, kde-format
@@ -57225,7 +57243,7 @@ msgstr ""
 msgid "Map View"
 msgstr "Mapa Vido"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
 #, kde-format
 msgid "Map Plugins"
 msgstr "Mapaj Kromprogramoj"
@@ -66334,7 +66352,7 @@ msgstr "API-Ŝlosilo:"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Google Maps requires to work friendly an API key that end users must buy "
+"To work friendly, Google Maps requires an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
 "but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"
@@ -67255,17 +67273,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ĉu vi volas restarigi ĉiujn video-agordojn al la defaŭlta valoro?"
-
-#~ msgctxt "@option"
-#~ msgid "Whole albums collection"
-#~ msgstr "Tutaj albumoj kolekto"
-
-#~ msgctxt "@option"
-#~ msgid "Whole tags collection"
-#~ msgstr "Tuta kolekto de etikedoj"
-
-#~ msgid "Cannot generate output video %1"
-#~ msgstr "Ne povas krei eligan filmon %1"
-
-#~ msgid "Output video is %1"
-#~ msgstr "Eliga filmo estas %1"
