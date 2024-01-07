@@ -37,6 +37,7 @@ public:
     static QPointer<MetadataHubMngr> internalPtr;
     static bool                      isCreated();
 
+    void addPendingIds(const QList<qlonglong>& imageIds);
     void addPending(const ItemInfo& info);
     void requestShutDown();
 

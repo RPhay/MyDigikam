@@ -133,7 +133,7 @@ BUGFIXES:
 115 ==> 427221 - Starting to generate video slideshow failed to open muxer.
 116 ==> 472503 - Video slideshow tool does not produce playable video file - Port tool from QtAv to FFmpeg CLI tool.
 117 ==> 479511 - Crash when filling in name of scanned face.
-118 ==> 
+118 ==> 479512 - Renaming tags with many items and hitting No on "Write now?" pop-up is not written automatically to file.
 119 ==> 
 120 ==> 
 121 ==> 

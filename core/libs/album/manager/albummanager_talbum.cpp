@@ -1104,6 +1104,13 @@ void AlbumManager::askUserForWriteChangedTAlbumToFiles(const QList<qlonglong>& i
         return;
     }
 
+    if (settings->settings().useLazySync)
+    {
+        MetadataHubMngr::instance()->addPendingIds(imageIds);
+
+        return;
+    }
+
     if (imageIds.count() > 100)
     {
         int result = d->longTimeMessageBoxResult;

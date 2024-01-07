@@ -73,6 +73,21 @@ bool MetadataHubMngr::isCreated()
     return (!internalPtr.isNull());
 }
 
+void MetadataHubMngr::addPendingIds(const QList<qlonglong>& imageIds)
+{
+    QMutexLocker locker(&d->mutex);
+
+    Q_FOREACH (const qlonglong& id, imageIds)
+    {
+        if (!d->pendingItemIds.contains(id))
+        {
+            d->pendingItemIds.append(id);
+        }
+   }
+
+   Q_EMIT signalPendingMetadata(d->pendingItemIds.size());
+}
+
 void MetadataHubMngr::addPending(const ItemInfo& info)
 {
     QMutexLocker locker(&d->mutex);
