@@ -269,6 +269,7 @@ $VCPKG_INSTALL_PREFIX/bin/digikam.exe                      \
 $VCPKG_INSTALL_PREFIX/bin/showfoto.exe                     \
 $VCPKG_INSTALL_PREFIX/bin/kbuildsycoca6.exe                \
 $VCPKG_INSTALL_PREFIX/tools/Qt6/bin/QtWebEngineProcess.exe \
+$VCPKG_INSTALL_PREFIX/tools/ffmpeg/ffmpeg.exe \
 "
 
 for app in $EXE_FILES ; do
