@@ -127,7 +127,7 @@ BUGFIXES:
 109 ==> 479436 - Wrong path divider for Windows.
 110 ==> 479266 - Unable to export a RAW to iNaturalist.
 111 ==> 479430 - Assigning Ratings using Ctrl+[1..9] assigns a color code during preview && modifies "By Date" sort order.
-112 ==> 
+112 ==> 479487 - Winget sees wrong version of digikam (8.1.0 not 8.2.0).
 113 ==> 
 114 ==> 
 115 ==> 
