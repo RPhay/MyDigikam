@@ -14,6 +14,10 @@
 
 #include "vidslidethread.h"
 
+// Qt include
+
+#include <QDir>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -37,6 +41,11 @@ VidSlideThread::~VidSlideThread()
 {
     cancel();
     wait();
+
+    if (m_settings && QDir().exists(m_settings->tempDir))
+    {
+        QDir(m_settings->tempDir).removeRecursively();
+    }
 }
 
 void VidSlideThread::prepareFrames(VidSlideSettings* const settings)
@@ -81,6 +90,11 @@ void VidSlideThread::slotEncodeFrames(bool prepareDone)
 
     if (b)
     {
+        if (QDir().exists(m_settings->tempDir))
+        {
+            QDir(m_settings->tempDir).removeRecursively();
+        }
+
         Q_EMIT signalMessage(i18n("Encoding done."), false);
     }
     else
