@@ -44,6 +44,7 @@ public:
     int         exitCode = 0;
     int         timeOut  = 30000;           ///< in milli-seconds;
     qint64      elapsed  = 0;
+    QString     output;
 };
 
 ProcessLauncher::ProcessLauncher(QObject* const parent)
@@ -81,6 +82,11 @@ void ProcessLauncher::setTimeOut(int msecs)
 int ProcessLauncher::exitCode() const
 {
     return d->exitCode;
+}
+
+QString ProcessLauncher::output() const
+{
+    return d->output;
 }
 
 qint64 ProcessLauncher::elapsedTime() const
@@ -164,10 +170,10 @@ void ProcessLauncher::slotReadyRead()
 
     if (!data.isEmpty())
     {
-        QString txt       = QString::fromLocal8Bit(data.data(), data.size());
-        QStringList lines = txt.split(QLatin1Char('\n'));
+        QString txt = QString::fromLocal8Bit(data.data(), data.size());
+        d->output.append(txt);
 
-        Q_FOREACH (const QString& str, lines)
+        Q_FOREACH (const QString& str, txt.split(QLatin1Char('\n')))
         {
             if (!str.isEmpty())
             {

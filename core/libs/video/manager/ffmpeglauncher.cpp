@@ -63,11 +63,6 @@ bool FFmpegLauncher::encodeFrames()
                                << m_settings->outputFile);                              // Target video stream.
     bool successFlag = startProcess();
 
-//    QString output   = QString::fromLocal8Bit(d->ffmpegProc->readAll());
-
-//    qCDebug(DIGIKAM_GENERAL_LOG) << "Encoding return:" << successFlag;
-//    qCDebug(DIGIKAM_GENERAL_LOG) << "Encoding trace :" << output;
-
     if (!successFlag)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot generate output video" << m_settings->outputFile;

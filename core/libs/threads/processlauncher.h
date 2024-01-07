@@ -57,6 +57,11 @@ public:
      */
     qint64 elapsedTime()    const;
 
+    /**
+     * Return the process outout as string.
+     */
+    QString output()        const;
+
 private Q_SLOTS:
 
     void slotReadyRead();
