@@ -21,6 +21,7 @@
 #include "vidslidetask.h"
 #include "actionthreadbase.h"
 #include "digikam_export.h"
+#include "ffmpeglauncher.h"
 
 namespace Digikam
 {
@@ -52,9 +53,15 @@ private Q_SLOTS:
      */
     void slotEncodeFrames(bool prepareDone);
 
+    /**
+     * Called when stage 2 is done.
+     */
+    void slotEncodeDone(bool timedOut, int exitCode);
+
 private:
 
     VidSlideSettings* m_settings = nullptr;
+    FFmpegLauncher*   m_encoder  = nullptr;
 };
 
 } // namespace Digikam

@@ -43,9 +43,9 @@ public:
     void setTimeOut(int msecs);
 
     /**
-     * Start the process. Retrun true if process is started and stopped properly.
+     * Start the process.
      */
-    bool startProcess()     const;
+    void startProcess();
 
     /**
      * Return the exit code from the process.
@@ -61,6 +61,15 @@ public:
      * Return the process outout as string.
      */
     QString output()        const;
+
+    /**
+     * Return true if the process is timed-out to start.
+     */
+    bool timedOut()         const;
+
+Q_SIGNALS:
+
+    void signalComplete(bool timedOut, int exitCode);
 
 private Q_SLOTS:
 

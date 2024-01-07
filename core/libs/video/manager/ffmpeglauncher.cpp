@@ -39,11 +39,11 @@ void FFmpegLauncher::setSettings(VidSlideSettings* const settings)
     m_settings = settings;
 }
 
-bool FFmpegLauncher::encodeFrames()
+void FFmpegLauncher::encodeFrames()
 {
     // Run FFmpeg CLI to encode temporary JPEG frames
     // https://shotstack.io/learn/use-ffmpeg-to-convert-images-to-video/
-    // ffmpeg -f concat -i fileslist.txt output.mp4
+    // ffmpeg -f concat -i fileslist.txt -b:v 200000 -r 25 -vcodec mpeg4 -y output.mp4
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Start encoding with FFmpeg";
 
@@ -61,18 +61,7 @@ bool FFmpegLauncher::encodeFrames()
                                << m_settings->videoCodec()
                                << QLatin1String("-y")                                   // Overwrite target.
                                << m_settings->outputFile);                              // Target video stream.
-    bool successFlag = startProcess();
-
-    if (!successFlag)
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot generate output video" << m_settings->outputFile;
-    }
-    else
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Output video is" << m_settings->outputFile;
-    }
-
-    return successFlag;
+    startProcess();
 }
 
 } // namespace Digikam

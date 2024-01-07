@@ -41,6 +41,7 @@ public:
     QStringList args;
     QString     prog;
     QString     dir;
+    bool        timedOut = false;
     int         exitCode = 0;
     int         timeOut  = 30000;           ///< in milli-seconds;
     qint64      elapsed  = 0;
@@ -89,12 +90,17 @@ QString ProcessLauncher::output() const
     return d->output;
 }
 
+bool ProcessLauncher::timedOut() const
+{
+    return d->timedOut;
+}
+
 qint64 ProcessLauncher::elapsedTime() const
 {
     return d->elapsed;
 }
 
-bool ProcessLauncher::startProcess() const
+void ProcessLauncher::startProcess()
 {
     QString     prog;
     QStringList args;
@@ -117,7 +123,7 @@ bool ProcessLauncher::startProcess() const
     prog = QLatin1String("cmd");
     args = QStringList() << QLatin1String("/c") << d->prog << d->args;
 
-#else   // Linux && MacOS
+#else   // Linux and MacOS
 
     prog = d->prog;
     args = d->args;
@@ -140,28 +146,21 @@ bool ProcessLauncher::startProcess() const
 
     if (d->proc->waitForStarted(d->timeOut))
     {
-        bool timedOut = !d->proc->waitForFinished(d->timeOut);
-        d->exitCode   = d->proc->exitCode();
-        d->elapsed    = etimer.elapsed();
+        d->timedOut = !d->proc->waitForFinished(d->timeOut);
+        d->exitCode = d->proc->exitCode();
+        d->elapsed  = etimer.elapsed();
 
         qCInfo(DIGIKAM_GENERAL_LOG) << "=== Process execution is complete!";
-        qCInfo(DIGIKAM_GENERAL_LOG) << "> Process timed-out        :" << timedOut;
+        qCInfo(DIGIKAM_GENERAL_LOG) << "> Process timed-out        :" << d->timedOut;
         qCInfo(DIGIKAM_GENERAL_LOG) << "> Process exit code        :" << d->exitCode;
         qCInfo(DIGIKAM_GENERAL_LOG) << "> Process elasped time (ms):" << d->elapsed;
-
-        if (timedOut)
-        {
-            return false;
-        }
     }
     else
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "=== Process execution failed!";
-
-        return false;
     }
 
-    return true;
+    Q_EMIT signalComplete(d->timedOut, d->exitCode);
 }
 
 void ProcessLauncher::slotReadyRead()

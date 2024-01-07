@@ -27,7 +27,6 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
-#include "ffmpeglauncher.h"
 
 namespace Digikam
 {
@@ -97,10 +96,28 @@ void VidSlideThread::slotEncodeFrames(bool prepareDone)
 
     // TODO: move to a separate thread.
 
-    FFmpegLauncher encoder(this);
-    encoder.setSettings(m_settings);
+    m_encoder = new FFmpegLauncher(this);
+    m_encoder->setSettings(m_settings);
 
-    bool b = encoder.encodeFrames();
+    connect(m_encoder, &ProcessLauncher::signalComplete,
+            this, &VidSlideThread::slotEncodeDone);
+
+    m_encoder->encodeFrames();
+}
+
+void VidSlideThread::slotEncodeDone(bool timedOut, int exitCode)
+{
+    bool b = false;
+
+    if (timedOut || (exitCode != 0))
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot generate output video" << m_settings->outputFile;
+    }
+    else
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Output video is" << m_settings->outputFile;
+        b = true;
+    }
 
     if (b)
     {

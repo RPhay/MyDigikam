@@ -34,7 +34,7 @@ public:
     ~FFmpegLauncher() override;
 
     void setSettings(VidSlideSettings* const settings);
-    bool encodeFrames();
+    void encodeFrames();
 
 private:
 
