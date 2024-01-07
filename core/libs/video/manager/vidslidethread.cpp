@@ -96,6 +96,11 @@ void VidSlideThread::slotEncodeFrames(bool prepareDone)
 
     // TODO: move to a separate thread.
 
+    if (m_encoder)
+    {
+        delete m_encoder;
+    }
+
     m_encoder = new FFmpegLauncher(this);
     m_encoder->setSettings(m_settings);
 
@@ -134,6 +139,16 @@ void VidSlideThread::slotEncodeDone(bool timedOut, int exitCode)
     }
 
     Q_EMIT signalDone(b);
+}
+
+QString VidSlideThread::encodingTraces() const
+{
+    if (m_encoder)
+    {
+        return m_encoder->output();
+    }
+
+    return QString();
 }
 
 } // namespace Digikam

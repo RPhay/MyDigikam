@@ -40,6 +40,8 @@ public:
      */
     void prepareFrames(VidSlideSettings* const settings);
 
+    QString encodingTraces() const;
+
 Q_SIGNALS:
 
     void signalProgress(int);

@@ -25,6 +25,7 @@
 #include <QStyle>
 #include <QTimer>
 #include <QDir>
+#include <QTextBrowser>
 
 // KDE includes
 
@@ -65,6 +66,7 @@ public:
     VidSlideWizard*   wizard       = nullptr;
     VidSlideSettings* settings     = nullptr;
     DInfoInterface*   iface        = nullptr;
+    QTextBrowser*     detailsText  = nullptr;
 };
 
 VidSlideFinalPage::VidSlideFinalPage(QWizard* const dialog, const QString& title)
@@ -75,6 +77,8 @@ VidSlideFinalPage::VidSlideFinalPage(QWizard* const dialog, const QString& title
 
     DVBox* const vbox = new DVBox(this);
     d->progressView   = new DHistoryView(vbox);
+    d->detailsText    = new QTextBrowser(vbox);
+    d->detailsText->hide();
     d->progressBar    = new DProgressWdg(vbox);
 
     vbox->setStretchFactor(d->progressBar, 10);
@@ -151,6 +155,9 @@ void VidSlideFinalPage::slotProcess()
 
 void VidSlideFinalPage::cleanupPage()
 {
+    d->detailsText->clear();
+    d->detailsText->hide();
+
     if (d->encoder)
     {
         d->encoder->cancel();
@@ -173,6 +180,9 @@ void VidSlideFinalPage::slotDone(bool completed)
     {
         d->progressView->addEntry(i18n("Video Slideshow is not completed"),
                                   DHistoryView::WarningEntry);
+
+        d->detailsText->show();
+        d->detailsText->setText(d->encoder->encodingTraces());
     }
     else
     {

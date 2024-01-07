@@ -110,7 +110,7 @@ void ProcessLauncher::run()
     QString     prog;
     QStringList args;
 
-    d->proc = new QProcess(parent());
+    d->proc = new QProcess();
     d->proc->setProcessChannelMode(QProcess::MergedChannels);
     d->proc->setWorkingDirectory(d->dir);
 
