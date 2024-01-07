@@ -130,7 +130,9 @@ void VidSlideFinalPage::slotProcess()
     }
 
     d->progressBar->setMinimum(0);
-    d->progressBar->setMaximum(d->settings->inputImages.count());
+
+    // NOTE: last stage is FFmpeg encoding.
+    d->progressBar->setMaximum(d->settings->inputImages.count() + 1);
 
     d->encoder = new VidSlideThread(this);
 
@@ -163,6 +165,7 @@ void VidSlideFinalPage::slotMessage(const QString& mess, bool err)
 
 void VidSlideFinalPage::slotDone(bool completed)
 {
+    d->progressBar->setValue(d->progressBar->maximum());
     d->progressBar->progressCompleted();
     d->complete = completed;
 
