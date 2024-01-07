@@ -280,15 +280,23 @@ for app in $EXE_FILES ; do
 done
 
 DLL_FILES="\
-`find  $VCPKG_INSTALL_PREFIX/lib/plugins -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/libs/plugins||'` \
 `find  $VCPKG_INSTALL_PREFIX/Qt6/plugins -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/Qt6/plugins||'`  \
-`find  $VCPKG_INSTALL_PREFIX/plugins     -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/plugins||'`      \
-$VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                                                                         \
 "
 
 for app in $DLL_FILES ; do
 
     CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$VCPKG_INSTALL_PREFIX/bin"
+
+done
+
+FFMPEG_DLL_FILES="\
+`find  $VCPKG_INSTALL_PREFIX/tools/ffmpeg -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/tools/ffmpeg||'` \
+"
+
+for ffmpegdll in $FFMPEG_DLL_FILES ; do
+
+    cp $ffmpegdll $BUNDLEDIR/
+    CopyReccursiveDependencies "$DUMP_BIN" "$ffmpegdll" "$BUNDLEDIR/" "$VCPKG_INSTALL_PREFIX/bin"
 
 done
 
