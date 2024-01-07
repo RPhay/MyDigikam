@@ -116,6 +116,7 @@ macro(CheckSSESupport)
     elseif(CMAKE_SYSTEM_NAME MATCHES "Darwin")
 
         execute_process(COMMAND "/usr/sbin/sysctl -n machdep.cpu.features" OUTPUT_VARIABLE CPUINFO)
+        message(STATUS ${CPUINFO})
 
         string(REGEX REPLACE "^.*[^S](SSE2).*$" "\\1" SSE_THERE ${CPUINFO})
         string(COMPARE EQUAL "SSE2" "${SSE_THERE}" SSE2_TRUE)
