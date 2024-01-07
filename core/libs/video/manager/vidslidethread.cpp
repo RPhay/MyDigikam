@@ -50,7 +50,20 @@ VidSlideThread::~VidSlideThread()
 
 void VidSlideThread::prepareFrames(VidSlideSettings* const settings)
 {
-    m_settings = settings;
+    m_settings          = settings;
+
+    m_settings->tempDir = m_settings->outputDir + QDir::separator() + QLatin1Char('.')     +
+                          QString::number(QDateTime::currentDateTime().toSecsSinceEpoch()) +
+                          QDir::separator();
+
+    if (!QDir().mkpath(m_settings->tempDir))
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create temporary directory:" << m_settings->tempDir;
+
+        Q_EMIT signalMessage(i18n("Error while creating temporary directory %1!", m_settings->tempDir), true);
+
+        return;
+    }
 
     ActionJobCollection collection;
 

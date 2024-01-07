@@ -81,16 +81,7 @@ VidSlideTask::~VidSlideTask()
 
 void VidSlideTask::run()
 {
-    int frameId = 1;
-    d->settings->tempDir  = d->settings->outputDir + QDir::separator() + QLatin1Char('.')    +
-                            QString::number(QDateTime::currentDateTime().toSecsSinceEpoch()) +
-                            QDir::separator();
-
-    if (!QDir().mkpath(d->settings->tempDir))
-    {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create temporary directory:" << d->settings->tempDir;
-    }
-
+    int frameId            = 1;
     d->settings->filesList = d->settings->tempDir + QLatin1String("fileslist.txt");
     QFile fList(d->settings->filesList);
 
