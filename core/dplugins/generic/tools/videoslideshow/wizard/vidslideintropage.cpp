@@ -110,13 +110,8 @@ VidSlideIntroPage::VidSlideIntroPage(QWizard* const dialog, const QString& title
 
 #ifdef Q_OS_WIN
 
-    QStringList possiblePaths(
-                              { QLatin1String("C:/Program Files/digiKam"),
-                                QLatin1String("C:/Program Files/digiKam/bin")
-                              }
-    );
-
-    d->binSearch->addDirectory(possiblePaths);
+    d->binSearch->addDirectory(QLatin1String("C:/Program Files/digiKam"));
+    d->binSearch->addDirectory(QLatin1String("C:/Program Files/digiKam/bin"));
 
 #endif
 
