@@ -49,7 +49,7 @@ public:
 };
 
 ProcessLauncher::ProcessLauncher(QObject* const parent)
-    : QObject(parent),
+    : QThread(parent),
       d      (new Private)
 {
 }
@@ -101,6 +101,11 @@ qint64 ProcessLauncher::elapsedTime() const
 }
 
 void ProcessLauncher::startProcess()
+{
+    start();
+}
+
+void ProcessLauncher::run()
 {
     QString     prog;
     QStringList args;

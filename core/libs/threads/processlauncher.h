@@ -17,7 +17,7 @@
 
 // Qt includes
 
-#include <QObject>
+#include <QThread>
 #include <QString>
 #include <QStringList>
 
@@ -28,7 +28,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ProcessLauncher : public QObject
+class DIGIKAM_EXPORT ProcessLauncher : public QThread
 {
     Q_OBJECT
 
@@ -70,6 +70,10 @@ public:
 Q_SIGNALS:
 
     void signalComplete(bool timedOut, int exitCode);
+
+private:
+
+    void run() override;
 
 private Q_SLOTS:
 
