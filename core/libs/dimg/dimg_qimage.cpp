@@ -95,11 +95,6 @@ QImage DImg::copyQImage(int x, int y, int w, int h) const
 
     DImg img = copy(x, y, w, h);
 
-    if (img.sixteenBit())
-    {
-        img.convertDepth(32);
-    }
-
     return img.copyQImage();
 }
 
