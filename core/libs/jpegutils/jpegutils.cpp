@@ -564,7 +564,7 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
 
     // Update the image thumbnail.
 
-    QImage exifThumb = m_metadata->getExifThumbnail(true);
+    QImage exifThumb = m_metadata->getExifThumbnail(false);
 
     if (!exifThumb.isNull())
     {

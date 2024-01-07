@@ -134,7 +134,7 @@ BUGFIXES:
 116 ==> 472503 - Video slideshow tool does not produce playable video file - Port tool from QtAv to FFmpeg CLI tool.
 117 ==> 479511 - Crash when filling in name of scanned face.
 118 ==> 479512 - Renaming tags with many items and hitting No on "Write now?" pop-up is not written automatically to file.
-119 ==> 
+119 ==> 479356 - [Import tool] Auto-rotate doesn't rotate thumbnail.
 120 ==> 
 121 ==> 
 122 ==> 
