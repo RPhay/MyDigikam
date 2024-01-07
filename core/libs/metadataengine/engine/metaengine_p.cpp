@@ -153,7 +153,8 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
     }
 
     QFileInfo xmpInfo(xmpFile);
-    QDateTime modTime = xmpInfo.fileTime(QFileDevice::FileModificationTime);
+    QDateTime modTime = xmpInfo.exists() ? xmpInfo.fileTime(QFileDevice::FileModificationTime)
+                                         : finfo.fileTime(QFileDevice::FileModificationTime);
 
     QMutexLocker lock(&s_metaEngineMutex);
 
