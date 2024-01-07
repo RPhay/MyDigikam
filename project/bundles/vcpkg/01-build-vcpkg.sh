@@ -110,7 +110,7 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install liblzma
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install zlib
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install zstd
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install bzip2
-$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install ffmpeg
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install ffmpeg[ffmpeg,all-nonfree]
 
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtbase[sql-mysql]
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtmultimedia[ffmpeg]
