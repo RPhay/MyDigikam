@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 00:39+0000\n"
+"POT-Creation-Date: 2024-01-07 00:39+0000\n"
 "PO-Revision-Date: 2023-09-28 22:38+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -41548,6 +41548,23 @@ msgstr ""
 msgid "Preparing %1 Done"
 msgstr "Kódovanie %1 dokončené"
 
+#: core/libs/video/manager/vidslidethread.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Loading cameras..."
+msgid "Encoding frames..."
+msgstr "Načítavajú sa fotoaparáty..."
+
+#: core/libs/video/manager/vidslidethread.cpp:84
+#, kde-format
+msgid "Encoding done."
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:88
+#, fuzzy, kde-format
+msgid "Error while encoding frames!"
+msgstr "Chyba počas otvárania EPub dokumentu."
+
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
@@ -59066,7 +59083,7 @@ msgstr ""
 msgid "Map View"
 msgstr "Informačný komponent"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
 #, fuzzy, kde-format
 #| msgctxt "imageplugins shortcuts"
 #| msgid "Image Plugins"
@@ -68348,7 +68365,7 @@ msgstr "API URL:"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Google Maps requires to work friendly an API key that end users must buy "
+"To work friendly, Google Maps requires an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
 "but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"

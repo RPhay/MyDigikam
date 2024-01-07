@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 00:39+0000\n"
+"POT-Creation-Date: 2024-01-07 00:39+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -39270,6 +39270,21 @@ msgstr ""
 msgid "Preparing %1 Done"
 msgstr "מכין מצגת תמונות. אנא המתינו..."
 
+#: core/libs/video/manager/vidslidethread.cpp:73
+#, fuzzy, kde-format
+msgid "Encoding frames..."
+msgstr "טוען נתוני מצלמות"
+
+#: core/libs/video/manager/vidslidethread.cpp:84
+#, kde-format
+msgid "Encoding done."
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:88
+#, fuzzy, kde-format
+msgid "Error while encoding frames!"
+msgstr "שגיאה בעת פתיחה של מסד הנתונים."
+
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
@@ -55480,7 +55495,7 @@ msgstr ""
 msgid "Map View"
 msgstr "שיש 2"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
 #, fuzzy, kde-format
 msgid "Map Plugins"
 msgstr "תוספי KIPI"
@@ -64036,7 +64051,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Google Maps requires to work friendly an API key that end users must buy "
+"To work friendly, Google Maps requires an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
 "but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"

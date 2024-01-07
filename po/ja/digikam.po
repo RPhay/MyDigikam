@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 00:39+0000\n"
+"POT-Creation-Date: 2024-01-07 00:39+0000\n"
 "PO-Revision-Date: 2023-05-29 20:03-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -41875,6 +41875,24 @@ msgstr ""
 msgid "Preparing %1 Done"
 msgstr "スライドショーを準備しています"
 
+#: core/libs/video/manager/vidslidethread.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Loading cameras..."
+msgid "Encoding frames..."
+msgstr "カメラを読み込み中..."
+
+#: core/libs/video/manager/vidslidethread.cpp:84
+#, kde-format
+msgid "Encoding done."
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:88
+#, fuzzy, kde-format
+#| msgid "Error while opening the source database."
+msgid "Error while encoding frames!"
+msgstr "ソースデータベースのオープンエラー。"
+
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
@@ -59526,7 +59544,7 @@ msgstr ""
 msgid "Map View"
 msgstr "大理石 2"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
 #, fuzzy, kde-format
 msgid "Map Plugins"
 msgstr "Kipi プラグイン"
@@ -68786,7 +68804,7 @@ msgstr "URL:"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Google Maps requires to work friendly an API key that end users must buy "
+"To work friendly, Google Maps requires an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
 "but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 00:39+0000\n"
-"PO-Revision-Date: 2023-12-30 13:40\n"
+"POT-Creation-Date: 2024-01-07 00:39+0000\n"
+"PO-Revision-Date: 2024-01-06 03:34\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -10121,10 +10121,9 @@ msgid "Golden Mean"
 msgstr "黄金比例法"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:427
-#, fuzzy, kde-format
-#| msgid "Centered"
+#, kde-format
 msgid "Center Lines"
-msgstr "居中"
+msgstr "中心线"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:428
 #, kde-format
@@ -19935,12 +19934,10 @@ msgstr ""
 "音乐并显示到电视机屏幕上。</p></qt>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title: binary properties"
-#| msgid "Binary"
+#, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
-msgstr "可执行文件"
+msgstr "FFmpeg 可执行文件"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
 #, kde-format
@@ -21929,17 +21926,14 @@ msgid "Create relative symlinks"
 msgstr "创建相对符号链接"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Include the sidecars of the items"
+#, kde-format
 msgid "Include the sidecar of the items"
 msgstr "包含项目的附带文件"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Write metadata to each file"
+#, kde-format
 msgid "Write sidecar metadata to the items"
-msgstr "写入元数据到每个文件"
+msgstr "写入附带文件的元数据到项目"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:125
 #, kde-format
@@ -39343,7 +39337,7 @@ msgstr "随机"
 msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
-msgstr ""
+msgstr "一套用于对音频和视频进行录制、转换和推流的完整跨平台解决方案。"
 
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
@@ -39826,10 +39820,27 @@ msgid "Default from Desktop"
 msgstr "桌面默认值"
 
 #: core/libs/video/manager/vidslidetask.cpp:209
-#, fuzzy, kde-format
-#| msgid "Encoding %1 Done"
+#, kde-format
 msgid "Preparing %1 Done"
-msgstr "编码 %1 完成"
+msgstr "准备 %1 完成"
+
+#: core/libs/video/manager/vidslidethread.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Loading cameras..."
+msgid "Encoding frames..."
+msgstr "正在加载相机..."
+
+#: core/libs/video/manager/vidslidethread.cpp:84
+#, kde-format
+msgid "Encoding done."
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:88
+#, fuzzy, kde-format
+#| msgid "Error while opening the source database."
+msgid "Error while encoding frames!"
+msgstr "打开来源数据库时出错。"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -40544,7 +40555,7 @@ msgstr "更改"
 #: core/libs/widgets/files/dbinarysearch.cpp:190
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
-msgstr ""
+msgstr "已找到的可执行文件不能正常工作。"
 
 #: core/libs/widgets/files/dfileselector.cpp:58
 #, kde-format
@@ -51497,11 +51508,9 @@ msgid "Projection"
 msgstr "投影方式"
 
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export to &Ipfs..."
+#, kde-format
 msgid "Export as..."
-msgstr "导出到 IPFS(&I)..."
+msgstr "导出为..."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:160
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:183
@@ -51682,11 +51691,9 @@ msgid "Add Bookmark..."
 msgstr "添加书签..."
 
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@item: icc profile properties"
-#| msgid "Copyright"
+#, kde-format
 msgid "<p>Copyright %1</p>"
-msgstr "版权信息"
+msgstr "<p>版权 %1</p>"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, kde-format
@@ -54656,10 +54663,9 @@ msgid "&Atmosphere"
 msgstr "大气层(&A)"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
-#, fuzzy, kde-format
-#| msgid "Shows the atmosphere around the earth."
+#, kde-format
 msgid "A plugin to show the atmosphere around the earth."
-msgstr "显示地球周围的大气层。"
+msgstr "用于显示地球周围的大气层的插件。"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
@@ -54710,10 +54716,9 @@ msgid "&Compass"
 msgstr "指南针(&C)"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a compass."
+#, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
-msgstr "显示浮动指南针。"
+msgstr "用于在地图之上显示指南针的插件。"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
@@ -54756,10 +54761,9 @@ msgid "Cross&hairs"
 msgstr "十字准星(&H)"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
-#, fuzzy, kde-format
-#| msgid "A plugin that shows crosshairs."
+#, kde-format
 msgid "A plugin that shows crosshairs over the map."
-msgstr "显示十字准星的插件。"
+msgstr "用于在地图之上显示十字准星的插件。"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
@@ -54846,10 +54850,9 @@ msgid "Coordinate &Grid"
 msgstr "坐标网格(&G)"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:90
-#, fuzzy, kde-format
-#| msgid "A plugin that shows a coordinate grid."
+#, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
-msgstr "显示坐标网格的插件。"
+msgstr "用于在地图之上显示坐标网格的插件。"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:212
 #, kde-format
@@ -54931,10 +54934,9 @@ msgid "&Scale Bar"
 msgstr "比例尺(&S)"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a map scale."
+#, kde-format
 msgid "A plugin to show a float item that provides a map scale."
-msgstr "显示浮动地图比例尺。"
+msgstr "用于在地图之上显示比例尺的插件。"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
 #, kde-format
@@ -55152,10 +55154,9 @@ msgid "&Navigation"
 msgstr "导航按钮(&N)"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
-#, fuzzy, kde-format
-#| msgid "A mouse control to zoom and move the map"
+#, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
-msgstr "显示供鼠标控制地图缩放和平移的按钮。"
+msgstr "用于显示供鼠标控制地图缩放和平移的按钮的插件。"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
 #, kde-format
@@ -55178,10 +55179,9 @@ msgid "&Overview Map"
 msgstr "概览地图(&O)"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides an overview map."
+#, kde-format
 msgid "A plugin to add a float item that provides an overview map."
-msgstr "显示浮动的地图概览。"
+msgstr "用于在地图之上显示缩略地图的插件。"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
 #, kde-format
@@ -55240,101 +55240,87 @@ msgid "&Download Progress"
 msgstr "下载进度指示器(&D)"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Shows a pie chart download progress indicator"
+#, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
-msgstr "显示浮动下载进度饼状图。"
+msgstr "用于在地图之上显示饼状下载进度标识的插件。"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Cache File Parser"
-msgstr "OSM 文件解析器"
+msgstr "缓存文件解析器"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
-msgstr "从 OSM 文件创建地理数据文档"
+msgstr "用于从缓存文件中加载地理位置数据的插件。"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
-#, fuzzy, kde-format
-#| msgid "Marble View"
+#, kde-format
 msgid "Marble Cache Files"
-msgstr "Marble 地图视图"
+msgstr "Marble 缓存文件"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "GPSBabel NMEA File Parser"
-msgstr "OSM 文件解析器"
+msgstr "GPSBabel NMEA 文件解析器"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
-msgstr ""
+msgstr "用于通过 GPSBabel 命令行工具从 NMEA 文件中加载地理位置数据的插件。"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Save files as"
+#, kde-format
 msgid "GPSBabel files"
-msgstr "文件保存为"
+msgstr "GPSBabel 文件"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Gpx File Parser"
-msgstr "OSM 文件解析器"
+msgstr "GPX 文件解析器"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
-msgstr "从 OSM 文件创建地理数据文档"
+msgstr "用于从 GPX 格式的文件中加载地理位置数据的插件。"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "Data"
+#, kde-format
 msgid "GPS Data"
-msgstr "数据"
+msgstr "GPS 数据"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "GeoJSON File Parser"
-msgstr "OSM 文件解析器"
+msgstr "GeoJSON 文件解析器"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
-msgstr "从 OSM 文件创建地理数据文档"
+msgstr "用于从 GeoJSON 格式的文件中加载地理位置数据的插件。"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
 #, kde-format
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON 文件"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "KML File Parser"
-msgstr "OSM 文件解析器"
+msgstr "KML 文件解析器"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
-msgstr "从 OSM 文件创建地理数据文档"
+msgstr "用于从 KML 和 KMZ 格式的文件中加载地理位置数据的插件。"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
 #, kde-format
 msgid "Google Earth KML"
-msgstr ""
+msgstr "Google Earth KML 文件"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:25
 #, kde-format
@@ -55347,12 +55333,12 @@ msgid "OpenStreetMap Nominatim"
 msgstr "OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
-#, fuzzy, kde-format
-#| msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
+#, kde-format
 msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
-msgstr "使用 OpenStreetMap Nominatim 服务进行在线反向地理编码"
+msgstr ""
+"用于通过 OpenStreetMap Nominatim 在线服务进行在线反向地理编码处理的插件。"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:21
 #, kde-format
@@ -55361,10 +55347,11 @@ msgstr "OSM 文件解析器"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#| msgid ""
+#| "A plugin to load Geolocation Data from the OpenSteetMap data file format."
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
-msgstr "从 OSM 文件创建地理数据文档"
+msgstr "用于从 OpenSteetMap 格式的文件中加载地理位置数据的插件。"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, kde-format
@@ -55372,41 +55359,38 @@ msgid "OpenStreetMap Data"
 msgstr "OpenStreetMap 数据"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Pn2 File Parser"
-msgstr "OSM 文件解析器"
+msgstr "PN2 文件解析器"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
-msgstr "从 OSM 文件创建地理数据文档"
+msgstr "用于从 PNT 压缩格式的文件中加载地理位置数据的插件。"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
 #, kde-format
 msgid "Compressed Pnt"
-msgstr ""
+msgstr "压缩的 PNT 文件"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Pnt File Parser"
-msgstr "OSM 文件解析器"
+msgstr "PNT 文件解析器"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
-msgstr "从 OSM 文件创建地理数据文档"
+msgstr ""
+"用于从 Micro World Database II 压缩格式的文件中加载地理位置数据的插件。"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
 msgid "Micro World Database II"
-msgstr ""
+msgstr "Micro World Database II"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -55517,10 +55501,9 @@ msgstr ""
 "p>"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
-#, fuzzy, kde-format
-#| msgid "Units:"
+#, kde-format
 msgid "Units"
-msgstr "单位："
+msgstr "单位"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
 #, kde-format
@@ -55542,12 +55525,10 @@ msgstr "海里、节"
 msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
 "mi, ft)."
-msgstr ""
+msgstr "用于测量海拔、长度和距离的单位 (例如千米、英里、英尺)。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Angle:"
+#, kde-format
 msgid "Angle:"
 msgstr "角度："
 
@@ -55573,18 +55554,19 @@ msgid ""
 "By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
+"指定角度坐标的显示方式。\n"
+"默认使用“度-分-秒”方式 (例如 54°30'00\" )。\n"
+"您也可以改为使用小数点方式 (例如 54.5°)。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
-#, fuzzy, kde-format
-#| msgid "Map &Quality"
+#, kde-format
 msgid "Map Quality"
-msgstr "地图画质(&Q)"
+msgstr "地图画质"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
-#, fuzzy, kde-format
-#| msgid "&Still image:"
+#, kde-format
 msgid "Still Image:"
-msgstr "静止图像(&S)："
+msgstr "静止图像："
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
@@ -55622,12 +55604,13 @@ msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
 "Usually this allows for high map quality as speed is no concern."
 msgstr ""
+"指定在没有用户输入时显示的地图画质。\n"
+"如果您不关心程序的运行速度，可以通过此选项提高地图的画质。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
-#, fuzzy, kde-format
-#| msgid "During &animations:"
+#, kde-format
 msgid "During Animations:"
-msgstr "动画过程中(&A)："
+msgstr "动画过程中："
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:153
 #, kde-format
@@ -55637,6 +55620,8 @@ msgid ""
 "advisable to set this option to \"low quality\" as this will give better "
 "speed."
 msgstr ""
+"指定在地图动画过程中 (例如在拖动地球仪时) 显示的地图画质。\n"
+"在性能较低的设备上，将此选项设为“低画质”将改善响应速度。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
 #, kde-format
@@ -55644,10 +55629,9 @@ msgid "Mouse Behavior"
 msgstr "鼠标行为"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
-#, fuzzy, kde-format
-#| msgid "&Inertial globe rotation"
+#, kde-format
 msgid "Inertial Globe Rotation"
-msgstr "惯性旋转(&I)"
+msgstr "惯性旋转"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
 #, kde-format
@@ -55655,10 +55639,9 @@ msgid "Use kinetic spinning when dragging the map"
 msgstr "拖动地图时使用动态旋转"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
-#, fuzzy, kde-format
-#| msgid "&Mouse view rotation"
+#, kde-format
 msgid "Mouse View Rotation"
-msgstr "鼠标视图旋转(&M)"
+msgstr "鼠标视图旋转"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:169
 #, kde-format
@@ -55666,27 +55649,12 @@ msgid "Use right mouse button to rotate the camera around"
 msgstr "使用鼠标右键旋转视角"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
-#, fuzzy, kde-format
-#| msgid "C&ache"
+#, kde-format
 msgid "Cache"
-msgstr "缓存(&A)"
+msgstr "缓存"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:177
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#| "font-weight:400; font-style:normal;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches "
-#| "being used for Marble: The physical memory which is needed to keep map "
-#| "data in the computer's memory. Increasing the value will make the "
-#| "application more responsive. The hard disc memory cache is used by "
-#| "download contents from the Internet (e.g. Wikipedia data or map data). "
-#| "Decrease this value if you want to save space on the hard disc and if "
-#| "high usage of the Internet is not an issue. </p></body></html>"
+#, kde-format
 msgid ""
 "There are two caches being used:\n"
 "The \"physical memory\" which is needed to keep map data in the computer's "
@@ -55697,36 +55665,28 @@ msgid ""
 "Decrease this value if you want to save space on the hard disc\n"
 "and if high usage of the Internet is not an issue."
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble 使用两种缓存方式：物"
-"理内存缓存会将地图数据保存在计算机的内存中，增大此数值将使程序运行更加流畅。"
-"硬盘缓存用于保存从互联网下载的内容 (例如维基百科数据和地图数据)，减小此数值将"
-"减少硬盘空间的占用，但也会增加对互联网数据流量的依赖。</p></body></html>"
+"程序会使用两种缓存：\n"
+"“物理内存”用于将地图数据暂存在电脑的运行内存中。\n"
+"提高此值有助于改善程序的响应速度。\n"
+"“磁盘缓存”用于保留从联网下载到的地图数据。\n"
+"降低此值有助于减少硬盘存储空间的消耗，\n"
+"但也会造成数据的反复下载，消耗更多流量。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
-#, fuzzy, kde-format
-#| msgid "&Physical memory:"
+#, kde-format
 msgid "Physical Memory:"
-msgstr "物理内存(&P)："
+msgstr "物理内存："
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:189
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@action: search bar"
-#| msgid "Clear"
+#, kde-format
 msgid "Clear"
 msgstr "清除"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
-#, fuzzy, kde-format
-#| msgid "&Hard disc:"
+#, kde-format
 msgid "Hard Disc:"
-msgstr "硬盘(&H)："
+msgstr "硬盘缓存："
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:207
 #, kde-format
@@ -55734,10 +55694,9 @@ msgid "Map Contents"
 msgstr "地图内容"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
-#, fuzzy, kde-format
-#| msgid "Default &font:"
+#, kde-format
 msgid "Default Font:"
-msgstr "默认字体(&F)："
+msgstr "默认字体："
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
 #, kde-format
@@ -55746,12 +55705,14 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"地图使用的默认字体。\n"
+"此设定只在世界地图和卫星地图中生效，\n"
+"而在 OSM 地图中无效。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
-#, fuzzy, kde-format
-#| msgid "Coordinate Grid"
+#, kde-format
 msgid "Show Coordinate Grid"
-msgstr "坐标网格"
+msgstr "显示坐标网格"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:216
 #, kde-format
@@ -55760,12 +55721,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"显示世界地图的坐标网格叠加层。\n"
+"此设置只在世界地图、卫星地图\n"
+"和 OSM 地图中生效。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
-#, fuzzy, kde-format
-#| msgid "Crosshairs"
+#, kde-format
 msgid "Show Cross-Hair"
-msgstr "十字准星"
+msgstr "显示十字准星"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:221
 #, kde-format
@@ -55774,11 +55737,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"显示位于地图画面的中心的十字准星。\n"
+"此设置只在世界地图、卫星地图\n"
+"和 OSM 地图中生效。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
 #, kde-format
 msgid "Show Atmospheric Glow"
-msgstr ""
+msgstr "显示大气层光晕"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:226
 #, kde-format
@@ -55787,12 +55753,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"显示世界地图的大气层光晕叠加层。\n"
+"此设置只在世界地图、卫星地图\n"
+"和 OSM 地图中生效。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
-#, fuzzy, kde-format
-#| msgid "Show on right panel"
+#, kde-format
 msgid "Show Night Shadow"
-msgstr "显示到右视图"
+msgstr "显示夜晚阴影"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:231
 #, kde-format
@@ -55801,11 +55769,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"显示世界地图的夜晚阴影叠加层。\n"
+"此设置只在世界地图、卫星地图\n"
+"和 OSM 地图中生效。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
 #, kde-format
 msgid "Show City Place Mark"
-msgstr ""
+msgstr "显示城市地点标记"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:236
 #, kde-format
@@ -55814,12 +55785,14 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"显示世界地图的城市地点叠加层。\n"
+"此设置只在世界地图、卫星地图中生效\n"
+"在 OSM 地图中无效。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
-#, fuzzy, kde-format
-#| msgid "Show Preview"
+#, kde-format
 msgid "Show Relief"
-msgstr "显示预览"
+msgstr "显示地形起伏"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:241
 #, kde-format
@@ -55828,30 +55801,29 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"地形起伏叠加层。\n"
+"此设置只在世界地图、卫星地图中生效\n"
+"在 OSM 地图中无效。"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
-#, fuzzy, kde-format
-#| msgid "Marble View"
+#, kde-format
 msgid "Map View"
-msgstr "Marble 地图视图"
+msgstr "地图视图"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
-#, fuzzy, kde-format
-#| msgid "Marble Plugins"
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
+#, kde-format
 msgid "Map Plugins"
-msgstr "Marble 地图插件"
+msgstr "地图插件"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Border Tool"
+#, kde-format
 msgid "Render Tools"
-msgstr "边框工具"
+msgstr "渲染工具"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:83
-#, fuzzy, kde-format
-#| msgid "Shear Tool"
+#, kde-format
 msgid "Runner Tools"
-msgstr "斜切变形工具"
+msgstr "运行器工具"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -64572,10 +64544,17 @@ msgid "API Key:"
 msgstr "API 密钥："
 
 #: core/utilities/setup/setupgeolocation.cpp:114
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Google Maps requires to work friendly an API key that end users must buy "
+#| "online to gain credentials. Without this key, Google Maps is still usable "
+#| "but with an overlay frame annotated \"For Development Only\". For more "
+#| "information, see this <a href='https://mapsplatform.google.com/"
+#| "pricing/'>Google page</a> about usages, practices, and prices."
 msgctxt "@info"
 msgid ""
-"Google Maps requires to work friendly an API key that end users must buy "
+"To work friendly, Google Maps requires an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
 "but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"
@@ -65471,178 +65450,8 @@ msgstr "您想要重置所有视频设置为默认值吗？"
 #~ msgid "Whole tags collection"
 #~ msgstr "整个标签集合"
 
-#, fuzzy
-#~| msgid "Cannot create directory %1"
 #~ msgid "Cannot generate output video %1"
-#~ msgstr "无法创建目录“%1”"
+#~ msgstr "无法生成输出视频 %1"
 
 #~ msgid "Output video is %1"
 #~ msgstr "输出视频为 %1"
-
-#~ msgid "Failed to open video encoder"
-#~ msgstr "无法打开视频编码器"
-
-#, fuzzy
-#~| msgid "Failed to open video encoder"
-#~ msgid "Failed to open audio encoder"
-#~ msgstr "无法打开视频编码器"
-
-#~ msgid "Failed to open muxer"
-#~ msgstr "无法打开混流器"
-
-#, fuzzy
-#~| msgid "Create GeoDataDocument from Osm Files"
-#~ msgid "A plugin to create Geolocation Data Document from Osm Files"
-#~ msgstr "从 OSM 文件创建地理数据文档"
-
-#, fuzzy
-#~| msgid "Create GeoDataDocument from Osm Files"
-#~ msgid "Create GeoDataDocument from Pnt Files"
-#~ msgstr "从 OSM 文件创建地理数据文档"
-
-#~ msgctxt "@title:window"
-#~ msgid "Javascript Message"
-#~ msgstr "Javascript 消息"
-
-#~ msgid " by "
-#~ msgstr " 作者 "
-
-#~ msgid "About Plugin"
-#~ msgstr "关于插件"
-
-#~ msgid ""
-#~ "<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
-#~ "p><p><u>Description:</u> %4</p>"
-#~ msgstr ""
-#~ "<p><u>名称：</u> %1</p><p><u>版本：</u> %2</p><p><u>版权：</u> %3</"
-#~ "p><p><u>描述：</u> %4</p>"
-
-#~ msgid "&Units"
-#~ msgstr "单位(&U)"
-
-#~ msgid "An&gle:"
-#~ msgstr "角度(&G)："
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used "
-#~ "to measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></"
-#~ "html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">用于测量海拔、长度和距离"
-#~ "的单位 (例如千米、英里、英尺等)。</p></body></html>"
-
-#~ msgid "&Distance:"
-#~ msgstr "距离(&D)："
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation "
-#~ "of angles in coordinates: By default the Degree-Minute-Second notation (e."
-#~ "g. 54°30'00\" ) gets used. As an alternative you can choose decimal "
-#~ "degrees (e.g. 54.5°).</p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">指定经纬度坐标中角度的标"
-#~ "记方式：默认使用度-分-秒法 (例如 54°30'00\")。 您还可以选用小数点角度 (例"
-#~ "如 54.5°)。</p></body></html>"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
-#~ "quality that gets displayed while there is no user input. Usually this "
-#~ "allows for high map quality as speed is no concern.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">指定没有用户输入时显示的"
-#~ "地图画质。由于地图静止不必考虑绘制速度，一般可使用高画质地图。</p></"
-#~ "body></html>"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
-#~ "quality that gets displayed during map animations (e.g. while dragging "
-#~ "the globe). </p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-#~ "machines it is advisable to set this option to \"low quality\" as this "
-#~ "will give better speed.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">指定在动画绘制过程中 (例"
-#~ "如拖动地球仪时) 的地图画质。</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">在性能较低的设备上运行"
-#~ "时，建议将此选项设为“低画质”，以避免发生拖慢现象。</p></body></html>"
-
-#~ msgid "Unlimited"
-#~ msgstr "不限制"
-
-#~ msgid "C&lear"
-#~ msgstr "清除(&l)"
-
-#~ msgid "Cl&ear"
-#~ msgstr "清除(&E)"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that "
-#~ "gets used on the map.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">地图使用的默认字体。</"
-#~ "p></body></html>"
-
-#~ msgid "Show Grid"
-#~ msgstr "显示网格"

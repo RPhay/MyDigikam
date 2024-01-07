@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 00:39+0000\n"
+"POT-Creation-Date: 2024-01-07 00:39+0000\n"
 "PO-Revision-Date: 2024-01-03 10:32+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -41924,6 +41924,24 @@ msgstr "Par défaut selon le bureau"
 msgid "Preparing %1 Done"
 msgstr "Encodage %1 terminé"
 
+#: core/libs/video/manager/vidslidethread.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Loading cameras..."
+msgid "Encoding frames..."
+msgstr "Chargement des appareils photo…"
+
+#: core/libs/video/manager/vidslidethread.cpp:84
+#, kde-format
+msgid "Encoding done."
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:88
+#, fuzzy, kde-format
+#| msgid "Error while opening the source database."
+msgid "Error while encoding frames!"
+msgstr "Problème lors de l'ouverture de la base de données source."
+
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
@@ -58304,7 +58322,7 @@ msgstr ""
 msgid "Map View"
 msgstr "Composant graphique Marble"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
 #, fuzzy, kde-format
 #| msgctxt "imageplugins shortcuts"
 #| msgid "Image Plugins"
@@ -67647,10 +67665,17 @@ msgid "API Key:"
 msgstr "Clé de l'API :"
 
 #: core/utilities/setup/setupgeolocation.cpp:114
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Google Maps requires to work friendly an API key that end users must buy "
+#| "online to gain credentials. Without this key, Google Maps is still usable "
+#| "but with an overlay frame annotated \"For Development Only\". For more "
+#| "information, see this <a href='https://mapsplatform.google.com/"
+#| "pricing/'>Google page</a> about usages, practices, and prices."
 msgctxt "@info"
 msgid ""
-"Google Maps requires to work friendly an API key that end users must buy "
+"To work friendly, Google Maps requires an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
 "but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"

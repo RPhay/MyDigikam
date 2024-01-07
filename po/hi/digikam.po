@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 00:39+0000\n"
+"POT-Creation-Date: 2024-01-07 00:39+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -39638,6 +39638,23 @@ msgstr ""
 msgid "Preparing %1 Done"
 msgstr "एलबम संग्रह"
 
+#: core/libs/video/manager/vidslidethread.cpp:73
+#, fuzzy, kde-format
+msgid "Encoding frames..."
+msgstr "कैमरा लोड किया जा रहा है"
+
+#: core/libs/video/manager/vidslidethread.cpp:84
+#, kde-format
+msgid "Encoding done."
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:88
+#, fuzzy, kde-format
+msgid "Error while encoding frames!"
+msgstr ""
+"डाटाबेस बैकएण्ड खोलने में त्रुटि.\n"
+" "
+
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
@@ -56557,7 +56574,7 @@ msgstr ""
 msgid "Map View"
 msgstr "संगमरमर 2"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
 #, fuzzy, kde-format
 msgid "Map Plugins"
 msgstr "छवि फ़ाइलें"
@@ -65064,7 +65081,7 @@ msgstr "यूआरएल:"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Google Maps requires to work friendly an API key that end users must buy "
+"To work friendly, Google Maps requires an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
 "but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"

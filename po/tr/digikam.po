@@ -52,8 +52,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 00:39+0000\n"
-"PO-Revision-Date: 2024-01-05 14:44+0300\n"
+"POT-Creation-Date: 2024-01-07 00:39+0000\n"
+"PO-Revision-Date: 2024-01-06 14:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -27760,30 +27760,24 @@ msgid "Tags (0)"
 msgstr "Etiketler (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Albums"
+#, kde-format
 msgctxt "@option"
 msgid "All albums"
-msgstr "Tüm Albümler"
+msgstr "Tüm albümler"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive"
-msgstr "Özyineli seçim"
+msgstr "Özyineli"
 
 #: core/libs/album/widgets/albumselectors.cpp:182
 #: core/libs/album/widgets/albumselectors.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
-msgstr "Özyineli seçim"
+msgstr "Özyineli seçim."
 
 #: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
@@ -27804,12 +27798,10 @@ msgid "Reset selected albums"
 msgstr "Seçili albümleri sıfırla"
 
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Tags"
+#, kde-format
 msgctxt "@option"
 msgid "All tags"
-msgstr "Tüm Etiketler"
+msgstr "Tüm etiketler"
 
 #: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
@@ -28853,6 +28845,10 @@ msgid ""
 "the default and recommended backend for collections with less than 100K "
 "items.</p>"
 msgstr ""
+"<p>Veritabanı arka ucu türünü burada seçin.</p><p><b>SQlite</b> arka ucu, "
+"küçük veya orta koleksiyon boyutlarına sahip yerel veritabanı depolaması "
+"içindir. 100.000'den az öge içeren koleksiyonlar için öntanımlı ve önerilen "
+"arka uçtur.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:80
 #, kde-format
@@ -28861,6 +28857,9 @@ msgid ""
 "collection sizes. This backend is recommend for local collections with more "
 "than 100K items.</p>"
 msgstr ""
+"<p><b>MySQL İçsel</b> arka ucu, büyük koleksiyon boyutlarına sahip yerel "
+"veritabanı depolaması içindir. Bu arka uç, 100.000'den fazla öge içeren "
+"yerel koleksiyonlar için önerilir.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:85
 #, kde-format
@@ -28869,19 +28868,12 @@ msgid ""
 "remote and shared database storage. It is also more efficient to manage huge "
 "collection sizes with more than 100K items.</p>"
 msgstr ""
+"<p><b>MySQL Sunucu</b> arka ucu, özellikle uzak ve paylaşılan veritabanı "
+"depolaması için daha sağlam bir çözümdür. Ayrıca 100.000'den fazla öge "
+"içeren devasa koleksiyon boyutlarını yönetmek de daha verimlidir.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are three databases: one for all collections properties, "
-#| "one to store compressed thumbnails, and one to store faces recognition "
-#| "metadata.<br/>Write access is required to be able to edit image "
-#| "properties.</p><p>Databases are digiKam core engines. Take care to use a "
-#| "place hosted by fast hardware (as SSD) with enough free space especially "
-#| "for thumbnails database.</p><p>Note: a remote file system such as NFS, "
-#| "cannot be used here. For performance reasons, it's also recommended not "
-#| "to use removable media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -28893,21 +28885,21 @@ msgid ""
 "file system such as NFS, cannot be used here. For performance reasons, it is "
 "also recommended not to use network storage media.</p><p></p>"
 msgstr ""
-"<p>Burada veritabanı dosyalarının sisteminizde depolanacağı konumu "
-"ayarlayın. Üç veri tabanı vardır: biri tüm derleme özellikleri, diğeri "
-"sıkıştırılmış küçük resimleri depolamak ve bir tanesi de yüz tanıma meta "
-"verilerini saklamak içindir.<br/>Resim özelliklerini düzenleyebilmek için "
-"yazma erişimi gereklidir.</p><p>Veritabanları digiKam çekirdek motorlarıdır. "
-"Özellikle küçük resim dosyaları için yeterli boş alana sahip hızlı bir "
-"donanım (SSD gibi) tarafından barındırılan bir yeri kullanmaya özen gösterin."
-"</p><p>Not: NFS gibi uzak bir dosya sistemi burada kullanılamaz. Performans "
-"nedenleriyle kaldırılabilir medya kullanmaması önerilir.</p><p></p>"
+"<p>Veritabanı dosyalarının sisteminizde saklanacağı konumu burada ayarlayın. "
+"Dört veritabanı vardır: Biri tüm koleksiyon özellikleri için, biri "
+"sıkıştırılmış küçük görselleri depolamak için, biri yüz tanıma üst verisini "
+"depolamak için ve biri de benzerlik parmak izlerini depolamak içindir.<br/"
+">Görsel özelliklerini düzenleyebilmek için yazma erişimi gereklidir.</"
+"p><p>Veritabanları, digiKam çekirdek işletkeleridir. Özellikle küçük görsel "
+"veritabanı için hızlı donanımların barındırdığı (örn. SSD veya NVMe) yeterli "
+"boş alana sahip bir yer kullanmaya özen gösterin.</p><p>Not: NFS gibi uzak "
+"bir dosya sistemi burada kullanılamaz. Başarım nedeniyle ağ depolama "
+"ortamının kullanılması da önerilmez.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
-#, fuzzy, kde-format
-#| msgid "Add information from the database"
+#, kde-format
 msgid "Enable WAL mode for the databases"
-msgstr "Veritabanından bilgi ekle"
+msgstr "Veritabanları için WAL kipini etkinleştir"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:114
 #, kde-format
@@ -28915,6 +28907,8 @@ msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
 "supported systems."
 msgstr ""
+"WAL (Önden Yazılan Günlük) kipi, desteklenen sistemlerde önemli ölçüde "
+"hızlıdır."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
 #, kde-format
@@ -28926,6 +28920,12 @@ msgid ""
 "before the changes are written to the database. This made database requests "
 "atomic and robust in extensive and critical use cases."
 msgstr ""
+"Önden Yazılan Günlük, işlenen ancak henüz veritabanlarına uygulanmamış "
+"işlemleri kaydeden bir ileri sarma günlüğü kullanma kipidir. Bir çökme "
+"sırasında kurtarma işlemlerine yönelik yapıları barındırmak için "
+"günlükleştirilmiş yardımcı bir dosya kullanır. Değişiklikler veritabanına "
+"yazılmadan önce ilk olarak günlüğe kaydedilir. Bu, veritabanı isteklerinin "
+"kapsamlı ve kritik kullanım durumlarında atomik ve sağlam olmasını sağlar."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:131
 #, kde-format
@@ -28934,57 +28934,50 @@ msgid ""
 "digiKam will try to find these binaries automatically if they are already "
 "installed on your computer.</p>"
 msgstr ""
-"<p>Burada, MySQL ikili araçlarının bulunduğu konumları "
-"yapılandırabilirsiniz. digiKam, bilgisayarınızda halihazırda kuruluysa bu "
-"ikili dosyaları otomatik olarak bulmaya çalışır.</p>"
+"<p>Burada MySQL ikili araçlarının bulunduğu konumları yapılandırabilirsiniz. "
+"digiKam, bilgisayarınızda halihazırda kuruluysa bu ikili dosyaları "
+"kendiliğinden bulmaya çalışacaktır.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:140
 #, kde-format
 msgctxt "@title:group"
 msgid "MySQL Binaries"
-msgstr "MySQL İkili Değerleri"
+msgstr "MySQL İkilileri"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:181
 #, kde-format
 msgid "Host Name:"
-msgstr "Sunucu Adı:"
+msgstr "Makine adı:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
 #, kde-format
 msgid "Set the host computer name"
-msgstr "Ana makina adını ayarla"
+msgstr "Ana makine adını ayarla"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "This is the computer name running MySQL server.\n"
-#| "This can be \"localhost\" for a local server, or the network computer\n"
-#| " name (or IP address) in case of remote computer."
+#, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
 "This can be \"localhost\" for a local server, or the network computer\n"
 "name (or IP address) in case of remote computer."
 msgstr ""
-"Bu MySQL sunucusunu çalıştıran bilgisayarın adıdır.\n"
-"Bu yerel bir sunucu için \"localhost\" ya da bir ağ bilgisayarı olabilir\n"
-" bilgisayarı uzaktan kontrol etme durumu için isim (ya da IP adresi)."
+"Bu, MySQL sunucusunu çalıştıran bilgisayarın adıdır.\n"
+"Bu, yerel bir sunucu için \"localhost\" veya uzak bilgisayar\n"
+"olması durumunda ağ bilgisayarının adı (veya IP adresi) olabilir."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:189
-#, fuzzy, kde-format
-#| msgid ""
-#| "<a href=\"http://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
-#| "\">Connect options:</a>"
+#, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
 "\">Connect options:</a>"
 msgstr ""
-"<a href=\"http://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
-"\">Bağlanma seçenekleri:</a>"
+"<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
+"\">Bağlantı seçenekleri:</a>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:193
 #, kde-format
 msgid "Set the database connection options"
-msgstr "Veritabanı bağlantı seçeneklerini ayarlayın"
+msgstr "Veritabanı bağlantı seçeneklerini ayarla"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
 #, kde-format
@@ -28993,7 +28986,7 @@ msgid ""
 "For advanced users only."
 msgstr ""
 "MySQL sunucusu bağlantı seçeneklerini ayarlayın.\n"
-"Yalnızca deneyimli kullanıcılar içindir."
+"Yalnızca ileri düzey kullanıcılar içindir."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:197
 #, kde-format
@@ -29003,15 +28996,10 @@ msgstr "Kullanıcı:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
 #, kde-format
 msgid "Set the database account name"
-msgstr "Veritabanı hesap adını ayarlayın"
+msgstr "Veritabanı hesap adını ayarla"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set the MySQL server account name used\n"
-#| "by digiKam to be connected to the server.\n"
-#| "This account must be available on the remote MySQL server when database "
-#| "have been created."
+#, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
 "by digiKam to be connected to the server.\n"
@@ -29019,9 +29007,9 @@ msgid ""
 "MySQL server when database have been created."
 msgstr ""
 "Sunucuya bağlanmak için digiKam tarafından\n"
-"Kullanılan MySQL sunucu hesap adını ayarlayın.\n"
-"Veritabanı oluşturulduğu zaman bu hesap uzak MySQL sunucusunda mevcut "
-"olmalıdır."
+"kullanılan MySQL sunucu hesap adını ayarlayın.\n"
+"Veritabanı oluşturulduğunda bu hesabın uzak\n"
+"MySQL sunucusunda kullanılabilir olması gerekir."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:207
 #, kde-format
@@ -29031,13 +29019,14 @@ msgid ""
 "You can left this field empty to use an account set without password."
 msgstr ""
 "Sunucuya bağlanmak için digiKam tarafından\n"
-"Kullanılan MySQL sunucu hesabı şifresini ayarlayın.\n"
-"Parola olmadan bir hesap kümesi kullanmak için bu alanı boş bırakabilirsiniz."
+"kullanılan MySQL sunucu hesap parolasını ayarlayın.\n"
+"Veritabanı oluşturulduğunda bu hesabın uzak\n"
+"MySQL sunucusunda kullanılabilir olması gerekir."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:213
 #, kde-format
 msgid "Host Port:"
-msgstr "Ana MakineBağlantı Noktası:"
+msgstr "Makine kapısı:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:215
 #, kde-format
@@ -29045,14 +29034,13 @@ msgid ""
 "Set the host computer port.\n"
 "Usually, MySQL server use port number 3306 by default"
 msgstr ""
-"Ana bilgisayar bağlantı noktasını ayarlayın.\n"
-"Genellikle, MySQL sunucusu öntanımlı olarak 3306 numaralı bağlantı noktası "
-"numarasını kullanır"
+"Ana bilgisayar kapısını ayarlayın.\n"
+"Genellikle MySQL sunucusu öntanımlı olarak 3306 numaralı kapıyı kullanır"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:220
 #, kde-format
 msgid "Check Connection"
-msgstr "Bağlantıyı Kontrol Et"
+msgstr "Bağlantıyı Denetle"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, kde-format
@@ -29061,12 +29049,12 @@ msgid ""
 "suitable."
 msgstr ""
 "Geçerli MySQL sunucu ayarlarının uygun olup olmadığını görmek için temel bir "
-"veritabanı bağlantısını çalıştırın."
+"veritabanı bağlantısı çalıştırın."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:228
 #, kde-format
 msgid "Core Db Name:"
-msgstr "Çekirdek Veritabanı Adını Ayarlayın:"
+msgstr "Çekirdek veritabanı adı:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
 #, kde-format
@@ -29079,28 +29067,22 @@ msgid ""
 "The core database is lead digiKam container used to store\n"
 "albums, items, and searches metadata."
 msgstr ""
-"Çekirdek veritabanı albüm, öge saklayan ve metaverileri arayan\n"
-"önde gelen digiKam kapsayıcısıdır."
+"Çekirdek veritabanı; albümleri, ögeleri depolamak ve\n"
+"üst veriyi aramak için kullanılan öncü digiKam kapsayıcısıdır."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:235
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:588
 #, kde-format
 msgid "Thumbs Db Name:"
-msgstr "Küçük Resim Veritabanı Adı:"
+msgstr "Küçük görsel veritabanı adı:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
-#, fuzzy, kde-format
-#| msgid "Set the thumbnails database name"
+#, kde-format
 msgid "Set the thumbnails database name or folder"
-msgstr "Küçük resimler veritabanı adını ayarla"
+msgstr "Küçük görseller veritabanı adını veya klasörünü ayarla"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
-#, fuzzy, kde-format
-#| msgid ""
-#| "The thumbnails database is used by digiKam to host\n"
-#| "image thumbs with wavelets compression images.\n"
-#| "This one can use quickly a lots of space,\n"
-#| "especially if you have huge collections."
+#, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
 "image thumbs with wavelets compression images.\n"
@@ -29108,15 +29090,16 @@ msgid ""
 "especially if you have huge collections.\n"
 "Choose a local folder to use a SQLite database."
 msgstr ""
-"Küçük resim veritabanı, digiKam tarafından\n"
-"resim küçük resimlerini dalgacık sıkıştırma resimleri\n"
-"için kullanılıyor. Eğer büyük koleksiyonlarınız varsa\n"
-"bu yöntem çok fazla yer kullanır."
+"Küçük görsel veritabanı, digiKam tarafından küçük görsel\n"
+"dosyalarını dalgacık sıkıştırmalı görsellerle barındırmak\n"
+"için kullanılır. Bu, özellikle büyük koleksiyonlarınız varsa\n"
+"birdenbire çok fazla alan kullanabilir. Bir SQLite veritabanı\n"
+"kullanmak için yerel bir klasör seçin."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:246
 #, kde-format
 msgid "Face Db Name:"
-msgstr "Yüz Veritabanı Adı:"
+msgstr "Yüz veritabanı adı:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
 #, kde-format
@@ -29131,22 +29114,20 @@ msgid ""
 "This one can use quickly a lots of space, especially\n"
 "if you a lots of image with people faces detected and tagged."
 msgstr ""
-"Yüz veritabanı digiKam tarafından yüz tanıma işlemine adanmış\n"
-"resim histogramlarını barındırmak için kullanılır.\n"
-"Bu hızlı bir şekilde çok fazla alan, kullanabilir, özellikle\n"
-"Çok miktarda insan yüzü algılanmış ve etiketlenmiş resim var ise."
+"Yüz veritabanı, digiKam tarafından yüz tanıma sürecine ayrılmış\n"
+"görsel histogramlarını barındırmak için kullanılır. Bu, özellikle\n"
+"insan yüzlerinin algılandığı ve etiketlendiği çok sayıda görsel\n"
+"varsa birdenbire çok fazla alan kullanabilir."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
-#, fuzzy, kde-format
-#| msgid "Similarity range:"
+#, kde-format
 msgid "Similarity Db Name:"
-msgstr "Benzerlik aralığı:"
+msgstr "Benzerlik veritabanı adı:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
-#, fuzzy, kde-format
-#| msgid "Set the core database name"
+#, kde-format
 msgid "Set the similarity database name"
-msgstr "Çekirdek veritabanı adını ayarla"
+msgstr "Benzerlik veritabanı adını ayarla"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
 #, kde-format
@@ -29154,6 +29135,8 @@ msgid ""
 "The similarity database is used by digiKam to host\n"
 "image Haar matrix data for the similarity search."
 msgstr ""
+"Benzerlik veritabanı, digiKam tarafından benzerlik araması için görsel Haar "
+"matris verisini barındırmak amacıyla kullanılır."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:262
 #, kde-format
@@ -29163,26 +29146,20 @@ msgstr "Öntanımlı Ayarlar"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
 #, kde-format
 msgid "Reset database names settings to common default values."
-msgstr "Veritabanı isim ayarlarını öntanımlı yaygın değerlere sıfırla."
+msgstr "Veritabanı adı ayarlarını öntanımlı yaygın değerlere sıfırlayın."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:282
 #, kde-format
 msgid "Remote Server Settings"
-msgstr "Sunucu Ayarlarını Uzaktan Yönet"
+msgstr "Uzak Sunucu Ayarları"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
 #, kde-format
 msgid "Database Server Instructions"
-msgstr "Veritabanı Sunucusu Talimatları"
+msgstr "Veritabanı Sunucusu Yönergeleri"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>digiKam expects that database is already created with a dedicated user "
-#| "account. This user name <i>digikam</i> will require full access to the "
-#| "database.<br>If your database is not already set up, you can use the "
-#| "following SQL commands (after replacing the <b><i>password</i></b> with "
-#| "the correct one).<br>"
+#, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
 "account. This user name <i>digikam</i> will require full access to the "
@@ -29190,22 +29167,14 @@ msgid ""
 "following SQL commands (after replacing the <b><i>password</i></b> with the "
 "correct one).</p>"
 msgstr ""
-"<p>digiKam, veritabanının zaten özel bir kullanıcı hesabı ile "
-"oluşturulduğunu düşünüyor. Bu kullanıcı adı <i>digikam</i> veritabanına tam "
-"erişim gerektirir.<br>Veritabanı henüz kurulmadıysa aşağıdaki SQL "
-"komutlarını kullanabilirsiniz (<b><i>parolayı</i></b> doğru olan ile "
-"değiştirdikten sonra).<br>"
+"<p>digiKam, veritabanının halihazırda özel bir kullanıcı hesabıyla "
+"oluşturulmuş olmasını bekler. Bu kullanıcı adı <i>digikam</i>, veritabanına "
+"tam erişim gerektirecektir.<br/>Veritabanınız henüz ayarlanmadıysa aşağıdaki "
+"SQL komutlarını kullanabilirsiniz (<b><i>password</i></b>'ü doğrusuyla "
+"değiştirdikten sonra).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have an enormous collection, you should "
-#| "start MySQL server with mysql --max_allowed_packet=128M OR in my.ini or "
-#| "~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29217,13 +29186,16 @@ msgid ""
 "If you have an enormous collection, you should start MySQL server with mysql "
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
-"<p>Not: Bir Linux sunucusuyla, bir veritabanı aşağıdaki komutlarla "
+"<p>Not: Linux sunucularında, bir veritabanı aşağıdaki komutlarla "
 "ilklendirilebilir:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
 "-u root</p><p>...</p><p>digiKam veritabanlarını ayrıcalıklarla ilklendirmek "
-"için MySQL istemine SQL kodunu girin (arkaya bak)</p><p>...</p><p>quit</"
-"p><p>NOT: Devasa bir koleksiyonunuz varsa my.ini'de veya ~/.my.cnf'de MySQL "
-"sunucusunu mysql --max_allowed_packet=128M OR ile başlatıp ayarları "
-"değiştirin</p>"
+"için MySQL istemine SQL kodunu girin (arkaya bakın)</p><p>...</p><p>çık</"
+"p><p>NOT: Ubuntu tabanlı bir Linux dağıtımında MySQL sunucularıyla "
+"sorunlarınız varsa MySQL tetikleyicilerini oluşturabilmek için toplama "
+"komutunu kullanın.<br>SET GLOBAL log_bin_trust_function_creators=1;</"
+"p><p>NOT: Devasa bir koleksiyonunuz varsa MySQL sunucusunu mysql --"
+"max_allowed_packet=128M OR in my.ini veya ~/.my.cnf ile başlatıp ayarları "
+"değiştirmelisiniz</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
 #, kde-format
@@ -29233,28 +29205,10 @@ msgstr "Gereksinimler"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:329
 #, kde-format
 msgid "Database Server Technical Details"
-msgstr "Veritabanı Sunucusu Teknik Detayları"
+msgstr "Veritabanı Sunucusu Teknik Ayrıntıları"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:331
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Use this configuration view to set all information to be connected to "
-#| "a remote <a href=\"https://en.wikipedia.org/wiki/MySQL\">Mysql database "
-#| "server</a> (or <a href=\"https://en.wikipedia.org/wiki/MariaDB\">MariaDB</"
-#| "a>) through a network. As with Sqlite or MySQL internal server, 3 "
-#| "databases will be stored on the remote server: one for all collections "
-#| "properties, one to store compressed thumbnails, and one to store faces "
-#| "recognition metadata.</p><p>Unlike Sqlite or MySQL internal server, you "
-#| "can customize the database names to simplify your backups.</"
-#| "p><p>Databases are digiKam core engines. To prevent performance issues, "
-#| "take a care to use a fast network link between the client and the server "
-#| "computers. It's also recommended to host database files on fast hardware "
-#| "(as <a href=\"https://en.wikipedia.org/wiki/Solid-state_drive\">SSD</a>) "
-#| "with enough free space, especially for thumbnails database, even if data "
-#| "are compressed using wavelets image format <a href=\"https://en.wikipedia."
-#| "org/wiki/Progressive_Graphics_File\">PGF</a>.</p><p>The databases must be "
-#| "created previously on the remote server by the administrator. Look in "
-#| "<b>Requirements</b> tab for details.</p>"
+#, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
 "remote <a href=\"https://en.wikipedia.org/wiki/MySQL\">Mysql database "
@@ -29274,22 +29228,19 @@ msgid ""
 "administrator. Look in <b>Requirements</b> tab for details.</p>"
 msgstr ""
 "<p>Bütün verileri ağ üzerinden uzak bir <a href=\"https://en.wikipedia.org/"
-"wiki/MySQL\">Mysql veritabanı sunucusu</a> (ya da <a href=\"https://en."
+"wiki/MySQL\">MySQL veritabanı sunucusu</a> (ya da <a href=\"https://en."
 "wikipedia.org/wiki/MariaDB\">MariaDB</a>) üzerinde ayarlamak için bu "
 "yapılandırma görünümünü kullanın. Sqlite ya da dahili MySQL sunucusu gibi, "
-"bu uzak sunucularda da 3 veritabanı saklanacaktır: bir tane tüm koleksiyonun "
-"özellikleri için, bir tane sıkıştırılmış küçük resimler için bir tane de yüz "
-"tanıma metaverisi için.</p><p>Sqlite ya da dahili MySQL sunucusunun aksine, "
-"yedekleri basitleştirmek için veritabanı isimlerini özelleştirebilirsiniz.</"
-"p><p>Veritabanları digiKam'in ana motorlarıdır. Performans sorunu yaşamamak "
-"için, istemci ile sunucu arasında iyi bir ağ bağlantısını kullanın. Ayrıca "
-"veritabanı dosyalarını da, özellikle küçük resim veritabanını, dalgacık "
-"resim formatında tutsanız bile (<a href=\"https://en.wikipedia.org/wiki/"
-"Progressive_Graphics_File\">PGF</a>) hızlı bir donanımda (<a href=\"https://"
-"en.wikipedia.org/wiki/Solid-state_drive\">SSD</a> gibi), yeterli disk "
-"alanıyla tutmanız önerilir. </p><p>Veritabanları uzak sunucuda, yönetici "
-"tarafından oluşturulmuş olmalıdır. Detaylar için <b>Gereksinimler</b> "
-"tablosuna bakın.</p>"
+"bu uzak sunucularda da 3 veritabanı saklanacaktır: Bir tanesi tüm "
+"koleksiyonun özellikleri için, bir tanesi sıkıştırılmış küçük görseller için "
+"bir tane de yüz tanıma üst verisi içindir.</p><p>Sqlite veya içsel MySQL "
+"sunucusunun aksine, yedekleri basitleştirmek için veritabanı adlarını "
+"özelleştirebilirsiniz.</p><p>Veritabanları, digiKam çekirdek işletkeleridir. "
+"Özellikle küçük görsel veritabanı için hızlı donanımların barındırdığı (örn. "
+"<a href=\"https://en.wikipedia.org/wiki/Solid-state_drive\">SSD</a> veya "
+"NVMe) yeterli boş alana sahip bir yer kullanmaya özen gösterin.</"
+"p><p>Veritabanları uzak sunucuda, yönetici tarafından oluşturulmuş "
+"olmalıdır. Ayrıntılar için <b>Gereksinimler</b> tablosuna bakın.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:357
 #, kde-format
@@ -29297,34 +29248,32 @@ msgid "Documentation"
 msgstr "Belgelendirme"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
-#, fuzzy, kde-format
-#| msgid "Thumbs Db Name:"
+#, kde-format
 msgid "Thumbs Db Folder:"
-msgstr "Küçük Resim Veritabanı Adı:"
+msgstr "Küçük görsel veritabanı adı:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:858
-#, fuzzy, kde-format
-#| msgid "Database Connection Test"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
-msgstr "Veritabanı Bağlantı Testi"
+msgstr "Veritabanı Bağlantısı Sınaması"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
 #, kde-format
 msgid "Database connection test successful."
-msgstr "Veri tabanı bağlantı testi başarılı."
+msgstr "Veritabanı bağlantı sınaması başarılı."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
-msgstr "Veritabanı bağlantısı testi başarısız oldu.<p>Hata şu idi:%1</p>"
+msgstr "Veritabanı bağlantısı sınaması başarısız oldu.<p>Hata şu idi:%1</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:613
 #, kde-format
 msgid "The server hostname is empty"
-msgstr "Sunucu ana makine adı boş"
+msgstr "Sunucu makine adı boş"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:619
 #, kde-format
@@ -29339,7 +29288,7 @@ msgstr "Çekirdek veritabanı adı boş"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:636
 #, kde-format
 msgid "The thumbnails database name is empty"
-msgstr "Küçük resim veritabanı adı boş"
+msgstr "Küçük görsel veritabanı adı boş"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:642
 #, kde-format
@@ -29347,19 +29296,18 @@ msgid "The face database name is empty"
 msgstr "Yüz veritabanı adı boş"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:648
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The similarity database name is empty"
-msgstr "Çekirdek veritabanı adı boş"
+msgstr "Benzerlik veritabanı adı boş"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:710
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
-msgstr "Bu yol lineoption (--databade-directory) komutu olarak ayarlı."
+msgstr ""
+"Bu yol, bir komut satırı seçeneği olarak ayarlandı (--database-directory)."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:849
-#, fuzzy, kde-format
-#| msgid "Database Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Veritabanı Yapılandırması"
@@ -29370,8 +29318,8 @@ msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
 ">Please check your configuration."
 msgstr ""
-"Veritabanı isimleri yapılandırması geçersiz. Hata <br/><p>%1</p><br/>Lütfen "
-"yapılandırmanızı kontrol edin."
+"Veritabanı adları yapılandırması geçersiz. Hata <br/><p>%1</p><br/>Lütfen "
+"yapılandırmanızı denetleyin."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:859
 #, kde-format
@@ -29379,8 +29327,8 @@ msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
 "check your configuration."
 msgstr ""
-"Veritabanı bağlantısı testi <br/><p>%1</p><br/>hatası ile başarısız oldu. "
-"Lütfen yapılandırmanızı kontrol edin."
+"Veritabanı bağlantısını sınama<br/><p>%1</p><br/>hatasıyla çıktı. Lütfen "
+"yapılandırmanızı denetleyin."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:878
 #, kde-format
@@ -29388,15 +29336,14 @@ msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
 "database file."
 msgstr ""
-"digiKam için veritabanı dosyasında bilgi ve meta veril saklaması için bir "
-"dosya seçmelisiniz."
+"digiKam'ın bilgileri ve üst veriyi bir veritabanı dosyasında depolaması için "
+"bir klasör seçmelisiniz."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:887
-#, fuzzy, kde-format
-#| msgid "Create Database Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
-msgstr "Veritabanı Dizini Oluşturulsun mu?"
+msgstr "Veritabanı Klasörü Oluştur?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:888
 #, kde-format
@@ -29404,15 +29351,14 @@ msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
 "b></p>Would you like digiKam to create it for you?"
 msgstr ""
-"<p>Veritabanınızı koymak istediğiniz dosya var gibi gözükmüyor.</p><p><b>%1</"
-"b></p>digiKam'in bu dosyayı sizin için oluşturmasını ister misiniz?"
+"<p>Veritabanınızı koyacağınız klasör yok gibi görünüyor:</p><p><b>%1</b></"
+"p>digiKam'in onu sizin için oluşturmasını ister misiniz?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:899
-#, fuzzy, kde-format
-#| msgid "Create Database Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
-msgstr "Veritabanı Dizini Oluşturma İşlemi Başarısız Oldu"
+msgstr "Veritabanı Klasörü Oluşturulamadı"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:900
 #, kde-format
@@ -29420,12 +29366,11 @@ msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
 "Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>DigiKam, veritabanı dosyanızı barındıracak klasörü oluşturamadı.\n"
-"Lütfen farklı bir konum seçin.</p><p><b>%1</b></p>"
+"<p>digiKam, veritabanı dosyanızı barındırmak için klasörü oluşturamadı.\n"
+"Lütfen başka bir konum seçin.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:925
-#, fuzzy, kde-format
-#| msgid "No Database Write Access"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Veritabanı Yazma Erişimi Yok"
@@ -29436,12 +29381,11 @@ msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
 "file.<br/>Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>Veritabanı dosyasını sunacak dizine yazma izniniz bulunmuyor.<br/>Lütfen "
-"farklı bir konum seçin.</p><p><b>%1</b></p>"
+"<p>Veritabanı dosyasını barındıracak klasöre yazma izniniz bulunmuyor.<br/"
+">Lütfen başka bir konum seçin.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
-#, fuzzy, kde-format
-#| msgid "Database Statistics"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Statistics"
 msgstr "Veritabanı İstatistikleri"
@@ -29474,7 +29418,7 @@ msgstr "Toplam Öge"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:77
 #, kde-format
 msgid "Database backend"
-msgstr "Veritabanı arka ucu"
+msgstr "Veritabanı Arka Ucu"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:81
 #, kde-format
@@ -29484,7 +29428,7 @@ msgstr "Veritabanı Yolu"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgid "Database internal server"
-msgstr "Veritabanı dahili sunucusu"
+msgstr "Veritabanı İçsel Sunucusu"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
@@ -29495,37 +29439,37 @@ msgstr "Evet"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:88
 #, kde-format
 msgid "Database internal server Path"
-msgstr "Veritabanı dahili sunucu Yolu"
+msgstr "Veritabanı İçsel Sunucusu Yolu"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:92
 #, kde-format
 msgid "Host Name"
-msgstr "Ana Makine Adı"
+msgstr "Makine Adı"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:93
 #, kde-format
 msgid "Host Port"
-msgstr "Ana Makine Bağlantı Noktası"
+msgstr "Makine Kapısı"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:94
 #, kde-format
 msgid "User account"
-msgstr "Kullanıcı hesabı"
+msgstr "Kullanıcı Hesabı"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:95
 #, kde-format
 msgid "Connect options"
-msgstr "Bağlantı seçenekleri"
+msgstr "Bağlantı Seçenekleri"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:96
 #, kde-format
 msgid "Core Db name"
-msgstr "Çekirdek Veritabanı adı"
+msgstr "Çekirdek Veritabanı Adı"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:97
 #, kde-format
 msgid "Thumbs Db name"
-msgstr "Küçük resimler Veritabanı adı"
+msgstr "Küçük Görseller Veritabanı Adı"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:98
 #, kde-format
@@ -29535,7 +29479,7 @@ msgstr "Yüz Veritabanı adı"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:103
 #, kde-format
 msgid "Database locale"
-msgstr "Veritabanı yerel ayarı"
+msgstr "Veritabanı Yerel Ayarı"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:144
 #, kde-format
@@ -29544,13 +29488,11 @@ msgid "total"
 msgstr "toplam"
 
 #: core/libs/database/utils/widgets/mysqladminbinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to manage a dedicated instance of MariaDB server."
 msgstr ""
-"Bu ikili değer dosyası MariaDB sunucusunun özel bir örneğini başlatmak için "
+"Bu ikili dosya, MariaDB sunucusunun özel bir örneğini yönetmek için "
 "kullanılır."
 
 #: core/libs/database/utils/widgets/mysqlinitbinary.cpp:34
@@ -29559,31 +29501,29 @@ msgid ""
 "This binary file is used to initialize the MariaDB data files for the "
 "database."
 msgstr ""
-"Bu ikili değer dosyası veritabanı için MariaDB veri dosyalarını başlatmak "
-"için kullanılır."
+"Bu ikili dosya, veritabanı için MariaDB veri dosyalarını ilklendirmek için "
+"kullanılır."
 
 #: core/libs/database/utils/widgets/mysqlserverbinary.cpp:34
 #, kde-format
 msgid ""
 "This binary file is used to start a dedicated instance of MariaDB server."
 msgstr ""
-"Bu ikili değer dosyası MariaDB sunucusunun özel bir örneğini başlatmak için "
+"Bu ikili dosya, MariaDB sunucusunun özel bir örneğini başlatmak için "
 "kullanılır."
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr ""
-"Bu ikili değer dosyası MariaDB sunucusunun özel bir örneğini başlatmak için "
+"Bu ikili dosya, veritabanını geçerli sunucu sürümüne yükseltmek için "
 "kullanılır."
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
-msgstr "Küçük resim"
+msgstr "Küçük Görsel"
 
 #: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
@@ -29593,14 +29533,16 @@ msgstr "Silinmek üzere olan ögelerin listesi."
 #: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
-msgstr "Bu, silinecek ögelerin listesidir."
+msgstr "Bu, silinmek üzere olan ögelerin listesidir."
 
 #: core/libs/dialogs/deletedialog.cpp:303
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
-msgstr "İşaretlenirse dosyalar Çöpe atılmak yerine kalıcı olarak kaldırılır."
+msgstr ""
+"İşaretlenirse dosyalar, Çöp Kutusu'na atılmak yerine kalıcı olarak "
+"kaldırılır."
 
 #: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
@@ -29609,19 +29551,19 @@ msgid ""
 "of being placed in the Trash.</p><p><em>Use this option with caution</em>: "
 "most filesystems are unable to undelete deleted items reliably.</p>"
 msgstr ""
-"<p>Bu kutu işaretlendiğinde, ögeler Çöp'e atılmak yerine <b>kalıcı olarak "
-"kaldırılır</b>.</p><p><em>Bu seçeneği dikkatli kullanın</em>: Çoğu dosya "
-"sistemi silinen ögeleri güvenilir bir şekilde geri getirememekte.</p>"
+"<p>Bu kutu işaretlenirse öğeler Çöp Kutusu'na atılmak yerine <b>kalıcı "
+"olarak kaldırılır</b>.</p><p><em>Bu seçeneği dikkatli kullanın</em>: Çoğu "
+"dosya sistemi silinen ögeleri güvenilir bir şekilde geri alamıyor.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:311
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
-msgstr "Dosyaları çöp kutusuna taşımak yerine &sil"
+msgstr "Ögeleri çöp kutusuna taşımak yerine &sil"
 
 #: core/libs/dialogs/deletedialog.cpp:318
 #, kde-format
 msgid "Do not &ask again"
-msgstr "Tekrar &sorma"
+msgstr "Bir &daha sorma"
 
 #: core/libs/dialogs/deletedialog.cpp:377
 #, kde-format
@@ -29629,8 +29571,8 @@ msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "and permanently deleted."
 msgstr ""
-"İşaretlenirse bu iletişim kutusu artık gösterilmeyecektir ve ögeler doğrudan "
-"kalıcı olarak silinecektir."
+"İşaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler doğrudan ve "
+"kalıcı olarak silinirler."
 
 #: core/libs/dialogs/deletedialog.cpp:379
 #, kde-format
@@ -29638,8 +29580,8 @@ msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly and permanently deleted."
 msgstr ""
-"Bu kutu işaretlenirse bu iletişim kutusu artık gösterilmeyecektir ve ögeler "
-"doğrudan kalıcı olarak silinecektir."
+"Bu kutu işaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler "
+"doğrudan ve kalıcı olarak silinirler."
 
 #: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
@@ -29647,8 +29589,8 @@ msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "moved to the Trash."
 msgstr ""
-"İşaretlenirse bu iletişim kutusu artık gösterilmeyecektir ve ögeler doğrudan "
-"çöp kutusuna taşınacaktır."
+"İşaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler doğrudan Çöp "
+"Kutusu'na gönderilirler."
 
 #: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
@@ -29656,25 +29598,25 @@ msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly moved to the Trash."
 msgstr ""
-"Bu kutu işaretlenirse bu iletişim kutusu artık gösterilmeyecektir ve ögeler "
-"doğrudan çöp kutusuna taşınacaktır."
+"Bu kutu işaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler "
+"doğrudan Çöp Kutusu'na gönderilirler."
 
 #: core/libs/dialogs/deletedialog.cpp:398
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
-msgstr "Bu ögeler sabit diskinizden <b>kalıcı olarak</b> silinecek."
+msgstr "Bu öğeler sabit diskinizden <b>kalıcı olarak</b> silinecekler."
 
 #: core/libs/dialogs/deletedialog.cpp:404
 #, kde-format
 msgid "These items will be moved to Trash."
-msgstr "Bu ögeler Çöp kutusuna taşınacak."
+msgstr "Bu ögeler Çöp Kutusu'na taşınacaklar."
 
 #: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
-msgstr[0] "<b>1</b> öge seçildi."
-msgstr[1] "<b>%1</b> öge seçildi."
+msgstr[0] "<b>1</b> öge seçili."
+msgstr[1] "<b>%1</b> öge seçili."
 
 #: core/libs/dialogs/deletedialog.cpp:419
 #, kde-format
@@ -29684,15 +29626,15 @@ msgstr "Bu albümler sabit diskinizden <b>kalıcı olarak</b> silinecek."
 #: core/libs/dialogs/deletedialog.cpp:425
 #, kde-format
 msgid "These albums will be moved to Trash."
-msgstr "Bu albümler Çöp kutusuna taşınacak."
+msgstr "Bu albümler Çöp Kutusu'na taşınacak."
 
 #: core/libs/dialogs/deletedialog.cpp:429
 #: core/libs/dialogs/deletedialog.cpp:456
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
-msgstr[0] "<b>1</b> albüm seçildi."
-msgstr[1] "<b>%1</b> albüm seçildi."
+msgstr[0] "<b>1</b> albüm seçili."
+msgstr[1] "<b>%1</b> albüm seçili."
 
 #: core/libs/dialogs/deletedialog.cpp:440
 #, kde-format
@@ -29701,9 +29643,9 @@ msgid ""
 "p><p>Note that <b>all subalbums</b> are included in this list and will be "
 "deleted permanently as well.</p>"
 msgstr ""
-"<p>Bu albümler sabit diskinizden <b>kalıcı olarak</b> silinecek. </p><p>Not: "
-"<b>Tüm alt albümler</b> bu listeye dahil ve onlar da kalıcı olarak silinecek."
-"</p>"
+"<p>Bu albümler sabit diskinizden <b>kalıcı olarak</b> silinecek.</p><p>Not: "
+"<b>Tüm alt albümlerin</b> de bu listede olduğunu ve onların da kalıcı olarak "
+"silineceğini not edin.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:449
 #, kde-format
@@ -29711,27 +29653,25 @@ msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
 "are included in this list and will be moved to Trash as well.</p>"
 msgstr ""
-"<p>Bu albümler Çöp Kutusuna taşınacak.</p><p>Not: <b>Bu albümün içinde yer "
-"alan alt albümler de</b> çöp kutusuna taşınacak.</p>"
+"<p>Bu albümler Çöp Kutusu'na taşınacak.</p><p>Not: <b>Tüm alt albümlerin</b> "
+"de bu listede olduğunu ve onların da Çöp Kutusu'na taşınacağını not edin.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:600
 #, kde-format
 msgid "&Move to Trash"
-msgstr "&Çöp Kutusuna Taşı"
+msgstr "&Çöp Kutusu'na Taşı"
 
 #: core/libs/dialogs/deletedialog.cpp:660
-#, fuzzy, kde-format
-#| msgid "About to delete selected items"
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
-msgstr "Seçilen ögeler silinmek üzere"
+msgstr "Seçili Ögeler Silinmek Üzere"
 
 #: core/libs/dialogs/deletedialog.cpp:667
-#, fuzzy, kde-format
-#| msgid "About to delete selected albums"
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
-msgstr "Seçilen albümü silmek istediğinizden emin misiniz?"
+msgstr "Seçili Albümler Silinmek Üzere"
 
 #: core/libs/dialogs/dmessagebox.cpp:109
 #, kde-format
@@ -29746,18 +29686,16 @@ msgstr "Sürdür"
 #: core/libs/dialogs/dmessagebox.cpp:166 core/libs/dialogs/dmessagebox.cpp:229
 #, kde-format
 msgid "Do not ask again"
-msgstr "Tekrar sorma"
+msgstr "Bir daha sorma"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
-#, fuzzy, kde-format
-#| msgid "Settings for Saving Image File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings for Saving Image File"
-msgstr "Resim Dosyasını Kaydetmek İçin Ayarlar"
+msgstr "Görsel Dosyası Kaydetme Ayarları"
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
-#, fuzzy, kde-format
-#| msgid "Color Profile Info - %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Renk Profili Bilgisi - %1"
@@ -29765,23 +29703,22 @@ msgstr "Renk Profili Bilgisi - %1"
 #: core/libs/dialogs/imagedialog.cpp:233
 #, kde-format
 msgid "Select an Item"
-msgstr "Bir öge seçin"
+msgstr "Bir Öge Seç"
 
 #: core/libs/dialogs/imagedialog.cpp:247
 #, kde-format
 msgid "Select Items"
-msgstr "Ögeleri seçin"
+msgstr "Ögeler Seç"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:265
-#, fuzzy, kde-format
-#| msgid "<i>Created:</i>"
+#, kde-format
 msgid "<i>Preview:</i>"
-msgstr "<i>Oluşturulma zamanı:</i>"
+msgstr "<i>Önizleme:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:271
 #, kde-format
 msgid "<i>Make:</i>"
-msgstr "<i>Yap:</i>"
+msgstr "<i>Üretici:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:272
 #, kde-format
@@ -29791,7 +29728,7 @@ msgstr "<i>Model:</i>"
 #: core/libs/dialogs/imagedialog_preview.cpp:273
 #, kde-format
 msgid "<i>Created:</i>"
-msgstr "<i>Oluşturulma zamanı:</i>"
+msgstr "<i>Oluşturulma:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:274
 #, kde-format
@@ -29816,23 +29753,22 @@ msgstr "<i>Duyarlılık:</i>"
 #: core/libs/dialogs/imagedialog_preview.cpp:282
 #, kde-format
 msgid "<i>AspectRatio:</i>"
-msgstr "<i>AspectRatio:</i>"
+msgstr "<i>En-Boy oranı:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:283
 #, kde-format
 msgid "<i>AudioBitRate:</i>"
-msgstr "<i>AudioBitRate:</i>"
+msgstr "<i>Ses bit hızı:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:284
 #, kde-format
 msgid "<i>AudioChannelType:</i>"
-msgstr "<i>AudioChannelType:</i>"
+msgstr "<i>Ses kanalı türü:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:285
-#, fuzzy, kde-format
-#| msgid "<i>VideoCodec:</i>"
+#, kde-format
 msgid "<i>AudioCodec:</i>"
-msgstr "<i>VideoCodec:</i>"
+msgstr "<i>Ses kodlayıcısı:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:286
 #, kde-format
@@ -29842,19 +29778,18 @@ msgstr "<i>Süre:</i>"
 #: core/libs/dialogs/imagedialog_preview.cpp:287
 #, kde-format
 msgid "<i>FrameRate:</i>"
-msgstr "<i>FrameRate:</i>"
+msgstr "<i>Kare hızı:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:288
 #, kde-format
 msgid "<i>VideoCodec:</i>"
-msgstr "<i>VideoCodec:</i>"
+msgstr "<i>Video kodlayıcısı:</i>"
 
 #: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
-#, fuzzy, kde-format
-#| msgid "Shared Libraries and Components Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
-msgstr "Paylaşılan Kitaplıklar ve Bileşen Bilgileri"
+msgstr "Paylaşılan Kitaplıklar ve Bileşenler Bilgisi"
 
 #: core/libs/dialogs/infodlg.cpp:74
 #: core/libs/progressmanager/dhistoryview.cpp:149
@@ -29863,11 +29798,11 @@ msgid "Copy to Clipboard"
 msgstr "Panoya Kopyala"
 
 #: core/libs/dialogs/infodlg.cpp:96
-#, fuzzy, kde-format
-#| msgid "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p>"
+#, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
-msgstr "<font size=\"5\">%1</font><br/><b>Sürüm %2</b><p>%3</p>"
+msgstr ""
+"<font size=\"5\">%1</font><br/><b>Sürüm %2</b><p>%3</p><p><i>%4</i></p>"
 
 #: core/libs/dialogs/infodlg.cpp:117
 #, kde-format
@@ -29914,14 +29849,13 @@ msgstr "Bilinmiyor"
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
-msgstr ""
+msgstr "Bildiriler"
 
 #: core/libs/dialogs/libsinfodlg.cpp:416
-#, fuzzy, kde-format
-#| msgid "Camera Configuration"
+#, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
-msgstr "Kamera Yapılandırması"
+msgstr "OpenCV Yapılandırması"
 
 #: core/libs/dialogs/libsinfodlg.cpp:599
 #, kde-format
@@ -29939,39 +29873,31 @@ msgstr "Hayır"
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
-msgstr "Bilinmeyen"
+msgstr "Bilinmiyor"
 
 #: core/libs/dialogs/rawcameradlg.cpp:56
-#, fuzzy, kde-format
-#| msgid "List of supported RAW cameras"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
-msgstr "Desteklenen Ham (RAW) kameraların listesi"
+msgstr "Desteklenen RAW Kameralar Listesi"
 
 #: core/libs/dialogs/rawcameradlg.cpp:129
-#, fuzzy, kde-format
-#| msgid "Using LibRaw version %2<br/>1 model on the list</p>"
-#| msgid_plural "Using LibRaw version %2<br/>%1 models on the list</p>"
+#, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
-msgstr[0] "LibRaw %2 sürümü kullanılıyor<br/>Listede 1 model var</p>"
-msgstr[1] "LibRaw %2 sürümü kullanılıyor<br/>Listede %1 model var</p>"
+msgstr[0] "LibRaw %2 sürümü kullanılıyor<br/>Listede 1 model var"
+msgstr[1] "LibRaw %2 sürümü kullanılıyor<br/>Listede %1 model var"
 
 #: core/libs/dialogs/rawcameradlg.cpp:139
-#, fuzzy, kde-format
-#| msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)</p>"
-#| msgid_plural ""
-#| "Using LibRaw version %2<br/>%1 models on the list (found: %3)</p>"
+#, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
-msgstr[0] ""
-"LibRaw %2 sürümü kullanılıyor<br/>Listede 1 model var (bulunan: %3)</p>"
+msgstr[0] "LibRaw %2 sürümü kullanılıyor<br/>Listede 1 model var (bulunan: %3)"
 msgstr[1] ""
-"LibRaw %2 sürümü kullanılıyor<br/>Listede %1 model var (bulunan: %3)</p>"
+"LibRaw %2 sürümü kullanılıyor<br/>Listede %1 model var (bulunan: %3)"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:83
-#, fuzzy, kde-format
-#| msgid "List of Detected Hardware"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Detected Hardware"
 msgstr "Algılanan Donanım Listesi"
@@ -29984,12 +29910,15 @@ msgid ""
 "to detect and manage devices from your computer.\n"
 "Press \"Refresh\" to update list if you plug a removable device."
 msgstr ""
+"%1, bilgisayarınızdaki aygıtları algılamak ve yönetmek için Solid çatısının "
+"%2 sürümünü kullanıyor. Kaldırılabilir bir aygıt takarsanız listeyi "
+"güncellemek için \"Yenile\"ye basın."
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:116
 #, kde-format
 msgctxt "@title"
 msgid "Hotplug Device Events"
-msgstr ""
+msgstr "Tak-Çıkar Aygıt Olayları"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:117
 #, kde-format
@@ -30008,7 +29937,7 @@ msgstr "Yenile"
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
-msgstr "Udi"
+msgstr "Evrensel aygıt kimliği"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:272
 #: core/libs/dialogs/solidhardwaredlg.cpp:278
@@ -30021,18 +29950,17 @@ msgstr "boş"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:275
 #: core/libs/dialogs/solidhardwaredlg.cpp:396
-#, fuzzy, kde-format
-#| msgid "Parents"
+#, kde-format
 msgctxt "@item: parent device ID"
 msgid "Parent Udi"
-msgstr "Üst ögeler"
+msgstr "Üst evrensel aygıt kimliği"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:275
 #: core/libs/dialogs/solidhardwaredlg.cpp:287
 #, kde-format
 msgctxt "@item: device property"
 msgid "none"
-msgstr "hiçbiri"
+msgstr "yok"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:278
 #, kde-format
@@ -30065,7 +29993,7 @@ msgstr "Durumlar"
 #, kde-format
 msgctxt "@item"
 msgid "Non-portable info"
-msgstr ""
+msgstr "Taşınamaz bilgi"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:386
 #, kde-format
@@ -30078,7 +30006,7 @@ msgstr "Yeni Aygıt Eklendi"
 #, kde-format
 msgctxt "@info: device property"
 msgid "none"
-msgstr "hiçbiri"
+msgstr "yok"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:399
 #, kde-format
@@ -30098,28 +30026,28 @@ msgstr "boş"
 #, kde-format
 msgctxt "@item"
 msgid "Device Removed"
-msgstr "Aygıt Kaldırıldı"
+msgstr "Aygıt kaldırıldı"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:421
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
-msgstr ""
+msgstr "Evrensel aygıt kimliği"
 
 #: core/libs/dialogs/webbrowserdlg.cpp:134
 #, kde-format
 msgid "Desktop Browser"
-msgstr "Masaüstü Tarayıcısı"
+msgstr "Masaüstü Tarayıcı"
 
 #: core/libs/dialogs/webbrowserdlg.cpp:135
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
-msgstr "Ana sayfayı öntanımlı masaüstü Web tarayıcısında aç"
+msgstr "Ana sayfayı öntanımlı masaüstü web tarayıcısında aç"
 
 #: core/libs/dialogs/webbrowserdlg.cpp:249
 #, kde-format
 msgid "Cannot load page %1"
-msgstr "Sayfa yüklenemedi %1"
+msgstr "%1 sayfası yüklenemiyor"
 
 #: core/libs/dimg/dimg_metadata.cpp:426
 #, kde-format
@@ -30131,7 +30059,7 @@ msgstr "RGB"
 #, kde-format
 msgctxt "Color Model: Grayscale"
 msgid "Grayscale"
-msgstr "Gri ölçek"
+msgstr "Gri tonlu"
 
 #: core/libs/dimg/dimg_metadata.cpp:436
 #, kde-format
@@ -30143,47 +30071,47 @@ msgstr "Tek renkli"
 #, kde-format
 msgctxt "Color Model: Indexed"
 msgid "Indexed"
-msgstr "Dizinli"
+msgstr "İndeksli"
 
 #: core/libs/dimg/dimg_metadata.cpp:446
 #, kde-format
 msgctxt "Color Model: YCbCr"
 msgid "YCbCr"
-msgstr "YCbCr Color Model: YCbCr"
+msgstr "YCbCr"
 
 #: core/libs/dimg/dimg_metadata.cpp:451
 #, kde-format
 msgctxt "Color Model: CMYK"
 msgid "CMYK"
-msgstr "CMYK Color Model: CMYK "
+msgstr "CMYK"
 
 #: core/libs/dimg/dimg_metadata.cpp:456
 #, kde-format
 msgctxt "Color Model: CIE L*a*b*"
 msgid "CIE L*a*b*"
-msgstr "CIE L*a*b* Color Model: CIE L*a*b*"
+msgstr "CIE L*a*b*"
 
 #: core/libs/dimg/dimg_metadata.cpp:461
 #, kde-format
 msgctxt "Color Model: Uncalibrated (RAW)"
 msgid "Uncalibrated (RAW)"
-msgstr "Ayarlanmamış (RAW) Color Model: Uncalibrated (RAW)"
+msgstr "Kalibresiz (RAW)"
 
 #: core/libs/dimg/dimg_metadata.cpp:467
 #, kde-format
 msgctxt "Color Model: Unknown"
 msgid "Unknown"
-msgstr "Bilinmeyen Color Model: Unknown"
+msgstr "Bilinmeyen"
 
 #: core/libs/dimg/filters/auto/equalizefilter.cpp:51
 #, kde-format
 msgid "Auto Equalize"
-msgstr "Otomatik Eşiteme"
+msgstr "Kendiliğinden Eşitle"
 
 #: core/libs/dimg/filters/auto/normalizefilter.cpp:51
 #, kde-format
 msgid "Auto Normalize"
-msgstr "Otomatik Normalleştirme"
+msgstr "Kendiliğinden Normalleştir"
 
 #: core/libs/dimg/filters/bcg/bcgfilter.cpp:89
 #, kde-format
@@ -30193,7 +30121,7 @@ msgstr "Parlaklık / Karşıtlık / Gama Süzgeci"
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:96
 #, kde-format
 msgid "Set here the gamma adjustment of the image."
-msgstr "Buradan görüntünün gama ayarlamalarını yapın."
+msgstr "Görselin gama ayarlarını burada yapın."
 
 #: core/libs/dimg/filters/bw/bwsepiafilter.cpp:84
 #, kde-format
@@ -41713,6 +41641,24 @@ msgstr "Masaüstünden öntanımlı"
 #| msgid "Encoding %1 Done"
 msgid "Preparing %1 Done"
 msgstr "%1 Kodlaması Tamamlandı"
+
+#: core/libs/video/manager/vidslidethread.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Loading cameras..."
+msgid "Encoding frames..."
+msgstr "Kameralar yükleniyor..."
+
+#: core/libs/video/manager/vidslidethread.cpp:84
+#, kde-format
+msgid "Encoding done."
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:88
+#, fuzzy, kde-format
+#| msgid "Error while opening the source database."
+msgid "Error while encoding frames!"
+msgstr "Kaynak veritabanı açılırken hata."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -58762,7 +58708,7 @@ msgstr ""
 msgid "Map View"
 msgstr "Mermer 2"
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
 #, fuzzy, kde-format
 #| msgid "Plugins"
 msgid "Map Plugins"
@@ -68528,7 +68474,7 @@ msgstr "API URL'si:"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Google Maps requires to work friendly an API key that end users must buy "
+"To work friendly, Google Maps requires an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
 "but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"
