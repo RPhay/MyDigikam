@@ -23,6 +23,10 @@
 #include <klocalizedstring.h>
 #include <kconfiggroup.h>
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
