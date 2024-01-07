@@ -18,6 +18,7 @@
 // Qt includes
 
 #include <QString>
+#include <QStringList>
 #include <QList>
 #include <QUrl>
 #include <QSize>
@@ -207,7 +208,9 @@ public:
     static QMap<VidPlayer,  QString> videoPlayerNames();
 
     static QSize videoSizeFromType(VidType type);       ///< Return the current size from a type of video.
-    static bool isVideoTVFormat(VidType type);        ///< Return true if type is a video TV format. If false is returned type is computer graphics screen format.
+    static bool isVideoTVFormat(VidType type);          ///< Return true if type is a video TV format. If false is returned type is computer graphics screen format.
+
+    QStringList defaultFFmpegSearchPaths() const;
 
 public:
 

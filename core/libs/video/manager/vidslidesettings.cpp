@@ -75,6 +75,8 @@ void VidSlideSettings::readSettings(KConfigGroup& group)
                    QStandardPaths::writableLocation(QStandardPaths::MoviesLocation));
     outputPlayer = (VidPlayer)group.readEntry("OutputPlayer",
                    (int)INTERNAL);
+    ffmpegPath   = group.readEntry("FFmpegPath",
+                   defaultFFmpegSearchPaths().first());
 }
 
 void VidSlideSettings::writeSettings(KConfigGroup& group)
@@ -92,6 +94,7 @@ void VidSlideSettings::writeSettings(KConfigGroup& group)
     group.writeEntry("ConflictRule", (int)conflictRule);
     group.writeEntry("OutputDir",    outputDir);
     group.writeEntry("OutputPlayer", (int)outputPlayer);
+    group.writeEntry("FFmpegPath",   ffmpegPath);
 }
 
 QSize VidSlideSettings::videoSize() const
@@ -822,6 +825,40 @@ QMap<VidSlideSettings::VidPlayer, QString> VidSlideSettings::videoPlayerNames()
     pla[DESKTOP]  = i18nc("Video Standard DESKTOP",  "Default from Desktop");
 
     return pla;
+}
+
+QStringList VidSlideSettings::defaultFFmpegSearchPaths() const
+{
+    QStringList defPaths;
+
+#ifdef Q_OS_MACOS
+
+    // Install path for the official ExifTool DMG package
+    defPaths << QLatin1String("/usr/local/bin");
+
+    // digiKam Bundle PKG install path
+    defPaths << macOSBundlePrefix() + QLatin1String("bin");
+
+    // Std Macports install path
+    defPaths << QLatin1String("/opt/local/bin");
+
+#endif
+
+#ifdef Q_OS_WIN
+
+    defPaths << QLatin1String("C:/Program Files/digiKam");
+
+#endif
+
+#ifdef Q_OS_UNIX
+
+    defPaths << QLatin1String("/usr/bin");
+    defPaths << QLatin1String("/usr/local/bin");
+    defPaths << QLatin1String("/bin");
+
+#endif
+
+    return defPaths;
 }
 
 } // namespace Digikam

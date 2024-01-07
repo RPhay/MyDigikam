@@ -100,20 +100,10 @@ VidSlideIntroPage::VidSlideIntroPage(QWizard* const dialog, const QString& title
     d->binSearch = new DBinarySearch(binaryBox);
     d->binSearch->addBinary(d->ffmpegBin);
 
-#ifdef Q_OS_MACOS
-
-    // Std Macports install
-
-    d->binSearch->addDirectory(QLatin1String("/opt/local/bin"));
-
-#endif
-
-#ifdef Q_OS_WIN
-
-    d->binSearch->addDirectory(QLatin1String("C:/Program Files/digiKam"));
-    d->binSearch->addDirectory(QLatin1String("C:/Program Files/digiKam/bin"));
-
-#endif
+    Q_FOREACH (const QString& path, d->wizard->settings()->defaultFFmpegSearchPaths())
+    {
+        d->binSearch->addDirectory(path);
+    }
 
     vbox->setStretchFactor(desc,      2);
     vbox->setStretchFactor(d->hbox,   1);
@@ -152,6 +142,7 @@ bool VidSlideIntroPage::validatePage()
     if (d->ffmpegBin.isValid())
     {
         d->wizard->settings()->ffmpegPath = d->ffmpegBin.path();
+        qCDebug(DIGIKAM_GENERAL_LOG) << d->wizard->settings()->ffmpegPath;
         return true;
     }
 
