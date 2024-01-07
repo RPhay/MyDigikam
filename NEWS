@@ -131,7 +131,7 @@ BUGFIXES:
 113 ==> 479497 - AVIF bit depth selection or 12bits default.
 114 ==> 425284 - Generate Video Slideshow - Failed to open Muxer.
 115 ==> 427221 - Starting to generate video slideshow failed to open muxer.
-116 ==> 
+116 ==> 472503 - Video slideshow tool does not produce playable video file - Port tool from QtAv to FFmpeg CLI tool.
 117 ==> 
 118 ==> 
 119 ==> 
