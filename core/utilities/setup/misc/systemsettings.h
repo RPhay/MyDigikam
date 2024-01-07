@@ -60,6 +60,7 @@ public:
     bool enableFaceEngine  = false;
     bool enableAesthetic   = false;
     bool enableAutoTags    = false;
+    bool softwareOpenGL    = false;
     bool enableLogging     = false;
     bool disableOpenCL     = true;
 

@@ -138,13 +138,14 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
 #endif
 
+    if (system.softwareOpenGL)
+    {
+        QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);
+    }
+
     // OpenCV crash with face engine with OpenCL support
     // https://bugs.kde.org/show_bug.cgi?id=423632
     // https://bugs.kde.org/show_bug.cgi?id=426175
-
-    // When analyzing with Heaptrack it was found
-    // that a big memory leak is created in
-    // libpocl when OpenCL is active.
 
     if (system.disableOpenCL)
     {

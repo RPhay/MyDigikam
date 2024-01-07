@@ -83,6 +83,7 @@ void SystemSettings::readSettings()
 
     enableAesthetic      = settings.value(QLatin1String("enableAesthetic"),   true).toBool();
     enableAutoTags       = settings.value(QLatin1String("enableAutoTags"),    true).toBool();
+    softwareOpenGL       = settings.value(QLatin1String("softwareOpenGL"),    false).toBool();
     enableLogging        = settings.value(QLatin1String("enableLogging"),     false).toBool();
     disableOpenCL        = settings.value(QLatin1String("disableOpenCL"),     true).toBool();
 
@@ -154,6 +155,7 @@ void SystemSettings::saveSettings()
     settings.setValue(QLatin1String("enableFaceEngine"),  enableFaceEngine);
     settings.setValue(QLatin1String("enableAesthetic"),   enableAesthetic);
     settings.setValue(QLatin1String("enableAutoTags"),    enableAutoTags);
+    settings.setValue(QLatin1String("softwareOpenGL"),    softwareOpenGL);
     settings.setValue(QLatin1String("enableLogging"),     enableLogging);
     settings.setValue(QLatin1String("disableOpenCL"),     disableOpenCL);
 

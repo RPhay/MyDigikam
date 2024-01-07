@@ -51,6 +51,7 @@ public:
 
 #endif
 
+    QCheckBox*              softwareOpenGLCheck    = nullptr;
     QCheckBox*              disableOpenCLCheck     = nullptr;
     QCheckBox*              enableLoggingCheck     = nullptr;
 
@@ -79,6 +80,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #endif
 
+    d->softwareOpenGLCheck    = new QCheckBox(i18n("Force use of software OpenGL rendering"), this);
     d->disableOpenCLCheck     = new QCheckBox(i18n("Disable hardware acceleration OpenCL"), this);
     d->enableLoggingCheck     = new QCheckBox(i18n("Enable internal debug logging"), this);
 
@@ -112,6 +114,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #endif
 
+    layout->addWidget(d->softwareOpenGLCheck,    row++, 0, 1, 1);
     layout->addWidget(d->disableOpenCLCheck,     row++, 0, 1, 1);
     layout->addWidget(d->enableLoggingCheck,     row++, 0, 1, 1);
     layout->addWidget(d->filesDownloadButton,    row++, 0, 1, 1);
@@ -140,6 +143,7 @@ void SystemSettingsWidget::readSettings()
 
 #endif
 
+    d->softwareOpenGLCheck->setChecked(system.softwareOpenGL);
     d->enableLoggingCheck->setChecked(system.enableLogging);
     d->disableOpenCLCheck->setChecked(system.disableOpenCL);
 
@@ -164,6 +168,7 @@ void SystemSettingsWidget::saveSettings()
 
 #endif
 
+    system.softwareOpenGL    = d->softwareOpenGLCheck->isChecked();
     system.enableLogging     = d->enableLoggingCheck->isChecked();
     system.disableOpenCL     = d->disableOpenCLCheck->isChecked();
 
