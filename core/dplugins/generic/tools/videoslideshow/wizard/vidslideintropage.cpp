@@ -142,7 +142,7 @@ bool VidSlideIntroPage::validatePage()
     if (d->ffmpegBin.isValid())
     {
         d->wizard->settings()->ffmpegPath = d->ffmpegBin.path();
-        qCDebug(DIGIKAM_GENERAL_LOG) << d->wizard->settings()->ffmpegPath;
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << d->ffmpegBin.directory() << d->ffmpegBin.path();
         return true;
     }
 
