@@ -291,6 +291,7 @@ done
 
 FFMPEG_DLL_FILES="\
 `find  $VCPKG_INSTALL_PREFIX/tools/ffmpeg -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/tools/ffmpeg||'` \
+`find  $VCPKG_INSTALL_PREFIX/tools/ffmpeg -name "*.DLL" -type f | sed 's|$VCPKG_INSTALL_PREFIX/tools/ffmpeg||'` \
 "
 
 for ffmpegdll in $FFMPEG_DLL_FILES ; do
