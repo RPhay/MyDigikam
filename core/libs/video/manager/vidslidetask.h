@@ -53,8 +53,7 @@ private:
 
 private:
 
-    class Private;
-    Private* const d;
+    VidSlideSettings* m_settings = nullptr;
 };
 
 } // namespace Digikam

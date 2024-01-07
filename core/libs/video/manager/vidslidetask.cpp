@@ -49,45 +49,26 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN VidSlideTask::Private
-{
-public:
-
-    Private() = default;
-
-public:
-
-    VidSlideSettings*           settings        = nullptr;
-    QList<QUrl>::const_iterator curAudioFile;
-};
-
 VidSlideTask::VidSlideTask(VidSlideSettings* const settings)
-    : ActionJob(),
-      d        (new Private)
+    : ActionJob()
 {
-    d->settings = settings;
-
-    if (d->settings->inputAudio.isEmpty())
-    {
-        d->curAudioFile = d->settings->inputAudio.constEnd();
-    }
+    m_settings = settings;
 }
 
 VidSlideTask::~VidSlideTask()
 {
     cancel();
-    delete d;
 }
 
 void VidSlideTask::run()
 {
     int frameId            = 1;
-    d->settings->filesList = d->settings->tempDir + QLatin1String("fileslist.txt");
-    QFile fList(d->settings->filesList);
+    m_settings->filesList = m_settings->tempDir + QLatin1String("fileslist.txt");
+    QFile fList(m_settings->filesList);
 
     if (!fList.open(QIODevice::WriteOnly | QIODevice::Text))
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create files list:" << d->settings->filesList;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create files list:" << m_settings->filesList;
     }
 
     QTextStream out(&fList);
@@ -95,19 +76,19 @@ void VidSlideTask::run()
     // ---------------------------------------------
     // Setup output video file
 
-    QUrl dest       = QUrl::fromLocalFile(d->settings->outputDir);
+    QUrl dest       = QUrl::fromLocalFile(m_settings->outputDir);
     dest            = dest.adjusted(QUrl::StripTrailingSlash);
-    dest.setPath(dest.path() + QDir::separator() + QLatin1String("videoslideshow.") + d->settings->videoFormat());
+    dest.setPath(dest.path() + QDir::separator() + QLatin1String("videoslideshow.") + m_settings->videoFormat());
     QString outFile = dest.toLocalFile();
     QFileInfo fi(outFile);
 
-    if (fi.exists() && (d->settings->conflictRule != FileSaveConflictBox::OVERWRITE))
+    if (fi.exists() && (m_settings->conflictRule != FileSaveConflictBox::OVERWRITE))
     {
         outFile = DFileOperations::getUniqueFileUrl(dest).toLocalFile();
     }
 
     QImage qiimg;
-    QSize osize = d->settings->videoSize();
+    QSize osize = m_settings->videoSize();
 
     // --------------------------------------------------------------
     // Loop to encode frames with images list as temporary JPEG files
@@ -117,9 +98,9 @@ void VidSlideTask::run()
 
     EffectMngr effmngr;
     effmngr.setOutputSize(osize);
-    effmngr.setFrames(d->settings->imgFrames);
+    effmngr.setFrames(m_settings->imgFrames);
 
-    for (int i = 0 ; ((i < d->settings->inputImages.count() + 1) && !m_cancel) ; ++i)
+    for (int i = 0 ; ((i < m_settings->inputImages.count() + 1) && !m_cancel) ; ++i)
     {
         if (i == 0)
         {
@@ -128,9 +109,9 @@ void VidSlideTask::run()
 
         QString ofile;
 
-        if (i < d->settings->inputImages.count())
+        if (i < m_settings->inputImages.count())
         {
-            ofile = d->settings->inputImages[i].toLocalFile();
+            ofile = m_settings->inputImages[i].toLocalFile();
         }
 
         QImage qoimg = FrameUtils::makeFramedImage(ofile, osize);
@@ -139,7 +120,7 @@ void VidSlideTask::run()
 
         transmngr.setInImage(qiimg);
         transmngr.setOutImage(qoimg);
-        transmngr.setTransition(d->settings->transition);
+        transmngr.setTransition(m_settings->transition);
 
         int ttmout = 0;
         QImage frame;
@@ -148,7 +129,7 @@ void VidSlideTask::run()
         do
         {
             frame     = QImage(transmngr.currentFrame(ttmout));
-            framePath = d->settings->tempDir + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
+            framePath = m_settings->tempDir + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
 
             if (!frame.save(framePath, "JPEG"))
             {
@@ -166,18 +147,18 @@ void VidSlideTask::run()
 
         // -- Images encoding ----------
 
-        if (i < d->settings->inputImages.count())
+        if (i < m_settings->inputImages.count())
         {
             int count  = 0;
             int itmout = 0;
             effmngr.setImage(qoimg);
-            effmngr.setEffect(d->settings->vEffect);
+            effmngr.setEffect(m_settings->vEffect);
 
             do
             {
                 qiimg     = effmngr.currentFrame(itmout);
                 frame     = qiimg;
-                framePath = d->settings->tempDir + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
+                framePath = m_settings->tempDir + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
 
                 if (!frame.save(framePath, "JPEG"))
                 {
@@ -192,7 +173,7 @@ void VidSlideTask::run()
                 ++frameId;
                 ++count;
             }
-            while ((count < d->settings->imgFrames) && !m_cancel);
+            while ((count < m_settings->imgFrames) && !m_cancel);
         }
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Preparing image" << i << "done";
@@ -203,7 +184,7 @@ void VidSlideTask::run()
 
     fList.close();
 
-    d->settings->outputFile = outFile;
+    m_settings->outputFile = outFile;
 
     Q_EMIT signalDone(!m_cancel);
 }
