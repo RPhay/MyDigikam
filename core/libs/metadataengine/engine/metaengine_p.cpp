@@ -152,6 +152,9 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
         return false;
     }
 
+    QFileInfo xmpInfo(xmpFile);
+    QDateTime modTime = xmpInfo.fileTime(QFileDevice::FileModificationTime);
+
     QMutexLocker lock(&s_metaEngineMutex);
 
     try
@@ -177,11 +180,11 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
-        return saveUsingExiv2(finfo, std::move(image));
+        return saveUsingExiv2(xmpInfo, modTime, std::move(image));
 
 #else
 
-        return saveUsingExiv2(finfo, image);
+        return saveUsingExiv2(xmpInfo, modTime, image);
 
 #endif
 
@@ -209,11 +212,13 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
         return false;
     }
 
+    QDateTime modTime = finfo.fileTime(QFileDevice::FileModificationTime);
+
     QMutexLocker lock(&s_metaEngineMutex);
 
     if (writeWithExifTool)
     {
-        return saveUsingExifTool(finfo);
+        return saveUsingExifTool(finfo, modTime);
     }
     else
     {
@@ -237,11 +242,11 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
-            return saveUsingExiv2(finfo, std::move(image));
+            return saveUsingExiv2(finfo, modTime, std::move(image));
 
 #else
 
-            return saveUsingExiv2(finfo, image);
+            return saveUsingExiv2(finfo, modTime, image);
 
 #endif
 
@@ -261,7 +266,9 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
     }
 }
 
-bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::AutoPtr image) const
+bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo,
+                                         const QDateTime& modTime,
+                                         Exiv2::Image::AutoPtr image) const
 {
     QMutexLocker lock(&s_metaEngineMutex);
 
@@ -269,17 +276,7 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
 
     if (!ext.isEmpty())
     {
-
-#ifdef _XMP_SUPPORT_
-
-        if (s_rawFileExtensions().contains(ext) && (image->imageType() != Exiv2::ImageType::xmp))
-
-#else
-
         if (s_rawFileExtensions().contains(ext))
-
-#endif // _XMP_SUPPORT_
-
         {
             // NOTE: never touch RAW files with Exiv2 as it's not safe. Use ExifTool backend instead.
 
@@ -454,40 +451,22 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Support for writing metadata is limited for file" << finfo.fileName();
         }
 
-#ifdef _XMP_SUPPORT_
+        image->writeMetadata();
 
-        if (!updateFileTimeStamp && (image->imageType() != Exiv2::ImageType::xmp))
-
-#else
-
-        if (!updateFileTimeStamp)
-
-#endif // _XMP_SUPPORT_
-
+        if (!updateFileTimeStamp && modTime.isValid())
         {
             // Don't touch modification timestamp of file.
 
-            QDateTime modDateTime = finfo.fileTime(QFileDevice::FileModificationTime);
+            QFile modFile(finfo.filePath());
 
-            image->writeMetadata();
-
-            if (modDateTime.isValid())
+            if (modFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::ExistingOnly))
             {
-                QFile modFile(finfo.filePath());
+                modFile.setFileTime(modTime, QFileDevice::FileModificationTime);
 
-                if (modFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::ExistingOnly))
-                {
-                    modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
 
-                    qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
-
-                    modFile.close();
-                }
+                modFile.close();
             }
-         }
-        else
-        {
-            image->writeMetadata();
         }
 
         return true;
@@ -504,7 +483,8 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
     return false;
 }
 
-bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
+bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo,
+                                            const QDateTime& modTime) const
 {
     QString ext = finfo.suffix().toLower();
 
@@ -553,47 +533,30 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
         return false;
     }
 
-    if (!updateFileTimeStamp)
+    bool hasCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
+
+    if (!parser->applyChanges(finfo.filePath(), exvPath,
+                              parent->hasExif(), parent->hasXmp(), hasCSet))
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
+        QFile::remove(exvPath);
+
+        return false;
+    }
+
+    if (!updateFileTimeStamp && modTime.isValid())
     {
         // Don't touch modification timestamp of file.
 
-        QDateTime modDateTime = finfo.fileTime(QFileDevice::FileModificationTime);
-        bool hasCSet          = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
+        QFile modFile(finfo.filePath());
 
-        if (!parser->applyChanges(finfo.filePath(), exvPath,
-                                  parent->hasExif(), parent->hasXmp(), hasCSet))
+        if (modFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::ExistingOnly))
         {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
-            QFile::remove(exvPath);
+            modFile.setFileTime(modTime, QFileDevice::FileModificationTime);
 
-            return false;
-        }
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
 
-        if (modDateTime.isValid())
-        {
-            QFile modFile(finfo.filePath());
-
-            if (modFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::ExistingOnly))
-            {
-                modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
-
-                qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
-
-                modFile.close();
-            }
-        }
-    }
-    else
-    {
-        bool hasCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
-
-        if (!parser->applyChanges(finfo.filePath(), exvPath,
-                                  parent->hasExif(), parent->hasXmp(), hasCSet))
-        {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
-            QFile::remove(exvPath);
-
-            return false;
+            modFile.close();
         }
     }
 

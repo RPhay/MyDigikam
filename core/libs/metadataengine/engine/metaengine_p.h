@@ -131,8 +131,11 @@ public:
 
     bool saveToXMPSidecar(const QFileInfo& finfo)                                 const;
     bool saveToFile(const QFileInfo& finfo)                                       const;
-    bool saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::AutoPtr image)      const;
-    bool saveUsingExifTool(const QFileInfo& finfo)                                const;
+    bool saveUsingExiv2(const QFileInfo& finfo,
+                        const QDateTime& modTime,
+                        Exiv2::Image::AutoPtr image)                              const;
+    bool saveUsingExifTool(const QFileInfo& finfo,
+                           const QDateTime& modTime)                              const;
 
     bool exportChanges(const QString& exvTmpFile)                                 const;
 
