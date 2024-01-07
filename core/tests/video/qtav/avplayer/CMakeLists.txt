@@ -37,11 +37,6 @@ if(WIN32)
     add_library(avplayer SHARED ${avplayer_SRCS})
     set_target_properties(avplayer PROPERTIES PREFIX "")
 
-elseif(APPLE)
-
-    add_executable(avplayer ${avplayer_SRCS})
-    set_target_properties(avplayer PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
-
 else()
 
     add_executable(avplayer ${avplayer_SRCS})
