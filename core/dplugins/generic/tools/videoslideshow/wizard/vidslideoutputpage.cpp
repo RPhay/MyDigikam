@@ -76,26 +76,6 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     formatLabel->setText(i18n("Media Container Format:"));
     d->formatVal              = new QComboBox(main);
     d->formatVal->setEditable(false);
-
-    QMap<VidSlideSettings::VidFormat, QString> map                = VidSlideSettings::videoFormatNames();
-    QMap<VidSlideSettings::VidFormat, QString>::const_iterator it = map.constBegin();
-
-    while (it != map.constEnd())
-    {
-        d->formatVal->addItem(it.value(), (int)it.key());
-
-        // Disable format entry if QtAV/ffmpeg format is not available.
-
-        VidSlideSettings tmp;
-        tmp.vFormat = (VidSlideSettings::VidFormat)it.key();
-/*
-        // TODO: Port to FFmpeg CLI
-        if (!AVMuxer::supportedExtensions().contains(tmp.videoFormat()))
-            d->formatVal->setItemData((int)it.key(), false, Qt::UserRole-1);
-*/
-        ++it;
-    }
-
     formatLabel->setBuddy(d->formatVal);
 
     // --------------------
@@ -142,7 +122,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     {
         auto* const item = model->item(VidSlideSettings::INTERNAL);
 
-        if(!item)
+        if (!item)
         {
             item->setEnabled(false);
         }
@@ -185,7 +165,38 @@ VidSlideOutputPage::~VidSlideOutputPage()
 
 void VidSlideOutputPage::initializePage()
 {
-    d->formatVal->setCurrentIndex(d->settings->vFormat);
+    // Populate Formats List
+
+    QMap<VidSlideSettings::VidFormat, QString> map                = VidSlideSettings::videoFormatNames();
+    QMap<VidSlideSettings::VidFormat, QString>::const_iterator it = map.constBegin();
+
+    QStringList formats = d->settings->ffmpegFormats.keys();
+    int currentFormat   = d->settings->vFormat;
+
+    while (it != map.constEnd())
+    {
+        d->formatVal->addItem(it.value(), (int)it.key());
+
+        // Disable entry if FFmpeg format is not available.
+
+        VidSlideSettings tmp;
+        tmp.vFormat = (VidSlideSettings::VidFormat)it.key();
+
+        if (!formats.contains(tmp.videoFormat()))
+        {
+            d->formatVal->setItemData((int)it.key(), false, Qt::UserRole-1);
+        }
+        else
+        {
+            if ((int)it.key() == currentFormat)
+            {
+                d->formatVal->setCurrentIndex(currentFormat);
+            }
+        }
+
+        ++it;
+    }
+
     d->destUrl->setFileDlgPath(d->settings->outputDir);
     d->conflictBox->setConflictRule(d->settings->conflictRule);
     d->playerVal->setCurrentIndex(d->settings->outputPlayer);
@@ -194,7 +205,9 @@ void VidSlideOutputPage::initializePage()
 bool VidSlideOutputPage::validatePage()
 {
     if (d->destUrl->fileDlgPath().isEmpty())
+    {
         return false;
+    }
 
     d->settings->vFormat      = (VidSlideSettings::VidFormat)d->formatVal->currentIndex();
     d->settings->outputDir    = d->destUrl->fileDlgPath();

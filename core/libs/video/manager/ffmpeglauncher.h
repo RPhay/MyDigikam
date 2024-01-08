@@ -53,6 +53,11 @@ public:
      */
     QMap<QString, QString> supportedCodecs();
 
+    /**
+     * Get the map of supported formats with features.
+     */
+    QMap<QString, QString> supportedFormats();
+
 private:
 
     VidSlideSettings* m_settings = nullptr;

@@ -112,7 +112,9 @@ VidSlideSettings* VidSlideWizard::settings() const
 bool VidSlideWizard::validateCurrentPage()
 {
     if (!DWizardDlg::validateCurrentPage())
+    {
         return false;
+    }
 
     return true;
 }
@@ -122,12 +124,16 @@ int VidSlideWizard::nextId() const
     if (d->settings->selMode == VidSlideSettings::ALBUMS)
     {
         if (currentPage() == d->introPage)
+        {
             return d->albumsPage->id();
+        }
     }
     else
     {
         if (currentPage() == d->introPage)
+        {
             return d->imagesPage->id();
+        }
     }
 
     return DWizardDlg::nextId();

@@ -71,7 +71,7 @@ void FFmpegLauncher::encodeFrames()
 
 QMap<QString, QString> FFmpegLauncher::supportedCodecs()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported video codecs";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported codecs";
 
     setProgram(m_settings->ffmpegPath);
     setArguments(QStringList() << QLatin1String("-codecs"));
@@ -100,6 +100,39 @@ QMap<QString, QString> FFmpegLauncher::supportedCodecs()
 
     return codecMap;
 }
+
+QMap<QString, QString> FFmpegLauncher::supportedFormats()
+{
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported formats";
+
+    setProgram(m_settings->ffmpegPath);
+    setArguments(QStringList() << QLatin1String("-formats"));
+
+    QEventLoop loop;
+
+    connect(this, &ProcessLauncher::signalComplete,
+            &loop, &QEventLoop::quit);
+
+    startProcess();
+    loop.exec();
+
+    QMap<QString, QString> formatMap;        // name, features
+    QString out         = output().section(QLatin1String("--"), -1);
+    QStringList formats = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+
+    Q_FOREACH (const QString& line, formats)
+    {
+        QStringList sections = line.simplified().split(QLatin1Char(' '), Qt::SkipEmptyParts);
+
+        if (sections.size() >= 2)
+        {
+            formatMap.insert(sections[1], sections[0]);
+        }
+    }
+
+    return formatMap;
+}
+
 
 } // namespace Digikam
 

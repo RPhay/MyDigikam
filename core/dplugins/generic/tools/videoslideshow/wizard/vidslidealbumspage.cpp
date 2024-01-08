@@ -74,10 +74,14 @@ VidSlideAlbumsPage::~VidSlideAlbumsPage()
 bool VidSlideAlbumsPage::validatePage()
 {
     if (!d->iface)
+    {
         return false;
+    }
 
     if (d->iface && d->iface->albumChooserItems().isEmpty())
+    {
         return false;
+    }
 
     d->wizard->settings()->inputImages.clear();
 
@@ -93,7 +97,9 @@ bool VidSlideAlbumsPage::validatePage()
 bool VidSlideAlbumsPage::isComplete() const
 {
     if (!d->iface)
+    {
         return false;
+    }
 
     return (!d->iface->albumChooserItems().isEmpty());
 }

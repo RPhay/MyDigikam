@@ -147,7 +147,8 @@ bool VidSlideIntroPage::validatePage()
 
         FFmpegLauncher ffmpeg(this);
         ffmpeg.setSettings(d->wizard->settings());
-        d->wizard->settings()->ffmpegCodecs = ffmpeg.supportedCodecs();
+        d->wizard->settings()->ffmpegCodecs  = ffmpeg.supportedCodecs();
+        d->wizard->settings()->ffmpegFormats = ffmpeg.supportedFormats();
 
         return true;
     }

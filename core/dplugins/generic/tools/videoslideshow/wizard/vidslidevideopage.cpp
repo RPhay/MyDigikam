@@ -36,6 +36,7 @@
 #include "vidslidewizard.h"
 #include "transitionpreview.h"
 #include "effectpreview.h"
+#include "digikam_debug.h"
 
 namespace DigikamGenericVideoSlideShowPlugin
 {
@@ -153,27 +154,6 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
     codecLabel->setText(i18n("Video Codec:"));
     d->codecVal              = new QComboBox(main);
     d->codecVal->setEditable(false);
-
-    QMap<VidSlideSettings::VidCodec, QString> map5                = VidSlideSettings::videoCodecNames();
-    QMap<VidSlideSettings::VidCodec, QString>::const_iterator it5 = map5.constBegin();
-
-    while (it5 != map5.constEnd())
-    {
-        d->codecVal->insertItem((int)it5.key(), it5.value(), (int)it5.key());
-
-        // Disable codec entry if QtAV/ffmpeg codec is not available.
-
-        VidSlideSettings tmp;
-        tmp.vCodec = (VidSlideSettings::VidCodec)it5.key();
-
-        if (d->settings->ffmpegCodecs.find(tmp.videoCodec()) == d->settings->ffmpegCodecs.end())
-        {
-            d->codecVal->setItemData((int)it5.key(), false, Qt::UserRole - 1);
-        }
-
-        ++it5;
-    }
-
     codecLabel->setBuddy(d->codecVal);
 
     // --------------------
@@ -322,11 +302,42 @@ void VidSlideVideoPage::slotSlideDuration()
 
 void VidSlideVideoPage::initializePage()
 {
+    // Populate Codecs List
+
+    QMap<VidSlideSettings::VidCodec, QString> map5                = VidSlideSettings::videoCodecNames();
+    QMap<VidSlideSettings::VidCodec, QString>::const_iterator it5 = map5.constBegin();
+
+    QStringList codecs = d->settings->ffmpegCodecs.keys();
+    int currentCodec   = d->settings->vCodec;
+
+    while (it5 != map5.constEnd())
+    {
+        d->codecVal->insertItem((int)it5.key(), it5.value(), (int)it5.key());
+
+        // Disable entry if FFmpeg codec is not available.
+
+        VidSlideSettings tmp;
+        tmp.vCodec = (VidSlideSettings::VidCodec)it5.key();
+
+        if (!codecs.contains(tmp.videoCodec()))
+        {
+            d->codecVal->setItemData((int)it5.key(), false, Qt::UserRole - 1);
+        }
+        else
+        {
+            if ((int)it5.key() == currentCodec)
+            {
+                d->codecVal->setCurrentIndex(currentCodec);
+            }
+        }
+
+        ++it5;
+    }
+
     d->framesVal->setValue(d->settings->imgFrames);
     d->typeVal->setCurrentIndex(d->typeVal->findData(d->settings->vType));
     d->bitrateVal->setCurrentIndex(d->settings->vbitRate);
     d->stdVal->setCurrentIndex(d->settings->vStandard);
-    d->codecVal->setCurrentIndex(d->codecVal->findData(d->settings->vCodec));
     d->effVal->setCurrentIndex(d->settings->vEffect);
     d->transVal->setCurrentIndex(d->settings->transition);
     d->transPreview->setImagesList(d->settings->inputImages);

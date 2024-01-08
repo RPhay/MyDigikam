@@ -194,19 +194,21 @@ void VidSlideFinalPage::slotDone(bool completed)
             d->progressView->addEntry(i18n("Opening video stream in player..."),
                                       DHistoryView::ProgressEntry);
 
+#ifdef HAVE_MEDIAPLAYER
+
             if (d->settings->outputPlayer == VidSlideSettings::INTERNAL)
             {
 
-#ifdef HAVE_MEDIAPLAYER
 
                 VidPlayerDlg* const player = new VidPlayerDlg(d->settings->outputFile, this);
                 player->show();
                 player->resize(800, 600);
 
-#endif
 
             }
             else
+
+#endif
             {
                 QDesktopServices::openUrl(QUrl::fromLocalFile(d->settings->outputFile));
             }
