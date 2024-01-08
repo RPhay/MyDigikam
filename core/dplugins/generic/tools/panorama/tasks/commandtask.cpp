@@ -67,7 +67,7 @@ void CommandTask::runProcess(QStringList& args)
     process->setArguments(args);
     process->start();
 
-    successFlag = process->waitForFinished(-1) && process->exitStatus() == QProcess::NormalExit;
+    successFlag = process->waitForFinished(-1) && (process->exitStatus() == QProcess::NormalExit);
     output      = QString::fromLocal8Bit(process->readAll());
 
     if (!successFlag)
