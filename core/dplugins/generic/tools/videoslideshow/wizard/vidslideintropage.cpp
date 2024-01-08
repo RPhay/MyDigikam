@@ -146,7 +146,7 @@ bool VidSlideIntroPage::validatePage()
         return true;
     }
 
-    return true;
+    return false;
 }
 
 } // namespace DigikamGenericVideoSlideShowPlugin
