@@ -33,6 +33,7 @@
 #include "vidslidewizard.h"
 #include "vidslidesettings.h"
 #include "ffmpegbinary.h"
+#include "ffmpeglauncher.h"
 #include "dbinarysearch.h"
 
 namespace DigikamGenericVideoSlideShowPlugin
@@ -143,6 +144,12 @@ bool VidSlideIntroPage::validatePage()
     {
         d->wizard->settings()->ffmpegPath = d->ffmpegBin.path();
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << d->ffmpegBin.directory() << d->ffmpegBin.path();
+
+        FFmpegLauncher ffmpeg(this);
+        ffmpeg.setSettings(d->wizard->settings());
+        QString vcodecs = ffmpeg.supportedVideoCodecs();
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Video Codecs:" << vcodecs;
+
         return true;
     }
 

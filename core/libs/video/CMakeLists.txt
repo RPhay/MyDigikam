@@ -20,6 +20,8 @@ set(libvideotoolscommon_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidesettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/ffmpegbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/ffmpeglauncher.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidetask.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
 )
 
 if(ENABLE_MEDIAPLAYER)
@@ -27,6 +29,7 @@ if(ENABLE_MEDIAPLAYER)
     set(libvideotoolscommon_SRCS
         ${libvideotoolscommon_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/ffmpegconfighelper.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
     )
 
 endif()
@@ -43,17 +46,11 @@ target_compile_definitions(core_videotoolscommon_obj
 
 if(ENABLE_MEDIAPLAYER)
 
-    set(libvideotools_SRCS
-        ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidetask.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
-    )
-
     if(Qt6_FOUND AND ENABLE_QTMULTIMEDIA)
 
         # NOTE: this part depends of QtMultimedia
 
-        set(libvideotools_SRCS ${libvideotools_SRCS}
+        set(libvideotools_SRCS
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtmm/mediaplayerview.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtmm/slidevideo.cpp
         )
@@ -62,7 +59,7 @@ if(ENABLE_MEDIAPLAYER)
 
         # NOTE: this part depends of QtAv
 
-        set(libvideotools_SRCS ${libvideotools_SRCS}
+        set(libvideotools_SRCS
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/mediaplayerview.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/slidevideo.cpp
         )

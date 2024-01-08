@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "vidslidewizard.h"
 #include "dfileselector.h"
 #include "filesaveconflictbox.h"
@@ -132,6 +133,23 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
         d->playerVal->addItem(it2.value(), (int)it2.key());
         ++it2;
     }
+
+#ifndef HAVE_MEDIAPLAYER
+
+    auto* const model = qobject_cast<QStandardItemModel*>(d->playerVal->model());
+
+    if (model)
+    {
+        auto* const item = model->item(VidSlideSettings::INTERNAL);
+
+        if(!item)
+        {
+            item->setEnabled(false);
+        }
+    }
+
+#endif
+
 
     playerLabel->setBuddy(d->playerVal);
 

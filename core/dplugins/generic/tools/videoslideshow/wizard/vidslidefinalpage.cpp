@@ -196,9 +196,15 @@ void VidSlideFinalPage::slotDone(bool completed)
 
             if (d->settings->outputPlayer == VidSlideSettings::INTERNAL)
             {
+
+#ifdef HAVE_MEDIAPLAYER
+
                 VidPlayerDlg* const player = new VidPlayerDlg(d->settings->outputFile, this);
                 player->show();
                 player->resize(800, 600);
+
+#endif
+
             }
             else
             {
