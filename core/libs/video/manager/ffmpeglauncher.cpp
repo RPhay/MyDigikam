@@ -69,7 +69,7 @@ void FFmpegLauncher::encodeFrames()
     startProcess();
 }
 
-QMap<QString, QString> FFmpegLauncher::supportedVideoCodecs()
+QMap<QString, QString> FFmpegLauncher::supportedCodecs()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported video codecs";
 

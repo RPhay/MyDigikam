@@ -166,7 +166,7 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
         VidSlideSettings tmp;
         tmp.vCodec = (VidSlideSettings::VidCodec)it5.key();
 
-        if (d->settings->ffmpegVCodecs.find(tmp.videoCodec()) == d->settings->ffmpegVCodecs.constEnd())
+        if (d->settings->ffmpegCodecs.find(tmp.videoCodec()) == d->settings->ffmpegCodecs.end())
         {
             d->codecVal->setItemData((int)it5.key(), false, Qt::UserRole - 1);
         }

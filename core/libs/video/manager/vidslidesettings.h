@@ -247,7 +247,7 @@ public:
 
     // -- FFMpeg features --------
 
-    QMap<QString, QString>            ffmpegVCodecs;    ///< Map of FFmpeg codec name and features.
+    QMap<QString, QString>            ffmpegCodecs;     ///< Map of FFmpeg codec names and features.
 };
 
 } // namespace Digikam

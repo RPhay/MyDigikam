@@ -49,9 +49,9 @@ public:
     void encodeFrames();
 
     /**
-     * Get the map of supported video codecs with features.
+     * Get the map of supported codecs with features.
      */
-    QMap<QString, QString> supportedVideoCodecs();
+    QMap<QString, QString> supportedCodecs();
 
 private:
 
