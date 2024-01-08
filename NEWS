@@ -136,7 +136,7 @@ BUGFIXES:
 118 ==> 479512 - Renaming tags with many items and hitting No on "Write now?" pop-up is not written automatically to file.
 119 ==> 479356 - [Import tool] Auto-rotate doesn't rotate thumbnail.
 120 ==> 479455 - Move digiKam from the primary Full HD monitor to the secondary 4K monitor, the window is broken.
-121 ==> 
+121 ==> 479527 - Typing into the "Who's This?" area when adding a Face Tag crashes under Windows 10.
 122 ==> 
 123 ==> 
 124 ==> 
