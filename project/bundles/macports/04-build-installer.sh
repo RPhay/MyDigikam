@@ -92,7 +92,7 @@ lib/mariadb$MARIADB_SUFFIX/mysql/*.dylib \
 lib/mariadb$MARIADB_SUFFIX/plugin/*.so \
 bin/kbuildsycoca5 \
 bin/solid-hardware5 \
-bin/ffmpeg\
+bin/ffmpeg \
 libexec/qt5/plugins/imageformats/*.dylib \
 libexec/qt5/plugins/sqldrivers/*.dylib \
 libexec/qt5/plugins/printsupport/*.dylib \
