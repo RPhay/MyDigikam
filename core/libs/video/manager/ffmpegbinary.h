@@ -31,6 +31,8 @@ public:
 
     explicit FFmpegBinary(QObject* const parent = nullptr);
     ~FFmpegBinary() override;
+
+    static QString ffmpegToolBin();
 };
 
 } // namespace Digikam

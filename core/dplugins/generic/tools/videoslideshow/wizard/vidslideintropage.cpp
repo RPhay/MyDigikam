@@ -21,6 +21,8 @@
 #include <QComboBox>
 #include <QGroupBox>
 #include <QIcon>
+#include <QStandardPaths>
+#include <QFileInfo>
 
 // KDE includes
 
@@ -142,7 +144,36 @@ bool VidSlideIntroPage::validatePage()
 
     if (d->ffmpegBin.isValid())
     {
-        d->wizard->settings()->ffmpegPath = d->ffmpegBin.path();
+        QString path = d->ffmpegBin.path();
+
+        if      (path.isEmpty() || (path == FFmpegBinary::ffmpegToolBin()))
+        {
+
+#ifdef Q_OS_WIN
+
+            QStringList possiblePaths({QLatin1String("C:/Program Files/digiKam"),
+                                       QLatin1String("C:/Program Files/digiKam/bin")});
+
+            path = QStandardPaths::findExecutable(exifToolBin(), possiblePaths);
+
+#else
+
+            path = QStandardPaths::findExecutable(FFmpegBinary::ffmpegToolBin());
+
+#endif
+
+        }
+        else if (QFileInfo(path).isDir())
+        {
+            if (!path.endsWith(QLatin1Char('/')))
+            {
+                path.append(QLatin1Char('/'));
+            }
+
+            path.append(FFmpegBinary::ffmpegToolBin());
+        }
+
+        d->wizard->settings()->ffmpegPath = path;
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << d->ffmpegBin.directory() << d->ffmpegBin.path();
 
         FFmpegLauncher ffmpeg(this);

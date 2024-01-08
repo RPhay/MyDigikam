@@ -38,6 +38,21 @@ FFmpegBinary::~FFmpegBinary()
 {
 }
 
+QString FFmpegBinary::ffmpegToolBin()
+{
+
+#ifdef Q_OS_WIN
+
+    return QLatin1String("ffmpeg.exe");
+
+#else
+
+    return QLatin1String("ffmpeg");
+
+#endif
+
+}
+
 } // namespace Digikam
 
 #include "moc_ffmpegbinary.cpp"
