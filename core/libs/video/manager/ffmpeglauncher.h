@@ -33,8 +33,20 @@ public:
     explicit FFmpegLauncher(QObject* const parent);
     ~FFmpegLauncher() override;
 
+    /**
+     * Set encoding frames settings.
+     */
     void setSettings(VidSlideSettings* const settings);
+
+    /**
+     * Encode frames in a separated thread.
+     */
     void encodeFrames();
+
+    /**
+     * Get the list of supported video codecs.
+     */
+    QString supportedVideoCodecs();
 
 private:
 

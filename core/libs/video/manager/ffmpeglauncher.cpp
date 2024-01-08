@@ -18,6 +18,10 @@
 
 #include <cmath>
 
+// Qt includes
+
+#include <QEventLoop>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -62,6 +66,24 @@ void FFmpegLauncher::encodeFrames()
                                << QLatin1String("-y")                                   // Overwrite target.
                                << m_settings->outputFile);                              // Target video stream.
     startProcess();
+}
+
+QString FFmpegLauncher::supportedVideoCodecs()
+{
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported video codecs";
+
+    setProgram(m_settings->ffmpegPath);
+    setArguments(QStringList() << QLatin1String("-codecs"));
+
+    QEventLoop loop;
+
+    connect(this, &ProcessLauncher::signalComplete,
+            &loop, &QEventLoop::quit);
+
+    startProcess();
+    loop.exec();
+
+    return output();
 }
 
 } // namespace Digikam
