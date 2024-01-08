@@ -110,11 +110,11 @@ void VidSlideThread::slotEncodeFrames(bool prepareDone)
     m_encoder->encodeFrames();
 }
 
-void VidSlideThread::slotEncodeDone(bool timedOut, int exitCode)
+void VidSlideThread::slotEncodeDone(bool success, int exitCode)
 {
     bool b = false;
 
-    if (timedOut || (exitCode != 0))
+    if (!success || (exitCode != 0))
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot generate output video" << m_settings->outputFile;
     }

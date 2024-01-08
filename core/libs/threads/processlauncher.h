@@ -63,13 +63,13 @@ public:
     QString output()        const;
 
     /**
-     * Return true if the process is timed-out to start.
+     * Return true if the process is startd and completed without error.
      */
-    bool timedOut()         const;
+    bool success()          const;
 
 Q_SIGNALS:
 
-    void signalComplete(bool timedOut, int exitCode);
+    void signalComplete(bool success, int exitCode);
 
 private:
 

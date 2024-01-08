@@ -18,6 +18,7 @@
 
 #include <QByteArray>
 #include <QProcess>
+#include <QSharedPointer>
 #include <QElapsedTimer>
 #include <QProcessEnvironment>
 
@@ -37,15 +38,15 @@ public:
 
 public:
 
-    QProcess*   proc     = nullptr;
-    QStringList args;
-    QString     prog;
-    QString     dir;
-    bool        timedOut = false;
-    int         exitCode = 0;
-    int         timeOut  = 30000;           ///< in milli-seconds;
-    qint64      elapsed  = 0;
-    QString     output;
+    QSharedPointer<QProcess> process     = nullptr;
+    QStringList              args;
+    QString                  prog;
+    QString                  dir;
+    bool                     successFlag = false;
+    int                      exitCode    = 0;
+    int                      timeOut     = 30000;           ///< in milli-seconds;
+    qint64                   elapsed     = 0;
+    QString                  output;
 };
 
 ProcessLauncher::ProcessLauncher(QObject* const parent)
@@ -56,7 +57,11 @@ ProcessLauncher::ProcessLauncher(QObject* const parent)
 
 ProcessLauncher::~ProcessLauncher()
 {
-    d->proc->kill();
+    if (!d->process.isNull())
+    {
+        d->process->kill();
+    }
+
     delete d;
 }
 
@@ -90,9 +95,9 @@ QString ProcessLauncher::output() const
     return d->output;
 }
 
-bool ProcessLauncher::timedOut() const
+bool ProcessLauncher::success() const
 {
-    return d->timedOut;
+    return d->successFlag;
 }
 
 qint64 ProcessLauncher::elapsedTime() const
@@ -110,14 +115,14 @@ void ProcessLauncher::run()
     QString     prog;
     QStringList args;
 
-    d->proc = new QProcess();
-    d->proc->setProcessChannelMode(QProcess::MergedChannels);
-    d->proc->setWorkingDirectory(d->dir);
+    d->process.reset(new QProcess());
+    d->process->setProcessChannelMode(QProcess::MergedChannels);
+    d->process->setWorkingDirectory(d->dir);
 
     QProcessEnvironment env = adjustedEnvironmentForAppImage();
-    d->proc->setProcessEnvironment(env);
+    d->process->setProcessEnvironment(env);
 
-    connect(d->proc, SIGNAL(readyRead()),
+    connect(d->process.data(), SIGNAL(readyRead()),
             this, SLOT(slotReadyRead()));
 
     QElapsedTimer etimer;
@@ -139,24 +144,23 @@ void ProcessLauncher::run()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    d->proc->start(prog, args);
+    d->process->start(prog, args);
 
 #else
 
-    d->proc->setProgram(prog);
-    d->proc->setArguments(args);
-    d->proc->start();
+    d->process->setProgram(prog);
+    d->process->setArguments(args);
+    d->process->start();
 
 #endif
 
-    if (d->proc->waitForStarted(d->timeOut))
+    if (d->process->waitForStarted(d->timeOut))
     {
-        d->timedOut = !d->proc->waitForFinished(d->timeOut);
-        d->exitCode = d->proc->exitCode();
-        d->elapsed  = etimer.elapsed();
+        d->successFlag = d->process->waitForFinished(-1) && (d->process->exitStatus() == QProcess::NormalExit);
+        d->exitCode    = d->process->exitCode();
+        d->elapsed     = etimer.elapsed();
 
         qCInfo(DIGIKAM_GENERAL_LOG) << "=== Process execution is complete!";
-        qCInfo(DIGIKAM_GENERAL_LOG) << "> Process timed-out        :" << d->timedOut;
         qCInfo(DIGIKAM_GENERAL_LOG) << "> Process exit code        :" << d->exitCode;
         qCInfo(DIGIKAM_GENERAL_LOG) << "> Process elasped time (ms):" << d->elapsed;
     }
@@ -165,12 +169,12 @@ void ProcessLauncher::run()
         qCWarning(DIGIKAM_GENERAL_LOG) << "=== Process execution failed!";
     }
 
-    Q_EMIT signalComplete(d->timedOut, d->exitCode);
+    Q_EMIT signalComplete(d->successFlag, d->exitCode);
 }
 
 void ProcessLauncher::slotReadyRead()
 {
-    QByteArray data = d->proc->readAll();
+    QByteArray data = d->process->readAll();
 
     if (!data.isEmpty())
     {
