@@ -15,6 +15,11 @@
 #ifndef DIGIKAM_FFMPEG_LAUNCHER_H
 #define DIGIKAM_FFMPEG_LAUNCHER_H
 
+// Qt includes
+
+#include <QMap>
+#include <QString>
+
 // Local includes
 
 #include "processlauncher.h"
@@ -44,9 +49,9 @@ public:
     void encodeFrames();
 
     /**
-     * Get the list of supported video codecs.
+     * Get the map of supported video codecs with features.
      */
-    QString supportedVideoCodecs();
+    QMap<QString, QString> supportedVideoCodecs();
 
 private:
 

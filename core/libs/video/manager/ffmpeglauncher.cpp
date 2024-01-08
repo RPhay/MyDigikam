@@ -21,6 +21,7 @@
 // Qt includes
 
 #include <QEventLoop>
+#include <QStringList>
 
 // Local includes
 
@@ -68,7 +69,7 @@ void FFmpegLauncher::encodeFrames()
     startProcess();
 }
 
-QString FFmpegLauncher::supportedVideoCodecs()
+QMap<QString, QString> FFmpegLauncher::supportedVideoCodecs()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported video codecs";
 
@@ -83,7 +84,21 @@ QString FFmpegLauncher::supportedVideoCodecs()
     startProcess();
     loop.exec();
 
-    return output();
+    QMap<QString, QString> codecMap;        // name, features
+    QString out        = output().section(QLatin1String("-------"), -1);
+    QStringList codecs = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+
+    Q_FOREACH (const QString& line, codecs)
+    {
+        QStringList sections = line.simplified().split(QLatin1Char(' '), Qt::SkipEmptyParts);
+
+        if (sections.size() >= 2)
+        {
+            codecMap.insert(sections[1], sections[0]);
+        }
+    }
+
+    return codecMap;
 }
 
 } // namespace Digikam

@@ -147,8 +147,7 @@ bool VidSlideIntroPage::validatePage()
 
         FFmpegLauncher ffmpeg(this);
         ffmpeg.setSettings(d->wizard->settings());
-        QString vcodecs = ffmpeg.supportedVideoCodecs();
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Video Codecs:" << vcodecs;
+        d->wizard->settings()->ffmpegVCodecs = ffmpeg.supportedVideoCodecs();
 
         return true;
     }

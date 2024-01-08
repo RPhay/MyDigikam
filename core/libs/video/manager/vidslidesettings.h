@@ -244,6 +244,10 @@ public:
     QString                           outputVideo;      ///< Target video file encoded at end.
     VidPlayer                         outputPlayer;     ///< Open video stream in player at end.
     QString                           ffmpegPath;       ///< Path to FFmpeg binary.
+
+    // -- FFMpeg features --------
+
+    QMap<QString, QString>            ffmpegVCodecs;    ///< Map of FFmpeg codec name and features.
 };
 
 } // namespace Digikam

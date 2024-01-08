@@ -165,11 +165,12 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
 
         VidSlideSettings tmp;
         tmp.vCodec = (VidSlideSettings::VidCodec)it5.key();
-/*
-        // FIXME: port FFMPEG cli
-        if (!VideoEncoder::supportedCodecs().contains(tmp.videoCodec()))
-            d->codecVal->setItemData((int)it5.key(), false, Qt::UserRole-1);
-*/
+
+        if (d->settings->ffmpegVCodecs.find(tmp.videoCodec()) == d->settings->ffmpegVCodecs.constEnd())
+        {
+            d->codecVal->setItemData((int)it5.key(), false, Qt::UserRole - 1);
+        }
+
         ++it5;
     }
 
