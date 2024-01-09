@@ -137,7 +137,7 @@ BUGFIXES:
 119 ==> 479356 - [Import tool] Auto-rotate doesn't rotate thumbnail.
 120 ==> 479455 - Move digiKam from the primary Full HD monitor to the secondary 4K monitor, the window is broken.
 121 ==> 479527 - Typing into the "Who's This?" area when adding a Face Tag crashes under Windows 10.
-122 ==> 
+122 ==> 479571 - Pressing any key while a face-name is highlighted when previewing an image crashes digiKam.
 123 ==> 
 124 ==> 
 125 ==> 
