@@ -17,15 +17,15 @@
 # Stefano Ferri <ferriste@gmail.com>, 2013.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2014, 2022.
 # Luigi Toscano <luigi.toscano@tiscali.it>, 2015.
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Valter Mura <valtermura@gmail.com>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Valter Mura <valtermura@gmail.com>
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-08 00:39+0000\n"
-"PO-Revision-Date: 2023-12-28 21:41+0100\n"
+"POT-Creation-Date: 2024-01-09 00:39+0000\n"
+"PO-Revision-Date: 2024-01-06 23:48+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1026,8 +1026,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:183
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:220
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:164
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
@@ -1171,7 +1171,7 @@ msgid " fps"
 msgstr " fps"
 
 #: core/app/items/utils/tooltipfiller.cpp:389
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:153
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:154
 #, kde-format
 msgid "Video Codec:"
 msgstr "Codec video"
@@ -2857,7 +2857,7 @@ msgstr "Mostra a schermo intero"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
@@ -10729,10 +10729,9 @@ msgid "Golden Mean"
 msgstr "Sezione aurea"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:427
-#, fuzzy, kde-format
-#| msgid "Centered"
+#, kde-format
 msgid "Center Lines"
-msgstr "Centrata"
+msgstr "Linee al centro"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:428
 #, kde-format
@@ -17673,7 +17672,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
 msgstr "Scegli il metodo di selezione delle immagini:"
@@ -17682,7 +17681,7 @@ msgstr "Scegli il metodo di selezione delle immagini:"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
@@ -17702,7 +17701,7 @@ msgstr "Cartella di destinazione:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:109
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:90
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -20283,13 +20282,13 @@ msgstr ""
 "immagine."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:85
 #, kde-format
 msgid "Destination folder:"
 msgstr "Cartella di destinazione:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:91
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20940,7 +20939,7 @@ msgstr ""
 "p><p>Il primo si trova in cima all'elenco, l'ultimo</p><p>alla fine. Puoi "
 "regolare l'ordine di ciascun elemento.</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:72
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:75
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Video Slideshow tool</b></h1></p><p>This assistant "
@@ -20962,55 +20961,53 @@ msgstr ""
 "creare una presentazione video con effetti</p><p>di transizione e tracce "
 "audio, che può essere proiettata su uno schermo televisivo.</p></qt>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title: binary properties"
-#| msgid "Binary"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:102
+#, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
-msgstr "Binario"
+msgstr "Eseguibile FFmpeg"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:76
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Formato del contenitore multimediale:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:97
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Il nome file del video risultante sarà generato automaticamente."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Open in Player:"
 msgstr "Apri nel riproduttore:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:83
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:84
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr "Numero di fotogrammi per immagine:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:93
 #, kde-format
 msgid "Video Standard:"
 msgstr "Standard video:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:111
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:112
 #, kde-format
 msgid "Video Type:"
 msgstr "Tipo di video:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:134
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:135
 #, kde-format
 msgid "Video Bit Rate:"
 msgstr "Bitrate video:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:180
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:161
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr "Effetto durante la visualizzazione delle immagini"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:200
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:181
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -21022,12 +21019,12 @@ msgstr ""
 "fotogrammi utilizzati per rendere l'immagine all'interno del flusso video.</"
 "i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:217
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:198
 #, kde-format
 msgid "Transition Between Images"
 msgstr "Transizione tra le immagini"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:237
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:218
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -21038,7 +21035,7 @@ msgstr ""
 "alcuni effetti, la durata può dipendere da valori casuali e può cambiare "
 "durante la presentazione.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:318
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:299
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Durata: %1 secondi per elemento, %2 secondi totali (senza transizioni)"
@@ -23011,17 +23008,14 @@ msgid "Create relative symlinks"
 msgstr "Crea collegamenti simbolici relativi"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Include the sidecars of the items"
+#, kde-format
 msgid "Include the sidecar of the items"
-msgstr "Includi i sidecar degli elementi"
+msgstr "Includi il sidecar degli elementi"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Write metadata to each file"
+#, kde-format
 msgid "Write sidecar metadata to the items"
-msgstr "Scrivi i metadati su ogni file"
+msgstr "Scrivi i metadati del sidecar negli elementi"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:125
 #, kde-format
@@ -28047,30 +28041,24 @@ msgid "Tags (0)"
 msgstr "Tag (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Albums"
+#, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Tutti gli album"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive"
-msgstr "Selezione ricorsiva"
+msgstr "Ricorsivo"
 
 #: core/libs/album/widgets/albumselectors.cpp:182
 #: core/libs/album/widgets/albumselectors.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
-msgstr "Selezione ricorsiva"
+msgstr "Selezione ricorsiva."
 
 #: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
@@ -28091,9 +28079,7 @@ msgid "Reset selected albums"
 msgstr "Azzera gli album selezionati"
 
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Tags"
+#, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Tutti i tag"
@@ -41178,6 +41164,8 @@ msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
+"Una soluzione completa e multipiattaforma per registrare, convertire e "
+"trasmettere audio e video."
 
 #: core/libs/video/manager/vidslidesettings.cpp:485
 #, kde-format
@@ -41660,10 +41648,9 @@ msgid "Default from Desktop"
 msgstr "Predefinito dal desktop"
 
 #: core/libs/video/manager/vidslidetask.cpp:181
-#, fuzzy, kde-format
-#| msgid "Encoding %1 Done"
+#, kde-format
 msgid "Preparing %1 Done"
-msgstr "Codifica %1 eseguita"
+msgstr "Preparazione %1 fatto"
 
 #: core/libs/video/manager/vidslidethread.cpp:63
 #, fuzzy, kde-format
@@ -42418,7 +42405,7 @@ msgstr "Cambia"
 #: core/libs/widgets/files/dbinarysearch.cpp:190
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
-msgstr ""
+msgstr "Il file eseguibile trovato non sembra funzionare come dovrebbe."
 
 #: core/libs/widgets/files/dfileselector.cpp:58
 #, kde-format
@@ -53633,10 +53620,9 @@ msgid "Projection"
 msgstr "Proiezione"
 
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:72
-#, fuzzy, kde-format
-#| msgid "Export Bookmarks..."
+#, kde-format
 msgid "Export as..."
-msgstr "Esporta segnalibri..."
+msgstr "Esporta come..."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:160
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:183
@@ -53818,10 +53804,9 @@ msgid "Add Bookmark..."
 msgstr "Aggiungi segnalibro..."
 
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
-#, fuzzy, kde-format
-#| msgid "<p>Arguments: %1</p>"
+#, kde-format
 msgid "<p>Copyright %1</p>"
-msgstr "<p>Argomenti: %1</p>"
+msgstr "<p>Copyright %1</p>"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, kde-format
@@ -56833,10 +56818,9 @@ msgid "&Atmosphere"
 msgstr "&Atmosfera"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
-#, fuzzy, kde-format
-#| msgid "Shows the atmosphere around the earth."
+#, kde-format
 msgid "A plugin to show the atmosphere around the earth."
-msgstr "Mostra l'atmosfera attorno alla Terra."
+msgstr "Estensione che mostra l'atmosfera attorno alla Terra."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
@@ -56887,10 +56871,10 @@ msgid "&Compass"
 msgstr "&Bussola"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a compass."
+#, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
-msgstr "Questo è un oggetto mobile che mostra una bussola."
+msgstr ""
+"Estensione che mostra un oggetto mobile che fornisce una bussola sulla mappa."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
@@ -56933,10 +56917,9 @@ msgid "Cross&hairs"
 msgstr "&Mirino"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
-#, fuzzy, kde-format
-#| msgid "A plugin that shows crosshairs."
+#, kde-format
 msgid "A plugin that shows crosshairs over the map."
-msgstr "Un'estensione che mostra il mirino."
+msgstr "Estensione che mostra il mirino sulla mappa."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
@@ -57023,10 +57006,9 @@ msgid "Coordinate &Grid"
 msgstr "&Griglia delle coordinate"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:90
-#, fuzzy, kde-format
-#| msgid "A plugin that shows a coordinate grid."
+#, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
-msgstr "Un'estensione che mostra una griglia delle coordinate."
+msgstr "Estensione che mostra una griglia delle coordinate sulla mappa."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:212
 #, kde-format
@@ -57108,10 +57090,10 @@ msgid "&Scale Bar"
 msgstr "Barra della &scala"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a map scale."
+#, kde-format
 msgid "A plugin to show a float item that provides a map scale."
-msgstr "Questo è un oggetto mobile che mostra una scala della mappa."
+msgstr ""
+"Estensione che mostra un oggetto mobile che fornisce una scala della mappa."
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
 #, kde-format
@@ -57329,10 +57311,11 @@ msgid "&Navigation"
 msgstr "&Navigazione"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
-#, fuzzy, kde-format
-#| msgid "A mouse control to zoom and move the map"
+#, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
-msgstr "Un controllo per il mouse per ingrandire e muovere la mappa"
+msgstr ""
+"Estensione per aggiungere il controllo per il mouse per ingrandire e muovere "
+"la mappa."
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
 #, kde-format
@@ -57355,10 +57338,10 @@ msgid "&Overview Map"
 msgstr "Mappa &panoramica"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides an overview map."
+#, kde-format
 msgid "A plugin to add a float item that provides an overview map."
-msgstr "Questo è un oggetto mobile che mostra una mappa panoramica."
+msgstr ""
+"Estensione per aggiungere un oggetto mobile che mostra una mappa panoramica."
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
 #, kde-format
@@ -57417,34 +57400,32 @@ msgid "&Download Progress"
 msgstr "&Avanzamento di scaricamento"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Shows a pie chart download progress indicator"
+#, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
-msgstr "Mostra un indicatore a torta dell'avanzamento di scaricamento"
+msgstr ""
+"Estensione per mostrare un indicatore a torta dell'avanzamento di "
+"scaricamento sulla mappa."
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Cache File Parser"
-msgstr "Analizzatore di file Osm"
+msgstr "Analizzatore di file Cache"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
-msgstr "Crea GeoDataDocument da file Osm"
+msgstr ""
+"Estensione per caricare i dati di geolocalizzazione dai file di cache binari."
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
-#, fuzzy, kde-format
-#| msgid "Marble Widget"
+#, kde-format
 msgid "Marble Cache Files"
-msgstr "Widget Marble"
+msgstr "File di cache di Marble"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "GPSBabel NMEA File Parser"
-msgstr "Analizzatore di file Osm"
+msgstr "Analizzatore di file NMEA di GPSBabel"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
@@ -57452,66 +57433,65 @@ msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr ""
+"Estensione per caricare i dati di geolocalizzazione dai file NMEA tramite lo "
+"strumento a riga di comando GPSBabel."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Save files as"
+#, kde-format
 msgid "GPSBabel files"
-msgstr "Salva i file come"
+msgstr "File GPSBabel"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Gpx File Parser"
-msgstr "Analizzatore di file Osm"
+msgstr "Analizzatore di file Gpx"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
-msgstr "Crea GeoDataDocument da file Osm"
+msgstr ""
+"Estensione per caricare i dati di geolocalizzazione dal formato di file di "
+"dati Gpx."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "Data"
+#, kde-format
 msgid "GPS Data"
-msgstr "Dati"
+msgstr "Dati GPS"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "GeoJSON File Parser"
-msgstr "Analizzatore di file Osm"
+msgstr "Analizzatore di file GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
-msgstr "Crea GeoDataDocument da file Osm"
+msgstr ""
+"Estensione per caricare i dati di geolocalizzazione dal formato di file di "
+"dati GeoJSON."
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
 #, kde-format
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "KML File Parser"
-msgstr "Analizzatore di file Osm"
+msgstr "Analizzatore di file KML"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
-msgstr "Crea GeoDataDocument da file Osm"
+msgstr ""
+"Estensione per caricare i dati di geolocalizzazione dal formato di file di "
+"dati KML e KMZ."
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
 #, kde-format
 msgid "Google Earth KML"
-msgstr ""
+msgstr "KML di Google Earth"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:25
 #, kde-format
@@ -57524,13 +57504,13 @@ msgid "OpenStreetMap Nominatim"
 msgstr "Nominatim di OpenStreetMap"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
-#, fuzzy, kde-format
-#| msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
+#, kde-format
 msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
 msgstr ""
-"Geocodifica inversa online usando il servizio Nominatim di OpenStreetMap"
+"Estensione per elaborare la geocodifica inversa in linea usando il servizio "
+"web Nominatim di OpenStreetMap."
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:21
 #, kde-format
@@ -57538,11 +57518,12 @@ msgid "Osm File Parser"
 msgstr "Analizzatore di file Osm"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
-msgstr "Crea GeoDataDocument da file Osm"
+msgstr ""
+"Estensione per caricare i dati di geolocalizzazione dal formato di file di "
+"dati OpenStreetMap."
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, kde-format
@@ -57550,43 +57531,41 @@ msgid "OpenStreetMap Data"
 msgstr "Dati di OpenStreetMap"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Pn2 File Parser"
-msgstr "Analizzatore di file Osm"
+msgstr "Analizzatore di file Pn2"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
-msgstr "Crea GeoDataDocument da file Osm"
+msgstr ""
+"Estensione per caricare i dati di geolocalizzazione dal formato di file di "
+"dati compresso Pnt."
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@title: Name of the component"
-#| msgid "Component"
+#, kde-format
 msgid "Compressed Pnt"
-msgstr "Componente"
+msgstr "Pnt compresso"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgid "Osm File Parser"
+#, kde-format
 msgid "Pnt File Parser"
-msgstr "Analizzatore di file Osm"
+msgstr "Analizzatore di file Pnt"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid "Create GeoDataDocument from Osm Files"
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
-msgstr "Crea GeoDataDocument da file Osm"
+msgstr ""
+"Estensione per caricare i dati di geolocalizzazione dal formato di file di "
+"dati Micro World Database II."
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
 msgid "Micro World Database II"
-msgstr ""
+msgstr "Micro World Database II"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -57703,10 +57682,9 @@ msgstr ""
 "Applicazioni: utilizzata per i globi virtuali.</p>"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
-#, fuzzy, kde-format
-#| msgid "Units:"
+#, kde-format
 msgid "Units"
-msgstr "Unità:"
+msgstr "Unità"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
 #, kde-format
@@ -57729,11 +57707,11 @@ msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
 "mi, ft)."
 msgstr ""
+"L'unità usata per misurare altitudini, lunghezze e distanze (per es. km, m, "
+"ft)."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Angle:"
+#, kde-format
 msgid "Angle:"
 msgstr "Angolo:"
 
@@ -57759,18 +57737,19 @@ msgid ""
 "By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
+"Specifica la notazione degli angoli nelle coordinate.\n"
+"Il valore predefinito è gradi-minuti-secondi (es. 54°30'00\").\n"
+"In alternativa puoi scegliere i gradi decimali (es. 54.5°)."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
-#, fuzzy, kde-format
-#| msgid "Map &Quality"
+#, kde-format
 msgid "Map Quality"
-msgstr "&Qualità della mappa"
+msgstr "Qualità della mappa"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
-#, fuzzy, kde-format
-#| msgid "&Still image:"
+#, kde-format
 msgid "Still Image:"
-msgstr "Immagini &fisse:"
+msgstr "Immagine fissa:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
@@ -57808,12 +57787,15 @@ msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
 "Usually this allows for high map quality as speed is no concern."
 msgstr ""
+"Specifica la qualità della mappa mostrata quando non c'è attività da parte "
+"dell'utente.\n"
+"Di solito è possibile avere una qualità più alta, dato che in questo caso la "
+"velocità non è un problema."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
-#, fuzzy, kde-format
-#| msgid "During &animations:"
+#, kde-format
 msgid "During Animations:"
-msgstr "Durante le &animazioni:"
+msgstr "Durante le animazioni:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:153
 #, kde-format
@@ -57823,6 +57805,11 @@ msgid ""
 "advisable to set this option to \"low quality\" as this will give better "
 "speed."
 msgstr ""
+"Specifica la qualità della mappa mostrata durante animazioni della mappa \n"
+"(per es. mentre viene \"trascinato\" il globo). Si consiglia di impostare "
+"questa opzione\n"
+"a Bassa qualità specialmente in computer lenti, dato che ciò aumenterà la "
+"velocità."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
 #, kde-format
@@ -57830,10 +57817,9 @@ msgid "Mouse Behavior"
 msgstr "Comportamento del mouse"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
-#, fuzzy, kde-format
-#| msgid "&Inertial globe rotation"
+#, kde-format
 msgid "Inertial Globe Rotation"
-msgstr "Rotazione &inerziale del globo"
+msgstr "Rotazione inerziale del globo"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
 #, kde-format
@@ -57841,10 +57827,9 @@ msgid "Use kinetic spinning when dragging the map"
 msgstr "Usa rotazione cinetica durante il trascinamento della mappa"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
-#, fuzzy, kde-format
-#| msgid "&Mouse view rotation"
+#, kde-format
 msgid "Mouse View Rotation"
-msgstr "Rotazione della vista col &mouse"
+msgstr "Rotazione della vista col mouse"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:169
 #, kde-format
@@ -57852,27 +57837,12 @@ msgid "Use right mouse button to rotate the camera around"
 msgstr "Usa il pulsante destro del mouse per ruotare la fotocamera"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
-#, fuzzy, kde-format
-#| msgid "C&ache"
+#, kde-format
 msgid "Cache"
-msgstr "C&ache"
+msgstr "Cache"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:177
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#| "font-weight:400; font-style:normal;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches "
-#| "being used for Marble: The physical memory which is needed to keep map "
-#| "data in the computer's memory. Increasing the value will make the "
-#| "application more responsive. The hard disc memory cache is used by "
-#| "download contents from the Internet (e.g. Wikipedia data or map data). "
-#| "Decrease this value if you want to save space on the hard disc and if "
-#| "high usage of the Internet is not an issue. </p></body></html>"
+#, kde-format
 msgid ""
 "There are two caches being used:\n"
 "The \"physical memory\" which is needed to keep map data in the computer's "
@@ -57883,25 +57853,18 @@ msgid ""
 "Decrease this value if you want to save space on the hard disc\n"
 "and if high usage of the Internet is not an issue."
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Ci sono due cache usate in "
-"Marble: la memoria fisica, richiesta per tenere i dati delle mappe in "
-"memoria. Incrementare il valore renderà l'applicazione più reattiva. La "
-"memoria cache su disco rigido è usata per scaricare contenuti da Internet "
-"(ad esempio, i dati delle mappe o da Wikipedia). Diminuisci questo valore "
-"per risparmiare spazio su disco rigido e nel caso in cui un elevato uso di "
-"Internet non è un problema. </p></body></html>"
+"Vengono utilizzate due cache:\n"
+"la «memoria fisica», richiesta per tenere i dati delle mappe in memoria.\n"
+" Incrementare il valore renderà l'applicazione più reattiva.\n"
+"La «memoria cache su disco rigido» è usata per scaricare contenuti da "
+"Internet.\n"
+"Diminuisci questo valore per risparmiare spazio su disco rigido e\n"
+"nel caso in cui un elevato uso di Internet non è un problema."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
-#, fuzzy, kde-format
-#| msgid "&Physical memory:"
+#, kde-format
 msgid "Physical Memory:"
-msgstr "Memoria &fisica:"
+msgstr "Memoria fisica:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:189
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:196
@@ -57910,10 +57873,9 @@ msgid "Clear"
 msgstr "Pulisci"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
-#, fuzzy, kde-format
-#| msgid "&Hard disc:"
+#, kde-format
 msgid "Hard Disc:"
-msgstr "Disco &rigido:"
+msgstr "Disco rigido:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:207
 #, kde-format
@@ -57921,10 +57883,9 @@ msgid "Map Contents"
 msgstr "Contenuto della mappa"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
-#, fuzzy, kde-format
-#| msgid "Default map &font:"
+#, kde-format
 msgid "Default Font:"
-msgstr "Carattere prede&finito della mappa:"
+msgstr "Carattere predefinito:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
 #, kde-format
@@ -57933,12 +57894,14 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Il tipo di carattere predefinito utilizzato nella mappa.\n"
+"Questa impostazione funziona solo con l'atlante e la mappa satellitare\n"
+"e non con Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Show Coordinate Grid"
-msgstr "Coordinate"
+msgstr "Mostra griglia delle coordinate"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:216
 #, kde-format
@@ -57947,12 +57910,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Mostra la griglia delle coordinate terrestri.\n"
+"Funziona solo con l'atlante,\n"
+"la mappa satellitare e Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
-#, fuzzy, kde-format
-#| msgid "Crosswalk"
+#, kde-format
 msgid "Show Cross-Hair"
-msgstr "Attraversamento pedonale"
+msgstr "Mostra mirino"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:221
 #, kde-format
@@ -57961,12 +57926,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Mostra il mirino al centro di una mappa.\n"
+"Funziona solo con l'atlante,\n"
+"la mappa satellitare e Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
-#, fuzzy, kde-format
-#| msgid "Show item size"
+#, kde-format
 msgid "Show Atmospheric Glow"
-msgstr "Mostra la dimensione dell'elemento"
+msgstr "Mostra bagliore atmosferico"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:226
 #, kde-format
@@ -57975,12 +57942,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Mostra un livello per il bagliore atmosferico.\n"
+"Funziona solo con l'atlante,\n"
+"la mappa satellitare e Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
-#, fuzzy, kde-format
-#| msgid "Show on right panel"
+#, kde-format
 msgid "Show Night Shadow"
-msgstr "Mostra nel pannello destro"
+msgstr "Mostra ombreggiatura notturna"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:231
 #, kde-format
@@ -57989,12 +57958,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Mostra un livello per l'ombreggiatura notturna.\n"
+"Funziona solo con l'atlante,\n"
+"la mappa satellitare e Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgid "Show City Place Mark"
-msgstr "Mostra i tag volto"
+msgstr "Mostra segnaposto città"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:236
 #, kde-format
@@ -58003,12 +57974,14 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Mostra un livello per la posizione delle città.\n"
+"Questa impostazione funziona solo con l'atlante e la mappa satellitare\n"
+"e non con Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
-#, fuzzy, kde-format
-#| msgid "Show Preview"
+#, kde-format
 msgid "Show Relief"
-msgstr "Mostra l'anteprima"
+msgstr "Mostra rilievo"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:241
 #, kde-format
@@ -58017,30 +57990,29 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Mostra un livello per il rilievo.\n"
+"Questa impostazione funziona solo con l'atlante e la mappa satellitare\n"
+"e non con Open-Street Map."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
-#, fuzzy, kde-format
-#| msgid "Marble View"
+#, kde-format
 msgid "Map View"
-msgstr "Vista di Marble"
+msgstr "Vista della mappa"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
-#, fuzzy, kde-format
-#| msgid "Marble Plugins"
+#, kde-format
 msgid "Map Plugins"
-msgstr "Estensioni di Marble"
+msgstr "Estensioni della mappa"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Border Tool"
+#, kde-format
 msgid "Render Tools"
-msgstr "Strumento Bordo"
+msgstr "Strumenti di resa"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:83
-#, fuzzy, kde-format
-#| msgid "Unknown Tools"
+#, kde-format
 msgid "Runner Tools"
-msgstr "Strumenti sconosciuti"
+msgstr "Strumenti di guida"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
