@@ -24,6 +24,7 @@
 #include <QStyle>
 #include <QComboBox>
 #include <QGridLayout>
+#include <QStandardItemModel>
 
 // KDE includes
 
@@ -122,7 +123,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     {
         auto* const item = model->item(VidSlideSettings::INTERNAL);
 
-        if (!item)
+        if (item)
         {
             item->setEnabled(false);
         }
