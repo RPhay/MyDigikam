@@ -133,7 +133,7 @@ void VidSlideTask::run()
 
             if (!frame.save(framePath, "JPEG"))
             {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot encode frame:" << framePath;
+                qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot frame frame:" << framePath;
             }
             else
             {
@@ -162,7 +162,7 @@ void VidSlideTask::run()
 
                 if (!frame.save(framePath, "JPEG"))
                 {
-                    qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot encode frame:" << framePath;
+                    qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot generate frame:" << framePath;
                 }
                 else
                 {
@@ -176,9 +176,13 @@ void VidSlideTask::run()
             while ((count < m_settings->imgFrames) && !m_cancel);
         }
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Generating frame from image" << i << "done";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Generating frames from image" << i << "done";
 
-        Q_EMIT signalMessage(i18n("Generating frame from %1 Done", ofile), false);
+        if (!ofile.isEmpty())
+        {
+            Q_EMIT signalMessage(i18n("Generating frames from %1 Done", ofile), false);
+        }
+
         Q_EMIT signalProgress(i);
     }
 

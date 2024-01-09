@@ -87,7 +87,9 @@ QMap<QString, QString> FFmpegLauncher::supportedCodecs()
     qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported codecs";
 
     setProgram(m_settings->ffmpegPath);
-    setArguments(QStringList() << QLatin1String("-codecs"));
+    setArguments(QStringList() << QLatin1String("-v")
+                               << QLatin1String("quiet")
+                               << QLatin1String("-codecs"));
 
     QEventLoop loop;
 
@@ -119,7 +121,9 @@ QMap<QString, QString> FFmpegLauncher::supportedFormats()
     qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported formats";
 
     setProgram(m_settings->ffmpegPath);
-    setArguments(QStringList() << QLatin1String("-formats"));
+    setArguments(QStringList() << QLatin1String("-v")
+                               << QLatin1String("quiet")
+                               << QLatin1String("-formats"));
 
     QEventLoop loop;
 
