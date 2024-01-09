@@ -140,7 +140,7 @@ BUGFIXES:
 121 ==> 479527 - Typing into the "Who's This?" area when adding a Face Tag crashes under Windows 10.
 122 ==> 479571 - Pressing any key while a face-name is highlighted when previewing an image crashes digiKam.
 123 ==> 139781 - Add new option to add audio track to Video Slide Show tool.
-124 ==> 
+124 ==> 479578 - Import errors claiming imported path is already part of album path.
 125 ==> 
 126 ==> 
 127 ==> 
