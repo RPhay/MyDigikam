@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-08 00:39+0000\n"
+"POT-Creation-Date: 2024-01-09 00:39+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1034,8 +1034,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:183
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:220
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:164
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
@@ -1179,7 +1179,7 @@ msgid " fps"
 msgstr " fps"
 
 #: core/app/items/utils/tooltipfiller.cpp:389
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:153
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:154
 #, kde-format
 msgid "Video Codec:"
 msgstr "Codec de vídeo:"
@@ -2944,7 +2944,7 @@ msgstr "Mostrar em tela inteira"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
@@ -18444,7 +18444,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
 msgstr "Es&colha o método de seleção de imagem:"
@@ -18453,7 +18453,7 @@ msgstr "Es&colha o método de seleção de imagem:"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
@@ -18476,7 +18476,7 @@ msgstr "Pasta de destino:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:109
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:90
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, fuzzy, kde-format
 #| msgid "Destination Folder"
@@ -21194,14 +21194,14 @@ msgid "Select your preferred format to export printing as image."
 msgstr "Selecione seu formato preferido para exportar a impressão como imagem."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:85
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
 msgid "Destination folder:"
 msgstr "Pasta de destino:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:91
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -21849,7 +21849,7 @@ msgstr ""
 "vídeo.</p><p>A primeira encontra-se no topo da lista, enquanto a última</"
 "p><p>está na parte inferior. Você pode ajustar a ordem de cada item.</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:72
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:75
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Video Slideshow tool</b></h1></p><p>This assistant "
@@ -21871,54 +21871,54 @@ msgstr ""
 "criar uma apresentação de vídeo com efeitos de transição</p><p>e faixas de "
 "áudio na tela de uma TV.</p></qt>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:99
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:102
 #, fuzzy, kde-format
 #| msgid "Binary"
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "Executável"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:76
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Formato do contêiner multimídia:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:97
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "O nome do arquivo de vídeo resultante será gerado automaticamente."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Open in Player:"
 msgstr "Abrir no reprodutor:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:83
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:84
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr "Número de quadros por imagem:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:93
 #, kde-format
 msgid "Video Standard:"
 msgstr "Padrão de vídeo:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:111
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:112
 #, kde-format
 msgid "Video Type:"
 msgstr "Tipo de vídeo:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:134
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:135
 #, kde-format
 msgid "Video Bit Rate:"
 msgstr "Taxa de bits do vídeo:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:180
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:161
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr "Efeito ao exibir as imagens"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:200
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:181
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -21929,12 +21929,12 @@ msgstr ""
 "apresentação de uma imagem. A duração do efeito irá seguir o número de "
 "quadros usados para desenhar a imagem na transmissão do vídeo.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:217
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:198
 #, kde-format
 msgid "Transition Between Images"
 msgstr "Transição entre as imagens:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:237
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:218
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -21945,7 +21945,7 @@ msgstr ""
 "efeitos, a duração poderá depender de valores aleatórios e também poderá "
 "mudar durante a apresentação.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:318
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:299
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""

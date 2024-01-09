@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-08 00:39+0000\n"
+"POT-Creation-Date: 2024-01-09 00:39+0000\n"
 "PO-Revision-Date: 2024-01-06 03:34\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -993,8 +993,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:183
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:220
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:164
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
@@ -1138,7 +1138,7 @@ msgid " fps"
 msgstr " fps"
 
 #: core/app/items/utils/tooltipfiller.cpp:389
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:153
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:154
 #, kde-format
 msgid "Video Codec:"
 msgstr "视频编码："
@@ -2784,7 +2784,7 @@ msgstr "全屏显示"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
@@ -16801,7 +16801,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
 msgstr "图像选择方式(&C)："
@@ -16810,7 +16810,7 @@ msgstr "图像选择方式(&C)："
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
@@ -16830,7 +16830,7 @@ msgstr "目标文件夹："
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:109
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:90
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -19284,13 +19284,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "选择想要导出打印结果图像的格式。"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:85
 #, kde-format
 msgid "Destination folder:"
 msgstr "目标文件夹："
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:91
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -19914,7 +19914,7 @@ msgstr ""
 "<p>此视图显示了要包含在视频中的所有项目。</p><p>第一个项目位于列表顶端，最后"
 "一个位于底端。</p><p>您可以调整每个项目的排序。</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:72
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:75
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Video Slideshow tool</b></h1></p><p>This assistant "
@@ -19933,53 +19933,53 @@ msgstr ""
 "a>。</p><p></p><p>您还可以创建带有翻页过渡效果的图像演示视频，</p><p>配上背景"
 "音乐并显示到电视机屏幕上。</p></qt>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:99
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:102
 #, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "FFmpeg 可执行文件"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:76
 #, kde-format
 msgid "Media Container Format:"
 msgstr "媒体容器格式："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:97
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "视频输出文件名将自动生成。"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Open in Player:"
 msgstr "在播放器中打开："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:83
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:84
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr "图像停留帧数："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:93
 #, kde-format
 msgid "Video Standard:"
 msgstr "视频标准："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:111
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:112
 #, kde-format
 msgid "Video Type:"
 msgstr "视频类型："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:134
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:135
 #, kde-format
 msgid "Video Bit Rate:"
 msgstr "视频比特率："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:180
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:161
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr "图像显示特效"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:200
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:181
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -19988,12 +19988,12 @@ msgid ""
 msgstr ""
 "在此设置图像在显示时的平移和缩放特效。特效的时间长度将取决于图像停留帧数。"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:217
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:198
 #, kde-format
 msgid "Transition Between Images"
 msgstr "图像过渡特效"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:237
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:218
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -20003,7 +20003,7 @@ msgstr ""
 "在此设置图像在切换时的过渡特效。某些特效的时间长度是随机的，可能会在幻灯片中"
 "发生变化。"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:318
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:299
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "持续时间：每张 %1 秒，总计 %2 秒 (不计过渡时间)"

@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-08 00:39+0000\n"
+"POT-Creation-Date: 2024-01-09 00:39+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -1095,8 +1095,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:183
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:220
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:164
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
@@ -1241,7 +1241,7 @@ msgid " fps"
 msgstr ""
 
 #: core/app/items/utils/tooltipfiller.cpp:389
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:153
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:154
 #, kde-format
 msgid "Video Codec:"
 msgstr "سىن كودلىغۇچ-كودسىزلىغۇچ:"
@@ -2955,7 +2955,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
@@ -17160,7 +17160,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
 msgstr ""
@@ -17169,7 +17169,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
@@ -17191,7 +17191,7 @@ msgstr "نىشان:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:109
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:90
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, fuzzy, kde-format
 #| msgid "Destination:"
@@ -19687,14 +19687,14 @@ msgid "Select your preferred format to export printing as image."
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:85
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Destination folder:"
 msgstr "نىشان:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:110
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:91
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, fuzzy, kde-format
 #| msgid "Output device"
@@ -20343,7 +20343,7 @@ msgid ""
 "order of each item.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:72
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:75
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Video Slideshow tool</b></h1></p><p>This assistant "
@@ -20356,58 +20356,58 @@ msgid ""
 "tracks to show on a TV screen.</p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:99
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:102
 #, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:75
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:76
 #, fuzzy, kde-format
 #| msgid "Nepomuk"
 msgid "Media Container Format:"
 msgstr "Nepomuk"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:97
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgid "Open in Player:"
 msgstr "ھۆججەت باشقۇرغۇچتا ئاچ"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:83
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:84
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:93
 #, fuzzy, kde-format
 #| msgid "Standard"
 msgid "Video Standard:"
 msgstr "ئۆلچەملىك"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:111
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:112
 #, fuzzy, kde-format
 #| msgid "Video Codec:"
 msgid "Video Type:"
 msgstr "سىن كودلىغۇچ-كودسىزلىغۇچ:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:134
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:135
 #, fuzzy, kde-format
 #| msgid "Frame Rate"
 msgid "Video Bit Rate:"
 msgstr "كاندۇك تېزلىكى"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:180
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:161
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:200
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:181
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -20415,12 +20415,12 @@ msgid ""
 "render the image on video stream.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:217
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:198
 #, fuzzy, kde-format
 msgid "Transition Between Images"
 msgstr "رەسىم ھۆججەتلەر"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:237
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:218
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -20428,7 +20428,7 @@ msgid ""
 "slideshow.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:318
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:299
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
