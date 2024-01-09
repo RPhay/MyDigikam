@@ -176,9 +176,9 @@ void VidSlideTask::run()
             while ((count < m_settings->imgFrames) && !m_cancel);
         }
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Preparing image" << i << "done";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Generating frame from image" << i << "done";
 
-        Q_EMIT signalMessage(i18n("Preparing %1 Done", ofile), false);
+        Q_EMIT signalMessage(i18n("Generating frame from %1 Done", ofile), false);
         Q_EMIT signalProgress(i);
     }
 
