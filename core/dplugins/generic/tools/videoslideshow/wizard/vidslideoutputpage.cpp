@@ -65,6 +65,7 @@ public:
     VidSlideWizard*      wizard      = nullptr;
     VidSlideSettings*    settings    = nullptr;
     QLabel*              duration    = nullptr;
+    QTimer*              trigUpdate  = nullptr;
 };
 
 VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& title)
@@ -74,6 +75,8 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     setObjectName(QLatin1String("OutputPage"));
 
     QWidget* const main       = new QWidget(this);
+    d->trigUpdate             = new QTimer(this);
+    d->trigUpdate->setSingleShot(true);
 
     // --------------------
 
@@ -177,17 +180,20 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     setPageWidget(main);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("folder-video")));
 
+    connect(d->trigUpdate, SIGNAL(timeout()),
+            this, SIGNAL(completeChanged()));
+
     connect(d->destUrl->lineEdit(), &QLineEdit::textEdited,
-            this, &DWizardPage::completeChanged);
+            this, &VidSlideOutputPage::slotTriggerUpdate);
 
     connect(d->destUrl, SIGNAL(signalUrlSelected(QUrl)),
-            this, SIGNAL(completeChanged()));
+            this, SLOT(slotTriggerUpdate()));
 
     connect(d->audioUrl->lineEdit(), &QLineEdit::textEdited,
-            this, &DWizardPage::completeChanged);
+            this, &VidSlideOutputPage::slotTriggerUpdate);
 
     connect(d->audioUrl, SIGNAL(signalUrlSelected(QUrl)),
-            this, SIGNAL(completeChanged()));
+            this, SLOT(slotTriggerUpdate()));
 }
 
 VidSlideOutputPage::~VidSlideOutputPage()
@@ -249,6 +255,11 @@ bool VidSlideOutputPage::validatePage()
     d->settings->outputPlayer = (VidSlideSettings::VidPlayer)d->playerVal->currentIndex();
 
     return true;
+}
+
+void VidSlideOutputPage::slotTriggerUpdate()
+{
+    d->trigUpdate->start(1000);
 }
 
 bool VidSlideOutputPage::isComplete() const

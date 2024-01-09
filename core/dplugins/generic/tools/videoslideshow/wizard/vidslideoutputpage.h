@@ -41,6 +41,10 @@ public:
     bool validatePage()     override;
     bool isComplete() const override;
 
+private Q_SLOTS:
+
+    void slotTriggerUpdate();
+
 private:
 
     class Private;
