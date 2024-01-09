@@ -157,8 +157,10 @@ void ProcessLauncher::run()
     if (d->process->waitForStarted(d->timeOut))
     {
         d->successFlag = d->process->waitForFinished(-1) && (d->process->exitStatus() == QProcess::NormalExit);
-        d->exitCode    = d->process->exitCode();
         d->elapsed     = etimer.elapsed();
+        d->exitCode    = d->process->exitCode();
+
+        msleep(500);  // Wait a little bit to flush the event loop.
 
         qCInfo(DIGIKAM_GENERAL_LOG) << "=== Process execution is complete!";
         qCInfo(DIGIKAM_GENERAL_LOG) << "> Process exit code        :" << d->exitCode;
