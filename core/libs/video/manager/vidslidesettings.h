@@ -23,6 +23,7 @@
 #include <QUrl>
 #include <QSize>
 #include <QMap>
+#include <QTime>
 
 // Local includes
 
@@ -249,6 +250,7 @@ public:
 
     QMap<QString, QString>            ffmpegCodecs;     ///< Map of FFmpeg codec names and features.
     QMap<QString, QString>            ffmpegFormats;    ///< Map of FFmpeg format names and features.
+    QTime                             soundtrackLength; ///< Duration of a soundtrack.
 };
 
 } // namespace Digikam

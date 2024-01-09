@@ -19,6 +19,7 @@
 #include <QIcon>
 #include <QLabel>
 #include <QUrl>
+#include <QTimer>
 #include <QWidget>
 #include <QApplication>
 #include <QStyle>
@@ -33,9 +34,11 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "digikam_debug.h"
 #include "vidslidewizard.h"
 #include "dfileselector.h"
 #include "filesaveconflictbox.h"
+#include "ffmpeglauncher.h"
 
 namespace DigikamGenericVideoSlideShowPlugin
 {
@@ -61,6 +64,7 @@ public:
     QComboBox*           formatVal   = nullptr;
     VidSlideWizard*      wizard      = nullptr;
     VidSlideSettings*    settings    = nullptr;
+    QLabel*              duration    = nullptr;
 };
 
 VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& title)
@@ -84,7 +88,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
 
     QLabel* const audioLabel = new QLabel(main);
     audioLabel->setWordWrap(false);
-    audioLabel->setText(i18n("Soundtrack:"));
+    audioLabel->setText(i18n("Soundtrack File:"));
 
     d->audioUrl              = new DFileSelector(main);
     d->audioUrl->setFileDlgMode(QFileDialog::ExistingFile);
@@ -93,6 +97,9 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     d->audioUrl->setFileDlgTitle(i18nc("@title:window", "Select Audio Track"));
     d->audioUrl->lineEdit()->setPlaceholderText(i18n("Video soundtrack (lets empty if none)"));
     audioLabel->setBuddy(d->audioUrl);
+
+    QLabel* const durationLabel = new QLabel(i18n("Soundtrack Duration:"), main);
+    d->duration                 = new QLabel(QLatin1String("---"), main);
 
     // --------------------
 
@@ -146,7 +153,6 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
 
 #endif
 
-
     playerLabel->setBuddy(d->playerVal);
 
     // --------------------
@@ -158,21 +164,29 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     grid->addWidget(d->formatVal,    0, 1, 1, 1);
     grid->addWidget(audioLabel,      1, 0, 1, 1);
     grid->addWidget(d->audioUrl,     1, 1, 1, 1);
-    grid->addWidget(fileLabel,       2, 0, 1, 1);
-    grid->addWidget(d->destUrl,      2, 1, 1, 1);
-    grid->addWidget(outputLbl,       3, 0, 1, 2);
-    grid->addWidget(d->conflictBox,  4, 0, 1, 2);
-    grid->addWidget(playerLabel,     5, 0, 1, 1);
-    grid->addWidget(d->playerVal,    5, 1, 1, 1);
-    grid->setRowStretch(6, 10);
+    grid->addWidget(durationLabel,   2, 0, 1, 1);
+    grid->addWidget(d->duration,     2, 1, 1, 1);
+    grid->addWidget(fileLabel,       3, 0, 1, 1);
+    grid->addWidget(d->destUrl,      3, 1, 1, 1);
+    grid->addWidget(outputLbl,       4, 0, 1, 2);
+    grid->addWidget(d->conflictBox,  5, 0, 1, 2);
+    grid->addWidget(playerLabel,     6, 0, 1, 1);
+    grid->addWidget(d->playerVal,    6, 1, 1, 1);
+    grid->setRowStretch(7, 10);
 
     setPageWidget(main);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("folder-video")));
 
-    connect(d->destUrl->lineEdit(), SIGNAL(textEdited(QString)),
-            this, SIGNAL(completeChanged()));
+    connect(d->destUrl->lineEdit(), &QLineEdit::textEdited,
+            this, &DWizardPage::completeChanged);
 
     connect(d->destUrl, SIGNAL(signalUrlSelected(QUrl)),
+            this, SIGNAL(completeChanged()));
+
+    connect(d->audioUrl->lineEdit(), &QLineEdit::textEdited,
+            this, &DWizardPage::completeChanged);
+
+    connect(d->audioUrl, SIGNAL(signalUrlSelected(QUrl)),
             this, SIGNAL(completeChanged()));
 }
 
@@ -239,6 +253,22 @@ bool VidSlideOutputPage::validatePage()
 
 bool VidSlideOutputPage::isComplete() const
 {
+    d->duration->setText(QLatin1String("---"));
+
+    QString apath = d->audioUrl->fileDlgPath();
+
+    if (!apath.isEmpty())
+    {
+        FFmpegLauncher ffmpeg;
+        ffmpeg.setSettings(d->wizard->settings());
+        d->wizard->settings()->soundtrackLength = ffmpeg.soundTrackLength(apath);
+
+        if (d->wizard->settings()->soundtrackLength.isValid())
+        {
+            d->duration->setText(d->wizard->settings()->soundtrackLength.toString());
+        }
+    }
+
     return (!d->destUrl->fileDlgPath().isEmpty());
 }
 

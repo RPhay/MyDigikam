@@ -150,6 +150,45 @@ QMap<QString, QString> FFmpegLauncher::supportedFormats()
     return formatMap;
 }
 
+QTime FFmpegLauncher::soundTrackLength(const QString& audioPath)
+{
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Get soundtrack length with FFmpeg";
+
+    setProgram(m_settings->ffmpegPath);
+    setArguments(QStringList() << QLatin1String("-i")
+                               << audioPath);
+
+    QEventLoop loop;
+
+    connect(this, &ProcessLauncher::signalComplete,
+            &loop, &QEventLoop::quit);
+
+    startProcess();
+    loop.exec();
+
+    QStringList lines = output().split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+
+    Q_FOREACH (const QString& line, lines)
+    {
+        if (line.contains(QLatin1String("Duration")))
+        {
+            QStringList sections = line.simplified().split(QLatin1Char(','), Qt::SkipEmptyParts);
+
+            if (!sections.isEmpty())
+            {
+                QStringList sections2 = sections[0].split(QLatin1String(" "), Qt::SkipEmptyParts);
+
+                if (sections2.size() == 2)
+                {
+                    return QTime::fromString(sections2[1], QLatin1String("hh:mm:ss.zz"));
+                }
+            }
+        }
+    }
+
+    return QTime();
+}
+
 } // namespace Digikam
 
 #include "moc_ffmpeglauncher.cpp"

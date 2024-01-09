@@ -19,6 +19,7 @@
 
 #include <QMap>
 #include <QString>
+#include <QTime>
 
 // Local includes
 
@@ -35,7 +36,7 @@ class DIGIKAM_EXPORT FFmpegLauncher : public ProcessLauncher
 
 public:
 
-    explicit FFmpegLauncher(QObject* const parent);
+    explicit FFmpegLauncher(QObject* const parent = nullptr);
     ~FFmpegLauncher() override;
 
     /**
@@ -57,6 +58,12 @@ public:
      * Get the map of supported formats with features.
      */
     QMap<QString, QString> supportedFormats();
+
+    /**
+     * Return the length of an audio file.
+     * If duration cannot be decoded, it returns a null QTime.
+     */
+    QTime soundTrackLength(const QString& audioPath);
 
 private:
 
