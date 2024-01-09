@@ -183,6 +183,8 @@ void VidSlideFinalPage::slotDone(bool completed)
 
         d->detailsText->show();
         d->detailsText->setText(d->encoder->encodingTraces());
+        d->progressView->addEntry(i18n("See the video encoding trace below"),
+                                  DHistoryView::WarningEntry);
     }
     else
     {
