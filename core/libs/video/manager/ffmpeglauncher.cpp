@@ -54,18 +54,31 @@ void FFmpegLauncher::encodeFrames()
 
     setWorkingDirectory(m_settings->outputDir);
     setProgram(m_settings->ffmpegPath);
-    setArguments(QStringList() << QLatin1String("-f")
-                               << QLatin1String("concat")
-                               << QLatin1String("-i")
-                               << m_settings->filesList                                 // File list of frames to encode.
-                               << QLatin1String("-b:v")                                 // Video bits-rate/
-                               << QString::number(m_settings->videoBitRate())
-                               << QLatin1String("-r")                                   // Video frames-rate.
-                               << QString::number(ceil(m_settings->videoFrameRate()))
-                               << QLatin1String("-vcodec")                              // Video codec.
-                               << m_settings->videoCodec()
-                               << QLatin1String("-y")                                   // Overwrite target.
-                               << m_settings->outputFile);                              // Target video stream.
+    QStringList args;
+
+    args << QLatin1String("-f")
+         << QLatin1String("concat")
+         << QLatin1String("-i")
+         << m_settings->filesList;                                // File list of frames to encode.
+
+    if (!m_settings->audioTrack.isEmpty())
+    {
+        args << QLatin1String("-i")
+             << m_settings->audioTrack                            // Audio file to use as soundtrack.
+             << QLatin1String("-c:a")
+             << QLatin1String("copy");                            // Do not reencode
+    }
+
+    args << QLatin1String("-b:v")                                 // Video bits-rate/
+         << QString::number(m_settings->videoBitRate())
+         << QLatin1String("-r")                                   // Video frames-rate.
+         << QString::number(ceil(m_settings->videoFrameRate()))
+         << QLatin1String("-vcodec")                              // Video codec.
+         << m_settings->videoCodec()
+         << QLatin1String("-y")                                   // Overwrite target.
+         << m_settings->outputFile;                               // Target video stream.
+
+    setArguments(args);
     startProcess();
 }
 

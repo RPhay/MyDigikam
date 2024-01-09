@@ -77,6 +77,8 @@ void VidSlideSettings::readSettings(KConfigGroup& group)
                    (int)FileSaveConflictBox::OVERWRITE);
     outputDir    = group.readEntry("OutputDir",
                    QStandardPaths::writableLocation(QStandardPaths::MoviesLocation));
+    audioTrack   = group.readEntry("AudioTrack",
+                   QString());
     outputPlayer = (VidPlayer)group.readEntry("OutputPlayer",
                    (int)INTERNAL);
     ffmpegPath   = group.readEntry("FFmpegPath",
@@ -97,6 +99,7 @@ void VidSlideSettings::writeSettings(KConfigGroup& group)
     group.writeEntry("ABitRate",     abitRate);
     group.writeEntry("ConflictRule", (int)conflictRule);
     group.writeEntry("OutputDir",    outputDir);
+    group.writeEntry("AudioTrack",   audioTrack);
     group.writeEntry("OutputPlayer", (int)outputPlayer);
     group.writeEntry("FFmpegPath",   ffmpegPath);
 }

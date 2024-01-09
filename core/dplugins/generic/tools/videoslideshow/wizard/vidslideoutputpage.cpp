@@ -54,6 +54,7 @@ public:
         }
     }
 
+    DFileSelector*       audioUrl    = nullptr;
     DFileSelector*       destUrl     = nullptr;
     FileSaveConflictBox* conflictBox = nullptr;
     QComboBox*           playerVal   = nullptr;
@@ -78,6 +79,19 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     d->formatVal              = new QComboBox(main);
     d->formatVal->setEditable(false);
     formatLabel->setBuddy(d->formatVal);
+
+    // --------------------
+
+    QLabel* const audioLabel = new QLabel(main);
+    audioLabel->setWordWrap(false);
+    audioLabel->setText(i18n("Audio track:"));
+
+    d->audioUrl              = new DFileSelector(main);
+    d->audioUrl->setFileDlgMode(QFileDialog::ExistingFile);
+    d->audioUrl->setFileDlgOptions(QFileDialog::ReadOnly);
+    d->audioUrl->setFileDlgTitle(i18nc("@title:window", "Audio Track"));
+    d->audioUrl->lineEdit()->setPlaceholderText(i18n("Video soundtrack (lets empty if none)"));
+    audioLabel->setBuddy(d->audioUrl);
 
     // --------------------
 
@@ -141,13 +155,15 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(formatLabel,     0, 0, 1, 1);
     grid->addWidget(d->formatVal,    0, 1, 1, 1);
-    grid->addWidget(fileLabel,       1, 0, 1, 1);
-    grid->addWidget(d->destUrl,      1, 1, 1, 1);
-    grid->addWidget(outputLbl,       2, 0, 1, 2);
-    grid->addWidget(d->conflictBox,  3, 0, 1, 2);
-    grid->addWidget(playerLabel,     4, 0, 1, 1);
-    grid->addWidget(d->playerVal,    4, 1, 1, 1);
-    grid->setRowStretch(5, 10);
+    grid->addWidget(audioLabel,      1, 0, 1, 1);
+    grid->addWidget(d->audioUrl,     1, 1, 1, 1);
+    grid->addWidget(fileLabel,       2, 0, 1, 1);
+    grid->addWidget(d->destUrl,      2, 1, 1, 1);
+    grid->addWidget(outputLbl,       3, 0, 1, 2);
+    grid->addWidget(d->conflictBox,  4, 0, 1, 2);
+    grid->addWidget(playerLabel,     5, 0, 1, 1);
+    grid->addWidget(d->playerVal,    5, 1, 1, 1);
+    grid->setRowStretch(6, 10);
 
     setPageWidget(main);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("folder-video")));
@@ -198,6 +214,7 @@ void VidSlideOutputPage::initializePage()
         ++it;
     }
 
+    d->audioUrl->setFileDlgPath(d->settings->audioTrack);
     d->destUrl->setFileDlgPath(d->settings->outputDir);
     d->conflictBox->setConflictRule(d->settings->conflictRule);
     d->playerVal->setCurrentIndex(d->settings->outputPlayer);
@@ -212,6 +229,7 @@ bool VidSlideOutputPage::validatePage()
 
     d->settings->vFormat      = (VidSlideSettings::VidFormat)d->formatVal->currentIndex();
     d->settings->outputDir    = d->destUrl->fileDlgPath();
+    d->settings->audioTrack   = d->audioUrl->fileDlgPath();
     d->settings->conflictRule = d->conflictBox->conflictRule();
     d->settings->outputPlayer = (VidSlideSettings::VidPlayer)d->playerVal->currentIndex();
 

@@ -219,7 +219,7 @@ public:
     // -- Generator settings ------
 
     QList<QUrl>                       inputImages;      ///< Images stream.
-    QList<QUrl>                       inputAudio;       ///< Soundtracks stream.
+    QString                           audioTrack;       ///< Soundtrack stream.
 
     TransitionMngr::TransType         transition;       ///< Transition type between images.
 
