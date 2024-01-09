@@ -33,21 +33,15 @@ class Q_DECL_HIDDEN DFileSelector::Private
 {
 public:
 
-    explicit Private()
-      : edit     (nullptr),
-        btn      (nullptr),
-        fdMode   (QFileDialog::ExistingFile),
-        fdOptions(QFileDialog::Options())
-    {
-    }
+    Private() = default;
 
-    QLineEdit*            edit;
-    QPushButton*          btn;
+    QLineEdit*            edit      = nullptr;
+    QPushButton*          btn       = nullptr;
 
-    QFileDialog::FileMode fdMode;
+    QFileDialog::FileMode fdMode    = QFileDialog::ExistingFile;
     QString               fdFilter;
     QString               fdTitle;
-    QFileDialog::Options  fdOptions;
+    QFileDialog::Options  fdOptions = QFileDialog::Options();
 };
 
 DFileSelector::DFileSelector(QWidget* const parent)
@@ -55,6 +49,7 @@ DFileSelector::DFileSelector(QWidget* const parent)
       d    (new Private)
 {
     d->edit    = new QLineEdit(this);
+    d->edit->setClearButtonEnabled(true);
     d->btn     = new QPushButton(i18n("Browse..."), this);
     setStretchFactor(d->edit, 10);
 
