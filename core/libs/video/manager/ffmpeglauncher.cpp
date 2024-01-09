@@ -133,7 +133,6 @@ QMap<QString, QString> FFmpegLauncher::supportedFormats()
     return formatMap;
 }
 
-
 } // namespace Digikam
 
 #include "moc_ffmpeglauncher.cpp"

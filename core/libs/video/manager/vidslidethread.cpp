@@ -94,8 +94,6 @@ void VidSlideThread::slotEncodeFrames(bool prepareDone)
 
     Q_EMIT signalMessage(i18n("Encoding frames..."), false);
 
-    // TODO: move to a separate thread.
-
     if (m_encoder)
     {
         delete m_encoder;
@@ -105,7 +103,8 @@ void VidSlideThread::slotEncodeFrames(bool prepareDone)
     m_encoder->setSettings(m_settings);
 
     connect(m_encoder, &ProcessLauncher::signalComplete,
-            this, &VidSlideThread::slotEncodeDone);
+            this, &VidSlideThread::slotEncodeDone,
+            Qt::DirectConnection);
 
     m_encoder->encodeFrames();
 }
