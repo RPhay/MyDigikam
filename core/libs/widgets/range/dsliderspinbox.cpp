@@ -65,6 +65,7 @@ public:
         STYLE_NOQUIRK,
         STYLE_MACINTOSH,
         STYLE_PLASTIQUE,
+        STYLE_WINDOWS,
         STYLE_BREEZE,
         STYLE_FUSION,
         STYLE_OXYGEN,
@@ -230,6 +231,7 @@ void DAbstractSliderSpinBox::paint(QPainter& painter)
 
     if ((d->style == DAbstractSliderSpinBoxPrivate::STYLE_GTK2)    ||
         (d->style == DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN)  ||
+        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_WINDOWS) ||
         (d->style == DAbstractSliderSpinBoxPrivate::STYLE_MACINTOSH))
     {
         progressOpts.state |= QStyle::State_Horizontal;
@@ -689,6 +691,7 @@ QSize DAbstractSliderSpinBox::sizeHint() const
             break;
 
         case DAbstractSliderSpinBoxPrivate::STYLE_MACINTOSH:
+        case DAbstractSliderSpinBoxPrivate::STYLE_WINDOWS:
         case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
         case DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN:
         case DAbstractSliderSpinBoxPrivate::STYLE_GTK2:
@@ -967,6 +970,10 @@ void DAbstractSliderSpinBox::changeEvent(QEvent* e)
         else if (style()->objectName() == QLatin1String("plastique"))
         {
             d->style = DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE;
+        }
+        else if (style()->objectName() == QLatin1String("windows"))
+        {
+            d->style = DAbstractSliderSpinBoxPrivate::STYLE_WINDOWS;
         }
         else if (style()->objectName() == QLatin1String("breeze"))
         {
