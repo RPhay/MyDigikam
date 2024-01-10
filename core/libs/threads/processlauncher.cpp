@@ -38,14 +38,15 @@ public:
 
 public:
 
-    QSharedPointer<QProcess> process     = nullptr;
+    QSharedPointer<QProcess> process       = nullptr;
     QStringList              args;
     QString                  prog;
     QString                  dir;
-    bool                     successFlag = false;
-    int                      exitCode    = 0;
-    int                      timeOut     = 30000;           ///< in milli-seconds;
-    qint64                   elapsed     = 0;
+    bool                     consoleTraces = true;
+    bool                     successFlag   = false;
+    int                      exitCode      = 0;
+    int                      timeOut       = 30000;           ///< in milli-seconds;
+    qint64                   elapsed       = 0;
     QString                  output;
 };
 
@@ -103,6 +104,11 @@ bool ProcessLauncher::success() const
 qint64 ProcessLauncher::elapsedTime() const
 {
     return d->elapsed;
+}
+
+void ProcessLauncher::setConsoleTraces(bool b)
+{
+    d->consoleTraces = b;
 }
 
 void ProcessLauncher::startProcess()
@@ -176,6 +182,11 @@ void ProcessLauncher::run()
 
 void ProcessLauncher::slotReadyRead()
 {
+    if (!d->consoleTraces)
+    {
+        return;
+    }
+
     QByteArray data = d->process->readAll();
 
     if (!data.isEmpty())

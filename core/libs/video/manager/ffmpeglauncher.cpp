@@ -89,6 +89,7 @@ QMap<QString, QString> FFmpegLauncher::supportedCodecs()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported codecs";
 
+    setConsoleTraces(false);
     setProgram(m_settings->ffmpegPath);
     setArguments(QStringList() << QLatin1String("-v")
                                << QLatin1String("quiet")
@@ -123,6 +124,7 @@ QMap<QString, QString> FFmpegLauncher::supportedFormats()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported formats";
 
+    setConsoleTraces(false);
     setProgram(m_settings->ffmpegPath);
     setArguments(QStringList() << QLatin1String("-v")
                                << QLatin1String("quiet")
@@ -157,6 +159,7 @@ QTime FFmpegLauncher::soundTrackLength(const QString& audioPath)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Get soundtrack length with FFmpeg";
 
+    setConsoleTraces(false);
     setProgram(m_settings->ffmpegPath);
     setArguments(QStringList() << QLatin1String("-i")
                                << audioPath);
