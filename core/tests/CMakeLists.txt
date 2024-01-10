@@ -168,10 +168,7 @@ add_subdirectory(rawengine)
 add_subdirectory(timestampupdate)
 add_subdirectory(webservices)
 add_subdirectory(widgets)
-
-if(ENABLE_MEDIAPLAYER AND NOT ENABLE_QTMULTIMEDIA)
-    add_subdirectory(video)
-endif()
+add_subdirectory(video)
 
 if(ENABLE_GEOLOCATION)
     add_subdirectory(geolocation)               # Some unit-tests based on ModelTest

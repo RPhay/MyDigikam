@@ -27,18 +27,18 @@ endif()
 
 # -------------------------------------------------
 
-add_executable(videothumb_cli ${CMAKE_CURRENT_SOURCE_DIR}/videothumb_cli.cpp)
-ecm_mark_nongui_executable(videothumb_cli)
-
-target_link_libraries(videothumb_cli
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -------------------------------------------------
-
 if(ENABLE_MEDIAPLAYER)
+
+    add_executable(videothumb_cli ${CMAKE_CURRENT_SOURCE_DIR}/videothumb_cli.cpp)
+    ecm_mark_nongui_executable(videothumb_cli)
+
+    target_link_libraries(videothumb_cli
+                          digikamcore
+
+                          ${COMMON_TEST_LINK}
+    )
+
+    # -------------------------------------------------
 
     add_executable(videoplayer_gui ${CMAKE_CURRENT_SOURCE_DIR}/videoplayer_gui.cpp)
 
