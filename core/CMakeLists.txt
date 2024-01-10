@@ -456,7 +456,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
         string(REGEX MATCH "extra/xmp_sdk"     _item_libxmp  ${var})
         string(REGEX MATCH "pgfutils/libpgf"   _item_libpgf  ${var})
         string(REGEX MATCH "rawengine/libraw/" _item_libraw  ${var})
-        string(REGEX MATCH "/qtav"             _item_qtav    ${var})
+        string(REGEX MATCH "/QtAVPlayer"       _item_qtav    ${var})
         string(REGEX MATCH "/qtmm"             _item_qtmm    ${var})
 
         if(

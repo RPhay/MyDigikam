@@ -50,6 +50,8 @@ if(ENABLE_MEDIAPLAYER)
 
         # NOTE: this part depends of QtMultimedia
 
+        include_directories(${CMAKE_CURRENT_SOURCE_DIR}/player/qtmm)
+
         set(libvideotools_SRCS
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtmm/mediaplayerview.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qtmm/slidevideo.cpp
@@ -57,11 +59,13 @@ if(ENABLE_MEDIAPLAYER)
 
     else()
 
-        # NOTE: this part depends of QtAv
+        # NOTE: this part depends of QtAVPlayer
+
+        include_directories(${CMAKE_CURRENT_SOURCE_DIR}/player/QtAVPlayer)
 
         set(libvideotools_SRCS
-            ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/mediaplayerview.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/slidevideo.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/QtAVPlayer/mediaplayerview.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/QtAVPlayer/slidevideo.cpp
         )
 
     endif()
