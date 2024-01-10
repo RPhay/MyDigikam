@@ -63,10 +63,13 @@ void FFmpegLauncher::encodeFrames()
 
     if (!m_settings->audioTrack.isEmpty())
     {
-        args << QLatin1String("-i")
+        args << QLatin1String("-stream_loop")
+             << QLatin1String("-1")
+             << QLatin1String("-i")
              << m_settings->audioTrack                            // Audio file to use as soundtrack.
              << QLatin1String("-c:a")
-             << QLatin1String("copy");                            // Do not reencode
+             << QLatin1String("copy")                             // Do not reencode
+             << QLatin1String("-shortest");
     }
 
     args << QLatin1String("-b:v")                                 // Video bits-rate/
