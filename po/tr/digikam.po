@@ -52,8 +52,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-09 00:39+0000\n"
-"PO-Revision-Date: 2024-01-06 14:39+0300\n"
+"POT-Creation-Date: 2024-01-10 00:39+0000\n"
+"PO-Revision-Date: 2024-01-09 15:25+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1561,7 +1561,7 @@ msgstr ""
 "<p>Lütfen klasörleri içe aktarmak için digiKam kitaplığından hedef albümü "
 "seçin.</p>"
 
-#: core/app/main/digikamapp_import.cpp:166
+#: core/app/main/digikamapp_import.cpp:170
 #, kde-format
 msgid ""
 "The folder %1 is part of the album path and cannot be imported recursively!"
@@ -5750,7 +5750,7 @@ msgstr "Mercek Otomatik Düzeltmesi"
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:64
 #, kde-format
 msgid "Fix automatically lens distortions"
-msgstr "Lens bozunumlarını kendiliğinden düzelt"
+msgstr "Mercek bozunumlarını kendiliğinden düzelt"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:84
 #, kde-format
@@ -5758,14 +5758,15 @@ msgid ""
 "<b>Use Metadata</b> option will parse images' information at queue run-time "
 "to find relevant lens features."
 msgstr ""
-"<b>Üst Veriyi Kullan</b> seçeneği, ilgili lens özelliklerini bulmak için "
+"<b>Üst Veriyi Kullan</b> seçeneği, ilgili mercek özelliklerini bulmak için "
 "kuyruk çalışma zamanında görsellerin bilgilerini ayrıştıracaktır."
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:216
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr ""
-"Lens otomatik düzeltmelerini işlemek için tüm mercek bilgileri bulunamıyor"
+"Mercek kendiliğinden düzeltmelerini işlemek için tüm mercek bilgileri "
+"bulunamıyor"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:46
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:44
@@ -8750,14 +8751,14 @@ msgstr "Mercek Bozunumu"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust lens distortions"
-msgstr "Lens bozunumlarını ayarlamak için bir araç"
+msgstr "Mercek bozunumlarını ayarlamak için bir araç"
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust lens distortions from an image."
 msgstr ""
-"Bu görsel düzenleyicisi aracı, görseldeki lens bozunumlarını ayarlayabilir."
+"Bu görsel düzenleyicisi aracı, görseldeki mercek bozunumlarını ayarlayabilir."
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:98
 #, kde-format
@@ -12915,7 +12916,7 @@ msgid ""
 "same scene at different exposure settings."
 msgstr ""
 "Fotoğraf çekilirken makine tarafından kullanılan pozlandırma kipini burada "
-"seçin. Otomatik ayraçlama yönteminde, makine aynı sahnenin çerçeve grubunu "
+"seçin. Otomatik ayraçlama yönteminde, makine aynı sahnenin kare grubunu "
 "farklı pozlandırma ayarlarıyla çeker."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:210
@@ -13279,13 +13280,13 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
 #, kde-format
 msgid "Lens aperture (f-number):"
-msgstr "Lens açıklığı (odak oranı):"
+msgstr "Mercek açıklığı (odak oranı):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:180
 #, kde-format
 msgid "Select here the lens aperture used by camera to take the picture."
 msgstr ""
-"Fotoğraf çekmek için kamera tarafından kullanılan lens açıklığını burada "
+"Fotoğraf çekmek için kamera tarafından kullanılan mercek açıklığını burada "
 "ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:185
@@ -17491,7 +17492,7 @@ msgstr "Hedef klasör:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -20045,13 +20046,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "VBaskıyı olarak dışa aktarmak için tercih ettiğiniz biçimi seçin."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:111
 #, kde-format
 msgid "Destination folder:"
 msgstr "Hedef klasör:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:117
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20646,8 +20647,8 @@ msgid ""
 "through a selection of albums.</p><p>Different visual effects can be applied "
 "to images to make transitions while to render target video.</p>"
 msgstr ""
-"<p>Bu araç, kullanıcıların video slayt gösterisi oluşturmalar için görseli "
-"çerçeve olarak geri işlemesine olanak tanır.</p><p>İşlenecek ögeler, çeşitli "
+"<p>Bu araç, kullanıcıların video slayt gösterisi oluşturmaları için görseli "
+"karesi olarak geri işlemesine olanak tanır.</p><p>İşlenecek ögeler, çeşitli "
 "albümler aracılığıyla tek tek veya grup halinde seçilebilir.</p><p>Hedef "
 "videoyu sunarken geçişler için görsellere farklı görsel efektler "
 "uygulanabilir.</p>"
@@ -20673,12 +20674,17 @@ msgstr "İşlenecek %1 görsel girdisi"
 msgid "Video Slideshow is not completed"
 msgstr "Video Slayt Gösterisi tamamlanmadı"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:186
+#, kde-format
+msgid "See the video encoding trace below"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:191
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Video Slayt Gösterisi tamamlandı."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:196
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Video akışı oynatıcıda açılıyor..."
@@ -20722,17 +20728,41 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "FFmpeg İkilisi"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:76
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:85
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Ortam kapsayıcısı biçimi:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:97
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:94
+#, fuzzy, kde-format
+#| msgid "Soundtrack:"
+msgid "Soundtrack File:"
+msgstr "Fon müziği:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:100
+#, fuzzy, kde-format
+#| msgid "Select audio files"
+msgctxt "@title:window"
+msgid "Select Audio Track"
+msgstr "Ses dosyaları seç"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:101
+#, kde-format
+msgid "Video soundtrack (lets empty if none)"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#, fuzzy, kde-format
+#| msgid "Soundtrack:"
+msgid "Soundtrack Duration:"
+msgstr "Fon müziği:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Video çıktı dosyasının adı kendiliğinden oluşturulur."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
 #, kde-format
 msgid "Open in Player:"
 msgstr "Oynatıcıda aç:"
@@ -30126,7 +30156,7 @@ msgstr "Görselin gama ayarlarını burada yapın."
 #: core/libs/dimg/filters/bw/bwsepiafilter.cpp:84
 #, kde-format
 msgid "Black & White / Sepia Filter"
-msgstr "Siyah & Beyaz / Sepya Filtresi"
+msgstr "Siyah ve Beyaz / Sepya Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:150
 #, kde-format
@@ -30150,7 +30180,7 @@ msgid ""
 "<b>Agfa 200X</b>:<p>Simulate the Agfa 200X black and white film at 200 ISO.</"
 "p>"
 msgstr ""
-"<b>Agfa 200X</b>:<p>Agfa 200X siyah beyaz filmini 200 ISO'da simüle edin.</p>"
+"<b>Agfa 200X</b>:<p>Agfa 200X siyah beyaz filmine 200 ISO'da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:158
 #, kde-format
@@ -30163,7 +30193,7 @@ msgid ""
 "<b>Agfa Pan 25</b>:<p>Simulate the Agfa Pan black and white film at 25 ISO.</"
 "p>"
 msgstr ""
-"<b>Agfa Pan 25</b>:<p>Agfa Pan siyah beyaz filmini 25 ISO'da simüle edin.</p>"
+"<b>Agfa Pan 25</b>:<p>Agfa Pan siyah beyaz filmine 25 ISO'da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:162
 #, kde-format
@@ -30176,8 +30206,7 @@ msgid ""
 "<b>Agfa Pan 100</b>:<p>Simulate the Agfa Pan black and white film at 100 ISO."
 "</p>"
 msgstr ""
-"<b>Agfa Pan 100</b>:<p>Agfa Pan siyah beyaz filmini 100 ISO'da simüle edin.</"
-"p>"
+"<b>Agfa Pan 100</b>:<p>Agfa Pan siyah beyaz filmine 100 ISO'da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:166
 #, kde-format
@@ -30190,8 +30219,7 @@ msgid ""
 "<b>Agfa Pan 400</b>:<p>Simulate the Agfa Pan black and white film at 400 ISO."
 "</p>"
 msgstr ""
-"<b>Agfa Pan 400</b>:<p>Agfa Pan siyah beyaz filmini 400 ISO'da simüle edin.</"
-"p>"
+"<b>Agfa Pan 400</b>:<p>Agfa Pan siyah beyaz filmine 400 ISO'da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:170
 #, kde-format
@@ -30204,8 +30232,8 @@ msgid ""
 "<b>Ilford Delta 100</b>:<p>Simulate the Ilford Delta black and white film at "
 "100 ISO.</p>"
 msgstr ""
-"<b>İlford Delta 100</b>:<p>Ilford Delta siyah beyaz filmini 100 ISO'da "
-"simüle edin.</p>"
+"<b>Ilford Delta 100</b>:<p>Ilford Delta siyah beyaz filmine 100 ISO'da "
+"öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:174
 #, kde-format
@@ -30218,8 +30246,8 @@ msgid ""
 "<b>Ilford Delta 400</b>:<p>Simulate the Ilford Delta black and white film at "
 "400 ISO.</p>"
 msgstr ""
-"<b>İlford Delta 400</b>:<p>Ilford Delta siyah beyaz filmini 400 ISO'da "
-"simüle edin.</p>"
+"<b>İlford Delta 400</b>:<p>Ilford Delta siyah beyaz filmine 400 ISO'da "
+"öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:178
 #, kde-format
@@ -30232,8 +30260,8 @@ msgid ""
 "<b>Ilford Delta 400 Pro 3200</b>:<p>Simulate the Ilford Delta 400 Pro black "
 "and white film at 3200 ISO.</p>"
 msgstr ""
-"<b>Ilford Delta 400 Pro 3200</b>:<p>Ilford Delta 400 Pro siyah beyaz filmini "
-"3200 ISO'da simüle edin.</p>"
+"<b>Ilford Delta 400 Pro 3200</b>:<p>Ilford Delta 400 Pro siyah beyaz filmine "
+"3200 ISO'da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:182
 #, kde-format
@@ -30246,8 +30274,8 @@ msgid ""
 "<b>Ilford FP4 Plus</b>:<p>Simulate the Ilford FP4 Plus black and white film "
 "at 125 ISO.</p>"
 msgstr ""
-"<b>Ilford FP4 Plus</b>:<p>Ilford FP4 Plus siyah-beyaz filmini 125 ISO'da "
-"simüle edin.</p>"
+"<b>Ilford FP4 Plus</b>:<p>Ilford FP4 Plus siyah-beyaz filmine 125 ISO'da "
+"öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:186
 #, kde-format
@@ -30260,8 +30288,8 @@ msgid ""
 "<b>Ilford HP5 Plus</b>:<p>Simulate the Ilford HP5 Plus black and white film "
 "at 400 ISO.</p>"
 msgstr ""
-"<b>Ilford FP5 Plus</b>:<p>Ilford FP5 Plus siyah-beyaz filmini 400 ISO'da "
-"simüle edin.</p>"
+"<b>Ilford FP5 Plus</b>:<p>Ilford FP5 Plus siyah-beyaz filmine 400 ISO'da "
+"öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:190
 #, kde-format
@@ -30274,8 +30302,8 @@ msgid ""
 "<b>Ilford PanF Plus</b>:<p>Simulate the Ilford PanF Plus black and white "
 "film at 50 ISO.</p>"
 msgstr ""
-"<b>Ilford PanF Plus</b>:<p>Ilford PanF Plus siyah-beyaz filmini 50 ISO'da "
-"simüle edin.</p>"
+"<b>Ilford PanF Plus</b>:<p>Ilford PanF Plus siyah-beyaz filmine 50 ISO'da "
+"öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:194
 #, kde-format
@@ -30288,8 +30316,8 @@ msgid ""
 "<b>Ilford XP2 Super</b>:<p>Simulate the Ilford XP2 Super black and white "
 "film at 400 ISO.</p>"
 msgstr ""
-"<b>Ilford XP2 Süper</b>:<p>Ilford XP2 Süper siyah beyaz filmini 400 ISO'da "
-"simüle edin.</p>"
+"<b>Ilford XP2 Süper</b>:<p>Ilford XP2 Süper siyah beyaz filmine 400 ISO'da "
+"öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:198
 #, kde-format
@@ -30302,8 +30330,8 @@ msgid ""
 "<b>Kodak Tmax 100</b>:<p>Simulate the Kodak Tmax black and white film at 100 "
 "ISO.</p>"
 msgstr ""
-"<b>Kodak Tmax 100</b>.:<p>Kodak Tmax siyah beyaz filmini 100 ISO'da simüle "
-"edin.</p>"
+"<b>Kodak Tmax 100</b>.:<p>Kodak Tmax siyah beyaz filmine 100 ISO'da öykünün."
+"</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:202
 #, kde-format
@@ -30316,8 +30344,8 @@ msgid ""
 "<b>Kodak Tmax 400</b>:<p>Simulate the Kodak Tmax black and white film at 400 "
 "ISO.</p>"
 msgstr ""
-"<b>Kodak Tmax 400</b>:<p>Kodak Tmax siyah beyaz filmini 400 ISO'da simüle "
-"edin.</p>"
+"<b>Kodak Tmax 400</b>:<p>Kodak Tmax siyah beyaz filmine 400 ISO'da öykünün.</"
+"p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:206
 #, kde-format
@@ -30330,8 +30358,7 @@ msgid ""
 "<b>Kodak TriX</b>:<p>Simulate the Kodak TriX black and white film at 400 ISO."
 "</p>"
 msgstr ""
-"<b>Kodak TriX</b>:<p>Kodak TriX siyah beyaz filmini 400 ISO'da simüle edin.</"
-"p>"
+"<b>Kodak TriX</b>:<p>Kodak TriX siyah beyaz filmine 400 ISO'da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:212
 #, kde-format
@@ -30344,8 +30371,8 @@ msgid ""
 "<b>Ilford SPX 200</b>:<p>Simulate the Ilford SPX infrared film at 200 ISO.</"
 "p>"
 msgstr ""
-"<b>Ilford SPX 200</b>:<p>Ilford SPX kızılötesi filmini 200 ISO'da simüle "
-"edin.</p>"
+"<b>Ilford SPX 200</b>:<p>Ilford SPX kızılötesi filmine 200 ISO'da öykünün.</"
+"p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:216
 #, kde-format
@@ -30358,8 +30385,8 @@ msgid ""
 "<b>Ilford SPX 400</b>:<p>Simulate the Ilford SPX infrared film at 400 ISO.</"
 "p>"
 msgstr ""
-"<b>Ilford SPX 400</b>:<p>Ilford SPX kızılötesi filmini 400 ISO'da simüle "
-"edin.</p>"
+"<b>Ilford SPX 400</b>:<p>Ilford SPX kızılötesi filmine 400 ISO'da öykünün.</"
+"p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:220
 #, kde-format
@@ -30372,8 +30399,7 @@ msgid ""
 "<b>Ilford SPX 800</b>:<p>Simulate the Ilford SPX infrared film at 800 ISO.</"
 "p>"
 msgstr ""
-"<b>Ilford SPX 800</b>:<p>Ilford SPX kızılötesi filmi 800 ISO'da simüle edin."
-"</p>"
+"<b>Ilford SPX 800</b>:<p>Ilford SPX kızılötesi filme 800 ISO'da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:224
 #, kde-format
@@ -30383,12 +30409,12 @@ msgstr "Kodak HIE (Kızılötesi)"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:225
 #, kde-format
 msgid "<b>Kodak HIE</b>:<p>Simulate the Kodak HIE infrared film.</p>"
-msgstr "<b>Kodak HIE</b>:<p>Kodak HIE kızılötesi filmi simüle edin</p>"
+msgstr "<b>Kodak HIE</b>:<p>Kodak HIE kızılötesi filmine öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:234
 #, kde-format
 msgid "No Lens Filter"
-msgstr "Lens Filtresi Yok"
+msgstr "Mercek Süzgeci Yok"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:235
 #, kde-format
@@ -30396,14 +30422,13 @@ msgid ""
 "<b>No Lens Filter</b>:<p>Do not apply a lens filter when rendering the image."
 "</p>"
 msgstr ""
-"<b>Lens Filtresi Yok</b>:<p>Görüntü işlenirken lens filtrelemesi uygulamayın."
-"</p>"
+"<b>Lens Süzgeci Yok</b>:<p>Görsel işlenirken lens süzgeci uygulamayın.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:238
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:324
 #, kde-format
 msgid "Green Filter"
-msgstr "Yeşil Filtreleme"
+msgstr "Yeşil Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:239
 #, kde-format
@@ -30412,15 +30437,14 @@ msgid ""
 "exposure using a green filter. This is useful for all scenic shoots, "
 "especially portraits photographed against the sky.</p>"
 msgstr ""
-"<b>Yeşil filtreleme ile Siyah & Beyaz</b>:<p>Yeşil filtre kullanarak siyah "
-"beyaz film pozlandırmayı canlandırır. Bu, tüm doğal manzaralar için yaygın "
-"kullanılabilecek değerli bir araçtır ve özellikle açık havada çekilen "
-"portreler için uygundur.</p>"
+"<b>Yeşil Süzgeçli Siyah Beyaz</b>:<p>Yeşil süzgeç kullanarak siyah beyaz "
+"film pozlamasına öykünün. Bu, tüm manzara çekimleri, özellikle de gökyüzüne "
+"karşı çekilen portreler için kullanışlıdır.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:244
 #, kde-format
 msgid "Orange Filter"
-msgstr "Turuncu Filtreleme"
+msgstr "Turuncu Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:245
 #, kde-format
@@ -30429,14 +30453,14 @@ msgid ""
 "exposure using an orange filter. This will enhance landscapes, marine scenes "
 "and aerial photography.</p>"
 msgstr ""
-"<b>Turuncu filtreleme ile Siyah & Beyaz</b>:<p>Turuncu filtre kullanarak "
-"siyah beyaz film pozlandırmayı canlandırır. Bu özellik ile kır, deniz ve "
-"hava fotoğraflarında geliştirme yapabilirsiniz.</p>"
+"<b>Turuncu Süzgeçli Siyah Beyaz</b>:<p>Turuncu süzgeç kullanarak siyah beyaz "
+"film pozlamasına öykünün. Bu; kara ve deniz manzaralarını ve hava "
+"fotoğraflarını geliştirecektir.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:250
 #, kde-format
 msgid "Red Filter"
-msgstr "Kırmızı Filtreleme"
+msgstr "Kırmızı Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:251
 #, kde-format
@@ -30445,15 +30469,14 @@ msgid ""
 "exposure using a red filter. This creates dramatic sky effects, and "
 "simulates moonlight scenes in the daytime.</p>"
 msgstr ""
-"<b>Kırmızı filtreleme ile Siyah & Beyaz</b>:<p>Kırmızı filtre kullanarak "
-"siyah beyaz film pozlandırmayı canlandırır. Bu özellik ile dramatik gökyüzü "
-"efektleri oluşturabilir ve gündüz fotoğraflarında ayışığını taklit "
-"edebilirsiniz.</p>"
+"<b>Kırmızı Süzgeçli Siyah Beyaz</b>:<p>Kırmızı süzgeç kullanarak siyah beyaz "
+"film pozlamasına öykünün. Bu, dramatik gökyüzü efektleri yaratır ve gündüz "
+"ay ışığı sahnelerine öykünür.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:256
 #, kde-format
 msgid "Yellow Filter"
-msgstr "Sarı Filtreleme"
+msgstr "Sarı Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:257
 #, kde-format
@@ -30462,14 +30485,14 @@ msgid ""
 "exposure using a yellow filter. This has the most natural tonal correction, "
 "and improves contrast. Ideal for landscapes.</p>"
 msgstr ""
-"<b>Sarı filtreleme ile Siyah & Beyaz</b>:<p>Sarı filtre kullanarak siyah "
-"beyaz film pozlandırmayı canlandırır. En doğal ton doğrulamasıdır ve "
-"zıtlığın artırılmasında kullanılır. Kır fotoğrafları için idealdir.</p>"
+"<b>Sarı Süzgeçli Siyah Beyaz</b>:<p>Sarı süzgeç kullanarak siyah beyaz film "
+"pozlamasına öykünün. Bu, en doğal ton düzeltmesine sahiptir ve karşıtlığı "
+"artırır. Manzaralar için idealdir.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:262
 #, kde-format
 msgid "Yellow-Green Filter"
-msgstr "Sarı-Yeşil Filtre"
+msgstr "Sarı-Yeşil Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:263
 #, kde-format
@@ -30481,18 +30504,17 @@ msgid ""
 "expressions in close-ups and emphasizing the feeling of liveliness. This "
 "filter is highly effective for indoor portraits under tungsten lighting.</p>"
 msgstr ""
-"<b>Sarı-Yeşil Filtre ile Siyah&Beyaz</b>:<p>Sarı-yeşil bir filtre kullanarak "
-"siyah beyaz filmi pozlamayı simüle edin. Sarı-yeşil bir filtre dış mekan "
-"portreleri üzerinde oldukça etkilidir çünkü yeşil renk daha açıkken kırmızı "
-"renk koyu renkte görüntülenmektedir. Cilt tonlarını düzeltmek, yakın "
-"çekimlerdeki yüz ifadeleriniaçığa çıkarmak ve canlılık duygusunu vurgulamak "
-"için idealdir. Bu filtre tungsten aydınlatma altındaki iç mekan portreleri "
-"için son derece etkilidir.</p>"
+"<b>Sarı-Yeşil Süzgeçli Siyah Beyaz</b>:<p>Sarı-yeşil süzgeç kullanarak siyah "
+"beyaz film pozlamasına öykünün. Sarı-yeşil süzgeç, dış mekan portreleri için "
+"oldukça etkilidir; çünkü kırmızı koyu, yeşil ise daha açık görünür. Cilt "
+"tonlarını düzeltmek, yakın çekimlerde yüz ifadelerini öne çıkarmak ve "
+"canlılık hissini vurgulamak için idealdir. Bu süzgeç, tungsten aydınlatma "
+"altında iç mekan portreleri için oldukça etkilidir.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:270
 #, kde-format
 msgid "Blue Filter"
-msgstr "Mavi Filtre"
+msgstr "Mavi Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:271
 #, kde-format
@@ -30501,9 +30523,9 @@ msgid ""
 "exposure using a blue filter. This accentuates haze and fog. Used for dye "
 "transfer and contrast effects.</p>"
 msgstr ""
-"<b>Mavi Filtre ile Siyah Beyaz </b>:<p>Mavi bir filtre kullanarak siyah "
-"beyaz filmi pozlamayı simüle edin. Bu bulanıklığı ve sis artırır. Boya "
-"aktarma ve kontrast efektleri için kullanılır.</p>"
+"<b>Mavi Süzgeçli Siyah Beyaz</b>:<p>Mavi süzgeç kullanarak siyah beyaz film "
+"pozlamasına öykünün. Bu, pus ve sisi vurgular. Boya transferi ve karşıtlık "
+"efektleri için kullanılır.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:276
 #, kde-format
@@ -30513,22 +30535,22 @@ msgstr "Sertlik:"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:282
 #, kde-format
 msgid "Here, set the strength adjustment of the lens filter."
-msgstr "Burada, lens filtresinin güç ayarlarını yapabilirsiniz."
+msgstr "Mercek süzgecinin sertlik ayarlarını burada yapabilirsiniz."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:293
 #, kde-format
 msgid "No Tone Filter"
-msgstr "Ton Filtresi Yok"
+msgstr "Ton Süzgeci Yok"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:294
 #, kde-format
 msgid "<b>No Tone Filter</b>:<p>Do not apply a tone filter to the image.</p>"
-msgstr "<b>Ton Filtresi Yok</b>:<p>Resme ton filtrelemesi uygalamayın.</p>"
+msgstr "<b>Ton Süzgeci Yok</b>:<p>Görsele ton süzgeci uygulamayın.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:297
 #, kde-format
 msgid "Sepia Filter"
-msgstr "Sepya Filtresi"
+msgstr "Sepya Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:298
 #, kde-format
@@ -30537,13 +30559,14 @@ msgid ""
 "while adding a bit of coolness to the shadows - very similar to the process "
 "of bleaching a print and re-developing in a sepia toner.</p>"
 msgstr ""
-"<b>Sepya filtresi ile Siyah & Beyaz</b>:<p>Gölgelere biraz güzellik "
-"katarken, ılık bir öne çıkarma ve orta ton verir.</p>"
+"<b>Sepya Tonlu Siyah Beyaz</b>:<p>Gölgelere biraz soğukluk katarken sıcak "
+"bir vurgu ve orta ton verir; bir baskıyı ağartmak ve bir sepya tonerinde "
+"yeniden banyo sürecine çok benzer.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:303
 #, kde-format
 msgid "Brown Filter"
-msgstr "Kahverengi Filtre"
+msgstr "Kahverengi Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:304
 #, kde-format
@@ -30551,13 +30574,13 @@ msgid ""
 "<b>Black & White with Brown Tone</b>:<p>This filter is more neutral than the "
 "Sepia Tone filter.</p>"
 msgstr ""
-"<b>Kahverengi Ton ile Birlikte Siyah & Beyaz</b>:<p>Sepya Tonu filtresinden "
-"daha doğaldır.</p>"
+"<b>Kahverengi Tonlu Siyah Beyaz</b>:<p>Bu süzgeç, Sepya Tonu süzgecinden "
+"daha nötrdür.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:308
 #, kde-format
 msgid "Cold Filter"
-msgstr "Soğuk Filtre"
+msgstr "Soğuk Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:309
 #, kde-format
@@ -30565,13 +30588,14 @@ msgid ""
 "<b>Black & White with Cold Tone</b>:<p>Start subtly and replicate printing "
 "on a cold tone black and white paper such as a bromide enlarging paper.</p>"
 msgstr ""
-"<b>Soğuk ton ile birlikte Siyah & Beyaz</b>:<p>Soğuk tonlama ile siyah beyaz "
-"oluşum sağlar.</p>"
+"<b>Soğuk Tonlu Siyah Beyaz</b>:<p>İnce bir şekilde başlayın ve bromür "
+"büyütücü kağıt gibi soğuk tonlu siyah beyaz bir kağıt üzerine baskıyı "
+"çoğaltın.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:314
 #, kde-format
 msgid "Selenium Filter"
-msgstr "Selenyum Filtre"
+msgstr "Selenyum Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:315
 #, kde-format
@@ -30579,13 +30603,13 @@ msgid ""
 "<b>Black & White with Selenium Tone</b>:<p>This effect replicates "
 "traditional selenium chemical toning done in the darkroom.</p>"
 msgstr ""
-"<b>Selenyum Tonu ile Siyah & Beyaz Filtreleme</b>:<p>Bu efekt karanlık odada "
-"geleneksel selenyum tonlamanın benzerini yapar.</p>"
+"<b>Selenyum Tonlu Siyah Beyaz</b>:<p>Bu efekt, karanlık odada yapılan "
+"geleneksel selenyum kimyasal tonlamanın aynısıdır.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:319
 #, kde-format
 msgid "Platinum Filter"
-msgstr "Platin Filtre"
+msgstr "Platinyum Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:320
 #, kde-format
@@ -30593,8 +30617,8 @@ msgid ""
 "<b>Black & White with Platinum Tone</b>:<p>This effect replicates "
 "traditional platinum chemical toning done in the darkroom.</p>"
 msgstr ""
-"<b>Platinyum Ton ile Siyah & Beyaz</b>:<p>Bu efekt karanlık odada geleneksel "
-"platinyum tonlamanın benzerini yapar.</p>"
+"<b>Platin Tonlu Siyah Beyaz</b>:<p>Bu efekt, karanlık odada yapılan "
+"geleneksel platin kimyasal tonlamanın aynısıdır.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:325
 #, kde-format
@@ -30602,13 +30626,13 @@ msgid ""
 "<b>Black & White with greenish tint</b>:<p>This effect is also known as "
 "Verdante.</p>"
 msgstr ""
-"<b>Yeşilli renkleme ile Birlikte Siyah & Beyaz</b>:<p>Yeşil somaki olarak da "
-"bilinir.</p>"
+"<b>Yeşilimsi renk tonuyla Siyah Beyaz</b>:<p>Bu efekt aynı zamanda Verdante "
+"olarak da bilinir.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:372
 #, kde-format
 msgid "Lens Filters"
-msgstr "Lens Filtreleri"
+msgstr "Lens Süzgeçleri"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:374
 #, kde-format
@@ -30621,38 +30645,36 @@ msgid "Luminosity"
 msgstr "Parlaklık"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:529
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
-msgstr "Yüklemek için Siyah & Beyaz Ayar Dosyası"
+msgstr "Yüklenecek Siyah ve Beyaz Ayar Dosyası"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:547
 #, kde-format
 msgid "\"%1\" is not a Black & White settings text file."
-msgstr "\"%1\" bir Black & White ayar metin dosyası değil."
+msgstr "\"%1\" bir Black ve White ayar metin dosyası değil."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:592
 #, kde-format
 msgid "Cannot load settings from the Black & White text file."
-msgstr "Siyah & Beyaz dosyasından ayarlar yüklenemiyor"
+msgstr "Siyah ve Beyaz dosyasından ayarlar yüklenemiyor"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
-msgstr "Kaydetmek için Siyah & Beyaz Ayar Dosyası"
+msgstr "Kaydedilecek Siyah ve Beyaz Ayar Dosyası"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:639
 #, kde-format
 msgid "Cannot save settings to the Black & White text file."
-msgstr "Black & White metin dosyasına ayarlar yazılamıyor."
+msgstr "Siyah ve Beyaz metin dosyasına ayarlar kaydedilemiyor."
 
 #: core/libs/dimg/filters/bw/infraredfilter.cpp:60
 #, kde-format
 msgid "Infrared Filter"
-msgstr "Kızılötesi Filtresi"
+msgstr "Kızılötesi Süzgeci"
 
 #: core/libs/dimg/filters/bw/mixerfilter.cpp:52
 #, kde-format
@@ -30663,7 +30685,7 @@ msgstr "Kanal Karıştırma Aracı"
 #, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
-msgstr "Çıkış Kanalı:"
+msgstr "Çıkış kanalı:"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:132
 #, kde-format
@@ -30730,40 +30752,29 @@ msgstr "&Sıfırla"
 msgctxt "@info"
 msgid ""
 "Reset color channels' gains settings from the currently selected channel."
-msgstr "Renk kanallarının katılım ayarlarını seçili kanala sıfırla."
+msgstr ""
+"Renk kanallarının kazanç ayarlarını şu anda seçili kanaldan sıfırlayın."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:172
 #, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
-msgstr "Parlaklılığı Koru"
+msgstr "Parlaklılığı koru"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:173
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option is you want preserve the image luminosity."
-msgstr ""
-"Görüntü ışık oranını (luminosity) korumak istiyorsanız bu seçeneği "
-"etkinleştiriniz."
+msgstr "Görsel parlaklığını korumak istiyorsanız bu seçeneği etkinleştirin."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:178
 #, kde-format
 msgctxt "@option: color"
 msgid "Monochrome"
-msgstr "Tek renk"
+msgstr "Tek renkli"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:180
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Use <b>Monochrome</b> mode to convert color picture to Black and White:"
-#| "</p><p>The <qt><font color=\"red\">red channel</font></qt> modifies <a "
-#| "href='http://en.wikipedia.org/wiki/Contrast_(vision)'>the contrast</a> of "
-#| "photograph.</p><p>The <qt><font color=\"green\">green channel</font></qt> "
-#| "enhances or reduces the details level of photograph.</p><p>The <qt><font "
-#| "color=\"blue\">blue channel</font></qt> affects <a href='http://en."
-#| "wikipedia.org/wiki/Image_noise'>the noise</a> of photograph.</"
-#| "p><p><u>Note:</u> in this mode, the histogram will display only "
-#| "luminosity values.</p>"
+#, kde-format
 msgctxt "@info: help"
 msgid ""
 "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
@@ -30772,48 +30783,42 @@ msgid ""
 "The \"blue channel\" affects the noise of photograph.\n"
 "Note: in this mode, the histogram will display only luminosity values."
 msgstr ""
-"<p>Renkli resmi Siyah Beyaza çevirmek için<b> Tek renkli </b> modunu "
-"kullanın:</p><p><font color=\"red\">kırmızı kanal</font></qt> Fotoğrafın<a "
-"href='http://en.wikipedia.org/wiki/Contrast_(vision)'>kontrastını</a> "
-"değiştirir.</p><p><qt><font color=\"green\">yeşil kanal</font></qt> "
-"fotoğrafın ayrıntı düzeyini artırır veya azaltır.</p><p><qt><font color="
-"\"blue\">mavi kanal</font></qt> Fotoğrafın <a href='http://en.wikipedia.org/"
-"wiki/Image_noise'>gürültüsünü</a> etkiler. </p><p><u>Not: </u> Bu modda, "
-"histogram yalnızca parlaklık değerlerini gösterecektir.</p>"
+"Renkli görseli Siyah-Beyaz'a dönüştürmek için \"Tek Renkli\" kipini "
+"kullanın:\n"
+"\"Kırmızı kanal\" fotoğrafın karşıtlığını değiştirir.\n"
+"\"Yeşil kanal\" fotoğrafın ayrıntı düzeyini artırır veya azaltır.\n"
+"\"Mavi kanal\" fotoğrafın gürültüsünü etkiler.\n"
+"Not: Bu kipte histogram yalnızca parlaklık değerlerini gösterecektir."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:351
 #, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
-msgstr "Toplam: (%) %1"
+msgstr "Toplam: %​%1"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select Gimp Gains Mixer File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
-msgstr "Yüklenecek olan Gimp Kazanç Karıştırıcı Dosyasını seç"
+msgstr "Yüklenecek GIMP Kazanç Karıştırma Dosyası"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:625
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
-msgstr "Kazanç Karıştırıcı metin dosyasından ayarlar yüklenemedi."
+msgstr "Kazanç Karıştırma metin dosyasından ayarlar yüklenemedi."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:635
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Gimp Gains Mixer File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
-msgstr "Kaydetmek istediğiniz Gimp Kazanç Karıştırıcı (Gains Mixer) dosyası"
+msgstr "Kaydedilecek GIMP Kazanç Karıştırma Dosyası"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:714
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
-msgstr "Kazanç Karıştırıcı metin dosyasına ayarlar kaydedilemedi."
+msgstr "Kazanç Karıştırma metin dosyasına ayarlar kaydedilemedi."
 
 #: core/libs/dimg/filters/bw/tonalityfilter.cpp:54
 #, kde-format
@@ -30829,13 +30834,13 @@ msgstr "Renk Dengesi Aracı"
 #, kde-format
 msgctxt "@label: color"
 msgid "Cyan"
-msgstr "Cyan"
+msgstr "Camgöbeği"
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:84
 #, kde-format
 msgctxt "@info"
 msgid "Set here the cyan/red color adjustment of the image."
-msgstr "Buradan görüntünün cyan/kırmızı renk ayarlamasını yapınız."
+msgstr "Burada görselin camgöbeği/kırmızı renk ayarını yapın."
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:86
 #, kde-format
@@ -30847,13 +30852,13 @@ msgstr "Kırmızı"
 #, kde-format
 msgctxt "@label: color"
 msgid "Magenta"
-msgstr "Macenta"
+msgstr "Mor"
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Set here the magenta/green color adjustment of the image."
-msgstr "Buradan görüntünün macenta/yeşil renk ayarlamasını yapınız."
+msgstr "Buradan görselin mor/yeşil renk ayarlamasını yapın."
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:99
 #, kde-format
@@ -30877,22 +30882,22 @@ msgstr "Mavi"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the yellow/blue color adjustment of the image."
-msgstr "Buradan görüntünün sarı/mavi renk ayarlamasını yapınız."
+msgstr "Buradan görselin sarı/mavi renk ayarlamasını yapın."
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:144
 #, kde-format
 msgid "Curve free mode"
-msgstr "Serbest Eğri kipi"
+msgstr "Serbest Eğri Kipi"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:145
 #, kde-format
 msgid "With this button, you can draw your curve free-hand with the mouse."
-msgstr "Bu düğmeyle fare kullanarak serbest eğriler çizebilirsiniz."
+msgstr "Bu düğmeyle eğrinizi fareyle serbest elle çizebilirsiniz."
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:151
 #, kde-format
 msgid "Curve smooth mode"
-msgstr "Yumuşatılmış eğri kipi"
+msgstr "Pürüzsüz Eğri Kipi"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:152
 #, kde-format
@@ -30900,7 +30905,8 @@ msgid ""
 "With this button, the curve type is constrained to be a smooth line with "
 "tension."
 msgstr ""
-"Bu düğme ile, eğri tipi gerginlik ile pürüzsüz bir çizgi olarak sınırlanır."
+"Bu düğmeyle eğri tipi gerilimli düzgün bir çizgi olacak şekilde "
+"sınırlandırılır."
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:177
 #, kde-format
@@ -30909,9 +30915,9 @@ msgid ""
 "<b>Shadow Tone</b> smooth curves point on Red, Green, Blue, and Luminosity "
 "channels."
 msgstr ""
-"Bu tuş ile özgün görüntüden Kırmızı, Yeşil, Mavi ve Işık kullanarak "
-"oluşturulan düzgün kıvrımlar ayarlamak için <b>Gölge Tonu</b> rengi "
-"alabilirsiniz."
+"Bu düğmeyle; Kırmızı, Yeşil, Mavi ve Parlaklık kanallarında <b>Gölge Tonu</"
+"b> yumuşak eğri noktasını ayarlamak için kullanılan özgün görselden renk "
+"seçebilirsiniz."
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:185
 #, kde-format
@@ -30920,9 +30926,9 @@ msgid ""
 "<b>Middle Tone</b> smooth curves point on Red, Green, Blue, and Luminosity "
 "channels."
 msgstr ""
-"Bu tuş ile özgün görüntüden Kırmızı, Yeşil, Mavi ve Işık kullanarak "
-"oluşturulan düzgün kıvrımlar ayarlamak için <b>Orta Ton</b> rengi "
-"alabilirsiniz."
+"Bu düğmeyle; Kırmızı, Yeşil, Mavi ve Parlaklık kanallarında <b>Orta Ton</b> "
+"yumuşak eğri noktasını ayarlamak için kullanılan özgün görselden renk "
+"seçebilirsiniz."
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:193
 #, kde-format
@@ -30931,15 +30937,14 @@ msgid ""
 "<b>Highlight Tone</b> smooth curves point on Red, Green, Blue, and "
 "Luminosity channels."
 msgstr ""
-"Bu tuş ile özgün görüntüden Kırmızı, Yeşil, Mavi ve Işık kullanarak "
-"oluşturulan düzgün kıvrımlar ayarlamak için <b>Yüksek Ton</b> rengi "
-"alabilirsiniz."
+"Bu düğmeyle; Kırmızı, Yeşil, Mavi ve Parlaklık kanallarında <b>Vurgu Tonu</"
+"b> yumuşak eğri noktasını ayarlamak için kullanılan özgün görselden renk "
+"seçebilirsiniz."
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:216
-#, fuzzy, kde-format
-#| msgid "Reset current channel curves' values."
+#, kde-format
 msgid "Resets channel/channels curves' values."
-msgstr "Seçili kanal eğri değerlerini sıfırla."
+msgstr "Kanal/kanal eğrilerinin değerlerini sıfırlar."
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:217
 #, kde-format
@@ -30947,14 +30952,13 @@ msgid ""
 "If you press this button, custom menu will appear: First option will reset "
 "current channel. Second option will reset all channels."
 msgstr ""
-"Bu düğmeye basarsanız özel menü görünecektir: İlk seçenek mevcut kanalı "
-"sıfırlayacaktır. İkinci seçenek tüm kanalları sıfırlayacaktır."
+"Bu düğmeye basarsanız özel menü görünecektir: İlk seçenek geçerli kanalı "
+"sıfırlayacaktır. İkinci seçenek tüm kanalları sıfırlar."
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:222
-#, fuzzy, kde-format
-#| msgid "Revert Changes"
+#, kde-format
 msgid "Reset &Channel"
-msgstr "Değişiklikleri Geri Al"
+msgstr "&Kanalı Sıfırla"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:223
 #, kde-format
@@ -30967,39 +30971,37 @@ msgid "Adjust Curves"
 msgstr "Eğrileri Ayarla"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:242
-#, fuzzy, kde-format
-#| msgid "Select Gimp Curves File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
-msgstr "Yüklenecek Gimp Eğrileri Dosyasını Seçin"
+msgstr "Yüklenecek GIMP Eğrileri Dosyasını Seç"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:254
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
-msgstr "Gimp eğrileri metin dosyasından yüklenemedi."
+msgstr "GIMP eğrileri metin dosyasından yüklenemiyor."
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:263
-#, fuzzy, kde-format
-#| msgid "Gimp Curves File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
-msgstr "Kaydedilecek Gimp Eğrileri Dosyası"
+msgstr "Kaydedilecek GIMP Eğrileri Dosyası"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:275
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
-msgstr "Gimp eğrileri metin dosyası kaydedilemedi."
+msgstr "GIMP eğrileri metin dosyasına kaydedilemiyor."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:189
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:790
 #, kde-format
 msgid "Loading image..."
-msgstr "Resim yükleniyor..."
+msgstr "Görsel yükleniyor..."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:194
 #, kde-format
 msgid "Histogram calculation..."
-msgstr "Histogram hesaplaması..."
+msgstr "Histogram hesaplanıyor..."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:208
 #, kde-format
@@ -31121,12 +31123,12 @@ msgstr "Dekoratif Duvar"
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:148
 #, kde-format
 msgid "Select the border type to add around the image here."
-msgstr "Buradan görüntü etrafına eklenecek kenar ürünü seçin."
+msgstr "Burada görselin çevresine eklenecek kenarlık türünü seçin."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:155
 #, kde-format
 msgid "Preserve Aspect Ratio"
-msgstr "En-boy Oranını Koru"
+msgstr "En-Boy oranını koru"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:156
 #, kde-format
@@ -31135,25 +31137,25 @@ msgid ""
 "enabled, the border width will be a percentage of the image size, else the "
 "border width will be in pixels."
 msgstr ""
-"Resmin en-boy oranını korumak isterseniz bu seçeneği etkinleştirin. "
-"Etkinleştirilirse kenarlık genişliği resim boyutunun bir yüzdesi olacaktır, "
-"aksi takdirde kenarlık genişliği piksel cinsinden olacaktır."
+"Görselin en-boy oranını korumak istiyorsanız bu seçeneği etkinleştirin. "
+"Etkinleştirilirse kenarlık genişliği görsel boyutunun bir yüzdesi olacaktır, "
+"aksi takdirde kenarlık genişliği piksel türünden olur."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:165
 #, kde-format
 msgid "Set here the border width as a percentage of the image size."
-msgstr "Kenarlık genişliğini resim boyutunun bir yüzdesi olarak ayarlayın."
+msgstr "Kenarlık genişliğini görsel boyutunun yüzdesi olarak burada ayarlayın."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:167
 #, kde-format
 msgid "Width (pixels):"
-msgstr "Genişlik (piksel ) :"
+msgstr "Genişlik (piksel):"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:171
 #, kde-format
 msgid "Set here the border width in pixels to add around the image."
 msgstr ""
-"Buradan görüntü etrafına eklemek için piksel cinsinden kenar genişliğini "
+"Burada görselin çevresine eklenecek kenarlık genişliğini piksel türünden "
 "ayarlayın."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:401
@@ -31171,47 +31173,47 @@ msgstr "İkinci:"
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:403
 #, kde-format
 msgid "Set here the foreground color of the border."
-msgstr "Buradan kenarın ön plan rengini ayarlayın."
+msgstr "Kenarlığın ön plan rengini burada ayarlayın."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:404
 #, kde-format
 msgid "Set here the Background color of the border."
-msgstr "Buradan kenarın arka plan rengini ayarlayın."
+msgstr "Kenarlığın arka plan rengini burada ayarlayın."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:420
 #, kde-format
 msgid "Set here the color of the main border."
-msgstr "Buradan, ana kenarın rengini ayarlayın."
+msgstr "Ana kenarlığın rengini burada ayarlayın."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:421
 #, kde-format
 msgid "Set here the color of the line."
-msgstr "Buradan, çizgi rengini ayarlayın."
+msgstr "Çizginin rengini burada ayarlayın."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:427
 #, kde-format
 msgid "Set here the color of the upper left area."
-msgstr "Buradan, sol üst alanın rengini ayarlayın."
+msgstr "Sol üst alanın rengini burada ayarlayın."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:428
 #, kde-format
 msgid "Set here the color of the lower right area."
-msgstr "Buradan, sağ alt alanın rengini ayarlayın."
+msgstr "Sağ alt alanın rengini burada ayarlayın."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:449
 #, kde-format
 msgid "Set here the color of the first line."
-msgstr "Buradan, ilk çizginin rengini ayarlayın."
+msgstr "İlk çizginin rengini burada ayarlayın."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:450
 #, kde-format
 msgid "Set here the color of the second line."
-msgstr "Buradan, ikinci çizginin rengini ayarlayın."
+msgstr "İkinci çizginin rengini burada ayarlayın."
 
 #: core/libs/dimg/filters/decorate/texturefilter.cpp:53
 #, kde-format
 msgid "Texture Filter"
-msgstr "Doku Filtresi"
+msgstr "Doku Süzgeci"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:81
 #, kde-format
@@ -31313,7 +31315,7 @@ msgstr "Taş"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the texture type to apply to image."
-msgstr "Burada, görüntüye uygulamak için doku türünü ayarlayabilirsiniz."
+msgstr "Görsele uygulanacak doku türünü burada ayarlayın."
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:102
 #, kde-format
@@ -31326,8 +31328,8 @@ msgstr "Kabartma:"
 msgctxt "@info"
 msgid "Set here the relief gain used to merge texture and image."
 msgstr ""
-"Burada, görüntü ve doku birleştirilmesinde kullanılacak kabartma derecesini "
-"ayarlayabilirsiniz."
+"Dokuyu ve görseli birleştirmek için kullanılacak kabartma kazancını burada "
+"ayarlayın."
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:387
 #, kde-format
@@ -31337,7 +31339,7 @@ msgstr "Sağa Döndür"
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:392
 #, kde-format
 msgid "Rotate 180 degrees"
-msgstr "180 derece döndür"
+msgstr "180 Derece Döndür"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:397
 #, kde-format
@@ -31362,12 +31364,12 @@ msgstr "Kırp"
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:422
 #, kde-format
 msgid "Convert to 8 Bit"
-msgstr "8 Bite Dönüştür"
+msgstr "8 Bit'e Dönüştür"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:427
 #, kde-format
 msgid "Convert to 16 Bit"
-msgstr "16 Bite Dönüştür"
+msgstr "16 Bit'e Dönüştür"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:496
 #, kde-format
@@ -31412,12 +31414,12 @@ msgstr "Renk Negatif Çeviricisi"
 #: core/libs/dimg/filters/filteractionfilter.cpp:193
 #, kde-format
 msgid "Built-in transformation not supported"
-msgstr "Yerleşik dönüştürme desteklenmiyor"
+msgstr "Yerleşik dönüşüm desteklenmiyor"
 
 #: core/libs/dimg/filters/filteractionfilter.cpp:215
 #, kde-format
 msgid "Filter identifier or version is not supported"
-msgstr "Süzgeç tanımlayıcı veya sürüm desteklenmiyor"
+msgstr "Süzgeç tanımlayıcısi veya sürümü desteklenmiyor"
 
 #: core/libs/dimg/filters/fx/blurfilter.cpp:90
 #, kde-format
@@ -31446,8 +31448,7 @@ msgid "Solarize"
 msgstr "Soldur"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:120
-#, fuzzy, kde-format
-#| msgid "Vivid"
+#, kde-format
 msgctxt "@item: color effect"
 msgid "Vivid"
 msgstr "Canlı"
@@ -31459,28 +31460,19 @@ msgid "Neon"
 msgstr "Neon"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:122
-#, fuzzy, kde-format
-#| msgid "Find Edges"
+#, kde-format
 msgctxt "@item: color effect"
 msgid "Find Edges"
-msgstr "Sınırları Bul"
+msgstr "Kenarları Bul"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:123
-#, fuzzy, kde-format
-#| msgid "Lut3D"
+#, kde-format
 msgctxt "@item: color effect"
 msgid "Lut3D"
 msgstr "Lut3D"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Select the effect type to apply to the image here.</p><p><b>Solarize</"
-#| "b>: simulates solarization of photograph.</p><p><b>Vivid</b>: simulates "
-#| "the Velvia(tm) slide film colors.</p><p><b>Neon</b>: coloring the edges "
-#| "in a photograph to reproduce a fluorescent light effect.</p><p><b>Find "
-#| "Edges</b>: detects the edges in a photograph and their strength.</"
-#| "p><p><b>Lut3D</b>: coloring images with Lut3D filters</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Select the effect type to apply to the image here.\n"
@@ -31492,13 +31484,14 @@ msgid ""
 "and their strength.\n"
 "\"Lut3D\": coloring images with Lut3D filters"
 msgstr ""
-"<p>Görüntüye uygulamak istediğiniz efekt türünü buradan seçin.</"
-"p><p><b>Güneşlendirme</b>: Fotoğrafın güneşlendirilmesini taklit eder.</"
-"p><p><b>Parlak</b>: Velvia(tm) geçişli film renklerini taklit eder.</"
-"p><p><b>Neon</b>: Floresan ışık etkisini tekrar üretmek için bir fotoğraf "
-"köşelerini renklendirir.</p><p><b>Sınırları Bul</b>: Bir fotoğraftaki "
-"sınırları ve bu sınırların güçlerini algılar.</p><p><b>Lut3D</b>: resimleri "
-"Lut3D filtreleri ile renklendirir.</p>"
+"Görsele uygulanacak efekt türünü burada seçin.\n"
+"\"Soldur\": Fotoğrafın solarizasyonuna öykünür.\n"
+"\"Canlı\": Velvia™ slayt filmi renklerine öykünür.\n"
+"\"Neon\": Floresan ışık efekti oluşturmak için\n"
+"fotoğraftaki kenarların renklendirilmesi.\n"
+"\"Kenarları Bul\": Fotoğraftaki kenarları ve\n"
+"bunların gücünü algılar.\n"
+"\"Lut3D\": Görselleri Lut3D süzgeçleriyle renklendirme"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:150
 #, kde-format
@@ -31507,15 +31500,13 @@ msgid "Level:"
 msgstr "Düzey:"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:154
-#, fuzzy, kde-format
-#| msgid "Set here the level of the effect."
+#, kde-format
 msgctxt "@info"
 msgid "Set here the level of the effect."
-msgstr "Buradan etkinin düzeyini ayarlayın."
+msgstr "Efektin düzeyini burada ayarlayın."
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:156
-#, fuzzy, kde-format
-#| msgid "Iteration:"
+#, kde-format
 msgctxt "@label"
 msgid "Iteration:"
 msgstr "Yineleme:"
@@ -31527,11 +31518,11 @@ msgid ""
 "This value controls the number of iterations to use with the Neon and Find "
 "Edges effects."
 msgstr ""
-"Bu değer Neon ve Sınır Bul etkilerinin tekrarlanma sayısını kontrol eder."
+"Bu değer, Neon ve Kenarları Bul efektleriyle kullanılacak yineleme sayısını "
+"denetler."
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:192
-#, fuzzy, kde-format
-#| msgid "Intensity:"
+#, kde-format
 msgctxt "@label"
 msgid "Intensity:"
 msgstr "Yoğunluk:"
@@ -31540,7 +31531,7 @@ msgstr "Yoğunluk:"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the intensity of the filter."
-msgstr "Süzgecin yoğunluğunu buradan ayarlayın."
+msgstr "Süzgecin yoğunluğunu burada ayarlayın."
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:376
 #, kde-format
@@ -31600,13 +31591,13 @@ msgstr "Antika"
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Washout"
-msgstr "Silinerek Geçiş"
+msgstr "Silinerek Geç"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:416
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Washout Color"
-msgstr "Silinerek Geçiş Rengi"
+msgstr "Rengi Silerek Geç"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:420
 #, kde-format
@@ -31617,12 +31608,12 @@ msgstr "X İşlemi"
 #: core/libs/dimg/filters/fx/distortionfxfilter.cpp:103
 #, kde-format
 msgid "Distortion Effect"
-msgstr "Bozulma Efekti"
+msgstr "Bozunum Efekti"
 
 #: core/libs/dimg/filters/fx/embossfilter.cpp:61
 #, kde-format
 msgid "Emboss Effect"
-msgstr "Kabartma Efkti"
+msgstr "Kabartma Efekti"
 
 #: core/libs/dimg/filters/fx/filmgrainfilter.cpp:111
 #, kde-format
@@ -31632,17 +31623,17 @@ msgstr "Film Greni Efekti"
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:166
 #, kde-format
 msgid "Grain Size:"
-msgstr "Gren Büyüklüğü:"
+msgstr "Gren büyüklüğü:"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:170
 #, kde-format
 msgid "Set here the graininess size of film."
-msgstr "Burada filmin gren büyüklüğünü ayarlayın."
+msgstr "Filmin gren büyüklüğünü burada ayarlayın."
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:172
 #, kde-format
 msgid "Photographic Distribution"
-msgstr "Fotoğraf Dağıtımı"
+msgstr "Fotoğrafik Dağıtım"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:173
 #, kde-format
@@ -31650,8 +31641,8 @@ msgid ""
 "Set on this option to render grain using a photon statistic distribution. "
 "This require more computation and can take a while."
 msgstr ""
-"Bir foton istatistik dağılımı kullanarak tanecik oluşturmak için bu seçeneği "
-"ayarla. Bu, daha fazla hesaplama gerektirir ve bir miktar süre alabilir."
+"Bir foton istatistik dağılımını kullanarak greni oluşturmak için bu seçeneği "
+"ayarlayın. Bu daha fazla hesaplama gerektirir ve biraz zaman alabilir."
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:186
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:233
@@ -31665,7 +31656,8 @@ msgstr "Yoğunluk:"
 msgid ""
 "Set here the film ISO-sensitivity to use for simulating the film graininess."
 msgstr ""
-"Film lekelemesini taklit etmek için burada ISO duyarlılığını ayarlayın."
+"Film grenliliğine öykünmek için kullanılacak film ISO duyarlılığını buradan "
+"ayarlayın."
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:195
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:242
@@ -31679,7 +31671,7 @@ msgstr "Gölgeler:"
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:293
 #, kde-format
 msgid "Set how much the filter affects highlights."
-msgstr "Filtrenin vurguları ne kadar etkilediğini belirleyin."
+msgstr "Süzgecin vurguları ne kadar etkileyeceğini ayarlayın."
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:203
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:250
@@ -31693,40 +31685,40 @@ msgstr "Orta tonlar:"
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:301
 #, kde-format
 msgid "Set how much the filter affects midtones."
-msgstr "Filtrenin orta tonları ne kadar etkilediğini ayarlayın."
+msgstr "Süzgecin orta tonları ne kadar etkileyeceğini ayarlayın."
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:211
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:258
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:305
 #, kde-format
 msgid "Highlights:"
-msgstr "Vurgulamalar:"
+msgstr "Vurgular:"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:215
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:262
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:309
 #, kde-format
 msgid "Set how much the filter affects shadows."
-msgstr "Filtrenin gölgeleri ne kadar etkilediğini ayarlayın."
+msgstr "Süzgecin gölgeleri ne kadar etkileyeceğini ayarlayın."
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:237
 #, kde-format
 msgid "Set here the film sensitivity to use for simulating the CCD blue noise."
 msgstr ""
-"CCD mavi gürültüsünü simüle etmek için kullanılacak film duyarlılığını "
-"buradan ayarlayın."
+"CCD mavi gürültüsüne öykünmek için kullanılacak film duyarlılığını burada "
+"ayarlayın."
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:284
 #, kde-format
 msgid "Set here the film sensitivity to use for simulating the CCD red noise."
 msgstr ""
-"CCD kırmızı gürültüsünü simüle ederken kullanılacak filmin duyarlılığını "
+"CCD kırmızı gürültüsüne öykünmek için kullanılacak film duyarlılığını burada "
 "ayarlayın."
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:328
 #, kde-format
 msgid "Common Settings"
-msgstr "Genel Ayarlar"
+msgstr "Ortak Ayarlar"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:331
 #, kde-format
@@ -31736,12 +31728,12 @@ msgstr "Parlaklık Gürültüsü"
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:334
 #, kde-format
 msgid "Chrominance Blue Noise"
-msgstr "Renklilik Mavi Gürültü"
+msgstr "Renklilik Mavi Gürültüsü"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:337
 #, kde-format
 msgid "Chrominance Red Noise"
-msgstr "Renklilik Mavi Gürültü"
+msgstr "Renklilik Kırmızı Gürültüsü"
 
 #: core/libs/dimg/filters/fx/invertfilter.cpp:55
 #, kde-format
@@ -31761,7 +31753,7 @@ msgstr "Yağmur Damlaları Efekti"
 #: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:158
 #, kde-format
 msgid "Greycstoration Filter"
-msgstr "Greycstoration Filtresi"
+msgstr "Greystorasyon Süzgeci"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:126
 #, kde-format
@@ -31780,8 +31772,9 @@ msgid ""
 "Preservation of details to set the sharpening level of the small features in "
 "the target image. Higher values leave details sharp."
 msgstr ""
-"Ayrıntıların korunması hedef resimde küçük niteliklerin keskinlik düzeyini "
-"ayarlar. Yüksek değerler ayrıntıları keskin bırakır."
+"Hedef görseldeki küçük özelliklerin keskinleştirme düzeyini ayarlamak için "
+"ayrıntıların korunması. Daha yüksek değerler ayrıntıların keskin olmasını "
+"sağlar."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:136
 #, kde-format
@@ -31794,12 +31787,13 @@ msgid ""
 "Anisotropic (directional) modifier of the details. Keep it small for "
 "Gaussian noise."
 msgstr ""
-"Ayrıntıların eşyönlü niteleyicisi. Gauss kirlenmesi için bunu küçük tutun."
+"Ayrıntıların anizotropik (yönlü) değiştiricisi. Gauss gürültüsü için onu "
+"küçük tutun."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:143
 #, kde-format
 msgid "Smoothing:"
-msgstr "Yumuşatma:"
+msgstr "Pürüzsüzleştirme:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:147
 #, kde-format
@@ -31808,13 +31802,14 @@ msgid ""
 "the Anisotropy Factor the direction, the Smoothing Factor sets the overall "
 "effect."
 msgstr ""
-"Toplam düzleştirme gücü: Eğer Detay Faktörü yöne doğru yakın düzleştirme ve "
-"Eşyönlü Faktör uygularsa Düzleştirme Faktörü bütün etkiyi ayarlar."
+"Toplam pürüzsüzleştirme gücü: Eğer Ayrıntı Faktörü göreceli "
+"pürüzsüzleştirmeyi ve Anizotropi Faktörü yönünü belirlerse Yumuşatma Faktörü "
+"genel efekti belirler."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:151
 #, kde-format
 msgid "Regularity:"
-msgstr "Düzen:"
+msgstr "Düzenlilik:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:155
 #, kde-format
@@ -31822,8 +31817,9 @@ msgid ""
 "This value controls the evenness of smoothing to the image. Do not use a "
 "high value here, or the target image will be completely blurred."
 msgstr ""
-"Bu değer resmin düzleştirme oranını denetler. Burada yüksek değer "
-"kullanmayın, aksi taktirde resim tamamen bulanıklaşacaktır."
+"Bu değer, görseldeki pürüzsüzleştirmenin düzgünlüğünü denetler. Burada "
+"yüksek bir değer kullanmayın, aksi takdirde hedef görsel tümüyle "
+"bulanıklaşır."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:159
 #, kde-format
@@ -31833,7 +31829,7 @@ msgstr "Yinelemeler:"
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
 #, kde-format
 msgid "Sets the number of times the filter is applied to the image."
-msgstr "Filtrenin resme kaç kere uygulanacağını ayarlar."
+msgstr "Süzgecin görsele kaç kez uygulanacağını ayarlar."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:164
 #, kde-format
@@ -31846,8 +31842,7 @@ msgid "Sets the noise scale."
 msgstr "Gürültü ölçeğini ayarlar."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:190
-#, fuzzy, kde-format
-#| msgid "Advanced Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Advanced Settings"
 msgstr "Gelişmiş Ayarlar"
@@ -31855,7 +31850,7 @@ msgstr "Gelişmiş Ayarlar"
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:192
 #, kde-format
 msgid "Angular step:"
-msgstr "Açı derecesi:"
+msgstr "Açı adımı:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
 #, kde-format
@@ -31868,7 +31863,7 @@ msgstr ""
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
 #, kde-format
 msgid "Integral step:"
-msgstr "Doygunluk derecesi:"
+msgstr "İntegral adım:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:203
 #, kde-format
@@ -31898,12 +31893,12 @@ msgstr "Döşeme boyutunu ayarlar."
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:216
 #, kde-format
 msgid "Tile border:"
-msgstr "Tuğla kenarlığı:"
+msgstr "Döşeme kenarlığı:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:219
 #, kde-format
 msgid "Sets the size of each tile border."
-msgstr "Her döşeme sınırı boyutunu ayarlar."
+msgstr "Her bir döşeme kenarlığının boyutunu ayarlar."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:221
 #, kde-format
@@ -31931,7 +31926,7 @@ msgstr "Runge-Kutta"
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:226
 #, kde-format
 msgid "Select the right interpolation method for the desired image quality."
-msgstr "İstenilen resim kalitesi için sağ aradeğerleme metodunu seçin."
+msgstr "İstenilen görsel kalitesi için doğru aradeğerleme yöntemini seçin."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:229
 #, kde-format
@@ -31941,11 +31936,10 @@ msgstr "Hızlı yakınlık"
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:230
 #, kde-format
 msgid "Enable fast approximation when rendering images."
-msgstr "Resimler işlenirken hızlı yakınlığı etkinleştir."
+msgstr "Görseller sunulurken hızlı yakınlığı etkinleştirin."
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:72
-#, fuzzy, kde-format
-#| msgid "Hot Pixels"
+#, kde-format
 msgctxt ""
 "This is a column which will contain the amount of HotPixels found in the "
 "black frame file"
@@ -31953,10 +31947,9 @@ msgid "Hot Pixels"
 msgstr "Sıcak Pikseller"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:262
-#, fuzzy, kde-format
-#| msgid "Black Frame..."
+#, kde-format
 msgid "Remove Black Frame"
-msgstr "Siyah Çerçeve..."
+msgstr "Siyah Kareyi Kaldır"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:263
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
@@ -31965,26 +31958,22 @@ msgid "Clear List"
 msgstr "Listeyi Temizle"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
-#, fuzzy, kde-format
-#| msgid "Loading:"
+#, kde-format
 msgid "Loading Frame"
-msgstr "Yükleniyor:"
+msgstr "Kare yükleniyor…"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:163
-#, fuzzy, kde-format
-#| msgid "Black Frame..."
+#, kde-format
 msgid "Black Frame"
-msgstr "Siyah Çerçeve..."
+msgstr "Siyah Kare"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:175
 #, kde-format
 msgid "File Name:"
-msgstr "Dosyası Adı:"
+msgstr "Dosya adı:"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "creation date of the image"
-#| msgid "Created:"
+#, kde-format
 msgctxt "@info: creation date"
 msgid "Created:"
 msgstr "Oluşturulma:"
@@ -31992,13 +31981,12 @@ msgstr "Oluşturulma:"
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:188
 #, kde-format
 msgid "Serial Number:"
-msgstr "Seri Numarası:"
+msgstr "Seri numarası:"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:199
-#, fuzzy, kde-format
-#| msgid "Hot Pixels"
+#, kde-format
 msgid "Hot Pixels:"
-msgstr "Sıcak Pikseller"
+msgstr "Sıcak pikseller:"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:73
 #, kde-format
@@ -32032,7 +32020,7 @@ msgstr "Kübik"
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:97
 #, kde-format
 msgid "Black Frame..."
-msgstr "Siyah Çerçeve..."
+msgstr "Siyah Kare..."
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:99
 #, kde-format
@@ -32049,24 +32037,35 @@ msgid ""
 "pixels, and create a list of positions where image must be corrected to "
 "eliminate wrong colors in these pixels.</p>"
 msgstr ""
+"<p>Sıcak pikselleri kaldırma süzgeci tarafından kullanılacak yeni bir siyah "
+"kare dosyası eklemek için bu düğmeyi kullanın.</p><p>Siyah Kare çıkarma "
+"yöntemi, en doğru \"Sıcak Pikselleri\" ve \"Sıkışmış Pikselleri\" kaldırma "
+"yöntemidir. Öncelikle referans olarak bir \"Siyah Kare\" oluşturmalısınız. "
+"Bunu yapmak kolaydır. Uzun pozlamalı çekimlerinizi bitirdiğinizde, kameraya "
+"bir lens kapağı takın ve önceki görsellerle aynı pozlama süresine sahip bir "
+"\"karanlık\" fotoğraf çekin. Bu görsel tümüyle karanlık olacaktır; ancak "
+"yakından incelendiğinde Sıcak ve Sıkışmış Piksellerin (renkli noktalar) "
+"bulunduğunu göreceksiniz. Bunlar önceki çekimlerinizle aynı yerlere "
+"yerleştirilir. Bu araç, siyah kareyi ayrıştıracak, sıcak pikselleri "
+"algılayacak ve bu piksellerdeki yanlış renkleri ortadan kaldırmak için "
+"görselin düzeltilmesi gereken konumlarının bir listesini oluşturacaktır.</p>"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:225
 #, kde-format
 msgid "Select Black Frame Image"
-msgstr "Siyah Çerçeve Görüntüsünü Seçin"
+msgstr "Siyah Kare Görseli Seç"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:231
-#, fuzzy, kde-format
-#| msgid "Black Frame..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Black Frame Parser"
-msgstr "Siyah Çerçeve..."
+msgstr "Siyah Kare Ayrıştırıcısı"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:232
 #, kde-format
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""
-"Bu siyah çerçeve görüntüsü, ayrıştırılmış ögeler listesinde halihazırda var."
+"Bu siyah kare görseli, ayrıştırılmış ögeler listesinde halihazırda var."
 
 #: core/libs/dimg/filters/hsl/hslfilter.cpp:82
 #, kde-format
@@ -32076,12 +32075,12 @@ msgstr "Ton/Doygunluk/Açıklık Süzgeci"
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:87
 #, kde-format
 msgid "Select the hue and saturation adjustments of the image."
-msgstr "Görselin ton ve doygunluk ayarlarını seçin."
+msgstr "Görselin ton ve doygunluk ayarlamalarını seçin."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:91
 #, kde-format
 msgid "You can see here a color preview of the hue and saturation adjustments."
-msgstr "Burada ton ve doygunluk ayarlarının renk önizlemesini görebilirsiniz."
+msgstr "Ton ve doygunluk ayarlarının renk önizlemesini burada görebilirsiniz."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:95
 #, kde-format
@@ -32091,17 +32090,17 @@ msgstr "Ton:"
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:100
 #, kde-format
 msgid "Set here the hue adjustment of the image."
-msgstr "Burada görselin renk tonu ayarlamalarını yapın."
+msgstr "Görselin renk tonu ayarlamalarını burada yapın."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:107
 #, kde-format
 msgid "Set here the saturation adjustment of the image."
-msgstr "Burada görselin doygunluk ayarlamalarını yapın."
+msgstr "Görselin doygunluk ayarlamalarını burada yapın."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:109
 #, kde-format
 msgid "Vibrance:"
-msgstr "Titreşim:"
+msgstr "Canlılık:"
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:114
 #, kde-format
@@ -32109,8 +32108,8 @@ msgid ""
 "Set here the vibrance adjustment of the image.Vibrance performs selective "
 "saturation on less saturated colors and avoiding skin tones."
 msgstr ""
-"Burada görselin titreşim ayarlarını yapın. Titreşim, daha az doygun "
-"renklerde seçici doygunluk uygular ve renk tonlarından kaçınır."
+"Burada görselin canlılık ayarını yapın. Canlılık, daha az doygun renkler "
+"üzerinde seçici doygunluk gerçekleştirir ve cilt tonlarını önler."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:117
 #, kde-format
@@ -32120,7 +32119,7 @@ msgstr "Açıklık:"
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:122
 #, kde-format
 msgid "Set here the lightness adjustment of the image."
-msgstr "Burada görselin açıklık ayarlarını yapın."
+msgstr "Görselin açıklık ayarlarını burada yapın."
 
 #: core/libs/dimg/filters/icc/iccprofilesettings.cpp:67
 #, kde-format
@@ -32130,17 +32129,17 @@ msgstr "Şuna dönüştür:"
 #: core/libs/dimg/filters/icc/iccprofilesettings.cpp:70
 #, kde-format
 msgid "Select the profile of the color space to convert to."
-msgstr "Dönüştürülecek renk aralığının profilini seçin."
+msgstr "Dönüştürülecek renk uzayının profilini seçin."
 
 #: core/libs/dimg/filters/icc/icctransformfilter.cpp:110
 #, kde-format
 msgid "Input color profile \"%1\" not available"
-msgstr "Girdi renk profili \"%1\" mevcut değil"
+msgstr "Girdi renk profili \"%1\" kullanılamıyor"
 
 #: core/libs/dimg/filters/icc/icctransformfilter.cpp:116
 #, kde-format
 msgid "Output color profile \"%1\" not available"
-msgstr "Çıktı renk profili \"%1\" mevcut değil"
+msgstr "Çıktı renk profili \"%1\" kullanılamıyor"
 
 #: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
 #, kde-format
@@ -32173,14 +32172,14 @@ msgid ""
 "values where both the original and blurred image's value are low and do the "
 "opposite on high values."
 msgstr ""
-"<b>İşlev</b>: Bu işlev, orijinal RGB kanallarını doygun bulanık görüntü ile "
-"birleştirir. Bu işlev, ton eşleme aşamalarının her birinde kullanılır. "
-"Doğrusal veya güçlü olabilir. Temel olarak, bu işlev hem özgün hem de "
-"bulanık görüntü değerinin düşük olduğu değerleri artırır ve yüksek değerleri "
-"tersini yapar."
+"<b>İşlev</b>: Bu işlev, özgün RGB kanallarını doygunluğu giderilmiş bulanık "
+"görselle birleştirir. Bu işlev, ton eşleme aşamalarının her birinde "
+"kullanılır. Doğrusal veya güç olabilir. Temel olarak bu işlev hem özgün hem "
+"de bulanık görselin değerinin düşük olduğu değerleri artırır, yüksek "
+"değerlerde ise tam tersini yapar."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:174
-#, kde-format
+#, fuzzy, kde-format
 msgid "Stretch contrast"
 msgstr "Zıtlığı uzat"
 
@@ -33276,8 +33275,8 @@ msgid ""
 "Select the method to process image auto-cropping to remove black frames "
 "around a rotated image here."
 msgstr ""
-"Döndürülen görüntünün etrafında oluşan siyah çerçeveyi otomatik kesme işlemi "
-"için yöntem seçin."
+"Döndürülmüş bir görselin etrafındaki siyah kareleri kaldırmak için görselin "
+"kendiliğinden kırpma işlemini işleme yöntemini burada seçin."
 
 #: core/libs/dimg/filters/wb/wbfilter.cpp:102
 #, kde-format
@@ -41156,491 +41155,492 @@ msgid ""
 "video."
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:485
+#: core/libs/video/manager/vidslidesettings.cpp:488
 #, kde-format
 msgctxt "Video Type: QVGA"
 msgid "QVGA - 320x180 - 16:9"
 msgstr "QVGA - 320 × 180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:486
+#: core/libs/video/manager/vidslidesettings.cpp:489
 #, kde-format
 msgctxt "Video Type: VCD1"
 msgid "VCD - 352x240 - 7:5"
 msgstr "VCD - 352 × 240 - 7:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:487
+#: core/libs/video/manager/vidslidesettings.cpp:490
 #, kde-format
 msgctxt "Video Type: VCD2"
 msgid "VCD - 352x288 - 6:5"
 msgstr "VCD - 352 × 288 - 6:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:488
+#: core/libs/video/manager/vidslidesettings.cpp:491
 #, kde-format
 msgctxt "Video Type: CVD1"
 msgid "CVD - 352x480 - 4:3"
 msgstr "CVD - 352 × 480 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:489
+#: core/libs/video/manager/vidslidesettings.cpp:492
 #, kde-format
 msgctxt "Video Type: CVD2"
 msgid "CVD - 352x576 - 16:9"
 msgstr "CVD - 352 × 576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:490
+#: core/libs/video/manager/vidslidesettings.cpp:493
 #, kde-format
 msgctxt "Video Type: HVGA"
 msgid "HVGA - 480x270 - 16:9"
 msgstr "HVGA - 480 × 270 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:491
+#: core/libs/video/manager/vidslidesettings.cpp:494
 #, kde-format
 msgctxt "Video Type: SVCD1"
 msgid "SVCD - 480x480 - 1:1"
 msgstr "SVCD - 480 × 480 - 1:1"
 
-#: core/libs/video/manager/vidslidesettings.cpp:492
+#: core/libs/video/manager/vidslidesettings.cpp:495
 #, kde-format
 msgctxt "Video Type: SDTV1"
 msgid "SDTV - 528x480 - 11:10"
 msgstr "SDTV - 528 × 480 - 11:10"
 
-#: core/libs/video/manager/vidslidesettings.cpp:493
+#: core/libs/video/manager/vidslidesettings.cpp:496
 #, kde-format
 msgctxt "Video Type: SDTV2"
 msgid "SDTV - 544x480 - 17:15"
 msgstr "SDTV - 544 × 480 - 17:15"
 
-#: core/libs/video/manager/vidslidesettings.cpp:494
+#: core/libs/video/manager/vidslidesettings.cpp:497
 #, kde-format
 msgctxt "Video Type: EDTV1"
 msgid "EDTV - 544x576 - 17:18"
 msgstr "EDTV - 544 × 576 - 17:18"
 
-#: core/libs/video/manager/vidslidesettings.cpp:495
+#: core/libs/video/manager/vidslidesettings.cpp:498
 #, kde-format
 msgctxt "Video Type: SVCD2"
 msgid "SVCD - 480x576 - 5:6"
 msgstr "SVCD - 480 × 576 - 5:6"
 
-#: core/libs/video/manager/vidslidesettings.cpp:496
+#: core/libs/video/manager/vidslidesettings.cpp:499
 #, kde-format
 msgctxt "Video Type: EGA"
 msgid "EGA - 640x350 - 16:9"
 msgstr "EGA - 640 × 350 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:497
+#: core/libs/video/manager/vidslidesettings.cpp:500
 #, kde-format
 msgctxt "Video Type: VGA"
 msgid "VGA - 640x480 - 4:3"
 msgstr "VGA - 640 × 480 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:498
+#: core/libs/video/manager/vidslidesettings.cpp:501
 #, kde-format
 msgctxt "Video Type: SDTV3"
 msgid "SDTV - 704x480 - 22:15"
 msgstr "SDTV - 704 × 480 - 22:15"
 
-#: core/libs/video/manager/vidslidesettings.cpp:499
+#: core/libs/video/manager/vidslidesettings.cpp:502
 #, kde-format
 msgctxt "Video Type: EDTV2"
 msgid "EDTV - 704x576 - 11:9"
 msgstr "EDTV - 704 × 576 - 11:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:500
+#: core/libs/video/manager/vidslidesettings.cpp:503
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x480 - 3:2"
 msgstr "DVD - 720 × 480 - 3:2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:501
+#: core/libs/video/manager/vidslidesettings.cpp:504
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x576 - 5:4"
 msgstr "DVD - 720 × 576 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:502
+#: core/libs/video/manager/vidslidesettings.cpp:505
 #, kde-format
 msgctxt "Video Type: WVGA"
 msgid "WVGA - 800x450 - 16:9"
 msgstr "WVGA - 800 × 450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:503
+#: core/libs/video/manager/vidslidesettings.cpp:506
 #, kde-format
 msgctxt "Video Type: SVGA"
 msgid "SVGA - 800x600 - 4:3"
 msgstr "SVGA - 800 × 600 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:504
+#: core/libs/video/manager/vidslidesettings.cpp:507
 #, kde-format
 msgctxt "Video Type: DVGA"
 msgid "DVGA - 960x640 - 3:2"
 msgstr "DVGA - 960 × 640 - 3:2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:505
+#: core/libs/video/manager/vidslidesettings.cpp:508
 #, kde-format
 msgctxt "Video Type: XVGA"
 msgid "XVGA - 1024x576 - 16:9"
 msgstr "XVGA - 1024 × 576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:506
+#: core/libs/video/manager/vidslidesettings.cpp:509
 #, kde-format
 msgctxt "Video Type: HDTV"
 msgid "HDTV - 1280x720 - 16:9"
 msgstr "HDTV - 1280 × 720 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:507
+#: core/libs/video/manager/vidslidesettings.cpp:510
 #, kde-format
 msgctxt "Video Type: WXGA1"
 msgid "WXGA - 1280x768 - 5:3"
 msgstr "WXGA - 1280 × 768 - 5:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:508
+#: core/libs/video/manager/vidslidesettings.cpp:511
 #, kde-format
 msgctxt "Video Type: WXGA2"
 msgid "WXGA - 1280x800 - 8:5"
 msgstr "WXGA - 1280 × 800 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:509
+#: core/libs/video/manager/vidslidesettings.cpp:512
 #, kde-format
 msgctxt "Video Type: SXGA"
 msgid "SXGA - 1280x1024 - 5:4"
 msgstr "SXGA - 1280 × 1024 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:510
+#: core/libs/video/manager/vidslidesettings.cpp:513
 #, kde-format
 msgctxt "Video Type: SXGAPLUS"
 msgid "SXGAPLUS - 1400x1050 - 4:3"
 msgstr "SXGAPLUS - 1400 × 1050 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:511
+#: core/libs/video/manager/vidslidesettings.cpp:514
 #, kde-format
 msgctxt "Video Type: WSXGA"
 msgid "WSXGA - 1440x900 - 8:5"
 msgstr "WSXGA - 1440 × 900 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:512
+#: core/libs/video/manager/vidslidesettings.cpp:515
 #, kde-format
 msgctxt "Video Type: HDPLUS"
 msgid "HDPLUS - 1600x900 - 16:9"
 msgstr "HDPLUS - 1600 × 900 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:513
+#: core/libs/video/manager/vidslidesettings.cpp:516
 #, kde-format
 msgctxt "Video Type: WSXGAPLUS"
 msgid "WSXGAPLUS - 1680x1050 - 8:5"
 msgstr "WSXGAPLUS - 1680 × 1050 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:514
+#: core/libs/video/manager/vidslidesettings.cpp:517
 #, kde-format
 msgctxt "Video Type: UXGA"
 msgid "UXGA - 1600x1200 - 4:3"
 msgstr "UXGA - 1600 × 1200 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:515
+#: core/libs/video/manager/vidslidesettings.cpp:518
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
 msgstr "BLUERAY - 1920 × 1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:516
+#: core/libs/video/manager/vidslidesettings.cpp:519
 #, kde-format
 msgctxt "Video Type: WUXGA"
 msgid "WUXGA - 1920x1200 - 8:5"
 msgstr "WUXGA - 1920 × 1200 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:517
+#: core/libs/video/manager/vidslidesettings.cpp:520
 #, kde-format
 msgctxt "Video Type: TXGA"
 msgid "TXGA - 1920x1440 - 7:5"
 msgstr "TXGA - 1920 × 1440 - 7:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:518
+#: core/libs/video/manager/vidslidesettings.cpp:521
 #, kde-format
 msgctxt "Video Type: QXGA"
 msgid "QXGA - 2048x1536 - 4:3"
 msgstr "QXGA - 2048 × 1536 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:519
+#: core/libs/video/manager/vidslidesettings.cpp:522
 #, kde-format
 msgctxt "Video Type: UWFHD"
 msgid "UWFHD - 2560x1080 - 21:9"
 msgstr "UWFHD - 2560 × 1080 - 21:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:520
+#: core/libs/video/manager/vidslidesettings.cpp:523
 #, kde-format
 msgctxt "Video Type: WQHD"
 msgid "WQHD - 2560x1440 - 16:9"
 msgstr "WQHD - 2560 × 1440 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:521
+#: core/libs/video/manager/vidslidesettings.cpp:524
 #, kde-format
 msgctxt "Video Type: WQXGA"
 msgid "WQXGA - 2560x1600 - 8:5"
 msgstr "WQXGA - 2560 × 1600 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:522
+#: core/libs/video/manager/vidslidesettings.cpp:525
 #, kde-format
 msgctxt "Video Type: QSXGA"
 msgid "QSXGA - 2560x2048 - 5:4"
 msgstr "QSXGA - 2560 × 2048 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:523
+#: core/libs/video/manager/vidslidesettings.cpp:526
 #, kde-format
 msgctxt "Video Type: QSXGAPLUS"
 msgid "QSXGAPLUS - 2800x2100 - 4:3"
 msgstr "QSXGAPLUS - 2800 × 2100 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:524
+#: core/libs/video/manager/vidslidesettings.cpp:527
 #, kde-format
 msgctxt "Video Type: WQXGAPLUS"
 msgid "WQXGAPLUS - 3200x1800 - 16:9"
 msgstr "WQXGAPLUS - 3200 × 1800 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:525
+#: core/libs/video/manager/vidslidesettings.cpp:528
 #, kde-format
 msgctxt "Video Type: WQSXGA"
 msgid "WQSXGA - 3200x2048 - 25:16"
 msgstr "WQSXGA - 3200 × 2048 - 25:16"
 
-#: core/libs/video/manager/vidslidesettings.cpp:526
+#: core/libs/video/manager/vidslidesettings.cpp:529
 #, kde-format
 msgctxt "Video Type: QUXGA"
 msgid "QUXGA - 3200x2400 - 4:3"
 msgstr "QUXGA - 3200 × 2400 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:527
+#: core/libs/video/manager/vidslidesettings.cpp:530
 #, kde-format
 msgctxt "Video Type: UHD4K"
 msgid "UHD4K - 3840x2160 - 16:9"
 msgstr "UHD4K - 3840 × 2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:528
+#: core/libs/video/manager/vidslidesettings.cpp:531
 #, kde-format
 msgctxt "Video Type: WQUXGA"
 msgid "WQUXGA - 3840x2400 - 8:5"
 msgstr "WQUXGA - 3840 × 2400 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:529
+#: core/libs/video/manager/vidslidesettings.cpp:532
 #, kde-format
 msgctxt "Video Type: HXGA"
 msgid "HXGA - 4096x3072 - 4:3"
 msgstr "HXGA - 4096 × 3072 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:530
+#: core/libs/video/manager/vidslidesettings.cpp:533
 #, kde-format
 msgctxt "Video Type: UHD5K"
 msgid "UHD5K - 5120x2880 - 16:9"
 msgstr "UHD5K - 5120 × 2880 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:531
+#: core/libs/video/manager/vidslidesettings.cpp:534
 #, kde-format
 msgctxt "Video Type: WHXGA"
 msgid "WHXGA - 5120x3200 - 8:5"
 msgstr "WHXGA - 5120 × 3200 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:532
+#: core/libs/video/manager/vidslidesettings.cpp:535
 #, kde-format
 msgctxt "Video Type: HSXGA"
 msgid "HSXGA - 5120x4096 - 5:4"
 msgstr "HSXGA - 5120 × 4096 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:533
+#: core/libs/video/manager/vidslidesettings.cpp:536
 #, kde-format
 msgctxt "Video Type: UHD6K"
 msgid "UHD6K - 6016x3384 - 16:9"
 msgstr "UHD6K - 6016 × 3384 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:534
+#: core/libs/video/manager/vidslidesettings.cpp:537
 #, kde-format
 msgctxt "Video Type: WHSXGA"
 msgid "WHSXGA - 6400x4096 - 25:16"
 msgstr "WHSXGA - 6400 × 4096 - 25:16"
 
-#: core/libs/video/manager/vidslidesettings.cpp:535
+#: core/libs/video/manager/vidslidesettings.cpp:538
 #, kde-format
 msgctxt "Video Type: HUXGA"
 msgid "HUXGA - 6400x4800 - 4:3"
 msgstr "HUXGA - 6400 × 4800 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:536
+#: core/libs/video/manager/vidslidesettings.cpp:539
 #, kde-format
 msgctxt "Video Type: UHD8K"
 msgid "UHD8K - 7680x4320 - 16:9"
 msgstr "UHD8K - 7680 × 4320 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:537
+#: core/libs/video/manager/vidslidesettings.cpp:540
 #, kde-format
 msgctxt "Video Type: WHUXGA"
 msgid "WHUXGA - 7680x4800 - 8:5"
 msgstr "WHUXGA - 7680 × 4800 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:538
+#: core/libs/video/manager/vidslidesettings.cpp:541
 #, kde-format
 msgctxt "Video Type: UW10K"
 msgid "UW10K - 10240x4320 - 21:9"
 msgstr "UW10K - 10240 × 4320 - 21:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:539
+#: core/libs/video/manager/vidslidesettings.cpp:542
 #, kde-format
 msgctxt "Video Type: UW16K"
 msgid "UW16K - 15360x8640 - 16:9"
 msgstr "UW16K - 15360 × 8640 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:762
+#: core/libs/video/manager/vidslidesettings.cpp:765
 #, kde-format
 msgctxt "Video Bit Rate 400000"
 msgid "400k"
 msgstr "400 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:763
+#: core/libs/video/manager/vidslidesettings.cpp:766
 #, kde-format
 msgctxt "Video Bit Rate 500000"
 msgid "500k"
 msgstr "500 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:764
+#: core/libs/video/manager/vidslidesettings.cpp:767
 #, kde-format
 msgctxt "Video Bit Rate 1000000"
 msgid "1000k"
 msgstr "1000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:765
+#: core/libs/video/manager/vidslidesettings.cpp:768
 #, kde-format
 msgctxt "Video Bit Rate 1200000"
 msgid "1200k"
 msgstr "1200 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:766
+#: core/libs/video/manager/vidslidesettings.cpp:769
 #, kde-format
 msgctxt "Video Bit Rate 1500000"
 msgid "1500k"
 msgstr "1500 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:767
+#: core/libs/video/manager/vidslidesettings.cpp:770
 #, kde-format
 msgctxt "Video Bit Rate 2000000"
 msgid "2000k"
 msgstr "2000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:768
+#: core/libs/video/manager/vidslidesettings.cpp:771
 #, kde-format
 msgctxt "Video Bit Rate 2500000"
 msgid "2500k"
 msgstr "2500 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:769
+#: core/libs/video/manager/vidslidesettings.cpp:772
 #, kde-format
 msgctxt "Video Bit Rate 3000000"
 msgid "3000k"
 msgstr "3000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:770
+#: core/libs/video/manager/vidslidesettings.cpp:773
 #, kde-format
 msgctxt "Video Bit Rate 4000000"
 msgid "4000k"
 msgstr "4000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:771
+#: core/libs/video/manager/vidslidesettings.cpp:774
 #, kde-format
 msgctxt "Video Bit Rate 4500000"
 msgid "4500k"
 msgstr "4500 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:772
+#: core/libs/video/manager/vidslidesettings.cpp:775
 #, kde-format
 msgctxt "Video Bit Rate 5000000"
 msgid "5000k"
 msgstr "5000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:773
+#: core/libs/video/manager/vidslidesettings.cpp:776
 #, kde-format
 msgctxt "Video Bit Rate 6000000"
 msgid "6000k"
 msgstr "6000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:774
+#: core/libs/video/manager/vidslidesettings.cpp:777
 #, kde-format
 msgctxt "Video Bit Rate 8000000"
 msgid "8000k"
 msgstr "8000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:783
+#: core/libs/video/manager/vidslidesettings.cpp:786
 #, kde-format
 msgctxt "Video Standard PAL"
 msgid "PAL - 25 FPS"
 msgstr "PAL - 25 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:784
+#: core/libs/video/manager/vidslidesettings.cpp:787
 #, kde-format
 msgctxt "Video Standard NTSC"
 msgid "NTSC - 29.97 FPS"
 msgstr "NTSC - 29,97 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:796
+#: core/libs/video/manager/vidslidesettings.cpp:799
 #, kde-format
 msgctxt "Video Codec X264"
 msgid "High Quality H.264 AVC/MPEG-4 AVC"
 msgstr "Yüksek Kalite H.264 AVC/MPEG-4 AVC"
 
-#: core/libs/video/manager/vidslidesettings.cpp:797
+#: core/libs/video/manager/vidslidesettings.cpp:800
 #, kde-format
 msgctxt "Video Codec MPEG4"
 msgid "DivX/XVid/MPEG-4"
 msgstr "DivX/XVid/MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:798
+#: core/libs/video/manager/vidslidesettings.cpp:801
 #, kde-format
 msgctxt "Video Codec MPEG2"
 msgid "MPEG-2 Video"
 msgstr "MPEG-2 Video"
 
-#: core/libs/video/manager/vidslidesettings.cpp:815
+#: core/libs/video/manager/vidslidesettings.cpp:818
 #, kde-format
 msgctxt "Video Standard AVI"
 msgid "AVI - Audio Video Interleave"
 msgstr "AVI - Audio Video Interleave"
 
-#: core/libs/video/manager/vidslidesettings.cpp:816
+#: core/libs/video/manager/vidslidesettings.cpp:819
 #, kde-format
 msgctxt "Video Standard MKV"
 msgid "MKV - Matroska"
 msgstr "MKV - Matroska"
 
-#: core/libs/video/manager/vidslidesettings.cpp:817
+#: core/libs/video/manager/vidslidesettings.cpp:820
 #, kde-format
 msgctxt "Video Standard MP4"
 msgid "MP4 - MPEG-4"
 msgstr "MP4 - MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:818
+#: core/libs/video/manager/vidslidesettings.cpp:821
 #, kde-format
 msgctxt "Video Standard MPG"
 msgid "MPG - MPEG-2"
 msgstr "MPG - MPEG-2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:827
+#: core/libs/video/manager/vidslidesettings.cpp:830
 #, kde-format
 msgctxt "Video Effect NOPLAYER"
 msgid "None"
 msgstr "Hiçbiri"
 
-#: core/libs/video/manager/vidslidesettings.cpp:828
+#: core/libs/video/manager/vidslidesettings.cpp:831
 #, kde-format
 msgctxt "Video Standard INTERNAL"
 msgid "Internal"
 msgstr "İç"
 
-#: core/libs/video/manager/vidslidesettings.cpp:829
+#: core/libs/video/manager/vidslidesettings.cpp:832
 #, kde-format
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Masaüstünden öntanımlı"
 
-#: core/libs/video/manager/vidslidetask.cpp:181
+#: core/libs/video/manager/vidslidetask.cpp:183
 #, fuzzy, kde-format
-#| msgid "Encoding %1 Done"
-msgid "Preparing %1 Done"
-msgstr "%1 Kodlaması Tamamlandı"
+#| msgctxt "@info"
+#| msgid "Generating files for \"%1\""
+msgid "Generating frames from %1 Done"
+msgstr "\"%1\" için dosyalar üretiliyor"
 
 #: core/libs/video/manager/vidslidethread.cpp:63
 #, fuzzy, kde-format
@@ -41655,12 +41655,12 @@ msgstr "Bir geçici dizin oluşturulamıyor"
 msgid "Encoding frames..."
 msgstr "Kameralar yükleniyor..."
 
-#: core/libs/video/manager/vidslidethread.cpp:134
+#: core/libs/video/manager/vidslidethread.cpp:133
 #, kde-format
 msgid "Encoding done."
 msgstr ""
 
-#: core/libs/video/manager/vidslidethread.cpp:138
+#: core/libs/video/manager/vidslidethread.cpp:137
 #, fuzzy, kde-format
 #| msgid "Error while opening the source database."
 msgid "Error while encoding frames!"
@@ -42453,7 +42453,7 @@ msgstr "Değiştir"
 msgid "The binary file found does not appear to be working as intended."
 msgstr ""
 
-#: core/libs/widgets/files/dfileselector.cpp:58
+#: core/libs/widgets/files/dfileselector.cpp:53
 #, kde-format
 msgid "Browse..."
 msgstr "Göz At..."
@@ -69417,6 +69417,11 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Tüm video ayarlarını öntanımlı değerlere sıfırlamak istediğinizden emin "
 "misiniz?"
+
+#, fuzzy
+#~| msgid "Encoding %1 Done"
+#~ msgid "Preparing %1 Done"
+#~ msgstr "%1 Kodlaması Tamamlandı"
 
 #~ msgctxt "@option"
 #~ msgid "Whole albums collection"

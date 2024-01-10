@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-09 00:39+0000\n"
+"POT-Creation-Date: 2024-01-10 00:39+0000\n"
 "PO-Revision-Date: 2023-11-21 15:39+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1534,7 +1534,7 @@ msgstr ""
 "<p>Vyberte prosím cílové album z knihovny digiKamu, do nějž se mají "
 "importovat složky.</p>"
 
-#: core/app/main/digikamapp_import.cpp:166
+#: core/app/main/digikamapp_import.cpp:170
 #, kde-format
 msgid ""
 "The folder %1 is part of the album path and cannot be imported recursively!"
@@ -10068,10 +10068,9 @@ msgid "Golden Mean"
 msgstr "Zlatý průměr"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:427
-#, fuzzy, kde-format
-#| msgid "Centered"
+#, kde-format
 msgid "Center Lines"
-msgstr "Na střed"
+msgstr ""
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:428
 #, kde-format
@@ -16815,7 +16814,7 @@ msgstr "Cílová složka:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -19241,13 +19240,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:111
 #, kde-format
 msgid "Destination folder:"
 msgstr "Cílová složka:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:117
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -19850,12 +19849,17 @@ msgstr ""
 msgid "Video Slideshow is not completed"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:186
+#, kde-format
+msgid "See the video encoding trace below"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:191
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:196
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr ""
@@ -19882,24 +19886,46 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title: binary properties"
-#| msgid "Binary"
+#, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
-msgstr "Binární"
+msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:76
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:85
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Formát kontejneru médií:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:97
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:94
+#, fuzzy, kde-format
+#| msgid "Soundtrack:"
+msgid "Soundtrack File:"
+msgstr "Hudební doprovod:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:100
+#, fuzzy, kde-format
+#| msgid "Select audio files"
+msgctxt "@title:window"
+msgid "Select Audio Track"
+msgstr "Výběr hudebních souborů"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:101
+#, kde-format
+msgid "Video soundtrack (lets empty if none)"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#, fuzzy, kde-format
+#| msgid "Soundtrack:"
+msgid "Soundtrack Duration:"
+msgstr "Hudební doprovod:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
 #, kde-format
 msgid "Open in Player:"
 msgstr "Otevřít v přehrávači:"
@@ -21832,11 +21858,9 @@ msgid "Include the sidecar of the items"
 msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Write metadata to each file"
+#, kde-format
 msgid "Write sidecar metadata to the items"
-msgstr "Zapsat metadata do každého souboru"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:125
 #, kde-format
@@ -26678,30 +26702,24 @@ msgid "Tags (0)"
 msgstr "Značky (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Albums"
+#, kde-format
 msgctxt "@option"
 msgid "All albums"
-msgstr "Všechna alba"
+msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive"
-msgstr "Rekurzivní Výběr"
+msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:182
 #: core/libs/album/widgets/albumselectors.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
-msgstr "Rekurzivní Výběr"
+msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
@@ -26722,12 +26740,10 @@ msgid "Reset selected albums"
 msgstr "Obnovit vybraná alba"
 
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Tags"
+#, kde-format
 msgctxt "@option"
 msgid "All tags"
-msgstr "Všechny značky"
+msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
@@ -39404,515 +39420,512 @@ msgid ""
 "video."
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:485
+#: core/libs/video/manager/vidslidesettings.cpp:488
 #, kde-format
 msgctxt "Video Type: QVGA"
 msgid "QVGA - 320x180 - 16:9"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:486
+#: core/libs/video/manager/vidslidesettings.cpp:489
 #, kde-format
 msgctxt "Video Type: VCD1"
 msgid "VCD - 352x240 - 7:5"
 msgstr "VCD - 352x240 - 7:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:487
+#: core/libs/video/manager/vidslidesettings.cpp:490
 #, kde-format
 msgctxt "Video Type: VCD2"
 msgid "VCD - 352x288 - 6:5"
 msgstr "VCD - 352x288 - 6:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:488
+#: core/libs/video/manager/vidslidesettings.cpp:491
 #, kde-format
 msgctxt "Video Type: CVD1"
 msgid "CVD - 352x480 - 4:3"
 msgstr "CVD - 352x480 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:489
+#: core/libs/video/manager/vidslidesettings.cpp:492
 #, kde-format
 msgctxt "Video Type: CVD2"
 msgid "CVD - 352x576 - 16:9"
 msgstr "CVD - 352x576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:490
+#: core/libs/video/manager/vidslidesettings.cpp:493
 #, kde-format
 msgctxt "Video Type: HVGA"
 msgid "HVGA - 480x270 - 16:9"
 msgstr "HVGA - 480x270 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:491
+#: core/libs/video/manager/vidslidesettings.cpp:494
 #, kde-format
 msgctxt "Video Type: SVCD1"
 msgid "SVCD - 480x480 - 1:1"
 msgstr "SVCD - 480x480 - 1:1"
 
-#: core/libs/video/manager/vidslidesettings.cpp:492
+#: core/libs/video/manager/vidslidesettings.cpp:495
 #, kde-format
 msgctxt "Video Type: SDTV1"
 msgid "SDTV - 528x480 - 11:10"
 msgstr "SDTV - 528x480 - 11:10"
 
-#: core/libs/video/manager/vidslidesettings.cpp:493
+#: core/libs/video/manager/vidslidesettings.cpp:496
 #, kde-format
 msgctxt "Video Type: SDTV2"
 msgid "SDTV - 544x480 - 17:15"
 msgstr "SDTV - 544x480 - 17:15"
 
-#: core/libs/video/manager/vidslidesettings.cpp:494
+#: core/libs/video/manager/vidslidesettings.cpp:497
 #, kde-format
 msgctxt "Video Type: EDTV1"
 msgid "EDTV - 544x576 - 17:18"
 msgstr "EDTV - 544x576 - 17:18"
 
-#: core/libs/video/manager/vidslidesettings.cpp:495
+#: core/libs/video/manager/vidslidesettings.cpp:498
 #, kde-format
 msgctxt "Video Type: SVCD2"
 msgid "SVCD - 480x576 - 5:6"
 msgstr "SVCD - 480x576 - 5:6"
 
-#: core/libs/video/manager/vidslidesettings.cpp:496
+#: core/libs/video/manager/vidslidesettings.cpp:499
 #, kde-format
 msgctxt "Video Type: EGA"
 msgid "EGA - 640x350 - 16:9"
 msgstr "EGA - 640x350 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:497
+#: core/libs/video/manager/vidslidesettings.cpp:500
 #, kde-format
 msgctxt "Video Type: VGA"
 msgid "VGA - 640x480 - 4:3"
 msgstr "VGA - 640x480 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:498
+#: core/libs/video/manager/vidslidesettings.cpp:501
 #, kde-format
 msgctxt "Video Type: SDTV3"
 msgid "SDTV - 704x480 - 22:15"
 msgstr "SDTV - 704x480 - 22:15"
 
-#: core/libs/video/manager/vidslidesettings.cpp:499
+#: core/libs/video/manager/vidslidesettings.cpp:502
 #, kde-format
 msgctxt "Video Type: EDTV2"
 msgid "EDTV - 704x576 - 11:9"
 msgstr "EDTV - 704x576 - 11:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:500
+#: core/libs/video/manager/vidslidesettings.cpp:503
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x480 - 3:2"
 msgstr "DVD - 720x480 - 3:2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:501
+#: core/libs/video/manager/vidslidesettings.cpp:504
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x576 - 5:4"
 msgstr "DVD - 720x576 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:502
+#: core/libs/video/manager/vidslidesettings.cpp:505
 #, kde-format
 msgctxt "Video Type: WVGA"
 msgid "WVGA - 800x450 - 16:9"
 msgstr "WVGA - 800x450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:503
+#: core/libs/video/manager/vidslidesettings.cpp:506
 #, kde-format
 msgctxt "Video Type: SVGA"
 msgid "SVGA - 800x600 - 4:3"
 msgstr "SVGA - 800x600 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:504
+#: core/libs/video/manager/vidslidesettings.cpp:507
 #, kde-format
 msgctxt "Video Type: DVGA"
 msgid "DVGA - 960x640 - 3:2"
 msgstr "DVGA - 960x640 - 3:2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:505
+#: core/libs/video/manager/vidslidesettings.cpp:508
 #, kde-format
 msgctxt "Video Type: XVGA"
 msgid "XVGA - 1024x576 - 16:9"
 msgstr "XVGA - 1024x576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:506
+#: core/libs/video/manager/vidslidesettings.cpp:509
 #, kde-format
 msgctxt "Video Type: HDTV"
 msgid "HDTV - 1280x720 - 16:9"
 msgstr "HDTV - 1280x720 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:507
+#: core/libs/video/manager/vidslidesettings.cpp:510
 #, kde-format
 msgctxt "Video Type: WXGA1"
 msgid "WXGA - 1280x768 - 5:3"
 msgstr "WXGA - 1280x768 - 5:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:508
+#: core/libs/video/manager/vidslidesettings.cpp:511
 #, kde-format
 msgctxt "Video Type: WXGA2"
 msgid "WXGA - 1280x800 - 8:5"
 msgstr "WXGA - 1280x800 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:509
+#: core/libs/video/manager/vidslidesettings.cpp:512
 #, kde-format
 msgctxt "Video Type: SXGA"
 msgid "SXGA - 1280x1024 - 5:4"
 msgstr "SXGA - 1280x1024 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:510
+#: core/libs/video/manager/vidslidesettings.cpp:513
 #, kde-format
 msgctxt "Video Type: SXGAPLUS"
 msgid "SXGAPLUS - 1400x1050 - 4:3"
 msgstr "SXGAPLUS - 1400x1050 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:511
+#: core/libs/video/manager/vidslidesettings.cpp:514
 #, kde-format
 msgctxt "Video Type: WSXGA"
 msgid "WSXGA - 1440x900 - 8:5"
 msgstr "WSXGA - 1440x900 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:512
+#: core/libs/video/manager/vidslidesettings.cpp:515
 #, kde-format
 msgctxt "Video Type: HDPLUS"
 msgid "HDPLUS - 1600x900 - 16:9"
 msgstr "HDPLUS - 1600x900 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:513
+#: core/libs/video/manager/vidslidesettings.cpp:516
 #, kde-format
 msgctxt "Video Type: WSXGAPLUS"
 msgid "WSXGAPLUS - 1680x1050 - 8:5"
 msgstr "WSXGAPLUS - 1680x1050 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:514
+#: core/libs/video/manager/vidslidesettings.cpp:517
 #, kde-format
 msgctxt "Video Type: UXGA"
 msgid "UXGA - 1600x1200 - 4:3"
 msgstr "UXGA - 1600x1200 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:515
+#: core/libs/video/manager/vidslidesettings.cpp:518
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:516
+#: core/libs/video/manager/vidslidesettings.cpp:519
 #, kde-format
 msgctxt "Video Type: WUXGA"
 msgid "WUXGA - 1920x1200 - 8:5"
 msgstr "WUXGA - 1920x1200 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:517
+#: core/libs/video/manager/vidslidesettings.cpp:520
 #, kde-format
 msgctxt "Video Type: TXGA"
 msgid "TXGA - 1920x1440 - 7:5"
 msgstr "TXGA - 1920x1440 - 7:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:518
+#: core/libs/video/manager/vidslidesettings.cpp:521
 #, kde-format
 msgctxt "Video Type: QXGA"
 msgid "QXGA - 2048x1536 - 4:3"
 msgstr "QXGA - 2048x1536 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:519
+#: core/libs/video/manager/vidslidesettings.cpp:522
 #, kde-format
 msgctxt "Video Type: UWFHD"
 msgid "UWFHD - 2560x1080 - 21:9"
 msgstr "UWFHD - 2560x1080 - 21:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:520
+#: core/libs/video/manager/vidslidesettings.cpp:523
 #, kde-format
 msgctxt "Video Type: WQHD"
 msgid "WQHD - 2560x1440 - 16:9"
 msgstr "WQHD - 2560x1440 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:521
+#: core/libs/video/manager/vidslidesettings.cpp:524
 #, kde-format
 msgctxt "Video Type: WQXGA"
 msgid "WQXGA - 2560x1600 - 8:5"
 msgstr "WQXGA - 2560x1600 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:522
+#: core/libs/video/manager/vidslidesettings.cpp:525
 #, kde-format
 msgctxt "Video Type: QSXGA"
 msgid "QSXGA - 2560x2048 - 5:4"
 msgstr "QSXGA - 2560x2048 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:523
+#: core/libs/video/manager/vidslidesettings.cpp:526
 #, kde-format
 msgctxt "Video Type: QSXGAPLUS"
 msgid "QSXGAPLUS - 2800x2100 - 4:3"
 msgstr "QSXGAPLUS - 2800x2100 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:524
+#: core/libs/video/manager/vidslidesettings.cpp:527
 #, kde-format
 msgctxt "Video Type: WQXGAPLUS"
 msgid "WQXGAPLUS - 3200x1800 - 16:9"
 msgstr "WQXGAPLUS - 3200x1800 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:525
+#: core/libs/video/manager/vidslidesettings.cpp:528
 #, kde-format
 msgctxt "Video Type: WQSXGA"
 msgid "WQSXGA - 3200x2048 - 25:16"
 msgstr "WQSXGA - 3200x2048 - 25:16"
 
-#: core/libs/video/manager/vidslidesettings.cpp:526
+#: core/libs/video/manager/vidslidesettings.cpp:529
 #, kde-format
 msgctxt "Video Type: QUXGA"
 msgid "QUXGA - 3200x2400 - 4:3"
 msgstr "QUXGA - 3200x2400 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:527
+#: core/libs/video/manager/vidslidesettings.cpp:530
 #, kde-format
 msgctxt "Video Type: UHD4K"
 msgid "UHD4K - 3840x2160 - 16:9"
 msgstr "UHD4K - 3840x2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:528
+#: core/libs/video/manager/vidslidesettings.cpp:531
 #, kde-format
 msgctxt "Video Type: WQUXGA"
 msgid "WQUXGA - 3840x2400 - 8:5"
 msgstr "WQUXGA - 3840x2400 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:529
+#: core/libs/video/manager/vidslidesettings.cpp:532
 #, kde-format
 msgctxt "Video Type: HXGA"
 msgid "HXGA - 4096x3072 - 4:3"
 msgstr "HXGA - 4096x3072 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:530
+#: core/libs/video/manager/vidslidesettings.cpp:533
 #, kde-format
 msgctxt "Video Type: UHD5K"
 msgid "UHD5K - 5120x2880 - 16:9"
 msgstr "UHD5K - 5120x2880 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:531
+#: core/libs/video/manager/vidslidesettings.cpp:534
 #, kde-format
 msgctxt "Video Type: WHXGA"
 msgid "WHXGA - 5120x3200 - 8:5"
 msgstr "WHXGA - 5120x3200 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:532
+#: core/libs/video/manager/vidslidesettings.cpp:535
 #, kde-format
 msgctxt "Video Type: HSXGA"
 msgid "HSXGA - 5120x4096 - 5:4"
 msgstr "HSXGA - 5120x4096 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:533
+#: core/libs/video/manager/vidslidesettings.cpp:536
 #, kde-format
 msgctxt "Video Type: UHD6K"
 msgid "UHD6K - 6016x3384 - 16:9"
 msgstr "UHD6K - 6016x3384 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:534
+#: core/libs/video/manager/vidslidesettings.cpp:537
 #, kde-format
 msgctxt "Video Type: WHSXGA"
 msgid "WHSXGA - 6400x4096 - 25:16"
 msgstr "WHSXGA - 6400x4096 - 25:16"
 
-#: core/libs/video/manager/vidslidesettings.cpp:535
+#: core/libs/video/manager/vidslidesettings.cpp:538
 #, kde-format
 msgctxt "Video Type: HUXGA"
 msgid "HUXGA - 6400x4800 - 4:3"
 msgstr "HUXGA - 6400x4800 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:536
+#: core/libs/video/manager/vidslidesettings.cpp:539
 #, kde-format
 msgctxt "Video Type: UHD8K"
 msgid "UHD8K - 7680x4320 - 16:9"
 msgstr "UHD8K - 7680x4320 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:537
+#: core/libs/video/manager/vidslidesettings.cpp:540
 #, kde-format
 msgctxt "Video Type: WHUXGA"
 msgid "WHUXGA - 7680x4800 - 8:5"
 msgstr "WHUXGA - 7680x4800 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:538
+#: core/libs/video/manager/vidslidesettings.cpp:541
 #, kde-format
 msgctxt "Video Type: UW10K"
 msgid "UW10K - 10240x4320 - 21:9"
 msgstr "UW10K - 10240x4320 - 21:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:539
+#: core/libs/video/manager/vidslidesettings.cpp:542
 #, kde-format
 msgctxt "Video Type: UW16K"
 msgid "UW16K - 15360x8640 - 16:9"
 msgstr "UW16K - 15360x8640 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:762
+#: core/libs/video/manager/vidslidesettings.cpp:765
 #, kde-format
 msgctxt "Video Bit Rate 400000"
 msgid "400k"
 msgstr "400k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:763
+#: core/libs/video/manager/vidslidesettings.cpp:766
 #, kde-format
 msgctxt "Video Bit Rate 500000"
 msgid "500k"
 msgstr "500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:764
+#: core/libs/video/manager/vidslidesettings.cpp:767
 #, kde-format
 msgctxt "Video Bit Rate 1000000"
 msgid "1000k"
 msgstr "1000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:765
+#: core/libs/video/manager/vidslidesettings.cpp:768
 #, kde-format
 msgctxt "Video Bit Rate 1200000"
 msgid "1200k"
 msgstr "1200k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:766
+#: core/libs/video/manager/vidslidesettings.cpp:769
 #, kde-format
 msgctxt "Video Bit Rate 1500000"
 msgid "1500k"
 msgstr "1500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:767
+#: core/libs/video/manager/vidslidesettings.cpp:770
 #, kde-format
 msgctxt "Video Bit Rate 2000000"
 msgid "2000k"
 msgstr "2000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:768
+#: core/libs/video/manager/vidslidesettings.cpp:771
 #, kde-format
 msgctxt "Video Bit Rate 2500000"
 msgid "2500k"
 msgstr "2500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:769
+#: core/libs/video/manager/vidslidesettings.cpp:772
 #, kde-format
 msgctxt "Video Bit Rate 3000000"
 msgid "3000k"
 msgstr "3000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:770
+#: core/libs/video/manager/vidslidesettings.cpp:773
 #, kde-format
 msgctxt "Video Bit Rate 4000000"
 msgid "4000k"
 msgstr "4000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:771
+#: core/libs/video/manager/vidslidesettings.cpp:774
 #, kde-format
 msgctxt "Video Bit Rate 4500000"
 msgid "4500k"
 msgstr "4500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:772
+#: core/libs/video/manager/vidslidesettings.cpp:775
 #, kde-format
 msgctxt "Video Bit Rate 5000000"
 msgid "5000k"
 msgstr "5000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:773
+#: core/libs/video/manager/vidslidesettings.cpp:776
 #, kde-format
 msgctxt "Video Bit Rate 6000000"
 msgid "6000k"
 msgstr "6000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:774
+#: core/libs/video/manager/vidslidesettings.cpp:777
 #, kde-format
 msgctxt "Video Bit Rate 8000000"
 msgid "8000k"
 msgstr "8000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:783
+#: core/libs/video/manager/vidslidesettings.cpp:786
 #, kde-format
 msgctxt "Video Standard PAL"
 msgid "PAL - 25 FPS"
 msgstr "PAL - 25 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:784
+#: core/libs/video/manager/vidslidesettings.cpp:787
 #, kde-format
 msgctxt "Video Standard NTSC"
 msgid "NTSC - 29.97 FPS"
 msgstr "NTSC - 29.97 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:796
+#: core/libs/video/manager/vidslidesettings.cpp:799
 #, kde-format
 msgctxt "Video Codec X264"
 msgid "High Quality H.264 AVC/MPEG-4 AVC"
 msgstr "Vysoká kvalita H.264 AVC/MPEG-4 AVC"
 
-#: core/libs/video/manager/vidslidesettings.cpp:797
+#: core/libs/video/manager/vidslidesettings.cpp:800
 #, kde-format
 msgctxt "Video Codec MPEG4"
 msgid "DivX/XVid/MPEG-4"
 msgstr "DivX/XVid/MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:798
+#: core/libs/video/manager/vidslidesettings.cpp:801
 #, kde-format
 msgctxt "Video Codec MPEG2"
 msgid "MPEG-2 Video"
 msgstr "Video MPEG-2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:815
+#: core/libs/video/manager/vidslidesettings.cpp:818
 #, kde-format
 msgctxt "Video Standard AVI"
 msgid "AVI - Audio Video Interleave"
 msgstr "AVI - Audio Video Interleave"
 
-#: core/libs/video/manager/vidslidesettings.cpp:816
+#: core/libs/video/manager/vidslidesettings.cpp:819
 #, kde-format
 msgctxt "Video Standard MKV"
 msgid "MKV - Matroska"
 msgstr "MKV - Matroska"
 
-#: core/libs/video/manager/vidslidesettings.cpp:817
+#: core/libs/video/manager/vidslidesettings.cpp:820
 #, kde-format
 msgctxt "Video Standard MP4"
 msgid "MP4 - MPEG-4"
 msgstr "MP4 - MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:818
+#: core/libs/video/manager/vidslidesettings.cpp:821
 #, kde-format
 msgctxt "Video Standard MPG"
 msgid "MPG - MPEG-2"
 msgstr "MPG - MPEG-2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:827
+#: core/libs/video/manager/vidslidesettings.cpp:830
 #, kde-format
 msgctxt "Video Effect NOPLAYER"
 msgid "None"
 msgstr "Žádné"
 
-#: core/libs/video/manager/vidslidesettings.cpp:828
+#: core/libs/video/manager/vidslidesettings.cpp:831
 #, kde-format
 msgctxt "Video Standard INTERNAL"
 msgid "Internal"
 msgstr "Vnitřní"
 
-#: core/libs/video/manager/vidslidesettings.cpp:829
+#: core/libs/video/manager/vidslidesettings.cpp:832
 #, kde-format
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Výchozí z pracovního prostředí"
 
-#: core/libs/video/manager/vidslidetask.cpp:181
+#: core/libs/video/manager/vidslidetask.cpp:183
 #, fuzzy, kde-format
-#| msgid "Encoding %1 Done"
-msgid "Preparing %1 Done"
-msgstr "Kódování %1 dokončeno"
+#| msgctxt "@info"
+#| msgid "Generating files for \"%1\""
+msgid "Generating frames from %1 Done"
+msgstr "Vytváří se soubory pro \"%1\""
 
 #: core/libs/video/manager/vidslidethread.cpp:63
-#, fuzzy, kde-format
-#| msgid "Cannot create a temporary directory"
+#, kde-format
 msgid "Error while creating temporary directory %1!"
-msgstr "Nelze vytvořit dočasný adresář"
+msgstr ""
 
 #: core/libs/video/manager/vidslidethread.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Loading cameras..."
+#, kde-format
 msgid "Encoding frames..."
-msgstr "Načítání fotoaparátů..."
+msgstr ""
 
-#: core/libs/video/manager/vidslidethread.cpp:134
+#: core/libs/video/manager/vidslidethread.cpp:133
 #, kde-format
 msgid "Encoding done."
 msgstr ""
 
-#: core/libs/video/manager/vidslidethread.cpp:138
-#, fuzzy, kde-format
-#| msgid "Error while opening the source database."
+#: core/libs/video/manager/vidslidethread.cpp:137
+#, kde-format
 msgid "Error while encoding frames!"
-msgstr "Chyba při otevírání zdrojové databáze."
+msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -40626,7 +40639,7 @@ msgstr "Změnit"
 msgid "The binary file found does not appear to be working as intended."
 msgstr ""
 
-#: core/libs/widgets/files/dfileselector.cpp:58
+#: core/libs/widgets/files/dfileselector.cpp:53
 #, kde-format
 msgid "Browse..."
 msgstr "Procházet..."
@@ -41422,10 +41435,9 @@ msgid "A KDE Family Project"
 msgstr "Projekt z rodiny KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2023, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2024, digiKam developers team"
-msgstr "(c) 2001-2023, team vývojářů digiKam"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
@@ -48334,25 +48346,18 @@ msgstr ""
 "při ukládání obrázků</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
-#, fuzzy, kde-format
-#| msgid "Geolocation"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
-msgstr "Geolokace"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Application Views Settings\n"
-#| "Customize the look of the views"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Geolocation Settings\n"
 "Customize view to geolocalize items"
 msgstr ""
-"Nastavení pohledů aplikace\n"
-"Přizpůsobení vzhledu pohledů"
 
 #: core/showfoto/setup/showfotosetup.cpp:182
 #, kde-format
@@ -51580,10 +51585,9 @@ msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap (Vector)"
-msgstr "OpenStreetMap"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:387
 #, kde-format
@@ -51633,10 +51637,9 @@ msgid "Projection"
 msgstr "Projekce"
 
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:72
-#, fuzzy, kde-format
-#| msgid "Export Bookmarks..."
+#, kde-format
 msgid "Export as..."
-msgstr "Exportovat záložky..."
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:160
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:183
@@ -51655,9 +51658,7 @@ msgid "Unknown title"
 msgstr "Neznámý název"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Bookmark"
 msgstr "Přidat záložku"
@@ -51819,11 +51820,9 @@ msgid "Add Bookmark..."
 msgstr "Přidat záložku..."
 
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@item: icc profile properties"
-#| msgid "Copyright"
+#, kde-format
 msgid "<p>Copyright %1</p>"
-msgstr "Autorská práva"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, kde-format
@@ -54804,12 +54803,12 @@ msgstr "Nastavit"
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:62
 #, kde-format
 msgid "Atmosphere"
-msgstr ""
+msgstr "Atmosféra"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:67
 #, kde-format
 msgid "&Atmosphere"
-msgstr ""
+msgstr "&Atmosféra"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
 #, kde-format
@@ -54865,55 +54864,49 @@ msgid "&Compass"
 msgstr "&Kompas"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a compass."
+#, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
-msgstr "Toto je plovoucí nástroj, který poskytuje kompas."
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure Compass Plugin"
+#, kde-format
 msgid "Configure Crosshairs Plugin"
-msgstr "Nastavit modul Kompas"
+msgstr "Nastavit modul nitkového kříže"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
 #, kde-format
 msgid "Gun 1"
-msgstr ""
+msgstr "Zbraň 1"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
 #, kde-format
 msgid "Gun 2"
-msgstr ""
+msgstr "Zbraň 2"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circled"
-msgstr "Kruhová výseč"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "German"
+#, kde-format
 msgid "German"
 msgstr "Němčina"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:72
 #, kde-format
 msgid "Crosshairs"
-msgstr ""
+msgstr "Nitkový kříž"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:77
 #, kde-format
 msgid "Cross&hairs"
-msgstr ""
+msgstr "Nitkový &kříž"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
 #, kde-format
@@ -54922,10 +54915,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate Grid Plugin"
-msgstr "Souřadnice"
+msgstr "Modul Sítě souřadnic"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -54939,48 +54931,43 @@ msgstr "Ba&rvy"
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:444
 #, kde-format
 msgid "&Grid:"
-msgstr ""
+msgstr "&Mřížka:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:497
-#, fuzzy, kde-format
-#| msgid "Color model of the image"
+#, kde-format
 msgid "Color of the coordinate grid."
-msgstr "Barevný model obrázku"
+msgstr "Barva souřadnicové sítě."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:922
-#, fuzzy, kde-format
-#| msgctxt "@item: type code"
-#| msgid "Topic"
+#, kde-format
 msgid "&Tropics:"
-msgstr "Téma"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, tropicsPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:938
 #, kde-format
 msgid "Color of the tropical circles."
-msgstr ""
+msgstr "Barva obratníků."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1363
 #, kde-format
 msgid "&Equator:"
-msgstr ""
+msgstr "&Rovník:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1379
-#, fuzzy, kde-format
-#| msgid "Color model of the image"
+#, kde-format
 msgid "Color of the equator."
-msgstr "Barevný model obrázku"
+msgstr "Barva rovníku."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1398
-#, fuzzy, kde-format
-#| msgid "&Text Labels"
+#, kde-format
 msgid "&Named Labels"
-msgstr "Te&xtové štítky"
+msgstr "Pojme&nované štítky"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1408
@@ -54990,30 +54977,25 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1415
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Vertical Lines"
-#| msgid "Vertical Lines"
+#, kde-format
 msgid "&Numerical Labels"
-msgstr "Svislé linky"
+msgstr "Čísel&né štítky"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1425
-#, fuzzy, kde-format
-#| msgid "Show image labels"
+#, kde-format
 msgid "Show numerical Labels."
-msgstr "Zobrazit popisky obrázku"
+msgstr "Zobrazit číselné štítky."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:70
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate Grid"
-msgstr "Souřadnice"
+msgstr "Síť souřadnic"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:75
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Coordinate &Grid"
-msgstr "Souřadnice"
+msgstr "Síť souřadn&ic"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:90
 #, kde-format
@@ -55021,35 +55003,29 @@ msgid "A plugin that shows a coordinate grid over the map."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:212
-#, fuzzy, kde-format
-#| msgid "Set here the color of the second line."
+#, kde-format
 msgid "Please choose the color for the coordinate grid."
-msgstr "Nastavte zde barvu druhé čáry."
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:223
-#, fuzzy, kde-format
-#| msgid "Set here the color of the first line."
+#, kde-format
 msgid "Please choose the color for the tropic circles."
-msgstr "Nastavte zde barvu první čáry."
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:234
-#, fuzzy, kde-format
-#| msgid "Set here the color of the line."
+#, kde-format
 msgid "Please choose the color for the equator."
-msgstr "Nastavte zde barvu čáry."
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:314
-#, fuzzy, kde-format
-#| msgid "Elevator"
+#, kde-format
 msgid "Equator"
-msgstr "Výtah"
+msgstr "Rovník"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:319
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Parameters"
+#, kde-format
 msgid "Prime Meridian"
-msgstr "Parametry"
+msgstr "Nultý poledník"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
 #, kde-format
@@ -55059,26 +55035,22 @@ msgstr ""
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:406
 #, kde-format
 msgid "Tropic of Cancer"
-msgstr ""
+msgstr "Obratník raka"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
 #, kde-format
 msgid "Tropic of Capricorn"
-msgstr ""
+msgstr "Obratník kozoroha"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:410
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Arctic Circle"
-msgstr "Kruhová výseč"
+msgstr "Severní polární kruh"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Antarctica"
+#, kde-format
 msgid "Antarctic Circle"
-msgstr "Antarktida"
+msgstr "Jižní polární kruh"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -55110,10 +55082,9 @@ msgid "&Scale Bar"
 msgstr "&Pruh s měřítkem"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a map scale."
+#, kde-format
 msgid "A plugin to show a float item that provides a map scale."
-msgstr "Toto je plovoucí nástroj, který poskytuje informaci o měřítku mapy."
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
 #, kde-format
@@ -55148,10 +55119,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MeasureConfigDialog)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:14
-#, fuzzy, kde-format
-#| msgid "Database Configuration"
+#, kde-format
 msgid "Measure Tool Configuration"
-msgstr "Nastavení databáze"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:20
@@ -55165,31 +55135,27 @@ msgstr ""
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:45
 #, kde-format
 msgid "Polygon"
-msgstr ""
+msgstr "Mnohoúhelník"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:33
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:127
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circle"
-msgstr "Kruhová výseč"
+msgstr "Kolečko"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:51
-#, fuzzy, kde-format
-#| msgid "Image labels"
+#, kde-format
 msgid "Segment labels"
-msgstr "Popisky obrázku"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:60
-#, fuzzy, kde-format
-#| msgid "Distance:"
+#, kde-format
 msgid "Distance "
-msgstr "Vzdálenost:"
+msgstr "Vzdálenost "
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:70
@@ -55199,19 +55165,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelChangeCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:80
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Saving changes -"
+#, kde-format
 msgid "Bearing Change"
-msgstr "Ukládání změn - "
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPerimeter)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:90
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Parameters"
+#, kde-format
 msgid "Perimeter"
-msgstr "Parametry"
+msgstr "Obvod"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPolygonAreaLabelChangeCheckBox)
 #. i18n: ectx: property (text), widget (QCheckBox, m_showCircleAreaLabelChangeCheckBox)
@@ -55219,34 +55181,29 @@ msgstr "Parametry"
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:159
 #, kde-format
 msgid "Area"
-msgstr ""
+msgstr "Oblast"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRadiusLabelsCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:142
-#, fuzzy, kde-format
-#| msgid "Radius:"
+#, kde-format
 msgid "Radius"
-msgstr "Poloměr:"
+msgstr "Poloměr"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showCircumference)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:152
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference"
+#, kde-format
 msgid "Circumference"
-msgstr "Reference"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:87
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgid "Measure Tool"
-msgstr "Základní nástroje"
+msgstr "Nástroj pro měření"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:92
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgid "&Measure Tool"
-msgstr "Základní nástroje"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:107
 #, kde-format
@@ -55260,6 +55217,8 @@ msgid ""
 "Area:\n"
 "%1"
 msgstr ""
+"Oblast:\n"
+"%1"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:385
 #, kde-format
@@ -55269,13 +55228,13 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:500
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Parameters"
+#, kde-format
 msgid ""
 "Perimeter:\n"
 "%1"
-msgstr "Parametry"
+msgstr ""
+"Obvod:\n"
+"%1"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:558
 #, kde-format
@@ -55283,34 +55242,30 @@ msgid "Polygon Ruler"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:560
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circle Ruler"
-msgstr "Kruhová výseč"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:563
 #, kde-format
 msgid "Total Distance: %1<br/>\n"
-msgstr ""
+msgstr "Celková vzdálenost: %1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:565
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:574
-#, fuzzy, kde-format
-#| msgid "Author: %1<br/><br/>"
+#, kde-format
 msgid "Area: %1<br/>\n"
-msgstr "Autor: %1<br/><br/>"
+msgstr "Oblast: %1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:567
 #, kde-format
 msgid "Perimeter: %1<br/>\n"
-msgstr ""
+msgstr "Obvod: %1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:570
-#, fuzzy, kde-format
-#| msgid "Radius:"
+#, kde-format
 msgid "Radius: %1<br/>\n"
-msgstr "Poloměr:"
+msgstr "Poloměr: %1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:572
 #, kde-format
@@ -55318,23 +55273,19 @@ msgid "Circumference: %1<br/>\n"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:621
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "Add as Favorite"
+#, kde-format
 msgid "Add &Measure Point"
-msgstr "Přidat jako oblíbené"
+msgstr "Přidat měřící &bod"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:622
-#, fuzzy, kde-format
-#| msgid "Remove via point"
+#, kde-format
 msgid "Remove &Last Measure Point"
-msgstr "Odstranit průchozí bod"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:624
-#, fuzzy, kde-format
-#| msgid "Remove via point"
+#, kde-format
 msgid "&Remove Measure Points"
-msgstr "Odstranit průchozí bod"
+msgstr "Odst&ranit měřící body"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
@@ -55349,10 +55300,9 @@ msgid "&Navigation"
 msgstr "&Navigace"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
-#, fuzzy, kde-format
-#| msgid "A mouse control to zoom and move the map"
+#, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
-msgstr "Ovládání myši pro přibližování a oddalování mapy a její posunování"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
 #, kde-format
@@ -55375,10 +55325,9 @@ msgid "&Overview Map"
 msgstr "&Přehledová mapa"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides an overview map."
+#, kde-format
 msgid "A plugin to add a float item that provides an overview map."
-msgstr "Toto je plovoucí nástroj, který poskytuje přehledovou mapu."
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
 #, kde-format
@@ -55427,30 +55376,24 @@ msgid "Position I&ndicator:"
 msgstr "U&kazatel polohy:"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:80
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Download Progress Indicator"
-msgstr "Zobrazit ukazatel průběhu"
+msgstr "Ukazatel průběhu stahování"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Error"
+#, kde-format
 msgid "&Download Progress"
-msgstr "Chyba stahování"
+msgstr "&Průběh stahování"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
-msgstr "Zobrazit ukazatel průběhu"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Camera File Properties"
+#, kde-format
 msgid "Cache File Parser"
-msgstr "Vlastnosti souboru fotoaparátu"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
@@ -55458,11 +55401,9 @@ msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@item: texture type"
-#| msgid "Marble 2"
+#, kde-format
 msgid "Marble Cache Files"
-msgstr "Mramor 2"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
 #, kde-format
@@ -55477,18 +55418,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Save files as"
+#, kde-format
 msgid "GPSBabel files"
-msgstr "Uložit soubory jako"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Gpx File Parser"
-msgstr "Přenos souboru"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
 #, kde-format
@@ -55496,10 +55433,9 @@ msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "Data"
+#, kde-format
 msgid "GPS Data"
-msgstr "Data"
+msgstr "Data GPS"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
 #, kde-format
@@ -55517,11 +55453,9 @@ msgid "GeoJSON"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "KML File Parser"
-msgstr "Přenos souboru"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
@@ -55568,11 +55502,9 @@ msgid "OpenStreetMap Data"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Pn2 File Parser"
-msgstr "Přenos souboru"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
 #, kde-format
@@ -55586,11 +55518,9 @@ msgid "Compressed Pnt"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Pnt File Parser"
-msgstr "Přenos souboru"
+msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
@@ -55700,10 +55630,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
-#, fuzzy, kde-format
-#| msgid "Units:"
+#, kde-format
 msgid "Units"
-msgstr "Jednotky:"
+msgstr "Jednotky"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
 #, kde-format
@@ -55728,9 +55657,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Angle:"
+#, kde-format
 msgid "Angle:"
 msgstr "Úhel:"
 
@@ -55758,16 +55685,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
-#, fuzzy, kde-format
-#| msgid "Map &Quality"
+#, kde-format
 msgid "Map Quality"
-msgstr "&Kvalita mapy"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
-#, fuzzy, kde-format
-#| msgid "&Still image:"
+#, kde-format
 msgid "Still Image:"
-msgstr "&Obrázek fotografie:"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
@@ -55807,10 +55732,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
-#, fuzzy, kde-format
-#| msgid "During &animations:"
+#, kde-format
 msgid "During Animations:"
-msgstr "Během &animací:"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:153
 #, kde-format
@@ -55822,16 +55746,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
-#, fuzzy, kde-format
-#| msgid "Behavior"
+#, kde-format
 msgid "Mouse Behavior"
-msgstr "Chování"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
-#, fuzzy, kde-format
-#| msgid "Invert Selection"
+#, kde-format
 msgid "Inertial Globe Rotation"
-msgstr "Invertovat výběr"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
 #, kde-format
@@ -55839,10 +55761,9 @@ msgid "Use kinetic spinning when dragging the map"
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
-#, fuzzy, kde-format
-#| msgid "Free Rotation"
+#, kde-format
 msgid "Mouse View Rotation"
-msgstr "Libovolné otočení"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:169
 #, kde-format
@@ -55850,27 +55771,12 @@ msgid "Use right mouse button to rotate the camera around"
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
-#, fuzzy, kde-format
-#| msgid "C&ache"
+#, kde-format
 msgid "Cache"
-msgstr "Mezip&aměť"
+msgstr "Mezipaměť"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:177
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#| "font-weight:400; font-style:normal;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches "
-#| "being used for Marble: The physical memory which is needed to keep map "
-#| "data in the computer's memory. Increasing the value will make the "
-#| "application more responsive. The hard disc memory cache is used by "
-#| "download contents from the Internet (e.g. Wikipedia data or map data). "
-#| "Decrease this value if you want to save space on the hard disc and if "
-#| "high usage of the Internet is not an issue. </p></body></html>"
+#, kde-format
 msgid ""
 "There are two caches being used:\n"
 "The \"physical memory\" which is needed to keep map data in the computer's "
@@ -55881,25 +55787,11 @@ msgid ""
 "Decrease this value if you want to save space on the hard disc\n"
 "and if high usage of the Internet is not an issue."
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Marble používá dva druhy "
-"mezipaměti: Fyzickou paměť, která je nezbytná pro udržení mapových dat v "
-"paměti počítače. Zvětšení této hodnoty bude mít za následek, že aplikace "
-"bude pohotovější. Mezipaměť pevného disku se používá při stahování obsahu z "
-"internetu (např. dat z Wikipedie nebo mapových dat). Zmenšete tuto hodnotu, "
-"jestliže si přejete ušetřit místo na pevném disku a jestliže časté používání "
-"internetu není problém. </p></body></html>"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
-#, fuzzy, kde-format
-#| msgid "&Physical memory:"
+#, kde-format
 msgid "Physical Memory:"
-msgstr "&Fyzická paměť:"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:189
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:196
@@ -55908,23 +55800,19 @@ msgid "Clear"
 msgstr "Vyprázdnit"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
-#, fuzzy, kde-format
-#| msgid "&Hard disc:"
+#, kde-format
 msgid "Hard Disc:"
-msgstr "Pe&vný disk:"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Load Contents"
+#, kde-format
 msgid "Map Contents"
-msgstr "Načíst obsah"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
-#, fuzzy, kde-format
-#| msgid "Default map &font:"
+#, kde-format
 msgid "Default Font:"
-msgstr "&Písmo pro mapu:"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
 #, kde-format
@@ -55935,10 +55823,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
-#, fuzzy, kde-format
-#| msgid "Coordinate"
+#, kde-format
 msgid "Show Coordinate Grid"
-msgstr "Souřadnice"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:216
 #, kde-format
@@ -55962,11 +55849,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Show item permanently"
+#, kde-format
 msgid "Show Atmospheric Glow"
-msgstr "Zobrazit položku trvale"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:226
 #, kde-format
@@ -55977,10 +55862,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
-#, fuzzy, kde-format
-#| msgid "Show on right panel"
+#, kde-format
 msgid "Show Night Shadow"
-msgstr "Zobrazit na pravém panelu"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:231
 #, kde-format
@@ -56004,10 +55888,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
-#, fuzzy, kde-format
-#| msgid "Show Preview"
+#, kde-format
 msgid "Show Relief"
-msgstr "Zobrazit náhled"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:241
 #, kde-format
@@ -56018,29 +55901,24 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
-#, fuzzy, kde-format
-#| msgctxt "@item: texture type"
-#| msgid "Marble 2"
+#, kde-format
 msgid "Map View"
-msgstr "Mramor 2"
+msgstr "Prohlížení mapy"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
-#, fuzzy, kde-format
-#| msgid "Plugins"
+#, kde-format
 msgid "Map Plugins"
-msgstr "Moduly"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Border Tool"
+#, kde-format
 msgid "Render Tools"
-msgstr "Nástroj pro rámečky"
+msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:83
-#, fuzzy, kde-format
-#| msgid "Shear Tool"
+#, kde-format
 msgid "Runner Tools"
-msgstr "Nástroj Zkosení"
+msgstr ""
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -64321,10 +64199,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:35
-#, fuzzy, kde-format
-#| msgid "Remote Server Settings"
+#, kde-format
 msgid "&Network Proxy Server Settings"
-msgstr "Nastavení vzdáleného serveru"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
 #: core/utilities/setup/misc/proxysettingswidget.ui:43
@@ -64819,18 +64696,12 @@ msgid "Light Table"
 msgstr "Prohlížecí stolek"
 
 #: core/utilities/setup/setup.cpp:251
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare images"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
 msgstr ""
-"Nastavení prohlížecího stolku\n"
-"Přizpůsobení nástroje k porovnávání fotografií"
 
 #: core/utilities/setup/setup.cpp:264
 #, kde-format
@@ -65864,1005 +65735,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
-
-#~ msgctxt "@option"
-#~ msgid "Whole albums collection"
-#~ msgstr "Celá sbírka alb"
-
-#~ msgctxt "@option"
-#~ msgid "Whole tags collection"
-#~ msgstr "Celá sbírka značek"
-
-#, fuzzy
-#~| msgid "Cannot create directory %1"
-#~ msgid "Cannot generate output video %1"
-#~ msgstr "Nelze vytvořit adresář %1"
-
-#~ msgid "Output video is %1"
-#~ msgstr "Výstupní video je %1"
-
-#~ msgid "Failed to open video encoder"
-#~ msgstr "Otevření kodéru videa selhalo"
-
-#~ msgid "Failed to open audio encoder"
-#~ msgstr "Otevření kodéru audia selhalo"
-
-#~ msgid "Failed to open muxer"
-#~ msgstr "Otevření muxeru selhalo"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "About %1 Plugin"
-#~ msgid "About Plugin"
-#~ msgstr "O modulu %1"
-
-#, fuzzy
-#~| msgid ""
-#~| "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</"
-#~| "p>"
-#~ msgid ""
-#~ "<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
-#~ "p><p><u>Description:</u> %4</p>"
-#~ msgstr ""
-#~ "<b>Název: </b><p>%1</p><b>Hodnota: </b><p>%2</p><b>Popis: </b><p>%3</p>"
-
-#, fuzzy
-#~| msgid "Show grid"
-#~ msgid "Show Grid"
-#~ msgstr "Zobrazit mřížku"
-
-#~ msgid "&Units"
-#~ msgstr "&Jednotky"
-
-#~ msgid "An&gle:"
-#~ msgstr "Ú&hel:"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used "
-#~ "to measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></"
-#~ "html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Jednotka používaná pro "
-#~ "měření nadmořské výšky, délek a vzdáleností (např. km - kilometr, mi - "
-#~ "míle, ft - stopa).</p></body></html>"
-
-#~ msgid "&Distance:"
-#~ msgstr "&Vzdálenost:"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation "
-#~ "of angles in coordinates: By default the Degree-Minute-Second notation (e."
-#~ "g. 54°30'00\" ) gets used. As an alternative you can choose decimal "
-#~ "degrees (e.g. 54.5°).</p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Stanovuje způsob zápisu "
-#~ "úhlů u souřadnic: Jako výchozí se používá zápis stupeň-minuta-sekunda "
-#~ "(např. 54°30'00\" ). Alternativně můžete zvolit desetinný způsob zápisu "
-#~ "stupňů (např. 54.5°).</p></body></html>"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
-#~ "quality that gets displayed while there is no user input. Usually this "
-#~ "allows for high map quality as speed is no concern.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Stanoví kvalitu mapy, "
-#~ "která se bude zobrazovat v případě, že není jiný uživatelský vstup. "
-#~ "Obvykle se toto povoluje pro mapy vysoké kvality, když nejde o rychlost ."
-#~ "</p></body></html>"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map "
-#~ "quality that gets displayed during map animations (e.g. while dragging "
-#~ "the globe). </p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
-#~ "machines it is advisable to set this option to \"low quality\" as this "
-#~ "will give better speed.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Stanoví kvalitu mapy,  "
-#~ "která se zobrazuje, během animací mapy např. při tažení zeměkoule). </p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Obzvláště na pomalých "
-#~ "strojích se doporučuje nastavit tuto volbu na \"nízká kvalita\", protože "
-#~ "toto  poskytne větší rychlost.</p></body></html>"
-
-#~ msgid "Unlimited"
-#~ msgstr "Bez omezení"
-
-#~ msgid "C&lear"
-#~ msgstr "Vyči&stit"
-
-#~ msgid "Cl&ear"
-#~ msgstr "Vyči&stit"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that "
-#~ "gets used on the map.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Písmo používané v mapě "
-#~ "jako výchozí.</p></body></html>"
-
-#~ msgid "&Text Labels"
-#~ msgstr "Te&xtové štítky"
-
-#~ msgid "Google Maps API Key"
-#~ msgstr "Klíč API pro Google Maps"
-
-#~ msgid "Moon"
-#~ msgstr "Měsíc"
-
-#~ msgid "moon"
-#~ msgstr "měsíc"
-
-#~ msgid "dwarf planet"
-#~ msgstr "trpasličí planeta"
-
-#~ msgid "View"
-#~ msgstr "Pohled"
-
-#~ msgid "P&lugins"
-#~ msgstr "Přídavné modul&y"
-
-#, fuzzy
-#~| msgid "Network error"
-#~ msgid "&Network Proxy"
-#~ msgstr "Chyba sítě"
-
-#~ msgid "&Proxy"
-#~ msgstr "&Proxy"
-
-#~ msgid "&Drag location:"
-#~ msgstr "&Přetáhnout umístění:"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the "
-#~ "mouse there are two standard behaviours when dealing with a virtual globe:"
-#~ "</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The location below "
-#~ "mouse pointer will follow the cursor exactly: As a result e.g. the north "
-#~ "pole will not stay at the top which can lead to confusion. By default "
-#~ "Marble makes sure that north is always up which results in a dragging "
-#~ "behaviour where the location below the mouse pointer slightly \"detaches"
-#~ "\" from the cursor. </p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Při tažení myší se "
-#~ "používají dva standardní způsoby chování pro zacházení s virtuální "
-#~ "zeměkoulí:</p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Umístění pod ukazatelem "
-#~ "myši  bude přesně následovat kurzor: Výsledkem bude, že např. severní pól "
-#~ "nezůstane nahoře, což může vést až ke zmatení uživatele. Při výchozím "
-#~ "nastavení Marble zajistí, že sever je vždy nahoře, čehož výsledkem je "
-#~ "chování při tažení myší,  kdy umístění pod myší ukazatel lehce \"oddělí\" "
-#~ "od kurzoru. </p></body></html>"
-
-#~ msgid "Keep Planet Axis Vertically"
-#~ msgstr "Udržovat planetární osu svisle"
-
-#~ msgid "Follow Mouse Pointer"
-#~ msgstr "Sledovat ukazatel myši"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
-#~ "location Marble can either move instantly to the new location or it can "
-#~ "show a travel animation from the previous place to the new place.</p></"
-#~ "body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Při hledání umístění se "
-#~ "může Marble ihned přesunout na nové umístění nebo může ukázat animaci "
-#~ "cesty z předešlého místa na nové.</p></body></html>"
-
-#~ msgid "&Animate voyage to the target"
-#~ msgstr "&Animovat cestu k cíli"
-
-#~ msgid "&On startup:"
-#~ msgstr "Při &spuštění:"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
-#~ "display the home location immediately after the application has started. "
-#~ "As an alternative it can also show the last position that was active when "
-#~ "the user left the application. </p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Při výchozím nastavení "
-#~ "bude Marble zobrazovat umístění domovské složky okamžitě po spuštění "
-#~ "aplikace. Alternativně může ukázat i poslední polohu, která byla aktivní, "
-#~ "když uživatel naposledy ukončil aplikaci. </p></body></html>"
-
-#~ msgid "Show Home Location"
-#~ msgstr "Zobrazit umístění domova"
-
-#~ msgid "Return to Last Location Visited"
-#~ msgstr "Vrátit se na poslední navštívenou polohu"
-
-#~ msgid "Always ask"
-#~ msgstr "Vždy se dotázat"
-
-#~ msgid "Potlatch (Web browser)"
-#~ msgstr "Potlatch (Webový prohlížeč)"
-
-#~ msgid "JOSM"
-#~ msgstr "JOSM"
-
-#~ msgid "Merkaartor"
-#~ msgstr "Merkaartor"
-
-#~ msgid "&Place names:"
-#~ msgstr "Umí&stit názvy:"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
-#~ "different names in different languages. The label on the map can show the "
-#~ "name in the user's language. Alternatively it can display the name in the "
-#~ "official language and glyphs of that place. </p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Místa mají v různých "
-#~ "jazycích často odlišné názvy. Štítek na mapě může název ukázat v jazyku "
-#~ "uživatele. Alternativně může název zobrazit v oficiálně uváděném jazyku a "
-#~ "k tomu obrázky toho místa. </p></body></html>"
-
-#~ msgid "Custom & Native Language"
-#~ msgstr "Vlastní a místní jazyk"
-
-#~ msgid "Custom Language"
-#~ msgstr "Vlastní jazyk"
-
-#~ msgid "Native Language"
-#~ msgstr "Rodný jazyk"
-
-#~ msgid "Remove Folder"
-#~ msgstr "Odstranit složku"
-
-#~ msgid "Export Bookmarks"
-#~ msgstr "Exportovat záložky"
-
-#~ msgid "KML files (*.kml)"
-#~ msgstr "Soubory KML (*.kml)"
-
-#~ msgid "KML Files (*.kml)"
-#~ msgstr "Soubory KML (*.kml)"
-
-#~ msgid "Imported bookmark"
-#~ msgstr "Importované záložka"
-
-#~ msgid "Existing bookmark"
-#~ msgstr "Existující záložka"
-
-#~ msgid "Skip"
-#~ msgstr "Přeskočit"
-
-#~ msgid "Skip All"
-#~ msgstr "Přeskočit vše"
-
-#~ msgid "Bookmark Manager"
-#~ msgstr "Správce záložek"
-
-#~ msgid "Import Bookmarks..."
-#~ msgstr "Importovat záložky..."
-
-#~ msgid "Folders"
-#~ msgstr "Složky"
-
-#~ msgid "New..."
-#~ msgstr "Nový..."
-
-#~ msgid "Edit Bookmark"
-#~ msgstr "Upravit záložku"
-
-#~ msgid "&Description:"
-#~ msgstr "&Popis:"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-#~ "bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-#~ "<tr>\n"
-#~ "<td style=\"border: none;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<table border=\"0\" style=\"-qt-table-type: root; margin-top:4px; margin-"
-#~ "bottom:4px; margin-left:4px; margin-right:4px;\">\n"
-#~ "<tr>\n"
-#~ "<td style=\"border: none;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "font-family:'Ubuntu';\"><br /></p></td></tr></table></body></html>"
-
-#~ msgid "&Folder:"
-#~ msgstr "&Složka:"
-
-#~ msgid "&Add Folder..."
-#~ msgstr "Přid&at složku..."
-
-#~ msgid "'"
-#~ msgstr "'"
-
-#~ msgid "\""
-#~ msgstr "\""
-
-#~ msgctxt "East, the direction"
-#~ msgid "E"
-#~ msgstr "V"
-
-#~ msgctxt "West, the direction"
-#~ msgid "W"
-#~ msgstr "Z"
-
-#~ msgctxt "North, the direction"
-#~ msgid "N"
-#~ msgstr "S"
-
-#~ msgctxt "South, the direction"
-#~ msgid "S"
-#~ msgstr "J"
-
-#~ msgid "′"
-#~ msgstr "′"
-
-#~ msgid "″"
-#~ msgstr "″"
-
-#~ msgid "New Bookmark Folder"
-#~ msgstr "Nová složka záložek"
-
-#~ msgid "Open File"
-#~ msgstr "Otevřít soubor"
-
-#~ msgid "All Supported Files (*.png)"
-#~ msgstr "Všechny podporované soubory (*.png)"
-
-#~ msgid "Name:"
-#~ msgstr "Název:"
-
-#~ msgid "ID:"
-#~ msgstr "ID:"
-
-#~ msgid "Cloud Routes"
-#~ msgstr "Trasy mraků"
-
-#~ msgid "Use local"
-#~ msgstr "Použít místní"
-
-#~ msgid "Use cloud"
-#~ msgstr "Použít cloud"
-
-#~ msgid "Changed"
-#~ msgstr "Změněno"
-
-#~ msgid "Deleted"
-#~ msgstr "Smazáno"
-
-#~ msgid "Login successful"
-#~ msgstr "Přihlášení bylo úspěšné"
-
-#~ msgid "Open"
-#~ msgstr "Otevřít"
-
-#~ msgid "Load"
-#~ msgstr "Načíst"
-
-#~ msgid "Remove from device"
-#~ msgstr "Odstranit ze zařízení"
-
-#~ msgid "Delete from cloud"
-#~ msgstr "Smazat z cloudu"
-
-#~ msgid "Upload to cloud"
-#~ msgstr "Odeslat do cloudu"
-
-#~ msgid "Add &Bookmark"
-#~ msgstr "Přid&at záložku"
-
-#~ msgid "&Full Screen Mode"
-#~ msgstr "&Celoobrazovkový režim"
-
-#~ msgid "Bookmark"
-#~ msgstr "Záložka"
-
-#~ msgid "Current Location: %1"
-#~ msgstr "Současná poloha: %1"
-
-#~ msgid "Go To..."
-#~ msgstr "Přejít na..."
-
-#~ msgid "Search"
-#~ msgstr "Hledat"
-
-#~ msgid "Continue."
-#~ msgstr "Pokračovat."
-
-#~ msgid "Merge."
-#~ msgstr "Sloučit."
-
-#~ msgid "Turn left."
-#~ msgstr "Otočit vlevo."
-
-#~ msgid "Turn right."
-#~ msgstr "Otočit vpravo."
-
-#~ msgid "Continue onto %1."
-#~ msgstr "Pokračovat na %1."
-
-#~ msgctxt "An address with parameters %1=house number, %2=road, %3=city"
-#~ msgid "%1 %2, %3"
-#~ msgstr "%1 %2, %3"
-
-#~ msgid "&Center Map here"
-#~ msgstr "S&třed mapy zde"
-
-#~ msgid "Current &Location"
-#~ msgstr "Současná po&loha"
-
-#~ msgid "From &Map..."
-#~ msgstr "Z &mapy..."
-
-#~ msgid "From &Bookmark"
-#~ msgstr "Z&e záložky"
-
-#~ msgid "&Home"
-#~ msgstr "&Domů"
-
-#~ msgid "Current Location"
-#~ msgstr "Současná poloha"
-
-#~ msgid "Export Route"
-#~ msgstr "Exportovat cestu"
-
-#~ msgid "Guidance Mode"
-#~ msgstr "Prováděcí režim"
-
-#~ msgid "Service Settings"
-#~ msgstr "Nastavení služby"
-
-#~ msgid "No configuration available"
-#~ msgstr "Není dostupné nastavení"
-
-#~ msgid "Select Service to Configure"
-#~ msgstr "Vyberte službu již chcete nastavit"
-
-#~ msgid "Car (fastest)"
-#~ msgstr "Auto (nejrychlejší)"
-
-#~ msgid "Car (shortest)"
-#~ msgstr "Auto (nejkratší)"
-
-#~ msgid "Car (ecological)"
-#~ msgstr "Auto (ekologická)"
-
-#~ msgid "Bicycle"
-#~ msgstr "Kolo"
-
-#~ msgid "Pedestrian"
-#~ msgstr "Chodec"
-
-#~ msgid "Unknown"
-#~ msgstr "Neznámý"
-
-#~ msgid "New Profile"
-#~ msgstr "Nový profil"
-
-#~ msgid "ft"
-#~ msgstr "stop"
-
-#~ msgctxt "journey duration"
-#~ msgid "%1:%2 h"
-#~ msgstr "%1:%2 h"
-
-#~ msgid "Move &Up"
-#~ msgstr "Posunout nahor&u"
-
-#~ msgid "Move &Down"
-#~ msgstr "Posunout &dolů"
-
-#~ msgid "Open Route"
-#~ msgstr "Otevřít cestu"
-
-#~ msgid "Save Route"
-#~ msgstr "Uložit cestu"
-
-#~ msgid "Preview Route"
-#~ msgstr "Náhled cesty"
-
-#~ msgid "Upload to Cloud"
-#~ msgstr "Odeslat do cloudu"
-
-#~ msgid "Reverse Route"
-#~ msgstr "Opačná cesta"
-
-#~ msgid "Clear Route"
-#~ msgstr "Vymazat cestu"
-
-#~ msgid "No results."
-#~ msgstr "Žádné výsledky."
-
-#~ msgid "Show Details"
-#~ msgstr "Zobrazit podrobnosti"
-
-#~ msgid "Choose alternative routes"
-#~ msgstr "Vybrat jiné cesty"
-
-#~ msgid "Credentials"
-#~ msgstr "Přihlašovací údaje"
-
-#~ msgid "Server:"
-#~ msgstr "Server:"
-
-#~ msgid "Username:"
-#~ msgstr "Uživatelské jméno:"
-
-#~ msgid "Test Login"
-#~ msgstr "Vyzkoušet přihlášení"
-
-#~ msgid "Time Zone"
-#~ msgstr "Časové pásmo"
-
-#~ msgid "UTC"
-#~ msgstr "UTC"
-
-#~ msgid "System time zone"
-#~ msgstr "Systémové časové pásmo"
-
-#~ msgid "Choose Time zone"
-#~ msgstr "Vyberte časové pásmo"
-
-#~ msgid "European Central Time"
-#~ msgstr "Středoevropský čas"
-
-#~ msgid "Eastern European Time"
-#~ msgstr "Východoevropský čas"
-
-#~ msgid "Egypt Standard Time"
-#~ msgstr "Egyptský standardní čas"
-
-#~ msgid "Eastern African Time"
-#~ msgstr "Východoafrický čas"
-
-#~ msgid "Middle East Time"
-#~ msgstr "Čas středního východu"
-
-#~ msgid "Near East Time"
-#~ msgstr "Blízkovýchodní čas"
-
-#~ msgid "India Standard Time"
-#~ msgstr "Indický standardní čas"
-
-#~ msgid "Bangladesh Standard Time"
-#~ msgstr "Bangladéšský standardní čas"
-
-#~ msgid "Vietnam Standard Time"
-#~ msgstr "Vietnamský standardní čas"
-
-#~ msgid "China Taiwan Time"
-#~ msgstr "Čínský tchaj-wanský čas"
-
-#~ msgid "Japan Standard Time"
-#~ msgstr "Japonský standardní čas"
-
-#~ msgid "Australia Eastern Time"
-#~ msgstr "Australský východní čas"
-
-#~ msgid "New Zealand Standard Time"
-#~ msgstr "Novozélandský standardní čas"
-
-#~ msgid "Midway Islands Time"
-#~ msgstr "Čas ostrovů Midway"
-
-#~ msgid "Hawaii Standard Time"
-#~ msgstr "Havajský standardní čas"
-
-#~ msgid "Alaska Standard Time"
-#~ msgstr "Aljašský standardní čas"
-
-#~ msgid "Pacific Standard Time"
-#~ msgstr "Pacifický standardní čas"
-
-#~ msgid "Phoenix Standard Time"
-#~ msgstr "Phoenixský standardní čas"
-
-#~ msgid "Mountain Standard Time"
-#~ msgstr "Horský standardní čas"
-
-#~ msgid "Central Standard Time"
-#~ msgstr "Centrální standardní čas"
-
-#~ msgid "Eastern Standard Time"
-#~ msgstr "Východní standardní čas"
-
-#~ msgid "Puerto Rico and US Virgin Islands Time"
-#~ msgstr "Čas pro Porto Rico a Panenské ostrovy"
-
-#~ msgid "Canada Newfoundland Time"
-#~ msgstr "Kanadský Newfoundlandský čas"
-
-#~ msgid "Argentina Standard Time"
-#~ msgstr "Argentinský standardní čas"
-
-#~ msgid "Brazil Eastern Time"
-#~ msgstr "Brazilský východní čas"
-
-#~ msgid "Central African Time"
-#~ msgstr "Středoafrický čas"
-
-#~ msgid "When Marble starts"
-#~ msgstr "Při spuštění Marble"
-
-#~ msgid "Load system time"
-#~ msgstr "Načíst systémový čas"
-
-#~ msgid "Load last session time"
-#~ msgstr "Načíst čas posledního sezení"
-
-#~ msgid "Date and Time"
-#~ msgstr "Datum a čas"
-
-#~ msgid "Routing"
-#~ msgstr "Směrování"
-
-#~ msgid "Synchronization"
-#~ msgstr "Synchronizace"
-
-#~ msgid "Elevation:"
-#~ msgstr "Zdvih:"
-
-#~ msgid " m"
-#~ msgstr " m"
-
-#~ msgid "Select sound files..."
-#~ msgstr "Vyberte zvukové soubory"
-
-#~ msgid "Supported Sound Files (*.mp3 *.ogg *.wav)"
-#~ msgstr "Podporované soubory zvuku (*.mp3 *.ogg *.wav)"
-
-#~ msgid "No URL specified"
-#~ msgstr "Nebyla zadána žádná URL"
-
-#~ msgid "Add link"
-#~ msgstr "Přidat odkaz"
-
-#~ msgid "Relations"
-#~ msgstr "Vztahy"
-
-#~ msgid "Elevation"
-#~ msgstr "Výška"
-
-#~ msgid "No ID specified"
-#~ msgstr "Nezadáno ID"
-
-#~ msgid "Style, Color"
-#~ msgstr "Styl, barva"
-
-#~ msgid "Label"
-#~ msgstr "Popisek"
-
-#~ msgid "Color:"
-#~ msgstr "Barva:"
-
-#~ msgid "Scale:"
-#~ msgstr "Měřítko:"
-
-#~ msgid "Icon"
-#~ msgstr "Ikona"
-
-#~ msgid "Bold"
-#~ msgstr "Tučné"
-
-#~ msgid "Italics"
-#~ msgstr "Kurzíva"
-
-#~ msgid "Underlined"
-#~ msgstr "Podtržené"
-
-#~ msgid "Add image"
-#~ msgstr "Přidat obrázek"
-
-#~ msgctxt "seconds"
-#~ msgid " s"
-#~ msgstr " s"
-
-#~ msgid "Mode:"
-#~ msgstr "Režim:"
-
-#~ msgid "Smooth"
-#~ msgstr "Hladké"
-
-#~ msgid "Bounce"
-#~ msgstr "Odraz"
-
-#~ msgid "Choose image"
-#~ msgstr "Vyberte obrázek"
-
-#~ msgid "All Supported Files (*.png *.jpg *.jpeg)"
-#~ msgstr "Všechny podporované soubory (*.png *.jpg *.jpeg)"
-
-#~ msgid "Formatted text"
-#~ msgstr "Formátovaný text"
-
-#~ msgid "6"
-#~ msgstr "6"
-
-#~ msgid "8"
-#~ msgstr "8"
-
-#~ msgid "9"
-#~ msgstr "9"
-
-#~ msgid "10"
-#~ msgstr "10"
-
-#~ msgid "11"
-#~ msgstr "11"
-
-#~ msgid "12"
-#~ msgstr "12"
-
-#~ msgid "14"
-#~ msgstr "14"
-
-#~ msgid "16"
-#~ msgstr "16"
-
-#~ msgid "18"
-#~ msgstr "18"
-
-#~ msgid "20"
-#~ msgstr "20"
-
-#~ msgid "24"
-#~ msgstr "24"
-
-#~ msgid "36"
-#~ msgstr "36"
-
-#~ msgid "48"
-#~ msgstr "48"
-
-#~ msgid "72"
-#~ msgstr "72"
-
-#~ msgid "96"
-#~ msgstr "96"
-
-#~ msgid "toolBar"
-#~ msgstr "Panel nástrojů"
-
-#~ msgid "Color"
-#~ msgstr "Barva"
-
-#~ msgid "AVI (mpeg4)"
-#~ msgstr "AVI (mpeg4)"
-
-#~ msgid "FLV"
-#~ msgstr "FLV"
-
-#~ msgid "Matroska (h264)"
-#~ msgstr "Matroska (h264)"
-
-#~ msgid "MPEG-4"
-#~ msgstr "MPEG-4"
-
-#~ msgid "MPEG-2 PS (VOB)"
-#~ msgstr "MPEG-2 PS (VOB)"
-
-#~ msgid "OGG"
-#~ msgstr "OGG"
-
-#~ msgid "SWF"
-#~ msgstr "SWF"
-
-#~ msgid "Codecs are unavailable"
-#~ msgstr "Kodeky nejsou dostupné."
-
-#~ msgid "Open..."
-#~ msgstr "Otevřít..."
-
-#~ msgid "FPS (frames per second)"
-#~ msgstr "FPS (snímky za sekundu)"
-
-#~ msgid "Global Search"
-#~ msgstr "Globální hledání"
-
-#~ msgid "Search Results"
-#~ msgstr "Výsledky hledání"
-
-#~ msgid "Search for '%1'"
-#~ msgstr "Vyhledat '%1'"
-
-#~ msgid "Start"
-#~ msgstr "Spustit"
-
-#~ msgid "Video writing failed."
-#~ msgstr "Zápis videa selhal."
-
-#~ msgid "Destination video"
-#~ msgstr "Cílové video"
-
-#~ msgid "Pause"
-#~ msgstr "Pozastavit"
-
-#~ msgid "Wait duration:"
-#~ msgstr "Délka čekání:"
-
-#~ msgid "Installation aborted by user."
-#~ msgstr "Instalace přerušena uživatelem."
-
-#~ msgid "Create item %1"
-#~ msgstr "Vytvořit položku %1"
-
-#~ msgid "Remove item %1"
-#~ msgstr "Odstranit položku %1"
-
-#~ msgid "Change item %1"
-#~ msgstr "Změnit položku %1"
-
-#~ msgid "Update items"
-#~ msgstr "Aktualizovat položky"
-
-#~ msgid "Loop"
-#~ msgstr "Smyčka"
-
-#~ msgid "Save tour"
-#~ msgstr "Uložit výlet"
-
-#~ msgid "Open Tour"
-#~ msgstr "Otevřít výlet"
-
-#~ msgid "KML Tours (*.kml)"
-#~ msgstr "Výlet KML (*.kml)"
-
-#~ msgid "Save Tour as"
-#~ msgstr "Uložit výlet jako"
-
-#~ msgid "Discard Changes"
-#~ msgstr "Zahodit změny"
-
-#~ msgid "Tour"
-#~ msgstr "Výlet"
-
-#~ msgid "New Tour"
-#~ msgstr "Nový výlet"
-
-#~ msgid "Save Tour"
-#~ msgstr "Uložit výlet"
-
-#~ msgid "Save Tour As"
-#~ msgstr "Uložit výlet jako"
-
-#~ msgctxt "@action:button"
-#~ msgid "&Apply"
-#~ msgstr "&Použít"
