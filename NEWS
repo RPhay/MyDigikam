@@ -141,7 +141,7 @@ BUGFIXES:
 122 ==> 479571 - Pressing any key while a face-name is highlighted when previewing an image crashes digiKam.
 123 ==> 139781 - Add new option to add audio track to Video Slide Show tool.
 124 ==> 479578 - Import errors claiming imported path is already part of album path.
-125 ==> 
+125 ==> 479602 - Image editor: slider input not usable.
 126 ==> 
 127 ==> 
 128 ==> 
