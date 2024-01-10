@@ -74,10 +74,4 @@ if(ENABLE_MEDIAPLAYER)
                           ${COMMON_TEST_LINK}
     )
 
-    if(NOT ENABLE_QTMULTIMEDIA)
-
-#        add_subdirectory(qtav)
-
-    endif()
-
 endif()
