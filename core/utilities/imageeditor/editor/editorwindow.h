@@ -114,7 +114,6 @@ protected:
     QColor                    m_bgColor;
 
     SidebarSplitter*          m_splitter;
-    QSplitter*                m_vSplitter;
 
     QAction*                  m_openVersionAction;
     QAction*                  m_saveAction;

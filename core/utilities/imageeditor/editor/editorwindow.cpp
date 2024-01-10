@@ -56,7 +56,6 @@ EditorWindow::EditorWindow(const QString& name, QWidget* const parent)
     m_redoAction                   = nullptr;
     m_showBarAction                = nullptr;
     m_splitter                     = nullptr;
-    m_vSplitter                    = nullptr;
     m_stackView                    = nullptr;
     m_setExifOrientationTag        = true;
     m_editingOriginalImage         = true;
@@ -810,15 +809,6 @@ void EditorWindow::readStandardSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());
 
-    // Restore Canvas layout
-
-    if (group.hasKey(d->configVerticalSplitterSizesEntry) && m_vSplitter)
-    {
-        QByteArray state;
-        state = group.readEntry(d->configVerticalSplitterStateEntry, state);
-        m_vSplitter->restoreState(QByteArray::fromBase64(state));
-    }
-
     // Restore full screen Mode
 
     readFullScreenSettings(group);
@@ -990,11 +980,6 @@ void EditorWindow::saveStandardSettings()
 
     group.writeEntry(d->configAutoZoomEntry, d->zoomFitToWindowAction->isChecked());
     m_splitter->saveState(group);
-
-    if (m_vSplitter)
-    {
-        group.writeEntry(d->configVerticalSplitterStateEntry, m_vSplitter->saveState().toBase64());
-    }
 
     group.writeEntry("Show Thumbbar", thumbBar()->shouldBeVisible());
     group.writeEntry(d->configUnderExposureIndicatorEntry, d->exposureSettings->underExposureIndicator);
