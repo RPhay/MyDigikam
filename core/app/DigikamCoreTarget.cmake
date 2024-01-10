@@ -63,7 +63,7 @@ if(ENABLE_MEDIAPLAYER)
 
         set(DIGIKAMCORE_OBJECTS
             ${DIGIKAMCORE_OBJECTS}
-            $<TARGET_OBJECTS:core_qtav_obj>
+            $<TARGET_OBJECTS:core_qtavplayer_obj>
         )
 
     endif()

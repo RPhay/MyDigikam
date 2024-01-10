@@ -6,20 +6,22 @@
 
 if(ENABLE_MEDIAPLAYER)
 
+    # NOTE: For Qt5, QtMultimedia is used to render video on widget.
+    # NOTE: For Qt6, QtMultimedia based on FFMpeg is only supported with version > 6.5.
+
+    find_package(Qt${QT_VERSION_MAJOR}
+                 OPTIONAL_COMPONENTS
+                 Multimedia
+                 MultimediaWidgets
+    )
+
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Multimedia,INTERFACE_INCLUDE_DIRECTORIES>
+                        $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::MultimediaWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+
     if(Qt6_FOUND)
 
-        # NOTE: Qt Multimedia is only supported with Qt6 > 6.5.
+        include_directories(${CMAKE_SOURCE_DIR}/core/libs/video/player/qtmm)
 
-        find_package(Qt${QT_VERSION_MAJOR}
-                     OPTIONAL_COMPONENTS
-                     Multimedia
-                     MultimediaWidgets
-        )
-
-        include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Multimedia,INTERFACE_INCLUDE_DIRECTORIES>
-                            $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::MultimediaWidgets,INTERFACE_INCLUDE_DIRECTORIES>
-                            ${CMAKE_SOURCE_DIR}/core/libs/video/player/qtmm
-        )
 
         set(ENABLE_QTMULTIMEDIA ON)
         message(STATUS "MediaPlayer type:     Qt6::Multimedia")
@@ -44,7 +46,6 @@ if(ENABLE_MEDIAPLAYER)
             find_package(Portaudio  QUIET)
             find_package(PulseAudio QUIET)
             find_package(VAAPI      QUIET)
-#           find_package(uchardet   QUIET)
             find_package(OpenSLES   QUIET)
 
             if(WIN32)
@@ -490,32 +491,12 @@ if(ENABLE_MEDIAPLAYER)
 
             # --- Resume ---------------------------------------------------------------------------------------
 
-            message(STATUS "MediaPlayer type       : QtAV")
+            message(STATUS "MediaPlayer type       : QtAVPlayer")
             message(STATUS "MediaPlayer libraries  : ${MEDIAPLAYER_LIBRARIES}")
             message(STATUS "MediaPlayer definitions: ${MEDIAPLAYER_DEFINITIONS}")
             message(STATUS "MediaPlayer flags      : ${MEDIAPLAYER_FLAGS}")
 
-            include_directories(${CMAKE_SOURCE_DIR}/core/libs/video/qtav/ffmpeg
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/subtitle
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/utils
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/filter
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/io
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/output
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/output/audio
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/output/video
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/codec
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/codec/audio
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/codec/video
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/widgets
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/opengl
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/config
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/windows
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/X11
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/vaapi
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/cuda
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/player/qtav
-                                ${CMAKE_SOURCE_DIR}/core/libs/video/manager/qtav
-            )
+            include_directories(${CMAKE_SOURCE_DIR}/core/libs/video/QtAVPlayer)
 
         endif()
 

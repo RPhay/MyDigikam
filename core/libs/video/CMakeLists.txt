@@ -83,7 +83,7 @@ if(ENABLE_MEDIAPLAYER)
 
     if (NOT ENABLE_QTMULTIMEDIA)
 
-        add_subdirectory(qtav)
+        add_subdirectory(QtAVPlayer)
 
     endif()
 
