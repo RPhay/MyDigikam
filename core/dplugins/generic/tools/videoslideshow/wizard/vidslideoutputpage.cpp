@@ -96,7 +96,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     d->audioUrl              = new DFileSelector(main);
     d->audioUrl->setFileDlgMode(QFileDialog::ExistingFile);
     d->audioUrl->setFileDlgOptions(QFileDialog::ReadOnly);
-    d->audioUrl->setFileDlgFilter(QLatin1String("*.mp3 *.ogg *.wav"));
+    d->audioUrl->setFileDlgFilter(QLatin1String("*.mp3 *.ogg *.wav *.flac *.m4a"));
     d->audioUrl->setFileDlgTitle(i18nc("@title:window", "Select Audio Track"));
     d->audioUrl->lineEdit()->setPlaceholderText(i18n("Video soundtrack (lets empty if none)"));
     audioLabel->setBuddy(d->audioUrl);
