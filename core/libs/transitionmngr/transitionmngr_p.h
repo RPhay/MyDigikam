@@ -140,7 +140,7 @@ private:
 
     // Internal functions to render an effect frame.
     // aInit is to true when effect is initialized (first call).
-    // The integer value is a tempo in ms to wait between frames,
+    // The returned integer value is a tempo in ms to wait between frames,
     // or -1 if the effect is completed.
 
     int transitionNone(bool aInit);
@@ -177,7 +177,10 @@ private:
 
     QRgb   convertFromPremult(const QRgb& p)       const;
     QImage fastBlur(const QImage& img, int radius) const;
-    QRandomGenerator *randomGenerator;
+
+private:
+
+    QRandomGenerator* randomGenerator = nullptr;
 };
 
 } // namespace Digikam
