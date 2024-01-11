@@ -63,10 +63,13 @@ void FFmpegLauncher::encodeFrames()
 
     if (!m_settings->audioTrack.isEmpty())
     {
-        args << QLatin1String("-i")
+        args << QLatin1String("-stream_loop")
+             << QLatin1String("-1")
+             << QLatin1String("-i")
              << m_settings->audioTrack                            // Audio file to use as soundtrack.
              << QLatin1String("-c:a")
-             << QLatin1String("copy");                            // Do not reencode
+             << QLatin1String("copy")                             // Do not reencode
+             << QLatin1String("-shortest");
     }
 
     args << QLatin1String("-b:v")                                 // Video bits-rate/
@@ -86,6 +89,7 @@ QMap<QString, QString> FFmpegLauncher::supportedCodecs()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported codecs";
 
+    setConsoleTraces(false);
     setProgram(m_settings->ffmpegPath);
     setArguments(QStringList() << QLatin1String("-v")
                                << QLatin1String("quiet")
@@ -120,6 +124,7 @@ QMap<QString, QString> FFmpegLauncher::supportedFormats()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Get FFmpeg supported formats";
 
+    setConsoleTraces(false);
     setProgram(m_settings->ffmpegPath);
     setArguments(QStringList() << QLatin1String("-v")
                                << QLatin1String("quiet")
@@ -154,6 +159,7 @@ QTime FFmpegLauncher::soundTrackLength(const QString& audioPath)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Get soundtrack length with FFmpeg";
 
+    setConsoleTraces(false);
     setProgram(m_settings->ffmpegPath);
     setArguments(QStringList() << QLatin1String("-i")
                                << audioPath);

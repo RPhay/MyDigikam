@@ -37,16 +37,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 00:39+0000\n"
-"PO-Revision-Date: 2024-01-08 09:17+0100\n"
+"POT-Creation-Date: 2024-01-11 01:34+0000\n"
+"PO-Revision-Date: 2024-01-10 07:08+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.4.2\n"
 
 #: core/app/date/ddateedit.cpp:497
@@ -1006,9 +1006,9 @@ msgstr ""
 "slike.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:352
-#: core/utilities/imageeditor/main/imagewindow.cpp:1100
-#: core/utilities/imageeditor/main/imagewindow.cpp:1125
-#: core/utilities/imageeditor/main/imagewindow.cpp:1157
+#: core/utilities/imageeditor/main/imagewindow.cpp:1102
+#: core/utilities/imageeditor/main/imagewindow.cpp:1127
+#: core/utilities/imageeditor/main/imagewindow.cpp:1159
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Album \"%1\""
@@ -1936,7 +1936,7 @@ msgid "Change the filename of the currently selected item."
 msgstr "Spremeni ime datoteke trenutno izbranega predmeta."
 
 #: core/app/main/digikamapp_setup.cpp:492
-#: core/utilities/imageeditor/editor/editorwindow.cpp:344
+#: core/utilities/imageeditor/editor/editorwindow.cpp:343
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
@@ -2547,21 +2547,21 @@ msgid "Main Tools"
 msgstr "Glavna orodja"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2664
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2649
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Poobdelava"
 
 #: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2681
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2666
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Izvoz"
 
 #: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2688
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2673
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -11158,7 +11158,7 @@ msgstr "Optično preberi slike"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:104
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1870
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1855
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
@@ -11198,8 +11198,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:181
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2344
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2363
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2329
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2348
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -15738,7 +15738,7 @@ msgstr "Prilagodi čas in datum"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
-#: core/utilities/imageeditor/editor/editorwindow.cpp:598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:597
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -17471,7 +17471,7 @@ msgstr "Ciljna mapa:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:126
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -20025,13 +20025,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "Izberite želeno obliko za izvoz tiska kot slike."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:111
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
 #, kde-format
 msgid "Destination folder:"
 msgstr "Ciljna mapa:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:117
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:127
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20659,7 +20659,7 @@ msgstr "Video predstavitev ni zaključena"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:186
 #, kde-format
 msgid "See the video encoding trace below"
-msgstr ""
+msgstr "Oglejte si sled kodiranja videa spodaj"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:191
 #, kde-format
@@ -20709,42 +20709,46 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "Izvajalni program FFmpeg"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:86
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Format medijskega vsebnika:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:94
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:97
+#, kde-format
 msgid "Soundtrack File:"
-msgstr "Glasbena podlaga:"
+msgstr "Datoteka posnetega zvoka:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Audio track"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:103
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
-msgstr "Zvočna sled"
-
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:101
-#, kde-format
-msgid "Video soundtrack (lets empty if none)"
-msgstr ""
+msgstr "Izberite zvočno sled"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
-msgid "Soundtrack Duration:"
-msgstr "Glasbena podlaga:"
+#, kde-format
+msgid "Video soundtrack (lets empty if none)"
+msgstr "Zvočni posnetek videa (pustite prazno, če ga ni)"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
+#, kde-format
+msgid "Soundtrack Duration:"
+msgstr "Trajanje zvočnega posnetka:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:112
+#, kde-format
+msgid ""
+"<i>Notes about soundtrack: if the audio length is smaller than video, it "
+"will be played in loop. If the audio length is largest than video, it will "
+"be trimmed.</i>"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Ime izhodne datoteke za video bo ustvarjeno samodejno."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:140
 #, kde-format
 msgid "Open in Player:"
 msgstr "Odpri v predvajalniku:"
@@ -41283,11 +41287,9 @@ msgid "Default from Desktop"
 msgstr "Privzeto iz namizja"
 
 #: core/libs/video/manager/vidslidetask.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Generating files for \"%1\""
+#, kde-format
 msgid "Generating frames from %1 Done"
-msgstr "Generiram datoteke za \"%1\""
+msgstr "Generiranje sličic iz %1 Narejeno"
 
 #: core/libs/video/manager/vidslidethread.cpp:63
 #, kde-format
@@ -49611,7 +49613,7 @@ msgid "Unknown"
 msgstr "Neznano"
 
 #: core/showfoto/main/showfoto.cpp:280
-#: core/utilities/imageeditor/main/imagewindow.cpp:490
+#: core/utilities/imageeditor/main/imagewindow.cpp:492
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -49623,7 +49625,7 @@ msgid "Delete File"
 msgstr "Izbriši datoteko"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2390
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2375
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -49640,8 +49642,8 @@ msgid "Remote file handling is not supported"
 msgstr "Upravljanje z oddaljenimi datotekami ni podprto"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:573
-#: core/utilities/imageeditor/main/imagewindow.cpp:688
+#: core/utilities/imageeditor/main/imagewindow.cpp:575
+#: core/utilities/imageeditor/main/imagewindow.cpp:690
 #, kde-format
 msgid "Image saved successfully"
 msgstr "Slika je bila uspešno shranjena"
@@ -52025,7 +52027,7 @@ msgstr "Uveljavljanje sprememb obrazov"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
-#: core/utilities/imageeditor/editor/editorwindow.cpp:592
+#: core/utilities/imageeditor/editor/editorwindow.cpp:591
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -58224,49 +58226,49 @@ msgstr "Poskusi"
 msgid "Try all settings."
 msgstr "Poskusi vse nastavitve."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:218
+#: core/utilities/imageeditor/editor/editorwindow.cpp:217
 #, kde-format
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr "Prvi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:225
+#: core/utilities/imageeditor/editor/editorwindow.cpp:224
 #, kde-format
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr "Zadnji"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:232
+#: core/utilities/imageeditor/editor/editorwindow.cpp:231
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr "Odpri izvirnik"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:244
+#: core/utilities/imageeditor/editor/editorwindow.cpp:243
 #, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr "Shrani spremembe"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:245
+#: core/utilities/imageeditor/editor/editorwindow.cpp:244
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr "Shrani spremembe v trenutno različico datoteke"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:250
+#: core/utilities/imageeditor/editor/editorwindow.cpp:249
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr "Shrani kot novo različico"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:251
+#: core/utilities/imageeditor/editor/editorwindow.cpp:250
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr "Shrani trenutne spremembe v novo različico datoteke"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:257
+#: core/utilities/imageeditor/editor/editorwindow.cpp:256
 #, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -58274,7 +58276,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr "Shrani novo različico kot ..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:258
+#: core/utilities/imageeditor/editor/editorwindow.cpp:257
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58284,145 +58286,145 @@ msgstr ""
 "Shrani trenutne spremembe v novo različico datoteke, pri tem pa navedite ime "
 "datoteke in vrsto"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:263
+#: core/utilities/imageeditor/editor/editorwindow.cpp:262
 #, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr "Shrani kot vrsto"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:265
+#: core/utilities/imageeditor/editor/editorwindow.cpp:264
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:266
+#: core/utilities/imageeditor/editor/editorwindow.cpp:265
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:267
+#: core/utilities/imageeditor/editor/editorwindow.cpp:266
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:268
+#: core/utilities/imageeditor/editor/editorwindow.cpp:267
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr "PGF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:272
+#: core/utilities/imageeditor/editor/editorwindow.cpp:271
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:278
+#: core/utilities/imageeditor/editor/editorwindow.cpp:277
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr "HEIF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:284
+#: core/utilities/imageeditor/editor/editorwindow.cpp:283
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr "JXL"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:289
+#: core/utilities/imageeditor/editor/editorwindow.cpp:288
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr "WEBP"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:294
+#: core/utilities/imageeditor/editor/editorwindow.cpp:293
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr "AVIF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:312
+#: core/utilities/imageeditor/editor/editorwindow.cpp:311
 #, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr "Izvozi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:313
+#: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr "Shrani datoteko v mapi izven vaše zbirke"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:322
+#: core/utilities/imageeditor/editor/editorwindow.cpp:321
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr "Zavrzi spremembe"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:323
+#: core/utilities/imageeditor/editor/editorwindow.cpp:322
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr "Zavrže vse trenutne spremembe v tej datoteki"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:336
+#: core/utilities/imageeditor/editor/editorwindow.cpp:335
 #, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr "Odpri s privzetim programom"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:337
+#: core/utilities/imageeditor/editor/editorwindow.cpp:336
 #, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr "Odpre izbran predmet v privzetem programu."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:360
+#: core/utilities/imageeditor/editor/editorwindow.cpp:359
 #, kde-format
 msgctxt "@action"
 msgid "Undo"
 msgstr "Razveljavi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:387
+#: core/utilities/imageeditor/editor/editorwindow.cpp:386
 #, kde-format
 msgctxt "@action"
 msgid "Redo"
 msgstr "Uveljavi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:412
 #, kde-format
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:418
+#: core/utilities/imageeditor/editor/editorwindow.cpp:417
 #, kde-format
 msgctxt "@action"
 msgid "Select None"
 msgstr "Odstrani izbor"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:432
+#: core/utilities/imageeditor/editor/editorwindow.cpp:431
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "Približaj na 100 %"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:438
+#: core/utilities/imageeditor/editor/editorwindow.cpp:437
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "Prilagodi oknu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:445
+#: core/utilities/imageeditor/editor/editorwindow.cpp:444
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "Prilagodi izbiri"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:450
+#: core/utilities/imageeditor/editor/editorwindow.cpp:449
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58430,13 +58432,13 @@ msgid ""
 msgstr ""
 "To možnost lahko uporabite za približanje slike na trenutno območje izbora."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:474
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Kazalnik pod-osvetlitve"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:477
+#: core/utilities/imageeditor/editor/editorwindow.cpp:476
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58446,13 +58448,13 @@ msgstr ""
 "Nastavite to možnost, da prikažete črno prekritje na sliko. To vam bo "
 "pomagalo, da se izognete pod-osvetljevanju slike."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:485
+#: core/utilities/imageeditor/editor/editorwindow.cpp:484
 #, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Kazalnik preko-osvetlitve"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:487
+#: core/utilities/imageeditor/editor/editorwindow.cpp:486
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58462,32 +58464,32 @@ msgstr ""
 "Nastavite to možnost, da prikažete belo prekritje na sliko. To vam bo "
 "pomagalo, da se izognete preko-osvetljevanju slike."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:495
+#: core/utilities/imageeditor/editor/editorwindow.cpp:494
 #: core/utilities/import/main/importui.cpp:488
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "Upravljan pregled barv"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:502
+#: core/utilities/imageeditor/editor/editorwindow.cpp:501
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "Možnosti mehkega preverjanja..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:507
+#: core/utilities/imageeditor/editor/editorwindow.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "Pogled mehkega preverjanja"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:515
+#: core/utilities/imageeditor/editor/editorwindow.cpp:514
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "Obreži v izbor"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:518
+#: core/utilities/imageeditor/editor/editorwindow.cpp:517
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58497,33 +58499,33 @@ msgstr ""
 "To možnost lahko uporabite za obrezovanje slike. Izberite območje slike, da "
 "omogočite to dejanje."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:526
+#: core/utilities/imageeditor/editor/editorwindow.cpp:525
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "Zrcali vodoravno"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:534
+#: core/utilities/imageeditor/editor/editorwindow.cpp:533
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "Zrcali navpično"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:544
+#: core/utilities/imageeditor/editor/editorwindow.cpp:543
 #: core/utilities/import/views/importpreviewview.cpp:212
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Zavrti v levo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:552
+#: core/utilities/imageeditor/editor/editorwindow.cpp:551
 #: core/utilities/import/views/importpreviewview.cpp:213
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Zavrti v desno"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:584
+#: core/utilities/imageeditor/editor/editorwindow.cpp:583
 #: core/utilities/import/main/importui.cpp:530
 #: core/utilities/import/main/importui.cpp:767
 #, kde-format
@@ -58531,37 +58533,37 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Predhodna slika"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:614
+#: core/utilities/imageeditor/editor/editorwindow.cpp:613
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "Brez izbora"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:617
+#: core/utilities/imageeditor/editor/editorwindow.cpp:616
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Podrobnosti o trenutnem izboru slik"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:621
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Podrobnosti o velikosti slike"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1137
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Shranjevanje slike..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1153
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1138
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Počakajte, da bo slika shranjena..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1174
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1159
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58571,13 +58573,13 @@ msgstr ""
 "Pravkar boste prepisali datoteko \"%1\"\n"
 "Ali ste prepričani?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1179
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1164
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Opozorilo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1289
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1274
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58587,7 +58589,7 @@ msgstr ""
 "Slika \"%1\" je bila spremenjena.\n"
 "Ali jo želite shraniti?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1440
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1425
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58597,25 +58599,25 @@ msgstr ""
 "Slika \"%1\" je bila spremenjena.\n"
 "Vse spremembe bodo izgubljene."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1518
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1503
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "Brez izbora"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1538
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1523
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Nalaganje:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1566
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1551
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "Ni mogoče naložiti \"%1\""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1608
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1593
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58627,13 +58629,13 @@ msgstr ""
 "preoblikovanja ne bodo uveljavljena. Preverite nastavitve upravljanja barv v "
 "nastavitvah digiKama."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1665
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1650
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Shranjujem:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1687
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1672
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58646,32 +58648,32 @@ msgstr ""
 "\"%1\"  v\n"
 "\"%2\" ni uspelo."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1805
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Ni bilo mogoče odpreti začasne datoteke v mapi \"%1\": %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2016
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2001
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "Ni bilo mogoče določiti oblike v kateri bo shranjena ciljna slika."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2023
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2008
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr "Ni mogoče shraniti: najdena pot datoteke \"%1\" ni veljavna."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2270
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2255
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 "Ni mogoče shraniti datoteke \"%1\" v predlagano ime datoteke različice \"%2\""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2345
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2330
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58681,7 +58683,7 @@ msgstr ""
 "Nimate dovoljenja za pisanje za datoteko imenovano \"%1\". Ali ste "
 "prepričani, da jo želite prepisati?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2364
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2349
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58690,25 +58692,25 @@ msgstr ""
 "Datoteka z imenom \"%1\" že obstaja. Ali ste prepričani, da jo želite "
 "prepisati?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2391
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2376
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Ni bilo mogoče prepisati izvorne datoteke"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2470
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2455
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Upravljan pregled barv je omogočen."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2474
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2459
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Upravljan pregled barv je onemogočen."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2479
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2464
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58717,106 +58719,106 @@ msgid ""
 msgstr ""
 "Upravljanje barv ni nastavljeno, zato upravljan pogled barv ni na voljo."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2515
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2500
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Kazalnik pod-osvetlitve je omogočen"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2516
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2501
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Kazalnik pod-osvetlitve je onemogočen"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2530
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2515
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Kazalnik preko-osvetlitve je omogočen"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2531
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2516
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Kazalnik preko-osvetlitve je onemogočen"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2607
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Preoblikuj"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2636
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Okrasi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2643
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2628
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Učinki"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2650
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Barve"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2657
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2642
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Izboljšaj"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2805
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Odpri z"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2834
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2819
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Drugo..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2843
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2828
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "Odpri z..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:185
+#: core/utilities/imageeditor/main/imagewindow.cpp:187
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "Urejevalnik slik - %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:189
+#: core/utilities/imageeditor/main/imagewindow.cpp:191
 #, kde-format
 msgid "Image Editor"
 msgstr "Urejevalnik slik"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:359
+#: core/utilities/imageeditor/main/imagewindow.cpp:361
 #, kde-format
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:360
+#: core/utilities/imageeditor/main/imagewindow.cpp:362
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:930
+#: core/utilities/imageeditor/main/imagewindow.cpp:932
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Ni slike v trenutnem albumu"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:931
+#: core/utilities/imageeditor/main/imagewindow.cpp:933
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -58825,13 +58827,13 @@ msgstr ""
 "Trenutno ni nobene slike za prikaz v trenutnem albumu.\n"
 "Urejevalnik slik bo zaprt."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1202
+#: core/utilities/imageeditor/main/imagewindow.cpp:1204
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Datoteka ni na voljo"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1203
+#: core/utilities/imageeditor/main/imagewindow.cpp:1205
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

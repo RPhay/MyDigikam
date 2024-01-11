@@ -43,6 +43,11 @@ public:
     void setTimeOut(int msecs);
 
     /**
+     * If turned on, all traces from the process are printed on the console.
+     */
+    void setConsoleTraces(bool b);
+
+    /**
      * Start the process.
      */
     void startProcess();

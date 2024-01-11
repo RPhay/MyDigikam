@@ -38,14 +38,15 @@ public:
 
 public:
 
-    QSharedPointer<QProcess> process     = nullptr;
+    QSharedPointer<QProcess> process       = nullptr;
     QStringList              args;
     QString                  prog;
     QString                  dir;
-    bool                     successFlag = false;
-    int                      exitCode    = 0;
-    int                      timeOut     = 30000;           ///< in milli-seconds;
-    qint64                   elapsed     = 0;
+    bool                     consoleTraces = true;
+    bool                     successFlag   = false;
+    int                      exitCode      = 0;
+    int                      timeOut       = 30000;           ///< in milli-seconds;
+    qint64                   elapsed       = 0;
     QString                  output;
 };
 
@@ -103,6 +104,11 @@ bool ProcessLauncher::success() const
 qint64 ProcessLauncher::elapsedTime() const
 {
     return d->elapsed;
+}
+
+void ProcessLauncher::setConsoleTraces(bool b)
+{
+    d->consoleTraces = b;
 }
 
 void ProcessLauncher::startProcess()
@@ -183,19 +189,22 @@ void ProcessLauncher::slotReadyRead()
         QString txt = QString::fromLocal8Bit(data.data(), data.size());
         d->output.append(txt);
 
-        Q_FOREACH (const QString& str, txt.split(QLatin1Char('\n')))
+        if (d->consoleTraces)
         {
-            if (!str.isEmpty())
+            Q_FOREACH (const QString& str, txt.split(QLatin1Char('\n')))
             {
-                qCDebug(DIGIKAM_GENERAL_LOG)
+                if (!str.isEmpty())
+                {
+                    qCDebug(DIGIKAM_GENERAL_LOG)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                   .noquote()
+                       .noquote()
 
 #endif
 
-                   << str;
+                       << str;
+                }
             }
         }
     }

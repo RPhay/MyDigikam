@@ -82,6 +82,8 @@ ImageWindow::ImageWindow()
     setAutoSaveSettings(configGroupName(), true);
     d->viewContainer->setAutoSaveSettings(QLatin1String("ImageViewer Thumbbar"), true);
 
+    d->thumbBarDock->reInitialize();
+
     //-------------------------------------------------------------
 
     d->rightSideBar->setConfigGroup(KConfigGroup(&group, QLatin1String("Right Sidebar")));

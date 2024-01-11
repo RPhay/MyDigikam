@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 00:39+0000\n"
-"PO-Revision-Date: 2024-01-05 01:53+0100\n"
+"POT-Creation-Date: 2024-01-11 01:34+0000\n"
+"PO-Revision-Date: 2024-01-11 01:51+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1007,9 +1007,9 @@ msgstr ""
 "las imágenes seleccionadas.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:352
-#: core/utilities/imageeditor/main/imagewindow.cpp:1100
-#: core/utilities/imageeditor/main/imagewindow.cpp:1125
-#: core/utilities/imageeditor/main/imagewindow.cpp:1157
+#: core/utilities/imageeditor/main/imagewindow.cpp:1102
+#: core/utilities/imageeditor/main/imagewindow.cpp:1127
+#: core/utilities/imageeditor/main/imagewindow.cpp:1159
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Álbum «%1»"
@@ -1932,7 +1932,7 @@ msgid "Change the filename of the currently selected item."
 msgstr "Cambiar el nombre de archivo del elemento seleccionado."
 
 #: core/app/main/digikamapp_setup.cpp:492
-#: core/utilities/imageeditor/editor/editorwindow.cpp:344
+#: core/utilities/imageeditor/editor/editorwindow.cpp:343
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
@@ -2547,21 +2547,21 @@ msgid "Main Tools"
 msgstr "Herramientas principales"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2664
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2649
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Posprocesamiento"
 
 #: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2681
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2666
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Exportar"
 
 #: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2688
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2673
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -10728,10 +10728,9 @@ msgid "Golden Mean"
 msgstr "Media dorada"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:427
-#, fuzzy, kde-format
-#| msgid "Centered"
+#, kde-format
 msgid "Center Lines"
-msgstr "Centrado"
+msgstr "Centrar líneas"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:428
 #, kde-format
@@ -11311,7 +11310,7 @@ msgstr "Escanear imágenes"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:104
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1870
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1855
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
@@ -11351,8 +11350,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:181
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2344
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2363
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2329
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2348
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -15928,7 +15927,7 @@ msgstr "Ajustar fecha y hora"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
-#: core/utilities/imageeditor/editor/editorwindow.cpp:598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:597
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -17685,7 +17684,7 @@ msgstr "Carpeta de destino:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:126
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -20278,13 +20277,13 @@ msgstr ""
 "Seleccione su formato preferido para exportar la impresión como imagen."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:111
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
 #, kde-format
 msgid "Destination folder:"
 msgstr "Carpeta de destino:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:117
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:127
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20971,42 +20970,46 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "Binario de FFmpeg"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:86
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Formato del contenedor multimedia:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:94
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:97
+#, kde-format
 msgid "Soundtrack File:"
-msgstr "Banda sonora:"
+msgstr "Archivo de banda sonora:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Audio track"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:103
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
-msgstr "Pista de sonido"
-
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:101
-#, kde-format
-msgid "Video soundtrack (lets empty if none)"
-msgstr ""
+msgstr "Seleccionar pista de sonido"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
-msgid "Soundtrack Duration:"
-msgstr "Banda sonora:"
+#, kde-format
+msgid "Video soundtrack (lets empty if none)"
+msgstr "Banda sonora del vídeo (dejar en blanco si no hay ninguna)"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
+#, kde-format
+msgid "Soundtrack Duration:"
+msgstr "Duración de la banda sonora:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:112
+#, kde-format
+msgid ""
+"<i>Notes about soundtrack: if the audio length is smaller than video, it "
+"will be played in loop. If the audio length is largest than video, it will "
+"be trimmed.</i>"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "El nombre del archivo de salida de vídeo se generará automáticamente."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:140
 #, kde-format
 msgid "Open in Player:"
 msgstr "Abrir en el reproductor:"
@@ -28083,30 +28086,24 @@ msgid "Tags (0)"
 msgstr "Etiquetas (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Albums"
+#, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Todos los álbumes"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive"
-msgstr "Selección recursiva"
+msgstr "Recursiva"
 
 #: core/libs/album/widgets/albumselectors.cpp:182
 #: core/libs/album/widgets/albumselectors.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
-msgstr "Selección recursiva"
+msgstr "Selección recursiva."
 
 #: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
@@ -28127,9 +28124,7 @@ msgid "Reset selected albums"
 msgstr "Reiniciar los álbumes seleccionados"
 
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Tags"
+#, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Todas las etiquetas"
@@ -41215,6 +41210,8 @@ msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
+"Una completa solución multiplataforma para grabar, convertir y transmitir "
+"sonido y vídeo."
 
 #: core/libs/video/manager/vidslidesettings.cpp:488
 #, kde-format
@@ -41697,35 +41694,29 @@ msgid "Default from Desktop"
 msgstr "Por omisión del escritorio"
 
 #: core/libs/video/manager/vidslidetask.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Generating files for \"%1\""
+#, kde-format
 msgid "Generating frames from %1 Done"
-msgstr "Generando archivos para «%1»"
+msgstr "Terminada la generación de fotogramas de %1"
 
 #: core/libs/video/manager/vidslidethread.cpp:63
-#, fuzzy, kde-format
-#| msgid "Cannot create a temporary directory"
+#, kde-format
 msgid "Error while creating temporary directory %1!"
-msgstr "No se puede crear un directorio temporal"
+msgstr "Ha ocurrido un error al crear el directorio temporal %1"
 
 #: core/libs/video/manager/vidslidethread.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Loading cameras..."
+#, kde-format
 msgid "Encoding frames..."
-msgstr "Cargando cámaras..."
+msgstr "Codificando fotogramas..."
 
 #: core/libs/video/manager/vidslidethread.cpp:133
 #, kde-format
 msgid "Encoding done."
-msgstr ""
+msgstr "Codificación terminada."
 
 #: core/libs/video/manager/vidslidethread.cpp:137
-#, fuzzy, kde-format
-#| msgid "Error while opening the source database."
+#, kde-format
 msgid "Error while encoding frames!"
-msgstr "Ha ocurrido un error al acceder a la base de datos de origen."
+msgstr "Ha ocurrido un error al codificar fotogramas."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -42457,7 +42448,7 @@ msgstr "Cambiar"
 #: core/libs/widgets/files/dbinarysearch.cpp:190
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
-msgstr ""
+msgstr "Parece que el archivo binario encontrado no funciona como se esperaba."
 
 #: core/libs/widgets/files/dfileselector.cpp:53
 #, kde-format
@@ -50060,7 +50051,7 @@ msgid "Unknown"
 msgstr "Desconocidas"
 
 #: core/showfoto/main/showfoto.cpp:280
-#: core/utilities/imageeditor/main/imagewindow.cpp:490
+#: core/utilities/imageeditor/main/imagewindow.cpp:492
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -50072,7 +50063,7 @@ msgid "Delete File"
 msgstr "Borrar el archivo"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2390
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2375
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -50089,8 +50080,8 @@ msgid "Remote file handling is not supported"
 msgstr "No se permite el manejo de archivos remotos"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:573
-#: core/utilities/imageeditor/main/imagewindow.cpp:688
+#: core/utilities/imageeditor/main/imagewindow.cpp:575
+#: core/utilities/imageeditor/main/imagewindow.cpp:690
 #, kde-format
 msgid "Image saved successfully"
 msgstr "Imagen guardada con éxito"
@@ -52499,7 +52490,7 @@ msgstr "Aplicando cambios en caras"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
-#: core/utilities/imageeditor/editor/editorwindow.cpp:592
+#: core/utilities/imageeditor/editor/editorwindow.cpp:591
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -56868,10 +56859,9 @@ msgid "&Atmosphere"
 msgstr "&Atmósfera"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
-#, fuzzy, kde-format
-#| msgid "Shows the atmosphere around the earth."
+#, kde-format
 msgid "A plugin to show the atmosphere around the earth."
-msgstr "Muestra la atmósfera alrededor de la Tierra."
+msgstr "Complemento para mostrar la atmósfera alrededor de la Tierra."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
@@ -56922,10 +56912,11 @@ msgid "&Compass"
 msgstr "&Brújula"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a compass."
+#, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
-msgstr "Este elemento flotante proporciona una brújula."
+msgstr ""
+"Complemento para mostrar un elemento flotante que proporciona una brújula "
+"sobre el mapa."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
@@ -56968,10 +56959,9 @@ msgid "Cross&hairs"
 msgstr "&Punto de mira"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
-#, fuzzy, kde-format
-#| msgid "A plugin that shows crosshairs."
+#, kde-format
 msgid "A plugin that shows crosshairs over the map."
-msgstr "Complemento que muestra un punto de mira."
+msgstr "Complemento que muestra un punto de mira sobre el mapa."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
@@ -57059,10 +57049,9 @@ msgid "Coordinate &Grid"
 msgstr "C&uadrícula de coordenadas"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:90
-#, fuzzy, kde-format
-#| msgid "A plugin that shows a coordinate grid."
+#, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
-msgstr "Complemento que muestra una cuadrícula de coordenadas."
+msgstr "Complemento que muestra una cuadrícula de coordenadas sobre el mapa."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:212
 #, kde-format
@@ -57116,17 +57105,15 @@ msgstr "Círculo polar antártico"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Raw File Handling</b>"
+#, kde-format
 msgid "Configure Scale Bar Plugin"
-msgstr "<b>Configurar el manejo de archivos RAW</b>"
+msgstr "Configurar el complemento de barra de escala"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRatioScaleCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show Ratio Scale"
-msgstr "Mostrar el título de la imagen"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:30
@@ -57146,10 +57133,11 @@ msgid "&Scale Bar"
 msgstr "Barra de e&scala"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is a float item that provides a map scale."
+#, kde-format
 msgid "A plugin to show a float item that provides a map scale."
-msgstr "Este elemento flotante proporciona una barra de escala para el mapa."
+msgstr ""
+"Complemento para mostrar un elemento flotante que proporciona una escala "
+"para el mapa."
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
 #, kde-format
@@ -57376,63 +57364,56 @@ msgstr "&Navegación"
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
+"Complemento que proporciona control del ratón para ampliar y mover el mapa."
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
-#, fuzzy, kde-format
-#| msgid "Current Aspect Ratio"
+#, kde-format
 msgid "Current Location Button"
-msgstr "Proporciones actuales"
+msgstr "Botón de posición actual"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
 #, kde-format
 msgid "Home Button"
-msgstr ""
+msgstr "Botón de posición inicial"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:74
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Overview Map"
-msgstr "Mostrar vista general del mapa"
+msgstr "Mapa de vista general"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:79
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "&Overview Map"
-msgstr "Mostrar vista general del mapa"
+msgstr "&Mapa de vista general"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has geolocation information."
+#, kde-format
 msgid "A plugin to add a float item that provides an overview map."
-msgstr "Este elemento tiene información de geolocalización."
+msgstr ""
+"Complemento que proporciona un elemento flotante que contiene un mapa de "
+"vista general."
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Choose Overview Map"
-msgstr "Mostrar vista general del mapa"
+msgstr "Escoger mapa de vista general"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:517
-#, fuzzy, kde-format
-#| msgid "Set here the color of the second line."
+#, kde-format
 msgid "Please choose the color for the position indicator"
-msgstr "Indique aquí el color de la segunda línea."
+msgstr "Escoja el color para el indicador de posición"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Preview Behavior</b>"
+#, kde-format
 msgid "Configure Overview Map"
-msgstr "<b>Configurar el comportamiento de la vista previa</b>"
+msgstr "Configurar el mapa de vista general"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgid "Map &Image"
-msgstr "1 imagen"
+msgstr "&Imagen del mapa"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:28
@@ -57469,22 +57450,23 @@ msgid "&Download Progress"
 msgstr "A&vance de descargas"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
-msgstr "Mostrar indicador de avance"
+msgstr ""
+"Complemento para mostrar un indicador de descarga en forma de tarta sobre el "
+"mapa."
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Cache File Parser"
-msgstr "Transferencia de archivos"
+msgstr "Analizador de archivos de la caché"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
+"Complemento para cargar datos de geolocalización a partir de archivos "
+"binarios de la caché."
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
 #, kde-format
@@ -57492,11 +57474,9 @@ msgid "Marble Cache Files"
 msgstr "Archivos de caché de Marble"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "GPSBabel NMEA File Parser"
-msgstr "Transferencia de archivos"
+msgstr "Analizador de archivos de NMEA con GPSBabel"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
@@ -57504,6 +57484,8 @@ msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr ""
+"Complemento para cargar datos de geolocalización a partir de archivos NMEA "
+"mediante la herramienta de la línea de órdenes GPSBabel."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
 #, kde-format
@@ -57511,16 +57493,16 @@ msgid "GPSBabel files"
 msgstr "Archivos de GPSBabel"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Gpx File Parser"
-msgstr "Transferencia de archivos"
+msgstr "Analizador de archivos Gpx"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
 #, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
+"Complemento para cargar datos de geolocalización a partir del formato de "
+"archivo de datos Gpx."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
 #, kde-format
@@ -57528,16 +57510,16 @@ msgid "GPS Data"
 msgstr "Datos GPS"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "GeoJSON File Parser"
-msgstr "Transferencia de archivos"
+msgstr "Analizador de archivos GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
 #, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
+"Complemento para cargar datos de geolocalización a partir del formato de "
+"archivo de datos GeoJSON."
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
 #, kde-format
@@ -57545,33 +57527,32 @@ msgid "GeoJSON"
 msgstr "GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "KML File Parser"
-msgstr "Transferencia de archivos"
+msgstr "Analizador de archivos KML"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
+"Complemento para cargar datos de geolocalización a partir de los formatos de "
+"archivos KML y KMZ."
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
 #, kde-format
 msgid "Google Earth KML"
-msgstr ""
+msgstr "KML de Google Earth"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:25
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
-msgstr ""
+msgstr "Geocodificación inversa de OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:30
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Nominatim"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
 #, kde-format
@@ -57579,19 +57560,21 @@ msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
 msgstr ""
+"Complemento para procesar geocodificación inversa en línea usando el "
+"servicio web OpenStreetMap Nominatim."
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Osm File Parser"
-msgstr "Transferencia de archivos"
+msgstr "Analizador de archivos Osm"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
+"Complemento para cargar datos de geolocalización a partir del formato de "
+"archivo de datos de OpenStreetMap."
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, kde-format
@@ -57599,31 +57582,27 @@ msgid "OpenStreetMap Data"
 msgstr "Datos de OpenStreetMap"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Pn2 File Parser"
-msgstr "Transferencia de archivos"
+msgstr "Analizador de archivos Pn2"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr ""
+"Complemento para cargar datos de geolocalización a partir del formato de "
+"archivo de datos Pnt."
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Compression Weight:"
+#, kde-format
 msgid "Compressed Pnt"
-msgstr "Peso de la compresión:"
+msgstr "Pnt comprimido"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Pnt File Parser"
-msgstr "Transferencia de archivos"
+msgstr "Analizador de archivos Pnt"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
@@ -57631,11 +57610,13 @@ msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
+"Complemento para cargar datos de geolocalización a partir del formato de "
+"archivo Micro World Database II."
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
 msgid "Micro World Database II"
-msgstr ""
+msgstr "Micro World Database II"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
@@ -57966,10 +57947,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
-#, fuzzy, kde-format
-#| msgid "Coordinate Grid"
+#, kde-format
 msgid "Show Coordinate Grid"
-msgstr "Cuadrícula de coordenadas"
+msgstr "Mostrar cuadrícula de coordenadas"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:216
 #, kde-format
@@ -58050,29 +58030,24 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
-#, fuzzy, kde-format
-#| msgctxt "@item: texture type"
-#| msgid "Marble 2"
+#, kde-format
 msgid "Map View"
-msgstr "Mármol 2"
+msgstr "Vista del mapa"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
-#, fuzzy, kde-format
-#| msgid "Plugins"
+#, kde-format
 msgid "Map Plugins"
-msgstr "Complementos"
+msgstr "Complementos del mapa"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Border Tool"
+#, kde-format
 msgid "Render Tools"
-msgstr "Herramienta de borde"
+msgstr "Herramientas de generación"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:83
-#, fuzzy, kde-format
-#| msgid "Shear Tool"
+#, kde-format
 msgid "Runner Tools"
-msgstr "Herramienta de inclinación"
+msgstr "Herramientas del lanzador"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
 #, kde-format
@@ -58138,6 +58113,8 @@ msgstr "Cuadrículas vectoriales"
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
+"Permite la selección entre tipos de capas que se están generando "
+"visiblemente."
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:513
 #, kde-format
@@ -58755,49 +58732,49 @@ msgstr "Probar"
 msgid "Try all settings."
 msgstr "Probar todas las preferencias."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:218
+#: core/utilities/imageeditor/editor/editorwindow.cpp:217
 #, kde-format
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr "&Primera"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:225
+#: core/utilities/imageeditor/editor/editorwindow.cpp:224
 #, kde-format
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr "Ú&ltima"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:232
+#: core/utilities/imageeditor/editor/editorwindow.cpp:231
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr "Abrir original"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:244
+#: core/utilities/imageeditor/editor/editorwindow.cpp:243
 #, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr "Guardar cambios"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:245
+#: core/utilities/imageeditor/editor/editorwindow.cpp:244
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr "Guardar las modificaciones a la versión actual del archivo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:250
+#: core/utilities/imageeditor/editor/editorwindow.cpp:249
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr "Guardar como una nueva versión"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:251
+#: core/utilities/imageeditor/editor/editorwindow.cpp:250
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr "Guardar las modificaciones a una nueva versión del archivo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:257
+#: core/utilities/imageeditor/editor/editorwindow.cpp:256
 #, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -58805,7 +58782,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr "Guardar nueva versión como ..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:258
+#: core/utilities/imageeditor/editor/editorwindow.cpp:257
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58815,145 +58792,145 @@ msgstr ""
 "Guardar las modificaciones a una nueva versión del archivo, especificando el "
 "nombre del archivo y el formato"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:263
+#: core/utilities/imageeditor/editor/editorwindow.cpp:262
 #, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr "Guardar en formato"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:265
+#: core/utilities/imageeditor/editor/editorwindow.cpp:264
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:266
+#: core/utilities/imageeditor/editor/editorwindow.cpp:265
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:267
+#: core/utilities/imageeditor/editor/editorwindow.cpp:266
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:268
+#: core/utilities/imageeditor/editor/editorwindow.cpp:267
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr "PGF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:272
+#: core/utilities/imageeditor/editor/editorwindow.cpp:271
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:278
+#: core/utilities/imageeditor/editor/editorwindow.cpp:277
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr "HEIF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:284
+#: core/utilities/imageeditor/editor/editorwindow.cpp:283
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr "JXL"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:289
+#: core/utilities/imageeditor/editor/editorwindow.cpp:288
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr "WEBP"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:294
+#: core/utilities/imageeditor/editor/editorwindow.cpp:293
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr "AVIF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:312
+#: core/utilities/imageeditor/editor/editorwindow.cpp:311
 #, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr "Exportar "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:313
+#: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr "Guardar el archivo en una carpeta fuera de su colección"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:322
+#: core/utilities/imageeditor/editor/editorwindow.cpp:321
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr "Descartar cambios"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:323
+#: core/utilities/imageeditor/editor/editorwindow.cpp:322
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr "Descartar todos los cambios a este archivo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:336
+#: core/utilities/imageeditor/editor/editorwindow.cpp:335
 #, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr "Abrir con la aplicación predeterminada"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:337
+#: core/utilities/imageeditor/editor/editorwindow.cpp:336
 #, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr "Abrir el elemento con la aplicación asignada por omisión."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:360
+#: core/utilities/imageeditor/editor/editorwindow.cpp:359
 #, kde-format
 msgctxt "@action"
 msgid "Undo"
 msgstr "Deshacer"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:387
+#: core/utilities/imageeditor/editor/editorwindow.cpp:386
 #, kde-format
 msgctxt "@action"
 msgid "Redo"
 msgstr "Rehacer"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:412
 #, kde-format
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:418
+#: core/utilities/imageeditor/editor/editorwindow.cpp:417
 #, kde-format
 msgctxt "@action"
 msgid "Select None"
 msgstr "No seleccionar nada"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:432
+#: core/utilities/imageeditor/editor/editorwindow.cpp:431
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "Ampliar al 100%"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:438
+#: core/utilities/imageeditor/editor/editorwindow.cpp:437
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "Ajustar a la &ventana"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:445
+#: core/utilities/imageeditor/editor/editorwindow.cpp:444
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "Ajustar a la &selección"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:450
+#: core/utilities/imageeditor/editor/editorwindow.cpp:449
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58961,13 +58938,13 @@ msgid ""
 msgstr ""
 "Esta opción se puede usar para ampliar la imagen al área de selección actual."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:474
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Indicador de subexposición"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:477
+#: core/utilities/imageeditor/editor/editorwindow.cpp:476
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58977,13 +58954,13 @@ msgstr ""
 "Active esta opción para que la vista previa muestre el negro superpuesto en "
 "la imagen. Esto le ayudará a evitar la subexposición de la imagen."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:485
+#: core/utilities/imageeditor/editor/editorwindow.cpp:484
 #, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Indicador de sobreexposición"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:487
+#: core/utilities/imageeditor/editor/editorwindow.cpp:486
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58993,32 +58970,32 @@ msgstr ""
 "Active esta opción para que la vista previa muestre el blanco superpuesto en "
 "la imagen. Esto le ayudará a evitar la sobrexposición de la imagen."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:495
+#: core/utilities/imageeditor/editor/editorwindow.cpp:494
 #: core/utilities/import/main/importui.cpp:488
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "Vista gestionada por color"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:502
+#: core/utilities/imageeditor/editor/editorwindow.cpp:501
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "Opciones de prueba en pantalla..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:507
+#: core/utilities/imageeditor/editor/editorwindow.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "Vista de prueba en pantalla"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:515
+#: core/utilities/imageeditor/editor/editorwindow.cpp:514
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "Ajustar a la selección"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:518
+#: core/utilities/imageeditor/editor/editorwindow.cpp:517
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59028,33 +59005,33 @@ msgstr ""
 "Esta opción se puede usar para recortar la imagen. Seleccione una zona de la "
 "imagen para activar esta acción."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:526
+#: core/utilities/imageeditor/editor/editorwindow.cpp:525
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "Voltear horizontalmente"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:534
+#: core/utilities/imageeditor/editor/editorwindow.cpp:533
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "Voltear verticalmente"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:544
+#: core/utilities/imageeditor/editor/editorwindow.cpp:543
 #: core/utilities/import/views/importpreviewview.cpp:212
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Rotar a la izquierda"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:552
+#: core/utilities/imageeditor/editor/editorwindow.cpp:551
 #: core/utilities/import/views/importpreviewview.cpp:213
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Rotar a la derecha"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:584
+#: core/utilities/imageeditor/editor/editorwindow.cpp:583
 #: core/utilities/import/main/importui.cpp:530
 #: core/utilities/import/main/importui.cpp:767
 #, kde-format
@@ -59062,37 +59039,37 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Imagen anterior"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:614
+#: core/utilities/imageeditor/editor/editorwindow.cpp:613
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "Sin selección"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:617
+#: core/utilities/imageeditor/editor/editorwindow.cpp:616
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Información sobre la selección actual de la imagen"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:621
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Información sobre el tamaño de la imagen"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1137
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Guardando imagen..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1153
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1138
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Espere a que se guarde la imagen..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1174
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1159
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59102,13 +59079,13 @@ msgstr ""
 "Va a sobrescribir el archivo «%1»\n"
 "¿Está seguro?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1179
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1164
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Advertencia"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1289
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1274
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59118,7 +59095,7 @@ msgstr ""
 "La imagen «%1» ha sido modificada.\n"
 "¿Desea guardarla?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1440
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1425
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59128,25 +59105,25 @@ msgstr ""
 "La imagen «%1» ha sido modificada.\n"
 "Se perderán todos los cambios."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1518
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1503
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "Sin selección"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1538
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1523
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Cargando:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1566
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1551
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "No se puede cargar «%1»"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1608
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1593
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59158,13 +59135,13 @@ msgstr ""
 "hará ninguna transformación de color. Verifique las preferencias de gestión "
 "de colores en la configuración de digiKam."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1665
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1650
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Guardando:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1687
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1672
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59178,13 +59155,13 @@ msgstr ""
 "en\n"
 "«%2»."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1805
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "No se ha podido abrir un archivo temporal en la carpeta «%1»: %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2016
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2001
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
@@ -59192,7 +59169,7 @@ msgstr ""
 "No se ha podido determinar el formato con el que guardar la imagen de "
 "destino."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2023
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2008
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
@@ -59200,14 +59177,14 @@ msgstr ""
 "No se puede guardar: se ha encontrado que la ruta del archivo «%1» no es "
 "válida."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2270
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2255
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 "No se puede guardar el archivo «%1» con la versión de archivo sugerida «%2»"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2345
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2330
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59217,32 +59194,32 @@ msgstr ""
 "No tiene permisos de escritura para el archivo llamado «%1». ¿Seguro que "
 "desea sobrescribirlo?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2364
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2349
 #, kde-format
 msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Ya existe un archivo llamado «%1». ¿Seguro que quiere sobrescribirlo?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2391
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2376
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "No se ha podido sobrescribir el archivo original"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2470
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2455
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Vista gestionada por color está activada."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2474
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2459
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Vista gestionada por color está desactivada."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2479
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2464
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59252,106 +59229,106 @@ msgstr ""
 "La gestión de color no está configurada, por lo que la vista gestionada por "
 "color no está disponible."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2515
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2500
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "El indicador de subexposición está activado"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2516
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2501
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "El indicador de subexposición está desactivado"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2530
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2515
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "El indicador de sobrexposición está activado"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2531
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2516
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "El indicador de sobrexposición está desactivado"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2607
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Transformar"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2636
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Decorar"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2643
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2628
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Efectos"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2650
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Colores"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2657
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2642
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Mejorar"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2805
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Abrir con"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2834
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2819
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Otra..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2843
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2828
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "Abrir con..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:185
+#: core/utilities/imageeditor/main/imagewindow.cpp:187
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "Editor de imágenes - %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:189
+#: core/utilities/imageeditor/main/imagewindow.cpp:191
 #, kde-format
 msgid "Image Editor"
 msgstr "Editor de imágenes"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:359
+#: core/utilities/imageeditor/main/imagewindow.cpp:361
 #, kde-format
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "Desconocida"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:360
+#: core/utilities/imageeditor/main/imagewindow.cpp:362
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:930
+#: core/utilities/imageeditor/main/imagewindow.cpp:932
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "No hay ninguna imagen en el álbum actual"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:931
+#: core/utilities/imageeditor/main/imagewindow.cpp:933
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -59360,13 +59337,13 @@ msgstr ""
 "No hay ninguna imagen que mostrar en el álbum de fotos actual.\n"
 "Se cerrará el editor de imágenes."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1202
+#: core/utilities/imageeditor/main/imagewindow.cpp:1204
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Archivo no disponible"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1203
+#: core/utilities/imageeditor/main/imagewindow.cpp:1205
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -67007,7 +66984,7 @@ msgstr "Usar mapas de bits con alta resolución de PPP"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:83
 #, kde-format
 msgid "Force use of software OpenGL rendering"
-msgstr ""
+msgstr "Forzar el renderizado OpenGL por software"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:84
 #, kde-format

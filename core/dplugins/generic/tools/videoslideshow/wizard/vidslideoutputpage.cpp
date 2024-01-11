@@ -39,6 +39,7 @@
 #include "dfileselector.h"
 #include "filesaveconflictbox.h"
 #include "ffmpeglauncher.h"
+#include "dexpanderbox.h"
 
 namespace DigikamGenericVideoSlideShowPlugin
 {
@@ -89,6 +90,8 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
 
     // --------------------
 
+    DLineWidget* const line1 = new DLineWidget(Qt::Horizontal, main);
+
     QLabel* const audioLabel = new QLabel(main);
     audioLabel->setWordWrap(false);
     audioLabel->setText(i18n("Soundtrack File:"));
@@ -103,6 +106,13 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
 
     QLabel* const durationLabel = new QLabel(i18n("Soundtrack Duration:"), main);
     d->duration                 = new QLabel(QLatin1String("---"), main);
+
+    QLabel* const audioNote     = new QLabel(main);
+    audioNote->setWordWrap(true);
+    audioNote->setText(i18n("<i>Notes about soundtrack: if the audio length is smaller than video, it will be "
+                            "played in loop. If the audio length is largest than video, it will be trimmed.</i>"));
+
+    DLineWidget* const line2 = new DLineWidget(Qt::Horizontal, main);
 
     // --------------------
 
@@ -165,17 +175,20 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(formatLabel,     0, 0, 1, 1);
     grid->addWidget(d->formatVal,    0, 1, 1, 1);
-    grid->addWidget(audioLabel,      1, 0, 1, 1);
-    grid->addWidget(d->audioUrl,     1, 1, 1, 1);
-    grid->addWidget(durationLabel,   2, 0, 1, 1);
-    grid->addWidget(d->duration,     2, 1, 1, 1);
-    grid->addWidget(fileLabel,       3, 0, 1, 1);
-    grid->addWidget(d->destUrl,      3, 1, 1, 1);
-    grid->addWidget(outputLbl,       4, 0, 1, 2);
-    grid->addWidget(d->conflictBox,  5, 0, 1, 2);
-    grid->addWidget(playerLabel,     6, 0, 1, 1);
-    grid->addWidget(d->playerVal,    6, 1, 1, 1);
-    grid->setRowStretch(7, 10);
+    grid->addWidget(line1,           1, 0, 1, 2);
+    grid->addWidget(audioLabel,      2, 0, 1, 1);
+    grid->addWidget(d->audioUrl,     2, 1, 1, 1);
+    grid->addWidget(durationLabel,   3, 0, 1, 1);
+    grid->addWidget(d->duration,     3, 1, 1, 1);
+    grid->addWidget(audioNote,       4, 0, 1, 2);
+    grid->addWidget(line2,           5, 0, 1, 2);
+    grid->addWidget(fileLabel,       6, 0, 1, 1);
+    grid->addWidget(d->destUrl,      6, 1, 1, 1);
+    grid->addWidget(outputLbl,       7, 0, 1, 2);
+    grid->addWidget(d->conflictBox,  8, 0, 1, 2);
+    grid->addWidget(playerLabel,     9, 0, 1, 1);
+    grid->addWidget(d->playerVal,    9, 1, 1, 1);
+    grid->setRowStretch(10, 10);
 
     setPageWidget(main);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("folder-video")));

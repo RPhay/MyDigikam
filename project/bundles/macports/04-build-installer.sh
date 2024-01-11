@@ -603,9 +603,9 @@ cd $DOWNLOAD_DIR
 #fi
 
 tar -xvf "$DOWNLOAD_DIR/Image-ExifTool.tar.gz" -C "$TEMPROOT/digikam.app/Contents/bin"
-ln -s "$TEMPROOT/digikam.app/Contents/bin/Image-ExifTool*" "$TEMPROOT/digikam.app/Contents/bin/Image-ExifTool"
-
 cd $TEMPROOT/digikam.app/Contents/bin
+EXIFTOOL_DIR=$(ls -d Image-ExifTool*)
+ln -sv "./$EXIFTOOL_DIR" "./Image-ExifTool"
 ln -sv "./Image-ExifTool/exiftool" "exiftool"
 
 #################################################################################################

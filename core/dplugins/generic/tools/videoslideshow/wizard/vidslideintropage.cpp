@@ -154,7 +154,7 @@ bool VidSlideIntroPage::validatePage()
             QStringList possiblePaths({QLatin1String("C:/Program Files/digiKam"),
                                        QLatin1String("C:/Program Files/digiKam/bin")});
 
-            path = QStandardPaths::findExecutable(exifToolBin(), possiblePaths);
+            path = QStandardPaths::findExecutable(FFmpegBinary::ffmpegToolBin(), possiblePaths);
 
 #else
 

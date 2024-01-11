@@ -76,6 +76,8 @@ DIO* DIO::instance()
 
 DIO::DIO()
 {
+    qRegisterMetaType<QMap<QString,int>>("QMap<QString,int>");
+
     m_processingCount = 0;
 }
 
