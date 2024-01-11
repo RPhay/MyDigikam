@@ -144,7 +144,7 @@ BUGFIXES:
 125 ==> 479602 - Image editor: slider input not usable.
 126 ==> 479613 - digiKam crashes when I want to add a tag for a new face.
 127 ==> 131239 - Adjust lenght of audio before video slide.
-128 ==> 
+128 ==> 479585 - Can't open and read HEIF file from Fujifilm XT-5.
 129 ==> 
 130 ==> 
 131 ==> 
