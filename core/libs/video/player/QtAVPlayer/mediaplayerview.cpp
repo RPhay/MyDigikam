@@ -395,27 +395,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
             Qt::DirectConnection);
 
     connect(d->player, &QAVPlayer::videoFrame,
-            d->player, [&](const QAVVideoFrame& frame)
-                {
-                    if (vr.m_surface == nullptr)
-                    {
-                        return;
-                    }
-
-                    QVideoFrame videoFrame = frame.convertTo(AV_PIX_FMT_RGB32);
-
-                    if (!vr.m_surface->isActive() || vr.m_surface->surfaceFormat().frameSize() != videoFrame.size())
-                    {
-                        QVideoSurfaceFormat f(videoFrame.size(), videoFrame.pixelFormat(), videoFrame.handleType());
-                        vr.m_surface->start(f);
-                    }
-
-                    if (vr.m_surface->isActive())
-                    {
-                         vr.m_surface->present(videoFrame);
-                    }
-                },
-             Qt::DirectConnection);
+            this, &MediaPlayerView::slotVideoFrame,
+            Qt::DirectConnection);
 
     connect(d->player, SIGNAL(stateChanged(QAVPlayer::State)),
             this, SLOT(slotPlayerStateChanged(QAVPlayer::State)));
@@ -449,6 +430,27 @@ void MediaPlayerView::slotAudioFrame(const QAVAudioFrame& frame)
     d->audioOutput->play(frame);
 }
 
+void MediaPlayerView::slotVideoFrame(const QAVVideoFrame& frame)
+{
+    if (d->videoRender->m_surface == nullptr)
+    {
+        return;
+    }
+
+    QVideoFrame videoFrame = frame.convertTo(AV_PIX_FMT_RGB32);
+
+    if (!d->videoRender->m_surface->isActive() || (d->videoRender->m_surface->surfaceFormat().frameSize() != videoFrame.size()))
+    {
+        QVideoSurfaceFormat f(videoFrame.size(), videoFrame.pixelFormat(), videoFrame.handleType());
+        d->videoRender->m_surface->start(f);
+    }
+
+    if (d->videoRender->m_surface->isActive())
+    {
+         d->videoRender->m_surface->present(videoFrame);
+    }
+}
+
 void MediaPlayerView::setInfoInterface(DInfoInterface* const iface)
 {
     d->iface = iface;
@@ -457,7 +459,7 @@ void MediaPlayerView::setInfoInterface(DInfoInterface* const iface)
 void MediaPlayerView::reload()
 {
     d->player->stop();
-    d->player->setFile(d->currentItem.toLocalFile());
+    d->player->setSource(d->currentItem.toLocalFile());
     d->player->play();
 }
 
@@ -497,8 +499,7 @@ void MediaPlayerView::slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus)
 void MediaPlayerView::escapePreview()
 {
     d->player->stop();
-    d->player->audio()->close();
-    d->player->setFile(QString());
+    d->player->setSource(QString());
 }
 
 void MediaPlayerView::slotThemeChanged()
@@ -560,18 +561,21 @@ void MediaPlayerView::slotRotateVideo()
 
 void MediaPlayerView::slotPausePlay()
 {
-    if (!d->player->isPlaying())
+    if (d->player->state() != QAVPlayer::PlayingState)
     {
         d->player->play();
         return;
     }
 
-    d->player->pause(!d->player->isPaused());
+    if (d->player->state() != QAVPlayer::PausedState)
+    {
+       d->player->pause();
+    }
 }
 
 void MediaPlayerView::slotCapture()
 {
-    if (d->player->state() == QAVPlayer::PlayingState))
+    if (d->player->state() == QAVPlayer::PlayingState)
     {
 /*FIXME
         d->player->videoCapture()->setAutoSave(false);
@@ -740,9 +744,9 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
         }
     }
 
-    d->player->setFile(d->currentItem.toLocalFile());
+    d->player->setSource(d->currentItem.toLocalFile());
     setPreviewMode(Private::PlayerView);
-    d->player->setPosition(10);
+    d->player->seek(10);
     d->player->play();
 }
 
@@ -759,7 +763,7 @@ void MediaPlayerView::slotPositionChanged(qint64 position)
     if (!d->slider->isSliderDown())
     {
         d->slider->blockSignals(true);
-        d->slider->seek(position);
+        d->slider->setValue(position);
         d->slider->blockSignals(false);
     }
 
@@ -813,7 +817,7 @@ void MediaPlayerView::slotPosition(int position)
     }
 }
 
-void MediaPlayerView::slotHandlePlayerError(QAVPlayer::Error& err)
+void MediaPlayerView::slotHandlePlayerError(QAVPlayer::Error err)
 {
     setPreviewMode(Private::ErrorView);
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtAVPlayer Error: " << err;

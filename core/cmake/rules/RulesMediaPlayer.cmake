@@ -491,6 +491,9 @@ if(ENABLE_MEDIAPLAYER)
 
             # --- Resume ---------------------------------------------------------------------------------------
 
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQT_AVPLAYER_MULTIMEDIA)
+
+
             message(STATUS "MediaPlayer type       : QtAVPlayer")
             message(STATUS "MediaPlayer libraries  : ${MEDIAPLAYER_LIBRARIES}")
             message(STATUS "MediaPlayer definitions: ${MEDIAPLAYER_DEFINITIONS}")
