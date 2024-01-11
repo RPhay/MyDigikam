@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 00:39+0000\n"
+"POT-Creation-Date: 2024-01-11 01:34+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -944,9 +944,9 @@ msgstr ""
 "p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:352
-#: core/utilities/imageeditor/main/imagewindow.cpp:1100
-#: core/utilities/imageeditor/main/imagewindow.cpp:1125
-#: core/utilities/imageeditor/main/imagewindow.cpp:1157
+#: core/utilities/imageeditor/main/imagewindow.cpp:1102
+#: core/utilities/imageeditor/main/imagewindow.cpp:1127
+#: core/utilities/imageeditor/main/imagewindow.cpp:1159
 #, kde-format
 msgid "Album \"%1\""
 msgstr "\"%1\" 앨범"
@@ -1848,7 +1848,7 @@ msgid "Change the filename of the currently selected item."
 msgstr "현재 선택한 항목의 파일 이름을 변경합니다."
 
 #: core/app/main/digikamapp_setup.cpp:492
-#: core/utilities/imageeditor/editor/editorwindow.cpp:344
+#: core/utilities/imageeditor/editor/editorwindow.cpp:343
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
@@ -2458,21 +2458,21 @@ msgid "Main Tools"
 msgstr "주 도구"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2664
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2649
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "후처리"
 
 #: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2681
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2666
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "내보내기"
 
 #: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2688
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2673
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -11300,7 +11300,7 @@ msgstr "이미지 스캔"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:104
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1870
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1855
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
 msgctxt "@title:window"
@@ -11343,8 +11343,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:181
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2344
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2363
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2329
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2348
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
@@ -16008,7 +16008,7 @@ msgstr "날짜와 시간 조정"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
-#: core/utilities/imageeditor/editor/editorwindow.cpp:598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:597
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -17811,7 +17811,7 @@ msgstr "대상 폴더:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:126
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, fuzzy, kde-format
 #| msgid "Destination Folder"
@@ -20479,14 +20479,14 @@ msgid "Select your preferred format to export printing as image."
 msgstr "인쇄물을 이미지로 내보낼 때 사용할 형식을 선택하십시오."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:111
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
 msgid "Destination folder:"
 msgstr "대상 폴더:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:117
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:127
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -21169,41 +21169,49 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "실행 파일"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:86
 #, kde-format
 msgid "Media Container Format:"
 msgstr "미디어 컨테이너 형식:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:94
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:97
 #, fuzzy, kde-format
 #| msgid "Soundtrack:"
 msgid "Soundtrack File:"
 msgstr "사운드트랙:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:100
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:103
 #, fuzzy, kde-format
 #| msgid "Audio bitrate"
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "오디오 비트 전송률"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:101
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Video soundtrack (lets empty if none)"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
 #, fuzzy, kde-format
 #| msgid "Soundtrack:"
 msgid "Soundtrack Duration:"
 msgstr "사운드트랙:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:112
+#, kde-format
+msgid ""
+"<i>Notes about soundtrack: if the audio length is smaller than video, it "
+"will be played in loop. If the audio length is largest than video, it will "
+"be trimmed.</i>"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "비디오 출력 파일 이름을 자동으로 생성합니다."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:140
 #, kde-format
 msgid "Open in Player:"
 msgstr "재생기로 열기:"
@@ -50824,7 +50832,7 @@ msgid "Unknown"
 msgstr "알 수 없음"
 
 #: core/showfoto/main/showfoto.cpp:280
-#: core/utilities/imageeditor/main/imagewindow.cpp:490
+#: core/utilities/imageeditor/main/imagewindow.cpp:492
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -50836,7 +50844,7 @@ msgid "Delete File"
 msgstr "파일 삭제"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2390
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2375
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgctxt "@title:window"
@@ -50854,8 +50862,8 @@ msgid "Remote file handling is not supported"
 msgstr "원격 파일 처리는 지원하지 않음"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:573
-#: core/utilities/imageeditor/main/imagewindow.cpp:688
+#: core/utilities/imageeditor/main/imagewindow.cpp:575
+#: core/utilities/imageeditor/main/imagewindow.cpp:690
 #, kde-format
 msgid "Image saved successfully"
 msgstr "이미지가 성공적으로 저장됨"
@@ -53254,7 +53262,7 @@ msgstr "얼굴 변경 적용 중"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
-#: core/utilities/imageeditor/editor/editorwindow.cpp:592
+#: core/utilities/imageeditor/editor/editorwindow.cpp:591
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -59621,51 +59629,51 @@ msgstr "시도하기"
 msgid "Try all settings."
 msgstr "모든 설정을 시도합니다."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:218
+#: core/utilities/imageeditor/editor/editorwindow.cpp:217
 #, fuzzy, kde-format
 #| msgid "&First"
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr "처음(&F)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:225
+#: core/utilities/imageeditor/editor/editorwindow.cpp:224
 #, fuzzy, kde-format
 #| msgid "&Last"
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr "마지막(&L)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:232
+#: core/utilities/imageeditor/editor/editorwindow.cpp:231
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr "원본 열기"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:244
+#: core/utilities/imageeditor/editor/editorwindow.cpp:243
 #, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr "변경 사항 저장"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:245
+#: core/utilities/imageeditor/editor/editorwindow.cpp:244
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:250
+#: core/utilities/imageeditor/editor/editorwindow.cpp:249
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:251
+#: core/utilities/imageeditor/editor/editorwindow.cpp:250
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:257
+#: core/utilities/imageeditor/editor/editorwindow.cpp:256
 #, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -59673,7 +59681,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:258
+#: core/utilities/imageeditor/editor/editorwindow.cpp:257
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59681,150 +59689,150 @@ msgid ""
 "filename and format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:263
+#: core/utilities/imageeditor/editor/editorwindow.cpp:262
 #, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:265
+#: core/utilities/imageeditor/editor/editorwindow.cpp:264
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:266
+#: core/utilities/imageeditor/editor/editorwindow.cpp:265
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:267
+#: core/utilities/imageeditor/editor/editorwindow.cpp:266
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:268
+#: core/utilities/imageeditor/editor/editorwindow.cpp:267
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr "PGF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:272
+#: core/utilities/imageeditor/editor/editorwindow.cpp:271
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:278
+#: core/utilities/imageeditor/editor/editorwindow.cpp:277
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:284
+#: core/utilities/imageeditor/editor/editorwindow.cpp:283
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:289
+#: core/utilities/imageeditor/editor/editorwindow.cpp:288
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:294
+#: core/utilities/imageeditor/editor/editorwindow.cpp:293
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:312
+#: core/utilities/imageeditor/editor/editorwindow.cpp:311
 #, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr "내보내기"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:313
+#: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:322
+#: core/utilities/imageeditor/editor/editorwindow.cpp:321
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr "변경 사항 취소"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:323
+#: core/utilities/imageeditor/editor/editorwindow.cpp:322
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:336
+#: core/utilities/imageeditor/editor/editorwindow.cpp:335
 #, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr "기본 앱으로 열기"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:337
+#: core/utilities/imageeditor/editor/editorwindow.cpp:336
 #, fuzzy, kde-format
 #| msgid "Open the selected item with default assigned application."
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr "기본 할당된 프로그램으로 선택한 항목을 엽니다."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:360
+#: core/utilities/imageeditor/editor/editorwindow.cpp:359
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@action"
 msgid "Undo"
 msgstr "실행 취소"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:387
+#: core/utilities/imageeditor/editor/editorwindow.cpp:386
 #, fuzzy, kde-format
 #| msgid "Redo"
 msgctxt "@action"
 msgid "Redo"
 msgstr "다시 실행"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:412
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "모두 선택"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:418
+#: core/utilities/imageeditor/editor/editorwindow.cpp:417
 #, kde-format
 msgctxt "@action"
 msgid "Select None"
 msgstr "선택 해제"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:432
+#: core/utilities/imageeditor/editor/editorwindow.cpp:431
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "100%로 크기 조절"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:438
+#: core/utilities/imageeditor/editor/editorwindow.cpp:437
 #, fuzzy, kde-format
 #| msgid "Fit to &Window"
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "창에 맞춤(&W)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:445
+#: core/utilities/imageeditor/editor/editorwindow.cpp:444
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "선택 반전"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:450
+#: core/utilities/imageeditor/editor/editorwindow.cpp:449
 #, fuzzy, kde-format
 #| msgid ""
 #| "This option can be used to crop the image. Select a region of the image "
@@ -59836,14 +59844,14 @@ msgstr ""
 "이 옵션을 사용하면 이미지를 자를 수 있습니다. 이 작업을 사용하려면 이미지의 "
 "영역을 선택하십시오."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:474
 #, fuzzy, kde-format
 #| msgid "Exposure Index"
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "노출 지수"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:477
+#: core/utilities/imageeditor/editor/editorwindow.cpp:476
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59851,14 +59859,14 @@ msgid ""
 "to avoid under-exposing the image."
 msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:485
+#: core/utilities/imageeditor/editor/editorwindow.cpp:484
 #, fuzzy, kde-format
 #| msgid "Exposure Index"
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "노출 지수"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:487
+#: core/utilities/imageeditor/editor/editorwindow.cpp:486
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59866,34 +59874,34 @@ msgid ""
 "to avoid over-exposing the image."
 msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:495
+#: core/utilities/imageeditor/editor/editorwindow.cpp:494
 #: core/utilities/import/main/importui.cpp:488
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "색 관리가 적용된 보기"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:502
+#: core/utilities/imageeditor/editor/editorwindow.cpp:501
 #, fuzzy, kde-format
 #| msgid "Soft Proofing Options"
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "소프트 프루핑 옵션"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:507
+#: core/utilities/imageeditor/editor/editorwindow.cpp:506
 #, fuzzy, kde-format
 #| msgid "Soft Proofing On"
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "소프트 프루핑 켜기"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:515
+#: core/utilities/imageeditor/editor/editorwindow.cpp:514
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "선택 반전"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:518
+#: core/utilities/imageeditor/editor/editorwindow.cpp:517
 #, fuzzy, kde-format
 #| msgid ""
 #| "This option can be used to crop the image. Select a region of the image "
@@ -59906,33 +59914,33 @@ msgstr ""
 "이 옵션을 사용하면 이미지를 자를 수 있습니다. 이 작업을 사용하려면 이미지의 "
 "영역을 선택하십시오."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:526
+#: core/utilities/imageeditor/editor/editorwindow.cpp:525
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "상하 반전"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:534
+#: core/utilities/imageeditor/editor/editorwindow.cpp:533
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "좌우 반전"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:544
+#: core/utilities/imageeditor/editor/editorwindow.cpp:543
 #: core/utilities/import/views/importpreviewview.cpp:212
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "왼쪽으로 회전"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:552
+#: core/utilities/imageeditor/editor/editorwindow.cpp:551
 #: core/utilities/import/views/importpreviewview.cpp:213
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr "오른쪽으로 회전"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:584
+#: core/utilities/imageeditor/editor/editorwindow.cpp:583
 #: core/utilities/import/main/importui.cpp:530
 #: core/utilities/import/main/importui.cpp:767
 #, kde-format
@@ -59940,39 +59948,39 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "이전 이미지"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:614
+#: core/utilities/imageeditor/editor/editorwindow.cpp:613
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "선택 없음"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:617
+#: core/utilities/imageeditor/editor/editorwindow.cpp:616
 #, fuzzy, kde-format
 #| msgid "Remove the current region selection"
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "현재 지역 선택 삭제"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:621
 #, fuzzy, kde-format
 #| msgid "Add information to files"
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "파일에 정보 추가"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1137
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "RAW 그림"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1153
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1138
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1174
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1159
 #, fuzzy, kde-format
 #| msgid ""
 #| "About to delete file \"%1\"\n"
@@ -59985,7 +59993,7 @@ msgstr ""
 "\"%1\" 파일을 삭제하려고 합니다\n"
 "계속 진행하시겠습니까?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1179
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1164
 #, fuzzy, kde-format
 #| msgctxt "@title: dialog"
 #| msgid "Warning"
@@ -59993,7 +60001,7 @@ msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "경고"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1289
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1274
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60001,7 +60009,7 @@ msgid ""
 "Do you want to save it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1440
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1425
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60009,20 +60017,20 @@ msgid ""
 "All changes will be lost."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1518
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1503
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "선택 없음"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1538
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1523
 #, fuzzy, kde-format
 #| msgid "Loading:"
 msgctxt "@label"
 msgid "Loading:"
 msgstr "불러오는 중:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1566
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1551
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot display image\n"
@@ -60033,7 +60041,7 @@ msgstr ""
 "\"%1\"\n"
 "그림을 표시할 수 없습니다"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1608
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1593
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60042,14 +60050,14 @@ msgid ""
 "configuration in digiKam's setup."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1665
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1650
 #, fuzzy, kde-format
 #| msgid "Saving:"
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "저장 중:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1687
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1672
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to save file\n"
@@ -60066,31 +60074,31 @@ msgstr ""
 "\"%2\"에\n"
 "저장할 수 없습니다."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1805
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "열 수 없음: %1"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2016
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2001
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2023
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2008
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2270
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2255
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2345
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2330
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -60100,35 +60108,35 @@ msgid ""
 "you want to overwrite it?"
 msgstr "파일 \"%1\"이(가) 이미 존재합니다. 덮어쓰시겠습니까?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2364
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2349
 #, kde-format
 msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "파일 \"%1\"이(가) 이미 존재합니다. 덮어쓰시겠습니까?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2391
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2376
 #, fuzzy, kde-format
 #| msgid "Failed to open file."
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "파일을 열 수 없습니다."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2470
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2455
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "색 관리가 적용된 보기"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2474
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2459
 #, fuzzy, kde-format
 #| msgid "Color Management is disabled..."
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "색 관리가 비활성화되어 있습니다..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2479
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2464
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60136,116 +60144,116 @@ msgid ""
 "available."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2515
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2500
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2516
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2501
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2530
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2515
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2531
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2516
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2607
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "변환"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2636
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "장식"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2643
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2628
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "효과"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2650
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "색상"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2657
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2642
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "개선"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2805
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "다음으로 열기"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2834
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2819
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "기타..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2843
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2828
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "다음으로 열기..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:185
+#: core/utilities/imageeditor/main/imagewindow.cpp:187
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "이미지 편집기 - %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:189
+#: core/utilities/imageeditor/main/imagewindow.cpp:191
 #, kde-format
 msgid "Image Editor"
 msgstr "이미지 편집기"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:359
+#: core/utilities/imageeditor/main/imagewindow.cpp:361
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:360
+#: core/utilities/imageeditor/main/imagewindow.cpp:362
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2(%3백만 화소)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:930
+#: core/utilities/imageeditor/main/imagewindow.cpp:932
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "현재 앨범에 이미지 없음"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:931
+#: core/utilities/imageeditor/main/imagewindow.cpp:933
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
 "The image editor will be closed."
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1202
+#: core/utilities/imageeditor/main/imagewindow.cpp:1204
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Not Available"
@@ -60253,7 +60261,7 @@ msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "파일을 사용할 수 없음"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1203
+#: core/utilities/imageeditor/main/imagewindow.cpp:1205
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
