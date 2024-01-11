@@ -182,11 +182,6 @@ void ProcessLauncher::run()
 
 void ProcessLauncher::slotReadyRead()
 {
-    if (!d->consoleTraces)
-    {
-        return;
-    }
-
     QByteArray data = d->process->readAll();
 
     if (!data.isEmpty())
@@ -194,19 +189,22 @@ void ProcessLauncher::slotReadyRead()
         QString txt = QString::fromLocal8Bit(data.data(), data.size());
         d->output.append(txt);
 
-        Q_FOREACH (const QString& str, txt.split(QLatin1Char('\n')))
+        if (d->consoleTraces)
         {
-            if (!str.isEmpty())
+            Q_FOREACH (const QString& str, txt.split(QLatin1Char('\n')))
             {
-                qCDebug(DIGIKAM_GENERAL_LOG)
+                if (!str.isEmpty())
+                {
+                    qCDebug(DIGIKAM_GENERAL_LOG)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                   .noquote()
+                       .noquote()
 
 #endif
 
-                   << str;
+                       << str;
+                }
             }
         }
     }
