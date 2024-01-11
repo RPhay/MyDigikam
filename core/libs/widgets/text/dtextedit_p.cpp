@@ -71,6 +71,7 @@ void DTextEdit::Private::init(DTextEdit* const parent)
 #endif
 
     parent->setLinesVisible(lines);
+    parent->setTabChangesFocus(true);
 
     clrBtn = new DTextEditClearButton(parent);
     parent->setCornerWidget(clrBtn);

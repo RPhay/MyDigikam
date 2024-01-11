@@ -146,7 +146,7 @@ BUGFIXES:
 127 ==> 131239 - Adjust lenght of audio before video slide.
 128 ==> 479585 - Can't open and read HEIF file from Fujifilm XT-5.
 129 ==> 471992 - digiKam 8.0.0 crashes when downloading face files.
-130 ==> 
+130 ==> 479635 - Metadata fields can no longer be accessed using the Tab key.
 131 ==> 
 132 ==> 
 133 ==> 
