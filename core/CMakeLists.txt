@@ -442,7 +442,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     HEADER_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/libs DK_LOCAL_INCLUDES_RAW)
 
-    # This macro will set all paths which do not contain libjpeg-, qtav, and qtmm.
+    # This macro will set all paths which do not contain libjpeg-, QtAVPlayer, and qtmm.
     # We will add later the directory we need
 
     foreach(var ${DK_LOCAL_INCLUDES_RAW})

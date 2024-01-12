@@ -500,6 +500,7 @@ if(ENABLE_MEDIAPLAYER)
             message(STATUS "MediaPlayer flags      : ${MEDIAPLAYER_FLAGS}")
 
             include_directories(${CMAKE_SOURCE_DIR}/core/libs/video/QtAVPlayer)
+            include_directories(${CMAKE_SOURCE_DIR}/core/libs/video/player/QtAVPlayer)
 
         endif()
 
