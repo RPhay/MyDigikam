@@ -92,15 +92,6 @@ set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/camera/cameratype.cpp
 )
 
-if(ENABLE_MEDIAPLAYER AND NOT ENABLE_QTMULTIMEDIA)
-
-    set(libsetup_SRCS
-        ${libsetup_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/setupvideo.cpp
-    )
-
-endif()
-
 # Used by digikamgui
 add_library(gui_setup_obj OBJECT ${libsetup_SRCS})
 

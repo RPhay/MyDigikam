@@ -52,10 +52,6 @@
 #   include "setupgeolocation.h"
 #endif
 
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-#   include "setupvideo.h"
-#endif
-
 namespace Digikam
 {
 
@@ -68,13 +64,6 @@ public:
         page_collections        (nullptr),
         page_albumView          (nullptr),
         page_tooltip            (nullptr),
-
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-        page_video              (nullptr),
-
-#endif
-
         page_metadata           (nullptr),
         page_template           (nullptr),
         page_lighttable         (nullptr),
@@ -95,13 +84,6 @@ public:
         collectionsPage         (nullptr),
         albumViewPage           (nullptr),
         tooltipPage             (nullptr),
-
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-        videoPage               (nullptr),
-
-#endif
-
         metadataPage            (nullptr),
         templatePage            (nullptr),
         lighttablePage          (nullptr),
@@ -125,13 +107,6 @@ public:
     DConfigDlgWdgItem*       page_collections;
     DConfigDlgWdgItem*       page_albumView;
     DConfigDlgWdgItem*       page_tooltip;
-
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-    DConfigDlgWdgItem*       page_video;
-
-#endif
-
     DConfigDlgWdgItem*       page_metadata;
     DConfigDlgWdgItem*       page_template;
     DConfigDlgWdgItem*       page_lighttable;
@@ -153,13 +128,6 @@ public:
     SetupCollections*        collectionsPage;
     SetupAlbumView*          albumViewPage;
     SetupToolTip*            tooltipPage;
-
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-    SetupVideo*              videoPage;
-
-#endif
-
     SetupMetadata*           metadataPage;
     SetupTemplate*           templatePage;
     SetupLightTable*         lighttablePage;
@@ -216,15 +184,6 @@ Setup::Setup(QWidget* const parent)
     d->page_tooltip = addPage(d->tooltipPage, i18nc("@title: settings section", "Tool-Tip"));
     d->page_tooltip->setHeader(i18nc("@title", "Items Tool-Tip Settings\nCustomize information in item tool-tips"));
     d->page_tooltip->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
-
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-    d->videoPage  = new SetupVideo();
-    d->page_video = addPage(d->videoPage, i18nc("@title: settings section", "Video"));
-    d->page_video->setHeader(i18nc("@title", "Video Preview Settings\nCustomize settings to play video media"));
-    d->page_video->setIcon(QIcon::fromTheme(QLatin1String("video-x-generic")));
-
-#endif
 
     d->metadataPage  = new SetupMetadata();
     d->page_metadata = addPage(d->metadataPage, i18nc("@title: settings section", "Metadata"));
@@ -326,13 +285,6 @@ Setup::~Setup()
     group.writeEntry(QLatin1String("Setup Page"),      (int)activePageIndex());
     group.writeEntry(QLatin1String("Albumview Tab"),   (int)d->albumViewPage->activeTab());
     group.writeEntry(QLatin1String("ToolTip Tab"),     (int)d->tooltipPage->activeTab());
-
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-    group.writeEntry(QLatin1String("Video Tab"),       (int)d->videoPage->activeTab());
-
-#endif
-
     group.writeEntry(QLatin1String("Metadata Tab"),    (int)d->metadataPage->activeTab());
     group.writeEntry(QLatin1String("Metadata SubTab"), (int)d->metadataPage->activeSubTab());
     group.writeEntry(QLatin1String("Editor Tab"),      (int)d->editorPage->activeTab());
@@ -627,13 +579,6 @@ void Setup::slotOkClicked()
     d->collectionsPage->applySettings();
     d->albumViewPage->applySettings();
     d->tooltipPage->applySettings();
-
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-    d->videoPage->applySettings();
-
-#endif
-
     d->metadataPage->applySettings();
     d->templatePage->applySettings();
     d->lighttablePage->applySettings();
@@ -666,12 +611,6 @@ void Setup::slotOkClicked()
 void Setup::slotCancelClicked()
 {
 
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-    d->videoPage->cancel();
-
-#endif
-
 #ifdef HAVE_GEOLOCATION
 
     d->geolocationPage->cancel();
@@ -692,13 +631,6 @@ void Setup::showPage(Setup::Page page)
         item = d->pageItem((Page)group.readEntry(QLatin1String("Setup Page"), (int)CollectionsPage));
         d->albumViewPage->setActiveTab((SetupAlbumView::AlbumTab)group.readEntry(QLatin1String("AlbumView Tab"), (int)SetupAlbumView::IconView));
         d->tooltipPage->setActiveTab((SetupToolTip::ToolTipTab)group.readEntry(QLatin1String("ToolTip Tab"), (int)SetupToolTip::IconItems));
-
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-        d->videoPage->setActiveTab((SetupVideo::VideoTab)group.readEntry(QLatin1String("Video Tab"), (int)SetupVideo::Decoder));
-
-#endif
-
         d->metadataPage->setActiveTab((SetupMetadata::MetadataTab)group.readEntry(QLatin1String("Metadata Tab"), (int)SetupMetadata::Behavior));
         d->metadataPage->setActiveSubTab((SetupMetadata::MetadataSubTab)group.readEntry(QLatin1String("Metadata SubTab"), (int)SetupMetadata::ExifViewer));
 
@@ -745,15 +677,6 @@ Setup::Page Setup::activePageIndex() const
     {
         return ToolTipPage;
     }
-
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-    if (cur == d->page_video)
-    {
-        return VideoPage;
-    }
-
-#endif
 
     if (cur == d->page_metadata)
     {
@@ -835,15 +758,6 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
         {
             return page_tooltip;
         }
-
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-        case Setup::VideoPage:
-        {
-            return page_video;
-        }
-
-#endif
 
         case Setup::MetadataPage:
         {

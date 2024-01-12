@@ -41,13 +41,6 @@ public:
         CollectionsPage,
         AlbumViewPage,
         ToolTipPage,
-
-#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
-
-        VideoPage,
-
-#endif
-
         MetadataPage,
         TemplatePage,
         EditorPage,
