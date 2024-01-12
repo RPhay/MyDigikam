@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2006-20-12
- * Description : a view to embed QtAv media player.
+ * Description : a view to host media player based on QtAVPlayer.
  *
  * SPDX-FileCopyrightText: 2006-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

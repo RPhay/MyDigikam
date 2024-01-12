@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2006-20-12
- * Description : a view to embed QtAv media player.
+ * Description : a view to host media player based on QtAVPlayer.
  *
  * SPDX-FileCopyrightText: 2006-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -62,7 +62,7 @@ class Q_DECL_HIDDEN VideoRenderer : public QVideoRendererControl
 {
 public:
 
-    VideoRenderer(QObject* parent = nullptr)
+    VideoRenderer(QObject* const parent = nullptr)
         : QVideoRendererControl(parent)
     {
     }
@@ -86,7 +86,7 @@ class Q_DECL_HIDDEN MediaService : public QMediaService
 {
 public:
 
-    MediaService(VideoRenderer* vr, QObject* parent = nullptr)
+    MediaService(VideoRenderer* const vr, QObject* const parent = nullptr)
         : QMediaService(parent),
           m_renderer   (vr)
     {
@@ -115,7 +115,7 @@ class Q_DECL_HIDDEN MediaObject : public QMediaObject
 {
 public:
 
-    explicit MediaObject(VideoRenderer* vr, QObject* parent = nullptr)
+    explicit MediaObject(VideoRenderer* const vr, QObject* const parent = nullptr)
         : QMediaObject(parent, new MediaService(vr, parent))
     {
     }
@@ -127,7 +127,7 @@ class Q_DECL_HIDDEN VideoWidget : public QVideoWidget
 {
 public:
 
-    VideoWidget(QWidget* parent = nullptr)
+    VideoWidget(QWidget* const parent = nullptr)
         : QVideoWidget(parent)
     {
     }
@@ -358,8 +358,10 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
+    int volume                = group.readEntry("Volume", 50);
 
-    d->volume->setValue(group.readEntry("Volume", 50));
+    d->audioOutput->setVolume(volume);
+    d->volume->setValue(volume);
 
     // --------------------------------------------------------------------------
 
@@ -774,14 +776,13 @@ void MediaPlayerView::slotPositionChanged(qint64 position)
 
 void MediaPlayerView::slotVolumeChanged(int volume)
 {
-/*FIXME
-    d->player->audio()->setVolume((qreal)volume / 100.0);
+    d->audioOutput->setVolume((qreal)volume / 100.0);
 
     if (objectName() != QLatin1String("main_media_player"))
     {
         return;
     }
-*/
+
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
     group.writeEntry("Volume", volume);

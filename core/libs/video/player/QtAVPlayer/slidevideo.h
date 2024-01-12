@@ -4,9 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2014-09-22
- * Description : Slideshow video viewer based on QtAV
+ * Description : Slideshow video viewer based on QtAVPlayer
  *
- * SPDX-FileCopyrightText: 2014-2023 Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2014-2024 Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -21,10 +21,9 @@
 #include <QEvent>
 #include <QUrl>
 
-// QtAV includes
+// QtAVPlayer includes
 
-#include "AVError.h"
-#include "AVPlayerCore.h"
+#include "qavplayer.h"
 
 // Local includes
 
@@ -59,14 +58,17 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotPlayerStateChanged(QtAV::AVPlayerCore::State state);
-    void slotMediaStatusChanged(QtAV::MediaStatus status);
-    void slotHandlePlayerError(const QtAV::AVError& err);
+    void slotPlayerStateChanged(QAVPlayer::State newState);
+    void slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus);
+    void slotHandlePlayerError(QAVPlayer::Error err);
 
     void slotPositionChanged(qint64 position);
     void slotDurationChanged(qint64 duration);
     void slotVolumeChanged(int volume);
     void slotPosition(int position);
+
+    void slotAudioFrame(const QAVAudioFrame& frame);
+    void slotVideoFrame(const QAVVideoFrame& frame);
 
 private:
 
