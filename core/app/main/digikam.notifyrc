@@ -916,3 +916,8 @@ Comment[x-test]=xxThe scan of the new items in database has completed.xx
 Comment[zh_CN]=数据库的新项目扫描作业已经完成。
 Comment[zh_TW]=找出資料庫內的新項目已完成。
 Action=Popup
+
+[Event/MetadataRemover]
+Name=Removal of all tags from items complete
+Comment=The removal of all tags from items has been completed.
+Action=Popup
