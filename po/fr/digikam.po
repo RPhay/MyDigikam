@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 01:34+0000\n"
+"POT-Creation-Date: 2024-01-13 01:44+0000\n"
 "PO-Revision-Date: 2024-01-03 10:32+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -3319,7 +3319,7 @@ msgid "Selection"
 msgstr "Sélection"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:886
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -27114,7 +27114,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Conversion « UFRaw Raw »"
 
 #: core/libs/album/engine/album.cpp:406
-#: core/libs/database/utils/ifaces/dio.cpp:891
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Corbeille"
@@ -27739,7 +27739,7 @@ msgid "Context menu"
 msgstr "Menu contextuel"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
-#: core/libs/database/utils/ifaces/dio.cpp:901
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
 msgstr "Vider la corbeille"
@@ -29180,13 +29180,13 @@ msgstr ""
 "n'existe pas. Impossible de vérifier la version du schéma de la base de "
 "données actuelle. Essayez de démarrer avec une base de données vide"
 
-#: core/libs/database/utils/ifaces/dio.cpp:344
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Conflit de fichier"
 
-#: core/libs/database/utils/ifaces/dio.cpp:345
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29208,55 +29208,55 @@ msgstr ""
 "Écraser automatiquement : les fichiers en conflit seront écrasés.\n"
 "Ignorer automatiquement : les fichiers en conflit seront ignorés."
 
-#: core/libs/database/utils/ifaces/dio.cpp:354
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Renommer automatiquement"
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Écraser automatiquement"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Ignorer automatiquement"
 
-#: core/libs/database/utils/ifaces/dio.cpp:855
+#: core/libs/database/utils/ifaces/dio.cpp:857
 #, kde-format
 msgid "Copy Album"
 msgstr "Copier l'album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:860
+#: core/libs/database/utils/ifaces/dio.cpp:862
 #, kde-format
 msgid "Copy Images"
 msgstr "Copier les images"
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:868
 #, kde-format
 msgid "Copy Files"
 msgstr "Copier des fichiers"
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:873
 #, kde-format
 msgid "Move Album"
 msgstr "Déplacer l'album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, kde-format
 msgid "Move Images"
 msgstr "Déplacer les images"
 
-#: core/libs/database/utils/ifaces/dio.cpp:881
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Move Files"
 msgstr "Déplacer les fichiers"
 
-#: core/libs/database/utils/ifaces/dio.cpp:896
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #, kde-format
 msgid "Restore Trash"
 msgstr "Restaurer la corbeille"
