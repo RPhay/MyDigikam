@@ -41,13 +41,12 @@ if(ENABLE_MEDIAPLAYER)
             message(STATUS "QtAV dependencies checks:")
             message(STATUS "")
 
-            find_package(VAAPI      QUIET)
+            find_package(VAAPI QUIET)
 
             if(WIN32)
 
                 set(DirectX_FIND_REQUIRED_D3D11 TRUE)
                 find_package(DirectX)
-                find_package(GDIPLUS)
 
             endif()
 
@@ -55,7 +54,6 @@ if(ENABLE_MEDIAPLAYER)
             MACRO_BOOL_TO_01(DirectX_D3D11_FOUND   HAVE_LIBD3D11)
             MACRO_BOOL_TO_01(DirectX_DSound_FOUND  HAVE_LIBDIRECTSOUND)
             MACRO_BOOL_TO_01(DirectX_XAudio2_FOUND HAVE_LIBXAUDIO2)
-            MACRO_BOOL_TO_01(GDIPLUS_FOUND         HAVE_LIBGDIPLUS)
 
             # --- Reports and Libraries -----------------------------------------------------------
 
@@ -123,17 +121,6 @@ if(ENABLE_MEDIAPLAYER)
             endif()
 
             # --- Windows config ---
-
-            if(GDIPLUS_FOUND)
-
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${GDIPLUS_LIBRARIES})
-                message(STATUS "MediaPlayer will be compiled with GDI+ support       : yes")
-
-            else()
-
-                message(STATUS "MediaPlayer will be compiled with GDI+ support       : no")
-
-            endif()
 
             if(DIRECTX_FOUND)
 
