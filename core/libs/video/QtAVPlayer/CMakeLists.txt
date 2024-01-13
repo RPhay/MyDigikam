@@ -74,10 +74,17 @@ if(VAAPI_FOUND)
 
     include_directories(${VAAPI_INCLUDE_DIRS})
 
-    set(libqtavplayer_SRCS ${libqtavplayer_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_vaapi_drm_egl.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_vaapi_x11_glx.cpp
-    )
+    if(OpenGL_EGL_FOUND)
+        set(libqtavplayer_SRCS ${libqtavplayer_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_vaapi_drm_egl.cpp
+        )
+    endif()
+
+    if(X11_FOUND)
+        set(libqtavplayer_SRCS ${libqtavplayer_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_vaapi_x11_glx.cpp
+        )
+    endif()
 
 endif()
 
