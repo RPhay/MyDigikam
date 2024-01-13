@@ -88,12 +88,6 @@ if(ENABLE_MEDIAPLAYER)
 
             endif()
 
-            else()
-
-                message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : no")
-
-            endif()
-
             # --- Windows config ---
 
             if(DIRECTX_FOUND)
