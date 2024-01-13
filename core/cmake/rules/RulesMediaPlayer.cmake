@@ -42,7 +42,6 @@ if(ENABLE_MEDIAPLAYER)
             message(STATUS "")
 
             find_package(VAAPI      QUIET)
-            find_package(OpenSLES   QUIET)
 
             if(WIN32)
 
@@ -59,20 +58,8 @@ if(ENABLE_MEDIAPLAYER)
             MACRO_BOOL_TO_01(DirectX_XAudio2_FOUND HAVE_LIBXAUDIO2)
             MACRO_BOOL_TO_01(GDIPLUS_FOUND         HAVE_LIBGDIPLUS)
             MACRO_BOOL_TO_01(Direct2D_FOUND        HAVE_LIBDIRECT2D)
-            MACRO_BOOL_TO_01(OPENSLES_FOUND        HAVE_LIBOPENSLES)
 
             # --- Reports and Libraries -----------------------------------------------------------
-
-            if(OPENSLES_FOUND)
-
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENSLES_LIBRARIES})
-                message(STATUS "MediaPlayer will be compiled with OpenSLES support   : yes")
-
-            else()
-
-                message(STATUS "MediaPlayer will be compiled with OpenSLES support   : no")
-
-            endif()
 
             if(VAAPI_FOUND)
 
@@ -274,7 +261,6 @@ if(ENABLE_MEDIAPLAYER)
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_X11=${HAVE_LIBX11})
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XV=${HAVE_LIBXV})
-            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_OPENSL=${HAVE_LIBOPENSLES})
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_D3D11VA=${HAVE_LIBD3D11})           # DirectX 3D for MSVC only
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XAUDIO2=${HAVE_LIBXAUDIO2})         # XAudio2 for MSVC only (replacement of DirectSound)
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_DSOUND=${HAVE_LIBDIRECTSOUND})      # DirectX Sound for MSVC only (replaced by XAudio2)
