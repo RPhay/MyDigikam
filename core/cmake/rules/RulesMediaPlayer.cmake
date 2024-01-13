@@ -58,7 +58,6 @@ if(ENABLE_MEDIAPLAYER)
             include(MacroSSE)
             CheckSSESupport()
 
-            MACRO_BOOL_TO_01(uchardet_FOUND        HAVE_LIBUCHARDET)
             MACRO_BOOL_TO_01(PORTAUDIO_FOUND       HAVE_LIBPORTAUDIO)
             MACRO_BOOL_TO_01(PULSEAUDIO_FOUND      HAVE_LIBPULSEAUDIO)
             MACRO_BOOL_TO_01(VAAPI_FOUND           HAVE_LIBVAAPI)
@@ -92,17 +91,6 @@ if(ENABLE_MEDIAPLAYER)
                     set(MEDIAPLAYER_FLAGS ${MEDIAPLAYER_FLAGS} -msse2)
 
                 endif()
-
-            endif()
-
-            if(uchardet_FOUND)
-
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} uchardet)
-                message(STATUS "MediaPlayer will be compiled with UCharDet support   : yes")
-
-            else()
-
-                message(STATUS "MediaPlayer will be compiled with UCharDet support   : no")
 
             endif()
 
@@ -343,12 +331,6 @@ if(ENABLE_MEDIAPLAYER)
             else()
 
                 set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_DXVA=0)
-
-            endif()
-
-            if (uchardet_FOUND)
-
-                set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DLINK_UCHARDET)
 
             endif()
 
