@@ -42,6 +42,7 @@ if(ENABLE_MEDIAPLAYER)
             message(STATUS "")
 
             find_package(VAAPI QUIET)
+            find_package(VDPAU QUIET)
 
             if(WIN32)
 
@@ -51,6 +52,7 @@ if(ENABLE_MEDIAPLAYER)
             endif()
 
             MACRO_BOOL_TO_01(VAAPI_FOUND           HAVE_LIBVAAPI)
+            MACRO_BOOL_TO_01(VDPAU_FOUND           HAVE_LIBVDPAU)
             MACRO_BOOL_TO_01(DirectX_D3D11_FOUND   HAVE_LIBD3D11)
 
             # --- Reports and Libraries -----------------------------------------------------------
@@ -84,6 +86,18 @@ if(ENABLE_MEDIAPLAYER)
                     message(STATUS "MediaPlayer will be compiled with VaAPI DRM support  : no")
 
                 endif()
+
+            endif()
+
+            if(VDPAU_FOUND)
+
+                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${VDPAU_LIBRARIES})
+
+                message(STATUS "MediaPlayer will be compiled with VDPAU support      : yes")
+
+            else()
+
+                message(STATUS "MediaPlayer will be compiled with VDPAU support      : no")
 
             endif()
 
