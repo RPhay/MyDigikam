@@ -59,9 +59,9 @@ if(ENABLE_MEDIAPLAYER)
 
                 set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${VAAPI_LIBRARIES})
 
-                if(VAAPI_X11_FOUND AND X11_FOUND)
+                if(VAAPI_X11_FOUND AND X11_xcb_glx_FOUND)
 
-                    set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${X11_LIBRARIES})
+                    set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${X11_xcb_glx_LIB})
 
                     message(STATUS "MediaPlayer will be compiled with VaAPI X11 support  : yes")
 
