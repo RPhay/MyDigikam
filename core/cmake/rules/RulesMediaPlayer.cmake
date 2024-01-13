@@ -41,7 +41,6 @@ if(ENABLE_MEDIAPLAYER)
             message(STATUS "QtAV dependencies checks:")
             message(STATUS "")
 
-            find_package(PulseAudio QUIET)
             find_package(VAAPI      QUIET)
             find_package(OpenSLES   QUIET)
 
@@ -57,7 +56,6 @@ if(ENABLE_MEDIAPLAYER)
             include(MacroSSE)
             CheckSSESupport()
 
-            MACRO_BOOL_TO_01(PULSEAUDIO_FOUND      HAVE_LIBPULSEAUDIO)
             MACRO_BOOL_TO_01(VAAPI_FOUND           HAVE_LIBVAAPI)
             MACRO_BOOL_TO_01(DirectX_D3D11_FOUND   HAVE_LIBD3D11)
             MACRO_BOOL_TO_01(DirectX_DSound_FOUND  HAVE_LIBDIRECTSOUND)
@@ -89,17 +87,6 @@ if(ENABLE_MEDIAPLAYER)
                     set(MEDIAPLAYER_FLAGS ${MEDIAPLAYER_FLAGS} -msse2)
 
                 endif()
-
-            endif()
-
-            if(PULSEAUDIO_FOUND)
-
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${PULSEAUDIO_LIBRARIES})
-                message(STATUS "MediaPlayer will be compiled with PulseAudio support : yes")
-
-            else()
-
-                message(STATUS "MediaPlayer will be compiled with PulseAudio support : no")
 
             endif()
 
@@ -339,7 +326,6 @@ if(ENABLE_MEDIAPLAYER)
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_X11=${HAVE_LIBX11})
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XV=${HAVE_LIBXV})
-            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_PULSEAUDIO=${HAVE_LIBPULSEAUDIO})
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_OPENSL=${HAVE_LIBOPENSLES})
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_D3D11VA=${HAVE_LIBD3D11})           # DirectX 3D for MSVC only
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XAUDIO2=${HAVE_LIBXAUDIO2})         # XAudio2 for MSVC only (replacement of DirectSound)
