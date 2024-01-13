@@ -149,7 +149,7 @@ BUGFIXES:
 130 ==> 479635 - Metadata fields can no longer be accessed using the Tab key.
 131 ==> 479758 - Loss metadata from items.
 132 ==> 479704 - Nearby face tag editor fields overlap each other, making targeted editing impossible.
-133 ==> 
+133 ==> 479769 - Viewing a video locks file from being moved by DigiKam or OS, even after de-selecting the file.
 134 ==> 
 135 ==> 
 136 ==> 
