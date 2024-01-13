@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 01:34+0000\n"
+"POT-Creation-Date: 2024-01-13 01:44+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -3211,7 +3211,7 @@ msgid "Selection"
 msgstr "Chọn"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:886
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -25893,7 +25893,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Miền màu"
 
 #: core/libs/album/engine/album.cpp:406
-#: core/libs/database/utils/ifaces/dio.cpp:891
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -26450,7 +26450,7 @@ msgid "Context menu"
 msgstr ""
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
-#: core/libs/database/utils/ifaces/dio.cpp:901
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -27770,13 +27770,13 @@ msgstr ""
 "liệu) không tồn tại. Vì thế không thể thẩm tra phiên bản giản đồ cơ sở dữ "
 "liệu hiện thời. Thử bắt đầu với cơ sở dữ liệu trống."
 
-#: core/libs/database/utils/ifaces/dio.cpp:344
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Tên tệp ảnh mới"
 
-#: core/libs/database/utils/ifaces/dio.cpp:345
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -27789,60 +27789,60 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:354
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Ghi đè tệp không?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Ghi đè tệp không?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Ghi đè tệp không?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:855
+#: core/libs/database/utils/ifaces/dio.cpp:857
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Copy Album"
 msgstr "Tập ảnh tôi"
 
-#: core/libs/database/utils/ifaces/dio.cpp:860
+#: core/libs/database/utils/ifaces/dio.cpp:862
 #, fuzzy, kde-format
 #| msgid "Add Images..."
 msgid "Copy Images"
 msgstr "Thêm ảnh..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:868
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy Files"
 msgstr "&Chép vào đây"
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:873
 #, fuzzy, kde-format
 msgid "Move Album"
 msgstr "Tập ả&nh mới..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "Lưu ảnh"
 
-#: core/libs/database/utils/ifaces/dio.cpp:881
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "Tệp phim"
 
-#: core/libs/database/utils/ifaces/dio.cpp:896
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "Phục hồi lại"

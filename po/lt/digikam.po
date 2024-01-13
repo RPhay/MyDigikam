@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 01:34+0000\n"
+"POT-Creation-Date: 2024-01-13 01:44+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -3493,7 +3493,7 @@ msgid "Selection"
 msgstr "Pažymėjimas"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:886
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -27113,7 +27113,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Spalvų taisymas"
 
 #: core/libs/album/engine/album.cpp:406
-#: core/libs/database/utils/ifaces/dio.cpp:891
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -27664,7 +27664,7 @@ msgid "Context menu"
 msgstr "Kontekstinis meniu"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
-#: core/libs/database/utils/ifaces/dio.cpp:901
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -29044,14 +29044,14 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:344
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Failo pavadinimo filtras:"
 
-#: core/libs/database/utils/ifaces/dio.cpp:345
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29064,64 +29064,64 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:354
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Perrašyti automatiškai"
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Perrašyti automatiškai"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Perrašyti automatiškai"
 
-#: core/libs/database/utils/ifaces/dio.cpp:855
+#: core/libs/database/utils/ifaces/dio.cpp:857
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "Pagal albumus"
 
-#: core/libs/database/utils/ifaces/dio.cpp:860
+#: core/libs/database/utils/ifaces/dio.cpp:862
 #, fuzzy, kde-format
 #| msgid "&Group Images"
 msgid "Copy Images"
 msgstr "&Grupuoti paveikslėlius"
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:868
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy Files"
 msgstr "&Kopijuoti čia"
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:873
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "&Perkelti į albumą..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "Išsaugoti paveikslėlius"
 
-#: core/libs/database/utils/ifaces/dio.cpp:881
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "Filmų failai"
 
-#: core/libs/database/utils/ifaces/dio.cpp:896
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "Atstatymas"

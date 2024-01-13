@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 01:34+0000\n"
+"POT-Creation-Date: 2024-01-13 01:44+0000\n"
 "PO-Revision-Date: 2022-09-09 12:18\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -3233,7 +3233,7 @@ msgid "Selection"
 msgstr "Абраць"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:886
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -25226,7 +25226,7 @@ msgid "UFRaw Raw Conversion"
 msgstr ""
 
 #: core/libs/album/engine/album.cpp:406
-#: core/libs/database/utils/ifaces/dio.cpp:891
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Сметніца"
@@ -25796,7 +25796,7 @@ msgid "Context menu"
 msgstr "Кантэкстнае меню"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
-#: core/libs/database/utils/ifaces/dio.cpp:901
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
 msgstr "Ачысціць сметніцу"
@@ -27154,14 +27154,14 @@ msgstr ""
 "версію схемы базы даных немагчыма праверыць. Паспрабуйце запусціць праграму "
 "з пустой базай даных. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:344
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, fuzzy, kde-format
 #| msgid "File conflict"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Канфлікт файлаў"
 
-#: core/libs/database/utils/ifaces/dio.cpp:345
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -27174,21 +27174,21 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:354
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, fuzzy, kde-format
 #| msgid "Rename Again"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Змяніць назву яшчэ раз"
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Перазапісаць файл?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox set while balance automatically"
 #| msgid "Automatic"
@@ -27196,37 +27196,37 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Аўтаматычна"
 
-#: core/libs/database/utils/ifaces/dio.cpp:855
+#: core/libs/database/utils/ifaces/dio.cpp:857
 #, kde-format
 msgid "Copy Album"
 msgstr "Скапіяваць альбом"
 
-#: core/libs/database/utils/ifaces/dio.cpp:860
+#: core/libs/database/utils/ifaces/dio.cpp:862
 #, kde-format
 msgid "Copy Images"
 msgstr "Скапіяваць выявы"
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:868
 #, kde-format
 msgid "Copy Files"
 msgstr "Скапіяваць файлы"
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:873
 #, kde-format
 msgid "Move Album"
 msgstr "Перамясціць альбом"
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, kde-format
 msgid "Move Images"
 msgstr "Перамясціць выявы"
 
-#: core/libs/database/utils/ifaces/dio.cpp:881
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Move Files"
 msgstr "Перамясціць файлы"
 
-#: core/libs/database/utils/ifaces/dio.cpp:896
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #, kde-format
 msgid "Restore Trash"
 msgstr "Аднавіць са сметніцы"

@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 01:34+0000\n"
-"PO-Revision-Date: 2024-01-11 01:51+0100\n"
+"POT-Creation-Date: 2024-01-13 01:44+0000\n"
+"PO-Revision-Date: 2024-01-12 01:02+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3290,7 +3290,7 @@ msgid "Selection"
 msgstr "Selección"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:886
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -20918,7 +20918,7 @@ msgstr "La presentación en vídeo no se ha completado"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:186
 #, kde-format
 msgid "See the video encoding trace below"
-msgstr ""
+msgstr "Vea el seguimiento de la codificación del video a continuación"
 
 # TODO - Una mejor de tooltip
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:191
@@ -21003,6 +21003,9 @@ msgid ""
 "will be played in loop. If the audio length is largest than video, it will "
 "be trimmed.</i>"
 msgstr ""
+"<i>Notas sobre la banda sonora: Si la duración del sonido es menor que la "
+"del vídeo, se reproducirá en bucle. Si la duración del sonido es mayor que "
+"la del vídeo, se truncará.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
 #, kde-format
@@ -26957,7 +26960,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Conversión RAW de UFRaw"
 
 #: core/libs/album/engine/album.cpp:406
-#: core/libs/database/utils/ifaces/dio.cpp:891
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Papelera"
@@ -27568,7 +27571,7 @@ msgid "Context menu"
 msgstr "Menú de contexto"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
-#: core/libs/database/utils/ifaces/dio.cpp:901
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
 msgstr "Vaciar la papelera"
@@ -28978,13 +28981,13 @@ msgstr ""
 "existe. No se puede verificar la versión del esquema de base de datos "
 "actual. Intente arrancar con una base de datos vacía. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:344
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Conflicto de archivo"
 
-#: core/libs/database/utils/ifaces/dio.cpp:345
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29008,55 +29011,55 @@ msgstr ""
 "conflictos.\n"
 " * Omitir automáticamente: se omiten los archivos con conflictos."
 
-#: core/libs/database/utils/ifaces/dio.cpp:354
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Cambiar de nombre automáticamente"
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Sobrescribir automáticamente"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Omitir automáticamente"
 
-#: core/libs/database/utils/ifaces/dio.cpp:855
+#: core/libs/database/utils/ifaces/dio.cpp:857
 #, kde-format
 msgid "Copy Album"
 msgstr "Copiar álbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:860
+#: core/libs/database/utils/ifaces/dio.cpp:862
 #, kde-format
 msgid "Copy Images"
 msgstr "Copiar imágenes"
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:868
 #, kde-format
 msgid "Copy Files"
 msgstr "Copiar archivos"
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:873
 #, kde-format
 msgid "Move Album"
 msgstr "Mover álbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, kde-format
 msgid "Move Images"
 msgstr "Mover imágenes"
 
-#: core/libs/database/utils/ifaces/dio.cpp:881
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Move Files"
 msgstr "Mover archivos"
 
-#: core/libs/database/utils/ifaces/dio.cpp:896
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #, kde-format
 msgid "Restore Trash"
 msgstr "Restaurar la papelera"
@@ -57646,7 +57649,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:64
 #, kde-format
 msgid "Gnomonic"
-msgstr ""
+msgstr "Gnomónica"
 
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:69
 #, kde-format
@@ -57655,11 +57658,14 @@ msgid ""
 "displaying panorama photography. Also used for navigation, radio and seismic "
 "work.</p>"
 msgstr ""
+"<p><b>Proyección gnomónica</b> («rectilínea»)</p><p>Aplicaciones: Se usa "
+"para mostrar fotografías panorámicas. También se usa en la navegación, radio "
+"y en trabajos sísmicos.</p>"
 
 #: core/utilities/geolocation/marble/projections/LambertAzimuthalProjection.cpp:64
 #, kde-format
 msgid "Lambert Azimuthal Equal-Area"
-msgstr ""
+msgstr "Proyección acimutal equivalente de Lambert"
 
 #: core/utilities/geolocation/marble/projections/LambertAzimuthalProjection.cpp:69
 #, kde-format
@@ -57667,6 +57673,8 @@ msgid ""
 "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used "
 "in structural geology to plot directional data.</p>"
 msgstr ""
+"<p><b>Proyección acimutal equivalente de Lambert</b></p><p>Aplicaciones: Se "
+"usa en geología estructural para trazar datos direccionales.</p>"
 
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:46
 #, kde-format
@@ -57674,13 +57682,13 @@ msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
 "projection for navigation.</p>"
 msgstr ""
+"<p><b>Proyección de Mercator</b></p><p>Aplicaciones: Popular proyección de "
+"mapas estándar para la navegación.</p>"
 
 #: core/utilities/geolocation/marble/projections/SphericalProjection.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@option: global settings"
-#| msgid "Global"
+#, kde-format
 msgid "Globe"
-msgstr "Global"
+msgstr "Globo"
 
 #: core/utilities/geolocation/marble/projections/SphericalProjection.cpp:71
 #, kde-format
@@ -57689,6 +57697,9 @@ msgid ""
 "perspective projection that is used to display the hemisphere of a globe as "
 "it appears from outer space.</p>"
 msgstr ""
+"<p><b>Proyección ortográfica</b> («ortogonal»)</p><p>Aplicaciones: "
+"Proyección de perspectiva que se usa para mostrar el hemisferio de un globo "
+"como se vería desde el espacio exterior.</p>"
 
 #: core/utilities/geolocation/marble/projections/StereographicProjection.cpp:64
 #, kde-format
@@ -57701,11 +57712,13 @@ msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
 "for planetary cartography, geology and panorama photography.</p>"
 msgstr ""
+"<p><b>Proyección estereográfica</b> («ortogonal»)</p><p>Aplicaciones: Se usa "
+"en cartografía planetaria, geología y en fotografía panorámica.</p>"
 
 #: core/utilities/geolocation/marble/projections/VerticalPerspectiveProjection.cpp:78
 #, kde-format
 msgid "Vertical Perspective Projection"
-msgstr ""
+msgstr "Proyección de perspectiva vertical"
 
 #: core/utilities/geolocation/marble/projections/VerticalPerspectiveProjection.cpp:83
 #, kde-format
@@ -57714,6 +57727,9 @@ msgid ""
 "earth as it appears from a relatively short distance above the surface. "
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
+"<p><b>Proyección de perspectiva vertical</b> («ortogonal»)</p><p> Muestra la "
+"Tierra como se vería desde una distancia relativamente corta sobre la "
+"superficie. Aplicaciones: Se usa en mapas virtuales.</p>"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
 #, kde-format
@@ -57741,6 +57757,8 @@ msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
 "mi, ft)."
 msgstr ""
+"La unidad que se utiliza para medir altitud, longitudes y distancias (por "
+"ejemplo, km, mi, ft)."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
 #, kde-format
@@ -57760,7 +57778,7 @@ msgstr "Grado (decimal)"
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
-msgstr ""
+msgstr "Universal transversal de Mercator (UTM)"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:123
 #, kde-format
@@ -57769,6 +57787,10 @@ msgid ""
 "By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
+"Especifica la notación de ángulos en coordenadas.\n"
+"De forma predeterminada, se usa la notación Grado-Minuto-Segundo (por "
+"ejemplo, 54°30'00\").\n"
+"Como alternativa, se pueden usar grados decimales (por ejemplo, 54,5°)."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
 #, kde-format
@@ -57776,17 +57798,15 @@ msgid "Map Quality"
 msgstr "Calidad del mapa"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
-#, fuzzy, kde-format
-#| msgid "&Shuffle images"
+#, kde-format
 msgid "Still Image:"
-msgstr "Me&zclar las imágenes"
+msgstr "Imagen fija:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
-#, fuzzy, kde-format
-#| msgid "Outlined Text"
+#, kde-format
 msgid "Outline Quality"
-msgstr "Texto con contorno"
+msgstr "Calidad del contorno"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:139
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:149

@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 01:34+0000\n"
-"PO-Revision-Date: 2024-01-08 22:51+0100\n"
+"POT-Creation-Date: 2024-01-13 01:44+0000\n"
+"PO-Revision-Date: 2024-01-11 22:21+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -3230,7 +3230,7 @@ msgid "Selection"
 msgstr "Elekto"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:886
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -20559,7 +20559,7 @@ msgstr "Video Slideshow ne finiĝis"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:186
 #, kde-format
 msgid "See the video encoding trace below"
-msgstr ""
+msgstr "Vidu la videokodan spuron sube"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:191
 #, kde-format
@@ -20615,28 +20615,25 @@ msgid "Media Container Format:"
 msgstr "Formato de Media Ujo:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:97
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack File:"
-msgstr "Muziko:"
+msgstr "Sontraka Dosiero:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:103
-#, fuzzy, kde-format
-#| msgid "Select audio files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
-msgstr "Elekti sondosierojn"
+msgstr "Elekti Sontrakon"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Video soundtrack (lets empty if none)"
-msgstr ""
+msgstr "Film-sontrako (lasu malplena se neniu)"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack Duration:"
-msgstr "Muziko:"
+msgstr "Daŭro de Sontrako:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:112
 #, kde-format
@@ -20645,6 +20642,8 @@ msgid ""
 "will be played in loop. If the audio length is largest than video, it will "
 "be trimmed.</i>"
 msgstr ""
+"<i>Notoj pri sontrako: se la aŭdaĵo estas pli mallonga ol la filmo, ĝi estos "
+"ludita en buklo. Se aŭdaĵo estas pli longa ol filmo, ĝi estos tondita.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
 #, kde-format
@@ -26517,7 +26516,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw Kruda Konvertiĝo"
 
 #: core/libs/album/engine/album.cpp:406
-#: core/libs/database/utils/ifaces/dio.cpp:891
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Rubujo"
@@ -27122,7 +27121,7 @@ msgid "Context menu"
 msgstr "Kunteksta menuo"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
-#: core/libs/database/utils/ifaces/dio.cpp:901
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
 msgstr "Malplenigi Rubujon"
@@ -28511,13 +28510,13 @@ msgstr ""
 "nuna datumbaza skemversio ne povas esti kontrolita. Provu komenci kun "
 "malplena datumbazo."
 
-#: core/libs/database/utils/ifaces/dio.cpp:344
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Dosiera Konflikto"
 
-#: core/libs/database/utils/ifaces/dio.cpp:345
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28538,55 +28537,55 @@ msgstr ""
 "Anstataŭigu aŭtomate: konfliktantaj dosieroj estos anstataŭitaj.\n"
 "Salti aŭtomate: konfliktantaj dosieroj estos preterlasitaj."
 
-#: core/libs/database/utils/ifaces/dio.cpp:354
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Alinomigi Aŭtomate"
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Anstataŭigi Aŭtomate"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Salti Aŭtomate"
 
-#: core/libs/database/utils/ifaces/dio.cpp:855
+#: core/libs/database/utils/ifaces/dio.cpp:857
 #, kde-format
 msgid "Copy Album"
 msgstr "Kopii Albumon"
 
-#: core/libs/database/utils/ifaces/dio.cpp:860
+#: core/libs/database/utils/ifaces/dio.cpp:862
 #, kde-format
 msgid "Copy Images"
 msgstr "Kopii Bildojn"
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:868
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopii Dosierojn"
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:873
 #, kde-format
 msgid "Move Album"
 msgstr "Movi Albumon"
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, kde-format
 msgid "Move Images"
 msgstr "Movi Bildojn"
 
-#: core/libs/database/utils/ifaces/dio.cpp:881
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Move Files"
 msgstr "Movi Dosierojn"
 
-#: core/libs/database/utils/ifaces/dio.cpp:896
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #, kde-format
 msgid "Restore Trash"
 msgstr "Restarigi Rubujon"
@@ -41046,11 +41045,9 @@ msgid "Default from Desktop"
 msgstr "Defaŭlte de Labortablo"
 
 #: core/libs/video/manager/vidslidetask.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Generating files for \"%1\""
+#, kde-format
 msgid "Generating frames from %1 Done"
-msgstr "Generante dosierojn por \"%1\""
+msgstr "Finis generi kadrojn el \"%1\""
 
 #: core/libs/video/manager/vidslidethread.cpp:63
 #, kde-format
@@ -67324,6 +67321,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ĉu vi volas restarigi ĉiujn video-agordojn al la defaŭlta valoro?"
-
-#~ msgid "Preparing %1 Done"
-#~ msgstr "Preparado de %1 Finita"
