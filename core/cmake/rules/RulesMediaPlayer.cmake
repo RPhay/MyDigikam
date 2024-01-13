@@ -41,7 +41,6 @@ if(ENABLE_MEDIAPLAYER)
             message(STATUS "QtAV dependencies checks:")
             message(STATUS "")
 
-            find_package(OpenAL     QUIET)
             find_package(Portaudio  QUIET)
             find_package(PulseAudio QUIET)
             find_package(VAAPI      QUIET)
@@ -60,7 +59,6 @@ if(ENABLE_MEDIAPLAYER)
             CheckSSESupport()
 
             MACRO_BOOL_TO_01(uchardet_FOUND        HAVE_LIBUCHARDET)
-            MACRO_BOOL_TO_01(OPENAL_FOUND          HAVE_LIBOPENAL)
             MACRO_BOOL_TO_01(PORTAUDIO_FOUND       HAVE_LIBPORTAUDIO)
             MACRO_BOOL_TO_01(PULSEAUDIO_FOUND      HAVE_LIBPULSEAUDIO)
             MACRO_BOOL_TO_01(VAAPI_FOUND           HAVE_LIBVAAPI)
@@ -105,17 +103,6 @@ if(ENABLE_MEDIAPLAYER)
             else()
 
                 message(STATUS "MediaPlayer will be compiled with UCharDet support   : no")
-
-            endif()
-
-            if(OPENAL_FOUND)
-
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENAL_LIBRARY})
-                message(STATUS "MediaPlayer will be compiled with OpenAL support     : yes")
-
-            else()
-
-                message(STATUS "MediaPlayer will be compiled with OpenAL support     : no")
 
             endif()
 
@@ -310,12 +297,6 @@ if(ENABLE_MEDIAPLAYER)
 
                 endif()
 
-                if(OPENAL_FOUND)
-
-                    set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} "-framework OpenAL")
-
-                endif()
-
             endif()
 
             # --- Definitions -------------------------------------------------------------------------------------
@@ -371,16 +352,6 @@ if(ENABLE_MEDIAPLAYER)
 
             endif()
 
-            if(OPENAL_FOUND)
-
-                if(APPLE)
-
-                    set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DHEADER_OPENAL_PREFIX)
-
-                endif()
-
-            endif()
-
             if(OpenGL_EGL_FOUND)
 
                 set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DCAPI_LINK_EGL)
@@ -399,7 +370,6 @@ if(ENABLE_MEDIAPLAYER)
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_X11=${HAVE_LIBX11})
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XV=${HAVE_LIBXV})
-            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_OPENAL=${HAVE_LIBOPENAL})
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_PORTAUDIO=${HAVE_LIBPORTAUDIO})
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_PULSEAUDIO=${HAVE_LIBPULSEAUDIO})
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_OPENSL=${HAVE_LIBOPENSLES})
