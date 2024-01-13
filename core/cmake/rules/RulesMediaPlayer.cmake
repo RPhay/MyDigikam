@@ -58,33 +58,32 @@ if(ENABLE_MEDIAPLAYER)
             if(VAAPI_FOUND)
 
                 set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${VAAPI_LIBRARIES})
-                message(STATUS "MediaPlayer will be compiled with VaAPI support      : yes")
 
-            else()
+                if(VAAPI_X11_FOUND AND X11_FOUND)
 
-                message(STATUS "MediaPlayer will be compiled with VaAPI support      : no")
+                    set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${X11_LIBRARIES})
 
-            endif()
+                    message(STATUS "MediaPlayer will be compiled with VaAPI X11 support  : yes")
 
-            if(X11_FOUND)
+                else()
 
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${X11_LIBRARIES})
-                message(STATUS "MediaPlayer will be compiled with X11 support        : yes")
+                    set(VAAPI_X11_FOUND FALSE)
+                    message(STATUS "MediaPlayer will be compiled with VaAPI X11 support  : no")
 
-            else()
+                endif()
 
-                message(STATUS "MediaPlayer will be compiled with X11 support        : no")
+                if(VAAPI_DRM_FOUND AND OPENSLES_FOUND)
 
-            endif()
+                    set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENSLES_LIBRARIES})
 
-            if(OpenGL_EGL_FOUND)
+                    message(STATUS "MediaPlayer will be compiled with VaAPI DRM support  : yes")
 
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENGL_egl_LIBRARY})
-                message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : yes")
+                else()
 
-            else()
+                    set(VAAPI_DRM_FOUND FALSE)
+                    message(STATUS "MediaPlayer will be compiled with VaAPI DRM support  : no")
 
-                message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : no")
+                endif()
 
             endif()
 

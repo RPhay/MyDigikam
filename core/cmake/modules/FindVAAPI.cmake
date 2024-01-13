@@ -76,11 +76,36 @@ find_package_handle_standard_args(VAAPI
 
 if(VAAPI_FOUND)
 
+    message(STATUS "VAAPI X11: ${VAAPI_libva-x11_INCLUDE_DIR} ${VAAPI_libva-x11_LIBRARY}")
+    message(STATUS "VAAPI WAY: ${VAAPI_libva-wayland_INCLUDE_DIR} ${VAAPI_libva-wayland_LIBRARY}")
+    message(STATUS "VAAPI DRM: ${VAAPI_libva-drm_INCLUDE_DIR} ${VAAPI_libva-drm_LIBRARY}")
+
+    if (NOT "${VAAPI_libva-x11_INCLUDE_DIR}" STREQUAL "" AND
+        NOT "${VAAPI_libva-x11_LIBRARY}"     STREQUAL "")
+        set(VAAPI_X11_FOUND TRUE)
+    endif()
+
+    if (NOT "${VAAPI_libva-wayland_INCLUDE_DIR}" STREQUAL "" AND
+        NOT "${VAAPI_libva-wayland_LIBRARY}"     STREQUAL "")
+        set(VAAPI_WAYLAND_FOUND TRUE)
+    endif()
+
+    if (NOT "${VAAPI_libva-drm_INCLUDE_DIR}" STREQUAL "" AND
+        NOT "${VAAPI_libva-drm_LIBRARY}"     STREQUAL "")
+        set(VAAPI_DRM_FOUND TRUE)
+    endif()
+
     set(VAAPI_INCLUDE_DIRS ${VAAPI_INCLUDE_DIR} ${VAAPI_DRM_INCLUDE_DIR} ${VAAPI_WAYLAND_INCLUDE_DIR} ${VAAPI_X11_INCLUDE_DIR})
     set(VAAPI_LIBRARIES ${VAAPI_libva_LIBRARY} ${VAAPI_libva-drm_LIBRARY} ${VAAPI_libva-wayland_LIBRARY} ${VAAPI_libva-x11_LIBRARY})
     set(VAAPI_DEFINITIONS -DHAVE_LIBVA=1)
 
 endif()
 
-mark_as_advanced(VAAPI_libva_INCLUDE_DIR VAAPI_libva-drm_INCLUDE_DIR VAAPI_libva-wayland_INCLUDE_DIR VAAPI_libva-x11_INCLUDE_DIR
-                 VAAPI_libva_LIBRARY VAAPI_libva-drm_LIBRARY VAAPI_libva-wayland_LIBRARY VAAPI_libva-x11_LIBRARY)
+mark_as_advanced(VAAPI_libva_INCLUDE_DIR
+                 VAAPI_libva-drm_INCLUDE_DIR
+                 VAAPI_libva-wayland_INCLUDE_DIR
+                 VAAPI_libva-x11_INCLUDE_DIR
+                 VAAPI_libva_LIBRARY
+                 VAAPI_libva-drm_LIBRARY
+                 VAAPI_libva-wayland_LIBRARY
+                 VAAPI_libva-x11_LIBRARY)
