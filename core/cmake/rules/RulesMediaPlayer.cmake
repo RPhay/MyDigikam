@@ -47,7 +47,6 @@ if(ENABLE_MEDIAPLAYER)
 
                 set(DirectX_FIND_REQUIRED_D3D11 TRUE)
                 find_package(DirectX)
-                find_package(Direct2D)
                 find_package(GDIPLUS)
 
             endif()
@@ -57,7 +56,6 @@ if(ENABLE_MEDIAPLAYER)
             MACRO_BOOL_TO_01(DirectX_DSound_FOUND  HAVE_LIBDIRECTSOUND)
             MACRO_BOOL_TO_01(DirectX_XAudio2_FOUND HAVE_LIBXAUDIO2)
             MACRO_BOOL_TO_01(GDIPLUS_FOUND         HAVE_LIBGDIPLUS)
-            MACRO_BOOL_TO_01(Direct2D_FOUND        HAVE_LIBDIRECT2D)
 
             # --- Reports and Libraries -----------------------------------------------------------
 
@@ -177,17 +175,6 @@ if(ENABLE_MEDIAPLAYER)
                 message(STATUS "MediaPlayer will be compiled with Direct3D11 support : no")
                 message(STATUS "MediaPlayer will be compiled with DirectSound support: no")
                 message(STATUS "MediaPlayer will be compiled with XAudio2 support    : no")
-
-            endif()
-
-            if(Direct2D_FOUND)
-
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${Direct2D_LIBRARIES})
-                message(STATUS "MediaPlayer will be compiled with Direct2D support   : yes")
-
-            else()
-
-                message(STATUS "MediaPlayer will be compiled with Direct2D support   : no")
 
             endif()
 
