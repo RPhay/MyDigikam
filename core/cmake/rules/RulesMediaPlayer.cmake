@@ -77,43 +77,19 @@ if(ENABLE_MEDIAPLAYER)
 
             endif()
 
-            if(X11_Xv_FOUND)
+            if(OpenGL_EGL_FOUND)
 
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${X11_Xv_LIB})
-                message(STATUS "MediaPlayer will be compiled with XV support         : yes")
+                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENGL_egl_LIBRARY})
+                message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : yes")
 
             else()
 
-                message(STATUS "MediaPlayer will be compiled with XV support         : no")
+                message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : no")
 
             endif()
 
-            if(OPENGL_FOUND)
-
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENGL_LIBRARIES} Qt${QT_VERSION_MAJOR}::OpenGL)
-
-                if(Qt6_FOUND)
-
-                    set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} Qt${QT_VERSION_MAJOR}::OpenGLWidgets)
-
-                endif()
-
-                message(STATUS "MediaPlayer will be compiled with OpenGL support     : yes")
-
-                if(OpenGL_EGL_FOUND)
-
-                    set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENGL_egl_LIBRARY})
-                    message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : yes")
-
-                else()
-
-                    message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : no")
-
-                endif()
-
             else()
 
-                message(STATUS "MediaPlayer will be compiled with OpenGL support     : no")
                 message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : no")
 
             endif()
