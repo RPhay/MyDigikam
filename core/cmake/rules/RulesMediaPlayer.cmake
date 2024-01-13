@@ -41,7 +41,6 @@ if(ENABLE_MEDIAPLAYER)
             message(STATUS "QtAV dependencies checks:")
             message(STATUS "")
 
-            find_package(ASS        QUIET)
             find_package(OpenAL     QUIET)
             find_package(Portaudio  QUIET)
             find_package(PulseAudio QUIET)
@@ -60,7 +59,6 @@ if(ENABLE_MEDIAPLAYER)
             include(MacroSSE)
             CheckSSESupport()
 
-            MACRO_BOOL_TO_01(ASS_FOUND             HAVE_LIBASS)
             MACRO_BOOL_TO_01(uchardet_FOUND        HAVE_LIBUCHARDET)
             MACRO_BOOL_TO_01(OPENAL_FOUND          HAVE_LIBOPENAL)
             MACRO_BOOL_TO_01(PORTAUDIO_FOUND       HAVE_LIBPORTAUDIO)
@@ -96,17 +94,6 @@ if(ENABLE_MEDIAPLAYER)
                     set(MEDIAPLAYER_FLAGS ${MEDIAPLAYER_FLAGS} -msse2)
 
                 endif()
-
-            endif()
-
-            if(ASS_FOUND)
-
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${ASS_LIBRARIES})
-                message(STATUS "MediaPlayer will be compiled with LibASS support     : yes")
-
-            else()
-
-                message(STATUS "MediaPlayer will be compiled with LibASS support     : no")
 
             endif()
 
@@ -378,14 +365,6 @@ if(ENABLE_MEDIAPLAYER)
 
             endif()
 
-            if(ASS_FOUND)
-
-                set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DCAPI_LINK_ASS)
-
-            endif()
-
-            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_LIBASS=${HAVE_LIBASS})
-
             if (uchardet_FOUND)
 
                 set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DLINK_UCHARDET)
@@ -492,7 +471,6 @@ if(ENABLE_MEDIAPLAYER)
             # --- Resume ---------------------------------------------------------------------------------------
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQT_AVPLAYER_MULTIMEDIA)
-
 
             message(STATUS "MediaPlayer type       : QtAVPlayer")
             message(STATUS "MediaPlayer libraries  : ${MEDIAPLAYER_LIBRARIES}")
