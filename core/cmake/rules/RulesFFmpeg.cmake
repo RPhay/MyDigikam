@@ -68,7 +68,7 @@ if (${FFMPEG_FOUND})
 
         message(STATUS "FFMpeg >= 5 API           : yes")
 
-        # This definition is also used outside QtAV code.
+        # This definition is used in video thumbnails code.
 
         add_definitions(-DHAVE_FFMPEG_VERSION5)
 
