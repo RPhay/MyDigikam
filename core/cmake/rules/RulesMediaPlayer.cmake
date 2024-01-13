@@ -53,9 +53,6 @@ if(ENABLE_MEDIAPLAYER)
 
             endif()
 
-            include(MacroSSE)
-            CheckSSESupport()
-
             MACRO_BOOL_TO_01(VAAPI_FOUND           HAVE_LIBVAAPI)
             MACRO_BOOL_TO_01(DirectX_D3D11_FOUND   HAVE_LIBD3D11)
             MACRO_BOOL_TO_01(DirectX_DSound_FOUND  HAVE_LIBDIRECTSOUND)
@@ -65,30 +62,6 @@ if(ENABLE_MEDIAPLAYER)
             MACRO_BOOL_TO_01(OPENSLES_FOUND        HAVE_LIBOPENSLES)
 
             # --- Reports and Libraries -----------------------------------------------------------
-
-            if(SSE4_1_FOUND)
-
-                message(STATUS "MediaPlayer will be compiled with SSE4.1 support     : yes")
-
-                if (NOT MSVC)
-
-                    set(MEDIAPLAYER_FLAGS ${MEDIAPLAYER_FLAGS} -msse4.1)
-
-                endif()
-
-            endif()
-
-            if(SSE2_FOUND)
-
-                message(STATUS "MediaPlayer will be compiled with SSE2 support       : yes")
-
-                if (NOT MSVC)
-
-                    set(MEDIAPLAYER_FLAGS ${MEDIAPLAYER_FLAGS} -msse2)
-
-                endif()
-
-            endif()
 
             if(OPENSLES_FOUND)
 
@@ -276,23 +249,6 @@ if(ENABLE_MEDIAPLAYER)
                 # This definition is also used outside QtAV code.
 
                 add_definitions(-DHAVE_FFMPEG_VERSION5)
-
-            endif()
-
-            if(NOT SSE4_1_FOUND AND NOT SSE2_FOUND)
-
-                set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE4_1=0)
-                set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE2=0)
-
-            elseif(SSE4_1_FOUND)
-
-                set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE4_1=1)
-                set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE2=1)
-
-            elseif(SSE2_FOUND)
-
-                set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE4_1=0)
-                set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE2=1)
 
             endif()
 
