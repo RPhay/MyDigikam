@@ -16,8 +16,9 @@ endif()
 
 find_package(OpenGL)                               # For Presentation tool and MediaPlayer.
 
-message(STATUS "OpenGL found:                                 ${OPENGL_FOUND}")
+message(STATUS "OpenGL found:                                 ${OpenGL_FOUND}")
 message(STATUS "OpenGL GLU extension found:                   ${OPENGL_GLU_FOUND}")
+message(STATUS "OpenGL GLX extension found:                   ${OpenGL_GLX_FOUND}")
 message(STATUS "Qt OpenGL found:                              ${Qt${QT_VERSION_MAJOR}OpenGL_FOUND}")
 
 if(Qt6_FOUND)
@@ -28,7 +29,7 @@ endif()
 
 # decide if Presentation tool can be built with OpenGL
 
-if(OPENGL_FOUND AND OPENGL_GLU_FOUND AND Qt${QT_VERSION_MAJOR}OpenGL_FOUND)
+if(OpenGL_FOUND AND OPENGL_GLU_FOUND AND OpenGL_GLX_FOUND AND Qt${QT_VERSION_MAJOR}OpenGL_FOUND)
 
     set(HAVE_OPENGL TRUE)
 
@@ -50,5 +51,5 @@ endif()
 
 # For MediaPlayer compilation
 
-MACRO_BOOL_TO_01(OPENGL_FOUND     HAVE_LIBOPENGL)
+MACRO_BOOL_TO_01(OpenGL_FOUND     HAVE_LIBOPENGL)
 MACRO_BOOL_TO_01(OpenGL_EGL_FOUND HAVE_LIBOPENGL_EGL)
