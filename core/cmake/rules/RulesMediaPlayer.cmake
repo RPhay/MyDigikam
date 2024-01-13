@@ -52,8 +52,6 @@ if(ENABLE_MEDIAPLAYER)
 
             MACRO_BOOL_TO_01(VAAPI_FOUND           HAVE_LIBVAAPI)
             MACRO_BOOL_TO_01(DirectX_D3D11_FOUND   HAVE_LIBD3D11)
-            MACRO_BOOL_TO_01(DirectX_DSound_FOUND  HAVE_LIBDIRECTSOUND)
-            MACRO_BOOL_TO_01(DirectX_XAudio2_FOUND HAVE_LIBXAUDIO2)
 
             # --- Reports and Libraries -----------------------------------------------------------
 
@@ -136,32 +134,9 @@ if(ENABLE_MEDIAPLAYER)
 
                 endif()
 
-
-                if(DirectX_DSound_FOUND)
-
-                    message(STATUS "MediaPlayer will be compiled with DirectSound support: yes")
-
-                else()
-
-                    message(STATUS "MediaPlayer will be compiled with DirectSound support: no")
-
-                endif()
-
-                if(DirectX_XAudio2_FOUND)
-
-                    message(STATUS "MediaPlayer will be compiled with XAudio2 support    : yes")
-
-                else()
-
-                    message(STATUS "MediaPlayer will be compiled with XAudio2 support    : no")
-
-                endif()
-
             else()
 
                 message(STATUS "MediaPlayer will be compiled with Direct3D11 support : no")
-                message(STATUS "MediaPlayer will be compiled with DirectSound support: no")
-                message(STATUS "MediaPlayer will be compiled with XAudio2 support    : no")
 
             endif()
 
