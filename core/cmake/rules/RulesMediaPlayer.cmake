@@ -89,9 +89,9 @@ if(ENABLE_MEDIAPLAYER)
 
             endif()
 
-            if(VDPAU_FOUND)
+            if(VDPAU_FOUND AND OpenGL_FOUND)
 
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${VDPAU_LIBRARIES})
+                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${VDPAU_LIBRARIES} ${OPENGL_LIBRARIES})
 
                 message(STATUS "MediaPlayer will be compiled with VDPAU support      : yes")
 
