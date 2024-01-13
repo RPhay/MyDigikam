@@ -147,8 +147,8 @@ BUGFIXES:
 128 ==> 479585 - Can't open and read HEIF file from Fujifilm XT-5.
 129 ==> 471992 - digiKam 8.0.0 crashes when downloading face files.
 130 ==> 479635 - Metadata fields can no longer be accessed using the Tab key.
-131 ==> 
-132 ==> 
+131 ==> 479758 - Loss metadata from items.
+132 ==> 479704 - Nearby face tag editor fields overlap each other, making targeted editing impossible.
 133 ==> 
 134 ==> 
 135 ==> 
