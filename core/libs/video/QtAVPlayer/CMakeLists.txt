@@ -52,10 +52,12 @@ set(libqtavplayer_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/qavvideooutputfilter.cpp
 
 #   ANDROID
+#
 #   ${CMAKE_CURRENT_SOURCE_DIR}/qavandroidsurfacetexture.cpp
 #   ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_mediacodec.cpp
 
-#   
+#   VDPAU API (https://en.wikipedia.org/wiki/VDPAU)
+#
 #   ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_vdpau.cpp
 
 )
@@ -75,6 +77,14 @@ if(VAAPI_FOUND)
     set(libqtavplayer_SRCS ${libqtavplayer_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_vaapi_drm_egl.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_vaapi_x11_glx.cpp
+    )
+
+endif()
+
+if(APPLE)
+
+    set(libqtavplayer_SRCS ${libqtavplayer_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_videotoolbox.mm
     )
 
 endif()
