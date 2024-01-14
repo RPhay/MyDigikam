@@ -299,10 +299,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     connect(d->videoWidget->player(), SIGNAL(mediaStatusChanged(QAVPlayer::MediaStatus)),
             this, SLOT(slotMediaStatusChanged(QAVPlayer::MediaStatus)));
-/*FIXME
-    connect(d->videoWidget->player()->videoCapture(), SIGNAL(imageCaptured(QImage)),
-            this, SLOT(slotImageCaptured(QImage)));
-*/
 }
 
 MediaPlayerView::~MediaPlayerView()
@@ -435,93 +431,86 @@ void MediaPlayerView::slotPausePlay()
 
 void MediaPlayerView::slotCapture()
 {
-    if (d->videoWidget->player()->state() == QAVPlayer::PlayingState)
+    if (d->videoWidget->player()->state() != QAVPlayer::StoppedState)
     {
-/*FIXME
-        d->videoWidget->player()->videoCapture()->setAutoSave(false);
-        d->capturePosition = d->videoWidget->player()->position();
-        d->videoWidget->player()->videoCapture()->capture();
-*/
-    }
-}
+        int capturePosition    = d->videoWidget->player()->position();
+        QVideoFrame frame      = d->videoWidget->videoFrame();
+        QImage image           = frame.image();
 
-void MediaPlayerView::slotImageCaptured(const QImage& image)
-{
-/*FIXME
-    if (!image.isNull() && d->currentItem.isValid())
-    {
-        QFileInfo info(d->currentItem.toLocalFile());
-        QString tempPath = QString::fromUtf8("%1/%2-%3.digikamtempfile.jpg")
-                          .arg(info.path())
-                          .arg(info.baseName())
-                          .arg(d->capturePosition);
-
-        if (image.save(tempPath, "JPG", 100))
+        if (!image.isNull() && d->currentItem.isValid())
         {
-            QScopedPointer<DMetadata> meta(new DMetadata);
+            QFileInfo info(d->currentItem.toLocalFile());
+            QString tempPath = QString::fromUtf8("%1/%2-%3.digikamtempfile.jpg")
+                              .arg(info.path())
+                              .arg(info.baseName())
+                              .arg(capturePosition);
 
-            if (meta->load(tempPath))
+            if (image.save(tempPath, "JPG", 100))
             {
-                QDateTime dateTime;
-                MetaEngine::ImageOrientation orientation = MetaEngine::ORIENTATION_NORMAL;
+                QScopedPointer<DMetadata> meta(new DMetadata);
 
-                if (d->iface)
+                if (meta->load(tempPath))
                 {
-                    DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+                    QDateTime dateTime;
+                    MetaEngine::ImageOrientation orientation = MetaEngine::ORIENTATION_NORMAL;
 
-                    dateTime    = dinfo.dateTime();
-                    orientation = (MetaEngine::ImageOrientation)dinfo.orientation();
-                }
-                else
-                {
-                    QScopedPointer<DMetadata> meta2(new DMetadata);
-
-                    if (meta2->load(d->currentItem.toLocalFile()))
+                    if (d->iface)
                     {
-                        dateTime    = meta2->getItemDateTime();
-                        orientation = meta2->getItemOrientation();
+                        DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+
+                        dateTime    = dinfo.dateTime();
+                        orientation = (MetaEngine::ImageOrientation)dinfo.orientation();
+                    }
+                    else
+                    {
+                        QScopedPointer<DMetadata> meta2(new DMetadata);
+
+                        if (meta2->load(d->currentItem.toLocalFile()))
+                        {
+                            dateTime    = meta2->getItemDateTime();
+                            orientation = meta2->getItemOrientation();
+                        }
+                    }
+
+                    if (dateTime.isValid())
+                    {
+                        dateTime = dateTime.addMSecs(capturePosition);
+                    }
+                    else
+                    {
+                        dateTime = QDateTime::currentDateTime();
+                    }
+
+                    if (orientation == MetaEngine::ORIENTATION_UNSPECIFIED)
+                    {
+                        orientation = MetaEngine::ORIENTATION_NORMAL;
+                    }
+
+                    meta->setImageDateTime(dateTime, true);
+                    meta->setItemDimensions(image.size());
+                    meta->setItemOrientation(orientation);
+                    meta->save(tempPath, true);
+                }
+
+                QString finalPath = QString::fromUtf8("%1/%2-%3.jpg")
+                                   .arg(info.path())
+                                   .arg(info.baseName())
+                                   .arg(capturePosition);
+
+                if (QFile::rename(tempPath, finalPath))
+                {
+                    if (d->iface)
+                    {
+                        d->iface->slotMetadataChangedForUrl(QUrl::fromLocalFile(finalPath));
                     }
                 }
-
-                if (dateTime.isValid())
-                {
-                    dateTime = dateTime.addMSecs(d->capturePosition);
-                }
                 else
                 {
-                    dateTime = QDateTime::currentDateTime();
+                    QFile::remove(tempPath);
                 }
-
-                if (orientation == MetaEngine::ORIENTATION_UNSPECIFIED)
-                {
-                    orientation = MetaEngine::ORIENTATION_NORMAL;
-                }
-
-                meta->setImageDateTime(dateTime, true);
-                meta->setItemDimensions(image.size());
-                meta->setItemOrientation(orientation);
-                meta->save(tempPath, true);
-            }
-
-            QString finalPath = QString::fromUtf8("%1/%2-%3.jpg")
-                               .arg(info.path())
-                               .arg(info.baseName())
-                               .arg(d->capturePosition);
-
-            if (QFile::rename(tempPath, finalPath))
-            {
-                if (d->iface)
-                {
-                    d->iface->slotMetadataChangedForUrl(QUrl::fromLocalFile(finalPath));
-                }
-            }
-            else
-            {
-                QFile::remove(tempPath);
             }
         }
     }
-*/
 }
 
 int MediaPlayerView::previewMode()

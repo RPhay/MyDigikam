@@ -14,6 +14,11 @@
 
 #include "dvideowidget.h"
 
+// Qt includes
+
+#include <QMutex>
+#include <QMutexLocker>
+
 namespace Digikam
 {
 
@@ -69,6 +74,9 @@ public:
     MediaObject*    mediaObject = nullptr;
     QAVPlayer*      player      = nullptr;
     QAVAudioOutput* audioOutput = nullptr;
+
+    QVideoFrame     videoFrame;
+    QMutex          mutex;
 };
 
 DVideoWidget::DVideoWidget(QWidget* const /*parent*/)
@@ -116,6 +124,13 @@ VideoRenderer* DVideoWidget::videoRender() const
     return d->videoRender;
 }
 
+QVideoFrame DVideoWidget::videoFrame() const
+{
+    QMutexLocker lock(&d->mutex);
+
+    return d->videoFrame;
+}
+
 bool DVideoWidget::setMediaObject(QMediaObject* object)
 {
     return QVideoWidget::setMediaObject(object);
@@ -133,20 +148,24 @@ void DVideoWidget::slotVideoFrame(const QAVVideoFrame& frame)
         return;
     }
 
-    QVideoFrame videoFrame = frame.convertTo(AV_PIX_FMT_RGB32);
+    {
+        QMutexLocker lock(&d->mutex);
+
+        d->videoFrame = frame.convertTo(AV_PIX_FMT_RGB32);
+    }
 
     if (
         !d->videoRender->m_surface->isActive() ||
-        (d->videoRender->m_surface->surfaceFormat().frameSize() != videoFrame.size())
+        (d->videoRender->m_surface->surfaceFormat().frameSize() != d->videoFrame.size())
        )
     {
-        QVideoSurfaceFormat f(videoFrame.size(), videoFrame.pixelFormat(), videoFrame.handleType());
+        QVideoSurfaceFormat f(d->videoFrame.size(), d->videoFrame.pixelFormat(), d->videoFrame.handleType());
         d->videoRender->m_surface->start(f);
     }
 
     if (d->videoRender->m_surface->isActive())
     {
-         d->videoRender->m_surface->present(videoFrame);
+         d->videoRender->m_surface->present(d->videoFrame);
     }
 
     Q_EMIT positionChanged(d->player->position());

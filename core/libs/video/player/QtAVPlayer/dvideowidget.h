@@ -23,6 +23,7 @@
 #include <QMediaObject>
 #include <QVideoRendererControl>
 #include <QVideoWidget>
+#include <QVideoFrame>
 
 // QtAVPlayer includes
 
@@ -65,6 +66,7 @@ public:
     QAVPlayer*      player()      const;
     QAVAudioOutput* audioOutput() const;
     VideoRenderer*  videoRender() const;
+    QVideoFrame videoFrame()      const;
 
     bool setMediaObject(QMediaObject* object) override;
 

@@ -74,8 +74,6 @@ private Q_SLOTS:
     void slotPausePlay();
     void slotCapture();
 
-    void slotImageCaptured(const QImage& image);
-
 private:
 
     int  previewMode();
