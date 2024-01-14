@@ -153,7 +153,7 @@ BUGFIXES:
 134 ==> 479768 - Select Album doesn't show all child folders.
 135 ==> 479785 - Photo rotation put some line of pixels at the wrong edge.
 136 ==> 479780 - Face tags not writing to XMP on photos taken with Android "Ultra HDR" setting.
-137 ==> 
+137 ==> 479799 - Winget package manager displays installed version as 7.9.0 instead of 8.2.0.
 138 ==> 
 139 ==> 
 140 ==> 
