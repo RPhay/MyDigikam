@@ -85,6 +85,14 @@ DVideoWidget::DVideoWidget(QWidget* const /*parent*/)
     d->player         = new QAVPlayer(this);
 
     d->audioOutput    = new QAVAudioOutput(this);
+
+    connect(d->player, &QAVPlayer::audioFrame,
+            this, &DVideoWidget::slotAudioFrame,
+            Qt::DirectConnection);
+
+    connect(d->player, &QAVPlayer::videoFrame,
+            this, &DVideoWidget::slotVideoFrame,
+            Qt::DirectConnection);
 }
 
 DVideoWidget::~DVideoWidget()
@@ -111,6 +119,34 @@ VideoRenderer* DVideoWidget::videoRender() const
 bool DVideoWidget::setMediaObject(QMediaObject* object)
 {
     return QVideoWidget::setMediaObject(object);
+}
+
+void DVideoWidget::slotAudioFrame(const QAVAudioFrame& frame)
+{
+    d->audioOutput->play(frame);
+}
+
+void DVideoWidget::slotVideoFrame(const QAVVideoFrame& frame)
+{
+    if (d->videoRender->m_surface == nullptr)
+    {
+        return;
+    }
+
+    QVideoFrame videoFrame = frame.convertTo(AV_PIX_FMT_RGB32);
+
+    if (!d->videoRender->m_surface->isActive() || (d->videoRender->m_surface->surfaceFormat().frameSize() != videoFrame.size()))
+    {
+        QVideoSurfaceFormat f(videoFrame.size(), videoFrame.pixelFormat(), videoFrame.handleType());
+        d->videoRender->m_surface->start(f);
+    }
+
+    if (d->videoRender->m_surface->isActive())
+    {
+         d->videoRender->m_surface->present(videoFrame);
+    }
+
+    Q_EMIT positionChanged(d->player->position());
 }
 
 } // namespace Digikam

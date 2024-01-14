@@ -74,9 +74,6 @@ private Q_SLOTS:
     void slotPausePlay();
     void slotCapture();
 
-    void slotAudioFrame(const QAVAudioFrame& frame);
-    void slotVideoFrame(const QAVVideoFrame& frame);
-
     void slotImageCaptured(const QImage& image);
 
 private:

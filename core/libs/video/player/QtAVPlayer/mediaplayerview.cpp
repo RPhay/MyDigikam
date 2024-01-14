@@ -285,20 +285,11 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->loopPlay, SIGNAL(toggled(bool)),
             this, SLOT(slotLoopToggled(bool)));
 
-    connect(d->videoWidget->player(), &QAVPlayer::audioFrame,
-            this, &MediaPlayerView::slotAudioFrame,
-            Qt::DirectConnection);
-
-    connect(d->videoWidget->player(), &QAVPlayer::videoFrame,
-            this, &MediaPlayerView::slotVideoFrame,
-            Qt::DirectConnection);
-
     connect(d->videoWidget->player(), SIGNAL(stateChanged(QAVPlayer::State)),
             this, SLOT(slotPlayerStateChanged(QAVPlayer::State)));
 
-    connect(d->videoWidget->player(), SIGNAL(seeked(qint64)),
-            this, SLOT(slotPositionChanged(qint64)),
-            Qt::QueuedConnection);
+    connect(d->videoWidget, SIGNAL(positionChanged(qint64)),
+            this, SLOT(slotPositionChanged(qint64)));
 
     connect(d->videoWidget->player(), SIGNAL(durationChanged(qint64)),
             this, SLOT(slotDurationChanged(qint64)));
@@ -320,32 +311,6 @@ MediaPlayerView::~MediaPlayerView()
     d->videoWidget->setMediaObject(nullptr);
 
     delete d;
-}
-
-void MediaPlayerView::slotAudioFrame(const QAVAudioFrame& frame)
-{
-    d->videoWidget->audioOutput()->play(frame);
-}
-
-void MediaPlayerView::slotVideoFrame(const QAVVideoFrame& frame)
-{
-    if (d->videoWidget->videoRender()->m_surface == nullptr)
-    {
-        return;
-    }
-
-    QVideoFrame videoFrame = frame.convertTo(AV_PIX_FMT_RGB32);
-
-    if (!d->videoWidget->videoRender()->m_surface->isActive() || (d->videoWidget->videoRender()->m_surface->surfaceFormat().frameSize() != videoFrame.size()))
-    {
-        QVideoSurfaceFormat f(videoFrame.size(), videoFrame.pixelFormat(), videoFrame.handleType());
-        d->videoWidget->videoRender()->m_surface->start(f);
-    }
-
-    if (d->videoWidget->videoRender()->m_surface->isActive())
-    {
-         d->videoWidget->videoRender()->m_surface->present(videoFrame);
-    }
 }
 
 void MediaPlayerView::setInfoInterface(DInfoInterface* const iface)

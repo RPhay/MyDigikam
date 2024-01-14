@@ -28,6 +28,7 @@
 
 #include "qavplayer.h"
 #include "qavvideoframe.h"
+#include "qavaudioframe.h"
 #include "qavaudiooutput.h"
 
 namespace Digikam
@@ -54,6 +55,8 @@ public:
 
 class Q_DECL_HIDDEN DVideoWidget : public QVideoWidget
 {
+    Q_OBJECT
+
 public:
 
     explicit DVideoWidget(QWidget* const parent);
@@ -65,12 +68,21 @@ public:
 
     bool setMediaObject(QMediaObject* object) override;
 
+Q_SIGNALS:
+
+    void positionChanged(qint64);
+
+private Q_SLOTS:
+
+    void slotAudioFrame(const QAVAudioFrame& frame);
+    void slotVideoFrame(const QAVVideoFrame& frame);
+
 private:
 
     class Private;
     Private* const d;
 };
 
-#endif // DIGIKAM_DVIDEO_WIDGET_H
-
 } // namespace Digikam
+
+#endif // DIGIKAM_DVIDEO_WIDGET_H
