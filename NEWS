@@ -151,7 +151,7 @@ BUGFIXES:
 132 ==> 479704 - Nearby face tag editor fields overlap each other, making targeted editing impossible.
 133 ==> 479769 - Viewing a video locks file from being moved by DigiKam or OS, even after de-selecting the file.
 134 ==> 479768 - Select Album doesn't show all child folders.
-135 ==> 
+135 ==> 479785 - Photo rotation put some line of pixels at the wrong edge.
 136 ==> 
 137 ==> 
 138 ==> 
