@@ -28,23 +28,12 @@
 #include <QLabel>
 #include <QFrame>
 #include <QStyle>
-#include <QAbstractVideoSurface>
-#include <QVideoSurfaceFormat>
-#include <QMediaService>
-#include <QMediaObject>
-#include <QVideoRendererControl>
-#include <QVideoWidget>
 
 // KDE includes
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
-
-// QtAVPlayer includes
-
-#include "qavvideoframe.h"
-#include "qavaudiooutput.h"
 
 // Local includes
 
@@ -57,88 +46,6 @@
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN VideoRenderer : public QVideoRendererControl
-{
-public:
-
-    VideoRenderer(QObject* const parent = nullptr)
-        : QVideoRendererControl(parent)
-    {
-    }
-
-    QAbstractVideoSurface* surface() const override
-    {
-        return m_surface;
-    }
-
-    void setSurface(QAbstractVideoSurface* surface) override
-    {
-        m_surface = surface;
-    }
-
-    QAbstractVideoSurface* m_surface = nullptr;
-};
-
-// --------------------------------------------------------
-
-class Q_DECL_HIDDEN MediaService : public QMediaService
-{
-public:
-
-    MediaService(VideoRenderer* const vr, QObject* const parent = nullptr)
-        : QMediaService(parent),
-          m_renderer   (vr)
-    {
-    }
-
-    QMediaControl* requestControl(const char* name) override
-    {
-        if (qstrcmp(name, QVideoRendererControl_iid) == 0)
-        {
-            return m_renderer;
-        }
-
-        return nullptr;
-    }
-
-    void releaseControl(QMediaControl*) override
-    {
-    }
-
-    VideoRenderer* m_renderer = nullptr;
-};
-
-// --------------------------------------------------------
-
-class Q_DECL_HIDDEN MediaObject : public QMediaObject
-{
-public:
-
-    explicit MediaObject(VideoRenderer* const vr, QObject* const parent = nullptr)
-        : QMediaObject(parent, new MediaService(vr, parent))
-    {
-    }
-};
-
-// --------------------------------------------------------
-
-class Q_DECL_HIDDEN VideoWidget : public QVideoWidget
-{
-public:
-
-    VideoWidget(QWidget* const parent = nullptr)
-        : QVideoWidget(parent)
-    {
-    }
-
-    bool setMediaObject(QMediaObject* object) override
-    {
-        return QVideoWidget::setMediaObject(object);
-    }
-};
-
-// --------------------------------------------------------
 
 class Q_DECL_HIDDEN MediaPlayerMouseClickFilter : public QObject
 {
@@ -247,11 +154,7 @@ public:
 
     DInfoInterface*      iface              = nullptr;
 
-    VideoRenderer*       videoRender        = nullptr;
-    VideoWidget*         videoWidget        = nullptr;
-    MediaObject*         mediaObject        = nullptr;
-    QAVPlayer*           player             = nullptr;
-    QAVAudioOutput*      audioOutput        = nullptr;
+    DVideoWidget*        videoWidget        = nullptr;
 
     QSlider*             slider             = nullptr;
     QSlider*             volume             = nullptr;
@@ -301,17 +204,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     d->playerView->setLineWidth(1);
 
-    d->videoRender    = new VideoRenderer(this);
-
-    d->videoWidget    = new VideoWidget(this);
-    d->videoWidget->setMouseTracking(true);
-
-    d->mediaObject    = new MediaObject(d->videoRender);
-    d->videoWidget->setMediaObject(d->mediaObject);
-
-    d->player         = new QAVPlayer(this);
-
-    d->audioOutput    = new QAVAudioOutput(this);
+    d->videoWidget    = new DVideoWidget(this);
 
     DHBox* const hbox = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, hbox);
@@ -360,7 +253,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
     int volume                = group.readEntry("Volume", 50);
 
-    d->audioOutput->setVolume(volume);
+    d->videoWidget->audioOutput()->setVolume(volume);
     d->volume->setValue(volume);
 
     // --------------------------------------------------------------------------
@@ -392,31 +285,31 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->loopPlay, SIGNAL(toggled(bool)),
             this, SLOT(slotLoopToggled(bool)));
 
-    connect(d->player, &QAVPlayer::audioFrame,
+    connect(d->videoWidget->player(), &QAVPlayer::audioFrame,
             this, &MediaPlayerView::slotAudioFrame,
             Qt::DirectConnection);
 
-    connect(d->player, &QAVPlayer::videoFrame,
+    connect(d->videoWidget->player(), &QAVPlayer::videoFrame,
             this, &MediaPlayerView::slotVideoFrame,
             Qt::DirectConnection);
 
-    connect(d->player, SIGNAL(stateChanged(QAVPlayer::State)),
+    connect(d->videoWidget->player(), SIGNAL(stateChanged(QAVPlayer::State)),
             this, SLOT(slotPlayerStateChanged(QAVPlayer::State)));
 
-    connect(d->player, SIGNAL(seeked(qint64)),
+    connect(d->videoWidget->player(), SIGNAL(seeked(qint64)),
             this, SLOT(slotPositionChanged(qint64)),
             Qt::QueuedConnection);
 
-    connect(d->player, SIGNAL(durationChanged(qint64)),
+    connect(d->videoWidget->player(), SIGNAL(durationChanged(qint64)),
             this, SLOT(slotDurationChanged(qint64)));
 
-    connect(d->player, SIGNAL(errorOccurred(QAVPlayer::Error, const QString&)),
+    connect(d->videoWidget->player(), SIGNAL(errorOccurred(QAVPlayer::Error, const QString&)),
             this, SLOT(slotHandlePlayerError(QAVPlayer::Error)));
 
-    connect(d->player, SIGNAL(mediaStatusChanged(QAVPlayer::MediaStatus)),
+    connect(d->videoWidget->player(), SIGNAL(mediaStatusChanged(QAVPlayer::MediaStatus)),
             this, SLOT(slotMediaStatusChanged(QAVPlayer::MediaStatus)));
 /*FIXME
-    connect(d->player->videoCapture(), SIGNAL(imageCaptured(QImage)),
+    connect(d->videoWidget->player()->videoCapture(), SIGNAL(imageCaptured(QImage)),
             this, SLOT(slotImageCaptured(QImage)));
 */
 }
@@ -431,27 +324,27 @@ MediaPlayerView::~MediaPlayerView()
 
 void MediaPlayerView::slotAudioFrame(const QAVAudioFrame& frame)
 {
-    d->audioOutput->play(frame);
+    d->videoWidget->audioOutput()->play(frame);
 }
 
 void MediaPlayerView::slotVideoFrame(const QAVVideoFrame& frame)
 {
-    if (d->videoRender->m_surface == nullptr)
+    if (d->videoWidget->videoRender()->m_surface == nullptr)
     {
         return;
     }
 
     QVideoFrame videoFrame = frame.convertTo(AV_PIX_FMT_RGB32);
 
-    if (!d->videoRender->m_surface->isActive() || (d->videoRender->m_surface->surfaceFormat().frameSize() != videoFrame.size()))
+    if (!d->videoWidget->videoRender()->m_surface->isActive() || (d->videoWidget->videoRender()->m_surface->surfaceFormat().frameSize() != videoFrame.size()))
     {
         QVideoSurfaceFormat f(videoFrame.size(), videoFrame.pixelFormat(), videoFrame.handleType());
-        d->videoRender->m_surface->start(f);
+        d->videoWidget->videoRender()->m_surface->start(f);
     }
 
-    if (d->videoRender->m_surface->isActive())
+    if (d->videoWidget->videoRender()->m_surface->isActive())
     {
-         d->videoRender->m_surface->present(videoFrame);
+         d->videoWidget->videoRender()->m_surface->present(videoFrame);
     }
 }
 
@@ -462,9 +355,9 @@ void MediaPlayerView::setInfoInterface(DInfoInterface* const iface)
 
 void MediaPlayerView::reload()
 {
-    d->player->stop();
-    d->player->setSource(d->currentItem.toLocalFile());
-    d->player->play();
+    d->videoWidget->player()->stop();
+    d->videoWidget->player()->setSource(d->currentItem.toLocalFile());
+    d->videoWidget->player()->play();
 }
 
 void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
@@ -476,7 +369,7 @@ void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
 
         // fix wrong rotation from QtAV git/master
 
-        rotate     = d->player->statistics().video_only.rotate;
+        rotate     = d->videoWidget->player()->statistics().video_only.rotate;
 
         d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtAV:"
@@ -502,8 +395,8 @@ void MediaPlayerView::slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus)
 
 void MediaPlayerView::escapePreview()
 {
-    d->player->stop();
-    d->player->setSource(QString());
+    d->videoWidget->player()->stop();
+    d->videoWidget->player()->setSource(QString());
 }
 
 void MediaPlayerView::slotThemeChanged()
@@ -527,7 +420,7 @@ void MediaPlayerView::slotEscapePressed()
 void MediaPlayerView::slotRotateVideo()
 {
 /*FIXME
-    if (d->player->isPlaying())
+    if (d->videoWidget->player()->isPlaying())
     {
         int orientation = 0;
 
@@ -565,26 +458,26 @@ void MediaPlayerView::slotRotateVideo()
 
 void MediaPlayerView::slotPausePlay()
 {
-    if (d->player->state() != QAVPlayer::PlayingState)
+    if (d->videoWidget->player()->state() != QAVPlayer::PlayingState)
     {
-        d->player->play();
+        d->videoWidget->player()->play();
         return;
     }
 
-    if (d->player->state() != QAVPlayer::PausedState)
+    if (d->videoWidget->player()->state() != QAVPlayer::PausedState)
     {
-       d->player->pause();
+       d->videoWidget->player()->pause();
     }
 }
 
 void MediaPlayerView::slotCapture()
 {
-    if (d->player->state() == QAVPlayer::PlayingState)
+    if (d->videoWidget->player()->state() == QAVPlayer::PlayingState)
     {
 /*FIXME
-        d->player->videoCapture()->setAutoSave(false);
-        d->capturePosition = d->player->position();
-        d->player->videoCapture()->capture();
+        d->videoWidget->player()->videoCapture()->setAutoSave(false);
+        d->capturePosition = d->videoWidget->player()->position();
+        d->videoWidget->player()->videoCapture()->capture();
 */
     }
 }
@@ -693,10 +586,10 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     if (url.isEmpty())
     {
-        d->player->stop();
+        d->videoWidget->player()->stop();
         d->currentItem = url;
 /*FIXME?
-        d->player->audio()->close();
+        d->videoWidget->player()->audio()->close();
 */
         return;
     }
@@ -708,7 +601,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     d->currentItem = url;
 
-    d->player->stop();
+    d->videoWidget->player()->stop();
 
     int orientation = 0;
 
@@ -748,10 +641,10 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
         }
     }
 
-    d->player->setSource(d->currentItem.toLocalFile());
+    d->videoWidget->player()->setSource(d->currentItem.toLocalFile());
     setPreviewMode(Private::PlayerView);
-    d->player->seek(10);
-    d->player->play();
+    d->videoWidget->player()->seek(10);
+    d->videoWidget->player()->play();
 }
 
 void MediaPlayerView::slotPositionChanged(qint64 position)
@@ -778,7 +671,7 @@ void MediaPlayerView::slotPositionChanged(qint64 position)
 
 void MediaPlayerView::slotVolumeChanged(int volume)
 {
-    d->audioOutput->setVolume((qreal)volume / 100.0);
+    d->videoWidget->audioOutput()->setVolume((qreal)volume / 100.0);
 
     if (objectName() != QLatin1String("main_media_player"))
     {
@@ -796,12 +689,12 @@ void MediaPlayerView::slotLoopToggled(bool loop)
     if (loop)
     {
         d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-repeat")));
-        d->player->setRepeat(-1);
+        d->videoWidget->player()->setRepeat(-1);
     }
     else
     {
         d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
-        d->player->setRepeat(0);
+        d->videoWidget->player()->setRepeat(0);
     }
 */
 }
@@ -814,9 +707,9 @@ void MediaPlayerView::slotDurationChanged(qint64 duration)
 
 void MediaPlayerView::slotPosition(int position)
 {
-    if (d->player->isSeekable())
+    if (d->videoWidget->player()->isSeekable())
     {
-        d->player->seek((qint64)position);
+        d->videoWidget->player()->seek((qint64)position);
     }
 }
 

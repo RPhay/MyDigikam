@@ -17,25 +17,6 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN VideoRenderer : public QVideoRendererControl
-{
-public:
-
-    QAbstractVideoSurface* surface() const override
-    {
-        return m_surface;
-    }
-
-    void setSurface(QAbstractVideoSurface* surface) override
-    {
-        m_surface = surface;
-    }
-
-    QAbstractVideoSurface* m_surface = nullptr;
-};
-
-// --------------------------------------------------------
-
 class Q_DECL_HIDDEN MediaService : public QMediaService
 {
 public:
@@ -115,6 +96,16 @@ DVideoWidget::~DVideoWidget()
 QAVPlayer* DVideoWidget::player() const
 {
     return d->player;
+}
+
+QAVAudioOutput* DVideoWidget::audioOutput() const
+{
+    return d->audioOutput;
+}
+
+VideoRenderer* DVideoWidget::videoRender() const
+{
+    return d->videoRender;
 }
 
 bool DVideoWidget::setMediaObject(QMediaObject* object)

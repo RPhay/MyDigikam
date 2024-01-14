@@ -21,14 +21,11 @@
 #include <QEvent>
 #include <QUrl>
 
-// QtAVPlayer includes
-
-#include "qavplayer.h"
-
 // Local includes
 
 #include "digikam_export.h"
 #include "dinfointerface.h"
+#include "dvideowidget.h"
 
 namespace Digikam
 {

@@ -12,6 +12,9 @@
  *
  * ============================================================ */
 
+#ifndef DIGIKAM_DVIDEO_WIDGET_H
+#define DIGIKAM_DVIDEO_WIDGET_H
+
 // Qt includes
 
 #include <QAbstractVideoSurface>
@@ -30,6 +33,25 @@
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN VideoRenderer : public QVideoRendererControl
+{
+public:
+
+    QAbstractVideoSurface* surface() const override
+    {
+        return m_surface;
+    }
+
+    void setSurface(QAbstractVideoSurface* surface) override
+    {
+        m_surface = surface;
+    }
+
+    QAbstractVideoSurface* m_surface = nullptr;
+};
+
+// -------------------------------------------------------
+
 class Q_DECL_HIDDEN DVideoWidget : public QVideoWidget
 {
 public:
@@ -37,7 +59,9 @@ public:
     explicit DVideoWidget(QWidget* const parent);
     ~DVideoWidget();
 
-    QAVPlayer* player() const;
+    QAVPlayer*      player()      const;
+    QAVAudioOutput* audioOutput() const;
+    VideoRenderer*  videoRender() const;
 
     bool setMediaObject(QMediaObject* object) override;
 
@@ -46,5 +70,7 @@ private:
     class Private;
     Private* const d;
 };
+
+#endif // DIGIKAM_DVIDEO_WIDGET_H
 
 } // namespace Digikam
