@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 01:44+0000\n"
+"POT-Creation-Date: 2024-01-14 01:58+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -28333,12 +28333,12 @@ msgstr "Žyma: %1"
 msgid "Create New Album"
 msgstr "Sukurti naują albumą"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:168
+#: core/libs/album/widgets/albumselectwidget.cpp:169
 #, kde-format
 msgid "&New Album"
 msgstr "&Naujas albumas"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:170
 #, kde-format
 msgid "Create new album"
 msgstr "Sukurti naują albumą"

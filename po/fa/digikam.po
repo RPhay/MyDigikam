@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 01:44+0000\n"
+"POT-Creation-Date: 2024-01-14 01:58+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -27643,12 +27643,12 @@ msgstr "برچسب: %1"
 msgid "Create New Album"
 msgstr "ایجاد آلبوم جدید"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:168
+#: core/libs/album/widgets/albumselectwidget.cpp:169
 #, kde-format
 msgid "&New Album"
 msgstr "آلبوم &جدید‌"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:170
 #, fuzzy, kde-format
 msgid "Create new album"
 msgstr "ایجاد آلبوم جدید"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 01:44+0000\n"
+"POT-Creation-Date: 2024-01-14 01:58+0000\n"
 "PO-Revision-Date: 2024-01-11 15:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -28121,12 +28121,12 @@ msgstr "Etiquetes (%1)"
 msgid "Create New Album"
 msgstr "Crea un àlbum nou"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:168
+#: core/libs/album/widgets/albumselectwidget.cpp:169
 #, kde-format
 msgid "&New Album"
 msgstr "Àlbum &nou"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:170
 #, kde-format
 msgid "Create new album"
 msgstr "Crea un àlbum nou"

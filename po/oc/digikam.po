@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 01:44+0000\n"
+"POT-Creation-Date: 2024-01-14 01:58+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -27002,12 +27002,12 @@ msgstr "imatges"
 msgid "Create New Album"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectwidget.cpp:168
+#: core/libs/album/widgets/albumselectwidget.cpp:169
 #, kde-format
 msgid "&New Album"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:170
 #, kde-format
 msgid "Create new album"
 msgstr ""

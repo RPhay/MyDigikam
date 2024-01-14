@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 01:44+0000\n"
+"POT-Creation-Date: 2024-01-14 01:58+0000\n"
 "PO-Revision-Date: 2023-05-29 20:03-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -28380,12 +28380,12 @@ msgstr "タグ: %1"
 msgid "Create New Album"
 msgstr "新しいアルバムを作成"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:168
+#: core/libs/album/widgets/albumselectwidget.cpp:169
 #, kde-format
 msgid "&New Album"
 msgstr "新しいアルバム(&N)"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:170
 #, kde-format
 msgid "Create new album"
 msgstr "新しいアルバムを作成"
@@ -69759,65 +69759,3 @@ msgstr "すべての設定を標準の値に戻します。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "すべての設定を標準の値に戻します。"
-
-#, fuzzy
-#~| msgid "Preparing slideshow"
-#~ msgid "Preparing %1 Done"
-#~ msgstr "スライドショーを準備しています"
-
-#, fuzzy
-#~ msgctxt "@option"
-#~ msgid "Whole albums collection"
-#~ msgstr "アルバムのコレクションを表示"
-
-#, fuzzy
-#~ msgctxt "@option"
-#~ msgid "Whole tags collection"
-#~ msgstr "アルバムのコレクションを表示"
-
-#, fuzzy
-#~ msgid "Cannot generate output video %1"
-#~ msgstr "ディレクトリの作成に失敗しました。"
-
-#, fuzzy
-#~ msgid "Output video is %1"
-#~ msgstr "ディレクトリの作成に失敗しました。"
-
-#, fuzzy
-#~| msgid "Failed to open file."
-#~ msgid "Failed to open video encoder"
-#~ msgstr "画像を開けませんでした。"
-
-#, fuzzy
-#~| msgid "Failed to open file."
-#~ msgid "Failed to open audio encoder"
-#~ msgstr "画像を開けませんでした。"
-
-#, fuzzy
-#~| msgid "Failed to open file."
-#~ msgid "Failed to open muxer"
-#~ msgstr "画像を開けませんでした。"
-
-#, fuzzy
-#~ msgid "About Plugin"
-#~ msgstr "Kipi プラグイン"
-
-#, fuzzy
-#~| msgid ""
-#~| "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</"
-#~| "p>"
-#~ msgid ""
-#~ "<p><u>Name:</u> %1</p><p><u>Version:</u> %2</p><p><u>Copyrights:</u> %3</"
-#~ "p><p><u>Description:</u> %4</p>"
-#~ msgstr ""
-#~ "<b>タイトル: </b><p>%1</p><b>値: </b><p>%2</p><b>説明: </b><p>%3</p>"
-
-#, fuzzy
-#~| msgid "Show grid"
-#~ msgid "Show Grid"
-#~ msgstr "グリッドを表示する"
-
-#, fuzzy
-#~| msgid "Show image caption"
-#~ msgid "Show Sun-Shading"
-#~ msgstr "画像のキャプションを表示"

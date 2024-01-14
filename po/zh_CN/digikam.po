@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 01:44+0000\n"
-"PO-Revision-Date: 2024-01-06 03:34\n"
+"POT-Creation-Date: 2024-01-14 01:58+0000\n"
+"PO-Revision-Date: 2024-01-13 06:02\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -19897,7 +19897,7 @@ msgstr "视频幻灯片未制作完成。"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:186
 #, kde-format
 msgid "See the video encoding trace below"
-msgstr ""
+msgstr "详情请见下方的编码跟踪信息"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:191
 #, kde-format
@@ -19950,28 +19950,25 @@ msgid "Media Container Format:"
 msgstr "媒体容器格式："
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:97
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack File:"
-msgstr "音轨："
+msgstr "音轨文件："
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:103
-#, fuzzy, kde-format
-#| msgid "Select audio files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
-msgstr "选择音频文件"
+msgstr "选择音轨"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Video soundtrack (lets empty if none)"
-msgstr ""
+msgstr "视频音轨 (没有的话请留空)"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack Duration:"
-msgstr "音轨："
+msgstr "音轨持续时间："
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:112
 #, kde-format
@@ -19980,6 +19977,8 @@ msgid ""
 "will be played in loop. If the audio length is largest than video, it will "
 "be trimmed.</i>"
 msgstr ""
+"<i>关于音轨的提示：如果音频的时长小于视频，音频将循环播放。如果音频的时长大于"
+"视频，音频将被裁切。</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
 #, kde-format
@@ -26856,30 +26855,24 @@ msgid "Tags (0)"
 msgstr "标签 (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Albums"
+#, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "所有相册"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive"
-msgstr "递归选择"
+msgstr "递归式"
 
 #: core/libs/album/widgets/albumselectors.cpp:182
 #: core/libs/album/widgets/albumselectors.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
-msgstr "递归选择"
+msgstr "递归式选择。"
 
 #: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
@@ -26900,9 +26893,7 @@ msgid "Reset selected albums"
 msgstr "重置已选中相册"
 
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Tags"
+#, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "所有标签"
@@ -26948,12 +26939,12 @@ msgstr "标签 (%1)"
 msgid "Create New Album"
 msgstr "创建新相册"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:168
+#: core/libs/album/widgets/albumselectwidget.cpp:169
 #, kde-format
 msgid "&New Album"
 msgstr "新建相册(&N)"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:170
 #, kde-format
 msgid "Create new album"
 msgstr "创建新相册"
@@ -39857,35 +39848,29 @@ msgid "Default from Desktop"
 msgstr "桌面默认值"
 
 #: core/libs/video/manager/vidslidetask.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Generating files for \"%1\""
+#, kde-format
 msgid "Generating frames from %1 Done"
-msgstr "正在为“%1”生成文件"
+msgstr "从 %1 生成帧已完成"
 
 #: core/libs/video/manager/vidslidethread.cpp:63
-#, fuzzy, kde-format
-#| msgid "Cannot create a temporary directory"
+#, kde-format
 msgid "Error while creating temporary directory %1!"
-msgstr "无法创建临时目录"
+msgstr "创建临时目录 %1 时发生错误。"
 
 #: core/libs/video/manager/vidslidethread.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Loading cameras..."
+#, kde-format
 msgid "Encoding frames..."
-msgstr "正在加载相机..."
+msgstr "正在编码视频帧..."
 
 #: core/libs/video/manager/vidslidethread.cpp:133
 #, kde-format
 msgid "Encoding done."
-msgstr ""
+msgstr "编码完成。"
 
 #: core/libs/video/manager/vidslidethread.cpp:137
-#, fuzzy, kde-format
-#| msgid "Error while opening the source database."
+#, kde-format
 msgid "Error while encoding frames!"
-msgstr "打开来源数据库时出错。"
+msgstr "编码视频帧时发生错误。"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -55391,12 +55376,10 @@ msgid "Osm File Parser"
 msgstr "OSM 文件解析器"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "A plugin to load Geolocation Data from the OpenSteetMap data file format."
+#, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
-msgstr "用于从 OpenSteetMap 格式的文件中加载地理位置数据的插件。"
+msgstr "用于从 OSM 格式的文件中加载地理位置数据的插件。"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, kde-format
@@ -64317,7 +64300,7 @@ msgstr "在高分辨率下使用像素映射"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:83
 #, kde-format
 msgid "Force use of software OpenGL rendering"
-msgstr ""
+msgstr "强制使用 OpenGL 软件渲染"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:84
 #, kde-format
@@ -64594,14 +64577,7 @@ msgid "API Key:"
 msgstr "API 密钥："
 
 #: core/utilities/setup/setupgeolocation.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Google Maps requires to work friendly an API key that end users must buy "
-#| "online to gain credentials. Without this key, Google Maps is still usable "
-#| "but with an overlay frame annotated \"For Development Only\". For more "
-#| "information, see this <a href='https://mapsplatform.google.com/"
-#| "pricing/'>Google page</a> about usages, practices, and prices."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "To work friendly, Google Maps requires an API key that end users must buy "
@@ -64610,10 +64586,10 @@ msgid ""
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
-"谷歌地图的用户必须在线购买它的 API 密钥才能获取登录信息以得到更为友好的使用体"
-"验。如果没有此密钥，谷歌地图依然能够工作，但它会在画面上叠加“For "
-"Develomepent Only (仅供开发使用)”字样。谷歌地图的使用方式、政策、定价等详情请"
-"参考<a href='https://mapsplatform.google.com/pricing/'>此页面</a>。"
+"为了得到更好的使用体验，谷歌地图的用户必须在线购买它的 API 密钥以进行登录。如"
+"果没有此密钥，谷歌地图依然能够工作，但它会在画面上叠加“For Develomepent Only "
+"(仅供开发使用)”字样。谷歌地图的使用方式、政策、定价等详情请参考<a "
+"href='https://mapsplatform.google.com/pricing/'>此页面</a>。"
 
 #: core/utilities/setup/setupicc.cpp:178
 #, kde-format
@@ -65491,20 +65467,3 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
-
-#~ msgid "Preparing %1 Done"
-#~ msgstr "准备 %1 完成"
-
-#~ msgctxt "@option"
-#~ msgid "Whole albums collection"
-#~ msgstr "整个相册集合"
-
-#~ msgctxt "@option"
-#~ msgid "Whole tags collection"
-#~ msgstr "整个标签集合"
-
-#~ msgid "Cannot generate output video %1"
-#~ msgstr "无法生成输出视频 %1"
-
-#~ msgid "Output video is %1"
-#~ msgstr "输出视频为 %1"
