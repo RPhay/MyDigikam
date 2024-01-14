@@ -23,23 +23,12 @@
 #include <QSlider>
 #include <QStyle>
 #include <QLabel>
-#include <QAbstractVideoSurface>
-#include <QVideoSurfaceFormat>
-#include <QMediaService>
-#include <QMediaObject>
-#include <QVideoRendererControl>
-#include <QVideoWidget>
 
 // KDE includes
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
-
-// QtAVPlayer includes
-
-#include "qavvideoframe.h"
-#include "qavaudiooutput.h"
 
 // Local includes
 
@@ -49,88 +38,6 @@
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN VideoRenderer : public QVideoRendererControl
-{
-public:
-
-    VideoRenderer(QObject* const parent = nullptr)
-        : QVideoRendererControl(parent)
-    {
-    }
-
-    QAbstractVideoSurface* surface() const override
-    {
-        return m_surface;
-    }
-
-    void setSurface(QAbstractVideoSurface* surface) override
-    {
-        m_surface = surface;
-    }
-
-    QAbstractVideoSurface* m_surface = nullptr;
-};
-
-// --------------------------------------------------------
-
-class Q_DECL_HIDDEN MediaService : public QMediaService
-{
-public:
-
-    MediaService(VideoRenderer* const vr, QObject* const parent = nullptr)
-        : QMediaService(parent),
-          m_renderer   (vr)
-    {
-    }
-
-    QMediaControl* requestControl(const char* name) override
-    {
-        if (qstrcmp(name, QVideoRendererControl_iid) == 0)
-        {
-            return m_renderer;
-        }
-
-        return nullptr;
-    }
-
-    void releaseControl(QMediaControl*) override
-    {
-    }
-
-    VideoRenderer* m_renderer = nullptr;
-};
-
-// --------------------------------------------------------
-
-class Q_DECL_HIDDEN MediaObject : public QMediaObject
-{
-public:
-
-    explicit MediaObject(VideoRenderer* const vr, QObject* const parent = nullptr)
-        : QMediaObject(parent, new MediaService(vr, parent))
-    {
-    }
-};
-
-// --------------------------------------------------------
-
-class Q_DECL_HIDDEN VideoWidget : public QVideoWidget
-{
-public:
-
-    VideoWidget(QWidget* const parent = nullptr)
-        : QVideoWidget(parent)
-    {
-    }
-
-    bool setMediaObject(QMediaObject* object) override
-    {
-        return QVideoWidget::setMediaObject(object);
-    }
-};
-
-// --------------------------------------------------------
 
 class Q_DECL_HIDDEN SlideVideoStyle : public QProxyStyle
 {
@@ -162,11 +69,7 @@ public:
 
     DInfoInterface*      iface            = nullptr;
 
-    VideoRenderer*       videoRender      = nullptr;
-    VideoWidget*         videoWidget      = nullptr;
-    MediaObject*         mediaObject      = nullptr;
-    QAVPlayer*           player           = nullptr;
-    QAVAudioOutput*      audioOutput      = nullptr;
+    DVideoWidget*        videoWidget      = nullptr;
 
     QSlider*             slider           = nullptr;
     QSlider*             volume           = nullptr;
@@ -183,17 +86,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
 {
     setMouseTracking(true);
 
-    d->videoRender    = new VideoRenderer(this);
-
-    d->videoWidget    = new VideoWidget(this);
-    d->videoWidget->setMouseTracking(true);
-
-    d->mediaObject    = new MediaObject(d->videoRender);
-    d->videoWidget->setMediaObject(d->mediaObject);
-
-    d->player         = new QAVPlayer(this);
-
-    d->audioOutput    = new QAVAudioOutput(this);
+    d->videoWidget    = new DVideoWidget(this);
 
     d->indicator      = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, d->indicator);
@@ -223,7 +116,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
     KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
     int volume                = group.readEntry("Volume", 50);
 
-    d->audioOutput->setVolume(volume);
+    d->videoWidget->audioOutput()->setVolume(volume);
     d->volume->setValue(volume);
 
     // --------------------------------------------------------------------------
@@ -237,28 +130,28 @@ SlideVideo::SlideVideo(QWidget* const parent)
     connect(d->volume, SIGNAL(valueChanged(int)),
             this, SLOT(slotVolumeChanged(int)));
 
-    connect(d->player, &QAVPlayer::audioFrame,
+    connect(d->videoWidget->player(), &QAVPlayer::audioFrame,
             this, &SlideVideo::slotAudioFrame,
             Qt::DirectConnection);
 
-    connect(d->player, &QAVPlayer::videoFrame,
+    connect(d->videoWidget->player(), &QAVPlayer::videoFrame,
             this, &SlideVideo::slotVideoFrame,
             Qt::DirectConnection);
 
-    connect(d->player, SIGNAL(stateChanged(QAVPlayer::State)),
+    connect(d->videoWidget->player(), SIGNAL(stateChanged(QAVPlayer::State)),
             this, SLOT(slotPlayerStateChanged(QAVPlayer::State)));
 
-    connect(d->player, SIGNAL(seeked(qint64)),
+    connect(d->videoWidget->player(), SIGNAL(seeked(qint64)),
             this, SLOT(slotPositionChanged(qint64)),
             Qt::QueuedConnection);
 
-    connect(d->player, SIGNAL(durationChanged(qint64)),
+    connect(d->videoWidget->player(), SIGNAL(durationChanged(qint64)),
             this, SLOT(slotDurationChanged(qint64)));
 
-    connect(d->player, SIGNAL(errorOccurred(QAVPlayer::Error, const QString&)),
+    connect(d->videoWidget->player(), SIGNAL(errorOccurred(QAVPlayer::Error, const QString&)),
             this, SLOT(slotHandlePlayerError(QAVPlayer::Error)));
 
-    connect(d->player, SIGNAL(mediaStatusChanged(QAVPlayer::MediaStatus)),
+    connect(d->videoWidget->player(), SIGNAL(mediaStatusChanged(QAVPlayer::MediaStatus)),
             this, SLOT(slotMediaStatusChanged(QAVPlayer::MediaStatus)));
 
     // --------------------------------------------------------------------------
@@ -276,27 +169,27 @@ SlideVideo::~SlideVideo()
 
 void SlideVideo::slotAudioFrame(const QAVAudioFrame& frame)
 {
-    d->audioOutput->play(frame);
+    d->videoWidget->audioOutput()->play(frame);
 }
 
 void SlideVideo::slotVideoFrame(const QAVVideoFrame& frame)
 {
-    if (d->videoRender->m_surface == nullptr)
+    if (d->videoWidget->videoRender()->m_surface == nullptr)
     {
         return;
     }
 
     QVideoFrame videoFrame = frame.convertTo(AV_PIX_FMT_RGB32);
 
-    if (!d->videoRender->m_surface->isActive() || (d->videoRender->m_surface->surfaceFormat().frameSize() != videoFrame.size()))
+    if (!d->videoWidget->videoRender()->m_surface->isActive() || (d->videoWidget->videoRender()->m_surface->surfaceFormat().frameSize() != videoFrame.size()))
     {
         QVideoSurfaceFormat f(videoFrame.size(), videoFrame.pixelFormat(), videoFrame.handleType());
-        d->videoRender->m_surface->start(f);
+        d->videoWidget->videoRender()->m_surface->start(f);
     }
 
-    if (d->videoRender->m_surface->isActive())
+    if (d->videoWidget->videoRender()->m_surface->isActive())
     {
-         d->videoRender->m_surface->present(videoFrame);
+         d->videoWidget->videoRender()->m_surface->present(videoFrame);
     }
 }
 
@@ -307,7 +200,7 @@ void SlideVideo::setInfoInterface(DInfoInterface* const iface)
 
 void SlideVideo::setCurrentUrl(const QUrl& url)
 {
-    d->player->stop();
+    d->videoWidget->player()->stop();
 
     int orientation = 0;
 
@@ -347,8 +240,8 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
         }
     }
 
-    d->player->setSource(url.toLocalFile());
-    d->player->play();
+    d->videoWidget->player()->setSource(url.toLocalFile());
+    d->videoWidget->player()->play();
 
     showIndicator(false);
 }
@@ -369,7 +262,7 @@ void SlideVideo::slotPlayerStateChanged(QAVPlayer::State newState)
 
         // fix wrong rotation from QtAV git/master
 
-        rotate     = d->player->statistics().video_only.rotate;
+        rotate     = d->videoWidget->player()->statistics().video_only.rotate;
 
 #endif
         d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
@@ -413,22 +306,22 @@ void SlideVideo::slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus)
 
 void SlideVideo::pause(bool b)
 {
-    if (!b && (d->player->state() != QAVPlayer::PlayingState))
+    if (!b && (d->videoWidget->player()->state() != QAVPlayer::PlayingState))
     {
-        d->player->play();
+        d->videoWidget->player()->play();
         return;
     }
 
-    if (b && (d->player->state() != QAVPlayer::PausedState))
+    if (b && (d->videoWidget->player()->state() != QAVPlayer::PausedState))
     {
-       d->player->pause();
+       d->videoWidget->player()->pause();
     }
 }
 
 void SlideVideo::stop()
 {
-    d->player->stop();
-    d->player->setSource(QString());
+    d->videoWidget->player()->stop();
+    d->videoWidget->player()->setSource(QString());
 }
 
 void SlideVideo::slotPositionChanged(qint64 position)
@@ -449,7 +342,7 @@ void SlideVideo::slotPositionChanged(qint64 position)
 
 void SlideVideo::slotVolumeChanged(int volume)
 {
-    d->audioOutput->setVolume((qreal)volume / 100.0);
+    d->videoWidget->audioOutput()->setVolume((qreal)volume / 100.0);
 }
 
 void SlideVideo::slotDurationChanged(qint64 duration)
@@ -462,9 +355,9 @@ void SlideVideo::slotDurationChanged(qint64 duration)
 
 void SlideVideo::slotPosition(int position)
 {
-    if (d->player->isSeekable())
+    if (d->videoWidget->player()->isSeekable())
     {
-        d->player->seek((qint64)position);
+        d->videoWidget->player()->seek((qint64)position);
     }
 }
 

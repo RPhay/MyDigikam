@@ -29,6 +29,7 @@
 
 #include "dinfointerface.h"
 #include "digikam_export.h"
+#include "dvideowidget.h"
 
 namespace Digikam
 {
