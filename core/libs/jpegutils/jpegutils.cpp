@@ -442,7 +442,27 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
         delete temp;
 
-        if (!performJpegTransform(actions[i], src, tempFile))
+        bool canLosslessTransform = true;
+
+#if (JPEG_LIB_VERSION < 80)
+
+        PhotoInfoContainer cameraInfo = m_metadata->getPhotographInformation();
+        QStringList unsupportedModels({ QLatin1String("Redmi Note 6 Pro") });
+
+        Q_FOREACH (const QString& model, unsupportedModels)
+        {
+            if (model == cameraInfo.model)
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported camera model for lossless transform:"
+                                             << cameraInfo.model;
+                canLosslessTransform = false;
+                break;
+            }
+        }
+
+#endif
+
+        if (!canLosslessTransform || !performJpegTransform(actions[i], src, tempFile))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "JPEG lossless transform failed for" << src;
 
