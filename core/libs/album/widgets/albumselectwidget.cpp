@@ -150,6 +150,7 @@ AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
     d->albumModel           = new AlbumModel(AbstractAlbumModel::IgnoreRootAlbum, this);
     d->albumTreeView        = new AlbumSelectTreeView(d->albumModel, d->albumModificationHelper, this);
     d->albumTreeView->setDragEnabled(false);
+    d->albumTreeView->setRootIsDecorated(true);
     d->albumTreeView->setDropIndicatorShown(false);
     d->albumTreeView->setAcceptDrops(false);
     d->albumTreeView->setSelectAlbumOnClick(false);

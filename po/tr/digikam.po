@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 01:44+0000\n"
-"PO-Revision-Date: 2024-01-12 14:59+0300\n"
+"POT-Creation-Date: 2024-01-14 01:58+0000\n"
+"PO-Revision-Date: 2024-01-13 15:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2524,7 +2524,7 @@ msgstr "Ana Araçlar"
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
-msgstr "İleri İşleme"
+msgstr "Süreç Sonrası İşleme"
 
 #: core/app/main/digikamapp_tools.cpp:50
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2666
@@ -26463,7 +26463,7 @@ msgstr "RAW İçe Aktar"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:309
 #, kde-format
 msgid "Post Processing"
-msgstr "Süreç Sonrası İşlemler"
+msgstr "Süreç Sonrası İşleme"
 
 #: core/dplugins/rawimport/native/rawimport.cpp:176
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:308
@@ -27880,12 +27880,12 @@ msgstr "Etiketler (%1)"
 msgid "Create New Album"
 msgstr "Yeni Albüm Oluştur"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:168
+#: core/libs/album/widgets/albumselectwidget.cpp:169
 #, kde-format
 msgid "&New Album"
 msgstr "&Yeni Albüm"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:170
 #, kde-format
 msgid "Create new album"
 msgstr "Yeni albüm oluştur"
@@ -36341,7 +36341,7 @@ msgstr "Volofça"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Xhosa"
-msgstr "Zosa Dili"
+msgstr "Zosaca"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:465
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:613
@@ -41642,7 +41642,7 @@ msgstr "YENİDEN BAŞLATMA GEREKİYOR"
 #: core/libs/video/qtav/config/MiscPage.cpp:123
 #, kde-format
 msgid "Currently only works for Qt>=5.5 XCB build"
-msgstr ""
+msgstr "Şu an için yalnızca Qt >= 5.5 XCB yapısı ile çalışır"
 
 #: core/libs/video/qtav/config/MiscPage.cpp:130
 #, kde-format
@@ -41650,72 +41650,64 @@ msgid "Misc"
 msgstr "Çeşitli"
 
 #: core/libs/video/qtav/config/ShaderPage.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@info: correction status"
-#| msgid "enabled"
+#, kde-format
 msgctxt "@option: enable shader"
 msgid "Enable"
-msgstr "etkinleştirildi"
+msgstr "Etkinleştir"
 
 #: core/libs/video/qtav/config/ShaderPage.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Intermediate Steps:"
+#, kde-format
 msgctxt "@option"
 msgid "Intermediate FBO"
-msgstr "Ara Adımlar:"
+msgstr "Ara FBO"
 
 #: core/libs/video/qtav/config/ShaderPage.cpp:46
 #, kde-format
 msgctxt "@label"
 msgid "Fragment shader header"
-msgstr ""
+msgstr "Parça gölgelendiricisi üstbilgisi"
 
 #: core/libs/video/qtav/config/ShaderPage.cpp:52
 #, kde-format
 msgctxt "@info"
 msgid "Additional header code"
-msgstr ""
+msgstr "Ek üstbilgi kodu"
 
 #: core/libs/video/qtav/config/ShaderPage.cpp:54
 #, kde-format
 msgctxt "@label"
 msgid "Fragment shader texel sample function"
-msgstr ""
+msgstr "Parça gölgelendiricisi texel örnek işlevi"
 
 #: core/libs/video/qtav/config/ShaderPage.cpp:62
 #, kde-format
 msgctxt "@label"
 msgid "Fragment shader RGB post process code"
-msgstr ""
+msgstr "Parça gölgelendiricisi RGB süreç sonrası işlem kodu"
 
 #: core/libs/video/qtav/config/ShaderPage.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "light source"
-#| msgid "Shade"
+#, kde-format
 msgctxt "@title"
 msgid "Shader"
-msgstr "Gölge"
+msgstr "Gölgelendirici"
 
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
 #, kde-format
 msgctxt "@label"
 msgid "Engine"
-msgstr ""
+msgstr "İşletke"
 
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
-#, fuzzy, kde-format
-#| msgid "Brightness:"
+#, kde-format
 msgctxt "@option"
 msgid "Brightness"
-msgstr "Parlaklık:"
+msgstr "Parlaklık"
 
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:69
-#, fuzzy, kde-format
-#| msgid "Contrast:"
+#, kde-format
 msgctxt "@option"
 msgid "Contrast"
-msgstr "Zıtlık:"
+msgstr "Karşıtlık"
 
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:70
 #, kde-format
@@ -41733,39 +41725,33 @@ msgstr "Doygunluk"
 #, kde-format
 msgctxt "@option: global settings"
 msgid "Global"
-msgstr ""
+msgstr "Global"
 
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:697
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:737
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Loading metadata -"
+#, kde-format
 msgid "error reading stream data"
-msgstr "Metaveri yükleniyor -"
+msgstr "akış verisi okunurken hata"
 
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:976
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgid "seek error"
-msgstr "Hata"
+msgstr "arama hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1307
-#, fuzzy, kde-format
-#| msgid "Failed to open muxer"
+#, kde-format
 msgid "failed to open media"
-msgstr "Değiştirici açılırken hata"
+msgstr "ortam açılamadı"
 
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1333
-#, fuzzy, kde-format
-#| msgid "Failed to create file..."
+#, kde-format
 msgid "failed to find stream info"
-msgstr "Dosya oluşturulamadı..."
+msgstr "akış bilgisi bulunamadı"
 
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1898
-#, fuzzy, kde-format
-#| msgid "Canceled..."
+#, kde-format
 msgid "interrupted by user"
-msgstr "İptal edildi..."
+msgstr "kullanıcı tarafından araya girildi"
 
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1909
 #, kde-format
@@ -41773,16 +41759,14 @@ msgid "timeout"
 msgstr "zaman aşımı"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:160
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgid "No error"
-msgstr "Dışarıya aktarma hatası"
+msgstr "Hata yok"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:167
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgid "Open error"
-msgstr "Dışarıya aktarma hatası"
+msgstr "Açma hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:174
 #, kde-format
@@ -41792,23 +41776,22 @@ msgstr "Açma zaman aşımına uğradı"
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:181
 #, kde-format
 msgid "Parse stream timed out"
-msgstr ""
+msgstr "Akış ayrıştırma zaman aşımına uğradı"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:188
 #, kde-format
 msgid "Parse stream error"
-msgstr ""
+msgstr "Akış ayrıştırma hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:195
-#, fuzzy, kde-format
-#| msgid "Binary not found."
+#, kde-format
 msgid "Stream not found"
-msgstr "İkili değer bulunamadı."
+msgstr "Akış bulunamadı"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:202
 #, kde-format
 msgid "Read packet timed out"
-msgstr ""
+msgstr "Paket okuma zaman aşımına uğradı"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:209
 #, kde-format
@@ -41816,120 +41799,102 @@ msgid "Read error"
 msgstr "Okuma hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:216
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgid "Seek error"
-msgstr "Hata"
+msgstr "Arama hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:223
-#, fuzzy, kde-format
-#| msgid "Session error"
+#, kde-format
 msgid "Resource error"
-msgstr "Oturum hatası"
+msgstr "Özkaynak hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:230
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgid "Open codec error"
-msgstr "Dışarıya aktarma hatası"
+msgstr "Kodlayıcı açma hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:237
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgid "Close codec error"
-msgstr "Dışarıya aktarma hatası"
+msgstr "Kodlayıcı kapatma hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:244
-#, fuzzy, kde-format
-#| msgid "Video codec"
+#, kde-format
 msgid "Video codec not found"
-msgstr "Video kodlayıcı"
+msgstr "Video kodlayıcısı bulunamadı"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:251
-#, fuzzy, kde-format
-#| msgid "Audio Compressor (Audio Codec)"
+#, kde-format
 msgid "Audio codec not found"
-msgstr "Ses Sıkıştırıcı (Ses Kodlayıcı)"
+msgstr "Ses kodlayıcısı bulunamadı"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:258
-#, fuzzy, kde-format
-#| msgid "Collection not found"
+#, kde-format
 msgid "Subtitle codec not found"
-msgstr "Koleksiyon bulunamadı"
+msgstr "Altyazı kodlayıcısı bulunamadı"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:265
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgid "Codec error"
-msgstr "Dışarıya aktarma hatası"
+msgstr "Kodlayıcı hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:272
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgid "Format error"
-msgstr "Dışarıya aktarma hatası"
+msgstr "Biçim hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:279
-#, fuzzy, kde-format
-#| msgid "Network"
+#, kde-format
 msgid "Network error"
-msgstr "Ağ"
+msgstr "Ağ hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:286
-#, fuzzy, kde-format
-#| msgid "Access Level"
+#, kde-format
 msgid "Access denied"
-msgstr "Erişim Düzeyi"
+msgstr "Erişim engellendi"
 
 #: core/libs/video/qtav/filter/LibAVFilter.cpp:357
-#, fuzzy, kde-format
-#| msgid "Options"
+#, kde-format
 msgid "Options:"
-msgstr "Seçenekler"
+msgstr "Seçenekler:"
 
 #: core/libs/video/qtav/utils/QtAV_Global.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@item: icc profile properties"
-#| msgid "Profile Version"
+#, kde-format
 msgid "Build version"
-msgstr "Profil Sürümü"
+msgstr "Yapı sürümü"
 
 #: core/libs/video/qtav/utils/QtAV_Global.cpp:232
-#, fuzzy, kde-format
-#| msgid "Profile Version"
+#, kde-format
 msgid "Runtime version"
-msgstr "Profil Sürümü"
+msgstr "Çalışma zamanı sürümü"
 
 #: core/libs/video/qtav/utils/QtAV_Global.cpp:267
 #, kde-format
 msgid "Multimedia framework based on Qt and FFmpeg.\n"
-msgstr ""
+msgstr "Çoklu ortam çatısı, Qt ve FFmpeg tabanlıdır.\n"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:207
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About Qt"
-msgstr "Hakkında"
+msgstr "Qt Hakkında"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, fuzzy, kde-format
+#, kde-format
 msgid "Ok"
 msgstr "Tamam"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgctxt "@title:window"
 msgid "About QtAV"
-msgstr "Hakkında"
+msgstr "QtAV Hakkında"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgctxt "@title:window"
 msgid "About FFmpeg"
-msgstr "Hakkında"
+msgstr "FFmpeg Hakkında"
 
 #: core/libs/widgets/combo/dcombobox.cpp:61
 #: core/libs/widgets/range/dnuminput.cpp:71
@@ -41940,11 +41905,10 @@ msgid "Reset to default value"
 msgstr "Öntanımlı değere sıfırla"
 
 #: core/libs/widgets/files/dbinaryiface.cpp:217
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
-msgstr "%1'e git"
+msgstr "Git: %1"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:62
 #, kde-format
@@ -41961,7 +41925,7 @@ msgstr "Sürüm"
 #: core/libs/widgets/files/dbinarysearch.cpp:101
 #, kde-format
 msgid "Binary not found."
-msgstr "İkili değer bulunamadı."
+msgstr "İkili bulunamadı."
 
 #: core/libs/widgets/files/dbinarysearch.cpp:102
 #, kde-format
@@ -41976,7 +41940,7 @@ msgstr "Bul"
 #: core/libs/widgets/files/dbinarysearch.cpp:106
 #, kde-format
 msgid " or <a href=\"%1\">download</a>"
-msgstr " veya <a href=\"%1\">indirin</a>"
+msgstr " veya <a href=\"%1\">indir</a>"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:135
 #, kde-format
@@ -41986,10 +41950,10 @@ msgid ""
 "click the 'Find' button to locate them on your system, otherwise please "
 "download and install them to proceed.</font></p></qt>"
 msgstr ""
-"<qt><p><font color=\"red\"><b>Uyarı:</b> Bazı gerekli ikili dosyalar "
-"sisteminizde bulunamadı. Bu ikili dosyalar kuruluysa sisteminizde bulmak "
-"için lütfen 'Bul' düğmesini tıklayın, aksi takdirde sürdürmek için bunları "
-"indirip kurun.</font></p></qt>"
+"<qt><p><font color=\"red\"><b>Uyarı:</b> Sisteminizde bazı gerekli ikili "
+"dosyalar bulunamadı. Bu ikili dosyalara sahipseniz bunları sisteminizde "
+"bulmak için lütfen 'Bul' düğmesine tıklayın, aksi halde lütfen sürdürmek "
+"için bunları indirip kurun.</font></p></qt>"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:174
 #, kde-format
@@ -41997,8 +41961,8 @@ msgid ""
 "A development version has been detect. There is no guarantee on the behavior "
 "of this binary."
 msgstr ""
-"Geliştirme sürümü tespit edildi. Bu ikilinin davranışında herhangi bir "
-"garanti verilememektedir."
+"Bir geliştirme sürümü algılandı. Bu ikilinin davranışı konusunda hiçbir "
+"garanti yoktur."
 
 #: core/libs/widgets/files/dbinarysearch.cpp:184
 #, kde-format
@@ -42008,7 +41972,7 @@ msgstr "Değiştir"
 #: core/libs/widgets/files/dbinarysearch.cpp:190
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
-msgstr ""
+msgstr "Bulunan ikili dosya amaçlandığı gibi çalışmıyor gibi görünüyor."
 
 #: core/libs/widgets/files/dfileselector.cpp:53
 #, kde-format
@@ -42018,37 +41982,36 @@ msgstr "Göz At..."
 #: core/libs/widgets/files/filesaveconflictbox.cpp:66
 #, kde-format
 msgid "If Target File Exists:"
-msgstr "Eğer hedef dosya mevcutsa:"
+msgstr "Eğer hedef dosya varsa:"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:70
 #: core/utilities/setup/camera/setupcamera.cpp:375
 #, kde-format
 msgid "Store as a different name"
-msgstr "Farklı bir isimle kaydet"
+msgstr "Farklı bir adla depola"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:71
 #: core/utilities/setup/camera/setupcamera.cpp:376
 #, kde-format
 msgid "Overwrite automatically"
-msgstr "Otomatik olarak üzerine yaz"
+msgstr "Kendiliğinden üzerine yaz"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:72
 #: core/utilities/setup/camera/setupcamera.cpp:377
 #, kde-format
 msgid "Skip automatically"
-msgstr "Otomatik olarak atla"
+msgstr "Kendiliğinden atla"
 
 #: core/libs/widgets/files/filesaveoptionsbox.cpp:115
 #, kde-format
 msgid "No options available"
-msgstr "Seçenek mevcut değil"
+msgstr "Kullanılabilir seçenek yok"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:228
-#, fuzzy, kde-format
-#| msgid "Here you can choose the font to be used."
+#, kde-format
 msgctxt "@title: font properties"
 msgid "Here you can choose the font to be used."
-msgstr "Buradan kullanılacak yazıtipini seçebilirsiniz."
+msgstr "Burada kullanılacak yazıtipini seçebilirsiniz."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:255
 #, kde-format
@@ -42066,7 +42029,8 @@ msgstr "Yazıtipi"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font family settings."
-msgstr "Yazıtipi ailesi ayarlarını değiştirmek için bu kutucuğu etkinleştirin."
+msgstr ""
+"Yazıtipi ailesi ayarlarını değiştirmek için bu onay kutusunu etkinleştirin."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:282
 #, kde-format
@@ -42084,13 +42048,14 @@ msgstr "Yazıtipi:"
 #, kde-format
 msgctxt "@title: font properties"
 msgid "Font style"
-msgstr "Yazıtipi biçemi"
+msgstr "Yazıtipi Biçemi"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:304
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font style settings."
-msgstr "Yazıtipi biçemi ayarlarını değiştirmek için bu kutucuğu etkinleştirin."
+msgstr ""
+"Yazıtipi biçemi ayarlarını değiştirmek için bu onay kutusunu etkinleştirin."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:305
 #, kde-format
@@ -42114,7 +42079,8 @@ msgstr "Boyut"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font size settings."
-msgstr "Yazıtipi boyutu ayarlarını değiştirmek için bu kutucuğu etkinleştirin."
+msgstr ""
+"Yazıtipi boyutu ayarlarını değiştirmek için bu onay kutusunu etkinleştirin."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:329
 #, kde-format
@@ -42132,13 +42098,13 @@ msgstr "Boyut:"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Here you can choose the font family to be used."
-msgstr "Buradan kullanılacak yazıtipi ailesini seçebilirsiniz."
+msgstr "Burada kullanılacak yazıtipi ailesini seçebilirsiniz."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:380
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Here you can choose the font style to be used."
-msgstr "Buradan kullanılacak yazıtipi biçimini seçebilirsiniz."
+msgstr "Burada kullanılacak yazıtipi biçimini seçebilirsiniz."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:394
 #, kde-format
@@ -42153,11 +42119,10 @@ msgid "Italic"
 msgstr "Yatık"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:396
-#, fuzzy, kde-format
-#| msgid "Oblique"
+#, kde-format
 msgctxt "@item: font style"
 msgid "Oblique"
-msgstr "Eğik"
+msgstr "Yatık (Aynı Biçim)"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:397
 #, kde-format
@@ -42178,13 +42143,10 @@ msgid "Relative"
 msgstr "Göreceli"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:419
-#, fuzzy, kde-format
-#| msgid "Font size<br /><i>fixed</i> or <i>relative</i><br />to environment"
+#, kde-format
 msgctxt "@info: font properties"
 msgid "Font size \"fixed\" or \"relative\" to environment"
-msgstr ""
-"<br /><i>sabit</i> ya da çevreye bağlı olarak <i>değişken</i><br />yazıtipi "
-"boyutu"
+msgstr "Yazıtipi boyutu \"sabit\" veya ortama \"göreceli\""
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:420
 #, kde-format
@@ -42194,15 +42156,15 @@ msgid ""
 "dynamically and adjusted to changing environment (e.g. widget dimensions, "
 "paper size)."
 msgstr ""
-"Sabit yazıtipi boyutu ile dinamik olarak hesaplanacak ve değişen ortama göre "
-"ayarlanacak yazıtipi arasındaki geçişi buradan yapabilirsiniz (ör. parçacık "
-"boyutları, kağıt boyutu)."
+"Burada sabit yazıtipi boyutu ile devingen olarak hesaplanacak ve değişen "
+"ortama (ör. araç takımı boyutları, kağıt boyutu) göre ayarlanacak yazıtipi "
+"boyutu arasında geçiş yapabilirsiniz."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:445
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Here you can choose the font size to be used."
-msgstr "Buradan kullanılacak yazıtipi büyüklüğünü ayarlayabilirsiniz."
+msgstr "Burada kullanılacak yazıtipi büyüklüğünü ayarlayabilirsiniz."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:486
 #, kde-format
@@ -42217,8 +42179,8 @@ msgid ""
 "This sample text illustrates the current settings. You may edit it to test "
 "special characters."
 msgstr ""
-"Aşağıdaki örnek metin güncel ayarları örnekliyor. Özel karakterleri denemek "
-"için üzerinde değişiklikler yapabilirsiniz."
+"Bu örnek metin geçerli ayarları göstermektedir. Özel karakterleri sınamak "
+"amaçlı düzenleyebilirsiniz."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:727
 #: core/libs/widgets/fonts/dfontproperties.cpp:767
@@ -42237,7 +42199,7 @@ msgstr "Yatık"
 #, kde-format
 msgctxt "@info: font style"
 msgid "Oblique"
-msgstr "Eğik"
+msgstr "Yatık (Aynı Biçim)"
 
 #: core/libs/widgets/fonts/dfontselect.cpp:81
 #, kde-format
@@ -42262,12 +42224,12 @@ msgstr "Yükleniyor..."
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:204
 #, kde-format
 msgid "Embedded JPEG Preview"
-msgstr "Gömülü JPEG önizlemesi"
+msgstr "Gömülü JPEG Önizlemesi"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:212
 #, kde-format
 msgid "Half Size Raw Preview"
-msgstr "Yarı Boyutlu Ham Önizlemesi"
+msgstr "Yarı Boyutlu Ham Önizleme"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:224
 #, kde-format
@@ -42277,39 +42239,39 @@ msgstr "İndirgenmiş Boyutlu Önizleme"
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:237
 #, kde-format
 msgid "Failed to load image"
-msgstr "Resim yüklenemedi"
+msgstr "Görsel yüklenemedi"
 
 #: core/libs/widgets/graphicsview/paniconwidget.cpp:325
 #, kde-format
 msgid "Pan the image to a region"
-msgstr "Görüntüyü bir bölgeye çevir"
+msgstr "Görseli bir bölgeye kaydır"
 
 #: core/libs/widgets/history/versionswidget.cpp:92
 #, kde-format
 msgid "Show available versions in a list"
-msgstr "Kullanılabilir sürümleri listede göster"
+msgstr "Bir listede kullanılabilir sürümleri göster"
 
 #: core/libs/widgets/history/versionswidget.cpp:98
 #, kde-format
 msgid "Show available versions as a tree"
-msgstr "Kullanılabilir sürümleri ağaç olarak göster"
+msgstr "Bir ağaç olarak kullanılabilir sürümleri göster"
 
 #: core/libs/widgets/history/versionswidget.cpp:104
 #, kde-format
 msgid "Show available versions and the applied filters in a combined list"
 msgstr ""
-"Kullanılabilir sürümleri ve uygulanmış filtreleri kombine edilmiş bir "
-"listede göster"
+"Kullanılabilir sürümleri ve uygulanan süzgeçleri birleştirilmiş bir listede "
+"göster"
 
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:810
 #, kde-format
 msgid "Uncalibrated color space"
-msgstr "Kalibre edilmemiş renk alanı"
+msgstr "Kalibre edilmemiş renk uzayı"
 
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:816
 #, kde-format
 msgid "No profile available..."
-msgstr "Mevcut profil yok"
+msgstr "Kullanılabilir profil yok..."
 
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:59
 #, kde-format
@@ -42320,7 +42282,7 @@ msgstr "%1 (%2)"
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:254
 #, kde-format
 msgid "Perceptual"
-msgstr "Algılanma"
+msgstr "Algısal"
 
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:255
 #, kde-format
@@ -42330,7 +42292,7 @@ msgstr "Göreli Renkölçer"
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:256
 #, kde-format
 msgid "Absolute Colorimetric"
-msgstr "Kesin Renkölçer"
+msgstr "Mutlak Renkölçer"
 
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:257
 #, kde-format
@@ -42366,26 +42328,29 @@ msgid ""
 "colors be vivid and contrast well with each other rather than a specific "
 "color.</p></li></ul>"
 msgstr ""
-"<ul><li><p><b>Algısal amaç</b>, görselin tüm gamının sıkıştırılmasına ya da "
-"hedef aygıtın gamına uymak için genişletilmesine neden olur. Bu sayede gri "
-"dengesi korunmuş olur fakat renk doğruluğu her zaman sağlanamayabilir.</"
-"p><p>Diğer deyişle, görselde çıktı aygıtının gerçekleyebileceği aralığın "
-"dışında renk var ise bu resmin renkleri aygıtın gerçekleyebileceği aralığın "
-"içine gelecek şekilde ayarlanır, bu yapılırken olabildiğince renkler "
-"arasındaki ilişki korunmaya çalışılır.</p><p>Fotoğraf ve görselleri "
-"gösterirken bu amaç en uygunudur, varsayılan amaçtır.</p></"
-"li><li><p><b>Mutlak Renkölçer amaç</b> çıktı aygıtının renk aralığının "
-"dışında kalan renkleri olabilecek en yakın renge ayarlar, kalan renkler "
-"değiştirilmez.</p><p> Bu amaç beyaz noktaları korur ve spot renkler için en "
-"uygunudur. (Pantone, TruMatch, logo renkleri, ....)</p></"
-"li><li><p><b>Göreceli Renkölçer amaç</b> çıktı aygıtının renk aralığının "
-"dışında kalan renkleri olabilecek en yakın renge ayarlar. Beyaz noktaları "
-"korumaz.</p></li><li><p><b>Doygunluk amacı</b> renklerin doygunluğunu korur. "
-"Bunu yaparken ışık ve tonunu kullanır.</p><p>Bu amacın gerçekleştirilmesi "
-"biraz sorunludur ve ICC hala istenen efekti yakalamak için olabilecek "
-"yöntemler üzerinde çalışıyor.</p><p>Bu amaç çizelgeler gibi renklerin belli "
-"bir renk yerine, canlı ve parlak olması gereken iş grafikleri için en "
-"uygunudur.</p></li></ul>"
+"<ul><li><p><b>Algısal amaç</b>, görselin tam gamının hedef aygıtın gamını "
+"dolduracak şekilde sıkıştırılmasına veya genişletilmesine neden olur, "
+"böylece gri dengesi korunur; ancak renkölçerli doğruluk korunmayabilir.</"
+"p><p>Başka bir deyişle, bir görseldeki bazı renkler, çıktı aygıtının "
+"sunabileceği renk eriminin dışında kalıyorsa görsel amacı, görseldeki her "
+"rengin sunulabilecek erimde kalması ve renkler arasındaki ilişkinin "
+"olabildiğince korunacak biçimde ayarlanmasına neden olur.</p><p>Bu amaç, "
+"fotoğraf ve görüntülerin görüntülenmesi için en uygun olanıdır ve öntanımlı "
+"amaçtır.</p></li><li><p><b>Mutlak renkölçer amacı</b>, çıktı cihazının "
+"oluşturabileceği aralığın dışında kalan renklerin, oluşturulabilecek en "
+"yakın renge ayarlanmasını, diğer tüm renklerin ise değişmeden bırakılmasını "
+"sağlar.</p><p>Bu amaç beyaz noktayı korur ve spot renkler (Pantone, "
+"TruMatch, logo renkleri, ....) için en uygun olanıdır.</p></"
+"li><li><p><b>Göreceli renkölçer amacı</b>, çıktı aygıtının oluşturabileceği "
+"erimin dışında kalan tüm renklerin, oluşturulabilecek en yakın renge "
+"ayarlanacağı ve diğer tüm renklerin değişmeden kalacağı biçimde tanımlanır. "
+"Kanıt amacı beyaz noktayı korumaz.</p></li><li><p><b>Doygunluk amacı</b>, "
+"renk tonunu ve açıklığını olası pahasına görseldeki renklerin doygunluğunu "
+"korur.</p><p>Bu amacın uygulanması bir miktar sorunlu olmayı sürdürüyor ve "
+"ICC hâlâ istenen etkileri elde etmek için yöntemler üzerinde çalışıyor.</"
+"p><p>Bu amaç, belirli bir renk yerine renklerin canlı olmasının ve "
+"birbiriyle iyi karşıtlık oluşturmasının daha önemli olduğu çizelgeler gibi "
+"iş grafikleri için en uygun olanıdır.</p></li></ul>"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:128
 #, kde-format
@@ -42397,7 +42362,7 @@ msgstr "Ad"
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile product name"
-msgstr "ICC profili ürün ismi"
+msgstr "ICC profili ürün adı"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:130
 #, kde-format
@@ -42469,31 +42434,31 @@ msgstr "Profil Kimliği"
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile ID number"
-msgstr "ICC profil kimliği numarası"
+msgstr "ICC profili kimliği numarası"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:142
 #, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Color Space"
-msgstr "Renk Aralığı"
+msgstr "Renk Uzayı"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:143
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The color space used by the ICC profile"
-msgstr "ICC profili tarafından kullanılan renk aralığı"
+msgstr "ICC profili tarafından kullanılan renk uzayı"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:144
 #, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Connection Space"
-msgstr "Bağlantı Aralığı"
+msgstr "Bağlantı Uzayı"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:145
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The connection space used by the ICC profile"
-msgstr "ICC profili tarafından kullanılan bağlantı aralığı"
+msgstr "ICC profili tarafından kullanılan bağlantı uzayı"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:146
 #, kde-format
@@ -42511,13 +42476,13 @@ msgstr "ICC profili aygıt sınıfı"
 #, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Rendering Intent"
-msgstr "Hazırlama Amacı"
+msgstr "Sunum Amacı"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:149
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile rendering intent"
-msgstr "ICC profil işleme tasarısı"
+msgstr "ICC profil sunma tasarısı"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:150
 #, kde-format
@@ -42544,19 +42509,7 @@ msgid "The ICC profile color management flags"
 msgstr "ICC profili renk yönetim bayrakları"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:175
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This area contains a CIE or chromaticity diagram. A CIE diagram is a "
-#| "representation of all the colors that a person with normal vision can "
-#| "see. This is represented by the colored sail-shaped area. In addition you "
-#| "will see a triangle that is superimposed on the diagram outlined in "
-#| "white. This triangle represents the outer boundaries of the color space "
-#| "of the device that is characterized by the inspected profile. This is "
-#| "called the device gamut.</p><p>In addition there are black dots and "
-#| "yellow lines on the diagram. Each black dot represents one of the "
-#| "measurement points that were used to create this profile. The yellow line "
-#| "represents the amount that each point is corrected by the profile, and "
-#| "the direction of this correction.</p>"
+#, kde-format
 msgctxt "@info: icc profile properties"
 msgid ""
 "This area contains a CIE or chromaticity diagram.\n"
@@ -42573,15 +42526,19 @@ msgid ""
 "amount that each point is corrected by the profile, and the\n"
 "direction of this correction."
 msgstr ""
-"<p>Bu alan bir CIE veya renk berraklığı diyagramı içerir. Bir CIE diyagramı "
-"normal bir insanın görebileceği tüm renklerin sunumudur. Renklendirilmiş "
-"yelken biçimli alanda gösterilir. Ek olarak diyagramın üzerine "
-"yerleştirilmiş beyaz kenarlı bir üçgen göreceksiniz. Bu üçgen, profil ile "
-"tanımlı resmin renk alanının dış sınırlarını gösterir. Resim sırası olarak "
-"isimlendirilir.</p><p>Ek olarak diyagramda siyah noktalar ve sarı çizgiler "
-"vardır. Her siyah nokta bu profili oluşturmak için kullanılan ölçüyü "
-"gösterir. Sarı çizgiler profil tarafından doğrulanan her noktanın miktarnı "
-"ve bu doğrulamanın yönünü gösterir.</p>"
+"Bu alan bir CIE veya renklilik diyagramını\n"
+"içerir. CIE diyagramı normal görüşe sahip bir\n"
+"kişinin görebileceği tüm renklerin temsilidir.\n"
+"Bu, renkli yelken şeklindeki alanla temsil edilir.\n"
+"Ek olarak, beyaz çerçeveli diyagramın üzerine\n"
+"yerleştirilmiş bir üçgen göreceksiniz. Bu üçgen,\n"
+"incelenen profille karakterize edilen aygıtın renk\n"
+"uzayının dış sınırlarını temsil eder. Buna aygıt gamı\n"
+"denir. Ayrıca diyagramda siyah noktalar ve sarı çizgiler\n"
+"bulunmaktadır. Her siyah nokta, bu profili oluşturmak\n"
+"için kullanılan ölçüm noktalarından birini temsil eder.\n"
+"Sarı çizgi, profil tarafından her bir noktanın düzeltildiği\n"
+"miktarı ve bu düzeltmenin yönünü temsil eder."
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:248
 #, kde-format
@@ -42668,13 +42625,13 @@ msgstr "Görüntü aygıtı"
 #, kde-format
 msgctxt "@info: icc profile class"
 msgid "Output device"
-msgstr "Çıktı aygıtı"
+msgstr "Çıkış aygıtı"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:492
 #, kde-format
 msgctxt "@info: icc profile class"
 msgid "Color space"
-msgstr "Renk aralığı"
+msgstr "Renk uzayı"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:498
 #, kde-format
@@ -42701,18 +42658,16 @@ msgid "Unknown"
 msgstr "Bilinmeyen"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:529
-#, fuzzy, kde-format
-#| msgid "Perceptual"
+#, kde-format
 msgctxt "@info: icc profile redering"
 msgid "Perceptual"
-msgstr "Algılanma"
+msgstr "Algısal"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:535
-#, fuzzy, kde-format
-#| msgid "Relative Colorimetric"
+#, kde-format
 msgctxt "@info: icc profile redering"
 msgid "Relative Colorimetric"
-msgstr "Göreli Renkölçer"
+msgstr "Göreceli Renkölçer"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:541
 #, kde-format
@@ -42721,11 +42676,10 @@ msgid "Saturation"
 msgstr "Doygunluk"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:547
-#, fuzzy, kde-format
-#| msgid "Absolute Colorimetric"
+#, kde-format
 msgctxt "@info: icc profile redering"
 msgid "Absolute Colorimetric"
-msgstr "Kesin Renkölçer"
+msgstr "Mutlak Renkölçer"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:553
 #, kde-format
@@ -42749,14 +42703,11 @@ msgstr "ICC Dosyaları (*.icc; *.icm)"
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
-msgstr[0] "1 Resim"
-msgstr[1] "%1 Resim"
+msgstr[0] "1 Görsel"
+msgstr[1] "%1 Görsel"
 
 #: core/libs/widgets/itemview/itemdelegateoverlay.cpp:339
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "<i>Applying operation to<br/>the selected picture</i>"
-#| msgid_plural "<i>Applying operation to <br/><b>%1</b> selected pictures</i>"
+#, kde-format
 msgctxt "@info: item overlay"
 msgid ""
 "Applying operation to\n"
@@ -42764,8 +42715,12 @@ msgid ""
 msgid_plural ""
 "Applying operation to \n"
 "\"%1\" selected pictures"
-msgstr[0] "<i>İşlem<br/>seçili resme uygulanıyor</i>"
-msgstr[1] "<i>İşlem <br/><b>%1</b> seçili resimlere uygulanıyor</i>"
+msgstr[0] ""
+"İşlem, seçili\n"
+"resme uygulanıyor"
+msgstr[1] ""
+"İşlem, %1 seçili\n"
+"resme uygulanıyor"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:411
 #, kde-format
@@ -42799,16 +42754,10 @@ msgstr "Yeniden konumlandırmak için sürükle"
 #: core/libs/widgets/layout/thumbbardock.cpp:174
 #, kde-format
 msgid "Show Thumbbar"
-msgstr "Küçük Resim Çubuğunu Göster"
+msgstr "Küçük Görsel Çubuğunu Göster"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:47
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formated string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
-#| "with the Power of <b>Open Source</b></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -42817,24 +42766,24 @@ msgid ""
 "the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>%1</i></"
 "font></qt>"
 msgstr ""
-"<qt><font color=\"white\">Açık Kaynak</b> Desteği ile <b>Profesyonel</b> "
-"Fotoğraf <b>Yönetimi</b></font></qt>"
+"<qt><font color=\"white\"><b>Açık kaynağın</b> gücüyle <b>profesyonel</b> "
+"fotoğraf <b>yönetimi</b></font><font color=\"gray\"><br/><i>%1</i></font></"
+"qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:58
 #, kde-format
 msgid "Professional Photo Management with the Power of Open Source"
-msgstr "Açık Kaynak Desteği İle Profesyonel Fotoğraf Yönetimi"
+msgstr "Açık kaynağın gücüyle profesyonel fotoğraf yönetimi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:63
 #, kde-format
 msgid "A KDE Family Project"
-msgstr ""
+msgstr "Bir KDE projesi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2021, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2024, digiKam developers team"
-msgstr "(c) 2002-2021, digiKam geliştirici takımı"
+msgstr "(c) 2002-2024, digiKam geliştirici takımı"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
@@ -42844,7 +42793,7 @@ msgstr "Caulier Gilles"
 #: core/libs/widgets/mainview/daboutdata.cpp:81
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
-msgstr "Koordinatör, Geliştirici ve Danışmanlık"
+msgstr "Koordinatör, geliştirici ve danışmanlık"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:86
 #, kde-format
@@ -42857,7 +42806,7 @@ msgstr "Maik Qualmann"
 #: core/libs/widgets/mainview/daboutdata.cpp:105
 #, kde-format
 msgid "Developer and Mentoring"
-msgstr "Geliştirici ve Danışmanlık"
+msgstr "Geliştirici ve danışmanlık"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:92
 #, kde-format
@@ -42882,7 +42831,7 @@ msgstr "Teemu Rytilahti"
 #: core/libs/widgets/mainview/daboutdata.cpp:116
 #, kde-format
 msgid "Thanh Trung Dinh"
-msgstr ""
+msgstr "Thanh Trung Dinh"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:117
 #, kde-format
@@ -42890,6 +42839,9 @@ msgid ""
 "Mentoring, Port web-service tools to OAuth, factoring web service tools, and "
 "port faces recognition engine to OpenCV neural network"
 msgstr ""
+"Danışmanlık, web hizmeti araçlarını OAuth'a taşıma, web hizmeti araçlarını "
+"yeniden organize edilmesi ve yüz tanıma işletkesini OpenCV sinirsel ağına "
+"taşıma"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:125
 #, kde-format
@@ -42909,7 +42861,7 @@ msgstr "Mario Frank"
 #: core/libs/widgets/mainview/daboutdata.cpp:138
 #, kde-format
 msgid "Advanced Searches Tool Improvements"
-msgstr "Gelişmiş Aramalar Araç Geliştirmeleri"
+msgstr "Gelişmiş aramalar aracı iyileştirmeleri"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:142
 #, kde-format
@@ -42919,24 +42871,22 @@ msgstr "Nicolas Lécureuil"
 #: core/libs/widgets/mainview/daboutdata.cpp:143
 #, kde-format
 msgid "Releases Manager"
-msgstr "Yayınlama Yöneticisi"
+msgstr "Yayımlama yöneticisi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, fuzzy, kde-format
-#| msgid "Pankaj Kumar"
+#, kde-format
 msgid "Anjani Kumar"
-msgstr "Pankaj Kumar"
+msgstr "Anjani Kumar"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:151
-#, fuzzy, kde-format
-#| msgid "Port to Qt5 and KF5;"
+#, kde-format
 msgid "Port to Qt6,"
-msgstr "Qt5 ve KF5 bağlantı noktası;"
+msgstr "Qt6 geçişi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
 #, kde-format
 msgid "Phuoc Khanh LE"
-msgstr ""
+msgstr "Phuoc Khanh LE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
 #, kde-format
@@ -42945,17 +42895,23 @@ msgid ""
 "Extraction, Aesthetic Detection to classify images using deep learning model,"
 "Slideshow and Presentation tools improvement"
 msgstr ""
+"Görsel Kalitesi Sıralayıcısı algoritmalarını ve Fotoğraf Odak Bilgisi "
+"Çıkarma bileşenlerini yeniden yazma, derin öğrenme modelini kullanıp "
+"görselleri sınıflandırmak için Estetik Algılama ve Slayt Gösterisi/Sunum "
+"araçları iyileştirmeleri"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:164
 #, kde-format
 msgid "Quốc Hưng Trần"
-msgstr ""
+msgstr "Quốc Hưng Trần"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:165
 #, kde-format
 msgid ""
 "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgstr ""
+"MJPEGStream eklentisi, OCR metin dönüştürücüsü eklentisi, kendiliğinden "
+"etiket atama işletkesi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:170
 #, kde-format
@@ -42963,12 +42919,13 @@ msgid "Minh Nghĩa Duong"
 msgstr "Minh Nghĩa Duong"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:171
-#, fuzzy, kde-format
-#| msgid "Video Slideshow completed."
+#, kde-format
 msgid ""
 "Clustering support and improvement for Face Engine, Port Slideshow tool to "
 "plugins interface"
-msgstr "Video Slayt Gösterisi tamamlandı."
+msgstr ""
+"Yüz İşletkesi için kümeleme desteği ve iyileştirmeleri, eklentiler arayüzü "
+"için slayt gösterisi aktarma desteği"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:177
 #, kde-format
@@ -42978,7 +42935,7 @@ msgstr "Kartik Ramesh"
 #: core/libs/widgets/mainview/daboutdata.cpp:178
 #, kde-format
 msgid "Face management workflow improvements"
-msgstr ""
+msgstr "Yüz yönetimi iş akışı iyileştirmeleri"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:183
 #, kde-format
@@ -42989,8 +42946,7 @@ msgstr "Ahmed Fathi"
 #, kde-format
 msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
 msgstr ""
-"Görsel düzenleyicisi için UpNp/DLNA dışa aktarma ve iyileştirme klonlama "
-"aracı"
+"UPNP/DLNA dışa aktarma aracı ve görsel düzenleyicisi için iyileştirme klonu"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:189
 #, kde-format
@@ -43000,7 +42956,7 @@ msgstr "Veaceslav Munteanu"
 #: core/libs/widgets/mainview/daboutdata.cpp:190
 #, kde-format
 msgid "Tags Manager"
-msgstr "Etiket Yöneticisi"
+msgstr "Etiketler Yöneticisi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:195
 #, kde-format
@@ -43020,7 +42976,7 @@ msgstr "Yingjie Liu"
 #: core/libs/widgets/mainview/daboutdata.cpp:202
 #, kde-format
 msgid "Face-engine improvements and manual icon-view sort"
-msgstr ""
+msgstr "Yüz işletkesi iyileştirmeleri ve elle simge görüntüleme sıralaması"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:207
 #, kde-format
@@ -43030,7 +42986,7 @@ msgstr "Yiou Wang"
 #: core/libs/widgets/mainview/daboutdata.cpp:208
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
-msgstr "Resim Düzenleme Çerçevesinin Model/Görünüm Noktası"
+msgstr "Görsel düzenleyicisi tuvalinin model/görüntü geçişi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:213
 #, kde-format
@@ -43042,7 +42998,7 @@ msgstr "Gowtham Ashok"
 #: core/utilities/maintenance/maintenancedlg.cpp:231
 #, kde-format
 msgid "Image Quality Sorter"
-msgstr "Resim Kalitesi Sıralayıcısı"
+msgstr "Görsel Kalitesi Sıralayıcısı"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:219
 #, kde-format
@@ -43062,7 +43018,7 @@ msgstr "Martin Klapetek"
 #: core/libs/widgets/mainview/daboutdata.cpp:226
 #, kde-format
 msgid "Non-destructive image editing"
-msgstr "Yıkıcı olmayan resim düzenlemesi"
+msgstr "Yıkıcı olmayan görsel düzenleme"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:231
 #, kde-format
@@ -43072,7 +43028,7 @@ msgstr "Gabriel Voicu"
 #: core/libs/widgets/mainview/daboutdata.cpp:232
 #, kde-format
 msgid "Reverse Geo-Coding"
-msgstr "Coğrafik Kodlamayı Tersine Döndür"
+msgstr "Coğrafi Kodlamayı Tersine Döndür"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:237
 #, kde-format
@@ -43092,7 +43048,7 @@ msgstr "Pankaj Kumar"
 #: core/libs/widgets/mainview/daboutdata.cpp:244
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
-msgstr "Toplu İş YIğın Yönetimi ve Danışmanlığında Çoklu-çekrdek Desteği"
+msgstr "Toplu kuyruk yöneticisinde birden çok çekirdek desteği ve danışmanlık"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:249
 #, kde-format
@@ -43112,7 +43068,7 @@ msgstr "Islam Wazery"
 #: core/libs/widgets/mainview/daboutdata.cpp:256
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
-msgstr "İçe aktarma Aracının ve Danışmanın Model/Görünüm bağlantısı"
+msgstr "İçe aktarma aracının model/görünüm geçişi ve danışmanlık"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:261
 #, kde-format
@@ -43122,7 +43078,7 @@ msgstr "Abhinav Badola"
 #: core/libs/widgets/mainview/daboutdata.cpp:262
 #, kde-format
 msgid "Video Metadata Support and Mentoring"
-msgstr "Video Metaveri Desteği ve Danışmanlığı"
+msgstr "Video üst veri desteği ve danışmanlık"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:267
 #, kde-format
@@ -43132,7 +43088,7 @@ msgstr "Benjamin Girault"
 #: core/libs/widgets/mainview/daboutdata.cpp:268
 #, kde-format
 msgid "Panorama Tool and Mentoring"
-msgstr "Panorama Aracı ve Danışmanlığı"
+msgstr "Panorama aracı ve danışmanlık"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:273
 #, kde-format
@@ -43140,10 +43096,9 @@ msgid "Victor Dodon"
 msgstr "Victor Dodon"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:274
-#, fuzzy, kde-format
-#| msgid "XML based GUI port of Libkipi"
+#, kde-format
 msgid "XML based GUI port of tools"
-msgstr "Libkipi'nin XML temelli GUI bağlantı noktası"
+msgstr "Araçların XML tabanlı arayüz geçişleri"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:279
 #, kde-format
@@ -43153,7 +43108,7 @@ msgstr "Sayantan Datta"
 #: core/libs/widgets/mainview/daboutdata.cpp:280
 #, kde-format
 msgid "Auto Noise Reduction"
-msgstr "Otomatik Gürültü Azaltma"
+msgstr "Kendiliğinden Gürültü Azaltma"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:287
 #, kde-format
@@ -43163,7 +43118,7 @@ msgstr "Ananta Palani"
 #: core/libs/widgets/mainview/daboutdata.cpp:288
 #, kde-format
 msgid "Windows Port and Release Manager"
-msgstr "Windows Bağlantı Noktası ve Sürüm Yöneticisi"
+msgstr "Windows Sürümü ve Yayım Yöneticisi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:293
 #, kde-format
@@ -43188,7 +43143,7 @@ msgstr "Francesco Riosa"
 #: core/libs/widgets/mainview/daboutdata.cpp:305
 #, kde-format
 msgid "LCMS2 library port"
-msgstr "LCMS2 kitaplığı bağlantı noktası"
+msgstr "LCMS2 kitaplığı geçişi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:310
 #, kde-format
@@ -43346,7 +43301,7 @@ msgstr "Yves Chaufour"
 #: core/libs/widgets/mainview/daboutdata.cpp:415
 #, kde-format
 msgid "digiKam website, Feedback"
-msgstr "digiKam internet sitesi, Geribesleme"
+msgstr "digiKam internet sitesi, geri bildirim"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:419
 #, kde-format
@@ -43356,7 +43311,7 @@ msgstr "Tung Nguyen"
 #: core/libs/widgets/mainview/daboutdata.cpp:420
 #, kde-format
 msgid "Bug reports, feedback and icons"
-msgstr "Hata raporları, geri besleme ve simgeler"
+msgstr "Hata raporları, geri bildirim ve simgeler"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:426
 #, kde-format
@@ -43364,8 +43319,7 @@ msgid "Renchi Raju"
 msgstr "Renchi Raju"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:427
-#, fuzzy, kde-format
-#| msgid "Developer (2002-2005)"
+#, kde-format
 msgid "Developer (2001-2005)"
 msgstr "Geliştirici (2002-2005)"
 
@@ -43396,10 +43350,9 @@ msgid "Developer (2004)"
 msgstr "Geliştirici (2004)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Notifications"
-msgstr "Bu sütunu yapılandır"
+msgstr "Bildirimleri Yapılandır"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
@@ -43410,12 +43363,12 @@ msgstr "Genel"
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:56
 #, kde-format
 msgid "Components Information"
-msgstr "Bileşen Bilgileri"
+msgstr "Bileşen Bilgisi"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:62
 #, kde-format
 msgid "Supported RAW Cameras"
-msgstr "Desteklenen Ham Kameralar"
+msgstr "Desteklenen RAW Kameralar"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:66
 #, kde-format
@@ -43430,7 +43383,7 @@ msgstr "Bağış Yap..."
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, kde-format
 msgid "Recipes Book..."
-msgstr "Yemek Tarifleri Kitabı..."
+msgstr "Tarifler Kitabı..."
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:78
 #, kde-format
@@ -43450,32 +43403,32 @@ msgstr "Veritabanı İstatistikleri"
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
 #, kde-format
 msgid "Toggle Left Side-bar"
-msgstr "Sol Yan-çubuğu Değiştir"
+msgstr "Sol Kenar Çubuğunu Aç/Kapat"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:130
 #, kde-format
 msgid "Toggle Right Side-bar"
-msgstr "Sağ Yan-çubuğu değiştir"
+msgstr "Sağ Kenar Çubuğunu Aç/Kapat"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:135
 #, kde-format
 msgid "Previous Left Side-bar Tab"
-msgstr "Bir önceki Sol Yan-çubuk Sekmesi"
+msgstr "Önceki Sol Kenar Çubuğu Sekmesi"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:140
 #, kde-format
 msgid "Next Left Side-bar Tab"
-msgstr "Sonraki Sol yan çubuk Sekmesi"
+msgstr "Sonraki Sol Kenar Çubuğu Sekmesi"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:145
 #, kde-format
 msgid "Previous Right Side-bar Tab"
-msgstr "Önceki Sağ yan çubuk Sekmesi"
+msgstr "Önceki Sağ Kenar Çubuğu Sekmesi"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:150
 #, kde-format
 msgid "Next Right Side-bar Tab"
-msgstr "Sonraki Sağ yan çubuk Sekmesi"
+msgstr "Sonraki Sağ Kenar Çubuğu Sekmesi"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
@@ -43490,49 +43443,47 @@ msgstr "Boyut: %1"
 #: core/libs/widgets/mainview/fullscreensettings.cpp:59
 #, kde-format
 msgid "Full-screen Options"
-msgstr "Tam ekran Seçenekleri"
+msgstr "Tam Ekran Seçenekleri"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:67
 #, kde-format
 msgid "H&ide toolbars"
-msgstr "Araç çubuklarını sa&kla"
+msgstr "Araç çubuklarını g&izle"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:68
 #, kde-format
 msgid "Hide all toolbars when window switch in full-screen mode."
-msgstr "Pencere tam ekran kipine geçtiği zaman tüm araç çubuklarını gizle."
+msgstr "Pencere tam ekran kipine geçtiğinde tüm araç çubuklarını gizleyin."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:70
 #, kde-format
 msgid "Hide &thumbbar"
-msgstr "Küçük resim çubuğunu sak&la"
+msgstr "Küçük görsel çubuğunu &gizle"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:71
 #, kde-format
 msgid "Hide thumbbar view when window switch in full-screen mode."
-msgstr "Pencere tam-ekran moduna geçince küçük resim çubuğunu gizle."
+msgstr "Pencere tam ekran kipine geçtiğinde küçük görsel görünümünü gizleyin."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:73
 #, kde-format
 msgid "Hide &sidebars"
-msgstr "&Yan çubukları gizle"
+msgstr "&Kenar çubuklarını gizle"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:74
 #, kde-format
 msgid "Hide all side-bars when window switch in full-screen mode."
-msgstr "Ekran tam ekran görünümüne geçtiği zaman tüm yan çubukları gizle."
+msgstr "Pencere tam ekran kipine geçtiğinde tüm kenar çubuklarını gizleyin."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:76
-#, fuzzy, kde-format
-#| msgid "Hide &thumbbar"
+#, kde-format
 msgid "Hide st&atusbar"
-msgstr "Küçük resim çubuğunu sak&la"
+msgstr "Durum ç&ubuğunu gizle"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:77
-#, fuzzy, kde-format
-#| msgid "Hide all toolbars when window switch in full-screen mode."
+#, kde-format
 msgid "Hide statusbar when window switch in full-screen mode."
-msgstr "Pencere tam ekran kipine geçtiği zaman tüm araç çubuklarını gizle."
+msgstr "Pencere tam ekran kipine geçtiğinde durum çubuğunu gizleyin."
 
 #: core/libs/widgets/mainview/thememanager_p.cpp:1232
 #, kde-format
@@ -43543,29 +43494,27 @@ msgstr "Öntanımlı"
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:224
 #, kde-format
 msgid "EXIF viewer"
-msgstr "EXIF görüntüleyicisi"
+msgstr "EXIF Görüntüleyicisi"
 
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:228
 #, kde-format
 msgid "Makernotes viewer"
-msgstr "Yapımcı notları görüntüleyicisi"
+msgstr "Makernotes Görüntüleyicisi"
 
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:232
 #, kde-format
 msgid "IPTC viewer"
-msgstr "IPTC görüntüleyicisi"
+msgstr "IPTC Görüntüleyicisi"
 
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:236
 #, kde-format
 msgid "XMP viewer"
-msgstr "XMP görüntüleyicisi"
+msgstr "XMP Görüntüleyicisi"
 
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Exif"
+#, kde-format
 msgid "ExifTool viewer"
-msgstr "Exif"
+msgstr "ExifTool Görüntüleyicisi"
 
 #: core/libs/widgets/metadata/config/metadataselector.cpp:94
 #, kde-format
@@ -43603,6 +43552,9 @@ msgid ""
 "ExifTool is a platform-independent command-line application for reading, "
 "writing and editing meta information in a wide variety of files."
 msgstr ""
+"ExifTool; çok çeşitli dosyalardaki üst bilgileri okumak, yazmak ve "
+"düzenlemek için kullanılan, platformdan bağımsız bir komut satırı "
+"uygulamasıdır."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:72
 #, kde-format
@@ -43619,76 +43571,65 @@ msgid ""
 "Application will try to find this binary automatically if they are already "
 "installed on your computer."
 msgstr ""
-"%1, çoklu ortam dosyalarını okumak, yazmak ve değiştirmek için açık kaynaklı "
-"bir programıdır. Bir komut satırı uygulaması olarak kullanılabildiğinden "
-"platformdan bağımsızdır. ExifTool genellikle farklı türde sayısal iş "
+"%1; çoklu ortam dosyalarını okumak, yazmak ve değiştirmek için kullanılan "
+"açık kaynaklı bir yazılım programıdır. Komut satırı uygulaması olarak "
+"platformdan bağımsızdır. ExifTool yaygın olarak farklı türdeki sayısal iş "
 "akışlarında içerilir ve Exif, IPTC, XMP, JFIF, GeoTIFF, ICC Profili, "
-"Photoshop IRB gibi birçok üst veri türünün yanı sıra birçok sayısal "
-"kameranın üreticiye özel üst veri biçimlerini destekler.\n"
+"Photoshop IRB içerilmek üzere birçok üst veri türünün yanı sıra birçok "
+"sayısal kameranın üreticiye özel üst veri biçimlerini destekler.\n"
 "\n"
-"Burada, ExifTool ikilisinin bulunduğu konumu yapılandırabilirsiniz. "
-"Uygulama, bilgisayarınızda halihazırda kuruluysa bu ikili dosyayı otomatik "
-"olarak bulmaya çalışacaktır."
+"Burada ExifTool ikili dosyasının bulunduğu konumu yapılandırabilirsiniz. "
+"Uygulama, bilgisayarınızda zaten kuruluysa bu ikili dosyayı kendiliğinden "
+"bulmaya çalışacaktır."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:90
-#, fuzzy, kde-format
-#| msgid "Unsupported Format"
+#, kde-format
 msgctxt "@title: group"
 msgid "Supported File Formats"
-msgstr "Desteklenmeyen Biçim"
+msgstr "Desteklenen Dosya Biçimleri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@title: DPlugin properties"
-#| msgid "Extension"
+#, kde-format
 msgctxt "@title: column"
 msgid "Extension"
 msgstr "Uzantı"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "@info:status busy state"
-#| msgid "Ready"
+#, kde-format
 msgctxt "@title: column"
 msgid "Read"
-msgstr "Hazır"
+msgstr "Okuma"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:102
 #, kde-format
 msgctxt "@title: column"
 msgid "Write"
-msgstr "Yaz"
+msgstr "Yazma"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:103
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title: column"
 msgid "Description"
 msgstr "Açıklama"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:188
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@info: gphoto backend feature"
-#| msgid "yes"
+#, kde-format
 msgctxt "@info: status"
 msgid "yes"
 msgstr "evet"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: gphoto backend feature"
-#| msgid "no"
+#, kde-format
 msgctxt "@info: status"
 msgid "no"
 msgstr "hayır"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolerrorview.cpp:63
-#, fuzzy, kde-format
-#| msgid "Opening Download Dialog..."
+#, kde-format
 msgctxt "@action: button"
 msgid "Open Setup Dialog..."
-msgstr "İndirme penceresini açıyor..."
+msgstr "Kurulum İletişim Kutusunu Aç..."
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:246
 #: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:138
@@ -43701,273 +43642,237 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:47
 #, kde-format
 msgid "AXS File Concatenation Protocol"
-msgstr ""
+msgstr "AXS Dosya Birleştirme Protokolü"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:51
-#, fuzzy, kde-format
-#| msgid "Audio Interchange File Format AIFF"
+#, kde-format
 msgid "Audio Interchange File Format"
-msgstr "Ses Değişim Dosya Biçimi AIFF"
+msgstr "Ses Değişim Dosya Biçimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:55
 #, kde-format
 msgid "Monkey's Audio"
-msgstr ""
+msgstr "Monkey's Audio"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:59
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 0"
-msgstr "Metaveri Bilgisi"
+msgstr "JPEG Üst Bilgi Düzeyi 0"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:63
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 1"
-msgstr "Metaveri Bilgisi"
+msgstr "JPEG Üst Bilgi Düzeyi 1"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:67
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 11"
-msgstr "Metaveri Bilgisi"
+msgstr "JPEG Üst Bilgi Düzeyi 11"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:71
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 12"
-msgstr "Metaveri Bilgisi"
+msgstr "JPEG Üst Bilgi Düzeyi 12"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:75
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 13"
-msgstr "Metaveri Bilgisi"
+msgstr "JPEG Üst Bilgi Düzeyi 13"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:79
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 14"
-msgstr "Metaveri Bilgisi"
+msgstr "JPEG Üst Bilgi Düzeyi 14"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:83
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 15"
-msgstr "Metaveri Bilgisi"
+msgstr "JPEG Üst Bilgi Düzeyi 15"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:87
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 4"
-msgstr "Metaveri Bilgisi"
+msgstr "JPEG Üst Bilgi Düzeyi 4"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:91
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 5"
-msgstr "Metaveri Bilgisi"
+msgstr "JPEG Üst Bilgi Düzeyi 5"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:95
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 6"
-msgstr "Metaveri Bilgisi"
+msgstr "JPEG Üst Bilgi Düzeyi 6"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:99
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 8"
-msgstr "Metaveri Bilgisi"
+msgstr "JPEG Üst Bilgi Düzeyi 8"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:103
 #, kde-format
 msgid "Microsoft Advanced Systems Format"
-msgstr ""
+msgstr "Microsoft Gelişmiş Sistemler Biçimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:107
 #, kde-format
 msgid "Audible Audiobook"
-msgstr ""
+msgstr "Audible Sesli Kitabı"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Caption Information"
+#, kde-format
 msgid "Canon Camera Information"
-msgstr "Başlık Bilgileri"
+msgstr "Canon Kamera Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:115
-#, fuzzy, kde-format
-#| msgid "Common File Information"
+#, kde-format
 msgid "Canon Recipe Data Information"
-msgstr "Genel Dosya Bilgisi"
+msgstr "Canon Tarif Verisi Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:119
 #, kde-format
 msgid "Derived Convenience Tags"
-msgstr ""
+msgstr "Türetilmiş Kolaylık Etiketleri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:123
 #, kde-format
 msgid "Digital Imaging and Communications in Medicine"
-msgstr ""
+msgstr "Tıpta Sayısal Görüntüleme ve İletişim"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:127
-#, fuzzy, kde-format
-#| msgid "Digital still camera"
+#, kde-format
 msgid "Digital Negative"
-msgstr "Dijital kamera"
+msgstr "Sayısal Negatif"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:131
-#, fuzzy, kde-format
-#| msgid "Digital still camera"
+#, kde-format
 msgid "Digital Video"
-msgstr "Dijital kamera"
+msgstr "Sayısal Video"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:135
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgid "DjVu image"
-msgstr "1 Resim"
+msgstr "DjVu Görseli"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:139
 #, kde-format
 msgid "Photoshop Save for Web"
-msgstr ""
+msgstr "Photoshop Web için Kaydet"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:143
-#, fuzzy, kde-format
-#| msgid "PC DOS/Windows Executable Files [*.COM][*.EXE]"
+#, kde-format
 msgid "DOS/Windows executable"
-msgstr "PC DOS/Windows Çalıştırılabilir Dosyaları [*.COM][*.EXE]"
+msgstr "DOS/Windows Yürütülebiliri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:147
 #, kde-format
 msgid "Exchangeable Image File Format metadata"
-msgstr ""
+msgstr "Değiştirilebilir Görsel Dosyası Biçimi Üst Verisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:151
 #, kde-format
 msgid "Flexible Image Transport System"
-msgstr ""
+msgstr "Esnek Görsel Taşıma Sistemi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:155
-#, fuzzy, kde-format
-#| msgid "Video Codec"
+#, kde-format
 msgid "Free Lossless Audio Codec"
-msgstr "Video Kodlayıcısı"
+msgstr "Özgür Kayıpsız Ses Kodlayıcısı"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:159
-#, fuzzy, kde-format
-#| msgid "File/Image Information"
+#, kde-format
 msgid "FLIR Thermal Imaging Camera Information"
-msgstr "Dosya/Resim Bilgisi"
+msgstr "FLIR Isısal Görüntüleme Kamerası Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:163
-#, fuzzy, kde-format
-#| msgid "File/Item Information"
+#, kde-format
 msgid "File System Information"
-msgstr "Dosya/Öge Bilgisi"
+msgstr "Dosya Sistemi Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:167
-#, fuzzy, kde-format
-#| msgid "Common File Information"
+#, kde-format
 msgid "Macromedia/Adobe Flash Information"
-msgstr "Genel Dosya Bilgisi"
+msgstr "Macromedia/Adobe Flash Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Caption Information"
+#, kde-format
 msgid "FlashPix Information"
-msgstr "Başlık Bilgileri"
+msgstr "FlashPix Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:175
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgid "Font Name Tags"
-msgstr "Yüz Etiketlerini Göster"
+msgstr "Yazıtipi Adı Etiketleri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Caption Information"
+#, kde-format
 msgid "FotoWare FotoStation Information"
-msgstr "Başlık Bilgileri"
+msgstr "FotoWare FotoStation Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:183
 #, kde-format
 msgid "Compuserve Graphics Interchange Format"
-msgstr ""
+msgstr "Compuserve Grafik Değişim Biçimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:187
-#, fuzzy, kde-format
-#| msgid "The GNU Image Manipulation Program."
+#, kde-format
 msgid "GNU Image Manipulation Program"
-msgstr "GNU Görüntü İşleme Programı."
+msgstr "GNU Görüntü İşleme Programı"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:191
-#, fuzzy, kde-format
-#| msgid "Tagged Image File Format (version 5.0)"
+#, kde-format
 msgid "Geolocated Tagged Image File Format"
-msgstr "Etiketli Görüntü Dosya Biçimi (sürüm 5.0)"
+msgstr "Coğrafi Konumu Belirli Etiketli Görüntü Dosyası Biçimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:195
-#, fuzzy, kde-format
-#| msgid "No Tags"
+#, kde-format
 msgid "GoPro Tags"
-msgstr "Etiket Yok"
+msgstr "GoPro Etiketleri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:199
-#, fuzzy, kde-format
-#| msgid "File/Item Information"
+#, kde-format
 msgid "H.264 Video Streams Information"
-msgstr "Dosya/Öge Bilgisi"
+msgstr "H.264 Video Akışları Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:203
-#, fuzzy, kde-format
-#| msgid "Hypertext Markup Language \"HTML\""
+#, kde-format
 msgid "HyperText Markup Language"
-msgstr "Köprü Metni Biçimlendirme Dili \"HTML\""
+msgstr "Köprü Metni İşaretleme Dili"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:207
 #, kde-format
 msgid "International Color Consortium Color Profile"
-msgstr ""
+msgstr "Uluslararası Renk Konsorsiyumu Renk Profili"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:211
 #, kde-format
 msgid "ID3 And Lyrics3 information"
-msgstr "ID3 ve Lyrics3 bilgisi"
+msgstr "ID3 ve Lyrics3 Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:215
 #, kde-format
 msgid "International Press Telecommunications Council"
-msgstr ""
+msgstr "Uluslararası Basın Telekomünikasyon Konseyi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:219
 #, kde-format
 msgid "ISO 9660 Disk Image"
-msgstr ""
+msgstr "ISO 9660 Disk Kalıbı"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:223
 #, kde-format
 msgid "iTunes Cover Flow Artwork"
-msgstr ""
+msgstr "iTunes Cover Flow Kapağı"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:227
-#, fuzzy, kde-format
-#| msgid "JPEG File Interchange"
+#, kde-format
 msgid "JPEG File Interchange Format"
-msgstr "JPEG Dosya Değişimi"
+msgstr "JPEG Dosya Değişim Biçimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:231
-#, fuzzy, kde-format
-#| msgid "Photograph Properties"
+#, kde-format
 msgid "Joint Photographic Experts Group"
-msgstr "Fotoğraf Özellikleri"
+msgstr "Birleşmiş Fotoğraf Uzmanları Grubu"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:235
 #, kde-format
@@ -43977,325 +43882,280 @@ msgstr "JavaScript Nesne Simgelemi"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:239
 #, kde-format
 msgid "Joint Photographic Experts Group 2000"
-msgstr ""
+msgstr "Birleşmiş Fotoğraf Uzmanları Grubu 2000"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:243
-#, fuzzy, kde-format
-#| msgid "Microsoft Photo"
+#, kde-format
 msgid "Microsoft Shell Link"
-msgstr "Microsoft Photo"
+msgstr "Microsoft Kabuk Bağlantısı"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:247
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgid "Creo Leaf Capture Information"
-msgstr "Bilgiyi Kırp"
+msgstr "Creo Leaf Yakalaması Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:251
 #, kde-format
 msgid "Lytro Light Field Picture Info"
-msgstr ""
+msgstr "Lytro Light Field Resmi Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:255
-#, fuzzy, kde-format
-#| msgid "JPEG 2000 image"
+#, kde-format
 msgid "MPEG-2 Transport Stream"
-msgstr "JPEG 2000 görüntüsü"
+msgstr "MPEG-2 Taşıma Akışı"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:259
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Meta Information Encapsulation"
-msgstr "Metaveri Bilgisi"
+msgstr "Üst Bilgi Kapsülleme"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Workspace File Format"
+#, kde-format
 msgid "Magick Image File Format"
-msgstr "Çalışma alanı Dosya Biçimi"
+msgstr "Magick Görüntüsü Dosya Biçimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:267
 #, kde-format
 msgid "Multiple-image Network Graphics"
-msgstr ""
+msgstr "Çok Görselli Ağ Grafikleri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:271
 #, kde-format
 msgid "JVC Canon and Panasonic Camcorders Information"
-msgstr ""
+msgstr "JVC Canon ve Panasonic Kameraları Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:275
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Musepack Audio Information"
-msgstr "Metaveri Bilgisi"
+msgstr "Musepack Sesi Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:279
 #, kde-format
 msgid "Motion Picture Experts Group"
-msgstr ""
+msgstr "Sinema Filmi Uzmanları Grubu"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:283
 #, kde-format
 msgid "CIPA Multi-Picture Format Specification"
-msgstr ""
+msgstr "CIPA Çok Resimli Biçimi Belirtimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:287
-#, fuzzy, kde-format
-#| msgid "%1|GPS Exchange Format"
+#, kde-format
 msgid "Material Exchange Format"
-msgstr "%1|GPS Takas Biçimi"
+msgstr "Malzeme Değişim Biçimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:291
-#, fuzzy, kde-format
-#| msgid "Progress Information"
+#, kde-format
 msgid "Maker Notes Information"
-msgstr "İlerleme Bilgisi"
+msgstr "Maker Notes Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:295
-#, fuzzy, kde-format
-#| msgid "Audio/Video Information"
+#, kde-format
 msgid "Matroska Audio/Video/Subtitle Information"
-msgstr "Ses/Video Bilgileri"
+msgstr "Matroska Ses/Video/Altyazı Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:299
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Meta Information"
-msgstr "Metaveri Bilgisi"
+msgstr "Üst Bilgi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:303
 #, kde-format
 msgid "Ogg Bitstream Container"
-msgstr ""
+msgstr "Ogg Bitstream Kapsayıcısı"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "Open in File Manager"
+#, kde-format
 msgid "Open Extended Range"
-msgstr "Dosya Yöneticisinde Aç"
+msgstr "Açık Genişletilmiş Erim"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:311
 #, kde-format
 msgid "Ogg Opus Audio"
-msgstr ""
+msgstr "Ogg Opus Sesi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:315
-#, fuzzy, kde-format
-#| msgid "Portable Document File [*.PDF] Adobe"
+#, kde-format
 msgid "Adobe Portable Document Format"
-msgstr "Taşınabilir Belge Dosyası [*.PDF] Adobe"
+msgstr "Adobe Taşınabilir Belge Biçimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:319
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Device Information"
+#, kde-format
 msgid "Apple Picture Information"
-msgstr "Aygıt Bilgisi"
+msgstr "Apple Resim Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:323
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgid "Apple Property List"
-msgstr "Dosya Özellikleri"
+msgstr "Apple Özellik Listesi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:327
-#, fuzzy, kde-format
-#| msgid "Raster Files"
+#, kde-format
 msgid "Portable Network Graphics"
-msgstr "Raster Dosyaları"
+msgstr "Taşınabilir Ağ Grafikleri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:331
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Light Source Information"
+#, kde-format
 msgid "Paint Shop Pro Information"
-msgstr "Işık Kaynağı Bilgileri"
+msgstr "Paint Shop Pro Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:335
 #, kde-format
 msgid ""
 "Palm database, Mobipocket electronic books, and Amazon Kindle Information"
 msgstr ""
+"Palm Database, Mobipocket Elektronik Kitapları ve Amazon Kindle Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:339
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Caption Information"
+#, kde-format
 msgid "Panasonic RAW 2 Information"
-msgstr "Başlık Bilgileri"
+msgstr "Panasonic RAW 2 Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:343
 #, kde-format
 msgid "Streaming Parrot Drone Video Information"
-msgstr "Parrot Uçargözü Video Bilgisini Aktar"
+msgstr "Streaming Parrot Drone Videosu Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:347
-#, fuzzy, kde-format
-#| msgid "Photo-CD Image-Pac"
+#, kde-format
 msgid "Kodak Photo CD Image Pac"
-msgstr "Foto-CD Resim-Pak"
+msgstr "Kodak Photo CD Görüntü Paketi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:351
-#, fuzzy, kde-format
-#| msgid "Photograph Information"
+#, kde-format
 msgid "Photo Mechanic Trailer Information"
-msgstr "Fotoğraf Bilgileri"
+msgstr "Photo Mechanic Trailer Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:355
-#, fuzzy, kde-format
-#| msgid "Photograph Information"
+#, kde-format
 msgid "Adobe Photoshop Information"
-msgstr "Fotoğraf Bilgileri"
+msgstr "Adobe Photoshop Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:359
-#, fuzzy, kde-format
-#| msgid "Photograph Information"
+#, kde-format
 msgid "PostScript Information"
-msgstr "Fotoğraf Bilgileri"
+msgstr "PostScript Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:363
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Login Information"
+#, kde-format
 msgid "PrintIM Information"
-msgstr "Giriş Bilgileri"
+msgstr "PrintIM Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:367
-#, fuzzy, kde-format
-#| msgid "Audio/Video Information"
+#, kde-format
 msgid "Apple QuickTime Movie Information"
-msgstr "Ses/Video Bilgileri"
+msgstr "Apple QuickTime Filmi Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:371
-#, fuzzy, kde-format
-#| msgid "Import Information"
+#, kde-format
 msgid "FujiFilm RAW Format Information"
-msgstr "Bilgi İçe Aktar"
+msgstr "FujiFilm RAW Biçimi Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:375
-#, fuzzy, kde-format
-#| msgid "Audio Interchange File Format AIFF"
+#, kde-format
 msgid "Resource Interchange File Format Information"
-msgstr "Ses Değişim Dosya Biçimi AIFF"
+msgstr "Özkaynak Değişim Dosya Biçimi Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:379
 #, kde-format
 msgid "Mac OS Resource"
-msgstr ""
+msgstr "Mac OS Özkaynağı"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:383
-#, fuzzy, kde-format
-#| msgid "File Format"
+#, kde-format
 msgid "Rich Text Format"
-msgstr "Dosya Biçimi"
+msgstr "Zengin Metin Biçimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:387
 #, kde-format
 msgid "RGBE High Dynamic-Range"
-msgstr ""
+msgstr "RGBE Yüksek Devingen Erim"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:391
-#, fuzzy, kde-format
-#| msgid "Image Information"
+#, kde-format
 msgid "Rawzor Image Information"
-msgstr "Resim Bilgileri"
+msgstr "Rawzor Görseli Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:395
-#, fuzzy, kde-format
-#| msgid "Audio/Video Information"
+#, kde-format
 msgid "Real Media/Video Information"
-msgstr "Ses/Video Bilgileri"
+msgstr "Real Ortam/Video Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:399
-#, fuzzy, kde-format
-#| msgid "Audio/Video Information"
+#, kde-format
 msgid "Redcode RAW Video Information"
-msgstr "Ses/Video Bilgileri"
+msgstr "Redcode RAW Video Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:403
-#, fuzzy, kde-format
-#| msgid "Raster Files"
+#, kde-format
 msgid "Scalable Vector Graphics"
-msgstr "Raster Dosyaları"
+msgstr "Ölçeklenebilir Vektör Grafikler"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:407
-#, fuzzy, kde-format
-#| msgid "Image Information"
+#, kde-format
 msgid "Sigma/Foveon RAW Information"
-msgstr "Resim Bilgileri"
+msgstr "Sigma/Foveon RAW Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:411
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgid "Sony Cameras Information"
-msgstr "Bilgiyi Kırp"
+msgstr "Sony Kameralar Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:415
-#, fuzzy, kde-format
-#| msgid "File/Image Information"
+#, kde-format
 msgid "Stereo Still Image Information"
-msgstr "Dosya/Resim Bilgisi"
+msgstr "Çift Kanallı Durağan Görüntü Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:419
 #, kde-format
 msgid "Ogg Theora Video Specification"
-msgstr ""
+msgstr "Ogg Theora Videosu Belirtimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:423
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Caption Information"
+#, kde-format
 msgid "BitTorrent Description Information"
-msgstr "Başlık Bilgileri"
+msgstr "BitTorrent Açıklaması Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:427
-#, fuzzy, kde-format
-#| msgid "Image Information"
+#, kde-format
 msgid "Trailer Information"
-msgstr "Resim Bilgileri"
+msgstr "Tanıtım Filmi Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:431
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgid "Virtual Card Information"
-msgstr "Bilgiyi Kırp"
+msgstr "Sanal Kart Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:435
-#, fuzzy, kde-format
-#| msgid "Specific Location"
+#, kde-format
 msgid "Ogg Vorbis Specification"
-msgstr "Belirli Konum"
+msgstr "Ogg Vorbis Belirtimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:439
 #, kde-format
 msgid "Windows Recorded TV Show Information"
-msgstr ""
+msgstr "Windows Kaydedilmiş TV Programı Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:443
-#, fuzzy, kde-format
-#| msgid "Hypertext Markup Language \"HTML\""
+#, kde-format
 msgid "Extensible Markup Language"
-msgstr "Köprü Metni Biçimlendirme Dili \"HTML\""
+msgstr "Genişletilebilir İşaretleme Dili"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:447
 #, kde-format
 msgid "Extensible Metadata Platform"
-msgstr ""
+msgstr "Genişletilebilir Üst Veri Platformu"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:451
-#, fuzzy, kde-format
-#| msgid "Image Information"
+#, kde-format
 msgid "ZIP Archive Information"
-msgstr "Resim Bilgileri"
+msgstr "ZIP Arşivi Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:92
 #: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:67
 #, kde-format
 msgid "Unavailable"
-msgstr "Kullanılamaz"
+msgstr "Kullanılamıyor"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolloadingview.cpp:74
 #, kde-format
@@ -44308,21 +44168,21 @@ msgstr "Yükleme sürüyor"
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tags filter options"
-msgstr "Etiket filtre seçenekleri"
+msgstr "Etiketler süzgeci seçenekleri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:153
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:128
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
-msgstr "Metaveri üzerinden etiket filtresini uygula."
+msgstr "Üst veri üzerinden etiketler süzgecini uygulayın."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:158
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:133
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "No filter"
-msgstr "Filtre yok"
+msgstr "Süzgeç Yok"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:161
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:136
@@ -44357,14 +44217,14 @@ msgstr "Araçlar"
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Run tool over metadata tags."
-msgstr "Metaveri üzerinden aracı çalıştır."
+msgstr "Üst veri etiketleri üzerinden aracı çalıştırın."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:188
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:158
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save in file"
-msgstr "Dosya içine kaydet"
+msgstr "Dosya İçine Kaydet"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:189
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:159
@@ -44390,28 +44250,28 @@ msgid ""
 "\n"
 "%2"
 msgstr ""
+"%1 dosyasından\n"
+"ExifTool ile veri\n"
+"yüklenemiyor.\n"
+"\n"
+"%2"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@info: metadata clipboard"
-#| msgid "File name: %1 (%2)"
+#, kde-format
 msgctxt "@info: metadata to text"
 msgid "File name: %1 (%2)"
 msgstr "Dosya adı: %1 (%2)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:397
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Caption Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save ExifTool Information"
-msgstr "Başlık Bilgileri"
+msgstr "ExifTool Bilgisini Kaydet"
 
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Standard EXIF Tags"
+#, kde-format
 msgid "Standard Exif Tags"
-msgstr "Standart Exif etiketleri"
+msgstr "Standart Exif Etiketleri"
 
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:166
 #: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:155
@@ -44419,19 +44279,19 @@ msgstr "Standart Exif etiketleri"
 #: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:181
 #, kde-format
 msgid "No description available"
-msgstr "Açıklama mevcut değil"
+msgstr "Kullanılabilir açıklama yok"
 
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:174
 #: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:171
 #, kde-format
 msgid "EXIF File to Save"
-msgstr "Kaydedilecek Exif Dosyası"
+msgstr "Kaydedilecek EXIF Dosyası"
 
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:175
 #: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:172
 #, kde-format
 msgid "EXIF binary Files (*.exif)"
-msgstr "EXIF ikili Dosyaları (*.exif)"
+msgstr "EXIF İkili Dosyaları (*.exif)"
 
 #: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:63
 #, kde-format
@@ -44441,28 +44301,27 @@ msgstr "IPTC Kayıtları"
 #: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:163
 #, kde-format
 msgid "IPTC File to Save"
-msgstr "Kaydedilecek IPTC dosyası"
+msgstr "Kaydedilecek IPTC Dosyası"
 
 #: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:164
 #, kde-format
 msgid "IPTC binary Files (*.iptc)"
-msgstr "IPTC ikili Dosyaları (*.iptc)"
+msgstr "IPTC İkili Dosyaları (*.iptc)"
 
 #: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "MakerNote EXIF Tags"
+#, kde-format
 msgid "MakerNote Exif Tags"
-msgstr "Yapımcı Notu Yazılı Exif Eitketleri "
+msgstr "MakerNote Exif Etiketleri"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:47
 #, kde-format
 msgid "Interoperability"
-msgstr "İşbirliktelik"
+msgstr "Birlikte Çalışılabilirlik"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:51
 #, kde-format
 msgid "Image Information"
-msgstr "Resim Bilgileri"
+msgstr "Görsel Bilgisi"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:139
@@ -44470,17 +44329,17 @@ msgstr "Resim Bilgileri"
 #: core/utilities/setup/setuptooltip.cpp:232
 #, kde-format
 msgid "Photograph Information"
-msgstr "Fotoğraf Bilgileri"
+msgstr "Fotoğraf Bilgisi"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:59
 #, kde-format
 msgid "Global Positioning System"
-msgstr "Genel Konumlandırma Sistemi"
+msgstr "Global Konumlandırma Sistemi"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:63
 #, kde-format
 msgid "Embedded Thumbnail"
-msgstr "Gömülü Küçük Resimler"
+msgstr "Gömülü Küçük Görsel"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:70
 #, kde-format
@@ -44500,7 +44359,7 @@ msgstr "Ek Exif Özellikleri"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:85
 #, kde-format
 msgid "Camera Raw"
-msgstr "Kamera Ham"
+msgstr "Kamera RAW'ı"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:89
 #, kde-format
@@ -44510,7 +44369,7 @@ msgstr "Dublin Core"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:93
 #, kde-format
 msgid "digiKam schema"
-msgstr "digiKam şeması"
+msgstr "digiKam Şeması"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:97
 #, kde-format
@@ -44520,12 +44379,12 @@ msgstr "Exif'e Has Özellikler"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:101
 #, kde-format
 msgid "IPTC Core"
-msgstr "IPTC Core"
+msgstr "IPTC Çekirdeği"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:105
 #, kde-format
 msgid "IPTC Extension schema"
-msgstr "IPTC Uzantı şeması"
+msgstr "IPTC Uzantısı Şeması"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:109
 #, kde-format
@@ -44545,7 +44404,7 @@ msgstr "Adobe Photoshop"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:121
 #, kde-format
 msgid "PLUS License Data Format Schema"
-msgstr "PLUS Lisansı Veri Biçimi Şeması"
+msgstr "PLUS Lisans Veri Biçimi Şeması"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:125
 #, kde-format
@@ -44560,7 +44419,7 @@ msgstr "Basit Şema"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:133
 #, kde-format
 msgid "Basic Job Ticket"
-msgstr "Temel İş Bileti"
+msgstr "Temel İş Kaydı"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:137
 #, kde-format
@@ -44570,7 +44429,7 @@ msgstr "Devingen Ortam"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:141
 #, kde-format
 msgid "Media Management "
-msgstr "Ortam Yönetimi "
+msgstr "Ortam Yönetimi"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:145
 #, kde-format
@@ -44585,7 +44444,7 @@ msgstr "Sayfalanmış Yazı"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:156
 #, kde-format
 msgid "Metadata Working Group Regions"
-msgstr "Metaveri Grup Bölgelerini Çalışıyor"
+msgstr "Üst Veri Çalışma Grubu Bölgeleri"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:160
 #, kde-format
@@ -44595,47 +44454,42 @@ msgstr "Darwin Çekirdeği"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:164
 #, kde-format
 msgid "Adobe Lightroom Schema"
-msgstr ""
+msgstr "Adobe Lightroom Şeması"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:168
-#, fuzzy, kde-format
-#| msgid "XMP Schema"
+#, kde-format
 msgid "ACDSee XMP Schema"
-msgstr "XMP Şeması"
+msgstr "ACDSee XMP Şeması"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:172
-#, fuzzy, kde-format
-#| msgid "Microsoft Photo"
+#, kde-format
 msgid "Microsoft Photo 1.2 Schema"
-msgstr "Microsoft Photo"
+msgstr "Microsoft Photo 1.2 Şeması"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:176
 #, kde-format
 msgid "KDE Image Program Interface schema"
-msgstr ""
+msgstr "KDE Görsel Programı Arayüzü Şeması"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:180
-#, fuzzy, kde-format
-#| msgid "IPTC Extension schema"
+#, kde-format
 msgid "XMP Extended Video schema"
-msgstr "IPTC Uzantı şeması"
+msgstr "XMP Genişletilmiş Video Şeması"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:184
 #, kde-format
 msgid "Exif 2.3 metadata for XMP"
-msgstr ""
+msgstr "XMP için Exif 2.3 Üst Verisi"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:188
-#, fuzzy, kde-format
-#| msgid "Flash has been fired"
+#, kde-format
 msgid "Image Magick Attributes"
-msgstr "Flaş kullanılmış"
+msgstr "ImageMagick Öznitelikleri"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:192
-#, fuzzy, kde-format
-#| msgid "Image Properties"
+#, kde-format
 msgid "Image Magick Properties"
-msgstr "Resim Özellikleri"
+msgstr "ImageMagick Özellikleri"
 
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:349
 #, kde-format
@@ -44656,19 +44510,19 @@ msgstr "Kaydedilecek XMP Dosyası"
 #: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:190
 #, kde-format
 msgid "XMP text Files (*.xmp)"
-msgstr "XMP metin Dosyaları (*.xmp)"
+msgstr "XMP Metin Dosyaları (*.xmp)"
 
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
 #, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
-msgstr "Renk Etiketi: %1"
+msgstr "Renk etiketi: %1"
 
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:574
 #, kde-format
@@ -44680,13 +44534,13 @@ msgstr "Renk"
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:402
 #, kde-format
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
-msgstr "Etiket Seç: %1"
+msgstr "Seçim etiketi: %1"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:413
 #, kde-format
@@ -44701,39 +44555,32 @@ msgid "Rating"
 msgstr "Derecelendirme"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@info: language edit dialog"
-#| msgid "Remove entry for this language"
+#, kde-format
 msgctxt "@info: language edit widget"
 msgid "Remove entry for this language"
-msgstr "Bu dil için uzak girdi"
+msgstr "Bu dil için olan girdiyi kaldır"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@info: language edit dialog"
-#| msgid "Select item language here."
+#, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select item language here."
-msgstr "Ögenin dilini buradan seçin."
+msgstr "Burada öge dilini seçin."
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:237
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:253
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@info"
 msgid "Switch to %1"
-msgstr "%1'e git"
+msgstr "Şuna Geç: %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:423
-#, fuzzy, kde-format
-#| msgid "Failed to transform these files:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Translate String with %1 Web-Service"
-msgstr "Şu dosyaları dönüştürme başarısız oldu:"
+msgstr "%1 Web Hizmeti Çeviri Sorunu"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:425
-#, fuzzy, kde-format
-#| msgid "Error message: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Error message: %1"
 msgstr "Hata iletisi: %1"
@@ -44821,7 +44668,7 @@ msgstr "Arapça (Moritanya)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:58
 msgctxt "@info: country code"
 msgid "Arabic (Palestinian West Bank and Gaza)"
-msgstr ""
+msgstr "Arapça (Batı Şeria ve Gazze)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:59
 msgctxt "@info: country code"
@@ -45658,7 +45505,7 @@ msgstr "Fransızca (Fransız Guyanası)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:227
 msgctxt "@info: country code"
 msgid "French (Guinea)"
-msgstr "Fransızca (Fransız Guyanası)"
+msgstr "Fransızca (Gine)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:228
 msgctxt "@info: country code"
@@ -45698,7 +45545,7 @@ msgstr "Fransızca (Monako)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:235
 msgctxt "@info: country code"
 msgid "French (Madagascar)"
-msgstr "Fransızca (Madagascar)"
+msgstr "Fransızca (Madagaskar)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:236
 msgctxt "@info: country code"
@@ -46308,7 +46155,7 @@ msgstr "Sırbistan (Yugoslavya)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:357
 msgctxt "@info: country code"
 msgid "Swati (Swaziland)"
-msgstr "Svati (Suaziland)"
+msgstr "Suati (Suaziland)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:358
 msgctxt "@info: country code"
@@ -46376,11 +46223,9 @@ msgid "Turkmen (Turkmenistan)"
 msgstr "Türkmence (Türkmenistan)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:371
-#, fuzzy
-#| msgid "Klingon (US state)"
 msgctxt "@info: country code"
 msgid "Klingon (US state)"
-msgstr "Klingon (ABD)"
+msgstr "Klingonca (ABD Eyalet)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:372
 msgctxt "@info: country code"
@@ -46430,7 +46275,7 @@ msgstr "Tahitice (Fransız Polinezyası)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:381
 msgctxt "@info: country code"
 msgid "Udmurt (Russia)"
-msgstr "Udmurt (Rusya)"
+msgstr "Udmurtça (Rusya)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:382
 msgctxt "@info: country code"
@@ -46465,12 +46310,12 @@ msgstr "Vietnamca (Vietnam)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:388
 msgctxt "@info: country code"
 msgid "Wolof (Senegal)"
-msgstr "Uolof (Senegal)"
+msgstr "Volofça (Senegal)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:389
 msgctxt "@info: country code"
 msgid "IsiXhosa Xhosa (South Africa)"
-msgstr "İsiZosa Zosa (Güney Afrika)"
+msgstr "İsiZosa Zosaca (Güney Afrika)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:390
 msgctxt "@info: country code"
@@ -46485,7 +46330,7 @@ msgstr "Yorubaca (Nijerya)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:392
 msgctxt "@info: country code"
 msgid "Yucatec Maya (Mexico)"
-msgstr "Yucatec Maya (Meksika)"
+msgstr "Yukatek Mayacası (Meksika)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:393
 msgctxt "@info: country code"
@@ -46495,12 +46340,12 @@ msgstr "Çince (Çin Halk Cumhuriyeti)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:394
 msgctxt "@info: country code"
 msgid "Chinese (Hong Kong SAR, People's Republic of China)"
-msgstr "Çince (Hong Kong SAR, Çin Halk Cumhuriyeti)"
+msgstr "Çince (Hong Kong, Çin Halk Cumhuriyeti)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:395
 msgctxt "@info: country code"
 msgid "Chinese (Macao SAR)"
-msgstr "Çince (Macao SAR)"
+msgstr "Çince (Makao)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:396
 msgctxt "@info: country code"
@@ -46520,7 +46365,7 @@ msgstr "Basitleştirilmiş Çince (Çin Halk Cumhuriyeti)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:399
 msgctxt "@info: country code"
 msgid "isiZulu Zulu (South Africa)"
-msgstr "isiZulu Zulu (Güney Afrika)"
+msgstr "isiZulu Zuluca (Güney Afrika)"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:46
 #, kde-format
@@ -46761,7 +46606,7 @@ msgstr "Kanada"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Cape Verde"
-msgstr "Cape Verde"
+msgstr "Kape Verde"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:87
 #, kde-format
@@ -46911,7 +46756,7 @@ msgstr "El Salvador"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Equatorial Guinea"
-msgstr "Ekvatoral Gine"
+msgstr "Ekvator Ginesi"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:112
 #, kde-format
@@ -47079,7 +46924,7 @@ msgstr "Haiti"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Heard and McDonald Islands"
-msgstr "Heard and McDonald Islands"
+msgstr "Heard ve McDonald Adaları"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:140
 #, kde-format
@@ -47325,7 +47170,7 @@ msgstr "Malta"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Marshall Islands"
-msgstr "Marşal Adaları"
+msgstr "Marshall Adaları"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:181
 #, kde-format
@@ -47613,7 +47458,7 @@ msgstr "St. Lucia"
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Pierre and Miquelon"
-msgstr "St. Pierre and Miquelon"
+msgstr "St. Pierre ve Miquelon"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:230
 #, kde-format
@@ -47637,7 +47482,7 @@ msgstr "San Marino"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sao Tome and Principe"
-msgstr "Sao Tome and Principe"
+msgstr "Sao Tome ve Principe"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:234
 #, kde-format
@@ -47709,7 +47554,7 @@ msgstr "Güney Afrika"
 #, kde-format
 msgctxt "@info: country code"
 msgid "South Georgia and the South Sandwich Islands"
-msgstr "South Georgia and the South Sandwich Islands"
+msgstr "Güney Georgia ve Güney Sandwich Adaları"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:246
 #, kde-format
@@ -47943,7 +47788,7 @@ msgstr "Zambiya"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Zimbabwe"
-msgstr "Zimbabwe"
+msgstr "Zimbabve"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:287
 #, kde-format
@@ -48009,7 +47854,7 @@ msgstr "Filistin"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Gaza"
-msgstr "Gaza"
+msgstr "Gazze"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:298
 #, kde-format
@@ -48051,31 +47896,31 @@ msgstr "Özel tanım kullan"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Informative Provider Reference"
-msgstr "Bilgilendirici Sağlayıcı Başvurusu'nu buradan ayarla"
+msgstr "Bilgilendirici Sağlayıcı Başvurusu'nu burada ayarla"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:179
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Reference Number"
-msgstr "Özne Başvuru Numarası'nı buradan ayarla"
+msgstr "Özne Başvuru Numarası'nı burada ayarla"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:190
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Name"
-msgstr "Özne Adı'nı buradan ayarla"
+msgstr "Özne Adı'nı burada ayarla"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:201
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Matter Name"
-msgstr "Özne Konu Adı'nı buradan ayarla"
+msgstr "Özne Konu Adı'nı burada ayarla"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:212
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Detail Name"
-msgstr "Özne Ayrıntı Adı'nı buradan ayarla"
+msgstr "Özne Ayrıntı Adı'nı burada ayarla"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:224
 #, kde-format
@@ -48177,7 +48022,7 @@ msgstr "Hata: Web sürümünden ek Bing bilgisi çıkarılamadı."
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:168
 #, kde-format
 msgid "Error: Unable to parse autodetected language"
-msgstr "Hata: Otomatik algılanan dil ayrıştırılamıyor"
+msgstr "Hata: Kendiliğinden algılanan dil ayrıştırılamıyor"
 
 #: core/libs/widgets/text/donlinetranslator_google.cpp:53
 #: core/libs/widgets/text/donlinetranslator_google.cpp:70
@@ -48194,7 +48039,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: language name"
 msgid "Automatically detect"
-msgstr "Otomatik algıla"
+msgstr "Kendiliğinden algıla"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:106
 #, kde-format
@@ -48212,7 +48057,7 @@ msgstr "Arnavutça"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Amharic"
-msgstr "AmharcaArap"
+msgstr "Amharca"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:115
 #, kde-format
@@ -48572,7 +48417,7 @@ msgstr "Letonca"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Levantine Arabic"
-msgstr "Levantin Arapçası"
+msgstr "Levanten Arapçası"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:295
 #, kde-format
@@ -48878,7 +48723,7 @@ msgstr "Türkmence"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Udmurt"
-msgstr "Udmurt"
+msgstr "Udmurtça"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:448
 #, kde-format
@@ -48920,7 +48765,7 @@ msgstr "Galce"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Xhosa"
-msgstr "Zosa"
+msgstr "Zosaca"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:469
 #, kde-format
@@ -48938,54 +48783,49 @@ msgstr "Yorubaca"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Yucatec Maya"
-msgstr "Yucatec Maya"
+msgstr "Yukatek Mayacası"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:478
 #, kde-format
 msgctxt "@info: language name"
 msgid "Zulu"
-msgstr "Zulu"
+msgstr "Zuluca"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:48
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected engine %1 does not support voice settings"
-msgstr "Uzaktan dosya işlemesi desteklenmiyor"
+msgstr "Seçili işletke %1, ses ayarlarını desteklemiyor"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:55
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected engine %1 does not support emotion settings"
-msgstr "Uzaktan dosya işlemesi desteklenmiyor"
+msgstr "Seçili işletke %1, duygu ayarlarını desteklemiyor"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "%1 engine does not support TTS"
-msgstr ""
+msgstr "%1 işletkesi, metinden konuşmayı (TTS) desteklemiyor"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:252
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected language %1 is not supported for %2"
-msgstr "Uzaktan dosya işlemesi desteklenmiyor"
+msgstr "Seçili dil %1, %2 için desteklenmiyor"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:271
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected voice %1 is not supported for %2"
-msgstr "Uzaktan dosya işlemesi desteklenmiyor"
+msgstr "Seçili ses %1, %2 için desteklenmiyor"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:290
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected emotion %1 is not supported for %2"
-msgstr "Uzaktan dosya işlemesi desteklenmiyor"
+msgstr "Seçili duygu %1, %2 için desteklenmiyor"
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
 #, kde-format
@@ -48998,12 +48838,10 @@ msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "Hata: Web sürümünden Yandex SID çıkarılamadı."
 
 #: core/libs/widgets/text/localizeconfig.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Basque (Basque Country)"
+#, kde-format
 msgctxt "@title: translator language code"
 msgid "Code (Language-Country)"
-msgstr "Bask Dili (Bask Ülkesi)"
+msgstr "Kod (Dil-Ülke)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:58
 #, kde-format
@@ -49018,31 +48856,28 @@ msgid "Enter here a string to search in languages list..."
 msgstr "Diller listesinde aramak üzere bir dizi girin..."
 
 #: core/libs/widgets/text/localizeconfig.cpp:146
-#, fuzzy, kde-format
-#| msgid "Show Non-Geolocated Items"
+#, kde-format
 msgctxt "@info"
 msgid "Show only selected items (%1/%2)"
-msgstr "Coğrafi Konumlanmamış Ögeleri Göster"
+msgstr "Yalnızca seçili ögeleri göster (%1/%2)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:227
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
-msgstr "İçeriğin dilini buradan seçin."
+msgstr "Metin Düzenleme Alternatif Dillerini Seç"
 
 #: core/libs/widgets/text/localizeconfig.cpp:232
 #, kde-format
 msgctxt "@label"
 msgid "Online Translator:"
-msgstr ""
+msgstr "Çevrimiçi çevirmen:"
 
 #: core/libs/widgets/text/localizeconfig.cpp:234
-#, fuzzy, kde-format
-#| msgid "Select here the editorial type of content."
+#, kde-format
 msgctxt "@option"
 msgid "Select here the online engine to translate text"
-msgstr "İçeriğin yayıncıya ait türünü buradab seçin."
+msgstr "Metin çevirmek için çevrimiçi işletkeyi burada seçin"
 
 #: core/libs/widgets/text/localizeconfig.cpp:241
 #, kde-kuit-format
@@ -49056,40 +48891,43 @@ msgid ""
 "translator engine depending of desired target language, as not all world-"
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
+"<para>Çevirmen işletkesi, metni bir dilden diğerine çevirmek için kullanılan "
+"çevrimiçi bir web hizmetidir. Bu özellik, Başlık, Alt Yazı vb. gibi "
+"alternatif dilin desteklendiği üst veri seçeneğinde kullanılabilirdir. "
+"Çeviri işlemi tümüyle otomatikleştirilmiştir; ancak çalışması için İnternet "
+"bağlantısı gerektirir.</para><para>Dünya çapındaki dillerin tümü çevrimiçi "
+"Web hizmetleri tarafından desteklenmediğinden, kullanıcı istenen hedef dile "
+"bağlı olarak daha uygun bir çevirmen işletkesi seçebilir.</para>"
 
 #: core/libs/widgets/text/localizeconfig.cpp:329
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Wiktionary"
+#, kde-format
 msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
-msgstr "VikiSözlük"
+msgstr "Kullanılabilir Çevirmen Dilleri (%1/%2)"
 
 #: core/libs/widgets/text/localizeselector.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Open localize setup"
-msgstr ""
+msgstr "Yerel ayarları aç"
 
 #: core/libs/widgets/text/localizeselector.cpp:150
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
-msgstr "%1'e git"
+msgstr "%1 diline çevir"
 
 #: core/libs/widgets/text/localizeselector.cpp:163
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
-msgstr "İçeriğin dilini buradan seçin."
+msgstr "%1 ile çevrilecek dili seçin"
 
 #: core/libs/widgets/text/localizeselector.cpp:262
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
-msgstr "Bu girdiyi kaldır"
+msgstr "Bu Girdiyi Kaldır"
 
 #: core/libs/widgets/text/localizeselector.cpp:263
 #, kde-format
@@ -49127,22 +48965,20 @@ msgid ""
 "depends of open-source backends, including necessary dictionaries, to "
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
-"<para>Altyazılar, başlıklar ve diğer metin düzenleme araç takımlarında arka "
+"<para>Alt yazılar, başlıklar ve diğer metin düzenleme araç takımlarında arka "
 "planda yazım denetimi özelliğini etkinleştirmek için bu seçeneği açın. Yazım "
-"denetimi, metinde kullanılan geçerli dili otomatik olarak algılayabilir ve "
-"yanlış yazılmış sözcüklere alternatifler önerebilir.</para><para>Alternatif "
-"dilin belirlenebildiği girişlerde, metni ayrıştırmak için bağlamsal dil "
-"kullanılacaktır. Yazım denetimi, istenen dillerde tümce çözümlemesi yapmak "
-"için gerekli sözlükler de dahil olmak üzere açık kaynaklı arka uçlara "
-"bağlıdır.</para>"
+"denetimi, metinde kullanılan geçerli dili kendiliğinden algılayabilir ve "
+"yanlış yazılan sözcüklere alternatifler önerebilir.</para><para>Alternatif "
+"dilin belirlenebildiği girişlerde metni ayrıştırmak için bağlamsal dil "
+"kullanılacaktır. Yazım denetimi, istenen dillerde tümce çözümlemesini "
+"gerçekleştirmek için gerekli sözlükler de içerilmek üzere açık kaynaklı arka "
+"uçlara bağlıdır.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Öntanımlı Dil"
+msgstr "Öntanımlı dil:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, kde-format
@@ -49151,18 +48987,19 @@ msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
+"Alternatif dil dizileri için \"x-default\" değeriyle kullanılacak öntanımlı "
+"dili burada seçin."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
-#, fuzzy, kde-format
-#| msgid "Auto-&Detect"
+#, kde-format
 msgid "Auto-detect"
-msgstr "Otomatik-&Algıla"
+msgstr "Kendiliğinden algıla"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
-msgstr ""
+msgstr "Dizi içeriğini ayrıştırarak dili kendiliğinden algıla"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
@@ -49198,7 +49035,7 @@ msgstr "Yok Sayılan Sözcükler"
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
-msgstr "Yazım denetimi sırasında yok sayılacak bir sözcüğü buradan ayarla"
+msgstr "Yazım denetimi sırasında yok sayılacak bir sözcüğü burada ayarla"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, kde-format
@@ -49296,19 +49133,19 @@ msgstr "Kısa Görünüm"
 #, kde-format
 msgctxt "@info"
 msgid "Switch Folder-View to Short Mode"
-msgstr ""
+msgstr "Klasör görünümünü kısa kipe geçir"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:203
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Detailed View"
-msgstr ""
+msgstr "Ayrıntılı Görünüm"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid "Switch Folder-View to Detailed Mode"
-msgstr ""
+msgstr "Klasör görünümünü ayrıntılı kipe geçir"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:214
 #, kde-format
@@ -49320,188 +49157,157 @@ msgstr "Yer İmlerini Göster"
 #, kde-format
 msgctxt "@info"
 msgid "Show or Hide the Bookmarked places"
-msgstr ""
+msgstr "Yer imlerine eklenen yerleri göster veya gizle"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:222
-#, fuzzy, kde-format
-#| msgid "Settings..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "More Settings..."
-msgstr "Ayarlar..."
+msgstr "Daha Fazla Ayar..."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:225
 #, kde-format
 msgctxt "@info"
 msgid "Open configure dialog with more settings options"
-msgstr ""
+msgstr "Ek ayar seçeneklerini içeren yapılandırma iletişim kutusunu aç"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:237
-#, fuzzy, kde-format
-#| msgid "Icon-View Options"
+#, kde-format
 msgctxt "@info: folder-view"
 msgid "Stack Options"
-msgstr "Simge Görünümü Seçenekleri"
+msgstr "Yığın Seçenekleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:240
 #, kde-format
 msgctxt "@info: folder-view"
 msgid "Stack options to handle folder-view contents."
-msgstr ""
+msgstr "Klasör görünümü içeriğini işlemek için yığın seçenekleri."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Content"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Load Contents"
-msgstr "İçerik"
+msgstr "İçeriği Yükle"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:247
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Content"
+#, kde-format
 msgctxt "@action"
 msgid "Load Contents"
-msgstr "İçerik"
+msgstr "İçeriği Yükle"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Content"
+#, kde-format
 msgctxt "@info"
 msgid "Load contents to editor stack"
-msgstr "İçerik"
+msgstr "Düzenleyici yığınına içeriği yükle"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Content"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Append Contents"
-msgstr "İçerik"
+msgstr "İçeriği İliştir"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:258
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Content"
+#, kde-format
 msgctxt "@action"
 msgid "Append Contents"
-msgstr "İçerik"
+msgstr "İçeriği İliştir"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Content"
+#, kde-format
 msgctxt "@info"
 msgid "Append contents to editor stack"
-msgstr "İçerik"
+msgstr "Düzenleyici yığınına içeriği iliştir"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Enter custom format"
+#, kde-format
 msgctxt "@info"
 msgid "Enter the customized folder-view path or select from history"
-msgstr "Özel biçim girin"
+msgstr "Özelleştirilmiş klasör görünümünü yolunu gir veya geçmişten seç"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:274
-#, fuzzy, kde-format
-#| msgctxt "@label: album properties"
-#| msgid "Enter album caption here..."
+#, kde-format
 msgctxt "@info: folder-view path edit"
 msgid "Enter local path here..."
-msgstr "Albüm alt yazısını buraya girin..."
+msgstr "Yerel yolu buraya gir..."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:286
-#, fuzzy, kde-format
-#| msgid "JPEG 2000 image"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "JPEG images"
-msgstr "JPEG 2000 görüntüsü"
+msgstr "JPEG görselleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:287
-#, fuzzy, kde-format
-#| msgid "TIFF Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "TIFF images"
-msgstr "TIFF Dosyaları"
+msgstr "TIFF görselleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:288
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "PNG images"
-msgstr "PNG Dosyaları"
+msgstr "PNG görselleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:289
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "PGF images"
-msgstr "PNG Dosyaları"
+msgstr "PNG görselleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:290
-#, fuzzy, kde-format
-#| msgid "TIFF Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "HEIF images"
-msgstr "TIFF Dosyaları"
+msgstr "TIFF görselleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:291
-#, fuzzy, kde-format
-#| msgid "TIFF Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "AVIF images"
-msgstr "TIFF Dosyaları"
+msgstr "TIFF görselleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:292
-#, fuzzy, kde-format
-#| msgid "JPEG 2000 image"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "JPEG-XL images"
-msgstr "JPEG 2000 görüntüsü"
+msgstr "JPEG XL görselleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:293
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "WEBP images"
-msgstr "PNG Dosyaları"
+msgstr "WEBP görselleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:294
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "DNG images"
-msgstr "PNG Dosyaları"
+msgstr "DNG görselleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:295
-#, fuzzy, kde-format
-#| msgid "RAW Image"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "RAW images"
-msgstr "İşlenmemiş Resim"
+msgstr "RAW görselleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:304
-#, fuzzy, kde-format
-#| msgid "RAW Image"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "No RAW images"
-msgstr "İşlenmemiş Resim"
+msgstr "RAW görseli yok"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:311
-#, fuzzy, kde-format
-#| msgid "All supported files (%1)"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "All supported files"
-msgstr "Desteklenen tüm dosyalar (%1)"
+msgstr "Tüm desteklenen dosyalar"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:451
-#, fuzzy, kde-format
-#| msgid "Icon Size:"
+#, kde-format
 msgctxt "@info"
 msgid "Icon Size: %1"
-msgstr "Simge Boyutu:"
+msgstr "Simge boyutu: %1"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:101
 #, kde-format
@@ -49516,62 +49322,56 @@ msgid "Edit Bookmark"
 msgstr "Yer İmini Düzenle"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@label: album properties"
-#| msgid "&Title:"
+#, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "&Başlık:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
-#, fuzzy, kde-format
-#| msgid "Enter tag name here..."
+#, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
-msgstr "Etiket adını buraya girin..."
+msgstr "Yer imi adını buraya gir..."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
-msgstr ""
+msgstr "Yer imi adı benzersiz olmalıdır ve boş bırakılamaz"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:132
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
-#, fuzzy, kde-format
-#| msgid "&Icon:"
+#, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Simge:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:140
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Sıfırla"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:153
-#, fuzzy, kde-format
-#| msgid "Path"
+#, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
-msgstr "Yol"
+msgstr "&Yol:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@label: album properties"
-#| msgid "Enter album caption here..."
+#, kde-format
 msgctxt "@info"
 msgid "Enter bookmark path here..."
-msgstr "Albüm alt yazısını buraya girin..."
+msgstr "Yer imi yolunu buraya gir..."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:63
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove bookmarked places here."
 msgstr ""
+"Burada yer imlerine eklenen yerleri kaldırabilir ve yeni yer imleri "
+"ekleyebilirsiniz."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:120
 #, kde-format
@@ -49581,20 +49381,16 @@ msgstr "Yer İmleri"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:129
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Content"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Load Contents"
-msgstr "İçerik"
+msgstr "İçeriği Yükle"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "Replace string"
-#| msgid "Replace:"
+#, kde-format
 msgctxt "@title"
 msgid "Places"
-msgstr "Değiştir:"
+msgstr "Yerler"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:105
 #, kde-format
@@ -49604,11 +49400,10 @@ msgstr "Yer İmi Ekle"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:106
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:102
-#, fuzzy, kde-format
-#| msgid "Add new images to the list"
+#, kde-format
 msgctxt "@info"
 msgid "Add new bookmark to the list"
-msgstr "Listeye yeni resimler ekle"
+msgstr "Listeye yeni yer imi ekle"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:122
 #, kde-format
@@ -49617,11 +49412,10 @@ msgid "Del Bookmark"
 msgstr "Yer İmini Sil"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:123
-#, fuzzy, kde-format
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgctxt "@info"
 msgid "Remove selected bookmark from the list"
-msgstr "Seçilen resimleri listeden kaldır"
+msgstr "Listeden seçili yer imini kaldır"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:140
 #, kde-format
@@ -49630,11 +49424,10 @@ msgid "Edit Bookmark"
 msgstr "Yer İmini Düzenle"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:141
-#, fuzzy, kde-format
-#| msgid "Remove the current selected value from the list"
+#, kde-format
 msgctxt "@info"
 msgid "Edit current bookmark from the list"
-msgstr "Listeden seçili değeri kaldır"
+msgstr "Listedeki geçerli yer imini düzenle"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
 #, kde-format
@@ -49650,23 +49443,21 @@ msgid ""
 "%1\n"
 "already exists in the list with name \"%2\"."
 msgstr ""
-"%1\n"
-"ögesine başvuran yer imi, halihazırda\n"
-"listede \"%2\" adıyla var."
+"%1 ögesine\n"
+"başvuran yer imi, listede\n"
+"halihazırda \"%2\" adıyla var."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
-#, fuzzy, kde-format
-#| msgid "Confirm Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
-msgstr "Silmeyi Onayla"
+msgstr "Yer İmi Silmeyi Onayla"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:260
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete the selected workflow \"%1\"?"
+#, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to remove the bookmark \"%1\"?"
-msgstr "Seçili iş akışı \"%1\" i silmek istediğinizden emin misiniz?"
+msgstr "\"%1\" yer imini kaldırmak istediğinizden emin misiniz?"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:357
 #, kde-format
@@ -49675,25 +49466,22 @@ msgid "My Bookmarks"
 msgstr "Yer İmlerim"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:388
-#, fuzzy, kde-format
-#| msgctxt "Replace string"
-#| msgid "Replace:"
+#, kde-format
 msgctxt "@title"
 msgid "Usual Places"
-msgstr "Değiştir:"
+msgstr "Olağan Yerler"
 
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:136
-#, fuzzy, kde-format
-#| msgid "Folder View Options"
+#, kde-format
 msgctxt "@title"
 msgid "Folder-View"
-msgstr "Dizin Görünümü Seçenekleri"
+msgstr "Klasör Görünümü"
 
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:147
 #, kde-format
 msgctxt "@title"
 msgid "Stack"
-msgstr ""
+msgstr "Yığın"
 
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:155
 #, kde-format
@@ -49702,26 +49490,22 @@ msgid "Add Bookmark"
 msgstr "Yer İmi Ekle"
 
 #: core/showfoto/folderview/showfotofolderviewsidebar.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Folder: "
+#, kde-format
 msgctxt "@title: file system tree"
 msgid "Folders"
-msgstr "Dizin: "
+msgstr "Klasörler"
 
 #: core/showfoto/main/main.cpp:178
-#, fuzzy, kde-format
-#| msgid "Showfoto"
+#, kde-format
 msgctxt "@title"
 msgid "Showfoto"
-msgstr "Resim göster"
+msgstr "FotoGöster"
 
 #: core/showfoto/main/main.cpp:196
-#, fuzzy, kde-format
-#| msgid "File(s) or folder(s) to open"
+#, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
-msgstr "Açılacak dosya(lar) ya da dizin(ler)"
+msgstr "Açılacak dosya(lar) veya klasör(ler)"
 
 #: core/showfoto/main/main.cpp:227
 #, kde-format
@@ -49731,9 +49515,9 @@ msgid ""
 "p><p>Please install the 64-bit version of Showfoto to get a better "
 "experience with Showfoto.</p>"
 msgstr ""
-"<p>FotoGöster'i 64 bit Windows'ta 32 bit sürüm olarak çalıştırıyorsunuz.</"
-"p><p>FotoGöster ile daha iyi bir deneyim elde etmek için lütfen Foto "
-"Göster'in 64 bit sürümünü kurun.</p>"
+"<p>FotoGöster'i 64 bit Windows'ta 32 bit olarak çalıştırıyorsunuz.</"
+"p><p>FotoGöster ile daha iyi bir deneyim elde etmek için lütfen "
+"FotoGöster'in 64 bit sürümünü kurun.</p>"
 
 #: core/showfoto/main/showfoto.cpp:97
 #, kde-format
@@ -49741,7 +49525,7 @@ msgid "Loading themes..."
 msgstr "Temalar yükleniyor..."
 
 #: core/showfoto/main/showfoto.cpp:215
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
 "now, select \"Yes\", otherwise select \"No\". In this case, \"Color "
@@ -50292,7 +50076,7 @@ msgstr "Sistem dosya iletişim pencerelerini kullan"
 #: core/utilities/setup/misc/setupmisc.cpp:202
 #, kde-format
 msgid "Sidebar tab title:"
-msgstr "Kenar çubuğu başlığı:"
+msgstr "Kenar çubuğu sekmesi başlığı:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:250
 #: core/utilities/setup/misc/setupmisc.cpp:204
@@ -50871,8 +50655,7 @@ msgid "Name"
 msgstr "Ad"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:249
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@title:column file size"
 msgid "Size"
 msgstr "Boyut"
@@ -51095,8 +50878,7 @@ msgid "Name"
 msgstr "Ad"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:90
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Boyut"

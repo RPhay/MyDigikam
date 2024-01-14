@@ -147,12 +147,12 @@ BUGFIXES:
 128 ==> 479585 - Can't open and read HEIF file from Fujifilm XT-5.
 129 ==> 471992 - digiKam 8.0.0 crashes when downloading face files.
 130 ==> 479635 - Metadata fields can no longer be accessed using the Tab key.
-131 ==> 
-132 ==> 
-133 ==> 
-134 ==> 
-135 ==> 
-136 ==> 
+131 ==> 479758 - Loss metadata from items.
+132 ==> 479704 - Nearby face tag editor fields overlap each other, making targeted editing impossible.
+133 ==> 479769 - Viewing a video locks file from being moved by DigiKam or OS, even after de-selecting the file.
+134 ==> 479768 - Select Album doesn't show all child folders.
+135 ==> 479785 - Photo rotation put some line of pixels at the wrong edge.
+136 ==> 479780 - Face tags not writing to XMP on photos taken with Android "Ultra HDR" setting.
 137 ==> 
 138 ==> 
 139 ==> 
