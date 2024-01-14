@@ -16,6 +16,7 @@
 
 // Qt includes
 
+#include <QList>
 #include <QMutex>
 #include <QMutexLocker>
 
@@ -169,6 +170,28 @@ void DVideoWidget::slotVideoFrame(const QAVVideoFrame& frame)
     }
 
     Q_EMIT positionChanged(d->player->position());
+}
+
+int DVideoWidget::videoMediaOrientation() const
+{
+    int orientation = 0;
+
+    QList<QAVStream> vstream = d->player->currentVideoStreams();
+
+    if (!vstream.isEmpty())
+    {
+        QMap<QString, QString> vals = vstream.first().metadata();
+
+        if (!vals.isEmpty())
+        {
+            if (vals.contains(QLatin1String("Orientation")))
+            {
+                orientation = vals[QLatin1String("Orientation")].toInt();
+            }
+        }
+    }
+
+    return orientation;
 }
 
 } // namespace Digikam

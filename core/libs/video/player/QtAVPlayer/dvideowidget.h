@@ -67,6 +67,7 @@ public:
     QAVAudioOutput* audioOutput() const;
     VideoRenderer*  videoRender() const;
     QVideoFrame videoFrame()      const;
+    int videoMediaOrientation()   const;
 
     bool setMediaObject(QMediaObject* object) override;
 
