@@ -130,14 +130,6 @@ SlideVideo::SlideVideo(QWidget* const parent)
     connect(d->volume, SIGNAL(valueChanged(int)),
             this, SLOT(slotVolumeChanged(int)));
 
-    connect(d->videoWidget->player(), &QAVPlayer::audioFrame,
-            this, &SlideVideo::slotAudioFrame,
-            Qt::DirectConnection);
-
-    connect(d->videoWidget->player(), &QAVPlayer::videoFrame,
-            this, &SlideVideo::slotVideoFrame,
-            Qt::DirectConnection);
-
     connect(d->videoWidget->player(), SIGNAL(stateChanged(QAVPlayer::State)),
             this, SLOT(slotPlayerStateChanged(QAVPlayer::State)));
 
@@ -165,32 +157,6 @@ SlideVideo::~SlideVideo()
 {
     stop();
     delete d;
-}
-
-void SlideVideo::slotAudioFrame(const QAVAudioFrame& frame)
-{
-    d->videoWidget->audioOutput()->play(frame);
-}
-
-void SlideVideo::slotVideoFrame(const QAVVideoFrame& frame)
-{
-    if (d->videoWidget->videoRender()->m_surface == nullptr)
-    {
-        return;
-    }
-
-    QVideoFrame videoFrame = frame.convertTo(AV_PIX_FMT_RGB32);
-
-    if (!d->videoWidget->videoRender()->m_surface->isActive() || (d->videoWidget->videoRender()->m_surface->surfaceFormat().frameSize() != videoFrame.size()))
-    {
-        QVideoSurfaceFormat f(videoFrame.size(), videoFrame.pixelFormat(), videoFrame.handleType());
-        d->videoWidget->videoRender()->m_surface->start(f);
-    }
-
-    if (d->videoWidget->videoRender()->m_surface->isActive())
-    {
-         d->videoWidget->videoRender()->m_surface->present(videoFrame);
-    }
 }
 
 void SlideVideo::setInfoInterface(DInfoInterface* const iface)

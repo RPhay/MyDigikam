@@ -308,8 +308,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 MediaPlayerView::~MediaPlayerView()
 {
     escapePreview();
-    d->videoWidget->setMediaObject(nullptr);
-
     delete d;
 }
 

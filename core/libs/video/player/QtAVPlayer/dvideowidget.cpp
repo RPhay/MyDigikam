@@ -77,14 +77,14 @@ DVideoWidget::DVideoWidget(QWidget* const /*parent*/)
 {
     setMouseTracking(true);
 
-    d->videoRender    = new VideoRenderer;
+    d->videoRender = new VideoRenderer;
 
-    d->mediaObject    = new MediaObject(d->videoRender);
+    d->mediaObject = new MediaObject(d->videoRender);
     setMediaObject(d->mediaObject);
 
-    d->player         = new QAVPlayer(this);
+    d->player      = new QAVPlayer(this);
 
-    d->audioOutput    = new QAVAudioOutput(this);
+    d->audioOutput = new QAVAudioOutput(this);
 
     connect(d->player, &QAVPlayer::audioFrame,
             this, &DVideoWidget::slotAudioFrame,
@@ -135,7 +135,10 @@ void DVideoWidget::slotVideoFrame(const QAVVideoFrame& frame)
 
     QVideoFrame videoFrame = frame.convertTo(AV_PIX_FMT_RGB32);
 
-    if (!d->videoRender->m_surface->isActive() || (d->videoRender->m_surface->surfaceFormat().frameSize() != videoFrame.size()))
+    if (
+        !d->videoRender->m_surface->isActive() ||
+        (d->videoRender->m_surface->surfaceFormat().frameSize() != videoFrame.size())
+       )
     {
         QVideoSurfaceFormat f(videoFrame.size(), videoFrame.pixelFormat(), videoFrame.handleType());
         d->videoRender->m_surface->start(f);

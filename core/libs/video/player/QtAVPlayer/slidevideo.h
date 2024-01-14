@@ -68,9 +68,6 @@ private Q_SLOTS:
     void slotVolumeChanged(int volume);
     void slotPosition(int position);
 
-    void slotAudioFrame(const QAVAudioFrame& frame);
-    void slotVideoFrame(const QAVVideoFrame& frame);
-
 private:
 
     class Private;
