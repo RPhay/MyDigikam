@@ -540,9 +540,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     {
         d->videoWidget->player()->stop();
         d->currentItem = url;
-/*FIXME?
-        d->videoWidget->player()->audio()->close();
-*/
+
         return;
     }
 
