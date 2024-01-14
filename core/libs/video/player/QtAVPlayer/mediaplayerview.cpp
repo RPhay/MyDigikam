@@ -164,6 +164,8 @@ public:
     int                  videoOrientation   = 0;
     qint64               capturePosition    = 0;
     qint64               sliderTime         = 0;
+
+    bool                 playLoop           = false;
 };
 
 MediaPlayerView::MediaPlayerView(QWidget* const parent)
@@ -337,10 +339,20 @@ void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
 
     }
-    else if ((newState == QAVPlayer::PausedState) ||
-             (newState == QAVPlayer::StoppedState))
+    else if (newState == QAVPlayer::PausedState)
     {
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
+    }
+    else if (newState == QAVPlayer::StoppedState)
+    {
+        if (d->playLoop)
+        {
+            reload();
+        }
+        else
+        {
+            d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
+        }
     }
 }
 
@@ -651,18 +663,16 @@ void MediaPlayerView::slotVolumeChanged(int volume)
 
 void MediaPlayerView::slotLoopToggled(bool loop)
 {
-/*FIXME
     if (loop)
     {
         d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-repeat")));
-        d->videoWidget->player()->setRepeat(-1);
     }
     else
     {
         d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
-        d->videoWidget->player()->setRepeat(0);
     }
-*/
+
+    d->playLoop = loop;
 }
 
 void MediaPlayerView::slotDurationChanged(qint64 duration)
