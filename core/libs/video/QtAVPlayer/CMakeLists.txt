@@ -50,11 +50,6 @@ set(libqtavplayer_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/qavvideoframe.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavvideoinputfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavvideooutputfilter.cpp
-
-#   ANDROID support
-#
-#   ${CMAKE_CURRENT_SOURCE_DIR}/qavandroidsurfacetexture.cpp
-#   ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_mediacodec.cpp
 )
 
 if(DirectX_D3D11_FOUND)
@@ -97,6 +92,15 @@ if(APPLE)
 
     set(libqtavplayer_SRCS ${libqtavplayer_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_videotoolbox.mm
+    )
+
+endif()
+
+if(ANDROID)
+
+    set(libqtavplayer_SRCS ${libqtavplayer_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/qavandroidsurfacetexture.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_mediacodec.cpp
     )
 
 endif()
