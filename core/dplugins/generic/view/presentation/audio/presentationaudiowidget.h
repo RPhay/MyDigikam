@@ -32,10 +32,9 @@
 
 #else
 
-// QtAV includes
+// QtAVPlayer includes
 
-#   include <AVError.h>
-#   include <AVPlayerCore.h>
+#   include "daudioplayer.h"
 
 #endif
 
@@ -92,9 +91,9 @@ private Q_SLOTS:
 
 #else
 
-    void slotMediaStateChanged(QtAV::MediaStatus);
-    void slotPlayerStateChanged(QtAV::AVPlayerCore::State);
-    void slotPlayerError(const QtAV::AVError&);
+    void slotMediaStateChanged(QAVPlayer::MediaStatus);
+    void slotPlayerStateChanged(QAVPlayer::State);
+    void slotPlayerError(QAVPlayer::Error, const QString&);
 
 #endif
 

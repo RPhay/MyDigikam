@@ -34,15 +34,6 @@
 
 #   include <QMediaMetaData>
 
-#else
-
-// QtAV includes
-
-#   include "AVPlayerCore.h"
-#   include "QtAV_Statistics.h"
-
-using namespace QtAV;
-
 #endif
 
 // KDE includes
@@ -74,7 +65,7 @@ public:
 
 #else
 
-    AVPlayerCore* mediaObject = nullptr;
+    DAudioPlayer* mediaObject = nullptr;
 
 #endif
 
@@ -103,18 +94,18 @@ PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, 
 
 #else
 
-    d->mediaObject = new AVPlayerCore(this);
+    d->mediaObject = new DAudioPlayer(this);
 
-    connect(d->mediaObject, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
-            this, SLOT(slotMediaStateChanged(QtAV::MediaStatus)));
+    connect(d->mediaObject->player(), SIGNAL(mediaStatusChanged(QAVPlayer::MediaStatus)),
+            this, SLOT(slotMediaStateChanged(QAVPlayer::MediaStatus)));
 
-    connect(d->mediaObject, SIGNAL(durationChanged(qint64)),
+    connect(d->mediaObject->player(), SIGNAL(durationChanged(qint64)),
             this, SLOT(slotDurationChanged(qint64)));
 
-    connect(d->mediaObject, SIGNAL(error(QtAV::AVError)),
-            this, SLOT(slotPlayerError(QtAV::AVError)));
+    connect(d->mediaObject->player(), SIGNAL(errorOccurred(QAVPlayer::Error,QString)),
+            this, SLOT(slotPlayerError(QAVPlayer::Error,QString)));
 
-    d->mediaObject->setFile(url.toLocalFile());
+    d->mediaObject->setSource(url.toLocalFile());
     d->mediaObject->load();
 
 #endif
@@ -195,18 +186,18 @@ void PresentationAudioListItem::slotMediaStateChanged(QMediaPlayer::MediaStatus 
 
 #else
 
-void PresentationAudioListItem::slotPlayerError(const QtAV::AVError& err)
+void PresentationAudioListItem::slotPlayerError(QAVPlayer::Error err, const QString& message)
 {
-    if (err.error() != AVError::NoError)
+    if (err != QAVPlayer::NoError)
     {
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "An error as occurred while playing (" << err.string() << ")";
-        showErrorDialog(err.string());
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "An error as occurred while playing (" << message << ")";
+        showErrorDialog(message);
     }
 }
 
-void PresentationAudioListItem::slotMediaStateChanged(QtAV::MediaStatus status)
+void PresentationAudioListItem::slotMediaStateChanged(QAVPlayer::MediaStatus newStatus)
 {
-    if (status == QtAV::InvalidMedia)
+    if (newStatus == QAVPlayer::InvalidMedia)
     {
         showErrorDialog(i18n("No detail available"));
     }

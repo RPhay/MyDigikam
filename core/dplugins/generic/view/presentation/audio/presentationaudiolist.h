@@ -39,9 +39,9 @@
 
 #else
 
-// QtAV includes
+// QtAVPlayer includes
 
-#   include <AVError.h>
+#   include "daudioplayer.h"
 
 #endif
 
@@ -77,8 +77,8 @@ private Q_SLOTS:
 
 #else
 
-    void slotMediaStateChanged(QtAV::MediaStatus);
-    void slotPlayerError(const QtAV::AVError&);
+    void slotMediaStateChanged(QAVPlayer::MediaStatus status);
+    void slotPlayerError(QAVPlayer::Error, const QString&);
     void slotDurationChanged(qint64 duration);
 
 #endif
