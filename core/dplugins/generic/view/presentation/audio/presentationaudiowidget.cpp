@@ -165,7 +165,7 @@ void PresentationAudioWidget::slotSetVolume(int v)
 {
     if (d->mediaObject->audioOutput())
     {
-        d->mediaObject->audioOutput()->setVolume(v / 100.0);
+        d->mediaObject->setVolume(v / 100.0);
     }
 }
 
@@ -183,7 +183,7 @@ bool PresentationAudioWidget::isPaused() const
 
 #else
 
-    return (d->mediaObject->player()->state() == QAVPlayer::PausedState);
+    return (d->mediaObject->state() == QAVPlayer::PausedState);
 
 #endif
 
@@ -306,8 +306,8 @@ void PresentationAudioWidget::slotPlay()
 
 #else
 
-    if ((d->mediaObject->player()->state() != QAVPlayer::PlayingState) ||
-        (d->mediaObject->player()->state() == QAVPlayer::PausedState))
+    if ((d->mediaObject->state() != QAVPlayer::PlayingState) ||
+        (d->mediaObject->state() == QAVPlayer::PausedState))
 
 #endif
 
@@ -319,7 +319,7 @@ void PresentationAudioWidget::slotPlay()
 
 #else
 
-        if (d->mediaObject->player()->state() != QAVPlayer::PlayingState)
+        if (d->mediaObject->state() != QAVPlayer::PlayingState)
 
 #endif
 
@@ -419,7 +419,7 @@ void PresentationAudioWidget::slotTimeUpdaterTimeout()
 
 #else
 
-    if (d->mediaObject->player()->mediaStatus() == QAVPlayer::InvalidMedia)
+    if (d->mediaObject->mediaStatus() == QAVPlayer::InvalidMedia)
 
 #endif
 
@@ -434,7 +434,7 @@ void PresentationAudioWidget::slotTimeUpdaterTimeout()
     int secs       = (int)((current / (qint64)1000) - (qint64)(hours * 60 + mins * 60));
     QTime elapsedTime(hours, mins, secs);
 
-    if (d->isZeroTime && d->mediaObject->duration() > 0)
+    if (d->isZeroTime && (d->mediaObject->duration() > 0))
     {
         d->isZeroTime = false;
         qint64 total  = d->mediaObject->duration();

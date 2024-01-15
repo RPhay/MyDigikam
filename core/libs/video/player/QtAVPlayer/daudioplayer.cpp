@@ -87,14 +87,29 @@ void DAudioPlayer::setSource(const QUrl& url)
     d->player->setSource(url.toLocalFile());
 }
 
-qint64 DAudioPlayer::position()
+qint64 DAudioPlayer::position() const
 {
     return d->player->position();
 }
 
-qint64 DAudioPlayer::duration()
+qint64 DAudioPlayer::duration() const
 {
     return d->player->duration();
+}
+
+void DAudioPlayer::setVolume(qreal v)
+{
+    d->audioOutput->setVolume(v);
+}
+
+QAVPlayer::State DAudioPlayer::state() const
+{
+    return d->player->state();
+}
+
+QAVPlayer::MediaStatus DAudioPlayer::mediaStatus() const
+{
+    return d->player->mediaStatus();
 }
 
 } // namespace Digikam

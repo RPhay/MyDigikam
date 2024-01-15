@@ -26,10 +26,14 @@
 #include "qavaudioframe.h"
 #include "qavaudiooutput.h"
 
+// Local includes
+
+#include "digikam_export.h"
+
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN DAudioPlayer : public QObject
+class DIGIKAM_EXPORT DAudioPlayer : public QObject
 {
     Q_OBJECT
 
@@ -38,15 +42,18 @@ public:
     explicit DAudioPlayer(QObject* const parent);
     ~DAudioPlayer();
 
-    QAVPlayer*      player()      const;
-    QAVAudioOutput* audioOutput() const;
+    QAVPlayer*      player()             const;
+    QAVAudioOutput* audioOutput()        const;
 
     void pause();
     void play();
     void stop();
     void setSource(const QUrl&);
-    qint64 position();
-    qint64 duration();
+    qint64 position()                    const;
+    qint64 duration()                    const;
+    void setVolume(qreal v);
+    QAVPlayer::State state()             const;
+    QAVPlayer::MediaStatus mediaStatus() const;
 
 Q_SIGNALS:
 
