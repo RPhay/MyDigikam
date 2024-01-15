@@ -155,8 +155,8 @@ BUGFIXES:
 136 ==> 479780 - Face tags not writing to XMP on photos taken with Android "Ultra HDR" setting.
 137 ==> 479799 - Winget package manager displays installed version as 7.9.0 instead of 8.2.0.
 138 ==> 479829 - Crash every time try to edit People Tag.
-139 ==> 
-140 ==> 
+139 ==> 479840 - System crash by entering a face marker.
+140 ==> 315323 - Allow to create Time Lapse in digiKam.
 141 ==> 
 142 ==> 
 143 ==> 

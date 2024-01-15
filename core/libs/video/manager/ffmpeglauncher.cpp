@@ -76,14 +76,14 @@ void FFmpegLauncher::encodeFrames()
              << QLatin1String("-shortest");
     }
 
-    // Normalize video luminosity.
-    // https://ffmpeg.org/ffmpeg-filters.html#normalize
+    // Egualize video luminosity.
+    // https://ffmpeg.org/ffmpeg-filters.html#tmidequalizer
 
-    if (!m_settings->normalize)
+    if (m_settings->equalize)
     {
         args << QLatin1String("-vf")
-             << QString::fromLatin1("normalize=blackpt=black:whitept=white:smoothing=%1")
-                    .arg(m_settings->smoothing);
+             << QString::fromLatin1("tmidequalizer=sigma=%1")
+                    .arg(m_settings->strength / 10.0);
     }
 
     // Video encoding
