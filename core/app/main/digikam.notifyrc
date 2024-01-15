@@ -919,7 +919,9 @@ Action=Popup
 
 [Event/MetadataRemover]
 Name=Removal of all tags from items complete
+Name[bg]=Премахването на всички етикети от елементите завърши.
 Name[ca]=S'ha completat l'eliminació de totes les etiquetes dels elements
+Name[ca@valencia]=S'ha completat l'eliminació de totes les etiquetes dels elements
 Name[eo]=Forigo de ĉiuj etikedoj el eroj finiĝis
 Name[nl]=Verwijderen van alle tags uit items is gereed
 Name[sl]=Odstranitev vseh značk iz predmetov končana
@@ -927,7 +929,9 @@ Name[tr]=Etiketlerin kaldırılması tamamlandı
 Name[uk]=Вилучення усіх міток із записів завершено
 Name[x-test]=xxRemoval of all tags from items completexx
 Comment=The removal of all tags from items has been completed.
+Comment[bg]=Премахването на всички тагове от елементите е завършено.
 Comment[ca]=S'ha completat l'eliminació de totes les etiquetes dels elements.
+Comment[ca@valencia]=S'ha completat l'eliminació de totes les etiquetes dels elements.
 Comment[eo]=La forigo de ĉiuj etikedoj el eroj finiĝis.
 Comment[nl]=Het verwijderen van alle tags uit items is gereed.
 Comment[sl]=Odstranitev vseh značk iz predmetov je bila končana.
