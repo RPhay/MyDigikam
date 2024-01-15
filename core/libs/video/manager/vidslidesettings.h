@@ -245,6 +245,8 @@ public:
     QString                           outputVideo;      ///< Target video file encoded at end.
     VidPlayer                         outputPlayer;     ///< Open video stream in player at end.
     QString                           ffmpegPath;       ///< Path to FFmpeg binary.
+    bool                              normalize;        ///< Normalize filter to applying while encoding video from frames.
+    int                               smoothing;        ///< The number of previous frames to use for temporal normalization of luminosity.
 
     // -- FFMpeg features --------
 
