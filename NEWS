@@ -98,7 +98,7 @@ BUGFIXES:
 079 ==> 479096 - Gimp xcf 2.10.36 images no longer show a preview.
 080 ==> 478900 - Preview No Longer Works. It works in 8.1.0.
 081 ==> 479137 - Face tagging - digikam crashes every time (!) when I set a rectangle to tag a face in preview ("Vorschau").
-082 ==> 479156 - Digikam crashes when I attempt to "Download&Delete all" from SD Card.
+082 ==> 479156 - digiKam crashes when I attempt to "Download&Delete all" from SD Card.
 083 ==> 479167 - digiKam 8.3 does not take into account the "aspect ratio" property.
 084 ==> 479221 - Crash on Tagging Faces (W10).
 085 ==> 479227 - Broken link on support page.
@@ -149,12 +149,12 @@ BUGFIXES:
 130 ==> 479635 - Metadata fields can no longer be accessed using the Tab key.
 131 ==> 479758 - Loss metadata from items.
 132 ==> 479704 - Nearby face tag editor fields overlap each other, making targeted editing impossible.
-133 ==> 479769 - Viewing a video locks file from being moved by DigiKam or OS, even after de-selecting the file.
+133 ==> 479769 - Viewing a video locks file from being moved by digiKam or OS, even after de-selecting the file.
 134 ==> 479768 - Select Album doesn't show all child folders.
 135 ==> 479785 - Photo rotation put some line of pixels at the wrong edge.
 136 ==> 479780 - Face tags not writing to XMP on photos taken with Android "Ultra HDR" setting.
-137 ==> 
-138 ==> 
+137 ==> 479799 - Winget package manager displays installed version as 7.9.0 instead of 8.2.0.
+138 ==> 479829 - Crash every time try to edit People Tag.
 139 ==> 
 140 ==> 
 141 ==> 
