@@ -296,7 +296,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->videoWidget->player(), SIGNAL(durationChanged(qint64)),
             this, SLOT(slotDurationChanged(qint64)));
 
-    connect(d->videoWidget->player(), SIGNAL(errorOccurred(QAVPlayer::Error, const QString&)),
+    connect(d->videoWidget->player(), SIGNAL(errorOccurred(QAVPlayer::Error,QString)),
             this, SLOT(slotHandlePlayerError(QAVPlayer::Error)));
 
     connect(d->videoWidget->player(), SIGNAL(mediaStatusChanged(QAVPlayer::MediaStatus)),
