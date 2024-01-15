@@ -157,7 +157,7 @@ BUGFIXES:
 138 ==> 479829 - Crash every time try to edit People Tag.
 139 ==> 479840 - System crash by entering a face marker.
 140 ==> 315323 - Allow to create Time Lapse in digiKam.
-141 ==> 
+141 ==> 479837 - Open with menu doesn't show any other installed app.
 142 ==> 
 143 ==> 
 144 ==> 
