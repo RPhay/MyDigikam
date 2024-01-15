@@ -158,7 +158,7 @@ BUGFIXES:
 139 ==> 479840 - System crash by entering a face marker.
 140 ==> 315323 - Allow to create Time Lapse in digiKam.
 141 ==> 479837 - Open with menu doesn't show any other installed app.
-142 ==> 
+142 ==> 479835 - Unable to modify timestamp of Sony ARW files.
 143 ==> 
 144 ==> 
 145 ==> 
