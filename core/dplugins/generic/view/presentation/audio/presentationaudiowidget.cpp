@@ -165,7 +165,17 @@ void PresentationAudioWidget::slotSetVolume(int v)
 {
     if (d->mediaObject->audioOutput())
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
+
+        d->mediaObject->audioOutput()->setVolume(v / 100.0);
+
+#else
+
         d->mediaObject->setVolume(v / 100.0);
+
+#endif
+
     }
 }
 
