@@ -79,8 +79,12 @@ void FFmpegLauncher::encodeFrames()
     // Normalize video luminosity.
     // https://ffmpeg.org/ffmpeg-filters.html#normalize
 
-    args << QLatin1String("-vf")
-         << QLatin1String("normalize=blackpt=black:whitept=white:smoothing=10");
+    if (!m_settings->normalize)
+    {
+        args << QLatin1String("-vf")
+             << QString::fromLatin1("normalize=blackpt=black:whitept=white:smoothing=%1")
+                    .arg(m_settings->smoothing);
+    }
 
     // Video encoding
 
