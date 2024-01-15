@@ -43,7 +43,9 @@ VidSlideSettings::VidSlideSettings()
       vEffect       (EffectMngr::None),
       conflictRule  (FileSaveConflictBox::OVERWRITE),
       outputDir     (QStandardPaths::writableLocation(QStandardPaths::MoviesLocation)),
-      outputPlayer  (INTERNAL)
+      outputPlayer  (INTERNAL),
+      equalize      (false),
+      strength      (5)
 {
 }
 
@@ -83,6 +85,10 @@ void VidSlideSettings::readSettings(KConfigGroup& group)
                    (int)INTERNAL);
     ffmpegPath   = group.readEntry("FFmpegPath",
                    defaultFFmpegSearchPaths().first());
+    equalize     = group.readEntry("Equalize",
+                   false);
+    strength     = group.readEntry("Strength",
+                   5);
 }
 
 void VidSlideSettings::writeSettings(KConfigGroup& group)
@@ -102,6 +108,8 @@ void VidSlideSettings::writeSettings(KConfigGroup& group)
     group.writeEntry("AudioTrack",   audioTrack);
     group.writeEntry("OutputPlayer", (int)outputPlayer);
     group.writeEntry("FFmpegPath",   ffmpegPath);
+    group.writeEntry("Equalize",     equalize);
+    group.writeEntry("Strength",     strength);
 }
 
 QSize VidSlideSettings::videoSize() const

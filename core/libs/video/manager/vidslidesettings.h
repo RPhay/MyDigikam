@@ -245,6 +245,8 @@ public:
     QString                           outputVideo;      ///< Target video file encoded at end.
     VidPlayer                         outputPlayer;     ///< Open video stream in player at end.
     QString                           ffmpegPath;       ///< Path to FFmpeg binary.
+    bool                              equalize;         ///< Equalize filter to applying while encoding video from frames.
+    int                               strength;         ///< Equalization strength factor.
 
     // -- FFMpeg features --------
 

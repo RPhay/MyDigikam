@@ -56,10 +56,14 @@ void FFmpegLauncher::encodeFrames()
     setProgram(m_settings->ffmpegPath);
     QStringList args;
 
+    // Frames input
+
     args << QLatin1String("-f")
          << QLatin1String("concat")
          << QLatin1String("-i")
          << m_settings->filesList;                                // File list of frames to encode.
+
+    // Audio input
 
     if (!m_settings->audioTrack.isEmpty())
     {
@@ -71,6 +75,18 @@ void FFmpegLauncher::encodeFrames()
              << QLatin1String("copy")                             // Do not reencode
              << QLatin1String("-shortest");
     }
+
+    // Egualize video luminosity.
+    // https://ffmpeg.org/ffmpeg-filters.html#tmidequalizer
+
+    if (m_settings->equalize)
+    {
+        args << QLatin1String("-vf")
+             << QString::fromLatin1("tmidequalizer=sigma=%1")
+                    .arg(m_settings->strength / 10.0);
+    }
+
+    // Video encoding
 
     args << QLatin1String("-b:v")                                 // Video bits-rate/
          << QString::number(m_settings->videoBitRate())

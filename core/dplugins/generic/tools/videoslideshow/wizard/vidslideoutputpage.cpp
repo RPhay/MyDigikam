@@ -24,6 +24,8 @@
 #include <QApplication>
 #include <QStyle>
 #include <QComboBox>
+#include <QCheckBox>
+#include <QSpinBox>
 #include <QGridLayout>
 #include <QStandardItemModel>
 
@@ -67,6 +69,8 @@ public:
     VidSlideSettings*    settings    = nullptr;
     QLabel*              duration    = nullptr;
     QTimer*              trigUpdate  = nullptr;
+    QCheckBox*           equalize    = nullptr;
+    QSpinBox*            strength    = nullptr;
 };
 
 VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& title)
@@ -87,6 +91,25 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     d->formatVal              = new QComboBox(main);
     d->formatVal->setEditable(false);
     formatLabel->setBuddy(d->formatVal);
+
+    // --------------------
+
+    DLineWidget* const line0    = new DLineWidget(Qt::Horizontal, main);
+    d->equalize                 = new QCheckBox(i18n("Egualize Video Luminosity"), main);
+    d->equalize->setToolTip(i18n("Apply temporal midway video equalization effect while encoding frames as video. "
+                                 "Midway Video Equalization adjusts a sequence of video frames to have the same histograms, "
+                                 "while maintaining their dynamics as much as possible. It’s useful for e.g. matching exposures "
+                                 "from a timelapse sequence."));
+
+    QLabel* const strengthLabel = new QLabel(main);
+    strengthLabel->setWordWrap(false);
+    strengthLabel->setEnabled(false);
+    strengthLabel->setText(i18n("Equalization Strength:"));
+    d->strength                 = new QSpinBox(main);
+    d->strength->setEnabled(false);
+    d->strength->setRange(0, 10);
+    d->strength->setToolTip(i18n("This controls strength of equalization. Setting this option to zero effectively does nothing."));
+    strengthLabel->setBuddy(d->strength);
 
     // --------------------
 
@@ -172,23 +195,27 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
 
     QGridLayout* const grid = new QGridLayout(main);
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(formatLabel,     0, 0, 1, 1);
     grid->addWidget(d->formatVal,    0, 1, 1, 1);
-    grid->addWidget(line1,           1, 0, 1, 2);
-    grid->addWidget(audioLabel,      2, 0, 1, 1);
-    grid->addWidget(d->audioUrl,     2, 1, 1, 1);
-    grid->addWidget(durationLabel,   3, 0, 1, 1);
-    grid->addWidget(d->duration,     3, 1, 1, 1);
-    grid->addWidget(audioNote,       4, 0, 1, 2);
-    grid->addWidget(line2,           5, 0, 1, 2);
-    grid->addWidget(fileLabel,       6, 0, 1, 1);
-    grid->addWidget(d->destUrl,      6, 1, 1, 1);
-    grid->addWidget(outputLbl,       7, 0, 1, 2);
-    grid->addWidget(d->conflictBox,  8, 0, 1, 2);
-    grid->addWidget(playerLabel,     9, 0, 1, 1);
-    grid->addWidget(d->playerVal,    9, 1, 1, 1);
-    grid->setRowStretch(10, 10);
+    grid->addWidget(line0,           1, 0, 1, 2);
+    grid->addWidget(d->equalize,     2, 0, 1, 2);
+    grid->addWidget(strengthLabel,   3, 0, 1, 1);
+    grid->addWidget(d->strength,     3, 1, 1, 1);
+    grid->addWidget(line1,           4, 0, 1, 2);
+    grid->addWidget(audioLabel,      5, 0, 1, 1);
+    grid->addWidget(d->audioUrl,     5, 1, 1, 1);
+    grid->addWidget(durationLabel,   6, 0, 1, 1);
+    grid->addWidget(d->duration,     6, 1, 1, 1);
+    grid->addWidget(audioNote,       7, 0, 1, 2);
+    grid->addWidget(line2,           8, 0, 1, 2);
+    grid->addWidget(fileLabel,       9, 0, 1, 1);
+    grid->addWidget(d->destUrl,      9, 1, 1, 1);
+    grid->addWidget(outputLbl,      10, 0, 1, 2);
+    grid->addWidget(d->conflictBox, 11, 0, 1, 2);
+    grid->addWidget(playerLabel,    12, 0, 1, 1);
+    grid->addWidget(d->playerVal,   12, 1, 1, 1);
+    grid->setRowStretch(13, 10);
 
     setPageWidget(main);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("folder-video")));
@@ -207,6 +234,12 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
 
     connect(d->audioUrl, SIGNAL(signalUrlSelected(QUrl)),
             this, SLOT(slotTriggerUpdate()));
+
+    connect(d->equalize, SIGNAL(toggled(bool)),
+            strengthLabel, SLOT(setEnabled(bool)));
+
+    connect(d->equalize, SIGNAL(toggled(bool)),
+            d->strength, SLOT(setEnabled(bool)));
 }
 
 VidSlideOutputPage::~VidSlideOutputPage()
@@ -252,6 +285,8 @@ void VidSlideOutputPage::initializePage()
     d->destUrl->setFileDlgPath(d->settings->outputDir);
     d->conflictBox->setConflictRule(d->settings->conflictRule);
     d->playerVal->setCurrentIndex(d->settings->outputPlayer);
+    d->equalize->setChecked(d->settings->equalize);
+    d->strength->setValue(d->settings->strength);
 }
 
 bool VidSlideOutputPage::validatePage()
@@ -266,6 +301,8 @@ bool VidSlideOutputPage::validatePage()
     d->settings->audioTrack   = d->audioUrl->fileDlgPath();
     d->settings->conflictRule = d->conflictBox->conflictRule();
     d->settings->outputPlayer = (VidSlideSettings::VidPlayer)d->playerVal->currentIndex();
+    d->settings->equalize     = d->equalize->isChecked();
+    d->settings->strength     = d->strength->value();
 
     return true;
 }

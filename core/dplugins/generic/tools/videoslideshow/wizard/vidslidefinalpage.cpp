@@ -127,12 +127,6 @@ void VidSlideFinalPage::slotProcess()
     d->progressView->addEntry(i18n("%1 input images to process", d->settings->inputImages.count()),
                                   DHistoryView::ProgressEntry);
 
-    Q_FOREACH (const QUrl& url, d->settings->inputImages)
-    {
-        d->progressView->addEntry(QDir::toNativeSeparators(url.toLocalFile()),
-                                  DHistoryView::ProgressEntry);
-    }
-
     d->progressBar->setMinimum(0);
 
     // NOTE: last stage is FFmpeg encoding.
