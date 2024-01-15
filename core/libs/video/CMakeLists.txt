@@ -60,6 +60,7 @@ if(ENABLE_MEDIAPLAYER)
         # NOTE: this part depends of QtAVPlayer
 
         set(libvideotools_SRCS
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/QtAVPlayer/daudioplayer.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/player/QtAVPlayer/dvideowidget.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/player/QtAVPlayer/mediaplayerview.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/player/QtAVPlayer/slidevideo.cpp

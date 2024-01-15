@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2024-01-14
- * Description : QtAVPlayer integration class.
+ * Description : QtAVPlayer video integration class.
  *
  * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
