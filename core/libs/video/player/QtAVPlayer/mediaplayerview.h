@@ -62,7 +62,7 @@ private Q_SLOTS:
 
     void slotPlayerStateChanged(QAVPlayer::State newState);
     void slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus);
-    void slotHandlePlayerError(QAVPlayer::Error err);
+    void slotHandlePlayerError(QAVPlayer::Error err, const QString&);
     void slotThemeChanged();
 
     /// Slidebar slots

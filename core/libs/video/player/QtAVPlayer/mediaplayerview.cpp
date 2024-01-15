@@ -297,7 +297,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
             this, SLOT(slotDurationChanged(qint64)));
 
     connect(d->videoWidget->player(), SIGNAL(errorOccurred(QAVPlayer::Error,QString)),
-            this, SLOT(slotHandlePlayerError(QAVPlayer::Error)));
+            this, SLOT(slotHandlePlayerError(QAVPlayer::Error,QString)));
 
     connect(d->videoWidget->player(), SIGNAL(mediaStatusChanged(QAVPlayer::MediaStatus)),
             this, SLOT(slotMediaStatusChanged(QAVPlayer::MediaStatus)));
@@ -689,10 +689,10 @@ void MediaPlayerView::slotPosition(int position)
     }
 }
 
-void MediaPlayerView::slotHandlePlayerError(QAVPlayer::Error err)
+void MediaPlayerView::slotHandlePlayerError(QAVPlayer::Error /*err*/, const QString& message)
 {
     setPreviewMode(Private::ErrorView);
-    qCDebug(DIGIKAM_GENERAL_LOG) << "QtAVPlayer Error: " << err;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "QtAVPlayer Error: " << message;
 }
 
 } // namespace Digikam
