@@ -18,6 +18,7 @@
 // Qt includes
 
 #include <QObject>
+#include <QUrl>
 
 // QtAVPlayer includes
 
@@ -39,6 +40,13 @@ public:
 
     QAVPlayer*      player()      const;
     QAVAudioOutput* audioOutput() const;
+
+    void pause();
+    void play();
+    void stop();
+    void setSource(const QUrl&);
+    qint64 position();
+    qint64 duration();
 
 Q_SIGNALS:
 

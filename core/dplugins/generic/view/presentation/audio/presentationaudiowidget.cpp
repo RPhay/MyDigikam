@@ -163,23 +163,10 @@ PresentationAudioWidget::~PresentationAudioWidget()
 
 void PresentationAudioWidget::slotSetVolume(int v)
 {
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
-
     if (d->mediaObject->audioOutput())
     {
         d->mediaObject->audioOutput()->setVolume(v / 100.0);
     }
-
-#else
-
-    if (d->mediaObject->audioOutput())
-    {
-        d->mediaObject->audioOutput()->setVolume((qreal)v / 100.0);
-    }
-
-#endif
-
 }
 
 bool PresentationAudioWidget::canHide() const
@@ -196,7 +183,7 @@ bool PresentationAudioWidget::isPaused() const
 
 #else
 
-    return (d->mediaObject->player()->state() === QAVPlayer::PausedState)
+    return (d->mediaObject->player()->state() == QAVPlayer::PausedState);
 
 #endif
 
@@ -320,7 +307,7 @@ void PresentationAudioWidget::slotPlay()
 #else
 
     if ((d->mediaObject->player()->state() != QAVPlayer::PlayingState) ||
-        (d->mediaObject->player()->state() == QAVPlayer::PausedState)
+        (d->mediaObject->player()->state() == QAVPlayer::PausedState))
 
 #endif
 
@@ -337,34 +324,14 @@ void PresentationAudioWidget::slotPlay()
 #endif
 
         {
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
-
             d->mediaObject->setSource(d->urlList[d->currIndex]);
-
-#else
-
-            d->mediaObject->setSource(d->urlList[d->currIndex].toLocalFile());
-
-#endif
-
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Playing:" << d->urlList[d->currIndex];
             d->mediaObject->play();
             setZeroTime();
         }
         else
         {
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
-
             d->mediaObject->pause();
-
-#else
-
-            d->mediaObject->player()->pause();
-
-#endif
-
         }
 
         d->canHide = true;
@@ -531,7 +498,7 @@ void PresentationAudioWidget::slotPlayerStateChanged(QMediaPlayer::PlaybackState
 
 void PresentationAudioWidget::slotMediaStateChanged(QAVPlayer::MediaStatus status)
 {
-    if (d->playingNext && (status == QAVPlayer::PlayingState))
+    if (status == QAVPlayer::EndOfMedia)
     {
         slotNext();
     }

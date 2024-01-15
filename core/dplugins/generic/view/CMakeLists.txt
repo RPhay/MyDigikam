@@ -4,8 +4,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-# TODO : QtAVPlayer
-#add_subdirectory(presentation)
+add_subdirectory(presentation)
 
 add_subdirectory(slideshow)
 

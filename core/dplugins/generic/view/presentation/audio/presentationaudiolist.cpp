@@ -43,6 +43,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dmetadata.h"
 
 namespace DigikamGenericPresentationPlugin
 {
@@ -90,8 +91,6 @@ PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, 
     connect(d->mediaObject, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotPlayerError(QMediaPlayer::Error)));
 
-    d->mediaObject->setSource(url);
-
 #else
 
     d->mediaObject = new DAudioPlayer(this);
@@ -105,11 +104,9 @@ PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, 
     connect(d->mediaObject->player(), SIGNAL(errorOccurred(QAVPlayer::Error,QString)),
             this, SLOT(slotPlayerError(QAVPlayer::Error,QString)));
 
-    d->mediaObject->setSource(url.toLocalFile());
-    d->mediaObject->load();
-
 #endif
 
+    d->mediaObject->setSource(url);
 }
 
 PresentationAudioListItem::~PresentationAudioListItem()
@@ -210,9 +207,10 @@ void PresentationAudioListItem::slotDurationChanged(qint64 duration)
     int secs     = (int)((duration / (long int)1000) - (long int)(hours * 60 * 60) - (long int)(mins * 60));
     d->totalTime = QTime(hours, mins, secs);
 
-    QHash<QString, QString> meta = d->mediaObject->statistics().metadata;
-    d->artist    = meta.value(QLatin1String("artist"));
-    d->title     = meta.value(QLatin1String("title"));
+    DMetadata meta;
+    meta.load(d->url.toLocalFile());
+    d->artist    = meta.getXmpTagString("Xmp.xmpDM.artist");
+    d->title     = meta.getXmpTagString("Xmp.xmpDM.Title");
 
     if ( d->artist.isEmpty() && d->title.isEmpty() )
     {

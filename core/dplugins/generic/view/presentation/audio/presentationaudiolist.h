@@ -43,6 +43,8 @@
 
 #   include "daudioplayer.h"
 
+using namespace Digikam;
+
 #endif
 
 namespace DigikamGenericPresentationPlugin

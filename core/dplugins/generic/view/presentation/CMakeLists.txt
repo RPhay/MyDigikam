@@ -95,8 +95,8 @@ if(HAVE_MEDIAPLAYER)
 
     set(presentationplugin_SRCS
         ${presentationplugin_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/audio/presentationaudiolist.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/audio/presentation_audiopage.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/audio/presentationaudiolist.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/audio/presentationaudiowidget.cpp
     )
 

@@ -67,6 +67,36 @@ void DAudioPlayer::slotAudioFrame(const QAVAudioFrame& frame)
     Q_EMIT positionChanged(d->player->position());
 }
 
+void DAudioPlayer::pause()
+{
+    d->player->pause();
+}
+
+void DAudioPlayer::play()
+{
+    d->player->play();
+}
+
+void DAudioPlayer::stop()
+{
+    d->player->stop();
+}
+
+void DAudioPlayer::setSource(const QUrl& url)
+{
+    d->player->setSource(url.toLocalFile());
+}
+
+qint64 DAudioPlayer::position()
+{
+    return d->player->position();
+}
+
+qint64 DAudioPlayer::duration()
+{
+    return d->player->duration();
+}
+
 } // namespace Digikam
 
 #include "moc_daudioplayer.cpp"
