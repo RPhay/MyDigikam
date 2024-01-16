@@ -2,11 +2,11 @@ RESUME
 ------
 Scripts to build binary digiKam package for MacOS
 
-These scripts build a binary digiKam package for MacOS using Macports 
+These scripts build a binary digiKam package for MacOS using Macports
 environment and Packages application.
 
 These scripts follow instructions from Qt bundle deployment for MacOS as shared libraries
-available at this url: http://doc.qt.io/qt-5/osx-deployment.html
+available at this url: https://doc.qt.io/qt-5/osx-deployment.html
 
 
 AUTHORS
@@ -138,10 +138,7 @@ All scripts should be run from within the digikam-package directory.
 * 01-build-macports.sh:
 
 This script downloads and configures a custom non-root install
-of MacPorts to /opt/digikam.org._arch_. The PKG will install to the same place,
-avoiding the confusion associated with relocation and install_name_tool. The
-custom location, as opposed to /opt/local, should allow digiKam to co-exist
-with a standard Macports installation
+of MacPorts to /opt/digikam.org._arch_.
 
 * 02-build-extralibs.sh:
 
