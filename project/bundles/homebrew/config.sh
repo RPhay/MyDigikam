@@ -50,7 +50,7 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
 elif [[ $ARCH_TARGET = "arm64" ]] ; then
 
     # Apple Silicon is supported since macOS BigSur
-    OSX_MIN_TARGET="11.0"
+    OSX_MIN_TARGET="11.3"
 
 else
 
