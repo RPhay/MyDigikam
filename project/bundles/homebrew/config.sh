@@ -50,7 +50,7 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
 elif [[ $ARCH_TARGET = "arm64" ]] ; then
 
     # Apple Silicon is supported since macOS BigSur
-    OSX_MIN_TARGET="11.0"
+    OSX_MIN_TARGET="11.3"
 
 else
 
@@ -59,10 +59,8 @@ else
 
 fi
 
-# Directory to build and install Macports packages.
-INSTALL_PREFIX="/opt/digikam.org.$ARCH_TARGET"
-# Local install prefix which do not require sudo right
-#INSTALL_PREFIX="`pwd`/digikam.org.$ARCH_TARGET"
+# Directory to build and install HomeBrew packages.
+INSTALL_PREFIX="/opt/homebrew"
 
 # Directory where target bundle contents will be installed.
 RELOCATE_PREFIX="/Applications/digiKam.org"
@@ -89,10 +87,6 @@ DK_KP_VERSION="5.27.8"
 # See official release here: https://download.kde.org/stable/release-service/
 DK_KA_VERSION="23.08.1"
 
-# KDE KF5 frameworks version.
-# See official release here: https://download.kde.org/stable/frameworks/
-DK_KDE_VERSION="5.110"
-
 # Qt version to use in bundle and provided by Macports.
 DK_QTVERSION="6"
 
@@ -118,4 +112,18 @@ DK_SIGN=0
 # Upload automatically bundle to files.kde.org (pre-release only).
 DK_UPLOAD=1
 DK_UPLOADURL="digikam@tinami.kde.org"
-DK_UPLOADDIR="/srv/archives/files/digikam/"
+
+# KDE frameworks version + Upload URL.
+# See official release here: https://download.kde.org/stable/frameworks/
+
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    DK_KDE_VERSION="5.113"
+    DK_UPLOADDIR="/srv/archives/files/digikam/"
+
+else
+
+    DK_KDE_VERSION="master"                                 # Qt6 version use master code for the moment.
+    DK_UPLOADDIR="/srv/archives/files/digikam/unstable"     # Qt6 version is considerated unstable for the moment.
+
+fi

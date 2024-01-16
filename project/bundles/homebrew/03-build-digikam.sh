@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Script to build digiKam using MacPorts
+# Script to build digiKam using HomeBrew
 # This script must be run as sudo
 #
 # SPDX-FileCopyrightText: 2015-2024 by Gilles Caulier  <caulier dot gilles at gmail dot com>
@@ -24,7 +24,7 @@ exec > >(tee ./logs/build-digikam.full.log) 2>&1
 
 #################################################################################################
 
-echo "03-build-digikam.sh : build digiKam using MacPorts."
+echo "03-build-digikam.sh : build digiKam using HomeBrew."
 echo "---------------------------------------------------"
 
 #################################################################################################
@@ -45,7 +45,7 @@ OsxCodeName
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
-export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/qt5/bin:$ORIG_PATH
+export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/opt/qt6/bin:/$INSTALL_PREFIX/opt/bison/bin:$ORIG_PATH
 
 #################################################################################################
 # Install out-dated dependencies

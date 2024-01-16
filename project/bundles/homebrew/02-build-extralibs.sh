@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Script to build extra libraries using MacPorts env.
+# Script to build extra libraries using HomeBrew
 # This script must be run as sudo
 #
 # SPDX-FileCopyrightText: 2015-2024 by Gilles Caulier  <caulier dot gilles at gmail dot com>
@@ -24,7 +24,7 @@ exec > >(tee ./logs/build-extralibs.full.log) 2>&1
 
 #################################################################################################
 
-echo "02-build-extralibs.sh : build extra libraries using MacPorts."
+echo "02-build-extralibs.sh : build extra libraries using HomeBrew."
 echo "-------------------------------------------------------------"
 
 #################################################################################################
@@ -45,7 +45,7 @@ OsxCodeName
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
-export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/qt5/bin:$ORIG_PATH
+export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/opt/qt6/bin:/$INSTALL_PREFIX/opt/bison/bin:$ORIG_PATH
 
 #################################################################################################
 
@@ -74,7 +74,7 @@ cmake $ORIG_WD/../3rdparty \
 
 # NOTE: The order to compile each component here is very important.
 
-# core KF5 frameworks dependencies
+# core KF6 frameworks dependencies
 cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kconfig             -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_breeze-icons        -- -j$CPU_CORES
