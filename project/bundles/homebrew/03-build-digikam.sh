@@ -54,22 +54,22 @@ cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
 
-cmake $ORIG_WD/../3rdparty \
-       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
-       -DINSTALL_ROOT=$INSTALL_PREFIX \
-       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-       -DKP_VERSION=$DK_KP_VERSION \
-       -DKA_VERSION=$DK_KA_VERSION \
-       -DKDE_VERSION=$DK_KDE_VERSION \
-       -DENABLE_QTVERSION=$DK_QTVERSION \
-       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
-       -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
-       -Wno-dev
+#cmake $ORIG_WD/../3rdparty \
+#       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
+#       -DINSTALL_ROOT=$INSTALL_PREFIX \
+#       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+#       -DKP_VERSION=$DK_KP_VERSION \
+#       -DKA_VERSION=$DK_KA_VERSION \
+#       -DKDE_VERSION=$DK_KDE_VERSION \
+#       -DENABLE_QTVERSION=$DK_QTVERSION \
+#       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+#       -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
+#       -Wno-dev
 
-cmake --build . --config RelWithDebInfo --target ext_exiv2   -- -j$CPU_CORES
-cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
-cmake --build . --config RelWithDebInfo --target ext_lensfun -- -j$CPU_CORES
-cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
+#cmake --build . --config RelWithDebInfo --target ext_exiv2   -- -j$CPU_CORES
+#cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
+#cmake --build . --config RelWithDebInfo --target ext_lensfun -- -j$CPU_CORES
+#cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 
 #################################################################################################
 # Build digiKam in temporary directory and installation
@@ -140,6 +140,7 @@ sed -e "s/DIGIKAMSC_COMPILE_PO=OFF/DIGIKAMSC_COMPILE_PO=ON/g"   ./bootstrap.macp
 sed -e "s/DBUILD_TESTING=ON/DBUILD_TESTING=OFF/g"               ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
 sed -e "s/DENABLE_DBUS=ON/DENABLE_DBUS=OFF/g"                   ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
 sed -e "s/DENABLE_APPSTYLES=OFF/DENABLE_APPSTYLES=ON/g"         ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
+sed -e "s/DBUILD_WITH_QT6=OFF/DBUILD_WITH_QT6=ON/g"             ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
 
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
 
@@ -153,7 +154,7 @@ cp -f $ORIG_WD/fixbundledatapath.sh $DK_BUILDTEMP/digikam-$DK_VERSION
 
 ./fixbundledatapath.sh
 
-./bootstrap.macports "$INSTALL_PREFIX" "Debug" "x86_64" "-Wno-dev"
+./bootstrap.macports "$INSTALL_PREFIX" "Debug" "arm64" "-Wno-dev"
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot configure digiKam $DK_VERSION."

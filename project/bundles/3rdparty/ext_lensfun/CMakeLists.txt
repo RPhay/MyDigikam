@@ -74,7 +74,7 @@ elseif (APPLE)
                           cd <SOURCE_DIR> &&
                           <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} lensfun &&
                           cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_lensfun} RelWithDebInfo x86_64 ${BASH_OPTIONS}
+                          <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_lensfun} RelWithDebInfo ${CMAKE_HOST_SYSTEM_PROCESSOR} ${BASH_OPTIONS}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 

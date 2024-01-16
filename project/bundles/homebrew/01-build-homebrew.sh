@@ -140,7 +140,9 @@ brew install \
              opencv \
              imagemagick \
              jpeg-xl \
-             libavif
+             libavif \
+             exiv2 \
+             lensfun
 
 echo -e "\n"
 
