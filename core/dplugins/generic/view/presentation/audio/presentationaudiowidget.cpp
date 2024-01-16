@@ -172,7 +172,7 @@ void PresentationAudioWidget::slotSetVolume(int v)
 
 #else
 
-        d->mediaObject->setVolume(v / 100.0);
+        d->videoWidget->setVolume((qreal)v / 100.0);
 
 #endif
 
