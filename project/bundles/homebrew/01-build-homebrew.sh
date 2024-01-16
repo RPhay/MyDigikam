@@ -138,7 +138,9 @@ brew install \
              qt \
              qt-mariadb \
              opencv \
-             imagemagick
+             imagemagick \
+             jpeg-xl \
+             libavif
 
 echo -e "\n"
 
@@ -162,19 +164,18 @@ cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
 
-cmake $ORIG_WD/../3rdparty \
-       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
-       -DINSTALL_ROOT=$INSTALL_PREFIX \
-       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-       -DKA_VERSION=$DK_KA_VERSION \
-       -DKP_VERSION=$DK_KP_VERSION \
-       -DKDE_VERSION=$DK_KDE_VERSION \
-       -DENABLE_QTVERSION=$DK_QTVERSION \
-       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
-       -Wno-dev
-
-cmake --build . --config RelWithDebInfo --target ext_libjxl      -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_libavif     -- -j$CPU_CORES
+#cmake $ORIG_WD/../3rdparty \
+#       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
+#       -DINSTALL_ROOT=$INSTALL_PREFIX \
+#       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+#       -DKA_VERSION=$DK_KA_VERSION \
+#       -DKP_VERSION=$DK_KP_VERSION \
+#       -DKDE_VERSION=$DK_KDE_VERSION \
+#       -DENABLE_QTVERSION=$DK_QTVERSION \
+#       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+#       -Wno-dev
+#
+#cmake --build . --config RelWithDebInfo --target ext_libjxl      -- -j$CPU_CORES
 
 #################################################################################################
 
