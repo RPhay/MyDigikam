@@ -67,13 +67,6 @@ INSTALL_PREFIX="/opt/digikam.org.$ARCH_TARGET"
 # Directory where target bundle contents will be installed.
 RELOCATE_PREFIX="/Applications/digiKam.org"
 
-# HomeBrew configuration
-HB_URL="https://distfiles.macports.org/MacPorts/"
-MP_BUILDTEMP=~/mptemp
-
-# Uncomment this line to force a specific version of Macports to use, else latest will be used.
-#MP_VERSION="2.3.3"
-
 ########################################################################
 
 # URL to git repository to checkout digiKam source code
@@ -101,18 +94,7 @@ DK_KA_VERSION="23.08.1"
 DK_KDE_VERSION="5.110"
 
 # Qt version to use in bundle and provided by Macports.
-DK_QTVERSION="5"
-
-# Mariadb version to install for Qt QSL plugin.
-# Left empty to use current 5.x from Macports
-DK_MARIADB_VERSION=""
-#DK_MARIADB_VERSION="10.5"
-
-if [[ ! -z "$DK_MARIADB_VERSION" ]] ; then
-    MP_MARIADB_VARIANT="+mariadb$DK_MARIADB_VERSION"
-    MP_MARIADB_VARIANT=${MP_MARIADB_VARIANT//./_}
-    MARIADB_SUFFIX="-$DK_MARIADB_VERSION"
-fi
+DK_QTVERSION="6"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags

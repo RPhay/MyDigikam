@@ -2,11 +2,11 @@ RESUME
 ------
 Scripts to build binary digiKam package for MacOS
 
-These scripts build a binary digiKam package for MacOS using Macports 
+These scripts build a binary digiKam package for MacOS using HomeBrew
 environment and Packages application.
 
 These scripts follow instructions from Qt bundle deployment for MacOS as shared libraries
-available at this url: http://doc.qt.io/qt-5/osx-deployment.html
+available at this url: https://doc.qt.io/qt-6/macos-deployment.html
 
 
 AUTHORS
@@ -99,12 +99,12 @@ This Github project have been tested to install automatically BigSur in VirtualB
 
 https://github.com/myspaghetti/macos-virtualbox
 
-The scripts build digiKam with MacPorts, so you will need Xcode and the other
-prerequisites for Macports.
+The scripts build digiKam with HomeBrew, so you will need Xcode and the other
+prerequisites for HomeBrew.
 
-See this url for details: http://guide.macports.org/#installing.xcode.
+See this url for details: https://docs.brew.sh/Xcode.
 
-For all other Macports requirement, see http://www.macports.org/install.php.
+For all other HomeBrew requirements, see https://docs.brew.sh/Installation.
 
 You will also need to install Packages software which does the actual packaging of the files needed to install digiKam:
 
@@ -127,7 +127,7 @@ Use these scripts at your own risk. For example, both scripts contain
 COMPONENTS
 ----------
 There are 4 main scripts to be run by the user. 2 first ones installs
-MacPorts and all dependencies, next one digiKam, and last one makes a
+HomeBrew and all dependencies, next one digiKam, and last one makes a
 PKG binary installer for MacOS using Packages.
 
 
@@ -135,28 +135,25 @@ SCRIPT DESCRIPTIONS
 -------------------
 All scripts should be run from within the digikam-package directory.
 
-* 01-build-macports.sh:
+* 01-build-homebrew.sh:
 
 This script downloads and configures a custom non-root install
-of MacPorts to /opt/digikam.org._arch_. The PKG will install to the same place,
-avoiding the confusion associated with relocation and install_name_tool. The
-custom location, as opposed to /opt/local, should allow digiKam to co-exist
-with a standard Macports installation
+of HomeBrew to /opt/homebrew.
 
 * 02-build-extralibs.sh:
 
-This script configures, and compile a custom non-root install to /opt/digikam.org._arch_
-of extra libraries, including KF5 frameworks, and most important photo management
+This script configures, and compile a custom non-root install to /opt/homebrew
+of extra libraries, including KF6 frameworks, and most important photo management
 libs used by digiKam as Exiv2 and LensFun.
 
 * 03-build-digikam.sh:
 
 This script configures, and compile a custom non-root install of digiKam to
-/opt/digikam.org._arch_.
+/opt/homebrew.
 
 * 04-build-installer.sh:
 
-Once you've successfully built digiKam, /opt/digikam.org._arch_ may contain over 10GB of files.
+Once you've successfully built digiKam, /opt/homebrew may contain over 10GB of files.
 This script grabs the ~250MB needed to run digiKam and Showfoto,
 and places them in ./installer/opt. These include applications documentations
 and translations.
@@ -171,7 +168,7 @@ The launcher applications:
         +debug variant.
 
 This script also create the pre-install and post-install scripts that are run
-when the package is installed. They delete any pre-existing /opt/digikam.org._arch_,
+when the package is installed. They delete any pre-existing /opt/homebrew,
 delete and recreate /Applications/digiKam.org.
 
 Finally, this script sets the version number, and runs Packages to
