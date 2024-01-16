@@ -280,7 +280,6 @@ port install \
              libxml2 \
              libxslt \
              libical \
-             lensfun \
              bison \
              py38-lxml \
              x265 \
