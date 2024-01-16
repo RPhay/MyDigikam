@@ -46,7 +46,7 @@ OsxCodeName
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
-export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/qt6/bin:$ORIG_PATH
+export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/opt/qt6/bin:$ORIG_PATH
 
 #################################################################################################
 # Check if a previous bundle already exist
