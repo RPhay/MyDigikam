@@ -59,10 +59,8 @@ else
 
 fi
 
-# Directory to build and install Macports packages.
-INSTALL_PREFIX="/opt/digikam.org.$ARCH_TARGET"
-# Local install prefix which do not require sudo right
-#INSTALL_PREFIX="`pwd`/digikam.org.$ARCH_TARGET"
+# Directory to build and install HomeBrew packages.
+INSTALL_PREFIX="/opt/homebrew"
 
 # Directory where target bundle contents will be installed.
 RELOCATE_PREFIX="/Applications/digiKam.org"

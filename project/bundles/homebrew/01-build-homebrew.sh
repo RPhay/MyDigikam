@@ -10,7 +10,7 @@
 #
 
 # Ask to run as root
-(( EUID != 0 )) && exec sudo -- "$0" "$@"
+#(( EUID != 0 )) && exec sudo -- "$0" "$@"
 
 # Halt and catch errors
 set -eE
@@ -34,7 +34,7 @@ echo "--------------------------------------------------------------------------
 . ./config.sh
 . ./common.sh
 StartScript
-ChecksRunAsRoot
+#ChecksRunAsRoot
 ChecksXCodeCLI
 ChecksCPUCores
 OsxCodeName
@@ -47,37 +47,6 @@ ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
 export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/qt6/bin:$ORIG_PATH
-
-#################################################################################################
-# Check if /opt exists and standard HomeBrew install path
-
-if [ -d "/opt" ] ; then
-
-    if [ -d "/opt/homebrew" ] ; then
-
-        echo "---------- A standard HomeBrew install exists on /opt/homebrew."
-        echo "           To prevent wrong links from this bundle to this repository"
-        echo "           this one must be disabled (moving to /opt/homebrew.back for ex)."
-        echo "---------- Aborting..."
-        exit;
-
-    fi
-
-else
-
-    echo "---------- /opt do not exist, creating"
-
-    mkdir "/opt"
-
-    if [ $? -ne 0 ] ; then
-
-        echo "---------- Cannot create /opt directory."
-        echo "---------- Aborting..."
-        exit;
-
-    fi
-
-fi
 
 #################################################################################################
 # Check if a previous bundle already exist
@@ -109,21 +78,6 @@ if [ -d "$INSTALL_PREFIX" ] ; then
 fi
 
 if [[ $CONTINUE_INSTALL == 0 ]]; then
-
-    #################################################################################################
-    # Target directory creation
-
-    echo "---------- Creating $INSTALL_PREFIX"
-
-    mkdir -p "$INSTALL_PREFIX"
-
-    if [ $? -ne 0 ] ; then
-
-         echo "---------- Cannot create target install directory $INSTALL_PREFIX"
-         echo "---------- Aborting..."
-         exit;
-
-    fi
 
     #################################################################################################
     # Install HomeBrew
