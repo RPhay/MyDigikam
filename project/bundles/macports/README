@@ -104,7 +104,7 @@ prerequisites for Macports.
 
 See this url for details: https://guide.macports.org/#installing.xcode.
 
-For all other Macports requirement, see https://www.macports.org/install.php.
+For all other Macports requirements, see https://www.macports.org/install.php.
 
 You will also need to install Packages software which does the actual packaging of the files needed to install digiKam:
 
