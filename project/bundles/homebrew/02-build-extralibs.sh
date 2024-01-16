@@ -45,7 +45,7 @@ OsxCodeName
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
-export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/opt/qt6/bin:/$INSTALL_PREFIX/opt/bison/bin:$ORIG_PATH
+export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/opt/qt6/bin:/$INSTALL_PREFIX/opt/bison/bin:/$INSTALL_PREFIX/opt/gperf/bin:$ORIG_PATH
 
 #################################################################################################
 
@@ -92,10 +92,16 @@ cmake --build . --config RelWithDebInfo --target ext_kguiaddons          -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_kwidgetsaddons      -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kitemviews          -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kcompletion         -- -j$CPU_CORES
+
+if [[ $DK_QTVERSION == 6 ]] ; then
+
+    cmake --build . --config RelWithDebInfo --target ext_kcolorscheme           -- -j$CPU_CORES
+
+fi
+
 cmake --build . --config RelWithDebInfo --target ext_kconfigwidgets      -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kiconthemes         -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kservice            -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_kglobalaccel        -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kxmlgui             -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
