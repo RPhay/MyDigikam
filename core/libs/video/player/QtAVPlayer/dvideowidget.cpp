@@ -144,7 +144,7 @@ void DVideoWidget::slotAudioFrame(const QAVAudioFrame& frame)
 
 void DVideoWidget::slotVideoFrame(const QAVVideoFrame& frame)
 {
-    if (d->videoRender->m_surface == nullptr)
+    if (!d->videoRender->m_surface)
     {
         return;
     }
