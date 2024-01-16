@@ -24,7 +24,7 @@ exec > >(tee ./logs/build-extralibs.full.log) 2>&1
 
 #################################################################################################
 
-echo "02-build-extralibs.sh : build extra libraries using MacPorts."
+echo "02-build-extralibs.sh : build extra libraries using HomeBrew."
 echo "-------------------------------------------------------------"
 
 #################################################################################################
