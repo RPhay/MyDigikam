@@ -119,6 +119,7 @@ brew install \
              boost \
              eigen \
              gettext \
+             gperf \
              libusb \
              libgphoto2 \
              jasper \
