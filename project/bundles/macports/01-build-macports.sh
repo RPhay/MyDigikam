@@ -256,13 +256,7 @@ echo -e "\n"
 
 if [[ $ARCH_TARGET = "x86_64" ]] ; then
 
-    # Note: subversion is used to checkout translations from KDE repositories.
-    # Subversion do not compile under arm64 and XCode drop svn supports.
-    # KDE team plan to migrate svn to git: https://phabricator.kde.org/T13514
-
-    port install \
-                 ld64 +ld64_xcode \
-                 subversion
+    port install ld64 +ld64_xcode
 
 fi
 
