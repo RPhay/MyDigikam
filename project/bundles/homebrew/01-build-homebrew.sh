@@ -156,8 +156,6 @@ echo "---------- Building digiKam dependencies with Macports"
 
 echo -e "\n"
 
-echo -e "MariaDB Variant=$MP_MARIADB_VARIANT\n"
-
 brew install \
              cmake \
              ccache \
