@@ -96,7 +96,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     // --------------------
 
     DLineWidget* const line0    = new DLineWidget(Qt::Horizontal, main);
-    d->equalize                 = new QCheckBox(i18n("Egualize Video Luminosity"), main);
+    d->equalize                 = new QCheckBox(i18n("Equalize Video Luminosity"), main);
 
     QLabel* const strengthLabel = new QLabel(main);
     strengthLabel->setWordWrap(false);
