@@ -90,16 +90,13 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     formatLabel->setText(i18n("Media Container Format:"));
     d->formatVal              = new QComboBox(main);
     d->formatVal->setEditable(false);
+    d->formatVal->setToolTip(i18n("This controls allows to choose the format of the media container to host video stream and soundtrack."));
     formatLabel->setBuddy(d->formatVal);
 
     // --------------------
 
     DLineWidget* const line0    = new DLineWidget(Qt::Horizontal, main);
     d->equalize                 = new QCheckBox(i18n("Egualize Video Luminosity"), main);
-    d->equalize->setToolTip(i18n("Apply temporal midway video equalization effect while encoding frames as video. "
-                                 "Midway Video Equalization adjusts a sequence of video frames to have the same histograms, "
-                                 "while maintaining their dynamics as much as possible. It’s useful for e.g. matching exposures "
-                                 "from a timelapse sequence."));
 
     QLabel* const strengthLabel = new QLabel(main);
     strengthLabel->setWordWrap(false);
@@ -110,6 +107,13 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     d->strength->setRange(0, 10);
     d->strength->setToolTip(i18n("This controls strength of equalization. Setting this option to zero effectively does nothing."));
     strengthLabel->setBuddy(d->strength);
+
+    QLabel* const equalNote     = new QLabel(main);
+    equalNote->setWordWrap(true);
+    equalNote->setText(i18n("<i>These settings apply temporal midway video equalization effect while "
+                            "encoding frames as video. This adjusts the sequence of frames to have "
+                            "the same histograms, while maintaining their dynamics as much as possible. "
+                            "It’s useful for e.g. matching exposures from a timelapse sequence.</i>"));
 
     // --------------------
 
@@ -124,7 +128,6 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     d->audioUrl->setFileDlgOptions(QFileDialog::ReadOnly);
     d->audioUrl->setFileDlgFilter(QLatin1String("*.mp3 *.ogg *.wav *.flac *.m4a"));
     d->audioUrl->setFileDlgTitle(i18nc("@title:window", "Select Audio Track"));
-    d->audioUrl->lineEdit()->setPlaceholderText(i18n("Video soundtrack (lets empty if none)"));
     audioLabel->setBuddy(d->audioUrl);
 
     QLabel* const durationLabel = new QLabel(i18n("Soundtrack Duration:"), main);
@@ -133,7 +136,8 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     QLabel* const audioNote     = new QLabel(main);
     audioNote->setWordWrap(true);
     audioNote->setText(i18n("<i>Notes about soundtrack: if the audio length is smaller than video, it will be "
-                            "played in loop. If the audio length is largest than video, it will be trimmed.</i>"));
+                            "played in loop. If the audio length is largest than video, it will be trimmed. "
+                            "Lets empty this setting if you don't want a sountrack to the media.</i>"));
 
     DLineWidget* const line2 = new DLineWidget(Qt::Horizontal, main);
 
@@ -202,20 +206,21 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     grid->addWidget(d->equalize,     2, 0, 1, 2);
     grid->addWidget(strengthLabel,   3, 0, 1, 1);
     grid->addWidget(d->strength,     3, 1, 1, 1);
-    grid->addWidget(line1,           4, 0, 1, 2);
-    grid->addWidget(audioLabel,      5, 0, 1, 1);
-    grid->addWidget(d->audioUrl,     5, 1, 1, 1);
-    grid->addWidget(durationLabel,   6, 0, 1, 1);
-    grid->addWidget(d->duration,     6, 1, 1, 1);
-    grid->addWidget(audioNote,       7, 0, 1, 2);
-    grid->addWidget(line2,           8, 0, 1, 2);
-    grid->addWidget(fileLabel,       9, 0, 1, 1);
-    grid->addWidget(d->destUrl,      9, 1, 1, 1);
-    grid->addWidget(outputLbl,      10, 0, 1, 2);
-    grid->addWidget(d->conflictBox, 11, 0, 1, 2);
-    grid->addWidget(playerLabel,    12, 0, 1, 1);
-    grid->addWidget(d->playerVal,   12, 1, 1, 1);
-    grid->setRowStretch(13, 10);
+    grid->addWidget(equalNote,       4, 0, 1, 2);
+    grid->addWidget(line1,           5, 0, 1, 2);
+    grid->addWidget(audioLabel,      6, 0, 1, 1);
+    grid->addWidget(d->audioUrl,     6, 1, 1, 1);
+    grid->addWidget(durationLabel,   7, 0, 1, 1);
+    grid->addWidget(d->duration,     7, 1, 1, 1);
+    grid->addWidget(audioNote,       8, 0, 1, 2);
+    grid->addWidget(line2,           9, 0, 1, 2);
+    grid->addWidget(fileLabel,      10, 0, 1, 1);
+    grid->addWidget(d->destUrl,     10, 1, 1, 1);
+    grid->addWidget(outputLbl,      11, 0, 1, 2);
+    grid->addWidget(d->conflictBox, 12, 0, 1, 2);
+    grid->addWidget(playerLabel,    13, 0, 1, 1);
+    grid->addWidget(d->playerVal,   13, 1, 1, 1);
+    grid->setRowStretch(14, 10);
 
     setPageWidget(main);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("folder-video")));

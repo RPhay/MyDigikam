@@ -3,7 +3,7 @@
 # Script to build a bundle Macports installation with all digiKam dependencies in a dedicated directory
 # This script must be run as sudo
 #
-# SPDX-FileCopyrightText: 2015      by Shanti, <listaccount at revenant dot org>
+# SPDX-FileCopyrightText: 2015      by Shanti <listaccount at revenant dot org>
 # SPDX-FileCopyrightText: 2015-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -256,13 +256,7 @@ echo -e "\n"
 
 if [[ $ARCH_TARGET = "x86_64" ]] ; then
 
-    # Note: subversion is used to checkout translations from KDE repositories.
-    # Subversion do not compile under arm64 and XCode drop svn supports.
-    # KDE team plan to migrate svn to git: https://phabricator.kde.org/T13514
-
-    port install \
-                 ld64 +ld64_xcode \
-                 subversion
+    port install ld64 +ld64_xcode
 
 fi
 
@@ -286,7 +280,6 @@ port install \
              libxml2 \
              libxslt \
              libical \
-             lensfun \
              bison \
              py38-lxml \
              x265 \
