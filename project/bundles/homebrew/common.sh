@@ -73,14 +73,14 @@ fi
 ChecksMacports()
 {
 
-which port
+which brew
 
 if [[ $? -ne 0 ]]; then
-    echo "Macports is not installed"
-    echo "See http://www.macports.org/install.php for details."
+    echo "HomeBrew is not installed"
+    echo "See https://docs.brew.sh/Installation for details."
     exit 1
 else
-    echo "Check Macports passed..."
+    echo "Check HomeBrew passed..."
 fi
 
 }
@@ -183,6 +183,14 @@ elif [[ $MAJOR_OSX_VERSION == "11" ]]
 
 elif [[ $MAJOR_OSX_VERSION == "12" ]]
     then OSX_CODE_NAME="Monterey"
+fi
+
+elif [[ $MAJOR_OSX_VERSION == "13" ]]
+    then OSX_CODE_NAME="Ventura"
+fi
+
+elif [[ $MAJOR_OSX_VERSION == "14" ]]
+    then OSX_CODE_NAME="Sonoma"
 fi
 
 echo -e "---------- Detected OSX version $MAJOR_OSX_VERSION.$MINOR_OSX_VERSION and code name $OSX_CODE_NAME"

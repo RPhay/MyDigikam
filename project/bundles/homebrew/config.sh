@@ -16,7 +16,7 @@ BUILDING_DIR="`pwd`/temp.build"
 ########################################################################
 
 # Target macOS architecture: "x86_64" for Intel 64 bits, or "arm64" for Apple Silicon 64 bits.
-ARCH_TARGET="x86_64"
+ARCH_TARGET="arm64"
 
 if [[ $ARCH_TARGET = "x86_64" ]] ; then
 
@@ -67,8 +67,8 @@ INSTALL_PREFIX="/opt/digikam.org.$ARCH_TARGET"
 # Directory where target bundle contents will be installed.
 RELOCATE_PREFIX="/Applications/digiKam.org"
 
-# Macports configuration
-MP_URL="https://distfiles.macports.org/MacPorts/"
+# HomeBrew configuration
+HB_URL="https://distfiles.macports.org/MacPorts/"
 MP_BUILDTEMP=~/mptemp
 
 # Uncomment this line to force a specific version of Macports to use, else latest will be used.
