@@ -143,6 +143,7 @@ brew install \
              imagemagick \
              jpeg-xl \
              libavif \
+             fftw \
              exiv2 \
              lensfun
 
