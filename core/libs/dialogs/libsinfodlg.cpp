@@ -82,7 +82,7 @@
 #       pragma clang diagnostic pop
 #   endif
 
-#   if defined(Q_CC_GNU)
+#   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #       pragma GCC diagnostic pop
 #   endif
 
