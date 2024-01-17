@@ -246,7 +246,7 @@ if(APPLE)
 
 endif()
 
-install(TARGETS  showfoto                                                      ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS  showfoto                                                      DESTINATION ${KDE_INSTALL_BINDIR})
 install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.showfoto.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})
 install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.showfoto.appdata.xml DESTINATION ${KDE_INSTALL_FULL_METAINFODIR})
 install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotoui5.rc               DESTINATION ${KDE_INSTALL_FULL_KXMLGUIDIR}/showfoto)

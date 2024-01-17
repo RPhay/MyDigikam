@@ -122,7 +122,7 @@ if(ImageMagick_Magick++_FOUND)
 
 endif()
 
-install(TARGETS digikam ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS digikam DESTINATION ${KDE_INSTALL_BINDIR})
 
 if(APPLE)
     install(FILES "$<TARGET_FILE:digikam>.dSYM" DESTINATION "${CMAKE_INSTALL_BINDIR}" CONFIGURATIONS Debug RelWithDebInfo)
