@@ -108,8 +108,8 @@ cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$C
 
 # Extra support for digiKam
 
-cmake --build . --config RelWithDebInfo --target ext_sonnet                     -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_ktextwidgets               -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_sonnet              -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_ktextwidgets        -- -j$CPU_CORES
 
 # libksane support
 #cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
