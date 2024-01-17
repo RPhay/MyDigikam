@@ -303,7 +303,7 @@ done
 
 # Move Qt translation data files at the right place in the bundle. See Bug #438701.
 
-mv -v $TEMPROOT/libexec/qt5/translations $TEMPROOT/digikam.app/Contents/Resources/
+mv -v $TEMPROOT/opt/qt6/share/qt/translations $TEMPROOT/digikam.app/Contents/Resources/
 
 # To support localized system menu entries from MacOS. See bug #432650.
 
@@ -325,8 +325,11 @@ cd "$ORIG_WD"
 #################################################################################################
 # Move digiKam and KF6 run-time plugins to the right place
 
-cp -a $TEMPROOT/lib/plugins $TEMPROOT/libexec/qt6/
-rm -rf $TEMPROOT/lib/plugins
+mkdir -p $TEMPROOT/libexec/qt6/
+cp -a  $TEMPROOT/share/qt/plugins         $TEMPROOT/libexec/qt6/
+rm -rf $TEMPROOT/share/qt/plugins
+cp -a  $TEMPROOT/opt/qt6/share/qt/plugins $TEMPROOT/libexec/qt6/
+rm -rf $TEMPROOT/opt/qt6/share/qt/plugins
 
 #################################################################################################
 # Merge Manifest files
