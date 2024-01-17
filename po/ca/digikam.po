@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 01:36+0000\n"
-"PO-Revision-Date: 2024-01-11 15:55+0100\n"
+"POT-Creation-Date: 2024-01-17 01:37+0000\n"
+"PO-Revision-Date: 2024-01-16 18:26+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17638,7 +17638,7 @@ msgstr "Carpeta de destinació:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:149
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -20226,13 +20226,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "Seleccioneu el format preferit en exportar la impressió com a imatge."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:144
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:148
 #, kde-format
 msgid "Destination folder:"
 msgstr "Carpeta de destinació:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:150
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:154
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20921,70 +20921,92 @@ msgstr "Executable del FFmpeg"
 msgid "Media Container Format:"
 msgstr "Format del contenidor multimèdia:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:98
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
 #, kde-format
-msgid "Egualize Video Luminosity"
+msgid ""
+"This controls allows to choose the format of the media container to host "
+"video stream and soundtrack."
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
-#, kde-format
-msgid ""
-"Apply temporal midway video equalization effect while encoding frames as "
-"video. Midway Video Equalization adjusts a sequence of video frames to have "
-"the same histograms, while maintaining their dynamics as much as possible. "
-"It’s useful for e.g. matching exposures from a timelapse sequence."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Egualize Video Luminosity"
+msgid "Equalize Video Luminosity"
+msgstr "Equalitza la lluminositat del vídeo"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Equalization Strength:"
-msgstr ""
+msgstr "Intensitat de l'equalització:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:111
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:108
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
+"Això controla la intensitat de l'equalització. Posant aquesta opció a zero "
+"no fa res."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
+#, fuzzy, kde-format
+#| msgid ""
+#| "Apply temporal midway video equalization effect while encoding frames as "
+#| "video. Midway Video Equalization adjusts a sequence of video frames to "
+#| "have the same histograms, while maintaining their dynamics as much as "
+#| "possible. It’s useful for e.g. matching exposures from a timelapse "
+#| "sequence."
+msgid ""
+"<i>These settings apply temporal midway video equalization effect while "
+"encoding frames as video. This adjusts the sequence of frames to have the "
+"same histograms, while maintaining their dynamics as much as possible. It’s "
+"useful for e.g. matching exposures from a timelapse sequence.</i>"
+msgstr ""
+"Aplica un efecte temporal d'equalització del vídeo de mig camí mentre es fa "
+"la codificació dels fotogrames com a vídeo. L'equalització de vídeo a mig "
+"camí ajusta una seqüència de fotogrames de vídeo per a tenir els mateixos "
+"histogrames, mentre es manté la seva dinàmica tant com sigui possible. És "
+"útil, p. ex., per a fer joc exposicions a partir d'una seqüència de filmació "
+"a intervals."
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "Fitxer de la pista de so:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:126
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Selecció de la pista d'àudio"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:127
-#, kde-format
-msgid "Video soundtrack (lets empty if none)"
-msgstr "Pista de so del vídeo (deixeu-ho buit si no n'hi ha)"
-
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "Durada de la pista de so:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:135
-#, kde-format
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:138
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
+#| "will be played in loop. If the audio length is largest than video, it "
+#| "will be trimmed.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed.</i>"
+"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"media.</i>"
 msgstr ""
 "<i>Notes sobre la pista de so: si la longitud de l'àudio és menor que el "
 "vídeo, es reproduirà en bucle. Si la longitud de l'àudio és més gran que el "
 "vídeo, es retallarà.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:156
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "El nom del fitxer de sortida de vídeo es generarà automàticament."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:163
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
 #, kde-format
 msgid "Open in Player:"
 msgstr "Obre al reproductor:"
@@ -21002,6 +21024,11 @@ msgid ""
 "show the same frame in the video. The result will depend of the number of "
 "frames per second used to encode the media."
 msgstr ""
+"Aquest valor repeteix una imatge en la seqüència. En crear la filmació a "
+"intervals és habitual utilitzar 1. Normalment, el nombre de fotogrames "
+"determinarà el temps a mostrar el mateix fotograma en el vídeo. El resultat "
+"dependrà del nombre de fotogrames per segon utilitzats per a codificar els "
+"elements multimèdia."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:96
 #, kde-format
@@ -21024,11 +21051,16 @@ msgid "Effect While Displaying Images"
 msgstr "Efecte en mostrar imatges"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:184
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>An effect is an visual panning or zooming applied while an image is "
+#| "displayed. The effect duration will follow the number of frames used to "
+#| "render the image on video stream.</i>"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream.</i>"
+"render the image on video stream. For a timelapse, let's this settings to "
+"None.</i>"
 msgstr ""
 "<i>Un efecte és una panoràmica o un zoom visual aplicat mentre es visualitza "
 "una imatge. La durada de l'efecte seguirà el nombre de fotogrames emprats "
@@ -21040,11 +21072,15 @@ msgid "Transition Between Images"
 msgstr "Transició entre imatges"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>A transition is an visual effect applied between two images. For some "
+#| "effects, the duration can depend of random values and can change while "
+#| "the slideshow.</i>"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow.</i>"
+"slideshow. For a timelapse, let's this settings to None.</i>"
 msgstr ""
 "<i>Una transició és un efecte visual aplicat entre dues imatges. Per a "
 "alguns efectes, la durada pot dependre de valors aleatoris i pot canviar "
@@ -68265,6 +68301,9 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
+
+#~ msgid "Video soundtrack (lets empty if none)"
+#~ msgstr "Pista de so del vídeo (deixeu-ho buit si no n'hi ha)"
 
 #~ msgid "Preparing %1 Done"
 #~ msgstr "S'ha fet la preparació de %1"

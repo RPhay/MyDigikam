@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 01:36+0000\n"
+"POT-Creation-Date: 2024-01-17 01:37+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -17665,7 +17665,7 @@ msgstr "Zielordner:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:149
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -20256,13 +20256,13 @@ msgstr ""
 "soll."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:144
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:148
 #, kde-format
 msgid "Destination folder:"
 msgstr "Zielordner:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:150
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:154
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20952,39 +20952,46 @@ msgstr "Programmdatei"
 msgid "Media Container Format:"
 msgstr "Format des Mediencontainers:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:98
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
 #, kde-format
-msgid "Egualize Video Luminosity"
+msgid ""
+"This controls allows to choose the format of the media container to host "
+"video stream and soundtrack."
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
 #, kde-format
-msgid ""
-"Apply temporal midway video equalization effect while encoding frames as "
-"video. Midway Video Equalization adjusts a sequence of video frames to have "
-"the same histograms, while maintaining their dynamics as much as possible. "
-"It’s useful for e.g. matching exposures from a timelapse sequence."
+msgid "Equalize Video Luminosity"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Equalization Strength:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:111
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:108
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
+#, kde-format
+msgid ""
+"<i>These settings apply temporal midway video equalization effect while "
+"encoding frames as video. This adjusts the sequence of frames to have the "
+"same histograms, while maintaining their dynamics as much as possible. It’s "
+"useful for e.g. matching exposures from a timelapse sequence.</i>"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
 #, fuzzy, kde-format
 #| msgid "Soundtrack:"
 msgid "Soundtrack File:"
 msgstr "Begleitmusik:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:126
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
 #, fuzzy, kde-format
 #| msgctxt "@option"
 #| msgid "Audio track"
@@ -20992,31 +20999,27 @@ msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Audiospur"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:127
-#, kde-format
-msgid "Video soundtrack (lets empty if none)"
-msgstr ""
-
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
 #, fuzzy, kde-format
 #| msgid "Soundtrack:"
 msgid "Soundtrack Duration:"
 msgstr "Begleitmusik:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:135
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:138
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed.</i>"
+"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"media.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:156
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Der Name der Videoausgabedatei wird automatisch generiert."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:163
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
 #, kde-format
 msgid "Open in Player:"
 msgstr "In Wiedergabeprogramm öffnen:"
@@ -21056,11 +21059,16 @@ msgid "Effect While Displaying Images"
 msgstr "Effekt bei der Anzeige von Bildern"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:184
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>An effect is an visual panning or zooming applied while an image is "
+#| "displayed. The effect duration will follow the number of frames used to "
+#| "render the image on video stream.</i>"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream.</i>"
+"render the image on video stream. For a timelapse, let's this settings to "
+"None.</i>"
 msgstr ""
 "<i>Ein Effekt ist ein visuelles Schwenken oder Zoomen des Bildes während der "
 "Anzeige. Die Effektdauer hängt von der Anzahl der Video-Bilder ab, die für "
@@ -21072,11 +21080,15 @@ msgid "Transition Between Images"
 msgstr "Übergang zwischen Bildern"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>A transition is an visual effect applied between two images. For some "
+#| "effects, the duration can depend of random values and can change while "
+#| "the slideshow.</i>"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow.</i>"
+"slideshow. For a timelapse, let's this settings to None.</i>"
 msgstr ""
 "<i>Ein Übergang ist ein visueller Effekt zwischen zwei Bildern. Die Dauer "
 "einiger Effekte hängt von Zufallswerten ab und kann sich auch während der "

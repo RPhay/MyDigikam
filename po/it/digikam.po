@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 01:36+0000\n"
-"PO-Revision-Date: 2024-01-06 23:48+0100\n"
+"POT-Creation-Date: 2024-01-17 01:37+0000\n"
+"PO-Revision-Date: 2024-01-11 18:34+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -17701,7 +17701,7 @@ msgstr "Cartella di destinazione:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:149
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -20282,13 +20282,13 @@ msgstr ""
 "immagine."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:144
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:148
 #, kde-format
 msgid "Destination folder:"
 msgstr "Cartella di destinazione:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:150
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:154
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20921,7 +20921,7 @@ msgstr "La presentazione video non è stata completata"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:180
 #, kde-format
 msgid "See the video encoding trace below"
-msgstr ""
+msgstr "Vedi la traccia della codifica video sotto"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:185
 #, kde-format
@@ -20977,71 +20977,77 @@ msgstr "Eseguibile FFmpeg"
 msgid "Media Container Format:"
 msgstr "Formato del contenitore multimediale:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:98
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
 #, kde-format
-msgid "Egualize Video Luminosity"
+msgid ""
+"This controls allows to choose the format of the media container to host "
+"video stream and soundtrack."
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
 #, kde-format
-msgid ""
-"Apply temporal midway video equalization effect while encoding frames as "
-"video. Midway Video Equalization adjusts a sequence of video frames to have "
-"the same histograms, while maintaining their dynamics as much as possible. "
-"It’s useful for e.g. matching exposures from a timelapse sequence."
+msgid "Equalize Video Luminosity"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Equalization Strength:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:111
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:108
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
-msgid "Soundtrack File:"
-msgstr "Traccia audio:"
-
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Audio track"
-msgctxt "@title:window"
-msgid "Select Audio Track"
-msgstr "Traccia audio"
-
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:127
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
 #, kde-format
-msgid "Video soundtrack (lets empty if none)"
+msgid ""
+"<i>These settings apply temporal midway video equalization effect while "
+"encoding frames as video. This adjusts the sequence of frames to have the "
+"same histograms, while maintaining their dynamics as much as possible. It’s "
+"useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
-msgid "Soundtrack Duration:"
-msgstr "Traccia audio:"
-
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:135
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
 #, kde-format
+msgid "Soundtrack File:"
+msgstr "File della traccia audio:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Audio Track"
+msgstr "Seleziona la traccia audio "
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
+#, kde-format
+msgid "Soundtrack Duration:"
+msgstr "Durata della traccia audio:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:138
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
+#| "will be played in loop. If the audio length is largest than video, it "
+#| "will be trimmed.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed.</i>"
+"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"media.</i>"
 msgstr ""
+"<i>Note sulla traccia audio: se la lunghezza della traccia audio è inferiore "
+"a quella video, allora verrà riprodotta di continuo. Se invece è superiore a "
+"quella video, verrà tagliata.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:156
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Il nome file del video risultante sarà generato automaticamente."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:163
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
 #, kde-format
 msgid "Open in Player:"
 msgstr "Apri nel riproduttore:"
@@ -21081,11 +21087,16 @@ msgid "Effect While Displaying Images"
 msgstr "Effetto durante la visualizzazione delle immagini"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:184
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>An effect is an visual panning or zooming applied while an image is "
+#| "displayed. The effect duration will follow the number of frames used to "
+#| "render the image on video stream.</i>"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream.</i>"
+"render the image on video stream. For a timelapse, let's this settings to "
+"None.</i>"
 msgstr ""
 "<i>Un effetto è un movimento o uno zoom visivo applicato durante la "
 "visualizzazione dell'immagine. La durata dell'effetto segue il numero dei "
@@ -21098,11 +21109,15 @@ msgid "Transition Between Images"
 msgstr "Transizione tra le immagini"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>A transition is an visual effect applied between two images. For some "
+#| "effects, the duration can depend of random values and can change while "
+#| "the slideshow.</i>"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow.</i>"
+"slideshow. For a timelapse, let's this settings to None.</i>"
 msgstr ""
 "<i>Una transizione è un effetto visivo applicato tra due immagini. Per "
 "alcuni effetti, la durata può dipendere da valori casuali e può cambiare "
@@ -41721,35 +41736,29 @@ msgid "Default from Desktop"
 msgstr "Predefinito dal desktop"
 
 #: core/libs/video/manager/vidslidetask.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Generating files for \"%1\""
+#, kde-format
 msgid "Generating frames from %1 Done"
-msgstr "Generazione dei file per «%1»"
+msgstr "Generazione dei fotogrammi da %1 Fatto"
 
 #: core/libs/video/manager/vidslidethread.cpp:63
-#, fuzzy, kde-format
-#| msgid "Cannot create a temporary directory"
+#, kde-format
 msgid "Error while creating temporary directory %1!"
-msgstr "Impossibile creare la cartella temporanea"
+msgstr "Errore nella creazione della cartella temporanea %1."
 
 #: core/libs/video/manager/vidslidethread.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Loading cameras..."
+#, kde-format
 msgid "Encoding frames..."
-msgstr "Caricamento delle fotocamere..."
+msgstr "Codifica dei fotogrammi..."
 
 #: core/libs/video/manager/vidslidethread.cpp:133
 #, kde-format
 msgid "Encoding done."
-msgstr ""
+msgstr "Codifica eseguita."
 
 #: core/libs/video/manager/vidslidethread.cpp:137
-#, fuzzy, kde-format
-#| msgid "Error while opening the source database."
+#, kde-format
 msgid "Error while encoding frames!"
-msgstr "Errore nell'apertura dell'origine della banca dati. "
+msgstr "Errore nella codifica dei fotogrammi."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -67015,7 +67024,7 @@ msgstr "Usa mappe di pixel con risoluzione High DPI"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:83
 #, kde-format
 msgid "Force use of software OpenGL rendering"
-msgstr ""
+msgstr "Forza l'uso del software OpenGL per la resa"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:84
 #, kde-format
@@ -67331,14 +67340,7 @@ msgstr "Chiave delle API:"
 
 # VM - Typo: Develomepent >>> Development
 #: core/utilities/setup/setupgeolocation.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Google Maps requires to work friendly an API key that end users must buy "
-#| "online to gain credentials. Without this key, Google Maps is still usable "
-#| "but with an overlay frame annotated \"For Development Only\". For more "
-#| "information, see this <a href='https://mapsplatform.google.com/"
-#| "pricing/'>Google page</a> about usages, practices, and prices."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "To work friendly, Google Maps requires an API key that end users must buy "
@@ -68287,6 +68289,9 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Vuoi riportare tutte le impostazioni video al valore predefinito?"
+
+#~ msgid "Video soundtrack (lets empty if none)"
+#~ msgstr "Traccia audio del video (lascia vuoto se non è presente)"
 
 #~ msgid "Preparing %1 Done"
 #~ msgstr "Preparazione %1 fatto"
