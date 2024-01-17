@@ -20,9 +20,6 @@
 
 #include "abstractthemeparameter.h"
 
-class QWidget;
-class QString;
-
 namespace DigikamGenericHtmlGalleryPlugin
 {
 

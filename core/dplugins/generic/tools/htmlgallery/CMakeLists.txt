@@ -61,10 +61,10 @@ set(htmlgalleryplugin_SRCS
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    HtmlGallery
                            SOURCES ${htmlgalleryplugin_SRCS}
-                           DEPENDS ${LIBXSLT_EXSLT_LIBRARIES}
+                           DEPENDS Qt${QT_VERSION_MAJOR}::Concurrent
+                                   ${LIBXSLT_EXSLT_LIBRARIES}
                                    ${LIBXSLT_LIBRARIES}
                                    ${LIBXML2_LIBRARIES}
-                                   Qt${QT_VERSION_MAJOR}::Concurrent
 )
 
 install(DIRECTORY themes DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/)
