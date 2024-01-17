@@ -76,8 +76,8 @@ bin \
 
 # Other apps - non-MacOS binaries & libraries to be included with required dylibs
 OTHER_APPS="\
-share/qt/plugins/imageformats/*.so \
-share/qt/plugins/styles/*.so \
+share/qt/plugins/imageformats/*.dylib \
+share/qt/plugins/styles/* \
 share/qt/plugins/digikam/bqm/*.so \
 share/qt/plugins/digikam/generic/*.so \
 share/qt/plugins/digikam/editor/*.so \
@@ -89,11 +89,11 @@ opt/mariadb/bin/my_print_defaults \
 opt/mariadb/bin/mysqladmin \
 opt/mariadb/bin/mysqltest \
 opt/mariadb/lib/*.dylib \
-lib/mariadb/lib/plugin/*.so \
+opt/mariadb/lib/plugin/*.so \
 bin/kbuildsycoca6 \
 bin/solid-hardware6 \
 bin/ffmpeg \
-opt/qt-mariadb/share/qt/plugins/*.dylib \
+opt/qt-mariadb/share/qt/plugins/sqldrivers/*.dylib \
 opt/qt6/share/qt/plugins/sqldrivers/*.dylib \
 opt/qt6/share/qt/plugins/imageformats/*.dylib \
 opt/qt6/share/qt/plugins/platforms/*.dylib \
