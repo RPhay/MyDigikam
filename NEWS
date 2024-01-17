@@ -161,7 +161,7 @@ BUGFIXES:
 142 ==> 479835 - Unable to modify timestamp of Sony ARW files.
 143 ==> 479693 - Group-photo selector for Tags/Slideshows.
 144 ==> 479853 - Under Windows 10 it's not allow me to save a collection.
-145 ==> 
+145 ==> 479949 - Reverse Geo Coding does not write (anymore) geo metadata into XMP fields for jpeg from a Google Pixel 5.
 146 ==> 
 147 ==> 
 148 ==> 
