@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 
 # Script to list recursive dylib dependencies for binaries/dylibs passed as arguments.
 # Modified from https://github.com/mixxxdj/mixxx/blob/master/build/osx/otool.py.
@@ -19,10 +19,10 @@ import argparse
 def system(s):
     "wrap system() to give us feedback on what it's doing"
     "anything using this call should be fixed to use SCons's declarative style (once you figure that out, right nick?)"
-    print s,
+    print(s, end=' ')
     sys.stdout.flush() # ignore line buffering.
     result = os.system(s)
-    print
+    print()
     return result
 
 # ---------------------------------------------------------------
@@ -37,12 +37,9 @@ LOCAL_FRAMEWORKS  = [
                        "/Network/Library/Frameworks"
 ]
 
-LOCAL_LIBPATH = filter(lambda x:
-    os.path.isdir(x),
-    ["/usr/local/lib",
+LOCAL_LIBPATH = [x for x in ["/usr/local/lib",
      "/opt/local/lib",
-     "/sw/local/lib"]
-)
+     "/sw/local/lib"] if os.path.isdir(x)]
 
 # However
 FRAMEWORKS = LOCAL_FRAMEWORKS + SYSTEM_FRAMEWORKS
@@ -183,4 +180,4 @@ for dep in sys.argv[1:]:
 depset = set(deplist)
 
 for dep in depset:
-   print dep
+   print(dep)
