@@ -210,8 +210,6 @@ cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
 
-mv -f $INSTALL_PREFIX/libexec/qt6/plugins/digikam/editor/*.so* $INSTALL_PREFIX/share/qt/plugins/digikam/editor/
-
 #################################################################################################
 
 export PATH=$ORIG_PATH
