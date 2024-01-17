@@ -163,7 +163,7 @@ BUGFIXES:
 144 ==> 479853 - Under Windows 10 it's not allow me to save a collection.
 145 ==> 479949 - Reverse Geo Coding does not write (anymore) geo metadata into XMP fields for jpeg from a Google Pixel 5.
 146 ==> 479852 - Select all photos when exporting an album.
-147 ==> 
+147 ==> 479939 - Import album with geo location.
 148 ==> 
 149 ==> 
 150 ==> 
