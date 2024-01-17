@@ -72,6 +72,7 @@
 #       pragma clang diagnostic push
 #       pragma clang diagnostic ignored "-Wignored-qualifiers"
 #       pragma clang diagnostic ignored "-Wkeyword-macro"
+#       pragma clang diagnostic ignored "-Wzero-as-null-pointer-constant"
 #   endif
 
 #   include <Magick++.h>
@@ -113,6 +114,7 @@ extern "C"
 #   pragma clang diagnostic ignored "-Wundef"
 #   pragma clang diagnostic ignored "-Wgnu-anonymous-struct"
 #   pragma clang diagnostic ignored "-Wnested-anon-types"
+#   pragma clang diagnostic ignored "-Wzero-as-null-pointer-constant"
 #endif
 
 #ifdef HAVE_X265
