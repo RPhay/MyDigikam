@@ -37,7 +37,7 @@ bool XMLWriter::open(const QString& name)
 
     if (rc < 0)
     {
-        m_writer.assign(0);
+        m_writer.assign(nullptr);
 
         return false;
     }
@@ -54,7 +54,9 @@ XMLWriter::operator xmlTextWriterPtr() const
 
 void XMLWriter::writeElement(const char* element, const QString& value)
 {
-    int rc = xmlTextWriterWriteElement(m_writer, BAD_CAST element, BAD_CAST value.toUtf8().data());
+    int rc = xmlTextWriterWriteElement(m_writer,
+                                       BAD_CAST element,
+                                       BAD_CAST value.toUtf8().data());
 
     if (rc < 0)
     {
@@ -98,10 +100,13 @@ void XMLAttributeList::append(const QString& key, int value)
 
 // ------------------------------------------------------
 
-XMLElement::XMLElement(XMLWriter& writer, const QString& element, const XMLAttributeList* attributeList)
+XMLElement::XMLElement(XMLWriter& writer,
+                       const QString& element,
+                       const XMLAttributeList* attributeList)
     : m_writer(writer)
 {
-    int rc = xmlTextWriterStartElement(writer, BAD_CAST element.toLatin1().data());
+    int rc = xmlTextWriterStartElement(writer,
+                                       BAD_CAST element.toLatin1().data());
 
     if (rc < 0)
     {

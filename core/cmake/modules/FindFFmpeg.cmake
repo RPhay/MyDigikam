@@ -78,12 +78,12 @@ MACRO(find_component _component _pkgconfig _library _header)
 
     IF(PKG_CONFIG_FOUND)
 
-		MESSAGE(STATUS "Use PkgConfig to check FFMPEG ${_component} availability...")
+        MESSAGE(STATUS "Use PkgConfig to check FFMPEG ${_component} availability...")
         pkg_check_modules(PC_${_component} ${_pkgconfig})
 
-	ELSE()
-	
-		MESSAGE(WARNING "PkgConfig not found!")
+    ELSE()
+
+        MESSAGE(WARNING "PkgConfig not found!")
 
     ENDIF()
 

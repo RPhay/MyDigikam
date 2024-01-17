@@ -118,7 +118,9 @@ brew install \
              libtiff \
              boost \
              eigen \
+             mesa \
              gettext \
+             gperf \
              libusb \
              libgphoto2 \
              jasper \
@@ -140,7 +142,10 @@ brew install \
              opencv \
              imagemagick \
              jpeg-xl \
-             libavif
+             libavif \
+             fftw \
+             exiv2 \
+             lensfun
 
 echo -e "\n"
 

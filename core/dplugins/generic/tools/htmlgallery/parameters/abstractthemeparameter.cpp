@@ -15,11 +15,6 @@
 
 #include "abstractthemeparameter.h"
 
-// Qt include
-
-#include <QByteArray>
-#include <QString>
-
 // KDE includes
 
 #include <kconfiggroup.h>

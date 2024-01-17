@@ -72,6 +72,7 @@
 #       pragma clang diagnostic push
 #       pragma clang diagnostic ignored "-Wignored-qualifiers"
 #       pragma clang diagnostic ignored "-Wkeyword-macro"
+#       pragma clang diagnostic ignored "-Wzero-as-null-pointer-constant"
 #   endif
 
 #   include <Magick++.h>
@@ -82,7 +83,7 @@
 #       pragma clang diagnostic pop
 #   endif
 
-#   if defined(Q_CC_GNU)
+#   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #       pragma GCC diagnostic pop
 #   endif
 
@@ -96,7 +97,19 @@ extern "C"
 #endif
 
 #ifdef HAVE_JASPER
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic push
+#       pragma clang diagnostic ignored "-Werror"
+#       pragma clang diagnostic ignored "-Wundef"
+#   endif
+
 #   include <jasper/jas_version.h>
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic pop
+#   endif
+
 #endif
 
 #include <png.h>
@@ -113,6 +126,7 @@ extern "C"
 #   pragma clang diagnostic ignored "-Wundef"
 #   pragma clang diagnostic ignored "-Wgnu-anonymous-struct"
 #   pragma clang diagnostic ignored "-Wnested-anon-types"
+#   pragma clang diagnostic ignored "-Wzero-as-null-pointer-constant"
 #endif
 
 #ifdef HAVE_X265

@@ -16,9 +16,11 @@
 #ifndef DIGIKAM_ABSTRACT_THEME_PARAMETER_H
 #define DIGIKAM_ABSTRACT_THEME_PARAMETER_H
 
-class QByteArray;
-class QString;
-class QWidget;
+// Qt includes
+
+#include <QByteArray>
+#include <QString>
+#include <QWidget>
 
 class KConfigGroup;
 
