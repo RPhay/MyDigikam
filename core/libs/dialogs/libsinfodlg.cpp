@@ -97,7 +97,19 @@ extern "C"
 #endif
 
 #ifdef HAVE_JASPER
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic push
+#       pragma clang diagnostic ignored "-Werror"
+#       pragma clang diagnostic ignored "-Wundef"
+#   endif
+
 #   include <jasper/jas_version.h>
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic pop
+#   endif
+
 #endif
 
 #include <png.h>
