@@ -24,7 +24,7 @@ QAction* ContextMenuHelper::exec(const QPoint& pos, QAction* const at)
 
     Q_FOREACH (DPluginAction* const ac, d->exportPluginActions())
     {
-        ac->setData(false);
+        ac->setData((int)DPluginAction::NoData);
     }
 
     if (choice)

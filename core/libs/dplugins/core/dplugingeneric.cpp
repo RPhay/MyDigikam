@@ -61,7 +61,7 @@ DInfoInterface* DPluginGeneric::infoIface(QObject* const ac) const
         if (gui)
         {
             DInfoInterface* const iface = gui->infoIface(pac);
-            iface->forceAlbumSelection  = pac->data().toBool();
+            iface->forceAlbumSelection  = (pac->data().toInt() == DPluginAction::AlbumData);
 
             return iface;
         }

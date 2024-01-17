@@ -108,7 +108,7 @@ void ContextMenuHelper::addExportMenu()
     {
         Q_FOREACH (DPluginAction* const ac, actions)
         {
-            ac->setData(true);
+            ac->setData((int)DPluginAction::AlbumData);
             menuExport->addActions(QList<QAction*>() << ac);
         }
     }
