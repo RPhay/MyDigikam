@@ -22,6 +22,18 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
                     ${CMAKE_CURRENT_SOURCE_DIR}/wizard
 )
 
+if(NOT APPLE)
+
+    include_directories(${LIBXSLT_INCLUDE_DIR}
+                        ${LIBXML2_INCLUDE_DIR}
+    )
+
+    add_definitions(${LIBXSLT_DEFINITIONS}
+                    ${LIBXML2_DEFINITIONS}
+    )
+
+endif()
+
 set(htmlgalleryplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/parameters/abstractthemeparameter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/parameters/intthemeparameter.cpp
