@@ -123,7 +123,7 @@ PresentationAudioWidget::PresentationAudioWidget(QWidget* const parent, const QL
             this, SLOT(slotPlayerError(QMediaPlayer::Error)));
 
     connect(d->mediaObject, SIGNAL(positionChanged(qint64)),
-            this, SLOT(slotTimeUpdaterTimeout()));
+            this, SLOT(slotTimeUpdaterTimeout(qint64)));
 
 #else
 
@@ -132,14 +132,14 @@ PresentationAudioWidget::PresentationAudioWidget(QWidget* const parent, const QL
     connect(d->mediaObject->player(), SIGNAL(mediaStatusChanged(QAVPlayer::MediaStatus)),
             this, SLOT(slotMediaStateChanged(QAVPlayer::MediaStatus)));
 
-    connect(d->mediaObject, SIGNAL(positionChanged(qint64)),
-            this, SLOT(slotDurationChanged(qint64)));
+    connect(d->mediaObject->player(), SIGNAL(stateChanged(QAVPlayer::State)),
+            this, SLOT(slotPlayerStateChanged(QAVPlayer::State)));
 
     connect(d->mediaObject->player(), SIGNAL(errorOccurred(QAVPlayer::Error,QString)),
             this, SLOT(slotPlayerError(QAVPlayer::Error,QString)));
 
-    connect(d->mediaObject->player(), SIGNAL(stateChanged(QAVPlayer::State)),
-            this, SLOT(slotPlayerStateChanged(QAVPlayer::State)));
+    connect(d->mediaObject, SIGNAL(positionChanged(qint64)),
+            this, SLOT(slotTimeUpdaterTimeout(qint64)));
 
 #endif
 
@@ -420,7 +420,7 @@ void PresentationAudioWidget::slotNext()
     slotPlay();
 }
 
-void PresentationAudioWidget::slotTimeUpdaterTimeout()
+void PresentationAudioWidget::slotTimeUpdaterTimeout(qint64 current)
 {
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined HAVE_QTMULTIMEDIA
@@ -438,7 +438,6 @@ void PresentationAudioWidget::slotTimeUpdaterTimeout()
         return;
     }
 
-    qint64 current = d->mediaObject->position();
     int hours      = (int)(current  / (qint64)(60 * 60 * 1000));
     int mins       = (int)((current / (qint64)(60 * 1000)) - (qint64)(hours * 60));
     int secs       = (int)((current / (qint64)1000) - (qint64)(hours * 60 + mins * 60));

@@ -79,7 +79,7 @@ private Q_SLOTS:
 
     void slotPrev();
     void slotNext();
-    void slotTimeUpdaterTimeout();
+    void slotTimeUpdaterTimeout(qint64);
     void slotError();
     void slotSetVolume(int);
 
