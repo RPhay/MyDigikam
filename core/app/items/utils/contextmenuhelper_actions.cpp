@@ -22,6 +22,11 @@ QAction* ContextMenuHelper::exec(const QPoint& pos, QAction* const at)
 {
     QAction* const choice = d->parent->exec(pos, at);
 
+    Q_FOREACH (DPluginAction* const ac, d->exportPluginActions())
+    {
+        ac->setData(false);
+    }
+
     if (choice)
     {
         if (d->selectedIds.count() == 1)

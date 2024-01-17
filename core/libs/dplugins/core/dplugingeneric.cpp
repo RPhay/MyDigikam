@@ -60,7 +60,10 @@ DInfoInterface* DPluginGeneric::infoIface(QObject* const ac) const
 
         if (gui)
         {
-            return gui->infoIface(pac);
+            DInfoInterface* const iface = gui->infoIface(pac);
+            iface->forceAlbumSelection  = pac->data().toBool();
+
+            return iface;
         }
 
         DInfoInterface* const iface = dynamic_cast<DInfoInterface*>(pac->parent());
