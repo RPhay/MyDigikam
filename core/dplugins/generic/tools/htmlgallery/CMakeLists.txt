@@ -17,16 +17,9 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigWidgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::Service,INTERFACE_INCLUDE_DIRECTORIES>
 
-                    ${LIBXSLT_INCLUDE_DIR}
-                    ${LIBXML2_INCLUDE_DIR}
-
                     ${CMAKE_CURRENT_SOURCE_DIR}/generator
                     ${CMAKE_CURRENT_SOURCE_DIR}/parameters
                     ${CMAKE_CURRENT_SOURCE_DIR}/wizard
-)
-
-add_definitions(${LIBXSLT_DEFINITIONS}
-                ${LIBXML2_DEFINITIONS}
 )
 
 set(htmlgalleryplugin_SRCS
