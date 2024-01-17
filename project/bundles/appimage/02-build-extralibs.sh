@@ -97,11 +97,10 @@ cmake --build . --config RelWithDebInfo --target ext_knotifications             
 cmake --build . --config RelWithDebInfo --target ext_kjobwidgets                -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kio                        -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_knotifyconfig              -- -j$CPU_CORES
-
-# libksane support
 cmake --build . --config RelWithDebInfo --target ext_sonnet                     -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_ktextwidgets               -- -j$CPU_CORES
 
+# libksane support
 if [[ $DK_QTVERSION == 6 ]] ; then
 
     cmake --build . --config RelWithDebInfo --target ext_qca                    -- -j$CPU_CORES
