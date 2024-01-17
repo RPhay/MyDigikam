@@ -56,7 +56,7 @@ def otool(binary):
 
     if not type(binary) == str: raise ValueError("otool() requires a path (as a string)")
 
-    stdin, stdout, stderr = os.popen3('otool -L "%s"' % binary)
+    stdin, stdout, stderr = os.popen('otool -L "%s"' % binary)
 
     try:
         # discard the first line since it is just the name of the file or an error message (or if reading .as, the first item on the list)
