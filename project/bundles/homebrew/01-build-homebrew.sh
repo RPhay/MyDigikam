@@ -118,6 +118,7 @@ brew install \
              libtiff \
              boost \
              eigen \
+             mesa \
              gettext \
              gperf \
              libusb \
