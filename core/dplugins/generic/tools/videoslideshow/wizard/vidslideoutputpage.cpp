@@ -90,7 +90,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     formatLabel->setText(i18n("Media Container Format:"));
     d->formatVal              = new QComboBox(main);
     d->formatVal->setEditable(false);
-    d->formatVal->setToolTip(i18n("This controls allows to choose the format of the media container to host video stream and soundtrack."));
+    d->formatVal->setToolTip(i18n("This control allows to choose the format of the media container to host video stream and soundtrack."));
     formatLabel->setBuddy(d->formatVal);
 
     // --------------------
@@ -137,7 +137,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     audioNote->setWordWrap(true);
     audioNote->setText(i18n("<i>Notes about soundtrack: if the audio length is smaller than video, it will be "
                             "played in loop. If the audio length is largest than video, it will be trimmed. "
-                            "Lets empty this setting if you don't want a sountrack to the media.</i>"));
+                            "Leave this setting empty if you don't want a soundtrack to the media.</i>"));
 
     DLineWidget* const line2 = new DLineWidget(Qt::Horizontal, main);
 
