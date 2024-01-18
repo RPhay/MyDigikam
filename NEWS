@@ -164,7 +164,7 @@ BUGFIXES:
 145 ==> 479949 - Reverse Geo Coding does not write (anymore) geo metadata into XMP fields for jpeg from a Google Pixel 5.
 146 ==> 479852 - Select all photos when exporting an album.
 147 ==> 479939 - Import album with geo location.
-148 ==> 
+148 ==> 480010 - Crash when trying to add a face tag on Windows.
 149 ==> 
 150 ==> 
 151 ==> 
