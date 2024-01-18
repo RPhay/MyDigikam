@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 01:37+0000\n"
-"PO-Revision-Date: 2024-01-16 12:51+0100\n"
+"POT-Creation-Date: 2024-01-18 01:35+0000\n"
+"PO-Revision-Date: 2024-01-17 23:56+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -579,19 +579,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Een item selecteren"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:137
+#: core/app/items/utils/contextmenuhelper_actions.cpp:142
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Instellen als albumminiatuur"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:141
+#: core/app/items/utils/contextmenuhelper_actions.cpp:146
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Instellen als tag-miniatuur"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:178
+#: core/app/items/utils/contextmenuhelper_actions.cpp:183
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -599,7 +599,7 @@ msgid_plural "Move %1 Files to Trash"
 msgstr[0] "Naar prullenbak verplaatsen"
 msgstr[1] "%1 bestanden naar prullenbak verplaatsen"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:190
+#: core/app/items/utils/contextmenuhelper_actions.cpp:195
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
@@ -909,19 +909,19 @@ msgctxt "@action: context menu"
 msgid "Export"
 msgstr "Exporteren"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:118
+#: core/app/items/utils/contextmenuhelper_tools.cpp:117
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
 msgstr "Geen hulpmiddel voor exporteren beschikbaar"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:128
+#: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr "Takenwachtrijbeheer"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:139
+#: core/app/items/utils/contextmenuhelper_tools.cpp:138
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
@@ -20942,15 +20942,19 @@ msgid "Media Container Format:"
 msgstr "Formaat van mediacontainer:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This controls allows to choose the format of the media container to host "
+#| "video stream and soundtrack."
 msgid ""
-"This controls allows to choose the format of the media container to host "
+"This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
+"Deze besturing biedt het kiezen van het formaat van de mediacontainer om de "
+"videostream en soundtrack te bevatten."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
-#, fuzzy, kde-format
-#| msgid "Egualize Video Luminosity"
+#, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Lichtsterkte van video egaliseren"
 
@@ -20969,24 +20973,18 @@ msgstr ""
 "effectief niets."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "Apply temporal midway video equalization effect while encoding frames as "
-#| "video. Midway Video Equalization adjusts a sequence of video frames to "
-#| "have the same histograms, while maintaining their dynamics as much as "
-#| "possible. It’s useful for e.g. matching exposures from a timelapse "
-#| "sequence."
+#, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
 "encoding frames as video. This adjusts the sequence of frames to have the "
 "same histograms, while maintaining their dynamics as much as possible. It’s "
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
-"Tijdelijke het effect middenweg egalisatie van video toepassen tijdens "
-"coderen van frames als video. Middenweg Video Egalisatie past een reeks "
-"videoframes aan zodat ze dezelfde histogrammen hebben, ondertussen hun "
-"dynamiek zoveel als mogelijk behouden. Het is nuttig voor bijv. overeen "
-"laten komen van belichting uit een reeks in een timelapse."
+"<i>De instelling past het effect middenweg egalisatie van video toe tijdens "
+"coderen van frames als video. Dit past de reeks frames aan zodat ze dezelfde "
+"histogrammen hebben, ondertussen hun dynamiek zoveel als mogelijk behouden. "
+"Het is nuttig voor bijv. overeen laten komen van belichting uit een reeks in "
+"een timelapse.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
 #, kde-format
@@ -21009,16 +21007,18 @@ msgstr "Tijdsduur van soundtrack:"
 #| msgid ""
 #| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 #| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed.</i>"
+#| "will be trimmed. Lets empty this setting if you don't want a sountrack to "
+#| "the media.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
 "<i>Opmerkingen over de soundtrack: als de audiolengte kleiner is dan de "
 "video, zal het afgespeeld worden in een lus. Als de audiolengte groter is "
-"dan de video, zal het afgekapt worden.</i>"
+"dan de video, zal het afgekapt worden.Deze instelling leeg laten als u geen "
+"sountrack in het medium wilt.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
@@ -21075,16 +21075,18 @@ msgstr "Effect bij tonen van afbeeldingen"
 #| msgid ""
 #| "<i>An effect is an visual panning or zooming applied while an image is "
 #| "displayed. The effect duration will follow the number of frames used to "
-#| "render the image on video stream.</i>"
+#| "render the image on video stream. For a timelapse, let's this settings to "
+#| "None.</i>"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream. For a timelapse, let's this settings to "
-"None.</i>"
+"render the image on video stream. For a timelapse, let this setting to None."
+"</i>"
 msgstr ""
 "<i>Een effect is een visuele beweging of zoomen toegepast terwijl een "
 "afbeelding wordt getoond. De duur van het effect zal het aantal frames "
-"volgen dat gebruikt wordt om de afbeelding in de videostream te renderen.</i>"
+"volgen dat gebruikt wordt om de afbeelding in de videostream te renderen. "
+"Voor een timelaps deze instelling op Geen instellen.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #, kde-format
@@ -21096,15 +21098,16 @@ msgstr "Transitie tussen afbeeldingen"
 #| msgid ""
 #| "<i>A transition is an visual effect applied between two images. For some "
 #| "effects, the duration can depend of random values and can change while "
-#| "the slideshow.</i>"
+#| "the slideshow. For a timelapse, let's this settings to None.</i>"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow. For a timelapse, let's this settings to None.</i>"
+"slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 "<i>Een transitie is een visueel effect toegepast tussen twee afbeeldingen. "
 "Voor sommige effecten kan de duur afhangen van willekeurige waarden en "
-"kunnen wijzigen tijdens de diashow.</i>"
+"kunnen wijzigen tijdens de diashow. Voor een timelaps deze instelling op "
+"Geen instellen.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
 #, kde-format
@@ -30187,7 +30190,7 @@ msgstr "<i>Framesnelheid:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>VideoCodec:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30211,67 +30214,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Itemlijst"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Ja"
 
-#: core/libs/dialogs/libsinfodlg.cpp:153
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Nee"
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Mogelijkheden"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Bibliotheken"
 
-#: core/libs/dialogs/libsinfodlg.cpp:279
+#: core/libs/dialogs/libsinfodlg.cpp:293
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: core/libs/dialogs/libsinfodlg.cpp:360
+#: core/libs/dialogs/libsinfodlg.cpp:374
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: core/libs/dialogs/libsinfodlg.cpp:388
+#: core/libs/dialogs/libsinfodlg.cpp:402
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifesten"
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV-configuratie"
 
-#: core/libs/dialogs/libsinfodlg.cpp:599
+#: core/libs/dialogs/libsinfodlg.cpp:613
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Ja"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:618
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Nee"
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:623
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -34688,20 +34691,20 @@ msgctxt "@info"
 msgid "Save the list."
 msgstr "De lijst opslaan."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:580
+#: core/libs/dplugins/widgets/ditemslist.cpp:581
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Het te laden bestand met de lijst afbeeldingen selecteren"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:581
-#: core/libs/dplugins/widgets/ditemslist.cpp:663
+#: core/libs/dplugins/widgets/ditemslist.cpp:582
+#: core/libs/dplugins/widgets/ditemslist.cpp:664
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "Alle bestanden (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:661
+#: core/libs/dplugins/widgets/ditemslist.cpp:662
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"

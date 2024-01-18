@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 01:37+0000\n"
-"PO-Revision-Date: 2024-01-16 18:26+0100\n"
+"POT-Creation-Date: 2024-01-18 01:35+0000\n"
+"PO-Revision-Date: 2024-01-17 10:51+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -530,19 +530,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Selecciona l'element"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:137
+#: core/app/items/utils/contextmenuhelper_actions.cpp:142
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Estableix com a miniatura de l'àlbum"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:141
+#: core/app/items/utils/contextmenuhelper_actions.cpp:146
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Estableix com a miniatura de l'etiqueta"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:178
+#: core/app/items/utils/contextmenuhelper_actions.cpp:183
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -550,7 +550,7 @@ msgid_plural "Move %1 Files to Trash"
 msgstr[0] "Mou a la paperera"
 msgstr[1] "Mou %1 fitxers a la paperera"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:190
+#: core/app/items/utils/contextmenuhelper_actions.cpp:195
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
@@ -860,19 +860,19 @@ msgctxt "@action: context menu"
 msgid "Export"
 msgstr "Exporta"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:118
+#: core/app/items/utils/contextmenuhelper_tools.cpp:117
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
 msgstr "No hi ha disponible cap eina d'exportació"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:128
+#: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr "Gestor de la cua per lots"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:139
+#: core/app/items/utils/contextmenuhelper_tools.cpp:138
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
@@ -20922,15 +20922,19 @@ msgid "Media Container Format:"
 msgstr "Format del contenidor multimèdia:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This controls allows to choose the format of the media container to host "
+#| "video stream and soundtrack."
 msgid ""
-"This controls allows to choose the format of the media container to host "
+"This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
+"Aquest control permet triar el format del contenidor multimèdia per allotjar "
+"el flux de vídeo i la pista d'àudio."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
-#, fuzzy, kde-format
-#| msgid "Egualize Video Luminosity"
+#, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Equalitza la lluminositat del vídeo"
 
@@ -20949,25 +20953,19 @@ msgstr ""
 "no fa res."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "Apply temporal midway video equalization effect while encoding frames as "
-#| "video. Midway Video Equalization adjusts a sequence of video frames to "
-#| "have the same histograms, while maintaining their dynamics as much as "
-#| "possible. It’s useful for e.g. matching exposures from a timelapse "
-#| "sequence."
+#, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
 "encoding frames as video. This adjusts the sequence of frames to have the "
 "same histograms, while maintaining their dynamics as much as possible. It’s "
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
-"Aplica un efecte temporal d'equalització del vídeo de mig camí mentre es fa "
-"la codificació dels fotogrames com a vídeo. L'equalització de vídeo a mig "
-"camí ajusta una seqüència de fotogrames de vídeo per a tenir els mateixos "
-"histogrames, mentre es manté la seva dinàmica tant com sigui possible. És "
-"útil, p. ex., per a fer joc exposicions a partir d'una seqüència de filmació "
-"a intervals."
+"<i>Aquests paràmetres apliquen un efecte temporal d'equalització de vídeo de "
+"mig camí mentre es fa la codificació dels fotogrames com a vídeo. Això "
+"ajusta la seqüència de fotogrames per a tenir els mateixos histogrames, "
+"mentre es manté la seva dinàmica tant com sigui possible. És útil, p. ex., "
+"per a fer coincidir les exposicions a partir d'una seqüència de filmació a "
+"intervals.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
 #, kde-format
@@ -20990,16 +20988,18 @@ msgstr "Durada de la pista de so:"
 #| msgid ""
 #| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 #| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed.</i>"
+#| "will be trimmed. Lets empty this setting if you don't want a sountrack to "
+#| "the media.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
 "<i>Notes sobre la pista de so: si la longitud de l'àudio és menor que el "
 "vídeo, es reproduirà en bucle. Si la longitud de l'àudio és més gran que el "
-"vídeo, es retallarà.</i>"
+"vídeo, es retallarà. Deixeu buit aquest paràmetre ai no voleu cap pista "
+"d'àudio a l'element multimèdia.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
@@ -21055,16 +21055,18 @@ msgstr "Efecte en mostrar imatges"
 #| msgid ""
 #| "<i>An effect is an visual panning or zooming applied while an image is "
 #| "displayed. The effect duration will follow the number of frames used to "
-#| "render the image on video stream.</i>"
+#| "render the image on video stream. For a timelapse, let's this settings to "
+#| "None.</i>"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream. For a timelapse, let's this settings to "
-"None.</i>"
+"render the image on video stream. For a timelapse, let this setting to None."
+"</i>"
 msgstr ""
 "<i>Un efecte és una panoràmica o un zoom visual aplicat mentre es visualitza "
 "una imatge. La durada de l'efecte seguirà el nombre de fotogrames emprats "
-"per a renderitzar la imatge en el flux de vídeo.</i>"
+"per a renderitzar la imatge en el flux de vídeo. Per a una filmació a "
+"intervals, deixeu aquest paràmetre a Sense.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #, kde-format
@@ -21076,15 +21078,16 @@ msgstr "Transició entre imatges"
 #| msgid ""
 #| "<i>A transition is an visual effect applied between two images. For some "
 #| "effects, the duration can depend of random values and can change while "
-#| "the slideshow.</i>"
+#| "the slideshow. For a timelapse, let's this settings to None.</i>"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow. For a timelapse, let's this settings to None.</i>"
+"slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 "<i>Una transició és un efecte visual aplicat entre dues imatges. Per a "
 "alguns efectes, la durada pot dependre de valors aleatoris i pot canviar "
-"durant la presentació de diapositives.</i>"
+"durant la presentació de diapositives. Per a una filmació a intervals, "
+"deixeu aquest paràmetre a Sense.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
 #, kde-format
@@ -30194,7 +30197,7 @@ msgstr "<i>Velocitat dels fotogrames:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Còdec de vídeo:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30218,67 +30221,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Llista d'elements"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:153
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Característiques"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Biblioteques"
 
-#: core/libs/dialogs/libsinfodlg.cpp:279
+#: core/libs/dialogs/libsinfodlg.cpp:293
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:360
+#: core/libs/dialogs/libsinfodlg.cpp:374
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:388
+#: core/libs/dialogs/libsinfodlg.cpp:402
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifests"
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configuració de l'OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:599
+#: core/libs/dialogs/libsinfodlg.cpp:613
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:618
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:623
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -34733,20 +34736,20 @@ msgctxt "@info"
 msgid "Save the list."
 msgstr "Desa la llista."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:580
+#: core/libs/dplugins/widgets/ditemslist.cpp:581
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Selecció de la llista de fitxers d'imatge a carregar"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:581
-#: core/libs/dplugins/widgets/ditemslist.cpp:663
+#: core/libs/dplugins/widgets/ditemslist.cpp:582
+#: core/libs/dplugins/widgets/ditemslist.cpp:664
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "Tots els fitxers (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:661
+#: core/libs/dplugins/widgets/ditemslist.cpp:662
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"

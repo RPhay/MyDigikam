@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 01:37+0000\n"
-"PO-Revision-Date: 2024-01-12 01:02+0100\n"
+"POT-Creation-Date: 2024-01-18 01:35+0000\n"
+"PO-Revision-Date: 2024-01-17 20:42+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -576,19 +576,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Seleccionar elemento"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:137
+#: core/app/items/utils/contextmenuhelper_actions.cpp:142
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Establecer como miniatura del álbum"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:141
+#: core/app/items/utils/contextmenuhelper_actions.cpp:146
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Establecer como miniatura de la etiqueta"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:178
+#: core/app/items/utils/contextmenuhelper_actions.cpp:183
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -596,7 +596,7 @@ msgid_plural "Move %1 Files to Trash"
 msgstr[0] "Mover a la papelera"
 msgstr[1] "Mover %1 archivos a la papelera"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:190
+#: core/app/items/utils/contextmenuhelper_actions.cpp:195
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
@@ -906,19 +906,19 @@ msgctxt "@action: context menu"
 msgid "Export"
 msgstr "Exportar"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:118
+#: core/app/items/utils/contextmenuhelper_tools.cpp:117
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
 msgstr "No hay ninguna herramienta disponible para exportar"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:128
+#: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr "Gestor de la cola de procesos por lotes"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:139
+#: core/app/items/utils/contextmenuhelper_tools.cpp:138
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
@@ -20978,19 +20978,19 @@ msgstr "Formato del contenedor multimedia:"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
 #, kde-format
 msgid ""
-"This controls allows to choose the format of the media container to host "
+"This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
 #, kde-format
 msgid "Equalize Video Luminosity"
-msgstr ""
+msgstr "Ecualizar la luminosidad del vídeo"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Equalization Strength:"
-msgstr ""
+msgstr "Fuerza de la ecualización:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:108
 #, kde-format
@@ -20998,6 +20998,8 @@ msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
+"Esto controla la fuerza de la ecualización. Si asigna el valor cero a esta "
+"opción, no se hace nada."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
 #, kde-format
@@ -21033,7 +21035,7 @@ msgstr "Duración de la banda sonora:"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
 "<i>Notas sobre la banda sonora: Si la duración del sonido es menor que la "
@@ -21093,8 +21095,8 @@ msgstr "Efecto para mostrar imágenes"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream. For a timelapse, let's this settings to "
-"None.</i>"
+"render the image on video stream. For a timelapse, let this setting to None."
+"</i>"
 msgstr ""
 "<i>Un efecto es un barrido o ampliación visual aplicado cuando se muestra "
 "una imagen. La duración del efecto seguirá al número de fotogramas usando "
@@ -21114,7 +21116,7 @@ msgstr "Transición entre imágenes"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow. For a timelapse, let's this settings to None.</i>"
+"slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 "<i>Una transición es un efecto visual aplicado entre dos imágenes. Para "
 "algunos efectos, la duración puede depender de valores aleatorios y se puede "
@@ -30210,7 +30212,7 @@ msgstr "<i>Imágenes por segundo:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>CódecVídeo:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30234,67 +30236,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Lista de elementos"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:153
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Funcionalidades"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Bibliotecas"
 
-#: core/libs/dialogs/libsinfodlg.cpp:279
+#: core/libs/dialogs/libsinfodlg.cpp:293
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Desconocida"
 
-#: core/libs/dialogs/libsinfodlg.cpp:360
+#: core/libs/dialogs/libsinfodlg.cpp:374
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Desconocida"
 
-#: core/libs/dialogs/libsinfodlg.cpp:388
+#: core/libs/dialogs/libsinfodlg.cpp:402
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifiestos"
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configuración de OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:599
+#: core/libs/dialogs/libsinfodlg.cpp:613
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:618
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:623
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -34739,20 +34741,20 @@ msgctxt "@info"
 msgid "Save the list."
 msgstr "Guardar la lista."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:580
+#: core/libs/dplugins/widgets/ditemslist.cpp:581
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Seleccione la lista de archivos de imágenes a cargar"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:581
-#: core/libs/dplugins/widgets/ditemslist.cpp:663
+#: core/libs/dplugins/widgets/ditemslist.cpp:582
+#: core/libs/dplugins/widgets/ditemslist.cpp:664
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "Todos los archivos (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:661
+#: core/libs/dplugins/widgets/ditemslist.cpp:662
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
@@ -57684,11 +57686,14 @@ msgid ""
 "p><p>Applications: Display of seismic and radio data and for use in digital "
 "planetariums.</p>"
 msgstr ""
+"<p><b>Proyección azimutal equidistante</b> («ojo de pez»)</"
+"p><p>Aplicaciones: Visualización de datos sísmicos y de radio y para uso en "
+"planetarios digitales.</p>"
 
 #: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:35
 #, kde-format
 msgid "Flat Map"
-msgstr ""
+msgstr "Mapa plano"
 
 #: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:40
 #, kde-format
@@ -57696,6 +57701,9 @@ msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
 "De facto standard for global texture data sets for computer software.</p>"
 msgstr ""
+"<p><b>Proyección equirrectangular</b> («Plate carrée»)</p><p>Aplicaciones: "
+"Estándar de facto para conjuntos de datos de textura global en software de "
+"computadora.</p>"
 
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:64
 #, kde-format
@@ -57889,6 +57897,10 @@ msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
 "Usually this allows for high map quality as speed is no concern."
 msgstr ""
+"Especifica la calidad del mapa que se muestra mientras no hay entrada del "
+"usuario.\n"
+"Por lo general, esto permite una alta calidad del mapa cuando la velocidad "
+"no es preocupante."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
 #, fuzzy, kde-format
@@ -58045,10 +58057,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
-#, fuzzy, kde-format
-#| msgid "Atmosphere"
+#, kde-format
 msgid "Show Atmospheric Glow"
-msgstr "Atmósfera"
+msgstr "Mostrar el resplandor atmosférico"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:226
 #, kde-format
@@ -58059,10 +58070,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
-#, fuzzy, kde-format
-#| msgid "Show on right panel"
+#, kde-format
 msgid "Show Night Shadow"
-msgstr "Mostrar en el panel derecho"
+msgstr "Mostrar la sombra nocturna"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:231
 #, kde-format
@@ -58087,10 +58097,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
-#, fuzzy, kde-format
-#| msgid "Show Preview"
+#, kde-format
 msgid "Show Relief"
-msgstr "Mostrar vista previa"
+msgstr "Mostrar el relieve"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:241
 #, kde-format

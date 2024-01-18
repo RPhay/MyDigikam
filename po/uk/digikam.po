@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 01:37+0000\n"
-"PO-Revision-Date: 2024-01-16 08:50+0200\n"
+"POT-Creation-Date: 2024-01-18 01:35+0000\n"
+"PO-Revision-Date: 2024-01-17 12:32+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -532,19 +532,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Позначити запис"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:137
+#: core/app/items/utils/contextmenuhelper_actions.cpp:142
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Встановити як мініатюру альбому"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:141
+#: core/app/items/utils/contextmenuhelper_actions.cpp:146
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Зробити мініатюрою мітки"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:178
+#: core/app/items/utils/contextmenuhelper_actions.cpp:183
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -554,7 +554,7 @@ msgstr[1] "Пересунути %1 файла до смітника"
 msgstr[2] "Пересунути %1 файлів до смітника"
 msgstr[3] "Пересунути до смітника"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:190
+#: core/app/items/utils/contextmenuhelper_actions.cpp:195
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
@@ -864,19 +864,19 @@ msgctxt "@action: context menu"
 msgid "Export"
 msgstr "Експортувати"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:118
+#: core/app/items/utils/contextmenuhelper_tools.cpp:117
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
 msgstr "Не виявлено засобів експортування"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:128
+#: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr "Керування чергою обробки"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:139
+#: core/app/items/utils/contextmenuhelper_tools.cpp:138
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
@@ -21018,15 +21018,19 @@ msgid "Media Container Format:"
 msgstr "Формат контейнера даних:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This controls allows to choose the format of the media container to host "
+#| "video stream and soundtrack."
 msgid ""
-"This controls allows to choose the format of the media container to host "
+"This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
+"За допомогою цього засобу керування можна вибрати формат контейнера "
+"мультимедійних даних для зберігання потоку відео та звукової доріжки."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
-#, fuzzy, kde-format
-#| msgid "Egualize Video Luminosity"
+#, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Вирівняти світність відео"
 
@@ -21044,24 +21048,18 @@ msgstr ""
 "Керує потужністю вирівнювання. Встановлення нульового значення вимикає ефект."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "Apply temporal midway video equalization effect while encoding frames as "
-#| "video. Midway Video Equalization adjusts a sequence of video frames to "
-#| "have the same histograms, while maintaining their dynamics as much as "
-#| "possible. It’s useful for e.g. matching exposures from a timelapse "
-#| "sequence."
+#, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
 "encoding frames as video. This adjusts the sequence of frames to have the "
 "same histograms, while maintaining their dynamics as much as possible. It’s "
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
-"Застосувати часове проміжне вирівнювання при кодуванні кадрів до відео. "
-"Проміжне вирівнювання відео коригує послідовність кадрів відео так, щоб вони "
-"мали однакову гістограму, зберігаючи, якщо це можливо, динаміку. Корисно, "
-"наприклад, для вирівнювання експонування у послідовності кадрів "
-"уповільненого відео."
+"<i>Ці параметри надають змогу застосувати часове проміжне вирівнювання при "
+"кодуванні кадрів до відео. Ефект коригує послідовність кадрів відео так, щоб "
+"вони мали однакову гістограму, зберігаючи, якщо це можливо, динаміку. "
+"Корисно, наприклад, для вирівнювання експонування у послідовності кадрів "
+"уповільненого відео.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
 #, kde-format
@@ -21084,17 +21082,19 @@ msgstr "Тривалість звукової доріжки:"
 #| msgid ""
 #| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 #| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed.</i>"
+#| "will be trimmed. Lets empty this setting if you don't want a sountrack to "
+#| "the media.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
 "<i>Зауваження щодо звукової доріжки: якщо тривалість відтворення звукових "
 "даних є меншою за тривалість відтворення відео, звукова доріжка "
 "відтворюватиметься циклічно. Якщо тривалість відтворення звукової доріжки "
-"перевищує тривалість відтворення відео, звукову доріжку буде обрізано.</i>"
+"перевищує тривалість відтворення відео, звукову доріжку буде обрізано. Не "
+"заповнюйте, якщо звукова доріжка вам не потрібна.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
@@ -21150,17 +21150,19 @@ msgstr "Ефекти під час показу зображень"
 #| msgid ""
 #| "<i>An effect is an visual panning or zooming applied while an image is "
 #| "displayed. The effect duration will follow the number of frames used to "
-#| "render the image on video stream.</i>"
+#| "render the image on video stream. For a timelapse, let's this settings to "
+#| "None.</i>"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream. For a timelapse, let's this settings to "
-"None.</i>"
+"render the image on video stream. For a timelapse, let this setting to None."
+"</i>"
 msgstr ""
 "<i>Ефект — візуальне панорамування або зміна масштабу, які "
 "використовуватимуться під час показу зображення. Тривалість ефекту "
 "визначатиметься кількістю кадрів, які потрібні для показу зображення у "
-"потоці відеоданих.</i>"
+"потоці відеоданих. Для уповільненого відео встановіть для цього параметра "
+"значення «Немає».</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #, kde-format
@@ -21172,15 +21174,16 @@ msgstr "Перехід між зображеннями"
 #| msgid ""
 #| "<i>A transition is an visual effect applied between two images. For some "
 #| "effects, the duration can depend of random values and can change while "
-#| "the slideshow.</i>"
+#| "the slideshow. For a timelapse, let's this settings to None.</i>"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow. For a timelapse, let's this settings to None.</i>"
+"slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 "<i>Перехід — візуальний ефект, який застосовується при зміни зображень. У "
 "деяких ефектах тривалість застосування є випадковою величиною і може "
-"змінюватися протягом показу слайдів.</i>"
+"змінюватися протягом показу слайдів. Для уповільненого відео встановіть для "
+"цього параметра значення «Немає».</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
 #, kde-format
@@ -30292,7 +30295,7 @@ msgstr "<i>Частота кадрів:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Відеокодек:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30316,67 +30319,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Список записів"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Так"
 
-#: core/libs/dialogs/libsinfodlg.cpp:153
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ні"
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Можливості"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Бібліотеки"
 
-#: core/libs/dialogs/libsinfodlg.cpp:279
+#: core/libs/dialogs/libsinfodlg.cpp:293
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Невідома"
 
-#: core/libs/dialogs/libsinfodlg.cpp:360
+#: core/libs/dialogs/libsinfodlg.cpp:374
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Невідомий"
 
-#: core/libs/dialogs/libsinfodlg.cpp:388
+#: core/libs/dialogs/libsinfodlg.cpp:402
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Маніфести"
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Налаштування OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:599
+#: core/libs/dialogs/libsinfodlg.cpp:613
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Так"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:618
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ні"
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:623
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -34834,20 +34837,20 @@ msgctxt "@info"
 msgid "Save the list."
 msgstr "Зберегти список."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:580
+#: core/libs/dplugins/widgets/ditemslist.cpp:581
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Виберіть список файлів зображень для завантаження"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:581
-#: core/libs/dplugins/widgets/ditemslist.cpp:663
+#: core/libs/dplugins/widgets/ditemslist.cpp:582
+#: core/libs/dplugins/widgets/ditemslist.cpp:664
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "усі файли (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:661
+#: core/libs/dplugins/widgets/ditemslist.cpp:662
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"

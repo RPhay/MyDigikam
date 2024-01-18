@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 01:37+0000\n"
-"PO-Revision-Date: 2024-01-16 10:11+0100\n"
+"POT-Creation-Date: 2024-01-18 01:35+0000\n"
+"PO-Revision-Date: 2024-01-17 09:46+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -559,19 +559,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Izberi predmet"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:137
+#: core/app/items/utils/contextmenuhelper_actions.cpp:142
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Nastavi za sličico albuma"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:141
+#: core/app/items/utils/contextmenuhelper_actions.cpp:146
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Nastavi kot značko sličice"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:178
+#: core/app/items/utils/contextmenuhelper_actions.cpp:183
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -581,7 +581,7 @@ msgstr[1] "Prenesi %1 datoteki v Smeti"
 msgstr[2] "Prenesi %1 datoteke v Smeti"
 msgstr[3] "Prenesi %1 datotek v Smeti"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:190
+#: core/app/items/utils/contextmenuhelper_actions.cpp:195
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
@@ -891,19 +891,19 @@ msgctxt "@action: context menu"
 msgid "Export"
 msgstr "Izvozi"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:118
+#: core/app/items/utils/contextmenuhelper_tools.cpp:117
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
 msgstr "Na voljo ni nobenega orodja za izvoz"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:128
+#: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr "Upravljalnik čakalnih vrst"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:139
+#: core/app/items/utils/contextmenuhelper_tools.cpp:138
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
@@ -20715,17 +20715,21 @@ msgid "Media Container Format:"
 msgstr "Format medijskega vsebnika:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This controls allows to choose the format of the media container to host "
+#| "video stream and soundtrack."
 msgid ""
-"This controls allows to choose the format of the media container to host "
+"This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
+"Ta kontrolnik omogoča izbiro formata medijskega vsebnika za gostovanje video "
+"toka in zvočnega zapisa."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
-#, fuzzy, kde-format
-#| msgid "Egualize Video Luminosity"
+#, kde-format
 msgid "Equalize Video Luminosity"
-msgstr "Izravnaj osvetlitev videa"
+msgstr "Izenači osvetlitev videa"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
@@ -20742,24 +20746,18 @@ msgstr ""
 "ničesar."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "Apply temporal midway video equalization effect while encoding frames as "
-#| "video. Midway Video Equalization adjusts a sequence of video frames to "
-#| "have the same histograms, while maintaining their dynamics as much as "
-#| "possible. It’s useful for e.g. matching exposures from a timelapse "
-#| "sequence."
+#, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
 "encoding frames as video. This adjusts the sequence of frames to have the "
 "same histograms, while maintaining their dynamics as much as possible. It’s "
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
-"Med kodiranjem okvirjev kot videoposnetka uporabi učinek časovne vmesne "
-"izenačitve videa. Vmesna izenačitev videa prilagodi zaporedje video "
-"okvirjev, da imajo enake histograme, hkrati pa ohranja njihovo dinamiko, "
-"kolikor je to mogoče. Uporabno je za npr. ujemajoče se osvetlitve iz "
-"zaporedja časovnega zamika."
+"<i>Te nastavitve med kodiranjem sličic kot videa uporabijo učinek začasne "
+"vmesne izenačitve videa. To prilagodi zaporedje okvirjev, da imajo enake "
+"histograme, hkrati pa ohranja njihovo dinamiko, kolikor je to mogoče. "
+"Uporaben je za npr. ujemajoče se osvetlitve iz zaporedja časovnega zamika.</"
+"i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
 #, kde-format
@@ -20782,16 +20780,18 @@ msgstr "Trajanje zvočnega posnetka:"
 #| msgid ""
 #| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 #| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed.</i>"
+#| "will be trimmed. Lets empty this setting if you don't want a sountrack to "
+#| "the media.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
 "<i>Opombe glede zvočnega posnetka: če je dolžina zvoka krajša od dolžine "
 "videa, se bo predvajal v zanki. Če je dolžina zvoka daljša od dolžine videa, "
-"bo obrezan.</i>"
+"bo obrezan. Pustite to nastavitev prazno, če ne želite zvočne skladbe na "
+"mediju.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
@@ -20846,16 +20846,18 @@ msgstr "Učinek med prikazom slik"
 #| msgid ""
 #| "<i>An effect is an visual panning or zooming applied while an image is "
 #| "displayed. The effect duration will follow the number of frames used to "
-#| "render the image on video stream.</i>"
+#| "render the image on video stream. For a timelapse, let's this settings to "
+#| "None.</i>"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream. For a timelapse, let's this settings to "
-"None.</i>"
+"render the image on video stream. For a timelapse, let this setting to None."
+"</i>"
 msgstr ""
-"<i>Učinek je vizualno pomikanje ali povečevanje, ki se uporablja med "
-"prikazom slike. Trajanje učinka bo sledilo številu okvirjev, ki so bili "
-"uporabljeni zaupodabljanje slik v video toku.</i>"
+"<i>Učinek je vizualno premikanje ali povečava, ki se uporablja med prikazom "
+"slike. Trajanje učinka bo sledilo številu sličic, uporabljenih za "
+"upodabljanje slike v video toku. Za časovni zamik nastavite to nastavitev na "
+"Brez.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #, kde-format
@@ -20867,15 +20869,15 @@ msgstr "Prehod med slikami"
 #| msgid ""
 #| "<i>A transition is an visual effect applied between two images. For some "
 #| "effects, the duration can depend of random values and can change while "
-#| "the slideshow.</i>"
+#| "the slideshow. For a timelapse, let's this settings to None.</i>"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow. For a timelapse, let's this settings to None.</i>"
+"slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
-"<i>Prehod je vizualni učinek med dvema slikama. Za nekatere učinke je "
-"trajanje lahko odvisno od naključnih vrednosti in se lahko spreminja, medtem "
-"ko predstavitev teče.</i>"
+"<i>Prehod je vizualni učinek med dvema slikama. Za nekatere učinke je lahko "
+"trajanje odvisno od naključnih vrednosti in se lahko spreminja med "
+"predstavitvijo. Za časovni zamik nastavite to nastavitev na Brez.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
 #, kde-format
@@ -29874,7 +29876,7 @@ msgstr "<i>Hitrost sličic:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Video kodeki:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -29898,67 +29900,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Seznam predmetov"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Da"
 
-#: core/libs/dialogs/libsinfodlg.cpp:153
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Zmožnosti"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Knjižnice"
 
-#: core/libs/dialogs/libsinfodlg.cpp:279
+#: core/libs/dialogs/libsinfodlg.cpp:293
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:360
+#: core/libs/dialogs/libsinfodlg.cpp:374
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:388
+#: core/libs/dialogs/libsinfodlg.cpp:402
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifesti"
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Konfiguracija OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:599
+#: core/libs/dialogs/libsinfodlg.cpp:613
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Da"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:618
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:623
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -34353,20 +34355,20 @@ msgctxt "@info"
 msgid "Save the list."
 msgstr "Shrani seznam."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:580
+#: core/libs/dplugins/widgets/ditemslist.cpp:581
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Izberi seznam slik za nalaganje"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:581
-#: core/libs/dplugins/widgets/ditemslist.cpp:663
+#: core/libs/dplugins/widgets/ditemslist.cpp:582
+#: core/libs/dplugins/widgets/ditemslist.cpp:664
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "Vse datoteke (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:661
+#: core/libs/dplugins/widgets/ditemslist.cpp:662
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
