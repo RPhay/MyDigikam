@@ -348,14 +348,9 @@ int DItemsList::iconSize() const
 
 void DItemsList::loadImagesFromCurrentSelection()
 {
-    if (!d->iface)
-    {
-        return;
-    }
-
     bool selection = checkSelection();
 
-    if (selection && !d->iface->forceAlbumSelection)
+    if (selection && d->iface)
     {
         QList<QUrl> images = d->iface->currentSelectedItems();
 
@@ -366,7 +361,6 @@ void DItemsList::loadImagesFromCurrentSelection()
     }
     else
     {
-        d->iface->forceAlbumSelection = false;
         loadImagesFromCurrentAlbum();
     }
 }

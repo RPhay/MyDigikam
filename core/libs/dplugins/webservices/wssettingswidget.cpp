@@ -175,7 +175,16 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
     d->imgList->listView()->setWhatsThis(i18n("This is the list of images "
                                               "to upload to your %1 account.", d->toolName));
     d->imgList->setIface(d->iface);
-    d->imgList->loadImagesFromCurrentSelection();
+
+    if (d->iface->forceAlbumSelection)
+    {
+        d->iface->forceAlbumSelection = false;
+        d->imgList->loadImagesFromCurrentAlbum();
+    }
+    else
+    {
+        d->imgList->loadImagesFromCurrentSelection();
+    }
 
     d->settingsScrollArea->setMinimumSize(400, 500);
     d->settingsScrollArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
