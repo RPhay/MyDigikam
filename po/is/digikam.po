@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 01:37+0000\n"
+"POT-Creation-Date: 2024-01-19 01:39+0000\n"
 "PO-Revision-Date: 2023-10-05 09:38+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -547,19 +547,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Velja hlut"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:137
+#: core/app/items/utils/contextmenuhelper_actions.cpp:142
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Setja sem smámynd albúms"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:141
+#: core/app/items/utils/contextmenuhelper_actions.cpp:146
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Setja sem smámynd fyrir merki"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:178
+#: core/app/items/utils/contextmenuhelper_actions.cpp:183
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -567,7 +567,7 @@ msgid_plural "Move %1 Files to Trash"
 msgstr[0] "Setja í ruslið"
 msgstr[1] "Setja %1 skrár í ruslið"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:190
+#: core/app/items/utils/contextmenuhelper_actions.cpp:195
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
@@ -875,19 +875,19 @@ msgctxt "@action: context menu"
 msgid "Export"
 msgstr "Flytja út"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:118
+#: core/app/items/utils/contextmenuhelper_tools.cpp:117
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
 msgstr "Engin útflutningstól tiltæk"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:128
+#: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr "Magnvinnslustjóri"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:139
+#: core/app/items/utils/contextmenuhelper_tools.cpp:138
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
@@ -1203,7 +1203,7 @@ msgid "digiKam Properties"
 msgstr "digiKam eiginleikar"
 
 #: core/app/items/utils/tooltipfiller.cpp:457
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:219
 #, kde-format
 msgid "Album:"
 msgstr "Albúm:"
@@ -20644,7 +20644,7 @@ msgstr "Snið margmiðlunargáms:"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
 #, kde-format
 msgid ""
-"This controls allows to choose the format of the media container to host "
+"This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
 
@@ -20699,7 +20699,7 @@ msgstr "Hljóðrás:"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
 
@@ -20756,8 +20756,8 @@ msgstr "Sjónhverfing við birtingu mynda"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream. For a timelapse, let's this settings to "
-"None.</i>"
+"render the image on video stream. For a timelapse, let this setting to None."
+"</i>"
 msgstr ""
 "<i>Millifærsla er sjónræn hliðrun eða aðdráttur sem beitt er á meðan mynd er "
 "birt. Tímalengdin ræðst af fjölda ramma sem notaðir eru til myndgerðar "
@@ -20777,7 +20777,7 @@ msgstr "Millifærsla á milli mynda:"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow. For a timelapse, let's this settings to None.</i>"
+"slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 "<i>Millifærslur eru sjónræn áhrif sem beitt er milli tveggja mynda. Fyrir "
 "sum slík áhrif, getur tímalengdin ráðist af handahófskenndum gildum sem geta "
@@ -25467,7 +25467,7 @@ msgstr "Endurhlaða"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
 #, kde-format
 msgid "Reload album list"
 msgstr "Endurhlaða albúmalista"
@@ -25486,14 +25486,14 @@ msgstr "Slóð:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
 #, kde-format
 msgid "Change Account"
 msgstr "Skipta um aðgang"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:255
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:264
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Breyta stærð mynda fyrir útflutning"
@@ -25982,7 +25982,7 @@ msgid "Password for SmugMug album."
 msgstr "Lykilorð fyrir SmugMug albúm."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:214
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
 #, kde-format
 msgid "New Album"
 msgstr "Nýtt albúm"
@@ -29775,7 +29775,7 @@ msgstr "<i>Rammatíðni:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Myndmerkiskóðun:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -29799,67 +29799,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Atriðalisti"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Já"
 
-#: core/libs/dialogs/libsinfodlg.cpp:153
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Nei"
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Eiginleikar"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Aðgerðasöfn"
 
-#: core/libs/dialogs/libsinfodlg.cpp:279
+#: core/libs/dialogs/libsinfodlg.cpp:293
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Óþekkt"
 
-#: core/libs/dialogs/libsinfodlg.cpp:360
+#: core/libs/dialogs/libsinfodlg.cpp:374
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Óþekkt"
 
-#: core/libs/dialogs/libsinfodlg.cpp:388
+#: core/libs/dialogs/libsinfodlg.cpp:402
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifest-eiginleikayfirlýsingar"
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Uppsetning OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:599
+#: core/libs/dialogs/libsinfodlg.cpp:613
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Já"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:618
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Nei"
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:623
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -34047,46 +34047,46 @@ msgstr "Hámarksstærð"
 msgid "This is the list of images to upload to your %1 account."
 msgstr "Þetta er listi yfir myndirnar sem á að senda á %1-aðganginn þinn."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:186
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr "Þetta er smellanlegur tengill til að opna %1 í vafra."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:192
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:201
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr "Þetta er %1-aðgangurinn sem er núna í notkun."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:194
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr "Nafn:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:197
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:206
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr "Skipta um %1-aðganginn sem notaður er við millifærslu"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:207
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
 "downloaded."
 msgstr "Þetta er %1-mappan þangað sem valdar myndir verða sendar."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid "Create new %1 folder"
 msgstr "Búa til nýja %1 möppu"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:218
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:227
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr "Endurhlaða"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
@@ -34095,71 +34095,71 @@ msgstr ""
 "Þetta er hámarksstærð mynda. Myndir sem eru breiðari en þetta verða "
 "kvarðaðar niður."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:231
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
 #, kde-format
 msgid "Original Size"
 msgstr "Upprunaleg stærð"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:241
 #, kde-format
 msgid "1600 px"
 msgstr "1600 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:233
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
 #, kde-format
 msgid "1440 px"
 msgstr "1440 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:243
 #, kde-format
 msgid "1280 px"
 msgstr "1280 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:235
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
 #, kde-format
 msgid "1152 px"
 msgstr "1152 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:245
 #, kde-format
 msgid "1024 px"
 msgstr "1024 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr "Þetta er staðsetningin þar sem %1 myndirnar verða vistaðar."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:248
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:257
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr ""
 "Þetta eru valmöguleikarnir sem verður beitt á myndirnar áður en þær verða "
 "sendar."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "Upload original image file"
 msgstr "Senda inn upprunalega mynd"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:258
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:267
 #, kde-format
 msgid "Write the photo ID to the source image"
 msgstr "Skrifa auðkenni myndarinnar í upprunamynd"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:259
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr ""
 "Skrifa auðkenni myndarinnar sem lýsigögn í upprunamynd eftir að hún hefur "
 "verið send inn."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:271
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:280
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr "Hámarksstærð:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:279
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:288
 #, kde-format
 msgid "JPEG Quality:"
 msgstr "JPEG gæði:"
@@ -34229,20 +34229,20 @@ msgctxt "@info"
 msgid "Save the list."
 msgstr "Vista listann."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:580
+#: core/libs/dplugins/widgets/ditemslist.cpp:575
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Veldu myndskráalista til að hlaða inn"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:581
-#: core/libs/dplugins/widgets/ditemslist.cpp:663
+#: core/libs/dplugins/widgets/ditemslist.cpp:576
+#: core/libs/dplugins/widgets/ditemslist.cpp:658
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "Allar skrár (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:661
+#: core/libs/dplugins/widgets/ditemslist.cpp:656
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"

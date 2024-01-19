@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 01:37+0000\n"
+"POT-Creation-Date: 2024-01-19 01:39+0000\n"
 "PO-Revision-Date: 2024-01-13 06:02\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -519,26 +519,26 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "选择项目"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:137
+#: core/app/items/utils/contextmenuhelper_actions.cpp:142
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "设为相册缩略图"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:141
+#: core/app/items/utils/contextmenuhelper_actions.cpp:146
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "设为标签缩略图"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:178
+#: core/app/items/utils/contextmenuhelper_actions.cpp:183
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
 msgid_plural "Move %1 Files to Trash"
 msgstr[0] "移动 %1 张图像到回收站"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:190
+#: core/app/items/utils/contextmenuhelper_actions.cpp:195
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
@@ -845,19 +845,19 @@ msgctxt "@action: context menu"
 msgid "Export"
 msgstr "导出"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:118
+#: core/app/items/utils/contextmenuhelper_tools.cpp:117
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
 msgstr "无可用导出工具"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:128
+#: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr "批处理管理器"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:139
+#: core/app/items/utils/contextmenuhelper_tools.cpp:138
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
@@ -1164,7 +1164,7 @@ msgid "digiKam Properties"
 msgstr "digiKam 属性"
 
 #: core/app/items/utils/tooltipfiller.cpp:457
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:219
 #, kde-format
 msgid "Album:"
 msgstr "相册："
@@ -19952,7 +19952,7 @@ msgstr "媒体容器格式："
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
 #, kde-format
 msgid ""
-"This controls allows to choose the format of the media container to host "
+"This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
 
@@ -20007,7 +20007,7 @@ msgstr "音轨持续时间："
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
 "<i>关于音轨的提示：如果音频的时长小于视频，音频将循环播放。如果音频的时长大于"
@@ -20066,8 +20066,8 @@ msgstr "图像显示特效"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream. For a timelapse, let's this settings to "
-"None.</i>"
+"render the image on video stream. For a timelapse, let this setting to None."
+"</i>"
 msgstr ""
 "在此设置图像在显示时的平移和缩放特效。特效的时间长度将取决于图像停留帧数。"
 
@@ -20085,7 +20085,7 @@ msgstr "图像过渡特效"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow. For a timelapse, let's this settings to None.</i>"
+"slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 "在此设置图像在切换时的过渡特效。某些特效的时间长度是随机的，可能会在幻灯片中"
 "发生变化。"
@@ -24701,7 +24701,7 @@ msgstr "重新加载"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
 #, kde-format
 msgid "Reload album list"
 msgstr "重新加载相册列表"
@@ -24720,14 +24720,14 @@ msgstr "URL："
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
 #, kde-format
 msgid "Change Account"
 msgstr "更换账户"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:255
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:264
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "调整图像大小后上传"
@@ -25216,7 +25216,7 @@ msgid "Password for SmugMug album."
 msgstr "SmugMug 相册的密码。"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:214
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
 #, kde-format
 msgid "New Album"
 msgstr "新建相册"
@@ -28845,7 +28845,7 @@ msgstr "<b>帧速率：</b>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<b>视频编码：</b>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -28868,67 +28868,67 @@ msgstr "<font size=\"5\">%1</font><br/><b>版本 %2</b><p>%3</p><p><i>%4</i></p>
 msgid "Items List"
 msgstr "项目列表"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:153
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "功能"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "程序库"
 
-#: core/libs/dialogs/libsinfodlg.cpp:279
+#: core/libs/dialogs/libsinfodlg.cpp:293
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/dialogs/libsinfodlg.cpp:360
+#: core/libs/dialogs/libsinfodlg.cpp:374
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/dialogs/libsinfodlg.cpp:388
+#: core/libs/dialogs/libsinfodlg.cpp:402
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "清单"
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV 配置"
 
-#: core/libs/dialogs/libsinfodlg.cpp:599
+#: core/libs/dialogs/libsinfodlg.cpp:613
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:618
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:623
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -32980,113 +32980,113 @@ msgstr "最大尺寸："
 msgid "This is the list of images to upload to your %1 account."
 msgstr "这是要被上传到您的 %1 账户的图像列表。"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:186
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr "点击此链接可在网页浏览器中打开 %1。"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:192
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:201
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr "这是当前登录的 %1 账户。"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:194
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr "用户名："
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:197
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:206
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr "更换用于传输的 %1 账户"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:207
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
 "downloaded."
 msgstr "这是将要被上传/下载的所选图像所在的 %1 文件夹。"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid "Create new %1 folder"
 msgstr "创建新的 %1 文件夹"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:218
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:227
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr "重新加载"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
 "scaled down."
 msgstr "这是图像的最大尺寸。大于此数值的图像将被缩小。"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:231
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
 #, kde-format
 msgid "Original Size"
 msgstr "原始大小"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:241
 #, kde-format
 msgid "1600 px"
 msgstr "1600 像素"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:233
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
 #, kde-format
 msgid "1440 px"
 msgstr "1440 像素"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:243
 #, kde-format
 msgid "1280 px"
 msgstr "1280 像素"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:235
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
 #, kde-format
 msgid "1152 px"
 msgstr "1152 像素"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:245
 #, kde-format
 msgid "1024 px"
 msgstr "1024 像素"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr "这是 %1 图像将被下载的位置。"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:248
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:257
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr "这些是照片在上传之前需要应用的选项。"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "Upload original image file"
 msgstr "上传原始图像"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:258
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:267
 #, kde-format
 msgid "Write the photo ID to the source image"
 msgstr "写入照片 ID 到来源图像"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:259
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr "上传之后，写入照片 ID 到来源图像的元数据"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:271
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:280
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr "最大尺寸："
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:279
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:288
 #, kde-format
 msgid "JPEG Quality:"
 msgstr "JPEG 画质："
@@ -33156,20 +33156,20 @@ msgctxt "@info"
 msgid "Save the list."
 msgstr "保存列表。"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:580
+#: core/libs/dplugins/widgets/ditemslist.cpp:575
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "选择要加载的图像文件列表"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:581
-#: core/libs/dplugins/widgets/ditemslist.cpp:663
+#: core/libs/dplugins/widgets/ditemslist.cpp:576
+#: core/libs/dplugins/widgets/ditemslist.cpp:658
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "全部文件 (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:661
+#: core/libs/dplugins/widgets/ditemslist.cpp:656
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"

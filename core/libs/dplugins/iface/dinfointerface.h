@@ -156,6 +156,10 @@ public:
     virtual void openSetupPage(SetupPage page);
 
     Q_SIGNAL void signalSetupChanged();
+
+public:
+
+    bool forceAlbumSelection = false;
 };
 
 // -------------------------------------------------------------------------------------------------------------

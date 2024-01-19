@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 01:37+0000\n"
+"POT-Creation-Date: 2024-01-19 01:39+0000\n"
 "PO-Revision-Date: 2023-11-13 16:53+0300\n"
 "Last-Translator: Алевтина  <karashokovaaa@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -579,19 +579,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Выбрать объект"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:137
+#: core/app/items/utils/contextmenuhelper_actions.cpp:142
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Сделать миниатюрой альбома"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:141
+#: core/app/items/utils/contextmenuhelper_actions.cpp:146
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Сделать миниатюрой метки"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:178
+#: core/app/items/utils/contextmenuhelper_actions.cpp:183
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -601,7 +601,7 @@ msgstr[1] "Удалить %1 файла в корзину"
 msgstr[2] "Удалить %1 файлов в корзину"
 msgstr[3] "Удалить файл в корзину"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:190
+#: core/app/items/utils/contextmenuhelper_actions.cpp:195
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
@@ -914,19 +914,19 @@ msgctxt "@action: context menu"
 msgid "Export"
 msgstr "Экспорт"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:118
+#: core/app/items/utils/contextmenuhelper_tools.cpp:117
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
 msgstr "Не доступных инструментов экспорта"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:128
+#: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr "Управление очередями пакетной обработки"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:139
+#: core/app/items/utils/contextmenuhelper_tools.cpp:138
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
@@ -1256,7 +1256,7 @@ msgid "digiKam Properties"
 msgstr "Свойства digiKam"
 
 #: core/app/items/utils/tooltipfiller.cpp:457
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:219
 #, kde-format
 msgid "Album:"
 msgstr "Альбом:"
@@ -20918,7 +20918,7 @@ msgstr "Формат медиаконтейнера:"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
 #, kde-format
 msgid ""
-"This controls allows to choose the format of the media container to host "
+"This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
 
@@ -20973,7 +20973,7 @@ msgstr "Звуковое сопровождение:"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
 
@@ -21030,8 +21030,8 @@ msgstr "Эффект при показе изображений"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream. For a timelapse, let's this settings to "
-"None.</i>"
+"render the image on video stream. For a timelapse, let this setting to None."
+"</i>"
 msgstr ""
 "<i>Эффект заключается в применении увеличения или перемещения изображения "
 "при его показе . Длительность эффекта соответствует количеству кадров, "
@@ -21051,7 +21051,7 @@ msgstr "Переход между изображениями"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow. For a timelapse, let's this settings to None.</i>"
+"slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 "<i>Переход — это визуальный эффект, который применяется при смене "
 "изображений. Длительность некоторых эффектов зависит от случайных значений и "
@@ -25812,7 +25812,7 @@ msgstr "Обновить"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
 #, kde-format
 msgid "Reload album list"
 msgstr "Обновить список альбомов"
@@ -25831,14 +25831,14 @@ msgstr "URL-адрес:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
 #, kde-format
 msgid "Change Account"
 msgstr "Сменить учётную запись"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:255
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:264
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Изменить размер снимков перед загрузкой"
@@ -26333,7 +26333,7 @@ msgid "Password for SmugMug album."
 msgstr "Пароль к альбому в SmugMug."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:214
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
 #, kde-format
 msgid "New Album"
 msgstr "Новый альбом"
@@ -30148,7 +30148,7 @@ msgstr "<i>Частота кадров:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Видеокодек:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30172,69 +30172,69 @@ msgstr ""
 msgid "Items List"
 msgstr "Список изображений"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Да"
 
-#: core/libs/dialogs/libsinfodlg.cpp:153
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Нет"
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Особенности"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Библиотеки"
 
-#: core/libs/dialogs/libsinfodlg.cpp:279
+#: core/libs/dialogs/libsinfodlg.cpp:293
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Неизвестно"
 
 # BUGME: please split --aspotashev
-#: core/libs/dialogs/libsinfodlg.cpp:360
+#: core/libs/dialogs/libsinfodlg.cpp:374
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/dialogs/libsinfodlg.cpp:388
+#: core/libs/dialogs/libsinfodlg.cpp:402
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Манифесты"
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Настройка OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:599
+#: core/libs/dialogs/libsinfodlg.cpp:613
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Да"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:618
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Нет"
 
 # BUGME: please split --aspotashev
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:623
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -34462,28 +34462,28 @@ msgstr ""
 "Список изображений, которые надо загрузить в службу %1 под вашей учётной "
 "записью."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:186
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr "Эта ссылка открывает в веб-браузере домашнюю страницу службы %1."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:192
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:201
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr "Это учётная запись службы %1, в которую выполнен вход."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:194
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr "Имя:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:197
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:206
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr "Войти под другой учётной записью %1"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:207
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
@@ -34492,18 +34492,18 @@ msgstr ""
 "%1 папка, в которую/из которой будут загружаться/выгружаться выбранные "
 "снимки."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid "Create new %1 folder"
 msgstr "Создать новый альбом в %1"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:218
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:227
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr "Обновить"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
@@ -34512,69 +34512,69 @@ msgstr ""
 "Максимальный размер изображений. Изображения большего размера будут "
 "уменьшены."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:231
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
 #, kde-format
 msgid "Original Size"
 msgstr "Исходный размер"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:241
 #, kde-format
 msgid "1600 px"
 msgstr "1600 пкс"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:233
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
 #, kde-format
 msgid "1440 px"
 msgstr "1440 пкс"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:243
 #, kde-format
 msgid "1280 px"
 msgstr "1280 пкс"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:235
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
 #, kde-format
 msgid "1152 px"
 msgstr "1152 пкс"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:245
 #, kde-format
 msgid "1024 px"
 msgstr "1024 пкс"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr "Выберите, куда должны быть скопированы изображения из службы %1."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:248
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:257
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr "Параметры, которые будут применены к изображениям перед загрузкой."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "Upload original image file"
 msgstr "Загружать оригиналы изображений"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:258
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:267
 #, kde-format
 msgid "Write the photo ID to the source image"
 msgstr "Записать идентификатор фотографии в исходное изображение"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:259
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr ""
 "Записать идентификатор фотографии в исходное изображение как метаданные "
 "после передачи."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:271
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:280
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr "Длинная сторона:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:279
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:288
 #, kde-format
 msgid "JPEG Quality:"
 msgstr "Качество JPEG:"
@@ -34644,20 +34644,20 @@ msgctxt "@info"
 msgid "Save the list."
 msgstr "Сохранить список."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:580
+#: core/libs/dplugins/widgets/ditemslist.cpp:575
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Выбор файла со списком изображений для загрузки"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:581
-#: core/libs/dplugins/widgets/ditemslist.cpp:663
+#: core/libs/dplugins/widgets/ditemslist.cpp:576
+#: core/libs/dplugins/widgets/ditemslist.cpp:658
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "Все файлы (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:661
+#: core/libs/dplugins/widgets/ditemslist.cpp:656
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"

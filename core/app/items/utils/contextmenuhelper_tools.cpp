@@ -94,10 +94,8 @@ void ContextMenuHelper::addImportMenu()
 
 void ContextMenuHelper::addExportMenu()
 {
-    QMenu* const menuExport       = new QMenu(i18nc("@action: context menu", "Export"), d->parent);
-    KXMLGUIClient* const client   = const_cast<KXMLGUIClient*>(d->stdActionCollection->parentGUIClient());
-    QList<DPluginAction*> actions = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericExport,
-                                    dynamic_cast<KXmlGuiWindow*>(client));
+    QMenu* const menuExport              = new QMenu(i18nc("@action: context menu", "Export"), d->parent);
+    const QList<DPluginAction*>& actions = d->exportPluginActions();
 
 #if 0
 
@@ -110,6 +108,7 @@ void ContextMenuHelper::addExportMenu()
     {
         Q_FOREACH (DPluginAction* const ac, actions)
         {
+            ac->setData((int)DPluginAction::AlbumData);
             menuExport->addActions(QList<QAction*>() << ac);
         }
     }

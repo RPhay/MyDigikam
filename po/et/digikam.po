@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 01:37+0000\n"
+"POT-Creation-Date: 2024-01-19 01:39+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -587,21 +587,21 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Vali element"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:137
+#: core/app/items/utils/contextmenuhelper_actions.cpp:142
 #, fuzzy, kde-format
 #| msgid "Set as Album Thumbnail"
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Määra albumi pisipildiks"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:141
+#: core/app/items/utils/contextmenuhelper_actions.cpp:146
 #, fuzzy, kde-format
 #| msgid "Set as Tag Thumbnail"
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Määra sildi pisipildiks"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:178
+#: core/app/items/utils/contextmenuhelper_actions.cpp:183
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -609,7 +609,7 @@ msgid_plural "Move %1 Files to Trash"
 msgstr[0] "Viska prügikasti"
 msgstr[1] "Viska %1 faili prügikasti"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:190
+#: core/app/items/utils/contextmenuhelper_actions.cpp:195
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
 msgctxt "@action:inmenu Pluralized"
@@ -958,21 +958,21 @@ msgctxt "@action: context menu"
 msgid "Export"
 msgstr "Eksport"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:118
+#: core/app/items/utils/contextmenuhelper_tools.cpp:117
 #, fuzzy, kde-format
 #| msgid "No export tool available"
 msgctxt "@action: context menu"
 msgid "No export tool available"
 msgstr "Ühtegi eksporditööriista pole saada"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:128
+#: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr "Hulgi-järjekorrahaldur"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:139
+#: core/app/items/utils/contextmenuhelper_tools.cpp:138
 #, fuzzy, kde-format
 #| msgid "Add to Existing Queue"
 msgctxt "@action: context menu"
@@ -1290,7 +1290,7 @@ msgid "digiKam Properties"
 msgstr "digiKami omadused"
 
 #: core/app/items/utils/tooltipfiller.cpp:457
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:219
 #, kde-format
 msgid "Album:"
 msgstr "Album:"
@@ -22240,7 +22240,7 @@ msgstr "Meediakonteineri vorming:"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
 #, kde-format
 msgid ""
-"This controls allows to choose the format of the media container to host "
+"This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
 
@@ -22294,7 +22294,7 @@ msgstr "Heliriba:"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Lets empty this setting if you don't want a sountrack to the "
+"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
 
@@ -22347,8 +22347,8 @@ msgstr "Efekt piltide esitamisel"
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream. For a timelapse, let's this settings to "
-"None.</i>"
+"render the image on video stream. For a timelapse, let this setting to None."
+"</i>"
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
@@ -22361,7 +22361,7 @@ msgstr "Üleminek piltide vahel"
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow. For a timelapse, let's this settings to None.</i>"
+"slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
@@ -27348,7 +27348,7 @@ msgstr "Laadi uuesti"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
 #, kde-format
 msgid "Reload album list"
 msgstr "Albumiloendi taaslaadimine"
@@ -27369,14 +27369,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
 #, kde-format
 msgid "Change Account"
 msgstr "Muuda kontot"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:255
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:264
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Fotode suuruse muutmine enne üleslaadimist"
@@ -27886,7 +27886,7 @@ msgid "Password for SmugMug album."
 msgstr "SmugMugi albumi parool."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:214
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
 #, kde-format
 msgid "New Album"
 msgstr "Uus album"
@@ -31796,7 +31796,7 @@ msgstr "<i>Kaadrisagedus:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Videokoodek:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -31822,21 +31822,21 @@ msgstr ""
 msgid "Items List"
 msgstr "Pildiloend"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Jah"
 
-#: core/libs/dialogs/libsinfodlg.cpp:153
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ei"
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -31844,14 +31844,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "Olemuslugu"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:206
 #, fuzzy, kde-format
 #| msgid "Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Teek"
 
-#: core/libs/dialogs/libsinfodlg.cpp:279
+#: core/libs/dialogs/libsinfodlg.cpp:293
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31859,7 +31859,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Tundmatu"
 
-#: core/libs/dialogs/libsinfodlg.cpp:360
+#: core/libs/dialogs/libsinfodlg.cpp:374
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31867,34 +31867,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Tundmatu"
 
-#: core/libs/dialogs/libsinfodlg.cpp:388
+#: core/libs/dialogs/libsinfodlg.cpp:402
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Kaamera seadistus"
 
-#: core/libs/dialogs/libsinfodlg.cpp:599
+#: core/libs/dialogs/libsinfodlg.cpp:613
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Jah"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:618
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ei"
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:623
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -36326,113 +36326,113 @@ msgstr "Maks. mõõtmed"
 msgid "This is the list of images to upload to your %1 account."
 msgstr "See on sinu %1 kontole üleslaaditavate piltide loend."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:186
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr "See on klõpsatav link %1 avamiseks brauseris."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:192
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:201
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr "See on %1 konto, millele oled praegu sisse logitud."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:194
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr "Nimi:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:197
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:206
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr "%1 konto muutmine ülekandeks"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:207
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
 "downloaded."
 msgstr "See on %1 kataloog, kust/kuhu valitud fotosid alla/üles laadida."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid "Create new %1 folder"
 msgstr "Uue %1 kataloogi loomine"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:218
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:227
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr "Laadi uuesti"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
 "scaled down."
 msgstr "See on piltide maksimaalne suurus. Suuremad pildid skaleeritakse alla."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:231
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
 #, kde-format
 msgid "Original Size"
 msgstr "Algsuurus"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:241
 #, kde-format
 msgid "1600 px"
 msgstr "1600 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:233
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
 #, kde-format
 msgid "1440 px"
 msgstr "1440 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:243
 #, kde-format
 msgid "1280 px"
 msgstr "1280 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:235
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
 #, kde-format
 msgid "1152 px"
 msgstr "1152 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:245
 #, kde-format
 msgid "1024 px"
 msgstr "1024 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr "Asukoht, kust %1 pildid alla laadida."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:248
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:257
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr "Valikud, mida fotodele rakendada enne üleslaadimist."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "Upload original image file"
 msgstr "Algse pildifaili üleslaadimine"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:258
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:267
 #, kde-format
 msgid "Write the photo ID to the source image"
 msgstr "Foto ID kirjutamine lähtepilti"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:259
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr "Foto ID kirjutamine metaandmetena lähtepilti pärast üleslaadimist."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:271
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:280
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr "Maks. mõõtmed:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:279
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:288
 #, kde-format
 msgid "JPEG Quality:"
 msgstr "JPEG kvaliteet:"
@@ -36511,22 +36511,22 @@ msgctxt "@info"
 msgid "Save the list."
 msgstr "Nimekirja salvestamine."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:580
+#: core/libs/dplugins/widgets/ditemslist.cpp:575
 #, fuzzy, kde-format
 #| msgid "Select the image file list to load"
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Laaditava pildifaililoendi valimine"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:581
-#: core/libs/dplugins/widgets/ditemslist.cpp:663
+#: core/libs/dplugins/widgets/ditemslist.cpp:576
+#: core/libs/dplugins/widgets/ditemslist.cpp:658
 #, fuzzy, kde-format
 #| msgid "All Files (*)"
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "Kõik failid (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:661
+#: core/libs/dplugins/widgets/ditemslist.cpp:656
 #, fuzzy, kde-format
 #| msgid "Select the image file list to save"
 msgctxt "@title:window"

@@ -183,7 +183,7 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
     effNote->setWordWrap(true);
     effNote->setText(i18n("<i>An effect is an visual panning or zooming applied while an image "
                           "is displayed. The effect duration will follow the number of frames used "
-                          "to render the image on video stream. For a timelapse, let's this settings to None.</i>"));
+                          "to render the image on video stream. For a timelapse, let this setting to None.</i>"));
 
     d->effPreview              = new EffectPreview(effGrp);
     QGridLayout* const effGrid = new QGridLayout(effGrp);
@@ -220,7 +220,7 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
     transNote->setWordWrap(true);
     transNote->setText(i18n("<i>A transition is an visual effect applied between two images. "
                             "For some effects, the duration can depend of random values and "
-                            "can change while the slideshow. For a timelapse, let's this settings to None.</i>"));
+                            "can change while the slideshow. For a timelapse, let this setting to None.</i>"));
 
     d->transPreview              = new TransitionPreview(transGrp);
     QGridLayout* const transGrid = new QGridLayout(transGrp);

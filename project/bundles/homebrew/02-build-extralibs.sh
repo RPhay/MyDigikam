@@ -47,6 +47,22 @@ ORIG_WD="`pwd`"
 
 export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/opt/qt6/bin:/$INSTALL_PREFIX/opt/bison/bin:/$INSTALL_PREFIX/opt/gperf/bin:$ORIG_PATH
 
+# HomeBrew do not create these sym-links as with other shared libs.
+
+if [ ! -d ${INSTALL_PREFIX}/include/jxl ] ; then
+    ln -s ${INSTALL_PREFIX}/opt/jpeg-xl/include/jxl ${INSTALL_PREFIX}/include/jxl
+fi
+
+FILES=$(find "${INSTALL_PREFIX}/opt/jpeg-xl/lib/" -name "*.dylib" -depth 1)
+
+for FILE in $FILES ; do
+    BASE=$(basename $FILE)
+
+    if [ ! -f ${INSTALL_PREFIX}/lib/${BASE} ] ; then
+        ln -s ${FILE} ${INSTALL_PREFIX}/lib/${BASE}
+    fi
+done
+
 #################################################################################################
 
 # Create the build dir for the 3rdparty deps
@@ -104,6 +120,7 @@ cmake --build . --config RelWithDebInfo --target ext_kiconthemes         -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_kservice            -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kxmlgui             -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$CPU_CORES
+
 cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
 
 # Extra support for digiKam

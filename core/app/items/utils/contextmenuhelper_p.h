@@ -169,6 +169,16 @@ public:
 
         return action;
     }
+
+    QList<DPluginAction*> exportPluginActions() const
+    {
+        KXMLGUIClient* const client   = const_cast<KXMLGUIClient*>(stdActionCollection->parentGUIClient());
+        QList<DPluginAction*> actions = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericExport,
+                                        dynamic_cast<KXmlGuiWindow*>(client));
+
+        return actions;
+    }
+
 };
 
 } // namespace Digikam

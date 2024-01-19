@@ -350,13 +350,8 @@ void DItemsList::loadImagesFromCurrentSelection()
 {
     bool selection = checkSelection();
 
-    if (selection == true)
+    if (selection && d->iface)
     {
-        if (!d->iface)
-        {
-            return;
-        }
-
         QList<QUrl> images = d->iface->currentSelectedItems();
 
         if (!images.isEmpty())

@@ -61,6 +61,13 @@ public:
         EditorFilters           ///< Image Editor special effects action.
     };
 
+    /// Plugin action types via QAction data container.
+    enum PluginActionData
+    {
+        NoData        = 0,
+        AlbumData
+    };
+
 public:
 
     explicit DPluginAction(QObject* const parent = nullptr);

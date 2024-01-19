@@ -71,38 +71,40 @@ showfoto \
 
 # Paths to search for applications above
 KDE_APP_PATHS="\
-Applications/digiKam.org \
+bin \
 "
 
 # Other apps - non-MacOS binaries & libraries to be included with required dylibs
 OTHER_APPS="\
-lib/plugins/imageformats/*.so \
-lib/plugins/styles/*.so \
-lib/plugins/digikam/bqm/*.so \
-lib/plugins/digikam/generic/*.so \
-lib/plugins/digikam/editor/*.so \
-lib/plugins/digikam/dimg/*.so \
-lib/plugins/digikam/rawimport/*.so \
-lib/mariadb$MARIADB_SUFFIX/bin/mysql \
-lib/mariadb$MARIADB_SUFFIX/bin/mysqld \
-lib/mariadb$MARIADB_SUFFIX/bin/my_print_defaults \
-lib/mariadb$MARIADB_SUFFIX/bin/mysqladmin \
-lib/mariadb$MARIADB_SUFFIX/bin/mysqltest \
-lib/mariadb$MARIADB_SUFFIX/mysql/*.dylib \
-lib/mariadb$MARIADB_SUFFIX/plugin/*.so \
-bin/kbuildsycoca5 \
-bin/solid-hardware5 \
+share/qt/plugins/imageformats/*.dylib \
+share/qt/plugins/styles/* \
+share/qt/plugins/digikam/bqm/*.so \
+share/qt/plugins/digikam/generic/*.so \
+share/qt/plugins/digikam/editor/*.so \
+share/qt/plugins/digikam/dimg/*.so \
+share/qt/plugins/digikam/rawimport/*.so \
+opt/mariadb/bin/mysql \
+opt/mariadb/bin/mysqld \
+opt/mariadb/bin/my_print_defaults \
+opt/mariadb/bin/mysqladmin \
+opt/mariadb/bin/mysqltest \
+opt/mariadb/lib/*.dylib \
+opt/mariadb/lib/plugin/*.so \
+bin/kbuildsycoca6 \
+bin/solid-hardware6 \
 bin/ffmpeg \
-libexec/qt5/plugins/imageformats/*.dylib \
-libexec/qt5/plugins/sqldrivers/*.dylib \
-libexec/qt5/plugins/printsupport/*.dylib \
-libexec/qt5/plugins/platforms/*.dylib \
-libexec/qt5/plugins/platformthemes/*.dylib \
-libexec/qt5/plugins/iconengines/*.dylib \
-libexec/qt5/plugins/generic/*.dylib \
-libexec/qt5/plugins/styles/*.dylib \
-libexec/qt5/plugins/bearer/*.dylib \
+opt/qt-mariadb/share/qt/plugins/sqldrivers/*.dylib \
+opt/qt6/share/qt/plugins/sqldrivers/*.dylib \
+opt/qt6/share/qt/plugins/imageformats/*.dylib \
+opt/qt6/share/qt/plugins/platforms/*.dylib \
+opt/qt6/share/qt/plugins/iconengines/*.dylib \
+opt/qt6/share/qt/plugins/generic/*.dylib \
+opt/qt6/share/qt/plugins/styles/*.dylib \
 "
+#FIXME: recompile HomeBrew Qt6 with missing plugins
+#opt/qt6/share/qt/plugins/bearer/*.dylib \
+#opt/qt6/share/qt/plugins/printsupport/*.dylib \
+#opt/qt6/share/qt/plugins/platformthemes/*.dylib \
 
 #lib/sane/*.so \
 
@@ -111,19 +113,19 @@ binaries="$OTHER_APPS"
 # Additional Files/Directories - to be copied recursively but not checked for dependencies
 # Note: dSYM directories are copied as well and cleaned later if debug symbols must be removed in final bundle.
 OTHER_DIRS="\
-libexec/qt5/translations \
+opt/qt6/share/qt/translations \
 lib/libdigikam*.dSYM \
-lib/plugins \
 lib/libgphoto2 \
 lib/libgphoto2_port \
-lib/mariadb$MARIADB_SUFFIX \
+opt/mariadb/lib \
 lib/ImageMagick* \
-share/mariadb$MARIADB_SUFFIX \
+opt/mariadb/share \
 share/ImageMagick* \
-etc/xdg \
 etc/ImageMagick* \
-etc/mariadb$MARIADB_SUFFIX \
 "
+
+#etc/xdg \
+#etc/mariadb$MARIADB_SUFFIX \
 
 #etc/sane.d \
 
@@ -278,23 +280,9 @@ cp -a "$INSTALL_PREFIX/share/icons/hicolor" "$TEMPROOT/digikam.app/Contents/Reso
 echo "---------- Copying Qt Web Backend files..."
 
 # Qt Web framework bin data files.
-# NOTE: Since Qt 5.15.0, QtWebEngine runtime process is now located in
-#       libexec/qt5/lib/QtWebEngineCore.framework/Versions/5/Helpers/QtWebEngineProcess.app/Contents/MacOS
-#       instead of libexec/qt5/libexec/. No needs to make extra rules for this runtime process.
-
-if [[ $DK_QTWEBENGINE = 0 ]] ; then
-
-    # Rules for QtWebKit runtime process
-
-    mkdir -p $TEMPROOT/libexec/qt5/libexec/
-
-    # QtWebKit runtime process
-
-    [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebNetworkProcess ]] && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebNetworkProcess" "$TEMPROOT/libexec/qt5/libexec/"
-    [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebProcess ]]        && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebProcess"        "$TEMPROOT/libexec/qt5/libexec/"
-    [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebStorageProcess ]] && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebStorageProcess" "$TEMPROOT/libexec/qt5/libexec/"
-
-fi
+# NOTE: QtWebEngine runtime process is now located in
+#       opt/qt6/lib/QtWebEngineCore.framework/Versions/current/Helpers/QtWebEngineProcess.app/Contents/MacOS
+#       instead of opt/qt6/libexec/. No needs to make extra rules for this runtime process.
 
 echo "---------- Copying i18n..."
 
@@ -315,7 +303,7 @@ done
 
 # Move Qt translation data files at the right place in the bundle. See Bug #438701.
 
-mv -v $TEMPROOT/libexec/qt5/translations $TEMPROOT/digikam.app/Contents/Resources/
+mv -v $TEMPROOT/opt/qt6/share/qt/translations $TEMPROOT/digikam.app/Contents/Resources/
 
 # To support localized system menu entries from MacOS. See bug #432650.
 
@@ -335,10 +323,13 @@ rm -rf "$TEMPROOT/showfoto.app/Contents/Resources"
 cd "$ORIG_WD"
 
 #################################################################################################
-# Move digiKam and KF5 run-time plugins to the right place
+# Move digiKam and KF6 run-time plugins to the right place
 
-cp -a $TEMPROOT/lib/plugins $TEMPROOT/libexec/qt5/
-rm -rf $TEMPROOT/lib/plugins
+mkdir -p $TEMPROOT/libexec/qt6/
+cp -a  $TEMPROOT/share/qt/plugins         $TEMPROOT/libexec/qt6/
+rm -rf $TEMPROOT/share/qt/plugins
+cp -a  $TEMPROOT/opt/qt6/share/qt/plugins $TEMPROOT/libexec/qt6/
+rm -rf $TEMPROOT/opt/qt6/share/qt/plugins
 
 #################################################################################################
 # Merge Manifest files
@@ -544,12 +535,12 @@ for HPP in ${HEADERFILES[@]} ; do
 
 done
 
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb$MARIADB_SUFFIX/mysql-test
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb$MARIADB_SUFFIX/sql-bench
+rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/mysql-test
+rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/sql-bench
 
 echo -e "\n---------- Patch config and script files in bundle"
 
-MARIADBDIRS=(`find $TEMPROOT -type d -name "mariadb$MARIADB_SUFFIX"`)
+MARIADBDIRS=(`find $TEMPROOT -type d -name "mariadb"`)
 
 for DIR in ${MARIADBDIRS[@]} ; do
 
@@ -584,14 +575,14 @@ done
 #################################################################################################
 # See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
 
-rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb$MARIADB_SUFFIX" "$TEMPROOT/digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX/share/"
-rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb$MARIADB_SUFFIX"
+rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/"
+rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb"
 
 # At run time, digiKam will check for mariadb folder-name without revision numbers.
 
-ln -sv "../../../../../digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX/share/mariadb$MARIADB_SUFFIX" "$TEMPROOT/digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX/share/mariadb"
-ln -sv "../../../digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX"                                    "$TEMPROOT/digikam.app/Contents/lib/mariadb"
-ln -sv "../../../digikam.app/Contents/etc/mariadb$MARIADB_SUFFIX"                                    "$TEMPROOT/digikam.app/Contents/etc/mariadb"
+ln -sv "../../../../../digikam.app/Contents/lib/mariadb/share/mariadb$MARIADB_SUFFIX" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/mariadb"
+ln -sv "../../../digikam.app/Contents/lib/mariadb"                                    "$TEMPROOT/digikam.app/Contents/lib/mariadb"
+ln -sv "../../../digikam.app/Contents/etc/mariadb"                                    "$TEMPROOT/digikam.app/Contents/etc/mariadb"
 
 #################################################################################################
 # Install ExifTool binary.
@@ -614,7 +605,7 @@ ln -sv "./Image-ExifTool/exiftool" "exiftool"
 echo "---------- Create MacOS package for digiKam $DKRELEASEID"
 
 mkdir -p $ORIG_WD/bundle
-rm -f $ORIG_WD/bundle/*x86-64$DEBUG_SUF* || true
+rm -f $ORIG_WD/bundle/*arm64$DEBUG_SUF* || true
 
 if [[ $DK_VERSION != v* ]] ; then
 
@@ -629,7 +620,7 @@ else
 
 fi
 
-TARGET_INSTALLER=digiKam-$DKRELEASEID$DK_SUBVER-MacOS-x86-64$DEBUG_SUF.pkg
+TARGET_INSTALLER=digiKam-$DKRELEASEID$DK_SUBVER-MacOS-arm64$DEBUG_SUF.pkg
 TARGET_PKG_FILE=$BUILDDIR/bundle/$TARGET_INSTALLER
 echo -e "Target PKG file : $TARGET_PKG_FILE"
 
@@ -674,7 +665,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older bundle Package files from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-MacOS-x86-64$DEBUG_SUF.pkg*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-MacOS-arm64$DEBUG_SUF.pkg*"
 
     echo -e "---------- Upload new bundle Package files to files.kde.org repository \n"
 
