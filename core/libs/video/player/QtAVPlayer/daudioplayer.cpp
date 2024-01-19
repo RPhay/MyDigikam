@@ -18,6 +18,10 @@
 
 #include <QMediaService>
 
+// Local includes
+
+#include "digikam_debug.h"
+
 namespace Digikam
 {
 
@@ -63,6 +67,7 @@ QAVAudioOutput* DAudioPlayer::audioOutput() const
 void DAudioPlayer::slotAudioFrame(const QAVAudioFrame& frame)
 {
     d->audioOutput->play(frame);
+//    qCDebug(DIGIKAM_GENERAL_LOG) << "Audio position:" << d->player->position();
 
     Q_EMIT positionChanged(d->player->position());
 }
@@ -99,6 +104,7 @@ qint64 DAudioPlayer::duration() const
 
 void DAudioPlayer::setVolume(qreal v)
 {
+    qCDebug(DIGIKAM_GENERAL_LOG) << "setVolume" << v;
     d->audioOutput->setVolume(v);
 }
 
