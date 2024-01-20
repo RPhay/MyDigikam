@@ -141,7 +141,6 @@ Library/Application/ \
 
 # Packaging tool paths
 PACKAGESBUILD="/usr/local/bin/packagesbuild"
-RECURSIVE_LIBRARY_LISTER="$BUILDDIR/rll.py"
 
 echo "digiKam version: $DKRELEASEID"
 
@@ -213,21 +212,28 @@ echo "---------- Collecting dependencies for applications, binaries, and librari
 
 cd "$INSTALL_PREFIX"
 
-"$RECURSIVE_LIBRARY_LISTER" $binaries | sort -u | \
-while read lib ; do
-    lib="`echo $lib | sed "s:$INSTALL_PREFIX/::"`"
+binary_paths=$(ls $binaries | sort -u)
+
+for bin in $binary_paths ; do
+
+    echo "Scan dependencies for $bin"
+
+    # Copy original with parsing
+
+    lib="${bin/$INSTALL_PREFIX\//}"
 
     if [ ! -e "$TEMPROOT/$lib" ] ; then
         dir="${lib%/*}"
 
         if [ ! -d "$TEMPROOT/$dir" ] ; then
-            echo "  Creating $TEMPROOT/$dir"
             mkdir -p "$TEMPROOT/$dir"
         fi
 
-        echo "  Copying $INSTALL_PREFIX/$lib to $TEMPROOT/$dir/"
         cp -aH "$INSTALL_PREFIX/$lib" "$TEMPROOT/$dir/"
     fi
+
+    CopyReccursiveDependencies "$bin" "$TEMPROOT"
+
 done
 
 #################################################################################################

@@ -264,3 +264,38 @@ for server in $SERVER_LIST; do
 done
 
 }
+
+########################################################################
+# Copy dependencies with otool analysis
+# arg1 : original file path to parse.
+# arg2 : target path to copy dependencies.
+CopyReccursiveDependencies()
+{
+
+DEPS=$(otool -L $INSTALL_PREFIX/$1 | grep $INSTALL_PREFIX | awk -F ' \\\(' '{print $1}')
+
+for EXTLIB in $DEPS ; do
+
+    if [[ $EXTLIB == $INSTALL_PREFIX/$1* ]] ; then
+        continue
+    fi
+
+    lib="${EXTLIB/$INSTALL_PREFIX\//}"
+
+    if [ ! -e "$TEMPROOT/$lib" ] ; then
+        dir="${lib%/*}"
+
+        if [ ! -d "$TEMPROOT/$dir" ] ; then
+#            echo "  Creating $TEMPROOT/$dir"
+            mkdir -p "$TEMPROOT/$dir"
+        fi
+
+        echo "  Copying $lib"
+        cp -aH "$INSTALL_PREFIX/$lib" "$TEMPROOT/$dir/"
+    fi
+
+    CopyReccursiveDependencies "$lib" "$2"
+
+done
+
+}
