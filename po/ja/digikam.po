@@ -8,6 +8,7 @@
 # Yukiko Bando <ybando@k6.dion.ne.jp>, 2006, 2007, 2008.
 # Yukiko Bando <ybando@k6.dion.ne.jp>, 2005, 2006, 2007, 2008, 2009.
 # Taiki Komoda <kom@kde.gr.jp>, 2006.
+# Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2010, 2011, 2014, 2015, 2021, 2023, 2024.
 #
 # --- kipiplugin_acquireimages
 # Translation of kipiplugin_acquireimages into Japanese.
@@ -26,13 +27,12 @@
 # This file is distributed under the same license as the kipi-plugins package.
 # --- libkexiv2
 # Translation of libkexiv2 into Japanese.
-# Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2010, 2011, 2014, 2015, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-19 01:39+0000\n"
-"PO-Revision-Date: 2023-05-29 20:03-0700\n"
+"PO-Revision-Date: 2024-01-18 22:17-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
@@ -1423,7 +1423,7 @@ msgstr[0] "%1 隠しアイテム"
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
-msgstr[0] "選択されたファイルににメタデータを書き込み"
+msgstr[0] "選択されたファイルにメタデータを書き込み"
 
 #: core/app/main/digikamapp.cpp:851
 #, kde-format
@@ -6236,9 +6236,7 @@ msgid "Date"
 msgstr "日付"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr "キャプション"
@@ -6368,9 +6366,7 @@ msgid "Title"
 msgstr "タイトル"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "キャプション"
@@ -13001,8 +12997,7 @@ msgid ""
 msgstr "被写体と画像入力機器の距離のタイプを選択します。"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@item: image caption"
 msgid "Caption"
 msgstr "キャプション"
@@ -20138,8 +20133,7 @@ msgid ">"
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:123
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@title: column"
 msgid "Caption"
 msgstr "キャプション"
@@ -21939,8 +21933,7 @@ msgid "Main Settings"
 msgstr "マスクの設定"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:99
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@title: caption settings for the presentation"
 msgid "Caption"
 msgstr "キャプション"
@@ -23341,11 +23334,10 @@ msgid "File Transfer"
 msgstr "変換(&N)"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:65
-#, fuzzy, kde-format
-#| msgid "Filter by geolocation"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export and import items with a remote location"
-msgstr "ジオロケーションによるフィルタ"
+msgstr "フィルム粒子を加えるツール"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:70
 #, fuzzy, kde-format
@@ -29404,9 +29396,9 @@ msgid "Step Progress (%1)"
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgid "Database Configuration"
-msgstr "データベースファイルのパス"
+msgstr "データベースの設定"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:54
 #, kde-format
@@ -29432,6 +29424,10 @@ msgid ""
 "the default and recommended backend for collections with less than 100K "
 "items.</p>"
 msgstr ""
+"<p>ここで、データベースのバックエンドの種類を選択します。</p><p><b>SQlite</"
+"b> バックエンドは、小さなコレクションや中規模のコレクションをローカルのデータ"
+"ベースに保存するためのものです。これは、100K 以下のアイテムを持つコレクション"
+"に対して、デフォルトでお勧めのバックエンドです。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:80
 #, kde-format
@@ -29440,6 +29436,9 @@ msgid ""
 "collection sizes. This backend is recommend for local collections with more "
 "than 100K items.</p>"
 msgstr ""
+"<p><b>MySQL Internal</b> バックエンドは、巨大なコレクションをローカルのデータ"
+"ベースに保存するためのものです。このバックエンドは、100K 以上のアイテムを持つ"
+"ローカルのコレクションに対してお勧めです。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:85
 #, kde-format
@@ -29448,14 +29447,12 @@ msgid ""
 "remote and shared database storage. It is also more efficient to manage huge "
 "collection sizes with more than 100K items.</p>"
 msgstr ""
+"<p><b>MySQL Server</b> バックエンドは、リモートや共有のデータベースを保存する"
+"ための、より堅牢なソリューションです。また、100K 以上のアイテムを持つ巨大なコ"
+"レクションを管理するのにも効率的です。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The location where the database file will be stored on your system. "
-#| "There is one common database file for all root albums.<br/>Write access "
-#| "is required to be able to edit image properties.</p><p>Note: a remote "
-#| "file system, such as NFS, cannot be used here.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -29467,16 +29464,21 @@ msgid ""
 "file system such as NFS, cannot be used here. For performance reasons, it is "
 "also recommended not to use network storage media.</p><p></p>"
 msgstr ""
-"<p>データベースファイルを保存するコンピュータ上の場所です。すべてのルートアル"
-"バムは共通のデータベースファイルに記録されます。<br/>画像のプロパティを編集で"
-"きるようにするには、書き込み権限が必要です。</p><p><note>これには NFS のよう"
-"なリモートファイルシステムは指定できません。</note></p><p></p>"
+"<p>ここで、データベースファイルをシステム上のどこに保存するかを設定します。"
+"データベースは 4 つあります: すべてのコレクションのプロパティを保存するもの、"
+"圧縮されたサムネイルを保存するもの、顔認識のメタデータを保存するもの、指紋を"
+"保存するものです。<br/>画像のプロパティを編集できるようにするために、書き込み"
+"権限が必要です。</p><p>データベースは digiKam のコアエンジンです。サムネイル"
+"のデータベースには、SSD や NVMe などの高速なハードウェア (特にサムネイルの"
+"データベースには十分な空き容量が必要です) にホストされた場所を使用するように"
+"してください。</p><p>注: NFS などのリモートファイルシステムはここでは使用でき"
+"ません。パフォーマンスのために、ネットワークストレージメディアを使用しないこ"
+"ともお勧めします。</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
-#, fuzzy, kde-format
-#| msgid "Add information from the database"
+#, kde-format
 msgid "Enable WAL mode for the databases"
-msgstr "データベースから情報を追加"
+msgstr "データベースで WAL モードを有効にする"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:114
 #, kde-format
@@ -29484,6 +29486,8 @@ msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
 "supported systems."
 msgstr ""
+"WAL (Write-Ahead Log, ログ先行書き込み) モードは、サポートされているシステム"
+"では、ほとんどのシナリオで大幅に高速です。"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
 #, kde-format
@@ -29495,6 +29499,12 @@ msgid ""
 "before the changes are written to the database. This made database requests "
 "atomic and robust in extensive and critical use cases."
 msgstr ""
+"Write-Ahead Log (ログ先行書き込み) は、コミットされているがまだデータベースに"
+"適用されていないトランザクションを記録するロールフォワードジャーナルを使用す"
+"るモードです。クラッシュ時のリカバリトランザクションのための構造をホストする"
+"ための補助ジャーナルファイルを使用します。変更は、データベースに書き込まれる"
+"前に、まずログに記録されます。これにより、データベースリクエストは、広範囲で"
+"重要なユースケースにおいてアトミックで堅牢になりました。"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:131
 #, kde-format
@@ -30535,8 +30545,7 @@ msgstr "プロダクト ID:"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:284
 #: core/libs/dialogs/solidhardwaredlg.cpp:405
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@item: device description"
 msgid "Description"
 msgstr "説明"
@@ -34364,8 +34373,7 @@ msgid "Extension"
 msgstr "拡張子"
 
 #: core/libs/dplugins/core/dplugindimg.cpp:86
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Description"
 msgstr "説明"
@@ -34422,8 +34430,7 @@ msgid "Authors"
 msgstr "作者"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "名前"
@@ -34491,8 +34498,7 @@ msgid "Properties"
 msgstr "プロパティ"
 
 #: core/libs/dplugins/setup/dpluginconfview.cpp:134
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "名前"
@@ -34512,8 +34518,7 @@ msgid "Tools"
 msgstr "ツール"
 
 #: core/libs/dplugins/setup/dpluginconfview.cpp:137
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "説明"
@@ -37172,8 +37177,7 @@ msgid "Rating"
 msgstr "評価"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:64
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@title: xmp namespace for comment container"
 msgid "Caption"
 msgstr "キャプション"
@@ -37913,8 +37917,7 @@ msgid "More"
 msgstr "その他"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:101
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title"
 msgid "Description"
 msgstr "説明"
@@ -40132,8 +40135,7 @@ msgstr "アイコン(&I):"
 #: core/libs/tags/manager/tagpropwidget.cpp:134
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:93
 #: core/utilities/setup/setupvideo.cpp:73
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "リセット"
@@ -42688,39 +42690,36 @@ msgid "Navigate to %1"
 msgstr "評価が %1 と等しい。"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:62
-#, fuzzy, kde-format
-#| msgid "MacBinary II"
+#, kde-format
 msgctxt "@title: binary properties"
 msgid "Binary"
-msgstr "MacBinary II"
+msgstr "バイナリ"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:63
-#, fuzzy, kde-format
-#| msgid "Versions"
+#, kde-format
 msgctxt "@title: binary properties"
 msgid "Version"
 msgstr "バージョン"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:101
-#, fuzzy, kde-format
-#| msgid "Collection not found"
+#, kde-format
 msgid "Binary not found."
-msgstr "コレクションが見つかりません"
+msgstr "バイナリが見つかりません。"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:102
 #, kde-format
 msgid "Minimal version number required for this binary is %1"
-msgstr ""
+msgstr "このバイナリに必要な最小バージョンは %1 です。"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:104
 #, kde-format
 msgid "Find"
-msgstr ""
+msgstr "探す"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:106
 #, kde-format
 msgid " or <a href=\"%1\">download</a>"
-msgstr ""
+msgstr "あるいは <a href=\"%1\">ダウンロード</a>"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:135
 #, kde-format
@@ -42730,29 +42729,32 @@ msgid ""
 "click the 'Find' button to locate them on your system, otherwise please "
 "download and install them to proceed.</font></p></qt>"
 msgstr ""
+"<qt><p><font color=\"red\"><b>警告:</b> いくつかの必要なバイナリがシステム上"
+"に見つかりません。 もしバイナリがインストールされている場合は、システム上でそ"
+"れらを探すために「探す」ボタンをクリックしてください。そうでない場合は、ダウ"
+"ンロードしてインストールしてください。</font></p></qt>"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:174
 #, kde-format
 msgid ""
 "A development version has been detect. There is no guarantee on the behavior "
 "of this binary."
-msgstr ""
+msgstr "開発版が検出されました。このバイナリの動作については保証できません。"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:184
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgid "Change"
-msgstr "チャンネル:"
+msgstr "変更"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:190
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
-msgstr ""
+msgstr "見つかったバイナリファイルは意図した通りに動作していないようです。"
 
 #: core/libs/widgets/files/dfileselector.cpp:53
-#, fuzzy, kde-format
+#, kde-format
 msgid "Browse..."
-msgstr "ブラウズ(&B)"
+msgstr "選択..."
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:66
 #, kde-format
@@ -43137,8 +43139,7 @@ msgstr ""
 "ています。</p></li></ul>"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Name"
 msgstr "名前"
@@ -43151,8 +43152,7 @@ msgid "The ICC profile product name"
 msgstr "ICC プロファイルの製品名"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Description"
 msgstr "説明"
@@ -44367,21 +44367,18 @@ msgid "XMP viewer"
 msgstr "XMP ビューア"
 
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:240
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgid "ExifTool viewer"
-msgstr "ツール"
+msgstr "ExifTool ビューア"
 
 #: core/libs/widgets/metadata/config/metadataselector.cpp:94
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: metadata properties"
 msgid "Name"
 msgstr "名前"
 
 #: core/libs/widgets/metadata/config/metadataselector.cpp:95
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title: metadata properties"
 msgid "Description"
 msgstr "説明"
@@ -44430,39 +44427,42 @@ msgid ""
 "Application will try to find this binary automatically if they are already "
 "installed on your computer."
 msgstr ""
+"%1 は、マルチメディアファイルのメタ情報を読み取り、書き込み、操作するための"
+"オープンソースソフトウェアで，コマンドラインアプリケーションとして利用でき"
+"る、プラットフォームに依存しないソフトウェアです。ExifTool は、様々な種類のデ"
+"ジタルワークフローに組み込まれており、Exif、IPTC、XMP、JFIF、GeoTIFF、ICC プ"
+"ロフィール、Photoshop IRB、および多くのデジタルカメラのメーカー固有のメタデー"
+"タ形式を含む多くの種類のメタデータをサポートしています。\n"
+"\n"
+"ここでは、ExifTool バイナリの場所を設定できます。既にコンピュータにインストー"
+"ルされている場合は、アプリケーションが自動的にバイナリを検索します。"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:90
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: group"
 msgid "Supported File Formats"
-msgstr "不明なフォーマット"
+msgstr "サポートされているファイル形式"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "File extension"
-#| msgid "Extension"
+#, kde-format
 msgctxt "@title: column"
 msgid "Extension"
 msgstr "拡張子"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Ready"
+#, kde-format
 msgctxt "@title: column"
 msgid "Read"
-msgstr "準備完了"
+msgstr "読み取り"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:102
-#, fuzzy, kde-format
-#| msgid "Writable: "
+#, kde-format
 msgctxt "@title: column"
 msgid "Write"
-msgstr "書き込み可能: "
+msgstr "書き込み"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:103
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title: column"
 msgid "Description"
 msgstr "説明"
@@ -50763,8 +50763,7 @@ msgid "Code (Language-Country)"
 msgstr "バスク語 (バスク国)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:58
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: translator language name"
 msgid "Name"
 msgstr "名前"
@@ -50857,8 +50856,7 @@ msgid "Clear List"
 msgstr "リストをクリア"
 
 #: core/libs/widgets/text/searchtextbar.cpp:86
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info: search text bar"
 msgid "Search..."
 msgstr "検索..."
@@ -50930,8 +50928,7 @@ msgid "Code"
 msgstr "コーデック"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:153
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "名前"
@@ -51646,8 +51643,7 @@ msgid "Effec&ts"
 msgstr "効果(&T)"
 
 #: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:194
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "設定"
@@ -51723,8 +51719,7 @@ msgid ""
 msgstr "<qt>画像を保存する際のデフォルト設定をカスタマイズします</qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
-#, fuzzy, kde-format
-#| msgid "Geolocation"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "ジオロケーション"
@@ -51771,59 +51766,52 @@ msgstr "<qt>digiKam のその他の動作をカスタマイズします</qt>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Rotation"
+#, kde-format
 msgctxt "@label"
 msgid "Rotate actions"
 msgstr "回転"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:96
-#, fuzzy, kde-format
-#| msgid "Show images/thumbnails &rotated according to orientation tag."
+#, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
-msgstr "方向タグに従って画像とサムネイルを回転して表示(&R)"
+msgstr "方向タグに従って画像/サムネイルを回転して表示(&R)"
 
-# ACCELERATOR added by translator
 #: core/showfoto/setup/showfotosetupmetadata.cpp:98
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
-msgstr "回転/反転後は方向タグを「ノーマル」に設定(&N)"
+msgstr "回転/反転後は方向タグを「ノーマル」に設定"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "a standard used by most digital cameras today to store technical information "
 "(like aperture and shutter speed) about an image."
 msgstr ""
-"<b><a href='http://en.wikipedia.org/wiki/Exif'>Exif</a></b> は画像に関する技"
-"術的な情報 (絞りやシャッタースピードなど) を保存するために今日のほとんどのデ"
-"ジタルカメラで使用されている規格です。"
+"絞りやシャッタースピードなどの技術情報を保存するために、現在ほとんどのデジタ"
+"ルカメラで使用されている標準です。"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:123
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "an older standard used in digital photography to store photographer "
 "information in images."
 msgstr ""
-"<br><b><a href='http://en.wikipedia.org/wiki/IPTC'>IPTC</a></b> は撮影者の情"
-"報を画像に保存するためにデジタル写真で使用されている古い規格です。"
+"撮影者の情報を画像に保存するために、デジタル写真で使用されていた古い標準で"
+"す。"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:129
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr ""
-"<br><b><a href='http://en.wikipedia.org/wiki/"
-"Extensible_Metadata_Platform'>XMP</a></b> はデジタル写真で使用されている "
-"IPTC に代わる新しい規格です。"
+"IPTC を置換するよう設計された、デジタル写真で使用されている新しい標準です。"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:150
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
@@ -51834,11 +51822,10 @@ msgstr "動作"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:159
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@title:tab"
 msgid "ExifTool"
-msgstr "ツール"
+msgstr "ExifTool"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:151
 #, kde-format
@@ -52300,19 +52287,19 @@ msgstr ""
 #: core/showfoto/setup/showfotosetuptooltip.cpp:146
 #: core/utilities/setup/setuptooltip.cpp:239
 #: core/utilities/setup/setuptooltip.cpp:419
-#, fuzzy, kde-format
-#| msgid "Camera model"
+#, kde-format
 msgid "Camera lens model"
-msgstr "カメラのモデル"
+msgstr "カメラレンズのモデル"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:147
 #: core/utilities/setup/setuptooltip.cpp:240
 #: core/utilities/setup/setuptooltip.cpp:420
-#, fuzzy, kde-format
-#| msgid "Set this option to display the date when the image was taken."
+#, kde-format
 msgid ""
 "Set this option to display the lens model with which the image was taken."
-msgstr "画像が撮影された日付を表示するには、このオプションを有効にします。"
+msgstr ""
+"画像が撮影された時に使用されたレンズのモデルを表示する場合はこのオプションを"
+"有効にしてください"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:150
 #, kde-format
@@ -52603,8 +52590,7 @@ msgid "&Items:"
 msgstr "アイテム数:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:248
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title:column file name"
 msgid "Name"
 msgstr "名前"
@@ -52817,8 +52803,7 @@ msgid "Unnamed"
 msgstr "名前変更"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:89
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "名前"
@@ -55038,7 +55023,7 @@ msgstr ""
 #: core/utilities/setup/setupgeolocation.cpp:131
 #, kde-format
 msgid "Google Maps"
-msgstr ""
+msgstr "Google マップ"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:472
@@ -55180,7 +55165,7 @@ msgstr "ジオロケーション"
 #: core/utilities/setup/setuptemplate.cpp:116
 #, kde-format
 msgid "&Remove"
-msgstr "削除(&D)"
+msgstr "削除(&R)"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:235
 #, fuzzy, kde-format
@@ -58275,8 +58260,7 @@ msgstr "プロファイルを割り当て"
 #: core/utilities/geolocation/marble/models/MapThemeManager.cpp:401
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:38
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:34
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name"
 msgstr "名前"
 
@@ -60077,9 +60061,9 @@ msgstr ""
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:530
 #: core/utilities/setup/setupicc.cpp:755
-#, fuzzy, kde-format
+#, kde-format
 msgid "No Input Profile Available"
-msgstr "利用可能なプロファイルがありません..."
+msgstr "入力プロファイルがありません"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:628
 #, kde-format
@@ -64073,8 +64057,7 @@ msgid "Tools"
 msgstr "ツール"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:106
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title: batch workflow description"
 msgid "Description"
 msgstr "説明"
@@ -64740,8 +64723,7 @@ msgid "Return items created by"
 msgstr "次の人がコメントした画像を探す"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:722
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "キャプション"
@@ -64807,8 +64789,7 @@ msgid "Creator"
 msgstr "画像の印刷"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:765
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "キャプション"
@@ -65528,11 +65509,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:263
-#, fuzzy, kde-format
-#| msgid "&Icon:"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
-msgstr "アイコン(&I):"
+msgstr "アイコン"
 
 #: core/utilities/setup/album/setupalbumview.cpp:270
 #, fuzzy, kde-format
@@ -66445,13 +66425,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollections.cpp:96
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Below are the locations of your root albums used to store your images. "
-#| "Write access is necessary to be able to edit images in these albums.</"
-#| "p><p>Note: Removable media (such as USB drives or DVDs) and remote file "
-#| "systems (such as NFS, or Samba mounted with cifs/smbfs) are supported.</"
-#| "p><p></p>"
+#, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
 "Write access is necessary to be able to edit images in these albums.</"
@@ -66462,9 +66436,10 @@ msgid ""
 msgstr ""
 "<p>下に表示されているのは、画像を保存するために使用するルートアルバムの場所で"
 "す。これらのアルバムで画像を編集できるようにするには、書き込み権限が必要で"
-"す。</p><p>これにはリムーバブルメディア (USB ドライブや DVD など) とリモート"
-"ファイルシステム (NFS や cifs/smbfs でマウントされた Samba など) も指定できま"
-"す。</p><p></p>"
+"す。</p><p>注意: リムーバブルメディア (例えば USB ドライバや DVD) やリモート"
+"ファイルシステム (例えば NFS や cifs/smbfs でマウントされた Samba) はサポート"
+"されています。</p><p>重要: リモートコレクションを設定する前に、システム上で共"
+"有リソースをネイティブにマウントする必要があります。</p><p></p>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:109
 #, kde-format
@@ -66480,7 +66455,7 @@ msgstr ""
 #: core/utilities/setup/collections/setupcollections.cpp:123
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
-msgstr ""
+msgstr "アルバムに対する外部での変更をモニタリングする (再起動が必要です)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:126
 #, kde-format
@@ -66489,10 +66464,12 @@ msgid ""
 "digiKam. If you are using MacOS and network collections, you should not "
 "activate album monitoring.</b>"
 msgstr ""
+"<b>注意: アルバムのモニタリングはシステムリソースを消費し、digiKam を遅くしま"
+"す。MacOS とネットワークコレクションを使用している場合は、アルバムのモニタリ"
+"ングを有効にしないでください。</b>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:139
-#, fuzzy, kde-format
-#| msgid "Root Album Folders"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "ルートアルバムフォルダ"
@@ -66509,65 +66486,62 @@ msgid ""
 "is ignored by default.</p><p>To re-include directories that are ignored by "
 "default prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
+"<p>写真コレクションから無視するディレクトリの名前を設定します。名前は大文字と"
+"小文字が区別され、セミコロンで区切ります。</p><p>これは、写真を Synology NAS "
+"(Network Attached Starage, ネットワークアタッチドストレージ) に保存している場"
+"合に便利です。システムはすべてのディレクトリに、サムネイルを保存するためのサ"
+"ブディレクトリ @eaDir を作成します。digiKam が元の写真と対応するサムネイルを "
+"2 つ挿入するのを避けるために、@eaDir はデフォルトで無視されます。</p><p>デ"
+"フォルトで無視されているディレクトリを再度含めるには、マイナスで始まるように"
+"します。例えば -@eaDir です。</p>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:164
-#, fuzzy, kde-format
-#| msgid ""
-#| "Additional &image file extensions (<a href='image'>Currently-supported "
-#| "types</a>):"
+#, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
 "directories</a>):"
 msgstr ""
-"画像ファイルの拡張子を追加(&I) (<a href='image'>現在サポートしているフォー"
-"マット</a>):"
+"追加で無視するディレクトリ (<a href='image'>現在無視されているディレクトリ</"
+"a>):"
 
 #: core/utilities/setup/collections/setupcollections.cpp:169
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
-msgstr ""
+msgstr "コレクションに追加しないディレクトリを入力してください。"
 
 #: core/utilities/setup/collections/setupcollections.cpp:185
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
-msgstr "このタグを付ける"
+msgstr "無視するディレクトリ"
 
 #: core/utilities/setup/collections/setupcollections.cpp:256
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as movie files and "
-#| "included into the database:<br/> <code>%1</code></p>"
+#, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
 "code></p>"
 msgstr ""
-"<p>これらの拡張子のファイルは動画ファイルとしてデータベースに追加されます:"
-"<br/><code>%1</code></p>"
+"<p>ディレクトリ名がドットで始まる場合はデフォルトで無視されます。<br/> <code>"
+"%1</code></p>"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Creates a new empty Album in the collection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
-msgstr "コレクションに新しい空のアルバムを作成します。"
+msgstr "コレクションにパスを追加します。"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Creates a new empty Album in the collection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Updates the path of the collection."
-msgstr "コレクションに新しい空のアルバムを作成します。"
+msgstr "コレクションのパスを更新します。"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:122
-#, fuzzy, kde-format
-#| msgid "Remove collection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
-msgstr "コレクションを削除"
+msgstr "digikam からコレクションを削除します。"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:629
 #, kde-format
@@ -66576,44 +66550,36 @@ msgstr "以下のパスにコレクションを追加できませんでした:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
 #: core/utilities/setup/collections/setupcollectionview.cpp:1488
-#, fuzzy, kde-format
-#| msgid "Choose the folder containing your collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "コレクションを含むフォルダを選択"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:694
-#, fuzzy, kde-format
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "コレクション追加の問題"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:695
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "File already exists"
+#, kde-format
 msgid "A collection with the path \"%1\" already exists."
-msgstr "ファイルは既に存在します"
+msgstr "パス “%1” を含むコレクションは既に存在します。"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:855
-#, fuzzy, kde-format
-#| msgid "Remove Collection?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
-msgstr "コレクションを削除しますか？"
+msgstr "コレクションからパスを削除しますか？"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:856
-#, fuzzy, kde-format
-#| msgid ""
-#| "Do you want to remove the collection \"%1\" from your list of collections?"
+#, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
-msgstr "コレクション “%1” をコレクションのリストから削除しますか？"
+msgstr "コレクション “%2” から追加されたパス “%1” を削除しますか？"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:863
-#, fuzzy, kde-format
-#| msgid "Remove Collection?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "コレクションを削除しますか？"
@@ -66670,13 +66636,12 @@ msgstr "このコレクションは表示しないように設定されていま
 #: core/utilities/setup/collections/setupcollectionview.cpp:1151
 #, kde-format
 msgid "Append network path"
-msgstr ""
+msgstr "ネットワークパスの追加"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1179
-#, fuzzy, kde-format
-#| msgid "Add Collection"
+#, kde-format
 msgid "Update collection"
-msgstr "コレクションを追加"
+msgstr "コレクションの更新"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1207
 #, kde-format
@@ -66684,22 +66649,19 @@ msgid "Remove collection"
 msgstr "コレクションを削除"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1242
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "名前"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1247
-#, fuzzy, kde-format
-#| msgid "Path"
+#, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "パス"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1252
-#, fuzzy, kde-format
-#| msgid "Status"
+#, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "状態"
@@ -66710,32 +66672,28 @@ msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "パス ‘%1’ を含むコレクションを以前に追加しています。"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1571
-#, fuzzy, kde-format
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "コレクション追加の問題"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1576
-#, fuzzy, kde-format
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
-msgstr "コレクション追加の問題"
+msgstr "コレクション更新の問題"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1593
-#, fuzzy, kde-format
-#| msgid "Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "コレクションを追加"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1597
-#, fuzzy, kde-format
-#| msgid "Add Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
-msgstr "コレクションを追加"
+msgstr "コレクションを更新"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1605
 #, kde-format
@@ -66743,35 +66701,31 @@ msgid "Your new collection will be created with this name:"
 msgstr "この名前で新しいコレクションを作成します:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1609
-#, fuzzy, kde-format
-#| msgid "Your new collection will be created with this name:"
+#, kde-format
 msgid "Your collection will be updated to this name:"
-msgstr "この名前で新しいコレクションを作成します:"
+msgstr "この名前でコレクションを更新します:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1692
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
-msgstr "アイテムを選択"
+msgstr "カテゴリを選択"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1696
-#, fuzzy, kde-format
-#| msgid "Your new collection will be created with this name:"
+#, kde-format
 msgid "Your collection will use this category:"
-msgstr "この名前で新しいコレクションを作成します:"
+msgstr "このカテゴリをコレクションに使用します:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:149
-#, fuzzy, kde-format
-#| msgid "Downloaded: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
-msgstr "ダウンロード: "
+msgstr "必要なファイルをダウンロードする"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:169
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Use Face Detection feature"
-msgstr "顔検出"
+msgstr "顔検出の機能を使用する"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:170
 #, kde-format
@@ -67350,6 +67304,9 @@ msgid ""
 "digiKam to store and retrieve tags, rating and comments.<br/><b>Note: </"
 "b>Order is important when reading metadata"
 msgstr ""
+"高度な設定メニューでは、digiKam がタグ、評価、コメントを保存し、取り出すため"
+"に使用するメタデータ名前空間を管理できます。<br/><b>注意: </b>メタデータを読"
+"み込むときは順序が重要です"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, fuzzy, kde-format
@@ -67547,7 +67504,7 @@ msgid "Only one character is now supported as tag path separator"
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "高度な設定"
@@ -67830,12 +67787,10 @@ msgid "Reading and Writing Metadata"
 msgstr "メタデータを読み書き中"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
-msgstr ""
-"メタデータを保存するときにファイルのタイムスタンプを更新するには、このオプ"
-"ションを有効にします。"
+msgstr "ファイルにメタデータを書き込むために ExifTool バックエンドを使用する"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
 #, kde-format
@@ -67845,46 +67800,44 @@ msgid ""
 "Exiv2. This will slowdown a little bit the synchronization of files metadata "
 "with database."
 msgstr ""
+"Exiv2 ではなく ExifTool バックエンドを使用してファイルにメタデータを書き込む"
+"には、このオプションを有効にします。ファイルのメタデータをデータベースと同期"
+"する速度が少し遅くなります。"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
-#, fuzzy, kde-format
-#| msgid "Write metadata to each file"
+#, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
-msgstr "メタデータを各ファイルに書き込み"
+msgstr "DNG ファイルにメタデータを書き込む"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:128
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
-msgstr ""
-"メタデータを保存するときにファイルのタイムスタンプを更新するには、このオプ"
-"ションを有効にします。"
+msgstr "DNG ファイルにメタデータを書き込むには、このオプションを有効にします。"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "If possible write Metadata to RAW files (experimental)"
+#, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
-msgstr "可能であれば RAW ファイルにメタデータを書き込む (試験的)"
+msgstr "可能であれば RAW ファイルにメタデータを書き込む"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to write metadata into RAW files. This feature is "
 "delegate to ExifTool backend and is disabled by default."
 msgstr ""
-"RAW TIFF/EP ファイルにメタデータを書き込むには、このオプションを有効にしま"
-"す。この機能には Exiv2 共有ライブラリのバージョン >= 0.18.0 が必要です。まだ"
-"試験的なため、このオプションは標準では無効になっています。"
+"RAW ファイルにメタデータを書き込むには、このオプションを有効にします。これは "
+"ExifTool バックエンドが行うことになっており、デフォルトでは無効になっていま"
+"す。"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
-msgstr "ブラックポイント補正を使う"
+msgstr "遅延同期を使用する"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:143
 #, kde-format
@@ -67894,14 +67847,14 @@ msgid ""
 "Synchronization can be done later by triggering the apply pending, or at "
 "digikam exit"
 msgstr ""
+"メタデータを同期する代わりに、同期のスケジュールを行います。同期は、保留中の"
+"適用をトリガーするか、digikam を終了するときに行うことができます。"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "&Update file timestamp when files are modified"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
-msgstr "ファイルの変更時にファイルのタイムスタンプを更新する(&U)"
+msgstr "ファイルの変更時にファイルの変更タイムスタンプを更新する(&U)"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
 #, kde-format
@@ -67912,12 +67865,16 @@ msgid ""
 "introduce some dysfunctions with applications which use file timestamps "
 "properties to detect file modifications automatically."
 msgstr ""
+"このオプションを無効にすると、メタデータや画像データを更新したときにファイル"
+"のタイムスタンプを更新しなくなります。注: このオプションを無効にすると、ファ"
+"イルのタイムスタンプのプロパティを使用してファイルの変更を自動的に検出するア"
+"プリケーションが機能しない場合があります。"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:155
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
-msgstr "ファイルの変更時にファイルのタイムスタンプを更新する(&U)"
+msgstr "ファイルが変更されたときにファイルを再スキャンする(&R)"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:157
 #, kde-format
@@ -67928,18 +67885,21 @@ msgid ""
 "last modified timestamp has changed, a rescan of that file will be performed "
 "when digiKam starts."
 msgstr ""
+"このオプションをオンにすると、digiKam が digiKam の外で変更されたファイルを再"
+"スキャンするようになります。ファイルサイズが変更された場合や最終変更タイムス"
+"タンプが変更された場合、digiKam が起動するとそのファイルを再スキャンします。"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
-msgstr ""
+msgstr "注: ExifTool バックエンドの %1 を参照してください。"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:230
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "write limitations"
-msgstr "プレビューのオプション"
+msgstr "書き込み制限"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
@@ -67948,22 +67908,24 @@ msgid ""
 "Note: these options depends of %1 availability. Check in the ExifTool tab "
 "for details."
 msgstr ""
+"注: これらのオプションは %1 の利用可能性に依存します。詳細については "
+"ExifTool タブを確認してください。"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:240
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
-msgstr "ツール"
+msgstr "ExifTool バックエンド"
 
 #: core/utilities/setup/metadata/setupmetadata_display.cpp:28
 #, kde-format
 msgctxt "@label"
 msgid "Select Metadata Fields to be Displayed when using Custom Filters"
 msgstr ""
+"カスタムフィルタを使用する場合に表示するメタデータのフィールドを選択します"
 
 #: core/utilities/setup/metadata/setupmetadata_display.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Views"
 msgstr "表示"
@@ -68098,87 +68060,83 @@ msgid "Rotation"
 msgstr "回転"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reading and Writing Metadata"
+#, kde-format
 msgctxt "@label"
 msgid "Reading and Writing to Sidecars"
-msgstr "メタデータを読み書き中"
+msgstr "サイドカーに対する読み書き"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:36
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Read from sidecar files"
-msgstr "メタデータを各ファイルからデータベースに読み込み"
+msgstr "サイドカーファイルから読み込む"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:38
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to read metadata from XMP sidecar files when reading "
 "metadata."
 msgstr ""
-"メタデータを保存するときにファイルのタイムスタンプを更新するには、このオプ"
-"ションを有効にします。"
+"メタデータを読み込むときに XMP サイドカーファイルからメタデータを読み込むに"
+"は、このオプションを有効にします。"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:42
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Write to sidecar files"
-msgstr "メタデータを各ファイルに書き込み"
+msgstr "サイドカーファイルに書き込む"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:44
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to save, as specified, metadata to XMP sidecar files."
 msgstr ""
-"メタデータを保存するときにファイルのタイムスタンプを更新するには、このオプ"
+"指定されたように、メタデータを XMP サイドカーファイルに保存するには、このオプ"
 "ションを有効にします。"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar for read-only item only"
-msgstr "メタデータを各ファイルに書き込み"
+msgstr "読み取り専用のアイテムのみ XMP サイドカーに書き込む"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar only"
-msgstr "メタデータを各ファイルに書き込み"
+msgstr "XMP サイドカーにのみ書き込む"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:50
 #, kde-format
 msgctxt "@item"
 msgid "Write to item and XMP Sidecar"
-msgstr ""
+msgstr "アイテムと XMP サイドカーに書き込む"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Specify the exact mode of XMP sidecar writing"
-msgstr ""
+msgstr "XMP サイドカーの書き込みモードを指定します"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "Sidecar file names are compatible with commercial programs"
-msgstr ""
+msgstr "サイドカーファイルの名前に商用プログラムとの互換性を持たせる"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "Turn on this option to use the camera provided image filenames without "
-#| "modifications."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to create the XMP sidecar files with a compatible file "
 "name (BASENAME.xmp) used by many commercial programs. For Darktable do not "
 "enable this option."
 msgstr ""
-"カメラが提供するファイル名を変更せずにそのまま使うには、このオプションを有効"
-"にします。"
+"多くの商用プログラムで使用されている互換性のあるファイル名 (BASENAME.xmp) で "
+"XMP サイドカーファイルを作成するには、このオプションを有効にします。"
+"Darktable ではこのオプションを有効にしないでください。"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
 #, kde-format
@@ -68193,6 +68151,14 @@ msgid ""
 "files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
+"サイドカーとして認識されるファイルタイプを追加します。\n"
+"digiKam は (オプションで) *.xmp サイドカーファイルにメタデータを書き込みま"
+"す。他のプログラムでは異なるタイプを使用する場合がありますが、これらは以下で"
+"指定できます。digiKam はこれらを表示したり読み込んだり書き込んだりしません。"
+"しかし、一致するアルバムアイテム (例: \"image.dng.pp3\" の \"image.dng\") が"
+"名前変更、移動、コピー、削除されると、これらのサイドカーファイルにも同じ操作"
+"が行われます。\n"
+"複数の拡張子はセミコロンまたはスペースで区切ります。"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
 #, kde-format
@@ -68206,26 +68172,31 @@ msgid ""
 "the *.xyz and *.abc extensions. The internally\n"
 "used sidecars type *.xmp is always included."
 msgstr ""
+"ここでは、通常のアイテムと一緒に処理する\n"
+"サイドカーファイルの追加の拡張子を追加できます。\n"
+"これらのファイルは表示されませんが、\n"
+"メインファイルの拡張として扱われます。\n"
+"*.xyz と *.abc の拡張子を持つファイルをサポートするには、\n"
+"\"xyz abc\" と書きます。内部で使用される\n"
+"サイドカーファイルのタイプ *.xmp は常に含まれます。"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
-#, fuzzy, kde-format
-#| msgid "Enter the editorial usage instructions."
+#, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
-msgstr "編集者への使用上の指示を入力します。"
+msgstr "追加のサイドカーファイルの拡張子を入力します。"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
-#, fuzzy, kde-format
-#| msgid "Enter the editorial usage instructions."
+#, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
-msgstr "編集者への使用上の指示を入力します。"
+msgstr "追加のサイドカーファイルの拡張子(&S)"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"
-msgstr ""
+msgstr "サイドカー"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
@@ -68591,135 +68562,119 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setup.cpp:201
-#, fuzzy, kde-format
-#| msgid "Database"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "データベース"
 
 #: core/utilities/setup/setup.cpp:202
-#, fuzzy, kde-format
-#| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Database Settings\n"
 "Customize database settings"
 msgstr ""
-"<qt>データベース設定<br/><i>データベースの設定をカスタマイズします</i></qt>"
+"データベース設定\n"
+"データベースの設定をカスタマイズします"
 
 #: core/utilities/setup/setup.cpp:206
-#, fuzzy, kde-format
-#| msgid "Collections"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "コレクション"
 
 #: core/utilities/setup/setup.cpp:207
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
-#| "i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Collections Settings\n"
 "Set root albums locations"
-msgstr "<qt>ルートアルバムとデータベースの場所を設定します</qt>"
+msgstr ""
+"コレクションの設定\n"
+"ルートアルバムの場所を設定します"
 
 #: core/utilities/setup/setup.cpp:211
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "表示"
 
 #: core/utilities/setup/setup.cpp:212
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
-#| "qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Application Views Settings\n"
 "Customize the look of the views"
-msgstr "<qt>アルバムビューの表示をカスタマイズします</qt>"
+msgstr ""
+"アルバムビューの設定\n"
+"ビューの見た目をカスタマイズします"
 
 #: core/utilities/setup/setup.cpp:216
-#, fuzzy, kde-format
-#| msgid "Tool-Tip"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "ツールチップ"
 
 #: core/utilities/setup/setup.cpp:217
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Album Items Tool-Tip Settings<br/><i>Customize information in tool-"
-#| "tips</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Items Tool-Tip Settings\n"
 "Customize information in item tool-tips"
-msgstr "<qt>ツールチップに表示する情報をカスタマイズします</qt>"
+msgstr ""
+"ツールチップの項目の設定\n"
+"ツールチップの項目の情報をカスタマイズします"
 
 #: core/utilities/setup/setup.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Video"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "動画"
 
 #: core/utilities/setup/setup.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Image Editor Window Settings<br/><i>Customize the image editor "
-#| "window</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Video Preview Settings\n"
 "Customize settings to play video media"
 msgstr ""
-"<qt>画像エディタウィンドウの設定<br/><i>画像エディタウィンドウをカスタマイズ"
-"します</i></qt>"
+"動画のプレビューの設定\n"
+"動画再生の設定をカスタマイズします"
 
 #: core/utilities/setup/setup.cpp:230
-#, fuzzy, kde-format
-#| msgid "Metadata"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "メタデータ"
 
 #: core/utilities/setup/setup.cpp:231
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
-#| "images and metadata</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Embedded Image Information Management\n"
 "Setup relations between images and metadata"
-msgstr "<qt>画像とメタデータの関係を設定します</qt>"
+msgstr ""
+"画像の埋め込みデータの管理\n"
+"画像とメタデータの関係を設定します"
 
 #: core/utilities/setup/setup.cpp:235
-#, fuzzy, kde-format
-#| msgid "Templates"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "テンプレート"
 
 #: core/utilities/setup/setup.cpp:236
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Metadata templates<br/><i>Manage your collection of metadata "
-#| "templates</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Metadata templates\n"
 "Manage your collection of metadata templates"
-msgstr "<qt>メタデータのテンプレートを管理します</qt>"
+msgstr ""
+"メタデータのテンプレート\n"
+"メタデータのテンプレートを管理します"
 
 #: core/utilities/setup/setup.cpp:240
-#, fuzzy, kde-format
-#| msgid "Image Editor"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "画像エディタ"
@@ -68735,62 +68690,55 @@ msgid ""
 msgstr "<qt>画像エディタの動作をカスタマイズします</qt>"
 
 #: core/utilities/setup/setup.cpp:245
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "カラーマネージメント"
 
 #: core/utilities/setup/setup.cpp:246
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Color Management<br/><i>Customize the color management "
-#| "settings</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Settings for Color Management\n"
 "Customize the color management settings"
 msgstr ""
-"<qt>カラーマネージメントの設定<br/><i>カラーマネージメントの設定をカスタマイ"
-"ズします</i></qt>"
+"カラーマネジメントの設定\n"
+"カラーマネジメントの設定をカスタマイズします"
 
 #: core/utilities/setup/setup.cpp:250
-#, fuzzy, kde-format
-#| msgid "Light Table"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "ライトテーブル"
 
 #: core/utilities/setup/setup.cpp:251
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
-#| "i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
-msgstr "<qt>画像の比較に用いるライトテーブルの動作をカスタマイズします</qt>"
+msgstr ""
+"ライトテーブルの設定\n"
+"アイテムの比較に用いるツールをカスタマイズします"
 
 #: core/utilities/setup/setup.cpp:264
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
-msgstr "画像エディタ"
+msgstr "画質分類"
 
 #: core/utilities/setup/setup.cpp:265
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Image Quality Sorter Settings\n"
 "Customize default settings to perform image triaging by quality"
-msgstr "<qt>画像エディタの動作をカスタマイズします</qt>"
+msgstr ""
+"画質分類の設定\n"
+"画質による画像の順位付けを行う際のデフォルトの設定をカスタマイズします"
 
 #: core/utilities/setup/setup.cpp:269
-#, fuzzy, kde-format
-#| msgid "Cameras"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "カメラ"
@@ -68805,39 +68753,36 @@ msgid ""
 msgstr "<qt>お使いのカメラを管理します</qt>"
 
 #: core/utilities/setup/setup.cpp:277
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
-msgstr "Kipi プラグイン"
+msgstr "プラグイン"
 
 #: core/utilities/setup/setup.cpp:278
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
-#| "accessible from the main interface</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Plug-in Settings\n"
 "Set which plugins will be accessible from application"
-msgstr "<qt>メインインターフェースから利用するプラグインを選択します</qt>"
+msgstr ""
+"プラグインの設定\n"
+"どのプラグインをアプリケーションから利用可能にするかを設定します"
 
 #: core/utilities/setup/setup.cpp:282
-#, fuzzy, kde-format
-#| msgid "Miscellaneous"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "その他"
 
 #: core/utilities/setup/setup.cpp:283
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
-#| "of digiKam</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Miscellaneous Settings\n"
 "Customize behavior of the other parts of digiKam"
-msgstr "<qt>digiKam のその他の動作をカスタマイズします</qt>"
+msgstr ""
+"その他の設定\n"
+"digiKam のその他の動作をカスタマイズします"
 
 #: core/utilities/setup/setupdatabase.cpp:174
 #, kde-format
@@ -69412,92 +69357,79 @@ msgid "File/Item Information"
 msgstr "ファイル/アイテムの情報"
 
 #: core/utilities/setup/setuptooltip.cpp:203
-#, fuzzy, kde-format
-#| msgid "Filename"
+#, kde-format
 msgid "File name"
 msgstr "ファイル名"
 
 #: core/utilities/setup/setuptooltip.cpp:206
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgid "File date"
-msgstr "ファイル名"
+msgstr "ファイルの日付"
 
 #: core/utilities/setup/setuptooltip.cpp:209
-#, fuzzy, kde-format
-#| msgid "File Size"
+#, kde-format
 msgid "File size"
 msgstr "ファイルサイズ"
 
 #: core/utilities/setup/setuptooltip.cpp:212
-#, fuzzy, kde-format
-#| msgid "Show image type"
+#, kde-format
 msgid "Image type"
-msgstr "画像のファイルフォーマットを表示"
+msgstr "画像の種類"
 
 #: core/utilities/setup/setuptooltip.cpp:215
-#, fuzzy, kde-format
-#| msgid "Image dimension"
+#, kde-format
 msgid "Image dimensions"
 msgstr "画像の寸法"
 
 #: core/utilities/setup/setuptooltip.cpp:218
-#, fuzzy, kde-format
-#| msgid "Show image aspect ratio"
+#, kde-format
 msgid "Image aspect ratio"
-msgstr "画像のアスペクト比を表示"
+msgstr "画像のアスペクト比"
 
 #: core/utilities/setup/setuptooltip.cpp:219
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the image aspect ratio."
-msgstr "画像のキャプションを表示するには、このオプションを有効にします。"
+msgstr "画像のアスペクト比を表示するにはこのオプションを有効にしてください"
 
 #: core/utilities/setup/setuptooltip.cpp:235
 #: core/utilities/setup/setuptooltip.cpp:415
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
+#, kde-format
 msgid "Camera make and model"
-msgstr "カメラのメーカーとモデルを表示"
+msgstr "カメラのメーカーとモデル"
 
 #: core/utilities/setup/setuptooltip.cpp:243
-#, fuzzy, kde-format
-#| msgid "Camera name"
+#, kde-format
 msgid "Camera date"
-msgstr "カメラの名前"
+msgstr "カメラの日付"
 
 #: core/utilities/setup/setuptooltip.cpp:246
 #: core/utilities/setup/setuptooltip.cpp:423
-#, fuzzy, kde-format
-#| msgid "Show camera aperture and focal length"
+#, kde-format
 msgid "Camera aperture and focal length"
-msgstr "カメラの絞りと焦点を表示"
+msgstr "カメラの絞りと焦点距離"
 
 #: core/utilities/setup/setuptooltip.cpp:250
 #: core/utilities/setup/setuptooltip.cpp:427
-#, fuzzy, kde-format
-#| msgid "Show camera exposure and sensitivity"
+#, kde-format
 msgid "Camera exposure and sensitivity"
-msgstr "カメラの露出と感度を表示"
+msgstr "カメラの露出と感度"
 
 #: core/utilities/setup/setuptooltip.cpp:254
-#, fuzzy, kde-format
-#| msgid "Show camera mode and program"
+#, kde-format
 msgid "Camera mode and program"
-msgstr "カメラのモードとプログラムを表示"
+msgstr "カメラのモードとプログラム"
 
 #: core/utilities/setup/setuptooltip.cpp:258
 #: core/utilities/setup/setuptooltip.cpp:431
-#, fuzzy, kde-format
-#| msgid "Show camera flash settings"
+#, kde-format
 msgid "Camera flash settings"
-msgstr "カメラのフラッシュ設定を表示"
+msgstr "カメラのフラッシュ設定"
 
 #: core/utilities/setup/setuptooltip.cpp:262
 #: core/utilities/setup/setuptooltip.cpp:435
-#, fuzzy, kde-format
-#| msgid "Show camera white balance settings"
+#, kde-format
 msgid "Camera white balance settings"
-msgstr "カメラのホワイトバランス設定を表示"
+msgstr "カメラのホワイトバランス設定"
 
 #: core/utilities/setup/setuptooltip.cpp:279
 #, kde-format
@@ -69506,8 +69438,7 @@ msgstr "digiKam の情報"
 
 #: core/utilities/setup/setuptooltip.cpp:282
 #: core/utilities/setup/setuptooltip.cpp:355
-#, fuzzy, kde-format
-#| msgid "Album Name"
+#, kde-format
 msgid "Album name"
 msgstr "アルバム名"
 
@@ -69518,10 +69449,9 @@ msgid "Set this option to display the album name."
 msgstr "アルバム名を表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:285
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Image title"
-msgstr "画像のタイトルを表示"
+msgstr "画像のタイトル"
 
 #: core/utilities/setup/setuptooltip.cpp:286
 #, kde-format
@@ -69529,10 +69459,9 @@ msgid "Set this option to display the image title."
 msgstr "画像のタイトルを表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:288
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgid "Image caption"
-msgstr "画像のキャプションを表示"
+msgstr "画像のキャプション"
 
 #: core/utilities/setup/setuptooltip.cpp:289
 #, kde-format
@@ -69540,11 +69469,9 @@ msgid "Set this option to display the image captions."
 msgstr "画像のキャプションを表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Image tags"
+#, kde-format
 msgid "Image tags"
-msgstr "画像タグ"
+msgstr "画像のタグ"
 
 #: core/utilities/setup/setuptooltip.cpp:292
 #, kde-format
@@ -69552,10 +69479,9 @@ msgid "Set this option to display the image tags."
 msgstr "画像のタグを表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:294
-#, fuzzy, kde-format
-#| msgid "Image Files"
+#, kde-format
 msgid "Image labels"
-msgstr "画像ファイル"
+msgstr "画像のラベル"
 
 #: core/utilities/setup/setuptooltip.cpp:295
 #, kde-format
@@ -69565,63 +69491,55 @@ msgstr ""
 "します。"
 
 #: core/utilities/setup/setuptooltip.cpp:307
-#, fuzzy, kde-format
-#| msgid "Video Information"
+#, kde-format
 msgid "Audio/Video Information"
-msgstr "動画の情報"
+msgstr "音声/動画の情報"
 
 #: core/utilities/setup/setuptooltip.cpp:310
-#, fuzzy, kde-format
-#| msgid "Show Video Aspect Ratio"
+#, kde-format
 msgid "Video Aspect Ratio"
-msgstr "動画のアスペクト比を表示"
+msgstr "動画のアスペクト比"
 
 #: core/utilities/setup/setuptooltip.cpp:311
 #: core/utilities/setup/setuptooltip.cpp:326
-#, fuzzy, kde-format
-#| msgid "Set this option to display the Aspect Ratio of the Video"
+#, kde-format
 msgid "Set this option to display the Aspect Ratio of the Video."
 msgstr "動画のアスペクト比を表示するには、このオプションを有効にします"
 
 #: core/utilities/setup/setuptooltip.cpp:314
-#, fuzzy, kde-format
-#| msgid "Set this option to display the Audio Bit Rate of the Video"
+#, kde-format
 msgid "Set this option to display the Audio Bit Rate of the Video."
 msgstr "動画の音声ビットレートを表示するには、このオプションを有効にします"
 
 #: core/utilities/setup/setuptooltip.cpp:317
-#, fuzzy, kde-format
-#| msgid "Set this option to display the Audio Channel Type of the Video"
+#, kde-format
 msgid "Set this option to display the Audio Channel Type of the Video."
 msgstr "動画の音声チャンネルタイプを表示するには、このオプションを有効にします"
 
 #: core/utilities/setup/setuptooltip.cpp:320
-#, fuzzy, kde-format
-#| msgid "Set this option to display the Codec of the Video"
+#, kde-format
 msgid "Set this option to display the Audio Codec of the Video."
-msgstr "動画の動画コーデックを表示するには、このオプションを有効にします"
+msgstr "動画の音声コーデックを表示するには、このオプションを有効にします"
 
 #: core/utilities/setup/setuptooltip.cpp:322
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Duration"
-msgstr "digiKam の評価を表示(&R)"
+msgstr "動画の長さ"
 
 #: core/utilities/setup/setuptooltip.cpp:323
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the Duration of the Video."
-msgstr "画像ファイルの日付を表示するには、このオプションを有効にします。"
+msgstr "動画の長さを表示するには、このオプションを有効にします"
 
 #: core/utilities/setup/setuptooltip.cpp:325
-#, fuzzy, kde-format
-#| msgid "Show Video Frame Rate"
+#, kde-format
 msgid "Video Frame Rate"
-msgstr "動画フレームレートを表示"
+msgstr "動画のフレームレート"
 
 #: core/utilities/setup/setuptooltip.cpp:329
-#, fuzzy, kde-format
-#| msgid "Set this option to display the Codec of the Video"
+#, kde-format
 msgid "Set this option to display the Codec of the Video."
-msgstr "動画の動画コーデックを表示するには、このオプションを有効にします"
+msgstr "動画のコーデックを表示するには、このオプションを有効にします"
 
 #: core/utilities/setup/setuptooltip.cpp:349
 #, kde-format
@@ -69644,10 +69562,9 @@ msgstr ""
 "るには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:358
-#, fuzzy, kde-format
-#| msgid "Album &date:"
+#, kde-format
 msgid "Album date"
-msgstr "アルバムの日付(&D):"
+msgstr "アルバムの日付"
 
 #: core/utilities/setup/setuptooltip.cpp:359
 #, kde-format
@@ -69655,10 +69572,9 @@ msgid "Set this option to display the album date."
 msgstr "アルバムの日付を表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:361
-#, fuzzy, kde-format
-#| msgid "Show album collection"
+#, kde-format
 msgid "Album collection"
-msgstr "アルバムのコレクションを表示"
+msgstr "アルバムのコレクション"
 
 #: core/utilities/setup/setuptooltip.cpp:362
 #, kde-format
@@ -69666,8 +69582,7 @@ msgid "Set this option to display the album collection."
 msgstr "アルバムのコレクションを表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:364
-#, fuzzy, kde-format
-#| msgid "Album Category"
+#, kde-format
 msgid "Album category"
 msgstr "アルバムのカテゴリ"
 
@@ -69677,10 +69592,9 @@ msgid "Set this option to display the album category."
 msgstr "アルバムのカテゴリを表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:367
-#, fuzzy, kde-format
-#| msgid "Show album caption"
+#, kde-format
 msgid "Album caption"
-msgstr "アルバムのキャプションを表示"
+msgstr "アルバムのキャプション"
 
 #: core/utilities/setup/setuptooltip.cpp:368
 #, kde-format
@@ -69688,10 +69602,9 @@ msgid "Set this option to display the album caption."
 msgstr "アルバムのキャプションを表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:370
-#, fuzzy, kde-format
-#| msgid "Album View"
+#, kde-format
 msgid "Album preview"
-msgstr "アルバムビュー"
+msgstr "アルバムのプレビュー"
 
 #: core/utilities/setup/setuptooltip.cpp:371
 #, kde-format
@@ -69699,18 +69612,17 @@ msgid "Set this option to display the album preview."
 msgstr "アルバムのプレビューを表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:390
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show import items' tool-tips"
-msgstr "アルバムにツールチップを表示する"
+msgstr "インポートされたアイテムのツールチップを表示する"
 
 #: core/utilities/setup/setuptooltip.cpp:391
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import Information"
-msgstr "コンポーネントの情報"
+msgstr "インポート情報"
 
 #: core/utilities/setup/setuptooltip.cpp:396
-#, fuzzy, kde-format
-#| msgid "Item Name"
+#, kde-format
 msgid "Item name"
 msgstr "アイテム名"
 
@@ -69720,10 +69632,9 @@ msgid "Set this option to display the item name."
 msgstr "アイテム名を表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:399
-#, fuzzy, kde-format
-#| msgid "Item Name"
+#, kde-format
 msgid "Item date"
-msgstr "アイテム名"
+msgstr "アイテムの日付"
 
 #: core/utilities/setup/setuptooltip.cpp:400
 #, kde-format
@@ -69731,21 +69642,19 @@ msgid "Set this option to display the item date."
 msgstr "アイテムの日付を表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:402
-#, fuzzy, kde-format
-#| msgid "Item Title"
+#, kde-format
 msgid "Item size"
-msgstr "アイテムのタイトル"
+msgstr "アイテムの大きさ"
 
 #: core/utilities/setup/setuptooltip.cpp:403
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the item size."
-msgstr "画像のファイルサイズを表示するには、このオプションを有効にします。"
+msgstr "アイテムの大きさを表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:405
-#, fuzzy, kde-format
-#| msgid "Item Title"
+#, kde-format
 msgid "Item type"
-msgstr "アイテムのタイトル"
+msgstr "アイテムの種類"
 
 #: core/utilities/setup/setuptooltip.cpp:406
 #, kde-format
@@ -69753,10 +69662,9 @@ msgid "Set this option to display the item type."
 msgstr "アイテムの種類を表示するには、このオプションを有効にします。"
 
 #: core/utilities/setup/setuptooltip.cpp:408
-#, fuzzy, kde-format
-#| msgid "Show item dimensions"
+#, kde-format
 msgid "Item dimensions"
-msgstr "アイテムの寸法を表示"
+msgstr "アイテムの寸法"
 
 #: core/utilities/setup/setuptooltip.cpp:409
 #, kde-format
@@ -69769,6 +69677,8 @@ msgid ""
 "Note: these settings require \"Use File Metadata\" option from Camera Setup "
 "Behavior page."
 msgstr ""
+"注意: これらの設定は「カメラの設定の動作」ページの「ファイルのメタデータを使"
+"用する」オプションが有効になっている必要があります。"
 
 #: core/utilities/setup/setuptooltip.cpp:462
 #, kde-format
@@ -69781,9 +69691,9 @@ msgid "Album Items"
 msgstr "アルバムアイテム"
 
 #: core/utilities/setup/setuptooltip.cpp:464
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import Items"
-msgstr "画像をソート(&S)"
+msgstr "インポートされたアイテム"
 
 #: core/utilities/setup/setupvideo.cpp:74
 #, fuzzy, kde-format
