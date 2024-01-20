@@ -289,21 +289,21 @@ for EXTLIB in $DEPS ; do
         continue
     fi
 
-    lib="${EXTLIB/$INSTALL_PREFIX\//}"
+    _library="${EXTLIB/$INSTALL_PREFIX\//}"
 
-    if [ ! -e "$TEMPROOT/$lib" ] ; then
-        dir="${lib%/*}"
+    if [ ! -e "$TEMPROOT/$_library" ] ; then
+        _directory="${_library%/*}"
 
-        if [ ! -d "$TEMPROOT/$dir" ] ; then
-#            echo "  Creating $TEMPROOT/$dir"
-            mkdir -p "$TEMPROOT/$dir"
+        if [ ! -d "$TEMPROOT/$_directory" ] ; then
+#            echo "  Creating $TEMPROOT/$_directory"
+            mkdir -p "$TEMPROOT/$_directory"
         fi
 
-        echo "  Copying $lib"
-        cp -aH "$INSTALL_PREFIX/$lib" "$TEMPROOT/$dir/"
+        echo "  Copying $_library"
+        cp -aH "$INSTALL_PREFIX/$_library" "$TEMPROOT/$_directory/"
     fi
 
-    CopyReccursiveDependencies "$lib" "$2"
+    CopyReccursiveDependencies "$_library" "$2"
 
 done
 

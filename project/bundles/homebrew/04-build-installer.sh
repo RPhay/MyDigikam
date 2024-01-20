@@ -235,7 +235,7 @@ for bin in $binary_paths ; do
     CopyReccursiveDependencies "$bin" "$TEMPROOT"
 
 done
-
+exit
 #################################################################################################
 # Copy non-binary files and directories, creating parent directories if needed
 
