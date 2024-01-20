@@ -246,10 +246,10 @@ if(APPLE)
 
 endif()
 
-if (Qt6_FOUND)
+if(Qt6_FOUND)
     install(TARGETS showfoto DESTINATION ${KDE_INSTALL_BINDIR})
 else()
-    install(TARGETS showfoto ${INSTALL_TARGETS_DEFAULT_ARGS}
+    install(TARGETS showfoto ${INSTALL_TARGETS_DEFAULT_ARGS})
 endif()
 
 install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.showfoto.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})

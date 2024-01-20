@@ -122,10 +122,10 @@ if(ImageMagick_Magick++_FOUND)
 
 endif()
 
-if (Qt6_FOUND)
+if(Qt6_FOUND)
     install(TARGETS digikam DESTINATION ${KDE_INSTALL_BINDIR})
 else()
-    install(TARGETS digikam ${INSTALL_TARGETS_DEFAULT_ARGS}
+    install(TARGETS digikam ${INSTALL_TARGETS_DEFAULT_ARGS})
 endif()
 
 if(APPLE)
