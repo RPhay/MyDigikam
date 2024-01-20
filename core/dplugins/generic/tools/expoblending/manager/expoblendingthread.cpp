@@ -499,11 +499,18 @@ void ExpoBlendingThread::run()
 
 bool ExpoBlendingThread::preProcessingMultithreaded(const QUrl& url)
 {
-    bool error = false;
+    bool error  = false;
 
-    // check if we have to RAW file -> use preview image then
+    // check if we have RAW or HEIF file -> use preview image then
 
-    if (DRawDecoder::isRawFile(url))
+    QString ext = QFileInfo(url.toLocalFile()).suffix().toUpper();
+
+    if (
+        DRawDecoder::isRawFile(url)    ||
+        (ext == QLatin1String("HIF"))  ||
+        (ext == QLatin1String("HEIC")) ||
+        (ext == QLatin1String("HEIF"))
+       )
     {
         QUrl preprocessedUrl, previewUrl;
 
