@@ -269,10 +269,19 @@ done
 # Copy dependencies with otool analysis
 # arg1 : original file path to parse.
 # arg2 : target path to copy dependencies.
+
+# Cache in memory of already scanned files to speed-up operations.
+_already_scanned_libs=()
+
 CopyReccursiveDependencies()
 {
 
+# Check if file have not alredy scanned
+echo ${_already_scanned_libs[@]} | grep -q "$1" && return;
+
 DEPS=$(otool -L $INSTALL_PREFIX/$1 | grep $INSTALL_PREFIX | awk -F ' \\\(' '{print $1}')
+
+_already_scanned_libs+=("$1")
 
 for EXTLIB in $DEPS ; do
 
