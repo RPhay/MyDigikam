@@ -235,7 +235,7 @@ for bin in $binary_paths ; do
     CopyReccursiveDependencies "$bin" "$TEMPROOT"
 
 done
-exit
+
 #################################################################################################
 # Copy non-binary files and directories, creating parent directories if needed
 
@@ -327,7 +327,7 @@ cp -a "$TEMPROOT/showfoto.app/Contents/Resources/" "$TEMPROOT/digikam.app/Conten
 rm -rf "$TEMPROOT/showfoto.app/Contents/Resources"
 
 cd "$ORIG_WD"
-
+exit
 #################################################################################################
 # Move digiKam and KF6 run-time plugins to the right place
 
