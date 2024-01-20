@@ -21,11 +21,13 @@
 // Qt includes
 
 #include <QEventLoop>
+#include <QDateTime>
 #include <QStringList>
 
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_version.h"
 
 namespace Digikam
 {
@@ -75,6 +77,13 @@ void FFmpegLauncher::encodeFrames()
              << QLatin1String("copy")                             // Do not reencode
              << QLatin1String("-shortest");
     }
+
+    // Metadata (not supported by all media containers - work fine with MP4)
+
+    args << QLatin1String("-metadata")
+         << QString::fromLatin1("date=\"%1\"").arg(QDateTime::currentDateTime().toString(Qt::ISODate))
+         << QLatin1String("-metadata")
+         << QString::fromLatin1("description=\"Encoded with digiKam VideoSlideShow tool version %1\"").arg(digiKamVersion());
 
     // Egualize video luminosity.
     // https://ffmpeg.org/ffmpeg-filters.html#tmidequalizer
