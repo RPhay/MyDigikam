@@ -110,7 +110,7 @@ DK_QTWEBENGINE=1
 DK_SIGN=0
 
 # Upload automatically bundle to files.kde.org (pre-release only).
-DK_UPLOAD=1
+DK_UPLOAD=0
 DK_UPLOADURL="digikam@tinami.kde.org"
 
 # KDE frameworks version + Upload URL.
