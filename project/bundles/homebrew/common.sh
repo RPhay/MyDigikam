@@ -269,10 +269,19 @@ done
 # Copy dependencies with otool analysis
 # arg1 : original file path to parse.
 # arg2 : target path to copy dependencies.
+
+# Cache in memory of already scanned files to speed-up operations.
+_already_scanned_libs=()
+
 CopyReccursiveDependencies()
 {
 
+# Check if file have not alredy scanned
+echo ${_already_scanned_libs[@]} | grep -q "$1" && return;
+
 DEPS=$(otool -L $INSTALL_PREFIX/$1 | grep $INSTALL_PREFIX | awk -F ' \\\(' '{print $1}')
+
+_already_scanned_libs+=("$1")
 
 for EXTLIB in $DEPS ; do
 
@@ -280,21 +289,21 @@ for EXTLIB in $DEPS ; do
         continue
     fi
 
-    lib="${EXTLIB/$INSTALL_PREFIX\//}"
+    _library="${EXTLIB/$INSTALL_PREFIX\//}"
 
-    if [ ! -e "$TEMPROOT/$lib" ] ; then
-        dir="${lib%/*}"
+    if [ ! -e "$TEMPROOT/$_library" ] ; then
+        _directory="${_library%/*}"
 
-        if [ ! -d "$TEMPROOT/$dir" ] ; then
-#            echo "  Creating $TEMPROOT/$dir"
-            mkdir -p "$TEMPROOT/$dir"
+        if [ ! -d "$TEMPROOT/$_directory" ] ; then
+#            echo "  Creating $TEMPROOT/$_directory"
+            mkdir -p "$TEMPROOT/$_directory"
         fi
 
-        echo "  Copying $lib"
-        cp -aH "$INSTALL_PREFIX/$lib" "$TEMPROOT/$dir/"
+        echo "  Copying $_library"
+        cp -aH "$INSTALL_PREFIX/$_library" "$TEMPROOT/$_directory/"
     fi
 
-    CopyReccursiveDependencies "$lib" "$2"
+    CopyReccursiveDependencies "$_library" "$2"
 
 done
 

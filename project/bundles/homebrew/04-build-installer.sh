@@ -327,7 +327,7 @@ cp -a "$TEMPROOT/showfoto.app/Contents/Resources/" "$TEMPROOT/digikam.app/Conten
 rm -rf "$TEMPROOT/showfoto.app/Contents/Resources"
 
 cd "$ORIG_WD"
-
+exit
 #################################################################################################
 # Move digiKam and KF6 run-time plugins to the right place
 
