@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 01:39+0000\n"
-"PO-Revision-Date: 2024-01-13 15:34+0300\n"
+"POT-Creation-Date: 2024-01-21 01:35+0000\n"
+"PO-Revision-Date: 2024-01-20 16:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16808,7 +16808,7 @@ msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "bilinmiyor"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:915
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -20738,16 +20738,18 @@ msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
+"Bu denetim, video akışı ve fon müziğini barındıracak ortam kapsayıcısınn "
+"biçimini seçmenize olanak tanır."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
 #, kde-format
 msgid "Equalize Video Luminosity"
-msgstr ""
+msgstr "Video Parlaklığını Eşitle"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Equalization Strength:"
-msgstr ""
+msgstr "Eşitleme gücü:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:108
 #, kde-format
@@ -20755,6 +20757,8 @@ msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
+"Bu, eşitlemenin gücünü denetler. Bu seçeneği sıfır olarak ayarlamanın bir "
+"etkisi olmaz."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
 #, kde-format
@@ -20764,6 +20768,10 @@ msgid ""
 "same histograms, while maintaining their dynamics as much as possible. It’s "
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
+"<i>Bu ayarlar, kareleri video olarak kodlarken geçici yarı yol video "
+"eşitleme efektini uygular. Bu, dinamiklerini olabildiğince korurken, "
+"karelerin sırasını aynı histogramlara sahip olacak şekilde ayarlar. Örneğin; "
+"hızlandırılmış bir diziden eşleşen pozlar.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
 #, kde-format
@@ -20782,11 +20790,7 @@ msgid "Soundtrack Duration:"
 msgstr "Fon müziği süresi:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:138
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-#| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed.</i>"
+#, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
@@ -20794,7 +20798,8 @@ msgid ""
 "media.</i>"
 msgstr ""
 "<i>Fon müziği hakkında notlar: Ses uzunluğu videodan kısaysa döngü içinde "
-"oynatılacaktır. Ses uzunluğu videodan daha uzunsa kırpılacaktır.</i>"
+"çalınacaktır. Ses uzunluğu videodan daha uzunsa kırpılacaktır. Ortama ses "
+"verilmesini istemiyorsanız bu ayarı boş bırakın.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
@@ -20819,6 +20824,10 @@ msgid ""
 "show the same frame in the video. The result will depend of the number of "
 "frames per second used to encode the media."
 msgstr ""
+"Bu değer sırayla bir görseli yineler. Hızlandırılmış video oluştururken; "
+"genellikle 1 kullanılır. Tipik olarak kare sayısı, videoda aynı karenin "
+"gösterilme süresini belirler. Sonuç, ortamı kodlamak için kullanılan saniye "
+"başına kare sayısına bağlı olacaktır."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:96
 #, kde-format
@@ -20841,11 +20850,7 @@ msgid "Effect While Displaying Images"
 msgstr "Görselleri Görüntülerden Efekt Uygula"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>An effect is an visual panning or zooming applied while an image is "
-#| "displayed. The effect duration will follow the number of frames used to "
-#| "render the image on video stream.</i>"
+#, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
@@ -20854,7 +20859,8 @@ msgid ""
 msgstr ""
 "<i>Efekt, bir görsel görüntülenirken uygulanan bir görsel kaydırma veya "
 "yakınlaştırma işlemidir. Efekt süresi video akışında görseli sunmak için "
-"kullanılan karelerin sayısını izleyecektir.</i>"
+"kullanılan karelerin sayısını izleyecektir. Hızlandırılmış bir çekim için "
+"ayarı \"Yok\" olarak ayarlayın.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #, kde-format
@@ -20862,11 +20868,7 @@ msgid "Transition Between Images"
 msgstr "Görseller Arasındaki Geçiş"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>A transition is an visual effect applied between two images. For some "
-#| "effects, the duration can depend of random values and can change while "
-#| "the slideshow.</i>"
+#, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
@@ -20874,7 +20876,8 @@ msgid ""
 msgstr ""
 "<i>Geçiş, iki görsel arasında uygulanan bir efekttir. Bazı efektler için "
 "süre rastgele değerlere bağlı olabilir ve slayt gösterisi sırasında "
-"değişebilir.</i>"
+"değişebilir. Hızlandırılmış bir çekim için ayarı \"Yok\" olarak ayarlayın.</"
+"i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
 #, kde-format
@@ -36560,7 +36563,7 @@ msgstr "Uzak bağlantıdan desteklenmeyen dosya adı biçimi döndürüldü."
 #: core/libs/onlineversion/onlineversionchecker.cpp:257
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
-msgstr "Uzak listeden geçersiz yayım öncesi tarihi."
+msgstr "Uzak listeden geçersiz ön yayım tarihi."
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:289
 #, kde-format
@@ -36595,12 +36598,12 @@ msgstr "Tahmini bitiş:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
-msgstr "Çevrimiçi Sürüm Denetleyicisi - Yayım Öncesi"
+msgstr "Çevrimiçi Sürüm Denetleyicisi - Ön Yayım"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:186
 #, kde-format
 msgid "Check for new pre-release version available, please wait..."
-msgstr "Kullanılabilir yayım öncesi sürümler denetleniyor, lütfen bekleyin..."
+msgstr "Kullanılabilir ön yayım sürümleri denetleniyor, lütfen bekleyin..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:190
 #, kde-format
@@ -36639,13 +36642,13 @@ msgid ""
 "are safe to use in production.</p><p>Press <b>Configure</b> if you want to "
 "customize update options from setup dialog.</p>"
 msgstr ""
-"<p>Geçerli <b>%1</b> yayım öncesi sürümü tarihi <i>%2</i>.</p><p><i>%3</i> "
-"üzerine yapılı yeni yayım öncesi sürümü bu <a href='%4'>depoda</a> "
-"bulunabilir.</p><p>Dosyayı almak için <b>İndir</b>'e basın...</p><p>Not: "
-"Ayarlar/Çeşitli panelinden yalnızca kararlı sürümleri denetlemek üzere "
-"yapılandırabilirsiniz.<br/>Kararlı sürümler normal iş ortamında güvenle "
-"kullanılabilir.</p><p>Ayarlar iletişim kutusunda güncelleme seçeneklerini "
-"özelleştirmek istiyorsanız <b>Yapılandır</b> düğmesine basın.</p>"
+"<p>Geçerli <b>%1</b> ön yayım sürümü tarihi <i>%2</i>.</p><p><i>%3</i> "
+"üzerine yapılı yeni ön yayım sürümünü bu <a href='%4'>depoda</a> bulunabilir."
+"</p><p>Dosyayı almak için <b>İndir</b>'e basın...</p><p>Not: Ayarlar/Çeşitli "
+"panelinden yalnızca kararlı sürümleri denetlemek üzere yapılandırabilirsiniz."
+"<br/>Kararlı sürümler normal iş ortamında güvenle kullanılabilir.</"
+"p><p>Ayarlar iletişim kutusunda güncelleme seçeneklerini özelleştirmek "
+"istiyorsanız <b>Yapılandır</b> düğmesine basın.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:300
 #, kde-format
@@ -36661,13 +36664,13 @@ msgid ""
 msgstr ""
 "<p>Geçerli <b>%1</b> kararlı sürümü <i>%2</i></p><p>Yeni kararlı <i>%3</"
 "i>sürümü bu <a href='%4'>depoda</a> bulunabilir.</p><p>Dosyayı almak için "
-"<b>İndir</b>'e basın...</p><p>Not: Ayarlar/Çeşitli panelinden haftalık yayım "
-"öncesi sürümleri denetleyebilirsiniz.<br/>Yayım öncesi sürümler, yeni "
-"özellikleri tez sınamak üzere yapılırlar.<br/>Hâlâ hatalar "
-"içerebileceklerinden, ne yaptığınızı bilmiyorsanız yayım öncesi<br/"
-">sürümlerin iş ortamında kullanılması önerilmez.</p><p>Ayarlar iletişim "
-"kutusunda güncelleme seçeneklerini özelleştirmek istiyorsanız <b>Yapılandır</"
-"b> düğmesine basın.</p>"
+"<b>İndir</b>'e basın...</p><p>Not: Ayarlar/Çeşitli panelinden haftalık ön "
+"yayım sürümlerini denetleyebilirsiniz.<br/>Ön yayımlar, yeni özellikleri tez "
+"sınamak üzere yapılırlar.<br/>Hâlâ hatalar içerebileceklerinden, ne "
+"yaptığınızı bilmiyorsanız ön yayım<br/>sürümlerinin iş ortamında "
+"kullanılması önerilmez.</p><p>Ayarlar iletişim kutusunda güncelleme "
+"seçeneklerini özelleştirmek istiyorsanız <b>Yapılandır</b> düğmesine basın.</"
+"p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:328
 #, kde-format
@@ -36676,7 +36679,7 @@ msgid ""
 "%1 pre-release built on %2 is the most recent version available."
 msgstr ""
 "Yazılımınız güncel.\n"
-"%2 üzerine yapılı %1 yayım öncesi sürümü, kullanılabilir en yeni sürümdür."
+"%2 üzerine yapılı %1 ön yayım sürümü, kullanılabilir en yeni sürümdür."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:335
 #, kde-format
@@ -36782,7 +36785,7 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 "%2 üzerine yapılı yeni\n"
-"%1 yayım öncesi sürümü\n"
+"%1 ön yayım sürümü\n"
 "\n"
 "%3\n"
 "\n"
@@ -36825,7 +36828,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 "%2 üzerine yapılı yeni\n"
-"%1 yayım öncesi sürümü\n"
+"%1 ön yayım sürümü\n"
 "\n"
 "%3\n"
 "\n"
@@ -36860,7 +36863,7 @@ msgid ""
 "\"%3\""
 msgstr ""
 "%2 üzerine yapılı yeni %1\n"
-"yayım öncesi sürümü indirilirken hata\n"
+"ön yayım sürümü indirilirken hata\n"
 "\n"
 "%3"
 
@@ -49576,22 +49579,21 @@ msgid "Loading themes..."
 msgstr "Temalar yükleniyor..."
 
 #: core/showfoto/main/showfoto.cpp:215
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
 "now, select \"Yes\", otherwise select \"No\". In this case, \"Color "
 "Management\" feature will be disabled until you solve this issue</p>"
 msgstr ""
-"<p>ICC kimlik yolu geçersiz görünüyor.</p><p>Bunu şimdi ayarlamak "
-"istiyorsanız \"Evet\"'i seçin, değilse \"Hayır\". Eğer \"Hayır\"'ı "
-"seçerseniz \"Renk Yönetimi\" desteği siz bunu çözene kadar etkisiz hale "
-"gelecektir</p>"
+"<p>ICC profili yolu geçersiz görünüyor.</p><p>Şimdi ayarlamak istiyorsanız "
+"\"Evet\"i, aksi halde \"Hayır\"ı seçin. Bu durumda, siz bu sorunu çözene "
+"kadar \"Renk Yönetimi\" özelliği devre dışı bırakılacaktır.</p>"
 
 #: core/showfoto/main/showfoto.cpp:255
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
-msgstr "Bilinmeyen"
+msgstr "Bilinmiyor"
 
 #: core/showfoto/main/showfoto.cpp:280
 #: core/utilities/imageeditor/main/imagewindow.cpp:492
@@ -49607,28 +49609,27 @@ msgstr "Dosyayı Sil"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2375
-#, fuzzy, kde-format
-#| msgid "Error Saving File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
-msgstr "Dosya Kaydetmede Hata"
+msgstr "Dosyayı Kaydederken Hata"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:79
 #, kde-format
 msgid "Failed to save file: %1"
-msgstr "Dosya kaydetmesi başarısız: %1"
+msgstr "Dosya kaydedilemedi: %1"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:80
 #, kde-format
 msgid "Remote file handling is not supported"
-msgstr "Uzaktan dosya işlemesi desteklenmiyor"
+msgstr "Uzak dosya işlemesi desteklenmiyor"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
 #: core/utilities/imageeditor/main/imagewindow.cpp:575
 #: core/utilities/imageeditor/main/imagewindow.cpp:690
 #, kde-format
 msgid "Image saved successfully"
-msgstr "Resim başarıyla kaydedildi"
+msgstr "Görsel başarıyla kaydedildi"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:185
 #, kde-format
@@ -49636,7 +49637,7 @@ msgid ""
 "About to delete file \"%1\"\n"
 "Are you sure?"
 msgstr ""
-"\"%1\" Dosyası Silinmek Üzere\n"
+"\"%1\" dosyası silinmek üzere\n"
 "Emin misiniz?"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:201
@@ -49645,36 +49646,30 @@ msgid "Cannot delete \"%1\""
 msgstr "\"%1\" silinemiyor"
 
 #: core/showfoto/main/showfoto_open.cpp:58
-#, fuzzy, kde-format
-#| msgid "Open Images From Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
-msgstr "Dizindeki Resimleri Aç"
+msgstr "Klasörden Görseller Aç"
 
 #: core/showfoto/main/showfoto_open.cpp:299
-#, fuzzy, kde-format
-#| msgid "There is no dropped item to process."
+#, kde-format
 msgid "There is no item to process."
-msgstr "İşlemek için bırakılan öge yok."
+msgstr "İşlenecek öge yok."
 
 #: core/showfoto/main/showfoto_open.cpp:321
-#, fuzzy, kde-format
-#| msgid "Error Loading File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
-msgstr "Dosya Yüklemede Hata"
+msgstr "Dosya Yüklerken Hata"
 
 #: core/showfoto/main/showfoto_open.cpp:322
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to load file: %1\n"
-#| "Remote file handling is not supported"
+#, kde-format
 msgid ""
 "Failed to load file: \"%1\"\n"
 "Remote file handling is not supported"
 msgstr ""
-"Dosya yüklemesi başarısız: %1\n"
-"Uzaktan dosya işleme desteklenmiyor"
+"Dosya yüklenemedi: %1\n"
+"Uzak dosya işlemesi desteklenmiyor"
 
 #: core/showfoto/main/showfoto_setup.cpp:22
 #, kde-format
@@ -49684,7 +49679,7 @@ msgstr "&Temalar"
 #: core/showfoto/main/showfoto_setup.cpp:32
 #, kde-format
 msgid "Open folder"
-msgstr "Dizin aç"
+msgstr "Klasör Aç"
 
 #. i18n: ectx: Menu (File)
 #: core/showfoto/main/showfotoui5.rc:6
@@ -49706,21 +49701,21 @@ msgstr "Re&nk"
 #: core/utilities/imageeditor/main/imageeditorui5.rc:69
 #, kde-format
 msgid "Enh&ance"
-msgstr "Ço&ğalt"
+msgstr "Gelişt&irme"
 
 #. i18n: ectx: Menu (Transform)
 #: core/showfoto/main/showfotoui5.rc:74
 #: core/utilities/imageeditor/main/imageeditorui5.rc:75
 #, kde-format
 msgid "Tra&nsform"
-msgstr "&Dönüştür"
+msgstr "&Dönüşüm"
 
 #. i18n: ectx: Menu (Decorate)
 #: core/showfoto/main/showfotoui5.rc:80
 #: core/utilities/imageeditor/main/imageeditorui5.rc:81
 #, kde-format
 msgid "&Decorate"
-msgstr "&Süsle"
+msgstr "&Dekorasyon"
 
 #. i18n: ectx: Menu (Filters)
 #: core/showfoto/main/showfotoui5.rc:86
@@ -49730,8 +49725,7 @@ msgid "Effec&ts"
 msgstr "Efek&tler"
 
 #: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:194
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Yapılandır"
@@ -49755,25 +49749,22 @@ msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
-"<qt>Gömülü Resim Bilgisi Yönetimi<br/><i>Resimler ve üstveri arasındaki "
-"ilişkiyi düzenleyin</i></qt>"
+"<qt>Gömülü Görsel Bilgisi Yönetimi<br/><i>Görseller ve üst veri arasındaki "
+"ilişkiyi ayarlayın</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:149
 #, kde-format
 msgid "Tool Tip"
-msgstr "İpucu"
+msgstr "Araç İpucu"
 
 #: core/showfoto/setup/showfotosetup.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
-#| "tips</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
-"<qt>Küçük Resim Çubuğu Ögeleri Araç İpucu Ayarları<br/><i>Araç ipuçlarındaki "
-"bilgiyi özelleştirin</i></qt>"
+"<qt>Küçük Görsel Çubuğu ve Klasör Görünümü Ögeleri Araç İpuçları Ayarları<br/"
+"><i>Araç ipuçlarındaki bilgileri özelleştirin</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:155
 #, kde-format
@@ -49786,8 +49777,8 @@ msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
-"<qt>RAW Dosya Kod Çözme Ayaları<br/><i>Öntanımlı RAW kod çözme ayarlarını "
-"özelleştirin</i></qt>"
+"<qt>RAW Dosyaları Kod Çözme Ayarları<br/><i>Öntanımlı RAW kod çözme "
+"ayarlarını özelleştirin</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:162
 #, kde-format
@@ -49801,7 +49792,7 @@ msgstr ""
 #: core/showfoto/setup/showfotosetup.cpp:167
 #, kde-format
 msgid "Save Images"
-msgstr "Resimler Kaydet"
+msgstr "Görsel Kaydı"
 
 #: core/showfoto/setup/showfotosetup.cpp:168
 #, kde-format
@@ -49809,28 +49800,24 @@ msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
-"<qt>Resim Dosyalarını Kaydetme Ayarları<br/><i>Resimleri kaydetmek için "
-"kullanılan öntanımlı yapılanımı belirleyin</i></qt>"
+"<qt>Görsel Dosyalarını Kaydetme Ayarları<br/><i>Görselleri kaydetmek için "
+"kullanılan öntanımlı yapılandırmayı ayarlayın</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
-#, fuzzy, kde-format
-#| msgid "Geolocation"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Coğrafi Konum"
 
 #: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Application Views Settings<br/><i>Customize the look of the views</"
-#| "i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Geolocation Settings\n"
 "Customize view to geolocalize items"
 msgstr ""
-"<qt>Uygulama Görünümü Ayarları<br/><i>Görünümlerin görüntüsünü özelleştirin</"
-"i></qt>"
+"Coğrafi Konum Ayarları\n"
+"Ögelerin coğrafi konum görünümünü özelleştirin"
 
 #: core/showfoto/setup/showfotosetup.cpp:182
 #, kde-format
@@ -49838,16 +49825,13 @@ msgid "Plugins"
 msgstr "Eklentiler"
 
 #: core/showfoto/setup/showfotosetup.cpp:183
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
-#| "accessible from the main interface</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
-"<qt>Ana Arayüz Eklenti Ayarları<br/><i>Ana arayüzden hangi eklentilerin "
-"erişilebileceğini seçin</i></qt>"
+"<qt>Ana Arayüz Eklenti Ayarları<br/><i>Ana arayüzden hangi eklentilere "
+"erişilebileceğini ayarlayın</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:188
 #, kde-format
@@ -49862,7 +49846,7 @@ msgid ""
 "Showfoto</i></qt>"
 msgstr ""
 "<qt>Çeşitli Ayarlar<br/><i>FotoGöster'in diğer kısımlarının davranışını "
-"özelleştir</i></qt>"
+"özelleştirin</i></qt>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
@@ -49872,66 +49856,49 @@ msgid "Rotate actions"
 msgstr "Eylemleri döndür"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:96
-#, fuzzy, kde-format
-#| msgid "Show images/thumbnails &rotated according to orientation tag."
+#, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr ""
-"Yönlendirme etiketine göre &döndürülmüş resimleri/küçük resimleri göster."
+"Yönlendirme etiketine göre &döndürülmüş görselleri/küçük görselleri göster"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:98
-#, fuzzy, kde-format
-#| msgid "Set orientation tag to normal after rotate/flip."
+#, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
-msgstr "Döndürdükten/çevirdikten sonra yön etiketini normale getir."
+msgstr "Döndürdükten/çevirdikten sonra yönlendirme etiketini normale getir"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><a href='http://en.wikipedia.org/wiki/Exif'>EXIF</a> - a standard used "
-#| "by most digital cameras today to store technical information (like "
-#| "aperture and shutter speed) about an image.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "a standard used by most digital cameras today to store technical information "
 "(like aperture and shutter speed) about an image."
 msgstr ""
-"<p><a href='http://en.wikipedia.org/wiki/Exif'>EXIF</a> - bugün çoğu dijital "
-"kamera tarafından bir resim hakkında teknik bilgi (diyafram ve deklanşör "
-"hızı gibi) depolamak için kullanılan bir standart.</p>"
+"Günümüzde çoğu sayısal kamera tarafından bir görselle ilgili teknik "
+"bilgileri (diyafram açıklığı ve deklanşör hızı gibi) depolamak için "
+"kullanılan bir standart."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:123
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><a href='http://en.wikipedia.org/wiki/"
-#| "IPTC_Information_Interchange_Model'>IPTC</a> - an older standard used in "
-#| "digital photography to store photographer information in images.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "an older standard used in digital photography to store photographer "
 "information in images."
 msgstr ""
-"<p><a href='http://en.wikipedia.org/wiki/"
-"IPTC_Information_Interchange_Model'>IPTC</a> - resimlerde fotoğrafçı "
-"bilgisini depolamak için dijital fotoğrafçılıkta kullanılan eski bir "
-"standart.</p>"
+"Görsellerde fotoğrafsal bilgileri saklamak için sayısal fotoğrafçılıkta "
+"kullanılan daha eski bir standart."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:129
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><a href='http://en.wikipedia.org/wiki/"
-#| "Extensible_Metadata_Platform'>XMP</a> - a new standard used in digital "
-#| "photography, designed to replace IPTC.</p>"
+#, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr ""
-"<p><a href='http://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</"
-"a> - IPTC'yi değiştirmek için tasarlanan, dijital fotoğrafçılıkta kullanılan "
-"yeni bir standart.</p>"
+"IPTC'nin yerini almak üzere tasarlanmış, sayısal fotoğrafçılıkta kullanılan "
+"yeni bir standart."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:150
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
@@ -49942,22 +49909,22 @@ msgstr "Davranış"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:159
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Exif"
+#, kde-format
 msgctxt "@title:tab"
 msgid "ExifTool"
-msgstr "Exif"
+msgstr "ExifTool"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:151
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr ""
+"Küçük Görsel Çubuğu, Klasör Görünümü ve Yığın Görünümü Ögelerinin Sıralama "
+"Düzeni"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:155
 #, kde-format
 msgid "Sort images by:"
-msgstr "Resimleri sırala:"
+msgstr "Görselleri şuna göre sırala:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:157
 #, kde-format
@@ -49983,8 +49950,8 @@ msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
 "size on disk."
 msgstr ""
-"Burada; yeni yüklenen görsellerin tarihine, adına veya diskteki boyutuna "
-"göre sıralanıp sıralanmayacağını seçin."
+"Burada, yeni yüklenen görsellerin diskteki tarihlerine, adlarına veya "
+"boyutlarına göre sıralanıp sıralanmayacağını seçin."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163
 #, kde-format
@@ -49997,46 +49964,44 @@ msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
 "order."
 msgstr ""
-"Bu seçenek işaretlendiğinde yeni yüklenmiş görüntüler azalan sıralamada "
-"olacaktır."
+"Bu seçenek etkinleştirilirse yeni yüklenen görseller azalan düzende "
+"sıralanacaktır."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Shared Items"
+#, kde-format
 msgid "Thumbbar Items"
-msgstr "Paylaşılmış Ögeler"
+msgstr "Küçük Görsel Çubuğu Ögeleri"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:176
 #, kde-format
 msgid "&Show image Format"
-msgstr "Resim Biçimini &Göster"
+msgstr "Görsel Biçimini &Göster"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:177
 #: core/utilities/setup/camera/setupcamera.cpp:486
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr ""
-"Resim küçük resmi üzerinde resim biçimini göstermek için bu seçeneği ayarla."
+"Küçük görselin üzerinde görsel biçimini göstermek için bu seçeneği ayarlayın."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
 #, kde-format
 msgid "&Show Geolocation Indicator"
-msgstr "Coğrafik Konum Belirtecini &Göster"
+msgstr "Coğrafi Konum Göstergesini &Göster"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:179
 #: core/utilities/setup/camera/setupcamera.cpp:489
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr ""
-"Resimde coğrafik konum bilgisi var ise belirteci göstermek için bu seçeneği "
-"ayarla."
+"Görselin coğrafi konum bilgisi içerip içermediğini belirtmek için bu "
+"seçeneği ayarlayın."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:180
 #: core/utilities/setup/misc/setupmisc.cpp:93
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
-msgstr "Geçerli ögeyi küçük resim çubuğunun merkezine sar"
+msgstr "Geçerli ögeyi küçük görsel çubuğunun merkezine sardır"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:189
 #: core/utilities/setup/misc/setupmisc.cpp:115
@@ -50048,22 +50013,19 @@ msgstr "Güncellemeler"
 #: core/utilities/setup/misc/setupmisc.cpp:119
 #, kde-format
 msgid "Check for new version:"
-msgstr "Yeni sürümü denetleyin:"
+msgstr "Yeni sürüm denetleme kriteri:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:195
 #: core/utilities/setup/misc/setupmisc.cpp:121
-#, fuzzy, kde-format
-#| msgid "Only For Active Tab"
+#, kde-format
 msgid "Only For Stable Releases"
-msgstr "Yalnızca Etkin Sekme İçin"
+msgstr "Yalnızca kararlı yayımlar"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:196
 #: core/utilities/setup/misc/setupmisc.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Press Release"
+#, kde-format
 msgid "Weekly Pre-Releases"
-msgstr "Basın Bildirisi"
+msgstr "Haftalık ön yayımlar"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:197
 #: core/utilities/setup/misc/setupmisc.cpp:123
@@ -50075,12 +50037,17 @@ msgid ""
 "\"Pre-releases\" are proposed weekly to tests quickly new features\n"
 "and are not recommended to use in production as bugs can remain."
 msgstr ""
+"Hangi tür yeni sürüm güncellemelerinin denetlenmesi gerektiğini "
+"yapılandırmak için bu seçeneği ayarlayın.\n"
+"\"Kararlı\" sürümler, üretimde kullanılması güvenli olan resmi sürümlerdir.\n"
+"Yeni özellikleri hızlı bir şekilde sınamak için \"ön yayımlar\" haftalık\n"
+"çıkarılır ve hatalar sürebileceğinden iş ortamında kullanılması önerilmez."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:202
 #: core/utilities/setup/misc/setupmisc.cpp:128
 #, kde-format
 msgid "Use Version With Debug Symbols"
-msgstr ""
+msgstr "Hata ayıklama sembolleri olan sürümü kullan"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:203
 #: core/utilities/setup/misc/setupmisc.cpp:129
@@ -50091,18 +50058,22 @@ msgid ""
 "This version is more heavy but can help developers to trace dysfunctions in "
 "debugger."
 msgstr ""
+"Bu seçenek etkinleştirilirse güncellemeler için hata ayıklama simgeleri "
+"içeren bir sürüm kullanılacaktır.\n"
+"Bu sürüm daha ağırdır ancak geliştiricilerin hata ayıklayıcıdaki işlev "
+"bozukluklarını izlemesine yardımcı olabilir."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:208
 #: core/utilities/setup/misc/setupmisc.cpp:134
 #, kde-format
 msgid "Last check: %1"
-msgstr ""
+msgstr "Son denetleme: %1"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:209
 #: core/utilities/setup/misc/setupmisc.cpp:135
 #, kde-format
 msgid "Check now..."
-msgstr "Şimdi denetle..."
+msgstr "Şimdi Denetle..."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:237
 #: core/utilities/setup/misc/setupmisc.cpp:190
@@ -50115,13 +50086,12 @@ msgstr "Davranış"
 #: core/utilities/setup/misc/setupmisc.cpp:197
 #, kde-format
 msgid "&Show splash screen at startup"
-msgstr "&Başlangıç ekranını göster"
+msgstr "&Açılış ekranını göster"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:245
-#, fuzzy, kde-format
-#| msgid "Use file dialogs from the system"
+#, kde-format
 msgid "Use native file dialogs from the system"
-msgstr "Sistem dosya iletişim pencerelerini kullan"
+msgstr "Yerel sistem dosya iletişim kutularını kullan"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:248
 #: core/utilities/setup/misc/setupmisc.cpp:202
@@ -50133,36 +50103,40 @@ msgstr "Kenar çubuğu sekmesi başlığı:"
 #: core/utilities/setup/misc/setupmisc.cpp:204
 #, kde-format
 msgid "Only For Active Tab"
-msgstr "Yalnızca Etkin Sekme İçin"
+msgstr "Yalnızca etkin sekme için"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:251
 #: core/utilities/setup/misc/setupmisc.cpp:205
 #, kde-format
 msgid "For All Tabs"
-msgstr "Tüm Sekmeler İçin"
+msgstr "Tüm sekmeler için"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:252
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
-msgstr "Yan çubuk sekme başlıklarının görünürlüğü için bu seçeneği ayarla."
+msgstr ""
+"Kenar çubuğu sekme başlıklarının nasıl göründüğünü yapılandırmak için bu "
+"seçeneği ayarlayın."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:255
 #: core/utilities/setup/misc/setupmisc.cpp:210
 #, kde-format
 msgid "Widget style:"
-msgstr "Parçacık biçimi:"
+msgstr "Araç takımı biçemi:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:257
 #: core/utilities/setup/misc/setupmisc.cpp:212
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
-msgstr "Varsayılan pencere dekorasyonu ve görünüşü için bu seçeneği ayarla."
+msgstr ""
+"Öntanımlı pencere dekorasyonu ve görünümünü seçmek için bu seçeneği "
+"ayarlayın."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:279
 #: core/utilities/setup/misc/setupmisc.cpp:234
 #, kde-format
 msgid "Icon theme (changes after restart):"
-msgstr "Simge teması (yeniden balşatmadan sonra değişir):"
+msgstr "Simge teması (yeniden başlatma gerekir):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:281
 #: core/utilities/setup/misc/setupmisc.cpp:236
@@ -50172,27 +50146,24 @@ msgstr "Öntanımlı simge temasını seçmek için bu seçeneği ayarlayın."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:285
 #: core/utilities/setup/misc/setupmisc.cpp:240
-#, fuzzy, kde-format
-#| msgid "Kuwait"
+#, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
-msgstr "Kuveyt"
+msgstr "Adwaita"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:286
 #: core/utilities/setup/misc/setupmisc.cpp:241
-#, fuzzy, kde-format
-#| msgid "Breeze"
+#, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Esinti"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:287
 #: core/utilities/setup/misc/setupmisc.cpp:242
-#, fuzzy, kde-format
-#| msgid "Breeze Dark"
+#, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
-msgstr "Hafif Karanlık"
+msgstr "Esinti Koyu"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:288
 #: core/utilities/setup/misc/setupmisc.cpp:243
@@ -50203,45 +50174,43 @@ msgstr "Faenza"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:289
 #: core/utilities/setup/misc/setupmisc.cpp:244
-#, fuzzy, kde-format
-#| msgid "Luminance"
+#, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
-msgstr "Işıklılık"
+msgstr "Ambiyans"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:290
 #: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
-msgstr "Humanity"
+msgstr "İnsanlık"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:291
 #: core/utilities/setup/misc/setupmisc.cpp:246
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
-msgstr "Oxygen"
+msgstr "Oksijen"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc.cpp:269
 #, kde-format
 msgid "Use Icon Theme From System"
-msgstr "Simge Temasını Sistemden Kullan"
+msgstr "Sistem Simge Temasını Kullan"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:321
 #: core/utilities/setup/misc/setupmisc.cpp:276
-#, fuzzy, kde-format
-#| msgid "IIM Application 2"
+#, kde-format
 msgid "Application font:"
-msgstr "IIM Uygulaması 2"
+msgstr "Uygulama yazıtipi:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:322
 #: core/utilities/setup/misc/setupmisc.cpp:277
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in tooltips."
+#, kde-format
 msgid "Select here the font used to display text in whole application."
-msgstr "İpuçlarında kullanılan yazıtipini buradan seçin."
+msgstr ""
+"Tüm uygulamada metin görüntülemek için kullanılan yazıtipini burada seçin."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
 #: core/utilities/setup/misc/setupmisc.cpp:292
@@ -50255,15 +50224,14 @@ msgstr "Görünüş"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
-msgstr ""
+msgstr "Yazım Denetimi"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:350
 #: core/utilities/setup/misc/setupmisc.cpp:365
-#, fuzzy, kde-format
-#| msgid "Normalize"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
-msgstr "Normalleştir"
+msgstr "Yerel Ayarlar"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:356
 #: core/utilities/setup/misc/setupmisc.cpp:371
@@ -50282,11 +50250,14 @@ msgid ""
 "unless you know what you are doing.\n"
 "Do you want to continue?"
 msgstr ""
+"Yeni sürümü denetle seçeneği ön yayımları doğrulayacaktır.\n"
+"Yeni özellikleri tez sınamak için haftalık olarak \"ön yayımlar\"\n"
+"çıkarılır. Ne yaptığınızı bilmiyorsanız hatalar sürebileceğinden\n"
+"iş ortamında ön yayımları kullanmanız önerilmez.\n"
+"Sürdürmek istiyor musunuz?"
 
 #: core/showfoto/setup/showfotosetupplugins.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "generic black and white film"
-#| msgid "Generic"
+#, kde-format
 msgctxt "@title:tab generic plugins list"
 msgid "Generic"
 msgstr "Genel"
@@ -50298,33 +50269,31 @@ msgid "Image Editor"
 msgstr "Görsel Düzenleyicisi"
 
 #: core/showfoto/setup/showfotosetupplugins.cpp:80
-#, fuzzy, kde-format
-#| msgid "Image labels"
+#, kde-format
 msgctxt "@title:tab loader plugins list"
 msgid "Image Loaders"
-msgstr "Resim etiketleri"
+msgstr "Görsel Yükleyicileri"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:102
 #, kde-format
 msgid "Show Items' Toolti&ps With Thumbbar and Folder-View"
 msgstr ""
+"Küçük görsel çubuğu ve klasör görünümünde ögelerin araç ipuçlarını göster"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:103
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to display the image information when the mouse hovers "
-#| "over a thumbbar item."
+#, kde-format
 msgid ""
 "Set this option to display the image information when the mouse hovers over "
 "a thumbbar or folder-view item."
 msgstr ""
-"İmleç küçük resim çubuğu ögesine geldiğinde görüntü bilgisini göstermek için "
-"bu seçeneği kullanın."
+"Fare bir küçük görsel çubuğunun veya klasör görünümü ögesinin üzerine "
+"geldiğinde görsel bilgilerini görüntülemek için bu seçeneği ayarlayın."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:107
 #, kde-format
 msgid "Select here the font used to display text in tooltips."
-msgstr "İpuçlarında kullanılan yazıtipini buradan seçin."
+msgstr ""
+"Araç ipuçlarında metin görüntülemek için kullanılan yazıtipini burada seçin."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:111
 #, kde-format
@@ -50395,7 +50364,7 @@ msgid ""
 "Set this option to display the make and model of the camera with which the "
 "image has been taken."
 msgstr ""
-"Fotoğrafın çekildiği kameranın üreticisini ve modelini görüntülemek için bu "
+"Fotoğrafın çekildiği kameranın yapımcısını ve modelini görüntülemek için bu "
 "seçeneği ayarlayın."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:146
@@ -50460,7 +50429,7 @@ msgid ""
 "Set this option to display the camera mode and program used to take the "
 "image."
 msgstr ""
-"Görüntü çekmekte kullanılan kamera kipini ve programını göstermek için bu "
+"Fotoğrafı çekmekte kullanılan kamera kipini ve programını göstermek için bu "
 "seçeneği ayarlayın."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:165
@@ -50475,7 +50444,7 @@ msgstr "Kamera flaş ayarlarını göster"
 msgid ""
 "Set this option to display the camera flash settings used to take the image."
 msgstr ""
-"Görüntü çekmekte kullanılan kamera flaşör ayarlarını göstermek için bu "
+"Fotoğrafı çekmekte kullanılan kamera flaşör ayarlarını göstermek için bu "
 "seçeneği ayarlayın."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:169
@@ -50491,21 +50460,20 @@ msgid ""
 "Set this option to display the camera white balance settings used to take "
 "the image."
 msgstr ""
-"Görüntü çekmekte kullanılan kameranın beyaz dengesini göstermek için bu "
+"Fotoğrafı çekmekte kullanılan kameranın beyaz dengesini göstermek için bu "
 "seçeneği ayarlayın."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:98
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
-msgstr ""
+msgstr "Sık Kullanılanlarım"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:210
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
-msgstr "Dosya Özellikleri"
+msgstr "Sık Kullanılanlar Klasörü Özellikleri"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:212
 #, kde-format
@@ -50514,19 +50482,16 @@ msgid "Name:"
 msgstr "Ad:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
-#, fuzzy, kde-format
-#| msgctxt "@label: quick search properties"
-#| msgid "Search:"
+#, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
-msgstr "Arama:"
+msgstr "Hiyerarşi:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
-msgstr "Dosya Özellikleri"
+msgstr "Sık Kullanılan Öge Özellikleri"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
 #, kde-format
@@ -50535,31 +50500,25 @@ msgid "Name:"
 msgstr "Ad:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
-#, fuzzy, kde-format
-#| msgctxt "creation date of the image"
-#| msgid "Created:"
+#, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "Oluşturulma:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@label: quick search properties"
-#| msgid "Search:"
+#, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
-msgstr "Arama:"
+msgstr "Hiyerarşi:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:241
-#, fuzzy, kde-format
-#| msgid "Items:"
+#, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "Ögeler:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:244
-#, fuzzy, kde-format
-#| msgid "Description:"
+#, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
 msgstr "Açıklama:"
@@ -50571,35 +50530,32 @@ msgid "&Name:"
 msgstr "&Ad:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:151
-#, fuzzy, kde-format
-#| msgid "Enter tag name here..."
+#, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
-msgstr "Etiket adını buraya girin..."
+msgstr "Buraya sık kullanılan girdisi adını girin..."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:152
 #, kde-format
 msgctxt "@info"
 msgid "The favorite item name which must be unique and not empty"
-msgstr ""
+msgstr "Sık kullanılan öge adı benzersiz olmalı ve boş olmamalıdır"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@label: quick search properties"
-#| msgid "Search:"
+#, kde-format
 msgctxt "@label: favorite item hierarchy properties"
 msgid "Hierarchy:"
-msgstr "Arama:"
+msgstr "Hiyerarşi:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:161
 #, kde-format
 msgctxt "@info"
 msgid "The favorite entry hierarchy which must be unique in tree-view"
 msgstr ""
+"Ağaç görünümünde benzersiz olması gereken sık kullanılan girdi hiyerarşisi"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "@label: favorite entry type properties"
 msgid "Type:"
 msgstr "Tür:"
@@ -50624,28 +50580,27 @@ msgid ""
 "date, icon, description, and images list. A \"Favorite Folder\" is a simple "
 "entry in the hierarchy without extra property."
 msgstr ""
+"\"Sık Kullanılan Öge\" tarih, simge, açıklama ve görsel listesi gibi "
+"gelişmiş özellikleri barındıran bir hiyerarşi girdisidir. \"Sık Kullanılan "
+"Klasör\" hiyerarşide fazladan özellik gerektirmeyen basit bir girdidir."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
-#, fuzzy, kde-format
-#| msgid "Description:"
+#, kde-format
 msgctxt "@label: favorite item caption properties"
 msgid "&Description:"
-msgstr "Açıklama:"
+msgstr "&Açıklama:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:184
-#, fuzzy, kde-format
-#| msgid "Enter tag name here..."
+#, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
-msgstr "Etiket adını buraya girin..."
+msgstr "Buraya sık kullanılan öge açıklamasını girin..."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "creation date of the image"
-#| msgid "Created:"
+#, kde-format
 msgctxt "@label: favorite item date properties"
 msgid "&Created:"
-msgstr "Oluşturulma:"
+msgstr "&Oluşturulma:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
 #, kde-format
@@ -50653,51 +50608,47 @@ msgctxt "@info"
 msgid ""
 "Select favorite item date. By default, day of item creation is assigned."
 msgstr ""
+"Sık kullanılan öge tarihini seçin. Öntanımlı olarak, oluşturulma tarihi "
+"atanır."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:202
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from the list."
-msgstr ""
-"Seçili albümü tekrarlanan ögeler açısından taramak için bu düğmeyi kullan."
+msgstr "Listedeki en eski görselin tarihini seçmek için bu düğmeyi kullanın."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:204
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from the list."
 msgstr ""
-"Seçili albümü tekrarlanan ögeler açısından taramak için bu düğmeyi kullan."
+"Listedeki görsellerin ortalama tarihini hesaplamak için bu düğmeyi kullanın."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:206
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from the list."
-msgstr ""
-"Seçili albümü tekrarlanan ögeler açısından taramak için bu düğmeyi kullan."
+msgstr "Listedeki en yeni görselin tarihini seçmek için bu düğmeyi kullanın."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:216
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the icon to use for this favorite item in tree-view."
 msgstr ""
-"Ağaç Görünümde metin görüntülemek için kullanılacak yazıtipini buradan seçin."
+"Ağaç görünümünde bu sık kullanılan öge için kullanılacak simgeyi buradan "
+"seçin."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:221
 #, kde-format
 msgctxt "@info"
 msgid "Assign favorite item icon to default in tree-view."
-msgstr ""
+msgstr "Ağaç görünümünde sık kullanılan öge simgesini öntanımlıya döndürün."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:234
-#, fuzzy, kde-format
-#| msgid "Items:"
+#, kde-format
 msgctxt "@label: favorites item file properties"
 msgid "&Items:"
-msgstr "Ögeler:"
+msgstr "Ö&geler:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:248
 #, kde-format
@@ -50712,22 +50663,19 @@ msgid "Size"
 msgstr "Boyut"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:250
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgctxt "@title:column file type-mime"
 msgid "Type"
 msgstr "Tür"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:251
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@title:column file date"
 msgid "Date"
 msgstr "Tarih"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:252
-#, fuzzy, kde-format
-#| msgid "Path"
+#, kde-format
 msgctxt "@title:column file path"
 msgid "Path"
 msgstr "Yol"
@@ -50740,44 +50688,39 @@ msgid ""
 "file from this list will be automatically shown in editor when favorite is "
 "open. If none is selected, first one from the list will be displayed."
 msgstr ""
-"Bu, bu favori ögenin barındırdığı dosyaların listesidir. Bu listeden seçilen "
-"geçerli dosya, favori açıldığında kendiliğinden düzenleyicide gösterilir. "
-"Hiçbiri seçilmezse listeden ilki görüntülenecektir."
+"Bu, bu sık kullanılan ögenin barındırdığı dosyaların listesidir. Bu listeden "
+"seçilen geçerli dosya, sık kullanılan açıldığında kendiliğinden "
+"düzenleyicide gösterilecektir. Hiçbiri seçilmezse listeden ilki görüntülenir."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
-#, fuzzy, kde-format
-#| msgid "Tag name cannot be empty"
+#, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
-msgstr "Etiket ismi boş bırakılamaz"
+msgstr "Not: Sık kullanılan adı boş bırakılamaz!"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:382
-#, fuzzy, kde-format
-#| msgid "Tag name cannot be empty"
+#, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
-msgstr "Etiket ismi boş bırakılamaz"
+msgstr "Not: Sık kullanılan dosya listesi boş bırakılamaz!"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
-#, fuzzy, kde-format
-#| msgid "A file or folder named %1 already exists in %2"
+#, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
-msgstr "%2 içerisinde %1 isimli klasör ya da dosya zaten bulunuyor"
+msgstr "Not: Sık kullanılan adı hiyerarşide halihazırda var!"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:416
-#, fuzzy, kde-format
-#| msgid "Tag name cannot be empty"
+#, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
-msgstr "Etiket ismi boş bırakılamaz"
+msgstr "Not: Sık kullanılan klasör adı boş bırakılamaz!"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:420
-#, fuzzy, kde-format
-#| msgid "A file or folder named %1 already exists in %2"
+#, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
-msgstr "%2 içerisinde %1 isimli klasör ya da dosya zaten bulunuyor"
+msgstr "Not: Sık kullanılan klasör adı hiyerarşide halihazırda var!"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:436
 #, kde-format
@@ -50794,11 +50737,10 @@ msgid "New Favorite Item"
 msgstr "Yeni Sık Kullanılan Öge"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
-#, fuzzy, kde-format
-#| msgid "Edit Tag Title"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
-msgstr "Etiket Başlığını Düzenle"
+msgstr "Sık Kullanılan Ögeyi Düzenle"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
 #, kde-format
@@ -50807,114 +50749,100 @@ msgid "New Favorite Folder"
 msgstr "Yeni Sık Kullanılan Klasör"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
-#, fuzzy, kde-format
-#| msgid "Edit Tag Title"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
-msgstr "Etiket Başlığını Düzenle"
+msgstr "Sık Kullanılan Klasörü Düzenle"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Ortalama Hesaplanamadı"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
-#, fuzzy, kde-format
-#| msgctxt "@info: album properties"
-#| msgid "Could not calculate date average for this album."
+#, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
-msgstr "Bu albüm için tarih ortalaması hesaplanamadı."
+msgstr "Bu sık kullanılan için tarih ortalaması hesaplanamadı."
 
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove favorite stacks here."
 msgstr ""
+"Sık kullanılan yığınları buraya ekleyebilir veya buradan kaldırabilirsiniz."
 
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:121
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
-msgstr ""
+msgstr "Sık Kullanılanlar"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:101
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Add Favorite"
-msgstr "Dizin Ekle"
+msgstr "Sık Kullanılan Ekle"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:119
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
-msgstr "Dizin Ekle"
+msgstr "Alt Klasör Ekle"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:120
-#, fuzzy, kde-format
-#| msgid "Add new images to the list"
+#, kde-format
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
-msgstr "Listeye yeni resimler ekle"
+msgstr "Listeye yeni alt klasör ekle"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Deselect Item"
+#, kde-format
 msgctxt "@action"
 msgid "Delete Item"
-msgstr "Ögenin Seçimini Kaldır"
+msgstr "Ögeyi Sil"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:138
-#, fuzzy, kde-format
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgctxt "@info"
 msgid "Remove selected item from the list"
-msgstr "Seçilen resimleri listeden kaldır"
+msgstr "Seçili ögeyi listeden kaldır"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:155
-#, fuzzy, kde-format
-#| msgid "Edit Titles"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Item"
-msgstr "Başlıkları Düzenle"
+msgstr "Ögeyi Düzenle"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:156
-#, fuzzy, kde-format
-#| msgid "Remove the current selected value from the list"
+#, kde-format
 msgctxt "@info"
 msgid "Edit current item from the list"
-msgstr "Listeden seçili değeri kaldır"
+msgstr "Listedeki seçili ögeyi düzenle"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
-msgstr "Albümlerde ara:"
+msgstr "Sık kullanılanlarda ara..."
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:359
-#, fuzzy, kde-format
-#| msgid "Confirm Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
-msgstr "Silmeyi Onayla"
+msgstr "Öge Silmeyi Onayla"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:360
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete ALL items permanently?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Are you sure you want to remove the item \"%1\"\n"
 "and all nested items if any?"
-msgstr "TÜM kalemleri kalıcı olarak silmek istediğinizden emin misiniz?"
+msgstr ""
+"\"%1\" ögesini ve varsa tüm iç içe geçmiş öğelerini\n"
+"kaldırmak istediğinizden emin misiniz?"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:672
 #, kde-format
@@ -50935,91 +50863,76 @@ msgid "Size"
 msgstr "Boyut"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:91
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Tür"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:92
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Tarih"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:344
-#, fuzzy, kde-format
-#| msgid "Icon-View Options"
+#, kde-format
 msgctxt "@title"
 msgid "Stack-View"
-msgstr "Simge Görünümü Seçenekleri"
+msgstr "Yığın Görünümü"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:346
-#, fuzzy, kde-format
-#| msgid "Icon Size:"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
-msgstr "Simge Boyutu:"
+msgstr "Simge Boyutu"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:351
-#, fuzzy, kde-format
-#| msgid "Small (1 pixel)"
-#| msgid_plural "Small (%1 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
-msgstr "Küçük (1 piksel)"
+msgstr "Küçük (%1 × %2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:355
-#, fuzzy, kde-format
-#| msgid "Medium (1 pixel)"
-#| msgid_plural "Medium (%1 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
-msgstr "Orta (1 piksel)"
+msgstr "Orta (%1 × %2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:359
-#, fuzzy, kde-format
-#| msgid "Large (1 pixel)"
-#| msgid_plural "Large (%1 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
-msgstr "Geniş (1 piksel)"
+msgstr "Büyük (%1 × %2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:363
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
-msgstr "Devasa (1 piksel)"
+msgstr "Devasa (%1 × %2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:402
-#, fuzzy, kde-format
-#| msgid "Add a Face Tag"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
-msgstr "Yüz Etiketi Ekle"
+msgstr "Sık Kullanılanlara Ekle"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:416
-#, fuzzy, kde-format
-#| msgid "Clear All"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
-msgstr "Tümünü Temizle"
+msgstr "Tüm Ögeleri Temizle"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:424
-#, fuzzy, kde-format
-#| msgid "Remove items"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"
-msgstr "Ögeleri kaldır"
+msgstr "Ögeleri Kaldır"
 
 #: core/showfoto/stackview/showfotostackviewsidebar.cpp:219
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
-msgstr ""
+msgstr "Yığın"
 
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:49
 #, kde-format
@@ -51032,7 +50945,7 @@ msgstr "İ&ptal"
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
-msgstr "oluşturuldu: %1"
+msgstr "oluşturulma: %1"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:228
 #, kde-format
@@ -51050,15 +50963,13 @@ msgid "By File Size"
 msgstr "Dosya Boyutuna Göre"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:238
-#, fuzzy, kde-format
-#| msgid "Ascending"
+#, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "Artan"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:239
-#, fuzzy, kde-format
-#| msgid "Descending"
+#, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "Azalan"
@@ -51102,8 +51013,7 @@ msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Görseller yeniden adlandırılıyor. Lütfen bekleyin...</b>"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#, fuzzy, kde-format
-#| msgid "&Abort"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "&Durdur"
@@ -51116,11 +51026,10 @@ msgstr "İşleniyor..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Renaming images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
-msgstr "Resimler yeniden adlandırılıyor"
+msgstr "Görseller Yeniden Adlandırılıyor"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:161
 #, kde-format
@@ -51132,7 +51041,13 @@ msgid_plural ""
 "Do you want to rename these images again or rename these images by "
 "overwriting?"
 msgstr[0] ""
+"%1 görsel yeniden adlandırılırken bir hata oluştu.\n"
+"Bu görseli yeniden adlandırmak mı yoksa üzerine yazarak yeniden adlandırmak "
+"mı istiyorsunuz?"
 msgstr[1] ""
+"%1 görsel yeniden adlandırılırken bir hata oluştu.\n"
+"Bu görselleri yeniden adlandırmak mı yoksa üzerilerine yazarak yeniden "
+"adlandırmak mı istiyorsunuz?"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
 #, kde-format
@@ -51141,17 +51056,15 @@ msgid "Rename Again"
 msgstr "Bir Kez Daha Yeniden Adlandır"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
-#, fuzzy, kde-format
-#| msgid "Overwrite"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Üzerine Yaz"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
-#, fuzzy, kde-format
-#| msgid "<b>Renaming images. Please wait...</b>"
+#, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
-msgstr "<b>Resimler yeniden adlandırılıyor. Lütfen bekleyin...</b>"
+msgstr "<b>Görseller yeniden adlandırılıyor. Hatalar: %1</b>"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:342
 #, kde-format
@@ -51194,13 +51107,14 @@ msgstr "Yeniden Adlandırma Seçenekleri"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:390
 #, kde-format
 msgid "<p>Add renaming options to the parse string.</p>"
-msgstr "<p>Çözümleme dizgesine yeniden adlandırma seçenekleri ekle.</p>"
+msgstr "<p>Ayrıştırma dizisine yeniden adlandırma seçeneklerini ekleyin.</p>"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
 msgid ""
 "To apply a modifier, append it to the option, for instance: [file]{upper}"
 msgstr ""
+"Bir niteleyici uygulamak için onu seçeneğe iliştirin; örneğin: [file]{upper}"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
@@ -51231,12 +51145,11 @@ msgid ""
 "The file list can be sorted, just right-click on it to see the sort criteria "
 "(album UI only)."
 msgstr ""
-"Bu dosya listesi sıralanabilir, sıralama kriterlerini görmek için üzerine "
-"sağ tıklayın (yalnızca albüm UI'ı)."
+"Dosya listesi sıralanabilir; sıralama kriterlerini görmek için üzerine sağ "
+"tıklamanız yeterlidir(yalnızca albüm kullanıcı arayüzünde)."
 
 #: core/utilities/advancedrename/common/tooltipdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Information"
 msgstr "Bilgi"
@@ -51450,14 +51363,16 @@ msgid "Add a suffix number, ||n|| specifies the number of digits to use"
 msgstr "Sonek numarası ekle, ||n|| kullanılacak basamak sayısını belirtir"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid "Add a suffix number, ||n|| specifies the number of digits to use"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||a|| optional to include "
 "all options for uniqueness, ||0|| optional to always pad with ||n|| zero "
 "digits"
-msgstr "Ön ek numarası ekle, ||n|| kullanılacak basamak sayısını belirtir"
+msgstr ""
+"Bir sonek numarası ekle, ||n|| kullanılacak basamak sayısını, ||c|| "
+"sayılardan önceki ayırıcı karakteri, ||a|| benzersizlik için tüm seçenekleri "
+"içermeyi, ||0|| her zaman ||n|| sıfır basamak ile doldurmayı belirtir."
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
@@ -51473,7 +51388,7 @@ msgstr "Kamera adı"
 #: core/utilities/advancedrename/parser/options/metadataoption.cpp:49
 #, kde-format
 msgid "Keyword separator:"
-msgstr "Anahtar kelime ayırıcısı:"
+msgstr "Anahtar sözcük ayırıcısı:"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:72
 #, kde-format
@@ -51497,7 +51412,7 @@ msgstr "Veritabanı bilgisi ekle"
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:88
 #, kde-format
 msgid "Key"
-msgstr "Tuş"
+msgstr "Anahtar"
 
 #: core/utilities/advancedrename/parser/options/database/dbkeyselector.cpp:93
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:62
@@ -51513,32 +51428,32 @@ msgstr "Genel Dosya Bilgisi"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:54
 #, kde-format
 msgid "Default comment of the image"
-msgstr "Resmin öntanımlı yorumu"
+msgstr "Görselin öntanımlı açıklaması"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:55
 #, kde-format
 msgid "Default author of the image"
-msgstr "Resmin öntanımlı yazarı"
+msgstr "Görselin öntanımlı fotoğrafçısı/oluşturucusu"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:56
 #, kde-format
 msgid "Image dimension"
-msgstr "Resim boyutu"
+msgstr "Görsel boyutu"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:57
 #, kde-format
 msgid "Image file size"
-msgstr "Resim dosya büyüklüğü"
+msgstr "Görsel dosyası büyüklüğü"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:58
 #, kde-format
 msgid "Format of the media file"
-msgstr "Ortam dosyasının türü"
+msgstr "Ortam dosyasının biçimi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:59
 #, kde-format
 msgid "Type of the media file"
-msgstr "Ortam dosyasının tipi"
+msgstr "Ortam dosyasının türü"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:60
 #, kde-format
@@ -51553,12 +51468,12 @@ msgstr "Ortam dosyasının yüksekliği"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:62
 #, kde-format
 msgid "Width of the media file"
-msgstr "Medya dosyasının genişliği"
+msgstr "Ortam dosyasının genişliği"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:63
 #, kde-format
 msgid "Image orientation"
-msgstr "Resim yönü"
+msgstr "Görsel yönelimi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:64
 #, kde-format
@@ -51568,50 +51483,47 @@ msgstr "Renk derinliği (kanal başına bit)"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:65
 #, kde-format
 msgid "Color model of the image"
-msgstr "Resmin renk modeli"
+msgstr "Görselin renk modeli"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:66
 #, kde-format
 msgid "A comma separated list of all authors"
-msgstr "Tüm yazanların virgülle ayrılmış listesi"
+msgstr "Tüm fotoğrafçıların/oluşturucuların virgülle ayrılmış listesi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:67
-#, fuzzy, kde-format
-#| msgid "Color model of the image"
+#, kde-format
 msgid "Title of the image"
-msgstr "Resmin renk modeli"
+msgstr "Görselin başlığı"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:68
-#, fuzzy, kde-format
-#| msgid "A comma separated list of all authors"
+#, kde-format
 msgid "A comma separated list of all tags"
-msgstr "Tüm yazanların virgülle ayrılmış listesi"
+msgstr "Tüm etiketlerin virgülle ayrılmış listesi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:69
-#, fuzzy, kde-format
-#| msgid "A comma separated list of all authors"
+#, kde-format
 msgid "A comma separated list of all tags with path"
-msgstr "Tüm yazanların virgülle ayrılmış listesi"
+msgstr "Tüm etiketlerin yol ile virgülle ayrılmış listesi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:58
 #, kde-format
 msgid "Metadata Information"
-msgstr "Metaveri Bilgisi"
+msgstr "Üst Veri Bilgisi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:60
 #, kde-format
 msgid "Make of the camera"
-msgstr "Kameranın üreticisi"
+msgstr "Kameranın yapımcısı"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:61
 #, kde-format
 msgid "Model of the camera"
-msgstr "Kamera markası"
+msgstr "Kameranın modeli"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:62
 #, kde-format
 msgid "Lens of the camera"
-msgstr "Kamera lensi"
+msgstr "Kameranın merceği"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:63
 #: core/utilities/searchwindow/searchfields_createfield.cpp:414
@@ -51629,7 +51541,7 @@ msgstr "Odak uzaklığı"
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #, kde-format
 msgid "Focal length (35mm equivalent)"
-msgstr "Odak uzunluğu (35mm equivalent)"
+msgstr "Odak uzunluğu (35 mm eşdeğeri)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
 #: core/utilities/searchwindow/searchfields_createfield.cpp:472
@@ -51656,7 +51568,7 @@ msgstr "Duyarlılık"
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:70
 #, kde-format
 msgid "Flash mode"
-msgstr "Flash kipi"
+msgstr "Flaş kipi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
 #: core/utilities/searchwindow/searchfields_createfield.cpp:563
@@ -51667,7 +51579,7 @@ msgstr "Beyaz dengesi"
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:72
 #, kde-format
 msgid "White balance (color temperature)"
-msgstr "Beyaz dengesi (renk derecesi)"
+msgstr "Beyaz dengesi (renk sıcaklığı)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
 #, kde-format
@@ -51677,17 +51589,17 @@ msgstr "Ölçme kipi"
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:74
 #, kde-format
 msgid "Subject distance"
-msgstr "Özne mesafesi"
+msgstr "Özne uzaklığı"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
 #, kde-format
 msgid "Subject distance (category)"
-msgstr "Özne mesafesi (kategori)"
+msgstr "Özne uzaklığı (kategori)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:77
 #, kde-format
 msgid "Display Aspect Ratio"
-msgstr "Görünüm En Boy Oranı"
+msgstr "Görüntü En-Boy Oranı"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
 #: core/utilities/searchwindow/searchfields_createfield.cpp:918
@@ -51701,13 +51613,12 @@ msgstr "Ses Bit Hızı"
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
-msgstr "Ses Kanal Tipi"
+msgstr "Ses Kanal Türü"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#, fuzzy, kde-format
-#| msgid "Audio Compressor (Audio Codec)"
+#, kde-format
 msgid "Audio Codec (Audio Codec)"
-msgstr "Ses Sıkıştırıcı (Ses Kodlayıcı)"
+msgstr "Ses Kodlayıcısı"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
 #, kde-format
@@ -51717,7 +51628,7 @@ msgstr "Dosyanın Süresi"
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:82
 #, kde-format
 msgid "Frame Rate of Video"
-msgstr "Videonun Kare Oranı"
+msgstr "Videonun Kare Hızı"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:83
 #: core/utilities/setup/setuptooltip.cpp:328
@@ -51733,22 +51644,22 @@ msgstr "Konum Bilgisi (GPS)"
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:50
 #, kde-format
 msgid "Latitude in the format as described by the XMP specification"
-msgstr "XMP spesifikasyonu tarafından açıklanan biçimde enlem"
+msgstr "XMP belirtiminde açıklandığı biçimde eylem"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:51
 #, kde-format
 msgid "Longitude in the format as described by the XMP specification"
-msgstr "XMP spesifikasyonu tarafından açıklanan biçimde boylam"
+msgstr "XMP belirtiminde açıklandığı biçimde boylam"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:52
 #, kde-format
 msgid "Latitude as double value"
-msgstr "Çift değerli enlem"
+msgstr "Noktalı değer biçiminde enlem"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:53
 #, kde-format
 msgid "Longitude as double value"
-msgstr "Çift değerli boylam"
+msgstr "Noktalı değer biçiminde boylam"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:54
 #, kde-format
@@ -51763,7 +51674,7 @@ msgstr "Okunabilir biçimde boylam"
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:56
 #, kde-format
 msgid "Altitude in meters"
-msgstr "Metre olarak rakım"
+msgstr "Metre biçiminde rakım"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:57
 #, kde-format
@@ -51779,12 +51690,12 @@ msgstr "Yönelim"
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:59
 #, kde-format
 msgid "Roll"
-msgstr "Yuvarla"
+msgstr "Yuvarlama"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:60
 #, kde-format
 msgid "Tilt"
-msgstr "Eğ"
+msgstr "Eğme"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
@@ -51796,7 +51707,7 @@ msgstr "Doğruluk"
 #, kde-format
 msgctxt "@info: date format settings"
 msgid "format settings"
-msgstr "biçim ayarları"
+msgstr "Biçim ayarları"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:49
 #, kde-format
@@ -51817,11 +51728,10 @@ msgid "Text"
 msgstr "Metin"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:52
-#, fuzzy, kde-format
-#| msgid "Unix Time Stamp"
+#, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Unix Time Stamp"
-msgstr "Unix Zaman Damgası"
+msgstr "UNIX Zaman Damgası"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:53
 #, kde-format
@@ -51833,7 +51743,7 @@ msgstr "Özel"
 #, kde-format
 msgctxt "@item: Get date information from the image"
 msgid "Image"
-msgstr "Resim"
+msgstr "Görsel"
 
 #. i18nc("Get date information from the current date", "Current Date"),
 #. QVariant(CurrentDateTime));
@@ -51842,36 +51752,34 @@ msgstr "Resim"
 #, kde-format
 msgctxt "@item: Set a fixed date"
 msgid "Fixed Date"
-msgstr "Düzenlnmiş Tarih"
+msgstr "Belirli Tarih"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Enter custom format"
-msgstr "Özel biçim girin"
+msgstr "Özel biçim gir"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "example: "
-msgstr "örnek: "
+msgstr "Örnek: "
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:259
 #, kde-format
 msgctxt "@info"
 msgid "Date && Time..."
-msgstr "Tarih && Zaman..."
+msgstr "Tarih ve Zaman..."
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:260
-#, fuzzy, kde-format
-#| msgid "Add date and time information"
+#, kde-format
 msgctxt "@info"
 msgid "Add date and time information"
-msgstr "Tarih ve zaman bilgisi ekleyin"
+msgstr "Tarih ve zaman bilgisi ekle"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:263
-#, fuzzy, kde-format
-#| msgid "Date and time (standard format)"
+#, kde-format
 msgctxt "@item"
 msgid "Date and time (standard format)"
 msgstr "Tarih ve zaman (standart biçim)"
@@ -51906,12 +51814,12 @@ msgstr "Dizin"
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:37
 #, kde-format
 msgid "Add the directory name"
-msgstr "Dizin adını ekleyin"
+msgstr "Dizin adını ekle"
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:40
 #, kde-format
 msgid "Directory name"
-msgstr "Dizin Adı"
+msgstr "Dizin adı"
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:41
 #, kde-format
@@ -51929,7 +51837,7 @@ msgstr "Dosya"
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:39
 #, kde-format
 msgid "Add file properties"
-msgstr "Dosya özelliklerini ekleyin"
+msgstr "Dosya özellikleri ekle"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:45
 #, kde-format
@@ -51977,12 +51885,12 @@ msgstr "Grup"
 #: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, kde-format
 msgid "Metadata..."
-msgstr "Metaveri..."
+msgstr "Üst Veri..."
 
 #: core/utilities/advancedrename/parser/options/metadataoption.cpp:98
 #, kde-format
 msgid "Add metadata information"
-msgstr "Metaveri bilgisi ekle"
+msgstr "Üst veri bilgisi ekle"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:55
 #, kde-format
@@ -52001,35 +51909,30 @@ msgid "Sequence number"
 msgstr "Sıra numarası"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||e|| = extension aware, ||f|| = folder "
-#| "aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
-"Sayıyı sırala (||options||: ||e|| = uzantıya duyarlı, ||f|| = klasöre "
-"duyarlı)"
+"Sıra numarası (||options||: ||c|| = dosya sayacına duyarlı, ||e|| = uzantıya "
+"duyarlı, ||f|| = klasöre duyarlı, ||r|| = rastgeleye duyarlı, ||ce|| = "
+"sayaca ve uzantıya duyarlı, ||re|| = rastgeleye ve uzantıya duyarlı)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start)"
+#, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
-msgstr "Sayıyı sırala (özelleşmiş başlangıç)"
+msgstr "Sıra numarası (özel başlangıç) ||options||: ||e||, ||f||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start)"
+#, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
-msgstr "Sayıyı sırala (özelleşmiş başlangıç)"
+msgstr "Sıra numarası (özel adım) ||options||: ||c||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start + step)"
+#, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
-msgstr "Sıra numarası (özel başlangıç + adım)"
+msgstr "Sıra numarası (özel başlangıç + adım) ||options||: ||e||, ||f||"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:19
@@ -52042,7 +51945,7 @@ msgstr "Basamaklar:"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:41
 #, kde-format
 msgid "Custom Range"
-msgstr "Özel Aralık"
+msgstr "Özel Erim"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:49
@@ -52062,41 +51965,37 @@ msgstr "Adım:"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:98
 #, kde-format
 msgid "Extension aware numbering"
-msgstr "Uzantıya dikkat eden numaralandırma"
+msgstr "Uzantıya duyarlı numaralandırma"
 
 #. i18n: ectx: property (text), widget (QRadioButton, folderAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:105
 #, kde-format
 msgid "Folder aware numbering"
-msgstr "Klasöre dikkat eden numaralandırma"
+msgstr "Klasöre duyarlı numaralandırma"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:112
-#, fuzzy, kde-format
-#| msgid "Folder aware numbering"
+#, kde-format
 msgid "File counter aware numbering"
-msgstr "Klasöre dikkat eden numaralandırma"
+msgstr "Dosya sayacına duyarlı numaralandırma"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:119
-#, fuzzy, kde-format
-#| msgid "Folder aware numbering"
+#, kde-format
 msgid "Random text aware numbering"
-msgstr "Klasöre dikkat eden numaralandırma"
+msgstr "Rastgele metne duyarlı numaralandırma"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "Folder aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Klasöre dikkat eden numaralandırma"
+msgstr "Dosya sayacına ve uzantılarına duyarlı numaralandırma"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Folder aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "Klasöre dikkat eden numaralandırma"
+msgstr "Rastgele metne ve uzantılara duyarlı numaralandırma"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:68
 #, kde-format
@@ -52125,7 +52024,7 @@ msgstr "Tamam"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
-msgstr ""
+msgstr "Seçili kişinin burada gösterildiğini onaylayın"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
 #, kde-format
@@ -52142,31 +52041,28 @@ msgstr "Kaldır"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:219
-#, fuzzy, kde-format
-#| msgid "Remove this Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
-msgstr "Bu Etiketi Kaldır"
+msgstr "Bu yüz bölgesini kaldır"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
-msgstr ""
+msgstr "Bu yüzü yok saymayı durdur"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:530
-#, fuzzy, kde-format
-#| msgid "Who is this?"
+#, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Bu kim?"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:576
-#, fuzzy, kde-format
-#| msgid "Monitor profile:"
+#, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr "Monitör profili:"
+msgstr "Yok Say"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:577
 #, kde-format
@@ -52175,41 +52071,35 @@ msgid "Ignore this face"
 msgstr "Bu yüzü yok say"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:609
-#, fuzzy, kde-format
-#| msgid "Mark As Face Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
-msgstr "Yüz Etiketi Olarak İşaretle"
+msgstr "Bu yüzü yok sayıldı olarak imle"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:614
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
-msgstr ""
+msgstr "Bu öneriyi reddet"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<qt>digiKam can search for faces in your photos.<br> When you have "
-#| "identified your friends on a number of photos,<br> it can also recognize "
-#| "the people shown on your photos.</qt>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "digiKam can search for faces in your photos.\n"
 "When you have identified your friends on a number of photos,\n"
 "it can also recognize the people shown on your photos."
 msgstr ""
-"<qt>digiKam, resimlerinizde yüzleri arayabilir.<br> Arkadaşlarınızı birkaç "
-"resimde tanımladığınızda, <br> resimlerinizdeki görünen kişileri "
-"tanımlayacaktır.</qt>"
+"digiKam fotoğraflarınızdaki yüzleri arayabilir.\n"
+"Arkadaşlarınızı bir dizi fotoğrafta tanımlarsanız,\n"
+"fotoğraflarınızda gösterilen kişileri de tanıyabilir."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
 #: core/utilities/maintenance/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
-msgstr "Önceden taranmış resimleri atla"
+msgstr "Önceden taranmış görselleri atla"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
 #: core/utilities/maintenance/maintenancedlg.cpp:152
@@ -52223,16 +52113,14 @@ msgstr "Yeniden tara ve sonuçları birleştir"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
-msgstr "Onaylanmamış sonuçarı temizle ve yeniden tara"
+msgstr "Onaylanmamış sonuçları temizle ve yeniden tara"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
 #: core/utilities/maintenance/maintenancedlg.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Clear unconfirmed results and rescan"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
-msgstr "Onaylanmamış sonuçarı temizle ve yeniden tara"
+msgstr "Önceki tüm sonuçları temizle ve yeniden tara"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
@@ -52253,67 +52141,54 @@ msgid "Find all faces in your photos"
 msgstr "Fotoğraflarınızdaki tüm yüzleri bulun"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect and recognize faces (experimental)"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
-msgstr "Yüzleri algıla ve tanı (deneysel)"
+msgstr "Yüzleri algıla ve tanı"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Find all faces in your photos and try to recognize which person is "
-#| "depicted"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Find all faces in your photos and\n"
 "try to recognize which person is depicted"
 msgstr ""
-"Fotoğraflarınızdaki tüm yüzleri bulun ve hangi kişinin tasvir edildiğini "
-"tanımaya çalışın"
+"Fotoğraflarınızdaki tüm yüzleri bulun ve\n"
+"hangi kişinin tasvir edildiğini anlamaya çalışın"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
-#, fuzzy, kde-format
-#| msgid "Synchronize"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
-msgstr "Eşitle"
+msgstr "Yüzleri tanı"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Try again to recognize the people depicted on marked but yet unconfirmed "
-#| "faces."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Try again to recognize the people depicted\n"
 "on marked but yet unconfirmed faces."
-msgstr "İşaretlenmiş fakat onaylanmamış yüzleri tekrar tanımlayın."
+msgstr ""
+"İmlenmiş; ancak henüz doğrulanmamış yüzlerde\n"
+"tasvir edilen kişileri yeniden tanımaya çalışın."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
-#, fuzzy, kde-format
-#| msgid "Workflow"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "İş Akışı"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
-msgstr "Burada ara:"
+msgstr "Arama Konumu"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
-msgstr "Doğruluk"
+msgstr "Yüz doğruluğu"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
 #, kde-format
@@ -52322,11 +52197,10 @@ msgid "Sensitivity"
 msgstr "Duyarlılık"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:212
-#, fuzzy, kde-format
-#| msgid "Specific Location"
+#, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
-msgstr "Belirli Konum"
+msgstr "Belirlilik"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
 #, kde-format
@@ -52337,18 +52211,23 @@ msgid ""
 "be recognized, but less faces will be recognized\n"
 "(only faces that are very similar to pre-tagged faces are recognized)."
 msgstr ""
+"Duyarlılığa karşı özgüllüğü ayarlayın: Değer ne kadar yüksek olursa yüzler\n"
+"o kadar doğru olarak tanınır; ancak toplam tanınan yüz sayısı daha az olur\n"
+"(yalnızca önceden etiketlenmiş yüzlere çok benzeyen yüzler tanınır)."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
-msgstr ""
+msgstr "YOLO v3 algılama modelini kullan"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr ""
+"YOLO v3 veri modeliyle yüz tanıma. Sonuçlar daha iyidir; ancak işlem daha "
+"yavaştır."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:235
@@ -52358,23 +52237,16 @@ msgid "Work on all processor cores"
 msgstr "Tüm işlemci çekirdeklerinde çalış"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Face detection is a time-consuming task. You can choose if you wish to "
-#| "employ all processor cores on your system, or work in the background only "
-#| "on one core. Warning: this features still experimental and it's disabled "
-#| "by default."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Face detection and recognition are time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Yüz algılama, zaman alan bir görevdir. Sisteminizdeki tüm işlemci "
-"çekirdeğini çalıştırmak mı yoksa arka planda yalnızca bir çekirdekte "
-"çalışmak istediğinizi seçebilirsiniz. Uyarı: Bu özellikler hala deneysel ve "
-"öntanımlı olarak devre dışı bırakılmıştır."
+"Yüz algılama ve tanıma zaman alan görevlerdir. Sisteminizde tüm\n"
+"işlemci çekirdeklerini kullanmayı veya arka planda yalnızca tek\n"
+"bir çekirdek üzerinde çalışmayı seçebilirsiniz."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
@@ -52385,14 +52257,14 @@ msgstr "Ayarlar"
 #: core/utilities/firstrun/collectionpage.cpp:60
 #, kde-format
 msgid "<b>Configure where you keep your images</b>"
-msgstr "<b>Resimlerinizi tuttuğunuz yeri yapılandırın</b>"
+msgstr "<b>Görsellerinizi tuttuğunuz yeri yapılandırın</b>"
 
 #: core/utilities/firstrun/collectionpage.cpp:73
 #, kde-format
 msgctxt ""
 "This is a path name so you should include the slash in the translation"
 msgid "/Pictures"
-msgstr "/Pictures"
+msgstr "/Resimler"
 
 #: core/utilities/firstrun/collectionpage.cpp:79
 #, kde-format
@@ -52401,10 +52273,9 @@ msgid ""
 "any local folder, even one that already contains images.<br/> More folders "
 "can be added later under the <i>Settings</i> menu. </p> "
 msgstr ""
-"<p>Lütfen resimlerinizi tuttuğunuz bir konum girin.</p><p>Herhangi bir yerel "
-"klasörüı seçebilirsiniz, hatta resimleri halihazırda kapsayan bir klasörü de."
-"<br/> Daha sonra <i>Ayarlar</i> menüsü altında daha fazla klasör eklenebilir."
-"</p> "
+"<p>Lütfen görsellerinizi tuttuğunuz bir konum girin.</p> <p>İçinde "
+"halihazırda görseller olsa bile herhangi yerel bir klasörü seçebilirsiniz."
+"<br/><i>Ayarlar</i> menüsünden ek klasörler daha sonra eklenebilir.</p> "
 
 #: core/utilities/firstrun/collectionpage.cpp:87
 #, kde-format
@@ -52412,9 +52283,9 @@ msgid ""
 "<p><i>Note:</i> removable media (such as USB drives or DVDs) and remote file "
 "systems (such as NFS, or Samba mounted with cifs/smbfs) are supported.</p>"
 msgstr ""
-"<p><i>Not:</i> kaldırılabilir ortam (USB sürücüleri ya da DVDler gibi) ve "
-"uzak dosya sistemleri (NFS ya da cifs/smbfs eklenmiş Samba gibi) "
-"desteklenmektedir.</p>"
+"<p><i>Not:</i> Kaldırılabilir ortamlar (USB sürücüleri veya DVD'ler gibi) ve "
+"uzak dosya sistemleri (NFS veya cifs/smbfs ile bağlanan Samba gibi) "
+"desteklenir.</p>"
 
 #: core/utilities/firstrun/collectionpage.cpp:150
 #, kde-format
@@ -52422,15 +52293,14 @@ msgid ""
 "You must select a folder for digiKam to use as the root album. All of your "
 "images will go there."
 msgstr ""
-"digiKam için kök albüm olarak kullanılacak bir klasör seçmelisiniz. Tüm "
-"resimleriniz bu klasöre gidecektir."
+"digiKam'in kök albüm olarak kullanacağı bir klasör seçmelisiniz. Tüm "
+"görselleriniz oraya gider."
 
 #: core/utilities/firstrun/collectionpage.cpp:178
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
-msgstr "Kök Albüm Dizini Oluşturulsun mu?"
+msgstr "Kök Albüm Klasörü Oluştur"
 
 #: core/utilities/firstrun/collectionpage.cpp:179
 #, kde-format
@@ -52438,15 +52308,14 @@ msgid ""
 "<p>The folder to use as the root album path does not exist:</p><p><b>%1</b></"
 "p>Would you like digiKam to create it for you?"
 msgstr ""
-"<p>Kök albüm yolu olarak kullanılacak klasör mevcut değil.</p><p><b>%1</b></"
-"p>dşgşKam'in bunu sizin için oluşturmasını ister misiniz?"
+"<p>Kök albüm yolu olarak kullanılacak klasör yok:</p><p><b>%1</b></"
+"p>digiKam'in bunu sizin için oluşturmasını ister misiniz?"
 
 #: core/utilities/firstrun/collectionpage.cpp:191
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
-msgstr "Kök Albüm Dizini Oluşturma İşlemi Başarısız Oldu"
+msgstr "Kök Albüm Klasörü Oluşturulamadı"
 
 #: core/utilities/firstrun/collectionpage.cpp:192
 #, kde-format
@@ -52454,7 +52323,7 @@ msgid ""
 "<p>digiKam could not create the folder to use as the root album.\n"
 "Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>digiKam kök albüm olarak kullanılacak klasörü oluşturamadı.\n"
+"<p>digiKam, kök albüm olarak kullanılacak klasörü oluşturamadı.\n"
 "Lütfen farklı bir konum seçin.</p><p><b>%1</b></p>"
 
 #: core/utilities/firstrun/collectionpage.cpp:217
@@ -52465,17 +52334,17 @@ msgid ""
 "Warning: Without write access, items cannot be edited."
 msgstr ""
 "Kök albüm olarak seçilen klasör için yazma erişiminiz yok gibi görünüyor.\n"
-"Uyarı: Yazma erişimi olmaksızın, ögeler düzenlenemez."
+"Uyarı: Yazma erişimi olmadan ögeler düzenlenemez."
 
 #: core/utilities/firstrun/databasepage.cpp:52
 #, kde-format
 msgid "<b>Configure where you will store databases</b>"
-msgstr "<b>Veritabanlarınızı depolayacağınız yeri yapılandırın</b>"
+msgstr "<b>Veritabanlarını nerede depolayacağınızı yapılandırın</b>"
 
 #: core/utilities/firstrun/metadatapage.cpp:55
 #, kde-format
 msgid "<b>Configure Metadata Storage to Files</b>"
-msgstr "<b>Dosyalara Metaveri Depolamasını Yapılandır</b>"
+msgstr "<b>Dosyalardaki üst veri depolamasını yapılandırın</b>"
 
 #: core/utilities/firstrun/metadatapage.cpp:64
 #, kde-format
@@ -52485,18 +52354,18 @@ msgid ""
 "management programs:</p></qt>"
 msgstr ""
 "<qt><p>Diğer fotoğraf yönetimi programlarıyla birlikte çalışabilirliği "
-"artırmak için, digiKam ögelerine atanan bilgileri dosyalarının "
-"metaverilerinde depolamak isterseniz buradan ayarlayın:</p></qt>"
+"geliştirmek için digiKam'daki ögelere atanan bilgileri dosyaların üst "
+"verisinde saklamak istiyorsanız burada ayarlayın:</p></qt>"
 
 #: core/utilities/firstrun/metadatapage.cpp:74
 #, kde-format
 msgid "Do nothing"
-msgstr "Hiçbir şey yapma"
+msgstr "Hiçbir Şey Yapma"
 
 #: core/utilities/firstrun/metadatapage.cpp:79
 #, kde-format
 msgid "Add information to files"
-msgstr "Dosyalara bilgi ekle"
+msgstr "Dosyalara Bilgi Ekle"
 
 #: core/utilities/firstrun/metadatapage.cpp:89
 #, kde-format
@@ -52504,8 +52373,8 @@ msgid ""
 "<qt><p><i>Note:</i> recording information to the files' metadata can slow "
 "down photo management operations.</p></qt>"
 msgstr ""
-"<qt><p><i>Not:</i> dosyaların meta verlerine bilgi kaydı, fotoğraf yönetim "
-"işlemlerini yavaşlatabilir.</p></qt>"
+"<qt><p><i>Not:</i> Dosyaların üst verisine bilgi kaydetmek, fotoğraf "
+"yönetimi işlemlerini yavaşlatabilir.</p></qt>"
 
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:66
 #, kde-format
@@ -52513,17 +52382,7 @@ msgid "Migration from digiKam 4"
 msgstr "digiKam 4'ten göç"
 
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Migrate configuration and metadata from digiKam 4</b></h1></"
-#| "p><p>You can choose here if you want to use the configuration and albums "
-#| "from digiKam 4 in digiKam 5. Please note the following warnings:</"
-#| "p><p>Migration is done <b>at your own risk</b>. Digikam developers don't "
-#| "recommend it and don't support it. On the other hand, creating a new "
-#| "configuration might result in loss of tags and other metadata that wasn't "
-#| "embedded inside the pictures and was only available in digiKam 4's "
-#| "database.</p><p>In either case you're recommended to backup the "
-#| "configuration files and databases before proceeding.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Migrate configuration and metadata from digiKam 4</b></h1></"
 "p><p>You can choose here if you want to use the configuration and albums "
@@ -52535,15 +52394,15 @@ msgid ""
 "</p><p>In either case you are recommended to backup the configuration files "
 "and databases before proceeding.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Yapılandırma verisini ve metaveriyi digiKam 4 'ten taşı.</b></"
-"h1></p><p>Yapılandırmayı ve albümleri digiKam 5 içindeki digikam 4 'ten "
-"kullanmak istiyorsanız buradan seçebilirsiniz. Lütfen takip eden uyarıları "
-"not edin:</p><p>Taşıma işlemi <b>sizin insiyatifinizle</b>tamamlandı. "
-"Digikam geliştiricileri bunu tavsiye etmez ve desteklemez. Öte yandan, yeni "
-"bir yapılandırma oluşturmak digiKam 4 veritabanında kulanılabilir olan ama "
-"resimlerin içine gömülmemiş etiketlerin ve diğer metaverilerin kaybına sebep "
-"olabilir.</p><p>Her iki durumda da işleme başlamadan önce yapılandırma "
-"dosyalarını ve veritabanını yedeklemeniz tavsiye edilir.</p></qt>"
+"<qt><p><h1><b>Yapılandırmayı ve üst veriyi digiKam 4'ten taşıyın</b></h1></"
+"p><p>digiKam 4'teki yapılandırmanızı ve albümlerinizi yeni digiKam'da "
+"kullanmak istiyorsanız burayı seçebilirsiniz. Lütfen aşağıdaki uyarılara "
+"dikkat edin:</p><p>Göç işlemi tümüyle <b>sizin kendi riskinize tabidir</b>. "
+"digiKam geliştiricileri bunu tavsiye etmez ve desteklemez. Öte yandan, yeni "
+"bir yapılandırma oluşturmak, görsellerin içine gömülü olmayan ve yalnızca "
+"digiKam 4'ün veritabanında var olan etiketlerin ve diğer üst verinin "
+"kaybolmasıyla sonuçlanabilir.</p><p>Her iki durumda da sürdürmeden önce "
+"yapılandırma dosyalarını ve veritabanlarını yedeklemeniz önerilir.</p></qt>"
 
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:91
 #, kde-format
@@ -52558,7 +52417,7 @@ msgstr "Yeni bir yapılandırma oluştur"
 #: core/utilities/firstrun/openfilepage.cpp:57
 #, kde-format
 msgid "<b>Configure Open File Behavior</b>"
-msgstr "<b>Dosya Açma Davranışını Yapılandır</b>"
+msgstr "<b>Dosya Aç Davranışını Yapılandır</b>"
 
 #: core/utilities/firstrun/openfilepage.cpp:66
 #, kde-format
@@ -52566,7 +52425,7 @@ msgid ""
 "<qt><p>Specify how images should be opened when left-clicked on in the icon "
 "view:</p></qt>"
 msgstr ""
-"<qt><p>Simge görünümünde sol tıklandığında resimlerin nasıl açılacağını "
+"<qt><p>Simge görünümünde sol tıklandığında görsellerin nasıl açılacağını "
 "seçin:</p></qt>"
 
 #: core/utilities/firstrun/openfilepage.cpp:75
@@ -52588,12 +52447,12 @@ msgid ""
 "quickly, it is often better to use the light table: images can be displayed "
 "side-by-side, and synchronized zooming and panning can be performed.</p></qt>"
 msgstr ""
-"<qt><p><i>Not:</i> Özellikle bir dizi çekimi denetlerken, önizleme kullanmak "
-"her zaman düzenleyiciyi kullanmaktan daha hızlıdır. Ancak, önizleme kipinde "
-"görseli değiştiremez veya düzeltemezsiniz. Görselleri tez karşılaştırmak "
-"istiyorsanız, genellikle ışık tablosunu kullanmanın daha iyi olduğunu "
-"unutmayın: görseller yan yana görüntülenebilir ve eşzamanlı yakınlaştırma ve "
-"kaydırma yapılabilir.</p></qt>"
+"<qt><p><i>Not:</i> Önizleme kullanmak, özellikle bir dizi çekimi "
+"denetlerken, düzenleyiciyi kullanmaktan her zaman daha hızlıdır. Ancak "
+"görseli önizleme kipinde değiştiremez veya düzeltemezsiniz. Görselleri hızlı "
+"bir şekilde karşılaştırmak istiyorsanız ışık tablasını kullanmanın "
+"genellikle daha iyi olacağını unutmayın: Görseller yan yana görüntülenebilir "
+"ve eşzamanlı yakınlaştırma ve kaydırma gerçekleştirilebilir.</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:56
 #, kde-format
@@ -52606,18 +52465,18 @@ msgid ""
 "<qt><p>Set here how images are displayed in preview mode and on the light "
 "table:</p></qt>"
 msgstr ""
-"<qt><p>Buradan görüntülerin önizleme kipinde ve ışık tablosunda nasıl "
-"görüntülendiğini ayarlayın:</p></qt>"
+"<qt><p>Görsellerin önizleme kipinde ve ışık tablasında nasıl "
+"görüntüleneceğini burada ayarlayın:</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:74
 #, kde-format
 msgid "Load reduced version of image"
-msgstr "Resmin indirgenmiş sürümünü yükleyin"
+msgstr "Görselin indirgenmiş sürümünü yükle"
 
 #: core/utilities/firstrun/previewpage.cpp:79
 #, kde-format
 msgid "Load image"
-msgstr "Resim yükle"
+msgstr "Görseli yükle"
 
 #: core/utilities/firstrun/previewpage.cpp:89
 #, kde-format
@@ -52628,35 +52487,34 @@ msgid ""
 "This JPEG image is embedded in the file metadata and is used by the camera "
 "to display a Raw image faster to a TV screen.</p></qt>"
 msgstr ""
-"<qt><p><i>Not:</i> resmin düşürülmüş sürümünü yüklemek daha hızlıdır fakat "
-"özgünden farklı olabilir, özellikle Ham ile. Bu durumda, gerçek resim verisi "
-"yerine Ham 'ın kamera tarafından ön-işleme yapılmış JPEG versiyonu yüklenir. "
-"Bu JPEG  dosya metaverisine gömülüdür ve kamera tarafından Ham resmi TV "
-"ekranında daha hızlı göstermek için kullanılır.</p></qt>"
+"<qt><p><i>Not:</i> Bir görselin indirgenmiş sürümünün yüklenmesi daha "
+"hızlıdır; ancak özellikle RAW biçimde özgününden farklı olabilir. Bu "
+"durumda, gerçek görsel verisi yerine RAW'ın kamera tarafından önceden "
+"işlenmiş bir JPEG sürümü yüklenir. Bu JPEG görseli dosya üst verisine "
+"gömülüdür ve kamera tarafından RAW görselini TV ekranında daha hızlı "
+"görüntülemek için kullanılır.</p></qt>"
 
 #: core/utilities/firstrun/rawpage.cpp:56
 #, kde-format
 msgid "<b>Configure Raw File Handling</b>"
-msgstr "<b>Ham Dosya Ele Alınmasını Yapılandır</b>"
+msgstr "<b>RAW Dosya İşlemesini Yapılandır</b>"
 
 #: core/utilities/firstrun/rawpage.cpp:65
 #, kde-format
 msgid "<qt><p>Set here how you want to open Raw images in the editor:</p></qt>"
 msgstr ""
-"<qt><p>RAW görselleri düzenleyicide nasıl açmak istediğinizi buradan "
+"<qt><p>RAW görsellerini düzenleyicide nasıl açmak istediğinizi burada "
 "ayarlayın:</p></qt>"
 
 #: core/utilities/firstrun/rawpage.cpp:74
 #, kde-format
 msgid "Open directly, with adjustments made automatically"
-msgstr "Ayarlamalar otomatik yapılmış şekilde, direkt olarak aç"
+msgstr "Ayarlamaları yapılmış halde doğrudan aç"
 
 #: core/utilities/firstrun/rawpage.cpp:79
 #, kde-format
 msgid "Use the Raw import tool to adjust corrections manually"
-msgstr ""
-"Düzeltmeleri manuel olarak ayarlamak için Ham alma içe aktarma aracını "
-"kullanın"
+msgstr "Düzeltmeleri elle yapmak için RAW İçe Aktar aracını kullan"
 
 #: core/utilities/firstrun/rawpage.cpp:89
 #, kde-format
@@ -52665,34 +52523,17 @@ msgid ""
 "want to have the best control over the image. This requires more time in "
 "your workflow.</p></qt>"
 msgstr ""
-"<qt><p><i>Not:</i> RAW içe aktarma aracı resim üzerinde en iyi kontrolü "
-"edinmek isteyen deneyimli kullanıcılar içindir. Bu, iş akışınızda daha fazla "
-"zaman gerektirir.</p></qt>"
+"<qt><p><i>Not:</i> Raw İçe Aktar aracı, görsel üzerinde en iyi denetime "
+"sahip olmak isteyen ileri düzey kullanıcılar için tasarlanmıştır. Bu, iş "
+"akışınızda daha fazla zaman gerektirir.</p></qt>"
 
 #: core/utilities/firstrun/startscanpage.cpp:34
 #, kde-format
 msgid "Scan Your Collection"
-msgstr "Koleksiyonunuzu Tarayın"
+msgstr "Koleksiyonu Tara"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you "
-#| "can customize more settings using the digiKam configuration panel. To "
-#| "learn more about the digiKam world, we recommend reading the <b>digiKam "
-#| "handbook</b> using the <b>Help/Handbook</b> menu entry (you need to "
-#| "install the separate digiKam documentation package.) You can also read "
-#| "the manual online from the <a href='https://www.digikam.org/docs'>digikam."
-#| "org website</a>.</p><p>Press <b>Finish</b> to close this assistant. "
-#| "digiKam will scan your collection to register all albums in the database. "
-#| "Items including in albums are collected after startup stage in background."
-#| "</p><p><i>Note:</i> depending on your collection size, this operation can "
-#| "take a while. If you cancel the scanning operation, it will start again "
-#| "in the next digiKam session.</p><p>When scanning has completed, at next "
-#| "start-up, digiKam will only check your collection to identify new albums "
-#| "- which is much faster. You can force digiKam to scan for new items "
-#| "manually using the <b>Tools->Maintenance->Scan for new items</b> menu "
-#| "entry.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you can "
 "customize more settings using the digiKam configuration panel. To learn more "
@@ -52710,22 +52551,22 @@ msgid ""
 "You can force digiKam to scan for new items manually using the <b>Tools-"
 ">Maintenance->Scan for new items</b> menu entry.</p></qt>"
 msgstr ""
-"<qt><p>Tebrikler. Gerekli en az ayarlar tamamlandı.</p><p>Unutmayın, digiKam "
-"yapılandırma panelini kullanarak daha fazla ayarı özelleştirebilirsiniz. "
-"digiKam dünyasıyla ilgili daha fazla bilgi edinmek için, <b>Yardım/El "
-"Kitabı</b> menü girişini kullanarak <b>digiKam El Kitabı</b>'nı okumanızı "
-"öneririz (ayrı digiKam belgelendirmesi paketi kurmanız gerekir). El "
-"kitabını, <a href='https://www.digikam.org/docs'>digikam.org web sitesi</a> "
-"üzerinden çevrimiçi olarak da okuyabilirsiniz.</p><p>Yardımcıyı kapatmak "
-"için <b>Bitir</b> düğmesine basın. digiKam, veritabanındaki tüm albümleri "
-"kaydetmek için koleksiyonunuzu tarayacak. Albümlerdeki ögeler başlangıç ​​"
-"aşamasından sonra arka planda toplanır.</p><p><i>Not:</i> koleksiyonunuzun "
-"boyutuna bağlı olarak, bu işlem biraz zaman alabilir. Tarama işlemini iptal "
-"ederseniz sonraki digiKam oturumunda yeniden başlatılacaktır.</p><p>Tarama "
-"tamamlandığında, bir sonraki açılışta digiKam yalnızca yeni albümleri "
-"tanımlamak için koleksiyonunuzu denetler- ki bu daha hızlıdır. Digikam'ı, "
-"<b>Araçlar->Bakım->Yeni Ögeleri Tara</b> menü girişini kullanarak elle yeni "
-"ögeler taramaya zorlayabilirsiniz.</p></qt>"
+"<qt><p>Tebrikler. Gerekli ayarlar tamamlandı.</p><p>digiKam yapılandırma "
+"panelini kullanarak daha fazla ayarı özelleştirebileceğinizi unutmayın. "
+"digiKam dünyası üzerine daha fazla bilgi almak için <b>digiKam El Kitabı</"
+"b>'nı <b>Yardım/El Kitabı</b> menü yolunu izleyerek okumanızı öneririz. (ek "
+"digiKam belgelendirme paketini kurmanız gerekebilir). Kılavuzu aynı zamanda "
+"kendi <a href='https://docs.digikam.org/en/index.html'>web sitesinden</a> de "
+"okuyabilirsiniz.</p><p>Yardımcıyı kapatmak için <b>Bitir</b>'e tıklayın. "
+"digiKam, tüm albümleri veritabanına kaydetmek üzere koleksiyonunuzu "
+"tarayacaktır. Albümlerdeki ögeler, başlangıç aşamasından sonra arka planda "
+"toplanır.</p><p><i>Not:</i> Koleksiyon boyutunuza bağlı olarak, bu işlem "
+"biraz vakit alabilir. Tarama işlemini iptal ederseniz bir sonraki digiKam "
+"oturumunda işlem sürdürülecektir.</p><p>Tarama tamamlandıktan sonraki "
+"başlatmalarda digiKam, yalnızca yeni albümleri tarar, bu da çok daha "
+"hızlıdır. digiKam'in yeni albümleri yalnızca sizin istediğiniz zamanda "
+"tarayacak biçimde ayarlanması için <b>Araçlar->Bakım->Yeni Ögeleri Tara</b> "
+"menü girdisini kullanın.</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:56
 #, kde-format
@@ -67316,7 +67157,7 @@ msgstr "&Sağ çubuktaki değişiklikleri uygularken onaylama"
 #: core/utilities/setup/misc/setupmisc.cpp:67
 #, kde-format
 msgid "&Scan for new items at startup (makes startup slower)"
-msgstr "Başlangıçta yeni ögeleri ta&ra (açılışı yavaşlatır)"
+msgstr "Başlangıçta yeni ögeleri &tara (açılışı yavaşlatır)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:68
 #, fuzzy, kde-format
