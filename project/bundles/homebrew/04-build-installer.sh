@@ -449,7 +449,7 @@ if [[ $DK_DEBUG = 1 ]] ; then
     DEBUG_SUF="-debug"
 
 fi
-exit
+
 #################################################################################################
 # Relocatable binary files. For details, see these urls:
 #
@@ -524,6 +524,8 @@ mv -v $TEMPROOT/share                         $TEMPROOT/digikam.app/Contents/
 mv -v $TEMPROOT/etc                           $TEMPROOT/digikam.app/Contents/
 mv -v $TEMPROOT/lib                           $TEMPROOT/digikam.app/Contents/
 mv -v $TEMPROOT/libexec                       $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/opt                           $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/Cellar                        $TEMPROOT/digikam.app/Contents/
 
 ln -sv "../../digikam.app/Contents/bin"       "$TEMPROOT/showfoto.app/Contents/bin"
 ln -sv "../../digikam.app/Contents/etc"       "$TEMPROOT/showfoto.app/Contents/etc"
@@ -531,6 +533,8 @@ ln -sv "../../digikam.app/Contents/lib"       "$TEMPROOT/showfoto.app/Contents/l
 ln -sv "../../digikam.app/Contents/libexec"   "$TEMPROOT/showfoto.app/Contents/libexec"
 ln -sv "../../digikam.app/Contents/share"     "$TEMPROOT/showfoto.app/Contents/share"
 ln -sv "../../digikam.app/Contents/Resources" "$TEMPROOT/showfoto.app/Contents/Resources"
+ln -sv "../../digikam.app/Contents/opt"       "$TEMPROOT/showfoto.app/Contents/opt"
+ln -sv "../../digikam.app/Contents/Cellar"    "$TEMPROOT/showfoto.app/Contents/Cellar"
 
 echo -e "\n---------- Cleanup files in bundle"
 
@@ -543,6 +547,8 @@ for HPP in ${HEADERFILES[@]} ; do
     rm -fv $HPP
 
 done
+
+exit
 
 rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/mysql-test
 rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/sql-bench
