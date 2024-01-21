@@ -117,9 +117,8 @@ opt/qt6/share/qt/translations \
 lib/libdigikam*.dSYM \
 lib/libgphoto2 \
 lib/libgphoto2_port \
-opt/mariadb/lib \
+opt/mariadb \
 lib/ImageMagick* \
-opt/mariadb/share \
 share/ImageMagick* \
 etc/ImageMagick* \
 "
@@ -264,7 +263,7 @@ for path in $OTHER_DIRS ; do
     fi
 
     echo "   Copying $INSTALL_PREFIX/$path to $TEMPROOT/$dir/"
-    cp -aH "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
+    cp -aHL "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
 
@@ -548,10 +547,7 @@ for HPP in ${HEADERFILES[@]} ; do
 
 done
 
-exit
-
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/mysql-test
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/sql-bench
+rm -rfv $TEMPROOT/digikam.app/Contents/opt/mariadb/bin/mysql-test
 
 echo -e "\n---------- Patch config and script files in bundle"
 
@@ -590,14 +586,9 @@ done
 #################################################################################################
 # See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
 
-rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/"
-rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb"
-
-# At run time, digiKam will check for mariadb folder-name without revision numbers.
-
-ln -sv "../../../../../digikam.app/Contents/lib/mariadb/share/mariadb$MARIADB_SUFFIX" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/mariadb"
-ln -sv "../../../digikam.app/Contents/lib/mariadb"                                    "$TEMPROOT/digikam.app/Contents/lib/mariadb"
-ln -sv "../../../digikam.app/Contents/etc/mariadb"                                    "$TEMPROOT/digikam.app/Contents/etc/mariadb"
+mkdir -p "$TEMPROOT/digikam.app/Contents/lib/mariadb"
+rsync -a "$TEMPROOT/digikam.app/Contents/opt/mariadb/share" "$TEMPROOT/digikam.app/Contents/lib/mariadb"
+rm -fr "$TEMPROOT/digikam.app/Contents/opt/mariadb/share"
 
 #################################################################################################
 # Install ExifTool binary.
@@ -613,7 +604,7 @@ cd $TEMPROOT/digikam.app/Contents/bin
 EXIFTOOL_DIR=$(ls -d Image-ExifTool*)
 ln -sv "./$EXIFTOOL_DIR" "./Image-ExifTool"
 ln -sv "./Image-ExifTool/exiftool" "exiftool"
-
+exit
 #################################################################################################
 # Build PKG file
 
