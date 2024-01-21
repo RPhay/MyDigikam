@@ -121,6 +121,9 @@ opt/mariadb \
 lib/ImageMagick* \
 share/ImageMagick* \
 etc/ImageMagick* \
+etc/my.cnf
+etc/my.cnf.default
+etc/my.cnf.d
 "
 
 #etc/xdg \
@@ -604,7 +607,7 @@ cd $TEMPROOT/digikam.app/Contents/bin
 EXIFTOOL_DIR=$(ls -d Image-ExifTool*)
 ln -sv "./$EXIFTOOL_DIR" "./Image-ExifTool"
 ln -sv "./Image-ExifTool/exiftool" "exiftool"
-exit
+
 #################################################################################################
 # Build PKG file
 
