@@ -167,7 +167,7 @@ BUGFIXES:
 148 ==> 480010 - Crash when trying to add a face tag on Windows.
 149 ==> 480116 - Discrepancies in displayed tag information such as "_Digikam_root_tag_".
 150 ==> 480103 - Concatenate 'street' and 'house number' (if exist) to XMP when Reverse Geocoding.
-151 ==> 
+151 ==> 480134 - Freeze (loop ?) when right click on an image.
 152 ==> 
 153 ==> 
 154 ==> 

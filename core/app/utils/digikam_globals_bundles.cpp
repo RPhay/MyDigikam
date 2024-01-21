@@ -498,6 +498,7 @@ void setupKSycocaDatabaseFile()
             QFileInfoList infoList = dir.entryInfoList(QStringList() << QLatin1String("ksycoca5*"),
 
 #endif
+
                                                        QDir::Files, QDir::Time);
 
             while (!infoList.isEmpty())
@@ -506,13 +507,16 @@ void setupKSycocaDatabaseFile()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                if (info.fileName() != QLatin1String("ksycoca6_appimage"))
+                if ((info.suffix()   != QLatin1String("lock"))            &&
+                    (info.fileName() != QLatin1String("ksycoca6_appimage")))
 
 #else
 
-                if (info.fileName() != QLatin1String("ksycoca5_appimage"))
+                if ((info.suffix()   != QLatin1String("lock"))            &&
+                    (info.fileName() != QLatin1String("ksycoca5_appimage")))
 
 #endif
+
                 {
                     ksycoca = info.absoluteFilePath();
 
@@ -532,6 +536,7 @@ void setupKSycocaDatabaseFile()
                 ksycoca = cachePath + QLatin1String("/ksycoca5_appimage");
 
 #endif
+
                 qputenv("KDESYCOCA", ksycoca.toUtf8());
             }
 
