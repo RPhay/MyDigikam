@@ -275,7 +275,7 @@ echo "---------- Copying data files..."
 
 for path in $OTHER_DATA ; do
     echo "   Copying $path"
-    cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/digikam.app/Contents/Resources/"
+    cp -aL "$INSTALL_PREFIX/$path" "$TEMPROOT/digikam.app/Contents/Resources/"
 done
 
 # Copy digiKam hi-colors PNG icons-set to the bundle
@@ -327,15 +327,18 @@ cp -a "$TEMPROOT/showfoto.app/Contents/Resources/" "$TEMPROOT/digikam.app/Conten
 rm -rf "$TEMPROOT/showfoto.app/Contents/Resources"
 
 cd "$ORIG_WD"
-exit
+
 #################################################################################################
 # Move digiKam and KF6 run-time plugins to the right place
+
+rm -fr $TEMPROOT/bin/digikam.app
+rm -fr $TEMPROOT/bin/showfoto.app
 
 mkdir -p $TEMPROOT/libexec/qt6/
 cp -a  $TEMPROOT/share/qt/plugins         $TEMPROOT/libexec/qt6/
 rm -rf $TEMPROOT/share/qt/plugins
 cp -a  $TEMPROOT/opt/qt6/share/qt/plugins $TEMPROOT/libexec/qt6/
-rm -rf $TEMPROOT/opt/qt6/share/qt/plugins
+rm -rf $TEMPROOT/opt/qt6/
 
 #################################################################################################
 # Merge Manifest files
@@ -446,13 +449,13 @@ if [[ $DK_DEBUG = 1 ]] ; then
     DEBUG_SUF="-debug"
 
 fi
-
+exit
 #################################################################################################
 # Relocatable binary files. For details, see these urls:
 #
 # https://stackoverflow.com/questions/9263256/can-you-please-help-me-understand-how-mach-o-libraries-work-in-mac-os-x
 # https://matthew-brett.github.io/docosx/mac_runtime_link.html
-# http://thecourtsofchaos.com/2013/09/16/how-to-copy-and-relink-binaries-on-osx/
+# https://thecourtsofchaos.com/2013/09/16/how-to-copy-and-relink-binaries-on-osx/
 
 echo -e "\n---------- Relocatable binary files"
 

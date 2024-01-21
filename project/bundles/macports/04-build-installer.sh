@@ -455,7 +455,7 @@ fi
 #
 # https://stackoverflow.com/questions/9263256/can-you-please-help-me-understand-how-mach-o-libraries-work-in-mac-os-x
 # https://matthew-brett.github.io/docosx/mac_runtime_link.html
-# http://thecourtsofchaos.com/2013/09/16/how-to-copy-and-relink-binaries-on-osx/
+# https://thecourtsofchaos.com/2013/09/16/how-to-copy-and-relink-binaries-on-osx/
 
 echo -e "\n---------- Relocatable binary files"
 
