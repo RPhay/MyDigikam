@@ -509,6 +509,7 @@ for APP in ${EXECFILES[@]} ; do
         install_name_tool -add_rpath @executable_path/../../../../../../../.. $APP
         install_name_tool -add_rpath @executable_path/../../../../../../../../.. $APP
         install_name_tool -add_rpath @executable_path/../../../../../../../../../.. $APP
+        codesign --force -s - $APP
 
         echo "Patch $APP"
 

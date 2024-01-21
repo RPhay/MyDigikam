@@ -231,6 +231,7 @@ for FILE in ${FILESLIST[@]} ; do
             RPATHLIB=${EXTLIB/$INSTALL_PREFIX/$RPATHSTR}
  #           echo "   $EXTLIB ==> $RPATHLIB"
             install_name_tool -change $EXTLIB $RPATHLIB $FILE
+            codesign --force -s - $FILE
 
         done
 
