@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-21 01:35+0000\n"
-"PO-Revision-Date: 2024-01-05 05:01+0100\n"
+"POT-Creation-Date: 2024-01-22 01:56+0000\n"
+"PO-Revision-Date: 2024-01-21 11:31+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -19377,24 +19377,20 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack File:"
-msgstr "საუნდტრეკი:"
+msgstr "საუნდტრეკის ფაილი:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Audio track"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
-msgstr "აუდიო ტრეკი"
+msgstr "აირჩიეთ აუდიობილიკი"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack Duration:"
-msgstr "საუნდტრეკი:"
+msgstr "საუნდტრეკის ხანგრძლივობა:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:138
 #, kde-format
@@ -26087,30 +26083,24 @@ msgid "Tags (0)"
 msgstr "ჭდეები (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Albums"
+#, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "ყველა ალბომი"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive"
-msgstr "რეკურსიული მონიშვნა"
+msgstr "რეკურსიული"
 
 #: core/libs/album/widgets/albumselectors.cpp:182
 #: core/libs/album/widgets/albumselectors.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Recursive Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
-msgstr "რეკურსიული მონიშვნა"
+msgstr "რეკურსიული მონიშვნა."
 
 #: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
@@ -26131,9 +26121,7 @@ msgid "Reset selected albums"
 msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Tags"
+#, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "ყველა ჭდე"
@@ -26818,25 +26806,25 @@ msgid ""
 "recent) Please use the more recent version of digikam that you used before. "
 msgstr ""
 
-#: core/libs/database/tags/facetags.cpp:398
+#: core/libs/database/tags/facetags.cpp:403
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "ხალხი"
 
-#: core/libs/database/tags/facetags.cpp:462
+#: core/libs/database/tags/facetags.cpp:467
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "უცნობი"
 
-#: core/libs/database/tags/facetags.cpp:482
+#: core/libs/database/tags/facetags.cpp:487
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "დაუდასტურებელი"
 
-#: core/libs/database/tags/facetags.cpp:502
+#: core/libs/database/tags/facetags.cpp:507
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -30757,7 +30745,7 @@ msgstr "ზღვარი:"
 #: core/libs/dimg/filters/nr/nrsettings.cpp:191
 #, kde-format
 msgid "Softness:"
-msgstr ""
+msgstr "სირბილე:"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:210
 #, kde-format
@@ -38085,6 +38073,8 @@ msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
+"სრული, პლატფორმათაშორისი გადაწყვეტილება ვიდეოსა და აუდიოს ჩაწერის, "
+"გადაყვანის და დასტრიმისთვის."
 
 #: core/libs/video/manager/vidslidesettings.cpp:496
 #, kde-format
@@ -38567,24 +38557,19 @@ msgid "Default from Desktop"
 msgstr "ნაგულისხმევი, სამუშაო მაგიდიდან"
 
 #: core/libs/video/manager/vidslidetask.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Generating files for \"%1\""
+#, kde-format
 msgid "Generating frames from %1 Done"
-msgstr "\"%1\"-სთვის ფაილების გენერაცია"
+msgstr "\"%1\"-დან ფაილების გენერაცია დასრულდა"
 
 #: core/libs/video/manager/vidslidethread.cpp:63
-#, fuzzy, kde-format
-#| msgid "Error opening temporary folder"
+#, kde-format
 msgid "Error while creating temporary directory %1!"
-msgstr "დროებითი საქაღალდის გახსნის შეცდომა"
+msgstr "დროებითი საქაღალდის %1 შექმნის შეცდომა!"
 
 #: core/libs/video/manager/vidslidethread.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Loading cameras..."
+#, kde-format
 msgid "Encoding frames..."
-msgstr "კამერების ჩატვირთვა..."
+msgstr "კადრების კოდირება..."
 
 #: core/libs/video/manager/vidslidethread.cpp:133
 #, kde-format

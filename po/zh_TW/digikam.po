@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-21 01:35+0000\n"
+"POT-Creation-Date: 2024-01-22 01:56+0000\n"
 "PO-Revision-Date: 2024-01-05 21:39+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -29091,25 +29091,25 @@ msgstr ""
 "要。(這表示這個 digiKam 版本太舊，或者資料庫不是最新的格式) 請使用 digikam 較"
 "新的版本。"
 
-#: core/libs/database/tags/facetags.cpp:398
+#: core/libs/database/tags/facetags.cpp:403
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "人物"
 
-#: core/libs/database/tags/facetags.cpp:462
+#: core/libs/database/tags/facetags.cpp:467
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/database/tags/facetags.cpp:482
+#: core/libs/database/tags/facetags.cpp:487
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "未確認"
 
-#: core/libs/database/tags/facetags.cpp:502
+#: core/libs/database/tags/facetags.cpp:507
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"

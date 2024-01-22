@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-21 01:35+0000\n"
-"PO-Revision-Date: 2024-01-20 16:00+0300\n"
+"POT-Creation-Date: 2024-01-22 01:56+0000\n"
+"PO-Revision-Date: 2024-01-21 19:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.01.95\n"
 
 #: core/app/date/ddateedit.cpp:497
 #, kde-format
@@ -16272,7 +16272,7 @@ msgstr "Görsel kaydedilemedi"
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:468
 #, kde-format
 msgid "Failed to move sidecar"
-msgstr "Yan araç taşınamadı"
+msgstr "Sepet taşınamadı"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
 #, kde-format
@@ -22848,12 +22848,12 @@ msgstr "Göreceli sembolik bağlantılar oluştur"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, kde-format
 msgid "Include the sidecar of the items"
-msgstr "Ögelerin yan aracını içer"
+msgstr "Ögelerin sepetini içer"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
 #, kde-format
 msgid "Write sidecar metadata to the items"
-msgstr "Tüm ögelere yan araç üst verisini yaz"
+msgstr "Tüm ögelere sepet üst verisini yaz"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:125
 #, kde-format
@@ -28684,25 +28684,25 @@ msgstr ""
 "gelir.) Lütfen daha önce kullandığınız digiKam'ın daha yeni sürümünü "
 "kullanın."
 
-#: core/libs/database/tags/facetags.cpp:398
+#: core/libs/database/tags/facetags.cpp:403
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Kişiler"
 
-#: core/libs/database/tags/facetags.cpp:462
+#: core/libs/database/tags/facetags.cpp:467
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: core/libs/database/tags/facetags.cpp:482
+#: core/libs/database/tags/facetags.cpp:487
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Onaylanmayan"
 
-#: core/libs/database/tags/facetags.cpp:502
+#: core/libs/database/tags/facetags.cpp:507
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -35275,7 +35275,7 @@ msgstr ""
 #: core/libs/iojobs/iojob.cpp:188
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
-msgstr "Yan araç %1 dosyasından %2 albümüne taşınamadı"
+msgstr "Sepet %1 dosyasından %2 albümüne taşınamadı"
 
 #: core/libs/iojobs/iojob.cpp:194
 #, kde-format
@@ -35290,7 +35290,7 @@ msgstr "%1 klasörü %2 albümüne kopyalanamadı"
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
-msgstr "Yan araç %1 dosyasından %2 klasörüne kopyalanamadı"
+msgstr "Sepet %1 dosyasından %2 klasörüne kopyalanamadı"
 
 #: core/libs/iojobs/iojob.cpp:238
 #, kde-format
@@ -37962,7 +37962,7 @@ msgstr "Renk kipi: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
-msgstr "Yan araç: "
+msgstr "Sepet: "
 
 #: core/libs/properties/itempropertiestab.cpp:93
 #, kde-format
@@ -52590,7 +52590,7 @@ msgstr "Araç ipuçlarını gösterme"
 #: core/utilities/firstrun/tooltipspage.cpp:79
 #, kde-format
 msgid "Use Tooltips"
-msgstr "İpuçlarını Kullan"
+msgstr "İpuçlarını kullan"
 
 #: core/utilities/firstrun/tooltipspage.cpp:89
 #, kde-format
@@ -52618,23 +52618,13 @@ msgid ""
 "assistant will help you to configure first run settings to be able to use "
 "digiKam quickly.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>digiKam %1 'e hoş geldiniz</b></h1></p><p>digiKam, açık-kaynak "
-"olarak yayınlanmış bir gelişmiş fotoğraf yönetim uygulamasıdır.</p><p>Bu "
-"asisten digiKam 'i daha hızlı kullanabilmeniz için ilk çalıştırma "
-"ayarlarınızı yapılandırmanız konusunda size yardımcı olacaktır.</p></qt>"
+"<qt><p><h1><b>digiKam %1 sürümüne hoş geldiniz</b></h1></p><p>digiKam, açık "
+"kaynak olarak yayımlanan gelişmiş bir sayısal fotoğraf yönetimi "
+"uygulamasıdır.</p><p>Bu yardımcı, digiKam'i tez kullanabilmenizi sağlamak "
+"için birkaç ayarı yapılandırmanıza yardımcı olacaktır.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<br/><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br/><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -52646,31 +52636,30 @@ msgid ""
 "files, so it is not recommended to do it for the moment, and at your own "
 "risk.</p></qt>"
 msgstr ""
-"<br/><p>digiKam 'i ilk defa kullanıyorsanız takip edeni ihmal edebilirsiniz:"
-"</p><p><b>digiKam 4 'ten geçiş</b></p><p>digiKam 4 'ten yapılandırma "
-"dosyaları taşınmadı. Eski veritabanı hala kullanılabilir, yalnızca takip "
-"eden diyaloglarda koleksiyonlar ve veritabanı için aynı konumları "
-"seçmelisiniz. İşleme başlamadan önce veritabanınızın yedeğini almanı tavsiye "
-"edilir.</p><p>Yapılandırma dosyaları için yeni konum %1 (eskisi %2). Eski "
-"yapılandırma dosyalarını yeniden kullanırken çözülmemiş problemler "
-"bildirildi, bu yüzden bunu şu an yapmanız tavsiye edilmek ve sizin "
-"sorumluluğunuzdadır.</p></qt>"
+"<qt><br/><p>digiKam'i ilk kez kullanıyorsanız aşağıdakileri yok "
+"sayabilirsiniz:</p><p><b>digiKam 4'ten göç</b></p><p>Yapılandırma dosyaları, "
+"digiKam 4'ten aktarılmaz. Eski veritabanı hâlâ kullanılabilir; aşağıdaki "
+"iletişim kutularında koleksiyonlar ve veritabanı için aynı konumları "
+"seçmeniz yeterlidir. Sürdürmeden önce veritabanınızın yedeğini almanız "
+"önerilir.</p><p>Yapılandırma dosyalarının yeni konumu %1 olarak ayarlıdır "
+"(eskisi %2 idi). Eski yapılandırma dosyalarını yeniden kullanırken "
+"çözülmemiş sorunlar rapor edildiğinden, şimdilik bunu yapmanız önerilmez ve "
+"risk size aittir.</p></qt>"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
 #, kde-format
 msgid "Ref. images"
-msgstr "Ref. resimler"
+msgstr "Başv. Görselleri"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
-#, fuzzy, kde-format
-#| msgid "Ref. images"
+#, kde-format
 msgid "Ref. dates"
-msgstr "Ref. resimler"
+msgstr "Başv. Tarihleri"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:70
 #, kde-format
 msgid "Ref. albums"
-msgstr "Başvuru albümleri"
+msgstr "Başv. Albümleri"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:71
 #, kde-format
@@ -52680,58 +52669,51 @@ msgstr "Ögeler"
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:72
 #, kde-format
 msgid "Avg. similarity"
-msgstr "Ort. Bebzerlik"
+msgstr "Ort. Benzerlik"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:78
 #, kde-format
 msgid "This shows all found duplicate items."
-msgstr "Tüm koleksiyondaki aynısı olan ögeleri gösterir."
+msgstr "Bu, bulunan tüm yinelenmiş ögeleri gösterir."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:126
-#, fuzzy, kde-format
-#| msgid "Update fingerprints"
+#, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
-msgstr "Parmak izlerini güncelle"
+msgstr "Parmak İzlerini Güncelle"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:128
-#, fuzzy, kde-format
-#| msgid "Use this button to update all image fingerprints."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
-msgstr "Resim parmak izlerini güncellemek için bu düğmeyi kullan."
+msgstr "Tüm görsel parmak izlerini güncellemek için bu düğmeyi kullanın."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:130
-#, fuzzy, kde-format
-#| msgid "Find duplicates"
+#, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
-msgstr "Kopyaları bul"
+msgstr "Yinelenmişleri Bul"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:132
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
-msgstr ""
-"Seçili albümü tekrarlanan ögeler açısından taramak için bu düğmeyi kullan."
+msgstr "Seçili albümü yinelenen ögeler için taramak üzere bu düğmeyi kullanın."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
-msgstr "Burada ara:"
+msgstr "Şurada ara:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Similarity range:"
+#, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
-msgstr "Benzerlik aralığı:"
+msgstr "Benzerlik erimi:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:159
-#, fuzzy, kde-format
-#| msgid "Restriction:"
+#, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Kısıtlama:"
@@ -52740,46 +52722,37 @@ msgstr "Kısıtlama:"
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:164
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Restrict to reference album"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
-msgstr "Referans albüme kısıtla"
+msgstr "Başvuru albümüne kısıtla"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Exclude reference album"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
-msgstr "Referans albümünü hariç tut"
+msgstr "Başvuru albümünü dışla"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use this option to restrict the duplicate search with some criteria, as "
-#| "to limit search to the album of reference image, or to exclude the album "
-#| "of reference image of the search."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to restrict the duplicate search with some criteria, as to "
 "limit search to the album of reference image, or to exclude the album of "
 "reference image of the search."
 msgstr ""
-"Yinelenen aramayı bazı kriterlerle kısıtlamak, aramayı referans resim "
-"albümüne sınırlamak veya aramanın referans görüntü albümünü hariç tutmak "
-"için bu seçeneği kullanın."
+"Aramayı başvuru görsel albümüyle sınırlamak veya aramanın başvuru görsel "
+"albümünü dışlamak gibi bazı kriterlerle yinelenen aramayı kısıtlamak için bu "
+"seçeneği kullanın."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
-#, fuzzy, kde-format
-#| msgid "Restrict to:"
+#, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
-msgstr "Şununla sınırlandır:"
+msgstr "Şuna kısıtla:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
@@ -52788,9 +52761,7 @@ msgid "Only selected tab"
 msgstr "Yalnızca seçili sekme"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "One of"
+#, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Biri"
@@ -52802,87 +52773,67 @@ msgid "Both"
 msgstr "Her ikisi"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Albums but not tags"
+#, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
-msgstr "Albümler var ama etiketler yok"
+msgstr "Albümler; ancak etiketler değil"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:204
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Tags but not albums"
+#, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
-msgstr "Etiketler var ama albümler yok"
+msgstr "Etiketler; ancak albümler değil"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:211
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
-msgstr ""
+msgstr "Daha eski veya daha büyük"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
-msgstr ""
+msgstr "Seçili klasörü başvuru olarak tercih et"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
-msgstr ""
+msgstr "Seçili klasör dışındakileri başvuru olarak tercih et"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Oluşturma Tarihine Göre"
+msgstr "Daha yeni oluşturma tarihini tercih et"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Değişiklik Tarihine Göre"
+msgstr "Daha yeni değişiklik tarihini tercih et"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "Geçerli görsel seçimi hakkında bilgi"
+msgstr "Başvuru görsel seçim yöntemini seç"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:229
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "Referans:"
+msgstr "Başvuru"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:235
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "&Resim seçimi yöntemini seçin:"
+msgstr "Başvuru Görsel Seçim Yöntemi"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:242
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use this option to decide about the relation of the selected albums and "
-#| "tags.<br/><i>One of</i> means that the images are either in the selected "
-#| "albums or tags.<br/><i>Both</i> means that the images are both in the "
-#| "selected albums and tags.<br/><i>Albums but not tags</i> means that "
-#| "images must be in the selected albums but not tags.<br/><i>Tags but not "
-#| "albums</i> means that images must be in the selected tags but not albums."
-#| "<br/><i>Only selected tab</i> means that only the selected tab is used."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected albums and "
@@ -52895,69 +52846,59 @@ msgid ""
 "not albums.\n"
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
-"Seçili albümler ve etiketler arasındaki ilişkiye karar vermek için bu "
-"seçeneği kullanın.<br/><i>Biri</i> resimlerin seçilen albümlerde veya "
-"etiketlerde olduğu anlamına gelir.<br/><i>Her ikisi< /i> resimlerin hem "
-"seçilen albümlerde hem de etiketlerde olduğu anlamına gelir.<br/"
-"><i>Etiketler olmadan albümler</i> resimlerin seçilen etiketlerde değil "
-"albümlerde olması gerektiği anlamına gelir.<br/><i>Albümler olmadan "
-"etiketler</i> resimlerin seçili albümlerde değil etiketlerde olması "
-"gerektiği anlamına gelir.<br/><i>Yalnızca seçilen sekme</i> yalnızca seçilen "
-"sekmenin kullanıldığı anlamına gelir."
+"Seçili albümlerin ve etiketlerin ilişkisine karar vermek için bu seçeneği "
+"kullanın.\n"
+"\"Biri\", görsellerin seçilen albümlerde veya etiketlerde olduğu anlamına "
+"gelir.\n"
+"\"Her ikisi\", görsellerin hem seçili albümlerde hem de etiketlerde olduğu "
+"anlamına gelir.\n"
+"\"Albümler; ancak etiketler değil\", görsellerin seçili albümlerde olması; "
+"ancak etiketlerin olmaması gerektiği anlamına gelir.\n"
+"\"Etiketler; ancak albümler değil\", görsellerin seçili etiketlerde olması; "
+"ancak albümlerde olmaması gerektiği anlamına gelir.\n"
+"\"Yalnızca seçili sekme\" yalnızca seçilen sekmenin kullanıldığı anlamına "
+"gelir."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:258
-#, fuzzy, kde-format
-#| msgid "Remove duplicate words"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
-msgstr "Tekrarlanan kelimeleri kaldır"
+msgstr "Yinelenenleri Kaldır"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:260
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
-msgstr ""
-"Seçili albümü tekrarlanan ögeler açısından taramak için bu düğmeyi kullan."
+msgstr "Tüm yinelenmiş görselleri kaldırmak için bu düğmeyi kullanın."
 
 #: core/utilities/fuzzysearch/fuzzysearchview.cpp:51
-#, fuzzy, kde-format
-#| msgid "Duplicates"
+#, kde-format
 msgctxt "Find Duplicates Tab"
 msgid "Duplicates"
-msgstr "Aynısı Olanlar"
+msgstr "Yinelenenler"
 
 #: core/utilities/fuzzysearch/fuzzysearchview.cpp:52
 #, kde-format
 msgctxt "Similar Image Tab"
 msgid "Image"
-msgstr "Resim"
+msgstr "Görsel"
 
 #: core/utilities/fuzzysearch/fuzzysearchview.cpp:53
 #, kde-format
 msgctxt "Sketch Search Tab"
 msgid "Sketch"
-msgstr "Sketch"
+msgstr "Eskiz"
 
 #: core/utilities/fuzzysearch/fuzzysearchview.cpp:281
-#, fuzzy, kde-format
-#| msgid ""
-#| "Image fingerprints have not yet been generated for your collection. The "
-#| "Similarity Search Tools will not be operational without pre-generated "
-#| "fingerprints.\n"
-#| "Do you want to build fingerprints now?\n"
-#| "Note: This process can take a while. You can run it any time later using "
-#| "'Tools/Rebuild all Fingerprints'."
+#, kde-format
 msgid ""
 "Image fingerprints have not yet been generated for your collection. The "
 "Similarity Search Tools will not be operational without pre-generated "
 "fingerprints. Please generate the fingerprints first."
 msgstr ""
-"Koleksiyonunuz için resim parmak izleri henüz oluşturulmadı. Benzerlik Arama "
-"Araçları, önceden oluştuırulmuş parmak izleri olmadan çalışmayacaktır.\n"
-"Parmak izlerini şimdi oluşturmak ister misiniz?\n"
-"Not: Bu işlem bir miktar sürebilir. Bu işlemi daha sonra istediğiniz zaman "
-"'Araçlar/Tüm Parmakizlerini yeniden oluştur' ile çalıştırabilirsiniz."
+"Koleksiyonunuz için görsel parmak izleri henüz oluşturulmadı. Benzerlik "
+"Arama Araçları, önceden oluşturulmuş parmak izleri olmadan çalışmayacaktır. "
+"Lütfen önce parmak izlerini oluşturun."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:31
 #, kde-format
@@ -52966,9 +52907,9 @@ msgid ""
 "p><p>You can also use the context menu<br/> when browsing through your "
 "images.</p>"
 msgstr ""
-"<p>Buraya bir görüntü sürükleyerek<br/>benzer<br/>ögelerin aramasını "
-"yapabilirsiniz.</p><p>İç menüyü kullanarak<br/>, görüntüleriniz arasında "
-"dolaşırken yine aynı işlemi gerçekleştirebilirsiniz.</p>"
+"<p>Buraya bir görsel sürükleyip bırakarak<br/> benzer ögeler<br/>araması "
+"gerçekleştirebilirsiniz.</p><p>Bunun için ayrıcı görsellerinizde "
+"gezinirken<br/> bağlam menüsü de kullanılabilir.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:39
 #, kde-format
@@ -52978,7 +52919,7 @@ msgstr "<b>Dosya</b>:"
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:41
 #, kde-format
 msgid "<b>Folder</b>:"
-msgstr "<b>Dizin</b>:"
+msgstr "<b>Klasör</b>:"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:51
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:93
@@ -52990,12 +52931,12 @@ msgstr "Albümlerde ara:"
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:57
 #, kde-format
 msgid "Similarity range:"
-msgstr "Benzerlik aralığı:"
+msgstr "Benzerlik erimi:"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:73
 #, kde-format
 msgid "Select here the approximate similarity interval as a percentage. "
-msgstr "Yaklaşık benzerlik aralığını yüzde olarak seçin. "
+msgstr "Burada yüzde olarak yaklaşık benzerlik aralığını seçin. "
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:84
 #, kde-format
@@ -53003,13 +52944,13 @@ msgid ""
 "Enter the name of the current similar image search to save in the "
 "\"Similarity Searches\" view."
 msgstr ""
-"\"Benzer Aramalar\" görünümüne kaydetmek için mevcut benzer resim aramasının "
-"ismini gir."
+"\"Benzer Aramalar\" görünümüne kaydetmek için geçerli benzer görsel "
+"aramasının adını girin."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
 #, kde-format
 msgid "Save current similar image search to a new virtual Album"
-msgstr "Mevcut benzer görüntü aramasını yeni bir sanal albüme kaydet"
+msgstr "Geçerli benzer görsel aramasını yeni bir sanal albüme kaydedin."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:91
 #, kde-format
@@ -53017,34 +52958,33 @@ msgid ""
 "If you press this button, the current similar image search will be saved to "
 "a new search virtual album using name set on the left side."
 msgstr ""
-"Bu düğmeye basarsanız geçerli benzer görüntü taraması sol taraftaki isim "
-"ayarını kullanarak yeni bir arama sanal albümüne kaydedilecektir."
+"Bu düğmeye basarsanız geçerli benzer görsel araması, sol tarafta ayarlanan "
+"ad kullanılarak yeni bir arama sanal albümüne kaydedilecektir."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:35
 #, kde-format
 msgid "Set here the brush color used to draw sketch."
-msgstr "Burada, resim çizmek için kullanılan fırça rengini seçin."
+msgstr "Eskiz çizmek için kullanılan fırça rengini burada ayarlayın."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:54
 #, kde-format
 msgid "Undo last draw on sketch"
-msgstr "Çizimdeki son hareketi ger al"
+msgstr "Eskizdeki son çizimi geri al"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:55
 #, kde-format
 msgid "Use this button to undo last drawing action on sketch."
-msgstr "Çizim çalışmanızdaki son çizimi geri almak için bu düğmeyi kullanın."
+msgstr "Eskizdeki son çizim eylemini geri almak için bu düğmeyi kullanın."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:61
 #, kde-format
 msgid "Redo last draw on sketch"
-msgstr "Çizimdeki son hareketi tekrarla"
+msgstr "Eskizdeki son çizimi yinele"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:62
 #, kde-format
 msgid "Use this button to redo last drawing action on sketch."
-msgstr ""
-"Çizim çalışmanızdaki son çizimi tekrar oluşturmak için bu düğmeyi kullanın."
+msgstr "Eskizdeki son çizim eylemini yinelemek için bu düğmeyi kullanın."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:65
 #, kde-format
@@ -53055,22 +52995,22 @@ msgstr "Kalem:"
 #, kde-format
 msgid "Set here the brush size in pixels used to draw sketch."
 msgstr ""
-"Burada, çizimde kullanılacak fırça boyutunu piksel cinsinden ayarlayın."
+"Eskiz çizmek için kullanılan fırça boyutunu burada piksel türünde ayarlayın."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:77
 #, kde-format
 msgid "Set here the number of items to find using sketch."
-msgstr "Çizim kullanılarak bulunacak öge sayısını buradan belirtin."
+msgstr "Eskiz kullanılarak bulunacak öge sayısını buradan ayarlayın."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:105
 #, kde-format
 msgid "Clear sketch"
-msgstr "Çizimi temizle"
+msgstr "Eskizi temizle"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:106
 #, kde-format
 msgid "Use this button to clear sketch contents."
-msgstr "Çizim içeriğini temizlemek için bu düğmeyi kullanın."
+msgstr "Eskiz içeriğini temizlemek için bu düğmeyi kullanın."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:110
 #, kde-format
@@ -53078,13 +53018,13 @@ msgid ""
 "Enter the name of the current sketch search to save in the \"Similarity "
 "Searches\" view."
 msgstr ""
-"\"Benzer Aramalar\" görünümüne kaydetmek için mevcut benzer eskiz aramasının "
-"ismini gir."
+"\"Benzer Aramalar\" görünümüne kaydetmek için geçerli eskiz aramasının adını "
+"girin."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
 #, kde-format
 msgid "Save current sketch search to a new virtual Album"
-msgstr "Mevcut çizim aramasını yeni bir sanal albüme kaydet"
+msgstr "Geçerli eskiz aramasını yeni bir sanal albüme kaydedin."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:117
 #, kde-format
@@ -53092,8 +53032,8 @@ msgid ""
 "If you press this button, the current sketch fuzzy search will be saved to a "
 "new search virtual album using the name set on the left side."
 msgstr ""
-"Eğer bu tuşa basarsanız mevcut eskiz bulanık araması, soldaki isim ayarını "
-"kullanarak yeni sanal arama albümüne kaydedilecektir."
+"Bu düğmeye basarsanız geçerli bulanık eskiz araması, sol tarafta ayarlanan "
+"ad kullanılarak yeni bir arama sanal albümüne kaydedilecektir."
 
 #: core/utilities/fuzzysearch/sketchwidget.cpp:145
 #, kde-format
@@ -53101,8 +53041,8 @@ msgid ""
 "You simply draw here a rough sketch of what you want to find and digiKam "
 "will displays the best matches in thumbnail view."
 msgstr ""
-"Ne bulmak istiyorsanız onunla alakalı bir çizim yapın ve digiKam en yakın "
-"benzerleri küçük resim görünümünde sunacaktır."
+"Buraya bulmak istediğiniz şeyin kaba bir eskizini çizin ve digiKam en iyi "
+"eşleşmeleri küçük görsel olarak görüntüler."
 
 #: core/utilities/fuzzysearch/sketchwidget.cpp:624
 #, kde-format
@@ -53112,8 +53052,8 @@ msgid ""
 "Fuzzy search"
 msgstr ""
 "Bulanık arama\n"
-"yapmak için buraya\n"
-"bir taslak çizebilirsiniz"
+"gerçekleştirmek için\n"
+"buraya eskizleyin"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:179
 #, kde-format
@@ -53129,7 +53069,7 @@ msgstr "Uydu"
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:181
 #, kde-format
 msgid "Hybrid"
-msgstr "Karma"
+msgstr "Hibrit"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:182
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
@@ -53140,17 +53080,17 @@ msgstr "Arazi"
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
 #, kde-format
 msgid "Show Map Type Control"
-msgstr "Harita Türü Denetimlerini Göster"
+msgstr "Harita Türü Denetimini Göster"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
 #, kde-format
 msgid "Show Navigation Control"
-msgstr "Gezinme Denetimlerini Göster"
+msgstr "Dolaşım Denetimini Göster"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Scale Control"
-msgstr "Ölçeklendirme Denetimlerini Göster"
+msgstr "Ölçek Denetimini Göster"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
 #: core/utilities/setup/setupgeolocation.cpp:131
@@ -53162,7 +53102,7 @@ msgstr "Google Haritalar"
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:472
 #, kde-format
 msgid "Float items"
-msgstr "Yüzen nesneler"
+msgstr "Yüzer Ögeler"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:195
 #, kde-format
@@ -53172,13 +53112,12 @@ msgstr "Bilye Sanal Küre"
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:326
 #, kde-format
 msgid "Atlas map"
-msgstr "Atlas haritası"
+msgstr "Atlas Haritası"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
-#, fuzzy, kde-format
-#| msgid "Satellite"
+#, kde-format
 msgid "Satellite map"
-msgstr "Uydu"
+msgstr "Uydu Haritası"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
 #, kde-format
@@ -53186,10 +53125,9 @@ msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap (Vector)"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap (Vektör)"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:387
 #, kde-format
@@ -53216,22 +53154,22 @@ msgstr "Pusulayı göster"
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:413
 #, kde-format
 msgid "Show scale bar"
-msgstr "Boyutlandırma çubuğunu göster"
+msgstr "Ölçek çubuğunu göster"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:418
 #, kde-format
 msgid "Show navigation"
-msgstr "Gezinmeyi göster"
+msgstr "Dolaşımı göster"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:423
 #, kde-format
 msgid "Show overview map"
-msgstr "Genel bakış haritasını göster"
+msgstr "Genel görünüm haritasını göster"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
 #, kde-format
 msgid "Other Marble Themes"
-msgstr ""
+msgstr "Diğer Bilye Temaları"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:463
 #, kde-format
@@ -53239,17 +53177,15 @@ msgid "Projection"
 msgstr "Projeksiyon"
 
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgid "Export as..."
-msgstr "Yer İmini Düzenle"
+msgstr "Farklı Dışa Aktar..."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:160
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:183
 #, kde-format
 msgid "Bookmark folder"
-msgstr "Yer imleri klasörü"
+msgstr "Yer İmleri Klasörü"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:193
 #, kde-format
@@ -53262,9 +53198,7 @@ msgid "Unknown title"
 msgstr "Bilinmeyen başlık"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Bookmark"
 msgstr "Yer İmi Ekle"
@@ -53286,8 +53220,7 @@ msgid "Bookmark comment"
 msgstr "Yer imi açıklaması"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Geolocation Bookmarks"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Coğrafi Konum Yer İmlerini Düzenle"
@@ -53304,7 +53237,7 @@ msgstr "&Kaldır"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:235
 #, kde-format
 msgid "Add Folder"
-msgstr "Dizin Ekle"
+msgstr "Klasör Ekle"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:426
 #, kde-format
@@ -53312,17 +53245,16 @@ msgid "New Folder"
 msgstr "Yeni Klasör"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:444
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
-msgstr "Renk Yönetimi"
+msgstr "Yer İmleri Yönetimi"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
-msgstr "\"%1\" 'i Yer İmleri koleksiyonunuzdan kaldırmak istiyor musunuz?"
+msgstr "\"%1\" ögesini yer imleri koleksiyonunuzdan kaldırmak istiyor musunuz?"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:46
 #, kde-format
@@ -53359,7 +53291,7 @@ msgstr "Başlık"
 #, kde-format
 msgctxt "@title: bookmark header"
 msgid "Comment"
-msgstr "Yorum"
+msgstr "Açıklama"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:818
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:953
@@ -53375,12 +53307,11 @@ msgid ""
 "Error when loading bookmarks on line %1, column %2:\n"
 "%3"
 msgstr ""
-"%1 satırı, %2 sütunundaki yer imlerinin yüklenmesinde hata:\n"
+"%1. satır, %2. sütundaki yer imleri yüklenirken hata:\n"
 "%3"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:940
-#, fuzzy, kde-format
-#| msgid "Open File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Dosya Aç"
@@ -53394,11 +53325,10 @@ msgstr "XBEL (*.xbel *.xml)"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:961
 #, kde-format
 msgid "Imported %1"
-msgstr "%1 İçeriye aktarıldı"
+msgstr "İçe aktarıldı: %1"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:967
-#, fuzzy, kde-format
-#| msgid "Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Dosyayı Kaydet"
@@ -53409,18 +53339,15 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bookmarks.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
-msgstr "Yer İmini Düzenle"
+msgstr "Yer İmini Dışa Aktar"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
-#, fuzzy, kde-format
-#| msgid "error saving bookmarks"
+#, kde-format
 msgid "Error saving bookmarks"
-msgstr "yer imleri kaydedilirken hata"
+msgstr "Yer imleri kaydedilirken hata"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:157
 #, kde-format
@@ -53433,16 +53360,14 @@ msgid "Add Bookmark..."
 msgstr "Yer İmi Ekle..."
 
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@item: icc profile properties"
-#| msgid "Copyright"
+#, kde-format
 msgid "<p>Copyright %1</p>"
-msgstr "Telif Hakkı"
+msgstr "<p>Telif hakkı %1</p>"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, kde-format
 msgid "Warning: Sidecar settings"
-msgstr "Uyarı: Sidecar ayarları"
+msgstr "Uyarı: Yan araç ayarları"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:112
 #, kde-format
@@ -53453,47 +53378,43 @@ msgid ""
 "Please enable reading of sidecar files in the host application or continue "
 "at your own risk."
 msgstr ""
-"Ev sahibi uygulamada üstveri depolaması için sidecar dosyalarını yazmak "
-"üzere etkinleştirdiniz ancak okumak için değil. Bu, sidecar dosyaları "
-"içerisindeki herhangi bir üstverinin burada üzerine yazılacağı anlamına "
-"gelmektedir.\n"
-"Lütfen ev sahibi uygulamada sidecar dosyalarını okumak üzere etkinleştirin "
-"veya kendi riskinizle devam edin."
+"Ana bilgisayar uygulamasında üst veri depolamak için sepet dosyalarına "
+"yazmayı etkinleştirdiniz; ancak okumak için etkinleştirmediniz. Bu, sepet "
+"dosyalarında saklanan tüm üst veriin buraya yazılacağı anlamına gelir.\n"
+"Lütfen ana bilgisayar uygulamasında sepet dosyalarının okunmasını "
+"etkinleştirin veya riski size ait olmak üzere sürdürün."
 
 #: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:210
 #, kde-format
 msgid "1 image moved"
 msgid_plural "%1 images moved"
-msgstr[0] "1 resim taşındı"
-msgstr[1] "%1 resim taşındı"
+msgstr[0] "1 görsel taşındı"
+msgstr[1] "%1 görsel taşındı"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:157
 #, kde-format
 msgid "Load GPX files..."
-msgstr "GPX dosyaları yükle..."
+msgstr "GPX Dosyaları Yükle..."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:164
 #, kde-format
 msgid "Show tracks on Map"
-msgstr "İzleri Haritada göster"
+msgstr "İzleri haritada göster"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
 #, kde-format
 msgid "Set this option to show tracks on the Map"
-msgstr "İzleri Haritada göstermek için bu seçeneği ayarlayın"
+msgstr "İzleri haritada göstermek için bu seçeneği ayarlayın"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity album tag relation"
-#| msgid "Only selected tab"
+#, kde-format
 msgid "Only use selected images"
-msgstr "Yalnızca seçili sekme"
+msgstr "Yalnızca seçili görselleri kullan"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image type."
+#, kde-format
 msgid "Set this option to correlate selected images only"
-msgstr "Resim türünü göstermek için bu seçeneği ayarlayın."
+msgstr "Yalnızca seçili görselleri ilişkilendirmek için bu seçeneği ayarlayın"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
@@ -53516,7 +53437,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:188
 #, kde-format
 msgid "Offset of pictures (hh:mm:ss):"
-msgstr "Resimlerin baskısı (ss:dd:ss:):"
+msgstr "Resimlerin ofseti (ss:dd:ss:):"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:190
 #, kde-format
@@ -53524,25 +53445,26 @@ msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
 "camera clock or different time zone."
 msgstr ""
-"Resim süreleri ve izleme süreleri arasındaki farkı ayarlar. Örneğin. yanlış "
+"Resim süreleri ve parça süreleri arasındaki ofseti ayarlar; örneğin, yanlış "
 "kamera saatini veya farklı zaman dilimini düzeltmek için."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:197
 #, kde-format
 msgid "Set whether picture time is ahead or behind the track time."
 msgstr ""
-"Resim zamanının parça zamanından ileride mi yoksa geride mi olduğunu ayarla."
+"Resim zamanının izleme süresinin ilerisinde mi yoksa gerisinde mi olacağını "
+"ayarlayın."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:216
 #, kde-format
 msgid "Interpolate"
-msgstr "Ara Değerle"
+msgstr "Aradeğerle"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:217
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:228
 #, kde-format
 msgid "Max. time gap (hh:mm:ss):"
-msgstr "Azami zaman aralığı (ss:dd:ss):"
+msgstr "En çok zaman boşluğu (ss:dd:ss):"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:221
 #, kde-format
@@ -53551,13 +53473,14 @@ msgid ""
 "time data. If the time difference exceeds this setting, no match will be "
 "attempted."
 msgstr ""
-"GPX dosya noktalarını görsel zaman verisine göre aradeğerlemek için en büyük "
-"zaman farkını ayarlar. Zaman farkı bu ayarı aşarsa bir eşleşme yapılmaz."
+"GPX dosya noktalarını görsel zaman verisiyle aradeğerlemeye tabi tutmak için "
+"en çok zaman farkını ayarlar. Saat farkı bu ayarı aşarsa eşleştirme "
+"yapılmaya çalışılmaz."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:227
 #, kde-format
 msgid "Match directly"
-msgstr ""
+msgstr "Doğrudan eşleştir"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:232
 #, kde-format
@@ -53566,13 +53489,13 @@ msgid ""
 "be matched. If the time difference exceeds this setting, no match will be "
 "attempted."
 msgstr ""
-"Bir GPS izi noktasından eşleştirilecek görüntü zamanına kadar olan maksimum "
-"zaman farkını ayarlar. Zaman farkı bu ayarı aşarsa eşleşme denenmeyecektir."
+"GPS izleme noktası ile eşleştirilecek görsel zamanı arasındaki en çok zaman "
+"farkını ayarlar. Saat farkı bu ayarı aşarsa eşleştirme yapılmaya çalışılmaz."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:251
 #, kde-format
 msgid "Correlate"
-msgstr "Bağıntı"
+msgstr "İlişkilendir"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:326
 #, kde-format
@@ -53586,20 +53509,19 @@ msgstr[1] "Aşağıdaki %1 GPX dosyası yüklenemedi:"
 msgctxt "@title:window"
 msgid "Error Loading GPX File"
 msgid_plural "Error Loading GPX Files"
-msgstr[0] "GPX Dosyası Yüklenirken Hata"
-msgstr[1] "GPX Dosyaları Yüklenirken Hata"
+msgstr[0] "GPX Dosyası Yükleme Hatası"
+msgstr[1] "GPX Dosyaları Yükleme Hatası"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
 #, kde-format
 msgid "Correlating images -"
-msgstr "Resimler ilişkilendiriliyor - "
+msgstr "Görseller ilişkilendiriliyor - "
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
-#, fuzzy, kde-format
-#| msgid "Correlation failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
-msgstr "Bağıntı başarısız"
+msgstr "İlişkilendirme başarısız"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
 #, kde-format
@@ -53607,38 +53529,33 @@ msgid ""
 "Could not correlate any image - please make sure the offset and gap settings "
 "are correct."
 msgstr ""
-"Herhangi bir resmi ilişkilendirilemedi - lütfen konum ve boşluk ayarlarının "
-"doğru olduğundan emin olun."
+"Hiçbir görsel ilişkilendirilemedi; lütfen ofset ve boşluk ayarlarının doğru "
+"olduğundan emin olun."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
-#, fuzzy, kde-format
-#| msgid "Correlation succeeded"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
-msgstr "Bağıntı başarılı"
+msgstr "İlişkilendirme başarılı"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
 #, kde-format
 msgid ""
 "All images have been correlated. You can now check their position on the map."
 msgstr ""
-"Tüm resimler ilişkilendirildi. Artık konumlarını haritadan kontrol "
-"edebilirsiniz."
+"Tüm görseller ilişkilendirildi. Artık konumlarını haritadan "
+"denetleyebilirsiniz."
 
 #. i18np.
 #. See bug #376438 for details.
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
-#, fuzzy, kde-format
-#| msgid "Correlation finished"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Finished"
-msgstr "İlişkilendirme tamamlandı"
+msgstr "İlişkilendirme Bitti"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:534
-#, fuzzy, kde-format
-#| msgid ""
-#| "%1 out of %2 images have been correlated. Please check the offset and gap "
-#| "settings if you think that more images should have been correlated."
+#, kde-format
 msgid ""
 "One image out of %2 images have been correlated. Please check the offset and "
 "gap settings if you think that more images should have been correlated."
@@ -53646,18 +53563,18 @@ msgid_plural ""
 "%1 out of %2 images have been correlated. Please check the offset and gap "
 "settings if you think that more images should have been correlated."
 msgstr[0] ""
-"%2 resimden %1 'i bağdaştırıldı. Daha fazla görüntünün bağdaştırılması "
-"gerektiğini düşünüyorsanız lütfen baskı ve boşluk ayarlarını kontrol edin."
+"1/%2 görsel ilişkilendirildi. Daha çok görselin ilişkilendirilmesi "
+"gerektiğini düşünüyorsanız ofset ve boşluk ayarlarını denetleyin."
 msgstr[1] ""
-"%2 resimden %1 'i bağdaştırıldı. Daha fazla görüntünün bağdaştırılması "
-"gerektiğini düşünüyorsanız lütfen baskı ve boşluk ayarlarını kontrol edin."
+"%1/%2 görsel ilişkilendirildi. Daha çok görselin ilişkilendirilmesi "
+"gerektiğini düşünüyorsanız ofset ve boşluk ayarlarını denetleyin."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:551
 #, kde-format
 msgid "1 image correlated"
 msgid_plural "%1 images correlated"
-msgstr[0] "1 resim ilişkilendirildi"
-msgstr[1] "%1 resim ilişkilendirildi"
+msgstr[0] "1 görsel ilişkilendirildi"
+msgstr[1] "%1 görsel ilişkilendirildi"
 
 #: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:219
 #, kde-format
@@ -53669,18 +53586,18 @@ msgstr "Renk"
 #, kde-format
 msgctxt "@title: track list header"
 msgid "Filename"
-msgstr "Dosya adı"
+msgstr "Dosya Adı"
 
 #: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:229
 #, kde-format
 msgctxt "@title: track list header"
 msgid "#points"
-msgstr "#noktalar"
+msgstr "#nokta"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:416
 #, kde-format
 msgid "Not available"
-msgstr "Kullanılabilir değil"
+msgstr "Kullanılamıyor"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:455
 #, kde-format
@@ -53705,12 +53622,12 @@ msgstr "%1d"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:532
 #, kde-format
 msgid "Modified"
-msgstr "Değiştirme"
+msgstr "Değiştirildi"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
 #, kde-format
 msgid "Date and time"
-msgstr "Tarih ve zaman"
+msgstr "Tarih ve Zaman"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:845
 #, kde-format
@@ -53720,61 +53637,60 @@ msgstr "Dosya açılamadı."
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:917
 #, kde-format
 msgid "Failed to add GPS info to image."
-msgstr "GPS bilgisi resme eklenemedi."
+msgstr "Görsele GPS bilgisi eklenemedi."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:929
 #, kde-format
 msgid "Failed to remove GPS info from image"
-msgstr "GPS bilgisi resimden kaldırılamadı"
+msgstr "Görselden GPS bilgisi kaldırılamadı."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:964
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:972
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:996
 #, kde-format
 msgid "Failed to save tags to file."
-msgstr "Etiketleri dosyaya kaydetme başarısız."
+msgstr "Dosyaya etiketler kaydedilemedi."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1008
 #, kde-format
 msgid "Unable to save changes to file"
-msgstr "Değişiklikler dosyaya kaydedilemedi"
+msgstr "Dosyaya değişiklikler kaydedilemedi."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:103
 #, kde-format
 msgid "Paste coordinates"
-msgstr "Koordinatları yapıştır"
+msgstr "Koordinatları Yapıştır"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:105
-#, fuzzy, kde-format
-#| msgid "Paste coordinates"
+#, kde-format
 msgid "Paste coordinates swapped"
-msgstr "Koordinatları yapıştır"
+msgstr "Takas Edilen Koordinatları Yapıştır"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:107
 #, kde-format
 msgid "Remove coordinates"
-msgstr "Koordinatları kaldır"
+msgstr "Koordinatları Kaldır"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:108
 #, kde-format
 msgid "Remove altitude"
-msgstr "Enlemi kaldır"
+msgstr "Rakımı Kaldır"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:109
 #, kde-format
 msgid "Remove uncertainty"
-msgstr "Şüpheleri kaldır"
+msgstr "Belirsizliği Kaldır"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:110
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:708
 #, kde-format
 msgid "Remove speed"
-msgstr "Hızı kaldır"
+msgstr "Hızı Kaldır"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:111
 #, kde-format
 msgid "Look up missing altitude values"
-msgstr "Eksik yükseklik değerlerini ara"
+msgstr "Eksik Rakım Değerlerine Bak"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #, kde-format
@@ -53782,13 +53698,12 @@ msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
 "time."
 msgstr ""
-"Panoda birden fazla nokta bulundu - bir seferde yalnızca bir nokta "
-"atanabilir."
+"Panoda birden fazla nokta bulundu - bir kerede yalnızca bir nokta atanabilir."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
-msgstr "Panoda hiç koordinat bulunamadı."
+msgstr "Panoda hiçbir koordinat bulunamadı."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:544
 #, kde-format
@@ -53798,27 +53713,27 @@ msgstr "Yapıştırılan koordinatlar"
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:576
 #, kde-format
 msgid "Bookmark selected"
-msgstr "Seçilen yer imi"
+msgstr "Seçili yer imi"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:687
 #, kde-format
 msgid "Remove coordinates information"
-msgstr "Koordinat bilgisini kaldır"
+msgstr "Koordinat Bilgisini Kaldır"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:692
 #, kde-format
 msgid "Remove altitude information"
-msgstr "Yükseklik bilgisini kaldır"
+msgstr "Rakım Bilgisini Kaldır"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:698
 #, kde-format
 msgid "Remove uncertainty information"
-msgstr "Şüphe bilgisini kaldır"
+msgstr "Belirsizlik Bilgisini Kaldır"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:763
 #, kde-format
 msgid "Looking up altitudes"
-msgstr "Yükseklikler aranıyor"
+msgstr "Rakıma bakılıyor"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:814
 #, kde-format
@@ -53826,13 +53741,13 @@ msgid ""
 "Altitude lookup failed:\n"
 "%1"
 msgstr ""
-"Yükseklik arama başarısız:\n"
+"Rakım arama başarısız:\n"
 "%1"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:822
 #, kde-format
 msgid "Altitude looked up"
-msgstr "Yükseklik arandı"
+msgstr "Rakım arandı"
 
 #: core/utilities/geolocation/geoiface/lookup/lookupaltitudegeonames.cpp:110
 #, kde-format
@@ -53842,181 +53757,175 @@ msgstr "geonames.org"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:71
 #, kde-format
 msgid "{Country}"
-msgstr "{Country}"
+msgstr "{Ülke}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:72
 #, kde-format
 msgctxt "Part of a country"
 msgid "{State}"
-msgstr "{State}"
+msgstr "{Eyalet}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Statistics"
+#, kde-format
 msgid "{State district}"
-msgstr "İstatistikler"
+msgstr "{Eyalet Bölgesi}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:74
 #, kde-format
 msgid "{County}"
-msgstr "{County}"
+msgstr "{İlçe}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:75
 #, kde-format
 msgid "{City}"
-msgstr "{City}"
+msgstr "{Şehir}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:76
-#, fuzzy, kde-format
-#| msgid "Add city district tag"
+#, kde-format
 msgid "{City district}"
-msgstr "Şehir bölgesi etiketi ekle"
+msgstr "{Şehir Bölgesi}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:77
 #, kde-format
 msgid "{Suburb}"
-msgstr ""
+msgstr "{Banliyö}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:78
 #, kde-format
 msgid "{Town}"
-msgstr "{Town}"
+msgstr "{Kasaba}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:79
 #, kde-format
 msgid "{Village}"
-msgstr "{Village}"
+msgstr "{Köy}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:80
 #, kde-format
 msgid "{Hamlet}"
-msgstr "{Hamlet}"
+msgstr "{Mezra}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:81
 #, kde-format
 msgid "{Street}"
-msgstr "{Street}"
+msgstr "{Sokak}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:82
-#, fuzzy, kde-format
-#| msgid "Add house number tag"
+#, kde-format
 msgid "{House number}"
-msgstr "Ev numarası etiketi ekle"
+msgstr "{Ev numarası}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "Replace string"
-#| msgid "Replace:"
+#, kde-format
 msgid "{Place}"
-msgstr "Değiştir:"
+msgstr "{Yer}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:84
 #, kde-format
 msgctxt "Local administrative area 1"
 msgid "{LAU1}"
-msgstr ""
+msgstr "{Yerel yönetim alanı 1}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:85
 #, kde-format
 msgctxt "Local administrative area 2"
 msgid "{LAU2}"
-msgstr ""
+msgstr "{Yerel yönetim alanı 2}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:221
 #, kde-format
 msgid "Add country tag"
-msgstr "Ülke etiketi ekle"
+msgstr "Ülke Etiketi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:223
 #, kde-format
 msgid "Add state tag"
-msgstr "Durum etiketi ekle"
+msgstr "Eyalet Etiketi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:225
 #, kde-format
 msgid "Add state district tag"
-msgstr "Bölge etiketi ekle"
+msgstr "Eyalet Bölgesi Etiketi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:227
 #, kde-format
 msgid "Add county tag"
-msgstr "İlçe etiketi ekle"
+msgstr "İlçe Etiketi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:229
 #, kde-format
 msgid "Add city tag"
-msgstr "Şehir etiketi ekle"
+msgstr "Şehir Etiketi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:231
 #, kde-format
 msgid "Add city district tag"
-msgstr "Şehir bölgesi etiketi ekle"
+msgstr "Şehir Bölgesi Etiketi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:233
 #, kde-format
 msgid "Add suburb tag"
-msgstr "Mahalle etiketi ekle"
+msgstr "Banliyö Etiketi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:235
 #, kde-format
 msgid "Add town tag"
-msgstr "Kasaba etiketi ekle"
+msgstr "Kasaba Etiketi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:237
 #, kde-format
 msgid "Add village tag"
-msgstr "Köy etiketi ekle"
+msgstr "Köy Etiketi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:239
 #, kde-format
 msgid "Add hamlet tag"
-msgstr "Mezra etiketi ekle"
+msgstr "Mezra Etiketi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:241
 #, kde-format
 msgid "Add street"
-msgstr "Sokak ekle"
+msgstr "Sokak Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:243
 #, kde-format
 msgid "Add house number tag"
-msgstr "Ev numarası etiketi ekle"
+msgstr "Ev Numarası Etiketi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:245
 #, kde-format
 msgid "Add place"
-msgstr "Konum ekle"
+msgstr "Yer Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:247
 #, kde-format
 msgid "Add Local Administrative Area 2"
-msgstr "Ekle: Yerel Yönetim Bölgesi 2"
+msgstr "Yerel Yönetim Bölgesi 2 Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:249
 #, kde-format
 msgid "Add Local Administrative Area 1"
-msgstr "Ekle: Yerel Yönetim Bölgesi 1"
+msgstr "Yerel Yönetim Bölgesi 1 Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:251
 #, kde-format
 msgid "Add new tag"
-msgstr "Yeni etiket ekle"
+msgstr "Yeni Etiket Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Remove selected tag"
-msgstr "Seçilen etiketleri sil"
+msgstr "Seçili Etiketleri Kaldır"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
 #, kde-format
 msgid "Remove all control tags below this tag"
-msgstr "Bu etiket altındaki tüm denetim etiketlerini kaldır"
+msgstr "Bu Etiket Altındaki Tüm Denetim Etiketlerini Kaldır"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
 #, kde-format
 msgid "Add all address elements"
-msgstr "Tüm adres elemanlarını ekle"
+msgstr "Tüm Adres Ögelerini Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:259
 #, kde-format
@@ -54031,7 +53940,7 @@ msgstr "Hizmet seç:"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
 #, kde-format
 msgid "Open Street Map"
-msgstr "Açık Sokak Haritaları"
+msgstr "OpenStreetMap"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:273
 #, kde-format
@@ -54047,7 +53956,7 @@ msgstr "Geonames.org tam adres (yalnızca ABD)"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:486
 #, kde-format
 msgid "Less options"
-msgstr "Daha az seçenek"
+msgstr "Daha Az Seçenek"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:293
 #, kde-format
@@ -54055,35 +53964,30 @@ msgid "Write locations as tags"
 msgstr "Konumları etiketler olarak yaz"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Write flag to metadata if possible"
+#, kde-format
 msgid "Write locations metadata"
-msgstr "Mümkünse bayrağı metaveriye yaz"
+msgstr "Konumlar üst verisini yaz"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:301
-#, fuzzy, kde-format
-#| msgid "Abort reverse geocoding?"
+#, kde-format
 msgid "Process reverse geocoding"
-msgstr "Ters konumlanmayı iptal et?"
+msgstr "Ters Konumlamayı İşle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:429
 #, kde-format
 msgid "Image tags are changed."
-msgstr "Resim etiketleri değiştirildi."
+msgstr "Görsel etiketleri değiştirildi."
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:465
 #, kde-format
 msgid "Retrieving RG info -"
-msgstr "RG bilgisi geri alınıyor -"
+msgstr "RG bilgisi alınıyor -"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:502
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Reverse Geocoding"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
-msgstr "Ters Coğrafi Konumlama"
+msgstr "Ters Konumlama Hatası"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:842
 #, kde-format
@@ -54094,43 +53998,36 @@ msgstr "Yeni Etiket Ekle"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:843
 #, kde-format
 msgid "Select a name for the new tag:"
-msgstr "Yeni etiket için bir ad seçin:"
+msgstr "Yeni etiket için bir ad seç:"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:986
-#, fuzzy, kde-format
-#| msgid ""
-#| "%1 out of %2 images have been reverse geocoded. Would you like to keep "
-#| "the tags which were already obtained or discard them?"
+#, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
 "tags which were already obtained?"
 msgstr ""
-"%1/%2 resim ters konumlandırma işi tamamlandı. Elde edilen etiketleri "
-"korumak mı yoksa silmek mi istersiniz?"
+"%1/%2 görsel tersine coğrafi konumlandı. Halihazırda elde edilmiş etiketleri "
+"tutmak ister miydiniz?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:993
-#, fuzzy, kde-format
-#| msgid ""
-#| "%1 out of %2 images have been reverse geocoded. Would you like to keep "
-#| "the tags which were already obtained or discard them?"
+#, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
 "were already obtained?"
 msgstr ""
-"%1/%2 resim ters konumlandırma işi tamamlandı. Elde edilen etiketleri "
-"korumak mı yoksa silmek mi istersiniz?"
+"1 görsel tersine coğrafi konumlandı. Halihazırda elde edilmiş etiketleri "
+"tutmak ister miydiniz?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:999
-#, fuzzy, kde-format
-#| msgid "Abort reverse geocoding?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
-msgstr "Ters konumlanmayı iptal et?"
+msgstr "Ters Konumlamayı İptal Et?"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:234
 #, kde-format
 msgid "Could not open: %1"
-msgstr "Açılamıyor: %1"
+msgstr "Açılamadı: %1"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:241
 #, kde-format
@@ -54168,32 +54065,32 @@ msgstr "Uzaklaştır"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:482
 #, kde-format
 msgid "Switch between markers and thumbnails."
-msgstr "İşaretleyiciler ve küçük resimler arasında gezin."
+msgstr "İmleyiciler ve küçük görseller arasında geçiş yapın."
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:500
 #, kde-format
 msgid "Preview single items"
-msgstr "Tek nesneleri önizle"
+msgstr "Tek Nesneleri Önizle"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:503
 #, kde-format
 msgid "Preview grouped items"
-msgstr "Gruplandırılmış nesneleri önizle"
+msgstr "Gruplandırılmış Nesneleri Önizle"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:506
 #, kde-format
 msgid "Show numbers"
-msgstr "Numaraları göster"
+msgstr "Numaraları Göster"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:512
 #, kde-format
 msgid "Increase the thumbnail size on the map"
-msgstr "Harita üzerindeki küçük resim boyutunu büyüt"
+msgstr "Harita üzerindeki küçük görsel boyutunu büyüt"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:515
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
-msgstr "Harita üzerindeki küçük resim boyutunu küçült"
+msgstr "Harita üzerindeki küçük görsel boyutunu küçült"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:522
 #, kde-format
@@ -54203,7 +54100,7 @@ msgstr "Geçerli bölge seçimini kaldır"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:530
 #, kde-format
 msgid "Select images by drawing a rectangle"
-msgstr "Resimleri bir dikdörtgen çizerek seçin"
+msgstr "Resimleri bir dikdörtgen çizerek seç"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:535
 #, kde-format
@@ -54218,22 +54115,22 @@ msgstr "Bir gruba yakınlaştır"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:548
 #, kde-format
 msgid "Create a region selection from a thumbnail"
-msgstr "Bir küçük resimden bölge seçimi oluştur"
+msgstr "Bir küçük görselden bölge seçimi oluştur"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:554
 #, kde-format
 msgid "Filter images"
-msgstr "Resimleri filtrele"
+msgstr "Resimleri süz"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:559
 #, kde-format
 msgid "Remove the current filter"
-msgstr "Geçerli filtreyi kaldır"
+msgstr "Geçerli süzgeci kaldır"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:564
 #, kde-format
 msgid "Select images"
-msgstr "Resimleri seç"
+msgstr "Görseller seç"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:570
 #, kde-format
@@ -54241,10 +54138,9 @@ msgid "Lock the map position"
 msgstr "Harita konumunu kilitle"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:573
-#, fuzzy, kde-format
-#| msgid "Load playlist from a file."
+#, kde-format
 msgid "Load tracks from albums"
-msgstr "Bir dosyadan parça listesi yükle."
+msgstr "Albümden parçalar yükle"
 
 #: core/utilities/geolocation/geoiface/widgets/placeholderwidget.cpp:49
 #, kde-format
@@ -54259,12 +54155,12 @@ msgstr "Sıralama"
 #: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:197
 #, kde-format
 msgid "Show oldest first"
-msgstr "Eski olanı ilk göster"
+msgstr "En eski en önce"
 
 #: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:201
 #, kde-format
 msgid "Show youngest first"
-msgstr "İlk olarak en yeni olanı göster"
+msgstr "En yeni en önce"
 
 #: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:205
 #, kde-format
@@ -54277,13 +54173,13 @@ msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
 "view."
 msgstr ""
-"Kaydedilecek geçerli harita aramasının adını \"Harita Aramaları\" görünümüne "
+"\"Harita Aramaları\" görünümüne kaydedilecek geçerli harita aramasının adını "
 "girin."
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:165
 #, kde-format
 msgid "Save current map search to a new virtual album."
-msgstr "Mevcut harita aramasını yeni sanal albüme kaydet."
+msgstr "Geçerli harita aramasını yeni bir sanal albüme kaydedin."
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:166
 #, kde-format
@@ -54291,8 +54187,8 @@ msgid ""
 "If this button is pressed, the current map search will be saved to a new "
 "search virtual album using the name set on the left side."
 msgstr ""
-"Eğer bu tuşa basılırsa mevcut harita araması sol taraftaki isim kümesi "
-"kullanılarak yeni sanal arama albümüne kaydedilecek."
+"Bu düğmeye basarsanız geçerli harita araması, sol tarafta ayarlanan ad "
+"kullanılarak yeni bir arama sanal albümüne kaydedilecektir."
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:211
 #, kde-format
@@ -54312,134 +54208,123 @@ msgid ""
 "Search name already exists.\n"
 "Please enter a new name:"
 msgstr ""
-"Arama adı zaten var.\n"
-"Lütfen yeni bir isim girin:"
+"Arama adı halihazırda var.\n"
+"Lütfen yeni bir ad girin:"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:116
 #: core/utilities/searchwindow/searchtabheader.cpp:586
-#, fuzzy, kde-format
-#| msgid "Name exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
-msgstr "Bu isim var"
+msgstr "Ad Var"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:660
 #, kde-format
 msgid "Non Geo-located Items"
-msgstr "Coğrafik konumlanmamış ögeler"
+msgstr "Coğrafi Konumlanmamış Ögeler"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:233
-#, fuzzy, kde-format
-#| msgid "Mercator"
+#, kde-format
 msgctxt "the planet"
 msgid "Mercury"
-msgstr "Merkator"
+msgstr "Merkür"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:235
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
-msgstr ""
+msgstr "Venüs"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:237
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
-msgstr ""
+msgstr "Dünya"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:239
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
-msgstr ""
+msgstr "Mars"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:241
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
-msgstr ""
+msgstr "Jüpiter"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:243
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgctxt "the planet"
 msgid "Saturn"
-msgstr "Doygunluk"
+msgstr "Satürn"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:245
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
-msgstr ""
+msgstr "Uranüs"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:247
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
-msgstr ""
+msgstr "Neptün"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:250
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
-msgstr ""
+msgstr "Plüto"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@item: WB temperature preset"
-#| msgid "Sun"
+#, kde-format
 msgctxt "the earth's star"
 msgid "Sun"
 msgstr "Güneş"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@item: WB temperature preset"
-#| msgid "Moonlight"
+#, kde-format
 msgctxt "the earth's moon"
 msgid "Moon"
-msgstr "Ay Işığı"
+msgstr "Ay"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:257
 #, kde-format
 msgid "Sky"
-msgstr ""
+msgstr "Gökyüzü"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:260
-#, fuzzy, kde-format
-#| msgid "Unknown title"
+#, kde-format
 msgctxt "a planet without data"
 msgid "Unknown Planet"
-msgstr "Bilinmeyen başlık"
+msgstr "Bilinmeyen Gezegen"
 
 #: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:271
 #, kde-format
 msgid "&Lock"
-msgstr ""
+msgstr "&Kilitle"
 
 #: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:277
 #, kde-format
 msgid "&Hide"
-msgstr ""
+msgstr "&Gizle"
 
 #: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:286
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:378
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "&Configure..."
-msgstr "Yapılandır..."
+msgstr "&Yapılandır..."
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:146
-#, fuzzy, kde-format
-#| msgid "cm"
+#, kde-format
 msgctxt "means meter"
 msgid "m"
-msgstr "cm"
+msgstr "m"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:148
-#, fuzzy, kde-format
-#| msgid "mm"
+#, kde-format
 msgctxt "means milimeters"
 msgid "mm"
 msgstr "mm"
@@ -54448,27 +54333,22 @@ msgstr "mm"
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:152
-#, fuzzy, kde-format
-#| msgid "cm"
+#, kde-format
 msgctxt "means centimeters"
 msgid "cm"
 msgstr "cm"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@action: rotate image left"
-#| msgid "Left"
+#, kde-format
 msgctxt "means feet"
 msgid "ft"
-msgstr "Sol"
+msgstr "ay"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "Inches"
-#| msgid "in"
+#, kde-format
 msgctxt "means inches"
 msgid "in"
 msgstr "inç"
@@ -54477,43 +54357,39 @@ msgstr "inç"
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
-msgstr ""
+msgstr "yd"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:160
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
-msgstr ""
+msgstr "mi"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:162
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
-msgstr ""
+msgstr "dm"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:108
-#, fuzzy, kde-format
-#| msgid "Copy coordinates"
+#, kde-format
 msgid "Copy Coordinates"
-msgstr "Koordinatları kopyala"
+msgstr "Koordinatları Kopyala"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:109
 #, kde-format
 msgid "Copy geo: URL"
-msgstr ""
+msgstr "geo: URL'sini Kopyala"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Details"
+#, kde-format
 msgid "&Address Details"
-msgstr "Ayrıntılar"
+msgstr "&Adres Ayrıntıları"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:142
-#, fuzzy, kde-format
-#| msgid "No description available"
+#, kde-format
 msgid "No description available."
-msgstr "Açıklama mevcut değil"
+msgstr "Kullanılabilir açıklama yok."
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:345
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:358
@@ -54521,7 +54397,7 @@ msgstr "Açıklama mevcut değil"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:367
 #, kde-format
 msgid "National Capital"
-msgstr ""
+msgstr "Ulusal Başkent"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:347
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:324
@@ -54530,10 +54406,9 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:336
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:356
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Şehir:"
+msgstr "Şehir"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:349
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:326
@@ -54542,7 +54417,7 @@ msgstr "Şehir:"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:338
 #, kde-format
 msgid "State Capital"
-msgstr ""
+msgstr "Eyalet Başkenti"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:351
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:325
@@ -54551,1878 +54426,1713 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:337
 #, kde-format
 msgid "County Capital"
-msgstr ""
+msgstr "İlçe Başkenti"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:354
 #, kde-format
 msgid "Capital"
-msgstr ""
+msgstr "Başkent"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:362
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
-#, fuzzy, kde-format
-#| msgid "{Village}"
+#, kde-format
 msgid "Village"
-msgstr "{Village}"
+msgstr "Köy"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:506
 #, kde-format
 msgid "&Info Boxes"
-msgstr ""
+msgstr "&Bilgi Kutuları"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:806
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Details"
+#, kde-format
 msgid "Address Details"
-msgstr "Ayrıntılar"
+msgstr "Adres Ayrıntıları"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
 msgid "W"
-msgstr ""
+msgstr "B"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
 msgid "E"
-msgstr ""
+msgstr "D"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:619
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "Image filter reproducible: No"
-#| msgid "No"
+#, kde-format
 msgid "N"
-msgstr "Hayır"
+msgstr "K"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:619
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:141
 #, kde-format
 msgid "S"
-msgstr ""
+msgstr "G"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:315
 #, kde-format
 msgid "Valley"
-msgstr ""
+msgstr "Vadi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:317
 #, kde-format
 msgid "Crater"
-msgstr ""
+msgstr "Krater"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:318
-#, fuzzy, kde-format
-#| msgctxt "Advanced search images, access stored searches"
-#| msgid "Search"
+#, kde-format
 msgid "Sea"
-msgstr "Ara"
+msgstr "Deniz"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:319
 #, kde-format
 msgid "Manned Landing Site"
-msgstr ""
+msgstr "İnsanlı İniş Alanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:320
 #, kde-format
 msgid "Robotic Rover"
-msgstr ""
+msgstr "Robot Rover"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:321
 #, kde-format
 msgid "Unmanned Soft Landing Site"
-msgstr ""
+msgstr "İnsansız Yumuşak İniş Alanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:322
 #, kde-format
 msgid "Unmanned Hard Landing Site"
-msgstr ""
+msgstr "İnsansız Sert İniş Alanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:323
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:341
-#, fuzzy, kde-format
-#| msgid "Count"
+#, kde-format
 msgid "Mountain"
-msgstr "Sayı"
+msgstr "Dağ"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:327
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:331
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:335
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:339
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "Nation Capital"
-msgstr "Oransal"
+msgstr "Ulus Başkenti"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:340
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgid "Nation"
-msgstr "Alt Yazı"
+msgstr "Ulus"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:342
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:460
 #, kde-format
 msgid "Volcano"
-msgstr ""
+msgstr "Yanardağ"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:343
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Content"
+#, kde-format
 msgid "Continent"
-msgstr "İçerik"
+msgstr "Kıta"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:344
 #, kde-format
 msgid "Ocean"
-msgstr ""
+msgstr "Okyanus"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:345
-#, fuzzy, kde-format
-#| msgid "Geographic position"
+#, kde-format
 msgid "Geographic Pole"
-msgstr "Coğrafi konum"
+msgstr "Coğrafi Kutup"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:346
 #, kde-format
 msgid "Magnetic Pole"
-msgstr ""
+msgstr "Manyetik Kutup"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:347
 #, kde-format
 msgid "Ship Wreck"
-msgstr ""
+msgstr "Gemi Enkazı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:348
-#, fuzzy, kde-format
-#| msgctxt "@title: camera port"
-#| msgid "Port"
+#, kde-format
 msgid "Air Port"
-msgstr "Port"
+msgstr "Havaalanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:349
-#, fuzzy, kde-format
-#| msgid "Iteration:"
+#, kde-format
 msgid "Observatory"
-msgstr "Yineleme:"
+msgstr "Gözlemevi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:350
 #, kde-format
 msgid "Military Danger Area"
-msgstr ""
+msgstr "Askeri Tehlike Bölgesi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:351
 #, kde-format
 msgid "OSM Site"
-msgstr ""
+msgstr "OSM Alanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:352
-#, fuzzy, kde-format
-#| msgid "Coordinates"
+#, kde-format
 msgid "Coordinate"
-msgstr "Koordinatlar"
+msgstr "Koordinat"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:357
 #, kde-format
 msgid "City Capital"
-msgstr ""
+msgstr "Şehir Başkenti"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:359
 #, kde-format
 msgid "Suburb"
-msgstr ""
+msgstr "Banliyö"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:360
-#, fuzzy, kde-format
-#| msgid "{Hamlet}"
+#, kde-format
 msgid "Hamlet"
-msgstr "{Hamlet}"
+msgstr "Mezra"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:361
-#, fuzzy, kde-format
-#| msgid "Normalize"
+#, kde-format
 msgid "Locality"
-msgstr "Normalleştir"
+msgstr "Muhit"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:362
-#, fuzzy, kde-format
-#| msgid "{Town}"
+#, kde-format
 msgid "Town"
-msgstr "{Town}"
+msgstr "Kasaba"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:363
 #, kde-format
 msgid "Town Capital"
-msgstr ""
+msgstr "Kasaba Başkenti"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:366
-#, fuzzy, kde-format
-#| msgid "Add village tag"
+#, kde-format
 msgid "Village Capital"
-msgstr "Köy etiketi ekle"
+msgstr "Köy Başkenti"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:368
 #, kde-format
 msgid "Water"
-msgstr ""
+msgstr "Su"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:369
 #, kde-format
 msgid "Reef"
-msgstr ""
+msgstr "Resif"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:370
-#, fuzzy, kde-format
-#| msgctxt "@item: texture type"
-#| msgid "Cell Wood"
+#, kde-format
 msgid "Wood"
-msgstr "Odunsu Hücre"
+msgstr "Odun"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:371
-#, fuzzy, kde-format
-#| msgctxt "@info: effect type"
-#| msgid "Bleach"
+#, kde-format
 msgid "Beach"
-msgstr "Beyazlatma"
+msgstr "Kumsal"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:372
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Iceland"
+#, kde-format
 msgid "Wetland"
-msgstr "İzlanda"
+msgstr "Sulak Alan"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:373
 #, kde-format
 msgid "Glacier"
-msgstr ""
+msgstr "Buzul"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:374
 #, kde-format
 msgid "Ice Shelf"
-msgstr ""
+msgstr "Buz Sahanlığı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:375
 #, kde-format
 msgid "Scrub"
-msgstr ""
+msgstr "Bodur"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:376
 #, kde-format
 msgid "Cliff"
-msgstr ""
+msgstr "Uçurum"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:377
-#, fuzzy, kde-format
-#| msgid "Feather:"
+#, kde-format
 msgid "Heath"
-msgstr "Yumuşat:"
+msgstr "Çalı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:378
 #, kde-format
 msgid "Traffic Signals"
-msgstr ""
+msgstr "Trafik İşaretleri"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:379
-#, fuzzy, kde-format
-#| msgctxt "@label: item creator"
-#| msgid "Creator"
+#, kde-format
 msgid "Elevator"
-msgstr "Oluşturucu"
+msgstr "Asansör"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:380
-#, fuzzy, kde-format
-#| msgctxt "stepping for custom range"
-#| msgid "Step:"
+#, kde-format
 msgid "Steps"
-msgstr "Adım:"
+msgstr "Merdivenler"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:381
-#, fuzzy, kde-format
-#| msgid "Unknown Format"
+#, kde-format
 msgid "Unknown Road"
-msgstr "Bilinmeyen Biçim"
+msgstr "Bilinmeyen Yol"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:383
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:385
 #, kde-format
 msgid "Footway"
-msgstr ""
+msgstr "Kaldırım"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:384
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@item: linetrack over the map"
-#| msgid "Track"
+#, kde-format
 msgid "Track"
 msgstr "İz"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:386
-#, fuzzy, kde-format
-#| msgid "Cycle:"
+#, kde-format
 msgid "Cycleway"
-msgstr "Dolaşım:"
+msgstr "Bisiklet Yolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:387
-#, fuzzy, kde-format
-#| msgid "Service ID:"
+#, kde-format
 msgid "Service Road"
-msgstr "Hizmet kimliği:"
+msgstr "Servis Yolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:388
-#, fuzzy, kde-format
-#| msgid "Roadmap"
+#, kde-format
 msgid "Road"
-msgstr "Yol Haritası"
+msgstr "Yol"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:389
 #, kde-format
 msgid "Residential Road"
-msgstr ""
+msgstr "Meskun Yol"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:390
 #, kde-format
 msgid "Living Street"
-msgstr ""
+msgstr "Canlı Sokak"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:391
 #, kde-format
 msgid "Unclassified Road"
-msgstr ""
+msgstr "Sınıflandırılmamış Yol"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:392
 #, kde-format
 msgid "Tertiary Link Road"
-msgstr ""
+msgstr "Üçüncül Bağlantı Yolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:393
 #, kde-format
 msgid "Tertiary Road"
-msgstr ""
+msgstr "Üçüncül Yol"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:394
 #, kde-format
 msgid "Secondary Link Road"
-msgstr ""
+msgstr "İkincil Bağlantı Yolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:395
 #, kde-format
 msgid "Secondary Road"
-msgstr ""
+msgstr "İkincil Yol"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:396
 #, kde-format
 msgid "Primary Link Road"
-msgstr ""
+msgstr "Birincil Bağlantı Yolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:397
 #, kde-format
 msgid "Primary Road"
-msgstr ""
+msgstr "Birincil Yol"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:398
 #, kde-format
 msgid "Raceway"
-msgstr ""
+msgstr "Yarış Pisti"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:399
 #, kde-format
 msgid "Trunk Link Road"
-msgstr ""
+msgstr "Ana Bağlantı Yolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:400
 #, kde-format
 msgid "Trunk Road"
-msgstr ""
+msgstr "Ana Yol"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:401
 #, kde-format
 msgid "Motorway Link Road"
-msgstr ""
+msgstr "Otoban Bağlantı Yolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:402
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Norway"
+#, kde-format
 msgid "Motorway"
-msgstr "Norveç"
+msgstr "Otoban"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:403
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Corrections"
+#, kde-format
 msgid "Corridor"
-msgstr "Düzeltmeler"
+msgstr "Koridor"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:404
-#, fuzzy, kde-format
-#| msgctxt "@item: icc profile properties"
-#| msgid "Profile Version"
+#, kde-format
 msgid "Building"
-msgstr "Profil Sürümü"
+msgstr "Yapı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:405
 #, kde-format
 msgid "Camping"
-msgstr ""
+msgstr "Kamp"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:406
-#, fuzzy, kde-format
-#| msgid "Host Name"
+#, kde-format
 msgid "Hostel"
-msgstr "Ana Makine Adı"
+msgstr "Pansiyon"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:407
 #, kde-format
 msgid "Hotel"
-msgstr ""
+msgstr "Otel"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:408
 #, kde-format
 msgid "Motel"
-msgstr ""
+msgstr "Motel"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:409
 #, kde-format
 msgid "Youth Hostel"
-msgstr ""
+msgstr "Gençlik Pansiyonu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:410
 #, kde-format
 msgid "Guest House"
-msgstr ""
+msgstr "Konukevi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:411
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Library"
+#, kde-format
 msgid "Library"
-msgstr "Kitaplık"
+msgstr "Kütüphane"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "@item: scene code"
-#| msgid "Under-water"
+#, kde-format
 msgid "Kindergarten"
-msgstr "Sualtı"
+msgstr "Ana Okulu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:413
 #, kde-format
 msgid "College"
-msgstr ""
+msgstr "Kolej"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:414
 #, kde-format
 msgid "School"
-msgstr ""
+msgstr "Okul"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:415
-#, fuzzy, kde-format
-#| msgid "Intensity:"
+#, kde-format
 msgid "University"
-msgstr "Yoğunluk:"
+msgstr "Üniversite"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:416
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Bihari"
+#, kde-format
 msgid "Bar"
-msgstr "Bihari"
+msgstr "Bar"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:417
 #, kde-format
 msgid "Biergarten"
-msgstr ""
+msgstr "Biraevi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:418
 #, kde-format
 msgid "Cafe"
-msgstr ""
+msgstr "Kafe"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:419
 #, kde-format
 msgid "Fast Food"
-msgstr ""
+msgstr "Tez Yemek"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:420
-#, fuzzy, kde-format
-#| msgctxt "photo permissions"
-#| msgid "Public"
+#, kde-format
 msgid "Pub"
-msgstr "Genel"
+msgstr "Meyhane"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:421
-#, fuzzy, kde-format
-#| msgid "Restoration"
+#, kde-format
 msgid "Restaurant"
-msgstr "Restorasyon"
+msgstr "Restoran"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:422
 #, kde-format
 msgid "Dentist"
-msgstr ""
+msgstr "Dişçi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:423
-#, fuzzy, kde-format
-#| msgctxt "renaming option for directory related information"
-#| msgid "Directory"
+#, kde-format
 msgid "Doctors"
-msgstr "Dizin"
+msgstr "Doktor"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:424
 #, kde-format
 msgid "Hospital"
-msgstr ""
+msgstr "Hastane"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:425
 #, kde-format
 msgid "Pharmacy"
-msgstr ""
+msgstr "Eczane"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:426
-#, fuzzy, kde-format
-#| msgctxt "@title: binary properties"
-#| msgid "Binary"
+#, kde-format
 msgid "Veterinary"
-msgstr "İkili"
+msgstr "Veteriner"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:427
 #, kde-format
 msgid "ATM"
-msgstr ""
+msgstr "Bankamatik"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:428
 #, kde-format
 msgid "Bank"
-msgstr ""
+msgstr "Banka"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:429
 #, kde-format
 msgid "Archaeological Site"
-msgstr ""
+msgstr "Arkeolojik Site"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:430
 #, kde-format
 msgid "Embassy"
-msgstr ""
+msgstr "Büyükelçilik"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:431
 #, kde-format
 msgid "Emergency Phone"
-msgstr ""
+msgstr "Acil Durum Telefonu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:432
 #, kde-format
 msgid "Mountain Rescue"
-msgstr ""
+msgstr "Dağ Arama-Kurtarma"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:433
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Add Watermark"
+#, kde-format
 msgid "Water Park"
-msgstr "Filigran Ekle"
+msgstr "Su Parkı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:434
-#, fuzzy, kde-format
-#| msgid "Comment Change"
+#, kde-format
 msgid "Community Centre"
-msgstr "Açıklama Değişikliği"
+msgstr "Toplum Merkezi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:435
-#, fuzzy, kde-format
-#| msgid "Count"
+#, kde-format
 msgid "Fountain"
-msgstr "Sayı"
+msgstr "Çeşme"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:436
 #, kde-format
 msgid "Night Club"
-msgstr ""
+msgstr "Gece Kulübü"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:437
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "French"
+#, kde-format
 msgid "Bench"
-msgstr "Fransızca"
+msgstr "Bank"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:438
 #, kde-format
 msgid "Court House"
-msgstr ""
+msgstr "Adalet Sarayı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:439
-#, fuzzy, kde-format
-#| msgid "Free Rotation"
+#, kde-format
 msgid "Fire Station"
-msgstr "Serbest Döndürme"
+msgstr "İtfaiye"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:440
-#, fuzzy, kde-format
-#| msgid "Printing canceled"
+#, kde-format
 msgid "Hunting Stand"
-msgstr "Baskı iptal edildi"
+msgstr "Av Tezgahı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:441
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Polish"
+#, kde-format
 msgid "Police"
-msgstr "Lehçe"
+msgstr "Polis"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:442
-#, fuzzy, kde-format
-#| msgid "Postal code:"
+#, kde-format
 msgid "Post Box"
-msgstr "Posta kodu:"
+msgstr "Posta Kutusu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:443
-#, fuzzy, kde-format
-#| msgid "Postal code:"
+#, kde-format
 msgid "Post Office"
-msgstr "Posta kodu:"
+msgstr "Postane"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:444
 #, kde-format
 msgid "Prison"
-msgstr ""
+msgstr "Cezaevi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:445
-#, fuzzy, kde-format
-#| msgid "Scaling"
+#, kde-format
 msgid "Recycling"
-msgstr "Ölçekleme"
+msgstr "Geri Dönüşüm"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:446
-#, fuzzy, kde-format
-#| msgid "Sepia Filter"
+#, kde-format
 msgid "Shelter"
-msgstr "Sepya Filtresi"
+msgstr "Sığınak"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:447
 #, kde-format
 msgid "Telephone"
-msgstr ""
+msgstr "Telefon"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:448
 #, kde-format
 msgid "Toilets"
-msgstr ""
+msgstr "Tuvalet"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:449
 #, kde-format
 msgid "Town Hall"
-msgstr ""
+msgstr "Belediye Binası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:450
 #, kde-format
 msgid "Waste Basket"
-msgstr ""
+msgstr "Atık Sepeti"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:451
-#, fuzzy, kde-format
-#| msgid "shrinking databases"
+#, kde-format
 msgid "Drinking Water"
-msgstr "veritabanları daraltılıyor"
+msgstr "İçme Suyu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:452
 #, kde-format
 msgid "Graveyard"
-msgstr ""
+msgstr "Mezarlık"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:453
-#, fuzzy, kde-format
-#| msgid "Orientation"
+#, kde-format
 msgid "Charging Station"
-msgstr "Yönelim"
+msgstr "Şarj İstasyonu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:454
 #, kde-format
 msgid "Car Wash"
-msgstr ""
+msgstr "Araba Yıkama"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:455
 #, kde-format
 msgid "Social Facility"
-msgstr ""
+msgstr "Sosyal Tesis"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:456
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City Wall"
-msgstr "Şehir:"
+msgstr "Şehir Duvarı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:457
 #, kde-format
 msgid "Gate"
-msgstr ""
+msgstr "Ana Kapı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:458
 #, kde-format
 msgid "Lift Gate"
-msgstr ""
+msgstr "Sürgülü Kapı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:459
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:667
-#, fuzzy, kde-format
-#| msgctxt "@item: texture type"
-#| msgid "Wall"
+#, kde-format
 msgid "Wall"
 msgstr "Duvar"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:461
 #, kde-format
 msgid "Peak"
-msgstr ""
+msgstr "Tepe"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:462
 #, kde-format
 msgid "Tree"
-msgstr ""
+msgstr "Ağaç"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:463
 #, kde-format
 msgid "Cave Entrance"
-msgstr ""
+msgstr "Mağara Girişi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "metering mode"
-#| msgid "Average"
+#, kde-format
 msgid "Beverages"
-msgstr "Ortalama"
+msgstr "İçecek"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:465
 #, kde-format
 msgid "Hifi"
-msgstr ""
+msgstr "Yüksek Duyarlık"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:466
 #, kde-format
 msgid "Supermarket"
-msgstr ""
+msgstr "Süper Market"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:467
 #, kde-format
 msgid "Liquor Store"
-msgstr ""
+msgstr "İçki Dükkanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:468
 #, kde-format
 msgid "Bakery"
-msgstr ""
+msgstr "Fırın"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:469
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Dutch"
+#, kde-format
 msgid "Butcher"
-msgstr "Hollandaca"
+msgstr "Kasap"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:470
-#, fuzzy, kde-format
-#| msgctxt "@item: icc profile properties"
-#| msgid "Connection Space"
+#, kde-format
 msgid "Confectionery"
-msgstr "Bağlantı Aralığı"
+msgstr "Şekerleme"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:471
 #, kde-format
 msgid "Convenience Shop"
-msgstr ""
+msgstr "Mahalle Bakkalı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:472
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Greece"
+#, kde-format
 msgid "Greengrocer"
-msgstr "Yunanistan"
+msgstr "Manav"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:473
 #, kde-format
 msgid "Seafood Shop"
-msgstr ""
+msgstr "Balıkçı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:474
-#, fuzzy, kde-format
-#| msgid "Decorative Stone"
+#, kde-format
 msgid "Department Store"
-msgstr "Dekoratif Taş"
+msgstr "Büyük Mağaza"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:475
 #, kde-format
 msgid "Kiosk"
-msgstr ""
+msgstr "Büfe"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:476
 #, kde-format
 msgid "Bag Shop"
-msgstr ""
+msgstr "Çanta Mağazası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:477
 #, kde-format
 msgid "Clothes Shop"
-msgstr ""
+msgstr "Giysi Mağazası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:478
 #, kde-format
 msgid "Fashion Shop"
-msgstr ""
+msgstr "Moda Mağazası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:479
 #, kde-format
 msgid "Jewelry Shop"
-msgstr ""
+msgstr "Kuyumcu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:480
 #, kde-format
 msgid "Shoe Shop"
-msgstr ""
+msgstr "Ayakkabı Mağazası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:481
 #, kde-format
 msgid "Variety Store"
-msgstr ""
+msgstr "Tuhafiye"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:482
-#, fuzzy, kde-format
-#| msgid "Select service:"
+#, kde-format
 msgid "Beauty Services"
-msgstr "Hizmet seç:"
+msgstr "Güzellik Hizmetleri"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:483
 #, kde-format
 msgid "Chemist"
-msgstr ""
+msgstr "Eczacı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:484
 #, kde-format
 msgid "Cosmetics"
-msgstr ""
+msgstr "Kozmetik"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:485
 #, kde-format
 msgid "Hairdresser"
-msgstr ""
+msgstr "Kuaför"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:486
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Optimization"
+#, kde-format
 msgid "Optician"
-msgstr "Eniyileme"
+msgstr "Gözlükçü"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:487
 #, kde-format
 msgid "Perfumery"
-msgstr ""
+msgstr "Parfümeri"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:488
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:490
 #, kde-format
 msgid "Hardware Store"
-msgstr ""
+msgstr "Hırdavat Mağazası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:489
 #, kde-format
 msgid "Florist"
-msgstr ""
+msgstr "Çiçekçi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:491
 #, kde-format
 msgid "Furniture Store"
-msgstr ""
+msgstr "Mobilya Mağazası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:492
-#, fuzzy, kde-format
-#| msgctxt "@item: WB settings"
-#| msgid "electronic photo flash"
+#, kde-format
 msgid "Electronics Shop"
-msgstr "Elektronik foto flaş"
+msgstr "Elektronik Mağazası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:493
-#, fuzzy, kde-format
-#| msgid "Adobe Photoshop"
+#, kde-format
 msgid "Mobile Phone Shop"
-msgstr "Adobe Photoshop"
+msgstr "Cep Telefoncu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:494
 #, kde-format
 msgid "Bicycle Shop"
-msgstr ""
+msgstr "Bisikletçi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:495
 #, kde-format
 msgid "Car Dealer"
-msgstr ""
+msgstr "Galerici"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:496
 #, kde-format
 msgid "Car Repair Shop"
-msgstr ""
+msgstr "Araba Onarım"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:497
 #, kde-format
 msgid "Car Parts"
-msgstr ""
+msgstr "Araba Parçaları"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:498
 #, kde-format
 msgid "Motorcycle Shop"
-msgstr ""
+msgstr "Motorsikletçi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:499
 #, kde-format
 msgid "Outdoor Shop"
-msgstr ""
+msgstr "Kamp Malzemeleri"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:500
 #, kde-format
 msgid "Sports Shop"
-msgstr ""
+msgstr "Spor Mağazası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:501
-#, fuzzy, kde-format
-#| msgid "Printing in Progress"
+#, kde-format
 msgid "Printing Services"
-msgstr "Baskı Sürüyor"
+msgstr "Baskı Hizmetleri"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:502
 #, kde-format
 msgid "Art Shop"
-msgstr ""
+msgstr "Sanat Galerisi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:503
 #, kde-format
 msgid "Musical Instrument Shop"
-msgstr ""
+msgstr "Müzik Aletleri Mağazası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:504
-#, fuzzy, kde-format
-#| msgid "Photo width"
+#, kde-format
 msgid "Photo Shop"
-msgstr "Fotoğraf genişliği"
+msgstr "Fotoğrafçı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:505
 #, kde-format
 msgid "Bookshop"
-msgstr ""
+msgstr "Kitapçı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:506
 #, kde-format
 msgid "Gift Shop"
-msgstr ""
+msgstr "Armağanlık Eşya"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:507
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgid "Stationery"
-msgstr "Doygunluk"
+msgstr "Kırtasiye"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:508
 #, kde-format
 msgid "Laundry"
-msgstr ""
+msgstr "Çamaşırhane"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:509
 #, kde-format
 msgid "Pet Shop"
-msgstr ""
+msgstr "Evcil Hayvan Mağazası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:510
 #, kde-format
 msgid "Toy Store"
-msgstr ""
+msgstr "Oyuncakçı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:511
-#, fuzzy, kde-format
-#| msgctxt "@item: album categories"
-#| msgid "Travel"
+#, kde-format
 msgid "Travel Agency"
-msgstr "Gezi"
+msgstr "Seyahat Acentesi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:512
 #, kde-format
 msgid "Deli"
-msgstr ""
+msgstr "Şarküteri"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:513
 #, kde-format
 msgid "Tobacco Shop"
-msgstr ""
+msgstr "Tütüncü"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:514
 #, kde-format
 msgid "Tea Shop"
-msgstr ""
+msgstr "Çayevi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:515
 #, kde-format
 msgid "Computer Shop"
-msgstr ""
+msgstr "Bilgisayarcı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:516
 #, kde-format
 msgid "Garden Centre"
-msgstr ""
+msgstr "Bahçe Malzemeleri"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:517
 #, kde-format
 msgid "Shop"
-msgstr ""
+msgstr "Dükkan"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:518
 #, kde-format
 msgid "Bridge"
-msgstr ""
+msgstr "Köprü"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:519
-#, fuzzy, kde-format
-#| msgid "Light source:"
+#, kde-format
 msgid "Lighthouse"
-msgstr "Işık kaynağı:"
+msgstr "Fener"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:520
 #, kde-format
 msgid "Pier"
-msgstr ""
+msgstr "İskele"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:521
 #, kde-format
 msgid "Water Tower"
-msgstr ""
+msgstr "Su Kulesi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Wind Mill"
-msgstr ""
+msgstr "Yel Değirmeni"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:523
 #, kde-format
 msgid "Communications Tower"
-msgstr ""
+msgstr "Baz İstasyonu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:524
-#, fuzzy, kde-format
-#| msgid "No restriction"
+#, kde-format
 msgid "Tourist Attraction"
-msgstr "Kısıtlama yok"
+msgstr "Turistik Atraksiyon"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:525
-#, fuzzy, kde-format
-#| msgid "Network"
+#, kde-format
 msgid "Artwork"
-msgstr "Ağ"
+msgstr "Sanat"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:526
 #, kde-format
 msgid "Castle"
-msgstr ""
+msgstr "Kale"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:527
 #, kde-format
 msgid "Cinema"
-msgstr ""
+msgstr "Sinema"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:528
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Information"
+#, kde-format
 msgid "Information"
 msgstr "Bilgi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:529
-#, fuzzy, kde-format
-#| msgctxt "@item: type is a document"
-#| msgid "Document"
+#, kde-format
 msgid "Monument"
-msgstr "Belge"
+msgstr "Anıt"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:530
 #, kde-format
 msgid "Museum"
-msgstr ""
+msgstr "Müze"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:531
 #, kde-format
 msgid "Ruin"
-msgstr ""
+msgstr "Yıkıntı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:532
 #, kde-format
 msgid "Theatre"
-msgstr ""
+msgstr "Tiyatro"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:533
-#, fuzzy, kde-format
-#| msgid "Theme Parameters"
+#, kde-format
 msgid "Theme Park"
-msgstr "Tema Parametreleri"
+msgstr "Eğlence Parkı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:534
-#, fuzzy, kde-format
-#| msgctxt "@item: point coordinates"
-#| msgid "Point"
+#, kde-format
 msgid "View Point"
-msgstr "Nokta"
+msgstr "Bakış Noktası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:535
-#, fuzzy, kde-format
-#| msgid "Zoom:"
+#, kde-format
 msgid "Zoo"
-msgstr "Yakınlaştır:"
+msgstr "Hayvanat Bahçesi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:536
 #, kde-format
 msgid "Alpine Hut"
-msgstr ""
+msgstr "Dağ Barınağı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:537
 #, kde-format
 msgid "Wilderness Hut"
-msgstr ""
+msgstr "Yaban Barınağı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:538
-#, fuzzy, kde-format
-#| msgctxt "@item: serail port based camera"
-#| msgid "Serial"
+#, kde-format
 msgid "Memorial"
-msgstr "Seri"
+msgstr "Anıt"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
 #, kde-format
 msgid "Aerodrome"
-msgstr ""
+msgstr "Havaalanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
 #, kde-format
 msgid "Helipad"
-msgstr ""
+msgstr "Helikopter İniş Alanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
 #, kde-format
 msgid "Airport Gate"
-msgstr ""
+msgstr "Havaalanı Kapısı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
 #, kde-format
 msgid "Airport Runway"
-msgstr ""
+msgstr "Havaalanı Pisti"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
 #, kde-format
 msgid "Airport Apron"
-msgstr ""
+msgstr "Havaalanı Apronu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Airport Taxiway"
-msgstr ""
+msgstr "Havaalanı Taksi Alanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
 #, kde-format
 msgid "Airport Terminal"
-msgstr ""
+msgstr "Havaalanı Terminali"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:546
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgid "Bus Station"
-msgstr "Doygunluk"
+msgstr "Otobüs Terminali"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:547
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgid "Bus Stop"
-msgstr "Durdur"
+msgstr "Otobüs Durağı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
 #, kde-format
 msgid "Car Sharing"
-msgstr ""
+msgstr "Araba Paylaşım"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgid "Gas Station"
-msgstr "Doygunluk"
+msgstr "Benzinlik"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:550
 #, kde-format
 msgid "Parking"
-msgstr ""
+msgstr "Otopark"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:551
-#, fuzzy, kde-format
-#| msgid "Working Color Space"
+#, kde-format
 msgid "Parking Space"
-msgstr "Çalışma Renk Uzayı"
+msgstr "Park Alanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:552
-#, fuzzy, kde-format
-#| msgctxt "@action: dplugin"
-#| msgid "Transform"
+#, kde-format
 msgid "Platform"
-msgstr "Dönüştür"
+msgstr "Platform"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
 #, kde-format
 msgid "Bicycle Rental"
-msgstr ""
+msgstr "Bisiklet Kiralama"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
 #, kde-format
 msgid "Car Rental"
-msgstr ""
+msgstr "Araba Kiralama"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
 #, kde-format
 msgid "Ski Rental"
-msgstr ""
+msgstr "Kayak Kiralama"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:556
 #, kde-format
 msgid "Taxi Rank"
-msgstr ""
+msgstr "Taksi Durağı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:557
-#, fuzzy, kde-format
-#| msgid "Orientation"
+#, kde-format
 msgid "Train Station"
-msgstr "Yönelim"
+msgstr "Tren İstasyonu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:558
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgid "Tram Stop"
-msgstr "Durdur"
+msgstr "Tramvay Durağı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
 #, kde-format
 msgid "Bicycle Parking"
-msgstr ""
+msgstr "Bisiklet Park Alanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
 #, kde-format
 msgid "Motorcycle Parking"
-msgstr ""
+msgstr "Motosiklet Park Alanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
 #, kde-format
 msgid "Subway Entrance"
-msgstr ""
+msgstr "Metro Girişi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:562
-#, fuzzy, kde-format
-#| msgid "Mounted Camera"
+#, kde-format
 msgid "Speed Camera"
-msgstr "Takılı (Bağlı) Kamera"
+msgstr "Radar"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:563
 #, kde-format
 msgid "Place Of Worship"
-msgstr ""
+msgstr "Tapınak"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Bahamas"
+#, kde-format
 msgid "Bahai"
-msgstr "Bahamalar"
+msgstr "Bahailik"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
 #, kde-format
 msgid "Buddhist"
-msgstr ""
+msgstr "Budist"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Croatian"
+#, kde-format
 msgid "Christian"
-msgstr "Hırvatça"
+msgstr "Hıristiyan"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:567
 #, kde-format
 msgid "Muslim"
-msgstr ""
+msgstr "Müslüman"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:568
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Hindi"
+#, kde-format
 msgid "Hindu"
-msgstr "Hintçe"
+msgstr "Hindu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:569
 #, kde-format
 msgid "Jain"
-msgstr ""
+msgstr "Caynist"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:570
 #, kde-format
 msgid "Jewish"
-msgstr ""
+msgstr "Musevi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:571
 #, kde-format
 msgid "Shinto"
-msgstr ""
+msgstr "Şinto"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:572
 #, kde-format
 msgid "Sikh"
-msgstr ""
+msgstr "Sih"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Taoist"
-msgstr ""
+msgstr "Taocu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:574
 #, kde-format
 msgid "Golf Course"
-msgstr ""
+msgstr "Golf Sahası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:575
-#, fuzzy, kde-format
-#| msgctxt "@info: language name"
-#| msgid "Mari"
+#, kde-format
 msgid "Marina"
-msgstr "Mari"
+msgstr "Yat Limanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:576
 #, kde-format
 msgid "Park"
-msgstr ""
+msgstr "Park"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:577
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Background"
+#, kde-format
 msgid "Playground"
-msgstr "Arka Plan"
+msgstr "Oyun Alanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:578
 #, kde-format
 msgid "Pitch"
-msgstr ""
+msgstr "Saha"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:579
 #, kde-format
 msgid "Sports Centre"
-msgstr ""
+msgstr "Spor Merkezi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgid "Stadium"
-msgstr "Orta"
+msgstr "Stadyum"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
 #, kde-format
 msgid "Swimming Pool"
-msgstr ""
+msgstr "Yüzme Havuzu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Miniature Golf Course"
-msgstr ""
+msgstr "Mini-Golf Sahası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:584
-#, fuzzy, kde-format
-#| msgctxt "@item: picture adjustments"
-#| msgid "Adjustments"
+#, kde-format
 msgid "Allotments"
-msgstr "Düzeltmeler"
+msgstr "Parseller"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:585
 #, kde-format
 msgid "Basin"
-msgstr ""
+msgstr "Havza"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:586
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Parameters"
+#, kde-format
 msgid "Cemetery"
-msgstr "Parametreler"
+msgstr "Mezarlık"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:587
 #, kde-format
 msgid "Commercial"
-msgstr ""
+msgstr "Ticari"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:588
-#, fuzzy, kde-format
-#| msgid "Instructions:"
+#, kde-format
 msgid "Construction"
-msgstr "Yönergeler:"
+msgstr "Yapı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:589
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Finland"
+#, kde-format
 msgid "Farmland"
-msgstr "Finlandiya"
+msgstr "Ekilebilir Arazi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:590
 #, kde-format
 msgid "Farmyard"
-msgstr ""
+msgstr "Çiftlik Avlusu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:591
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgid "Garages"
-msgstr "Görseller"
+msgstr "Garaj"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
 #, kde-format
 msgid "Grass"
-msgstr ""
+msgstr "Çim"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Austria"
+#, kde-format
 msgid "Industrial"
-msgstr "Avusturya"
+msgstr "Sanayi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:594
 #, kde-format
 msgid "Landfill"
-msgstr ""
+msgstr "Katı Atık Sahası"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:595
 #, kde-format
 msgid "Meadow"
-msgstr ""
+msgstr "Çayır"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:596
 #, kde-format
 msgid "Military"
-msgstr ""
+msgstr "Askeri"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:597
 #, kde-format
 msgid "Quarry"
-msgstr ""
+msgstr "Taşocağı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
 #, kde-format
 msgid "Railway"
-msgstr ""
+msgstr "Demiryolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
-#, fuzzy, kde-format
-#| msgid "Reset curve to linear"
+#, kde-format
 msgid "Reservoir"
-msgstr "Kıvrığı çizgiye döndür"
+msgstr "Rezervuar"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:600
 #, kde-format
 msgid "Residential"
-msgstr ""
+msgstr "Meskun Mahal"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:601
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Details"
+#, kde-format
 msgid "Retail"
-msgstr "Ayrıntılar"
+msgstr "Perakende"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:602
 #, kde-format
 msgid "Orchard"
-msgstr ""
+msgstr "Bostan"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:603
 #, kde-format
 msgid "Vineyard"
-msgstr ""
+msgstr "Üzüm Bağı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:604
 #, kde-format
 msgid "Rail"
-msgstr ""
+msgstr "Ray"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:605
 #, kde-format
 msgid "Narrow Gauge"
-msgstr ""
+msgstr "Dar Hat"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:606
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:218
 #, kde-format
 msgid "Tram"
-msgstr ""
+msgstr "Tramvay"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:607
-#, fuzzy, kde-format
-#| msgid "Light Table"
+#, kde-format
 msgid "Light Rail"
-msgstr "Işık Tablosu"
+msgstr "Hafif Raylı Sistem"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:608
 #, kde-format
 msgid "Abandoned Railway"
-msgstr ""
+msgstr "Terk Edilmiş Demiryolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:609
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:217
 #, kde-format
 msgid "Subway"
-msgstr ""
+msgstr "Metro"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:610
-#, fuzzy, kde-format
-#| msgid "Preserve Aspect Ratio"
+#, kde-format
 msgid "Preserved Railway"
-msgstr "En-boy Oranını Koru"
+msgstr "Korunmuş Demiryolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
 #, kde-format
 msgid "Miniature Railway"
-msgstr ""
+msgstr "Mini Demiryolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:612
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "Railway Construction"
-msgstr "Ham Dönüştürme"
+msgstr "Demiryolu Yapımı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:613
-#, fuzzy, kde-format
-#| msgctxt "@label: audio channel type"
-#| msgid "Mono"
+#, kde-format
 msgid "Monorail"
-msgstr "Mono"
+msgstr "Tek Raylı Sistem"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:614
 #, kde-format
 msgid "Funicular Railway"
-msgstr ""
+msgstr "Füniküler Demiryolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:615
-#, fuzzy, kde-format
-#| msgctxt "@item: function type"
-#| msgid "Power"
+#, kde-format
 msgid "Power Tower"
-msgstr "Güç"
+msgstr "Elektrik Direği"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:616
 #, kde-format
 msgid "Aerialway Station"
-msgstr ""
+msgstr "Yerüstü İstasyon"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:617
 #, kde-format
 msgctxt "A pylon supporting the aerialway cable e.g. on a ski lift"
 msgid "Pylon"
-msgstr ""
+msgstr "Direk"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:618
-#, fuzzy, kde-format
-#| msgid "Change Case"
+#, kde-format
 msgid "Cable Car"
-msgstr "Büyük/küçük harf değişimi"
+msgstr "Teleferik"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:619
 #, kde-format
 msgid "Gondola"
-msgstr ""
+msgstr "Gondol"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:620
-#, fuzzy, kde-format
-#| msgid "Clear List"
+#, kde-format
 msgid "Chair Lift"
-msgstr "Listeyi Temizle"
+msgstr "Koltuklu Teleferik"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:621
 #, kde-format
 msgid "Mixed Lift"
-msgstr ""
+msgstr "Karışık Asansör"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:622
 #, kde-format
 msgid "Drag Lift"
-msgstr ""
+msgstr "Kayak Teleferiği"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:623
 #, kde-format
 msgid "T-Bar"
-msgstr ""
+msgstr "T Çubuğu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:624
 #, kde-format
 msgid "J-Bar"
-msgstr ""
+msgstr "J Çubuğu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:625
-#, fuzzy, kde-format
-#| msgctxt "@label: subject properties"
-#| msgid "Matter:"
+#, kde-format
 msgid "Platter"
-msgstr "Konu:"
+msgstr "Kayık Tabak"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:626
 #, kde-format
 msgid "Rope Tow"
-msgstr ""
+msgstr "Halat Konveyör"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:627
 #, kde-format
 msgid "Magic Carpet"
-msgstr ""
+msgstr "Uçan Halı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:628
 #, kde-format
 msgid "Zip Line"
-msgstr ""
+msgstr "Çelik Kayma Halatı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:629
 #, kde-format
 msgid "Goods"
-msgstr ""
+msgstr "Mal"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:630
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:227
 #, kde-format
 msgid "Downhill Piste"
-msgstr ""
+msgstr "Alp Disiplini Kayak Pisti"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:631
 #, kde-format
 msgid "Nordic Piste"
-msgstr ""
+msgstr "Kros Kayak Pisti"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:632
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:229
 #, kde-format
 msgid "Skitour"
-msgstr ""
+msgstr "Kayak Turu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:633
 #, kde-format
 msgid "Sled Piste"
-msgstr ""
+msgstr "Kızak Pisti"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:634
 #, kde-format
 msgid "Winter Hike"
-msgstr ""
+msgstr "Kış Yürüyüşü"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:635
 #, kde-format
 msgid "Sleigh Piste"
-msgstr ""
+msgstr "Büyük Kızak Pisti"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:636
 #, kde-format
 msgid "Ice Skate"
-msgstr ""
+msgstr "Buz Kayağı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:637
 #, kde-format
 msgid "Snow Park"
-msgstr ""
+msgstr "Kar Parkı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:638
 #, kde-format
 msgid "Ski Playground"
-msgstr ""
+msgstr "Kayak Oyun Alanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:639
 #, kde-format
 msgid "Ski Jump"
-msgstr ""
+msgstr "Atlamalı Kayak"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:640
 #, kde-format
 msgid "Admin Boundary (Level 1)"
-msgstr ""
+msgstr "Yönetim Sınırı (Düzey 1)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:641
 #, kde-format
 msgid "Admin Boundary (Level 2)"
-msgstr ""
+msgstr "Yönetim Sınırı (Düzey 2)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:642
 #, kde-format
 msgid "Admin Boundary (Level 3)"
-msgstr ""
+msgstr "Yönetim Sınırı (Düzey 3)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:643
 #, kde-format
 msgid "Admin Boundary (Level 4)"
-msgstr ""
+msgstr "Yönetim Sınırı (Düzey 4)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:644
 #, kde-format
 msgid "Admin Boundary (Level 5)"
-msgstr ""
+msgstr "Yönetim Sınırı (Düzey 5)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:645
 #, kde-format
 msgid "Admin Boundary (Level 6)"
-msgstr ""
+msgstr "Yönetim Sınırı (Düzey 6)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:646
 #, kde-format
 msgid "Admin Boundary (Level 7)"
-msgstr ""
+msgstr "Yönetim Sınırı (Düzey 7)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:647
 #, kde-format
 msgid "Admin Boundary (Level 8)"
-msgstr ""
+msgstr "Yönetim Sınırı (Düzey 8)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:648
 #, kde-format
 msgid "Admin Boundary (Level 9)"
-msgstr ""
+msgstr "Yönetim Sınırı (Düzey 9)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:649
 #, kde-format
 msgid "Admin Boundary (Level 10)"
-msgstr ""
+msgstr "Yönetim Sınırı (Düzey 10)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:650
 #, kde-format
 msgid "Admin Boundary (Level 11)"
-msgstr ""
+msgstr "Yönetim Sınırı (Düzey 11)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:651
 #, kde-format
 msgid "Boundary (Maritime)"
-msgstr ""
+msgstr "Sınır (Deniz)"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:652
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Hard Mask"
+#, kde-format
 msgid "Land Mass"
-msgstr "Sıkı maske"
+msgstr "Kıta Sahanlığı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:653
 #, kde-format
 msgid "Urban Area"
-msgstr ""
+msgstr "Kentsel Alan"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:654
 #, kde-format
 msgid "International Date Line"
-msgstr ""
+msgstr "Uluslararası Tarih Çizgisi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:655
 #, kde-format
 msgid "Bathymetry"
-msgstr ""
+msgstr "Batimetri"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:656
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Canada"
+#, kde-format
 msgid "Canal"
-msgstr "Kanada"
+msgstr "Kanal"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:657
-#, fuzzy, kde-format
-#| msgid "Terrain"
+#, kde-format
 msgid "Drain"
-msgstr "Arazi"
+msgstr "Lağım"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:658
 #, kde-format
 msgid "Ditch"
-msgstr ""
+msgstr "Hendek"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:659
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Stream"
+#, kde-format
 msgid "Stream"
 msgstr "Akış"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:660
 #, kde-format
 msgid "River"
-msgstr ""
+msgstr "Irmak"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:661
 #, kde-format
 msgid "Weir"
-msgstr ""
+msgstr "Su Bendi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:662
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:663
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:664
 #, kde-format
 msgid "Crosswalk"
-msgstr ""
+msgstr "Yaya Geçidi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:665
 #, kde-format
 msgid "Railway Crossing"
-msgstr ""
+msgstr "Demiryolu Geçidi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
 #, kde-format
 msgid "Door"
-msgstr ""
+msgstr "Kapı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:668
 #, kde-format
 msgid "Room"
-msgstr ""
+msgstr "Oda"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:48
 #, kde-format
 msgctxt "North direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:51
 #, kde-format
 msgctxt "East direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:54
 #, kde-format
 msgctxt "South direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:57
 #, kde-format
 msgctxt "West direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:95
 #, kde-format
 msgctxt "Degree symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:98
 #, kde-format
 msgctxt "Minutes symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:101
 #, kde-format
 msgctxt "Seconds symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:214
 #, kde-format
