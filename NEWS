@@ -169,7 +169,7 @@ BUGFIXES:
 150 ==> 480103 - Concatenate 'street' and 'house number' (if exist) to XMP when Reverse Geocoding.
 151 ==> 480134 - Freeze (loop ?) when right click on an image.
 152 ==> 480117 - Tags are not added if their CASE doesn't match the case in the tag database.
-153 ==> 
+153 ==> 480150 - Version 8.2.0 is not stable and sometimes blocking.
 154 ==> 
 155 ==> 
 156 ==> 
