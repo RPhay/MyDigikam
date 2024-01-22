@@ -57,8 +57,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
 {
     // First stage is to get the information map from host application.
 
-    DInfoInterface::DInfoMap info = settings.iface->itemInfo(url);
-    DItemInfo item(info);
+    DItemInfo item(settings.iface->itemInfo(url));
 
     QString comment               = item.comment();
     QString title                 = item.title();
