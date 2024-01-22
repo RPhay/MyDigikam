@@ -481,7 +481,7 @@ RelocatableBinaries SOFILES[@]
 
 echo -e "\n--- Relocatable executable files"
 
-EXECFILES=(`find $TEMPROOT -type f -perm +ugo+x ! -name "*.dylib" ! -name "*.so"`)
+EXECFILES=(`find $TEMPROOT -type f ! -name "*.dylib" ! -name "*.so" -print0 | xargs -0 -n 10 file | grep "Mach-O" | cut -d ':' -f 1`)
 
 RelocatableBinaries EXECFILES[@]
 
@@ -501,14 +501,14 @@ for APP in ${EXECFILES[@]} ; do
 
         install_name_tool -add_rpath @executable_path/.. $APP
         install_name_tool -add_rpath @executable_path/../.. $APP
-        install_name_tool -add_rpath @executable_path/../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../../../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../../../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../../../../../../.. $APP
         codesign --force -s - $APP
 
         echo "Patch $APP"
