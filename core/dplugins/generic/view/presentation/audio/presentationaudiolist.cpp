@@ -210,7 +210,7 @@ void PresentationAudioListItem::slotDurationChanged(qint64 duration)
     DMetadata meta;
     meta.load(d->url.toLocalFile());
     d->artist    = meta.getXmpTagString("Xmp.xmpDM.artist");
-    d->title     = meta.getXmpTagString("Xmp.xmpDM.Title");
+    d->title     = meta.getXmpTagString("Xmp.xmpDM.shotName");
 
     if ( d->artist.isEmpty() && d->title.isEmpty() )
     {
