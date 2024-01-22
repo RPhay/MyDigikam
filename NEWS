@@ -165,10 +165,10 @@ BUGFIXES:
 146 ==> 479852 - Select all photos when exporting an album.
 147 ==> 479939 - Import album with geo location.
 148 ==> 480010 - Crash when trying to add a face tag on Windows.
-149 ==> 
-150 ==> 
-151 ==> 
-152 ==> 
+149 ==> 480116 - Discrepancies in displayed tag information such as "_Digikam_root_tag_".
+150 ==> 480103 - Concatenate 'street' and 'house number' (if exist) to XMP when Reverse Geocoding.
+151 ==> 480134 - Freeze (loop ?) when right click on an image.
+152 ==> 480117 - Tags are not added if their CASE doesn't match the case in the tag database.
 153 ==> 
 154 ==> 
 155 ==> 

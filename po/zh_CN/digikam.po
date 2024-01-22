@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 01:39+0000\n"
-"PO-Revision-Date: 2024-01-13 06:02\n"
+"POT-Creation-Date: 2024-01-22 01:56+0000\n"
+"PO-Revision-Date: 2024-01-21 14:14\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -16162,7 +16162,7 @@ msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "未知"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:915
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -19954,24 +19954,24 @@ msgstr "媒体容器格式："
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
-msgstr ""
+msgstr "此选项用于选择存储视频和音频流的媒体容器格式。"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
 #, kde-format
 msgid "Equalize Video Luminosity"
-msgstr ""
+msgstr "视频亮度均衡"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
 #, kde-format
 msgid "Equalization Strength:"
-msgstr ""
+msgstr "均衡强度："
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:108
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
-msgstr ""
+msgstr "此选项控制亮度均衡的强度。设为 0 时将不作任何亮度调整。"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
 #, kde-format
@@ -19981,6 +19981,9 @@ msgid ""
 "same histograms, while maintaining their dynamics as much as possible. It’s "
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
+"<i>这些选项用于在将编码为视频时临时应用中途视频亮度均衡效果。此效果可以将一系"
+"列帧的直方图调整至相同的状态，同时尽可能保持它们的亮度动态范围。此效果的常见"
+"用法是在时延序列中保持曝光水平。</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
 #, kde-format
@@ -19999,19 +20002,15 @@ msgid "Soundtrack Duration:"
 msgstr "音轨持续时间："
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:138
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-#| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed.</i>"
+#, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
 "be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
-"<i>关于音轨的提示：如果音频的时长小于视频，音频将循环播放。如果音频的时长大于"
-"视频，音频将被裁切。</i>"
+"<i>关于音轨的提示：如果音频长度短于视频长度，则音频会循环播放。如果音频长度长"
+"于视频长度，则音频将被截断。如果您不想在视频中包含音轨，请将此选项留空。</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
@@ -20036,6 +20035,9 @@ msgid ""
 "show the same frame in the video. The result will depend of the number of "
 "frames per second used to encode the media."
 msgstr ""
+"此值用于控制图像在帧序列中停留的帧数。在创建延时序列时通常将它设置为 1。 在典"
+"型情况下，此帧数将决定某一帧在视频中显示的时间。最终效果取决于编码媒体时使用"
+"的每秒帧数。"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:96
 #, kde-format
@@ -20058,18 +20060,15 @@ msgid "Effect While Displaying Images"
 msgstr "图像显示特效"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>An effect is an visual panning or zooming applied while an image is "
-#| "displayed. The effect duration will follow the number of frames used to "
-#| "render the image on video stream.</i>"
+#, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
 "render the image on video stream. For a timelapse, let this setting to None."
 "</i>"
 msgstr ""
-"在此设置图像在显示时的平移和缩放特效。特效的时间长度将取决于图像停留帧数。"
+"<i>在此设置图像在显示时的平移和缩放特效。特效的时间长度将取决于图像停留帧数。"
+"对于时延视频，请设置为“无”。</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #, kde-format
@@ -20077,18 +20076,14 @@ msgid "Transition Between Images"
 msgstr "图像过渡特效"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>A transition is an visual effect applied between two images. For some "
-#| "effects, the duration can depend of random values and can change while "
-#| "the slideshow.</i>"
+#, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
 "slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
-"在此设置图像在切换时的过渡特效。某些特效的时间长度是随机的，可能会在幻灯片中"
-"发生变化。"
+"<i>在此设置图像在切换时的过渡特效。某些特效的时间长度是随机的，可能会在幻灯片"
+"中发生变化。对于时延视频，请设置为“无”。</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
 #, kde-format
@@ -27706,25 +27701,25 @@ msgstr ""
 "该数据库曾经被版本较新的 digiKam 使用过，它的纲目结构已被更新为新版，因此无法"
 "用于此旧版 digiKam。请升级为在此数据库中使用过的新版 digiKam。"
 
-#: core/libs/database/tags/facetags.cpp:398
+#: core/libs/database/tags/facetags.cpp:403
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "人物"
 
-#: core/libs/database/tags/facetags.cpp:462
+#: core/libs/database/tags/facetags.cpp:467
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/database/tags/facetags.cpp:482
+#: core/libs/database/tags/facetags.cpp:487
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "未确认"
 
-#: core/libs/database/tags/facetags.cpp:502
+#: core/libs/database/tags/facetags.cpp:507
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -65518,6 +65513,3 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
-
-#~ msgid "Video soundtrack (lets empty if none)"
-#~ msgstr "视频音轨 (没有的话请留空)"

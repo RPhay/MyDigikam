@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 01:39+0000\n"
+"POT-Creation-Date: 2024-01-22 01:56+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -18063,7 +18063,7 @@ msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "teadmata"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:915
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -30588,25 +30588,25 @@ msgstr ""
 "uus.) Palun kasuta digiKami uuemat versiooni, mida oled juba varem "
 "kasutanud. "
 
-#: core/libs/database/tags/facetags.cpp:398
+#: core/libs/database/tags/facetags.cpp:403
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Inimesed"
 
-#: core/libs/database/tags/facetags.cpp:462
+#: core/libs/database/tags/facetags.cpp:467
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Tundmatu"
 
-#: core/libs/database/tags/facetags.cpp:482
+#: core/libs/database/tags/facetags.cpp:487
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Kinnitamata"
 
-#: core/libs/database/tags/facetags.cpp:502
+#: core/libs/database/tags/facetags.cpp:507
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "List of detected faces that need not be recognized"

@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 01:39+0000\n"
+"POT-Creation-Date: 2024-01-22 01:56+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -17411,7 +17411,7 @@ msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "nich begäng"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:915
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -29452,25 +29452,25 @@ msgstr ""
 "(Dat bedüüdt: Disse Verschoon is to oolt, oder dat Datenbankformaat is to "
 "nieg. Bruuk bitte de nieger digiKam-Verschoon, de Du al bruukt hest. "
 
-#: core/libs/database/tags/facetags.cpp:398
+#: core/libs/database/tags/facetags.cpp:403
 #, fuzzy, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Utwesseln"
 
-#: core/libs/database/tags/facetags.cpp:462
+#: core/libs/database/tags/facetags.cpp:467
 #, fuzzy, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Nich begäng"
 
-#: core/libs/database/tags/facetags.cpp:482
+#: core/libs/database/tags/facetags.cpp:487
 #, fuzzy, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Instellen"
 
-#: core/libs/database/tags/facetags.cpp:502
+#: core/libs/database/tags/facetags.cpp:507
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "List of detected faces that need not be recognized"

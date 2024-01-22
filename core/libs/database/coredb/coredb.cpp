@@ -559,6 +559,24 @@ int CoreDB::addTag(int parentTagID, const QString& name, const QString& iconKDE,
         return -1;
     }
 
+    // The creation of a tag can be ignored under MySQL if one with a different
+    // case sensitivity already exists. In this case we use the already existing tag.
+
+    if (!id.isValid())
+    {
+        QList<QVariant> values;
+
+        d->db->execSql(QString::fromUtf8("SELECT id FROM Tags WHERE name=?;"),
+                       name, &values);
+
+        if (values.isEmpty())
+        {
+            return -1;
+        }
+
+        id = values.first();
+    }
+
     if      (!iconKDE.isEmpty())
     {
         d->db->execSql(QString::fromUtf8("UPDATE Tags SET iconkde=? WHERE id=?;"),

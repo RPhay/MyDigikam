@@ -1187,6 +1187,11 @@ void GPSItemContainer::setLocationInfo(const TagData& tagData, IptcCoreLocationI
     {
         locationInfo.location      = tagData.tagName;
     }
+    else if (!locationInfo.location.isEmpty() &&
+             (tagData.tipName == QLatin1String("{House number}")))
+    {
+        locationInfo.location.append(QLatin1Char(' ') + tagData.tagName);
+    }
 }
 
 } // namespace Digikam

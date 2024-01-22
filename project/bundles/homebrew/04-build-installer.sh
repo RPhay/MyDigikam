@@ -117,11 +117,13 @@ opt/qt6/share/qt/translations \
 lib/libdigikam*.dSYM \
 lib/libgphoto2 \
 lib/libgphoto2_port \
-opt/mariadb/lib \
+opt/mariadb \
 lib/ImageMagick* \
-opt/mariadb/share \
 share/ImageMagick* \
 etc/ImageMagick* \
+etc/my.cnf
+etc/my.cnf.default
+etc/my.cnf.d
 "
 
 #etc/xdg \
@@ -264,7 +266,7 @@ for path in $OTHER_DIRS ; do
     fi
 
     echo "   Copying $INSTALL_PREFIX/$path to $TEMPROOT/$dir/"
-    cp -aH "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
+    cp -aHL "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
 
@@ -275,7 +277,7 @@ echo "---------- Copying data files..."
 
 for path in $OTHER_DATA ; do
     echo "   Copying $path"
-    cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/digikam.app/Contents/Resources/"
+    cp -aL "$INSTALL_PREFIX/$path" "$TEMPROOT/digikam.app/Contents/Resources/"
 done
 
 # Copy digiKam hi-colors PNG icons-set to the bundle
@@ -327,15 +329,18 @@ cp -a "$TEMPROOT/showfoto.app/Contents/Resources/" "$TEMPROOT/digikam.app/Conten
 rm -rf "$TEMPROOT/showfoto.app/Contents/Resources"
 
 cd "$ORIG_WD"
-exit
+
 #################################################################################################
 # Move digiKam and KF6 run-time plugins to the right place
+
+rm -fr $TEMPROOT/bin/digikam.app
+rm -fr $TEMPROOT/bin/showfoto.app
 
 mkdir -p $TEMPROOT/libexec/qt6/
 cp -a  $TEMPROOT/share/qt/plugins         $TEMPROOT/libexec/qt6/
 rm -rf $TEMPROOT/share/qt/plugins
 cp -a  $TEMPROOT/opt/qt6/share/qt/plugins $TEMPROOT/libexec/qt6/
-rm -rf $TEMPROOT/opt/qt6/share/qt/plugins
+rm -rf $TEMPROOT/opt/qt6/
 
 #################################################################################################
 # Merge Manifest files
@@ -452,7 +457,7 @@ fi
 #
 # https://stackoverflow.com/questions/9263256/can-you-please-help-me-understand-how-mach-o-libraries-work-in-mac-os-x
 # https://matthew-brett.github.io/docosx/mac_runtime_link.html
-# http://thecourtsofchaos.com/2013/09/16/how-to-copy-and-relink-binaries-on-osx/
+# https://thecourtsofchaos.com/2013/09/16/how-to-copy-and-relink-binaries-on-osx/
 
 echo -e "\n---------- Relocatable binary files"
 
@@ -476,7 +481,7 @@ RelocatableBinaries SOFILES[@]
 
 echo -e "\n--- Relocatable executable files"
 
-EXECFILES=(`find $TEMPROOT -type f -perm +ugo+x ! -name "*.dylib" ! -name "*.so"`)
+EXECFILES=(`find $TEMPROOT -type f ! -name "*.dylib" ! -name "*.so" -print0 | xargs -0 -n 10 file | grep "Mach-O" | cut -d ':' -f 1`)
 
 RelocatableBinaries EXECFILES[@]
 
@@ -496,14 +501,15 @@ for APP in ${EXECFILES[@]} ; do
 
         install_name_tool -add_rpath @executable_path/.. $APP
         install_name_tool -add_rpath @executable_path/../.. $APP
-        install_name_tool -add_rpath @executable_path/../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../../../../../.. $APP
-        install_name_tool -add_rpath @executable_path/../../../../../../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../../../../../.. $APP
+#        install_name_tool -add_rpath @executable_path/../../../../../../../../../.. $APP
+        codesign --force -s - $APP
 
         echo "Patch $APP"
 
@@ -521,6 +527,8 @@ mv -v $TEMPROOT/share                         $TEMPROOT/digikam.app/Contents/
 mv -v $TEMPROOT/etc                           $TEMPROOT/digikam.app/Contents/
 mv -v $TEMPROOT/lib                           $TEMPROOT/digikam.app/Contents/
 mv -v $TEMPROOT/libexec                       $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/opt                           $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/Cellar                        $TEMPROOT/digikam.app/Contents/
 
 ln -sv "../../digikam.app/Contents/bin"       "$TEMPROOT/showfoto.app/Contents/bin"
 ln -sv "../../digikam.app/Contents/etc"       "$TEMPROOT/showfoto.app/Contents/etc"
@@ -528,6 +536,8 @@ ln -sv "../../digikam.app/Contents/lib"       "$TEMPROOT/showfoto.app/Contents/l
 ln -sv "../../digikam.app/Contents/libexec"   "$TEMPROOT/showfoto.app/Contents/libexec"
 ln -sv "../../digikam.app/Contents/share"     "$TEMPROOT/showfoto.app/Contents/share"
 ln -sv "../../digikam.app/Contents/Resources" "$TEMPROOT/showfoto.app/Contents/Resources"
+ln -sv "../../digikam.app/Contents/opt"       "$TEMPROOT/showfoto.app/Contents/opt"
+ln -sv "../../digikam.app/Contents/Cellar"    "$TEMPROOT/showfoto.app/Contents/Cellar"
 
 echo -e "\n---------- Cleanup files in bundle"
 
@@ -541,8 +551,7 @@ for HPP in ${HEADERFILES[@]} ; do
 
 done
 
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/mysql-test
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/sql-bench
+rm -rfv $TEMPROOT/digikam.app/Contents/opt/mariadb/bin/mysql-test
 
 echo -e "\n---------- Patch config and script files in bundle"
 
@@ -581,14 +590,9 @@ done
 #################################################################################################
 # See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
 
-rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/"
-rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb"
-
-# At run time, digiKam will check for mariadb folder-name without revision numbers.
-
-ln -sv "../../../../../digikam.app/Contents/lib/mariadb/share/mariadb$MARIADB_SUFFIX" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/mariadb"
-ln -sv "../../../digikam.app/Contents/lib/mariadb"                                    "$TEMPROOT/digikam.app/Contents/lib/mariadb"
-ln -sv "../../../digikam.app/Contents/etc/mariadb"                                    "$TEMPROOT/digikam.app/Contents/etc/mariadb"
+mkdir -p "$TEMPROOT/digikam.app/Contents/lib/mariadb"
+rsync -a "$TEMPROOT/digikam.app/Contents/opt/mariadb/share" "$TEMPROOT/digikam.app/Contents/lib/mariadb"
+rm -fr "$TEMPROOT/digikam.app/Contents/opt/mariadb/share"
 
 #################################################################################################
 # Install ExifTool binary.
