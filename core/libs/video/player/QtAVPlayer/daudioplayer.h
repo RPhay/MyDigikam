@@ -33,6 +33,9 @@
 namespace Digikam
 {
 
+/**
+ * A simple audio only player to render soundtracks.based on QtAVPlayer API.
+ */
 class DIGIKAM_EXPORT DAudioPlayer : public QObject
 {
     Q_OBJECT
@@ -45,6 +48,10 @@ public:
     QAVPlayer*      player()             const;
     QAVAudioOutput* audioOutput()        const;
 
+    /**
+     * This functions prevent to change codes in QtAVPlayer to export synbols.
+     * all is delegate to this class, as it mostly used in plugins.
+     */
     void pause();
     void play();
     void stop();
