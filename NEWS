@@ -171,7 +171,7 @@ BUGFIXES:
 152 ==> 480117 - Tags are not added if their CASE doesn't match the case in the tag database.
 153 ==> 480150 - Version 8.2.0 is not stable and sometimes blocking.
 154 ==> 480170 - Crash when manually tagging faces.
-155 ==> 
+155 ==> 479850 - Set album name automatically when exporting an album to Google Photos.
 156 ==> 
 157 ==> 
 158 ==> 
