@@ -67,7 +67,7 @@ QAVAudioOutput* DAudioPlayer::audioOutput() const
 void DAudioPlayer::slotAudioFrame(const QAVAudioFrame& frame)
 {
     d->audioOutput->play(frame);
-//    qCDebug(DIGIKAM_GENERAL_LOG) << "Audio position:" << d->player->position();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Audio position:" << d->player->position();
 
     Q_EMIT positionChanged(d->player->position());
 }
