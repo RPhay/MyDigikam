@@ -38,7 +38,7 @@ if(ENABLE_MEDIAPLAYER)
         else()
 
             message(STATUS "--------------------------------------------------")
-            message(STATUS "QtAV dependencies checks:")
+            message(STATUS "QtAVPlayer dependencies checks:")
             message(STATUS "")
 
             find_package(VAAPI QUIET)

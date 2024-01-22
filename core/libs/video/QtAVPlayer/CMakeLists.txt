@@ -12,9 +12,10 @@ remove_definitions(
     -DQT_NO_CAST_TO_ASCII
     -DQT_NO_URL_CAST_FROM_STRING
     -DQT_NO_CAST_FROM_BYTEARRAY
-    -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
     -DQT_NO_KEYWORDS
 )
+
+# QtAVPlater depencency rules are managed from top level by core/cmake/rules/RulesMediaPlayer.cmake
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
