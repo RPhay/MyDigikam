@@ -170,7 +170,7 @@ BUGFIXES:
 151 ==> 480134 - Freeze (loop ?) when right click on an image.
 152 ==> 480117 - Tags are not added if their CASE doesn't match the case in the tag database.
 153 ==> 480150 - Version 8.2.0 is not stable and sometimes blocking.
-154 ==> 
+154 ==> 480170 - Crash when manually tagging faces.
 155 ==> 
 156 ==> 
 157 ==> 
