@@ -27,10 +27,12 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "filesaveconflictbox.h"
 #include "transitionmngr.h"
 #include "effectmngr.h"
-#include "digikam_export.h"
+#include "frameosdsettings.h"
+#include "dinfointerface.h"
 
 class KConfigGroup;
 
@@ -253,6 +255,9 @@ public:
     QMap<QString, QString>            ffmpegCodecs;     ///< Map of FFmpeg codec names and features.
     QMap<QString, QString>            ffmpegFormats;    ///< Map of FFmpeg format names and features.
     QTime                             soundtrackLength; ///< Duration of a soundtrack.
+
+    FrameOsdSettings                  osdSettings;      ///< On Screen Display parameters.
+    DInfoInterface*                   iface;            ///< Plugin host interface to handle item properties.
 };
 
 } // namespace Digikam

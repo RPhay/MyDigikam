@@ -43,7 +43,6 @@ public:
     bool validateCurrentPage()         override;
     int  nextId()                const override;
 
-    DInfoInterface*   iface()    const;
     VidSlideSettings* settings() const;
 
     void setItemsList(const QList<QUrl>& urls);

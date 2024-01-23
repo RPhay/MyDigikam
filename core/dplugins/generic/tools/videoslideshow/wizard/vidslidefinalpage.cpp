@@ -54,7 +54,6 @@ public:
 
         if (wizard)
         {
-            iface    = wizard->iface();
             settings = wizard->settings();
         }
     }
@@ -65,7 +64,6 @@ public:
     VidSlideThread*   encoder      = nullptr;
     VidSlideWizard*   wizard       = nullptr;
     VidSlideSettings* settings     = nullptr;
-    DInfoInterface*   iface        = nullptr;
     QTextBrowser*     detailsText  = nullptr;
 };
 

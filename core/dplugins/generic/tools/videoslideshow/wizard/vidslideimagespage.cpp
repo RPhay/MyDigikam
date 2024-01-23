@@ -44,18 +44,18 @@ public:
 
         if (wizard)
         {
-            iface = wizard->iface();
+            settings = wizard->settings();
         }
     }
 
-    DItemsList*     imageList = nullptr;
-    VidSlideWizard* wizard    = nullptr;
-    DInfoInterface* iface     = nullptr;
+    DItemsList*       imageList = nullptr;
+    VidSlideWizard*   wizard    = nullptr;
+    VidSlideSettings* settings  = nullptr;
 };
 
 VidSlideImagesPage::VidSlideImagesPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     setObjectName(QLatin1String("ImagesSelectorPage"));
 
@@ -88,7 +88,7 @@ void VidSlideImagesPage::setItemsList(const QList<QUrl>& urls)
 
 void VidSlideImagesPage::initializePage()
 {
-    d->imageList->setIface(d->iface);
+    d->imageList->setIface(d->settings->iface);
     d->imageList->listView()->clear();
 
     if (d->wizard->settings()->selMode == VidSlideSettings::IMAGES)

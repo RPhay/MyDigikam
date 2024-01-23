@@ -51,16 +51,16 @@ public:
 
         if (wizard)
         {
-            iface = wizard->iface();
+            settings = wizard->settings();
         }
     }
 
-    QComboBox*       imageGetOption = nullptr;
-    DHBox*           hbox           = nullptr;
-    VidSlideWizard*  wizard         = nullptr;
-    DInfoInterface*  iface          = nullptr;
-    FFmpegBinary     ffmpegBin;
-    DBinarySearch*   binSearch      = nullptr;
+    QComboBox*        imageGetOption = nullptr;
+    DHBox*            hbox           = nullptr;
+    VidSlideWizard*   wizard         = nullptr;
+    VidSlideSettings* settings       = nullptr;
+    FFmpegBinary      ffmpegBin;
+    DBinarySearch*    binSearch      = nullptr;
 };
 
 VidSlideIntroPage::VidSlideIntroPage(QWizard* const dialog, const QString& title)
@@ -123,7 +123,7 @@ VidSlideIntroPage::~VidSlideIntroPage()
 
 void VidSlideIntroPage::initializePage()
 {
-    bool albumSupport = (d->iface && d->iface->supportAlbums());
+    bool albumSupport = (d->settings->iface && d->settings->iface->supportAlbums());
 
     if (!albumSupport)
     {

@@ -45,7 +45,8 @@ VidSlideSettings::VidSlideSettings()
       outputDir     (QStandardPaths::writableLocation(QStandardPaths::MoviesLocation)),
       outputPlayer  (INTERNAL),
       equalize      (false),
-      strength      (5)
+      strength      (5),
+      iface         (nullptr)
 {
 }
 
