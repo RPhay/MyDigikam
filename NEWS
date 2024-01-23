@@ -175,8 +175,8 @@ BUGFIXES:
 156 ==> 480195 - Timestamp issue with "Adjust Time & Date".
 157 ==> 480242 - AlbumRoot not resolved.
 158 ==> 128988 - Wish - Add info like Exif-Information, comment, filename, etc.
-159 ==> 
-160 ==> 
+159 ==> 230139 - Export slideshow in video.
+160 ==> 271751 - Allow to export Advanced Slideshow rendering as a video file.
 161 ==> 
 162 ==> 
 163 ==> 
