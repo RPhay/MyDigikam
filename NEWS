@@ -174,7 +174,7 @@ BUGFIXES:
 155 ==> 479850 - Set album name automatically when exporting an album to Google Photos.
 156 ==> 480195 - Timestamp issue with "Adjust Time & Date".
 157 ==> 480242 - AlbumRoot not resolved.
-158 ==> 
+158 ==> 128988 - Wish - Add info like Exif-Information, comment, filename, etc.
 159 ==> 
 160 ==> 
 161 ==> 
