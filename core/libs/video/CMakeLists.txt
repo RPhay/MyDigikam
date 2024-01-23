@@ -22,6 +22,8 @@ set(libvideotoolscommon_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/ffmpeglauncher.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidetask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/osd/frameosd.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/osd/frameosdsettings.cpp
 )
 
 if(ENABLE_MEDIAPLAYER)

@@ -4,17 +4,17 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-24
- * Description : MJPEG frame on screen display.
+ * Description : frame on screen display.
  *
  * SPDX-FileCopyrightText: 2021-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2021 by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021      by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MJPEG_FRAME_OSD_H
-#define DIGIKAM_MJPEG_FRAME_OSD_H
+#ifndef DIGIKAM_FRAME_OSD_H
+#define DIGIKAM_FRAME_OSD_H
 
 // Qt includes
 
@@ -27,18 +27,20 @@
 
 // Local includes
 
-#include "mjpegstreamsettings.h"
+#include "digikam_export.h"
+#include "frameosdsettings.h"
+#include "dinfointerface.h"
 
-namespace DigikamGenericMjpegStreamPlugin
+namespace Digikam
 {
 
-class MjpegFrameOsd
+class DIGIKAM_EXPORT FrameOsd
 {
 
 public:
 
-    explicit MjpegFrameOsd();
-    ~MjpegFrameOsd();
+    explicit FrameOsd();
+    ~FrameOsd();
 
 public:
 
@@ -55,14 +57,15 @@ public:
      */
     void insertOsdToFrame(QImage& frame,
                           const QUrl& url,
-                          const MjpegStreamSettings& settings);
+                          const FrameOsdSettings& settings,
+                          DInfoInterface* const info);
 
     /**
      * Populate OSD items properties base on Url
      */
-    void PopulateOSD(QImage& frame,
-                     const QUrl& url,
-                     const MjpegStreamSettings& settings);
+    void populateOSD(const QUrl& url,
+                     const FrameOsdSettings& settings,
+                     DInfoInterface* const info);
 
     /**
      * print comments
@@ -82,6 +85,6 @@ public:
                                  const QString& mess);
 };
 
-} // namespace DigikamGenericMjpegStreamPlugin
+} // namespace Digikam
 
-#endif // DIGIKAM_MJPEG_FRAME_OSD_H
+#endif // DIGIKAM_FRAME_OSD_H
