@@ -173,7 +173,7 @@ BUGFIXES:
 154 ==> 480170 - Crash when manually tagging faces.
 155 ==> 479850 - Set album name automatically when exporting an album to Google Photos.
 156 ==> 480195 - Timestamp issue with "Adjust Time & Date".
-157 ==> 
+157 ==> 480242 - AlbumRoot not resolved.
 158 ==> 
 159 ==> 
 160 ==> 
