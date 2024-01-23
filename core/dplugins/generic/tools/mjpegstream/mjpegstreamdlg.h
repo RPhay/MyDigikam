@@ -91,10 +91,6 @@ private:
     void setupTransitionView();
     void setupEffectView();
 
-private Q_SLOTS:
-
-    void slotSetUnchecked(int);
-
 //@}
 
 private:
