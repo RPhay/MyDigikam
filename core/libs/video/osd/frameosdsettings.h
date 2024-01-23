@@ -47,18 +47,18 @@ public:
 
 public:
 
-    bool                        printTitle;              ///< Print image title while streaming
-    bool                        printTags;               ///< Print tags title while streaming
-    bool                        printCapIfNoTitle;       ///< Print image captions if no title available while streaming
-    bool                        printComment;            ///< Print picture comment while streaming
-    bool                        printMakeModel;          ///< Print camera Make and Model while streaming
-    bool                        printLensModel;          ///< Print camera Lens model while streaming
-    bool                        printExpoSensitivity;    ///< Print camera Exposure and Sensitivity while streaming
-    bool                        printApertureFocal;      ///< Print camera Aperture and Focal while streaming
-    bool                        printName;               ///< Print picture file name while streaming
-    bool                        printDate;               ///< Print picture creation date while streaming
-    bool                        printRating;             ///< Print rating while streaming
-    QFont                       osdFont;                 ///< Font for the display of osd text
+    bool                        printName            = true;  ///< Print picture file name while streaming
+    bool                        printDate            = true;  ///< Print picture creation date while streaming
+    bool                        printTitle           = false; ///< Print image title while streaming
+    bool                        printTags            = false; ///< Print tags title while streaming
+    bool                        printCapIfNoTitle    = false; ///< Print image captions if no title available while streaming
+    bool                        printComment         = false; ///< Print picture comment while streaming
+    bool                        printMakeModel       = false; ///< Print camera Make and Model while streaming
+    bool                        printLensModel       = false; ///< Print camera Lens model while streaming
+    bool                        printExpoSensitivity = false; ///< Print camera Exposure and Sensitivity while streaming
+    bool                        printApertureFocal   = false; ///< Print camera Aperture and Focal while streaming
+    bool                        printRating          = false; ///< Print rating while streaming
+    QFont                       osdFont;                      ///< Font for the display of osd text
 };
 
 } // namespace Digikam

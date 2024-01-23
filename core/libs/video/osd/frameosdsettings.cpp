@@ -27,18 +27,7 @@ namespace Digikam
 {
 
 FrameOsdSettings::FrameOsdSettings()
-    : printName             (true),
-      printDate             (true),
-      printApertureFocal    (false),
-      printMakeModel        (false),
-      printLensModel        (false),
-      printExpoSensitivity  (false),
-      printComment          (false),
-      printTitle            (false),
-      printCapIfNoTitle     (false),
-      printTags             (false),
-      printRating           (false),
-      osdFont               (QFontDatabase::systemFont(QFontDatabase::GeneralFont))
+    : osdFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont))
 {
 }
 
