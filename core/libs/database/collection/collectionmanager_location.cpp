@@ -912,7 +912,7 @@ void CollectionManager::updateLocations()
                 if (testCaseSensitivity)
                 {
                     location->setCaseSensitivity(CollectionLocation::CaseInsensitive);
-                    }
+                }
                 else
                 {
                     location->setCaseSensitivity(CollectionLocation::CaseSensitive);
