@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-22 01:56+0000\n"
+"POT-Creation-Date: 2024-01-23 01:37+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1086,7 +1086,7 @@ msgid "Aperture/Focal:"
 msgstr "조리개/초점:"
 
 #: core/app/items/utils/tooltipfiller.cpp:234
-#: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:213
+#: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:212
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
@@ -1171,7 +1171,7 @@ msgid "digiKam Properties"
 msgstr "digiKam 속성"
 
 #: core/app/items/utils/tooltipfiller.cpp:457
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:219
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:228
 #, kde-format
 msgid "Album:"
 msgstr "앨범:"
@@ -11538,11 +11538,11 @@ msgstr "변경 사항 저장 -"
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
 #: core/dplugins/generic/webservices/google/gswindow.cpp:359
 #: core/dplugins/generic/webservices/google/gswindow.cpp:400
-#: core/dplugins/generic/webservices/google/gswindow.cpp:426
-#: core/dplugins/generic/webservices/google/gswindow.cpp:489
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1000
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1209
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1226
+#: core/dplugins/generic/webservices/google/gswindow.cpp:431
+#: core/dplugins/generic/webservices/google/gswindow.cpp:499
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1010
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1229
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1246
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:606
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:401
@@ -21689,7 +21689,7 @@ msgstr "미리 보기..."
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:154
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:155
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
@@ -22766,7 +22766,7 @@ msgid "Start upload to Box"
 msgstr "Box로 업로드 시작"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:490
+#: core/dplugins/generic/webservices/google/gswindow.cpp:500
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, fuzzy, kde-format
 #| msgid "No image selected. Please select which images should be uploaded."
@@ -22776,13 +22776,13 @@ msgstr "이미지를 선택하지 않았습니다. 업로드할 이미지를 선
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:508
-#: core/dplugins/generic/webservices/google/gswindow.cpp:538
-#: core/dplugins/generic/webservices/google/gswindow.cpp:952
-#: core/dplugins/generic/webservices/google/gswindow.cpp:973
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1071
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1264
+#: core/dplugins/generic/webservices/google/gswindow.cpp:518
+#: core/dplugins/generic/webservices/google/gswindow.cpp:548
+#: core/dplugins/generic/webservices/google/gswindow.cpp:962
+#: core/dplugins/generic/webservices/google/gswindow.cpp:983
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1031
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1081
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1284
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:669
@@ -22794,8 +22794,8 @@ msgid "Warning"
 msgstr "아침"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:509
-#: core/dplugins/generic/webservices/google/gswindow.cpp:539
+#: core/dplugins/generic/webservices/google/gswindow.cpp:519
+#: core/dplugins/generic/webservices/google/gswindow.cpp:549
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -22804,12 +22804,12 @@ msgstr "인증이 실패했습니다. \"계속\"을 클릭하여 인증하십시
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:512
-#: core/dplugins/generic/webservices/google/gswindow.cpp:542
-#: core/dplugins/generic/webservices/google/gswindow.cpp:957
-#: core/dplugins/generic/webservices/google/gswindow.cpp:978
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1027
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1269
+#: core/dplugins/generic/webservices/google/gswindow.cpp:522
+#: core/dplugins/generic/webservices/google/gswindow.cpp:552
+#: core/dplugins/generic/webservices/google/gswindow.cpp:967
+#: core/dplugins/generic/webservices/google/gswindow.cpp:988
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1037
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1289
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:674
@@ -22822,12 +22822,12 @@ msgstr "계속"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:513
-#: core/dplugins/generic/webservices/google/gswindow.cpp:543
-#: core/dplugins/generic/webservices/google/gswindow.cpp:958
-#: core/dplugins/generic/webservices/google/gswindow.cpp:979
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1028
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1270
+#: core/dplugins/generic/webservices/google/gswindow.cpp:523
+#: core/dplugins/generic/webservices/google/gswindow.cpp:553
+#: core/dplugins/generic/webservices/google/gswindow.cpp:968
+#: core/dplugins/generic/webservices/google/gswindow.cpp:989
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1038
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1290
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -22840,7 +22840,7 @@ msgstr "취소"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:382
-#: core/dplugins/generic/webservices/google/gswindow.cpp:620
+#: core/dplugins/generic/webservices/google/gswindow.cpp:630
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -24176,7 +24176,7 @@ msgstr "링크된 항목이 이미 존재합니다."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:171
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:150
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:151
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:152
 #, kde-format
 msgid "Destination"
 msgstr "대상"
@@ -24280,7 +24280,7 @@ msgid "Start download from Google Photos service"
 msgstr "Google 포토 다운로드 시작"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:360
-#: core/dplugins/generic/webservices/google/gswindow.cpp:427
+#: core/dplugins/generic/webservices/google/gswindow.cpp:432
 #, kde-format
 msgctxt "@info"
 msgid "Google Photos call failed: %1\n"
@@ -24292,19 +24292,19 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Google 드라이브 호출 실패: %1\n"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:628
+#: core/dplugins/generic/webservices/google/gswindow.cpp:638
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "Google 드라이브 내보내기"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:634
+#: core/dplugins/generic/webservices/google/gswindow.cpp:644
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "Google 포토 내보내기"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:953
+#: core/dplugins/generic/webservices/google/gswindow.cpp:963
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24314,7 +24314,7 @@ msgstr ""
 "사진을 저장할 수 없습니다: %1\n"
 "계속 진행하시겠습니까?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:974
+#: core/dplugins/generic/webservices/google/gswindow.cpp:984
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24324,13 +24324,13 @@ msgstr ""
 "사진을 다운로드할 수 없습니다: %1\n"
 "계속 진행하시겠습니까?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1001
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1011
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "사진을 %1(으)로 저장할 수 없음"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1022
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1032
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24342,7 +24342,7 @@ msgstr ""
 "%2\n"
 "계속 진행하시겠습니까?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1072
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1082
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -24353,14 +24353,14 @@ msgstr ""
 "\"%1\"\n"
 "그림을 표시할 수 없습니다"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1077
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1087
 #, fuzzy, kde-format
 #| msgid "OK"
 msgctxt "@action:button"
 msgid "OK"
 msgstr "확인"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1210
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24370,7 +24370,7 @@ msgstr ""
 "Google 드라이브 호출 실패:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1227
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1247
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24380,7 +24380,7 @@ msgstr ""
 "Google 포토 호출 실패: \n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1265
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -26121,7 +26121,7 @@ msgstr "새로 고침"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
 #, kde-format
 msgid "Reload album list"
 msgstr "앨범 목록 새로 고침"
@@ -26142,14 +26142,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:213
 #, kde-format
 msgid "Change Account"
 msgstr "계정 변경"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:264
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:273
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "업로드하기 전에 크기 조정"
@@ -26201,7 +26201,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:528
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:143
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:144
 #: core/libs/models/abstractalbummodel.cpp:464
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
@@ -26574,7 +26574,7 @@ msgid ""
 msgstr "SmugMug 홈페이지를 브라우저에서 여는 클릭할 수 있는 링크입니다."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:80
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:139
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:140
 #, kde-format
 msgid "Account"
 msgstr "계정"
@@ -26653,7 +26653,7 @@ msgid "Password for SmugMug album."
 msgstr "SmugMug 앨범 암호입니다."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
 #, kde-format
 msgid "New Album"
 msgstr "새 앨범"
@@ -34311,123 +34311,123 @@ msgctxt "Web Service: GPHOTO"
 msgid "Google Photo"
 msgstr "Google 포토"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:148
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:149
 #, kde-format
 msgid "Max Dimension"
 msgstr "최대 크기"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:175
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:176
 #, kde-format
 msgid "This is the list of images to upload to your %1 account."
 msgstr "%1 계정에 업로드할 사진 목록입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr "%1을(를) 브라우저에서 여는 클릭할 수 있는 링크입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:201
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr "현재 로그인한 %1 계정입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:212
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr "이름:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:206
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:215
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr "전송용 %1 계정 변경"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
 "downloaded."
 msgstr "선택한 사진을 업로드 및 다운로드할 %1 폴더입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
 #, kde-format
 msgid "Create new %1 folder"
 msgstr "새 %1 폴더 만들기"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:227
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr "새로 고침"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
 "scaled down."
 msgstr "사진 최대 크기입니다. 이 크기보다 더 큰 사진은 축소합니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:249
 #, kde-format
 msgid "Original Size"
 msgstr "원본 크기"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:241
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:250
 #, kde-format
 msgid "1600 px"
 msgstr "1600픽셀"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
 #, kde-format
 msgid "1440 px"
 msgstr "1440픽셀"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:243
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:252
 #, kde-format
 msgid "1280 px"
 msgstr "1280픽셀"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:253
 #, kde-format
 msgid "1152 px"
 msgstr "1152픽셀"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:245
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:254
 #, kde-format
 msgid "1024 px"
 msgstr "1024픽셀"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr "%1 사진을 다운로드할 위치입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:257
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:266
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr "사진을 업로드하기 전에 적용할 옵션입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:269
 #, kde-format
 msgid "Upload original image file"
 msgstr "원본 사진 파일 업로드"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:267
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:276
 #, fuzzy, kde-format
 msgid "Write the photo ID to the source image"
 msgstr "RAW 그림"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:277
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:280
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:289
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr "최대 크기:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:288
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:297
 #, kde-format
 msgid "JPEG Quality:"
 msgstr "JPEG 품질:"

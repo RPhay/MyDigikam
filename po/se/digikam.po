@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-02 00:39+0000\n"
+"POT-Creation-Date: 2024-01-22 01:56+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -520,19 +520,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr ""
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:137
+#: core/app/items/utils/contextmenuhelper_actions.cpp:142
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr ""
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:141
+#: core/app/items/utils/contextmenuhelper_actions.cpp:146
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr ""
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:178
+#: core/app/items/utils/contextmenuhelper_actions.cpp:183
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -540,7 +540,7 @@ msgid_plural "Move %1 Files to Trash"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:190
+#: core/app/items/utils/contextmenuhelper_actions.cpp:195
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
@@ -844,19 +844,19 @@ msgctxt "@action: context menu"
 msgid "Export"
 msgstr ""
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:118
+#: core/app/items/utils/contextmenuhelper_tools.cpp:117
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
 msgstr ""
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:128
+#: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr ""
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:139
+#: core/app/items/utils/contextmenuhelper_tools.cpp:138
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
@@ -942,9 +942,9 @@ msgid ""
 msgstr ""
 
 #: core/app/items/utils/itemviewutilities.cpp:352
-#: core/utilities/imageeditor/main/imagewindow.cpp:1100
-#: core/utilities/imageeditor/main/imagewindow.cpp:1125
-#: core/utilities/imageeditor/main/imagewindow.cpp:1157
+#: core/utilities/imageeditor/main/imagewindow.cpp:1102
+#: core/utilities/imageeditor/main/imagewindow.cpp:1127
+#: core/utilities/imageeditor/main/imagewindow.cpp:1159
 #, kde-format
 msgid "Album \"%1\""
 msgstr ""
@@ -998,8 +998,8 @@ msgstr ""
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:200
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:237
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:167
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
@@ -1017,7 +1017,7 @@ msgid "Unknown"
 msgstr ""
 
 #: core/app/items/utils/tooltipfiller.cpp:109
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1091
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1092
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:96
 #: core/utilities/import/items/importtooltipfiller.cpp:94
 #, kde-format
@@ -1143,7 +1143,7 @@ msgid " fps"
 msgstr ""
 
 #: core/app/items/utils/tooltipfiller.cpp:389
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:171
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:157
 #, kde-format
 msgid "Video Codec:"
 msgstr ""
@@ -1169,7 +1169,7 @@ msgid "digiKam Properties"
 msgstr ""
 
 #: core/app/items/utils/tooltipfiller.cpp:457
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:219
 #, kde-format
 msgid "Album:"
 msgstr ""
@@ -1495,7 +1495,7 @@ msgid ""
 "folders into.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp_import.cpp:166
+#: core/app/main/digikamapp_import.cpp:170
 #, kde-format
 msgid ""
 "The folder %1 is part of the album path and cannot be imported recursively!"
@@ -1836,7 +1836,7 @@ msgid "Change the filename of the currently selected item."
 msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:492
-#: core/utilities/imageeditor/editor/editorwindow.cpp:344
+#: core/utilities/imageeditor/editor/editorwindow.cpp:343
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
@@ -2444,21 +2444,21 @@ msgid "Main Tools"
 msgstr ""
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2664
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2649
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr ""
 
 #: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2681
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2666
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr ""
 
 #: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2688
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2673
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -2561,7 +2561,7 @@ msgstr ""
 msgid "Main Toolbar"
 msgstr ""
 
-#: core/app/main/main.cpp:196 core/app/views/stack/welcomepageview.cpp:257
+#: core/app/main/main.cpp:197 core/app/views/stack/welcomepageview.cpp:257
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2571,45 +2571,45 @@ msgstr ""
 msgid "digiKam"
 msgstr ""
 
-#: core/app/main/main.cpp:205 core/showfoto/main/main.cpp:172
+#: core/app/main/main.cpp:206 core/showfoto/main/main.cpp:187
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: core/app/main/main.cpp:206 core/showfoto/main/main.cpp:173
+#: core/app/main/main.cpp:207 core/showfoto/main/main.cpp:188
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: core/app/main/main.cpp:214
+#: core/app/main/main.cpp:215
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr ""
 
-#: core/app/main/main.cpp:217
+#: core/app/main/main.cpp:218
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 
-#: core/app/main/main.cpp:220
+#: core/app/main/main.cpp:221
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr ""
 
-#: core/app/main/main.cpp:222
+#: core/app/main/main.cpp:223
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 
-#: core/app/main/main.cpp:225
+#: core/app/main/main.cpp:226
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr ""
 
-#: core/app/main/main.cpp:252
+#: core/app/main/main.cpp:253
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2617,7 +2617,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:294
+#: core/app/main/main.cpp:295
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2625,7 +2625,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:303
+#: core/app/main/main.cpp:304
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2633,7 +2633,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:343
+#: core/app/main/main.cpp:344
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2764,7 +2764,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
@@ -3132,7 +3132,7 @@ msgid "Selection"
 msgstr ""
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:886
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -8298,8 +8298,7 @@ msgstr ""
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:411
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:484
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Settings..."
@@ -9553,8 +9552,8 @@ msgid "Perspective Adjustment"
 msgstr ""
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:206
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1128
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1134
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1129
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1135
 #, kde-format
 msgid "Aspect Ratio Crop"
 msgstr ""
@@ -9603,25 +9602,25 @@ msgid "Custom"
 msgstr ""
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:289
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:860
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:861
 #, kde-format
 msgid "Format DIN A"
 msgstr ""
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:290
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:861
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:862
 #, kde-format
 msgid "Golden Ratio"
 msgstr ""
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:291
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:862
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:863
 #, kde-format
 msgid "Current Aspect Ratio"
 msgstr ""
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:292
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:863
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:864
 #, kde-format
 msgctxt "no aspect ratio"
 msgid "None"
@@ -9746,98 +9745,103 @@ msgstr ""
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:427
 #, kde-format
+msgid "Center Lines"
+msgstr ""
+
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:428
+#, kde-format
 msgctxt "no geometric form"
 msgid "None"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:430
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:431
 #, kde-format
 msgid ""
 "With this option, you can display guide lines to help compose your "
 "photograph."
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:433
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:434
 #, kde-format
 msgid "Golden sections"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:434
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:435
 #, kde-format
 msgid "Enable this option to show golden sections."
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:436
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:437
 #, kde-format
 msgid "Golden spiral sections"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:437
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:438
 #, kde-format
 msgid "Enable this option to show golden spiral sections."
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:439
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:440
 #, kde-format
 msgid "Golden spiral"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:440
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:441
 #, kde-format
 msgid "Enable this option to show a golden spiral guide."
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:442
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:443
 #, kde-format
 msgid "Golden triangles"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:443
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:444
 #, kde-format
 msgid "Enable this option to show golden triangles."
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:445
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:446
 #, kde-format
 msgid "Flip horizontally"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:446
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:447
 #, kde-format
 msgid "Enable this option to flip the guidelines horizontally."
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:448
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:449
 #, kde-format
 msgid "Flip vertically"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:449
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:450
 #, kde-format
 msgid "Enable this option to flip the guidelines vertically."
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:451
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:452
 #, kde-format
 msgid "Color and width:"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:457
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:458
 #, kde-format
 msgid "Set here the color used to draw composition guides."
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:458
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:459
 #, kde-format
 msgid "Set here the width in pixels used to draw composition guides."
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:477
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:478
 #, kde-format
 msgid "Composition Guides"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:830
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:831
 #, kde-format
 msgctxt "custom ratio crop settings"
 msgid "Custom"
@@ -10287,35 +10291,35 @@ msgid "Scan Images"
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:83
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1870
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:104
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1855
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:131
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:216
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:132
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:153
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:144
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:165
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:145
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:166
 #, kde-format
 msgid ""
 "Failed to save file\n"
@@ -10324,16 +10328,16 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:160
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2344
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2363
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:181
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2329
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2348
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:245
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:182
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -14669,35 +14673,35 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:367
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:369
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
-#: core/utilities/imageeditor/editor/editorwindow.cpp:598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:597
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
 #, kde-format
 msgctxt "@info"
@@ -15643,7 +15647,7 @@ msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:915
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -16161,7 +16165,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:116
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -16266,7 +16270,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:87
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
 msgstr ""
@@ -16275,7 +16279,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
@@ -16295,7 +16299,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -16382,7 +16386,7 @@ msgid "Theme Parameters"
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
 #, kde-format
 msgid "Output Settings"
 msgstr ""
@@ -18654,13 +18658,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:148
 #, kde-format
 msgid "Destination folder:"
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:154
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -18726,7 +18730,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
@@ -19194,7 +19198,7 @@ msgid "Welcome to Email Tool"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:89
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
@@ -19235,32 +19239,37 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:124
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:127
 #, kde-format
 msgid "%1 input images to process"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:172
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:175
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:177
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:180
+#, kde-format
+msgid "See the video encoding trace below"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:185
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:182
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:190
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:66
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:64
 #, kde-format
 msgid ""
 "<p>This view list all items to include on video stream.</p><p>The first one "
@@ -19268,7 +19277,7 @@ msgid ""
 "order of each item.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:71
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:75
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Video Slideshow tool</b></h1></p><p>This assistant "
@@ -19281,89 +19290,163 @@ msgid ""
 "tracks to show on a TV screen.</p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:87
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:102
+#, kde-format
+msgctxt "@title:group"
+msgid "FFmpeg Binary"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:90
 #, kde-format
 msgid "Media Container Format:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:127
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
+#, kde-format
+msgid ""
+"This control allows to choose the format of the media container to host "
+"video stream and soundtrack."
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
+#, kde-format
+msgid "Equalize Video Luminosity"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#, kde-format
+msgid "Equalization Strength:"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:108
+#, kde-format
+msgid ""
+"This controls strength of equalization. Setting this option to zero "
+"effectively does nothing."
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
+#, kde-format
+msgid ""
+"<i>These settings apply temporal midway video equalization effect while "
+"encoding frames as video. This adjusts the sequence of frames to have the "
+"same histograms, while maintaining their dynamics as much as possible. It’s "
+"useful for e.g. matching exposures from a timelapse sequence.</i>"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
+#, kde-format
+msgid "Soundtrack File:"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Audio Track"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
+#, kde-format
+msgid "Soundtrack Duration:"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:138
+#, kde-format
+msgid ""
+"<i>Notes about soundtrack: if the audio length is smaller than video, it "
+"will be played in loop. If the audio length is largest than video, it will "
+"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
+"media.</i>"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:134
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
 #, kde-format
 msgid "Open in Player:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:101
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:84
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:110
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:87
+#, kde-format
+msgid ""
+"This value repeat one image in the sequence. While creating timelapse; it's "
+"usual to use 1. Typically, the number of frames will determine the time to "
+"show the same frame in the video. The result will depend of the number of "
+"frames per second used to encode the media."
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:96
 #, kde-format
 msgid "Video Standard:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:129
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:115
 #, kde-format
 msgid "Video Type:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:152
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:138
 #, kde-format
 msgid "Video Bit Rate:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:197
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:164
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:217
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:184
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
-"render the image on video stream.</i>"
+"render the image on video stream. For a timelapse, let this setting to None."
+"</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:234
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #, kde-format
 msgid "Transition Between Images"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:254
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
-"slideshow.</i>"
+"slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:335
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, kde-format
 msgid "Video Settings"
 msgstr "Videoheivehusat"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:82
 #, kde-format
 msgid "Generating Video Slideshow"
 msgstr ""
@@ -22544,13 +22627,13 @@ msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -23783,7 +23866,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
 #, kde-format
 msgid "Reload album list"
 msgstr ""
@@ -23802,14 +23885,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
 #, kde-format
 msgid "Change Account"
 msgstr ""
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:255
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:264
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr ""
@@ -24288,7 +24371,7 @@ msgid "Password for SmugMug album."
 msgstr ""
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:214
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
 #, kde-format
 msgid "New Album"
 msgstr ""
@@ -24851,7 +24934,7 @@ msgid "UFRaw Raw Conversion"
 msgstr ""
 
 #: core/libs/album/engine/album.cpp:406
-#: core/libs/database/utils/ifaces/dio.cpp:891
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Ruskalihtti"
@@ -25349,7 +25432,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr ""
 
 #: core/libs/album/manager/albummanager_talbum.cpp:620
-#: core/libs/album/manager/albummanager_talbum.cpp:1120
+#: core/libs/album/manager/albummanager_talbum.cpp:1127
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr ""
@@ -25359,7 +25442,7 @@ msgstr ""
 msgid "No such tag"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1115
+#: core/libs/album/manager/albummanager_talbum.cpp:1122
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -25372,7 +25455,7 @@ msgid "Context menu"
 msgstr ""
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
-#: core/libs/database/utils/ifaces/dio.cpp:901
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -25870,7 +25953,7 @@ msgid "Select Album"
 msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:546
+#: core/libs/album/widgets/albumselectors.cpp:548
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -25885,71 +25968,78 @@ msgstr ""
 #: core/libs/album/widgets/albumselectors.cpp:180
 #, kde-format
 msgctxt "@option"
-msgid "Whole albums collection"
+msgid "All albums"
 msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:238
 #, kde-format
 msgctxt "@option"
-msgid "Recursive Selection"
+msgid "Recursive"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:182
+#: core/libs/album/widgets/albumselectors.cpp:239
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Recursive selection."
+msgstr ""
+
+#: core/libs/album/widgets/albumselectors.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:199
+#: core/libs/album/widgets/albumselectors.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, kde-format
 msgctxt "@option"
-msgid "Whole tags collection"
+msgid "All tags"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:247
+#: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:250
+#: core/libs/album/widgets/albumselectors.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:254
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:547
+#: core/libs/album/widgets/albumselectors.cpp:549
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:552
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:553
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -25960,12 +26050,12 @@ msgstr ""
 msgid "Create New Album"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectwidget.cpp:168
+#: core/libs/album/widgets/albumselectwidget.cpp:169
 #, kde-format
 msgid "&New Album"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:170
 #, kde-format
 msgid "Create new album"
 msgstr ""
@@ -26595,25 +26685,25 @@ msgid ""
 "recent) Please use the more recent version of digikam that you used before. "
 msgstr ""
 
-#: core/libs/database/tags/facetags.cpp:398
+#: core/libs/database/tags/facetags.cpp:403
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr ""
 
-#: core/libs/database/tags/facetags.cpp:462
+#: core/libs/database/tags/facetags.cpp:467
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr ""
 
-#: core/libs/database/tags/facetags.cpp:482
+#: core/libs/database/tags/facetags.cpp:487
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr ""
 
-#: core/libs/database/tags/facetags.cpp:502
+#: core/libs/database/tags/facetags.cpp:507
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -26627,13 +26717,13 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:344
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:345
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -26646,55 +26736,55 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:354
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:855
+#: core/libs/database/utils/ifaces/dio.cpp:857
 #, kde-format
 msgid "Copy Album"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:860
+#: core/libs/database/utils/ifaces/dio.cpp:862
 #, kde-format
 msgid "Copy Images"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:868
 #, kde-format
 msgid "Copy Files"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:873
 #, kde-format
 msgid "Move Album"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, kde-format
 msgid "Move Images"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:881
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Move Files"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:896
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #, kde-format
 msgid "Restore Trash"
 msgstr ""
@@ -27641,7 +27731,7 @@ msgstr ""
 msgid "<i>VideoCodec:</i>"
 msgstr ""
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -27664,67 +27754,67 @@ msgstr ""
 msgid "Items List"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:153
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:279
+#: core/libs/dialogs/libsinfodlg.cpp:293
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:360
+#: core/libs/dialogs/libsinfodlg.cpp:374
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:388
+#: core/libs/dialogs/libsinfodlg.cpp:402
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:599
+#: core/libs/dialogs/libsinfodlg.cpp:613
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:618
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:623
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -31647,113 +31737,113 @@ msgstr ""
 msgid "This is the list of images to upload to your %1 account."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:186
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:192
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:201
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:194
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:197
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:206
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:207
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
 "downloaded."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid "Create new %1 folder"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:218
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:227
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
 "scaled down."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:231
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
 #, kde-format
 msgid "Original Size"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:241
 #, kde-format
 msgid "1600 px"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:233
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
 #, kde-format
 msgid "1440 px"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:243
 #, kde-format
 msgid "1280 px"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:235
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
 #, kde-format
 msgid "1152 px"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:245
 #, kde-format
 msgid "1024 px"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:248
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:257
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "Upload original image file"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:258
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:267
 #, kde-format
 msgid "Write the photo ID to the source image"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:259
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:271
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:280
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:279
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:288
 #, kde-format
 msgid "JPEG Quality:"
 msgstr ""
@@ -31823,20 +31913,20 @@ msgctxt "@info"
 msgid "Save the list."
 msgstr ""
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:580
+#: core/libs/dplugins/widgets/ditemslist.cpp:575
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr ""
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:581
-#: core/libs/dplugins/widgets/ditemslist.cpp:663
+#: core/libs/dplugins/widgets/ditemslist.cpp:576
+#: core/libs/dplugins/widgets/ditemslist.cpp:658
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr ""
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:661
+#: core/libs/dplugins/widgets/ditemslist.cpp:656
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
@@ -32100,7 +32190,7 @@ msgstr ""
 msgid "Failed to transform these files:"
 msgstr ""
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:157
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:172
 #, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
@@ -37835,504 +37925,516 @@ msgctxt "Transition: Random Effect"
 msgid "Random"
 msgstr ""
 
-#: core/libs/video/manager/qtav/vidslidetask.cpp:138
+#: core/libs/video/manager/ffmpegbinary.cpp:31
 #, kde-format
-msgid "Failed to open video encoder"
+msgid ""
+"A complete, cross-platform solution to record, convert and stream audio and "
+"video."
 msgstr ""
 
-#: core/libs/video/manager/qtav/vidslidetask.cpp:167
-#, kde-format
-msgid "Failed to open muxer"
-msgstr ""
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:253
-#, kde-format
-msgid "Encoding %1 Done"
-msgstr ""
-
-#: core/libs/video/manager/qtav/vidslidetask.cpp:280
-#, kde-format
-msgid "Output video is %1"
-msgstr ""
-
-#: core/libs/video/manager/vidslidesettings.cpp:474
+#: core/libs/video/manager/vidslidesettings.cpp:496
 #, kde-format
 msgctxt "Video Type: QVGA"
 msgid "QVGA - 320x180 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:475
+#: core/libs/video/manager/vidslidesettings.cpp:497
 #, kde-format
 msgctxt "Video Type: VCD1"
 msgid "VCD - 352x240 - 7:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:476
+#: core/libs/video/manager/vidslidesettings.cpp:498
 #, kde-format
 msgctxt "Video Type: VCD2"
 msgid "VCD - 352x288 - 6:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:477
+#: core/libs/video/manager/vidslidesettings.cpp:499
 #, kde-format
 msgctxt "Video Type: CVD1"
 msgid "CVD - 352x480 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:478
+#: core/libs/video/manager/vidslidesettings.cpp:500
 #, kde-format
 msgctxt "Video Type: CVD2"
 msgid "CVD - 352x576 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:479
+#: core/libs/video/manager/vidslidesettings.cpp:501
 #, kde-format
 msgctxt "Video Type: HVGA"
 msgid "HVGA - 480x270 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:480
+#: core/libs/video/manager/vidslidesettings.cpp:502
 #, kde-format
 msgctxt "Video Type: SVCD1"
 msgid "SVCD - 480x480 - 1:1"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:481
+#: core/libs/video/manager/vidslidesettings.cpp:503
 #, kde-format
 msgctxt "Video Type: SDTV1"
 msgid "SDTV - 528x480 - 11:10"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:482
+#: core/libs/video/manager/vidslidesettings.cpp:504
 #, kde-format
 msgctxt "Video Type: SDTV2"
 msgid "SDTV - 544x480 - 17:15"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:483
+#: core/libs/video/manager/vidslidesettings.cpp:505
 #, kde-format
 msgctxt "Video Type: EDTV1"
 msgid "EDTV - 544x576 - 17:18"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:484
+#: core/libs/video/manager/vidslidesettings.cpp:506
 #, kde-format
 msgctxt "Video Type: SVCD2"
 msgid "SVCD - 480x576 - 5:6"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:485
+#: core/libs/video/manager/vidslidesettings.cpp:507
 #, kde-format
 msgctxt "Video Type: EGA"
 msgid "EGA - 640x350 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:486
+#: core/libs/video/manager/vidslidesettings.cpp:508
 #, kde-format
 msgctxt "Video Type: VGA"
 msgid "VGA - 640x480 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:487
+#: core/libs/video/manager/vidslidesettings.cpp:509
 #, kde-format
 msgctxt "Video Type: SDTV3"
 msgid "SDTV - 704x480 - 22:15"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:488
+#: core/libs/video/manager/vidslidesettings.cpp:510
 #, kde-format
 msgctxt "Video Type: EDTV2"
 msgid "EDTV - 704x576 - 11:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:489
+#: core/libs/video/manager/vidslidesettings.cpp:511
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x480 - 3:2"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:490
+#: core/libs/video/manager/vidslidesettings.cpp:512
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x576 - 5:4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:491
+#: core/libs/video/manager/vidslidesettings.cpp:513
 #, kde-format
 msgctxt "Video Type: WVGA"
 msgid "WVGA - 800x450 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:492
+#: core/libs/video/manager/vidslidesettings.cpp:514
 #, kde-format
 msgctxt "Video Type: SVGA"
 msgid "SVGA - 800x600 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:493
+#: core/libs/video/manager/vidslidesettings.cpp:515
 #, kde-format
 msgctxt "Video Type: DVGA"
 msgid "DVGA - 960x640 - 3:2"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:494
+#: core/libs/video/manager/vidslidesettings.cpp:516
 #, kde-format
 msgctxt "Video Type: XVGA"
 msgid "XVGA - 1024x576 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:495
+#: core/libs/video/manager/vidslidesettings.cpp:517
 #, kde-format
 msgctxt "Video Type: HDTV"
 msgid "HDTV - 1280x720 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:496
+#: core/libs/video/manager/vidslidesettings.cpp:518
 #, kde-format
 msgctxt "Video Type: WXGA1"
 msgid "WXGA - 1280x768 - 5:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:497
+#: core/libs/video/manager/vidslidesettings.cpp:519
 #, kde-format
 msgctxt "Video Type: WXGA2"
 msgid "WXGA - 1280x800 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:498
+#: core/libs/video/manager/vidslidesettings.cpp:520
 #, kde-format
 msgctxt "Video Type: SXGA"
 msgid "SXGA - 1280x1024 - 5:4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:499
+#: core/libs/video/manager/vidslidesettings.cpp:521
 #, kde-format
 msgctxt "Video Type: SXGAPLUS"
 msgid "SXGAPLUS - 1400x1050 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:500
+#: core/libs/video/manager/vidslidesettings.cpp:522
 #, kde-format
 msgctxt "Video Type: WSXGA"
 msgid "WSXGA - 1440x900 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:501
+#: core/libs/video/manager/vidslidesettings.cpp:523
 #, kde-format
 msgctxt "Video Type: HDPLUS"
 msgid "HDPLUS - 1600x900 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:502
+#: core/libs/video/manager/vidslidesettings.cpp:524
 #, kde-format
 msgctxt "Video Type: WSXGAPLUS"
 msgid "WSXGAPLUS - 1680x1050 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:503
+#: core/libs/video/manager/vidslidesettings.cpp:525
 #, kde-format
 msgctxt "Video Type: UXGA"
 msgid "UXGA - 1600x1200 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:504
+#: core/libs/video/manager/vidslidesettings.cpp:526
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:505
+#: core/libs/video/manager/vidslidesettings.cpp:527
 #, kde-format
 msgctxt "Video Type: WUXGA"
 msgid "WUXGA - 1920x1200 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:506
+#: core/libs/video/manager/vidslidesettings.cpp:528
 #, kde-format
 msgctxt "Video Type: TXGA"
 msgid "TXGA - 1920x1440 - 7:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:507
+#: core/libs/video/manager/vidslidesettings.cpp:529
 #, kde-format
 msgctxt "Video Type: QXGA"
 msgid "QXGA - 2048x1536 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:508
+#: core/libs/video/manager/vidslidesettings.cpp:530
 #, kde-format
 msgctxt "Video Type: UWFHD"
 msgid "UWFHD - 2560x1080 - 21:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:509
+#: core/libs/video/manager/vidslidesettings.cpp:531
 #, kde-format
 msgctxt "Video Type: WQHD"
 msgid "WQHD - 2560x1440 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:510
+#: core/libs/video/manager/vidslidesettings.cpp:532
 #, kde-format
 msgctxt "Video Type: WQXGA"
 msgid "WQXGA - 2560x1600 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:511
+#: core/libs/video/manager/vidslidesettings.cpp:533
 #, kde-format
 msgctxt "Video Type: QSXGA"
 msgid "QSXGA - 2560x2048 - 5:4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:512
+#: core/libs/video/manager/vidslidesettings.cpp:534
 #, kde-format
 msgctxt "Video Type: QSXGAPLUS"
 msgid "QSXGAPLUS - 2800x2100 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:513
+#: core/libs/video/manager/vidslidesettings.cpp:535
 #, kde-format
 msgctxt "Video Type: WQXGAPLUS"
 msgid "WQXGAPLUS - 3200x1800 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:514
+#: core/libs/video/manager/vidslidesettings.cpp:536
 #, kde-format
 msgctxt "Video Type: WQSXGA"
 msgid "WQSXGA - 3200x2048 - 25:16"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:515
+#: core/libs/video/manager/vidslidesettings.cpp:537
 #, kde-format
 msgctxt "Video Type: QUXGA"
 msgid "QUXGA - 3200x2400 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:516
+#: core/libs/video/manager/vidslidesettings.cpp:538
 #, kde-format
 msgctxt "Video Type: UHD4K"
 msgid "UHD4K - 3840x2160 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:517
+#: core/libs/video/manager/vidslidesettings.cpp:539
 #, kde-format
 msgctxt "Video Type: WQUXGA"
 msgid "WQUXGA - 3840x2400 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:518
+#: core/libs/video/manager/vidslidesettings.cpp:540
 #, kde-format
 msgctxt "Video Type: HXGA"
 msgid "HXGA - 4096x3072 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:519
+#: core/libs/video/manager/vidslidesettings.cpp:541
 #, kde-format
 msgctxt "Video Type: UHD5K"
 msgid "UHD5K - 5120x2880 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:520
+#: core/libs/video/manager/vidslidesettings.cpp:542
 #, kde-format
 msgctxt "Video Type: WHXGA"
 msgid "WHXGA - 5120x3200 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:521
+#: core/libs/video/manager/vidslidesettings.cpp:543
 #, kde-format
 msgctxt "Video Type: HSXGA"
 msgid "HSXGA - 5120x4096 - 5:4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:522
+#: core/libs/video/manager/vidslidesettings.cpp:544
 #, kde-format
 msgctxt "Video Type: UHD6K"
 msgid "UHD6K - 6016x3384 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:523
+#: core/libs/video/manager/vidslidesettings.cpp:545
 #, kde-format
 msgctxt "Video Type: WHSXGA"
 msgid "WHSXGA - 6400x4096 - 25:16"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:524
+#: core/libs/video/manager/vidslidesettings.cpp:546
 #, kde-format
 msgctxt "Video Type: HUXGA"
 msgid "HUXGA - 6400x4800 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:525
+#: core/libs/video/manager/vidslidesettings.cpp:547
 #, kde-format
 msgctxt "Video Type: UHD8K"
 msgid "UHD8K - 7680x4320 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:526
+#: core/libs/video/manager/vidslidesettings.cpp:548
 #, kde-format
 msgctxt "Video Type: WHUXGA"
 msgid "WHUXGA - 7680x4800 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:527
+#: core/libs/video/manager/vidslidesettings.cpp:549
 #, kde-format
 msgctxt "Video Type: UW10K"
 msgid "UW10K - 10240x4320 - 21:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:528
+#: core/libs/video/manager/vidslidesettings.cpp:550
 #, kde-format
 msgctxt "Video Type: UW16K"
 msgid "UW16K - 15360x8640 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:751
+#: core/libs/video/manager/vidslidesettings.cpp:773
 #, kde-format
 msgctxt "Video Bit Rate 400000"
 msgid "400k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:752
+#: core/libs/video/manager/vidslidesettings.cpp:774
 #, kde-format
 msgctxt "Video Bit Rate 500000"
 msgid "500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:753
+#: core/libs/video/manager/vidslidesettings.cpp:775
 #, kde-format
 msgctxt "Video Bit Rate 1000000"
 msgid "1000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:754
+#: core/libs/video/manager/vidslidesettings.cpp:776
 #, kde-format
 msgctxt "Video Bit Rate 1200000"
 msgid "1200k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:755
+#: core/libs/video/manager/vidslidesettings.cpp:777
 #, kde-format
 msgctxt "Video Bit Rate 1500000"
 msgid "1500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:756
+#: core/libs/video/manager/vidslidesettings.cpp:778
 #, kde-format
 msgctxt "Video Bit Rate 2000000"
 msgid "2000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:757
+#: core/libs/video/manager/vidslidesettings.cpp:779
 #, kde-format
 msgctxt "Video Bit Rate 2500000"
 msgid "2500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:758
+#: core/libs/video/manager/vidslidesettings.cpp:780
 #, kde-format
 msgctxt "Video Bit Rate 3000000"
 msgid "3000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:759
+#: core/libs/video/manager/vidslidesettings.cpp:781
 #, kde-format
 msgctxt "Video Bit Rate 4000000"
 msgid "4000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:760
+#: core/libs/video/manager/vidslidesettings.cpp:782
 #, kde-format
 msgctxt "Video Bit Rate 4500000"
 msgid "4500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:761
+#: core/libs/video/manager/vidslidesettings.cpp:783
 #, kde-format
 msgctxt "Video Bit Rate 5000000"
 msgid "5000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:762
+#: core/libs/video/manager/vidslidesettings.cpp:784
 #, kde-format
 msgctxt "Video Bit Rate 6000000"
 msgid "6000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:763
+#: core/libs/video/manager/vidslidesettings.cpp:785
 #, kde-format
 msgctxt "Video Bit Rate 8000000"
 msgid "8000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:772
+#: core/libs/video/manager/vidslidesettings.cpp:794
 #, kde-format
 msgctxt "Video Standard PAL"
 msgid "PAL - 25 FPS"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:773
+#: core/libs/video/manager/vidslidesettings.cpp:795
 #, kde-format
 msgctxt "Video Standard NTSC"
 msgid "NTSC - 29.97 FPS"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:785
+#: core/libs/video/manager/vidslidesettings.cpp:807
 #, kde-format
 msgctxt "Video Codec X264"
 msgid "High Quality H.264 AVC/MPEG-4 AVC"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:786
+#: core/libs/video/manager/vidslidesettings.cpp:808
 #, kde-format
 msgctxt "Video Codec MPEG4"
 msgid "DivX/XVid/MPEG-4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:787
+#: core/libs/video/manager/vidslidesettings.cpp:809
 #, kde-format
 msgctxt "Video Codec MPEG2"
 msgid "MPEG-2 Video"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:804
+#: core/libs/video/manager/vidslidesettings.cpp:826
 #, kde-format
 msgctxt "Video Standard AVI"
 msgid "AVI - Audio Video Interleave"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:805
+#: core/libs/video/manager/vidslidesettings.cpp:827
 #, kde-format
 msgctxt "Video Standard MKV"
 msgid "MKV - Matroska"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:806
+#: core/libs/video/manager/vidslidesettings.cpp:828
 #, kde-format
 msgctxt "Video Standard MP4"
 msgid "MP4 - MPEG-4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:807
+#: core/libs/video/manager/vidslidesettings.cpp:829
 #, kde-format
 msgctxt "Video Standard MPG"
 msgid "MPG - MPEG-2"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:816
+#: core/libs/video/manager/vidslidesettings.cpp:838
 #, kde-format
 msgctxt "Video Effect NOPLAYER"
 msgid "None"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:817
+#: core/libs/video/manager/vidslidesettings.cpp:839
 #, kde-format
 msgctxt "Video Standard INTERNAL"
 msgid "Internal"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:818
+#: core/libs/video/manager/vidslidesettings.cpp:840
 #, kde-format
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
+msgstr ""
+
+#: core/libs/video/manager/vidslidetask.cpp:183
+#, kde-format
+msgid "Generating frames from %1 Done"
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:63
+#, kde-format
+msgid "Error while creating temporary directory %1!"
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:95
+#, kde-format
+msgid "Encoding frames..."
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:133
+#, kde-format
+msgid "Encoding done."
+msgstr ""
+
+#: core/libs/video/manager/vidslidethread.cpp:137
+#, kde-format
+msgid "Error while encoding frames!"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
@@ -39041,7 +39143,7 @@ msgstr "Molsso"
 msgid "The binary file found does not appear to be working as intended."
 msgstr ""
 
-#: core/libs/widgets/files/dfileselector.cpp:58
+#: core/libs/widgets/files/dfileselector.cpp:53
 #, kde-format
 msgid "Browse..."
 msgstr ""
@@ -46451,19 +46553,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:163
+#: core/showfoto/main/main.cpp:178
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:181
+#: core/showfoto/main/main.cpp:196
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:212
+#: core/showfoto/main/main.cpp:227
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -46492,7 +46594,7 @@ msgid "Unknown"
 msgstr ""
 
 #: core/showfoto/main/showfoto.cpp:280
-#: core/utilities/imageeditor/main/imagewindow.cpp:490
+#: core/utilities/imageeditor/main/imagewindow.cpp:492
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -46504,7 +46606,7 @@ msgid "Delete File"
 msgstr ""
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2390
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2375
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -46521,8 +46623,8 @@ msgid "Remote file handling is not supported"
 msgstr ""
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:573
-#: core/utilities/imageeditor/main/imagewindow.cpp:688
+#: core/utilities/imageeditor/main/imagewindow.cpp:575
+#: core/utilities/imageeditor/main/imagewindow.cpp:690
 #, kde-format
 msgid "Image saved successfully"
 msgstr ""
@@ -48779,7 +48881,7 @@ msgstr ""
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
-#: core/utilities/imageeditor/editor/editorwindow.cpp:592
+#: core/utilities/imageeditor/editor/editorwindow.cpp:591
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -49683,132 +49785,131 @@ msgid ""
 "Fuzzy search"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:180
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:179
 #, kde-format
 msgid "Roadmap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:181
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:180
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "Satelihtta"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:182
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:181
 #, kde-format
 msgid "Hybrid"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:183
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:182
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:201
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
 #, kde-format
 msgid "Show Map Type Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:206
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
 #, kde-format
 msgid "Show Navigation Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:211
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Scale Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:224
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
 #: core/utilities/setup/setupgeolocation.cpp:131
 #, kde-format
 msgid "Google Maps"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:402
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:473
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:472
 #, kde-format
 msgid "Float items"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:421
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:494
-#, kde-format
-msgid "Export as..."
-msgstr ""
-
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:196
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:195
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:326
 #, kde-format
 msgid "Atlas map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
 #, kde-format
 msgid "Satellite map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
 #, kde-format
 msgid "OpenStreetMap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:330
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
 #, kde-format
 msgid "OpenStreetMap (Vector)"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:387
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:393
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:392
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:398
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:397
 #, kde-format
 msgid "Equirectangular"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:409
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:408
 #, kde-format
 msgid "Show compass"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:414
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:413
 #, kde-format
 msgid "Show scale bar"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:419
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:418
 #, kde-format
 msgid "Show navigation"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:424
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:423
 #, kde-format
 msgid "Show overview map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:464
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:463
 #, fuzzy, kde-format
 msgid "Projection"
 msgstr "Cuovka"
+
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:72
+#, kde-format
+msgid "Export as..."
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:160
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:183
@@ -50639,99 +50740,99 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:58
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:63
+#, kde-format
+msgid "Map settings"
+msgstr ""
+
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:469
 #, kde-format
 msgid "Zoom in"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:65
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:476
 #, kde-format
 msgid "Zoom out"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:71
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:482
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:89
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:500
 #, kde-format
 msgid "Preview single items"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:92
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:503
 #, kde-format
 msgid "Preview grouped items"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:95
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:506
 #, kde-format
 msgid "Show numbers"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:101
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:512
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:104
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:515
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:111
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:522
 #, kde-format
 msgid "Remove the current region selection"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:119
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:530
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:124
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:535
 #, kde-format
 msgid "Pan mode"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:131
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:542
 #, kde-format
 msgid "Zoom into a group"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:137
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:548
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:143
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:554
 #, fuzzy, kde-format
 msgid "Filter images"
 msgstr "Sillit"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:148
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:559
 #, kde-format
 msgid "Remove the current filter"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:153
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:564
 #, kde-format
 msgid "Select images"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:159
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:570
 #, kde-format
 msgid "Lock the map position"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:162
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:573
 #, kde-format
 msgid "Load tracks from albums"
-msgstr ""
-
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:632
-#, kde-format
-msgid "Map settings"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/widgets/placeholderwidget.cpp:49
@@ -52948,7 +53049,7 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
 #, kde-format
-msgid "Shows the atmosphere around the earth."
+msgid "A plugin to show the atmosphere around the earth."
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
@@ -53001,7 +53102,7 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
 #, kde-format
-msgid "This is a float item that provides a compass."
+msgid "A plugin to show a float item that provides a compass over the map."
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
@@ -53034,19 +53135,19 @@ msgstr ""
 msgid "German"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:73
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:72
 #, kde-format
 msgid "Crosshairs"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:78
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:77
 #, kde-format
 msgid "Cross&hairs"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
 #, kde-format
-msgid "A plugin that shows crosshairs."
+msgid "A plugin that shows crosshairs over the map."
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
@@ -53123,67 +53224,67 @@ msgstr ""
 msgid "Show numerical Labels."
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:71
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:70
 #, kde-format
 msgid "Coordinate Grid"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:76
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:75
 #, kde-format
 msgid "Coordinate &Grid"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:91
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:90
 #, kde-format
-msgid "A plugin that shows a coordinate grid."
+msgid "A plugin that shows a coordinate grid over the map."
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:213
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:212
 #, kde-format
 msgid "Please choose the color for the coordinate grid."
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:224
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:223
 #, kde-format
 msgid "Please choose the color for the tropic circles."
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:235
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:234
 #, kde-format
 msgid "Please choose the color for the equator."
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:315
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:314
 #, kde-format
 msgid "Equator"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:319
 #, kde-format
 msgid "Prime Meridian"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:321
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
 #, kde-format
 msgid "Antimeridian"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:406
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:408
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:410
 #, kde-format
 msgid "Arctic Circle"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:412
+#: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
 #, kde-format
 msgid "Antarctic Circle"
 msgstr ""
@@ -53219,7 +53320,7 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
 #, kde-format
-msgid "This is a float item that provides a map scale."
+msgid "A plugin to show a float item that provides a map scale."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
@@ -53421,27 +53522,27 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
 #, kde-format
 msgid "Navigation"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:65
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
 #, kde-format
 msgid "&Navigation"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:80
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
 #, kde-format
-msgid "A mouse control to zoom and move the map"
+msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:239
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
 #, kde-format
 msgid "Current Location Button"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:242
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
 #, kde-format
 msgid "Home Button"
 msgstr ""
@@ -53458,7 +53559,7 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
 #, kde-format
-msgid "This is a float item that provides an overview map."
+msgid "A plugin to add a float item that provides an overview map."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
@@ -53507,19 +53608,19 @@ msgstr ""
 msgid "Position I&ndicator:"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:81
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:80
 #, kde-format
 msgid "Download Progress Indicator"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:86
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:85
 #, kde-format
 msgid "&Download Progress"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:101
+#: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:100
 #, kde-format
-msgid "Shows a pie chart download progress indicator"
+msgid "A plugin to show a pie chart download progress indicator over the map"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
@@ -53529,7 +53630,7 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
-msgid "Create GeoDataDocument from Cache Files"
+msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
@@ -53544,7 +53645,9 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
-msgid "Allows loading of NMEA files through GPSBabel."
+msgid ""
+"A plugin to load Geolocation Data from NMEA files through GPSBabel command "
+"line tool."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
@@ -53559,7 +53662,7 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Gpx Files"
+msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
@@ -53574,7 +53677,7 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
 #, kde-format
-msgid "Create GeoDataDocument from GeoJSON Files"
+msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
@@ -53589,7 +53692,8 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
-msgid "Create GeoDataDocument from KML and KMZ Files"
+msgid ""
+"A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
@@ -53597,32 +53701,35 @@ msgstr ""
 msgid "Google Earth KML"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:24
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:25
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:29
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:30
 #, kde-format
 msgid "OpenStreetMap Nominatim"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
+#: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
 #, kde-format
-msgid "Online reverse geocoding using the OpenStreetMap Nominatim service"
+msgid ""
+"A plugin to process Online reverse geocoding using the OpenStreetMap "
+"Nominatim web-service"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:20
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:21
 #, kde-format
 msgid "Osm File Parser"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:35
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Osm Files"
+msgid ""
+"A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:52
+#: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, kde-format
 msgid "OpenStreetMap Data"
 msgstr ""
@@ -53634,7 +53741,8 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Pn2 Files"
+msgid ""
+"A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
@@ -53649,7 +53757,9 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
-msgid "Create GeoDataDocument from Pnt Files"
+msgid ""
+"A plugin to load Geolocation Data from the Micro World Database II Files "
+"format"
 msgstr ""
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
@@ -54025,12 +54135,12 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
 #, kde-format
-msgid "Marble View"
+msgid "Map View"
 msgstr ""
 
-#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:296
+#: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
 #, kde-format
-msgid "Marble Plugins"
+msgid "Map Plugins"
 msgstr ""
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
@@ -54663,49 +54773,49 @@ msgstr ""
 msgid "Try all settings."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:218
+#: core/utilities/imageeditor/editor/editorwindow.cpp:217
 #, kde-format
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:225
+#: core/utilities/imageeditor/editor/editorwindow.cpp:224
 #, kde-format
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:232
+#: core/utilities/imageeditor/editor/editorwindow.cpp:231
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:244
+#: core/utilities/imageeditor/editor/editorwindow.cpp:243
 #, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:245
+#: core/utilities/imageeditor/editor/editorwindow.cpp:244
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:250
+#: core/utilities/imageeditor/editor/editorwindow.cpp:249
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:251
+#: core/utilities/imageeditor/editor/editorwindow.cpp:250
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:257
+#: core/utilities/imageeditor/editor/editorwindow.cpp:256
 #, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -54713,7 +54823,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:258
+#: core/utilities/imageeditor/editor/editorwindow.cpp:257
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54721,158 +54831,158 @@ msgid ""
 "filename and format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:263
+#: core/utilities/imageeditor/editor/editorwindow.cpp:262
 #, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:265
+#: core/utilities/imageeditor/editor/editorwindow.cpp:264
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:266
+#: core/utilities/imageeditor/editor/editorwindow.cpp:265
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:267
+#: core/utilities/imageeditor/editor/editorwindow.cpp:266
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:268
+#: core/utilities/imageeditor/editor/editorwindow.cpp:267
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:272
+#: core/utilities/imageeditor/editor/editorwindow.cpp:271
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:278
+#: core/utilities/imageeditor/editor/editorwindow.cpp:277
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:284
+#: core/utilities/imageeditor/editor/editorwindow.cpp:283
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:289
+#: core/utilities/imageeditor/editor/editorwindow.cpp:288
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:294
+#: core/utilities/imageeditor/editor/editorwindow.cpp:293
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:312
+#: core/utilities/imageeditor/editor/editorwindow.cpp:311
 #, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:313
+#: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:322
+#: core/utilities/imageeditor/editor/editorwindow.cpp:321
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:323
+#: core/utilities/imageeditor/editor/editorwindow.cpp:322
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:336
+#: core/utilities/imageeditor/editor/editorwindow.cpp:335
 #, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:337
+#: core/utilities/imageeditor/editor/editorwindow.cpp:336
 #, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:360
+#: core/utilities/imageeditor/editor/editorwindow.cpp:359
 #, kde-format
 msgctxt "@action"
 msgid "Undo"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:387
+#: core/utilities/imageeditor/editor/editorwindow.cpp:386
 #, kde-format
 msgctxt "@action"
 msgid "Redo"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:412
 #, kde-format
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:418
+#: core/utilities/imageeditor/editor/editorwindow.cpp:417
 #, kde-format
 msgctxt "@action"
 msgid "Select None"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:432
+#: core/utilities/imageeditor/editor/editorwindow.cpp:431
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:438
+#: core/utilities/imageeditor/editor/editorwindow.cpp:437
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:445
+#: core/utilities/imageeditor/editor/editorwindow.cpp:444
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:450
+#: core/utilities/imageeditor/editor/editorwindow.cpp:449
 #, kde-format
 msgctxt "@info"
 msgid ""
 "This option can be used to zoom the image to the current selection area."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:474
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:477
+#: core/utilities/imageeditor/editor/editorwindow.cpp:476
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54880,13 +54990,13 @@ msgid ""
 "to avoid under-exposing the image."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:485
+#: core/utilities/imageeditor/editor/editorwindow.cpp:484
 #, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:487
+#: core/utilities/imageeditor/editor/editorwindow.cpp:486
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54894,32 +55004,32 @@ msgid ""
 "to avoid over-exposing the image."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:495
+#: core/utilities/imageeditor/editor/editorwindow.cpp:494
 #: core/utilities/import/main/importui.cpp:488
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:502
+#: core/utilities/imageeditor/editor/editorwindow.cpp:501
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:507
+#: core/utilities/imageeditor/editor/editorwindow.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:515
+#: core/utilities/imageeditor/editor/editorwindow.cpp:514
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:518
+#: core/utilities/imageeditor/editor/editorwindow.cpp:517
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54927,33 +55037,33 @@ msgid ""
 "enable this action."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:526
+#: core/utilities/imageeditor/editor/editorwindow.cpp:525
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:534
+#: core/utilities/imageeditor/editor/editorwindow.cpp:533
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:544
+#: core/utilities/imageeditor/editor/editorwindow.cpp:543
 #: core/utilities/import/views/importpreviewview.cpp:212
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:552
+#: core/utilities/imageeditor/editor/editorwindow.cpp:551
 #: core/utilities/import/views/importpreviewview.cpp:213
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:584
+#: core/utilities/imageeditor/editor/editorwindow.cpp:583
 #: core/utilities/import/main/importui.cpp:530
 #: core/utilities/import/main/importui.cpp:767
 #, kde-format
@@ -54961,37 +55071,37 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:614
+#: core/utilities/imageeditor/editor/editorwindow.cpp:613
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:617
+#: core/utilities/imageeditor/editor/editorwindow.cpp:616
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:621
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1137
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1153
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1138
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1174
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1159
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54999,13 +55109,13 @@ msgid ""
 "Are you sure?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1179
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1164
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1289
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1274
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55013,7 +55123,7 @@ msgid ""
 "Do you want to save it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1440
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1425
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55021,25 +55131,25 @@ msgid ""
 "All changes will be lost."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1518
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1503
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1538
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1523
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1566
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1551
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1608
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1593
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55048,13 +55158,13 @@ msgid ""
 "configuration in digiKam's setup."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1665
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1650
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1687
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1672
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55064,31 +55174,31 @@ msgid ""
 "\"%2\"."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1805
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2016
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2001
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2023
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2008
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2270
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2255
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2345
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2330
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55096,32 +55206,32 @@ msgid ""
 "you want to overwrite it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2364
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2349
 #, kde-format
 msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2391
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2376
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2470
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2455
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2474
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2459
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2479
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2464
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55129,119 +55239,119 @@ msgid ""
 "available."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2515
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2500
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2516
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2501
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2530
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2515
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2531
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2516
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2607
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2636
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2643
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2628
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2650
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2657
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2642
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2805
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2834
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2819
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2843
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2828
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:185
+#: core/utilities/imageeditor/main/imagewindow.cpp:187
 #, kde-format
 msgid "Image Editor - %1"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:189
+#: core/utilities/imageeditor/main/imagewindow.cpp:191
 #, kde-format
 msgid "Image Editor"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:359
+#: core/utilities/imageeditor/main/imagewindow.cpp:361
 #, kde-format
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:360
+#: core/utilities/imageeditor/main/imagewindow.cpp:362
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:930
+#: core/utilities/imageeditor/main/imagewindow.cpp:932
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:931
+#: core/utilities/imageeditor/main/imagewindow.cpp:933
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
 "The image editor will be closed."
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1202
+#: core/utilities/imageeditor/main/imagewindow.cpp:1204
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1203
+#: core/utilities/imageeditor/main/imagewindow.cpp:1205
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -62068,32 +62178,37 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:77
+#: core/utilities/setup/misc/systemsettingswidget.cpp:78
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:78
+#: core/utilities/setup/misc/systemsettingswidget.cpp:79
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:82
+#: core/utilities/setup/misc/systemsettingswidget.cpp:83
+#, kde-format
+msgid "Force use of software OpenGL rendering"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:84
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:83
+#: core/utilities/setup/misc/systemsettingswidget.cpp:85
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:85
+#: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid "Download required binary data..."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:100
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -62347,7 +62462,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Google Maps requires to work friendly an API key that end users must buy "
+"To work friendly, Google Maps requires an API key that end users must buy "
 "online to gain credentials. Without this key, Google Maps is still usable "
 "but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"

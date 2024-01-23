@@ -7,7 +7,7 @@
  * Description : MJPEG stream settings container.
  *
  * SPDX-FileCopyrightText: 2021-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2021 by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021      by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -29,6 +29,7 @@
 #include "dinfointerface.h"
 #include "effectmngr.h"
 #include "transitionmngr.h"
+#include "frameosdsettings.h"
 
 class KConfigGroup;
 
@@ -58,18 +59,10 @@ public:
 
 public:
 
-    bool                        printTitle;              ///< Print image title while streaming
-    bool                        printTags;               ///< Print tags title while streaming
-    bool                        printCapIfNoTitle;       ///< Print image captions if no title available while streaming
-    bool                        printComment;            ///< Print picture comment while streaming
-    bool                        printMakeModel;          ///< Print camera Make and Model while streaming
-    bool                        printLensModel;          ///< Print camera Lens model while streaming
-    bool                        printExpoSensitivity;    ///< Print camera Exposure and Sensitivity while streaming
-    bool                        printApertureFocal;      ///< Print camera Aperture and Focal while streaming
-    bool                        printName;               ///< Print picture file name while streaming
-    bool                        printDate;               ///< Print picture creation date while streaming
-    bool                        printRating;             ///< Print rating while streaming
-    QFont                       osdFont;                 ///< Font for the display of osd text
+    FrameOsdSettings            osdSettings;
+
+    // ---
+
     int                         port;                    ///< IP port to use with MJPEG Server.
     bool                        loop;                    ///< Image stream as loop.
     int                         quality;                 ///< Jpeg compression [1...100].

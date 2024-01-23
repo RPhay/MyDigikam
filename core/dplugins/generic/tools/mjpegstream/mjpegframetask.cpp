@@ -7,7 +7,7 @@
  * Description : a MJPEG frame generator.
  *
  * SPDX-FileCopyrightText: 2021-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2021 by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021      by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -31,7 +31,7 @@
 #include "digikam_debug.h"
 #include "previewloadthread.h"
 #include "frameutils.h"
-#include "mjpegframeosd.h"
+#include "frameosd.h"
 #include "vidslidesettings.h"
 
 namespace DigikamGenericMjpegStreamPlugin
@@ -42,7 +42,7 @@ class Q_DECL_HIDDEN MjpegFrameTask::Private
 public:
 
     explicit Private(const MjpegStreamSettings& set)
-        : settings(set),
+        : settings    (set),
           failedToLoad(false)
     {
         VidSlideSettings::VidType type = (VidSlideSettings::VidType)settings.outSize;
@@ -118,7 +118,7 @@ void MjpegFrameTask::run()
     QImage qtimg;   // Current transition image.
     QImage qoimg;   // Next image in stream.
 
-    MjpegFrameOsd osd;
+    FrameOsd osd;
 
     VidSlideSettings::VidType type     = (VidSlideSettings::VidType)d->settings.outSize;
     QSize JPEGsize                     = VidSlideSettings::videoSizeFromType(type);
@@ -201,7 +201,8 @@ void MjpegFrameTask::run()
                     {
                         osd.insertOsdToFrame(qiimg,
                                              itemUrl,
-                                             d->settings);
+                                             d->settings.osdSettings,
+                                             d->settings.iface);
                     }
                 }
                 else

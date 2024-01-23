@@ -78,10 +78,8 @@ void FCTask::run()
 
     if (d->settings.iface && d->settings.iface->supportAlbums() && d->settings.albumPath)
     {
-        DInfoInterface::DInfoMap infoMap  = d->settings.iface->itemInfo(d->srcUrl);
-        DItemInfo info(infoMap);
-        DInfoInterface::DInfoMap albumMap = d->settings.iface->albumInfo(info.albumId());
-        DAlbumInfo album(albumMap);
+        DItemInfo info(d->settings.iface->itemInfo(d->srcUrl));
+        DAlbumInfo album(d->settings.iface->albumInfo(info.albumId()));
 
         dest.setPath(dest.path() + album.albumPath());
         dest = dest.adjusted(QUrl::StripTrailingSlash);

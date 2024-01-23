@@ -208,6 +208,11 @@ void WSNewAlbumDialog::addToMainLayout(QWidget* const widget)
     d->mainLayout->removeWidget(d->buttonBox);
     d->mainLayout->addWidget(d->buttonBox);
 }
+void WSNewAlbumDialog::setAlbumSuggestion(const QString& title)
+{
+    d->titleEdt->setText(title);
+    d->titleEdt->selectAll();
+}
 
 void WSNewAlbumDialog::getBaseAlbumProperties(WSAlbum& baseAlbum)
 {

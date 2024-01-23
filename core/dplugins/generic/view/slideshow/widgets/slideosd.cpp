@@ -253,8 +253,7 @@ SlideToolBar* SlideOSD::toolBar() const
 
 void SlideOSD::setCurrentUrl(const QUrl& url)
 {
-    DInfoInterface::DInfoMap info = d->settings->iface->itemInfo(url);
-    DItemInfo item(info);
+    DItemInfo item(d->settings->iface->itemInfo(url));
 
     // Update info text.
 

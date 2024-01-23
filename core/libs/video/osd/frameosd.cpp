@@ -4,16 +4,16 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-24
- * Description : MJPEG frame on screen display.
+ * Description : frame on screen display.
  *
  * SPDX-FileCopyrightText: 2021-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2021 by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021      by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
-#include "mjpegframeosd.h"
+#include "frameosd.h"
 
 // Qt includes
 
@@ -32,10 +32,10 @@
 #include "digikam_debug.h"
 #include "itempropertiestab.h"
 
-namespace DigikamGenericMjpegStreamPlugin
+namespace Digikam
 {
 
-MjpegFrameOsd::MjpegFrameOsd()
+FrameOsd::FrameOsd()
   : m_desc     (QLatin1String("")),
     m_descPos  (QPoint(10, 10)),
     m_descFnt  (QFont(QLatin1String("Monospace"))),
@@ -47,18 +47,17 @@ MjpegFrameOsd::MjpegFrameOsd()
     m_descFnt.setBold(true);
 }
 
-MjpegFrameOsd::~MjpegFrameOsd()
+FrameOsd::~FrameOsd()
 {
 }
 
-void MjpegFrameOsd::PopulateOSD(QImage& frm,
-                                const QUrl& url,
-                                const MjpegStreamSettings& settings)
+void FrameOsd::populateOSD(const QUrl& url,
+                           const FrameOsdSettings& settings,
+                           DInfoInterface* const iface)
 {
     // First stage is to get the information map from host application.
 
-    DInfoInterface::DInfoMap info = settings.iface->itemInfo(url);
-    DItemInfo item(info);
+    DItemInfo item(iface->itemInfo(url));
 
     QString comment               = item.comment();
     QString title                 = item.title();
@@ -283,7 +282,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
     m_desc.append(QString::fromLatin1("\n"));
 }
 
-void MjpegFrameOsd::printTags(QStringList& tags)
+void FrameOsd::printTags(QStringList& tags)
 {
     tags.removeDuplicates();
     tags.sort();
@@ -296,7 +295,7 @@ void MjpegFrameOsd::printTags(QStringList& tags)
     }
 }
 
-void MjpegFrameOsd::printComments(const QString& comments)
+void FrameOsd::printComments(const QString& comments)
 {
     QStringList commentsByLines;
 
@@ -367,14 +366,15 @@ void MjpegFrameOsd::printComments(const QString& comments)
     }
 }
 
-void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
-                                     const QUrl& url,
-                                     const MjpegStreamSettings& settings)
+void FrameOsd::insertOsdToFrame(QImage& frm,
+                                const QUrl& url,
+                                const FrameOsdSettings& settings,
+                                DInfoInterface* const iface)
 {
     // Populate items properties based on url,
     // eg. album name, rating, tags, labels, date, etc.
 
-    PopulateOSD(frm, url, settings);
+    populateOSD(url, settings, iface);
 
     QPainter p(&frm);
 
@@ -395,9 +395,9 @@ void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
     m_desc.clear();
 }
 
-void MjpegFrameOsd::insertMessageOsdToFrame(QImage& frm,
-                                            const QSize& JPEGsize,
-                                            const QString& mess)
+void FrameOsd::insertMessageOsdToFrame(QImage& frm,
+                                       const QSize& JPEGsize,
+                                       const QString& mess)
 {
     QPoint messPos          = QPoint(10, 10);
     Qt::Alignment messAlign = Qt::AlignLeft;

@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-22 01:56+0000\n"
-"PO-Revision-Date: 2024-01-21 19:02+0300\n"
+"POT-Creation-Date: 2024-01-23 01:37+0000\n"
+"PO-Revision-Date: 2024-01-22 16:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: core/app/date/ddateedit.cpp:497
 #, kde-format
@@ -1139,7 +1139,7 @@ msgid "Aperture/Focal:"
 msgstr "Açıklık/Odak:"
 
 #: core/app/items/utils/tooltipfiller.cpp:234
-#: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:213
+#: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:212
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
@@ -1224,7 +1224,7 @@ msgid "digiKam Properties"
 msgstr "digiKam Özellikleri"
 
 #: core/app/items/utils/tooltipfiller.cpp:457
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:219
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:228
 #, kde-format
 msgid "Album:"
 msgstr "Albüm:"
@@ -11389,11 +11389,11 @@ msgstr "Değişiklikler kaydediliyor -"
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
 #: core/dplugins/generic/webservices/google/gswindow.cpp:359
 #: core/dplugins/generic/webservices/google/gswindow.cpp:400
-#: core/dplugins/generic/webservices/google/gswindow.cpp:426
-#: core/dplugins/generic/webservices/google/gswindow.cpp:489
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1000
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1209
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1226
+#: core/dplugins/generic/webservices/google/gswindow.cpp:431
+#: core/dplugins/generic/webservices/google/gswindow.cpp:499
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1010
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1229
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1246
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:606
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:401
@@ -21274,7 +21274,7 @@ msgstr "Önizle..."
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:154
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:155
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
@@ -22379,7 +22379,7 @@ msgid "Start upload to Box"
 msgstr "Box'a karşıya yüklemeyi başlat"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:490
+#: core/dplugins/generic/webservices/google/gswindow.cpp:500
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, kde-format
 msgctxt "@info"
@@ -22390,13 +22390,13 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:508
-#: core/dplugins/generic/webservices/google/gswindow.cpp:538
-#: core/dplugins/generic/webservices/google/gswindow.cpp:952
-#: core/dplugins/generic/webservices/google/gswindow.cpp:973
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1071
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1264
+#: core/dplugins/generic/webservices/google/gswindow.cpp:518
+#: core/dplugins/generic/webservices/google/gswindow.cpp:548
+#: core/dplugins/generic/webservices/google/gswindow.cpp:962
+#: core/dplugins/generic/webservices/google/gswindow.cpp:983
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1031
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1081
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1284
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:669
@@ -22407,8 +22407,8 @@ msgid "Warning"
 msgstr "Uyarı"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:509
-#: core/dplugins/generic/webservices/google/gswindow.cpp:539
+#: core/dplugins/generic/webservices/google/gswindow.cpp:519
+#: core/dplugins/generic/webservices/google/gswindow.cpp:549
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -22418,12 +22418,12 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:512
-#: core/dplugins/generic/webservices/google/gswindow.cpp:542
-#: core/dplugins/generic/webservices/google/gswindow.cpp:957
-#: core/dplugins/generic/webservices/google/gswindow.cpp:978
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1027
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1269
+#: core/dplugins/generic/webservices/google/gswindow.cpp:522
+#: core/dplugins/generic/webservices/google/gswindow.cpp:552
+#: core/dplugins/generic/webservices/google/gswindow.cpp:967
+#: core/dplugins/generic/webservices/google/gswindow.cpp:988
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1037
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1289
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:674
@@ -22435,12 +22435,12 @@ msgstr "Sürdür"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:513
-#: core/dplugins/generic/webservices/google/gswindow.cpp:543
-#: core/dplugins/generic/webservices/google/gswindow.cpp:958
-#: core/dplugins/generic/webservices/google/gswindow.cpp:979
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1028
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1270
+#: core/dplugins/generic/webservices/google/gswindow.cpp:523
+#: core/dplugins/generic/webservices/google/gswindow.cpp:553
+#: core/dplugins/generic/webservices/google/gswindow.cpp:968
+#: core/dplugins/generic/webservices/google/gswindow.cpp:989
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1038
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1290
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -22452,7 +22452,7 @@ msgstr "İptal"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:382
-#: core/dplugins/generic/webservices/google/gswindow.cpp:620
+#: core/dplugins/generic/webservices/google/gswindow.cpp:630
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -23756,7 +23756,7 @@ msgstr "Bağlantılı bir öge halihazırda var."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:171
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:150
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:151
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:152
 #, kde-format
 msgid "Destination"
 msgstr "Hedef"
@@ -23846,7 +23846,7 @@ msgid "Start download from Google Photos service"
 msgstr "Google Fotoğraflar hizmetinden indirmeyi başlat"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:360
-#: core/dplugins/generic/webservices/google/gswindow.cpp:427
+#: core/dplugins/generic/webservices/google/gswindow.cpp:432
 #, kde-format
 msgctxt "@info"
 msgid "Google Photos call failed: %1\n"
@@ -23858,19 +23858,19 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Google Drive çağrısı başarısız: %1\n"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:628
+#: core/dplugins/generic/webservices/google/gswindow.cpp:638
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "Google Drive'a dışa aktar"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:634
+#: core/dplugins/generic/webservices/google/gswindow.cpp:644
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "Google Fotoğraflar'a dışa aktar"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:953
+#: core/dplugins/generic/webservices/google/gswindow.cpp:963
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23880,7 +23880,7 @@ msgstr ""
 "Fotoğraf kaydedilemedi: %1\n"
 "Sürdürmek istiyor musunuz?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:974
+#: core/dplugins/generic/webservices/google/gswindow.cpp:984
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23890,13 +23890,13 @@ msgstr ""
 "Fotoğraf indirilemedi: %1\n"
 "Sürdürmek istiyor musunuz?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1001
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1011
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "Görsel, %1 konumuna kaydedilemedi"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1022
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1032
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23908,7 +23908,7 @@ msgstr ""
 "%2\n"
 "Sürdürmek istiyor musunuz?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1072
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1082
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23920,13 +23920,13 @@ msgstr ""
 "%2\n"
 "Hesabınıza bir görsel yüklenmedi."
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1077
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1087
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "Tamam"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1210
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23936,7 +23936,7 @@ msgstr ""
 "Google Drive çağrısı başarısız:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1227
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1247
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23946,7 +23946,7 @@ msgstr ""
 "Google Fotoğraflar çağrısı başarısız:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1265
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -25587,7 +25587,7 @@ msgstr "Yeniden Yükle"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
 #, kde-format
 msgid "Reload album list"
 msgstr "Albüm listesini yeniden yükle"
@@ -25606,14 +25606,14 @@ msgstr "URL:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:213
 #, kde-format
 msgid "Change Account"
 msgstr "Hesap Değiştir"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:264
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:273
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Fotoğrafları karşıya yüklemeden önce yeniden boyutlandır"
@@ -25664,7 +25664,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:528
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:143
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:144
 #: core/libs/models/abstractalbummodel.cpp:464
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
@@ -26026,7 +26026,7 @@ msgstr ""
 "Tarayıcınızda SmugMug ana sayfasını açmak için tıklanabilir bir bağlantı."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:80
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:139
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:140
 #, kde-format
 msgid "Account"
 msgstr "Hesap"
@@ -26105,7 +26105,7 @@ msgid "Password for SmugMug album."
 msgstr "SmugMug albümü için parola."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
 #, kde-format
 msgid "New Album"
 msgstr "Yeni Albüm"
@@ -34139,56 +34139,56 @@ msgctxt "Web Service: GPHOTO"
 msgid "Google Photo"
 msgstr "Google Fotoğraflar"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:148
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:149
 #, kde-format
 msgid "Max Dimension"
 msgstr "En Büyük Boyut"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:175
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:176
 #, kde-format
 msgid "This is the list of images to upload to your %1 account."
 msgstr "Bu, %1 hesabınıza yüklenecek görsellerin listesidir."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr "Bu %1 ögesini tarayıcıda açmak için tıklanabilir bir bağlantıdır."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:201
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr "Bu, şu anda oturum açmış olan %1 hesabıdır."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:212
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr "Ad:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:206
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:215
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr "Aktarım için %1 Hesabını Değiştir"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
 "downloaded."
 msgstr "Bu, seçili fotoğrafların yükleneceği/indirileceği %1 klasörüdür."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
 #, kde-format
 msgid "Create new %1 folder"
 msgstr "Yeni %1 Klasörü Oluştur"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:227
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr "Yeniden Yükle"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
@@ -34197,69 +34197,69 @@ msgstr ""
 "Bu, görsellerin en büyük boyutudur. Bundan daha büyük görseller "
 "küçültülecektir."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:249
 #, kde-format
 msgid "Original Size"
 msgstr "Özgün Boyut"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:241
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:250
 #, kde-format
 msgid "1600 px"
 msgstr "1600 pks"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
 #, kde-format
 msgid "1440 px"
 msgstr "1440 pks"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:243
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:252
 #, kde-format
 msgid "1280 px"
 msgstr "1280 pks"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:253
 #, kde-format
 msgid "1152 px"
 msgstr "1152 pks"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:245
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:254
 #, kde-format
 msgid "1024 px"
 msgstr "1024 pks"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr "Bu, %1 görsellerinin indirileceği konumdur."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:257
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:266
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr ""
 "Bunlar, karşıya yüklemeden önce fotoğraflara uygulanacak seçeneklerdir."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:269
 #, kde-format
 msgid "Upload original image file"
 msgstr "Özgün görsel dosyasını karşıya yükle"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:267
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:276
 #, kde-format
 msgid "Write the photo ID to the source image"
 msgstr "Kaynak görsele fotoğraf kimliğini yaz"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:277
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr ""
 "Karşıya yükleme sonrası fotoğraf kimliğini kaynak görsele üst veri olarak yaz"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:280
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:289
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr "En büyük boyut:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:288
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:297
 #, kde-format
 msgid "JPEG Quality:"
 msgstr "JPEG kalitesi:"
@@ -38848,7 +38848,7 @@ msgstr ""
 "Adobe RGB renk uzayının genişletilmiş bir sürümüdür.</item><item><emphasis "
 "strong='true'>Pro-Photo</emphasis>: Bu renk uzayı, Kodak tarafından "
 "geliştirilen ve fotoğraf çıktıları göz önünde bulundurularak kullanılmak "
-"üzere tasarlanmış özellikle geniş bir gam sunan bir RGB renk alanıdır.</"
+"üzere tasarlanmış özellikle geniş bir gam sunan bir RGB renk uzayıdır.</"
 "item><item><emphasis strong='true'>Özel</emphasis>: Özel bir çıktı renk "
 "uzayı profili kullanın.</item></list></para>"
 
@@ -55458,12 +55458,12 @@ msgstr "Anıt"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
 #, kde-format
 msgid "Aerodrome"
-msgstr "Havaalanı"
+msgstr "Hava Meydanı"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
 #, kde-format
 msgid "Helipad"
-msgstr "Helikopter İniş Alanı"
+msgstr "Heliped"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
 #, kde-format
@@ -55483,7 +55483,7 @@ msgstr "Havaalanı Apronu"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Airport Taxiway"
-msgstr "Havaalanı Taksi Alanı"
+msgstr "Havaalanı Taksi Yolu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
 #, kde-format
@@ -56137,158 +56137,145 @@ msgstr "*"
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:214
 #, kde-format
 msgid "Detour"
-msgstr ""
+msgstr "Servis Yolu"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:215
 #, kde-format
 msgid "Ferry Route"
-msgstr ""
+msgstr "Vapur Hattı"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:216
-#, fuzzy, kde-format
-#| msgid "Terrain"
+#, kde-format
 msgid "Train"
-msgstr "Arazi"
+msgstr "Tren"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:219
 #, kde-format
 msgid "Bus"
-msgstr ""
+msgstr "Otobüs"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:220
 #, kde-format
 msgid "Trolley Bus"
-msgstr ""
+msgstr "Troleybüs"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:221
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Bicycle Route"
-msgstr "Dış Çerçeve"
+msgstr "Bisiklet Yolu"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:222
 #, kde-format
 msgid "Mountainbike Route"
-msgstr ""
+msgstr "Dağ Bisikleti Yolu"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:223
 #, kde-format
 msgid "Walking Route"
-msgstr ""
+msgstr "Yürüyüş Yolu"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:224
 #, kde-format
 msgid "Hiking Route"
-msgstr ""
+msgstr "Doğa Yürüyüşü Yolu"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:225
 #, kde-format
 msgid "Bridleway"
-msgstr ""
+msgstr "At Binme Parkuru"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:226
 #, kde-format
 msgid "Inline Skates Route"
-msgstr ""
+msgstr "Düz Tekerlekli Paten Yolu"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:228
 #, kde-format
 msgid "Nordic Ski Trail"
-msgstr ""
+msgstr "Kros Kayağı Yolu"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:230
 #, kde-format
 msgid "Sled Trail"
-msgstr ""
+msgstr "Kızak Yolu"
 
 #: core/utilities/geolocation/marble/geodata/handlers/dgml/DgmlMaximumTagHandler.cpp:37
 #, kde-format
 msgid "Could not convert <maximum> child text content to integer. Was: '%1'"
-msgstr ""
+msgstr "<en büyük> alt metin içeriği tamsayıya dönüştürülemedi. Şu idi: '%1'"
 
 #: core/utilities/geolocation/marble/geodata/handlers/dgml/DgmlMinimumTagHandler.cpp:37
 #, kde-format
 msgid "Could not convert <minimum> child text content to integer. Was: '%1'"
-msgstr ""
+msgstr "<en küçük> alt metin içeriği tamsayıya dönüştürülemedi. Şu idi: '%1'"
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:89
 #, kde-format
 msgid "Parsing failed line %1. Still %2 unclosed tag(s) after document end. "
 msgstr ""
+"%1. satırda ayrıştırma başarısız oldu. Belge sonu sonrası hâlâ %2 "
+"kapatılmamış etiket var. "
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:125
 #, kde-format
 msgid "Error parsing file at line: %1 and column %2 . "
-msgstr ""
+msgstr "%1. satır ve %2. sütunda dosya ayrıştırması hatası. "
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:127
-#, fuzzy, kde-format
-#| msgid "Missing Color Profile"
+#, kde-format
 msgid "This is an Invalid File"
-msgstr "Renk Profili Eksik"
+msgstr "Bu, geçersiz bir dosya"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:184
 #: core/utilities/geolocation/marble/models/MapThemeManager.cpp:401
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:38
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:34
-#, fuzzy, kde-format
-#| msgctxt "@title: DPlugin properties"
-#| msgid "Name"
+#, kde-format
 msgid "Name"
 msgstr "Ad"
 
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:188
-#, fuzzy, kde-format
-#| msgid "Regularity:"
+#, kde-format
 msgid "Popularity"
-msgstr "Düzen:"
+msgstr "Popülerlik"
 
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "Color Model: Indexed"
-#| msgid "Indexed"
+#, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
-msgstr "Dizinli"
+msgstr "Popülerlik İndeksi"
 
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Load Playlist"
+#, kde-format
 msgid "Playlist"
-msgstr "Çalma Listesi Yükle"
+msgstr "Oynatma Listesi"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:84
-#, fuzzy, kde-format
-#| msgid "No photo specified"
+#, kde-format
 msgid "No name specified"
-msgstr "Hiç fotoğraf belirtilmedi"
+msgstr "Belirtilen ad yok"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
-msgstr ""
+msgstr "Bu ilişki için lütfen bir ad belirtin."
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:89
-#, fuzzy, kde-format
-#| msgid "No photo specified"
+#, kde-format
 msgid "No type tag specified"
-msgstr "Hiç fotoğraf belirtilmedi"
+msgstr "Belirtilen tür etiketi yok"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:90
 #, kde-format
 msgid "Please add a type tag for this relation."
-msgstr ""
+msgstr "Bu ilişki için lütfen bir tür etiketi belirtin."
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:69
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget_p.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "New Zealand"
+#, kde-format
 msgid "New Relation"
-msgstr "Yeni Zelanda"
+msgstr "Yeni İlişki"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
@@ -56301,458 +56288,400 @@ msgstr "Düzenle"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:23
-#, fuzzy, kde-format
-#| msgid "Current Aspect Ratio"
+#, kde-format
 msgid "Current Relations"
-msgstr "Geçerli En-Boy Oranı"
+msgstr "Geçerli İlişkiler"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:44
 #, kde-format
 msgid "Role"
-msgstr ""
+msgstr "Rol"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_addRelation)
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:67
-#, fuzzy, kde-format
-#| msgid "Add Collection"
+#, kde-format
 msgid "Add Relation"
-msgstr "Koleksiyon Ekle"
+msgstr "İlişki Ekle"
 
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.cpp:95
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@title: DPlugin properties"
-#| msgid "Value"
+#, kde-format
 msgid "value"
-msgstr "Değer"
+msgstr "değer"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:25
-#, fuzzy, kde-format
-#| msgid "Current Page"
+#, kde-format
 msgid "Current Tags"
-msgstr "Geçerli Sayfa"
+msgstr "Geçerli Etiketler"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentTagsList)
 #. i18n: ectx: property (text), widget (QTreeWidget, m_recommendedTagsList)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:38
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:93
-#, fuzzy, kde-format
-#| msgctxt "@title: DPlugin properties"
-#| msgid "Value"
+#, kde-format
 msgid "Value"
 msgstr "Değer"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_addTagButton)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:56
-#, fuzzy, kde-format
-#| msgid "<"
+#, kde-format
 msgid "<<"
-msgstr "<"
+msgstr "<<"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_removeTagButton)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:69
-#, fuzzy, kde-format
-#| msgid ">"
+#, kde-format
 msgid ">>"
-msgstr ">"
+msgstr ">>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Related Images"
+#, kde-format
 msgid "Related Tags"
-msgstr "İlişkili Resimler"
+msgstr "İlişkili Etiketler"
 
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:34
-#, fuzzy, kde-format
-#| msgid "Add county tag"
+#, kde-format
 msgid "Add custom tag..."
-msgstr "İlçe etiketi ekle"
+msgstr "Özel Etiket Ekle..."
 
 #: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:365
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Configure"
 msgstr "Yapılandır"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:62
 #, kde-format
 msgid "Atmosphere"
-msgstr ""
+msgstr "Atmosfer"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:67
 #, kde-format
 msgid "&Atmosphere"
-msgstr ""
+msgstr "&Atmosfer"
 
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
 #, kde-format
 msgid "A plugin to show the atmosphere around the earth."
-msgstr ""
+msgstr "Dünyayı saran atmosferi göstermek için bir eklenti."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Compass Plugin"
-msgstr "Bu sütunu yapılandır"
+msgstr "Pusula Eklentisini Yapılandır"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "&Themes"
+#, kde-format
 msgid "Theme"
-msgstr "&Temalar"
+msgstr "Tema"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:43
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:43
-#, fuzzy, kde-format
-#| msgctxt "@option: default Tesseract mode"
-#| msgid "Default"
+#, kde-format
 msgid "Default"
 msgstr "Öntanımlı"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:52
-#, fuzzy, kde-format
-#| msgid "Browse"
+#, kde-format
 msgid "Arrows"
-msgstr "Göz At"
+msgstr "Oklar"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:61
 #, kde-format
 msgid "Atom"
-msgstr ""
+msgstr "Atom"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:70
 #, kde-format
 msgid "Magnet"
-msgstr ""
+msgstr "Mıknatıs"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Show compass"
+#, kde-format
 msgid "Compass"
-msgstr "Pusulayı göster"
+msgstr "Pusula"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:63
-#, fuzzy, kde-format
-#| msgid "Show compass"
+#, kde-format
 msgid "&Compass"
-msgstr "Pusulayı göster"
+msgstr "&Pusula"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has geolocation information."
+#, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
-msgstr "Bu ögede coğrafi konum bilgisi var."
+msgstr "sBu ögede coğrafi konum bilgisi var."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Crosshairs Plugin"
-msgstr "Bu sütunu yapılandır"
+msgstr "Artı İşareti Eklentisini Yapılandır"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
 #, kde-format
 msgid "Gun 1"
-msgstr ""
+msgstr "Silah 1"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
 #, kde-format
 msgid "Gun 2"
-msgstr ""
+msgstr "Silah 2"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circled"
-msgstr "Dış Çerçeve"
+msgstr "Daire içinde"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "German"
+#, kde-format
 msgid "German"
-msgstr "Almanca"
+msgstr "Alman"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:72
 #, kde-format
 msgid "Crosshairs"
-msgstr ""
+msgstr "Artı İşaretleri"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:77
 #, kde-format
 msgid "Cross&hairs"
-msgstr ""
+msgstr "A&rtı İşaretleri"
 
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
-msgstr ""
+msgstr "Harita üzerinde artı işareti gösteren bir eklenti."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Coordinates"
+#, kde-format
 msgid "Coordinate Grid Plugin"
-msgstr "Koordinatlar"
+msgstr "Koordinat Izgarası Eklentisi"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:20
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Colors"
+#, kde-format
 msgid "C&olors"
-msgstr "Renkler"
+msgstr "R&enkler"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:444
 #, kde-format
 msgid "&Grid:"
-msgstr ""
+msgstr "&Izgara:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:497
-#, fuzzy, kde-format
-#| msgid "Color model of the image"
+#, kde-format
 msgid "Color of the coordinate grid."
-msgstr "Resmin renk modeli"
+msgstr "Koordinat ızgarasının rengi."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:922
-#, fuzzy, kde-format
-#| msgctxt "@item: type code"
-#| msgid "Topic"
+#, kde-format
 msgid "&Tropics:"
-msgstr "Başlık"
+msgstr "&Dönenceler:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, tropicsPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:938
 #, kde-format
 msgid "Color of the tropical circles."
-msgstr ""
+msgstr "Dönencelerin rengi."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1363
 #, kde-format
 msgid "&Equator:"
-msgstr ""
+msgstr "E&kvator:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1379
-#, fuzzy, kde-format
-#| msgid "Color model of the image"
+#, kde-format
 msgid "Color of the equator."
-msgstr "Resmin renk modeli"
+msgstr "Ekvatorun rengi."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1398
-#, fuzzy, kde-format
-#| msgid "Labels"
+#, kde-format
 msgid "&Named Labels"
-msgstr "Etiketler"
+msgstr "A&dlı etiketler"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1408
 #, kde-format
 msgid "Show Labels for Prime meridian, Equator, Tropics."
-msgstr ""
+msgstr "Sıfır Meridyeni, Ekvator ve Dönenceler için etiketleri göster"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1415
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Vertical Lines"
-#| msgid "Vertical Lines"
+#, kde-format
 msgid "&Numerical Labels"
-msgstr "Dikey Çizgiler"
+msgstr "&Sayısal etiketler"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1425
-#, fuzzy, kde-format
-#| msgid "Show image labels"
+#, kde-format
 msgid "Show numerical Labels."
-msgstr "Görsel etiketlerini göster"
+msgstr "Sayısal etiketleri gösterin."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:70
-#, fuzzy, kde-format
-#| msgid "Coordinates"
+#, kde-format
 msgid "Coordinate Grid"
-msgstr "Koordinatlar"
+msgstr "Koordinat Izgarası"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:75
-#, fuzzy, kde-format
-#| msgid "Coordinates"
+#, kde-format
 msgid "Coordinate &Grid"
-msgstr "Koordinatlar"
+msgstr "Koordinat &Izgarası"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:90
 #, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
-msgstr ""
+msgstr "Harita üzerinde koordinat ızgarasını gösteren bir eklenti."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:212
-#, fuzzy, kde-format
-#| msgid "Set here the color of the second line."
+#, kde-format
 msgid "Please choose the color for the coordinate grid."
-msgstr "Buradan, ikinci çizginin rengini ayarlayın."
+msgstr "Lütfen koordinat ızgarasının rengini seçin."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:223
-#, fuzzy, kde-format
-#| msgid "Set here the color of the second line."
+#, kde-format
 msgid "Please choose the color for the tropic circles."
-msgstr "Buradan, ikinci çizginin rengini ayarlayın."
+msgstr "Lütfen dönencelerin rengini seçin."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:234
-#, fuzzy, kde-format
-#| msgid "Set here the color of the second line."
+#, kde-format
 msgid "Please choose the color for the equator."
-msgstr "Buradan, ikinci çizginin rengini ayarlayın."
+msgstr "Lütfen Ekvator rengini seçin."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "@label: item creator"
-#| msgid "Creator"
+#, kde-format
 msgid "Equator"
-msgstr "Oluşturucu"
+msgstr "Ekvator"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:319
-#, fuzzy, kde-format
-#| msgid "Theme Parameters"
+#, kde-format
 msgid "Prime Meridian"
-msgstr "Tema Parametreleri"
+msgstr "Sıfır Meridyeni"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
 #, kde-format
 msgid "Antimeridian"
-msgstr ""
+msgstr "Antimeridyen"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:406
 #, kde-format
 msgid "Tropic of Cancer"
-msgstr ""
+msgstr "Yengeç Dönencesi"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
 #, kde-format
 msgid "Tropic of Capricorn"
-msgstr ""
+msgstr "Oğlak Dönencesi"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:410
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Arctic Circle"
-msgstr "Dış Çerçeve"
+msgstr "Kuzey Kutbu Dairesi"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:411
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Antarctica"
+#, kde-format
 msgid "Antarctic Circle"
-msgstr "Antartika"
+msgstr "Güney Kutbu Dairesi"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Raw File Handling</b>"
+#, kde-format
 msgid "Configure Scale Bar Plugin"
-msgstr "<b>Ham Dosya Ele Alınmasını Yapılandır</b>"
+msgstr "Ölçek Çubuğu Eklentisini Yapılandır"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRatioScaleCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show Ratio Scale"
-msgstr "Resim başlığını göster"
+msgstr "Oran Ölçeğini Göster"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:30
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:52
 #, kde-format
 msgid "Minimize"
-msgstr ""
+msgstr "Küçült"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:69
-#, fuzzy, kde-format
-#| msgid "Show scale bar"
+#, kde-format
 msgid "Scale Bar"
-msgstr "Boyutlandırma çubuğunu göster"
+msgstr "Ölçek Çubuğu"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:74
-#, fuzzy, kde-format
-#| msgid "&Scale to:"
+#, kde-format
 msgid "&Scale Bar"
-msgstr "Şuna &boyutlandır:"
+msgstr "Ölçe&k Çubuğu"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has geolocation information."
+#, kde-format
 msgid "A plugin to show a float item that provides a map scale."
-msgstr "Bu ögede coğrafi konum bilgisi var."
+msgstr ""
+"Bir harita ölçeği sağlayan bir kayan noktalı ögeyi göstermek için bir "
+"eklenti."
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Original Colors:"
+#, kde-format
 msgid "Original Developer"
-msgstr "Özgün Renkler:"
+msgstr "Özgün Geliştirici"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:240
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:244
 #, kde-format
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:248
-#, fuzzy, kde-format
-#| msgid "cm"
+#, kde-format
 msgid "m"
-msgstr "cm"
+msgstr "m"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:253
 #, kde-format
 msgid "mi"
-msgstr ""
+msgstr "mi"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:264
 #, kde-format
 msgid "nm"
-msgstr ""
+msgstr "dm"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "&Ratio Scale"
-msgstr "Oransal"
+msgstr "&Oran Ölçeği"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MeasureConfigDialog)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:14
-#, fuzzy, kde-format
-#| msgid "Database Configuration"
+#, kde-format
 msgid "Measure Tool Configuration"
-msgstr "Veritabanı Yapılandırması"
+msgstr "Ölçüm Aracı Yapılandırması"
 
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:20
 #, kde-format
 msgid "Ruler Type"
-msgstr ""
+msgstr "Cetvel Türü"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_1)
@@ -56760,54 +56689,45 @@ msgstr ""
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:45
 #, kde-format
 msgid "Polygon"
-msgstr ""
+msgstr "Çokgen"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:33
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:127
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circle"
-msgstr "Dış Çerçeve"
+msgstr "Daire"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:51
-#, fuzzy, kde-format
-#| msgid "Image labels"
+#, kde-format
 msgid "Segment labels"
-msgstr "Resim etiketleri"
+msgstr "Bölüt Etiketleri"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:60
-#, fuzzy, kde-format
-#| msgid "Distance:"
+#, kde-format
 msgid "Distance "
-msgstr "Uzaklık:"
+msgstr "Uzaklık"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:70
-#, fuzzy, kde-format
-#| msgctxt "@info: language name"
-#| msgid "Mari"
+#, kde-format
 msgid "Bearing"
-msgstr "Mari"
+msgstr "Yön"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelChangeCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:80
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Saving changes -"
+#, kde-format
 msgid "Bearing Change"
-msgstr "Değişiklikler kaydediliyor -"
+msgstr "Yön Değişikliği"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPerimeter)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:90
-#, fuzzy, kde-format
-#| msgid "Theme Parameters"
+#, kde-format
 msgid "Perimeter"
-msgstr "Tema Parametreleri"
+msgstr "Çeper"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPolygonAreaLabelChangeCheckBox)
 #. i18n: ectx: property (text), widget (QCheckBox, m_showCircleAreaLabelChangeCheckBox)
@@ -56815,38 +56735,34 @@ msgstr "Tema Parametreleri"
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:159
 #, kde-format
 msgid "Area"
-msgstr ""
+msgstr "Alan"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRadiusLabelsCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:142
-#, fuzzy, kde-format
-#| msgid "Radius:"
+#, kde-format
 msgid "Radius"
-msgstr "Yarıçap:"
+msgstr "Yarıçap"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showCircumference)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:152
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgid "Circumference"
-msgstr "Referans:"
+msgstr "Dairenin Çevresi"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:87
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgid "Measure Tool"
-msgstr "Temel Araçlar"
+msgstr "Ölçüm Aracı"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:92
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgid "&Measure Tool"
-msgstr "Temel Araçlar"
+msgstr "&Ölçüm Aracı"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:107
 #, kde-format
 msgid "Measure distances between two or more points."
-msgstr ""
+msgstr "İki veya daha fazla nokta arasındaki uzaklığı ölçün."
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:367
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:482
@@ -56855,6 +56771,8 @@ msgid ""
 "Area:\n"
 "%1"
 msgstr ""
+"Alan:\n"
+"%1"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:385
 #, kde-format
@@ -56862,222 +56780,195 @@ msgid ""
 "Circumference:\n"
 "%1"
 msgstr ""
+"Çevresi:\n"
+"%1"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:500
-#, fuzzy, kde-format
-#| msgid "Theme Parameters"
+#, kde-format
 msgid ""
 "Perimeter:\n"
 "%1"
-msgstr "Tema Parametreleri"
+msgstr ""
+"Çeper:\n"
+"%1"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:558
 #, kde-format
 msgid "Polygon Ruler"
-msgstr ""
+msgstr "Çokgen Cetveli"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:560
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circle Ruler"
-msgstr "Dış Çerçeve"
+msgstr "Çember Cetveli"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:563
 #, kde-format
 msgid "Total Distance: %1<br/>\n"
-msgstr ""
+msgstr "Toplam uzaklık: %1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:565
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:574
-#, fuzzy, kde-format
-#| msgid "Author: %1<br/><br/>"
+#, kde-format
 msgid "Area: %1<br/>\n"
-msgstr "Yazar: %1<br/><br/>"
+msgstr "Alan: %1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:567
 #, kde-format
 msgid "Perimeter: %1<br/>\n"
-msgstr ""
+msgstr "Çeper: %1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:570
-#, fuzzy, kde-format
-#| msgid "Radius:"
+#, kde-format
 msgid "Radius: %1<br/>\n"
-msgstr "Yarıçap:"
+msgstr "Yarıçap: %1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:572
 #, kde-format
 msgid "Circumference: %1<br/>\n"
-msgstr ""
+msgstr "Çevre: %1<br/>\n"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:621
-#, fuzzy, kde-format
-#| msgid "Add a focus point"
+#, kde-format
 msgid "Add &Measure Point"
-msgstr "Bir Odak Noktası Ekle"
+msgstr "&Ölçüm Noktası Ekle"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:622
-#, fuzzy, kde-format
-#| msgid "Remove Account"
+#, kde-format
 msgid "Remove &Last Measure Point"
-msgstr "Hesap Kaldır"
+msgstr "&Son Ölçüm Noktasını Kaldır"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:624
-#, fuzzy, kde-format
-#| msgid "Remove Account"
+#, kde-format
 msgid "&Remove Measure Points"
-msgstr "Hesap Kaldır"
+msgstr "Ölçüm Noktalarını &Kaldır"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
-#, fuzzy, kde-format
-#| msgid "Show navigation"
+#, kde-format
 msgid "Navigation"
-msgstr "Gezinmeyi göster"
+msgstr "Dolaşım"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
-#, fuzzy, kde-format
-#| msgid "Show navigation"
+#, kde-format
 msgid "&Navigation"
-msgstr "Gezinmeyi göster"
+msgstr "&Dolaşım"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
+"Yakınlaştırmaya fare denetimi ekleyip haritayı taşımak için bir eklenti"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
-#, fuzzy, kde-format
-#| msgid "Current Aspect Ratio"
+#, kde-format
 msgid "Current Location Button"
-msgstr "Geçerli En-Boy Oranı"
+msgstr "Geçerli Konum Düğmesi"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
 #, kde-format
 msgid "Home Button"
-msgstr ""
+msgstr "Ana Sayfa Düğmesi"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:74
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Overview Map"
-msgstr "Genel bakış haritasını göster"
+msgstr "Genel Görünüm Haritası"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:79
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "&Overview Map"
-msgstr "Genel bakış haritasını göster"
+msgstr "&Genel Görünüm Haritası"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has geolocation information."
+#, kde-format
 msgid "A plugin to add a float item that provides an overview map."
-msgstr "Bu ögede coğrafi konum bilgisi var."
+msgstr ""
+"Bir genel görünüm haritası sağlayan bir kayan noktalı öge eklemek için bir "
+"eklenti."
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Choose Overview Map"
-msgstr "Genel bakış haritasını göster"
+msgstr "Genel Görünüm Haritası Seç"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:517
-#, fuzzy, kde-format
-#| msgid "Set here the color of the second line."
+#, kde-format
 msgid "Please choose the color for the position indicator"
-msgstr "Buradan, ikinci çizginin rengini ayarlayın."
+msgstr "Lütfen konum göstergesinin rengini seçin."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Preview Behavior</b>"
+#, kde-format
 msgid "Configure Overview Map"
-msgstr "<b>Önizleme Davranışını Yapılandır</b>"
+msgstr "Genel Görünüm Haritasını Yapılandır"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgid "Map &Image"
-msgstr "1 Resim"
+msgstr "Harita &Görseli"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:28
-#, fuzzy, kde-format
-#| msgid "Face Db name"
+#, kde-format
 msgid "&Planet:"
-msgstr "Yüz Veritabanı adı"
+msgstr "G&ezegen:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:71
-#, fuzzy, kde-format
-#| msgid "Size:"
+#, kde-format
 msgid "&Size:"
-msgstr "Boyut:"
+msgstr "&Boyut:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
-#, fuzzy, kde-format
-#| msgctxt "Dimension separator, as in: '15 x 10 centimeters'"
-#| msgid "x"
+#, kde-format
 msgid "x"
 msgstr "x"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Position I&ndicator:"
-msgstr "Konum Belirtecini Göster"
+msgstr "Konum gö&stergesi:"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:80
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Download Progress Indicator"
-msgstr "İlerleme göstergesini göster"
+msgstr "İndirme Durumu Göstergesi"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Error"
+#, kde-format
 msgid "&Download Progress"
-msgstr "İndirme Hatası"
+msgstr "İ&ndirme Durumu"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
-msgstr "İlerleme göstergesini göster"
+msgstr "sİlerleme göstergesini göster"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Cache File Parser"
-msgstr "Dosya Aktarımı"
+msgstr "Önbellek Dosyası Ayrıştırıcısı"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
+"İkili önbellek dosyalarından coğrafi konum verisi yüklemek için bir eklenti."
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@item: texture type"
-#| msgid "Marble 2"
+#, kde-format
 msgid "Marble Cache Files"
-msgstr "Mermer 2"
+msgstr "Bilye Önbellek Dosyaları"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "GPSBabel NMEA File Parser"
-msgstr "Dosya Aktarımı"
+msgstr "GPSBabel NMEA Dosyası Ayrıştırıcısı"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
@@ -57085,77 +56976,74 @@ msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr ""
+"GPSBabel komut satırı ile NMEA dosyalarından coğrafi konum verisi yüklemek "
+"için bir eklenti."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Save files as"
+#, kde-format
 msgid "GPSBabel files"
-msgstr "Dosyayı farklı kaydet"
+msgstr "GPSBabel dosyaları"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Gpx File Parser"
-msgstr "Dosya Aktarımı"
+msgstr "Gpx Dosyası Ayrıştırıcısı"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
 #, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
+"Gpx verisi dosya biçiminden coğrafi konum verisi yüklemek için bir eklenti."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
-#, fuzzy, kde-format
-#| msgid "Data"
+#, kde-format
 msgid "GPS Data"
-msgstr "Veri"
+msgstr "GPS Verisi"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "GeoJSON File Parser"
-msgstr "Dosya Aktarımı"
+msgstr "GeoJSON Dosyası Ayrıştırıcısı"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
 #, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
+"GeoJSON veri dosyası biçiminden coğrafi konum verisi yüklemek için bir "
+"eklenti."
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
 #, kde-format
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "KML File Parser"
-msgstr "Dosya Aktarımı"
+msgstr "KML Dosyası Ayrıştırıcısı"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
+"KML ve KMZ veri dosyası biçiminden coğrafi konum verisi yüklemek için bir "
+"eklenti."
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
 #, kde-format
 msgid "Google Earth KML"
-msgstr ""
+msgstr "Google Earth KML"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:25
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
-msgstr ""
+msgstr "OpenStreetMap Nominatim Ters Coğrafi Konum Belirleme"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:30
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Nominatim"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
 #, kde-format
@@ -57163,50 +57051,49 @@ msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
 msgstr ""
+"OpenStreetMap Nominatim web hizmetini kullanarak çevrimiçi ters coğrafi "
+"konum işlemek için bir eklenti."
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Osm File Parser"
-msgstr "Dosya Aktarımı"
+msgstr "OSM Dosyası Ayrıştırıcısı"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
+"OpenStreetMap veri dosyası biçiminden coğrafi konum verisi yüklemek için bir "
+"eklenti."
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Data"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap Verisi"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Pn2 File Parser"
-msgstr "Dosya Aktarımı"
+msgstr "PNT Dosyası Ayrıştırıcısı"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr ""
+"Sıkıştırılmış PNT veri dosyası biçiminden coğrafi konum yüklemek için bir "
+"eklenti."
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
 #, kde-format
 msgid "Compressed Pnt"
-msgstr ""
+msgstr "Sıkıştırılmış PNT"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Pnt File Parser"
-msgstr "Dosya Aktarımı"
+msgstr "PNT Dosyası Ayrıştırıcısı"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
@@ -57214,16 +57101,18 @@ msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
+"Micro World Database II dosya biçiminden coğrafi konum verisi yüklemek için "
+"bir eklenti."
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
 msgid "Micro World Database II"
-msgstr ""
+msgstr "Micro World Database II"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
 msgid "Azimuthal Equidistant"
-msgstr ""
+msgstr "Azimutal Eşit Uzaklıklı"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:63
 #, kde-format
@@ -57232,11 +57121,14 @@ msgid ""
 "p><p>Applications: Display of seismic and radio data and for use in digital "
 "planetariums.</p>"
 msgstr ""
+"<p><b>Azimutal Eşit Uzaklıklı İzdüşüm</b> (\"Balık Gözü\")</"
+"p><p>Uygulamalar: Sismik ve radyo verilerinin görüntülenmesi ve sayısal "
+"gezegenevlerinde kullanım için.</p>"
 
 #: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:35
 #, kde-format
 msgid "Flat Map"
-msgstr ""
+msgstr "Düz Harita"
 
 #: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:40
 #, kde-format
@@ -57244,11 +57136,13 @@ msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
 "De facto standard for global texture data sets for computer software.</p>"
 msgstr ""
+"<p><b>Eşdikdörtgensel İzdüşüm</b> (\"Plate carrée\")</p><p>Uygulamalar: "
+"Bilgisayar yazılımı için küresel doku veri kümeleri için fiili standart.</p>"
 
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:64
 #, kde-format
 msgid "Gnomonic"
-msgstr ""
+msgstr "Nomonik"
 
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:69
 #, kde-format
@@ -57257,11 +57151,14 @@ msgid ""
 "displaying panorama photography. Also used for navigation, radio and seismic "
 "work.</p>"
 msgstr ""
+"<p><b>Nomonik İzdüşüm</b> (\"Doğrusal\")</p><p>Uygulamalar: Panoramik "
+"fotoğrafçılığı görüntülemek için kullanılır. Ayrıca navigasyon, radyo ve "
+"sismik çalışmalar için de kullanılır.</p>"
 
 #: core/utilities/geolocation/marble/projections/LambertAzimuthalProjection.cpp:64
 #, kde-format
 msgid "Lambert Azimuthal Equal-Area"
-msgstr ""
+msgstr "Lambert Azimutal Eşit Alan"
 
 #: core/utilities/geolocation/marble/projections/LambertAzimuthalProjection.cpp:69
 #, kde-format
@@ -57269,6 +57166,8 @@ msgid ""
 "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used "
 "in structural geology to plot directional data.</p>"
 msgstr ""
+"<p><b>Lambert Azimutal Eşit Alan İzdüşümü</b></p><p>Uygulamalar: Yapısal "
+"jeolojide yön verilerini çizmek için kullanılır.</p>"
 
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:46
 #, kde-format
@@ -57276,11 +57175,13 @@ msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
 "projection for navigation.</p>"
 msgstr ""
+"<p><b>Mercator İzdüşümü</b></p><p>Uygulamalar: Navigasyon için popüler "
+"standart harita projeksiyonu.</p>"
 
 #: core/utilities/geolocation/marble/projections/SphericalProjection.cpp:66
 #, kde-format
 msgid "Globe"
-msgstr ""
+msgstr "Küre"
 
 #: core/utilities/geolocation/marble/projections/SphericalProjection.cpp:71
 #, kde-format
@@ -57289,12 +57190,14 @@ msgid ""
 "perspective projection that is used to display the hemisphere of a globe as "
 "it appears from outer space.</p>"
 msgstr ""
+"<p><b>Dikey İzdüşüm</b> (\"Dikey\")</p><p>Uygulamalar: Bir kürenin "
+"yarıküresini uzaydan göründüğü haliyle görüntülemek için kullanılan "
+"perspektif projeksiyon.</p>"
 
 #: core/utilities/geolocation/marble/projections/StereographicProjection.cpp:64
-#, fuzzy, kde-format
-#| msgid "Raster Files"
+#, kde-format
 msgid "Stereographic"
-msgstr "Raster Dosyaları"
+msgstr "Stereografik"
 
 #: core/utilities/geolocation/marble/projections/StereographicProjection.cpp:69
 #, kde-format
@@ -57302,11 +57205,13 @@ msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
 "for planetary cartography, geology and panorama photography.</p>"
 msgstr ""
+"<p><b>Stereografik İzdüşüm</b> (\"Dikey\")</p><p>Uygulamalar: Gezegensel "
+"haritacılık, jeoloji ve panorama fotoğrafçılığı için kullanılır.</p>"
 
 #: core/utilities/geolocation/marble/projections/VerticalPerspectiveProjection.cpp:78
 #, kde-format
 msgid "Vertical Perspective Projection"
-msgstr ""
+msgstr "Dikey Perspektif İzdüşümü"
 
 #: core/utilities/geolocation/marble/projections/VerticalPerspectiveProjection.cpp:83
 #, kde-format
@@ -57315,27 +57220,29 @@ msgid ""
 "earth as it appears from a relatively short distance above the surface. "
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
+"<p><b>Dikey Perspektif İzdüşümü</b> (\"Dikey\")</p><p>Dünyayı yüzeyden "
+"nispeten kısa bir uzaklıktan göründüğü haliyle gösterir. Uygulamalar: Sanal "
+"Küreler için kullanılır.</p>"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
-#, fuzzy, kde-format
-#| msgid "Units:"
+#, kde-format
 msgid "Units"
-msgstr "Birimler:"
+msgstr "Birimler"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:113
 #, kde-format
 msgid "Kilometer, Meter"
-msgstr ""
+msgstr "Kilometre, Metre"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:114
 #, kde-format
 msgid "Miles, Feet"
-msgstr ""
+msgstr "Mil, Ayak"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:115
 #, kde-format
 msgid "Nautical miles, Knots"
-msgstr ""
+msgstr "Deniz Mili, Knot"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:116
 #, kde-format
@@ -57343,28 +57250,28 @@ msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
 "mi, ft)."
 msgstr ""
+"Yüksekliği, uzunlukları ve uzaklıkları ölçmek için kullanılan birim (örneğin "
+"km, mi, ay)."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Angle:"
+#, kde-format
 msgid "Angle:"
 msgstr "Açı:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:120
 #, kde-format
 msgid "Degree (DMS)"
-msgstr ""
+msgstr "Derece (DMS)"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:121
 #, kde-format
 msgid "Degree (Decimal)"
-msgstr ""
+msgstr "Açı (Ondalık)"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
-msgstr ""
+msgstr "Evrensel Çapraz Merkatör (UTM)"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:123
 #, kde-format
@@ -57373,54 +57280,50 @@ msgid ""
 "By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
+"Açıların koordinat türünden gösterimini belirtir.\n"
+"Öntanımlı olarak Derece-Dakika-Saniye gösterimi (örn. 54°30'00\" ) "
+"kullanılır.\n"
+"Alternatif olarak ondalık dereceleri de seçebilirsiniz (örn. 54,5°)."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgid "Map Quality"
-msgstr "Kalite:"
+msgstr "Harita kalitesi:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
-#, fuzzy, kde-format
-#| msgid "&Shuffle images"
+#, kde-format
 msgid "Still Image:"
-msgstr "Görselleri &karıştır"
+msgstr "Düz görsel:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:138
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:148
-#, fuzzy, kde-format
-#| msgid "Outlined Text"
+#, kde-format
 msgid "Outline Quality"
-msgstr "Çerçeveli Metin"
+msgstr "Dış Hat Kalitesi"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:139
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:149
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgid "Low Quality"
-msgstr "Kalite:"
+msgstr "Düşük Kalite"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:140
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@action: normal exif orientation"
-#| msgid "Normal"
+#, kde-format
 msgid "Normal"
 msgstr "Normal"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:141
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:151
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgid "High Quality"
-msgstr "Kalite:"
+msgstr "Yüksek Kalite"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:142
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:152
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgid "Print Quality"
-msgstr "Kalite:"
+msgstr "Baskı Kalitesi"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:143
 #, kde-format
@@ -57428,12 +57331,14 @@ msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
 "Usually this allows for high map quality as speed is no concern."
 msgstr ""
+"Kullanıcı girdisi olmadığında görüntülenecek harita kalitesini belirtir.\n"
+"Genellikle bu, hız önemli olmadığı için yüksek harita kalitesine olanak "
+"tanır."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
-#, fuzzy, kde-format
-#| msgid "Duration:"
+#, kde-format
 msgid "During Animations:"
-msgstr "Süre:"
+msgstr "Canlandırmalar sırasında:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:153
 #, kde-format
@@ -57443,59 +57348,43 @@ msgid ""
 "advisable to set this option to \"low quality\" as this will give better "
 "speed."
 msgstr ""
+"Harita canlandırmaları sırasında (örneğin dünyayı sürüklerken) görüntülenen\n"
+"harita kalitesini belirtir. Özellikle yavaş makinelerde bu seçeneğin "
+"\"düşük\n"
+"kalite\"ye ayarlanması tavsiye edilir; çünkü bu daha iyi hız sağlayacaktır."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
-#, fuzzy, kde-format
-#| msgid "Behavior"
+#, kde-format
 msgid "Mouse Behavior"
-msgstr "Davranış"
+msgstr "Fare Davranışı"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
-#, fuzzy, kde-format
-#| msgid "Invert Selection"
+#, kde-format
 msgid "Inertial Globe Rotation"
-msgstr "Seçimi Tersine Çevir"
+msgstr "Eylemsiz Küre Dönüşü"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
-msgstr ""
+msgstr "Haritayı sürüklerken kinetik dönüşü kullan"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
-#, fuzzy, kde-format
-#| msgid "Cancel this operation."
+#, kde-format
 msgid "Mouse View Rotation"
-msgstr "Bu işlemi iptal et."
+msgstr "Fare Görünümü Dönüşü"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:169
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
-msgstr ""
+msgstr "Kamerayı döndürmek için sağ fare düğmesini kullan"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
 #, kde-format
 msgid "Cache"
-msgstr ""
+msgstr "Önbellek"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:177
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#| "TR/REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></"
-#| "a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
+#, kde-format
 msgid ""
 "There are two caches being used:\n"
 "The \"physical memory\" which is needed to keep map data in the computer's "
@@ -57506,55 +57395,38 @@ msgid ""
 "Decrease this value if you want to save space on the hard disc\n"
 "and if high usage of the Internet is not an issue."
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir takvimi "
-"<a href=\"www.icalshare.com\"><span style=\" text-decoration: underline; "
-"color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya başka "
-"sitelerden indirebilirsiniz.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-"bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-"body></html>"
+"Kullanılan iki önbellek vardır:\n"
+"Harita verisini bilgisayar belleğinde tutan \"fiziksel bellek\".\n"
+"Değeri artırmak bilgisayarın daha iyi tepki vermesini sağlar.\n"
+"\"Sabit disk belleği\", internetten gelen harita verisi için kullanılır.\n"
+"Yüksek internet kullanımı sizin için sorun değilse ve sabit disk\n"
+"alanından tasarruf etmek istiyorsanız bu değeri düşürün."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
 #, kde-format
 msgid "Physical Memory:"
-msgstr ""
+msgstr "Fiziksel bellek:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:189
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:196
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgid "Clear"
 msgstr "Temizle"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Hard Mask"
+#, kde-format
 msgid "Hard Disc:"
-msgstr "Sıkı maske"
+msgstr "Sabit disk:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Content"
+#, kde-format
 msgid "Map Contents"
-msgstr "İçerik"
+msgstr "Harita İçeriği"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgid "Default Font:"
-msgstr "Öntanımlı Dil"
+msgstr "Öntanımlı yazıtipi:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
 #, kde-format
@@ -57563,12 +57435,14 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Haritada kullanılan öntanımlı yazıtipi.\n"
+"Bu ayar, OpenStreetMap dışındaki Atlas ve\n"
+"Uydu Haritaları için geçerlidir."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
-#, fuzzy, kde-format
-#| msgid "Coordinates"
+#, kde-format
 msgid "Show Coordinate Grid"
-msgstr "Koordinatlar"
+msgstr "Koordinat ızgarasını göster"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:216
 #, kde-format
@@ -57577,11 +57451,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Dünya haritası koordinat ızgarası katmanını gösterin.\n"
+"Bu ayar yalnızca; Atlas, Uydu ve OpenStreetMap için\n"
+"etkili olur."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
 #, kde-format
 msgid "Show Cross-Hair"
-msgstr ""
+msgstr "Artı işaretini göster"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:221
 #, kde-format
@@ -57590,13 +57467,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Artı işaretini haritanın ortasında gösterin.\n"
+"Bu ayar yalnızca; Atlas, Uydu ve OpenStreetMap\n"
+"için etkili olur."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Show item permanently"
+#, kde-format
 msgid "Show Atmospheric Glow"
-msgstr "Ögeyi kalıcı olarak göster"
+msgstr "Atmosferik parıltıyı göster"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:226
 #, kde-format
@@ -57605,12 +57483,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Dünya haritasındaki atmosferik parlaklık katmanını gösterin.\n"
+"Bu ayar yalnızca; Atlas, Uydu ve Açık Sokak Haritalarında\n"
+"etkili olur."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
-#, fuzzy, kde-format
-#| msgid "Show on right panel"
+#, kde-format
 msgid "Show Night Shadow"
-msgstr "Sağ panelde göster"
+msgstr "Gece gölgesini göster"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:231
 #, kde-format
@@ -57619,12 +57499,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Dünya haritası gece gölgesi katmanını gösterin.\n"
+"Bu ayar yalnızca; Atlas, Uydu ve OpenStreetMap\n"
+"için etkili olur."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgid "Show City Place Mark"
-msgstr "Yüz Etiketlerini Göster"
+msgstr "Şehir yer imlerini göster"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:236
 #, kde-format
@@ -57633,12 +57515,14 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Dünya haritasındaki şehir yer imi katmanını gösterin.\n"
+"Bu ayar, OpenStreetMap dışındaki Atlas ve Uydu Haritaları\n"
+"için geçerlidir."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
-#, fuzzy, kde-format
-#| msgid "Show preview"
+#, kde-format
 msgid "Show Relief"
-msgstr "Önizleme göster"
+msgstr "Kabartmaları göster"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:241
 #, kde-format
@@ -57647,144 +57531,128 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Dünya haritası kabartma katmanını gösterin.\n"
+"Bu ayar, OpenStreetMap dışındaki Atlas ve\n"
+"Uydu Haritaları için geçerlidir."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
-#, fuzzy, kde-format
-#| msgctxt "@item: texture type"
-#| msgid "Marble 2"
+#, kde-format
 msgid "Map View"
-msgstr "Mermer 2"
+msgstr "Harita Görünümü"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:299
-#, fuzzy, kde-format
-#| msgid "Plugins"
+#, kde-format
 msgid "Map Plugins"
-msgstr "Eklentiler"
+msgstr "Harita Eklentileri"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Border Tool"
+#, kde-format
 msgid "Render Tools"
-msgstr "Kenarlık Aracı"
+msgstr "Sunum Araçları"
 
 #: core/utilities/geolocation/marble/settings/MarblePluginSettingsWidget.cpp:83
-#, fuzzy, kde-format
-#| msgid "Shear Tool"
+#, kde-format
 msgid "Runner Tools"
-msgstr "Kırkma Aracı"
+msgstr "Çalışan Araçları"
 
 #: core/utilities/geolocation/marble/storage/CacheStoragePolicy.cpp:36
-#, fuzzy, kde-format
-#| msgid "Unable to save changes to file"
+#, kde-format
 msgid "Unable to insert data into cache"
-msgstr "Değişiklikler dosyaya kaydedilemedi"
+msgstr "Önbelleğe veri yerleştirilemiyor"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:131
-#, fuzzy, kde-format
-#| msgid "Visible to Friends"
+#, kde-format
 msgid "Visible region"
-msgstr "Arkadaşlara Görünür"
+msgstr "Görünür bölge"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:133
-#, fuzzy, kde-format
-#| msgid "Specific Location"
+#, kde-format
 msgid "Specify region"
-msgstr "Belirli Konum"
+msgstr "Bölge belirt"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Download New"
+#, kde-format
 msgid "Download Route"
-msgstr "Yeni İndir"
+msgstr "Rota indir"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:137
 #, kde-format
 msgid "Enabled when a route exists"
-msgstr ""
+msgstr "Bir rota varken etkinleştirilir"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:150
 #, kde-format
 msgid "Offset from route:"
-msgstr ""
+msgstr "Rotadan sapma:"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Segmentation mode:"
+#, kde-format
 msgid "Selection Method"
-msgstr "Bölütlendirme kipi:"
+msgstr "Seçim Yöntemi"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:188
 #, kde-format
 msgid "Number of tiles to download:"
-msgstr ""
+msgstr "İndirilecek karo sayısı:"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Download New"
+#, kde-format
 msgid "Download Region"
-msgstr "Yeni İndir"
+msgstr "Bölgeyi İndir"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has never been downloaded"
+#, kde-format
 msgid "Tile type to be downloaded:"
-msgstr "Bu öge hiçbir zaman karşıdan yüklenmedi"
+msgstr "İndirilecek karo türü:"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:242
-#, fuzzy, kde-format
-#| msgid "Texture Filter"
+#, kde-format
 msgid "Texture tiles"
-msgstr "Doku Filtresi"
+msgstr "Doku karoları"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:243
-#, fuzzy, kde-format
-#| msgid "Video Files"
+#, kde-format
 msgid "Vector tiles"
-msgstr "Video Dosyaları"
+msgstr "Vektör karolar"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:244
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
+"Görünür şekilde oluşturulan katman türleri arasında seçim yapılmasına olanak "
+"tanır."
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:513
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
-msgstr ""
+msgstr "%1 karoluk bir indirme sınırı vardır."
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
-msgstr ""
+msgstr "İndirilecek karoların tahmini boyutu"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:527
 #, kde-format
 msgid "Estimated download size: %1 MB"
-msgstr ""
+msgstr "Tahmini indirme boyutu: %1 MB"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:530
 #, kde-format
 msgid "Estimated download size: %1 kB"
-msgstr ""
+msgstr "Tahmini indirme boyutu: %1 kB"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, LatLonBoxWidget)
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:17
-#, fuzzy, kde-format
-#| msgid "Select a year"
+#, kde-format
 msgid "Select a geographic region"
-msgstr "Bir yıl seç"
+msgstr "Coğrafi Bölge Seç"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, northSpinBox)
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:41
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Northern Ireland"
+#, kde-format
 msgid "Northern Latitude"
-msgstr "Kuzey İrlanda"
+msgstr "Kuzey Enlemi"
 
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
@@ -57796,81 +57664,59 @@ msgstr "Kuzey İrlanda"
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:203
 #, kde-format
 msgid "°"
-msgstr ""
+msgstr "°"
 
 #. i18n: ectx: property (text), widget (QLabel, northLabel)
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:66
 #, kde-format
 msgid "&N"
-msgstr ""
+msgstr "&K"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, westSpinBox)
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:93
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgid "Western Longitude"
-msgstr "Boylam"
+msgstr "Batı Boylamı"
 
 #. i18n: ectx: property (text), widget (QLabel, westLabel)
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:118
 #, kde-format
 msgid "&W"
-msgstr ""
+msgstr "&B"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, eastSpinBox)
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:145
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgid "Eastern Longitude"
-msgstr "Boylam"
+msgstr "Doğu Boylamı"
 
 #. i18n: ectx: property (text), widget (QLabel, eastLabel)
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:170
 #, kde-format
 msgid "&E"
-msgstr ""
+msgstr "&D"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, southSpinBox)
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:197
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "GPS Latitude"
+#, kde-format
 msgid "Southern Latitude"
-msgstr "GPS Enlemi"
+msgstr "Güney Enlemi"
 
 #. i18n: ectx: property (text), widget (QLabel, southLabel)
 #: core/utilities/geolocation/marble/storage/LatLonBoxWidget.ui:222
 #, kde-format
 msgid "&S"
-msgstr ""
+msgstr "&G"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
 #: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:20
-#, fuzzy, kde-format
-#| msgid "Creation date"
+#, kde-format
 msgid "Creating Map"
-msgstr "Oluşturulma tarihi"
+msgstr "Harita Oluşturuluyor"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
 #: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:507
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#| "TR/REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></"
-#| "a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
+#, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
 "white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-"
@@ -57882,22 +57728,15 @@ msgid ""
 "seen from Space. The map is based on NASA's beautiful \"Blue Marble Next "
 "Generation\" pictures. Credits: NASA's Earth Observatory</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir takvimi "
-"<a href=\"www.icalshare.com\"><span style=\" text-decoration: underline; "
-"color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya başka "
-"sitelerden indirebilirsiniz.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
-"bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
-"body></html>"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
+"white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-"
+"weight:400; font-style:normal; text-decoration:none;\"><p style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Uydu "
+"Görünümü</span></p><p style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Uzaydan "
+"görülen Dünya. Harita, NASA'nın güzel \"Mavi Mermer Yeni Nesil\" resimlerine "
+"dayanmaktadır. Emeği geçenler: NASA'nın Dünya Gözlemevi</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
 #: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:517
@@ -57906,41 +57745,38 @@ msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
 "take a few seconds."
 msgstr ""
+"Bilye'nin bu haritayı oluşturması gerekiyor. Bunun yalnızca bir kez "
+"yapılması gerekir ve birkaç saniye sürebilir."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:29
-#, fuzzy, kde-format
-#| msgid "Zoom:"
+#, kde-format
 msgid "Zoom"
-msgstr "Yakınlaştır:"
+msgstr "Yakınlaştır"
 
 #. i18n: ectx: property (text), widget (QLabel, tileLevelLabel)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:37
-#, fuzzy, kde-format
-#| msgid "Title Change"
+#, kde-format
 msgid "&Tile level range:"
-msgstr "Başlık Değişikliği"
+msgstr "&Karo düzeyi erimi:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, topSpinBox)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:47
 #, kde-format
 msgid "Minimum Tile Level"
-msgstr ""
+msgstr "En düşük karo düzeyi"
 
 #. i18n: ectx: property (text), widget (QLabel, toLabel)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:63
-#, fuzzy, kde-format
-#| msgid "Auto"
+#, kde-format
 msgid "to"
-msgstr "Kendiliğinden"
+msgstr "-"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bottomSpinBox)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:70
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Maximum size:"
+#, kde-format
 msgid "Maximum Tile Level"
-msgstr "En büyük boyut:"
+msgstr "En yüksek karo düzeyi"
 
 #: core/utilities/imageeditor/core/undoaction.cpp:147
 #, kde-format
@@ -57954,10 +57790,11 @@ msgid ""
 "The free disk space in the path \"%1\" for the undo cache file is less than "
 "to 2 GiB! Undo cache is now disabled!"
 msgstr ""
+"Geri alma önbellek dosyası için \"%1\" yolundaki boş disk alanı 2 GiB'den "
+"az! Önbelleği geri alma artık devre dışı!"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:114
-#, fuzzy, kde-format
-#| msgid "Don't know"
+#, kde-format
 msgid "Do not know"
 msgstr "Bilmiyorum"
 
@@ -57969,7 +57806,7 @@ msgstr "En güvenli ve uygun eylemi seçin"
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:127
 #, kde-format
 msgid "Color Profile Mismatch"
-msgstr "Renk Profili Eşleşmedi"
+msgstr "Renk Profili Uyumsuzluğu"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:131
 #, kde-format
@@ -57979,7 +57816,7 @@ msgstr "Renk Profili Eksik"
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:135
 #, kde-format
 msgid "Image with Uncalibrated Color"
-msgstr "Ayarlanmamış Renkli Resim"
+msgstr "Kalibre Edilmemiş Renkli Görsel"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:141
 #, kde-format
@@ -57993,8 +57830,8 @@ msgid ""
 "<p>This image has an <b>embedded color profile</b><br/> which does not match "
 "your working space color profile.<br/>How do you want to proceed?</p>"
 msgstr ""
-"<p>Bu resimde <b>gömülü renk profili</b><br/> var yani sizin çalışma uzayı "
-"renk profilinizle eşleşmeyecek.<br/>Nasıl ilerlemek istersiniz?</p>"
+"<p>Bu görselde, çalışma alanı renk profilinizle eşleşmeyen <b>yerleşik bir "
+"renk profili</b><br/> var.<br/>Nasıl ilerlemek istiyorsunuz?</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:226
 #, kde-format
@@ -58002,8 +57839,8 @@ msgid ""
 "<p>This image has <b>no information about the color space</b><br/>that was "
 "used when creating the image. <br/>How do you want to proceed?</p>"
 msgstr ""
-"<p>Bu resim, görüntü oluşturulurken kullanılan <b>renk alanı hakkında hiçbir "
-"bilgi içermiyor.</b><br/> <br/>Nasıl devam etmek istersiniz?</p>"
+"<p>Bu görselde, görseli oluştururken kullanılan <b>renk alanı hakkında "
+"hiçbir bilgi yok</b><br/>. <br/>Nasıl ilerlemek istiyorsunuz?</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:233
 #, kde-format
@@ -58011,53 +57848,54 @@ msgid ""
 "<p>The color information of this image is uncalibrated.<br/>How do you want "
 "to proceed?</p>"
 msgstr ""
-"<p>Bu resmin renk bilgisi ayarlanmamış.<br/>Nasıl ilerlemek istersiniz?</p>"
+"<p>Bu görselin renk bilgisi kalibre edilmemiş.<br/>Nasıl ilerlemek "
+"istiyorsunuz?</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:264
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:632
 #, kde-format
 msgid "Embedded Color Profile:"
-msgstr "Gömülü Renk Profili:"
+msgstr "Gömülü renk profili:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:274
 #, kde-format
 msgid "Input Color Profile:"
-msgstr "Girdi Renk Profili:"
+msgstr "Girdi renk profili:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:292
 #, kde-format
 msgid "Working Color Space:"
-msgstr "Çalışma Renk Uzayı:"
+msgstr "Çalışma renk uzayı:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:317
 #, kde-format
 msgid "Original Colors:"
-msgstr "Özgün Renkler:"
+msgstr "Özgün renkler:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:321
 #, kde-format
 msgid "Uncorrected Colors:"
-msgstr "Düzeltilmemiş Renkler:"
+msgstr "Düzeltilmemiş renkler:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:325
 #, kde-format
 msgid "Raw Colors:"
-msgstr "Ham Renkler:"
+msgstr "Ham renkler:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:340
 #, kde-format
 msgid "Resulting Colors:"
-msgstr "Sonuç Renkleri:"
+msgstr "Sonuç renkleri:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:344
 #, kde-format
 msgid "Correction Applied:"
-msgstr "Düzeltme Uygulandı:"
+msgstr "Düzeltme uygulandı:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:348
 #, kde-format
 msgid "Corrected Colors:"
-msgstr "Düzeltilmiş Renkler:"
+msgstr "Düzeltilmiş renkler:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:380
 #, kde-format
@@ -58084,17 +57922,17 @@ msgstr "ve sonra çalışma alanına dönüştür"
 #: core/utilities/setup/setupicc.cpp:753
 #, kde-format
 msgid "No Profile Available"
-msgstr "Uygun Profil Yok"
+msgstr "Kullanılabilir Profil Yok"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:426
 #, kde-format
 msgid "Assign profile and convert to working color space"
-msgstr "Profil atayın ve renk alanınıza dönüştürün"
+msgstr "Profil atayın ve renk uzayınıza dönüştürün"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:427
 #, kde-format
 msgid "Assign and keep color profile"
-msgstr "Ata ve renk profilini koru"
+msgstr "Ata ve renk profilini tut"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:428
 #, kde-format
@@ -58104,17 +57942,17 @@ msgstr "Dosyayı etiketsiz bırak, renk yönetimi yapma"
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:475
 #, kde-format
 msgid "Which color space shall be used to interpret the colors of this image?"
-msgstr "Bu resmin renklerini yorumlamak için hangi renk alanı kullanılacak?"
+msgstr "Bu görselin renklerini yorumlamak için hangi renk uzayı kullanılmalı?"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:478
 #, kde-format
 msgid "sRGB (Internet standard)"
-msgstr "sRGB (İnternet standardı)"
+msgstr "sRGB (İnternet Standardı)"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:479
 #, kde-format
 msgid "Current working color space"
-msgstr "Çalışılan mevcut renk alanı"
+msgstr "Geçerli çalışma renk alanı"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:480
 #, kde-format
@@ -58127,19 +57965,19 @@ msgid ""
 "Please select the input color profile of the device (camera) used to create "
 "this image:"
 msgstr ""
-"Lütfen bu resmi oluşturmak için aygıtın (kameranın) girdi renk profilini "
+"Lütfen bu görseli oluşturmak için aygıtın (kameranın) girdi renk profilini "
 "seçin:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:530
 #: core/utilities/setup/setupicc.cpp:755
 #, kde-format
 msgid "No Input Profile Available"
-msgstr "Hiçbir Girdi Profili Kullanılabilir Değil"
+msgstr "Kullanılabilir Girdi Profili Yok"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:628
 #, kde-format
 msgid "Assigned Color Profile:"
-msgstr "Atanmış Renk Profili:"
+msgstr "Atanan renk profili:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:642
 #, kde-format
@@ -58147,41 +57985,40 @@ msgid "<b>No Profile</b>"
 msgstr "<b>Profil Yok</b>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
-#, fuzzy, kde-format
-#| msgid "Soft Proofing Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
-msgstr "Yumuşak Koruma Seçenekleri"
+msgstr "Ekran Provası Seçenekleri"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
 #, kde-format
 msgid "Soft Proofing On"
-msgstr "Yumuşak Koruma Açık"
+msgstr "Ekran Provası Açık"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
 #, kde-format
 msgid "Enable soft-proofing color managed view"
-msgstr "Ymuşak-korumalı renk ayarlı görünümü etkin kıl"
+msgstr "Ekran provalı renk yönetimi görünümünü etkinleştir"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
 #, kde-format
 msgid "Soft Proofing Off"
-msgstr "Yumuşak Koruma Kapalı"
+msgstr "Ekran Provası Kapalı"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
 #, kde-format
 msgid "Disable soft-proofing color managed view"
-msgstr "Yumuşak-prova rengi ayarlı görünümü devre dışı bırak"
+msgstr "Ekran provalı renk yönetimi görünümünü devre dışı bırak"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:94
 #, kde-format
 msgid "<b>Configure the Soft Proofing View</b>"
-msgstr "<b>Yumuşak Prova Görünümünü Yapılandır</b>"
+msgstr "<b>Ekran Provası Görünümünü Yapılandır</b>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:102
 #, kde-format
 msgid "Profile of the output device to simulate:"
-msgstr "Simüle edilecek çıktı aygıtının profili:"
+msgstr "Benzetilecek çıktı aygıtının profili:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:105
 #: core/utilities/setup/setupicc.cpp:428
@@ -58191,31 +58028,28 @@ msgid ""
 "profile will be used to do a soft proof, so you will be able to preview how "
 "an image will be rendered via an output device.</p>"
 msgstr ""
-"<p>Çıktı aygıtınızın profilini seçin (genellikle yazıcınız). Bu profil, "
-"yumuşak bir prova yapmak için kullanılacaktır; bu nedenle, bir çıktı "
-"aygıtıyla görüntünün nasıl oluşturulacağını önizleme olanağına "
-"kavuşacaksınız.</p>"
+"<p>Çıktı aygıtınız (genellikle yazıcınız) için profili seçin. Bu profil, "
+"ekran provası yapmak için kullanılacaktır, böylece bir görüntünün bir çıktı "
+"aygıtı aracılığıyla nasıl sunulacağını önizleyebileceksiniz.</p>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:111
-#, fuzzy, kde-format
-#| msgid ""
-#| "Press this button to get detailed information about the selected proofing "
-#| "profile.</p>"
+#, kde-format
 msgid ""
 "<p>Press this button to get detailed information about the selected proofing "
 "profile.</p>"
 msgstr ""
-"Seçili prova profili hakkında detaylı bilgi almak için bu düğmeye bas.</p>"
+"<p>Seçili prova profili hakkında ayrıntılı bilgi almak için bu düğmeye basın."
+"</p>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:127
 #, kde-format
 msgid "Rendering intent:"
-msgstr "Gerçekleme amacı:"
+msgstr "Sunma amacı:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:132
 #, kde-format
 msgid "Highlight out-of-gamut colors"
-msgstr "Gamut renkleri dışındakileri vurgula"
+msgstr "Gam renkleri dışındakileri vurgula"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
 #, kde-format
@@ -58224,8 +58058,7 @@ msgstr "Vurgulama rengi:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:228
 #: core/utilities/setup/setupicc.cpp:865
-#, fuzzy, kde-format
-#| msgid "Profile Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Profil Hatası"
@@ -58234,7 +58067,7 @@ msgstr "Profil Hatası"
 #: core/utilities/setup/setupicc.cpp:865
 #, kde-format
 msgid "No profile is selected."
-msgstr "Hiç profil seçilmedi."
+msgstr "Seçili profil yok."
 
 #: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:62
 #, kde-format
@@ -58254,14 +58087,14 @@ msgctxt "@info:tooltip"
 msgid ""
 "Save the current changes. Note: The original image will never be overwritten."
 msgstr ""
-"Mevcut değişiklikleri kaydet. Not: Özgün resmin üzerine hiçbir zaman "
-"yazılmayacak."
+"Geçerli değişiklikleri kaydedin. Not: Özgün görselin üzerine hiçbir zaman "
+"yazılmaz."
 
 #: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes as a New Version"
-msgstr "Değişiklikleri Yeni Bir Sürüm olarak kaydet"
+msgstr "Değişiklikleri Yeni Bir Sürüme Kaydet"
 
 #: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
 #, kde-format
@@ -58277,28 +58110,23 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Discard Changes"
-msgstr "Değişikliklerden Vazgeç"
+msgstr "Değişiklikleri At"
 
 #: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:87
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard the changes applied to the image during this editing session."
-msgstr ""
-"Bu düzenleme oturumu sırasında resme uygulanan değişikliklerden vazgeç."
+msgstr "Bu düzenleme oturumu sırasında görsele uygulanan değişiklikleri atın."
 
 #: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<qt>The current image has been changed.<br>Do you wish to save your "
-#| "changes?</qt>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The current image has been changed.\n"
 "Do you wish to save your changes?"
 msgstr ""
-"<qt>Geçerli resim değiştirildi.<br>Değişikliklerinizi kaydetmek ister "
-"misiniz?</qt>"
+"Geçerli görsel değiştirildi.\n"
+"Değişikliklerinizi kaydetmek istiyor musunuz?"
 
 #: core/utilities/imageeditor/editor/editortool.cpp:400
 #, kde-format
@@ -58315,14 +58143,13 @@ msgstr "Araçlar"
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:116
 #, kde-format
 msgid "About this tool..."
-msgstr "Bu araç hakkında ..."
+msgstr "Bu araç hakkında..."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:149
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:112
-#, fuzzy, kde-format
-#| msgid "Online Handbook..."
+#, kde-format
 msgid "Tool online handbook..."
-msgstr "Çevrimiçi El Kitabı..."
+msgstr "Çevrimiçi araç el kitabı..."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:181
 #, kde-format
@@ -58332,23 +58159,24 @@ msgstr "Kılavuz:"
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:185
 #, kde-format
 msgid "Set here the color used to draw dashed guide lines."
-msgstr "Kesikli klavuz çizgi çizmek için kullanılan rengi buradan ayarla."
+msgstr ""
+"Kesikli kılavuz çizgileri çizmek için kullanılan rengi burada ayarlayın."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:190
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr ""
-"Kesikli klavuz çizgi çizmek için piksel cinsinden genişliği buradan ayarla."
+"Kesikli kılavuz çizgileri çizmek için kullanılan genişliği burada ayarlayın."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:198
 #, kde-format
 msgid "Defaults"
-msgstr "Varsayılanlar"
+msgstr "Öntanımlılar"
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
 #, kde-format
 msgid "Reset all settings to their default values."
-msgstr "Tüm ayarları öntanımlı değerlerine döndür."
+msgstr "Tüm ayarları öntanımlı değerlerine sıfırlayın."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:217
 #, kde-format
@@ -58359,7 +58187,7 @@ msgstr "Yükle..."
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:219
 #, kde-format
 msgid "Load all parameters from settings text file."
-msgstr "Tüm parametreleri ayarlar dosyasından yükle."
+msgstr "Ayarlar metin dosyasından tüm parametreleri yükleyin."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:221
 #, kde-format
@@ -58370,7 +58198,7 @@ msgstr "Farklı Kaydet..."
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:223
 #, kde-format
 msgid "Save all parameters to settings text file."
-msgstr "Tüm parametreleri ayarlar dosyasına kaydet."
+msgstr "Ayarlar metin dosyasına tüm parametreleri kaydedin."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:225
 #, kde-format
@@ -58381,13 +58209,13 @@ msgstr "Dene"
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:227
 #, kde-format
 msgid "Try all settings."
-msgstr "Tüm ayarları dene."
+msgstr "Tüm ayarları deneyin."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:217
 #, kde-format
 msgctxt "@action; go to first item"
 msgid "&First"
-msgstr ""
+msgstr "İ&lk"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:224
 #, kde-format
@@ -58399,7 +58227,7 @@ msgstr "&Son"
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
-msgstr "Özgün Olanı Aç"
+msgstr "Özgünü Aç"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:243
 #, kde-format
@@ -58423,7 +58251,7 @@ msgstr "Yeni Sürüm Olarak Kaydet"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
-msgstr "Mevcut düzenlemeleri dosyanın yeni sürümüne kaydet"
+msgstr "Geçerli değişiklikleri dosyanın yeni sürümüne kaydet"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:256
 #, kde-format
@@ -58440,8 +58268,8 @@ msgid ""
 "Save the current modifications to a new version of the file, specifying the "
 "filename and format"
 msgstr ""
-"Mevcut düzenlemeleri, dosya adı ve türü belirterek dosyanın yeni bir sürümü "
-"olarak kaydet"
+"Geçerli değişiklikleri, dosya adını ve biçimini belirterek dosyanın yeni bir "
+"sürümüne kaydet"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:262
 #, kde-format
@@ -58483,37 +58311,37 @@ msgstr "JPEG 2000"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
-msgstr ""
+msgstr "HEIF"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:283
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
-msgstr ""
+msgstr "JXL"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:288
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
-msgstr ""
+msgstr "WEBP"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:293
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
-msgstr ""
+msgstr "AVIF"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:311
 #, kde-format
 msgctxt "@action"
 msgid "Export"
-msgstr "Dışarıya Aktar"
+msgstr "Dışa Aktar"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
-msgstr "Dosyayı koleksiyonunuzun dışındaki bir klasöre kaydedin"
+msgstr "Dosyayı koleksiyon dışındaki bir klasöre kaydet"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:321
 #, kde-format
@@ -58525,21 +58353,19 @@ msgstr "Değişiklikleri At"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
-msgstr "Bu dosyaya olan mevcut değişiklikleri çıkart"
+msgstr "Bu dosyaya olan geçerli değişiklikleri at"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:335
-#, fuzzy, kde-format
-#| msgid "Open With Default Application"
+#, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr "Öntanımlı Uygulama İle Aç"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:336
-#, fuzzy, kde-format
-#| msgid "Open the item with default assigned application."
+#, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
-msgstr "Ögeyi öntanımlı atanmış uygulama ile aç."
+msgstr "Ögeyi öntanımlı atanan uygulama ile aç."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:359
 #, kde-format
@@ -58548,8 +58374,7 @@ msgid "Undo"
 msgstr "Geri Al"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:386
-#, fuzzy, kde-format
-#| msgid "Redo"
+#, kde-format
 msgctxt "@action"
 msgid "Redo"
 msgstr "Yinele"
@@ -58564,7 +58389,7 @@ msgstr "Tümünü Seç"
 #, kde-format
 msgctxt "@action"
 msgid "Select None"
-msgstr "Hiçbirini Seçme"
+msgstr "Tümünün Seçimini Kaldır"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:431
 #, kde-format
@@ -58579,115 +58404,97 @@ msgid "Fit to &Window"
 msgstr "&Pencereye Sığdır"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:444
-#, fuzzy, kde-format
-#| msgid "Fit to &Selection"
+#, kde-format
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "&Seçime Sığdır"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:449
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option can be used to zoom the image to the current selection area."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This option can be used to zoom the image to the current selection area."
-msgstr "Bu seçenek seçilen alana görüntüyü yakınlaştırmak için kullanılabilir."
+msgstr ""
+"Bu seçenek, görseli geçerli seçim alanına yakınlaştırmak için kullanılabilir."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:474
-#, fuzzy, kde-format
-#| msgid "Under-Exposure Indicator"
+#, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
-msgstr "Az Pozlama Göstergesi"
+msgstr "Yetersiz Pozlama Göstergesi"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:476
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to display black overlaid on the image. This will help "
-#| "you to avoid under-exposing the image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Set this option to display black overlaid on the image. This will help you "
 "to avoid under-exposing the image."
 msgstr ""
-"Resmi siyah kaplanmış olarak görüntülemek için bu seçeneği ayarlayın. Bu "
-"size resmi az-pozlamaktan kaçınmanıza yardımcı olacaktır."
+"Görselin üzerinde siyah kaplama görüntülemek için bu seçeneği ayarlayın. Bu, "
+"görselin yetersiz pozlanmasını önlemenize yardımcı olacaktır."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:484
-#, fuzzy, kde-format
-#| msgid "Over-Exposure Indicator"
+#, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Fazla Pozlama Göstergesi"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:486
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to display white overlaid on the image. This will help "
-#| "you to avoid over-exposing the image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Set this option to display white overlaid on the image. This will help you "
 "to avoid over-exposing the image."
 msgstr ""
-"Resmi beyaz kaplanmış olarak görüntülemek için bu seçeneği ayarlayın. Bu "
-"size resmi çok-pozlamaktan kaçınmanıza yardımcı olacaktır."
+"Görselin üzerinde beyaz kaplama görüntülemek için bu seçeneği ayarlayın. Bu, "
+"görselin yetersiz pozlanmasını önlemenize yardımcı olacaktır."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:494
 #: core/utilities/import/main/importui.cpp:488
-#, fuzzy, kde-format
-#| msgid "Color-Managed View"
+#, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
-msgstr "Renk Yönetimi Görünümü"
+msgstr "Renk Yönetimli Görünüm"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:501
-#, fuzzy, kde-format
-#| msgid "Soft Proofing Options..."
+#, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
-msgstr "Yumuşak Koruma Seçenekleri..."
+msgstr "Ekran Provası Seçenekleri..."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:506
-#, fuzzy, kde-format
-#| msgid "Soft Proofing View"
+#, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
-msgstr "Yumuşak Koruma Görünümü"
+msgstr "Ekran Provası Görünümü"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:514
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
-msgstr "Seçime Göre Kırp"
+msgstr "Seçime Kırp"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:517
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option can be used to crop the image. Select a region of the image "
-#| "to enable this action."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This option can be used to crop the image. Select a region of the image to "
 "enable this action."
 msgstr ""
-"Bu seçenek resmi kırpmak için kullanılabilir. Bu seçeneği etkinleştirmek "
-"için resim alanı seçin."
+"Bu seçenek görseli kırpmak için kullanılabilir. Bu eylemi etkinleştirmek "
+"için görselin bir bölgesini seçin."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:525
-#, fuzzy, kde-format
-#| msgid "Flip Horizontally"
+#, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
-msgstr "Yatay Olarak Döndür"
+msgstr "Yatay Ters Çevir"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:533
-#, fuzzy, kde-format
-#| msgid "Flip Vertically"
+#, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
-msgstr "Dikey Olarak Döndür"
+msgstr "Dikey Ters Çevir"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:543
 #: core/utilities/import/views/importpreviewview.cpp:212
@@ -58709,7 +58516,7 @@ msgstr "Sağa Döndür"
 #, kde-format
 msgctxt "@action"
 msgid "Previous Image"
-msgstr "Önceki Resim"
+msgstr "Önceki Görsel"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:613
 #, kde-format
@@ -58730,12 +58537,10 @@ msgid "Information about image size"
 msgstr "Görsel boyutu hakkında bilgi"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1137
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Saving image..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
-msgstr "Görsel kaydediliyor..."
+msgstr "Görsel Kaydediliyor"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1138
 #, kde-format
@@ -58754,9 +58559,7 @@ msgstr ""
 "Emin misiniz?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1164
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Uyarı"
@@ -58794,27 +58597,22 @@ msgid "Loading:"
 msgstr "Yükleniyor:"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1551
-#, fuzzy, kde-format
-#| msgid "Cannot load page %1"
+#, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
-msgstr "Sayfa yüklenemedi %1"
+msgstr "\"%1\" yüklenemiyor"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1593
-#, fuzzy, kde-format
-#| msgid ""
-#| "Cannot open the specified working space profile (\"%1\"). No color "
-#| "transformation will be applied. Please check the color management "
-#| "configuration in digiKam's setup."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Cannot open the specified working space profile (\"%1\"). No color "
 "transformation will be applied. Please check the color management "
 "configuration in digiKam's setup."
 msgstr ""
-"Belirtilmiş çalışma uzayı profili  (\"%1\") açılamıyor. Hiçbir renk dönüşümü "
-"uygulanmayacak. digiKam'in ayarlarından renk yönetimi yapılandırmasını "
-"kontrol edin."
+"Belirtilen çalışma alanı profili (\"%1\") açılamıyor. Herhangi bir renk "
+"dönüşümü uygulanmayacaktır. Lütfen digiKam'ın kurulumundaki renk yönetimi "
+"yapılandırmasını denetleyin."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1650
 #, kde-format
@@ -58823,12 +58621,7 @@ msgid "Saving:"
 msgstr "Kaydediliyor:"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1672
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to save file\n"
-#| "\"%1\"\n"
-#| "to\n"
-#| "\"%2\"."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to save file\n"
@@ -58836,126 +58629,104 @@ msgid ""
 "to\n"
 "\"%2\"."
 msgstr ""
-"Dosya kaydedilemedi\n"
-"\"%1\"\n"
-"den\n"
-"\"%2\"."
+"\"%1\" dosyası\n"
+"\"%2\"\n"
+" konumuna\n"
+"kaydedilemedi."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1805
-#, fuzzy, kde-format
-#| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
+#, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
-msgstr "\"%1\" dizinindeki geçici bir dosya açılamadı: %2 (%3)"
+msgstr "\"%1\" klasöründeki geçici dosya açılamadı: %2 (%3)"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2001
-#, fuzzy, kde-format
-#| msgid "Unable to determine the format to save the target image with."
+#, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
-msgstr "Hedef resmin hangi biçim ile kaydedileceği belirlenemedi."
+msgstr "Hedef görselin kaydedileceği biçim algılanamıyor."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2008
-#, fuzzy, kde-format
-#| msgid "Cannot Save: Found file path <b>%1</b> is invalid."
+#, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
-msgstr "Kaydedilemedi: Bulunan dosya yolu <b>%1</b> geçersiz."
+msgstr "Kaydedilemiyor: Bulunan dosya yolu \"%1\" geçersiz."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2255
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Cannot save file <b>%1</b> to the suggested version file name <b>%2</b>"
+#, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
-msgstr "<b>%1</b> dosyasını önerilen dosya ismi <b>%2</b> 'ye kaydedemedi"
+msgstr "\"%1\" dosyası önerilen sürüm dosyası adı \"%2\" olarak kaydedilemiyor"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2330
-#, fuzzy, kde-format
-#| msgid ""
-#| "You do not have write permissions for the file named \"%1\". Are you sure "
-#| "you want to overwrite it?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "You do not have write permissions for the file named \"%1\". Are you sure "
 "you want to overwrite it?"
 msgstr ""
-"\"%1\" adındaki dosya için yazma izniniz yok. Yeniden yazmak istediğinizden "
-"emin misiniz?"
+"\"%1\" adlı dosya için yazma izniniz yok. Üzerine yazmak istediğinizden emin "
+"misiniz?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2349
-#, fuzzy, kde-format
-#| msgid ""
-#| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
-" \"%1\" isimli bir dosya zaten var. Üzerine yazmak istediğinizden emin "
+"\"%1\" adlı bir dosya halihazırda var. Üzerine yazmak istediğinizden emin "
 "misiniz?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2376
-#, fuzzy, kde-format
-#| msgid "Failed to overwrite original file"
+#, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
-msgstr "Asıl dosya üzerine yazılamadı."
+msgstr "Özgün dosyanın üzerine yazılamadı"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2455
-#, fuzzy, kde-format
-#| msgid "Color-Managed View is enabled."
+#, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
-msgstr "Renk-Yönetimli Görünüm etkin."
+msgstr "Renk Yönetimli Görünüm etkin."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2459
-#, fuzzy, kde-format
-#| msgid "Color-Managed View is disabled."
+#, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
-msgstr "Renk-Yönetimli Görünüm kapalı."
+msgstr "Renk Yönetimli Görünüm devre dışı."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2464
-#, fuzzy, kde-format
-#| msgid ""
-#| "Color Management is not configured, so the Color-Managed View is not "
-#| "available."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Color Management is not configured, so the Color-Managed View is not "
 "available."
 msgstr ""
-"Reni yönetimi yapılandırılmamış, bu yüzden Renk-Yönetimli Görünüm "
-"kullanılabilir değil."
+"Renk Yönetimi yapılandırılmadığından Renk Yönetimli Görünüm kullanılamaz."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2500
-#, fuzzy, kde-format
-#| msgid "Under-Exposure indicator is enabled"
+#, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
-msgstr "Az-Pozlama göstergesi etkin"
+msgstr "Yetersiz Pozlama göstergesi etkin"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2501
-#, fuzzy, kde-format
-#| msgid "Under-Exposure indicator is disabled"
+#, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
-msgstr "Az-Pozlama göstergesi etkin değil"
+msgstr "Yetersiz Pozlama göstergesi devre dışı"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2515
-#, fuzzy, kde-format
-#| msgid "Over-Exposure indicator is enabled"
+#, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
-msgstr "Fazla-Pozlama göstergesi etkin"
+msgstr "Fazla Pozlama göstergesi etkin"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2516
-#, fuzzy, kde-format
-#| msgid "Over-Exposure indicator is disabled"
+#, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
-msgstr "Fazla-Pozlama göstergesi etkin değil"
+msgstr "Fazla Pozlama göstergesi devre dışı"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2607
 #, kde-format
@@ -59019,7 +58790,7 @@ msgstr "Görsel Düzenleyicisi"
 #, kde-format
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
-msgstr "Bilinmeyen"
+msgstr "Bilinmiyor"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:362
 #, kde-format
@@ -59027,11 +58798,10 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1 × %2 (%3 Mpks)"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:932
-#, fuzzy, kde-format
-#| msgid "No Image in Current Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
-msgstr "Mevcut albümde resim yok"
+msgstr "Geçerli Albümde Görsel Yok"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:933
 #, kde-format
@@ -59043,18 +58813,16 @@ msgstr ""
 "Görsel düzenleyicisi kapatılacak."
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1204
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Not Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
-msgstr "Dosya Kullanılabilir Değil"
+msgstr "Dosya Kullanılamıyor"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1205
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
-msgstr "<qt>Orijinal dosya (<b>%1</b>) şu anda mevcut değil</qt>"
+msgstr "<qt>Özgün dosya (<b>%1</b>) şu anda kullanılamıyor</qt>"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:27
 #, kde-format
@@ -59075,7 +58843,7 @@ msgstr "Onaylama Olmaksızın Kalıcı Olarak Sil"
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:53
 #, kde-format
 msgid "Move to Trash without Confirmation"
-msgstr "Onaylama Olmaksızın Çöp'e Taşı"
+msgstr "Onaylama Olmaksızın Çöp Kutusu'na Taşı"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:66
 #, kde-format
@@ -59085,17 +58853,17 @@ msgstr "Başlıkları Düzenle"
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:71
 #, kde-format
 msgid "Edit Comments"
-msgstr "Yorumları Düzenle"
+msgstr "Açıklamaları Düzenle"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:76
 #, kde-format
 msgid "Show Assigned Tags"
-msgstr "Atanmış Etiketleri Göster"
+msgstr "Atanan Etiketleri Göster"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:244
 #, kde-format
 msgid "Assign Tag"
-msgstr "Etiket Tanımla"
+msgstr "Etiket Ata"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:245
 #, kde-format
@@ -59105,7 +58873,7 @@ msgstr "Etiketi Kaldır"
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:270
 #, kde-format
 msgid "Assign Labels"
-msgstr "Etiket Ata"
+msgstr "Etiketler Ata"
 
 #: core/utilities/imageeditor/widgets/canvas.cpp:168
 #, kde-format
@@ -59113,20 +58881,20 @@ msgid ""
 "Failed to load image\n"
 "\"%1\""
 msgstr ""
-"Resim yüklenemedi\n"
+"Görsel yüklenemedi\n"
 "\"%1\""
 
 #: core/utilities/imageeditor/widgets/imageguidewidget.cpp:43
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
-msgstr "Önce"
+msgstr "Öncesi"
 
 #: core/utilities/imageeditor/widgets/imageguidewidget.cpp:44
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
-msgstr "Sonra"
+msgstr "Sonrası"
 
 #: core/utilities/imageeditor/widgets/imageregionitem.cpp:194
 #: core/utilities/imageeditor/widgets/imageregionitem.cpp:205
@@ -59134,7 +58902,7 @@ msgstr "Sonra"
 #: core/utilities/imageeditor/widgets/imageregionitem.cpp:277
 #, kde-format
 msgid "Before"
-msgstr "Önce"
+msgstr "Öncesi"
 
 #: core/utilities/imageeditor/widgets/imageregionitem.cpp:195
 #: core/utilities/imageeditor/widgets/imageregionitem.cpp:220
@@ -59142,10 +58910,10 @@ msgstr "Önce"
 #: core/utilities/imageeditor/widgets/imageregionitem.cpp:280
 #, kde-format
 msgid "After"
-msgstr "Sonra"
+msgstr "Sonrası"
 
 #: core/utilities/imageeditor/widgets/imageregionwidget.cpp:81
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
 "preview computation.</p><p>Click and drag the mouse cursor in the image to "

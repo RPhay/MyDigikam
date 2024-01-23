@@ -63,6 +63,7 @@ public:
     QDialogButtonBox* getButtonBox()    const;
 
     void addToMainLayout(QWidget* const widget);
+    void setAlbumSuggestion(const QString& title);
 
 private Q_SLOTS:
 

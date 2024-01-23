@@ -409,7 +409,12 @@ void GSWindow::slotListAlbumsDone(int code, const QString& errMsg, const QList <
                 d->widget->getAlbumsCoB()->addItem(QIcon::fromTheme(QLatin1String("system-users")),
                                                    list.value(i).title, list.value(i).id);
 
-                if (d->currentAlbumId == list.value(i).id)
+                if      (d->widget->getAlbumTitle() == list.at(i).title)
+                {
+                    d->currentAlbumId = list.at(i).id;
+                    d->widget->getAlbumsCoB()->setCurrentIndex(i);
+                }
+                else if (d->currentAlbumId == list.value(i).id)
                 {
                     d->widget->getAlbumsCoB()->setCurrentIndex(i);
                 }
@@ -452,7 +457,12 @@ void GSWindow::slotListAlbumsDone(int code, const QString& errMsg, const QList <
 
                 d->widget->getAlbumsCoB()->addItem(QIcon::fromTheme(albumIcon), list.at(i).title, list.at(i).id);
 
-                if (d->currentAlbumId == list.at(i).id)
+                if      (d->widget->getAlbumTitle() == list.at(i).title)
+                {
+                    d->currentAlbumId = list.at(i).id;
+                    d->widget->getAlbumsCoB()->setCurrentIndex(i);
+                }
+                else if (d->currentAlbumId == list.at(i).id)
                 {
                     d->widget->getAlbumsCoB()->setCurrentIndex(i);
                 }
@@ -1126,6 +1136,11 @@ void GSWindow::slotNewAlbumRequest()
     {
         case GoogleService::GDrive:
         {
+            if (!d->widget->getAlbumTitle().isEmpty())
+            {
+                d->albumDlg->setAlbumSuggestion(d->widget->getAlbumTitle());
+            }
+
             if (d->albumDlg->exec() == QDialog::Accepted)
             {
                 GSFolder newFolder;
@@ -1139,6 +1154,11 @@ void GSWindow::slotNewAlbumRequest()
 
         default:
         {
+            if (!d->widget->getAlbumTitle().isEmpty())
+            {
+                d->gphotoAlbumDlg->setAlbumSuggestion(d->widget->getAlbumTitle());
+            }
+
             if (d->gphotoAlbumDlg->exec() == QDialog::Accepted)
             {
                 GSFolder newFolder;
