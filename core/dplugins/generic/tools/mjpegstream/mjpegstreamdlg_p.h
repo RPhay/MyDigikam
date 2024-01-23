@@ -105,6 +105,7 @@ public:
     DComboBox*          transVal;
     TransitionPreview*  transPreview;
     QTabWidget*         tabView;
+
     QCheckBox*          showName;
     QCheckBox*          showDate;
     QCheckBox*          showApertureFocal;
