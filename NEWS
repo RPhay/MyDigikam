@@ -172,7 +172,7 @@ BUGFIXES:
 153 ==> 480150 - Version 8.2.0 is not stable and sometimes blocking.
 154 ==> 480170 - Crash when manually tagging faces.
 155 ==> 479850 - Set album name automatically when exporting an album to Google Photos.
-156 ==> 
+156 ==> 480195 - Timestamp issue with "Adjust Time & Date".
 157 ==> 
 158 ==> 
 159 ==> 
