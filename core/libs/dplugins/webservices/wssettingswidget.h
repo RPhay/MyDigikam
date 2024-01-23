@@ -59,6 +59,8 @@ public:
     void              addWidgetToSettingsBox(QWidget* const widget);
 
     QString           getDestinationPath()   const;
+    QString           getAlbumTitle()        const;
+
     DItemsList*       imagesList()           const;
     DProgressWdg*     progressBar()          const;
 

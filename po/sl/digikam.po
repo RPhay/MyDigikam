@@ -37,16 +37,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-22 01:56+0000\n"
-"PO-Revision-Date: 2024-01-18 10:00+0100\n"
+"POT-Creation-Date: 2024-01-23 01:37+0000\n"
+"PO-Revision-Date: 2024-01-22 08:47+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.4.2\n"
 
 #: core/app/date/ddateedit.cpp:497
@@ -1148,7 +1148,7 @@ msgid "Aperture/Focal:"
 msgstr "Zaslonka/goriščna razdalja:"
 
 #: core/app/items/utils/tooltipfiller.cpp:234
-#: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:213
+#: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:212
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
@@ -1233,7 +1233,7 @@ msgid "digiKam Properties"
 msgstr "lastnosti digiKama"
 
 #: core/app/items/utils/tooltipfiller.cpp:457
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:219
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:228
 #, kde-format
 msgid "Album:"
 msgstr "Album:"
@@ -11385,11 +11385,11 @@ msgstr "Shranjevanje sprememb -"
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
 #: core/dplugins/generic/webservices/google/gswindow.cpp:359
 #: core/dplugins/generic/webservices/google/gswindow.cpp:400
-#: core/dplugins/generic/webservices/google/gswindow.cpp:426
-#: core/dplugins/generic/webservices/google/gswindow.cpp:489
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1000
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1209
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1226
+#: core/dplugins/generic/webservices/google/gswindow.cpp:431
+#: core/dplugins/generic/webservices/google/gswindow.cpp:499
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1010
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1229
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1246
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:606
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:401
@@ -21259,7 +21259,7 @@ msgstr "Predogled..."
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:154
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:155
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
@@ -22364,7 +22364,7 @@ msgid "Start upload to Box"
 msgstr "Začni pošiljanje v Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:490
+#: core/dplugins/generic/webservices/google/gswindow.cpp:500
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, kde-format
 msgctxt "@info"
@@ -22373,13 +22373,13 @@ msgstr "Ni izbrane slike. Prosim izberite slike za prenos."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:508
-#: core/dplugins/generic/webservices/google/gswindow.cpp:538
-#: core/dplugins/generic/webservices/google/gswindow.cpp:952
-#: core/dplugins/generic/webservices/google/gswindow.cpp:973
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1071
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1264
+#: core/dplugins/generic/webservices/google/gswindow.cpp:518
+#: core/dplugins/generic/webservices/google/gswindow.cpp:548
+#: core/dplugins/generic/webservices/google/gswindow.cpp:962
+#: core/dplugins/generic/webservices/google/gswindow.cpp:983
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1031
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1081
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1284
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:669
@@ -22390,8 +22390,8 @@ msgid "Warning"
 msgstr "Opozorilo"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:509
-#: core/dplugins/generic/webservices/google/gswindow.cpp:539
+#: core/dplugins/generic/webservices/google/gswindow.cpp:519
+#: core/dplugins/generic/webservices/google/gswindow.cpp:549
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -22400,12 +22400,12 @@ msgstr "Overitev je spodletela. Kliknite \"Nadaljuj\" za overitev."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:512
-#: core/dplugins/generic/webservices/google/gswindow.cpp:542
-#: core/dplugins/generic/webservices/google/gswindow.cpp:957
-#: core/dplugins/generic/webservices/google/gswindow.cpp:978
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1027
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1269
+#: core/dplugins/generic/webservices/google/gswindow.cpp:522
+#: core/dplugins/generic/webservices/google/gswindow.cpp:552
+#: core/dplugins/generic/webservices/google/gswindow.cpp:967
+#: core/dplugins/generic/webservices/google/gswindow.cpp:988
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1037
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1289
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:674
@@ -22417,12 +22417,12 @@ msgstr "Nadaljuj"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:513
-#: core/dplugins/generic/webservices/google/gswindow.cpp:543
-#: core/dplugins/generic/webservices/google/gswindow.cpp:958
-#: core/dplugins/generic/webservices/google/gswindow.cpp:979
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1028
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1270
+#: core/dplugins/generic/webservices/google/gswindow.cpp:523
+#: core/dplugins/generic/webservices/google/gswindow.cpp:553
+#: core/dplugins/generic/webservices/google/gswindow.cpp:968
+#: core/dplugins/generic/webservices/google/gswindow.cpp:989
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1038
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1290
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -22434,7 +22434,7 @@ msgstr "Prekliči"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:382
-#: core/dplugins/generic/webservices/google/gswindow.cpp:620
+#: core/dplugins/generic/webservices/google/gswindow.cpp:630
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -23722,7 +23722,7 @@ msgstr "Povezana verzija že obstaja."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:171
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:150
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:151
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:152
 #, kde-format
 msgid "Destination"
 msgstr "Cilj"
@@ -23812,7 +23812,7 @@ msgid "Start download from Google Photos service"
 msgstr "Začetek prejemanja iz Google Photos Service"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:360
-#: core/dplugins/generic/webservices/google/gswindow.cpp:427
+#: core/dplugins/generic/webservices/google/gswindow.cpp:432
 #, kde-format
 msgctxt "@info"
 msgid "Google Photos call failed: %1\n"
@@ -23824,19 +23824,19 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Klic na Google Drive ni uspel: %1\n"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:628
+#: core/dplugins/generic/webservices/google/gswindow.cpp:638
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "Izvoz na Google Drive"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:634
+#: core/dplugins/generic/webservices/google/gswindow.cpp:644
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "Izvoz na Google Photo"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:953
+#: core/dplugins/generic/webservices/google/gswindow.cpp:963
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23846,7 +23846,7 @@ msgstr ""
 "Ni bilo mogoče shraniti datoteke: %1\n"
 "Ali želite nadaljevati?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:974
+#: core/dplugins/generic/webservices/google/gswindow.cpp:984
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23856,13 +23856,13 @@ msgstr ""
 "Ni bilo mogoče sprejeti datoteke: %1\n"
 "Ali želite nadaljevati?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1001
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1011
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "Ni bilo mogoče shraniti slike v %1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1022
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1032
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23874,7 +23874,7 @@ msgstr ""
 "%2\n"
 "Ali želite nadaljevati?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1072
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1082
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23886,13 +23886,13 @@ msgstr ""
 "%2\n"
 "Na vaš račun ni prispela nobena slika."
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1077
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1087
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "V redu"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1210
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23902,7 +23902,7 @@ msgstr ""
 "Klic na Google Drive ni uspel:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1227
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1247
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23912,7 +23912,7 @@ msgstr ""
 "Klic na Google Photos ni uspel:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1265
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -25546,7 +25546,7 @@ msgstr "Ponovno naloži"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
 #, kde-format
 msgid "Reload album list"
 msgstr "Ponovno naloži seznam albumov"
@@ -25565,14 +25565,14 @@ msgstr "Url:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:213
 #, kde-format
 msgid "Change Account"
 msgstr "Spremeni račun"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:264
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:273
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Spremeni velikost fotografij pred nalaganjem"
@@ -25623,7 +25623,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:528
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:143
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:144
 #: core/libs/models/abstractalbummodel.cpp:464
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
@@ -25984,7 +25984,7 @@ msgstr ""
 "SmugMug v spletnem brskalniku."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:80
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:139
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:140
 #, kde-format
 msgid "Account"
 msgstr "Račun"
@@ -26064,7 +26064,7 @@ msgid "Password for SmugMug album."
 msgstr "Geslo za album SmugMug."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
 #, kde-format
 msgid "New Album"
 msgstr "Nov album"
@@ -34148,40 +34148,40 @@ msgctxt "Web Service: GPHOTO"
 msgid "Google Photo"
 msgstr "Google Photo"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:148
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:149
 #, kde-format
 msgid "Max Dimension"
 msgstr "Najvećja dimenzija"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:175
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:176
 #, kde-format
 msgid "This is the list of images to upload to your %1 account."
 msgstr "To je seznam slik za pošiljanje na vaš %1 račun."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr ""
 "To je povezava, na katero je mogoče klikniti, za odpiranje %1 v spletnem "
 "brskalniku."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:201
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr "To je %1 račun, kamor ste trenutno prijavljeni."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:212
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr "Ime:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:206
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:215
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr "Spremenite račun %1 za prenos"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
@@ -34190,85 +34190,85 @@ msgstr ""
 "To je mapa %1 od koder ali kamor bodo izbrane fotografije prenesene ali "
 "naložene."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
 #, kde-format
 msgid "Create new %1 folder"
 msgstr "Ustvari novo mapo %1"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:227
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr "Ponovno naloži"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
 "scaled down."
 msgstr "To je največja dimenzija slik. Večje slike od te, bodo pomanjšane."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:249
 #, kde-format
 msgid "Original Size"
 msgstr "Izvirna velikost"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:241
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:250
 #, kde-format
 msgid "1600 px"
 msgstr "1600 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
 #, kde-format
 msgid "1440 px"
 msgstr "1440 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:243
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:252
 #, kde-format
 msgid "1280 px"
 msgstr "1280 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:253
 #, kde-format
 msgid "1152 px"
 msgstr "1152 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:245
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:254
 #, kde-format
 msgid "1024 px"
 msgstr "1024 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr "To je mesto, kamor bomo sprejeli %1 slik."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:257
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:266
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr "To so možnosti, ki bi bodo uporabljene za fotografije pred prenosom."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:269
 #, kde-format
 msgid "Upload original image file"
 msgstr "Pošlji izvorno datoteko slike"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:267
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:276
 #, kde-format
 msgid "Write the photo ID to the source image"
 msgstr "Na izvorno sliko napiši ID fotografije"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:277
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr "Po prenosu zapišite ID fotografije kot metapodatek v izvorno sliko."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:280
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:289
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr "Največja dimenzija:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:288
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:297
 #, kde-format
 msgid "JPEG Quality:"
 msgstr "Kakovost JPEG:"

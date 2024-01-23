@@ -81,6 +81,7 @@ public:
     DItemsList*                   imgList;
     QWidget*                       uploadWidget;
     QString                        toolName;
+    QString                        albumTitle;
 
     QLabel*                        headerLbl;
     QLabel*                        userNameDisplayLbl;
@@ -180,6 +181,14 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
     {
         d->iface->forceAlbumSelection = false;
         d->imgList->loadImagesFromCurrentAlbum();
+
+        const QList<QUrl>& urls = d->imgList->imageUrls();
+
+        if (d->iface->supportAlbums() && !urls.isEmpty())
+        {
+            DItemInfo info(d->iface->itemInfo(urls.constFirst()));
+            d->albumTitle = DAlbumInfo(d->iface->albumInfo(info.albumId())).title();
+        }
     }
     else
     {
@@ -337,6 +346,11 @@ QString WSSettingsWidget::getDestinationPath() const
 {
     QUrl url = d->iface->uploadUrl();
     return url.toLocalFile();
+}
+
+QString WSSettingsWidget::getAlbumTitle() const
+{
+    return d->albumTitle;
 }
 
 DItemsList* WSSettingsWidget::imagesList() const

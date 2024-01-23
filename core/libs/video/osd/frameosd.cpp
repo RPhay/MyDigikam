@@ -57,8 +57,7 @@ void FrameOsd::populateOSD(const QUrl& url,
 {
     // First stage is to get the information map from host application.
 
-    DInfoInterface::DInfoMap info = iface->itemInfo(url);
-    DItemInfo item(info);
+    DItemInfo item(iface->itemInfo(url));
 
     QString comment               = item.comment();
     QString title                 = item.title();
