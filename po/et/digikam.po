@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-23 01:37+0000\n"
+"POT-Creation-Date: 2024-01-24 01:35+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1205,9 +1205,9 @@ msgid "Aperture/Focal:"
 msgstr "Ava/fookuskaugus:"
 
 #: core/app/items/utils/tooltipfiller.cpp:234
-#: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:212
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
+#: core/libs/video/osd/frameosd.cpp:212
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
 #: core/utilities/import/items/importtooltipfiller.cpp:184
 #, kde-format
@@ -17524,6 +17524,7 @@ msgstr "Toorfailid"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:248
 #, fuzzy, kde-format
 #| msgid "Target Folder"
 msgid "Target File"
@@ -18654,7 +18655,7 @@ msgstr "Loo HTML-galerii ..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:114
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -18796,7 +18797,7 @@ msgstr "Sihtkataloog:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, fuzzy, kde-format
 #| msgid "Destination Folder"
@@ -18890,7 +18891,7 @@ msgid "Theme Parameters"
 msgstr "Teema parameetrid"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "Väljundi seadistused"
@@ -19505,180 +19506,7 @@ msgctxt "@title"
 msgid "Effect"
 msgstr "Efektid"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:304
-#, fuzzy, kde-format
-#| msgid "Show image file name"
-msgctxt "@option:check"
-msgid "Show image file name"
-msgstr "Pildifaili nime näitamine"
-
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:305
-#, fuzzy, kde-format
-#| msgid "Show the image file name at the bottom of the screen."
-msgctxt "@info"
-msgid "Show the image file name at the bottom of the screen."
-msgstr "Ekraani allservas näidatakse pildi failinime."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:307
-#, fuzzy, kde-format
-#| msgid "Show image creation date"
-msgctxt "@option:check"
-msgid "Show image creation date"
-msgstr "Pildi loomisaja näitamine"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:308
-#, fuzzy, kde-format
-#| msgid "Show the image creation time/date at the bottom of the screen."
-msgctxt "@info"
-msgid "Show the image creation time/date at the bottom of the screen."
-msgstr "Ekraani allservas näidatakse pildi loomine kuupäeva ja kellaaega."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:310
-#, fuzzy, kde-format
-#| msgid "Show camera aperture and focal length"
-msgctxt "@option:check"
-msgid "Show camera aperture and focal length"
-msgstr "Kaamera ava ja fookuskauguse näitamine"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:311
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the camera aperture and focal length at the bottom of the screen."
-msgctxt "@info"
-msgid "Show the camera aperture and focal length at the bottom of the screen."
-msgstr "Ekraani allservas näidatakse kaamera ava ja fookuskaugust."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:313
-#, fuzzy, kde-format
-#| msgid "Show camera exposure and sensitivity"
-msgctxt "@option:check"
-msgid "Show camera exposure and sensitivity"
-msgstr "Kaamera särituse ja tundlikkuse näitamine"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:314
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the camera exposure and sensitivity at the bottom of the screen."
-msgctxt "@info"
-msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr "Ekraani allservas näidatakse kaamera säritust ja tundlikkust."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:316
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
-msgctxt "@option:check"
-msgid "Show camera make and model"
-msgstr "Kaamera valmistaja ja mudeli näitamine"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:317
-#, fuzzy, kde-format
-#| msgid "Show the camera make and model at the bottom of the screen."
-msgctxt "@info"
-msgid "Show the camera make and model at the bottom of the screen."
-msgstr "Ekraani allservas näidatakse kaamera valmistajat ja mudelit."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:319
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
-msgctxt "@option:check"
-msgid "Show camera lens model"
-msgstr "Kaamera valmistaja ja mudeli näitamine"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:320
-#, fuzzy, kde-format
-#| msgid "Show the camera make and model at the bottom of the screen."
-msgctxt "@info"
-msgid "Show the camera lens model at the bottom of the screen."
-msgstr "Ekraani allservas näidatakse kaamera valmistajat ja mudelit."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:322
-#, fuzzy, kde-format
-#| msgid "Show image caption"
-msgctxt "@option:check"
-msgid "Show image caption"
-msgstr "Pildi allkirja näitamine"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:323
-#, fuzzy, kde-format
-#| msgid "Show the image caption at the bottom of the screen."
-msgctxt "@info"
-msgid "Show the image caption at the bottom of the screen."
-msgstr "Ekraani allservas näidatakse pildi allkirja."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:325
-#, fuzzy, kde-format
-#| msgid "Show image title"
-msgctxt "@option:check"
-msgid "Show image title"
-msgstr "Pildi pealkirja näitamine"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:326
-#, fuzzy, kde-format
-#| msgid "Show the image title at the bottom of the screen."
-msgctxt "@info"
-msgid "Show the image title at the bottom of the screen."
-msgstr "Ekraani allservas näidatakse pildi pealkirja."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:328
-#, fuzzy, kde-format
-#| msgid "Show image caption if it has not title"
-msgctxt "@option:check"
-msgid "Show image caption if it has not title"
-msgstr "Pildi allkirja näitamine, kui pealkirja pole"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:329
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the image caption at the bottom of the screen if no titles existed."
-msgctxt "@info"
-msgid ""
-"Show the image caption at the bottom of the screen if no titles existed."
-msgstr ""
-"Ekraani allservas näidatakse pildi allkirja, kui pildil pole pealkirja."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:331
-#, fuzzy, kde-format
-#| msgid "Show image rating"
-msgctxt "@option:check"
-msgid "Show image rating"
-msgstr "Pildi hinnangu näitamine"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:332
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image rating at the bottom of the screen."
-msgctxt "@info"
-msgid "Show the digiKam image rating at the bottom of the screen."
-msgstr "digiKami pildi hinnangu näitamine ekraani allservas."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:334
-#, fuzzy, kde-format
-#| msgid "Show image tags"
-msgctxt "@option:check"
-msgid "Show image tags"
-msgstr "Pildi siltide näitamine"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:335
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
-msgctxt "@info"
-msgid "Show the digiKam image tag names at the bottom of the screen."
-msgstr "digiKami pildi sildinimede näitamine ekraani allservas."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:337
-#, fuzzy, kde-format
-#| msgid "Screen placement:"
-msgctxt "@option"
-msgid "On Screen Display Font:"
-msgstr "Asetus ekraanil:"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:338
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in the slideshow."
-msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
-msgstr "Siin saab valida slaidiseansis näidatava teksti fondi."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:354
 #, fuzzy, kde-format
 #| msgid "OSM"
 msgctxt "@title: On Screen Display"
@@ -21544,14 +21372,14 @@ msgid "Select your preferred format to export printing as image."
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:148
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:229
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
 msgid "Destination folder:"
 msgstr "Sihtkataloog:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:154
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:235
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -21622,7 +21450,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
@@ -22120,7 +21948,7 @@ msgid "Welcome to Email Tool"
 msgstr "Tere tulemast kasutama e-posti tööriista"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
@@ -22171,32 +21999,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Loo video-slaidiseanss ..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:124
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:122
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "Video-slaidiseansi genereerimise alustamine ..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:127
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:125
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 sisendpilti töödelda"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:175
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:173
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Video-slaidiseanss pole valmis"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:180
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:178
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:185
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:183
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Video-slaidiseanss on valmis"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:190
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:188
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Videovoo avamine mängijas ..."
@@ -22232,36 +22060,48 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "Binaarfail"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:98
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Meediakonteineri vorming:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:101
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:106
+#, kde-format
+msgid "Open in Player:"
+msgstr "Avamine mängijas:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:143
+#, fuzzy, kde-format
+#| msgctxt "@title:column Output file name"
+#| msgid "Output"
+msgid "Output"
+msgstr "Väljund"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:151
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:156
 #, kde-format
 msgid "Equalization Strength:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:108
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:165
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -22270,26 +22110,32 @@ msgid ""
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:176
+#, fuzzy, kde-format
+#| msgid "Image Information"
+msgid "Frames Normalization"
+msgstr "Pildi info"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:186
 #, fuzzy, kde-format
 #| msgid "Soundtrack:"
 msgid "Soundtrack File:"
 msgstr "Heliriba:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
 #, fuzzy, kde-format
 #| msgid "Audio bitrate"
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Heli bitikiirus"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
 #, fuzzy, kde-format
 #| msgid "Soundtrack:"
 msgid "Soundtrack Duration:"
 msgstr "Heliriba:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:138
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:200
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -22298,15 +22144,22 @@ msgid ""
 "media.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
+#, fuzzy, kde-format
+#| msgid "Audio bitrate"
+msgid "Audio Track"
+msgstr "Heli bitikiirus"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:219
+#, fuzzy, kde-format
+#| msgid "Screen placement:"
+msgid "On Screen Display"
+msgstr "Asetus ekraanil:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Video väljundfaili nimi luuakse automaatselt."
-
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
-#, kde-format
-msgid "Open in Player:"
-msgstr "Avamine mängijas:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:84
 #, kde-format
@@ -22369,24 +22222,24 @@ msgstr ""
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Kestus: %1 sekundit elemendile, kokku %2 sekundit (ilma üleminekuteta)"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:68
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:67
 #, fuzzy, kde-format
 #| msgid "Create a Video Slideshow"
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Video-slaidiseansi loomine"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:76
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr "Tere tulemast kasutama video-slaidiseansi tööriista"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
 #, kde-format
 msgid "Video Settings"
 msgstr "Videoseadistused"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:82
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
 #, kde-format
 msgid "Generating Video Slideshow"
 msgstr "Video-slaidiseansi genereerimine"
@@ -43295,13 +43148,13 @@ msgid ""
 "video."
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:496
+#: core/libs/video/manager/vidslidesettings.cpp:497
 #, kde-format
 msgctxt "Video Type: QVGA"
 msgid "QVGA - 320x180 - 16:9"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:497
+#: core/libs/video/manager/vidslidesettings.cpp:498
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VCD"
 #| msgid "VCD - 352x240"
@@ -43309,7 +43162,7 @@ msgctxt "Video Type: VCD1"
 msgid "VCD - 352x240 - 7:5"
 msgstr "VCD - 352x240"
 
-#: core/libs/video/manager/vidslidesettings.cpp:498
+#: core/libs/video/manager/vidslidesettings.cpp:499
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VCD"
 #| msgid "VCD - 352x288"
@@ -43317,7 +43170,7 @@ msgctxt "Video Type: VCD2"
 msgid "VCD - 352x288 - 6:5"
 msgstr "VCD - 352x288"
 
-#: core/libs/video/manager/vidslidesettings.cpp:499
+#: core/libs/video/manager/vidslidesettings.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VCD"
 #| msgid "VCD - 352x240"
@@ -43325,7 +43178,7 @@ msgctxt "Video Type: CVD1"
 msgid "CVD - 352x480 - 4:3"
 msgstr "VCD - 352x240"
 
-#: core/libs/video/manager/vidslidesettings.cpp:500
+#: core/libs/video/manager/vidslidesettings.cpp:501
 #, fuzzy, kde-format
 #| msgctxt "Video Type: XVGA"
 #| msgid "XVGA - 1024x576 - 16:9"
@@ -43333,13 +43186,13 @@ msgctxt "Video Type: CVD2"
 msgid "CVD - 352x576 - 16:9"
 msgstr "XVGA - 1024x576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:501
+#: core/libs/video/manager/vidslidesettings.cpp:502
 #, kde-format
 msgctxt "Video Type: HVGA"
 msgid "HVGA - 480x270 - 16:9"
 msgstr "HVGA - 480x270 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:502
+#: core/libs/video/manager/vidslidesettings.cpp:503
 #, fuzzy, kde-format
 #| msgctxt "Video Type: SVCD"
 #| msgid "SVCD - 480x480"
@@ -43347,7 +43200,7 @@ msgctxt "Video Type: SVCD1"
 msgid "SVCD - 480x480 - 1:1"
 msgstr "SVCD - 480x480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:503
+#: core/libs/video/manager/vidslidesettings.cpp:504
 #, fuzzy, kde-format
 #| msgctxt "Video Type: SVCD"
 #| msgid "SVCD - 480x480"
@@ -43355,7 +43208,7 @@ msgctxt "Video Type: SDTV1"
 msgid "SDTV - 528x480 - 11:10"
 msgstr "SVCD - 480x480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:504
+#: core/libs/video/manager/vidslidesettings.cpp:505
 #, fuzzy, kde-format
 #| msgctxt "Video Type: SVCD"
 #| msgid "SVCD - 480x480"
@@ -43363,7 +43216,7 @@ msgctxt "Video Type: SDTV2"
 msgid "SDTV - 544x480 - 17:15"
 msgstr "SVCD - 480x480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:505
+#: core/libs/video/manager/vidslidesettings.cpp:506
 #, fuzzy, kde-format
 #| msgctxt "Video Type: XVGA"
 #| msgid "XVGA - 1024x576 - 16:9"
@@ -43371,7 +43224,7 @@ msgctxt "Video Type: EDTV1"
 msgid "EDTV - 544x576 - 17:18"
 msgstr "XVGA - 1024x576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:506
+#: core/libs/video/manager/vidslidesettings.cpp:507
 #, fuzzy, kde-format
 #| msgctxt "Video Type: SVCD"
 #| msgid "SVCD - 480x576"
@@ -43379,7 +43232,7 @@ msgctxt "Video Type: SVCD2"
 msgid "SVCD - 480x576 - 5:6"
 msgstr "SVCD - 480x576"
 
-#: core/libs/video/manager/vidslidesettings.cpp:507
+#: core/libs/video/manager/vidslidesettings.cpp:508
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VGA"
 #| msgid "VGA - 640x360 - 16:9"
@@ -43387,7 +43240,7 @@ msgctxt "Video Type: EGA"
 msgid "EGA - 640x350 - 16:9"
 msgstr "VGA - 640x360 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:508
+#: core/libs/video/manager/vidslidesettings.cpp:509
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VGA"
 #| msgid "VGA - 640x360 - 16:9"
@@ -43395,7 +43248,7 @@ msgctxt "Video Type: VGA"
 msgid "VGA - 640x480 - 4:3"
 msgstr "VGA - 640x360 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:509
+#: core/libs/video/manager/vidslidesettings.cpp:510
 #, fuzzy, kde-format
 #| msgctxt "Video Type: DVD"
 #| msgid "DVD - 720x480"
@@ -43403,7 +43256,7 @@ msgctxt "Video Type: SDTV3"
 msgid "SDTV - 704x480 - 22:15"
 msgstr "DVD - 720x480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:510
+#: core/libs/video/manager/vidslidesettings.cpp:511
 #, fuzzy, kde-format
 #| msgctxt "Video Type: DVD"
 #| msgid "DVD - 720x576"
@@ -43411,7 +43264,7 @@ msgctxt "Video Type: EDTV2"
 msgid "EDTV - 704x576 - 11:9"
 msgstr "DVD - 720x576"
 
-#: core/libs/video/manager/vidslidesettings.cpp:511
+#: core/libs/video/manager/vidslidesettings.cpp:512
 #, fuzzy, kde-format
 #| msgctxt "Video Type: DVD"
 #| msgid "DVD - 720x480"
@@ -43419,7 +43272,7 @@ msgctxt "Video Type: DVD"
 msgid "DVD - 720x480 - 3:2"
 msgstr "DVD - 720x480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:512
+#: core/libs/video/manager/vidslidesettings.cpp:513
 #, fuzzy, kde-format
 #| msgctxt "Video Type: DVD"
 #| msgid "DVD - 720x576"
@@ -43427,13 +43280,13 @@ msgctxt "Video Type: DVD"
 msgid "DVD - 720x576 - 5:4"
 msgstr "DVD - 720x576"
 
-#: core/libs/video/manager/vidslidesettings.cpp:513
+#: core/libs/video/manager/vidslidesettings.cpp:514
 #, kde-format
 msgctxt "Video Type: WVGA"
 msgid "WVGA - 800x450 - 16:9"
 msgstr "WVGA - 800x450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:514
+#: core/libs/video/manager/vidslidesettings.cpp:515
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -43441,7 +43294,7 @@ msgctxt "Video Type: SVGA"
 msgid "SVGA - 800x600 - 4:3"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:515
+#: core/libs/video/manager/vidslidesettings.cpp:516
 #, fuzzy, kde-format
 #| msgctxt "Video Type: DVD"
 #| msgid "DVD - 720x480"
@@ -43449,19 +43302,19 @@ msgctxt "Video Type: DVGA"
 msgid "DVGA - 960x640 - 3:2"
 msgstr "DVD - 720x480"
 
-#: core/libs/video/manager/vidslidesettings.cpp:516
+#: core/libs/video/manager/vidslidesettings.cpp:517
 #, kde-format
 msgctxt "Video Type: XVGA"
 msgid "XVGA - 1024x576 - 16:9"
 msgstr "XVGA - 1024x576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:517
+#: core/libs/video/manager/vidslidesettings.cpp:518
 #, kde-format
 msgctxt "Video Type: HDTV"
 msgid "HDTV - 1280x720 - 16:9"
 msgstr "HDTV - 1280x720 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:518
+#: core/libs/video/manager/vidslidesettings.cpp:519
 #, fuzzy, kde-format
 #| msgctxt "Video Type: XVGA"
 #| msgid "XVGA - 1024x576 - 16:9"
@@ -43469,7 +43322,7 @@ msgctxt "Video Type: WXGA1"
 msgid "WXGA - 1280x768 - 5:3"
 msgstr "XVGA - 1024x576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:519
+#: core/libs/video/manager/vidslidesettings.cpp:520
 #, fuzzy, kde-format
 #| msgctxt "Video Type: WVGA"
 #| msgid "WVGA - 800x450 - 16:9"
@@ -43477,7 +43330,7 @@ msgctxt "Video Type: WXGA2"
 msgid "WXGA - 1280x800 - 8:5"
 msgstr "WVGA - 800x450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:520
+#: core/libs/video/manager/vidslidesettings.cpp:521
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -43485,7 +43338,7 @@ msgctxt "Video Type: SXGA"
 msgid "SXGA - 1280x1024 - 5:4"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:521
+#: core/libs/video/manager/vidslidesettings.cpp:522
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -43493,7 +43346,7 @@ msgctxt "Video Type: SXGAPLUS"
 msgid "SXGAPLUS - 1400x1050 - 4:3"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:522
+#: core/libs/video/manager/vidslidesettings.cpp:523
 #, fuzzy, kde-format
 #| msgctxt "Video Type: WVGA"
 #| msgid "WVGA - 800x450 - 16:9"
@@ -43501,7 +43354,7 @@ msgctxt "Video Type: WSXGA"
 msgid "WSXGA - 1440x900 - 8:5"
 msgstr "WVGA - 800x450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:523
+#: core/libs/video/manager/vidslidesettings.cpp:524
 #, fuzzy, kde-format
 #| msgctxt "Video Type: HDTV"
 #| msgid "HDTV - 1280x720 - 16:9"
@@ -43509,7 +43362,7 @@ msgctxt "Video Type: HDPLUS"
 msgid "HDPLUS - 1600x900 - 16:9"
 msgstr "HDTV - 1280x720 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:524
+#: core/libs/video/manager/vidslidesettings.cpp:525
 #, fuzzy, kde-format
 #| msgctxt "Video Type: WVGA"
 #| msgid "WVGA - 800x450 - 16:9"
@@ -43517,7 +43370,7 @@ msgctxt "Video Type: WSXGAPLUS"
 msgid "WSXGAPLUS - 1680x1050 - 8:5"
 msgstr "WVGA - 800x450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:525
+#: core/libs/video/manager/vidslidesettings.cpp:526
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -43525,13 +43378,13 @@ msgctxt "Video Type: UXGA"
 msgid "UXGA - 1600x1200 - 4:3"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:526
+#: core/libs/video/manager/vidslidesettings.cpp:527
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:527
+#: core/libs/video/manager/vidslidesettings.cpp:528
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -43539,7 +43392,7 @@ msgctxt "Video Type: WUXGA"
 msgid "WUXGA - 1920x1200 - 8:5"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:528
+#: core/libs/video/manager/vidslidesettings.cpp:529
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -43547,7 +43400,7 @@ msgctxt "Video Type: TXGA"
 msgid "TXGA - 1920x1440 - 7:5"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:529
+#: core/libs/video/manager/vidslidesettings.cpp:530
 #, fuzzy, kde-format
 #| msgctxt "Video Type: XVGA"
 #| msgid "XVGA - 1024x576 - 16:9"
@@ -43555,7 +43408,7 @@ msgctxt "Video Type: QXGA"
 msgid "QXGA - 2048x1536 - 4:3"
 msgstr "XVGA - 1024x576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:530
+#: core/libs/video/manager/vidslidesettings.cpp:531
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -43563,7 +43416,7 @@ msgctxt "Video Type: UWFHD"
 msgid "UWFHD - 2560x1080 - 21:9"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:531
+#: core/libs/video/manager/vidslidesettings.cpp:532
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -43571,7 +43424,7 @@ msgctxt "Video Type: WQHD"
 msgid "WQHD - 2560x1440 - 16:9"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:532
+#: core/libs/video/manager/vidslidesettings.cpp:533
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -43579,7 +43432,7 @@ msgctxt "Video Type: WQXGA"
 msgid "WQXGA - 2560x1600 - 8:5"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:533
+#: core/libs/video/manager/vidslidesettings.cpp:534
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -43587,7 +43440,7 @@ msgctxt "Video Type: QSXGA"
 msgid "QSXGA - 2560x2048 - 5:4"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:534
+#: core/libs/video/manager/vidslidesettings.cpp:535
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -43595,7 +43448,7 @@ msgctxt "Video Type: QSXGAPLUS"
 msgid "QSXGAPLUS - 2800x2100 - 4:3"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:535
+#: core/libs/video/manager/vidslidesettings.cpp:536
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -43603,7 +43456,7 @@ msgctxt "Video Type: WQXGAPLUS"
 msgid "WQXGAPLUS - 3200x1800 - 16:9"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:536
+#: core/libs/video/manager/vidslidesettings.cpp:537
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -43611,7 +43464,7 @@ msgctxt "Video Type: WQSXGA"
 msgid "WQSXGA - 3200x2048 - 25:16"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:537
+#: core/libs/video/manager/vidslidesettings.cpp:538
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -43619,13 +43472,13 @@ msgctxt "Video Type: QUXGA"
 msgid "QUXGA - 3200x2400 - 4:3"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:538
+#: core/libs/video/manager/vidslidesettings.cpp:539
 #, kde-format
 msgctxt "Video Type: UHD4K"
 msgid "UHD4K - 3840x2160 - 16:9"
 msgstr "UHD4K - 3840x2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:539
+#: core/libs/video/manager/vidslidesettings.cpp:540
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -43633,7 +43486,7 @@ msgctxt "Video Type: WQUXGA"
 msgid "WQUXGA - 3840x2400 - 8:5"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:540
+#: core/libs/video/manager/vidslidesettings.cpp:541
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -43641,7 +43494,7 @@ msgctxt "Video Type: HXGA"
 msgid "HXGA - 4096x3072 - 4:3"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:541
+#: core/libs/video/manager/vidslidesettings.cpp:542
 #, fuzzy, kde-format
 #| msgctxt "Video Type: HDTV"
 #| msgid "HDTV - 1280x720 - 16:9"
@@ -43649,7 +43502,7 @@ msgctxt "Video Type: UHD5K"
 msgid "UHD5K - 5120x2880 - 16:9"
 msgstr "HDTV - 1280x720 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:542
+#: core/libs/video/manager/vidslidesettings.cpp:543
 #, fuzzy, kde-format
 #| msgctxt "Video Type: BLUERAY"
 #| msgid "BLUERAY - 1920x1080 - 16:9"
@@ -43657,7 +43510,7 @@ msgctxt "Video Type: WHXGA"
 msgid "WHXGA - 5120x3200 - 8:5"
 msgstr "BLUERAY - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:543
+#: core/libs/video/manager/vidslidesettings.cpp:544
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -43665,7 +43518,7 @@ msgctxt "Video Type: HSXGA"
 msgid "HSXGA - 5120x4096 - 5:4"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:544
+#: core/libs/video/manager/vidslidesettings.cpp:545
 #, fuzzy, kde-format
 #| msgctxt "Video Type: UHD4K"
 #| msgid "UHD4K - 3840x2160 - 16:9"
@@ -43673,7 +43526,7 @@ msgctxt "Video Type: UHD6K"
 msgid "UHD6K - 6016x3384 - 16:9"
 msgstr "UHD4K - 3840x2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:545
+#: core/libs/video/manager/vidslidesettings.cpp:546
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -43681,7 +43534,7 @@ msgctxt "Video Type: WHSXGA"
 msgid "WHSXGA - 6400x4096 - 25:16"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:546
+#: core/libs/video/manager/vidslidesettings.cpp:547
 #, fuzzy, kde-format
 #| msgctxt "Video Type: VGA"
 #| msgid "VGA - 640x360 - 16:9"
@@ -43689,7 +43542,7 @@ msgctxt "Video Type: HUXGA"
 msgid "HUXGA - 6400x4800 - 4:3"
 msgstr "VGA - 640x360 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:547
+#: core/libs/video/manager/vidslidesettings.cpp:548
 #, fuzzy, kde-format
 #| msgctxt "Video Type: UHD4K"
 #| msgid "UHD4K - 3840x2160 - 16:9"
@@ -43697,7 +43550,7 @@ msgctxt "Video Type: UHD8K"
 msgid "UHD8K - 7680x4320 - 16:9"
 msgstr "UHD4K - 3840x2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:548
+#: core/libs/video/manager/vidslidesettings.cpp:549
 #, fuzzy, kde-format
 #| msgctxt "Video Type: WVGA"
 #| msgid "WVGA - 800x450 - 16:9"
@@ -43705,7 +43558,7 @@ msgctxt "Video Type: WHUXGA"
 msgid "WHUXGA - 7680x4800 - 8:5"
 msgstr "WVGA - 800x450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:549
+#: core/libs/video/manager/vidslidesettings.cpp:550
 #, fuzzy, kde-format
 #| msgctxt "Video Type: UHD4K"
 #| msgid "UHD4K - 3840x2160 - 16:9"
@@ -43713,7 +43566,7 @@ msgctxt "Video Type: UW10K"
 msgid "UW10K - 10240x4320 - 21:9"
 msgstr "UHD4K - 3840x2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:550
+#: core/libs/video/manager/vidslidesettings.cpp:551
 #, fuzzy, kde-format
 #| msgctxt "Video Type: QVGA"
 #| msgid "QVGA - 320x180 - 16:9"
@@ -43721,157 +43574,157 @@ msgctxt "Video Type: UW16K"
 msgid "UW16K - 15360x8640 - 16:9"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:773
+#: core/libs/video/manager/vidslidesettings.cpp:774
 #, kde-format
 msgctxt "Video Bit Rate 400000"
 msgid "400k"
 msgstr "400k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:774
+#: core/libs/video/manager/vidslidesettings.cpp:775
 #, kde-format
 msgctxt "Video Bit Rate 500000"
 msgid "500k"
 msgstr "500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:775
+#: core/libs/video/manager/vidslidesettings.cpp:776
 #, kde-format
 msgctxt "Video Bit Rate 1000000"
 msgid "1000k"
 msgstr "1000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:776
+#: core/libs/video/manager/vidslidesettings.cpp:777
 #, kde-format
 msgctxt "Video Bit Rate 1200000"
 msgid "1200k"
 msgstr "1200k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:777
+#: core/libs/video/manager/vidslidesettings.cpp:778
 #, kde-format
 msgctxt "Video Bit Rate 1500000"
 msgid "1500k"
 msgstr "1500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:778
+#: core/libs/video/manager/vidslidesettings.cpp:779
 #, kde-format
 msgctxt "Video Bit Rate 2000000"
 msgid "2000k"
 msgstr "2000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:779
+#: core/libs/video/manager/vidslidesettings.cpp:780
 #, kde-format
 msgctxt "Video Bit Rate 2500000"
 msgid "2500k"
 msgstr "2500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:780
+#: core/libs/video/manager/vidslidesettings.cpp:781
 #, kde-format
 msgctxt "Video Bit Rate 3000000"
 msgid "3000k"
 msgstr "3000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:781
+#: core/libs/video/manager/vidslidesettings.cpp:782
 #, kde-format
 msgctxt "Video Bit Rate 4000000"
 msgid "4000k"
 msgstr "4000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:782
+#: core/libs/video/manager/vidslidesettings.cpp:783
 #, kde-format
 msgctxt "Video Bit Rate 4500000"
 msgid "4500k"
 msgstr "4500k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:783
+#: core/libs/video/manager/vidslidesettings.cpp:784
 #, kde-format
 msgctxt "Video Bit Rate 5000000"
 msgid "5000k"
 msgstr "5000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:784
+#: core/libs/video/manager/vidslidesettings.cpp:785
 #, kde-format
 msgctxt "Video Bit Rate 6000000"
 msgid "6000k"
 msgstr "6000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:785
+#: core/libs/video/manager/vidslidesettings.cpp:786
 #, kde-format
 msgctxt "Video Bit Rate 8000000"
 msgid "8000k"
 msgstr "8000k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:794
+#: core/libs/video/manager/vidslidesettings.cpp:795
 #, kde-format
 msgctxt "Video Standard PAL"
 msgid "PAL - 25 FPS"
 msgstr "PAL - 25 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:795
+#: core/libs/video/manager/vidslidesettings.cpp:796
 #, kde-format
 msgctxt "Video Standard NTSC"
 msgid "NTSC - 29.97 FPS"
 msgstr "NTSC - 29,97 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:807
+#: core/libs/video/manager/vidslidesettings.cpp:808
 #, kde-format
 msgctxt "Video Codec X264"
 msgid "High Quality H.264 AVC/MPEG-4 AVC"
 msgstr "High Quality H.264 AVC/MPEG-4 AVC"
 
-#: core/libs/video/manager/vidslidesettings.cpp:808
+#: core/libs/video/manager/vidslidesettings.cpp:809
 #, kde-format
 msgctxt "Video Codec MPEG4"
 msgid "DivX/XVid/MPEG-4"
 msgstr "DivX/XVid/MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:809
+#: core/libs/video/manager/vidslidesettings.cpp:810
 #, kde-format
 msgctxt "Video Codec MPEG2"
 msgid "MPEG-2 Video"
 msgstr "MPEG-2 Video"
 
-#: core/libs/video/manager/vidslidesettings.cpp:826
+#: core/libs/video/manager/vidslidesettings.cpp:827
 #, kde-format
 msgctxt "Video Standard AVI"
 msgid "AVI - Audio Video Interleave"
 msgstr "AVI - Audio Video Interleave"
 
-#: core/libs/video/manager/vidslidesettings.cpp:827
+#: core/libs/video/manager/vidslidesettings.cpp:828
 #, kde-format
 msgctxt "Video Standard MKV"
 msgid "MKV - Matroska"
 msgstr "MKV - Matroska"
 
-#: core/libs/video/manager/vidslidesettings.cpp:828
+#: core/libs/video/manager/vidslidesettings.cpp:829
 #, kde-format
 msgctxt "Video Standard MP4"
 msgid "MP4 - MPEG-4"
 msgstr "MP4 - MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:829
+#: core/libs/video/manager/vidslidesettings.cpp:830
 #, kde-format
 msgctxt "Video Standard MPG"
 msgid "MPG - MPEG-2"
 msgstr "MPG - MPEG-2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:838
+#: core/libs/video/manager/vidslidesettings.cpp:839
 #, kde-format
 msgctxt "Video Effect NOPLAYER"
 msgid "None"
 msgstr "Puudub"
 
-#: core/libs/video/manager/vidslidesettings.cpp:839
+#: core/libs/video/manager/vidslidesettings.cpp:840
 #, kde-format
 msgctxt "Video Standard INTERNAL"
 msgid "Internal"
 msgstr "sisemine"
 
-#: core/libs/video/manager/vidslidesettings.cpp:840
+#: core/libs/video/manager/vidslidesettings.cpp:841
 #, kde-format
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Töökeskkonna vaikeväärtus"
 
-#: core/libs/video/manager/vidslidetask.cpp:183
+#: core/libs/video/manager/vidslidetask.cpp:195
 #, fuzzy, kde-format
 #| msgid "Generating files for \"%1\""
 msgid "Generating frames from %1 Done"
@@ -43899,6 +43752,179 @@ msgstr ""
 #| msgid "Error while opening the source database."
 msgid "Error while encoding frames!"
 msgstr "Tõrge lähteandmebaasi avamisel."
+
+#: core/libs/video/osd/frameosdwidget.cpp:58
+#, fuzzy, kde-format
+#| msgid "Show image file name"
+msgctxt "@option:check"
+msgid "Show image file name"
+msgstr "Pildifaili nime näitamine"
+
+#: core/libs/video/osd/frameosdwidget.cpp:59
+#, fuzzy, kde-format
+#| msgid "Show the image file name at the bottom of the screen."
+msgctxt "@info"
+msgid "Show the image file name at the bottom of the screen."
+msgstr "Ekraani allservas näidatakse pildi failinime."
+
+#: core/libs/video/osd/frameosdwidget.cpp:61
+#, fuzzy, kde-format
+#| msgid "Show image creation date"
+msgctxt "@option:check"
+msgid "Show image creation date"
+msgstr "Pildi loomisaja näitamine"
+
+#: core/libs/video/osd/frameosdwidget.cpp:62
+#, fuzzy, kde-format
+#| msgid "Show the image creation time/date at the bottom of the screen."
+msgctxt "@info"
+msgid "Show the image creation time/date at the bottom of the screen."
+msgstr "Ekraani allservas näidatakse pildi loomine kuupäeva ja kellaaega."
+
+#: core/libs/video/osd/frameosdwidget.cpp:64
+#, fuzzy, kde-format
+#| msgid "Show camera aperture and focal length"
+msgctxt "@option:check"
+msgid "Show camera aperture and focal length"
+msgstr "Kaamera ava ja fookuskauguse näitamine"
+
+#: core/libs/video/osd/frameosdwidget.cpp:65
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the camera aperture and focal length at the bottom of the screen."
+msgctxt "@info"
+msgid "Show the camera aperture and focal length at the bottom of the screen."
+msgstr "Ekraani allservas näidatakse kaamera ava ja fookuskaugust."
+
+#: core/libs/video/osd/frameosdwidget.cpp:67
+#, fuzzy, kde-format
+#| msgid "Show camera exposure and sensitivity"
+msgctxt "@option:check"
+msgid "Show camera exposure and sensitivity"
+msgstr "Kaamera särituse ja tundlikkuse näitamine"
+
+#: core/libs/video/osd/frameosdwidget.cpp:68
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the camera exposure and sensitivity at the bottom of the screen."
+msgctxt "@info"
+msgid "Show the camera exposure and sensitivity at the bottom of the screen."
+msgstr "Ekraani allservas näidatakse kaamera säritust ja tundlikkust."
+
+#: core/libs/video/osd/frameosdwidget.cpp:70
+#, fuzzy, kde-format
+#| msgid "Show camera make and model"
+msgctxt "@option:check"
+msgid "Show camera make and model"
+msgstr "Kaamera valmistaja ja mudeli näitamine"
+
+#: core/libs/video/osd/frameosdwidget.cpp:71
+#, fuzzy, kde-format
+#| msgid "Show the camera make and model at the bottom of the screen."
+msgctxt "@info"
+msgid "Show the camera make and model at the bottom of the screen."
+msgstr "Ekraani allservas näidatakse kaamera valmistajat ja mudelit."
+
+#: core/libs/video/osd/frameosdwidget.cpp:73
+#, fuzzy, kde-format
+#| msgid "Show camera make and model"
+msgctxt "@option:check"
+msgid "Show camera lens model"
+msgstr "Kaamera valmistaja ja mudeli näitamine"
+
+#: core/libs/video/osd/frameosdwidget.cpp:74
+#, fuzzy, kde-format
+#| msgid "Show the camera make and model at the bottom of the screen."
+msgctxt "@info"
+msgid "Show the camera lens model at the bottom of the screen."
+msgstr "Ekraani allservas näidatakse kaamera valmistajat ja mudelit."
+
+#: core/libs/video/osd/frameosdwidget.cpp:76
+#, fuzzy, kde-format
+#| msgid "Show image caption"
+msgctxt "@option:check"
+msgid "Show image caption"
+msgstr "Pildi allkirja näitamine"
+
+#: core/libs/video/osd/frameosdwidget.cpp:77
+#, fuzzy, kde-format
+#| msgid "Show the image caption at the bottom of the screen."
+msgctxt "@info"
+msgid "Show the image caption at the bottom of the screen."
+msgstr "Ekraani allservas näidatakse pildi allkirja."
+
+#: core/libs/video/osd/frameosdwidget.cpp:79
+#, fuzzy, kde-format
+#| msgid "Show image title"
+msgctxt "@option:check"
+msgid "Show image title"
+msgstr "Pildi pealkirja näitamine"
+
+#: core/libs/video/osd/frameosdwidget.cpp:80
+#, fuzzy, kde-format
+#| msgid "Show the image title at the bottom of the screen."
+msgctxt "@info"
+msgid "Show the image title at the bottom of the screen."
+msgstr "Ekraani allservas näidatakse pildi pealkirja."
+
+#: core/libs/video/osd/frameosdwidget.cpp:82
+#, fuzzy, kde-format
+#| msgid "Show image caption if it has not title"
+msgctxt "@option:check"
+msgid "Show image caption if it has not title"
+msgstr "Pildi allkirja näitamine, kui pealkirja pole"
+
+#: core/libs/video/osd/frameosdwidget.cpp:83
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the image caption at the bottom of the screen if no titles existed."
+msgctxt "@info"
+msgid ""
+"Show the image caption at the bottom of the screen if no titles existed."
+msgstr ""
+"Ekraani allservas näidatakse pildi allkirja, kui pildil pole pealkirja."
+
+#: core/libs/video/osd/frameosdwidget.cpp:85
+#, fuzzy, kde-format
+#| msgid "Show image rating"
+msgctxt "@option:check"
+msgid "Show image rating"
+msgstr "Pildi hinnangu näitamine"
+
+#: core/libs/video/osd/frameosdwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Show the digiKam image rating at the bottom of the screen."
+msgctxt "@info"
+msgid "Show the digiKam image rating at the bottom of the screen."
+msgstr "digiKami pildi hinnangu näitamine ekraani allservas."
+
+#: core/libs/video/osd/frameosdwidget.cpp:88
+#, fuzzy, kde-format
+#| msgid "Show image tags"
+msgctxt "@option:check"
+msgid "Show image tags"
+msgstr "Pildi siltide näitamine"
+
+#: core/libs/video/osd/frameosdwidget.cpp:89
+#, fuzzy, kde-format
+#| msgid "Show the digiKam image tag names at the bottom of the screen."
+msgctxt "@info"
+msgid "Show the digiKam image tag names at the bottom of the screen."
+msgstr "digiKami pildi sildinimede näitamine ekraani allservas."
+
+#: core/libs/video/osd/frameosdwidget.cpp:91
+#, fuzzy, kde-format
+#| msgid "Screen placement:"
+msgctxt "@option"
+msgid "On Screen Display Font:"
+msgstr "Asetus ekraanil:"
+
+#: core/libs/video/osd/frameosdwidget.cpp:92
+#, fuzzy, kde-format
+#| msgid "Select here the font used to display text in the slideshow."
+msgctxt "@info"
+msgid "Select here the font used to display text in the MJPEG."
+msgstr "Siin saab valida slaidiseansis näidatava teksti fondi."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -74357,12 +74383,6 @@ msgstr "Lähtestab kõik seadistused vaikeväärtustele."
 #~ msgctxt "@info"
 #~ msgid "Ctrl+O: open a file\n"
 #~ msgstr "Faili avamine nurjus"
-
-#, fuzzy
-#~| msgid "Screen placement:"
-#~ msgctxt "@info"
-#~ msgid "O: On Screen Display\n"
-#~ msgstr "Asetus ekraanil:"
 
 #, fuzzy
 #~| msgid "Rotate 180 degrees"
