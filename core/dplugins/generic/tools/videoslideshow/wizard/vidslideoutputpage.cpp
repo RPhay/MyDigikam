@@ -28,6 +28,7 @@
 #include <QSpinBox>
 #include <QGridLayout>
 #include <QStandardItemModel>
+#include <QStandardPaths>
 
 // KDE includes
 
@@ -140,6 +141,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     formGrid->addWidget(d->playerVal,    1, 1, 1, 1);
 
     d->expanderBox->addItem(outputBox,
+                            QIcon::fromTheme(QLatin1String("media-video")),
                             i18n("Output"),
                             QLatin1String("Output"), true);
 
@@ -173,6 +175,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     normGrid->addWidget(equalNote,       2, 0, 1, 2);
 
     d->expanderBox->addItem(videoBox,
+                            QIcon::fromTheme(QLatin1String("view-media-equalizer")),
                             i18n("Frames Normalization"),
                             QLatin1String("Normalization"), true);
 
@@ -208,6 +211,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     audioGrid->addWidget(audioNote,       2, 0, 1, 2);
 
     d->expanderBox->addItem(audioBox,
+                            QIcon::fromTheme(QLatin1String("view-audio-track")),
                             i18n("Audio Track"),
                             QLatin1String("Soundtrack"), true);
 
@@ -216,6 +220,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     d->frameOsd = new FrameOsdWidget(d->expanderBox);
 
     d->expanderBox->addItem(d->frameOsd,
+                            QIcon::fromTheme(QLatin1String("draw-text")),
                             i18n("On Screen Display"),
                             QLatin1String("OSD"), true);
 
@@ -245,6 +250,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     destGrid->addWidget(d->conflictBox, 2, 0, 1, 2);
 
     d->expanderBox->addItem(destBox,
+                            QIcon::fromTheme(QLatin1String("folder-new")),
                             i18n("Target File"),
                             QLatin1String("File"), true);
 
