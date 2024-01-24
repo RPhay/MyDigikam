@@ -37,6 +37,7 @@
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
+#include "frameosdwidget.h"
 #include "vidslidewizard.h"
 #include "dfileselector.h"
 #include "filesaveconflictbox.h"
@@ -71,6 +72,8 @@ public:
     QTimer*              trigUpdate  = nullptr;
     QCheckBox*           equalize    = nullptr;
     QSpinBox*            strength    = nullptr;
+    FrameOsdWidget*      frameOsd    = nullptr;
+    DExpanderBox*        expanderBox = nullptr;
 };
 
 VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& title)
@@ -79,93 +82,29 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
 {
     setObjectName(QLatin1String("OutputPage"));
 
-    QWidget* const main       = new QWidget(this);
     d->trigUpdate             = new QTimer(this);
     d->trigUpdate->setSingleShot(true);
 
+    d->expanderBox   = new DExpanderBox;
+    d->expanderBox->setObjectName(QLatin1String("VideoSlideShow Output Settings Expander"));
+
     // --------------------
 
-    QLabel* const formatLabel = new QLabel(main);
+    QWidget* const outputBox    = new QWidget(d->expanderBox);
+    QGridLayout* const formGrid = new QGridLayout(outputBox);
+
+    QLabel* const formatLabel   = new QLabel(outputBox);
     formatLabel->setWordWrap(false);
     formatLabel->setText(i18n("Media Container Format:"));
-    d->formatVal              = new QComboBox(main);
+    d->formatVal                = new QComboBox(outputBox);
     d->formatVal->setEditable(false);
     d->formatVal->setToolTip(i18n("This control allows to choose the format of the media container to host video stream and soundtrack."));
     formatLabel->setBuddy(d->formatVal);
 
-    // --------------------
-
-    DLineWidget* const line0    = new DLineWidget(Qt::Horizontal, main);
-    d->equalize                 = new QCheckBox(i18n("Equalize Video Luminosity"), main);
-
-    QLabel* const strengthLabel = new QLabel(main);
-    strengthLabel->setWordWrap(false);
-    strengthLabel->setEnabled(false);
-    strengthLabel->setText(i18n("Equalization Strength:"));
-    d->strength                 = new QSpinBox(main);
-    d->strength->setEnabled(false);
-    d->strength->setRange(0, 10);
-    d->strength->setToolTip(i18n("This controls strength of equalization. Setting this option to zero effectively does nothing."));
-    strengthLabel->setBuddy(d->strength);
-
-    QLabel* const equalNote     = new QLabel(main);
-    equalNote->setWordWrap(true);
-    equalNote->setText(i18n("<i>These settings apply temporal midway video equalization effect while "
-                            "encoding frames as video. This adjusts the sequence of frames to have "
-                            "the same histograms, while maintaining their dynamics as much as possible. "
-                            "It’s useful for e.g. matching exposures from a timelapse sequence.</i>"));
-
-    // --------------------
-
-    DLineWidget* const line1 = new DLineWidget(Qt::Horizontal, main);
-
-    QLabel* const audioLabel = new QLabel(main);
-    audioLabel->setWordWrap(false);
-    audioLabel->setText(i18n("Soundtrack File:"));
-
-    d->audioUrl              = new DFileSelector(main);
-    d->audioUrl->setFileDlgMode(QFileDialog::ExistingFile);
-    d->audioUrl->setFileDlgOptions(QFileDialog::ReadOnly);
-    d->audioUrl->setFileDlgFilter(QLatin1String("*.mp3 *.ogg *.wav *.flac *.m4a"));
-    d->audioUrl->setFileDlgTitle(i18nc("@title:window", "Select Audio Track"));
-    audioLabel->setBuddy(d->audioUrl);
-
-    QLabel* const durationLabel = new QLabel(i18n("Soundtrack Duration:"), main);
-    d->duration                 = new QLabel(QLatin1String("---"), main);
-
-    QLabel* const audioNote     = new QLabel(main);
-    audioNote->setWordWrap(true);
-    audioNote->setText(i18n("<i>Notes about soundtrack: if the audio length is smaller than video, it will be "
-                            "played in loop. If the audio length is largest than video, it will be trimmed. "
-                            "Leave this setting empty if you don't want a soundtrack to the media.</i>"));
-
-    DLineWidget* const line2 = new DLineWidget(Qt::Horizontal, main);
-
-    // --------------------
-
-    QLabel* const fileLabel = new QLabel(main);
-    fileLabel->setWordWrap(false);
-    fileLabel->setText(i18n("Destination folder:"));
-
-    d->destUrl              = new DFileSelector(main);
-    d->destUrl->setFileDlgMode(QFileDialog::Directory);
-    d->destUrl->setFileDlgOptions(QFileDialog::ShowDirsOnly);
-    d->destUrl->setFileDlgTitle(i18nc("@title:window", "Destination Folder"));
-    d->destUrl->lineEdit()->setPlaceholderText(i18n("Output Destination Path"));
-    fileLabel->setBuddy(d->destUrl);
-
-    // --------------------
-
-    QLabel* const outputLbl = new QLabel(main);
-    outputLbl->setText(i18n("The video output file name will be generated automatically."));
-    d->conflictBox          = new FileSaveConflictBox(main);
-
-    // --------------------
-
-    QLabel* const playerLabel = new QLabel(main);
+    QLabel* const playerLabel = new QLabel(outputBox);
     playerLabel->setWordWrap(false);
     playerLabel->setText(i18n("Open in Player:"));
-    d->playerVal              = new QComboBox(main);
+    d->playerVal              = new QComboBox(outputBox);
     d->playerVal->setEditable(false);
 
     QMap<VidSlideSettings::VidPlayer, QString> map2                = VidSlideSettings::videoPlayerNames();
@@ -195,34 +134,123 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
 
     playerLabel->setBuddy(d->playerVal);
 
+    formGrid->addWidget(formatLabel,     0, 0, 1, 1);
+    formGrid->addWidget(d->formatVal,    0, 1, 1, 1);
+    formGrid->addWidget(playerLabel,     1, 0, 1, 1);
+    formGrid->addWidget(d->playerVal,    1, 1, 1, 1);
+
+    d->expanderBox->addItem(outputBox,
+                            i18n("Output"),
+                            QLatin1String("Output"), true);
+
     // --------------------
 
-    QGridLayout* const grid = new QGridLayout(main);
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
-    grid->addWidget(formatLabel,     0, 0, 1, 1);
-    grid->addWidget(d->formatVal,    0, 1, 1, 1);
-    grid->addWidget(line0,           1, 0, 1, 2);
-    grid->addWidget(d->equalize,     2, 0, 1, 2);
-    grid->addWidget(strengthLabel,   3, 0, 1, 1);
-    grid->addWidget(d->strength,     3, 1, 1, 1);
-    grid->addWidget(equalNote,       4, 0, 1, 2);
-    grid->addWidget(line1,           5, 0, 1, 2);
-    grid->addWidget(audioLabel,      6, 0, 1, 1);
-    grid->addWidget(d->audioUrl,     6, 1, 1, 1);
-    grid->addWidget(durationLabel,   7, 0, 1, 1);
-    grid->addWidget(d->duration,     7, 1, 1, 1);
-    grid->addWidget(audioNote,       8, 0, 1, 2);
-    grid->addWidget(line2,           9, 0, 1, 2);
-    grid->addWidget(fileLabel,      10, 0, 1, 1);
-    grid->addWidget(d->destUrl,     10, 1, 1, 1);
-    grid->addWidget(outputLbl,      11, 0, 1, 2);
-    grid->addWidget(d->conflictBox, 12, 0, 1, 2);
-    grid->addWidget(playerLabel,    13, 0, 1, 1);
-    grid->addWidget(d->playerVal,   13, 1, 1, 1);
-    grid->setRowStretch(14, 10);
+    QWidget* const videoBox     = new QWidget(d->expanderBox);
+    QGridLayout* const normGrid = new QGridLayout(videoBox);
 
-    setPageWidget(main);
+    d->equalize                 = new QCheckBox(i18n("Equalize Video Luminosity"), videoBox);
+
+    QLabel* const strengthLabel = new QLabel(videoBox);
+    strengthLabel->setWordWrap(false);
+    strengthLabel->setEnabled(false);
+    strengthLabel->setText(i18n("Equalization Strength:"));
+    d->strength                 = new QSpinBox(videoBox);
+    d->strength->setEnabled(false);
+    d->strength->setRange(0, 10);
+    d->strength->setToolTip(i18n("This controls strength of equalization. Setting this option to zero effectively does nothing."));
+    strengthLabel->setBuddy(d->strength);
+
+    QLabel* const equalNote     = new QLabel(videoBox);
+    equalNote->setWordWrap(true);
+    equalNote->setText(i18n("<i>These settings apply temporal midway video equalization effect while "
+                            "encoding frames as video. This adjusts the sequence of frames to have "
+                            "the same histograms, while maintaining their dynamics as much as possible. "
+                            "It’s useful for e.g. matching exposures from a timelapse sequence.</i>"));
+
+    normGrid->addWidget(d->equalize,     0, 0, 1, 2);
+    normGrid->addWidget(strengthLabel,   1, 0, 1, 1);
+    normGrid->addWidget(d->strength,     1, 1, 1, 1);
+    normGrid->addWidget(equalNote,       2, 0, 1, 2);
+
+    d->expanderBox->addItem(videoBox,
+                            i18n("Frames Normalization"),
+                            QLatin1String("Normalization"), true);
+
+    // --------------------
+
+    QWidget* const audioBox      = new QWidget(d->expanderBox);
+    QGridLayout* const audioGrid = new QGridLayout(audioBox);
+
+    QLabel* const audioLabel = new QLabel(audioBox);
+    audioLabel->setWordWrap(false);
+    audioLabel->setText(i18n("Soundtrack File:"));
+
+    d->audioUrl              = new DFileSelector(audioBox);
+    d->audioUrl->setFileDlgMode(QFileDialog::ExistingFile);
+    d->audioUrl->setFileDlgOptions(QFileDialog::ReadOnly);
+    d->audioUrl->setFileDlgFilter(QLatin1String("*.mp3 *.ogg *.wav *.flac *.m4a"));
+    d->audioUrl->setFileDlgTitle(i18nc("@title:window", "Select Audio Track"));
+    audioLabel->setBuddy(d->audioUrl);
+
+    QLabel* const durationLabel = new QLabel(i18n("Soundtrack Duration:"), audioBox);
+    d->duration                 = new QLabel(QLatin1String("---"), audioBox);
+
+    QLabel* const audioNote     = new QLabel(audioBox);
+    audioNote->setWordWrap(true);
+    audioNote->setText(i18n("<i>Notes about soundtrack: if the audio length is smaller than video, it will be "
+                            "played in loop. If the audio length is largest than video, it will be trimmed. "
+                            "Leave this setting empty if you don't want a soundtrack to the media.</i>"));
+
+    audioGrid->addWidget(audioLabel,      0, 0, 1, 1);
+    audioGrid->addWidget(d->audioUrl,     0, 1, 1, 1);
+    audioGrid->addWidget(durationLabel,   1, 0, 1, 1);
+    audioGrid->addWidget(d->duration,     1, 1, 1, 1);
+    audioGrid->addWidget(audioNote,       2, 0, 1, 2);
+
+    d->expanderBox->addItem(audioBox,
+                            i18n("Audio Track"),
+                            QLatin1String("Soundtrack"), true);
+
+    // --------------------
+
+    d->frameOsd = new FrameOsdWidget(d->expanderBox);
+
+    d->expanderBox->addItem(d->frameOsd,
+                            i18n("On Screen Display"),
+                            QLatin1String("OSD"), true);
+
+    // --------------------
+
+    QWidget* const destBox      = new QWidget(d->expanderBox);
+    QGridLayout* const destGrid = new QGridLayout(destBox);
+
+    QLabel* const fileLabel = new QLabel(destBox);
+    fileLabel->setWordWrap(false);
+    fileLabel->setText(i18n("Destination folder:"));
+
+    d->destUrl              = new DFileSelector(destBox);
+    d->destUrl->setFileDlgMode(QFileDialog::Directory);
+    d->destUrl->setFileDlgOptions(QFileDialog::ShowDirsOnly);
+    d->destUrl->setFileDlgTitle(i18nc("@title:window", "Destination Folder"));
+    d->destUrl->lineEdit()->setPlaceholderText(i18n("Output Destination Path"));
+    fileLabel->setBuddy(d->destUrl);
+
+    QLabel* const outputLbl = new QLabel(destBox);
+    outputLbl->setText(i18n("The video output file name will be generated automatically."));
+    d->conflictBox          = new FileSaveConflictBox(destBox);
+
+    destGrid->addWidget(fileLabel,      0, 0, 1, 1);
+    destGrid->addWidget(d->destUrl,     0, 1, 1, 1);
+    destGrid->addWidget(outputLbl,      1, 0, 1, 2);
+    destGrid->addWidget(d->conflictBox, 2, 0, 1, 2);
+
+    d->expanderBox->addItem(destBox,
+                            i18n("Target File"),
+                            QLatin1String("File"), true);
+
+    d->expanderBox->addStretch();
+
+    setPageWidget(d->expanderBox);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("folder-video")));
 
     connect(d->trigUpdate, SIGNAL(timeout()),
@@ -292,6 +320,8 @@ void VidSlideOutputPage::initializePage()
     d->playerVal->setCurrentIndex(d->settings->outputPlayer);
     d->equalize->setChecked(d->settings->equalize);
     d->strength->setValue(d->settings->strength);
+
+    d->frameOsd->setSettings(d->settings->osdSettings);
 }
 
 bool VidSlideOutputPage::validatePage()
@@ -308,6 +338,8 @@ bool VidSlideOutputPage::validatePage()
     d->settings->outputPlayer = (VidSlideSettings::VidPlayer)d->playerVal->currentIndex();
     d->settings->equalize     = d->equalize->isChecked();
     d->settings->strength     = d->strength->value();
+
+    d->settings->osdSettings  = d->frameOsd->settings();
 
     return true;
 }

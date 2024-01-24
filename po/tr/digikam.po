@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-23 01:37+0000\n"
-"PO-Revision-Date: 2024-01-22 16:44+0300\n"
+"POT-Creation-Date: 2024-01-24 01:35+0000\n"
+"PO-Revision-Date: 2024-01-23 11:52+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1139,9 +1139,9 @@ msgid "Aperture/Focal:"
 msgstr "Açıklık/Odak:"
 
 #: core/app/items/utils/tooltipfiller.cpp:234
-#: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:212
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
+#: core/libs/video/osd/frameosd.cpp:212
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
 #: core/utilities/import/items/importtooltipfiller.cpp:184
 #, kde-format
@@ -16311,6 +16311,7 @@ msgstr "RAW Dosyası"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:248
 #, kde-format
 msgid "Target File"
 msgstr "Hedef Dosya"
@@ -17352,7 +17353,7 @@ msgstr "HTML Galerisi Oluştur..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:114
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -17491,7 +17492,7 @@ msgstr "Hedef klasör:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -17580,7 +17581,7 @@ msgid "Theme Parameters"
 msgstr "Tema Parametreleri"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "Çıktı Ayarları"
@@ -18132,153 +18133,7 @@ msgctxt "@title"
 msgid "Effect"
 msgstr "Efekt"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:304
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image file name"
-msgstr "Görsel dosya adını göster"
-
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:305
-#, kde-format
-msgctxt "@info"
-msgid "Show the image file name at the bottom of the screen."
-msgstr "Ekranın altında görselin dosya adını gösterin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:307
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image creation date"
-msgstr "Görsel oluşturulma tarihini göster"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:308
-#, kde-format
-msgctxt "@info"
-msgid "Show the image creation time/date at the bottom of the screen."
-msgstr "Ekranın altında görselin oluşturulma tarihini/zamanını gösterin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:310
-#, kde-format
-msgctxt "@option:check"
-msgid "Show camera aperture and focal length"
-msgstr "Kamera açıklığını ve odak uzaklığını göster"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:311
-#, kde-format
-msgctxt "@info"
-msgid "Show the camera aperture and focal length at the bottom of the screen."
-msgstr "Ekranın altında kamera açıklığını ve odak uzaklığını gösterin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:313
-#, kde-format
-msgctxt "@option:check"
-msgid "Show camera exposure and sensitivity"
-msgstr "Kamera pozlamasını ve duyarlılığını göster"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:314
-#, kde-format
-msgctxt "@info"
-msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr "Ekranın altında kamera pozlamasını ve duyarlılığını gösterin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:316
-#, kde-format
-msgctxt "@option:check"
-msgid "Show camera make and model"
-msgstr "Kamera yapımcısını ve modelini göster"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:317
-#, kde-format
-msgctxt "@info"
-msgid "Show the camera make and model at the bottom of the screen."
-msgstr "Ekranın altında kamera yapımını ve modelini gösterin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:319
-#, kde-format
-msgctxt "@option:check"
-msgid "Show camera lens model"
-msgstr "Kamera merceği modelini göster"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:320
-#, kde-format
-msgctxt "@info"
-msgid "Show the camera lens model at the bottom of the screen."
-msgstr "Ekranın altında kamera merceği modelini gösterin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:322
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image caption"
-msgstr "Görsel alt yazısını göster"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:323
-#, kde-format
-msgctxt "@info"
-msgid "Show the image caption at the bottom of the screen."
-msgstr "Ekranın altında görsel alt yazısını gösterin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:325
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image title"
-msgstr "Görsel başlığını göster"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:326
-#, kde-format
-msgctxt "@info"
-msgid "Show the image title at the bottom of the screen."
-msgstr "Ekranın altında görsel başlığını gösterin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:328
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image caption if it has not title"
-msgstr "Görselin başlığı yoksa görsel alt yazısını göster"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:329
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Show the image caption at the bottom of the screen if no titles existed."
-msgstr ""
-"Bir görsel başlığı yoksa ekranın alt kısmında görsel alt yazısını gösterin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:331
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image rating"
-msgstr "Görsel derecelendirmesini göster"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:332
-#, kde-format
-msgctxt "@info"
-msgid "Show the digiKam image rating at the bottom of the screen."
-msgstr "digiKam görsel derecelendirmesini ekranın alt kısmında gösterin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:334
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image tags"
-msgstr "Görsel etiketlerini göster"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:335
-#, kde-format
-msgctxt "@info"
-msgid "Show the digiKam image tag names at the bottom of the screen."
-msgstr "digiKam görsel etiketi adlarını ekranın alt kısmında gösterin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:337
-#, kde-format
-msgctxt "@option"
-msgid "On Screen Display Font:"
-msgstr "Ekran üzeri görüntü yazıtipi:"
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:338
-#, kde-format
-msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
-msgstr "MJPEG'de metin görüntülemek için kullanılacak yazıtipini burada seçin."
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:354
 #, kde-format
 msgctxt "@title: On Screen Display"
 msgid "OSD"
@@ -20045,13 +19900,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "VBaskıyı olarak dışa aktarmak için tercih ettiğiniz biçimi seçin."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:148
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:229
 #, kde-format
 msgid "Destination folder:"
 msgstr "Hedef klasör:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:154
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:235
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20119,7 +19974,7 @@ msgstr "Baskı Oluşturucuya Hoş Geldiniz"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
@@ -20612,7 +20467,7 @@ msgid "Welcome to Email Tool"
 msgstr "E-posta Aracına Hoş Geldiniz"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
@@ -20658,32 +20513,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Video Slayt Gösterisi Oluştur..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:124
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:122
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "Video slayt gösterisi üretilmeye başlanıyor..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:127
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:125
 #, kde-format
 msgid "%1 input images to process"
 msgstr "İşlenecek %1 görsel girdisi"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:175
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:173
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Video Slayt Gösterisi tamamlanmadı"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:180
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:178
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr "Aşağıdaki video kodlama izine bakın"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:185
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:183
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Video Slayt Gösterisi tamamlandı."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:190
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:188
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Video akışı oynatıcıda açılıyor..."
@@ -20727,12 +20582,12 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "FFmpeg İkilisi"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:98
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Ortam kapsayıcısı biçimi:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:101
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
@@ -20741,17 +20596,29 @@ msgstr ""
 "Bu denetim, video akışı ve fon müziğini barındıracak ortam kapsayıcısınn "
 "biçimini seçmenize olanak tanır."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:106
+#, kde-format
+msgid "Open in Player:"
+msgstr "Oynatıcıda aç:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:143
+#, fuzzy, kde-format
+#| msgctxt "@title:column Output file name"
+#| msgid "Output"
+msgid "Output"
+msgstr "Çıktı"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:151
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Video Parlaklığını Eşitle"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:156
 #, kde-format
 msgid "Equalization Strength:"
 msgstr "Eşitleme gücü:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:108
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
@@ -20760,7 +20627,7 @@ msgstr ""
 "Bu, eşitlemenin gücünü denetler. Bu seçeneği sıfır olarak ayarlamanın bir "
 "etkisi olmaz."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:165
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20773,23 +20640,29 @@ msgstr ""
 "karelerin sırasını aynı histogramlara sahip olacak şekilde ayarlar. Örneğin; "
 "hızlandırılmış bir diziden eşleşen pozlar.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:176
+#, fuzzy, kde-format
+#| msgid "Trailer Information"
+msgid "Frames Normalization"
+msgstr "Tanıtım Filmi Bilgisi"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:186
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "Fon müziği dosyası:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Ses İzi Seç"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "Fon müziği süresi:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:138
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:200
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -20801,15 +20674,24 @@ msgstr ""
 "çalınacaktır. Ses uzunluğu videodan daha uzunsa kırpılacaktır. Ortama ses "
 "verilmesini istemiyorsanız bu ayarı boş bırakın.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select Audio Track"
+msgid "Audio Track"
+msgstr "Ses İzi Seç"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:219
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "On Screen Display Font:"
+msgid "On Screen Display"
+msgstr "Ekran üzeri görüntü yazıtipi:"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Video çıktı dosyasının adı kendiliğinden oluşturulur."
-
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
-#, kde-format
-msgid "Open in Player:"
-msgstr "Oynatıcıda aç:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:84
 #, kde-format
@@ -20884,23 +20766,23 @@ msgstr ""
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Süre: Öge başına %1 saniye, toplam %2 saniye (geçişsiz)"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:68
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:67
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Video Slayt Gösterisi Oluştur"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:76
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr "Video Slayt Gösterisi Aracına Hoş Geldiniz"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
 #, kde-format
 msgid "Video Settings"
 msgstr "Video Ayarları"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:82
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
 #, kde-format
 msgid "Generating Video Slideshow"
 msgstr "Video Slayt Gösterisi üretiliyor"
@@ -37026,7 +36908,7 @@ msgstr "Değişikliklerinizi uygulamak istiyor musunuz?"
 msgctxt "@info"
 msgid "<p>You have edited the metadata of the image: </p>"
 msgid_plural "<p>You have edited the metadata of %1 images: </p>"
-msgstr[0] "<p>Görselin üst verisini düzenlediniz: </p><p><ul>"
+msgstr[0] "<p>Görselin üst verisini düzenlediniz: </p>"
 msgstr[1] "<p>%1 görselin üst verisini düzenlediniz: </p><p><ul>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:328
@@ -40790,487 +40672,487 @@ msgstr ""
 "Ses ve videoyu kaydetmek, dönüştürmek ve yayımlamak için eksiksiz, "
 "platformlar arası bir çözüm."
 
-#: core/libs/video/manager/vidslidesettings.cpp:496
+#: core/libs/video/manager/vidslidesettings.cpp:497
 #, kde-format
 msgctxt "Video Type: QVGA"
 msgid "QVGA - 320x180 - 16:9"
 msgstr "QVGA - 320 × 180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:497
+#: core/libs/video/manager/vidslidesettings.cpp:498
 #, kde-format
 msgctxt "Video Type: VCD1"
 msgid "VCD - 352x240 - 7:5"
 msgstr "VCD - 352 × 240 - 7:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:498
+#: core/libs/video/manager/vidslidesettings.cpp:499
 #, kde-format
 msgctxt "Video Type: VCD2"
 msgid "VCD - 352x288 - 6:5"
 msgstr "VCD - 352 × 288 - 6:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:499
+#: core/libs/video/manager/vidslidesettings.cpp:500
 #, kde-format
 msgctxt "Video Type: CVD1"
 msgid "CVD - 352x480 - 4:3"
 msgstr "CVD - 352 × 480 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:500
+#: core/libs/video/manager/vidslidesettings.cpp:501
 #, kde-format
 msgctxt "Video Type: CVD2"
 msgid "CVD - 352x576 - 16:9"
 msgstr "CVD - 352 × 576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:501
+#: core/libs/video/manager/vidslidesettings.cpp:502
 #, kde-format
 msgctxt "Video Type: HVGA"
 msgid "HVGA - 480x270 - 16:9"
 msgstr "HVGA - 480 × 270 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:502
+#: core/libs/video/manager/vidslidesettings.cpp:503
 #, kde-format
 msgctxt "Video Type: SVCD1"
 msgid "SVCD - 480x480 - 1:1"
 msgstr "SVCD - 480 × 480 - 1:1"
 
-#: core/libs/video/manager/vidslidesettings.cpp:503
+#: core/libs/video/manager/vidslidesettings.cpp:504
 #, kde-format
 msgctxt "Video Type: SDTV1"
 msgid "SDTV - 528x480 - 11:10"
 msgstr "SDTV - 528 × 480 - 11:10"
 
-#: core/libs/video/manager/vidslidesettings.cpp:504
+#: core/libs/video/manager/vidslidesettings.cpp:505
 #, kde-format
 msgctxt "Video Type: SDTV2"
 msgid "SDTV - 544x480 - 17:15"
 msgstr "SDTV - 544 × 480 - 17:15"
 
-#: core/libs/video/manager/vidslidesettings.cpp:505
+#: core/libs/video/manager/vidslidesettings.cpp:506
 #, kde-format
 msgctxt "Video Type: EDTV1"
 msgid "EDTV - 544x576 - 17:18"
 msgstr "EDTV - 544 × 576 - 17:18"
 
-#: core/libs/video/manager/vidslidesettings.cpp:506
+#: core/libs/video/manager/vidslidesettings.cpp:507
 #, kde-format
 msgctxt "Video Type: SVCD2"
 msgid "SVCD - 480x576 - 5:6"
 msgstr "SVCD - 480 × 576 - 5:6"
 
-#: core/libs/video/manager/vidslidesettings.cpp:507
+#: core/libs/video/manager/vidslidesettings.cpp:508
 #, kde-format
 msgctxt "Video Type: EGA"
 msgid "EGA - 640x350 - 16:9"
 msgstr "EGA - 640 × 350 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:508
+#: core/libs/video/manager/vidslidesettings.cpp:509
 #, kde-format
 msgctxt "Video Type: VGA"
 msgid "VGA - 640x480 - 4:3"
 msgstr "VGA - 640 × 480 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:509
+#: core/libs/video/manager/vidslidesettings.cpp:510
 #, kde-format
 msgctxt "Video Type: SDTV3"
 msgid "SDTV - 704x480 - 22:15"
 msgstr "SDTV - 704 × 480 - 22:15"
 
-#: core/libs/video/manager/vidslidesettings.cpp:510
+#: core/libs/video/manager/vidslidesettings.cpp:511
 #, kde-format
 msgctxt "Video Type: EDTV2"
 msgid "EDTV - 704x576 - 11:9"
 msgstr "EDTV - 704 × 576 - 11:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:511
+#: core/libs/video/manager/vidslidesettings.cpp:512
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x480 - 3:2"
 msgstr "DVD - 720 × 480 - 3:2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:512
+#: core/libs/video/manager/vidslidesettings.cpp:513
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x576 - 5:4"
 msgstr "DVD - 720 × 576 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:513
+#: core/libs/video/manager/vidslidesettings.cpp:514
 #, kde-format
 msgctxt "Video Type: WVGA"
 msgid "WVGA - 800x450 - 16:9"
 msgstr "WVGA - 800 × 450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:514
+#: core/libs/video/manager/vidslidesettings.cpp:515
 #, kde-format
 msgctxt "Video Type: SVGA"
 msgid "SVGA - 800x600 - 4:3"
 msgstr "SVGA - 800 × 600 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:515
+#: core/libs/video/manager/vidslidesettings.cpp:516
 #, kde-format
 msgctxt "Video Type: DVGA"
 msgid "DVGA - 960x640 - 3:2"
 msgstr "DVGA - 960 × 640 - 3:2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:516
+#: core/libs/video/manager/vidslidesettings.cpp:517
 #, kde-format
 msgctxt "Video Type: XVGA"
 msgid "XVGA - 1024x576 - 16:9"
 msgstr "XVGA - 1024 × 576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:517
+#: core/libs/video/manager/vidslidesettings.cpp:518
 #, kde-format
 msgctxt "Video Type: HDTV"
 msgid "HDTV - 1280x720 - 16:9"
 msgstr "HDTV - 1280 × 720 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:518
+#: core/libs/video/manager/vidslidesettings.cpp:519
 #, kde-format
 msgctxt "Video Type: WXGA1"
 msgid "WXGA - 1280x768 - 5:3"
 msgstr "WXGA - 1280 × 768 - 5:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:519
+#: core/libs/video/manager/vidslidesettings.cpp:520
 #, kde-format
 msgctxt "Video Type: WXGA2"
 msgid "WXGA - 1280x800 - 8:5"
 msgstr "WXGA - 1280 × 800 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:520
+#: core/libs/video/manager/vidslidesettings.cpp:521
 #, kde-format
 msgctxt "Video Type: SXGA"
 msgid "SXGA - 1280x1024 - 5:4"
 msgstr "SXGA - 1280 × 1024 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:521
+#: core/libs/video/manager/vidslidesettings.cpp:522
 #, kde-format
 msgctxt "Video Type: SXGAPLUS"
 msgid "SXGAPLUS - 1400x1050 - 4:3"
 msgstr "SXGAPLUS - 1400 × 1050 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:522
+#: core/libs/video/manager/vidslidesettings.cpp:523
 #, kde-format
 msgctxt "Video Type: WSXGA"
 msgid "WSXGA - 1440x900 - 8:5"
 msgstr "WSXGA - 1440 × 900 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:523
+#: core/libs/video/manager/vidslidesettings.cpp:524
 #, kde-format
 msgctxt "Video Type: HDPLUS"
 msgid "HDPLUS - 1600x900 - 16:9"
 msgstr "HDPLUS - 1600 × 900 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:524
+#: core/libs/video/manager/vidslidesettings.cpp:525
 #, kde-format
 msgctxt "Video Type: WSXGAPLUS"
 msgid "WSXGAPLUS - 1680x1050 - 8:5"
 msgstr "WSXGAPLUS - 1680 × 1050 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:525
+#: core/libs/video/manager/vidslidesettings.cpp:526
 #, kde-format
 msgctxt "Video Type: UXGA"
 msgid "UXGA - 1600x1200 - 4:3"
 msgstr "UXGA - 1600 × 1200 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:526
+#: core/libs/video/manager/vidslidesettings.cpp:527
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
 msgstr "BLUERAY - 1920 × 1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:527
+#: core/libs/video/manager/vidslidesettings.cpp:528
 #, kde-format
 msgctxt "Video Type: WUXGA"
 msgid "WUXGA - 1920x1200 - 8:5"
 msgstr "WUXGA - 1920 × 1200 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:528
+#: core/libs/video/manager/vidslidesettings.cpp:529
 #, kde-format
 msgctxt "Video Type: TXGA"
 msgid "TXGA - 1920x1440 - 7:5"
 msgstr "TXGA - 1920 × 1440 - 7:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:529
+#: core/libs/video/manager/vidslidesettings.cpp:530
 #, kde-format
 msgctxt "Video Type: QXGA"
 msgid "QXGA - 2048x1536 - 4:3"
 msgstr "QXGA - 2048 × 1536 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:530
+#: core/libs/video/manager/vidslidesettings.cpp:531
 #, kde-format
 msgctxt "Video Type: UWFHD"
 msgid "UWFHD - 2560x1080 - 21:9"
 msgstr "UWFHD - 2560 × 1080 - 21:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:531
+#: core/libs/video/manager/vidslidesettings.cpp:532
 #, kde-format
 msgctxt "Video Type: WQHD"
 msgid "WQHD - 2560x1440 - 16:9"
 msgstr "WQHD - 2560 × 1440 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:532
+#: core/libs/video/manager/vidslidesettings.cpp:533
 #, kde-format
 msgctxt "Video Type: WQXGA"
 msgid "WQXGA - 2560x1600 - 8:5"
 msgstr "WQXGA - 2560 × 1600 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:533
+#: core/libs/video/manager/vidslidesettings.cpp:534
 #, kde-format
 msgctxt "Video Type: QSXGA"
 msgid "QSXGA - 2560x2048 - 5:4"
 msgstr "QSXGA - 2560 × 2048 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:534
+#: core/libs/video/manager/vidslidesettings.cpp:535
 #, kde-format
 msgctxt "Video Type: QSXGAPLUS"
 msgid "QSXGAPLUS - 2800x2100 - 4:3"
 msgstr "QSXGAPLUS - 2800 × 2100 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:535
+#: core/libs/video/manager/vidslidesettings.cpp:536
 #, kde-format
 msgctxt "Video Type: WQXGAPLUS"
 msgid "WQXGAPLUS - 3200x1800 - 16:9"
 msgstr "WQXGAPLUS - 3200 × 1800 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:536
+#: core/libs/video/manager/vidslidesettings.cpp:537
 #, kde-format
 msgctxt "Video Type: WQSXGA"
 msgid "WQSXGA - 3200x2048 - 25:16"
 msgstr "WQSXGA - 3200 × 2048 - 25:16"
 
-#: core/libs/video/manager/vidslidesettings.cpp:537
+#: core/libs/video/manager/vidslidesettings.cpp:538
 #, kde-format
 msgctxt "Video Type: QUXGA"
 msgid "QUXGA - 3200x2400 - 4:3"
 msgstr "QUXGA - 3200 × 2400 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:538
+#: core/libs/video/manager/vidslidesettings.cpp:539
 #, kde-format
 msgctxt "Video Type: UHD4K"
 msgid "UHD4K - 3840x2160 - 16:9"
 msgstr "UHD4K - 3840 × 2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:539
+#: core/libs/video/manager/vidslidesettings.cpp:540
 #, kde-format
 msgctxt "Video Type: WQUXGA"
 msgid "WQUXGA - 3840x2400 - 8:5"
 msgstr "WQUXGA - 3840 × 2400 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:540
+#: core/libs/video/manager/vidslidesettings.cpp:541
 #, kde-format
 msgctxt "Video Type: HXGA"
 msgid "HXGA - 4096x3072 - 4:3"
 msgstr "HXGA - 4096 × 3072 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:541
+#: core/libs/video/manager/vidslidesettings.cpp:542
 #, kde-format
 msgctxt "Video Type: UHD5K"
 msgid "UHD5K - 5120x2880 - 16:9"
 msgstr "UHD5K - 5120 × 2880 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:542
+#: core/libs/video/manager/vidslidesettings.cpp:543
 #, kde-format
 msgctxt "Video Type: WHXGA"
 msgid "WHXGA - 5120x3200 - 8:5"
 msgstr "WHXGA - 5120 × 3200 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:543
+#: core/libs/video/manager/vidslidesettings.cpp:544
 #, kde-format
 msgctxt "Video Type: HSXGA"
 msgid "HSXGA - 5120x4096 - 5:4"
 msgstr "HSXGA - 5120 × 4096 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:544
+#: core/libs/video/manager/vidslidesettings.cpp:545
 #, kde-format
 msgctxt "Video Type: UHD6K"
 msgid "UHD6K - 6016x3384 - 16:9"
 msgstr "UHD6K - 6016 × 3384 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:545
+#: core/libs/video/manager/vidslidesettings.cpp:546
 #, kde-format
 msgctxt "Video Type: WHSXGA"
 msgid "WHSXGA - 6400x4096 - 25:16"
 msgstr "WHSXGA - 6400 × 4096 - 25:16"
 
-#: core/libs/video/manager/vidslidesettings.cpp:546
+#: core/libs/video/manager/vidslidesettings.cpp:547
 #, kde-format
 msgctxt "Video Type: HUXGA"
 msgid "HUXGA - 6400x4800 - 4:3"
 msgstr "HUXGA - 6400 × 4800 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:547
+#: core/libs/video/manager/vidslidesettings.cpp:548
 #, kde-format
 msgctxt "Video Type: UHD8K"
 msgid "UHD8K - 7680x4320 - 16:9"
 msgstr "UHD8K - 7680 × 4320 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:548
+#: core/libs/video/manager/vidslidesettings.cpp:549
 #, kde-format
 msgctxt "Video Type: WHUXGA"
 msgid "WHUXGA - 7680x4800 - 8:5"
 msgstr "WHUXGA - 7680 × 4800 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:549
+#: core/libs/video/manager/vidslidesettings.cpp:550
 #, kde-format
 msgctxt "Video Type: UW10K"
 msgid "UW10K - 10240x4320 - 21:9"
 msgstr "UW10K - 10240 × 4320 - 21:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:550
+#: core/libs/video/manager/vidslidesettings.cpp:551
 #, kde-format
 msgctxt "Video Type: UW16K"
 msgid "UW16K - 15360x8640 - 16:9"
 msgstr "UW16K - 15360 × 8640 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:773
+#: core/libs/video/manager/vidslidesettings.cpp:774
 #, kde-format
 msgctxt "Video Bit Rate 400000"
 msgid "400k"
 msgstr "400 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:774
+#: core/libs/video/manager/vidslidesettings.cpp:775
 #, kde-format
 msgctxt "Video Bit Rate 500000"
 msgid "500k"
 msgstr "500 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:775
+#: core/libs/video/manager/vidslidesettings.cpp:776
 #, kde-format
 msgctxt "Video Bit Rate 1000000"
 msgid "1000k"
 msgstr "1000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:776
+#: core/libs/video/manager/vidslidesettings.cpp:777
 #, kde-format
 msgctxt "Video Bit Rate 1200000"
 msgid "1200k"
 msgstr "1200 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:777
+#: core/libs/video/manager/vidslidesettings.cpp:778
 #, kde-format
 msgctxt "Video Bit Rate 1500000"
 msgid "1500k"
 msgstr "1500 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:778
+#: core/libs/video/manager/vidslidesettings.cpp:779
 #, kde-format
 msgctxt "Video Bit Rate 2000000"
 msgid "2000k"
 msgstr "2000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:779
+#: core/libs/video/manager/vidslidesettings.cpp:780
 #, kde-format
 msgctxt "Video Bit Rate 2500000"
 msgid "2500k"
 msgstr "2500 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:780
+#: core/libs/video/manager/vidslidesettings.cpp:781
 #, kde-format
 msgctxt "Video Bit Rate 3000000"
 msgid "3000k"
 msgstr "3000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:781
+#: core/libs/video/manager/vidslidesettings.cpp:782
 #, kde-format
 msgctxt "Video Bit Rate 4000000"
 msgid "4000k"
 msgstr "4000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:782
+#: core/libs/video/manager/vidslidesettings.cpp:783
 #, kde-format
 msgctxt "Video Bit Rate 4500000"
 msgid "4500k"
 msgstr "4500 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:783
+#: core/libs/video/manager/vidslidesettings.cpp:784
 #, kde-format
 msgctxt "Video Bit Rate 5000000"
 msgid "5000k"
 msgstr "5000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:784
+#: core/libs/video/manager/vidslidesettings.cpp:785
 #, kde-format
 msgctxt "Video Bit Rate 6000000"
 msgid "6000k"
 msgstr "6000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:785
+#: core/libs/video/manager/vidslidesettings.cpp:786
 #, kde-format
 msgctxt "Video Bit Rate 8000000"
 msgid "8000k"
 msgstr "8000 k"
 
-#: core/libs/video/manager/vidslidesettings.cpp:794
+#: core/libs/video/manager/vidslidesettings.cpp:795
 #, kde-format
 msgctxt "Video Standard PAL"
 msgid "PAL - 25 FPS"
 msgstr "PAL - 25 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:795
+#: core/libs/video/manager/vidslidesettings.cpp:796
 #, kde-format
 msgctxt "Video Standard NTSC"
 msgid "NTSC - 29.97 FPS"
 msgstr "NTSC - 29,97 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:807
+#: core/libs/video/manager/vidslidesettings.cpp:808
 #, kde-format
 msgctxt "Video Codec X264"
 msgid "High Quality H.264 AVC/MPEG-4 AVC"
 msgstr "Yüksek Kalite H.264 AVC/MPEG-4 AVC"
 
-#: core/libs/video/manager/vidslidesettings.cpp:808
+#: core/libs/video/manager/vidslidesettings.cpp:809
 #, kde-format
 msgctxt "Video Codec MPEG4"
 msgid "DivX/XVid/MPEG-4"
 msgstr "DivX/XVid/MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:809
+#: core/libs/video/manager/vidslidesettings.cpp:810
 #, kde-format
 msgctxt "Video Codec MPEG2"
 msgid "MPEG-2 Video"
 msgstr "MPEG-2 Video"
 
-#: core/libs/video/manager/vidslidesettings.cpp:826
+#: core/libs/video/manager/vidslidesettings.cpp:827
 #, kde-format
 msgctxt "Video Standard AVI"
 msgid "AVI - Audio Video Interleave"
 msgstr "AVI - Audio Video Interleave"
 
-#: core/libs/video/manager/vidslidesettings.cpp:827
+#: core/libs/video/manager/vidslidesettings.cpp:828
 #, kde-format
 msgctxt "Video Standard MKV"
 msgid "MKV - Matroska"
 msgstr "MKV - Matroska"
 
-#: core/libs/video/manager/vidslidesettings.cpp:828
+#: core/libs/video/manager/vidslidesettings.cpp:829
 #, kde-format
 msgctxt "Video Standard MP4"
 msgid "MP4 - MPEG-4"
 msgstr "MP4 - MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:829
+#: core/libs/video/manager/vidslidesettings.cpp:830
 #, kde-format
 msgctxt "Video Standard MPG"
 msgid "MPG - MPEG-2"
 msgstr "MPG - MPEG-2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:838
+#: core/libs/video/manager/vidslidesettings.cpp:839
 #, kde-format
 msgctxt "Video Effect NOPLAYER"
 msgid "None"
 msgstr "Hiçbiri"
 
-#: core/libs/video/manager/vidslidesettings.cpp:839
+#: core/libs/video/manager/vidslidesettings.cpp:840
 #, kde-format
 msgctxt "Video Standard INTERNAL"
 msgid "Internal"
 msgstr "İçsel"
 
-#: core/libs/video/manager/vidslidesettings.cpp:840
+#: core/libs/video/manager/vidslidesettings.cpp:841
 #, kde-format
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Masaüstünden Öntanımlı"
 
-#: core/libs/video/manager/vidslidetask.cpp:183
+#: core/libs/video/manager/vidslidetask.cpp:195
 #, kde-format
 msgid "Generating frames from %1 Done"
 msgstr "%1 dosyasından kareler oluşturma bitti"
@@ -41294,6 +41176,152 @@ msgstr "Kodlama bitti."
 #, kde-format
 msgid "Error while encoding frames!"
 msgstr "Kareler kodlanırken hata!"
+
+#: core/libs/video/osd/frameosdwidget.cpp:58
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image file name"
+msgstr "Görsel dosya adını göster"
+
+#: core/libs/video/osd/frameosdwidget.cpp:59
+#, kde-format
+msgctxt "@info"
+msgid "Show the image file name at the bottom of the screen."
+msgstr "Ekranın altında görselin dosya adını gösterin."
+
+#: core/libs/video/osd/frameosdwidget.cpp:61
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image creation date"
+msgstr "Görsel oluşturulma tarihini göster"
+
+#: core/libs/video/osd/frameosdwidget.cpp:62
+#, kde-format
+msgctxt "@info"
+msgid "Show the image creation time/date at the bottom of the screen."
+msgstr "Ekranın altında görselin oluşturulma tarihini/zamanını gösterin."
+
+#: core/libs/video/osd/frameosdwidget.cpp:64
+#, kde-format
+msgctxt "@option:check"
+msgid "Show camera aperture and focal length"
+msgstr "Kamera açıklığını ve odak uzaklığını göster"
+
+#: core/libs/video/osd/frameosdwidget.cpp:65
+#, kde-format
+msgctxt "@info"
+msgid "Show the camera aperture and focal length at the bottom of the screen."
+msgstr "Ekranın altında kamera açıklığını ve odak uzaklığını gösterin."
+
+#: core/libs/video/osd/frameosdwidget.cpp:67
+#, kde-format
+msgctxt "@option:check"
+msgid "Show camera exposure and sensitivity"
+msgstr "Kamera pozlamasını ve duyarlılığını göster"
+
+#: core/libs/video/osd/frameosdwidget.cpp:68
+#, kde-format
+msgctxt "@info"
+msgid "Show the camera exposure and sensitivity at the bottom of the screen."
+msgstr "Ekranın altında kamera pozlamasını ve duyarlılığını gösterin."
+
+#: core/libs/video/osd/frameosdwidget.cpp:70
+#, kde-format
+msgctxt "@option:check"
+msgid "Show camera make and model"
+msgstr "Kamera yapımcısını ve modelini göster"
+
+#: core/libs/video/osd/frameosdwidget.cpp:71
+#, kde-format
+msgctxt "@info"
+msgid "Show the camera make and model at the bottom of the screen."
+msgstr "Ekranın altında kamera yapımını ve modelini gösterin."
+
+#: core/libs/video/osd/frameosdwidget.cpp:73
+#, kde-format
+msgctxt "@option:check"
+msgid "Show camera lens model"
+msgstr "Kamera merceği modelini göster"
+
+#: core/libs/video/osd/frameosdwidget.cpp:74
+#, kde-format
+msgctxt "@info"
+msgid "Show the camera lens model at the bottom of the screen."
+msgstr "Ekranın altında kamera merceği modelini gösterin."
+
+#: core/libs/video/osd/frameosdwidget.cpp:76
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image caption"
+msgstr "Görsel alt yazısını göster"
+
+#: core/libs/video/osd/frameosdwidget.cpp:77
+#, kde-format
+msgctxt "@info"
+msgid "Show the image caption at the bottom of the screen."
+msgstr "Ekranın altında görsel alt yazısını gösterin."
+
+#: core/libs/video/osd/frameosdwidget.cpp:79
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image title"
+msgstr "Görsel başlığını göster"
+
+#: core/libs/video/osd/frameosdwidget.cpp:80
+#, kde-format
+msgctxt "@info"
+msgid "Show the image title at the bottom of the screen."
+msgstr "Ekranın altında görsel başlığını gösterin."
+
+#: core/libs/video/osd/frameosdwidget.cpp:82
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image caption if it has not title"
+msgstr "Görselin başlığı yoksa görsel alt yazısını göster"
+
+#: core/libs/video/osd/frameosdwidget.cpp:83
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Show the image caption at the bottom of the screen if no titles existed."
+msgstr ""
+"Bir görsel başlığı yoksa ekranın alt kısmında görsel alt yazısını gösterin."
+
+#: core/libs/video/osd/frameosdwidget.cpp:85
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image rating"
+msgstr "Görsel derecelendirmesini göster"
+
+#: core/libs/video/osd/frameosdwidget.cpp:86
+#, kde-format
+msgctxt "@info"
+msgid "Show the digiKam image rating at the bottom of the screen."
+msgstr "digiKam görsel derecelendirmesini ekranın alt kısmında gösterin."
+
+#: core/libs/video/osd/frameosdwidget.cpp:88
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image tags"
+msgstr "Görsel etiketlerini göster"
+
+#: core/libs/video/osd/frameosdwidget.cpp:89
+#, kde-format
+msgctxt "@info"
+msgid "Show the digiKam image tag names at the bottom of the screen."
+msgstr "digiKam görsel etiketi adlarını ekranın alt kısmında gösterin."
+
+#: core/libs/video/osd/frameosdwidget.cpp:91
+#, kde-format
+msgctxt "@option"
+msgid "On Screen Display Font:"
+msgstr "Ekran üzeri görüntü yazıtipi:"
+
+#: core/libs/video/osd/frameosdwidget.cpp:92
+#, kde-format
+msgctxt "@info"
+msgid "Select here the font used to display text in the MJPEG."
+msgstr "MJPEG'de metin görüntülemek için kullanılacak yazıtipini burada seçin."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -58913,25 +58941,25 @@ msgid "After"
 msgstr "Sonrası"
 
 #: core/utilities/imageeditor/widgets/imageregionwidget.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
 "preview computation.</p><p>Click and drag the mouse cursor in the image to "
 "change the clip focus.</p>"
 msgstr ""
-"<p>Önizleme hesaplaması için kullanılacak olan asıl kırpıntı resmini burada "
-"görebilirsiniz.</p><p>Kırpıntının odağını değiştirmek için resim üzerine "
-"tıklayıp fare imlecini  sürükleyin.</p>"
+"<p>Burada önizleme hesaplaması için kullanılacak özgün klip görselini "
+"görebilirsiniz.</p><p>Klibin odağını değiştirmek için fare imlecini tıklayıp "
+"sürükleyin.</p>"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:108
 #, kde-format
 msgid "If this option is enabled, the original image will be shown."
-msgstr "Bu seçeneği etkinleştirirseniz özgün resim gösterilecektir."
+msgstr "Bu seçenek etkinleştirilirse özgün görsel gösterilecektir."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:109
 #, kde-format
 msgid "Preview original image"
-msgstr "Özgün resimi önizle"
+msgstr "Özgün görseli önizle"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:117
 #, kde-format
@@ -58940,14 +58968,14 @@ msgid ""
 "contiguous area of the image will be shown, with one half from the original "
 "image, the other half from the target image."
 msgstr ""
-"Bu seçeneği etkinleştirirseniz önizleme alanı dikey olarak bölünecektir. Bir "
-"yarısı özgün resim diğer yarısı hedef resim olacak sürekli resim "
-"gösterilecektir."
+"Bu seçenek etkinleştirilirse önizleme alanı dikey olarak bölünür. Bir yarısı "
+"özgün görselden, diğer yarısı hedef görselden olacak biçimde görselin "
+"bitişik bir alanı gösterilecektir."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:122
 #, kde-format
 msgid "Preview vertical split with contiguous image"
-msgstr "Sürekli resim ile önizlemeyi dikey olarak böl"
+msgstr "Bitişik görselle dikey bölmeyi önizle"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:130
 #, kde-format
@@ -58956,14 +58984,14 @@ msgid ""
 "contiguous area of the image will be shown, with one half from the original "
 "image, the other half from the target image."
 msgstr ""
-"Bu seçeneği etkinleştirirseniz önizleme alanı yatay olarak bölünecektir. Bir "
-"yarısı özgün resim diğer yarısı hedef resim olacak sürekli resim "
-"gösterilecektir."
+"Bu seçenek etkinleştirilirse önizleme alanı yatay olarak bölünür. Bir yarısı "
+"özgün görselden, diğer yarısı hedef görselden olacak biçimde görselin "
+"bitişik bir alanı gösterilecektir."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:135
 #, kde-format
 msgid "Preview horizontal split with contiguous image"
-msgstr "Sürekli resim ile önizlemeyi yatay olarak böl"
+msgstr "Bitişik görselle yatay bölmeyi önizle"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:143
 #, kde-format
@@ -58971,13 +58999,13 @@ msgid ""
 "If this option is enabled, the preview area will split vertically. The same "
 "part of the original and the target image will be shown side by side."
 msgstr ""
-"Bu seçeneği etkinleştirirseniz önizleme alanı dikey olarak bölünecektir. "
-"Özgün ve hedef resmin aynı bölümü yan yana gösterilecektir."
+"Bu seçenek etkinleştirilirse önizleme alanı dikey olarak bölünür. Özgünün ve "
+"hedef görselnin aynı kısmı yan yana gösterilecektir."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:147
 #, kde-format
 msgid "Preview vertical split with same image region"
-msgstr "Aynı resim bölgesi ile önizlemeyi dikey böl"
+msgstr "Aynı görsel bölgesiyle dikey bölmeyi önizle"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:155
 #, kde-format
@@ -58985,23 +59013,23 @@ msgid ""
 "If this option is enabled, the preview area will split horizontally. The "
 "same part of the original and the target image will be shown side by side."
 msgstr ""
-"Bu seçeneği etkinleştirirseniz önizleme alanı dikey olarak bölünecektir. "
-"Özgün ve hedef resmin aynı bölümü yan yana gösterilecektir."
+"Bu seçenek etkinleştirilirse önizleme alanı yatay olarak bölünür. Özgünün ve "
+"hedef görselin aynı kısmı yan yana gösterilecektir."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:159
 #, kde-format
 msgid "Preview horizontal split with same image region"
-msgstr "Aynı resim bölgesi ile önizlemeyi yatay böl"
+msgstr "Aynı görsel bölgesiyle yatay bölmeyi önizle"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:167
 #, kde-format
 msgid "If this option is enabled, the target image will be shown."
-msgstr "Eğer bu seçenek etkinleştirilirse hedef resim gösterilecek."
+msgstr "Bu seçenek etkinleştirilirse hedef görsel gösterilecektir."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:168
 #, kde-format
 msgid "Preview target image"
-msgstr "Hedef resmi önizle"
+msgstr "Hedef görseli önizle"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:176
 #, kde-format
@@ -59009,13 +59037,13 @@ msgid ""
 "If this option is enabled, the original image will be shown when the mouse "
 "is over image area; otherwise, the target image will be shown."
 msgstr ""
-"Eğer bu seçenek etkinleştirilirse fare resim alanına geldiği zaman orjinal "
-"resim gösterilecek, aksi taktirde hedef resim gösterilecek."
+"Bu seçenek etkinleştirilirse fare görsel alanının üzerine getirildiğinde "
+"özgün görsel gösterilecektir; aksi takdirde hedef görsel gösterilir."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:179
 #, kde-format
 msgid "Preview on mouse-over"
-msgstr "Fare üzerinde iken önizle"
+msgstr "Fare ile üzerine gelindiğinde önizle"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:203
 #, kde-format
@@ -59036,12 +59064,12 @@ msgstr "Bağlantı sağlandı."
 #: core/utilities/import/backend/cameracontroller.cpp:426
 #, kde-format
 msgid "Connection failed."
-msgstr "Bağlantıda yapılamadı."
+msgstr "Bağlantı kurulamadı."
 
 #: core/utilities/import/backend/cameracontroller.cpp:451
 #, kde-format
 msgid "Failed to get free space from camera"
-msgstr "Kameradan boş alan alımında hata"
+msgstr "Kameradan boş alan alınamadı"
 
 #: core/utilities/import/backend/cameracontroller.cpp:465
 #, kde-format
@@ -59051,7 +59079,7 @@ msgstr "Kameradan önizleme alınamadı"
 #: core/utilities/import/backend/cameracontroller.cpp:479
 #, kde-format
 msgid "Failed to process capture from camera"
-msgstr "Kameradan yakalama işlemesi başarısız"
+msgstr "Kamera yakalaması işlenemedi"
 
 #: core/utilities/import/backend/cameracontroller.cpp:493
 #, kde-kuit-format
@@ -59108,7 +59136,7 @@ msgstr "<filename>%1</filename> için olan betik zaman aşımına uğradı"
 #: core/utilities/import/backend/cameracontroller.cpp:888
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
-msgstr "<filename>%1</filename> için betik çalıştırılamadı"
+msgstr "<filename>%1</filename> için olan betik çalıştırılamadı"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1003
 #, kde-format
@@ -59182,12 +59210,7 @@ msgstr ""
 "\n"
 
 #: core/utilities/import/backend/gpcamera.cpp:1544
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: <b>%1</b><br/>Capture image: <b>%2</b><br/>Delete items: <b>"
-#| "%3</b><br/>Upload items: <b>%4</b><br/>Create directories: <b>%5</b><br/"
-#| ">Delete Directories: <b>%6</b><br/><br/>"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"\n"
@@ -59198,9 +59221,13 @@ msgid ""
 "Delete Directories: \"%6\"\n"
 "\n"
 msgstr ""
-"Küçük Resimler: <b>%1</b><br/>Resim yakala: <b>%2</b><br/>Ögeleri sil: <b>"
-"%3</b><br/>Ögeleri yükle: <b>%4</b><br/>Dizinler oluştur: <br/>%5</b><br/"
-">Dizinleri sil: <b>%6</b><br/><br/>"
+"Küçük görseller: \"%1\"\n"
+"Yakalama görseli: \"%2\"\n"
+"Ögeleri sil: \"%3\"\n"
+"Ögeleri karşıya yükle: \"%4\"\n"
+"Dizinler oluştur: \"%5\"\n"
+"Dizinleri sil: \"%6\"\n"
+"\n"
 
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
@@ -59225,18 +59252,16 @@ msgid "no"
 msgstr "hayır"
 
 #: core/utilities/import/backend/umscamera.cpp:570
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Mounted Camera</b> driver for USB/IEEE1394 mass storage cameras and "
-#| "Flash disk card readers.<br/><br/>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
 "disk card readers.\n"
 "\n"
 msgstr ""
-"<b>Bağlanılan Kamera</b> sürücüsü USB/IEEE1394 yığın depolama kameraları ve "
-"Flash bellek kart okuyucuları için <br/><br/>"
+"USB/IEEE1394 yığın depolama kameraları ve Flash disk kartı okuyucuları için "
+"\"Bağlı Kamera\" sürücüsü.\n"
+"\n"
 
 #: core/utilities/import/backend/umscamera.cpp:577
 #, kde-format
@@ -59249,14 +59274,15 @@ msgid ""
 "UUID: \"%5\"\n"
 "\n"
 msgstr ""
+"Başlık: \"%1\"\n"
+"Model: \"%2\"\n"
+"Kapı: \"%3\"\n"
+"Yol: \"%4\"\n"
+"UUID: \"%5\"\n"
+"\n"
 
 #: core/utilities/import/backend/umscamera.cpp:585
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: <b>%1</b><br/>Capture image: <b>%2</b><br/>Delete items: <b>"
-#| "%3</b><br/>Upload items: <b>%4</b><br/>Create directories: <b>%5</b><br/"
-#| ">Delete directories: <b>%6</b><br/><br/>"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"\n"
@@ -59267,9 +59293,13 @@ msgid ""
 "Delete directories: \"%6\"\n"
 "\n"
 msgstr ""
-"Küçük Resimler: <b>%1</b><br/>Resim yakala: <b>%2</b><br/>Ögeleri sil: <b>"
-"%3</b><br/>Ögeleri yükle: <b>%4</b><br/>Dizinler oluştur: <br/>%5</b><br/"
-">Dizinleri sil: <b>%6</b><br/><br/>"
+"Küçük görseller: \"%1\"\n"
+"Yakalama görseli: \"%2\"\n"
+"Ögeleri sil: \"%3\"\n"
+"Ögeleri karşıya yükle: \"%4\"\n"
+"Dizinler oluştur: \"%5\"\n"
+"Dizinleri sil: \"%6\"\n"
+"\n"
 
 #: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
@@ -59294,25 +59324,17 @@ msgid "no"
 msgstr "hayır"
 
 #: core/utilities/import/backend/umscamera.cpp:602
-#, fuzzy, kde-format
-#| msgid ""
-#| "For more information about the <b>Mounted Camera</b> driver, please read "
-#| "the <b>Supported Digital Still Cameras</b> section in the digiKam manual."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "For more information about the \"Mounted Camera\" driver, please read the "
 "\"Supported Digital Still Cameras\" section in the digiKam manual."
 msgstr ""
-"<b>Bağlanılan Kamera</b> sürücüsü hakkında daha geniş bilgi için lütfen "
-"digiKam dökümanındaki <b>Desteklenen Dijital Kameralar</b> bölümüne bakın."
+"\"Bağlı Kamera\" sürücüsü hakkında daha fazla bilgi için lütfen digiKam "
+"kılavuzundaki \"Desteklenen Sayısal Sabit Kameralar\" bölümünü okuyun."
 
 #: core/utilities/import/backend/umscamera.cpp:610
-#, fuzzy, kde-format
-#| msgid ""
-#| "The <b>Mounted Camera</b> driver is a simple interface to a camera disk "
-#| "mounted locally on your system.<br/><br/>It does not use libgphoto2 "
-#| "drivers.<br/><br/>To report any problems with this driver, please contact "
-#| "the digiKam team at:<br/><br/>http://www.digikam.org/?q=contact"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
@@ -59325,11 +59347,15 @@ msgid ""
 "\n"
 "https://www.digikam.org/?q=contact"
 msgstr ""
-"<b>Bağlanılan Kamera</b> sürücüsü sisteminize yerel olarak bağlanan kamera "
-"diski için basit bir arayüzdür <br/><br/>Hiçbir libgphoto2 sürücüsü "
-"kullanmaz <br/> <br/>Bu sürücü hakkında herhangi bir hata raporu göndermek "
-"için lütfen dikiKam takımı ile irtibata geçin <br/> <br/>http://www.digikam."
-"org/?q=contact"
+"\"Bağlı Kamera\" sürücüsü, sisteminize yerel olarak takılı bir kamera "
+"diskine yönelik basit bir arayüzdür.\n"
+"\n"
+"Libgphoto2 sürücülerini kullanmaz.\n"
+"\n"
+"Bu sürücüyle ilgili herhangi bir sorunu bildirmek için lütfen şu adresten "
+"digiKam ekibiyle iletişime geçin:\n"
+"\n"
+"https://www.digikam.org/?q=contact"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:66
 #, kde-format
@@ -59338,13 +59364,10 @@ msgid "%1 - Select Camera Folder"
 msgstr "%1 - Kamera Klasörü Seç"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Please select the camera folder where you want to upload the images.</"
-#| "p>"
+#, kde-format
 msgctxt "@info"
 msgid "Please select the camera folder where you want to upload the images."
-msgstr "<p>Resimleri yüklemek istediğiniz kamera dizinini seçin.</p>"
+msgstr "Lütfen görselleri yüklemek istediğiniz kamera klasörünü seçin."
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:46
 #, kde-format
@@ -59353,18 +59376,16 @@ msgid "Device Information"
 msgstr "Aygıt Bilgisi"
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:59
-#, fuzzy, kde-format
-#| msgid "Device Summary"
+#, kde-format
 msgctxt "@title"
 msgid "Device Summary"
 msgstr "Aygıt Özeti"
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:67
-#, fuzzy, kde-format
-#| msgid "Device Manual"
+#, kde-format
 msgctxt "@title"
 msgid "Device Manual"
-msgstr "Donanım Kılavuzu"
+msgstr "Aygıt Kılavuzu"
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:75
 #, kde-format
@@ -59373,17 +59394,16 @@ msgid "About Driver"
 msgstr "Sürücü Hakkında"
 
 #: core/utilities/import/dialogs/cameramessagebox.cpp:139
-#, fuzzy, kde-format
-#| msgid "Thumb"
+#, kde-format
 msgctxt "@title"
 msgid "Thumb"
-msgstr "Küçük resim"
+msgstr "Küçük Görsel"
 
 #: core/utilities/import/dialogs/capturedlg.cpp:70
 #, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "Capture from %1"
-msgstr "%1 'den yakala"
+msgstr "%1 Kamerasından Yakala"
 
 #: core/utilities/import/dialogs/capturedlg.cpp:75
 #, kde-format
@@ -59400,34 +59420,33 @@ msgstr "Bilinmeyen Biçim"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item is locked."
-msgstr "Bu öge kilitli."
+msgstr "Bu öge kilitli"
 
 #: core/utilities/import/items/importoverlays.cpp:238
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has an unknown download status"
-msgstr "Bu öge bilinmeyen karşıdan yükleme durumuna sahip"
+msgstr "Bu ögenin indirme durumu bilinmiyor"
 
 #: core/utilities/import/items/importoverlays.cpp:244
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has never been downloaded"
-msgstr "Bu öge hiçbir zaman karşıdan yüklenmedi"
+msgstr "Bu öge hiçbir zaman indirilmedi"
 
 #: core/utilities/import/items/importoverlays.cpp:250
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
-msgstr "Bu öge zaten karşıdan indirilmiş"
+msgstr "Bu öge halihazırda indirildi"
 
 #: core/utilities/import/main/importui.cpp:146
-#, fuzzy, kde-format
-#| msgid "Set how digiKam will rename files as they are downloaded."
+#, kde-format
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr ""
-"Resimler indirildiğinde digiKam'in resim dosyası adlarını nasıl "
-"adlandıracağını ayarlayın."
+"digiKam'in dosyalar indirildikçe onları nasıl yeniden adlandıracağını "
+"ayarlayın."
 
 #: core/utilities/import/main/importui.cpp:147
 #, kde-format
@@ -59436,31 +59455,28 @@ msgid "File Renaming Options"
 msgstr "Dosya Yeniden Adlandırma Seçenekleri"
 
 #: core/utilities/import/main/importui.cpp:153
-#, fuzzy, kde-format
-#| msgid "Auto-creation of Albums"
+#, kde-format
 msgctxt "@item"
 msgid "Auto-creation of Albums"
-msgstr "Albümlerin otomatik oluşturulması"
+msgstr "Albümlerin kendiliğinden oluşturulması"
 
 #: core/utilities/import/main/importui.cpp:159
-#, fuzzy, kde-format
-#| msgid "On the Fly Operations (JPEG only)"
+#, kde-format
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
-msgstr "Havadaki İşlemler (yalnızca JPEG)"
+msgstr "Canlı işlemler (yalnızca JPEG)"
 
 #: core/utilities/import/main/importui.cpp:165
 #, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
-msgstr "DNG Dönüştürme Seçenekleri"
+msgstr "DNG dönüştürme seçenekleri"
 
 #: core/utilities/import/main/importui.cpp:171
-#, fuzzy, kde-format
-#| msgid "Scripting"
+#, kde-format
 msgctxt "@item"
 msgid "Scripting"
-msgstr "Betikleme"
+msgstr "Betik Yazımı"
 
 #: core/utilities/import/main/importui.cpp:175
 #, kde-format
@@ -59496,7 +59512,7 @@ msgstr "Tümünü Seç"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
-msgstr "Hiçbirini Seçme"
+msgstr "Tümünün Seçimini Kaldır"
 
 #: core/utilities/import/main/importui.cpp:232
 #, kde-format
@@ -59532,7 +59548,7 @@ msgstr "Yeni İndir"
 #, kde-format
 msgctxt "@action"
 msgid "Download Selected"
-msgstr "Seçileni İndir"
+msgstr "Seçiliyi İndir"
 
 #: core/utilities/import/main/importui.cpp:277
 #, kde-format
@@ -59544,25 +59560,25 @@ msgstr "Tümünü İndir"
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
-msgstr "İndir && Yeniyi Sil"
+msgstr "İndir ve Yeniyi Sil"
 
 #: core/utilities/import/main/importui.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
-msgstr "İndir && Seçileni Sil"
+msgstr "İndir ve Seçiliyi Sil"
 
 #: core/utilities/import/main/importui.cpp:301
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
-msgstr "İndir && Tümünü Sil"
+msgstr "İndir ve Tümünü Sil"
 
 #: core/utilities/import/main/importui.cpp:308
 #, kde-format
 msgctxt "@action"
 msgid "Upload..."
-msgstr "Yükle..."
+msgstr "Karşıya Yükle..."
 
 #: core/utilities/import/main/importui.cpp:316
 #, kde-format
@@ -59574,7 +59590,7 @@ msgstr "Kilidi Aç/Kapat"
 #, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
-msgstr "Karşıdan indirilmiş olarak işaretle"
+msgstr "İndirildi Olarak İmle"
 
 #: core/utilities/import/main/importui.cpp:331
 #, kde-format
@@ -59586,7 +59602,7 @@ msgstr "Sil"
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
-msgstr "Seçileni Sil"
+msgstr "Seçiliyi Sil"
 
 #: core/utilities/import/main/importui.cpp:344
 #, kde-format
@@ -59610,13 +59626,13 @@ msgstr "Görünümler"
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
-msgstr "Küçük Resimler"
+msgstr "Küçük Görseller"
 
 #: core/utilities/import/main/importui.cpp:369
 #, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
-msgstr "Önizleme Ögesi"
+msgstr "Ögeyi Önizle"
 
 #: core/utilities/import/main/importui.cpp:378
 #, kde-format
@@ -59634,13 +59650,13 @@ msgstr "Ögeleri &Sırala"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
-msgstr "Küçük resim görünümünde ögelerin sıralanacağı değer"
+msgstr "Küçük görsel görünümünde ögelerin sıralandığı değer"
 
 #: core/utilities/import/main/importui.cpp:394
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
-msgstr "İsme Göre"
+msgstr "Ada Göre"
 
 #: core/utilities/import/main/importui.cpp:395
 #, kde-format
@@ -59673,18 +59689,17 @@ msgid "By Download State"
 msgstr "İndirme Durumuna Göre"
 
 #: core/utilities/import/main/importui.cpp:423
-#, fuzzy, kde-format
-#| msgctxt "@title:inmenu"
-#| msgid "Item Sorting &Order"
+#, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
-msgstr "Öge Sıralama S&ırası"
+msgstr "Öge Sıralama &Sırası"
 
 #: core/utilities/import/main/importui.cpp:424
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
-msgstr "Ögelerin artan ya da azalan şekilde sıralanacağını belirler."
+msgstr ""
+"Ögelerin artan şekilde mi yoksa azalan şekilde mi sıralanacağını tanımlar."
 
 #: core/utilities/import/main/importui.cpp:428
 #, kde-format
@@ -59708,7 +59723,7 @@ msgstr "Ögeleri &Grupla"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
-msgstr "Küçük resim görünümünde görünecek ögelerin bulunacağı kategori"
+msgstr "Küçük görsel görünümündeki ögelerin görüntülendiği kategoriler"
 
 #: core/utilities/import/main/importui.cpp:447
 #, kde-format
@@ -59720,7 +59735,7 @@ msgstr "Düz Liste"
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
-msgstr "Dizine göre"
+msgstr "Klasöre Göre"
 
 #: core/utilities/import/main/importui.cpp:449
 #, kde-format
@@ -59744,7 +59759,7 @@ msgstr "&Pencereye Sığdır"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
-msgstr "% 100'e yaklaştır"
+msgstr "%​100'e Yakınlaştır"
 
 #: core/utilities/import/main/importui.cpp:499
 #, kde-format
@@ -59756,7 +59771,7 @@ msgstr "Geçmişi Göster"
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
-msgstr "Küçük Resim Çubuğunu Göster"
+msgstr "Küçük Görsel Çubuğunu Göster"
 
 #: core/utilities/import/main/importui.cpp:537
 #, kde-format
@@ -59774,19 +59789,19 @@ msgstr "Önizleme Kipinden Çık"
 #, kde-format
 msgctxt "@action"
 msgid "Next Image"
-msgstr "Sonraki Resim"
+msgstr "Sonraki Görsel"
 
 #: core/utilities/import/main/importui.cpp:773
 #, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
-msgstr "İlk Resim"
+msgstr "İlk Görsel"
 
 #: core/utilities/import/main/importui.cpp:778
 #, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
-msgstr "Son Resim"
+msgstr "Son Görsel"
 
 #: core/utilities/import/main/importui.cpp:860
 #, kde-format
@@ -59798,7 +59813,8 @@ msgstr "Geçerli işlem iptal ediliyor, lütfen bekleyin..."
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
-msgstr "Pencereyi kapatmak ve şu anki işlemi iptal etmek istiyor musunuz?"
+msgstr ""
+"İletişim kutusunu kapatmak ve şu anki işlemi iptal etmek istiyor musunuz?"
 
 #: core/utilities/import/main/importui.cpp:925
 #, kde-format
@@ -59825,7 +59841,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
-msgstr "Yüklemek için Resim Seç"
+msgstr "Yüklemek için Görsel Seç"
 
 #: core/utilities/import/main/importui.cpp:1186
 #, kde-format
@@ -59836,34 +59852,26 @@ msgid ""
 "Space require: %1\n"
 "Available free space: %2"
 msgstr ""
-"Resimleri yüklemek için Kamera Medium üzerinde yeterli boş alan yok.\n"
+"Kamera ortamında görsel yüklemek için yeterli boş alan yok.\n"
 "\n"
 "Gereken alan: %1\n"
 "Kullanılabilir boş alan: %2"
 
 #: core/utilities/import/main/importui.cpp:1241
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<qt>Camera Folder <resource>%1</resource> already contains the item "
-#| "<resource>%2</resource>.<br>Please enter a new filename (without "
-#| "extension):</qt>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Camera Folder \"%1\" already contains the item \"%2\".\n"
 "Please enter a new filename (without extension):"
 msgstr ""
-"<qt>Kamera Dizini <resource>%1</resource> zaten <resource>%2</resource> "
-"ögesini barındırıyor.<br>Lütfen yeni bir dosya adı girin (uzantısı olmadan):"
-"</qt>"
+"\"%1\" kamera klasörü halihazırda \"%2\" ögesini içeriyor.\n"
+"Lütfen yeni bir dosya adı girin (uzantısız):"
 
 #: core/utilities/import/main/importui.cpp:1245
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "File already exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
-msgstr "Dosya zaten var"
+msgstr "Dosya Halihazırda Var"
 
 #: core/utilities/import/main/importui.cpp:1312
 #, kde-format
@@ -59872,8 +59880,8 @@ msgid ""
 "Your custom target album date format is not valid. Please check your "
 "settings..."
 msgstr ""
-"Özel hedef albüm tarih biçimi geçerli değil. Lütfen ayarlarınızı kontrol "
-"edin..."
+"Özel hedef albüm tarihi biçiminiz geçerli değil. Lütfen ayarlarınızı "
+"denetleyin..."
 
 #: core/utilities/import/main/importui.cpp:1351
 #, kde-format
@@ -59883,8 +59891,9 @@ msgid ""
 "camera device is not available. Please select another one from camera "
 "configuration dialog."
 msgstr ""
-"Kamera aygıtından indirilecek öntanımlı hedef albümün olduğu koleksiyon yok. "
-"Lütfen kamera yapılandırma penceresinden başka bir tane seçin."
+"Kamera aygıtından indirme işlemini gerçekleştirmek üzere ayarlanan öntanımlı "
+"hedef albümünüzü barındıran koleksiyon yok. Lütfen kamera yapılandırma "
+"iletişim kutusundan başka bir tane seçin."
 
 #: core/utilities/import/main/importui.cpp:1360
 #, kde-format
@@ -59893,49 +59902,39 @@ msgid ""
 "Your default target album set to process download from camera device is not "
 "available. Please select another one from camera configuration dialog."
 msgstr ""
-"Kamera aygıtından indirilecek öntanımlı hedef albüm yok. Lütfen kamera "
-"yapılandırma penceresinden başka bir tane seçin."
+"Kamera aygıtından indirme işlemini gerçekleştirecek şekilde ayarlanmış "
+"öntanımlı hedef albümünüz yok. Lütfen kamera yapılandırma iletişim "
+"kutusundan başka bir tane seçin."
 
 #: core/utilities/import/main/importui.cpp:1385
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<p>Please select the destination album from the digiKam library to import "
-#| "the camera pictures into.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Please select the destination album from the digiKam library to import the "
 "camera pictures into."
 msgstr ""
-"<p>Lütfen digiKam kitaplığından kamera resimlerini içeriye aktarmak için "
-"hedef albümü seçin.</p>"
+"Lütfen kamera görsellerini içe aktarmak için digiKam kütüphanesinden hedef "
+"albümü seçin."
 
 #: core/utilities/import/main/importui.cpp:1416
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Collection which host your default target album set to process download "
-#| "from camera device is not available. Please select another one from "
-#| "camera configuration dialog."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Collection selected as the destination album to download from the camera "
 "device is not available. Please select another destination album."
 msgstr ""
-"Kamera aygıtından indirilecek öntanımlı hedef albümün olduğu koleksiyon yok. "
-"Lütfen kamera yapılandırma penceresinden başka bir tane seçin."
+"Kamera aygıtından indirilecek hedef albüm olarak seçilen koleksiyon yok. "
+"Lütfen başka bir hedef albüm seçin."
 
 #: core/utilities/import/main/importui.cpp:1470
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to save sidecar file for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
-msgstr "<filename>%1</filename> için sidecar dosyası kaydetmesi başarısız"
+msgstr "<filename>%1</filename> için olan sepet dosyası taşınamadı"
 
 #: core/utilities/import/main/importui.cpp:1477
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to save sidecar file for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
-msgstr "<filename>%1</filename> için sidecar dosyası kaydetmesi başarısız"
+msgstr "<filename>%1</filename> için olan dosya taşınamadı"
 
 #: core/utilities/import/main/importui.cpp:1901
 #, kde-format
@@ -59945,9 +59944,9 @@ msgid ""
 "not be deleted. If you really want to delete these items, please unlock them "
 "and try again."
 msgstr ""
-"Aşağıda listelenen ögeler kamera tarafından (yalnızca okunabilir) olarak "
-"kilitlenmiş. Bu ögeler silinemez. Silmek istiyorsanız lütfen kilidi kaldırın "
-"ve yeniden deneyin."
+"Aşağıda listelenen ögeler kamera tarafından kilitlenmiştir (saltokunur). Bu "
+"ögeler silinmeyecek. Bu ögeleri gerçekten silmek istiyorsanız lütfen "
+"bunların kilidini açın ve yeniden deneyin."
 
 #: core/utilities/import/main/importui.cpp:1912
 #, fuzzy, kde-format

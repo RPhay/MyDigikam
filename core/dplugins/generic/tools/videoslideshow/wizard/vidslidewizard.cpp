@@ -50,7 +50,6 @@ public:
 
     Private() = default;
 
-    DInfoInterface*         iface      = nullptr;
     VidSlideIntroPage*      introPage  = nullptr;
     VidSlideAlbumsPage*     albumsPage = nullptr;
     VidSlideImagesPage*     imagesPage = nullptr;
@@ -67,8 +66,8 @@ VidSlideWizard::VidSlideWizard(QWidget* const parent, DInfoInterface* const ifac
     setOption(QWizard::NoCancelButtonOnLastPage);
     setWindowTitle(i18nc("@title:window", "Create a Video Slideshow"));
 
-    d->iface                = iface;
     d->settings             = new VidSlideSettings;
+    d->settings->iface      = iface;
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(QLatin1String("Video SlideShow Dialog Settings"));
@@ -97,11 +96,6 @@ VidSlideWizard::~VidSlideWizard()
 void VidSlideWizard::setItemsList(const QList<QUrl>& urls)
 {
     d->imagesPage->setItemsList(urls);
-}
-
-DInfoInterface* VidSlideWizard::iface() const
-{
-    return d->iface;
 }
 
 VidSlideSettings* VidSlideWizard::settings() const

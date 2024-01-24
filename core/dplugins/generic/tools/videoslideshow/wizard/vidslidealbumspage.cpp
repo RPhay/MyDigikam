@@ -36,25 +36,25 @@ public:
 
         if (wizard)
         {
-            iface = wizard->iface();
+            settings = wizard->settings();
         }
     }
 
-    bool             albumSupport  = false;
-    QWidget*         albumSelector = nullptr;
-    VidSlideWizard*  wizard        = nullptr;
-    DInfoInterface*  iface         = nullptr;
+    bool              albumSupport  = false;
+    QWidget*          albumSelector = nullptr;
+    VidSlideWizard*   wizard        = nullptr;
+    VidSlideSettings* settings      = nullptr;
 };
 
 VidSlideAlbumsPage::VidSlideAlbumsPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
       d          (new Private(dialog))
 {
-    if (d->iface)
+    if (d->settings->iface)
     {
-        d->albumSelector = d->iface->albumChooser(this);
+        d->albumSelector = d->settings->iface->albumChooser(this);
 
-        connect(d->iface, SIGNAL(signalAlbumChooserSelectionChanged()),
+        connect(d->settings->iface, SIGNAL(signalAlbumChooserSelectionChanged()),
                 this, SIGNAL(completeChanged()));
     }
     else
@@ -73,12 +73,12 @@ VidSlideAlbumsPage::~VidSlideAlbumsPage()
 
 bool VidSlideAlbumsPage::validatePage()
 {
-    if (!d->iface)
+    if (!d->settings->iface)
     {
         return false;
     }
 
-    if (d->iface && d->iface->albumChooserItems().isEmpty())
+    if (d->settings->iface && d->settings->iface->albumChooserItems().isEmpty())
     {
         return false;
     }
@@ -86,7 +86,7 @@ bool VidSlideAlbumsPage::validatePage()
     d->wizard->settings()->inputImages.clear();
 
     // update image list with album contents.
-    Q_FOREACH (const QUrl& url, d->iface->albumsItems(d->iface->albumChooserItems()))
+    Q_FOREACH (const QUrl& url, d->settings->iface->albumsItems(d->settings->iface->albumChooserItems()))
     {
         d->wizard->settings()->inputImages << url;
     }
@@ -96,12 +96,12 @@ bool VidSlideAlbumsPage::validatePage()
 
 bool VidSlideAlbumsPage::isComplete() const
 {
-    if (!d->iface)
+    if (!d->settings->iface)
     {
         return false;
     }
 
-    return (!d->iface->albumChooserItems().isEmpty());
+    return (!d->settings->iface->albumChooserItems().isEmpty());
 }
 
 } // namespace DigikamGenericVideoSlideShowPlugin

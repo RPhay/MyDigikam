@@ -42,6 +42,7 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "frameutils.h"
+#include "frameosd.h"
 #include "dfileoperations.h"
 #include "transitionmngr.h"
 #include "effectmngr.h"
@@ -62,7 +63,9 @@ VidSlideTask::~VidSlideTask()
 
 void VidSlideTask::run()
 {
-    int frameId            = 1;
+    FrameOsd osd;
+
+    int frameId           = 1;
     m_settings->filesList = m_settings->tempDir + QLatin1String("fileslist.txt");
     QFile fList(m_settings->filesList);
 
@@ -133,7 +136,7 @@ void VidSlideTask::run()
 
             if (!frame.save(framePath, "JPEG"))
             {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot frame frame:" << framePath;
+                qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot generate frame:" << framePath;
             }
             else
             {
@@ -157,6 +160,15 @@ void VidSlideTask::run()
             do
             {
                 qiimg     = effmngr.currentFrame(itmout);
+
+                if ((osize.width() >= 1024) && (osize.height() >= 576))
+                {
+                    osd.insertOsdToFrame(qiimg,
+                                         QUrl::fromLocalFile(ofile),
+                                         m_settings->osdSettings,
+                                         m_settings->iface);
+                }
+
                 frame     = qiimg;
                 framePath = m_settings->tempDir + QString::fromLatin1("frame_%1").arg(frameId, 9, 10, QLatin1Char('0')) + QLatin1String(".jpg");
 

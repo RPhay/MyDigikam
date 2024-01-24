@@ -12,7 +12,7 @@ Bundles        : AppImage uses frameworks Qt 5.15.12 and KDE 5.113.
 Bundles        : Windows installer use frameworks Qt 6.6.1 and KDE snapshot 30122023.
 General        : Update internal Libraw to 0.21.2 (https://www.libraw.org/news/libraw-0-21-2-release).
 Setup          : Add new page to customize Geolocation settings.
-VideoSlideshow : Rewrite tool to use FFmpeg CLI tool to encode images to video with soundtrack support.
+VideoSlideshow : Rewrite tool to use FFmpeg CLI tool to encode images to video with soundtrack and OSD support.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -172,12 +172,12 @@ BUGFIXES:
 153 ==> 480150 - Version 8.2.0 is not stable and sometimes blocking.
 154 ==> 480170 - Crash when manually tagging faces.
 155 ==> 479850 - Set album name automatically when exporting an album to Google Photos.
-156 ==> 
-157 ==> 
-158 ==> 
-159 ==> 
-160 ==> 
-161 ==> 
+156 ==> 480195 - Timestamp issue with "Adjust Time & Date".
+157 ==> 480242 - AlbumRoot not resolved.
+158 ==> 128988 - Wish - Add info like Exif-Information, comment, filename, etc.
+159 ==> 230139 - Export slideshow in video.
+160 ==> 271751 - Allow to export Advanced Slideshow rendering as a video file.
+161 ==> 480251 - Crash when typing in a face tag in image.
 162 ==> 
 163 ==> 
 164 ==> 
