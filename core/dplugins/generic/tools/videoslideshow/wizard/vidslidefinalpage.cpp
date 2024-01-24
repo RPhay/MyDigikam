@@ -101,6 +101,7 @@ VidSlideFinalPage::~VidSlideFinalPage()
 void VidSlideFinalPage::initializePage()
 {
     d->complete = false;
+    d->detailsText->hide();
 
     Q_EMIT completeChanged();
 

@@ -141,7 +141,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     formGrid->addWidget(d->playerVal,    1, 1, 1, 1);
 
     d->expanderBox->addItem(outputBox,
-                            QIcon::fromTheme(QLatin1String("media-video")),
+                            QIcon::fromTheme(QLatin1String("video-mp4")),
                             i18n("Output"),
                             QLatin1String("Output"), true);
 
@@ -211,7 +211,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     audioGrid->addWidget(audioNote,       2, 0, 1, 2);
 
     d->expanderBox->addItem(audioBox,
-                            QIcon::fromTheme(QLatin1String("view-audio-track")),
+                            QIcon::fromTheme(QLatin1String("audio-mp3")),
                             i18n("Audio Track"),
                             QLatin1String("Soundtrack"), true);
 
