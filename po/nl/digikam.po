@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-24 01:35+0000\n"
-"PO-Revision-Date: 2024-01-22 11:10+0100\n"
+"POT-Creation-Date: 2024-01-25 01:33+0000\n"
+"PO-Revision-Date: 2024-01-24 10:41+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -16464,7 +16464,7 @@ msgstr "Raw-bestand"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:248
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
 #, kde-format
 msgid "Target File"
 msgstr "Doelbestand"
@@ -17518,7 +17518,7 @@ msgstr "HTML-galerij aanmaken..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:114
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:115
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -17659,7 +17659,7 @@ msgstr "Doelmap:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -20096,13 +20096,13 @@ msgstr ""
 "Selecteer uw voorkeursformaat voor exporteren van afdrukken als afbeelding."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:229
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
 #, kde-format
 msgid "Destination folder:"
 msgstr "Doelmap:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:235
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:240
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20717,32 +20717,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Diashow als video aanmaken..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "Beginnen met aanmaken diashow als video..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:125
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 te verwerken invoerafbeeldingen:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:173
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Diavoorstelling als video is niet voltooid"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:178
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr "Zie onderstaand het spoor van de videocodering"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:183
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Diavoorstelling als video is voltooid."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:188
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Videostream in speler openen..."
@@ -20786,12 +20786,12 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "Binair programma FFmpeg"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:98
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Formaat van mediacontainer:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:101
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:102
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
@@ -20800,29 +20800,27 @@ msgstr ""
 "Deze besturing biedt het kiezen van het formaat van de mediacontainer om de "
 "videostream en soundtrack te bevatten."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:106
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
 #, kde-format
 msgid "Open in Player:"
 msgstr "In speler openen:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@title:column Output file name"
-#| msgid "Output"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:145
+#, kde-format
 msgid "Output"
 msgstr "Uitvoer"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:151
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Lichtsterkte van video egaliseren"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:156
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
 #, kde-format
 msgid "Equalization Strength:"
 msgstr "Egalisatiesterkte:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
@@ -20831,7 +20829,7 @@ msgstr ""
 "Dit bestuurt de sterkte van de egalisatie. Deze optie instellen op nul doet "
 "effectief niets."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20845,29 +20843,28 @@ msgstr ""
 "Het is nuttig voor bijv. overeen laten komen van belichting uit een reeks in "
 "een timelapse.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:176
-#, fuzzy, kde-format
-#| msgid "Trailer Information"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
+#, kde-format
 msgid "Frames Normalization"
-msgstr "Trailer-informatie"
+msgstr "Normalisatie van frames"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:186
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "Soundtrackbestand:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Audiotrack selecteren"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:198
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "Tijdsduur van soundtrack:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:200
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -20880,21 +20877,17 @@ msgstr ""
 "dan de video, zal het afgekapt worden.Deze instelling leeg laten als u geen "
 "soundtrack in het medium wilt.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Audio Track"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
+#, kde-format
 msgid "Audio Track"
-msgstr "Audiotrack selecteren"
+msgstr "Audiotrack"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "O: On Screen Display\n"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
+#, kde-format
 msgid "On Screen Display"
-msgstr "O: op het scherm tonen\n"
+msgstr "On Screen Display"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:244
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
@@ -20906,12 +20899,19 @@ msgid "Number of Frames by Image:"
 msgstr "Aantal frames per afbeelding:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This value repeat one image in the sequence. While creating timelapse; "
+#| "it's usual to use 1. Typically, the number of frames will determine the "
+#| "time to show the same frame in the video. The result will depend of the "
+#| "number of frames per second used to encode the media."
 msgid ""
-"This value repeat one image in the sequence. While creating timelapse; it's "
-"usual to use 1. Typically, the number of frames will determine the time to "
-"show the same frame in the video. The result will depend of the number of "
-"frames per second used to encode the media."
+"This value repeat one image in the sequence.\n"
+"While creating timelapse; it's usual to use 1.\n"
+"Typically, the number of frames will determine\n"
+"the time to show the same frame in the video.\n"
+"The result will depend of the number of frames\n"
+"per second used to encode the media."
 msgstr ""
 "Deze waarde herhaalt één afbeelding in de reeks. Tijdens aanmaken van "
 "timelapse; is het gewoonlijk 1 te gebruiken. Het aantal frames zal typisch "
