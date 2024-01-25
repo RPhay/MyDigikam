@@ -180,7 +180,7 @@ BUGFIXES:
 161 ==> 480251 - Crash when typing in a face tag in image.
 162 ==> 480288 - Allow manual date entry in Adjust Time and Date.
 163 ==> 480277 - Missing XMP Subject field in image metadata.
-164 ==> 
+164 ==> 479833 - Some .xmp files are not taken in account during a maintenance metadata check run.
 165 ==> 
 166 ==> 
 167 ==> 
