@@ -181,7 +181,7 @@ BUGFIXES:
 162 ==> 480288 - Allow manual date entry in Adjust Time and Date.
 163 ==> 480277 - Missing XMP Subject field in image metadata.
 164 ==> 479833 - Some .xmp files are not taken in account during a maintenance metadata check run.
-165 ==> 
+165 ==> 480324 - The Programm crash when I type in the name for a person in the box that is shown when I hover over the face.
 166 ==> 
 167 ==> 
 168 ==> 
