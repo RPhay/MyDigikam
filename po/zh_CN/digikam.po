@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-24 01:35+0000\n"
+"POT-Creation-Date: 2024-01-25 01:33+0000\n"
 "PO-Revision-Date: 2024-01-21 14:14\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -15682,7 +15682,7 @@ msgstr "RAW 文件"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:248
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
 #, kde-format
 msgid "Target File"
 msgstr "目标文件"
@@ -16693,7 +16693,7 @@ msgstr "创建 HTML 相册..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:114
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:115
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -16831,7 +16831,7 @@ msgstr "目标文件夹："
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -19140,13 +19140,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "选择想要导出打印结果图像的格式。"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:229
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
 #, kde-format
 msgid "Destination folder:"
 msgstr "目标文件夹："
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:235
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:240
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -19735,32 +19735,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "创建视频幻灯片..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "开始生成视频幻灯片..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:125
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 张要处理的图像"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:173
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "视频幻灯片未制作完成。"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:178
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr "详情请见下方的编码跟踪信息"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:183
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "视频幻灯片已制作完成。"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:188
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "在播放器中打开视频..."
@@ -19800,48 +19800,48 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "FFmpeg 可执行文件"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:98
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
 #, kde-format
 msgid "Media Container Format:"
 msgstr "媒体容器格式："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:101
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:102
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr "此选项用于选择存储视频和音频流的媒体容器格式。"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:106
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
 #, kde-format
 msgid "Open in Player:"
 msgstr "在播放器中打开："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:143
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "@title:column Output file name"
 #| msgid "Output"
 msgid "Output"
 msgstr "输出"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:151
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "视频亮度均衡"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:156
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
 #, kde-format
 msgid "Equalization Strength:"
 msgstr "均衡强度："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr "此选项控制亮度均衡的强度。设为 0 时将不作任何亮度调整。"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -19853,29 +19853,29 @@ msgstr ""
 "列帧的直方图调整至相同的状态，同时尽可能保持它们的亮度动态范围。此效果的常见"
 "用法是在时延序列中保持曝光水平。</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:176
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
 #, fuzzy, kde-format
 #| msgid "Trailer Information"
 msgid "Frames Normalization"
 msgstr "预告片信息"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:186
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "音轨文件："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "选择音轨"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:198
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "音轨持续时间："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:200
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -19886,21 +19886,21 @@ msgstr ""
 "<i>关于音轨的提示：如果音频长度短于视频长度，则音频会循环播放。如果音频长度长"
 "于视频长度，则音频将被截断。如果您不想在视频中包含音轨，请将此选项留空。</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Audio Track"
 msgid "Audio Track"
 msgstr "选择音轨"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:219
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, fuzzy, kde-format
 #| msgctxt "@option"
 #| msgid "On Screen Display Font:"
 msgid "On Screen Display"
 msgstr "屏幕显示字体："
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:244
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "视频输出文件名将自动生成。"
@@ -19911,12 +19911,19 @@ msgid "Number of Frames by Image:"
 msgstr "图像停留帧数："
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This value repeat one image in the sequence. While creating timelapse; "
+#| "it's usual to use 1. Typically, the number of frames will determine the "
+#| "time to show the same frame in the video. The result will depend of the "
+#| "number of frames per second used to encode the media."
 msgid ""
-"This value repeat one image in the sequence. While creating timelapse; it's "
-"usual to use 1. Typically, the number of frames will determine the time to "
-"show the same frame in the video. The result will depend of the number of "
-"frames per second used to encode the media."
+"This value repeat one image in the sequence.\n"
+"While creating timelapse; it's usual to use 1.\n"
+"Typically, the number of frames will determine\n"
+"the time to show the same frame in the video.\n"
+"The result will depend of the number of frames\n"
+"per second used to encode the media."
 msgstr ""
 "此值用于控制图像在帧序列中停留的帧数。在创建延时序列时通常将它设置为 1。 在典"
 "型情况下，此帧数将决定某一帧在视频中显示的时间。最终效果取决于编码媒体时使用"

@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-24 01:35+0000\n"
-"PO-Revision-Date: 2024-01-23 09:23+0100\n"
+"POT-Creation-Date: 2024-01-25 01:33+0000\n"
+"PO-Revision-Date: 2024-01-24 09:28+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16293,7 +16293,7 @@ msgstr "Surova datoteka"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:248
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
 #, kde-format
 msgid "Target File"
 msgstr "Ciljna datoteka"
@@ -17333,7 +17333,7 @@ msgstr "Ustvari Html galerijo..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:114
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:115
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -17472,7 +17472,7 @@ msgstr "Ciljna mapa:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -19881,13 +19881,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "Izberite želeno obliko za izvoz tiska kot slike."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:229
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
 #, kde-format
 msgid "Destination folder:"
 msgstr "Ciljna mapa:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:235
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:240
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20497,32 +20497,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Ustvari video predstavitev..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "Začenjam ustvarjati video predstavitev..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:125
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 vhodnih slik za obdelavo"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:173
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Video predstavitev ni zaključena"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:178
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr "Oglejte si sled kodiranja videa spodaj"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:183
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Video predstavitev dokončana."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:188
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Odpiranje videa v predvajalniku..."
@@ -20565,12 +20565,12 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "Izvajalni program FFmpeg"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:98
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Format medijskega vsebnika:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:101
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:102
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
@@ -20579,29 +20579,27 @@ msgstr ""
 "Ta kontrolnik omogoča izbiro formata medijskega vsebnika za gostovanje video "
 "toka in zvočnega posnetka."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:106
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
 #, kde-format
 msgid "Open in Player:"
 msgstr "Odpri v predvajalniku:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@title:column Output file name"
-#| msgid "Output"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:145
+#, kde-format
 msgid "Output"
 msgstr "Izhod"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:151
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Izenači osvetlitev videa"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:156
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
 #, kde-format
 msgid "Equalization Strength:"
 msgstr "Moč izenačitve:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
@@ -20610,7 +20608,7 @@ msgstr ""
 "To nadzira moč izravnave. Nastavitev te možnosti na nič dejansko ne povzroči "
 "ničesar."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20624,29 +20622,28 @@ msgstr ""
 "Uporaben je za npr. ujemajoče se osvetlitve iz zaporedja časovnega zamika.</"
 "i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:176
-#, fuzzy, kde-format
-#| msgid "Trailer Information"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
+#, kde-format
 msgid "Frames Normalization"
-msgstr "Trailer Information"
+msgstr "Normalizacija okvirjev"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:186
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "Datoteka posnetega zvoka:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Izberite zvočno sled"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:198
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "Trajanje zvočnega posnetka:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:200
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -20659,21 +20656,17 @@ msgstr ""
 "bo obrezan. Pustite to nastavitev prazno, če ne želite zvočnega posnetka na "
 "mediju.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Audio Track"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
+#, kde-format
 msgid "Audio Track"
-msgstr "Izberite zvočno sled"
+msgstr "Zvočna sled"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "O: On Screen Display\n"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
+#, kde-format
 msgid "On Screen Display"
-msgstr "O: Prikaz na zaslonu\n"
+msgstr "Prikaz na zaslonu"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:244
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Ime izhodne datoteke za video bo ustvarjeno samodejno."
@@ -20684,12 +20677,19 @@ msgid "Number of Frames by Image:"
 msgstr "Število okvirjev po sliki:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This value repeat one image in the sequence. While creating timelapse; "
+#| "it's usual to use 1. Typically, the number of frames will determine the "
+#| "time to show the same frame in the video. The result will depend of the "
+#| "number of frames per second used to encode the media."
 msgid ""
-"This value repeat one image in the sequence. While creating timelapse; it's "
-"usual to use 1. Typically, the number of frames will determine the time to "
-"show the same frame in the video. The result will depend of the number of "
-"frames per second used to encode the media."
+"This value repeat one image in the sequence.\n"
+"While creating timelapse; it's usual to use 1.\n"
+"Typically, the number of frames will determine\n"
+"the time to show the same frame in the video.\n"
+"The result will depend of the number of frames\n"
+"per second used to encode the media."
 msgstr ""
 "Ta vrednost ponovi eno sliko v zaporedju. Med ustvarjanjem časovnega zamika; "
 "običajno uporabi 1. Običajno bo število sličic določilo čas za prikaz iste "
