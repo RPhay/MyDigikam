@@ -486,61 +486,40 @@ void setupKSycocaDatabaseFile()
 
         if (!cachePath.isEmpty())
         {
-            QString ksycoca;
             QDir dir(cachePath);
+            QStringList searchList({ QLatin1String("ksycoca*") });
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-            QFileInfoList infoList = dir.entryInfoList(QStringList() << QLatin1String("ksycoca6*"),
-
-#else
-
-            QFileInfoList infoList = dir.entryInfoList(QStringList() << QLatin1String("ksycoca5*"),
-
-#endif
-
-                                                       QDir::Files, QDir::Time);
+            QFileInfoList infoList = dir.entryInfoList(searchList, QDir::Files);
 
             while (!infoList.isEmpty())
             {
                 QFileInfo info = infoList.takeFirst();
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-                if ((info.suffix()   != QLatin1String("lock"))            &&
-                    (info.fileName() != QLatin1String("ksycoca6_appimage")))
-
-#else
-
-                if ((info.suffix()   != QLatin1String("lock"))            &&
-                    (info.fileName() != QLatin1String("ksycoca5_appimage")))
-
-#endif
-
+                if (info.suffix() == QLatin1String("lock"))
                 {
-                    ksycoca = info.absoluteFilePath();
+                    continue;
+                }
 
-                    break;
+                if ((info.fileName() != QLatin1String("ksycoca5_appimage")) &&
+                    (info.fileName() != QLatin1String("ksycoca6_appimage")))
+                {
+                    return;
                 }
             }
 
-            if (ksycoca.isEmpty())
-            {
-
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                ksycoca = cachePath + QLatin1String("/ksycoca6_appimage");
+            QString ksycoca = cachePath + QLatin1String("/ksycoca6_appimage");
 
 #else
 
-                ksycoca = cachePath + QLatin1String("/ksycoca5_appimage");
+            QString ksycoca = cachePath + QLatin1String("/ksycoca5_appimage");
 
 #endif
 
-                qputenv("KDESYCOCA", ksycoca.toUtf8());
-            }
+            qputenv("KDESYCOCA", ksycoca.toUtf8());
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Current KSycoca file:" << ksycoca;
+            qCDebug(DIGIKAM_GENERAL_LOG) << "AppImage KSycoca file:" << ksycoca;
         }
     }
 }
