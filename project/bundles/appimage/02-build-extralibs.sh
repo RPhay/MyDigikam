@@ -141,7 +141,7 @@ if [[ $DK_QTVERSION == 6 ]] ; then
 
     for ITEM in $DIRS ; do
 
-        COMPONENT=(echo $ITEM | cut -d'_' -f 1 | cut -d'-' -f 2)
+        COMPONENT=$(echo $ITEM | cut -d'_' -f 1 | cut -d'-' -f 2)
         SUBDIR=$BUILDING_DIR/ext_kf6/$ITEM/src/$COMPONENT
         cd $SUBDIR
         echo "$(basename "$SUBDIR"):$(git rev-parse HEAD)" >> $KF6_GITREV_LST
