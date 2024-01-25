@@ -178,7 +178,7 @@ BUGFIXES:
 159 ==> 230139 - Export slideshow in video.
 160 ==> 271751 - Allow to export Advanced Slideshow rendering as a video file.
 161 ==> 480251 - Crash when typing in a face tag in image.
-162 ==> 
+162 ==> 480288 - Allow manual date entry in Adjust Time and Date.
 163 ==> 
 164 ==> 
 165 ==> 
