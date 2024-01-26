@@ -69,15 +69,15 @@ DK_BUILDTEMP=$MXE_ROOT_DIR/dktemp
 
 # KDE Plasma version.
 # See official release here: https://download.kde.org/stable/plasma/
-DK_KP_VERSION="5.27.8"
+DK_KP_VERSION="5.27.10"
 
 # KDE Application version.
 # See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="23.08.1"
+DK_KA_VERSION="23.08.4"
 
 # KDE KF5 frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
-DK_KDE_VERSION="5.110"
+DK_KDE_VERSION="5.114"
 
 # Qt version to use in bundle and provided by MXE.
 DK_QTVERSION="5"
