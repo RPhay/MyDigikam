@@ -63,7 +63,7 @@ protected:
 
     bool eventFilter(QObject* obj, QEvent* event) override
     {
-        if ((event->type() == QEvent::MouseButtonRelease) || (event->type() == QEvent::MouseButtonDblClick))
+        if ((event->type() == QEvent::MouseButtonPress) || (event->type() == QEvent::MouseButtonDblClick))
         {
             bool singleClick              = qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick);
             QMouseEvent* const mouseEvent = dynamic_cast<QMouseEvent*>(event);
@@ -75,13 +75,13 @@ protected:
                 if (mplayer)
                 {
                     if      ((mouseEvent->button() == Qt::LeftButton) &&
-                             ((singleClick && (event->type() == QEvent::MouseButtonRelease)) ||
+                             ((singleClick && (event->type() == QEvent::MouseButtonPress)) ||
                              (!singleClick && (event->type() == QEvent::MouseButtonDblClick))))
                     {
                         mplayer->slotEscapePressed();
                     }
                     else if ((mouseEvent->button() == Qt::RightButton) &&
-                             (event->type() == QEvent::MouseButtonRelease))
+                             (event->type() == QEvent::MouseButtonPress))
                     {
                         mplayer->slotRotateVideo();
                     }
@@ -248,7 +248,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     setPreviewMode(Private::PlayerView);
 
     d->errorView->installEventFilter(new MediaPlayerMouseClickFilter(this));
-    d->videoWidget->installEventFilter(new MediaPlayerMouseClickFilter(this));
+    d->videoWidget->view()->installEventFilter(new MediaPlayerMouseClickFilter(this));
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
@@ -391,9 +391,7 @@ void MediaPlayerView::slotEscapePressed()
 
 void MediaPlayerView::slotRotateVideo()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "slotRotateVideo";
-
-    if (d->videoWidget->player()->state() != QAVPlayer::PlayingState)
+    if (d->videoWidget->player()->state() == QAVPlayer::PlayingState)
     {
         int orientation = 0;
 

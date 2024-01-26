@@ -20,6 +20,7 @@
 #include <QMediaObject>
 #include <QFrame>
 #include <QVideoFrame>
+#include <QGraphicsView>
 
 // QtAVPlayer includes
 
@@ -43,6 +44,7 @@ public:
     QAVPlayer*      player()      const;
     QAVAudioOutput* audioOutput() const;
     QVideoFrame videoFrame()      const;
+    QGraphicsView* view()         const;
 
     int videoMediaOrientation()   const;
 

@@ -22,7 +22,6 @@
 #include <QVBoxLayout>
 #include <QAbstractVideoSurface>
 #include <QVideoSurfaceFormat>
-#include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QGraphicsVideoItem>
 
@@ -57,7 +56,7 @@ DVideoWidget::DVideoWidget(QWidget* const parent)
     setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     setLineWidth(1);
 
-    d->videoScene  = new QGraphicsScene(this);
+    d->videoScene  = new QGraphicsScene(parent);
     d->videoView   = new QGraphicsView(d->videoScene);
     d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -93,6 +92,11 @@ DVideoWidget::~DVideoWidget()
 QAVPlayer* DVideoWidget::player() const
 {
     return d->player;
+}
+
+QGraphicsView* DVideoWidget::view() const
+{
+    return d->videoView;
 }
 
 QAVAudioOutput* DVideoWidget::audioOutput() const
