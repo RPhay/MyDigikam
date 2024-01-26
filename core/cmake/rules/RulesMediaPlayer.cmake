@@ -44,16 +44,8 @@ if(ENABLE_MEDIAPLAYER)
             find_package(VAAPI QUIET)
             find_package(VDPAU QUIET)
 
-            if(WIN32)
-
-                set(DirectX_FIND_REQUIRED_D3D11 TRUE)
-                find_package(DirectX)
-
-            endif()
-
             MACRO_BOOL_TO_01(VAAPI_FOUND           HAVE_LIBVAAPI)
             MACRO_BOOL_TO_01(VDPAU_FOUND           HAVE_LIBVDPAU)
-            MACRO_BOOL_TO_01(DirectX_D3D11_FOUND   HAVE_LIBD3D11)
 
             # --- Reports and Libraries -----------------------------------------------------------
 
@@ -98,20 +90,6 @@ if(ENABLE_MEDIAPLAYER)
             else()
 
                 message(STATUS "MediaPlayer will be compiled with VDPAU support      : no")
-
-            endif()
-
-            # --- Windows config ---
-
-            if(DirectX_D3D11_FOUND)
-
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${DIRECT3D_LIBRARIES})
-
-                message(STATUS "MediaPlayer will be compiled with Direct3D11 support : yes")
-
-            else()
-
-                    message(STATUS "MediaPlayer will be compiled with Direct3D11 support : no")
 
             endif()
 
