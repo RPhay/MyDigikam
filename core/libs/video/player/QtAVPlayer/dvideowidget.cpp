@@ -19,9 +19,32 @@
 #include <QList>
 #include <QMutex>
 #include <QMutexLocker>
+#include <QAbstractVideoSurface>
+#include <QVideoRendererControl>
+#include <QVideoSurfaceFormat>
+#include <QMediaService>
 
 namespace Digikam
 {
+
+class Q_DECL_HIDDEN VideoRenderer : public QVideoRendererControl
+{
+public:
+
+    QAbstractVideoSurface* surface() const override
+    {
+        return m_surface;
+    }
+
+    void setSurface(QAbstractVideoSurface* surface) override
+    {
+        m_surface = surface;
+    }
+
+    QAbstractVideoSurface* m_surface = nullptr;
+};
+
+// -------------------------------------------------------
 
 class Q_DECL_HIDDEN MediaService : public QMediaService
 {
@@ -118,11 +141,6 @@ QAVPlayer* DVideoWidget::player() const
 QAVAudioOutput* DVideoWidget::audioOutput() const
 {
     return d->audioOutput;
-}
-
-VideoRenderer* DVideoWidget::videoRender() const
-{
-    return d->videoRender;
 }
 
 QVideoFrame DVideoWidget::videoFrame() const

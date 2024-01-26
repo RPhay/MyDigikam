@@ -17,11 +17,7 @@
 
 // Qt includes
 
-#include <QAbstractVideoSurface>
-#include <QVideoSurfaceFormat>
-#include <QMediaService>
 #include <QMediaObject>
-#include <QVideoRendererControl>
 #include <QVideoWidget>
 #include <QVideoFrame>
 
@@ -35,25 +31,6 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN VideoRenderer : public QVideoRendererControl
-{
-public:
-
-    QAbstractVideoSurface* surface() const override
-    {
-        return m_surface;
-    }
-
-    void setSurface(QAbstractVideoSurface* surface) override
-    {
-        m_surface = surface;
-    }
-
-    QAbstractVideoSurface* m_surface = nullptr;
-};
-
-// -------------------------------------------------------
-
 class Q_DECL_HIDDEN DVideoWidget : public QVideoWidget
 {
     Q_OBJECT
@@ -65,7 +42,6 @@ public:
 
     QAVPlayer*      player()      const;
     QAVAudioOutput* audioOutput() const;
-    VideoRenderer*  videoRender() const;
     QVideoFrame videoFrame()      const;
     int videoMediaOrientation()   const;
 
