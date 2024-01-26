@@ -27,7 +27,6 @@
 #  DirectX_D3D9_FOUND
 #  DirectX_D3D11_FOUND
 #  DirectX_DInput_FOUND
-#  DirectX_DSound_FOUND
 #  DirectX_XAudio2_FOUND
 #  DirectX_XInput_FOUND
 #
@@ -39,7 +38,7 @@
 #  HAVE_<UPCASE_NAME>_H
 #  HAVE_D3D_H (Currently synonym to HAVE_D3D9_H)
 
-set(DIRECTX_HEADERS d3dcompiler.h d3d9.h d3d11.h ddraw.h dsound.h dinput.h dxgi.h xaudio2.h xinput.h)
+set(DIRECTX_HEADERS d3dcompiler.h d3d9.h d3d11.h ddraw.h dinput.h dxgi.h xaudio2.h xinput.h)
 
 # Optional input variables (see corresponding code comments for details):
 #  DIRECTX_INC_SEARCH_PATHS
@@ -406,7 +405,7 @@ if(HAVE_D3D9_H)
 
 endif()
 
-foreach(COMPONENT DInput DSound XAudio2 XInput)
+foreach(COMPONENT DInput XAudio2 XInput)
 
     string(TOUPPER ${COMPONENT} UPCASE_NAME)
 
