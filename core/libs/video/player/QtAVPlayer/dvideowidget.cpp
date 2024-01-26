@@ -152,36 +152,38 @@ void DVideoWidget::slotVideoFrame(const QAVVideoFrame& frame)
 
 int DVideoWidget::videoMediaOrientation() const
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Video Metadata from" << d->player->source();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "---";
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Video Streams Available:" << d->player->availableVideoStreams().count();
-
-    Q_FOREACH (const QAVStream& vstream, d->player->availableVideoStreams())
-    {
-        QMap<QString, QString> vals = vstream.metadata();
-
-        for (QMap<QString, QString>::const_iterator it = vals.constBegin() ; it != vals.constEnd() ; ++it)
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << it.key() << it.value();
-        }
-    }
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "---";
-
-
     int orientation = 0;
 
-    QList<QAVStream> vstream = d->player->currentVideoStreams();
-
-    if (!vstream.isEmpty())
+    if (d->player->availableVideoStreams().count() > 0)
     {
-        QMap<QString, QString> vals = vstream.first().metadata();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Video Metadata from" << d->player->source();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "---";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Video Streams Available:" << d->player->availableVideoStreams().count();
 
-        if (!vals.isEmpty())
+        Q_FOREACH (const QAVStream& vstream, d->player->availableVideoStreams())
         {
-            if (vals.contains(QLatin1String("Orientation")))
+            QMap<QString, QString> vals = vstream.metadata();
+
+            for (QMap<QString, QString>::const_iterator it = vals.constBegin() ; it != vals.constEnd() ; ++it)
             {
-                orientation = vals[QLatin1String("Orientation")].toInt();
+                qCDebug(DIGIKAM_GENERAL_LOG) << it.key() << it.value();
+            }
+        }
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "---";
+
+        QList<QAVStream> vstream = d->player->currentVideoStreams();
+
+        if (!vstream.isEmpty())
+        {
+            QMap<QString, QString> vals = vstream.first().metadata();
+
+            if (!vals.isEmpty())
+            {
+                if (vals.contains(QLatin1String("rotate")))
+                {
+                    orientation = vals[QLatin1String("rotate")].toInt();
+                }
             }
         }
     }

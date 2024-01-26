@@ -325,20 +325,6 @@ void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
 {
     if      (newState == QAVPlayer::PlayingState)
     {
-        int rotate = d->videoWidget->videoMediaOrientation();
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtAVPlayer:"
-                                     << rotate;
-
-        rotate     = (-rotate) + d->videoWidget->videoItemOrientation();
-
-        if ((rotate > 270) || (rotate < 0))
-        {
-            rotate = d->videoWidget->videoItemOrientation();
-        }
-
-        d->videoWidget->setVideoItemOrientation(rotate);
-
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
     else if (newState == QAVPlayer::PausedState)
@@ -360,9 +346,25 @@ void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
 
 void MediaPlayerView::slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus)
 {
-    if (newStatus == QAVPlayer::InvalidMedia)
+    if      (newStatus == QAVPlayer::InvalidMedia)
     {
         setPreviewMode(Private::ErrorView);
+    }
+    else if (newStatus == QAVPlayer::LoadedMedia)
+    {
+        int rotate = d->videoWidget->videoMediaOrientation();
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Video orientation from QtAVPlayer:"
+                                     << rotate;
+
+        rotate     = (-rotate) + d->videoWidget->videoItemOrientation();
+
+        if ((rotate > 270) || (rotate < 0))
+        {
+            rotate = d->videoWidget->videoItemOrientation();
+        }
+
+        d->videoWidget->setVideoItemOrientation(rotate);
     }
 }
 
