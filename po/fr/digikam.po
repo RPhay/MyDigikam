@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-25 01:33+0000\n"
-"PO-Revision-Date: 2024-01-18 18:35+0100\n"
+"PO-Revision-Date: 2024-01-24 19:45+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -732,7 +732,7 @@ msgstr "Grouper la sélection par nom de fichier"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Timelapse / Burst"
-msgstr "Grouper la sélection par laps de temps / étalement."
+msgstr "Regrouper la sélection par animation hyper-accélérée / étalement."
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:175
 #, kde-format
@@ -5783,7 +5783,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Anti-Vignetting"
-msgstr "Anti-vignettage"
+msgstr "Antivignettage"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:61
 #, kde-format
@@ -20890,7 +20890,7 @@ msgstr "Le diaporama vidéo n'est pas terminé."
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
 #, kde-format
 msgid "See the video encoding trace below"
-msgstr ""
+msgstr "Veuillez consulter ci-dessous la trace d'encodage de la vidéo"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
 #, kde-format
@@ -20952,6 +20952,8 @@ msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
+"Ce contrôle permet de sélectionner le format du conteneur multimédia pour "
+"héberger un flux vidéo et une bande son."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
 #, kde-format
@@ -20968,12 +20970,12 @@ msgstr "Sortie"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
 #, kde-format
 msgid "Equalize Video Luminosity"
-msgstr ""
+msgstr "Égaliser la luminosité vidéo"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
 #, kde-format
 msgid "Equalization Strength:"
-msgstr ""
+msgstr "Force d'égalisation :"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
 #, kde-format
@@ -20981,6 +20983,8 @@ msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
+"Ceci contrôle la force de l'égalisation. La définition de cette option à "
+"zéro ne fait réellement rien."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
 #, kde-format
@@ -20990,6 +20994,12 @@ msgid ""
 "same histograms, while maintaining their dynamics as much as possible. It’s "
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
+"<i> Cette configuration applique l'effet d'égalisation vidéo intermédiaire "
+"temporelle tout en encodant les trames sous forme de vidéo. Cela ajuste la "
+"séquence de trames pour avoir les mêmes histogrammes, tout en maintenant "
+"leur dynamique autant que possible. Ceci est utile, par exemple, pour faire "
+"correspondre l'exposition à partir d'une séquence d'animation hyper-"
+"accélérée. </i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
 #, fuzzy, kde-format
@@ -20998,24 +21008,20 @@ msgid "Frames Normalization"
 msgstr "Informations de bande-annonce "
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack File:"
-msgstr "Bande sonore :"
+msgstr "Fichier de bande sonore :"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Audio track"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
-msgstr "Piste audio"
+msgstr "Sélectionner une piste audio"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:198
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack Duration:"
-msgstr "Bande sonore :"
+msgstr "Durée de la bande sonore :"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
 #, kde-format
@@ -21025,6 +21031,10 @@ msgid ""
 "be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
+"<i> Notes sur la bande son : si la longueur audio est plus petite que celle "
+"de la vidéo, elle sera lue en boucle. Si la longueur audio est la plus "
+"importante que celle de la vidéo, elle sera coupée. Laissez ce paramètre "
+"vide si vous ne voulez aucune bande son dans le média. </i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
 #, fuzzy, kde-format
@@ -21082,20 +21092,16 @@ msgid "Effect While Displaying Images"
 msgstr "Effet pendant l'affichage des images"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>An effect is an visual panning or zooming applied while an image is "
-#| "displayed. The effect duration will follow the number of frames used to "
-#| "render the image on video stream.</i>"
+#, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
 "render the image on video stream. For a timelapse, let this setting to None."
 "</i>"
 msgstr ""
-"<i>Un effet est un décalage visuel ou un zoom appliqué pendant l'affichage "
-"d'une image. La durée de l'effet suivra le nombre de trames utilisées pour "
-"afficher l'image dans le flux vidéo.</i>"
+"<i>Un effet est un panoramique ou zoom appliqué pendant l'affichage d'une "
+"image. La durée de l'effet prendra en compte le nombre de trames utilisées "
+"pour afficher l'image dans le flux vidéo.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #, kde-format
@@ -21103,11 +21109,7 @@ msgid "Transition Between Images"
 msgstr "Transition entre les images"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>A transition is an visual effect applied between two images. For some "
-#| "effects, the duration can depend of random values and can change while "
-#| "the slideshow.</i>"
+#, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
@@ -21115,7 +21117,7 @@ msgid ""
 msgstr ""
 "<i>Une transition est un effet visuel appliqué entre deux images. Pour "
 "certains effets, la durée peut dépendre de valeurs aléatoires et changer "
-"pendant le diaporama.</i>"
+"durant le diaporama.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
 #, kde-format
@@ -25620,13 +25622,13 @@ msgstr "Exporter vers OneDrive"
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
-msgstr "Démarrer l'envoi vers  OneDrive"
+msgstr "Démarrer l'envoi vers OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:288
 #, kde-format
 msgctxt "@info"
 msgid "Onedrive export"
-msgstr "Exportation vers  OneDrive"
+msgstr "Exportation vers OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:325
 #, kde-format
@@ -25648,7 +25650,7 @@ msgid ""
 "Onedrive call failed:\n"
 "%1"
 msgstr ""
-"L'appel vers  OneDrive a échoué :\n"
+"L'appel vers OneDrive a échoué :\n"
 "%1"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:48
@@ -41873,11 +41875,9 @@ msgid "Default from Desktop"
 msgstr "Par défaut selon le bureau"
 
 #: core/libs/video/manager/vidslidetask.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Generating files for \"%1\""
+#, kde-format
 msgid "Generating frames from %1 Done"
-msgstr "Génération des fichiers pour « %1 »"
+msgstr "Génération des trames pour %1 terminée"
 
 #: core/libs/video/manager/vidslidethread.cpp:63
 #, kde-format
@@ -58034,7 +58034,7 @@ msgid ""
 "p><p>Applications: Display of seismic and radio data and for use in digital "
 "planetariums.</p>"
 msgstr ""
-"<p><b>Projection équidistante azimutale</b> (Grand Angle type « Fish Eye »)</"
+"<p><b>Projection équidistante azimutale</b> (Grand Angle type « FishEye »)</"
 "p><p>Applications : affichage des données sismiques et radio, pour une "
 "utilisation dans les planétariums numériques.</p>"
 
