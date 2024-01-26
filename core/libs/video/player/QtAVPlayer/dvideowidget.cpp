@@ -25,6 +25,10 @@
 #include <QGraphicsScene>
 #include <QGraphicsVideoItem>
 
+// Local includes
+
+#include "digikam_debug.h"
+
 namespace Digikam
 {
 
@@ -148,6 +152,23 @@ void DVideoWidget::slotVideoFrame(const QAVVideoFrame& frame)
 
 int DVideoWidget::videoMediaOrientation() const
 {
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Video Metadata from" << d->player->source();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "---";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Video Streams Available:" << d->player->availableVideoStreams().count();
+
+    Q_FOREACH (const QAVStream& vstream, d->player->availableVideoStreams())
+    {
+        QMap<QString, QString> vals = vstream.metadata();
+
+        for (QMap<QString, QString>::const_iterator it = vals.constBegin() ; it != vals.constEnd() ; ++it)
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << it.key() << it.value();
+        }
+    }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "---";
+
+
     int orientation = 0;
 
     QList<QAVStream> vstream = d->player->currentVideoStreams();
