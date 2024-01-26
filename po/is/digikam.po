@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-25 01:33+0000\n"
-"PO-Revision-Date: 2024-01-24 23:39+0000\n"
+"PO-Revision-Date: 2024-01-25 23:20+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -691,7 +691,7 @@ msgstr "Hópa valið eftir skráarheiti"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Timelapse / Burst"
-msgstr "Hópa valið eftir tímabili / runu"
+msgstr "Hópa valið eftir tímabili hreyfimynda / runu"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:175
 #, kde-format
@@ -3263,6 +3263,8 @@ msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
 "and use Qt6 and KF6 frameworks."
 msgstr ""
+"Windows uppsetningarforritið er núna vistþýtt innfellt með Microsoft VCPKG "
+"verkferli og styðst við Qt6 og KF6 stoðkerfin."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -6081,11 +6083,9 @@ msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
 #: core/utilities/maintenance/maintenancedlg.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Segmentation mode:"
+#, kde-format
 msgid "Selection model: "
-msgstr "Uppskiptingarhamur:"
+msgstr "Valhamur:"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
 #: core/utilities/maintenance/maintenancedlg.cpp:196
@@ -6142,18 +6142,15 @@ msgid "A tool to assign tags automatically to images"
 msgstr "Verkfæri til að úthluta merkjum sjálfvirkt á myndir"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
 "values to images automatically using deep-learning engine.</para>"
 msgstr ""
-"<para>Þetta verkfæri magnvinnslustjórans getur úthlutað stigskipuðum "
-"stikkorðum í lýsigögnum á myndir.</para>"
+"<para>Þetta verkfæri magnvinnslustjórans getur úthlutað sjálfvirkt "
+"stigskipuðum gildum lýsigagna á myndir með aðstoð vélnámskerfis (deep-"
+"learning).</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:46
 #, kde-format
@@ -8901,6 +8898,7 @@ msgstr "Enginn prentari tiltækur"
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
+"Enginn prentari er uppsettur á kerfinu þínu. Settu upp a.m.k. einn slíkan."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:188
 #, kde-format
@@ -11165,20 +11163,16 @@ msgid "One map"
 msgstr "Eitt landakort"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - vertical"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
-msgstr "Tvö landakort - lóðrétt"
+msgstr "Tvö landakort - til vinstri og hægri"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - horizontal"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
-msgstr "Tvö landakort - lárétt"
+msgstr "Tvö landakort - efst og neðst"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
@@ -15627,12 +15621,10 @@ msgid "Adjust Time & Date"
 msgstr "Breyta tíma & dagsetningu"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
-msgstr "Skrifa lagfærða dagsetningu og tíma í hverja mynd"
+msgstr "Skrifa lagfærða dagsetningu og tíma í hverja mynd og loka glugganum"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
 #, kde-format
@@ -19409,14 +19401,7 @@ msgstr "Leturgerð:"
 
 #. i18n: ectx: property (whatsThis), widget (DigikamGenericPrintCreatorPlugin::AdvPrintCropFrame, cropFrame)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Move the box in order to crop photos so that they fit inside the photo "
-#| "sizes you have given.  \n"
-#| "You can crop each image differently, or just click the 'Next' button to "
-#| "use the default crop \n"
-#| "setting for each photo.\n"
-#| "Enable \"Do not crop\" to avoid cropping all of the photos."
+#, kde-format
 msgid ""
 "Move the box in order to crop photos so that they fit inside the photo sizes "
 "you have given.  \n"
@@ -20433,7 +20418,7 @@ msgstr "Myndskeiða-skyggnusýningu er ekki lokið"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
 #, kde-format
 msgid "See the video encoding trace below"
-msgstr ""
+msgstr "Skoðaðu rakningu myndmerkiskóðunar hér fyrir neðan"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
 #, kde-format
@@ -20508,12 +20493,12 @@ msgstr "Úttak"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
 #, kde-format
 msgid "Equalize Video Luminosity"
-msgstr ""
+msgstr "Jafna birtustig myndskeiðs"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
 #, kde-format
 msgid "Equalization Strength:"
-msgstr ""
+msgstr "Styrkur tónjöfnunar:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
 #, kde-format
@@ -20532,16 +20517,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
-#, fuzzy, kde-format
-#| msgid "Trailer Information"
+#, kde-format
 msgid "Frames Normalization"
-msgstr "Kynningarstikluupplýsingar"
+msgstr "Hljóðstyrksjöfnun ramma"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack File:"
-msgstr "Hljóðrás:"
+msgstr "Hljóðrásarskrá:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
 #, kde-format
@@ -20550,10 +20533,9 @@ msgid "Select Audio Track"
 msgstr "Veldu hljóðspor"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:198
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack Duration:"
-msgstr "Hljóðrás:"
+msgstr "Tímalengd hljóðrásar:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
 #, kde-format
@@ -20594,6 +20576,12 @@ msgid ""
 "The result will depend of the number of frames\n"
 "per second used to encode the media."
 msgstr ""
+"Þetta gildi endurtekur eina mynd í rununni.\n"
+"Þegar verið er að gera tímabundna hreyfimynd er oftast notað 1.\n"
+"Venjulega skilgreinir fjöldi ramma þann tíma sem á að sýna sama rammann í "
+"myndskeiðinu.\n"
+"Útkoman er háð þeim fjölda ramma á sekúndu sem notaður er til að kóða "
+"myndskeiðið."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:96
 #, kde-format
@@ -20616,20 +20604,17 @@ msgid "Effect While Displaying Images"
 msgstr "Sjónhverfing við birtingu mynda"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>An effect is an visual panning or zooming applied while an image is "
-#| "displayed. The effect duration will follow the number of frames used to "
-#| "render the image on video stream.</i>"
+#, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
 "render the image on video stream. For a timelapse, let this setting to None."
 "</i>"
 msgstr ""
-"<i>Millifærsla er sjónræn hliðrun eða aðdráttur sem beitt er á meðan mynd er "
+"<i>Sjónbrella er sjónræn hliðrun eða aðdráttur sem beitt er á meðan mynd er "
 "birt. Tímalengdin ræðst af fjölda ramma sem notaðir eru til myndgerðar "
-"myndarinnar í myndskeiðsstreymi.</i>"
+"myndarinnar í myndskeiðsstreymi. Fyrir tímabundnar hreyfimyndir skaltu setja "
+"þetta á ekkert.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #, kde-format
@@ -20637,11 +20622,7 @@ msgid "Transition Between Images"
 msgstr "Millifærsla á milli mynda:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>A transition is an visual effect applied between two images. For some "
-#| "effects, the duration can depend of random values and can change while "
-#| "the slideshow.</i>"
+#, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
@@ -20649,7 +20630,8 @@ msgid ""
 msgstr ""
 "<i>Millifærslur eru sjónræn áhrif sem beitt er milli tveggja mynda. Fyrir "
 "sum slík áhrif, getur tímalengdin ráðist af handahófskenndum gildum sem geta "
-"breyst á meðan skyggnusýningu stendur.</i>"
+"breyst á meðan skyggnusýningu stendur. Fyrir tímabundnar hreyfimyndir skaltu "
+"setja þetta á ekkert.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
 #, kde-format
@@ -20880,15 +20862,14 @@ msgid "OpenGL Error"
 msgstr "OpenGL villa"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
-#, fuzzy, kde-format
-#| msgid "GL_ARB_texture_rectangle not supported"
+#, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
-msgstr "GL_ARB_texture_rectangle ekki stutt"
+msgstr ""
+"GL_ARB_texture_rectangle OpenGL-kerfisauki er ekki stutt á kerfinu þínu"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
-#, fuzzy, kde-format
-#| msgid "No OpenGL context found"
+#, kde-format
 msgid "No OpenGL context has been found"
 msgstr "Ekkert OpenGL samhengi fannst"
 
@@ -22599,17 +22580,14 @@ msgid "Create relative symlinks"
 msgstr "Búa til afstæð tákntengi"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Include the sidecars of the items"
+#, kde-format
 msgid "Include the sidecar of the items"
 msgstr "Hafa með fylgiskrár atriðanna"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Write metadata to each file"
+#, kde-format
 msgid "Write sidecar metadata to the items"
-msgstr "Skrifa lýsigögn í hverja skrá"
+msgstr "Skrifa lýsigögn atriða í fylgiskrá"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:125
 #, kde-format
@@ -28310,10 +28288,9 @@ msgid "Database type is not supported."
 msgstr "Ekki er stuðningur við þessa tegund gagnagrunns."
 
 #: core/libs/database/server/databaseserver.cpp:294
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file."
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
-msgstr "Engin slóð á skipun mysqld-þjóns er sett í stillingaskránni."
+msgstr "Engin slóð á uppfærsluskipun mysql er sett í stillingaskránni."
 
 #: core/libs/database/server/databaseserver.cpp:303
 #, kde-format
@@ -28354,11 +28331,9 @@ msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "Fann ekki sjálfgefnar stillingar MySQL-þjónsins (mysql-global.conf)."
 
 #: core/libs/database/server/databaseserver.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
-msgstr "Forvinnsla er í gangi, bíddu aðeins."
+msgstr "Frumstilling innbyggðs MySQL-gagnagrunns í gangi - dokaðu við..."
 
 #: core/libs/database/server/databaseserver.cpp:549
 #, kde-format
@@ -42989,7 +42964,7 @@ msgstr "Gabriel Voicu"
 #: core/libs/widgets/mainview/daboutdata.cpp:232
 #, kde-format
 msgid "Reverse Geo-Coding"
-msgstr "Afturkvæm hnattstaðsetningarkóðun"
+msgstr "Viðsnúin hnattstaðsetningarkóðun"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:237
 #, kde-format
@@ -54318,15 +54293,14 @@ msgstr "Höfuðborg fylkis/sýslu"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:329
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:333
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:337
-#, fuzzy, kde-format
-#| msgid "County"
+#, kde-format
 msgid "County Capital"
-msgstr "Sveitarfélag"
+msgstr "Sýslumiðstöð"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:354
 #, kde-format
 msgid "Capital"
-msgstr "Höfuðborg"
+msgstr "Höfuðstaður"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:362
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
@@ -54384,7 +54358,7 @@ msgstr "Hafið"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:319
 #, kde-format
 msgid "Manned Landing Site"
-msgstr ""
+msgstr "Mannaður lendingarstaður"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:320
 #, kde-format
@@ -54394,12 +54368,12 @@ msgstr "Vélkönnuður"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:321
 #, kde-format
 msgid "Unmanned Soft Landing Site"
-msgstr ""
+msgstr "Ómannaður mjúklendingarstaður"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:322
 #, kde-format
 msgid "Unmanned Hard Landing Site"
-msgstr ""
+msgstr "Ómannaður brotlendingarstaður"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:323
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:341
@@ -54411,11 +54385,9 @@ msgstr "Hlíðarjökull"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:331
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:335
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:339
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "Nation Capital"
-msgstr "Ræðar tölur"
+msgstr "Þjóðarhöfuðborg"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:340
 #, kde-format
@@ -54454,11 +54426,9 @@ msgid "Ship Wreck"
 msgstr "Skipsflak"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:348
-#, fuzzy, kde-format
-#| msgctxt "@title: camera port"
-#| msgid "Port"
+#, kde-format
 msgid "Air Port"
-msgstr "Gátt"
+msgstr "Flugvöllur"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:349
 #, kde-format
@@ -54511,10 +54481,9 @@ msgid "Town Capital"
 msgstr "Héraðsbær"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:366
-#, fuzzy, kde-format
-#| msgid "Add village tag"
+#, kde-format
 msgid "Village Capital"
-msgstr "Bæta við merki fyrir þorp"
+msgstr "Höfuðþorp"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:368
 #, kde-format
@@ -54631,12 +54600,12 @@ msgstr "Óflokkaður vegur"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:392
 #, kde-format
 msgid "Tertiary Link Road"
-msgstr "Safnbraut"
+msgstr "Safnbrautartenging"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:393
 #, kde-format
 msgid "Tertiary Road"
-msgstr "Annar vegur"
+msgstr "Safnbraut"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:394
 #, kde-format
@@ -54651,7 +54620,7 @@ msgstr "Tengivegur"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:396
 #, kde-format
 msgid "Primary Link Road"
-msgstr "Stofnvegur"
+msgstr "Stofnvegartenging"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:397
 #, kde-format
@@ -54666,7 +54635,7 @@ msgstr "Keppnisbraut"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:399
 #, kde-format
 msgid "Trunk Link Road"
-msgstr ""
+msgstr "Stofnbrautartenging"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:400
 #, kde-format
@@ -55075,10 +55044,9 @@ msgid "Variety Store"
 msgstr "Smávörumarkaður"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:482
-#, fuzzy, kde-format
-#| msgid "Fuzzy Searches"
+#, kde-format
 msgid "Beauty Services"
-msgstr "Loðnar leitir"
+msgstr "Snyrtiþjónusta"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:483
 #, kde-format
@@ -55484,7 +55452,7 @@ msgstr "Tilbeiðslustaður"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
 #, kde-format
 msgid "Bahai"
-msgstr ""
+msgstr "Baháí"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
 #, kde-format
@@ -55716,7 +55684,7 @@ msgstr "Varðveitt lestarspor"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
 #, kde-format
 msgid "Miniature Railway"
-msgstr ""
+msgstr "Módeljárnbraut"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:612
 #, kde-format
@@ -55834,7 +55802,7 @@ msgstr "Sleðaleið"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:634
 #, kde-format
 msgid "Winter Hike"
-msgstr ""
+msgstr "Vetrargönguleið"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:635
 #, kde-format
@@ -55919,7 +55887,7 @@ msgstr "Stjórnsýslumörk (stig 11)"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:651
 #, kde-format
 msgid "Boundary (Maritime)"
-msgstr ""
+msgstr "Landhelgismörk"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:652
 #, kde-format
@@ -55981,7 +55949,7 @@ msgstr "Gangbraut"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:665
 #, kde-format
 msgid "Railway Crossing"
-msgstr ""
+msgstr "Þverun járnbrauta"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
 #, kde-format
@@ -56088,17 +56056,17 @@ msgstr "Reiðstígur"
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:226
 #, kde-format
 msgid "Inline Skates Route"
-msgstr ""
+msgstr "Línuskautaleið"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:228
 #, kde-format
 msgid "Nordic Ski Trail"
-msgstr ""
+msgstr "Gönguskíðaleið"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:230
 #, kde-format
 msgid "Sled Trail"
-msgstr ""
+msgstr "Sleðabraut"
 
 #: core/utilities/geolocation/marble/geodata/handlers/dgml/DgmlMaximumTagHandler.cpp:37
 #, kde-format
@@ -56118,7 +56086,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:125
 #, kde-format
 msgid "Error parsing file at line: %1 and column %2 . "
-msgstr ""
+msgstr "Villa í þáttun skráar á línu %1 og dálki %2 . "
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:127
 #, kde-format
@@ -56140,12 +56108,10 @@ msgid "Popularity"
 msgstr "Vinsældir"
 
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "Color Model: Indexed"
-#| msgid "Indexed"
+#, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
-msgstr "Litnúmerað..."
+msgstr "Vinsældanúmer"
 
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:246
 #, kde-format
@@ -56160,7 +56126,7 @@ msgstr "Ekkert heiti tilgreint"
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:85
 #, kde-format
 msgid "Please specify a name for this relation."
-msgstr ""
+msgstr "Tilgreindu heiti fyrir þessi vensl."
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:89
 #, kde-format
@@ -56170,7 +56136,7 @@ msgstr "Ekkert tegundamerki tilgreint"
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:90
 #, kde-format
 msgid "Please add a type tag for this relation."
-msgstr ""
+msgstr "Bættu við tegundarmerki fyrir þessi vensl."
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:69
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget_p.cpp:80
@@ -56266,14 +56232,13 @@ msgstr "&Lofthjúpur"
 #: core/utilities/geolocation/marble/plugins/render/atmosphere/AtmospherePlugin.cpp:82
 #, kde-format
 msgid "A plugin to show the atmosphere around the earth."
-msgstr ""
+msgstr "Viðbót til að sýna lofthjúp í kringum jörðina."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Compass Plugin"
-msgstr "Stilla þennan dálk"
+msgstr "Stilla áttavitaviðbót"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassConfigWidget.ui:20
@@ -56318,18 +56283,15 @@ msgid "&Compass"
 msgstr "Átt&aviti"
 
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has geolocation information."
+#, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
-msgstr "Þetta atriði er með hnattstaðsetningarupplýsingar."
+msgstr "Viðbót til að sýna fljótandi áttavita ofan á kortinu."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Crosshairs Plugin"
-msgstr "Stilla þennan dálk"
+msgstr "Stilla krossmiðsviðbótina"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
@@ -56368,7 +56330,7 @@ msgstr "&Krossmið"
 #: core/utilities/geolocation/marble/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
-msgstr ""
+msgstr "Viðbót til að sýna krossmið ofan á kortinu."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:14
@@ -56406,7 +56368,7 @@ msgstr "&Hitabeltið:"
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:938
 #, kde-format
 msgid "Color of the tropical circles."
-msgstr ""
+msgstr "Litur á hvarfbaugum."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1363
@@ -56430,7 +56392,7 @@ msgstr "&Nefndar merkingar"
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1408
 #, kde-format
 msgid "Show Labels for Prime meridian, Equator, Tropics."
-msgstr ""
+msgstr "Birta merkingar fyrir núllbaug, miðbaug, hvarfbauga."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1415
@@ -56457,7 +56419,7 @@ msgstr "&Hnitanet"
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:90
 #, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
-msgstr ""
+msgstr "Viðbót til að sýna hnitanet ofan á kortinu."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:212
 #, kde-format
@@ -56465,10 +56427,9 @@ msgid "Please choose the color for the coordinate grid."
 msgstr "Veldu hér lit á hnitanetið."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:223
-#, fuzzy, kde-format
-#| msgid "Set here the color of the second line."
+#, kde-format
 msgid "Please choose the color for the tropic circles."
-msgstr "Veldu hér lit á seinni útlínuna."
+msgstr "Veldu hér lit fyrir hvarfbaugana."
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:234
 #, kde-format
@@ -56483,22 +56444,22 @@ msgstr "Miðbaugur"
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:319
 #, kde-format
 msgid "Prime Meridian"
-msgstr "Hádegisbaugur"
+msgstr "Núllbaugur"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:320
 #, kde-format
 msgid "Antimeridian"
-msgstr ""
+msgstr "180. lengdarbaugur"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:406
 #, kde-format
 msgid "Tropic of Cancer"
-msgstr ""
+msgstr "Nyrðri hvarfbaugur"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:407
 #, kde-format
 msgid "Tropic of Capricorn"
-msgstr ""
+msgstr "Syðri hvarfbaugur"
 
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticulePlugin.cpp:410
 #, kde-format
@@ -56512,10 +56473,9 @@ msgstr "Suðurheimskautsbaugur"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Raw File Handling</b>"
+#, kde-format
 msgid "Configure Scale Bar Plugin"
-msgstr "<b>Stilla meðhöndlun RAW-mynda</b>"
+msgstr "Stilla kvarðastikuviðbótina"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRatioScaleCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:20
@@ -56541,11 +56501,9 @@ msgid "&Scale Bar"
 msgstr "Kvarða&stika"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has geolocation information."
+#, kde-format
 msgid "A plugin to show a float item that provides a map scale."
-msgstr "Þetta atriði er með hnattstaðsetningarupplýsingar."
+msgstr "Viðbót til að sýna fljótandi kvarða ofan á kortinu."
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:100
 #, kde-format
@@ -56588,7 +56546,7 @@ msgstr "Uppsetning mælingaverkfæris"
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:20
 #, kde-format
 msgid "Ruler Type"
-msgstr ""
+msgstr "Gerð mælistiku"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_1)
@@ -56765,7 +56723,7 @@ msgstr "&Flakk"
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
-msgstr ""
+msgstr "Viðbót með músarstýringum til að stilla aðdrátt og hliðra korti"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
 #, kde-format
@@ -56788,11 +56746,9 @@ msgid "&Overview Map"
 msgstr "&Yfirlitskort"
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has geolocation information."
+#, kde-format
 msgid "A plugin to add a float item that provides an overview map."
-msgstr "Þetta atriði er með hnattstaðsetningarupplýsingar."
+msgstr "Viðbót til að sýna fljótandi yfirlitskort ofan á kortinu."
 
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
 #, kde-format
@@ -56851,22 +56807,21 @@ msgid "&Download Progress"
 msgstr "&Framvinda niðurhals"
 
 #: core/utilities/geolocation/marble/plugins/render/progress/ProgressFloatItem.cpp:100
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
-msgstr "Sýna framvinduvísi"
+msgstr "Viðbót til að sýna fljótandi framvinduvísi sem kökurit ofan á kortinu."
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Cache File Parser"
-msgstr "Skráaflutningur"
+msgstr "Túlkari biðminnisskráa"
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
+"Viðbót til að hlaða inn hnattstaðsetningargögnum úr tvíundakerfis-"
+"biðminnisskrám."
 
 #: core/utilities/geolocation/marble/plugins/runner/cache/CachePlugin.cpp:60
 #, kde-format
@@ -56874,11 +56829,9 @@ msgid "Marble Cache Files"
 msgstr "Skrár í biðminni Marble"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "GPSBabel NMEA File Parser"
-msgstr "Skráaflutningur"
+msgstr "Túlkari GPSBabel NMEA-skráa"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
@@ -56886,6 +56839,8 @@ msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr ""
+"Viðbót til að hlaða inn hnattstaðsetningargögnum úr NMEA-skrám í gegnum "
+"GPSBabel-skipanalínutólið."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
 #, kde-format
@@ -56893,16 +56848,14 @@ msgid "GPSBabel files"
 msgstr "GPSBabel-skrár"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Gpx File Parser"
-msgstr "Skráaflutningur"
+msgstr "Túlkari GPX-skráa"
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:36
 #, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
-msgstr ""
+msgstr "Viðbót til að hlaða inn hnattstaðsetningargögnum úr skrám á GPX-sniði."
 
 #: core/utilities/geolocation/marble/plugins/runner/gpx/GpxPlugin.cpp:52
 #, kde-format
@@ -56910,16 +56863,15 @@ msgid "GPS Data"
 msgstr "GPS-gögn"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "GeoJSON File Parser"
-msgstr "Skráaflutningur"
+msgstr "Túlkari GeoJSON-skráa"
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:39
 #, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
+"Viðbót til að hlaða inn hnattstaðsetningargögnum úr skrám á GeoJSON-sniði."
 
 #: core/utilities/geolocation/marble/plugins/runner/json/JsonPlugin.cpp:56
 #, kde-format
@@ -56927,17 +56879,16 @@ msgid "GeoJSON"
 msgstr "GeoJSON"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "KML File Parser"
-msgstr "Skráaflutningur"
+msgstr "Túlkari KML-skráa"
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
+"Viðbót til að hlaða inn hnattstaðsetningargögnum úr skrám á KML og KMZ sniði."
 
 #: core/utilities/geolocation/marble/plugins/runner/kml/KmlPlugin.cpp:54
 #, kde-format
@@ -56947,7 +56898,7 @@ msgstr "Google Earth KML"
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:25
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
-msgstr ""
+msgstr "OpenStreetMap Nominatim viðsnúin hnattstaðsetningarkóðun"
 
 #: core/utilities/geolocation/marble/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:30
 #, kde-format
@@ -56960,19 +56911,20 @@ msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
 msgstr ""
+"Viðbót til að vinna viðsnúna staðsetningarkóðun á netinu í gegnum "
+"OpenStreetMap Nominatim vefþjónustuna"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Osm File Parser"
-msgstr "Skráaflutningur"
+msgstr "Túlkari OSM-skráa"
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
+"Viðbót til að hlaða inn hnattstaðsetningargögnum á OpenStreetMap-gagnasniði."
 
 #: core/utilities/geolocation/marble/plugins/runner/osm/OsmPlugin.cpp:53
 #, kde-format
@@ -56980,31 +56932,25 @@ msgid "OpenStreetMap Data"
 msgstr "OpenStreetMap-gögn"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Pn2 File Parser"
-msgstr "Skráaflutningur"
+msgstr "Túlkari Pn2-skráa"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:36
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
-msgstr ""
+msgstr "Viðbót til að hlaða inn hnattstaðsetningargögnum úr skrám á PNT-sniði"
 
 #: core/utilities/geolocation/marble/plugins/runner/pn2/Pn2Plugin.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@title: Name of the component"
-#| msgid "Component"
+#, kde-format
 msgid "Compressed Pnt"
-msgstr "Eining"
+msgstr "Þjöppuð Pnt"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Pnt File Parser"
-msgstr "Skráaflutningur"
+msgstr "Túlkari Pnt-skráa"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
@@ -57012,6 +56958,8 @@ msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
+"Viðbót til að hlaða inn hnattstaðsetningargögnum úr skrám frá Micro World "
+"Database II"
 
 #: core/utilities/geolocation/marble/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
@@ -57046,7 +56994,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:64
 #, kde-format
 msgid "Gnomonic"
-msgstr ""
+msgstr "Gnomonic"
 
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:69
 #, kde-format
@@ -57059,7 +57007,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/projections/LambertAzimuthalProjection.cpp:64
 #, kde-format
 msgid "Lambert Azimuthal Equal-Area"
-msgstr ""
+msgstr "Flatarrétt Lambert Azimuthal"
 
 #: core/utilities/geolocation/marble/projections/LambertAzimuthalProjection.cpp:69
 #, kde-format
@@ -57078,7 +57026,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/projections/SphericalProjection.cpp:66
 #, kde-format
 msgid "Globe"
-msgstr ""
+msgstr "Hnöttur"
 
 #: core/utilities/geolocation/marble/projections/SphericalProjection.cpp:71
 #, kde-format
@@ -57089,10 +57037,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/marble/projections/StereographicProjection.cpp:64
-#, fuzzy, kde-format
-#| msgid "Raster Graphics"
+#, kde-format
 msgid "Stereographic"
-msgstr "Punktmyndaskrár (raster)"
+msgstr "Rúmsjármynd (stereographic)"
 
 #: core/utilities/geolocation/marble/projections/StereographicProjection.cpp:69
 #, kde-format
@@ -57140,6 +57087,8 @@ msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
 "mi, ft)."
 msgstr ""
+"Einingin sem notuð er til að mæla hæð, lengdir og fjarlægðir(t.d. km, m, mi, "
+"ft)."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:118
 #, kde-format
@@ -57159,7 +57108,7 @@ msgstr "Gráður (tugakerfi)"
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:122
 #, kde-format
 msgid "Universal Transverse Mercator (UTM)"
-msgstr ""
+msgstr "Alþverstæð Merkatorvörpun (UTM)"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:123
 #, kde-format
@@ -57168,6 +57117,9 @@ msgid ""
 "By default the Degree-Minute-Second notation (e.g. 54°30'00\" ) gets used.\n"
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
+"Tilgreinir birtingu horna í hnitum.\n"
+"Sjálfgefið er Gráður-Mínútur-Sekúndur sniðið (t.d. 54°30'00\" ) notað.\n"
+"Þú getur líka notað tugakerfisgráður (t.d. 54.5°)."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
 #, kde-format
@@ -57215,6 +57167,9 @@ msgid ""
 "Specifies the map quality that gets displayed while there is no user input.\n"
 "Usually this allows for high map quality as speed is no concern."
 msgstr ""
+"Tilgreinir gæði landakortsins sem birt eru þegar engin aðgerð kemur frá "
+"notandanum.\n"
+"Venjulega gefur þetta kost á miklum gæðum, þar sem hraði er ekki vandamál."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
 #, kde-format
@@ -57229,6 +57184,9 @@ msgid ""
 "advisable to set this option to \"low quality\" as this will give better "
 "speed."
 msgstr ""
+"Tilgreinir gæði landakortsins sem birt eru við hreyfingar kortsins\n"
+"(t.d. við að draga kortið). Mikilvægt er á hægvirkum vélum að\n"
+"setja þessa stillingu á \"Lítil gæði\" til að fá betri hraða."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
 #, kde-format
@@ -57236,15 +57194,14 @@ msgid "Mouse Behavior"
 msgstr "Hegðun músar"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
-#, fuzzy, kde-format
-#| msgid "Invert Selection"
+#, kde-format
 msgid "Inertial Globe Rotation"
-msgstr "Umhverfa vali"
+msgstr "Tregða á snúningi hnattar"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
-msgstr ""
+msgstr "Nota tregðu á snúningi við að draga kortið"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
 #, kde-format
@@ -57254,7 +57211,7 @@ msgstr "Snúningur sýnar með mús"
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:169
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
-msgstr ""
+msgstr "Notaðu hægri músarhnappinn til að snúa myndavélinni í kring"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:176
 #, kde-format
@@ -57262,24 +57219,7 @@ msgid "Cache"
 msgstr "Biðminni"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:177
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#| "TR/REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></"
-#| "a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
+#, kde-format
 msgid ""
 "There are two caches being used:\n"
 "The \"physical memory\" which is needed to keep map data in the computer's "
@@ -57290,22 +57230,6 @@ msgid ""
 "Decrease this value if you want to save space on the hard disc\n"
 "and if high usage of the Internet is not an issue."
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Þú getur náð í dagatal "
-"fyrir landið þitt frá <a href=\"https://www.icalshare.com\"><span style=\" "
-"text-decoration: underline; color:#0057ae;\">https://www.icalshare.com</"
-"span></a> eða öðrum vefjum.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Slíkt er algerlega "
-"valfrjálst. Allir atburðir úr þessu dagatali verða prentaðir með rauðum lit."
-"</p></body></html>"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
 #, kde-format
@@ -57462,7 +57386,7 @@ msgstr "Sækja leið"
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:137
 #, kde-format
 msgid "Enabled when a route exists"
-msgstr ""
+msgstr "Virkt legar leið er til staðar"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:150
 #, kde-format
@@ -57507,12 +57431,12 @@ msgstr ""
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:513
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
-msgstr ""
+msgstr "Takmörk eru við %1 tígla sem hægt er að sækja."
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
-msgstr ""
+msgstr "Áætluð stærð tíglanna sem á að sækja"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:527
 #, kde-format
@@ -57628,6 +57552,8 @@ msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
 "take a few seconds."
 msgstr ""
+"Marble þarf að útbúa þetta landakort. Það þarf aðeins að gera einu sinni og "
+"gæti tekið nokkrar sekúndur."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:29
@@ -60989,6 +60915,10 @@ msgid ""
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
 "the items with no assigned tag.</p>"
 msgstr ""
+"<p><b>Hreinsa allt og endurúthluta</b>: hreinsa öll merki sem þegar hefur "
+"verið úthlutað og skanna aftur öll atriði frá grunni.</p><p><b>Skanna "
+"einungis óúthlutað</b>: skanna einungis þau atriði sem hafa engin óúthlutuð "
+"merki.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
 #, kde-format
@@ -66198,7 +66128,7 @@ msgstr "Nota pixmaps með háupplausn"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:83
 #, kde-format
 msgid "Force use of software OpenGL rendering"
-msgstr ""
+msgstr "Þvinga notkun á hugbúnaðar-OpenGL til myndgerðar"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:84
 #, kde-format
@@ -66519,6 +66449,12 @@ msgid ""
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
+"Til að allt gangi upp, krefst Google Maps lykils að API-kerfisviðmótinu sem "
+"endanotendur verða að nota til auðkenningar og kaupa á netinu. Án þessa "
+"lykils verður Google Maps etir sem áður nothæft, en þá með yfirlagsborða sem "
+"á stendur \"For Development Only\". Til að sjá nánari upplýsingar um þetta, "
+"ættirðu að skoða <a href='https://mapsplatform.google.com/pricing/'>Google-"
+"síðuna</a> um notkunarsvið, aðferðir og verð."
 
 #: core/utilities/setup/setupicc.cpp:178
 #, kde-format

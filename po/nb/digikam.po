@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-22 01:56+0000\n"
+"POT-Creation-Date: 2024-01-25 01:33+0000\n"
 "PO-Revision-Date: 2022-05-29 19:42+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1093,9 +1093,9 @@ msgid "Aperture/Focal:"
 msgstr "Blender/brennvidde:"
 
 #: core/app/items/utils/tooltipfiller.cpp:234
-#: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:213
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
+#: core/libs/video/osd/frameosd.cpp:212
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
 #: core/utilities/import/items/importtooltipfiller.cpp:184
 #, kde-format
@@ -1178,7 +1178,7 @@ msgid "digiKam Properties"
 msgstr "digiKam-egenskaper"
 
 #: core/app/items/utils/tooltipfiller.cpp:457
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:219
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:228
 #, kde-format
 msgid "Album:"
 msgstr "Album:"
@@ -10763,11 +10763,11 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
 #: core/dplugins/generic/webservices/google/gswindow.cpp:359
 #: core/dplugins/generic/webservices/google/gswindow.cpp:400
-#: core/dplugins/generic/webservices/google/gswindow.cpp:426
-#: core/dplugins/generic/webservices/google/gswindow.cpp:489
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1000
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1209
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1226
+#: core/dplugins/generic/webservices/google/gswindow.cpp:431
+#: core/dplugins/generic/webservices/google/gswindow.cpp:499
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1010
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1229
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1246
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:606
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:401
@@ -15531,6 +15531,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
 #, kde-format
 msgid "Target File"
 msgstr ""
@@ -16508,7 +16509,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:115
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -16642,7 +16643,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -16729,7 +16730,7 @@ msgid "Theme Parameters"
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "Utskriftsinnstillinger"
@@ -17235,152 +17236,7 @@ msgctxt "@title"
 msgid "Effect"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:304
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image file name"
-msgstr ""
-
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:305
-#, kde-format
-msgctxt "@info"
-msgid "Show the image file name at the bottom of the screen."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:307
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image creation date"
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:308
-#, kde-format
-msgctxt "@info"
-msgid "Show the image creation time/date at the bottom of the screen."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:310
-#, kde-format
-msgctxt "@option:check"
-msgid "Show camera aperture and focal length"
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:311
-#, kde-format
-msgctxt "@info"
-msgid "Show the camera aperture and focal length at the bottom of the screen."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:313
-#, kde-format
-msgctxt "@option:check"
-msgid "Show camera exposure and sensitivity"
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:314
-#, kde-format
-msgctxt "@info"
-msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:316
-#, kde-format
-msgctxt "@option:check"
-msgid "Show camera make and model"
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:317
-#, kde-format
-msgctxt "@info"
-msgid "Show the camera make and model at the bottom of the screen."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:319
-#, kde-format
-msgctxt "@option:check"
-msgid "Show camera lens model"
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:320
-#, kde-format
-msgctxt "@info"
-msgid "Show the camera lens model at the bottom of the screen."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:322
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image caption"
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:323
-#, kde-format
-msgctxt "@info"
-msgid "Show the image caption at the bottom of the screen."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:325
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image title"
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:326
-#, kde-format
-msgctxt "@info"
-msgid "Show the image title at the bottom of the screen."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:328
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image caption if it has not title"
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:329
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Show the image caption at the bottom of the screen if no titles existed."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:331
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image rating"
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:332
-#, kde-format
-msgctxt "@info"
-msgid "Show the digiKam image rating at the bottom of the screen."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:334
-#, kde-format
-msgctxt "@option:check"
-msgid "Show image tags"
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:335
-#, kde-format
-msgctxt "@info"
-msgid "Show the digiKam image tag names at the bottom of the screen."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:337
-#, kde-format
-msgctxt "@option"
-msgid "On Screen Display Font:"
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:338
-#, kde-format
-msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
-msgstr ""
-
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:354
 #, kde-format
 msgctxt "@title: On Screen Display"
 msgid "OSD"
@@ -19003,13 +18859,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:148
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
 #, kde-format
 msgid "Destination folder:"
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:154
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:240
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -19075,7 +18931,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
@@ -19557,7 +19413,7 @@ msgid "Welcome to Email Tool"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
@@ -19598,32 +19454,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:124
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:127
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
 #, kde-format
 msgid "%1 input images to process"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:175
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:180
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:185
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:190
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr ""
@@ -19655,36 +19511,46 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:90
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
 #, kde-format
 msgid "Media Container Format:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:93
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:102
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
+#, kde-format
+msgid "Open in Player:"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:145
+#, kde-format
+msgid "Output"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:104
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
 #, kde-format
 msgid "Equalization Strength:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:108
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:113
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -19693,23 +19559,28 @@ msgid ""
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:124
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
+#, kde-format
+msgid "Frames Normalization"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
 #, kde-format
 msgid "Soundtrack File:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:130
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:133
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:198
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:138
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -19718,14 +19589,19 @@ msgid ""
 "media.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:160
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
 #, kde-format
-msgid "The video output file name will be generated automatically."
+msgid "Audio Track"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
-msgid "Open in Player:"
+msgid "On Screen Display"
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:244
+#, kde-format
+msgid "The video output file name will be generated automatically."
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:84
@@ -19736,10 +19612,12 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:87
 #, kde-format
 msgid ""
-"This value repeat one image in the sequence. While creating timelapse; it's "
-"usual to use 1. Typically, the number of frames will determine the time to "
-"show the same frame in the video. The result will depend of the number of "
-"frames per second used to encode the media."
+"This value repeat one image in the sequence.\n"
+"While creating timelapse; it's usual to use 1.\n"
+"Typically, the number of frames will determine\n"
+"the time to show the same frame in the video.\n"
+"The result will depend of the number of frames\n"
+"per second used to encode the media."
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:96
@@ -19789,23 +19667,23 @@ msgstr ""
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:68
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:67
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:76
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
 #, kde-format
 msgid "Video Settings"
 msgstr "Videoinnstillinger"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:82
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
 #, kde-format
 msgid "Generating Video Slideshow"
 msgstr ""
@@ -20142,7 +20020,7 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:154
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:155
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
@@ -21196,7 +21074,7 @@ msgid "Start upload to Box"
 msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:490
+#: core/dplugins/generic/webservices/google/gswindow.cpp:500
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, kde-format
 msgctxt "@info"
@@ -21205,13 +21083,13 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:508
-#: core/dplugins/generic/webservices/google/gswindow.cpp:538
-#: core/dplugins/generic/webservices/google/gswindow.cpp:952
-#: core/dplugins/generic/webservices/google/gswindow.cpp:973
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1071
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1264
+#: core/dplugins/generic/webservices/google/gswindow.cpp:518
+#: core/dplugins/generic/webservices/google/gswindow.cpp:548
+#: core/dplugins/generic/webservices/google/gswindow.cpp:962
+#: core/dplugins/generic/webservices/google/gswindow.cpp:983
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1031
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1081
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1284
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:669
@@ -21222,8 +21100,8 @@ msgid "Warning"
 msgstr "Advarsel"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:509
-#: core/dplugins/generic/webservices/google/gswindow.cpp:539
+#: core/dplugins/generic/webservices/google/gswindow.cpp:519
+#: core/dplugins/generic/webservices/google/gswindow.cpp:549
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -21232,12 +21110,12 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:512
-#: core/dplugins/generic/webservices/google/gswindow.cpp:542
-#: core/dplugins/generic/webservices/google/gswindow.cpp:957
-#: core/dplugins/generic/webservices/google/gswindow.cpp:978
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1027
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1269
+#: core/dplugins/generic/webservices/google/gswindow.cpp:522
+#: core/dplugins/generic/webservices/google/gswindow.cpp:552
+#: core/dplugins/generic/webservices/google/gswindow.cpp:967
+#: core/dplugins/generic/webservices/google/gswindow.cpp:988
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1037
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1289
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:674
@@ -21249,12 +21127,12 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:513
-#: core/dplugins/generic/webservices/google/gswindow.cpp:543
-#: core/dplugins/generic/webservices/google/gswindow.cpp:958
-#: core/dplugins/generic/webservices/google/gswindow.cpp:979
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1028
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1270
+#: core/dplugins/generic/webservices/google/gswindow.cpp:523
+#: core/dplugins/generic/webservices/google/gswindow.cpp:553
+#: core/dplugins/generic/webservices/google/gswindow.cpp:968
+#: core/dplugins/generic/webservices/google/gswindow.cpp:989
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1038
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1290
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -21266,7 +21144,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:382
-#: core/dplugins/generic/webservices/google/gswindow.cpp:620
+#: core/dplugins/generic/webservices/google/gswindow.cpp:630
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -22515,7 +22393,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:171
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:150
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:151
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:152
 #, kde-format
 msgid "Destination"
 msgstr ""
@@ -22605,7 +22483,7 @@ msgid "Start download from Google Photos service"
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:360
-#: core/dplugins/generic/webservices/google/gswindow.cpp:427
+#: core/dplugins/generic/webservices/google/gswindow.cpp:432
 #, kde-format
 msgctxt "@info"
 msgid "Google Photos call failed: %1\n"
@@ -22617,19 +22495,19 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:628
+#: core/dplugins/generic/webservices/google/gswindow.cpp:638
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:634
+#: core/dplugins/generic/webservices/google/gswindow.cpp:644
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:953
+#: core/dplugins/generic/webservices/google/gswindow.cpp:963
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -22637,7 +22515,7 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:974
+#: core/dplugins/generic/webservices/google/gswindow.cpp:984
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -22645,13 +22523,13 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1001
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1011
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1022
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1032
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -22660,7 +22538,7 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1072
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1082
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -22669,13 +22547,13 @@ msgid ""
 "No image uploaded to your account."
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1077
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1087
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1210
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -22683,7 +22561,7 @@ msgid ""
 "%1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1227
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1247
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -22691,7 +22569,7 @@ msgid ""
 "%1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1265
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24266,7 +24144,7 @@ msgstr "Last på nytt"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:229
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
 #, kde-format
 msgid "Reload album list"
 msgstr "Oppdater albumliste"
@@ -24285,14 +24163,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:213
 #, kde-format
 msgid "Change Account"
 msgstr "Endre konto"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:264
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:273
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr ""
@@ -24343,7 +24221,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:528
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:143
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:144
 #: core/libs/models/abstractalbummodel.cpp:464
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
@@ -24701,7 +24579,7 @@ msgstr ""
 "nettleseren."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:80
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:139
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:140
 #, kde-format
 msgid "Account"
 msgstr "Konto"
@@ -24781,7 +24659,7 @@ msgid "Password for SmugMug album."
 msgstr "Passord for SmugMug-album."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
 #, kde-format
 msgid "New Album"
 msgstr "Nytt album"
@@ -32456,123 +32334,123 @@ msgctxt "Web Service: GPHOTO"
 msgid "Google Photo"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:148
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:149
 #, kde-format
 msgid "Max Dimension"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:175
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:176
 #, kde-format
 msgid "This is the list of images to upload to your %1 account."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:195
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:201
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:212
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr "Navn:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:206
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:215
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:216
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
 "downloaded."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
 #, kde-format
 msgid "Create new %1 folder"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:227
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
 "scaled down."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:249
 #, kde-format
 msgid "Original Size"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:241
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:250
 #, kde-format
 msgid "1600 px"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:242
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
 #, kde-format
 msgid "1440 px"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:243
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:252
 #, kde-format
 msgid "1280 px"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:253
 #, kde-format
 msgid "1152 px"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:245
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:254
 #, kde-format
 msgid "1024 px"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:257
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:266
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr "Disse innstillingene brukes på bildene før opplasting."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:269
 #, kde-format
 msgid "Upload original image file"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:267
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:276
 #, kde-format
 msgid "Write the photo ID to the source image"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:277
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:280
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:289
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:288
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:297
 #, kde-format
 msgid "JPEG Quality:"
 msgstr "JPEG-kvalitet:"
@@ -38845,487 +38723,487 @@ msgid ""
 "video."
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:496
+#: core/libs/video/manager/vidslidesettings.cpp:497
 #, kde-format
 msgctxt "Video Type: QVGA"
 msgid "QVGA - 320x180 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:497
+#: core/libs/video/manager/vidslidesettings.cpp:498
 #, kde-format
 msgctxt "Video Type: VCD1"
 msgid "VCD - 352x240 - 7:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:498
+#: core/libs/video/manager/vidslidesettings.cpp:499
 #, kde-format
 msgctxt "Video Type: VCD2"
 msgid "VCD - 352x288 - 6:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:499
+#: core/libs/video/manager/vidslidesettings.cpp:500
 #, kde-format
 msgctxt "Video Type: CVD1"
 msgid "CVD - 352x480 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:500
+#: core/libs/video/manager/vidslidesettings.cpp:501
 #, kde-format
 msgctxt "Video Type: CVD2"
 msgid "CVD - 352x576 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:501
+#: core/libs/video/manager/vidslidesettings.cpp:502
 #, kde-format
 msgctxt "Video Type: HVGA"
 msgid "HVGA - 480x270 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:502
+#: core/libs/video/manager/vidslidesettings.cpp:503
 #, kde-format
 msgctxt "Video Type: SVCD1"
 msgid "SVCD - 480x480 - 1:1"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:503
+#: core/libs/video/manager/vidslidesettings.cpp:504
 #, kde-format
 msgctxt "Video Type: SDTV1"
 msgid "SDTV - 528x480 - 11:10"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:504
+#: core/libs/video/manager/vidslidesettings.cpp:505
 #, kde-format
 msgctxt "Video Type: SDTV2"
 msgid "SDTV - 544x480 - 17:15"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:505
+#: core/libs/video/manager/vidslidesettings.cpp:506
 #, kde-format
 msgctxt "Video Type: EDTV1"
 msgid "EDTV - 544x576 - 17:18"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:506
+#: core/libs/video/manager/vidslidesettings.cpp:507
 #, kde-format
 msgctxt "Video Type: SVCD2"
 msgid "SVCD - 480x576 - 5:6"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:507
+#: core/libs/video/manager/vidslidesettings.cpp:508
 #, kde-format
 msgctxt "Video Type: EGA"
 msgid "EGA - 640x350 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:508
+#: core/libs/video/manager/vidslidesettings.cpp:509
 #, kde-format
 msgctxt "Video Type: VGA"
 msgid "VGA - 640x480 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:509
+#: core/libs/video/manager/vidslidesettings.cpp:510
 #, kde-format
 msgctxt "Video Type: SDTV3"
 msgid "SDTV - 704x480 - 22:15"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:510
+#: core/libs/video/manager/vidslidesettings.cpp:511
 #, kde-format
 msgctxt "Video Type: EDTV2"
 msgid "EDTV - 704x576 - 11:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:511
+#: core/libs/video/manager/vidslidesettings.cpp:512
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x480 - 3:2"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:512
+#: core/libs/video/manager/vidslidesettings.cpp:513
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x576 - 5:4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:513
+#: core/libs/video/manager/vidslidesettings.cpp:514
 #, kde-format
 msgctxt "Video Type: WVGA"
 msgid "WVGA - 800x450 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:514
+#: core/libs/video/manager/vidslidesettings.cpp:515
 #, kde-format
 msgctxt "Video Type: SVGA"
 msgid "SVGA - 800x600 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:515
+#: core/libs/video/manager/vidslidesettings.cpp:516
 #, kde-format
 msgctxt "Video Type: DVGA"
 msgid "DVGA - 960x640 - 3:2"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:516
+#: core/libs/video/manager/vidslidesettings.cpp:517
 #, kde-format
 msgctxt "Video Type: XVGA"
 msgid "XVGA - 1024x576 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:517
+#: core/libs/video/manager/vidslidesettings.cpp:518
 #, kde-format
 msgctxt "Video Type: HDTV"
 msgid "HDTV - 1280x720 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:518
+#: core/libs/video/manager/vidslidesettings.cpp:519
 #, kde-format
 msgctxt "Video Type: WXGA1"
 msgid "WXGA - 1280x768 - 5:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:519
+#: core/libs/video/manager/vidslidesettings.cpp:520
 #, kde-format
 msgctxt "Video Type: WXGA2"
 msgid "WXGA - 1280x800 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:520
+#: core/libs/video/manager/vidslidesettings.cpp:521
 #, kde-format
 msgctxt "Video Type: SXGA"
 msgid "SXGA - 1280x1024 - 5:4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:521
+#: core/libs/video/manager/vidslidesettings.cpp:522
 #, kde-format
 msgctxt "Video Type: SXGAPLUS"
 msgid "SXGAPLUS - 1400x1050 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:522
+#: core/libs/video/manager/vidslidesettings.cpp:523
 #, kde-format
 msgctxt "Video Type: WSXGA"
 msgid "WSXGA - 1440x900 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:523
+#: core/libs/video/manager/vidslidesettings.cpp:524
 #, kde-format
 msgctxt "Video Type: HDPLUS"
 msgid "HDPLUS - 1600x900 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:524
+#: core/libs/video/manager/vidslidesettings.cpp:525
 #, kde-format
 msgctxt "Video Type: WSXGAPLUS"
 msgid "WSXGAPLUS - 1680x1050 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:525
+#: core/libs/video/manager/vidslidesettings.cpp:526
 #, kde-format
 msgctxt "Video Type: UXGA"
 msgid "UXGA - 1600x1200 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:526
+#: core/libs/video/manager/vidslidesettings.cpp:527
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:527
+#: core/libs/video/manager/vidslidesettings.cpp:528
 #, kde-format
 msgctxt "Video Type: WUXGA"
 msgid "WUXGA - 1920x1200 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:528
+#: core/libs/video/manager/vidslidesettings.cpp:529
 #, kde-format
 msgctxt "Video Type: TXGA"
 msgid "TXGA - 1920x1440 - 7:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:529
+#: core/libs/video/manager/vidslidesettings.cpp:530
 #, kde-format
 msgctxt "Video Type: QXGA"
 msgid "QXGA - 2048x1536 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:530
+#: core/libs/video/manager/vidslidesettings.cpp:531
 #, kde-format
 msgctxt "Video Type: UWFHD"
 msgid "UWFHD - 2560x1080 - 21:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:531
+#: core/libs/video/manager/vidslidesettings.cpp:532
 #, kde-format
 msgctxt "Video Type: WQHD"
 msgid "WQHD - 2560x1440 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:532
+#: core/libs/video/manager/vidslidesettings.cpp:533
 #, kde-format
 msgctxt "Video Type: WQXGA"
 msgid "WQXGA - 2560x1600 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:533
+#: core/libs/video/manager/vidslidesettings.cpp:534
 #, kde-format
 msgctxt "Video Type: QSXGA"
 msgid "QSXGA - 2560x2048 - 5:4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:534
+#: core/libs/video/manager/vidslidesettings.cpp:535
 #, kde-format
 msgctxt "Video Type: QSXGAPLUS"
 msgid "QSXGAPLUS - 2800x2100 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:535
+#: core/libs/video/manager/vidslidesettings.cpp:536
 #, kde-format
 msgctxt "Video Type: WQXGAPLUS"
 msgid "WQXGAPLUS - 3200x1800 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:536
+#: core/libs/video/manager/vidslidesettings.cpp:537
 #, kde-format
 msgctxt "Video Type: WQSXGA"
 msgid "WQSXGA - 3200x2048 - 25:16"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:537
+#: core/libs/video/manager/vidslidesettings.cpp:538
 #, kde-format
 msgctxt "Video Type: QUXGA"
 msgid "QUXGA - 3200x2400 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:538
+#: core/libs/video/manager/vidslidesettings.cpp:539
 #, kde-format
 msgctxt "Video Type: UHD4K"
 msgid "UHD4K - 3840x2160 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:539
+#: core/libs/video/manager/vidslidesettings.cpp:540
 #, kde-format
 msgctxt "Video Type: WQUXGA"
 msgid "WQUXGA - 3840x2400 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:540
+#: core/libs/video/manager/vidslidesettings.cpp:541
 #, kde-format
 msgctxt "Video Type: HXGA"
 msgid "HXGA - 4096x3072 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:541
+#: core/libs/video/manager/vidslidesettings.cpp:542
 #, kde-format
 msgctxt "Video Type: UHD5K"
 msgid "UHD5K - 5120x2880 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:542
+#: core/libs/video/manager/vidslidesettings.cpp:543
 #, kde-format
 msgctxt "Video Type: WHXGA"
 msgid "WHXGA - 5120x3200 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:543
+#: core/libs/video/manager/vidslidesettings.cpp:544
 #, kde-format
 msgctxt "Video Type: HSXGA"
 msgid "HSXGA - 5120x4096 - 5:4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:544
+#: core/libs/video/manager/vidslidesettings.cpp:545
 #, kde-format
 msgctxt "Video Type: UHD6K"
 msgid "UHD6K - 6016x3384 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:545
+#: core/libs/video/manager/vidslidesettings.cpp:546
 #, kde-format
 msgctxt "Video Type: WHSXGA"
 msgid "WHSXGA - 6400x4096 - 25:16"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:546
+#: core/libs/video/manager/vidslidesettings.cpp:547
 #, kde-format
 msgctxt "Video Type: HUXGA"
 msgid "HUXGA - 6400x4800 - 4:3"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:547
+#: core/libs/video/manager/vidslidesettings.cpp:548
 #, kde-format
 msgctxt "Video Type: UHD8K"
 msgid "UHD8K - 7680x4320 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:548
+#: core/libs/video/manager/vidslidesettings.cpp:549
 #, kde-format
 msgctxt "Video Type: WHUXGA"
 msgid "WHUXGA - 7680x4800 - 8:5"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:549
+#: core/libs/video/manager/vidslidesettings.cpp:550
 #, kde-format
 msgctxt "Video Type: UW10K"
 msgid "UW10K - 10240x4320 - 21:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:550
+#: core/libs/video/manager/vidslidesettings.cpp:551
 #, kde-format
 msgctxt "Video Type: UW16K"
 msgid "UW16K - 15360x8640 - 16:9"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:773
+#: core/libs/video/manager/vidslidesettings.cpp:774
 #, kde-format
 msgctxt "Video Bit Rate 400000"
 msgid "400k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:774
+#: core/libs/video/manager/vidslidesettings.cpp:775
 #, kde-format
 msgctxt "Video Bit Rate 500000"
 msgid "500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:775
+#: core/libs/video/manager/vidslidesettings.cpp:776
 #, kde-format
 msgctxt "Video Bit Rate 1000000"
 msgid "1000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:776
+#: core/libs/video/manager/vidslidesettings.cpp:777
 #, kde-format
 msgctxt "Video Bit Rate 1200000"
 msgid "1200k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:777
+#: core/libs/video/manager/vidslidesettings.cpp:778
 #, kde-format
 msgctxt "Video Bit Rate 1500000"
 msgid "1500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:778
+#: core/libs/video/manager/vidslidesettings.cpp:779
 #, kde-format
 msgctxt "Video Bit Rate 2000000"
 msgid "2000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:779
+#: core/libs/video/manager/vidslidesettings.cpp:780
 #, kde-format
 msgctxt "Video Bit Rate 2500000"
 msgid "2500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:780
+#: core/libs/video/manager/vidslidesettings.cpp:781
 #, kde-format
 msgctxt "Video Bit Rate 3000000"
 msgid "3000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:781
+#: core/libs/video/manager/vidslidesettings.cpp:782
 #, kde-format
 msgctxt "Video Bit Rate 4000000"
 msgid "4000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:782
+#: core/libs/video/manager/vidslidesettings.cpp:783
 #, kde-format
 msgctxt "Video Bit Rate 4500000"
 msgid "4500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:783
+#: core/libs/video/manager/vidslidesettings.cpp:784
 #, kde-format
 msgctxt "Video Bit Rate 5000000"
 msgid "5000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:784
+#: core/libs/video/manager/vidslidesettings.cpp:785
 #, kde-format
 msgctxt "Video Bit Rate 6000000"
 msgid "6000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:785
+#: core/libs/video/manager/vidslidesettings.cpp:786
 #, kde-format
 msgctxt "Video Bit Rate 8000000"
 msgid "8000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:794
+#: core/libs/video/manager/vidslidesettings.cpp:795
 #, kde-format
 msgctxt "Video Standard PAL"
 msgid "PAL - 25 FPS"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:795
+#: core/libs/video/manager/vidslidesettings.cpp:796
 #, kde-format
 msgctxt "Video Standard NTSC"
 msgid "NTSC - 29.97 FPS"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:807
+#: core/libs/video/manager/vidslidesettings.cpp:808
 #, kde-format
 msgctxt "Video Codec X264"
 msgid "High Quality H.264 AVC/MPEG-4 AVC"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:808
+#: core/libs/video/manager/vidslidesettings.cpp:809
 #, kde-format
 msgctxt "Video Codec MPEG4"
 msgid "DivX/XVid/MPEG-4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:809
+#: core/libs/video/manager/vidslidesettings.cpp:810
 #, kde-format
 msgctxt "Video Codec MPEG2"
 msgid "MPEG-2 Video"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:826
+#: core/libs/video/manager/vidslidesettings.cpp:827
 #, kde-format
 msgctxt "Video Standard AVI"
 msgid "AVI - Audio Video Interleave"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:827
+#: core/libs/video/manager/vidslidesettings.cpp:828
 #, kde-format
 msgctxt "Video Standard MKV"
 msgid "MKV - Matroska"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:828
+#: core/libs/video/manager/vidslidesettings.cpp:829
 #, kde-format
 msgctxt "Video Standard MP4"
 msgid "MP4 - MPEG-4"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:829
+#: core/libs/video/manager/vidslidesettings.cpp:830
 #, kde-format
 msgctxt "Video Standard MPG"
 msgid "MPG - MPEG-2"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:838
+#: core/libs/video/manager/vidslidesettings.cpp:839
 #, kde-format
 msgctxt "Video Effect NOPLAYER"
 msgid "None"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:839
+#: core/libs/video/manager/vidslidesettings.cpp:840
 #, kde-format
 msgctxt "Video Standard INTERNAL"
 msgid "Internal"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:840
+#: core/libs/video/manager/vidslidesettings.cpp:841
 #, kde-format
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/libs/video/manager/vidslidetask.cpp:183
+#: core/libs/video/manager/vidslidetask.cpp:195
 #, kde-format
 msgid "Generating frames from %1 Done"
 msgstr ""
@@ -39348,6 +39226,151 @@ msgstr ""
 #: core/libs/video/manager/vidslidethread.cpp:137
 #, kde-format
 msgid "Error while encoding frames!"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:58
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image file name"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:59
+#, kde-format
+msgctxt "@info"
+msgid "Show the image file name at the bottom of the screen."
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:61
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image creation date"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:62
+#, kde-format
+msgctxt "@info"
+msgid "Show the image creation time/date at the bottom of the screen."
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:64
+#, kde-format
+msgctxt "@option:check"
+msgid "Show camera aperture and focal length"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:65
+#, kde-format
+msgctxt "@info"
+msgid "Show the camera aperture and focal length at the bottom of the screen."
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:67
+#, kde-format
+msgctxt "@option:check"
+msgid "Show camera exposure and sensitivity"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:68
+#, kde-format
+msgctxt "@info"
+msgid "Show the camera exposure and sensitivity at the bottom of the screen."
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:70
+#, kde-format
+msgctxt "@option:check"
+msgid "Show camera make and model"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:71
+#, kde-format
+msgctxt "@info"
+msgid "Show the camera make and model at the bottom of the screen."
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:73
+#, kde-format
+msgctxt "@option:check"
+msgid "Show camera lens model"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:74
+#, kde-format
+msgctxt "@info"
+msgid "Show the camera lens model at the bottom of the screen."
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:76
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image caption"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:77
+#, kde-format
+msgctxt "@info"
+msgid "Show the image caption at the bottom of the screen."
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:79
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image title"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:80
+#, kde-format
+msgctxt "@info"
+msgid "Show the image title at the bottom of the screen."
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:82
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image caption if it has not title"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:83
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Show the image caption at the bottom of the screen if no titles existed."
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:85
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image rating"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:86
+#, kde-format
+msgctxt "@info"
+msgid "Show the digiKam image rating at the bottom of the screen."
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:88
+#, kde-format
+msgctxt "@option:check"
+msgid "Show image tags"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:89
+#, kde-format
+msgctxt "@info"
+msgid "Show the digiKam image tag names at the bottom of the screen."
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:91
+#, kde-format
+msgctxt "@option"
+msgid "On Screen Display Font:"
+msgstr ""
+
+#: core/libs/video/osd/frameosdwidget.cpp:92
+#, kde-format
+msgctxt "@info"
+msgid "Select here the font used to display text in the MJPEG."
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
