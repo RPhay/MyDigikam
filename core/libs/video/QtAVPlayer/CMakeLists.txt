@@ -49,7 +49,7 @@ set(libqtavplayer_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/qavvideooutputfilter.cpp
 )
 
-if(DirectX_D3D11_FOUND)
+if(WIN32)
 
     set(libqtavplayer_SRCS ${libqtavplayer_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_d3d11.cpp
