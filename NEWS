@@ -199,7 +199,7 @@ BUGFIXES:
 177 ==> 475478 - digiKam 8.1.0 crash on startup.
 178 ==> 462810 - Video preview audio only plays once. Clicking on a different video results in no sound at all until DigiKam is restarted.
 179 ==> 479401 - Sound-off when playing videos in Slideshow.
-180 ==> 
+180 ==> 480373 - Systematic IOT Crash at startup when scanning for new elements.
 181 ==> 
 182 ==> 
 183 ==> 

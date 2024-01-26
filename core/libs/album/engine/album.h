@@ -22,11 +22,11 @@
 #include <QMap>
 #include <QUrl>
 #include <QList>
+#include <QMutex>
 #include <QString>
 #include <QVector>
 #include <QObject>
 #include <QMetaType>
-#include <QReadWriteLock>
 
 // Local includes
 
@@ -333,7 +333,7 @@ private:
     QMap<const void*, void*> m_extraMap;
 
     QVector<Album*>          m_childCache;
-    mutable QReadWriteLock   m_cacheLock;
+    mutable QMutex           m_cacheLock;
 
     Type                     m_type;
 
