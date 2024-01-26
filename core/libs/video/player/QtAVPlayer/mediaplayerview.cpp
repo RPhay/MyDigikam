@@ -204,6 +204,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->playerView     = new QFrame(this);
     d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     d->playerView->setLineWidth(1);
+    d->playerView->installEventFilter(this);
 
     d->videoWidget    = new DVideoWidget(this);
 
