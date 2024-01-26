@@ -1346,7 +1346,7 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
 
         QByteArray xmpPreview(data.toBase64());
 
-        if (xmpPreview.size() < 65535)
+        if (xmpPreview.size() < 62000)
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Set XMP image preview with:"
                                             << xmpPreview.size() << "bytes";
