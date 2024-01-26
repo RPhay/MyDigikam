@@ -76,8 +76,6 @@ public:
     QLabel*              tlabel           = nullptr;
 
     DHBox*               indicator        = nullptr;
-
-    int                  videoOrientation = 0;
 };
 
 SlideVideo::SlideVideo(QWidget* const parent)
@@ -183,25 +181,25 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
         {
-            d->videoOrientation = 90;
+            d->videoWidget->setVideoItemOrientation(90);
             break;
         }
 
         case MetaEngine::ORIENTATION_ROT_180:
         {
-            d->videoOrientation = 180;
+            d->videoWidget->setVideoItemOrientation(180);
             break;
         }
 
         case MetaEngine::ORIENTATION_ROT_270:
         {
-            d->videoOrientation = 270;
+            d->videoWidget->setVideoItemOrientation(270);
             break;
         }
 
         default:
         {
-            d->videoOrientation = 0;
+            d->videoWidget->setVideoItemOrientation(0);
             break;
         }
     }
@@ -219,22 +217,9 @@ void SlideVideo::showIndicator(bool b)
 
 void SlideVideo::slotPlayerStateChanged(QAVPlayer::State newState)
 {
-    if      (newState == QAVPlayer::PlayingState)
+    if (newState == QAVPlayer::PlayingState)
     {
-/*FIXME
-        int rotate = 0;
-
-#if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
-
-        // fix wrong rotation from QtAV git/master
-
-        rotate     = d->videoWidget->player()->statistics().video_only.rotate;
-
-#endif
-        d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtAV:"
-                                     << d->videoOrientation;
-*/
+        // Nothing to do.
     }
 }
 
@@ -251,6 +236,20 @@ void SlideVideo::slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus)
 
         case QAVPlayer::LoadedMedia:
         {
+            int rotate = d->videoWidget->videoMediaOrientation();
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Video orientation from QtAVPlayer:"
+                                         << rotate;
+
+            rotate     = (-rotate) + d->videoWidget->videoItemOrientation();
+
+            if ((rotate > 270) || (rotate < 0))
+            {
+                rotate = d->videoWidget->videoItemOrientation();
+            }
+
+            d->videoWidget->setVideoItemOrientation(rotate);
+
             Q_EMIT signalVideoLoaded(true);
 
             break;
