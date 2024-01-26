@@ -13,6 +13,9 @@ Bundles        : Windows installer use frameworks Qt 6.6.1 and KDE snapshot 3012
 General        : Update internal Libraw to 0.21.2 (https://www.libraw.org/news/libraw-0-21-2-release).
 Setup          : Add new page to customize Geolocation settings.
 VideoSlideshow : Rewrite tool to use FFmpeg CLI tool to encode images to video with soundtrack and OSD support.
+Preview        : Preview and Slideshow of video is now rendered with Qt6::Multimedia and Qt5::QtAVPlayer.
+                 Older and unmaintained QtAV framework code used in digiKam core is fully removed.
+                 Both Qt6::Multimedia and Qt5::QtAVPlayer are based and compatible to FFMpeg API 5 and later.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -183,15 +186,15 @@ BUGFIXES:
 164 ==> 479833 - Some .xmp files are not taken in account during a maintenance metadata check run.
 165 ==> 480324 - The Programm crash when I type in the name for a person in the box that is shown when I hover over the face.
 166 ==> 480334 - digiKam crash on name input (face recognition).
-167 ==> 
-168 ==> 
-169 ==> 
-170 ==> 
-171 ==> 
-172 ==> 
-173 ==> 
-174 ==> 
-175 ==> 
+167 ==> 468572 - Webm vp9 video not playing.
+168 ==> 382582 - Video stutters when played with MP3 audio track.
+169 ==> 435660 - Strange crashes when previewing .MOV files.
+170 ==> 471199 - digiKam 8.0.0 crash in QtAV::Widgets::registerRenderers() on startup.
+171 ==> 478314 - Crash when click on video (QtAV player).
+172 ==> 445422 - digiKam not compliant with pipewire jack library.
+173 ==> 448681 - digiKam uses abandoned library incompatible with ffmpeg 5.0.
+174 ==> 477031 - Audio does not play on videos in digiKam, plays everywhere else.
+175 ==> 478613 - Sound not working with Flatpak.
 176 ==> 
 177 ==> 
 178 ==> 
