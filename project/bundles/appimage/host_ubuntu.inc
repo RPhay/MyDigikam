@@ -203,6 +203,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libcanberra-dev"
                    "libgcrypt11-dev"
                    "wayland-protocols"
+                   "libasound2-dev"
                   )
 
 
