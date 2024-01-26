@@ -326,7 +326,7 @@ void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
     {
         int rotate = d->videoWidget->videoMediaOrientation();
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtAVPlayer:"
                                      << rotate;
 
         rotate     = (-rotate) + d->videoWidget->videoItemOrientation();
@@ -607,22 +607,6 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     setPreviewMode(Private::PlayerView);
     d->videoWidget->player()->seek(10);
     d->videoWidget->player()->play();
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Video Metadata from" << d->currentItem.toLocalFile();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "---";
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Video Streams Available:" << d->videoWidget->player()->availableVideoStreams().count();
-
-    Q_FOREACH (const QAVStream& vstream, d->videoWidget->player()->availableVideoStreams())
-    {
-        QMap<QString, QString> vals = vstream.metadata();
-
-        for (QMap<QString, QString>::const_iterator it = vals.constBegin() ; it != vals.constEnd() ; ++it)
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << it.key() << it.value();
-        }
-    }
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "---";
 }
 
 void MediaPlayerView::slotPositionChanged(qint64 position)
