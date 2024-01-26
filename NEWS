@@ -195,9 +195,9 @@ BUGFIXES:
 173 ==> 448681 - digiKam uses abandoned library incompatible with ffmpeg 5.0.
 174 ==> 477031 - Audio does not play on videos in digiKam, plays everywhere else.
 175 ==> 478613 - Sound not working with Flatpak.
-176 ==> 
-177 ==> 
-178 ==> 
+176 ==> 437328 - digiKam crashes when a playback of video is started.
+177 ==> 475478 - digiKam 8.1.0 crash on startup.
+178 ==> 462810 - Video preview audio only plays once. Clicking on a different video results in no sound at all until DigiKam is restarted.
 179 ==> 
 180 ==> 
 181 ==> 
