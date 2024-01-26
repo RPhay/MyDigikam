@@ -102,6 +102,8 @@ if(ENABLE_MEDIAPLAYER)
                                                                    "-framework VideoToolbox"
                                                                    "-framework AudioToolbox"
                                                                    "-framework CoreFoundation"
+                                                                   "-framework Metal"
+                                                                   "-framework IOSurface"
                                                                    "-framework VideoDecodeAcceleration"
                 )
 
