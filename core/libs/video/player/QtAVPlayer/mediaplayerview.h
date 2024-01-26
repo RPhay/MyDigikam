@@ -63,6 +63,7 @@ private Q_SLOTS:
     void slotPlayerStateChanged(QAVPlayer::State newState);
     void slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus);
     void slotHandlePlayerError(QAVPlayer::Error err, const QString&);
+    void slotNativeSizeChanged();
     void slotThemeChanged();
 
     /// Slidebar slots
@@ -78,6 +79,10 @@ private:
 
     int  previewMode();
     void setPreviewMode(int mode);
+
+protected:
+
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
 private:
 

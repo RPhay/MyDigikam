@@ -19,73 +19,15 @@
 #include <QList>
 #include <QMutex>
 #include <QMutexLocker>
+#include <QVBoxLayout>
 #include <QAbstractVideoSurface>
-#include <QVideoRendererControl>
 #include <QVideoSurfaceFormat>
-#include <QMediaService>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QGraphicsVideoItem>
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN VideoRenderer : public QVideoRendererControl
-{
-public:
-
-    QAbstractVideoSurface* surface() const override
-    {
-        return m_surface;
-    }
-
-    void setSurface(QAbstractVideoSurface* surface) override
-    {
-        m_surface = surface;
-    }
-
-    QAbstractVideoSurface* m_surface = nullptr;
-};
-
-// -------------------------------------------------------
-
-class Q_DECL_HIDDEN MediaService : public QMediaService
-{
-public:
-
-    MediaService(VideoRenderer* const vr, QObject* const parent = nullptr)
-        : QMediaService(parent),
-          m_renderer   (vr)
-    {
-    }
-
-    QMediaControl* requestControl(const char* name) override
-    {
-        if (qstrcmp(name, QVideoRendererControl_iid) == 0)
-        {
-            return m_renderer;
-        }
-
-        return nullptr;
-    }
-
-    void releaseControl(QMediaControl*) override
-    {
-    }
-
-    VideoRenderer* m_renderer = nullptr;
-};
-
-// --------------------------------------------------------
-
-class Q_DECL_HIDDEN MediaObject : public QMediaObject
-{
-public:
-
-    explicit MediaObject(VideoRenderer* const vr, QObject* const parent = nullptr)
-        : QMediaObject(parent, new MediaService(vr, parent))
-    {
-    }
-};
-
-// --------------------------------------------------------
 
 class Q_DECL_HIDDEN DVideoWidget::Private
 {
@@ -94,25 +36,41 @@ public:
 
     Private() = default;
 
-    VideoRenderer*  videoRender = nullptr;
-    MediaObject*    mediaObject = nullptr;
-    QAVPlayer*      player      = nullptr;
-    QAVAudioOutput* audioOutput = nullptr;
+    QGraphicsScene*      videoScene         = nullptr;
+    QGraphicsView*       videoView          = nullptr;
+    QGraphicsVideoItem*  videoItem          = nullptr;
 
-    QVideoFrame     videoFrame;
-    QMutex          mutex;
+    QAVPlayer*           player             = nullptr;
+    QAVAudioOutput*      audioOutput        = nullptr;
+
+    QVideoFrame          videoFrame;
+    QMutex               mutex;
+
+    int                  videoOrientation   = 0;
 };
 
-DVideoWidget::DVideoWidget(QWidget* const /*parent*/)
-    : QVideoWidget(),
-      d           (new Private)
+DVideoWidget::DVideoWidget(QWidget* const parent)
+    : QFrame(parent),
+      d     (new Private)
 {
     setMouseTracking(true);
+    setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
+    setLineWidth(1);
 
-    d->videoRender = new VideoRenderer;
+    d->videoScene  = new QGraphicsScene(this);
+    d->videoView   = new QGraphicsView(d->videoScene);
+    d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
+    d->videoItem   = new QGraphicsVideoItem();
+    d->videoScene->addItem(d->videoItem);
+    d->videoItem->setAspectRatioMode(Qt::IgnoreAspectRatio);
+    d->videoView->setMouseTracking(true);
 
-    d->mediaObject = new MediaObject(d->videoRender);
-    setMediaObject(d->mediaObject);
+    QVBoxLayout* const vbox2 = new QVBoxLayout(this);
+    vbox2->addWidget(d->videoView);
+    vbox2->setContentsMargins(QMargins(0, 0, 0, 9));
+    vbox2->setSpacing(0);
 
     d->player      = new QAVPlayer(this);
 
@@ -129,7 +87,6 @@ DVideoWidget::DVideoWidget(QWidget* const /*parent*/)
 
 DVideoWidget::~DVideoWidget()
 {
-    setMediaObject(nullptr);
     delete d;
 }
 
@@ -150,11 +107,6 @@ QVideoFrame DVideoWidget::videoFrame() const
     return d->videoFrame;
 }
 
-bool DVideoWidget::setMediaObject(QMediaObject* object)
-{
-    return QVideoWidget::setMediaObject(object);
-}
-
 void DVideoWidget::slotAudioFrame(const QAVAudioFrame& frame)
 {
     d->audioOutput->play(frame);
@@ -162,7 +114,7 @@ void DVideoWidget::slotAudioFrame(const QAVAudioFrame& frame)
 
 void DVideoWidget::slotVideoFrame(const QAVVideoFrame& frame)
 {
-    if (!d->videoRender->m_surface)
+    if (!d->videoItem->videoSurface())
     {
         return;
     }
@@ -174,17 +126,17 @@ void DVideoWidget::slotVideoFrame(const QAVVideoFrame& frame)
     }
 
     if (
-        !d->videoRender->m_surface->isActive() ||
-        (d->videoRender->m_surface->surfaceFormat().frameSize() != d->videoFrame.size())
+        !d->videoItem->videoSurface()->isActive() ||
+        (d->videoItem->videoSurface()->surfaceFormat().frameSize() != d->videoFrame.size())
        )
     {
         QVideoSurfaceFormat f(d->videoFrame.size(), d->videoFrame.pixelFormat(), d->videoFrame.handleType());
-        d->videoRender->m_surface->start(f);
+        d->videoItem->videoSurface()->start(f);
     }
 
-    if (d->videoRender->m_surface->isActive())
+    if (d->videoItem->videoSurface()->isActive())
     {
-         d->videoRender->m_surface->present(d->videoFrame);
+         d->videoItem->videoSurface()->present(d->videoFrame);
     }
 
     Q_EMIT positionChanged(d->player->position());
@@ -210,6 +162,64 @@ int DVideoWidget::videoMediaOrientation() const
     }
 
     return orientation;
+}
+
+void DVideoWidget::adjustVideoSize()
+{
+    d->videoItem->resetTransform();
+
+    QSizeF nativeSize    = d->videoItem->nativeSize();
+    int mediaOrientation = videoMediaOrientation();
+
+    if ((nativeSize.width()  < 1.0) ||
+        (nativeSize.height() < 1.0))
+    {
+        return;
+    }
+
+    if ((mediaOrientation == 90) ||
+        (mediaOrientation == 270))
+    {
+        nativeSize.transpose();
+    }
+
+    double ratio = (nativeSize.width() /
+                    nativeSize.height());
+
+    if (d->videoView->width() > d->videoView->height())
+    {
+        QSizeF vsize(d->videoView->height() * ratio,
+                     d->videoView->height());
+        d->videoItem->setSize(vsize);
+    }
+    else
+    {
+        QSizeF vsize(d->videoView->width(),
+                     d->videoView->width() / ratio);
+        d->videoItem->setSize(vsize);
+    }
+
+    d->videoView->setSceneRect(0, 0, d->videoItem->size().width(),
+                                     d->videoItem->size().height());
+
+    QPointF center = d->videoItem->boundingRect().center();
+    d->videoItem->setTransformOriginPoint(center);
+    d->videoItem->setRotation(d->videoOrientation);
+
+    d->videoView->fitInView(d->videoItem, Qt::KeepAspectRatio);
+    d->videoView->centerOn(d->videoItem);
+    d->videoView->raise();
+}
+
+void DVideoWidget::setVideoItemOrientation(int orientation)
+{
+    d->videoOrientation = orientation;
+    adjustVideoSize();
+}
+
+int DVideoWidget::videoItemOrientation() const
+{
+    return d->videoOrientation;
 }
 
 } // namespace Digikam

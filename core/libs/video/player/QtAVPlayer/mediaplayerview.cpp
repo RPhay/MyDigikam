@@ -161,7 +161,6 @@ public:
     QLabel*              tlabel             = nullptr;
     QUrl                 currentItem;
 
-    int                  videoOrientation   = 0;
     qint64               capturePosition    = 0;
     qint64               sliderTime         = 0;
 
@@ -325,19 +324,21 @@ void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
 {
     if      (newState == QAVPlayer::PlayingState)
     {
-/*FIXME
-        int rotate = 0;
+        int rotate = d->videoWidget->videoMediaOrientation();
 
-        // fix wrong rotation from QtAV git/master
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
+                                     << rotate;
 
-        rotate     = d->videoWidget->player()->statistics().video_only.rotate;
+        rotate     = (-rotate) + d->videoWidget->videoItemOrientation();
 
-        d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtAV:"
-                                     << d->videoOrientation;
-*/
+        if ((rotate > 270) || (rotate < 0))
+        {
+            rotate = d->videoWidget->videoItemOrientation();
+        }
+
+        d->videoWidget->setVideoItemOrientation(rotate);
+
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
-
     }
     else if (newState == QAVPlayer::PausedState)
     {
@@ -390,12 +391,13 @@ void MediaPlayerView::slotEscapePressed()
 
 void MediaPlayerView::slotRotateVideo()
 {
-/*FIXME
-    if (d->videoWidget->player()->isPlaying())
+    qCDebug(DIGIKAM_GENERAL_LOG) << "slotRotateVideo";
+
+    if (d->videoWidget->player()->state() != QAVPlayer::PlayingState)
     {
         int orientation = 0;
 
-        switch (d->videoWidget->orientation())
+        switch (d->videoWidget->videoItemOrientation())
         {
             case 0:
             {
@@ -422,9 +424,8 @@ void MediaPlayerView::slotRotateVideo()
             }
         }
 
-        d->videoWidget->setOrientation(orientation);
+        d->videoWidget->setVideoItemOrientation(orientation);
     }
-*/
 }
 
 void MediaPlayerView::slotPausePlay()
@@ -547,6 +548,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 {
     d->prevAction->setEnabled(hasPrevious);
     d->nextAction->setEnabled(hasNext);
+    d->videoWidget->adjustVideoSize();
 
     if (url.isEmpty())
     {
@@ -580,25 +582,25 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
         {
-            d->videoOrientation = 90;
+            d->videoWidget->setVideoItemOrientation(90);
             break;
         }
 
         case MetaEngine::ORIENTATION_ROT_180:
         {
-            d->videoOrientation = 180;
+            d->videoWidget->setVideoItemOrientation(180);
             break;
         }
 
         case MetaEngine::ORIENTATION_ROT_270:
         {
-            d->videoOrientation = 270;
+            d->videoWidget->setVideoItemOrientation(270);
             break;
         }
 
         default:
         {
-            d->videoOrientation = 0;
+            d->videoWidget->setVideoItemOrientation(0);
             break;
         }
     }
@@ -693,6 +695,21 @@ void MediaPlayerView::slotHandlePlayerError(QAVPlayer::Error /*err*/, const QStr
 {
     setPreviewMode(Private::ErrorView);
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtAVPlayer Error: " << message;
+}
+
+void MediaPlayerView::slotNativeSizeChanged()
+{
+    d->videoWidget->adjustVideoSize();
+}
+
+bool MediaPlayerView::eventFilter(QObject* watched, QEvent* event)
+{
+    if ((watched == d->playerView) && (event->type() == QEvent::Resize))
+    {
+        d->videoWidget->adjustVideoSize();
+    }
+
+    return QStackedWidget::eventFilter(watched, event);
 }
 
 } // namespace Digikam

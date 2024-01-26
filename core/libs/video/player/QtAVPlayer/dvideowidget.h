@@ -18,7 +18,7 @@
 // Qt includes
 
 #include <QMediaObject>
-#include <QVideoWidget>
+#include <QFrame>
 #include <QVideoFrame>
 
 // QtAVPlayer includes
@@ -31,7 +31,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN DVideoWidget : public QVideoWidget
+class Q_DECL_HIDDEN DVideoWidget : public QFrame
 {
     Q_OBJECT
 
@@ -43,9 +43,13 @@ public:
     QAVPlayer*      player()      const;
     QAVAudioOutput* audioOutput() const;
     QVideoFrame videoFrame()      const;
+
     int videoMediaOrientation()   const;
 
-    bool setMediaObject(QMediaObject* object) override;
+    void setVideoItemOrientation(int orientation);
+    int videoItemOrientation()    const;
+
+    void adjustVideoSize();
 
 Q_SIGNALS:
 
