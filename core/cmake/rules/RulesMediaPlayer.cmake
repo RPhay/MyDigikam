@@ -103,23 +103,15 @@ if(ENABLE_MEDIAPLAYER)
 
             # --- Windows config ---
 
-            if(DIRECTX_FOUND)
+            if(DirectX_D3D11_FOUND)
 
                 set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${DIRECT3D_LIBRARIES})
 
-                if(DirectX_D3D11_FOUND)
-
-                    message(STATUS "MediaPlayer will be compiled with Direct3D11 support : yes")
-
-                else()
-
-                    message(STATUS "MediaPlayer will be compiled with Direct3D11 support : no")
-
-                endif()
+                message(STATUS "MediaPlayer will be compiled with Direct3D11 support : yes")
 
             else()
 
-                message(STATUS "MediaPlayer will be compiled with Direct3D11 support : no")
+                    message(STATUS "MediaPlayer will be compiled with Direct3D11 support : no")
 
             endif()
 
