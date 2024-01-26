@@ -198,7 +198,7 @@ BUGFIXES:
 176 ==> 437328 - digiKam crashes when a playback of video is started.
 177 ==> 475478 - digiKam 8.1.0 crash on startup.
 178 ==> 462810 - Video preview audio only plays once. Clicking on a different video results in no sound at all until DigiKam is restarted.
-179 ==> 
+179 ==> 479401 - Sound-off when playing videos in Slideshow.
 180 ==> 
 181 ==> 
 182 ==> 
