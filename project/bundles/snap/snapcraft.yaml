@@ -151,9 +151,6 @@ parts:
         - libxslt1-dev
         - libxml2-dev
         - libglib2.0-dev
-        - liblqr-1-0-dev
-        - libqtav-dev
-        - libmarble-dev
         build-snaps:
         - ffmpeg-2204-sdk
         stage-packages:
@@ -165,14 +162,11 @@ parts:
         - libjpeg8
         - libjpeg-turbo8
         - liblensfun1
-        - liblqr-1-0
         - libltdl7
         - libtbb2
         - libwlocate0
         - libshp2
         - libx265-199
-        - libqtav1
-        - libmarblewidget-qt5-28
         - libxerces-c3.2
         - liburiparser1
         - libsz2
