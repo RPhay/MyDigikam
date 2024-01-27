@@ -16,10 +16,6 @@
 
 #include "album.h"
 
-// Qt includes
-
-#include <QMutexLocker>
-
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -74,7 +70,7 @@ Album* Album::parent() const
 
 Album* Album::firstChild() const
 {
-    QMutexLocker locker(&m_cacheLock);
+    QReadLocker locker(&m_cacheLock);
 
     if (m_childCache.isEmpty())
     {
@@ -86,7 +82,7 @@ Album* Album::firstChild() const
 
 Album* Album::lastChild() const
 {
-    QMutexLocker locker(&m_cacheLock);
+    QReadLocker locker(&m_cacheLock);
 
     if (m_childCache.isEmpty())
     {
@@ -103,7 +99,7 @@ Album* Album::next() const
         return nullptr;
     }
 
-    QMutexLocker locker(&m_parent->m_cacheLock);
+    QReadLocker locker(&m_parent->m_cacheLock);
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
@@ -122,7 +118,7 @@ Album* Album::prev() const
         return nullptr;
     }
 
-    QMutexLocker locker(&m_parent->m_cacheLock);
+    QReadLocker locker(&m_parent->m_cacheLock);
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
@@ -136,7 +132,7 @@ Album* Album::prev() const
 
 Album* Album::childAtRow(int row) const
 {
-    QMutexLocker locker(&m_cacheLock);
+    QReadLocker locker(&m_cacheLock);
 
     if ((row < 0) || (row >= m_childCache.size()))
     {
@@ -150,7 +146,7 @@ AlbumList Album::childAlbums(bool recursive)
 {
     AlbumList childList;
 
-    QMutexLocker locker(&m_cacheLock);
+    QReadLocker locker(&m_cacheLock);
 
     QVector<Album*>::const_iterator it = m_childCache.constBegin();
 
@@ -192,7 +188,7 @@ void Album::insertChild(Album* const child)
         return;
     }
 
-    QMutexLocker locker(&m_cacheLock);
+    QWriteLocker locker(&m_cacheLock);
 
     m_childCache.append(child);
 }
@@ -204,7 +200,7 @@ void Album::removeChild(Album* const child)
         return;
     }
 
-    QMutexLocker locker(&m_cacheLock);
+    QWriteLocker locker(&m_cacheLock);
 
     m_childCache.removeOne(child);
 }
@@ -214,7 +210,7 @@ void Album::clear()
     QList<Album*> albumsToDelete;
 
     {
-        QMutexLocker locker(&m_cacheLock);
+        QWriteLocker locker(&m_cacheLock);
 
         while (!m_childCache.isEmpty())
         {
@@ -266,7 +262,7 @@ int Album::id() const
 
 int Album::childCount() const
 {
-    QMutexLocker locker(&m_cacheLock);
+    QReadLocker locker(&m_cacheLock);
 
     return m_childCache.count();
 }
@@ -278,7 +274,7 @@ int Album::rowFromAlbum() const
         return 0;
     }
 
-    QMutexLocker locker(&m_parent->m_cacheLock);
+    QReadLocker locker(&m_parent->m_cacheLock);
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
