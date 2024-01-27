@@ -1013,29 +1013,31 @@ void AdvPrintPhotoPage::slotListPhotoSizesSelected()
 
                 s->m_layouts.append(new QRect(0, 0, (int)sizeManaged.width(),
                                               (int)sizeManaged.height()));
-                s->m_autoRotate  = custDlg->m_autorotate->isChecked();
-                s->m_label       = item->text();
-                s->m_dpi         = 0;
-                int nColumns     = int(size.width()  / width);
-                int nRows        = int(size.height() / height);
-                int spareWidth   = int(size.width()) % int(width);
+                s->m_autoRotate   = custDlg->m_autorotate->isChecked();
+                s->m_label        = item->text();
+                s->m_dpi          = 0;
+                int nColumns      = int(size.width()  / width);
+                int nRows         = int(size.height() / height);
+                double spareWidth = int(size.width() * scaleValue) % int(width * scaleValue);
+                spareWidth       /= scaleValue;
 
                 // check if there's no room left to separate photos
 
-                if ((nColumns > 1) && (spareWidth == 0))
+                if ((nColumns > 1) && (spareWidth == 0.0))
                 {
                     nColumns  -= 1;
                     spareWidth = width;
                 }
 
-                int spareHeight = int(size.height()) % int(height);
+                double spareHeight = int(size.height() * scaleValue) % int(height * scaleValue);
+                spareHeight       /= scaleValue;
 
                 // check if there's no room left to separate photos
 
-                if ((nRows > 1) && (spareHeight == 0))
+                if ((nRows > 1) && (spareHeight == 0.0))
                 {
                     nRows      -= 1;
-                    spareHeight = int(height);
+                    spareHeight = height;
                 }
 
                 if ((nRows > 0) && (nColumns > 0))
