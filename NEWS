@@ -202,8 +202,8 @@ BUGFIXES:
 180 ==> 480373 - Systematic IOT Crash at startup when scanning for new elements.
 181 ==> 149386 - digiKam avi video transfer problem.
 182 ==> 094185 - Video extensions are not taken into account in import/browse actions.
-183 ==> 
-184 ==> 
+183 ==> 092859 - Cannot download .avi movies from camera.
+184 ==> 097702 - Can't load AVI from Powershot S400 and Workaround.
 185 ==> 
 186 ==> 
 187 ==> 
