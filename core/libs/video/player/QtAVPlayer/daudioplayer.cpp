@@ -86,6 +86,7 @@ void DAudioPlayer::play()
 void DAudioPlayer::stop()
 {
     d->player->stop();
+    d->player->setSource(QString());
 }
 
 void DAudioPlayer::setSource(const QUrl& url)
