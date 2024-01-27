@@ -67,7 +67,7 @@ endif()
 
 if(ENABLE_MEDIAPLAYER)
 
-    set(_extra_deps ${_extra_deps} ${QTAV_LIBRARIES})
+    set(_extra_deps ${_extra_deps} ${MEDIAPLAYER_LIBRARIES})
 
 endif()
 

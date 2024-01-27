@@ -22,7 +22,7 @@ if(HAVE_MEDIAPLAYER)
 
     else()
 
-        set(QTMEDIA_BACKEND ${QTAV_LIBRARIES})
+        set(QTMEDIA_BACKEND ${MEDIAPLAYER_LIBRARIES})
 
     endif()
 

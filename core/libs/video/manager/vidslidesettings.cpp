@@ -802,7 +802,7 @@ QMap<VidSlideSettings::VidCodec, QString> VidSlideSettings::videoCodecNames()
 {
     QMap<VidCodec, QString> codecs;
 
-    // NOTE: Some video codecs are currently disabled due to QtAV incompatibility
+    // NOTE: Some video codecs are currently disabled due to incompatibility
     //       with bits rate, frames rate, or video sizes. This need some investiguations.
 
     codecs[X264]    = i18nc("Video Codec X264",    "High Quality H.264 AVC/MPEG-4 AVC");

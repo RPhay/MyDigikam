@@ -10,7 +10,7 @@ include(MacroDPlugins)
 
 if(HAVE_MEDIAPLAYER)
 
-    set(QTMEDIA_BACKEND ${QTAV_LIBRARIES})
+    set(QTMEDIA_BACKEND ${MEDIAPLAYER_LIBRARIES})
 
 endif()
 

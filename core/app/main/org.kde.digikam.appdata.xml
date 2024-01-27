@@ -171,7 +171,7 @@
     <p>
         digiKam can handle raw files, and the application uses the excellent LibRaw library for decoding raw files. The library is actively
         maintained and regularly updated to include support for the latest camera models.
-        digiKam can also manage video files for cataloging purpose, and the application uses the couple FFmpeg and QtAv libraries to extract
+        digiKam can also manage video files for cataloging purpose, and the application uses the FFmpeg backends to extract
         metadata and play media.
     </p>
     <p xml:lang="ar">يمكن لدجيكام التعامل مع الملفات الخام ، ويستخدم التطبيق مكتبة LibRaw الممتازة لفك تشفير الملفات الخام. تتم صيانة المكتبة بشكل نشط وتحديثها بانتظام لتشمل دعمًا لأحدث طرازات الكاميرا. يمكن لدجيكام أيضًا إدارة ملفات الفيديو لغرض الفهرسة ، ويستخدم التطبيق مكتبتي FFmpeg و QtAv لاستخراج البيانات الوصفية وتشغيل الوسائط. </p>

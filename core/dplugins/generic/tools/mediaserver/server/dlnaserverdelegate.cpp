@@ -718,7 +718,7 @@ NPT_Result DLNAMediaServerDelegate::ServeFile(const NPT_HttpRequest&        requ
     if (dimg.isNull())
     {
         // Not a supported image format. Try to stream file as well, without transcoding.
-        // TODO : support video file as transcoded video stream using QtAV (if possible).
+        // TODO : support video file as transcoded video stream using ffmpeg (if possible).
 
         qCDebug(DIGIKAM_MEDIASRV_LOG) << file_path.GetChars() << "not recognized as an image to stream as preview.";
 

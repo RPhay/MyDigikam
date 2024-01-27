@@ -449,26 +449,26 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
         # Filter internal 3rd party library paths to not share with the rest of codes
 
-        string(REGEX MATCH "libjpeg/"          _item_libjpeg ${var})
-        string(REGEX MATCH "webservices/o2/"   _item_libo2   ${var})
-        string(REGEX MATCH "extra/dng_sdk"     _item_libdng  ${var})
-        string(REGEX MATCH "extra/md5"         _item_libmd5  ${var})
-        string(REGEX MATCH "extra/xmp_sdk"     _item_libxmp  ${var})
-        string(REGEX MATCH "pgfutils/libpgf"   _item_libpgf  ${var})
-        string(REGEX MATCH "rawengine/libraw/" _item_libraw  ${var})
-        string(REGEX MATCH "/QtAVPlayer"       _item_qtav    ${var})
-        string(REGEX MATCH "/qtmm"             _item_qtmm    ${var})
+        string(REGEX MATCH "libjpeg/"          _item_libjpeg    ${var})
+        string(REGEX MATCH "webservices/o2/"   _item_libo2      ${var})
+        string(REGEX MATCH "extra/dng_sdk"     _item_libdng     ${var})
+        string(REGEX MATCH "extra/md5"         _item_libmd5     ${var})
+        string(REGEX MATCH "extra/xmp_sdk"     _item_libxmp     ${var})
+        string(REGEX MATCH "pgfutils/libpgf"   _item_libpgf     ${var})
+        string(REGEX MATCH "rawengine/libraw/" _item_libraw     ${var})
+        string(REGEX MATCH "/QtAVPlayer"       _item_qtavplayer ${var})
+        string(REGEX MATCH "/qtmm"             _item_qtmm       ${var})
 
         if(
-           _item_libjpeg STREQUAL "" AND
-           _item_libo2   STREQUAL "" AND
-           _item_libdng  STREQUAL "" AND
-           _item_libmd5  STREQUAL "" AND
-           _item_libxmp  STREQUAL "" AND
-           _item_libpgf  STREQUAL "" AND
-           _item_libraw  STREQUAL "" AND
-           _item_qtav    STREQUAL "" AND
-           _item_qtmm    STREQUAL ""
+           _item_libjpeg    STREQUAL "" AND
+           _item_libo2      STREQUAL "" AND
+           _item_libdng     STREQUAL "" AND
+           _item_libmd5     STREQUAL "" AND
+           _item_libxmp     STREQUAL "" AND
+           _item_libpgf     STREQUAL "" AND
+           _item_libraw     STREQUAL "" AND
+           _item_qtavplayer STREQUAL "" AND
+           _item_qtmm       STREQUAL ""
           )
 
             list(APPEND DK_LOCAL_INCLUDES ${var})

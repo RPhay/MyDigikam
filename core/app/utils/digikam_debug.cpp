@@ -69,13 +69,6 @@ Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_WARN,           "digikam.mediaserver.war
 Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_CRITICAL,       "digikam.mediaserver.critical",     QtWarningMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_FATAL,          "digikam.mediaserver.fatal",        QtCriticalMsg)
 
-Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG,                    "digikam.qtav",                     QtInfoMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG_INFO,               "digikam.qtav.info",                QtInfoMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG_WARN,               "digikam.qtav.warn",                QtWarningMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG_CRITICAL,           "digikam.qtav.critical",            QtWarningMsg)
-
-Q_LOGGING_CATEGORY(DIGIKAM_AVPLAYER_LOG,                "digikam.avplayer",                 QtInfoMsg)
-
 void digikamSetDebugFilterRules(bool on)
 {
     if (on)
