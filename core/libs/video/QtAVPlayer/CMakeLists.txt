@@ -9,6 +9,7 @@ APPLY_COMMON_POLICIES()
 # The QtAVPlayer library does not adhere to the flags we use
 remove_definitions(
     -DQT_NO_KEYWORDS
+    -DQT_NO_CAST_FROM_ASCII
 )
 
 # QtAVPlater depencency rules are managed from top level by core/cmake/rules/RulesMediaPlayer.cmake
