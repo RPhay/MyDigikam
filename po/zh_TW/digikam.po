@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 01:33+0000\n"
+"POT-Creation-Date: 2024-01-27 01:35+0000\n"
 "PO-Revision-Date: 2024-01-05 21:39+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2930,7 +2930,7 @@ msgstr ""
 "版本：%3"
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/qtav/mediaplayerview.cpp:191
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:180
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:260
 #, kde-format
 msgctxt "go to previous image"
@@ -2938,7 +2938,7 @@ msgid "Back"
 msgstr "向後"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/qtav/mediaplayerview.cpp:193
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to next image"
@@ -2987,7 +2987,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:489
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -3077,7 +3077,7 @@ msgid "No Tags Album"
 msgstr "沒有標籤的相簿"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:558
+#: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -11326,7 +11326,7 @@ msgid "Saving changes -"
 msgstr "儲存變更中 -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:243
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
@@ -16105,7 +16105,6 @@ msgstr "為行事曆建立範本"
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
-#: core/libs/video/qtav/config/MiscPage.cpp:48
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
@@ -21380,27 +21379,27 @@ msgstr "投影片放映"
 msgid "Soundtrack:"
 msgstr "音樂"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:190
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:253
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:211
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:199
 #, fuzzy, kde-format
 #| msgid "No tool available"
 msgid "No detail available"
 msgstr "沒有可用的工具"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:244
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
 #, fuzzy, kde-format
 #| msgid "%1 is damaged and may not be playable."
 msgid "%1 may not be playable."
 msgstr "%1 是損壞的，可能無法播放。"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:252
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, fuzzy, kde-format
 #| msgid "This file is damaged and may not be playable."
 msgid "This file may not be playable."
@@ -23359,7 +23358,6 @@ msgstr ""
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:539
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:227
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:293
 #, fuzzy, kde-format
 #| msgid "Unknown filter"
 msgid "Unknown error"
@@ -26773,7 +26771,6 @@ msgstr ""
 "「%1」"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
-#: core/libs/video/qtav/config/MiscPage.cpp:89
 #, kde-format
 msgid "Abort"
 msgstr "放棄"
@@ -26929,38 +26926,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Raw 轉換"
 
-#: core/libs/album/engine/album.cpp:406
+#: core/libs/album/engine/album.cpp:410
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:757
+#: core/libs/album/engine/album.cpp:761
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "目前時間軸搜尋"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "目前的影像模糊搜尋"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:771
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "目前的模糊速寫搜尋"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:778
 #, kde-format
 msgid "Current Map Search"
 msgstr "目前的地圖搜尋"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Search"
 msgstr "目前搜尋"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "目前的重複項目搜尋"
@@ -39718,8 +39715,6 @@ msgid "&Icon:"
 msgstr "圖示(&I)："
 
 #: core/libs/tags/manager/tagpropwidget.cpp:134
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:93
-#: core/utilities/setup/setupvideo.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
@@ -41790,14 +41785,14 @@ msgctxt "@info"
 msgid "Select here the font used to display text in the MJPEG."
 msgstr "在這裡選擇樹狀檢視中顯示文字的字型。"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:195
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:197
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
@@ -41806,678 +41801,18 @@ msgctxt "capture video frame"
 msgid "Capture"
 msgstr "擷取"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:200
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:189
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:269
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "媒體播放程式發生一個錯誤...."
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:233
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:220
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
-
-#: core/libs/video/qtav/codec/AVDecoder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgid "No codec could be found for: "
-msgstr "視訊編碼器"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:473
-#: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:396
-#, fuzzy, kde-format
-msgid "Decoding surfaces"
-msgstr "辨認臉孔"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:474
-#, kde-format
-msgid "Decoder flags"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:476
-#, kde-format
-msgid "Performance: ZeroCopy > DirectCopy > GenericCopy"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:477
-#, kde-format
-msgid ""
-"ZeroCopy: no copy back from GPU to System memory. Directly render the "
-"decoded data on GPU"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:478
-#, kde-format
-msgid ""
-"DirectCopy: copy back to host memory but video frames and map to GL texture"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:479
-#, kde-format
-msgid "GenericCopy: copy back to host memory and each video frame"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:888
-#, fuzzy, kde-format
-#| msgid "Built-in transformation not supported"
-msgid "Codec %1 is not supported by CUDA"
-msgstr "不支援內建的變形"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:397
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:351
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:58
-#, fuzzy, kde-format
-#| msgid "No, auto"
-msgid "0: auto"
-msgstr "否，自動"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:378
-#, kde-format
-msgid ""
-"Skipping the loop filter (aka deblocking) usually has determinal effect on "
-"quality. However it provides a big speedup for hi definition streams"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:384
-#, kde-format
-msgid ""
-"Force skipping of idct to speed up decoding for frame types (-1=None, "
-"0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
-#, kde-format
-msgid "Force skipping frames for speed up decoding."
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:388
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
-#, kde-format
-msgid ""
-"Number of decoding threads. Set before open. Maybe no effect for some "
-"decoders"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:390
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:352
-#, kde-format
-msgid "1: single thread decoding"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
-#, kde-format
-msgid ""
-"ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
-#, kde-format
-msgid "Not implemented for all codecs"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:345
-#, kde-format
-msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:346
-#, kde-format
-msgid "GenericCopy: slowest. Generic cpu copy"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
-#, kde-format
-msgid "Multithread decoding may crash"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:389
-#, kde-format
-msgid "Decoding surfaces 0: auto"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:390
-#, kde-format
-msgid "Maybe faster"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:747
-#, kde-format
-msgid "VA API version %1.%2; Vendor: %3;"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:217
-#, kde-format
-msgid ""
-"Output pixel format from decoder. Performance (better first): NV12 ; UYVY ; "
-"BGRA ; YUV420P ; YUYV. OSX superior to 10.7 only supports UYVY, BGRA and "
-"YUV420p"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:222
-#, kde-format
-msgid "Interop with OpenGL"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:223
-#, kde-format
-msgid "CVPixelBuffer: macOS+iOS"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:224
-#, kde-format
-msgid "CVOpenGLES: iOS, no copy, fast"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:225
-#, kde-format
-msgid "IOSurface: macOS, no copy, fast"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:226
-#, kde-format
-msgid "Auto: choose the fastest"
-msgstr ""
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:47
-#, kde-format
-msgctxt "@option: video filter"
-msgid "Video"
-msgstr "影片"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:48
-#, fuzzy, kde-format
-#| msgid "Audio"
-msgctxt "@option: audio filter"
-msgid "Audio"
-msgstr "音效"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:53
-#, fuzzy, kde-format
-#| msgid "enabled"
-msgctxt "@option: enable filter"
-msgid "Enable %1"
-msgstr "已開啟"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:56
-#, fuzzy, kde-format
-#| msgid "Restore Tag Filters"
-msgctxt "@info"
-msgid "Registered %1 filters"
-msgstr "恢復標籤過濾器"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Parameters"
-msgctxt "@label"
-msgid "Parameters"
-msgstr "參數"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:50
-#, fuzzy, kde-format
-#| msgid "enabled"
-msgid "Enable"
-msgstr "已開啟"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:50
-#, kde-format
-msgid "options"
-msgstr "選項"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:52
-#, fuzzy, kde-format
-#| msgid "Reduce Texturing"
-msgid "Reduce buffering"
-msgstr "減少紋理"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:54
-#, fuzzy, kde-format
-#| msgid "Drop size:"
-msgid "Probe size"
-msgstr "水滴大小："
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:60
-#, kde-format
-msgid "Max analyze duration"
-msgstr ""
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:63
-#, kde-format
-msgid "0: auto. how many microseconds are analyzed to probe the input"
-msgstr ""
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Image tags"
-msgid "Extra"
-msgstr "影像標籤"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:74
-#, kde-format
-msgid "AVFormat"
-msgstr "AVFormat"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
-#, kde-format
-msgid "Browse"
-msgstr "瀏覽"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:64
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:126
-#, fuzzy, kde-format
-msgid "Save dir"
-msgstr "儲存於檔案"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action Save As New Version...Save in format..."
-#| msgid "Save in Format"
-msgid "Save format"
-msgstr "儲存格式"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:77
-#, fuzzy, kde-format
-msgid "Quality"
-msgstr "PGF 品質:"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Capture"
-msgid "Capture"
-msgstr "擷取"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Video Decoder Config Page"
-msgstr "視訊解碼器設定頁面"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:226
-#, kde-format
-msgctxt "@label"
-msgid "Decoder Priorities (reopen is required)"
-msgstr ""
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:289
-#, kde-format
-msgctxt "@action: go up in the list"
-msgid "Up"
-msgstr ""
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:295
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Download"
-msgctxt "@action: go down in the list"
-msgid "Down"
-msgstr "下載"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:315
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@title"
-msgid "Decoder"
-msgstr "視訊編碼器"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:42
-#, fuzzy, kde-format
-msgid "Preview Over Time-Slider"
-msgstr "預覽選項"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:48
-#, kde-format
-msgid "size"
-msgstr "大小"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:64
-#, kde-format
-msgid "Force fps"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:67
-#, kde-format
-msgid "Ignore"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:70
-#, fuzzy, kde-format
-msgid "Progress update interval"
-msgstr "顯示詳情進度對視窗"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:77
-#, fuzzy, kde-format
-#| msgid "Suriname"
-msgid "Buffer frames"
-msgstr "蘇利南"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:83
-#, fuzzy, kde-format
-#| msgid "Open the image editor."
-msgid "Timeout"
-msgstr "開啟影像編輯器。"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:83
-#, kde-format
-msgid "s"
-msgstr "秒"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:95
-#, kde-format
-msgid "OpenGL type"
-msgstr "OpenGL 類型"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:101
-#, kde-format
-msgid "Windows only"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:102
-#, kde-format
-msgid "OpenGLES is Used by DXVA Zero Copy"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:105
-#, kde-format
-msgid "D3D9 has performance if ZeroCopy is disabled or for software decoders"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:106
-#, kde-format
-msgid "RESTART REQUIRED"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:123
-#, kde-format
-msgid "Currently only works for Qt>=5.5 XCB build"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:130
-#, kde-format
-msgid "Misc"
-msgstr "其他"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:42
-#, fuzzy, kde-format
-#| msgid "enabled"
-msgctxt "@option: enable shader"
-msgid "Enable"
-msgstr "已開啟"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Intermediate Steps:"
-msgctxt "@option"
-msgid "Intermediate FBO"
-msgstr "中介步驟："
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:46
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader header"
-msgstr ""
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:52
-#, kde-format
-msgctxt "@info"
-msgid "Additional header code"
-msgstr ""
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:54
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader texel sample function"
-msgstr ""
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:62
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader RGB post process code"
-msgstr ""
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "light source"
-#| msgid "Shade"
-msgctxt "@title"
-msgid "Shader"
-msgstr "陰暗"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr ""
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
-#, fuzzy, kde-format
-#| msgid "Brightness:"
-msgctxt "@option"
-msgid "Brightness"
-msgstr "亮度："
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:69
-#, fuzzy, kde-format
-#| msgid "Contrast:"
-msgctxt "@option"
-msgid "Contrast"
-msgstr "對比："
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:70
-#, kde-format
-msgctxt "@option"
-msgid "Hue"
-msgstr "色相"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:71
-#, fuzzy, kde-format
-#| msgid "Saturation"
-msgctxt "@option"
-msgid "Saturation"
-msgstr "飽和度"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:90
-#, kde-format
-msgctxt "@option: global settings"
-msgid "Global"
-msgstr ""
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:697
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:737
-#, fuzzy, kde-format
-#| msgid "Loading metadata - %p%"
-msgid "error reading stream data"
-msgstr "載入中繼資料中 - %p%"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:976
-#, fuzzy, kde-format
-#| msgid "Parsing error: %1"
-msgid "seek error"
-msgstr "剖析錯誤：%1"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1307
-#, kde-format
-msgid "failed to open media"
-msgstr "開啟媒體失敗"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1333
-#, fuzzy, kde-format
-#| msgid "Failed to create file..."
-msgid "failed to find stream info"
-msgstr "建立檔案失敗..."
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1898
-#, kde-format
-msgid "interrupted by user"
-msgstr ""
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1909
-#, kde-format
-msgid "timeout"
-msgstr "逾時"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:160
-#, fuzzy, kde-format
-#| msgid "Export Tools"
-msgid "No error"
-msgstr "匯出工具"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:167
-#, kde-format
-msgid "Open error"
-msgstr "開啟失敗"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:174
-#, fuzzy, kde-format
-#| msgid "Open the image editor."
-msgid "Open timed out"
-msgstr "開啟影像編輯器。"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:181
-#, kde-format
-msgid "Parse stream timed out"
-msgstr ""
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:188
-#, kde-format
-msgid "Parse stream error"
-msgstr ""
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:195
-#, fuzzy, kde-format
-#| msgid "Collection not found"
-msgid "Stream not found"
-msgstr "沒有找到任何收藏"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:202
-#, kde-format
-msgid "Read packet timed out"
-msgstr ""
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Download New"
-msgid "Read error"
-msgstr "下載新項目"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:216
-#, fuzzy, kde-format
-#| msgid "Parsing error: %1"
-msgid "Seek error"
-msgstr "剖析錯誤：%1"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:223
-#, fuzzy, kde-format
-#| msgid "Parsing error: %1"
-msgid "Resource error"
-msgstr "剖析錯誤：%1"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:230
-#, fuzzy, kde-format
-#| msgid "Export Tools"
-msgid "Open codec error"
-msgstr "匯出工具"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:237
-#, fuzzy, kde-format
-#| msgid "Export Tools"
-msgid "Close codec error"
-msgstr "匯出工具"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:244
-#, kde-format
-msgid "Video codec not found"
-msgstr "找不到視訊編碼器"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:251
-#, fuzzy, kde-format
-#| msgid "Audio Compressor (Audio Codec)"
-msgid "Audio codec not found"
-msgstr "音效壓縮（音效編解碼器）"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:258
-#, fuzzy, kde-format
-#| msgid "Collection not found"
-msgid "Subtitle codec not found"
-msgstr "沒有找到任何收藏"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:265
-#, fuzzy, kde-format
-#| msgid "Export Tools"
-msgid "Codec error"
-msgstr "匯出工具"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:272
-#, fuzzy, kde-format
-#| msgid "Export Tools"
-msgid "Format error"
-msgstr "匯出工具"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:279
-#, fuzzy, kde-format
-#| msgid "Error"
-msgid "Network error"
-msgstr "錯誤"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:286
-#, fuzzy, kde-format
-#| msgid "Adjust Level"
-msgid "Access denied"
-msgstr "調整色階"
-
-#: core/libs/video/qtav/filter/LibAVFilter.cpp:357
-#, kde-format
-msgid "Options:"
-msgstr "選項："
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:220
-#, fuzzy, kde-format
-#| msgid "Profile Version"
-msgid "Build version"
-msgstr "描述檔版本"
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:232
-#, fuzzy, kde-format
-#| msgid "Profile Version"
-msgid "Runtime version"
-msgstr "描述檔版本"
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:267
-#, kde-format
-msgid "Multimedia framework based on Qt and FFmpeg.\n"
-msgstr ""
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:207
-#, fuzzy, kde-format
-msgid "About Qt"
-msgstr "關於"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "point has been set and is valid"
-#| msgid "Okay"
-msgid "Ok"
-msgstr "確定"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "About QtAV"
-msgstr "關於"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "About FFmpeg"
-msgstr "關於"
 
 #: core/libs/widgets/combo/dcombobox.cpp:61
 #: core/libs/widgets/range/dnuminput.cpp:71
@@ -51431,7 +50766,7 @@ msgstr "裝飾(&D)"
 msgid "Effec&ts"
 msgstr "效果"
 
-#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:194
+#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:162
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -51505,14 +50840,14 @@ msgid ""
 "save images</i></qt>"
 msgstr "<qt>儲存影像檔設定值<br/><i>設定影像儲存的預設組態設定</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
+#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:216
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "地理位置"
 
-#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
+#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:217
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid ""
@@ -68132,13 +67467,13 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "資料庫"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68148,13 +67483,13 @@ msgstr ""
 "資料庫設定\n"
 "自訂資料庫設定值"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "收藏"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
@@ -68165,13 +67500,13 @@ msgid ""
 "Set root albums locations"
 msgstr "<qt>收藏設定值<br/><i>設定相簿和資料庫的位置</i></qt>"
 
-#: core/utilities/setup/setup.cpp:211
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "檢視"
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68181,13 +67516,13 @@ msgstr ""
 "應用程式檢視設定值\n"
 "自訂各個檢視的外觀"
 
-#: core/utilities/setup/setup.cpp:216
+#: core/utilities/setup/setup.cpp:184
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "工具提示"
 
-#: core/utilities/setup/setup.cpp:217
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68197,29 +67532,13 @@ msgstr ""
 "項目工具提示設定\n"
 "自訂項目工具提示中的資訊"
 
-#: core/utilities/setup/setup.cpp:223
-#, kde-format
-msgctxt "@title: settings section"
-msgid "Video"
-msgstr "影片"
-
-#: core/utilities/setup/setup.cpp:224
-#, kde-format
-msgctxt "@title"
-msgid ""
-"Video Preview Settings\n"
-"Customize settings to play video media"
-msgstr ""
-"影片預覽設定\n"
-"調整播放影片媒體的設定"
-
-#: core/utilities/setup/setup.cpp:230
+#: core/utilities/setup/setup.cpp:189
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "中繼資料"
 
-#: core/utilities/setup/setup.cpp:231
+#: core/utilities/setup/setup.cpp:190
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -68230,13 +67549,13 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr "<qt>內嵌的影像資訊管理<br/><i>自訂影像和中繼資料之間的關聯</i></qt>"
 
-#: core/utilities/setup/setup.cpp:235
+#: core/utilities/setup/setup.cpp:194
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "範本"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68246,13 +67565,13 @@ msgstr ""
 "中繼資料範本\n"
 "管理您的中繼資料範本收藏"
 
-#: core/utilities/setup/setup.cpp:240
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "影像編輯器"
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68262,13 +67581,13 @@ msgstr ""
 "影像編輯器設定\n"
 "自訂影像編輯器設定值"
 
-#: core/utilities/setup/setup.cpp:245
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "色彩管理"
 
-#: core/utilities/setup/setup.cpp:246
+#: core/utilities/setup/setup.cpp:205
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68278,13 +67597,13 @@ msgstr ""
 "色彩管理設定\n"
 "自訂色彩管理設定值"
 
-#: core/utilities/setup/setup.cpp:250
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "數位光桌"
 
-#: core/utilities/setup/setup.cpp:251
+#: core/utilities/setup/setup.cpp:210
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -68295,14 +67614,14 @@ msgid ""
 "Customize tool used to compare items"
 msgstr "<qt>數位光桌設定值<br/><i>用於比較影像的自訂工具</i></qt>"
 
-#: core/utilities/setup/setup.cpp:264
+#: core/utilities/setup/setup.cpp:223
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "影像品質排序器"
 
-#: core/utilities/setup/setup.cpp:265
+#: core/utilities/setup/setup.cpp:224
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -68312,13 +67631,13 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr "<qt>影像編輯器設定值<br/><i>自訂影像編輯器行為</i></qt>"
 
-#: core/utilities/setup/setup.cpp:269
+#: core/utilities/setup/setup.cpp:228
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "相機"
 
-#: core/utilities/setup/setup.cpp:270
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68328,13 +67647,13 @@ msgstr ""
 "相機設定\n"
 "管理您的相機裝置"
 
-#: core/utilities/setup/setup.cpp:277
+#: core/utilities/setup/setup.cpp:236
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "外掛程式"
 
-#: core/utilities/setup/setup.cpp:278
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68344,13 +67663,13 @@ msgstr ""
 "外掛程式設定\n"
 "設定哪些外掛程式會可以從應用程式中使用"
 
-#: core/utilities/setup/setup.cpp:282
+#: core/utilities/setup/setup.cpp:241
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: core/utilities/setup/setup.cpp:283
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69296,17 +68615,343 @@ msgstr "相簿項目"
 msgid "Import Items"
 msgstr "匯入項目"
 
-#: core/utilities/setup/setupvideo.cpp:74
-#, kde-format
-msgctxt "@info"
-msgid "Press this button to reset all video settings to the default values."
-msgstr "按下此按鈕來將所有視訊設定都重設為預設值。"
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgid "No codec could be found for: "
+#~ msgstr "視訊編碼器"
 
-#: core/utilities/setup/setupvideo.cpp:132
-#, kde-format
-msgctxt "@info"
-msgid "Do you want to reset all video settings to the default value?"
-msgstr "您確定要將所有視訊設定都重設為預設值嗎？"
+#, fuzzy
+#~ msgid "Decoding surfaces"
+#~ msgstr "辨認臉孔"
+
+#, fuzzy
+#~| msgid "Built-in transformation not supported"
+#~ msgid "Codec %1 is not supported by CUDA"
+#~ msgstr "不支援內建的變形"
+
+#, fuzzy
+#~| msgid "No, auto"
+#~ msgid "0: auto"
+#~ msgstr "否，自動"
+
+#~ msgctxt "@option: video filter"
+#~ msgid "Video"
+#~ msgstr "影片"
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgctxt "@option: audio filter"
+#~ msgid "Audio"
+#~ msgstr "音效"
+
+#, fuzzy
+#~| msgid "enabled"
+#~ msgctxt "@option: enable filter"
+#~ msgid "Enable %1"
+#~ msgstr "已開啟"
+
+#, fuzzy
+#~| msgid "Restore Tag Filters"
+#~ msgctxt "@info"
+#~ msgid "Registered %1 filters"
+#~ msgstr "恢復標籤過濾器"
+
+#, fuzzy
+#~| msgctxt "@title:tab"
+#~| msgid "Parameters"
+#~ msgctxt "@label"
+#~ msgid "Parameters"
+#~ msgstr "參數"
+
+#, fuzzy
+#~| msgid "enabled"
+#~ msgid "Enable"
+#~ msgstr "已開啟"
+
+#~ msgid "options"
+#~ msgstr "選項"
+
+#, fuzzy
+#~| msgid "Reduce Texturing"
+#~ msgid "Reduce buffering"
+#~ msgstr "減少紋理"
+
+#, fuzzy
+#~| msgid "Drop size:"
+#~ msgid "Probe size"
+#~ msgstr "水滴大小："
+
+#, fuzzy
+#~| msgctxt "@option:check"
+#~| msgid "Image tags"
+#~ msgid "Extra"
+#~ msgstr "影像標籤"
+
+#~ msgid "AVFormat"
+#~ msgstr "AVFormat"
+
+#~ msgid "Browse"
+#~ msgstr "瀏覽"
+
+#, fuzzy
+#~ msgid "Save dir"
+#~ msgstr "儲存於檔案"
+
+#, fuzzy
+#~| msgctxt "@action Save As New Version...Save in format..."
+#~| msgid "Save in Format"
+#~ msgid "Save format"
+#~ msgstr "儲存格式"
+
+#, fuzzy
+#~ msgid "Quality"
+#~ msgstr "PGF 品質:"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Capture"
+#~ msgid "Capture"
+#~ msgstr "擷取"
+
+#~ msgctxt "@title:window"
+#~ msgid "Video Decoder Config Page"
+#~ msgstr "視訊解碼器設定頁面"
+
+#, fuzzy
+#~| msgctxt "@title:menu"
+#~| msgid "Download"
+#~ msgctxt "@action: go down in the list"
+#~ msgid "Down"
+#~ msgstr "下載"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@title"
+#~ msgid "Decoder"
+#~ msgstr "視訊編碼器"
+
+#, fuzzy
+#~ msgid "Preview Over Time-Slider"
+#~ msgstr "預覽選項"
+
+#~ msgid "size"
+#~ msgstr "大小"
+
+#, fuzzy
+#~ msgid "Progress update interval"
+#~ msgstr "顯示詳情進度對視窗"
+
+#, fuzzy
+#~| msgid "Suriname"
+#~ msgid "Buffer frames"
+#~ msgstr "蘇利南"
+
+#, fuzzy
+#~| msgid "Open the image editor."
+#~ msgid "Timeout"
+#~ msgstr "開啟影像編輯器。"
+
+#~ msgid "s"
+#~ msgstr "秒"
+
+#~ msgid "OpenGL type"
+#~ msgstr "OpenGL 類型"
+
+#~ msgid "Misc"
+#~ msgstr "其他"
+
+#, fuzzy
+#~| msgid "enabled"
+#~ msgctxt "@option: enable shader"
+#~ msgid "Enable"
+#~ msgstr "已開啟"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Intermediate Steps:"
+#~ msgctxt "@option"
+#~ msgid "Intermediate FBO"
+#~ msgstr "中介步驟："
+
+#, fuzzy
+#~| msgctxt "light source"
+#~| msgid "Shade"
+#~ msgctxt "@title"
+#~ msgid "Shader"
+#~ msgstr "陰暗"
+
+#, fuzzy
+#~| msgid "Brightness:"
+#~ msgctxt "@option"
+#~ msgid "Brightness"
+#~ msgstr "亮度："
+
+#, fuzzy
+#~| msgid "Contrast:"
+#~ msgctxt "@option"
+#~ msgid "Contrast"
+#~ msgstr "對比："
+
+#~ msgctxt "@option"
+#~ msgid "Hue"
+#~ msgstr "色相"
+
+#, fuzzy
+#~| msgid "Saturation"
+#~ msgctxt "@option"
+#~ msgid "Saturation"
+#~ msgstr "飽和度"
+
+#, fuzzy
+#~| msgid "Loading metadata - %p%"
+#~ msgid "error reading stream data"
+#~ msgstr "載入中繼資料中 - %p%"
+
+#, fuzzy
+#~| msgid "Parsing error: %1"
+#~ msgid "seek error"
+#~ msgstr "剖析錯誤：%1"
+
+#~ msgid "failed to open media"
+#~ msgstr "開啟媒體失敗"
+
+#, fuzzy
+#~| msgid "Failed to create file..."
+#~ msgid "failed to find stream info"
+#~ msgstr "建立檔案失敗..."
+
+#~ msgid "timeout"
+#~ msgstr "逾時"
+
+#, fuzzy
+#~| msgid "Export Tools"
+#~ msgid "No error"
+#~ msgstr "匯出工具"
+
+#~ msgid "Open error"
+#~ msgstr "開啟失敗"
+
+#, fuzzy
+#~| msgid "Open the image editor."
+#~ msgid "Open timed out"
+#~ msgstr "開啟影像編輯器。"
+
+#, fuzzy
+#~| msgid "Collection not found"
+#~ msgid "Stream not found"
+#~ msgstr "沒有找到任何收藏"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Download New"
+#~ msgid "Read error"
+#~ msgstr "下載新項目"
+
+#, fuzzy
+#~| msgid "Parsing error: %1"
+#~ msgid "Seek error"
+#~ msgstr "剖析錯誤：%1"
+
+#, fuzzy
+#~| msgid "Parsing error: %1"
+#~ msgid "Resource error"
+#~ msgstr "剖析錯誤：%1"
+
+#, fuzzy
+#~| msgid "Export Tools"
+#~ msgid "Open codec error"
+#~ msgstr "匯出工具"
+
+#, fuzzy
+#~| msgid "Export Tools"
+#~ msgid "Close codec error"
+#~ msgstr "匯出工具"
+
+#~ msgid "Video codec not found"
+#~ msgstr "找不到視訊編碼器"
+
+#, fuzzy
+#~| msgid "Audio Compressor (Audio Codec)"
+#~ msgid "Audio codec not found"
+#~ msgstr "音效壓縮（音效編解碼器）"
+
+#, fuzzy
+#~| msgid "Collection not found"
+#~ msgid "Subtitle codec not found"
+#~ msgstr "沒有找到任何收藏"
+
+#, fuzzy
+#~| msgid "Export Tools"
+#~ msgid "Codec error"
+#~ msgstr "匯出工具"
+
+#, fuzzy
+#~| msgid "Export Tools"
+#~ msgid "Format error"
+#~ msgstr "匯出工具"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Network error"
+#~ msgstr "錯誤"
+
+#, fuzzy
+#~| msgid "Adjust Level"
+#~ msgid "Access denied"
+#~ msgstr "調整色階"
+
+#~ msgid "Options:"
+#~ msgstr "選項："
+
+#, fuzzy
+#~| msgid "Profile Version"
+#~ msgid "Build version"
+#~ msgstr "描述檔版本"
+
+#, fuzzy
+#~| msgid "Profile Version"
+#~ msgid "Runtime version"
+#~ msgstr "描述檔版本"
+
+#, fuzzy
+#~ msgid "About Qt"
+#~ msgstr "關於"
+
+#, fuzzy
+#~| msgctxt "point has been set and is valid"
+#~| msgid "Okay"
+#~ msgid "Ok"
+#~ msgstr "確定"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "About QtAV"
+#~ msgstr "關於"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "About FFmpeg"
+#~ msgstr "關於"
+
+#~ msgctxt "@title: settings section"
+#~ msgid "Video"
+#~ msgstr "影片"
+
+#~ msgctxt "@title"
+#~ msgid ""
+#~ "Video Preview Settings\n"
+#~ "Customize settings to play video media"
+#~ msgstr ""
+#~ "影片預覽設定\n"
+#~ "調整播放影片媒體的設定"
+
+#~ msgctxt "@info"
+#~ msgid "Press this button to reset all video settings to the default values."
+#~ msgstr "按下此按鈕來將所有視訊設定都重設為預設值。"
+
+#~ msgctxt "@info"
+#~ msgid "Do you want to reset all video settings to the default value?"
+#~ msgstr "您確定要將所有視訊設定都重設為預設值嗎？"
 
 #, fuzzy
 #~| msgid "Preparing slideshow"

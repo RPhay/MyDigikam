@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 01:33+0000\n"
+"POT-Creation-Date: 2024-01-27 01:35+0000\n"
 "PO-Revision-Date: 2024-01-25 13:23+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2833,7 +2833,7 @@ msgstr ""
 "Branch: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/qtav/mediaplayerview.cpp:191
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:180
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:260
 #, kde-format
 msgctxt "go to previous image"
@@ -2841,7 +2841,7 @@ msgid "Back"
 msgstr "Terug"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/qtav/mediaplayerview.cpp:193
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to next image"
@@ -2889,7 +2889,7 @@ msgstr "Volledig scherm tonen"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:489
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2985,7 +2985,7 @@ msgid "No Tags Album"
 msgstr "Geen album met tags"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:558
+#: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -11496,7 +11496,7 @@ msgid "Saving changes -"
 msgstr "Wijzigingen opslaan -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:243
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
@@ -16154,7 +16154,6 @@ msgstr "Maak een sjabloon aan voor de kalender"
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
-#: core/libs/video/qtav/config/MiscPage.cpp:48
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
@@ -21414,25 +21413,25 @@ msgstr "Dia :"
 msgid "Soundtrack:"
 msgstr "Soundtrack :"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:190
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:253
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:211
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:199
 #, kde-format
 msgid "No detail available"
 msgstr "Geen details beschikbaar"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:244
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 is mogelijk niet afspeelbaar."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:252
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgid "This file may not be playable."
 msgstr "Dit bestand is mogelijk niet afspeelbaar."
@@ -23401,7 +23400,6 @@ msgstr "De POST-methode is nu vereist voor alle instellers"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:539
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:227
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:293
 #, kde-format
 msgid "Unknown error"
 msgstr "Onbekende fout"
@@ -26681,7 +26679,6 @@ msgstr ""
 "\"%1\""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
-#: core/libs/video/qtav/config/MiscPage.cpp:89
 #, kde-format
 msgid "Abort"
 msgstr "Afbreken"
@@ -26845,38 +26842,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Rawconversie UFRaw"
 
-#: core/libs/album/engine/album.cpp:406
+#: core/libs/album/engine/album.cpp:410
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Prullenbak"
 
-#: core/libs/album/engine/album.cpp:757
+#: core/libs/album/engine/album.cpp:761
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Huidige zoekopdracht op de tijdlijn"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Huidige vage zoekopdracht"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:771
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Huidige vage-schets zoekopdracht"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:778
 #, kde-format
 msgid "Current Map Search"
 msgstr "Huidige zoeken-in-map"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Search"
 msgstr "Huidige zoekopdracht"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Huidige zoeken naar duplicaten"
@@ -39664,8 +39661,6 @@ msgid "&Icon:"
 msgstr "P&ictogram:"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:134
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:93
-#: core/utilities/setup/setupvideo.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
@@ -41704,658 +41699,31 @@ msgid "Select here the font used to display text in the MJPEG."
 msgstr ""
 "Hier het lettertype selecteren dat wordt gebruikt voor tekst in de MJPEG."
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:195
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pauzeren/afspelen"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:197
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Opname"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:200
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:189
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:269
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Er deed zich een fout voor met de mediaspeler..."
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:233
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:220
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Afspelen in een loop omschakelen"
-
-#: core/libs/video/qtav/codec/AVDecoder.cpp:131
-#, kde-format
-msgid "No codec could be found for: "
-msgstr "Geen codec gevonden voor: "
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:473
-#: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:396
-#, kde-format
-msgid "Decoding surfaces"
-msgstr "Oppervlakken worden gedecodeerd"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:474
-#, kde-format
-msgid "Decoder flags"
-msgstr "Decodervlaggen"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:476
-#, kde-format
-msgid "Performance: ZeroCopy > DirectCopy > GenericCopy"
-msgstr "Prestatie: ZeroCopy > DirectCopy > GenericCopy"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:477
-#, kde-format
-msgid ""
-"ZeroCopy: no copy back from GPU to System memory. Directly render the "
-"decoded data on GPU"
-msgstr ""
-"ZeroCopy: geen terugkopiëren van GPU naar systeemgeheugen. Direct renderen "
-"van de gedecodeerde gegevens op de GPU"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:478
-#, kde-format
-msgid ""
-"DirectCopy: copy back to host memory but video frames and map to GL texture"
-msgstr ""
-"DirectCopy: terugkopiëren naar hostgeheugen maar videoframes en map naar GL-"
-"textuur"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:479
-#, kde-format
-msgid "GenericCopy: copy back to host memory and each video frame"
-msgstr "GenericCopy: terugkopiëren naar hostgeheugen en elk videoframe"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:888
-#, kde-format
-msgid "Codec %1 is not supported by CUDA"
-msgstr "Codec %1 wordt niet ondersteund door CUDA"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:397
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:351
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:58
-#, kde-format
-msgid "0: auto"
-msgstr "0: automatisch"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:378
-#, kde-format
-msgid ""
-"Skipping the loop filter (aka deblocking) usually has determinal effect on "
-"quality. However it provides a big speedup for hi definition streams"
-msgstr ""
-"Het lusfilter (aka deblokkeren) heeft gewoonlijk een bepalend effect op "
-"kwaliteit. Het levert echter een grote versnelling voor streams met hoge "
-"definities"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:384
-#, kde-format
-msgid ""
-"Force skipping of idct to speed up decoding for frame types (-1=None, "
-"0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
-msgstr ""
-"Overslaan van idct afdwingen om decoderen voor typen frames (-1=geen, "
-"0=standaard, 1=B-frames, 2=P-frames, 3=B+P frames, 4=alle frames) te "
-"versnellen"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
-#, kde-format
-msgid "Force skipping frames for speed up decoding."
-msgstr "Overslaan van frames afdwingen voor versnellen van decodering."
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:388
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
-#, kde-format
-msgid ""
-"Number of decoding threads. Set before open. Maybe no effect for some "
-"decoders"
-msgstr ""
-"Aantal decodering-threads. Ingesteld voor openen. Misschien geen effect voor "
-"sommige decoders"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:390
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:352
-#, kde-format
-msgid "1: single thread decoding"
-msgstr "1: decoderen met één thread"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
-#, kde-format
-msgid ""
-"ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
-msgstr ""
-"ZeroCopy: snelst. Direct renderen zonder kopiëren van gegevens tussen CPU en "
-"GPU"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
-#, kde-format
-msgid "Not implemented for all codecs"
-msgstr "Niet geïmplementeerd voor alle codecs"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:345
-#, kde-format
-msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
-msgstr "OptimizedCopy: kopiëren van USWC-geheugen geoptimaliseerd door SSE4.1"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:346
-#, kde-format
-msgid "GenericCopy: slowest. Generic cpu copy"
-msgstr "GenericCopy: langzaamst. Generieke kopiëren met cpu"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
-#, kde-format
-msgid "Multithread decoding may crash"
-msgstr "Multi-thread decoderen kan crashen"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:389
-#, kde-format
-msgid "Decoding surfaces 0: auto"
-msgstr "Oppervlakken decoderen 0: automatisch"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:390
-#, kde-format
-msgid "Maybe faster"
-msgstr "Misschien sneller"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:747
-#, kde-format
-msgid "VA API version %1.%2; Vendor: %3;"
-msgstr "VA API versie %1.%2; Leverancier: %3;"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:217
-#, kde-format
-msgid ""
-"Output pixel format from decoder. Performance (better first): NV12 ; UYVY ; "
-"BGRA ; YUV420P ; YUYV. OSX superior to 10.7 only supports UYVY, BGRA and "
-"YUV420p"
-msgstr ""
-"Uitvoerpixelformaat uit decoder. Prestatie (betere eerst): NV12 ; UYVY ; "
-"BGRA ; YUV420P ; YUYV. OSX hoger dan 10.7 ondersteunt alleen UYVY, BGRA en "
-"YUV420p"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:222
-#, kde-format
-msgid "Interop with OpenGL"
-msgstr "Werkt samen met OpenGL"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:223
-#, kde-format
-msgid "CVPixelBuffer: macOS+iOS"
-msgstr "CVPixelBuffer: macOS+iOS"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:224
-#, kde-format
-msgid "CVOpenGLES: iOS, no copy, fast"
-msgstr "CVOpenGLES: iOS, geen kopie, snel"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:225
-#, kde-format
-msgid "IOSurface: macOS, no copy, fast"
-msgstr "IOSurface: macOS, geen kopie, snel"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:226
-#, kde-format
-msgid "Auto: choose the fastest"
-msgstr "Automatisch: kies de snelste"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:47
-#, kde-format
-msgctxt "@option: video filter"
-msgid "Video"
-msgstr "Video"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:48
-#, kde-format
-msgctxt "@option: audio filter"
-msgid "Audio"
-msgstr "Audio"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:53
-#, kde-format
-msgctxt "@option: enable filter"
-msgid "Enable %1"
-msgstr "%1 inschakelen"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:56
-#, kde-format
-msgctxt "@info"
-msgid "Registered %1 filters"
-msgstr "%1 filters geregistreerd"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:61
-#, kde-format
-msgctxt "@label"
-msgid "Parameters"
-msgstr "Parameters"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:50
-#, kde-format
-msgid "Enable"
-msgstr "Inschakelen"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:50
-#, kde-format
-msgid "options"
-msgstr "opties"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:52
-#, kde-format
-msgid "Reduce buffering"
-msgstr "Buffering reduceren"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:54
-#, kde-format
-msgid "Probe size"
-msgstr "Probegrootte"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:60
-#, kde-format
-msgid "Max analyze duration"
-msgstr "Maximale tijdsduur van analyseren"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:63
-#, kde-format
-msgid "0: auto. how many microseconds are analyzed to probe the input"
-msgstr ""
-"0: automatisch. hoeveel microseconden geanalyseerd worden om de invoer af te "
-"tasten"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:66
-#, kde-format
-msgid "Extra"
-msgstr "Extra"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:74
-#, kde-format
-msgid "AVFormat"
-msgstr "AVFormat"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
-#, kde-format
-msgid "Browse"
-msgstr "Bladeren"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:64
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:126
-#, kde-format
-msgid "Save dir"
-msgstr "Map opslaan"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:67
-#, kde-format
-msgid "Save format"
-msgstr "Formaat opslaan"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:77
-#, kde-format
-msgid "Quality"
-msgstr "Kwaliteit"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:103
-#, kde-format
-msgid "Capture"
-msgstr "Opname"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Video Decoder Config Page"
-msgstr "Configuratiepagina van video-decoder"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:226
-#, kde-format
-msgctxt "@label"
-msgid "Decoder Priorities (reopen is required)"
-msgstr "Prioriteiten van decoders (opnieuw openen is vereist)"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:289
-#, kde-format
-msgctxt "@action: go up in the list"
-msgid "Up"
-msgstr "Omhoog"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:295
-#, kde-format
-msgctxt "@action: go down in the list"
-msgid "Down"
-msgstr "Omlaag"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:315
-#, kde-format
-msgctxt "@title"
-msgid "Decoder"
-msgstr "Decoder"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:42
-#, kde-format
-msgid "Preview Over Time-Slider"
-msgstr "Voorbeeld bij boven tijdschuif"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:48
-#, kde-format
-msgid "size"
-msgstr "grootte"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:64
-#, kde-format
-msgid "Force fps"
-msgstr "Fps afdwingen"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:67
-#, kde-format
-msgid "Ignore"
-msgstr "Negeren"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:70
-#, kde-format
-msgid "Progress update interval"
-msgstr "Voortgang van interval van bijwerken"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:77
-#, kde-format
-msgid "Buffer frames"
-msgstr "Frames bufferen"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:83
-#, kde-format
-msgid "Timeout"
-msgstr "Tijdslimiet"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:83
-#, kde-format
-msgid "s"
-msgstr "s"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:95
-#, kde-format
-msgid "OpenGL type"
-msgstr "OpenGL-type"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:101
-#, kde-format
-msgid "Windows only"
-msgstr "Alleen Windows"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:102
-#, kde-format
-msgid "OpenGLES is Used by DXVA Zero Copy"
-msgstr "OpenGLES wordt gebruikt door DXVA Zero Copy"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:105
-#, kde-format
-msgid "D3D9 has performance if ZeroCopy is disabled or for software decoders"
-msgstr "D3D9 presteert als ZeroCopy is uitgeschakeld of voor softwaredecoders"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:106
-#, kde-format
-msgid "RESTART REQUIRED"
-msgstr "OPNIEUW STARTEN IS VEREIST"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:123
-#, kde-format
-msgid "Currently only works for Qt>=5.5 XCB build"
-msgstr "Werkt op dit moment alleen voor  Qt>=5.5 XCB build"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:130
-#, kde-format
-msgid "Misc"
-msgstr "Diversen"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:42
-#, kde-format
-msgctxt "@option: enable shader"
-msgid "Enable"
-msgstr "Inschakelen"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:44
-#, kde-format
-msgctxt "@option"
-msgid "Intermediate FBO"
-msgstr "Intermediate FBO"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:46
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader header"
-msgstr "Fragment-shader-header"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:52
-#, kde-format
-msgctxt "@info"
-msgid "Additional header code"
-msgstr "Extra header-code"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:54
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader texel sample function"
-msgstr "Fragment-shader-texel-sample-functie"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:62
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader RGB post process code"
-msgstr "Fragment-shader-RGB nabewerkingscode"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:74
-#, kde-format
-msgctxt "@title"
-msgid "Shader"
-msgstr "Aanbrenger van schaduw"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr "Engine"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
-#, kde-format
-msgctxt "@option"
-msgid "Brightness"
-msgstr "Helderheid"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:69
-#, kde-format
-msgctxt "@option"
-msgid "Contrast"
-msgstr "Contrast"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:70
-#, kde-format
-msgctxt "@option"
-msgid "Hue"
-msgstr "Tint"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:71
-#, kde-format
-msgctxt "@option"
-msgid "Saturation"
-msgstr "Verzadiging"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:90
-#, kde-format
-msgctxt "@option: global settings"
-msgid "Global"
-msgstr "Globaal"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:697
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:737
-#, kde-format
-msgid "error reading stream data"
-msgstr "fout bij het lezen van stream-gegevens"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:976
-#, kde-format
-msgid "seek error"
-msgstr "fout bij positioneren"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1307
-#, kde-format
-msgid "failed to open media"
-msgstr "openen van media is mislukt"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1333
-#, kde-format
-msgid "failed to find stream info"
-msgstr "zoeken naar stream-informatie is mislukt"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1898
-#, kde-format
-msgid "interrupted by user"
-msgstr "afgebroken door gebruiker"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1909
-#, kde-format
-msgid "timeout"
-msgstr "tijdslimiet bereikt"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:160
-#, kde-format
-msgid "No error"
-msgstr "Geen fout"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:167
-#, kde-format
-msgid "Open error"
-msgstr "Fout bij openen"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:174
-#, kde-format
-msgid "Open timed out"
-msgstr "Tijdslimiet bij openen overschreden"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:181
-#, kde-format
-msgid "Parse stream timed out"
-msgstr "Ontleden van stream overschreed tijdslimiet"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:188
-#, kde-format
-msgid "Parse stream error"
-msgstr "Fout bij ontleden van stream"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:195
-#, kde-format
-msgid "Stream not found"
-msgstr "Stream niet gevonden."
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:202
-#, kde-format
-msgid "Read packet timed out"
-msgstr "Pakket lezen overschreed tijdslimiet"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:209
-#, kde-format
-msgid "Read error"
-msgstr "Leesfout"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:216
-#, kde-format
-msgid "Seek error"
-msgstr "Fout bij positioneren"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:223
-#, kde-format
-msgid "Resource error"
-msgstr "Fout met hulpbron"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:230
-#, kde-format
-msgid "Open codec error"
-msgstr "Fout bij codec openen"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:237
-#, kde-format
-msgid "Close codec error"
-msgstr "Fout bij codec sluiten"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:244
-#, kde-format
-msgid "Video codec not found"
-msgstr "Video-codec niet gevonden"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:251
-#, kde-format
-msgid "Audio codec not found"
-msgstr "Audio-codec niet gevonden"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:258
-#, kde-format
-msgid "Subtitle codec not found"
-msgstr "Codec voor ondertiteling niet gevonden"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:265
-#, kde-format
-msgid "Codec error"
-msgstr "Fout met codec"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:272
-#, kde-format
-msgid "Format error"
-msgstr "Fout in formaat"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:279
-#, kde-format
-msgid "Network error"
-msgstr "Netwerkfout"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:286
-#, kde-format
-msgid "Access denied"
-msgstr "Toegang geweigerd"
-
-#: core/libs/video/qtav/filter/LibAVFilter.cpp:357
-#, kde-format
-msgid "Options:"
-msgstr "Opties:"
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:220
-#, kde-format
-msgid "Build version"
-msgstr "Bouwversie"
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:232
-#, kde-format
-msgid "Runtime version"
-msgstr "Runtime-versie"
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:267
-#, kde-format
-msgid "Multimedia framework based on Qt and FFmpeg.\n"
-msgstr "Multimediaframework gebaseerd op Qt en FFmpeg.\n"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:207
-#, kde-format
-msgid "About Qt"
-msgstr "Info over Qt"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr "OK"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
-#, kde-format
-msgctxt "@title:window"
-msgid "About QtAV"
-msgstr "Info over QtAV"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, kde-format
-msgctxt "@title:window"
-msgid "About FFmpeg"
-msgstr "Info over FFmpeg"
 
 #: core/libs/widgets/combo/dcombobox.cpp:61
 #: core/libs/widgets/range/dnuminput.cpp:71
@@ -50140,7 +49508,7 @@ msgstr "&Decoratie"
 msgid "Effec&ts"
 msgstr "Effec&ten"
 
-#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:194
+#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -50219,13 +49587,13 @@ msgstr ""
 "<qt>instellingen voor het opslaan van afbeeldingsbestanden<br/><i>Stel de "
 "standaard configuratie in voor het opslaan van afbeeldingen</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
+#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:216
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geo-locatie"
 
-#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
+#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:217
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66957,13 +66325,13 @@ msgstr ""
 "na de herstart. Sommige instellingen zijn afhankelijk van hardware en kunnen "
 "geen effect hebben.</b>"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Database"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66973,13 +66341,13 @@ msgstr ""
 "Database-instellingen\n"
 "Pas de database-instellingen aan"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Verzamelingen"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66989,13 +66357,13 @@ msgstr ""
 "Instellingen voor verzamelingen\n"
 "Stel de locaties in van hoofdalbums"
 
-#: core/utilities/setup/setup.cpp:211
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Weergaven"
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67005,13 +66373,13 @@ msgstr ""
 "Instellingen voor weergave in de applicatie\n"
 "Pas het uiterlijk aan van weergaven"
 
-#: core/utilities/setup/setup.cpp:216
+#: core/utilities/setup/setup.cpp:184
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Tekstballon"
 
-#: core/utilities/setup/setup.cpp:217
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67021,29 +66389,13 @@ msgstr ""
 "Instellingen voor tekstballonnen\n"
 "Pas informatie in tekstballonnen van items aan"
 
-#: core/utilities/setup/setup.cpp:223
-#, kde-format
-msgctxt "@title: settings section"
-msgid "Video"
-msgstr "Video"
-
-#: core/utilities/setup/setup.cpp:224
-#, kde-format
-msgctxt "@title"
-msgid ""
-"Video Preview Settings\n"
-"Customize settings to play video media"
-msgstr ""
-"Instellingen voor het videovoorbeeld\n"
-"Pas de instellingen aan voor afspelen van videomedia"
-
-#: core/utilities/setup/setup.cpp:230
+#: core/utilities/setup/setup.cpp:189
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metagegevens"
 
-#: core/utilities/setup/setup.cpp:231
+#: core/utilities/setup/setup.cpp:190
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67053,13 +66405,13 @@ msgstr ""
 "Beheer van ingebedde informatie in afbeeldingen\n"
 "Stel relaties in tussen afbeeldingen en metagegevens"
 
-#: core/utilities/setup/setup.cpp:235
+#: core/utilities/setup/setup.cpp:194
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Sjablonen"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67069,13 +66421,13 @@ msgstr ""
 "Metagegevenssjablonen\n"
 "Beheer uw verzameling metagegevenssjablonen"
 
-#: core/utilities/setup/setup.cpp:240
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Afbeeldingsbewerker"
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67085,13 +66437,13 @@ msgstr ""
 "instellingen voor afbeeldingsbewerker\n"
 "Pas de instellingen van de afbeeldingsbewerker aan"
 
-#: core/utilities/setup/setup.cpp:245
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Kleurbeheer"
 
-#: core/utilities/setup/setup.cpp:246
+#: core/utilities/setup/setup.cpp:205
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67101,13 +66453,13 @@ msgstr ""
 "Instellingen voor kleurbeheer\n"
 "Pas de instellingen voor kleurbeheer aan"
 
-#: core/utilities/setup/setup.cpp:250
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Lichttafel"
 
-#: core/utilities/setup/setup.cpp:251
+#: core/utilities/setup/setup.cpp:210
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67117,13 +66469,13 @@ msgstr ""
 "Lichttafelinstellingen\n"
 "Pas het hulpmiddel aan voor het vergelijken van items"
 
-#: core/utilities/setup/setup.cpp:264
+#: core/utilities/setup/setup.cpp:223
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Sorteerder op kwaliteit van afbeeldingen"
 
-#: core/utilities/setup/setup.cpp:265
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67133,13 +66485,13 @@ msgstr ""
 "Instellingen voor sorteren op kwaliteit\n"
 "Pas de standaard instellingen aan om de kwaliteit te beoordelen"
 
-#: core/utilities/setup/setup.cpp:269
+#: core/utilities/setup/setup.cpp:228
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Camera's"
 
-#: core/utilities/setup/setup.cpp:270
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67149,13 +66501,13 @@ msgstr ""
 "Camera-instellingen\n"
 "Beheer uw camera's"
 
-#: core/utilities/setup/setup.cpp:277
+#: core/utilities/setup/setup.cpp:236
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Plug-ins"
 
-#: core/utilities/setup/setup.cpp:278
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67165,13 +66517,13 @@ msgstr ""
 "Instellingen voor plug-in\n"
 "Stel in welke plug-ins toegankelijk zijn vanuit toepassing"
 
-#: core/utilities/setup/setup.cpp:282
+#: core/utilities/setup/setup.cpp:241
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Diversen"
 
-#: core/utilities/setup/setup.cpp:283
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68168,17 +67520,422 @@ msgstr "Album-items"
 msgid "Import Items"
 msgstr "Items importeren"
 
-#: core/utilities/setup/setupvideo.cpp:74
-#, kde-format
-msgctxt "@info"
-msgid "Press this button to reset all video settings to the default values."
-msgstr "Zet alle instellingen terug naar hun standaardwaarden."
+#~ msgid "No codec could be found for: "
+#~ msgstr "Geen codec gevonden voor: "
 
-#: core/utilities/setup/setupvideo.cpp:132
-#, kde-format
-msgctxt "@info"
-msgid "Do you want to reset all video settings to the default value?"
-msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
+#~ msgid "Decoding surfaces"
+#~ msgstr "Oppervlakken worden gedecodeerd"
+
+#~ msgid "Decoder flags"
+#~ msgstr "Decodervlaggen"
+
+#~ msgid "Performance: ZeroCopy > DirectCopy > GenericCopy"
+#~ msgstr "Prestatie: ZeroCopy > DirectCopy > GenericCopy"
+
+#~ msgid ""
+#~ "ZeroCopy: no copy back from GPU to System memory. Directly render the "
+#~ "decoded data on GPU"
+#~ msgstr ""
+#~ "ZeroCopy: geen terugkopiëren van GPU naar systeemgeheugen. Direct "
+#~ "renderen van de gedecodeerde gegevens op de GPU"
+
+#~ msgid ""
+#~ "DirectCopy: copy back to host memory but video frames and map to GL "
+#~ "texture"
+#~ msgstr ""
+#~ "DirectCopy: terugkopiëren naar hostgeheugen maar videoframes en map naar "
+#~ "GL-textuur"
+
+#~ msgid "GenericCopy: copy back to host memory and each video frame"
+#~ msgstr "GenericCopy: terugkopiëren naar hostgeheugen en elk videoframe"
+
+#~ msgid "Codec %1 is not supported by CUDA"
+#~ msgstr "Codec %1 wordt niet ondersteund door CUDA"
+
+#~ msgid "0: auto"
+#~ msgstr "0: automatisch"
+
+#~ msgid ""
+#~ "Skipping the loop filter (aka deblocking) usually has determinal effect "
+#~ "on quality. However it provides a big speedup for hi definition streams"
+#~ msgstr ""
+#~ "Het lusfilter (aka deblokkeren) heeft gewoonlijk een bepalend effect op "
+#~ "kwaliteit. Het levert echter een grote versnelling voor streams met hoge "
+#~ "definities"
+
+#~ msgid ""
+#~ "Force skipping of idct to speed up decoding for frame types (-1=None, "
+#~ "0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
+#~ msgstr ""
+#~ "Overslaan van idct afdwingen om decoderen voor typen frames (-1=geen, "
+#~ "0=standaard, 1=B-frames, 2=P-frames, 3=B+P frames, 4=alle frames) te "
+#~ "versnellen"
+
+#~ msgid "Force skipping frames for speed up decoding."
+#~ msgstr "Overslaan van frames afdwingen voor versnellen van decodering."
+
+#~ msgid ""
+#~ "Number of decoding threads. Set before open. Maybe no effect for some "
+#~ "decoders"
+#~ msgstr ""
+#~ "Aantal decodering-threads. Ingesteld voor openen. Misschien geen effect "
+#~ "voor sommige decoders"
+
+#~ msgid "1: single thread decoding"
+#~ msgstr "1: decoderen met één thread"
+
+#~ msgid ""
+#~ "ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
+#~ msgstr ""
+#~ "ZeroCopy: snelst. Direct renderen zonder kopiëren van gegevens tussen CPU "
+#~ "en GPU"
+
+#~ msgid "Not implemented for all codecs"
+#~ msgstr "Niet geïmplementeerd voor alle codecs"
+
+#~ msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
+#~ msgstr ""
+#~ "OptimizedCopy: kopiëren van USWC-geheugen geoptimaliseerd door SSE4.1"
+
+#~ msgid "GenericCopy: slowest. Generic cpu copy"
+#~ msgstr "GenericCopy: langzaamst. Generieke kopiëren met cpu"
+
+#~ msgid "Multithread decoding may crash"
+#~ msgstr "Multi-thread decoderen kan crashen"
+
+#~ msgid "Decoding surfaces 0: auto"
+#~ msgstr "Oppervlakken decoderen 0: automatisch"
+
+#~ msgid "Maybe faster"
+#~ msgstr "Misschien sneller"
+
+#~ msgid "VA API version %1.%2; Vendor: %3;"
+#~ msgstr "VA API versie %1.%2; Leverancier: %3;"
+
+#~ msgid ""
+#~ "Output pixel format from decoder. Performance (better first): NV12 ; "
+#~ "UYVY ; BGRA ; YUV420P ; YUYV. OSX superior to 10.7 only supports UYVY, "
+#~ "BGRA and YUV420p"
+#~ msgstr ""
+#~ "Uitvoerpixelformaat uit decoder. Prestatie (betere eerst): NV12 ; UYVY ; "
+#~ "BGRA ; YUV420P ; YUYV. OSX hoger dan 10.7 ondersteunt alleen UYVY, BGRA "
+#~ "en YUV420p"
+
+#~ msgid "Interop with OpenGL"
+#~ msgstr "Werkt samen met OpenGL"
+
+#~ msgid "CVPixelBuffer: macOS+iOS"
+#~ msgstr "CVPixelBuffer: macOS+iOS"
+
+#~ msgid "CVOpenGLES: iOS, no copy, fast"
+#~ msgstr "CVOpenGLES: iOS, geen kopie, snel"
+
+#~ msgid "IOSurface: macOS, no copy, fast"
+#~ msgstr "IOSurface: macOS, geen kopie, snel"
+
+#~ msgid "Auto: choose the fastest"
+#~ msgstr "Automatisch: kies de snelste"
+
+#~ msgctxt "@option: video filter"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#~ msgctxt "@option: audio filter"
+#~ msgid "Audio"
+#~ msgstr "Audio"
+
+#~ msgctxt "@option: enable filter"
+#~ msgid "Enable %1"
+#~ msgstr "%1 inschakelen"
+
+#~ msgctxt "@info"
+#~ msgid "Registered %1 filters"
+#~ msgstr "%1 filters geregistreerd"
+
+#~ msgctxt "@label"
+#~ msgid "Parameters"
+#~ msgstr "Parameters"
+
+#~ msgid "Enable"
+#~ msgstr "Inschakelen"
+
+#~ msgid "options"
+#~ msgstr "opties"
+
+#~ msgid "Reduce buffering"
+#~ msgstr "Buffering reduceren"
+
+#~ msgid "Probe size"
+#~ msgstr "Probegrootte"
+
+#~ msgid "Max analyze duration"
+#~ msgstr "Maximale tijdsduur van analyseren"
+
+#~ msgid "0: auto. how many microseconds are analyzed to probe the input"
+#~ msgstr ""
+#~ "0: automatisch. hoeveel microseconden geanalyseerd worden om de invoer af "
+#~ "te tasten"
+
+#~ msgid "Extra"
+#~ msgstr "Extra"
+
+#~ msgid "AVFormat"
+#~ msgstr "AVFormat"
+
+#~ msgid "Browse"
+#~ msgstr "Bladeren"
+
+#~ msgid "Save dir"
+#~ msgstr "Map opslaan"
+
+#~ msgid "Save format"
+#~ msgstr "Formaat opslaan"
+
+#~ msgid "Quality"
+#~ msgstr "Kwaliteit"
+
+#~ msgid "Capture"
+#~ msgstr "Opname"
+
+#~ msgctxt "@title:window"
+#~ msgid "Video Decoder Config Page"
+#~ msgstr "Configuratiepagina van video-decoder"
+
+#~ msgctxt "@label"
+#~ msgid "Decoder Priorities (reopen is required)"
+#~ msgstr "Prioriteiten van decoders (opnieuw openen is vereist)"
+
+#~ msgctxt "@action: go up in the list"
+#~ msgid "Up"
+#~ msgstr "Omhoog"
+
+#~ msgctxt "@action: go down in the list"
+#~ msgid "Down"
+#~ msgstr "Omlaag"
+
+#~ msgctxt "@title"
+#~ msgid "Decoder"
+#~ msgstr "Decoder"
+
+#~ msgid "Preview Over Time-Slider"
+#~ msgstr "Voorbeeld bij boven tijdschuif"
+
+#~ msgid "size"
+#~ msgstr "grootte"
+
+#~ msgid "Force fps"
+#~ msgstr "Fps afdwingen"
+
+#~ msgid "Ignore"
+#~ msgstr "Negeren"
+
+#~ msgid "Progress update interval"
+#~ msgstr "Voortgang van interval van bijwerken"
+
+#~ msgid "Buffer frames"
+#~ msgstr "Frames bufferen"
+
+#~ msgid "Timeout"
+#~ msgstr "Tijdslimiet"
+
+#~ msgid "s"
+#~ msgstr "s"
+
+#~ msgid "OpenGL type"
+#~ msgstr "OpenGL-type"
+
+#~ msgid "Windows only"
+#~ msgstr "Alleen Windows"
+
+#~ msgid "OpenGLES is Used by DXVA Zero Copy"
+#~ msgstr "OpenGLES wordt gebruikt door DXVA Zero Copy"
+
+#~ msgid ""
+#~ "D3D9 has performance if ZeroCopy is disabled or for software decoders"
+#~ msgstr ""
+#~ "D3D9 presteert als ZeroCopy is uitgeschakeld of voor softwaredecoders"
+
+#~ msgid "RESTART REQUIRED"
+#~ msgstr "OPNIEUW STARTEN IS VEREIST"
+
+#~ msgid "Currently only works for Qt>=5.5 XCB build"
+#~ msgstr "Werkt op dit moment alleen voor  Qt>=5.5 XCB build"
+
+#~ msgid "Misc"
+#~ msgstr "Diversen"
+
+#~ msgctxt "@option: enable shader"
+#~ msgid "Enable"
+#~ msgstr "Inschakelen"
+
+#~ msgctxt "@option"
+#~ msgid "Intermediate FBO"
+#~ msgstr "Intermediate FBO"
+
+#~ msgctxt "@label"
+#~ msgid "Fragment shader header"
+#~ msgstr "Fragment-shader-header"
+
+#~ msgctxt "@info"
+#~ msgid "Additional header code"
+#~ msgstr "Extra header-code"
+
+#~ msgctxt "@label"
+#~ msgid "Fragment shader texel sample function"
+#~ msgstr "Fragment-shader-texel-sample-functie"
+
+#~ msgctxt "@label"
+#~ msgid "Fragment shader RGB post process code"
+#~ msgstr "Fragment-shader-RGB nabewerkingscode"
+
+#~ msgctxt "@title"
+#~ msgid "Shader"
+#~ msgstr "Aanbrenger van schaduw"
+
+#~ msgctxt "@label"
+#~ msgid "Engine"
+#~ msgstr "Engine"
+
+#~ msgctxt "@option"
+#~ msgid "Brightness"
+#~ msgstr "Helderheid"
+
+#~ msgctxt "@option"
+#~ msgid "Contrast"
+#~ msgstr "Contrast"
+
+#~ msgctxt "@option"
+#~ msgid "Hue"
+#~ msgstr "Tint"
+
+#~ msgctxt "@option"
+#~ msgid "Saturation"
+#~ msgstr "Verzadiging"
+
+#~ msgctxt "@option: global settings"
+#~ msgid "Global"
+#~ msgstr "Globaal"
+
+#~ msgid "error reading stream data"
+#~ msgstr "fout bij het lezen van stream-gegevens"
+
+#~ msgid "seek error"
+#~ msgstr "fout bij positioneren"
+
+#~ msgid "failed to open media"
+#~ msgstr "openen van media is mislukt"
+
+#~ msgid "failed to find stream info"
+#~ msgstr "zoeken naar stream-informatie is mislukt"
+
+#~ msgid "interrupted by user"
+#~ msgstr "afgebroken door gebruiker"
+
+#~ msgid "timeout"
+#~ msgstr "tijdslimiet bereikt"
+
+#~ msgid "No error"
+#~ msgstr "Geen fout"
+
+#~ msgid "Open error"
+#~ msgstr "Fout bij openen"
+
+#~ msgid "Open timed out"
+#~ msgstr "Tijdslimiet bij openen overschreden"
+
+#~ msgid "Parse stream timed out"
+#~ msgstr "Ontleden van stream overschreed tijdslimiet"
+
+#~ msgid "Parse stream error"
+#~ msgstr "Fout bij ontleden van stream"
+
+#~ msgid "Stream not found"
+#~ msgstr "Stream niet gevonden."
+
+#~ msgid "Read packet timed out"
+#~ msgstr "Pakket lezen overschreed tijdslimiet"
+
+#~ msgid "Read error"
+#~ msgstr "Leesfout"
+
+#~ msgid "Seek error"
+#~ msgstr "Fout bij positioneren"
+
+#~ msgid "Resource error"
+#~ msgstr "Fout met hulpbron"
+
+#~ msgid "Open codec error"
+#~ msgstr "Fout bij codec openen"
+
+#~ msgid "Close codec error"
+#~ msgstr "Fout bij codec sluiten"
+
+#~ msgid "Video codec not found"
+#~ msgstr "Video-codec niet gevonden"
+
+#~ msgid "Audio codec not found"
+#~ msgstr "Audio-codec niet gevonden"
+
+#~ msgid "Subtitle codec not found"
+#~ msgstr "Codec voor ondertiteling niet gevonden"
+
+#~ msgid "Codec error"
+#~ msgstr "Fout met codec"
+
+#~ msgid "Format error"
+#~ msgstr "Fout in formaat"
+
+#~ msgid "Network error"
+#~ msgstr "Netwerkfout"
+
+#~ msgid "Access denied"
+#~ msgstr "Toegang geweigerd"
+
+#~ msgid "Options:"
+#~ msgstr "Opties:"
+
+#~ msgid "Build version"
+#~ msgstr "Bouwversie"
+
+#~ msgid "Runtime version"
+#~ msgstr "Runtime-versie"
+
+#~ msgid "Multimedia framework based on Qt and FFmpeg.\n"
+#~ msgstr "Multimediaframework gebaseerd op Qt en FFmpeg.\n"
+
+#~ msgid "About Qt"
+#~ msgstr "Info over Qt"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgctxt "@title:window"
+#~ msgid "About QtAV"
+#~ msgstr "Info over QtAV"
+
+#~ msgctxt "@title:window"
+#~ msgid "About FFmpeg"
+#~ msgstr "Info over FFmpeg"
+
+#~ msgctxt "@title: settings section"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#~ msgctxt "@title"
+#~ msgid ""
+#~ "Video Preview Settings\n"
+#~ "Customize settings to play video media"
+#~ msgstr ""
+#~ "Instellingen voor het videovoorbeeld\n"
+#~ "Pas de instellingen aan voor afspelen van videomedia"
+
+#~ msgctxt "@info"
+#~ msgid "Press this button to reset all video settings to the default values."
+#~ msgstr "Zet alle instellingen terug naar hun standaardwaarden."
+
+#~ msgctxt "@info"
+#~ msgid "Do you want to reset all video settings to the default value?"
+#~ msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
 
 #~ msgid "Video soundtrack (lets empty if none)"
 #~ msgstr "Geluidstrack van video (laat leeg indien geen)"

@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 01:33+0000\n"
-"PO-Revision-Date: 2024-01-25 23:20+0000\n"
+"POT-Creation-Date: 2024-01-27 01:35+0000\n"
+"PO-Revision-Date: 2024-01-26 14:40+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -2787,7 +2787,7 @@ msgstr ""
 "Grein: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/qtav/mediaplayerview.cpp:191
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:180
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:260
 #, kde-format
 msgctxt "go to previous image"
@@ -2795,7 +2795,7 @@ msgid "Back"
 msgstr "Til baka"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/qtav/mediaplayerview.cpp:193
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to next image"
@@ -2843,7 +2843,7 @@ msgstr "Birta á öllum skjánum"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:489
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2938,7 +2938,7 @@ msgid "No Tags Album"
 msgstr "Ekkert merkingaalbúm"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:558
+#: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -6080,6 +6080,12 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
+"<p><b>Þetta verkfæri gerir kleift að úthluta merkjum sjálfvirkt á myndir út "
+"frá greiningu á myndefninu með vélnáms-tauganeti (deep-learning neural "
+"network).</b></p><p>Stillingarnar hér fyrir neðan skilgreina hvaða vélnáms-"
+"tauganet eigi að nota við skoðun myndefnisins og þannig ákvarða efni "
+"ljósmyndanna. Tauganetskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt "
+"röð merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
 #: core/utilities/maintenance/maintenancedlg.cpp:191
@@ -6128,6 +6134,22 @@ msgid ""
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
+"<p><b>YOLOv5 Nano</b>: Þetta líkan er tauganetkerfi sem býður upp á "
+"einstakan hraða og afköst. Það gerir þér kleift að láta meta í snarheitum "
+"samtvinnun greiningar á smærri hlutum. Það er hannað til að finna hluti og "
+"staðsetningar þeirra innan mynda. Takmörk á fjölda greinanlegra hluta eru "
+"stillt á 80.</p><p><b>YOLOv5 XLarge</b>: Sama og talið var hér á undan, "
+"þetta er tauganetkerfislíkan með undraverða eiginleika sem ætlað er til "
+"ítarlegri greiningar flókinna hluta. Þrátt fyrir aukið flækjustig og auknar "
+"krafir um tíma og afköst, gefur þetta mun betri niðurstöður varðandi stærri "
+"hluti, en þá á kostnað hraða.</p><p><b>ResNet50</b>: Þetta líkan er sérstök "
+"gerð tauganets sem mynduð er með stöflun afgangsblokka og vengulega notað í "
+"ýmsar gerðir tölvusjónar. Slík hönnun gefur kost á þjálfun einstaklega "
+"marglaga tauganeta án þess að takmarkast af vandamálum við hverfandi stigla "
+"(vanishing gradient problem). Ólíkt YOLO er ResNet50 fyrst og fremst hannað "
+"fyrir flokkun mynda og kemur ekki með staðsetningu hluta. Það getur þekkt "
+"hluti úr stóru safni með meira en 1.000 flokkum, sem inniheldur breitt svið "
+"af hlutum, dýrum og aðstæðum.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -11272,7 +11294,7 @@ msgid "Saving changes -"
 msgstr "Vista breytingar -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:243
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
@@ -15890,7 +15912,6 @@ msgstr "Búa til forsnið fyrir dagatal"
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
-#: core/libs/video/qtav/config/MiscPage.cpp:48
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
@@ -20479,6 +20500,8 @@ msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
+"Þessi stýring gerir kleift að velja sniðið á margmiðlunargámi sem á að hýsa "
+"myndstreymi og hljóðrás."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
 #, kde-format
@@ -20498,7 +20521,7 @@ msgstr "Jafna birtustig myndskeiðs"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
 #, kde-format
 msgid "Equalization Strength:"
-msgstr "Styrkur tónjöfnunar:"
+msgstr "Styrkur myndjöfnunar:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
 #, kde-format
@@ -20506,6 +20529,8 @@ msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
+"Þetta stýrir styrk á myndjöfnun (equalization). Settu þessa stillingu á núll "
+"til að ekkert gerist."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
 #, kde-format
@@ -20515,11 +20540,16 @@ msgid ""
 "same histograms, while maintaining their dynamics as much as possible. It’s "
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
+"<i>Þessar stillingar finna út meðalmyndjöfnun og beita henni á meðan rammar "
+"eru kóðaðir sem myndskeið. Þetta aðlagar litatíðnirit rammanna þannig að þau "
+"verði því sem næst þau sömu, á meðan reynt er að halda  í breytileika þeirra "
+"eins og mögulegt er. Þetta nýtist vel t.d. til að jafna mismunandi lýsingu á "
+"tímaháðum hreyfimyndarunum (timelapse).</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
 #, kde-format
 msgid "Frames Normalization"
-msgstr "Hljóðstyrksjöfnun ramma"
+msgstr "Samræming ramma"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
 #, kde-format
@@ -20545,6 +20575,10 @@ msgid ""
 "be trimmed. Leave this setting empty if you don't want a soundtrack to the "
 "media.</i>"
 msgstr ""
+"<i>Punktar um hljóðrás: ef lengd hljóðrásar er minni en myndskeiðs, verður "
+"hún spiluð í endurtekinni lykkju. Ef lengd hljóðrásar er lengri en á "
+"myndskeiðinu, verður klippt af henni. Skildu þetta eftir autt ef þú ætlar "
+"ekki að bæta hljóðrás við myndskeiðið.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
 #, kde-format
@@ -21074,25 +21108,25 @@ msgstr "Skyggna:"
 msgid "Soundtrack:"
 msgstr "Hljóðrás:"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:190
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:253
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:211
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:199
 #, kde-format
 msgid "No detail available"
 msgstr "Engar ítaratriði tiltæk"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:244
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 er kannski ekki hægt að spila."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:252
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgid "This file may not be playable."
 msgstr "Þessa skrá er kannski ekki hægt að spila."
@@ -23026,7 +23060,6 @@ msgstr "POST-aðferðarinnar er núna krafist fyrir alla"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:539
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:227
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:293
 #, kde-format
 msgid "Unknown error"
 msgstr "Óþekkt villa"
@@ -26282,7 +26315,6 @@ msgstr ""
 "\"%1\""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
-#: core/libs/video/qtav/config/MiscPage.cpp:89
 #, kde-format
 msgid "Abort"
 msgstr "Hætta við"
@@ -26446,38 +26478,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "RAW-umbreyting UFRaw"
 
-#: core/libs/album/engine/album.cpp:406
+#: core/libs/album/engine/album.cpp:410
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Rusl"
 
-#: core/libs/album/engine/album.cpp:757
+#: core/libs/album/engine/album.cpp:761
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Núverandi tímalínuleit"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Núverandi loðin myndaleit"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:771
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Núverandi loðin skissuleit"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:778
 #, kde-format
 msgid "Current Map Search"
 msgstr "Núverandi kortaleit"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Search"
 msgstr "Núverandi leit"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Núverandi tvítakaleit"
@@ -39151,8 +39183,6 @@ msgid "&Icon:"
 msgstr "Táknm&ynd:"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:134
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:93
-#: core/utilities/setup/setupvideo.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
@@ -40536,6 +40566,8 @@ msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
+"Fullbúin lausn fyrir flest stýrikerfi, sem gefur kost á að taka upp, "
+"umbreyta og streyma hljóð- og myndmerki."
 
 #: core/libs/video/manager/vidslidesettings.cpp:497
 #, kde-format
@@ -41187,656 +41219,31 @@ msgctxt "@info"
 msgid "Select here the font used to display text in the MJPEG."
 msgstr "Veldu hér letur fyrir texta sem birtist í MJPEG-streymi."
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:195
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Bíða/Spila"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:197
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Upptaka"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:200
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:189
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:269
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Villa kom upp með margmiðlunarspilarann..."
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:233
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:220
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Víxla endurtekinni spilun af/á"
-
-#: core/libs/video/qtav/codec/AVDecoder.cpp:131
-#, kde-format
-msgid "No codec could be found for: "
-msgstr "Engin myndmerkiskóðun fannst fyrir:"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:473
-#: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:396
-#, kde-format
-msgid "Decoding surfaces"
-msgstr "Afkóða fleti"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:474
-#, kde-format
-msgid "Decoder flags"
-msgstr "Flögg afkóðara"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:476
-#, kde-format
-msgid "Performance: ZeroCopy > DirectCopy > GenericCopy"
-msgstr "Afköst: ZeroCopy > DirectCopy > GenericCopy"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:477
-#, kde-format
-msgid ""
-"ZeroCopy: no copy back from GPU to System memory. Directly render the "
-"decoded data on GPU"
-msgstr ""
-"ZeroCopy: ekki afritun til baka úr GPU (skjáörgjörva) yfir í kerfisminni. "
-"Myndgera afkóðuðu gögnin beint á GPU"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:478
-#, kde-format
-msgid ""
-"DirectCopy: copy back to host memory but video frames and map to GL texture"
-msgstr ""
-"DirectCopy: afritun til baka í minni vélarinnar en myndskeiðaramma og vörpun "
-"yfir í GL-áferð"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:479
-#, kde-format
-msgid "GenericCopy: copy back to host memory and each video frame"
-msgstr ""
-"GenericCopy: afritun til baka í minni vélarinnar og hvern myndskeiðaramma"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:888
-#, kde-format
-msgid "Codec %1 is not supported by CUDA"
-msgstr "Kóðunarlykillinn %1 er ekki studdur af CUDA"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:397
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:351
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:58
-#, kde-format
-msgid "0: auto"
-msgstr "0: sjálfvirkt"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:378
-#, kde-format
-msgid ""
-"Skipping the loop filter (aka deblocking) usually has determinal effect on "
-"quality. However it provides a big speedup for hi definition streams"
-msgstr ""
-"Að sleppa lykkjusíunni (e. deblocking/loop-filter) hefur venjulega slæm "
-"áhrif á gæði. Hinsvegar veldur það mikilli hraðaaukningu fyrir streymi í "
-"háupplausn"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:384
-#, kde-format
-msgid ""
-"Force skipping of idct to speed up decoding for frame types (-1=None, "
-"0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
-msgstr ""
-"Þvinga fram sleppingu á idct til að hraða afkóðun á tegundum ramma "
-"(-1=Ekkert, 0=Sjálfgefið, 1=B-rammar, 2=P-rammar, 3=B+P rammar, 4=allir "
-"rammar)"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
-#, kde-format
-msgid "Force skipping frames for speed up decoding."
-msgstr "Þvinga fram sleppingu á römmum til að hraða afkóðun."
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:388
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
-#, kde-format
-msgid ""
-"Number of decoding threads. Set before open. Maybe no effect for some "
-"decoders"
-msgstr ""
-"Fjöldi afkóðunarþráða. Stillist fyrir opnun. Kannski engin áhrif fyrir suma "
-"afkóðara"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:390
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:352
-#, kde-format
-msgid "1: single thread decoding"
-msgstr "1: afkóðun á einum þræði"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
-#, kde-format
-msgid ""
-"ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
-msgstr ""
-"ZeroCopy: hraðvirkast. Bein myndgerð án afritunar gagna á milli CPU og GPU"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
-#, kde-format
-msgid "Not implemented for all codecs"
-msgstr "Ekki útfært fyrir alla kóðunarlykla"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:345
-#, kde-format
-msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
-msgstr "OptimizedCopy: afritun úr USWC-minni bestuðu með SSE4.1"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:346
-#, kde-format
-msgid "GenericCopy: slowest. Generic cpu copy"
-msgstr "GenericCopy: hægvirkast. Almenn afritun á CPU"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
-#, kde-format
-msgid "Multithread decoding may crash"
-msgstr "Fjölþráða afkóðun gæti hrunið"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:389
-#, kde-format
-msgid "Decoding surfaces 0: auto"
-msgstr "Afkóða fleti 0: sjálfvirkt"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:390
-#, kde-format
-msgid "Maybe faster"
-msgstr "Kannski hraðar"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:747
-#, kde-format
-msgid "VA API version %1.%2; Vendor: %3;"
-msgstr "VA API útgáfa %1.%2; framleiðandi: %3;"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:217
-#, kde-format
-msgid ""
-"Output pixel format from decoder. Performance (better first): NV12 ; UYVY ; "
-"BGRA ; YUV420P ; YUYV. OSX superior to 10.7 only supports UYVY, BGRA and "
-"YUV420p"
-msgstr ""
-"Snið úttaksmynddíla frá afkóðara. Afköst (best fyrst): NV12 ; UYVY ; BGRA ; "
-"YUV420P ; YUYV. OSX meira en 10.7 styður einungis UYVY, BGRA og YUV420p"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:222
-#, kde-format
-msgid "Interop with OpenGL"
-msgstr "Samvirkni með OpenGL"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:223
-#, kde-format
-msgid "CVPixelBuffer: macOS+iOS"
-msgstr "CVPixelBuffer: macOS+iOS"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:224
-#, kde-format
-msgid "CVOpenGLES: iOS, no copy, fast"
-msgstr "CVOpenGLES: iOS, ekki afrit, hratt"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:225
-#, kde-format
-msgid "IOSurface: macOS, no copy, fast"
-msgstr "IOSurface: macOS, ekki afrit, hratt"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:226
-#, kde-format
-msgid "Auto: choose the fastest"
-msgstr "Sjálfvirkt: velja það hraðvirkasta"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:47
-#, kde-format
-msgctxt "@option: video filter"
-msgid "Video"
-msgstr "Myndskeið"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:48
-#, kde-format
-msgctxt "@option: audio filter"
-msgid "Audio"
-msgstr "Hljóð"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:53
-#, kde-format
-msgctxt "@option: enable filter"
-msgid "Enable %1"
-msgstr "Virkja %1"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:56
-#, kde-format
-msgctxt "@info"
-msgid "Registered %1 filters"
-msgstr "Skráði %1 síur"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:61
-#, kde-format
-msgctxt "@label"
-msgid "Parameters"
-msgstr "Viðföng"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:50
-#, kde-format
-msgid "Enable"
-msgstr "Virkja"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:50
-#, kde-format
-msgid "options"
-msgstr "valkosti"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:52
-#, kde-format
-msgid "Reduce buffering"
-msgstr "Minnka notkun biðminnis"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:54
-#, kde-format
-msgid "Probe size"
-msgstr "Stærð sýnis"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:60
-#, kde-format
-msgid "Max analyze duration"
-msgstr "Hámarkstímalengd greiningar"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:63
-#, kde-format
-msgid "0: auto. how many microseconds are analyzed to probe the input"
-msgstr ""
-"0: sjálfvirkt. Hve margar míkrósekúndur eru greindar við skoðun á inntakinu"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:66
-#, kde-format
-msgid "Extra"
-msgstr "Auka"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:74
-#, kde-format
-msgid "AVFormat"
-msgstr "AVFormat"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
-#, kde-format
-msgid "Browse"
-msgstr "Flakka"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:64
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:126
-#, kde-format
-msgid "Save dir"
-msgstr "Mappa til að vista"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:67
-#, kde-format
-msgid "Save format"
-msgstr "Skráarsnið vistunar"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:77
-#, kde-format
-msgid "Quality"
-msgstr "Gæði"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:103
-#, kde-format
-msgid "Capture"
-msgstr "Upptaka"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:214
-#, kde-format
-msgctxt "@title:window"
-msgid "Video Decoder Config Page"
-msgstr "Stillingasíða myndmerkisafkóðara"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:226
-#, kde-format
-msgctxt "@label"
-msgid "Decoder Priorities (reopen is required)"
-msgstr "Forgangur afkóðara (nauðsynlegt að enduropna)"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:289
-#, kde-format
-msgctxt "@action: go up in the list"
-msgid "Up"
-msgstr "Upp"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:295
-#, kde-format
-msgctxt "@action: go down in the list"
-msgid "Down"
-msgstr "Niður"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:315
-#, kde-format
-msgctxt "@title"
-msgid "Decoder"
-msgstr "Afkóðari"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:42
-#, kde-format
-msgid "Preview Over Time-Slider"
-msgstr "Forskoðun yfir tímasleða"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:48
-#, kde-format
-msgid "size"
-msgstr "stærð"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:64
-#, kde-format
-msgid "Force fps"
-msgstr "Þvinga rammatíðni"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:67
-#, kde-format
-msgid "Ignore"
-msgstr "Hunsa"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:70
-#, kde-format
-msgid "Progress update interval"
-msgstr "Uppfærslutíðni framvindu"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:77
-#, kde-format
-msgid "Buffer frames"
-msgstr "Rammar biðminnis"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:83
-#, kde-format
-msgid "Timeout"
-msgstr "Tímamörk"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:83
-#, kde-format
-msgid "s"
-msgstr "sek"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:95
-#, kde-format
-msgid "OpenGL type"
-msgstr "OpenGL-tegund"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:101
-#, kde-format
-msgid "Windows only"
-msgstr "Einungis fyrir Windows"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:102
-#, kde-format
-msgid "OpenGLES is Used by DXVA Zero Copy"
-msgstr "OpenGLES er notað af DXVA Zero Copy"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:105
-#, kde-format
-msgid "D3D9 has performance if ZeroCopy is disabled or for software decoders"
-msgstr "D3D9 er með afköst ef ZeroCopy er óvirkt eða við hugbúnaðarafkóðun"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:106
-#, kde-format
-msgid "RESTART REQUIRED"
-msgstr "ENDURRÆSING NAUÐSYNLEG"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:123
-#, kde-format
-msgid "Currently only works for Qt>=5.5 XCB build"
-msgstr "Virkar núna bara fyrir Qt>=5.5 XCB byggingu"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:130
-#, kde-format
-msgid "Misc"
-msgstr "Ýmisl."
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:42
-#, kde-format
-msgctxt "@option: enable shader"
-msgid "Enable"
-msgstr "Virkja"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:44
-#, kde-format
-msgctxt "@option"
-msgid "Intermediate FBO"
-msgstr "Millistigs-FBO"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:46
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader header"
-msgstr "Haus mynddílaskyggingar brota"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:52
-#, kde-format
-msgctxt "@info"
-msgid "Additional header code"
-msgstr "Viðbótarkóði í haus"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:54
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader texel sample function"
-msgstr "Sýnisaðgerð texel-mynddílaskyggingar brota"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:62
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader RGB post process code"
-msgstr "Eftirvinnslukóði RGB-mynddílaskyggingar brota"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:74
-#, kde-format
-msgctxt "@title"
-msgid "Shader"
-msgstr "Myndskygging"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr "Vél"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
-#, kde-format
-msgctxt "@option"
-msgid "Brightness"
-msgstr "Birtustig"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:69
-#, kde-format
-msgctxt "@option"
-msgid "Contrast"
-msgstr "Birtuskil"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:70
-#, kde-format
-msgctxt "@option"
-msgid "Hue"
-msgstr "Litblær"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:71
-#, kde-format
-msgctxt "@option"
-msgid "Saturation"
-msgstr "Litmettun"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:90
-#, kde-format
-msgctxt "@option: global settings"
-msgid "Global"
-msgstr "Almennt"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:697
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:737
-#, kde-format
-msgid "error reading stream data"
-msgstr "Villa við að lesa streymisgögn"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:976
-#, kde-format
-msgid "seek error"
-msgstr "leitarvilla"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1307
-#, kde-format
-msgid "failed to open media"
-msgstr "mistókst að opna gagnamiðil"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1333
-#, kde-format
-msgid "failed to find stream info"
-msgstr "mistókst að finna streymisupplýsingar"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1898
-#, kde-format
-msgid "interrupted by user"
-msgstr "stöðvað af notanda"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1909
-#, kde-format
-msgid "timeout"
-msgstr "tímamörk"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:160
-#, kde-format
-msgid "No error"
-msgstr "Engin villa"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:167
-#, kde-format
-msgid "Open error"
-msgstr "Villa við að opna"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:174
-#, kde-format
-msgid "Open timed out"
-msgstr "Opnun féll á tíma"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:181
-#, kde-format
-msgid "Parse stream timed out"
-msgstr "Þáttun streymis rann út á tíma"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:188
-#, kde-format
-msgid "Parse stream error"
-msgstr "Villa í þáttun streymis"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:195
-#, kde-format
-msgid "Stream not found"
-msgstr "Streymi fannst ekki."
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:202
-#, kde-format
-msgid "Read packet timed out"
-msgstr "Lestur pakka rann út á tíma"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:209
-#, kde-format
-msgid "Read error"
-msgstr "Villa við lestur"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:216
-#, kde-format
-msgid "Seek error"
-msgstr "Leitarvilla"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:223
-#, kde-format
-msgid "Resource error"
-msgstr "Villa í tilfangi"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:230
-#, kde-format
-msgid "Open codec error"
-msgstr "Villa við að opna kóðunarlykil"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:237
-#, kde-format
-msgid "Close codec error"
-msgstr "Villa  við að loka kóðunarlykli"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:244
-#, kde-format
-msgid "Video codec not found"
-msgstr "Myndkóðunarlykill fannst ekki"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:251
-#, kde-format
-msgid "Audio codec not found"
-msgstr "Hljóðkóðunarlykill fannst ekki"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:258
-#, kde-format
-msgid "Subtitle codec not found"
-msgstr "Kóðunarlykilll skjátexta fannst ekki"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:265
-#, kde-format
-msgid "Codec error"
-msgstr "Villa í kóðunarlykli"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:272
-#, kde-format
-msgid "Format error"
-msgstr "Villa í sniði"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:279
-#, kde-format
-msgid "Network error"
-msgstr "Villa í netkerfi"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:286
-#, kde-format
-msgid "Access denied"
-msgstr "Aðgangi hafnað"
-
-#: core/libs/video/qtav/filter/LibAVFilter.cpp:357
-#, kde-format
-msgid "Options:"
-msgstr "Valkostir:"
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:220
-#, kde-format
-msgid "Build version"
-msgstr "Byggingarútgáfa"
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:232
-#, kde-format
-msgid "Runtime version"
-msgstr "Keyrsluútgáfa"
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:267
-#, kde-format
-msgid "Multimedia framework based on Qt and FFmpeg.\n"
-msgstr "Margmiðlunarkerfi (multimedia framework) byggt á Qt og FFmpeg.\n"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:207
-#, kde-format
-msgid "About Qt"
-msgstr "Um Qt"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr "Í lagi"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
-#, kde-format
-msgctxt "@title:window"
-msgid "About QtAV"
-msgstr "Um QtAV"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, kde-format
-msgctxt "@title:window"
-msgid "About FFmpeg"
-msgstr "Um FFmpeg-hugbúnaðinn"
 
 #: core/libs/widgets/combo/dcombobox.cpp:61
 #: core/libs/widgets/range/dnuminput.cpp:71
@@ -41914,7 +41321,7 @@ msgstr "Breyta"
 #: core/libs/widgets/files/dbinarysearch.cpp:190
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
-msgstr ""
+msgstr "Tvíundakerfisskráin sem fannst virðist ekki vera að virka sem skyldi."
 
 #: core/libs/widgets/files/dfileselector.cpp:53
 #, kde-format
@@ -49602,7 +49009,7 @@ msgstr "S&kreyting"
 msgid "Effec&ts"
 msgstr "Sjón&hverfingar"
 
-#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:194
+#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -49681,13 +49088,13 @@ msgstr ""
 "<qt>Stillingar fyrir vistun myndskráa<br/><i>Setur sjálfgefnar stillingar "
 "sem notaðar eru við vistun myndskráa</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
+#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:216
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Hnattstaðsetning"
 
-#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
+#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:217
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -55907,7 +55314,7 @@ msgstr "Alþjóðlega dagslínan"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:655
 #, kde-format
 msgid "Bathymetry"
-msgstr ""
+msgstr "Dýptarmælingar"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:656
 #, kde-format
@@ -56072,16 +55479,19 @@ msgstr "Sleðabraut"
 #, kde-format
 msgid "Could not convert <maximum> child text content to integer. Was: '%1'"
 msgstr ""
+"Gat ekki umbreytt <maximum> efni afleidds texta yfir í heiltölu. Var: '%1'"
 
 #: core/utilities/geolocation/marble/geodata/handlers/dgml/DgmlMinimumTagHandler.cpp:37
 #, kde-format
 msgid "Could not convert <minimum> child text content to integer. Was: '%1'"
 msgstr ""
+"Gat ekki umbreytt <minimum> efni afleidds texta yfir í heiltölu. Var: '%1'"
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:89
 #, kde-format
 msgid "Parsing failed line %1. Still %2 unclosed tag(s) after document end. "
 msgstr ""
+"Þáttun mistókst á línu %1. Enn eru %2 ólokuð merki á eftir enda skjalsins. "
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:125
 #, kde-format
@@ -56969,7 +56379,7 @@ msgstr "Micro World Database II"
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:58
 #, kde-format
 msgid "Azimuthal Equidistant"
-msgstr ""
+msgstr "Stefnuháð jafnfjarlægðarvörpun"
 
 #: core/utilities/geolocation/marble/projections/AzimuthalEquidistantProjection.cpp:63
 #, kde-format
@@ -56978,6 +56388,9 @@ msgid ""
 "p><p>Applications: Display of seismic and radio data and for use in digital "
 "planetariums.</p>"
 msgstr ""
+"<p><b>Stefnuháð jafnfjarlægðarvörpun</b> (Azimuthal Equidistant Projection - "
+"\"fiskauga\")</p><p>Notkun: Birting jarðskjálftagagna og útvarpsbylgna og "
+"til sýningar í stafrænum stjörnuhvolfum.</p>"
 
 #: core/utilities/geolocation/marble/projections/EquirectProjection.cpp:35
 #, kde-format
@@ -56990,11 +56403,14 @@ msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
 "De facto standard for global texture data sets for computer software.</p>"
 msgstr ""
+"<p><b>Rétthyrningsvörpun</b> (Equirectangular Projection - \"Plate carrée"
+"\")</p><p>Notkun: Óopinber staðall við birtingu almennra yfirborðsgagnasafna "
+"í hugbúnaði.</p>"
 
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:64
 #, kde-format
 msgid "Gnomonic"
-msgstr "Gnomonic"
+msgstr "Þverlínuleg vörpun"
 
 #: core/utilities/geolocation/marble/projections/GnomonicProjection.cpp:69
 #, kde-format
@@ -57003,6 +56419,9 @@ msgid ""
 "displaying panorama photography. Also used for navigation, radio and seismic "
 "work.</p>"
 msgstr ""
+"<p><b>Þverlínuleg vörpun</b> (Gnomonic Projection - \"rectilinear\")</"
+"p><p>Notkun: Notað til birtingar á víðmyndum. Einnig notað í siglingafræði, "
+"útvarpsbylgjugögnum og jarðskjálftaupplýsingum.</p>"
 
 #: core/utilities/geolocation/marble/projections/LambertAzimuthalProjection.cpp:64
 #, kde-format
@@ -57015,6 +56434,9 @@ msgid ""
 "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used "
 "in structural geology to plot directional data.</p>"
 msgstr ""
+"<p><b>Stefnuháð Lambert-jafnflatarvörpun</b> (Lambert Azimuthal Equal-Area "
+"Projection)</p><p>Notkun: Notað í burðarþolsjarðfræði til að birta "
+"stefnugögn.</p>"
 
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:46
 #, kde-format
@@ -57022,6 +56444,8 @@ msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
 "projection for navigation.</p>"
 msgstr ""
+"<p><b>Mercator-vörpun</b></p><p>Notkun: vinsæl stöðluð kortavörpun fyrir "
+"leiðsögn.</p>"
 
 #: core/utilities/geolocation/marble/projections/SphericalProjection.cpp:66
 #, kde-format
@@ -57035,11 +56459,14 @@ msgid ""
 "perspective projection that is used to display the hemisphere of a globe as "
 "it appears from outer space.</p>"
 msgstr ""
+"<p><b>Hornrétt ofanvarp</b> (Orthographic Projection - \"orthogonal\")</"
+"p><p>Notkun: Fjarvíddarvörpun sem er notuð til að birta hvel hnattar eins og "
+"það myndi líta út séð utan úr geimnum.</p>"
 
 #: core/utilities/geolocation/marble/projections/StereographicProjection.cpp:64
 #, kde-format
 msgid "Stereographic"
-msgstr "Rúmsjármynd (stereographic)"
+msgstr "Rúmmynd"
 
 #: core/utilities/geolocation/marble/projections/StereographicProjection.cpp:69
 #, kde-format
@@ -57047,6 +56474,9 @@ msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
 "for planetary cartography, geology and panorama photography.</p>"
 msgstr ""
+"<p><b>Rúmmyndarvörpun</b> (Stereographic Projection - \"orthogonal\")</"
+"p><p>Notkun: Notað við kortagerð pláneta, jarðfræði og meðhöndlun ljósmynda "
+"í víðmyndum (panorama).</p>"
 
 #: core/utilities/geolocation/marble/projections/VerticalPerspectiveProjection.cpp:78
 #, kde-format
@@ -57060,6 +56490,10 @@ msgid ""
 "earth as it appears from a relatively short distance above the surface. "
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
+"<p><b>Lóðrétt fjarvíddarvörpun</b> (Vertical Perspective Projection - "
+"\"orthogonal\")</p><p> Sýnir Jörðina eins og hún birtist séð tiltölulega "
+"stutta vegalengd frá yfirborðinu. Notkun: Yfirleitt fyrir sýndar-hnattlíkön."
+"</p>"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:109
 #, kde-format
@@ -57230,6 +56664,12 @@ msgid ""
 "Decrease this value if you want to save space on the hard disc\n"
 "and if high usage of the Internet is not an issue."
 msgstr ""
+"Tvær gerðir biðminnis eru notaðar:\n"
+"\"Raunminni\" er notað til að halda kortagögnum í minni tölvunnar.\n"
+"Sé það gildi aukið ætti forritið að svara betur.\n"
+"\"Diskminni\" er notað til að sækja kortagögn af netinu.\n"
+"Minnkaðu þetta gildi ef þú vilt spara pláss á hörðum diski\n"
+"og ef mikil notkun á internetinu er ekki vandamál."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
 #, kde-format
@@ -57264,6 +56704,9 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Sjálfgefna letrið sem verður notað á landakortinu.\n"
+"Þessi stilling hefur aðeins áhrif með Atlas- og Gervitungl-\n"
+"landakortum, ekki á OpenStreetMap-landakortum."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
 #, kde-format
@@ -57277,6 +56720,9 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Birta yfirlag á heimskortinu með hnitaneti.\n"
+"Þessi stilling hefur aðeins áhrif með Atlaskort,\n"
+"Gervitungl og OpenStreetMap landakortum."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
 #, kde-format
@@ -57290,6 +56736,9 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Birta krossmið á miðju landakortsinsi.\n"
+"Þessi stilling hefur aðeins áhrif með Atlaskort,\n"
+"Gervitungl og OpenStreetMap landakortum."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
 #, kde-format
@@ -57303,6 +56752,9 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Birta yfirlag á heimskortinu með skini andrúmslofts.\n"
+"Þessi stilling hefur aðeins áhrif með Atlaskort,\n"
+"Gervitungl og OpenStreetMap landakortum."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
 #, kde-format
@@ -57316,6 +56768,9 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Birta yfirlag á heimskortinu með næturskugga.\n"
+"Þessi stilling hefur aðeins áhrif með Atlaskort,\n"
+"Gervitungl og OpenStreetMap landakortum."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
 #, kde-format
@@ -57329,6 +56784,9 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Birta yfirlag á heimskortinu með staðarmerkjum borga.\n"
+"Þessi stilling hefur aðeins áhrif með Atlas- og Gervitungl-\n"
+"landakortum, ekki á OpenStreetMap-landakortum."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
 #, kde-format
@@ -57342,6 +56800,9 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Birta upphleypt landslag á heimskortinu.\n"
+"Þessi stilling hefur aðeins áhrif með Atlas- og Gervitungl-\n"
+"landakortum, ekki á OpenStreetMap-landakortum."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
 #, kde-format
@@ -57426,7 +56887,7 @@ msgstr "Vektortíglar"
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:244
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
-msgstr ""
+msgstr "Leyfa val á milli þeirra tegunda laga sem sýnilega eru myndgerð."
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:513
 #, kde-format
@@ -60890,6 +60351,12 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
+"<p><b>Þetta verkfæri gerir kleift að úthluta merkjum sjálfvirkt á myndir út "
+"frá greiningu á myndefninu með vélnáms-tauganeti (deep-learning neural "
+"network).</b></p><p>Stillingarnar hér fyrir neðan skilgreina hvaða vélnáms-"
+"tauganet eigi að nota við skoðun myndefnisins og þannig ákvarða efni "
+"ljósmyndanna. Tauganetskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt "
+"röð merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:179
 #, kde-format
@@ -60943,6 +60410,22 @@ msgid ""
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
+"<p><b>YOLOv5 Nano</b>: Þetta líkan er tauganetkerfi sem býður upp á "
+"einstakan hraða og afköst. Það gerir þér kleift að láta meta í snarheitum "
+"samtvinnun greiningar á smærri hlutum. Það er hannað til að finna hluti og "
+"staðsetningar þeirra innan mynda. Takmörk á fjölda greinanlegra hluta eru "
+"stillt á 80.</p><p><b>YOLOv5 XLarge</b>: Sama og talið var hér á undan, "
+"þetta er tauganetkerfislíkan með undraverða eiginleika sem ætlað er til "
+"ítarlegri greiningar flókinna hluta. Þrátt fyrir aukið flækjustig og auknar "
+"krafir um tíma og afköst, gefur þetta mun betri niðurstöður varðandi stærri "
+"hluti, en þá á kostnað hraða.</p><p><b>ResNet50</b>: Þetta líkan er sérstök "
+"gerð tauganets sem mynduð er með stöflun afgangsblokka og vengulega notað í "
+"ýmsar gerðir tölvusjónar. Slík hönnun gefur kost á þjálfun einstaklega "
+"marglaga tauganeta án þess að takmarkast af vandamálum við hverfandi stigla "
+"(vanishing gradient problem). Ólíkt YOLO er ResNet50 fyrst og fremst hannað "
+"fyrir flokkun mynda og kemur ekki með staðsetningu hluta. Það getur þekkt "
+"hluti úr stóru safni með meira en 1.000 flokkum, sem inniheldur breitt svið "
+"af hlutum, dýrum og aðstæðum.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:212
 #, kde-format
@@ -66155,13 +65638,13 @@ msgstr ""
 "endurræsinguna. Sumar stillingar eru háðar vélbúnaði og gætu haft engin "
 "áhrif.</b>"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Gagnagrunnur"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66171,13 +65654,13 @@ msgstr ""
 "Stillingar gagnagrunns\n"
 "Sérsníddu stillingar gagnagrunnsins"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Söfn"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66187,13 +65670,13 @@ msgstr ""
 "Stillingar myndasafna\n"
 "Stilltu staðsetningu á grunnmöppum"
 
-#: core/utilities/setup/setup.cpp:211
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Skoðun"
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66203,13 +65686,13 @@ msgstr ""
 "Stillingar albúmasýna\n"
 "Sérsníddu útlit sýnanna"
 
-#: core/utilities/setup/setup.cpp:216
+#: core/utilities/setup/setup.cpp:184
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Vísbendingar verkfæra"
 
-#: core/utilities/setup/setup.cpp:217
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66219,29 +65702,13 @@ msgstr ""
 "Stillingar verkfæravísbendinga í albúmum\n"
 "Sérsníddu upplýsingar í vísbendingum verkfæra"
 
-#: core/utilities/setup/setup.cpp:223
-#, kde-format
-msgctxt "@title: settings section"
-msgid "Video"
-msgstr "Myndskeið"
-
-#: core/utilities/setup/setup.cpp:224
-#, kde-format
-msgctxt "@title"
-msgid ""
-"Video Preview Settings\n"
-"Customize settings to play video media"
-msgstr ""
-"Stillingar forskoðun myndskeiða\n"
-"Sérsníddu stillingar fyrir afspilun myndskeiðaskráa"
-
-#: core/utilities/setup/setup.cpp:230
+#: core/utilities/setup/setup.cpp:189
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Lýsigögn"
 
-#: core/utilities/setup/setup.cpp:231
+#: core/utilities/setup/setup.cpp:190
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66251,13 +65718,13 @@ msgstr ""
 "Stjórnun ígræddra myndupplýsinga\n"
 "Setur upp vensl milli mynda og lýsigagna (metadata)"
 
-#: core/utilities/setup/setup.cpp:235
+#: core/utilities/setup/setup.cpp:194
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Sniðskrár"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66267,13 +65734,13 @@ msgstr ""
 "Sniðmát lýsigagna\n"
 "Sýsla með forsniðin sniðmát fyrir lýsigagnaupplýsingar"
 
-#: core/utilities/setup/setup.cpp:240
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Myndvinnsluforrit"
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66283,13 +65750,13 @@ msgstr ""
 "Stillingar myndvinnsluforrits\n"
 "Sérsníddu hegðun myndvinnsluforritsins"
 
-#: core/utilities/setup/setup.cpp:245
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Litastýring"
 
-#: core/utilities/setup/setup.cpp:246
+#: core/utilities/setup/setup.cpp:205
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66299,13 +65766,13 @@ msgstr ""
 "Stillingar litastýringar\n"
 "Sérsníddu stillingar litastýringar"
 
-#: core/utilities/setup/setup.cpp:250
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Ljósaborð"
 
-#: core/utilities/setup/setup.cpp:251
+#: core/utilities/setup/setup.cpp:210
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66315,13 +65782,13 @@ msgstr ""
 "Stillingar ljósaborðs\n"
 "Sérsníddu verkfærið sem notað er til að bera saman atriði"
 
-#: core/utilities/setup/setup.cpp:264
+#: core/utilities/setup/setup.cpp:223
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Myndgæðaröðun"
 
-#: core/utilities/setup/setup.cpp:265
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66331,13 +65798,13 @@ msgstr ""
 "Stillingar myndgæðaröðunar\n"
 "Sérsníddu sjálfgefnar stillingar til röðunar á myndum eftir gæðum þeirra"
 
-#: core/utilities/setup/setup.cpp:269
+#: core/utilities/setup/setup.cpp:228
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Myndavélar"
 
-#: core/utilities/setup/setup.cpp:270
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66347,13 +65814,13 @@ msgstr ""
 "Myndavélastillingar\n"
 "Sýslaðu með myndavélarnar þínar"
 
-#: core/utilities/setup/setup.cpp:277
+#: core/utilities/setup/setup.cpp:236
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Viðbætur"
 
-#: core/utilities/setup/setup.cpp:278
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66363,13 +65830,13 @@ msgstr ""
 "Stillingar viðbóta\n"
 "Stilltu hvaða viðbætur séu aðgengilegar úr aðalviðmótinu"
 
-#: core/utilities/setup/setup.cpp:282
+#: core/utilities/setup/setup.cpp:241
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Ýmislegt"
 
-#: core/utilities/setup/setup.cpp:283
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67352,19 +66819,422 @@ msgstr "Albúmahlutir"
 msgid "Import Items"
 msgstr "Flytja inn hluti"
 
-#: core/utilities/setup/setupvideo.cpp:74
-#, kde-format
-msgctxt "@info"
-msgid "Press this button to reset all video settings to the default values."
-msgstr ""
-"Ýttu á þennan hnapp til að frumstilla allar stillingar myndmerkis á "
-"sjálfgefin gildi."
+#~ msgid "No codec could be found for: "
+#~ msgstr "Engin myndmerkiskóðun fannst fyrir:"
 
-#: core/utilities/setup/setupvideo.cpp:132
-#, kde-format
-msgctxt "@info"
-msgid "Do you want to reset all video settings to the default value?"
-msgstr "Viltu frumstilla allar stillingar myndmerkis á sjálfgefin gildi?"
+#~ msgid "Decoding surfaces"
+#~ msgstr "Afkóða fleti"
+
+#~ msgid "Decoder flags"
+#~ msgstr "Flögg afkóðara"
+
+#~ msgid "Performance: ZeroCopy > DirectCopy > GenericCopy"
+#~ msgstr "Afköst: ZeroCopy > DirectCopy > GenericCopy"
+
+#~ msgid ""
+#~ "ZeroCopy: no copy back from GPU to System memory. Directly render the "
+#~ "decoded data on GPU"
+#~ msgstr ""
+#~ "ZeroCopy: ekki afritun til baka úr GPU (skjáörgjörva) yfir í kerfisminni. "
+#~ "Myndgera afkóðuðu gögnin beint á GPU"
+
+#~ msgid ""
+#~ "DirectCopy: copy back to host memory but video frames and map to GL "
+#~ "texture"
+#~ msgstr ""
+#~ "DirectCopy: afritun til baka í minni vélarinnar en myndskeiðaramma og "
+#~ "vörpun yfir í GL-áferð"
+
+#~ msgid "GenericCopy: copy back to host memory and each video frame"
+#~ msgstr ""
+#~ "GenericCopy: afritun til baka í minni vélarinnar og hvern myndskeiðaramma"
+
+#~ msgid "Codec %1 is not supported by CUDA"
+#~ msgstr "Kóðunarlykillinn %1 er ekki studdur af CUDA"
+
+#~ msgid "0: auto"
+#~ msgstr "0: sjálfvirkt"
+
+#~ msgid ""
+#~ "Skipping the loop filter (aka deblocking) usually has determinal effect "
+#~ "on quality. However it provides a big speedup for hi definition streams"
+#~ msgstr ""
+#~ "Að sleppa lykkjusíunni (e. deblocking/loop-filter) hefur venjulega slæm "
+#~ "áhrif á gæði. Hinsvegar veldur það mikilli hraðaaukningu fyrir streymi í "
+#~ "háupplausn"
+
+#~ msgid ""
+#~ "Force skipping of idct to speed up decoding for frame types (-1=None, "
+#~ "0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
+#~ msgstr ""
+#~ "Þvinga fram sleppingu á idct til að hraða afkóðun á tegundum ramma "
+#~ "(-1=Ekkert, 0=Sjálfgefið, 1=B-rammar, 2=P-rammar, 3=B+P rammar, 4=allir "
+#~ "rammar)"
+
+#~ msgid "Force skipping frames for speed up decoding."
+#~ msgstr "Þvinga fram sleppingu á römmum til að hraða afkóðun."
+
+#~ msgid ""
+#~ "Number of decoding threads. Set before open. Maybe no effect for some "
+#~ "decoders"
+#~ msgstr ""
+#~ "Fjöldi afkóðunarþráða. Stillist fyrir opnun. Kannski engin áhrif fyrir "
+#~ "suma afkóðara"
+
+#~ msgid "1: single thread decoding"
+#~ msgstr "1: afkóðun á einum þræði"
+
+#~ msgid ""
+#~ "ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
+#~ msgstr ""
+#~ "ZeroCopy: hraðvirkast. Bein myndgerð án afritunar gagna á milli CPU og GPU"
+
+#~ msgid "Not implemented for all codecs"
+#~ msgstr "Ekki útfært fyrir alla kóðunarlykla"
+
+#~ msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
+#~ msgstr "OptimizedCopy: afritun úr USWC-minni bestuðu með SSE4.1"
+
+#~ msgid "GenericCopy: slowest. Generic cpu copy"
+#~ msgstr "GenericCopy: hægvirkast. Almenn afritun á CPU"
+
+#~ msgid "Multithread decoding may crash"
+#~ msgstr "Fjölþráða afkóðun gæti hrunið"
+
+#~ msgid "Decoding surfaces 0: auto"
+#~ msgstr "Afkóða fleti 0: sjálfvirkt"
+
+#~ msgid "Maybe faster"
+#~ msgstr "Kannski hraðar"
+
+#~ msgid "VA API version %1.%2; Vendor: %3;"
+#~ msgstr "VA API útgáfa %1.%2; framleiðandi: %3;"
+
+#~ msgid ""
+#~ "Output pixel format from decoder. Performance (better first): NV12 ; "
+#~ "UYVY ; BGRA ; YUV420P ; YUYV. OSX superior to 10.7 only supports UYVY, "
+#~ "BGRA and YUV420p"
+#~ msgstr ""
+#~ "Snið úttaksmynddíla frá afkóðara. Afköst (best fyrst): NV12 ; UYVY ; "
+#~ "BGRA ; YUV420P ; YUYV. OSX meira en 10.7 styður einungis UYVY, BGRA og "
+#~ "YUV420p"
+
+#~ msgid "Interop with OpenGL"
+#~ msgstr "Samvirkni með OpenGL"
+
+#~ msgid "CVPixelBuffer: macOS+iOS"
+#~ msgstr "CVPixelBuffer: macOS+iOS"
+
+#~ msgid "CVOpenGLES: iOS, no copy, fast"
+#~ msgstr "CVOpenGLES: iOS, ekki afrit, hratt"
+
+#~ msgid "IOSurface: macOS, no copy, fast"
+#~ msgstr "IOSurface: macOS, ekki afrit, hratt"
+
+#~ msgid "Auto: choose the fastest"
+#~ msgstr "Sjálfvirkt: velja það hraðvirkasta"
+
+#~ msgctxt "@option: video filter"
+#~ msgid "Video"
+#~ msgstr "Myndskeið"
+
+#~ msgctxt "@option: audio filter"
+#~ msgid "Audio"
+#~ msgstr "Hljóð"
+
+#~ msgctxt "@option: enable filter"
+#~ msgid "Enable %1"
+#~ msgstr "Virkja %1"
+
+#~ msgctxt "@info"
+#~ msgid "Registered %1 filters"
+#~ msgstr "Skráði %1 síur"
+
+#~ msgctxt "@label"
+#~ msgid "Parameters"
+#~ msgstr "Viðföng"
+
+#~ msgid "Enable"
+#~ msgstr "Virkja"
+
+#~ msgid "options"
+#~ msgstr "valkosti"
+
+#~ msgid "Reduce buffering"
+#~ msgstr "Minnka notkun biðminnis"
+
+#~ msgid "Probe size"
+#~ msgstr "Stærð sýnis"
+
+#~ msgid "Max analyze duration"
+#~ msgstr "Hámarkstímalengd greiningar"
+
+#~ msgid "0: auto. how many microseconds are analyzed to probe the input"
+#~ msgstr ""
+#~ "0: sjálfvirkt. Hve margar míkrósekúndur eru greindar við skoðun á "
+#~ "inntakinu"
+
+#~ msgid "Extra"
+#~ msgstr "Auka"
+
+#~ msgid "AVFormat"
+#~ msgstr "AVFormat"
+
+#~ msgid "Browse"
+#~ msgstr "Flakka"
+
+#~ msgid "Save dir"
+#~ msgstr "Mappa til að vista"
+
+#~ msgid "Save format"
+#~ msgstr "Skráarsnið vistunar"
+
+#~ msgid "Quality"
+#~ msgstr "Gæði"
+
+#~ msgid "Capture"
+#~ msgstr "Upptaka"
+
+#~ msgctxt "@title:window"
+#~ msgid "Video Decoder Config Page"
+#~ msgstr "Stillingasíða myndmerkisafkóðara"
+
+#~ msgctxt "@label"
+#~ msgid "Decoder Priorities (reopen is required)"
+#~ msgstr "Forgangur afkóðara (nauðsynlegt að enduropna)"
+
+#~ msgctxt "@action: go up in the list"
+#~ msgid "Up"
+#~ msgstr "Upp"
+
+#~ msgctxt "@action: go down in the list"
+#~ msgid "Down"
+#~ msgstr "Niður"
+
+#~ msgctxt "@title"
+#~ msgid "Decoder"
+#~ msgstr "Afkóðari"
+
+#~ msgid "Preview Over Time-Slider"
+#~ msgstr "Forskoðun yfir tímasleða"
+
+#~ msgid "size"
+#~ msgstr "stærð"
+
+#~ msgid "Force fps"
+#~ msgstr "Þvinga rammatíðni"
+
+#~ msgid "Ignore"
+#~ msgstr "Hunsa"
+
+#~ msgid "Progress update interval"
+#~ msgstr "Uppfærslutíðni framvindu"
+
+#~ msgid "Buffer frames"
+#~ msgstr "Rammar biðminnis"
+
+#~ msgid "Timeout"
+#~ msgstr "Tímamörk"
+
+#~ msgid "s"
+#~ msgstr "sek"
+
+#~ msgid "OpenGL type"
+#~ msgstr "OpenGL-tegund"
+
+#~ msgid "Windows only"
+#~ msgstr "Einungis fyrir Windows"
+
+#~ msgid "OpenGLES is Used by DXVA Zero Copy"
+#~ msgstr "OpenGLES er notað af DXVA Zero Copy"
+
+#~ msgid ""
+#~ "D3D9 has performance if ZeroCopy is disabled or for software decoders"
+#~ msgstr "D3D9 er með afköst ef ZeroCopy er óvirkt eða við hugbúnaðarafkóðun"
+
+#~ msgid "RESTART REQUIRED"
+#~ msgstr "ENDURRÆSING NAUÐSYNLEG"
+
+#~ msgid "Currently only works for Qt>=5.5 XCB build"
+#~ msgstr "Virkar núna bara fyrir Qt>=5.5 XCB byggingu"
+
+#~ msgid "Misc"
+#~ msgstr "Ýmisl."
+
+#~ msgctxt "@option: enable shader"
+#~ msgid "Enable"
+#~ msgstr "Virkja"
+
+#~ msgctxt "@option"
+#~ msgid "Intermediate FBO"
+#~ msgstr "Millistigs-FBO"
+
+#~ msgctxt "@label"
+#~ msgid "Fragment shader header"
+#~ msgstr "Haus mynddílaskyggingar brota"
+
+#~ msgctxt "@info"
+#~ msgid "Additional header code"
+#~ msgstr "Viðbótarkóði í haus"
+
+#~ msgctxt "@label"
+#~ msgid "Fragment shader texel sample function"
+#~ msgstr "Sýnisaðgerð texel-mynddílaskyggingar brota"
+
+#~ msgctxt "@label"
+#~ msgid "Fragment shader RGB post process code"
+#~ msgstr "Eftirvinnslukóði RGB-mynddílaskyggingar brota"
+
+#~ msgctxt "@title"
+#~ msgid "Shader"
+#~ msgstr "Myndskygging"
+
+#~ msgctxt "@label"
+#~ msgid "Engine"
+#~ msgstr "Vél"
+
+#~ msgctxt "@option"
+#~ msgid "Brightness"
+#~ msgstr "Birtustig"
+
+#~ msgctxt "@option"
+#~ msgid "Contrast"
+#~ msgstr "Birtuskil"
+
+#~ msgctxt "@option"
+#~ msgid "Hue"
+#~ msgstr "Litblær"
+
+#~ msgctxt "@option"
+#~ msgid "Saturation"
+#~ msgstr "Litmettun"
+
+#~ msgctxt "@option: global settings"
+#~ msgid "Global"
+#~ msgstr "Almennt"
+
+#~ msgid "error reading stream data"
+#~ msgstr "Villa við að lesa streymisgögn"
+
+#~ msgid "seek error"
+#~ msgstr "leitarvilla"
+
+#~ msgid "failed to open media"
+#~ msgstr "mistókst að opna gagnamiðil"
+
+#~ msgid "failed to find stream info"
+#~ msgstr "mistókst að finna streymisupplýsingar"
+
+#~ msgid "interrupted by user"
+#~ msgstr "stöðvað af notanda"
+
+#~ msgid "timeout"
+#~ msgstr "tímamörk"
+
+#~ msgid "No error"
+#~ msgstr "Engin villa"
+
+#~ msgid "Open error"
+#~ msgstr "Villa við að opna"
+
+#~ msgid "Open timed out"
+#~ msgstr "Opnun féll á tíma"
+
+#~ msgid "Parse stream timed out"
+#~ msgstr "Þáttun streymis rann út á tíma"
+
+#~ msgid "Parse stream error"
+#~ msgstr "Villa í þáttun streymis"
+
+#~ msgid "Stream not found"
+#~ msgstr "Streymi fannst ekki."
+
+#~ msgid "Read packet timed out"
+#~ msgstr "Lestur pakka rann út á tíma"
+
+#~ msgid "Read error"
+#~ msgstr "Villa við lestur"
+
+#~ msgid "Seek error"
+#~ msgstr "Leitarvilla"
+
+#~ msgid "Resource error"
+#~ msgstr "Villa í tilfangi"
+
+#~ msgid "Open codec error"
+#~ msgstr "Villa við að opna kóðunarlykil"
+
+#~ msgid "Close codec error"
+#~ msgstr "Villa  við að loka kóðunarlykli"
+
+#~ msgid "Video codec not found"
+#~ msgstr "Myndkóðunarlykill fannst ekki"
+
+#~ msgid "Audio codec not found"
+#~ msgstr "Hljóðkóðunarlykill fannst ekki"
+
+#~ msgid "Subtitle codec not found"
+#~ msgstr "Kóðunarlykilll skjátexta fannst ekki"
+
+#~ msgid "Codec error"
+#~ msgstr "Villa í kóðunarlykli"
+
+#~ msgid "Format error"
+#~ msgstr "Villa í sniði"
+
+#~ msgid "Network error"
+#~ msgstr "Villa í netkerfi"
+
+#~ msgid "Access denied"
+#~ msgstr "Aðgangi hafnað"
+
+#~ msgid "Options:"
+#~ msgstr "Valkostir:"
+
+#~ msgid "Build version"
+#~ msgstr "Byggingarútgáfa"
+
+#~ msgid "Runtime version"
+#~ msgstr "Keyrsluútgáfa"
+
+#~ msgid "Multimedia framework based on Qt and FFmpeg.\n"
+#~ msgstr "Margmiðlunarkerfi (multimedia framework) byggt á Qt og FFmpeg.\n"
+
+#~ msgid "About Qt"
+#~ msgstr "Um Qt"
+
+#~ msgid "Ok"
+#~ msgstr "Í lagi"
+
+#~ msgctxt "@title:window"
+#~ msgid "About QtAV"
+#~ msgstr "Um QtAV"
+
+#~ msgctxt "@title:window"
+#~ msgid "About FFmpeg"
+#~ msgstr "Um FFmpeg-hugbúnaðinn"
+
+#~ msgctxt "@title: settings section"
+#~ msgid "Video"
+#~ msgstr "Myndskeið"
+
+#~ msgctxt "@title"
+#~ msgid ""
+#~ "Video Preview Settings\n"
+#~ "Customize settings to play video media"
+#~ msgstr ""
+#~ "Stillingar forskoðun myndskeiða\n"
+#~ "Sérsníddu stillingar fyrir afspilun myndskeiðaskráa"
+
+#~ msgctxt "@info"
+#~ msgid "Press this button to reset all video settings to the default values."
+#~ msgstr ""
+#~ "Ýttu á þennan hnapp til að frumstilla allar stillingar myndmerkis á "
+#~ "sjálfgefin gildi."
+
+#~ msgctxt "@info"
+#~ msgid "Do you want to reset all video settings to the default value?"
+#~ msgstr "Viltu frumstilla allar stillingar myndmerkis á sjálfgefin gildi?"
 
 #, fuzzy
 #~| msgid "Encoding %1 Done"

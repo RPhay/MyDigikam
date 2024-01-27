@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 01:33+0000\n"
+"POT-Creation-Date: 2024-01-27 01:35+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -3052,7 +3052,7 @@ msgstr ""
 "Versioon.: %3"
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/qtav/mediaplayerview.cpp:191
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:180
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:260
 #, kde-format
 msgctxt "go to previous image"
@@ -3060,7 +3060,7 @@ msgid "Back"
 msgstr "Tagasi"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/qtav/mediaplayerview.cpp:193
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to next image"
@@ -3110,7 +3110,7 @@ msgstr "Täisekraanirežiim"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:489
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -3202,7 +3202,7 @@ msgid "No Tags Album"
 msgstr "Siltide albumit pole"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:558
+#: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -12178,7 +12178,7 @@ msgid "Saving changes -"
 msgstr "Muudatuste salvestamine -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:243
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
@@ -17191,7 +17191,6 @@ msgstr "Kalendrimalli loomine"
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
-#: core/libs/video/qtav/config/MiscPage.cpp:48
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
@@ -22645,25 +22644,25 @@ msgstr "Slaid:"
 msgid "Soundtrack:"
 msgstr "Heliriba:"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:190
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:253
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:211
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:199
 #, kde-format
 msgid "No detail available"
 msgstr "Ühtegi üksikasja pole saada"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:244
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 ei pruugi olla esitatav."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:252
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgid "This file may not be playable."
 msgstr "See fail ei pruugi olla esitatav."
@@ -24666,7 +24665,6 @@ msgstr "Kõik setterid nõuavad nüüd POST-meetodit"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:539
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:227
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:293
 #, kde-format
 msgid "Unknown error"
 msgstr "Tundmatu tõrge"
@@ -28217,7 +28215,6 @@ msgstr ""
 "dekodeerimine nurjus."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
-#: core/libs/video/qtav/config/MiscPage.cpp:89
 #, kde-format
 msgid "Abort"
 msgstr "Katkesta"
@@ -28380,38 +28377,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Toorpildi teisendus"
 
-#: core/libs/album/engine/album.cpp:406
+#: core/libs/album/engine/album.cpp:410
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Prügikast"
 
-#: core/libs/album/engine/album.cpp:757
+#: core/libs/album/engine/album.cpp:761
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Aktiivne ajateljeotsing"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Aktiivne pildi sarnasusotsing"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:771
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Aktiivne visandiga sarnasusotsing"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:778
 #, kde-format
 msgid "Current Map Search"
 msgstr "Aktiivne kaardiotsing"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Search"
 msgstr "Aktiivne otsing"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Aktiivne topeltpiltide otsing"
@@ -41701,8 +41698,6 @@ msgid "&Icon:"
 msgstr "&Ikoon:"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:134
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:93
-#: core/utilities/setup/setupvideo.cpp:73
 #, fuzzy, kde-format
 #| msgid "Reset"
 msgctxt "@action"
@@ -43928,14 +43923,14 @@ msgctxt "@info"
 msgid "Select here the font used to display text in the MJPEG."
 msgstr "Siin saab valida slaidiseansis näidatava teksti fondi."
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:195
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Esita/paus"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:197
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, fuzzy, kde-format
 #| msgid "Nature"
@@ -43943,700 +43938,17 @@ msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Loodus"
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:200
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:189
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:269
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Tõrge meediamängijaga ..."
 
-#: core/libs/video/player/qtav/mediaplayerview.cpp:233
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:220
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
-
-#: core/libs/video/qtav/codec/AVDecoder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgid "No codec could be found for: "
-msgstr "Videokoodek"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:473
-#: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:396
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scanning faces"
-msgid "Decoding surfaces"
-msgstr "Nägude uurimine"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:474
-#, kde-format
-msgid "Decoder flags"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:476
-#, kde-format
-msgid "Performance: ZeroCopy > DirectCopy > GenericCopy"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:477
-#, kde-format
-msgid ""
-"ZeroCopy: no copy back from GPU to System memory. Directly render the "
-"decoded data on GPU"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:478
-#, kde-format
-msgid ""
-"DirectCopy: copy back to host memory but video frames and map to GL texture"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:479
-#, kde-format
-msgid "GenericCopy: copy back to host memory and each video frame"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:888
-#, fuzzy, kde-format
-#| msgid "Media format is not supported yet"
-msgid "Codec %1 is not supported by CUDA"
-msgstr "Meediavorming ei ole veel toetatud"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:397
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:351
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:58
-#, fuzzy, kde-format
-#| msgid "No, auto"
-msgid "0: auto"
-msgstr "Ei, automaatne"
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:378
-#, kde-format
-msgid ""
-"Skipping the loop filter (aka deblocking) usually has determinal effect on "
-"quality. However it provides a big speedup for hi definition streams"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:384
-#, kde-format
-msgid ""
-"Force skipping of idct to speed up decoding for frame types (-1=None, "
-"0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
-#, kde-format
-msgid "Force skipping frames for speed up decoding."
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:388
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
-#, kde-format
-msgid ""
-"Number of decoding threads. Set before open. Maybe no effect for some "
-"decoders"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:390
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:352
-#, kde-format
-msgid "1: single thread decoding"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
-#, kde-format
-msgid ""
-"ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
-#, kde-format
-msgid "Not implemented for all codecs"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:345
-#, kde-format
-msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:346
-#, kde-format
-msgid "GenericCopy: slowest. Generic cpu copy"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
-#, kde-format
-msgid "Multithread decoding may crash"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:389
-#, kde-format
-msgid "Decoding surfaces 0: auto"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:390
-#, kde-format
-msgid "Maybe faster"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:747
-#, kde-format
-msgid "VA API version %1.%2; Vendor: %3;"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:217
-#, kde-format
-msgid ""
-"Output pixel format from decoder. Performance (better first): NV12 ; UYVY ; "
-"BGRA ; YUV420P ; YUYV. OSX superior to 10.7 only supports UYVY, BGRA and "
-"YUV420p"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:222
-#, kde-format
-msgid "Interop with OpenGL"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:223
-#, kde-format
-msgid "CVPixelBuffer: macOS+iOS"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:224
-#, kde-format
-msgid "CVOpenGLES: iOS, no copy, fast"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:225
-#, kde-format
-msgid "IOSurface: macOS, no copy, fast"
-msgstr ""
-
-#: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:226
-#, kde-format
-msgid "Auto: choose the fastest"
-msgstr ""
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:47
-#, fuzzy, kde-format
-#| msgid "Video"
-msgctxt "@option: video filter"
-msgid "Video"
-msgstr "Video"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:48
-#, fuzzy, kde-format
-#| msgid "Audio"
-msgctxt "@option: audio filter"
-msgid "Audio"
-msgstr "Heli"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:53
-#, fuzzy, kde-format
-#| msgid "enabled"
-msgctxt "@option: enable filter"
-msgid "Enable %1"
-msgstr "lubatud"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:56
-#, fuzzy, kde-format
-#| msgid "Restore Tag Filters"
-msgctxt "@info"
-msgid "Registered %1 filters"
-msgstr "Taasta sildifiltrid"
-
-#: core/libs/video/qtav/config/AVFilterConfigPage.cpp:61
-#, fuzzy, kde-format
-#| msgid "Theme Parameters"
-msgctxt "@label"
-msgid "Parameters"
-msgstr "Teema parameetrid"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:50
-#, fuzzy, kde-format
-#| msgid "enabled"
-msgid "Enable"
-msgstr "lubatud"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:50
-#, fuzzy, kde-format
-#| msgid "Options"
-msgid "options"
-msgstr "Valikud"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:52
-#, fuzzy, kde-format
-#| msgid "Reduce Texturing"
-msgid "Reduce buffering"
-msgstr "Tekstuuri kahandamine"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:54
-#, fuzzy, kde-format
-#| msgid "Drop size:"
-msgid "Probe size"
-msgstr "Piisa suurus:"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:60
-#, kde-format
-msgid "Max analyze duration"
-msgstr ""
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:63
-#, kde-format
-msgid "0: auto. how many microseconds are analyzed to probe the input"
-msgstr ""
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:66
-#, fuzzy, kde-format
-#| msgid "Extra tags"
-msgid "Extra"
-msgstr "Lisasildid"
-
-#: core/libs/video/qtav/config/AVFormatConfigPage.cpp:74
-#, fuzzy, kde-format
-#| msgid "Format"
-msgid "AVFormat"
-msgstr "Vorming"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
-#, fuzzy, kde-format
-#| msgid "&Browse"
-msgid "Browse"
-msgstr "Sir&vimine"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:64
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:126
-#, fuzzy, kde-format
-#| msgid "Save File"
-msgid "Save dir"
-msgstr "Faili salvestamine"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action Save As New Version...Save in format..."
-#| msgid "Save in Format"
-msgid "Save format"
-msgstr "Salvesta vormingus"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:77
-#, fuzzy, kde-format
-#| msgid "Quality:"
-msgid "Quality"
-msgstr "Kvaliteet:"
-
-#: core/libs/video/qtav/config/CaptureConfigPage.cpp:103
-#, fuzzy, kde-format
-#| msgid "Nature"
-msgid "Capture"
-msgstr "Loodus"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:214
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@title:window"
-msgid "Video Decoder Config Page"
-msgstr "Videokoodek"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:226
-#, fuzzy, kde-format
-#| msgid "The namespace name is required"
-msgctxt "@label"
-msgid "Decoder Priorities (reopen is required)"
-msgstr "Nimeruumil peab olema nimi"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:289
-#, kde-format
-msgctxt "@action: go up in the list"
-msgid "Up"
-msgstr ""
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:295
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Download"
-msgctxt "@action: go down in the list"
-msgid "Down"
-msgstr "Allalaadimine"
-
-#: core/libs/video/qtav/config/DecoderConfigPage.cpp:315
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@title"
-msgid "Decoder"
-msgstr "Videokoodek"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:42
-#, fuzzy, kde-format
-#| msgid "Preview on mouse-over"
-msgid "Preview Over Time-Slider"
-msgstr "Hiirealuse eelvaatlus"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:48
-#, fuzzy, kde-format
-#| msgid "Resize"
-msgid "size"
-msgstr "Suuruse muutmine"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:64
-#, fuzzy, kde-format
-#| msgid " fps"
-msgid "Force fps"
-msgstr " fps"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:67
-#, fuzzy, kde-format
-#| msgid "Monitor profile:"
-msgid "Ignore"
-msgstr "Monitori profiil:"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:70
-#, fuzzy, kde-format
-#| msgid "Progress indicator"
-msgid "Progress update interval"
-msgstr "Edenemisnäidik"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "NAME OF TRANSLATORS"
-#| msgid "Your names"
-msgid "Buffer frames"
-msgstr "Marek Laane"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:83
-#, fuzzy, kde-format
-#| msgid "Open the image editor."
-msgid "Timeout"
-msgstr "Pildiredaktori avamine."
-
-#: core/libs/video/qtav/config/MiscPage.cpp:83
-#, kde-format
-msgid "s"
-msgstr "s"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:95
-#, fuzzy, kde-format
-#| msgid "OpenGL error"
-msgid "OpenGL type"
-msgstr "OpenGL tõrge"
-
-#: core/libs/video/qtav/config/MiscPage.cpp:101
-#, kde-format
-msgid "Windows only"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:102
-#, kde-format
-msgid "OpenGLES is Used by DXVA Zero Copy"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:105
-#, kde-format
-msgid "D3D9 has performance if ZeroCopy is disabled or for software decoders"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:106
-#, kde-format
-msgid "RESTART REQUIRED"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:123
-#, kde-format
-msgid "Currently only works for Qt>=5.5 XCB build"
-msgstr ""
-
-#: core/libs/video/qtav/config/MiscPage.cpp:130
-#, kde-format
-msgid "Misc"
-msgstr ""
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:42
-#, fuzzy, kde-format
-#| msgid "enabled"
-msgctxt "@option: enable shader"
-msgid "Enable"
-msgstr "lubatud"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Intermediate Steps:"
-msgctxt "@option"
-msgid "Intermediate FBO"
-msgstr "Vaheversioonid:"
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:46
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader header"
-msgstr ""
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:52
-#, kde-format
-msgctxt "@info"
-msgid "Additional header code"
-msgstr ""
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:54
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader texel sample function"
-msgstr ""
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:62
-#, kde-format
-msgctxt "@label"
-msgid "Fragment shader RGB post process code"
-msgstr ""
-
-#: core/libs/video/qtav/config/ShaderPage.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "light source"
-#| msgid "Shade"
-msgctxt "@title"
-msgid "Shader"
-msgstr "Vari"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr ""
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
-#, fuzzy, kde-format
-#| msgid "Brightness:"
-msgctxt "@option"
-msgid "Brightness"
-msgstr "Heledus:"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:69
-#, fuzzy, kde-format
-#| msgid "Contrast:"
-msgctxt "@option"
-msgid "Contrast"
-msgstr "Kontrast:"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:70
-#, fuzzy, kde-format
-#| msgid "Hue:"
-msgctxt "@option"
-msgid "Hue"
-msgstr "Toon:"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:71
-#, fuzzy, kde-format
-#| msgid "Saturation"
-msgctxt "@option"
-msgid "Saturation"
-msgstr "Küllastus"
-
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:90
-#, kde-format
-msgctxt "@option: global settings"
-msgid "Global"
-msgstr ""
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:697
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:737
-#, fuzzy, kde-format
-#| msgid "Loading metadata -"
-msgid "error reading stream data"
-msgstr "Metaandmete laadimine -"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:976
-#, fuzzy, kde-format
-#| msgid "Error"
-msgid "seek error"
-msgstr "Tõrge"
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1307
-#, fuzzy, kde-format
-#| msgid "Failed to open muxer"
-msgid "failed to open media"
-msgstr "Muxeri avamine nurjus."
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1333
-#, fuzzy, kde-format
-#| msgid "Failed to create file..."
-msgid "failed to find stream info"
-msgstr "Faili loomine nurjus..."
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1898
-#, fuzzy, kde-format
-#| msgctxt "Advanced time format settings"
-#| msgid "Advanced..."
-msgid "interrupted by user"
-msgstr "Täpsem..."
-
-#: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1909
-#, fuzzy, kde-format
-#| msgid "Open the image editor."
-msgid "timeout"
-msgstr "Pildiredaktori avamine."
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:160
-#, fuzzy, kde-format
-#| msgid "Token error"
-msgid "No error"
-msgstr "Pääsmiku tõrge"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:167
-#, fuzzy, kde-format
-#| msgid "OpenGL error"
-msgid "Open error"
-msgstr "OpenGL tõrge"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:174
-#, fuzzy, kde-format
-#| msgid "Open the image editor."
-msgid "Open timed out"
-msgstr "Pildiredaktori avamine."
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:181
-#, kde-format
-msgid "Parse stream timed out"
-msgstr ""
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:188
-#, kde-format
-msgid "Parse stream error"
-msgstr ""
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:195
-#, fuzzy, kde-format
-#| msgid "Binary not found."
-msgid "Stream not found"
-msgstr "Binaarfaili ei leitud."
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:202
-#, kde-format
-msgid "Read packet timed out"
-msgstr ""
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Download New"
-msgid "Read error"
-msgstr "Laadi alla uued"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:216
-#, fuzzy, kde-format
-#| msgid "Error"
-msgid "Seek error"
-msgstr "Tõrge"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:223
-#, fuzzy, kde-format
-#| msgid "Session error"
-msgid "Resource error"
-msgstr "Seansi tõrge"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:230
-#, fuzzy, kde-format
-#| msgid "OpenGL error"
-msgid "Open codec error"
-msgstr "OpenGL tõrge"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:237
-#, fuzzy, kde-format
-#| msgid "Token error"
-msgid "Close codec error"
-msgstr "Pääsmiku tõrge"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:244
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgid "Video codec not found"
-msgstr "Videokoodek"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:251
-#, fuzzy, kde-format
-#| msgid "Audio Codec (Audio Codec)"
-msgid "Audio codec not found"
-msgstr "Helikoodek"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:258
-#, fuzzy, kde-format
-#| msgid "Collection not found"
-msgid "Subtitle codec not found"
-msgstr "Kogu ei leitud"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:265
-#, fuzzy, kde-format
-#| msgid "Token error"
-msgid "Codec error"
-msgstr "Pääsmiku tõrge"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:272
-#, fuzzy, kde-format
-#| msgid "Export error"
-msgid "Format error"
-msgstr "Tõrge ekspordil"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:279
-#, fuzzy, kde-format
-#| msgid "Network"
-msgid "Network error"
-msgstr "Võrk"
-
-#: core/libs/video/qtav/ffmpeg/AVError.cpp:286
-#, fuzzy, kde-format
-#| msgid "Access Level"
-msgid "Access denied"
-msgstr "Juurdepääsutase"
-
-#: core/libs/video/qtav/filter/LibAVFilter.cpp:357
-#, fuzzy, kde-format
-#| msgid "Options"
-msgid "Options:"
-msgstr "Valikud"
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:220
-#, fuzzy, kde-format
-#| msgid "Profile Version"
-msgid "Build version"
-msgstr "Profiili versioon"
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:232
-#, fuzzy, kde-format
-#| msgid "Software version:"
-msgid "Runtime version"
-msgstr "Tarkvara versioon:"
-
-#: core/libs/video/qtav/utils/QtAV_Global.cpp:267
-#, kde-format
-msgid "Multimedia framework based on Qt and FFmpeg.\n"
-msgstr ""
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:207
-#, fuzzy, kde-format
-#| msgid "About"
-msgid "About Qt"
-msgstr "Teave"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr "OK"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
-#, fuzzy, kde-format
-#| msgid "About"
-msgctxt "@title:window"
-msgid "About QtAV"
-msgstr "Teave"
-
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, fuzzy, kde-format
-#| msgid "About"
-msgctxt "@title:window"
-msgid "About FFmpeg"
-msgstr "Teave"
 
 #: core/libs/widgets/combo/dcombobox.cpp:61
 #: core/libs/widgets/range/dnuminput.cpp:71
@@ -53724,7 +53036,7 @@ msgstr "&Dekoor"
 msgid "Effec&ts"
 msgstr "E&fektid"
 
-#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:194
+#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:162
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -53807,14 +53119,14 @@ msgstr ""
 "<qt>Pildifailide salvestamise seadistused<br/><i>Siin saab määrata piltide "
 "salvestamisel vaikimisi kasutatavad seadistused</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:257
+#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:216
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolokatsioon"
 
-#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:258
+#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:217
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Application Views Settings<br/><i>Customize the look of the views</"
@@ -71198,14 +70510,14 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:169
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Andmebaas"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:170
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -71216,14 +70528,14 @@ msgstr ""
 "<qt>Andmebaasi seadistused<br/><i>Siin saab kohandada andmebaasi seadistusi</"
 "i></qt>"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:174
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Kogud"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid "<qt>Collections Settings<br/><i>Set root albums locations</i></qt>"
 msgctxt "@title"
@@ -71233,14 +70545,14 @@ msgid ""
 msgstr ""
 "<qt>Kogude seadistused<br/><i>Siin saab määrata albumite asukohad</i></qt>"
 
-#: core/utilities/setup/setup.cpp:211
+#: core/utilities/setup/setup.cpp:179
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Vaated"
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:180
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Application Views Settings<br/><i>Customize the look of the views</"
@@ -71253,14 +70565,14 @@ msgstr ""
 "<qt>Rakenduse vaadete seadistused<br/><i>Siin saab kohandada vaadete "
 "välimust</i></qt>"
 
-#: core/utilities/setup/setup.cpp:216
+#: core/utilities/setup/setup.cpp:184
 #, fuzzy, kde-format
 #| msgid "Tool-Tip"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Kohtspikker"
 
-#: core/utilities/setup/setup.cpp:217
+#: core/utilities/setup/setup.cpp:185
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Items Tool-Tip Settings<br/><i>Customize information in item tool-"
@@ -71273,32 +70585,14 @@ msgstr ""
 "<qt>Elementide kohtspikrite seadistused<br/><i>Siin saab kohandada "
 "kohtspikrite sisu</i></qt>"
 
-#: core/utilities/setup/setup.cpp:223
-#, fuzzy, kde-format
-#| msgid "Video"
-msgctxt "@title: settings section"
-msgid "Video"
-msgstr "Video"
-
-#: core/utilities/setup/setup.cpp:224
-#, fuzzy, kde-format
-#| msgid "<qt>Slide Show Settings<br/><i>Customize slideshow settings</i></qt>"
-msgctxt "@title"
-msgid ""
-"Video Preview Settings\n"
-"Customize settings to play video media"
-msgstr ""
-"<qt>Slaidiseansi seadistused<br/><i>Siin saab kohandada slaidiseansi "
-"seadistusi</i></qt>"
-
-#: core/utilities/setup/setup.cpp:230
+#: core/utilities/setup/setup.cpp:189
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metaandmed"
 
-#: core/utilities/setup/setup.cpp:231
+#: core/utilities/setup/setup.cpp:190
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -71311,14 +70605,14 @@ msgstr ""
 "<qt>Põimitud pildiinfo haldus<br/><i>Siin saab määrata, mida tehakse "
 "metaandmetega piltide muutmisel</i></qt>"
 
-#: core/utilities/setup/setup.cpp:235
+#: core/utilities/setup/setup.cpp:194
 #, fuzzy, kde-format
 #| msgid "Templates"
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Mallid"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:195
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Metadata templates<br/><i>Manage your collection of metadata "
@@ -71331,14 +70625,14 @@ msgstr ""
 "<qt>Metaandmete mallid<br/><i>Siin saab hallata oma kogu metaandmete malle</"
 "i></qt>"
 
-#: core/utilities/setup/setup.cpp:240
+#: core/utilities/setup/setup.cpp:199
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Pildiredaktor"
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:200
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize the image editor settings</i></"
@@ -71351,14 +70645,14 @@ msgstr ""
 "<qt>Pildiredaktori seadistused<br/><i>Siin saab kohandada pildiredaktori "
 "seadistusi</i></qt>"
 
-#: core/utilities/setup/setup.cpp:245
+#: core/utilities/setup/setup.cpp:204
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Värvihaldus"
 
-#: core/utilities/setup/setup.cpp:246
+#: core/utilities/setup/setup.cpp:205
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Color Management<br/><i>Customize the color management "
@@ -71371,14 +70665,14 @@ msgstr ""
 "<qt>Värvihalduse seadistused<br/><i>Siin saab kohandada värvihalduse "
 "seadistusi</i></qt>"
 
-#: core/utilities/setup/setup.cpp:250
+#: core/utilities/setup/setup.cpp:209
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Valguslaud"
 
-#: core/utilities/setup/setup.cpp:251
+#: core/utilities/setup/setup.cpp:210
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -71391,14 +70685,14 @@ msgstr ""
 "<qt>Valguslaua seadistused<br/><i>Siin saab kohandada valguslaua käitumist</"
 "i></qt>"
 
-#: core/utilities/setup/setup.cpp:264
+#: core/utilities/setup/setup.cpp:223
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Pildikvaliteedi sortija"
 
-#: core/utilities/setup/setup.cpp:265
+#: core/utilities/setup/setup.cpp:224
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize the image editor settings</i></"
@@ -71411,14 +70705,14 @@ msgstr ""
 "<qt>Pildiredaktori seadistused<br/><i>Siin saab kohandada pildiredaktori "
 "seadistusi</i></qt>"
 
-#: core/utilities/setup/setup.cpp:269
+#: core/utilities/setup/setup.cpp:228
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Kaamerad"
 
-#: core/utilities/setup/setup.cpp:270
+#: core/utilities/setup/setup.cpp:229
 #, fuzzy, kde-format
 #| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
 msgctxt "@title"
@@ -71429,14 +70723,14 @@ msgstr ""
 "<qt>Kaamera seadistused<br/><i>Siin saab määrata uusi kaameraseadmeid</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:277
+#: core/utilities/setup/setup.cpp:236
 #, fuzzy, kde-format
 #| msgid "Plugins"
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Pluginad"
 
-#: core/utilities/setup/setup.cpp:278
+#: core/utilities/setup/setup.cpp:237
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Plug-in Settings<br/><i>Set which plugins will be accessible from "
@@ -71449,14 +70743,14 @@ msgstr ""
 "<qt>Pluginate seadistused<br/><i>Siin saab määrata, millised pluginad on "
 "rakenduses kasutatavad</i></qt>"
 
-#: core/utilities/setup/setup.cpp:282
+#: core/utilities/setup/setup.cpp:241
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Muu"
 
-#: core/utilities/setup/setup.cpp:283
+#: core/utilities/setup/setup.cpp:242
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
@@ -72466,19 +71760,401 @@ msgstr "Albumielemendid"
 msgid "Import Items"
 msgstr "Impordi elemendid"
 
-#: core/utilities/setup/setupvideo.cpp:74
-#, fuzzy, kde-format
-#| msgid "Reset all settings to their default values."
-msgctxt "@info"
-msgid "Press this button to reset all video settings to the default values."
-msgstr "Lähtestab kõik seadistused vaikeväärtustele."
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgid "No codec could be found for: "
+#~ msgstr "Videokoodek"
 
-#: core/utilities/setup/setupvideo.cpp:132
-#, fuzzy, kde-format
-#| msgid "Reset all settings to their default values."
-msgctxt "@info"
-msgid "Do you want to reset all video settings to the default value?"
-msgstr "Lähtestab kõik seadistused vaikeväärtustele."
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Scanning faces"
+#~ msgid "Decoding surfaces"
+#~ msgstr "Nägude uurimine"
+
+#, fuzzy
+#~| msgid "Media format is not supported yet"
+#~ msgid "Codec %1 is not supported by CUDA"
+#~ msgstr "Meediavorming ei ole veel toetatud"
+
+#, fuzzy
+#~| msgid "No, auto"
+#~ msgid "0: auto"
+#~ msgstr "Ei, automaatne"
+
+#, fuzzy
+#~| msgid "Video"
+#~ msgctxt "@option: video filter"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgctxt "@option: audio filter"
+#~ msgid "Audio"
+#~ msgstr "Heli"
+
+#, fuzzy
+#~| msgid "enabled"
+#~ msgctxt "@option: enable filter"
+#~ msgid "Enable %1"
+#~ msgstr "lubatud"
+
+#, fuzzy
+#~| msgid "Restore Tag Filters"
+#~ msgctxt "@info"
+#~ msgid "Registered %1 filters"
+#~ msgstr "Taasta sildifiltrid"
+
+#, fuzzy
+#~| msgid "Theme Parameters"
+#~ msgctxt "@label"
+#~ msgid "Parameters"
+#~ msgstr "Teema parameetrid"
+
+#, fuzzy
+#~| msgid "enabled"
+#~ msgid "Enable"
+#~ msgstr "lubatud"
+
+#, fuzzy
+#~| msgid "Options"
+#~ msgid "options"
+#~ msgstr "Valikud"
+
+#, fuzzy
+#~| msgid "Reduce Texturing"
+#~ msgid "Reduce buffering"
+#~ msgstr "Tekstuuri kahandamine"
+
+#, fuzzy
+#~| msgid "Drop size:"
+#~ msgid "Probe size"
+#~ msgstr "Piisa suurus:"
+
+#, fuzzy
+#~| msgid "Extra tags"
+#~ msgid "Extra"
+#~ msgstr "Lisasildid"
+
+#, fuzzy
+#~| msgid "Format"
+#~ msgid "AVFormat"
+#~ msgstr "Vorming"
+
+#, fuzzy
+#~| msgid "&Browse"
+#~ msgid "Browse"
+#~ msgstr "Sir&vimine"
+
+#, fuzzy
+#~| msgid "Save File"
+#~ msgid "Save dir"
+#~ msgstr "Faili salvestamine"
+
+#, fuzzy
+#~| msgctxt "@action Save As New Version...Save in format..."
+#~| msgid "Save in Format"
+#~ msgid "Save format"
+#~ msgstr "Salvesta vormingus"
+
+#, fuzzy
+#~| msgid "Quality:"
+#~ msgid "Quality"
+#~ msgstr "Kvaliteet:"
+
+#, fuzzy
+#~| msgid "Nature"
+#~ msgid "Capture"
+#~ msgstr "Loodus"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@title:window"
+#~ msgid "Video Decoder Config Page"
+#~ msgstr "Videokoodek"
+
+#, fuzzy
+#~| msgid "The namespace name is required"
+#~ msgctxt "@label"
+#~ msgid "Decoder Priorities (reopen is required)"
+#~ msgstr "Nimeruumil peab olema nimi"
+
+#, fuzzy
+#~| msgctxt "@title:menu"
+#~| msgid "Download"
+#~ msgctxt "@action: go down in the list"
+#~ msgid "Down"
+#~ msgstr "Allalaadimine"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@title"
+#~ msgid "Decoder"
+#~ msgstr "Videokoodek"
+
+#, fuzzy
+#~| msgid "Preview on mouse-over"
+#~ msgid "Preview Over Time-Slider"
+#~ msgstr "Hiirealuse eelvaatlus"
+
+#, fuzzy
+#~| msgid "Resize"
+#~ msgid "size"
+#~ msgstr "Suuruse muutmine"
+
+#, fuzzy
+#~| msgid " fps"
+#~ msgid "Force fps"
+#~ msgstr " fps"
+
+#, fuzzy
+#~| msgid "Monitor profile:"
+#~ msgid "Ignore"
+#~ msgstr "Monitori profiil:"
+
+#, fuzzy
+#~| msgid "Progress indicator"
+#~ msgid "Progress update interval"
+#~ msgstr "Edenemisnäidik"
+
+#, fuzzy
+#~| msgctxt "NAME OF TRANSLATORS"
+#~| msgid "Your names"
+#~ msgid "Buffer frames"
+#~ msgstr "Marek Laane"
+
+#, fuzzy
+#~| msgid "Open the image editor."
+#~ msgid "Timeout"
+#~ msgstr "Pildiredaktori avamine."
+
+#~ msgid "s"
+#~ msgstr "s"
+
+#, fuzzy
+#~| msgid "OpenGL error"
+#~ msgid "OpenGL type"
+#~ msgstr "OpenGL tõrge"
+
+#, fuzzy
+#~| msgid "enabled"
+#~ msgctxt "@option: enable shader"
+#~ msgid "Enable"
+#~ msgstr "lubatud"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Intermediate Steps:"
+#~ msgctxt "@option"
+#~ msgid "Intermediate FBO"
+#~ msgstr "Vaheversioonid:"
+
+#, fuzzy
+#~| msgctxt "light source"
+#~| msgid "Shade"
+#~ msgctxt "@title"
+#~ msgid "Shader"
+#~ msgstr "Vari"
+
+#, fuzzy
+#~| msgid "Brightness:"
+#~ msgctxt "@option"
+#~ msgid "Brightness"
+#~ msgstr "Heledus:"
+
+#, fuzzy
+#~| msgid "Contrast:"
+#~ msgctxt "@option"
+#~ msgid "Contrast"
+#~ msgstr "Kontrast:"
+
+#, fuzzy
+#~| msgid "Hue:"
+#~ msgctxt "@option"
+#~ msgid "Hue"
+#~ msgstr "Toon:"
+
+#, fuzzy
+#~| msgid "Saturation"
+#~ msgctxt "@option"
+#~ msgid "Saturation"
+#~ msgstr "Küllastus"
+
+#, fuzzy
+#~| msgid "Loading metadata -"
+#~ msgid "error reading stream data"
+#~ msgstr "Metaandmete laadimine -"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "seek error"
+#~ msgstr "Tõrge"
+
+#, fuzzy
+#~| msgid "Failed to open muxer"
+#~ msgid "failed to open media"
+#~ msgstr "Muxeri avamine nurjus."
+
+#, fuzzy
+#~| msgid "Failed to create file..."
+#~ msgid "failed to find stream info"
+#~ msgstr "Faili loomine nurjus..."
+
+#, fuzzy
+#~| msgctxt "Advanced time format settings"
+#~| msgid "Advanced..."
+#~ msgid "interrupted by user"
+#~ msgstr "Täpsem..."
+
+#, fuzzy
+#~| msgid "Open the image editor."
+#~ msgid "timeout"
+#~ msgstr "Pildiredaktori avamine."
+
+#, fuzzy
+#~| msgid "Token error"
+#~ msgid "No error"
+#~ msgstr "Pääsmiku tõrge"
+
+#, fuzzy
+#~| msgid "OpenGL error"
+#~ msgid "Open error"
+#~ msgstr "OpenGL tõrge"
+
+#, fuzzy
+#~| msgid "Open the image editor."
+#~ msgid "Open timed out"
+#~ msgstr "Pildiredaktori avamine."
+
+#, fuzzy
+#~| msgid "Binary not found."
+#~ msgid "Stream not found"
+#~ msgstr "Binaarfaili ei leitud."
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Download New"
+#~ msgid "Read error"
+#~ msgstr "Laadi alla uued"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Seek error"
+#~ msgstr "Tõrge"
+
+#, fuzzy
+#~| msgid "Session error"
+#~ msgid "Resource error"
+#~ msgstr "Seansi tõrge"
+
+#, fuzzy
+#~| msgid "OpenGL error"
+#~ msgid "Open codec error"
+#~ msgstr "OpenGL tõrge"
+
+#, fuzzy
+#~| msgid "Token error"
+#~ msgid "Close codec error"
+#~ msgstr "Pääsmiku tõrge"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgid "Video codec not found"
+#~ msgstr "Videokoodek"
+
+#, fuzzy
+#~| msgid "Audio Codec (Audio Codec)"
+#~ msgid "Audio codec not found"
+#~ msgstr "Helikoodek"
+
+#, fuzzy
+#~| msgid "Collection not found"
+#~ msgid "Subtitle codec not found"
+#~ msgstr "Kogu ei leitud"
+
+#, fuzzy
+#~| msgid "Token error"
+#~ msgid "Codec error"
+#~ msgstr "Pääsmiku tõrge"
+
+#, fuzzy
+#~| msgid "Export error"
+#~ msgid "Format error"
+#~ msgstr "Tõrge ekspordil"
+
+#, fuzzy
+#~| msgid "Network"
+#~ msgid "Network error"
+#~ msgstr "Võrk"
+
+#, fuzzy
+#~| msgid "Access Level"
+#~ msgid "Access denied"
+#~ msgstr "Juurdepääsutase"
+
+#, fuzzy
+#~| msgid "Options"
+#~ msgid "Options:"
+#~ msgstr "Valikud"
+
+#, fuzzy
+#~| msgid "Profile Version"
+#~ msgid "Build version"
+#~ msgstr "Profiili versioon"
+
+#, fuzzy
+#~| msgid "Software version:"
+#~ msgid "Runtime version"
+#~ msgstr "Tarkvara versioon:"
+
+#, fuzzy
+#~| msgid "About"
+#~ msgid "About Qt"
+#~ msgstr "Teave"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#, fuzzy
+#~| msgid "About"
+#~ msgctxt "@title:window"
+#~ msgid "About QtAV"
+#~ msgstr "Teave"
+
+#, fuzzy
+#~| msgid "About"
+#~ msgctxt "@title:window"
+#~ msgid "About FFmpeg"
+#~ msgstr "Teave"
+
+#, fuzzy
+#~| msgid "Video"
+#~ msgctxt "@title: settings section"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>Slide Show Settings<br/><i>Customize slideshow settings</i></qt>"
+#~ msgctxt "@title"
+#~ msgid ""
+#~ "Video Preview Settings\n"
+#~ "Customize settings to play video media"
+#~ msgstr ""
+#~ "<qt>Slaidiseansi seadistused<br/><i>Siin saab kohandada slaidiseansi "
+#~ "seadistusi</i></qt>"
+
+#, fuzzy
+#~| msgid "Reset all settings to their default values."
+#~ msgctxt "@info"
+#~ msgid "Press this button to reset all video settings to the default values."
+#~ msgstr "Lähtestab kõik seadistused vaikeväärtustele."
+
+#, fuzzy
+#~| msgid "Reset all settings to their default values."
+#~ msgctxt "@info"
+#~ msgid "Do you want to reset all video settings to the default value?"
+#~ msgstr "Lähtestab kõik seadistused vaikeväärtustele."
 
 #, fuzzy
 #~| msgid "Encoding %1 Done"
