@@ -107,8 +107,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     {
         if      (!QFileInfo::exists(params.internalServerPath()))
         {
-            databaseError = i18n("The MySQL database directory was not found, please "
-                                 "set the correct location in the next dialog.");
+            databaseError = i18n("The MySQL database directory was not found.");
         }
         else if (
                  (!QFileInfo::exists(params.internalServerMysqlUpgradeCmd)                        &&
@@ -119,16 +118,14 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
                   QStandardPaths::findExecutable(params.internalServerMysqlAdminCmd).isEmpty())
                 )
         {
-            databaseError = i18n("The MySQL binary tools was not found, please "
-                                 "set the correct location in the next dialog.");
+            databaseError = i18n("The MySQL binary tools was not found.");
         }
     }
     else if (params.isSQLite() && suggestedAlbumRoot.isEmpty() && !settings->getDatabaseDirSetAtCmd())
     {
         if (!QFileInfo::exists(params.databaseNameCore))
         {
-            databaseError = i18n("The SQLite core database was not found, please "
-                                 "set the correct location in the next dialog.");
+            databaseError = i18n("The SQLite core database was not found.");
         }
     }
 
@@ -166,9 +163,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     if (!handler->checkDatabaseConnection())
     {
-        databaseError = i18n("Failed to open the database.\n\n"
-                             "You cannot use digiKam without a working database.\n"
-                             "Please check the database settings in the next dialog.");
+        databaseError = i18n("Failed to open the database.");
 
         if (!showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot))
         {
@@ -233,7 +228,9 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
         case ScanController::AbortImmediately:
         {
-            return false;
+            databaseError = i18n("Failed to initialize the database.");
+
+            return showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot);
         }
     }
 
@@ -742,8 +739,10 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
 {
     QApplication::restoreOverrideCursor();
 
+    QString errorMsg = error + i18n("\n\nPlease check the database settings in the next dialog.");
+
     QMessageBox::critical(qApp->activeWindow(),
-                          qApp->applicationName(), error);
+                          qApp->applicationName(), errorMsg);
 
     // We cannot use Setup::execSinglePage() as this already requires a core database.
 

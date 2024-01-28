@@ -205,7 +205,7 @@ BUGFIXES:
 183 ==> 092859 - Cannot download .avi movies from camera.
 184 ==> 097702 - Can't load AVI from Powershot S400 and Workaround.
 185 ==> 137103 - digiKam doesn't show the movies on my camera.
-186 ==> 
+186 ==> 480382 - digiKam not opening to change settings - MySQL access rights missing CREATE table.
 187 ==> 
 188 ==> 
 189 ==> 
