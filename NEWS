@@ -206,7 +206,7 @@ BUGFIXES:
 184 ==> 097702 - Can't load AVI from Powershot S400 and Workaround.
 185 ==> 137103 - digiKam doesn't show the movies on my camera.
 186 ==> 480382 - digiKam not opening to change settings - MySQL access rights missing CREATE table.
-187 ==> 
+187 ==> 480439 - Readability of menu, statusbar and active tabs in dark themes.
 188 ==> 
 189 ==> 
 190 ==> 
