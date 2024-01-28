@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 01:35+0000\n"
+"POT-Creation-Date: 2024-01-28 01:38+0000\n"
 "PO-Revision-Date: 2024-01-26 11:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2844,7 +2844,7 @@ msgstr "Mostra a pantalla completa"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:489
+#: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2939,7 +2939,7 @@ msgid "No Tags Album"
 msgstr "Sense etiquetes d'àlbum"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:562
+#: core/libs/album/engine/album.cpp:558
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -20111,20 +20111,20 @@ msgstr "Afegeix altra vegada"
 msgid "Remove"
 msgstr "Elimina"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Disposició personalitzada"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 "La mida personalitzada seleccionada de la fotografia no es pot aplicar a la "
 "mida del paper."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1341
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
 #, kde-format
 msgid ""
 "Custom\n"
@@ -26829,38 +26829,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Conversió RAW de l'UFRaw"
 
-#: core/libs/album/engine/album.cpp:410
+#: core/libs/album/engine/album.cpp:406
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Paperera"
 
-#: core/libs/album/engine/album.cpp:761
+#: core/libs/album/engine/album.cpp:757
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Cerca actual de la línia de temps"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:763
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Cerca actual aproximada d'imatge"
 
-#: core/libs/album/engine/album.cpp:771
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Cerca actual aproximada de croquis"
 
-#: core/libs/album/engine/album.cpp:778
+#: core/libs/album/engine/album.cpp:774
 #, kde-format
 msgid "Current Map Search"
 msgstr "Cerca actual per mapa"
 
-#: core/libs/album/engine/album.cpp:783
+#: core/libs/album/engine/album.cpp:779
 #, kde-format
 msgid "Current Search"
 msgstr "Cerca actual"
 
-#: core/libs/album/engine/album.cpp:786
+#: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Cerca actual dels duplicats"

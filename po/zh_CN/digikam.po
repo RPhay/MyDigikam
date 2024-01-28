@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 01:35+0000\n"
+"POT-Creation-Date: 2024-01-28 01:38+0000\n"
 "PO-Revision-Date: 2024-01-21 14:14\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2785,7 +2785,7 @@ msgstr "全屏显示"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:489
+#: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2877,7 +2877,7 @@ msgid "No Tags Album"
 msgstr "无标签相册"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:562
+#: core/libs/album/engine/album.cpp:558
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -19186,18 +19186,18 @@ msgstr "再次添加"
 msgid "Remove"
 msgstr "移除"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "自定义布局"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr "所选自定义照片尺寸无法应用于该纸张尺寸。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1341
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
 #, kde-format
 msgid ""
 "Custom\n"
@@ -25701,38 +25701,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
 
-#: core/libs/album/engine/album.cpp:410
+#: core/libs/album/engine/album.cpp:406
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "回收站"
 
-#: core/libs/album/engine/album.cpp:761
+#: core/libs/album/engine/album.cpp:757
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "当前时间轴搜索结果"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:763
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "当前模糊图像搜索结果"
 
-#: core/libs/album/engine/album.cpp:771
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "当前模糊画图搜索结果"
 
-#: core/libs/album/engine/album.cpp:778
+#: core/libs/album/engine/album.cpp:774
 #, kde-format
 msgid "Current Map Search"
 msgstr "当前地图搜索结果"
 
-#: core/libs/album/engine/album.cpp:783
+#: core/libs/album/engine/album.cpp:779
 #, kde-format
 msgid "Current Search"
 msgstr "当前搜索结果"
 
-#: core/libs/album/engine/album.cpp:786
+#: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "当前重复项搜索结果"

@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 01:35+0000\n"
+"POT-Creation-Date: 2024-01-28 01:38+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -3186,7 +3186,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:489
+#: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -3278,7 +3278,7 @@ msgid "No Tags Album"
 msgstr "Album bez oznaka"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:562
+#: core/libs/album/engine/album.cpp:558
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -21199,19 +21199,19 @@ msgstr "Dodaj zrnatost filma"
 msgid "Remove"
 msgstr "&Ukloni"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
 #, fuzzy, kde-format
 #| msgid "Custom Font"
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Prilagođena slova"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1341
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
 #, fuzzy, kde-format
 #| msgid "Custom Font"
 msgid ""
@@ -28274,38 +28274,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Gruba konverzija"
 
-#: core/libs/album/engine/album.cpp:410
+#: core/libs/album/engine/album.cpp:406
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:761
+#: core/libs/album/engine/album.cpp:757
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Pretraga po trenutnoj vremenskoj liniji"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:763
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Pretraga po trenutnoj približnoj slici"
 
-#: core/libs/album/engine/album.cpp:771
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Pretraga po trenutnoj približnoj skici"
 
-#: core/libs/album/engine/album.cpp:778
+#: core/libs/album/engine/album.cpp:774
 #, kde-format
 msgid "Current Map Search"
 msgstr "Pretraga po trenutnoj mapi"
 
-#: core/libs/album/engine/album.cpp:783
+#: core/libs/album/engine/album.cpp:779
 #, kde-format
 msgid "Current Search"
 msgstr "Trenutna pretraga"
 
-#: core/libs/album/engine/album.cpp:786
+#: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Trenutna pretraga duplikata"

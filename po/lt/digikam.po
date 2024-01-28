@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 01:35+0000\n"
+"POT-Creation-Date: 2024-01-28 01:38+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -3104,7 +3104,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:489
+#: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -3195,7 +3195,7 @@ msgid "No Tags Album"
 msgstr "Eiti į albumus"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:562
+#: core/libs/album/engine/album.cpp:558
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -20193,19 +20193,19 @@ msgstr "Pridėti failo savybių"
 msgid "Remove"
 msgstr "&Pašalinti"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
 #, fuzzy, kde-format
 #| msgid "Custom list"
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Pasirinktas sąrašas"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1341
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
 #, fuzzy, kde-format
 #| msgid "Custom list"
 msgid ""
@@ -27013,38 +27013,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Spalvų taisymas"
 
-#: core/libs/album/engine/album.cpp:410
+#: core/libs/album/engine/album.cpp:406
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:761
+#: core/libs/album/engine/album.cpp:757
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Dabartinė paieška laike"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:763
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Dabartinė apytikslė nuotraukos paieška"
 
-#: core/libs/album/engine/album.cpp:771
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Dabartinė apytikslė eskizo paieška"
 
-#: core/libs/album/engine/album.cpp:778
+#: core/libs/album/engine/album.cpp:774
 #, kde-format
 msgid "Current Map Search"
 msgstr "Paieška dabartiniame žemėlapyje"
 
-#: core/libs/album/engine/album.cpp:783
+#: core/libs/album/engine/album.cpp:779
 #, kde-format
 msgid "Current Search"
 msgstr "Dabartinė paieška"
 
-#: core/libs/album/engine/album.cpp:786
+#: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Dabartinė dublikatų paieška"
