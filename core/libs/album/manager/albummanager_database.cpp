@@ -134,8 +134,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         QString configPath = QStandardPaths::locate(QStandardPaths::GenericConfigLocation,
                                                     QLatin1String("digikamrc"));
 
-        databaseError     += i18n("\n\nIf you want to start with a new configuration and "
-                                  "with a first run wizard, delete the file %1",
+        databaseError     += i18n("<p>If you want to start with a new configuration and "
+                                  "with a first run wizard, delete the file:<br>%1</p>",
                                   QDir::toNativeSeparators(configPath));
 
         return showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot);
@@ -147,8 +147,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
         if (result.getErrorType() != DatabaseServerError::NoErrors)
         {
-            databaseError = i18n("An error occurred during the internal server start.\n\n"
-                                 "Details:\n%1", result.getErrorText());
+            databaseError = i18n("An error occurred during the internal server start."
+                                 "<p>Details:\n%1</p>", result.getErrorText());
 
             return showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot);
         }
@@ -739,15 +739,18 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
 {
     QApplication::restoreOverrideCursor();
 
-    QString errorMsg = error + i18n("\n\nPlease check the database settings in the next dialog.");
-
-    QMessageBox::critical(qApp->activeWindow(),
-                          qApp->applicationName(), errorMsg);
+    QString errorMsg = error + i18n("<p><b>Please check the database settings in this dialog.</b></p>");
 
     // We cannot use Setup::execSinglePage() as this already requires a core database.
 
     QPointer<QDialog> setup                  = new QDialog(qApp->activeWindow());
     QVBoxLayout* const layout                = new QVBoxLayout(setup);
+    QLabel* const errorLabel                 = new QLabel(errorMsg, setup);
+    errorLabel->setWordWrap(true);
+    errorLabel->setTextFormat(Qt::RichText);
+    errorLabel->setAlignment(Qt::AlignCenter);
+    errorLabel->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
+    errorLabel->setStyleSheet(QLatin1String("QLabel { background-color: #FFDDDD; color: black; }"));
     DatabaseSettingsWidget* const dbsettings = new DatabaseSettingsWidget(setup);
     QDialogButtonBox* const buttons          = new QDialogButtonBox(QDialogButtonBox::Ok    |
                                                                     QDialogButtonBox::Reset |
@@ -755,6 +758,7 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
     buttons->button(QDialogButtonBox::Reset)->setText(i18nc("@action:button", "New database"));
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
+    layout->addWidget(errorLabel);
     layout->addWidget(dbsettings);
     layout->addStretch(10);
     layout->addWidget(buttons);
