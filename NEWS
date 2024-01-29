@@ -210,7 +210,7 @@ BUGFIXES:
 188 ==> 479676 - Video Files are Imported with UTC dates.
 189 ==> 480324 - The Program crash when I type in the name for a person in the box that is shown when I hover over the face.
 190 ==> 480505 - Compilation error.
-191 ==> 
+191 ==> 480521 - digiKam has started to crash when I manually want to assign a name to a marked face.
 192 ==> 
 193 ==> 
 194 ==> 
