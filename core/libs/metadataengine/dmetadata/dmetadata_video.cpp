@@ -1613,11 +1613,12 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             videoDateTimeOriginal.prepend(videoDateTimeOriginal.takeLast());
         }
         else if (
-                 !((rmeta.contains(QLatin1String("com.android.model")))                           ||
-                   (rmeta.contains(QLatin1String("com.android.version")))                         ||
-                   (rmeta.contains(QLatin1String("com.android.capture.fps")))                     ||
-                   (rmeta.contains(QLatin1String("com.android.manufacturer")))                    ||
-                   (rmeta.value(QLatin1String("encoder")) == QLatin1String("DJI OsmoPocket3")))   &&
+                 !((rmeta.contains(QLatin1String("com.android.model")))                                ||
+                   (rmeta.contains(QLatin1String("com.android.version")))                              ||
+                   (rmeta.contains(QLatin1String("com.android.capture.fps")))                          ||
+                   (rmeta.contains(QLatin1String("com.android.manufacturer")))                         ||
+                   (rmeta.value(QLatin1String("encoder")) == QLatin1String("DJI OsmoPocket3"))         ||
+                   (rmeta.value(QLatin1String("com.apple.quicktime.make")) == QLatin1String("Canon"))) &&
                  !(rmeta.value(QLatin1String("compatible_brands")) == QLatin1String("mp42avc1niko"))
                 )
         {
