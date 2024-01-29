@@ -207,8 +207,8 @@ BUGFIXES:
 185 ==> 137103 - digiKam doesn't show the movies on my camera.
 186 ==> 480382 - digiKam not opening to change settings - MySQL access rights missing CREATE table.
 187 ==> 480439 - Readability of menu, statusbar and active tabs in dark themes.
-188 ==> 
-189 ==> 
+188 ==> 479676 - Video Files are Imported with UTC dates.
+189 ==> 480324 - The Program crash when I type in the name for a person in the box that is shown when I hover over the face.
 190 ==> 
 191 ==> 
 192 ==> 
